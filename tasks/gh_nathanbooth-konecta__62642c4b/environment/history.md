@@ -57,7 +57,7 @@ tool_use Read
 id: toolu_016gkdCqvn4BebnGT98nffhz
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json"
 }
 ```
 
@@ -67,7 +67,7 @@ tool_use Read
 id: toolu_017bcL3pG8NDxFUVvPp4SU7V
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/argocd/application.yaml"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/argocd/application.yaml"
 }
 ```
 
@@ -130,7 +130,7 @@ id: toolu_016gkdCqvn4BebnGT98nffhz
     42→    },
     43→    "gcp_service_account": {
     44→      "name": "crewai-platform",
-    45→      "email": "crewai-platform@kd-ix-eur-dev-gke.iam.gserviceaccount.com"
+    45→      "email": "<REDACTED_EMAIL>"
     46→    },
     47→    "k8s_service_account": "crewai-sa",
     48→    "hostname": "crewai.dev.ix.konecta-digital.com",
@@ -145,7 +145,7 @@ id: toolu_016gkdCqvn4BebnGT98nffhz
     57→        "oauth": "crewai_plus_oauth_db"
     58→      },
     59→      "auth_type": "iam",
-    60→      "iam_user": "crewai-platform@kd-ix-eur-dev-gke.iam",
+    60→      "iam_user": "<REDACTED_EMAIL>",
     61→      "proxy_mode": "standalone"
     62→    },
     63→    "storage": {
@@ -232,9 +232,9 @@ id: toolu_017bcL3pG8NDxFUVvPp4SU7V
 tool_result
 id: toolu_01GPfkEcCg5fNTyPQ47xtRoR
 ```
-/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/config.json
-/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/config.json
-/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json
+/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/config.json
+/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/config.json
+/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json
 ```
 
 > AGENT
@@ -374,7 +374,7 @@ id: toolu_01RbWyz6VHBFG825LdLWyhPb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
   "old_string": "\"version\": \"0.3.13\"",
   "new_string": "\"version\": \"0.4.2\""
 }
@@ -387,7 +387,7 @@ id: toolu_016FyZ1qGMtzADTFQK1DjEpC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/argocd/application.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/argocd/application.yaml",
   "old_string": "targetRevision: \"0.3.13\"",
   "new_string": "targetRevision: \"0.4.2\""
 }
@@ -398,7 +398,7 @@ id: toolu_016FyZ1qGMtzADTFQK1DjEpC
 tool_result
 id: toolu_01RbWyz6VHBFG825LdLWyhPb
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json has been updated successfully.
 ```
 
 > TOOL
@@ -406,7 +406,7 @@ The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environ
 tool_result
 id: toolu_016FyZ1qGMtzADTFQK1DjEpC
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/argocd/application.yaml has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/argocd/application.yaml has been updated successfully.
 ```
 
 > TOOL
@@ -474,8 +474,8 @@ id: toolu_017wNUeeFKmLs8eWtvnQPpLo
 tool_result
 id: toolu_017wNUeeFKmLs8eWtvnQPpLo
 ```
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml
 ```
 
 > TOOL
@@ -494,8 +494,8 @@ id: toolu_01R8pEBHudijMbXGPbV4SSGz
 tool_result
 id: toolu_01R8pEBHudijMbXGPbV4SSGz
 ```
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml matches config.json
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml matches config.json
 ```
 
 > TOOL
@@ -628,7 +628,7 @@ tool_use Bash
 id: toolu_011uoGLXmVK4TrNgqeJn2bzj
 ```json
 {
-  "command": "git add environments/dev/config.json environments/dev/argocd/application.yaml && git commit -m \"$(cat <<'EOF'\nfeat: bump crewai-platform chart to 0.4.2 for dev\n\nUpdates from 0.3.13 to 0.4.2 which includes:\n- replicated SDK bump from 1.12.1 to 1.16.0\n- crewai-enterprise-platform bump to 0.15.7\n- removal of crewai-enterprise-preinstalled-v2 image reference\n- crewai-oauth image bump to 0.2.6\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add environments/dev/config.json environments/dev/argocd/application.yaml && git commit -m \"$(cat <<'EOF'\nfeat: bump crewai-platform chart to 0.4.2 for dev\n\nUpdates from 0.3.13 to 0.4.2 which includes:\n- replicated SDK bump from 1.12.1 to 1.16.0\n- crewai-enterprise-platform bump to 0.15.7\n- removal of crewai-enterprise-preinstalled-v2 image reference\n- crewai-oauth image bump to 0.2.6\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit chart version bump"
 }
 ```
@@ -846,7 +846,7 @@ tool_use Read
 id: toolu_012Nd4sNfTzLQxvtCnWsbYuW
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml"
 }
 ```
 
@@ -984,7 +984,7 @@ global:
     - name: "docker-registry" # Is is not recommended to set this value manually.
   replicated:
     channelName: Stable
-    customerEmail: mischa.vanoijen@konecta.com
+    customerEmail: <REDACTED_EMAIL>
     customerName: Konecta
     dockerconfigjson: eyJhdXRocyI6eyJpbWFnZXMuY3Jld2FpLmNvbSI6eyJhdXRoIjoiTXpWblVXMXZVWE53WjFCUGRIWk1RVTgwY2pkcVNsRnhOMWh0T2pNMVoxRnRiMUZ6Y0dkUVQzUjJURUZQTkhJM2FrcFJjVGRZYlE9PSJ9LCJyZWdpc3RyeS5jcmV3YWkuY29tIjp7ImF1dGgiOiJNelZuVVcxdlVYTndaMUJQZEhaTVFVODBjamRxU2xGeE4xaHRPak0xWjFGdGIxRnpjR2RRVDNSMlRFRlBOSEkzYWtwUmNUZFliUT09In19fQ==
     licenseFields:
@@ -1042,7 +1042,7 @@ Yes, `replicatedID` (specifically `licenseID`) is used in the upstream chart. Lo
 global:
   replicated:
     channelName: Stable
-    customerEmail: mischa.vanoijen@konecta.com
+    customerEmail: <REDACTED_EMAIL>
     customerName: Konecta
     dockerconfigjson: <base64 credentials>
     licenseID: 35gQmoQspgPOtvLAO4r7jJQq7Xm
@@ -1529,9 +1529,9 @@ tool_result ERROR
 id: toolu_01AjFv13ZpBiQrnLrNjSmcPo
 ```
 Exit code 1
-ERROR: (gcloud.iam.workload-identity-pools.providers.list) NOT_FOUND: Requested entity was not found. This command is authenticated as nathan.booth@konecta.com which is the active account specified by the [core/account] property.
+ERROR: (gcloud.iam.workload-identity-pools.providers.list) NOT_FOUND: Requested entity was not found. This command is authenticated as <REDACTED_EMAIL> which is the active account specified by the [core/account] property.
 
-ERROR: (gcloud.iam.workload-identity-pools.providers.list) NOT_FOUND: Requested entity was not found. This command is authenticated as nathan.booth@konecta.com which is the active account specified by the [core/account] property.
+ERROR: (gcloud.iam.workload-identity-pools.providers.list) NOT_FOUND: Requested entity was not found. This command is authenticated as <REDACTED_EMAIL> which is the active account specified by the [core/account] property.
 ```
 
 > TOOL
@@ -1539,7 +1539,7 @@ ERROR: (gcloud.iam.workload-identity-pools.providers.list) NOT_FOUND: Requested 
 tool_result
 id: toolu_01TYY8f3ByML8YjfAg1iMwAh
 ```
-github-crewai-qa@kd-ix-eur-qa-gke.iam.gserviceaccount.com
+<REDACTED_EMAIL>
 ```
 
 > TOOL
@@ -1653,8 +1653,8 @@ projects/88462385724/locations/global/workloadIdentityPools/github-crewai-dev/pr
 tool_result
 id: toolu_013MafisN8aKqiM9aQFmPqZ2
 ```
-github-crewai-core-dev@kd-ix-eur-dev-gke.iam.gserviceaccount.com
-github-crewai-dev@kd-ix-eur-dev-gke.iam.gserviceaccount.com
+<REDACTED_EMAIL>
+<REDACTED_EMAIL>
 ```
 
 > TOOL
@@ -1692,7 +1692,7 @@ I have all the values. Here's the mapping for QA:
 
 | Secret | QA Value |
 |--------|----------|
-| `GCP_SERVICE_ACCOUNT` | `github-crewai-qa@kd-ix-eur-qa-gke.iam.gserviceaccount.com` |
+| `GCP_SERVICE_ACCOUNT` | `<REDACTED_EMAIL>` |
 | `GCP_WORKLOAD_IDENTITY_PROVIDER` | `projects/417623583872/locations/global/workloadIdentityPools/github-crewai-qa/providers/github-provider` |
 | `TF_VAR_REPLICATED_AUTH_TOKEN` | *(from dev secret)* |
 | `TF_VAR_GITHUB_APP_PRIVATE_KEY` | *(from dev secret)* |

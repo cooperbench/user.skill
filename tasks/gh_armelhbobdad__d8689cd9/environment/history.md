@@ -4,7 +4,7 @@ tool_use Read
 id: toolu_01Lbf5uJt6bEduPDYnq4e4Ko
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/workflow.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/workflow.md"
 }
 ```
 
@@ -41,7 +41,7 @@ tool_use Read
 id: toolu_013YvpwfTNPhmUNLujCy6B29
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/bmm/config.yaml"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/bmm/config.yaml"
 }
 ```
 

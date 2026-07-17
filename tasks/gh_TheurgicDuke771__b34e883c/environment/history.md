@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_012HJyRygtDWJeSPrEGEe8Bg
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/perf-baseline-snowflake.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/perf-baseline-snowflake.md"
 }
 ```
 
@@ -66,7 +66,7 @@ id: toolu_012LFY3pTjfvut7wmLi9FqM4
 ```json
 {
   "description": "Recon harness + worker sizing",
-  "prompt": "Reconnaissance task in two repos. Report facts only, concise.\n\n1. Harness repo at ~/Coding/Python/DataQ-harness/ (not git-tracked):\n   - What can the mockdata generator produce? (~/Coding/Python/DataQ-harness/mockdata/ presumably) — which datasources does it load (Snowflake, ADLS, S3, Unity Catalog/Databricks, Iceberg), what row counts does it currently generate, is row count parameterizable, what file formats for flat files (CSV/parquet), and how does it run (local script vs ACA job)?\n   - What does scripts/harness_window.sh wake/stop (which legs: --adf --dags --dbt --iceberg)?\n   - Any existing perf/scale tooling or notes (HARNESS_TODO.md)?\n   - For the iceberg-writer: where does it write (ADLS warehouse?), how many rows, parameterizable?\n\n2. DataQ repo at /Users/arijit/Coding/Python/DataQ:\n   - deploy/terraform/azure/containerapps.tf (and any related): CPU/memory sizing of the worker container app (dataq-app-worker) and the api. Also Celery concurrency settings if visible in the worker command/env.\n   - backend/app/datasources/flatfile.py + iceberg runner + unity catalog runner: do they read the full dataset into pandas/arrow memory before running GX? Any chunking/limits? Quote the key lines (file:line).\n   - docs/perf-baseline-snowflake.md exists — skip it, I have it.\n\nReturn a structured summary: (a) mockdata generator capabilities per datasource + how to scale row counts, (b) worker/api CPU+memory + celery concurrency, (c) per-datasource […]
+  "prompt": "Reconnaissance task in two repos. Report facts only, concise.\n\n1. Harness repo at ~/Coding/Python/DataQ-harness/ (not git-tracked):\n   - What can the mockdata generator produce? (~/Coding/Python/DataQ-harness/mockdata/ presumably) — which datasources does it load (Snowflake, ADLS, S3, Unity Catalog/Databricks, Iceberg), what row counts does it currently generate, is row count parameterizable, what file formats for flat files (CSV/parquet), and how does it run (local script vs ACA job)?\n   - What does scripts/harness_window.sh wake/stop (which legs: --adf --dags --dbt --iceberg)?\n   - Any existing perf/scale tooling or notes (HARNESS_TODO.md)?\n   - For the iceberg-writer: where does it write (ADLS warehouse?), how many rows, parameterizable?\n\n2. DataQ repo at /home/<USER>/Coding/Python/DataQ:\n   - deploy/terraform/azure/containerapps.tf (and any related): CPU/memory sizing of the worker container app (dataq-app-worker) and the api. Also Celery concurrency settings if visible in the worker command/env.\n   - backend/app/datasources/flatfile.py + iceberg runner + unity catalog runner: do they read the full dataset into pandas/arrow memory before running GX? Any chunking/limits? Quote the key lines (file:line).\n   - docs/perf-baseline-snowflake.md exists — skip it, I have it.\n\nReturn a structured summary: (a) mockdata generator capabilities per datasource + how to scale row counts, (b) worker/api CPU+memory + celery concurrency, (c) per-datasource […]
 
 > TOOL
 
@@ -295,11 +295,11 @@ export WORKSPACE_ADMIN_EMAILS
 export AZURE_API_CLIENT_ID
 export AZURE_SPA_CLIENT_ID
 ---
-/Users/arijit/Coding/Python/DataQ-harness/dataq_setup:
+/home/<USER>/Coding/Python/DataQ-harness/dataq_setup:
 README.md
 setup.py
 
-/Users/arijit/Coding/Python/DataQ-harness/scripts:
+/home/<USER>/Coding/Python/DataQ-harness/scripts:
 harness_window.sh
 ```
 
@@ -356,7 +356,7 @@ tool_use Bash
 id: toolu_01Xrt4ZBfkWCqvkVq4rfeHpD
 ```json
 {
-  "command": "docker exec dataq-worker-1 pip show fastmcp 2>/dev/null | head -2; docker run --rm --entrypoint pip $(docker inspect dataq-api-1 --format '{{.Config.Image}}') show fastmcp 2>/dev/null | head -2; grep -i fastmcp /Users/arijit/Coding/Python/DataQ/backend/requirements.txt; docker inspect dataq-api-1 --format '{{.Config.Image}} created={{.Created}}'; docker inspect dataq-worker-1 --format '{{.Config.Image}}'",
+  "command": "docker exec dataq-worker-1 pip show fastmcp 2>/dev/null | head -2; docker run --rm --entrypoint pip $(docker inspect dataq-api-1 --format '{{.Config.Image}}') show fastmcp 2>/dev/null | head -2; grep -i fastmcp /home/<USER>/Coding/Python/DataQ/backend/requirements.txt; docker inspect dataq-api-1 --format '{{.Config.Image}} created={{.Created}}'; docker inspect dataq-worker-1 --format '{{.Config.Image}}'",
   "description": "Compare fastmcp version in containers vs requirements pin"
 }
 ```
@@ -381,7 +381,7 @@ tool_use Bash
 id: toolu_01BbvzBr7XRQcXmstuQipAwY
 ```json
 {
-  "command": "grep -n 'services:\\|^  [a-z-]*:\\|image:\\|build\\|volumes:\\|command:\\|mem_limit\\|cpus\\|deploy:' /Users/arijit/Coding/Python/DataQ/docker-compose.yml | head -40",
+  "command": "grep -n 'services:\\|^  [a-z-]*:\\|image:\\|build\\|volumes:\\|command:\\|mem_limit\\|cpus\\|deploy:' /home/<USER>/Coding/Python/DataQ/docker-compose.yml | head -40",
   "description": "Inspect docker-compose service definitions"
 }
 ```
@@ -477,7 +477,7 @@ tool_use Bash
 id: toolu_017NXuj3chFryjoC6rEmY56Y
 ```json
 {
-  "command": "grep -rn \"dev.bypass\\|DEV_BYPASS\\|AUTH_DISABLED\\|dev_bypass\" /Users/arijit/Coding/Python/DataQ/backend/app/core/config.py /Users/arijit/Coding/Python/DataQ/backend/app/api/deps.py 2>/dev/null | head; echo ---; grep -oE '^[A-Z_0-9]+' /Users/arijit/Coding/Python/DataQ/.env.app 2>/dev/null | head -30",
+  "command": "grep -rn \"dev.bypass\\|DEV_BYPASS\\|AUTH_DISABLED\\|dev_bypass\" /home/<USER>/Coding/Python/DataQ/backend/app/core/config.py /home/<USER>/Coding/Python/DataQ/backend/app/api/deps.py 2>/dev/null | head; echo ---; grep -oE '^[A-Z_0-9]+' /home/<USER>/Coding/Python/DataQ/.env.app 2>/dev/null | head -30",
   "description": "Find local dev auth bypass mechanism and .env.app var names"
 }
 ```
@@ -487,7 +487,7 @@ id: toolu_017NXuj3chFryjoC6rEmY56Y
 tool_result
 id: toolu_017NXuj3chFryjoC6rEmY56Y
 ```
-/Users/arijit/Coding/Python/DataQ/backend/app/core/config.py:67:    auth_dev_bypass: bool = False
+/home/<USER>/Coding/Python/DataQ/backend/app/core/config.py:67:    auth_dev_bypass: bool = False
 ---
 ENVIRONMENT
 LOG_LEVEL
@@ -534,7 +534,7 @@ tool_result ERROR
 id: toolu_01UTQABC1sQe9crkJwKhzNra
 ```
 Exit code 127
-(eval):1: no such file or directory: /Users/arijit/miniconda3/envs/dataq/bin/python
+(eval):1: no such file or directory: /home/<USER>/miniconda3/envs/dataq/bin/python
 ```
 
 > TOOL
@@ -543,7 +543,7 @@ tool_result ERROR
 id: toolu_01UWWz1BTBqPiKq6QhVs43Hj
 ```
 Exit code 127
-(eval):1: no such file or directory: /Users/arijit/miniconda3/envs/dataq/bin/python
+(eval):1: no such file or directory: /home/<USER>/miniconda3/envs/dataq/bin/python
 ```
 
 > TOOL
@@ -625,7 +625,7 @@ tool_use Read
 id: toolu_01Qxj4tLos6h3UfBrrv9RMzp
 ```json
 {
-  "file_path": "/Users/arijit/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_live_connections_and_demo.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-arijit-Coding-Python-DataQ/memory/project_live_connections_and_demo.md"
 }
 ```
 
@@ -674,7 +674,7 @@ id: toolu_01S2XZyasj8W1xM5bcL3adHf
 tool_result
 id: toolu_01S2XZyasj8W1xM5bcL3adHf
 ```
-Azure subscription 1	royarijit04@outlook.com
+Azure subscription 1	<REDACTED_EMAIL>
 dataqharness3erlgd
 ```
 
@@ -696,7 +696,7 @@ tool_use Bash
 id: toolu_01WpktcdNfMu66uZ1eU6FL2B
 ```json
 {
-  "command": "grep -E '^(SECRET_STORE|AUTH_DEV_BYPASS|ENVIRONMENT)=' /Users/arijit/Coding/Python/DataQ/.env.app; sed -n '30,50p' /Users/arijit/Coding/Python/DataQ/backend/app/datasources/flatfile.py",
+  "command": "grep -E '^(SECRET_STORE|AUTH_DEV_BYPASS|ENVIRONMENT)=' /home/<USER>/Coding/Python/DataQ/.env.app; sed -n '30,50p' /home/<USER>/Coding/Python/DataQ/backend/app/datasources/flatfile.py",
   "description": "Check local secret store mode and flatfile timeout config"
 }
 ```
@@ -778,7 +778,7 @@ tool_use Bash
 id: toolu_01GC6Hx9hv1bXfE3YnWB6cVq
 ```json
 {
-  "command": "sed -n '1,120p' /Users/arijit/Coding/Python/DataQ/backend/app/datasources/iceberg.py",
+  "command": "sed -n '1,120p' /home/<USER>/Coding/Python/DataQ/backend/app/datasources/iceberg.py",
   "description": "Read iceberg adapter config fields"
 }
 ```
@@ -997,12 +997,12 @@ resource "azurerm_container_app_job" "iceberg_writer" {
 
   replica_timeout_in_seconds = 1800
   replica_retry_limit        = 1
-/Users/arijit/Coding/Python/DataQ-harness/terraform/iceberg.tf:40:  # pyiceberg SqlCatalog `uri` — same shape as airflow_pg_conn (postgres.tf admin
-/Users/arijit/Coding/Python/DataQ-harness/terraform/iceberg.tf:42:  iceberg_catalog_uri = join("", [
-/Users/arijit/Coding/Python/DataQ-harness/terraform/iceberg.tf:79:    name  = "iceberg-catalog-uri"
-/Users/arijit/Coding/Python/DataQ-harness/terraform/iceberg.tf:80:    value = local.iceberg_catalog_uri
-/Users/arijit/Coding/Python/DataQ-harness/terraform/iceberg.tf:100:        secret_name = "iceberg-catalog-uri"
-/Users/arijit/Coding/Python/DataQ-harness/terraform/outputs.tf:99:# Non-secret coordinates for DataQ's `iceberg` connection. The catalog URI + the
+/home/<USER>/Coding/Python/DataQ-harness/terraform/iceberg.tf:40:  # pyiceberg SqlCatalog `uri` — same shape as airflow_pg_conn (postgres.tf admin
+/home/<USER>/Coding/Python/DataQ-harness/terraform/iceberg.tf:42:  iceberg_catalog_uri = join("", [
+/home/<USER>/Coding/Python/DataQ-harness/terraform/iceberg.tf:79:    name  = "iceberg-catalog-uri"
+/home/<USER>/Coding/Python/DataQ-harness/terraform/iceberg.tf:80:    value = local.iceberg_catalog_uri
+/home/<USER>/Coding/Python/DataQ-harness/terraform/iceberg.tf:100:        secret_name = "iceberg-catalog-uri"
+/home/<USER>/Coding/Python/DataQ-harness/terraform/outputs.tf:99:# Non-secret coordinates for DataQ's `iceberg` connection. The catalog URI + the
 ```
 
 > TOOL
@@ -1184,7 +1184,7 @@ id: toolu_01ELH1n5KSMvLc36vnWLbkNy
  "name": "harness-iceberg",
  "type": "iceberg",
  "config": {
-  "warehouse": "abfss://iceberg@dataqharness3erlgd.dfs.core.windows.net/warehouse",
+  "warehouse": "abfss://<REDACTED_EMAIL>/warehouse",
   "properties": {
    "adls.account-name": "dataqharness3erlgd"
   },
@@ -1214,7 +1214,7 @@ tool_use Bash
 id: toolu_01Bjnt6BUFrZXgZi8QDjES5Q
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/frontend/e2e-live/ 2>/dev/null; find /Users/arijit/Coding/Python/DataQ -name 'e2e_smoke.py' -not -path '*/node_modules/*' 2>/dev/null",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/frontend/e2e-live/ 2>/dev/null; find /home/<USER>/Coding/Python/DataQ -name 'e2e_smoke.py' -not -path '*/node_modules/*' 2>/dev/null",
   "description": "Locate e2e_smoke.py suite-authoring script"
 }
 ```
@@ -1225,7 +1225,7 @@ tool_result
 id: toolu_0127SC3qcMbwSJbV1ZvXy7wC
 ```
 If you want to use the old authentication method and allow querying for the right account key, please use the "--auth-mode" parameter and "key" value.
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -1236,7 +1236,7 @@ id: toolu_01Bjnt6BUFrZXgZi8QDjES5Q
 global-setup.ts
 live-test.ts
 smoke.spec.ts
-/Users/arijit/Coding/Python/DataQ/backend/scripts/e2e_smoke.py
+/home/<USER>/Coding/Python/DataQ/backend/scripts/e2e_smoke.py
 ```
 
 > TOOL
@@ -1257,7 +1257,7 @@ tool_use Read
 id: toolu_01SKrojoN5q5raCbieW7dTrx
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/scripts/e2e_smoke.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/scripts/e2e_smoke.py",
   "limit": 120
 }
 ```
@@ -1357,7 +1357,7 @@ tool_use Bash
 id: toolu_01BsZf1SNmeeqn5hB9PxDvKQ
 ```json
 {
-  "command": "grep -rn \"monitor:\" /Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py | head -5; grep -rn \"def to_check_spec\\|column\\|kwargs\" /Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py | head -15; grep -rn \"monitor:freshness\\|monitor:volume\" /Users/arijit/Coding/Python/DataQ/backend/tests -l | head -3",
+  "command": "grep -rn \"monitor:\" /home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py | head -5; grep -rn \"def to_check_spec\\|column\\|kwargs\" /home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py | head -15; grep -rn \"monitor:freshness\\|monitor:volume\" /home/<USER>/Coding/Python/DataQ/backend/tests -l | head -3",
   "description": "Find check config shape and monitor check format"
 }
 ```
@@ -1367,19 +1367,19 @@ id: toolu_01BsZf1SNmeeqn5hB9PxDvKQ
 tool_result
 id: toolu_01BsZf1SNmeeqn5hB9PxDvKQ
 ```
-/Users/arijit/Coding/Python/DataQ/backend/app/services/check_service.py:132:       ``monitor:<kind>``. The run path keys off `kind`, so a mismatched/junk type
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:11:per check, shaped to map cleanly onto the `results` table columns. Adapters
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:29:    ``expect_column_values_to_not_be_null``); `kwargs` are its parameters
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:30:    (e.g. ``{"column": "id"}``). Adapters own the translation to the concrete
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:35:    kwargs: dict[str, Any]
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:43:    matching JSONB columns. `sample_failures` may contain real data rows, so it
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:48:    exception while computing it — e.g. it references a missing column), as
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:74:    (e.g. ``{"column": "loaded_at"}`` / ``{"min_rows": 1000, "max_rows": 5000}``).
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:102:        index_columns: list[str] | None = None,
-/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py:114:    evaluated (bad column, type mismatch) yields an ``errored`` outcome rather than
-/Users/arijit/Coding/Python/DataQ/backend/tests/datasources/test_monitors.py
-/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py
-/Users/arijit/Coding/Python/DataQ/backend/tests/fixtures/expectation_catalog.json
+/home/<USER>/Coding/Python/DataQ/backend/app/services/check_service.py:132:       ``monitor:<kind>``. The run path keys off `kind`, so a mismatched/junk type
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:11:per check, shaped to map cleanly onto the `results` table columns. Adapters
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:29:    ``expect_column_values_to_not_be_null``); `kwargs` are its parameters
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:30:    (e.g. ``{"column": "id"}``). Adapters own the translation to the concrete
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:35:    kwargs: dict[str, Any]
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:43:    matching JSONB columns. `sample_failures` may contain real data rows, so it
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:48:    exception while computing it — e.g. it references a missing column), as
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:74:    (e.g. ``{"column": "loaded_at"}`` / ``{"min_rows": 1000, "max_rows": 5000}``).
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:102:        index_columns: list[str] | None = None,
+/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py:114:    evaluated (bad column, type mismatch) yields an ``errored`` outcome rather than
+/home/<USER>/Coding/Python/DataQ/backend/tests/datasources/test_monitors.py
+/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py
+/home/<USER>/Coding/Python/DataQ/backend/tests/fixtures/expectation_catalog.json
 ```
 
 > TOOL
@@ -1388,7 +1388,7 @@ tool_use Bash
 id: toolu_01LvZ4dpH1c83Ec7VWMjLy56
 ```json
 {
-  "command": "grep -n -B2 -A8 'monitor:freshness\\|monitor:volume' /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py | head -40",
+  "command": "grep -n -B2 -A8 'monitor:freshness\\|monitor:volume' /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py | head -40",
   "description": "See monitor check creation payload example in tests"
 }
 ```
@@ -1445,7 +1445,7 @@ tool_use Bash
 id: toolu_01GbqiBrjwwdbFD2CPe3Hh6q
 ```json
 {
-  "command": "grep -n 'class AdlsConfig' -A 20 /Users/arijit/Coding/Python/DataQ/backend/app/datasources/adls.py | grep -E 'str|int|class' ; echo ---; grep -n 'class SnowflakeConfig' -A 25 /Users/arijit/Coding/Python/DataQ/backend/app/datasources/snowflake.py | grep -E ':.*str|class'; echo ---; grep -n 'class UnityCatalogConfig' -A 20 /Users/arijit/Coding/Python/DataQ/backend/app/datasources/unity_catalog.py | grep -E ':.*str|class'",
+  "command": "grep -n 'class AdlsConfig' -A 20 /home/<USER>/Coding/Python/DataQ/backend/app/datasources/adls.py | grep -E 'str|int|class' ; echo ---; grep -n 'class SnowflakeConfig' -A 25 /home/<USER>/Coding/Python/DataQ/backend/app/datasources/snowflake.py | grep -E ':.*str|class'; echo ---; grep -n 'class UnityCatalogConfig' -A 20 /home/<USER>/Coding/Python/DataQ/backend/app/datasources/unity_catalog.py | grep -E ':.*str|class'",
   "description": "Get connection config field names per datasource type"
 }
 ```
@@ -1852,7 +1852,7 @@ tool_use Bash
 id: toolu_01Rq37akVV9xyhDbphTcCiHj
 ```json
 {
-  "command": "grep -n -B3 -A12 'def validate.*volume\\|min_rows' /Users/arijit/Coding/Python/DataQ/backend/app/datasources/monitors.py | head -40",
+  "command": "grep -n -B3 -A12 'def validate.*volume\\|min_rows' /home/<USER>/Coding/Python/DataQ/backend/app/datasources/monitors.py | head -40",
   "description": "Check volume monitor config validation intent"
 }
 ```
@@ -2037,7 +2037,7 @@ id: toolu_01Q24HTVrj7dzCHTiTzu3w8H
 ```
 https://aka.ms/cli_ref
 Read more about the command in reference docs
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -2064,7 +2064,7 @@ import numpy as np
 import pyarrow as pa
 from pyiceberg.catalog import load_catalog
 from pyiceberg.exceptions import NamespaceAlreadyExistsError, NoSuchTableError
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -2090,7 +2090,7 @@ import sys
 import numpy as np
 import pyarrow as pa
 from pyiceberg.catalog import load_catalog
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2143,7 +2143,7 @@ written
                ~~~~~~~~~~~~~~^^^^^^^^
 json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
 To check existing issues, please visit: https://github.com/Azure/azure-cli/issues
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -2170,7 +2170,7 @@ written
                ~~~~~~~~~~~~~~^^^^^^^^
 json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
 To check existing issues, please visit: https://github.com/Azure/azure-cli/issues
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -2422,7 +2422,7 @@ id: toolu_01JavM5HVu23iMBe5bzKjjct
 ```
 ok
 iceberg-writer-1cn73g7
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -2541,7 +2541,7 @@ tool_use Bash
 id: toolu_0162YnsSqXaYxh6RezGL8d3d
 ```json
 {
-  "command": "/opt/homebrew/Caskroom/miniconda/base/envs/dataq/bin/python -c \"\nimport subprocess\n# kill the driver background process politely: find perf_run_snowflake\nout = subprocess.run(['pgrep', '-f', 'perf_run_snowflake'], capture_output=True, text=True).stdout.split()\nfor pid in out:\n    subprocess.run(['kill', pid])\nprint('killed driver pids:', out)\"; grep -n 'acks_late\\|task_acks\\|prefetch' /Users/arijit/Coding/Python/DataQ/backend/app/worker/celery_app.py",
+  "command": "/opt/homebrew/Caskroom/miniconda/base/envs/dataq/bin/python -c \"\nimport subprocess\n# kill the driver background process politely: find perf_run_snowflake\nout = subprocess.run(['pgrep', '-f', 'perf_run_snowflake'], capture_output=True, text=True).stdout.split()\nfor pid in out:\n    subprocess.run(['kill', pid])\nprint('killed driver pids:', out)\"; grep -n 'acks_late\\|task_acks\\|prefetch' /home/<USER>/Coding/Python/DataQ/backend/app/worker/celery_app.py",
   "description": "Kill snowflake driver and check celery acks config"
 }
 ```
@@ -2560,7 +2560,7 @@ tool_use Bash
 id: toolu_012e5Dud9M2v1Cz41qcjYaDS
 ```json
 {
-  "command": "grep -n 'acks_late\\|prefetch\\|concurrency' /Users/arijit/Coding/Python/DataQ/backend/app/worker/celery_app.py; docker logs dataq-worker-1 2>&1 | grep -i 'concurrency\\|celery@' | tail -4; docker logs dataq-worker-1 2>&1 | grep -c 'Starting'; docker exec dataq-redis-1 redis-cli llen celery",
+  "command": "grep -n 'acks_late\\|prefetch\\|concurrency' /home/<USER>/Coding/Python/DataQ/backend/app/worker/celery_app.py; docker logs dataq-worker-1 2>&1 | grep -i 'concurrency\\|celery@' | tail -4; docker logs dataq-worker-1 2>&1 | grep -c 'Starting'; docker exec dataq-redis-1 redis-cli llen celery",
   "description": "Check concurrency banner, restart cadence, queue depth"
 }
 ```
@@ -2837,7 +2837,7 @@ WARNING: The behavior of this command has been altered by the following extensio
   },
   {
     "name": "ICEBERG_WAREHOUSE",
-    "value": "abfss://iceberg@dataqharness3erlgd.dfs.core.windows.net/warehouse"
+    "value": "abfss://<REDACTED_EMAIL>/warehouse"
   },
   {
     "name": "AZURE_STORAGE_ACCOUNT_NAME",
@@ -2856,7 +2856,7 @@ tool_use Bash
 id: toolu_01XqMvN5xZjm6iXUHqtxyc9b
 ```json
 {
-  "command": "cd /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad && /opt/homebrew/Caskroom/miniconda/base/envs/dataq/bin/python -c \"\nimport json\nscript = open('perf_iceberg_build.py').read()\nenv = [\n    {'name': 'ICEBERG_CATALOG_URI', 'secretRef': 'iceberg-catalog-uri'},\n    {'name': 'ICEBERG_WAREHOUSE', 'value': 'abfss://iceberg@dataqharness3erlgd.dfs.core.windows.net/warehouse'},\n    {'name': 'AZURE_STORAGE_ACCOUNT_NAME', 'value': 'dataqharness3erlgd'},\n    {'name': 'AZURE_STORAGE_ACCOUNT_KEY', 'secretRef': 'storage-account-key'},\n    {'name': 'PERF_TARGET_ROWS', 'value': '1000000'},\n]\njson.dump({'containers': [{'image': 'dataqacr3erlgd.azurecr.io/mockdata:latest', 'name': 'iceberg-writer', 'command': ['python', '-c', script], 'env': env, 'resources': {'cpu': 1.0, 'memory': '2Gi'}}]}, open('iceberg_start_body.json', 'w'))\nprint('ok')\" && ARM=\"https://management.azure.com/subscriptions/37e710fd-b956-4a2e-94f2-b132bb26b3d6/resourceGroups/dataq-rg/providers\" && az rest --method POST --url \"$ARM/Microsoft.App/jobs/iceberg-writer/start?api-version=2024-08-02-preview\" --body @iceberg_start_body.json --query name -o tsv 2>&1 | tail -1",
+  "command": "cd /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad && /opt/homebrew/Caskroom/miniconda/base/envs/dataq/bin/python -c \"\nimport json\nscript = open('perf_iceberg_build.py').read()\nenv = [\n    {'name': 'ICEBERG_CATALOG_URI', 'secretRef': 'iceberg-catalog-uri'},\n    {'name': 'ICEBERG_WAREHOUSE', 'value': 'abfss://<REDACTED_EMAIL>/warehouse'},\n    {'name': 'AZURE_STORAGE_ACCOUNT_NAME', 'value': 'dataqharness3erlgd'},\n    {'name': 'AZURE_STORAGE_ACCOUNT_KEY', 'secretRef': 'storage-account-key'},\n    {'name': 'PERF_TARGET_ROWS', 'value': '1000000'},\n]\njson.dump({'containers': [{'image': 'dataqacr3erlgd.azurecr.io/mockdata:latest', 'name': 'iceberg-writer', 'command': ['python', '-c', script], 'env': env, 'resources': {'cpu': 1.0, 'memory': '2Gi'}}]}, open('iceberg_start_body.json', 'w'))\nprint('ok')\" && ARM=\"https://management.azure.com/subscriptions/37e710fd-b956-4a2e-94f2-b132bb26b3d6/resourceGroups/dataq-rg/providers\" && az rest --method POST --url \"$ARM/Microsoft.App/jobs/iceberg-writer/start?api-version=2024-08-02-preview\" --body @iceberg_start_body.json --query name -o tsv 2>&1 | tail -1",
   "description": "Restart iceberg build job with env included (1M target)",
   "timeout": 120000
 }
@@ -2869,7 +2869,7 @@ id: toolu_01XqMvN5xZjm6iXUHqtxyc9b
 ```
 ok
 iceberg-writer-2uwcxhg
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -3290,7 +3290,7 @@ tool_result
 id: toolu_01GwSXkApjcbijQPfRyyjoB3
 ```
 bodies staged
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -3545,7 +3545,7 @@ tool_use Bash
 id: toolu_01Vvs4rxKMgSMoAH8TbdzdJQ
 ```json
 {
-  "command": "/opt/homebrew/Caskroom/miniconda/base/envs/dataq/bin/python -c \"\nimport httpx\nc = httpx.Client(base_url='http://localhost:8000/api/v1', timeout=30)\nruns = c.get('/runs', params={'limit': 5}).json()\nitems = runs if isinstance(runs, list) else runs.get('items', [])\nfor r in items[:5]:\n    print(r.get('status'), r.get('suite_name') or r.get('suite_id'), r.get('started_at'), r.get('failure_reason'))\"; grep -n 'STUCK\\|stuck' /Users/arijit/Coding/Python/DataQ/backend/app/worker/tasks.py | head -5",
+  "command": "/opt/homebrew/Caskroom/miniconda/base/envs/dataq/bin/python -c \"\nimport httpx\nc = httpx.Client(base_url='http://localhost:8000/api/v1', timeout=30)\nruns = c.get('/runs', params={'limit': 5}).json()\nitems = runs if isinstance(runs, list) else runs.get('items', [])\nfor r in items[:5]:\n    print(r.get('status'), r.get('suite_name') or r.get('suite_id'), r.get('started_at'), r.get('failure_reason'))\"; grep -n 'STUCK\\|stuck' /home/<USER>/Coding/Python/DataQ/backend/app/worker/tasks.py | head -5",
   "description": "Check OOM'd run status and reaper threshold"
 }
 ```
@@ -3573,7 +3573,7 @@ tool_use Bash
 id: toolu_01CBYKLWTzWFBLjX7HXkX3Sz
 ```json
 {
-  "command": "sed -n '526,560p' /Users/arijit/Coding/Python/DataQ/backend/app/worker/tasks.py",
+  "command": "sed -n '526,560p' /home/<USER>/Coding/Python/DataQ/backend/app/worker/tasks.py",
   "description": "Read stuck-run reaper threshold"
 }
 ```
@@ -3609,7 +3609,7 @@ tool_use Bash
 id: toolu_01TmozZcXu4su9mF6e93Dxcc
 ```json
 {
-  "command": "grep -n 'stuck_run_threshold_minutes' /Users/arijit/Coding/Python/DataQ/backend/app/core/config.py",
+  "command": "grep -n 'stuck_run_threshold_minutes' /home/<USER>/Coding/Python/DataQ/backend/app/core/config.py",
   "description": "Get stuck-run threshold default"
 }
 ```
@@ -4324,7 +4324,7 @@ tool_use Bash
 id: toolu_01SLFFY4LDnqoDVWm5yu9C9i
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/docs/ | head -30; ls /Users/arijit/Coding/Python/DataQ/ | grep -iE 'mkdocs|docusaurus|jekyll|_config'; gh api repos/TheurgicDuke771/DataQ/pages 2>&1 | head -5",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/docs/ | head -30; ls /home/<USER>/Coding/Python/DataQ/ | grep -iE 'mkdocs|docusaurus|jekyll|_config'; gh api repos/TheurgicDuke771/DataQ/pages 2>&1 | head -5",
   "description": "Check docs structure and GitHub Pages config"
 }
 ```
@@ -4374,7 +4374,7 @@ tool_use Bash
 id: toolu_01Gr5CQZ5H6ejvRd7Evdyp8M
 ```json
 {
-  "command": "grep -n 'perf-baseline\\|nav:' /Users/arijit/Coding/Python/DataQ/mkdocs.yml | head; grep -n -A3 'Perf\\|perf' /Users/arijit/Coding/Python/DataQ/mkdocs.yml | head -12",
+  "command": "grep -n 'perf-baseline\\|nav:' /home/<USER>/Coding/Python/DataQ/mkdocs.yml | head; grep -n -A3 'Perf\\|perf' /home/<USER>/Coding/Python/DataQ/mkdocs.yml | head -12",
   "description": "Check mkdocs nav for perf baseline entry"
 }
 ```
@@ -4406,7 +4406,7 @@ tool_use Bash
 id: toolu_013KPNCQAnZEm45ahWKpW2hQ
 ```json
 {
-  "command": "sed -n 57,100p /Users/arijit/Coding/Python/DataQ/mkdocs.yml",
+  "command": "sed -n 57,100p /home/<USER>/Coding/Python/DataQ/mkdocs.yml",
   "description": "Read mkdocs nav structure"
 }
 ```
@@ -5449,7 +5449,7 @@ tool_use Write
 id: toolu_01Tu6htdW81L3yggrvBV7KoF
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/perf-baseline.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/perf-baseline.md",
   "content": "# Performance baseline — all datasources\n\n> Captured **2026-07-10** (v1.1 W3), while both the Snowflake trial and the Azure\n> subscription were still live. This supersedes the Snowflake-only W1 baseline\n> (#587, kept below as the historical appendix) and is the **reference datum for\n> [#595](https://github.com/TheurgicDuke771/DataQ/issues/595) — scale-aware\n> execution (G-b)**: it measures, per datasource, where DataQ's run path stops\n> scaling and *how it fails* when it does.\n\n## TL;DR\n\n| Datasource | Execution model | Verified scale | Ceiling on a 2 Gi worker | Failure mode past ceiling |\n|---|---|---|---|---|\n| **Snowflake** | SQL pushdown | **200M rows** (50M / 100M / 200M all green) | none found — worker memory flat | n/a |\n| **Flat file CSV** (ADLS) | full load into worker pandas | 2M rows (~121 MB CSV) | **2M → 5M** | prefork child SIGKILL |\n| **Flat file Parquet** (ADLS) | full load into worker pandas | 5M rows (~131 MB parquet) | **5M → 10M** | 5M+: child SIGKILL; 10M killed the whole container |\n| **Unity Catalog** | full load via SQL-warehouse `read_sql_table` | 1M rows | **1M → 2M** | child SIGKILL |\n| **Apache Iceberg** (native, ADR 0030) | full snapshot via […]
 
 > TOOL
@@ -5466,7 +5466,7 @@ tool_use Bash
 id: toolu_01AWYR7x9fKVnwi4u6yVeogw
 ```json
 {
-  "command": "wc -l /Users/arijit/Coding/Python/DataQ/docs/perf-baseline.md",
+  "command": "wc -l /home/<USER>/Coding/Python/DataQ/docs/perf-baseline.md",
   "description": "Confirm renamed file exists"
 }
 ```
@@ -5476,7 +5476,7 @@ id: toolu_01AWYR7x9fKVnwi4u6yVeogw
 tool_result
 id: toolu_01AWYR7x9fKVnwi4u6yVeogw
 ```
-      78 /Users/arijit/Coding/Python/DataQ/docs/perf-baseline.md
+      78 /home/<USER>/Coding/Python/DataQ/docs/perf-baseline.md
 ```
 
 > TOOL
@@ -5485,7 +5485,7 @@ tool_use Read
 id: toolu_019LZFeC8uwPwuWQaVw8NG3i
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/perf-baseline.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/perf-baseline.md",
   "limit": 5
 }
 ```
@@ -5508,7 +5508,7 @@ tool_use Write
 id: toolu_013VGywcrNMnRju9Csy1VSaE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/perf-baseline.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/perf-baseline.md",
   "content": "# Performance baseline — all datasources\n\n> Captured **2026-07-10** (v1.1 W3), while both the Snowflake trial and the Azure\n> subscription were still live. This supersedes the Snowflake-only W1 baseline\n> (#587, kept below as the historical appendix) and is the **reference datum for\n> [#595](https://github.com/TheurgicDuke771/DataQ/issues/595) — scale-aware\n> execution (G-b)**: it measures, per datasource, where DataQ's run path stops\n> scaling and *how it fails* when it does.\n\n## TL;DR\n\n| Datasource | Execution model | Verified scale | Ceiling on a 2 Gi worker | Failure mode past ceiling |\n|---|---|---|---|---|\n| **Snowflake** | SQL pushdown | **200M rows** (50M / 100M / 200M all green) | none found — worker memory flat | n/a |\n| **Flat file CSV** (ADLS) | full load into worker pandas | 2M rows (~121 MB CSV) | **2M → 5M** | prefork child SIGKILL |\n| **Flat file Parquet** (ADLS) | full load into worker pandas | 5M rows (~131 MB parquet) | **5M → 10M** | 5M+: child SIGKILL; 10M killed the whole container |\n| **Unity Catalog** | full load via SQL-warehouse `read_sql_table` | 1M rows | **1M → 2M** | child SIGKILL |\n| **Apache Iceberg** (native, ADR 0030) | full snapshot via […]
 
 > TOOL
@@ -5516,7 +5516,7 @@ id: toolu_013VGywcrNMnRju9Csy1VSaE
 tool_result
 id: toolu_013VGywcrNMnRju9Csy1VSaE
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/perf-baseline.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/perf-baseline.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5529,7 +5529,7 @@ tool_use Read
 id: toolu_018S4DC11WyYokq2J2E2StH2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/mkdocs.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/mkdocs.yml",
   "offset": 72,
   "limit": 25
 }
@@ -5574,7 +5574,7 @@ id: toolu_01Rb7YiUjX3dPUWVSaxUCovz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/mkdocs.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/mkdocs.yml",
   "old_string": "      - Observability: observability.md\n      - Troubleshooting: troubleshooting.md",
   "new_string": "      - Observability: observability.md\n      - Performance baseline: perf-baseline.md\n      - Troubleshooting: troubleshooting.md"
 }
@@ -5587,7 +5587,7 @@ id: toolu_01RSBrzZyxS7dbHZ2v9kLdd8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/mkdocs.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/mkdocs.yml",
   "old_string": "  compliance-posture.md\n  perf-baseline-snowflake.md",
   "new_string": "  compliance-posture.md"
 }
@@ -5598,7 +5598,7 @@ id: toolu_01RSBrzZyxS7dbHZ2v9kLdd8
 tool_result
 id: toolu_01Rb7YiUjX3dPUWVSaxUCovz
 ```
-The file /Users/arijit/Coding/Python/DataQ/mkdocs.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/mkdocs.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5606,7 +5606,7 @@ The file /Users/arijit/Coding/Python/DataQ/mkdocs.yml has been updated successfu
 tool_result
 id: toolu_01RSBrzZyxS7dbHZ2v9kLdd8
 ```
-The file /Users/arijit/Coding/Python/DataQ/mkdocs.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/mkdocs.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5615,7 +5615,7 @@ tool_use Bash
 id: toolu_01DLSTtkBySyuqnm1jA3fvBT
 ```json
 {
-  "command": "grep -rn 'perf-baseline-snowflake' /Users/arijit/Coding/Python/DataQ --include='*.md' --include='*.yml' -l | grep -v '.git/'",
+  "command": "grep -rn 'perf-baseline-snowflake' /home/<USER>/Coding/Python/DataQ --include='*.md' --include='*.yml' -l | grep -v '.git/'",
   "description": "Find remaining references to old doc name"
 }
 ```
@@ -5625,9 +5625,9 @@ id: toolu_01DLSTtkBySyuqnm1jA3fvBT
 tool_result
 id: toolu_01DLSTtkBySyuqnm1jA3fvBT
 ```
-/Users/arijit/Coding/Python/DataQ/CLAUDE.md
-/Users/arijit/Coding/Python/DataQ/docs/progress.md
-/Users/arijit/Coding/Python/DataQ/docs/runbook-faq.md
+/home/<USER>/Coding/Python/DataQ/CLAUDE.md
+/home/<USER>/Coding/Python/DataQ/docs/progress.md
+/home/<USER>/Coding/Python/DataQ/docs/runbook-faq.md
 ```
 
 > TOOL
@@ -5636,7 +5636,7 @@ tool_use Bash
 id: toolu_01WYz58icLywLLaf7v4SanB5
 ```json
 {
-  "command": "grep -n 'perf-baseline-snowflake' /Users/arijit/Coding/Python/DataQ/CLAUDE.md /Users/arijit/Coding/Python/DataQ/docs/progress.md /Users/arijit/Coding/Python/DataQ/docs/runbook-faq.md",
+  "command": "grep -n 'perf-baseline-snowflake' /home/<USER>/Coding/Python/DataQ/CLAUDE.md /home/<USER>/Coding/Python/DataQ/docs/progress.md /home/<USER>/Coding/Python/DataQ/docs/runbook-faq.md",
   "description": "Show old-name reference lines"
 }
 ```
@@ -5646,9 +5646,9 @@ id: toolu_01WYz58icLywLLaf7v4SanB5
 tool_result
 id: toolu_01WYz58icLywLLaf7v4SanB5
 ```
-/Users/arijit/Coding/Python/DataQ/docs/progress.md:139:| ✅ | [#587](https://github.com/TheurgicDuke771/DataQ/issues/587) Snowflake scale/volume baseline — **captured live 2026-07-04**: 1.2M-row suite run 12.2s wall / <50MB worker delta / ~0.08 credits; recorded in [perf-baseline-snowflake.md](perf-baseline-snowflake.md) — [PR #607](https://github.com/TheurgicDuke771/DataQ/pull/607) | Theme 7 / G-b |
-/Users/arijit/Coding/Python/DataQ/docs/runbook-faq.md:26:> [perf-baseline-snowflake.md](perf-baseline-snowflake.md).
-/Users/arijit/Coding/Python/DataQ/CLAUDE.md:286:**Next milestone:** **v1.1 Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** **W2 CLOSED COMPLETE 2026-07-08** (milestone closed; exit gate MET 14/14; all 5 in-week follow-ups cleared — #571 (#699) run-detail checks_total graft, #640 (#700) flaky LiveRunProgress test, #643 (#701) stale-policy event, #605 (#702) redaction-safe run failure_reason, and **#286 Iceberg spike closed via ADR 0030** — engine-level read (Snowflake/UC iceberg tables) is free/zero-code, native `pyiceberg` v2 read proven green end-to-end, self-contained `iceberg` connection (Option A); native build → #716 (W3), Iceberg-v3 revisit → #717). W2 exit gate MET (observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource): OTel logs #524/#589 · `SecretStore.delete` #372 + least-priv KV role #622 · dbt as a third `OrchestrationProvider` #609/#611 (ADR 0029) · alerting-hardening batch #386–#389/#416 · **#488** workspace-admin visibility in MCP tools + schedules ([#695](https://github.com/TheurgicDuke771/DataQ/pull/695)) · **#584** MCP NL tool-selection spot-check passed vs live `/mcp` (VS Code Copilot + W1 PAT, all 4 canonical queries correct) · **#532** dry-run preview extended […]
+/home/<USER>/Coding/Python/DataQ/docs/progress.md:139:| ✅ | [#587](https://github.com/TheurgicDuke771/DataQ/issues/587) Snowflake scale/volume baseline — **captured live 2026-07-04**: 1.2M-row suite run 12.2s wall / <50MB worker delta / ~0.08 credits; recorded in [perf-baseline-snowflake.md](perf-baseline-snowflake.md) — [PR #607](https://github.com/TheurgicDuke771/DataQ/pull/607) | Theme 7 / G-b |
+/home/<USER>/Coding/Python/DataQ/docs/runbook-faq.md:26:> [perf-baseline-snowflake.md](perf-baseline-snowflake.md).
+/home/<USER>/Coding/Python/DataQ/CLAUDE.md:286:**Next milestone:** **v1.1 Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** **W2 CLOSED COMPLETE 2026-07-08** (milestone closed; exit gate MET 14/14; all 5 in-week follow-ups cleared — #571 (#699) run-detail checks_total graft, #640 (#700) flaky LiveRunProgress test, #643 (#701) stale-policy event, #605 (#702) redaction-safe run failure_reason, and **#286 Iceberg spike closed via ADR 0030** — engine-level read (Snowflake/UC iceberg tables) is free/zero-code, native `pyiceberg` v2 read proven green end-to-end, self-contained `iceberg` connection (Option A); native build → #716 (W3), Iceberg-v3 revisit → #717). W2 exit gate MET (observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource): OTel logs #524/#589 · `SecretStore.delete` #372 + least-priv KV role #622 · dbt as a third `OrchestrationProvider` #609/#611 (ADR 0029) · alerting-hardening batch #386–#389/#416 · **#488** workspace-admin visibility in MCP tools + schedules ([#695](https://github.com/TheurgicDuke771/DataQ/pull/695)) · **#584** MCP NL tool-selection spot-check passed vs live `/mcp` (VS Code Copilot + W1 PAT, all 4 canonical queries correct) · **#532** dry-run preview extended […]
 
 > TOOL
 
@@ -5656,7 +5656,7 @@ tool_use Bash
 id: toolu_01KyDWkkUbrAKHTZ1M2qaK45
 ```json
 {
-  "command": "grep -n 'W3\\|Week 3' /Users/arijit/Coding/Python/DataQ/docs/progress.md | head -8; sed -n '20,32p' /Users/arijit/Coding/Python/DataQ/docs/runbook-faq.md",
+  "command": "grep -n 'W3\\|Week 3' /home/<USER>/Coding/Python/DataQ/docs/progress.md | head -8; sed -n '20,32p' /home/<USER>/Coding/Python/DataQ/docs/runbook-faq.md",
   "description": "Locate W3 section in progress.md and runbook context"
 }
 ```
@@ -5675,7 +5675,7 @@ id: toolu_01FBv4y6kJYe2rDA813hqPPv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/runbook-faq.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/runbook-faq.md",
   "old_string": "> retirement re-runs at actual lapse alongside the #590 wind-down. Scale numbers are in\n> [perf-baseline-snowflake.md](perf-baseline-snowflake.md).",
   "new_string": "> retirement re-runs at actual lapse alongside the #590 wind-down. Scale numbers are in\n> [perf-baseline.md](perf-baseline.md) (all-datasource baseline, 2026-07-10)."
 }
@@ -5696,7 +5696,7 @@ id: toolu_01CThqCFKU4ktfgSTh5PMa3L
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "recorded in [perf-baseline-snowflake.md](perf-baseline-snowflake.md) — [PR #607](https://github.com/TheurgicDuke771/DataQ/pull/607) | Theme 7 / G-b |",
   "new_string": "recorded in [perf-baseline.md](perf-baseline.md) (renamed from perf-baseline-snowflake.md by the 2026-07-10 all-datasource campaign) — [PR #607](https://github.com/TheurgicDuke771/DataQ/pull/607) | Theme 7 / G-b |"
 }
@@ -5717,7 +5717,7 @@ id: toolu_01Xn2avPrioWeSZrXYEVDSLa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "#587 scale baseline captured (#607, docs/perf-baseline-snowflake.md)",
   "new_string": "#587 scale baseline captured (#607, docs/perf-baseline.md — renamed from perf-baseline-snowflake.md at the 2026-07-10 all-datasource perf campaign)"
 }
@@ -5737,7 +5737,7 @@ tool_use Read
 id: toolu_01MFSTe1aYzkwGxTUEwbSVBw
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/runbook-faq.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/runbook-faq.md",
   "offset": 20,
   "limit": 12
 }
@@ -5768,7 +5768,7 @@ tool_use Read
 id: toolu_01Eo61L6qQ4seYJtKstscBG5
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 137,
   "limit": 6
 }
@@ -5792,7 +5792,7 @@ id: toolu_01Ph1jA8gD3HsqAAmGZp6MDk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/runbook-faq.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/runbook-faq.md",
   "old_string": "> [perf-baseline-snowflake.md](perf-baseline-snowflake.md).",
   "new_string": "> [perf-baseline.md](perf-baseline.md) (all-datasource baseline, 2026-07-10)."
 }
@@ -5803,7 +5803,7 @@ id: toolu_01Ph1jA8gD3HsqAAmGZp6MDk
 tool_result
 id: toolu_01Ph1jA8gD3HsqAAmGZp6MDk
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/runbook-faq.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/runbook-faq.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5813,7 +5813,7 @@ id: toolu_01Af8nymd4nuPMoRjEDoD9go
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "recorded in [perf-baseline-snowflake.md](perf-baseline-snowflake.md) — [PR #607](https://github.com/TheurgicDuke771/DataQ/pull/607) | Theme 7 / G-b |",
   "new_string": "recorded in [perf-baseline.md](perf-baseline.md) (renamed from perf-baseline-snowflake.md by the 2026-07-10 all-datasource campaign) — [PR #607](https://github.com/TheurgicDuke771/DataQ/pull/607) | Theme 7 / G-b |"
 }
@@ -5824,7 +5824,7 @@ id: toolu_01Af8nymd4nuPMoRjEDoD9go
 tool_result
 id: toolu_01Af8nymd4nuPMoRjEDoD9go
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5833,7 +5833,7 @@ tool_use Read
 id: toolu_01Gx3ZtPcKHgum7SNiUxe4VJ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 180,
   "limit": 30
 }
@@ -5865,7 +5865,7 @@ id: toolu_01BKY5SGVkGS7MVcEg6nz7Xc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ✅ | [#326](https://github.com/TheurgicDuke771/DataQ/issues/326) Refactor batch (7/7): `RunNowPanel` redundant `{open && …}` guard dropped — #720 | Theme 10 |",
   "new_string": "| ✅ | [#326](https://github.com/TheurgicDuke771/DataQ/issues/326) Refactor batch (7/7): `RunNowPanel` redundant `{open && …}` guard dropped — #720 | Theme 10 |\n| ✅ | **All-datasource perf baseline captured 2026-07-10** (unscheduled, last-cloud-window work): Snowflake pushdown green to **200M rows** (worker flat); full-load ceilings on a 2 Gi worker — CSV 2M→5M, parquet 5M→10M, UC 1M→2M, Iceberg 2M→5M (prod replica OOM). Doc renamed [perf-baseline.md](perf-baseline.md) + published to the docs site. Findings filed: [#753](https://github.com/TheurgicDuke771/DataQ/issues/753) connection-delete FK 500, [#754](https://github.com/TheurgicDuke771/DataQ/issues/754) iceberg `catalog_uri` credential leak (P1), [#755](https://github.com/TheurgicDuke771/DataQ/issues/755) OOM → silent 60-min `running` hang (W6, evidence for #595) | Theme 7 / G-b |"
 }
@@ -5876,7 +5876,7 @@ id: toolu_01BKY5SGVkGS7MVcEg6nz7Xc
 tool_result
 id: toolu_01BKY5SGVkGS7MVcEg6nz7Xc
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5885,7 +5885,7 @@ tool_use Bash
 id: toolu_01WNtAKE4oz8VcTzCLFcZMNe
 ```json
 {
-  "command": "gh issue list --repo TheurgicDuke771/DataQ --state open --limit 100 --json number -q '. | length'; gh pr list --repo TheurgicDuke771/DataQ --state open --json number -q '. | length'; sed -n '25,28p' /Users/arijit/Coding/Python/DataQ/docs/progress.md | head -c 400",
+  "command": "gh issue list --repo TheurgicDuke771/DataQ --state open --limit 100 --json number -q '. | length'; gh pr list --repo TheurgicDuke771/DataQ --state open --json number -q '. | length'; sed -n '25,28p' /home/<USER>/Coding/Python/DataQ/docs/progress.md | head -c 400",
   "description": "Get live open issue/PR counts and snapshot line"
 }
 ```
@@ -5907,7 +5907,7 @@ tool_use Bash
 id: toolu_01AXCvPRXAzkZu7DAzHvekye
 ```json
 {
-  "command": "grep -c 'Open issues' /Users/arijit/Coding/Python/DataQ/docs/progress.md; grep -o '| \\*\\*Open issues\\*\\* | \\*\\*[0-9]*\\*\\*' /Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "command": "grep -c 'Open issues' /home/<USER>/Coding/Python/DataQ/docs/progress.md; grep -o '| \\*\\*Open issues\\*\\* | \\*\\*[0-9]*\\*\\*' /home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "description": "Locate open-issues snapshot cell"
 }
 ```
@@ -5928,7 +5928,7 @@ id: toolu_013zM9hBWseb1o5KbGPpWJTp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **47** (**W3 in progress 2026-07-08** —",
   "new_string": "| **Open issues** | **69** (**W3 in progress 2026-07-10** — the all-datasource perf baseline was captured in the last cloud window ([perf-baseline.md](perf-baseline.md); Snowflake pushdown green to 200M, full-load ceilings measured; findings [#753](https://github.com/TheurgicDuke771/DataQ/issues/753)/[#754](https://github.com/TheurgicDuke771/DataQ/issues/754)/[#755](https://github.com/TheurgicDuke771/DataQ/issues/755) filed)."
 }
@@ -5939,7 +5939,7 @@ id: toolu_013zM9hBWseb1o5KbGPpWJTp
 tool_result
 id: toolu_013zM9hBWseb1o5KbGPpWJTp
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5949,7 +5949,7 @@ id: toolu_01KC9PsSpUsjhqMJusZmwCqk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W3 — Azure wind-down + local-first posture (due 2026-07-25) — 8/11",
   "new_string": "### v1.1 W3 — Azure wind-down + local-first posture (due 2026-07-25) — 9/12"
 }
@@ -5960,7 +5960,7 @@ id: toolu_01KC9PsSpUsjhqMJusZmwCqk
 tool_result
 id: toolu_01KC9PsSpUsjhqMJusZmwCqk
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5969,7 +5969,7 @@ tool_use Bash
 id: toolu_01EHRMHRAvY4hCL876Cnb2L1
 ```json
 {
-  "command": "grep -o 'filed)\\..\\{0,60\\}' /Users/arijit/Coding/Python/DataQ/docs/progress.md | head -1",
+  "command": "grep -o 'filed)\\..\\{0,60\\}' /home/<USER>/Coding/Python/DataQ/docs/progress.md | head -1",
   "description": "Check sentence seam after edit"
 }
 ```
@@ -5989,7 +5989,7 @@ id: toolu_012Vae3mpWtHwKP517y8YMyh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "filed). the Theme-10 refactor batch merged",
   "new_string": "filed). Earlier (2026-07-08): the Theme-10 refactor batch merged"
 }
@@ -6000,7 +6000,7 @@ id: toolu_012Vae3mpWtHwKP517y8YMyh
 tool_result
 id: toolu_012Vae3mpWtHwKP517y8YMyh
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6075,7 +6075,7 @@ tool_use Bash
 id: toolu_01Hs9ci8grnFBZXovdCLiarg
 ```json
 {
-  "command": "grep -n 'perf-baseline-snowflake' /Users/arijit/Coding/Python/DataQ/CLAUDE.md | head -2",
+  "command": "grep -n 'perf-baseline-snowflake' /home/<USER>/Coding/Python/DataQ/CLAUDE.md | head -2",
   "description": "Locate CLAUDE.md old-name reference"
 }
 ```
@@ -6093,7 +6093,7 @@ tool_use Read
 id: toolu_01LVg2o9dYMD8KG2b1FdLaHG
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "offset": 286,
   "limit": 1
 }
@@ -6113,7 +6113,7 @@ id: toolu_017z8SKWiUPQyZqGsFd6yAne
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "#587 scale baseline captured (#607, docs/perf-baseline-snowflake.md)",
   "new_string": "#587 scale baseline captured (#607, docs/perf-baseline.md — extended to all datasources + renamed 2026-07-10)"
 }
@@ -6124,7 +6124,7 @@ id: toolu_017z8SKWiUPQyZqGsFd6yAne
 tool_result
 id: toolu_017z8SKWiUPQyZqGsFd6yAne
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6137,7 +6137,7 @@ tool_use Bash
 id: toolu_01GqwP6ys18ZtYbXXqAZHtX3
 ```json
 {
-  "command": "git add -A && git status --short && git commit -m \"docs: all-datasource perf baseline — pushdown green to 200M, full-load ceilings measured (publish to docs site)\n\nRenames docs/perf-baseline-snowflake.md -> docs/perf-baseline.md and rewrites it\nas the 2026-07-10 five-datasource campaign datum for #595 (G-b): Snowflake\npushdown flat at 200M rows; flat-file/UC/Iceberg full-load ceilings on a 2 Gi\nworker (CSV 2M->5M, parquet 5M->10M, UC 1M->2M, Iceberg 2M->5M incl. a prod\nreplica OOM), with the #587 1.2M baseline kept as the historical appendix.\nPublished to the docs site (mkdocs nav + exclude_docs removal). Findings filed:\n#753 (connection-delete FK 500), #754 (iceberg catalog_uri credential leak),\n#755 (OOM -> silent 60-min running hang). progress.md W3 row + snapshot,\nrunbook-faq/CLAUDE.md link updates.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\" 2>&1 | tail -3",
+  "command": "git add -A && git status --short && git commit -m \"docs: all-datasource perf baseline — pushdown green to 200M, full-load ceilings measured (publish to docs site)\n\nRenames docs/perf-baseline-snowflake.md -> docs/perf-baseline.md and rewrites it\nas the 2026-07-10 five-datasource campaign datum for #595 (G-b): Snowflake\npushdown flat at 200M rows; flat-file/UC/Iceberg full-load ceilings on a 2 Gi\nworker (CSV 2M->5M, parquet 5M->10M, UC 1M->2M, Iceberg 2M->5M incl. a prod\nreplica OOM), with the #587 1.2M baseline kept as the historical appendix.\nPublished to the docs site (mkdocs nav + exclude_docs removal). Findings filed:\n#753 (connection-delete FK 500), #754 (iceberg catalog_uri credential leak),\n#755 (OOM -> silent 60-min running hang). progress.md W3 row + snapshot,\nrunbook-faq/CLAUDE.md link updates.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\" 2>&1 | tail -3",
   "description": "Commit docs changes"
 }
 ```
@@ -6255,7 +6255,7 @@ id: toolu_018sWx3uDQDXg39hrGuvikUZ
 ```json
 {
   "description": "Finder A: line-by-line scan",
-  "prompt": "You are one finder angle in a code review of a docs-only PR in /Users/arijit/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully.\n\nANGLE A — line-by-line scan. Read every hunk. For a docs PR, \"bugs\" are: factual errors or internal contradictions (a number stated one way in one table and differently elsewhere IN THE DIFF or in the surrounding file — Read docs/perf-baseline.md in full), broken intra-doc anchors, wrong issue numbers (e.g. a link text says #755 but URL says a different number), markdown that will render wrong (broken tables, unclosed emphasis), and mkdocs.yml nav/exclude mistakes (Read mkdocs.yml around the changes). Ground truth for measured numbers is /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/perf_results.jsonl — cross-check the doc's tables against it.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Only findings with a nameable concrete failure. Return [] if none. Your final message must be ONLY the JSON.",
+  "prompt": "You are one finder angle in a code review of a docs-only PR in /home/<USER>/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully.\n\nANGLE A — line-by-line scan. Read every hunk. For a docs PR, \"bugs\" are: factual errors or internal contradictions (a number stated one way in one table and differently elsewhere IN THE DIFF or in the surrounding file — Read docs/perf-baseline.md in full), broken intra-doc anchors, wrong issue numbers (e.g. a link text says #755 but URL says a different number), markdown that will render wrong (broken tables, unclosed emphasis), and mkdocs.yml nav/exclude mistakes (Read mkdocs.yml around the changes). Ground truth for measured numbers is /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/perf_results.jsonl — cross-check the doc's tables against it.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Only findings with a nameable concrete failure. Return [] if none. Your final message must be ONLY the JSON.",
   "subagent_type": "general-purpose"
 }
 ```
@@ -6280,7 +6280,7 @@ id: toolu_018icjGEK3zi4EzpPfh1Rq3e
 ```json
 {
   "description": "Finder B: removed-behavior audit",
-  "prompt": "You are one finder angle in a code review of a docs-only PR in /Users/arijit/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully.\n\nANGLE B — removed-behavior audit. The PR renames docs/perf-baseline-snowflake.md → docs/perf-baseline.md and rewrites it. For every piece of content the OLD file had (git show main:docs/perf-baseline-snowflake.md), verify it is either preserved in the new doc's appendix or deliberately dropped without breaking anything that referenced it. Grep the WHOLE repo (all tracked files: *.md, *.yml, *.py, *.ts, *.tsx, frontend + backend + docs + context + .github) for any remaining reference to 'perf-baseline-snowflake' that the PR missed — a missed reference = broken link after merge. Also check mkdocs.yml: the old file was in exclude_docs; confirm removing that line plus the rename leaves no exclude_docs entry pointing at a nonexistent file and no nav entry pointing at a missing file.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Final message = ONLY the JSON.",
+  "prompt": "You are one finder angle in a code review of a docs-only PR in /home/<USER>/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully.\n\nANGLE B — removed-behavior audit. The PR renames docs/perf-baseline-snowflake.md → docs/perf-baseline.md and rewrites it. For every piece of content the OLD file had (git show main:docs/perf-baseline-snowflake.md), verify it is either preserved in the new doc's appendix or deliberately dropped without breaking anything that referenced it. Grep the WHOLE repo (all tracked files: *.md, *.yml, *.py, *.ts, *.tsx, frontend + backend + docs + context + .github) for any remaining reference to 'perf-baseline-snowflake' that the PR missed — a missed reference = broken link after merge. Also check mkdocs.yml: the old file was in exclude_docs; confirm removing that line plus the rename leaves no exclude_docs entry pointing at a nonexistent file and no nav entry pointing at a missing file.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Final message = ONLY the JSON.",
   "subagent_type": "general-purpose"
 }
 ```
@@ -6305,7 +6305,7 @@ id: toolu_01WjM2bDRqPVbcMvv8X4FssS
 ```json
 {
   "description": "Finder C: cross-file consistency",
-  "prompt": "You are one finder angle in a code review of a docs-only PR in /Users/arijit/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully.\n\nANGLE C — cross-file tracer. Check consistency of claims ACROSS the touched files and against reality:\n1. progress.md W3 section header says \"9/12\" — count the ✅ vs total rows in that W3 table (Read docs/progress.md section '### v1.1 W3') and verify.\n2. progress.md snapshot says 69 open issues — sanity-check with `gh issue list --repo TheurgicDuke771/DataQ --state open --limit 200 --json number -q '. | length'`.\n3. The doc cites issues #753/#754/#755 — verify with `gh issue view NNN --repo TheurgicDuke771/DataQ --json title,state` that each exists and the descriptions match what the doc claims about them.\n4. The doc says \"main @ e6b63fe1\" — verify that's the actual merge-base commit (`git log --oneline main -1`).\n5. Claims about code behavior: 'flat files reject monitor kinds by design', 'stuck_run_threshold_minutes default 60', 'worker command has no --concurrency flag in prod terraform' — spot-check in backend/app/datasources/monitors.py or check_service.py, backend/app/core/config.py, deploy/terraform/azure/containerapps.tf.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Final message […]
+  "prompt": "You are one finder angle in a code review of a docs-only PR in /home/<USER>/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully.\n\nANGLE C — cross-file tracer. Check consistency of claims ACROSS the touched files and against reality:\n1. progress.md W3 section header says \"9/12\" — count the ✅ vs total rows in that W3 table (Read docs/progress.md section '### v1.1 W3') and verify.\n2. progress.md snapshot says 69 open issues — sanity-check with `gh issue list --repo TheurgicDuke771/DataQ --state open --limit 200 --json number -q '. | length'`.\n3. The doc cites issues #753/#754/#755 — verify with `gh issue view NNN --repo TheurgicDuke771/DataQ --json title,state` that each exists and the descriptions match what the doc claims about them.\n4. The doc says \"main @ e6b63fe1\" — verify that's the actual merge-base commit (`git log --oneline main -1`).\n5. Claims about code behavior: 'flat files reject monitor kinds by design', 'stuck_run_threshold_minutes default 60', 'worker command has no --concurrency flag in prod terraform' — spot-check in backend/app/datasources/monitors.py or check_service.py, backend/app/core/config.py, deploy/terraform/azure/containerapps.tf.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Final message […]
 
 > TOOL
 
@@ -6327,7 +6327,7 @@ id: toolu_01FuzQtHvqLQVFmV2vhFxpSJ
 ```json
 {
   "description": "Finder: reuse+simplification+efficiency",
-  "prompt": "You are one finder angle (covering Reuse + Simplification + Efficiency for a docs-only PR) in a code review in /Users/arijit/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully, and Read docs/perf-baseline.md in full.\n\nFor a docs PR these angles mean: content duplicated between sections that will drift (same number stated in 3 places), tables that repeat what another table already says, sections that duplicate what another doc in docs/ already covers (check docs/runbook-faq.md, docs/observability.md, docs/datasources-checks.md for overlap), and dead references (links to things that don't exist). Only flag concrete drift/maintenance costs, not style.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Final message = ONLY the JSON.",
+  "prompt": "You are one finder angle (covering Reuse + Simplification + Efficiency for a docs-only PR) in a code review in /home/<USER>/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully, and Read docs/perf-baseline.md in full.\n\nFor a docs PR these angles mean: content duplicated between sections that will drift (same number stated in 3 places), tables that repeat what another table already says, sections that duplicate what another doc in docs/ already covers (check docs/runbook-faq.md, docs/observability.md, docs/datasources-checks.md for overlap), and dead references (links to things that don't exist). Only flag concrete drift/maintenance costs, not style.\n\nReturn up to 6 candidate findings as a JSON array of {file, line, summary, failure_scenario}. Return [] if none. Final message = ONLY the JSON.",
   "subagent_type": "general-purpose"
 }
 ```
@@ -6352,7 +6352,7 @@ id: toolu_01G4zG4tMaVgaXUMBwheg8H7
 ```json
 {
   "description": "Finder: altitude+conventions",
-  "prompt": "You are one finder angle (covering Altitude + Conventions) in a code review of a docs-only PR in /Users/arijit/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully.\n\nCONVENTIONS: Read /Users/arijit/Coding/Python/DataQ/CLAUDE.md (repo root). Check the diff for clear violations of rules it states — e.g., §11 'What NOT to do' (no credentials in tracked files — scan the new doc for anything credential-like: SAS tokens, passwords, PATs, connection strings, storage keys; note that hostnames/account names/issue numbers are fine), the documentation rules (§6), and the §13 instruction that per-PR task ticks go in docs/progress.md. Also check: does the new public docs-site page (docs/perf-baseline.md will now be PUBLISHED on GitHub Pages) leak anything that should stay internal per the mkdocs.yml comment 'Internal planning docs stay in the repo but are NOT published' — the page names internal infra (prod worker sizing, KV names? check), cites security issue #754 with exploit details, etc. Judge whether publishing it publicly is consistent with how the repo treats compliance-posture.md / progress.md (excluded). Only flag a violation when you can quote the exact rule and the exact line breaking it.\n\nALTITUDE: for docs, flag content placed at […]
+  "prompt": "You are one finder angle (covering Altitude + Conventions) in a code review of a docs-only PR in /home/<USER>/Coding/Python/DataQ (branch docs/perf-baseline-all-datasources). The diff is at /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/855c6ddd-1ebc-4f55-92ad-3887696c3b53/scratchpad/pr756.diff — Read it fully.\n\nCONVENTIONS: Read /home/<USER>/Coding/Python/DataQ/CLAUDE.md (repo root). Check the diff for clear violations of rules it states — e.g., §11 'What NOT to do' (no credentials in tracked files — scan the new doc for anything credential-like: SAS tokens, passwords, PATs, connection strings, storage keys; note that hostnames/account names/issue numbers are fine), the documentation rules (§6), and the §13 instruction that per-PR task ticks go in docs/progress.md. Also check: does the new public docs-site page (docs/perf-baseline.md will now be PUBLISHED on GitHub Pages) leak anything that should stay internal per the mkdocs.yml comment 'Internal planning docs stay in the repo but are NOT published' — the page names internal infra (prod worker sizing, KV names? check), cites security issue #754 with exploit details, etc. Judge whether publishing it publicly is consistent with how the repo treats compliance-posture.md / progress.md (excluded). Only flag a violation when you can quote the exact rule and the exact line breaking it.\n\nALTITUDE: for docs, flag content placed at […]
 
 > TOOL
 

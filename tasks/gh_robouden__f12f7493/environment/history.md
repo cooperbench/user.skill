@@ -79,7 +79,7 @@ tool_result
 id: toolu_01T9SRxyiQToWW4tjY5kR8oz
 ```
 Added stdio MCP server gitnexus with command: npx gitnexus mcp to user config
-File modified: /home/rob/.claude.json
+File modified: /home/<USER>/.claude.json
 ```
 
 > TOOL
@@ -195,11 +195,11 @@ id: toolu_01Ntq6HqZ87K2g2C2Q6u8UAj
 Exit code 217
 npm error code ENOTEMPTY
 npm error syscall rename
-npm error path /home/rob/.npm-global/lib/node_modules/gitnexus
-npm error dest /home/rob/.npm-global/lib/node_modules/.gitnexus-HlBLWPm7
+npm error path /home/<USER>/.npm-global/lib/node_modules/gitnexus
+npm error dest /home/<USER>/.npm-global/lib/node_modules/.gitnexus-HlBLWPm7
 npm error errno -39
-npm error ENOTEMPTY: directory not empty, rename '/home/rob/.npm-global/lib/node_modules/gitnexus' -> '/home/rob/.npm-global/lib/node_modules/.gitnexus-HlBLWPm7'
-npm error A complete log of this run can be found in: /home/rob/.npm/_logs/2026-04-26T13_09_42_830Z-debug-0.log
+npm error ENOTEMPTY: directory not empty, rename '/home/<USER>/.npm-global/lib/node_modules/gitnexus' -> '/home/<USER>/.npm-global/lib/node_modules/.gitnexus-HlBLWPm7'
+npm error A complete log of this run can be found in: /home/<USER>/.npm/_logs/2026-04-26T13_09_42_830Z-debug-0.log
 ```
 
 > TOOL
@@ -208,7 +208,7 @@ tool_use Bash
 id: toolu_01RhhdvT84VS2wU436L8pNRk
 ```json
 {
-  "command": "rm -rf /home/rob/.npm-global/lib/node_modules/.gitnexus-* && npm install -g gitnexus 2>&1 | tail -10",
+  "command": "rm -rf /home/<USER>/.npm-global/lib/node_modules/.gitnexus-* && npm install -g gitnexus 2>&1 | tail -10",
   "description": "Clean stale temp dir and reinstall"
 }
 ```
@@ -271,7 +271,7 @@ tool_use Bash
 id: toolu_01GaREVLe2GgpWGmd6qnt15F
 ```json
 {
-  "command": "ls /home/rob/.npm-global/bin/gitnexus 2>&1; which gitnexus 2>&1; echo \"PATH: $PATH\"",
+  "command": "ls /home/<USER>/.npm-global/bin/gitnexus 2>&1; which gitnexus 2>&1; echo \"PATH: $PATH\"",
   "description": "Find gitnexus binary location"
 }
 ```
@@ -281,13 +281,13 @@ id: toolu_01GaREVLe2GgpWGmd6qnt15F
 tool_result
 id: toolu_01GaREVLe2GgpWGmd6qnt15F
 ```
-/home/rob/.npm-global/bin/gitnexus
-PATH: /usr/local/bin:/home/rob/.bun/bin:/home/rob/.ebcli-virtual-env/executables:/home/rob/.bun/bin:/home/rob/.ebcli-virtual-env/executables:/home/rob/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/rob/.lmstudio/bin:/home/rob/.lmstudio/bin:/home/rob/.lmstudio/bin
+/home/<USER>/.npm-global/bin/gitnexus
+PATH: /usr/local/bin:/home/<USER>/.bun/bin:/home/<USER>/.ebcli-virtual-env/executables:/home/<USER>/.bun/bin:/home/<USER>/.ebcli-virtual-env/executables:/home/<USER>/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/<USER>/.lmstudio/bin:/home/<USER>/.lmstudio/bin:/home/<USER>/.lmstudio/bin
 ```
 
 > AGENT
 
-Binary exists at `/home/rob/.npm-global/bin/gitnexus` but that dir isn't in PATH. Running with full path:
+Binary exists at `/home/<USER>/.npm-global/bin/gitnexus` but that dir isn't in PATH. Running with full path:
 
 > TOOL
 
@@ -295,7 +295,7 @@ tool_use Bash
 id: toolu_01LFBK5D6j7SzchMBJdFf8oQ
 ```json
 {
-  "command": "/home/rob/.npm-global/bin/gitnexus serve",
+  "command": "/home/<USER>/.npm-global/bin/gitnexus serve",
   "description": "Start gitnexus server with full path",
   "run_in_background": true
 }
@@ -371,7 +371,7 @@ id: toolu_0188Nv6KRQvxvxTnK4UGCqZq
 tool_result
 id: toolu_0188Nv6KRQvxvxTnK4UGCqZq
 ```
-145905 /bin/bash -c source /home/rob/.claude/shell-snapshots/snapshot-bash-1777208841679-ic9ud1.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'ss -ltnp 2>&1 | grep 4747; pgrep -af gitnexus' < /dev/null && pwd -P >| /tmp/claude-c2e5-cwd
+145905 /bin/bash -c source /home/<USER>/.claude/shell-snapshots/snapshot-bash-1777208841679-ic9ud1.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'ss -ltnp 2>&1 | grep 4747; pgrep -af gitnexus' < /dev/null && pwd -P >| /tmp/claude-c2e5-cwd
 ```
 
 > TOOL
@@ -404,7 +404,7 @@ tool_use Bash
 id: toolu_01Mrxv5aGAmemNCzroLfGBxQ
 ```json
 {
-  "command": "/home/rob/.npm-global/bin/gitnexus serve",
+  "command": "/home/<USER>/.npm-global/bin/gitnexus serve",
   "description": "Start gitnexus server",
   "run_in_background": true
 }
@@ -459,9 +459,9 @@ tool_result
 id: toolu_01UapbAKwzqj6BQdYgQUp18L
 ```
 Removed MCP server gitnexus from user config
-File modified: /home/rob/.claude.json
+File modified: /home/<USER>/.claude.json
 Added HTTP MCP server gitnexus with URL: http://localhost:4747/api/mcp to user config
-File modified: /home/rob/.claude.json
+File modified: /home/<USER>/.claude.json
 ```
 
 > TOOL

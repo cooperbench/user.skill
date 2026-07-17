@@ -1,1 +1,8 @@
-{"point_id": "019eaa3e-4ae2-7733-ba8f-c135641a6fd1#39", "developer": "gh:yyovil", "condition": "noprofile", "real": "what else we can strip it off of? I want to get production grade bin", "prev_agent": "After stripping a temporary copy of [yyork](/Users/tanishqpalandurkar/Projects/yyork/yyork), the binary is **41.34 MB** decimal, or **39.42 MiB**.\n\nThat saves **1.03 MB** decimal, about **2.43%**. I did not modify the repo\u2019s actual `./yyork` binary.", "gold_move": null}
+{
+  "point_id": "019eaa3e-4ae2-7733-ba8f-c135641a6fd1#39",
+  "developer": "gh:yyovil",
+  "condition": "noprofile",
+  "real": "what else we can strip it off of? I want to get production grade bin",
+  "prev_agent": "After stripping a temporary copy of [yyork](/home/<USER>/Projects/yyork/yyork), the binary is **41.34 MB** decimal, or **39.42 MiB**.\n\nThat saves **1.03 MB** decimal, about **2.43%**. I did not modify the repo’s actual `./yyork` binary.",
+  "gold_move": null
+}

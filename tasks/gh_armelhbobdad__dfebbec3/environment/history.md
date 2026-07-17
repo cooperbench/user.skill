@@ -4,7 +4,7 @@ tool_use Read
 id: toolu_01Lbf5uJt6bEduPDYnq4e4Ko
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/workflow.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/workflow.md"
 }
 ```
 
@@ -41,7 +41,7 @@ tool_use Read
 id: toolu_013YvpwfTNPhmUNLujCy6B29
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/bmm/config.yaml"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/bmm/config.yaml"
 }
 ```
 
@@ -94,7 +94,7 @@ tool_use Read
 id: toolu_015i8jQ3GKEexEhtnCXpsWsv
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/steps-c/step-01-init.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/steps-c/step-01-init.md"
 }
 ```
 
@@ -153,7 +153,7 @@ tool_use Bash
 id: toolu_011JK1RqQ2N8RZeK1FtCwgw3
 ```json
 {
-  "command": "result=$(\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\" ensure-stop-hook --settings \"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/settings.json\" --command \"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator stop-hook\" --timeout 10) && echo \"$result\"",
+  "command": "result=$(\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\" ensure-stop-hook --settings \"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/settings.json\" --command \"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator stop-hook\" --timeout 10) && echo \"$result\"",
   "description": "Verify stop hook installation for story automator"
 }
 ```
@@ -163,7 +163,7 @@ id: toolu_011JK1RqQ2N8RZeK1FtCwgw3
 tool_result
 id: toolu_011JK1RqQ2N8RZeK1FtCwgw3
 ```
-{"ok":true,"changed":false,"reason":"already_configured","provider":"claude","path":"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/settings.json","message":"Claude Stop hook verified."}
+{"ok":true,"changed":false,"reason":"already_configured","provider":"claude","path":"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/settings.json","message":"Claude Stop hook verified."}
 ```
 
 > AGENT
@@ -176,7 +176,7 @@ tool_use Read
 id: toolu_011xTs16kW87DiMUwATUp72Q
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/data/orchestrator-rules.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/data/orchestrator-rules.md"
 }
 ```
 
@@ -226,7 +226,7 @@ tool_use Bash
 id: toolu_01HE4YNzjp2vrPPBajZSPs96
 ```json
 {
-  "command": "state_list=$(\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\" orchestrator-helper state-list \"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator\") && echo \"$state_list\"",
+  "command": "state_list=$(\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\" orchestrator-helper state-list \"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator\") && echo \"$state_list\"",
   "description": "Check for existing orchestration state files"
 }
 ```
@@ -236,7 +236,7 @@ id: toolu_01HE4YNzjp2vrPPBajZSPs96
 tool_result
 id: toolu_01HE4YNzjp2vrPPBajZSPs96
 ```
-{"ok":true,"files":[{"path":"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator/orchestration-1-20260526-082934.md","status":"COMPLETE","lastUpdated":"2026-05-26T10:56:41Z"},{"path":"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator/orchestration-2-20260526-114151.md","status":"COMPLETE","lastUpdated":"2026-05-26T15:46:01Z"},{"path":"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator/orchestration-3-20260526-163113.md","status":"COMPLETE","lastUpdated":"2026-05-26T19:45:06Z"}]}
+{"ok":true,"files":[{"path":"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator/orchestration-1-20260526-082934.md","status":"COMPLETE","lastUpdated":"2026-05-26T10:56:41Z"},{"path":"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator/orchestration-2-20260526-114151.md","status":"COMPLETE","lastUpdated":"2026-05-26T15:46:01Z"},{"path":"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator/orchestration-3-20260526-163113.md","status":"COMPLETE","lastUpdated":"2026-05-26T19:45:06Z"}]}
 ```
 
 > AGENT
@@ -249,7 +249,7 @@ tool_use Bash
 id: toolu_01UhUhBNmdE1wxau8YWbMG2E
 ```json
 {
-  "command": "has_status=$(\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\" orchestrator-helper sprint-status exists) && echo \"$has_status\"",
+  "command": "has_status=$(\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\" orchestrator-helper sprint-status exists) && echo \"$has_status\"",
   "description": "Check sprint status file exists"
 }
 ```
@@ -292,7 +292,7 @@ tool_use Bash
 id: toolu_01FZvek5YxTwnCAfSseVCR3L
 ```json
 {
-  "command": "mkdir -p \"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator\" && timestamp=$(date -u +%Y%m%d-%H%M%S) && printf \"[%s] init: stop-hook=false existing_state=\\n\" \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\" >> \"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator/init-log-${timestamp}.md\" && echo \"Init log created: init-log-${timestamp}.md\"",
+  "command": "mkdir -p \"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator\" && timestamp=$(date -u +%Y%m%d-%H%M%S) && printf \"[%s] init: stop-hook=false existing_state=\\n\" \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\" >> \"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/story-automator/init-log-${timestamp}.md\" && echo \"Init log created: init-log-${timestamp}.md\"",
   "description": "Create output folder and write init log entry"
 }
 ```
@@ -321,7 +321,7 @@ tool_use Read
 id: toolu_01RhU3zJuG3SHXqHxX3RQTN2
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/steps-c/step-02-preflight.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/steps-c/step-02-preflight.md"
 }
 ```
 
@@ -385,7 +385,7 @@ tool_use Read
 id: toolu_017kNvPNucn39UhR7fZnBBLF
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/data/preflight-requirements.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/data/preflight-requirements.md"
 }
 ```
 
@@ -446,7 +446,7 @@ tool_use Bash
 id: toolu_01USsU4qtUTARoSvM2mmqngL
 ```json
 {
-  "command": "epic_path=\"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md\" && epic_json=$(\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\" parse-epic --file \"$epic_path\") && echo \"$epic_json\"",
+  "command": "epic_path=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md\" && epic_json=$(\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\" parse-epic --file \"$epic_path\") && echo \"$epic_json\"",
   "description": "Parse epic file to extract stories"
 }
 ```
@@ -464,7 +464,7 @@ tool_use Bash
 id: toolu_01S21heiv5KP98hcgSj5U2UW
 ```json
 {
-  "command": "epic_path=\"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md\"\nscripts=\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\"\nstateHelper=\"$scripts\"\nsprint_file=\"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml\"\n\n# Get story statuses\nfor sid in 1.1 1.2 1.3 1.4 1.5 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.1 3.2 3.3 3.4 3.5 3.6 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 4.10 4.11 4.12; do\n  status_json=$(\"$stateHelper\" orchestrator-helper sprint-status get \"$sid\" 2>/dev/null)\n  st=$(echo \"$status_json\" | jq -r '.status // \"unknown\"' 2>/dev/null || echo \"unknown\")\n  printf -- \"- %s | %s\\n\" \"$sid\" \"$st\"\ndone",
+  "command": "epic_path=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md\"\nscripts=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\"\nstateHelper=\"$scripts\"\nsprint_file=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml\"\n\n# Get story statuses\nfor sid in 1.1 1.2 1.3 1.4 1.5 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.1 3.2 3.3 3.4 3.5 3.6 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 4.10 4.11 4.12; do\n  status_json=$(\"$stateHelper\" orchestrator-helper sprint-status get \"$sid\" 2>/dev/null)\n  st=$(echo \"$status_json\" | jq -r '.status // \"unknown\"' 2>/dev/null || echo \"unknown\")\n  printf -- \"- %s | %s\\n\" \"$sid\" \"$st\"\ndone",
   "description": "Get sprint status for all stories"
 }
 ```
@@ -539,7 +539,7 @@ tool_use Bash
 id: toolu_017hkWMnhAttXTBtomzVoLNq
 ```json
 {
-  "command": "scripts=\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\"\nepic_path=\"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md\"\nstory_ids_csv=\"1.1,1.2,1.3,1.4,1.5,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,3.1,3.2,3.3,3.4,3.5,3.6,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,4.10,4.11,4.12\"\nrange_json=$(\"$scripts\" parse-story-range --input \"4.1-4.12\" --total 32 --ids \"$story_ids_csv\") && echo \"$range_json\"",
+  "command": "scripts=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\"\nepic_path=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md\"\nstory_ids_csv=\"1.1,1.2,1.3,1.4,1.5,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,3.1,3.2,3.3,3.4,3.5,3.6,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,4.10,4.11,4.12\"\nrange_json=$(\"$scripts\" parse-story-range --input \"4.1-4.12\" --total 32 --ids \"$story_ids_csv\") && echo \"$range_json\"",
   "description": "Parse story range selection 4.1-4.12"
 }
 ```
@@ -558,7 +558,7 @@ tool_use Bash
 id: toolu_01UqpjYbP26JrA25f22Z79MG
 ```json
 {
-  "command": "scripts=\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\"\nstory_ids_csv=\"1.1,1.2,1.3,1.4,1.5,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,3.1,3.2,3.3,3.4,3.5,3.6,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,4.10,4.11,4.12\"\n# Try with different input formats\necho \"--- Trying 21-32 (positional range) ---\"\n\"$scripts\" parse-story-range --input \"21-32\" --total 32 --ids \"$story_ids_csv\"",
+  "command": "scripts=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\"\nstory_ids_csv=\"1.1,1.2,1.3,1.4,1.5,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,3.1,3.2,3.3,3.4,3.5,3.6,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,4.10,4.11,4.12\"\n# Try with different input formats\necho \"--- Trying 21-32 (positional range) ---\"\n\"$scripts\" parse-story-range --input \"21-32\" --total 32 --ids \"$story_ids_csv\"",
   "description": "Parse story range using positional indices"
 }
 ```
@@ -582,7 +582,7 @@ tool_use Bash
 id: toolu_01SvhTefCd8hGJXTwpQZX83w
 ```json
 {
-  "command": "scripts=\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\"\nepic_path=\"/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md\"\nrules=\"/home/armel/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/data/complexity-rules.json\"\n\ntmp_story_complexity=$(mktemp)\nfor sid in 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 4.10 4.11 4.12; do\n  echo \"$sid\"\ndone | xargs -I{} -P 4 sh -c \"\\\"$scripts\\\" parse-story --epic \\\"$epic_path\\\" --story \\\"{}\\\" --rules \\\"$rules\\\" | jq -c '{storyId:.storyId,title:.title,complexity:.complexity}'\" > \"$tmp_story_complexity\"\n\nstories_json=$(jq -s '.' \"$tmp_story_complexity\")\nrm -f \"$tmp_story_complexity\"\necho \"$stories_json\"",
+  "command": "scripts=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/scripts/story-automator\"\nepic_path=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md\"\nrules=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge/.claude/skills/bmad-story-automator/data/complexity-rules.json\"\n\ntmp_story_complexity=$(mktemp)\nfor sid in 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 4.10 4.11 4.12; do\n  echo \"$sid\"\ndone | xargs -I{} -P 4 sh -c \"\\\"$scripts\\\" parse-story --epic \\\"$epic_path\\\" --story \\\"{}\\\" --rules \\\"$rules\\\" | jq -c '{storyId:.storyId,title:.title,complexity:.complexity}'\" > \"$tmp_story_complexity\"\n\nstories_json=$(jq -s '.' \"$tmp_story_complexity\")\nrm -f \"$tmp_story_complexity\"\necho \"$stories_json\"",
   "description": "Compute complexity for all 12 Epic 4 stories in parallel",
   "timeout": 120000
 }

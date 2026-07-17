@@ -492,7 +492,7 @@ tool_result
 id: toolu_014x4jJyr1Yzf3c7w1QUqeGp
 ```
 <persisted-output>
-Output too large (65.6KB). Full output saved to: /Users/jeevanpillay/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/3d829aeb-a54b-4814-8988-0867aa386bd3/tool-results/bhredxao3.txt
+Output too large (65.6KB). Full output saved to: /home/<USER>/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/3d829aeb-a54b-4814-8988-0867aa386bd3/tool-results/bhredxao3.txt
 
 Preview (first 2KB):
 diff --git a/apps/desktop/src/renderer/src/react/app-shell.tsx b/apps/desktop/src/renderer/src/react/app-shell.tsx
@@ -1009,7 +1009,7 @@ tool_result
 id: toolu_01VgMAy79YYTLFToFwAPU7Zn
 ```
 commit cea28b424aedf202a35a7ed83c839c57e08da5df
-Author: Jeevan Pillay <169354619+jeevanpillay@users.noreply.github.com>
+Author: Jeevan Pillay <<REDACTED_EMAIL>>
 Date:   Mon May 4 20:10:40 2026 +1000
 
     chore: commit staged lightfast workspace changes

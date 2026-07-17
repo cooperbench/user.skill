@@ -39,7 +39,7 @@ tool_use Read
 id: toolu_01VgRAXdr6xN7Dncb1hHfAoD
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/delivery/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/delivery/SKILL.md"
 }
 ```
 
@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_01NaFricLDmXkvT79cMF6JUu
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-breakdown/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-breakdown/SKILL.md"
 }
 ```
 
@@ -136,7 +136,7 @@ tool_use Read
 id: toolu_019L6u17aGvNSPUoqGKR4iXC
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-build/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-build/SKILL.md"
 }
 ```
 
@@ -146,7 +146,7 @@ tool_use Read
 id: toolu_01CHFR7NSUCAVgAScLWH6Tek
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/skills/exec-pickup/SKILL.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/skills/exec-pickup/SKILL.md"
 }
 ```
 
@@ -262,7 +262,7 @@ tool_use Read
 id: toolu_01CWZPAM1dgPenmWotR1JpoP
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/delivery-shape-contract.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/delivery-shape-contract.md",
   "offset": 140,
   "limit": 135
 }
@@ -326,7 +326,7 @@ tool_use Read
 id: toolu_01TVm33kqVRCK2ZjWCkjxyTp
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/docs/delivery-shape-contract.md",
+  "file_path": "/home/<USER>/src/agent-skills-shaper/docs/delivery-shape-contract.md",
   "offset": 84,
   "limit": 50
 }
@@ -425,7 +425,7 @@ tool_use Bash
 id: toolu_01A51vvAWPdLswEehXbe3w1J
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== bin/ scripts ===\"; ls bin/\necho; echo \"=== example node files ===\"; find examples/delivery-plans -name 'N*.md' | head -5\necho; echo \"=== does check-plan-framing validate frontmatter keys? ===\"\ngrep -niE 'model_tier|frontmatter|front-matter|delegates_to|model:|review_flag|allowed|required' bin/check-plan-framing bin/walk-delivery-plan | head -40",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== bin/ scripts ===\"; ls bin/\necho; echo \"=== example node files ===\"; find examples/delivery-plans -name 'N*.md' | head -5\necho; echo \"=== does check-plan-framing validate frontmatter keys? ===\"\ngrep -niE 'model_tier|frontmatter|front-matter|delegates_to|model:|review_flag|allowed|required' bin/check-plan-framing bin/walk-delivery-plan | head -40",
   "description": "Inspect bin scripts and example nodes"
 }
 ```
@@ -478,7 +478,7 @@ tool_use Bash
 id: toolu_01K1DStUNJpKGb1PxpCPGiQn
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== check-plan-framing: lite-node + model enforcement region ===\"\nsed -n '40,75p;360,400p' bin/check-plan-framing\necho \"=== walk REQUIRED keys ===\"\nsed -n '51,62p;160,175p' bin/walk-delivery-plan",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== check-plan-framing: lite-node + model enforcement region ===\"\nsed -n '40,75p;360,400p' bin/check-plan-framing\necho \"=== walk REQUIRED keys ===\"\nsed -n '51,62p;160,175p' bin/walk-delivery-plan",
   "description": "Read lite-node and model enforcement logic"
 }
 ```

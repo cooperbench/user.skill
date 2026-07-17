@@ -22,7 +22,7 @@ id: toolu_vrtx_0186K4FmHxUaCenBR8U1atzy
 {
   "subagent_type": "Explore",
   "description": "Find semantic release UI references",
-  "prompt": "In /Users/pc/web3/ReleaseBeacon, find all user-facing references to \"semantic release\" or \"Semantic Release\" in the frontend (web/ directory) and any API response labels/display strings in Go code. I need file paths, line numbers, and the surrounding context. Be thorough - check tsx, ts, and go files for display strings. Report concisely."
+  "prompt": "In /home/<USER>/web3/ReleaseBeacon, find all user-facing references to \"semantic release\" or \"Semantic Release\" in the frontend (web/ directory) and any API response labels/display strings in Go code. I need file paths, line numbers, and the surrounding context. Be thorough - check tsx, ts, and go files for display strings. Report concisely."
 }
 ```
 
@@ -38,28 +38,28 @@ Perfect. Now let me compile the comprehensive findings:
 ### Frontend (web/ directory)
 
 **React/TSX Components:**
-- `/Users/pc/web3/ReleaseBeacon/web/components/releases/release-detail.tsx:325` — "Semantic Releases tab" comment
-- `/Users/pc/web3/ReleaseBeacon/web/components/semantic-releases/semantic-releases-list.tsx:46` — "Fetch semantic releases — scoped by project or all" comment
-- `/Users/pc/web3/ReleaseBeacon/web/components/projects/project-detail.tsx:621` — "--- Semantic Release Settings tab ---" comment
-- `/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx:48` — "Fetch recent releases and semantic releases globally (server sorts by recency)" comment
-- `/Users/pc/web3/ReleaseBeacon/web/components/ui/urgency-pill.tsx:2` — "Urgency Pill — shared badge component for semantic release urgency." comment
+- `/home/<USER>/web3/ReleaseBeacon/web/components/releases/release-detail.tsx:325` — "Semantic Releases tab" comment
+- `/home/<USER>/web3/ReleaseBeacon/web/components/semantic-releases/semantic-releases-list.tsx:46` — "Fetch semantic releases — scoped by project or all" comment
+- `/home/<USER>/web3/ReleaseBeacon/web/components/projects/project-detail.tsx:621` — "--- Semantic Release Settings tab ---" comment
+- `/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx:48` — "Fetch recent releases and semantic releases globally (server sorts by recency)" comment
+- `/home/<USER>/web3/ReleaseBeacon/web/components/ui/urgency-pill.tsx:2` — "Urgency Pill — shared badge component for semantic release urgency." comment
 
 **i18n Messages (en.json) — User-Visible Strings:**
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:27` — `"header.breadcrumb.semanticReleases": "Semantic Releases"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:119` — `"dashboard.trend.semanticReleases": "Semantic Releases"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:123` — `"dashboard.activity.semanticRelease": "Semantic release"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:191` — `"releases.semanticReleases": "Semantic Releases"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:194` — `"releases.noSemanticReleases": "No semantic releases linked"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:258` — `"projects.detail.tabAgent": "Semantic Release Settings"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:299` — `"projects.detail.semanticRelease": "Semantic Release"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:454` — `"sr.title": "Semantic Releases"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:457` — `"sr.noReleasesYet": "No semantic releases yet"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:463` — `"sr.deleteRelease": "Delete semantic release"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:464` — `"sr.deleteTitle": "Delete Semantic Release"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:465` — `"sr.deleteDescription": "This will permanently delete this semantic release and its report."`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:470` — `"sr.detail.notFound": "Semantic release not found"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:474` — `"sr.detail.deleteConfirm": "Delete this semantic release?"`
-- `/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:475` — `"sr.detail.deleteFailed": "Failed to delete semantic release."` […]
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:27` — `"header.breadcrumb.semanticReleases": "Semantic Releases"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:119` — `"dashboard.trend.semanticReleases": "Semantic Releases"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:123` — `"dashboard.activity.semanticRelease": "Semantic release"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:191` — `"releases.semanticReleases": "Semantic Releases"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:194` — `"releases.noSemanticReleases": "No semantic releases linked"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:258` — `"projects.detail.tabAgent": "Semantic Release Settings"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:299` — `"projects.detail.semanticRelease": "Semantic Release"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:454` — `"sr.title": "Semantic Releases"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:457` — `"sr.noReleasesYet": "No semantic releases yet"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:463` — `"sr.deleteRelease": "Delete semantic release"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:464` — `"sr.deleteTitle": "Delete Semantic Release"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:465` — `"sr.deleteDescription": "This will permanently delete this semantic release and its report."`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:470` — `"sr.detail.notFound": "Semantic release not found"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:474` — `"sr.detail.deleteConfirm": "Delete this semantic release?"`
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json:475` — `"sr.detail.deleteFailed": "Failed to delete semantic release."` […]
 
 > AGENT
 
@@ -71,7 +71,7 @@ tool_use Read
 id: toolu_vrtx_01JwicMF3zvGvTzkaKVnPyir
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json"
 }
 ```
 
@@ -147,7 +147,7 @@ id: toolu_vrtx_01HjpHG729bkxuaJRvx7wGPE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"header.breadcrumb.semanticReleases\": \"Semantic Releases\"",
   "new_string": "\"header.breadcrumb.semanticReleases\": \"AI Reports\""
 }
@@ -158,7 +158,7 @@ id: toolu_vrtx_01HjpHG729bkxuaJRvx7wGPE
 tool_result
 id: toolu_vrtx_01HjpHG729bkxuaJRvx7wGPE
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -168,7 +168,7 @@ id: toolu_vrtx_01Us7RAFSia1Cow3befjqwzz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"dashboard.trend.semanticReleases\": \"Semantic Releases\"",
   "new_string": "\"dashboard.trend.semanticReleases\": \"AI Reports\""
 }
@@ -179,7 +179,7 @@ id: toolu_vrtx_01Us7RAFSia1Cow3befjqwzz
 tool_result
 id: toolu_vrtx_01Us7RAFSia1Cow3befjqwzz
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -189,7 +189,7 @@ id: toolu_vrtx_01JJ1NCZgQGZL7M8hpWL6Mwv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"dashboard.activity.semanticRelease\": \"Semantic release\"",
   "new_string": "\"dashboard.activity.semanticRelease\": \"AI report\""
 }
@@ -200,7 +200,7 @@ id: toolu_vrtx_01JJ1NCZgQGZL7M8hpWL6Mwv
 tool_result
 id: toolu_vrtx_01JJ1NCZgQGZL7M8hpWL6Mwv
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -210,7 +210,7 @@ id: toolu_vrtx_013vrDf3onfqBAhKuWi8E6KA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"releases.semanticReleases\": \"Semantic Releases\"",
   "new_string": "\"releases.semanticReleases\": \"AI Reports\""
 }
@@ -221,7 +221,7 @@ id: toolu_vrtx_013vrDf3onfqBAhKuWi8E6KA
 tool_result
 id: toolu_vrtx_013vrDf3onfqBAhKuWi8E6KA
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -231,7 +231,7 @@ id: toolu_vrtx_0117MZYxoub2EkJh3AgCCX4y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"releases.noSemanticReleases\": \"No semantic releases linked\"",
   "new_string": "\"releases.noSemanticReleases\": \"No AI reports linked\""
 }
@@ -242,7 +242,7 @@ id: toolu_vrtx_0117MZYxoub2EkJh3AgCCX4y
 tool_result
 id: toolu_vrtx_0117MZYxoub2EkJh3AgCCX4y
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -252,7 +252,7 @@ id: toolu_vrtx_01QL6qkccoBGpsSpNGY9UbQg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"projects.detail.tabAgent\": \"Semantic Release Settings\"",
   "new_string": "\"projects.detail.tabAgent\": \"AI Report Settings\""
 }
@@ -263,7 +263,7 @@ id: toolu_vrtx_01QL6qkccoBGpsSpNGY9UbQg
 tool_result
 id: toolu_vrtx_01QL6qkccoBGpsSpNGY9UbQg
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -273,7 +273,7 @@ id: toolu_vrtx_015dhHhHC9BUTqLxamegfbQm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"projects.detail.semanticRelease\": \"Semantic Release\"",
   "new_string": "\"projects.detail.semanticRelease\": \"AI Report\""
 }
@@ -284,7 +284,7 @@ id: toolu_vrtx_015dhHhHC9BUTqLxamegfbQm
 tool_result
 id: toolu_vrtx_015dhHhHC9BUTqLxamegfbQm
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -294,7 +294,7 @@ id: toolu_vrtx_01VyEk3uDLaTy7v1ec45KnJT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"sr.title\": \"Semantic Releases\"",
   "new_string": "\"sr.title\": \"AI Reports\""
 }
@@ -305,7 +305,7 @@ id: toolu_vrtx_01VyEk3uDLaTy7v1ec45KnJT
 tool_result
 id: toolu_vrtx_01VyEk3uDLaTy7v1ec45KnJT
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -315,7 +315,7 @@ id: toolu_vrtx_017G2HUPAnoQYDsZtVAobdp2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"sr.noReleasesYet\": \"No semantic releases yet\"",
   "new_string": "\"sr.noReleasesYet\": \"No AI reports yet\""
 }
@@ -326,7 +326,7 @@ id: toolu_vrtx_017G2HUPAnoQYDsZtVAobdp2
 tool_result
 id: toolu_vrtx_017G2HUPAnoQYDsZtVAobdp2
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -336,7 +336,7 @@ id: toolu_vrtx_01M7aGovsiTMx5gSWxEejNFd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"sr.deleteRelease\": \"Delete semantic release\"",
   "new_string": "\"sr.deleteRelease\": \"Delete AI report\""
 }
@@ -347,7 +347,7 @@ id: toolu_vrtx_01M7aGovsiTMx5gSWxEejNFd
 tool_result
 id: toolu_vrtx_01M7aGovsiTMx5gSWxEejNFd
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -357,7 +357,7 @@ id: toolu_vrtx_01CC5sWmdwMfYtyWuoTUMxhV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"sr.deleteTitle\": \"Delete Semantic Release\"",
   "new_string": "\"sr.deleteTitle\": \"Delete AI Report\""
 }
@@ -368,7 +368,7 @@ id: toolu_vrtx_01CC5sWmdwMfYtyWuoTUMxhV
 tool_result
 id: toolu_vrtx_01CC5sWmdwMfYtyWuoTUMxhV
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -378,7 +378,7 @@ id: toolu_vrtx_01Y8mmQBhrSjtcPBg7NdvWXr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"sr.deleteDescription\": \"This will permanently delete this semantic release and its report.\"",
   "new_string": "\"sr.deleteDescription\": \"This will permanently delete this AI report.\""
 }
@@ -389,7 +389,7 @@ id: toolu_vrtx_01Y8mmQBhrSjtcPBg7NdvWXr
 tool_result
 id: toolu_vrtx_01Y8mmQBhrSjtcPBg7NdvWXr
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -399,7 +399,7 @@ id: toolu_vrtx_01W1CAax6FEWZoN8wGotNk9p
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"sr.detail.notFound\": \"Semantic release not found\"",
   "new_string": "\"sr.detail.notFound\": \"AI report not found\""
 }
@@ -410,7 +410,7 @@ id: toolu_vrtx_01W1CAax6FEWZoN8wGotNk9p
 tool_result
 id: toolu_vrtx_01W1CAax6FEWZoN8wGotNk9p
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -420,7 +420,7 @@ id: toolu_vrtx_014HbDAxZepuGwjGKdTGz3pK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"sr.detail.deleteConfirm\": \"Delete this semantic release?\"",
   "new_string": "\"sr.detail.deleteConfirm\": \"Delete this AI report?\""
 }
@@ -431,7 +431,7 @@ id: toolu_vrtx_014HbDAxZepuGwjGKdTGz3pK
 tool_result
 id: toolu_vrtx_014HbDAxZepuGwjGKdTGz3pK
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -441,7 +441,7 @@ id: toolu_vrtx_01JkvMds2DGav6rjWrKXrgk7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"sr.detail.deleteFailed\": \"Failed to delete semantic release.\"",
   "new_string": "\"sr.detail.deleteFailed\": \"Failed to delete AI report.\""
 }
@@ -452,7 +452,7 @@ id: toolu_vrtx_01JkvMds2DGav6rjWrKXrgk7
 tool_result
 id: toolu_vrtx_01JkvMds2DGav6rjWrKXrgk7
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > TOOL
@@ -462,7 +462,7 @@ id: toolu_vrtx_01PdNv2YyqFA191w6K68xSg6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json",
   "old_string": "\"subscriptionForm.semanticRelease\": \"Semantic Release\"",
   "new_string": "\"subscriptionForm.semanticRelease\": \"AI Report\""
 }
@@ -473,7 +473,7 @@ id: toolu_vrtx_01PdNv2YyqFA191w6K68xSg6
 tool_result
 id: toolu_vrtx_01PdNv2YyqFA191w6K68xSg6
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/en.json has been updated successfully.
 ```
 
 > AGENT
@@ -486,7 +486,7 @@ tool_use Read
 id: toolu_vrtx_01XJwK4cNzNP8gShnfDveHWU
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "offset": 520,
   "limit": 10
 }
@@ -521,7 +521,7 @@ id: toolu_vrtx_013zL7TNHwpktUY8RJ33QD19
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "old_string": "Title:       fmt.Sprintf(\"Semantic Release Report: %s %s\", result.projectName, result.version)",
   "new_string": "Title:       fmt.Sprintf(\"AI Report: %s %s\", result.projectName, result.version)"
 }
@@ -532,7 +532,7 @@ id: toolu_vrtx_013zL7TNHwpktUY8RJ33QD19
 tool_result
 id: toolu_vrtx_013zL7TNHwpktUY8RJ33QD19
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go has been updated successfully.
 ```
 
 > AGENT
@@ -565,7 +565,7 @@ id: toolu_vrtx_01VPmisSVHnoXNoyw4AuxueA
 ```json
 {
   "pattern": "semantic|Semantic",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "output_mode": "content"
 }
 ```
@@ -592,7 +592,7 @@ id: toolu_vrtx_01RgZxmPGaqKnh7Ay53HfhWd
 ```json
 {
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "pattern": "语义|Semantic\"",
   "-n": true
 }
@@ -633,7 +633,7 @@ id: toolu_vrtx_01RrLKU1muf7DeyDizRSCWrX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"header.breadcrumb.semanticReleases\": \"语义发布\"",
   "new_string": "\"header.breadcrumb.semanticReleases\": \"AI 报告\""
 }
@@ -653,7 +653,7 @@ tool_use Read
 id: toolu_vrtx_01CTmSmZWPud6wxKAFsQVatb
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "limit": 30,
   "offset": 25
 }
@@ -708,7 +708,7 @@ id: toolu_vrtx_01MsGYS2rDuF7eCUx2cDQMjz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"header.breadcrumb.semanticReleases\": \"语义发布\"",
   "new_string": "\"header.breadcrumb.semanticReleases\": \"AI 报告\""
 }
@@ -719,7 +719,7 @@ id: toolu_vrtx_01MsGYS2rDuF7eCUx2cDQMjz
 tool_result
 id: toolu_vrtx_01MsGYS2rDuF7eCUx2cDQMjz
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > AGENT
@@ -732,7 +732,7 @@ tool_use Read
 id: toolu_vrtx_015ERqv7FVTUdz3bbPY5L4cQ
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "limit": 5,
   "offset": 117
 }
@@ -762,7 +762,7 @@ id: toolu_vrtx_01Y9NEaSzM2LrN3ETMDSo3Ym
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"dashboard.trend.semanticReleases\": \"语义发布\"",
   "new_string": "\"dashboard.trend.semanticReleases\": \"AI 报告\""
 }
@@ -773,7 +773,7 @@ id: toolu_vrtx_01Y9NEaSzM2LrN3ETMDSo3Ym
 tool_result
 id: toolu_vrtx_01Y9NEaSzM2LrN3ETMDSo3Ym
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -783,7 +783,7 @@ id: toolu_vrtx_01SPNFrCqLWmTmtD7X6nApwn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"dashboard.activity.semanticRelease\": \"语义版本发布\"",
   "new_string": "\"dashboard.activity.semanticRelease\": \"AI 报告\""
 }
@@ -794,7 +794,7 @@ id: toolu_vrtx_01SPNFrCqLWmTmtD7X6nApwn
 tool_result
 id: toolu_vrtx_01SPNFrCqLWmTmtD7X6nApwn
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -804,7 +804,7 @@ id: toolu_vrtx_012R6w2wPwJMGiLxfXFui5tC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"releases.semanticReleases\": \"语义化发布\"",
   "new_string": "\"releases.semanticReleases\": \"AI 报告\""
 }
@@ -815,7 +815,7 @@ id: toolu_vrtx_012R6w2wPwJMGiLxfXFui5tC
 tool_result
 id: toolu_vrtx_012R6w2wPwJMGiLxfXFui5tC
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -825,7 +825,7 @@ id: toolu_vrtx_013FnMv6BXwiWitjSDMX6jj2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"releases.noSemanticReleases\": \"暂无关联的语义化发布\"",
   "new_string": "\"releases.noSemanticReleases\": \"暂无关联的 AI 报告\""
 }
@@ -836,7 +836,7 @@ id: toolu_vrtx_013FnMv6BXwiWitjSDMX6jj2
 tool_result
 id: toolu_vrtx_013FnMv6BXwiWitjSDMX6jj2
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -846,7 +846,7 @@ id: toolu_vrtx_01NDRhzGoYwpoLbjg6CuRNnc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"projects.detail.tabAgent\": \"语义发布设置\"",
   "new_string": "\"projects.detail.tabAgent\": \"AI 报告设置\""
 }
@@ -857,7 +857,7 @@ id: toolu_vrtx_01NDRhzGoYwpoLbjg6CuRNnc
 tool_result
 id: toolu_vrtx_01NDRhzGoYwpoLbjg6CuRNnc
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -867,7 +867,7 @@ id: toolu_vrtx_01186sWnJehXXamCdULvavor
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"projects.detail.semanticRelease\": \"语义发布\"",
   "new_string": "\"projects.detail.semanticRelease\": \"AI 报告\""
 }
@@ -878,7 +878,7 @@ id: toolu_vrtx_01186sWnJehXXamCdULvavor
 tool_result
 id: toolu_vrtx_01186sWnJehXXamCdULvavor
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -888,7 +888,7 @@ id: toolu_vrtx_01S54VGxPCv9zpdJVQEcV5K5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"sr.title\": \"语义发布\"",
   "new_string": "\"sr.title\": \"AI 报告\""
 }
@@ -899,7 +899,7 @@ id: toolu_vrtx_01S54VGxPCv9zpdJVQEcV5K5
 tool_result
 id: toolu_vrtx_01S54VGxPCv9zpdJVQEcV5K5
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -909,7 +909,7 @@ id: toolu_vrtx_01SPmPxjBHdyzXRFRvRhqD7t
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"sr.noReleasesYet\": \"暂无语义发布\"",
   "new_string": "\"sr.noReleasesYet\": \"暂无 AI 报告\""
 }
@@ -920,7 +920,7 @@ id: toolu_vrtx_01SPmPxjBHdyzXRFRvRhqD7t
 tool_result
 id: toolu_vrtx_01SPmPxjBHdyzXRFRvRhqD7t
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -930,7 +930,7 @@ id: toolu_vrtx_0187c9TykntPaoiBoWLPQqL7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"sr.deleteRelease\": \"删除语义发布\"",
   "new_string": "\"sr.deleteRelease\": \"删除 AI 报告\""
 }
@@ -941,7 +941,7 @@ id: toolu_vrtx_0187c9TykntPaoiBoWLPQqL7
 tool_result
 id: toolu_vrtx_0187c9TykntPaoiBoWLPQqL7
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -951,7 +951,7 @@ id: toolu_vrtx_015ByFpaCbT71wXmwgpVLQoi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"sr.deleteTitle\": \"删除语义发布\"",
   "new_string": "\"sr.deleteTitle\": \"删除 AI 报告\""
 }
@@ -962,7 +962,7 @@ id: toolu_vrtx_015ByFpaCbT71wXmwgpVLQoi
 tool_result
 id: toolu_vrtx_015ByFpaCbT71wXmwgpVLQoi
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -972,7 +972,7 @@ id: toolu_vrtx_019bebLpE7ekBsmZJWvwyaNj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"sr.deleteDescription\": \"此操作将永久删除该语义发布及其报告。\"",
   "new_string": "\"sr.deleteDescription\": \"此操作将永久删除该 AI 报告。\""
 }
@@ -983,7 +983,7 @@ id: toolu_vrtx_019bebLpE7ekBsmZJWvwyaNj
 tool_result
 id: toolu_vrtx_019bebLpE7ekBsmZJWvwyaNj
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -993,7 +993,7 @@ id: toolu_vrtx_01A35mM3yrpBuFYaXyRuaV9K
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"sr.detail.notFound\": \"未找到语义发布\"",
   "new_string": "\"sr.detail.notFound\": \"未找到 AI 报告\""
 }
@@ -1004,7 +1004,7 @@ id: toolu_vrtx_01A35mM3yrpBuFYaXyRuaV9K
 tool_result
 id: toolu_vrtx_01A35mM3yrpBuFYaXyRuaV9K
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -1014,7 +1014,7 @@ id: toolu_vrtx_01H2Dua7cvofz5tcZ2iLqa58
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"sr.detail.deleteConfirm\": \"确定删除此语义发布？\"",
   "new_string": "\"sr.detail.deleteConfirm\": \"确定删除此 AI 报告？\""
 }
@@ -1025,7 +1025,7 @@ id: toolu_vrtx_01H2Dua7cvofz5tcZ2iLqa58
 tool_result
 id: toolu_vrtx_01H2Dua7cvofz5tcZ2iLqa58
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -1035,7 +1035,7 @@ id: toolu_vrtx_013CJ6EKrxgMTo2P9Be2PCzG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"sr.detail.deleteFailed\": \"删除语义发布失败。\"",
   "new_string": "\"sr.detail.deleteFailed\": \"删除 AI 报告失败。\""
 }
@@ -1046,7 +1046,7 @@ id: toolu_vrtx_013CJ6EKrxgMTo2P9Be2PCzG
 tool_result
 id: toolu_vrtx_013CJ6EKrxgMTo2P9Be2PCzG
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > TOOL
@@ -1056,7 +1056,7 @@ id: toolu_vrtx_01KDs7NwC7TJJ6hP77eTC1Js
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json",
   "old_string": "\"subscriptionForm.semanticRelease\": \"语义发布\"",
   "new_string": "\"subscriptionForm.semanticRelease\": \"AI 报告\""
 }
@@ -1067,7 +1067,7 @@ id: toolu_vrtx_01KDs7NwC7TJJ6hP77eTC1Js
 tool_result
 id: toolu_vrtx_01KDs7NwC7TJJ6hP77eTC1Js
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/lib/i18n/messages/zh.json has been updated successfully.
 ```
 
 > AGENT

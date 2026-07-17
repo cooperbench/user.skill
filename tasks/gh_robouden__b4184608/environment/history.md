@@ -424,7 +424,7 @@ id: toolu_01AARX9CmYtTtnXB5t29g6Sn
 {
   "description": "Survey wifi + SD logging code",
   "subagent_type": "Explore",
-  "prompt": "Survey the bGeigieZen firmware codebase at /home/rob/Documents/Safecast/bGeigieZen to inventory two areas. I need a concise written report (under 400 words), no code edits.\n\n**Goal:** I'm planning a new feature: upload SD card log files to the Safecast API over WiFi. I need to know what already exists so I can plan reuse.\n\n**Area 1 — WiFi infrastructure (current code on `development` branch)**\n- Where is WiFi connect / SSID/password storage handled? List file paths and the main classes/functions.\n- Is there an HTTP client already (HTTPClient.h, WiFiClientSecure)? Any existing outbound HTTPS POST examples?\n- Is there a config web server? Note its file path.\n- How are WiFi credentials configured (e.g. in `SAFEZEN.txt`, captive portal, menu)?\n\n**Area 2 — SD card log files**\n- Find the LogAggregator / log writer. What's the on-disk path format and filename convention for log files?\n- What is one line of a log file expected to look like? (Find the format string used to write a line.)\n- Is there code that lists files on the SD card (for picking which one to upload)?\n\n**Area 3 — Settings & menu screens**\n- Where is the settings menu structured? (config_mode.cpp seems […]
+  "prompt": "Survey the bGeigieZen firmware codebase at /home/<USER>/Documents/Safecast/bGeigieZen to inventory two areas. I need a concise written report (under 400 words), no code edits.\n\n**Goal:** I'm planning a new feature: upload SD card log files to the Safecast API over WiFi. I need to know what already exists so I can plan reuse.\n\n**Area 1 — WiFi infrastructure (current code on `development` branch)**\n- Where is WiFi connect / SSID/password storage handled? List file paths and the main classes/functions.\n- Is there an HTTP client already (HTTPClient.h, WiFiClientSecure)? Any existing outbound HTTPS POST examples?\n- Is there a config web server? Note its file path.\n- How are WiFi credentials configured (e.g. in `SAFEZEN.txt`, captive portal, menu)?\n\n**Area 2 — SD card log files**\n- Find the LogAggregator / log writer. What's the on-disk path format and filename convention for log files?\n- What is one line of a log file expected to look like? (Find the format string used to write a line.)\n- Is there code that lists files on the SD card (for picking which one to upload)?\n\n**Area 3 — Settings & menu screens**\n- Where is the settings menu structured? (config_mode.cpp seems […]
 
 > TOOL
 
@@ -444,21 +444,21 @@ Perfect! Now I have everything I need. Let me compile the comprehensive report:
 ### **AREA 1: WiFi Infrastructure & Credential Storage**
 
 **WiFi Connect & SSID/Password Handling:**
-- `/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/wifi_connection.cpp` — Main WiFi connection orchestration; implements `connect_wifi(ssid, password)`, `disconnect_wifi()`, and AP server start/stop
-- `/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/wifi_connection.h` — Public interface with hostname management and connection state tracking
+- `/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/wifi_connection.cpp` — Main WiFi connection orchestration; implements `connect_wifi(ssid, password)`, `disconnect_wifi()`, and AP server start/stop
+- `/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/wifi_connection.h` — Public interface with hostname management and connection state tracking
 - Credentials stored in `LocalStorage` (see below); accessed via `get_active_wifi_ssid()` and `get_active_wifi_password()`
 
 **Credential Storage & Config:**
-- `/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/local_storage.cpp` (lines 166–190) — Stores `_wifi_ssid`, `_wifi_password`, `_wifi_ssid2`, `_wifi_password2`, and `_wifi_profile_active` (supports dual WiFi profiles); getters expose both profiles + active selector
+- `/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/local_storage.cpp` (lines 166–190) — Stores `_wifi_ssid`, `_wifi_password`, `_wifi_ssid2`, `_wifi_password2`, and `_wifi_profile_active` (supports dual WiFi profiles); getters expose both profiles + active selector
 - No `SAFEZEN.txt` found; credentials appear to be persisted via the settings system accessed through web config only
 
 **HTTP Client & HTTPS POST:**
-- `/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/handlers/api_connector.h` — Uses Arduino `HTTPClient` (line 5: `#include <HTTPClient.h>`)
-- `/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/handlers/api_connector.cpp` (lines 99–145) — `handle_async()` performs `_http_client.POST(_payload)` with headers (Content-Type, User-Agent); targets `TTSERVE_MEASUREMENTS_ENDPOINT` (http://tt.safecast.org/measurements.json)
-- `/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/log_viewer.cpp` (lines 199–274) — Custom `ChunkedHTTPClient` class (lines 14+) implements multipart/form-data chunked uploads for log files to `API_LOGFILE_ENDPOINT` (http://api.safecast.org/bgeigie_imports.json) with boundary headers and Transfer-Encoding: chunked
+- `/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/handlers/api_connector.h` — Uses Arduino `HTTPClient` (line 5: `#include <HTTPClient.h>`)
+- `/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/handlers/api_connector.cpp` (lines 99–145) — `handle_async()` performs `_http_client.POST(_payload)` with headers (Content-Type, User-Agent); targets `TTSERVE_MEASUREMENTS_ENDPOINT` (http://tt.safecast.org/measurements.json)
+- `/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/log_viewer.cpp` (lines 199–274) — Custom `ChunkedHTTPClient` class (lines 14+) implements multipart/form-data chunked uploads for log files to `API_LOGFILE_ENDPOINT` (http://api.safecast.org/bgeigie_imports.json) with boundary headers and Transfer-Encoding: chunked
 
 **Web Config Server:**
-- `/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/configuration_server.cpp` — Central config web server on […]
+- `/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/configuration_server.cpp` — Central config web server on […]
 
 > AGENT
 
@@ -583,7 +583,7 @@ tool_use Read
 id: toolu_011KSfTboVUW2BPP1nQdmbsd
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/log_viewer.cpp",
+  "file_path": "/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/log_viewer.cpp",
   "offset": 1,
   "limit": 80
 }
@@ -669,7 +669,7 @@ tool_use Read
 id: toolu_0172o2AdBop8NDqYPpAXkfqw
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/log_viewer.cpp",
+  "file_path": "/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/log_viewer.cpp",
   "offset": 180,
   "limit": 115
 }

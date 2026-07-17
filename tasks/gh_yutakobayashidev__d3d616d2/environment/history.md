@@ -189,7 +189,7 @@ tool_use Read
 id: toolu_01TFfCsDf6mSCx79biKF5hd4
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix"
 }
 ```
 
@@ -320,7 +320,7 @@ tool_use Read
 id: toolu_018ueTopnMZeqzSuo54re66Y
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/default.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/default.nix"
 }
 ```
 
@@ -364,7 +364,7 @@ tool_use Read
 id: toolu_01PbjwmPiP6pcHJAPYTnkLrd
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/dev-tools.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/dev-tools.nix"
 }
 ```
 
@@ -468,7 +468,7 @@ tool_use Write
 id: toolu_01LhESUxrPCD3MPAZ9Hb5Yro
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/libplist.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/libplist.nix",
   "content": "# libplist のテストが macOS で失敗するため、テストをスキップ\nfinal: prev: {\n  libplist = prev.libplist.overrideAttrs (old: {\n    doCheck = false;\n  });\n}\n"
 }
 ```
@@ -478,7 +478,7 @@ id: toolu_01LhESUxrPCD3MPAZ9Hb5Yro
 tool_result
 id: toolu_01LhESUxrPCD3MPAZ9Hb5Yro
 ```
-File created successfully at: /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/libplist.nix
+File created successfully at: /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/libplist.nix
 ```
 
 > TOOL
@@ -488,7 +488,7 @@ id: toolu_016HU8T8QNxeM8GvcxLN8tzT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/default.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/default.nix",
   "old_string": "    ./jj-desc.nix\n    ./keifu.nix",
   "new_string": "    ./jj-desc.nix\n    ./keifu.nix\n    ./libplist.nix"
 }
@@ -499,7 +499,7 @@ id: toolu_016HU8T8QNxeM8GvcxLN8tzT
 tool_result
 id: toolu_016HU8T8QNxeM8GvcxLN8tzT
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/default.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/overlays/default.nix has been updated successfully.
 ```
 
 > AGENT
@@ -565,7 +565,7 @@ tool_use Bash
 id: toolu_01RRqsxR6QpgSpcCAKtoa4u9
 ```json
 {
-  "command": "git -C /Users/yuta/ghq/github.com/yutakobayashidev/dotnix add nix/overlays/libplist.nix nix/overlays/default.nix",
+  "command": "git -C /home/<USER>/ghq/github.com/yutakobayashidev/dotnix add nix/overlays/libplist.nix nix/overlays/default.nix",
   "description": "新しい overlay ファイルを git staging に追加"
 }
 ```

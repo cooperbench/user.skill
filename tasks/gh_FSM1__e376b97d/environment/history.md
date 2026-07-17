@@ -123,7 +123,7 @@ id: toolu_01FGvzHsCpCHq4yCsg2igT8T
 ```
 exit=0
    15790 joblog.txt
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > TOOL
@@ -184,7 +184,7 @@ id: toolu_017EcZq5UYFjif7rHM1dRzgr
 15638:2026-07-06T18:03:59.9679324Z  running bootstrap script ... ok
 15639:2026-07-06T18:03:59.9679614Z  performing post-bootstrap initialization ... ok
 15640:2026-07-06T18:03:59.9679920Z  syncing data to disk ... ok
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > TOOL
@@ -354,7 +354,7 @@ Republish jobs fired: 1
 5537:2026-07-06T17:49:26.8035072Z Cleanup of conflict test items failed: locator.waitFor: Test ended.
 5539:2026-07-06T17:49:26.8070093Z   - waiting for locator('.file-list-item:not(.upload-inline-row)').filter({ hasText: 'conflict-folder-1783
 5540:2026-07-06T17:49:26.8074125Z     14 × locator resolved to visible <div role="row" tabindex="0" draggable="true" class="file-list-item f
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > AGENT
@@ -367,7 +367,7 @@ tool_use Bash
 id: toolu_01E1f8rvDSfJ1ZSXdMVhNrBz
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== workflow files mentioning web-e2e / timeout-minutes ===\"\ngrep -rlE \"web-e2e|Web E2E\" .github/workflows/ | cat\necho \"=== timeout-minutes in web-e2e workflow ===\"\ngrep -rnE \"timeout-minutes|--shard|shard|workers|playwright test\" .github/workflows/*.yml | grep -iE \"web|e2e|shard|timeout\" | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== workflow files mentioning web-e2e / timeout-minutes ===\"\ngrep -rlE \"web-e2e|Web E2E\" .github/workflows/ | cat\necho \"=== timeout-minutes in web-e2e workflow ===\"\ngrep -rnE \"timeout-minutes|--shard|shard|workers|playwright test\" .github/workflows/*.yml | grep -iE \"web|e2e|shard|timeout\" | cat",
   "description": "Find CI timeout and shard config"
 }
 ```
@@ -396,7 +396,7 @@ tool_use Bash
 id: toolu_01GygsY7SRwWRWSihjujW7G8
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nsed -n '1,60p' .github/workflows/web-e2e.yml",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nsed -n '1,60p' .github/workflows/web-e2e.yml",
   "description": "Read web-e2e workflow head"
 }
 ```
@@ -474,7 +474,7 @@ tool_use Bash
 id: toolu_01Y3yWrpMpJTYcQr4MmkJQC6
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngrep -nE \"playwright|pnpm .*e2e|test:web|run:.*test|upload-artifact|if:\" .github/workflows/web-e2e.yml | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngrep -nE \"playwright|pnpm .*e2e|test:web|run:.*test|upload-artifact|if:\" .github/workflows/web-e2e.yml | cat",
   "description": "Find test run + artifact steps in web-e2e workflow"
 }
 ```
@@ -522,7 +522,7 @@ tool_use Bash
 id: toolu_0189gGXuUsoPxLUDuoZH8GAt
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/tests/web-e2e\necho \"=== tree ===\"; find . -type f -not -path './node_modules/*' -not -path './playwright-report/*' -not -path './test-results/*' | grep -vE '\\.png$|\\.zip$' | sort\necho \"=== wallet/key/login refs ===\"; grep -rlnE \"privateKey|walletKey|TEST_LOGIN_SECRET|wallet|login|mnemonic|privKey\" --include=*.ts . | grep -v node_modules | sort",
+  "command": "cd /home/<USER>/Code/random/cipher-box/tests/web-e2e\necho \"=== tree ===\"; find . -type f -not -path './node_modules/*' -not -path './playwright-report/*' -not -path './test-results/*' | grep -vE '\\.png$|\\.zip$' | sort\necho \"=== wallet/key/login refs ===\"; grep -rlnE \"privateKey|walletKey|TEST_LOGIN_SECRET|wallet|login|mnemonic|privKey\" --include=*.ts . | grep -v node_modules | sort",
   "description": "Map web-e2e test structure and auth references"
 }
 ```
@@ -619,7 +619,7 @@ tool_use Bash
 id: toolu_014FqaxdyTZD9GkrS4B8cvJW
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/tests/web-e2e\nfor f in utils/multi-account-wallet.ts utils/wallet-login-helpers.ts page-objects/login.page.ts; do\necho \"================= $f =================\"; cat \"$f\"; done 2>&1 | head -260",
+  "command": "cd /home/<USER>/Code/random/cipher-box/tests/web-e2e\nfor f in utils/multi-account-wallet.ts utils/wallet-login-helpers.ts page-objects/login.page.ts; do\necho \"================= $f =================\"; cat \"$f\"; done 2>&1 | head -260",
   "description": "Read wallet provisioning helpers"
 }
 ```
@@ -680,7 +680,7 @@ tool_use Bash
 id: toolu_012Y4nHDJs1DFvD45AYAX8ak
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/tests/web-e2e\necho \"=== TEST_LOGIN_SECRET / bypass refs ===\"; grep -rniE \"TEST_LOGIN_SECRET|test.?login|bypass|dev.?key|SAPPHIRE|web3auth|coreKit|devnet\" --include=\"*.ts\" . page-objects utils | grep -v node_modules | cut -c1-160\necho; echo \"=== .env.example ===\"; cat .env.example\necho; echo \"=== describe.configure / test.describe.parallel usage ===\"; grep -rnE \"describe.configure|mode: 'parallel'|serial|test.describe\" tests/ | cut -c1-140 | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box/tests/web-e2e\necho \"=== TEST_LOGIN_SECRET / bypass refs ===\"; grep -rniE \"TEST_LOGIN_SECRET|test.?login|bypass|dev.?key|SAPPHIRE|web3auth|coreKit|devnet\" --include=\"*.ts\" . page-objects utils | grep -v node_modules | cut -c1-160\necho; echo \"=== .env.example ===\"; cat .env.example\necho; echo \"=== describe.configure / test.describe.parallel usage ===\"; grep -rnE \"describe.configure|mode: 'parallel'|serial|test.describe\" tests/ | cut -c1-140 | head -40",
   "description": "Check for login bypass and per-file serial config"
 }
 ```
@@ -701,7 +701,7 @@ tool_use Bash
 id: toolu_01AkXjwsvCCXEvB2T8uxUJtQ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/tests/web-e2e\necho \"=== login bypass refs ===\"; grep -rniE \"TEST_LOGIN_SECRET|bypass|SAPPHIRE|web3auth|coreKit|devnet|verifier\" --include=\"*.ts\" page-objects utils | grep -v node_modules | head -30\necho; echo \"=== per-file serial/parallel config in specs ===\"; grep -rnE \"describe.configure|test.describe|mode:\" tests/ | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box/tests/web-e2e\necho \"=== login bypass refs ===\"; grep -rniE \"TEST_LOGIN_SECRET|bypass|SAPPHIRE|web3auth|coreKit|devnet|verifier\" --include=\"*.ts\" page-objects utils | grep -v node_modules | head -30\necho; echo \"=== per-file serial/parallel config in specs ===\"; grep -rnE \"describe.configure|test.describe|mode:\" tests/ | head -40",
   "description": "Check login bypass and spec-level parallel config"
 }
 ```
@@ -764,7 +764,7 @@ tool_use Read
 id: toolu_01Gu5ViXtuDDnY9R4mMkoi64
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/tests/web-e2e/playwright.config.ts"
+  "file_path": "/home/<USER>/Code/random/cipher-box/tests/web-e2e/playwright.config.ts"
 }
 ```
 
@@ -824,7 +824,7 @@ tool_use Bash
 id: toolu_016GVsuCToZGxfbyPEC7YXbU
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit checkout -b chore/web-e2e-parallel-workers 2>&1\necho \"=== hardcoded private keys / fixed accounts across specs ===\"\ngrep -rnE \"0x[0-9a-fA-F]{64}|privateKeyToAccount\\(['\\\"]|PRIVATE_KEY|FIXED_\" tests/web-e2e/tests tests/web-e2e/utils 2>/dev/null | grep -v node_modules | head\necho \"=== fixed folder/file names that could collide across parallel files ===\"\ngrep -rnE \"createFolder\\(['\\\"]|folderName = ['\\\"]|'shared-folder'|\\\"shared-folder\\\"\" tests/web-e2e/tests 2>/dev/null | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit checkout -b chore/web-e2e-parallel-workers 2>&1\necho \"=== hardcoded private keys / fixed accounts across specs ===\"\ngrep -rnE \"0x[0-9a-fA-F]{64}|privateKeyToAccount\\(['\\\"]|PRIVATE_KEY|FIXED_\" tests/web-e2e/tests tests/web-e2e/utils 2>/dev/null | grep -v node_modules | head\necho \"=== fixed folder/file names that could collide across parallel files ===\"\ngrep -rnE \"createFolder\\(['\\\"]|folderName = ['\\\"]|'shared-folder'|\\\"shared-folder\\\"\" tests/web-e2e/tests 2>/dev/null | head",
   "description": "Create branch, scan for cross-file collisions"
 }
 ```
@@ -850,7 +850,7 @@ tool_use Bash
 id: toolu_01URF93oJYPwupACimFy3JPq
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== files referencing that Anvil key ===\"\ngrep -rln \"0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80\" tests/web-e2e/ | grep -v node_modules\necho \"=== usage context in wallet-login.spec.ts ===\"\ngrep -nE \"0xac0974|createTestAccount|generatePrivateKey|privateKeyToAccount|TEST_ACCOUNT|account =\" tests/web-e2e/tests/wallet-login.spec.ts | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== files referencing that Anvil key ===\"\ngrep -rln \"0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80\" tests/web-e2e/ | grep -v node_modules\necho \"=== usage context in wallet-login.spec.ts ===\"\ngrep -nE \"0xac0974|createTestAccount|generatePrivateKey|privateKeyToAccount|TEST_ACCOUNT|account =\" tests/web-e2e/tests/wallet-login.spec.ts | head",
   "description": "Confirm Anvil key scope"
 }
 ```
@@ -883,7 +883,7 @@ id: toolu_01GAx2mcTBE9i8M9kLF3M9fh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/tests/web-e2e/playwright.config.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/tests/web-e2e/playwright.config.ts",
   "old_string": "  // Run tests sequentially (single session approach)\n  fullyParallel: false,\n  workers: 1,",
   "new_string": "  // Parallelize at the file level, not the test level: each spec file provisions\n  // its own isolated wallet identity (unique privateKey -> unique backend userId),\n  // so different files never share user/IPNS/DB state. Keep fullyParallel:false so\n  // tests WITHIN a file still run serially — the describe.serial suites depend on\n  // ordered, stateful steps. Local stays single-worker; CI fans out across files.\n  // Ceiling is Web3Auth Sapphire Devnet tolerance for concurrent DKG, not our infra.\n  fullyParallel: false,\n  workers: process.env.CI ? 4 : 1,"
 }
@@ -894,7 +894,7 @@ id: toolu_01GAx2mcTBE9i8M9kLF3M9fh
 tool_result
 id: toolu_01GAx2mcTBE9i8M9kLF3M9fh
 ```
-The file /Users/myankelev/Code/random/cipher-box/tests/web-e2e/playwright.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/tests/web-e2e/playwright.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -907,7 +907,7 @@ tool_use Bash
 id: toolu_01U1JM4sujnme9otngEnQEkd
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit add tests/web-e2e/playwright.config.ts\ngit commit -q -m \"$(cat <<'EOF'\nchore(ci): parallelize web-e2e across files with per-worker wallet isolation\n\nThe web-e2e suite (213 tests) ran fully serial (workers: 1) and consistently\nhit the 20-minute job cap, cancelling on every substantive main push since #578.\nEach spec file already provisions its own random wallet identity (unique\nprivateKey -> unique backend userId -> isolated context), so files never share\nuser/IPNS/DB state. Bump CI workers to 4 for file-level parallelism while\nkeeping fullyParallel:false so intra-file describe.serial ordering is preserved.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1\ngit push -u origin chore/web-e2e-parallel-workers 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit add tests/web-e2e/playwright.config.ts\ngit commit -q -m \"$(cat <<'EOF'\nchore(ci): parallelize web-e2e across files with per-worker wallet isolation\n\nThe web-e2e suite (213 tests) ran fully serial (workers: 1) and consistently\nhit the 20-minute job cap, cancelling on every substantive main push since #578.\nEach spec file already provisions its own random wallet identity (unique\nprivateKey -> unique backend userId -> isolated context), so files never share\nuser/IPNS/DB state. Bump CI workers to 4 for file-level parallelism while\nkeeping fullyParallel:false so intra-file describe.serial ordering is preserved.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1\ngit push -u origin chore/web-e2e-parallel-workers 2>&1 | tail -5",
   "description": "Commit and push branch"
 }
 ```
@@ -962,7 +962,7 @@ tool_use Bash
 id: toolu_01A7LPa2MWN1xhwycjUVetHp
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh workflow run web-e2e.yml --ref chore/web-e2e-parallel-workers 2>&1\nsleep 6\nenv -u GITHUB_TOKEN gh run list --workflow web-e2e.yml --branch chore/web-e2e-parallel-workers --limit 3 2>&1 | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh workflow run web-e2e.yml --ref chore/web-e2e-parallel-workers 2>&1\nsleep 6\nenv -u GITHUB_TOKEN gh run list --workflow web-e2e.yml --branch chore/web-e2e-parallel-workers --limit 3 2>&1 | cat",
   "description": "Dispatch web-e2e workflow on branch"
 }
 ```
@@ -1115,7 +1115,7 @@ Wallet logins so far: 0
 CoreKit/Torus transient failures: 0
 Test-side timeouts/ended: 0
 --- last few test-relevant lines ---
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > AGENT
@@ -1276,7 +1276,7 @@ id: toolu_019jUvrvgvsYjPMY7D9eBrui
 
 === 'did not run' — which describe blocks skipped ===
 2026-07-06T18:44:42.8265428Z   95 did not run
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > AGENT
@@ -1341,7 +1341,7 @@ id: toolu_0184vmB24wCZrvXdMAjqrnWN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/tests/web-e2e/playwright.config.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/tests/web-e2e/playwright.config.ts",
   "old_string": "  // Ceiling is Web3Auth Sapphire Devnet tolerance for concurrent DKG, not our infra.\n  fullyParallel: false,\n  workers: process.env.CI ? 4 : 1,",
   "new_string": "  // Ceiling is backend contention on the shared API/Kubo/Postgres stack, not\n  // Web3Auth: 4 workers starved the write path (folder-create / IPFS add / IPNS\n  // publish round-trips exceeded 30s on the 2-vCPU CI runner). 3 workers keeps\n  // wall-clock well under the 20-min job cap without starving writes.\n  fullyParallel: false,\n  workers: process.env.CI ? 3 : 1,"
 }
@@ -1352,7 +1352,7 @@ id: toolu_0184vmB24wCZrvXdMAjqrnWN
 tool_result
 id: toolu_0184vmB24wCZrvXdMAjqrnWN
 ```
-The file /Users/myankelev/Code/random/cipher-box/tests/web-e2e/playwright.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/tests/web-e2e/playwright.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1361,7 +1361,7 @@ tool_use Bash
 id: toolu_01YZv6t11jd7Rc49qq4KDVPT
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit add tests/web-e2e/playwright.config.ts\ngit commit -q -m \"$(cat <<'EOF'\nchore(ci): drop web-e2e to 3 workers to avoid backend write contention\n\nAt 4 workers the suite ran green on auth (zero login flake) but 7 write-heavy\nsetup steps hit 30s locator timeouts — folder-create / IPFS add / IPNS publish\nround-trips starved on the shared single API/Kubo/Postgres stack on the 2-vCPU\nrunner. Each failed step skipped the rest of its describe.serial block (95 did\nnot run). 3 workers eases write pressure while staying well under the 20-min cap\n(4 workers finished in ~10m).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" >/dev/null 2>&1\ngit push 2>&1 | tail -3\nenv -u GITHUB_TOKEN gh workflow run web-e2e.yml --ref chore/web-e2e-parallel-workers 2>&1\nsleep 6\nenv -u GITHUB_TOKEN gh run list --workflow web-e2e.yml --branch chore/web-e2e-parallel-workers --limit 2 2>&1 | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit add tests/web-e2e/playwright.config.ts\ngit commit -q -m \"$(cat <<'EOF'\nchore(ci): drop web-e2e to 3 workers to avoid backend write contention\n\nAt 4 workers the suite ran green on auth (zero login flake) but 7 write-heavy\nsetup steps hit 30s locator timeouts — folder-create / IPFS add / IPNS publish\nround-trips starved on the shared single API/Kubo/Postgres stack on the 2-vCPU\nrunner. Each failed step skipped the rest of its describe.serial block (95 did\nnot run). 3 workers eases write pressure while staying well under the 20-min cap\n(4 workers finished in ~10m).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" >/dev/null 2>&1\ngit push 2>&1 | tail -3\nenv -u GITHUB_TOKEN gh workflow run web-e2e.yml --ref chore/web-e2e-parallel-workers 2>&1\nsleep 6\nenv -u GITHUB_TOKEN gh run list --workflow web-e2e.yml --branch chore/web-e2e-parallel-workers --limit 2 2>&1 | cat",
   "description": "Commit 3-worker change, push, re-dispatch"
 }
 ```
@@ -1388,7 +1388,7 @@ tool_use Bash
 id: toolu_0161xke9WRmkiNAQCCE5EP7M
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh workflow run web-e2e.yml --ref chore/web-e2e-parallel-workers 2>&1\nsleep 6\nenv -u GITHUB_TOKEN gh run list --workflow web-e2e.yml --branch chore/web-e2e-parallel-workers --limit 2 2>&1 | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh workflow run web-e2e.yml --ref chore/web-e2e-parallel-workers 2>&1\nsleep 6\nenv -u GITHUB_TOKEN gh run list --workflow web-e2e.yml --branch chore/web-e2e-parallel-workers --limit 2 2>&1 | cat",
   "description": "Dispatch web-e2e run at 3 workers"
 }
 ```
@@ -1412,7 +1412,7 @@ tool_use Bash
 id: toolu_015guX3yxQ2sXjBJdtD2RMuZ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh run cancel 28815849250 --repo FSM1/cipher-box 2>&1\necho \"kept run: 28815837174\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh run cancel 28815849250 --repo FSM1/cipher-box 2>&1\necho \"kept run: 28815837174\"",
   "description": "Cancel duplicate run"
 }
 ```
@@ -1569,7 +1569,7 @@ id: toolu_0151EX28PCHy79tTJqtF4v5S
       101 |     test.setTimeout(60_000); // Cleanup can be slow with rate-limited API
       102 |
       103 |     // Close second device first
-        at /home/runner/work/cipher-box/cipher-box/tests/web-e2e/tests/conflict-detection.spec.ts:100:8
+        at /home/<USER>/work/cipher-box/cipher-box/tests/web-e2e/tests/conflict-detection.spec.ts:100:8
 
   ----
   2) [chromium] › tests/full-workflow.spec.ts:309:3 › Full Workflow › 2.1 Create workspace folder at root 
@@ -1638,7 +1638,7 @@ tool_result
 id: toolu_01AyWJLHj4j2ETzqi7ve547M
 ```
 playwright-report	128236998b	8118980797
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > AGENT
@@ -1670,7 +1670,7 @@ test-results/recovery-Vault-Recovery-To-1066c-ia-IPFS-direct-v2-blob-path-chromi
 test-results/recycle-bin-Recycle-Bin-TC-b2ac0-file-from-bin-back-to-files-chromium/error-context.md
 test-results/rotation-durability-Rotati-671de-n-create-rename-SC-4-setup--chromium/error-context.md
 test-results/sharing-workflow-Sharing-W-77b09--folder-with-nested-content-chromium/error-context.md
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > TOOL

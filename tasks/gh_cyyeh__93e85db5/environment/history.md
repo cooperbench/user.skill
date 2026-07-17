@@ -4,17 +4,17 @@ why I see this error?
 
 Bifrost started on port 8081
 Waiting for backend on port 8000...
-INFO:     Will watch for changes in these directories: ['/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend']
+INFO:     Will watch for changes in these directories: ['/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     Started reloader process [29634] using WatchFiles
 Failed to create sandbox backend
 Traceback (most recent call last):
-  File "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/main.py", line 20, in <module>
+  File "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/main.py", line 20, in <module>
     sandbox_backend = get_sandbox_backend()
                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py", line 12, in get_sandbox_backend
+  File "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py", line 12, in get_sandbox_backend
     from app.sandbox.docker_backend import DockerBackend, DockerConfig
-  File "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/docker_backend.py", line 15, in <module>
+  File "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/docker_backend.py", line 15, in <module>
     import docker
 ModuleNotFoundError: No module named 'docker'
 
@@ -58,7 +58,7 @@ tool_use Read
 id: toolu_012vyMDeS8tg6W5AH8XYBk5g
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/pyproject.toml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/pyproject.toml"
 }
 ```
 
@@ -71,7 +71,7 @@ id: toolu_012vyMDeS8tg6W5AH8XYBk5g
      2→name = "duckdb-data-agent-backend"
      3→version = "0.1.0"
      4→description = ""
-     5→authors = ["ChihYu Yeh <chihyu.jimmy.yeh@gmail.com>"]
+     5→authors = ["ChihYu Yeh <<REDACTED_EMAIL>>"]
      6→readme = "README.md"
      7→package-mode = false
      8→
@@ -110,7 +110,7 @@ tool_use Read
 id: toolu_01K5vTVA8ucPUSJy6mzyePLT
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py"
 }
 ```
 
@@ -169,7 +169,7 @@ tool_use Bash
 id: toolu_01GwM5gQ6YDVKuLBAyXJNa96
 ```json
 {
-  "command": "grep -n 'SANDBOX_RUNTIME' /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/config.py | head -5",
+  "command": "grep -n 'SANDBOX_RUNTIME' /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/config.py | head -5",
   "description": "Find SANDBOX_RUNTIME config value"
 }
 ```
@@ -199,6 +199,6 @@ Two options:
 Most likely you just need to install the optional dependency:
 
 ```bash
-cd /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend
+cd /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend
 poetry install -E docker
 ```

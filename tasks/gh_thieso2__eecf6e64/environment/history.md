@@ -1199,7 +1199,7 @@ SANDCASTLE_GID=${gid}
 # ─── Network & TLS ──────────────────────────────────────────────────────────
 SANDCASTLE_HOST=${host}
 SANDCASTLE_TLS_MODE=${tls_mode}
-#ACME_EMAIL=admin@example.com
+#ACME_EMAIL=<REDACTED_EMAIL>
 SANDCASTLE_HTTP_PORT=${http_port}
 SANDCASTLE_HTTPS_PORT=${https_port}
 
@@ -2551,7 +2551,7 @@ class SandboxManagerTest < ActiveSupport::TestCase
       oidc_enabled: true,
       gcp_oidc_enabled: true,
       gcp_oidc_config: config,
-      gcp_service_account_email: "sandbox@test-project-123.iam.gserviceaccount.com"
+      gcp_service_account_email: "<REDACTED_EMAIL>"
     )
 
     @manager.create_container_and_start(sandbox: @sandbox, user: @user)
@@ -3413,8 +3413,8 @@ Process exited with code 0
 Original token count: 28
 Output:
 main
-origin	git@github.com:thieso2/Sandcastle.git (fetch)
-origin	git@github.com:thieso2/Sandcastle.git (push)
+origin	<REDACTED_EMAIL>:thieso2/Sandcastle.git (fetch)
+origin	<REDACTED_EMAIL>:thieso2/Sandcastle.git (push)
 
 ```
 

@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01SMdXS4SSCwSKZZxTZpdC3h
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh"
+  "file_path": "/home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh"
 }
 ```
 
@@ -387,7 +387,7 @@ id: toolu_01XaZPstcs6kkHR2ZiURSYAa
 tool_result
 id: toolu_01XaZPstcs6kkHR2ZiURSYAa
 ```
-/Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh
+/home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh
 ```
 
 > AGENT
@@ -401,7 +401,7 @@ id: toolu_0188Foz4jJAJoMAjYCDhFgP1
 ```json
 {
   "pattern": "state|checkpoint|\\.forge",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/orchestrator/state.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/orchestrator/state.rs",
   "output_mode": "content",
   "head_limit": 30
 }
@@ -604,7 +604,7 @@ tool_use Read
 id: toolu_01VHVPi92vLFbmsyQLeRx4XK
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh"
+  "file_path": "/home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh"
 }
 ```
 
@@ -681,7 +681,7 @@ id: toolu_01Bme58RhtPCoFPpVN6SoXg9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh",
+  "file_path": "/home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh",
   "old_string": "run_task() {\n    local task_file=\"$1\"\n    local task_name\n    task_name=$(basename \"$task_file\" .md)\n    local log_file=\"$LOG_DIR/${task_name}.log\"\n\n    echo -e \"${CYAN}━━━ Starting: ${task_name} ━━━${NC}\"\n\n    # Step 1: Generate phases\n    echo -e \"  ${YELLOW}[1/3]${NC} Generating phases...\"\n    if ! $FORGE implement \"${TASKS_DIR}/${task_file}\" --autonomous --dry-run >> \"$log_file\" 2>&1; then\n        echo -e \"  ${RED}FAILED${NC} generating phases. See: $log_file\"\n        return 1\n    fi\n\n    # Step 2: Reset state\n    echo -e \"  ${YELLOW}[2/3]${NC} Resetting state...\"\n    $FORGE reset --force >> \"$log_file\" 2>&1\n\n    # Step 3: Execute\n    echo -e \"  ${YELLOW}[3/3]${NC} Running phases...\"\n    if $FORGE run --autonomous --yes >> \"$log_file\" 2>&1; then\n        echo -e \"  ${GREEN}✓ DONE${NC}: ${task_name}\"\n    else\n        echo -e \"  ${RED}✗ FAILED${NC}: ${task_name}. See: $log_file\"\n        return 1\n    fi\n\n    echo \"\"\n}",
   "new_string": "run_task() {\n    local task_file=\"$1\"\n    local task_name\n    task_name=$(basename \"$task_file\" .md)\n    local log_file=\"$LOG_DIR/${task_name}.log\"\n    local done_marker=\"$LOG_DIR/${task_name}.done\"\n\n    # Skip already-completed tasks\n    if [[ -f \"$done_marker\" ]]; then\n        echo -e \"${GREEN}━━━ Skipping (already done): ${task_name} ━━━${NC}\"\n        return 0\n    fi\n\n    echo -e \"${CYAN}━━━ Starting: ${task_name} ━━━${NC}\"\n\n    # Step 1: Generate phases\n    echo -e \"  ${YELLOW}[1/3]${NC} Generating phases...\"\n    if ! $FORGE implement \"${TASKS_DIR}/${task_file}\" --autonomous --dry-run >> \"$log_file\" 2>&1; then\n        echo -e \"  ${RED}FAILED${NC} generating phases. See: $log_file\"\n        return 1\n    fi\n\n    # Step 2: Reset state\n    echo -e \"  ${YELLOW}[2/3]${NC} […]
 
@@ -690,7 +690,7 @@ id: toolu_01Bme58RhtPCoFPpVN6SoXg9
 tool_result
 id: toolu_01Bme58RhtPCoFPpVN6SoXg9
 ```
-The file /Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh has been updated successfully.
 ```
 
 > AGENT
@@ -704,7 +704,7 @@ id: toolu_01A7dwAM7Tu3ALPYfDEApXgD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh",
+  "file_path": "/home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh",
   "old_string": "run_wave() {\n    local wave_num=\"$1\"\n    shift\n    local tasks=(\"$@\")\n\n    echo -e \"${CYAN}══════════════════════════════════════${NC}\"\n    echo -e \"${CYAN}  Wave ${wave_num} (${#tasks[@]} tasks)${NC}\"\n    echo -e \"${CYAN}══════════════════════════════════════${NC}\"\n    echo \"\"\n\n    for task in \"${tasks[@]}\"; do\n        run_task \"${task}\" || {\n            echo -e \"${RED}Wave ${wave_num} halted due to failure in ${task}${NC}\"\n            exit 1\n        }\n    done\n\n    echo -e \"${GREEN}Wave ${wave_num} complete.${NC}\"\n    echo \"\"\n}",
   "new_string": "run_wave() {\n    local wave_num=\"$1\"\n    shift\n    local tasks=(\"$@\")\n    local skipped=0\n\n    echo -e \"${CYAN}══════════════════════════════════════${NC}\"\n    echo -e \"${CYAN}  Wave ${wave_num} (${#tasks[@]} tasks)${NC}\"\n    echo -e \"${CYAN}══════════════════════════════════════${NC}\"\n    echo \"\"\n\n    for task in \"${tasks[@]}\"; do\n        local name\n        name=$(basename \"$task\" .md)\n        if [[ -f \"$LOG_DIR/${name}.done\" ]]; then\n            ((skipped++))\n        fi\n        run_task \"${task}\" || {\n            echo -e \"${RED}Wave ${wave_num} halted due to failure in ${task}${NC}\"\n            exit 1\n        }\n    done\n\n    if [[ $skipped -eq ${#tasks[@]} ]]; then\n        echo -e \"${GREEN}Wave ${wave_num} — all tasks already complete, skipped.${NC}\"\n    else\n        echo -e \"${GREEN}Wave ${wave_num} complete. (${skipped}/${#tasks[@]} skipped)${NC}\"\n    fi\n    echo \"\"\n}"
 }
@@ -715,7 +715,7 @@ id: toolu_01A7dwAM7Tu3ALPYfDEApXgD
 tool_result
 id: toolu_01A7dwAM7Tu3ALPYfDEApXgD
 ```
-The file /Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh has been updated successfully.
 ```
 
 > AGENT

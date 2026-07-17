@@ -66,7 +66,7 @@ The "Recent Activity" feature on the dashboard is called the **Unified Feed** an
 ### **1. Frontend Components**
 
 #### **1.1 Main Dashboard Page**
-**File:** `/Users/pc/web3/ReleaseBeacon/web/app/page.tsx`
+**File:** `/home/<USER>/web3/ReleaseBeacon/web/app/page.tsx`
 
 - Entry point for the dashboard
 - Renders the `<UnifiedFeed />` component alongside stats and charts
@@ -104,7 +104,7 @@ tool_use Read
 id: toolu_018mLJEWHpcFju4AXnMbKhCs
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx"
 }
 ```
 
@@ -169,7 +169,7 @@ tool_use Read
 id: toolu_01Gwq9AEH7dmmEWEhYirKvWk
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts"
 }
 ```
 
@@ -267,7 +267,7 @@ id: toolu_01MzNu1FNMy9kb2VcPq81u9o
 ```json
 {
   "pattern": "recent|feed|activity|latest",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api",
   "-i": true,
   "output_mode": "content",
   "glob": "*.go"
@@ -281,7 +281,7 @@ id: toolu_01C92SaNuCtiegJRzmPDMgiF
 ```json
 {
   "pattern": "releases\\?|/releases",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/server.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/server.go",
   "output_mode": "content"
 }
 ```
@@ -317,7 +317,7 @@ tool_use Read
 id: toolu_01CYM3cnBHhjmYUKabmmEqDy
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/releases.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/releases.go"
 }
 ```
 
@@ -398,7 +398,7 @@ id: toolu_018Jy6GeyerzfP5V33FyYwuD
 ```json
 {
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "pattern": "func.*ListAllReleases",
   "-A": 80
 }
@@ -455,7 +455,7 @@ id: toolu_01VQ3wNabBnCdGSR7YaGuQYj
 {
   "-A": 20,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts",
   "pattern": "^export interface Release"
 }
 ```
@@ -468,7 +468,7 @@ id: toolu_01GEc6oomJkxcfZ8x9iVF9pb
 {
   "-A": 15,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts",
   "pattern": "^export interface SemanticRelease"
 }
 ```
@@ -576,7 +576,7 @@ id: toolu_01Q78G4Q5YhTFgSFw1qkLryE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
   "old_string": "export function UnifiedFeed() {\n  const { t } = useTranslation();\n\n  const { data: projectsData } = useSWR(\"projects-for-dashboard\", () =>\n    projectsApi.list()\n  );\n\n  const { data: feedItems, isLoading } = useSWR(\n    projectsData ? \"unified-feed\" : null,\n    async () => {\n      if (!projectsData?.data?.length) return [];\n\n      const projectMap = new Map(\n        projectsData.data.map((p) => [p.id, p.name])\n      );\n      const projectSlice = projectsData.data.slice(0, 10);\n\n      // Fetch releases, sources, and semantic releases in parallel\n      const [releaseResults, sourceResults, srResults] = await Promise.all([\n        Promise.all(\n          projectSlice.map((p) =>\n            releasesApi.listByProject(p.id, 1).catch(() => null)\n          )\n        ),\n        Promise.all(\n          projectSlice.map((p) =>\n            sourcesApi.listByProject(p.id, 1).catch(() => null)\n          )\n        ),\n        Promise.all(\n          projectSlice.map((p) =>\n            srApi.list(p.id, 1).catch(() => null)\n          )\n        ),\n      ]);\n\n      // Build source lookup maps\n      const sourceMap = new Map<string, string>();\n      const providerMap = new Map<string, string>();\n      const sourceProjectMap = new Map<string, string>();\n      sourceResults\n        .filter((r): r is NonNullable<typeof r> => r !== null)\n        .flatMap((r) => r.data)\n        .forEach((s: Source) => {\n          sourceMap.set(s.id, s.repository);\n          providerMap.set(s.id, s.provider);\n          sourceProjectMap.set(s.id, s.project_id);\n        });\n\n      // Build feed items\n      const items: FeedItemType[] = [];\n\n      releaseResults\n        .filter((r): r is NonNullable<typeof r> => r !== null)\n        .flatMap((r) => r.data)\n        .forEach((rel) => {\n          const projectId = sourceProjectMap.get(rel.source_id);\n          items.push({\n            kind: \"release\",\n            data: rel,\n            repository: sourceMap.get(rel.source_id),\n            provider: providerMap.get(rel.source_id),\n            projectName: projectId ? […]
 
 > TOOL
@@ -584,7 +584,7 @@ id: toolu_01Q78G4Q5YhTFgSFw1qkLryE
 tool_result
 id: toolu_01Q78G4Q5YhTFgSFw1qkLryE
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -598,7 +598,7 @@ id: toolu_014PBpttf15bYPGCPSrCJ74g
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
   "old_string": "import {\n  projects as projectsApi,\n  releases as releasesApi,\n  sources as sourcesApi,\n  semanticReleases as srApi,\n} from \"@/lib/api/client\";",
   "new_string": "import {\n  releases as releasesApi,\n  semanticReleases as srApi,\n} from \"@/lib/api/client\";"
 }
@@ -609,7 +609,7 @@ id: toolu_014PBpttf15bYPGCPSrCJ74g
 tool_result
 id: toolu_014PBpttf15bYPGCPSrCJ74g
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -623,7 +623,7 @@ id: toolu_01MKptsjHyArfEB8bst7Esfd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
   "old_string": "import type { Release, SemanticRelease, Source } from \"@/lib/api/types\";",
   "new_string": "import type { Release, SemanticRelease } from \"@/lib/api/types\";"
 }
@@ -634,7 +634,7 @@ id: toolu_01MKptsjHyArfEB8bst7Esfd
 tool_result
 id: toolu_01MKptsjHyArfEB8bst7Esfd
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -647,7 +647,7 @@ tool_use Read
 id: toolu_014WzU3KCSR4VVvh3cmCBkYj
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx"
 }
 ```
 
@@ -712,7 +712,7 @@ id: toolu_01MD14yPNpo8nNtpT4wFi7WT
 ```json
 {
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/app/page.tsx",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/app/page.tsx",
   "pattern": "unified-feed|projects-for-dashboard"
 }
 ```
@@ -739,7 +739,7 @@ tool_use Bash
 id: toolu_01Vg7woDmqD4MbCjRDxRDuvW
 ```json
 {
-  "command": "cd /Users/pc/web3/ReleaseBeacon/web && npx tsc --noEmit 2>&1 | head -30",
+  "command": "cd /home/<USER>/web3/ReleaseBeacon/web && npx tsc --noEmit 2>&1 | head -30",
   "description": "Type-check the frontend",
   "timeout": 60000
 }
@@ -782,7 +782,7 @@ tool_use Bash
 id: toolu_014RLLG6FudXEzACRktBW8E1
 ```json
 {
-  "command": "cd /Users/pc/web3/ReleaseBeacon && git status",
+  "command": "cd /home/<USER>/web3/ReleaseBeacon && git status",
   "description": "Show working tree status"
 }
 ```
@@ -793,7 +793,7 @@ tool_use Bash
 id: toolu_019Re729tsrXAaBsGhEZbuN1
 ```json
 {
-  "command": "cd /Users/pc/web3/ReleaseBeacon && git diff web/components/dashboard/unified-feed.tsx",
+  "command": "cd /home/<USER>/web3/ReleaseBeacon && git diff web/components/dashboard/unified-feed.tsx",
   "description": "Show changes in unified-feed.tsx"
 }
 ```
@@ -804,7 +804,7 @@ tool_use Bash
 id: toolu_01VieC9CgGgCCLyVVpwAtJsH
 ```json
 {
-  "command": "cd /Users/pc/web3/ReleaseBeacon && git log --oneline -5",
+  "command": "cd /home/<USER>/web3/ReleaseBeacon && git log --oneline -5",
   "description": "Show recent commits"
 }
 ```
@@ -898,7 +898,7 @@ tool_use Bash
 id: toolu_014qp7nQGqdsFSdu2mzpbEo5
 ```json
 {
-  "command": "git add web/components/dashboard/unified-feed.tsx && git commit -m \"$(cat <<'EOF'\nfix(web): use global endpoints for Recent Activity feed\n\nThe unified feed was fetching releases per-project (capped at 10\nprojects), causing newer releases from other projects to be missing.\nSwitch to the global /releases and /semantic-releases endpoints which\nreturn results sorted by recency across all projects, and reduce\nHTTP requests from 30+ down to 2.\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add web/components/dashboard/unified-feed.tsx && git commit -m \"$(cat <<'EOF'\nfix(web): use global endpoints for Recent Activity feed\n\nThe unified feed was fetching releases per-project (capped at 10\nprojects), causing newer releases from other projects to be missing.\nSwitch to the global /releases and /semantic-releases endpoints which\nreturn results sorted by recency across all projects, and reduce\nHTTP requests from 30+ down to 2.\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the unified feed fix"
 }
 ```
@@ -972,7 +972,8 @@ id: toolu_0122UNt7qrUXfCXBhSkv3b72
 ```
 From https://github.com/sentioxyz/releaseguard
    be817bb..04e5af4  main       -> origin/main
-Rebasing (1/1)Successfully rebased and updated refs/heads/main.
+Rebasing (1/1)
+Successfully rebased and updated refs/heads/main.
 ```
 
 > TOOL
@@ -1431,7 +1432,7 @@ tool_use Read
 id: toolu_011jwZ1q7EFuDZAuNDg9DRaL
 ```json
 {
-  "file_path": "/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/visual-companion.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/visual-companion.md"
 }
 ```
 
@@ -1472,7 +1473,7 @@ tool_use Bash
 id: toolu_01UfwNDfaAqk6hxqQFQm4aYZ
 ```json
 {
-  "command": "/Users/pc/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh --project-dir /Users/pc/web3/ReleaseBeacon",
+  "command": "/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh --project-dir /home/<USER>/web3/ReleaseBeacon",
   "description": "Start visual companion server",
   "timeout": 10000
 }
@@ -1483,7 +1484,7 @@ id: toolu_01UfwNDfaAqk6hxqQFQm4aYZ
 tool_result
 id: toolu_01UfwNDfaAqk6hxqQFQm4aYZ
 ```
-{"type":"server-started","port":50258,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:50258","screen_dir":"/Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/92413-1774531683/content","state_dir":"/Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/92413-1774531683/state"}
+{"type":"server-started","port":50258,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:50258","screen_dir":"/home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/92413-1774531683/content","state_dir":"/home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/92413-1774531683/state"}
 ```
 
 > TOOL
@@ -1607,7 +1608,7 @@ tool_use Read
 id: toolu_01A4MhLucNDaYU7Zkv7AgXy7
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/releases/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/releases/page.tsx",
   "limit": 50
 }
 ```
@@ -1675,7 +1676,7 @@ tool_use Write
 id: toolu_016cdXacGsW3fX2VVLPnt8d3
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.REDACTED.html",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.REDACTED.html",
   "content": "<h2>Global Advanced Filter — Releases Page</h2>\n<p class=\"subtitle\">Chip-based filter bar with URL query sync. Filters appear as removable chips; click \"+ Add Filter\" to add more.</p>\n\n<div class=\"section\">\n  <h3>Filter Bar Mockup</h3>\n  <div class=\"mockup\">\n    <div class=\"mockup-header\">Releases — with active filters</div>\n    <div class=\"mockup-body\" style=\"background:#0d1117;color:#c9d1d9;font-family:system-ui;padding:24px;\">\n\n      <!-- Page header -->\n      <div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;\">\n        <h2 style=\"margin:0;font-size:20px;color:#e6edf3;\">Releases</h2>\n        <span style=\"color:#7d8590;font-size:13px;\">142 results</span>\n      </div>\n\n      <!-- Filter bar -->\n      <div style=\"display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:20px;padding:12px 16px;background:#161b22;border:1px solid #30363d;border-radius:8px;\">\n\n        <!-- Active filter chips -->\n        <div style=\"display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:#1f2937;border:1px solid #30363d;border-radius:16px;font-size:12px;\">\n          <span style=\"color:#7d8590;\">Project:</span>\n          <span style=\"color:#e6edf3;\">Sentio SDK</span>\n          <span style=\"color:#7d8590;cursor:pointer;margin-left:2px;\">&times;</span>\n        </div>\n\n        <div style=\"display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:#1f2937;border:1px solid #30363d;border-radius:16px;font-size:12px;\">\n          <span style=\"color:#7d8590;\">Provider:</span>\n          <span style=\"color:#e6edf3;\">GitHub</span>\n          <span style=\"color:#7d8590;cursor:pointer;margin-left:2px;\">&times;</span>\n        </div>\n\n        <div style=\"display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:#1f2937;border:1px solid #30363d;border-radius:16px;font-size:12px;\">\n          <span style=\"color:#7d8590;\">Date:</span>\n          <span style=\"color:#e6edf3;\">Last 30 days</span>\n          <span style=\"color:#7d8590;cursor:pointer;margin-left:2px;\">&times;</span>\n        </div>\n\n        <!-- Add filter button -->\n        <button style=\"display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:transparent;border:1px dashed #30363d;border-radius:16px;font-size:12px;color:#7d8590;cursor:pointer;\">\n          + Add filter\n        </button>\n\n        <!-- Clear all -->\n        <span style=\"margin-left:auto;font-size:11px;color:#7d8590;cursor:pointer;\">Clear all</span>\n      </div>\n\n      <!-- URL bar showing query string -->\n      <div style=\"margin-bottom:20px;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#7d8590;\">\n        /releases?project=abc123&amp;provider=github&amp;date=30d\n      </div>\n\n      <!-- Sample table rows -->\n      <div style=\"border:1px solid #30363d;border-radius:8px;overflow:hidden;\">\n        <div style=\"display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid #21262d;gap:12px;\">\n          <span style=\"font-size:13px;\">🐙</span>\n          <span style=\"color:#e6edf3;font-family:'JetBrains Mono',monospace;font-size:13px;flex:1;\">sentioxyz/sentio-sdk</span>\n          <span style=\"padding:2px 8px;background:#1f2937;border-radius:12px;font-size:11px;color:#79c0ff;font-family:monospace;\">v2.41.0</span>\n          <span style=\"color:#7d8590;font-size:12px;width:80px;text-align:right;\">2h ago</span>\n        </div>\n        <div style=\"display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid #21262d;gap:12px;\">\n          <span style=\"font-size:13px;\">🐙</span>\n          <span style=\"color:#e6edf3;font-family:'JetBrains Mono',monospace;font-size:13px;flex:1;\">sentioxyz/sentio-sdk</span>\n          <span style=\"padding:2px 8px;background:#1f2937;border-radius:12px;font-size:11px;color:#79c0ff;font-family:monospace;\">v2.40.2</span>\n          <span style=\"color:#7d8590;font-size:12px;width:80px;text-align:right;\">1d ago</span>\n        </div>\n        <div style=\"display:flex;align-items:center;padding:12px 16px;gap:12px;\">\n          <span style=\"font-size:13px;\">🐙</span>\n          <span […]
 
 > TOOL
@@ -1683,7 +1684,7 @@ id: toolu_016cdXacGsW3fX2VVLPnt8d3
 tool_result
 id: toolu_016cdXacGsW3fX2VVLPnt8d3
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/.REDACTED.html
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/.REDACTED.html
 ```
 
 > AGENT
@@ -1710,7 +1711,7 @@ tool_use Write
 id: toolu_01WEKyLNVQf1eG4Z7wHHnmZv
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/92413-1774531683/content/waiting.html",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/92413-1774531683/content/waiting.html",
   "content": "<div style=\"display:flex;align-items:center;justify-content:center;min-height:60vh\">\n  <p class=\"subtitle\">Continuing in terminal...</p>\n</div>"
 }
 ```
@@ -1720,7 +1721,7 @@ id: toolu_01WEKyLNVQf1eG4Z7wHHnmZv
 tool_result
 id: toolu_01WEKyLNVQf1eG4Z7wHHnmZv
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/.superpowers/brainstorm/92413-1774531683/content/waiting.html
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/.superpowers/brainstorm/92413-1774531683/content/waiting.html
 ```
 
 > TOOL

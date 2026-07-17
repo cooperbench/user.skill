@@ -2,9 +2,9 @@
 
 Can you get on a different branch and fix Launching Pi...
 
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_search" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_history" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
-Error: Failed to load extension "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_stats" conflicts with /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_search" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_history" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
+Error: Failed to load extension "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts": Tool "kg_stats" conflicts with /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts
 Error: exit status 1
 
 > AGENT
@@ -28,7 +28,7 @@ tool_use Bash
 id: toolu_012uYe7Euq1DNohDob4BULWi
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg*.ts",
+  "command": "ls -la /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg*.ts",
   "description": "List the conflicting extension files"
 }
 ```
@@ -67,7 +67,7 @@ tool_use Bash
 id: toolu_0158SJTv7XxwrHqxgcwtp8Hc
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg*.ts",
+  "command": "ls -la /home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg*.ts",
   "description": "List the conflicting extension files",
   "dangerouslyDisableSandbox": true
 }
@@ -142,7 +142,7 @@ tool_use Read
 id: toolu_01J7oT7QWa8sJ7MDfNnaegYv
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg.ts"
+  "file_path": "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg.ts"
 }
 ```
 
@@ -152,7 +152,7 @@ tool_use Read
 id: toolu_01RYgbKpGKeiDaMZEt7qwPst
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts"
+  "file_path": "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-kg-optimized.ts"
 }
 ```
 

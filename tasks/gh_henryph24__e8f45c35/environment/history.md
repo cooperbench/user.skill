@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_019CGgiRQbrNeRh3tt5morgE
 ```json
 {
-  "command": "grep -n \"App\\.\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"App\\.\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find App. references in main.tex"
 }
 ```
@@ -32,7 +32,7 @@ tool_use Bash
 id: toolu_01QcT6LLDJeEUTvbRbxJJtEW
 ```json
 {
-  "command": "grep -n \"Full hyperparameters\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"Full hyperparameters\" /home/<USER>/neuralips26/main.tex",
   "description": "Find the specific paragraph"
 }
 ```
@@ -51,7 +51,7 @@ tool_use Bash
 id: toolu_014oKVChCuHfSye8C26K37E6
 ```json
 {
-  "command": "grep -n \"app:setup\" /Users/hungpq2412/neuralips26/main.tex | head -10",
+  "command": "grep -n \"app:setup\" /home/<USER>/neuralips26/main.tex | head -10",
   "description": "Find app:setup label"
 }
 ```
@@ -70,7 +70,7 @@ tool_use Bash
 id: toolu_017Y2m4BZFm2Pj6T7d3PCxjB
 ```json
 {
-  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\appendix\\|app:setup\\|app:deployment\\|app:lora_sweep\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\appendix\\|app:setup\\|app:deployment\\|app:lora_sweep\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Check appendix structure and labels"
 }
 ```

@@ -124,7 +124,7 @@ tool_use Bash
 id: toolu_01VKECLKFGeznKvE1iZQFSSN
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\n📝 docs: sharpen README positioning and audience\n\nAdd tagline, expanded intro, feature bullets with emoji, and a\n\"Who is this for?\" section to make the value proposition clearer\nfor engineers, CI users, and Japanese-speaking developers.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && echo \"---STATUS---\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\n📝 docs: sharpen README positioning and audience\n\nAdd tagline, expanded intro, feature bullets with emoji, and a\n\"Who is this for?\" section to make the value proposition clearer\nfor engineers, CI users, and Japanese-speaking developers.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && echo \"---STATUS---\" && git status",
   "description": "Commit README changes"
 }
 ```

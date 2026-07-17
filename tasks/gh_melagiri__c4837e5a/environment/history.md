@@ -290,7 +290,7 @@ id: toolu_01QRj64EKsJYJDH2DNdPbCmV
 {
   "description": "Deep spec analysis: pros/cons of .code-insights.md design",
   "name": "spec-analyst",
-  "prompt": "You are a senior product and engineering analyst. Your job is to produce a thorough, structured pros/cons narrative on a product spec document, then compare it with a competitor approach.\n\n## Context\n\nCode Insights is an open-source, local-first CLI tool that parses AI coding sessions (Claude Code, Cursor, Codex CLI, etc.) and stores structured knowledge in a local SQLite database. It extracts: architectural decisions, learnings, friction patterns (9 categories), and effective patterns (8 categories).\n\nThe product currently has export formats (markdown knowledge brief, agent rules, Obsidian, Notion). The spec you're analyzing proposes a NEW export format called `.code-insights.md` — a repo-attached knowledge file that travels with the codebase.\n\n## The Spec to Analyze\n\nRead this file in full: `/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md`\n\nAlso read these for context on the existing system:\n- `/Users/melagiri/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md`\n- `/Users/melagiri/Workspace/codeInsights/code-insights/docs/PRODUCT.md`\n- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/export.ts` (existing export pipeline)\n- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/export-prompts.ts` (existing export prompts)\n\n## What to Produce\n\nWrite a structured analysis covering:\n\n### 1. Core Concept Strengths\nWhat does this design get fundamentally right? What problems does it solve that nothing else does? Why does the dual-audience (AI agents + humans) approach work?\n\n### 2. Design Strengths (specific choices)\nFor each of these specific design choices in the spec, evaluate […]
+  "prompt": "You are a senior product and engineering analyst. Your job is to produce a thorough, structured pros/cons narrative on a product spec document, then compare it with a competitor approach.\n\n## Context\n\nCode Insights is an open-source, local-first CLI tool that parses AI coding sessions (Claude Code, Cursor, Codex CLI, etc.) and stores structured knowledge in a local SQLite database. It extracts: architectural decisions, learnings, friction patterns (9 categories), and effective patterns (8 categories).\n\nThe product currently has export formats (markdown knowledge brief, agent rules, Obsidian, Notion). The spec you're analyzing proposes a NEW export format called `.code-insights.md` — a repo-attached knowledge file that travels with the codebase.\n\n## The Spec to Analyze\n\nRead this file in full: `/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md`\n\nAlso read these for context on the existing system:\n- `/home/<USER>/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md`\n- `/home/<USER>/Workspace/codeInsights/code-insights/docs/PRODUCT.md`\n- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/export.ts` (existing export pipeline)\n- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/export-prompts.ts` (existing export prompts)\n\n## What to Produce\n\nWrite a structured analysis covering:\n\n### 1. Core Concept Strengths\nWhat does this design get fundamentally right? What problems does it solve that nothing else does? Why does the dual-audience (AI agents + humans) approach work?\n\n### 2. Design Strengths (specific choices)\nFor each of these specific design choices in the spec, evaluate […]
 
 > TOOL
 
@@ -469,7 +469,7 @@ tool_use Read
 id: toolu_01V7QdbgQspXMPGPzPbCL1SZ
 ```json
 {
-  "file_path": "/Users/melagiri/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md"
 }
 ```
 
@@ -508,7 +508,7 @@ tool_use Bash
 id: toolu_019XFxGQ5Cdt9k76Nc1k8JXc
 ```json
 {
-  "command": "ls /Users/melagiri/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/",
+  "command": "ls /home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/",
   "description": "List brainstorming scripts"
 }
 ```
@@ -531,7 +531,7 @@ tool_use Bash
 id: toolu_0183bZ87yvWVKDkL6EYVCRjV
 ```json
 {
-  "command": "/Users/melagiri/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh --project-dir /Users/melagiri/Workspace/codeInsights/code-insights 2>&1",
+  "command": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh --project-dir /home/<USER>/Workspace/codeInsights/code-insights 2>&1",
   "description": "Start visual companion server"
 }
 ```
@@ -541,7 +541,7 @@ id: toolu_0183bZ87yvWVKDkL6EYVCRjV
 tool_result
 id: toolu_0183bZ87yvWVKDkL6EYVCRjV
 ```
-{"type":"server-started","port":57154,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:57154","screen_dir":"/Users/melagiri/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content","state_dir":"/Users/melagiri/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/state"}
+{"type":"server-started","port":57154,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:57154","screen_dir":"/home/<USER>/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content","state_dir":"/home/<USER>/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/state"}
 ```
 
 > AGENT
@@ -558,7 +558,7 @@ tool_use Write
 id: toolu_01NnbxXRpZkEX1YrS41gi9A2
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content/approaches.html",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content/approaches.html",
   "content": "<h2>What should we actually build?</h2>\n<p class=\"subtitle\">Research findings surfaced three distinct design directions. Which resonates?</p>\n\n<div style=\"margin-bottom: 24px; padding: 14px 18px; background: rgba(255,200,50,0.08); border: 1px solid rgba(255,200,50,0.25); border-radius: 8px;\">\n  <span class=\"label\" style=\"color: #f0b429;\">Key tensions from research</span>\n  <div style=\"margin-top: 8px; display: flex; gap: 24px; flex-wrap: wrap;\">\n    <span style=\"font-size: 13px;\">⚠ Staleness is silent — file goes stale with no signal</span>\n    <span style=\"font-size: 13px;\">⚠ Single-author artifact appears authoritative to teams</span>\n    <span style=\"font-size: 13px;\">⚠ AI agents won't find it without a CLAUDE.md reference</span>\n    <span style=\"font-size: 13px;\">⚠ entire.io captures \"how\" — Code Insights captures \"what we learned\"</span>\n  </div>\n</div>\n\n<div class=\"options\">\n\n  <div class=\"option\" data-choice=\"a\" onclick=\"toggleSelect(this)\">\n    <div class=\"letter\">A</div>\n    <div class=\"content\">\n      <h3>Refined File</h3>\n      <p class=\"label\" style=\"margin-bottom: 8px;\">Ship the spec with 3 targeted fixes</p>\n      <p>Keep the <code>.code-insights.md</code> spec as designed. Add three missing pieces before implementation:</p>\n      <ul style=\"margin: 10px 0; padding-left: 18px; font-size: 13px; line-height: 1.8;\">\n        <li><strong>Author attribution</strong> — <code>author: srikanth</code> in frontmatter, byline in markdown header</li>\n        <li><strong>CLAUDE.md bridge</strong> — CLI prompts to add a reference line after first generation</li>\n        <li><strong>Staleness signal</strong> — <code>sessions_at_generation</code> in frontmatter; passive warning in dashboard when delta &gt; 50</li>\n      </ul>\n      <div class=\"pros-cons\" style=\"margin-top: 12px;\">\n        <div class=\"pros\"><h4>Pros</h4><ul><li>Fastest to ship</li><li>Spec already written and reviewed</li><li>Minimal architectural change</li></ul></div>\n        <div class=\"cons\"><h4>Cons</h4><ul><li>AI agent discovery […]
 
 > TOOL
@@ -566,7 +566,7 @@ id: toolu_01NnbxXRpZkEX1YrS41gi9A2
 tool_result
 id: toolu_01NnbxXRpZkEX1YrS41gi9A2
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content/approaches.html (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content/approaches.html (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -590,7 +590,7 @@ tool_use Bash
 id: toolu_01Xzn1VY75Xfwnh9S3SRUPUo
 ```json
 {
-  "command": "cat /Users/melagiri/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/state/events 2>/dev/null || echo \"no-events\"",
+  "command": "cat /home/<USER>/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/state/events 2>/dev/null || echo \"no-events\"",
   "description": "Read browser click events"
 }
 ```
@@ -613,7 +613,7 @@ tool_use Write
 id: toolu_01KXMSWfoqaMJrAudcgaVKzj
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content/waiting-1.html",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content/waiting-1.html",
   "content": "<div style=\"display:flex;align-items:center;justify-content:center;min-height:60vh\">\n  <p class=\"subtitle\">Continuing in terminal — clarifying questions...</p>\n</div>\n"
 }
 ```
@@ -623,7 +623,7 @@ id: toolu_01KXMSWfoqaMJrAudcgaVKzj
 tool_result
 id: toolu_01KXMSWfoqaMJrAudcgaVKzj
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content/waiting-1.html (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/.superpowers/brainstorm/13307-1776820760/content/waiting-1.html (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

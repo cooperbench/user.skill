@@ -33,7 +33,7 @@ tool_use Bash
 id: toolu_01VHkKgT9LTRWSt8Ae5XwqR3
 ```json
 {
-  "command": "printf 'lcov.info\\n' >> .gitignore && git add .gitignore && git commit -m \"chore: gitignore lcov.info\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\" && git push",
+  "command": "printf 'lcov.info\\n' >> .gitignore && git add .gitignore && git commit -m \"chore: gitignore lcov.info\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\" && git push",
   "description": "Add lcov.info to gitignore, commit, push"
 }
 ```
@@ -71,7 +71,7 @@ id: toolu_01JvrmMpR2kys3Q6BoYKoXRe
   "subagent_type": "fork",
   "name": "project-explorer",
   "description": "Explore project structure for CI/release proposal",
-  "prompt": "Survey the crap4py project at /Users/gabadi/workspace/addi/crap4py to build a complete picture for a CI + tag-based release proposal. Report:\n\n1. Project type and entry points (pyproject.toml, setup.py, setup.cfg — full contents)\n2. Current test setup (how tests run, what commands)\n3. Existing CI files (.github/workflows/)\n4. Package structure (src layout vs flat, main module name)\n5. Any existing release tooling (CHANGELOG, bumpversion, etc.)\n6. What the tool does (brief from README or CONTEXT.md)\n\nOutput raw findings — no prose padding. I need the actual file contents for pyproject.toml and any workflow files."
+  "prompt": "Survey the crap4py project at /home/<USER>/workspace/addi/crap4py to build a complete picture for a CI + tag-based release proposal. Report:\n\n1. Project type and entry points (pyproject.toml, setup.py, setup.cfg — full contents)\n2. Current test setup (how tests run, what commands)\n3. Existing CI files (.github/workflows/)\n4. Package structure (src layout vs flat, main module name)\n5. Any existing release tooling (CHANGELOG, bumpversion, etc.)\n6. What the tool does (brief from README or CONTEXT.md)\n\nOutput raw findings — no prose padding. I need the actual file contents for pyproject.toml and any workflow files."
 }
 ```
 
@@ -153,7 +153,7 @@ tool_use Bash
 id: toolu_01Ppgtvc634HUncuyunz6cWw
 ```json
 {
-  "command": "ls /Users/gabadi/workspace/addi/drywall/.github/workflows/ 2>/dev/null && echo \"---\" && find /Users/gabadi/workspace/addi/drywall/.github/workflows/ -name \"*.yml\" -exec echo \"=== {} ===\" \\; -exec cat {} \\;",
+  "command": "ls /home/<USER>/workspace/addi/drywall/.github/workflows/ 2>/dev/null && echo \"---\" && find /home/<USER>/workspace/addi/drywall/.github/workflows/ -name \"*.yml\" -exec echo \"=== {} ===\" \\; -exec cat {} \\;",
   "description": "Read drywall GitHub Actions workflows"
 }
 ```
@@ -166,7 +166,7 @@ id: toolu_01Ppgtvc634HUncuyunz6cWw
 ci.yml
 release.yml
 ---
-=== /Users/gabadi/workspace/addi/drywall/.github/workflows/release.yml ===
+=== /home/<USER>/workspace/addi/drywall/.github/workflows/release.yml ===
 name: Release
 
 on:
@@ -248,7 +248,7 @@ jobs:
             drywall-macos-aarch64
             drywall-macos-x86_64
           generate_release_notes: true
-=== /Users/gabadi/workspace/addi/drywall/.github/workflows/ci.yml ===
+=== /home/<USER>/workspace/addi/drywall/.github/workflows/ci.yml ===
 name: CI
 
 on:
@@ -270,8 +270,8 @@ id: toolu_017oJXyoSRTHQ5ZvvjMDaFrG
 tool_result
 id: toolu_017oJXyoSRTHQ5ZvvjMDaFrG
 ```
-/Users/gabadi/.local/bin/gherkin-parser
-/Users/gabadi/.local/bin/gherkin-mutator
+/home/<USER>/.local/bin/gherkin-parser
+/home/<USER>/.local/bin/gherkin-mutator
 ```
 
 > TOOL
@@ -280,7 +280,7 @@ tool_use Bash
 id: toolu_01CZ9zQSqvSx7PxFkauSRHs4
 ```json
 {
-  "command": "uv tool list 2>/dev/null; echo \"---\"; file /Users/gabadi/.local/bin/gherkin-parser; ls -la /Users/gabadi/.local/bin/gherkin-*",
+  "command": "uv tool list 2>/dev/null; echo \"---\"; file /home/<USER>/.local/bin/gherkin-parser; ls -la /home/<USER>/.local/bin/gherkin-*",
   "description": "Identify gherkin tool type and version"
 }
 ```
@@ -302,10 +302,10 @@ pre-commit v4.5.1
 x-cli v0.1.0
 - x-cli
 ---
-/Users/gabadi/.local/bin/gherkin-parser: Bourne-Again shell script text executable, ASCII text
--rwxr-xr-x@ 1 gabadi  staff  91 Jun 15 01:11 /Users/gabadi/.local/bin/gherkin-ir-dry-checker
--rwxr-xr-x@ 1 gabadi  staff  84 Jun 15 01:11 /Users/gabadi/.local/bin/gherkin-mutator
--rwxr-xr-x@ 1 gabadi  staff  83 Jun 15 01:11 /Users/gabadi/.local/bin/gherkin-parser
+/home/<USER>/.local/bin/gherkin-parser: Bourne-Again shell script text executable, ASCII text
+-rwxr-xr-x@ 1 gabadi  staff  91 Jun 15 01:11 /home/<USER>/.local/bin/gherkin-ir-dry-checker
+-rwxr-xr-x@ 1 gabadi  staff  84 Jun 15 01:11 /home/<USER>/.local/bin/gherkin-mutator
+-rwxr-xr-x@ 1 gabadi  staff  83 Jun 15 01:11 /home/<USER>/.local/bin/gherkin-parser
 ```
 
 > TOOL
@@ -314,7 +314,7 @@ tool_use Bash
 id: toolu_017jHNwAuQMZmt6rMup5Hmu5
 ```json
 {
-  "command": "cat /Users/gabadi/workspace/addi/crap4py/acceptance/run_acceptance.sh | head -30",
+  "command": "cat /home/<USER>/workspace/addi/crap4py/acceptance/run_acceptance.sh | head -30",
   "description": "Check acceptance script for tool invocation"
 }
 ```
@@ -362,7 +362,7 @@ tool_use Bash
 id: toolu_019yDECvc4ripXjn7Fdnjrhh
 ```json
 {
-  "command": "cat /Users/gabadi/.local/bin/gherkin-parser; echo \"---\"; cat /Users/gabadi/.local/bin/gherkin-mutator",
+  "command": "cat /home/<USER>/.local/bin/gherkin-parser; echo \"---\"; cat /home/<USER>/.local/bin/gherkin-mutator",
   "description": "Read gherkin tool scripts to find their origin"
 }
 ```
@@ -385,7 +385,7 @@ tool_use Bash
 id: toolu_01QPqtSdbr8TpNW57eF7fajs
 ```json
 {
-  "command": "ls /Users/gabadi/workspace/addi/drywall/src/ 2>/dev/null; cargo metadata --manifest-path /Users/gabadi/workspace/addi/drywall/Cargo.toml --no-deps 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); [print(p['name'], p['version']) for p in d['packages']]\" 2>/dev/null",
+  "command": "ls /home/<USER>/workspace/addi/drywall/src/ 2>/dev/null; cargo metadata --manifest-path /home/<USER>/workspace/addi/drywall/Cargo.toml --no-deps 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); [print(p['name'], p['version']) for p in d['packages']]\" 2>/dev/null",
   "description": "Check drywall package structure"
 }
 ```
@@ -409,7 +409,7 @@ tool_use Bash
 id: toolu_01QPA7WfGSSfUsMnevUpwHs4
 ```json
 {
-  "command": "ls /tmp/aps-build/ 2>/dev/null; find /Users/gabadi/workspace/addi -name \"bb.edn\" 2>/dev/null | head -5; find /Users/gabadi/workspace -name \"bb.edn\" 2>/dev/null | head -5",
+  "command": "ls /tmp/aps-build/ 2>/dev/null; find /home/<USER>/workspace/addi -name \"bb.edn\" 2>/dev/null | head -5; find /home/<USER>/workspace -name \"bb.edn\" 2>/dev/null | head -5",
   "description": "Find babashka config and APS build origin"
 }
 ```
@@ -420,7 +420,7 @@ tool_use Bash
 id: toolu_01EAuCAMLc6ShjP7xJU9S1Vu
 ```json
 {
-  "command": "cat /Users/gabadi/workspace/addi/crap4py/acceptance/run_acceptance.sh",
+  "command": "cat /home/<USER>/workspace/addi/crap4py/acceptance/run_acceptance.sh",
   "description": "Read full acceptance script"
 }
 ```
@@ -516,7 +516,7 @@ tool_use Bash
 id: toolu_016oaq9mz2UFaCwZNnPz8opQ
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi -name \"bb.edn\" 2>/dev/null | head -10; ls /Users/gabadi/workspace/addi/ 2>/dev/null",
+  "command": "find /home/<USER>/workspace/addi -name \"bb.edn\" 2>/dev/null | head -10; ls /home/<USER>/workspace/addi/ 2>/dev/null",
   "description": "Find bb.edn and list addi workspace"
 }
 ```
@@ -526,7 +526,7 @@ id: toolu_016oaq9mz2UFaCwZNnPz8opQ
 tool_result
 id: toolu_016oaq9mz2UFaCwZNnPz8opQ
 ```
-/Users/gabadi/workspace/addi/gabadi-swarm-forge/bb.edn
+/home/<USER>/workspace/addi/gabadi-swarm-forge/bb.edn
 Acceptance-Pipeline-Specification
 addi-skillshare
 agents
@@ -726,7 +726,7 @@ tool_use Bash
 id: toolu_01AM3NJbV53jH9PFwPTVKiFE
 ```json
 {
-  "command": "rtk /Users/gabadi/workspace/addi/drywall/target/release/drywall --help 2>/dev/null || rtk gh api repos/gabadi/drywall/readme 2>/dev/null | python3 -c \"import json,sys,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())\" 2>/dev/null | head -60",
+  "command": "rtk /home/<USER>/workspace/addi/drywall/target/release/drywall --help 2>/dev/null || rtk gh api repos/gabadi/drywall/readme 2>/dev/null | python3 -c \"import json,sys,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())\" 2>/dev/null | head -60",
   "description": "Check drywall help and README for threshold options"
 }
 ```
@@ -759,7 +759,7 @@ tool_use Bash
 id: toolu_01Lu87TBtQyjkHzNegQyhdxw
 ```json
 {
-  "command": "rtk /Users/gabadi/workspace/addi/drywall/target/release/drywall src/ ; echo \"exit: $?\"",
+  "command": "rtk /home/<USER>/workspace/addi/drywall/target/release/drywall src/ ; echo \"exit: $?\"",
   "description": "Run drywall on crap4py src to check exit code and output"
 }
 ```

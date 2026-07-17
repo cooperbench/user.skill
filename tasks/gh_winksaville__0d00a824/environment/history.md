@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_019LAngcMeZvixQKA9767SDW
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "offset": 0,
   "limit": 60
 }

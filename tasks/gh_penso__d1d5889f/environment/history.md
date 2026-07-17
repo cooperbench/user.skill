@@ -61,7 +61,7 @@ id: toolu_01TT2nqAAA296zNqJM2fRLx7
 tool_result
 id: toolu_01TT2nqAAA296zNqJM2fRLx7
 ```
-/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs
+/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs
 ```
 
 > TOOL
@@ -79,7 +79,7 @@ id: toolu_01V8qFkM456kAHFQUcEDTLEx
 tool_result
 id: toolu_01V8qFkM456kAHFQUcEDTLEx
 ```
-/Users/penso/.superset/worktrees/moltis/abalone-place/crates/media/src/mime.rs
+/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/media/src/mime.rs
 ```
 
 > TOOL
@@ -132,7 +132,7 @@ tool_use Read
 id: toolu_01Gu4c2AzBXrGuHvbR8be85i
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs"
 }
 ```
 
@@ -211,7 +211,7 @@ tool_use Read
 id: toolu_01LtQHtGvMKH39LPzJQWZXBe
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/media/src/mime.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/media/src/mime.rs"
 }
 ```
 
@@ -282,7 +282,7 @@ tool_use Read
 id: toolu_012b3cQCc5wZLqffKFXpV4WJ
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs"
 }
 ```
 
@@ -469,7 +469,7 @@ id: toolu_014ngQ8sSDnivm1yJ1MUiWUk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs",
   "old_string": "pub(super) fn extract_document_file(msg: &Message) -> Option<DocumentFileInfo> {\n    match &msg.kind {\n        MessageKind::Common(common) => match &common.media_kind {\n            MediaKind::Document(d) => {\n                let raw = d\n                    .document\n                    .mime_type\n                    .as_ref()\n                    .map(ToString::to_string)\n                    .unwrap_or_else(|| \"application/octet-stream\".to_string());\n                Some(DocumentFileInfo {\n                    file_id: d.document.file.id.clone(),\n                    media_type: normalize_media_type(&raw),\n                    file_name: d.document.file_name.clone(),\n                })\n            },\n            _ => None,\n        },\n        _ => None,\n    }\n}",
   "new_string": "pub(super) fn extract_document_file(msg: &Message) -> Option<DocumentFileInfo> {\n    match &msg.kind {\n        MessageKind::Common(common) => match &common.media_kind {\n            MediaKind::Document(d) => {\n                let raw = d\n                    .document\n                    .mime_type\n                    .as_ref()\n                    .map(ToString::to_string)\n                    .unwrap_or_else(|| \"application/octet-stream\".to_string());\n                let normalized = normalize_media_type(&raw);\n                // Telegram often sends application/octet-stream for file types\n                // it doesn't recognise (e.g. .md, .toml, .yaml). Fall back to\n                // extension-based detection so these documents aren't silently\n                // dropped.\n                let media_type = if normalized == \"application/octet-stream\" {\n                    d.document\n                        .file_name\n                        .as_deref()\n                        .and_then(|name| name.rsplit('.').next())\n                        .and_then(moltis_media::mime::mime_from_extension)\n                        .map(str::to_string)\n                        .unwrap_or(normalized)\n                } else {\n                    normalized\n                };\n                Some(DocumentFileInfo {\n                    file_id: d.document.file.id.clone(),\n                    media_type,\n                    file_name: d.document.file_name.clone(),\n                })\n            },\n            _ => None,\n        },\n        _ => None,\n    }\n}"
 }
@@ -480,7 +480,7 @@ id: toolu_014ngQ8sSDnivm1yJ1MUiWUk
 tool_result
 id: toolu_014ngQ8sSDnivm1yJ1MUiWUk
 ```
-The file /Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs has been updated successfully.
 ```
 
 > AGENT
@@ -494,7 +494,7 @@ id: toolu_01MgvoybHXfWpZ8czAb1vJT6
 ```json
 {
   "pattern": "^use |^#\\[cfg|^mod ",
-  "path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs",
   "output_mode": "content"
 }
 ```
@@ -514,7 +514,7 @@ id: toolu_01F13K9BM1GNp1XV4o4dP372
 ```json
 {
   "pattern": "^use |^mod |^#\\[cfg\"",
-  "path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests",
+  "path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests",
   "output_mode": "content"
 }
 ```
@@ -547,7 +547,7 @@ tool_use Read
 id: toolu_015DoUaVuwtURuTH9baNRWCz
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs",
   "offset": 58,
   "limit": 30
 }
@@ -601,7 +601,7 @@ id: toolu_01Cf9zMMqKmFjZE1iNN8m8QX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs",
   "old_string": "#[test]\nfn should_inline_markdown_document_types() {",
   "new_string": "#[test]\nfn extract_document_file_infers_mime_from_extension_for_octet_stream() {\n    // Telegram sends application/octet-stream for .md files — we should\n    // derive text/markdown from the filename extension.\n    let msg: Message = serde_json::from_value(json!({\n        \"message_id\": 4,\n        \"date\": 1,\n        \"chat\": { \"id\": 42, \"type\": \"private\", \"first_name\": \"Alice\" },\n        \"from\": {\n            \"id\": 1001,\n            \"is_bot\": false,\n            \"first_name\": \"Alice\",\n            \"username\": \"alice\"\n        },\n        \"document\": {\n            \"file_id\": \"doc-md-file-id\",\n            \"file_unique_id\": \"doc-md-unique-id\",\n            \"file_name\": \"notes.md\",\n            \"mime_type\": \"application/octet-stream\",\n            \"file_size\": 256\n        }\n    }))\n    .expect(\"deserialize document message\");\n\n    let document = extract_document_file(&msg).expect(\"document should be extracted\");\n    assert_eq!(document.media_type, \"text/markdown\");\n    assert!(is_supported_document_type(&document.media_type));\n}\n\n#[test]\nfn extract_document_file_infers_mime_for_other_text_extensions() {\n    for (file_name, expected_mime) in [\n        (\"config.toml\", \"application/toml\"),\n        (\"data.yaml\", \"application/x-yaml\"),\n        (\"data.yml\", \"application/x-yaml\"),\n        (\"readme.txt\", \"text/plain\"),\n        (\"schema.json\", \"application/json\"),\n    ] {\n        let msg: Message = serde_json::from_value(json!({\n            \"message_id\": 5,\n            \"date\": 1,\n            \"chat\": { \"id\": 42, \"type\": \"private\", \"first_name\": \"Alice\" },\n            \"from\": {\n                \"id\": 1001,\n                \"is_bot\": false,\n                \"first_name\": \"Alice\",\n                \"username\": \"alice\"\n            },\n            \"document\": {\n                \"file_id\": \"doc-file-id\",\n                \"file_unique_id\": \"doc-unique-id\",\n                \"file_name\": file_name,\n                \"mime_type\": \"application/octet-stream\",\n                \"file_size\": 128\n            }\n        }))\n        .expect(\"deserialize document message\");\n\n        let document = extract_document_file(&msg).expect(\"document should be extracted\");\n        assert_eq!(\n            document.media_type, expected_mime,\n            \"expected {expected_mime} for {file_name}, got {}\",\n            document.media_type\n        );\n    }\n}\n\n#[test]\nfn extract_document_file_keeps_explicit_mime_when_not_octet_stream() {\n    // When Telegram provides a real MIME type, don't override it.\n    let msg: Message = serde_json::from_value(json!({\n        \"message_id\": 6,\n        \"date\": 1,\n        \"chat\": { \"id\": […]
 
@@ -610,7 +610,7 @@ id: toolu_01Cf9zMMqKmFjZE1iNN8m8QX
 tool_result
 id: toolu_01Cf9zMMqKmFjZE1iNN8m8QX
 ```
-The file /Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs has been updated successfully.
 ```
 
 > AGENT
@@ -641,8 +641,8 @@ id: toolu_01AujATqkEnCp1wEWhmGJqmZ
    Compiling rustls-platform-verifier v0.6.2
    Compiling hyper-rustls v0.27.7
    Compiling reqwest v0.13.2
-   Compiling moltis-common v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/common)
-   Compiling moltis-media v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/media)
+   Compiling moltis-common v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/common)
+   Compiling moltis-media v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/media)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 15.65s
      Running unittests src/lib.rs (target/debug/deps/moltis_media-f8838c015bf955de)
 
@@ -748,7 +748,7 @@ id: toolu_01TLFZ8PYQeaH26PqHJA6248
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs",
   "old_string": "        (\"config.toml\", \"application/toml\"),\n        (\"data.yaml\", \"application/x-yaml\"),\n        (\"data.yml\", \"application/x-yaml\"),",
   "new_string": "        (\"config.toml\", \"text/x-toml\"),\n        (\"data.yaml\", \"text/x-yaml\"),\n        (\"data.yml\", \"text/x-yaml\"),"
 }
@@ -759,7 +759,7 @@ id: toolu_01TLFZ8PYQeaH26PqHJA6248
 tool_result
 id: toolu_01TLFZ8PYQeaH26PqHJA6248
 ```
-The file /Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/tests/media.rs has been updated successfully.
 ```
 
 > TOOL
@@ -779,7 +779,7 @@ id: toolu_01UShiymdNQfZrkUJRzLS7Sy
 tool_result
 id: toolu_01UShiymdNQfZrkUJRzLS7Sy
 ```
-   Compiling moltis-telegram v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram)
+   Compiling moltis-telegram v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.25s
      Running unittests src/lib.rs (target/debug/deps/moltis_telegram-a45f1f0625af4ca3)
 
@@ -803,7 +803,7 @@ tool_use Read
 id: toolu_01PbzJpbzimi4qDnDeWFwtrX
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs",
   "offset": 239,
   "limit": 15
 }
@@ -837,7 +837,7 @@ tool_use Read
 id: toolu_01RTbvMVoBMkspDa7tdYZSYy
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs",
   "offset": 255,
   "limit": 15
 }
@@ -876,7 +876,7 @@ id: toolu_01U5JEk7wbC1LACDTfopm19q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs",
   "old_string": "pub(super) fn should_inline_document_text(media_type: &str) -> bool {\n    matches!(\n        media_type,\n        \"text/html\"\n            | \"text/plain\"\n            | \"text/markdown\"\n            | \"text/x-markdown\"\n            | \"text/xml\"\n            | \"application/json\"\n            | \"application/xml\"\n    ) || media_type.ends_with(\"+json\")\n        || media_type.ends_with(\"+xml\")\n}",
   "new_string": "pub(super) fn should_inline_document_text(media_type: &str) -> bool {\n    matches!(\n        media_type,\n        \"text/html\"\n            | \"text/plain\"\n            | \"text/markdown\"\n            | \"text/x-markdown\"\n            | \"text/xml\"\n            | \"text/csv\"\n            | \"text/x-toml\"\n            | \"text/x-yaml\"\n            | \"application/json\"\n            | \"application/xml\"\n            | \"application/toml\"\n            | \"application/yaml\"\n            | \"application/x-yaml\"\n    ) || media_type.ends_with(\"+json\")\n        || media_type.ends_with(\"+xml\")\n}"
 }
@@ -887,7 +887,7 @@ id: toolu_01U5JEk7wbC1LACDTfopm19q
 tool_result
 id: toolu_01U5JEk7wbC1LACDTfopm19q
 ```
-The file /Users/penso/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/abalone-place/crates/telegram/src/handlers/media.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1036,15 +1036,15 @@ id: toolu_01KUZVg8cyKegp6ezdYq8fJJ
 <exit_code>0</exit_code>
 
 <output>
-    Checking moltis-tools v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/tools)
-    Checking moltis-provider-setup v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/provider-setup)
-    Checking moltis-memory v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/memory)
-    Checking moltis-auth v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/auth)
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/chat)
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/code-index)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/abalone-place/crates/gateway)
-      Timing report saved to /Users/penso/.superset/worktrees/moltis/abalone-place/target/cargo-timings/cargo-timing-20260421T110826.842386Z.html
+    Checking moltis-tools v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/tools)
+    Checking moltis-provider-setup v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/provider-setup)
+    Checking moltis-memory v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/memory)
+    Checking moltis-auth v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/auth)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/chat)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/code-index)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/abalone-place/crates/gateway)
+      Timing report saved to /home/<USER>/.superset/worktrees/moltis/abalone-place/target/cargo-timings/cargo-timing-20260421T110826.842386Z.html
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1m 36s
 </output>
 ```

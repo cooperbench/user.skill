@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01YPZriFouYjDCf7Me3Q3Zxj
 ```json
 {
-  "command": "ls -la /Users/135yshr/go/src/github.com/135yshr/meow/website/content/",
+  "command": "ls -la /home/<USER>/go/src/github.com/135yshr/meow/website/content/",
   "description": "List website content directory"
 }
 ```
@@ -36,7 +36,7 @@ tool_use Read
 id: toolu_01UtD6ehnNcYCj8EWD7vmFRH
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/meow-programming-language-vs-meowlang.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/meow-programming-language-vs-meowlang.md"
 }
 ```
 
@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_018PHTreyyduGfNPUuFe7W2d
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html"
 }
 ```
 
@@ -119,7 +119,7 @@ tool_use Read
 id: toolu_0137XtrnuHkeCWEsmvL5TmFL
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/README.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/README.md"
 }
 ```
 
@@ -235,7 +235,7 @@ tool_use Bash
 id: toolu_01KBSG2UnEkfDjopmWpdtnko
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/meow/website/ && cat /Users/135yshr/go/src/github.com/135yshr/meow/website/hugo.toml 2>/dev/null || cat /Users/135yshr/go/src/github.com/135yshr/meow/website/config.toml 2>/dev/null || cat /Users/135yshr/go/src/github.com/135yshr/meow/website/config.yaml 2>/dev/null",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/meow/website/ && cat /home/<USER>/go/src/github.com/135yshr/meow/website/hugo.toml 2>/dev/null || cat /home/<USER>/go/src/github.com/135yshr/meow/website/config.toml 2>/dev/null || cat /home/<USER>/go/src/github.com/135yshr/meow/website/config.yaml 2>/dev/null",
   "description": "Look at Hugo config"
 }
 ```
@@ -353,7 +353,7 @@ tool_use Bash
 id: toolu_01X3r2jWWpPhsETBzCYsvze8
 ```json
 {
-  "command": "grep -rn \"meow-programming-language\" /Users/135yshr/go/src/github.com/135yshr/meow/ --include=\"*.md\" --include=\"*.html\" --include=\"*.toml\" --include=\"*.xml\" 2>/dev/null | head -30",
+  "command": "grep -rn \"meow-programming-language\" /home/<USER>/go/src/github.com/135yshr/meow/ --include=\"*.md\" --include=\"*.html\" --include=\"*.toml\" --include=\"*.xml\" 2>/dev/null | head -30",
   "description": "Find references in repo"
 }
 ```

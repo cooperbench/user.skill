@@ -41,7 +41,7 @@ tool_result
 id: toolu_01Ct7WPQgdTF4Vh26vZYP771
 ```
 <persisted-output>
-Output too large (119KB). Full output saved to: /Users/ta93abe/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/c2fdc3c3-13e3-4ae9-a55f-a9e6fb3367ce/tool-results/bm57kyv24.txt
+Output too large (119KB). Full output saved to: /home/<USER>/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/c2fdc3c3-13e3-4ae9-a55f-a9e6fb3367ce/tool-results/bm57kyv24.txt
 
 Preview (first 2KB):
 On branch main
@@ -162,7 +162,7 @@ tool_use Bash
 id: toolu_01P7T4XjxkpP1aybgWo91bRK
 ```json
 {
-  "command": "git add package.json astro.config.mjs pnpm-lock.yaml && gt create chore/update-deps-remove-pagefind -m \"chore: update dependencies and remove pagefind search\" -m \"- astro v6.4.6, tailwindcss v4.3.1, biome 2.5.0 などへ依存を更新\n- pagefind による検索機能(astro-pagefind / pagefind)を削除\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\"",
+  "command": "git add package.json astro.config.mjs pnpm-lock.yaml && gt create chore/update-deps-remove-pagefind -m \"chore: update dependencies and remove pagefind search\" -m \"- astro v6.4.6, tailwindcss v4.3.1, biome 2.5.0 などへ依存を更新\n- pagefind による検索機能(astro-pagefind / pagefind)を削除\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\"",
   "description": "依存更新+pagefind削除でブランチ作成しコミット"
 }
 ```

@@ -262,7 +262,7 @@ tool_use Read
 id: toolu_01FGxn4dVz7w7JHcjLQeJYDm
 ```json
 {
-  "file_path": "/Users/jobinlawrance/.claude/PAI/ALGORITHM/LATEST"
+  "file_path": "/home/<USER>/.claude/PAI/ALGORITHM/LATEST"
 }
 ```
 
@@ -281,7 +281,7 @@ tool_use Read
 id: toolu_013x8RnQep7x6jbEZ8UqFMWM
 ```json
 {
-  "file_path": "/Users/jobinlawrance/.claude/PAI/ALGORITHM/v6.3.0.md"
+  "file_path": "/home/<USER>/.claude/PAI/ALGORITHM/v6.3.0.md"
 }
 ```
 
@@ -472,7 +472,7 @@ tool_use Read
 id: toolu_01RtxwMJPZSktcFJtzT6jBNG
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "offset": 100,
   "limit": 180
 }
@@ -702,7 +702,7 @@ tool_use Read
 id: toolu_01M66ubWPTwFoo5jrdvuHh3Y
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/pipes.go"
+  "file_path": "/home/<USER>/Project/tiny/internal/api/pipes.go"
 }
 ```
 
@@ -1231,7 +1231,7 @@ tool_use Bash
 id: toolu_01XPvzRtw63knxYrf95nMDuN
 ```json
 {
-  "command": "cat \"/Users/jobinlawrance/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/parallel-agent-orchestration.md\" 2>/dev/null",
+  "command": "cat \"/home/<USER>/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/parallel-agent-orchestration.md\" 2>/dev/null",
   "description": "Read stored memory about Forge/codex availability for this project"
 }
 ```
@@ -1262,7 +1262,7 @@ tool_use Bash
 id: toolu_018hErjf2ncnr8Rrg8Mo5yuo
 ```json
 {
-  "command": "grep -rl \"type: feedback\" \"/Users/jobinlawrance/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/\" 2>/dev/null",
+  "command": "grep -rl \"type: feedback\" \"/home/<USER>/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/\" 2>/dev/null",
   "description": "FeedbackMemoryConsult: grep prior feedback-type memories for this project"
 }
 ```
@@ -1272,7 +1272,7 @@ id: toolu_018hErjf2ncnr8Rrg8Mo5yuo
 tool_result
 id: toolu_018hErjf2ncnr8Rrg8Mo5yuo
 ```
-/Users/jobinlawrance/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/chi-vs-stdlib-boundary.md
+/home/<USER>/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/chi-vs-stdlib-boundary.md
 ```
 
 > TOOL
@@ -1281,7 +1281,7 @@ tool_use Bash
 id: toolu_018ddSaLSs7Yzw9XbjtnyiLh
 ```json
 {
-  "command": "cat \"/Users/jobinlawrance/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/chi-vs-stdlib-boundary.md\"",
+  "command": "cat \"/home/<USER>/.claude/projects/-Users-jobinlawrance-Project-tiny/memory/chi-vs-stdlib-boundary.md\"",
   "description": "Read the chi-vs-stdlib feedback memory content"
 }
 ```
@@ -1365,7 +1365,7 @@ tool_use Read
 id: toolu_013RYbp7FPTJn1g3qwqJeRYx
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/datasource/registry.go"
+  "file_path": "/home/<USER>/Project/tiny/internal/datasource/registry.go"
 }
 ```
 
@@ -1422,7 +1422,7 @@ tool_use Read
 id: toolu_019hYrhV2DwikV7HjCcr4JEQ
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/model/model.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/model/model.go",
   "offset": 200,
   "limit": 30
 }
@@ -1472,7 +1472,7 @@ id: toolu_01DSE3QFMocY2q7TraCFGCNv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/model/model.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/model/model.go",
   "old_string": "// QueryStat is one pipe execution's observability record (ADR 0014). Fed through",
   "new_string": "// JobRecord is a persisted async-job record (Tinybird job API parity, gap #8).\n// TinyRaven only produces \"copy\" jobs today, always terminal (\"done\") since\n// RunCopy executes synchronously; the record exists so job_url / GET /v0/jobs\n// are pollable instead of dead links. Target is the copy's destination\n// datasource, carried so GET authorization can reuse the same APPEND:<target>\n// scope check RunCopy already requires to create the job.\ntype JobRecord struct {\n\tID        string\n\tKind      string // \"copy\" today; other job kinds (gap #6 import) would add values\n\tStatus    string // \"done\" | \"error\" until an async path exists\n\tPipeName  string\n\tTarget    string\n\tCreatedAt time.Time\n}\n\n// JobStore persists JobRecords for GET /v0/jobs and GET /v0/jobs/{id}.\n// Redis-backed with a TTL (jobs have no git-tracked source of truth, unlike\n// DatasourceRegistry/PipeRegistry, so they don't belong in the AOF-persisted\n// metadata registry — ADR 0001 covers config, not ephemeral run history).\ntype JobStore interface {\n\tPut(ctx context.Context, rec JobRecord) error\n\tGet(ctx context.Context, id string) (JobRecord, bool, error)\n\t// List returns up to limit most-recent records, newest first.\n\tList(ctx context.Context, limit int) ([]JobRecord, error)\n}\n\n// QueryStat is one pipe execution's observability record (ADR 0014). Fed through"
 }
@@ -1483,7 +1483,7 @@ id: toolu_01DSE3QFMocY2q7TraCFGCNv
 tool_result
 id: toolu_01DSE3QFMocY2q7TraCFGCNv
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/model/model.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/model/model.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1496,7 +1496,7 @@ tool_use Bash
 id: toolu_011UxtvuZrytwfD2w4QPRf8Y
 ```json
 {
-  "command": "sed -n '1,12p' /Users/jobinlawrance/Project/tiny/internal/model/model.go",
+  "command": "sed -n '1,12p' /home/<USER>/Project/tiny/internal/model/model.go",
   "description": "Check current imports in model.go"
 }
 ```
@@ -1527,7 +1527,7 @@ id: toolu_01UYR7Gt1umxBWXQmeRFdYQk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/model/model.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/model/model.go",
   "old_string": "\t\"context\"\n\t\"encoding/json\"\n\t\"errors\"\n\t\"net/url\"",
   "new_string": "\t\"context\"\n\t\"encoding/json\"\n\t\"errors\"\n\t\"net/url\"\n\t\"time\""
 }
@@ -1538,7 +1538,7 @@ id: toolu_01UYR7Gt1umxBWXQmeRFdYQk
 tool_result
 id: toolu_01UYR7Gt1umxBWXQmeRFdYQk
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/model/model.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/model/model.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1551,7 +1551,7 @@ tool_use Bash
 id: toolu_01VfShLmv45dxeopgPGJekr3
 ```json
 {
-  "command": "mkdir -p /Users/jobinlawrance/Project/tiny/internal/job",
+  "command": "mkdir -p /home/<USER>/Project/tiny/internal/job",
   "description": "Create internal/job package directory"
 }
 ```
@@ -1589,7 +1589,7 @@ tool_use Write
 id: toolu_01CXRKSViuLEuNFjsEwRrftD
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/job/store.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/job/store.go",
   "content": "// Package job is the Redis-backed model.JobStore (gap #8): persists\n// completed (and, later, in-flight) async job records so GET /v0/jobs and\n// GET /v0/jobs/{id} have something real to serve instead of a dead job_url.\npackage job\n\nimport (\n\t\"context\"\n\t\"encoding/json\"\n\t\"fmt\"\n\t\"time\"\n\n\t\"github.com/redis/go-redis/v9\"\n\n\t\"github.com/ravencloak-org/tiny/internal/model\"\n)\n\n// keyPrefix namespaces job records in Redis; indexKey is a sorted set of\n// job IDs scored by creation time, so List can fetch the N most recent\n// without a SCAN over the whole keyspace.\nconst (\n\tkeyPrefix = \"tr:job:\"\n\tindexKey  = \"tr:job:index\"\n\t// ttl bounds how long a job stays pollable. Jobs are run history, not\n\t// config (ADR 0001 covers the latter), so unlike DatasourceRegistry/\n\t// PipeRegistry there's no git source of truth to make them permanent.\n\tttl = 24 * time.Hour\n)\n\n// Store is a Redis-backed model.JobStore.\ntype Store struct {\n\trdb *redis.Client\n}\n\n// NewStore returns a Store backed by rdb.\nfunc NewStore(rdb *redis.Client) *Store {\n\treturn &Store{rdb: rdb}\n}\n\nvar _ model.JobStore = (*Store)(nil)\n\n// Put stores rec under \"tr:job:<id>\" with a TTL, and indexes it by creation\n// time for List. Also prunes index entries older than ttl so the sorted set\n// doesn't grow unbounded as job keys silently expire out from under it.\nfunc (s *Store) Put(ctx context.Context, rec model.JobRecord) error {\n\tb, err := json.Marshal(rec)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"job […]
 
 > TOOL
@@ -1597,7 +1597,7 @@ id: toolu_01CXRKSViuLEuNFjsEwRrftD
 tool_result
 id: toolu_01CXRKSViuLEuNFjsEwRrftD
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/internal/job/store.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/internal/job/store.go (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1610,7 +1610,7 @@ tool_use Read
 id: toolu_01Pc9oBC4mTjYGfboudpMyPq
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "offset": 1,
   "limit": 40
 }
@@ -1663,7 +1663,7 @@ id: toolu_01YXoegwbtxvoKxRa3oY2sgr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/job/store.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/job/store.go",
   "old_string": "\tids, err := s.rdb.ZRevRange(ctx, indexKey, 0, int64(limit)-1).Result()",
   "new_string": "\tids, err := s.rdb.ZRangeArgs(ctx, redis.ZRangeArgs{\n\t\tKey: indexKey, Start: 0, Stop: int64(limit) - 1, Rev: true,\n\t}).Result()"
 }
@@ -1674,7 +1674,7 @@ id: toolu_01YXoegwbtxvoKxRa3oY2sgr
 tool_result
 id: toolu_01YXoegwbtxvoKxRa3oY2sgr
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/job/store.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/job/store.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1688,7 +1688,7 @@ id: toolu_0137psAwujHf55hhwdW8ZHBH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "old_string": "type Executor struct {\n\tch     model.CHQuerier\n\tpipes  model.PipeRegistry\n\tds     model.DatasourceRegistry // reserved for future referential checks; unused in MVP Run\n\trec    model.StatsRecorder      // may be nil — observability is optional and never blocks\n\twriter model.CHWriter           // write path for copy pipes; nil -> RunCopy is unavailable\n}",
   "new_string": "type Executor struct {\n\tch     model.CHQuerier\n\tpipes  model.PipeRegistry\n\tds     model.DatasourceRegistry // reserved for future referential checks; unused in MVP Run\n\trec    model.StatsRecorder      // may be nil — observability is optional and never blocks\n\twriter model.CHWriter           // write path for copy pipes; nil -> RunCopy is unavailable\n\tjobs   model.JobStore           // may be nil — job history is optional and never blocks (gap #8)\n}"
 }
@@ -1699,7 +1699,7 @@ id: toolu_0137psAwujHf55hhwdW8ZHBH
 tool_result
 id: toolu_0137psAwujHf55hhwdW8ZHBH
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1709,7 +1709,7 @@ id: toolu_01ScuWD5sTUfa6NyqEX2UqxS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "old_string": "func (e *Executor) EnableCopy(w model.CHWriter) *Executor {\n\te.writer = w\n\treturn e\n}",
   "new_string": "func (e *Executor) EnableCopy(w model.CHWriter) *Executor {\n\te.writer = w\n\treturn e\n}\n\n// EnableJobs wires a JobStore so completed copy jobs are recorded for\n// GET /v0/jobs / GET /v0/jobs/{id} (gap #8). Kept off the constructor like\n// EnableCopy so existing callers are unaffected; nil store leaves RunCopy's\n// response unchanged, it just isn't recorded anywhere.\nfunc (e *Executor) EnableJobs(store model.JobStore) *Executor {\n\te.jobs = store\n\treturn e\n}"
 }
@@ -1720,7 +1720,7 @@ id: toolu_01ScuWD5sTUfa6NyqEX2UqxS
 tool_result
 id: toolu_01ScuWD5sTUfa6NyqEX2UqxS
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1729,7 +1729,7 @@ tool_use Bash
 id: toolu_01BDw2y1mKpy3HWVEF4yY9E3
 ```json
 {
-  "command": "grep -n \"ponytail: synchronous execution\\|func (e \\*Executor) RunCopy\\|return copyJobBody\" /Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "command": "grep -n \"ponytail: synchronous execution\\|func (e \\*Executor) RunCopy\\|return copyJobBody\" /home/<USER>/Project/tiny/internal/pipe/executor.go",
   "description": "Locate RunCopy body and its deferred-gap comment for precise edit"
 }
 ```
@@ -1750,7 +1750,7 @@ tool_use Read
 id: toolu_014TwfR3aQd8Xrh1R6Cp12aU
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "offset": 136,
   "limit": 50
 }
@@ -1790,7 +1790,7 @@ id: toolu_014NWRzH1bTK6PYahCdnSvwj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "old_string": "// RunCopy triggers a TYPE copy pipe on demand: it composes the copy SQL, binds\n// request params (identical pipeline to a query), and runs\n// INSERT INTO <target> SELECT ... over the read-write path. Tinybird models this\n// as an async job; TinyRaven runs it synchronously and returns a job-shaped body\n// with a terminal status so existing copy clients parse the response unchanged.\n//\n// ponytail: synchronous execution + no /v0/jobs surface (gap #8 deferred). The\n// returned job is already \"done\" (or surfaced as a 400 CH error), so there is\n// nothing to poll; job_url is emitted for shape parity but points at the\n// unimplemented jobs route.",
   "new_string": "// RunCopy triggers a TYPE copy pipe on demand: it composes the copy SQL, binds\n// request params (identical pipeline to a query), and runs\n// INSERT INTO <target> SELECT ... over the read-write path. Tinybird models this\n// as an async job; TinyRaven runs it synchronously and returns a job-shaped body\n// with a terminal status so existing copy clients parse the response unchanged.\n//\n// ponytail: synchronous execution (gap #8's scheduler/async half stays\n// deferred — see model.Copy.Schedule). The returned job is already \"done\" (or\n// surfaced as a 400 CH […]
 
@@ -1799,7 +1799,7 @@ id: toolu_014NWRzH1bTK6PYahCdnSvwj
 tool_result
 id: toolu_014NWRzH1bTK6PYahCdnSvwj
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1809,7 +1809,7 @@ id: toolu_01PnYuSs4PeePSm4XMVeYwi4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "old_string": "\tif cerr != nil {\n\t\t// ADR 0012: surface the CH error so the API maps it (matches the query path).\n\t\treturn nil, http.StatusBadRequest, cerr\n\t}\n\treturn copyJobBody(name, p.Copy.TargetDatasource), http.StatusOK, nil\n}",
   "new_string": "\tif cerr != nil {\n\t\t// ADR 0012: surface the CH error so the API maps it (matches the query path).\n\t\treturn nil, http.StatusBadRequest, cerr\n\t}\n\n\tid := newJobID()\n\tif e.jobs != nil {\n\t\trec := model.JobRecord{\n\t\t\tID: id, Kind: \"copy\", Status: \"done\",\n\t\t\tPipeName: name, Target: p.Copy.TargetDatasource, CreatedAt: time.Now(),\n\t\t}\n\t\tif perr := e.jobs.Put(ctx, rec); perr != nil && e.rec != nil {\n\t\t\t// Best-effort (see doc comment): log via the same channel as query stats\n\t\t\t// rather than a dedicated logger dependency this package doesn't have.\n\t\t\te.rec.Record(model.QueryStat{Pipe: name, StatusCode: http.StatusOK, Error: \"job store: \" + perr.Error()})\n\t\t}\n\t}\n\treturn copyJobBody(id, name, p.Copy.TargetDatasource), http.StatusOK, nil\n}"
 }
@@ -1820,7 +1820,7 @@ id: toolu_01PnYuSs4PeePSm4XMVeYwi4
 tool_result
 id: toolu_01PnYuSs4PeePSm4XMVeYwi4
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1830,7 +1830,7 @@ id: toolu_01TyjxzaGRtpWzaRgSubaD4Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "old_string": "\tid := newJobID()\n\tif e.jobs != nil {\n\t\trec := model.JobRecord{\n\t\t\tID: id, Kind: \"copy\", Status: \"done\",\n\t\t\tPipeName: name, Target: p.Copy.TargetDatasource, CreatedAt: time.Now(),\n\t\t}\n\t\tif perr := e.jobs.Put(ctx, rec); perr != nil && e.rec != nil {\n\t\t\t// Best-effort (see doc comment): log via the same channel as query stats\n\t\t\t// rather than a dedicated logger dependency this package doesn't have.\n\t\t\te.rec.Record(model.QueryStat{Pipe: name, StatusCode: http.StatusOK, Error: \"job store: \" + perr.Error()})\n\t\t}\n\t}\n\treturn copyJobBody(id, name, p.Copy.TargetDatasource), http.StatusOK, nil\n}",
   "new_string": "\tid := newJobID()\n\tif e.jobs != nil {\n\t\trec := model.JobRecord{\n\t\t\tID: id, Kind: \"copy\", Status: \"done\",\n\t\t\tPipeName: name, Target: p.Copy.TargetDatasource, CreatedAt: time.Now(),\n\t\t}\n\t\t// Best-effort (see doc comment above): the copy already ran, so a job-store\n\t\t// write failure only costs pollability, not correctness. Executor has no\n\t\t// logger dependency (unlike gatherer); silent drop matches the pattern at\n\t\t// pipestats.go's overflow counter.\n\t\t_ = e.jobs.Put(ctx, rec)\n\t}\n\treturn copyJobBody(id, name, p.Copy.TargetDatasource), http.StatusOK, nil\n}"
 }
@@ -1841,7 +1841,7 @@ id: toolu_01TyjxzaGRtpWzaRgSubaD4Q
 tool_result
 id: toolu_01TyjxzaGRtpWzaRgSubaD4Q
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1854,7 +1854,7 @@ tool_use Bash
 id: toolu_014vCqzYNVqVGoKwUsbQCbQU
 ```json
 {
-  "command": "grep -n \"func copyJobBody\\|func newJobID\" /Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "command": "grep -n \"func copyJobBody\\|func newJobID\" /home/<USER>/Project/tiny/internal/pipe/executor.go",
   "description": "Locate copyJobBody function definition"
 }
 ```
@@ -1874,7 +1874,7 @@ tool_use Read
 id: toolu_01MsX1uCN9Ba38NtstToXr2J
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "offset": 268,
   "limit": 25
 }
@@ -1919,7 +1919,7 @@ id: toolu_014Ew6tqwqvGtmc9J7shcBhv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor.go",
   "old_string": "// copyJobBody builds the JSON body for a completed on-demand copy.\nfunc copyJobBody(pipe, target string) []byte {\n\tid := newJobID()\n\tresp := copyJobResp{\n\t\tID:       id,\n\t\tJobID:    id,\n\t\tJobURL:   \"/v0/jobs/\" + id, // ponytail: jobs surface is deferred (gap #8)\n\t\tStatus:   \"done\",",
   "new_string": "// copyJobBody builds the JSON body for a completed on-demand copy. id is\n// generated by the caller so it can also key the persisted JobRecord.\nfunc copyJobBody(id, pipe, target string) []byte {\n\tresp := copyJobResp{\n\t\tID:       id,\n\t\tJobID:    id,\n\t\tJobURL:   \"/v0/jobs/\" + id, // live once EnableJobs is wired (gap #8)\n\t\tStatus:   \"done\","
 }
@@ -1930,7 +1930,7 @@ id: toolu_014Ew6tqwqvGtmc9J7shcBhv
 tool_result
 id: toolu_014Ew6tqwqvGtmc9J7shcBhv
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/pipe/executor.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1966,7 +1966,7 @@ tool_use Bash
 id: toolu_01EH7fJmWfx2hVtph1s4KqSY
 ```json
 {
-  "command": "sed -n '1,40p' /Users/jobinlawrance/Project/tiny/internal/api/datasources.go",
+  "command": "sed -n '1,40p' /home/<USER>/Project/tiny/internal/api/datasources.go",
   "description": "Read datasources.go handler for exact conventions to mirror in jobs.go"
 }
 ```
@@ -2024,7 +2024,7 @@ tool_use Write
 id: toolu_01GKtuVfdAjNCVhP9cnvv8KQ
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/jobs.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/jobs.go",
   "content": "package api\n\nimport (\n\t\"net/http\"\n\n\t\"github.com/go-chi/chi/v5\"\n\n\t\"github.com/ravencloak-org/tiny/internal/model\"\n)\n\n// defaultJobListLimit caps GET /v0/jobs when the caller doesn't ask for fewer.\n// Tinybird doesn't document a fixed page size for this endpoint; picked large\n// enough to cover a dev/small-prod job history without unbounded response size.\nconst defaultJobListLimit = 100\n\n// handleListJobs serves GET /v0/jobs (gap #8) — recent job history, newest\n// first. Scoped like handleCopyPipe: a token sees a job only if it holds\n// APPEND on the job's target datasource (the same scope RunCopy required to\n// create it) or ADMIN. Non-nil empty slice so the JSON is {\"jobs\":[]} (not\n// null) when empty or the token can see none of them.\nfunc (s *server) handleListJobs(w http.ResponseWriter, r *http.Request) {\n\trecs, err := s.deps.Jobs.List(r.Context(), defaultJobListLimit)\n\tif err != nil {\n\t\twriteError(w, http.StatusInternalServerError, \"could not list jobs: \"+err.Error())\n\t\treturn\n\t}\n\n\ttok, _ := tokenFrom(r.Context())\n\titems := make([]jobItem, 0, len(recs))\n\tfor _, rec := range recs {\n\t\tif allow(tok, \"APPEND\", rec.Target) {\n\t\t\titems = append(items, toJobItem(rec))\n\t\t}\n\t}\n\tencodeJSON(w, http.StatusOK, jobListResp{Jobs: items})\n}\n\n// handleGetJob serves GET /v0/jobs/{id} (gap #8) — single job status, the\n// same shape RunCopy returns synchronously today. 403 when the token lacks\n// APPEND on the job's target (checked before revealing anything about the\n// job), 404 when the id is unknown or its record has expired (jobs carry […]
 
 > TOOL
@@ -2032,7 +2032,7 @@ id: toolu_01GKtuVfdAjNCVhP9cnvv8KQ
 tool_result
 id: toolu_01GKtuVfdAjNCVhP9cnvv8KQ
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/internal/api/jobs.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/internal/api/jobs.go (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2045,7 +2045,7 @@ tool_use Bash
 id: toolu_019bSew2A6epjmAWYZeKt8ti
 ```json
 {
-  "command": "grep -n \"Datasources model.DatasourceRegistry\\|deps.Datasources != nil\\|r.Get(\\\"/datasources\\\"\\|r.Get(\\\"/datasources/{name}\\\"\" /Users/jobinlawrance/Project/tiny/internal/api/server.go",
+  "command": "grep -n \"Datasources model.DatasourceRegistry\\|deps.Datasources != nil\\|r.Get(\\\"/datasources\\\"\\|r.Get(\\\"/datasources/{name}\\\"\" /home/<USER>/Project/tiny/internal/api/server.go",
   "description": "Locate exact lines around Datasources dep and route registration"
 }
 ```
@@ -2068,7 +2068,7 @@ id: toolu_01AW84opswb7JWz4piWJ5ewo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/server.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/server.go",
   "old_string": "\tDatasources model.DatasourceRegistry // GET  /v0/datasources[/{name}] (optional)",
   "new_string": "\tDatasources model.DatasourceRegistry // GET  /v0/datasources[/{name}] (optional)\n\tJobs        model.JobStore           // GET  /v0/jobs[/{id}] (optional; gap #8)"
 }
@@ -2079,7 +2079,7 @@ id: toolu_01AW84opswb7JWz4piWJ5ewo
 tool_result
 id: toolu_01AW84opswb7JWz4piWJ5ewo
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/server.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/server.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2088,7 +2088,7 @@ tool_use Read
 id: toolu_01LXJNEcTDn9U3UqxVLef8ZG
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/server.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/server.go",
   "offset": 78,
   "limit": 40
 }
@@ -2137,7 +2137,7 @@ id: toolu_01Kaw3q7GbJbqXwRvXPbhwy8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/server.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/server.go",
   "old_string": "\t\tif deps.OpenAPI != nil {\n\t\t\tr.Get(\"/openapi.json\", s.handleOpenAPI)\n\t\t}",
   "new_string": "\t\tif deps.Jobs != nil {\n\t\t\t// Job history (gap #8): scoped by APPEND:<target>, the same scope\n\t\t\t// RunCopy requires to create a job, so a token can always poll what it\n\t\t\t// triggered. ADMIN sees all.\n\t\t\tr.Get(\"/jobs\", s.handleListJobs)\n\t\t\tr.Get(\"/jobs/{id}\", s.handleGetJob)\n\t\t}\n\t\tif deps.OpenAPI != nil {\n\t\t\tr.Get(\"/openapi.json\", s.handleOpenAPI)\n\t\t}"
 }
@@ -2148,7 +2148,7 @@ id: toolu_01Kaw3q7GbJbqXwRvXPbhwy8
 tool_result
 id: toolu_01Kaw3q7GbJbqXwRvXPbhwy8
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/api/server.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/api/server.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2176,7 +2176,7 @@ tool_use Bash
 id: toolu_01EVhr7q1cL6bjtruUmgNZSK
 ```json
 {
-  "command": "grep -n \"r.Route(\\\"/v0\\\"\\|deps.Jobs\\|deps.OpenAPI\\|^})\" /Users/jobinlawrance/Project/tiny/internal/api/server.go",
+  "command": "grep -n \"r.Route(\\\"/v0\\\"\\|deps.Jobs\\|deps.OpenAPI\\|^})\" /home/<USER>/Project/tiny/internal/api/server.go",
   "description": "Verify jobs routes landed inside the bearer-authed /v0 block"
 }
 ```
@@ -2227,7 +2227,7 @@ id: toolu_01Q863ZAuqZCosTepm7rnJjz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tinyraven/serve.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tinyraven/serve.go",
   "old_string": "\t\"github.com/ravencloak-org/tiny/internal/gatherer\"\n\t\"github.com/ravencloak-org/tiny/internal/metrics\"",
   "new_string": "\t\"github.com/ravencloak-org/tiny/internal/gatherer\"\n\t\"github.com/ravencloak-org/tiny/internal/job\"\n\t\"github.com/ravencloak-org/tiny/internal/metrics\""
 }
@@ -2238,7 +2238,7 @@ id: toolu_01Q863ZAuqZCosTepm7rnJjz
 tool_result
 id: toolu_01Q863ZAuqZCosTepm7rnJjz
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tinyraven/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tinyraven/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2248,7 +2248,7 @@ id: toolu_0125goVondif8KVpDHE7bvE5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tinyraven/serve.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tinyraven/serve.go",
   "old_string": "\texecutor := pipe.NewExecutor(ch, pipeReg, dsReg, stats)\n\texecutor.EnableCopy(ch) // wire the write path for copy-pipe triggers (gap #9)",
   "new_string": "\tjobs := job.NewStore(rdb)\n\texecutor := pipe.NewExecutor(ch, pipeReg, dsReg, stats)\n\texecutor.EnableCopy(ch) // wire the write path for copy-pipe triggers (gap #9)\n\texecutor.EnableJobs(jobs) // record completed copy jobs for GET /v0/jobs (gap #8)"
 }
@@ -2259,7 +2259,7 @@ id: toolu_0125goVondif8KVpDHE7bvE5
 tool_result
 id: toolu_0125goVondif8KVpDHE7bvE5
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tinyraven/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tinyraven/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2269,7 +2269,7 @@ id: toolu_01E2WGJ17HTmR4uiQkoQGy3f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tinyraven/serve.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tinyraven/serve.go",
   "old_string": "\t\t\tDatasources:       dsReg,",
   "new_string": "\t\t\tDatasources:       dsReg,\n\t\t\tJobs:              jobs,"
 }
@@ -2280,7 +2280,7 @@ id: toolu_01E2WGJ17HTmR4uiQkoQGy3f
 tool_result
 id: toolu_01E2WGJ17HTmR4uiQkoQGy3f
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tinyraven/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tinyraven/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2335,7 +2335,7 @@ tool_use Bash
 id: toolu_012KxKunvbeaaBs5D59nBr97
 ```json
 {
-  "command": "sed -n '1,60p' /Users/jobinlawrance/Project/tiny/internal/auth/tokens_integration_test.go | tail -30",
+  "command": "sed -n '1,60p' /home/<USER>/Project/tiny/internal/auth/tokens_integration_test.go | tail -30",
   "description": "Check remaining test pattern from tokens_integration_test.go for style"
 }
 ```
@@ -2402,7 +2402,7 @@ tool_use Write
 id: toolu_0154jZHRUaLo9yQa5pmqY7yy
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/job/store_integration_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/job/store_integration_test.go",
   "content": "//go:build integration\n\n// Integration tests for the Redis-backed job store. Run with:\n//\n//\tgo test -tags=integration ./internal/job/...\n//\n// Set TR_TEST_REDIS_ADDR (default localhost:6379). Skips if Redis is\n// unreachable so CI without the service container stays green.\npackage job\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"os\"\n\t\"testing\"\n\t\"time\"\n\n\t\"github.com/redis/go-redis/v9\"\n\n\t\"github.com/ravencloak-org/tiny/internal/model\"\n)\n\nfunc testRedis(t *testing.T) *redis.Client {\n\tt.Helper()\n\taddr := os.Getenv(\"TR_TEST_REDIS_ADDR\")\n\tif addr == \"\" {\n\t\taddr = \"localhost:6379\"\n\t}\n\trdb := redis.NewClient(&redis.Options{Addr: addr})\n\tctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)\n\tdefer cancel()\n\tif err := rdb.Ping(ctx).Err(); err != nil {\n\t\tt.Skipf(\"redis unreachable at %s: %v\", addr, err)\n\t}\n\tt.Cleanup(func() { rdb.Close() })\n\treturn rdb\n}\n\nfunc uniqueID(t *testing.T) string {\n\tt.Helper()\n\treturn fmt.Sprintf(\"tr_it_job_%d_%d\", os.Getpid(), time.Now().UnixNano())\n}\n\nfunc TestPutGet(t *testing.T) {\n\trdb := testRedis(t)\n\ts := NewStore(rdb)\n\tctx := context.Background()\n\n\tid := uniqueID(t)\n\tt.Cleanup(func() { rdb.Del(ctx, keyPrefix+id); rdb.ZRem(ctx, indexKey, id) })\n\n\t// Unknown id -> ok=false, no error.\n\tif _, ok, err := s.Get(ctx, id); err != nil || ok {\n\t\tt.Fatalf(\"Get(unknown) = (ok=%v, err=%v), want (false,nil)\", ok, err)\n\t}\n\n\trec := model.JobRecord{\n\t\tID: id, Kind: \"copy\", Status: \"done\",\n\t\tPipeName: \"p\", Target: \"ds\", CreatedAt: time.Now(),\n\t}\n\tif err := s.Put(ctx, rec); err != nil {\n\t\tt.Fatalf(\"Put: %v\", err)\n\t}\n\n\tgot, ok, err := s.Get(ctx, id)\n\tif err != nil || !ok {\n\t\tt.Fatalf(\"Get(known) = (ok=%v, err=%v), want (true,nil)\", ok, err)\n\t}\n\tif got.ID != rec.ID || got.Kind != rec.Kind || got.Status != rec.Status ||\n\t\tgot.PipeName != rec.PipeName || got.Target != rec.Target {\n\t\tt.Fatalf(\"Get() = %+v, want %+v\", got, rec)\n\t}\n}\n\nfunc TestList(t *testing.T) {\n\trdb := testRedis(t)\n\ts := […]
 
 > TOOL
@@ -2410,7 +2410,7 @@ id: toolu_0154jZHRUaLo9yQa5pmqY7yy
 tool_result
 id: toolu_0154jZHRUaLo9yQa5pmqY7yy
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/internal/job/store_integration_test.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/internal/job/store_integration_test.go (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2493,7 +2493,7 @@ tool_use Bash
 id: toolu_01SNYuz9Gui7AZH5bboL1ELw
 ```json
 {
-  "command": "sed -n '1,90p' /Users/jobinlawrance/Project/tiny/internal/api/pipes_test.go",
+  "command": "sed -n '1,90p' /home/<USER>/Project/tiny/internal/api/pipes_test.go",
   "description": "Read pipes_test.go for fake-dep + test conventions"
 }
 ```
@@ -2564,7 +2564,7 @@ tool_use Bash
 id: toolu_013xBcSeVifMv9kPcZ25Mb3G
 ```json
 {
-  "command": "sed -n '1,160p' /Users/jobinlawrance/Project/tiny/internal/api/datasources_test.go",
+  "command": "sed -n '1,160p' /home/<USER>/Project/tiny/internal/api/datasources_test.go",
   "description": "Read datasources_test.go fully for fakeDS registry + scope test pattern"
 }
 ```
@@ -2632,7 +2632,7 @@ tool_use Bash
 id: toolu_01B14Uj9cccqUz2Lr25uxHGk
 ```json
 {
-  "command": "grep -n \"fakeTokens\\|okPinger\" /Users/jobinlawrance/Project/tiny/internal/api/scope_test.go | head -20",
+  "command": "grep -n \"fakeTokens\\|okPinger\" /home/<USER>/Project/tiny/internal/api/scope_test.go | head -20",
   "description": "Find fakeTokens/okPinger definitions"
 }
 ```
@@ -2662,7 +2662,7 @@ tool_use Write
 id: toolu_01PzAJn8KWpSH2oEswSNPh5r
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/api/jobs_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/api/jobs_test.go",
   "content": "package api\n\nimport (\n\t\"context\"\n\t\"encoding/json\"\n\t\"net/http\"\n\t\"net/http/httptest\"\n\t\"testing\"\n\n\t\"github.com/ravencloak-org/tiny/internal/model\"\n)\n\n// fakeJobStore is a model.JobStore stub over an in-memory map.\ntype fakeJobStore struct {\n\tlist []model.JobRecord\n\tget  map[string]model.JobRecord // backs Get; nil -> always not-found\n\terr  error\n}\n\nfunc (f fakeJobStore) List(context.Context, int) ([]model.JobRecord, error) { return f.list, f.err }\nfunc (f fakeJobStore) Get(_ context.Context, id string) (model.JobRecord, bool, error) {\n\tif f.err != nil {\n\t\treturn model.JobRecord{}, false, f.err\n\t}\n\trec, ok := f.get[id]\n\treturn rec, ok, nil\n}\nfunc (fakeJobStore) Put(context.Context, model.JobRecord) error { return nil }\n\nfunc newJobsServer(store model.JobStore) http.Handler {\n\treturn New(Deps{\n\t\tTokens: fakeTokens{m: map[string]*model.Token{\n\t\t\t\"adm\":     {Name: \"adm\", Value: \"adm\", Scopes: []string{\"ADMIN\"}},\n\t\t\t\"ap_ds1\":  {Name: \"ap_ds1\", Value: \"ap_ds1\", Scopes: []string{\"APPEND:ds1\"}},\n\t\t\t\"rd_pipe\": {Name: \"rd_pipe\", Value: \"rd_pipe\", Scopes: []string{\"READ:user_metrics\"}},\n\t\t}},\n\t\tRedisPing: okPinger{},\n\t\tCHPing:    okPinger{},\n\t\tJobs:      store,\n\t})\n}\n\n// TestListJobsAuth mirrors TestListDatasourcesAuth: the list is scope-narrowed,\n// never 403'd, for any authenticated token; no token is 401.\nfunc TestListJobsAuth(t *testing.T) {\n\th := newJobsServer(fakeJobStore{})\n\tcases := []struct {\n\t\tname, token string\n\t\twant        int\n\t}{\n\t\t{\"admin ok\", \"adm\", http.StatusOK},\n\t\t{\"non-matching-scope filtered (200, narrowed)\", \"rd_pipe\", http.StatusOK},\n\t\t{\"no token\", \"\", http.StatusUnauthorized},\n\t}\n\tfor _, c := range cases {\n\t\tt.Run(c.name, func(t *testing.T) {\n\t\t\treq := httptest.NewRequest(http.MethodGet, \"/v0/jobs\", nil)\n\t\t\tif c.token != \"\" {\n\t\t\t\treq.Header.Set(\"Authorization\", \"Bearer \"+c.token)\n\t\t\t}\n\t\t\trec := httptest.NewRecorder()\n\t\t\th.ServeHTTP(rec, req)\n\t\t\tif rec.Code != c.want {\n\t\t\t\tt.Fatalf(\"status = %d, want %d (body %s)\", rec.Code, c.want, rec.Body.String())\n\t\t\t}\n\t\t})\n\t}\n}\n\n// TestListJobsScopeFilter verifies the per-token subset: a token with\n// APPEND:ds1 sees only the job targeting ds1, not ds2; ADMIN sees both.\nfunc TestListJobsScopeFilter(t *testing.T) […]
 
 > TOOL
@@ -2670,7 +2670,7 @@ id: toolu_01PzAJn8KWpSH2oEswSNPh5r
 tool_result
 id: toolu_01PzAJn8KWpSH2oEswSNPh5r
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/internal/api/jobs_test.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/internal/api/jobs_test.go (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2702,7 +2702,7 @@ tool_use Bash
 id: toolu_016QDQquyrY7jangrDRCPe75
 ```json
 {
-  "command": "grep -n \"func TestRunCopy\\|type.*CHWriter\\|fakeWriter\\|EnableCopy\" /Users/jobinlawrance/Project/tiny/internal/pipe/executor_test.go | head -20",
+  "command": "grep -n \"func TestRunCopy\\|type.*CHWriter\\|fakeWriter\\|EnableCopy\" /home/<USER>/Project/tiny/internal/pipe/executor_test.go | head -20",
   "description": "Find existing RunCopy test + fake CHWriter in executor_test.go"
 }
 ```
@@ -2736,7 +2736,7 @@ tool_use Read
 id: toolu_01CWUjSwcYQoRLk7JUXWcpzN
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor_test.go",
   "offset": 160,
   "limit": 80
 }
@@ -2788,7 +2788,7 @@ tool_use Bash
 id: toolu_01EbmuBXDEkZw6Wh8svwTPWq
 ```json
 {
-  "command": "sed -n '1,30p' /Users/jobinlawrance/Project/tiny/internal/pipe/executor_test.go",
+  "command": "sed -n '1,30p' /home/<USER>/Project/tiny/internal/pipe/executor_test.go",
   "description": "Read top of executor_test.go for imports and fakeWriter/fakeCH definitions"
 }
 ```
@@ -2836,7 +2836,7 @@ tool_use Write
 id: toolu_01FAa2dS1yszVhPiZm1SHMav
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/pipe/executor_jobs_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/pipe/executor_jobs_test.go",
   "content": "package pipe\n\nimport (\n\t\"context\"\n\t\"encoding/json\"\n\t\"errors\"\n\t\"net/http\"\n\t\"net/url\"\n\t\"testing\"\n\n\t\"github.com/ravencloak-org/tiny/internal/model\"\n)\n\n// fakeJobStore is a model.JobStore stub (gap #8) recording Put calls; List/Get\n// aren't exercised by the executor (only Put — reads are the api package's\n// concern), so they're unimplemented placeholders.\ntype fakeJobStore struct {\n\tputs []model.JobRecord\n\terr  error\n}\n\nfunc (s *fakeJobStore) Put(_ context.Context, rec model.JobRecord) error {\n\ts.puts = append(s.puts, rec)\n\treturn s.err\n}\nfunc (*fakeJobStore) Get(context.Context, string) (model.JobRecord, bool, error) {\n\treturn model.JobRecord{}, false, nil\n}\nfunc (*fakeJobStore) List(context.Context, int) ([]model.JobRecord, error) { return nil, nil }\n\nconst copyPipeRaw = \"NODE c\\nSQL >\\n    SELECT 1\\nTYPE copy\\nTARGET_DATASOURCE t\"\n\n// TestRunCopy_RecordsJob verifies a successful copy persists a JobRecord\n// whose id matches the job body's job_id, so GET /v0/jobs/{id} resolves the\n// same job a client already has from the synchronous response.\nfunc TestRunCopy_RecordsJob(t *testing.T) {\n\tw := &fakeWriter{}\n\tjs := &fakeJobStore{}\n\te := newExec(&fakeCH{}, mustParse(t, \"p\", copyPipeRaw)).EnableCopy(w).EnableJobs(js)\n\n\tbody, status, err := e.RunCopy(context.Background(), \"p\", url.Values{})\n\tif err != nil || status != http.StatusOK {\n\t\tt.Fatalf(\"RunCopy: status=%d err=%v\", status, err)\n\t}\n\tif len(js.puts) != 1 {\n\t\tt.Fatalf(\"job store puts = %d, want 1\", len(js.puts))\n\t}\n\trec := js.puts[0]\n\tif rec.Kind != \"copy\" || rec.Status != \"done\" || rec.PipeName != \"p\" || rec.Target != \"t\" {\n\t\tt.Errorf(\"recorded job = %+v, want kind=copy status=done pipe_name=p target=t\", rec)\n\t}\n\n\tvar job map[string]any\n\tif err := json.Unmarshal(body, &job); err != nil {\n\t\tt.Fatalf(\"decode job body: %v (%s)\", err, […]
 
 > TOOL
@@ -2844,7 +2844,7 @@ id: toolu_01FAa2dS1yszVhPiZm1SHMav
 tool_result
 id: toolu_01FAa2dS1yszVhPiZm1SHMav
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/internal/pipe/executor_jobs_test.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/internal/pipe/executor_jobs_test.go (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3156,7 +3156,7 @@ tool_use Bash
 id: toolu_01GL2mj39XADiDZDXDva3mPb
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build -o /tmp/tinyraven-jobtest ./cmd/tinyraven\necho built",
+  "command": "cd /home/<USER>/Project/tiny\ngo build -o /tmp/tinyraven-jobtest ./cmd/tinyraven\necho built",
   "description": "Build tinyraven binary for live probe"
 }
 ```
@@ -3244,10 +3244,10 @@ time="2026-07-03T11:48:19+05:30" level=info msg="colima is running using macOS V
 time="2026-07-03T11:48:19+05:30" level=info msg="arch: aarch64"
 time="2026-07-03T11:48:19+05:30" level=info msg="runtime: docker"
 time="2026-07-03T11:48:19+05:30" level=info msg="mountType: virtiofs"
-time="2026-07-03T11:48:19+05:30" level=info msg="docker socket: unix:///Users/jobinlawrance/.colima/default/docker.sock"
-time="2026-07-03T11:48:19+05:30" level=info msg="containerd socket: unix:///Users/jobinlawrance/.colima/default/containerd.sock"
+time="2026-07-03T11:48:19+05:30" level=info msg="docker socket: unix:///home/<USER>/.colima/default/docker.sock"
+time="2026-07-03T11:48:19+05:30" level=info msg="containerd socket: unix:///home/<USER>/.colima/default/containerd.sock"
 ---
-Cannot connect to the Docker daemon at unix:///Users/jobinlawrance/.colima/default/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///home/<USER>/.colima/default/docker.sock. Is the docker daemon running?
 ```
 
 > TOOL
@@ -3387,7 +3387,7 @@ tool_use Read
 id: toolu_011oiTJZY5jZu7n1vfQi1nwh
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md"
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md"
 }
 ```
 
@@ -3426,7 +3426,7 @@ id: toolu_01MgULteqJZadDJXexx8weDy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "old_string": "| 8 | `/v0/jobs`, `/v0/jobs/{id}` | GET | Async job listing/status (pairs with #6). | **missing** | M |",
   "new_string": "| 8 | `/v0/jobs`, `/v0/jobs/{id}` | GET | Async job listing/status (pairs with #6). | **done** (copy jobs only; import-job listing (#6) still absent since #6 itself is) | M |"
 }
@@ -3437,7 +3437,7 @@ id: toolu_01MgULteqJZadDJXexx8weDy
 tool_result
 id: toolu_01MgULteqJZadDJXexx8weDy
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3468,7 +3468,7 @@ tool_use Read
 id: toolu_01FZRCESueUafn1vLjPNekrn
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "offset": 44,
   "limit": 40
 }
@@ -3531,7 +3531,7 @@ id: toolu_01J5pZ728H8qCUHm7mYZ8sn9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md",
+  "file_path": "/home/<USER>/Project/tiny/docs/parity-gaps.md",
   "old_string": "fabricating ids or building per-datasource read-scope filtering. Scope-filtered\nlisting is the follow-up (depends on a `READ`-datasource scope primitive we\ndon't have yet; today scopes are `APPEND:<ds>` and `READ:<pipe>`).",
   "new_string": "fabricating ids or building per-datasource read-scope filtering. Scope-filtered\nlisting is the follow-up (depends on a `READ`-datasource scope primitive we\ndon't have yet; today scopes are `APPEND:<ds>` and `READ:<pipe>`).\n\n## #8 implemented in this change\n\n`GET /v0/jobs`, `GET /v0/jobs/{id}` — a Redis-backed `job.Store` (24h TTL,\nrecency-indexed via a sorted set) persists a `JobRecord` whenever\n`RunCopy` completes a copy-pipe trigger (`POST /v0/pipes/{name}/copy`),\nso `job_url` in that response is a live link instead of shape-only parity.\nScope-filtered like datasources/pipes: a token needs `APPEND:<target>` — the\nsame scope `RunCopy` requires to create the job — or `ADMIN`; list narrows\nrather than 403s, single-job GET 403s a wrong-scope token.\n\n**Known parity delta:** this only covers copy-triggered jobs, which are\nalready synchronous and terminal (`status: \"done\"`) by the time they're\nrecorded — there's nothing to poll *for progress*, only to look up after the\nfact. The genuinely async half of gap #8 (`/v0/datasources` batch import,\n#6) and `COPY_SCHEDULE` auto-execution are still deferred; both need an\nactual in-process scheduler/worker, not just a store. See `PONYTAIL-DEBT.md`."
 }
@@ -3542,7 +3542,7 @@ id: toolu_01J5pZ728H8qCUHm7mYZ8sn9
 tool_result
 id: toolu_01J5pZ728H8qCUHm7mYZ8sn9
 ```
-The file /Users/jobinlawrance/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/docs/parity-gaps.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3722,7 +3722,7 @@ tool_use Bash
 id: toolu_01ATaV8iJzshXkC56crAb4NP
 ```json
 {
-  "command": "grep -n \"ponytail: Schedule is parsed\" /Users/jobinlawrance/Project/tiny/internal/model/model.go",
+  "command": "grep -n \"ponytail: Schedule is parsed\" /home/<USER>/Project/tiny/internal/model/model.go",
   "description": "Get current line number of the Schedule ponytail comment in model.go"
 }
 ```
@@ -3846,7 +3846,7 @@ tool_use Bash
 id: toolu_018h99Dmzis4CR4NLL1W9RjE
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngofmt -l . \necho \"--- build ---\"\ngo build ./... \necho \"--- vet ---\"\ngo vet ./... \necho \"--- test ---\"\ngo test ./... 2>&1 | tail -25\necho \"--- test integration ---\"\ngo test -tags=integration ./... 2>&1 | tail -25",
+  "command": "cd /home/<USER>/Project/tiny\ngofmt -l . \necho \"--- build ---\"\ngo build ./... \necho \"--- vet ---\"\ngo vet ./... \necho \"--- test ---\"\ngo test ./... 2>&1 | tail -25\necho \"--- test integration ---\"\ngo test -tags=integration ./... 2>&1 | tail -25",
   "description": "Final full verification sweep: fmt, vet, build, unit + integration tests"
 }
 ```
@@ -4012,7 +4012,7 @@ id: toolu_013dq7RaRCyuxSP4kbQcRDmJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/openapi/openapi.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/openapi/openapi.go",
   "old_string": "\t\t\"/v0/datasources/{name}\": {Get: &operation{\n\t\t\tSummary:     \"Get a datasource (schema + engine)\",\n\t\t\tOperationID: \"getDatasource\",\n\t\t\tParameters:  []parameter{nameParam()},\n\t\t\tResponses:   jsonResp(\"Datasource detail\"),\n\t\t}},",
   "new_string": "\t\t\"/v0/datasources/{name}\": {Get: &operation{\n\t\t\tSummary:     \"Get a datasource (schema + engine)\",\n\t\t\tOperationID: \"getDatasource\",\n\t\t\tParameters:  []parameter{nameParam()},\n\t\t\tResponses:   jsonResp(\"Datasource detail\"),\n\t\t}},\n\t\t\"/v0/jobs\": {Get: &operation{\n\t\t\tSummary:     \"List recent jobs (scope-filtered by target datasource; ADMIN sees all; gap #8)\",\n\t\t\tOperationID: \"listJobs\",\n\t\t\tResponses:   jsonResp(\"Job list\"),\n\t\t}},\n\t\t\"/v0/jobs/{id}\": {Get: &operation{\n\t\t\tSummary:     \"Get a job's status (gap #8)\",\n\t\t\tOperationID: \"getJob\",\n\t\t\tParameters:  []parameter{{Name: \"id\", In: \"path\", Required: true, Schema: schema{Type: \"string\"}}},\n\t\t\tResponses:   jsonResp(\"Job status\"),\n\t\t}},"
 }
@@ -4023,7 +4023,7 @@ id: toolu_013dq7RaRCyuxSP4kbQcRDmJ
 tool_result
 id: toolu_013dq7RaRCyuxSP4kbQcRDmJ
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/openapi/openapi.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/openapi/openapi.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4118,7 +4118,7 @@ id: toolu_01Fy24BpSuvaYr5Bym8DacpW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/internal/openapi/openapi_test.go",
+  "file_path": "/home/<USER>/Project/tiny/internal/openapi/openapi_test.go",
   "old_string": "\t\t\"/v0/events\", \"/v0/sql\", \"/v0/pipes\", \"/v0/pipes/{name}\",\n\t\t\"/v0/datasources\", \"/v0/datasources/{name}\", \"/v0/metrics\", \"/health\", \"/health/ready\",",
   "new_string": "\t\t\"/v0/events\", \"/v0/sql\", \"/v0/pipes\", \"/v0/pipes/{name}\",\n\t\t\"/v0/datasources\", \"/v0/datasources/{name}\", \"/v0/jobs\", \"/v0/jobs/{id}\",\n\t\t\"/v0/metrics\", \"/health\", \"/health/ready\","
 }
@@ -4129,7 +4129,7 @@ id: toolu_01Fy24BpSuvaYr5Bym8DacpW
 tool_result
 id: toolu_01Fy24BpSuvaYr5Bym8DacpW
 ```
-The file /Users/jobinlawrance/Project/tiny/internal/openapi/openapi_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/internal/openapi/openapi_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4138,7 +4138,7 @@ tool_use Bash
 id: toolu_01UcP5KorSc8Ep8TcSFH5SGd
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngofmt -l . \ngo build ./... \ngo vet ./... \ngo test ./internal/openapi/... -v 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Project/tiny\ngofmt -l . \ngo build ./... \ngo vet ./... \ngo test ./internal/openapi/... -v 2>&1 | tail -20",
   "description": "Rebuild and test openapi package after adding jobs paths"
 }
 ```
@@ -4301,7 +4301,7 @@ id: toolu_01B5bBSqmYasPA9ScYmuZKYx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/examples/tinyraven.postman_collection.json",
+  "file_path": "/home/<USER>/Project/tiny/examples/tinyraven.postman_collection.json",
   "old_string": "            \"description\": \"Pipe nodes + SQL (no .json extension).\"\n          }\n        }\n      ]\n    },",
   "new_string": "            \"description\": \"Pipe nodes + SQL (no .json extension).\"\n          }\n        },\n        {\n          \"name\": \"List jobs\",\n          \"request\": {\n            \"method\": \"GET\",\n            \"url\": { \"raw\": \"{{host}}/v0/jobs\", \"host\": [\"{{host}}\"], \"path\": [\"v0\", \"jobs\"] },\n            \"description\": \"Recent jobs, newest first (gap #8). Scope-filtered: APPEND:<target> or ADMIN.\"\n          }\n        },\n        {\n          \"name\": \"Get job\",\n          \"request\": {\n            \"method\": \"GET\",\n            \"url\": {\n              \"raw\": \"{{host}}/v0/jobs/{{job_id}}\",\n              \"host\": [\"{{host}}\"],\n              \"path\": [\"v0\", \"jobs\", \"{{job_id}}\"]\n            },\n            \"description\": \"Job status (job_id comes from a copy trigger's job_url/job_id).\"\n          }\n        }\n      ]\n    },"
 }
@@ -4312,7 +4312,7 @@ id: toolu_01B5bBSqmYasPA9ScYmuZKYx
 tool_result
 id: toolu_01B5bBSqmYasPA9ScYmuZKYx
 ```
-The file /Users/jobinlawrance/Project/tiny/examples/tinyraven.postman_collection.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/examples/tinyraven.postman_collection.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4340,7 +4340,7 @@ tool_use Bash
 id: toolu_019cBegkcd4jQi4Y3j45U41S
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngofmt -l .\ngo build ./...\ngo vet ./...\ngo test ./... 2>&1 | tail -25\necho \"--- integration ---\"\ngo test -tags=integration ./internal/job/... ./internal/api/... ./internal/pipe/... -v 2>&1 | grep -E \"^(--- |=== RUN|FAIL|ok)\" | tail -60",
+  "command": "cd /home/<USER>/Project/tiny\ngofmt -l .\ngo build ./...\ngo vet ./...\ngo test ./... 2>&1 | tail -25\necho \"--- integration ---\"\ngo test -tags=integration ./internal/job/... ./internal/api/... ./internal/pipe/... -v 2>&1 | grep -E \"^(--- |=== RUN|FAIL|ok)\" | tail -60",
   "description": "Final full verification: fmt/build/vet/unit tests + integration tests for touched packages"
 }
 ```
@@ -4463,7 +4463,7 @@ tool_use Bash
 id: toolu_01FcorQfvmq6vTUtsKnR3d8n
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit status --short",
+  "command": "cd /home/<USER>/Project/tiny\ngit status --short",
   "description": "Show working tree status before committing"
 }
 ```
@@ -4495,7 +4495,7 @@ tool_use Bash
 id: toolu_012mrTgYMC1XGRfuzoFK3iEj
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ndu -sh graphify-out 2>/dev/null\nls graphify-out | head -20\necho ---\ncat .gitignore 2>/dev/null | head -30",
+  "command": "cd /home/<USER>/Project/tiny\ndu -sh graphify-out 2>/dev/null\nls graphify-out | head -20\necho ---\ncat .gitignore 2>/dev/null | head -30",
   "description": "Inspect graphify-out contents/size and current .gitignore"
 }
 ```
@@ -4541,7 +4541,7 @@ tool_use Bash
 id: toolu_01PjY6nwzxmxS4cU78gYGnTm
 ```json
 {
-  "command": "tail -15 /Users/jobinlawrance/Project/tiny/.gitignore",
+  "command": "tail -15 /home/<USER>/Project/tiny/.gitignore",
   "description": "See tail of .gitignore before appending"
 }
 ```
@@ -4575,7 +4575,7 @@ id: toolu_01RJs7qqKhRKKE7DZ7ZxLjHv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.gitignore",
+  "file_path": "/home/<USER>/Project/tiny/.gitignore",
   "old_string": "# Local config (secrets, per-machine) — ADR config split\n.tinyraven/",
   "new_string": "# Local config (secrets, per-machine) — ADR config split\n.tinyraven/\n\n# Generated locally by the /graphify skill (knowledge-graph cache + report)\ngraphify-out/"
 }
@@ -4586,7 +4586,7 @@ id: toolu_01RJs7qqKhRKKE7DZ7ZxLjHv
 tool_result
 id: toolu_01RJs7qqKhRKKE7DZ7ZxLjHv
 ```
-The file /Users/jobinlawrance/Project/tiny/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4599,7 +4599,7 @@ tool_use Bash
 id: toolu_01XtoRPN1PUXus4fDdsEdQ9s
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add -A\ngit status --short",
+  "command": "cd /home/<USER>/Project/tiny\ngit add -A\ngit status --short",
   "description": "Stage all changes (graphify-out now ignored, so add -A won't add it)"
 }
 ```
@@ -4636,7 +4636,7 @@ tool_use Bash
 id: toolu_012zoTZD3HVwUYpYcvYsnMv6
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit diff --cached --stat",
+  "command": "cd /home/<USER>/Project/tiny\ngit diff --cached --stat",
   "description": "Show staged diff stat summary"
 }
 ```
@@ -4674,7 +4674,7 @@ tool_use Bash
 id: toolu_01ShnKR6LypYoS7YkqprZqPo
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit reset\ngit add .gitignore PONYTAIL-DEBT.md\ngit status --short",
+  "command": "cd /home/<USER>/Project/tiny\ngit reset\ngit add .gitignore PONYTAIL-DEBT.md\ngit status --short",
   "description": "Unstage everything, then stage just the ledger + gitignore commit"
 }
 ```
@@ -4716,7 +4716,7 @@ tool_use Bash
 id: toolu_01QFJo1eoRU9uajyEzNTVqB9
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit commit -m \"docs: add ponytail debt ledger, gitignore graphify-out\n\nPONYTAIL-DEBT.md catalogs every ponytail: marker in the codebase (44,\n23 no-trigger) so deliberate MVP shortcuts stay visible instead of\nrotting into permanent gaps. graphify-out/ is the /graphify skill's\nlocal generated cache+report; gitignore it like .claude/ rather than\ncommitting generated artifacts.\"",
+  "command": "cd /home/<USER>/Project/tiny\ngit commit -m \"docs: add ponytail debt ledger, gitignore graphify-out\n\nPONYTAIL-DEBT.md catalogs every ponytail: marker in the codebase (44,\n23 no-trigger) so deliberate MVP shortcuts stay visible instead of\nrotting into permanent gaps. graphify-out/ is the /graphify skill's\nlocal generated cache+report; gitignore it like .claude/ rather than\ncommitting generated artifacts.\"",
   "description": "Commit the ponytail debt ledger and gitignore change"
 }
 ```
@@ -4760,7 +4760,7 @@ tool_use Bash
 id: toolu_011WgRwbdHcJLm4hchMN7L7c
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add cmd/tinyraven/serve.go docs/parity-gaps.md examples/tinyraven.postman_collection.json \\\n  internal/api/jobs.go internal/api/jobs_test.go internal/api/server.go \\\n  internal/job/ internal/model/model.go internal/openapi/openapi.go internal/openapi/openapi_test.go \\\n  internal/pipe/executor.go internal/pipe/executor_jobs_test.go\ngit status --short",
+  "command": "cd /home/<USER>/Project/tiny\ngit add cmd/tinyraven/serve.go docs/parity-gaps.md examples/tinyraven.postman_collection.json \\\n  internal/api/jobs.go internal/api/jobs_test.go internal/api/server.go \\\n  internal/job/ internal/model/model.go internal/openapi/openapi.go internal/openapi/openapi_test.go \\\n  internal/pipe/executor.go internal/pipe/executor_jobs_test.go\ngit status --short",
   "description": "Stage the gap #8 jobs-surface feature files"
 }
 ```
@@ -4791,7 +4791,7 @@ tool_use Bash
 id: toolu_01K7sZpwjN54NwYq1cGbwzrL
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit commit -m \"feat(jobs): implement GET /v0/jobs + /v0/jobs/{id} (gap #8)\n\nRedis-backed model.JobStore (internal/job, 24h TTL, recency-indexed via\na sorted set) persists a JobRecord whenever RunCopy completes a\ncopy-pipe trigger, so job_url in that response becomes a live link\ninstead of shape-only parity. Wired via Executor.EnableJobs, mirroring\nthe existing EnableCopy optional-dep pattern; a job-store write failure\nis best-effort and never fails the copy response (the copy already\nran).\n\nGET /v0/jobs and GET /v0/jobs/{id} are scope-filtered like\ndatasources/pipes: APPEND:<target> (the same scope RunCopy requires to\ncreate the job) or ADMIN. List narrows rather than 403s; single-job GET\n403s a wrong-scope token, 404s an unknown/expired id.\n\nKnown parity delta (documented in docs/parity-gaps.md and\nPONYTAIL-DEBT.md): this only covers copy-triggered jobs, which are\nalready synchronous/terminal by the time they're recorded. The\ngenuinely async half of gap #8 -- COPY_SCHEDULE auto-execution and\nbatch-import jobs (gap #6) -- still needs an actual scheduler/worker,\nnot just a store.\n\nAlso adds the routes to the generated OpenAPI spec and the example\nPostman collection, and updates docs/parity-gaps.md + PONYTAIL-DEBT.md\nto reflect the closed GET-side gap.\"",
+  "command": "cd /home/<USER>/Project/tiny\ngit commit -m \"feat(jobs): implement GET /v0/jobs + /v0/jobs/{id} (gap #8)\n\nRedis-backed model.JobStore (internal/job, 24h TTL, recency-indexed via\na sorted set) persists a JobRecord whenever RunCopy completes a\ncopy-pipe trigger, so job_url in that response becomes a live link\ninstead of shape-only parity. Wired via Executor.EnableJobs, mirroring\nthe existing EnableCopy optional-dep pattern; a job-store write failure\nis best-effort and never fails the copy response (the copy already\nran).\n\nGET /v0/jobs and GET /v0/jobs/{id} are scope-filtered like\ndatasources/pipes: APPEND:<target> (the same scope RunCopy requires to\ncreate the job) or ADMIN. List narrows rather than 403s; single-job GET\n403s a wrong-scope token, 404s an unknown/expired id.\n\nKnown parity delta (documented in docs/parity-gaps.md and\nPONYTAIL-DEBT.md): this only covers copy-triggered jobs, which are\nalready synchronous/terminal by the time they're recorded. The\ngenuinely async half of gap #8 -- COPY_SCHEDULE auto-execution and\nbatch-import jobs (gap #6) -- still needs an actual scheduler/worker,\nnot just a store.\n\nAlso adds the routes to the generated OpenAPI spec and the example\nPostman collection, and updates docs/parity-gaps.md + PONYTAIL-DEBT.md\nto reflect the closed GET-side gap.\"",
   "description": "Commit the gap #8 jobs-surface feature"
 }
 ```
@@ -4835,7 +4835,7 @@ tool_use Bash
 id: toolu_01Q9SyDiQZRTPkDXih7DQ6mc
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit status --short\necho ---\ngit log --oneline -4",
+  "command": "cd /home/<USER>/Project/tiny\ngit status --short\necho ---\ngit log --oneline -4",
   "description": "Final confirmation of clean working tree and commit history"
 }
 ```

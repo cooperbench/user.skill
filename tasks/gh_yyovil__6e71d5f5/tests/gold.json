@@ -1,1 +1,8 @@
-{"point_id": "019eaa3e-4ae2-7733-ba8f-c135641a6fd1#17", "developer": "gh:yyovil", "condition": "noprofile", "real": "and what about after stripping off the symbol table from the bin?", "prev_agent": "The current root binary [yyork](/Users/tanishqpalandurkar/Projects/yyork/yyork) is **42.37 MB** decimal, or **40.41 MiB**.\n\nI measured it directly with `wc -c`; `ls -lh` reports it as `40M`.\n\n<oai-mem-citation>\n<citation_entries>\nMEMORY.md:105-105|note=[yyork built binary visibility context]\n</citation_entries>\n<rollout_ids>\n</rollout_ids>\n</oai-mem-citation>", "gold_move": null}
+{
+  "point_id": "019eaa3e-4ae2-7733-ba8f-c135641a6fd1#17",
+  "developer": "gh:yyovil",
+  "condition": "noprofile",
+  "real": "and what about after stripping off the symbol table from the bin?",
+  "prev_agent": "The current root binary [yyork](/home/<USER>/Projects/yyork/yyork) is **42.37 MB** decimal, or **40.41 MiB**.\n\nI measured it directly with `wc -c`; `ls -lh` reports it as `40M`.\n\n<oai-mem-citation>\n<citation_entries>\nMEMORY.md:105-105|note=[yyork built binary visibility context]\n</citation_entries>\n<rollout_ids>\n</rollout_ids>\n</oai-mem-citation>",
+  "gold_move": null
+}

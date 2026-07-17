@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -70,7 +70,7 @@ id: call_1idGFNvu3JsM5DyOEVg96Jw1
 ```json
 {
   "cmd": "sed -n '1,240p' .agents/skills/using-entire/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -128,7 +128,7 @@ id: call_0DSIKOuab4eZdBPSl9BJHY7t
 ```json
 {
   "cmd": "entire status",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -141,7 +141,7 @@ id: call_fU2cojGyQqsj48JwSQs0Vhhc
 ```json
 {
   "cmd": "rg -n \"defineInteractable|interact|interaction|fountain|bless|blessed|holy|aura|light|glow|spirit|score|xp|level\" src tests docs --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -154,7 +154,7 @@ id: call_GPEOvuwmHQYVUicjCBqCNH48
 ```json
 {
   "cmd": "rg --files src/rules src/display src/bridge tests | rg \"interaction|interact|light|aura|status|score|spirit|fountain|shrine\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -328,7 +328,7 @@ id: call_BLwI3F5Kd5bt4C89wMdKkSJs
 ```json
 {
   "cmd": "sed -n '1,240p' src/rules/interaction/interactableAffordance.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -341,7 +341,7 @@ id: call_AMWXJJE881uHwgDhrXqPjYqo
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/interaction/interactableRegistry.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -354,7 +354,7 @@ id: call_jjWkDFQThXnegziNGhnURkRo
 ```json
 {
   "cmd": "sed -n '1,280p' src/rules/content/interaction/actionMenus.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -367,7 +367,7 @@ id: call_N6nu6byPzMtBgtlxOBmZAU3N
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/content/interaction/interactPayloads.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -380,7 +380,7 @@ id: call_cq7mDoijP5bT5917oMRYBRql
 ```json
 {
   "cmd": "sed -n '1,260p' src/display/lighting/sources/index.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -614,7 +614,7 @@ id: call_iKNoOBoXRyN0MD63EMWK6zZd
 ```json
 {
   "cmd": "sed -n '260,620p' src/display/lighting/sources/index.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -627,7 +627,7 @@ id: call_OUGxZlXFxeZ8seR3j6t9yiUF
 ```json
 {
   "cmd": "rg -n \"defineInteractable|registerAuthoredInteractable|affordance|ctx\\.light|light\\(\" src/content src/rules tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -640,7 +640,7 @@ id: call_Y3YCB2rsD09Lw6Pxe2YoDPzz
 ```json
 {
   "cmd": "sed -n '1,260p' tests/shrineCombat.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -653,7 +653,7 @@ id: call_CpdktSfMUuiFPG83uPJkJALQ
 ```json
 {
   "cmd": "sed -n '1,220p' src/rules/systems/scoreSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -666,7 +666,7 @@ id: call_556mLRfctjeNdr62RAEYSm92
 ```json
 {
   "cmd": "sed -n '1,240p' src/rules/interaction/runtime/schema.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -901,7 +901,7 @@ id: call_Qn8J2tPurkwyWeWU1XXgrsx6
 ```json
 {
   "cmd": "sed -n '1,110p' src/content/define.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -914,7 +914,7 @@ id: call_GpD5ZqUQQVcGR4iowwow2qJv
 ```json
 {
   "cmd": "sed -n '360,470p' src/content/interactables/fountain/index.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -927,7 +927,7 @@ id: call_4zhqex0i2J5JWtC6T30kKNCM
 ```json
 {
   "cmd": "sed -n '320,390p' src/content/scriptCtx.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 9000
 }
@@ -940,7 +940,7 @@ id: call_0P5Rnhql3quQ54PMwabUFFiB
 ```json
 {
   "cmd": "rg -n \"shrine:combat:scaling|standing|combat:scaling|Shrine|shrine\" src/rules src/display src/bridge tests/shrineCombat.test.mjs --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1143,10 +1143,10 @@ The reason is that conditional interactions deepen the game without imposing a g
 
 The current code already has the right hooks:
 
-- Authored interactables already support dynamic actions through `actions(world, targetId)` in [define.js](/home/pjensen/Repos/JSHack/src/content/define.js:30).
-- Fountain already uses authored verbs `drink` and `dip` in [fountain/index.js](/home/pjensen/Repos/JSHack/src/content/interactables/fountain/index.js:395).
-- Display lighting already supports content-driven dynamic lights via `ctx.light(...)` in [scriptCtx.js](/home/pjensen/Repos/JSHack/src/content/scriptCtx.js:353).
-- Shrine combat bonus already exists and emits presentation/display hooks through `shrine:combat:scaling`, with lighting reacting in [sources/index.js](/home/pjensen/Repos/JSHack/src/display/lighting/sources/index.js:1115).
+- Authored interactables already support dynamic actions through `actions(world, targetId)` in [define.js](/home/<USER>/Repos/JSHack/src/content/define.js:30).
+- Fountain already uses authored verbs `drink` and `dip` in [fountain/index.js](/home/<USER>/Repos/JSHack/src/content/interactables/fountain/index.js:395).
+- Display lighting already supports content-driven dynamic lights via `ctx.light(...)` in [scriptCtx.js](/home/<USER>/Repos/JSHack/src/content/scriptCtx.js:353).
+- Shrine combat bonus already exists and emits presentation/display hooks through `shrine:combat:scaling`, with lighting reacting in [sources/index.js](/home/<USER>/Repos/JSHack/src/display/lighting/sources/index.js:1115).
 
 What I’d do next is not “leveling.” I’d add a small first-class condition layer for authored interactions:
 

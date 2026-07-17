@@ -112,8 +112,8 @@ id: toolu_01M81gVjAFpZyUbfSNNdaLKU
 25	
 26	  // NEW: mounts block for the gh + entire auth named volumes (FR-005)
 27	  "mounts": [
-28	    "source=ado-git-repo-insights-gh-config,target=/home/vscode/.config/gh,type=volume",
-29	    "source=ado-git-repo-insights-entire-config,target=/home/vscode/.entire,type=volume"
+28	    "source=ado-git-repo-insights-gh-config,target=/home/<USER>/.config/gh,type=volume",
+29	    "source=ado-git-repo-insights-entire-config,target=/home/<USER>/.entire,type=volume"
 30	  ],
 31	
 32	  // NEW: onCreateCommand runs as containerUser (= remoteUser "vscode"), NOT as
@@ -720,10 +720,10 @@ id: toolu_01Rq1BsE7Jqoc6A9BKmEDy6r
 148:# mounts: two named volumes (gh + entire) per FR-005
 149:assert "mounts" in d, "mounts block is required for gh + entire auth named volumes"
 160:    "ado-git-repo-insights-entire-config" in m
-161:    and "/home/vscode/.entire" in m
+161:    and "/home/<USER>/.entire" in m
 165:    "mounts must declare source=ado-git-repo-insights-entire-config "
-166:    "target=/home/vscode/.entire type=volume (FR-005, FR-020)"
-186:assert "/home/vscode/.entire" in oncreate, (
+166:    "target=/home/<USER>/.entire type=volume (FR-005, FR-020)"
+186:assert "/home/<USER>/.entire" in oncreate, (
 187:    "onCreateCommand chown must target the entire config mount path (FR-020)"
 193:# postCreateCommand: per FR-021, must begin with Corepack activation + pinned
 194:# pnpm + fail-closed validation. Agent-specific entire wiring is contributor-
@@ -744,7 +744,7 @@ tool_use Bash
 id: toolu_013iLfx7u2BxPcXeSMnnGGPz
 ```json
 {
-  "command": "MEM=/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory; echo \"=== memory dir ===\" && ls -la \"$MEM\" 2>/dev/null && echo \"\" && echo \"=== MEMORY.md ===\" && cat \"$MEM/MEMORY.md\" 2>/dev/null || echo \"(no MEMORY.md yet)\""
+  "command": "MEM=/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory; echo \"=== memory dir ===\" && ls -la \"$MEM\" 2>/dev/null && echo \"\" && echo \"=== MEMORY.md ===\" && cat \"$MEM/MEMORY.md\" 2>/dev/null || echo \"(no MEMORY.md yet)\""
 }
 ```
 
@@ -772,7 +772,7 @@ tool_use Write
 id: toolu_01TpXLDWxgYPdhtgfYDohb7g
 ```json
 {
-  "file_path": "/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
+  "file_path": "/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
   "content": "---\nname: specs-364-stale-vs-shipped\ndescription: CLAUDE.md points at specs/364 as source-of-truth, but specs/ is gitignored and Contract 1 is now stale vs shipped devcontainer\nmetadata:\n  type: project\n---\n\n`CLAUDE.md` instructs reading `specs/364-devcontainer-refactor/plan.md` (+ research.md, contracts/, quickstart.md) as project context — but `specs/` is **gitignored** (local-only working docs, per docs/specs-retirement.md), and the contracts are **partly stale vs. what actually shipped to `main`**.\n\nVerified shipped state (as of 2026-06-06, commits #416 atomic refactor → #417 → #418):\n- **entire agent wiring was REMOVED from `postCreateCommand` in #418.** Contract 1 in `devcontainer.contract.md` still prescribes ending postCreateCommand with `entire enable --agent claude-code && entire agent add codex` and says the verifier asserts that sequence — the OPPOSITE of shipped. The tracked `.devcontainer/verify-contract.py` now **rejects** any `entire enable`/`entire agent` in postCreateCommand. Rationale: CI's publish-devcontainer runs `docker build` only, so postCreateCommand never executes in CI; pre-wiring agents not installed in the image (Claude/Codex excluded per FR-008) stayed broken until contributor rebuild.\n- **`pnpmVersion: \"none\"` was ADDED to the Node Feature** (Codex review, #416) to stop the Feature installing an unpinned global pnpm before Corepack activates pnpm@9.15.0. Not in the original contract; verifier now asserts it.\n\nWhen doing devcontainer work: **trust the tracked files** (`.devcontainer/devcontainer.json`, `Dockerfile`, `verify-contract.py`) and […]
 
 > TOOL
@@ -780,7 +780,7 @@ id: toolu_01TpXLDWxgYPdhtgfYDohb7g
 tool_result
 id: toolu_01TpXLDWxgYPdhtgfYDohb7g
 ```
-File created successfully at: /home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -794,7 +794,7 @@ id: toolu_01RtTGKHVrB7HtSUf7btqhSf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
+  "file_path": "/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md",
   "old_string": "When doing devcontainer work: **trust the tracked files** (`.devcontainer/devcontainer.json`, `Dockerfile`, `verify-contract.py`) and `git log`, not the spec prose. Confirm with `python3 .devcontainer/verify-contract.py` (exits 0 on the shipped config). See [[entire-postcreate-asymmetry]] for the husky/commit-msg parity nuance.",
   "new_string": "When doing devcontainer work: **trust the tracked files** (`.devcontainer/devcontainer.json`, `Dockerfile`, `verify-contract.py`) and `git log`, not the spec prose. Confirm with `python3 .devcontainer/verify-contract.py` (exits 0 on the shipped config). The husky `commit-msg`/`pre-push` hooks defensively call `entire hooks git <stage>` — the accepted dispatcher-overwrite asymmetry is documented in-repo at `LOCAL_CI_PARITY_INVARIANTS.md` row 7f (CI commitlint is authoritative)."
 }
@@ -805,7 +805,7 @@ id: toolu_01RtTGKHVrB7HtSUf7btqhSf
 tool_result
 id: toolu_01RtTGKHVrB7HtSUf7btqhSf
 ```
-The file /home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/specs-364-stale-vs-shipped.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -814,7 +814,7 @@ tool_use Write
 id: toolu_017SYfHjiPorrVFKgErJx8bP
 ```json
 {
-  "file_path": "/home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md",
   "content": "# Memory Index\n\n- [specs/364 stale vs shipped](specs-364-stale-vs-shipped.md) — CLAUDE.md points at a gitignored, now-partly-stale spec; trust tracked devcontainer files + git log, not the contract prose.\n"
 }
 ```
@@ -824,7 +824,7 @@ id: toolu_017SYfHjiPorrVFKgErJx8bP
 tool_result
 id: toolu_017SYfHjiPorrVFKgErJx8bP
 ```
-File created successfully at: /home/vscode/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-workspaces-ado-git-repo-insights/memory/MEMORY.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

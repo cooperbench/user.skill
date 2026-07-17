@@ -1,6 +1,6 @@
 > DEVELOPER
 
-Proceed: '/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md'
+Proceed: '/home/<USER>/Code/rune/instructions/gap-closure-handoff.md'
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01M4Sc5ZztGkyzfci7hikaVL
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md"
 }
 ```
 
@@ -96,7 +96,7 @@ tool_use Read
 id: toolu_01VRckNGAqJUAFDiWArBBUaC
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/hypernetwork.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/hypernetwork.py"
 }
 ```
 
@@ -151,7 +151,7 @@ tool_use Read
 id: toolu_01DKesxcAu8dPnevSDtPuNnP
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py"
+  "file_path": "/home/<USER>/Code/rune/scripts/validate_oracles.py"
 }
 ```
 
@@ -217,7 +217,7 @@ id: toolu_01W8x38uga9d2BArz1snYzt9
 ```json
 {
   "pattern": "train|training_loop|def.*train",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training",
   "output_mode": "files_with_matches"
 }
 ```
@@ -229,7 +229,7 @@ id: toolu_01TTKywVWMXHcb7qMEg5DTXL
 ```json
 {
   "pattern": "kill.?switch|killswitch|regression.*guard|pass_at_1.*baseline",
-  "path": "/Users/noahdolevelixir/Code/rune",
+  "path": "/home/<USER>/Code/rune",
   "output_mode": "files_with_matches"
 }
 ```
@@ -240,7 +240,7 @@ tool_use Bash
 id: toolu_012S8zz8SdvLEa428eK1GxSu
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/instructions/",
+  "command": "ls /home/<USER>/Code/rune/instructions/",
   "description": "List instructions directory"
 }
 ```
@@ -422,7 +422,7 @@ tool_use Read
 id: toolu_01AeJUa5ZTk9FCS4rwVbJTEw
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gaps.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gaps.md"
 }
 ```
 
@@ -456,7 +456,7 @@ id: toolu_011TifRC8mGTsmTWGgrJHfEa
 ```json
 {
   "pattern": "kill.?switch|kill_switch",
-  "path": "/Users/noahdolevelixir/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md",
+  "path": "/home/<USER>/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md",
   "output_mode": "content",
   "-C": 5
 }
@@ -510,7 +510,7 @@ tool_use Read
 id: toolu_01WpL37FFmWhnFvjBGJfZWDM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md",
   "offset": 255,
   "limit": 110
 }
@@ -564,7 +564,7 @@ tool_use Read
 id: toolu_01Jaww8Nk4KC3ag2c9eiYhsn
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py"
 }
 ```
 
@@ -619,7 +619,7 @@ tool_use Read
 id: toolu_01FC4kp8Qq3XLCotQtFm9XDa
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py"
 }
 ```
 
@@ -690,7 +690,7 @@ id: toolu_01EM42DYktBrVHCnQdUcqpLR
 ```json
 {
   "pattern": "run_benchmark",
-  "path": "/Users/noahdolevelixir/Code/rune",
+  "path": "/home/<USER>/Code/rune",
   "output_mode": "files_with_matches"
 }
 ```
@@ -723,7 +723,7 @@ tool_use Bash
 id: toolu_01U1YyXdhkgkfsyCCBCUEtkD
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/",
+  "command": "ls /home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/",
   "description": "List benchmarks module files"
 }
 ```
@@ -756,7 +756,7 @@ tool_use Read
 id: toolu_01ESodyFzqmsSapV5H9Hhdot
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/runner.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/runner.py"
 }
 ```
 
@@ -822,7 +822,7 @@ tool_use Read
 id: toolu_015sJBE6uWDjn4G8yvLtEAM9
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py"
 }
 ```
 
@@ -894,7 +894,7 @@ tool_use Read
 id: toolu_013wBQ63N8mtGHsrB4Z5pjkP
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/adapter_stack.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/adapter_stack.py"
 }
 ```
 
@@ -958,7 +958,7 @@ tool_use Bash
 id: toolu_01KxZqMPF9RxqWq6jbVpAz49
 ```json
 {
-  "command": "find /Users/noahdolevelixir/Code/rune/libs/model-training/tests -name \"*.py\" | head -30",
+  "command": "find /home/<USER>/Code/rune/libs/model-training/tests -name \"*.py\" | head -30",
   "description": "List model-training tests"
 }
 ```
@@ -968,36 +968,36 @@ id: toolu_01KxZqMPF9RxqWq6jbVpAz49
 tool_result
 id: toolu_01KxZqMPF9RxqWq6jbVpAz49
 ```
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_dataset.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/conftest.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_diff_loss.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_hypernetwork.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_lora_overrides.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_manifest.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_stats.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_peft_utils.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_cli.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_registry_source.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_weight_transfer.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_model_configs.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_builder.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_loss.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_train.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_lora.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_config.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trainer_mlflow.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_training_common.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trajectory.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_probe.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_task_embeddings.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_cli.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_diff.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_pairs_to_chat.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trainer.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_eval.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_augment.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_dataset.py
+/home/<USER>/Code/rune/libs/model-training/tests/conftest.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_diff_loss.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_hypernetwork.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_lora_overrides.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_manifest.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_stats.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_peft_utils.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_cli.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_registry_source.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_weight_transfer.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_model_configs.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_builder.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_loss.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_train.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_lora.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_config.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_trainer_mlflow.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_training_common.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_trajectory.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_probe.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_task_embeddings.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_cli.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_diff.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_pairs_to_chat.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_trainer.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_eval.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_augment.py
 ```
 
 > TOOL
@@ -1007,7 +1007,7 @@ id: toolu_01L58vCcpdawi9WRZpuPV5rq
 ```json
 {
   "pattern": "d2l_train|train_d2l_qwen3",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests",
+  "path": "/home/<USER>/Code/rune/libs/model-training/tests",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1165,7 +1165,7 @@ tool_use Read
 id: toolu_01HEB7HiKqnhAG7tRwLyeYss
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_train.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_train.py"
 }
 ```
 
@@ -1238,7 +1238,7 @@ tool_use Write
 id: toolu_019Bk5ujx1fh5zpHGZxpfuR8
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_kill_switch.py",
   "content": "\"\"\"Unit tests for the training kill-switch.\n\nPure-Python tests — no GPU, no model loading. The benchmark evaluation is\nalways mocked via the injected ``evaluate_fn`` so tests stay fast.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import MagicMock\n\nimport pytest\n\n\nclass TestShouldEvaluate:\n    \"\"\"``should_evaluate(step, cadence)`` picks out cadence-multiple steps.\"\"\"\n\n    def test_step_zero_never_evaluates(self) -> None:\n        from model_training.kill_switch import should_evaluate\n\n        assert should_evaluate(0, 10) is False\n\n    def test_cadence_multiple_evaluates(self) -> None:\n        from model_training.kill_switch import should_evaluate\n\n        assert should_evaluate(10, 10) is True\n        assert should_evaluate(20, 10) is True\n        assert should_evaluate(100, 10) is True\n\n    def test_non_multiple_does_not_evaluate(self) -> None:\n        from model_training.kill_switch import should_evaluate\n\n        assert should_evaluate(5, 10) is False\n        assert should_evaluate(11, 10) is False\n\n    def test_cadence_zero_disables(self) -> None:\n        from model_training.kill_switch import should_evaluate\n\n        assert should_evaluate(10, 0) is False\n        assert should_evaluate(10, -5) is False\n\n\nclass TestRegressionDetected:\n    \"\"\"``regression_detected(current, baseline, delta)``.\"\"\"\n\n    def test_no_regression_when_equal(self) -> None:\n        from model_training.kill_switch import regression_detected\n\n        assert regression_detected(0.50, 0.50, 0.03) is False\n\n    def test_small_drop_within_delta(self) -> None:\n        from model_training.kill_switch import regression_detected\n\n        # 0.48 >= 0.50 - 0.03 = 0.47\n        assert regression_detected(0.48, 0.50, 0.03) is False\n\n    def test_drop_exceeding_delta(self) -> None:\n        from model_training.kill_switch import regression_detected\n\n        # 0.45 < 0.50 - 0.03 = 0.47\n        assert regression_detected(0.45, 0.50, 0.03) is True\n\n    def test_improvement_not_regression(self) -> None:\n        from model_training.kill_switch import regression_detected\n\n        assert regression_detected(0.55, 0.50, 0.03) is False\n\n    def test_boundary_exactly_at_threshold(self) -> […]
 
 > TOOL
@@ -1246,7 +1246,7 @@ id: toolu_019Bk5ujx1fh5zpHGZxpfuR8
 tool_result
 id: toolu_019Bk5ujx1fh5zpHGZxpfuR8
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_kill_switch.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/libs/model-training/tests/test_kill_switch.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1317,7 +1317,7 @@ tool_use Write
 id: toolu_018pvQFGwSfQ8s1qyNZVJd2R
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py",
   "content": "\"\"\"Training kill-switch: halt hypernetwork training on Pass@1 regression.\n\nAt a configurable step cadence, the training loop re-runs a small benchmark\n(default: HumanEval @ 10 problems) and compares the current Pass@1 to a\nbaseline captured on the first evaluation (step 0 semantic). When\n``current < baseline - delta`` (default delta = 0.05 = 5 pts absolute), the\nkill-switch fires and the loop halts.\n\nAll heavy imports (``evaluation.benchmarks``) are deferred into the closure\nreturned by :func:`build_benchmark_evaluate_fn` so this module stays\nimportable without the evaluation package on the path.\n\nUsage (in a training loop):\n\n    from model_training.kill_switch import (\n        KillSwitchConfig,\n        KillSwitchState,\n        maybe_run_kill_switch,\n    )\n\n    ks_config = KillSwitchConfig(enabled=True, step_cadence=100)\n    ks_state = KillSwitchState()\n    for step in range(1, num_steps + 1):\n        ...  # optimizer step, etc.\n        if maybe_run_kill_switch(\n            step=step,\n            config=ks_config,\n            state=ks_state,\n            evaluate_fn=my_eval_fn,\n        ):\n            logger.error(\"Kill-switch triggered; halting training\")\n            break\n\"\"\"\n\nfrom __future__ import annotations\n\nimport logging\nfrom dataclasses import dataclass\nfrom typing import Any, Callable\n\nlogger = logging.getLogger(__name__)\n\n__all__ = [\n    \"KillSwitchConfig\",\n    \"KillSwitchState\",\n    \"build_benchmark_evaluate_fn\",\n    \"evaluate_and_check\",\n    \"maybe_run_kill_switch\",\n    \"regression_detected\",\n    \"should_evaluate\",\n    \"update_and_check\",\n]\n\n\n@dataclass\nclass KillSwitchConfig:\n    \"\"\"Kill-switch configuration.\n\n    Attributes:\n        enabled: Master toggle. When False, :func:`maybe_run_kill_switch` is a\n            no-op regardless of other fields.\n        step_cadence: Evaluate Pass@1 every ``step_cadence`` training steps.\n        benchmark_id: Benchmark to evaluate against (default: HumanEval).\n        max_samples: Cap on problems evaluated per call (kept small to amortise\n            the per-step cost).\n        delta: Absolute […]
 
 > TOOL
@@ -1325,7 +1325,7 @@ id: toolu_018pvQFGwSfQ8s1qyNZVJd2R
 tool_result
 id: toolu_018pvQFGwSfQ8s1qyNZVJd2R
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1397,7 +1397,7 @@ id: toolu_01Gd5EKS5JbYPipVZHAGNRSD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_kill_switch.py",
   "old_string": "        fn = MagicMock(side_effect=[0.6, 0.55, 0.40])\n        state = KillSwitchState()\n        _, h1 = evaluate_and_check(fn, state, 0.03)\n        _, h2 = evaluate_and_check(fn, state, 0.03)\n        _, h3 = evaluate_and_check(fn, state, 0.03)\n        assert h1 is False\n        assert h2 is False\n        assert h3 is True",
   "new_string": "        # baseline 0.60; delta 0.10 → regression when current < 0.50\n        fn = MagicMock(side_effect=[0.60, 0.55, 0.40])\n        state = KillSwitchState()\n        _, h1 = evaluate_and_check(fn, state, 0.10)\n        _, h2 = evaluate_and_check(fn, state, 0.10)\n        _, h3 = evaluate_and_check(fn, state, 0.10)\n        assert h1 is False\n        assert h2 is False  # 0.55 >= 0.50\n        assert h3 is True   # 0.40 < 0.50"
 }
@@ -1408,7 +1408,7 @@ id: toolu_01Gd5EKS5JbYPipVZHAGNRSD
 tool_result
 id: toolu_01Gd5EKS5JbYPipVZHAGNRSD
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_kill_switch.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/tests/test_kill_switch.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1459,7 +1459,7 @@ id: toolu_01SH2B7zFdLnhmgn6pvqV6TM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "    lora_r: int = Field(default=8)\n    max_length: int = Field(default=512)\n\n    def model_post_init(self, __context: Any) -> None:",
   "new_string": "    lora_r: int = Field(default=8)\n    max_length: int = Field(default=512)\n    # Kill-switch: halt training when Pass@1 regresses vs baseline (Plan A follow-up).\n    # Disabled by default so existing callers/tests are unaffected.\n    kill_switch_enabled: bool = Field(default=False)\n    kill_switch_step_cadence: int = Field(default=100)\n    kill_switch_benchmark_id: str = Field(default=\"humaneval\")\n    kill_switch_max_samples: int = Field(default=10)\n    kill_switch_delta: float = Field(default=0.05)\n\n    def model_post_init(self, __context: Any) -> None:"
 }
@@ -1470,7 +1470,7 @@ id: toolu_01SH2B7zFdLnhmgn6pvqV6TM
 tool_result
 id: toolu_01SH2B7zFdLnhmgn6pvqV6TM
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1484,7 +1484,7 @@ id: toolu_01JUttJVq34141xnYcB1Mem6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "def train_d2l_qwen3(config: D2LTrainConfig) -> dict[str, Any]:  # noqa: C901\n    \"\"\"Run KL-divergence context distillation training.\n\n    Three execution modes controlled by config flags:\n    - dry_run=True: Validate shapes with single forward pass, no optimizer step.\n    - smoke_test=True: Run min(num_steps, 5) steps, assert finite decreasing loss.\n    - default: Full training from dataset with checkpointing and MLflow tracking.\n\n    Args:\n        config: Training configuration.\n\n    Returns:\n        Dictionary with training results:\n            - final_loss: Loss at the last step.\n            - best_loss: Lowest loss seen during training.\n            - num_steps_completed: Number of training steps completed.\n            - checkpoint_dir: Path to checkpoint directory.\n            - shape_summary (dry_run only): Tensor shape validation results.\n    \"\"\"",
   "new_string": "def train_d2l_qwen3(  # noqa: C901\n    config: D2LTrainConfig,\n    *,\n    kill_switch_evaluate_fn: Any = None,\n) -> dict[str, Any]:\n    \"\"\"Run KL-divergence context distillation training.\n\n    Three execution modes controlled by config flags:\n    - dry_run=True: Validate shapes with single forward pass, no optimizer step.\n    - smoke_test=True: Run min(num_steps, 5) steps, assert finite decreasing loss.\n    - default: Full training from dataset with checkpointing and MLflow tracking.\n\n    Args:\n        config: Training configuration.\n        kill_switch_evaluate_fn: Zero-arg callable returning the current Pass@1\n            as a float. Required when ``config.kill_switch_enabled`` is True;\n            ignored otherwise. Inject a closure built via\n            :func:`model_training.kill_switch.build_benchmark_evaluate_fn` for\n            production runs, or […]
 
@@ -1493,7 +1493,7 @@ id: toolu_01JUttJVq34141xnYcB1Mem6
 tool_result
 id: toolu_01JUttJVq34141xnYcB1Mem6
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1507,7 +1507,7 @@ id: toolu_01JCSw2ovWhQ5kfPEivw46u2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "    best_loss = float(\"inf\")\n    final_loss = float(\"inf\")\n    step_losses: list[float] = []\n\n    with mlflow.start_run(run_name=f\"{config.experiment_name}-step{num_steps}\"):\n        mlflow.log_params(config.model_dump())\n\n        for step in range(1, num_steps + 1):",
   "new_string": "    best_loss = float(\"inf\")\n    final_loss = float(\"inf\")\n    step_losses: list[float] = []\n\n    # Kill-switch setup (Plan A follow-up). Disabled by default.\n    from model_training.kill_switch import (  # noqa: PLC0415\n        KillSwitchConfig,\n        KillSwitchState,\n        maybe_run_kill_switch,\n    )\n\n    ks_config = KillSwitchConfig(\n        enabled=config.kill_switch_enabled,\n        step_cadence=config.kill_switch_step_cadence,\n        benchmark_id=config.kill_switch_benchmark_id,\n        max_samples=config.kill_switch_max_samples,\n        delta=config.kill_switch_delta,\n    )\n    ks_state = KillSwitchState()\n    if ks_config.enabled and kill_switch_evaluate_fn is None:\n        raise ValueError(\n            \"kill_switch_enabled=True requires kill_switch_evaluate_fn; \"\n            \"build one via model_training.kill_switch.build_benchmark_evaluate_fn.\"\n        )\n    kill_switch_halted = False\n\n    with mlflow.start_run(run_name=f\"{config.experiment_name}-step{num_steps}\"):\n        mlflow.log_params(config.model_dump())\n\n        for step in range(1, num_steps + 1):"
 }
@@ -1518,7 +1518,7 @@ id: toolu_01JCSw2ovWhQ5kfPEivw46u2
 tool_result
 id: toolu_01JCSw2ovWhQ5kfPEivw46u2
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1528,7 +1528,7 @@ id: toolu_01RKcdhcuWyBLMLhgd2PHg62
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "            elif step % config.checkpoint_every == 0:\n                ckpt_path = _save_checkpoint(\n                    step=step,\n                    hypernet=hypernet,\n                    optimizer=optimizer,\n                    scheduler=scheduler,\n                    config=config,\n                    hc=hc,\n                    best_loss=best_loss,\n                    full=False,\n                )\n                mlflow.log_artifact(str(ckpt_path))\n\n    # Smoke test assertions",
   "new_string": "            elif step % config.checkpoint_every == 0:\n                ckpt_path = _save_checkpoint(\n                    step=step,\n                    hypernet=hypernet,\n                    optimizer=optimizer,\n                    scheduler=scheduler,\n                    config=config,\n                    hc=hc,\n                    best_loss=best_loss,\n                    full=False,\n                )\n                mlflow.log_artifact(str(ckpt_path))\n\n            # Kill-switch: evaluate Pass@1 at cadence and halt on regression.\n            if maybe_run_kill_switch(\n                step=step,\n                config=ks_config,\n                state=ks_state,\n                evaluate_fn=kill_switch_evaluate_fn,\n            ):\n                kill_switch_halted = True\n                logger.error(\n                    \"Kill-switch halted training at step %d: \"\n                    \"pass_at_1=%.3f baseline=%.3f delta=%.3f\",\n                    step,\n                    ks_state.last_pass_at_1 if ks_state.last_pass_at_1 is not None else float(\"nan\"),\n                    ks_state.baseline if ks_state.baseline is not None else float(\"nan\"),\n                    ks_config.delta,\n                )\n                break\n\n    # Smoke test assertions"
 }
@@ -1539,7 +1539,7 @@ id: toolu_01RKcdhcuWyBLMLhgd2PHg62
 tool_result
 id: toolu_01RKcdhcuWyBLMLhgd2PHg62
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1553,7 +1553,7 @@ id: toolu_01A1L1zxFfe34DBVk6P8px2T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "    return {\n        \"final_loss\": final_loss,\n        \"best_loss\": best_loss,\n        \"num_steps_completed\": num_steps,\n        \"checkpoint_dir\": config.checkpoint_dir,\n    }",
   "new_string": "    result: dict[str, Any] = {\n        \"final_loss\": final_loss,\n        \"best_loss\": best_loss,\n        \"num_steps_completed\": num_steps,\n        \"checkpoint_dir\": config.checkpoint_dir,\n    }\n    if ks_config.enabled:\n        result[\"kill_switch_triggered\"] = kill_switch_halted\n        result[\"kill_switch_baseline\"] = ks_state.baseline\n        result[\"kill_switch_last_pass_at_1\"] = ks_state.last_pass_at_1\n    return result"
 }
@@ -1564,7 +1564,7 @@ id: toolu_01A1L1zxFfe34DBVk6P8px2T
 tool_result
 id: toolu_01A1L1zxFfe34DBVk6P8px2T
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1601,7 +1601,7 @@ id: toolu_012e5oZH9BWTByTh9iiKrRzG
 ```
 ============================= test session starts ==============================
 platform darwin -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
-rootdir: /Users/noahdolevelixir/Code/rune
+rootdir: /home/<USER>/Code/rune
 configfile: pyproject.toml
 plugins: anyio-4.12.1, jaxtyping-0.3.9, xdist-3.8.0, asyncio-1.3.0, langsmith-0.7.9, requests-mock-1.12.1, cov-7.0.0
 asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
@@ -1650,7 +1650,7 @@ id: toolu_01M9os6j48UkPLLkpP1hRj3f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "            if maybe_run_kill_switch(\n                step=step,\n                config=ks_config,\n                state=ks_state,\n                evaluate_fn=kill_switch_evaluate_fn,\n            ):\n                kill_switch_halted = True\n                logger.error(\n                    \"Kill-switch halted training at step %d: \"\n                    \"pass_at_1=%.3f baseline=%.3f delta=%.3f\",\n                    step,\n                    ks_state.last_pass_at_1 if ks_state.last_pass_at_1 is not None else float(\"nan\"),\n                    ks_state.baseline if ks_state.baseline is not None else float(\"nan\"),\n                    ks_config.delta,\n                )\n                break",
   "new_string": "            if maybe_run_kill_switch(\n                step=step,\n                config=ks_config,\n                state=ks_state,\n                evaluate_fn=kill_switch_evaluate_fn,\n            ):\n                kill_switch_halted = True\n                _nan = float(\"nan\")\n                _last = (\n                    ks_state.last_pass_at_1\n                    if ks_state.last_pass_at_1 is not None\n                    else _nan\n                )\n                _base = (\n                    ks_state.baseline if ks_state.baseline is not None else _nan\n                )\n                logger.error(\n                    \"Kill-switch halted training at step %d: \"\n                    \"pass_at_1=%.3f baseline=%.3f delta=%.3f\",\n                    step,\n                    _last,\n                    _base,\n                    ks_config.delta,\n                )\n                break"
 }
@@ -1661,7 +1661,7 @@ id: toolu_01M9os6j48UkPLLkpP1hRj3f
 tool_result
 id: toolu_01M9os6j48UkPLLkpP1hRj3f
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1756,7 +1756,7 @@ tool_use Read
 id: toolu_01ThQ96YZ2hJ2pnc2BLoDpdi
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py",
   "offset": 215,
   "limit": 22
 }
@@ -1798,7 +1798,7 @@ id: toolu_01A1gdXQVNAFC4Gy7zoytLKT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py",
   "old_string": "    def _evaluate() -> float:\n        from evaluation.benchmarks import run_benchmark  # noqa: PLC0415\n        from evaluation.benchmarks.adapter_stack import (  # noqa: PLC0415\n            load_adapter_stack,\n        )\n\n        stack = load_adapter_stack(",
   "new_string": "    def _evaluate() -> float:\n        # evaluation.benchmarks.run_benchmark is lazily exposed via\n        # module __getattr__, which mypy sees as \"object\" — cast to Any\n        # so the call is typed correctly without a heavy import.\n        from typing import Any as _Any  # noqa: PLC0415\n\n        from evaluation.benchmarks import run_benchmark as _rb  # noqa: PLC0415\n        from evaluation.benchmarks.adapter_stack import (  # noqa: PLC0415\n            load_adapter_stack,\n        )\n\n        run_benchmark: _Any = _rb\n        stack = load_adapter_stack("
 }
@@ -1809,7 +1809,7 @@ id: toolu_01A1gdXQVNAFC4Gy7zoytLKT
 tool_result
 id: toolu_01A1gdXQVNAFC4Gy7zoytLKT
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1892,7 +1892,7 @@ tool_use Bash
 id: toolu_01CSTtZ38YkngUDmLCaK8M7i
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nfeat(training): wire Pass@1 kill-switch into hypernetwork training loop\n\nAdds libs/model-training/src/model_training/kill_switch.py with pure\nhelpers (should_evaluate, regression_detected, update_and_check,\nevaluate_and_check, maybe_run_kill_switch) and a build_benchmark_evaluate_fn\nclosure factory that defers the evaluation.benchmarks import.\n\nExtends D2LTrainConfig with kill_switch_enabled / _step_cadence /\n_benchmark_id / _max_samples / _delta fields (all disabled by default).\ntrain_d2l_qwen3 accepts a new kill_switch_evaluate_fn kwarg; when the\nflag is on it calls maybe_run_kill_switch after each step, captures a\nbaseline on the first evaluation, and breaks the loop when Pass@1 drops\nbelow baseline - delta. Run-result dict gains kill_switch_triggered /\n_baseline / _last_pass_at_1 when enabled.\n\nCloses gap 5 in instructions/gap-closure-handoff.md (Plan A follow-up).\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nfeat(training): wire Pass@1 kill-switch into hypernetwork training loop\n\nAdds libs/model-training/src/model_training/kill_switch.py with pure\nhelpers (should_evaluate, regression_detected, update_and_check,\nevaluate_and_check, maybe_run_kill_switch) and a build_benchmark_evaluate_fn\nclosure factory that defers the evaluation.benchmarks import.\n\nExtends D2LTrainConfig with kill_switch_enabled / _step_cadence /\n_benchmark_id / _max_samples / _delta fields (all disabled by default).\ntrain_d2l_qwen3 accepts a new kill_switch_evaluate_fn kwarg; when the\nflag is on it calls maybe_run_kill_switch after each step, captures a\nbaseline on the first evaluation, and breaks the loop when Pass@1 drops\nbelow baseline - delta. Run-result dict gains kill_switch_triggered /\n_baseline / _last_pass_at_1 when enabled.\n\nCloses gap 5 in instructions/gap-closure-handoff.md (Plan A follow-up).\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit kill-switch work"
 }
 ```
@@ -1945,7 +1945,7 @@ tool_use Write
 id: toolu_013paeU1A9T8nw8UmXsK1DM9
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md",
   "content": "# Gap Closure Handoff — 2026-04-23 (updated)\n\nResuming work on `instructions/gaps.md`. Branch `feat/training-upgrade`.\n\n## Closed so far (5 commits)\n\n| # | Gap | Commit | Status |\n|---|-----|--------|--------|\n| 1 | Workspace mypy config gap (pandas-stubs, inference/shared/evaluation globs) | `917150e` | ✅ |\n| 2 | APPS stratification parity (Plan A `load_problems` delegation from Plan C) | `917150e` | ✅ |\n| 3 | SWE-Bench-Lite `score()` implementation (env-gated clone/apply/pytest) | `683553c` | ✅ |\n| 4 | Oracle validation runner (`scripts/validate_oracles.py`, \"≥3% over base\" gate) | `98b8713` | ✅ |\n| 5 | **Kill-switch wiring into hypernetwork training loop (Plan A follow-up)** | `510464f` | ✅ |\n\n## Verify the closed work is green\n\n```bash\nuv sync --all-packages\nuv run pytest \\\n    libs/evaluation/tests/test_load_problems.py \\\n    libs/evaluation/tests/test_swe_bench_adapter.py \\\n    tests/test_validate_oracles.py \\\n    libs/model-training/tests/test_kill_switch.py \\\n    libs/model-training/tests/test_d2l_train.py -v\nuv run ruff check libs/ scripts/\nuv run mypy libs/model-training/src/model_training/kill_switch.py libs/model-training/src/model_training/d2l_train.py\n```\n\nAll the above passed at commit `510464f`. No regressions.\n\n## What gap 5 delivered (for downstream consumers)\n\n- **New module:** `libs/model-training/src/model_training/kill_switch.py`\n  - `KillSwitchConfig` (dataclass): `enabled`, `step_cadence`, `benchmark_id`, `max_samples`, `delta`\n  - `KillSwitchState` (dataclass): `baseline`, `triggered`, `last_pass_at_1`, `evaluations`\n  - Pure helpers: `should_evaluate`, `regression_detected`, `update_and_check`, `evaluate_and_check`\n  - Step-level hook: `maybe_run_kill_switch(step=, config=, state=, evaluate_fn=) -> bool`\n  - Closure factory: `build_benchmark_evaluate_fn(base_model=, benchmark_id=, max_samples=, provider=, registry=, adapter_ids=)` — defers `evaluation.benchmarks` import […]
 
 > TOOL
@@ -1953,7 +1953,7 @@ id: toolu_013paeU1A9T8nw8UmXsK1DM9
 tool_result
 id: toolu_013paeU1A9T8nw8UmXsK1DM9
 ```
-The file /Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/instructions/gap-closure-handoff.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1985,7 +1985,7 @@ tool_use Bash
 id: toolu_01Bdfn7VrZ6pTmnXzgtUk9Ls
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/ && echo \"---\" && wc -l /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/manifest.py",
+  "command": "ls /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/ && echo \"---\" && wc -l /home/<USER>/Code/rune/scripts/phase_corpus_producer.py /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/manifest.py",
   "description": "Explore corpus_producer structure"
 }
 ```
@@ -2007,8 +2007,8 @@ trainer_bridge.py  4.2K
 
 9 files, 0 dirs (9 .py)
 ---
-     354 /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py
-      82 /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/manifest.py
+     354 /home/<USER>/Code/rune/scripts/phase_corpus_producer.py
+      82 /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/manifest.py
      436 total
 ```
 
@@ -2018,7 +2018,7 @@ tool_use Read
 id: toolu_01FA4WGX6UBDYqx1XnSMA5kJ
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/manifest.py"
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/manifest.py"
 }
 ```
 
@@ -2079,7 +2079,7 @@ tool_use Read
 id: toolu_01RKP7ZEfnSmfP7Vxp2mdpBp
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "offset": 1,
   "limit": 100
 }
@@ -2151,7 +2151,7 @@ tool_use Read
 id: toolu_01FTEnp8uycjc3uJgukG91nw
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "offset": 100,
   "limit": 260
 }
@@ -2229,7 +2229,7 @@ tool_use Write
 id: toolu_01CjnYG4vEUzCdyqxcVYmpkj
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/tests/test_s3_uploader.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/tests/test_s3_uploader.py",
   "content": "\"\"\"Unit tests for the S3 manifest uploader.\n\nboto3 is imported inside the uploader; tests stub the module via\n``monkeypatch.setitem(sys.modules, \"boto3\", ...)`` so they run without\nAWS credentials or the boto3 dependency.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport sys\nfrom pathlib import Path\nfrom unittest.mock import MagicMock\n\nimport pytest\n\n\ndef _make_manifest(tmp_path: Path, name: str = \"decompose_humaneval.jsonl\") -> Path:\n    p = tmp_path / name\n    p.write_text('{\"task_id\": \"t1\"}\\n', encoding=\"utf-8\")\n    return p\n\n\ndef test_upload_manifest_missing_boto3_returns_false(\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    \"\"\"When boto3 is not importable, uploader logs and returns False.\"\"\"\n    monkeypatch.setitem(sys.modules, \"boto3\", None)\n\n    from corpus_producer.s3_uploader import upload_manifest\n\n    manifest = _make_manifest(tmp_path)\n    ok = upload_manifest(manifest, bucket=\"my-bucket\", prefix=\"oracles\")\n    assert ok is False\n\n\ndef test_upload_manifest_no_credentials_returns_false(\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    \"\"\"When boto3 raises NoCredentialsError, uploader logs and returns False.\"\"\"\n    fake_boto3 = MagicMock()\n    # Exception classes live on botocore.exceptions; simulate both modules.\n    fake_botocore_exc = type(\n        \"FakeNoCredentialsError\",\n        (Exception,),\n        {},\n    )\n\n    # Client raises NoCredentialsError on upload_file\n    client = MagicMock()\n    client.upload_file.side_effect = fake_botocore_exc(\"no creds\")\n    fake_boto3.client.return_value = client\n\n    # Point botocore.exceptions.NoCredentialsError at our fake class so the\n    # uploader's except clause catches it.\n    fake_exceptions_mod = MagicMock()\n    fake_exceptions_mod.NoCredentialsError = fake_botocore_exc\n    fake_exceptions_mod.ClientError = fake_botocore_exc\n    fake_exceptions_mod.BotoCoreError = fake_botocore_exc\n    monkeypatch.setitem(sys.modules, \"boto3\", fake_boto3)\n    monkeypatch.setitem(sys.modules, \"botocore\", MagicMock(exceptions=fake_exceptions_mod))\n    monkeypatch.setitem(sys.modules, \"botocore.exceptions\", fake_exceptions_mod)\n\n    from corpus_producer.s3_uploader import upload_manifest\n\n    manifest = _make_manifest(tmp_path)\n    ok = upload_manifest(manifest, bucket=\"my-bucket\", […]
 
 > TOOL
@@ -2237,7 +2237,7 @@ id: toolu_01CjnYG4vEUzCdyqxcVYmpkj
 tool_result
 id: toolu_01CjnYG4vEUzCdyqxcVYmpkj
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/libs/corpus-producer/tests/test_s3_uploader.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/libs/corpus-producer/tests/test_s3_uploader.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2307,7 +2307,7 @@ tool_use Write
 id: toolu_013dTKBFPXEGiXw7coMdjXgZ
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/s3_uploader.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/s3_uploader.py",
   "content": "\"\"\"Optional S3 uploader for bin manifests.\n\nThe uploader is a pure add-on: local paths remain the source of truth. When\n``boto3`` is unavailable or AWS credentials are missing, :func:`upload_manifest`\nlogs a warning and returns ``False`` without raising.\n\n``boto3`` is imported inside :func:`upload_manifest` so this module stays\nimportable even if boto3 is not installed.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport logging\nfrom pathlib import Path\n\nlogger = logging.getLogger(__name__)\n\n__all__ = [\"build_s3_key\", \"upload_manifest\"]\n\n\ndef build_s3_key(prefix: str, basename: str) -> str:\n    \"\"\"Join an S3 prefix and basename into a single key.\n\n    Normalizes a trailing slash on the prefix and returns the basename alone\n    when the prefix is empty.\n\n    Args:\n        prefix: S3 key prefix (e.g. ``\"oracles/run-1\"``). May be empty.\n        basename: Object basename (e.g. ``\"decompose_humaneval.jsonl\"``).\n\n    Returns:\n        A single ``\"<prefix>/<basename>\"`` key, or just ``basename`` when\n        prefix is empty.\n    \"\"\"\n    if not prefix:\n        return basename\n    return f\"{prefix.rstrip('/')}/{basename}\"\n\n\ndef upload_manifest(manifest: Path, bucket: str, prefix: str) -> bool:\n    \"\"\"Upload a single manifest file to S3.\n\n    Returns ``False`` and logs a warning when boto3 is missing or AWS\n    credentials are unavailable — upload is an optional add-on and must never\n    break the corpus producer run.\n\n    Args:\n        manifest: Local path to the JSONL manifest to upload.\n        bucket: Target S3 bucket name.\n        prefix: Key prefix within […]
 
 > TOOL
@@ -2315,7 +2315,7 @@ id: toolu_013dTKBFPXEGiXw7coMdjXgZ
 tool_result
 id: toolu_013dTKBFPXEGiXw7coMdjXgZ
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/s3_uploader.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/s3_uploader.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2366,7 +2366,7 @@ tool_use Read
 id: toolu_019dmTZy5bbrZNpYNAaYMYtz
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py"
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py"
 }
 ```
 
@@ -2486,7 +2486,7 @@ tool_use Read
 id: toolu_01V6xECunvLuQsQM815LHKia
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_integration.py"
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_integration.py"
 }
 ```
 
@@ -2552,7 +2552,7 @@ id: toolu_012AaP5LQeVBWneXvuB9hWpA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_integration.py",
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_integration.py",
   "old_string": "@patch(\"corpus_producer.success_filter.run_benchmark\", side_effect=_mock_run_benchmark_pass)\ndef test_produce_corpus_force_reruns_done_problems(mock_rb: MagicMock) -> None:",
   "new_string": "@patch(\"corpus_producer.success_filter.run_benchmark\", side_effect=_mock_run_benchmark_pass)\ndef test_produce_corpus_uploads_manifests_to_s3_when_bucket_set(\n    mock_rb: MagicMock,\n) -> None:\n    \"\"\"When s3_bucket is set, upload_manifest is called once per emitted manifest.\"\"\"\n    import phase_corpus_producer as pcp  # noqa: PLC0415\n\n    with patch.object(pcp, \"run_pipeline_for_problem\", side_effect=_fake_pipeline_runner):\n        with patch.object(\n            pcp, \"_load_problems\", return_value=[(_PROBLEM_ID, \"prompt\")]\n        ):\n            with tempfile.TemporaryDirectory() as tmpdir:\n                with patch.object(\n                    pcp, \"upload_manifest\", return_value=True\n                ) as mock_upload:\n                    counts = pcp.produce_corpus(\n                        benchmarks=[_BENCHMARK],\n                        out_dir=Path(tmpdir),\n                        skip_training=True,\n                        s3_bucket=\"my-bucket\",\n                        s3_prefix=\"oracles/run-1\",\n                    )\n                    # One manifest per phase (decompose/plan/code/integrate)\n                    assert mock_upload.call_count == len(counts)\n                    # Each call got the bucket + prefix\n                    for call in mock_upload.call_args_list:\n                        assert call.kwargs[\"bucket\"] == \"my-bucket\"\n                        assert call.kwargs[\"prefix\"] == \"oracles/run-1\"\n\n\n@patch(\"corpus_producer.success_filter.run_benchmark\", side_effect=_mock_run_benchmark_pass)\ndef test_produce_corpus_no_upload_when_bucket_unset(mock_rb: MagicMock) -> None:\n    \"\"\"When s3_bucket is None, upload_manifest is NOT called.\"\"\"\n    import phase_corpus_producer as pcp  # noqa: PLC0415\n\n    with patch.object(pcp, \"run_pipeline_for_problem\", side_effect=_fake_pipeline_runner):\n        with patch.object(\n            pcp, \"_load_problems\", return_value=[(_PROBLEM_ID, \"prompt\")]\n        ):\n            with tempfile.TemporaryDirectory() as tmpdir:\n                with patch.object(pcp, \"upload_manifest\") as mock_upload:\n                    pcp.produce_corpus(\n                        benchmarks=[_BENCHMARK],\n                        out_dir=Path(tmpdir),\n                        skip_training=True,\n                    )\n                    mock_upload.assert_not_called()\n\n\n@patch(\"corpus_producer.success_filter.run_benchmark\", side_effect=_mock_run_benchmark_pass)\ndef test_produce_corpus_force_reruns_done_problems(mock_rb: MagicMock) -> None:"
 }
@@ -2563,7 +2563,7 @@ id: toolu_012AaP5LQeVBWneXvuB9hWpA
 tool_result
 id: toolu_012AaP5LQeVBWneXvuB9hWpA
 ```
-The file /Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_integration.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/tests/corpus_producer/test_integration.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2599,7 +2599,7 @@ id: toolu_012ooo5FkgLoFxJw6azNycyv
 >           raise AttributeError(
                 "%s does not have the attribute %r" % (target, name)
             )
-E           AttributeError: <module 'phase_corpus_producer' from '/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py'> does not have the attribute 'upload_manifest'
+E           AttributeError: <module 'phase_corpus_producer' from '/home/<USER>/Code/rune/scripts/phase_corpus_producer.py'> does not have the attribute 'upload_manifest'
 
 ../../.local/share/uv/python/cpython-3.12.12-macos-aarch64-none/lib/python3.12/unittest/mock.py:1437: AttributeError
 =========================== short test summary info ============================
@@ -2619,7 +2619,7 @@ id: toolu_012v6xHT32xgr4FyVrkeZe1r
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "from corpus_producer.manifest import emit_bin_manifest\nfrom corpus_producer.models import PhaseArtifact\nfrom corpus_producer.pipeline_runner import run_pipeline_for_problem\nfrom corpus_producer.progress_db import ProgressDB\nfrom corpus_producer.rationalization import MIN_EXAMPLES_PER_BIN, star_rationalize\nfrom corpus_producer.success_filter import filter_artifacts\nfrom corpus_producer.trainer_bridge import invoke_bin_training",
   "new_string": "from corpus_producer.manifest import emit_bin_manifest\nfrom corpus_producer.models import PhaseArtifact\nfrom corpus_producer.pipeline_runner import run_pipeline_for_problem\nfrom corpus_producer.progress_db import ProgressDB\nfrom corpus_producer.rationalization import MIN_EXAMPLES_PER_BIN, star_rationalize\nfrom corpus_producer.s3_uploader import upload_manifest\nfrom corpus_producer.success_filter import filter_artifacts\nfrom corpus_producer.trainer_bridge import invoke_bin_training"
 }
@@ -2630,7 +2630,7 @@ id: toolu_012v6xHT32xgr4FyVrkeZe1r
 tool_result
 id: toolu_012v6xHT32xgr4FyVrkeZe1r
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2640,7 +2640,7 @@ id: toolu_01C86oyS8f3Zm2UDszok8Yf7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    parser.add_argument(\n        \"--mlflow-experiment\",\n        default=\"rune-qlora\",\n        dest=\"mlflow_experiment\",\n        metavar=\"NAME\",\n    )\n    return parser",
   "new_string": "    parser.add_argument(\n        \"--mlflow-experiment\",\n        default=\"rune-qlora\",\n        dest=\"mlflow_experiment\",\n        metavar=\"NAME\",\n    )\n    parser.add_argument(\n        \"--s3-bucket\",\n        default=None,\n        dest=\"s3_bucket\",\n        metavar=\"BUCKET\",\n        help=(\n            \"Optional S3 bucket to mirror bin manifests to. When unset, \"\n            \"manifests remain local-only.\"\n        ),\n    )\n    parser.add_argument(\n        \"--s3-prefix\",\n        default=\"\",\n        dest=\"s3_prefix\",\n        metavar=\"PREFIX\",\n        help=(\n            \"Key prefix within --s3-bucket (e.g. 'oracles/run-1'). \"\n            \"Ignored when --s3-bucket is unset.\"\n        ),\n    )\n    return parser"
 }
@@ -2651,7 +2651,7 @@ id: toolu_01C86oyS8f3Zm2UDszok8Yf7
 tool_result
 id: toolu_01C86oyS8f3Zm2UDszok8Yf7
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2661,7 +2661,7 @@ id: toolu_018HsNF9fBxhqpcNbvBg576P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    base_model: str = \"Qwen/Qwen3.5-9B\",\n    database_url: str | None = None,\n    mlflow_experiment: str = \"rune-qlora\",\n) -> dict[str, int]:",
   "new_string": "    base_model: str = \"Qwen/Qwen3.5-9B\",\n    database_url: str | None = None,\n    mlflow_experiment: str = \"rune-qlora\",\n    s3_bucket: str | None = None,\n    s3_prefix: str = \"\",\n) -> dict[str, int]:"
 }
@@ -2672,7 +2672,7 @@ id: toolu_018HsNF9fBxhqpcNbvBg576P
 tool_result
 id: toolu_018HsNF9fBxhqpcNbvBg576P
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2682,7 +2682,7 @@ id: toolu_01C5p8uL86Ka3i2SH3aCvf84
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "        manifest_path = emit_bin_manifest(bin_key, arts, manifests_dir)\n        bin_record_counts[bin_key] = len(arts)\n\n        if skip_training:",
   "new_string": "        manifest_path = emit_bin_manifest(bin_key, arts, manifests_dir)\n        bin_record_counts[bin_key] = len(arts)\n\n        if s3_bucket:\n            upload_manifest(\n                manifest_path, bucket=s3_bucket, prefix=s3_prefix\n            )\n\n        if skip_training:"
 }
@@ -2693,7 +2693,7 @@ id: toolu_01C5p8uL86Ka3i2SH3aCvf84
 tool_result
 id: toolu_01C5p8uL86Ka3i2SH3aCvf84
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2703,7 +2703,7 @@ id: toolu_01HafFuzSeYFr7eSXHDpCPFv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "        base_model=args.base_model,\n        database_url=args.database_url,\n        mlflow_experiment=args.mlflow_experiment,\n    )",
   "new_string": "        base_model=args.base_model,\n        database_url=args.database_url,\n        mlflow_experiment=args.mlflow_experiment,\n        s3_bucket=args.s3_bucket,\n        s3_prefix=args.s3_prefix,\n    )"
 }
@@ -2714,7 +2714,7 @@ id: toolu_01HafFuzSeYFr7eSXHDpCPFv
 tool_result
 id: toolu_01HafFuzSeYFr7eSXHDpCPFv
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2983,7 +2983,7 @@ tool_use Read
 id: toolu_015CEfGSMxRQnFNn9Wy6DwJo
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "offset": 95,
   "limit": 35
 }
@@ -3042,7 +3042,7 @@ id: toolu_01EbHttZEVhVfje3PkTS3KDh
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/tests/test_s3_uploader.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/tests/test_s3_uploader.py",
   "old_string": "    monkeypatch.setitem(sys.modules, \"botocore\", MagicMock(exceptions=fake_exceptions_mod))",
   "new_string": "    fake_botocore = MagicMock(exceptions=fake_exceptions_mod)\n    monkeypatch.setitem(sys.modules, \"botocore\", fake_botocore)"
 }
@@ -3053,7 +3053,7 @@ id: toolu_01EbHttZEVhVfje3PkTS3KDh
 tool_result
 id: toolu_01EbHttZEVhVfje3PkTS3KDh
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/corpus-producer/tests/test_s3_uploader.py has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/corpus-producer/tests/test_s3_uploader.py has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3126,7 +3126,7 @@ tool_use Read
 id: toolu_015GWvDtsU7fc3hYYvanaHjj
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "offset": 115,
   "limit": 60
 }
@@ -3228,7 +3228,7 @@ id: toolu_01FW84Dsaob1y8EY7ocA75gs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "old_string": "[[tool.mypy.overrides]]\nmodule = \"httpx\"\nignore_missing_imports = true",
   "new_string": "[[tool.mypy.overrides]]\nmodule = \"httpx\"\nignore_missing_imports = true\n\n[[tool.mypy.overrides]]\nmodule = [\n    \"boto3\",\n    \"boto3.*\",\n    \"botocore\",\n    \"botocore.*\",\n]\nignore_missing_imports = true"
 }
@@ -3239,7 +3239,7 @@ id: toolu_01FW84Dsaob1y8EY7ocA75gs
 tool_result
 id: toolu_01FW84Dsaob1y8EY7ocA75gs
 ```
-The file /Users/noahdolevelixir/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3369,7 +3369,7 @@ tool_use Bash
 id: toolu_01SypvJG15zdzFBTemDjHCTB
 ```json
 {
-  "command": "git add libs/corpus-producer/src/corpus_producer/s3_uploader.py libs/corpus-producer/tests/test_s3_uploader.py scripts/phase_corpus_producer.py tests/corpus_producer/test_integration.py pyproject.toml && git commit -m \"$(cat <<'EOF'\nfeat(corpus-producer): add optional S3 manifest upload (gap 7)\n\nAdds `libs/corpus-producer/src/corpus_producer/s3_uploader.py` exposing\n`build_s3_key(prefix, basename)` and `upload_manifest(local, bucket, prefix)`.\nboto3 is imported lazily inside `upload_manifest`; missing boto3 or absent\nAWS credentials log a warning and return False so S3 is a pure add-on and\nthe local manifest path remains the source of truth.\n\nWires `--s3-bucket` / `--s3-prefix` flags into\n`scripts/phase_corpus_producer.py` and calls `upload_manifest` after each\n`emit_bin_manifest` in `produce_corpus`.\n\nTests: 6 unit tests stub boto3 via sys.modules (no AWS dependency); 2\nintegration tests cover the wired call site. Adds boto3/botocore to the\nmypy `ignore_missing_imports` override list.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" 2>&1 | tail -10",
+  "command": "git add libs/corpus-producer/src/corpus_producer/s3_uploader.py libs/corpus-producer/tests/test_s3_uploader.py scripts/phase_corpus_producer.py tests/corpus_producer/test_integration.py pyproject.toml && git commit -m \"$(cat <<'EOF'\nfeat(corpus-producer): add optional S3 manifest upload (gap 7)\n\nAdds `libs/corpus-producer/src/corpus_producer/s3_uploader.py` exposing\n`build_s3_key(prefix, basename)` and `upload_manifest(local, bucket, prefix)`.\nboto3 is imported lazily inside `upload_manifest`; missing boto3 or absent\nAWS credentials log a warning and return False so S3 is a pure add-on and\nthe local manifest path remains the source of truth.\n\nWires `--s3-bucket` / `--s3-prefix` flags into\n`scripts/phase_corpus_producer.py` and calls `upload_manifest` after each\n`emit_bin_manifest` in `produce_corpus`.\n\nTests: 6 unit tests stub boto3 via sys.modules (no AWS dependency); 2\nintegration tests cover the wired call site. Adds boto3/botocore to the\nmypy `ignore_missing_imports` override list.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" 2>&1 | tail -10",
   "description": "Commit gap 7 closure"
 }
 ```
@@ -3459,7 +3459,7 @@ tool_use Read
 id: toolu_01CaLW3oRiFmLEPrqB837z9t
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py"
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py"
 }
 ```
 
@@ -3517,7 +3517,7 @@ tool_use Write
 id: toolu_01K72eTKyqRNJxnYcmhTiZ74
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_sharding.py",
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_sharding.py",
   "content": "\"\"\"Unit tests for the shard-slicing helpers in phase_corpus_producer.\n\n``--shard N/M`` splits the problem list so multiple nodes/workers can run\nin parallel. The slice is round-robin to balance per-problem runtime\nvariance, and the union of all shards equals the full problem list.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport sys\nfrom pathlib import Path\n\nimport pytest\n\n_SCRIPTS_DIR = str(Path(__file__).resolve().parents[2] / \"scripts\")\nif _SCRIPTS_DIR not in sys.path:\n    sys.path.insert(0, _SCRIPTS_DIR)\n\n\nclass TestParseShard:\n    \"\"\"``_parse_shard('N/M')`` returns (idx, total).\"\"\"\n\n    def test_valid_shard(self) -> None:\n        import phase_corpus_producer as pcp\n\n        assert pcp._parse_shard(\"0/4\") == (0, 4)\n        assert pcp._parse_shard(\"3/4\") == (3, 4)\n\n    def test_missing_slash_raises(self) -> None:\n        import phase_corpus_producer as pcp\n\n        with pytest.raises(ValueError):\n            pcp._parse_shard(\"0-4\")\n\n    def test_non_integer_raises(self) -> None:\n        import phase_corpus_producer as pcp\n\n        with pytest.raises(ValueError):\n            pcp._parse_shard(\"a/b\")\n\n    def test_index_out_of_range_raises(self) -> None:\n        import phase_corpus_producer as pcp\n\n        with pytest.raises(ValueError):\n            pcp._parse_shard(\"4/4\")  # idx must be < total\n        with pytest.raises(ValueError):\n            pcp._parse_shard(\"-1/4\")\n\n    def test_total_zero_raises(self) -> None:\n        import phase_corpus_producer as pcp\n\n        with pytest.raises(ValueError):\n            pcp._parse_shard(\"0/0\")\n\n\nclass TestApplyShard:\n    \"\"\"``apply_shard(problems, idx, total)`` round-robin slice.\"\"\"\n\n    def test_single_shard_identity(self) -> None:\n        import phase_corpus_producer as pcp\n\n        problems = [(\"p\", \"prompt\")] * 10\n        assert pcp.apply_shard(problems, 0, 1) == problems\n\n    def test_two_shards_split_even_and_odd(self) -> None:\n        import phase_corpus_producer as pcp\n\n        problems = [(f\"p{i}\", f\"prompt{i}\") for i in range(6)]\n        shard_0 = pcp.apply_shard(problems, 0, 2)\n        shard_1 = pcp.apply_shard(problems, 1, 2)\n        assert [p[0] for p in shard_0] == […]
 
 > TOOL
@@ -3525,7 +3525,7 @@ id: toolu_01K72eTKyqRNJxnYcmhTiZ74
 tool_result
 id: toolu_01K72eTKyqRNJxnYcmhTiZ74
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_sharding.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/tests/corpus_producer/test_sharding.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3544,7 +3544,7 @@ id: toolu_01RJrPoT3GubLw89JTUT1xcv
 tool_result
 id: toolu_01RJrPoT3GubLw89JTUT1xcv
 ```
-[gw0] darwin -- Python 3.12.12 /Users/noahdolevelixir/Code/rune/.venv/bin/python
+[gw0] darwin -- Python 3.12.12 /home/<USER>/Code/rune/.venv/bin/python
 
 self = <tests.corpus_producer.test_sharding.TestParseShard object at 0x10fc21d60>
 
@@ -3582,7 +3582,7 @@ id: toolu_01J5HCfKnKHrFLrXyizym4sA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "def _load_problems(\n    benchmark: str,\n    problem_ids: list[str] | None,\n    max_problems: int | None,\n) -> list[tuple[str, str]]:",
   "new_string": "def _parse_shard(s: str) -> tuple[int, int]:\n    \"\"\"Parse a ``\"<idx>/<total>\"`` shard spec.\n\n    Args:\n        s: Shard spec, e.g. ``\"0/4\"`` for shard 0 of 4.\n\n    Returns:\n        Tuple of ``(idx, total)`` with ``0 <= idx < total`` and ``total > 0``.\n\n    Raises:\n        ValueError: On malformed spec, non-integer components, non-positive\n            total, or out-of-range idx.\n    \"\"\"\n    if \"/\" not in s:\n        raise ValueError(f\"--shard must be '<idx>/<total>', got {s!r}\")\n    idx_s, total_s = s.split(\"/\", 1)\n    try:\n        idx = int(idx_s)\n        total = int(total_s)\n    except ValueError as exc:\n        raise ValueError(\n            f\"--shard components must be integers, got {s!r}\"\n        ) from exc\n    if total <= 0:\n        raise ValueError(f\"--shard total must be > 0, got {total}\")\n    if idx < 0 or idx >= total:\n        raise ValueError(\n            f\"--shard idx must be in [0, {total - 1}], got {idx}\"\n        )\n    return idx, total\n\n\ndef apply_shard(\n    problems: list[tuple[str, str]], idx: int, total: int\n) -> list[tuple[str, str]]:\n    \"\"\"Round-robin slice a problem list for shard ``idx`` of ``total``.\n\n    Round-robin (``problems[idx::total]``) balances per-problem runtime\n    variance better than contiguous chunks. The union of all ``total``\n    shards equals the input list with no overlaps.\n\n    Args:\n […]
 
@@ -3591,7 +3591,7 @@ id: toolu_01J5HCfKnKHrFLrXyizym4sA
 tool_result
 id: toolu_01J5HCfKnKHrFLrXyizym4sA
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3638,7 +3638,7 @@ id: toolu_01AfRZs34kfCJcBW5KNQKdwD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_integration.py",
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_integration.py",
   "old_string": "@patch(\"corpus_producer.success_filter.run_benchmark\", side_effect=_mock_run_benchmark_pass)\ndef test_produce_corpus_no_upload_when_bucket_unset(mock_rb: MagicMock) -> None:",
   "new_string": "@patch(\"corpus_producer.success_filter.run_benchmark\", side_effect=_mock_run_benchmark_pass)\ndef test_produce_corpus_shard_processes_only_its_slice(mock_rb: MagicMock) -> None:\n    \"\"\"Shard 1/3 only runs the middle-third of the problem list.\"\"\"\n    import phase_corpus_producer as pcp  # noqa: PLC0415\n\n    problems = [(f\"HumanEval/{i}\", f\"prompt {i}\") for i in range(6)]\n    seen: list[str] = []\n\n    def recording_runner(\n        bm: str, pid: str, prompt: str, **kw: object\n    ) -> PipelineRunResult:\n        seen.append(pid)\n        return _fake_pipeline_runner(bm, pid, prompt, **kw)  # type: ignore[arg-type]\n\n    with patch.object(pcp, \"run_pipeline_for_problem\", side_effect=recording_runner):\n        with patch.object(pcp, \"_load_problems\", return_value=problems):\n            with tempfile.TemporaryDirectory() as tmpdir:\n                pcp.produce_corpus(\n                    benchmarks=[_BENCHMARK],\n                    out_dir=Path(tmpdir),\n                    skip_training=True,\n                    shard_idx=1,\n                    shard_total=3,\n                )\n    # Round-robin slice [1::3] → indices 1, 4\n    assert seen == [\"HumanEval/1\", \"HumanEval/4\"]\n\n\n@patch(\"corpus_producer.success_filter.run_benchmark\", side_effect=_mock_run_benchmark_pass)\ndef test_produce_corpus_no_upload_when_bucket_unset(mock_rb: MagicMock) -> None:"
 }
@@ -3649,7 +3649,7 @@ id: toolu_01AfRZs34kfCJcBW5KNQKdwD
 tool_result
 id: toolu_01AfRZs34kfCJcBW5KNQKdwD
 ```
-The file /Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_integration.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/tests/corpus_producer/test_integration.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3696,7 +3696,7 @@ id: toolu_01CxuHe4ZkTyg8HA1i8nYVZu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    s3_bucket: str | None = None,\n    s3_prefix: str = \"\",\n) -> dict[str, int]:",
   "new_string": "    s3_bucket: str | None = None,\n    s3_prefix: str = \"\",\n    shard_idx: int = 0,\n    shard_total: int = 1,\n) -> dict[str, int]:"
 }
@@ -3707,7 +3707,7 @@ id: toolu_01CxuHe4ZkTyg8HA1i8nYVZu
 tool_result
 id: toolu_01CxuHe4ZkTyg8HA1i8nYVZu
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3717,7 +3717,7 @@ id: toolu_01Nce9cswe58C6hAnuc1F5et
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    for benchmark in benchmarks:\n        problems = _load_problems(benchmark, problem_ids, max_problems)\n        logger.info(\n            \"Processing %d problems for benchmark %s\", len(problems), benchmark\n        )",
   "new_string": "    for benchmark in benchmarks:\n        problems = _load_problems(benchmark, problem_ids, max_problems)\n        if shard_total > 1:\n            problems = apply_shard(problems, shard_idx, shard_total)\n            logger.info(\n                \"Shard %d/%d: processing %d problems for benchmark %s\",\n                shard_idx,\n                shard_total,\n                len(problems),\n                benchmark,\n            )\n        else:\n            logger.info(\n                \"Processing %d problems for benchmark %s\",\n                len(problems),\n                benchmark,\n            )"
 }
@@ -3728,7 +3728,7 @@ id: toolu_01Nce9cswe58C6hAnuc1F5et
 tool_result
 id: toolu_01Nce9cswe58C6hAnuc1F5et
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3738,7 +3738,7 @@ id: toolu_019nQ6ceyBDGrHLknnG3MhUq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    parser.add_argument(\n        \"--s3-prefix\",\n        default=\"\",\n        dest=\"s3_prefix\",\n        metavar=\"PREFIX\",\n        help=(\n            \"Key prefix within --s3-bucket (e.g. 'oracles/run-1'). \"\n            \"Ignored when --s3-bucket is unset.\"\n        ),\n    )\n    return parser",
   "new_string": "    parser.add_argument(\n        \"--s3-prefix\",\n        default=\"\",\n        dest=\"s3_prefix\",\n        metavar=\"PREFIX\",\n        help=(\n            \"Key prefix within --s3-bucket (e.g. 'oracles/run-1'). \"\n            \"Ignored when --s3-bucket is unset.\"\n        ),\n    )\n    parser.add_argument(\n        \"--shard\",\n        default=None,\n        dest=\"shard\",\n        metavar=\"IDX/TOTAL\",\n        help=(\n            \"Round-robin shard spec, e.g. '0/4' for shard 0 of 4 workers. \"\n            \"Progress DB is shared; restarts are safe across shards.\"\n        ),\n    )\n    return parser"
 }
@@ -3749,7 +3749,7 @@ id: toolu_019nQ6ceyBDGrHLknnG3MhUq
 tool_result
 id: toolu_019nQ6ceyBDGrHLknnG3MhUq
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3759,7 +3759,7 @@ id: toolu_017sawWHTHN8qoTPojob3pU9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    parser = _build_parser()\n    args = parser.parse_args()\n\n    counts = produce_corpus(\n        benchmarks=args.benchmark,\n        out_dir=Path(args.out_dir),\n        problem_ids=args.problems,\n        max_problems=args.max_problems,\n        pipeline_timeout=args.pipeline_timeout,\n        force=args.force,\n        skip_training=args.skip_training,\n        dry_run=args.dry_run,\n        base_model=args.base_model,\n        database_url=args.database_url,\n        mlflow_experiment=args.mlflow_experiment,\n        s3_bucket=args.s3_bucket,\n        s3_prefix=args.s3_prefix,\n    )",
   "new_string": "    parser = _build_parser()\n    args = parser.parse_args()\n\n    shard_idx, shard_total = (0, 1)\n    if args.shard:\n        shard_idx, shard_total = _parse_shard(args.shard)\n\n    counts = produce_corpus(\n        benchmarks=args.benchmark,\n        out_dir=Path(args.out_dir),\n        problem_ids=args.problems,\n        max_problems=args.max_problems,\n        pipeline_timeout=args.pipeline_timeout,\n        force=args.force,\n        skip_training=args.skip_training,\n        dry_run=args.dry_run,\n        base_model=args.base_model,\n        database_url=args.database_url,\n        mlflow_experiment=args.mlflow_experiment,\n        s3_bucket=args.s3_bucket,\n        s3_prefix=args.s3_prefix,\n        shard_idx=shard_idx,\n        shard_total=shard_total,\n    )"
 }
@@ -3770,7 +3770,7 @@ id: toolu_017sawWHTHN8qoTPojob3pU9
 tool_result
 id: toolu_017sawWHTHN8qoTPojob3pU9
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3819,7 +3819,7 @@ tool_use Write
 id: toolu_01SYtAHrkGoLwddxYpLzHJge
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_pipeline_runner_cuda.py",
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_pipeline_runner_cuda.py",
   "content": "\"\"\"Tests for CUDA_VISIBLE_DEVICES passthrough in run_pipeline_for_problem.\n\nThe corpus producer exposes ``--cuda-visible-devices`` so a multi-GPU node\ncan spawn one worker per GPU. The pipeline subprocess needs the env var\nforwarded so the launched rune_runner.py sees only its designated GPU.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import MagicMock, patch\n\n\ndef _fake_completed(returncode: int = 1, stderr: str = \"boom\") -> MagicMock:\n    \"\"\"Return a minimal CompletedProcess-like mock.\"\"\"\n    m = MagicMock()\n    m.returncode = returncode\n    m.stderr = stderr\n    m.stdout = \"\"\n    return m\n\n\ndef test_run_pipeline_sets_cuda_visible_devices_when_requested() -> None:\n    \"\"\"When cuda_visible_devices='2' is passed, subprocess env contains it.\"\"\"\n    from corpus_producer.pipeline_runner import run_pipeline_for_problem\n\n    with patch(\n        \"corpus_producer.pipeline_runner.subprocess.run\",\n        return_value=_fake_completed(),\n    ) as mock_run:\n        run_pipeline_for_problem(\n            \"humaneval\",\n            \"HumanEval/0\",\n            \"Sort a list.\",\n            cuda_visible_devices=\"2\",\n        )\n    assert mock_run.call_count == 1\n    env = mock_run.call_args.kwargs.get(\"env\")\n    assert env is not None\n    assert env.get(\"CUDA_VISIBLE_DEVICES\") == \"2\"\n\n\ndef test_run_pipeline_does_not_override_env_when_cuda_none() -> None:\n    \"\"\"When cuda_visible_devices is None, no env kwarg is passed.\"\"\"\n    from corpus_producer.pipeline_runner import run_pipeline_for_problem\n\n    with patch(\n        \"corpus_producer.pipeline_runner.subprocess.run\",\n        return_value=_fake_completed(),\n    ) as mock_run:\n        run_pipeline_for_problem(\n            \"humaneval\",\n            \"HumanEval/0\",\n            \"Sort a list.\",\n        )\n    assert mock_run.call_count == 1\n    # Either env kwarg is absent, or — if forwarded — it doesn't set CUDA\n    env = mock_run.call_args.kwargs.get(\"env\")\n    if env is not None:\n        assert \"CUDA_VISIBLE_DEVICES\" not in env or env[\n            \"CUDA_VISIBLE_DEVICES\"\n        ] != \"2\"\n"
 }
 ```
@@ -3829,7 +3829,7 @@ id: toolu_01SYtAHrkGoLwddxYpLzHJge
 tool_result
 id: toolu_01SYtAHrkGoLwddxYpLzHJge
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_pipeline_runner_cuda.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/tests/corpus_producer/test_pipeline_runner_cuda.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3869,7 +3869,7 @@ id: toolu_012TdC2cvpCeG7oyfsJRxpKv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
   "old_string": "import json\nimport logging\nimport subprocess\nimport tempfile\nimport uuid\nfrom dataclasses import dataclass, field\nfrom pathlib import Path\nfrom typing import Protocol, runtime_checkable",
   "new_string": "import json\nimport logging\nimport os\nimport subprocess\nimport tempfile\nimport uuid\nfrom dataclasses import dataclass, field\nfrom pathlib import Path\nfrom typing import Protocol, runtime_checkable"
 }
@@ -3880,7 +3880,7 @@ id: toolu_012TdC2cvpCeG7oyfsJRxpKv
 tool_result
 id: toolu_012TdC2cvpCeG7oyfsJRxpKv
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3890,7 +3890,7 @@ id: toolu_01SCUa1rwrASQCNjmfbZdTVN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
   "old_string": "    def __call__(\n        self,\n        benchmark: str,\n        problem_id: str,\n        problem_prompt: str,\n        *,\n        timeout: int = 300,\n        base_model_id: str = \"Qwen/Qwen3.5-9B\",\n    ) -> PipelineRunResult:\n        \"\"\"Run the pipeline for one (benchmark, problem) pair.\"\"\"\n        ...",
   "new_string": "    def __call__(\n        self,\n        benchmark: str,\n        problem_id: str,\n        problem_prompt: str,\n        *,\n        timeout: int = 300,\n        base_model_id: str = \"Qwen/Qwen3.5-9B\",\n        cuda_visible_devices: str | None = None,\n    ) -> PipelineRunResult:\n        \"\"\"Run the pipeline for one (benchmark, problem) pair.\"\"\"\n        ..."
 }
@@ -3901,7 +3901,7 @@ id: toolu_01SCUa1rwrASQCNjmfbZdTVN
 tool_result
 id: toolu_01SCUa1rwrASQCNjmfbZdTVN
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3911,7 +3911,7 @@ id: toolu_01GgbTRQRoA2AmeaRrf7uujR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
   "old_string": "def run_pipeline_for_problem(\n    benchmark: str,\n    problem_id: str,\n    problem_prompt: str,\n    *,\n    timeout: int = 300,\n    base_model_id: str = \"Qwen/Qwen3.5-9B\",\n) -> PipelineRunResult:\n    \"\"\"Run the full 5-phase Rune pipeline for one problem via subprocess.\n\n    Writes a temporary JSON output file that rune_runner populates, then\n    reads and parses artifacts from it.\n\n    Args:\n        benchmark: Benchmark identifier (used for artifact tagging only).\n        problem_id: Problem identifier (used for artifact tagging).\n        problem_prompt: Full problem text passed to rune_runner --project.\n        timeout: Process timeout in seconds (default 300).\n        base_model_id: Base model HF repo id.\n\n    Returns:\n        PipelineRunResult with artifacts and success flag.\n    \"\"\"",
   "new_string": "def run_pipeline_for_problem(\n    benchmark: str,\n    problem_id: str,\n    problem_prompt: str,\n    *,\n    timeout: int = 300,\n    base_model_id: str = \"Qwen/Qwen3.5-9B\",\n    cuda_visible_devices: str | None = None,\n) -> PipelineRunResult:\n    \"\"\"Run the full 5-phase Rune pipeline for one problem via subprocess.\n\n    Writes a temporary JSON output file that rune_runner populates, then\n    reads and parses artifacts from it.\n\n    Args:\n        benchmark: Benchmark identifier (used for artifact tagging only).\n        problem_id: Problem identifier (used for artifact tagging).\n        problem_prompt: Full problem text passed to rune_runner --project.\n        timeout: Process timeout in seconds (default 300).\n        base_model_id: Base model HF repo id.\n        cuda_visible_devices: Optional ``CUDA_VISIBLE_DEVICES`` value (e.g.\n            ``\"0\"``) forwarded to […]
 
@@ -3920,7 +3920,7 @@ id: toolu_01GgbTRQRoA2AmeaRrf7uujR
 tool_result
 id: toolu_01GgbTRQRoA2AmeaRrf7uujR
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3930,7 +3930,7 @@ id: toolu_01GEZ4V2ahQsFR4mumFKWTHp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
+  "file_path": "/home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py",
   "old_string": "        try:\n            proc = subprocess.run(\n                cmd,\n                timeout=timeout,\n                capture_output=True,\n                text=True,\n                cwd=str(_RUNE_ROOT),\n            )",
   "new_string": "        env = None\n        if cuda_visible_devices is not None:\n            env = {**os.environ, \"CUDA_VISIBLE_DEVICES\": cuda_visible_devices}\n\n        try:\n            proc = subprocess.run(\n                cmd,\n                timeout=timeout,\n                capture_output=True,\n                text=True,\n                cwd=str(_RUNE_ROOT),\n                env=env,\n            )"
 }
@@ -3941,7 +3941,7 @@ id: toolu_01GEZ4V2ahQsFR4mumFKWTHp
 tool_result
 id: toolu_01GEZ4V2ahQsFR4mumFKWTHp
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/corpus-producer/src/corpus_producer/pipeline_runner.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3988,7 +3988,7 @@ id: toolu_013rdVRtgChRMXva5zsnfyYF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    shard_idx: int = 0,\n    shard_total: int = 1,\n) -> dict[str, int]:",
   "new_string": "    shard_idx: int = 0,\n    shard_total: int = 1,\n    cuda_visible_devices: str | None = None,\n) -> dict[str, int]:"
 }
@@ -3999,7 +3999,7 @@ id: toolu_013rdVRtgChRMXva5zsnfyYF
 tool_result
 id: toolu_013rdVRtgChRMXva5zsnfyYF
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4009,7 +4009,7 @@ id: toolu_018EJSGui1zCJnmBFYAeFgzw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "            result = run_pipeline_for_problem(\n                benchmark,\n                problem_id,\n                prompt,\n                timeout=pipeline_timeout,\n                base_model_id=base_model,\n            )",
   "new_string": "            result = run_pipeline_for_problem(\n                benchmark,\n                problem_id,\n                prompt,\n                timeout=pipeline_timeout,\n                base_model_id=base_model,\n                cuda_visible_devices=cuda_visible_devices,\n            )"
 }
@@ -4020,7 +4020,7 @@ id: toolu_018EJSGui1zCJnmBFYAeFgzw
 tool_result
 id: toolu_018EJSGui1zCJnmBFYAeFgzw
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4030,7 +4030,7 @@ id: toolu_012wPRJmi1brp3kdC3msvQs7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    parser.add_argument(\n        \"--shard\",\n        default=None,\n        dest=\"shard\",\n        metavar=\"IDX/TOTAL\",\n        help=(\n            \"Round-robin shard spec, e.g. '0/4' for shard 0 of 4 workers. \"\n            \"Progress DB is shared; restarts are safe across shards.\"\n        ),\n    )\n    return parser",
   "new_string": "    parser.add_argument(\n        \"--shard\",\n        default=None,\n        dest=\"shard\",\n        metavar=\"IDX/TOTAL\",\n        help=(\n            \"Round-robin shard spec, e.g. '0/4' for shard 0 of 4 workers. \"\n            \"Progress DB is shared; restarts are safe across shards.\"\n        ),\n    )\n    parser.add_argument(\n        \"--cuda-visible-devices\",\n        default=None,\n        dest=\"cuda_visible_devices\",\n        metavar=\"DEVICES\",\n        help=(\n            \"Optional CUDA_VISIBLE_DEVICES value (e.g. '0') forwarded to each \"\n            \"pipeline subprocess. Combine with --shard for per-GPU workers.\"\n        ),\n    )\n    return parser"
 }
@@ -4041,7 +4041,7 @@ id: toolu_012wPRJmi1brp3kdC3msvQs7
 tool_result
 id: toolu_012wPRJmi1brp3kdC3msvQs7
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4051,7 +4051,7 @@ id: toolu_018NYepzd54Zi3tfSHYrxEpE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "        shard_idx=shard_idx,\n        shard_total=shard_total,\n    )",
   "new_string": "        shard_idx=shard_idx,\n        shard_total=shard_total,\n        cuda_visible_devices=args.cuda_visible_devices,\n    )"
 }
@@ -4062,7 +4062,7 @@ id: toolu_018NYepzd54Zi3tfSHYrxEpE
 tool_result
 id: toolu_018NYepzd54Zi3tfSHYrxEpE
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4130,7 +4130,7 @@ id: toolu_013aZWyZj3Z55AWsE4coxhZx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_integration.py",
+  "file_path": "/home/<USER>/Code/rune/tests/corpus_producer/test_integration.py",
   "old_string": "def _fake_pipeline_runner(\n    benchmark: str,\n    problem_id: str,\n    prompt: str,\n    *,\n    timeout: int = 300,\n    base_model_id: str = \"Qwen/Qwen3.5-9B\",\n) -> PipelineRunResult:",
   "new_string": "def _fake_pipeline_runner(\n    benchmark: str,\n    problem_id: str,\n    prompt: str,\n    *,\n    timeout: int = 300,\n    base_model_id: str = \"Qwen/Qwen3.5-9B\",\n    cuda_visible_devices: str | None = None,\n) -> PipelineRunResult:"
 }
@@ -4141,7 +4141,7 @@ id: toolu_013aZWyZj3Z55AWsE4coxhZx
 tool_result
 id: toolu_013aZWyZj3Z55AWsE4coxhZx
 ```
-The file /Users/noahdolevelixir/Code/rune/tests/corpus_producer/test_integration.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/tests/corpus_producer/test_integration.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4215,7 +4215,7 @@ tool_use Bash
 id: toolu_01AAmF5tGEAgJAQPwwNnfTHZ
 ```json
 {
-  "command": "git add libs/corpus-producer/src/corpus_producer/pipeline_runner.py scripts/phase_corpus_producer.py tests/corpus_producer/test_sharding.py tests/corpus_producer/test_pipeline_runner_cuda.py tests/corpus_producer/test_integration.py && git commit -m \"$(cat <<'EOF'\nfeat(corpus-producer): add --shard and --cuda-visible-devices for parallel GPU runs (gap 8)\n\nAdds two pure helpers to `scripts/phase_corpus_producer.py`:\n  - `_parse_shard('N/M') -> (idx, total)` with range/format validation\n  - `apply_shard(problems, idx, total) -> list` round-robin slice\n\n`produce_corpus` gains `shard_idx` / `shard_total` kwargs; the loader\noutput is sliced via `apply_shard` when `shard_total > 1`. The shared\nprogress DB keeps restarts and cross-shard coordination safe.\n\nAdds `cuda_visible_devices: str | None` threaded through\n`run_pipeline_for_problem`; when set, the subprocess env gets\n`CUDA_VISIBLE_DEVICES=<value>` for per-worker GPU pinning.\n\nCLI: `--shard IDX/TOTAL` and `--cuda-visible-devices DEVICES`.\n\nTests: 11 unit tests for shard helpers, 1 integration test for slicing,\n2 unit tests for CUDA env plumbing. Updates `_fake_pipeline_runner` to\naccept the new kwarg so existing integration tests keep passing.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\" 2>&1 | tail -8",
+  "command": "git add libs/corpus-producer/src/corpus_producer/pipeline_runner.py scripts/phase_corpus_producer.py tests/corpus_producer/test_sharding.py tests/corpus_producer/test_pipeline_runner_cuda.py tests/corpus_producer/test_integration.py && git commit -m \"$(cat <<'EOF'\nfeat(corpus-producer): add --shard and --cuda-visible-devices for parallel GPU runs (gap 8)\n\nAdds two pure helpers to `scripts/phase_corpus_producer.py`:\n  - `_parse_shard('N/M') -> (idx, total)` with range/format validation\n  - `apply_shard(problems, idx, total) -> list` round-robin slice\n\n`produce_corpus` gains `shard_idx` / `shard_total` kwargs; the loader\noutput is sliced via `apply_shard` when `shard_total > 1`. The shared\nprogress DB keeps restarts and cross-shard coordination safe.\n\nAdds `cuda_visible_devices: str | None` threaded through\n`run_pipeline_for_problem`; when set, the subprocess env gets\n`CUDA_VISIBLE_DEVICES=<value>` for per-worker GPU pinning.\n\nCLI: `--shard IDX/TOTAL` and `--cuda-visible-devices DEVICES`.\n\nTests: 11 unit tests for shard helpers, 1 integration test for slicing,\n2 unit tests for CUDA env plumbing. Updates `_fake_pipeline_runner` to\naccept the new kwarg so existing integration tests keep passing.\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\" 2>&1 | tail -8",
   "description": "Commit gap 8 closure"
 }
 ```
@@ -4324,7 +4324,7 @@ tool_use Read
 id: toolu_01JsftCMD7C15V79V2tWzwFK
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/github_client.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/github_client.py"
 }
 ```
 
@@ -4391,7 +4391,7 @@ tool_use Read
 id: toolu_01EqeVWtii7Y4D3Rih22FQfg
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_mining.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_mining.py"
 }
 ```
 
@@ -4481,7 +4481,7 @@ tool_use Read
 id: toolu_01JNxsDidkHx87pFqyvVfJzF
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/encoder_pretrain/augment.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/encoder_pretrain/augment.py"
 }
 ```
 
@@ -4590,7 +4590,7 @@ tool_use Read
 id: toolu_01KXQdgD3eAb4JodUX2HF9GC
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 700,
   "limit": 130
 }
@@ -4645,7 +4645,7 @@ tool_use Read
 id: toolu_014iqHf2xRgtzxRYXjqrKWYz
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 380,
   "limit": 50
 }
@@ -4733,7 +4733,7 @@ tool_use Read
 id: toolu_01V6qQ3NpfhVfjXSKfTLa5gF
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/mine_github.py"
+  "file_path": "/home/<USER>/Code/rune/scripts/mine_github.py"
 }
 ```
 
@@ -4830,7 +4830,7 @@ tool_use Read
 id: toolu_01ADSy22ZwWq3A4Hwk4iiwkJ
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py",
   "offset": 680,
   "limit": 30
 }
@@ -4937,7 +4937,7 @@ tool_use Read
 id: toolu_017wcgtM29A5YVzkCAbYv9YZ
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "offset": 525,
   "limit": 75
 }
@@ -5008,7 +5008,7 @@ tool_use Read
 id: toolu_01T9cHdFsFjpKxiYXLu2grHt
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "offset": 580,
   "limit": 25
 }
@@ -5053,7 +5053,7 @@ id: toolu_01SHHZdYtx2fA65A96VCiWVY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py",
   "old_string": "def test_normalize_mined_pairs_single_commit_produces_step0() -> None:\n    \"\"\"A single-commit PR produces one step_0 pair.\"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory()\n    pairs = normalize_mined_pairs(trajectory)\n\n    assert len(pairs) == 1\n    assert pairs[0][\"task_id\"] == \"pr_owner/repo_42\"\n    assert pairs[0][\"metadata\"][\"step_index\"] == 0\n    assert \"Add widget support\" in pairs[0][\"activation_text\"]\n    assert \"+def widget(): pass\" in pairs[0][\"teacher_text\"]\n    assert \"## Implementation\" in pairs[0][\"teacher_text\"]",
   "new_string": "def test_normalize_mined_pairs_single_commit_produces_step0() -> None:\n    \"\"\"A single-commit PR produces one step_0 pair.\"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory()\n    pairs = normalize_mined_pairs(trajectory)\n\n    assert len(pairs) == 1\n    assert pairs[0][\"task_id\"] == \"pr_owner/repo_42\"\n    assert pairs[0][\"metadata\"][\"step_index\"] == 0\n    assert \"Add widget support\" in pairs[0][\"activation_text\"]\n    assert \"+def widget(): pass\" in pairs[0][\"teacher_text\"]\n    assert \"## Implementation\" in pairs[0][\"teacher_text\"]\n\n\ndef test_normalize_mined_pairs_propagates_task_description() -> None:\n    \"\"\"Each pair record carries the trajectory's task_description.\n\n    Plan B gate: augment_corpus drops pairs without task_description and\n    enforces MIN_RETENTION_RATIO = 0.80. Propagating the authentic\n    PR-title + body (or issue title + body) into each pair keeps retention\n    at 100% for well-formed trajectories.\n    \"\"\"\n    from model_training.d2l_data import normalize_mined_pairs\n\n    trajectory = _make_mined_trajectory(\n        task_description=\"Add widget support\",\n        steps=[\n            {\"type\": \"commit\", \"description\": \"V1\", \"content\": \"+v1\"},\n            {\n                \"type\": \"review\",\n                \"description\": \"Review comment\",\n                \"content\": \"rename to Gadget\",\n            },\n            {\"type\": \"commit\", \"description\": \"V2\", \"content\": \"+v2 Gadget\"},\n        ],\n    )\n    pairs = normalize_mined_pairs(trajectory)\n\n    assert len(pairs) >= […]
 
@@ -5062,7 +5062,7 @@ id: toolu_01SHHZdYtx2fA65A96VCiWVY
 tool_result
 id: toolu_01SHHZdYtx2fA65A96VCiWVY
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

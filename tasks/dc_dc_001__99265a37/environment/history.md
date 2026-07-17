@@ -11777,7 +11777,7 @@ Date:   Sat May 23 13:03:49 2026 +0800
     .so 备份；rejected git checkout HEAD -- 全清 + venv 回上一 accepted + 文档仅
     留教训摘要。current.md 精简 1145 → 354 行（-69%）。
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
 
  .../sglang/python/sglang/srt/models/minicpm.py     | 23 +++++++++++++++++++---
  1 file changed, 20 insertions(+), 3 deletions(-)

@@ -66,7 +66,7 @@ The "Recent Activity" feature on the dashboard is called the **Unified Feed** an
 ### **1. Frontend Components**
 
 #### **1.1 Main Dashboard Page**
-**File:** `/Users/pc/web3/ReleaseBeacon/web/app/page.tsx`
+**File:** `/home/<USER>/web3/ReleaseBeacon/web/app/page.tsx`
 
 - Entry point for the dashboard
 - Renders the `<UnifiedFeed />` component alongside stats and charts
@@ -104,7 +104,7 @@ tool_use Read
 id: toolu_018mLJEWHpcFju4AXnMbKhCs
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx"
 }
 ```
 
@@ -169,7 +169,7 @@ tool_use Read
 id: toolu_01Gwq9AEH7dmmEWEhYirKvWk
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts"
 }
 ```
 
@@ -267,7 +267,7 @@ id: toolu_01MzNu1FNMy9kb2VcPq81u9o
 ```json
 {
   "pattern": "recent|feed|activity|latest",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api",
   "-i": true,
   "output_mode": "content",
   "glob": "*.go"
@@ -281,7 +281,7 @@ id: toolu_01C92SaNuCtiegJRzmPDMgiF
 ```json
 {
   "pattern": "releases\\?|/releases",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/server.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/server.go",
   "output_mode": "content"
 }
 ```
@@ -317,7 +317,7 @@ tool_use Read
 id: toolu_01CYM3cnBHhjmYUKabmmEqDy
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/releases.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/releases.go"
 }
 ```
 
@@ -398,7 +398,7 @@ id: toolu_018Jy6GeyerzfP5V33FyYwuD
 ```json
 {
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "pattern": "func.*ListAllReleases",
   "-A": 80
 }
@@ -455,7 +455,7 @@ id: toolu_01VQ3wNabBnCdGSR7YaGuQYj
 {
   "-A": 20,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts",
   "pattern": "^export interface Release"
 }
 ```
@@ -468,7 +468,7 @@ id: toolu_01GEc6oomJkxcfZ8x9iVF9pb
 {
   "-A": 15,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts",
   "pattern": "^export interface SemanticRelease"
 }
 ```
@@ -576,7 +576,7 @@ id: toolu_01Q78G4Q5YhTFgSFw1qkLryE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
   "old_string": "export function UnifiedFeed() {\n  const { t } = useTranslation();\n\n  const { data: projectsData } = useSWR(\"projects-for-dashboard\", () =>\n    projectsApi.list()\n  );\n\n  const { data: feedItems, isLoading } = useSWR(\n    projectsData ? \"unified-feed\" : null,\n    async () => {\n      if (!projectsData?.data?.length) return [];\n\n      const projectMap = new Map(\n        projectsData.data.map((p) => [p.id, p.name])\n      );\n      const projectSlice = projectsData.data.slice(0, 10);\n\n      // Fetch releases, sources, and semantic releases in parallel\n      const [releaseResults, sourceResults, srResults] = await Promise.all([\n        Promise.all(\n          projectSlice.map((p) =>\n            releasesApi.listByProject(p.id, 1).catch(() => null)\n          )\n        ),\n        Promise.all(\n          projectSlice.map((p) =>\n            sourcesApi.listByProject(p.id, 1).catch(() => null)\n          )\n        ),\n        Promise.all(\n          projectSlice.map((p) =>\n            srApi.list(p.id, 1).catch(() => null)\n          )\n        ),\n      ]);\n\n      // Build source lookup maps\n      const sourceMap = new Map<string, string>();\n      const providerMap = new Map<string, string>();\n      const sourceProjectMap = new Map<string, string>();\n      sourceResults\n        .filter((r): r is NonNullable<typeof r> => r !== null)\n        .flatMap((r) => r.data)\n        .forEach((s: Source) => {\n          sourceMap.set(s.id, s.repository);\n          providerMap.set(s.id, s.provider);\n          sourceProjectMap.set(s.id, s.project_id);\n        });\n\n      // Build feed items\n      const items: FeedItemType[] = [];\n\n      releaseResults\n        .filter((r): r is NonNullable<typeof r> => r !== null)\n        .flatMap((r) => r.data)\n        .forEach((rel) => {\n          const projectId = sourceProjectMap.get(rel.source_id);\n          items.push({\n            kind: \"release\",\n            data: rel,\n            repository: sourceMap.get(rel.source_id),\n            provider: providerMap.get(rel.source_id),\n            projectName: projectId ? […]
 
 > TOOL
@@ -584,7 +584,7 @@ id: toolu_01Q78G4Q5YhTFgSFw1qkLryE
 tool_result
 id: toolu_01Q78G4Q5YhTFgSFw1qkLryE
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -598,7 +598,7 @@ id: toolu_014PBpttf15bYPGCPSrCJ74g
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
   "old_string": "import {\n  projects as projectsApi,\n  releases as releasesApi,\n  sources as sourcesApi,\n  semanticReleases as srApi,\n} from \"@/lib/api/client\";",
   "new_string": "import {\n  releases as releasesApi,\n  semanticReleases as srApi,\n} from \"@/lib/api/client\";"
 }
@@ -609,7 +609,7 @@ id: toolu_014PBpttf15bYPGCPSrCJ74g
 tool_result
 id: toolu_014PBpttf15bYPGCPSrCJ74g
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -623,7 +623,7 @@ id: toolu_01MKptsjHyArfEB8bst7Esfd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx",
   "old_string": "import type { Release, SemanticRelease, Source } from \"@/lib/api/types\";",
   "new_string": "import type { Release, SemanticRelease } from \"@/lib/api/types\";"
 }
@@ -634,7 +634,7 @@ id: toolu_01MKptsjHyArfEB8bst7Esfd
 tool_result
 id: toolu_01MKptsjHyArfEB8bst7Esfd
 ```
-The file /Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -647,7 +647,7 @@ tool_use Read
 id: toolu_014WzU3KCSR4VVvh3cmCBkYj
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/dashboard/unified-feed.tsx"
 }
 ```
 
@@ -712,7 +712,7 @@ id: toolu_01MD14yPNpo8nNtpT4wFi7WT
 ```json
 {
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/app/page.tsx",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/app/page.tsx",
   "pattern": "unified-feed|projects-for-dashboard"
 }
 ```
@@ -739,7 +739,7 @@ tool_use Bash
 id: toolu_01Vg7woDmqD4MbCjRDxRDuvW
 ```json
 {
-  "command": "cd /Users/pc/web3/ReleaseBeacon/web && npx tsc --noEmit 2>&1 | head -30",
+  "command": "cd /home/<USER>/web3/ReleaseBeacon/web && npx tsc --noEmit 2>&1 | head -30",
   "description": "Type-check the frontend",
   "timeout": 60000
 }

@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/entity/projects/EntityProcess/agentv
+# AGENTS.md instructions for /home/<USER>/projects/EntityProcess/agentv
 
 <INSTRUCTIONS>
 # AgentV Agent Guide
@@ -34,7 +34,7 @@ id: call_pDb1Lo4zKc4lnTwNuMieWEI7
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -65,7 +65,7 @@ id: call_km4o9R0wz2aX1zOBy1uxP4yd
 ```json
 {
   "cmd": "cat .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -78,7 +78,7 @@ id: call_2S8nPfhTfWxrSuukhkQL8H1P
 ```json
 {
   "cmd": "cat .agents/verification.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -90,8 +90,8 @@ tool_use exec_command
 id: call_KwMqwAdYaTHpG03JUcsMMIYO
 ```json
 {
-  "cmd": "cat /home/entity/.agents/skills/merge/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.agents/skills/merge/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -104,7 +104,7 @@ id: call_BCUXRlLqSLGa5eiZNMnquMer
 ```json
 {
   "cmd": "bd create --title=\"Publish issue 14 dogfood evidence branch\" --description=\"Why this issue exists: User asked to create an orphan dogfood branch in agentv-private with screenshots from EntityProcess/agentv-private issue 14, update index.md for recent orphan branches not listed, and merge index.md changes to remote main. What needs to be done: inspect private repo and issue attachments, create/push orphan evidence branch with screenshots, update index.md on private main for missing recent orphan branches, run relevant checks/status, and report branch/commit details.\" --acceptance=\"Orphan dogfood branch is pushed to agentv-private with issue 14 screenshots. index.md on agentv-private remote main includes recent orphan branches that were missing. Worktree status and relevant verification are reported.\" --type=task --priority=2",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -244,8 +244,8 @@ tool_use exec_command
 id: call_sWvgWxvNkByg77cc6VaApZv1
 ```json
 {
-  "cmd": "cat /home/entity/.codex/plugins/cache/openai-curated/github/d6169bef/skills/github/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.codex/plugins/cache/openai-curated/github/d6169bef/skills/github/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -258,7 +258,7 @@ id: call_VqrgPVq0CJjo8VYvWtvLs70V
 ```json
 {
   "cmd": "bd update av-l5qi --claim --notes=\"Started in primary AgentV checkout only for tracker context. Public checkout has unrelated untracked replay-contract/ and main is behind origin/main; evidence and index work will be done in agentv-private checkout/remote.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -317,8 +317,8 @@ tool_use exec_command
 id: call_Ml5DD7em0y5YRBD0Nad7W8Am
 ```json
 {
-  "cmd": "cat /home/entity/.codex/plugins/cache/openai-curated/github/d6169bef/skills/yeet/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.codex/plugins/cache/openai-curated/github/d6169bef/skills/yeet/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -330,8 +330,8 @@ tool_use exec_command
 id: call_IzU7pvElQODBrqw0iEXtqsjw
 ```json
 {
-  "cmd": "find /home/entity/projects -maxdepth 4 -type d -name agentv-private -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/projects -maxdepth 4 -type d -name agentv-private -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -344,7 +344,7 @@ id: call_T5GtRr4o6tBf88vHMZ7tat2i
 ```json
 {
   "cmd": "gh auth status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -392,7 +392,7 @@ Wall time: 4.5327 seconds
 Process exited with code 0
 Original token count: 13
 Output:
-/home/entity/projects/EntityProcess/agentv-private
+/home/<USER>/projects/EntityProcess/agentv-private
 
 ```
 
@@ -407,13 +407,13 @@ Process exited with code 0
 Original token count: 133
 Output:
 github.com
-  ✓ Logged in to github.com account christso (/home/entity/.config/gh/hosts.yml)
+  ✓ Logged in to github.com account christso (/home/<USER>/.config/gh/hosts.yml)
   - Active account: true
   - Git operations protocol: https
   - Token: gho_************************************
   - Token scopes: 'gist', 'project', 'read:org', 'repo', 'workflow'
 
-  ✓ Logged in to github.com account tsoyangbot (/home/entity/.config/gh/hosts.yml)
+  ✓ Logged in to github.com account tsoyangbot (/home/<USER>/.config/gh/hosts.yml)
   - Active account: false
   - Git operations protocol: https
   - Token: gho_************************************
@@ -423,7 +423,7 @@ github.com
 
 > AGENT
 
-The private repo is present at `/home/entity/projects/EntityProcess/agentv-private`, and `gh` is authenticated with repo access. I’m fetching that repo now and reading the current index format plus issue 14 attachment metadata so the evidence branch matches the existing convention.
+The private repo is present at `/home/<USER>/projects/EntityProcess/agentv-private`, and `gh` is authenticated with repo access. I’m fetching that repo now and reading the current index format plus issue 14 attachment metadata so the evidence branch matches the existing convention.
 
 > TOOL
 
@@ -432,7 +432,7 @@ id: call_eSFQ9Klok6mRqZoqTPsG0VFE
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -468,7 +468,7 @@ id: call_UajfaeQ9qDObMTjp0wsgwxQu
 ```json
 {
   "cmd": "git branch -a --format='%(refname:short) %(objectname:short) %(committerdate:short)'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -481,7 +481,7 @@ id: call_f2Xkyw55NZiMfRoygZ6sUqiT
 ```json
 {
   "cmd": "gh issue view 14 --repo EntityProcess/agentv-private --json number,title,body,comments,url,createdAt,updatedAt",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -494,7 +494,7 @@ id: call_UphTVZAVQZQ1ma93bBmrOaen
 ```json
 {
   "cmd": "git worktree list --porcelain",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -507,7 +507,7 @@ id: call_NNGzmtMCuQcOL7ONvvo2Pe0o
 ```json
 {
   "cmd": "gh repo view EntityProcess/agentv-private --json defaultBranchRef,nameWithOwner,url",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -608,123 +608,123 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2913
 Output:
-worktree /home/entity/projects/EntityProcess/agentv-private
+worktree /home/<USER>/projects/EntityProcess/agentv-private
 HEAD e04a7b7779b8288a098a25060968b9e8888df423
 branch refs/heads/av-cuf-dogfood-orphan-2026-06-26
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/agentv-wtg-dogfood-parity-2026-06-17
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/agentv-wtg-dogfood-parity-2026-06-17
 HEAD 0c35fbf89ad97a42011c43d31e6b7dcddc2ec231
 branch refs/heads/evidence/agentv-wtg-dogfood-parity-2026-06-17
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-2il-5-remove-phoenix-readthrough-ui
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-2il-5-remove-phoenix-readthrough-ui
 HEAD fe3506c31e7a6930fe1074f8e1dfb7dd84eba977
 branch refs/heads/evidence/av-2il-5-remove-phoenix-readthrough-ui
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-9ly-remove-public-trace-artifact
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-9ly-remove-public-trace-artifact
 HEAD 01dca48045c8076eacb0398d06685335a363eee6
 branch refs/heads/evidence/av-9ly-remove-public-trace-artifact
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-9vi-result-row-sidecars-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-9vi-result-row-sidecars-evidence
 HEAD 0b585d25ae5bc206abc2294b8109f5d7476109f3
 branch refs/heads/evidence/av-9vi-result-row-sidecars
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-i0l2-strict-layout-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-i0l2-strict-layout-evidence
 HEAD f3d4d2227c7f0732107f35d7c1fd5bcae68c55ca
 branch refs/heads/evidence/av-i0l2-strict-layout-dashboard-dogfood
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-kfik-16-final-docs-dogfood-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-kfik-16-final-docs-dogfood-evidence
 HEAD 7b22a4490cb2ef64ffa837760f3f2ed338eef7cf
 branch refs/heads/evidence/av-kfik-16-final-docs-dogfood-2026-07-06
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-kfik-6-openai-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-kfik-6-openai-evidence
 HEAD 928d122ec7afb5192c0ff805590ad7c01b171d6b
 branch refs/heads/evidence/av-kfik-6-targets-openai
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-kfik8-transcripts-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-kfik8-transcripts-evidence
 HEAD 6c17be564a4cf5c1e7fa3dfac54e59225777911a
 branch refs/heads/evidence/av-kfik8-transcripts-2026-07-02
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-kve-7-phoenix-readthrough-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-kve-7-phoenix-readthrough-evidence
 HEAD b8642d83e31720adda55fe674273ef5bc9aace06
 branch refs/heads/evidence/av-kve-7-phoenix-readthrough
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-noh3-2-4-docker-environment-runtime-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-noh3-2-4-docker-environment-runtime-evidence
 HEAD bd0f659ccc59728697530020f43b39a6aab51385
 branch refs/heads/evidence/av-noh3-2-4-docker-environment-runtime
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-noh3-2-5-environment-provenance
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-noh3-2-5-environment-provenance
 HEAD 2ca401724c73c78a707fd0c1153ef58e66f164d6
 branch refs/heads/evidence/av-noh3-2-5-environment-provenance
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-xz5i-result-artifact-contract-2026-07-04
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-xz5i-result-artifact-contract-2026-07-04
 HEAD 862965c0e90e5613319fdf97cf71fe1e9c8aa29a
 branch refs/heads/evidence/av-xz5i-result-artifact-contract-2026-07-04
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-z27-self-pr-workflow-eval
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-z27-self-pr-workflow-eval
 HEAD be95a8849ee9c3f4c00041a8ef50c2a202654f3a
 branch refs/heads/av-z27-self-pr-workflow-eval
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-zyfl-artifact-layout-v2-results-root
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-zyfl-artifact-layout-v2-results-root
 HEAD 0bb738dd108bd9f3177014f6f272d2b913a02204
 branch refs/heads/evidence/av-zyfl-artifact-layout-v2-results-root
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/braintrust-wtg-evals-2026-06-15
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/braintrust-wtg-evals-2026-06-15
 HEAD 57cb2048a51ee428c125fcc353af5eaf4ead7892
 branch refs/heads/evidence/braintrust-wtg-evals-2026-06-15
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/dashboard-eval-suite-labels-2026-06-17
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/dashboard-eval-suite-labels-2026-06-17
 HEAD bc21e2ce0aca2081b93a81afc8ffb330ff90e3c3
 branch refs/heads/evidence/dashboard-eval-suite-labels-2026-06-17
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/deepeval-wtg-evals-2026-06-16
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/deepeval-wtg-evals-2026-06-16
 HEAD 498fb705fa668a580baf5d368e5954a352289a25
 branch refs/heads/evidence/deepeval-wtg-evals-2026-06-16
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-2s7-16-3-4-project-config-dashboard
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-2s7-16-3-4-project-config-dashboard
 HEAD 628cffed8b68b8086bfe9bdcc16634ee81c3e736
 branch refs/heads/evidence/av-2s7-16-3-4-project-config-dashboard
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-504-2-result-dir
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-504-2-result-dir
 HEAD 866c7cb3808c319e3af31bb9e3982ee1f73de575
 branch refs/heads/evidence/av-504-2-result-dir
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-5045-import-defaults
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-5045-import-defaults
 HEAD 3d6a55dc5d078dd0b80f877cb815d9b180648aa4
 branch refs/heads/evidence/av-5045-import-defaults
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-dkn5-eval-restructure
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-dkn5-eval-restructure
 HEAD ceed547cad5d17700eeb7528ddbe892fd3a0747f
 branch refs/heads/evidence/av-dkn5-eval-restructure-dogfood-2026-07-03
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-27-input-hard-deprecation-20260704
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-27-input-hard-deprecation-20260704
 HEAD 4f476f04163fc2896e3988611aa36dc20f60e151
 branch refs/heads/evidence/av-kfik-27-input-hard-deprecation-20260704
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-28-3
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-28-3
 HEAD f961c63a5245a92e051697ce8bc24c9418d0e4ee
 branch refs/heads/evidence/av-kfik-28-3-llm-rubric-parsing
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-28-6
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-28-6
 HEAD 471617d85faf1d616a1dfd318001f5be22a2dcd8
 branch refs/heads/evidence/av-kfik-28-6-component-results-artifacts
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-34-1
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-34-1
 HEAD cef5663c8ba8de3aac04ff0b1cad3b2789a7777f
 branch refs/heads/evidence/av-kfik-34-1-transform-runtime
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-34-2-transform-docs-xlsx
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-34-2-transform-docs-xlsx
 HEAD 37eede4944ebfcc6b3888b6b0dafb28dc37ffc68
 branch refs/heads/evidence/av-kfik-34-2-transform-docs-xlsx
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-45-3-skill-used
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-45-3-skill-used
 HEAD b1424188720818d29668c9f68b8bec1ea1fdf2d8
 branch refs/heads/evidence/av-kfik.45.3-skill-used
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-46-1
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-46-1
 HEAD 9755da2432b9dd040a74e727ecfc62935fe1aa0b
 branch refs/heads/evidence/av-kfik-46-1-artifact-metrics-flatten
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-47-eval-config-ts
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-47-eval-config-ts
 HEAD 525dc45d979e6f8a5e29808edf2964f4fd29cede
 branch […]
 
@@ -753,7 +753,7 @@ id: call_trIFtZfzzKqlLgvSN1cZsZEA
 ```json
 {
   "cmd": "rm -rf /tmp/agentv-private-main-index && git worktree add /tmp/agentv-private-main-index origin/main && git -C /tmp/agentv-private-main-index status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -898,7 +898,7 @@ id: call_RYKdzmsGJNv34E4ApyZ0w2kO
 ```json
 {
   "cmd": "rm -rf /tmp/agentv-private-issue-14-evidence && git clone https://github.com/EntityProcess/agentv-private.git /tmp/agentv-private-issue-14-evidence && git -C /tmp/agentv-private-issue-14-evidence switch --orphan evidence/issue-14-phoenix-transcript-traces-2026-07-06 && git -C /tmp/agentv-private-issue-14-evidence rm -rf .",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -911,7 +911,7 @@ id: call_nYlhLkTHsR5p69dhCWnkuWzX
 ```json
 {
   "cmd": "gh issue view 14 --repo EntityProcess/agentv-private --json body --jq '.body'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1368,7 +1368,7 @@ id: call_zcnlhUn8bteAIVOgM3xsvtV6
 ```json
 {
   "cmd": "bd close av-l5qi --reason=\"Pushed orphan evidence branch evidence/issue-14-phoenix-transcript-traces-2026-07-06 with issue 14 screenshots, refreshed index.md for missing recent remote evidence branches, and pushed index refresh f8fe3f9 to agentv-private main.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1381,7 +1381,7 @@ id: call_NsfHyPCd71lrkEk2wmed73PY
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1394,7 +1394,7 @@ id: call_iQyurmSA7BJDVW55uCBZ6nei
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1485,8 +1485,8 @@ tool_use exec_command
 id: call_CNstTH5WvvAFNQ2OQGQmjjCe
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv-private worktree remove /tmp/agentv-private-main-index && rm -rf /tmp/agentv-private-issue-14-evidence && git -C /home/entity/projects/EntityProcess/agentv-private worktree prune && git -C /home/entity/projects/EntityProcess/agentv-private status --short --branch && git -C /home/entity/projects/EntityProcess/agentv status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv-private worktree remove /tmp/agentv-private-main-index && rm -rf /tmp/agentv-private-issue-14-evidence && git -C /home/<USER>/projects/EntityProcess/agentv-private worktree prune && git -C /home/<USER>/projects/EntityProcess/agentv-private status --short --branch && git -C /home/<USER>/projects/EntityProcess/agentv status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }

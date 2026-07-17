@@ -4,7 +4,7 @@ tool_use Bash
 id: toolu_016iLhSqqrSrBF2EUjWpAJrF
 ```json
 {
-  "command": "ls -la /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/",
+  "command": "ls -la /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/",
   "description": "List repo root"
 }
 ```
@@ -30,7 +30,7 @@ tool_use Bash
 id: toolu_01AHZdE17kYxd3eCziaV5rHL
 ```json
 {
-  "command": "ls -la /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/ /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/ /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/.claude/",
+  "command": "ls -la /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/ /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/ /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/.claude/",
   "description": "List subdirectories"
 }
 ```
@@ -40,13 +40,13 @@ id: toolu_01AHZdE17kYxd3eCziaV5rHL
 tool_result
 id: toolu_01AHZdE17kYxd3eCziaV5rHL
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/.claude/:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/.claude/:
 total 8
 drwxr-xr-x  3 sumeet  staff   96  3 Jun 11:45 .
 drwxr-xr-x  7 sumeet  staff  224  5 Jun 14:40 ..
 -rw-r--r--  1 sumeet  staff  893  3 Jun 11:45 settings.local.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/:
 total 336
 drwxr-xr-x  22 sumeet  staff    704  3 Jun 10:05 .
 drwxr-xr-x   7 sumeet  staff    224  5 Jun 14:40 ..
@@ -74,7 +74,7 @@ tool_use Bash
 id: toolu_01JKkrsHG9HBKZeKV3s6cvF7
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/task-design /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/scripts /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/runs",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/task-design /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/scripts /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/runs",
   "description": "Inspect smash subdirs"
 }
 ```
@@ -84,33 +84,33 @@ id: toolu_01JKkrsHG9HBKZeKV3s6cvF7
 tool_result
 id: toolu_01JKkrsHG9HBKZeKV3s6cvF7
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task:
 context
 prompt.md
 sentiment_scores.csv
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task:
 context
 genesis-x3-task-context.zip
 prompt.md
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/runs:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/runs:
 1
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves:
 1.json
 2.json
 3.json
 4.json
 5.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/scripts:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/scripts:
 export_tournament_files.py
 generate_h2h.py
 pull_characters_v2.py
 pull_characters.py
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/task-design:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/task-design:
 context.md
 entrant-cuts.md
 grader-guidance.md
@@ -134,7 +134,7 @@ tool_use Read
 id: toolu_01QBobzTqaS5heR4P3DTg6bN
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/AGENTS.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/AGENTS.md"
 }
 ```
 
@@ -170,7 +170,7 @@ tool_use Read
 id: toolu_0126YpsgTWpEACCHm3w43MKz
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/agent-requirements.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/agent-requirements.md"
 }
 ```
 
@@ -201,7 +201,7 @@ tool_use Read
 id: toolu_01CTAMeM1xQ72Jvh1LvBFMx4
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/task-design/steps.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/task-design/steps.md"
 }
 ```
 
@@ -259,7 +259,7 @@ tool_use Read
 id: toolu_01BFRumqKrhvL4JGJucCDYg4
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/task-design/context.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/task-design/context.md"
 }
 ```
 
@@ -329,7 +329,7 @@ tool_use Read
 id: toolu_01MntMTQShbt3zfveBraVHYM
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/prompt.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/prompt.md"
 }
 ```
 
@@ -352,7 +352,7 @@ tool_use Read
 id: toolu_01WGL1cXMTdm5ragqghVcXZ9
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/prompt.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/prompt.md"
 }
 ```
 
@@ -375,7 +375,7 @@ tool_use Bash
 id: toolu_01A7LwWEo3Tzzmgv8YRuwUwA
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/context /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/context /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/proposal /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/raw-data",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/context /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/context /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/proposal /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/raw-data",
   "description": "List context dirs"
 }
 ```
@@ -385,7 +385,7 @@ id: toolu_01A7LwWEo3Tzzmgv8YRuwUwA
 tool_result
 id: toolu_01A7LwWEo3Tzzmgv8YRuwUwA
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/context:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/context:
 character-analysis-methodology.md
 expert_analysis.txt
 genesis_x3_entrants.json
@@ -402,7 +402,7 @@ tier_list_v13.1.51.csv
 tournament-format-guide.md
 tournaments
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/context:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/context:
 aliases.json
 character_matchups_v13.1.csv
 character-analysis-methodology.md
@@ -424,11 +424,11 @@ tier_list_v13.1.csv
 tournament-format-guide.md
 tournaments
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/proposal:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/proposal:
 Super Smash Bros Bracket Simulation_returned_for_revisions.json
 Super Smash Bros Tournament - v1.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/raw-data:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/raw-data:
 battle-of-bc-7
 collision-2025
 frosty-faustings-xvii-2025
@@ -436,7 +436,7 @@ genesis-x2
 kagaribi-13
 supernova-2025
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example:
 borda-fusion.md
 character-utility.md
 compute_all.py
@@ -462,7 +462,7 @@ tool_use Read
 id: toolu_01Hje1y4azMZvQ8po7obqF2U
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/compute_all.py"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/compute_all.py"
 }
 ```
 
@@ -483,7 +483,7 @@ id: toolu_01Hje1y4azMZvQ8po7obqF2U
 10	from datetime import datetime, date
 11	from collections import defaultdict
 12	
-13	BASE = "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash"
+13	BASE = "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash"
 14	CTX = f"{BASE}/clean-task/context"
 15	WORKED = f"{BASE}/worked-example"
 16	REF_DATE = date(2026, 7, 18)
@@ -526,7 +526,7 @@ tool_use Read
 id: toolu_01Q5rejB2ws1xW5LDd7KxFYa
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/context-notes.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/context-notes.md"
 }
 ```
 
@@ -555,7 +555,7 @@ tool_use Bash
 id: toolu_01KfV2uY7kvQpuBnLU7LtEJm
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/runs/1 2>/dev/null; head -40 /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves/1.json",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/runs/1 2>/dev/null; head -40 /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves/1.json",
   "description": "Inspect saves and runs"
 }
 ```
@@ -565,14 +565,14 @@ id: toolu_01KfV2uY7kvQpuBnLU7LtEJm
 tool_result
 id: toolu_01KfV2uY7kvQpuBnLU7LtEJm
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/runs/1:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/runs/1:
 hints
 trajectory (1).json
 trajectory (2).json
 trajectory (3).json
 trajectory.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves:
 1.json
 2.json
 3.json
@@ -586,7 +586,7 @@ tool_use Bash
 id: toolu_011XvV8yVAymUoTKxSC5GYxq
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/clean /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/dirty /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/arc /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/results 2>/dev/null | head -60",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/clean /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/dirty /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/arc /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/results 2>/dev/null | head -60",
   "description": "Inspect spotify subdirs"
 }
 ```
@@ -596,7 +596,7 @@ id: toolu_011XvV8yVAymUoTKxSC5GYxq
 tool_result
 id: toolu_011XvV8yVAymUoTKxSC5GYxq
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/arc:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/arc:
 agents.md
 backfill_albums.py
 backfill_decade.py
@@ -618,14 +618,14 @@ scrape_billboard.py
 similarity_analysis.py
 transition_analysis.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/clean:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/clean:
 billboard
 candidate-albums
 demographics
 target-albums
 weighting.txt
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/dirty:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/dirty:
 backfill_albums.py
 backfill_decade.py
 backfill_specific.py
@@ -648,7 +648,7 @@ scripts
 target-albums
 weighting.txt
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/results:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/results:
 billboard-averages
 candidate-averages
 candidate-decade-matches
@@ -664,7 +664,7 @@ tool_use Read
 id: toolu_01K8GwTXgtYgTG9265tGf59B
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/prompt.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/prompt.md"
 }
 ```
 
@@ -690,7 +690,7 @@ tool_use Read
 id: toolu_01Qzzob2HMF1m5Jy3DEeLiqR
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/grader-guidance.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/grader-guidance.md",
   "limit": 80
 }
 ```
@@ -728,7 +728,7 @@ tool_use Read
 id: toolu_01Fn3kK9KnAGF4z1zxV7wZLB
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/verify_dirty.py",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/verify_dirty.py",
   "limit": 40
 }
 ```
@@ -786,7 +786,7 @@ tool_use Read
 id: toolu_01RJ12utmGnCgxWoh1oANJF6
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/verify_step3.py",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/verify_step3.py",
   "limit": 30
 }
 ```
@@ -834,7 +834,7 @@ tool_use Read
 id: toolu_01AbG1zJVEsf8YfWachejEtm
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/examples.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/examples.md",
   "limit": 30
 }
 ```
@@ -858,7 +858,7 @@ tool_use Read
 id: toolu_01W82Fm87w2rfW6b7hJtkicq
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/task.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/task.md",
   "limit": 60
 }
 ```
@@ -890,7 +890,7 @@ tool_use Read
 id: toolu_011kqekWSNSbhModWe8NTEB8
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/.claude/settings.local.json"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/.claude/settings.local.json"
 }
 ```
 
@@ -905,7 +905,7 @@ id: toolu_011kqekWSNSbhModWe8NTEB8
 4	      "Bash(python verify_all.py)",
 5	      "Bash(python3 *)",
 6	      "Bash(zip -r ../../genesis-x3-task-context.zip context/ prompt.md)",
-7	      "Read(//Users/sumeet/matrix/data-annotation/**)",
+7	      "Read(//home/<USER>/matrix/data-annotation/**)",
 8	      "Bash(unzip -l ../../genesis-x3-task-context.zip)",
 9	      "Bash(rm genesis-x3-task-context.zip)",
 10	      "Bash(zip -r ../../genesis-x3-task-context.zip context/)",
@@ -928,7 +928,7 @@ tool_use Bash
 id: toolu_01WVCmCNWF8a2A2GMsYMQrGq
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/generate_outputs.py 2>&1 | head; head -10 /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/generate_outputs.py 2>&1 | head; head -10 /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py",
   "description": "Inspect verify_all and generate_outputs"
 }
 ```
@@ -938,8 +938,8 @@ id: toolu_01WVCmCNWF8a2A2GMsYMQrGq
 tool_result
 id: toolu_01WVCmCNWF8a2A2GMsYMQrGq
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/generate_outputs.py
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/generate_outputs.py
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py
 #!/usr/bin/env python3
 """
 Deep verification of all steps:
@@ -962,7 +962,7 @@ tool_use Write
 id: toolu_01JLzAAY9VCfRsTbJTFroVmA
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md",
   "content": "# CLAUDE.md\n\nThis file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.\n\n## What this repo is\n\nThis is a **task-design workspace for the DataAnnotation Holodeck \"Atomic Loop\" project** — not a software product. Each top-level directory (`smash/`, `spotify/`) is a self-contained training task for an agentic LLM that will be run in an RL environment. The repo's \"users\" are reviewers and the task agent on WorldBench; the artifacts being designed are prompt + context files + verifier + grader guidance, not deployed code.\n\n`task.md` (project brief from DataAnnotation) and `examples.md` (reference submissions) at the root are external instructions — read them when designing new tasks but do not edit. The active work happens inside the task folders.\n\n## Common task-folder shape\n\nEach task folder follows the same shape; the names below come from `smash/` (newer) but `spotify/` (older) is analogous:\n\n- `<task>/clean-task/` (or `spotify/clean/`) — context bundle without traps. Used to confirm a careful agent can reach the correct answer.\n- `<task>/dirty-task/` (or `spotify/dirty/`) — context bundle *with* embedded traps (decoy files, outdated versions, missing aliases, etc.). This is what the task agent actually sees on WorldBench. Each `<task>/dirty-task/genesis-x3-task-context.zip`-style zip is the bundle […]
 
 > TOOL
@@ -970,7 +970,7 @@ id: toolu_01JLzAAY9VCfRsTbJTFroVmA
 tool_result
 id: toolu_01JLzAAY9VCfRsTbJTFroVmA
 ```
-File created successfully at: /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

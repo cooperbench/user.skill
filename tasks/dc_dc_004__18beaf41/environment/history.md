@@ -2298,15 +2298,15 @@ from dataclaw.secrets import scan_text
 
 # Test decorator false positives
 tests = [
-    'n@tasks.loop',
-    'n@pytest.fixture',
-    'n@mcp.tool',
-    'function@mcp.resource',
-    'on@server.tool',
+    '<REDACTED_EMAIL>',
+    '<REDACTED_EMAIL>',
+    '<REDACTED_EMAIL>',
+    '<REDACTED_EMAIL>',
+    '<REDACTED_EMAIL>',
     '[REDACTED]',
     '[REDACTED]',
     '[REDACTED]',
-    'noreply@anthropic.com',
+    '<REDACTED_EMAIL>',
     'Co-
 ```
 
@@ -3350,7 +3350,7 @@ The conversation started in a previous session where:
 - Fix: removed `deduped.reverse()` so replacements happen end-to-start
 
 ### 2. Email false positives
-- Python decorators like `n@tasks.loop`, `n@pytest.fixture`, `n@mcp.tool` matched email pattern
+- Python decorators like `<REDACTED_EMAIL>`, `<REDACTED_EMAIL>`, `<REDACTED_EMAIL>` matched email pattern
 - Fixed by: requiring 2+ char local part in email regex, adding allowlist entries for `@pytest`, `@tasks.`, `@mcp.`, `@server.`, `@app.`, `@router.`
 
 ### 3. Adding […]
@@ -3394,7 +3394,7 @@ Find how the desloppify Claude Code skill is configured. Look for:
 3. How it's registered with Claude Code
 
 Search thoroughly in:
-- /Users/pete
+- /home/<USER>
 ```
 
 > TOOL

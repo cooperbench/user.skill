@@ -4,17 +4,17 @@ why I see this error?
 
 Bifrost started on port 8081
 Waiting for backend on port 8000...
-INFO:     Will watch for changes in these directories: ['/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend']
+INFO:     Will watch for changes in these directories: ['/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     Started reloader process [29634] using WatchFiles
 Failed to create sandbox backend
 Traceback (most recent call last):
-  File "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/main.py", line 20, in <module>
+  File "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/main.py", line 20, in <module>
     sandbox_backend = get_sandbox_backend()
                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py", line 12, in get_sandbox_backend
+  File "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py", line 12, in get_sandbox_backend
     from app.sandbox.docker_backend import DockerBackend, DockerConfig
-  File "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/docker_backend.py", line 15, in <module>
+  File "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/docker_backend.py", line 15, in <module>
     import docker
 ModuleNotFoundError: No module named 'docker'
 
@@ -58,7 +58,7 @@ tool_use Read
 id: toolu_012vyMDeS8tg6W5AH8XYBk5g
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/pyproject.toml"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/pyproject.toml"
 }
 ```
 
@@ -71,7 +71,7 @@ id: toolu_012vyMDeS8tg6W5AH8XYBk5g
      2→name = "duckdb-data-agent-backend"
      3→version = "0.1.0"
      4→description = ""
-     5→authors = ["ChihYu Yeh <chihyu.jimmy.yeh@gmail.com>"]
+     5→authors = ["ChihYu Yeh <<REDACTED_EMAIL>>"]
      6→readme = "README.md"
      7→package-mode = false
      8→
@@ -110,7 +110,7 @@ tool_use Read
 id: toolu_01K5vTVA8ucPUSJy6mzyePLT
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/sandbox/__init__.py"
 }
 ```
 
@@ -169,7 +169,7 @@ tool_use Bash
 id: toolu_01GwM5gQ6YDVKuLBAyXJNa96
 ```json
 {
-  "command": "grep -n 'SANDBOX_RUNTIME' /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/config.py | head -5",
+  "command": "grep -n 'SANDBOX_RUNTIME' /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend/app/config.py | head -5",
   "description": "Find SANDBOX_RUNTIME config value"
 }
 ```
@@ -199,7 +199,7 @@ Two options:
 Most likely you just need to install the optional dependency:
 
 ```bash
-cd /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend
+cd /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/backend
 poetry install -E docker
 ```
 
@@ -213,7 +213,7 @@ tool_use Read
 id: toolu_01G3ERkLzPDyHw7AwrKGiR8Y
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
   "offset": 45,
   "limit": 15
 }
@@ -274,7 +274,7 @@ id: toolu_011ZpgpiGzAGE6LW3tPjSwCM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile",
   "old_string": "install-backend:\n\tcd backend && poetry install",
   "new_string": "install-backend:\n\tcd backend && poetry install -E docker"
 }
@@ -285,7 +285,7 @@ id: toolu_011ZpgpiGzAGE6LW3tPjSwCM
 tool_result
 id: toolu_011ZpgpiGzAGE6LW3tPjSwCM
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/Makefile has been updated successfully.
 ```
 
 > AGENT
@@ -427,7 +427,7 @@ tool_use Bash
 id: toolu_016yrXu4DivWs3HJ8kBWz1Pk
 ```json
 {
-  "command": "git add Makefile backend/poetry.lock backend/pyproject.toml && git commit -m \"$(cat <<'EOF'\nfix: add docker optional dependency to install-backend and pyproject\n\nThe docker Python package was missing from pyproject.toml extras and\npoetry.lock, causing ModuleNotFoundError at startup when SANDBOX_RUNTIME\ndefaults to \"docker\". Also update Makefile install-backend to use -E docker.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add Makefile backend/poetry.lock backend/pyproject.toml && git commit -m \"$(cat <<'EOF'\nfix: add docker optional dependency to install-backend and pyproject\n\nThe docker Python package was missing from pyproject.toml extras and\npoetry.lock, causing ModuleNotFoundError at startup when SANDBOX_RUNTIME\ndefaults to \"docker\". Also update Makefile install-backend to use -E docker.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit all changes"
 }
 ```
@@ -493,7 +493,7 @@ tool_use Bash
 id: toolu_01Re6g6Br8hwmn5TtjM7DamD
 ```json
 {
-  "command": "ls /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deployment/",
+  "command": "ls /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deployment/",
   "description": "List deployment folder contents"
 }
 ```
@@ -519,9 +519,9 @@ tool_result ERROR
 id: toolu_01Re6g6Br8hwmn5TtjM7DamD
 ```
 Exit code 1
-ls: /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deployment/: No such file or directory
+ls: /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deployment/: No such file or directory
 
-ls: /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deployment/: No such file or directory
+ls: /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deployment/: No such file or directory
 ```
 
 > AGENT
@@ -597,30 +597,30 @@ id: toolu_01CAa3PuM4nmL96ZwXo8wAB6
 tool_result
 id: toolu_01CAa3PuM4nmL96ZwXo8wAB6
 ```
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/_helpers.tpl
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/backend-service.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/bifrost-deployment.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/bifrost-service.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/ingress.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/pvc.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/secret.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/backend-service.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/bifrost-configmap.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/bifrost-deployment.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/bifrost-service.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/overlays/docker/patches/backend-runtime.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/k8s/sandbox-template.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/k8s/warm-pool.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/k8s/README.md
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/values.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/Chart.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/configmap.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/backend-deployment.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/kustomization.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/backend-deployment.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/overlays/docker/kustomization.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/overlays/kubernetes/kustomization.yaml
-/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/README.md
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/_helpers.tpl
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/backend-service.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/bifrost-deployment.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/bifrost-service.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/ingress.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/pvc.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/secret.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/backend-service.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/bifrost-configmap.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/bifrost-deployment.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/bifrost-service.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/overlays/docker/patches/backend-runtime.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/k8s/sandbox-template.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/k8s/warm-pool.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/k8s/README.md
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/values.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/Chart.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/configmap.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/helm/duckdb-data-agent/templates/backend-deployment.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/kustomization.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/base/backend-deployment.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/overlays/docker/kustomization.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/kustomize/overlays/kubernetes/kustomization.yaml
+/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/k8s-agent-sandbox/deploy/README.md
 ```
 
 > AGENT

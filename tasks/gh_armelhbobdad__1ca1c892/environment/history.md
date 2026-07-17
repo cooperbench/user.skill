@@ -73,7 +73,7 @@ tool_use Read
 id: toolu_01UbWozH8eZiXVsTZKfnehdm
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py"
 }
 ```
 
@@ -128,7 +128,7 @@ id: toolu_01D1VMKVRcF9ZHeWgKP4XpVG
 {
   "description": "Map shape-detect pipeline & signals",
   "subagent_type": "Explore",
-  "prompt": "I'm working on issue #427 in the bmad-module-skill-forge repo (at /home/armel/Projects/OSS/bmad-module-skill-forge). The issue: the `language-reference` shape in `src/shared/scripts/skf-shape-detect.py` never fires for repos that ARE a language/language-tooling (rust-lang/rust, pest-parser/pest), because it only fires on parser-generator *dependencies* — detecting consumers of parser tooling, not producers.\n\nI need to understand the full pipeline around shape detection so a design discussion is grounded. Please investigate (medium-thorough) and report:\n\n1. How `skf-shape-detect.py` is invoked — who calls it, with what inputs. Search the skills/workflows for `skf-shape-detect` references. What manifest paths get passed in? Is there any upstream step that clones the repo or has access to the full file tree, repo metadata (name, topics, description), or grammar files (.pest/.lalrpop/.y/.l)?\n\n2. Where the `language-reference` shape is consumed downstream — what does analyze-source (AN auto-scope), brief-skill (BS), and test-skill (TS) do differently when shape==language-reference? Look in src/ for these skills/workflows.\n\n3. The test file for shape-detect — find the test (likely test/test-skf-shape-detect.py or similar), and report how rust-lang/rust and pest are currently exercised (the issue mentions a \"deterministic-layer test\").\n\n4. Any concept of \"multi-corpus\" or combining a code repo with external doc corpora in the codebase — […]
+  "prompt": "I'm working on issue #427 in the bmad-module-skill-forge repo (at /home/<USER>/Projects/OSS/bmad-module-skill-forge). The issue: the `language-reference` shape in `src/shared/scripts/skf-shape-detect.py` never fires for repos that ARE a language/language-tooling (rust-lang/rust, pest-parser/pest), because it only fires on parser-generator *dependencies* — detecting consumers of parser tooling, not producers.\n\nI need to understand the full pipeline around shape detection so a design discussion is grounded. Please investigate (medium-thorough) and report:\n\n1. How `skf-shape-detect.py` is invoked — who calls it, with what inputs. Search the skills/workflows for `skf-shape-detect` references. What manifest paths get passed in? Is there any upstream step that clones the repo or has access to the full file tree, repo metadata (name, topics, description), or grammar files (.pest/.lalrpop/.y/.l)?\n\n2. Where the `language-reference` shape is consumed downstream — what does analyze-source (AN auto-scope), brief-skill (BS), and test-skill (TS) do differently when shape==language-reference? Look in src/ for these skills/workflows.\n\n3. The test file for shape-detect — find the test (likely test/test-skf-shape-detect.py or similar), and report how rust-lang/rust and pest are currently exercised (the issue mentions a \"deterministic-layer test\").\n\n4. Any concept of \"multi-corpus\" or combining a code repo with external doc corpora in the codebase — […]
 
 > TOOL
 
@@ -141,7 +141,7 @@ Perfect! Now I have enough information. Let me compile my complete findings:
 
 ### 1. How `skf-shape-detect.py` is Invoked
 
-**Invocation Point:** `/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md` (§3: "Invoke Shape Detection")
+**Invocation Point:** `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md` (§3: "Invoke Shape Detection")
 
 **Command:**
 ```bash
@@ -258,7 +258,7 @@ tool_use Bash
 id: toolu_016YWed1XLdjq1Dhst1HsMkw
 ```json
 {
-  "command": "python3 /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/armel/Projects/OSS/bmad-module-skill-forge --key agents 2>/dev/null; echo \"---USER---\"; python3 /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/armel/Projects/OSS/bmad-module-skill-forge --key user_name 2>/dev/null",
+  "command": "python3 /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/<USER>/Projects/OSS/bmad-module-skill-forge --key agents 2>/dev/null; echo \"---USER---\"; python3 /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/<USER>/Projects/OSS/bmad-module-skill-forge --key user_name 2>/dev/null",
   "description": "Resolve agent roster and user name"
 }
 ```

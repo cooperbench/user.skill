@@ -13,8 +13,8 @@ tool_use exec_command
 id: call_CYENzX4cBioIfE1sbh5HGc7U
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.agents/skills/agent-reach/SKILL.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/agent-reach/SKILL.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -93,8 +93,8 @@ tool_use exec_command
 id: call_gYdcKEDFNM9zzFqBIuIaRBvm
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.agents/skills/agent-reach/references/search.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/agent-reach/references/search.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -106,8 +106,8 @@ tool_use exec_command
 id: call_5n5nPviY3oZiQFCwJjRv92E2
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.agents/skills/agent-reach/references/dev.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/agent-reach/references/dev.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -120,7 +120,7 @@ id: call_NXn8dcGhayx7Lpwwhr34zmtV
 ```json
 {
   "cmd": "command -v gh && gh --version",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -288,7 +288,7 @@ id: call_D9zKthOUDL2z7rAYxvY4kdIb
 ```json
 {
   "cmd": "gh search repos \"agent memory\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -301,7 +301,7 @@ id: call_ya9SNf27j87ee5At9fjBTh57
 ```json
 {
   "cmd": "gh search repos \"agentic rag\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -314,7 +314,7 @@ id: call_EYBH2N5DQzAaY8eaGM4Mct2c
 ```json
 {
   "cmd": "gh search repos \"knowledge graph rag\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -327,7 +327,7 @@ id: call_OsrBtHOxtazeLtN23FowLnHb
 ```json
 {
   "cmd": "gh search repos \"GraphRAG\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -400,7 +400,7 @@ id: call_ggWZnXzSOuZgMmcWjBlMDi0I
 ```json
 {
   "cmd": "gh search repos \"agent memory\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -420,7 +420,7 @@ id: call_L513LHUHloHuzT033STIHxpP
 ```json
 {
   "cmd": "gh search repos \"agentic rag\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -440,7 +440,7 @@ id: call_bartOVh7M6hU12u3UBl5r1bq
 ```json
 {
   "cmd": "gh search repos \"knowledge graph rag\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -460,7 +460,7 @@ id: call_x2RtK8zcqIho73t6a6it9oXh
 ```json
 {
   "cmd": "gh search repos \"GraphRAG\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -636,7 +636,7 @@ id: call_p4DDPBbTB2nqLTx2TlioWgAI
 ```json
 {
   "cmd": "gh repo view microsoft/graphrag --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -649,7 +649,7 @@ id: call_lHqs2PTAOp1Lqvgs6bKo6uBC
 ```json
 {
   "cmd": "gh repo view HKUDS/LightRAG --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -662,7 +662,7 @@ id: call_WpYDD1IqXIdXCbfxDyssi2gg
 ```json
 {
   "cmd": "gh repo view topoteretes/cognee --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -675,7 +675,7 @@ id: call_nq9LeAJ2kDluJ4E8vSsJ78fF
 ```json
 {
   "cmd": "gh repo view mem0ai/mem0 --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -748,7 +748,7 @@ id: call_z3XzOBtuex1AXbtlJ38uVkJJ
 ```json
 {
   "cmd": "gh repo view microsoft/graphrag --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -768,7 +768,7 @@ id: call_U8Fpnbf76RVbJKAucPaGKjoa
 ```json
 {
   "cmd": "gh repo view HKUDS/LightRAG --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -788,7 +788,7 @@ id: call_kh7CGNmqbeEjJEGcYn2DUxgM
 ```json
 {
   "cmd": "gh repo view topoteretes/cognee --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -808,7 +808,7 @@ id: call_vfOkhLIFP75WPz3PB8Wq5eyY
 ```json
 {
   "cmd": "gh repo view mem0ai/mem0 --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -936,7 +936,7 @@ id: call_cyS3BkojYNIM26UoKV6oe3m8
 ```json
 {
   "cmd": "gh repo view getzep/graphiti --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -949,7 +949,7 @@ id: call_NgGh9XgLJgKBa0QYcj1Mglm3
 ```json
 {
   "cmd": "gh repo view letta-ai/letta --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -962,7 +962,7 @@ id: call_5IeYAZUk8MxaEofjQ6DCI4Uv
 ```json
 {
   "cmd": "gh repo view vectorize-io/hindsight --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -975,7 +975,7 @@ id: call_gdrV4iWyE5OnwL2U6ozHayzc
 ```json
 {
   "cmd": "gh repo view deepset-ai/haystack --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1048,7 +1048,7 @@ id: call_eERIxGVn5gBwaBdklyhdYLcs
 ```json
 {
   "cmd": "gh repo view getzep/graphiti --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -1068,7 +1068,7 @@ id: call_GGSMrGkBehsuuLv4rXBei6pa
 ```json
 {
   "cmd": "gh repo view letta-ai/letta --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -1088,7 +1088,7 @@ id: call_x6OqZVFeK2NFAkPwTIKKjrv9
 ```json
 {
   "cmd": "gh repo view vectorize-io/hindsight --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -1108,7 +1108,7 @@ id: call_ku3Rw8z3Eee8UDUjdEp9KySV
 ```json
 {
   "cmd": "gh repo view deepset-ai/haystack --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -1267,7 +1267,7 @@ REST / SDK / MCP tools: search, recall, remember, forget, cite, explain
 
 > AGENT
 
-我先把 `/Users/lyston/PycharmProjects/raap` 当作主项目来读：看数据库模型、提示词拼装路径、文章生成流程、反馈/评审链路，再把它映射成可 Agent 化的知识库边界。不会改代码，先做架构调研和方案判断。
+我先把 `/home/<USER>/PycharmProjects/raap` 当作主项目来读：看数据库模型、提示词拼装路径、文章生成流程、反馈/评审链路，再把它映射成可 Agent 化的知识库边界。不会改代码，先做架构调研和方案判断。
 
 > TOOL
 
@@ -1315,7 +1315,7 @@ id: call_xwBxbrogNPj3bQCRtZe1a6Az
 ```json
 {
   "cmd": "pwd",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1328,7 +1328,7 @@ id: call_aymU5o6EejFv82aiMLeJqJfU
 ```json
 {
   "cmd": "rg --files -g '!*node_modules*' -g '!*.pyc' -g '!__pycache__' -g '!*.png' -g '!*.jpg' -g '!*.jpeg' -g '!*.pdf'",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1341,7 +1341,7 @@ id: call_BerdTqVYbLUT22tcGcqcqbmN
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1354,7 +1354,7 @@ id: call_piHrVPjMOIaoEXSCSWApK6Bb
 ```json
 {
   "cmd": "ls",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1370,8 +1370,8 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 64
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/52692_1779680158804". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
-/Users/lyston/PycharmProjects/raap
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/52692_1779680158804". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+/home/<USER>/PycharmProjects/raap
 
 ```
 
@@ -1387,7 +1387,7 @@ Original token count: 70033
 Output:
 Total output lines: 4312
 
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/52711_1779680158844". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/52711_1779680158844". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 Todo.md
 docker-compose.yml
 pyproject.toml
@@ -1549,7 +1549,7 @@ Wall time: 0.0000 seconds
 Process exited with code 128
 Original token count: 72
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/52717_1779680158856". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/52717_1779680158856". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 fatal: not a git repository (or any of the parent directories): .git
 
 ```
@@ -1564,7 +1564,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 94
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/52728_1779680158900". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/52728_1779680158900". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 Dockerfile
 Makefile
 README.md
@@ -1635,7 +1635,7 @@ id: call_PmCSRTaewhMhB4jnF4LG4dC1
 ```json
 {
   "cmd": "sed -n '1,220p' README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -1648,7 +1648,7 @@ id: call_rLXUdKBv9kb1smw14EpGQh8I
 ```json
 {
   "cmd": "sed -n '1,260p' docs/ARCHITECTURE.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1661,7 +1661,7 @@ id: call_6JHkpJqLohW3801MFDlvL7Gg
 ```json
 {
   "cmd": "sed -n '1,260p' pyproject.toml",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1674,7 +1674,7 @@ id: call_8sVtYjcIH7e68RoLjWRWeo0O
 ```json
 {
   "cmd": "find src/raap_agent -maxdepth 3 -type f | sort",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1690,7 +1690,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 5176
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/52903_1779680188867". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/52903_1779680188867". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 # RAAP 多 Agent 改造方案
 
 > 一个面向品牌内容生产的多 Agent 平台，由总控 Agent 协调法律、平台、品牌、活动、结构、故事、拟人化等专家 Agent 协同生成文章，并结合 RAG、审核、人工校准和持续优化完成生产闭环。
@@ -1741,7 +1741,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1577
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/52901_1779680188867". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/52901_1779680188867". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 # RAAP 多 Agent 内容生产平台 - 架构设计文档
 
 ## 目录
@@ -1802,7 +1802,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 238
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/52904_1779680188867". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/52904_1779680188867". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
@@ -1855,7 +1855,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 901
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/52902_1779680188867". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/52902_1779680188867". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 src/raap_agent/__init__.py
 src/raap_agent/__pycache__/__init__.cpython-312.pyc
 src/raap_agent/__pycache__/app.cpython-312.pyc
@@ -1989,7 +1989,7 @@ id: call_3mnPcrtSP7pm6pJUsrefJcYf
 ```json
 {
   "cmd": "sed -n '1,260p' src/raap_agent/schemas.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -2002,7 +2002,7 @@ id: call_aS9APAVKjZgX0LAdC2V317ej
 ```json
 {
   "cmd": "sed -n '1,280p' src/raap_agent/rag.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -2015,7 +2015,7 @@ id: call_qoKO5qgXuMRZpFuXoLj1Q9Tu
 ```json
 {
   "cmd": "sed -n '1,280p' src/raap_agent/memory.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -2028,7 +2028,7 @@ id: call_NKRJ36XbCNgO0sl6LoeCgWBr
 ```json
 {
   "cmd": "sed -n '1,320p' src/raap_agent/graph/workflow.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -2044,7 +2044,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2570
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53128_1779680234555". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53128_1779680234555". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Shared schemas for task planning, expert cards, and templates."""
 
 from __future__ import annotations
@@ -2086,7 +2086,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2630
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53130_1779680234555". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53130_1779680234555". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Retrieval abstractions for embedding, hybrid recall, and rerank."""
 
 from __future__ import annotations
@@ -2143,7 +2143,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2797
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53129_1779680234555". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53129_1779680234555". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Memory hubs for agent-level accumulation and retrieval."""
 
 from __future__ import annotations
@@ -2227,7 +2227,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3084
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53131_1779680234555". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53131_1779680234555". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Runnable planning workflow and optional LangGraph builder."""
 
 from __future__ import annotations
@@ -2299,7 +2299,7 @@ id: call_rLJBkfnlHMHqdhAshr5CK1rI
 ```json
 {
   "cmd": "sed -n '260,620p' src/raap_agent/schemas.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -2312,7 +2312,7 @@ id: call_yFxl4DDZOQ5i9YcZ3G8ZJ75w
 ```json
 {
   "cmd": "sed -n '280,760p' src/raap_agent/rag.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -2325,7 +2325,7 @@ id: call_5OMwanRERrFc0GefvfDvodei
 ```json
 {
   "cmd": "sed -n '280,680p' src/raap_agent/memory.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -2338,7 +2338,7 @@ id: call_oDuoecygToqzBLKqNQ9rSLMA
 ```json
 {
   "cmd": "sed -n '320,760p' src/raap_agent/graph/workflow.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -2354,7 +2354,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3221
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53179_1779680246075". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53179_1779680246075". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
     score: float = Field(default=0.0, ge=0.0, le=1.0)
     expert_codes: list[str] = Field(default_factory=list)
     agent_viewpoints: list[TemplateAgentViewpoint] = Field(default_factory=list)
@@ -2414,7 +2414,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 4606
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53190_1779680246114". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53190_1779680246114". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
                 f"vLLM embedding request timed out after {self.timeout_s}s for model '{self.model}'."
             ) from exc
 
@@ -2486,7 +2486,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2040
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53214_1779680246164". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53214_1779680246164". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
         reranked = self.reranker.rerank(query=query, candidates=list(merged.values()), top_k=top_k)
         results: list[MemoryRecord] = []
         for item in reranked:
@@ -2548,7 +2548,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 4682
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53213_1779680246161". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53213_1779680246161". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
                 self.memory_hub.discard_candidates(
                     memories=[*candidate_memories, *agent_run.candidate_memories],
                     source_run_id=source_run_id,
@@ -2624,7 +2624,7 @@ id: call_DI33gWPk5R5RSszQ0LTk1OEt
 ```json
 {
   "cmd": "sed -n '620,980p' src/raap_agent/schemas.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -2637,7 +2637,7 @@ id: call_Mf8Kd1IFLikUHmbB0hjulyCJ
 ```json
 {
   "cmd": "sed -n '760,1180p' src/raap_agent/rag.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -2650,7 +2650,7 @@ id: call_3MpTnvx2wsdBVsarBfbsGsYJ
 ```json
 {
   "cmd": "sed -n '760,1240p' src/raap_agent/graph/workflow.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -2663,7 +2663,7 @@ id: call_T2Bw0NBuC9E8p1SvKUBYOhy8
 ```json
 {
   "cmd": "sed -n '1,320p' src/raap_agent/agents/base.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -2679,7 +2679,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1884
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53301_1779680256737". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53301_1779680256737". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
     """A human-in-the-loop task created from a risky article run."""
 
     request_id: str
@@ -2739,7 +2739,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1910
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53302_1779680256737". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53302_1779680256737". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
             with request.urlopen(http_request, timeout=self.timeout_s) as response:
                 content = response.read().decode("utf-8")
                 return json.loads(content) if content else {}
@@ -2782,7 +2782,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 5504
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53303_1779680256737". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53303_1779680256737". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
                 review_started_perf,
                 {
                     "run_id": run_id,
@@ -2874,7 +2874,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2860
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53304_1779680256737". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53304_1779680256737". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Base types and execution protocol for expert agents."""
 
 from __future__ import annotations
@@ -2947,7 +2947,7 @@ id: call_kUq60Ub7UYck9ZhKg7tYx3Cp
 ```json
 {
   "cmd": "sed -n '320,700p' src/raap_agent/agents/base.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -2963,7 +2963,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1245
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53350_1779680266516". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53350_1779680266516". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
                     **base_metadata,
                     "memory_top_k": execution_context.memory_top_k,
                     "memory_count": len(memories),
@@ -3071,7 +3071,7 @@ id: call_CvNqcU3uj0cCJweKo2vTi4cd
 ```json
 {
   "cmd": "sed -n '1,360p' src/raap_agent/agents/builtin.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -3084,7 +3084,7 @@ id: call_SkSbbsSRnNKTSW4wknBr0Q5m
 ```json
 {
   "cmd": "sed -n '1,320p' src/raap_agent/template_factory.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -3097,7 +3097,7 @@ id: call_Yo6JSMgjPKymcFSOlxuyfoGX
 ```json
 {
   "cmd": "sed -n '1,320p' src/raap_agent/writer.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -3110,7 +3110,7 @@ id: call_xRs70Y4tkYUksfxzZRcdmF9Q
 ```json
 {
   "cmd": "sed -n '1,360p' src/raap_agent/review.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -3126,7 +3126,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3912
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53445_1779680281238". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53445_1779680281238". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Built-in expert agent implementations."""
 
 from __future__ import annotations
@@ -3187,7 +3187,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3286
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53444_1779680281238". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53444_1779680281238". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Build prompt template candidates from expert cards."""
 
 from __future__ import annotations
@@ -3247,7 +3247,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3225
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53451_1779680281249". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53451_1779680281249". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Article writers for deterministic and model-backed generation."""
 
 from __future__ import annotations
@@ -3329,7 +3329,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3588
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53464_1779680281314". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53464_1779680281314". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Reviewers and aggregation for article candidates."""
 
 from __future__ import annotations
@@ -3390,7 +3390,7 @@ id: call_etp70h1cqHjx6J8PpmfajGgq
 ```json
 {
   "cmd": "sed -n '360,760p' src/raap_agent/agents/builtin.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -3406,7 +3406,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 447
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53502_1779680290030". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53502_1779680290030". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
             agent_code="persona_expert",
             agent_name="Persona Expert",
             module_type="generator",
@@ -3447,7 +3447,7 @@ id: call_7tuHGOHxapiMsaqrgu1rkG6i
 ```json
 {
   "cmd": "sed -n '320,720p' src/raap_agent/template_factory.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -3460,7 +3460,7 @@ id: call_yO343qmJNkX7AgxtQewMExGe
 ```json
 {
   "cmd": "sed -n '320,760p' src/raap_agent/writer.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -3473,7 +3473,7 @@ id: call_ML0AsLmp0f7TYUDusHHpIaGX
 ```json
 {
   "cmd": "sed -n '360,760p' src/raap_agent/review.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -3486,7 +3486,7 @@ id: call_AOUoXrrTjoBVkmx4QqqdcdDK
 ```json
 {
   "cmd": "sed -n '1,340p' src/raap_agent/learning.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -3502,7 +3502,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 998
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53587_1779680301961". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53587_1779680301961". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
                 0.12,
                 sum(
                     0.03
@@ -3560,7 +3560,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1829
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53607_1779680303735". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53607_1779680303735". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
                 "evidence_refs": material.template.evidence_refs,
                 "supporting_experts": material.expert_codes,
             },
@@ -3635,7 +3635,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 520
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53619_1779680303780". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53619_1779680303780". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
         return reviewed_articles
 
     @staticmethod
@@ -3699,7 +3699,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3293
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53631_1779680303949". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53631_1779680303949". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Post-run learning artifacts for templates, style patterns, and expert memories."""
 
 from __future__ import annotations
@@ -3770,7 +3770,7 @@ id: call_2CK9PGmAYzPQOoL29AtmuUCW
 ```json
 {
   "cmd": "sed -n '340,760p' src/raap_agent/learning.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -3786,7 +3786,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1553
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53671_1779680312585". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53671_1779680312585". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
         platform: str | None = None,
         audience: str | None = None,
     ) -> TemplatePerformanceResponse:
@@ -3859,7 +3859,7 @@ id: call_5INyGaPK3aGAG9Ej1nwUZCfD
 ```json
 {
   "cmd": "sed -n '1,360p' src/raap_agent/corpus.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -3872,7 +3872,7 @@ id: call_EtwtKATAEnE7pyzgwIXXK0e7
 ```json
 {
   "cmd": "sed -n '1,340p' src/raap_agent/bootstrap.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -3885,7 +3885,7 @@ id: call_YCQscvhUz7oh8ss7Am5IgncI
 ```json
 {
   "cmd": "sed -n '1,360p' src/raap_agent/api/routes.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 32000
 }
@@ -3898,7 +3898,7 @@ id: call_pNaEMvl7K4twA8rlY5yKs6VJ
 ```json
 {
   "cmd": "find data/demo -maxdepth 3 -type f | sort",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3914,7 +3914,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2899
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53779_1779680328252". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53779_1779680328252". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Persistent article corpus ingestion and chunking for expert RAG."""
 
 from __future__ import annotations
@@ -4001,7 +4001,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3423
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53787_1779680328253". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53787_1779680328253". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Bootstrap helpers for building the default application graph."""
 
 from __future__ import annotations
@@ -4067,7 +4067,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3059
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53792_1779680328257". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53792_1779680328257". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """HTTP routes for the scaffold."""
 
 from __future__ import annotations
@@ -4152,7 +4152,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 113
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53788_1779680328253". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53788_1779680328253". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 data/demo/corpus.json
 data/demo/guardrails/hitl.json
 data/demo/strategy/template_compare_v1.json
@@ -4170,7 +4170,7 @@ id: call_l2B0u2oHenvspsHyFZAM1yi7
 ```json
 {
   "cmd": "sed -n '340,760p' src/raap_agent/bootstrap.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 32000
 }
@@ -4183,7 +4183,7 @@ id: call_aQvxBvMlX5r7Y9mHtNzhKr7i
 ```json
 {
   "cmd": "sed -n '360,760p' src/raap_agent/api/routes.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -4196,7 +4196,7 @@ id: call_yf7FQOHx5dZbHk4o7BaMq1xH
 ```json
 {
   "cmd": "sed -n '1,260p' data/demo/corpus.json",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -4209,7 +4209,7 @@ id: call_WnoDZ0t8mtL30cgbB2h2R0C8
 ```json
 {
   "cmd": "sed -n '1,260p' src/raap_agent/config.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -4225,7 +4225,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2440
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53843_1779680341830". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53843_1779680341830". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
             source_id="activity-002",
             chunk_id="c1",
             namespace="activity",
@@ -4277,7 +4277,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1549
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53879_1779680341911". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53879_1779680341911". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 
 @router.get("/api/v1/hitl/requests/{request_id}", response_model=HitlRequestRecord)
 def get_hitl_request(request_id: str) -> HitlRequestRecord:
@@ -4343,7 +4343,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 893
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53880_1779680341912". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53880_1779680341912". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 {
   "documents": [
     {
@@ -4399,7 +4399,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2684
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53885_1779680341918". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53885_1779680341918". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Application settings."""
 
 from __future__ import annotations
@@ -4457,7 +4457,7 @@ id: call_NLSEpnjBL7djtXxk7YuIBSuf
 ```json
 {
   "cmd": "rg -n \"sqlalchemy|psycopg|asyncpg|mysql|sqlite|mongodb|prisma|database|db|session|engine|alembic|orm|Django|peewee|pymysql|redis\" src tests docs README.md pyproject.toml docker-compose.yml env -S",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -4470,7 +4470,7 @@ id: call_FmPPYK6IlHTikTfTr70zApD1
 ```json
 {
   "cmd": "sed -n '1,260p' docker-compose.yml",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4483,7 +4483,7 @@ id: call_gzHJ9nCMEItFpawMEQYPFrjC
 ```json
 {
   "cmd": "find data -maxdepth 3 -type f | sort | sed -n '1,160p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4496,7 +4496,7 @@ id: call_K8uHZA1mkAzaPJ1XJLmuyR1U
 ```json
 {
   "cmd": "du -sh src data docs tests 2>/dev/null",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -4514,7 +4514,7 @@ Original token count: 18326
 Output:
 Total output lines: 737
 
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/53972_1779680358531". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/53972_1779680358531". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 src/raap_agent/corpus.py:22:    return datetime.now(timezone.utc).isoformat()
 src/raap_agent/corpus.py:25:def _normalize_text(text: str) -> str:
 src/raap_agent/corpus.py:34:            "text": _normalize_text(document.text),
@@ -4550,7 +4550,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 977
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54002_1779680358609". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54002_1779680358609". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 services:
   api:
     build:
@@ -4652,7 +4652,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 230
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54007_1779680358614". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54007_1779680358614". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 data/corpus/articles.jsonl
 data/demo/corpus.json
 data/demo/guardrails/hitl.json
@@ -4685,7 +4685,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 65
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54008_1779680358613". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54008_1779680358613". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 1.7M	src
 6.0G	data
  36K	docs
@@ -4704,7 +4704,7 @@ id: call_cj5ey0ZTZG1jLetLIltdvzsN
 ```json
 {
   "cmd": "rg -n \"数据模型|知识库|RAG 设计|Learning|Memory|Template|Article|Pain|痛|卖点|painpoint|product|brand|activity\" README.md docs/ARCHITECTURE.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -4717,7 +4717,7 @@ id: call_2yF6MsIYWXVVeXDaJzg0fBzB
 ```json
 {
   "cmd": "sed -n '1080,1180p' README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4730,7 +4730,7 @@ id: call_NuvWv52XzksHB2rDgYUAhMi8
 ```json
 {
   "cmd": "sed -n '480,620p' docs/ARCHITECTURE.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4743,7 +4743,7 @@ id: call_FAItUPjiwkQNmS2fdANs4vPm
 ```json
 {
   "cmd": "sed -n '1,320p' src/raap_agent/template_store.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -4759,7 +4759,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3055
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54192_1779680404752". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54192_1779680404752". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 docs/ARCHITECTURE.md:24:| **真正的多 Agent** | 每个 Expert 是独立智能体，有独立 RAG + Memory + Learning |
 docs/ARCHITECTURE.md:36:Vector DB:   Qdrant / InMemory
 docs/ARCHITECTURE.md:57:        D[Template Planning Workflow]
@@ -4807,7 +4807,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 566
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54204_1779680404901". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54204_1779680404901". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 
 ### 8.5 Embedding 与 Rerank
 
@@ -4901,7 +4901,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 756
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54216_1779680405101". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54216_1779680405101". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
     DenseScores --> Rerank[Rerank 重排序]
     SparseScores --> Rerank
 
@@ -4993,7 +4993,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3288
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54228_1779680405225". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54228_1779680405225". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 """Persistent template asset store for planning outputs."""
 
 from __future__ import annotations
@@ -5066,7 +5066,7 @@ id: call_uK3KpSoQKmzPhT9osfxYolXg
 ```json
 {
   "cmd": "sed -n '1320,1395p' README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5082,7 +5082,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 518
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54266_1779680413481". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54266_1779680413481". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 起步量级建议：
 
 - Planner/Writer/Critic SFT：每类 1k 到 3k 条高质量数据
@@ -5151,7 +5151,7 @@ id: call_VeVsMbzca4b5pVc3PpJQRQx2
 ```json
 {
   "cmd": "nl -ba src/raap_agent/schemas.py | sed -n '1,180p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5164,7 +5164,7 @@ id: call_m4YM0VFWh2mLFbd78uNLCSr3
 ```json
 {
   "cmd": "nl -ba src/raap_agent/rag.py | sed -n '760,910p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5177,7 +5177,7 @@ id: call_z6PENOnVb2ZCbECaUYX3iLTI
 ```json
 {
   "cmd": "nl -ba src/raap_agent/memory.py | sed -n '1,180p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5190,7 +5190,7 @@ id: call_2gQmrKCREWpB8eWPy9rxVdZ9
 ```json
 {
   "cmd": "nl -ba src/raap_agent/graph/workflow.py | sed -n '130,360p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap",
+  "workdir": "/home/<USER>/PycharmProjects/raap",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -5206,7 +5206,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2179
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54614_1779680433340". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54614_1779680433340". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
      1	"""Shared schemas for task planning, expert cards, and templates."""
      2	
      3	from __future__ import annotations
@@ -5246,7 +5246,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2000
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54637_1779680433376". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54637_1779680433376". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
    760	            with request.urlopen(http_request, timeout=self.timeout_s) as response:
    761	                content = response.read().decode("utf-8")
    762	                return json.loads(content) if content else {}
@@ -5283,7 +5283,7 @@ Wall time: 0.0001 seconds
 Process exited with code 0
 Original token count: 1953
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54638_1779680433379". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54638_1779680433379". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
      1	"""Memory hubs for agent-level accumulation and retrieval."""
      2	
      3	from __future__ import annotations
@@ -5342,7 +5342,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3015
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/54654_1779680433462". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/54654_1779680433462". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
    130	
    131	    registry: AgentRegistry
    132	    knowledge_hub: KnowledgeHub
@@ -5543,8 +5543,8 @@ tool_use exec_command
 id: call_0qjs0ok7VISsucvSJBKUPRC7
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/lyston/.codex/skills/codex-md-docs/SKILL.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/skills/codex-md-docs/SKILL.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5572,7 +5572,7 @@ description: Route Markdown documentation work into the user's Codex Obsidian sp
 Use this Markdown documentation root by default:
 
 ```text
-/Users/lyston/Obsidian/lyston/Codex
+/home/<USER>/Obsidian/lyston/Codex
 ```
 
 Prefer this root even if older notes exist elsewhere, unless the user explicitly names another path. Create it if it is missing. Do not write documentation into project source trees, `/tmp`, `/root`, downloads, or ad hoc scratch folders unless the user explicitly asks.
@@ -5587,7 +5587,7 @@ Codex/
   lyston11.qzz.io/
 ```
 
-Top-level folders under `/Users/lyston/Obsidian/lyston/Codex` must be device, host, or environment names. Under each device directory, classify documents by […]
+Top-level folders under `/home/<USER>/Obsidian/lyston/Codex` must be device, host, or environment names. Under each device directory, classify documents by […]
 
 > AGENT
 
@@ -5599,8 +5599,8 @@ tool_use exec_command
 id: call_Cw6bFr3JglkQRQXCOUrxrYGc
 ```json
 {
-  "cmd": "find /Users/lyston/Obsidian/lyston/Codex -maxdepth 3 -type d | sort | sed -n '1,180p'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/Obsidian/lyston/Codex -maxdepth 3 -type d | sort | sed -n '1,180p'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -5612,8 +5612,8 @@ tool_use exec_command
 id: call_lcFbS0s2nclwhizvJuraw0a3
 ```json
 {
-  "cmd": "find /Users/lyston/Obsidian/lyston/Codex -maxdepth 4 -type f -name '*.md' | rg -i 'raap|agent|知识库|rag|内容|文章|knowledge|agent'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/Obsidian/lyston/Codex -maxdepth 4 -type f -name '*.md' | rg -i 'raap|agent|知识库|rag|内容|文章|knowledge|agent'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -5629,36 +5629,36 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 446
 Output:
-/Users/lyston/Obsidian/lyston/Codex
-/Users/lyston/Obsidian/lyston/Codex/Codex工具与文档系统
-/Users/lyston/Obsidian/lyston/Codex/Fast Note Sync
-/Users/lyston/Obsidian/lyston/Codex/GenericAgent
-/Users/lyston/Obsidian/lyston/Codex/HAPI
-/Users/lyston/Obsidian/lyston/Codex/Hermes
-/Users/lyston/Obsidian/lyston/Codex/Hermes/原始合并归档
-/Users/lyston/Obsidian/lyston/Codex/LDStatus Pro
-/Users/lyston/Obsidian/lyston/Codex/MindOS
-/Users/lyston/Obsidian/lyston/Codex/Sub2API
-/Users/lyston/Obsidian/lyston/Codex/Sub2API/原始合并归档
-/Users/lyston/Obsidian/lyston/Codex/lyston11.qzz.io
-/Users/lyston/Obsidian/lyston/Codex/lyston11.qzz.io/Fast Note Sync
-/Users/lyston/Obsidian/lyston/Codex/lyston11.qzz.io/Hermes
-/Users/lyston/Obsidian/lyston/Codex/lyston11.qzz.io/原始合并归档
-/Users/lyston/Obsidian/lyston/Codex/lyston11.qzz.io/基础设施
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/Codex工具与文档系统
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/DBX
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/GenericAgent
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/HAPI
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/Hermes
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/LDStatus Pro
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/MindOS
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/Sub2API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/天命AI写作
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/学习笔记
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨
-/Users/lyston/Obsidian/lyston/Codex/索引
-/Users/lyston/Obsidian/lyston/Codex/锐鲨
+/home/<USER>/Obsidian/lyston/Codex
+/home/<USER>/Obsidian/lyston/Codex/Codex工具与文档系统
+/home/<USER>/Obsidian/lyston/Codex/Fast Note Sync
+/home/<USER>/Obsidian/lyston/Codex/GenericAgent
+/home/<USER>/Obsidian/lyston/Codex/HAPI
+/home/<USER>/Obsidian/lyston/Codex/Hermes
+/home/<USER>/Obsidian/lyston/Codex/Hermes/原始合并归档
+/home/<USER>/Obsidian/lyston/Codex/LDStatus Pro
+/home/<USER>/Obsidian/lyston/Codex/MindOS
+/home/<USER>/Obsidian/lyston/Codex/Sub2API
+/home/<USER>/Obsidian/lyston/Codex/Sub2API/原始合并归档
+/home/<USER>/Obsidian/lyston/Codex/lyston11.qzz.io
+/home/<USER>/Obsidian/lyston/Codex/lyston11.qzz.io/Fast Note Sync
+/home/<USER>/Obsidian/lyston/Codex/lyston11.qzz.io/Hermes
+/home/<USER>/Obsidian/lyston/Codex/lyston11.qzz.io/原始合并归档
+/home/<USER>/Obsidian/lyston/Codex/lyston11.qzz.io/基础设施
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/Codex工具与文档系统
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/DBX
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/GenericAgent
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/HAPI
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/Hermes
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/LDStatus Pro
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/MindOS
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/Sub2API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/天命AI写作
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/学习笔记
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨
+/home/<USER>/Obsidian/lyston/Codex/索引
+/home/<USER>/Obsidian/lyston/Codex/锐鲨
 
 ```
 
@@ -5672,12 +5672,12 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 184
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/GenericAgent/GenericAgent 本机部署与 Codex 模型配置记录.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/天命AI写作/天命 AI 网文创作系统 Agent 架构、Tools、MCP、RAG 与数据库分析报告.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 内容生产工作流实现详解.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 工作流简历与面试材料.md
-/Users/lyston/Obsidian/lyston/Codex/GenericAgent/GenericAgent Ubuntu 服务器部署与 gpt-5.5 配置记录.md
-/Users/lyston/Obsidian/lyston/Codex/GenericAgent/GenericAgent 本机部署与 Codex 模型配置记录.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/GenericAgent/GenericAgent 本机部署与 Codex 模型配置记录.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/天命AI写作/天命 AI 网文创作系统 Agent 架构、Tools、MCP、RAG 与数据库分析报告.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 内容生产工作流实现详解.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 工作流简历与面试材料.md
+/home/<USER>/Obsidian/lyston/Codex/GenericAgent/GenericAgent Ubuntu 服务器部署与 gpt-5.5 配置记录.md
+/home/<USER>/Obsidian/lyston/Codex/GenericAgent/GenericAgent 本机部署与 Codex 模型配置记录.md
 
 ```
 
@@ -5691,8 +5691,8 @@ tool_use exec_command
 id: call_Ps9mMqNda0ky8TphXZJim9Xw
 ```json
 {
-  "cmd": "ls -la /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "ls -la /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -5704,8 +5704,8 @@ tool_use exec_command
 id: call_pqSeBxZUPKhc5pLPRZ4STVa8
 ```json
 {
-  "cmd": "find /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 1 -type f -name '*.md' -print",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 1 -type f -name '*.md' -print",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -5740,21 +5740,21 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 85
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 内容生产工作流实现详解.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 工作流简历与面试材料.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/codex_剧本理解_变化不是突然发生的.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 内容生产工作流实现详解.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 工作流简历与面试材料.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/codex_剧本理解_变化不是突然发生的.md
 
 ```
 
 > AGENT
 
-我准备写入新文件：`/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md`。文档会把旧 `raap` 的文件型/规则型做法明确标为“不采纳”，然后给出新服务的目标架构、表结构、API、检索链路、MCP 工具、数据同步和分期落地。
+我准备写入新文件：`/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md`。文档会把旧 `raap` 的文件型/规则型做法明确标为“不采纳”，然后给出新服务的目标架构、表结构、API、检索链路、MCP 工具、数据同步和分期落地。
 
 > AGENT
 
 写好了，新建在：
 
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 我放在 `lystonmacbook-pro.local/锐鲨` 下，因为这是本机环境里已有的 RAAP/锐鲨相关文档分类。文档明确把旧 `raap` 项目作为“问题来源/旧数据形态参考”，不采纳它的存储实现；主体是全新的 Agent Knowledge Service 方案，包含技术选型、总体架构、核心数据域、Postgres 表设计、Context Pack API、MCP 工具、Ingestion 同步、Agent 使用流程、评测体系、部署方案和分期开发计划。
 
@@ -5773,8 +5773,8 @@ tool_use exec_command
 id: call_3o36K3AIqAqD7bL3lIwcY2Jr
 ```json
 {
-  "cmd": "rg -n \"旧|同步|Ingestion|ingestion|API|MCP|context|Phase|数据源|旧业务|旧 DB|导入\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"旧|同步|Ingestion|ingestion|API|MCP|context|Phase|数据源|旧业务|旧 DB|导入\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5786,8 +5786,8 @@ tool_use exec_command
 id: call_RVV5Whmv5EKi84MIMaGMZ4JE
 ```json
 {
-  "cmd": "sed -n '1,180p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,180p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5799,8 +5799,8 @@ tool_use exec_command
 id: call_dOQJpfuM1vVGZzsu4cp4qqL6
 ```json
 {
-  "cmd": "sed -n '520,900p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '520,900p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -5812,8 +5812,8 @@ tool_use exec_command
 id: call_Q9dIIMB7aLllVfYFpwa3tLb8
 ```json
 {
-  "cmd": "sed -n '900,1220p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '900,1220p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -6160,8 +6160,8 @@ tool_use exec_command
 id: call_tszx5luQIl0eVHGyNFRb9XnH
 ```json
 {
-  "cmd": "rg -n \"旧 DB|旧业务|同步|抽取|old_db|Ingestion|ingestion|数据源\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"旧 DB|旧业务|同步|抽取|old_db|Ingestion|ingestion|数据源\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -6173,8 +6173,8 @@ tool_use exec_command
 id: call_jDRRCdOYAYHyFyquaF23H0mE
 ```json
 {
-  "cmd": "rg -n \"## 8|## 9|## 10|## 11|## 12|## 13|API|MCP|Context Pack|批量|扩展\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"## 8|## 9|## 10|## 11|## 12|## 13|API|MCP|Context Pack|批量|扩展\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6186,8 +6186,8 @@ tool_use exec_command
 id: call_nVgzttjm89K3hJzgCQiD9yS8
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -6269,7 +6269,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-    2070 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+    2070 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -6277,7 +6277,7 @@ Output:
 
 已按你的两点重写文档：
 
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 主要改动：
 
@@ -6300,8 +6300,8 @@ tool_use exec_command
 id: call_csw0aRwQL4B2lJqnevG8uUve
 ```json
 {
-  "cmd": "sed -n '1,140p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,140p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6313,8 +6313,8 @@ tool_use exec_command
 id: call_mzb0jaHYXlfHxYnV2OmD5dby
 ```json
 {
-  "cmd": "sed -n '250,430p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '250,430p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -6326,8 +6326,8 @@ tool_use exec_command
 id: call_OXgNGCjHCaVly54V7aRahLBJ
 ```json
 {
-  "cmd": "sed -n '430,760p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '430,760p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -6339,8 +6339,8 @@ tool_use exec_command
 id: call_smjHcqt5stuVXrBbqrqC3KgY
 ```json
 {
-  "cmd": "sed -n '870,1245p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '870,1245p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -6748,8 +6748,8 @@ tool_use exec_command
 id: call_cB1UGZIoOB5tdSGkjHuvzHJb
 ```json
 {
-  "cmd": "rg -n \"pain-points|selling-points|pain-selling|/pain|/selling|痛卖点库|特殊 API|Typed Knowledge|KnowledgeType|knowledge-types|knowledge-items|knowledge-relations|ContextPack\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"pain-points|selling-points|pain-selling|/pain|/selling|痛卖点库|特殊 API|Typed Knowledge|KnowledgeType|knowledge-types|knowledge-items|knowledge-relations|ContextPack\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6761,8 +6761,8 @@ tool_use exec_command
 id: call_q8tyhLMQhsWvp3BLgiP67u4G
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -6774,8 +6774,8 @@ tool_use exec_command
 id: call_tPP0jggtPBaNI61phcTVlpWb
 ```json
 {
-  "cmd": "sed -n '1,90p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,90p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -6787,8 +6787,8 @@ tool_use exec_command
 id: call_QOQWkU5KR2KILqii7514zLUr
 ```json
 {
-  "cmd": "sed -n '790,940p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '790,940p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6861,7 +6861,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-    1666 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+    1666 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -7098,7 +7098,7 @@ GET /api/v1/knowledge-items?type_code=campaign_constraint&status=published&limit
 
 已更新这里：
 
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 现在核心抽象变成：
 
@@ -7159,8 +7159,8 @@ tool_use exec_command
 id: call_T5MP7WRXmCtdNohVw5iasl00
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.codex/skills/codex-md-docs/SKILL.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/skills/codex-md-docs/SKILL.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7188,7 +7188,7 @@ description: Route Markdown documentation work into the user's Codex Obsidian sp
 Use this Markdown documentation root by default:
 
 ```text
-/Users/lyston/Obsidian/lyston/Codex
+/home/<USER>/Obsidian/lyston/Codex
 ```
 
 Prefer this root even if older notes exist elsewhere, unless the user explicitly names another path. Create it if it is missing. Do not write documentation into project source trees, `/tmp`, `/root`, downloads, or ad hoc scratch folders unless the user explicitly asks.
@@ -7203,7 +7203,7 @@ Codex/
   lyston11.qzz.io/
 ```
 
-Top-level folders under `/Users/lyston/Obsidian/lyston/Codex` must be device, host, or environment names. Under each device directory, classify documents by […]
+Top-level folders under `/home/<USER>/Obsidian/lyston/Codex` must be device, host, or environment names. Under each device directory, classify documents by […]
 
 > AGENT
 
@@ -7215,8 +7215,8 @@ tool_use exec_command
 id: call_HXfzT7YJCRe2Fo4A4rQFFQ0S
 ```json
 {
-  "cmd": "rg -n \"文章例文|knowledge_chunks|KnowledgeChunk|Context Pack|knowledge_items|统一|向量|Markdown|痛卖点|结构化\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"文章例文|knowledge_chunks|KnowledgeChunk|Context Pack|knowledge_items|统一|向量|Markdown|痛卖点|结构化\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7228,8 +7228,8 @@ tool_use exec_command
 id: call_hOIDhOHushPWl4Jj7tG1fPgK
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,260p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7241,8 +7241,8 @@ tool_use exec_command
 id: call_SFgs0lEoBsznx8Jlagz1I2K2
 ```json
 {
-  "cmd": "sed -n '260,620p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '260,620p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7471,8 +7471,8 @@ tool_use exec_command
 id: call_cr2eokRBDJ9jhMTEkOGoX7j8
 ```json
 {
-  "cmd": "rg -n \"^##|^###\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"^##|^###\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -7554,8 +7554,8 @@ tool_use exec_command
 id: call_nU8Yn02K6IgnST7sQuT9HXQQ
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.agents/skills/agent-reach/SKILL.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/agent-reach/SKILL.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7630,8 +7630,8 @@ tool_use exec_command
 id: call_OtYvWhNUfQEF6kfAIorNOXDF
 ```json
 {
-  "cmd": "sed -n '620,980p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '620,980p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 25000
 }
@@ -7643,8 +7643,8 @@ tool_use exec_command
 id: call_TfFSnEWytyL61bvzmxIqKDTe
 ```json
 {
-  "cmd": "sed -n '980,1350p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '980,1350p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 25000
 }
@@ -7656,8 +7656,8 @@ tool_use exec_command
 id: call_Qw9UtQ6oDZlLaMNzIz4pb1Ms
 ```json
 {
-  "cmd": "sed -n '1350,1680p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1350,1680p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 25000
 }
@@ -8013,8 +8013,8 @@ tool_use exec_command
 id: call_mLE2CidGjb2bS18pYDCQss6D
 ```json
 {
-  "cmd": "test -w /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "test -w /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -8039,8 +8039,8 @@ tool_use exec_command
 id: call_HhECm1BCKYnKBxFHRsPWiQ34
 ```json
 {
-  "cmd": "cp /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -8070,7 +8070,7 @@ id: call_OdkfUw7XthLeYEeGJjahEMNH
 ```json
 {
   "cmd": "sed -n '220,620p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -8180,7 +8180,7 @@ id: call_iPpIHq0YmOnn58cxaypfmxy6
 ```json
 {
   "cmd": "rg -n \"knowledge_items|KnowledgeItem|article_example|知识项|统一表|统一 API 管理|不是事实库|Example Corpus|Structured Knowledge|example-corpus|structured_items\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -8193,7 +8193,7 @@ id: call_6c1rpvLcmPRMV8eRDsvlNwOQ
 ```json
 {
   "cmd": "wc -l /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -8206,7 +8206,7 @@ id: call_MyEvJCnVl0AnCENXtKdXkJFe
 ```json
 {
   "cmd": "sed -n '1,120p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8219,7 +8219,7 @@ id: call_PIkIaA42AXDAEY2jODXKi5Zb
 ```json
 {
   "cmd": "sed -n '1560,1760p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8519,8 +8519,8 @@ tool_use exec_command
 id: call_yFdhc3vQFSubVO3oddVA1bYY
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -8549,8 +8549,8 @@ tool_use exec_command
 id: call_eDMHEFQoCdu7J8p2JFGXGGUG
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -8562,8 +8562,8 @@ tool_use exec_command
 id: call_CLmmXUJCeMTOqizGvrD3pp8S
 ```json
 {
-  "cmd": "rg -n \"^## |^### |知识库不应该|Example Corpus|Structured Knowledge DB|Context Pack|MVP 最小 API|结论\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"^## |^### |知识库不应该|Example Corpus|Structured Knowledge DB|Context Pack|MVP 最小 API|结论\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -8575,8 +8575,8 @@ tool_use exec_command
 id: call_9za6T83OaCgxhc1EU0qSb5bd
 ```json
 {
-  "cmd": "rg -n \"这些都用统一表|article_example|knowledge_chunks|knowledge_items|痛卖点库\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"这些都用统一表|article_example|knowledge_chunks|knowledge_items|痛卖点库\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8592,7 +8592,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-    3343 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+    3343 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -8680,7 +8680,7 @@ Output:
 > AGENT
 
 已按你的思路重写并写回文档了：  
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 这版核心改成了清晰的双库架构：
 
@@ -8842,8 +8842,8 @@ tool_use exec_command
 id: call_ZG3HE1gHavcsB2qBtL34w0T0
 ```json
 {
-  "cmd": "cp /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -8873,7 +8873,7 @@ id: call_n3jxrav7eOZoPQ429PvWkmzT
 ```json
 {
   "cmd": "sed -n '1,260p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -8886,7 +8886,7 @@ id: call_PXbymg3cBPNkONZccSFKere8
 ```json
 {
   "cmd": "sed -n '455,650p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -8899,7 +8899,7 @@ id: call_V5vQcvADICWOykhSgClYdrJL
 ```json
 {
   "cmd": "sed -n '935,1415p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 35000
 }
@@ -8912,7 +8912,7 @@ id: call_e1k93RgJpxYzKWk9Bes2YYSt
 ```json
 {
   "cmd": "sed -n '2800,3090p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -9278,7 +9278,7 @@ id: call_piA6SghO1IyBPqtiByIvIuaU
 ```json
 {
   "cmd": "rg -n \"## 9|## 10|## 17|## 20|## 23|## 24|## 25|## 27|## 28|## 32\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9405,7 +9405,7 @@ id: call_6ydhkDLwUhatchki8bgfxf4Y
 ```json
 {
   "cmd": "wc -l /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -9418,7 +9418,7 @@ id: call_QkIHofYPpBliUSgrWcknLQFo
 ```json
 {
   "cmd": "rg -n \"^## |^### |mermaid|structured_type_definitions|corpus_collection_versions|context_pack_template_versions|index_jobs|as_of|document_version_id|版本管理|Context Pack 生成流程|Structured Item 发布流程|Index Version|rollback|replay\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 40000
 }
@@ -9431,7 +9431,7 @@ id: call_dVlVuj0B02X54h1jYH02a6I7
 ```json
 {
   "cmd": "rg -n \"### 17\\.2|### 17\\.3|### 17\\.4|### 10\\.|### 24\\.|Phase 1|Phase 6|MVP 最小 API\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -9444,7 +9444,7 @@ id: call_GeGKe7jop7KfS5tmGCnnSUmU
 ```json
 {
   "cmd": "rg -n \"document_version_id uuid not null|type_definition_version|template_version|selected_revision_refs|selected_corpus_refs|snapshot_hash|current_revision_id|current_version_id\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -9674,7 +9674,7 @@ id: call_UQtyggvMIvBMvZPtV81BwxXT
 ```json
 {
   "cmd": "wc -l /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -9687,7 +9687,7 @@ id: call_Ca2aVOh8nc8aDqgImVJMEeNw
 ```json
 {
   "cmd": "rg -n \"### 24\\.|## 28|Version API|context-packs/\\{id\\}/compare|^```mermaid\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -9700,7 +9700,7 @@ id: call_ZtXysbZspPbgD0dqs5Y7RcNC
 ```json
 {
   "cmd": "rg -n \"^#{1,3} .*[^0-9]$\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 40000
 }
@@ -9810,7 +9810,7 @@ id: call_KqqP01EhwzFvAC7niuNbtffl
 ```json
 {
   "cmd": "rg -n '### 24\\.|## 28|Version API|context-packs/\\{id\\}/compare|^```mermaid' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -9868,8 +9868,8 @@ tool_use exec_command
 id: call_wqfkKLu7tNohsteutUsaw61o
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -9929,8 +9929,8 @@ tool_use exec_command
 id: call_orjhvcpQdxsx5kOZ4HdAgvzs
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -9942,8 +9942,8 @@ tool_use exec_command
 id: call_y6RuBdG4wZFn41NpHL83Ss9E
 ```json
 {
-  "cmd": "rg -n '版本管理与生命周期|Version API|structured_type_definitions|corpus_collection_versions|context_pack_template_versions|index_jobs|Context Pack 生成流程|例文入库与索引流程|Agent 取上下文流程|^```mermaid' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n '版本管理与生命周期|Version API|structured_type_definitions|corpus_collection_versions|context_pack_template_versions|index_jobs|Context Pack 生成流程|例文入库与索引流程|Agent 取上下文流程|^```mermaid' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9959,7 +9959,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-    4101 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+    4101 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -10014,7 +10014,7 @@ Output:
 > AGENT
 
 已写入文档：  
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 这次重点补了两块：
 
@@ -10057,8 +10057,8 @@ tool_use exec_command
 id: call_CrTyo2x4ioFZR6968UuhA6mF
 ```json
 {
-  "cmd": "find /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 1 -type f -name '*RAAP*知识库*.md' -print",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 1 -type f -name '*RAAP*知识库*.md' -print",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10071,7 +10071,7 @@ id: call_zs9B8QAEAPd2da5Yo0MREHNg
 ```json
 {
   "cmd": "test -f /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -10087,7 +10087,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 28
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -10114,8 +10114,8 @@ tool_use exec_command
 id: call_Bg6p53lmomdZrZKk7oVOmENL
 ```json
 {
-  "cmd": "find /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 1 -type f \\( -name '*知识库*.md' -o -name '*Agent*.md' -o -name '*RAAP*.md' \\) -print",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 1 -type f \\( -name '*知识库*.md' -o -name '*Agent*.md' -o -name '*RAAP*.md' \\) -print",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10128,7 +10128,7 @@ id: call_OfoQ7jr57HSaa9ibskPm6Tal
 ```json
 {
   "cmd": "rm /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -10144,9 +10144,9 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 83
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 内容生产工作流实现详解.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 工作流简历与面试材料.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 内容生产工作流实现详解.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP V2 工作流简历与面试材料.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -10168,7 +10168,7 @@ Output:
 已处理。
 
 现在同主题只保留这一份正式开发文档：  
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 临时副本 `/private/tmp/RAAP_Agent_KB_doc.md` 已清理。锐鲨目录里另外两份是之前的 RAAP V2 工作流/面试材料，不是这次知识库开发文档，我没有动。
 
@@ -10222,8 +10222,8 @@ tool_use exec_command
 id: call_wl7worHusDiKGBSjdEPiOsFY
 ```json
 {
-  "cmd": "rg -n \"## 11|## 12|## 14|## 17|## 21|## 22|## 28|## 29|Admin|管理后台|BFF|API\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"## 11|## 12|## 14|## 17|## 21|## 22|## 28|## 29|Admin|管理后台|BFF|API\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -10235,8 +10235,8 @@ tool_use exec_command
 id: call_cPbOwzPSpiigaBSsk9Tvk3ms
 ```json
 {
-  "cmd": "sed -n '1660,1810p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1660,1810p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -10248,8 +10248,8 @@ tool_use exec_command
 id: call_aXpb3gdFM1qFesC7Er1PJoU9
 ```json
 {
-  "cmd": "sed -n '2950,3060p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '2950,3060p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -10261,8 +10261,8 @@ tool_use exec_command
 id: call_ottWKF4qJaOBsGOCEslRsfNd
 ```json
 {
-  "cmd": "sed -n '3770,3895p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '3770,3895p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -10688,8 +10688,8 @@ tool_use exec_command
 id: call_DGSa80ASErkwAM6a2QJhAfRD
 ```json
 {
-  "cmd": "cp /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -10793,7 +10793,7 @@ id: call_wZOs4OVRxIM54Iq1gPsTiCWP
 ```json
 {
   "cmd": "wc -l /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -10806,7 +10806,7 @@ id: call_DXLf5mPg704Z5JPpxUDTudmk
 ```json
 {
   "cmd": "rg -n 'Admin API|Admin BFF|list-view|edit-view|review-view|designer-view|annotation-view|index-view|/api/v1/admin|管理后台 API|管理后台不要|后台页面与 API 映射|^```mermaid' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -10819,7 +10819,7 @@ id: call_CVCfDM0O2JKhdhGbhFsW5rAO
 ```json
 {
   "cmd": "rg -n '^## 21|^### 21\\.|^## 28|^## 29|^### 30\\.9|Phase 1|Phase 2|Phase 4' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -10942,8 +10942,8 @@ tool_use exec_command
 id: call_jb64lKWi2WwEkgiiqBZ1fFsY
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -10968,8 +10968,8 @@ tool_use exec_command
 id: call_hnyLqvdPhfRKsEJ6QJnONNzq
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -10981,8 +10981,8 @@ tool_use exec_command
 id: call_qXGuGCRPCnhRg7ew5MfPaKUp
 ```json
 {
-  "cmd": "rg -n 'Admin API|Admin BFF|后台页面与 API 映射|/api/v1/admin/structured/items/list-view|管理后台不要直连' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n 'Admin API|Admin BFF|后台页面与 API 映射|/api/v1/admin/structured/items/list-view|管理后台不要直连' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10995,7 +10995,7 @@ id: call_nHbtHbhJuilQFOZv6rNIZZtl
 ```json
 {
   "cmd": "rm /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -11011,7 +11011,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-    4466 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+    4466 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -11091,7 +11091,7 @@ Plan updated
 > AGENT
 
 对，这个必须考虑。我已经写入开发文档了：  
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 这次新增了 **Admin API / Admin BFF** 的设计，核心思想是：
 
@@ -11140,7 +11140,7 @@ Plan updated
 ```
 
 文档在这里：  
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 **1. Resource API**
 
@@ -11268,8 +11268,8 @@ tool_use exec_command
 id: call_p5vxAtaNGF2PLb1oleVGGmPI
 ```json
 {
-  "cmd": "rg -n '^## |^### 11\\.|^### 21\\.|^## 28|Admin API|Resource API|Agent API|Context Pack API|Federated Search API|版本管理与生命周期|Example Corpus|Structured Knowledge DB' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n '^## |^### 11\\.|^### 21\\.|^## 28|Admin API|Resource API|Agent API|Context Pack API|Federated Search API|版本管理与生命周期|Example Corpus|Structured Knowledge DB' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -11281,8 +11281,8 @@ tool_use exec_command
 id: call_Tq4OEyXg8u6dGTvUCZroo7V3
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -11357,7 +11357,7 @@ Wall time: 0.0002 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-    4466 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+    4466 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -11365,7 +11365,7 @@ Output:
 
 写清楚了，而且已经集中在唯一这份开发文档里：
 
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 我刚核了一遍，文档现在 4466 行，关键点都已经落进去：
 
@@ -11398,8 +11398,8 @@ tool_use exec_command
 id: call_FglgFvlOhIc6VeQGWmhF5HNK
 ```json
 {
-  "cmd": "sed -n '280,380p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '280,380p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11523,8 +11523,8 @@ tool_use exec_command
 id: call_NSJIXbN8cDSDGG8E0GJWiLFu
 ```json
 {
-  "cmd": "cp /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -11554,7 +11554,7 @@ id: call_YFFpcNVWJJ7Yxao2DlahyFnU
 ```json
 {
   "cmd": "sed -n '4390,4430p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -11621,7 +11621,7 @@ id: call_3MMiWRv8MpbHT8bqhq1ZPKiw
 ```json
 {
   "cmd": "rg -n \"## 31|参考资料|pgvector|Qdrant|Dify|RAGFlow|LlamaIndex|BAAI\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -11672,7 +11672,7 @@ id: call_NpDMlRAHeAX0igMD1VjHv3R6
 ```json
 {
   "cmd": "wc -l /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -11685,7 +11685,7 @@ id: call_d3THCqJQKy0133DbuFdBlXn5
 ```json
 {
   "cmd": "rg -n 'Directus|Payload CMS|NocoDB|Baserow|Teable|Infinity|ParadeDB|Vespa|LanceDB|Weaviate|Milvus|AnythingLLM|Kotaemon|Khoj|Docling|KuzuDB|Graphiti|LightRAG|推荐选型路线|当前建议|开源项目调研结论' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -11698,7 +11698,7 @@ id: call_wYvdx8JKHYmkYi4d5GtkCMMP
 ```json
 {
   "cmd": "rg -n '^### 5\\.' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11775,8 +11775,8 @@ tool_use exec_command
 id: call_otBin7qdHvPbdCLQnfVFdkZ3
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -11801,8 +11801,8 @@ tool_use exec_command
 id: call_P8ATg6QYDqEXSHpyV8lGnxDz
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -11814,8 +11814,8 @@ tool_use exec_command
 id: call_56QAkkdYozvKIY8icKBARNxf
 ```json
 {
-  "cmd": "rg -n '开源项目调研结论|结构化管理底座候选|例文检索与搜索底座候选|RAG / Knowledge App 候选|推荐选型路线|当前建议|Directus|Infinity|ParadeDB|Vespa' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n '开源项目调研结论|结构化管理底座候选|例文检索与搜索底座候选|RAG / Knowledge App 候选|推荐选型路线|当前建议|Directus|Infinity|ParadeDB|Vespa' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11828,7 +11828,7 @@ id: call_2ItGJ2iKVKVzTHKM2Bn17O1I
 ```json
 {
   "cmd": "rm /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -11844,7 +11844,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-    4749 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+    4749 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -11899,7 +11899,7 @@ Output:
 > AGENT
 
 你说得对，我已经重新做了一轮更广的选型调研，并写回唯一那份开发文档了：  
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 这次不是只看 Dify/RAGFlow，而是按几类底座重新整理了：
 
@@ -11941,8 +11941,8 @@ tool_use exec_command
 id: call_82l0JCAREyY3i45hds6ZRqxo
 ```json
 {
-  "cmd": "cp /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -12456,8 +12456,8 @@ tool_use exec_command
 id: call_uH2vI2W7itPr0UnkZQVYjzc9
 ```json
 {
-  "cmd": "cp /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP_Agent_KB_doc.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -12483,7 +12483,7 @@ id: call_OWhnDYtETRFMdIHcIcYtHCLY
 ```json
 {
   "cmd": "rg -n \"feedback_memory|artifact_feedback|feedback_insight|negative_pattern|positive_pattern|content_artifacts|Agent 写入反馈|record-feedback|## 18|## 21|## 28|## 30\" /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -12496,7 +12496,7 @@ id: call_HTnf1bAVRh4zIVzHBEsPEawN
 ```json
 {
   "cmd": "sed -n '1800,1905p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -12509,7 +12509,7 @@ id: call_4giuH0QwC6p78QhJoHZnJjnY
 ```json
 {
   "cmd": "sed -n '2720,2865p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -12522,7 +12522,7 @@ id: call_V6cFFYkXuCYjTQ67FKdpncLe
 ```json
 {
   "cmd": "sed -n '4080,4155p' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -12883,7 +12883,7 @@ id: call_GcOqBKw9bVvyrsQ5ka11fNbj
 ```json
 {
   "cmd": "rg -n '^## |^### 27|^### 28|^### 29|^### 30|feedback_events|feedback_memory_candidates|feedback_memory_evidence|admin/feedback' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -12965,7 +12965,7 @@ id: call_KtFCQjMyjmLeHrjKKRRyaXcx
 ```json
 {
   "cmd": "wc -l /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -12978,7 +12978,7 @@ id: call_G0gCpaavrqMvVHTb7LE6YwHW
 ```json
 {
   "cmd": "rg -n '^## |^### 26|^### 27|^## 29|^## 30|^## 31|^## 32|^## 33|feedback_events|feedback_memory_candidates|feedback_memory_evidence|Raw Feedback|admin/feedback|distill_feedback_memory' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 40000
 }
@@ -12991,7 +12991,7 @@ id: call_Z4YPU5ggA5snLdX1gcWOu0kF
 ```json
 {
   "cmd": "rg -n '^## 28\\. MVP|^## 28\\. 开发|^## 29\\. 推荐|^## 30\\. 实现|^## 31\\. 参考|^## 32\\. 结论' /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13092,8 +13092,8 @@ tool_use exec_command
 id: call_0Nchhwaw7NES8natUXioM4qP
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP_Agent_KB_doc.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -13118,8 +13118,8 @@ tool_use exec_command
 id: call_oqSWYozYMktcsVGhvRn44rFF
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -13131,8 +13131,8 @@ tool_use exec_command
 id: call_iVX0Vb6YzWaEF8U3TerQRinA
 ```json
 {
-  "cmd": "rg -n '## 26\\. Feedback Memory|feedback_events|feedback_memory_candidates|feedback_memory_evidence|Raw Feedback 不要直接进入 Agent|admin/feedback' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n '## 26\\. Feedback Memory|feedback_events|feedback_memory_candidates|feedback_memory_evidence|Raw Feedback 不要直接进入 Agent|admin/feedback' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13145,7 +13145,7 @@ id: call_uZixzKYLlfOTf6jq6lFyI5A9
 ```json
 {
   "cmd": "rm /private/tmp/RAAP_Agent_KB_doc.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -13161,7 +13161,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-    5196 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+    5196 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -13226,7 +13226,7 @@ Output:
 > AGENT
 
 已写入文档：  
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 这次补了完整的 **Feedback Memory 设计**，不是简单加一个 slot。主要内容：
 
@@ -13277,7 +13277,7 @@ id: call_yFll7EcyTYltwPLdNaQVCWBK
 ```json
 {
   "cmd": "node /private/tmp/split_raap_kb_docs.js",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -13307,7 +13307,7 @@ id: call_RlR6tFOSFZDJIaOcJfOMhngQ
 ```json
 {
   "cmd": "find /private/tmp/RAAP\\ Agent\\ 知识库服务 -maxdepth 1 -type f -name '*.md' -print",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13320,7 +13320,7 @@ id: call_PzsRz3jr8tUwgI2lJ6cHCapc
 ```json
 {
   "cmd": "wc -l /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP\\ Agent\\ 知识库服务/*.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13333,7 +13333,7 @@ id: call_qQWGcTwje2qtPqx2QiF49y1W
 ```json
 {
   "cmd": "sed -n '1,140p' /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13346,7 +13346,7 @@ id: call_9kkN4DKTjLPokRhUUxQ032K6
 ```json
 {
   "cmd": "rg -n 'MVP|第一版|第二版|短期 MVP|生产第一版' /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP\\ Agent\\ 知识库服务",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13491,7 +13491,7 @@ id: call_F9DYSV5v9JlZ0tLjZyOnzskB
 ```json
 {
   "cmd": "sed -n '1,120p' /private/tmp/RAAP\\ Agent\\ 知识库服务/08\\ Feedback\\ Memory\\ 设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13544,7 +13544,7 @@ id: call_UHX1azPpjRjqPHTibNPZ3X32
 ```json
 {
   "cmd": "sed -n '120,260p' /private/tmp/RAAP\\ Agent\\ 知识库服务/08\\ Feedback\\ Memory\\ 设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13574,7 +13574,7 @@ id: call_dszaNBDktuWp4D7AkOzvC9K2
 ```json
 {
   "cmd": "perl -0pi -e 's/\\\\z/\\\\Z/g' /private/tmp/split_raap_kb_docs.js",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -13600,7 +13600,7 @@ id: call_FF02DPypzKWaOD3DkLFRIroi
 ```json
 {
   "cmd": "node /private/tmp/split_raap_kb_docs.js",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -13626,7 +13626,7 @@ id: call_jIpSV7Li0qGHFlFMPZgJvLdK
 ```json
 {
   "cmd": "wc -l /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP\\ Agent\\ 知识库服务/*.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13639,7 +13639,7 @@ id: call_5uql2uH0SVrMkENRSlcmrBUp
 ```json
 {
   "cmd": "tail -n 30 /private/tmp/RAAP\\ Agent\\ 知识库服务/08\\ Feedback\\ Memory\\ 设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13652,7 +13652,7 @@ id: call_VrvNEQosFbEYedFotlau2Hh0
 ```json
 {
   "cmd": "rg -n 'MVP|第一版|第二版|短期 MVP|生产第一版' /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP\\ Agent\\ 知识库服务",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13665,7 +13665,7 @@ id: call_c4QoLdbLupDz1u1YOU4sNBsQ
 ```json
 {
   "cmd": "find /private/tmp/RAAP\\ Agent\\ 知识库服务 -maxdepth 1 -type f -name '*.md' -print | sort",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13795,7 +13795,7 @@ id: call_Z3K8feYJQZyfKu15bCSQA2I1
 ```json
 {
   "cmd": "perl -0pi -e 's/适合 MVP/适合核心基础方案/g; s/MVP 不需要复杂文档解析平台。第一版应优先接受/完整方案不需要从复杂文档解析平台起步。应优先支持/g; s/本项目第一版可以用/本项目核心方案可以用/g; s/非 MVP/非核心基础方案/g; s/生产第一版:/完整生产方案:/g; s/不是 MVP 的附属功能/不是附属功能/g; s/MVP 可以先实现/核心方案可以先实现/g; s/MVP 可以没有/核心方案可以没有/g; s/MVP：/核心方案：/g; s/第一版全部实现/一次性全部实现/g' /private/tmp/RAAP\\ Agent\\ 知识库服务/*.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -13821,7 +13821,7 @@ id: call_pMRmHm47EX6IuypzGPv5yzj7
 ```json
 {
   "cmd": "rg -n 'MVP|第一版|第二版|短期 MVP|生产第一版' /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md /private/tmp/RAAP\\ Agent\\ 知识库服务",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13850,8 +13850,8 @@ tool_use exec_command
 id: call_qhz7yQjPp2uhyci0FJIEvih2
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -13876,8 +13876,8 @@ tool_use exec_command
 id: call_v2ZlItK0zsWDDLZ4sEBU6qkM
 ```json
 {
-  "cmd": "mkdir -p /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "mkdir -p /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -13893,7 +13893,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 32
 Output:
-mkdir: /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务: Operation not permitted
+mkdir: /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务: Operation not permitted
 
 ```
 
@@ -13907,8 +13907,8 @@ tool_use exec_command
 id: call_Hx1HreLTCsbLWIEDQphioGjM
 ```json
 {
-  "cmd": "mkdir -p /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "mkdir -p /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000,
   "sandbox_permissions": "require_escalated",
@@ -13939,8 +13939,8 @@ tool_use exec_command
 id: call_mQVS0Qt6NMRgBUT4sJohCZzl
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP\\ Agent\\ 知识库服务/*.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP\\ Agent\\ 知识库服务/*.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -13969,8 +13969,8 @@ tool_use exec_command
 id: call_GVj6lADOjHCVRfXbPl88EYdp
 ```json
 {
-  "cmd": "find /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务 -maxdepth 1 -type f -name '*.md' -print | sort",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务 -maxdepth 1 -type f -name '*.md' -print | sort",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13982,8 +13982,8 @@ tool_use exec_command
 id: call_SQrrdo3D7PcFfKNs7ClhGVW2
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13995,8 +13995,8 @@ tool_use exec_command
 id: call_iKkZiurAeEct7FqhifPqVk5T
 ```json
 {
-  "cmd": "rg -n 'MVP|第一版|第二版|短期 MVP|生产第一版' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n 'MVP|第一版|第二版|短期 MVP|生产第一版' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -14008,8 +14008,8 @@ tool_use exec_command
 id: call_NWbrwrVde8Lsn6q8XTxWgP8i
 ```json
 {
-  "cmd": "sed -n '1,120p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,120p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -14025,15 +14025,15 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 294
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/03 数据模型与数据库设计.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/09 数据治理评测权限与实施计划.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/03 数据模型与数据库设计.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/09 数据治理评测权限与实施计划.md
 
 ```
 
@@ -14047,16 +14047,16 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 348
 Output:
-      90 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
-     376 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md
-     406 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md
-    1066 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/03 数据模型与数据库设计.md
-    1194 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
-     557 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
-     417 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md
-     421 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md
-     320 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md
-     450 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/09 数据治理评测权限与实施计划.md
+      90 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+     376 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md
+     406 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md
+    1066 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/03 数据模型与数据库设计.md
+    1194 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
+     557 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
+     417 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md
+     421 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md
+     320 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md
+     450 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/09 数据治理评测权限与实施计划.md
     5297 total
 
 ```
@@ -14147,7 +14147,7 @@ id: call_whoR8mxBVOHgh5l6XomNGlD9
 ```json
 {
   "cmd": "rm /private/tmp/split_raap_kb_docs.js",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -14160,7 +14160,7 @@ id: call_3Ogx2wqTfAjEQvpXaKEeotZb
 ```json
 {
   "cmd": "rm -rf /private/tmp/RAAP\\ Agent\\ 知识库服务 /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -14197,10 +14197,10 @@ Output:
 已经拆好了，现在不是一个 5000 行大文档硬扛所有内容了。
 
 入口总览保留在：  
-[RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
+[RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)
 
 专题文档放在：  
-[RAAP Agent 知识库服务](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务>)
+[RAAP Agent 知识库服务](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务>)
 
 拆成了 9 份：
 
@@ -14230,8 +14230,8 @@ tool_use exec_command
 id: call_nJGdJodoQvM9XlzxRvRNu3vV
 ```json
 {
-  "cmd": "rg -n '^## |^### 31|实现注意事项|Raw Feedback|参考资料|结论' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n '^## |^### 31|实现注意事项|Raw Feedback|参考资料|结论' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -14243,8 +14243,8 @@ tool_use exec_command
 id: call_7ePDTggOupzhsZ47SdOK3YiD
 ```json
 {
-  "cmd": "find /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 2 -type f -name '*知识库服务*.md' -print | sort",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 2 -type f -name '*知识库服务*.md' -print | sort",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -14256,8 +14256,8 @@ tool_use exec_command
 id: call_y1WLCzxVIEm7HiT18Ah85sbN
 ```json
 {
-  "cmd": "ls -la /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "ls -la /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -14273,30 +14273,30 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2054
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:7:## 1. 核心修正
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:46:## 2. 设计目标
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:140:## 3. 范围边界
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:169:## 4. 总体架构
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:282:## 6. 数据分类原则
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:309:- 它是事实、规则、素材、约束、策略、结论。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:7:## 9. 例文语料库设计
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:67:## hook
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:72:## problem_scene
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:77:## product_bridge
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:82:## closing
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:237:## 14. Example Corpus API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:516:## 15. Link API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:7:## 11. API 设计原则
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:174:## 12. Structured API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:294:## 13. Relation API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:369:## 14. Example Corpus API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:648:## 15. Link API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:691:## 18. Agent API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:824:## 19. MCP Tools
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:850:## 21. 数据管理后台
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:1127:## 完整接口清单
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:7:## 24. 版本管理与生命周期
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:7:## 16. Federated Search […]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:7:## 1. 核心修正
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:46:## 2. 设计目标
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:140:## 3. 范围边界
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:169:## 4. 总体架构
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:282:## 6. 数据分类原则
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:309:- 它是事实、规则、素材、约束、策略、结论。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:7:## 9. 例文语料库设计
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:67:## hook
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:72:## problem_scene
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:77:## product_bridge
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:82:## closing
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:237:## 14. Example Corpus API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:516:## 15. Link API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:7:## 11. API 设计原则
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:174:## 12. Structured API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:294:## 13. Relation API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:369:## 14. Example Corpus API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:648:## 15. Link API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:691:## 18. Agent API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:824:## 19. MCP Tools
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:850:## 21. 数据管理后台
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:1127:## 完整接口清单
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:7:## 24. 版本管理与生命周期
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:7:## 16. Federated Search […]
 
 > TOOL
 
@@ -14308,7 +14308,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 28
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
 
 ```
 
@@ -14347,8 +14347,8 @@ tool_use exec_command
 id: call_YgvNcUGmYQmrx9XopeRM6kiz
 ```json
 {
-  "cmd": "rg -n '^## ' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n '^## ' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -14360,8 +14360,8 @@ tool_use exec_command
 id: call_eHHMder6zula3mU9SxIWdQda
 ```json
 {
-  "cmd": "sed -n '200,460p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/09\\ 数据治理评测权限与实施计划.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '200,460p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/09\\ 数据治理评测权限与实施计划.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -14373,8 +14373,8 @@ tool_use exec_command
 id: call_kXqkjiL1jTDrx7XHEULNm05r
 ```json
 {
-  "cmd": "sed -n '1,130p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,130p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -14390,29 +14390,29 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1458
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:7:## 11. API 设计原则
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:174:## 12. Structured API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:294:## 13. Relation API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:369:## 14. Example Corpus API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:648:## 15. Link API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:691:## 18. Agent API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:824:## 19. MCP Tools
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:850:## 21. 数据管理后台
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:1127:## 完整接口清单
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md:7:## 26. Feedback Memory 设计
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:7:## 16. Federated Search API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:64:## 17. Context Pack API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:316:## 20. 检索策略
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:7:## 1. 核心修正
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:46:## 2. 设计目标
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:140:## 3. 范围边界
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:169:## 4. 总体架构
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:282:## 6. 数据分类原则
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:7:## 9. 例文语料库设计
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:67:## hook
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:72:## problem_scene
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:77:## product_bridge
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent […]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:7:## 11. API 设计原则
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:174:## 12. Structured API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:294:## 13. Relation API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:369:## 14. Example Corpus API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:648:## 15. Link API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:691:## 18. Agent API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:824:## 19. MCP Tools
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:850:## 21. 数据管理后台
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:1127:## 完整接口清单
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md:7:## 26. Feedback Memory 设计
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:7:## 16. Federated Search API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:64:## 17. Context Pack API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:316:## 20. 检索策略
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:7:## 1. 核心修正
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:46:## 2. 设计目标
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:140:## 3. 范围边界
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:169:## 4. 总体架构
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:282:## 6. 数据分类原则
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:7:## 9. 例文语料库设计
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:67:## hook
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:72:## problem_scene
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:77:## product_bridge
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent […]
 
 > TOOL
 
@@ -14572,8 +14572,8 @@ tool_use exec_command
 id: call_wxgghM1FjAMBDXsygltvzQDQ
 ```json
 {
-  "cmd": "tail -n 120 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/09\\ 数据治理评测权限与实施计划.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "tail -n 120 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/09\\ 数据治理评测权限与实施计划.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -14585,8 +14585,8 @@ tool_use exec_command
 id: call_Uvh2MTKpLUdwBjaCOfot7FEu
 ```json
 {
-  "cmd": "head -n 30 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/02\\ 技术选型与开源项目调研.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "head -n 30 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/02\\ 技术选型与开源项目调研.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -14598,8 +14598,8 @@ tool_use exec_command
 id: call_5QEHpXSmSvuRRa1jKMMjOqD0
 ```json
 {
-  "cmd": "tail -n 90 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/02\\ 技术选型与开源项目调研.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "tail -n 90 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/02\\ 技术选型与开源项目调研.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -14864,8 +14864,8 @@ tool_use exec_command
 id: call_3Go9Ud50gub1jHkCvW3LscDo
 ```json
 {
-  "cmd": "cp /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -14891,7 +14891,7 @@ id: call_KCo19rtrfAh23xFZ8vPCW19Q
 ```json
 {
   "cmd": "node /private/tmp/rebuild_raap_kb_full_doc.js",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -14911,7 +14911,7 @@ node:fs:2415
     return binding.writeFileUtf8(
                    ^
 
-Error: EPERM: operation not permitted, open '/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md'
+Error: EPERM: operation not permitted, open '/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md'
     at Object.writeFileSync (node:fs:2415:20)
     at Object.<anonymous> (/private/tmp/rebuild_raap_kb_full_doc.js:46:4)
     at Module._compile (node:internal/modules/cjs/loader:1761:14)
@@ -14925,7 +14925,7 @@ Error: EPERM: operation not permitted, open '/Users/lyston/Obsidian/lyston/Codex
   errno: -1,
   code: 'EPERM',
   syscall: 'open',
-  path: '/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md'
+  path: '/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md'
 }
 
 Node.js v24.11.1
@@ -14943,7 +14943,7 @@ id: call_6S6DJkV8jOPU7ACKEZ64fLyh
 ```json
 {
   "cmd": "perl -0pi -e 's#const outPath = \".*?\";#const outPath = \"/private/tmp/RAAP Agent 知识库服务开发文档.full.md\";#' /private/tmp/rebuild_raap_kb_full_doc.js",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -14969,7 +14969,7 @@ id: call_rtANVEabRPjVbPicALZbIziy
 ```json
 {
   "cmd": "node /private/tmp/rebuild_raap_kb_full_doc.js",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -14994,8 +14994,8 @@ tool_use exec_command
 id: call_yeYc0ShbrRHT9v6ISdLFeK4N
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.full.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.full.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -15024,8 +15024,8 @@ tool_use exec_command
 id: call_CEGSINOoMLUghPJvlqsU2VoF
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -15037,8 +15037,8 @@ tool_use exec_command
 id: call_GaS7eguPklfD55shgaymQSNN
 ```json
 {
-  "cmd": "rg -n '^# |^## 1\\.|^## 33\\.|相关导航|总导航' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n '^# |^## 1\\.|^## 33\\.|相关导航|总导航' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -15050,8 +15050,8 @@ tool_use exec_command
 id: call_NvXquROM3P8cd1DRfTJKBrLx
 ```json
 {
-  "cmd": "find /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 2 -type f \\( -name 'RAAP Agent 知识库服务开发文档.md' -o -name 'RAAP Agent 知识库服务总导航.md' -o -path '*RAAP Agent 知识库服务/*.md' \\) -print | sort",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨 -maxdepth 2 -type f \\( -name 'RAAP Agent 知识库服务开发文档.md' -o -name 'RAAP Agent 知识库服务总导航.md' -o -path '*RAAP Agent 知识库服务/*.md' \\) -print | sort",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -15067,17 +15067,17 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 376
 Output:
-    5170 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
-      90 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md
-     376 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md
-     406 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md
-    1066 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/03 数据模型与数据库设计.md
-    1194 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
-     557 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
-     417 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md
-     421 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md
-     320 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md
-     450 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/09 数据治理评测权限与实施计划.md
+    5170 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+      90 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md
+     376 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md
+     406 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md
+    1066 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/03 数据模型与数据库设计.md
+    1194 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
+     557 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
+     417 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md
+     421 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md
+     320 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md
+     450 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/09 数据治理评测权限与实施计划.md
    10467 total
 
 ```
@@ -15092,11 +15092,11 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 182
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md:1:# RAAP Agent 知识库服务开发文档
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:1:# RAAP Agent 知识库服务开发文档
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:8:相关导航：[[RAAP Agent 知识库服务总导航]]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:10:## 1. 核心修正
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3089:# 原文标题
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md:1:# RAAP Agent 知识库服务开发文档
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:1:# RAAP Agent 知识库服务开发文档
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:8:相关导航：[[RAAP Agent 知识库服务总导航]]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:10:## 1. 核心修正
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3089:# 原文标题
 
 ```
 
@@ -15110,17 +15110,17 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 348
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/03 数据模型与数据库设计.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/09 数据治理评测权限与实施计划.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/03 数据模型与数据库设计.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/09 数据治理评测权限与实施计划.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md
 
 ```
 
@@ -15135,7 +15135,7 @@ id: call_6Xd7o6nqj5HVtogPtHmgGIAY
 ```json
 {
   "cmd": "rm /private/tmp/rebuild_raap_kb_full_doc.js /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.full.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -15147,8 +15147,8 @@ tool_use exec_command
 id: call_9GGbWIESwAQvG5wo903XR3e7
 ```json
 {
-  "cmd": "head -n 5 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "head -n 5 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -15160,8 +15160,8 @@ tool_use exec_command
 id: call_h5zBrgHYzrfHmEsYyBaHiGYw
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务总导航.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -15208,8 +15208,8 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 62
 Output:
-    5170 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
-      90 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md
+    5170 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+      90 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md
     5260 total
 
 ```
@@ -15221,15 +15221,15 @@ Output:
 现在结构是你要的：
 
 - 完整总开发文档保留：  
-  [RAAP Agent 知识库服务开发文档.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)  
+  [RAAP Agent 知识库服务开发文档.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md>)  
   现在是 5170 行，完整内容都恢复在里面了。
 
 - 另起一份总导航文档：  
-  [RAAP Agent 知识库服务总导航.md](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md>)  
+  [RAAP Agent 知识库服务总导航.md](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务总导航.md>)  
   90 行，只做入口、核心结论和阅读路径。
 
 - 专题拆分文档继续保留在：  
-  [RAAP Agent 知识库服务](</Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务>)
+  [RAAP Agent 知识库服务](</home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务>)
 
 也把开发文档顶部加了 `相关导航：[[RAAP Agent 知识库服务总导航]]`，以后可以从完整文档跳导航，也可以从导航进专题。临时脚本和临时文件都清掉了。
 
@@ -15404,8 +15404,8 @@ tool_use exec_command
 id: call_H0TddfdihYSsmBgrvBpArmVa
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/05\\ 例文语料库与召回设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,260p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/05\\ 例文语料库与召回设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -15417,8 +15417,8 @@ tool_use exec_command
 id: call_CuNkVaBN2Ef7NgwewD000DZ0
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/06\\ Context\\ Pack\\ 与检索编排.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/06\\ Context\\ Pack\\ 与检索编排.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -15430,8 +15430,8 @@ tool_use exec_command
 id: call_QHqVgGWu3ogLld5bPbh4TRGN
 ```json
 {
-  "cmd": "rg -n 'example-corpus/search|例文搜索|多路|rewrite|short query|换季|召回|Context Pack' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n 'example-corpus/search|例文搜索|多路|rewrite|short query|换季|召回|Context Pack' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/*.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -15685,27 +15685,27 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3728
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:29:也就是说，最终对 Agent 暴露的是统一的 `Context Pack` 和搜索接口，但底层应该是一个“联邦知识服务”：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:32:Context Pack / Agent API
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:134:/example-corpus/search
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:151:- Context Pack 模板和运行记录。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:187:    ContextAPI["Context Pack API"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:197:    ContextSvc["Context Pack Service"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:258:这张图表达一个关键约束：Agent API 可以统一，但查询必须分别进入结构化库和例文库。Context Pack 只是把两边的结果按 slot 组装，并把当时使用到的版本、检索参数、得分、片段和 citation 固化下来。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:5:本文集中说明 logical id、revision id、system time、valid time、结构化知识版本、例文版本、Context Pack 快照、索引版本、回滚和 Version API。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:38:上图里，当前版本可以是 v3，但历史某次 Context Pack 仍然引用 v2。历史引用不能因为 current pointer 改变而变化。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:99:- 旧 revision 标记 `superseded_at`，但仍可被历史 Context Pack 引用。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:165:- 历史 Context Pack 可以继续引用旧版 chunk。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:200:### 24.7 Context Pack 快照版本
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:202:Context Pack 是 Agent 当时看到的世界，必须不可变。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:235:为什么没召回某条合规规则？
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:291:| 已被 Context Pack 引用 | 不可硬删除 |
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:398:同一个任务，现在召回的硬约束有没有少？
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:400:是否出现了跨品牌、跨活动、跨平台误召回？
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md:5:本文集中说明从原始反馈到反馈事件、候选记忆、正式记忆的治理流程，以及 Feedback Memory 在 Context Pack 和 LightRAG 辅助召回中的定位。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md:18:LightRAG 只能辅助发现和召回，不能成为权威 memory 存储。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md:31:  Published --> Context["feedback_memory slot in Context Pack"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory […]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:29:也就是说，最终对 Agent 暴露的是统一的 `Context Pack` 和搜索接口，但底层应该是一个“联邦知识服务”：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:32:Context Pack / Agent API
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:134:/example-corpus/search
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:151:- Context Pack 模板和运行记录。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:187:    ContextAPI["Context Pack API"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:197:    ContextSvc["Context Pack Service"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/01 总体架构与知识边界.md:258:这张图表达一个关键约束：Agent API 可以统一，但查询必须分别进入结构化库和例文库。Context Pack 只是把两边的结果按 slot 组装，并把当时使用到的版本、检索参数、得分、片段和 citation 固化下来。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:5:本文集中说明 logical id、revision id、system time、valid time、结构化知识版本、例文版本、Context Pack 快照、索引版本、回滚和 Version API。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:38:上图里，当前版本可以是 v3，但历史某次 Context Pack 仍然引用 v2。历史引用不能因为 current pointer 改变而变化。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:99:- 旧 revision 标记 `superseded_at`，但仍可被历史 Context Pack 引用。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:165:- 历史 Context Pack 可以继续引用旧版 chunk。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:200:### 24.7 Context Pack 快照版本
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:202:Context Pack 是 Agent 当时看到的世界，必须不可变。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:235:为什么没召回某条合规规则？
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:291:| 已被 Context Pack 引用 | 不可硬删除 |
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:398:同一个任务，现在召回的硬约束有没有少？
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/07 版本治理与生命周期.md:400:是否出现了跨品牌、跨活动、跨平台误召回？
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md:5:本文集中说明从原始反馈到反馈事件、候选记忆、正式记忆的治理流程，以及 Feedback Memory 在 Context Pack 和 LightRAG 辅助召回中的定位。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md:18:LightRAG 只能辅助发现和召回，不能成为权威 memory 存储。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory 设计.md:31:  Published --> Context["feedback_memory slot in Context Pack"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/08 Feedback Memory […]
 
 > AGENT
 
@@ -15717,8 +15717,8 @@ tool_use exec_command
 id: call_uU7dJYtVtwq8S33L7FTME5OC
 ```json
 {
-  "cmd": "sed -n '520,620p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '520,620p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -15844,8 +15844,8 @@ tool_use exec_command
 id: call_U3DO19zdXehLGjrhMEJFFD05
 ```json
 {
-  "cmd": "sed -n '620,700p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '620,700p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -15960,7 +15960,7 @@ id: call_EsXjEw5FuM3Xe7JpjFcy2gHA
 ```json
 {
   "cmd": "node /private/tmp/rebuild_raap_kb_full_doc.js",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -15985,8 +15985,8 @@ tool_use exec_command
 id: call_nll3UfOX9Z6urolMAbiQs5lz
 ```json
 {
-  "cmd": "cp /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.full.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "cp /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.full.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -16015,8 +16015,8 @@ tool_use exec_command
 id: call_HuWahCQL79Hkbpck9kRHb3V3
 ```json
 {
-  "cmd": "rg -n '短 Query 例文召回实现|Multi-route Rewrite|换季感冒频繁|example_pack|overused_example_penalty|query_understanding|topic_direct|graph_expansion' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/05\\ 例文语料库与召回设计.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/04\\ API\\ 与管理后台\\ BFF\\ 设计.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n '短 Query 例文召回实现|Multi-route Rewrite|换季感冒频繁|example_pack|overused_example_penalty|query_understanding|topic_direct|graph_expansion' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/05\\ 例文语料库与召回设计.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/04\\ API\\ 与管理后台\\ BFF\\ 设计.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -16028,8 +16028,8 @@ tool_use exec_command
 id: call_nMJFFGGG4WxO3e87z0WZmaFY
 ```json
 {
-  "cmd": "wc -l /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/05\\ 例文语料库与召回设计.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "wc -l /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务开发文档.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/05\\ 例文语料库与召回设计.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP\\ Agent\\ 知识库服务/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -16042,7 +16042,7 @@ id: call_AzJEpe5OiIn3iYGigGU5ELfT
 ```json
 {
   "cmd": "rm /private/tmp/rebuild_raap_kb_full_doc.js /private/tmp/RAAP\\ Agent\\ 知识库服务开发文档.full.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -16058,34 +16058,34 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2155
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:626:短 query 查一个例文时，应使用 `return_mode = example_pack` 和多路改写。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:632:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:634:  "return_mode": "example_pack",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:645:      "topic_direct",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:651:      "graph_expansion"
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:671:    "include_query_understanding": true,
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:684:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:685:  "query_understanding": {
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2462:短 query 查一个例文时，应使用 `return_mode = example_pack` 和多路改写。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2468:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2470:  "return_mode": "example_pack",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2481:      "topic_direct",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2487:      "graph_expansion"
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2507:    "include_query_understanding": true,
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2520:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2521:  "query_understanding": {
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3368:### 9.9 短 Query 例文召回实现
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3373:换季感冒频繁
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3387:  -> Multi-route Rewrite
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3398:  Q["Raw query: 换季感冒频繁"] --> Understand["Query understanding"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3415:  Diversity --> Pack["Assemble example_pack"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3424:  "raw_query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3437:#### 9.9.2 Multi-route Rewrite
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3444:    "route": "topic_direct",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3486:    "route": "graph_expansion",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3561:  - overused_example_penalty
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3569:- `overused_example_penalty`：近期频繁被选中的例文降权。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP […]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:626:短 query 查一个例文时，应使用 `return_mode = example_pack` 和多路改写。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:632:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:634:  "return_mode": "example_pack",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:645:      "topic_direct",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:651:      "graph_expansion"
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:671:    "include_query_understanding": true,
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:684:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:685:  "query_understanding": {
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2462:短 query 查一个例文时，应使用 `return_mode = example_pack` 和多路改写。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2468:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2470:  "return_mode": "example_pack",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2481:      "topic_direct",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2487:      "graph_expansion"
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2507:    "include_query_understanding": true,
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2520:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2521:  "query_understanding": {
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3368:### 9.9 短 Query 例文召回实现
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3373:换季感冒频繁
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3387:  -> Multi-route Rewrite
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3398:  Q["Raw query: 换季感冒频繁"] --> Understand["Query understanding"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3415:  Diversity --> Pack["Assemble example_pack"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3424:  "raw_query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3437:#### 9.9.2 Multi-route Rewrite
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3444:    "route": "topic_direct",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3486:    "route": "graph_expansion",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3561:  - overused_example_penalty
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3569:- `overused_example_penalty`：近期频繁被选中的例文降权。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP […]
 
 > TOOL
 
@@ -16097,9 +16097,9 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 104
 Output:
-    5618 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
-     899 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
-    1300 /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
+    5618 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md
+     899 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md
+    1300 /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md
     7817 total
 
 ```
@@ -16127,8 +16127,8 @@ tool_use exec_command
 id: call_HJJCZSvlkbQvHMoDzrleUTvm
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/05\\ 例文语料库与召回设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/05\\ 例文语料库与召回设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -16140,8 +16140,8 @@ tool_use exec_command
 id: call_XwVeRi53ePcw6qEONRKl8rTn
 ```json
 {
-  "cmd": "rg -n \"短 query|换季感冒频繁|多路改写|例文搜索|example_pack\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"短 query|换季感冒频繁|多路改写|例文搜索|example_pack\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -16278,36 +16278,36 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1533
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2382:### 14.7 例文搜索
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2462:短 query 查一个例文时，应使用 `return_mode = example_pack` 和多路改写。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2468:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2470:  "return_mode": "example_pack",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2520:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3373:换季感冒频繁
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3383:所以短 query 要走：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3398:  Q["Raw query: 换季感冒频繁"] --> Understand["Query understanding"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3415:  Diversity --> Pack["Assemble example_pack"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3420:先把短 query 解析成结构化意图：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3424:  "raw_query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3574:最后不是简单取 TopK，而是按约束选一个 `example_pack`。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3596:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3652:短 query 召回要做缓存，但不能缓存成永远同一批例文。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3685:短 query 例文召回要单独评测：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3701:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3887:### 14.7 例文搜索
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:4405:例文搜索必须有 intent，因为不同 intent 应该查不同向量和不同 section。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:380:例文搜索必须有 intent，因为不同 intent 应该查不同向量和不同 section。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:242:换季感冒频繁
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:252:所以短 query 要走：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:267:  Q["Raw query: 换季感冒频繁"] --> Understand["Query understanding"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:284:  Diversity --> Pack["Assemble example_pack"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:289:先把短 query 解析成结构化意图：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:293:  "raw_query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:443:最后不是简单取 TopK，而是按约束选一个 `example_pack`。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:465:  "query": "换季感冒频繁",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:521:短 query 召回要做缓存，但不能缓存成永远同一批例文。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:554:短 query 例文召回要单独评测：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:570:  "query": […]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2382:### 14.7 例文搜索
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2462:短 query 查一个例文时，应使用 `return_mode = example_pack` 和多路改写。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2468:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2470:  "return_mode": "example_pack",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2520:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3373:换季感冒频繁
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3383:所以短 query 要走：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3398:  Q["Raw query: 换季感冒频繁"] --> Understand["Query understanding"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3415:  Diversity --> Pack["Assemble example_pack"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3420:先把短 query 解析成结构化意图：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3424:  "raw_query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3574:最后不是简单取 TopK，而是按约束选一个 `example_pack`。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3596:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3652:短 query 召回要做缓存，但不能缓存成永远同一批例文。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3685:短 query 例文召回要单独评测：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3701:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3887:### 14.7 例文搜索
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:4405:例文搜索必须有 intent，因为不同 intent 应该查不同向量和不同 section。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/06 Context Pack 与检索编排.md:380:例文搜索必须有 intent，因为不同 intent 应该查不同向量和不同 section。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:242:换季感冒频繁
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:252:所以短 query 要走：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:267:  Q["Raw query: 换季感冒频繁"] --> Understand["Query understanding"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:284:  Diversity --> Pack["Assemble example_pack"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:289:先把短 query 解析成结构化意图：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:293:  "raw_query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:443:最后不是简单取 TopK，而是按约束选一个 `example_pack`。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:465:  "query": "换季感冒频繁",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:521:短 query 召回要做缓存，但不能缓存成永远同一批例文。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:554:短 query 例文召回要单独评测：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:570:  "query": […]
 
 > AGENT
 
@@ -16319,8 +16319,8 @@ tool_use exec_command
 id: call_bQ0biUGpWVYdy2eTvHn62IEf
 ```json
 {
-  "cmd": "sed -n '230,610p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/05\\ 例文语料库与召回设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '230,610p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/05\\ 例文语料库与召回设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -16332,8 +16332,8 @@ tool_use exec_command
 id: call_8GnwYJcok4CSHfXM4Jo4ixV6
 ```json
 {
-  "cmd": "sed -n '620,710p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '620,710p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -16529,8 +16529,8 @@ Output:
 
 我已经把这一块写进文档了，主要在：
 
-[05 例文语料库与召回设计.md](/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务/05%20例文语料库与召回设计.md:242)  
-[04 API 与管理后台 BFF 设计.md](/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务/04%20API%20与管理后台%20BFF%20设计.md:626)
+[05 例文语料库与召回设计.md](/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务/05%20例文语料库与召回设计.md:242)  
+[04 API 与管理后台 BFF 设计.md](/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务/04%20API%20与管理后台%20BFF%20设计.md:626)
 
 **实现方式**
 先不要把 `换季感冒频繁` 直接丢进向量库。这个 query 太短，语义不够，会导致永远召回那几篇泛健康文章。正确做法是先把它拆成多个召回意图：
@@ -16634,8 +16634,8 @@ tool_use exec_command
 id: call_sipggSrGGE4ZeN5iEuHmza5R
 ```json
 {
-  "cmd": "rg -n \"LightRAG|lightrag|graph_expansion|Graph Recall|图谱\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"LightRAG|lightrag|graph_expansion|Graph Recall|图谱\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -16647,8 +16647,8 @@ tool_use exec_command
 id: call_s0JHIaGyZ1bKzDlZwx97Ix18
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.codex/skills/codex-md-docs/SKILL.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/skills/codex-md-docs/SKILL.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -16664,31 +16664,31 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1678
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:593:### 5.8 图谱和时间知识候选
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:599:| KuzuDB | 嵌入式图数据库，适合分析型关系查询 | 可用于离线关系分析或知识图谱 POC |
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:603:| Graphiti | temporal knowledge graph for agents | 可借鉴“时间知识图谱”和 Agent memory 思路 |
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:604:| LightRAG | graph-enhanced RAG | 可借鉴图增强检索，不建议直接替代核心库 |
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:766:- [KuzuDB Docs](https://docs.kuzudb.com/)：可评估后续关系图谱和离线图分析。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:769:- [LightRAG GitHub](https://github.com/HKUDS/LightRAG)：可借鉴图增强 RAG 思路。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2487:      "graph_expansion"
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2496:    "lightrag": {"enabled": true, "top_k": 20},
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3404:  Rewrite --> R5["LightRAG graph recall"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3486:    "route": "graph_expansion",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3489:    "providers": ["lightrag"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3511:| `lightrag` | 从概念关系扩展关联例文 |
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:4871:LightRAG 只能辅助发现和召回，不能成为权威 memory 存储。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:5094:### 26.8 LightRAG 在 Feedback Memory 中的位置
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:5096:LightRAG 可以辅助两件事：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:5103:但 LightRAG 不能做：
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:5125:LightRAG:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:273:  Rewrite --> R5["LightRAG graph recall"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:355:    "route": "graph_expansion",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:358:    "providers": ["lightrag"]
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:380:| `lightrag` | 从概念关系扩展关联例文 |
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md:5:本文集中说明完整技术方案的组件选型、开源项目调研、LightRAG 等召回候选的定位，以及最终推荐的组合方式。
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md:219:### 5.8 图谱和时间知识候选
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md:225:| KuzuDB | 嵌入式图数据库，适合分析型关系查询 | 可用于离线关系分析或知识图谱 POC |
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md:229:| Graphiti | temporal knowledge graph for agents […]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:593:### 5.8 图谱和时间知识候选
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:599:| KuzuDB | 嵌入式图数据库，适合分析型关系查询 | 可用于离线关系分析或知识图谱 POC |
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:603:| Graphiti | temporal knowledge graph for agents | 可借鉴“时间知识图谱”和 Agent memory 思路 |
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:604:| LightRAG | graph-enhanced RAG | 可借鉴图增强检索，不建议直接替代核心库 |
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:766:- [KuzuDB Docs](https://docs.kuzudb.com/)：可评估后续关系图谱和离线图分析。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:769:- [LightRAG GitHub](https://github.com/HKUDS/LightRAG)：可借鉴图增强 RAG 思路。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2487:      "graph_expansion"
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2496:    "lightrag": {"enabled": true, "top_k": 20},
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3404:  Rewrite --> R5["LightRAG graph recall"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3486:    "route": "graph_expansion",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3489:    "providers": ["lightrag"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3511:| `lightrag` | 从概念关系扩展关联例文 |
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:4871:LightRAG 只能辅助发现和召回，不能成为权威 memory 存储。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:5094:### 26.8 LightRAG 在 Feedback Memory 中的位置
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:5096:LightRAG 可以辅助两件事：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:5103:但 LightRAG 不能做：
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:5125:LightRAG:
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:273:  Rewrite --> R5["LightRAG graph recall"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:355:    "route": "graph_expansion",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:358:    "providers": ["lightrag"]
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:380:| `lightrag` | 从概念关系扩展关联例文 |
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md:5:本文集中说明完整技术方案的组件选型、开源项目调研、LightRAG 等召回候选的定位，以及最终推荐的组合方式。
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md:219:### 5.8 图谱和时间知识候选
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md:225:| KuzuDB | 嵌入式图数据库，适合分析型关系查询 | 可用于离线关系分析或知识图谱 POC |
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/02 技术选型与开源项目调研.md:229:| Graphiti | temporal knowledge graph for agents […]
 
 > TOOL
 
@@ -16712,7 +16712,7 @@ description: Route Markdown documentation work into the user's Codex Obsidian sp
 Use this Markdown documentation root by default:
 
 ```text
-/Users/lyston/Obsidian/lyston/Codex
+/home/<USER>/Obsidian/lyston/Codex
 ```
 
 Prefer this root even if older notes exist elsewhere, unless the user explicitly names another path. Create it if it is missing. Do not write documentation into project source trees, `/tmp`, `/root`, downloads, or ad hoc scratch folders unless the user explicitly asks.
@@ -16727,7 +16727,7 @@ Codex/
   lyston11.qzz.io/
 ```
 
-Top-level folders under `/Users/lyston/Obsidian/lyston/Codex` must be device, host, or environment names. Under each device directory, classify documents by […]
+Top-level folders under `/home/<USER>/Obsidian/lyston/Codex` must be device, host, or environment names. Under each device directory, classify documents by […]
 
 > AGENT
 
@@ -16739,8 +16739,8 @@ tool_use exec_command
 id: call_YcvFeiKkWM29mGo14cC0Cf5B
 ```json
 {
-  "cmd": "sed -n '330,430p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/05\\ 例文语料库与召回设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '330,430p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/05\\ 例文语料库与召回设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -16752,8 +16752,8 @@ tool_use exec_command
 id: call_E9fuP8nyWQuKEZtJVVId67Q7
 ```json
 {
-  "cmd": "sed -n '630,690p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '630,690p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/04\\ API\\ 与管理后台\\ BFF\\ 设计.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -16765,8 +16765,8 @@ tool_use exec_command
 id: call_9VYXRmJlE8c9x9i20AFqj7zw
 ```json
 {
-  "cmd": "sed -n '3450,3535p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '3450,3535p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -17037,8 +17037,8 @@ tool_use exec_command
 id: call_H1yGfG3ZedtmLGGFHVfsMgzM
 ```json
 {
-  "cmd": "sed -n '2470,2545p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '2470,2545p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -17050,8 +17050,8 @@ tool_use exec_command
 id: call_Zi8pi0bbTUUoLFNTbbFaQl5W
 ```json
 {
-  "cmd": "sed -n '3498,3535p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '3498,3535p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -17063,8 +17063,8 @@ tool_use exec_command
 id: call_zzXIpzjLbVbbcywXvDEn3sXw
 ```json
 {
-  "cmd": "sed -n '3880,3960p' /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '3880,3960p' /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -17314,8 +17314,8 @@ tool_use exec_command
 id: call_12INXdFJI3BqWcGaWlM2d8wl
 ```json
 {
-  "cmd": "rg -n \"LightRAG Graph Recall|include_graph_evidence|graph_evidence|LightRAGProvider|index_version\" /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/05\\ 例文语料库与召回设计.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/04\\ API\\ 与管理后台\\ BFF\\ 设计.md /Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"LightRAG Graph Recall|include_graph_evidence|graph_evidence|LightRAGProvider|index_version\" /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/05\\ 例文语料库与召回设计.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务'/04\\ API\\ 与管理后台\\ BFF\\ 设计.md /home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/'RAAP Agent 知识库服务开发文档.md'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -17327,8 +17327,8 @@ tool_use exec_command
 id: call_633vzm96On9SbES69zrC38dK
 ```json
 {
-  "cmd": "git -C /Users/lyston/Obsidian/lyston status --short -- Codex/lystonmacbook-pro.local/锐鲨",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "git -C /home/<USER>/Obsidian/lyston status --short -- Codex/lystonmacbook-pro.local/锐鲨",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -17344,24 +17344,24 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 748
 Output:
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2500:      "include_graph_evidence": true,
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2501:      "index_version": "latest"
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2541:  "graph_evidence": {
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2599:        "index_version": "example_lightrag_2026_05_25",
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3556:#### 9.9.3.1 LightRAG Graph Recall 的明确位置
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3607:  "index_version": "example_lightrag_2026_05_25"
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3614:LightRAGProvider.search(route, filters, limit):
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3639:  "graph_evidence": {
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3823:  key = route_query + filters + provider + index_version
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:383:#### 9.9.3.1 LightRAG Graph Recall 的明确位置
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:434:  "index_version": "example_lightrag_2026_05_25"
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:441:LightRAGProvider.search(route, filters, limit):
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:466:  "graph_evidence": {
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:650:  key = route_query + filters + provider + index_version
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:664:      "include_graph_evidence": true,
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:665:      "index_version": "latest"
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:705:  "graph_evidence": {
-/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:763:        "index_version": "example_lightrag_2026_05_25",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2500:      "include_graph_evidence": true,
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2501:      "index_version": "latest"
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2541:  "graph_evidence": {
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:2599:        "index_version": "example_lightrag_2026_05_25",
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3556:#### 9.9.3.1 LightRAG Graph Recall 的明确位置
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3607:  "index_version": "example_lightrag_2026_05_25"
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3614:LightRAGProvider.search(route, filters, limit):
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3639:  "graph_evidence": {
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务开发文档.md:3823:  key = route_query + filters + provider + index_version
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:383:#### 9.9.3.1 LightRAG Graph Recall 的明确位置
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:434:  "index_version": "example_lightrag_2026_05_25"
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:441:LightRAGProvider.search(route, filters, limit):
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:466:  "graph_evidence": {
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/05 例文语料库与召回设计.md:650:  key = route_query + filters + provider + index_version
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:664:      "include_graph_evidence": true,
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:665:      "index_version": "latest"
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:705:  "graph_evidence": {
+/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP Agent 知识库服务/04 API 与管理后台 BFF 设计.md:763:        "index_version": "example_lightrag_2026_05_25",
 
 ```
 
@@ -17385,9 +17385,9 @@ fatal: not a git repository (or any of the parent directories): .git
 
 我已经补成显式设计了：
 
-[05 例文语料库与召回设计.md](/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务/05%20例文语料库与召回设计.md:383)  
-[04 API 与管理后台 BFF 设计.md](/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务/04%20API%20与管理后台%20BFF%20设计.md:664)  
-[RAAP Agent 知识库服务开发文档.md](/Users/lyston/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务开发文档.md:3556)
+[05 例文语料库与召回设计.md](/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务/05%20例文语料库与召回设计.md:383)  
+[04 API 与管理后台 BFF 设计.md](/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务/04%20API%20与管理后台%20BFF%20设计.md:664)  
+[RAAP Agent 知识库服务开发文档.md](/home/<USER>/Obsidian/lyston/Codex/lystonmacbook-pro.local/锐鲨/RAAP%20Agent%20知识库服务开发文档.md:3556)
 
 现在定位是：
 
@@ -17478,8 +17478,8 @@ tool_use exec_command
 id: call_nvxgdGCRna5FbtIIpr3rbosx
 ```json
 {
-  "cmd": "ls -la /Users/lyston/PycharmProjects",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "ls -la /home/<USER>/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -17491,8 +17491,8 @@ tool_use exec_command
 id: call_ygNVkf1BrZYqCxVCt3tAhVti
 ```json
 {
-  "cmd": "find /Users/lyston/PycharmProjects/raap -maxdepth 2 -type f \\( -name 'pyproject.toml' -o -name 'requirements*.txt' -o -name 'package.json' -o -name 'pom.xml' -o -name 'README*' -o -name 'docker-compose*.yml' -o -name 'manage.py' \\)",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/PycharmProjects/raap -maxdepth 2 -type f \\( -name 'pyproject.toml' -o -name 'requirements*.txt' -o -name 'package.json' -o -name 'pom.xml' -o -name 'README*' -o -name 'docker-compose*.yml' -o -name 'manage.py' \\)",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -17504,8 +17504,8 @@ tool_use exec_command
 id: call_jIsMqAPgkhXEcK1zDNiItkLw
 ```json
 {
-  "cmd": "rg --files /Users/lyston/PycharmProjects/raap | sed -n '1,160p'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg --files /home/<USER>/PycharmProjects/raap | sed -n '1,160p'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -17553,13 +17553,13 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 96
 Output:
-/Users/lyston/PycharmProjects/raap/.pytest_cache/README.md
-/Users/lyston/PycharmProjects/raap/training/README.md
-/Users/lyston/PycharmProjects/raap/pyproject.toml
-/Users/lyston/PycharmProjects/raap/README.md
-/Users/lyston/PycharmProjects/raap/vllm-0.19.0/pyproject.toml
-/Users/lyston/PycharmProjects/raap/vllm-0.19.0/README.md
-/Users/lyston/PycharmProjects/raap/docker-compose.yml
+/home/<USER>/PycharmProjects/raap/.pytest_cache/README.md
+/home/<USER>/PycharmProjects/raap/training/README.md
+/home/<USER>/PycharmProjects/raap/pyproject.toml
+/home/<USER>/PycharmProjects/raap/README.md
+/home/<USER>/PycharmProjects/raap/vllm-0.19.0/pyproject.toml
+/home/<USER>/PycharmProjects/raap/vllm-0.19.0/README.md
+/home/<USER>/PycharmProjects/raap/docker-compose.yml
 
 ```
 
@@ -17573,166 +17573,166 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2946
 Output:
-/Users/lyston/PycharmProjects/raap/src/raap_agent/corpus.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/template_factory.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/demo_reports.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/template_store.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/learning.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/training_smoke.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/writer.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/api/routes.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/api/__pycache__/console.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/api/__pycache__/__init__.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/api/__pycache__/hitl_console.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/api/__pycache__/routes.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/api/__init__.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/api/console.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/api/hitl_console.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/app.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/langsmith_export.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/rag.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/guardrails.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/schemas.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/review.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/writer.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/learning.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/template_store.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/__init__.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/training_prep.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/hitl.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/rag.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/training_data.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/app.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/langsmith_export.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/llm.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/validation_suite.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/bootstrap.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/template_factory.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/evaluation.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/strategy.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/memory.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/trace.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/corpus.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/config.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/demo_reports.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/guardrails.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/training_smoke.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/review.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__pycache__/schemas.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/llm.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/base.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/profiles.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/llm_expert.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/builtin.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/__pycache__/profiles.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/__pycache__/__init__.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/__pycache__/builtin.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/__pycache__/llm_expert.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/__pycache__/registry.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/__pycache__/base.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/__init__.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/agents/registry.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/strategy.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/__init__.py
-/Users/lyston/PycharmProjects/raap/docker-compose.yml
-/Users/lyston/PycharmProjects/raap/src/raap_agent/hitl.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/config.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/trace.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/bootstrap.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/training_data.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/memory.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/validation_suite.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/evaluation.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/training_prep.py
-/Users/lyston/PycharmProjects/raap/docs/DEPLOYMENT.md
-/Users/lyston/PycharmProjects/raap/docs/ARCHITECTURE.md
-/Users/lyston/PycharmProjects/raap/Dockerfile
-/Users/lyston/PycharmProjects/raap/Makefile
-/Users/lyston/PycharmProjects/raap/tests/test_validation_suite.py
-/Users/lyston/PycharmProjects/raap/tests/test_evaluation.py
-/Users/lyston/PycharmProjects/raap/tests/test_workflow.py
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_validation_suite.cpython-312-pytest-9.0.3.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_validation_suite.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_workflow.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_demo_reports.cpython-312-pytest-9.0.3.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_demo_reports.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_workflow.cpython-312-pytest-9.0.3.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_training_prep.cpython-312-pytest-9.0.3.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_training_data.cpython-312-pytest-9.0.3.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_training_smoke.cpython-312-pytest-9.0.3.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_training_smoke.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_training_data.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_training_prep.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_evaluation.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/tests/__pycache__/test_evaluation.cpython-312-pytest-9.0.3.pyc
-/Users/lyston/PycharmProjects/raap/tests/test_training_prep.py
-/Users/lyston/PycharmProjects/raap/tests/test_demo_reports.py
-/Users/lyston/PycharmProjects/raap/tests/test_training_smoke.py
-/Users/lyston/PycharmProjects/raap/tests/test_training_data.py
-/Users/lyston/PycharmProjects/raap/pyproject.toml
-/Users/lyston/PycharmProjects/raap/Todo.md
-/Users/lyston/PycharmProjects/raap/README.md
-/Users/lyston/PycharmProjects/raap/vllm-0.19.0.tar.gz
-/Users/lyston/PycharmProjects/raap/env/prod-like.env
-/Users/lyston/PycharmProjects/raap/env/dev.env
-/Users/lyston/PycharmProjects/raap/env/demo.env
-/Users/lyston/PycharmProjects/raap/deploy/k8s/vllm.yaml
-/Users/lyston/PycharmProjects/raap/deploy/k8s/qdrant.yaml
-/Users/lyston/PycharmProjects/raap/deploy/k8s/configmap.yaml
-/Users/lyston/PycharmProjects/raap/deploy/k8s/namespace.yaml
-/Users/lyston/PycharmProjects/raap/deploy/k8s/kustomization.yaml
-/Users/lyston/PycharmProjects/raap/deploy/k8s/api.yaml
-/Users/lyston/PycharmProjects/raap/scripts/clean_demo_artifacts.sh
-/Users/lyston/PycharmProjects/raap/scripts/start_vllm_generation_server.sh
-/Users/lyston/PycharmProjects/raap/scripts/run_training_smoke.sh
-/Users/lyston/PycharmProjects/raap/scripts/run_demo_scenario.sh
-/Users/lyston/PycharmProjects/raap/scripts/start_vllm_rerank_server.sh
-/Users/lyston/PycharmProjects/raap/scripts/run_validation_suite.sh
-/Users/lyston/PycharmProjects/raap/scripts/run_training_cpu_smoke.sh
-/Users/lyston/PycharmProjects/raap/scripts/run_vllm_qdrant_smoke.sh
-/Users/lyston/PycharmProjects/raap/scripts/start_vllm_embedding_server.sh
-/Users/lyston/PycharmProjects/raap/scripts/run_eval_dataset.sh
-/Users/lyston/PycharmProjects/raap/src/raap_agent/graph/state.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/graph/workflow.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent.egg-info/dependency_links.txt
-/Users/lyston/PycharmProjects/raap/src/raap_agent.egg-info/top_level.txt
-/Users/lyston/PycharmProjects/raap/src/raap_agent.egg-info/requires.txt
-/Users/lyston/PycharmProjects/raap/src/raap_agent.egg-info/SOURCES.txt
-/Users/lyston/PycharmProjects/raap/src/raap_agent.egg-info/PKG-INFO
-/Users/lyston/PycharmProjects/raap/training/llamafactory/writer_sft_qwen25_1_5b_lora.yaml
-/Users/lyston/PycharmProjects/raap/training/llamafactory/README.md
-/Users/lyston/PycharmProjects/raap/training/llamafactory/preference_dpo_qwen25_1_5b_lora.yaml
-/Users/lyston/PycharmProjects/raap/training/llamafactory/__pycache__/prepare_datasets.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/training/llamafactory/prepare_datasets.py
-/Users/lyston/PycharmProjects/raap/training/README.md
-/Users/lyston/PycharmProjects/raap/src/raap_agent/training/cpu_smoke.py
-/Users/lyston/PycharmProjects/raap/src/raap_agent/training/__init__.py
-/Users/lyston/PycharmProjects/raap/training/unsloth/README.md
-/Users/lyston/PycharmProjects/raap/src/raap_agent/training/__pycache__/__init__.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/training/__pycache__/cpu_smoke.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/graph/__pycache__/__init__.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/graph/__pycache__/state.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/graph/__pycache__/workflow.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/src/raap_agent/graph/__init__.py
-/Users/lyston/PycharmProjects/raap/training/unsloth/__pycache__/train_writer_sft.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap/training/unsloth/train_writer_sft.py
-/Users/lyston/PycharmProjects/raap/data/hitl/requests.json
-/Users/lyston/PycharmProjects/raap/data/learning/style_patterns.jsonl
-/Users/lyston/PycharmProjects/raap/data/learning/template_performance.json
-/Users/lyston/PycharmProjects/raap/data/evals/baseline.json
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/corpus.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/template_factory.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/learning.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/writer.py
-/Users/lyston/PycharmProjects/raap/data/corpus/articles.jsonl
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/api/routes.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/api/__init__.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/app.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/rag.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/schemas.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/review.py
-/Users/lyston/PycharmProjects/raap/build/lib/raap_agent/llm.py
-/Users/lyston/PycharmProjects/raap/data/observability/run_traces.json
+/home/<USER>/PycharmProjects/raap/src/raap_agent/corpus.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/template_factory.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/demo_reports.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/template_store.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/learning.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/training_smoke.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/writer.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/api/routes.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/api/__pycache__/console.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/api/__pycache__/__init__.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/api/__pycache__/hitl_console.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/api/__pycache__/routes.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/api/__init__.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/api/console.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/api/hitl_console.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/app.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/langsmith_export.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/rag.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/guardrails.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/schemas.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/review.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/writer.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/learning.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/template_store.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/__init__.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/training_prep.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/hitl.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/rag.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/training_data.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/app.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/langsmith_export.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/llm.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/validation_suite.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/bootstrap.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/template_factory.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/evaluation.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/strategy.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/memory.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/trace.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/corpus.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/config.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/demo_reports.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/guardrails.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/training_smoke.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/review.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__pycache__/schemas.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/llm.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/base.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/profiles.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/llm_expert.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/builtin.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/__pycache__/profiles.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/__pycache__/__init__.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/__pycache__/builtin.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/__pycache__/llm_expert.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/__pycache__/registry.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/__pycache__/base.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/__init__.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/agents/registry.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/strategy.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/__init__.py
+/home/<USER>/PycharmProjects/raap/docker-compose.yml
+/home/<USER>/PycharmProjects/raap/src/raap_agent/hitl.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/config.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/trace.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/bootstrap.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/training_data.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/memory.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/validation_suite.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/evaluation.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/training_prep.py
+/home/<USER>/PycharmProjects/raap/docs/DEPLOYMENT.md
+/home/<USER>/PycharmProjects/raap/docs/ARCHITECTURE.md
+/home/<USER>/PycharmProjects/raap/Dockerfile
+/home/<USER>/PycharmProjects/raap/Makefile
+/home/<USER>/PycharmProjects/raap/tests/test_validation_suite.py
+/home/<USER>/PycharmProjects/raap/tests/test_evaluation.py
+/home/<USER>/PycharmProjects/raap/tests/test_workflow.py
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_validation_suite.cpython-312-pytest-9.0.3.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_validation_suite.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_workflow.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_demo_reports.cpython-312-pytest-9.0.3.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_demo_reports.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_workflow.cpython-312-pytest-9.0.3.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_training_prep.cpython-312-pytest-9.0.3.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_training_data.cpython-312-pytest-9.0.3.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_training_smoke.cpython-312-pytest-9.0.3.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_training_smoke.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_training_data.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_training_prep.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_evaluation.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/tests/__pycache__/test_evaluation.cpython-312-pytest-9.0.3.pyc
+/home/<USER>/PycharmProjects/raap/tests/test_training_prep.py
+/home/<USER>/PycharmProjects/raap/tests/test_demo_reports.py
+/home/<USER>/PycharmProjects/raap/tests/test_training_smoke.py
+/home/<USER>/PycharmProjects/raap/tests/test_training_data.py
+/home/<USER>/PycharmProjects/raap/pyproject.toml
+/home/<USER>/PycharmProjects/raap/Todo.md
+/home/<USER>/PycharmProjects/raap/README.md
+/home/<USER>/PycharmProjects/raap/vllm-0.19.0.tar.gz
+/home/<USER>/PycharmProjects/raap/env/prod-like.env
+/home/<USER>/PycharmProjects/raap/env/dev.env
+/home/<USER>/PycharmProjects/raap/env/demo.env
+/home/<USER>/PycharmProjects/raap/deploy/k8s/vllm.yaml
+/home/<USER>/PycharmProjects/raap/deploy/k8s/qdrant.yaml
+/home/<USER>/PycharmProjects/raap/deploy/k8s/configmap.yaml
+/home/<USER>/PycharmProjects/raap/deploy/k8s/namespace.yaml
+/home/<USER>/PycharmProjects/raap/deploy/k8s/kustomization.yaml
+/home/<USER>/PycharmProjects/raap/deploy/k8s/api.yaml
+/home/<USER>/PycharmProjects/raap/scripts/clean_demo_artifacts.sh
+/home/<USER>/PycharmProjects/raap/scripts/start_vllm_generation_server.sh
+/home/<USER>/PycharmProjects/raap/scripts/run_training_smoke.sh
+/home/<USER>/PycharmProjects/raap/scripts/run_demo_scenario.sh
+/home/<USER>/PycharmProjects/raap/scripts/start_vllm_rerank_server.sh
+/home/<USER>/PycharmProjects/raap/scripts/run_validation_suite.sh
+/home/<USER>/PycharmProjects/raap/scripts/run_training_cpu_smoke.sh
+/home/<USER>/PycharmProjects/raap/scripts/run_vllm_qdrant_smoke.sh
+/home/<USER>/PycharmProjects/raap/scripts/start_vllm_embedding_server.sh
+/home/<USER>/PycharmProjects/raap/scripts/run_eval_dataset.sh
+/home/<USER>/PycharmProjects/raap/src/raap_agent/graph/state.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/graph/workflow.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent.egg-info/dependency_links.txt
+/home/<USER>/PycharmProjects/raap/src/raap_agent.egg-info/top_level.txt
+/home/<USER>/PycharmProjects/raap/src/raap_agent.egg-info/requires.txt
+/home/<USER>/PycharmProjects/raap/src/raap_agent.egg-info/SOURCES.txt
+/home/<USER>/PycharmProjects/raap/src/raap_agent.egg-info/PKG-INFO
+/home/<USER>/PycharmProjects/raap/training/llamafactory/writer_sft_qwen25_1_5b_lora.yaml
+/home/<USER>/PycharmProjects/raap/training/llamafactory/README.md
+/home/<USER>/PycharmProjects/raap/training/llamafactory/preference_dpo_qwen25_1_5b_lora.yaml
+/home/<USER>/PycharmProjects/raap/training/llamafactory/__pycache__/prepare_datasets.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/training/llamafactory/prepare_datasets.py
+/home/<USER>/PycharmProjects/raap/training/README.md
+/home/<USER>/PycharmProjects/raap/src/raap_agent/training/cpu_smoke.py
+/home/<USER>/PycharmProjects/raap/src/raap_agent/training/__init__.py
+/home/<USER>/PycharmProjects/raap/training/unsloth/README.md
+/home/<USER>/PycharmProjects/raap/src/raap_agent/training/__pycache__/__init__.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/training/__pycache__/cpu_smoke.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/graph/__pycache__/__init__.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/graph/__pycache__/state.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/graph/__pycache__/workflow.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/src/raap_agent/graph/__init__.py
+/home/<USER>/PycharmProjects/raap/training/unsloth/__pycache__/train_writer_sft.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap/training/unsloth/train_writer_sft.py
+/home/<USER>/PycharmProjects/raap/data/hitl/requests.json
+/home/<USER>/PycharmProjects/raap/data/learning/style_patterns.jsonl
+/home/<USER>/PycharmProjects/raap/data/learning/template_performance.json
+/home/<USER>/PycharmProjects/raap/data/evals/baseline.json
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/corpus.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/template_factory.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/learning.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/writer.py
+/home/<USER>/PycharmProjects/raap/data/corpus/articles.jsonl
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/api/routes.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/api/__init__.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/app.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/rag.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/schemas.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/review.py
+/home/<USER>/PycharmProjects/raap/build/lib/raap_agent/llm.py
+/home/<USER>/PycharmProjects/raap/data/observability/run_traces.json
 
 ```
 
@@ -17855,8 +17855,8 @@ tool_use exec_command
 id: call_kIFvRcWEUqpMuXkf1TJGcTOm
 ```json
 {
-  "cmd": "ls -la /Users/lyston/PycharmProjects",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "ls -la /home/<USER>/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -17868,8 +17868,8 @@ tool_use exec_command
 id: call_leKmzPtl4QfPcJb4nmObolOm
 ```json
 {
-  "cmd": "find /Users/lyston/PycharmProjects -maxdepth 1 -type d -name '*recall*' -o -name '*knowledge*' -o -name '*example*'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "find /home/<USER>/PycharmProjects -maxdepth 1 -type d -name '*recall*' -o -name '*knowledge*' -o -name '*example*'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -17922,7 +17922,7 @@ Output:
 
 > AGENT
 
-我会做成一个完全独立的小项目：`/Users/lyston/PycharmProjects/raap-example-recall`。里面会有本地 JSON 存储、纯 Python 召回核心、HTTP API、CLI 和测试；这样你等下贴例文可以直接 POST 入库，或者用 CLI 导入。
+我会做成一个完全独立的小项目：`/home/<USER>/PycharmProjects/raap-example-recall`。里面会有本地 JSON 存储、纯 Python 召回核心、HTTP API、CLI 和测试；这样你等下贴例文可以直接 POST 入库，或者用 CLI 导入。
 
 > TOOL
 
@@ -17930,8 +17930,8 @@ tool_use exec_command
 id: call_Y7TYOrMFffmvwybfTi0dfQYO
 ```json
 {
-  "cmd": "mkdir -p /Users/lyston/PycharmProjects/raap-example-recall/example_recall",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "mkdir -p /home/<USER>/PycharmProjects/raap-example-recall/example_recall",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -17943,8 +17943,8 @@ tool_use exec_command
 id: call_arc8hfpnYTFGFXbvyydZIgpA
 ```json
 {
-  "cmd": "mkdir -p /Users/lyston/PycharmProjects/raap-example-recall/tests",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "mkdir -p /home/<USER>/PycharmProjects/raap-example-recall/tests",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -17956,8 +17956,8 @@ tool_use exec_command
 id: call_cOM7UGkf1pSaQg7YWTKHAA8A
 ```json
 {
-  "cmd": "mkdir -p /Users/lyston/PycharmProjects/raap-example-recall/data",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "mkdir -p /home/<USER>/PycharmProjects/raap-example-recall/data",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -17970,7 +17970,7 @@ id: call_gedkYbFFm2HYIFoqddmcHbFe
 ```json
 {
   "cmd": "python3 --version",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -18087,7 +18087,7 @@ id: call_wKIEDZmvchKu88OOrgsDI00Z
 ```json
 {
   "cmd": "python3 -c \"import pydantic; print('pydantic', pydantic.__version__)\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -18100,7 +18100,7 @@ id: call_O12sbLiGWTxwWbrXGTJ6m4xr
 ```json
 {
   "cmd": "python3 -c \"import fastapi; print('fastapi', fastapi.__version__)\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -18113,7 +18113,7 @@ id: call_9PY8H5hKYk1viOgN2HvMQH6K
 ```json
 {
   "cmd": "python3 -c \"import uvicorn; print('uvicorn', uvicorn.__version__)\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -18129,7 +18129,7 @@ Wall time: 0.1534 seconds
 Process exited with code 0
 Original token count: 59
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28791_1779700769008". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28791_1779700769008". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 pydantic 2.13.3
 
 ```
@@ -18144,7 +18144,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 85
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28790_1779700769008". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28790_1779700769008". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 Traceback (most recent call last):
   File "<string>", line 1, in <module>
 ModuleNotFoundError: No module named 'fastapi'
@@ -18161,7 +18161,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 85
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28789_1779700769008". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28789_1779700769008". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 Traceback (most recent call last):
   File "<string>", line 1, in <module>
 ModuleNotFoundError: No module named 'uvicorn'
@@ -18187,7 +18187,7 @@ id: call_glZzFtdUzSFr6m75UOygS7kt
 ```json
 {
   "cmd": "python3 -m pytest -q",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18200,7 +18200,7 @@ id: call_sYBgv9u8GrjzUCJyyLtpLvmu
 ```json
 {
   "cmd": "python3 -m example_recall.cli clear",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -18216,7 +18216,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 74
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29078_1779700830168". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29078_1779700830168". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 /Library/Developer/CommandLineTools/usr/bin/python3: No module named pytest
 
 ```
@@ -18231,11 +18231,11 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 902
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29082_1779700830168". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29082_1779700830168". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 Traceback (most recent call last):
-  File "/Users/lyston/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_typing_extra.py", line 511, in _eval_type_backport
+  File "/home/<USER>/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_typing_extra.py", line 511, in _eval_type_backport
     return _eval_type(value, globalns, localns, type_params)
-  File "/Users/lyston/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_typing_extra.py", line 564, in _eval_type
+  File "/home/<USER>/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_typing_extra.py", line 564, in _eval_type
     return typing._eval_type(  # type: ignore
   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/typing.py", line 290, in _eval_type
     return t._evaluate(globalns, localns, recursive_guard)
@@ -18251,17 +18251,17 @@ Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
     exec(code, run_globals)
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py", line 7, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py", line 7, in <module>
     from .models import ExampleCreate, SearchRequest
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py", line 22, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py", line 22, in <module>
     class ExampleCreate(BaseModel):
-  File "/Users/lyston/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_model_construction.py", line 243, in __new__
+  File "/home/<USER>/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_model_construction.py", line 243, in __new__
     set_model_fields(cls, config_wrapper=config_wrapper, ns_resolver=ns_resolver)
-  File "/Users/lyston/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_model_construction.py", line 579, in set_model_fields
+  File "/home/<USER>/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_model_construction.py", line 579, in set_model_fields
     fields, pydantic_extra_info, class_vars = collect_model_fields(
-  File "/Users/lyston/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_fields.py", line 265, in collect_model_fields
+  File "/home/<USER>/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_fields.py", line 265, in collect_model_fields
     type_hints = _typing_extra.get_model_type_hints(cls, ns_resolver=ns_resolver)
-  File "/Users/lyston/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_typing_extra.py", line 368, in get_model_type_hints
+  File "/home/<USER>/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_typing_extra.py", line 368, in get_model_type_hints
     hints[name] = try_eval_type(value, globalns, […]
 
 > AGENT
@@ -18274,8 +18274,8 @@ tool_use exec_command
 id: call_T5GigckhYnlMRqZJF6sDckRZ
 ```json
 {
-  "cmd": "rg -n \"\\| None|\\| str|\\| list|\\| dict|\\| Literal|\\| Any\" /Users/lyston/PycharmProjects/raap-example-recall/example_recall /Users/lyston/PycharmProjects/raap-example-recall/tests /Users/lyston/PycharmProjects/raap-example-recall/pyproject.toml",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "cmd": "rg -n \"\\| None|\\| str|\\| list|\\| dict|\\| Literal|\\| Any\" /home/<USER>/PycharmProjects/raap-example-recall/example_recall /home/<USER>/PycharmProjects/raap-example-recall/tests /home/<USER>/PycharmProjects/raap-example-recall/pyproject.toml",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18288,7 +18288,7 @@ id: call_k4DmBn5RawzjL94pSHcv043n
 ```json
 {
   "cmd": "python3 -c \"import sys; print(sys.version); print(sys.executable)\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -18304,21 +18304,21 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 568
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29206_1779700849911". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/text.py:130:def section_type_from_title(title: str) -> SectionType | None:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/store.py:15:    def __init__(self, path: Path | str = DEFAULT_DATA_PATH) -> None:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:41:    def __init__(self, examples: list[ExampleDocument], config: RecallConfig | None = None) -> None:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:178:        graph_evidence: dict[str, Any] | None = None
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:263:    def assemble_pack(self, candidates: list[Candidate]) -> tuple[SelectedExample | None, list[SelectedExample]]:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:274:    def _pack_from_doc(self, candidates: list[Candidate]) -> SelectedExample | None:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:342:    def _find_doc(self, document_id: str) -> ExampleDocument | None:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:345:    def build_trace(self, raw_candidates: list[Candidate], fused: list[Candidate], selected: SelectedExample | None) -> dict[str, Any]:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:373:def _expand_terms(tokens: set[str] | list[str]) -> list[str]:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py:26:    source_url: str | None = None
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py:46:    source_url: str | None = None
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py:85:    graph_evidence: dict[str, Any] | None = None
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py:110:    platform: str | None = None
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py:119:    selected_example: SelectedExample | None = None
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29206_1779700849911". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/text.py:130:def section_type_from_title(title: str) -> SectionType | None:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/store.py:15:    def __init__(self, path: Path | str = DEFAULT_DATA_PATH) -> None:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:41:    def __init__(self, examples: list[ExampleDocument], config: RecallConfig | None = None) -> None:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:178:        graph_evidence: dict[str, Any] | None = None
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:263:    def assemble_pack(self, candidates: list[Candidate]) -> tuple[SelectedExample | None, list[SelectedExample]]:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:274:    def _pack_from_doc(self, candidates: list[Candidate]) -> SelectedExample | None:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:342:    def _find_doc(self, document_id: str) -> ExampleDocument | None:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:345:    def build_trace(self, raw_candidates: list[Candidate], fused: list[Candidate], selected: SelectedExample | None) -> dict[str, Any]:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:373:def _expand_terms(tokens: set[str] | list[str]) -> list[str]:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py:26:    source_url: str | None = None
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py:46:    source_url: str | None = None
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py:85:    graph_evidence: dict[str, Any] | None = None
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py:110:    platform: str | None = None
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py:119:    selected_example: SelectedExample | None = None
 
 ```
 
@@ -18332,7 +18332,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 87
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29205_1779700849911". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29205_1779700849911". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 3.9.6 (default, Aug  8 2025, 19:06:38) 
 [Clang 17.0.0 (clang-1700.3.19.1)]
 /Library/Developer/CommandLineTools/usr/bin/python3
@@ -18354,7 +18354,7 @@ id: call_Oe0vFU9nS1CGJKRtoLKCX3HX
 ```json
 {
   "cmd": "python3 -m example_recall.cli clear",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -18367,7 +18367,7 @@ id: call_hWz8iF2kn2gSYWrqyWe22QqQ
 ```json
 {
   "cmd": "python3 -m example_recall.cli add --title 一到换季孩子就中招 --platform xiaohongshu --tag 换季 --tag 感冒 --tag 母婴 --quality-score 0.92 --content-file examples/seasonal_cold.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18380,7 +18380,7 @@ id: call_BJyqdfzUyvicbsCRigohE98L
 ```json
 {
   "cmd": "python3 -m example_recall.cli add --title 凌晨三点的新手妈妈哄睡记录 --platform xiaohongshu --tag 睡眠 --tag 母婴 --quality-score 0.88 --content-file examples/sleep_mom.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18396,7 +18396,7 @@ Wall time: 0.1838 seconds
 Process exited with code 0
 Original token count: 58
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29489_1779700913811". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29489_1779700913811". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 {"ok": true}
 
 ```
@@ -18411,7 +18411,7 @@ Wall time: 0.1748 seconds
 Process exited with code 0
 Original token count: 818
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29490_1779700913811". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29490_1779700913811". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 {
   "document_id": "b8524ef4-c7e8-4322-9a62-21390c58fa0f",
   "document_version_id": "caa7d1c9-ef0f-4d9d-864e-a20631ad7a28",
@@ -18479,7 +18479,7 @@ Wall time: 0.1757 seconds
 Process exited with code 0
 Original token count: 804
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29491_1779700913811". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29491_1779700913811". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 {
   "document_id": "4d5fac08-6a12-441e-8f50-72f5255b3280",
   "document_version_id": "57b5c56c-724e-43ef-84f3-8ece3137fd4a",
@@ -18547,7 +18547,7 @@ id: call_xkS3eHMq5lLxk5QZ90AVTRoB
 ```json
 {
   "cmd": "python3 -m example_recall.cli list",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -18561,7 +18561,7 @@ id: call_BsOwbnFPKNEMctBBNFFDA8zh
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 换季感冒频繁",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -18581,9 +18581,9 @@ Output:
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py", line 7, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py", line 7, in <module>
     from .models import ExampleCreate, SearchRequest
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py", line 7, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py", line 7, in <module>
     from pydantic import BaseModel, Field
 ModuleNotFoundError: No module named 'pydantic'
 
@@ -18602,9 +18602,9 @@ Output:
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py", line 7, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py", line 7, in <module>
     from .models import ExampleCreate, SearchRequest
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py", line 7, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py", line 7, in <module>
     from pydantic import BaseModel, Field
 ModuleNotFoundError: No module named 'pydantic'
 
@@ -18624,8 +18624,8 @@ tool_use exec_command
 id: call_wpEyRNzj9OSx94IpWhWQ1TB0
 ```json
 {
-  "cmd": "rg -n \"model_dump|model_validate|pydantic|BaseModel|Field|ValidationError\" /Users/lyston/PycharmProjects/raap-example-recall/example_recall /Users/lyston/PycharmProjects/raap-example-recall/tests",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "cmd": "rg -n \"model_dump|model_validate|pydantic|BaseModel|Field|ValidationError\" /home/<USER>/PycharmProjects/raap-example-recall/example_recall /home/<USER>/PycharmProjects/raap-example-recall/tests",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18637,8 +18637,8 @@ tool_use exec_command
 id: call_wDiLiVWkSILr0pOEqFxt0aYa
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/PycharmProjects/raap-example-recall/example_recall/store.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "cmd": "sed -n '1,220p' /home/<USER>/PycharmProjects/raap-example-recall/example_recall/store.py",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -18650,8 +18650,8 @@ tool_use exec_command
 id: call_MERBebXwjzwsj1Ahyt7jyHS5
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "cmd": "sed -n '1,220p' /home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18667,19 +18667,19 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 510
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29807_1779700989879". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py:45:        print(json.dumps(document.model_dump(mode="json"), ensure_ascii=False, indent=2))
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py:55:        print(json.dumps(response.model_dump(mode="json"), ensure_ascii=False, indent=2))
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py:59:        print(json.dumps([item.model_dump(mode="json") for item in store.list_examples()], ensure_ascii=False, indent=2))
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py:9:from pydantic import ValidationError
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py:28:            self._json([item.model_dump(mode="json") for item in store.list_examples()])
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py:37:                example = store.add_example(ExampleCreate.model_validate(payload))
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py:38:                self._json(example.model_dump(mode="json"), HTTPStatus.CREATED)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py:41:                request = SearchRequest.model_validate(payload)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py:43:                self._json(response.model_dump(mode="json"))
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py:46:        except ValidationError as exc:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/store.py:50:        return [ExampleDocument.model_validate(item) for item in raw]
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/store.py:53:        data = [example.model_dump(mode="json") for example in examples]
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29807_1779700989879". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py:45:        print(json.dumps(document.model_dump(mode="json"), ensure_ascii=False, indent=2))
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py:55:        print(json.dumps(response.model_dump(mode="json"), ensure_ascii=False, indent=2))
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py:59:        print(json.dumps([item.model_dump(mode="json") for item in store.list_examples()], ensure_ascii=False, indent=2))
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py:9:from pydantic import ValidationError
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py:28:            self._json([item.model_dump(mode="json") for item in store.list_examples()])
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py:37:                example = store.add_example(ExampleCreate.model_validate(payload))
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py:38:                self._json(example.model_dump(mode="json"), HTTPStatus.CREATED)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py:41:                request = SearchRequest.model_validate(payload)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py:43:                self._json(response.model_dump(mode="json"))
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py:46:        except ValidationError as exc:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/store.py:50:        return [ExampleDocument.model_validate(item) for item in raw]
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/store.py:53:        data = [example.model_dump(mode="json") for example in examples]
 
 ```
 
@@ -18693,7 +18693,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 526
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29806_1779700989879". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29806_1779700989879". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 import json
@@ -18761,7 +18761,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 804
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29805_1779700989879". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29805_1779700989879". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 import json
@@ -18840,7 +18840,7 @@ id: call_YBGYNUKtI2hdPEcl2jrBtVmD
 ```json
 {
   "cmd": "python3 -m example_recall.cli clear",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -18868,7 +18868,7 @@ id: call_hajJeN6jhhtbnXIIcLLFIFNl
 ```json
 {
   "cmd": "python3 -m example_recall.cli add --title 一到换季孩子就中招 --platform xiaohongshu --tag 换季 --tag 感冒 --tag 母婴 --quality-score 0.92 --content-file examples/seasonal_cold.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "login": false
@@ -18949,7 +18949,7 @@ id: call_qSotG2fEJMcPZNzoCk1S0KN6
 ```json
 {
   "cmd": "python3 -m example_recall.cli add --title 凌晨三点的新手妈妈哄睡记录 --platform xiaohongshu --tag 睡眠 --tag 母婴 --quality-score 0.88 --content-file examples/sleep_mom.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "login": false
@@ -19029,7 +19029,7 @@ id: call_nJkjU3d0Y6lO9utJSaJFu0UM
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 换季感冒频繁",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false
@@ -19152,7 +19152,7 @@ id: call_9s4KrPzMbGNYMDvKPaqncl6q
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 换季感冒频繁",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000,
   "login": false
@@ -19318,7 +19318,7 @@ id: call_78IA2S2CSEzSVnyOfUYRm3PS
 ```json
 {
   "cmd": "python3 scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false
@@ -19336,7 +19336,7 @@ Process exited with code 1
 Original token count: 66
 Output:
 Traceback (most recent call last):
-  File "/Users/lyston/PycharmProjects/raap-example-recall/scripts/smoke.py", line 6, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/scripts/smoke.py", line 6, in <module>
     from example_recall.models import ExampleCreate, SearchRequest, to_dict
 ModuleNotFoundError: No module named 'example_recall'
 
@@ -19353,7 +19353,7 @@ id: call_FlpjxByFNjH88c6cLxT3848I
 ```json
 {
   "cmd": "python3 scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000,
   "login": false
@@ -19476,7 +19476,7 @@ id: call_a7mfHSzyHCN1V0ptutYM8ZAo
 ```json
 {
   "cmd": "python3 scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -19598,8 +19598,8 @@ tool_use exec_command
 id: call_50FHFBujBzfoB6rDJ1dZ3tyj
 ```json
 {
-  "cmd": "find /Users/lyston/PycharmProjects/raap-example-recall -maxdepth 3 -type f | sort",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "cmd": "find /home/<USER>/PycharmProjects/raap-example-recall -maxdepth 3 -type f | sort",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -19613,7 +19613,7 @@ id: call_4iLmG68BZFZbi2AgGCEwNIRU
 ```json
 {
   "cmd": "python3 -m compileall -q example_recall scripts",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -19627,7 +19627,7 @@ id: call_XoLpqJ6iMLmMxFV6pfqC9OzG
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 换季感冒频繁 --hits",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -19644,28 +19644,28 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 436
 Output:
-/Users/lyston/PycharmProjects/raap-example-recall/README.md
-/Users/lyston/PycharmProjects/raap-example-recall/data/examples.json
-/Users/lyston/PycharmProjects/raap-example-recall/data/smoke_examples.json
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__init__.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/__init__.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/cli.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/models.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/recall.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/store.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/text.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/api.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/store.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/text.py
-/Users/lyston/PycharmProjects/raap-example-recall/examples/seasonal_cold.md
-/Users/lyston/PycharmProjects/raap-example-recall/examples/sleep_mom.md
-/Users/lyston/PycharmProjects/raap-example-recall/pyproject.toml
-/Users/lyston/PycharmProjects/raap-example-recall/scripts/smoke.py
-/Users/lyston/PycharmProjects/raap-example-recall/tests/test_recall.py
+/home/<USER>/PycharmProjects/raap-example-recall/README.md
+/home/<USER>/PycharmProjects/raap-example-recall/data/examples.json
+/home/<USER>/PycharmProjects/raap-example-recall/data/smoke_examples.json
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__init__.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/__init__.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/cli.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/models.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/recall.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/store.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/text.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/api.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/store.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/text.py
+/home/<USER>/PycharmProjects/raap-example-recall/examples/seasonal_cold.md
+/home/<USER>/PycharmProjects/raap-example-recall/examples/sleep_mom.md
+/home/<USER>/PycharmProjects/raap-example-recall/pyproject.toml
+/home/<USER>/PycharmProjects/raap-example-recall/scripts/smoke.py
+/home/<USER>/PycharmProjects/raap-example-recall/tests/test_recall.py
 
 ```
 
@@ -19798,7 +19798,7 @@ id: call_MKJcKCcSzYM9B56zYzNkrHLI
 ```json
 {
   "cmd": "python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -19818,9 +19818,9 @@ Output:
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py", line 83, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py", line 83, in <module>
     main()
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py", line 77, in main
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py", line 77, in main
     server = ThreadingHTTPServer(("127.0.0.1", 8791), Handler)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/socketserver.py", line 457, in __init__
@@ -19844,7 +19844,7 @@ id: call_u36YaKvVPv30zzb0AM08OWXA
 ```json
 {
   "cmd": "python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -19882,7 +19882,7 @@ id: call_bI5vXqqQ1FQPIGvZOBORD9Sk
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8791/health",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -19895,7 +19895,7 @@ id: call_cCoBABAek8CrS3yR1YCUKPj2
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8791/api/v1/examples",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -20034,7 +20034,7 @@ id: call_NtjuLlE83rX5XpAjEAntUhw6
 ```json
 {
   "cmd": "curl -fsS -X POST http://127.0.0.1:8791/api/v1/example-corpus/search -H 'Content-Type: application/json' -d '{\"query\":\"换季感冒频繁\",\"return_mode\":\"example_pack\"}'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -20192,7 +20192,7 @@ Plan updated
 
 对，刚才是我欠了一步。现在已经重新在独立目录起了一个可跑项目：
 
-[raap-example-recall](/Users/lyston/PycharmProjects/raap-example-recall)
+[raap-example-recall](/home/<USER>/PycharmProjects/raap-example-recall)
 
 它现在已经实现了这个小闭环：
 
@@ -20294,7 +20294,7 @@ closing：结尾段
 
 现在项目里这一步在：
 
-[example_recall/text.py](/Users/lyston/PycharmProjects/raap-example-recall/example_recall/text.py)
+[example_recall/text.py](/home/<USER>/PycharmProjects/raap-example-recall/example_recall/text.py)
 
 当前规则是：
 
@@ -20389,7 +20389,7 @@ id: call_LHvo1ZwPzaJIiLyr6XN5iF6A
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'example_recall.server|raap-example-recall'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -20402,7 +20402,7 @@ id: call_Plg0XkDyHPnC37gb5GIZdjsh
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8791/health",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -20418,7 +20418,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 64
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/31872_1779701480044". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/31872_1779701480044". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 zsh:1: operation not permitted: ps
 
 ```
@@ -20483,7 +20483,7 @@ id: call_A51L2ze3gAX11hWz8wGqknEe
 ```json
 {
   "cmd": "sed -n '1,240p' example_recall/models.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -20497,7 +20497,7 @@ id: call_GC8y738cUIJSSDT6poDfDp5g
 ```json
 {
   "cmd": "sed -n '1,440p' example_recall/recall.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000,
   "login": false
@@ -20511,7 +20511,7 @@ id: call_5rrkFslIrtNpJ5wcB92utw8q
 ```json
 {
   "cmd": "sed -n '1,120p' example_recall/store.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -20748,7 +20748,7 @@ id: call_Vv2zM5woh9SiUyEjQXFcRFWO
 ```json
 {
   "cmd": "rg -n \"section|reference_sections|hook|problem_scene|product_bridge|拆\" README.md scripts tests example_recall",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -20762,7 +20762,7 @@ id: call_NQRYwuyxvnS3khu35Qn7Y8G0
 ```json
 {
   "cmd": "sed -n '1,220p' README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -20776,7 +20776,7 @@ id: call_FTCj9PlFQLlUSRKcbUpfKhkI
 ```json
 {
   "cmd": "sed -n '1,160p' tests/test_recall.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -21005,7 +21005,7 @@ id: call_FuOv1D8ybouqdDEh60VGKDgs
 ```json
 {
   "cmd": "python3 scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false
@@ -21019,7 +21019,7 @@ id: call_5HAKutsfo3yWGafmdxvFkwz4
 ```json
 {
   "cmd": "python3 -m compileall -q example_recall scripts",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -21033,7 +21033,7 @@ id: call_EZVY6JmiYlYa89a3BNjOIWnT
 ```json
 {
   "cmd": "rg -n \"reference_sections|ExampleSection|split_sections|summarize_outline|section_type|sections\" example_recall README.md scripts tests",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -21174,7 +21174,7 @@ id: call_PAZPm4FTK5jOWQROoiCFnavv
 ```json
 {
   "cmd": "python3 -m example_recall.cli clear",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -21202,7 +21202,7 @@ id: call_7Xynb8pKpdN2Lj9qUtEBLsGD
 ```json
 {
   "cmd": "python3 -m example_recall.cli add --title 一到换季孩子就中招 --platform xiaohongshu --tag 换季 --tag 感冒 --tag 母婴 --quality-score 0.92 --content-file examples/seasonal_cold.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -21246,7 +21246,7 @@ id: call_k2Bux31dM7WZeN4sjJqw2bu6
 ```json
 {
   "cmd": "python3 -m example_recall.cli add --title 凌晨三点的新手妈妈哄睡记录 --platform xiaohongshu --tag 睡眠 --tag 母婴 --quality-score 0.88 --content-file examples/sleep_mom.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -21293,7 +21293,7 @@ id: call_MTHuZ9k4eQQNfsxj0YfSa98G
 ```json
 {
   "cmd": "python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -21331,7 +21331,7 @@ id: call_NHD1hmmYs5bjteMFKqaJTkkf
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8791/api/v1/examples | rg 'sections|content|title|document_id'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -21344,7 +21344,7 @@ id: call_jNBMrwXSoU3hPClWbj6FWs5E
 ```json
 {
   "cmd": "curl -fsS -X POST http://127.0.0.1:8791/api/v1/example-corpus/search -H 'Content-Type: application/json' -d '{\"query\":\"换季感冒频繁\",\"return_mode\":\"example_pack\"}' | rg 'selected_example|markdown|reference_sections|top_documents|fused_document_count|section_type'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -21360,7 +21360,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 77
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/33800_1779701923622". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/33800_1779701923622". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 curl: (7) Failed to connect to 127.0.0.1 port 8791 after 0 ms: Couldn't connect to server
 
 ```
@@ -21375,7 +21375,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 77
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/33805_1779701923628". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/33805_1779701923628". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 curl: (7) Failed to connect to 127.0.0.1 port 8791 after 0 ms: Couldn't connect to server
 
 ```
@@ -21421,7 +21421,7 @@ id: call_51xs6GU0LBxVoWc67xjFcV4E
 ```json
 {
   "cmd": "python3 - <<'PY'\nimport socket\ns=socket.socket()\ns.settimeout(1)\ntry:\n    s.connect(('127.0.0.1',8791))\n    print('connected')\nexcept Exception as e:\n    print(type(e).__name__, e)\nfinally:\n    s.close()\nPY",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -21435,7 +21435,7 @@ id: call_elfVYtLjJ4uMWthn1D00VrNq
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 换季感冒频繁",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -21564,7 +21564,7 @@ id: call_AGo9UrRa2f2sIDgYYupN1b34
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8791/health",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -21584,7 +21584,7 @@ id: call_LCZX3xS7EEjRVhMOeHmtHMXu
 ```json
 {
   "cmd": "curl -fsS -X POST http://127.0.0.1:8791/api/v1/example-corpus/search -H 'Content-Type: application/json' -d '{\"query\":\"换季感冒频繁\",\"return_mode\":\"example_pack\"}'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "sandbox_permissions": "require_escalated",
@@ -21866,7 +21866,7 @@ id: call_IF3deMdlQ9inxQocwRkZecnm
 ```json
 {
   "cmd": "sed -n '1,220p' example_recall/models.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -21880,7 +21880,7 @@ id: call_bXMh4IoH4FKiZcKiG3r2kp97
 ```json
 {
   "cmd": "sed -n '1,360p' example_recall/recall.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false
@@ -21894,7 +21894,7 @@ id: call_5JqIpkBn5kH6Xw3sOpBzOFpw
 ```json
 {
   "cmd": "sed -n '1,180p' example_recall/cli.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "login": false
@@ -22146,7 +22146,7 @@ id: call_VK41mZmOW3lT5PQcrhTpFVH4
 ```json
 {
   "cmd": "sed -n '1,180p' scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -22160,7 +22160,7 @@ id: call_jDgvUhCjMyYug76tJW35gTCS
 ```json
 {
   "cmd": "sed -n '1,140p' README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -22174,7 +22174,7 @@ id: call_jFqb6L5HHdTfqspNyUfvm0kG
 ```json
 {
   "cmd": "sed -n '1,100p' tests/test_recall.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -22375,7 +22375,7 @@ id: call_N79KVyU6gLi0dc0MsZxE3eyc
 ```json
 {
   "cmd": "python3 scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false
@@ -22389,7 +22389,7 @@ id: call_j4r1GEdFtqAIrfpNlgPX40Lt
 ```json
 {
   "cmd": "python3 -m compileall -q example_recall scripts",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -22403,7 +22403,7 @@ id: call_C1qPvcqSegOuMzc3RHljBb7o
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 换季感冒频繁 --top-k 2 | rg 'selected_examples|selected_example|alternatives|title|markdown|score'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -22563,7 +22563,7 @@ id: call_ouSKdNjjyAg3OMri8Wv9Dljj
 ```json
 {
   "cmd": "python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -22590,9 +22590,9 @@ Output:
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py", line 83, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py", line 83, in <module>
     main()
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py", line 77, in main
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py", line 77, in main
     server = ThreadingHTTPServer(("127.0.0.1", 8791), Handler)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/socketserver.py", line 457, in __init__
@@ -22616,7 +22616,7 @@ id: call_NtpGJPedDU98d1kYHZnZrIKu
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'example_recall.server'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -22656,7 +22656,7 @@ id: call_B2NSXGVUopVaki6KkHU5faBU
 ```json
 {
   "cmd": "kill 33714",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -22684,7 +22684,7 @@ id: call_HzRTdd46pObivlKO57TeJfCP
 ```json
 {
   "cmd": "python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -22722,7 +22722,7 @@ id: call_pouG5PH4gI43Kajq0XGp1UDj
 ```json
 {
   "cmd": "curl -fsS -X POST http://127.0.0.1:8791/api/v1/example-corpus/search -H 'Content-Type: application/json' -d '{\"query\":\"换季感冒频繁\",\"return_mode\":\"example_pack\",\"top_k\":2}' | rg 'selected_examples|selected_example|alternatives|title|score'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "sandbox_permissions": "require_escalated",
@@ -22858,7 +22858,7 @@ id: call_F0v87oLG3XJkNqtkIE3y2MiU
 ```json
 {
   "cmd": "nl -ba example_recall/recall.py | sed -n '1,340p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000,
   "login": false
@@ -22872,7 +22872,7 @@ id: call_GcHhdlIMgkY271CwxROhy5k8
 ```json
 {
   "cmd": "nl -ba example_recall/models.py | sed -n '1,180p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -22886,7 +22886,7 @@ id: call_wlzLgQWr8L70QcuX4UbDX7uT
 ```json
 {
   "cmd": "nl -ba example_recall/text.py | sed -n '1,140p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "login": false
@@ -23074,7 +23074,7 @@ Output:
 
 现在这个小闭环的例文召回策略是 **整篇 Markdown 文档级召回**，不是 section 级召回。
 
-核心流程在 [example_recall/recall.py](/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:44)。
+核心流程在 [example_recall/recall.py](/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:44)。
 
 **当前链路**
 ```text
@@ -23201,7 +23201,7 @@ risk_penalty = 0.18
 
 代码在：
 
-[example_recall/recall.py](/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:88)
+[example_recall/recall.py](/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:88)
 
 流程是：
 
@@ -23308,7 +23308,7 @@ id: call_SXH7tWzCx3op4wmzg9gMUl6S
 ```json
 {
   "cmd": "python3 - <<'PY'\nfrom example_recall.models import SearchRequest\nfrom example_recall.recall import ExampleRecallService\nfrom example_recall.store import ExampleStore\n\nresponse = ExampleRecallService(ExampleStore().list_examples()).search(SearchRequest(query='奶粉好甜', top_k=3))\nprint('query_understanding=')\nprint(response.query_understanding)\nprint('\\nrewrite_routes=')\nfor route in response.rewrite_routes:\n    print(f'{route.route}: {route.query}')\nPY",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -23574,7 +23574,7 @@ id: call_v1t7MHeD5zMjRDOznumt6yeT
 ```json
 {
   "cmd": "nl -ba example_recall/server.py | sed -n '1,140p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "login": false
@@ -23588,7 +23588,7 @@ id: call_uS84Q3dHGWI8Su7ymhvmgIYD
 ```json
 {
   "cmd": "nl -ba example_recall/cli.py | sed -n '1,180p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "login": false
@@ -23602,7 +23602,7 @@ id: call_zycF2edvH5F2LX2LoNmEYIiM
 ```json
 {
   "cmd": "nl -ba README.md | sed -n '1,180p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000,
   "login": false
@@ -23835,7 +23835,7 @@ id: call_bfEfxfmKUwbjRRwwNr38Aofm
 ```json
 {
   "cmd": "python3 -m compileall -q example_recall scripts",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -23849,7 +23849,7 @@ id: call_B6PHKWVvETlDWOidW8MVPq1A
 ```json
 {
   "cmd": "python3 scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false
@@ -23863,7 +23863,7 @@ id: call_w4NyfDlCWtapClMxsUUVMgH3
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 奶粉好甜 --top-k 2 --rewrite-mode hybrid | rg 'rewrite|fallback|route|query|奶粉|早晚温差|selected_examples'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -23894,24 +23894,24 @@ Process exited with code 1
 Original token count: 435
 Output:
 Traceback (most recent call last):
-  File "/Users/lyston/PycharmProjects/raap-example-recall/scripts/smoke.py", line 47, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/scripts/smoke.py", line 47, in <module>
     main()
-  File "/Users/lyston/PycharmProjects/raap-example-recall/scripts/smoke.py", line 36, in main
+  File "/home/<USER>/PycharmProjects/raap-example-recall/scripts/smoke.py", line 36, in main
     response = ExampleRecallService(store.list_examples()).search(SearchRequest(query="换季感冒频繁", top_k=2))
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 44, in search
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 44, in search
     candidates = self.recall_candidates(routes, request)
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 66, in recall_candidates
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 66, in recall_candidates
     provider_candidates = self._search_provider(provider, route, request)
                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 78, in _search_provider
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 78, in _search_provider
     candidate = self._score_document(document, route, provider)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 96, in _score_document
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 96, in _score_document
     graph_score, graph_evidence = self._graph_score(route.query, base_text)
                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 125, in _graph_score
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 125, in _graph_score
     expanded_terms = set(_expand_terms(query_terms))
                          ^^^^^^^^^^^^^
 NameError: name '_expand_terms' is not defined. Did you mean: 'expanded_terms'?
@@ -23931,24 +23931,24 @@ Output:
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py", line 73, in <module>
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py", line 73, in <module>
     main()
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py", line 58, in main
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py", line 58, in main
     response = ExampleRecallService(store.list_examples()).search(request)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 44, in search
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 44, in search
     candidates = self.recall_candidates(routes, request)
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 66, in recall_candidates
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 66, in recall_candidates
     provider_candidates = self._search_provider(provider, route, request)
                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 78, in _search_provider
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 78, in _search_provider
     candidate = self._score_document(document, route, provider)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 96, in _score_document
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 96, in _score_document
     graph_score, graph_evidence = self._graph_score(route.query, base_text)
                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py", line 125, in _graph_score
+  File "/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py", line 125, in _graph_score
     expanded_terms = set(_expand_terms(query_terms))
                          ^^^^^^^^^^^^^
 NameError: name '_expand_terms' is not defined. Did you mean: 'expanded_terms'?
@@ -23966,7 +23966,7 @@ id: call_Av5E7VZPAZ0MW6Xsu9RC9iQG
 ```json
 {
   "cmd": "python3 -m compileall -q example_recall scripts",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -23980,7 +23980,7 @@ id: call_yf9P7Kc4jZmZv9lHZrCg54bB
 ```json
 {
   "cmd": "python3 scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000,
   "login": false
@@ -23994,7 +23994,7 @@ id: call_1G0spIWdqr9BPDuNw8vKFFyr
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 奶粉好甜 --top-k 2 --rewrite-mode hybrid | rg 'rewrite|fallback|route|query|奶粉|早晚温差|selected_examples'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000,
   "login": false
@@ -24169,7 +24169,7 @@ id: call_XiFvQ0Ux2JMaTH9vw203dhuv
 ```json
 {
   "cmd": "rg -n \"\\|\" example_recall scripts tests README.md pyproject.toml",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -24183,7 +24183,7 @@ id: call_FucruRgZXO6o8oWKdcnS2QiF
 ```json
 {
   "cmd": "nl -ba example_recall/rewriter.py | sed -n '1,420p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000,
   "login": false
@@ -24277,7 +24277,7 @@ id: call_gYJFTJ1wirDqVtlneMdlhVHW
 ```json
 {
   "cmd": "python3 - <<'PY'\nfrom example_recall.rewriter import validate_llm_payload\npayload = {\n  'query_understanding': {\n    'raw_query': '奶粉好甜',\n    'topic': ['奶粉甜味', '配方奶口味'],\n    'scenes': ['妈妈试喝奶粉', '看配料表'],\n    'emotions': ['担心', '纠结'],\n    'recall_needs': ['document_reference', 'style_reference', 'structure_reference'],\n    'risk_notes': ['不要制造喂养焦虑', '不要做营养绝对判断']\n  },\n  'rewrite_routes': [\n    {'route':'topic_direct','query':'奶粉 甜 甜味 配方奶 乳糖 蔗糖 香精 口味清淡','target':'topic_similarity','providers':['bm25','dense']},\n    {'route':'pain_scene','query':'妈妈觉得奶粉太甜 担心糖分高 怕宝宝越喝越挑','target':'user_concern_scene','providers':['bm25','dense']},\n    {'route':'emotion_hook','query':'尝了一口宝宝奶粉觉得好甜 妈妈担心是不是加糖','target':'emotional_hook','providers':['dense','style_vector']},\n    {'route':'life_detail','query':'冲奶后闻起来甜 宝宝很爱喝 妈妈看配料表 纠结奶粉怎么选','target':'life_detail','providers':['bm25','dense']},\n    {'route':'structure_reference','query':'从妈妈试喝奶粉发现偏甜切入 再解释甜味来源 最后给选择建议','target':'whole_document_structure','providers':['structure_vector']},\n    {'route':'soft_product_bridge','query':'如何自然解释奶粉甜味来源 并过渡到配方卖点 不制造焦虑','target':'soft_product_bridge','providers':['dense','transition_vector']},\n    {'route':'graph_expansion','query':'奶粉 甜味 乳糖 蔗糖 香兰素 配料表 口味清淡 宝宝接受度 妈妈担心','target':'related_document_concepts','providers':['lightrag']},\n  ]\n}\nunderstanding, routes = validate_llm_payload('奶粉好甜', payload)\nprint(understanding)\nfor route in routes:\n    print(route)\nPY",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -24316,7 +24316,7 @@ id: call_l3sAblDackIY2pB195terJ91
 ```json
 {
   "cmd": "python3 -m compileall -q example_recall scripts",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -24330,7 +24330,7 @@ id: call_oOSw6B3AGAQS9eFPlrYIsWKx
 ```json
 {
   "cmd": "python3 scripts/smoke.py >/tmp/raap_example_recall_smoke.json && python3 - <<'PY'\nimport json\np=json.load(open('/tmp/raap_example_recall_smoke.json'))\nprint(p['selected_examples'][0]['title'])\nprint(p['trace']['rewrite'])\nPY",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -24344,7 +24344,7 @@ id: call_Md4Vqm4ky7ShFU7WRDXEyjuo
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 奶粉好甜 --top-k 2 --rewrite-mode rule | python3 -c \"import json,sys; d=json.load(sys.stdin); print([r['query'] for r in d['rewrite_routes']]); print(d['trace']['rewrite'])\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -24405,7 +24405,7 @@ id: call_cvVG9DVXQo7MQd3PoLbINUZE
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'example_recall.server'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -24444,7 +24444,7 @@ id: call_Gn0ZZn3elyBnAhNQhaOKaYf1
 ```json
 {
   "cmd": "python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -24478,7 +24478,7 @@ id: call_XfCIBTI84z19Zm2r7Ssplbuv
 ```json
 {
   "cmd": "curl -fsS -X POST http://127.0.0.1:8791/api/v1/example-corpus/search -H 'Content-Type: application/json' -d '{\"query\":\"奶粉好甜\",\"return_mode\":\"example_pack\",\"top_k\":2,\"rewrite_mode\":\"hybrid\"}' | python3 -c \"import json,sys; d=json.load(sys.stdin); print(d['trace']['rewrite']); print([r['query'] for r in d['rewrite_routes']])\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -24548,8 +24548,8 @@ Plan updated
 
 可以，已经执行了。现在项目里已经接入了 **LLM 多路改写**，位置在：
 
-[example_recall/rewriter.py](/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:1)  
-[example_recall/recall.py](/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py:39)
+[example_recall/rewriter.py](/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:1)  
+[example_recall/recall.py](/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py:39)
 
 现在有三种模式：
 
@@ -24702,7 +24702,7 @@ id: call_unmkTeRTVr1sDq3MOY157dnr
 ```json
 {
   "cmd": "nl -ba example_recall/rewriter.py | sed -n '145,230p'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000,
   "login": false
@@ -24715,8 +24715,8 @@ tool_use exec_command
 id: call_EHLTMwsVkaO2OlbtwPw703TO
 ```json
 {
-  "cmd": "rg -n \"OPENAI_API_KEY|api.lyston|EXAMPLE_RECALL_LLM|wire_api|responses\" -S /Users/lyston/.codex /Users/lyston/PycharmProjects/raap-example-recall 2>/dev/null | head -80",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "cmd": "rg -n \"OPENAI_API_KEY|api.lyston|EXAMPLE_RECALL_LLM|wire_api|responses\" -S /home/<USER>/.codex /home/<USER>/PycharmProjects/raap-example-recall 2>/dev/null | head -80",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -24792,18 +24792,18 @@ Original token count: 217566
 Output:
 Total output lines: 80
 
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:55:export EXAMPLE_RECALL_LLM_BASE_URL="https://api.openai.com/v1"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:56:export EXAMPLE_RECALL_LLM_API_KEY="..."
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:57:export EXAMPLE_RECALL_LLM_MODEL="gpt-4.1-mini"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:63:export EXAMPLE_RECALL_LLM_BASE_URL="http://127.0.0.1:8001/v1"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:64:export EXAMPLE_RECALL_LLM_API_KEY="dummy"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:65:export EXAMPLE_RECALL_LLM_MODEL="Qwen/Qwen2.5-7B-Instruct"
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:157:        self.base_url = (base_url or os.getenv("EXAMPLE_RECALL_LLM_BASE_URL") or "").rstrip("/")
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:158:        self.api_key = api_key or os.getenv("EXAMPLE_RECALL_LLM_API_KEY") or os.getenv("OPENAI_API_KEY") or ""
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:159:        self.model = model or os.getenv("EXAMPLE_RECALL_LLM_MODEL") or "gpt-4.1-mini"
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:160:        self.timeout_seconds = timeout_seconds or float(os.getenv("EXAMPLE_RECALL_LLM_TIMEOUT", "20"))
-/Users/lyston/.codex/history.jsonl:283:{"session_id":"019ddd05-5bcd-74b0-9eb7-9f6bc8692389","ts":1777529710,"text":"为什么我在codex cli中使用就没有任何问题，在desktop中使用就报错？这个codex会话：e5ebae5b-4bff-41f6-97cd-5d7adbab9186\n其他的会话线程都没有问题\nunexpected status 401 Unauthorized: Incorrect API key provided: sk-FAPgn***************************************Olhi. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: 9f446766eef752cc-LAX, request id: req_a5ceba7fec8d4eca8ab2dea30cfd5342, auth error: 401, auth error code: invalid_api_key"}
-/Users/lyston/.codex/vendor_imports/skills-curated-cache.json:1:{"fetchedAt":1779512577287,"skills":[{"id":"aspnet-core","name":"aspnet-core","description":"Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing, performance, deployment, or ASP.NET Core upgrades.","shortDescription":"[Windows only] Build and review ASP.NET Core web apps","iconSmall":null,"iconLarge":"./assets/dotnet-logo.png","repoPath":"skills/.curated/aspnet-core"},{"id":"chatgpt-apps","name":"chatgpt-apps","description":"Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain […]
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:55:export EXAMPLE_RECALL_LLM_BASE_URL="https://api.openai.com/v1"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:56:export EXAMPLE_RECALL_LLM_API_KEY="..."
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:57:export EXAMPLE_RECALL_LLM_MODEL="gpt-4.1-mini"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:63:export EXAMPLE_RECALL_LLM_BASE_URL="http://127.0.0.1:8001/v1"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:64:export EXAMPLE_RECALL_LLM_API_KEY="dummy"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:65:export EXAMPLE_RECALL_LLM_MODEL="Qwen/Qwen2.5-7B-Instruct"
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:157:        self.base_url = (base_url or os.getenv("EXAMPLE_RECALL_LLM_BASE_URL") or "").rstrip("/")
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:158:        self.api_key = api_key or os.getenv("EXAMPLE_RECALL_LLM_API_KEY") or os.getenv("OPENAI_API_KEY") or ""
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:159:        self.model = model or os.getenv("EXAMPLE_RECALL_LLM_MODEL") or "gpt-4.1-mini"
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:160:        self.timeout_seconds = timeout_seconds or float(os.getenv("EXAMPLE_RECALL_LLM_TIMEOUT", "20"))
+/home/<USER>/.codex/history.jsonl:283:{"session_id":"019ddd05-5bcd-74b0-9eb7-9f6bc8692389","ts":1777529710,"text":"为什么我在codex cli中使用就没有任何问题，在desktop中使用就报错？这个codex会话：e5ebae5b-4bff-41f6-97cd-5d7adbab9186\n其他的会话线程都没有问题\nunexpected status 401 Unauthorized: Incorrect API key provided: sk-FAPgn***************************************Olhi. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: 9f446766eef752cc-LAX, request id: req_a5ceba7fec8d4eca8ab2dea30cfd5342, auth error: 401, auth error code: invalid_api_key"}
+/home/<USER>/.codex/vendor_imports/skills-curated-cache.json:1:{"fetchedAt":1779512577287,"skills":[{"id":"aspnet-core","name":"aspnet-core","description":"Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing, performance, deployment, or ASP.NET Core upgrades.","shortDescription":"[Windows only] Build and review ASP.NET Core web apps","iconSmall":null,"iconLarge":"./assets/dotnet-logo.png","repoPath":"skills/.curated/aspnet-core"},{"id":"chatgpt-apps","name":"chatgpt-apps","description":"Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain […]
 
 > AGENT
 
@@ -24859,7 +24859,7 @@ id: call_gPuCpPkV5FbdZCimtjQouc0h
 ```json
 {
   "cmd": "python3 -m compileall -q example_recall scripts",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -24873,7 +24873,7 @@ id: call_iHGMMJMFBL0ZR8uvsTn7l13o
 ```json
 {
   "cmd": "python3 -m example_recall.cli search 奶粉好甜 --top-k 2 --rewrite-mode hybrid | python3 -c \"import json,sys; d=json.load(sys.stdin); print(d['trace']['rewrite']); print(d['rewrite_routes'][0]['query'])\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -24887,7 +24887,7 @@ id: call_pOHn6PRCXacr4xkTucDssDRj
 ```json
 {
   "cmd": "python3 - <<'PY'\nfrom example_recall.rewriter import extract_responses_text\nprint(extract_responses_text({'output_text':'{\"ok\":true}'}))\nprint(extract_responses_text({'output':[{'content':[{'type':'output_text','text':'{\"ok\":true}'}]}]}))\nPY",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -24948,7 +24948,7 @@ id: call_bVHUHu1iLUcR7DwYs9KkPsOU
 ```json
 {
   "cmd": "python3 - <<'PY'\nimport os\nfor key in ['EXAMPLE_RECALL_LLM_API_KEY','OPENAI_API_KEY']:\n    value=os.getenv(key)\n    print(key, 'set' if value else 'missing')\nPY",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -24981,7 +24981,7 @@ id: call_RiGHF15nyd4wBEXWvOMFn9t7
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'example_recall.server'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -25016,7 +25016,7 @@ id: call_BZx53u30GBk1fVlvCrvQYbw6
 ```json
 {
   "cmd": "kill 17327",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -25044,7 +25044,7 @@ id: call_MVKjYFQCHk6EqavrWoQqP7GL
 ```json
 {
   "cmd": "python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -25078,7 +25078,7 @@ id: call_89r6zile1vVQ1b9d7WqUDkG5
 ```json
 {
   "cmd": "curl -fsS -X POST http://127.0.0.1:8791/api/v1/example-corpus/search -H 'Content-Type: application/json' -d '{\"query\":\"奶粉好甜\",\"top_k\":2,\"rewrite_mode\":\"hybrid\"}' | python3 -c \"import json,sys; d=json.load(sys.stdin); print(d['trace']['rewrite'])\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -25156,8 +25156,8 @@ disable_response_storage = true
 
 改动位置：
 
-[example_recall/rewriter.py](/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:149)  
-[README.md](/Users/lyston/PycharmProjects/raap-example-recall/README.md:47)
+[example_recall/rewriter.py](/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:149)  
+[README.md](/home/<USER>/PycharmProjects/raap-example-recall/README.md:47)
 
 现在请求会打到：
 
@@ -25216,7 +25216,7 @@ id: call_1tC6vTogzhHdhRk7C53nPl3E
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'example_recall.server'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -25252,7 +25252,7 @@ id: call_aIJ9d45IjgvTi2UyFnlw5vWI
 ```json
 {
   "cmd": "kill 21530",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -25284,7 +25284,7 @@ id: call_UYzZiPuBSzPT9m8KklsSPjiL
 ```json
 {
   "cmd": "read -r EXAMPLE_RECALL_LLM_API_KEY; export EXAMPLE_RECALL_LLM_API_KEY; exec python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -25338,7 +25338,7 @@ id: call_NQRqINHfADJLcQTuHoTn36Wz
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'example_recall.server'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -25374,7 +25374,7 @@ id: call_7qPirgfirXlWcpzYvzekoaBA
 ```json
 {
   "cmd": "kill 23071",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -25402,7 +25402,7 @@ id: call_aM8k5uxXB7Tk9yrEVQtLPtOS
 ```json
 {
   "cmd": "read -r EXAMPLE_RECALL_LLM_API_KEY; export EXAMPLE_RECALL_LLM_API_KEY; exec python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -25464,7 +25464,7 @@ id: call_gChyl5S59ykTznrDU4dZthvb
 ```json
 {
   "cmd": "curl -fsS -X POST http://127.0.0.1:8791/api/v1/example-corpus/search -H 'Content-Type: application/json' -d '{\"query\":\"奶粉好甜\",\"top_k\":2,\"rewrite_mode\":\"hybrid\"}' | python3 -c \"import json,sys; d=json.load(sys.stdin); print(d['trace']['rewrite']); print([r['query'] for r in d['rewrite_routes']])\"",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "sandbox_permissions": "require_escalated",
@@ -25512,7 +25512,7 @@ id: call_aAYdiV5ENYdOidUyS8V7R013
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'example_recall.server'",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -25531,8 +25531,8 @@ tool_use exec_command
 id: call_dkZE69XzMWqH9f8gAL0X5XOc
 ```json
 {
-  "cmd": "rg -n \"OpenAI|openai|/v1|chat/completions|responses|models|8787|base_url\" /Users/lyston/PycharmProjects/sub2api /Users/lyston/PycharmProjects/sub2api-deploy 2>/dev/null | head -120",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "cmd": "rg -n \"OpenAI|openai|/v1|chat/completions|responses|models|8787|base_url\" /home/<USER>/PycharmProjects/sub2api /home/<USER>/PycharmProjects/sub2api-deploy 2>/dev/null | head -120",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false
@@ -25546,7 +25546,7 @@ id: call_6Jt7GCrd01x4pYC1gZsp8zq1
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8787/api/models",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -25578,59 +25578,59 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3729
 Output:
-/Users/lyston/PycharmProjects/sub2api-deploy/build_payload.py:129:    parser.add_argument("--platform", default="openai", help="Account platform (default: openai)")
-/Users/lyston/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:32:        description="Convert codex/openai OAuth JSON files into a sub2api import payload."
-/Users/lyston/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:58:    parser.add_argument("--platform", default="openai", help="Account platform. Default: openai.")
-/Users/lyston/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:246:    id_auth = nested_dict(id_claims, "https://api.openai.com/auth")
-/Users/lyston/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:247:    access_auth = nested_dict(access_claims, "https://api.openai.com/auth")
-/Users/lyston/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:251:    profile_claims = nested_dict(access_claims, "https://api.openai.com/profile")
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:10:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:23:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:36:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:49:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:62:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:75:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:88:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:101:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:114:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:127:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:140:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:153:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:166:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:179:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:192:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:205:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:218:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:231:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:244:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:257:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:270:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:283:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:296:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:309:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:322:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:335:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:348:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:361:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:374:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:387:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:400:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:413:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:426:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:439:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:452:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:465:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:478:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:491:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:504:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:517:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:530:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:543:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:556:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:569:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:582:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:595:        "platform": "openai",
-/Users/lyston/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:608: […]
+/home/<USER>/PycharmProjects/sub2api-deploy/build_payload.py:129:    parser.add_argument("--platform", default="openai", help="Account platform (default: openai)")
+/home/<USER>/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:32:        description="Convert codex/openai OAuth JSON files into a sub2api import payload."
+/home/<USER>/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:58:    parser.add_argument("--platform", default="openai", help="Account platform. Default: openai.")
+/home/<USER>/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:246:    id_auth = nested_dict(id_claims, "https://api.openai.com/auth")
+/home/<USER>/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:247:    access_auth = nested_dict(access_claims, "https://api.openai.com/auth")
+/home/<USER>/PycharmProjects/sub2api-deploy/codex_to_sub2api.py:251:    profile_claims = nested_dict(access_claims, "https://api.openai.com/profile")
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:10:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:23:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:36:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:49:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:62:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:75:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:88:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:101:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:114:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:127:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:140:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:153:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:166:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:179:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:192:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:205:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:218:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:231:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:244:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:257:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:270:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:283:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:296:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:309:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:322:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:335:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:348:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:361:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:374:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:387:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:400:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:413:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:426:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:439:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:452:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:465:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:478:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:491:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:504:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:517:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:530:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:543:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:556:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:569:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:582:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:595:        "platform": "openai",
+/home/<USER>/PycharmProjects/sub2api-deploy/sub2api_accounts_import_50_9f4c44b3.request.json:608: […]
 
 > TOOL
 
@@ -25710,8 +25710,8 @@ tool_use exec_command
 id: call_O5U7NZgcNePRxxcXmJFzyofK
 ```json
 {
-  "cmd": "pwd && rg --files /Users/lyston/PycharmProjects/raap-example-recall | sed -n '1,120p'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "pwd && rg --files /home/<USER>/PycharmProjects/raap-example-recall | sed -n '1,120p'",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -25723,8 +25723,8 @@ tool_use exec_command
 id: call_6005GSkSVPMHg1EoO7cUI6Vk
 ```json
 {
-  "cmd": "rg -n \"EXAMPLE_RECALL_LLM|responses|chat/completions|sub2api|base_url|wire\" /Users/lyston/PycharmProjects/raap-example-recall /Users/lyston/PycharmProjects/sub2api 2>/dev/null",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"EXAMPLE_RECALL_LLM|responses|chat/completions|sub2api|base_url|wire\" /home/<USER>/PycharmProjects/raap-example-recall /home/<USER>/PycharmProjects/sub2api 2>/dev/null",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -25737,7 +25737,7 @@ id: call_8ThCuuu8dbzTr2zBlkJZfJdG
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8787/api/models",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -25753,34 +25753,34 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 561
 Output:
-/Users/lyston/PycharmProjects
-/Users/lyston/PycharmProjects/raap-example-recall/data/smoke_examples.json
-/Users/lyston/PycharmProjects/raap-example-recall/data/examples.json
-/Users/lyston/PycharmProjects/raap-example-recall/scripts/smoke.py
-/Users/lyston/PycharmProjects/raap-example-recall/scripts/__pycache__/smoke.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/tests/test_recall.py
-/Users/lyston/PycharmProjects/raap-example-recall/pyproject.toml
-/Users/lyston/PycharmProjects/raap-example-recall/README.md
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/text.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/cli.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/api.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/models.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/server.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/store.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/recall.py
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__init__.py
-/Users/lyston/PycharmProjects/raap-example-recall/examples/seasonal_cold.md
-/Users/lyston/PycharmProjects/raap-example-recall/examples/sleep_mom.md
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/recall.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/__init__.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/store.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/models.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/cli.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/text.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/server.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/rewriter.cpython-312.pyc
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/__pycache__/api.cpython-312.pyc
+/home/<USER>/PycharmProjects
+/home/<USER>/PycharmProjects/raap-example-recall/data/smoke_examples.json
+/home/<USER>/PycharmProjects/raap-example-recall/data/examples.json
+/home/<USER>/PycharmProjects/raap-example-recall/scripts/smoke.py
+/home/<USER>/PycharmProjects/raap-example-recall/scripts/__pycache__/smoke.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/tests/test_recall.py
+/home/<USER>/PycharmProjects/raap-example-recall/pyproject.toml
+/home/<USER>/PycharmProjects/raap-example-recall/README.md
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/text.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/cli.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/api.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/models.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/server.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/store.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/recall.py
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__init__.py
+/home/<USER>/PycharmProjects/raap-example-recall/examples/seasonal_cold.md
+/home/<USER>/PycharmProjects/raap-example-recall/examples/sleep_mom.md
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/recall.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/__init__.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/store.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/models.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/cli.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/text.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/server.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/rewriter.cpython-312.pyc
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/__pycache__/api.cpython-312.pyc
 
 ```
 
@@ -25796,48 +25796,48 @@ Original token count: 140942
 Output:
 Total output lines: 3935
 
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:152:        base_url: Optional[str] = None,
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:157:        self.base_url = (
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:158:            base_url
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:159:            or os.getenv("EXAMPLE_RECALL_LLM_BASE_URL")
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:162:        self.api_key = api_key or os.getenv("EXAMPLE_RECALL_LLM_API_KEY") or os.getenv("OPENAI_API_KEY") or ""
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:163:        self.model = model or os.getenv("EXAMPLE_RECALL_LLM_MODEL") or "gpt-5.5"
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:164:        self.wire_api = os.getenv("EXAMPLE_RECALL_LLM_WIRE_API", "responses")
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:165:        self.reasoning_effort = os.getenv("EXAMPLE_RECALL_LLM_REASONING_EFFORT", "xhigh")
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:166:        self.service_tier = os.getenv("EXAMPLE_RECALL_LLM_SERVICE_TIER", "fast")
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:167:        self.disable_response_storage = os.getenv("EXAMPLE_RECALL_LLM_DISABLE_RESPONSE_STORAGE", "true").lower() == "true"
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:168:        self.timeout_seconds = timeout_seconds or float(os.getenv("EXAMPLE_RECALL_LLM_TIMEOUT", "20"))
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:171:        return bool(self.base_url and self.api_key)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:176:        if self.wire_api == "responses":
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:177:            content = self._call_responses_api(query)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:189:                "base_url": self.base_url,
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:190:                "wire_api": self.wire_api,
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:197:    def _call_responses_api(self, query: str) -> str:
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:209:        response_json = self._post_json("/responses", payload)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:210:        return extract_responses_text(response_json)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:222:        response_json = self._post_json("/chat/completions", payload)
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:228:            f"{self.base_url}{path}",
-/Users/lyston/PycharmProjects/raap-example-recall/example_recall/rewriter.py:389:def extract_responses_text(response_json: dict[str, Any]) -> str:
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:55:export EXAMPLE_RECALL_LLM_API_KEY="..."
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:61:EXAMPLE_RECALL_LLM_BASE_URL="https://api.lyston.qzz.io/v1"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:62:EXAMPLE_RECALL_LLM_WIRE_API="responses"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:63:EXAMPLE_RECALL_LLM_MODEL="gpt-5.5"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:64:EXAMPLE_RECALL_LLM_REASONING_EFFORT="xhigh"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:65:EXAMPLE_RECALL_LLM_SERVICE_TIER="fast"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:66:EXAMPLE_RECALL_LLM_DISABLE_RESPONSE_STORAGE="true"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:69:这些都有默认值，只需要提供 `EXAMPLE_RECALL_LLM_API_KEY`。
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:74:export EXAMPLE_RECALL_LLM_BASE_URL="http://127.0.0.1:8001/v1"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:75:export EXAMPLE_RECALL_LLM_WIRE_API="chat_completions"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:76:export EXAMPLE_RECALL_LLM_API_KEY="dummy"
-/Users/lyston/PycharmProjects/raap-example-recall/README.md:77:export EXAMPLE_RECALL_LLM_MODEL="Qwen/Qwen2.5-7B-Instruct"
-/Users/lyston/PycharmProjects/sub2api/README_CN.md:11:<a href="https://trendshift.io/repositories/21823" target="_blank"><img src="https://trendshift.io/api/badge/repositories/21823" alt="Wei-Shaw%2Fsub2api | Trendshift" width="250" height="55"/></a>
-/Users/lyston/PycharmProjects/sub2api/README_CN.md:19:> **Sub2API 官方仅使用  `sub2api.org` 与 `pincc.ai` 两个域名。其他使用 Sub2API 名义的网站可能为第三方部署或服务，与本项目无关，请自行甄别。**
-/Users/lyston/PycharmProjects/sub2api/README_CN.md:24:体验地址：**[https://demo.sub2api.org/](https://demo.sub2api.org/)**
-/Users/lyston/PycharmProjects/sub2api/README_CN.md:30:| admin@sub2api.org | admin123 |
-/Users/lyston/PycharmProjects/sub2api/README_CN.md:59:<td width="180"><a href="https://www.packyapi.com/register?aff=sub2api"><img src="assets/partners/logos/packycode.png" alt="PackyCode" width="150"></a></td>
-/Users/lyston/PycharmProjects/sub2api/README_CN.md:60:<td>感谢 PackyCode 赞助了本项目！PackyCode 是一家稳定、高效的API中转服务商，提供 Claude Code、Codex、Gemini 等多种中转服务。PackyCode 为本软件的用户提供了特别优惠，使用<a href="https://www.packyapi.com/register?aff=sub2api">此链接</a>注册并在充值时填写"sub2api"优惠码，首次充值可以享受9折优惠！</td>
-/Users/lyston/PycharmProjects/sub2api/README_CN.md:64:<td width="180"><a href="https://poixe.com/i/sub2api"><img src="assets/partners/logos/poixe.png" alt="PoixeAI" width="150"></a></td>
-/Users/lyston/PycharmProjects/sub2api/README_CN.md:65:<td>感谢 Poixe AI […]
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:152:        base_url: Optional[str] = None,
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:157:        self.base_url = (
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:158:            base_url
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:159:            or os.getenv("EXAMPLE_RECALL_LLM_BASE_URL")
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:162:        self.api_key = api_key or os.getenv("EXAMPLE_RECALL_LLM_API_KEY") or os.getenv("OPENAI_API_KEY") or ""
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:163:        self.model = model or os.getenv("EXAMPLE_RECALL_LLM_MODEL") or "gpt-5.5"
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:164:        self.wire_api = os.getenv("EXAMPLE_RECALL_LLM_WIRE_API", "responses")
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:165:        self.reasoning_effort = os.getenv("EXAMPLE_RECALL_LLM_REASONING_EFFORT", "xhigh")
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:166:        self.service_tier = os.getenv("EXAMPLE_RECALL_LLM_SERVICE_TIER", "fast")
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:167:        self.disable_response_storage = os.getenv("EXAMPLE_RECALL_LLM_DISABLE_RESPONSE_STORAGE", "true").lower() == "true"
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:168:        self.timeout_seconds = timeout_seconds or float(os.getenv("EXAMPLE_RECALL_LLM_TIMEOUT", "20"))
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:171:        return bool(self.base_url and self.api_key)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:176:        if self.wire_api == "responses":
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:177:            content = self._call_responses_api(query)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:189:                "base_url": self.base_url,
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:190:                "wire_api": self.wire_api,
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:197:    def _call_responses_api(self, query: str) -> str:
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:209:        response_json = self._post_json("/responses", payload)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:210:        return extract_responses_text(response_json)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:222:        response_json = self._post_json("/chat/completions", payload)
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:228:            f"{self.base_url}{path}",
+/home/<USER>/PycharmProjects/raap-example-recall/example_recall/rewriter.py:389:def extract_responses_text(response_json: dict[str, Any]) -> str:
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:55:export EXAMPLE_RECALL_LLM_API_KEY="..."
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:61:EXAMPLE_RECALL_LLM_BASE_URL="https://api.lyston.qzz.io/v1"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:62:EXAMPLE_RECALL_LLM_WIRE_API="responses"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:63:EXAMPLE_RECALL_LLM_MODEL="gpt-5.5"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:64:EXAMPLE_RECALL_LLM_REASONING_EFFORT="xhigh"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:65:EXAMPLE_RECALL_LLM_SERVICE_TIER="fast"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:66:EXAMPLE_RECALL_LLM_DISABLE_RESPONSE_STORAGE="true"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:69:这些都有默认值，只需要提供 `EXAMPLE_RECALL_LLM_API_KEY`。
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:74:export EXAMPLE_RECALL_LLM_BASE_URL="http://127.0.0.1:8001/v1"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:75:export EXAMPLE_RECALL_LLM_WIRE_API="chat_completions"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:76:export EXAMPLE_RECALL_LLM_API_KEY="dummy"
+/home/<USER>/PycharmProjects/raap-example-recall/README.md:77:export EXAMPLE_RECALL_LLM_MODEL="Qwen/Qwen2.5-7B-Instruct"
+/home/<USER>/PycharmProjects/sub2api/README_CN.md:11:<a href="https://trendshift.io/repositories/21823" target="_blank"><img src="https://trendshift.io/api/badge/repositories/21823" alt="Wei-Shaw%2Fsub2api | Trendshift" width="250" height="55"/></a>
+/home/<USER>/PycharmProjects/sub2api/README_CN.md:19:> **Sub2API 官方仅使用  `sub2api.org` 与 `pincc.ai` 两个域名。其他使用 Sub2API 名义的网站可能为第三方部署或服务，与本项目无关，请自行甄别。**
+/home/<USER>/PycharmProjects/sub2api/README_CN.md:24:体验地址：**[https://demo.sub2api.org/](https://demo.sub2api.org/)**
+/home/<USER>/PycharmProjects/sub2api/README_CN.md:30:| <REDACTED_EMAIL> | admin123 |
+/home/<USER>/PycharmProjects/sub2api/README_CN.md:59:<td width="180"><a href="https://www.packyapi.com/register?aff=sub2api"><img src="assets/partners/logos/packycode.png" alt="PackyCode" width="150"></a></td>
+/home/<USER>/PycharmProjects/sub2api/README_CN.md:60:<td>感谢 PackyCode 赞助了本项目！PackyCode 是一家稳定、高效的API中转服务商，提供 Claude Code、Codex、Gemini 等多种中转服务。PackyCode 为本软件的用户提供了特别优惠，使用<a href="https://www.packyapi.com/register?aff=sub2api">此链接</a>注册并在充值时填写"sub2api"优惠码，首次充值可以享受9折优惠！</td>
+/home/<USER>/PycharmProjects/sub2api/README_CN.md:64:<td width="180"><a href="https://poixe.com/i/sub2api"><img src="assets/partners/logos/poixe.png" alt="PoixeAI" width="150"></a></td>
+/home/<USER>/PycharmProjects/sub2api/README_CN.md:65:<td>感谢 Poixe AI […]
 
 > TOOL
 
@@ -25918,7 +25918,7 @@ id: call_Ze6JSHfSHgrqF5jmr3euhDBd
 ```json
 {
   "cmd": "sed -n '130,260p' example_recall/rewriter.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -25931,7 +25931,7 @@ id: call_RGlunBWjlFy31QRuqDyi6xmV
 ```json
 {
   "cmd": "sed -n '1,130p' README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -25944,7 +25944,7 @@ id: call_EmYaIUHnKL86GXOz1CQ2Z9Gq
 ```json
 {
   "cmd": "rg -n \"v1/responses|v1/chat/completions|openai/v1|api/models|Responses\" backend/internal README.md README_CN.md docs",
-  "workdir": "/Users/lyston/PycharmProjects/sub2api",
+  "workdir": "/home/<USER>/PycharmProjects/sub2api",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -25960,7 +25960,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1478
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/27479_1779764205197". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/27479_1779764205197". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
                 query=f"{understanding.raw_query} 从生活场景切入 再讲经验 最后自然过渡",
                 target="whole_document_structure",
                 providers=["structure_vector"],
@@ -26031,7 +26031,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 779
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/27476_1779764205196". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/27476_1779764205196". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 # RAAP Example Recall
 
 一个独立的小闭环项目，用来验证“例文召回”：
@@ -26138,7 +26138,7 @@ Original token count: 56251
 Output:
 Total output lines: 1734
 
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/27482_1779764205201". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/27482_1779764205201". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 backend/internal/pkg/httputil/body_test.go:18:	req, err := http.NewRequest(http.MethodPost, "/v1/responses", bytes.NewReader(body))
 backend/internal/pkg/httputil/body_test.go:121:	req, err := http.NewRequest(http.MethodPost, "/v1/responses", nil)
 backend/internal/pkg/apicompat/chatcompletions_responses_test.go:12:// ChatCompletionsToResponses tests
@@ -26185,7 +26185,7 @@ id: call_spnJdr8xIwLaayvgdTllO1WK
 ```json
 {
   "cmd": "rg -n \"router\\.|\\.POST\\(|\\.Any\\(|responses|chat/completions|api/models\" backend/internal/server backend/internal/handler backend/cmd cmd -g '*.go'",
-  "workdir": "/Users/lyston/PycharmProjects/sub2api",
+  "workdir": "/home/<USER>/PycharmProjects/sub2api",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -26198,7 +26198,7 @@ id: call_7BeUy7ESSc36GTUDYxsDNw9g
 ```json
 {
   "cmd": "curl -sS -i http://127.0.0.1:8787/v1/models",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -26211,7 +26211,7 @@ id: call_LvGbOG2gURKxDOVhhJbAeEQV
 ```json
 {
   "cmd": "curl -sS -i -X POST http://127.0.0.1:8787/v1/responses -H 'Content-Type: application/json' -d '{\"model\":\"gpt-5.5\",\"input\":\"ping\",\"store\":false}'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -26224,7 +26224,7 @@ id: call_0qpYQ3K8Q2OQocj2euSIic4r
 ```json
 {
   "cmd": "curl -sS -i -X POST http://127.0.0.1:8787/v1/chat/completions -H 'Content-Type: application/json' -d '{\"model\":\"gpt-5.5\",\"messages\":[{\"role\":\"user\",\"content\":\"ping\"}],\"stream\":false}'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -26242,7 +26242,7 @@ Original token count: 16822
 Output:
 Total output lines: 607
 
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/27621_1779764226808". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/27621_1779764226808". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 rg: cmd: No such file or directory (os error 2)
 backend/internal/handler/admin/proxy_data_handler_test.go:32:	router.GET("/api/v1/admin/proxies/data", h.ExportData)
 backend/internal/handler/admin/proxy_data_handler_test.go:33:	router.POST("/api/v1/admin/proxies/data", h.ImportData)
@@ -26325,7 +26325,7 @@ id: call_HNPtvmvo9FUA35KJYsrb9R5n
 ```json
 {
   "cmd": "sed -n '1,260p' example_recall/rewriter.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -26338,7 +26338,7 @@ id: call_Xoi80kiCU5A9YSCIg1mloySX
 ```json
 {
   "cmd": "sed -n '260,460p' example_recall/rewriter.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -26351,7 +26351,7 @@ id: call_kHau0mz0HkNCLWwE2ltSUfrD
 ```json
 {
   "cmd": "sed -n '1,240p' backend/internal/server/routes/gateway.go",
-  "workdir": "/Users/lyston/PycharmProjects/sub2api",
+  "workdir": "/home/<USER>/PycharmProjects/sub2api",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -26364,7 +26364,7 @@ id: call_5IwWGjMtpGPptpA9Z9WKG0OP
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'sub2api|example_recall.server|python3 -m example_recall'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -26380,7 +26380,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2682
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/27791_1779764247675". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/27791_1779764247675". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 import json
@@ -26454,7 +26454,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1720
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/27798_1779764247677". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/27798_1779764247677". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 固定 provider 白名单：
 - bm25
 - dense
@@ -26533,7 +26533,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2140
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/27796_1779764247675". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/27796_1779764247675". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 package routes
 
 import (
@@ -26629,7 +26629,7 @@ id: call_N40e94nIUlcuZfowETzmWSte
 ```json
 {
   "cmd": "sed -n '1,260p' example_recall/server.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -26642,7 +26642,7 @@ id: call_PyOzvdyeHjWRUZmbgKPxHBEU
 ```json
 {
   "cmd": "sed -n '1,260p' example_recall/api.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -26655,7 +26655,7 @@ id: call_h9vNqYdXDeQVGLiKApdHcgwl
 ```json
 {
   "cmd": "sed -n '1,260p' example_recall/recall.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -26668,7 +26668,7 @@ id: call_ehKvLmjh1w5VzuIqUSv2gIrA
 ```json
 {
   "cmd": "sed -n '1,220p' tests/test_recall.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -26684,7 +26684,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 784
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28183_1779764278912". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28183_1779764278912". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 import json
@@ -26756,7 +26756,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 344
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28188_1779764278917". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28188_1779764278917". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 try:
@@ -26812,7 +26812,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2844
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28193_1779764278920". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28193_1779764278920". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 from collections import defaultdict
@@ -26872,7 +26872,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 478
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28195_1779764278924". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28195_1779764278924". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from pathlib import Path
 
 from example_recall.models import ExampleCreate, SearchRequest
@@ -26932,7 +26932,7 @@ id: call_ZTzCObqmzy6LQ9fQ24aCmVeA
 ```json
 {
   "cmd": "sed -n '1,260p' scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -26948,7 +26948,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 479
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28590_1779764352496". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28590_1779764352496". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 import json
@@ -27006,7 +27006,7 @@ id: call_aLAO1hy7unTeh0BqJ5VyUX3p
 ```json
 {
   "cmd": "sed -n '1,220p' pyproject.toml",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -27019,7 +27019,7 @@ id: call_p7xDMYi8OJ7KmZ6xpsLpCWL6
 ```json
 {
   "cmd": "rg -n \"api_key|token|Authorization|KeyAuth|GetAPIKeyFromContext|X-\" backend/internal/server backend/internal/server/middleware backend/internal/handler -g '*.go'",
-  "workdir": "/Users/lyston/PycharmProjects/sub2api",
+  "workdir": "/home/<USER>/PycharmProjects/sub2api",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -27032,7 +27032,7 @@ id: call_sRdgsL23dmRJUJgw0neVrPUE
 ```json
 {
   "cmd": "sed -n '1,180p' backend/internal/server/middleware/api_key_auth.go",
-  "workdir": "/Users/lyston/PycharmProjects/sub2api",
+  "workdir": "/home/<USER>/PycharmProjects/sub2api",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -27048,7 +27048,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 150
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28744_1779764385528". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28744_1779764385528". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 [project]
 name = "raap-example-recall"
 version = "0.1.0"
@@ -27084,7 +27084,7 @@ Original token count: 33365
 Output:
 Total output lines: 1122
 
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28745_1779764385528". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28745_1779764385528". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 backend/internal/server/router.go:28:	apiKeyAuth middleware2.APIKeyAuthMiddleware,
 backend/internal/server/router.go:84:	registerRoutes(r, handlers, jwtAuth, adminAuth, apiKeyAuth, apiKeyService, subscriptionService, opsService, settingService, cfg, redisClient)
 backend/internal/server/router.go:95:	apiKeyAuth middleware2.APIKeyAuthMiddleware,
@@ -27120,7 +27120,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1742
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/28743_1779764385528". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/28743_1779764385528". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 package middleware
 
 import (
@@ -27184,7 +27184,7 @@ id: call_vEOmqxum6TkUIbes1tQQgHcs
 ```json
 {
   "cmd": "sed -n '1,260p' example_recall/models.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -27197,7 +27197,7 @@ id: call_UGnf1XZqIT84TU7YeLeN6Oqq
 ```json
 {
   "cmd": "git diff -- example_recall/rewriter.py README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -27210,7 +27210,7 @@ id: call_1fY2E31lmUjjHZkhTZwNHfsy
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'sub2api|example_recall.server|python3 -m example_recall'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -27233,7 +27233,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1313
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29461_1779764482062". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29461_1779764482062". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field, is_dataclass
@@ -27304,7 +27304,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 5394
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29462_1779764482061". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29462_1779764482061". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 diff --git a/example_recall/rewriter.py b/README.md
 index 28b983f..24ca7fc 100644
 --- a/example_recall/rewriter.py
@@ -27380,7 +27380,7 @@ id: call_eY5Owt4sdinTjdZxA6ENg316
 ```json
 {
   "cmd": "python3 -m compileall -q example_recall scripts tests",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -27393,7 +27393,7 @@ id: call_se7y1FvwUDpMFKAiUlhYgTb0
 ```json
 {
   "cmd": "python3 scripts/smoke.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -27406,7 +27406,7 @@ id: call_nUnpEBkt2VSpy0Ud7Qi8Y6zU
 ```json
 {
   "cmd": "python3 -m pytest -q",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -27419,7 +27419,7 @@ id: call_0SNEYmtKW9mNLthyUxxTkWiv
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8791/health",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -27435,29 +27435,29 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 598
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30000_1779764592575". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30000_1779764592575". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 *** Error compiling 'example_recall/__init__.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'example_recall/api.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'example_recall/cli.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'example_recall/models.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'example_recall/recall.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'example_recall/rewriter.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'example_recall/server.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'example_recall/store.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'example_recall/text.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'scripts/smoke.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 *** Error compiling 'tests/test_recall.py'...
-PermissionError: [Errno 1] Operation not permitted: '/Users/lyston/Library/Caches/com.apple.python/Users/lyston/PycharmProjects/raap-example-recall'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/Library/Caches/com.apple.python/home/<USER>/PycharmProjects/raap-example-recall'
 
 ```
 
@@ -27471,7 +27471,7 @@ Wall time: 0.0987 seconds
 Process exited with code 0
 Original token count: 3381
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29998_1779764592575". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29998_1779764592575". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 {
   "query": "换季感冒频繁",
   "query_understanding": {
@@ -27560,7 +27560,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 74
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/29999_1779764592575". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/29999_1779764592575". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 /Library/Developer/CommandLineTools/usr/bin/python3: No module named pytest
 
 ```
@@ -27591,7 +27591,7 @@ id: call_9VJejgl2l3xMnVbtryoybll5
 ```json
 {
   "cmd": "PYTHONPYCACHEPREFIX=/private/tmp/raap-example-recall-pycache python3 -m compileall -q example_recall scripts tests",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -27604,7 +27604,7 @@ id: call_DLZ21IiqmI4pf3XG67F0onhA
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -27617,7 +27617,7 @@ id: call_VsWLN4xJf2xxMjsCMLJ2ROXg
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -27630,7 +27630,7 @@ id: call_E8Ej0OvXXqG43WUtBX42x1Le
 ```json
 {
   "cmd": "git diff -- example_recall/rewriter.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -27643,7 +27643,7 @@ id: call_9LyaBYLWhH8YUKfAsHjyBYiK
 ```json
 {
   "cmd": "git diff -- README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -27659,7 +27659,7 @@ Wall time: 0.1352 seconds
 Process exited with code 0
 Original token count: 55
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30207_1779764641727". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30207_1779764641727". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 
 ```
 
@@ -27673,7 +27673,7 @@ Wall time: 0.0000 seconds
 Process exited with code 128
 Original token count: 72
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30206_1779764641727". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30206_1779764641727". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 fatal: not a git repository (or any of the parent directories): .git
 
 ```
@@ -27688,7 +27688,7 @@ Wall time: 0.0000 seconds
 Process exited with code 129
 Original token count: 1896
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30235_1779764641755". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30235_1779764641755". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 warning: Not a git repository. Use --no-index to compare two paths outside a working tree
 usage: git diff --no-index [<options>] <path> <path>
 
@@ -27729,7 +27729,7 @@ Wall time: 0.0000 seconds
 Process exited with code 129
 Original token count: 1896
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30241_1779764641762". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30241_1779764641762". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 warning: Not a git repository. Use --no-index to compare two paths outside a working tree
 usage: git diff --no-index [<options>] <path> <path>
 
@@ -27770,7 +27770,7 @@ Wall time: 0.0000 seconds
 Process exited with code 129
 Original token count: 1896
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30240_1779764641762". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30240_1779764641762". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 warning: Not a git repository. Use --no-index to compare two paths outside a working tree
 usage: git diff --no-index [<options>] <path> <path>
 
@@ -27812,7 +27812,7 @@ id: call_WehJJ9bYD4pH9J0eilmmfEHe
 ```json
 {
   "cmd": "sed -n '1,260p' example_recall/rewriter.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -27825,7 +27825,7 @@ id: call_hN6oA6aOSoV1ds84r3sFTXJx
 ```json
 {
   "cmd": "sed -n '35,100p' README.md",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -27838,7 +27838,7 @@ id: call_tyfoLagDzRdTYO7GQV0H5GVf
 ```json
 {
   "cmd": "sed -n '260,460p' example_recall/rewriter.py",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -27851,7 +27851,7 @@ id: call_elAOzVXPB2hT6x6o0ooGsBql
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8787/api/models",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -27867,7 +27867,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2720
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30380_1779764673295". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30380_1779764673295". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 from __future__ import annotations
 
 import json
@@ -27941,7 +27941,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 510
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30404_1779764673368". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30404_1779764673368". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
   -d '{"query":"换季感冒频繁","return_mode":"example_pack","top_k":5,"rewrite_mode":"hybrid"}'
 ```
 
@@ -28021,7 +28021,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1770
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30405_1779764673370". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30405_1779764673370". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
         return """你是文章例文库的 query rewrite agent。你的任务不是写文章，而是把用户的短 query 改写成多路召回 query，用于召回整篇 Markdown 例文。
 
 必须只输出 JSON 对象，不要输出 Markdown。
@@ -28167,7 +28167,7 @@ id: call_UvSy21mBrDhyNjxCYSOD0D7G
 ```json
 {
   "cmd": "curl -sS -i -X POST http://127.0.0.1:8787/v1/responses -H 'Content-Type: application/json' -d '{\"model\":\"gpt-5.5\",\"input\":\"ping\",\"store\":false}'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -28180,7 +28180,7 @@ id: call_BHUKhohCgNWavvKBqJ0ZDraI
 ```json
 {
   "cmd": "curl -sS -i -X POST http://127.0.0.1:8787/v1/chat/completions -H 'Content-Type: application/json' -d '{\"model\":\"gpt-5.5\",\"messages\":[{\"role\":\"user\",\"content\":\"ping\"}],\"stream\":false}'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -28193,7 +28193,7 @@ id: call_bfq8P7Gzq3ZKXqG8nHldE9r3
 ```json
 {
   "cmd": "ps -ax -o pid,command | rg 'example_recall.server'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -28261,7 +28261,7 @@ id: call_lBgWU6kc5Rpa3Tqnb3GAOM7E
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8787/api/models",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -28274,7 +28274,7 @@ id: call_ceZjy5GQNswQrVzFQiYQCCZd
 ```json
 {
   "cmd": "sed -n '500,570p' README_CN.md",
-  "workdir": "/Users/lyston/PycharmProjects/sub2api",
+  "workdir": "/home/<USER>/PycharmProjects/sub2api",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -28287,7 +28287,7 @@ id: call_5PSOwGtnLbBvjbDtJKoA0xZc
 ```json
 {
   "cmd": "rg -n \"PORT|LISTEN|SERVER|APP_PORT|:8787|8080|9090\" README.md README_CN.md deploy backend -g '*.{md,yml,yaml,env,go,sh}'",
-  "workdir": "/Users/lyston/PycharmProjects/sub2api",
+  "workdir": "/home/<USER>/PycharmProjects/sub2api",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -28371,7 +28371,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 661
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30900_1779764778245". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30900_1779764778245". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 - `turnstile.required` 在 release 模式强制启用 Turnstile
 
 **网关防御纵深建议（重点）**
@@ -28456,7 +28456,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 4654
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/30905_1779764778250". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/30905_1779764778250". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 README.md:181:# http://YOUR_SERVER_IP:8080
 README.md:283:SERVER_PORT=8080
 README.md:327:Open `http://YOUR_SERVER_IP:8080` in your browser.
@@ -28506,8 +28506,8 @@ tool_use exec_command
 id: call_k0GqTeIEXReK7XLwN6mcCmFH
 ```json
 {
-  "cmd": "rg -n \"custom:sub2api|api/models|provider_id|Sub2API|responses|chat/completions\" /Users/lyston/.codex /Users/lyston/PycharmProjects 2>/dev/null",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "rg -n \"custom:sub2api|api/models|provider_id|Sub2API|responses|chat/completions\" /home/<USER>/.codex /home/<USER>/PycharmProjects 2>/dev/null",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -28520,7 +28520,7 @@ id: call_7NUl56g28YkInB0JLeRXQ9JS
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8787/static/ui.js?v=ui-v8 | rg -n \"custom:sub2api|api/models|provider_id|responses|chat/completions|v1/\"",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -28533,7 +28533,7 @@ id: call_w650ca2uER0Q1TE8AQXgjmB8
 ```json
 {
   "cmd": "curl -fsS http://127.0.0.1:8787/static/boot.js?v=ui-v8 | rg -n \"custom:sub2api|api/models|provider_id|responses|chat/completions|v1/\"",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -28551,42 +28551,42 @@ Original token count: 22850420
 Output:
 Total output lines: 12589
 
-/Users/lyston/PycharmProjects/grok2api/README.md:18:- OpenAI 兼容接口：`/v1/models`、`/v1/chat/completions`、`/v1/responses`、`/v1/images/generations`、`/v1/images/edits`、`/v1/videos`、`/v1/videos/{video_id}`、`/v1/videos/{video_id}/content`
-/Users/lyston/PycharmProjects/grok2api/README.md:274:| `POST /v1/chat/completions` | 是 | 对话 / 图像 / 视频统一入口 |
-/Users/lyston/PycharmProjects/grok2api/README.md:275:| `POST /v1/responses` | 是 | OpenAI Responses API 兼容子集 |
-/Users/lyston/PycharmProjects/grok2api/README.md:315:<summary><code>POST /v1/chat/completions</code></summary>
-/Users/lyston/PycharmProjects/grok2api/README.md:321:curl http://localhost:8000/v1/chat/completions \
-/Users/lyston/PycharmProjects/grok2api/README.md:337:curl http://localhost:8000/v1/chat/completions \
-/Users/lyston/PycharmProjects/grok2api/README.md:357:curl http://localhost:8000/v1/chat/completions \
-/Users/lyston/PycharmProjects/grok2api/README.md:404:<summary><code>POST /v1/responses</code></summary>
-/Users/lyston/PycharmProjects/grok2api/README.md:408:curl http://localhost:8000/v1/responses \
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:46:# but the backend re-fetches on every /api/models/live call.
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:196:def _normalize_provider_id(value: str | None) -> str:
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:219:def _catalog_provider_id_sets(catalog: dict) -> tuple[set[str], set[str]]:
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:220:    raw_provider_ids: set[str] = set()
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:221:    normalized_provider_ids: set[str] = set()
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:223:        raw = str(group.get("provider_id") or "").strip().lower()
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:226:        raw_provider_ids.add(raw)
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:227:        normalized = _normalize_provider_id(raw)
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:229:            normalized_provider_ids.add(normalized)
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:230:    return raw_provider_ids, normalized_provider_ids
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:236:    raw_provider_ids: set[str],
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:237:    normalized_provider_ids: set[str],
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:240:        provider_raw in raw_provider_ids
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:241:        or (provider_normalized and provider_normalized in raw_provider_ids)
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:242:        or (provider_normalized and provider_normalized in normalized_provider_ids)
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:253:            return _normalize_provider_id(bare_prefix) == active_provider
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:272:    active_provider = _normalize_provider_id(catalog.get("active_provider"))
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:274:    # non-listed providers (ollama-cloud, deepseek, xai, etc.) that _normalize_provider_id
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:285:        provider_normalized = _normalize_provider_id(provider_raw)
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:290:        raw_provider_ids, normalized_provider_ids = _catalog_provider_id_sets(catalog)
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:302:            raw_provider_ids,
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:303:            normalized_provider_ids,
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:318:                model_provider = _normalize_provider_id(bare_prefix)
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:324:    model_provider = _normalize_provider_id(model[:slash])
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:337:        routable_provider_ids = {
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:338:            _normalize_provider_id(g.get("provider_id") or "") for g in groups
-/Users/lyston/PycharmProjects/hermes-webui/api/routes.py:342:            (g.get("provider_id") or "") == "openrouter" […]
+/home/<USER>/PycharmProjects/grok2api/README.md:18:- OpenAI 兼容接口：`/v1/models`、`/v1/chat/completions`、`/v1/responses`、`/v1/images/generations`、`/v1/images/edits`、`/v1/videos`、`/v1/videos/{video_id}`、`/v1/videos/{video_id}/content`
+/home/<USER>/PycharmProjects/grok2api/README.md:274:| `POST /v1/chat/completions` | 是 | 对话 / 图像 / 视频统一入口 |
+/home/<USER>/PycharmProjects/grok2api/README.md:275:| `POST /v1/responses` | 是 | OpenAI Responses API 兼容子集 |
+/home/<USER>/PycharmProjects/grok2api/README.md:315:<summary><code>POST /v1/chat/completions</code></summary>
+/home/<USER>/PycharmProjects/grok2api/README.md:321:curl http://localhost:8000/v1/chat/completions \
+/home/<USER>/PycharmProjects/grok2api/README.md:337:curl http://localhost:8000/v1/chat/completions \
+/home/<USER>/PycharmProjects/grok2api/README.md:357:curl http://localhost:8000/v1/chat/completions \
+/home/<USER>/PycharmProjects/grok2api/README.md:404:<summary><code>POST /v1/responses</code></summary>
+/home/<USER>/PycharmProjects/grok2api/README.md:408:curl http://localhost:8000/v1/responses \
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:46:# but the backend re-fetches on every /api/models/live call.
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:196:def _normalize_provider_id(value: str | None) -> str:
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:219:def _catalog_provider_id_sets(catalog: dict) -> tuple[set[str], set[str]]:
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:220:    raw_provider_ids: set[str] = set()
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:221:    normalized_provider_ids: set[str] = set()
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:223:        raw = str(group.get("provider_id") or "").strip().lower()
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:226:        raw_provider_ids.add(raw)
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:227:        normalized = _normalize_provider_id(raw)
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:229:            normalized_provider_ids.add(normalized)
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:230:    return raw_provider_ids, normalized_provider_ids
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:236:    raw_provider_ids: set[str],
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:237:    normalized_provider_ids: set[str],
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:240:        provider_raw in raw_provider_ids
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:241:        or (provider_normalized and provider_normalized in raw_provider_ids)
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:242:        or (provider_normalized and provider_normalized in normalized_provider_ids)
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:253:            return _normalize_provider_id(bare_prefix) == active_provider
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:272:    active_provider = _normalize_provider_id(catalog.get("active_provider"))
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:274:    # non-listed providers (ollama-cloud, deepseek, xai, etc.) that _normalize_provider_id
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:285:        provider_normalized = _normalize_provider_id(provider_raw)
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:290:        raw_provider_ids, normalized_provider_ids = _catalog_provider_id_sets(catalog)
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:302:            raw_provider_ids,
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:303:            normalized_provider_ids,
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:318:                model_provider = _normalize_provider_id(bare_prefix)
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:324:    model_provider = _normalize_provider_id(model[:slash])
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:337:        routable_provider_ids = {
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:338:            _normalize_provider_id(g.get("provider_id") or "") for g in groups
+/home/<USER>/PycharmProjects/hermes-webui/api/routes.py:342:            (g.get("provider_id") or "") == "openrouter" […]
 
 > TOOL
 
@@ -28645,77 +28645,77 @@ Original token count: 262144
 Output:
 Total output lines: 1999
 
-/Users/lyston/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:6:  it('serializes non-SSE fallback payloads into canonical responses SSE closeout events', () => {
-/Users/lyston/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:22:      output_text: 'hello from responses upstream',
-/Users/lyston/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:29:          content: [{ type: 'output_text', text: 'hello from responses upstream' }],
-/Users/lyston/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:41:      successfulUpstreamPath: '/v1/responses',
-/Users/lyston/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:69:    expect(output).toContain('"output_text":"hello from responses upstream"');
-/Users/lyston/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:107:      successfulUpstreamPath: '/v1/responses',
-/Users/lyston/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:165:      successfulUpstreamPath: '/v1/responses',
-/Users/lyston/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:230:      successfulUpstreamPath: '/v1/responses',
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:749:      "/v1/chat/completions"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:770:      "/v1/chat/completions"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1505:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1688:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1756:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1804:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1855:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1901:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1947:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1992:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2109:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2154:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2199:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2256:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2300:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2346:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2393:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2442:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2526:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2569:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2617:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2674:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2732:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2790:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2842:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2899:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2961:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3008:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3054:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3133:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3189:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3518:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3520:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3552:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3554:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3589:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3591:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3623:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3625:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3660:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3662:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3694:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3696:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4328:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4330:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4367:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4369:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4400:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4402:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4432:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4434:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4461:    "mode": "responses",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4464:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4500:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4502:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4539:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4541:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4576:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4578:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4611:      "/v1/chat/completions",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4613:      "/v1/responses"
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4640:    "mode": "responses",
-/Users/lyston/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4645: […]
+/home/<USER>/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:6:  it('serializes non-SSE fallback payloads into canonical responses SSE closeout events', () => {
+/home/<USER>/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:22:      output_text: 'hello from responses upstream',
+/home/<USER>/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:29:          content: [{ type: 'output_text', text: 'hello from responses upstream' }],
+/home/<USER>/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:41:      successfulUpstreamPath: '/v1/responses',
+/home/<USER>/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:69:    expect(output).toContain('"output_text":"hello from responses upstream"');
+/home/<USER>/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:107:      successfulUpstreamPath: '/v1/responses',
+/home/<USER>/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:165:      successfulUpstreamPath: '/v1/responses',
+/home/<USER>/PycharmProjects/metapi-main/src/server/transformers/openai/responses/proxyStream.test.ts:230:      successfulUpstreamPath: '/v1/responses',
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:749:      "/v1/chat/completions"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:770:      "/v1/chat/completions"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1505:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1688:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1756:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1804:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1855:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1901:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1947:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:1992:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2109:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2154:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2199:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2256:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2300:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2346:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2393:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2442:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2526:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2569:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2617:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2674:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2732:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2790:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2842:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2899:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:2961:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3008:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3054:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3133:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3189:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3518:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3520:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3552:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3554:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3589:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3591:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3623:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3625:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3660:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3662:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3694:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:3696:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4328:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4330:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4367:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4369:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4400:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4402:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4432:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4434:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4461:    "mode": "responses",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4464:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4500:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4502:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4539:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4541:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4576:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4578:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4611:      "/v1/chat/completions",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4613:      "/v1/responses"
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4640:    "mode": "responses",
+/home/<USER>/PycharmProjects/sub2api/backend/resources/model-pricing/model_prices_and_context_window.json:4645: […]
 
 > AGENT
 
@@ -28728,7 +28728,7 @@ id: call_m78TkwjsHl9hKbDReH7Anlno
 ```json
 {
   "cmd": "kill 24225",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -28756,7 +28756,7 @@ id: call_999hAWoBaS5ZLorjYBdWJKwt
 ```json
 {
   "cmd": "python3 -m example_recall.server",
-  "workdir": "/Users/lyston/PycharmProjects/raap-example-recall",
+  "workdir": "/home/<USER>/PycharmProjects/raap-example-recall",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -28792,8 +28792,8 @@ tool_use exec_command
 id: call_MvYbMPaaZdxXYlekiNjpEMPh
 ```json
 {
-  "cmd": "sed -n '1,120p' /Users/lyston/.codex/config.toml",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,120p' /home/<USER>/.codex/config.toml",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -28806,7 +28806,7 @@ id: call_5NS6UqzEe3fZgP50Hgb3TgpO
 ```json
 {
   "cmd": "curl -sS -i -X POST https://api.lyston.qzz.io/v1/responses -H 'Content-Type: application/json' -d '{\"model\":\"gpt-5.5\",\"input\":\"ping\",\"store\":false}'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -28819,7 +28819,7 @@ id: call_UBfWWYoFS0j1IKzSpNtC6NP5
 ```json
 {
   "cmd": "curl -sS -i -X POST http://127.0.0.1:8080/v1/responses -H 'Content-Type: application/json' -d '{\"model\":\"gpt-5.5\",\"input\":\"ping\",\"store\":false}'",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -28842,7 +28842,7 @@ service_tier = "fast"
 disable_response_storage = true
 
 
-notify = ["/Users/lyston/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+notify = ["/home/<USER>/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [features]
 fast_mode = true
@@ -28854,49 +28854,49 @@ base_url = "https://api.lyston.qzz.io/v1"
 wire_api = "responses"
 requires_openai_auth = true
 
-[projects."/Users/lyston"]
+[projects."/home/<USER>"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/PycharmProjects/codex-session-toolkit"]
+[projects."/home/<USER>/PycharmProjects/codex-session-toolkit"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/PycharmProjects"]
+[projects."/home/<USER>/PycharmProjects"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-08/codex-md-docs-users-lyston-codex"]
+[projects."/home/<USER>/Documents/Codex/2026-05-08/codex-md-docs-users-lyston-codex"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/PycharmProjects/video-agent"]
+[projects."/home/<USER>/PycharmProjects/video-agent"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/raap"]
+[projects."/home/<USER>/raap"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-13/a-c-a-c"]
+[projects."/home/<USER>/Documents/Codex/2026-05-13/a-c-a-c"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-22/1-xx-ps-dha-1-xx"]
+[projects."/home/<USER>/Documents/Codex/2026-05-22/1-xx-ps-dha-1-xx"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-22/a2-a2-a2-b2-regexextract-b2"]
+[projects."/home/<USER>/Documents/Codex/2026-05-22/a2-a2-a2-b2-regexextract-b2"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-22/kos-6-20-0-2-emoji"]
+[projects."/home/<USER>/Documents/Codex/2026-05-22/kos-6-20-0-2-emoji"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-23/files-mentioned-by-the-user-lyston"]
+[projects."/home/<USER>/Documents/Codex/2026-05-23/files-mentioned-by-the-user-lyston"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-25/files-mentioned-by-the-user-2026"]
+[projects."/home/<USER>/Documents/Codex/2026-05-25/files-mentioned-by-the-user-2026"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-25/files-mentioned-by-the-user-2026-2"]
+[projects."/home/<USER>/Documents/Codex/2026-05-25/files-mentioned-by-the-user-2026-2"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-25/files-mentioned-by-the-user-2026-3"]
+[projects."/home/<USER>/Documents/Codex/2026-05-25/files-mentioned-by-the-user-2026-3"]
 trust_level = "trusted"
 
-[projects."/Users/lyston/Documents/Codex/2026-05-26/019e1f23-57e7-7110-ba2c-c18698f4f8ec-documents"]
+[projects."/home/<USER>/Documents/Codex/2026-05-26/019e1f23-57e7-7110-ba2c-c18698f4f8ec-documents"]
 trust_level = "trusted"
 
 [notice.model_migrations]
@@ -28905,12 +28905,12 @@ gpt-5-codex = "gpt-5.5"
 [marketplaces.openai-bundled]
 last_updated = "2026-05-23T05:02:59Z"
 source_type = "local"
-source = "/Users/lyston/.codex/.tmp/bundled-marketplaces/openai-bundled"
+source = "/home/<USER>/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
 last_updated = "2026-05-18T14:32:19Z"
 source_type = "local"
-source = "/Users/lyston/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+source = "/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 3
@@ -28934,7 +28934,7 @@ enabled = true
 global = "fileManager"
 
 [desktop.open-in-target-preferences.perPath]
-"/Users/lyston/PycharmProjects" = "fileManager"
+"/home/<USER>/PycharmProjects" = "fileManager"
 
 [mcp_servers.node_repl]
 args = []

@@ -473,12 +473,12 @@ tool_result Bash
 ```
 95544 832208 501408080  11.9  5.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent
 95571 562224 500361072   1.0  3.4 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent
-61677 277456 1932030976   7.9  1.7 /Applications/Codex.app/Contents/Frameworks/Codex Helper (Renderer).app/Contents/MacOS/Codex Helper (Renderer) --type=renderer --user-data-dir=/Users/user_0a329be7/Library/Application Support/Codex --standard-schemes=app --secure-schemes=app,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=app,sentry-ipc --streaming-schemes=app --app-path=/Applications/Codex.app/Contents/Resources/app.asar --enable-sandbox --lang=zh-CN --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1779756865697618 --launch-time-ticks=106941877260 --shared-files --field-trial-handle=1718379636,r,9701381041780626212,13630999798208474832,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,6185464384488772725,12549114351571917617,4 --trace-process-track-uuid=3190708990060038890 --seatbelt-client=73
+61677 277456 1932030976   7.9  1.7 /Applications/Codex.app/Contents/Frameworks/Codex Helper (Renderer).app/Contents/MacOS/Codex Helper (Renderer) --type=renderer --user-data-dir=/home/<USER>/Library/Application Support/Codex --standard-schemes=app --secure-schemes=app,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=app,sentry-ipc --streaming-schemes=app --app-path=/Applications/Codex.app/Contents/Resources/app.asar --enable-sandbox --lang=zh-CN --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1779756865697618 --launch-time-ticks=106941877260 --shared-files --field-trial-handle=1718379636,r,9701381041780626212,13630999798208474832,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,6185464384488772725,12549114351571917617,4 --trace-process-track-uuid=3190708990060038890 --seatbelt-client=73
 63473 268048 512352496   0.0  1.6 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 88018 265360 1926548160  11.6  1.6 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/148.0.7778.179/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer) --type=renderer --lang=zh-CN --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=538 --time-ticks-at-unix-epoch=-1779756865683058 --launch-time-ticks=153498350233 --shared-files --metrics-shmem-handle=1752395122,r,4067618137244165150,15498659943781993633,2097152 --field-trial-handle=1718379636,r,4183894928047450343,4086077722043183374,262144 --variations-seed-version=20260526-090039.918000-production --pseudonymization-salt-handle=1935764596,r,12547001803370128922,17711071570664126198,4 --trace-process-track-uuid=3190709490440386256 --seatbelt-client=226
-92394 263968 1875486480   4.8  1.6 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer) --type=renderer --user-data-dir=/Users/user_0a329be7/Library/Application Support/Claude --standard-schemes=cowork-artifact,cowork-file,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --bypasscsp-schemes=claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-simulator --app-path=/Applications/Claude.app/Contents/Resources/app.asar --enable-sandbox --lang=zh-CN --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=8 --time-ticks-at-unix-epoch=-1779756865657237 --launch-time-ticks=153868287596 --shared-files --field-trial-handle=1718379636,r,11519076147597378909,14583963902921059309,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,347632069579593500,7133699761995072677,4 --trace-process-track-uuid=3190708993808206286 --desktop-features={"nativeQuickEntry":{"status":"supported"},"quickEntryDictation":{"status":"supported"},"customQuickEntryDictationShortcut":{"status":"supported"},"plushRaccoon":{"status":"unavailable"},"quietPenguin":{"status":"unavailable"},"chillingSlothFeat":{"status":"supported"},"chillingSlothEnterprise":{"status":"supported"},"chillingSlothLocal":{"status":"supported"},"chillingSlothPool":{"status":"unavailable"},"yukonSilver":{"status":"supported"},"yukonSilverGems":{"status":"supported"},"yukonSilverGemsCache":{"status":"supported"},"wakeScheduler":{"status":"unavailable"},"desktopTopBar":{"status":"supported"},"ccdPlugins":{"status":"supported"},"computerUse":{"status":"supported"},"coworkKappa":{"status":"unavailable"},"coworkArtifacts":{"status":"unavailable"},"markTaskComplete":{"status":"unavailable"},"framebufferPreview":{"status":"unavailable"},"iosSimulator":{"status":"unavailable"},"androidEmulator":{"status":"unavailable"},"grandPrix":{"status":"unavailable"},"tearOffHalo":{"status":"supported"},"grandPrixRequest":{"status":"unavailable"},"bootstrapConfig":{"status":"unavailable"},"chatIn3p":{"status":"unavailable"},"chatCodeExecution":{"status":"unavailable"}} --desktop-enterprise-config={"forceLoginOrgUUIDs":null,"disableEssentialTelemetry":false,"disableNonessentialTelemetry":false,"banner":null} --desktop-telemetry-config={"deploymentMode":"1p","appVersion":"1.9255.2","cookielessOrigin":false} --seatbelt-client=80
-94109 203056 484532832   7.4  1.2 /Users/user_0a329be7/Library/Application Support/Claude/claude-code/2.1.149/claude.app/Contents/MacOS/claude --output-format stream-json --verbose --input-format stream-json --effort low --model claude-opus-4-7[1m] --permission-prompt-tool stdio --allowedTools mcp__computer-use,mcp__ccd_session__spawn_task,mcp__ccd_session__mark_chapter,mcp__ccd_session_mgmt__list_sessions --setting-sources=user,project,local --permission-mode bypassPermissions --allow-dangerously-skip-permissions --include-partial-messages --plugin-dir /Users/user_0a329be7/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/8d2a3253-802b-4e01-b150-db1671cc15b5/b8084b3f-2a86-4106-903e-1e627eb2b5fe --replay-user-messages --settings {"fastMode":false}
-93587 192032 484485568   1.4  1.1 /Users/user_0a329be7/Library/Application Support/Claude/claude-code/2.1.149/claude.app/Contents/MacOS/claude --output-format stream-json --verbose --input-format stream-json --effort low --model claude-opus-4-7[1m] --permission-prompt-tool stdio --allowedTools mcp__computer-use,mcp__ccd_session__spawn_task,mcp__ccd_session__mark_chapter,mcp__ccd_session_mgmt__list_sessions --setting-sources=user,project,local --permission-mode bypassPermissions --allow-dangerously-skip-permissions --include-partial-messages --plugin-dir /Users/user_0a329be7/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/8d2a3253-802b-4e01-b150-db1671cc15b5/b8084b3f-2a86-4106-903e-1e627eb2b5fe --replay-user-messages --settings {"fastMode":false}
+92394 263968 1875486480   4.8  1.6 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer) --type=renderer --user-data-dir=/home/<USER>/Library/Application Support/Claude --standard-schemes=cowork-artifact,cowork-file,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --bypasscsp-schemes=claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-simulator --app-path=/Applications/Claude.app/Contents/Resources/app.asar --enable-sandbox --lang=zh-CN --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=8 --time-ticks-at-unix-epoch=-1779756865657237 --launch-time-ticks=153868287596 --shared-files --field-trial-handle=1718379636,r,11519076147597378909,14583963902921059309,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,347632069579593500,7133699761995072677,4 --trace-process-track-uuid=3190708993808206286 --desktop-features={"nativeQuickEntry":{"status":"supported"},"quickEntryDictation":{"status":"supported"},"customQuickEntryDictationShortcut":{"status":"supported"},"plushRaccoon":{"status":"unavailable"},"quietPenguin":{"status":"unavailable"},"chillingSlothFeat":{"status":"supported"},"chillingSlothEnterprise":{"status":"supported"},"chillingSlothLocal":{"status":"supported"},"chillingSlothPool":{"status":"unavailable"},"yukonSilver":{"status":"supported"},"yukonSilverGems":{"status":"supported"},"yukonSilverGemsCache":{"status":"supported"},"wakeScheduler":{"status":"unavailable"},"desktopTopBar":{"status":"supported"},"ccdPlugins":{"status":"supported"},"computerUse":{"status":"supported"},"coworkKappa":{"status":"unavailable"},"coworkArtifacts":{"status":"unavailable"},"markTaskComplete":{"status":"unavailable"},"framebufferPreview":{"status":"unavailable"},"iosSimulator":{"status":"unavailable"},"androidEmulator":{"status":"unavailable"},"grandPrix":{"status":"unavailable"},"tearOffHalo":{"status":"supported"},"grandPrixRequest":{"status":"unavailable"},"bootstrapConfig":{"status":"unavailable"},"chatIn3p":{"status":"unavailable"},"chatCodeExecution":{"status":"unavailable"}} --desktop-enterprise-config={"forceLoginOrgUUIDs":null,"disableEssentialTelemetry":false,"disableNonessentialTelemetry":false,"banner":null} --desktop-telemetry-config={"deploymentMode":"1p","appVersion":"1.9255.2","cookielessOrigin":false} --seatbelt-client=80
+94109 203056 484532832   7.4  1.2 /home/<USER>/Library/Application Support/Claude/claude-code/2.1.149/claude.app/Contents/MacOS/claude --output-format stream-json --verbose --input-format stream-json --effort low --model claude-opus-4-7[1m] --permission-prompt-tool stdio --allowedTools mcp__computer-use,mcp__ccd_session__spawn_task,mcp__ccd_session__mark_chapter,mcp__ccd_session_mgmt__list_sessions --setting-sources=user,project,local --permission-mode bypassPermissions --allow-dangerously-skip-permissions --include-partial-messages --plugin-dir /home/<USER>/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/8d2a3253-802b-4e01-b150-db1671cc15b5/b8084b3f-2a86-4106-903e-1e627eb2b5fe --replay-user-messages --settings {"fastMode":false}
+93587 192032 484485568   1.4  1.1 /home/<USER>/Library/Application Support/Claude/claude-code/2.1.149/claude.app/Contents/MacOS/claude --output-format stream-json --verbose --input-format stream-json --effort low --model claude-opus-4-7[1m] --permission-prompt-tool stdio --allowedTools mcp__computer-use,mcp__ccd_session__spawn_task,mcp__ccd_session__mark_chapter,mcp__ccd_session_mgmt__list_sessions --setting-sources=user,project,local --permission-mode bypassPermissions --allow-dangerously-skip-permissions --include-partial-messages --plugin-dir /home/<USER>/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/8d2a3253-802b-4e01-b150-db1671cc15b5/b8084b3f-2a86-4106-903e-1e627eb2b5fe --replay-user-messages --settings {"fastMode":false}
   569 167312 412976624   0.0  1.0 /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight […]
 
 > TOOL
@@ -728,11 +728,11 @@ tool_use Bash
 
 tool_result Bash
 ```
-10M	/Users/user_0a329be7/Library/Logs
- 10G	/Users/user_0a329be7/Library/Application Support/Claude
-6.5G	/Users/user_0a329be7/Library/Application Support/Google
-5.0G	/Users/user_0a329be7/Library/Containers
-5.8G	/Users/user_0a329be7/Library/Caches
+10M	/home/<USER>/Library/Logs
+ 10G	/home/<USER>/Library/Application Support/Claude
+6.5G	/home/<USER>/Library/Application Support/Google
+5.0G	/home/<USER>/Library/Containers
+5.8G	/home/<USER>/Library/Caches
 ```
 
 > TOOL
@@ -961,15 +961,15 @@ Google Chrome.app
 ---user apps:
 Chrome Apps.localized
 ---chrome support paths:
-/Users/user_0a329be7/Library/Application Support/Google
-/Users/user_0a329be7/Library/Caches/Google
-/Users/user_0a329be7/Library/Caches/com.google.GoogleUpdater
-/Users/user_0a329be7/Library/Caches/com.google.antigravity
-/Users/user_0a329be7/Library/Caches/com.google.antigravity.ShipIt
-/Users/user_0a329be7/Library/Preferences/com.google.Chrome.plist
-/Users/user_0a329be7/Library/Preferences/com.google.Keystone.Agent.plist
-/Users/user_0a329be7/Library/Preferences/com.google.antigravity.plist
-/Users/user_0a329be7/Library/Preferences/com.google.chrome.for.testing.plist
+/home/<USER>/Library/Application Support/Google
+/home/<USER>/Library/Caches/Google
+/home/<USER>/Library/Caches/com.google.GoogleUpdater
+/home/<USER>/Library/Caches/com.google.antigravity
+/home/<USER>/Library/Caches/com.google.antigravity.ShipIt
+/home/<USER>/Library/Preferences/com.google.Chrome.plist
+/home/<USER>/Library/Preferences/com.google.Keystone.Agent.plist
+/home/<USER>/Library/Preferences/com.google.antigravity.plist
+/home/<USER>/Library/Preferences/com.google.chrome.for.testing.plist
 ```
 
 > TOOL
@@ -986,13 +986,13 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_0a329be7/Library/Saved Application State/com.iqiyi.player.savedState
-/Users/user_0a329be7/Library/Application Scripts/com.iqiyi.player
-/Users/user_0a329be7/Library/Application Scripts/com.iqiyi.player.QYUserNotification
-/Users/user_0a329be7/Library/Application Scripts/group.com.qiyi
-/Users/user_0a329be7/Library/Group Containers/group.com.qiyi
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification
+/home/<USER>/Library/Saved Application State/com.iqiyi.player.savedState
+/home/<USER>/Library/Application Scripts/com.iqiyi.player
+/home/<USER>/Library/Application Scripts/com.iqiyi.player.QYUserNotification
+/home/<USER>/Library/Application Scripts/group.com.qiyi
+/home/<USER>/Library/Group Containers/group.com.qiyi
+/home/<USER>/Library/Containers/com.iqiyi.player
+/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification
 ---system level:
 ```
 
@@ -1010,16 +1010,16 @@ tool_use Bash
 
 tool_result Bash
 ```
-/Users/user_0a329be7/Library/Google/Google Chrome Brand.plist
-/Users/user_0a329be7/Library/Google/GoogleSoftwareUpdate/Actives/com.google.Chrome
-/Users/user_0a329be7/Library/Caches/com.apple.nsurlsessiond/Downloads/com.google.chrome.for.testing
-/Users/user_0a329be7/Library/Caches/com.apple.nsurlsessiond/Downloads/com.google.Chrome
-/Users/user_0a329be7/Library/Preferences/com.google.Keystone.Agent.plist
-/Users/user_0a329be7/Library/Preferences/com.google.Chrome.plist
-/Users/user_0a329be7/Library/Preferences/com.google.chrome.for.testing.plist
-/Users/user_0a329be7/Library/Application Support/CrashReporter/Google Chrome_164EC740-C47B-5068-AFB0-66684A24D8D3.plist
-/Users/user_0a329be7/Library/LaunchAgents/com.google.keystone.xpcservice.plist
-/Users/user_0a329be7/Library/LaunchAgents/com.google.keystone.agent.plist
+/home/<USER>/Library/Google/Google Chrome Brand.plist
+/home/<USER>/Library/Google/GoogleSoftwareUpdate/Actives/com.google.Chrome
+/home/<USER>/Library/Caches/com.apple.nsurlsessiond/Downloads/com.google.chrome.for.testing
+/home/<USER>/Library/Caches/com.apple.nsurlsessiond/Downloads/com.google.Chrome
+/home/<USER>/Library/Preferences/com.google.Keystone.Agent.plist
+/home/<USER>/Library/Preferences/com.google.Chrome.plist
+/home/<USER>/Library/Preferences/com.google.chrome.for.testing.plist
+/home/<USER>/Library/Application Support/CrashReporter/Google Chrome_164EC740-C47B-5068-AFB0-66684A24D8D3.plist
+/home/<USER>/Library/LaunchAgents/com.google.keystone.xpcservice.plist
+/home/<USER>/Library/LaunchAgents/com.google.keystone.agent.plist
 ```
 
 > TOOL
@@ -1147,7 +1147,7 @@ tool_use Bash
 tool_result Bash
 ```
 === 剩余 Chrome 进程详情 ===
-96184 ??         0:00.01 /bin/zsh -c source /Users/user_0a329be7/.claude/shell-snapshots/snapshot-zsh-1779911339632-lqnkrz.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== M-eM^IM-)M-dM-=M^Y Chrome M-hM-?M^[M-gM-(M^KM-hM-/M-&M-fM^CM^E ==="; ps -ax | grep "[G]oogle Chrome"; echo "---"; pkill -9 -f "Google Chrome Framework" 2>/dev/null; sleep 1; pkill -9 -f "Google Chrome Helper" 2>/dev/null; sleep 1; echo "M-eM^FM^MM-fM-,M-!M-fM-8M^EM-gM^BM-9: $(ps -ax | grep -c "[G]oogle Chrome")"' < /dev/null && pwd -P >| /tmp/claude-c70f-cwd
+96184 ??         0:00.01 /bin/zsh -c source /home/<USER>/.claude/shell-snapshots/snapshot-zsh-1779911339632-lqnkrz.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== M-eM^IM-)M-dM-=M^Y Chrome M-hM-?M^[M-gM-(M^KM-hM-/M-&M-fM^CM^E ==="; ps -ax | grep "[G]oogle Chrome"; echo "---"; pkill -9 -f "Google Chrome Framework" 2>/dev/null; sleep 1; pkill -9 -f "Google Chrome Helper" 2>/dev/null; sleep 1; echo "M-eM^FM^MM-fM-,M-!M-fM-8M^EM-gM^BM-9: $(ps -ax | grep -c "[G]oogle Chrome")"' < /dev/null && pwd -P >| /tmp/claude-c70f-cwd
 ---
 再次清点: 2
 ```
@@ -1194,7 +1194,7 @@ tool_use Bash
 tool_result Bash
 ```
 === 真实 Chrome 进程检测 ===
-96218 /bin/zsh -c source /Users/user_0a329be7/.claude/shell-snapshots/snapshot-zsh-1779911339632-lqnkrz.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== 真实 Chrome 进程检测 ==="; pgrep -afl "Google Chrome.app" | head -10; echo "count: $(pgrep -af '"'"'Google Chrome.app'"'"' | wc -l)"' < /dev/null && pwd -P >| /tmp/claude-dad2-cwd
+96218 /bin/zsh -c source /home/<USER>/.claude/shell-snapshots/snapshot-zsh-1779911339632-lqnkrz.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== 真实 Chrome 进程检测 ==="; pgrep -afl "Google Chrome.app" | head -10; echo "count: $(pgrep -af '"'"'Google Chrome.app'"'"' | wc -l)"' < /dev/null && pwd -P >| /tmp/claude-dad2-cwd
 count:        2
 ```
 
@@ -1294,10 +1294,10 @@ Exit code 1
 ✅ Scripts/notification
 ✅ Scripts/group
 ✅ Group Containers
-rm: /Users/user_0a329be7/Library/Containers/com.iqiyi.player/.com.apple.containermanagerd.metadata.plist: Operation not permitted
-rm: /Users/user_0a329be7/Library/Containers/com.iqiyi.player: Operation not permitted
-rm: /Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification/.com.apple.containermanagerd.metadata.plist: Operation not permitted
-rm: /Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification: Operation not permitted
+rm: /home/<USER>/Library/Containers/com.iqiyi.player/.com.apple.containermanagerd.metadata.plist: Operation not permitted
+rm: /home/<USER>/Library/Containers/com.iqiyi.player: Operation not permitted
+rm: /home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification/.com.apple.containermanagerd.metadata.plist: Operation not permitted
+rm: /home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification: Operation not permitted
 ```
 
 > AGENT
@@ -1309,7 +1309,7 @@ rm: /Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification:
 tool_use Bash
 ```json
 {
-  "command": "echo \"=== 用 Finder 移除受保护的 iQiyi containers ===\"\nosascript <<'EOF' 2>&1\ntell application \"Finder\"\n    try\n        delete (POSIX file [REDACTED] as alias)\n    end try\n    try\n        delete (POSIX file \"/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification\" as alias)\n    end try\nend tell\nEOF\necho \"---verify:\"\nls -d ~/Library/Containers/com.iqiyi.player* 2>/dev/null && echo \"❌ still present\" || echo \"✅ iqiyi containers removed\"",
+  "command": "echo \"=== 用 Finder 移除受保护的 iQiyi containers ===\"\nosascript <<'EOF' 2>&1\ntell application \"Finder\"\n    try\n        delete (POSIX file [REDACTED] as alias)\n    end try\n    try\n        delete (POSIX file \"/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification\" as alias)\n    end try\nend tell\nEOF\necho \"---verify:\"\nls -d ~/Library/Containers/com.iqiyi.player* 2>/dev/null && echo \"❌ still present\" || echo \"✅ iqiyi containers removed\"",
   "description": "Use Finder to delete protected iqiyi containers"
 }
 ```
@@ -1340,7 +1340,7 @@ No response requested.
 tool_use Bash
 ```json
 {
-  "command": "echo \"=== 用 Finder 移除受保护的 iQiyi containers ===\"\nosascript <<'EOF' 2>&1\ntell application \"Finder\"\n    try\n        delete (POSIX file [REDACTED] as alias)\n    end try\n    try\n        delete (POSIX file \"/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification\" as alias)\n    end try\nend tell\nEOF\necho \"---verify:\"\nls -d ~/Library/Containers/com.iqiyi.player* 2>/dev/null && echo \"❌ still present\" || echo \"✅ iqiyi containers removed\"",
+  "command": "echo \"=== 用 Finder 移除受保护的 iQiyi containers ===\"\nosascript <<'EOF' 2>&1\ntell application \"Finder\"\n    try\n        delete (POSIX file [REDACTED] as alias)\n    end try\n    try\n        delete (POSIX file \"/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification\" as alias)\n    end try\nend tell\nEOF\necho \"---verify:\"\nls -d ~/Library/Containers/com.iqiyi.player* 2>/dev/null && echo \"❌ still present\" || echo \"✅ iqiyi containers removed\"",
   "description": "Use Finder to delete protected iqiyi containers"
 }
 ```
@@ -1351,8 +1351,8 @@ tool_result Bash
 ```
 === 用 Finder 移除受保护的 iQiyi containers ===
 ---verify:
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification
+/home/<USER>/Library/Containers/com.iqiyi.player
+/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification
 ❌ still present
 ```
 
@@ -1371,13 +1371,13 @@ tool_use Bash
 tool_result Bash
 ```
 === 直接 mv 到废纸篓 (绕过 metadata 保护) ===
-mv: rename /Users/user_0a329be7/Library/Containers/com.iqiyi.player to /Users/user_0a329be7/.Trash/com.iqiyi.player.1779911593: Operation not permitted
+mv: rename /home/<USER>/Library/Containers/com.iqiyi.player to /home/<USER>/.Trash/com.iqiyi.player.1779911593: Operation not permitted
 ❌ player mv failed
-mv: rename /Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification to /Users/user_0a329be7/.Trash/com.iqiyi.player.QYUserNotification.1779911593: Operation not permitted
+mv: rename /home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification to /home/<USER>/.Trash/com.iqiyi.player.QYUserNotification.1779911593: Operation not permitted
 ❌ notification mv failed
 ---verify:
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification
+/home/<USER>/Library/Containers/com.iqiyi.player
+/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification
 ❌ still present
 ```
 
@@ -1405,9 +1405,9 @@ drwx------@   3 wzy  staff  -    96 May 28 03:51 .
 drwx------  591 wzy  staff  - 18912 May 28 03:38 ..
 -rw-r--r--    1 wzy  staff  - 30696 Apr  8 03:12 .com.apple.containermanagerd.metadata.plist
 ---
--rw-r--r--  1 wzy  staff  - 30696 Apr  8 03:12 /Users/user_0a329be7/Library/Containers/com.iqiyi.player/.com.apple.containermanagerd.metadata.plist
+-rw-r--r--  1 wzy  staff  - 30696 Apr  8 03:12 /home/<USER>/Library/Containers/com.iqiyi.player/.com.apple.containermanagerd.metadata.plist
 ---flags on parent dir:
-drwx------@ 3 wzy  staff  - 96 May 28 03:51 /Users/user_0a329be7/Library/Containers/com.iqiyi.player
+drwx------@ 3 wzy  staff  - 96 May 28 03:51 /home/<USER>/Library/Containers/com.iqiyi.player
 ```
 
 > TOOL
@@ -1425,8 +1425,8 @@ tool_use Bash
 tool_result Bash
 ```
 === 这两个空容器实际占用 ===
- 32K	/Users/user_0a329be7/Library/Containers/com.iqiyi.player
-4.0K	/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification
+ 32K	/home/<USER>/Library/Containers/com.iqiyi.player
+4.0K	/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification
 ---
 ls 内容：
 total 64
@@ -1449,7 +1449,7 @@ drwx------  591 wzy  staff  18912 May 28 03:38 ..
 tool_use Bash
 ```json
 {
-  "command": "osascript <<'EOF'\ntell application \"Finder\"\n    activate\n    set f1 to POSIX file [REDACTED] as alias\n    set f2 to POSIX file \"/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification\" as alias\n    move f1 to trash\n    move f2 to trash\nend tell\nEOF\necho \"---exit: $?\"\necho \"---verify:\"\nls -d ~/Library/Containers/com.iqiyi.player* 2>/dev/null && echo \"❌ still there\" || echo \"✅ removed\"",
+  "command": "osascript <<'EOF'\ntell application \"Finder\"\n    activate\n    set f1 to POSIX file [REDACTED] as alias\n    set f2 to POSIX file \"/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification\" as alias\n    move f1 to trash\n    move f2 to trash\nend tell\nEOF\necho \"---exit: $?\"\necho \"---verify:\"\nls -d ~/Library/Containers/com.iqiyi.player* 2>/dev/null && echo \"❌ still there\" || echo \"✅ removed\"",
   "description": "Try Finder move to trash for protected containers"
 }
 ```
@@ -1461,8 +1461,8 @@ tool_result Bash
 228:244: execution error: “Finder”遇到一个错误：无法完成此操作，因为你没有必要的权限。 (-5000)
 ---exit: 1
 ---verify:
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification
+/home/<USER>/Library/Containers/com.iqiyi.player
+/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification
 ❌ still there
 ```
 
@@ -1490,22 +1490,22 @@ tool_result Bash
 --- /Applications:
 ✅ Applications clean
 --- Chrome 数据残留扫描:
-/Users/user_0a329be7/Library/Caches/ms-playwright/mcp-chrome-930a8a7
-/Users/user_0a329be7/Library/Caches/ms-playwright/mcp-chrome-64e9723
-/Users/user_0a329be7/Library/Caches/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-mac-arm64
-/Users/user_0a329be7/Library/Caches/ms-playwright/mcp-chrome-930a8a7/ChromeFeatureState
-/Users/user_0a329be7/Library/Caches/ms-playwright/mcp-chrome-930a8a7/RunningChromeVersion
-/Users/user_0a329be7/Library/Caches/ms-playwright/mcp-chrome-64e9723/ChromeFeatureState
-/Users/user_0a329be7/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64
-/Users/user_0a329be7/Library/Application Support/LarkShell/ChromeFeatureState
-/Users/user_0a329be7/Library/Application Support/LarkShell/RunningChromeVersion
-/Users/user_0a329be7/Library/Caches/claude-cli-nodejs/-Users-user_0a329be7-chrome-mcp-extension
-/Users/user_0a329be7/Library/Caches/claude-cli-nodejs/-Users-user_0a329be7-chrome-mcp-extension/mcp-logs-chrome-mcp
-/Users/user_0a329be7/Library/Caches/claude-cli-nodejs/-Users-user_0a329be7-Downloads-submit/mcp-logs-chrome-mcp
-/Users/user_0a329be7/Library/Caches/claude-cli-nodejs/-Users-user_0a329be7/mcp-logs-chrome-mcp
+/home/<USER>/Library/Caches/ms-playwright/mcp-chrome-930a8a7
+/home/<USER>/Library/Caches/ms-playwright/mcp-chrome-64e9723
+/home/<USER>/Library/Caches/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-mac-arm64
+/home/<USER>/Library/Caches/ms-playwright/mcp-chrome-930a8a7/ChromeFeatureState
+/home/<USER>/Library/Caches/ms-playwright/mcp-chrome-930a8a7/RunningChromeVersion
+/home/<USER>/Library/Caches/ms-playwright/mcp-chrome-64e9723/ChromeFeatureState
+/home/<USER>/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64
+/home/<USER>/Library/Application Support/LarkShell/ChromeFeatureState
+/home/<USER>/Library/Application Support/LarkShell/RunningChromeVersion
+/home/<USER>/Library/Caches/claude-cli-nodejs/-Users-user_0a329be7-chrome-mcp-extension
+/home/<USER>/Library/Caches/claude-cli-nodejs/-Users-user_0a329be7-chrome-mcp-extension/mcp-logs-chrome-mcp
+/home/<USER>/Library/Caches/claude-cli-nodejs/-Users-user_0a329be7-Downloads-submit/mcp-logs-chrome-mcp
+/home/<USER>/Library/Caches/claude-cli-nodejs/-Users-user_0a329be7/mcp-logs-chrome-mcp
 --- iQiyi 数据残留扫描:
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player
-/Users/user_0a329be7/Library/Containers/com.iqiyi.player.QYUserNotification
+/home/<USER>/Library/Containers/com.iqiyi.player
+/home/<USER>/Library/Containers/com.iqiyi.player.QYUserNotification
 
 === 进程检查 ===
 61149 /Applications/Codex.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler
@@ -1607,9 +1607,9 @@ tool_use Bash
 tool_result Bash
 ```
 Exit code 1
--rw-------@ 1 wzy  staff  1471 May 26 08:19 /Users/user_0a329be7/Library/Preferences/com.apple.universalaccess.plist
+-rw-------@ 1 wzy  staff  1471 May 26 08:19 /home/<USER>/Library/Preferences/com.apple.universalaccess.plist
 ---
-Error Opening Destination: /Users/user_0a329be7/Library/Preferences/com.apple.universalaccess.plist [Operation not permitted]
+Error Opening Destination: /home/<USER>/Library/Preferences/com.apple.universalaccess.plist [Operation not permitted]
 ---读回:
 Print: Entry, ":reduceTransparency", Does Not Exist
 ```
@@ -2181,11 +2181,11 @@ tool_result Bash
 ~/Library/HTTPStorages/com.kagi.kagimacOS*
 ~/Library/Preferences/com.kagi.kagimacOS.plist
 ~/Library/WebKit/com.kagi.kagimacOS
-==> Using sudo to gain ownership of path '/Users/user_0a329be7/Library/Containers/com.kagi.kagimacOS.ShareExtension'
+==> Using sudo to gain ownership of path '/home/<USER>/Library/Containers/com.kagi.kagimacOS.ShareExtension'
 sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
 sudo: a password is required
 Warning: The following files could not be trashed, please do so manually:
-/Users/user_0a329be7/Library/Containers/com.kagi.kagimacOS.ShareExtension
+/home/<USER>/Library/Containers/com.kagi.kagimacOS.ShareExtension
 ==> Removing all staged versions of Cask 'orion'
 === 残留扫描 ===
 ✅ /Applications clean
@@ -2390,9 +2390,9 @@ tool_result Bash
 -rw-r--r--@ 1 wzy  staff    40M May 28 09:56 9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete
 
 === 网络源 ===
-13520 /bin/zsh -c source /Users/user_0a329be7/.claude/shell-snapshots/snapshot-zsh-1779932018282-4fth9x.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== M-iM^GM^MM-fM^VM-0M-dM-8M^KM-hM-=M-= Brave (M-eM^IM^MM-eM^OM-0, M-fM^XM->M-gM-$M-:M-hM-?M^[M-eM-:M-&) ==="\012brew install --cask brave-browser 2>&1 | tail -25' < /dev/null && pwd -P >| /tmp/claude-c771-cwd
+13520 /bin/zsh -c source /home/<USER>/.claude/shell-snapshots/snapshot-zsh-1779932018282-4fth9x.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== M-iM^GM^MM-fM^VM-0M-dM-8M^KM-hM-=M-= Brave (M-eM^IM^MM-eM^OM-0, M-fM^XM->M-gM-$M-:M-hM-?M^[M-eM-:M-&) ==="\012brew install --cask brave-browser 2>&1 | tail -25' < /dev/null && pwd -P >| /tmp/claude-c771-cwd
 13522 /opt/homebrew/Library/Homebrew/vendor/portable-ruby/current/bin/ruby -W1 --disable=gems,rubyopt /opt/homebrew/Library/Homebrew/brew.rb install --cask brave-browser
-13939 /usr/bin/curl --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.1.14 (Macintosh; arm64 Mac OS X 15.7.5) curl/8.7.1 --header Accept-Language: en --fail --progress-bar --silent --retry 3 --remote-time --output /Users/user_0a329be7/Library/Caches/Homebrew/downloads/9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete --location https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/stable-arm64/190.124/Brave-Browser-arm64.dmg
+13939 /usr/bin/curl --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.1.14 (Macintosh; arm64 Mac OS X 15.7.5) curl/8.7.1 --header Accept-Language: en --fail --progress-bar --silent --retry 3 --remote-time --output /home/<USER>/Library/Caches/Homebrew/downloads/9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete --location https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/stable-arm64/190.124/Brave-Browser-arm64.dmg
 ```
 
 > AGENT
@@ -2516,7 +2516,7 @@ tool_result Bash
 -rw-r--r--@ 1 wzy  staff    34M May 28 10:04 9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete
 
 === curl 进程 ===
-14636       05:10 /usr/bin/curl --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.1.14 (Macintosh; arm64 Mac OS X 15.7.5) curl/8.7.1 --header Accept-Language: en --fail --progress-bar --silent --retry 3 --remote-time --output /Users/user_0a329be7/Library/Caches/Homebrew/downloads/9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete --location https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/stable-arm64/190.124/Brave-Browser-arm64.dmg
+14636       05:10 /usr/bin/curl --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.1.14 (Macintosh; arm64 Mac OS X 15.7.5) curl/8.7.1 --header Accept-Language: en --fail --progress-bar --silent --retry 3 --remote-time --output /home/<USER>/Library/Caches/Homebrew/downloads/9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete --location https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/stable-arm64/190.124/Brave-Browser-arm64.dmg
 ```
 
 > TOOL
@@ -2536,7 +2536,7 @@ tool_result Bash
 Exit code 127
 === curl 实际是否走代理 ===
   PID COMMAND
-14636 /usr/bin/curl --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.1.14 (Macintosh; arm64 Mac OS X 15.7.5) curl/8.7.1 --header Accept-Language: en --fail --progress-bar --silent --retry 3 --remote-time --output /Users/user_0a329be7/Library/Caches/Homebrew/downloads/9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete --location https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/stable-arm64/190.124/Brave-Browser-arm64.dmg
+14636 /usr/bin/curl --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.1.14 (Macintosh; arm64 Mac OS X 15.7.5) curl/8.7.1 --header Accept-Language: en --fail --progress-bar --silent --retry 3 --remote-time --output /home/<USER>/Library/Caches/Homebrew/downloads/9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete --location https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/stable-arm64/190.124/Brave-Browser-arm64.dmg
 
 curl 子进程的 env:
 
@@ -2587,7 +2587,7 @@ tool_result Bash
 -rw-r--r--@ 1 wzy  staff    38M May 28 10:05 9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete
 
 === 是否还在下 ===
-14636 /usr/bin/curl --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.1.14 (Macintosh; arm64 Mac OS X 15.7.5) curl/8.7.1 --header Accept-Language: en --fail --progress-bar --silent --retry 3 --remote-time --output /Users/user_0a329be7/Library/Caches/Homebrew/downloads/9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete --location https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/stable-arm64/190.124/Brave-Browser-arm64.dmg
+14636 /usr/bin/curl --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.1.14 (Macintosh; arm64 Mac OS X 15.7.5) curl/8.7.1 --header Accept-Language: en --fail --progress-bar --silent --retry 3 --remote-time --output /home/<USER>/Library/Caches/Homebrew/downloads/9b0c693f14e0317476744c4d15289bdefa58044e22acbb94088d6e8975422d9e--Brave-Browser-arm64.dmg.incomplete --location https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/stable-arm64/190.124/Brave-Browser-arm64.dmg
 ```
 
 > AGENT
@@ -2876,7 +2876,7 @@ com.brave.Browser
 
 --- ps Brave ---
 16726 /Applications/Brave Browser.app/Contents/MacOS/Brave Browser
-16747 /Applications/Brave Browser.app/Contents/Frameworks/Brave Browser Framework.framework/Versions/[REDACTED]/Helpers/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --database=/Users/user_0a329be7/Library/Application Support/BraveSoftware/Brave-Browser/Crashpad --url=https://cr.brave.com --annotation=plat=OS X --annotation=prod=Brave_Mac --annotation=ver=[REDACTED] --handshake-fd=5
+16747 /Applications/Brave Browser.app/Contents/Frameworks/Brave Browser Framework.framework/Versions/[REDACTED]/Helpers/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --database=/home/<USER>/Library/Application Support/BraveSoftware/Brave-Browser/Crashpad --url=https://cr.brave.com --annotation=plat=OS X --annotation=prod=Brave_Mac --annotation=ver=[REDACTED] --handshake-fd=5
 16752 /Applications/Brave Browser.app/Contents/Frameworks/Brave Browser Framework.framework/Versions/[REDACTED]/Helpers/Brave Browser Helper.app/Contents/MacOS/Brave Browser Helper --type=gpu-process --start-stack-profiler --gpu-preferences=SAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAAwAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --metrics-shmem-handle=1752395122,r,6096467785813126216,11613478722158364945,262144 --field-trial-handle=1718379636,r,18215342237160334772,3022257360872596586,262144 --variations-seed-version --pseudonymization-salt-handle=1935764596,r,13969160654300072271,6459958893749679729,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=22
 ```
 
@@ -2963,7 +2963,7 @@ tool_result Bash
 === 关闭 Brave ===
 
 === Preferences 文件位置 ===
--rw-------@ 1 wzy  staff  18835 May 28 11:03 /Users/user_0a329be7/Library/Application Support/BraveSoftware/Brave-Browser/Default/Preferences
+-rw-------@ 1 wzy  staff  18835 May 28 11:03 /home/<USER>/Library/Application Support/BraveSoftware/Brave-Browser/Default/Preferences
 ```
 
 > TOOL
@@ -3450,7 +3450,7 @@ tool_result Bash
 === Brave 是否被 macOS 授权为「凭证自动填充扩展」===
 
 === 关键路径 ===
-(eval):8: no matches found: /Users/user_0a329be7/Library/Application Support/com.apple.AuthenticationServices*
+(eval):8: no matches found: /home/<USER>/Library/Application Support/com.apple.AuthenticationServices*
 /var/db/SystemPolicyConfiguration/KextPolicy
 
 === Brave 钥匙串项 ===
@@ -3466,8 +3466,8 @@ attributes:
 			[String] KL8N8XSYF4.com.brave.Browser.webauthn-uvk
 
 === Brave 子进程是否带 hosting passkey 相关进程 ===
-17312 ??         0:00.02 /bin/zsh -c source /Users/user_0a329be7/.claude/shell-snapshots/snapshot-zsh-1779937245269-am8xtv.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== Brave M-fM^XM-/M-eM^PM-&M-hM-"M-+ macOS M-fM^NM^HM-fM^]M^CM-dM-8M-:M-cM^@M^LM-eM^GM--M-hM-/M^AM-hM^GM-*M-eM^JM-(M-eM-!M-+M-eM^EM^EM-fM^IM-)M-eM-1M^UM-cM^@M^M==="\012# macOS 15 M-dM-8M--M-gM-,M-,M-dM-8M^IM-fM^VM-9M-fM-5M^OM-hM-'M^HM-eM^YM-(M-hM-&M^AM-gM^TM-( iCloud Keychain passkeyM-oM-<M^LM-iM^\M^@M-hM-&M^AM-eM^\M-(\012# M-gM-3M-;M-gM-;M^_M-hM-.M->M-gM-=M-. > M-iM^@M^ZM-gM^TM-( > M-hM^GM-*M-eM^JM-(M-eM-!M-+M-eM^EM^EM-eM^RM^LM-eM-/M^FM-g\240M^A M-iM^GM^LM-eM^PM-/M-gM^TM-(\012# M-hM-?M^YM-dM-8M-*M-hM-.M->M-gM-=M-.M-eM^\M-( plist:\012defaults read com.apple.AuthenticationServices.Authorization 2>/dev/null | head -20\012echo ""\012echo "=== M-eM^EM-3M-iM^TM-.M-hM-7M-/M-eM->M^D ==="\012ls ~/Library/Application\ Support/com.apple.AuthenticationServices* 2>/dev/null\012ls /var/db/SystemPolicyConfiguration/KextPolicy 2>/dev/null\012echo ""\012echo "=== Brave M-iM^RM-%M-eM^LM^YM-dM-8M-2M-iM-!M-9 ==="\012security find-generic-password -s "Brave Safe Storage" 2>&1 | head -5\012echo ""\012echo "=== Brave M-gM^ZM^D entitlements (M-gM^\M^KM-fM^XM-/M-eM^PM-&M-fM^\M^I keychain-access-groups) ==="\012codesign -d --entitlements - "/Applications/Brave Browser.app" 2>&1 | grep -iE "keychain|webauthn|passkey|authentication" | head -10\012echo ""\012echo "=== Brave M-eM--M^PM-hM-?M^[M-gM-(M^KM-fM^XM-/M-eM^PM-&M-eM-8M-& hosting passkey M-gM^[M-8M-eM^EM-3M-hM-?M^[M-gM-(M^K ==="\012ps -ax | grep -i "Brave Browser" | grep -iE "webauth|passkey|authn|asauthentication" | head -3' < /dev/null && pwd -P >| /tmp/claude-0f20-cwd
-17325 ??         0:00.00 /bin/zsh -c source /Users/user_0a329be7/.claude/shell-snapshots/snapshot-zsh-1779937245269-am8xtv.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== Brave M-fM^XM-/M-eM^PM-&M-hM-"M-+ macOS M-fM^NM^HM-fM^]M^CM-dM-8M-:M-cM^@M^LM-eM^GM--M-hM-/M^AM-hM^GM-*M-eM^JM-(M-eM-!M-+M-eM^EM^EM-fM^IM-)M-eM-1M^UM-cM^@M^M==="\012# macOS 15 M-dM-8M--M-gM-,M-,M-dM-8M^IM-fM^VM-9M-fM-5M^OM-hM-'M^HM-eM^YM-(M-hM-&M^AM-gM^TM-( iCloud Keychain […]
+17312 ??         0:00.02 /bin/zsh -c source /home/<USER>/.claude/shell-snapshots/snapshot-zsh-1779937245269-am8xtv.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== Brave M-fM^XM-/M-eM^PM-&M-hM-"M-+ macOS M-fM^NM^HM-fM^]M^CM-dM-8M-:M-cM^@M^LM-eM^GM--M-hM-/M^AM-hM^GM-*M-eM^JM-(M-eM-!M-+M-eM^EM^EM-fM^IM-)M-eM-1M^UM-cM^@M^M==="\012# macOS 15 M-dM-8M--M-gM-,M-,M-dM-8M^IM-fM^VM-9M-fM-5M^OM-hM-'M^HM-eM^YM-(M-hM-&M^AM-gM^TM-( iCloud Keychain passkeyM-oM-<M^LM-iM^\M^@M-hM-&M^AM-eM^\M-(\012# M-gM-3M-;M-gM-;M^_M-hM-.M->M-gM-=M-. > M-iM^@M^ZM-gM^TM-( > M-hM^GM-*M-eM^JM-(M-eM-!M-+M-eM^EM^EM-eM^RM^LM-eM-/M^FM-g\240M^A M-iM^GM^LM-eM^PM-/M-gM^TM-(\012# M-hM-?M^YM-dM-8M-*M-hM-.M->M-gM-=M-.M-eM^\M-( plist:\012defaults read com.apple.AuthenticationServices.Authorization 2>/dev/null | head -20\012echo ""\012echo "=== M-eM^EM-3M-iM^TM-.M-hM-7M-/M-eM->M^D ==="\012ls ~/Library/Application\ Support/com.apple.AuthenticationServices* 2>/dev/null\012ls /var/db/SystemPolicyConfiguration/KextPolicy 2>/dev/null\012echo ""\012echo "=== Brave M-iM^RM-%M-eM^LM^YM-dM-8M-2M-iM-!M-9 ==="\012security find-generic-password -s "Brave Safe Storage" 2>&1 | head -5\012echo ""\012echo "=== Brave M-gM^ZM^D entitlements (M-gM^\M^KM-fM^XM-/M-eM^PM-&M-fM^\M^I keychain-access-groups) ==="\012codesign -d --entitlements - "/Applications/Brave Browser.app" 2>&1 | grep -iE "keychain|webauthn|passkey|authentication" | head -10\012echo ""\012echo "=== Brave M-eM--M^PM-hM-?M^[M-gM-(M^KM-fM^XM-/M-eM^PM-&M-eM-8M-& hosting passkey M-gM^[M-8M-eM^EM-3M-hM-?M^[M-gM-(M^K ==="\012ps -ax | grep -i "Brave Browser" | grep -iE "webauth|passkey|authn|asauthentication" | head -3' < /dev/null && pwd -P >| /tmp/claude-0f20-cwd
+17325 ??         0:00.00 /bin/zsh -c source /home/<USER>/.claude/shell-snapshots/snapshot-zsh-1779937245269-am8xtv.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'echo "=== Brave M-fM^XM-/M-eM^PM-&M-hM-"M-+ macOS M-fM^NM^HM-fM^]M^CM-dM-8M-:M-cM^@M^LM-eM^GM--M-hM-/M^AM-hM^GM-*M-eM^JM-(M-eM-!M-+M-eM^EM^EM-fM^IM-)M-eM-1M^UM-cM^@M^M==="\012# macOS 15 M-dM-8M--M-gM-,M-,M-dM-8M^IM-fM^VM-9M-fM-5M^OM-hM-'M^HM-eM^YM-(M-hM-&M^AM-gM^TM-( iCloud Keychain […]
 
 > AGENT
 

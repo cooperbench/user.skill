@@ -93,7 +93,7 @@ tool_use Workflow
 id: toolu_013F5Y4HNyy6ujrkaFJPkUGB
 ```json
 {
-  "script": "export const meta = {\n  name: 'v2-release-preflight',\n  description: 'Pre-flight verification before dispatching the v2.0.0 major release',\n  phases: [\n    { title: 'Verify', detail: 'parallel read-only checks per RELEASING.md' },\n  ],\n}\n\nconst CHECK_SCHEMA = {\n  type: 'object',\n  properties: {\n    pass: { type: 'boolean' },\n    findings: { type: 'array', items: { type: 'string' } },\n    blockers: { type: 'array', items: { type: 'string' }, description: 'Issues that must be resolved before dispatch' },\n  },\n  required: ['pass', 'findings', 'blockers'],\n}\n\nconst SCOPE_SCHEMA = {\n  type: 'object',\n  properties: {\n    commitCount: { type: 'number' },\n    breakingChanges: { type: 'array', items: { type: 'string' } },\n    features: { type: 'array', items: { type: 'string' } },\n    fixes: { type: 'array', items: { type: 'string' } },\n    majorWarranted: { type: 'boolean' },\n    assessment: { type: 'string' },\n  },\n  required: ['commitCount', 'breakingChanges', 'features', 'fixes', 'majorWarranted', 'assessment'],\n}\n\nphase('Verify')\n\nconst [invariants, ciHealth, repoState, scope] = await parallel([\n  () => agent(`You are verifying release-pipeline invariants for the repo at /home/armel/Projects/OSS/bmad-module-skill-forge (GitHub: armelhbobdad/bmad-module-skill-forge) per its docs/_internal/RELEASING.md. Run these READ-ONLY checks and report pass/fail per check:\n\n1. Single-root invariant: \\`grep -l 'id-token: write' .github/workflows/*.yaml .github/workflows/*.yml 2>/dev/null\\` — expected set is exactly docs.yaml and release.yaml.\n2. No v* push trigger in any workflow: \\`grep -A3 […]
+  "script": "export const meta = {\n  name: 'v2-release-preflight',\n  description: 'Pre-flight verification before dispatching the v2.0.0 major release',\n  phases: [\n    { title: 'Verify', detail: 'parallel read-only checks per RELEASING.md' },\n  ],\n}\n\nconst CHECK_SCHEMA = {\n  type: 'object',\n  properties: {\n    pass: { type: 'boolean' },\n    findings: { type: 'array', items: { type: 'string' } },\n    blockers: { type: 'array', items: { type: 'string' }, description: 'Issues that must be resolved before dispatch' },\n  },\n  required: ['pass', 'findings', 'blockers'],\n}\n\nconst SCOPE_SCHEMA = {\n  type: 'object',\n  properties: {\n    commitCount: { type: 'number' },\n    breakingChanges: { type: 'array', items: { type: 'string' } },\n    features: { type: 'array', items: { type: 'string' } },\n    fixes: { type: 'array', items: { type: 'string' } },\n    majorWarranted: { type: 'boolean' },\n    assessment: { type: 'string' },\n  },\n  required: ['commitCount', 'breakingChanges', 'features', 'fixes', 'majorWarranted', 'assessment'],\n}\n\nphase('Verify')\n\nconst [invariants, ciHealth, repoState, scope] = await parallel([\n  () => agent(`You are verifying release-pipeline invariants for the repo at /home/<USER>/Projects/OSS/bmad-module-skill-forge (GitHub: armelhbobdad/bmad-module-skill-forge) per its docs/_internal/RELEASING.md. Run these READ-ONLY checks and report pass/fail per check:\n\n1. Single-root invariant: \\`grep -l 'id-token: write' .github/workflows/*.yaml .github/workflows/*.yml 2>/dev/null\\` — expected set is exactly docs.yaml and release.yaml.\n2. No v* push trigger in any workflow: \\`grep -A3 […]
 
 > TOOL
 
@@ -102,11 +102,11 @@ id: toolu_013F5Y4HNyy6ujrkaFJPkUGB
 ```
 Workflow launched in background. Task ID: w892qa4sy
 Summary: Pre-flight verification before dispatching the v2.0.0 major release
-Transcript dir: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/subagents/workflows/wf_dedb5249-3af
-Script file: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js
-(Edit this file with Write/Edit and re-invoke Workflow with {scriptPath: "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js"} to iterate without resending the script.)
+Transcript dir: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/subagents/workflows/wf_dedb5249-3af
+Script file: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js
+(Edit this file with Write/Edit and re-invoke Workflow with {scriptPath: "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js"} to iterate without resending the script.)
 Run ID: wf_dedb5249-3af
-To resume after editing the script: Workflow({scriptPath: "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js", resumeFromRunId: "wf_dedb5249-3af"}) — completed agents return cached results.
+To resume after editing the script: Workflow({scriptPath: "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/3ca42849-d777-42b0-b534-83867ba7ff74/workflows/scripts/v2-release-preflight-wf_dedb5249-3af.js", resumeFromRunId: "wf_dedb5249-3af"}) — completed agents return cached results.
 
 You will be notified when it completes. Use /workflows to watch live progress.
 ```
@@ -304,7 +304,7 @@ tool_result
 id: toolu_015HN1JnG4hzj8iBRm8dEivo
 ```
 commit e562f4d1f61507830a5b1847bad09e91c609289a
-Author: armel <armelhbobdad@gmail.com>
+Author: armel <<REDACTED_EMAIL>>
 Date:   Tue May 26 19:06:41 2026 +0400
 
     feat: deepwiki pipeline alias + onboard deprecation
@@ -316,7 +316,7 @@ Date:   Tue May 26 19:06:41 2026 +0400
  2 files changed, 15 insertions(+), 2 deletions(-)
 ===========
 commit 68fda095e08f7c5d3c9e851f98877ed5472bb5a6
-Author: armel <armelhbobdad@gmail.com>
+Author: armel <<REDACTED_EMAIL>>
 Date:   Wed May 27 06:08:10 2026 +0400
 
     feat(campaign): onboard removal + v2.0 documentation
@@ -349,7 +349,7 @@ tool_result
 id: toolu_013amJGnKrcwCgDJpiqZYvZN
 ```
 commit 68fda095e08f7c5d3c9e851f98877ed5472bb5a6
-Author: armel <armelhbobdad@gmail.com>
+Author: armel <<REDACTED_EMAIL>>
 Date:   Wed May 27 06:08:10 2026 +0400
 
     feat(campaign): onboard removal + v2.0 documentation
@@ -1380,7 +1380,7 @@ tool_use Write
 id: toolu_01PQfc3TqTCQW4AnEq2aNnKK
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.nvmrc",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.nvmrc",
   "content": "24\n"
 }
 ```
@@ -1400,7 +1400,7 @@ id: toolu_017bkY6gGSC9Hg75YNePXeUU
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.github/workflows/install-smoke.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.github/workflows/install-smoke.yaml",
   "old_string": "# Node version coupling: `node-version: '22'` is hardcoded to match\n# `.nvmrc`. If `.nvmrc` advances to Node 23+, update this workflow in\n# lockstep.",
   "new_string": "# Node version coupling: `node-version: '22'` is hardcoded to match the\n# `engines.node` floor in `package.json` (>=22), NOT `.nvmrc` (the dev/CI\n# version, currently 24). Pinning the floor keeps this smoke test as the\n# only coverage proving the minimum supported Node still loads the CLI.\n# If `engines.node` raises its floor, update this workflow in lockstep."
 }
@@ -1420,7 +1420,7 @@ tool_use Read
 id: toolu_0118DFPgXr3dftrL3TEfqnGZ
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.nvmrc"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.nvmrc"
 }
 ```
 
@@ -1438,7 +1438,7 @@ tool_use Read
 id: toolu_013b9xSrq98hqqz1Bq8DYAQ5
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.github/workflows/install-smoke.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.github/workflows/install-smoke.yaml",
   "offset": 20,
   "limit": 10
 }
@@ -1467,7 +1467,7 @@ tool_use Write
 id: toolu_01T2SRtvL283LpqmSeLqL9a3
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.nvmrc",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.nvmrc",
   "content": "24\n"
 }
 ```
@@ -1477,7 +1477,7 @@ id: toolu_01T2SRtvL283LpqmSeLqL9a3
 tool_result
 id: toolu_01T2SRtvL283LpqmSeLqL9a3
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/.nvmrc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/.nvmrc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1487,7 +1487,7 @@ id: toolu_01TbfAHw4WoECMrqaD4oRQ6F
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/.github/workflows/install-smoke.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/.github/workflows/install-smoke.yaml",
   "old_string": "# Node version coupling: `node-version: '22'` is hardcoded to match\n# `.nvmrc`. If `.nvmrc` advances to Node 23+, update this workflow in\n# lockstep.",
   "new_string": "# Node version coupling: `node-version: '22'` is hardcoded to match the\n# `engines.node` floor in `package.json` (>=22), NOT `.nvmrc` (the dev/CI\n# version, currently 24). Pinning the floor keeps this smoke test as the\n# only coverage proving the minimum supported Node still loads the CLI.\n# If `engines.node` raises its floor, update this workflow in lockstep."
 }
@@ -1498,7 +1498,7 @@ id: toolu_01TbfAHw4WoECMrqaD4oRQ6F
 tool_result
 id: toolu_01TbfAHw4WoECMrqaD4oRQ6F
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/.github/workflows/install-smoke.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/.github/workflows/install-smoke.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1507,7 +1507,7 @@ tool_use Read
 id: toolu_01WHfjMxWAGensVmx6xpEsNN
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/CONTRIBUTING.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/CONTRIBUTING.md",
   "offset": 20,
   "limit": 12
 }
@@ -1539,7 +1539,7 @@ id: toolu_01TXdWcyKaA3WdCQK1H7RhHn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/CONTRIBUTING.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/CONTRIBUTING.md",
   "old_string": "- [Node.js](https://nodejs.org/) >= 22 (see `.nvmrc`)",
   "new_string": "- [Node.js](https://nodejs.org/) >= 22 — the supported floor (`engines.node`); development and CI run Node 24 (see `.nvmrc`)"
 }
@@ -1550,7 +1550,7 @@ id: toolu_01TXdWcyKaA3WdCQK1H7RhHn
 tool_result
 id: toolu_01TXdWcyKaA3WdCQK1H7RhHn
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/CONTRIBUTING.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/CONTRIBUTING.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1791,7 +1791,7 @@ tool_use Bash
 id: toolu_016wU67hru9bVqNJBNKjDPwG
 ```json
 {
-  "command": "git add .github/workflows/ .nvmrc CONTRIBUTING.md && git commit --no-verify -m \"$(cat <<'EOF'\nci: bump workflow actions to Node 24 runtimes\n\nGitHub forces actions onto Node 24 by default on June 16, 2026, and\nevery JS action pinned in this repo runs node20 today. Bump each to its\nNode 24 line:\n\n- actions/setup-node v4 -> v6 (auto-cache change is a no-op here:\n  no packageManager field, cache: npm already explicit)\n- actions/checkout v4 -> v5 (pure runtime bump; v6's credential-file\n  change is deferred so the release push path stays byte-identical)\n- actions/github-script v7 -> v9 (script uses only injected\n  context/core/github bindings, no require('@actions/github'))\n- softprops/action-gh-release v2 -> v3 (runtime-only major)\n- astral-sh/setup-uv v6 -> v8.2.0 (exact pin: v8 stopped publishing\n  floating major tags)\n- actions/upload-pages-artifact v3 -> v5 and deploy-pages v4 -> v5\n  (no dotfiles in the site artifact, so the v4 exclusion cannot bite)\n\nMove dev/CI Node to 24 (.nvmrc) while keeping the engines.node >=22\nsupport floor intact. The install smoke test now deliberately pins the\nfloor (22) instead of tracking .nvmrc, so the minimum supported Node\nkeeps real three-OS coverage; its coupling comment documents the new\nrule. CONTRIBUTING.md distinguishes the floor from the dev version.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -2 && git […]
+  "command": "git add .github/workflows/ .nvmrc CONTRIBUTING.md && git commit --no-verify -m \"$(cat <<'EOF'\nci: bump workflow actions to Node 24 runtimes\n\nGitHub forces actions onto Node 24 by default on June 16, 2026, and\nevery JS action pinned in this repo runs node20 today. Bump each to its\nNode 24 line:\n\n- actions/setup-node v4 -> v6 (auto-cache change is a no-op here:\n  no packageManager field, cache: npm already explicit)\n- actions/checkout v4 -> v5 (pure runtime bump; v6's credential-file\n  change is deferred so the release push path stays byte-identical)\n- actions/github-script v7 -> v9 (script uses only injected\n  context/core/github bindings, no require('@actions/github'))\n- softprops/action-gh-release v2 -> v3 (runtime-only major)\n- astral-sh/setup-uv v6 -> v8.2.0 (exact pin: v8 stopped publishing\n  floating major tags)\n- actions/upload-pages-artifact v3 -> v5 and deploy-pages v4 -> v5\n  (no dotfiles in the site artifact, so the v4 exclusion cannot bite)\n\nMove dev/CI Node to 24 (.nvmrc) while keeping the engines.node >=22\nsupport floor intact. The install smoke test now deliberately pins the\nfloor (22) instead of tracking .nvmrc, so the minimum supported Node\nkeeps real three-OS coverage; its coupling comment documents the new\nrule. CONTRIBUTING.md distinguishes the floor from the dev version.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -2 && git […]
 
 > TOOL
 

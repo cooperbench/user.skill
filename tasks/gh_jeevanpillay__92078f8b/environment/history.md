@@ -492,7 +492,7 @@ tool_result
 id: toolu_014x4jJyr1Yzf3c7w1QUqeGp
 ```
 <persisted-output>
-Output too large (65.6KB). Full output saved to: /Users/jeevanpillay/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/3d829aeb-a54b-4814-8988-0867aa386bd3/tool-results/bhredxao3.txt
+Output too large (65.6KB). Full output saved to: /home/<USER>/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/3d829aeb-a54b-4814-8988-0867aa386bd3/tool-results/bhredxao3.txt
 
 Preview (first 2KB):
 diff --git a/apps/desktop/src/renderer/src/react/app-shell.tsx b/apps/desktop/src/renderer/src/react/app-shell.tsx
@@ -1009,7 +1009,7 @@ tool_result
 id: toolu_01VgMAy79YYTLFToFwAPU7Zn
 ```
 commit cea28b424aedf202a35a7ed83c839c57e08da5df
-Author: Jeevan Pillay <169354619+jeevanpillay@users.noreply.github.com>
+Author: Jeevan Pillay <<REDACTED_EMAIL>>
 Date:   Mon May 4 20:10:40 2026 +1000
 
     chore: commit staged lightfast workspace changes
@@ -1247,7 +1247,7 @@ Packages: -2
 --
 
 . postinstall$ pnpm lint:ws
-. postinstall: > lightfast@ lint:ws /Users/jeevanpillay/Code/@lightfastai/lightfast
+. postinstall: > lightfast@ lint:ws /home/<USER>/Code/@lightfastai/lightfast
 . postinstall: > pnpm dlx sherif@latest
 . postinstall: 1 issue found in ./:
 . postinstall:  ⨯ error Dependency @radix-ui/react-dropdown-menu has multiple versions defined in the workspace. multiple-dependency-versions
@@ -1300,7 +1300,7 @@ id: toolu_017bh2T4awPcPYmt8UhbwAnU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json",
   "old_string": "    \"@radix-ui/react-dropdown-menu\": \"^2.1.16\",",
   "new_string": "    \"@radix-ui/react-dropdown-menu\": \"^2.1.15\","
 }
@@ -1312,7 +1312,7 @@ tool_use Read
 id: toolu_01Hdssda3zKk5aBSs29dMNYa
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json",
   "offset": 40,
   "limit": 15
 }
@@ -1346,7 +1346,7 @@ tool_use Read
 id: toolu_01TUARfnBVD6heHVj2DwPwfL
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json",
   "offset": 40,
   "limit": 35
 }
@@ -1507,7 +1507,7 @@ tool_use Read
 id: toolu_01XU8h6VcLbmWQEY4qWsMny5
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts"
 }
 ```
 
@@ -1590,7 +1590,7 @@ tool_result
 id: toolu_019fySXvZ2qAwnHV4DsUynuM
 ```
 <persisted-output>
-Output too large (112KB). Full output saved to: /Users/jeevanpillay/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/3d829aeb-a54b-4814-8988-0867aa386bd3/tool-results/bg9jibhog.txt
+Output too large (112KB). Full output saved to: /home/<USER>/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/3d829aeb-a54b-4814-8988-0867aa386bd3/tool-results/bg9jibhog.txt
 
 Preview (first 2KB):
 diff --git a/apps/desktop/.env.example b/apps/desktop/.env.example
@@ -1830,7 +1830,7 @@ id: toolu_01PVVYTE4cGwPi6vRVyLPWTc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json",
   "old_string": "    \"dev\": \"pnpm with-env node ../../scripts/with-desktop-env.mjs -- electron-forge start\",",
   "new_string": "    \"dev\": \"pnpm with-env electron-forge start\","
 }
@@ -1841,7 +1841,7 @@ id: toolu_01PVVYTE4cGwPi6vRVyLPWTc
 tool_result
 id: toolu_01PVVYTE4cGwPi6vRVyLPWTc
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json has been updated successfully.
 ```
 
 > TOOL
@@ -1851,7 +1851,7 @@ id: toolu_01KjZyveBF5G89BigMQJQrfz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json",
   "old_string": "    \"@radix-ui/react-dropdown-menu\": \"^2.1.16\",",
   "new_string": "    \"@radix-ui/react-dropdown-menu\": \"^2.1.15\","
 }
@@ -1862,7 +1862,7 @@ id: toolu_01KjZyveBF5G89BigMQJQrfz
 tool_result
 id: toolu_01KjZyveBF5G89BigMQJQrfz
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json has been updated successfully.
 ```
 
 > AGENT

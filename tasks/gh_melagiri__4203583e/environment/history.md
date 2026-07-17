@@ -22,8 +22,8 @@ id: toolu_01Q9dg83xsMvmz4WNAtmojG1
 tool_result
 id: toolu_01Q9dg83xsMvmz4WNAtmojG1
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights                                                  57a0b5a [master]
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this 272ce84 [feature/dispatch-discoverability-inline-write-about-this]
+/home/<USER>/Workspace/codeInsights/code-insights                                                  57a0b5a [master]
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this 272ce84 [feature/dispatch-discoverability-inline-write-about-this]
 ```
 
 > TOOL
@@ -32,7 +32,7 @@ tool_use Bash
 id: toolu_0124ET7LCxJZSDBe1tLRbiyS
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this 2>/dev/null && echo \"EXISTS\" || echo \"MISSING\"",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this 2>/dev/null && echo \"EXISTS\" || echo \"MISSING\"",
   "description": "Check if worktree directory exists on disk"
 }
 ```
@@ -68,7 +68,7 @@ tool_use Bash
 id: toolu_01GJPTJVTcuSabhfhWK5U8Ei
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this status",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this status",
   "description": "Check for uncommitted changes in the worktree"
 }
 ```
@@ -95,7 +95,7 @@ tool_use Bash
 id: toolu_01Jm4hsmZYLUCccxTJ3wbdSS
 ```json
 {
-  "command": "git worktree remove /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this",
+  "command": "git worktree remove /home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this",
   "description": "Remove the merged feature worktree"
 }
 ```
@@ -124,7 +124,7 @@ id: toolu_01UwMSPGySCRiJch3CVH9iYW
 tool_result
 id: toolu_01UwMSPGySCRiJch3CVH9iYW
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights 57a0b5a [master]
+/home/<USER>/Workspace/codeInsights/code-insights 57a0b5a [master]
   feature/dispatch-discoverability-inline-write-about-this
 ```
 

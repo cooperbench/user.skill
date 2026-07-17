@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_01RabAzT3cvburXbRzM7ovCz
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/data/storyLogs.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/data/storyLogs.ts"
 }
 ```
 
@@ -21,7 +21,7 @@ id: toolu_01RabAzT3cvburXbRzM7ovCz
 tool_result ERROR
 id: toolu_01RabAzT3cvburXbRzM7ovCz
 ```
-File does not exist. Note: your current working directory is /Users/johyunduk/Projects/ddong-avoid-game.
+File does not exist. Note: your current working directory is /home/<USER>/Projects/ddong-avoid-game.
 ```
 
 > TOOL
@@ -97,7 +97,7 @@ tool_use Read
 id: toolu_01GF3AQyX2XfFwiirdMZ4sPM
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/README.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/README.md"
 }
 ```
 
@@ -153,7 +153,7 @@ tool_use Read
 id: toolu_01KYMAU9sBtm8UCc911FP8gx
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/worldbuilding.md"
 }
 ```
 
@@ -203,7 +203,7 @@ tool_use Read
 id: toolu_01PcopcREiu8tqEfV7ry177w
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/seasons.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/seasons.md"
 }
 ```
 
@@ -248,7 +248,7 @@ tool_use Read
 id: toolu_01KibcZpaBjegavXHeXLYEDj
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/characters.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/characters.md"
 }
 ```
 
@@ -345,7 +345,7 @@ tool_use Read
 id: toolu_01CwJUuANkv4YZvz38NVVzJq
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/themes.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/themes.md"
 }
 ```
 
@@ -405,7 +405,7 @@ tool_use Read
 id: toolu_016UiWNHMnFpwbWo5dMMcj9J
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/story/main/drafts/season1-draft.md"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/story/main/drafts/season1-draft.md"
 }
 ```
 

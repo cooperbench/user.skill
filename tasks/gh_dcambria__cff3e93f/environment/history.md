@@ -64,7 +64,7 @@ tool_use Bash
 id: toolu_017RzAkVtmm8Tj5LApegQz5e
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh status 2>&1 | head -30",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh status 2>&1 | head -30",
   "description": "Check container status for concertacao"
 }
 ```
@@ -1438,7 +1438,7 @@ tool_use Bash
 id: toolu_01VHkdHqhCGYgewHrQLT2DJQ
 ```json
 {
-  "command": "ls -la /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/ 2>&1 | tail -5\ndate +%Y-%m-%d",
+  "command": "ls -la /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/ 2>&1 | tail -5\ndate +%Y-%m-%d",
   "description": "Check specs dir and date"
 }
 ```
@@ -1515,7 +1515,7 @@ tool_use Write
 id: toolu_01YEtwfCnLDD5obvTPrSGPvK
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md",
   "content": "# Mapa de Plataformas — Query própria + correção do contador \"Mostrando X de Y\"\n\n**Data:** 2026-06-08\n**Site:** Concertação Amazônica (blog 1, raiz)\n**Autor:** Daniel Cambría\n\n## Problema\n\nA página **Mapa de Plataformas** (`/conhecimento/mapa-das-plataformas/`, PT post `26827`,\nEN \"Platform Map\" post `75718`) recebeu, por copy-paste da página **Espiral de\nConhecimento**, um widget de contagem (\"Mostrando X de Y\") cujo dynamic tag\n`jet-query-count` está cravado em **`query_id=\"12\"`** — a query *\"Objetos para\nEspiral\"* (CPT `objetos`+`estudos`, 421 itens). Resultado: a mensagem conta\n**estudos**, não **plataformas**, e fala \"estudos cadastrados\".\n\nAlém disso, há um **bug herdado**: para qualquer busca cujo resultado seja\n**menor que 12**, a mensagem continua dizendo \"Mostrando **12**...\".\n\n### Diagnóstico (verificado no dev)\n\nPadrão de wiring na **Espiral** (referência que funciona):\n\n| Componente | Valor | Papel |\n|---|---|---|\n| Listing grid `1a6ba01` | `_element_id=estudos`, `custom_query_id=12` | renderiza via Query Builder query 12 |\n| Filtros JSF | `query_id=estudos` | apontam para o `_element_id` do listing (provider) |\n| Count `0781799` (corrigido) | `query_id=12`, `[end-item]` | conta via query 12, robusto |\n| Count `bb87a69` (bugado) | `query_id=12`, `%visible%` | conta via query 12, mas `%visible%` congela |\n\nEstado atual da **Mapa de Plataformas (PT 26827)**:\n\n| Componente | Valor | Status |\n|---|---|---|\n| Listing grid `23d592f` (listing `14035`) | `_element_id=plataformas-de-pesquisa`, **sem `custom_query_id`** | […]
 
 > TOOL
@@ -1523,7 +1523,7 @@ id: toolu_01YEtwfCnLDD5obvTPrSGPvK
 tool_result
 id: toolu_01YEtwfCnLDD5obvTPrSGPvK
 ```
-File created successfully at: /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1543,7 +1543,7 @@ tool_use Bash
 id: toolu_01VAbtmwC4ixuKXNWGGTkUZJ
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md && git commit -q -m \"docs(spec): Mapa de Plataformas — query própria + fix contador 'Mostrando X de Y'\n\nDiagnóstico: count widget copiado da Espiral aponta para query 12 (estudos);\nbug herdado '<12 mostra 12' por uso de %visible% num span não-disparado pelos\nfiltros. Solução A: nova Query Builder query de plataformas, religar listing/\ncount, usar [end-item]. Paridade PT/EN + correção da Espiral.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\" && echo \"OK committed\" && git log --oneline -1",
+  "command": "git add docs/superpowers/specs/2026-06-08-mapa-plataformas-query-count-design.md && git commit -q -m \"docs(spec): Mapa de Plataformas — query própria + fix contador 'Mostrando X de Y'\n\nDiagnóstico: count widget copiado da Espiral aponta para query 12 (estudos);\nbug herdado '<12 mostra 12' por uso de %visible% num span não-disparado pelos\nfiltros. Solução A: nova Query Builder query de plataformas, religar listing/\ncount, usar [end-item]. Paridade PT/EN + correção da Espiral.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\" && echo \"OK committed\" && git log --oneline -1",
   "description": "Commit the design spec"
 }
 ```

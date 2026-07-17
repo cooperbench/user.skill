@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -43,7 +43,7 @@ tool_use Read
 id: toolu_01SXfcLY1iRz4fDyBr2vGfpC
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json"
 }
 ```
 
@@ -53,7 +53,7 @@ tool_use Read
 id: toolu_01PSB5U2pMnwQsvZGwPn1u2j
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/roadmap.json"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/roadmap.json"
 }
 ```
 
@@ -111,7 +111,7 @@ tool_use Read
 id: toolu_012eQQ2xtvtGxrZK3o4zK1qk
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json",
   "limit": 100
 }
 ```
@@ -195,7 +195,7 @@ id: toolu_011ZUgvyWydyWQ6La8WnewnC
 ```json
 {
   "pattern": "\"sid\".*\"p\": \"(COMMIT|DONE)\"",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json",
   "output_mode": "content"
 }
 ```
@@ -215,7 +215,7 @@ id: toolu_013wtE3Jp31tGHbGqHdwoQi8
 ```json
 {
   "pattern": "\"sid\"",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json",
   "output_mode": "content"
 }
 ```
@@ -303,7 +303,7 @@ id: toolu_017LoTJUTyftzjUNjnfs5G6D
 ```json
 {
   "pattern": "\"p\": \"COMMIT\"",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json",
   "output_mode": "content",
   "-B": 3
 }
@@ -414,7 +414,7 @@ tool_use Bash
 id: toolu_01XmFp7qEzG5Q1M2Yd5WTqrd
 ```json
 {
-  "command": "find /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills -type f | sort",
+  "command": "find /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills -type f | sort",
   "description": "List all files in skills feature workspace"
 }
 ```
@@ -424,39 +424,39 @@ id: toolu_01XmFp7qEzG5Q1M2Yd5WTqrd
 tool_result
 id: toolu_01XmFp7qEzG5Q1M2Yd5WTqrd
 ```
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/.develop-progress.json
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/CLAUDE.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/roadmap.json
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/CLAUDE.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-001-extend-agent-creation-transaction.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-002-source-reference-architecture.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-003-skill-module-structure.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/architecture.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/review-proof.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/wave-decisions.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/CLAUDE.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/lean-canvas.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/opportunity-tree.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/problem-validation.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/solution-testing.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/CLAUDE.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/dor-validation.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-agent-creation-visual.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-agent-creation.feature
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-agent-creation.yaml
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-skill-library-visual.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-skill-library.feature
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-skill-library.yaml
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/outcome-kpis.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/prioritization.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/shared-artifacts-registry.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/story-map.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/user-stories.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/wave-decisions.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/acceptance-scenarios.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/wave-decisions.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/.develop-progress.json
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/CLAUDE.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/execution-log.json
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/roadmap.json
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/CLAUDE.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-001-extend-agent-creation-transaction.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-002-source-reference-architecture.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-003-skill-module-structure.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/architecture.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/review-proof.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/wave-decisions.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/CLAUDE.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/lean-canvas.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/opportunity-tree.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/problem-validation.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/solution-testing.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/CLAUDE.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/dor-validation.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-agent-creation-visual.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-agent-creation.feature
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-agent-creation.yaml
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-skill-library-visual.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-skill-library.feature
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-skill-library.yaml
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/outcome-kpis.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/prioritization.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/shared-artifacts-registry.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/story-map.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/user-stories.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/wave-decisions.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/acceptance-scenarios.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/wave-decisions.md
 ```
 
 > TOOL
@@ -466,7 +466,7 @@ id: toolu_01No6fLkRpmxe73MRERtVwb2
 ```json
 {
   "pattern": "docs/feature/skills/**/wave-decisions.md",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles"
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles"
 }
 ```
 
@@ -475,10 +475,10 @@ id: toolu_01No6fLkRpmxe73MRERtVwb2
 tool_result
 id: toolu_01No6fLkRpmxe73MRERtVwb2
 ```
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/wave-decisions.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/wave-decisions.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/wave-decisions.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/wave-decisions.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/wave-decisions.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/wave-decisions.md
 ```
 
 > TOOL
@@ -488,7 +488,7 @@ id: toolu_019Vwm1qjCidkmMGhLveP4cX
 ```json
 {
   "pattern": "docs/feature/skills/design/adr-*.md",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles"
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles"
 }
 ```
 
@@ -497,9 +497,9 @@ id: toolu_019Vwm1qjCidkmMGhLveP4cX
 tool_result
 id: toolu_019Vwm1qjCidkmMGhLveP4cX
 ```
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-001-extend-agent-creation-transaction.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-002-source-reference-architecture.md
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-003-skill-module-structure.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-001-extend-agent-creation-transaction.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-002-source-reference-architecture.md
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-003-skill-module-structure.md
 ```
 
 > AGENT
@@ -512,7 +512,7 @@ tool_use Read
 id: toolu_01YZeNDckajjgJTiVnoYUcWY
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/wave-decisions.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/wave-decisions.md"
 }
 ```
 
@@ -539,7 +539,7 @@ tool_use Read
 id: toolu_01HQHSt8ekFDk8EEre87KDvm
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/architecture.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/architecture.md"
 }
 ```
 
@@ -549,7 +549,7 @@ tool_use Read
 id: toolu_01Heg8Fid4ZiKBfALong7R1q
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md"
 }
 ```
 
@@ -613,7 +613,7 @@ tool_use Read
 id: toolu_01EXbnZKRsu2HDNMm3pFtjM7
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/wave-decisions.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/wave-decisions.md"
 }
 ```
 
@@ -640,7 +640,7 @@ tool_use Read
 id: toolu_01DvtGJ68jSLaEEh5zAu1tn2
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/wave-decisions.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/wave-decisions.md"
 }
 ```
 
@@ -670,7 +670,7 @@ tool_use Read
 id: toolu_01TZEcc1ui5ErHsscgN5cyWq
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-001-extend-agent-creation-transaction.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-001-extend-agent-creation-transaction.md"
 }
 ```
 
@@ -711,7 +711,7 @@ tool_use Read
 id: toolu_012tR4R4ok4eTXruS1SVRMXX
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-002-source-reference-architecture.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-002-source-reference-architecture.md"
 }
 ```
 
@@ -755,7 +755,7 @@ tool_use Read
 id: toolu_01GwsrQvmzeT4CNjnEVvDdUh
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-003-skill-module-structure.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/adr-003-skill-module-structure.md"
 }
 ```
 
@@ -808,7 +808,7 @@ tool_use Bash
 id: toolu_01BrPh7tGyCswoxsgHL4UX4f
 ```json
 {
-  "command": "ls -la /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/ 2>/dev/null | head -20",
+  "command": "ls -la /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/ 2>/dev/null | head -20",
   "description": "List docs directory structure"
 }
 ```
@@ -843,7 +843,7 @@ tool_use Read
 id: toolu_01WeFLdF8siYVSTZgxmNXkRF
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-agent-creation.yaml"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-agent-creation.yaml"
 }
 ```
 
@@ -894,7 +894,7 @@ tool_use Read
 id: toolu_0121xKzfFKpASZfGaKuv7hoU
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-skill-library.yaml"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discuss/journey-skill-library.yaml"
 }
 ```
 
@@ -945,7 +945,7 @@ tool_use Read
 id: toolu_015r8VW6RiWYJCxJfy7BhBWu
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/acceptance-scenarios.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/acceptance-scenarios.md"
 }
 ```
 
@@ -982,7 +982,7 @@ tool_use Bash
 id: toolu_01DVFJf6mU8RLGiMMyGHCc8r
 ```json
 {
-  "command": "ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/adrs/ 2>/dev/null | head -10; echo \"---\"; ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/evolution/ 2>/dev/null | head -10; echo \"---\"; ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/architecture/ 2>/dev/null | head -10; echo \"---\"; ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/scenarios/ 2>/dev/null | head -10; echo \"---\"; ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/ux/ 2>/dev/null | head -10",
+  "command": "ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/adrs/ 2>/dev/null | head -10; echo \"---\"; ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/evolution/ 2>/dev/null | head -10; echo \"---\"; ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/architecture/ 2>/dev/null | head -10; echo \"---\"; ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/scenarios/ 2>/dev/null | head -10; echo \"---\"; ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/ux/ 2>/dev/null | head -10",
   "description": "Check existing permanent directory contents"
 }
 ```
@@ -1055,7 +1055,7 @@ tool_use Bash
 id: toolu_01Gd8mt9SErAcMothfTjuNKz
 ```json
 {
-  "command": "ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/adrs/ | sort -t '-' -k 2 -n | tail -3",
+  "command": "ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/adrs/ | sort -t '-' -k 2 -n | tail -3",
   "description": "Find highest ADR number"
 }
 ```
@@ -1083,7 +1083,7 @@ tool_use Write
 id: toolu_01CgLFWpjRgFTSkyjXz3JgFa
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-30-skills.md",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-30-skills.md",
   "content": "# Skills Feature Evolution\n\n**Feature**: Skills — Graph-native behavioral expertise layer (#177)\n**Branch**: `marcus-sa/skills-file-storage`\n**Date**: 2026-03-30\n**Status**: Complete (MVP)\n\n---\n\n## Summary\n\nAdded a governed domain expertise layer between Tools (functional capabilities) and Learnings (reactive corrections). Skills are metadata-and-source-pointer records in the knowledge graph that control which domain expertise is available to sandbox agents. The implementation spans full-stack: SurrealDB schema, backend CRUD/lifecycle API, agent creation extension, 3-step wizard UI, and Skill Library UI.\n\n## Business Context\n\nWorkspace admins needed a way to equip agents with domain expertise (security auditing, code review, compliance checks) without manually configuring tool grants. Skills bridge the gap: assign a skill to an agent, and the agent automatically gains the tools that skill requires. The North Star KPI is >50% of sandbox agents with skills assigned.\n\n## What Was Delivered\n\n### Backend\n- **Migration 0084**: `skill` table + 5 relation tables (`skill_requires`, `possesses`, `skill_supersedes`, `skill_evidence`, `governs_skill`)\n- **Skill CRUD API**: Create, list, detail, update, delete with source-reference architecture\n- **Skill Lifecycle**: `draft → active → deprecated` state machine via explicit endpoints\n- **Agent Creation Extension**: Atomic transaction includes `possesses` + `can_use` edges\n- **Policy Governance**: `governs_skill` relation traversal in skill detail\n\n### Frontend\n- **3-Step Agent Wizard**: Config → Skills checklist → Tools review → […]
 
 > TOOL
@@ -1091,7 +1091,7 @@ id: toolu_01CgLFWpjRgFTSkyjXz3JgFa
 tool_result
 id: toolu_01CgLFWpjRgFTSkyjXz3JgFa
 ```
-File created successfully at: /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-30-skills.md
+File created successfully at: /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/evolution/2026-03-30-skills.md
 ```
 
 > AGENT
@@ -1104,7 +1104,7 @@ tool_use Bash
 id: toolu_01AGAUFxuREn1fuwFZ2iYkkq
 ```json
 {
-  "command": "mkdir -p /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/architecture/skills && mkdir -p /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/scenarios/skills && mkdir -p /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/ux/skills",
+  "command": "mkdir -p /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/architecture/skills && mkdir -p /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/scenarios/skills && mkdir -p /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/ux/skills",
   "description": "Create destination directories for artifact migration"
 }
 ```

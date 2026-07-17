@@ -189,7 +189,7 @@ tool_use Read
 id: toolu_01TFfCsDf6mSCx79biKF5hd4
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix"
 }
 ```
 

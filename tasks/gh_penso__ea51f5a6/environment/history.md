@@ -43,7 +43,7 @@ tool_use Read
 id: toolu_01Qin6yFc3JWQDoqJ5ELduNG
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs"
 }
 ```
 
@@ -125,7 +125,7 @@ id: toolu_011GZD3B6Fm3EMYHje57AC8Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
   "old_string": "/// Dangerous command patterns that force approval even when `approval_mode` is\n/// off or `security_level` is full.  Each entry: `(regex_pattern, description)`.\nstatic DANGEROUS_PATTERN_DEFS: &[(&str, &str)] = &[",
   "new_string": "/// Environment variable names that can hijack process execution.\n///\n/// Used by both `DANGEROUS_PATTERN_DEFS` (regex layer) and `extract_first_bin`\n/// (semantic layer) for defense-in-depth against env-var prefix injection\n/// (moltis-org/moltis#814).\nconst DANGEROUS_ENV_VARS: &[&str] = &[\n    // Linux dynamic linker\n    \"LD_PRELOAD\",\n    \"LD_LIBRARY_PATH\",\n    \"LD_AUDIT\",\n    \"LD_DEBUG\",\n    \"LD_CONFIG\",\n    // macOS dynamic linker\n    \"DYLD_INSERT_LIBRARIES\",\n    \"DYLD_LIBRARY_PATH\",\n    \"DYLD_FRAMEWORK_PATH\",\n    // PATH override\n    \"PATH\",\n    // Language runtimes\n    \"PYTHONPATH\",\n    \"PYTHONSTARTUP\",\n    \"NODE_OPTIONS\",\n    \"NODE_PATH\",\n    \"JAVA_TOOL_OPTIONS\",\n    \"PERL5OPT\",\n    \"PERL5LIB\",\n    \"RUBYOPT\",\n    \"RUBYLIB\",\n    \"CLASSPATH\",\n    // Shell startup\n    \"BASH_ENV\",\n    \"ENV\",\n    \"ZDOTDIR\",\n];\n\n/// Dangerous command patterns that force approval even when `approval_mode` is\n/// off or `security_level` is full.  Each entry: `(regex_pattern, description)`.\nstatic DANGEROUS_PATTERN_DEFS: &[(&str, &str)] = &["
 }
@@ -136,7 +136,7 @@ id: toolu_011GZD3B6Fm3EMYHje57AC8Q
 tool_result
 id: toolu_011GZD3B6Fm3EMYHje57AC8Q
 ```
-The file /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
 ```
 
 > TOOL
@@ -146,7 +146,7 @@ id: toolu_01RqYAeFi8jpR9ZF4XbC68VV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
   "old_string": "    (\n        r\"chmod\\s+(-\\S*R\\S*\\s+)*777\\s+/\",\n        \"recursive chmod 777 on root\",\n    ),\n];",
   "new_string": "    (\n        r\"chmod\\s+(-\\S*R\\S*\\s+)*777\\s+/\",\n        \"recursive chmod 777 on root\",\n    ),\n    // Inline environment variable injection (moltis-org/moltis#814)\n    (\n        r\"(?i)\\b(LD_PRELOAD|LD_LIBRARY_PATH|LD_AUDIT|LD_DEBUG|LD_CONFIG)=\",\n        \"dangerous dynamic linker env var\",\n    ),\n    (\n        r\"(?i)\\b(DYLD_INSERT_LIBRARIES|DYLD_LIBRARY_PATH|DYLD_FRAMEWORK_PATH)=\",\n        \"dangerous macOS dynamic linker env var\",\n    ),\n    (r\"(?i)\\bPATH=\", \"PATH override\"),\n    (\n        r\"(?i)\\b(PYTHONPATH|PYTHONSTARTUP|NODE_OPTIONS|NODE_PATH|JAVA_TOOL_OPTIONS)=\",\n        \"dangerous language runtime env var\",\n    ),\n    (\n        r\"(?i)\\b(PERL5OPT|PERL5LIB|RUBYOPT|RUBYLIB|CLASSPATH)=\",\n        \"dangerous language runtime env var\",\n    ),\n    (\n        r\"(?i)\\b(BASH_ENV|ENV|ZDOTDIR)=\",\n        \"dangerous shell startup env var\",\n    ),\n];"
 }
@@ -157,7 +157,7 @@ id: toolu_01RqYAeFi8jpR9ZF4XbC68VV
 tool_result
 id: toolu_01RqYAeFi8jpR9ZF4XbC68VV
 ```
-The file /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
 ```
 
 > TOOL
@@ -167,7 +167,7 @@ id: toolu_01J6Bh8BUHP2Smk59YzPMJ7r
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
   "old_string": "/// Extract the first command/binary from a shell command string.\nfn extract_first_bin(command: &str) -> Option<&str> {\n    let trimmed = command.trim();\n    // Skip env var assignments at the start (e.g. `FOO=bar cmd`).\n    let mut parts = trimmed.split_whitespace();\n    for part in parts.by_ref() {\n        if !part.contains('=') {\n            // Strip path prefix (e.g. `/usr/bin/jq` → `jq`).\n            return Some(part.rsplit('/').next().unwrap_or(part));\n        }\n    }\n    None\n}",
   "new_string": "/// Extract the first command/binary from a shell command string.\n///\n/// Returns `None` when the command is empty **or** when a leading env-var\n/// assignment uses a dangerous variable name (see [`DANGEROUS_ENV_VARS`]).\n/// This prevents attackers from smuggling `LD_PRELOAD=… cat /file` through the\n/// safe-bin / allowlist path (moltis-org/moltis#814).\nfn extract_first_bin(command: &str) -> Option<&str> {\n    let trimmed = command.trim();\n    // Skip env var assignments at the start (e.g. `FOO=bar cmd`).\n    let mut parts = trimmed.split_whitespace();\n    for part in parts.by_ref() {\n        if let Some((key, _)) = part.split_once('=') {\n            // Dangerous env-var prefix — refuse to extract a binary so the\n            // caller falls through to the approval / denial path.\n            if DANGEROUS_ENV_VARS\n                .iter()\n                .any(|d| d.eq_ignore_ascii_case(key))\n            {\n                return None;\n            }\n        } else {\n            // Strip path prefix (e.g. `/usr/bin/jq` → `jq`).\n            return Some(part.rsplit('/').next().unwrap_or(part));\n        }\n    }\n    None\n}"
 }
@@ -178,7 +178,7 @@ id: toolu_01J6Bh8BUHP2Smk59YzPMJ7r
 tool_result
 id: toolu_01J6Bh8BUHP2Smk59YzPMJ7r
 ```
-The file /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
 ```
 
 > AGENT
@@ -191,7 +191,7 @@ tool_use Read
 id: toolu_01HtP5YpamicQKdJXUgD3KjE
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
   "offset": 860
 }
 ```
@@ -261,7 +261,7 @@ id: toolu_01SWUaoGEMzHzPFaES2mX8Sa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
   "old_string": "    #[tokio::test]\n    async fn test_pending_requests_for_session_filters_other_sessions() {\n        let mgr = ApprovalManager::default();\n        let _ = mgr.create_request(\"echo one\", Some(\"session:a\")).await;\n        let _ = mgr.create_request(\"echo two\", Some(\"session:b\")).await;\n        let _ = mgr.create_request(\"echo three\", Some(\"session:a\")).await;\n\n        let pending = mgr.pending_requests_for_session(\"session:a\").await;\n        assert_eq!(pending.len(), 2);\n        assert!(\n            pending\n                .iter()\n                .all(|request| request.session_key.as_deref() == Some(\"session:a\"))\n        );\n    }\n}",
   "new_string": "    #[tokio::test]\n    async fn test_pending_requests_for_session_filters_other_sessions() {\n        let mgr = ApprovalManager::default();\n        let _ = mgr.create_request(\"echo one\", Some(\"session:a\")).await;\n        let _ = mgr.create_request(\"echo two\", Some(\"session:b\")).await;\n        let _ = mgr.create_request(\"echo three\", Some(\"session:a\")).await;\n\n        let pending = mgr.pending_requests_for_session(\"session:a\").await;\n        assert_eq!(pending.len(), 2);\n        assert!(\n            pending\n                .iter()\n                .all(|request| request.session_key.as_deref() == Some(\"session:a\"))\n        );\n    }\n\n    // --- Env-var prefix injection (moltis-org/moltis#814) ---\n\n    // Layer 1: check_dangerous regex hits\n\n    #[test]\n    fn test_dangerous_ld_preload() {\n        assert_eq!(\n            check_dangerous(\"LD_PRELOAD=/evil.so cat /etc/passwd\"),\n            Some(\"dangerous dynamic linker env var\"),\n        );\n    }\n\n    #[test]\n    fn test_dangerous_ld_library_path() {\n        assert_eq!(\n            check_dangerous(\"LD_LIBRARY_PATH=/tmp cat /file\"),\n            Some(\"dangerous dynamic linker env var\"),\n        );\n    }\n\n    #[test]\n    fn test_dangerous_ld_audit() {\n        assert_eq!(\n            check_dangerous(\"LD_AUDIT=/evil.so ls\"),\n            Some(\"dangerous dynamic linker env var\"),\n        );\n    }\n\n    #[test]\n    fn test_dangerous_dyld_insert_libraries() {\n        assert_eq!(\n            check_dangerous(\"DYLD_INSERT_LIBRARIES=/evil.dylib cat /etc/passwd\"),\n            Some(\"dangerous macOS dynamic linker env var\"),\n        );\n    }\n\n    #[test]\n    fn test_dangerous_dyld_library_path() {\n        assert_eq!(\n            check_dangerous(\"DYLD_LIBRARY_PATH=/tmp ls\"),\n            Some(\"dangerous macOS dynamic linker env var\"),\n        );\n    }\n\n    #[test]\n    fn test_dangerous_path_override() {\n        assert_eq!(\n            check_dangerous(\"PATH=/tmp:$PATH cat /etc/passwd\"),\n            Some(\"PATH override\"),\n        );\n    }\n\n    #[test]\n    fn […]
 
@@ -270,7 +270,7 @@ id: toolu_01SWUaoGEMzHzPFaES2mX8Sa
 tool_result
 id: toolu_01SWUaoGEMzHzPFaES2mX8Sa
 ```
-The file /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
 ```
 
 > AGENT
@@ -394,7 +394,7 @@ id: toolu_016ZEiGgvJUia1Sh11xmLZVP
 tool_result
 id: toolu_01ST7DhZuvU22hjBQrkS4SYU
 ```
-Diff in /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs:1056:
+Diff in /home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs:1056:
              extract_first_bin("RUST_LOG=debug cargo test"),
              Some("cargo"),
          );
@@ -406,7 +406,7 @@ Diff in /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src
 (B[m     }
  
      #[test]
-Diff in /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs:1147:
+Diff in /home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs:1147:
      #[tokio::test]
      async fn test_benign_prefix_proceeds_on_miss() {
          let mgr = ApprovalManager::default();
@@ -438,7 +438,7 @@ id: toolu_017QtJ3sBTqd38Cc5r2DSjf1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
   "old_string": "        assert_eq!(\n            extract_first_bin(\"CC=gcc CXX=g++ cmake ..\"),\n            Some(\"cmake\"),\n        );",
   "new_string": "        assert_eq!(extract_first_bin(\"CC=gcc CXX=g++ cmake ..\"), Some(\"cmake\"),);"
 }
@@ -449,7 +449,7 @@ id: toolu_017QtJ3sBTqd38Cc5r2DSjf1
 tool_result
 id: toolu_017QtJ3sBTqd38Cc5r2DSjf1
 ```
-The file /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
 ```
 
 > TOOL
@@ -459,7 +459,7 @@ id: toolu_01CLG6BZrE6nN9YvnWn3Gi5h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs",
   "old_string": "        let action = mgr\n            .check_command(\"RUST_LOG=debug echo hi\")\n            .await\n            .unwrap();",
   "new_string": "        let action = mgr.check_command(\"RUST_LOG=debug echo hi\").await.unwrap();"
 }
@@ -470,7 +470,7 @@ id: toolu_01CLG6BZrE6nN9YvnWn3Gi5h
 tool_result
 id: toolu_01CLG6BZrE6nN9YvnWn3Gi5h
 ```
-The file /Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/tools/src/approval.rs has been updated successfully.
 ```
 
 > TOOL
@@ -533,15 +533,15 @@ id: toolu_01XhuSYHHBAx3SpdCNsjZLTM
 tool_result
 id: toolu_01XhuSYHHBAx3SpdCNsjZLTM
 ```
-    Checking moltis-httpd v0.1.0 (/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/httpd)
-    Checking moltis-web v0.1.0 (/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/web)
-    Checking moltis v0.1.0 (/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/cli)
-    Checking moltis-swift-bridge v0.1.0 (/Users/penso/.superset/worktrees/moltis/similar-papyrus/crates/swift-bridge)
-      Timing report saved to /Users/penso/.superset/worktrees/moltis/similar-papyrus/target/cargo-timings/cargo-timing-20260421T130324.997757Z.html
+    Checking moltis-httpd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/httpd)
+    Checking moltis-web v0.1.0 (/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/web)
+    Checking moltis v0.1.0 (/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/cli)
+    Checking moltis-swift-bridge v0.1.0 (/home/<USER>/.superset/worktrees/moltis/similar-papyrus/crates/swift-bridge)
+      Timing report saved to /home/<USER>/.superset/worktrees/moltis/similar-papyrus/target/cargo-timings/cargo-timing-20260421T130324.997757Z.html
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 59.78s
-      Timing report saved to /Users/penso/.superset/worktrees/moltis/similar-papyrus/target/cargo-timings/cargo-timing-20260421T130423.56454Z.html
+      Timing report saved to /home/<USER>/.superset/worktrees/moltis/similar-papyrus/target/cargo-timings/cargo-timing-20260421T130423.56454Z.html
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.49s
-      Timing report saved to /Users/penso/.superset/worktrees/moltis/similar-papyrus/target/cargo-timings/cargo-timing-20260421T130424.315084Z.html
+      Timing report saved to /home/<USER>/.superset/worktrees/moltis/similar-papyrus/target/cargo-timings/cargo-timing-20260421T130424.315084Z.html
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.86s
 ```
 

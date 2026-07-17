@@ -33,7 +33,7 @@ tool_use Bash
 id: toolu_01VHkKgT9LTRWSt8Ae5XwqR3
 ```json
 {
-  "command": "printf 'lcov.info\\n' >> .gitignore && git add .gitignore && git commit -m \"chore: gitignore lcov.info\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\" && git push",
+  "command": "printf 'lcov.info\\n' >> .gitignore && git add .gitignore && git commit -m \"chore: gitignore lcov.info\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\" && git push",
   "description": "Add lcov.info to gitignore, commit, push"
 }
 ```

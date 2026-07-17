@@ -305,7 +305,7 @@ tool_use Bash
 id: toolu_01TKzRvL8arZ3CGmc6LvLM7m
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/ /Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/ /home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/",
   "description": "List converter and cmd directories"
 }
 ```
@@ -315,11 +315,11 @@ id: toolu_01TKzRvL8arZ3CGmc6LvLM7m
 tool_result
 id: toolu_01TKzRvL8arZ3CGmc6LvLM7m
 ```
-/Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/:
+/home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/:
 flags.go
 main.go
 
-/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/:
+/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/:
 converter_integration_test.go
 converter.go
 html_test.go
@@ -336,7 +336,7 @@ tool_use Read
 id: toolu_011VWGhxwfRzrwLDo3X4oXrw
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go"
 }
 ```
 
@@ -408,7 +408,7 @@ tool_use Read
 id: toolu_016NGZwKdCUf8KE9Znm2ZdMR
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go"
 }
 ```
 
@@ -449,7 +449,7 @@ id: toolu_016NGZwKdCUf8KE9Znm2ZdMR
 30		"/usr/local/bin/mmdc",
 31		"/usr/bin/mmdc",
 32		// npm global installs (Linux/macOS)
-33		"/home/claude/.npm-global/bin/mmdc",
+33		"/home/<USER>/.npm-global/bin/mmdc",
 34		"/usr/local/lib/node_modules/.bin/mmdc",
 35		"/opt/homebrew/bin/mmdc",
 36	}
@@ -470,7 +470,7 @@ tool_use Read
 id: toolu_01CqDa9FpqWoR3e21sn3bRiR
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/converter.go"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/converter.go"
 }
 ```
 
@@ -620,10 +620,10 @@ id: toolu_01BmJn6qTXotRFRXJg3QbDmG
 Exit code 1
 === which python3/python ===
 /opt/homebrew/bin/python3
-/Users/135yshr/.anyenv/envs/pyenv/shims/python3
+/home/<USER>/.anyenv/envs/pyenv/shims/python3
 /usr/bin/python3
 ---
-/Users/135yshr/.anyenv/envs/pyenv/shims/python
+/home/<USER>/.anyenv/envs/pyenv/shims/python
 === /usr/bin/python3 ===
 Python 3.9.6
 ---
@@ -669,7 +669,7 @@ tool_use Bash
 id: toolu_01XgCpGAEomSg2ECpMcJWRxS
 ```json
 {
-  "command": "echo \"=== PATH ===\"; echo \"$PATH\"; echo \"=== /opt/homebrew/bin/python3 ===\"; /opt/homebrew/bin/python3 --version 2>&1; /opt/homebrew/bin/python3 -c \"import playwright; print(playwright.__file__)\" 2>&1; echo \"=== pyenv shim ===\"; /Users/135yshr/.anyenv/envs/pyenv/shims/python3 --version 2>&1; /Users/135yshr/.anyenv/envs/pyenv/shims/python3 -c \"import playwright; print(playwright.__file__)\" 2>&1",
+  "command": "echo \"=== PATH ===\"; echo \"$PATH\"; echo \"=== /opt/homebrew/bin/python3 ===\"; /opt/homebrew/bin/python3 --version 2>&1; /opt/homebrew/bin/python3 -c \"import playwright; print(playwright.__file__)\" 2>&1; echo \"=== pyenv shim ===\"; /home/<USER>/.anyenv/envs/pyenv/shims/python3 --version 2>&1; /home/<USER>/.anyenv/envs/pyenv/shims/python3 -c \"import playwright; print(playwright.__file__)\" 2>&1",
   "description": "Check whether playwright is installed in the other python interpreters"
 }
 ```
@@ -691,7 +691,7 @@ tool_result
 id: toolu_01XgCpGAEomSg2ECpMcJWRxS
 ```
 === PATH ===
-/Users/135yshr/.bun/bin:/Users/135yshr/.proto/shims:/Users/135yshr/.proto/bin:/Users/135yshr/.amplify/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/135yshr/.local/bin:/opt/homebrew/opt/libpq/bin:/usr/local/opt/mysql-client/bin:/Users/135yshr/.anyenv/envs/pyenv/shims:/Users/135yshr/.anyenv/envs/pyenv/bin:/Users/135yshr/.anyenv/envs/nodenv/shims:/Users/135yshr/.anyenv/envs/nodenv/bin:/Users/135yshr/.anyenv/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/TeX/texbin:/Users/135yshr/.bun/bin:/Users/135yshr/.proto/shims:/Users/135yshr/.proto/bin:/Users/135yshr/.amplify/bin:/Users/135yshr/.cargo/bin:/Applications/iTerm.app/Contents/Resources/utilities:/Users/135yshr/Library/Android/sdk/platform-tools:/Users/135yshr/Library/Android/sdk/emulator:/Users/135yshr/development/flutter/bin:/Users/135yshr/development/flutter/.pub-cache/bin:/Users/135yshr/.pub-cache/bin:/Users/135yshr/fvm/default/bin:/Users/135yshr/bin:/Users/135yshr/go/bin:/Users/135yshr/sdk/go1.24.11/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/135yshr/go/bin:/Users/135yshr/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.26.2.darwin-arm64/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/code-review/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/context7/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/serena/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/gopls-lsp/1.0.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/coderabbit/1.1.1/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/chrome-devtools-mcp/0.22.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/github/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/deploy-on-aws/1.2.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/terraform/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/slack/1.0.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/vercel/0.42.1/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/commit-commands/unknown/bin:/Users/135yshr/.claude/plugins/cache/openai-codex/codex/1.0.2/bin
+/home/<USER>/.bun/bin:/home/<USER>/.proto/shims:/home/<USER>/.proto/bin:/home/<USER>/.amplify/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/opt/homebrew/opt/libpq/bin:/usr/local/opt/mysql-client/bin:/home/<USER>/.anyenv/envs/pyenv/shims:/home/<USER>/.anyenv/envs/pyenv/bin:/home/<USER>/.anyenv/envs/nodenv/shims:/home/<USER>/.anyenv/envs/nodenv/bin:/home/<USER>/.anyenv/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/TeX/texbin:/home/<USER>/.bun/bin:/home/<USER>/.proto/shims:/home/<USER>/.proto/bin:/home/<USER>/.amplify/bin:/home/<USER>/.cargo/bin:/Applications/iTerm.app/Contents/Resources/utilities:/home/<USER>/Library/Android/sdk/platform-tools:/home/<USER>/Library/Android/sdk/emulator:/home/<USER>/development/flutter/bin:/home/<USER>/development/flutter/.pub-cache/bin:/home/<USER>/.pub-cache/bin:/home/<USER>/fvm/default/bin:/home/<USER>/bin:/home/<USER>/go/bin:/home/<USER>/sdk/go1.24.11/bin:/usr/local/opt/coreutils/libexec/gnubin:/home/<USER>/go/bin:/home/<USER>/go/pkg/mod/golang.org/<REDACTED_EMAIL>-arm64/bin:/usr/local/opt/coreutils/libexec/gnubin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/code-review/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/context7/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/serena/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/gopls-lsp/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/coderabbit/1.1.1/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/chrome-devtools-mcp/0.22.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/github/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/deploy-on-aws/1.2.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/terraform/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/slack/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/vercel/0.42.1/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/commit-commands/unknown/bin:/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.2/bin
 === /opt/homebrew/bin/python3 ===
 Python 3.14.3
 /opt/homebrew/lib/python3.14/site-packages/playwright/__init__.py

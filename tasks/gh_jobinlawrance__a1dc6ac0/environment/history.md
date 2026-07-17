@@ -176,7 +176,7 @@ tool_use Bash
 id: toolu_01ULuaSobpTjccGTaEXX5sEx
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; echo \"---cmd tree---\"; find cmd internal -type f -name '*.go' | xargs grep -l -i 'colima\\|docker.compose\\|start.*local\\|compose' 2>/dev/null; echo \"---start subcommand---\"; find cmd -type f -name '*.go' | xargs grep -l -i 'start' 2>/dev/null",
+  "command": "cd /home/<USER>/Project/tiny; echo \"---cmd tree---\"; find cmd internal -type f -name '*.go' | xargs grep -l -i 'colima\\|docker.compose\\|start.*local\\|compose' 2>/dev/null; echo \"---start subcommand---\"; find cmd -type f -name '*.go' | xargs grep -l -i 'start' 2>/dev/null",
   "description": "Find start/local + container runtime code"
 }
 ```
@@ -202,7 +202,7 @@ tool_use Read
 id: toolu_01VDEp39Ya7QPkjQTQpHMyFD
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go"
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go"
 }
 ```
 
@@ -272,7 +272,7 @@ tool_use Bash
 id: toolu_01DvNJBM5oezAXzczk47i9xv
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===installed runtimes===\"; for b in container colima docker docker-compose; do printf \"%-16s \" \"$b\"; command -v $b || echo \"MISSING\"; done\necho \"===docker daemon reachable?===\"; timeout 3 docker info >/dev/null 2>&1 && echo \"UP\" || echo \"DOWN/none\"\necho \"===apple container compose?===\"; command -v container >/dev/null && container --help 2>&1 | grep -i compose || echo \"no container or no compose verb\"\necho \"===existing preflight/doctor/runtime code===\"\ngrep -rn -i 'colima\\|daemon\\|docker info\\|preflight\\|runtime\\|container ' cmd internal 2>/dev/null | grep -vi 'context\\|_test' | head -20\necho \"===compose file services===\"; grep -E '^\\s{2}[a-z].*:|image:' docker-compose.yml | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===installed runtimes===\"; for b in container colima docker docker-compose; do printf \"%-16s \" \"$b\"; command -v $b || echo \"MISSING\"; done\necho \"===docker daemon reachable?===\"; timeout 3 docker info >/dev/null 2>&1 && echo \"UP\" || echo \"DOWN/none\"\necho \"===apple container compose?===\"; command -v container >/dev/null && container --help 2>&1 | grep -i compose || echo \"no container or no compose verb\"\necho \"===existing preflight/doctor/runtime code===\"\ngrep -rn -i 'colima\\|daemon\\|docker info\\|preflight\\|runtime\\|container ' cmd internal 2>/dev/null | grep -vi 'context\\|_test' | head -20\necho \"===compose file services===\"; grep -E '^\\s{2}[a-z].*:|image:' docker-compose.yml | head",
   "description": "Probe runtimes, daemon, existing detection code"
 }
 ```
@@ -372,7 +372,7 @@ tool_use Write
 id: toolu_013HaXJ87iS9omA6wWEZ7jMb
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"context\"\n\t\"fmt\"\n\t\"os\"\n\t\"os/exec\"\n\t\"strings\"\n\t\"time\"\n\n\t\"github.com/spf13/cobra\"\n\n\t\"github.com/tinyraven/tinyraven/internal/branch\"\n)\n\nfunc newLocalCmd() *cobra.Command {\n\tlocal := &cobra.Command{\n\t\tUse:   \"local\",\n\t\tShort: \"Manage the local dev stack (ClickHouse + Redis + TinyRaven)\",\n\t}\n\tvar branchFlag string\n\tstart := &cobra.Command{\n\t\tUse:   \"start\",\n\t\tShort: \"Start the local dev stack via Docker Compose\",\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\t// Preflight: without a reachable Docker daemon, `docker compose up`\n\t\t\t// blocks forever on the socket. Ensure one is running first.\n\t\t\tif err := ensureDockerDaemon(cmd.Context()); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\t// --branch isolates data in its own ClickHouse DB tr_<branch> (ADR 0007).\n\t\t\tb := branchFlag\n\t\t\tif b == \"\" {\n\t\t\t\tb, _ = branch.Current(cmd.Context(), \".\")\n\t\t\t}\n\t\t\tdb := branch.DBName(b)\n\t\t\tos.Setenv(\"TR_CLICKHOUSE_DB\", db) // compose interpolates ${TR_CLICKHOUSE_DB}\n\t\t\tfmt.Printf(\"→ branch %s -> database %s\\n\", b, db)\n\t\t\treturn compose(cmd.Context(), \"up\", \"-d\")\n\t\t},\n\t}\n\tstart.Flags().StringVar(&branchFlag, \"branch\", \"\",\n\t\t\"isolate this branch's data in ClickHouse db tr_<branch> (default: current git branch)\")\n\tstop := &cobra.Command{\n\t\tUse:   \"stop\",\n\t\tShort: \"Stop the local dev stack\",\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\t// No daemon means nothing is running — skip the compose call so we\n\t\t\t// don't hang on a dead socket.\n\t\t\tif !daemonUp(cmd.Context()) {\n\t\t\t\tfmt.Println(\"→ no Docker daemon reachable; nothing to stop\")\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn compose(cmd.Context(), \"down\")\n\t\t},\n\t}\n\tlocal.AddCommand(start, stop)\n\treturn local\n}\n\n// compose shells out to `docker compose` against the repo's docker-compose.yml.\nfunc compose(ctx context.Context, args ...string) error {\n\tfull := append([]string{\"compose\"}, args...)\n\tc := exec.CommandContext(ctx, \"docker\", full...)\n\tc.Stdout = os.Stdout\n\tc.Stderr = os.Stderr\n\tc.Stdin = […]
 
 > TOOL
@@ -380,7 +380,7 @@ id: toolu_013HaXJ87iS9omA6wWEZ7jMb
 tool_result
 id: toolu_013HaXJ87iS9omA6wWEZ7jMb
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -393,7 +393,7 @@ tool_use Bash
 id: toolu_01AdKaaiJP3iB5qetq1uatkm
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===how local cmd registered===\"; grep -rn 'newLocalCmd\\|LocalCmd\\|\"local\"' cmd/tr/*.go | grep -v local.go\necho \"===branch pkg api===\"; grep -rn 'func Current\\|func DBName' internal/branch/*.go\necho \"===build===\"; go build ./... 2>&1 | head -30\necho \"===vet local===\"; go vet ./cmd/tr/ 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===how local cmd registered===\"; grep -rn 'newLocalCmd\\|LocalCmd\\|\"local\"' cmd/tr/*.go | grep -v local.go\necho \"===branch pkg api===\"; grep -rn 'func Current\\|func DBName' internal/branch/*.go\necho \"===build===\"; go build ./... 2>&1 | head -30\necho \"===vet local===\"; go vet ./cmd/tr/ 2>&1 | head",
   "description": "Verify registration, branch API, build"
 }
 ```
@@ -440,7 +440,7 @@ tool_use Bash
 id: toolu_015CiBCQnaTAugpzk2vBSUky
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; git diff --stat cmd/tr/local.go; echo \"===subcommands in original vs now===\"; git show HEAD:cmd/tr/local.go | grep -E 'Use:|AddCommand|func new' ; echo \"---now---\"; grep -E 'Use:|AddCommand|func new' cmd/tr/local.go",
+  "command": "cd /home/<USER>/Project/tiny; git diff --stat cmd/tr/local.go; echo \"===subcommands in original vs now===\"; git show HEAD:cmd/tr/local.go | grep -E 'Use:|AddCommand|func new' ; echo \"---now---\"; grep -E 'Use:|AddCommand|func new' cmd/tr/local.go",
   "description": "Diff original subcommands vs new"
 }
 ```
@@ -476,7 +476,7 @@ tool_use Write
 id: toolu_011ekdkhePsqxTeqgGnp2ztj
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local_test.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local_test.go",
   "content": "package main\n\nimport \"testing\"\n\nfunc TestPickProvider(t *testing.T) {\n\tcases := []struct {\n\t\tcolima, desktop bool\n\t\twant            provider\n\t}{\n\t\t{true, true, provColima},   // colima wins over desktop\n\t\t{true, false, provColima},  // colima only\n\t\t{false, true, provDesktop}, // desktop only\n\t\t{false, false, provInstall}, // nothing -> install path\n\t}\n\tfor _, c := range cases {\n\t\tif got := pickProvider(c.colima, c.desktop); got != c.want {\n\t\t\tt.Errorf(\"pickProvider(colima=%v, desktop=%v) = %d, want %d\",\n\t\t\t\tc.colima, c.desktop, got, c.want)\n\t\t}\n\t}\n}\n"
 }
 ```
@@ -486,7 +486,7 @@ id: toolu_011ekdkhePsqxTeqgGnp2ztj
 tool_result
 id: toolu_011ekdkhePsqxTeqgGnp2ztj
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/cmd/tr/local_test.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/cmd/tr/local_test.go (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -495,7 +495,7 @@ tool_use Bash
 id: toolu_01VFcN8Yaj71ffHs7UwRSdP9
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go test ./cmd/tr/ 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Project/tiny; go test ./cmd/tr/ 2>&1 | tail -5",
   "description": "Run selection-order test"
 }
 ```
@@ -552,7 +552,7 @@ id: toolu_015CVHmv5jE4fNZEei1rRxEd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tvar branchFlag string\n\tstart := &cobra.Command{\n\t\tUse:   \"start\",\n\t\tShort: \"Start the local dev stack via Docker Compose\",\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\t// Preflight: without a reachable Docker daemon, `docker compose up`\n\t\t\t// blocks forever on the socket. Ensure one is running first.\n\t\t\tif err := ensureDockerDaemon(cmd.Context()); err != nil {\n\t\t\t\treturn err\n\t\t\t}",
   "new_string": "\tvar branchFlag string\n\tvar assumeYes bool\n\tstart := &cobra.Command{\n\t\tUse:   \"start\",\n\t\tShort: \"Start the local dev stack via Docker Compose\",\n\t\tRunE: func(cmd *cobra.Command, _ []string) error {\n\t\t\t// Preflight: without a reachable Docker daemon, `docker compose up`\n\t\t\t// blocks forever on the socket. Ensure one is running first.\n\t\t\tif err := ensureDockerDaemon(cmd.Context(), assumeYes); err != nil {\n\t\t\t\treturn err\n\t\t\t}"
 }
@@ -563,7 +563,7 @@ id: toolu_015CVHmv5jE4fNZEei1rRxEd
 tool_result
 id: toolu_015CVHmv5jE4fNZEei1rRxEd
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -573,7 +573,7 @@ id: toolu_01CxsmPTDdqPPa5urKMTeDx7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tstart.Flags().StringVar(&branchFlag, \"branch\", \"\",\n\t\t\"isolate this branch's data in ClickHouse db tr_<branch> (default: current git branch)\")",
   "new_string": "\tstart.Flags().StringVar(&branchFlag, \"branch\", \"\",\n\t\t\"isolate this branch's data in ClickHouse db tr_<branch> (default: current git branch)\")\n\tstart.Flags().BoolVarP(&assumeYes, \"yes\", \"y\", false,\n\t\t\"auto-confirm installing a container runtime (for non-interactive/CI use)\")"
 }
@@ -584,7 +584,7 @@ id: toolu_01CxsmPTDdqPPa5urKMTeDx7
 tool_result
 id: toolu_01CxsmPTDdqPPa5urKMTeDx7
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -594,7 +594,7 @@ id: toolu_014PqcKY5dNwfLJH9Mpt8Ntf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "func ensureDockerDaemon(ctx context.Context) error {\n\tif daemonUp(ctx) {\n\t\treturn nil\n\t}\n\tfmt.Println(\"→ no Docker daemon running; looking for a container runtime…\")\n\tswitch pickProvider(have(\"colima\"), dockerDesktopInstalled()) {\n\tcase provColima:\n\t\treturn startColima(ctx)\n\tcase provDesktop:\n\t\treturn startDockerDesktop(ctx)\n\tdefault:\n\t\treturn installColima(ctx)\n\t}\n}",
   "new_string": "func ensureDockerDaemon(ctx context.Context, assumeYes bool) error {\n\tif daemonUp(ctx) {\n\t\treturn nil\n\t}\n\tfmt.Println(\"→ no Docker daemon running; looking for a container runtime…\")\n\tswitch pickProvider(have(\"colima\"), dockerDesktopInstalled()) {\n\tcase provColima:\n\t\treturn startColima(ctx)\n\tcase provDesktop:\n\t\treturn startDockerDesktop(ctx)\n\tdefault:\n\t\treturn installColima(ctx, assumeYes)\n\t}\n}"
 }
@@ -605,7 +605,7 @@ id: toolu_014PqcKY5dNwfLJH9Mpt8Ntf
 tool_result
 id: toolu_014PqcKY5dNwfLJH9Mpt8Ntf
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -615,7 +615,7 @@ id: toolu_01QvJ24gt6dx4AJroxdiTSc9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "func installColima(ctx context.Context) error {\n\tif !have(\"brew\") {\n\t\treturn fmt.Errorf(\"no container runtime found and Homebrew is missing.\\n\" +\n\t\t\t\"Install one manually, e.g. https://github.com/abiosoft/colima\")\n\t}\n\tfmt.Print(\"No container runtime found. Install docker + colima via Homebrew now? [y/N] \")\n\tif !confirm() {\n\t\treturn fmt.Errorf(\"aborted; install a runtime, then re-run `tr local start`\")\n\t}",
   "new_string": "func installColima(ctx context.Context, assumeYes bool) error {\n\tif !have(\"brew\") {\n\t\treturn fmt.Errorf(\"no container runtime found and Homebrew is missing.\\n\" +\n\t\t\t\"Install one manually, e.g. https://github.com/abiosoft/colima\")\n\t}\n\tif !assumeYes {\n\t\tfmt.Print(\"No container runtime found. Install docker + colima via Homebrew now? [y/N] \")\n\t\tif !confirm() {\n\t\t\treturn fmt.Errorf(\"aborted; install a runtime, then re-run `tr local start`\")\n\t\t}\n\t}"
 }
@@ -626,7 +626,7 @@ id: toolu_01QvJ24gt6dx4AJroxdiTSc9
 tool_result
 id: toolu_01QvJ24gt6dx4AJroxdiTSc9
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -635,7 +635,7 @@ tool_use Bash
 id: toolu_017djPu8Q2RmDy2CoLL95mh7
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go build ./... 2>&1 | head && go test ./cmd/tr/ 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Project/tiny; go build ./... 2>&1 | head && go test ./cmd/tr/ 2>&1 | tail -3",
   "description": "Build + test after --yes flag"
 }
 ```
@@ -668,7 +668,7 @@ tool_use Bash
 id: toolu_016zoFUEpqLQm1UwiJqXDjbU
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===Docker Desktop present?===\"; ls -d /Applications/Docker.app 2>/dev/null || echo \"no Desktop\"\necho \"===build tr===\"; go build -o REDACTED ./cmd/tr && echo \"built OK\"\necho \"===run: local start, decline install (stdin=n), 20s guard===\"\nprintf 'n\\n' | timeout 20 REDACTED local start ; echo \"EXIT=$?\"",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===Docker Desktop present?===\"; ls -d /Applications/Docker.app 2>/dev/null || echo \"no Desktop\"\necho \"===build tr===\"; go build -o REDACTED ./cmd/tr && echo \"built OK\"\necho \"===run: local start, decline install (stdin=n), 20s guard===\"\nprintf 'n\\n' | timeout 20 REDACTED local start ; echo \"EXIT=$?\"",
   "description": "Build tr, run local start, decline install"
 }
 ```
@@ -700,7 +700,7 @@ tool_use Bash
 id: toolu_01Ab3nsKuXceBsUBe3DMbAra
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nREDACTED\n/usr/bin/time -p $SC/tr local start --yes > $SC/start.log 2>&1\necho \"EXIT=$?\" >> $SC/start.log",
+  "command": "cd /home/<USER>/Project/tiny\nREDACTED\n/usr/bin/time -p $SC/tr local start --yes > $SC/start.log 2>&1\necho \"EXIT=$?\" >> $SC/start.log",
   "description": "Full --yes install + stack bring-up",
   "timeout": 600000,
   "run_in_background": true
@@ -783,19 +783,19 @@ EXIT=1
 ===colima status===
 time="2026-07-02T00:57:35+05:30" level=fatal msg="colima is not running"
 ===ha.stderr.log (why vm failed)===
-{"level":"debug","msg":"Using specified vmType `vz` for `/Users/jobinlawrance/.colima/_lima/colima/lima.yaml`","time":"2026-07-02T00:56:55+05:30"}
+{"level":"debug","msg":"Using specified vmType `vz` for `/home/<USER>/.colima/_lima/colima/lima.yaml`","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"Using internal driver `vz`","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"Decompressing /opt/homebrew/share/lima/lima-guestagent.Linux-aarch64.gz","time":"2026-07-02T00:56:55+05:30"}
-{"level":"debug","msg":"Creating iso file /Users/jobinlawrance/.colima/_lima/colima/cidata.iso","time":"2026-07-02T00:56:55+05:30"}
+{"level":"debug","msg":"Creating iso file /home/<USER>/.colima/_lima/colima/cidata.iso","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"Using REDACTED as workspace","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"Failed to detect CPU features. Assuming that AES acceleration is available on this Apple silicon.","time":"2026-07-02T00:56:55+05:30"}
 {"level":"debug","msg":"OpenSSH version 10.2.1 detected, is GSSAPI supported: true","time":"2026-07-02T00:56:56+05:30"}
-{"level":"debug","msg":"AES accelerator seems available, prioritizing aes128-gcm@openssh.com and aes256-gcm@openssh.com","time":"2026-07-02T00:56:56+05:30"}
-{"level":"info","msg":"hostagent socket created at /Users/jobinlawrance/.colima/_lima/colima/ha.sock","time":"2026-07-02T00:56:56+05:30"}
-{"level":"info","msg":"Starting VZ (hint: to watch the boot progress, see `/Users/jobinlawrance/.colima/_lima/colima/serial*.log`)","time":"2026-07-02T00:56:56+05:30"}
-{"level":"debug","msg":"Kernel file `/Users/jobinlawrance/.colima/_lima/colima/kernel` not found","time":"2026-07-02T00:56:56+05:30"}
+{"level":"debug","msg":"AES accelerator seems available, prioritizing <REDACTED_EMAIL> and <REDACTED_EMAIL>","time":"2026-07-02T00:56:56+05:30"}
+{"level":"info","msg":"hostagent socket created at /home/<USER>/.colima/_lima/colima/ha.sock","time":"2026-07-02T00:56:56+05:30"}
+{"level":"info","msg":"Starting VZ (hint: to watch the boot progress, see `/home/<USER>/.colima/_lima/colima/serial*.log`)","time":"2026-07-02T00:56:56+05:30"}
+{"level":"debug","msg":"Kernel file `/home/<USER>/.colima/_lima/colima/kernel` not found","time":"2026-07-02T00:56:56+05:30"}
 {"level":"debug","msg":"Using EFI Boot Loader","time":"2026-07-02T00:56:56+05:30"}
-{"level":"fatal","msg":"dial unix /Users/jobinlawrance/.colima/_lima/_networks/user-v2/user-v2_fd.sock: connect: no such file or directory","time":"2026-07-02T00:56:56+05:30"}
+{"level":"fatal","msg":"dial unix /home/<USER>/.colima/_lima/_networks/user-v2/user-v2_fd.sock: connect: no such file or directory","time":"2026-07-02T00:56:56+05:30"}
 ===serial tail===
 ```
 
@@ -824,7 +824,7 @@ id: toolu_01VyZeFXKjbZziR4RutDNr86
 tool_result
 id: toolu_01VyZeFXKjbZziR4RutDNr86
 ```
-time="2026-07-02T00:58:02+05:30" level=info msg="Deleted `colima` (`/Users/jobinlawrance/.colima/_lima/colima`)"
+time="2026-07-02T00:58:02+05:30" level=info msg="Deleted `colima` (`/home/<USER>/.colima/_lima/colima`)"
 time="2026-07-02T00:58:02+05:30" level=info msg=done
 ===fresh start===
     "linux/arm64",
@@ -857,7 +857,7 @@ tool_use Bash
 id: toolu_016gkx17KtqxAZhnNfHocKwJ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nREDACTED\ntimeout 360 $SC/tr local start 2>&1 | tail -20; echo \"TR_EXIT=${PIPESTATUS[0]}\"\necho \"===containers===\"; docker compose ps 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Project/tiny\nREDACTED\ntimeout 360 $SC/tr local start 2>&1 | tail -20; echo \"TR_EXIT=${PIPESTATUS[0]}\"\necho \"===containers===\"; docker compose ps 2>&1 | tail -6",
   "description": "Bring up full stack via tr, list containers",
   "timeout": 400000
 }
@@ -937,7 +937,7 @@ id: toolu_01VwUxzkK2ZehdqACkrNw31z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tfmt.Println(\"→ starting colima…\")\n\tif err := run(ctx, \"colima\", \"start\"); err != nil {\n\t\treturn err\n\t}",
   "new_string": "\tfmt.Println(\"→ starting colima…\")\n\tif err := run(ctx, \"colima\", \"start\"); err != nil {\n\t\treturn fmt.Errorf(\"colima start failed: %w\\n\"+\n\t\t\t\"if the VM won't boot (stale lima network/socket), try: colima delete -f && colima start\", err)\n\t}"
 }
@@ -948,7 +948,7 @@ id: toolu_01VwUxzkK2ZehdqACkrNw31z
 tool_result
 id: toolu_01VwUxzkK2ZehdqACkrNw31z
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -957,7 +957,7 @@ tool_use Bash
 id: toolu_01Qac2KFcKVHbAm1m7bZhjks
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go build ./... 2>&1|head && go test ./cmd/tr/ 2>&1|tail -2",
+  "command": "cd /home/<USER>/Project/tiny; go build ./... 2>&1|head && go test ./cmd/tr/ 2>&1|tail -2",
   "description": "Rebuild + test after error wrap"
 }
 ```
@@ -1025,7 +1025,7 @@ tool_use Bash
 id: toolu_01Ej85ySJr7q2qncFCqfFBRG
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add cmd/tr/local.go cmd/tr/local_test.go\ngit commit -q -F - <<'EOF'\nfix(cli): tr local start no longer hangs without a container runtime\n\nPreflight docker daemon check (4s timeout) before compose; on a dead\nsocket, detect + start colima -> Docker Desktop, else prompt-install\ncolima via brew (--yes to auto-confirm). Apple container skipped (no\ncompose verb). Wrap colima-boot failure with an actionable remedy.\nEOF\necho \"===committed===\"; git log --oneline -1",
+  "command": "cd /home/<USER>/Project/tiny\ngit add cmd/tr/local.go cmd/tr/local_test.go\ngit commit -q -F - <<'EOF'\nfix(cli): tr local start no longer hangs without a container runtime\n\nPreflight docker daemon check (4s timeout) before compose; on a dead\nsocket, detect + start colima -> Docker Desktop, else prompt-install\ncolima via brew (--yes to auto-confirm). Apple container skipped (no\ncompose verb). Wrap colima-boot failure with an actionable remedy.\nEOF\necho \"===committed===\"; git log --oneline -1",
   "description": "Commit the fix"
 }
 ```
@@ -1049,7 +1049,7 @@ tool_use Bash
 id: toolu_01Vpd8XmfQSTkPv6U6Dmckeh
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===Makefile targets===\"; [ -f Makefile ] && grep -E '^[a-z].*:' Makefile | head || echo \"no Makefile\"\necho \"===go install path===\"; grep '^module' go.mod\necho \"===brew tap in goreleaser?===\"; grep -iA3 'brews:\\|tap:' .goreleaser.yaml 2>/dev/null | head\necho \"===tr subcommands===\"; REDACTED --help 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===Makefile targets===\"; [ -f Makefile ] && grep -E '^[a-z].*:' Makefile | head || echo \"no Makefile\"\necho \"===go install path===\"; grep '^module' go.mod\necho \"===brew tap in goreleaser?===\"; grep -iA3 'brews:\\|tap:' .goreleaser.yaml 2>/dev/null | head\necho \"===tr subcommands===\"; REDACTED --help 2>&1 | tail -20",
   "description": "Check install methods + tr help"
 }
 ```
@@ -1158,7 +1158,7 @@ tool_use Bash
 id: toolu_01HuYaY8wS83Yc8zFZsNZrST
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===origin===\"; git remote -v | head -1\necho \"===go.mod module===\"; head -1 go.mod\necho \"===import refs count===\"; grep -rl 'github.com/tinyraven/tinyraven' --include='*.go' . | wc -l\necho \"===latest tag===\"; git tag --sort=-v:refname | head -3",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===origin===\"; git remote -v | head -1\necho \"===go.mod module===\"; head -1 go.mod\necho \"===import refs count===\"; grep -rl 'github.com/tinyraven/tinyraven' --include='*.go' . | wc -l\necho \"===latest tag===\"; git tag --sort=-v:refname | head -3",
   "description": "Confirm remote vs module path mismatch"
 }
 ```
@@ -1169,7 +1169,7 @@ tool_result
 id: toolu_01HuYaY8wS83Yc8zFZsNZrST
 ```
 ===origin===
-origin	git@github.com:ravencloak-org/tiny.git (fetch)
+origin	<REDACTED_EMAIL>:ravencloak-org/tiny.git (fetch)
 ===go.mod module===
 module github.com/tinyraven/tinyraven
 ===import refs count===
@@ -1190,7 +1190,7 @@ tool_use Bash
 id: toolu_01Rz4VBu362TVmcDLCjWtvTw
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nOLD='github.com/tinyraven/tinyraven'; NEW='github.com/ravencloak-org/tiny'\n# go.mod + all .go imports\ngrep -rl \"$OLD\" --include='*.go' . | xargs sed -i '' \"s|$OLD|$NEW|g\"\nsed -i '' \"s|$OLD|$NEW|g\" go.mod\necho \"===go.mod===\"; head -1 go.mod\necho \"===residual old refs===\"; grep -rn \"$OLD\" --include='*.go' . | wc -l\necho \"===build===\"; go build ./... 2>&1 | head && echo \"BUILD OK\"\necho \"===test===\"; go test ./cmd/tr/ 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Project/tiny\nOLD='github.com/tinyraven/tinyraven'; NEW='github.com/ravencloak-org/tiny'\n# go.mod + all .go imports\ngrep -rl \"$OLD\" --include='*.go' . | xargs sed -i '' \"s|$OLD|$NEW|g\"\nsed -i '' \"s|$OLD|$NEW|g\" go.mod\necho \"===go.mod===\"; head -1 go.mod\necho \"===residual old refs===\"; grep -rn \"$OLD\" --include='*.go' . | wc -l\necho \"===build===\"; go build ./... 2>&1 | head && echo \"BUILD OK\"\necho \"===test===\"; go test ./cmd/tr/ 2>&1 | tail -1",
   "description": "Rewrite module path across repo, rebuild"
 }
 ```
@@ -1220,7 +1220,7 @@ tool_use Bash
 id: toolu_018bE7pZf1tvKysfs2rbZMUs
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go test ./cmd/tr/ 2>&1 | grep -E 'FAIL|---|panic|Error|\\.go:' | head -20",
+  "command": "cd /home/<USER>/Project/tiny; go test ./cmd/tr/ 2>&1 | grep -E 'FAIL|---|panic|Error|\\.go:' | head -20",
   "description": "Find failing test detail"
 }
 ```
@@ -1240,7 +1240,7 @@ tool_use Bash
 id: toolu_01Rd3ok3UTohJBXdqs3R7TRs
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; go vet ./cmd/tr/ 2>&1 | head; echo \"---build test bin---\"; go test -c ./cmd/tr/ -o /dev/null 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny; go vet ./cmd/tr/ 2>&1 | head; echo \"---build test bin---\"; go test -c ./cmd/tr/ -o /dev/null 2>&1 | head",
   "description": "Get setup-failed compile error"
 }
 ```
@@ -1250,10 +1250,10 @@ id: toolu_01Rd3ok3UTohJBXdqs3R7TRs
 tool_result
 id: toolu_01Rd3ok3UTohJBXdqs3R7TRs
 ```
-stat /Users/jobinlawrance/Project/tiny/cmd/tr: directory not found
+stat /home/<USER>/Project/tiny/cmd/tr: directory not found
 ---build test bin---
 # ./cmd/tr
-stat /Users/jobinlawrance/Project/tiny/cmd/tr: directory not found
+stat /home/<USER>/Project/tiny/cmd/tr: directory not found
 FAIL	./cmd/tr [setup failed]
 FAIL
 ```
@@ -1264,7 +1264,7 @@ tool_use Bash
 id: toolu_01FWScQ8GWYVMNTa8oXQs6aD
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; ls cmd/tr/*.go; echo \"---retry no slash---\"; go test ./cmd/tr 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Project/tiny; ls cmd/tr/*.go; echo \"---retry no slash---\"; go test ./cmd/tr 2>&1 | tail -3",
   "description": "Verify dir exists, retry test"
 }
 ```
@@ -1276,7 +1276,7 @@ id: toolu_01FWScQ8GWYVMNTa8oXQs6aD
 ```
 (eval):1: no matches found: cmd/tr/*.go
 ---retry no slash---
-stat /Users/jobinlawrance/Project/tiny/cmd/tr: directory not found
+stat /home/<USER>/Project/tiny/cmd/tr: directory not found
 FAIL	./cmd/tr [setup failed]
 FAIL
 ```
@@ -1291,7 +1291,7 @@ tool_use Bash
 id: toolu_01PPSnRh4tteRnhaqWsdoGap
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===cmd tree===\"; find cmd -maxdepth 2 -name '*.go' | head\necho \"===git status===\"; git status --short | head -20\necho \"===my commit still in log?===\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===cmd tree===\"; find cmd -maxdepth 2 -name '*.go' | head\necho \"===git status===\"; git status --short | head -20\necho \"===my commit still in log?===\"; git log --oneline -3",
   "description": "Inspect cmd rename + git state"
 }
 ```
@@ -1349,7 +1349,7 @@ tool_use Bash
 id: toolu_011tRHjFbYsYZ3Bp5U77Qvds
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===test at new path===\"; go test ./cmd/tinyraven 2>&1 | tail -2\necho \"===my hang fix present in renamed file?===\"; grep -c 'ensureDockerDaemon\\|pickProvider\\|colima delete -f' cmd/tinyraven/local.go\necho \"===what 80efab7 touched===\"; git show --stat 80efab7 2>&1 | grep -E 'local|\\|' | head\necho \"===go.mod staged or unstaged?===\"; git status --short go.mod\necho \"===binary name in main===\"; grep -n 'Use:.*\"tr\"\\|Use:.*tinyraven\\|Use: *\"' cmd/tinyraven/main.go | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===test at new path===\"; go test ./cmd/tinyraven 2>&1 | tail -2\necho \"===my hang fix present in renamed file?===\"; grep -c 'ensureDockerDaemon\\|pickProvider\\|colima delete -f' cmd/tinyraven/local.go\necho \"===what 80efab7 touched===\"; git show --stat 80efab7 2>&1 | grep -E 'local|\\|' | head\necho \"===go.mod staged or unstaged?===\"; git status --short go.mod\necho \"===binary name in main===\"; grep -n 'Use:.*\"tr\"\\|Use:.*tinyraven\\|Use: *\"' cmd/tinyraven/main.go | head",
   "description": "Verify tests, hang-fix survival, concurrent overlap"
 }
 ```
@@ -1476,7 +1476,7 @@ tool_use Bash
 id: toolu_015zuuhf39zD5pXAkDptsJcu
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===workflows on tag?===\"; grep -rl 'tags:\\|v\\*\\|goreleaser\\|release' .github/workflows/ 2>/dev/null\necho \"---trigger lines---\"; grep -rn -A3 'on:\\|tags:' .github/workflows/*.y*ml 2>/dev/null | grep -iE 'tags:|v\\*|push|release' | head\necho \"===branch===\"; git branch --show-current\necho \"===build sanity before anything===\"; go build ./... 2>&1 | head && echo OK",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===workflows on tag?===\"; grep -rl 'tags:\\|v\\*\\|goreleaser\\|release' .github/workflows/ 2>/dev/null\necho \"---trigger lines---\"; grep -rn -A3 'on:\\|tags:' .github/workflows/*.y*ml 2>/dev/null | grep -iE 'tags:|v\\*|push|release' | head\necho \"===branch===\"; git branch --show-current\necho \"===build sanity before anything===\"; go build ./... 2>&1 | head && echo OK",
   "description": "Check tag-triggered release + build sanity"
 }
 ```
@@ -1521,7 +1521,7 @@ tool_use Bash
 id: toolu_01WTjqbp3mQnydQ8BNrty6VN
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add -A\ngit commit -q -F - <<'EOF'\nrefactor: rebrand tr -> tinyraven; fix module path to ravencloak-org/tiny\n\nBinary/CLI renamed tr -> tinyraven (coreutils `tr` collision): cmd/tr ->\ncmd/tinyraven, docs, Dockerfile, .goreleaser, README, PROMPT, ADRs.\n\nModule path corrected github.com/tinyraven/tinyraven ->\ngithub.com/ravencloak-org/tiny (matches origin) across go.mod + all\nimports, so `go install .../cmd/tinyraven@latest` resolves. v0.3.10 ships\na go.mod whose declared path mismatches the repo and cannot be installed.\nEOF\necho \"===commit===\"; git log --oneline -1\necho \"===build+test===\"; go build ./... 2>&1|head && go test ./cmd/tinyraven 2>&1|tail -1\necho \"===push main===\"; git push origin main 2>&1 | tail -4",
+  "command": "cd /home/<USER>/Project/tiny\ngit add -A\ngit commit -q -F - <<'EOF'\nrefactor: rebrand tr -> tinyraven; fix module path to ravencloak-org/tiny\n\nBinary/CLI renamed tr -> tinyraven (coreutils `tr` collision): cmd/tr ->\ncmd/tinyraven, docs, Dockerfile, .goreleaser, README, PROMPT, ADRs.\n\nModule path corrected github.com/tinyraven/tinyraven ->\ngithub.com/ravencloak-org/tiny (matches origin) across go.mod + all\nimports, so `go install .../cmd/tinyraven@latest` resolves. v0.3.10 ships\na go.mod whose declared path mismatches the repo and cannot be installed.\nEOF\necho \"===commit===\"; git log --oneline -1\necho \"===build+test===\"; go build ./... 2>&1|head && go test ./cmd/tinyraven 2>&1|tail -1\necho \"===push main===\"; git push origin main 2>&1 | tail -4",
   "description": "Commit rebrand + module fix, push main"
 }
 ```
@@ -1590,7 +1590,7 @@ tool_use Bash
 id: toolu_01QNzuyQgmam44eaKHrT6zJz
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit tag -a v0.3.11 -m \"v0.3.11: rebrand to tinyraven; fix module path (installable via go install)\"\ngit push origin v0.3.11 2>&1 | tail -4\necho \"===tag confirmed===\"; git tag --sort=-v:refname | head -2",
+  "command": "cd /home/<USER>/Project/tiny\ngit tag -a v0.3.11 -m \"v0.3.11: rebrand to tinyraven; fix module path (installable via go install)\"\ngit push origin v0.3.11 2>&1 | tail -4\necho \"===tag confirmed===\"; git tag --sort=-v:refname | head -2",
   "description": "Tag v0.3.11 and push (triggers release)"
 }
 ```
@@ -1620,7 +1620,7 @@ id: toolu_01AxcBrWBh94oYL2ZentJVx7
   "description": "v0.3.11 release workflow outcomes",
   "timeout_ms": 600000,
   "persistent": false,
-  "command": "cd /Users/jobinlawrance/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 8 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.11\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; echo \"$cur\" | grep -qiE \"completed|failure|success\" && echo \"$cur\" | grep -qv \"in_progress\\|queued\" && break; sleep 30; done"
+  "command": "cd /home/<USER>/Project/tiny; prev=\"\"; while true; do cur=$(gh run list --limit 8 --json headBranch,workflowName,status,conclusion --jq '.[] | select(.headBranch==\"v0.3.11\") | \"\\(.workflowName): \\(.status) \\(.conclusion // \"\")\"' 2>/dev/null | sort); comm -13 <(echo \"$prev\") <(echo \"$cur\") 2>/dev/null; prev=\"$cur\"; echo \"$cur\" | grep -qiE \"completed|failure|success\" && echo \"$cur\" | grep -qv \"in_progress\\|queued\" && break; sleep 30; done"
 }
 ```
 
@@ -1697,7 +1697,7 @@ total 0
 drwxr-xr-x@ 2 jobinlawrance  wheel   64 Jul  2 10:02 .
 drwx------@ 5 jobinlawrance  wheel  160 Jul  2 10:02 ..
 (eval):5: no such file or directory: REDACTED
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1727,7 +1727,7 @@ tinyraven version dev
 ===now @latest===
 go: github.com/ravencloak-org/tiny/cmd/tinyraven@latest: module github.com/ravencloak-org/tiny@latest found (v0.3.10), but does not contain package github.com/ravencloak-org/tiny/cmd/tinyraven
 done
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1760,7 +1760,7 @@ v0.3.7
 v0.3.8
 v0.3.9
 v0.3.10
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1828,7 +1828,7 @@ tool_use Bash
 id: toolu_01Rw6TknHstTwBA3nyjyG1Fr
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; gh run list --limit 8 --json headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.11\")|\"\\(.workflowName): \\(.conclusion)\"'",
+  "command": "cd /home/<USER>/Project/tiny; gh run list --limit 8 --json headBranch,workflowName,conclusion --jq '.[]|select(.headBranch==\"v0.3.11\")|\"\\(.workflowName): \\(.conclusion)\"'",
   "description": "Final workflow states for v0.3.11"
 }
 ```
@@ -1909,7 +1909,7 @@ tool_use Bash
 id: toolu_01LJciWyWSWpz4uGQew6kLhQ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"===brew block install/completion===\"; grep -n -A25 'brews:' .goreleaser.yaml | grep -iE 'install|completion|bash_completion|zsh|fish|generate' | head\necho \"===any completions: stanza===\"; grep -in 'completion' .goreleaser.yaml | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"===brew block install/completion===\"; grep -n -A25 'brews:' .goreleaser.yaml | grep -iE 'install|completion|bash_completion|zsh|fish|generate' | head\necho \"===any completions: stanza===\"; grep -in 'completion' .goreleaser.yaml | head",
   "description": "Check if brew formula installs completions"
 }
 ```
@@ -1930,7 +1930,7 @@ id: toolu_01SjB79EbRKpj3nazrTvFZs9
 ```json
 {
   "pattern": "completion|install:|generate_completions|bash_completion",
-  "path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "output_mode": "content",
   "-n": "true",
   "-i": "true"
@@ -1951,7 +1951,7 @@ tool_use Bash
 id: toolu_01DoknJfLBksKocg9cXZwfjZ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny; grep -in -E 'completion|install:|generate_completions|bash_completion|extra_install' .goreleaser.yaml",
+  "command": "cd /home/<USER>/Project/tiny; grep -in -E 'completion|install:|generate_completions|bash_completion|extra_install' .goreleaser.yaml",
   "description": "Grep goreleaser for completion install"
 }
 ```
@@ -1970,7 +1970,7 @@ tool_use Read
 id: toolu_01JJ2G67GwUM2Qujg4KDpKm9
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "offset": 105,
   "limit": 30
 }
@@ -1985,7 +1985,7 @@ id: toolu_01JJ2G67GwUM2Qujg4KDpKm9
 106	    license: Apache-2.0
 107	    commit_author:
 108	      name: tinyraven-bot
-109	      email: oss@ravencloak.org
+109	      email: <REDACTED_EMAIL>
 110	    directory: Formula
 111	    install: |
 112	      bin.install "tinyraven"
@@ -2043,7 +2043,7 @@ id: toolu_016ETbTnyjqgLKSdbig57HTP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/.goreleaser.yaml",
+  "file_path": "/home/<USER>/Project/tiny/.goreleaser.yaml",
   "old_string": "    install: |\n      bin.install \"tinyraven\"\n    test: |\n      system \"#{bin}/tinyraven\", \"--version\"",
   "new_string": "    install: |\n      bin.install \"tinyraven\"\n      generate_completions_from_executable(bin/\"tinyraven\", \"completion\")\n    test: |\n      system \"#{bin}/tinyraven\", \"--version\""
 }
@@ -2054,7 +2054,7 @@ id: toolu_016ETbTnyjqgLKSdbig57HTP
 tool_result
 id: toolu_016ETbTnyjqgLKSdbig57HTP
 ```
-The file /Users/jobinlawrance/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/.goreleaser.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2067,7 +2067,7 @@ tool_use Bash
 id: toolu_01UsZwyMKq4rN5ZhaLHEvtAt
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ncommand -v goreleaser >/dev/null && goreleaser check 2>&1 | tail -5 || echo \"goreleaser not installed locally — skipping check (syntax is standard brew install DSL)\"\necho \"===edited block===\"; sed -n '110,114p' .goreleaser.yaml",
+  "command": "cd /home/<USER>/Project/tiny\ncommand -v goreleaser >/dev/null && goreleaser check 2>&1 | tail -5 || echo \"goreleaser not installed locally — skipping check (syntax is standard brew install DSL)\"\necho \"===edited block===\"; sed -n '110,114p' .goreleaser.yaml",
   "description": "Validate goreleaser config + show block"
 }
 ```

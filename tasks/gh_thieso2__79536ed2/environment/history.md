@@ -2287,7 +2287,7 @@ class Api::GcpOidcConfigsControllerTest < ActionDispatch::IntegrationTest
     body = response.parsed_body
     assert_equal "prod", body["name"]
     assert_equal "test-project-123", body["project_id"]
-    assert_equal "sandcastle-reader@test-project-123.iam.gserviceaccount.com", body["default_service_account_email"]
+    assert_equal "<REDACTED_EMAIL>", body["default_service_account_email"]
     assert_equal "//iam.googleapis.com/projects/123456789012/locations/global/workloadIdentityPools/sandcastle/providers/sandcastle", body.dig("setup", "audience")
 
     get "/api/gcp_oidc_configs", headers: @headers
@@ -2320,7 +2320,7 @@ class Api::GcpOidcConfigsControllerTest < ActionDispatch::IntegrationTest
       params: {
         gcp_oidc_enabled: true,
         gcp_oidc_config_id: config.id,
-        gcp_service_account_email: "sandbox@test-project-123.iam.gserviceaccount.com",
+        gcp_service_account_email: "<REDACTED_EMAIL>",
         gcp_principal_scope: "sandbox",
         gcp_roles: [ "roles/viewer" ]
       },
@@ -2420,20 +2420,20 @@ Output:
 
 one:
   name: alice
-  email_address: alice@example.com
+  email_address: <REDACTED_EMAIL>
   password_digest: <%= password_digest %>
   admin: true
   status: active
 
 two:
   name: bob
-  email_address: bob@example.com
+  email_address: <REDACTED_EMAIL>
   password_digest: <%= password_digest %>
   status: active
 
 thies:
   name: thies
-  email_address: thies@example.com
+  email_address: <REDACTED_EMAIL>
   password_digest: <%= password_digest %>
   admin: true
   status: active
@@ -3201,7 +3201,7 @@ SANDCASTLE_OIDC_TOKEN_FILE=/run/sandcastle/oidc-token
 SANDCASTLE_OIDC_SANDBOX_ID=61
 SANDCASTLE_OIDC_SANDBOX_NAME=test2
 SANDCASTLE_GCP_WORKLOAD_IDENTITY_PROVIDER=//iam.googleapis.com/projects/803979975657/locations/global/workloadIdentityPools/tcpool/providers/tcprovider
-REDACTED@iom-eph-thies-cfe9.iam.gserviceaccount.com
+<REDACTED_EMAIL>
 GOOGLE_APPLICATION_CREDENTIALS=/etc/sandcastle/gcp-credentials.json
 REDACTED
 GOOGLE_CLOUD_PROJECT=iom-eph-thies-cfe9
@@ -3215,7 +3215,7 @@ CREDS
       "timeout_millis": 30000
     }
   },
-  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/sandcastle-reader@iom-eph-thies-cfe9.iam.gserviceaccount.com:generateAccessToken",
+  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/<REDACTED_EMAIL>:generateAccessToken",
   "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
   "token_url": "https://sts.googleapis.com/v1/token",
   "type": "external_account"
@@ -3226,7 +3226,7 @@ REDACTED
 GOOGLE_APPLICATION_CREDENTIALS=/etc/sandcastle/gcp-credentials.json
 GOOGLE_CLOUD_PROJECT=iom-eph-thies-cfe9
 GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES=1
-REDACTED@iom-eph-thies-cfe9.iam.gserviceaccount.com
+<REDACTED_EMAIL>
 SANDCASTLE_GCP_WORKLOAD_IDENTITY_PROVIDER=//iam.googleapis.com/projects/803979975657/locations/global/workloadIdentityPools/tcpool/providers/tcprovider
 SANDCASTLE_OIDC_ISSUER=https://demo.sandcastle.rocks
 SANDCASTLE_OIDC_SANDBOX_ID=61
@@ -4307,7 +4307,7 @@ SANDCASTLE_OIDC_TOKEN_FILE=/run/sandcastle/oidc-token
 SANDCASTLE_OIDC_SANDBOX_ID=61
 SANDCASTLE_OIDC_SANDBOX_NAME=test2
 SANDCASTLE_GCP_WORKLOAD_IDENTITY_PROVIDER=//iam.googleapis.com/projects/803979975657/locations/global/workloadIdentityPools/tcpool/providers/tcprovider
-REDACTED@iom-eph-thies-cfe9.iam.gserviceaccount.com
+<REDACTED_EMAIL>
 GOOGLE_APPLICATION_CREDENTIALS=/etc/sandcastle/gcp-credentials.json
 REDACTED
 GOOGLE_CLOUD_PROJECT=iom-eph-thies-cfe9
@@ -4321,7 +4321,7 @@ CREDS
       "timeout_millis": 30000
     }
   },
-  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/sandcastle-reader@iom-eph-thies-cfe9.iam.gserviceaccount.com:generateAccessToken",
+  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/<REDACTED_EMAIL>:generateAccessToken",
   "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
   "token_url": "https://sts.googleapis.com/v1/token",
   "type": "external_account"
@@ -4332,7 +4332,7 @@ REDACTED
 GOOGLE_APPLICATION_CREDENTIALS=/etc/sandcastle/gcp-credentials.json
 GOOGLE_CLOUD_PROJECT=iom-eph-thies-cfe9
 GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES=1
-REDACTED@iom-eph-thies-cfe9.iam.gserviceaccount.com
+<REDACTED_EMAIL>
 SANDCASTLE_GCP_WORKLOAD_IDENTITY_PROVIDER=//iam.googleapis.com/projects/803979975657/locations/global/workloadIdentityPools/tcpool/providers/tcprovider
 SANDCASTLE_OIDC_ISSUER=https://demo.sandcastle.rocks
 SANDCASTLE_OIDC_SANDBOX_ID=61
@@ -5475,7 +5475,7 @@ tool_use exec_command
 id: call_1nyAjU2uv7PlyveyJ5KQXJR7
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/thies/.codex/plugins/cache/openai-curated/github/f9c12053/skills/yeet/SKILL.md",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/openai-curated/github/f9c12053/skills/yeet/SKILL.md",
   "workdir": "/persisted/Projects/Sandcastle",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
@@ -5564,8 +5564,8 @@ Output:
 ?? oidc/
 ?? test/controllers/api/sandboxes_controller_test.rb
 main
-origin	git@github.com:thieso2/Sandcastle.git (fetch)
-origin	git@github.com:thieso2/Sandcastle.git (push)
+origin	<REDACTED_EMAIL>:thieso2/Sandcastle.git (fetch)
+origin	<REDACTED_EMAIL>:thieso2/Sandcastle.git (push)
 
 ```
 
@@ -5654,7 +5654,7 @@ Output:
 gh version 2.90.0 (2026-04-16)
 https://github.com/cli/cli/releases/tag/v2.90.0
 github.com
-  ✓ Logged in to github.com account thieso2 (/home/thies/.config/gh/hosts.yml)
+  ✓ Logged in to github.com account thieso2 (/home/<USER>/.config/gh/hosts.yml)
   - Active account: true
   - Git operations protocol: https
   - Token: gho_************************************

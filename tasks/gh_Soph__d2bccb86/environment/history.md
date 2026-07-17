@@ -228,10 +228,10 @@ tool_result
 id: toolu_01BPYTyZpX542PSgSisUcxjk
 ```
 === Andrea Nodari ===
-Andrea Nodari <and.nodari@gmail.com>
-Andrea Nodari <andrea@entire.io>
+Andrea Nodari <<REDACTED_EMAIL>>
+Andrea Nodari <<REDACTED_EMAIL>>
 === computermode ===
-computermode <2917645+computermode@users.noreply.github.com>
+computermode <<REDACTED_EMAIL>>
 === Soph ===
 ```
 
@@ -251,18 +251,18 @@ id: toolu_013sewHRVs6Rrr6PjedZhdYY
 tool_result
 id: toolu_013sewHRVs6Rrr6PjedZhdYY
 ```
-computermode <2917645+computermode@users.noreply.github.com>
+computermode <<REDACTED_EMAIL>>
 ---commits by computermode---
-74c4a7ba computermode 2917645+computermode@users.noreply.github.com Merge pull request #62 from entireio/codex/revert-checkpoints-version-2-20260521
-2f405c0e computermode 2917645+computermode@users.noreply.github.com Remove checkpoints version setting only
-0b7b6d8b computermode 2917645+computermode@users.noreply.github.com Merge local checkpoints into archived generation
-498c330e computermode 2917645+computermode@users.noreply.github.com Merge remote v2/main
-85a46c3e computermode 2917645+computermode@users.noreply.github.com Revert checkpoints version 2 setting
-eb550529 computermode 2917645+computermode@users.noreply.github.com Checkpoint: d1626c83ecc3
-53075597 computermode 2917645+computermode@users.noreply.github.com Checkpoint: d1626c83ecc3
-5b29a9bb computermode 2917645+computermode@users.noreply.github.com clean commit
-f15cb3a5 computermode 2917645+computermode@users.noreply.github.com Checkpoint: 97d7c04204b2
-8da92ffa computermode 2917645+computermode@users.noreply.github.com Checkpoint: 97d7c04204b2
+74c4a7ba computermode <REDACTED_EMAIL> Merge pull request #62 from entireio/codex/revert-checkpoints-version-2-20260521
+2f405c0e computermode <REDACTED_EMAIL> Remove checkpoints version setting only
+0b7b6d8b computermode <REDACTED_EMAIL> Merge local checkpoints into archived generation
+498c330e computermode <REDACTED_EMAIL> Merge remote v2/main
+85a46c3e computermode <REDACTED_EMAIL> Revert checkpoints version 2 setting
+eb550529 computermode <REDACTED_EMAIL> Checkpoint: d1626c83ecc3
+53075597 computermode <REDACTED_EMAIL> Checkpoint: d1626c83ecc3
+5b29a9bb computermode <REDACTED_EMAIL> clean commit
+f15cb3a5 computermode <REDACTED_EMAIL> Checkpoint: 97d7c04204b2
+8da92ffa computermode <REDACTED_EMAIL> Checkpoint: 97d7c04204b2
 ---next version guess---
 v0.5.0
 ```
@@ -311,7 +311,7 @@ tool_use Read
 id: toolu_01DiwmoSS3NYNXGPLAFN5xp2
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/CHANGELOG.md",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/CHANGELOG.md",
   "limit": 8
 }
 ```
@@ -338,7 +338,7 @@ id: toolu_01DMRRMQdgqHXrsoQejSMNEm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/CHANGELOG.md",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/CHANGELOG.md",
   "old_string": "## [0.5.0] - 2026-05-18",
   "new_string": "## [0.6.0] - 2026-06-03\n\n### Added\n\n- `git-sync convert-sha256`: one-off conversion that fetches a pack over smart HTTP from a SHA1 source, walks every reachable object via a two-pass topological DFS, and writes a fresh SHA256 bare repository with every tree/commit/tag reference re-encoded — including abbreviated SHA1 prefixes in commit messages. All branches and tags are always converted to avoid stranding cross-branch references; sharp edges and operational characteristics are documented in `docs/convert-sha256.md` ([#66](https://github.com/entireio/git-sync/pull/66))\n\n### Changed\n\n- HTTP auth now matches git's own flow: try anonymous first and only consult the credential helper after a 401, instead of proactively running `git credential fill` for every endpoint. This stops git-sync from dropping into an interactive `Username:`/`Password:` prompt on unauthenticated hosts and from leaking tokens to public repos. Expired credentials (401, or 403 from token services like Cloudflare) trigger a helper `reject` so the next run starts clean; the helper runs with `GIT_TERMINAL_PROMPT=0` to fail fast rather than block on a tty ([#65](https://github.com/entireio/git-sync/pull/65))\n- Bootstrap planning streams the commit-graph fetch instead of materializing the full commit set: a new `ExtractCommitParents` path parses the `tree:0` pack incrementally, extracting only `(commit -> parent hashes)` […]
 
@@ -347,7 +347,7 @@ id: toolu_01DMRRMQdgqHXrsoQejSMNEm
 tool_result
 id: toolu_01DMRRMQdgqHXrsoQejSMNEm
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

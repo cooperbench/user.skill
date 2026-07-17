@@ -101,7 +101,7 @@ Ready for you to review the changes. Want me to commit these, or would you like 
 <task-notification>
 <task-id>bgii44ran</task-id>
 <tool-use-id>toolu_017tFFcGELJwWuTiF3S68Mf6</tool-use-id>
-<output-file>C:\Users\petep\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\9f36be99-a345-469f-9a29-7450cbf39592\tasks\bgii44ran.output</output-file>
+<output-file>C:\Users\<USER>\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\9f36be99-a345-469f-9a29-7450cbf39592\tasks\bgii44ran.output</output-file>
 <status>failed</status>
 <summary>Background command "Run all unit tests" failed with exit code 1</summary>
 </task-notification>

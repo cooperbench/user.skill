@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_014ivczXcAWz1vLMsnSdGoHe
 ```json
 {
-  "command": "find /Users/hungpq2412/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" 2>/dev/null | head -5",
+  "command": "find /home/<USER>/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" 2>/dev/null | head -5",
   "description": "Find main.tex location"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_014ivczXcAWz1vLMsnSdGoHe
 tool_result
 id: toolu_014ivczXcAWz1vLMsnSdGoHe
 ```
-/Users/hungpq2412/neuralips26/main.tex
+/home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_019T4UMoUoxkwG1kCx3YC9vH
 ```json
 {
-  "command": "grep -n \"Problem Setup\\|problem_setup\\|sec:problem\\|problem-setup\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"Problem Setup\\|problem_setup\\|sec:problem\\|problem-setup\" /home/<USER>/neuralips26/main.tex",
   "description": "Find Problem Setup section"
 }
 ```
@@ -46,7 +46,7 @@ tool_use Bash
 id: toolu_01DHH9zMDCBtpNqnuDawcD1x
 ```json
 {
-  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\subsection\" /Users/hungpq2412/neuralips26/main.tex | head -40",
+  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\subsection\" /home/<USER>/neuralips26/main.tex | head -40",
   "description": "List all section headers"
 }
 ```
@@ -98,7 +98,7 @@ tool_use Bash
 id: toolu_01CRH1ShGDA8jiwC412WBytB
 ```json
 {
-  "command": "grep -n -i \"problem\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n -i \"problem\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find problem-related text"
 }
 ```
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_01XzyKfz4AsphvaxrrJAQcqs
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 240,
   "limit": 80
 }
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_01Hw6viYb37VwfNKouD9Uyh7
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 61,
   "limit": 170
 }
@@ -174,7 +174,7 @@ tool_use Read
 id: toolu_01BbxFq7EWyhFcMkAP592rk1
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 228,
   "limit": 15
 }
@@ -212,7 +212,7 @@ tool_use Read
 id: toolu_01Mfj9oXYkHAHpfMb9Dg49EX
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 243,
   "limit": 5
 }
@@ -237,7 +237,7 @@ id: toolu_011cG5bM5GoA7DmCe1cRgGYW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "We now formalize the adapter problem and specify RR-MoA: a per-window mixture in which the router reads the raw, pre-normalization signal while the experts consume the frozen TSFM's hidden states. Cost, expert pool, and deployment implications close the section.\n\n\\textbf{Problem setup.} Given a window $\\mathbf{x}\\in\\mathbb{R}^{T\\times c}$ ($T{=}512$, $c$ channels), forecasting predicts $\\mathbf{y}\\in\\mathbb{R}^{h\\times c}$ at horizons $h\\in\\{96,192,336,720\\}$ under MSE loss (imputation uses the same formalism with $\\mathbf{y}$ as the reconstruction target). A pretrained TSFM acts as a feature extractor $f_\\theta:\\mathbb{R}^{T\\times c}\\to\\mathbb{R}^{P\\times d}$ ($P$ patches of dim $d$) with $\\theta$ \\emph{frozen} ($\\nabla_\\theta\\!\\equiv\\!0$); we train only an adapter $g_\\phi:\\mathbb{R}^{P\\times d}\\to\\mathbb{R}^{h\\times c}$ with $|\\phi|\\leq 500$K, capping per-task storage at ${\\sim}2$\\,MB to enable the multi-tenant hot-swap regime (App.~\\ref{app:deployment}). A \\emph{per-window mixture of adapters} replaces $g_\\phi$ with $K$ experts $\\{\\mathrm{Expert}_j\\}_{j=1}^K$ plus a router $G_\\psi$ that returns a sparse weight $\\widetilde{w}\\in\\Delta^{K-1}$ supported on a Top-$k$ subset ($k\\leq K$), giving $\\hat{\\mathbf{y}}=\\sum_{j} \\widetilde{w}_j\\,\\mathrm{Expert}_j(f_\\theta(\\mathbf{x}))$ trained by $\\min_{\\phi,\\psi}\\,\\mathbb{E}\\,\\|\\hat{\\mathbf{y}}-\\mathbf{y}\\|_2^2$. The design question is what signal $G_\\psi$ should read: prior work routes on the hidden states $f_\\theta(\\mathbf{x})$, which fails on instance-normalized TSFMs (\\S\\ref{sec:main_results}).",
   "new_string": "We first state the task setup, then the problem we identify, then specify RR-MoA: a per-window mixture in which […]
 
@@ -246,7 +246,7 @@ id: toolu_011cG5bM5GoA7DmCe1cRgGYW
 tool_result
 id: toolu_011cG5bM5GoA7DmCe1cRgGYW
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -255,7 +255,7 @@ tool_use Bash
 id: toolu_01Le5eHrM5xCTo9QJB3sJcSC
 ```json
 {
-  "command": "grep -n \"sec:related\\|sec:diagnosis\\|sec:main_results\" /Users/hungpq2412/neuralips26/main.tex | head -10",
+  "command": "grep -n \"sec:related\\|sec:diagnosis\\|sec:main_results\" /home/<USER>/neuralips26/main.tex | head -10",
   "description": "Verify section labels exist"
 }
 ```
@@ -273,7 +273,7 @@ tool_use Bash
 id: toolu_011zQHusXYvimv1KtConSJfc
 ```json
 {
-  "command": "grep -n \"section{Related\\|label{sec:related\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"section{Related\\|label{sec:related\" /home/<USER>/neuralips26/main.tex",
   "description": "Check related work label"
 }
 ```
@@ -293,7 +293,7 @@ id: toolu_0146wMC6KsL6mGvTqMNtspSa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "it is not addressed by prior MoE-collapse, MoE-adapter, or time-series-normalization work (\\S\\ref{sec:related}).",
   "new_string": "it is not addressed by prior MoE-collapse, MoE-adapter, or time-series-normalization work (\\S\\ref{sec:related_work})."
 }
@@ -304,7 +304,7 @@ id: toolu_0146wMC6KsL6mGvTqMNtspSa
 tool_result
 id: toolu_0146wMC6KsL6mGvTqMNtspSa
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -314,7 +314,7 @@ id: toolu_0117xnNdxLRTrJScMx7kdKYc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\section{Related Work}\n\nWe position RR-MoA against four threads:",
   "new_string": "\\section{Related Work}\n\\label{sec:related_work}\n\nWe position RR-MoA against four threads:"
 }
@@ -325,7 +325,7 @@ id: toolu_0117xnNdxLRTrJScMx7kdKYc
 tool_result
 id: toolu_0117xnNdxLRTrJScMx7kdKYc
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -386,7 +386,7 @@ id: toolu_01YVjzZWie2dkQeYfSceQjYY
 tool_result
 id: toolu_01YVjzZWie2dkQeYfSceQjYY
 ```
-(/Users/hungpq2412/Library/texmf/tex/generic/pgfplots/pgfplots.errorbars.code.t
+(/home/<USER>/Library/texmf/tex/generic/pgfplots/pgfplots.errorbars.code.t
 ```
 
 > TOOL
@@ -434,7 +434,7 @@ tool_use Read
 id: toolu_01SByEmhgU464KL2riVTBbhP
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 240,
   "limit": 12
 }
@@ -461,7 +461,7 @@ tool_use Bash
 id: toolu_01DXNEzN2sTUCUdYVUdBciFL
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\textbf\\|^\\\\\\\\paragraph\\|^\\\\\\\\section\\|^\\\\\\\\subsection\" /Users/hungpq2412/neuralips26/main.tex | awk -F: '$1>=240 && $1<=400' | head -30",
+  "command": "grep -n \"^\\\\\\\\textbf\\|^\\\\\\\\paragraph\\|^\\\\\\\\section\\|^\\\\\\\\subsection\" /home/<USER>/neuralips26/main.tex | awk -F: '$1>=240 && $1<=400' | head -30",
   "description": "List structure of method section"
 }
 ```
@@ -482,7 +482,7 @@ id: toolu_01AKSw5kcxLbvg1WoPaHj9Fo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\textbf{Problem statement (this paper).} The standard MoE recipe lets the router $G_\\psi$ read the backbone's hidden states $f_\\theta(\\mathbf{x})$. We claim, and this paper establishes, that on instance-normalized TSFMs this choice has a structural failure mode not previously characterized: the router's input is missing, by construction of an upstream architectural normalizer, the per-window statistics that distinguish regimes, so $G_\\psi$ collapses to a single expert and the remaining $K{-}1$ experts receive no gradient. We name this failure \\emph{normalization-induced routing collapse} and state it as the central problem of this work: \\emph{given a frozen instance-normalized TSFM, find the routing input $u(\\mathbf{x})$ such that the per-window mixture $\\sum_j G_\\psi(u(\\mathbf{x}))_j\\,\\mathrm{Expert}_j(f_\\theta(\\mathbf{x}))$ trains without entropy collapse and improves over a single static head.} The collapse is upstream of the optimization-induced collapse that load-balance, z-loss, ReLU-routing, and expert-choice rescues target (Table~\\ref{tab:rescue}); it is not addressed by prior MoE-collapse, MoE-adapter, or time-series-normalization work (\\S\\ref{sec:related_work}). Sections~\\ref{sec:diagnosis} and~\\ref{sec:main_results} answer the problem with $u(\\mathbf{x})\\!=\\!\\mathbf{x}$ (the raw, pre-normalization window) and verify the answer with eight causal controls.",
   "new_string": "\\textbf{Problem statement (this paper).} The standard MoE recipe~\\citep{shazeer2017outrageously, fedus2022switch} lets the router $G_\\psi$ read the backbone's hidden states $f_\\theta(\\mathbf{x})$, and this is the choice […]
 
@@ -491,7 +491,7 @@ id: toolu_01AKSw5kcxLbvg1WoPaHj9Fo
 tool_result
 id: toolu_01AKSw5kcxLbvg1WoPaHj9Fo
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -504,7 +504,7 @@ tool_use Bash
 id: toolu_015AzptuRhjQWY1GPsssnJGT
 ```json
 {
-  "command": "grep -n \"\\\\\\\\bibitem{shazeer2017outrageously\\\\|\\\\\\\\bibitem{fedus2022switch\\\\|\\\\\\\\bibitem{wang2022adamix\\\\|\\\\\\\\bibitem{kim2021revin\\\\|\\\\\\\\bibitem{goswami2024moment\\\\|\\\\\\\\bibitem{nie2023patchtst\\\\|\\\\\\\\bibitem{das2024timesfm\\\\|\\\\\\\\bibitem{zoph2022stmoe\\\\|\\\\\\\\bibitem{wang2025remoe\\\\|\\\\\\\\bibitem{zhou2022expertchoice\\\\|\\\\\\\\bibitem{wu2024mole\\\\|\\\\\\\\bibitem{chi2022representation\\\\|\\\\\\\\bibitem{wu2024mhmoe\\\\|\\\\\\\\bibitem{puigcerver2024softmoe\\\\|\\\\\\\\bibitem{panda2024densebackprop\\\\|\\\\\\\\bibitem{hua2025inputaware\\\\|\\\\\\\\bibitem{guo2025expertspec\\\\|\\\\\\\\bibitem{liu2022nonstationary\\\\|\\\\\\\\bibitem{fan2023dishts\\\\|\\\\\\\\bibitem{liu2023san\\\\|\\\\\\\\bibitem{ye2024fan\\\\|\\\\\\\\bibitem{dai2024ddn\\\\|\\\\\\\\bibitem{berthelier2026revin\\\\|\\\\\\\\bibitem{zou2025ibnorm\" /Users/hungpq2412/neuralips26/main.tex | wc -l",
+  "command": "grep -n \"\\\\\\\\bibitem{shazeer2017outrageously\\\\|\\\\\\\\bibitem{fedus2022switch\\\\|\\\\\\\\bibitem{wang2022adamix\\\\|\\\\\\\\bibitem{kim2021revin\\\\|\\\\\\\\bibitem{goswami2024moment\\\\|\\\\\\\\bibitem{nie2023patchtst\\\\|\\\\\\\\bibitem{das2024timesfm\\\\|\\\\\\\\bibitem{zoph2022stmoe\\\\|\\\\\\\\bibitem{wang2025remoe\\\\|\\\\\\\\bibitem{zhou2022expertchoice\\\\|\\\\\\\\bibitem{wu2024mole\\\\|\\\\\\\\bibitem{chi2022representation\\\\|\\\\\\\\bibitem{wu2024mhmoe\\\\|\\\\\\\\bibitem{puigcerver2024softmoe\\\\|\\\\\\\\bibitem{panda2024densebackprop\\\\|\\\\\\\\bibitem{hua2025inputaware\\\\|\\\\\\\\bibitem{guo2025expertspec\\\\|\\\\\\\\bibitem{liu2022nonstationary\\\\|\\\\\\\\bibitem{fan2023dishts\\\\|\\\\\\\\bibitem{liu2023san\\\\|\\\\\\\\bibitem{ye2024fan\\\\|\\\\\\\\bibitem{dai2024ddn\\\\|\\\\\\\\bibitem{berthelier2026revin\\\\|\\\\\\\\bibitem{zou2025ibnorm\" /home/<USER>/neuralips26/main.tex | wc -l",
   "description": "Count matching bibitems"
 }
 ```
@@ -523,7 +523,7 @@ tool_use Bash
 id: toolu_01Ybe247EyJwn3jDprPQxxev
 ```json
 {
-  "command": "grep -c \"bibitem\" /Users/hungpq2412/neuralips26/main.tex; grep -n \"thebibliography\\|\\\\\\\\bibitem\" /Users/hungpq2412/neuralips26/main.tex | head -5",
+  "command": "grep -c \"bibitem\" /home/<USER>/neuralips26/main.tex; grep -n \"thebibliography\\|\\\\\\\\bibitem\" /home/<USER>/neuralips26/main.tex | head -5",
   "description": "Check bibliography format"
 }
 ```
@@ -547,7 +547,7 @@ tool_use Bash
 id: toolu_01RuEc9tYpzgDUgFb8FJwEay
 ```json
 {
-  "command": "for k in shazeer2017outrageously fedus2022switch wang2022adamix kim2021revin goswami2024moment nie2023patchtst das2024timesfm zoph2022stmoe wang2025remoe zhou2022expertchoice wu2024mole chi2022representation wu2024mhmoe puigcerver2024softmoe panda2024densebackprop hua2025inputaware guo2025expertspec liu2022nonstationary fan2023dishts liu2023san ye2024fan dai2024ddn berthelier2026revin zou2025ibnorm; do\n  if grep -q \"\\\\\\\\bibitem.*{$k}\" /Users/hungpq2412/neuralips26/main.tex; then\n    echo \"OK   $k\"\n  else\n    echo \"MISS $k\"\n  fi\ndone",
+  "command": "for k in shazeer2017outrageously fedus2022switch wang2022adamix kim2021revin goswami2024moment nie2023patchtst das2024timesfm zoph2022stmoe wang2025remoe zhou2022expertchoice wu2024mole chi2022representation wu2024mhmoe puigcerver2024softmoe panda2024densebackprop hua2025inputaware guo2025expertspec liu2022nonstationary fan2023dishts liu2023san ye2024fan dai2024ddn berthelier2026revin zou2025ibnorm; do\n  if grep -q \"\\\\\\\\bibitem.*{$k}\" /home/<USER>/neuralips26/main.tex; then\n    echo \"OK   $k\"\n  else\n    echo \"MISS $k\"\n  fi\ndone",
   "description": "Check each citation key"
 }
 ```
@@ -633,7 +633,7 @@ tool_use Bash
 id: toolu_01WQPDFoWQegb7sQ195TZqUg
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\\|^\\\\\\\\textbf{\" /Users/hungpq2412/neuralips26/main.tex | awk -F: '$1<=560' | sed 's/{Given.*//; s/{We.*//; s/{The.*//; s/{Beyond.*//; s/{Sparsely.*//; s/{Existing.*//; s/{Instance.*//; s/{Trained.*//; s/{Per-window.*//; s/{Standard.*//; s/{Real.*//; s/{This natural.*//; s/{The failure.*//; s/{Because.*//; s/{The diagnosis.*//; s/{Time series.*//'",
+  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\\|^\\\\\\\\textbf{\" /home/<USER>/neuralips26/main.tex | awk -F: '$1<=560' | sed 's/{Given.*//; s/{We.*//; s/{The.*//; s/{Beyond.*//; s/{Sparsely.*//; s/{Existing.*//; s/{Instance.*//; s/{Trained.*//; s/{Per-window.*//; s/{Standard.*//; s/{Real.*//; s/{This natural.*//; s/{The failure.*//; s/{Because.*//; s/{The diagnosis.*//; s/{Time series.*//'",
   "description": "Map main-body skeleton"
 }
 ```
@@ -653,7 +653,7 @@ tool_use Read
 id: toolu_01GdX34oVymCrpLWNewBMcVA
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 498,
   "limit": 10
 }
@@ -682,7 +682,7 @@ tool_use Bash
 id: toolu_01BTaSFa5gARCDFWunBmqiWE
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\\|^\\\\\\\\subsubsection\\|^\\\\\\\\paragraph\" /Users/hungpq2412/neuralips26/main.tex | awk -F: '$1>=415 && $1<=566'",
+  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\\|^\\\\\\\\subsubsection\\|^\\\\\\\\paragraph\" /home/<USER>/neuralips26/main.tex | awk -F: '$1>=415 && $1<=566'",
   "description": "Map experiments substructure"
 }
 ```
@@ -705,7 +705,7 @@ tool_use Read
 id: toolu_01TjitheiuWAbaJECWYso8cZ
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 560,
   "limit": 35
 }
@@ -752,7 +752,7 @@ tool_use Read
 id: toolu_01Pooqwkhp7PumthjpHM77Qw
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 498,
   "limit": 62
 }
@@ -784,7 +784,7 @@ tool_use Read
 id: toolu_01BHrM3k4R7h6tsiuSLoNAD5
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 377,
   "limit": 22
 }
@@ -821,7 +821,7 @@ tool_use Read
 id: toolu_01B8gHS6JvaDGjmAnm1ie3tt
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 418,
   "limit": 85
 }

@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01RQGi1tQAu2HPTc6mPeB4KN
 ```json
 {
-  "command": "grep -n \"related\" /Users/hungpq2412/neuralips26/main.tex | head -20",
+  "command": "grep -n \"related\" /home/<USER>/neuralips26/main.tex | head -20",
   "description": "Find related work section"
 }
 ```
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_019zdtEdmouAFKuKqTtk6Lcg
 ```json
 {
-  "command": "wc -l /Users/hungpq2412/neuralips26/main.tex",
+  "command": "wc -l /home/<USER>/neuralips26/main.tex",
   "description": "Get main.tex line count"
 }
 ```
@@ -37,7 +37,7 @@ id: toolu_019zdtEdmouAFKuKqTtk6Lcg
 tool_result
 id: toolu_019zdtEdmouAFKuKqTtk6Lcg
 ```
-    2870 /Users/hungpq2412/neuralips26/main.tex
+    2870 /home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -46,7 +46,7 @@ tool_use Bash
 id: toolu_01TcCdDkVT4wCjpRSQ2jTENq
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find sections in main.tex"
 }
 ```
@@ -94,7 +94,7 @@ tool_use Read
 id: toolu_01C5xfaej7oYucAmbcydnVHH
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 226,
   "limit": 10
 }
@@ -121,7 +121,7 @@ tool_use Bash
 id: toolu_01HA954nVzSY8vY5CxwacXHo
 ```json
 {
-  "command": "ls /Users/hungpq2412/neuralips26/main.pdf 2>/dev/null && stat -f \"%Sm\" /Users/hungpq2412/neuralips26/main.pdf 2>/dev/null",
+  "command": "ls /home/<USER>/neuralips26/main.pdf 2>/dev/null && stat -f \"%Sm\" /home/<USER>/neuralips26/main.pdf 2>/dev/null",
   "description": "Check if main.pdf exists"
 }
 ```
@@ -131,7 +131,7 @@ id: toolu_01HA954nVzSY8vY5CxwacXHo
 tool_result
 id: toolu_01HA954nVzSY8vY5CxwacXHo
 ```
-/Users/hungpq2412/neuralips26/main.pdf
+/home/<USER>/neuralips26/main.pdf
 May  6 16:02:52 2026
 ```
 
@@ -141,7 +141,7 @@ tool_use Bash
 id: toolu_01B6iopMpsUwJRk6fPbdEWpJ
 ```json
 {
-  "command": "wc -w <<< \"$(sed -n '229p' /Users/hungpq2412/neuralips26/main.tex)\"",
+  "command": "wc -w <<< \"$(sed -n '229p' /home/<USER>/neuralips26/main.tex)\"",
   "description": "Count words in related work paragraph"
 }
 ```
@@ -179,7 +179,7 @@ tool_use Bash
 id: toolu_01KEipdcugoS6ykfUW82Qo4q
 ```json
 {
-  "command": "pdftotext -layout /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '118,160p'",
+  "command": "pdftotext -layout /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '118,160p'",
   "description": "View related work in rendered PDF"
 }
 ```
@@ -264,7 +264,7 @@ tool_result
 id: toolu_01EJQq6P3MC141fEGQBpyYha
 ```
 commit e15f8fa15322349c4c993e689e51258e8e169b94
-Author: Hung Phan (Henry) <79650826+henryph24@users.noreply.github.com>
+Author: Hung Phan (Henry) <<REDACTED_EMAIL>>
 Date:   Wed May 6 15:54:07 2026 +0700
 
     docs(body): compress intro and related work, promote signal_ratio + causal_controls to main
@@ -311,7 +311,7 @@ tool_use Bash
 id: toolu_01Ns3sNUR8C2vijhFBVmdJSU
 ```json
 {
-  "command": "grep -n \"elated\\|positioning\" /Users/hungpq2412/neuralips26/main.tex | head -15",
+  "command": "grep -n \"elated\\|positioning\" /home/<USER>/neuralips26/main.tex | head -15",
   "description": "Search for related-work-like content"
 }
 ```
@@ -359,7 +359,7 @@ tool_use Bash
 id: toolu_017NCTuqziBZ9VYRwTpgmLYP
 ```json
 {
-  "command": "pdftotext -layout /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '115,125p'",
+  "command": "pdftotext -layout /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '115,125p'",
   "description": "Check related work region precisely"
 }
 ```

@@ -196,7 +196,7 @@ tool_use Read
 id: toolu_01QU33kF2uT5YBWydteonjgb
 ```json
 {
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go"
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go"
 }
 ```
 
@@ -250,7 +250,7 @@ tool_use Read
 id: toolu_01G7n1HoNtSFwyVeWrujHnDu
 ```json
 {
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/registry.go"
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/registry.go"
 }
 ```
 
@@ -331,7 +331,7 @@ id: toolu_01ChdxqKyTwAqZHKS2t5QHWC
 ```json
 {
   "description": "Read strategy implementation files",
-  "prompt": "Read the following files and provide a summary of all function signatures that need context.Context added. Focus on:\n1. Which functions currently use context.Background() \n2. Which functions implement Strategy interface methods\n3. Which functions implement optional handler interfaces (SessionInitializer, PrepareCommitMsgHandler, etc.)\n\nFiles to read:\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_git.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_hooks.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_condensation.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_rewind.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_logs.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_session.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_push.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_reset.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/auto_commit.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/common.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/push_common.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/hooks.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/session_state.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/content_overlap.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/cleanup.go\n\nJust research - don't write any code.",
+  "prompt": "Read the following files and provide a summary of all function signatures that need context.Context added. Focus on:\n1. Which functions currently use context.Background() \n2. Which functions implement Strategy interface methods\n3. Which functions implement optional handler interfaces (SessionInitializer, PrepareCommitMsgHandler, etc.)\n\nFiles to read:\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_git.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_hooks.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_condensation.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_rewind.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_logs.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_session.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_push.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_reset.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/auto_commit.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/common.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/push_common.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/hooks.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/session_state.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/content_overlap.go\n- /home/<USER>/entire/cli/cmd/entire/cli/strategy/cleanup.go\n\nJust research - don't write any code.",
   "subagent_type": "Explore",
   "model": "sonnet"
 }
@@ -392,7 +392,7 @@ id: toolu_018Q3iXHScbHSz4FFgTKpyRv
 ```json
 {
   "description": "Read lifecycle/hooks/command files",
-  "prompt": "Read the following files and provide a summary of all function signatures that need context.Context added, focusing on:\n1. Functions using context.Background()\n2. Functions that should receive context from cmd.Context()\n3. The lifecycle dispatcher pattern\n\nFiles to read:\n- /Users/pfleidi/entire/cli/cmd/entire/cli/lifecycle.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/hook_registry.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/hooks_git_cmd.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/hooks_claudecode_posttodo.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/rewind.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/resume.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/explain.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/status.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/setup.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/config.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/git_operations.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/session.go (the standalone file)\n- /Users/pfleidi/entire/cli/cmd/entire/cli/cleanup.go (the cli-level one)\n- /Users/pfleidi/entire/cli/cmd/entire/cli/versioncheck/versioncheck.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/agent/opencode/cli_commands.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/agent/opencode/opencode.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/agent/claudecode/lifecycle.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/agent/geminicli/gemini.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/session/state.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/session/phase.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/temporary.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/committed.go\n- /Users/pfleidi/entire/cli/cmd/entire/cli/paths/paths.go\n\nJust research - don't write any code. Provide function signatures with their context.Background() usage.",
+  "prompt": "Read the following files and provide a summary of all function signatures that need context.Context added, focusing on:\n1. Functions using context.Background()\n2. Functions that should receive context from cmd.Context()\n3. The lifecycle dispatcher pattern\n\nFiles to read:\n- /home/<USER>/entire/cli/cmd/entire/cli/lifecycle.go\n- /home/<USER>/entire/cli/cmd/entire/cli/hook_registry.go\n- /home/<USER>/entire/cli/cmd/entire/cli/hooks_git_cmd.go\n- /home/<USER>/entire/cli/cmd/entire/cli/hooks_claudecode_posttodo.go\n- /home/<USER>/entire/cli/cmd/entire/cli/rewind.go\n- /home/<USER>/entire/cli/cmd/entire/cli/resume.go\n- /home/<USER>/entire/cli/cmd/entire/cli/explain.go\n- /home/<USER>/entire/cli/cmd/entire/cli/status.go\n- /home/<USER>/entire/cli/cmd/entire/cli/setup.go\n- /home/<USER>/entire/cli/cmd/entire/cli/config.go\n- /home/<USER>/entire/cli/cmd/entire/cli/git_operations.go\n- /home/<USER>/entire/cli/cmd/entire/cli/session.go (the standalone file)\n- /home/<USER>/entire/cli/cmd/entire/cli/cleanup.go (the cli-level one)\n- /home/<USER>/entire/cli/cmd/entire/cli/versioncheck/versioncheck.go\n- /home/<USER>/entire/cli/cmd/entire/cli/agent/opencode/cli_commands.go\n- /home/<USER>/entire/cli/cmd/entire/cli/agent/opencode/opencode.go\n- /home/<USER>/entire/cli/cmd/entire/cli/agent/claudecode/lifecycle.go\n- /home/<USER>/entire/cli/cmd/entire/cli/agent/geminicli/gemini.go\n- /home/<USER>/entire/cli/cmd/entire/cli/session/state.go\n- /home/<USER>/entire/cli/cmd/entire/cli/session/phase.go\n- /home/<USER>/entire/cli/cmd/entire/cli/checkpoint/temporary.go\n- /home/<USER>/entire/cli/cmd/entire/cli/checkpoint/committed.go\n- /home/<USER>/entire/cli/cmd/entire/cli/paths/paths.go\n\nJust research - don't write any code. Provide function signatures with their context.Background() usage.",
   "subagent_type": "Explore",
   "model": "sonnet"
 }
@@ -450,7 +450,7 @@ tool_use Read
 id: toolu_012DWyZuzdDLzS2axBgH3nm1
 ```json
 {
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "offset": 309
 }
 ```
@@ -499,7 +499,7 @@ id: toolu_01G8bhrhGaVT7zthZBYQQTcW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "import (\n\t\"encoding/json\"\n\t\"errors\"\n\t\"os\"\n\t\"strings\"\n\t\"time\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/agent\"\n\t\"github.com/entireio/cli/cmd/entire/cli/checkpoint/id\"\n\t\"github.com/entireio/cli/cmd/entire/cli/session\"\n)",
   "new_string": "import (\n\t\"context\"\n\t\"encoding/json\"\n\t\"errors\"\n\t\"os\"\n\t\"strings\"\n\t\"time\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/agent\"\n\t\"github.com/entireio/cli/cmd/entire/cli/checkpoint/id\"\n\t\"github.com/entireio/cli/cmd/entire/cli/session\"\n)"
 }
@@ -510,7 +510,7 @@ id: toolu_01G8bhrhGaVT7zthZBYQQTcW
 tool_result
 id: toolu_01G8bhrhGaVT7zthZBYQQTcW
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > AGENT
@@ -524,7 +524,7 @@ id: toolu_01QvC2oUuFJer8e74SM6MnJL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "\t// SaveStep is called on Stop to save all session changes\n\t// using this strategy's approach (commit, branch, stash, etc.)\n\tSaveStep(ctx StepContext) error\n\n\t// SaveTaskStep is called by PostToolUse[Task] hook when a subagent completes.\n\t// Creates a checkpoint commit with task metadata for later rewind.\n\t// Different strategies may handle this differently:\n\t// - Commit strategy: commits to active branch\n\t// - Manual-commit strategy: commits to shadow branch\n\t// - Auto-commit strategy: commits logs to shadow only (code deferred to Stop)\n\tSaveTaskStep(ctx TaskStepContext) error\n\n\t// GetRewindPoints returns available points to rewind to.\n\t// The limit parameter controls the maximum number of points to return.\n\tGetRewindPoints(limit int) ([]RewindPoint, error)\n\n\t// Rewind restores the repository to the given rewind point.\n\t// The metadataDir in the point is used to restore the session transcript.\n\tRewind(point RewindPoint) error\n\n\t// CanRewind checks if rewinding is currently possible.\n\t// Returns (canRewind, reason if not, error)\n\tCanRewind() (bool, string, error)\n\n\t// PreviewRewind returns what will happen if rewinding to the given point.\n\t// This allows showing warnings about files that will be deleted before the rewind.\n\t// Returns nil if preview is not supported (e.g., auto-commit strategy).\n\tPreviewRewind(point RewindPoint) (*RewindPreview, error)\n\n\t// GetTaskCheckpoint returns the task checkpoint for a given rewind point.\n\t// For strategies that store checkpoints in git […]
 
 > TOOL
@@ -532,7 +532,7 @@ id: toolu_01QvC2oUuFJer8e74SM6MnJL
 tool_result
 id: toolu_01QvC2oUuFJer8e74SM6MnJL
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > AGENT
@@ -546,7 +546,7 @@ id: toolu_01KJLKUSuY5bcZ3gnK7RyrFC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type SessionInitializer interface {\n\t// InitializeSession creates session state for a new session.\n\t// Called during UserPromptSubmit hook before any checkpoints are created.\n\t// agentType is the human-readable name of the agent (e.g., \"Claude Code\").\n\t// transcriptPath is the path to the live transcript file (for mid-session commit detection).\n\t// userPrompt is the user's prompt text (stored truncated as FirstPrompt for display).\n\tInitializeSession(sessionID string, agentType agent.AgentType, transcriptPath string, userPrompt string) error\n}",
   "new_string": "type SessionInitializer interface {\n\t// InitializeSession creates session state for a new session.\n\t// Called during UserPromptSubmit hook before any checkpoints are created.\n\t// agentType is the human-readable name of the agent (e.g., \"Claude Code\").\n\t// transcriptPath is the path to the live transcript file (for mid-session commit detection).\n\t// userPrompt is the user's prompt text (stored truncated as FirstPrompt for display).\n\tInitializeSession(ctx context.Context, sessionID string, agentType agent.AgentType, transcriptPath string, userPrompt string) error\n}"
 }
@@ -557,7 +557,7 @@ id: toolu_01KJLKUSuY5bcZ3gnK7RyrFC
 tool_result
 id: toolu_01KJLKUSuY5bcZ3gnK7RyrFC
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -567,7 +567,7 @@ id: toolu_01HNpXbuQc2n9rwBEgNUWVcH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type PrepareCommitMsgHandler interface {\n\t// PrepareCommitMsg is called by the git prepare-commit-msg hook.\n\t// It can modify the commit message file to add trailers, etc.\n\t// The source parameter indicates how the commit was initiated:\n\t//   - \"\" or \"template\": normal editor flow\n\t//   - \"message\": using -m or -F flag\n\t//   - \"merge\": merge commit\n\t//   - \"squash\": squash merge\n\t//   - \"commit\": amend with -c/-C\n\t// Should return nil on errors to not block commits (log warnings to stderr).\n\tPrepareCommitMsg(commitMsgFile string, source string) error\n}",
   "new_string": "type PrepareCommitMsgHandler interface {\n\t// PrepareCommitMsg is called by the git prepare-commit-msg hook.\n\t// It can modify the commit message file to add trailers, etc.\n\t// The source parameter indicates how the commit was initiated:\n\t//   - \"\" or \"template\": normal editor flow\n\t//   - \"message\": using -m or -F flag\n\t//   - \"merge\": merge commit\n\t//   - \"squash\": squash merge\n\t//   - \"commit\": amend with -c/-C\n\t// Should return nil on errors to not block commits (log warnings to stderr).\n\tPrepareCommitMsg(ctx context.Context, commitMsgFile string, source string) error\n}"
 }
@@ -578,7 +578,7 @@ id: toolu_01HNpXbuQc2n9rwBEgNUWVcH
 tool_result
 id: toolu_01HNpXbuQc2n9rwBEgNUWVcH
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -588,7 +588,7 @@ id: toolu_01PGiQ5YewB3eKUwMVKnEsUv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type PostCommitHandler interface {\n\t// PostCommit is called by the git post-commit hook after a commit is created.\n\t// Used to perform actions like condensing session data after commits.\n\t// Should return nil on errors to not block subsequent operations (log warnings to stderr).\n\tPostCommit() error\n}",
   "new_string": "type PostCommitHandler interface {\n\t// PostCommit is called by the git post-commit hook after a commit is created.\n\t// Used to perform actions like condensing session data after commits.\n\t// Should return nil on errors to not block subsequent operations (log warnings to stderr).\n\tPostCommit(ctx context.Context) error\n}"
 }
@@ -599,7 +599,7 @@ id: toolu_01PGiQ5YewB3eKUwMVKnEsUv
 tool_result
 id: toolu_01PGiQ5YewB3eKUwMVKnEsUv
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -609,7 +609,7 @@ id: toolu_01RPf3Jszv4LrKUHhzCuxd7S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type CommitMsgHandler interface {\n\t// CommitMsg is called by the git commit-msg hook after the user edits the message.\n\t// Used to validate or modify the final commit message before the commit is created.\n\t// If this returns an error, the commit is aborted.\n\tCommitMsg(commitMsgFile string) error\n}",
   "new_string": "type CommitMsgHandler interface {\n\t// CommitMsg is called by the git commit-msg hook after the user edits the message.\n\t// Used to validate or modify the final commit message before the commit is created.\n\t// If this returns an error, the commit is aborted.\n\tCommitMsg(ctx context.Context, commitMsgFile string) error\n}"
 }
@@ -620,7 +620,7 @@ id: toolu_01RPf3Jszv4LrKUHhzCuxd7S
 tool_result
 id: toolu_01RPf3Jszv4LrKUHhzCuxd7S
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -630,7 +630,7 @@ id: toolu_01WQeaYuFXG4WLXyuNCsQu5Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type PrePushHandler interface {\n\t// PrePush is called by the git pre-push hook before pushing to a remote.\n\t// Used to push session branches (e.g., entire/checkpoints/v1) alongside user pushes.\n\t// The remote parameter is the name of the remote being pushed to.\n\t// Should return nil on errors to not block pushes (log warnings to stderr).\n\tPrePush(remote string) error\n}",
   "new_string": "type PrePushHandler interface {\n\t// PrePush is called by the git pre-push hook before pushing to a remote.\n\t// Used to push session branches (e.g., entire/checkpoints/v1) alongside user pushes.\n\t// The remote parameter is the name of the remote being pushed to.\n\t// Should return nil on errors to not block pushes (log warnings to stderr).\n\tPrePush(ctx context.Context, remote string) error\n}"
 }
@@ -641,7 +641,7 @@ id: toolu_01WQeaYuFXG4WLXyuNCsQu5Z
 tool_result
 id: toolu_01WQeaYuFXG4WLXyuNCsQu5Z
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -651,7 +651,7 @@ id: toolu_015jY34xaBcEG7mosUxQrwzM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type TurnEndHandler interface {\n\t// HandleTurnEnd performs strategy-specific cleanup at the end of a turn.\n\t// Work items are read from state (e.g. TurnCheckpointIDs), not from the\n\t// action list. The state has already been updated by ApplyTransition;\n\t// the caller saves it after this method returns.\n\tHandleTurnEnd(state *session.State) error\n}",
   "new_string": "type TurnEndHandler interface {\n\t// HandleTurnEnd performs strategy-specific cleanup at the end of a turn.\n\t// Work items are read from state (e.g. TurnCheckpointIDs), not from the\n\t// action list. The state has already been updated by ApplyTransition;\n\t// the caller saves it after this method returns.\n\tHandleTurnEnd(ctx context.Context, state *session.State) error\n}"
 }
@@ -662,7 +662,7 @@ id: toolu_015jY34xaBcEG7mosUxQrwzM
 tool_result
 id: toolu_015jY34xaBcEG7mosUxQrwzM
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -672,7 +672,7 @@ id: toolu_01NfZxrj2fcGAF4oysPX5geh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type LogsOnlyRestorer interface {\n\t// RestoreLogsOnly restores session logs from a logs-only rewind point.\n\t// Does not modify the working directory - only restores the transcript\n\t// to the agent's session directory (determined per-session from checkpoint metadata).\n\t// If force is false, prompts for confirmation when local logs have newer timestamps.\n\t// Returns info about each restored session so callers can print correct resume commands.\n\tRestoreLogsOnly(point RewindPoint, force bool) ([]RestoredSession, error)\n}",
   "new_string": "type LogsOnlyRestorer interface {\n\t// RestoreLogsOnly restores session logs from a logs-only rewind point.\n\t// Does not modify the working directory - only restores the transcript\n\t// to the agent's session directory (determined per-session from checkpoint metadata).\n\t// If force is false, prompts for confirmation when local logs have newer timestamps.\n\t// Returns info about each restored session so callers can print correct resume commands.\n\tRestoreLogsOnly(ctx context.Context, point RewindPoint, force bool) ([]RestoredSession, error)\n}"
 }
@@ -683,7 +683,7 @@ id: toolu_01NfZxrj2fcGAF4oysPX5geh
 tool_result
 id: toolu_01NfZxrj2fcGAF4oysPX5geh
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -693,7 +693,7 @@ id: toolu_01PapPkbMcsFxc4zfACWnLzq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type SessionResetter interface {\n\t// Reset deletes the shadow branch and session state for the current HEAD.\n\t// Returns nil if there's nothing to reset (no shadow branch).\n\tReset() error\n\n\t// ResetSession clears the state for a single session and cleans up\n\t// the shadow branch if no other sessions reference it.\n\t// File changes remain in the working directory.\n\tResetSession(sessionID string) error\n}",
   "new_string": "type SessionResetter interface {\n\t// Reset deletes the shadow branch and session state for the current HEAD.\n\t// Returns nil if there's nothing to reset (no shadow branch).\n\tReset(ctx context.Context) error\n\n\t// ResetSession clears the state for a single session and cleans up\n\t// the shadow branch if no other sessions reference it.\n\t// File changes remain in the working directory.\n\tResetSession(ctx context.Context, sessionID string) error\n}"
 }
@@ -704,7 +704,7 @@ id: toolu_01PapPkbMcsFxc4zfACWnLzq
 tool_result
 id: toolu_01PapPkbMcsFxc4zfACWnLzq
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -714,7 +714,7 @@ id: toolu_01WRswL2h642hjk4bYanckNZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type SessionCondenser interface {\n\t// CondenseSessionByID force-condenses a session and cleans up.\n\t// Generates a new checkpoint ID, condenses to entire/checkpoints/v1,\n\t// updates the session state, and removes the shadow branch\n\t// if no other active sessions need it.\n\tCondenseSessionByID(sessionID string) error\n}",
   "new_string": "type SessionCondenser interface {\n\t// CondenseSessionByID force-condenses a session and cleans up.\n\t// Generates a new checkpoint ID, condenses to entire/checkpoints/v1,\n\t// updates the session state, and removes the shadow branch\n\t// if no other active sessions need it.\n\tCondenseSessionByID(ctx context.Context, sessionID string) error\n}"
 }
@@ -725,7 +725,7 @@ id: toolu_01WRswL2h642hjk4bYanckNZ
 tool_result
 id: toolu_01WRswL2h642hjk4bYanckNZ
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -735,7 +735,7 @@ id: toolu_01GD1Xm3Ceq3cxuEjv9iYXCG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type ConcurrentSessionChecker interface {\n\t// CountOtherActiveSessionsWithCheckpoints returns the number of other active sessions\n\t// with uncommitted checkpoints on the same base commit.\n\t// Returns 0, nil if no such sessions exist.\n\tCountOtherActiveSessionsWithCheckpoints(currentSessionID string) (int, error)\n}",
   "new_string": "type ConcurrentSessionChecker interface {\n\t// CountOtherActiveSessionsWithCheckpoints returns the number of other active sessions\n\t// with uncommitted checkpoints on the same base commit.\n\t// Returns 0, nil if no such sessions exist.\n\tCountOtherActiveSessionsWithCheckpoints(ctx context.Context, currentSessionID string) (int, error)\n}"
 }
@@ -746,7 +746,7 @@ id: toolu_01GD1Xm3Ceq3cxuEjv9iYXCG
 tool_result
 id: toolu_01GD1Xm3Ceq3cxuEjv9iYXCG
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -756,7 +756,7 @@ id: toolu_01QGu1ShWLUrvgVTGccXjJTz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type SessionSource interface {\n\t// GetAdditionalSessions returns sessions not yet on entire/checkpoints/v1 branch.\n\tGetAdditionalSessions() ([]*Session, error)\n}",
   "new_string": "type SessionSource interface {\n\t// GetAdditionalSessions returns sessions not yet on entire/checkpoints/v1 branch.\n\tGetAdditionalSessions(ctx context.Context) ([]*Session, error)\n}"
 }
@@ -767,7 +767,7 @@ id: toolu_01QGu1ShWLUrvgVTGccXjJTz
 tool_result
 id: toolu_01QGu1ShWLUrvgVTGccXjJTz
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -777,7 +777,7 @@ id: toolu_01Mb1Ybxz2qcdeYtxTsCedft
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go",
+  "file_path": "/home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go",
   "old_string": "type OrphanedItemsLister interface {\n\t// ListOrphanedItems returns items created by this strategy that are now orphaned.\n\t// Each strategy defines what \"orphaned\" means for its own data structures.\n\tListOrphanedItems() ([]CleanupItem, error)\n}",
   "new_string": "type OrphanedItemsLister interface {\n\t// ListOrphanedItems returns items created by this strategy that are now orphaned.\n\t// Each strategy defines what \"orphaned\" means for its own data structures.\n\tListOrphanedItems(ctx context.Context) ([]CleanupItem, error)\n}"
 }
@@ -788,7 +788,7 @@ id: toolu_01Mb1Ybxz2qcdeYtxTsCedft
 tool_result
 id: toolu_01Mb1Ybxz2qcdeYtxTsCedft
 ```
-The file /Users/pfleidi/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
+The file /home/<USER>/entire/cli/cmd/entire/cli/strategy/strategy.go has been updated successfully.
 ```
 
 > TOOL
@@ -859,7 +859,7 @@ id: toolu_01KtUNBqyRCaevEVhSf6aCFz
 ```json
 {
   "description": "Update ManualCommitStrategy implementations",
-  "prompt": "You need to update all ManualCommitStrategy method implementations to add `ctx context.Context` as the first parameter, matching the updated Strategy interface and optional interfaces. The interface has already been updated in strategy/strategy.go.\n\n## What Changed in the Interface\n\nThe Strategy interface and optional interfaces in `strategy/strategy.go` now have `ctx context.Context` as the first parameter on all methods (except Name(), Description(), ValidateRepository(), EnsureSetup()). The rename was: `SaveStep(ctx StepContext)` → `SaveStep(ctx context.Context, step StepContext)` etc.\n\n## Your Task\n\nUpdate ALL ManualCommitStrategy method signatures and internal context.Background() usage in these files:\n\n### File: `/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_git.go`\n- `SaveStep(ctx StepContext)` → `SaveStep(ctx context.Context, step StepContext)` — replace all `context.Background()` with `ctx`\n- `SaveTaskStep(ctx TaskStepContext)` → `SaveTaskStep(ctx context.Context, step TaskStepContext)` — replace all `context.Background()` with `ctx`\n- Internal references to the old `ctx` parameter (which was StepContext/TaskStepContext) need renaming to `step`\n- `AttemptAddAttribution` and helpers - add ctx param, replace context.Background()\n\n### File: `/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/manual_commit_hooks.go`\n- `PrepareCommitMsg(commitMsgFile string, source string)` → `PrepareCommitMsg(ctx context.Context, commitMsgFile string, source string)` — replace context.Background() with ctx\n- `PostCommit()` → `PostCommit(ctx context.Context)` — replace context.Background() with ctx\n- `InitializeSession(sessionID string, agentType agent.AgentType, transcriptPath string, userPrompt string)` → `InitializeSession(ctx context.Context, sessionID string, agentType agent.AgentType, transcriptPath string, userPrompt string)` — replace context.Background() with ctx\n- `HandleTurnEnd(state *session.State)` → […]
+  "prompt": "You need to update all ManualCommitStrategy method implementations to add `ctx context.Context` as the first parameter, matching the updated Strategy interface and optional interfaces. The interface has already been updated in strategy/strategy.go.\n\n## What Changed in the Interface\n\nThe Strategy interface and optional interfaces in `strategy/strategy.go` now have `ctx context.Context` as the first parameter on all methods (except Name(), Description(), ValidateRepository(), EnsureSetup()). The rename was: `SaveStep(ctx StepContext)` → `SaveStep(ctx context.Context, step StepContext)` etc.\n\n## Your Task\n\nUpdate ALL ManualCommitStrategy method signatures and internal context.Background() usage in these files:\n\n### File: `/home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_git.go`\n- `SaveStep(ctx StepContext)` → `SaveStep(ctx context.Context, step StepContext)` — replace all `context.Background()` with `ctx`\n- `SaveTaskStep(ctx TaskStepContext)` → `SaveTaskStep(ctx context.Context, step TaskStepContext)` — replace all `context.Background()` with `ctx`\n- Internal references to the old `ctx` parameter (which was StepContext/TaskStepContext) need renaming to `step`\n- `AttemptAddAttribution` and helpers - add ctx param, replace context.Background()\n\n### File: `/home/<USER>/entire/cli/cmd/entire/cli/strategy/manual_commit_hooks.go`\n- `PrepareCommitMsg(commitMsgFile string, source string)` → `PrepareCommitMsg(ctx context.Context, commitMsgFile string, source string)` — replace context.Background() with ctx\n- `PostCommit()` → `PostCommit(ctx context.Context)` — replace context.Background() with ctx\n- `InitializeSession(sessionID string, agentType agent.AgentType, transcriptPath string, userPrompt string)` → `InitializeSession(ctx context.Context, sessionID string, agentType agent.AgentType, transcriptPath string, userPrompt string)` — replace context.Background() with ctx\n- `HandleTurnEnd(state *session.State)` → […]
 
 > TOOL
 
@@ -1014,7 +1014,7 @@ id: toolu_0191KtW1tE6zWHy3qC7WC8u1
 ```json
 {
   "pattern": "context\\.Background\\(\\)",
-  "path": "/Users/pfleidi/entire/cli/cmd/entire/cli",
+  "path": "/home/<USER>/entire/cli/cmd/entire/cli",
   "output_mode": "content",
   "glob": "*.go",
   "-n": true
@@ -1027,7 +1027,7 @@ tool_result
 id: toolu_0191KtW1tE6zWHy3qC7WC8u1
 ```
 <persisted-output>
-Output too large (71.5KB). Full output saved to: /Users/pfleidi/.REDACTED.txt
+Output too large (71.5KB). Full output saved to: /home/<USER>/.REDACTED.txt
 
 Preview (first 2KB):
 cmd/entire/cli/session/state.go:179:		logCtx := logging.WithComponent(context.Background(), "session")
@@ -1057,7 +1057,7 @@ tool_use Bash
 id: toolu_015uS7Aj4SSJb9FEivAQf3sb
 ```json
 {
-  "command": "grep -rn 'context\\.Background()' /Users/pfleidi/entire/cli/cmd/entire/cli --include='*.go' | grep -v '_test.go' | grep -v 'benchutil/' | grep -v 'telemetry/detached' | sort",
+  "command": "grep -rn 'context\\.Background()' /home/<USER>/entire/cli/cmd/entire/cli --include='*.go' | grep -v '_test.go' | grep -v 'benchutil/' | grep -v 'telemetry/detached' | sort",
   "description": "Find remaining context.Background() in production code (excluding tests, benchutil, telemetry detach)"
 }
 ```
@@ -1067,27 +1067,27 @@ id: toolu_015uS7Aj4SSJb9FEivAQf3sb
 tool_result
 id: toolu_015uS7Aj4SSJb9FEivAQf3sb
 ```
-/Users/pfleidi/entire/cli/cmd/entire/cli/agent/claudecode/lifecycle.go:245:	logCtx := logging.WithComponent(context.Background(), "agent.claudecode")
-/Users/pfleidi/entire/cli/cmd/entire/cli/agent/geminicli/gemini.go:325:			logging.Warn(context.Background(), "failed to marshal Gemini message during chunking",
-/Users/pfleidi/entire/cli/cmd/entire/cli/agent/opencode/cli_commands.go:18:	ctx, cancel := context.WithTimeout(context.Background(), openCodeCommandTimeout)
-/Users/pfleidi/entire/cli/cmd/entire/cli/agent/opencode/cli_commands.go:42:	ctx, cancel := context.WithTimeout(context.Background(), openCodeCommandTimeout)
-/Users/pfleidi/entire/cli/cmd/entire/cli/agent/opencode/cli_commands.go:64:	ctx, cancel := context.WithTimeout(context.Background(), openCodeCommandTimeout)
-/Users/pfleidi/entire/cli/cmd/entire/cli/agent/opencode/opencode.go:235:		logging.Warn(context.Background(), "could not delete existing opencode session",
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/committed.go:1505:				logging.Warn(context.Background(), "failed to read transcript chunk file from tree",
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/committed.go:1513:				logging.Warn(context.Background(), "failed to read transcript chunk contents",
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/committed.go:212:				logging.Warn(context.Background(), "subagent transcript is not valid JSONL, falling back to plain redaction",
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/committed.go:429:				logging.Warn(context.Background(), "failed to read session metadata during dedup check",
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/committed.go:961:	content, err := s.ReadLatestSessionContent(context.Background(), cpID)
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/temporary.go:356:					logging.Warn(context.Background(), "failed to chunk transcript, checkpoint will be saved without transcript",
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/temporary.go:365:							logging.Warn(context.Background(), "failed to create blob for transcript chunk",
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/temporary.go:387:					logging.Warn(context.Background(), "subagent transcript is not valid JSONL, falling back to plain redaction",
-/Users/pfleidi/entire/cli/cmd/entire/cli/checkpoint/temporary.go:627:	cmd := exec.CommandContext(context.Background(), "git", "branch", "-D", "--", shadowBranchName) //nolint:gosec // shadowBranchName is constructed from commit hash, not user input
-/Users/pfleidi/entire/cli/cmd/entire/cli/config.go:73:		logging.Info(context.Background(), "falling back to default strategy - failed to load settings",
-/Users/pfleidi/entire/cli/cmd/entire/cli/config.go:81:		logging.Info(context.Background(), "falling back to default strategy - configured strategy not found",
-/Users/pfleidi/entire/cli/cmd/entire/cli/doctor.go:107:				if err := condenser.CondenseSessionByID(context.Background(), ss.State.SessionID); err != nil {
-/Users/pfleidi/entire/cli/cmd/entire/cli/doctor.go:138:			if err := condenser.CondenseSessionByID(context.Background(), ss.State.SessionID); err != nil {
-/Users/pfleidi/entire/cli/cmd/entire/cli/e2e_test/agent_runner.go:142:	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-/Users/pfleidi/entire/cli/cmd/entire/cli/e2e_test/agent_runner.go:256:	ctx, cancel := context.WithTimeout(context.Background(), […]
+/home/<USER>/entire/cli/cmd/entire/cli/agent/claudecode/lifecycle.go:245:	logCtx := logging.WithComponent(context.Background(), "agent.claudecode")
+/home/<USER>/entire/cli/cmd/entire/cli/agent/geminicli/gemini.go:325:			logging.Warn(context.Background(), "failed to marshal Gemini message during chunking",
+/home/<USER>/entire/cli/cmd/entire/cli/agent/opencode/cli_commands.go:18:	ctx, cancel := context.WithTimeout(context.Background(), openCodeCommandTimeout)
+/home/<USER>/entire/cli/cmd/entire/cli/agent/opencode/cli_commands.go:42:	ctx, cancel := context.WithTimeout(context.Background(), openCodeCommandTimeout)
+/home/<USER>/entire/cli/cmd/entire/cli/agent/opencode/cli_commands.go:64:	ctx, cancel := context.WithTimeout(context.Background(), openCodeCommandTimeout)
+/home/<USER>/entire/cli/cmd/entire/cli/agent/opencode/opencode.go:235:		logging.Warn(context.Background(), "could not delete existing opencode session",
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/committed.go:1505:				logging.Warn(context.Background(), "failed to read transcript chunk file from tree",
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/committed.go:1513:				logging.Warn(context.Background(), "failed to read transcript chunk contents",
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/committed.go:212:				logging.Warn(context.Background(), "subagent transcript is not valid JSONL, falling back to plain redaction",
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/committed.go:429:				logging.Warn(context.Background(), "failed to read session metadata during dedup check",
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/committed.go:961:	content, err := s.ReadLatestSessionContent(context.Background(), cpID)
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/temporary.go:356:					logging.Warn(context.Background(), "failed to chunk transcript, checkpoint will be saved without transcript",
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/temporary.go:365:							logging.Warn(context.Background(), "failed to create blob for transcript chunk",
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/temporary.go:387:					logging.Warn(context.Background(), "subagent transcript is not valid JSONL, falling back to plain redaction",
+/home/<USER>/entire/cli/cmd/entire/cli/checkpoint/temporary.go:627:	cmd := exec.CommandContext(context.Background(), "git", "branch", "-D", "--", shadowBranchName) //nolint:gosec // shadowBranchName is constructed from commit hash, not user input
+/home/<USER>/entire/cli/cmd/entire/cli/config.go:73:		logging.Info(context.Background(), "falling back to default strategy - failed to load settings",
+/home/<USER>/entire/cli/cmd/entire/cli/config.go:81:		logging.Info(context.Background(), "falling back to default strategy - configured strategy not found",
+/home/<USER>/entire/cli/cmd/entire/cli/doctor.go:107:				if err := condenser.CondenseSessionByID(context.Background(), ss.State.SessionID); err != nil {
+/home/<USER>/entire/cli/cmd/entire/cli/doctor.go:138:			if err := condenser.CondenseSessionByID(context.Background(), ss.State.SessionID); err != nil {
+/home/<USER>/entire/cli/cmd/entire/cli/e2e_test/agent_runner.go:142:	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+/home/<USER>/entire/cli/cmd/entire/cli/e2e_test/agent_runner.go:256:	ctx, cancel := context.WithTimeout(context.Background(), […]
 
 > AGENT
 
@@ -1100,7 +1100,7 @@ id: toolu_01V596NhW8pRkHji23nJGigk
 ```json
 {
   "description": "Fix strategy internal context.Background",
-  "prompt": "You need to replace `context.Background()` with `ctx` inside strategy method implementations that already have `ctx context.Context` as a parameter. The interface was updated to add ctx, and method signatures were updated, but the internal bodies still use `context.Background()`.\n\n## Rules\n1. ONLY modify files in `/Users/pfleidi/entire/cli/cmd/entire/cli/strategy/`\n2. Do NOT modify test files (*_test.go)\n3. Do NOT modify strategy.go (interface definition)\n4. Inside methods that already have `ctx context.Context` as a parameter, replace `context.Background()` with `ctx`\n5. For private helper methods that DON'T have ctx but are called from methods that DO, add `ctx context.Context` as first parameter and update all callers\n6. For standalone functions (not methods), add `ctx context.Context` as first parameter when they use `context.Background()` internally\n7. Make sure imports are correct after changes\n\n## Files to fix\n\n### `auto_commit.go`\nMethods that already have `ctx context.Context` but still use `context.Background()` internally:\n- `SaveStep(ctx context.Context, step StepContext)` - lines ~146, ~163 use `logging.WithComponent(context.Background(), ...)` → use `ctx`\n- `commitMetadataToMetadataBranch` - ~line 261 uses `store.WriteCommitted(context.Background(), ...)` - needs ctx param added\n- `SaveTaskStep(ctx context.Context, step TaskStepContext)` - ~line 534 uses `logging.WithComponent(context.Background(), ...)` → use `ctx`\n- `commitTaskMetadataToMetadataBranch` - ~line 660 uses `store.WriteCommitted(context.Background(), ...)` - needs ctx param added\n- `GetSessionContext(ctx context.Context, sessionID string)` - […]
+  "prompt": "You need to replace `context.Background()` with `ctx` inside strategy method implementations that already have `ctx context.Context` as a parameter. The interface was updated to add ctx, and method signatures were updated, but the internal bodies still use `context.Background()`.\n\n## Rules\n1. ONLY modify files in `/home/<USER>/entire/cli/cmd/entire/cli/strategy/`\n2. Do NOT modify test files (*_test.go)\n3. Do NOT modify strategy.go (interface definition)\n4. Inside methods that already have `ctx context.Context` as a parameter, replace `context.Background()` with `ctx`\n5. For private helper methods that DON'T have ctx but are called from methods that DO, add `ctx context.Context` as first parameter and update all callers\n6. For standalone functions (not methods), add `ctx context.Context` as first parameter when they use `context.Background()` internally\n7. Make sure imports are correct after changes\n\n## Files to fix\n\n### `auto_commit.go`\nMethods that already have `ctx context.Context` but still use `context.Background()` internally:\n- `SaveStep(ctx context.Context, step StepContext)` - lines ~146, ~163 use `logging.WithComponent(context.Background(), ...)` → use `ctx`\n- `commitMetadataToMetadataBranch` - ~line 261 uses `store.WriteCommitted(context.Background(), ...)` - needs ctx param added\n- `SaveTaskStep(ctx context.Context, step TaskStepContext)` - ~line 534 uses `logging.WithComponent(context.Background(), ...)` → use `ctx`\n- `commitTaskMetadataToMetadataBranch` - ~line 660 uses `store.WriteCommitted(context.Background(), ...)` - needs ctx param added\n- `GetSessionContext(ctx context.Context, sessionID string)` - […]
 
 > TOOL
 

@@ -32,11 +32,11 @@ Here is a complete picture of how the Acknowledge and Resolve actions work, from
 
 ### Relevant files
 
-- `/Users/pc/web3/ReleaseBeacon/web/app/todo/page.tsx` — the page component
-- `/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts` — frontend API client
-- `/Users/pc/web3/ReleaseBeacon/internal/api/todos.go` — HTTP handlers
-- `/Users/pc/web3/ReleaseBeacon/internal/api/server.go` — route registration
-- `/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go` — database implementation
+- `/home/<USER>/web3/ReleaseBeacon/web/app/todo/page.tsx` — the page component
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts` — frontend API client
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/todos.go` — HTTP handlers
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/server.go` — route registration
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go` — database implementation
 
 ---
 

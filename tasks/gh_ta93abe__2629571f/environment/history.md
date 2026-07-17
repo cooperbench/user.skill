@@ -180,7 +180,7 @@ tool_use Read
 id: toolu_01L2XjUfaBvzwMmEXBwS6XYK
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/app/routes/_renderer.tsx"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/app/routes/_renderer.tsx"
 }
 ```
 
@@ -247,7 +247,7 @@ tool_use Read
 id: toolu_01NqMZASusBYhVM9pbfMLiKK
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/app/slide.js"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/app/slide.js"
 }
 ```
 
@@ -307,7 +307,7 @@ tool_use Read
 id: toolu_01RuGtyAnqreCDVhFxovFcJ1
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/app/slide.css"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/app/slide.css"
 }
 ```
 
@@ -386,7 +386,7 @@ tool_use Read
 id: toolu_015XswckhnduePFjThauTMBR
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/vite.config.ts"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/vite.config.ts"
 }
 ```
 
@@ -434,7 +434,7 @@ tool_use Read
 id: toolu_011bH7ANSEBUPL2wJjzyXUZn
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/app/routes/index.mdx"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/app/routes/index.mdx"
 }
 ```
 
@@ -461,7 +461,7 @@ tool_use Read
 id: toolu_01SiN584M6MAmkEZenZo88yv
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/app/server.ts"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/app/server.ts"
 }
 ```
 
@@ -487,7 +487,7 @@ tool_use Read
 id: toolu_01E4qyiVF9qPB7RtFkZAL9h3
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/app/client.tsx"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/app/client.tsx"
 }
 ```
 
@@ -505,7 +505,7 @@ tool_use Read
 id: toolu_01Co7zQRx5UhJARt2JggZp3K
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/app/global.d.ts"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/app/global.d.ts"
 }
 ```
 
@@ -814,7 +814,7 @@ tool_use Write
 id: toolu_01GnrXMHXLQshwJ9o76vjEti
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/docs/improvements/opencode-brief.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/docs/improvements/opencode-brief.md",
   "content": "# OpenCode 実装ブリーフ — slides 改善バッチ\n\nこのドキュメントは OpenCode に実装を依頼するための指示書。Claude Code が現状把握のうえ作成。\n実装後は `docs/improvements/codex-review.md` の観点で Codex がレビューする前提。\n\n## 対象リポジトリの前提（実装前に必ず守ること）\n\n- スタック: HonoX + MDX、SSG (`@hono/vite-ssg`) で静的 HTML 生成、Cloudflare Workers (Static Assets) 配信。\n- パッケージマネージャは **pnpm**。Node は **20**（`.node-version`）。\n- コードスタイルは `.prettierrc` に従う: **printWidth 70 / semi なし / singleQuote / jsxSingleQuote / tabWidth 2 / trailingComma es5 / LF**。新規ファイルもこれに準拠。\n- スライドの仕様: frontmatter `slide: true` でスライドモード、`---` で分割、`::right::` で 2 カラム。`theme` は `dark`(既定)/`cloudflare`/`light`。\n- 既存の主要ファイル:\n  - `app/routes/_renderer.tsx` — `slide.css`/`slide.js` を `?raw` でインライン注入、highlight.js を CDN ロード。\n  - `app/slide.js` — ランタイムで DOM を分割しナビゲーション付与（プレーン JS、ビルド変換なし）。\n  - `app/slide.css` — スライド CSS。\n  - `vite.config.ts` — honox / ssg / mdx プラグイン。mdx は `remarkFrontmatter`,`remarkMdxFrontmatter`,`rehypeSlug`。\n  - `app/routes/index.mdx` — デッキ一覧トップ（手書き）。\n  - `app/routes/cloudflare-data-platform.mdx` — 既存デッキ（353 行、ノートは `{/* */}` が 12 箇所）。\n  - `app/global.d.ts` — frontmatter 型 `Meta`。\n- **作業は PR を 4 本に分ける**。下記 PR1→PR4 の順で、各 PR 完了ごとに `pnpm build` が通ることを確認してから次へ進む。\n- 各 PR ごとに、変更点・確認したコマンド・残課題を簡潔にまとめて報告すること。\n\n---\n\n## PR1: CI / 品質基盤（最初に実装、後続 PR のゲートになる）\n\n**目的**: typecheck / format / build を npm scripts と GitHub Actions で自動化する。\n\n**作業**\n1. `package.json` の `scripts` に追加:\n   - `\"typecheck\": \"tsc --noEmit\"`\n   - `\"format\": \"prettier --write .\"`\n   - `\"format:check\": \"prettier --check .\"`\n   - `\"check\": \"pnpm typecheck && pnpm format:check && pnpm build\"`\n2. `package.json` の `devDependencies` に `typescript` を**明示的に**追加（現状 transitive 依存のみで CI で不安定。`pnpm add -D typescript` で最新安定版をピン）。\n3. […]
 
 > TOOL
@@ -822,7 +822,7 @@ id: toolu_01GnrXMHXLQshwJ9o76vjEti
 tool_result
 id: toolu_01GnrXMHXLQshwJ9o76vjEti
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/slides/docs/improvements/opencode-brief.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/slides/docs/improvements/opencode-brief.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -835,7 +835,7 @@ tool_use Write
 id: toolu_01NBFhYRHgbXFsXPN5o6MapK
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/docs/improvements/codex-review.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/docs/improvements/codex-review.md",
   "content": "# Codex レビュー指示書 — slides 改善バッチ\n\nOpenCode が `docs/improvements/opencode-brief.md` に沿って実装した変更をレビューする。\n対象は PR1〜PR4。各 PR の差分（`git diff`）を見て、下記観点で**実害のある問題のみ**を指摘する（好みの指摘は最小限に）。\n\n## レビューの進め方\n- 各 PR を独立にレビューし、最後に横断観点をチェック。\n- 指摘は「ファイル:行 / 重大度(blocker|major|minor) / 何が壊れるか / 修正案」の形式で。\n- 「動く」だけでなく「ビルド成果物 (`dist`) とランタイム挙動」まで検証すること。可能なら `pnpm build` を実行し `dist` の HTML を確認。\n\n## 共通の前提（守られているか確認）\n- コードスタイルが `.prettierrc` 準拠（printWidth 70 / semi なし / singleQuote / jsxSingleQuote）。`pnpm format:check` がパスするか。\n- pnpm / Node 20 前提。`pnpm-lock.yaml` が更新され `--frozen-lockfile` で通るか。\n- 既存デッキ `cloudflare-data-platform` の表示・ナビ・2 カラム・コピーボタンが回帰していないか。\n\n---\n\n## PR1: CI / 品質基盤\n- `package.json` scripts (`typecheck`/`format`/`format:check`/`check`) が正しく、`pnpm check` がローカルで成功するか。\n- `typescript` が devDependencies に**明示**追加されているか（transitive 依存頼みになっていないか）。\n- `tsconfig.json` の `include` が `app`,`vite.config.ts` を網羅し、`tsc --noEmit` が型エラーゼロか。\n- `.prettierignore` が生成物/バイナリを適切に除外し、かつソースを過剰に除外していないか。\n- `.github/workflows/ci.yml`: トリガー、`node-version-file: .node-version`、pnpm キャッシュ、`--frozen-lockfile`、ステップ順序（typecheck→format:check→build）。既存 `claude.yml` を壊していないか。YAML 構文の妥当性。\n\n## PR2: ビルド時シンタックスハイライト\n- **blocker 候補**: `dist` の HTML に highlight.js の CDN 参照（CSS/JS）が 1 つでも残っていないか。`hljs.highlightAll()` 呼び出しが `_renderer.tsx`・`slide.js` から完全に消えているか。\n- `vite.config.ts` の `rehypePrettyCode` 設定（`keepBackground: false`、単一ダークテーマ）が意図通りで、`rehypeSlug` と共存して見出し ID 生成も維持されているか。\n- コードがビルド時に色付けされ、トークンが span として HTML に存在するか。\n- **コピーボタン回帰**: `figure` ラップ等で `.copy-btn` の絶対配置基準（`position: relative` な親）がずれていないか。クリックでコード**全文**がコピーされるか（行番号やプロンプト記号が混入しないか）。\n- 3 テーマ（dark/cloudflare/light）でコードと背景のコントラストが確保されているか。`--slide-code-bg` とトークン色の組み合わせ。\n\n## PR3: プレゼンターモード\n- **blocker 候補**: `cloudflare-data-platform.mdx` の `{/* */}` 12 箇所が `<aside class=\"note\">` に移行され、**文言が改変されていない**こと。ノートが通常表示に漏れていない（`.note { display:none }` が効いている）こと。各ノートが正しいスライドに属しているか（移行で別スライドに混入していないか）。\n- MDX 内の素 HTML `<aside>` が段落崩れ・パースエラーを起こしていないか（`pnpm build` がエラーなく通るか）。\n- `slide.js`: `p` でプレゼンターウィンドウが開き、`BroadcastChannel` でメインのページ送りに追従するか。次スライドプレビューに `.note` が混入していないか。タイマーが動くか。\n- BroadcastChannel 未対応ブラウザや `window.open` ブロック時に、メイン表示が壊れず劣化フォールバックするか（例外で全体が止まらないこと）。\n- ドキュメント整合: `.claude/CLAUDE.md`（および README）のノート記法が新形式に更新されているか。\n\n## PR4: 印刷エクスポート + 一覧自動生成\n- 印刷: `@media print` で全 `.slide` が 1 ページ 1 枚（`page-break-after`）に展開され、`#progress`/`#counter`/`#hint`/`.copy-btn`/`.note` が非表示か。コードブロックが `max-height` 制限で途中切れしないか。`e` キーで `window.print()` が呼ばれるか。\n- 一覧自動生成:\n  - […]
 
 > TOOL
@@ -843,7 +843,7 @@ id: toolu_01NBFhYRHgbXFsXPN5o6MapK
 tool_result
 id: toolu_01NBFhYRHgbXFsXPN5o6MapK
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/slides/docs/improvements/codex-review.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/slides/docs/improvements/codex-review.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

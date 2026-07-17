@@ -4,7 +4,7 @@ tool_use Bash
 id: toolu_016iLhSqqrSrBF2EUjWpAJrF
 ```json
 {
-  "command": "ls -la /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/",
+  "command": "ls -la /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/",
   "description": "List repo root"
 }
 ```
@@ -30,7 +30,7 @@ tool_use Bash
 id: toolu_01AHZdE17kYxd3eCziaV5rHL
 ```json
 {
-  "command": "ls -la /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/ /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/ /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/.claude/",
+  "command": "ls -la /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/ /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/ /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/.claude/",
   "description": "List subdirectories"
 }
 ```
@@ -40,13 +40,13 @@ id: toolu_01AHZdE17kYxd3eCziaV5rHL
 tool_result
 id: toolu_01AHZdE17kYxd3eCziaV5rHL
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/.claude/:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/.claude/:
 total 8
 drwxr-xr-x  3 sumeet  staff   96  3 Jun 11:45 .
 drwxr-xr-x  7 sumeet  staff  224  5 Jun 14:40 ..
 -rw-r--r--  1 sumeet  staff  893  3 Jun 11:45 settings.local.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/:
 total 336
 drwxr-xr-x  22 sumeet  staff    704  3 Jun 10:05 .
 drwxr-xr-x   7 sumeet  staff    224  5 Jun 14:40 ..
@@ -74,7 +74,7 @@ tool_use Bash
 id: toolu_01JKkrsHG9HBKZeKV3s6cvF7
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/task-design /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/scripts /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/runs",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/task-design /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/scripts /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/runs",
   "description": "Inspect smash subdirs"
 }
 ```
@@ -84,33 +84,33 @@ id: toolu_01JKkrsHG9HBKZeKV3s6cvF7
 tool_result
 id: toolu_01JKkrsHG9HBKZeKV3s6cvF7
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task:
 context
 prompt.md
 sentiment_scores.csv
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task:
 context
 genesis-x3-task-context.zip
 prompt.md
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/runs:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/runs:
 1
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves:
 1.json
 2.json
 3.json
 4.json
 5.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/scripts:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/scripts:
 export_tournament_files.py
 generate_h2h.py
 pull_characters_v2.py
 pull_characters.py
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/task-design:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/task-design:
 context.md
 entrant-cuts.md
 grader-guidance.md
@@ -134,7 +134,7 @@ tool_use Read
 id: toolu_01QBobzTqaS5heR4P3DTg6bN
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/AGENTS.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/AGENTS.md"
 }
 ```
 
@@ -170,7 +170,7 @@ tool_use Read
 id: toolu_0126YpsgTWpEACCHm3w43MKz
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/agent-requirements.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/agent-requirements.md"
 }
 ```
 
@@ -201,7 +201,7 @@ tool_use Read
 id: toolu_01CTAMeM1xQ72Jvh1LvBFMx4
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/task-design/steps.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/task-design/steps.md"
 }
 ```
 
@@ -259,7 +259,7 @@ tool_use Read
 id: toolu_01BFRumqKrhvL4JGJucCDYg4
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/task-design/context.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/task-design/context.md"
 }
 ```
 
@@ -329,7 +329,7 @@ tool_use Read
 id: toolu_01MntMTQShbt3zfveBraVHYM
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/prompt.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/prompt.md"
 }
 ```
 
@@ -352,7 +352,7 @@ tool_use Read
 id: toolu_01WGL1cXMTdm5ragqghVcXZ9
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/prompt.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/prompt.md"
 }
 ```
 
@@ -375,7 +375,7 @@ tool_use Bash
 id: toolu_01A7LwWEo3Tzzmgv8YRuwUwA
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/context /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/context /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/proposal /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/raw-data",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/context /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/context /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/proposal /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/raw-data",
   "description": "List context dirs"
 }
 ```
@@ -385,7 +385,7 @@ id: toolu_01A7LwWEo3Tzzmgv8YRuwUwA
 tool_result
 id: toolu_01A7LwWEo3Tzzmgv8YRuwUwA
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/context:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/clean-task/context:
 character-analysis-methodology.md
 expert_analysis.txt
 genesis_x3_entrants.json
@@ -402,7 +402,7 @@ tier_list_v13.1.51.csv
 tournament-format-guide.md
 tournaments
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/context:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/dirty-task/context:
 aliases.json
 character_matchups_v13.1.csv
 character-analysis-methodology.md
@@ -424,11 +424,11 @@ tier_list_v13.1.csv
 tournament-format-guide.md
 tournaments
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/proposal:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/proposal:
 Super Smash Bros Bracket Simulation_returned_for_revisions.json
 Super Smash Bros Tournament - v1.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/raw-data:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/raw-data:
 battle-of-bc-7
 collision-2025
 frosty-faustings-xvii-2025
@@ -436,7 +436,7 @@ genesis-x2
 kagaribi-13
 supernova-2025
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example:
 borda-fusion.md
 character-utility.md
 compute_all.py
@@ -462,7 +462,7 @@ tool_use Read
 id: toolu_01Hje1y4azMZvQ8po7obqF2U
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/compute_all.py"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/compute_all.py"
 }
 ```
 
@@ -483,7 +483,7 @@ id: toolu_01Hje1y4azMZvQ8po7obqF2U
 10	from datetime import datetime, date
 11	from collections import defaultdict
 12	
-13	BASE = "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash"
+13	BASE = "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash"
 14	CTX = f"{BASE}/clean-task/context"
 15	WORKED = f"{BASE}/worked-example"
 16	REF_DATE = date(2026, 7, 18)
@@ -526,7 +526,7 @@ tool_use Read
 id: toolu_01Q5rejB2ws1xW5LDd7KxFYa
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/context-notes.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/context-notes.md"
 }
 ```
 
@@ -555,7 +555,7 @@ tool_use Bash
 id: toolu_01KfV2uY7kvQpuBnLU7LtEJm
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/runs/1 2>/dev/null; head -40 /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves/1.json",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/runs/1 2>/dev/null; head -40 /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves/1.json",
   "description": "Inspect saves and runs"
 }
 ```
@@ -565,14 +565,14 @@ id: toolu_01KfV2uY7kvQpuBnLU7LtEJm
 tool_result
 id: toolu_01KfV2uY7kvQpuBnLU7LtEJm
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/runs/1:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/runs/1:
 hints
 trajectory (1).json
 trajectory (2).json
 trajectory (3).json
 trajectory.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/saves:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/saves:
 1.json
 2.json
 3.json
@@ -586,7 +586,7 @@ tool_use Bash
 id: toolu_011XvV8yVAymUoTKxSC5GYxq
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/clean /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/dirty /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/arc /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/results 2>/dev/null | head -60",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/clean /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/dirty /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/arc /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/results 2>/dev/null | head -60",
   "description": "Inspect spotify subdirs"
 }
 ```
@@ -596,7 +596,7 @@ id: toolu_011XvV8yVAymUoTKxSC5GYxq
 tool_result
 id: toolu_011XvV8yVAymUoTKxSC5GYxq
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/arc:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/arc:
 agents.md
 backfill_albums.py
 backfill_decade.py
@@ -618,14 +618,14 @@ scrape_billboard.py
 similarity_analysis.py
 transition_analysis.json
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/clean:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/clean:
 billboard
 candidate-albums
 demographics
 target-albums
 weighting.txt
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/dirty:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/dirty:
 backfill_albums.py
 backfill_decade.py
 backfill_specific.py
@@ -648,7 +648,7 @@ scripts
 target-albums
 weighting.txt
 
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/results:
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/results:
 billboard-averages
 candidate-averages
 candidate-decade-matches
@@ -664,7 +664,7 @@ tool_use Read
 id: toolu_01K8GwTXgtYgTG9265tGf59B
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/prompt.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/prompt.md"
 }
 ```
 
@@ -690,7 +690,7 @@ tool_use Read
 id: toolu_01Qzzob2HMF1m5Jy3DEeLiqR
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/grader-guidance.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/grader-guidance.md",
   "limit": 80
 }
 ```
@@ -728,7 +728,7 @@ tool_use Read
 id: toolu_01Fn3kK9KnAGF4z1zxV7wZLB
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/spotify/verify_dirty.py",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/spotify/verify_dirty.py",
   "limit": 40
 }
 ```
@@ -786,7 +786,7 @@ tool_use Read
 id: toolu_01RJ12utmGnCgxWoh1oANJF6
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/verify_step3.py",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/verify_step3.py",
   "limit": 30
 }
 ```
@@ -834,7 +834,7 @@ tool_use Read
 id: toolu_01AbG1zJVEsf8YfWachejEtm
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/examples.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/examples.md",
   "limit": 30
 }
 ```
@@ -858,7 +858,7 @@ tool_use Read
 id: toolu_01W82Fm87w2rfW6b7hJtkicq
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/task.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/task.md",
   "limit": 60
 }
 ```
@@ -890,7 +890,7 @@ tool_use Read
 id: toolu_011kqekWSNSbhModWe8NTEB8
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/.claude/settings.local.json"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/.claude/settings.local.json"
 }
 ```
 
@@ -905,7 +905,7 @@ id: toolu_011kqekWSNSbhModWe8NTEB8
 4	      "Bash(python verify_all.py)",
 5	      "Bash(python3 *)",
 6	      "Bash(zip -r ../../genesis-x3-task-context.zip context/ prompt.md)",
-7	      "Read(//Users/sumeet/matrix/data-annotation/**)",
+7	      "Read(//home/<USER>/matrix/data-annotation/**)",
 8	      "Bash(unzip -l ../../genesis-x3-task-context.zip)",
 9	      "Bash(rm genesis-x3-task-context.zip)",
 10	      "Bash(zip -r ../../genesis-x3-task-context.zip context/)",
@@ -928,7 +928,7 @@ tool_use Bash
 id: toolu_01WVCmCNWF8a2A2GMsYMQrGq
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/generate_outputs.py 2>&1 | head; head -10 /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py",
+  "command": "ls /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/generate_outputs.py 2>&1 | head; head -10 /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py",
   "description": "Inspect verify_all and generate_outputs"
 }
 ```
@@ -938,8 +938,8 @@ id: toolu_01WVCmCNWF8a2A2GMsYMQrGq
 tool_result
 id: toolu_01WVCmCNWF8a2A2GMsYMQrGq
 ```
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/generate_outputs.py
-/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/generate_outputs.py
+/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/smash/worked-example/verify_all.py
 #!/usr/bin/env python3
 """
 Deep verification of all steps:
@@ -962,7 +962,7 @@ tool_use Write
 id: toolu_01JLzAAY9VCfRsTbJTFroVmA
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md",
   "content": "# CLAUDE.md\n\nThis file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.\n\n## What this repo is\n\nThis is a **task-design workspace for the DataAnnotation Holodeck \"Atomic Loop\" project** — not a software product. Each top-level directory (`smash/`, `spotify/`) is a self-contained training task for an agentic LLM that will be run in an RL environment. The repo's \"users\" are reviewers and the task agent on WorldBench; the artifacts being designed are prompt + context files + verifier + grader guidance, not deployed code.\n\n`task.md` (project brief from DataAnnotation) and `examples.md` (reference submissions) at the root are external instructions — read them when designing new tasks but do not edit. The active work happens inside the task folders.\n\n## Common task-folder shape\n\nEach task folder follows the same shape; the names below come from `smash/` (newer) but `spotify/` (older) is analogous:\n\n- `<task>/clean-task/` (or `spotify/clean/`) — context bundle without traps. Used to confirm a careful agent can reach the correct answer.\n- `<task>/dirty-task/` (or `spotify/dirty/`) — context bundle *with* embedded traps (decoy files, outdated versions, missing aliases, etc.). This is what the task agent actually sees on WorldBench. Each `<task>/dirty-task/genesis-x3-task-context.zip`-style zip is the bundle […]
 
 > TOOL
@@ -970,7 +970,7 @@ id: toolu_01JLzAAY9VCfRsTbJTFroVmA
 tool_result
 id: toolu_01JLzAAY9VCfRsTbJTFroVmA
 ```
-File created successfully at: /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1015,7 +1015,7 @@ id: toolu_01VceZntSNCxgeREF6cKUNzw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md",
   "old_string": "## Two active tasks",
   "new_string": "## Design goal: every task must rigorously test data science skill\n\nThe point of a task is to expose **data science methodology failures** in a strong model, not generic reasoning or instruction-following failures. When designing a new task, the central question is: *which data science skill is this task testing, and what is the realistic, easy-to-fall-into wrong move that a competent-but-not-careful data scientist would make?*\n\n- **Anchor example — Polymarket de-vig (smash).** Model A solved most of the smash bracket correctly but failed to **de-vig** the Polymarket odds (the raw prices sum to ~1.19 because of bookmaker overround; you have to normalise them back to a proper probability distribution before blending). That is a textbook DS failure mode: misinterpreting market data as calibrated probabilities. When given a hint, the model still botched it by *deleting* data rather than de-vigging. This is exactly the class of failure to target — a real methodology mistake a working data scientist would catch, embedded in a way that a naive pipeline will miss.\n- **Traps should be DS failures, not trivia.** A \"wrong file version\" trap is fine only when picking […]
 
@@ -1024,7 +1024,7 @@ id: toolu_01VceZntSNCxgeREF6cKUNzw
 tool_result
 id: toolu_01VceZntSNCxgeREF6cKUNzw
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1050,14 +1050,14 @@ id: toolu_01XQq5AkmuJrWW78Ee1k8vGa
 {
   "description": "Research DS failure modes for frontier models",
   "subagent_type": "general-purpose",
-  "prompt": "Research and write a reference document at `/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md`. This document will be a **database of data science skill areas and failure modes that frontier LLMs (GPT-5, Claude Opus/Sonnet 4.x, Gemini 2.5, etc.) still get wrong** — used by the repo owner to design RL training tasks that surface real DS methodology failures.\n\n## Context for why this exists\n\nThe repo is a workspace for designing long-horizon data science tasks for an agentic LLM (Claude-class) to solve in an RL environment. The training tasks need to **rigorously test data science skill** — not generic reasoning. The anchor example of the *right kind of failure* to target:\n\n> In a Smash Bros tournament prediction task, a strong frontier model produced a near-perfect bracket but failed to **de-vig** Polymarket prediction-market odds before blending them with its model's probabilities. Raw Polymarket prices sum to ~1.19 (bookmaker overround / vig), and you have to normalise them back to a proper distribution. The model treated them as calibrated probabilities. When given a hint, the model deleted the data rather than de-vigging it. This is a textbook applied-DS failure mode — exactly what […]
+  "prompt": "Research and write a reference document at `/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md`. This document will be a **database of data science skill areas and failure modes that frontier LLMs (GPT-5, Claude Opus/Sonnet 4.x, Gemini 2.5, etc.) still get wrong** — used by the repo owner to design RL training tasks that surface real DS methodology failures.\n\n## Context for why this exists\n\nThe repo is a workspace for designing long-horizon data science tasks for an agentic LLM (Claude-class) to solve in an RL environment. The training tasks need to **rigorously test data science skill** — not generic reasoning. The anchor example of the *right kind of failure* to target:\n\n> In a Smash Bros tournament prediction task, a strong frontier model produced a near-perfect bracket but failed to **de-vig** Polymarket prediction-market odds before blending them with its model's probabilities. Raw Polymarket prices sum to ~1.19 (bookmaker overround / vig), and you have to normalise them back to a proper distribution. The model treated them as calibrated probabilities. When given a hint, the model deleted the data rather than de-vigging it. This is a textbook applied-DS failure mode — exactly what […]
 
 > TOOL
 
 tool_result
 id: toolu_01XQq5AkmuJrWW78Ee1k8vGa
 ```
-Document written to `/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md` (~825 lines).
+Document written to `/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md` (~825 lines).
 
 **Structure**: 13 categories matching the brief (probability/calibration through pipeline hygiene) plus a 12-point cross-cutting failure-pattern appendix. ~55 individual failure-mode entries, each with the requested skill/where-it-fails/example/hook/sources format.
 
@@ -1077,7 +1077,7 @@ tool_use Bash
 id: toolu_014v8J6U5vkx2UDQgBCoRQG3
 ```json
 {
-  "command": "wc -l /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md && head -5 /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "command": "wc -l /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md && head -5 /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "description": "Verify doc exists and check size"
 }
 ```
@@ -1087,7 +1087,7 @@ id: toolu_014v8J6U5vkx2UDQgBCoRQG3
 tool_result
 id: toolu_014v8J6U5vkx2UDQgBCoRQG3
 ```
-     825 /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md
+     825 /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md
 # Data Science Skills and Failure Modes for Frontier LLMs
 
 A reference catalogue of **applied data-science failure modes** that frontier LLMs (GPT-5, Claude Opus/Sonnet 4.x, Gemini 2.5/3.x, o3/o4) still get wrong in 2024–2026 evaluations. Built to support task design for the Atomic Loop RL environment.
@@ -1127,7 +1127,7 @@ tool_use Read
 id: toolu_01McEkYcTHWq92ExLgtT73Gv
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md"
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md"
 }
 ```
 
@@ -1154,7 +1154,7 @@ tool_use Read
 id: toolu_01MSh87jeSA2aHQsTKUwmguG
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "offset": 629,
   "limit": 200
 }
@@ -1218,7 +1218,7 @@ id: toolu_01E5wz7i7pxRKfFLZpeh6Do3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "**Anchor example.** In the GENESIS X3 smash-bracket task, a strong frontier model produced a nearly correct bracket but failed to **de-vig** Polymarket prices before blending them with its own model. The raw market prices summed to ~1.19 (the overround from many-outcome futures + bid/ask spread), and the model treated them as a calibrated distribution. When prompted with a hint, it deleted the data rather than normalising. This is the gold standard for the kind of failure we want to elicit: a real methodology mistake a working data scientist would catch, hidden inside a plausible pipeline.\n\n**Sourcing rule.** Every entry below cites a benchmark, paper, or practitioner write-up demonstrating that frontier models fail at the skill in question. Entries where the only evidence is \"this is a known DS mistake humans make\" are omitted — the value of this doc is in failures that have *actually been measured on current models*.",
   "new_string": "**Anchor example.** In the GENESIS X3 smash-bracket task, a strong frontier model produced a nearly correct bracket but failed to **de-vig** Polymarket prices before blending them with its own model. The raw market prices summed to ~1.19 (the overround […]
 
@@ -1227,7 +1227,7 @@ id: toolu_01E5wz7i7pxRKfFLZpeh6Do3
 tool_result
 id: toolu_01E5wz7i7pxRKfFLZpeh6Do3
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1241,7 +1241,7 @@ id: toolu_01A9BZv2ef9QXFKHUNx3cN7K
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "### Overround / de-vig — treating bookmaker or market prices as calibrated probabilities\n\n**What it is:** Bookmaker odds and many-outcome prediction-market prices include an overround: the implied probabilities sum to more than 1 because of vig (sportsbooks), bid/ask spread (order-book markets), or uncertainty over a large outcome space (tournament-winner futures). To use them as a probability distribution you must normalise — usually by dividing by the sum, or by Shin/power methods when one side is favourite-biased.",
   "new_string": "### Overround / de-vig — treating bookmaker or market prices as calibrated probabilities\n\n> **OFF-LIMITS as a primary target — already the headline failure in the GENESIS X3 smash task. Keep on this page for reference only; do not build a new task whose central DS challenge is de-vigging.**\n\n**What it is:** Bookmaker odds and many-outcome prediction-market prices include an overround: the implied probabilities sum to more than 1 because of vig (sportsbooks), bid/ask spread (order-book markets), or uncertainty over a large outcome space (tournament-winner futures). To use them as a probability distribution you must normalise — usually by dividing by the sum, or by Shin/power methods when one side is favourite-biased."
 }
@@ -1252,7 +1252,7 @@ id: toolu_01A9BZv2ef9QXFKHUNx3cN7K
 tool_result
 id: toolu_01A9BZv2ef9QXFKHUNx3cN7K
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1266,7 +1266,7 @@ id: toolu_01DzKNCgXYXp2XwnewMofMr8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "### Verbalised-confidence miscalibration after RLHF\n\n**What it is:** A model's stated probability for a claim should match its empirical accuracy. Calibration is the cornerstone of any decision pipeline that consumes model outputs as priors.\n\n**Where frontier models fail:** \"Taming Overconfidence in LLMs\" (Leng et al., NeurIPS 2024) shows RLHF systematically sharpens output distributions and pushes verbalised confidence higher than warranted, with the worst miscalibration on wrong answers. \"Mind the Confidence Gap\" (2025) replicates the pattern: models are most overconfident when most wrong. PolyBench reports the same on prediction-market trading — uniformly high stated confidence on losing trades.\n\n**Concrete example:** A model writes \"I'm 95% confident this column is the patient identifier and joining on it is safe\" in a task where the column is actually a visit ID and the join silently fanouts. A calibrated agent would have said \"I'd guess this is the patient ID with maybe 70% confidence — let me check uniqueness before joining.\"\n\n**Task-design hook:** Build tasks where multiple plausible joins exist and the agent's first guess is wrong ~30% of the time. Grade on whether the agent verifies before committing.\n\n**Sources:** [Taming Overconfidence in LLMs: Reward Calibration in RLHF […]
 
 > TOOL
@@ -1274,7 +1274,7 @@ id: toolu_01DzKNCgXYXp2XwnewMofMr8
 tool_result
 id: toolu_01DzKNCgXYXp2XwnewMofMr8
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1284,7 +1284,7 @@ id: toolu_01KhTpMvhmmWw9AEicdWThmy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "### Conjunction fallacy and probability normalisation violations\n\n**What it is:** P(A and B) ≤ min(P(A), P(B)); a probability distribution must sum to 1; conditioning swaps numerator and denominator. These are constraints any \"probabilistic\" answer must satisfy.\n\n**Where frontier models fail:** Probabilistic Reasoning in LLMs work shows even SOTA models routinely violate normalisation and monotonicity constraints in extended chains. Bayesian CoT prompting improves but does not fix the conjunction fallacy. In raw outputs, models give P(A and B) > P(B) in a non-trivial fraction of cases.\n\n**Concrete example:** Asked for P(rain tomorrow), P(rain and windy tomorrow), P(rain and windy and cold tomorrow), models will sometimes output 0.4, 0.45, 0.3 — violating monotonicity on the second term.\n\n**Task-design hook:** Require the agent to produce a joint distribution table and verify it sums to 1 and respects marginals; embed a step that tempts the agent to over-condition.\n\n**Sources:** [Probabilistic Reasoning Capabilities of LLMs (EmergentMind topic)](https://www.emergentmind.com/topics/probabilistic-reasoning-capabilities-of-llms); [Bayesian Reasoning with LLMs](https://alexlyman.org/blog/bayes.html).\n\n### Conflating logits / softmax with calibrated probabilities",
   "new_string": "### Conflating logits / softmax with calibrated probabilities"
 }
@@ -1295,7 +1295,7 @@ id: toolu_01KhTpMvhmmWw9AEicdWThmy
 tool_result
 id: toolu_01KhTpMvhmmWw9AEicdWThmy
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1309,7 +1309,7 @@ id: toolu_018N3Q4ZwMSDTiywkRaEm2E9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "### Random number / distribution generation fails\n\n**What it is:** Producing draws from a stated distribution is a sanity check for any simulation step. Failing it breaks Monte Carlo answers downstream.\n\n**Where frontier models fail:** \"Large Language Models Are Bad Dice Players\" (2026) finds models cannot reliably generate samples matching named distributions — produced \"uniforms\" cluster, produced \"normals\" have wrong tail mass, and produced \"binomials\" have wrong variance.\n\n**Concrete example:** Asked for 1000 draws from N(0,1), GPT-class models return samples with empirical variance 0.7 and almost no |x|>2. Using them as a noise floor in a simulation under-reports tail risk.\n\n**Task-design hook:** Embed a Monte Carlo step whose answer is sensitive to tail behaviour; if the agent generates its own samples instead of using `np.random`, the answer is wrong.\n\n**Sources:** [LLMs Are Bad Dice Players (arXiv 2601.05414)](https://arxiv.org/pdf/2601.05414).\n\n---",
   "new_string": "---"
 }
@@ -1320,7 +1320,7 @@ id: toolu_018N3Q4ZwMSDTiywkRaEm2E9
 tool_result
 id: toolu_018N3Q4ZwMSDTiywkRaEm2E9
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > DEVELOPER
@@ -1337,7 +1337,7 @@ tool_use Read
 id: toolu_016euDThvTykGZRsUABwQ9f3
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/task.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/task.md",
   "offset": 60
 }
 ```
@@ -1356,7 +1356,7 @@ tool_use Read
 id: toolu_01LQuxQFK8R4jwG9h4e9ipcV
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/task.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/task.md",
   "offset": 60,
   "limit": 500
 }
@@ -1397,7 +1397,7 @@ id: toolu_01417y32fMLkH6iXqXoZfQ6g
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "## Scope and caveats\n\n- **Off-limits as a primary target: de-vig / overround.** It was the central failure in the smash task. The entry stays in §1 as reference, but the new task must not make de-vig the headline DS challenge. Other patterns that appeared as supporting traps in smash (Borda fusion without normalisation, shrinkage for sparse cells, patch/version misalignment) are fair game as primary targets — they were not what the smash failure analysis flagged.\n- **What counts as a \"DS skill failure\" in this doc.** A methodology choice a working data scientist makes when handling data — what test to run, what to normalise, what to adjust for, how to aggregate, how to evaluate. Excluded: meta-LLM failures (the model's own calibration / hallucination / sampling behaviour), generic agent hygiene (don't trust tool output blindly), and benchmark-contamination concerns. Those are real problems but they aren't the *DS skill* the task is testing — they're properties of the agent we test *with*.\n- **Engineering-flavoured pipeline failures (joins, units, dates) are kept** because in a long-horizon DS task the join/unit/date error directly corrupts the analysis. They're \"supporting traps\" — strong when combined with […]
 
 > TOOL
@@ -1405,7 +1405,7 @@ id: toolu_01417y32fMLkH6iXqXoZfQ6g
 tool_result
 id: toolu_01417y32fMLkH6iXqXoZfQ6g
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1419,7 +1419,7 @@ id: toolu_01MrrYGm6yEQSbpkLGLs25dX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "### Base-rate neglect / prior misuse in Bayesian updating",
   "new_string": "### Verbalised-confidence miscalibration after RLHF\n\n**What it is:** A model's stated probability for a claim should match its empirical accuracy. Calibration is the cornerstone of any decision pipeline that consumes model outputs as priors — including pipelines where the agent itself is producing the probability.\n\n**Where frontier models fail:** \"Taming Overconfidence in LLMs\" (Leng et al., NeurIPS 2024) shows RLHF systematically sharpens output distributions and pushes verbalised confidence higher than warranted, with the worst miscalibration on wrong answers. \"Mind the Confidence Gap\" (2025) replicates the pattern: models are most overconfident when most wrong. PolyBench reports the same on prediction-market trading — uniformly high stated confidence on losing trades.\n\n**Concrete example:** A model writes \"I'm 95% confident this column is the patient identifier and joining on it is safe\" in a task where the column is actually a visit ID and the join silently fanouts. A calibrated agent would have said \"I'd guess this is the patient ID with maybe 70% confidence — let me check uniqueness before joining.\"\n\n**Task-design hook:** Build a DS task where multiple plausible joins/columns/schemas exist and the agent's first […]
 
@@ -1428,7 +1428,7 @@ id: toolu_01MrrYGm6yEQSbpkLGLs25dX
 tool_result
 id: toolu_01MrrYGm6yEQSbpkLGLs25dX
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1438,7 +1438,7 @@ id: toolu_01FfojrQS3LwB5vKHq2zrBwD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "### Conflating logits / softmax with calibrated probabilities",
   "new_string": "### Conjunction fallacy and probability normalisation violations\n\n**What it is:** P(A and B) ≤ min(P(A), P(B)); a probability distribution must sum to 1; conditioning swaps numerator and denominator. These are constraints any \"probabilistic\" answer must satisfy — including joint distributions an agent produces as a deliverable.\n\n**Where frontier models fail:** Probabilistic Reasoning in LLMs work shows even SOTA models routinely violate normalisation and monotonicity constraints in extended chains. Bayesian CoT prompting improves but does not fix the conjunction fallacy. In raw outputs, models give P(A and B) > P(B) in a non-trivial fraction of cases.\n\n**Concrete example:** A churn model asked to report P(churn), P(churn and downgrade), P(churn and downgrade and refund_requested) emits 0.4, 0.45, 0.3 — violating monotonicity on the second term.\n\n**Task-design hook:** Require the agent to produce a joint distribution table over events and verify it sums to 1 and respects marginals; embed a step that tempts the agent to over-condition.\n\n**Sources:** [Probabilistic Reasoning Capabilities of LLMs (EmergentMind topic)](https://www.emergentmind.com/topics/probabilistic-reasoning-capabilities-of-llms); [Bayesian Reasoning with LLMs](https://alexlyman.org/blog/bayes.html).\n\n### Conflating logits / softmax with calibrated probabilities"
 }
@@ -1449,7 +1449,7 @@ id: toolu_01FfojrQS3LwB5vKHq2zrBwD
 tool_result
 id: toolu_01FfojrQS3LwB5vKHq2zrBwD
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1459,7 +1459,7 @@ id: toolu_01BzCzkPiusXmQ5MHtyK9Jwn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "old_string": "**Sources:** [StatQA (arXiv 2406.07815)](https://arxiv.org/abs/2406.07815); [StatLLM (PMC 2024)](https://pmc.ncbi.nlm.nih.gov/articles/PMC12987956/).\n\n### Power and sample-size planning",
   "new_string": "**Sources:** [StatQA (arXiv 2406.07815)](https://arxiv.org/abs/2406.07815); [StatLLM (PMC 2024)](https://pmc.ncbi.nlm.nih.gov/articles/PMC12987956/).\n\n### LLM-generated random samples that don't match the named distribution\n\n**What it is:** A real DS workflow that needs random draws (Monte Carlo, bootstrap, simulation-based inference) should use `np.random` / `scipy.stats`, not ask the LLM to emit samples. If the agent generates the samples itself instead of calling the right library, downstream MC estimates are biased.\n\n**Where frontier models fail:** \"Large Language Models Are Bad Dice Players\" (2026) finds models cannot reliably emit samples matching named distributions — produced \"uniforms\" cluster, produced \"normals\" have wrong tail mass, produced \"binomials\" have wrong variance. The failure is consequential when the agent uses its own samples as MC inputs.\n\n**Concrete example:** Asked to produce 1000 draws from N(0,1) for a simulation, an LLM emits values with empirical variance 0.7 and almost no |x|>2. The downstream tail-risk estimate is too low by an order of magnitude.\n\n**Task-design hook:** Embed a Monte Carlo step whose answer is sensitive to tail behaviour. If the agent fabricates its own samples rather than using a proper RNG, the answer is measurably wrong. Score […]
 
@@ -1468,7 +1468,7 @@ id: toolu_01BzCzkPiusXmQ5MHtyK9Jwn
 tool_result
 id: toolu_01BzCzkPiusXmQ5MHtyK9Jwn
 ```
-The file /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1481,7 +1481,7 @@ tool_use Read
 id: toolu_01FfXyLSi5s47jYm155SsqRA
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "file_path": "/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "offset": 320,
   "limit": 50
 }
@@ -1515,7 +1515,7 @@ tool_use Bash
 id: toolu_01UgrBrzBSAHVV4VNPYPv6dP
 ```json
 {
-  "command": "grep -n \"Accepting tool output\\|Pre-train contamination\\|LLM-as-imputer\" /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "command": "grep -n \"Accepting tool output\\|Pre-train contamination\\|LLM-as-imputer\" /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "description": "Check if other entries still present"
 }
 ```
@@ -1537,7 +1537,7 @@ tool_use Bash
 id: toolu_01GGvt79MN4EMngR54FtMB6v
 ```json
 {
-  "command": "wc -l /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md && grep -c \"^### \" /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "command": "wc -l /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md && grep -c \"^### \" /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "description": "Check final doc size and entry count"
 }
 ```
@@ -1547,7 +1547,7 @@ id: toolu_01GGvt79MN4EMngR54FtMB6v
 tool_result
 id: toolu_01GGvt79MN4EMngR54FtMB6v
 ```
-     833 /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md
+     833 /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md
 61
 ```
 
@@ -1577,7 +1577,7 @@ id: toolu_01T2VQVEVJNdtnWYiHK4BMjQ
 {
   "description": "Deep DS failure-mode research expansion",
   "subagent_type": "general-purpose",
-  "prompt": "Augment an existing reference doc at `/Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md` with deeper research into where frontier LLMs (Claude Opus/Sonnet 4.x, GPT-5, Gemini 2.5/3.x, o3/o4) fail at data science work. This doc is used to design RL training tasks; the entries are mined to pick the *primary DS challenge* a new task will test.\n\n## Read the existing doc first\n\nThe file already exists with 13 categories and ~61 entries from a previous research pass. **Do not rewrite it. Add to it.** Read it end-to-end first so you don't duplicate entries. Also read the \"Scope and caveats\" section near the top — your additions must respect it:\n\n- The task is a real data science task; failures in scope are DS methodology choices OR DS-workflow-adjacent agentic failures (e.g., hallucinating values to fill missing cells, treating tool output as ground truth without sanity check). Pure puzzles or instruction-following tests are out.\n- De-vig / overround is OFF LIMITS as a primary target (already the smash anchor failure). Other smash patterns are fine.\n\n## Where the existing doc is probably thin — focus the new research here\n\nThe first pass leaned on academic benchmarks (DABStep, BLADE, MLE-Bench, […]
+  "prompt": "Augment an existing reference doc at `/home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md` with deeper research into where frontier LLMs (Claude Opus/Sonnet 4.x, GPT-5, Gemini 2.5/3.x, o3/o4) fail at data science work. This doc is used to design RL training tasks; the entries are mined to pick the *primary DS challenge* a new task will test.\n\n## Read the existing doc first\n\nThe file already exists with 13 categories and ~61 entries from a previous research pass. **Do not rewrite it. Add to it.** Read it end-to-end first so you don't duplicate entries. Also read the \"Scope and caveats\" section near the top — your additions must respect it:\n\n- The task is a real data science task; failures in scope are DS methodology choices OR DS-workflow-adjacent agentic failures (e.g., hallucinating values to fill missing cells, treating tool output as ground truth without sanity check). Pure puzzles or instruction-following tests are out.\n- De-vig / overround is OFF LIMITS as a primary target (already the smash anchor failure). Other smash patterns are fine.\n\n## Where the existing doc is probably thin — focus the new research here\n\nThe first pass leaned on academic benchmarks (DABStep, BLADE, MLE-Bench, […]
 
 > TOOL
 
@@ -1608,7 +1608,7 @@ tool_use Bash
 id: toolu_01Sik4PwQ2xGxN7sj71Gi247
 ```json
 {
-  "command": "wc -l /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md && grep -c \"^### \" /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md && grep -E \"^## \" /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
+  "command": "wc -l /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md && grep -c \"^### \" /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md && grep -E \"^## \" /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md",
   "description": "Verify final doc structure"
 }
 ```
@@ -1618,7 +1618,7 @@ id: toolu_01Sik4PwQ2xGxN7sj71Gi247
 tool_result
 id: toolu_01Sik4PwQ2xGxN7sj71Gi247
 ```
-    1259 /Users/sumeet/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md
+    1259 /home/<USER>/matrix/data-annotation/holodeck/atomic-loop/data-science-skills.md
 93
 ## How to use this doc
 ## Scope and caveats

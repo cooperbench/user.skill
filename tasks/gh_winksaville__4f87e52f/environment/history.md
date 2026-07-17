@@ -4,8 +4,8 @@ tool_result
 id: toolu_01KWYTv5H96mMdL5iNDPNYMH
 ```
 sync: 2 repos, all bookmarks up-to-date
-/home/wink/data/prgs/rust/vc-x1: @- (5e0f61e1e8ce) is not behind 'main' (01357c2bdec7); leaving @ in place
-/home/wink/data/prgs/rust/vc-x1/.claude: jj new main
+/home/<USER>/data/prgs/rust/vc-x1: @- (5e0f61e1e8ce) is not behind 'main' (01357c2bdec7); leaving @ in place
+/home/<USER>/data/prgs/rust/vc-x1/.claude: jj new main
 ```
 
 > AGENT

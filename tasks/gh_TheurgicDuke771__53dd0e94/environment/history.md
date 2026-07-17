@@ -132,7 +132,7 @@ drwxr-xr-x@  3 arijit  staff      96 Jul  4 12:34 scripts
 -rw-------@  1 arijit  staff    2369 Jul  2 15:35 secrets.sh
 drwxr-xr-x@ 27 arijit  staff     864 Jul  2 16:14 terraform
 ---HARNESS_TODO---
-cat: /Users/arijit/Coding/Python/DataQ-harness/HARNESS_TODO.md: No such file or directory
+cat: /home/<USER>/Coding/Python/DataQ-harness/HARNESS_TODO.md: No such file or directory
 ```
 
 > AGENT
@@ -325,7 +325,7 @@ eventgrid_receiver/app.py
 mockdata/emit.py
 eventgrid_receiver/test_local.py
 scripts/harness_window.sh
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -450,7 +450,7 @@ variable "snowflake_loader_role" {
   type        = string
   default     = "DATAQ_LOADER"
 }
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -558,7 +558,7 @@ id: toolu_01MMFRmVa3FpvGEfKukRyXJt
 124:        server_hostname=os.environ["DATABRICKS_HOST"]
 127:        http_path=os.environ["DATABRICKS_HTTP_PATH"],  # SQL warehouse path
 128:        access_token=os.environ["DATABRICKS_TOKEN"],
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -600,7 +600,7 @@ SNOWFLAKE_WAREHOUSE
 WORKSPACE_ADMIN_EMAILS
 === how harness_window sources snowflake ===
 29:#  SNOWFLAKE — after the Snowflake subscription lapses (v1.1 W1, #588) these runs
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -867,7 +867,7 @@ terraform/eventgrid.tf:24:resource "azurerm_container_app" "airflow_trigger" {
 terraform/redis.tf:5:resource "azurerm_container_app" "redis" {
 === local.common_tags ===
 terraform/main.tf:18:  common_tags = {
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -983,7 +983,7 @@ id: toolu_014cWvbmWqrYNobabPTrkHb1
 407:            unit_price = round(price_by_sku[sku], 2)
 408:            line_total = round(qty * unit_price, 2)
 409:            subtotal += line_total
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -1034,7 +1034,7 @@ id: toolu_018jLj4atuSdWb6pNQFnzyHx
             }
         )
     return pd.DataFrame(rows)
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > TOOL
@@ -1095,7 +1095,7 @@ def load_to_uc(df: pd.DataFrame, catalog: str, schema: str, table: str) -> int:
     )
     rows = [
         tuple(None if pd.isna(v) else v for v in record)
-Shell cwd was reset to /Users/arijit/Coding/Python/DataQ
+Shell cwd was reset to /home/<USER>/Coding/Python/DataQ
 ```
 
 > AGENT
@@ -1127,7 +1127,7 @@ tool_use Write
 id: toolu_01Bk4RqMsmeDgoH32WytNvFN
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/dbt_project.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/dbt_project.yml",
   "content": "name: \"dataq_lineage\"\nversion: \"1.0.0\"\nconfig-version: 2\n\n# The profile lives in this same dir (profiles.yml) — invoke with\n# `dbt build --profiles-dir .` or export DBT_PROFILES_DIR=. (the Dockerfile does).\nprofile: \"dataq_lineage\"\n\nmodel-paths: [\"models\"]\nmacro-paths: [\"macros\"]\ntarget-path: \"target\"\nclean-targets: [\"target\", \"dbt_packages\", \"logs\"]\n\n# Pin the dbt-core major the same way we pin GX (CONTRIBUTING rule): the dbt\n# metadata contract (manifest/run_results schema #611/#596 consume) is stable\n# within a major.\nrequire-dbt-version: [\">=1.9.0\", \"<2.0.0\"]\n\n# base (RETAIL) -> staging (ANALYTICS_STG views) -> marts (ANALYTICS dynamic tables).\n# Two schemas so the dbt-produced objects never collide with the harness base\n# tables, and the lineage layer is obvious from the object's schema alone.\nmodels:\n  dataq_lineage:\n    staging:\n      +materialized: view\n      +schema: analytics_stg\n    marts:\n      +materialized: dynamic_table\n      +schema: analytics\n      +snowflake_warehouse: \"DATAQ_WH\"\n      +target_lag: \"1 hour\"\n      +on_configuration_change: apply\n\n# DataQ runs its checks as the least-privilege DATAQ_READER role (snowflake.tf),\n# which only has grants on RETAIL. Open up the two dbt-owned schemas + their\n# objects to it so a suite can point at a dynamic table. Idempotent; runs after\n# every successful build. (dbt is run as ACCOUNTADMIN in the harness, so these\n# grants always succeed.)\non-run-end:\n  - \"grant usage on schema {{ target.database }}.ANALYTICS_STG to role DATAQ_READER\"\n  - \"grant usage on schema {{ target.database }}.ANALYTICS to role DATAQ_READER\"\n  - \"grant […]
 
 > TOOL
@@ -1135,7 +1135,7 @@ id: toolu_01Bk4RqMsmeDgoH32WytNvFN
 tool_result
 id: toolu_01Bk4RqMsmeDgoH32WytNvFN
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/dbt_project.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/dbt_project.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1144,7 +1144,7 @@ tool_use Write
 id: toolu_01BYnX4VbQdoFciuH1D9kuns
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/profiles.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/profiles.yml",
   "content": "# dbt profile — fully env-var driven so the same file works for local `dbt build`\n# (source ../secrets.sh) and the container host (env injected by the ACA job / compose).\n# No secrets in this file. The vars are the same ones the Airflow loader uses\n# (_harness.py load_to_snowflake) — SNOWFLAKE_ACCOUNT/USER/PASSWORD/WAREHOUSE/DATABASE/ROLE.\n#\n# ROLE defaults to ACCOUNTADMIN (the harness account default) — needs CREATE SCHEMA\n# + CREATE DYNAMIC TABLE + the ability to grant to DATAQ_READER (on-run-end hooks).\n# target.schema is the marts default; staging overrides to ANALYTICS_STG in dbt_project.yml.\ndataq_lineage:\n  target: dev\n  outputs:\n    dev:\n      type: snowflake\n      account: \"{{ env_var('SNOWFLAKE_ACCOUNT') }}\"\n      user: \"{{ env_var('SNOWFLAKE_USER') }}\"\n      password: \"{{ env_var('SNOWFLAKE_PASSWORD') }}\"\n      role: \"{{ env_var('SNOWFLAKE_ROLE', 'ACCOUNTADMIN') }}\"\n      warehouse: \"{{ env_var('SNOWFLAKE_WAREHOUSE', 'DATAQ_WH') }}\"\n      database: \"{{ env_var('SNOWFLAKE_DATABASE', 'DATAQ_DB') }}\"\n      schema: \"ANALYTICS\"\n      threads: 4\n      client_session_keep_alive: false\n"
 }
 ```
@@ -1154,7 +1154,7 @@ id: toolu_01BYnX4VbQdoFciuH1D9kuns
 tool_result
 id: toolu_01BYnX4VbQdoFciuH1D9kuns
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/profiles.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/profiles.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1163,7 +1163,7 @@ tool_use Write
 id: toolu_01USNZhGd33eV3CspGZWHU7A
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/macros/generate_schema_name.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/macros/generate_schema_name.sql",
   "content": "{#\n  Use the +schema config value verbatim (upper-cased) instead of dbt's default\n  behaviour of prefixing it with target.schema. Without this, a model configured\n  with +schema: analytics_stg would land in \"ANALYTICS_analytics_stg\". We want the\n  two clean lineage schemas — ANALYTICS_STG (staging views) and ANALYTICS (marts) —\n  so the on-run-end reader grants and #611/#596 lineage ingestion have stable names.\n#}\n{% macro generate_schema_name(custom_schema_name, node) -%}\n    {%- if custom_schema_name is none -%}\n        {{ target.schema | trim | upper }}\n    {%- else -%}\n        {{ custom_schema_name | trim | upper }}\n    {%- endif -%}\n{%- endmacro %}\n"
 }
 ```
@@ -1173,7 +1173,7 @@ id: toolu_01USNZhGd33eV3CspGZWHU7A
 tool_result
 id: toolu_01USNZhGd33eV3CspGZWHU7A
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/macros/generate_schema_name.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/macros/generate_schema_name.sql (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1186,7 +1186,7 @@ tool_use Write
 id: toolu_013nEcgvFH4awEYtTd1XT18N
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml",
   "content": "version: 2\n\n# The harness base tables (Flow A) that Airflow/ADF load into DATAQ_DB.RETAIL.\n# Columns are UPPERCASE: ADF-loaded tables (ORDERS_HEADER, CUSTOMERS) are pre-created\n# uppercase in snowflake.tf; write_pandas-loaded tables are uppercased in\n# _harness.load_to_snowflake. dbt selects `source('retail', 'orders_header')` etc.,\n# which is the base layer of the base -> staging -> mart lineage graph.\nsources:\n  - name: retail\n    database: \"{{ env_var('SNOWFLAKE_DATABASE', 'DATAQ_DB') }}\"\n    schema: RETAIL\n    description: \"Harness Flow-A retail warehouse tables loaded by Airflow/ADF.\"\n    tables:\n      - name: orders_header\n        description: \"Order headers (ADF event pipeline). Grain: one row per ORDER_NUMBER.\"\n      - name: order_lines\n        description: \"Order line items (Airflow schedule load). Grain: one row per LINE_ID.\"\n      - name: customers\n        description: \"Customer dimension (ADF timer pipeline).\"\n      - name: products\n        description: \"Product/SKU dimension (Airflow schedule load).\"\n"
 }
 ```
@@ -1196,7 +1196,7 @@ id: toolu_013nEcgvFH4awEYtTd1XT18N
 tool_result
 id: toolu_013nEcgvFH4awEYtTd1XT18N
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/_retail__sources.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1205,7 +1205,7 @@ tool_use Write
 id: toolu_01RDTE1WyY3vY2mmRc6wvDpF
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_orders.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_orders.sql",
   "content": "-- Staging view over RETAIL.ORDERS_HEADER: light typing/renaming, one row per order.\n-- Base -> staging edge of the lineage graph.\nwith source as (\n    select * from {{ source('retail', 'orders_header') }}\n)\n\nselect\n    order_number,\n    customer_id,\n    channel,\n    store_id,\n    promo_id,\n    order_ts,\n    status,\n    subtotal,\n    tax,\n    order_total,\n    currency\nfrom source\n"
 }
 ```
@@ -1215,7 +1215,7 @@ id: toolu_01RDTE1WyY3vY2mmRc6wvDpF
 tool_result
 id: toolu_01RDTE1WyY3vY2mmRc6wvDpF
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_orders.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_orders.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1224,7 +1224,7 @@ tool_use Write
 id: toolu_01PCt8K1N7SBEZjKvrMGHhSn
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_order_lines.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_order_lines.sql",
   "content": "-- Staging view over RETAIL.ORDER_LINES: one row per order line item.\nwith source as (\n    select * from {{ source('retail', 'order_lines') }}\n)\n\nselect\n    line_id,\n    order_number,\n    sku_id,\n    qty,\n    unit_price,\n    line_total\nfrom source\n"
 }
 ```
@@ -1234,7 +1234,7 @@ id: toolu_01PCt8K1N7SBEZjKvrMGHhSn
 tool_result
 id: toolu_01PCt8K1N7SBEZjKvrMGHhSn
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_order_lines.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_order_lines.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1243,7 +1243,7 @@ tool_use Write
 id: toolu_01MDBUphsiRbTq7AYndWEREs
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_customers.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_customers.sql",
   "content": "-- Staging view over RETAIL.CUSTOMERS: customer dimension, one row per customer.\nwith source as (\n    select * from {{ source('retail', 'customers') }}\n)\n\nselect\n    customer_id,\n    first_name,\n    last_name,\n    email,\n    city,\n    state,\n    signup_date,\n    marketing_opt_in\nfrom source\n"
 }
 ```
@@ -1253,7 +1253,7 @@ id: toolu_01MDBUphsiRbTq7AYndWEREs
 tool_result
 id: toolu_01MDBUphsiRbTq7AYndWEREs
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_customers.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_customers.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1262,7 +1262,7 @@ tool_use Write
 id: toolu_01QtVbXMeBA3pDywnT3UyR5h
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_products.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_products.sql",
   "content": "-- Staging view over RETAIL.PRODUCTS: product/SKU dimension, one row per SKU.\nwith source as (\n    select * from {{ source('retail', 'products') }}\n)\n\nselect\n    sku_id,\n    category,\n    unit_price,\n    active,\n    created_at\nfrom source\n"
 }
 ```
@@ -1272,7 +1272,7 @@ id: toolu_01QtVbXMeBA3pDywnT3UyR5h
 tool_result
 id: toolu_01QtVbXMeBA3pDywnT3UyR5h
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/staging/stg_products.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/staging/stg_products.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1335,7 +1335,7 @@ tool_use Write
 id: toolu_01XcpVLsYHjbxwQ8qo4Gzx5J
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql",
   "content": "-- Mart dynamic table: one row per order with its line-item roll-up.\n-- Multi-hop lineage: RETAIL.ORDERS_HEADER + RETAIL.ORDER_LINES (base)\n--   -> stg_orders + stg_order_lines (staging views) -> this dynamic table.\n-- ORDER_TS carries through so a DataQ freshness monitor can measure refresh lag,\n-- and RECONCILED_SUBTOTAL vs SUBTOTAL exposes the intra-order tie-out for value checks.\nwith orders as (\n    select * from {{ ref('stg_orders') }}\n),\n\nlines as (\n    select\n        order_number,\n        count(*) as line_count,\n        sum(qty) as total_qty,\n        sum(line_total) as reconciled_subtotal\n    from {{ ref('stg_order_lines') }}\n    group by order_number\n)\n\nselect\n    o.order_number,\n    o.customer_id,\n    o.channel,\n    o.store_id,\n    o.order_ts,\n    o.status,\n    o.currency,\n    coalesce(l.line_count, 0) as line_count,\n    coalesce(l.total_qty, 0) as total_qty,\n    coalesce(l.reconciled_subtotal, 0) as reconciled_subtotal,\n    o.subtotal,\n    o.tax,\n    o.order_total\nfrom orders o\nleft join lines l on o.order_number = l.order_number\n"
 }
 ```
@@ -1345,7 +1345,7 @@ id: toolu_01XcpVLsYHjbxwQ8qo4Gzx5J
 tool_result
 id: toolu_01XcpVLsYHjbxwQ8qo4Gzx5J
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_order_revenue.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1354,7 +1354,7 @@ tool_use Write
 id: toolu_016wZMvzAzus1TGR3iJdV4XH
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql",
   "content": "-- Mart dynamic table: one row per customer with lifetime order stats.\n-- Multi-hop lineage: RETAIL.CUSTOMERS + RETAIL.ORDERS_HEADER (base)\n--   -> stg_customers + stg_orders (staging views) -> this dynamic table.\nwith customers as (\n    select * from {{ ref('stg_customers') }}\n),\n\norders as (\n    select\n        customer_id,\n        count(*) as order_count,\n        sum(order_total) as lifetime_value,\n        min(order_ts) as first_order_ts,\n        max(order_ts) as last_order_ts\n    from {{ ref('stg_orders') }}\n    group by customer_id\n)\n\nselect\n    c.customer_id,\n    c.first_name,\n    c.last_name,\n    c.city,\n    c.state,\n    c.signup_date,\n    coalesce(o.order_count, 0) as order_count,\n    coalesce(o.lifetime_value, 0) as lifetime_value,\n    o.first_order_ts,\n    o.last_order_ts\nfrom customers c\nleft join orders o on c.customer_id = o.customer_id\n"
 }
 ```
@@ -1364,7 +1364,7 @@ id: toolu_016wZMvzAzus1TGR3iJdV4XH
 tool_result
 id: toolu_016wZMvzAzus1TGR3iJdV4XH
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/mart_customer_orders.sql (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1373,7 +1373,7 @@ tool_use Write
 id: toolu_01K2pWZsugSKFP1QpC5y3UEb
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/_marts__models.yml",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/_marts__models.yml",
   "content": "version: 2\n\n# Mart models + a handful of dbt tests. These run in `dbt build` (build = run + test),\n# so a green build also proves the lineage objects hold their basic contracts — and\n# the run_results.json captures the test outcomes for the #611 provider poll.\nmodels:\n  - name: mart_order_revenue\n    description: \"Per-order line-item roll-up (dynamic table, target_lag 1h). One row per ORDER_NUMBER.\"\n    columns:\n      - name: order_number\n        description: \"Order grain — unique, not null.\"\n        data_tests:\n          - not_null\n          - unique\n      - name: order_ts\n        description: \"Order timestamp — freshness anchor for the DataQ freshness monitor.\"\n        data_tests:\n          - not_null\n      - name: line_count\n        description: \"Number of order lines rolled into the order.\"\n\n  - name: mart_customer_orders\n    description: \"Per-customer lifetime order stats (dynamic table, target_lag 1h). One row per CUSTOMER_ID.\"\n    columns:\n      - name: customer_id\n        description: \"Customer grain — unique, not null.\"\n        data_tests:\n          - not_null\n          - unique\n"
 }
 ```
@@ -1383,7 +1383,7 @@ id: toolu_01K2pWZsugSKFP1QpC5y3UEb
 tool_result
 id: toolu_01K2pWZsugSKFP1QpC5y3UEb
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/models/marts/_marts__models.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/models/marts/_marts__models.yml (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1396,7 +1396,7 @@ tool_use Write
 id: toolu_01C8S44BqHFwRfHbRXm9GVf6
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/requirements.txt",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/requirements.txt",
   "content": "# dbt Core + the Snowflake adapter. Pin the minor the same way we pin GX — the\n# manifest/run_results contract that #611 (dbt OrchestrationProvider) and #596\n# (lineage ingestion) consume is stable within a dbt minor. dbt-core is pulled in\n# transitively by dbt-snowflake at a matching version.\ndbt-snowflake>=1.9,<1.10\n\n# ADLS upload for the artifact-capture step (run.sh -> upload_artifacts.py). Only\n# used when DBT_ARTIFACTS_URI + AZURE_STORAGE_CONNECTION_STRING are set (container\n# host); local `dbt build` leaves artifacts in ./target and skips the upload.\nazure-storage-file-datalake>=12.14,<13\n"
 }
 ```
@@ -1406,7 +1406,7 @@ id: toolu_01C8S44BqHFwRfHbRXm9GVf6
 tool_result
 id: toolu_01C8S44BqHFwRfHbRXm9GVf6
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/requirements.txt (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/requirements.txt (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1415,7 +1415,7 @@ tool_use Write
 id: toolu_01D9z8xD8rhUEjRvFUQCJ5sm
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/upload_artifacts.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/upload_artifacts.py",
   "content": "\"\"\"Upload dbt run artifacts (manifest.json, run_results.json) to ADLS.\n\nProvider-poll input for #611 (dbt OrchestrationProvider reads run_results.json to\nobserve run outcome) AND lineage-ingestion input for #596 (manifest.json holds the\nnode graph). No-op when DBT_ARTIFACTS_URI is unset — local `dbt build` just leaves\nthe files in ./target.\n\n  DBT_ARTIFACTS_URI               adls://<account>/<filesystem>/<prefix>  (e.g. adls://dataqharnessX/raw/dbt)\n  AZURE_STORAGE_CONNECTION_STRING storage account connection string (same seam as mockdata AdlsStore)\n\nEach run lands under <prefix>/runs/<UTC-timestamp>/ and is also overwritten to\n<prefix>/latest/ so the poller has a stable pointer.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport datetime as dt\nimport os\nimport sys\nfrom pathlib import Path\n\nARTIFACTS = (\"manifest.json\", \"run_results.json\")\n\n\ndef main() -> int:\n    uri = os.environ.get(\"DBT_ARTIFACTS_URI\")\n    if not uri:\n        print(\"DBT_ARTIFACTS_URI unset — skipping artifact upload (local run).\")\n        return 0\n    if not uri.startswith(\"adls://\"):\n        print(f\"DBT_ARTIFACTS_URI {uri!r} not an adls:// uri — skipping.\", file=sys.stderr)\n        return 0\n\n    conn = os.environ.get(\"AZURE_STORAGE_CONNECTION_STRING\")\n    if not conn:\n        print(\"AZURE_STORAGE_CONNECTION_STRING unset — cannot upload.\", file=sys.stderr)\n        return 1\n\n    from azure.storage.filedatalake import DataLakeServiceClient\n\n    parts = uri[len(\"adls://\") :].split(\"/\", 2)\n    if len(parts) < 2:\n        print(f\"bad adls uri {uri!r}; expected adls://<account>/<fs>[/<prefix>]\", file=sys.stderr)\n        return 1\n    _account, filesystem = parts[0], parts[1]\n    prefix = (parts[2] if len(parts) == 3 else \"\").strip(\"/\")\n\n    fs = DataLakeServiceClient.from_connection_string(conn).get_file_system_client(filesystem)\n    stamp = dt.datetime.now(dt.timezone.utc).strftime(\"%Y%m%dT%H%M%SZ\")\n    target_dir = Path(os.environ.get(\"DBT_TARGET_DIR\", \"target\"))\n\n    uploaded = 0\n    for name in ARTIFACTS:\n        local = target_dir / name\n        if […]
 
 > TOOL
@@ -1423,7 +1423,7 @@ id: toolu_01D9z8xD8rhUEjRvFUQCJ5sm
 tool_result
 id: toolu_01D9z8xD8rhUEjRvFUQCJ5sm
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/upload_artifacts.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/upload_artifacts.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1436,7 +1436,7 @@ tool_use Write
 id: toolu_01Mx9HUak6dcc3NWQZCcsPHC
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh",
+  "file_path": "/home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh",
   "content": "#!/usr/bin/env bash\n# dbt container entrypoint: build the lineage models, then publish the artifacts.\n#\n# `dbt build` = run (create/refresh the views + dynamic tables) + test (the\n# not_null/unique data tests). A non-zero dbt exit is preserved so the ACA job\n# execution (and later the #611 provider poll of run_results.json) sees the failure.\n# Artifacts are uploaded even on dbt failure — run_results.json is exactly what a\n# failure-observing provider needs — then the original dbt exit code is returned.\nset -uo pipefail\n\nexport DBT_PROFILES_DIR=\"${DBT_PROFILES_DIR:-/app/dbt}\"\n\ncd /app/dbt\n\necho \">> dbt build (target_lag dynamic tables + data tests)\"\ndbt build \"$@\"\ndbt_rc=$?\n\necho \">> publishing artifacts (no-op unless DBT_ARTIFACTS_URI is set)\"\npython /app/dbt/upload_artifacts.py || echo \"artifact upload failed (non-fatal)\"\n\necho \">> dbt build exit code: ${dbt_rc}\"\nexit \"${dbt_rc}\"\n"
 }
 ```
@@ -1446,7 +1446,7 @@ id: toolu_01Mx9HUak6dcc3NWQZCcsPHC
 tool_result
 id: toolu_01Mx9HUak6dcc3NWQZCcsPHC
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ-harness/dbt/run.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ-harness/dbt/run.sh (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

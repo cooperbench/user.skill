@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01G8ByTgjpS8QaPw8FQQjnBb
 ```json
 {
-  "command": "find /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src -type f -name \"*.rs\" | head -20 && ls /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/",
+  "command": "find /home/<USER>/p/gossamer-checkpoints-visualization/src -type f -name \"*.rs\" | head -20 && ls /home/<USER>/p/gossamer-checkpoints-visualization/src/",
   "description": "List source files"
 }
 ```
@@ -22,26 +22,26 @@ id: toolu_01G8ByTgjpS8QaPw8FQQjnBb
 tool_result
 id: toolu_01G8ByTgjpS8QaPw8FQQjnBb
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/config.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/watermark.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/main.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/codex.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/claude_code.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/mod.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/entity/session.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/entity/mod.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/entity/repository.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/mod.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/handoff.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/resume.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/config.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/watermark.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/main.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/codex.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/claude_code.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/mod.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/entity/session.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/entity/mod.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/entity/repository.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/mod.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/handoff.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/resume.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs
 commands
 config.rs
 db.rs
@@ -59,7 +59,7 @@ tool_use Read
 id: toolu_01FrTFxmZJmpCzvJuNPHvMuh
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs"
 }
 ```
 
@@ -119,7 +119,7 @@ tool_use Read
 id: toolu_01R6jQpGrNfK11zP9bagzhiy
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs"
 }
 ```
 
@@ -168,7 +168,7 @@ tool_use Bash
 id: toolu_01JTsMpZESPeT1ayW4BKQX9f
 ```json
 {
-  "command": "grep -n \"checkpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -40",
+  "command": "grep -n \"checkpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -40",
   "description": "Find checkpoint-related code in index.rs"
 }
 ```
@@ -215,7 +215,7 @@ tool_use Bash
 id: toolu_01SqenW49ox5Q3cQwUuXCCBj
 ```json
 {
-  "command": "grep -n \"upsert_checkpoint\\|commit_message\\|commit_sha\\|author_name\\|os_user\\|CheckpointParams\\|struct.*Checkpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -50",
+  "command": "grep -n \"upsert_checkpoint\\|commit_message\\|commit_sha\\|author_name\\|os_user\\|CheckpointParams\\|struct.*Checkpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -50",
   "description": "Find checkpoint struct and upsert function"
 }
 ```
@@ -256,7 +256,7 @@ tool_use Read
 id: toolu_01Ra1vjyKHsMpFRdb6LEVeqg
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 200,
   "limit": 120
 }
@@ -316,7 +316,7 @@ tool_use Read
 id: toolu_01AWWuUVCRTSuQGYjLZ5HqfM
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 340,
   "limit": 120
 }
@@ -380,7 +380,7 @@ tool_use Read
 id: toolu_01HftM95MJM9DDar1TLWCbkK
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 619,
   "limit": 100
 }
@@ -526,7 +526,7 @@ tool_use Read
 id: toolu_01JKhbLddy6zgBC6A6YipYZg
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/claude_code.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/claude_code.rs"
 }
 ```
 
@@ -591,7 +591,7 @@ tool_use Read
 id: toolu_01XRwtGodbBVRBpXbhJPovZd
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/mod.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/mod.rs"
 }
 ```
 
@@ -605,7 +605,7 @@ tool_use Read
 id: toolu_01NtqBvJseef1N4J33iv7mDw
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs"
 }
 ```
 
@@ -654,7 +654,7 @@ tool_use Read
 id: toolu_01RVzy9QYCJsCeooNC6hnKHH
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 390,
   "limit": 70
 }
@@ -722,7 +722,7 @@ tool_use Bash
 id: toolu_01JjiiuEYdsd2xH9fCKpZyoT
 ```json
 {
-  "command": "grep -n \"upsert_checkpoint\\|CommitAuthor\\|PendingCheckpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/refresh.rs 2>/dev/null | head -20",
+  "command": "grep -n \"upsert_checkpoint\\|CommitAuthor\\|PendingCheckpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/refresh.rs 2>/dev/null | head -20",
   "description": "Check refresh.rs for checkpoint calls"
 }
 ```
@@ -741,7 +741,7 @@ tool_use Bash
 id: toolu_01Erp6t1MrzBqUbH4PCRygbD
 ```json
 {
-  "command": "grep -rn \"upsert_checkpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/",
+  "command": "grep -rn \"upsert_checkpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/",
   "description": "Find all callers of upsert_checkpoint"
 }
 ```
@@ -751,8 +751,8 @@ id: toolu_01Erp6t1MrzBqUbH4PCRygbD
 tool_result
 id: toolu_01Erp6t1MrzBqUbH4PCRygbD
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:441:        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:675:pub(crate) fn upsert_checkpoint(
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:441:        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:675:pub(crate) fn upsert_checkpoint(
 ```
 
 > AGENT
@@ -771,7 +771,7 @@ id: toolu_01KPKVZ8fvZLFNFQve9hfdhG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs",
   "old_string": "    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN jsonl_path TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN repo_dir TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN os_user TEXT\", []);",
   "new_string": "    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN jsonl_path TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN repo_dir TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN os_user TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN commit_message TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN turn_id TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN checkpoint_id TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN files_touched TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN token_usage TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN initial_attribution TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN model TEXT\", []);"
 }
@@ -782,7 +782,7 @@ id: toolu_01KPKVZ8fvZLFNFQve9hfdhG
 tool_result
 id: toolu_01KPKVZ8fvZLFNFQve9hfdhG
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -796,7 +796,7 @@ id: toolu_01Wp7CdVEpbnoshpYnW3GZA1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "#[derive(Clone)]\npub(crate) struct CommitAuthor {\n    pub sha: String,\n    pub name: String,\n    pub email: String,\n}",
   "new_string": "#[derive(Clone)]\npub(crate) struct CommitAuthor {\n    pub sha: String,\n    pub name: String,\n    pub email: String,\n    pub message: String,\n}"
 }
@@ -807,7 +807,7 @@ id: toolu_01Wp7CdVEpbnoshpYnW3GZA1
 tool_result
 id: toolu_01Wp7CdVEpbnoshpYnW3GZA1
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -821,7 +821,7 @@ id: toolu_01KPv6UJZ6CJCf27xeKAUMWs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "struct PendingCheckpoint {\n    session_id: String,\n    checkpoint_number: u32,\n    jsonl_path: String,\n    last_turn_ts: String,\n    os_user: Option<String>,\n    direct: Option<CommitAuthor>,\n}",
   "new_string": "struct PendingCheckpoint {\n    session_id: String,\n    checkpoint_number: u32,\n    jsonl_path: String,\n    last_turn_ts: String,\n    os_user: Option<String>,\n    direct: Option<CommitAuthor>,\n    // fields from metadata.json\n    turn_id: String,\n    checkpoint_id: String,\n    files_touched_json: String,\n    token_usage_json: String,\n    initial_attribution_json: String,\n    model: String,\n}"
 }
@@ -832,7 +832,7 @@ id: toolu_01KPv6UJZ6CJCf27xeKAUMWs
 tool_result
 id: toolu_01KPv6UJZ6CJCf27xeKAUMWs
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -846,7 +846,7 @@ id: toolu_01DK4gRk7EoHGX8KQH6Gwih4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "    let out = Command::new(\"git\")\n        .args([\n            \"log\",\n            \"--grep=^Checkpoint: \",\n            \"--diff-filter=A\",\n            \"--name-only\",\n            \"--format=__COMMIT__%x09%H%x09%an%x09%ae\",\n            BRANCH,\n        ])",
   "new_string": "    let out = Command::new(\"git\")\n        .args([\n            \"log\",\n            \"--grep=^Checkpoint: \",\n            \"--diff-filter=A\",\n            \"--name-only\",\n            \"--format=__COMMIT__%x09%H%x09%an%x09%ae%x09%s\",\n            BRANCH,\n        ])"
 }
@@ -857,7 +857,7 @@ id: toolu_01DK4gRk7EoHGX8KQH6Gwih4
 tool_result
 id: toolu_01DK4gRk7EoHGX8KQH6Gwih4
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -867,7 +867,7 @@ id: toolu_01VGd7HadkGPfS66Gk8ei7Fb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "        if let Some(rest) = line.strip_prefix(\"__COMMIT__\\t\") {\n            let mut parts = rest.splitn(3, '\\t');\n            let sha = parts.next().unwrap_or(\"\").to_string();\n            let name = parts.next().unwrap_or(\"\").to_string();\n            let email = parts.next().unwrap_or(\"\").to_string();\n            current = Some(CommitAuthor { sha, name, email });\n            continue;\n        }",
   "new_string": "        if let Some(rest) = line.strip_prefix(\"__COMMIT__\\t\") {\n            let mut parts = rest.splitn(4, '\\t');\n            let sha     = parts.next().unwrap_or(\"\").to_string();\n            let name    = parts.next().unwrap_or(\"\").to_string();\n            let email   = parts.next().unwrap_or(\"\").to_string();\n            let message = parts.next().unwrap_or(\"\").to_string();\n            current = Some(CommitAuthor { sha, name, email, message });\n            continue;\n        }"
 }
@@ -878,7 +878,7 @@ id: toolu_01VGd7HadkGPfS66Gk8ei7Fb
 tool_result
 id: toolu_01VGd7HadkGPfS66Gk8ei7Fb
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -892,7 +892,7 @@ id: toolu_01SJcZsEQx6hwEMqK4jG1t8d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "        let checkpoint_number = checkpoint_number_from_path(meta_path).unwrap_or(0);\n        let os_user = cwd_to_os_user(&parsed.cwd);\n        let direct = direct_authors.get(&jsonl_path)\n            .or_else(|| direct_authors.get(meta_path))\n            .cloned();\n\n        if let (Some(u), Some(a)) = (&os_user, &direct) {\n            os_user_authors.entry(u.clone()).or_insert_with(|| a.clone());\n        }\n\n        pending.push(PendingCheckpoint {\n            session_id: parsed.session_id,\n            checkpoint_number,\n            jsonl_path,\n            last_turn_ts: parsed.updated_at,\n            os_user,\n            direct,\n        });",
   "new_string": "        let checkpoint_number = checkpoint_number_from_path(meta_path).unwrap_or(0);\n        let os_user = cwd_to_os_user(&parsed.cwd);\n        let direct = direct_authors.get(&jsonl_path)\n            .or_else(|| direct_authors.get(meta_path))\n            .cloned();\n\n        if let (Some(u), Some(a)) = (&os_user, &direct) {\n            os_user_authors.entry(u.clone()).or_insert_with(|| a.clone());\n        }\n\n        #[derive(serde::Deserialize, Default)]\n        struct MetadataExtra {\n            turn_id: Option<String>,\n            checkpoint_id: Option<String>,\n            files_touched: Option<Vec<String>>,\n            token_usage: Option<serde_json::Value>,\n            initial_attribution: Option<serde_json::Value>,\n            model: Option<String>,\n        }\n        let extra: MetadataExtra = serde_json::from_slice(&meta_bytes).unwrap_or_default();\n        let files_touched_json = extra.files_touched.as_deref()\n            .map(|v| serde_json::to_string(v).unwrap_or_default())\n            .unwrap_or_default();\n        let token_usage_json = extra.token_usage\n            .map(|v| v.to_string())\n            .unwrap_or_default();\n        let initial_attribution_json = extra.initial_attribution\n            .map(|v| v.to_string())\n            .unwrap_or_default();\n\n        pending.push(PendingCheckpoint {\n            session_id: parsed.session_id,\n            checkpoint_number,\n            jsonl_path,\n            last_turn_ts: parsed.updated_at,\n            os_user,\n            direct,\n            turn_id: extra.turn_id.unwrap_or_default(),\n            checkpoint_id: extra.checkpoint_id.unwrap_or_default(),\n            files_touched_json,\n            token_usage_json,\n            initial_attribution_json,\n            model: extra.model.unwrap_or_default(),\n        });"
 }
@@ -903,7 +903,7 @@ id: toolu_01SJcZsEQx6hwEMqK4jG1t8d
 tool_result
 id: toolu_01SJcZsEQx6hwEMqK4jG1t8d
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -917,7 +917,7 @@ id: toolu_017kFpu62aDue3Fjg8NzQnuW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "        let os_user_str = p.os_user.unwrap_or_default();\n        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,\n                          author.as_ref(), &p.last_turn_ts,\n                          &p.jsonl_path, repo_dir, &os_user_str)?;",
   "new_string": "        let os_user_str = p.os_user.unwrap_or_default();\n        let commit_msg = author.as_ref().map(|a| a.message.as_str()).unwrap_or(\"\");\n        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,\n                          author.as_ref(), &p.last_turn_ts,\n                          &p.jsonl_path, repo_dir, &os_user_str,\n                          commit_msg, &p.turn_id, &p.checkpoint_id,\n                          &p.files_touched_json, &p.token_usage_json,\n                          &p.initial_attribution_json, &p.model)?;"
 }
@@ -928,7 +928,7 @@ id: toolu_017kFpu62aDue3Fjg8NzQnuW
 tool_result
 id: toolu_017kFpu62aDue3Fjg8NzQnuW
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -942,7 +942,7 @@ id: toolu_012SQnNpqLhMNG4owFUkAFxf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "pub(crate) fn upsert_checkpoint(\n    conn: &rusqlite::Connection,\n    session_id: &str,\n    checkpoint_number: u32,\n    author: Option<&CommitAuthor>,\n    last_turn_ts: &str,\n    jsonl_path: &str,\n    repo_dir: &str,\n    os_user: &str,\n) -> Result<()> {\n    let (sha, name, email) = author\n        .map(|a| (a.sha.as_str(), a.name.as_str(), a.email.as_str()))\n        .unwrap_or((\"\", \"\", \"\"));\n    conn.execute(\n        \"INSERT INTO checkpoints\n            (session_id, checkpoint_number, commit_sha, author_name, author_email,\n             last_turn_ts, jsonl_path, repo_dir, os_user)\n         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)\n         ON CONFLICT(session_id, checkpoint_number) DO UPDATE SET\n            commit_sha   = excluded.commit_sha,\n            author_name  = excluded.author_name,\n            author_email = excluded.author_email,\n            last_turn_ts = excluded.last_turn_ts,\n            jsonl_path   = excluded.jsonl_path,\n            repo_dir     = excluded.repo_dir,\n            os_user      = excluded.os_user\",\n        rusqlite::params![\n            session_id,\n            checkpoint_number as i64,\n            sha,\n            name,\n            email,\n            last_turn_ts,\n            jsonl_path,\n            repo_dir,\n            os_user,\n        ],\n    )?;\n    Ok(())\n}",
   "new_string": "pub(crate) fn upsert_checkpoint(\n    conn: &rusqlite::Connection,\n    session_id: &str,\n    checkpoint_number: u32,\n    author: Option<&CommitAuthor>,\n    last_turn_ts: &str,\n    jsonl_path: &str,\n    repo_dir: &str,\n    os_user: &str,\n    commit_message: &str,\n    turn_id: &str,\n    checkpoint_id: &str,\n    files_touched: &str,\n    token_usage: &str,\n    initial_attribution: &str,\n    model: &str,\n) -> Result<()> {\n    let (sha, name, email) = author\n        .map(|a| (a.sha.as_str(), a.name.as_str(), a.email.as_str()))\n        .unwrap_or((\"\", \"\", \"\"));\n    conn.execute(\n        \"INSERT INTO checkpoints\n            (session_id, checkpoint_number, commit_sha, author_name, author_email,\n             last_turn_ts, jsonl_path, repo_dir, os_user,\n             commit_message, turn_id, checkpoint_id, files_touched, token_usage,\n             initial_attribution, model)\n         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16)\n         ON CONFLICT(session_id, […]
 
@@ -951,7 +951,7 @@ id: toolu_012SQnNpqLhMNG4owFUkAFxf
 tool_result
 id: toolu_012SQnNpqLhMNG4owFUkAFxf
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -965,7 +965,7 @@ id: toolu_01JveMGnxR4fVvxDYnk5fHUH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "// ── Data model ────────────────────────────────────────────────────────────────\n\nenum Card {\n    RepoLink  { name: String, dir: String, branch: String },\n    Header    { title: Option<String>, cwd: String, branch: String, ts: String, agent: String },\n    UserMsg   { ts: String, parts: Vec<UserPart>, author: Option<String> },\n    AsstMsg   { ts: String, parts: Vec<AsstPart> },\n    ToolRound { parts: Vec<AsstPart> },\n    System    { ts: String, subtype: String, content: String },\n}",
   "new_string": "// ── Data model ────────────────────────────────────────────────────────────────\n\nenum Card {\n    RepoLink   { name: String, dir: String, branch: String },\n    Header     { title: Option<String>, cwd: String, branch: String, ts: String, agent: String },\n    UserMsg    { ts: String, parts: Vec<UserPart>, author: Option<String> },\n    AsstMsg    { ts: String, parts: Vec<AsstPart> },\n    ToolRound  { parts: Vec<AsstPart> },\n    System     { ts: String, subtype: String, content: String },\n    Checkpoint(CheckpointData),\n}\n\nstruct CheckpointData {\n    number:              u32,\n    checkpoint_id:       String,\n    commit_message:      String,\n    last_turn_ts:        String,\n    author_name:         String,\n    author_email:        String,\n    files_touched:       Vec<String>,\n    token_usage:         Option<TokenUsage>,\n    initial_attribution: Option<InitialAttribution>,\n    model:               String,\n}\n\nstruct TokenUsage {\n    input_tokens:           i64,\n    cache_creation_tokens:  i64,\n    cache_read_tokens:      i64,\n    output_tokens:          i64,\n    api_call_count:         i64,\n}\n\nstruct InitialAttribution {\n    agent_lines:        i64,\n    human_added:        i64,\n    human_modified:     i64,\n    human_removed:      i64,\n    total_committed:    i64,\n    total_lines_changed: i64,\n    agent_percentage:   f64,\n}"
 }
@@ -976,7 +976,7 @@ id: toolu_01JveMGnxR4fVvxDYnk5fHUH
 tool_result
 id: toolu_01JveMGnxR4fVvxDYnk5fHUH
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -990,7 +990,7 @@ id: toolu_01QQFstqyz1iNpuZKoNNnd37
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "#[derive(Clone, PartialEq)]\nenum Selectable {\n    Card(usize),\n    ToolHeader(usize),\n    ToolCall(usize, usize), // (card_idx, tool_idx)\n}",
   "new_string": "#[derive(Clone, PartialEq)]\nenum Selectable {\n    Card(usize),\n    ToolHeader(usize),\n    ToolCall(usize, usize), // (card_idx, tool_idx)\n    CheckpointHeader(usize),\n}"
 }
@@ -1001,7 +1001,7 @@ id: toolu_01QQFstqyz1iNpuZKoNNnd37
 tool_result
 id: toolu_01QQFstqyz1iNpuZKoNNnd37
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1015,7 +1015,7 @@ id: toolu_01NprJhZxC24Q2Ahq7TaAS56
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "fn find_session(id: &str) -> Option<PathBuf> {",
   "new_string": "fn fetch_checkpoints(session_id: &str) -> Vec<CheckpointData> {\n    let Ok(conn) = crate::db::connect() else { return Vec::new(); };\n    let Ok(mut stmt) = conn.prepare(\n        \"SELECT checkpoint_number,\n                COALESCE(checkpoint_id, ''),\n                COALESCE(commit_message, ''),\n                last_turn_ts,\n                COALESCE(author_name, ''),\n                COALESCE(author_email, ''),\n                COALESCE(files_touched, '[]'),\n                COALESCE(token_usage, ''),\n                COALESCE(initial_attribution, ''),\n                COALESCE(model, '')\n           FROM checkpoints\n          WHERE session_id = ?1\n       ORDER BY checkpoint_number ASC\"\n    ) else { return Vec::new(); };\n\n    let rows = stmt.query_map([session_id], |row| {\n        Ok((\n            row.get::<_, i64>(0)?,\n            row.get::<_, String>(1)?,\n            row.get::<_, String>(2)?,\n            row.get::<_, String>(3)?,\n            row.get::<_, String>(4)?,\n            row.get::<_, String>(5)?,\n            row.get::<_, String>(6)?,\n            row.get::<_, String>(7)?,\n            row.get::<_, String>(8)?,\n            row.get::<_, String>(9)?,\n        ))\n    });\n    let Ok(rows) = rows else { return Vec::new(); };\n\n    let mut out = Vec::new();\n    for r in rows.flatten() {\n        let (number, checkpoint_id, commit_message, last_turn_ts,\n             author_name, author_email, files_json, token_json, attr_json, model) = r;\n\n        let files_touched: Vec<String> = serde_json::from_str(&files_json).unwrap_or_default();\n\n        let token_usage = serde_json::from_str::<serde_json::Value>(&token_json).ok()\n            .and_then(|v| {\n                Some(TokenUsage {\n                    input_tokens:          v[\"input_tokens\"].as_i64().unwrap_or(0),\n                    cache_creation_tokens: v[\"cache_creation_tokens\"].as_i64().unwrap_or(0),\n                    cache_read_tokens:     v[\"cache_read_tokens\"].as_i64().unwrap_or(0),\n                    output_tokens:         v[\"output_tokens\"].as_i64().unwrap_or(0),\n                    api_call_count:        v[\"api_call_count\"].as_i64().unwrap_or(0),\n                })\n            });\n\n        let initial_attribution = serde_json::from_str::<serde_json::Value>(&attr_json).ok()\n            .and_then(|v| {\n                Some(InitialAttribution {\n                    agent_lines:         v[\"agent_lines\"].as_i64().unwrap_or(0),\n                    human_added:         v[\"human_added\"].as_i64().unwrap_or(0),\n                    human_modified:      v[\"human_modified\"].as_i64().unwrap_or(0),\n                    human_removed:       v[\"human_removed\"].as_i64().unwrap_or(0),\n                    total_committed:     v[\"total_committed\"].as_i64().unwrap_or(0),\n                    total_lines_changed: v[\"total_lines_changed\"].as_i64().unwrap_or(0),\n                    agent_percentage:    v[\"agent_percentage\"].as_f64().unwrap_or(0.0),\n                })\n            });\n\n        out.push(CheckpointData {\n            number: number as u32,\n            checkpoint_id,\n            commit_message,\n            last_turn_ts,\n            author_name,\n            author_email,\n            files_touched,\n            token_usage,\n            initial_attribution,\n            model,\n        });\n    }\n […]
 
@@ -1024,7 +1024,7 @@ id: toolu_01NprJhZxC24Q2Ahq7TaAS56
 tool_result
 id: toolu_01NprJhZxC24Q2Ahq7TaAS56
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1038,7 +1038,7 @@ id: toolu_011uFxnbshnTYbuoN5btyf3J
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    let mut cards = parse(&raw, &agent);\n    if cards.is_empty() {\n        println!(\"No messages found.\");\n        return Ok(false);\n    }",
   "new_string": "    let mut cards = parse(&raw, &agent);\n    if cards.is_empty() {\n        println!(\"No messages found.\");\n        return Ok(false);\n    }\n\n    let checkpoints = fetch_checkpoints(uuid);\n    if !checkpoints.is_empty() {\n        insert_checkpoints(&mut cards, checkpoints);\n    }"
 }
@@ -1049,7 +1049,7 @@ id: toolu_011uFxnbshnTYbuoN5btyf3J
 tool_result
 id: toolu_011uFxnbshnTYbuoN5btyf3J
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1063,7 +1063,7 @@ id: toolu_01HyozK6dY79Q3iRPNrNgQbs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        Card::ToolRound { parts } => {\n            for part in parts {\n                if let AsstPart::ToolCall { name, input, result, .. } = part {\n                    out.push_str(&format!(\"[Tool: {name}]\\n\"));\n                    if let Some(obj) = input.as_object() {\n                        for (k, v) in obj {\n                            let val = if let Value::String(s) = v { s.clone() } else { v.to_string() };\n                            out.push_str(&format!(\"{k}: {val}\\n\"));\n                        }\n                    }\n                    if let Some((content, _)) = result {\n                        out.push_str(&format!(\"[Result]\\n{content}\\n\"));\n                    }\n                }\n            }\n        }\n    }\n    out\n}",
   "new_string": "        Card::ToolRound { parts } => {\n            for part in parts {\n                if let AsstPart::ToolCall { name, input, result, .. } = part {\n                    out.push_str(&format!(\"[Tool: {name}]\\n\"));\n                    if let Some(obj) = input.as_object() {\n                        for (k, v) in obj {\n                            let val = if let Value::String(s) = v { s.clone() } else { v.to_string() };\n                            out.push_str(&format!(\"{k}: {val}\\n\"));\n                        }\n                    }\n                    if let Some((content, _)) = result {\n                        out.push_str(&format!(\"[Result]\\n{content}\\n\"));\n                    }\n                }\n            }\n        }\n        Card::Checkpoint(cp) => {\n            out.push_str(&format!(\"[Checkpoint #{}]\\n\", cp.number));\n            if !cp.commit_message.is_empty() { out.push_str(&cp.commit_message); out.push('\\n'); }\n            if !cp.files_touched.is_empty() {\n                out.push_str(\"Files:\\n\");\n                for f in &cp.files_touched { out.push_str(&format!(\"  {f}\\n\")); }\n            }\n        }\n    }\n    out\n}"
 }
@@ -1074,7 +1074,7 @@ id: toolu_01HyozK6dY79Q3iRPNrNgQbs
 tool_result
 id: toolu_01HyozK6dY79Q3iRPNrNgQbs
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1088,7 +1088,7 @@ id: toolu_017kcRHH3W5547hrkEmevu1h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "use super::agent_color;\n\nfn render_card(card: &Card, width: usize, agent: &str) -> Vec<String> {",
   "new_string": "use super::agent_color;\n\nfn fmt_num(n: i64) -> String {\n    let s = n.abs().to_string();\n    let mut out = String::new();\n    for (i, ch) in s.chars().rev().enumerate() {\n        if i > 0 && i % 3 == 0 { out.push(','); }\n        out.push(ch);\n    }\n    if n < 0 { out.push('-'); }\n    out.chars().rev().collect()\n}\n\nfn render_checkpoint_header(cp: &CheckpointData, expanded: bool, term_w: usize) -> String {\n    let arrow = if expanded { \"▾\" } else { \"▸\" };\n    let short_id = if cp.checkpoint_id.len() >= 8 {\n        &cp.checkpoint_id[..8]\n    } else {\n        cp.checkpoint_id.as_str()\n    };\n    let msg = if cp.commit_message.is_empty() {\n        String::new()\n    } else {\n        format!(\"  {}\", cp.commit_message)\n    };\n    let ts_part = if !cp.last_turn_ts.is_empty() {\n        format!(\"  \\x1b[37m{}\\x1b[0m\\x1b[42m\", rel_time(&cp.last_turn_ts))\n    } else {\n        String::new()\n    };\n    let id_part = if short_id.is_empty() {\n        String::new()\n    } else {\n        format!(\"  \\x1b[37m{short_id}\\x1b[0m\\x1b[42m\")\n    };\n\n    // Content (visible chars only, no ANSI) for padding calculation.\n    let content = format!(\n        \"  {arrow} \\x1b[1;92mcheckpoint\\x1b[0m\\x1b[42m #{}{id_part}\\x1b[97m{msg}\\x1b[0m\\x1b[42m{ts_part}\",\n        cp.number,\n    );\n    let vis = visible_width(&content);\n    let pad = term_w.saturating_sub(vis);\n    format!(\"\\x1b[42m{content}{}\\x1b[0m\", \" \".repeat(pad))\n}\n\nfn render_checkpoint_collapsed(cp: &CheckpointData, term_w: usize) -> Vec<String> {\n    vec![render_checkpoint_header(cp, false, term_w), String::new()]\n}\n\nfn render_checkpoint_expanded(cp: &CheckpointData, term_w: usize) -> Vec<String> {\n    let t = crate::theme::get();\n    let mut lines […]
 
@@ -1097,7 +1097,7 @@ id: toolu_017kcRHH3W5547hrkEmevu1h
 tool_result
 id: toolu_017kcRHH3W5547hrkEmevu1h
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1111,7 +1111,7 @@ id: toolu_0144XvZjqASKjtEHbH9s5WRD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        Card::ToolRound { .. } => {} // handled in build_flat\n    }\n\n    lines.push(String::new());\n    lines\n}",
   "new_string": "        Card::ToolRound { .. } | Card::Checkpoint(_) => {} // handled in build_flat\n    }\n\n    lines.push(String::new());\n    lines\n}"
 }
@@ -1122,7 +1122,7 @@ id: toolu_0144XvZjqASKjtEHbH9s5WRD
 tool_result
 id: toolu_0144XvZjqASKjtEHbH9s5WRD
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1136,7 +1136,7 @@ id: toolu_01RutW35dhJfqDwfQDNBK2jq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    for (card_idx, card) in cards.iter().enumerate() {\n        if let Card::ToolRound { parts } = card {\n            if collapsed.contains(&card_idx) {\n                let si = selectables.len();\n                starts.push(flat.len());\n                selectables.push(Selectable::Card(card_idx));\n                for l in render_tool_summary(parts) { flat.push((si, l)); }\n            } else {\n                // Header row (collapses the round when space is pressed)\n                let si = selectables.len();\n                starts.push(flat.len());\n                selectables.push(Selectable::ToolHeader(card_idx));\n                for l in render_tool_header(parts) { flat.push((si, l)); }\n                // One selectable per individual tool call\n                for (tool_idx, part) in parts.iter().enumerate() {\n                    let si = selectables.len();\n                    starts.push(flat.len());\n                    selectables.push(Selectable::ToolCall(card_idx, tool_idx));\n                    for l in render_one_tool_call(part, w) { flat.push((si, l)); }\n                }\n            }\n        } else {\n            let si = selectables.len();\n            starts.push(flat.len());\n            selectables.push(Selectable::Card(card_idx));\n            for l in render_card(card, w, agent) { flat.push((si, l)); }\n        }\n    }",
   "new_string": "    for (card_idx, card) in cards.iter().enumerate() {\n        if let Card::ToolRound { parts } = card {\n            if collapsed.contains(&card_idx) {\n                let si = selectables.len();\n                starts.push(flat.len());\n                selectables.push(Selectable::Card(card_idx));\n                for l in render_tool_summary(parts) { flat.push((si, l)); }\n            } else {\n                // Header row (collapses the round when space is pressed)\n                let si = selectables.len();\n                starts.push(flat.len());\n                selectables.push(Selectable::ToolHeader(card_idx));\n                for l in render_tool_header(parts) { flat.push((si, l)); }\n                // One selectable per individual tool call\n                for (tool_idx, part) in parts.iter().enumerate() {\n                    let si = […]
 
@@ -1145,7 +1145,7 @@ id: toolu_01RutW35dhJfqDwfQDNBK2jq
 tool_result
 id: toolu_01RutW35dhJfqDwfQDNBK2jq
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1159,7 +1159,7 @@ id: toolu_01Ed97FoNpJMb4bk9rg3e4H5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    let mut collapsed: std::collections::HashSet<usize> = cards.iter().enumerate()\n        .filter_map(|(i, c)| if matches!(c, Card::ToolRound { .. }) { Some(i) } else { None })\n        .collect();",
   "new_string": "    let mut collapsed: std::collections::HashSet<usize> = cards.iter().enumerate()\n        .filter_map(|(i, c)| if matches!(c, Card::ToolRound { .. } | Card::Checkpoint(_)) { Some(i) } else { None })\n        .collect();"
 }
@@ -1170,7 +1170,7 @@ id: toolu_01Ed97FoNpJMb4bk9rg3e4H5
 tool_result
 id: toolu_01Ed97FoNpJMb4bk9rg3e4H5
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1184,7 +1184,7 @@ id: toolu_01XmVitXtBVAEMSFpfqwya8A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "                    // Space/Right/Enter: expand ToolRound, collapse via header, or navigate\n                    (KeyCode::Char(' ') | KeyCode::Right | KeyCode::Enter, _) => {\n                        let expand_action = match &selectables[sel] {\n                            Selectable::Card(ci) if matches!(&cards[*ci], Card::ToolRound { .. }) => {\n                                Some((true, *ci))\n                            }\n                            Selectable::ToolHeader(ci) => Some((false, *ci)),\n                            _ => None,\n                        };\n                        if let Some((expand, card_idx)) = expand_action {\n                            if expand { collapsed.remove(&card_idx); } else { collapsed.insert(card_idx); }\n                            let (nf, ns, nst) = build_flat(cards, w, &collapsed);\n                            flat   = nf;\n                            starts = nst;\n                            sel = if expand {\n                                ns.iter().position(|s| *s == Selectable::ToolHeader(card_idx))\n                            } else {\n                                ns.iter().position(|s| *s == Selectable::Card(card_idx))\n                            }.unwrap_or_else(|| sel.min(ns.len().saturating_sub(1)));\n                            selectables = ns;\n                        } else if let Selectable::Card(ci) = &selectables[sel] {\n                            match &cards[*ci] {\n                                Card::RepoLink { dir, .. } => {\n                                    break Ok(PagerOutcome::GoToRepo(dir.clone()));\n                                }\n                                Card::Header { .. } => {\n                                    break Ok(PagerOutcome::GoToSessions);\n                                }\n                                _ => { flash = prev_flash; }\n                            }\n                        } else {\n                            flash = prev_flash;\n                        }\n                    }",
   "new_string": "                    // Space/Right/Enter: expand ToolRound/Checkpoint, collapse via header, or navigate\n                    (KeyCode::Char(' ') | KeyCode::Right | KeyCode::Enter, _) => {\n                        let expand_action = match &selectables[sel] {\n                            Selectable::Card(ci) if matches!(&cards[*ci], Card::ToolRound { .. }) => {\n                                Some((true, *ci, false))\n                            }\n                            Selectable::Card(ci) if matches!(&cards[*ci], Card::Checkpoint(_)) => {\n                                Some((true, *ci, […]
 
@@ -1193,7 +1193,7 @@ id: toolu_01XmVitXtBVAEMSFpfqwya8A
 tool_result
 id: toolu_01XmVitXtBVAEMSFpfqwya8A
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1207,7 +1207,7 @@ id: toolu_013b7MhftFrZ7Ao3jXZJnZSn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "                    (KeyCode::Char('y'), _) | (KeyCode::Char('c'), _) => {\n                        let text = match &selectables[sel] {\n                            Selectable::Card(ci)         => card_text(&cards[*ci]),\n                            Selectable::ToolHeader(ci)   => card_text(&cards[*ci]),\n                            Selectable::ToolCall(ci, ti) => {\n                                if let Card::ToolRound { parts } = &cards[*ci] {\n                                    parts.get(*ti).map_or(String::new(), tool_call_text)\n                                } else { String::new() }\n                            }\n                        };",
   "new_string": "                    (KeyCode::Char('y'), _) | (KeyCode::Char('c'), _) => {\n                        let text = match &selectables[sel] {\n                            Selectable::Card(ci)             => card_text(&cards[*ci]),\n                            Selectable::ToolHeader(ci)       => card_text(&cards[*ci]),\n                            Selectable::CheckpointHeader(ci) => card_text(&cards[*ci]),\n                            Selectable::ToolCall(ci, ti) => {\n                                if let Card::ToolRound { parts } = &cards[*ci] {\n                                    parts.get(*ti).map_or(String::new(), tool_call_text)\n                                } else { String::new() }\n                            }\n                        };"
 }
@@ -1218,7 +1218,7 @@ id: toolu_013b7MhftFrZ7Ao3jXZJnZSn
 tool_result
 id: toolu_013b7MhftFrZ7Ao3jXZJnZSn
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1322,7 +1322,7 @@ id: toolu_01YXpL7LSBYaz4HwDQH5RxpS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "struct InitialAttribution {\n    agent_lines:        i64,\n    human_added:        i64,\n    human_modified:     i64,\n    human_removed:      i64,\n    total_committed:    i64,\n    total_lines_changed: i64,\n    agent_percentage:   f64,\n}",
   "new_string": "struct InitialAttribution {\n    human_added:         i64,\n    human_modified:      i64,\n    human_removed:       i64,\n    total_committed:     i64,\n    total_lines_changed: i64,\n    agent_percentage:    f64,\n}"
 }
@@ -1333,7 +1333,7 @@ id: toolu_01YXpL7LSBYaz4HwDQH5RxpS
 tool_result
 id: toolu_01YXpL7LSBYaz4HwDQH5RxpS
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1343,7 +1343,7 @@ id: toolu_01ULPw8XwoWQZ3AqaBT6DwSZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        let initial_attribution = serde_json::from_str::<serde_json::Value>(&attr_json).ok()\n            .and_then(|v| {\n                Some(InitialAttribution {\n                    agent_lines:         v[\"agent_lines\"].as_i64().unwrap_or(0),\n                    human_added:         v[\"human_added\"].as_i64().unwrap_or(0),\n                    human_modified:      v[\"human_modified\"].as_i64().unwrap_or(0),\n                    human_removed:       v[\"human_removed\"].as_i64().unwrap_or(0),\n                    total_committed:     v[\"total_committed\"].as_i64().unwrap_or(0),\n                    total_lines_changed: v[\"total_lines_changed\"].as_i64().unwrap_or(0),\n                    agent_percentage:    v[\"agent_percentage\"].as_f64().unwrap_or(0.0),\n                })\n            });",
   "new_string": "        let initial_attribution = serde_json::from_str::<serde_json::Value>(&attr_json).ok()\n            .and_then(|v| {\n                Some(InitialAttribution {\n                    human_added:         v[\"human_added\"].as_i64().unwrap_or(0),\n                    human_modified:      v[\"human_modified\"].as_i64().unwrap_or(0),\n                    human_removed:       v[\"human_removed\"].as_i64().unwrap_or(0),\n                    total_committed:     v[\"total_committed\"].as_i64().unwrap_or(0),\n                    total_lines_changed: v[\"total_lines_changed\"].as_i64().unwrap_or(0),\n                    agent_percentage:    v[\"agent_percentage\"].as_f64().unwrap_or(0.0),\n                })\n            });"
 }
@@ -1354,7 +1354,7 @@ id: toolu_01ULPw8XwoWQZ3AqaBT6DwSZ
 tool_result
 id: toolu_01ULPw8XwoWQZ3AqaBT6DwSZ
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1400,8 +1400,8 @@ tool_result
 id: toolu_01XkTfUKtT988yn5Aojd21zC
 ```
     Finished `release` profile [optimized] target(s) in 1m 10s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -1464,7 +1464,7 @@ id: toolu_01JnjWgkNr3DpG8Dd8eUBWQ8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "#[derive(Clone)]\npub(crate) struct CommitAuthor {\n    pub sha: String,\n    pub name: String,\n    pub email: String,\n    pub message: String,\n}",
   "new_string": "#[derive(Clone)]\npub(crate) struct CommitAuthor {\n    pub sha: String,\n    pub name: String,\n    pub email: String,\n}"
 }
@@ -1475,7 +1475,7 @@ id: toolu_01JnjWgkNr3DpG8Dd8eUBWQ8
 tool_result
 id: toolu_01JnjWgkNr3DpG8Dd8eUBWQ8
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1485,7 +1485,7 @@ id: toolu_013FUxinB1ra7D322aL1VQtw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "struct PendingCheckpoint {\n    session_id: String,\n    checkpoint_number: u32,\n    jsonl_path: String,\n    last_turn_ts: String,\n    os_user: Option<String>,\n    direct: Option<CommitAuthor>,\n    // fields from metadata.json\n    turn_id: String,\n    checkpoint_id: String,\n    files_touched_json: String,\n    token_usage_json: String,\n    initial_attribution_json: String,\n    model: String,\n}",
   "new_string": "struct PendingCheckpoint {\n    session_id: String,\n    checkpoint_number: u32,\n    jsonl_path: String,\n    last_turn_ts: String,\n    os_user: Option<String>,\n    direct: Option<CommitAuthor>,\n    // fields from metadata.json\n    turn_id: String,\n    checkpoint_id: String,\n    commit_message: String,\n    files_touched_json: String,\n    token_usage_json: String,\n    initial_attribution_json: String,\n    model: String,\n}"
 }
@@ -1496,7 +1496,7 @@ id: toolu_013FUxinB1ra7D322aL1VQtw
 tool_result
 id: toolu_013FUxinB1ra7D322aL1VQtw
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1510,7 +1510,7 @@ id: toolu_01U88k19iZdxhUf9ashdQY9F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "            \"--format=__COMMIT__%x09%H%x09%an%x09%ae%x09%s\",",
   "new_string": "            \"--format=__COMMIT__%x09%H%x09%an%x09%ae\","
 }
@@ -1521,7 +1521,7 @@ id: toolu_01U88k19iZdxhUf9ashdQY9F
 tool_result
 id: toolu_01U88k19iZdxhUf9ashdQY9F
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1531,7 +1531,7 @@ id: toolu_01PMSiAFJUSwYwQjyrwLVJXK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "        if let Some(rest) = line.strip_prefix(\"__COMMIT__\\t\") {\n            let mut parts = rest.splitn(4, '\\t');\n            let sha     = parts.next().unwrap_or(\"\").to_string();\n            let name    = parts.next().unwrap_or(\"\").to_string();\n            let email   = parts.next().unwrap_or(\"\").to_string();\n            let message = parts.next().unwrap_or(\"\").to_string();\n            current = Some(CommitAuthor { sha, name, email, message });\n            continue;\n        }",
   "new_string": "        if let Some(rest) = line.strip_prefix(\"__COMMIT__\\t\") {\n            let mut parts = rest.splitn(3, '\\t');\n            let sha   = parts.next().unwrap_or(\"\").to_string();\n            let name  = parts.next().unwrap_or(\"\").to_string();\n            let email = parts.next().unwrap_or(\"\").to_string();\n            current = Some(CommitAuthor { sha, name, email });\n            continue;\n        }"
 }
@@ -1542,7 +1542,7 @@ id: toolu_01PMSiAFJUSwYwQjyrwLVJXK
 tool_result
 id: toolu_01PMSiAFJUSwYwQjyrwLVJXK
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1556,7 +1556,7 @@ id: toolu_0114EGV5P7JPinVz62GtLyXa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "pub(crate) fn upsert_checkpoint(",
   "new_string": "/// Search all local branches for a commit whose body contains\n/// `Entire-Checkpoint: <id>` and return its subject line.\nfn find_checkpoint_commit_message(repo_dir: &str, checkpoint_id: &str) -> Option<String> {\n    let grep_pat = format!(\"Entire-Checkpoint: {checkpoint_id}\");\n    let out = Command::new(\"git\")\n        .args([\"log\", \"--all\", &format!(\"--grep={grep_pat}\"), \"--format=%s\", \"-1\"])\n        .current_dir(repo_dir)\n        .output()\n        .ok()?;\n    if !out.status.success() { return None; }\n    let msg = String::from_utf8_lossy(&out.stdout).trim().to_string();\n    if msg.is_empty() { None } else { Some(msg) }\n}\n\npub(crate) fn upsert_checkpoint("
 }
@@ -1567,7 +1567,7 @@ id: toolu_0114EGV5P7JPinVz62GtLyXa
 tool_result
 id: toolu_0114EGV5P7JPinVz62GtLyXa
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1581,7 +1581,7 @@ id: toolu_01UkGSUfWah2AGAb73LdLoLu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "        pending.push(PendingCheckpoint {\n            session_id: parsed.session_id,\n            checkpoint_number,\n            jsonl_path,\n            last_turn_ts: parsed.updated_at,\n            os_user,\n            direct,\n            turn_id: extra.turn_id.unwrap_or_default(),\n            checkpoint_id: extra.checkpoint_id.unwrap_or_default(),\n            files_touched_json,\n            token_usage_json,\n            initial_attribution_json,\n            model: extra.model.unwrap_or_default(),\n        });",
   "new_string": "        let checkpoint_id = extra.checkpoint_id.unwrap_or_default();\n        let commit_message = if checkpoint_id.is_empty() {\n            String::new()\n        } else {\n            find_checkpoint_commit_message(repo_dir, &checkpoint_id).unwrap_or_default()\n        };\n\n        pending.push(PendingCheckpoint {\n            session_id: parsed.session_id,\n            checkpoint_number,\n            jsonl_path,\n            last_turn_ts: parsed.updated_at,\n            os_user,\n            direct,\n            turn_id: extra.turn_id.unwrap_or_default(),\n            checkpoint_id,\n            commit_message,\n            files_touched_json,\n            token_usage_json,\n            initial_attribution_json,\n            model: extra.model.unwrap_or_default(),\n        });"
 }
@@ -1592,7 +1592,7 @@ id: toolu_01UkGSUfWah2AGAb73LdLoLu
 tool_result
 id: toolu_01UkGSUfWah2AGAb73LdLoLu
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1602,7 +1602,7 @@ id: toolu_01D2kf89bEBmxuz3EmfD4SdB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "        let os_user_str = p.os_user.unwrap_or_default();\n        let commit_msg = author.as_ref().map(|a| a.message.as_str()).unwrap_or(\"\");\n        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,\n                          author.as_ref(), &p.last_turn_ts,\n                          &p.jsonl_path, repo_dir, &os_user_str,\n                          commit_msg, &p.turn_id, &p.checkpoint_id,",
   "new_string": "        let os_user_str = p.os_user.unwrap_or_default();\n        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,\n                          author.as_ref(), &p.last_turn_ts,\n                          &p.jsonl_path, repo_dir, &os_user_str,\n                          &p.commit_message, &p.turn_id, &p.checkpoint_id,"
 }
@@ -1613,7 +1613,7 @@ id: toolu_01D2kf89bEBmxuz3EmfD4SdB
 tool_result
 id: toolu_01D2kf89bEBmxuz3EmfD4SdB
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1657,8 +1657,8 @@ id: toolu_01Cvmp9VAZc8yqQx1xSoKUtv
 tool_result
 id: toolu_01Cvmp9VAZc8yqQx1xSoKUtv
 ```
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -1685,7 +1685,7 @@ tool_use Read
 id: toolu_015U9zQBrFeTY5YhhX2UPEAQ
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 207,
   "limit": 50
 }
@@ -1744,7 +1744,7 @@ tool_use Read
 id: toolu_01VfP5ZjmwWQZMey7GKfQWGn
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 390,
   "limit": 80
 }
@@ -1799,7 +1799,7 @@ tool_use Read
 id: toolu_011n67rjGmrf3cyTKvCQh72q
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 470,
   "limit": 40
 }
@@ -1867,7 +1867,7 @@ id: toolu_01MZjvZzznPzRZNU7Ffhgd1Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "struct PendingCheckpoint {\n    session_id: String,\n    checkpoint_number: u32,\n    jsonl_path: String,\n    last_turn_ts: String,\n    os_user: Option<String>,\n    direct: Option<CommitAuthor>,\n    // fields from metadata.json\n    turn_id: String,\n    checkpoint_id: String,\n    commit_message: String,\n    files_touched_json: String,\n    token_usage_json: String,\n    initial_attribution_json: String,\n    model: String,\n}",
   "new_string": "struct PendingCheckpoint {\n    session_id: String,\n    checkpoint_number: u32,\n    jsonl_path: String,\n    last_turn_ts: String,\n    os_user: Option<String>,\n    direct: Option<CommitAuthor>,\n    // fields from metadata.json\n    branch: String,\n    turn_id: String,\n    checkpoint_id: String,\n    files_touched_json: String,\n    token_usage_json: String,\n    initial_attribution_json: String,\n    model: String,\n}"
 }
@@ -1878,7 +1878,7 @@ id: toolu_01MZjvZzznPzRZNU7Ffhgd1Q
 tool_result
 id: toolu_01MZjvZzznPzRZNU7Ffhgd1Q
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1892,7 +1892,7 @@ id: toolu_0196q1NbeLGvcEJRUNxcGRBr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "/// Search all local branches for a commit whose body contains\n/// `Entire-Checkpoint: <id>` and return its subject line.\nfn find_checkpoint_commit_message(repo_dir: &str, checkpoint_id: &str) -> Option<String> {\n    let grep_pat = format!(\"Entire-Checkpoint: {checkpoint_id}\");\n    let out = Command::new(\"git\")\n        .args([\"log\", \"--all\", &format!(\"--grep={grep_pat}\"), \"--format=%s\", \"-1\"])\n        .current_dir(repo_dir)\n        .output()\n        .ok()?;\n    if !out.status.success() { return None; }\n    let msg = String::from_utf8_lossy(&out.stdout).trim().to_string();\n    if msg.is_empty() { None } else { Some(msg) }\n}",
   "new_string": "/// Walk every commit on `branch` once, extract commits that have an\n/// `Entire-Checkpoint: <id>` trailer line, and return a map from\n/// checkpoint_id → (commit_sha, commit_message) where commit_message is the\n/// full commit body with the trailer line stripped.\nfn build_branch_checkpoint_map(repo_dir: &str, branch: &str) -> HashMap<String, (String, String)> {\n    let out = Command::new(\"git\")\n        .args([\"log\", branch, \"--format=--GOSSAMER--%n%H%n%B\"])\n        .current_dir(repo_dir)\n        .output();\n    let Ok(out) = out else { return HashMap::new(); };\n    if !out.status.success() { return HashMap::new(); }\n\n    let text = String::from_utf8_lossy(&out.stdout);\n    let mut map = HashMap::new();\n    let mut sha = String::new();\n    let mut body: Vec<&str> = Vec::new();\n    let mut phase = 0u8; // 0=pre, 1=sha, 2=body\n\n    for line in text.lines() {\n        if line == \"--GOSSAMER--\" {\n            if phase == 2 && !sha.is_empty() {\n                if let Some((id, msg)) = extract_checkpoint_commit(&body) {\n                    map.insert(id, (sha.clone(), msg));\n                }\n […]
 
@@ -1901,7 +1901,7 @@ id: toolu_0196q1NbeLGvcEJRUNxcGRBr
 tool_result
 id: toolu_0196q1NbeLGvcEJRUNxcGRBr
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1915,7 +1915,7 @@ id: toolu_01To7bmuYWRCMMXHNkkdGRX4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "pub(crate) fn upsert_checkpoint(\n    conn: &rusqlite::Connection,\n    session_id: &str,\n    checkpoint_number: u32,\n    author: Option<&CommitAuthor>,\n    last_turn_ts: &str,\n    jsonl_path: &str,\n    repo_dir: &str,\n    os_user: &str,\n    commit_message: &str,\n    turn_id: &str,\n    checkpoint_id: &str,\n    files_touched: &str,\n    token_usage: &str,\n    initial_attribution: &str,\n    model: &str,\n) -> Result<()> {\n    let (sha, name, email) = author\n        .map(|a| (a.sha.as_str(), a.name.as_str(), a.email.as_str()))\n        .unwrap_or((\"\", \"\", \"\"));",
   "new_string": "pub(crate) fn upsert_checkpoint(\n    conn: &rusqlite::Connection,\n    session_id: &str,\n    checkpoint_number: u32,\n    commit_sha: &str,\n    author: Option<&CommitAuthor>,\n    last_turn_ts: &str,\n    jsonl_path: &str,\n    repo_dir: &str,\n    os_user: &str,\n    commit_message: &str,\n    turn_id: &str,\n    checkpoint_id: &str,\n    files_touched: &str,\n    token_usage: &str,\n    initial_attribution: &str,\n    model: &str,\n) -> Result<()> {\n    let (name, email) = author\n        .map(|a| (a.name.as_str(), a.email.as_str()))\n        .unwrap_or((\"\", \"\"));\n    let sha = commit_sha;"
 }
@@ -1926,7 +1926,7 @@ id: toolu_01To7bmuYWRCMMXHNkkdGRX4
 tool_result
 id: toolu_01To7bmuYWRCMMXHNkkdGRX4
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1940,7 +1940,7 @@ id: toolu_01PCGGssfS4ZHYNJiiD2yR33
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "        let checkpoint_id = extra.checkpoint_id.unwrap_or_default();\n        let commit_message = if checkpoint_id.is_empty() {\n            String::new()\n        } else {\n            find_checkpoint_commit_message(repo_dir, &checkpoint_id).unwrap_or_default()\n        };\n\n        pending.push(PendingCheckpoint {\n            session_id: parsed.session_id,\n            checkpoint_number,\n            jsonl_path,\n            last_turn_ts: parsed.updated_at,\n            os_user,\n            direct,\n            turn_id: extra.turn_id.unwrap_or_default(),\n            checkpoint_id,\n            commit_message,\n            files_touched_json,\n            token_usage_json,\n            initial_attribution_json,\n            model: extra.model.unwrap_or_default(),\n        });",
   "new_string": "        pending.push(PendingCheckpoint {\n            session_id: parsed.session_id,\n            checkpoint_number,\n            jsonl_path,\n            last_turn_ts: parsed.updated_at,\n            os_user,\n            direct,\n            branch: parsed.branch,\n            turn_id: extra.turn_id.unwrap_or_default(),\n            checkpoint_id: extra.checkpoint_id.unwrap_or_default(),\n            files_touched_json,\n            token_usage_json,\n            initial_attribution_json,\n            model: extra.model.unwrap_or_default(),\n        });"
 }
@@ -1951,7 +1951,7 @@ id: toolu_01PCGGssfS4ZHYNJiiD2yR33
 tool_result
 id: toolu_01PCGGssfS4ZHYNJiiD2yR33
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1965,7 +1965,7 @@ id: toolu_01DbESmNrbJfw25HNnWwcSZg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "    let mut count = pending.len();\n\n    // Pass 2: resolve authors and persist. A merge-only session inherits\n    // the author we learned from another session sharing its os_user.\n    for p in pending {\n        let author = p.direct.or_else(|| {\n            p.os_user.as_ref().and_then(|u| os_user_authors.get(u).cloned())\n        });\n        let os_user_str = p.os_user.unwrap_or_default();\n        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,\n                          author.as_ref(), &p.last_turn_ts,\n                          &p.jsonl_path, repo_dir, &os_user_str,\n                          &p.commit_message, &p.turn_id, &p.checkpoint_id,\n                          &p.files_touched_json, &p.token_usage_json,\n                          &p.initial_attribution_json, &p.model)?;\n    }",
   "new_string": "    let mut count = pending.len();\n\n    // Build checkpoint_id → (commit_sha, commit_message) by walking each unique\n    // branch once. A single git-log call per branch covers all checkpoints on it.\n    let mut cp_commit_map: HashMap<String, (String, String)> = HashMap::new();\n    {\n        let mut seen: std::collections::HashSet<String> = std::collections::HashSet::new();\n        for p in &pending {\n            if !p.branch.is_empty() && seen.insert(p.branch.clone()) {\n                cp_commit_map.extend(build_branch_checkpoint_map(repo_dir, &p.branch));\n            }\n        }\n    }\n\n    // Pass 2: resolve authors and persist. A merge-only session inherits\n    // the author we learned from another session sharing its os_user.\n    for p in pending {\n        let author = p.direct.or_else(|| {\n            p.os_user.as_ref().and_then(|u| os_user_authors.get(u).cloned())\n        });\n        let os_user_str = p.os_user.unwrap_or_default();\n\n        // Prefer the working-branch commit SHA; fall back to checkpoint-branch SHA.\n        let (branch_sha, commit_message) = cp_commit_map\n            .get(&p.checkpoint_id)\n            .map(|(s, m)| (s.as_str(), m.as_str()))\n            .unwrap_or((\"\", \"\"));\n        let effective_sha = if !branch_sha.is_empty() […]
 
@@ -1974,7 +1974,7 @@ id: toolu_01DbESmNrbJfw25HNnWwcSZg
 tool_result
 id: toolu_01DbESmNrbJfw25HNnWwcSZg
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2018,8 +2018,8 @@ id: toolu_01HvBXrLNWris1feKRxYQ1Kq
 tool_result
 id: toolu_01HvBXrLNWris1feKRxYQ1Kq
 ```
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -2073,11 +2073,11 @@ id: toolu_01NfERCkQiwyUHsn9HEQvrQc
 tool_result
 id: toolu_01NfERCkQiwyUHsn9HEQvrQc
 ```
-9460bd76-f136-474b-ae9c-a2aa01c8e506|||master|/Users/stephanostsoucas/p/gossamer
-ea51e32f-463d-4329-bee0-2d518c9765c6|||master|/Users/stephanostsoucas/p/gossamer
-3983cf6f-f447-4a1c-9716-ba5d032d4cc0|||HEAD|/Users/stephanostsoucas/p/gossamer
-8fd17122-a13e-4160-b8cc-a79374932bb2|||master|/Users/stephanostsoucas/p/gossamer
-73e81e02-3a57-4c37-9973-abd8dd70186f|||gossamer-handoff|/Users/stephanostsoucas/p/gossamer
+9460bd76-f136-474b-ae9c-a2aa01c8e506|||master|/home/<USER>/p/gossamer
+ea51e32f-463d-4329-bee0-2d518c9765c6|||master|/home/<USER>/p/gossamer
+3983cf6f-f447-4a1c-9716-ba5d032d4cc0|||HEAD|/home/<USER>/p/gossamer
+8fd17122-a13e-4160-b8cc-a79374932bb2|||master|/home/<USER>/p/gossamer
+73e81e02-3a57-4c37-9973-abd8dd70186f|||gossamer-handoff|/home/<USER>/p/gossamer
 ```
 
 > AGENT
@@ -2090,7 +2090,7 @@ tool_use Bash
 id: toolu_01RLzsibWG3XbmKgEPCX2cpt
 ```json
 {
-  "command": "cd /Users/stephanostsoucas/p/gossamer && git ls-tree -r --name-only entire/checkpoints/v1 | grep metadata.json | head -5",
+  "command": "cd /home/<USER>/p/gossamer && git ls-tree -r --name-only entire/checkpoints/v1 | grep metadata.json | head -5",
   "description": "List metadata.json files in checkpoint branch"
 }
 ```
@@ -2105,7 +2105,7 @@ id: toolu_01RLzsibWG3XbmKgEPCX2cpt
 01/55c5620dad/metadata.json
 10/0383e49cb3/0/metadata.json
 10/0383e49cb3/metadata.json
-Shell cwd was reset to /Users/stephanostsoucas/p/gossamer-checkpoints-visualization
+Shell cwd was reset to /home/<USER>/p/gossamer-checkpoints-visualization
 ```
 
 > TOOL
@@ -2114,7 +2114,7 @@ tool_use Bash
 id: toolu_0147E1TJ9yzdn6S6QBQkc85D
 ```json
 {
-  "command": "cd /Users/stephanostsoucas/p/gossamer && git show entire/checkpoints/v1:01/55c5620dad/0/metadata.json",
+  "command": "cd /home/<USER>/p/gossamer && git show entire/checkpoints/v1:01/55c5620dad/0/metadata.json",
   "description": "Show a checkpoint metadata.json"
 }
 ```
@@ -2173,7 +2173,7 @@ id: toolu_0147E1TJ9yzdn6S6QBQkc85D
     "metric_version": 2
   }
 }
-Shell cwd was reset to /Users/stephanostsoucas/p/gossamer-checkpoints-visualization
+Shell cwd was reset to /home/<USER>/p/gossamer-checkpoints-visualization
 ```
 
 > AGENT
@@ -2186,7 +2186,7 @@ tool_use Bash
 id: toolu_01GYfRDonqz5Wf3Ey6gTqgLf
 ```json
 {
-  "command": "cd /Users/stephanostsoucas/p/gossamer && git log master --grep=\"Entire-Checkpoint\" --format=\"%H %s\" | head -5",
+  "command": "cd /home/<USER>/p/gossamer && git log master --grep=\"Entire-Checkpoint\" --format=\"%H %s\" | head -5",
   "description": "Look for Entire-Checkpoint commits on master"
 }
 ```
@@ -2201,7 +2201,7 @@ f0f0bd7aa4c093faddb42ceae7bac6107c917a4b Fix repo resolution logic to look at gi
 eb9eca457bce5cc1c9c2cf7416a0e1fc5c555327 More consistent navigation between screens. Also updated the menu options to be consistent between screens
 bcfcf8a1ab980d213c1e740a6a70ac56dfd872b0 Update colors for users.
 e8ea0aa5f4aaf66997b640fe20b38becc277cf1a Refactor sessions lists to have shared code. Refactor how we index sessions to show multiple users.
-Shell cwd was reset to /Users/stephanostsoucas/p/gossamer-checkpoints-visualization
+Shell cwd was reset to /home/<USER>/p/gossamer-checkpoints-visualization
 ```
 
 > TOOL
@@ -2210,7 +2210,7 @@ tool_use Bash
 id: toolu_01FMKaPzEggndah8p8LCvg69
 ```json
 {
-  "command": "cd /Users/stephanostsoucas/p/gossamer && git log master --format=\"%H%n%B\" | grep -A1 \"Entire-Checkpoint\" | head -20",
+  "command": "cd /home/<USER>/p/gossamer && git log master --format=\"%H%n%B\" | grep -A1 \"Entire-Checkpoint\" | head -20",
   "description": "Find the actual Entire-Checkpoint trailer lines on master"
 }
 ```
@@ -2239,7 +2239,7 @@ Entire-Checkpoint: 871c3a3351dd
 
 --
 Entire-Checkpoint: b30ead5202be
-Shell cwd was reset to /Users/stephanostsoucas/p/gossamer-checkpoints-visualization
+Shell cwd was reset to /home/<USER>/p/gossamer-checkpoints-visualization
 ```
 
 > TOOL
@@ -2248,7 +2248,7 @@ tool_use Bash
 id: toolu_0194RY3SJ6MBU8obhmJWcBQU
 ```json
 {
-  "command": "cd /Users/stephanostsoucas/p/gossamer && git log master --format=\"%H%n%B\" | grep \"Entire-Checkpoint: 0155c5620dad\"",
+  "command": "cd /home/<USER>/p/gossamer && git log master --format=\"%H%n%B\" | grep \"Entire-Checkpoint: 0155c5620dad\"",
   "description": "Check if checkpoint 0155c5620dad appears in master"
 }
 ```
@@ -2259,7 +2259,7 @@ tool_result
 id: toolu_0194RY3SJ6MBU8obhmJWcBQU
 ```
 Entire-Checkpoint: 0155c5620dad
-Shell cwd was reset to /Users/stephanostsoucas/p/gossamer-checkpoints-visualization
+Shell cwd was reset to /home/<USER>/p/gossamer-checkpoints-visualization
 ```
 
 > AGENT
@@ -2322,7 +2322,7 @@ tool_use Bash
 id: toolu_019s6KMD74hBiP6ZLfy1dQ7B
 ```json
 {
-  "command": "cd /Users/stephanostsoucas/p/gossamer && git log master --format=\"--GOSSAMER--%n%H%n%B\" | grep -A3 \"Entire-Checkpoint: 0155c5620dad\" | head -10",
+  "command": "cd /home/<USER>/p/gossamer && git log master --format=\"--GOSSAMER--%n%H%n%B\" | grep -A3 \"Entire-Checkpoint: 0155c5620dad\" | head -10",
   "description": "Verify the git log format we use actually captures the trailer"
 }
 ```
@@ -2336,7 +2336,7 @@ Entire-Checkpoint: 0155c5620dad
 
 --GOSSAMER--
 3c8ad40024be2e48b7307c644d457f3288356645
-Shell cwd was reset to /Users/stephanostsoucas/p/gossamer-checkpoints-visualization
+Shell cwd was reset to /home/<USER>/p/gossamer-checkpoints-visualization
 ```
 
 > AGENT
@@ -2383,7 +2383,7 @@ tool_use Bash
 id: toolu_01Jm4HjqDcDCLZouZZzrLxZk
 ```json
 {
-  "command": "ls -la ~/.cargo/bin/gossamer && ls -la /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target/release/gossamer",
+  "command": "ls -la ~/.cargo/bin/gossamer && ls -la /home/<USER>/p/gossamer-checkpoints-visualization/target/release/gossamer",
   "description": "Check binary timestamps"
 }
 ```
@@ -2393,8 +2393,8 @@ id: toolu_01Jm4HjqDcDCLZouZZzrLxZk
 tool_result
 id: toolu_01Jm4HjqDcDCLZouZZzrLxZk
 ```
--rwxr-xr-x@ 1 stephanostsoucas  staff  13284496 Jun 13 01:32 /Users/stephanostsoucas/.cargo/bin/gossamer
--rwxr-xr-x@ 1 stephanostsoucas  staff  13288048 Jun 13 02:33 /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target/release/gossamer
+-rwxr-xr-x@ 1 stephanostsoucas  staff  13284496 Jun 13 01:32 /home/<USER>/.cargo/bin/gossamer
+-rwxr-xr-x@ 1 stephanostsoucas  staff  13288048 Jun 13 02:33 /home/<USER>/p/gossamer-checkpoints-visualization/target/release/gossamer
 ```
 
 > AGENT
@@ -2407,7 +2407,7 @@ tool_use Bash
 id: toolu_014f6whMowjfRwqvp2MDKQse
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | tail -3",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | tail -3",
   "description": "Reinstall gossamer from checkpoints-visualization repo",
   "timeout": 120000
 }
@@ -2419,8 +2419,8 @@ tool_result
 id: toolu_014f6whMowjfRwqvp2MDKQse
 ```
     Finished `release` profile [optimized] target(s) in 2.12s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > TOOL
@@ -2462,7 +2462,7 @@ Checkpoint data is now populating correctly. The installed binary was stale — 
 
 > TOOL
 
-<bash-stdout>/Users/stephanostsoucas/p/gossamer-checkpoints-visualization</bash-stdout><bash-stderr></bash-stderr>
+<bash-stdout>/home/<USER>/p/gossamer-checkpoints-visualization</bash-stdout><bash-stderr></bash-stderr>
 
 > DEVELOPER
 
@@ -2561,7 +2561,7 @@ tool_use Bash
 id: toolu_01XXgXiKaTvUcyvYVhyfuZwm
 ```json
 {
-  "command": "grep -n \"<<<<<<\\|=======\\|>>>>>>>\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "command": "grep -n \"<<<<<<\\|=======\\|>>>>>>>\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "description": "Find all conflict markers"
 }
 ```
@@ -2582,7 +2582,7 @@ tool_use Read
 id: toolu_01HtgYq4UREVgGLsKXyqUXck
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 258,
   "limit": 125
 }
@@ -2659,7 +2659,7 @@ id: toolu_017NSNAPDpVJ8VJgj71rkstQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "<<<<<<< Updated upstream\nfn git_config_user(cwd: &str) -> Option<String> {\n    for key in [\"user.name\", \"user.email\"] {\n        let mut cmd = std::process::Command::new(\"git\");\n        cmd.args([\"config\", key]);\n        if !cwd.is_empty() && std::path::Path::new(cwd).exists() {\n            cmd.current_dir(cwd);\n        }\n        if let Some(s) = cmd.output().ok()\n            .filter(|o| o.status.success())\n            .and_then(|o| String::from_utf8(o.stdout).ok())\n            .map(|s| s.trim().to_string())\n            .filter(|s| !s.is_empty())\n        {\n            return Some(s);\n        }\n    }\n    None\n=======\nfn fetch_checkpoints(session_id: &str) -> Vec<CheckpointData> {",
   "new_string": "fn git_config_user(cwd: &str) -> Option<String> {\n    for key in [\"user.name\", \"user.email\"] {\n        let mut cmd = std::process::Command::new(\"git\");\n        cmd.args([\"config\", key]);\n        if !cwd.is_empty() && std::path::Path::new(cwd).exists() {\n            cmd.current_dir(cwd);\n        }\n        if let Some(s) = cmd.output().ok()\n            .filter(|o| o.status.success())\n            .and_then(|o| String::from_utf8(o.stdout).ok())\n            .map(|s| s.trim().to_string())\n            .filter(|s| !s.is_empty())\n        {\n            return Some(s);\n        }\n    }\n    None\n}\n\nfn fetch_checkpoints(session_id: &str) -> Vec<CheckpointData> {"
 }
@@ -2670,7 +2670,7 @@ id: toolu_017NSNAPDpVJ8VJgj71rkstQ
 tool_result
 id: toolu_017NSNAPDpVJ8VJgj71rkstQ
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2684,7 +2684,7 @@ id: toolu_01UH2E3LjFns826hso6yhP1m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        cards.insert(insert_at, Card::Checkpoint(cp));\n    }\n>>>>>>> Stashed changes\n}\n\nfn find_session(id: &str) -> Option<PathBuf> {",
   "new_string": "        cards.insert(insert_at, Card::Checkpoint(cp));\n    }\n}\n\nfn find_session(id: &str) -> Option<PathBuf> {"
 }
@@ -2695,7 +2695,7 @@ id: toolu_01UH2E3LjFns826hso6yhP1m
 tool_result
 id: toolu_01UH2E3LjFns826hso6yhP1m
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2725,7 +2725,7 @@ tool_use Bash
 id: toolu_018Pvc1CL6Wp934PANWz9Z1V
 ```json
 {
-  "command": "grep -n \"fn visible_width\\|fn render_checkpoint\\|fn fmt_num\\|use super::agent_color\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -20",
+  "command": "grep -n \"fn visible_width\\|fn render_checkpoint\\|fn fmt_num\\|use super::agent_color\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -20",
   "description": "Check if rendering helpers are still present"
 }
 ```
@@ -2748,7 +2748,7 @@ tool_use Bash
 id: toolu_01Hmap9TQKF4VdTe9QjJyjqj
 ```json
 {
-  "command": "grep -n \"fn visible_width\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "command": "grep -n \"fn visible_width\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "description": "Find where visible_width is defined"
 }
 ```
@@ -2869,7 +2869,7 @@ tool_use Read
 id: toolu_017tSR6bB1abPM1ioxkaexah
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 768,
   "limit": 20
 }
@@ -2909,7 +2909,7 @@ id: toolu_0116MMqa1eBqunYAkEon2Z8L
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "// ── Rendering ─────────────────────────────────────────────────────────────────\n\nuse super::agent_color;\n\nfn fmt_num(n: i64) -> String {",
   "new_string": "// ── Rendering ─────────────────────────────────────────────────────────────────\n\nuse super::agent_color;\n\nfn visible_width(s: &str) -> usize {\n    let mut w = 0usize;\n    let mut chars = s.chars().peekable();\n    while let Some(c) = chars.next() {\n        if c == '\\x1b' {\n            for nc in chars.by_ref() {\n                if nc.is_ascii_alphabetic() { break; }\n            }\n        } else {\n            w += 1;\n        }\n    }\n    w\n}\n\nfn fmt_num(n: i64) -> String {"
 }
@@ -2920,7 +2920,7 @@ id: toolu_0116MMqa1eBqunYAkEon2Z8L
 tool_result
 id: toolu_0116MMqa1eBqunYAkEon2Z8L
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3005,7 +3005,7 @@ tool_use Read
 id: toolu_01KTBic2769icDZnAxLrPJZt
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 800,
   "limit": 100
 }
@@ -3073,7 +3073,7 @@ tool_use Read
 id: toolu_01UPpA3f1mVQZwkAZuYuGAjG
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "offset": 36,
   "limit": 55
 }
@@ -3125,7 +3125,7 @@ tool_use Read
 id: toolu_01TD2rVW1CWnyYGAKxzWcvZ4
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "offset": 92,
   "limit": 75
 }
@@ -3173,7 +3173,7 @@ id: toolu_01J2H4Vtf1L9ns1RzSb61Trd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "// Background\nconst BG_BRIGHT_BLACK: &str = \"100\"; // dark gray bg — visible selection on both dark and light\n\n// Bold + color composites (bold attribute + standard color in one SGR string)\nconst BOLD_YELLOW: &str = \"1;33\";\nconst BOLD_BLUE:   &str = \"1;34\";\nconst BOLD_RED:    &str = \"1;31\";\nconst BOLD_WHITE:  &str = \"1;97\";\nconst BOLD_BLACK:  &str = \"1;30\";",
   "new_string": "// Background\nconst BG_GREEN:       &str = \"42\";   // standard green background\nconst BG_BRIGHT_BLACK: &str = \"100\"; // dark gray bg — visible selection on both dark and light\n\n// Bold + color composites (bold attribute + standard color in one SGR string)\nconst BOLD_YELLOW:       &str = \"1;33\";\nconst BOLD_BLUE:         &str = \"1;34\";\nconst BOLD_RED:          &str = \"1;31\";\nconst BOLD_WHITE:        &str = \"1;97\";\nconst BOLD_BLACK:        &str = \"1;30\";\nconst BOLD_BRIGHT_GREEN: &str = \"1;92\";"
 }
@@ -3184,7 +3184,7 @@ id: toolu_01J2H4Vtf1L9ns1RzSb61Trd
 tool_result
 id: toolu_01J2H4Vtf1L9ns1RzSb61Trd
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3194,7 +3194,7 @@ id: toolu_01Ah4Dm7CU6K2pf8xcL6kMEE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "    /// Non-error tool result — magenta/purple\n    pub tool_ok: &'static str,\n    /// Bold tidy panel warning title — red\n    pub tidy_warn: &'static str,",
   "new_string": "    /// Non-error tool result — magenta/purple\n    pub tool_ok: &'static str,\n    /// Bold tidy panel warning title — red\n    pub tidy_warn: &'static str,\n\n    // ── Checkpoint row ────────────────────────────────────────────────────────\n    /// Full-width background for checkpoint rows\n    pub checkpoint_bg:    &'static str,\n    /// \"checkpoint\" label text (bold, reads as light green on the bg)\n    pub checkpoint_label: &'static str,\n    /// Commit message and checkpoint number\n    pub checkpoint_text:  &'static str,\n    /// Dimmed metadata: short ID, timestamp\n    pub checkpoint_dim:   &'static str,"
 }
@@ -3205,7 +3205,7 @@ id: toolu_01Ah4Dm7CU6K2pf8xcL6kMEE
 tool_result
 id: toolu_01Ah4Dm7CU6K2pf8xcL6kMEE
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3215,7 +3215,7 @@ id: toolu_01Agy3Ln36MJVr214gCogx1g
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "        tool_ok:        MAGENTA,          // magenta — non-error tool result\n        tidy_warn:      \"1;91\",           // bold bright red — destructive action warning\n        md_code:        Color::Cyan,",
   "new_string": "        tool_ok:          MAGENTA,          // magenta — non-error tool result\n        tidy_warn:        \"1;91\",           // bold bright red — destructive action warning\n        checkpoint_bg:    BG_GREEN,         // standard green background\n        checkpoint_label: BOLD_BRIGHT_GREEN, // bold bright green — \"light green on green\"\n        checkpoint_text:  BRIGHT_WHITE,     // near-white — commit message, number\n        checkpoint_dim:   WHITE,            // color-7 — short ID, timestamp\n        md_code:        Color::Cyan,"
 }
@@ -3226,7 +3226,7 @@ id: toolu_01Agy3Ln36MJVr214gCogx1g
 tool_result
 id: toolu_01Agy3Ln36MJVr214gCogx1g
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3236,7 +3236,7 @@ id: toolu_01CXUeqmn7cGQ5LFPmmgMFK7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "        tool_ok:        MAGENTA,          // same\n        tidy_warn:      BOLD_RED,         // bold red\n        md_code:        Color::DarkCyan,",
   "new_string": "        tool_ok:          MAGENTA,          // same\n        tidy_warn:        BOLD_RED,         // bold red\n        checkpoint_bg:    BG_GREEN,         // same green — standard green on light terminals\n        checkpoint_label: BOLD_WHITE,       // bold white — readable on green bg in light theme\n        checkpoint_text:  BLACK,            // black — best contrast on green bg\n        checkpoint_dim:   BRIGHT_BLACK,     // dark gray — dimmed metadata on green bg\n        md_code:        Color::DarkCyan,"
 }
@@ -3247,7 +3247,7 @@ id: toolu_01CXUeqmn7cGQ5LFPmmgMFK7
 tool_result
 id: toolu_01CXUeqmn7cGQ5LFPmmgMFK7
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3261,7 +3261,7 @@ id: toolu_01MLRHuVmmRvDZ66kJyP6WbC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "fn render_checkpoint_header(cp: &CheckpointData, expanded: bool, term_w: usize) -> String {\n    let arrow = if expanded { \"▾\" } else { \"▸\" };\n    let short_id = if cp.checkpoint_id.len() >= 8 {\n        &cp.checkpoint_id[..8]\n    } else {\n        cp.checkpoint_id.as_str()\n    };\n    let msg = if cp.commit_message.is_empty() {\n        String::new()\n    } else {\n        format!(\"  {}\", cp.commit_message)\n    };\n    let ts_part = if !cp.last_turn_ts.is_empty() {\n        format!(\"  \\x1b[37m{}\\x1b[0m\\x1b[42m\", rel_time(&cp.last_turn_ts))\n    } else {\n        String::new()\n    };\n    let id_part = if short_id.is_empty() {\n        String::new()\n    } else {\n        format!(\"  \\x1b[37m{short_id}\\x1b[0m\\x1b[42m\")\n    };\n\n    // Content (visible chars only, no ANSI) for padding calculation.\n    let content = format!(\n        \"  {arrow} \\x1b[1;92mcheckpoint\\x1b[0m\\x1b[42m #{}{id_part}\\x1b[97m{msg}\\x1b[0m\\x1b[42m{ts_part}\",\n        cp.number,\n    );\n    let vis = visible_width(&content);\n    let pad = term_w.saturating_sub(vis);\n    format!(\"\\x1b[42m{content}{}\\x1b[0m\", \" \".repeat(pad))\n}",
   "new_string": "fn render_checkpoint_header(cp: &CheckpointData, expanded: bool, term_w: usize) -> String {\n    let t = crate::theme::get();\n    let arrow = if expanded { \"▾\" } else { \"▸\" };\n    let short_id = if cp.checkpoint_id.len() >= 8 {\n        &cp.checkpoint_id[..8]\n    } else {\n        cp.checkpoint_id.as_str()\n    };\n    let msg = if cp.commit_message.is_empty() {\n        String::new()\n    } else {\n        format!(\"  {}\", cp.commit_message)\n    };\n    let ts_part = if !cp.last_turn_ts.is_empty() {\n        format!(\"  \\x1b[{cd}m{}\\x1b[0m\\x1b[{bg}m\", rel_time(&cp.last_turn_ts),\n            cd = t.checkpoint_dim, bg = t.checkpoint_bg)\n    } else {\n        String::new()\n    };\n    let id_part = if short_id.is_empty() {\n […]
 
@@ -3270,7 +3270,7 @@ id: toolu_01MLRHuVmmRvDZ66kJyP6WbC
 tool_result
 id: toolu_01MLRHuVmmRvDZ66kJyP6WbC
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3303,7 +3303,7 @@ tool_use Bash
 id: toolu_01X1Y8Nvk1LntT73LMiWCDsV
 ```json
 {
-  "command": "grep -n '\\\\x1b\\[' /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | grep -E \"42m|92m|97m|37m\" | grep -v \"checkpoint_\\|{bg}\\|{cl}\\|{ct}\\|{cd}\"",
+  "command": "grep -n '\\\\x1b\\[' /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | grep -E \"42m|92m|97m|37m\" | grep -v \"checkpoint_\\|{bg}\\|{cl}\\|{ct}\\|{cd}\"",
   "description": "Check for any remaining hardcoded checkpoint color codes"
 }
 ```
@@ -3356,7 +3356,7 @@ id: toolu_015vMkWyFmdVpygE9n5r4456
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "const BG_GREEN:       &str = \"42\";   // standard green background\nconst BG_BRIGHT_BLACK: &str = \"100\"; // dark gray bg — visible selection on both dark and light",
   "new_string": "const BG_BRIGHT_GREEN: &str = \"102\";  // bright/intense green background\nconst BG_BRIGHT_BLACK: &str = \"100\"; // dark gray bg — visible selection on both dark and light"
 }
@@ -3367,7 +3367,7 @@ id: toolu_015vMkWyFmdVpygE9n5r4456
 tool_result
 id: toolu_015vMkWyFmdVpygE9n5r4456
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3377,7 +3377,7 @@ id: toolu_01ENrvFznLKQ9mv4PcETJEPn
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "checkpoint_bg:    BG_GREEN,",
   "new_string": "checkpoint_bg:    BG_BRIGHT_GREEN,"
 }
@@ -3388,7 +3388,7 @@ id: toolu_01ENrvFznLKQ9mv4PcETJEPn
 tool_result
 id: toolu_01ENrvFznLKQ9mv4PcETJEPn
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3426,7 +3426,7 @@ id: toolu_01VQN66HbMSXYQH8XMUQGo9M
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "const BG_BRIGHT_GREEN: &str = \"102\";  // bright/intense green background\nconst BG_BRIGHT_BLACK: &str = \"100\"; // dark gray bg — visible selection on both dark and light",
   "new_string": "const BG_GREEN:        &str = \"42\";   // standard (dark) green background\nconst BG_BRIGHT_GREEN: &str = \"102\";  // bright/intense green background\nconst BG_BRIGHT_BLACK: &str = \"100\"; // dark gray bg — visible selection on both dark and light"
 }
@@ -3437,7 +3437,7 @@ id: toolu_01VQN66HbMSXYQH8XMUQGo9M
 tool_result
 id: toolu_01VQN66HbMSXYQH8XMUQGo9M
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3451,7 +3451,7 @@ id: toolu_01YMN1GcrBY35s3LSQa8RCFm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "        checkpoint_bg:    BG_BRIGHT_GREEN,         // standard green background\n        checkpoint_label: BOLD_BRIGHT_GREEN, // bold bright green — \"light green on green\"\n        checkpoint_text:  BRIGHT_WHITE,     // near-white — commit message, number\n        checkpoint_dim:   WHITE,            // color-7 — short ID, timestamp",
   "new_string": "        checkpoint_bg:    BG_GREEN,          // dark green background — good contrast with bright text\n        checkpoint_label: BOLD_BRIGHT_GREEN, // bold bright green — \"light green on dark green\"\n        checkpoint_text:  BRIGHT_WHITE,      // near-white — commit message, number\n        checkpoint_dim:   WHITE,             // color-7 — short ID, timestamp"
 }
@@ -3462,7 +3462,7 @@ id: toolu_01YMN1GcrBY35s3LSQa8RCFm
 tool_result
 id: toolu_01YMN1GcrBY35s3LSQa8RCFm
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3472,7 +3472,7 @@ id: toolu_01Qd5Pae9usqFqy3eyLMfjgh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "        checkpoint_bg:    BG_BRIGHT_GREEN,         // same green — standard green on light terminals\n        checkpoint_label: BOLD_WHITE,       // bold white — readable on green bg in light theme\n        checkpoint_text:  BLACK,            // black — best contrast on green bg\n        checkpoint_dim:   BRIGHT_BLACK,     // dark gray — dimmed metadata on green bg",
   "new_string": "        checkpoint_bg:    BG_BRIGHT_GREEN,   // bright green background for light terminals\n        checkpoint_label: BOLD_BLACK,       // bold black — best contrast on bright green bg\n        checkpoint_text:  BLACK,            // black — best contrast on bright green bg\n        checkpoint_dim:   BRIGHT_BLACK,     // dark gray — dimmed metadata on bright green bg"
 }
@@ -3483,7 +3483,7 @@ id: toolu_01Qd5Pae9usqFqy3eyLMfjgh
 tool_result
 id: toolu_01Qd5Pae9usqFqy3eyLMfjgh
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3492,7 +3492,7 @@ tool_use Bash
 id: toolu_01EdFVKudFQYeBUf3zYxxUH4
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | tail -5",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | tail -5",
   "description": "Reinstall gossamer after theme change"
 }
 ```
@@ -3504,8 +3504,8 @@ id: toolu_01EdFVKudFQYeBUf3zYxxUH4
 ```
 warning: `gossamer` (bin "gossamer") generated 7 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 8.73s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -3527,7 +3527,7 @@ id: toolu_011fbG1w8B2QYkmcWk6EqQyy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "const BG_GREEN:        &str = \"42\";   // standard (dark) green background\nconst BG_BRIGHT_GREEN: &str = \"102\";  // bright/intense green background",
   "new_string": "const BG_DARK_GREEN:   &str = \"48;5;22\";  // 256-color very dark green (#005f00)\nconst BG_BRIGHT_GREEN: &str = \"102\";      // bright/intense green background"
 }
@@ -3538,7 +3538,7 @@ id: toolu_011fbG1w8B2QYkmcWk6EqQyy
 tool_result
 id: toolu_011fbG1w8B2QYkmcWk6EqQyy
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3548,7 +3548,7 @@ id: toolu_01Q5m2kEVdrVjZ2jTRHG2XXV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "        checkpoint_bg:    BG_GREEN,          // dark green background — good contrast with bright text",
   "new_string": "        checkpoint_bg:    BG_DARK_GREEN,     // very dark green (#005f00) — explicit 256-color"
 }
@@ -3559,7 +3559,7 @@ id: toolu_01Q5m2kEVdrVjZ2jTRHG2XXV
 tool_result
 id: toolu_01Q5m2kEVdrVjZ2jTRHG2XXV
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3568,7 +3568,7 @@ tool_use Bash
 id: toolu_016XBGhwA3YoVcmPYd1VhC6r
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | tail -5",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | tail -5",
   "description": "Reinstall gossamer after theme change"
 }
 ```
@@ -3580,8 +3580,8 @@ id: toolu_016XBGhwA3YoVcmPYd1VhC6r
 ```
 warning: `gossamer` (bin "gossamer") generated 7 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 6.82s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -3602,7 +3602,7 @@ tool_use Bash
 id: toolu_01QKx9XqCNyfuQ4mGzLgqbKJ
 ```json
 {
-  "command": "grep -n \"user\\|color\\|author\\|USER_COLORS\\|user_color\\|assign.*color\\|color.*user\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs | head -60",
+  "command": "grep -n \"user\\|color\\|author\\|USER_COLORS\\|user_color\\|assign.*color\\|color.*user\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs | head -60",
   "description": "Find user color assignment in status.rs"
 }
 ```
@@ -3628,7 +3628,7 @@ tool_use Bash
 id: toolu_01RcdggQbjNtQxBXdSjTTPMn
 ```json
 {
-  "command": "grep -n \"color\\|Color\\|user_color\\|USER_COLOR\\|COLORS\\|palette\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs | head -60",
+  "command": "grep -n \"color\\|Color\\|user_color\\|USER_COLOR\\|COLORS\\|palette\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs | head -60",
   "description": "Find color assignment in status.rs"
 }
 ```
@@ -3647,7 +3647,7 @@ tool_use Bash
 id: toolu_015rA8bLJLgWRPYieZruRFWp
 ```json
 {
-  "command": "grep -rn \"user_color\\|USER_COLOR\\|color_for_user\\|user.*color\\|COLORS\\s*=\\|color_palette\\|user_colors\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ | head -40",
+  "command": "grep -rn \"user_color\\|USER_COLOR\\|color_for_user\\|user.*color\\|COLORS\\s*=\\|color_palette\\|user_colors\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ | head -40",
   "description": "Search for user color assignment logic across src"
 }
 ```
@@ -3666,7 +3666,7 @@ tool_use Bash
 id: toolu_019fKzHDXBmjtsfd6Dt1h5D5
 ```json
 {
-  "command": "grep -rn \"author\\|green\\|color\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs | head -60",
+  "command": "grep -rn \"author\\|green\\|color\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs | head -60",
   "description": "Find author/color logic in sessions.rs"
 }
 ```
@@ -3676,15 +3676,15 @@ id: toolu_019fKzHDXBmjtsfd6Dt1h5D5
 tool_result
 id: toolu_019fKzHDXBmjtsfd6Dt1h5D5
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:85:            "author": s.author,
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:344:    let author_w = sessions.iter().map(|s| s.author.chars().count()).max().unwrap_or(0);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:358:        if author_w > 0 { hdr.push_str(&format!("  {:<author_w$}", "author")); }
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:390:        // Name color is driven by whether the user explicitly named the
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:431:        if author_w > 0 {
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:432:            let a: String = s.author.chars().take(author_w).collect();
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:433:            let pad = " ".repeat(author_w - a.chars().count());
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:447:            let colored = super::with_bg(&line, bg);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:450:            write!(stdout, "\x1b[{bg}m{colored}{}\x1b[0m", " ".repeat(pad))?;
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:85:            "author": s.author,
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:344:    let author_w = sessions.iter().map(|s| s.author.chars().count()).max().unwrap_or(0);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:358:        if author_w > 0 { hdr.push_str(&format!("  {:<author_w$}", "author")); }
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:390:        // Name color is driven by whether the user explicitly named the
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:431:        if author_w > 0 {
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:432:            let a: String = s.author.chars().take(author_w).collect();
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:433:            let pad = " ".repeat(author_w - a.chars().count());
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:447:            let colored = super::with_bg(&line, bg);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:450:            write!(stdout, "\x1b[{bg}m{colored}{}\x1b[0m", " ".repeat(pad))?;
 ```
 
 > TOOL
@@ -3693,7 +3693,7 @@ tool_use Bash
 id: toolu_01CQ5857gNyiYv4nJixyAr6X
 ```json
 {
-  "command": "grep -rn \"author_color\\|color_for\\|author.*\\[3\\|CYAN\\|MAGENTA\\|YELLOW\\|color.*author\\|per.user\\|per_user\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ | grep -v \"target/\" | head -40",
+  "command": "grep -rn \"author_color\\|color_for\\|author.*\\[3\\|CYAN\\|MAGENTA\\|YELLOW\\|color.*author\\|per.user\\|per_user\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ | grep -v \"target/\" | head -40",
   "description": "Find per-user color assignment"
 }
 ```
@@ -3703,22 +3703,22 @@ id: toolu_01CQ5857gNyiYv4nJixyAr6X
 tool_result
 id: toolu_01CQ5857gNyiYv4nJixyAr6X
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:12:const YELLOW:  &str = "33";
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:14:const MAGENTA: &str = "35";
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:15:const CYAN:    &str = "36";
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:21:const BRIGHT_CYAN:    &str = "96";
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:30:const BOLD_YELLOW:       &str = "1;33";
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:118:        moderate:       YELLOW,           // yellow — moderate age
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:121:        header:         BOLD_YELLOW,      // bold yellow — section titles
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:122:        accent:         YELLOW,           // yellow — main branch
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:123:        label:          CYAN,             // cyan — inline labels, tool names
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:124:        link:           BRIGHT_CYAN,      // bright cyan — linked worktrees, backed-up branches
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:129:        tool_ok:          MAGENTA,          // magenta — non-error tool result
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:155:        moderate:       YELLOW,           // yellow — same
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:160:        label:          CYAN,             // cyan — same
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs:166:        tool_ok:          MAGENTA,          // same
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/mod.rs:134:pub fn author_color(name: &str) -> u8 {
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs:519:                let col = super::author_color(&group.author);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:12:const YELLOW:  &str = "33";
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:14:const MAGENTA: &str = "35";
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:15:const CYAN:    &str = "36";
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:21:const BRIGHT_CYAN:    &str = "96";
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:30:const BOLD_YELLOW:       &str = "1;33";
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:118:        moderate:       YELLOW,           // yellow — moderate age
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:121:        header:         BOLD_YELLOW,      // bold yellow — section titles
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:122:        accent:         YELLOW,           // yellow — main branch
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:123:        label:          CYAN,             // cyan — inline labels, tool names
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:124:        link:           BRIGHT_CYAN,      // bright cyan — linked worktrees, backed-up branches
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:129:        tool_ok:          MAGENTA,          // magenta — non-error tool result
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:155:        moderate:       YELLOW,           // yellow — same
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:160:        label:          CYAN,             // cyan — same
+/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs:166:        tool_ok:          MAGENTA,          // same
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/mod.rs:134:pub fn author_color(name: &str) -> u8 {
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs:519:                let col = super::author_color(&group.author);
 ```
 
 > TOOL
@@ -3727,7 +3727,7 @@ tool_use Bash
 id: toolu_01NFFeLnuhTNurRRVbBpn6yD
 ```json
 {
-  "command": "grep -n \"author_color\\|fn author_color\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/mod.rs",
+  "command": "grep -n \"author_color\\|fn author_color\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/mod.rs",
   "description": "Find author_color function in mod.rs"
 }
 ```
@@ -3746,7 +3746,7 @@ tool_use Read
 id: toolu_01LgKrbGHaQeVgajjyCpNwaP
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/mod.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/mod.rs",
   "offset": 130,
   "limit": 25
 }
@@ -3785,7 +3785,7 @@ tool_use Bash
 id: toolu_01L634zbr7Anx7GHMADTJtWu
 ```json
 {
-  "command": "grep -n \"user\\|green\\|author\\|color\\|GREEN\\|human\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | grep -i \"color\\|green\\|author\\|32m\\|fresh\\|human_name\\|user_name\" | head -40",
+  "command": "grep -n \"user\\|green\\|author\\|color\\|GREEN\\|human\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | grep -i \"color\\|green\\|author\\|32m\\|fresh\\|human_name\\|user_name\" | head -40",
   "description": "Find user color rendering in show.rs"
 }
 ```
@@ -3835,7 +3835,7 @@ tool_use Read
 id: toolu_0182eaQKpW961ih2NepQHS22
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 940,
   "limit": 40
 }
@@ -3891,7 +3891,7 @@ tool_use Bash
 id: toolu_016o2MJB8dZHgbXnPEsW71iT
 ```json
 {
-  "command": "grep -n \"author_color\\|38;5\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs | head -20",
+  "command": "grep -n \"author_color\\|38;5\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs | head -20",
   "description": "Check how author_color is applied in search.rs"
 }
 ```
@@ -3913,7 +3913,7 @@ id: toolu_01VSWGEHL5jtdbKADdiAGxQV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        Card::UserMsg { ts, parts, author } => {\n            let label = author.as_deref().unwrap_or(\"user\");\n            lines.push(format!(\n                \"\\x1b[1;{fr}m── {label}  \\x1b[0m\\x1b[{dm}m{}\\x1b[0m\",\n                rel_time(ts), fr = th.fresh, dm = th.text_dim,\n            ));",
   "new_string": "        Card::UserMsg { ts, parts, author } => {\n            let label = author.as_deref().unwrap_or(\"user\");\n            let user_col = super::author_color(label);\n            lines.push(format!(\n                \"\\x1b[1;38;5;{user_col}m── {label}  \\x1b[0m\\x1b[{dm}m{}\\x1b[0m\",\n                rel_time(ts), dm = th.text_dim,\n            ));"
 }
@@ -3924,7 +3924,7 @@ id: toolu_01VSWGEHL5jtdbKADdiAGxQV
 tool_result
 id: toolu_01VSWGEHL5jtdbKADdiAGxQV
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3933,7 +3933,7 @@ tool_use Bash
 id: toolu_01Aw47Xu5LDo4XVKHag9AUtZ
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | tail -5",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | tail -5",
   "description": "Reinstall gossamer"
 }
 ```
@@ -3945,8 +3945,8 @@ id: toolu_01Aw47Xu5LDo4XVKHag9AUtZ
 ```
 warning: `gossamer` (bin "gossamer") generated 7 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 6.04s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -3963,7 +3963,7 @@ tool_use Bash
 id: toolu_01LKs72istgtNVxaaRK822t6
 ```json
 {
-  "command": "grep -n \"KeyCode\\|key\\|Selectable\\|cursor\\|selected\\|CheckpointHeader\\|flat\\b\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -80",
+  "command": "grep -n \"KeyCode\\|key\\|Selectable\\|cursor\\|selected\\|CheckpointHeader\\|flat\\b\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -80",
   "description": "Find key handling and flat list logic in show.rs"
 }
 ```
@@ -4016,7 +4016,7 @@ tool_use Read
 id: toolu_01Ffg5R5ZjucKUbGoiXVDEMG
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1415,
   "limit": 100
 }
@@ -4075,7 +4075,7 @@ id: toolu_01Br8VQFQwrxZDdrRTfPyxTC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "                    (KeyCode::Char('g'), _) => { sel = 0; }\n                    (KeyCode::Char('G'), _) => { sel = selectables.len().saturating_sub(1); }\n                    (KeyCode::Char('u'), _) | (KeyCode::PageUp, _) => {",
   "new_string": "                    (KeyCode::Char('g'), _) => { sel = 0; }\n                    (KeyCode::Char('G'), _) => { sel = selectables.len().saturating_sub(1); }\n\n                    (KeyCode::Char(']'), _) => {\n                        let next = selectables.iter().enumerate().skip(sel + 1).find(|(_, s)| {\n                            matches!(s,\n                                Selectable::Card(ci) if matches!(&cards[*ci], Card::Checkpoint(_))\n                                | Selectable::CheckpointHeader(..))\n                        }).map(|(i, _)| i);\n                        if let Some(i) = next { sel = i; }\n                    }\n                    (KeyCode::Char('['), _) => {\n                        let prev = selectables.iter().enumerate().take(sel).rfind(|(_, s)| {\n                            matches!(s,\n                                Selectable::Card(ci) if matches!(&cards[*ci], Card::Checkpoint(_))\n                                | Selectable::CheckpointHeader(..))\n                        }).map(|(i, _)| i);\n                        if let Some(i) = prev { sel = i; }\n                    }\n\n                    (KeyCode::Char('u'), _) | (KeyCode::PageUp, _) => {"
 }
@@ -4086,7 +4086,7 @@ id: toolu_01Br8VQFQwrxZDdrRTfPyxTC
 tool_result
 id: toolu_01Br8VQFQwrxZDdrRTfPyxTC
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4123,7 +4123,7 @@ id: toolu_01EB4xasx37nM7SxAzzq3VKK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "                    (KeyCode::Char(']'), _) => {\n                        let next = selectables.iter().enumerate().skip(sel + 1).find(|(_, s)| {\n                            matches!(s,\n                                Selectable::Card(ci) if matches!(&cards[*ci], Card::Checkpoint(_))\n                                | Selectable::CheckpointHeader(..))\n                        }).map(|(i, _)| i);\n                        if let Some(i) = next { sel = i; }\n                    }\n                    (KeyCode::Char('['), _) => {\n                        let prev = selectables.iter().enumerate().take(sel).rfind(|(_, s)| {\n                            matches!(s,\n                                Selectable::Card(ci) if matches!(&cards[*ci], Card::Checkpoint(_))\n                                | Selectable::CheckpointHeader(..))\n                        }).map(|(i, _)| i);\n                        if let Some(i) = prev { sel = i; }\n                    }",
   "new_string": "                    (KeyCode::Char(']'), _) => {\n                        let is_cp = |s: &Selectable| match s {\n                            Selectable::Card(ci) => matches!(&cards[*ci], Card::Checkpoint(_)),\n                            Selectable::CheckpointHeader(..) => true,\n                            _ => false,\n                        };\n                        if let Some(i) = selectables.iter().enumerate().skip(sel + 1).find(|(_, s)| is_cp(s)).map(|(i, _)| i) {\n                            sel = i;\n                        }\n                    }\n                    (KeyCode::Char('['), _) => {\n                        let is_cp = |s: &Selectable| match s {\n                            Selectable::Card(ci) => matches!(&cards[*ci], Card::Checkpoint(_)),\n                            Selectable::CheckpointHeader(..) => true,\n                            _ => false,\n                        };\n                        if let Some(i) = selectables.iter().enumerate().take(sel).rfind(|(_, s)| is_cp(s)).map(|(i, _)| i) {\n                            sel = i;\n                        }\n                    }"
 }
@@ -4134,7 +4134,7 @@ id: toolu_01EB4xasx37nM7SxAzzq3VKK
 tool_result
 id: toolu_01EB4xasx37nM7SxAzzq3VKK
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4143,7 +4143,7 @@ tool_use Bash
 id: toolu_01DnH8Qmx1teVF34dFxWYEhF
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
   "description": "Build and install gossamer"
 }
 ```
@@ -4154,7 +4154,7 @@ tool_result
 id: toolu_01DnH8Qmx1teVF34dFxWYEhF
 ```
     Finished `release` profile [optimized] target(s) in 5.82s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
+   Replacing /home/<USER>/.cargo/bin/gossamer
 ```
 
 > AGENT
@@ -4171,7 +4171,7 @@ tool_use Bash
 id: toolu_01Np7cN3ZM2rT4HE9HhhDFJy
 ```json
 {
-  "command": "grep -n \"action.*bar\\|help.*bar\\|footer\\|status.*bar\\|draw\\b\\|persistent\\|hint\\|key.*hint\\|\\]\\[\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -40",
+  "command": "grep -n \"action.*bar\\|help.*bar\\|footer\\|status.*bar\\|draw\\b\\|persistent\\|hint\\|key.*hint\\|\\]\\[\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -40",
   "description": "Find action bar rendering in show.rs"
 }
 ```
@@ -4194,7 +4194,7 @@ tool_use Read
 id: toolu_01GQcNARygAEAfesZYoTtg1t
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1558,
   "limit": 80
 }
@@ -4253,7 +4253,7 @@ tool_use Bash
 id: toolu_01R9tZcCmVFpvkpAz8iQXeJU
 ```json
 {
-  "command": "grep -n \"fn card_text\\|Card::Checkpoint\\|commit_sha\\|checkpoint_id\\|card_text\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -30",
+  "command": "grep -n \"fn card_text\\|Card::Checkpoint\\|commit_sha\\|checkpoint_id\\|card_text\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -30",
   "description": "Find card_text function and checkpoint handling"
 }
 ```
@@ -4290,7 +4290,7 @@ tool_use Read
 id: toolu_0129gbJ7CLSfNr5LzWScbd2X
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 649,
   "limit": 70
 }
@@ -4345,7 +4345,7 @@ tool_use Read
 id: toolu_011WmVq6wyttQPdFtfJG9PTE
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 25,
   "limit": 55
 }
@@ -4424,7 +4424,7 @@ id: toolu_01TSa2e36KJRa2Swi1iRAdz7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        Card::Checkpoint(cp) => {\n            out.push_str(&format!(\"[Checkpoint #{}]\\n\", cp.number));\n            if !cp.commit_message.is_empty() { out.push_str(&cp.commit_message); out.push('\\n'); }\n            if !cp.files_touched.is_empty() {\n                out.push_str(\"Files:\\n\");\n                for f in &cp.files_touched { out.push_str(&format!(\"  {f}\\n\")); }\n            }\n        }",
   "new_string": "        Card::Checkpoint(cp) => {\n            out.push_str(&format!(\"[Checkpoint #{}]\\n\", cp.number));\n            if !cp.checkpoint_id.is_empty() { out.push_str(&format!(\"{}\\n\", cp.checkpoint_id)); }\n            if !cp.commit_message.is_empty() { out.push_str(&cp.commit_message); out.push('\\n'); }\n            if !cp.files_touched.is_empty() {\n                out.push_str(\"Files:\\n\");\n                for f in &cp.files_touched { out.push_str(&format!(\"  {f}\\n\")); }\n            }\n        }"
 }
@@ -4435,7 +4435,7 @@ id: toolu_01TSa2e36KJRa2Swi1iRAdz7
 tool_result
 id: toolu_01TSa2e36KJRa2Swi1iRAdz7
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4445,7 +4445,7 @@ id: toolu_014GUPJWv2oVswPfqNUXrjYr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        \"  {}/{} msgs  lines {}-{}  j/k ↑↓ navigate  u/PgDn page  g/G ends  y/c copy  r resume  d delete  / search  q quit  \",",
   "new_string": "        \"  {}/{} msgs  lines {}-{}  j/k ↑↓ navigate  ]/[ checkpoint  u/PgDn page  g/G ends  y/c copy  r resume  d delete  / search  q quit  \","
 }
@@ -4456,7 +4456,7 @@ id: toolu_014GUPJWv2oVswPfqNUXrjYr
 tool_result
 id: toolu_014GUPJWv2oVswPfqNUXrjYr
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4465,7 +4465,7 @@ tool_use Bash
 id: toolu_01CarCK7D91FMxxTrzAZ4BAU
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
   "description": "Build and install gossamer"
 }
 ```
@@ -4476,7 +4476,7 @@ tool_result
 id: toolu_01CarCK7D91FMxxTrzAZ4BAU
 ```
     Finished `release` profile [optimized] target(s) in 6.68s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
+   Replacing /home/<USER>/.cargo/bin/gossamer
 ```
 
 > AGENT
@@ -4497,7 +4497,7 @@ tool_use Bash
 id: toolu_01PZxom5JWKmxG8uuFUVJosz
 ```json
 {
-  "command": "grep -n \"upsert_checkpoint\\|checkpoint_number\\|PendingCheckpoint\\|last_turn_ts\\|checkpoints_count\\|INSERT.*checkpoint\\|is_meta_path\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -60",
+  "command": "grep -n \"upsert_checkpoint\\|checkpoint_number\\|PendingCheckpoint\\|last_turn_ts\\|checkpoints_count\\|INSERT.*checkpoint\\|is_meta_path\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -60",
   "description": "Find checkpoint indexing and upsert logic"
 }
 ```
@@ -4538,7 +4538,7 @@ tool_use Read
 id: toolu_0192VEtmT7EdFZuu3LJpC6pc
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 395,
   "limit": 130
 }
@@ -4606,7 +4606,7 @@ tool_use Read
 id: toolu_01YShq4jHwRYDq29XvL4PU8f
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 353,
   "limit": 50
 }
@@ -4666,7 +4666,7 @@ tool_use Read
 id: toolu_017h7Lh2AxDy7vch66VgDMm4
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 733,
   "limit": 30
 }
@@ -4757,7 +4757,7 @@ tool_use Read
 id: toolu_01SQdh4VFVUgBDbvmZ3cYKax
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 273,
   "limit": 120
 }
@@ -4829,7 +4829,7 @@ tool_use Bash
 id: toolu_01TCDgMJBYy2qaP7XZ4HoKJf
 ```json
 {
-  "command": "cat /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/parsers/claude_code.rs | head -100",
+  "command": "cat /home/<USER>/p/gossamer-checkpoints-visualization/src/parsers/claude_code.rs | head -100",
   "description": "Read claude_code parser"
 }
 ```
@@ -4942,7 +4942,7 @@ id: toolu_01HPdVb2EwgagoDX1hjXgAsb
 - Auto-scroll is sticky: only follows new content when already near bottom,
   does not fire on initial load
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 2c816fbd-73a0-444b-8b3e-eba2c9bf4a98|1|2026-03-10T04:27:43.745+00:00|4abd6f88815a|Set parent session id on spawned subsessions
 2c816fbd-73a0-444b-8b3e-eba2c9bf4a98|0|2026-03-09T03:53:33.317+00:00|4d3c53e74056|Store subsessionId on the open items when creating a new session to fix them
 3693a81d-438c-4d21-ace4-6b95ab818f0a|0|2026-03-22T00:12:20.427+00:00|f464324f083a|persist open tabs across app restart. Show subsessions as child of the parent session
@@ -4961,7 +4961,7 @@ tool_use Bash
 id: toolu_012S7hYCMSD9a4ipAsMLSGeG
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | head -20",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | head -20",
   "description": "Inspect a checkpoint metadata.json to see turn_id format"
 }
 ```
@@ -4999,7 +4999,7 @@ tool_use Bash
 id: toolu_01NpoYfHec8sphARRKuH1hyD
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | grep -A2 \"turn_id\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | grep -A2 \"turn_id\"",
   "description": "Get turn_id from checkpoint 0 metadata"
 }
 ```
@@ -5020,7 +5020,7 @@ tool_use Bash
 id: toolu_01ToLeVfxhEgfpw6FncfYAJM
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        uid = o.get('uuid','') or o.get('id','') or ''\n        ts = o.get('timestamp','')\n        if uid or ts:\n            print(f'{uid[:12]}  {ts}')\n    except: pass\n\" | tail -20",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        uid = o.get('uuid','') or o.get('id','') or ''\n        ts = o.get('timestamp','')\n        if uid or ts:\n            print(f'{uid[:12]}  {ts}')\n    except: pass\n\" | tail -20",
   "description": "Show turn UUIDs and timestamps in checkpoint 0 JSONL"
 }
 ```
@@ -5058,7 +5058,7 @@ tool_use Bash
 id: toolu_01RVCznj5H29X8iths9cnxXA
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        uid = o.get('uuid','') or o.get('id','') or ''\n        ts = o.get('timestamp','')\n        print(f'{uid}  {ts}')\n    except: pass\n\" | grep \"cb2fb9a373ff\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        uid = o.get('uuid','') or o.get('id','') or ''\n        ts = o.get('timestamp','')\n        print(f'{uid}  {ts}')\n    except: pass\n\" | grep \"cb2fb9a373ff\"",
   "description": "Look for turn_id cb2fb9a373ff in checkpoint JSONL"
 }
 ```
@@ -5077,7 +5077,7 @@ tool_use Bash
 id: toolu_01US9NmrTvqVRTocGRAV4EAd
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        line_str = json.dumps(o)\n        if 'cb2fb9a373ff' in line_str:\n            print(line_str[:200])\n    except: pass\n\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        line_str = json.dumps(o)\n        if 'cb2fb9a373ff' in line_str:\n            print(line_str[:200])\n    except: pass\n\"",
   "description": "Search for turn_id string anywhere in the JSONL"
 }
 ```
@@ -5096,7 +5096,7 @@ tool_use Bash
 id: toolu_01EJAudDXiDawPSTYPryC9qd
 ```json
 {
-  "command": "# Compare last turns across checkpoints 0 and 1 for session 48/fc144f86a7\ngit -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | wc -l\ngit -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/1/full.jsonl 2>/dev/null | wc -l",
+  "command": "# Compare last turns across checkpoints 0 and 1 for session 48/fc144f86a7\ngit -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | wc -l\ngit -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/1/full.jsonl 2>/dev/null | wc -l",
   "description": "Compare line counts across checkpoints to see if they differ"
 }
 ```
@@ -5116,7 +5116,7 @@ tool_use Bash
 id: toolu_011dsYVrLzKzSEL2YcGoRqEa
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nts = None\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        t = o.get('timestamp','')\n        if t: ts = t\n    except: pass\nprint('last ts checkpoint 0:', ts)\n\"\ngit -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/1/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nts = None\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        t = o.get('timestamp','')\n        if t: ts = t\n    except: pass\nprint('last ts checkpoint 1:', ts)\n\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nts = None\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        t = o.get('timestamp','')\n        if t: ts = t\n    except: pass\nprint('last ts checkpoint 0:', ts)\n\"\ngit -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/1/full.jsonl 2>/dev/null | python3 -c \"\nimport sys, json\nts = None\nfor line in sys.stdin:\n    line = line.strip()\n    if not line: continue\n    try:\n        o = json.loads(line)\n        t = o.get('timestamp','')\n        if t: ts = t\n    except: pass\nprint('last ts checkpoint 1:', ts)\n\"",
   "description": "Compare last timestamps across the two checkpoint JSONLs"
 }
 ```
@@ -5169,8 +5169,8 @@ id: toolu_01NdqABJaCeSygcjW5cGUNqP
 tool_result
 id: toolu_01NdqABJaCeSygcjW5cGUNqP
 ```
-/Users/stephanostsoucas/p/gossamer|c0370ae1e941bd696889d5350238ab0fd190ec81
-/Users/stephanostsoucas/gossamer|c0370ae1e941bd696889d5350238ab0fd190ec81
+/home/<USER>/p/gossamer|c0370ae1e941bd696889d5350238ab0fd190ec81
+/home/<USER>/gossamer|c0370ae1e941bd696889d5350238ab0fd190ec81
 ```
 
 > TOOL
@@ -5179,7 +5179,7 @@ tool_use Bash
 id: toolu_01MbhPZ3MHK6xEi3eevtkV8d
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer log entire/checkpoints/v1 --oneline -5",
+  "command": "git -C /home/<USER>/p/gossamer log entire/checkpoints/v1 --oneline -5",
   "description": "Check recent commits on checkpoints branch vs last indexed"
 }
 ```
@@ -5202,7 +5202,7 @@ tool_use Bash
 id: toolu_01Riw6JK7tMTy24qgFUHuF7L
 ```json
 {
-  "command": "sqlite3 ~/.gossamer/gossamer.db \"SELECT r.directory, r.last_indexed_commit FROM repositories r WHERE r.directory LIKE '%checkpoints%';\"\ngit -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization log entire/checkpoints/v1 --oneline -5 2>/dev/null",
+  "command": "sqlite3 ~/.gossamer/gossamer.db \"SELECT r.directory, r.last_indexed_commit FROM repositories r WHERE r.directory LIKE '%checkpoints%';\"\ngit -C /home/<USER>/p/gossamer-checkpoints-visualization log entire/checkpoints/v1 --oneline -5 2>/dev/null",
   "description": "Check this visualization repo's index state and checkpoint branch"
 }
 ```
@@ -5225,7 +5225,7 @@ tool_use Bash
 id: toolu_01HJRCDTt8buG4f9qzZwLCQj
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization log entire/checkpoints/v1 --oneline --format=\"%H %s %ad\" --date=relative | head -10",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization log entire/checkpoints/v1 --oneline --format=\"%H %s %ad\" --date=relative | head -10",
   "description": "Check recent commits on checkpoints branch with dates"
 }
 ```
@@ -5253,7 +5253,7 @@ tool_use Bash
 id: toolu_018Ja8hHiCnJ1D9iWEhQ7ysA
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization ls-tree -r --name-only entire/checkpoints/v1 2>/dev/null | grep \"aa91550448e1\\|1e5ca51a\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization ls-tree -r --name-only entire/checkpoints/v1 2>/dev/null | grep \"aa91550448e1\\|1e5ca51a\"",
   "description": "Find the session directories for the 2 recent checkpoints"
 }
 ```
@@ -5272,7 +5272,7 @@ tool_use Bash
 id: toolu_01Dk5bopsrLBWwbbUr3CkoVa
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization ls-tree -r --name-only entire/checkpoints/v1 2>/dev/null | grep \"metadata\" | sort | tail -20",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization ls-tree -r --name-only entire/checkpoints/v1 2>/dev/null | grep \"metadata\" | sort | tail -20",
   "description": "List all checkpoint metadata paths, most recent last"
 }
 ```
@@ -5310,7 +5310,7 @@ tool_use Bash
 id: toolu_01Rpgtai4Cc551kEDPHd6nqj
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization diff --name-only c0370ae~1 c0370ae 2>/dev/null | head -10\ngit -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization diff --name-only 464bef4~1 464bef4 2>/dev/null | head -10",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization diff --name-only c0370ae~1 c0370ae 2>/dev/null | head -10\ngit -C /home/<USER>/p/gossamer-checkpoints-visualization diff --name-only 464bef4~1 464bef4 2>/dev/null | head -10",
   "description": "See which files were added by the 2 most recent checkpoint commits"
 }
 ```
@@ -5338,7 +5338,7 @@ tool_use Bash
 id: toolu_01Y3KPZkqYvKReQAp6RPvVPm
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:aa/91550448e1/0/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | grep -E \"session_id|checkpoint_id|turn_id|branch|created_at\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:aa/91550448e1/0/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | grep -E \"session_id|checkpoint_id|turn_id|branch|created_at\"",
   "description": "Check metadata for the latest checkpoint"
 }
 ```
@@ -5361,7 +5361,7 @@ tool_use Bash
 id: toolu_01EemooM1quprEMweb5LS7yC
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:1e/5ca51a3970/0/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | grep -E \"session_id|checkpoint_id|turn_id|branch|created_at\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:1e/5ca51a3970/0/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | grep -E \"session_id|checkpoint_id|turn_id|branch|created_at\"",
   "description": "Check metadata for the second checkpoint"
 }
 ```
@@ -5390,7 +5390,7 @@ tool_use Bash
 id: toolu_01TUvwAiW1yvdgSQoPXLAPAQ
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/metadata.json 2>/dev/null | python3 -c \"import sys,json; d=json.load(sys.stdin); print('cp0 id:', d.get('checkpoint_id',''))\"\ngit -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/1/metadata.json 2>/dev/null | python3 -c \"import sys,json; d=json.load(sys.stdin); print('cp1 id:', d.get('checkpoint_id',''))\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/0/metadata.json 2>/dev/null | python3 -c \"import sys,json; d=json.load(sys.stdin); print('cp0 id:', d.get('checkpoint_id',''))\"\ngit -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/1/metadata.json 2>/dev/null | python3 -c \"import sys,json; d=json.load(sys.stdin); print('cp1 id:', d.get('checkpoint_id',''))\"",
   "description": "Confirm each checkpoint has a unique checkpoint_id"
 }
 ```
@@ -5410,7 +5410,7 @@ tool_use Bash
 id: toolu_013GuVQ1HjxP69y9YnfjmnGY
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/1/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | grep -E \"session_id|checkpoint_id|turn_id|branch|created_at\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show entire/checkpoints/v1:48/fc144f86a7/1/metadata.json 2>/dev/null | python3 -m json.tool 2>/dev/null | grep -E \"session_id|checkpoint_id|turn_id|branch|created_at\"",
   "description": "Check whether checkpoint /1/ has same session as /0/"
 }
 ```
@@ -5439,7 +5439,7 @@ tool_use Read
 id: toolu_01SeNYLP9XKfyNPMgnebENA2
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs",
   "offset": 1,
   "limit": 83
 }
@@ -5490,7 +5490,7 @@ tool_use Read
 id: toolu_01NweXrBUpYhhdgxqU8QVbBA
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 799,
   "limit": 80
 }
@@ -5558,7 +5558,7 @@ tool_use Bash
 id: toolu_01LhETwoJv6DyLaPDDSGxAwZ
 ```json
 {
-  "command": "grep -rn \"upsert_checkpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/",
+  "command": "grep -rn \"upsert_checkpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/",
   "description": "Find all callers of upsert_checkpoint"
 }
 ```
@@ -5568,8 +5568,8 @@ id: toolu_01LhETwoJv6DyLaPDDSGxAwZ
 tool_result
 id: toolu_01LhETwoJv6DyLaPDDSGxAwZ
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:500:        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:799:pub(crate) fn upsert_checkpoint(
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:500:        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:799:pub(crate) fn upsert_checkpoint(
 ```
 
 > AGENT
@@ -5585,7 +5585,7 @@ id: toolu_01GFRBSH1RWofrXqFV2iuZJn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs",
   "old_string": "    // Idempotent column additions (ignored if column already exists)\n    let _ = conn.execute(\"ALTER TABLE repositories ADD COLUMN last_indexed_commit TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE repositories ADD COLUMN last_search_commit TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN jsonl_path TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN repo_dir TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN os_user TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN commit_message TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN turn_id TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN checkpoint_id TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN files_touched TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN token_usage TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN initial_attribution TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN model TEXT\", []);",
   "new_string": "    // Idempotent column additions (ignored if column already exists)\n    let _ = conn.execute(\"ALTER TABLE repositories ADD COLUMN last_indexed_commit TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE repositories ADD COLUMN last_search_commit TEXT\", []);\n    let _ = conn.execute(\"ALTER TABLE checkpoints ADD COLUMN jsonl_path TEXT\", []);\n    let _ = […]
 
@@ -5594,7 +5594,7 @@ id: toolu_01GFRBSH1RWofrXqFV2iuZJn
 tool_result
 id: toolu_01GFRBSH1RWofrXqFV2iuZJn
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5604,7 +5604,7 @@ id: toolu_0195Goy3N2J7HRy38hHy2SUE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs",
   "old_string": "fn correct_session_repo_attribution(conn: &Connection) {",
   "new_string": "fn migrate_checkpoints_pk(conn: &Connection) {\n    // Only run if the table still uses the old (session_id, checkpoint_number) primary key.\n    let schema: String = conn.query_row(\n        \"SELECT COALESCE(sql,'') FROM sqlite_master WHERE type='table' AND name='checkpoints'\",\n        [], |r| r.get(0),\n    ).unwrap_or_default();\n\n    // New schema has checkpoint_id as NOT NULL in the PK; old one has checkpoint_number as PK.\n    if !schema.contains(\"PRIMARY KEY (session_id, checkpoint_number)\") { return; }\n\n    let _ = conn.execute_batch(\"\n        CREATE TABLE IF NOT EXISTS checkpoints_new (\n            session_id          TEXT NOT NULL,\n            checkpoint_id       TEXT NOT NULL DEFAULT '',\n            commit_sha          TEXT NOT NULL DEFAULT '',\n            author_name         TEXT NOT NULL DEFAULT '',\n            author_email        TEXT NOT NULL DEFAULT '',\n            last_turn_ts        TEXT NOT NULL DEFAULT '',\n            jsonl_path          TEXT,\n            repo_dir            TEXT,\n            os_user             TEXT,\n            commit_message      TEXT,\n            turn_id             TEXT,\n            files_touched       TEXT,\n            token_usage         TEXT,\n            initial_attribution TEXT,\n            model               TEXT,\n            PRIMARY KEY (session_id, checkpoint_id)\n        );\n        INSERT OR IGNORE INTO checkpoints_new\n            SELECT\n                session_id,\n                CASE WHEN checkpoint_id IS NOT NULL AND checkpoint_id != ''\n                     THEN checkpoint_id\n                     ELSE 'legacy-' || CAST(checkpoint_number AS TEXT)\n                END,\n                COALESCE(commit_sha,   ''),\n                COALESCE(author_name,  ''),\n                COALESCE(author_email, ''),\n                COALESCE(last_turn_ts, ''),\n                jsonl_path, repo_dir, os_user,\n                commit_message, turn_id, files_touched, token_usage,\n                initial_attribution, model\n            FROM checkpoints;\n        DROP TABLE checkpoints;\n        ALTER TABLE checkpoints_new RENAME TO checkpoints;\n        CREATE INDEX […]
 
@@ -5613,7 +5613,7 @@ id: toolu_0195Goy3N2J7HRy38hHy2SUE
 tool_result
 id: toolu_0195Goy3N2J7HRy38hHy2SUE
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5627,7 +5627,7 @@ id: toolu_01QpiqtCG1NUYYaGj8Nta8kn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs",
   "old_string": "        CREATE TABLE IF NOT EXISTS checkpoints (\n            session_id        TEXT NOT NULL,\n            checkpoint_number INTEGER NOT NULL,\n            commit_sha        TEXT NOT NULL,\n            author_name       TEXT NOT NULL,\n            author_email      TEXT NOT NULL,\n            last_turn_ts      TEXT NOT NULL,\n            jsonl_path        TEXT,\n            repo_dir          TEXT,\n            PRIMARY KEY (session_id, checkpoint_number)\n        );\n        CREATE INDEX IF NOT EXISTS checkpoints_session_idx\n            ON checkpoints (session_id, last_turn_ts);",
   "new_string": "        CREATE TABLE IF NOT EXISTS checkpoints (\n            session_id          TEXT NOT NULL,\n            checkpoint_id       TEXT NOT NULL DEFAULT '',\n            commit_sha          TEXT NOT NULL DEFAULT '',\n            author_name         TEXT NOT NULL DEFAULT '',\n            author_email        TEXT NOT NULL DEFAULT '',\n            last_turn_ts        TEXT NOT NULL DEFAULT '',\n            jsonl_path          TEXT,\n            repo_dir            TEXT,\n            os_user             TEXT,\n            commit_message      TEXT,\n            turn_id             TEXT,\n            files_touched       TEXT,\n            token_usage         TEXT,\n            initial_attribution TEXT,\n            model               TEXT,\n            PRIMARY KEY (session_id, checkpoint_id)\n        );\n        CREATE INDEX IF NOT EXISTS checkpoints_session_idx\n            ON checkpoints (session_id, last_turn_ts);"
 }
@@ -5638,7 +5638,7 @@ id: toolu_01QpiqtCG1NUYYaGj8Nta8kn
 tool_result
 id: toolu_01QpiqtCG1NUYYaGj8Nta8kn
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5652,7 +5652,7 @@ id: toolu_01Vea4py7N8tKwwrANAond3S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "        upsert_checkpoint(conn, &p.session_id, p.checkpoint_number,\n                          effective_sha, author.as_ref(), &p.last_turn_ts,\n                          &p.jsonl_path, repo_dir, &os_user_str,\n                          commit_message, &p.turn_id, &p.checkpoint_id,\n                          &p.files_touched_json, &p.token_usage_json,\n                          &p.initial_attribution_json, &p.model)?;",
   "new_string": "        upsert_checkpoint(conn, &p.session_id,\n                          effective_sha, author.as_ref(), &p.last_turn_ts,\n                          &p.jsonl_path, repo_dir, &os_user_str,\n                          commit_message, &p.turn_id, &p.checkpoint_id,\n                          &p.files_touched_json, &p.token_usage_json,\n                          &p.initial_attribution_json, &p.model)?;"
 }
@@ -5663,7 +5663,7 @@ id: toolu_01Vea4py7N8tKwwrANAond3S
 tool_result
 id: toolu_01Vea4py7N8tKwwrANAond3S
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5673,7 +5673,7 @@ id: toolu_011WJkmRLaxQftjpdA8kH8G7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "pub(crate) fn upsert_checkpoint(\n    conn: &rusqlite::Connection,\n    session_id: &str,\n    checkpoint_number: u32,\n    commit_sha: &str,\n    author: Option<&CommitAuthor>,\n    last_turn_ts: &str,\n    jsonl_path: &str,\n    repo_dir: &str,\n    os_user: &str,\n    commit_message: &str,\n    turn_id: &str,\n    checkpoint_id: &str,\n    files_touched: &str,\n    token_usage: &str,\n    initial_attribution: &str,\n    model: &str,\n) -> Result<()> {\n    let (name, email) = author\n        .map(|a| (a.name.as_str(), a.email.as_str()))\n        .unwrap_or((\"\", \"\"));\n    let sha = commit_sha;\n    conn.execute(\n        \"INSERT INTO checkpoints\n            (session_id, checkpoint_number, commit_sha, author_name, author_email,\n             last_turn_ts, jsonl_path, repo_dir, os_user,\n             commit_message, turn_id, checkpoint_id, files_touched, token_usage,\n             initial_attribution, model)\n         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16)\n         ON CONFLICT(session_id, checkpoint_number) DO UPDATE SET\n            commit_sha          = excluded.commit_sha,\n            author_name         = excluded.author_name,\n            author_email        = excluded.author_email,\n            last_turn_ts        = excluded.last_turn_ts,\n            jsonl_path          = excluded.jsonl_path,\n            repo_dir            = excluded.repo_dir,\n            os_user             = excluded.os_user,\n            commit_message      = excluded.commit_message,\n            turn_id             = excluded.turn_id,\n            checkpoint_id       = excluded.checkpoint_id,\n            files_touched       = excluded.files_touched,\n            token_usage         = excluded.token_usage,\n            initial_attribution = excluded.initial_attribution,\n            model               = excluded.model\",\n        rusqlite::params![\n            session_id,\n            checkpoint_number as i64,\n            sha,\n            name,\n            email,\n            last_turn_ts,\n            jsonl_path,\n            repo_dir,\n            os_user,\n            commit_message,\n            turn_id,\n            checkpoint_id,\n            files_touched,\n            token_usage,\n            initial_attribution,\n            model,\n        ],\n    )?;\n    Ok(())\n}",
   "new_string": "pub(crate) fn upsert_checkpoint(\n    conn: &rusqlite::Connection,\n    session_id: &str,\n    commit_sha: &str,\n    author: Option<&CommitAuthor>,\n    last_turn_ts: &str,\n    jsonl_path: &str,\n    repo_dir: &str,\n    os_user: &str,\n    commit_message: &str,\n    turn_id: &str,\n    checkpoint_id: &str,\n    files_touched: &str,\n    token_usage: &str,\n […]
 
@@ -5682,7 +5682,7 @@ id: toolu_011WJkmRLaxQftjpdA8kH8G7
 tool_result
 id: toolu_011WJkmRLaxQftjpdA8kH8G7
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5696,7 +5696,7 @@ id: toolu_01H5CTgwKpp85KwxQJPbdtxM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    let Ok(mut stmt) = conn.prepare(\n        \"SELECT checkpoint_number,\n                COALESCE(checkpoint_id, ''),\n                COALESCE(commit_message, ''),\n                last_turn_ts,\n                COALESCE(author_name, ''),\n                COALESCE(author_email, ''),\n                COALESCE(files_touched, '[]'),\n                COALESCE(token_usage, ''),\n                COALESCE(initial_attribution, ''),\n                COALESCE(model, '')\n           FROM checkpoints\n          WHERE session_id = ?1\n       ORDER BY checkpoint_number ASC\"\n    ) else { return Vec::new(); };",
   "new_string": "    let Ok(mut stmt) = conn.prepare(\n        \"SELECT checkpoint_id,\n                COALESCE(commit_message, ''),\n                last_turn_ts,\n                COALESCE(author_name, ''),\n                COALESCE(author_email, ''),\n                COALESCE(files_touched, '[]'),\n                COALESCE(token_usage, ''),\n                COALESCE(initial_attribution, ''),\n                COALESCE(model, '')\n           FROM checkpoints\n          WHERE session_id = ?1\n       ORDER BY last_turn_ts ASC\"\n    ) else { return Vec::new(); };"
 }
@@ -5707,7 +5707,7 @@ id: toolu_01H5CTgwKpp85KwxQJPbdtxM
 tool_result
 id: toolu_01H5CTgwKpp85KwxQJPbdtxM
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5717,7 +5717,7 @@ id: toolu_01RZTawGQfN6iJuWj8DmTjvS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    let rows = stmt.query_map([session_id], |row| {\n        Ok((\n            row.get::<_, i64>(0)?,\n            row.get::<_, String>(1)?,\n            row.get::<_, String>(2)?,\n            row.get::<_, String>(3)?,\n            row.get::<_, String>(4)?,\n            row.get::<_, String>(5)?,\n            row.get::<_, String>(6)?,\n            row.get::<_, String>(7)?,\n            row.get::<_, String>(8)?,\n            row.get::<_, String>(9)?,\n        ))\n    });\n    let Ok(rows) = rows else { return Vec::new(); };\n\n    let mut out = Vec::new();\n    for r in rows.flatten() {\n        let (number, checkpoint_id, commit_message, last_turn_ts,\n             author_name, author_email, files_json, token_json, attr_json, model) = r;",
   "new_string": "    let rows = stmt.query_map([session_id], |row| {\n        Ok((\n            row.get::<_, String>(0)?,\n            row.get::<_, String>(1)?,\n            row.get::<_, String>(2)?,\n            row.get::<_, String>(3)?,\n            row.get::<_, String>(4)?,\n            row.get::<_, String>(5)?,\n            row.get::<_, String>(6)?,\n            row.get::<_, String>(7)?,\n            row.get::<_, String>(8)?,\n        ))\n    });\n    let Ok(rows) = rows else { return Vec::new(); };\n\n    let mut out = Vec::new();\n    for (seq, r) in rows.flatten().enumerate() {\n        let (checkpoint_id, commit_message, last_turn_ts,\n             author_name, author_email, files_json, token_json, attr_json, model) = r;\n        let number = (seq + 1) as u32;"
 }
@@ -5728,7 +5728,7 @@ id: toolu_01RZTawGQfN6iJuWj8DmTjvS
 tool_result
 id: toolu_01RZTawGQfN6iJuWj8DmTjvS
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5756,7 +5756,7 @@ tool_use Bash
 id: toolu_011ngp5qq6KmPo3YRZaYYc7A
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
   "description": "Install gossamer"
 }
 ```
@@ -5767,7 +5767,7 @@ tool_result
 id: toolu_011ngp5qq6KmPo3YRZaYYc7A
 ```
     Finished `release` profile [optimized] target(s) in 7.94s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
+   Replacing /home/<USER>/.cargo/bin/gossamer
 ```
 
 > AGENT
@@ -5854,7 +5854,7 @@ tool_use Read
 id: toolu_01QNNE8KrR8P1dtjYkPHfZCt
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 455,
   "limit": 80
 }
@@ -5909,7 +5909,7 @@ tool_use Read
 id: toolu_01PL7r8KqZzGaX2ujytFSchQ
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 534,
   "limit": 60
 }
@@ -5964,7 +5964,7 @@ id: toolu_01UhXjLS3bsMAKZqMtK9YKyA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "fn insert_checkpoints(cards: &mut Vec<Card>, checkpoints: Vec<CheckpointData>) {\n    // Process in reverse so earlier insertions don't shift later positions.\n    for cp in checkpoints.into_iter().rev() {\n        // Find the last card whose timestamp is ≤ this checkpoint's last turn.\n        let pos = cards.iter().rposition(|c| {\n            card_ts(c).map_or(false, |ts| ts <= cp.last_turn_ts.as_str())\n        });\n        let insert_at = pos.map(|i| i + 1).unwrap_or(cards.len());\n        cards.insert(insert_at, Card::Checkpoint(cp));\n    }\n}",
   "new_string": "fn insert_checkpoints(cards: &mut Vec<Card>, checkpoints: Vec<CheckpointData>) {\n    // Process in reverse so earlier insertions don't shift later positions.\n    for cp in checkpoints.into_iter().rev() {\n        // Find the last card whose timestamp is ≤ this checkpoint's last turn.\n        let pos = cards.iter().rposition(|c| {\n            card_ts(c).map_or(false, |ts| ts <= cp.last_turn_ts.as_str())\n        });\n        let mut insert_at = pos.map(|i| i + 1).unwrap_or(cards.len());\n        // Advance past ToolRound cards and any AsstMsg cards (away summary) that\n        // belong to the same turn — they have no timestamp or a ts ≤ last_turn_ts.\n        while insert_at < cards.len() {\n            match &cards[insert_at] {\n                Card::ToolRound { .. } => { insert_at += 1; }\n                Card::AsstMsg { ts, .. } if ts.as_str() <= cp.last_turn_ts.as_str() => { insert_at += 1; }\n                _ => break,\n            }\n        }\n        cards.insert(insert_at, Card::Checkpoint(cp));\n    }\n}"
 }
@@ -5975,7 +5975,7 @@ id: toolu_01UhXjLS3bsMAKZqMtK9YKyA
 tool_result
 id: toolu_01UhXjLS3bsMAKZqMtK9YKyA
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5984,7 +5984,7 @@ tool_use Bash
 id: toolu_013Ze5UxZUnZat7PzgqE8S5n
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
   "description": "Build and install gossamer"
 }
 ```
@@ -5995,7 +5995,7 @@ tool_result
 id: toolu_013Ze5UxZUnZat7PzgqE8S5n
 ```
     Finished `release` profile [optimized] target(s) in 7.12s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
+   Replacing /home/<USER>/.cargo/bin/gossamer
 ```
 
 > AGENT
@@ -6016,7 +6016,7 @@ tool_use Read
 id: toolu_01FPYa781sBD4SnDU6qQmfhF
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 75,
   "limit": 15
 }
@@ -6050,7 +6050,7 @@ tool_use Bash
 id: toolu_01PYntaMP7zB66YqdrjraMJX
 ```json
 {
-  "command": "grep -n \"render_checkpoint\\|collapsed\\|CheckpointHeader\\|checkpoint_id\\|commit_sha\\|build_flat\\|expanded\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -60",
+  "command": "grep -n \"render_checkpoint\\|collapsed\\|CheckpointHeader\\|checkpoint_id\\|commit_sha\\|build_flat\\|expanded\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -60",
   "description": "Find checkpoint rendering, collapsed state, and build_flat"
 }
 ```
@@ -6100,7 +6100,7 @@ tool_use Read
 id: toolu_01HsJkvTth3ofCAKSy4r1kye
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 809,
   "limit": 120
 }
@@ -6161,7 +6161,7 @@ tool_use Read
 id: toolu_01HQnaYbYd1pPwyUtnJNsJBT
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1301,
   "limit": 80
 }
@@ -6224,7 +6224,7 @@ tool_use Read
 id: toolu_015GDFCenuEXHNScMbdLTo8k
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1480,
   "limit": 80
 }
@@ -6288,7 +6288,7 @@ id: toolu_016NG5B6YRmaDQusEXcraRFj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "struct CheckpointData {\n    number:              u32,\n    checkpoint_id:       String,\n    commit_message:      String,\n    last_turn_ts:        String,\n    author_name:         String,\n    author_email:        String,\n    files_touched:       Vec<String>,\n    token_usage:         Option<TokenUsage>,\n    initial_attribution: Option<InitialAttribution>,\n    model:               String,\n}",
   "new_string": "struct CheckpointData {\n    number:              u32,\n    checkpoint_id:       String,\n    commit_sha:          String,\n    repo_dir:            String,\n    commit_message:      String,\n    last_turn_ts:        String,\n    author_name:         String,\n    author_email:        String,\n    files_touched:       Vec<String>,\n    token_usage:         Option<TokenUsage>,\n    initial_attribution: Option<InitialAttribution>,\n    model:               String,\n}"
 }
@@ -6299,7 +6299,7 @@ id: toolu_016NG5B6YRmaDQusEXcraRFj
 tool_result
 id: toolu_016NG5B6YRmaDQusEXcraRFj
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6309,7 +6309,7 @@ id: toolu_014UJPC3utBjJmpgArSmLKi6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "#[derive(Clone, PartialEq)]\nenum Selectable {\n    Card(usize),\n    ToolHeader(usize),\n    ToolCall(usize, usize), // (card_idx, tool_idx)\n    CheckpointHeader(usize),\n}",
   "new_string": "#[derive(Clone, PartialEq)]\nenum Selectable {\n    Card(usize),\n    ToolHeader(usize),\n    ToolCall(usize, usize),        // (card_idx, tool_idx)\n    CheckpointHeader(usize),\n    CheckpointFile(usize, usize),  // (card_idx, file_idx)\n}"
 }
@@ -6320,7 +6320,7 @@ id: toolu_014UJPC3utBjJmpgArSmLKi6
 tool_result
 id: toolu_014UJPC3utBjJmpgArSmLKi6
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6334,7 +6334,7 @@ id: toolu_016G7fi9f6yfKZHEGdDeKVYu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    let Ok(mut stmt) = conn.prepare(\n        \"SELECT checkpoint_id,\n                COALESCE(commit_message, ''),\n                last_turn_ts,\n                COALESCE(author_name, ''),\n                COALESCE(author_email, ''),\n                COALESCE(files_touched, '[]'),\n                COALESCE(token_usage, ''),\n                COALESCE(initial_attribution, ''),\n                COALESCE(model, '')\n           FROM checkpoints\n          WHERE session_id = ?1\n       ORDER BY last_turn_ts ASC\"\n    ) else { return Vec::new(); };\n\n    let rows = stmt.query_map([session_id], |row| {\n        Ok((\n            row.get::<_, String>(0)?,\n            row.get::<_, String>(1)?,\n            row.get::<_, String>(2)?,\n            row.get::<_, String>(3)?,\n            row.get::<_, String>(4)?,\n            row.get::<_, String>(5)?,\n            row.get::<_, String>(6)?,\n            row.get::<_, String>(7)?,\n            row.get::<_, String>(8)?,\n        ))\n    });\n    let Ok(rows) = rows else { return Vec::new(); };\n\n    let mut out = Vec::new();\n    for (seq, r) in rows.flatten().enumerate() {\n        let (checkpoint_id, commit_message, last_turn_ts,\n             author_name, author_email, files_json, token_json, attr_json, model) = r;\n        let number = (seq + 1) as u32;",
   "new_string": "    let Ok(mut stmt) = conn.prepare(\n        \"SELECT checkpoint_id,\n                COALESCE(commit_sha, ''),\n                COALESCE(repo_dir, ''),\n                COALESCE(commit_message, ''),\n                last_turn_ts,\n                COALESCE(author_name, ''),\n                COALESCE(author_email, ''),\n                COALESCE(files_touched, '[]'),\n                COALESCE(token_usage, ''),\n                COALESCE(initial_attribution, ''),\n                COALESCE(model, '')\n           FROM checkpoints\n          WHERE session_id = ?1\n       ORDER BY last_turn_ts ASC\"\n    ) else { return Vec::new(); };\n\n    let rows = stmt.query_map([session_id], |row| {\n        Ok((\n            row.get::<_, String>(0)?,\n            row.get::<_, String>(1)?,\n            row.get::<_, String>(2)?,\n            row.get::<_, String>(3)?,\n            row.get::<_, String>(4)?,\n            row.get::<_, String>(5)?,\n            row.get::<_, String>(6)?,\n            row.get::<_, String>(7)?,\n            row.get::<_, String>(8)?,\n            row.get::<_, String>(9)?,\n            row.get::<_, String>(10)?,\n        ))\n    });\n    let Ok(rows) = rows else { return Vec::new(); […]
 
@@ -6343,7 +6343,7 @@ id: toolu_016G7fi9f6yfKZHEGdDeKVYu
 tool_result
 id: toolu_016G7fi9f6yfKZHEGdDeKVYu
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6352,7 +6352,7 @@ tool_use Read
 id: toolu_016feYMa7naYRZsNgBbcvwdw
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 345,
   "limit": 25
 }
@@ -6397,7 +6397,7 @@ id: toolu_01U8LVw3oynzKHAzAYGqRzaC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        out.push(CheckpointData {\n            number: number as u32,\n            checkpoint_id,\n            commit_message,\n            last_turn_ts,\n            author_name,\n            author_email,\n            files_touched,\n            token_usage,\n            initial_attribution,\n            model,\n        });",
   "new_string": "        out.push(CheckpointData {\n            number: number as u32,\n            checkpoint_id,\n            commit_sha,\n            repo_dir,\n            commit_message,\n            last_turn_ts,\n            author_name,\n            author_email,\n            files_touched,\n            token_usage,\n            initial_attribution,\n            model,\n        });"
 }
@@ -6408,7 +6408,7 @@ id: toolu_01U8LVw3oynzKHAzAYGqRzaC
 tool_result
 id: toolu_01U8LVw3oynzKHAzAYGqRzaC
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6422,7 +6422,7 @@ id: toolu_01GCA6NcnM2vEvcUh8vPR4wh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "fn render_checkpoint_expanded(cp: &CheckpointData, term_w: usize) -> Vec<String> {\n    let t = crate::theme::get();\n    let mut lines = Vec::new();\n    lines.push(render_checkpoint_header(cp, true, term_w));\n    lines.push(String::new());\n\n    // Files touched\n    if !cp.files_touched.is_empty() {\n        lines.push(format!(\"  \\x1b[{lb}mFiles\\x1b[0m\", lb = t.label));\n        for f in &cp.files_touched {\n            lines.push(format!(\"    \\x1b[{dm}m{f}\\x1b[0m\", dm = t.text_dim));\n        }\n        lines.push(String::new());\n    }\n\n    // Token usage\n    if let Some(tu) = &cp.token_usage {\n        lines.push(format!(\"  \\x1b[{lb}mTokens\\x1b[0m\", lb = t.label));\n        lines.push(format!(\n            \"    \\x1b[{pr}m{} in  \\x1b[0m\\x1b[{dm}m·\\x1b[0m  \\x1b[{pr}m{} out  \\x1b[0m\\x1b[{dm}m·\\x1b[0m  \\x1b[{pr}m{} calls\\x1b[0m\",\n            fmt_num(tu.input_tokens), fmt_num(tu.output_tokens), fmt_num(tu.api_call_count),\n            pr = t.text_primary, dm = t.text_dim,\n        ));\n        if tu.cache_creation_tokens > 0 || tu.cache_read_tokens > 0 {\n            lines.push(format!(\n                \"    \\x1b[{dm}m{} cache-new  ·  {} cache-read\\x1b[0m\",\n                fmt_num(tu.cache_creation_tokens), fmt_num(tu.cache_read_tokens),\n                dm = t.text_dim,\n            ));\n        }\n        lines.push(String::new());\n    }\n\n    // Attribution\n    if let Some(ia) = &cp.initial_attribution {\n        lines.push(format!(\"  \\x1b[{lb}mLines\\x1b[0m\", lb = t.label));\n        let pct = format!(\"{:.0}%\", ia.agent_percentage);\n        let human_total = ia.human_added + ia.human_modified + ia.human_removed;\n        lines.push(format!(\n            \"    \\x1b[{pr}magent {pct}  ({} committed)\\x1b[0m  \\x1b[{dm}m{} total changed  ·  {} human\\x1b[0m\",\n            fmt_num(ia.total_committed), fmt_num(ia.total_lines_changed), fmt_num(human_total),\n            pr = t.text_primary, dm = t.text_dim,\n        ));\n        lines.push(String::new());\n    }\n\n    // Author / model\n    let author = if !cp.author_name.is_empty() {\n        cp.author_name.clone()\n    } else if !cp.author_email.is_empty() {\n        cp.author_email.clone()\n    } else {\n        String::new()\n    };\n    if !author.is_empty() || !cp.model.is_empty() {\n        let model_part = if !cp.model.is_empty() {\n            format!(\"  \\x1b[{dm}m{}\\x1b[0m\", […]
 
 > TOOL
@@ -6430,7 +6430,7 @@ id: toolu_01GCA6NcnM2vEvcUh8vPR4wh
 tool_result
 id: toolu_01GCA6NcnM2vEvcUh8vPR4wh
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6444,7 +6444,7 @@ id: toolu_01ASw4UaT5q73g2dCrKzPhEe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "fn build_flat(\n    cards: &[Card],\n    term_w: usize,\n    collapsed: &std::collections::HashSet<usize>,\n) -> (Vec<(usize, String)>, Vec<Selectable>, Vec<usize>) {\n    let w = term_w.saturating_sub(2);\n    let mut flat: Vec<(usize, String)> = Vec::new();\n    let mut selectables: Vec<Selectable> = Vec::new();\n    let mut starts: Vec<usize> = Vec::new();\n\n    // Pull the agent name from the Header card so render_card can use it.\n    let agent: &str = cards.iter().find_map(|c| {\n        if let Card::Header { agent, .. } = c { Some(agent.as_str()) } else { None }\n    }).unwrap_or(\"\");\n\n    for (card_idx, card) in cards.iter().enumerate() {\n        if let Card::ToolRound { parts } = card {\n            if collapsed.contains(&card_idx) {\n                let si = selectables.len();\n                starts.push(flat.len());\n                selectables.push(Selectable::Card(card_idx));\n                for l in render_tool_summary(parts) { flat.push((si, l)); }\n            } else {\n                // Header row (collapses the round when space is pressed)\n                let si = selectables.len();\n                starts.push(flat.len());\n                selectables.push(Selectable::ToolHeader(card_idx));\n                for l in render_tool_header(parts) { flat.push((si, l)); }\n                // One selectable per individual tool call\n                for (tool_idx, part) in parts.iter().enumerate() {\n                    let si = selectables.len();\n                    starts.push(flat.len());\n                    selectables.push(Selectable::ToolCall(card_idx, tool_idx));\n                    for l in render_one_tool_call(part, w) { flat.push((si, l)); }\n                }\n            }\n        } else if let Card::Checkpoint(cp) = card {\n            if collapsed.contains(&card_idx) {\n                let si = selectables.len();\n                starts.push(flat.len());\n                selectables.push(Selectable::Card(card_idx));\n                for l in render_checkpoint_collapsed(cp, term_w) { flat.push((si, l)); […]
 
 > TOOL
@@ -6452,7 +6452,7 @@ id: toolu_01ASw4UaT5q73g2dCrKzPhEe
 tool_result
 id: toolu_01ASw4UaT5q73g2dCrKzPhEe
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6466,7 +6466,7 @@ id: toolu_014ACXcm4TjRm4zEPjHseHtN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    let mut collapsed: std::collections::HashSet<usize> = cards.iter().enumerate()\n        .filter_map(|(i, c)| if matches!(c, Card::ToolRound { .. } | Card::Checkpoint(_)) { Some(i) } else { None })\n        .collect();\n\n    let (mut flat, mut selectables, mut starts) = build_flat(&cards, w, &collapsed);",
   "new_string": "    let mut collapsed: std::collections::HashSet<usize> = cards.iter().enumerate()\n        .filter_map(|(i, c)| if matches!(c, Card::ToolRound { .. } | Card::Checkpoint(_)) { Some(i) } else { None })\n        .collect();\n\n    let mut expanded_files: std::collections::HashSet<(usize, usize)> = std::collections::HashSet::new();\n    let mut diff_cache: std::collections::HashMap<(usize, usize), Vec<String>> = std::collections::HashMap::new();\n\n    let (mut flat, mut selectables, mut starts) = build_flat(&cards, w, &collapsed, &expanded_files, &diff_cache);"
 }
@@ -6477,7 +6477,7 @@ id: toolu_014ACXcm4TjRm4zEPjHseHtN
 tool_result
 id: toolu_014ACXcm4TjRm4zEPjHseHtN
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6491,7 +6491,7 @@ id: toolu_01M3mUg6sbTFFZ7hy3SrnsSb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "                        if let Some((expand, card_idx, is_checkpoint)) = expand_action {\n                            if expand { collapsed.remove(&card_idx); } else { collapsed.insert(card_idx); }\n                            let (nf, ns, nst) = build_flat(cards, w, &collapsed);\n                            flat   = nf;\n                            starts = nst;\n                            sel = if expand {\n                                if is_checkpoint {\n                                    ns.iter().position(|s| *s == Selectable::CheckpointHeader(card_idx))\n                                } else {\n                                    ns.iter().position(|s| *s == Selectable::ToolHeader(card_idx))\n                                }\n                            } else {\n                                ns.iter().position(|s| *s == Selectable::Card(card_idx))\n                            }.unwrap_or_else(|| sel.min(ns.len().saturating_sub(1)));\n                            selectables = ns;\n                        } else if let Selectable::Card(ci) = &selectables[sel] {",
   "new_string": "                        if let Some((expand, card_idx, is_checkpoint)) = expand_action {\n                            if expand { collapsed.remove(&card_idx); } else { collapsed.insert(card_idx); }\n                            let (nf, ns, nst) = build_flat(cards, w, &collapsed, &expanded_files, &diff_cache);\n                            flat   = nf;\n                            starts = nst;\n                            sel = if expand {\n                                if is_checkpoint {\n                                    ns.iter().position(|s| *s == Selectable::CheckpointHeader(card_idx))\n                                } else {\n                                    ns.iter().position(|s| *s == Selectable::ToolHeader(card_idx))\n                                }\n                            } else {\n                                ns.iter().position(|s| *s == Selectable::Card(card_idx))\n                            }.unwrap_or_else(|| sel.min(ns.len().saturating_sub(1)));\n                            selectables = ns;\n                        } else if let Selectable::CheckpointFile(ci, fi) = &selectables[sel] {\n                            let key = (*ci, *fi);\n                            if expanded_files.contains(&key) {\n                                expanded_files.remove(&key);\n                            } else {\n                                if !diff_cache.contains_key(&key) {\n                                    if let Card::Checkpoint(cp) = &cards[*ci] {\n                                        if let Some(f) = cp.files_touched.get(*fi) {\n                                            diff_cache.insert(key, fetch_file_diff(&cp.commit_sha, &cp.repo_dir, f));\n                                        }\n                                    }\n                                }\n                                expanded_files.insert(key);\n                            }\n                            let target = Selectable::CheckpointFile(*ci, *fi);\n […]
 
@@ -6500,7 +6500,7 @@ id: toolu_01M3mUg6sbTFFZ7hy3SrnsSb
 tool_result
 id: toolu_01M3mUg6sbTFFZ7hy3SrnsSb
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6514,7 +6514,7 @@ id: toolu_019Y435YHsQ3UHH8PHXbrALs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "            Ok(Event::Resize(new_w, new_h)) => {\n                w = new_w as usize;\n                h = (new_h as usize).saturating_sub(1);\n                let (nf, ns, nst) = build_flat(&cards, w, &collapsed);\n                flat = nf; selectables = ns; starts = nst;",
   "new_string": "            Ok(Event::Resize(new_w, new_h)) => {\n                w = new_w as usize;\n                h = (new_h as usize).saturating_sub(1);\n                let (nf, ns, nst) = build_flat(&cards, w, &collapsed, &expanded_files, &diff_cache);\n                flat = nf; selectables = ns; starts = nst;"
 }
@@ -6525,7 +6525,7 @@ id: toolu_019Y435YHsQ3UHH8PHXbrALs
 tool_result
 id: toolu_019Y435YHsQ3UHH8PHXbrALs
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6538,7 +6538,7 @@ tool_use Bash
 id: toolu_015in39ccEcLmrAjFpEJxsXr
 ```json
 {
-  "command": "grep -n \"build_flat\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "command": "grep -n \"build_flat\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "description": "Find all remaining build_flat calls"
 }
 ```
@@ -6567,7 +6567,7 @@ id: toolu_01UBKh4Jr4JSERLzWU5o3aWD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "                    (KeyCode::Char('y'), _) | (KeyCode::Char('c'), _) => {\n                        let text = match &selectables[sel] {\n                            Selectable::Card(ci)             => card_text(&cards[*ci]),\n                            Selectable::ToolHeader(ci)       => card_text(&cards[*ci]),\n                            Selectable::CheckpointHeader(ci) => card_text(&cards[*ci]),\n                            Selectable::ToolCall(ci, ti) => {\n                                if let Card::ToolRound { parts } = &cards[*ci] {\n                                    parts.get(*ti).map_or(String::new(), tool_call_text)\n                                } else { String::new() }\n                            }\n                        };",
   "new_string": "                    (KeyCode::Char('y'), _) | (KeyCode::Char('c'), _) => {\n                        let text = match &selectables[sel] {\n                            Selectable::Card(ci)             => card_text(&cards[*ci]),\n                            Selectable::ToolHeader(ci)       => card_text(&cards[*ci]),\n                            Selectable::CheckpointHeader(ci) => card_text(&cards[*ci]),\n                            Selectable::ToolCall(ci, ti) => {\n                                if let Card::ToolRound { parts } = &cards[*ci] {\n                                    parts.get(*ti).map_or(String::new(), tool_call_text)\n                                } else { String::new() }\n                            }\n                            Selectable::CheckpointFile(ci, fi) => {\n                                if let Card::Checkpoint(cp) = &cards[*ci] {\n                                    cp.files_touched.get(*fi).cloned().unwrap_or_default()\n                                } else { String::new() }\n                            }\n                        };"
 }
@@ -6578,7 +6578,7 @@ id: toolu_01UBKh4Jr4JSERLzWU5o3aWD
 tool_result
 id: toolu_01UBKh4Jr4JSERLzWU5o3aWD
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6606,7 +6606,7 @@ tool_use Bash
 id: toolu_01TVbYDyQqWDj5pYpmLkkXk5
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
   "description": "Install gossamer"
 }
 ```
@@ -6617,7 +6617,7 @@ tool_result
 id: toolu_01TVbYDyQqWDj5pYpmLkkXk5
 ```
     Finished `release` profile [optimized] target(s) in 7.27s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
+   Replacing /home/<USER>/.cargo/bin/gossamer
 ```
 
 > AGENT
@@ -6644,9 +6644,9 @@ id: toolu_01PhoezFLtzojoZ6oCqt3RTh
 tool_result
 id: toolu_01PhoezFLtzojoZ6oCqt3RTh
 ```
-1e5ca51a3970|eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8|/Users/stephanostsoucas/git-activity-analyzer
-aa91550448e1|c25cf97cdb20c1932a4108fe017f9ba8cbb79168|/Users/stephanostsoucas/git-activity-analyzer
-470ebda74bb6|b08327e5bdbc8d2dc3af4b289fb85d88057d8921|/Users/stephanostsoucas/git-activity-analyzer
+1e5ca51a3970|eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8|/home/<USER>/git-activity-analyzer
+aa91550448e1|c25cf97cdb20c1932a4108fe017f9ba8cbb79168|/home/<USER>/git-activity-analyzer
+470ebda74bb6|b08327e5bdbc8d2dc3af4b289fb85d88057d8921|/home/<USER>/git-activity-analyzer
 ```
 
 > TOOL
@@ -6655,7 +6655,7 @@ tool_use Bash
 id: toolu_012gmdrKwepys486L7THnwCD
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer show eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8 --stat 2>&1 | head -10\ngit -C /Users/stephanostsoucas/git-activity-analyzer show eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8 --stat 2>&1 | head -10",
+  "command": "git -C /home/<USER>/p/gossamer show eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8 --stat 2>&1 | head -10\ngit -C /home/<USER>/git-activity-analyzer show eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8 --stat 2>&1 | head -10",
   "description": "Check which repo the commit SHA belongs to"
 }
 ```
@@ -6666,7 +6666,7 @@ tool_result
 id: toolu_012gmdrKwepys486L7THnwCD
 ```
 commit eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8
-Author: nosman <stephanos.tsoucas@gmail.com>
+Author: nosman <<REDACTED_EMAIL>>
 Date:   Sat Jun 13 14:49:43 2026 -0400
 
     enhance checkpoint visualization and navigating around between checkpoints
@@ -6694,12 +6694,12 @@ id: toolu_018uGayQYA9M1MpRkpxtKQde
 tool_result
 id: toolu_018uGayQYA9M1MpRkpxtKQde
 ```
-cd8368ba-3c02-4c95-8f36-cf0771330d33|/Users/stephanostsoucas/p/gossamer-checkpoints-visualization|checkpoints-visualization
+cd8368ba-3c02-4c95-8f36-cf0771330d33|/home/<USER>/p/gossamer-checkpoints-visualization|checkpoints-visualization
 ```
 
 > AGENT
 
-The `repo_dir` in the DB is `/Users/stephanostsoucas/git-activity-analyzer` — a different project — so `git show` runs in the wrong directory and gets empty output. The commit exists in the gossamer repo. I'll add a fallback that checks registered repos when the stored `repo_dir` doesn't have the commit:
+The `repo_dir` in the DB is `/home/<USER>/git-activity-analyzer` — a different project — so `git show` runs in the wrong directory and gets empty output. The commit exists in the gossamer repo. I'll add a fallback that checks registered repos when the stored `repo_dir` doesn't have the commit:
 
 > TOOL
 
@@ -6708,7 +6708,7 @@ id: toolu_016Youjpyxr5hYVrUZGSza7L
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "/// Fetch the diff for `file` in `commit_sha`, colorised with ANSI SGR.\nfn fetch_file_diff(commit_sha: &str, repo_dir: &str, file: &str) -> Vec<String> {\n    use std::process::Command;\n    let t = crate::theme::get();\n    if commit_sha.is_empty() || repo_dir.is_empty() {\n        return vec![format!(\"      \\x1b[{ft}m(no commit SHA available)\\x1b[0m\", ft = t.text_faint)];\n    }\n    let out = Command::new(\"git\")\n        .args([\"show\", commit_sha, \"--\", file])\n        .current_dir(repo_dir)\n        .output();\n    let Ok(out) = out else {\n        return vec![format!(\"      \\x1b[{ft}m(could not run git show)\\x1b[0m\", ft = t.text_faint)];\n    };",
   "new_string": "/// Find the git repo directory that contains `commit_sha`, trying `preferred`\n/// first, then falling back to all registered gossamer repos.\nfn resolve_repo_for_commit(commit_sha: &str, preferred: &str) -> Option<String> {\n    use std::process::Command;\n    let has_commit = |dir: &str| {\n        Command::new(\"git\").args([\"cat-file\", \"-t\", commit_sha])\n            .current_dir(dir).output()\n            .map(|o| o.status.success()).unwrap_or(false)\n    };\n    if !preferred.is_empty() && std::path::Path::new(preferred).exists() && has_commit(preferred) {\n        return Some(preferred.to_string());\n    }\n    let Ok(conn) = crate::db::connect() else { return None; };\n    let Ok(mut stmt) = conn.prepare(\"SELECT directory FROM repositories\") else { return None; };\n    let dirs: Vec<String> = stmt.query_map([], |r| r.get(0))\n        .map(|rs| rs.flatten().collect()).unwrap_or_default();\n    for dir in dirs {\n        if has_commit(&dir) { return Some(dir); }\n    }\n    None\n}\n\n/// Fetch the diff for `file` in `commit_sha`, colorised with ANSI SGR.\nfn fetch_file_diff(commit_sha: &str, repo_dir: &str, file: &str) -> Vec<String> {\n    use std::process::Command;\n    let […]
 
@@ -6717,7 +6717,7 @@ id: toolu_016Youjpyxr5hYVrUZGSza7L
 tool_result
 id: toolu_016Youjpyxr5hYVrUZGSza7L
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6726,7 +6726,7 @@ tool_use Bash
 id: toolu_012atZhdvkdAiTV2oFQ46RY5
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
   "description": "Build and install"
 }
 ```
@@ -6737,7 +6737,7 @@ tool_result
 id: toolu_012atZhdvkdAiTV2oFQ46RY5
 ```
     Finished `release` profile [optimized] target(s) in 10.39s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
+   Replacing /home/<USER>/.cargo/bin/gossamer
 ```
 
 > AGENT
@@ -6750,7 +6750,7 @@ tool_use Bash
 id: toolu_01Y5YcXFwx3NiXYL46nsgsSV
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer show eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8 -- src/commands/show.rs 2>/dev/null | head -20",
+  "command": "git -C /home/<USER>/p/gossamer show eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8 -- src/commands/show.rs 2>/dev/null | head -20",
   "description": "Confirm git show works from the gossamer repo"
 }
 ```
@@ -6761,7 +6761,7 @@ tool_result
 id: toolu_01Y5YcXFwx3NiXYL46nsgsSV
 ```
 commit eee2fae7ec4c659e8eac9c2efa3785dae50b8ab8
-Author: nosman <stephanos.tsoucas@gmail.com>
+Author: nosman <<REDACTED_EMAIL>>
 Date:   Sat Jun 13 14:49:43 2026 -0400
 
     enhance checkpoint visualization and navigating around between checkpoints
@@ -6806,7 +6806,7 @@ tool_use Read
 id: toolu_0172G6atiqL33CaX6Dj8YL6f
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 799,
   "limit": 55
 }
@@ -6880,7 +6880,7 @@ id: toolu_01Tx9DemMyDczPvaCPhiGNAa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "            repo_dir            = excluded.repo_dir,",
   "new_string": "            repo_dir            = CASE WHEN excluded.commit_sha != '' AND excluded.commit_sha = checkpoints.commit_sha\n                                       THEN checkpoints.repo_dir\n                                       ELSE excluded.repo_dir END,"
 }
@@ -6891,7 +6891,7 @@ id: toolu_01Tx9DemMyDczPvaCPhiGNAa
 tool_result
 id: toolu_01Tx9DemMyDczPvaCPhiGNAa
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6905,7 +6905,7 @@ id: toolu_01V4h8j4kJqe1AsngNxK6Smk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "old_string": "            repo_dir            = CASE WHEN excluded.commit_sha != '' AND excluded.commit_sha = checkpoints.commit_sha\n                                       THEN checkpoints.repo_dir\n                                       ELSE excluded.repo_dir END,",
   "new_string": "            repo_dir            = CASE\n                                       -- same non-empty sha: first indexer found it, don't overwrite\n                                       WHEN excluded.commit_sha != '' AND excluded.commit_sha = checkpoints.commit_sha\n                                            THEN checkpoints.repo_dir\n                                       -- existing row has a sha but new indexer doesn't: keep the one that knows\n                                       WHEN checkpoints.commit_sha != '' AND excluded.commit_sha = ''\n                                            THEN checkpoints.repo_dir\n                                       ELSE excluded.repo_dir\n                                  END,"
 }
@@ -6916,7 +6916,7 @@ id: toolu_01V4h8j4kJqe1AsngNxK6Smk
 tool_result
 id: toolu_01V4h8j4kJqe1AsngNxK6Smk
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6925,7 +6925,7 @@ tool_use Bash
 id: toolu_01FCMP9PnUNz54zobRdjBpVx
 ```json
 {
-  "command": "cargo install --path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
+  "command": "cargo install --path /home/<USER>/p/gossamer-checkpoints-visualization 2>&1 | grep -E \"^error|Replacing|Finished\"",
   "description": "Build and install"
 }
 ```
@@ -6936,7 +6936,7 @@ tool_result
 id: toolu_01FCMP9PnUNz54zobRdjBpVx
 ```
     Finished `release` profile [optimized] target(s) in 5.28s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
+   Replacing /home/<USER>/.cargo/bin/gossamer
 ```
 
 > AGENT
@@ -6957,7 +6957,7 @@ tool_use Bash
 id: toolu_011nKRgfiSXP1CEkPHVZe2Qd
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization log --oneline -20",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization log --oneline -20",
   "description": "Check recent commits"
 }
 ```
@@ -6993,7 +6993,7 @@ tool_use Bash
 id: toolu_01N28WGehPhP22zBNETUP4Dv
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show eee2fae -- src/commands/index.rs | grep -A 20 \"upsert_checkpoint\\|repo_dir\\|ON CONFLICT\" | head -60",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show eee2fae -- src/commands/index.rs | grep -A 20 \"upsert_checkpoint\\|repo_dir\\|ON CONFLICT\" | head -60",
   "description": "Check what upsert_checkpoint looked like before our changes"
 }
 ```
@@ -7062,7 +7062,7 @@ tool_use Bash
 id: toolu_01RJYW1XYceQ2oHGJ7VipFFX
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show eee2fae -- src/commands/index.rs | grep -B5 -A 30 \"ON CONFLICT\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show eee2fae -- src/commands/index.rs | grep -B5 -A 30 \"ON CONFLICT\"",
   "description": "Check original upsert ON CONFLICT clause"
 }
 ```
@@ -7116,7 +7116,7 @@ tool_use Bash
 id: toolu_01Eq5ZENvTraP4T7NQ2GSegd
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show f0f0bd7 --stat && git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep -A 20 \"repo_dir\\|remote\\|git remote\" | head -60",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show f0f0bd7 --stat && git -C /home/<USER>/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep -A 20 \"repo_dir\\|remote\\|git remote\" | head -60",
   "description": "Check the repo resolution fix commit"
 }
 ```
@@ -7127,7 +7127,7 @@ tool_result
 id: toolu_01Eq5ZENvTraP4T7NQ2GSegd
 ```
 commit f0f0bd7aa4c093faddb42ceae7bac6107c917a4b
-Author: Stephanos Tsoucas <stephanos@cosmos.so>
+Author: Stephanos Tsoucas <<REDACTED_EMAIL>>
 Date:   Fri May 29 10:37:33 2026 -0400
 
     Fix repo resolution logic to look at git remote as the source of truth.
@@ -7176,7 +7176,7 @@ tool_use Bash
 id: toolu_017bfaocyS1jR7rzZssfJ3gB
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep -A 10 \"repo_dir.*excluded\\|excluded.*repo_dir\\|COALESCE.*repo_dir\" | head -30",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep -A 10 \"repo_dir.*excluded\\|excluded.*repo_dir\\|COALESCE.*repo_dir\" | head -30",
   "description": "Check if f0f0bd7 fixed the repo_dir overwrite issue"
 }
 ```
@@ -7195,7 +7195,7 @@ tool_use Bash
 id: toolu_01GdDZLBkvPPREn1JgszRz29
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization log --all --oneline --grep=\"repo_dir\\|repo dir\\|wrong dir\\|resolution\" | head -10",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization log --all --oneline --grep=\"repo_dir\\|repo dir\\|wrong dir\\|resolution\" | head -10",
   "description": "Search commit history for repo_dir fixes"
 }
 ```
@@ -7215,7 +7215,7 @@ tool_use Bash
 id: toolu_0196XWEZwMyKbaJpMWqAXPAd
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show 58fb7b1 --stat",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show 58fb7b1 --stat",
   "description": "That's the current conversation's commits. Check what f0f0bd7 actually changed in upsert_checkpoint"
 }
 ```
@@ -7226,7 +7226,7 @@ tool_result
 id: toolu_0196XWEZwMyKbaJpMWqAXPAd
 ```
 commit 58fb7b1b2e6865685ec4c72bbb329c7730f5144f
-Author: nosman <stephanos.tsoucas@gmail.com>
+Author: nosman <<REDACTED_EMAIL>>
 Date:   Sat Jun 13 17:54:36 2026 -0400
 
     Why were we using the wrong directory
@@ -7251,7 +7251,7 @@ tool_use Bash
 id: toolu_018Y9jj92ug5TiYDjYXEVyA8
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show eee2fae:src/commands/index.rs | grep -A 60 \"pub(crate) fn upsert_checkpoint\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show eee2fae:src/commands/index.rs | grep -A 60 \"pub(crate) fn upsert_checkpoint\"",
   "description": "Check upsert_checkpoint before my PK-change rewrite"
 }
 ```
@@ -7330,7 +7330,7 @@ tool_use Bash
 id: toolu_01X2wZJydrv7qbGGyEoFKKxU
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep -B5 -A15 \"upsert_checkpoint\\|repo_dir\" | grep -v \"^-\" | head -80",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep -B5 -A15 \"upsert_checkpoint\\|repo_dir\" | grep -v \"^-\" | head -80",
   "description": "Check what f0f0bd7 added around repo_dir in index.rs"
 }
 ```
@@ -7383,7 +7383,7 @@ tool_use Bash
 id: toolu_01MsnThgHaVWMNKDVkPhcUVj
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep -B2 -A5 \"upsert_checkpoint\" | head -40",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep -B2 -A5 \"upsert_checkpoint\" | head -40",
   "description": "Check if f0f0bd7 changed what gets passed to upsert_checkpoint"
 }
 ```
@@ -7402,7 +7402,7 @@ tool_use Bash
 id: toolu_01PN1sJGmryTfaHHrBFmtn3A
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep \"upsert_checkpoint\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/commands/index.rs | grep \"upsert_checkpoint\"",
   "description": "Find any upsert_checkpoint changes in f0f0bd7"
 }
 ```
@@ -7421,7 +7421,7 @@ tool_use Bash
 id: toolu_01GKUSivwkmX8mR3r7c9HTJQ
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/db.rs | grep -A 10 \"repo_dir\\|checkpoint\"",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/db.rs | grep -A 10 \"repo_dir\\|checkpoint\"",
   "description": "Check if f0f0bd7 changed checkpoint schema or repo_dir handling in db.rs"
 }
 ```
@@ -7440,7 +7440,7 @@ tool_use Bash
 id: toolu_01KvWFvX5c5V53VtztnnM1ob
 ```json
 {
-  "command": "git -C /Users/stephanostsoucas/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/db.rs | head -60",
+  "command": "git -C /home/<USER>/p/gossamer-checkpoints-visualization show f0f0bd7 -- src/db.rs | head -60",
   "description": "See what f0f0bd7 changed in db.rs"
 }
 ```
@@ -7451,7 +7451,7 @@ tool_result
 id: toolu_01KvWFvX5c5V53VtztnnM1ob
 ```
 commit f0f0bd7aa4c093faddb42ceae7bac6107c917a4b
-Author: Stephanos Tsoucas <stephanos@cosmos.so>
+Author: Stephanos Tsoucas <<REDACTED_EMAIL>>
 Date:   Fri May 29 10:37:33 2026 -0400
 
     Fix repo resolution logic to look at git remote as the source of truth.
@@ -7467,7 +7467,7 @@ index 9fa2f91..b06053c 100644
      let _ = conn.execute("ALTER TABLE sessions ADD COLUMN name_is_explicit INTEGER NOT NULL DEFAULT 0", []);
  
 +    // Correct sessions whose stored repo_id doesn't match their cwd. Done in
-+    // two passes so cross-machine sessions (Scott's `/Users/sholodak/…`) also
++    // two passes so cross-machine sessions (Scott's `/home/<USER>/…`) also
 +    // get re-attributed instead of stranding on whichever repo's index pass
 +    // last touched them.
 +    correct_session_repo_attribution(&conn);
@@ -7482,8 +7482,8 @@ index 9fa2f91..b06053c 100644
 +
 +/// Re-resolve `sessions.repo_id` using path-only heuristics: cwd longest-
 +/// prefix match, then user-home-stripped suffix match (so Scott's
-+/// `/Users/sholodak/cosmos/cosmos-graphql` attaches to our local
-+/// `/Users/stsoucas/cosmos/cosmos-graphql` clone). Mirrors steps 1 and 1b of
++/// `/home/<USER>/cosmos/cosmos-graphql` attaches to our local
++/// `/home/<USER>/cosmos/cosmos-graphql` clone). Mirrors steps 1 and 1b of
 +/// `index::RepoResolver` but skips the git-remote subprocess — the migration
 +/// runs on every connect and must stay cheap.
 +fn […]
@@ -7506,7 +7506,7 @@ Will this work when i'm looking at a session from a different user? If i have th
 
 Yes — `resolve_repo_for_commit` already handles this correctly. When viewing Scott's session:
 
-1. `repo_dir` stored in the DB is Scott's machine path (e.g. `/Users/sholodak/p/gossamer`) — doesn't exist on your machine, so `has_commit` returns false immediately
+1. `repo_dir` stored in the DB is Scott's machine path (e.g. `/home/<USER>/p/gossamer`) — doesn't exist on your machine, so `has_commit` returns false immediately
 2. Falls back to iterating your registered repos, running `git cat-file -t <sha>` in each
 3. If you've fetched the remote and the working-branch commit is reachable in your local clone, it finds it and runs `git show` from the right place
 
@@ -7522,7 +7522,7 @@ tool_use Bash
 id: toolu_01VAckT81Ng23ZBYwW5pF6Tc
 ```json
 {
-  "command": "grep -n \"●\\|•\\|★\\|✦\\|active\\|indicator\\|dot\\|star\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs | head -30",
+  "command": "grep -n \"●\\|•\\|★\\|✦\\|active\\|indicator\\|dot\\|star\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs | head -30",
   "description": "Find active indicator rendering in sessions.rs"
 }
 ```
@@ -7554,7 +7554,7 @@ tool_use Bash
 id: toolu_01STiSj534LeWtGhVYYf2bhr
 ```json
 {
-  "command": "grep -n \"●\\|•\\|★\\|✦\\|active\\|indicator\\|dot\\|star\\|dot_char\\|backed_up\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs | head -30",
+  "command": "grep -n \"●\\|•\\|★\\|✦\\|active\\|indicator\\|dot\\|star\\|dot_char\\|backed_up\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs | head -30",
   "description": "Find active indicator in status.rs"
 }
 ```
@@ -7593,7 +7593,7 @@ tool_use Bash
 id: toolu_01EFzFs1k67L9tv5iCK4wJ7j
 ```json
 {
-  "command": "ls /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/",
+  "command": "ls /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/",
   "description": "List command files"
 }
 ```
@@ -7629,7 +7629,7 @@ tool_use Bash
 id: toolu_015UQC8e8AiJWWPR4mwhBLSK
 ```json
 {
-  "command": "grep -n \"●\\|•\\|★\\|✦\\|dot_char\\|star\\|active\\|indicator\\|backed_up\\|star_prefix\\|dot =\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs | head -40",
+  "command": "grep -n \"●\\|•\\|★\\|✦\\|dot_char\\|star\\|active\\|indicator\\|backed_up\\|star_prefix\\|dot =\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs | head -40",
   "description": "Find active indicator in session_list.rs"
 }
 ```
@@ -7652,7 +7652,7 @@ tool_use Read
 id: toolu_01RqAxNWChbRmz1HABaS1LTj
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "offset": 240,
   "limit": 100
 }
@@ -7718,7 +7718,7 @@ tool_use Read
 id: toolu_01G7U4xmSA79VmpnbETAwVKA
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs",
   "offset": [
     540,
     600
@@ -7741,7 +7741,7 @@ tool_use Read
 id: toolu_01PJ8YjMWb9A8V5fACt5zVSj
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
   "offset": 340,
   "limit": 100
 }
@@ -7795,7 +7795,7 @@ tool_use Read
 id: toolu_016n9aRwVay7Uq4mDaxA6fRy
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs",
   "offset": 545,
   "limit": 60
 }
@@ -7860,7 +7860,7 @@ id: toolu_019oooTbRCWTynFgKj8o9QoV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs",
   "old_string": "            let (meta_col, dot_char) = if s.backed_up {\n                (t.backed_meta, \"*\")\n            } else {\n                (t.unbacked_meta, \"·\")\n            };",
   "new_string": "            let (meta_col, dot_char) = if s.backed_up {\n                (t.backed_meta, \"★\")\n            } else {\n                (t.unbacked_meta, \"·\")\n            };"
 }
@@ -7871,7 +7871,7 @@ id: toolu_019oooTbRCWTynFgKj8o9QoV
 tool_result
 id: toolu_019oooTbRCWTynFgKj8o9QoV
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7881,7 +7881,7 @@ id: toolu_01Uybpg8fjn3yKe7KMEgbQK4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
   "old_string": "        let (meta_col, dot_char) = if s.backed_up {\n            (t.backed_meta, \"*\")\n        } else {\n            (t.unbacked_meta, \"·\")\n        };",
   "new_string": "        let (meta_col, dot_char) = if s.backed_up {\n            (t.backed_meta, \"★\")\n        } else {\n            (t.unbacked_meta, \"·\")\n        };"
 }
@@ -7892,7 +7892,7 @@ id: toolu_01Uybpg8fjn3yKe7KMEgbQK4
 tool_result
 id: toolu_01Uybpg8fjn3yKe7KMEgbQK4
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7913,8 +7913,8 @@ id: toolu_01JMyAScNhiPLTJoFiTVDiC5
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 7.15s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -7931,7 +7931,7 @@ tool_use Read
 id: toolu_01M8K6R1je2gqgwzoc48Bu9X
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "offset": 1,
   "limit": 120
 }
@@ -7979,7 +7979,7 @@ tool_use Read
 id: toolu_01Md3r1Xj9ZVEUAPnMxJkTJ4
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "offset": 120,
   "limit": 120
 }
@@ -8035,7 +8035,7 @@ id: toolu_018XnQh1GMtarNrw3SuAa8Bt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "old_string": "    let join = \"\n        LEFT JOIN checkpoints c\n          ON c.session_id = s.session_id\n         AND c.checkpoint_number = (\n               SELECT MIN(checkpoint_number) FROM checkpoints WHERE session_id = s.session_id\n             )\n    \";",
   "new_string": "    let join = \"\n        LEFT JOIN checkpoints c\n          ON c.session_id = s.session_id\n         AND c.last_turn_ts = (\n               SELECT MIN(last_turn_ts) FROM checkpoints WHERE session_id = s.session_id\n             )\n    \";"
 }
@@ -8046,7 +8046,7 @@ id: toolu_018XnQh1GMtarNrw3SuAa8Bt
 tool_result
 id: toolu_018XnQh1GMtarNrw3SuAa8Bt
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8067,8 +8067,8 @@ id: toolu_01DLL52UNm7PL21ndCjS98qj
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 6.52s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -8087,7 +8087,7 @@ tool_use Bash
 id: toolu_01W5Gxh9NugbjMkBUR4iqj9Z
 ```json
 {
-  "command": "grep -n \"tok\\|token\\|tool_ok\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs | head -20",
+  "command": "grep -n \"tok\\|token\\|tool_ok\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs | head -20",
   "description": "Find token rendering in sessions.rs"
 }
 ```
@@ -8112,7 +8112,7 @@ tool_use Bash
 id: toolu_011L3nZWTb5fpJrbaWeDhf8P
 ```json
 {
-  "command": "grep -n \"tok\\|token\\|tool_ok\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs | head -20",
+  "command": "grep -n \"tok\\|token\\|tool_ok\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs | head -20",
   "description": "Find token rendering in status.rs"
 }
 ```
@@ -8141,7 +8141,7 @@ tool_use Read
 id: toolu_01CbKpi5ufhPQ1B1zaPtmjqA
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
   "offset": 435,
   "limit": 10
 }
@@ -8171,7 +8171,7 @@ id: toolu_01Q3dMLVgUkAYGB7yCvQSCbT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "    // ── Markdown skin (crossterm Color, passed directly to MadSkin) ──────────\n    pub md_code: crossterm::style::Color,",
   "new_string": "    /// True for dark terminals, false for light. Used by callers that need to\n    /// pick gradient steps that match the terminal's brightness direction.\n    pub is_dark: bool,\n\n    // ── Markdown skin (crossterm Color, passed directly to MadSkin) ──────────\n    pub md_code: crossterm::style::Color,"
 }
@@ -8182,7 +8182,7 @@ id: toolu_01Q3dMLVgUkAYGB7yCvQSCbT
 tool_result
 id: toolu_01Q3dMLVgUkAYGB7yCvQSCbT
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8196,7 +8196,7 @@ id: toolu_016CGohVF2WJY1RK34ASDoNr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "        checkpoint_bg:    BG_DARK_GREEN,     // very dark green (#005f00) — explicit 256-color\n        checkpoint_label: BOLD_BRIGHT_GREEN, // bold bright green — \"light green on dark green\"\n        checkpoint_text:  BRIGHT_WHITE,      // near-white — commit message, number\n        checkpoint_dim:   WHITE,             // color-7 — short ID, timestamp\n        md_code:        Color::Cyan,",
   "new_string": "        checkpoint_bg:    BG_DARK_GREEN,     // very dark green (#005f00) — explicit 256-color\n        checkpoint_label: BOLD_BRIGHT_GREEN, // bold bright green — \"light green on dark green\"\n        checkpoint_text:  BRIGHT_WHITE,      // near-white — commit message, number\n        checkpoint_dim:   WHITE,             // color-7 — short ID, timestamp\n        is_dark: true,\n        md_code:        Color::Cyan,"
 }
@@ -8207,7 +8207,7 @@ id: toolu_016CGohVF2WJY1RK34ASDoNr
 tool_result
 id: toolu_016CGohVF2WJY1RK34ASDoNr
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8217,7 +8217,7 @@ id: toolu_01RUkRS7tV7k2LrsEv5WkDkp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs",
   "old_string": "        checkpoint_bg:    BG_BRIGHT_GREEN,   // bright green background for light terminals\n        checkpoint_label: BOLD_BLACK,       // bold black — best contrast on bright green bg\n        checkpoint_text:  BLACK,            // black — best contrast on bright green bg\n        checkpoint_dim:   BRIGHT_BLACK,     // dark gray — dimmed metadata on bright green bg\n        md_code:        Color::DarkCyan,",
   "new_string": "        checkpoint_bg:    BG_BRIGHT_GREEN,   // bright green background for light terminals\n        checkpoint_label: BOLD_BLACK,       // bold black — best contrast on bright green bg\n        checkpoint_text:  BLACK,            // black — best contrast on bright green bg\n        checkpoint_dim:   BRIGHT_BLACK,     // dark gray — dimmed metadata on bright green bg\n        is_dark: false,\n        md_code:        Color::DarkCyan,"
 }
@@ -8228,7 +8228,7 @@ id: toolu_01RUkRS7tV7k2LrsEv5WkDkp
 tool_result
 id: toolu_01RUkRS7tV7k2LrsEv5WkDkp
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8241,7 +8241,7 @@ tool_use Read
 id: toolu_018aEp8uBWPz1sKEshZ6vt5v
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "offset": 34,
   "limit": 15
 }
@@ -8276,7 +8276,7 @@ id: toolu_01F9KgvYQPjJT3wYToUH2oYP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "old_string": "/// Format a token count compactly for display (empty string for zero).\npub fn fmt_tokens(n: i64) -> String {",
   "new_string": "/// SGR color for a token count — a graduated sequence using standard 16-color\n/// ANSI so the terminal's own palette controls the actual RGB values.\n///\n/// Dark theme: dim → progressively brighter (more tokens = more visible).\n/// Light theme: muted → progressively darker/more saturated.\npub fn token_color(tokens: i64) -> &'static str {\n    if crate::theme::get().is_dark {\n        match tokens {\n            t if t < 5_000   => \"90\",   // dim gray   — trace usage\n            t if t < 20_000  => \"37\",   // white      — light\n            t if t < 100_000 => \"33\",   // yellow     — moderate\n            t if t < 500_000 => \"93\",   // bright yellow — heavy\n            _                => \"1;31\", // bold red   — very heavy\n        }\n    } else {\n        match tokens {\n            t if t < 5_000   => \"90\",   // light gray — trace usage\n            t if t < 20_000  => \"36\",   // cyan       — light\n            t if t < 100_000 => \"34\",   // blue       — moderate\n            t if t < 500_000 => \"35\",   // magenta    — heavy\n            _                => \"1;31\", // bold […]
 
@@ -8285,7 +8285,7 @@ id: toolu_01F9KgvYQPjJT3wYToUH2oYP
 tool_result
 id: toolu_01F9KgvYQPjJT3wYToUH2oYP
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8299,7 +8299,7 @@ id: toolu_01XLTej6ugQJgyUDC1hH6rGq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
   "old_string": "        if tokens_w > 0 {\n            let tok = session_list::fmt_tokens(s.tokens_used);\n            let pad = \" \".repeat(tokens_w - tok.chars().count());\n            line.push_str(&format!(\"  \\x1b[{dm}m{pad}\\x1b[{tk}m{tok}\\x1b[0m\", dm = t.text_dim, tk = t.tool_ok));\n        }",
   "new_string": "        if tokens_w > 0 {\n            let tok = session_list::fmt_tokens(s.tokens_used);\n            let pad = \" \".repeat(tokens_w - tok.chars().count());\n            let tk = session_list::token_color(s.tokens_used);\n            line.push_str(&format!(\"  \\x1b[{dm}m{pad}\\x1b[{tk}m{tok}\\x1b[0m\", dm = t.text_dim));\n        }"
 }
@@ -8310,7 +8310,7 @@ id: toolu_01XLTej6ugQJgyUDC1hH6rGq
 tool_result
 id: toolu_01XLTej6ugQJgyUDC1hH6rGq
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8320,7 +8320,7 @@ id: toolu_017oqbnNzLRhafBm6scwFL9V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs",
   "old_string": "            if tokens_w > 0 {\n                let tok = session_list::fmt_tokens(s.tokens_used);\n                let pad = \" \".repeat(tokens_w - tok.chars().count());\n                line.push_str(&format!(\"  \\x1b[{dm}m{pad}\\x1b[{tk}m{tok}\\x1b[0m\", dm = t.text_dim, tk = t.tool_ok));",
   "new_string": "            if tokens_w > 0 {\n                let tok = session_list::fmt_tokens(s.tokens_used);\n                let pad = \" \".repeat(tokens_w - tok.chars().count());\n                let tk = session_list::token_color(s.tokens_used);\n                line.push_str(&format!(\"  \\x1b[{dm}m{pad}\\x1b[{tk}m{tok}\\x1b[0m\", dm = t.text_dim));"
 }
@@ -8331,7 +8331,7 @@ id: toolu_017oqbnNzLRhafBm6scwFL9V
 tool_result
 id: toolu_017oqbnNzLRhafBm6scwFL9V
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8352,8 +8352,8 @@ id: toolu_01QwiiSQb2q5JmDbpEfxaHS3
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 7.00s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -8378,7 +8378,7 @@ tool_use Read
 id: toolu_01QoNzDkKb5KNbnk3XzobmAy
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs",
   "offset": 420,
   "limit": 25
 }
@@ -8435,7 +8435,7 @@ id: toolu_01QXUSb2QWuy7BVmEVR4mKVf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs",
   "old_string": "        let is_cur = current_repo_dir == Some(repo.directory.as_str());\n        let dot_col = if is_cur { t.fresh } else { t.text_dim };\n\n        let name_padded = format!(\"{:<name_w$}\", repo.name);\n        let dir_padded  = format!(\"{:<dir_w$}\",  repo.directory);\n        let line = format!(\n            \"\\x1b[{dot_col}m*\\x1b[0m \\x1b[{pm}m{name_padded}\\x1b[0m  \\x1b[{dm}m{dir_padded}  {}\\x1b[0m\",\n            repo.remote, pm = t.text_primary, dm = t.text_dim,\n        );",
   "new_string": "        let is_cur = current_repo_dir == Some(repo.directory.as_str());\n        let star = if is_cur {\n            format!(\"\\x1b[{}m★\\x1b[0m\", t.fresh)\n        } else {\n            \" \".to_string()\n        };\n\n        let name_padded = format!(\"{:<name_w$}\", repo.name);\n        let dir_padded  = format!(\"{:<dir_w$}\",  repo.directory);\n        let line = format!(\n            \"{star} \\x1b[{pm}m{name_padded}\\x1b[0m  \\x1b[{dm}m{dir_padded}  {}\\x1b[0m\",\n            repo.remote, pm = t.text_primary, dm = t.text_dim,\n        );"
 }
@@ -8446,7 +8446,7 @@ id: toolu_01QXUSb2QWuy7BVmEVR4mKVf
 tool_result
 id: toolu_01QXUSb2QWuy7BVmEVR4mKVf
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8467,8 +8467,8 @@ id: toolu_01DMVJdXJFtHwZPH8BATSenf
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 6.56s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -8485,7 +8485,7 @@ tool_use Read
 id: toolu_011DubKNWEjCk7gP8irGoUUX
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs"
 }
 ```
 
@@ -8546,7 +8546,7 @@ id: toolu_01GYChakEBCmB8jjpitu28f9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs",
   "old_string": "    // entire clean — non-fatal (session may already be gone from entireio).\n    match Command::new(\"entire\").arg(\"clean\").arg(&session_id).status() {\n        Ok(s) if s.success() => {}\n        Ok(s)  => eprintln!(\"warning: `entire clean` exited with {s}\"),\n        Err(e) => eprintln!(\"warning: could not run `entire clean`: {e}\"),\n    }",
   "new_string": "    // entire clean — non-fatal (session may already be gone from entireio).\n    match Command::new(\"entire\").args([\"clean\", \"--session\", &session_id]).status() {\n        Ok(s) if s.success() => {}\n        Ok(s)  => eprintln!(\"warning: `entire clean` exited with {s}\"),\n        Err(e) => eprintln!(\"warning: could not run `entire clean`: {e}\"),\n    }"
 }
@@ -8557,7 +8557,7 @@ id: toolu_01GYChakEBCmB8jjpitu28f9
 tool_result
 id: toolu_01GYChakEBCmB8jjpitu28f9
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8567,7 +8567,7 @@ id: toolu_01D1ZXQa2qUa3NAvao66Na3x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs",
   "old_string": "/// Delete a session from the DB and search index without printing anything.\n/// Runs `entire clean` silently. Returns the number of DB rows deleted.\n/// Safe to call from inside a TUI (no stdout writes).\npub(crate) fn remove_session(session_id: &str) -> Result<usize> {\n    let conn = db::connect()?;\n    let rows = conn.execute(",
   "new_string": "/// Delete a session from the DB and search index without printing anything.\n/// Runs `entire clean --session <id>` silently. Returns the number of DB rows deleted.\n/// Safe to call from inside a TUI (no stdout writes).\npub(crate) fn remove_session(session_id: &str) -> Result<usize> {\n    let _ = Command::new(\"entire\").args([\"clean\", \"--session\", session_id]).status();\n\n    let conn = db::connect()?;\n    let rows = conn.execute("
 }
@@ -8578,7 +8578,7 @@ id: toolu_01D1ZXQa2qUa3NAvao66Na3x
 tool_result
 id: toolu_01D1ZXQa2qUa3NAvao66Na3x
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8599,8 +8599,8 @@ id: toolu_01RaNM3Y1f6Qu8DiAwtpprA1
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 7.92s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -8617,7 +8617,7 @@ tool_use Bash
 id: toolu_015DhGSdkAyQTbQp3VgZu4QW
 ```json
 {
-  "command": "grep -rn \"handoff\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ 2>/dev/null",
+  "command": "grep -rn \"handoff\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ 2>/dev/null",
   "description": "Search for handoff references in source"
 }
 ```
@@ -8644,7 +8644,7 @@ tool_use Bash
 id: toolu_01KGeEuvpYRnooFjYBhchUfk
 ```json
 {
-  "command": "grep -n \"show\\|Show\\|pager\\|transcript\\|jsonl\\|session_id\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs | grep -i \"show\\|pager\\|transcript\\|launch\\|run\\|spawn\" | head -20",
+  "command": "grep -n \"show\\|Show\\|pager\\|transcript\\|jsonl\\|session_id\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs | grep -i \"show\\|pager\\|transcript\\|launch\\|run\\|spawn\" | head -20",
   "description": "Find where show/pager is launched from status.rs"
 }
 ```
@@ -8679,7 +8679,7 @@ tool_use Bash
 id: toolu_01N76WEbt2iNZspJWiuvjD8v
 ```json
 {
-  "command": "grep -n \"^pub fn run\\|fn run\\|find_jsonl\\|claude.*projects\\|jsonl_path\\|checkpoint\\|fetch_turns\\|parse\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -30",
+  "command": "grep -n \"^pub fn run\\|fn run\\|find_jsonl\\|claude.*projects\\|jsonl_path\\|checkpoint\\|fetch_turns\\|parse\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -30",
   "description": "Find the data sources in show.rs"
 }
 ```
@@ -8723,7 +8723,7 @@ tool_use Read
 id: toolu_0175Q6MWXxWzDnjtwZry8B4N
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 90,
   "limit": 80
 }
@@ -8778,7 +8778,7 @@ tool_use Read
 id: toolu_019z1wzgNn336rrzUkgubb8P
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 395,
   "limit": 50
 }
@@ -8847,7 +8847,7 @@ tool_use Bash
 id: toolu_01Ff34zQnGbwdWnEk7vp1bCT
 ```json
 {
-  "command": "grep -n \"checkpoint_number\\|backed_up\\|dot_char\\|★\\|\\*\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "command": "grep -n \"checkpoint_number\\|backed_up\\|dot_char\\|★\\|\\*\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "description": "Check session_list.rs for checkpoint_number and star indicator"
 }
 ```
@@ -8870,7 +8870,7 @@ tool_use Bash
 id: toolu_01S4oup7EXC57BohsUfFKFAU
 ```json
 {
-  "command": "grep -n \"checkpoint_number\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ -r",
+  "command": "grep -n \"checkpoint_number\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ -r",
   "description": "Find all remaining checkpoint_number references"
 }
 ```
@@ -8880,22 +8880,22 @@ id: toolu_01S4oup7EXC57BohsUfFKFAU
 tool_result
 id: toolu_01S4oup7EXC57BohsUfFKFAU
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:39:    // Migrate checkpoints PK from (session_id, checkpoint_number) → (session_id, checkpoint_id).
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:104:    // Only run if the table still uses the old (session_id, checkpoint_number) primary key.
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:110:    // New schema has checkpoint_id as NOT NULL in the PK; old one has checkpoint_number as PK.
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:111:    if !schema.contains("PRIMARY KEY (session_id, checkpoint_number)") { return; }
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:137:                     ELSE 'legacy-' || CAST(checkpoint_number AS TEXT)
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:209:    checkpoint_number: u32,
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:420:        let checkpoint_number = checkpoint_number_from_path(meta_path).unwrap_or(0);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:452:            checkpoint_number,
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:733:pub(crate) fn checkpoint_number_from_path(meta_path: &str) -> Option<u32> {
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:220:       ORDER BY checkpoint_number ASC"
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:421:         ORDER BY checkpoint_number DESC
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:436:         ORDER BY checkpoint_number DESC LIMIT 1",
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs:22:    /// of the first checkpoint (lowest checkpoint_number). Empty for sessions
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs:143:    // Pull the author of the FIRST checkpoint (lowest checkpoint_number) for
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs:617:                      AND c.checkpoint_number = (
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs:618:                            SELECT MIN(checkpoint_number) FROM checkpoints
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:39:    // Migrate checkpoints PK from (session_id, checkpoint_number) → (session_id, checkpoint_id).
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:104:    // Only run if the table still uses the old (session_id, checkpoint_number) primary key.
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:110:    // New schema has checkpoint_id as NOT NULL in the PK; old one has checkpoint_number as PK.
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:111:    if !schema.contains("PRIMARY KEY (session_id, checkpoint_number)") { return; }
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:137:                     ELSE 'legacy-' || CAST(checkpoint_number AS TEXT)
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:209:    checkpoint_number: u32,
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:420:        let checkpoint_number = checkpoint_number_from_path(meta_path).unwrap_or(0);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:452:            checkpoint_number,
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:733:pub(crate) fn checkpoint_number_from_path(meta_path: &str) -> Option<u32> {
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:220:       ORDER BY checkpoint_number ASC"
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:421:         ORDER BY checkpoint_number DESC
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:436:         ORDER BY checkpoint_number DESC LIMIT 1",
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs:22:    /// of the first checkpoint (lowest checkpoint_number). Empty for sessions
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs:143:    // Pull the author of the FIRST checkpoint (lowest checkpoint_number) for
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs:617:                      AND c.checkpoint_number = (
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs:618:                            SELECT MIN(checkpoint_number) FROM checkpoints
 ```
 
 > TOOL
@@ -8904,7 +8904,7 @@ tool_use Bash
 id: toolu_01W4Mc9SksfUr8D3zYGJVREs
 ```json
 {
-  "command": "grep -n \"checkpoint_number\\|upsert_checkpoint\\|INSERT.*checkpoint\\|INTO checkpoint\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -30",
+  "command": "grep -n \"checkpoint_number\\|upsert_checkpoint\\|INSERT.*checkpoint\\|INTO checkpoint\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -30",
   "description": "Find checkpoint upsert SQL in index.rs"
 }
 ```
@@ -8929,7 +8929,7 @@ tool_use Read
 id: toolu_01XX4ZbrSnZeRGyQhsP1m3EG
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 799,
   "limit": 70
 }
@@ -8989,7 +8989,7 @@ tool_use Read
 id: toolu_01Axis3imyFyZwZeP46VQ9cz
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "offset": 92,
   "limit": 65
 }
@@ -9035,7 +9035,7 @@ tool_use Read
 id: toolu_01MJTpJsSq9pPhwy7NL9ezoo
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "offset": 156,
   "limit": 20
 }
@@ -9203,7 +9203,7 @@ id: toolu_01Q2PjiuRyfkHPHPS4EUhtoV
       "author": "stephanostsoucas",
       "backed_up": false,
       "branch": "checkpoints-visualization",
-      "cwd": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization",
+      "cwd": "/home/<USER>/p/gossamer-checkpoints-visualization",
       "session_id": "cd8368ba-3c02-4c95-8f36-cf0771330d33",
       "session_name": "checkpoints-visualization",
       "updated_at": "2026-06-15T03:52:22.826759740+00:00"
@@ -9213,7 +9213,7 @@ id: toolu_01Q2PjiuRyfkHPHPS4EUhtoV
       "author": "stephanostsoucas",
       "backed_up": false,
       "branch": "gossamer-cleanup",
-      "cwd": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup",
+      "cwd": "/home/<USER>/p/gossamer-gossamer-cleanup",
       "session_id": "b9480160-c3c0-42e0-a622-2c6f2fabc934",
       "session_name": "finishing_touches",
       "updated_at": "2026-06-13T05:35:28.123805843+00:00"
@@ -9223,7 +9223,7 @@ id: toolu_01Q2PjiuRyfkHPHPS4EUhtoV
       "author": "stephanostsoucas",
       "backed_up": false,
       "branch": "gossamer-cleanup",
-      "cwd": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup",
+      "cwd": "/home/<USER>/p/gossamer-gossamer-cleanup",
       "session_id": "ede0cb33-fc0d-4ad8-80ef-860c9374e4b3",
       "session_name": "gossamer-cleanup",
       "updated_at": "2026-06-12T19:49:19.424662908+00:00"
@@ -9286,11 +9286,11 @@ id: toolu_017YUspmCX62atqSJWob6NME
 tool_result
 id: toolu_017YUspmCX62atqSJWob6NME
 ```
-cd8368ba-3c02-4c95-8f36-cf0771330d33|checkpoints-visualization|/Users/stephanostsoucas/p/gossamer-checkpoints-visualization|checkpoints-visualization|2026-06-14T04:05:25.340+00:00|Claude Code|nosman|stephanos.tsoucas@gmail.com|stephanostsoucas|1|413501
-b9480160-c3c0-42e0-a622-2c6f2fabc934|finishing_touches|/Users/stephanostsoucas/p/gossamer-gossamer-cleanup|gossamer-cleanup|2026-06-13T05:35:27.980+00:00|Claude Code|nosman|stephanos.tsoucas@gmail.com|stephanostsoucas|1|197702
-ede0cb33-fc0d-4ad8-80ef-860c9374e4b3|gossamer-cleanup|/Users/stephanostsoucas/p/gossamer-gossamer-cleanup|gossamer-cleanup|2026-06-12T19:49:19.295+00:00|Claude Code|nosman|stephanos.tsoucas@gmail.com|stephanostsoucas|1|253032
-385ca1da-7f11-47ae-8df2-73ab265a4c37|token-usage|/Users/stephanostsoucas/p/gossamer||2026-06-10T01:09:53.993754+00:00|Claude Code||||0|0
-a9bc7b69-dfe7-4fda-a5f4-07a12e8009bd|let's work on the color schemes for gossamer TUI. right now all the colors are hardcoded. let's make them respect the terminal's settings. at least it should detect light themese vs dark themes|/Users/stephanostsoucas/p/gossamer|master|2026-06-09T21:04:17.033+00:00|Claude Code|nosman|stephanos.tsoucas@gmail.com|stephanostsoucas|0|79512
+cd8368ba-3c02-4c95-8f36-cf0771330d33|checkpoints-visualization|/home/<USER>/p/gossamer-checkpoints-visualization|checkpoints-visualization|2026-06-14T04:05:25.340+00:00|Claude Code|nosman|<REDACTED_EMAIL>|stephanostsoucas|1|413501
+b9480160-c3c0-42e0-a622-2c6f2fabc934|finishing_touches|/home/<USER>/p/gossamer-gossamer-cleanup|gossamer-cleanup|2026-06-13T05:35:27.980+00:00|Claude Code|nosman|<REDACTED_EMAIL>|stephanostsoucas|1|197702
+ede0cb33-fc0d-4ad8-80ef-860c9374e4b3|gossamer-cleanup|/home/<USER>/p/gossamer-gossamer-cleanup|gossamer-cleanup|2026-06-12T19:49:19.295+00:00|Claude Code|nosman|<REDACTED_EMAIL>|stephanostsoucas|1|253032
+385ca1da-7f11-47ae-8df2-73ab265a4c37|token-usage|/home/<USER>/p/gossamer||2026-06-10T01:09:53.993754+00:00|Claude Code||||0|0
+a9bc7b69-dfe7-4fda-a5f4-07a12e8009bd|let's work on the color schemes for gossamer TUI. right now all the colors are hardcoded. let's make them respect the terminal's settings. at least it should detect light themese vs dark themes|/home/<USER>/p/gossamer|master|2026-06-09T21:04:17.033+00:00|Claude Code|nosman|<REDACTED_EMAIL>|stephanostsoucas|0|79512
 ```
 
 > AGENT
@@ -9303,7 +9303,7 @@ tool_use Bash
 id: toolu_01LBAzJCyGWUjL3nNwMdDyWK
 ```json
 {
-  "command": "grep -n \"backed_up\\|json\\|--json\\|backed\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs | head -30",
+  "command": "grep -n \"backed_up\\|json\\|--json\\|backed\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs | head -30",
   "description": "Find JSON output and backed_up in sessions.rs"
 }
 ```
@@ -9334,7 +9334,7 @@ tool_use Read
 id: toolu_01QVGJ2Krbyxieze6ebsMZ2N
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs",
   "offset": 32,
   "limit": 50
 }
@@ -9387,7 +9387,7 @@ tool_use Read
 id: toolu_01Sbd8Ht2e9n1bb8jYQTGnxp
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs",
   "offset": 117,
   "limit": 20
 }
@@ -9436,8 +9436,8 @@ id: toolu_017xoPjycw2QxXTW1gzPEHkx
 tool_result
 id: toolu_017xoPjycw2QxXTW1gzPEHkx
 ```
-/Users/stephanostsoucas/.cargo/bin/gossamer
--rwxr-xr-x@ 1 stephanostsoucas  staff  13284096 Jun 14 23:46 /Users/stephanostsoucas/.cargo/bin/gossamer
+/home/<USER>/.cargo/bin/gossamer
+-rwxr-xr-x@ 1 stephanostsoucas  staff  13284096 Jun 14 23:46 /home/<USER>/.cargo/bin/gossamer
 ```
 
 > TOOL
@@ -9446,7 +9446,7 @@ tool_use Bash
 id: toolu_01BThzZN3H1jYGKRU1BmyqgH
 ```json
 {
-  "command": "ls -la /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target/release/gossamer",
+  "command": "ls -la /home/<USER>/p/gossamer-checkpoints-visualization/target/release/gossamer",
   "description": "Check build output timestamp"
 }
 ```
@@ -9456,7 +9456,7 @@ id: toolu_01BThzZN3H1jYGKRU1BmyqgH
 tool_result
 id: toolu_01BThzZN3H1jYGKRU1BmyqgH
 ```
--rwxr-xr-x@ 1 stephanostsoucas  staff  13375712 Jun 14 00:38 /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target/release/gossamer
+-rwxr-xr-x@ 1 stephanostsoucas  staff  13375712 Jun 14 00:38 /home/<USER>/p/gossamer-checkpoints-visualization/target/release/gossamer
 ```
 
 > TOOL
@@ -9475,7 +9475,7 @@ id: toolu_01Pwn2S3xqWBPL7RgwAsepdv
 tool_result
 id: toolu_01Pwn2S3xqWBPL7RgwAsepdv
 ```
-/Users/stephanostsoucas/.cargo/bin/gossamer
+/home/<USER>/.cargo/bin/gossamer
 ```
 
 > TOOL
@@ -9522,7 +9522,7 @@ tool_use Bash
 id: toolu_01YaA5aC5LSNkbPXk4bBnkyB
 ```json
 {
-  "command": "strings /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target/release/gossamer | grep \"last_turn_ts\\|checkpoint_number\" | grep -i \"min\\|join\\|select\" | head -10",
+  "command": "strings /home/<USER>/p/gossamer-checkpoints-visualization/target/release/gossamer | grep \"last_turn_ts\\|checkpoint_number\" | grep -i \"min\\|join\\|select\" | head -10",
   "description": "Check SQL in target/release binary"
 }
 ```
@@ -9582,8 +9582,8 @@ id: toolu_0186sgY6oU7oYKNkwLRk75RJ
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 3.22s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > TOOL
@@ -9629,7 +9629,7 @@ gossamer-cleanup True
 
 > AGENT
 
-`backed_up: true` now. The root cause was that `cargo install --path .` without `--force` was silently keeping the old binary from the original `/Users/stephanostsoucas/p/gossamer` repo when it saw the package name and version hadn't changed. The `--force` flag made it actually copy the freshly built binary.
+`backed_up: true` now. The root cause was that `cargo install --path .` without `--force` was silently keeping the old binary from the original `/home/<USER>/p/gossamer` repo when it saw the package name and version hadn't changed. The `--force` flag made it actually copy the freshly built binary.
 
 Sessions with checkpoints will now show `★` instead of `·`. From now on I'll use `--force` on every install.
 
@@ -9643,7 +9643,7 @@ tool_use Bash
 id: toolu_01FyLogDkfzujWS1k7Mydbxp
 ```json
 {
-  "command": "grep -n \"entire\\|resume\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/resume.rs | head -30",
+  "command": "grep -n \"entire\\|resume\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/resume.rs | head -30",
   "description": "Find entireio calls in resume.rs"
 }
 ```
@@ -9662,7 +9662,7 @@ tool_use Bash
 id: toolu_014erRkKKNudkKM43VNzqg6L
 ```json
 {
-  "command": "grep -n \"entire\\|Command\\|exec\\|resume_session\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | grep -v \"//\\|resume_session.*fn\\|fn resume\" | head -20",
+  "command": "grep -n \"entire\\|Command\\|exec\\|resume_session\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | grep -v \"//\\|resume_session.*fn\\|fn resume\" | head -20",
   "description": "Find entireio calls in show.rs resume_session"
 }
 ```
@@ -9825,7 +9825,7 @@ tool_use Read
 id: toolu_01QoQz5u2DVqB7PwRKPf3jz3
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1273,
   "limit": 10
 }
@@ -9894,7 +9894,7 @@ id: toolu_012JEJ4c8GHQQ4UQAVU84D4B
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    let mut entire = std::process::Command::new(\"entire\");\n    entire.arg(\"resume\").current_dir(&launch_dir);\n    if !branch.is_empty() { entire.arg(branch); }\n\n    let Ok(out) = entire.output() else { eprintln!(\"entire resume failed\"); return; };",
   "new_string": "    let mut entire = std::process::Command::new(\"entire\");\n    entire.args([\"session\", \"resume\"]).current_dir(&launch_dir);\n    if !branch.is_empty() { entire.arg(branch); }\n\n    let Ok(out) = entire.output() else { eprintln!(\"entire session resume failed\"); return; };"
 }
@@ -9905,7 +9905,7 @@ id: toolu_012JEJ4c8GHQQ4UQAVU84D4B
 tool_result
 id: toolu_012JEJ4c8GHQQ4UQAVU84D4B
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9962,8 +9962,8 @@ tool_result
 id: toolu_01GB8DSM78AfgyVrei849WQ6
 ```
     Finished `release` profile [optimized] target(s) in 59.15s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -9980,7 +9980,7 @@ tool_use Bash
 id: toolu_01RpVx4EmFusxXZkM8dFteVy
 ```json
 {
-  "command": "grep -rn \"Command::new(\\\"entire\\\")\\|entire\\\"\\)\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ | grep -v \"//\\|test\\|\\.rs:[0-9]*:.*#\"",
+  "command": "grep -rn \"Command::new(\\\"entire\\\")\\|entire\\\"\\)\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ | grep -v \"//\\|test\\|\\.rs:[0-9]*:.*#\"",
   "description": "Find all entire command invocations in source"
 }
 ```
@@ -10001,7 +10001,7 @@ tool_use Bash
 id: toolu_01E3Ait1kLMVnKffLh32J21C
 ```json
 {
-  "command": "grep -rn \"entire\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ | grep \"Command\\|\\.arg\\|\\\"entire \" | grep -v \"^.*//.*entire\"",
+  "command": "grep -rn \"entire\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ | grep \"Command\\|\\.arg\\|\\\"entire \" | grep -v \"^.*//.*entire\"",
   "description": "Find all entire CLI calls"
 }
 ```
@@ -10011,21 +10011,21 @@ id: toolu_01E3Ait1kLMVnKffLh32J21C
 tool_result
 id: toolu_01E3Ait1kLMVnKffLh32J21C
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs:7:    let mut cmd = Command::new("entire");
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:1275:    let mut entire = std::process::Command::new("entire");
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:1276:    entire.args(["session", "resume"]).current_dir(&launch_dir);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:1277:    if !branch.is_empty() { entire.arg(branch); }
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:1279:    let Ok(out) = entire.output() else { eprintln!("entire session resume failed"); return; };
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:1282:    if cmd_str.is_empty() { eprintln!("entire resume returned no command"); return; }
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/purge.rs:76:                .args(["ls-tree", "-r", "--name-only", &branch, "--", ".entire/metadata/"])
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs:60:    let _ = Command::new("entire").args(["clean", "--session", session_id]).status();
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs:92:    match Command::new("entire").args(["clean", "--session", &session_id]).status() {
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:563:        .args(["for-each-ref", "--format=%(refname:short)", "refs/heads/entire/"])
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:591:            .args(["ls-tree", "-r", "--name-only", &branch, "--", ".entire/metadata/"])
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/tidy.rs:165:        let _ = std::process::Command::new("entire").arg("clean").arg(id).status();
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/init.rs:110:    let status = Command::new("entire")
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/init.rs:121:    let s = Command::new("entire")
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/init.rs:179:        .args(["show-ref", "--verify", "--quiet", "refs/heads/entire/checkpoints/v1"])
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs:7:    let mut cmd = Command::new("entire");
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:1275:    let mut entire = std::process::Command::new("entire");
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:1276:    entire.args(["session", "resume"]).current_dir(&launch_dir);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:1277:    if !branch.is_empty() { entire.arg(branch); }
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:1279:    let Ok(out) = entire.output() else { eprintln!("entire session resume failed"); return; };
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:1282:    if cmd_str.is_empty() { eprintln!("entire resume returned no command"); return; }
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/purge.rs:76:                .args(["ls-tree", "-r", "--name-only", &branch, "--", ".entire/metadata/"])
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs:60:    let _ = Command::new("entire").args(["clean", "--session", session_id]).status();
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs:92:    match Command::new("entire").args(["clean", "--session", &session_id]).status() {
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:563:        .args(["for-each-ref", "--format=%(refname:short)", "refs/heads/entire/"])
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:591:            .args(["ls-tree", "-r", "--name-only", &branch, "--", ".entire/metadata/"])
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/tidy.rs:165:        let _ = std::process::Command::new("entire").arg("clean").arg(id).status();
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/init.rs:110:    let status = Command::new("entire")
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/init.rs:121:    let s = Command::new("entire")
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/init.rs:179:        .args(["show-ref", "--verify", "--quiet", "refs/heads/entire/checkpoints/v1"])
 ```
 
 > TOOL
@@ -10034,7 +10034,7 @@ tool_use Bash
 id: toolu_01QLawxpJw3txD8NdASEdP7X
 ```json
 {
-  "command": "grep -n \"entire\\.\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs\ngrep -n \"entire\\|Command\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs | head -20",
+  "command": "grep -n \"entire\\.\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs\ngrep -n \"entire\\|Command\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs | head -20",
   "description": "Check attach.rs entire call"
 }
 ```
@@ -10056,7 +10056,7 @@ tool_use Read
 id: toolu_01CFkxWvfMNpZHguoDFpNvJk
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs"
 }
 ```
 
@@ -10120,7 +10120,7 @@ tool_use Read
 id: toolu_01TGeN57e8rhu7zami16QChT
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/init.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/init.rs",
   "offset": 105,
   "limit": 30
 }
@@ -10169,7 +10169,7 @@ tool_use Read
 id: toolu_0118bseKuAmyP1HCVkEXymsX
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/tidy.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/tidy.rs",
   "offset": 160,
   "limit": 10
 }
@@ -10290,7 +10290,7 @@ id: toolu_01UApoQP1puf1uNG5XVWN8d6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs",
   "old_string": "    let mut cmd = Command::new(\"entire\");\n    cmd.arg(\"attach\").arg(session_id);",
   "new_string": "    let mut cmd = Command::new(\"entire\");\n    cmd.args([\"session\", \"attach\"]).arg(session_id);"
 }
@@ -10301,7 +10301,7 @@ id: toolu_01UApoQP1puf1uNG5XVWN8d6
 tool_result
 id: toolu_01UApoQP1puf1uNG5XVWN8d6
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/attach.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/attach.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10311,7 +10311,7 @@ id: toolu_01U4Nnh7XG3EmpVib6WPR2tH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/tidy.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/tidy.rs",
   "old_string": "        let _ = std::process::Command::new(\"entire\").arg(\"clean\").arg(id).status();",
   "new_string": "        let _ = std::process::Command::new(\"entire\").args([\"clean\", \"--session\", id, \"--force\"]).status();"
 }
@@ -10322,7 +10322,7 @@ id: toolu_01U4Nnh7XG3EmpVib6WPR2tH
 tool_result
 id: toolu_01U4Nnh7XG3EmpVib6WPR2tH
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/tidy.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/tidy.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10332,7 +10332,7 @@ id: toolu_011MYvNXWaY6y1SrMEKisYJC
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs",
   "old_string": "[\"clean\", \"--session\", session_id]",
   "new_string": "[\"clean\", \"--session\", session_id, \"--force\"]"
 }
@@ -10343,7 +10343,7 @@ id: toolu_011MYvNXWaY6y1SrMEKisYJC
 tool_result
 id: toolu_011MYvNXWaY6y1SrMEKisYJC
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/clean.rs has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/clean.rs has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10363,8 +10363,8 @@ tool_result
 id: toolu_01DmquguvsyRr2eqFr7zQgDn
 ```
     Finished `release` profile [optimized] target(s) in 11.29s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -10385,7 +10385,7 @@ tool_use Read
 id: toolu_01Gc73Zd846mwiDaqi7s4spJ
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/discover.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/discover.rs"
 }
 ```
 
@@ -10450,7 +10450,7 @@ tool_use Bash
 id: toolu_01M6WtdgsEHWvCs6HFSFP99S
 ```json
 {
-  "command": "grep -n \"commit_message\\|checkpoint\\|commit\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/mod.rs | head -30",
+  "command": "grep -n \"commit_message\\|checkpoint\\|commit\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/mod.rs | head -30",
   "description": "Check if commit messages are indexed in ingest"
 }
 ```
@@ -10469,7 +10469,7 @@ tool_use Bash
 id: toolu_01J2tnNRNoSdNjWHyS1ojWKn
 ```json
 {
-  "command": "grep -n \"commit_message\\|checkpoint\\|commit\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs | head -30",
+  "command": "grep -n \"commit_message\\|checkpoint\\|commit\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs | head -30",
   "description": "Check if commit messages are indexed in claude_code ingest"
 }
 ```
@@ -10494,7 +10494,7 @@ tool_use Read
 id: toolu_01F6hb7R8BjJ9GRAe4M3L4qb
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "offset": 338,
   "limit": 100
 }
@@ -10560,7 +10560,7 @@ tool_use Read
 id: toolu_01TnEMLfYKp9YeWAR8VzDAkH
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "offset": 437,
   "limit": 80
 }
@@ -10632,7 +10632,7 @@ tool_use Read
 id: toolu_01YADzNbfoAsaw9qXYeaqCoS
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "offset": 1,
   "limit": 120
 }
@@ -10716,7 +10716,7 @@ tool_use Read
 id: toolu_01DMFwYcqrVchERYtU8pVUNa
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "offset": 180,
   "limit": 160
 }
@@ -10797,7 +10797,7 @@ tool_use Read
 id: toolu_01RtbsdSaPmyckmeMf1kTdYt
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "offset": 248,
   "limit": 90
 }
@@ -10869,7 +10869,7 @@ tool_use Read
 id: toolu_014t1eK162vgF8r3qaopSzvi
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "offset": 369,
   "limit": 115
 }
@@ -10941,7 +10941,7 @@ id: toolu_01BpKi1skjdFJfGctsMznBkU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "old_string": "fn ingest_repo(\n    db: &mut DB,\n    conn: &rusqlite::Connection,\n    repo_dir: &str,\n) -> Result<usize> {\n    let head_out = Command::new(\"git\")\n        .args([\"rev-parse\", BRANCH])\n        .current_dir(repo_dir)\n        .output()?;\n\n    if !head_out.status.success() {\n        return Ok(0);\n    }\n    let current_head = String::from_utf8_lossy(&head_out.stdout).trim().to_string();\n\n    let stored_head: Option<String> = conn.query_row(\n        \"SELECT last_search_commit FROM repositories WHERE directory = ?1\",\n        [repo_dir],\n        |row| row.get(0),\n    ).ok().flatten();\n\n    if stored_head.as_deref() == Some(current_head.as_str()) {\n        return Ok(0);\n    }",
   "new_string": "/// Index commit messages from the `checkpoints` table for all sessions\n/// belonging to `repo_dir`. Called unconditionally on every ingest so that\n/// commit messages stay current even when the checkpoint-branch HEAD hasn't\n/// moved. `add_doc` is an upsert keyed on a stable UUID, so re-running is safe.\nfn index_checkpoint_commits(\n    db: &mut DB,\n    conn: &rusqlite::Connection,\n    repo_dir: &str,\n) -> Result<()> {\n    let mut stmt = conn.prepare(\n        \"SELECT c.checkpoint_id, c.commit_message, c.last_turn_ts,\n                s.session_id, COALESCE(s.session_name,''), COALESCE(s.cwd,'')\n         FROM checkpoints c\n         JOIN sessions s ON s.session_id = c.session_id\n         WHERE (\n             s.repo_id = (SELECT id FROM repositories WHERE directory = ?1)\n             OR (s.repo_id IS NULL AND s.cwd LIKE ?2)\n         )\n         AND c.commit_message IS NOT NULL\n         AND c.commit_message != ''\"\n    )?;\n\n    let pattern = format!(\"{}%\", repo_dir);\n    let rows: Vec<(String, String, String, String, String, String)> = stmt\n        .query_map(rusqlite::params![repo_dir, pattern], |row| {\n            Ok((\n                row.get::<_, String>(0)?,\n                row.get::<_, String>(1)?,\n […]
 
@@ -10950,7 +10950,7 @@ id: toolu_01BpKi1skjdFJfGctsMznBkU
 tool_result
 id: toolu_01BpKi1skjdFJfGctsMznBkU
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10971,8 +10971,8 @@ id: toolu_01MZr5n2BwSzkbUbFRGZUa85
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 7.19s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -10994,7 +10994,7 @@ tool_use Read
 id: toolu_01GbYNs7qD84eCypnw5wsZ4f
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "offset": 1,
   "limit": 80
 }
@@ -11062,7 +11062,7 @@ tool_use Read
 id: toolu_01YQhiEC4FyULZ8yB2jaEXAd
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "offset": 80,
   "limit": 150
 }
@@ -11121,7 +11121,7 @@ tool_use Read
 id: toolu_012NVk6Vz39kas44m3YbpCiz
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "offset": 227,
   "limit": 130
 }
@@ -11182,7 +11182,7 @@ tool_use Read
 id: toolu_01URbUkLTSgjmzGWw3o3Ys6g
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "offset": 356,
   "limit": 300
 }
@@ -11245,7 +11245,7 @@ id: toolu_01MvNFu7seWqKLayZ3WifSvB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "#[derive(Clone)]\nenum HitKind {\n    Log,\n    Session,\n    Repo,\n}\n\nimpl HitKind {\n    fn label(&self) -> &'static str {\n        match self {\n            HitKind::Log     => \"log\",\n            HitKind::Session => \"ses\",\n            HitKind::Repo    => \"rep\",\n        }\n    }\n}",
   "new_string": "#[derive(Clone)]\nenum HitKind {\n    Log,\n    Checkpoint,\n    Session,\n    Repo,\n}\n\nimpl HitKind {\n    fn label(&self) -> &'static str {\n        match self {\n            HitKind::Log        => \"log\",\n            HitKind::Checkpoint => \"cp\",\n            HitKind::Session    => \"ses\",\n            HitKind::Repo       => \"rep\",\n        }\n    }\n}"
 }
@@ -11256,7 +11256,7 @@ id: toolu_01MvNFu7seWqKLayZ3WifSvB
 tool_result
 id: toolu_01MvNFu7seWqKLayZ3WifSvB
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11266,7 +11266,7 @@ id: toolu_01CAhSuheKjCMWFHo19rkqj4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "struct GroupRow {\n    hit_ts: Option<String>,\n    start_ts: Option<String>,\n    lines: Vec<String>,\n}",
   "new_string": "struct GroupRow {\n    hit_ts: Option<String>,\n    start_ts: Option<String>,\n    lines: Vec<String>,\n    is_checkpoint: bool,\n}"
 }
@@ -11277,7 +11277,7 @@ id: toolu_01CAhSuheKjCMWFHo19rkqj4
 tool_result
 id: toolu_01CAhSuheKjCMWFHo19rkqj4
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11291,7 +11291,7 @@ id: toolu_01HKdd94WEk9tRfaBKbJYSiN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "        _ => {\n            // \"claude\" — session log turn\n            let name   = meta[\"session_name\"].as_str().unwrap_or(\"\").to_string();",
   "new_string": "        \"checkpoint\" => {\n            let name    = meta[\"session_name\"].as_str().unwrap_or(\"\").to_string();\n            let project = meta[\"project\"].as_str().unwrap_or(\"\").to_string();\n            // Body is \"[project/cwd] session_name\\n[Checkpoint] commit message\\n\".\n            // Extract just the commit message for the excerpt.\n            let message = bodies.first()\n                .and_then(|b| b.lines().find(|l| l.starts_with(\"[Checkpoint] \")))\n                .map(|l| l.trim_start_matches(\"[Checkpoint] \").to_string())\n                .unwrap_or_default();\n            SearchHit {\n                kind: HitKind::Checkpoint,\n                title: name,\n                dir: super::short_path(&project),\n                excerpt_lines: if message.is_empty() { vec![] } else { vec![message] },\n                session_id: meta[\"session_id\"].as_str().map(str::to_string),\n                repo_dir: None,\n                start_ts: None,\n                hit_ts: None,\n                branch: String::new(),\n                agent: String::new(), backed_up: false, updated_at: String::new(),\n                author: String::new(), remote: String::new(),\n            }\n        }\n        _ => {\n            // \"claude\" — session log turn\n            let name   = meta[\"session_name\"].as_str().unwrap_or(\"\").to_string();"
 }
@@ -11302,7 +11302,7 @@ id: toolu_01HKdd94WEk9tRfaBKbJYSiN
 tool_result
 id: toolu_01HKdd94WEk9tRfaBKbJYSiN
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11316,7 +11316,7 @@ id: toolu_01MjEiBWcNQLKsWCAd1PXfvu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "    for hit in hits {\n        match hit.kind {\n            HitKind::Log => {\n                let sid = hit.session_id.clone().unwrap_or_default();\n                if let Some(&gi) = log_group_idx.get(&sid) {\n                    groups[gi].rows.push(GroupRow {\n                        hit_ts: hit.hit_ts,\n                        start_ts: hit.start_ts,\n                        lines: hit.excerpt_lines,\n                    });\n                } else {\n                    let gi = groups.len();\n                    if !sid.is_empty() { log_group_idx.insert(sid, gi); }\n                    groups.push(Group {\n                        title: hit.title,\n                        dir: hit.dir,\n                        branch: hit.branch,\n                        agent: hit.agent,\n                        backed_up: hit.backed_up,\n                        updated_at: hit.updated_at,\n                        remote: hit.remote,\n                        session_id: hit.session_id,\n                        repo_dir: None,\n                        kind: HitKind::Log,\n                        author: hit.author,\n                        rows: vec![GroupRow {\n                            hit_ts: hit.hit_ts,\n                            start_ts: hit.start_ts,\n                            lines: hit.excerpt_lines,\n                        }],\n                    });\n                }\n            }",
   "new_string": "    for hit in hits {\n        match hit.kind {\n            HitKind::Log | HitKind::Checkpoint => {\n                let is_cp = matches!(hit.kind, HitKind::Checkpoint);\n                let sid = hit.session_id.clone().unwrap_or_default();\n                if let Some(&gi) = log_group_idx.get(&sid) {\n                    groups[gi].rows.push(GroupRow {\n                        hit_ts: hit.hit_ts,\n                        start_ts: hit.start_ts,\n                        lines: hit.excerpt_lines,\n                        is_checkpoint: is_cp,\n                    });\n                } else {\n                    let gi = groups.len();\n                    if !sid.is_empty() { log_group_idx.insert(sid, gi); }\n                    groups.push(Group {\n                        title: hit.title,\n                        dir: hit.dir,\n                        branch: hit.branch,\n                        agent: hit.agent,\n                        backed_up: hit.backed_up,\n                        updated_at: hit.updated_at,\n                        remote: hit.remote,\n                        session_id: hit.session_id,\n                        repo_dir: None,\n                        kind: HitKind::Log,\n                        author: hit.author,\n                        rows: vec![GroupRow {\n                            hit_ts: hit.hit_ts,\n                            start_ts: hit.start_ts,\n                            lines: hit.excerpt_lines,\n                            is_checkpoint: is_cp,\n                        }],\n                    });\n                }\n            }"
 }
@@ -11327,7 +11327,7 @@ id: toolu_01MjEiBWcNQLKsWCAd1PXfvu
 tool_result
 id: toolu_01MjEiBWcNQLKsWCAd1PXfvu
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11341,7 +11341,7 @@ id: toolu_01TAdDTBUUFZ5cYa9dLBCFuz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "            HitKind::Session => {\n                groups.push(Group {\n                    title: hit.title,\n                    dir: hit.dir,\n                    branch: String::new(),\n                    agent: hit.agent,\n                    backed_up: hit.backed_up,\n                    updated_at: hit.updated_at,\n                    remote: hit.remote,\n                    session_id: hit.session_id,\n                    repo_dir: None,\n                    kind: HitKind::Session,\n                    author: hit.author,\n                    rows: vec![],\n                });\n            }",
   "new_string": "            HitKind::Session => {\n                groups.push(Group {\n                    title: hit.title,\n                    dir: hit.dir,\n                    branch: String::new(),\n                    agent: hit.agent,\n                    backed_up: hit.backed_up,\n                    updated_at: hit.updated_at,\n                    remote: hit.remote,\n                    session_id: hit.session_id,\n                    repo_dir: None,\n                    kind: HitKind::Session,\n                    author: hit.author,\n                    rows: vec![],\n                });\n            }\n            // Checkpoint hits are handled in the Log arm above (grouped by session_id).\n            HitKind::Checkpoint => unreachable!(),"
 }
@@ -11352,7 +11352,7 @@ id: toolu_01TAdDTBUUFZ5cYa9dLBCFuz
 tool_result
 id: toolu_01TAdDTBUUFZ5cYa9dLBCFuz
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11366,7 +11366,7 @@ id: toolu_01Qd91z5pKfWiBe3UrtFGMtN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "                KeyCode::Char(' ') | KeyCode::Right | KeyCode::Enter => {\n                    if let Some(group) = groups.get(sel) {\n                        execute!(stdout, LeaveAlternateScreen, cursor::Show).ok();\n                        terminal::disable_raw_mode().ok();\n\n                        let nested_quit = match group.kind {\n                            HitKind::Log | HitKind::Session => {\n                                if let Some(id) = &group.session_id {\n                                    let ts = group.rows.first().and_then(|r| r.start_ts.as_deref());\n                                    super::show::run_at(id, ts).unwrap_or(false)\n                                } else { false }\n                            }\n                            HitKind::Repo => {\n                                if let Some(dir) = &group.repo_dir {\n                                    let _ = super::status::run_for_dir(dir);\n                                }\n                                false\n                            }\n                        };",
   "new_string": "                KeyCode::Char(' ') | KeyCode::Right | KeyCode::Enter => {\n                    if let Some(group) = groups.get(sel) {\n                        execute!(stdout, LeaveAlternateScreen, cursor::Show).ok();\n                        terminal::disable_raw_mode().ok();\n\n                        let nested_quit = match group.kind {\n                            HitKind::Log | HitKind::Checkpoint | HitKind::Session => {\n                                if let Some(id) = &group.session_id {\n                                    let ts = group.rows.first().and_then(|r| r.start_ts.as_deref());\n                                    super::show::run_at(id, ts).unwrap_or(false)\n                                } else { false }\n                            }\n                            HitKind::Repo => {\n                                if let Some(dir) = &group.repo_dir {\n                                    let _ = super::status::run_for_dir(dir);\n                                }\n                                false\n                            }\n                        };"
 }
@@ -11377,7 +11377,7 @@ id: toolu_01Qd91z5pKfWiBe3UrtFGMtN
 tool_result
 id: toolu_01Qd91z5pKfWiBe3UrtFGMtN
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11391,7 +11391,7 @@ id: toolu_016gPEG6SQAPQCw3fXu6wxUz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "        // ── Excerpt rows ──────────────────────────────────────────────────\n        for row in &group.rows {\n            let ts_str = row.hit_ts.as_deref().map(rel_time_hit).unwrap_or_default();\n            let n_lines = row.lines.len().max(1);\n            let excerpt_indent = \" \".repeat(2 + TS_W + 2);\n\n            for li in 0..n_lines {\n                if abs_row >= scroll && screen_row <= content_h {\n                    let text = row.lines.get(li).map(String::as_str).unwrap_or(\"\");\n                    let avail = w.saturating_sub(2 + TS_W + 2);\n                    let text_t: String = text.chars().take(avail).collect();\n\n                    let exc_line = if li == 0 {\n                        let ts_padded = format!(\"{ts_str:>TS_W$}\");\n                        format!(\n                            \"  \\x1b[{dm}m{ts_padded}\\x1b[0m  \\x1b[{sc}m{text_t}\\x1b[0m\",\n                            dm = t.text_dim, sc = t.text_secondary,\n                        )\n                    } else {\n                        format!(\"{excerpt_indent}\\x1b[{sc}m{text_t}\\x1b[0m\", sc = t.text_secondary)\n                    };\n\n                    // Excerpt rows: ▌ bar ties them visually to the selected header.\n                    write_row(&mut buf, &exc_line, selected, screen_row)?;\n                    screen_row += 1;\n                }\n                abs_row += 1;\n            }\n        }",
   "new_string": "        // ── Excerpt rows ──────────────────────────────────────────────────\n        for row in &group.rows {\n            let ts_str = row.hit_ts.as_deref().map(rel_time_hit).unwrap_or_default();\n            let n_lines = row.lines.len().max(1);\n            let excerpt_indent = \" \".repeat(2 + TS_W + 2);\n\n            for li in 0..n_lines {\n                if abs_row >= scroll && screen_row <= content_h {\n                    let text = row.lines.get(li).map(String::as_str).unwrap_or(\"\");\n                    let avail = w.saturating_sub(2 + TS_W + 2);\n\n                    let exc_line = if li == 0 && row.is_checkpoint {\n                        let ts_padded = format!(\"{ts_str:>TS_W$}\");\n                        let text_t: String = […]
 
@@ -11400,7 +11400,7 @@ id: toolu_016gPEG6SQAPQCw3fXu6wxUz
 tool_result
 id: toolu_016gPEG6SQAPQCw3fXu6wxUz
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11414,7 +11414,7 @@ id: toolu_01ErAApkjPfr4o12PCKbsLui
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "                     LEFT JOIN checkpoints c\n                       ON c.session_id = s.session_id\n                      AND c.checkpoint_number = (\n                            SELECT MIN(checkpoint_number) FROM checkpoints\n                            WHERE session_id = s.session_id\n                          )",
   "new_string": "                     LEFT JOIN checkpoints c\n                       ON c.session_id = s.session_id\n                      AND c.last_turn_ts = (\n                            SELECT MIN(last_turn_ts) FROM checkpoints\n                            WHERE session_id = s.session_id\n                          )"
 }
@@ -11425,7 +11425,7 @@ id: toolu_01ErAApkjPfr4o12PCKbsLui
 tool_result
 id: toolu_01ErAApkjPfr4o12PCKbsLui
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11439,7 +11439,7 @@ id: toolu_019K2fFCErFhs42xQLBHNgRo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "            let (name_col, meta_col, dot_char) = if group.backed_up {\n                (t.backed_name, t.backed_meta, \"*\")\n            } else {\n                (t.unbacked_name, t.unbacked_meta, \"·\")\n            };",
   "new_string": "            let (name_col, meta_col, dot_char) = if group.backed_up {\n                (t.backed_name, t.backed_meta, \"★\")\n            } else {\n                (t.unbacked_name, t.unbacked_meta, \"·\")\n            };"
 }
@@ -11450,7 +11450,7 @@ id: toolu_019K2fFCErFhs42xQLBHNgRo
 tool_result
 id: toolu_019K2fFCErFhs42xQLBHNgRo
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11472,7 +11472,7 @@ id: toolu_01WGbrgtbg1rxJWtvqiWADSf
 For more information about this error, try `rustc --explain E0004`.
 warning: `gossamer` (bin "gossamer") generated 3 warnings
 error: could not compile `gossamer` (bin "gossamer") due to 1 previous error; 3 warnings emitted
-error: failed to compile `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)`, intermediate artifacts can be found at `/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target`.
+error: failed to compile `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)`, intermediate artifacts can be found at `/home/<USER>/p/gossamer-checkpoints-visualization/target`.
 To reuse those artifacts with a future compilation, set the environment variable `CARGO_TARGET_DIR` to that path.
 ```
 
@@ -11526,7 +11526,7 @@ tool_use Read
 id: toolu_01UmSECja3MLbDcE3SGMndMa
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "offset": 101,
   "limit": 15
 }
@@ -11561,7 +11561,7 @@ id: toolu_01LHLxqFGgLdCKqyveUTp8rf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "            let threshold = match hit.kind {\n                HitKind::Log     => LOG_THRESHOLD,\n                HitKind::Session => SES_THRESHOLD,\n                HitKind::Repo    => REP_THRESHOLD,\n            };",
   "new_string": "            let threshold = match hit.kind {\n                HitKind::Log | HitKind::Checkpoint => LOG_THRESHOLD,\n                HitKind::Session                   => SES_THRESHOLD,\n                HitKind::Repo                      => REP_THRESHOLD,\n            };"
 }
@@ -11572,7 +11572,7 @@ id: toolu_01LHLxqFGgLdCKqyveUTp8rf
 tool_result
 id: toolu_01LHLxqFGgLdCKqyveUTp8rf
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11593,8 +11593,8 @@ id: toolu_01FX9whzMXFALu21fhPJk1YG
 ```
 warning: `gossamer` (bin "gossamer") generated 9 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 5.90s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -11621,7 +11621,7 @@ tool_use Read
 id: toolu_01TJ5FUF43csSbfJrd6TVRJM
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "offset": 284,
   "limit": 80
 }
@@ -11696,7 +11696,7 @@ id: toolu_013RtvwNoeGV6YD3zfj6LmiG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "// ── Group building ────────────────────────────────────────────────────────────\n\nfn build_groups(hits: Vec<SearchHit>) -> Vec<Group> {\n    let mut groups: Vec<Group> = Vec::new();\n    let mut log_group_idx: std::collections::HashMap<String, usize> = std::collections::HashMap::new();\n\n    for hit in hits {\n        match hit.kind {\n            HitKind::Log | HitKind::Checkpoint => {\n                let is_cp = matches!(hit.kind, HitKind::Checkpoint);\n                let sid = hit.session_id.clone().unwrap_or_default();\n                if let Some(&gi) = log_group_idx.get(&sid) {\n                    groups[gi].rows.push(GroupRow {\n                        hit_ts: hit.hit_ts,\n                        start_ts: hit.start_ts,\n                        lines: hit.excerpt_lines,\n                        is_checkpoint: is_cp,\n                    });\n                } else {\n                    let gi = groups.len();\n                    if !sid.is_empty() { log_group_idx.insert(sid, gi); }\n                    groups.push(Group {\n                        title: hit.title,\n                        dir: hit.dir,\n                        branch: hit.branch,\n                        agent: hit.agent,\n                        backed_up: hit.backed_up,\n                        updated_at: hit.updated_at,\n                        remote: hit.remote,\n                        session_id: hit.session_id,\n                        repo_dir: None,\n                        kind: HitKind::Log,\n                        author: hit.author,\n                        rows: vec![GroupRow {\n                            hit_ts: hit.hit_ts,\n                            start_ts: hit.start_ts,\n                            lines: hit.excerpt_lines,\n                            is_checkpoint: is_cp,\n                        }],\n                    });\n                }\n            }\n            HitKind::Session => {\n                groups.push(Group {\n                    title: hit.title,\n                    dir: hit.dir,\n                    branch: String::new(),\n                    agent: hit.agent,\n                    backed_up: hit.backed_up,\n                    updated_at: hit.updated_at,\n                    remote: hit.remote,\n                    session_id: hit.session_id,\n                    repo_dir: None,\n                    kind: HitKind::Session,\n                    author: hit.author,\n                    rows: vec![],\n                });\n            }\n            // Checkpoint hits are handled in the Log arm above (grouped by session_id).\n            HitKind::Checkpoint => unreachable!(),",
   "new_string": "// ── Group building ────────────────────────────────────────────────────────────\n\n// Each hit becomes its own selectable group — one header row + one excerpt row.\n// We do not merge multiple hits from […]
 
@@ -11705,7 +11705,7 @@ id: toolu_013RtvwNoeGV6YD3zfj6LmiG
 tool_result
 id: toolu_013RtvwNoeGV6YD3zfj6LmiG
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11719,7 +11719,7 @@ id: toolu_01WSarMBeeX93CTAfZE2M1zN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "            // Checkpoint hits are handled in the Log arm above (grouped by session_id).\n            HitKind::Checkpoint => unreachable!(),",
   "new_string": ""
 }
@@ -11741,7 +11741,7 @@ tool_use Bash
 id: toolu_017FaWuNoZAxVNTRi3Pen7od
 ```json
 {
-  "command": "grep -n \"unreachable\\|Checkpoint.*unreachable\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "command": "grep -n \"unreachable\\|Checkpoint.*unreachable\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "description": "Find the unreachable arm"
 }
 ```
@@ -11776,8 +11776,8 @@ id: toolu_012Y1zXZ3CcX39ub4y9Nfe4T
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 6.56s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -11816,7 +11816,7 @@ tool_use Bash
 id: toolu_01MZPySFDdqgEHqv9cZBmaET
 ```json
 {
-  "command": "grep -n \"turn_id\\|start_ts\\|run_at\\|repo_dir\\|short_path\\|group_by\\|sort\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs | head -40",
+  "command": "grep -n \"turn_id\\|start_ts\\|run_at\\|repo_dir\\|short_path\\|group_by\\|sort\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs | head -40",
   "description": "Find turn_id, sorting, and navigation in search.rs"
 }
 ```
@@ -11866,7 +11866,7 @@ tool_use Bash
 id: toolu_01DGZJ6xm3DCsQZ68PKs2KLY
 ```json
 {
-  "command": "grep -n \"turn_id\\|start_ts\\|run_at\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -20",
+  "command": "grep -n \"turn_id\\|start_ts\\|run_at\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -20",
   "description": "Find how run_at uses start_ts in show.rs"
 }
 ```
@@ -11889,7 +11889,7 @@ tool_use Read
 id: toolu_01X5XpVS9JME7Wd1rfgjzG7N
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1477,
   "limit": 30
 }
@@ -11938,7 +11938,7 @@ tool_use Read
 id: toolu_013E6Q7T94D4fwMyQD9yoG9E
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 190,
   "limit": 40
 }
@@ -11997,7 +11997,7 @@ tool_use Bash
 id: toolu_01EwRBKTgg8NTkgo9hXezmkn
 ```json
 {
-  "command": "grep -n \"uuid\\|turn_id\\|message_id\\|\\\"id\\\"\\|msg_id\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -20",
+  "command": "grep -n \"uuid\\|turn_id\\|message_id\\|\\\"id\\\"\\|msg_id\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -20",
   "description": "Find how message IDs are parsed in show.rs"
 }
 ```
@@ -12021,7 +12021,7 @@ tool_use Bash
 id: toolu_01AZU46p6g2H3qEPp46g3z8W
 ```json
 {
-  "command": "grep -n \"Card::UserMsg\\|Card::AsstMsg\\|struct.*Card\\|enum Card\\|UserMsg {\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -20",
+  "command": "grep -n \"Card::UserMsg\\|Card::AsstMsg\\|struct.*Card\\|enum Card\\|UserMsg {\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs | head -20",
   "description": "Find Card enum definition in show.rs"
 }
 ```
@@ -12054,7 +12054,7 @@ tool_use Read
 id: toolu_01TCiWRpZCW4N2wT79Nr8qqn
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 17,
   "limit": 50
 }
@@ -12119,7 +12119,7 @@ tool_use Read
 id: toolu_015FFsNgsAkg5cJpBp7w9VLp
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 480,
   "limit": 40
 }
@@ -12173,7 +12173,7 @@ tool_use Read
 id: toolu_01FD5ohNUsQXDQWddM2gzRee
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "offset": 140,
   "limit": 110
 }
@@ -12264,7 +12264,7 @@ tool_use Bash
 id: toolu_018jTncxQyaGVdxcCcirDbno
 ```json
 {
-  "command": "grep -rn \"run_at\\|show::run\\b\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ | grep -v \"//\\|run_for_dir\\|run_at.*fn \" | head -20",
+  "command": "grep -rn \"run_at\\|show::run\\b\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ | grep -v \"//\\|run_for_dir\\|run_at.*fn \" | head -20",
   "description": "Find all callers of show::run_at"
 }
 ```
@@ -12274,12 +12274,12 @@ id: toolu_018jTncxQyaGVdxcCcirDbno
 tool_result
 id: toolu_018jTncxQyaGVdxcCcirDbno
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/main.rs:141:        Commands::Show { session } => { commands::show::run(&session)?; }
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:91:    run_at(session_id, None)
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:94:pub fn run_at(session_id: &str, start_ts: Option<&str>) -> Result<bool> {
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:272:                let result = super::show::run(&id);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs:420:                                    super::show::run_at(id, ts).unwrap_or(false)
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/status.rs:307:                let result = super::show::run(&id);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/main.rs:141:        Commands::Show { session } => { commands::show::run(&session)?; }
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:91:    run_at(session_id, None)
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:94:pub fn run_at(session_id: &str, start_ts: Option<&str>) -> Result<bool> {
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs:272:                let result = super::show::run(&id);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs:420:                                    super::show::run_at(id, ts).unwrap_or(false)
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/status.rs:307:                let result = super::show::run(&id);
 ```
 
 > AGENT
@@ -12296,7 +12296,7 @@ tool_use Read
 id: toolu_016egexDMnahNA6v93B8xU6U
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "offset": 20,
   "limit": 35
 }
@@ -12351,7 +12351,7 @@ id: toolu_01Q4ad5yf8xgrKyCAGBEkqsd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "old_string": "#[derive(Deserialize)]\nstruct SessionEntry {\n    #[serde(rename = \"type\")]\n    entry_type: String,\n    timestamp: Option<String>,\n    message: Option<Message>,\n    #[serde(rename = \"gitBranch\")]\n    git_branch: Option<String>,\n    #[serde(rename = \"customTitle\")]\n    custom_title: Option<String>,\n    cwd: Option<String>,\n}",
   "new_string": "#[derive(Deserialize)]\nstruct SessionEntry {\n    #[serde(rename = \"type\")]\n    entry_type: String,\n    timestamp: Option<String>,\n    uuid: Option<String>,\n    message: Option<Message>,\n    #[serde(rename = \"gitBranch\")]\n    git_branch: Option<String>,\n    #[serde(rename = \"customTitle\")]\n    custom_title: Option<String>,\n    cwd: Option<String>,\n}"
 }
@@ -12362,7 +12362,7 @@ id: toolu_01Q4ad5yf8xgrKyCAGBEkqsd
 tool_result
 id: toolu_01Q4ad5yf8xgrKyCAGBEkqsd
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12372,7 +12372,7 @@ id: toolu_011j2wyJTutyPuTpgfgyrSB8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "old_string": "struct Chunk {\n    role: String,\n    text: String,\n    timestamp: String,\n    ts_ms: i64,\n    byte_offset: u64,\n    byte_len: u64,\n    git_branch: Option<String>,\n}",
   "new_string": "struct Chunk {\n    role: String,\n    text: String,\n    timestamp: String,\n    msg_uuid: Option<String>,\n    ts_ms: i64,\n    byte_offset: u64,\n    byte_len: u64,\n    git_branch: Option<String>,\n}"
 }
@@ -12383,7 +12383,7 @@ id: toolu_011j2wyJTutyPuTpgfgyrSB8
 tool_result
 id: toolu_011j2wyJTutyPuTpgfgyrSB8
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12393,7 +12393,7 @@ id: toolu_01SBBDx1jUi99mpVDi4TEEjH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "old_string": "        chunks.push(Chunk {\n            role,\n            text,\n            timestamp,\n            ts_ms,\n            byte_offset: line_offset,\n            byte_len: line.len() as u64,\n            git_branch: entry.git_branch,\n        });",
   "new_string": "        chunks.push(Chunk {\n            role,\n            text,\n            timestamp,\n            msg_uuid: entry.uuid,\n            ts_ms,\n            byte_offset: line_offset,\n            byte_len: line.len() as u64,\n            git_branch: entry.git_branch,\n        });"
 }
@@ -12404,7 +12404,7 @@ id: toolu_01SBBDx1jUi99mpVDi4TEEjH
 tool_result
 id: toolu_01SBBDx1jUi99mpVDi4TEEjH
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12418,7 +12418,7 @@ id: toolu_01TE6EPrhYG7fheXxQPTwRZX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs",
   "old_string": "            turns_meta.push(serde_json::json!({\n                \"role\": chunk.role,\n                \"timestamp\": chunk.timestamp,\n                \"off\": chunk.byte_offset,\n                \"len\": chunk.byte_len,\n            }));",
   "new_string": "            turns_meta.push(serde_json::json!({\n                \"role\": chunk.role,\n                \"timestamp\": chunk.timestamp,\n                \"uuid\": chunk.msg_uuid,\n                \"off\": chunk.byte_offset,\n                \"len\": chunk.byte_len,\n            }));"
 }
@@ -12429,7 +12429,7 @@ id: toolu_01TE6EPrhYG7fheXxQPTwRZX
 tool_result
 id: toolu_01TE6EPrhYG7fheXxQPTwRZX
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12442,7 +12442,7 @@ tool_use Read
 id: toolu_01TZAYPz1Kq2D5uZVgTJPws3
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 88,
   "limit": 30
 }
@@ -12492,7 +12492,7 @@ id: toolu_01LydNUvubKpqtLaiyLViQKq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "pub fn run_at(session_id: &str, start_ts: Option<&str>) -> Result<bool> {\n    let path = find_session(session_id)\n        .with_context(|| format!(\"no session file found for '{session_id}'\"))?;\n\n    let raw = std::fs::read_to_string(&path)\n        .with_context(|| format!(\"cannot read {}\", path.display()))?;\n\n    // Look up agent name and DB-stored session_name from the gossamer DB.\n    let uuid = path.file_stem().and_then(|s| s.to_str()).unwrap_or(\"\");",
   "new_string": "/// Open a session and jump to the turn identified by `turn_id` (the JSONL\n/// message `uuid`). Falls back to timestamp matching if uuid lookup fails,\n/// and to the last item if neither matches.\npub fn run_at(session_id: &str, turn_id: Option<&str>) -> Result<bool> {\n    let path = find_session(session_id)\n        .with_context(|| format!(\"no session file found for '{session_id}'\"))?;\n\n    let raw = std::fs::read_to_string(&path)\n        .with_context(|| format!(\"cannot read {}\", path.display()))?;\n\n    // Resolve turn_id (JSONL message uuid) → timestamp so pager can match it.\n    let resolved_ts: Option<String> = turn_id.and_then(|tid| {\n        for line in raw.lines() {\n            let Ok(v) = serde_json::from_str::<serde_json::Value>(line) else { continue };\n            if v[\"uuid\"].as_str() == Some(tid) {\n                return v[\"timestamp\"].as_str().map(str::to_string);\n            }\n        }\n        None\n    });\n    let start_ts: Option<&str> = resolved_ts.as_deref();\n\n    // Look up agent name and DB-stored session_name from the gossamer DB.\n    let uuid = path.file_stem().and_then(|s| s.to_str()).unwrap_or(\"\");"
 }
@@ -12503,7 +12503,7 @@ id: toolu_01LydNUvubKpqtLaiyLViQKq
 tool_result
 id: toolu_01LydNUvubKpqtLaiyLViQKq
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12517,7 +12517,7 @@ id: toolu_01HDJzAXzQKNQMHvKq1cFM3p
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "struct SearchHit {\n    kind: HitKind,\n    title: String,\n    dir: String,\n    excerpt_lines: Vec<String>, // context lines: prev turn, matched turn, next turn\n    session_id: Option<String>,\n    repo_dir: Option<String>,\n    start_ts: Option<String>,   // for navigation in show::run_at\n    hit_ts: Option<String>,     // timestamp of the matched turn (for display)\n    branch: String,\n    // enriched from gossamer DB after search\n    agent: String,\n    backed_up: bool,\n    updated_at: String,\n    remote: String,\n    author: String, // session author (first-checkpoint commit author), name > email > os_user\n}",
   "new_string": "struct SearchHit {\n    kind: HitKind,\n    title: String,\n    dir: String,\n    excerpt_lines: Vec<String>, // context lines: prev turn, matched turn, next turn\n    session_id: Option<String>,\n    repo_dir: Option<String>,\n    turn_id: Option<String>,    // JSONL message uuid — used for precise navigation\n    hit_ts: Option<String>,     // timestamp of the matched turn (for display)\n    branch: String,\n    // enriched from gossamer DB after search\n    agent: String,\n    backed_up: bool,\n    updated_at: String,\n    remote: String,\n    author: String, // session author (first-checkpoint commit author), name > email > os_user\n}"
 }
@@ -12528,7 +12528,7 @@ id: toolu_01HDJzAXzQKNQMHvKq1cFM3p
 tool_result
 id: toolu_01HDJzAXzQKNQMHvKq1cFM3p
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12538,7 +12538,7 @@ id: toolu_01JnGUavt5PzswTuyZfwYQRp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "struct GroupRow {\n    hit_ts: Option<String>,\n    start_ts: Option<String>,\n    lines: Vec<String>,\n    is_checkpoint: bool,\n}",
   "new_string": "struct GroupRow {\n    hit_ts: Option<String>,\n    turn_id: Option<String>,\n    lines: Vec<String>,\n    is_checkpoint: bool,\n}"
 }
@@ -12549,7 +12549,7 @@ id: toolu_01JnGUavt5PzswTuyZfwYQRp
 tool_result
 id: toolu_01JnGUavt5PzswTuyZfwYQRp
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12562,7 +12562,7 @@ tool_use Read
 id: toolu_016xMiqr7NdG32tRhtjfGJxk
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "offset": 194,
   "limit": 120
 }
@@ -12625,7 +12625,7 @@ id: toolu_01Rs3McQx1Rm9KmbYLULKJyB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "    match source {\n        \"session\" => {\n            let name = meta[\"session_name\"].as_str().unwrap_or(\"\").to_string();\n            let cwd  = meta[\"cwd\"].as_str().unwrap_or(\"\").to_string();\n            SearchHit {\n                kind: HitKind::Session,\n                title: name,\n                dir: super::short_path(&cwd),\n                excerpt_lines: vec![],\n                session_id: meta[\"session_id\"].as_str().map(str::to_string),\n                repo_dir: None,\n                start_ts: None, hit_ts: None, branch: String::new(),\n                agent: String::new(), backed_up: false, updated_at: String::new(), author: String::new(),\n                remote: String::new(),\n            }\n        }\n        \"repo\" => {\n            let name = meta[\"repo_name\"].as_str().unwrap_or(\"\").to_string();\n            let dir  = meta[\"repo_dir\"].as_str().unwrap_or(\"\").to_string();\n            SearchHit {\n                kind: HitKind::Repo,\n                title: name,\n                dir: super::short_path(&dir),\n                excerpt_lines: vec![],\n                session_id: None,\n                repo_dir: Some(dir),\n                start_ts: None, hit_ts: None, branch: String::new(),\n                agent: String::new(), backed_up: false, updated_at: String::new(), author: String::new(),\n                remote: String::new(),\n            }\n        }\n        \"checkpoint\" => {\n            let name    = meta[\"session_name\"].as_str().unwrap_or(\"\").to_string();\n            let project = meta[\"project\"].as_str().unwrap_or(\"\").to_string();\n            // Body is \"[project/cwd] session_name\\n[Checkpoint] commit message\\n\".\n            // Extract just the commit message for the excerpt.\n            let message = bodies.first()\n                .and_then(|b| b.lines().find(|l| l.starts_with(\"[Checkpoint] \")))\n                .map(|l| l.trim_start_matches(\"[Checkpoint] \").to_string())\n                .unwrap_or_default();\n            SearchHit {\n                kind: HitKind::Checkpoint,\n                title: name,\n                dir: super::short_path(&project),\n                excerpt_lines: if message.is_empty() { vec![] } else { vec![message] },\n                session_id: meta[\"session_id\"].as_str().map(str::to_string),\n                repo_dir: None,\n                start_ts: None,\n                hit_ts: None,\n                branch: String::new(),\n                agent: String::new(), backed_up: false, updated_at: String::new(),\n                author: String::new(), remote: String::new(),\n            }\n        }\n        _ => {\n            // \"claude\" — session log turn\n            let name   = meta[\"session_name\"].as_str().unwrap_or(\"\").to_string();\n            let project = meta[\"project\"].as_str().unwrap_or(\"\").to_string();\n            let branch  = […]
 
 > TOOL
@@ -12633,7 +12633,7 @@ id: toolu_01Rs3McQx1Rm9KmbYLULKJyB
 tool_result
 id: toolu_01Rs3McQx1Rm9KmbYLULKJyB
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12646,7 +12646,7 @@ tool_use Read
 id: toolu_01SjmA8ZjouPi8ZrfmZDGJY2
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "offset": 310,
   "limit": 80
 }
@@ -12727,7 +12727,7 @@ id: toolu_01GpEEksLiwDgFZeXXBQAE9B
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "                    rows: vec![GroupRow {\n                        hit_ts: hit.hit_ts,\n                        start_ts: hit.start_ts,\n                        lines: hit.excerpt_lines,\n                        is_checkpoint: is_cp,\n                    }],",
   "new_string": "                    rows: vec![GroupRow {\n                        hit_ts: hit.hit_ts,\n                        turn_id: hit.turn_id,\n                        lines: hit.excerpt_lines,\n                        is_checkpoint: is_cp,\n                    }],"
 }
@@ -12738,7 +12738,7 @@ id: toolu_01GpEEksLiwDgFZeXXBQAE9B
 tool_result
 id: toolu_01GpEEksLiwDgFZeXXBQAE9B
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12752,7 +12752,7 @@ id: toolu_01LShAba3pQqWGSGDoxnFx3b
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "    groups\n}\n\n// ── TUI ───────────────────────────────────────────────────────────────────────",
   "new_string": "    // Stable sort by dir so hits from the same repo cluster together while\n    // preserving the original relevance ordering within each repo.\n    groups.sort_by(|a, b| a.dir.cmp(&b.dir));\n\n    groups\n}\n\n// ── TUI ───────────────────────────────────────────────────────────────────────"
 }
@@ -12763,7 +12763,7 @@ id: toolu_01LShAba3pQqWGSGDoxnFx3b
 tool_result
 id: toolu_01LShAba3pQqWGSGDoxnFx3b
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12777,7 +12777,7 @@ id: toolu_01VAxW35fNSJvaZXaxQN794v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "                        let nested_quit = match group.kind {\n                            HitKind::Log | HitKind::Checkpoint | HitKind::Session => {\n                                if let Some(id) = &group.session_id {\n                                    let ts = group.rows.first().and_then(|r| r.start_ts.as_deref());\n                                    super::show::run_at(id, ts).unwrap_or(false)\n                                } else { false }\n                            }",
   "new_string": "                        let nested_quit = match group.kind {\n                            HitKind::Log | HitKind::Checkpoint | HitKind::Session => {\n                                if let Some(id) = &group.session_id {\n                                    let tid = group.rows.first().and_then(|r| r.turn_id.as_deref());\n                                    super::show::run_at(id, tid).unwrap_or(false)\n                                } else { false }\n                            }"
 }
@@ -12788,7 +12788,7 @@ id: toolu_01VAxW35fNSJvaZXaxQN794v
 tool_result
 id: toolu_01VAxW35fNSJvaZXaxQN794v
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12801,7 +12801,7 @@ tool_use Bash
 id: toolu_01MYwQAHNtTYGcZLrpBpftuX
 ```json
 {
-  "command": "grep -n \"start_ts\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "command": "grep -n \"start_ts\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "description": "Find any remaining start_ts references"
 }
 ```
@@ -12822,7 +12822,7 @@ id: toolu_013c6P231qTJ8Lcen9qyUbm8
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "                    start_ts: None, hit_ts: None, branch: String::new(),",
   "new_string": "                    turn_id: None, hit_ts: None, branch: String::new(),"
 }
@@ -12833,7 +12833,7 @@ id: toolu_013c6P231qTJ8Lcen9qyUbm8
 tool_result
 id: toolu_013c6P231qTJ8Lcen9qyUbm8
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12873,8 +12873,8 @@ id: toolu_01Lf6kdq8EJYB8ExCeNds6AD
 ```
 warning: `gossamer` (bin "gossamer") generated 8 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 50.25s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -12908,7 +12908,7 @@ tool_use Bash
 id: toolu_01T33decFuVoiaKS9phhBTX8
 ```json
 {
-  "command": "grep -n \"checkpoint_number\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "command": "grep -n \"checkpoint_number\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "description": "Find all checkpoint_number references in index.rs"
 }
 ```
@@ -12930,7 +12930,7 @@ tool_use Read
 id: toolu_01YGrsckC7kbjcNVnVwWfnjM
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 200,
   "limit": 30
 }
@@ -12979,7 +12979,7 @@ tool_use Read
 id: toolu_01CeUdhExBe1NWkS8A2AzMAW
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 415,
   "limit": 55
 }
@@ -13053,7 +13053,7 @@ tool_use Read
 id: toolu_01Aj2VYfMHXdVdVgDo9WHSKu
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 465,
   "limit": 80
 }
@@ -13142,7 +13142,7 @@ tool_use Bash
 id: toolu_01M1tchDhK4Jjt2XXiXgMB8L
 ```json
 {
-  "command": "grep -n \"checkpoint_number\\|INSERT INTO checkpoints\\|upsert_checkpoint\\|INTO check\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -30",
+  "command": "grep -n \"checkpoint_number\\|INSERT INTO checkpoints\\|upsert_checkpoint\\|INTO check\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs | head -30",
   "description": "Find all checkpoint insert SQL in index.rs"
 }
 ```
@@ -13167,7 +13167,7 @@ tool_use Bash
 id: toolu_01Rq1y41TUeYAAXdXjZDTnjg
 ```json
 {
-  "command": "grep -n \"checkpoint_number\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/refresh.rs /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs 2>/dev/null",
+  "command": "grep -n \"checkpoint_number\" /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/refresh.rs /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs 2>/dev/null",
   "description": "Check refresh.rs and show.rs for checkpoint_number SQL"
 }
 ```
@@ -13177,9 +13177,9 @@ id: toolu_01Rq1y41TUeYAAXdXjZDTnjg
 tool_result
 id: toolu_01Rq1y41TUeYAAXdXjZDTnjg
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:235:       ORDER BY checkpoint_number ASC"
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:436:         ORDER BY checkpoint_number DESC
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:451:         ORDER BY checkpoint_number DESC LIMIT 1",
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:235:       ORDER BY checkpoint_number ASC"
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:436:         ORDER BY checkpoint_number DESC
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:451:         ORDER BY checkpoint_number DESC LIMIT 1",
 ```
 
 > AGENT
@@ -13192,7 +13192,7 @@ tool_use Read
 id: toolu_01KH4EbnmSamta61hzgsbXEV
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs",
   "offset": 544,
   "limit": 80
 }
@@ -13252,7 +13252,7 @@ tool_use Bash
 id: toolu_019WVwhRc5JytpRTTzES9FG6
 ```json
 {
-  "command": "grep -n \"checkpoint_number\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs 2>/dev/null",
+  "command": "grep -n \"checkpoint_number\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ingest/claude_code.rs 2>/dev/null",
   "description": "Check ingest for checkpoint_number SQL"
 }
 ```
@@ -13271,7 +13271,7 @@ tool_use Bash
 id: toolu_01EBSDSZbjdaFV419S11HEkN
 ```json
 {
-  "command": "grep -rn \"checkpoint_number\" /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/ 2>/dev/null",
+  "command": "grep -rn \"checkpoint_number\" /home/<USER>/p/gossamer-checkpoints-visualization/src/ 2>/dev/null",
   "description": "Find all remaining checkpoint_number references across all source files"
 }
 ```
@@ -13281,20 +13281,20 @@ id: toolu_01EBSDSZbjdaFV419S11HEkN
 tool_result
 id: toolu_01EBSDSZbjdaFV419S11HEkN
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:39:    // Migrate checkpoints PK from (session_id, checkpoint_number) → (session_id, checkpoint_id).
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:104:    // Only run if the table still uses the old (session_id, checkpoint_number) primary key.
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:110:    // New schema has checkpoint_id as NOT NULL in the PK; old one has checkpoint_number as PK.
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:111:    if !schema.contains("PRIMARY KEY (session_id, checkpoint_number)") { return; }
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs:137:                     ELSE 'legacy-' || CAST(checkpoint_number AS TEXT)
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:209:    checkpoint_number: u32,
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:420:        let checkpoint_number = checkpoint_number_from_path(meta_path).unwrap_or(0);
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:452:            checkpoint_number,
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs:733:pub(crate) fn checkpoint_number_from_path(meta_path: &str) -> Option<u32> {
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:235:       ORDER BY checkpoint_number ASC"
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:436:         ORDER BY checkpoint_number DESC
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs:451:         ORDER BY checkpoint_number DESC LIMIT 1",
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs:22:    /// of the first checkpoint (lowest checkpoint_number). Empty for sessions
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs:143:    // Pull the author of the FIRST checkpoint (lowest checkpoint_number) for
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:39:    // Migrate checkpoints PK from (session_id, checkpoint_number) → (session_id, checkpoint_id).
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:104:    // Only run if the table still uses the old (session_id, checkpoint_number) primary key.
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:110:    // New schema has checkpoint_id as NOT NULL in the PK; old one has checkpoint_number as PK.
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:111:    if !schema.contains("PRIMARY KEY (session_id, checkpoint_number)") { return; }
+/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs:137:                     ELSE 'legacy-' || CAST(checkpoint_number AS TEXT)
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:209:    checkpoint_number: u32,
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:420:        let checkpoint_number = checkpoint_number_from_path(meta_path).unwrap_or(0);
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:452:            checkpoint_number,
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs:733:pub(crate) fn checkpoint_number_from_path(meta_path: &str) -> Option<u32> {
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:235:       ORDER BY checkpoint_number ASC"
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:436:         ORDER BY checkpoint_number DESC
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs:451:         ORDER BY checkpoint_number DESC LIMIT 1",
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs:22:    /// of the first checkpoint (lowest checkpoint_number). Empty for sessions
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs:143:    // Pull the author of the FIRST checkpoint (lowest checkpoint_number) for
 ```
 
 > AGENT
@@ -13368,10 +13368,10 @@ id: toolu_01F4PnKB6qbaTuwmLdiKdwXT
 tool_result
 id: toolu_01F4PnKB6qbaTuwmLdiKdwXT
 ```
--rwxr-xr-x@ 1 stephanostsoucas  staff  13264800 Jun 20 14:50 /Users/stephanostsoucas/.cargo/bin/gossamer
+-rwxr-xr-x@ 1 stephanostsoucas  staff  13264800 Jun 20 14:50 /home/<USER>/.cargo/bin/gossamer
     Finished `release` profile [optimized] target(s) in 2.81s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > TOOL
@@ -13407,7 +13407,7 @@ tool_use Read
 id: toolu_01B9jQQD4Qfo6zeUutZkeBXv
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 228,
   "limit": 15
 }
@@ -13441,7 +13441,7 @@ tool_use Read
 id: toolu_01G3ZV4cuZxacaXKYeFsZU1E
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 430,
   "limit": 30
 }
@@ -13489,7 +13489,7 @@ id: toolu_01JPemJmCYzfX7mvVT8NntrW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "       ORDER BY checkpoint_number ASC\"",
   "new_string": "       ORDER BY last_turn_ts ASC\""
 }
@@ -13500,7 +13500,7 @@ id: toolu_01JPemJmCYzfX7mvVT8NntrW
 tool_result
 id: toolu_01JPemJmCYzfX7mvVT8NntrW
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13510,7 +13510,7 @@ id: toolu_018UiDutFAm4FQX6bBC2Fe38
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        \"SELECT jsonl_path FROM checkpoints\n         WHERE session_id = ?1\n           AND jsonl_path IS NOT NULL\n         ORDER BY checkpoint_number DESC\n         LIMIT 1\",",
   "new_string": "        \"SELECT jsonl_path FROM checkpoints\n         WHERE session_id = ?1\n           AND jsonl_path IS NOT NULL\n         ORDER BY last_turn_ts DESC\n         LIMIT 1\","
 }
@@ -13521,7 +13521,7 @@ id: toolu_018UiDutFAm4FQX6bBC2Fe38
 tool_result
 id: toolu_018UiDutFAm4FQX6bBC2Fe38
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13531,7 +13531,7 @@ id: toolu_01DAVPgFMKXu8f1vc1B3iNgT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "        \"SELECT repo_dir FROM checkpoints\n         WHERE session_id = ?1 AND repo_dir IS NOT NULL\n         ORDER BY checkpoint_number DESC LIMIT 1\",",
   "new_string": "        \"SELECT repo_dir FROM checkpoints\n         WHERE session_id = ?1 AND repo_dir IS NOT NULL\n         ORDER BY last_turn_ts DESC LIMIT 1\","
 }
@@ -13542,7 +13542,7 @@ id: toolu_01DAVPgFMKXu8f1vc1B3iNgT
 tool_result
 id: toolu_01DAVPgFMKXu8f1vc1B3iNgT
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13562,13 +13562,13 @@ tool_result
 id: toolu_016pmP4U7kt8KhG3bqJe3Sxi
 ```
     Finished `release` profile [optimized] target(s) in 5.10s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-checkpoints-visualization)` (executable `gossamer`)
 ```
 
 > AGENT
 
-Fixed. The three `ORDER BY checkpoint_number` queries in `show.rs` now use `last_turn_ts` instead. The `gossamer index` error was caused by the installed binary being pulled from the old `/Users/stephanostsoucas/p/gossamer` directory (Cargo saw matching name+version and didn't replace it) — which still had the original `INSERT INTO checkpoints (session_id, checkpoint_number, ...)` SQL hitting the migrated table.
+Fixed. The three `ORDER BY checkpoint_number` queries in `show.rs` now use `last_turn_ts` instead. The `gossamer index` error was caused by the installed binary being pulled from the old `/home/<USER>/p/gossamer` directory (Cargo saw matching name+version and didn't replace it) — which still had the original `INSERT INTO checkpoints (session_id, checkpoint_number, ...)` SQL hitting the migrated table.
 
 > TOOL
 
@@ -13576,7 +13576,7 @@ Fixed. The three `ORDER BY checkpoint_number` queries in `show.rs` now use `last
 
 > TOOL
 
-<bash-stdout>/Users/stephanostsoucas/p/gossamer-checkpoints-visualization</bash-stdout><bash-stderr></bash-stderr>
+<bash-stdout>/home/<USER>/p/gossamer-checkpoints-visualization</bash-stdout><bash-stderr></bash-stderr>
 
 > DEVELOPER
 
@@ -13588,7 +13588,7 @@ tool_use Bash
 id: toolu_01YLp4q1F7duUDXpU16Eswim
 ```json
 {
-  "command": "head -5 /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/Cargo.toml\necho \"---\"\nhead -5 /Users/stephanostsoucas/p/gossamer/Cargo.toml 2>/dev/null",
+  "command": "head -5 /home/<USER>/p/gossamer-checkpoints-visualization/Cargo.toml\necho \"---\"\nhead -5 /home/<USER>/p/gossamer/Cargo.toml 2>/dev/null",
   "description": "Compare Cargo.toml versions in both repos"
 }
 ```
@@ -13622,7 +13622,7 @@ tool_use Bash
 id: toolu_016UB9xyg8Y6ZVeq2fAiZ8vw
 ```json
 {
-  "command": "cargo build --release --manifest-path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/Cargo.toml 2>&1 | tail -3 && cp /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target/release/gossamer ~/.cargo/bin/gossamer && echo \"installed $(~/.cargo/bin/gossamer --version 2>/dev/null || strings ~/.cargo/bin/gossamer | grep 'last_turn_ts' | head -1)\"",
+  "command": "cargo build --release --manifest-path /home/<USER>/p/gossamer-checkpoints-visualization/Cargo.toml 2>&1 | tail -3 && cp /home/<USER>/p/gossamer-checkpoints-visualization/target/release/gossamer ~/.cargo/bin/gossamer && echo \"installed $(~/.cargo/bin/gossamer --version 2>/dev/null || strings ~/.cargo/bin/gossamer | grep 'last_turn_ts' | head -1)\"",
   "description": "Build and copy binary directly, bypassing cargo install"
 }
 ```
@@ -13667,7 +13667,7 @@ tool_use Read
 id: toolu_01Cye5G2qXC4Cy7evA3snP6g
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/.claude/projects/-Users-stephanostsoucas-p-gossamer/memory/feedback_reinstall_after_changes.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-stephanostsoucas-p-gossamer/memory/feedback_reinstall_after_changes.md"
 }
 ```
 
@@ -13697,8 +13697,8 @@ tool_use Write
 id: toolu_01NmY15q7Cvjd9UG6saJHwvr
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/.claude/projects/-Users-stephanostsoucas-p-gossamer/memory/feedback_reinstall_after_changes.md",
-  "content": "---\nname: Reinstall gossamer CLI after every code change\ndescription: Use cargo build + cp to install gossamer, NOT cargo install --path .\nmetadata:\n  type: feedback\n---\nAfter modifying gossamer source, build and copy directly — do NOT use `cargo install --path .`:\n\n```bash\ncargo build --release --manifest-path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/Cargo.toml \\\n  && cp /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target/release/gossamer ~/.cargo/bin/gossamer\n```\n\n**Why:** The worktree (`gossamer-checkpoints-visualization`) and the original repo (`gossamer`) have the same package name and version (`gossamer v0.1.0`). `cargo install` tracks by name+version so it can't distinguish them — a session-stop hook or anything that runs `cargo install --path .` from the original repo will silently overwrite the worktree binary, losing all changes.\n\n**How to apply:** Always use `cargo build --release` + `cp` in this project. Never use `cargo install`.\n"
+  "file_path": "/home/<USER>/.claude/projects/-Users-stephanostsoucas-p-gossamer/memory/feedback_reinstall_after_changes.md",
+  "content": "---\nname: Reinstall gossamer CLI after every code change\ndescription: Use cargo build + cp to install gossamer, NOT cargo install --path .\nmetadata:\n  type: feedback\n---\nAfter modifying gossamer source, build and copy directly — do NOT use `cargo install --path .`:\n\n```bash\ncargo build --release --manifest-path /home/<USER>/p/gossamer-checkpoints-visualization/Cargo.toml \\\n  && cp /home/<USER>/p/gossamer-checkpoints-visualization/target/release/gossamer ~/.cargo/bin/gossamer\n```\n\n**Why:** The worktree (`gossamer-checkpoints-visualization`) and the original repo (`gossamer`) have the same package name and version (`gossamer v0.1.0`). `cargo install` tracks by name+version so it can't distinguish them — a session-stop hook or anything that runs `cargo install --path .` from the original repo will silently overwrite the worktree binary, losing all changes.\n\n**How to apply:** Always use `cargo build --release` + `cp` in this project. Never use `cargo install`.\n"
 }
 ```
 
@@ -13707,7 +13707,7 @@ id: toolu_01NmY15q7Cvjd9UG6saJHwvr
 tool_result
 id: toolu_01NmY15q7Cvjd9UG6saJHwvr
 ```
-The file /Users/stephanostsoucas/.claude/projects/-Users-stephanostsoucas-p-gossamer/memory/feedback_reinstall_after_changes.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-stephanostsoucas-p-gossamer/memory/feedback_reinstall_after_changes.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13732,7 +13732,7 @@ tool_use Read
 id: toolu_01BFqYSBv1wyqttY7Pspqrw4
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1490,
   "limit": 5
 }
@@ -13756,7 +13756,7 @@ tool_use Read
 id: toolu_01D4vDTue63F7FGE2jKgorEJ
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "offset": 1490,
   "limit": 15
 }
@@ -13791,7 +13791,7 @@ id: toolu_01NR35nYfsT1M1fUHnQYErWE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs",
   "old_string": "    // If a target timestamp was given, jump to the first card whose ts matches.\n    // Otherwise land on the first non-navigation card (skip RepoLink and Header).\n    let initial_sel = start_ts.and_then(|ts| {\n        cards.iter().enumerate().find_map(|(ci, card)| {\n            let card_ts = match card {\n                Card::UserMsg { ts, .. } | Card::AsstMsg { ts, .. } | Card::System { ts, .. } => ts.as_str(),\n                _ => return None,\n            };\n            if card_ts == ts {\n                selectables.iter().position(|s| *s == Selectable::Card(ci))\n            } else {\n                None\n            }\n        })\n    }).unwrap_or_else(|| selectables.len().saturating_sub(1));",
   "new_string": "    // If a target timestamp was given, jump to the first card whose ts matches.\n    // Fall back to the first selectable (beginning of session) if not found.\n    let initial_sel = start_ts.and_then(|ts| {\n        cards.iter().enumerate().find_map(|(ci, card)| {\n            let card_ts = match card {\n                Card::UserMsg { ts, .. } | Card::AsstMsg { ts, .. } | Card::System { ts, .. } => ts.as_str(),\n                _ => return None,\n            };\n            if card_ts == ts {\n                selectables.iter().position(|s| *s == Selectable::Card(ci))\n            } else {\n                None\n            }\n        })\n    }).unwrap_or(0);"
 }
@@ -13802,7 +13802,7 @@ id: toolu_01NR35nYfsT1M1fUHnQYErWE
 tool_result
 id: toolu_01NR35nYfsT1M1fUHnQYErWE
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13816,7 +13816,7 @@ id: toolu_01ULdS2nBNjEFtfSMTmTf9hb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "        _ => {\n            // \"claude\" — session log turn\n            let name    = meta[\"session_name\"].as_str().unwrap_or(\"\").to_string();\n            let project = meta[\"project\"].as_str().unwrap_or(\"\").to_string();\n            let branch  = meta[\"branch\"].as_str().unwrap_or(\"\").to_string();\n\n            let mut excerpt_lines: Vec<String> = Vec::new();\n            if sub_idx > 1 {",
   "new_string": "        _ => {\n            // \"claude\" — session log turn.\n            // sub_idx=0 means the [project] header line matched — not a useful\n            // content hit (session-name matching is handled separately). Drop it.\n            if sub_idx == 0 {\n                return SearchHit {\n                    kind: HitKind::Session,\n                    title: meta[\"session_name\"].as_str().unwrap_or(\"\").to_string(),\n                    dir: super::short_path(meta[\"project\"].as_str().unwrap_or(\"\")),\n                    excerpt_lines: vec![],\n                    session_id: meta[\"session_id\"].as_str().map(str::to_string),\n                    repo_dir: None,\n                    turn_id: None, hit_ts: None,\n                    branch: meta[\"branch\"].as_str().unwrap_or(\"\").to_string(),\n                    agent: String::new(), backed_up: false, updated_at: String::new(),\n                    author: String::new(), remote: String::new(),\n                };\n            }\n\n            let name    = meta[\"session_name\"].as_str().unwrap_or(\"\").to_string();\n            let project = meta[\"project\"].as_str().unwrap_or(\"\").to_string();\n            let branch  = meta[\"branch\"].as_str().unwrap_or(\"\").to_string();\n\n            let mut excerpt_lines: Vec<String> = Vec::new();\n            if sub_idx > 1 {"
 }
@@ -13827,7 +13827,7 @@ id: toolu_01ULdS2nBNjEFtfSMTmTf9hb
 tool_result
 id: toolu_01ULdS2nBNjEFtfSMTmTf9hb
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13836,7 +13836,7 @@ tool_use Bash
 id: toolu_018nHqNWRZfx95Sb4mPHWURp
 ```json
 {
-  "command": "cargo build --release --manifest-path /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/Cargo.toml 2>&1 | grep \"^error\" | head -5",
+  "command": "cargo build --release --manifest-path /home/<USER>/p/gossamer-checkpoints-visualization/Cargo.toml 2>&1 | grep \"^error\" | head -5",
   "description": "Check for compile errors"
 }
 ```
@@ -13855,7 +13855,7 @@ tool_use Bash
 id: toolu_01CSsaufCZD1V7Rq7ecWYTTU
 ```json
 {
-  "command": "cp /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/target/release/gossamer ~/.cargo/bin/gossamer && echo \"done\"",
+  "command": "cp /home/<USER>/p/gossamer-checkpoints-visualization/target/release/gossamer ~/.cargo/bin/gossamer && echo \"done\"",
   "description": "Install binary via cp"
 }
 ```

@@ -13,7 +13,7 @@ id: toolu_01VpX5vhdziYc5Th4LamXXtu
 ```json
 {
   "pattern": "Select.*agent|agent.*Select|NewSelect",
-  "path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/commands",
+  "path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/commands",
   "output_mode": "content",
   "context": 3
 }
@@ -24,7 +24,7 @@ id: toolu_01VpX5vhdziYc5Th4LamXXtu
 tool_result ERROR
 id: toolu_01VpX5vhdziYc5Th4LamXXtu
 ```
-<tool_use_error>Path does not exist: /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/commands</tool_use_error>
+<tool_use_error>Path does not exist: /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/commands</tool_use_error>
 ```
 
 > TOOL
@@ -34,7 +34,7 @@ id: toolu_01NNpK6q7us1Zp1Z5GQz1Fuy
 ```json
 {
   "pattern": "enable",
-  "path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/commands",
+  "path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/commands",
   "output_mode": "files_with_matches"
 }
 ```
@@ -54,7 +54,7 @@ id: toolu_01FtZMYDJMAiKcy3Bo5wEYKV
 ```json
 {
   "pattern": "enable|agent.*select|NewSelect",
-  "path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli",
+  "path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli",
   "output_mode": "files_with_matches",
   "glob": "*enable*"
 }
@@ -93,7 +93,7 @@ id: toolu_01XtqKbqLPk2Hsn3rqvc1zk6
 ```json
 {
   "pattern": "enable",
-  "path": "/Users/evisdrenova/code/entire/devenv/cli",
+  "path": "/home/<USER>/code/entire/devenv/cli",
   "output_mode": "files_with_matches",
   "glob": "*.go"
 }
@@ -150,7 +150,7 @@ tool_use Read
 id: toolu_018deas2RsFH7pk3p1BQkSd5
 ```json
 {
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go"
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go"
 }
 ```
 
@@ -236,7 +236,7 @@ tool_use Read
 id: toolu_01NUMdkgKSH2qZeDFhzrDxjs
 ```json
 {
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go"
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go"
 }
 ```
 
@@ -302,7 +302,7 @@ id: toolu_01K9mKZat4Bsawdj1nNG8iwQ
 ```json
 {
   "pattern": "NewMultiSelect",
-  "path": "/Users/evisdrenova/code/entire/devenv/cli",
+  "path": "/home/<USER>/code/entire/devenv/cli",
   "output_mode": "content",
   "context": 3
 }
@@ -327,7 +327,7 @@ id: toolu_017FCKCmPBzrbhUEPBz4urn4
 ```json
 {
   "pattern": "func Detect|func List|func Get|func Default",
-  "path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent",
+  "path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent",
   "output_mode": "content",
   "context": 5
 }
@@ -338,51 +338,51 @@ id: toolu_017FCKCmPBzrbhUEPBz4urn4
 tool_result
 id: toolu_017FCKCmPBzrbhUEPBz4urn4
 ```
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-31-	}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-32-	return rawHooks
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-33-}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-34-
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-35-// GetKeys returns the keys of a map as a slice.
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-31-	}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-32-	return rawHooks
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-33-}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-34-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-35-// GetKeys returns the keys of a map as a slice.
 cmd/entire/cli/agent/testutil/hooks.go:36:func GetKeys(m map[string]json.RawMessage) []string {
 cmd/entire/cli/agent/testutil/hooks.go-37-	keys := make([]string, 0, len(m))
 cmd/entire/cli/agent/testutil/hooks.go-38-	for k := range m {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-39-		keys = append(keys, k)
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-40-	}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-41-	return keys
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-39-		keys = append(keys, k)
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-40-	}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/testutil/hooks.go-41-	return keys
 --
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-169-}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-170-
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-171-// DetectAgentTypeFromContent detects the agent type from transcript content.
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-172-// Returns AgentTypeGemini if it appears to be Gemini JSON format, empty AgentType otherwise.
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-173-// This is used when the agent type is unknown but we need to chunk/reassemble correctly.
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-169-}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-170-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-171-// DetectAgentTypeFromContent detects the agent type from transcript content.
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-172-// Returns AgentTypeGemini if it appears to be Gemini JSON format, empty AgentType otherwise.
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-173-// This is used when the agent type is unknown but we need to chunk/reassemble correctly.
 cmd/entire/cli/agent/chunking.go:174:func DetectAgentTypeFromContent(content []byte) AgentType {
 cmd/entire/cli/agent/chunking.go-175-	/ Quick check: Gemini JSON starts with { and has a messages array
 cmd/entire/cli/agent/chunking.go-176-	trimmed := strings.TrimSpace(string(content))
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-177-	if !strings.HasPrefix(trimmed, "{") {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-178-		return ""
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-179-	}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-177-	if !strings.HasPrefix(trimmed, "{") {
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-178-		return ""
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/chunking.go-179-	}
 --
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-23-}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-24-
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-25-// Get retrieves an agent by name.
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-26-//
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-27-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-23-}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-24-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-25-// Get retrieves an agent by name.
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-26-//
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-27-
 cmd/entire/cli/agent/registry.go:28:func Get(name AgentName) (Agent, error) {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-29-	registryMu.RLock()
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-30-	defer registryMu.RUnlock()
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-31-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-29-	registryMu.RLock()
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-30-	defer registryMu.RUnlock()
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-31-
 cmd/entire/cli/agent/registry.go-32-	factory, ok := registry[name]
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-33-	if !ok {
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-33-	if !ok {
 --
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-35-	}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-36-	return factory(), nil
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-37-}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-38-
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-39-// List returns all registered agent names in sorted order.
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-35-	}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-36-	return factory(), nil
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-37-}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-38-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-39-// List returns all registered agent names in sorted order.
 cmd/entire/cli/agent/registry.go:40:func List() []AgentName {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-41-	registryMu.RLock()
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-42-	defer registryMu.RUnlock()
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-43-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-41-	registryMu.RLock()
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-42-	defer registryMu.RUnlock()
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/agent/registry.go-43-
 cmd/entire/cli/agent/registry.go-44-	names := make([]AgentName, 0, len(registry))
 cmd/entire/cli/agent/registry.go-45-	for name := range registry { […]
 
@@ -393,7 +393,7 @@ id: toolu_01RahdfFgJwu65yAsbx8Qa2G
 ```json
 {
   "pattern": "GetAgentsWithHooksInstalled",
-  "path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli",
+  "path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli",
   "output_mode": "content",
   "context": 10
 }
@@ -404,46 +404,46 @@ id: toolu_01RahdfFgJwu65yAsbx8Qa2G
 tool_result
 id: toolu_01RahdfFgJwu65yAsbx8Qa2G
 ```
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-49-			// Load settings once for telemetry and version check
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-50-			var telemetryEnabled *bool
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-49-			// Load settings once for telemetry and version check
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-50-			var telemetryEnabled *bool
 cmd/entire/cli/root.go-51-			settings, err := LoadEntireSettings()
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-52-			if err == nil {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-53-				telemetryEnabled = settings.Telemetry
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-54-			}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-55-
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-56-			// Check if telemetry is enabled
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-57-			if telemetryEnabled != nil && *telemetryEnabled {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-58-				// Use detached tracking (non-blocking)
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-52-			if err == nil {
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-53-				telemetryEnabled = settings.Telemetry
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-54-			}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-55-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-56-			// Check if telemetry is enabled
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-57-			if telemetryEnabled != nil && *telemetryEnabled {
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-58-				// Use detached tracking (non-blocking)
 cmd/entire/cli/root.go:59:				installedAgents := GetAgentsWithHooksInstalled()
 cmd/entire/cli/root.go-60-				agentStr := JoinAgentNames(installedAgents)
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-61-				telemetry.TrackCommandDetached(cmd, settings.Strategy, agentStr, settings.Enabled, buildinfo.Version)
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-62-			}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-63-
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-64-			// Version check and notification (synchronous with 2s timeout)
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-65-			// Runs AFTER command completes to avoid interfering with interactive modes
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-66-			versioncheck.CheckAndNotify(cmd.OutOrStdout(), buildinfo.Version)
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-67-		},
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-61-				telemetry.TrackCommandDetached(cmd, settings.Strategy, agentStr, settings.Enabled, buildinfo.Version)
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-62-			}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-63-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-64-			// Version check and notification (synchronous with 2s timeout)
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-65-			// Runs AFTER command completes to avoid interfering with interactive modes
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-66-			versioncheck.CheckAndNotify(cmd.OutOrStdout(), buildinfo.Version)
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-67-		},
 cmd/entire/cli/root.go-68-		RunE: func(cmd *cobra.Command, _ []string) error {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/root.go-69-			return cmd.Help()
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/root.go-69-			return cmd.Help()
 --
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-89-// Returns empty string if not configured (caller should use default).
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-89-// Returns empty string if not configured (caller should use default).
 cmd/entire/cli/config.go-90-/ Note: ENTIRE_LOG_LEVEL env var takes precedence; check it first.
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-91-func GetLogLevel() string {
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-91-func GetLogLevel() string {
 cmd/entire/cli/config.go-92-	s, err := settings.Load()
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-93-	if err != nil {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-94-		return ""
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-95-	}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-96-	return s.LogLevel
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-97-}
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-98-
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-93-	if err != nil {
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-94-		return ""
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-95-	}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-96-	return s.LogLevel
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-97-}
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-98-
 cmd/entire/cli/config.go:99:// GetAgentsWithHooksInstalled returns names of agents that have hooks installed.
 cmd/entire/cli/config.go:100:func GetAgentsWithHooksInstalled() []agent.AgentName {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-101-	var installed []agent.AgentName
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-101-	var installed []agent.AgentName
 cmd/entire/cli/config.go-102-	for _, name := range agent.List() {
 cmd/entire/cli/config.go-103-		ag, err := agent.Get(name)
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-104-		if err != nil {
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-105-			continue
-/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/config.go-106-		} […]
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-104-		if err != nil {
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-105-			continue
+/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/config.go-106-		} […]
 
 > AGENT
 
@@ -460,7 +460,7 @@ id: toolu_01PcTjjQ9EdNrL2UsopWND59
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go",
   "old_string": "// detectOrSelectAgent tries to auto-detect an agent, or prompts the user to select one.\n// Returns the detected/selected agent and any error.\n// If no agent is detected and no TTY is available, falls back to the default agent.\nfunc detectOrSelectAgent(w io.Writer) (agent.Agent, error) {\n\t// Try auto-detection first\n\tag, err := agent.Detect()\n\tif err == nil {\n\t\tfmt.Fprintf(w, \"Detected agent: %s\\n\\n\", ag.Type())\n\t\treturn ag, nil\n\t}\n\n\t// No agent detected - check if we can prompt interactively\n\tif !canPromptInteractively() {\n\t\t// No TTY available (e.g., running in CI or tests) - fall back to default agent\n\t\tdefaultAgent := agent.Default()\n\t\tif defaultAgent == nil {\n\t\t\treturn nil, errors.New(\"no default agent available\")\n\t\t}\n\t\tfmt.Fprintf(w, \"Agent: %s (use --agent to change)\\n\\n\", defaultAgent.Type())\n\t\treturn defaultAgent, nil\n\t}\n\n\t// Show message and prompt for selection\n\tfmt.Fprintln(w, \"No agent configuration detected (e.g., .claude or .gemini directory).\")\n\tfmt.Fprintln(w, \"This is normal - some agents don't require a config directory.\")\n\tfmt.Fprintln(w)\n\n\t// Build options from registered agents\n\tagentNames := agent.List()\n\toptions := make([]huh.Option[string], 0, len(agentNames))\n\tfor _, name := range agentNames {\n\t\tag, err := agent.Get(name)\n\t\tif err != nil {\n\t\t\tcontinue\n\t\t}\n\t\t// Only show agents that support hooks\n\t\tif _, ok := ag.(agent.HookSupport); !ok {\n\t\t\tcontinue\n\t\t}\n\t\tlabel := string(ag.Type())\n\t\tif name == agent.DefaultAgentName {\n\t\t\tlabel += \" (default)\"\n\t\t}\n\t\toptions = append(options, huh.NewOption(label, string(name)))\n\t}\n\n\tif len(options) == 0 {\n\t\treturn nil, errors.New(\"no agents with hook […]
 
 > TOOL
@@ -468,7 +468,7 @@ id: toolu_01PcTjjQ9EdNrL2UsopWND59
 tool_result
 id: toolu_01PcTjjQ9EdNrL2UsopWND59
 ```
-The file /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > AGENT
@@ -482,7 +482,7 @@ id: toolu_0176XNj3z3uAE4JMmTk4YDG5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go",
   "old_string": "\t// Detect or select agent\n\tag, err := detectOrSelectAgent(w)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"agent selection failed: %w\", err)\n\t}\n\n\t// Setup agent hooks\n\tif _, err := setupAgentHooks(ag, localDev, forceHooks); err != nil {\n\t\treturn fmt.Errorf(\"failed to setup %s hooks: %w\", ag.Type(), err)\n\t}\n\n\t// Setup .entire directory\n\tif _, err := setupEntireDirectory(); err != nil {\n\t\treturn fmt.Errorf(\"failed to setup .entire directory: %w\", err)\n\t}\n\n\t// Load existing settings to preserve other options (like strategy_options.push)\n\tsettings, err := LoadEntireSettings()\n\tif err != nil {\n\t\t// If we can't load, start with defaults\n\t\tsettings = &EntireSettings{}\n\t}\n\t// Update the specific fields\n\tsettings.Strategy = internalStrategy\n\tsettings.LocalDev = localDev\n\tsettings.Enabled = true\n\n\t// Set push_sessions option if --skip-push-sessions flag was provided\n\tif skipPushSessions {\n\t\tif settings.StrategyOptions == nil {\n\t\t\tsettings.StrategyOptions = make(map[string]interface{})\n\t\t}\n\t\tsettings.StrategyOptions[\"push_sessions\"] = false\n\t}\n\n\t// Handle telemetry for non-interactive mode\n\t// Note: if telemetry is nil (not configured), it defaults to disabled\n\tif !telemetry || os.Getenv(\"ENTIRE_TELEMETRY_OPTOUT\") != \"\" {\n\t\tf := false\n\t\tsettings.Telemetry = &f\n\t}\n\n\t// Determine which settings file to write to\n\tentireDirAbs, err := paths.AbsPath(paths.EntireDir)\n\tif err != nil {\n\t\tentireDirAbs = paths.EntireDir // Fallback to relative\n\t}\n\tshouldUseLocal, showNotification := determineSettingsTarget(entireDirAbs, useLocalSettings, useProjectSettings)\n\n\tif showNotification {\n\t\tfmt.Fprintln(w, \"Info: Project settings exist. Saving to settings.local.json instead.\")\n\t\tfmt.Fprintln(w, \"  Use --project to update the project settings file.\")\n\t}\n\n\tconfigDisplay := configDisplayProject\n\tif shouldUseLocal {\n\t\tif err := SaveEntireSettingsLocal(settings); err != nil […]
 
 > TOOL
@@ -490,7 +490,7 @@ id: toolu_0176XNj3z3uAE4JMmTk4YDG5
 tool_result
 id: toolu_0176XNj3z3uAE4JMmTk4YDG5
 ```
-The file /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > AGENT
@@ -504,7 +504,7 @@ id: toolu_014kikrmZmWHHDTPVboVUNa5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go",
   "old_string": "\t// Detect or select agent\n\tag, err := detectOrSelectAgent(w)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"agent selection failed: %w\", err)\n\t}\n\n\t// Setup agent hooks\n\tif _, err := setupAgentHooks(ag, localDev, forceHooks); err != nil {\n\t\treturn fmt.Errorf(\"failed to setup %s hooks: %w\", ag.Type(), err)\n\t}\n\n\t// Setup .entire directory\n\tif _, err := setupEntireDirectory(); err != nil {\n\t\treturn fmt.Errorf(\"failed to setup .entire directory: %w\", err)\n\t}\n\n\t// Use the default strategy (manual-commit)",
   "new_string": "\t// Detect or select agents\n\tagents, err := detectOrSelectAgent(w)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"agent selection failed: %w\", err)\n\t}\n\n\t// Setup agent hooks for all selected agents\n\tfor _, ag := range agents {\n\t\tif _, err := setupAgentHooks(ag, localDev, forceHooks); err != nil {\n\t\t\treturn fmt.Errorf(\"failed to setup %s hooks: %w\", ag.Type(), err)\n\t\t}\n\t}\n\n\t// Setup .entire directory\n\tif _, err := setupEntireDirectory(); err != nil {\n\t\treturn fmt.Errorf(\"failed to setup .entire directory: %w\", err)\n\t}\n\n\t// Use the default strategy (manual-commit)"
 }
@@ -515,7 +515,7 @@ id: toolu_014kikrmZmWHHDTPVboVUNa5
 tool_result
 id: toolu_014kikrmZmWHHDTPVboVUNa5
 ```
-The file /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > AGENT
@@ -529,7 +529,7 @@ id: toolu_019XPbCmRD5NjwSPbMZEr7QR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go",
   "old_string": "func TestDetectOrSelectAgent_AgentDetected(t *testing.T) {\n\t// Cannot use t.Parallel() because we use t.Chdir\n\tsetupTestRepo(t)\n\n\t// Create .claude directory so Claude Code agent is detected\n\tif err := os.MkdirAll(\".claude\", 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create .claude directory: %v\", err)\n\t}\n\n\tvar buf bytes.Buffer\n\tag, err := detectOrSelectAgent(&buf)\n\tif err != nil {\n\t\tt.Fatalf(\"detectOrSelectAgent() error = %v\", err)\n\t}\n\n\t// Should detect Claude Code\n\tif ag.Name() != agent.AgentNameClaudeCode {\n\t\tt.Errorf(\"detectOrSelectAgent() agent name = %v, want %v\", ag.Name(), agent.AgentNameClaudeCode)\n\t}\n\n\toutput := buf.String()\n\tif !strings.Contains(output, \"Detected agent:\") {\n\t\tt.Errorf(\"Expected output to contain 'Detected agent:', got: %s\", output)\n\t}\n\tif !strings.Contains(output, string(agent.AgentTypeClaudeCode)) {\n\t\tt.Errorf(\"Expected output to contain '%s', got: %s\", agent.AgentTypeClaudeCode, output)\n\t}\n}",
   "new_string": "func TestDetectOrSelectAgent_AgentDetected(t *testing.T) {\n\t// Cannot use t.Parallel() because we use t.Chdir\n\tsetupTestRepo(t)\n\n\t// Create .claude directory so Claude Code agent is detected\n\tif err := os.MkdirAll(\".claude\", 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create .claude directory: %v\", err)\n\t}\n\n\tvar buf bytes.Buffer\n\tagents, err := detectOrSelectAgent(&buf)\n\tif err != nil {\n\t\tt.Fatalf(\"detectOrSelectAgent() error = %v\", err)\n\t}\n\n\t// Should detect Claude Code\n\tif len(agents) != 1 {\n\t\tt.Fatalf(\"detectOrSelectAgent() returned %d agents, want 1\", len(agents))\n\t}\n\tif agents[0].Name() != agent.AgentNameClaudeCode {\n\t\tt.Errorf(\"detectOrSelectAgent() agent name = %v, want %v\", agents[0].Name(), agent.AgentNameClaudeCode)\n\t}\n\n\toutput := buf.String()\n\tif !strings.Contains(output, \"Detected agent:\") {\n\t\tt.Errorf(\"Expected output to contain 'Detected agent:', got: %s\", output)\n\t}\n\tif !strings.Contains(output, string(agent.AgentTypeClaudeCode)) {\n\t\tt.Errorf(\"Expected output to contain '%s', got: %s\", agent.AgentTypeClaudeCode, output)\n\t}\n}"
 }
@@ -540,7 +540,7 @@ id: toolu_019XPbCmRD5NjwSPbMZEr7QR
 tool_result
 id: toolu_019XPbCmRD5NjwSPbMZEr7QR
 ```
-The file /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go has been updated successfully.
+The file /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -550,7 +550,7 @@ id: toolu_01PJcCKGc1z3B9r3YeraERnG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go",
   "old_string": "func TestDetectOrSelectAgent_GeminiDetected(t *testing.T) {\n\t// Cannot use t.Parallel() because we use t.Chdir\n\tsetupTestRepo(t)\n\n\t// Create .gemini directory so Gemini agent is detected\n\tif err := os.MkdirAll(\".gemini\", 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create .gemini directory: %v\", err)\n\t}\n\n\tvar buf bytes.Buffer\n\tag, err := detectOrSelectAgent(&buf)\n\tif err != nil {\n\t\tt.Fatalf(\"detectOrSelectAgent() error = %v\", err)\n\t}\n\n\t// Should detect Gemini\n\tif ag.Name() != agent.AgentNameGemini {\n\t\tt.Errorf(\"detectOrSelectAgent() agent name = %v, want %v\", ag.Name(), agent.AgentNameGemini)\n\t}\n\n\toutput := buf.String()\n\tif !strings.Contains(output, \"Detected agent:\") {\n\t\tt.Errorf(\"Expected output to contain 'Detected agent:', got: %s\", output)\n\t}\n}",
   "new_string": "func TestDetectOrSelectAgent_GeminiDetected(t *testing.T) {\n\t// Cannot use t.Parallel() because we use t.Chdir\n\tsetupTestRepo(t)\n\n\t// Create .gemini directory so Gemini agent is detected\n\tif err := os.MkdirAll(\".gemini\", 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create .gemini directory: %v\", err)\n\t}\n\n\tvar buf bytes.Buffer\n\tagents, err := detectOrSelectAgent(&buf)\n\tif err != nil {\n\t\tt.Fatalf(\"detectOrSelectAgent() error = %v\", err)\n\t}\n\n\t// Should detect Gemini\n\tif len(agents) != 1 {\n\t\tt.Fatalf(\"detectOrSelectAgent() returned %d agents, want 1\", len(agents))\n\t}\n\tif agents[0].Name() != agent.AgentNameGemini {\n\t\tt.Errorf(\"detectOrSelectAgent() agent name = %v, want %v\", agents[0].Name(), agent.AgentNameGemini)\n\t}\n\n\toutput := buf.String()\n\tif !strings.Contains(output, \"Detected agent:\") {\n\t\tt.Errorf(\"Expected output to contain 'Detected agent:', got: %s\", output)\n\t}\n}"
 }
@@ -561,7 +561,7 @@ id: toolu_01PJcCKGc1z3B9r3YeraERnG
 tool_result
 id: toolu_01PJcCKGc1z3B9r3YeraERnG
 ```
-The file /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go has been updated successfully.
+The file /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -571,7 +571,7 @@ id: toolu_01KnSFraoxrUKUpfpKJN8NNU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go",
   "old_string": "func TestDetectOrSelectAgent_NoDetection_NoTTY_FallsBackToDefault(t *testing.T) {\n\t// Cannot use t.Parallel() because we use t.Chdir and t.Setenv\n\tsetupTestRepo(t)\n\tt.Setenv(\"ENTIRE_TEST_TTY\", \"0\") // No TTY available\n\n\t// No .claude or .gemini directory - detection will fail\n\n\tvar buf bytes.Buffer\n\tag, err := detectOrSelectAgent(&buf)\n\tif err != nil {\n\t\tt.Fatalf(\"detectOrSelectAgent() error = %v\", err)\n\t}\n\n\t// Should fall back to default agent (Claude Code)\n\tif ag.Name() != agent.DefaultAgentName {\n\t\tt.Errorf(\"detectOrSelectAgent() agent name = %v, want default %v\", ag.Name(), agent.DefaultAgentName)\n\t}\n\n\toutput := buf.String()\n\tif !strings.Contains(output, \"Agent:\") {\n\t\tt.Errorf(\"Expected output to contain 'Agent:', got: %s\", output)\n\t}\n\tif !strings.Contains(output, \"(use --agent to change)\") {\n\t\tt.Errorf(\"Expected output to contain '(use --agent to change)', got: %s\", output)\n\t}\n}",
   "new_string": "func TestDetectOrSelectAgent_NoDetection_NoTTY_FallsBackToDefault(t *testing.T) {\n\t// Cannot use t.Parallel() because we use t.Chdir and t.Setenv\n\tsetupTestRepo(t)\n\tt.Setenv(\"ENTIRE_TEST_TTY\", \"0\") // No TTY available\n\n\t// No .claude or .gemini directory - detection will fail\n\n\tvar buf bytes.Buffer\n\tagents, err := detectOrSelectAgent(&buf)\n\tif err != nil {\n\t\tt.Fatalf(\"detectOrSelectAgent() error = %v\", err)\n\t}\n\n\t// Should fall back to default agent (Claude Code)\n\tif len(agents) != 1 {\n\t\tt.Fatalf(\"detectOrSelectAgent() returned %d agents, want 1\", len(agents))\n\t}\n\tif agents[0].Name() != agent.DefaultAgentName {\n\t\tt.Errorf(\"detectOrSelectAgent() agent name = %v, want default %v\", agents[0].Name(), agent.DefaultAgentName)\n\t}\n\n\toutput := buf.String()\n\tif !strings.Contains(output, \"Agent:\") {\n\t\tt.Errorf(\"Expected output to contain 'Agent:', got: %s\", output)\n\t}\n\tif !strings.Contains(output, \"(use --agent to change)\") {\n\t\tt.Errorf(\"Expected output to contain '(use --agent to change)', got: %s\", output)\n\t}\n}" […]
 
@@ -580,7 +580,7 @@ id: toolu_01KnSFraoxrUKUpfpKJN8NNU
 tool_result
 id: toolu_01KnSFraoxrUKUpfpKJN8NNU
 ```
-The file /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go has been updated successfully.
+The file /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -590,7 +590,7 @@ id: toolu_01YXfHKEWJvBL9oawdgYcTZq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go",
   "old_string": "func TestDetectOrSelectAgent_BothDirectoriesExist_DetectsFirst(t *testing.T) {\n\t// Cannot use t.Parallel() because we use t.Chdir\n\tsetupTestRepo(t)\n\n\t// Create both .claude and .gemini directories\n\tif err := os.MkdirAll(\".claude\", 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create .claude directory: %v\", err)\n\t}\n\tif err := os.MkdirAll(\".gemini\", 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create .gemini directory: %v\", err)\n\t}\n\n\tvar buf bytes.Buffer\n\tag, err := detectOrSelectAgent(&buf)\n\tif err != nil {\n\t\tt.Fatalf(\"detectOrSelectAgent() error = %v\", err)\n\t}\n\n\t// Should detect one of them (order depends on map iteration, but should succeed)\n\tif ag == nil {\n\t\tt.Error(\"detectOrSelectAgent() returned nil agent\")\n\t}\n\n\toutput := buf.String()\n\tif !strings.Contains(output, \"Detected agent:\") {\n\t\tt.Errorf(\"Expected output to contain 'Detected agent:', got: %s\", output)\n\t}\n}",
   "new_string": "func TestDetectOrSelectAgent_BothDirectoriesExist_DetectsFirst(t *testing.T) {\n\t// Cannot use t.Parallel() because we use t.Chdir\n\tsetupTestRepo(t)\n\n\t// Create both .claude and .gemini directories\n\tif err := os.MkdirAll(\".claude\", 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create .claude directory: %v\", err)\n\t}\n\tif err := os.MkdirAll(\".gemini\", 0o755); err != nil {\n\t\tt.Fatalf(\"Failed to create .gemini directory: %v\", err)\n\t}\n\n\tvar buf bytes.Buffer\n\tagents, err := detectOrSelectAgent(&buf)\n\tif err != nil {\n\t\tt.Fatalf(\"detectOrSelectAgent() error = %v\", err)\n\t}\n\n\t// Should detect one of them (order depends on map iteration, but should succeed)\n\tif len(agents) == 0 {\n\t\tt.Error(\"detectOrSelectAgent() returned no agents\")\n\t}\n\n\toutput := buf.String()\n\tif !strings.Contains(output, \"Detected agent:\") {\n\t\tt.Errorf(\"Expected output to contain 'Detected agent:', got: %s\", output)\n\t}\n}"
 }
@@ -601,7 +601,7 @@ id: toolu_01YXfHKEWJvBL9oawdgYcTZq
 tool_result
 id: toolu_01YXfHKEWJvBL9oawdgYcTZq
 ```
-The file /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup_test.go has been updated successfully.
+The file /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -678,7 +678,7 @@ id: toolu_018GMFHAbfuikxNPgPxzYZi6
 ```json
 {
   "pattern": "detectOrSelectAgent",
-  "path": "/Users/evisdrenova/code/entire/devenv/cli",
+  "path": "/home/<USER>/code/entire/devenv/cli",
   "output_mode": "files_with_matches"
 }
 ```
@@ -815,7 +815,7 @@ tool_use Read
 id: toolu_017quC6f1N69y19qHXpDXQBv
 ```json
 {
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go",
   "offset": 563,
   "limit": 20
 }
@@ -855,7 +855,7 @@ id: toolu_01Kis17AFxQcAtNwPgNPhrwW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go",
+  "file_path": "/home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go",
   "old_string": "\t\thuh.NewMultiSelect[string]().\n\t\t\t\tTitle(\"Which agents are you using?\").\n\t\t\t\tOptions(options...).\n\t\t\t\tValue(&selectedAgentNames),",
   "new_string": "\t\thuh.NewMultiSelect[string]().\n\t\t\t\tTitle(\"Which agents are you using?\").\n\t\t\t\tDescription(\"Use space to select, enter to confirm.\").\n\t\t\t\tOptions(options...).\n\t\t\t\tValue(&selectedAgentNames),"
 }
@@ -866,7 +866,7 @@ id: toolu_01Kis17AFxQcAtNwPgNPhrwW
 tool_result
 id: toolu_01Kis17AFxQcAtNwPgNPhrwW
 ```
-The file /Users/evisdrenova/code/entire/devenv/cli/cmd/entire/cli/setup.go has been updated successfully.
+The file /home/<USER>/code/entire/devenv/cli/cmd/entire/cli/setup.go has been updated successfully.
 ```
 
 > TOOL

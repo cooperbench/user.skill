@@ -1,6 +1,6 @@
 > DEVELOPER
 
-Proceed: '/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md'
+Proceed: '/home/<USER>/Code/rune/instructions/gap-closure-handoff.md'
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01M4Sc5ZztGkyzfci7hikaVL
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gap-closure-handoff.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gap-closure-handoff.md"
 }
 ```
 
@@ -96,7 +96,7 @@ tool_use Read
 id: toolu_01VRckNGAqJUAFDiWArBBUaC
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/hypernetwork.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/hypernetwork.py"
 }
 ```
 
@@ -151,7 +151,7 @@ tool_use Read
 id: toolu_01DKesxcAu8dPnevSDtPuNnP
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py"
+  "file_path": "/home/<USER>/Code/rune/scripts/validate_oracles.py"
 }
 ```
 
@@ -217,7 +217,7 @@ id: toolu_01W8x38uga9d2BArz1snYzt9
 ```json
 {
   "pattern": "train|training_loop|def.*train",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training",
   "output_mode": "files_with_matches"
 }
 ```
@@ -229,7 +229,7 @@ id: toolu_01TTKywVWMXHcb7qMEg5DTXL
 ```json
 {
   "pattern": "kill.?switch|killswitch|regression.*guard|pass_at_1.*baseline",
-  "path": "/Users/noahdolevelixir/Code/rune",
+  "path": "/home/<USER>/Code/rune",
   "output_mode": "files_with_matches"
 }
 ```
@@ -240,7 +240,7 @@ tool_use Bash
 id: toolu_012S8zz8SdvLEa428eK1GxSu
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/instructions/",
+  "command": "ls /home/<USER>/Code/rune/instructions/",
   "description": "List instructions directory"
 }
 ```
@@ -422,7 +422,7 @@ tool_use Read
 id: toolu_01AeJUa5ZTk9FCS4rwVbJTEw
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gaps.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gaps.md"
 }
 ```
 
@@ -456,7 +456,7 @@ id: toolu_011TifRC8mGTsmTWGgrJHfEa
 ```json
 {
   "pattern": "kill.?switch|kill_switch",
-  "path": "/Users/noahdolevelixir/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md",
+  "path": "/home/<USER>/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md",
   "output_mode": "content",
   "-C": 5
 }
@@ -510,7 +510,7 @@ tool_use Read
 id: toolu_01WpL37FFmWhnFvjBGJfZWDM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md",
+  "file_path": "/home/<USER>/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md",
   "offset": 255,
   "limit": 110
 }
@@ -564,7 +564,7 @@ tool_use Read
 id: toolu_01Jaww8Nk4KC3ag2c9eiYhsn
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py"
 }
 ```
 
@@ -619,7 +619,7 @@ tool_use Read
 id: toolu_01FC4kp8Qq3XLCotQtFm9XDa
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py"
 }
 ```
 
@@ -690,7 +690,7 @@ id: toolu_01EM42DYktBrVHCnQdUcqpLR
 ```json
 {
   "pattern": "run_benchmark",
-  "path": "/Users/noahdolevelixir/Code/rune",
+  "path": "/home/<USER>/Code/rune",
   "output_mode": "files_with_matches"
 }
 ```
@@ -723,7 +723,7 @@ tool_use Bash
 id: toolu_01U1YyXdhkgkfsyCCBCUEtkD
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/",
+  "command": "ls /home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/",
   "description": "List benchmarks module files"
 }
 ```
@@ -756,7 +756,7 @@ tool_use Read
 id: toolu_01ESodyFzqmsSapV5H9Hhdot
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/runner.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/runner.py"
 }
 ```
 
@@ -822,7 +822,7 @@ tool_use Read
 id: toolu_015sJBE6uWDjn4G8yvLtEAM9
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py"
 }
 ```
 
@@ -894,7 +894,7 @@ tool_use Read
 id: toolu_013wBQ63N8mtGHsrB4Z5pjkP
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/adapter_stack.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/adapter_stack.py"
 }
 ```
 
@@ -958,7 +958,7 @@ tool_use Bash
 id: toolu_01KxZqMPF9RxqWq6jbVpAz49
 ```json
 {
-  "command": "find /Users/noahdolevelixir/Code/rune/libs/model-training/tests -name \"*.py\" | head -30",
+  "command": "find /home/<USER>/Code/rune/libs/model-training/tests -name \"*.py\" | head -30",
   "description": "List model-training tests"
 }
 ```
@@ -968,36 +968,36 @@ id: toolu_01KxZqMPF9RxqWq6jbVpAz49
 tool_result
 id: toolu_01KxZqMPF9RxqWq6jbVpAz49
 ```
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_dataset.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/conftest.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_diff_loss.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_hypernetwork.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_lora_overrides.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_manifest.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_stats.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_peft_utils.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_cli.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_registry_source.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_weight_transfer.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_model_configs.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_builder.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_data.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_loss.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_train.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_lora.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_config.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trainer_mlflow.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_training_common.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trajectory.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_probe.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_task_embeddings.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_reconstruction_cli.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_diff.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_pairs_to_chat.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_trainer.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_eval.py
-/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_encoder_augment.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_dataset.py
+/home/<USER>/Code/rune/libs/model-training/tests/conftest.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_diff_loss.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_roundtrip.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_hypernetwork.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_lora_overrides.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_manifest.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_stats.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_peft_utils.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_cli.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_registry_source.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_weight_transfer.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_model_configs.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_builder.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_data.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_loss.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_train.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_lora.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_config.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_trainer_mlflow.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_training_common.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_trajectory.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_probe.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_task_embeddings.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_reconstruction_cli.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_diff.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_pairs_to_chat.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_trainer.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_eval.py
+/home/<USER>/Code/rune/libs/model-training/tests/test_encoder_augment.py
 ```
 
 > TOOL
@@ -1007,7 +1007,7 @@ id: toolu_01L58vCcpdawi9WRZpuPV5rq
 ```json
 {
   "pattern": "d2l_train|train_d2l_qwen3",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests",
+  "path": "/home/<USER>/Code/rune/libs/model-training/tests",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1165,7 +1165,7 @@ tool_use Read
 id: toolu_01HEB7HiKqnhAG7tRwLyeYss
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_d2l_train.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_d2l_train.py"
 }
 ```
 
@@ -1238,7 +1238,7 @@ tool_use Write
 id: toolu_019Bk5ujx1fh5zpHGZxpfuR8
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_kill_switch.py",
   "content": "\"\"\"Unit tests for the training kill-switch.\n\nPure-Python tests — no GPU, no model loading. The benchmark evaluation is\nalways mocked via the injected ``evaluate_fn`` so tests stay fast.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom unittest.mock import MagicMock\n\nimport pytest\n\n\nclass TestShouldEvaluate:\n    \"\"\"``should_evaluate(step, cadence)`` picks out cadence-multiple steps.\"\"\"\n\n    def test_step_zero_never_evaluates(self) -> None:\n        from model_training.kill_switch import should_evaluate\n\n        assert should_evaluate(0, 10) is False\n\n    def test_cadence_multiple_evaluates(self) -> None:\n        from model_training.kill_switch import should_evaluate\n\n        assert should_evaluate(10, 10) is True\n        assert should_evaluate(20, 10) is True\n        assert should_evaluate(100, 10) is True\n\n    def test_non_multiple_does_not_evaluate(self) -> None:\n        from model_training.kill_switch import should_evaluate\n\n        assert should_evaluate(5, 10) is False\n        assert should_evaluate(11, 10) is False\n\n    def test_cadence_zero_disables(self) -> None:\n        from model_training.kill_switch import should_evaluate\n\n        assert should_evaluate(10, 0) is False\n        assert should_evaluate(10, -5) is False\n\n\nclass TestRegressionDetected:\n    \"\"\"``regression_detected(current, baseline, delta)``.\"\"\"\n\n    def test_no_regression_when_equal(self) -> None:\n        from model_training.kill_switch import regression_detected\n\n        assert regression_detected(0.50, 0.50, 0.03) is False\n\n    def test_small_drop_within_delta(self) -> None:\n        from model_training.kill_switch import regression_detected\n\n        # 0.48 >= 0.50 - 0.03 = 0.47\n        assert regression_detected(0.48, 0.50, 0.03) is False\n\n    def test_drop_exceeding_delta(self) -> None:\n        from model_training.kill_switch import regression_detected\n\n        # 0.45 < 0.50 - 0.03 = 0.47\n        assert regression_detected(0.45, 0.50, 0.03) is True\n\n    def test_improvement_not_regression(self) -> None:\n        from model_training.kill_switch import regression_detected\n\n        assert regression_detected(0.55, 0.50, 0.03) is False\n\n    def test_boundary_exactly_at_threshold(self) -> […]
 
 > TOOL
@@ -1246,7 +1246,7 @@ id: toolu_019Bk5ujx1fh5zpHGZxpfuR8
 tool_result
 id: toolu_019Bk5ujx1fh5zpHGZxpfuR8
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_kill_switch.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/libs/model-training/tests/test_kill_switch.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1317,7 +1317,7 @@ tool_use Write
 id: toolu_018pvQFGwSfQ8s1qyNZVJd2R
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py",
   "content": "\"\"\"Training kill-switch: halt hypernetwork training on Pass@1 regression.\n\nAt a configurable step cadence, the training loop re-runs a small benchmark\n(default: HumanEval @ 10 problems) and compares the current Pass@1 to a\nbaseline captured on the first evaluation (step 0 semantic). When\n``current < baseline - delta`` (default delta = 0.05 = 5 pts absolute), the\nkill-switch fires and the loop halts.\n\nAll heavy imports (``evaluation.benchmarks``) are deferred into the closure\nreturned by :func:`build_benchmark_evaluate_fn` so this module stays\nimportable without the evaluation package on the path.\n\nUsage (in a training loop):\n\n    from model_training.kill_switch import (\n        KillSwitchConfig,\n        KillSwitchState,\n        maybe_run_kill_switch,\n    )\n\n    ks_config = KillSwitchConfig(enabled=True, step_cadence=100)\n    ks_state = KillSwitchState()\n    for step in range(1, num_steps + 1):\n        ...  # optimizer step, etc.\n        if maybe_run_kill_switch(\n            step=step,\n            config=ks_config,\n            state=ks_state,\n            evaluate_fn=my_eval_fn,\n        ):\n            logger.error(\"Kill-switch triggered; halting training\")\n            break\n\"\"\"\n\nfrom __future__ import annotations\n\nimport logging\nfrom dataclasses import dataclass\nfrom typing import Any, Callable\n\nlogger = logging.getLogger(__name__)\n\n__all__ = [\n    \"KillSwitchConfig\",\n    \"KillSwitchState\",\n    \"build_benchmark_evaluate_fn\",\n    \"evaluate_and_check\",\n    \"maybe_run_kill_switch\",\n    \"regression_detected\",\n    \"should_evaluate\",\n    \"update_and_check\",\n]\n\n\n@dataclass\nclass KillSwitchConfig:\n    \"\"\"Kill-switch configuration.\n\n    Attributes:\n        enabled: Master toggle. When False, :func:`maybe_run_kill_switch` is a\n            no-op regardless of other fields.\n        step_cadence: Evaluate Pass@1 every ``step_cadence`` training steps.\n        benchmark_id: Benchmark to evaluate against (default: HumanEval).\n        max_samples: Cap on problems evaluated per call (kept small to amortise\n            the per-step cost).\n        delta: Absolute […]
 
 > TOOL
@@ -1325,7 +1325,7 @@ id: toolu_018pvQFGwSfQ8s1qyNZVJd2R
 tool_result
 id: toolu_018pvQFGwSfQ8s1qyNZVJd2R
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1397,7 +1397,7 @@ id: toolu_01Gd5EKS5JbYPipVZHAGNRSD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/tests/test_kill_switch.py",
   "old_string": "        fn = MagicMock(side_effect=[0.6, 0.55, 0.40])\n        state = KillSwitchState()\n        _, h1 = evaluate_and_check(fn, state, 0.03)\n        _, h2 = evaluate_and_check(fn, state, 0.03)\n        _, h3 = evaluate_and_check(fn, state, 0.03)\n        assert h1 is False\n        assert h2 is False\n        assert h3 is True",
   "new_string": "        # baseline 0.60; delta 0.10 → regression when current < 0.50\n        fn = MagicMock(side_effect=[0.60, 0.55, 0.40])\n        state = KillSwitchState()\n        _, h1 = evaluate_and_check(fn, state, 0.10)\n        _, h2 = evaluate_and_check(fn, state, 0.10)\n        _, h3 = evaluate_and_check(fn, state, 0.10)\n        assert h1 is False\n        assert h2 is False  # 0.55 >= 0.50\n        assert h3 is True   # 0.40 < 0.50"
 }
@@ -1408,7 +1408,7 @@ id: toolu_01Gd5EKS5JbYPipVZHAGNRSD
 tool_result
 id: toolu_01Gd5EKS5JbYPipVZHAGNRSD
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/tests/test_kill_switch.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/tests/test_kill_switch.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1459,7 +1459,7 @@ id: toolu_01SH2B7zFdLnhmgn6pvqV6TM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "    lora_r: int = Field(default=8)\n    max_length: int = Field(default=512)\n\n    def model_post_init(self, __context: Any) -> None:",
   "new_string": "    lora_r: int = Field(default=8)\n    max_length: int = Field(default=512)\n    # Kill-switch: halt training when Pass@1 regresses vs baseline (Plan A follow-up).\n    # Disabled by default so existing callers/tests are unaffected.\n    kill_switch_enabled: bool = Field(default=False)\n    kill_switch_step_cadence: int = Field(default=100)\n    kill_switch_benchmark_id: str = Field(default=\"humaneval\")\n    kill_switch_max_samples: int = Field(default=10)\n    kill_switch_delta: float = Field(default=0.05)\n\n    def model_post_init(self, __context: Any) -> None:"
 }
@@ -1470,7 +1470,7 @@ id: toolu_01SH2B7zFdLnhmgn6pvqV6TM
 tool_result
 id: toolu_01SH2B7zFdLnhmgn6pvqV6TM
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1484,7 +1484,7 @@ id: toolu_01JUttJVq34141xnYcB1Mem6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "def train_d2l_qwen3(config: D2LTrainConfig) -> dict[str, Any]:  # noqa: C901\n    \"\"\"Run KL-divergence context distillation training.\n\n    Three execution modes controlled by config flags:\n    - dry_run=True: Validate shapes with single forward pass, no optimizer step.\n    - smoke_test=True: Run min(num_steps, 5) steps, assert finite decreasing loss.\n    - default: Full training from dataset with checkpointing and MLflow tracking.\n\n    Args:\n        config: Training configuration.\n\n    Returns:\n        Dictionary with training results:\n            - final_loss: Loss at the last step.\n            - best_loss: Lowest loss seen during training.\n            - num_steps_completed: Number of training steps completed.\n            - checkpoint_dir: Path to checkpoint directory.\n            - shape_summary (dry_run only): Tensor shape validation results.\n    \"\"\"",
   "new_string": "def train_d2l_qwen3(  # noqa: C901\n    config: D2LTrainConfig,\n    *,\n    kill_switch_evaluate_fn: Any = None,\n) -> dict[str, Any]:\n    \"\"\"Run KL-divergence context distillation training.\n\n    Three execution modes controlled by config flags:\n    - dry_run=True: Validate shapes with single forward pass, no optimizer step.\n    - smoke_test=True: Run min(num_steps, 5) steps, assert finite decreasing loss.\n    - default: Full training from dataset with checkpointing and MLflow tracking.\n\n    Args:\n        config: Training configuration.\n        kill_switch_evaluate_fn: Zero-arg callable returning the current Pass@1\n            as a float. Required when ``config.kill_switch_enabled`` is True;\n            ignored otherwise. Inject a closure built via\n            :func:`model_training.kill_switch.build_benchmark_evaluate_fn` for\n            production runs, or […]
 
@@ -1493,7 +1493,7 @@ id: toolu_01JUttJVq34141xnYcB1Mem6
 tool_result
 id: toolu_01JUttJVq34141xnYcB1Mem6
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1507,7 +1507,7 @@ id: toolu_01JCSw2ovWhQ5kfPEivw46u2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "    best_loss = float(\"inf\")\n    final_loss = float(\"inf\")\n    step_losses: list[float] = []\n\n    with mlflow.start_run(run_name=f\"{config.experiment_name}-step{num_steps}\"):\n        mlflow.log_params(config.model_dump())\n\n        for step in range(1, num_steps + 1):",
   "new_string": "    best_loss = float(\"inf\")\n    final_loss = float(\"inf\")\n    step_losses: list[float] = []\n\n    # Kill-switch setup (Plan A follow-up). Disabled by default.\n    from model_training.kill_switch import (  # noqa: PLC0415\n        KillSwitchConfig,\n        KillSwitchState,\n        maybe_run_kill_switch,\n    )\n\n    ks_config = KillSwitchConfig(\n        enabled=config.kill_switch_enabled,\n        step_cadence=config.kill_switch_step_cadence,\n        benchmark_id=config.kill_switch_benchmark_id,\n        max_samples=config.kill_switch_max_samples,\n        delta=config.kill_switch_delta,\n    )\n    ks_state = KillSwitchState()\n    if ks_config.enabled and kill_switch_evaluate_fn is None:\n        raise ValueError(\n            \"kill_switch_enabled=True requires kill_switch_evaluate_fn; \"\n            \"build one via model_training.kill_switch.build_benchmark_evaluate_fn.\"\n        )\n    kill_switch_halted = False\n\n    with mlflow.start_run(run_name=f\"{config.experiment_name}-step{num_steps}\"):\n        mlflow.log_params(config.model_dump())\n\n        for step in range(1, num_steps + 1):"
 }
@@ -1518,7 +1518,7 @@ id: toolu_01JCSw2ovWhQ5kfPEivw46u2
 tool_result
 id: toolu_01JCSw2ovWhQ5kfPEivw46u2
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1528,7 +1528,7 @@ id: toolu_01RKcdhcuWyBLMLhgd2PHg62
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "            elif step % config.checkpoint_every == 0:\n                ckpt_path = _save_checkpoint(\n                    step=step,\n                    hypernet=hypernet,\n                    optimizer=optimizer,\n                    scheduler=scheduler,\n                    config=config,\n                    hc=hc,\n                    best_loss=best_loss,\n                    full=False,\n                )\n                mlflow.log_artifact(str(ckpt_path))\n\n    # Smoke test assertions",
   "new_string": "            elif step % config.checkpoint_every == 0:\n                ckpt_path = _save_checkpoint(\n                    step=step,\n                    hypernet=hypernet,\n                    optimizer=optimizer,\n                    scheduler=scheduler,\n                    config=config,\n                    hc=hc,\n                    best_loss=best_loss,\n                    full=False,\n                )\n                mlflow.log_artifact(str(ckpt_path))\n\n            # Kill-switch: evaluate Pass@1 at cadence and halt on regression.\n            if maybe_run_kill_switch(\n                step=step,\n                config=ks_config,\n                state=ks_state,\n                evaluate_fn=kill_switch_evaluate_fn,\n            ):\n                kill_switch_halted = True\n                logger.error(\n                    \"Kill-switch halted training at step %d: \"\n                    \"pass_at_1=%.3f baseline=%.3f delta=%.3f\",\n                    step,\n                    ks_state.last_pass_at_1 if ks_state.last_pass_at_1 is not None else float(\"nan\"),\n                    ks_state.baseline if ks_state.baseline is not None else float(\"nan\"),\n                    ks_config.delta,\n                )\n                break\n\n    # Smoke test assertions"
 }
@@ -1539,7 +1539,7 @@ id: toolu_01RKcdhcuWyBLMLhgd2PHg62
 tool_result
 id: toolu_01RKcdhcuWyBLMLhgd2PHg62
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1553,7 +1553,7 @@ id: toolu_01A1L1zxFfe34DBVk6P8px2T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "    return {\n        \"final_loss\": final_loss,\n        \"best_loss\": best_loss,\n        \"num_steps_completed\": num_steps,\n        \"checkpoint_dir\": config.checkpoint_dir,\n    }",
   "new_string": "    result: dict[str, Any] = {\n        \"final_loss\": final_loss,\n        \"best_loss\": best_loss,\n        \"num_steps_completed\": num_steps,\n        \"checkpoint_dir\": config.checkpoint_dir,\n    }\n    if ks_config.enabled:\n        result[\"kill_switch_triggered\"] = kill_switch_halted\n        result[\"kill_switch_baseline\"] = ks_state.baseline\n        result[\"kill_switch_last_pass_at_1\"] = ks_state.last_pass_at_1\n    return result"
 }
@@ -1564,7 +1564,7 @@ id: toolu_01A1L1zxFfe34DBVk6P8px2T
 tool_result
 id: toolu_01A1L1zxFfe34DBVk6P8px2T
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1601,7 +1601,7 @@ id: toolu_012e5oZH9BWTByTh9iiKrRzG
 ```
 ============================= test session starts ==============================
 platform darwin -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
-rootdir: /Users/noahdolevelixir/Code/rune
+rootdir: /home/<USER>/Code/rune
 configfile: pyproject.toml
 plugins: anyio-4.12.1, jaxtyping-0.3.9, xdist-3.8.0, asyncio-1.3.0, langsmith-0.7.9, requests-mock-1.12.1, cov-7.0.0
 asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
@@ -1650,7 +1650,7 @@ id: toolu_01M9os6j48UkPLLkpP1hRj3f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py",
   "old_string": "            if maybe_run_kill_switch(\n                step=step,\n                config=ks_config,\n                state=ks_state,\n                evaluate_fn=kill_switch_evaluate_fn,\n            ):\n                kill_switch_halted = True\n                logger.error(\n                    \"Kill-switch halted training at step %d: \"\n                    \"pass_at_1=%.3f baseline=%.3f delta=%.3f\",\n                    step,\n                    ks_state.last_pass_at_1 if ks_state.last_pass_at_1 is not None else float(\"nan\"),\n                    ks_state.baseline if ks_state.baseline is not None else float(\"nan\"),\n                    ks_config.delta,\n                )\n                break",
   "new_string": "            if maybe_run_kill_switch(\n                step=step,\n                config=ks_config,\n                state=ks_state,\n                evaluate_fn=kill_switch_evaluate_fn,\n            ):\n                kill_switch_halted = True\n                _nan = float(\"nan\")\n                _last = (\n                    ks_state.last_pass_at_1\n                    if ks_state.last_pass_at_1 is not None\n                    else _nan\n                )\n                _base = (\n                    ks_state.baseline if ks_state.baseline is not None else _nan\n                )\n                logger.error(\n                    \"Kill-switch halted training at step %d: \"\n                    \"pass_at_1=%.3f baseline=%.3f delta=%.3f\",\n                    step,\n                    _last,\n                    _base,\n                    ks_config.delta,\n                )\n                break"
 }
@@ -1661,7 +1661,7 @@ id: toolu_01M9os6j48UkPLLkpP1hRj3f
 tool_result
 id: toolu_01M9os6j48UkPLLkpP1hRj3f
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1756,7 +1756,7 @@ tool_use Read
 id: toolu_01ThQ96YZ2hJ2pnc2BLoDpdi
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py",
   "offset": 215,
   "limit": 22
 }
@@ -1798,7 +1798,7 @@ id: toolu_01A1gdXQVNAFC4Gy7zoytLKT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py",
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py",
   "old_string": "    def _evaluate() -> float:\n        from evaluation.benchmarks import run_benchmark  # noqa: PLC0415\n        from evaluation.benchmarks.adapter_stack import (  # noqa: PLC0415\n            load_adapter_stack,\n        )\n\n        stack = load_adapter_stack(",
   "new_string": "    def _evaluate() -> float:\n        # evaluation.benchmarks.run_benchmark is lazily exposed via\n        # module __getattr__, which mypy sees as \"object\" — cast to Any\n        # so the call is typed correctly without a heavy import.\n        from typing import Any as _Any  # noqa: PLC0415\n\n        from evaluation.benchmarks import run_benchmark as _rb  # noqa: PLC0415\n        from evaluation.benchmarks.adapter_stack import (  # noqa: PLC0415\n            load_adapter_stack,\n        )\n\n        run_benchmark: _Any = _rb\n        stack = load_adapter_stack("
 }
@@ -1809,7 +1809,7 @@ id: toolu_01A1gdXQVNAFC4Gy7zoytLKT
 tool_result
 id: toolu_01A1gdXQVNAFC4Gy7zoytLKT
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/kill_switch.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/model-training/src/model_training/kill_switch.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1892,7 +1892,7 @@ tool_use Bash
 id: toolu_01CSTtZ38YkngUDmLCaK8M7i
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nfeat(training): wire Pass@1 kill-switch into hypernetwork training loop\n\nAdds libs/model-training/src/model_training/kill_switch.py with pure\nhelpers (should_evaluate, regression_detected, update_and_check,\nevaluate_and_check, maybe_run_kill_switch) and a build_benchmark_evaluate_fn\nclosure factory that defers the evaluation.benchmarks import.\n\nExtends D2LTrainConfig with kill_switch_enabled / _step_cadence /\n_benchmark_id / _max_samples / _delta fields (all disabled by default).\ntrain_d2l_qwen3 accepts a new kill_switch_evaluate_fn kwarg; when the\nflag is on it calls maybe_run_kill_switch after each step, captures a\nbaseline on the first evaluation, and breaks the loop when Pass@1 drops\nbelow baseline - delta. Run-result dict gains kill_switch_triggered /\n_baseline / _last_pass_at_1 when enabled.\n\nCloses gap 5 in instructions/gap-closure-handoff.md (Plan A follow-up).\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nfeat(training): wire Pass@1 kill-switch into hypernetwork training loop\n\nAdds libs/model-training/src/model_training/kill_switch.py with pure\nhelpers (should_evaluate, regression_detected, update_and_check,\nevaluate_and_check, maybe_run_kill_switch) and a build_benchmark_evaluate_fn\nclosure factory that defers the evaluation.benchmarks import.\n\nExtends D2LTrainConfig with kill_switch_enabled / _step_cadence /\n_benchmark_id / _max_samples / _delta fields (all disabled by default).\ntrain_d2l_qwen3 accepts a new kill_switch_evaluate_fn kwarg; when the\nflag is on it calls maybe_run_kill_switch after each step, captures a\nbaseline on the first evaluation, and breaks the loop when Pass@1 drops\nbelow baseline - delta. Run-result dict gains kill_switch_triggered /\n_baseline / _last_pass_at_1 when enabled.\n\nCloses gap 5 in instructions/gap-closure-handoff.md (Plan A follow-up).\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit kill-switch work"
 }
 ```

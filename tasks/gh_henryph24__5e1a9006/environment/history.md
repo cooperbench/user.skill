@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_014ivczXcAWz1vLMsnSdGoHe
 ```json
 {
-  "command": "find /Users/hungpq2412/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" 2>/dev/null | head -5",
+  "command": "find /home/<USER>/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" 2>/dev/null | head -5",
   "description": "Find main.tex location"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_014ivczXcAWz1vLMsnSdGoHe
 tool_result
 id: toolu_014ivczXcAWz1vLMsnSdGoHe
 ```
-/Users/hungpq2412/neuralips26/main.tex
+/home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_019T4UMoUoxkwG1kCx3YC9vH
 ```json
 {
-  "command": "grep -n \"Problem Setup\\|problem_setup\\|sec:problem\\|problem-setup\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"Problem Setup\\|problem_setup\\|sec:problem\\|problem-setup\" /home/<USER>/neuralips26/main.tex",
   "description": "Find Problem Setup section"
 }
 ```
@@ -46,7 +46,7 @@ tool_use Bash
 id: toolu_01DHH9zMDCBtpNqnuDawcD1x
 ```json
 {
-  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\subsection\" /Users/hungpq2412/neuralips26/main.tex | head -40",
+  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\subsection\" /home/<USER>/neuralips26/main.tex | head -40",
   "description": "List all section headers"
 }
 ```
@@ -98,7 +98,7 @@ tool_use Bash
 id: toolu_01CRH1ShGDA8jiwC412WBytB
 ```json
 {
-  "command": "grep -n -i \"problem\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n -i \"problem\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find problem-related text"
 }
 ```
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_01XzyKfz4AsphvaxrrJAQcqs
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 240,
   "limit": 80
 }
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_01Hw6viYb37VwfNKouD9Uyh7
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 61,
   "limit": 170
 }
@@ -174,7 +174,7 @@ tool_use Read
 id: toolu_01BbxFq7EWyhFcMkAP592rk1
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 228,
   "limit": 15
 }
@@ -212,7 +212,7 @@ tool_use Read
 id: toolu_01Mfj9oXYkHAHpfMb9Dg49EX
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 243,
   "limit": 5
 }
@@ -237,7 +237,7 @@ id: toolu_011cG5bM5GoA7DmCe1cRgGYW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "We now formalize the adapter problem and specify RR-MoA: a per-window mixture in which the router reads the raw, pre-normalization signal while the experts consume the frozen TSFM's hidden states. Cost, expert pool, and deployment implications close the section.\n\n\\textbf{Problem setup.} Given a window $\\mathbf{x}\\in\\mathbb{R}^{T\\times c}$ ($T{=}512$, $c$ channels), forecasting predicts $\\mathbf{y}\\in\\mathbb{R}^{h\\times c}$ at horizons $h\\in\\{96,192,336,720\\}$ under MSE loss (imputation uses the same formalism with $\\mathbf{y}$ as the reconstruction target). A pretrained TSFM acts as a feature extractor $f_\\theta:\\mathbb{R}^{T\\times c}\\to\\mathbb{R}^{P\\times d}$ ($P$ patches of dim $d$) with $\\theta$ \\emph{frozen} ($\\nabla_\\theta\\!\\equiv\\!0$); we train only an adapter $g_\\phi:\\mathbb{R}^{P\\times d}\\to\\mathbb{R}^{h\\times c}$ with $|\\phi|\\leq 500$K, capping per-task storage at ${\\sim}2$\\,MB to enable the multi-tenant hot-swap regime (App.~\\ref{app:deployment}). A \\emph{per-window mixture of adapters} replaces $g_\\phi$ with $K$ experts $\\{\\mathrm{Expert}_j\\}_{j=1}^K$ plus a router $G_\\psi$ that returns a sparse weight $\\widetilde{w}\\in\\Delta^{K-1}$ supported on a Top-$k$ subset ($k\\leq K$), giving $\\hat{\\mathbf{y}}=\\sum_{j} \\widetilde{w}_j\\,\\mathrm{Expert}_j(f_\\theta(\\mathbf{x}))$ trained by $\\min_{\\phi,\\psi}\\,\\mathbb{E}\\,\\|\\hat{\\mathbf{y}}-\\mathbf{y}\\|_2^2$. The design question is what signal $G_\\psi$ should read: prior work routes on the hidden states $f_\\theta(\\mathbf{x})$, which fails on instance-normalized TSFMs (\\S\\ref{sec:main_results}).",
   "new_string": "We first state the task setup, then the problem we identify, then specify RR-MoA: a per-window mixture in which […]
 
@@ -246,7 +246,7 @@ id: toolu_011cG5bM5GoA7DmCe1cRgGYW
 tool_result
 id: toolu_011cG5bM5GoA7DmCe1cRgGYW
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -255,7 +255,7 @@ tool_use Bash
 id: toolu_01Le5eHrM5xCTo9QJB3sJcSC
 ```json
 {
-  "command": "grep -n \"sec:related\\|sec:diagnosis\\|sec:main_results\" /Users/hungpq2412/neuralips26/main.tex | head -10",
+  "command": "grep -n \"sec:related\\|sec:diagnosis\\|sec:main_results\" /home/<USER>/neuralips26/main.tex | head -10",
   "description": "Verify section labels exist"
 }
 ```
@@ -273,7 +273,7 @@ tool_use Bash
 id: toolu_011zQHusXYvimv1KtConSJfc
 ```json
 {
-  "command": "grep -n \"section{Related\\|label{sec:related\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"section{Related\\|label{sec:related\" /home/<USER>/neuralips26/main.tex",
   "description": "Check related work label"
 }
 ```
@@ -293,7 +293,7 @@ id: toolu_0146wMC6KsL6mGvTqMNtspSa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "it is not addressed by prior MoE-collapse, MoE-adapter, or time-series-normalization work (\\S\\ref{sec:related}).",
   "new_string": "it is not addressed by prior MoE-collapse, MoE-adapter, or time-series-normalization work (\\S\\ref{sec:related_work})."
 }
@@ -304,7 +304,7 @@ id: toolu_0146wMC6KsL6mGvTqMNtspSa
 tool_result
 id: toolu_0146wMC6KsL6mGvTqMNtspSa
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -314,7 +314,7 @@ id: toolu_0117xnNdxLRTrJScMx7kdKYc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\section{Related Work}\n\nWe position RR-MoA against four threads:",
   "new_string": "\\section{Related Work}\n\\label{sec:related_work}\n\nWe position RR-MoA against four threads:"
 }
@@ -325,7 +325,7 @@ id: toolu_0117xnNdxLRTrJScMx7kdKYc
 tool_result
 id: toolu_0117xnNdxLRTrJScMx7kdKYc
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -386,7 +386,7 @@ id: toolu_01YVjzZWie2dkQeYfSceQjYY
 tool_result
 id: toolu_01YVjzZWie2dkQeYfSceQjYY
 ```
-(/Users/hungpq2412/Library/texmf/tex/generic/pgfplots/pgfplots.errorbars.code.t
+(/home/<USER>/Library/texmf/tex/generic/pgfplots/pgfplots.errorbars.code.t
 ```
 
 > TOOL
@@ -434,7 +434,7 @@ tool_use Read
 id: toolu_01SByEmhgU464KL2riVTBbhP
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 240,
   "limit": 12
 }
@@ -461,7 +461,7 @@ tool_use Bash
 id: toolu_01DXNEzN2sTUCUdYVUdBciFL
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\textbf\\|^\\\\\\\\paragraph\\|^\\\\\\\\section\\|^\\\\\\\\subsection\" /Users/hungpq2412/neuralips26/main.tex | awk -F: '$1>=240 && $1<=400' | head -30",
+  "command": "grep -n \"^\\\\\\\\textbf\\|^\\\\\\\\paragraph\\|^\\\\\\\\section\\|^\\\\\\\\subsection\" /home/<USER>/neuralips26/main.tex | awk -F: '$1>=240 && $1<=400' | head -30",
   "description": "List structure of method section"
 }
 ```
@@ -482,7 +482,7 @@ id: toolu_01AKSw5kcxLbvg1WoPaHj9Fo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\textbf{Problem statement (this paper).} The standard MoE recipe lets the router $G_\\psi$ read the backbone's hidden states $f_\\theta(\\mathbf{x})$. We claim, and this paper establishes, that on instance-normalized TSFMs this choice has a structural failure mode not previously characterized: the router's input is missing, by construction of an upstream architectural normalizer, the per-window statistics that distinguish regimes, so $G_\\psi$ collapses to a single expert and the remaining $K{-}1$ experts receive no gradient. We name this failure \\emph{normalization-induced routing collapse} and state it as the central problem of this work: \\emph{given a frozen instance-normalized TSFM, find the routing input $u(\\mathbf{x})$ such that the per-window mixture $\\sum_j G_\\psi(u(\\mathbf{x}))_j\\,\\mathrm{Expert}_j(f_\\theta(\\mathbf{x}))$ trains without entropy collapse and improves over a single static head.} The collapse is upstream of the optimization-induced collapse that load-balance, z-loss, ReLU-routing, and expert-choice rescues target (Table~\\ref{tab:rescue}); it is not addressed by prior MoE-collapse, MoE-adapter, or time-series-normalization work (\\S\\ref{sec:related_work}). Sections~\\ref{sec:diagnosis} and~\\ref{sec:main_results} answer the problem with $u(\\mathbf{x})\\!=\\!\\mathbf{x}$ (the raw, pre-normalization window) and verify the answer with eight causal controls.",
   "new_string": "\\textbf{Problem statement (this paper).} The standard MoE recipe~\\citep{shazeer2017outrageously, fedus2022switch} lets the router $G_\\psi$ read the backbone's hidden states $f_\\theta(\\mathbf{x})$, and this is the choice […]
 
@@ -491,7 +491,7 @@ id: toolu_01AKSw5kcxLbvg1WoPaHj9Fo
 tool_result
 id: toolu_01AKSw5kcxLbvg1WoPaHj9Fo
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -504,7 +504,7 @@ tool_use Bash
 id: toolu_015AzptuRhjQWY1GPsssnJGT
 ```json
 {
-  "command": "grep -n \"\\\\\\\\bibitem{shazeer2017outrageously\\\\|\\\\\\\\bibitem{fedus2022switch\\\\|\\\\\\\\bibitem{wang2022adamix\\\\|\\\\\\\\bibitem{kim2021revin\\\\|\\\\\\\\bibitem{goswami2024moment\\\\|\\\\\\\\bibitem{nie2023patchtst\\\\|\\\\\\\\bibitem{das2024timesfm\\\\|\\\\\\\\bibitem{zoph2022stmoe\\\\|\\\\\\\\bibitem{wang2025remoe\\\\|\\\\\\\\bibitem{zhou2022expertchoice\\\\|\\\\\\\\bibitem{wu2024mole\\\\|\\\\\\\\bibitem{chi2022representation\\\\|\\\\\\\\bibitem{wu2024mhmoe\\\\|\\\\\\\\bibitem{puigcerver2024softmoe\\\\|\\\\\\\\bibitem{panda2024densebackprop\\\\|\\\\\\\\bibitem{hua2025inputaware\\\\|\\\\\\\\bibitem{guo2025expertspec\\\\|\\\\\\\\bibitem{liu2022nonstationary\\\\|\\\\\\\\bibitem{fan2023dishts\\\\|\\\\\\\\bibitem{liu2023san\\\\|\\\\\\\\bibitem{ye2024fan\\\\|\\\\\\\\bibitem{dai2024ddn\\\\|\\\\\\\\bibitem{berthelier2026revin\\\\|\\\\\\\\bibitem{zou2025ibnorm\" /Users/hungpq2412/neuralips26/main.tex | wc -l",
+  "command": "grep -n \"\\\\\\\\bibitem{shazeer2017outrageously\\\\|\\\\\\\\bibitem{fedus2022switch\\\\|\\\\\\\\bibitem{wang2022adamix\\\\|\\\\\\\\bibitem{kim2021revin\\\\|\\\\\\\\bibitem{goswami2024moment\\\\|\\\\\\\\bibitem{nie2023patchtst\\\\|\\\\\\\\bibitem{das2024timesfm\\\\|\\\\\\\\bibitem{zoph2022stmoe\\\\|\\\\\\\\bibitem{wang2025remoe\\\\|\\\\\\\\bibitem{zhou2022expertchoice\\\\|\\\\\\\\bibitem{wu2024mole\\\\|\\\\\\\\bibitem{chi2022representation\\\\|\\\\\\\\bibitem{wu2024mhmoe\\\\|\\\\\\\\bibitem{puigcerver2024softmoe\\\\|\\\\\\\\bibitem{panda2024densebackprop\\\\|\\\\\\\\bibitem{hua2025inputaware\\\\|\\\\\\\\bibitem{guo2025expertspec\\\\|\\\\\\\\bibitem{liu2022nonstationary\\\\|\\\\\\\\bibitem{fan2023dishts\\\\|\\\\\\\\bibitem{liu2023san\\\\|\\\\\\\\bibitem{ye2024fan\\\\|\\\\\\\\bibitem{dai2024ddn\\\\|\\\\\\\\bibitem{berthelier2026revin\\\\|\\\\\\\\bibitem{zou2025ibnorm\" /home/<USER>/neuralips26/main.tex | wc -l",
   "description": "Count matching bibitems"
 }
 ```
@@ -523,7 +523,7 @@ tool_use Bash
 id: toolu_01Ybe247EyJwn3jDprPQxxev
 ```json
 {
-  "command": "grep -c \"bibitem\" /Users/hungpq2412/neuralips26/main.tex; grep -n \"thebibliography\\|\\\\\\\\bibitem\" /Users/hungpq2412/neuralips26/main.tex | head -5",
+  "command": "grep -c \"bibitem\" /home/<USER>/neuralips26/main.tex; grep -n \"thebibliography\\|\\\\\\\\bibitem\" /home/<USER>/neuralips26/main.tex | head -5",
   "description": "Check bibliography format"
 }
 ```
@@ -547,7 +547,7 @@ tool_use Bash
 id: toolu_01RuEc9tYpzgDUgFb8FJwEay
 ```json
 {
-  "command": "for k in shazeer2017outrageously fedus2022switch wang2022adamix kim2021revin goswami2024moment nie2023patchtst das2024timesfm zoph2022stmoe wang2025remoe zhou2022expertchoice wu2024mole chi2022representation wu2024mhmoe puigcerver2024softmoe panda2024densebackprop hua2025inputaware guo2025expertspec liu2022nonstationary fan2023dishts liu2023san ye2024fan dai2024ddn berthelier2026revin zou2025ibnorm; do\n  if grep -q \"\\\\\\\\bibitem.*{$k}\" /Users/hungpq2412/neuralips26/main.tex; then\n    echo \"OK   $k\"\n  else\n    echo \"MISS $k\"\n  fi\ndone",
+  "command": "for k in shazeer2017outrageously fedus2022switch wang2022adamix kim2021revin goswami2024moment nie2023patchtst das2024timesfm zoph2022stmoe wang2025remoe zhou2022expertchoice wu2024mole chi2022representation wu2024mhmoe puigcerver2024softmoe panda2024densebackprop hua2025inputaware guo2025expertspec liu2022nonstationary fan2023dishts liu2023san ye2024fan dai2024ddn berthelier2026revin zou2025ibnorm; do\n  if grep -q \"\\\\\\\\bibitem.*{$k}\" /home/<USER>/neuralips26/main.tex; then\n    echo \"OK   $k\"\n  else\n    echo \"MISS $k\"\n  fi\ndone",
   "description": "Check each citation key"
 }
 ```
@@ -633,7 +633,7 @@ tool_use Bash
 id: toolu_01WQPDFoWQegb7sQ195TZqUg
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\\|^\\\\\\\\textbf{\" /Users/hungpq2412/neuralips26/main.tex | awk -F: '$1<=560' | sed 's/{Given.*//; s/{We.*//; s/{The.*//; s/{Beyond.*//; s/{Sparsely.*//; s/{Existing.*//; s/{Instance.*//; s/{Trained.*//; s/{Per-window.*//; s/{Standard.*//; s/{Real.*//; s/{This natural.*//; s/{The failure.*//; s/{Because.*//; s/{The diagnosis.*//; s/{Time series.*//'",
+  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\\|^\\\\\\\\textbf{\" /home/<USER>/neuralips26/main.tex | awk -F: '$1<=560' | sed 's/{Given.*//; s/{We.*//; s/{The.*//; s/{Beyond.*//; s/{Sparsely.*//; s/{Existing.*//; s/{Instance.*//; s/{Trained.*//; s/{Per-window.*//; s/{Standard.*//; s/{Real.*//; s/{This natural.*//; s/{The failure.*//; s/{Because.*//; s/{The diagnosis.*//; s/{Time series.*//'",
   "description": "Map main-body skeleton"
 }
 ```
@@ -653,7 +653,7 @@ tool_use Read
 id: toolu_01GdX34oVymCrpLWNewBMcVA
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 498,
   "limit": 10
 }
@@ -682,7 +682,7 @@ tool_use Bash
 id: toolu_01BTaSFa5gARCDFWunBmqiWE
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\\|^\\\\\\\\subsubsection\\|^\\\\\\\\paragraph\" /Users/hungpq2412/neuralips26/main.tex | awk -F: '$1>=415 && $1<=566'",
+  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\\|^\\\\\\\\subsubsection\\|^\\\\\\\\paragraph\" /home/<USER>/neuralips26/main.tex | awk -F: '$1>=415 && $1<=566'",
   "description": "Map experiments substructure"
 }
 ```
@@ -705,7 +705,7 @@ tool_use Read
 id: toolu_01TjitheiuWAbaJECWYso8cZ
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 560,
   "limit": 35
 }
@@ -752,7 +752,7 @@ tool_use Read
 id: toolu_01Pooqwkhp7PumthjpHM77Qw
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 498,
   "limit": 62
 }
@@ -784,7 +784,7 @@ tool_use Read
 id: toolu_01BHrM3k4R7h6tsiuSLoNAD5
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 377,
   "limit": 22
 }
@@ -821,7 +821,7 @@ tool_use Read
 id: toolu_01B8gHS6JvaDGjmAnm1ie3tt
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 418,
   "limit": 85
 }
@@ -882,7 +882,7 @@ tool_use Read
 id: toolu_01X5Y3GRAm1MJ26Xg5yxHKfA
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 248,
   "limit": 8
 }
@@ -906,7 +906,7 @@ id: toolu_017qHEYkUyNmNr6MmFwN6eKg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "This collapse is upstream of the optimization-induced collapse that existing rescues target -- load balancing~\\citep{shazeer2017outrageously, fedus2022switch}, z-loss~\\citep{zoph2022stmoe}, ReLU routing~\\citep{wang2025remoe}, and expert-choice~\\citep{zhou2022expertchoice} -- and is not addressed by prior MoE-adapter~\\citep{wang2022adamix, wu2024mole}, MoE routing-collapse~\\citep{chi2022representation, wu2024mhmoe, puigcerver2024softmoe, panda2024densebackprop, hua2025inputaware, guo2025expertspec}, or time-series-normalization~\\citep{liu2022nonstationary, fan2023dishts, liu2023san, ye2024fan, dai2024ddn, berthelier2026revin, zou2025ibnorm} work (positioned in detail in \\S\\ref{sec:related_work}). The remainder of this section answers the problem with $u(\\mathbf{x})\\!=\\!\\mathbf{x}$ (the raw, pre-normalization window); \\S\\ref{sec:diagnosis} and \\S\\ref{sec:main_results} verify the answer with eight causal controls and a $720$-run rescue sweep that confirms no optimization-side fix recovers within $2.7{\\times}$ of RR-MoA (Table~\\ref{tab:rescue}).\n\n\\begin{figure}[t!]",
   "new_string": "This collapse is upstream of the optimization-induced collapse that existing rescues target -- load balancing~\\citep{shazeer2017outrageously, fedus2022switch}, z-loss~\\citep{zoph2022stmoe}, ReLU routing~\\citep{wang2025remoe}, and expert-choice~\\citep{zhou2022expertchoice} -- and is not addressed by prior MoE-adapter~\\citep{wang2022adamix, wu2024mole}, MoE routing-collapse~\\citep{chi2022representation, wu2024mhmoe, puigcerver2024softmoe, panda2024densebackprop, hua2025inputaware, guo2025expertspec}, or time-series-normalization~\\citep{liu2022nonstationary, fan2023dishts, liu2023san, ye2024fan, dai2024ddn, berthelier2026revin, zou2025ibnorm} work (positioned in detail in \\S\\ref{sec:related_work}). The remainder of this section answers the problem with $u(\\mathbf{x})\\!=\\!\\mathbf{x}$ (the raw, pre-normalization window); \\S\\ref{sec:main_results} verifies the answer with eight causal controls and a $720$-run rescue sweep that confirms no optimization-side fix recovers within $2.7{\\times}$ of RR-MoA (Table~\\ref{tab:rescue}).\n\n\\textbf{Mechanism (formal).}\\label{sec:mechanism}\\label{sec:diagnosis}\nWe formalize the failure as a routing-information loss […]
 
@@ -915,7 +915,7 @@ id: toolu_017qHEYkUyNmNr6MmFwN6eKg
 tool_result
 id: toolu_017qHEYkUyNmNr6MmFwN6eKg
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -928,7 +928,7 @@ tool_use Read
 id: toolu_01ReMbqDNAeesVqprdhf9ubS
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 405,
   "limit": 20
 }
@@ -950,7 +950,7 @@ id: toolu_011Z1HEpya7rL79cXnmX7Wfi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\textbf{Why the router behaves.} Trained RR-MoA learns a non-degenerate per-window dispatch -- routing entropy stays in $[1.0, 1.57]$ (vs.\\ the $\\log K{=}1.609$ ceiling), and assignments correlate well with raw $(\\mu,\\sigma)$ but only weakly with normalized shape, the empirical signature predicted by Observation~\\ref{thm:mi_decomp} (\\S\\ref{sec:diagnosis}, Figure~\\ref{fig:routing_viz}). The router never sees the stripped statistics, so the co-adaptation loop that drives AdaMix to entropy $0$ has no input to amplify. Conversely, naive remedies that target optimization or routing paradigm rather than router input (load-balancing, z-loss, ReLU routing, expert-choice) recover at most $10.9\\%$ MSE on MOMENT$+$RevIN because the bottleneck is the router's input distribution, not its objective (Table~\\ref{tab:rescue}, \\S\\ref{sec:main_results}).\n\n\\textbf{Cost, expert pool, deployment.}",
   "new_string": "\\textbf{Cost, expert pool, deployment.}"
 }
@@ -961,7 +961,7 @@ id: toolu_011Z1HEpya7rL79cXnmX7Wfi
 tool_result
 id: toolu_011Z1HEpya7rL79cXnmX7Wfi
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -974,7 +974,7 @@ tool_use Read
 id: toolu_01Q3Va5wgV7hnkXnDWhhA3GG
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 510,
   "limit": 30
 }
@@ -1006,7 +1006,7 @@ id: toolu_018dE62XzzkvQVnXLRbVrHew
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\subsubsection*{Mechanism: instance normalization strips the routing signal}\n\\label{sec:diagnosis}\n\nWe answer that question by tracing the routing signal through the encoder pipeline. The empirical pattern (RR-MoA wins, AdaMix collapses, frozen $\\succeq$ unfrozen) has a single causal explanation if RevIN removes precisely the per-window statistics a hidden-state router would need; we now formalize that loss.\n\n\\textbf{Why RevIN destroys routing.} Each window decomposes into mean $M_i$, scale $\\Sigma_i$, shape $\\mathbf{S}_i = (\\mathbf{x}_i - M_i)/\\Sigma_i$; RevIN keeps $\\mathbf{S}_i$ and discards $(M_i,\\Sigma_i)$. The chain rule quantifies the routing signal in the discarded part.\n\n\\begin{observation}[Routing Information Loss Under Instance Normalization]\n\\label{thm:mi_decomp}\nLet $X$ be a random input window, $E \\in \\{1,\\ldots,K\\}$ the expert assignment produced by any deterministic router, $S = (X - M)/\\Sigma$ the RevIN-normalized shape. \\emph{(i) Exact decomposition:} $I(X;E) - I(S;E) = I(M,\\Sigma;E\\mid S) \\geq 0$. \\emph{(ii) Quantitative bound (no independence assumption):} $I(X;E) - I(S;E) \\geq I(M,\\Sigma;E) - I(M,\\Sigma;S)$, with $\\varepsilon := I(M,\\Sigma;S) \\geq 0$ capturing residual leakage of stripped statistics through the shape; equality iff $(M,\\Sigma) \\perp\\!\\!\\!\\perp S \\mid E$.\n\\end{observation}\n\nWhen routing signal lives entirely in the stripped statistics ($(M,\\Sigma)\\perp\\!\\!\\!\\perp S$; Appendix~\\ref{app:proofs}), $I(X;E){-}I(S;E){=}H(E)$: RevIN destroys the entire routing distribution. The signal ratio $R(\\mathcal{D}) = [\\mathrm{Var}(M)+\\mathrm{Var}(\\Sigma)]/\\overline{\\mathrm{Var}(S)}$ is a tractable monotone […]
 
 > TOOL
@@ -1014,7 +1014,7 @@ id: toolu_018dE62XzzkvQVnXLRbVrHew
 tool_result
 id: toolu_018dE62XzzkvQVnXLRbVrHew
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -1027,7 +1027,7 @@ tool_use Read
 id: toolu_01BhhV8XvokAzbvEQsqgE3fN
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 242,
   "limit": 5
 }
@@ -1052,7 +1052,7 @@ id: toolu_01SD4xB9CV1zZQsyR3u8AmPV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "We first state the task setup, then the problem we identify, then specify RR-MoA: a per-window mixture in which the router reads the raw, pre-normalization signal while the experts consume the frozen TSFM's hidden states. Cost, expert pool, and deployment implications close the section.",
   "new_string": "We first state the task setup, then the problem we identify and its formal mechanism, then specify RR-MoA: a per-window mixture in which the router reads the raw, pre-normalization signal while the experts consume the frozen TSFM's hidden states. Cost, expert pool, and deployment implications close the section."
 }
@@ -1063,7 +1063,7 @@ id: toolu_01SD4xB9CV1zZQsyR3u8AmPV
 tool_result
 id: toolu_01SD4xB9CV1zZQsyR3u8AmPV
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -1072,7 +1072,7 @@ tool_use Read
 id: toolu_01Hys4SL7xHS38Q6X8bTnuSm
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 424,
   "limit": 8
 }
@@ -1100,7 +1100,7 @@ id: toolu_016qv1Y3ukKLPUkwSvaXfDvL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "With this setup fixed, we now turn to the empirical case for RR-MoA, which rests on three claims and the mechanism that explains them: fixed-topology adapters are suboptimal, the natural MoE remedy collapses on instance-normalized backbones, and standard rescue mechanisms cannot recover it. We establish each in turn before comparing against the seven-baseline suite (fixed adapters, LoRA, TRACE, independent ensembles, AdaMix, full fine-tuning, DLinear).",
   "new_string": "With this setup fixed, we now turn to the empirical verification of the mechanism formalized in \\S\\ref{sec:mechanism} (Observation~\\ref{thm:mi_decomp}, $R(\\mathcal{D})$). The case rests on three claims that the mechanism predicts and that we test in turn: fixed-topology adapters are suboptimal, the natural MoE remedy collapses on instance-normalized backbones, and standard rescue mechanisms cannot recover it. We then compare against the seven-baseline suite (fixed adapters, LoRA, TRACE, independent ensembles, AdaMix, full fine-tuning, DLinear)."
 }
@@ -1111,7 +1111,7 @@ id: toolu_016qv1Y3ukKLPUkwSvaXfDvL
 tool_result
 id: toolu_016qv1Y3ukKLPUkwSvaXfDvL
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -1163,7 +1163,7 @@ tool_use Bash
 id: toolu_01HEHkoQAuWzb9qBAHgBVcp7
 ```json
 {
-  "command": "grep -c \"label{sec:diagnosis}\" /Users/hungpq2412/neuralips26/main.tex; grep -c \"label{sec:mechanism}\" /Users/hungpq2412/neuralips26/main.tex; grep -c \"label{thm:mi_decomp}\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -c \"label{sec:diagnosis}\" /home/<USER>/neuralips26/main.tex; grep -c \"label{sec:mechanism}\" /home/<USER>/neuralips26/main.tex; grep -c \"label{thm:mi_decomp}\" /home/<USER>/neuralips26/main.tex",
   "description": "Verify label uniqueness"
 }
 ```
@@ -1188,7 +1188,7 @@ tool_use Bash
 id: toolu_014pmE3tMzU4pdvwmqziRoJE
 ```json
 {
-  "command": "grep -A1 \"page:end_main\" /Users/hungpq2412/neuralips26/main.aux | head -3",
+  "command": "grep -A1 \"page:end_main\" /home/<USER>/neuralips26/main.aux | head -3",
   "description": "Check end-of-main-body page"
 }
 ```
@@ -1208,7 +1208,7 @@ tool_use Bash
 id: toolu_0167W9s6pU28yd7X8H4EPEpS
 ```json
 {
-  "command": "git stash && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/before.log 2>&1 && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/before2.log 2>&1; grep \"page:end_main\" /Users/hungpq2412/neuralips26/main.aux; git stash pop && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/after.log 2>&1 && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/after2.log 2>&1; grep \"page:end_main\" /Users/hungpq2412/neuralips26/main.aux",
+  "command": "git stash && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/before.log 2>&1 && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/before2.log 2>&1; grep \"page:end_main\" /home/<USER>/neuralips26/main.aux; git stash pop && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/after.log 2>&1 && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/after2.log 2>&1; grep \"page:end_main\" /home/<USER>/neuralips26/main.aux",
   "description": "Compare end-of-main page before/after edits"
 }
 ```
@@ -1245,7 +1245,7 @@ tool_use Read
 id: toolu_01221hcZJzSt5vxKC3NLWEd8
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 244,
   "limit": 22
 }
@@ -1273,7 +1273,7 @@ id: toolu_01BnZqqN9wGkdaiAwyBB8Ne2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "This collapse is upstream of the optimization-induced collapse that existing rescues target -- load balancing~\\citep{shazeer2017outrageously, fedus2022switch}, z-loss~\\citep{zoph2022stmoe}, ReLU routing~\\citep{wang2025remoe}, and expert-choice~\\citep{zhou2022expertchoice} -- and is not addressed by prior MoE-adapter~\\citep{wang2022adamix, wu2024mole}, MoE routing-collapse~\\citep{chi2022representation, wu2024mhmoe, puigcerver2024softmoe, panda2024densebackprop, hua2025inputaware, guo2025expertspec}, or time-series-normalization~\\citep{liu2022nonstationary, fan2023dishts, liu2023san, ye2024fan, dai2024ddn, berthelier2026revin, zou2025ibnorm} work (positioned in detail in \\S\\ref{sec:related_work}). The remainder of this section answers the problem with $u(\\mathbf{x})\\!=\\!\\mathbf{x}$ (the raw, pre-normalization window); \\S\\ref{sec:main_results} verifies the answer with eight causal controls and a $720$-run rescue sweep that confirms no optimization-side fix recovers within $2.7{\\times}$ of RR-MoA (Table~\\ref{tab:rescue}).",
   "new_string": "This collapse is upstream of the optimization-induced collapse that existing rescues target -- load balancing~\\citep{shazeer2017outrageously, fedus2022switch}, z-loss~\\citep{zoph2022stmoe}, ReLU routing~\\citep{wang2025remoe}, and expert-choice~\\citep{zhou2022expertchoice} -- and is not addressed by prior MoE-adapter~\\citep{wang2022adamix, wu2024mole}, MoE routing-collapse~\\citep{chi2022representation, wu2024mhmoe, puigcerver2024softmoe, panda2024densebackprop, hua2025inputaware, guo2025expertspec}, or time-series-normalization~\\citep{liu2022nonstationary, fan2023dishts, liu2023san, ye2024fan, dai2024ddn, berthelier2026revin, zou2025ibnorm} work (positioned in detail in \\S\\ref{sec:related_work}). We next formalize the loss (Observation~\\ref{thm:mi_decomp}) and define a training-free predictor $R(\\mathcal{D})$ for it; the rest of the section then specifies RR-MoA, the answer to the problem with $u(\\mathbf{x})\\!=\\!\\mathbf{x}$, and \\S\\ref{sec:main_results} verifies the answer with eight causal controls and a $720$-run rescue sweep (Table~\\ref{tab:rescue})."
 }
@@ -1284,7 +1284,7 @@ id: toolu_01BnZqqN9wGkdaiAwyBB8Ne2
 tool_result
 id: toolu_01BnZqqN9wGkdaiAwyBB8Ne2
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -1293,7 +1293,7 @@ tool_use Read
 id: toolu_01CTkwam32gZx4aECPzqNH4s
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 505,
   "limit": 15
 }
@@ -1320,7 +1320,7 @@ id: toolu_01CTkwam32gZx4aECPzqNH4s
 tool_result
 id: toolu_01Hmz7qQoqBukdBtqKXexhaz
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -1334,7 +1334,7 @@ id: toolu_01Hmz7qQoqBukdBtqKXexhaz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 \\textit{Remark.} Proposition~\\ref{prop:frozen} covers linear $A\\mathbf{x}$; Figure~\\ref{fig:trajectory}b confirms it in the full 8-block Transformer within ${\\sim}50$ steps. Independent ensembles are $37$--$46\\%$ worse (Table~\\ref{tab:baselines}), so learned routing -- not mere diversity -- drives the gains, which raises the question of \\emph{what} the router needs to read.}\n\n\\subsubsection*{Empirical verification of the mechanism}\n\nObservation~\\ref{thm:mi_decomp} and the signal ratio $R(\\mathcal{D})$ (defined in \\S\\ref{sec:mechanism}) make three testable predictions: the bound is empirically tight, $R(\\mathcal{D})$ should predict raw-routing benefit across datasets, and the predictor should respect a falsifiable boundary distinct from a generic-SNR explanation. We verify each in turn, then turn to the rescues that the mechanism predicts must fail.",
   "new_string": "{\\looseness=-1 \\textit{Remark.} Proposition~\\ref{prop:frozen} covers linear $A\\mathbf{x}$; Figure~\\ref{fig:trajectory}b confirms it in the full 8-block Transformer within ${\\sim}50$ steps. Independent ensembles are $37$--$46\\%$ worse (Table~\\ref{tab:baselines}), so learned routing -- not mere diversity -- drives the gains. \\S\\ref{sec:mechanism} answered \\emph{what} the router needs to read with Observation~\\ref{thm:mi_decomp} and the predictor $R(\\mathcal{D})$; we now verify those predictions empirically.}\n\n\\subsubsection*{Empirical verification of the mechanism}\n\nObservation~\\ref{thm:mi_decomp} and $R(\\mathcal{D})$ make three testable predictions: the bound is empirically tight, $R(\\mathcal{D})$ predicts raw-routing benefit across datasets, and the predictor respects a falsifiable boundary distinct from a generic-SNR […]
 
@@ -1348,7 +1348,7 @@ tool_use Bash
 id: toolu_013QVDg4ScCjV7aQu1JgNGjh
 ```json
 {
-  "command": "pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/final1.log 2>&1 && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/final2.log 2>&1; echo \"EXIT=$?\"; grep -iE \"undefined|! latex error|multiply defined|! emergency|warning.*ref\" /tmp/final2.log | head -10; pdfinfo main.pdf 2>/dev/null | grep Pages; grep \"page:end_main\\|sec:mechanism\\|sec:diagnosis\\|thm:mi_decomp\" /Users/hungpq2412/neuralips26/main.aux | head",
+  "command": "pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/final1.log 2>&1 && pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/final2.log 2>&1; echo \"EXIT=$?\"; grep -iE \"undefined|! latex error|multiply defined|! emergency|warning.*ref\" /tmp/final2.log | head -10; pdfinfo main.pdf 2>/dev/null | grep Pages; grep \"page:end_main\\|sec:mechanism\\|sec:diagnosis\\|thm:mi_decomp\" /home/<USER>/neuralips26/main.aux | head",
   "description": "Final two-pass compile"
 }
 ```
@@ -1408,7 +1408,7 @@ tool_use Read
 id: toolu_019u8KgpvZy1DyGRG3m59dHk
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 510,
   "limit": 25
 }
@@ -1474,7 +1474,7 @@ tool_use Bash
 id: toolu_01GVXDZpCKax5Nj7PQnZYo1s
 ```json
 {
-  "command": "grep -iE \"undefined|! latex error|multiply defined|! emergency|! .* error\" /tmp/r2.log | head -10; pdfinfo main.pdf 2>/dev/null | grep -E \"Pages|Title\"; grep \"page:end_main\\|sec:mechanism\\|sec:diagnosis\\|thm:mi_decomp\\|sec:related_work\\|sec:method\\|sec:main_results\" /Users/hungpq2412/neuralips26/main.aux | head -10",
+  "command": "grep -iE \"undefined|! latex error|multiply defined|! emergency|! .* error\" /tmp/r2.log | head -10; pdfinfo main.pdf 2>/dev/null | grep -E \"Pages|Title\"; grep \"page:end_main\\|sec:mechanism\\|sec:diagnosis\\|thm:mi_decomp\\|sec:related_work\\|sec:method\\|sec:main_results\" /home/<USER>/neuralips26/main.aux | head -10",
   "description": "Check errors, undefined refs, page count, and key labels"
 }
 ```

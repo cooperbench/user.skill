@@ -45,9 +45,9 @@ SECURITY.md
 tmp
 types.go
 unstable
-git@github.com:entirehq/git-sync.git	
-origin	git@github.com:entireio/git-sync.git (fetch) [blob:none]
-origin	git@github.com:entireio/git-sync.git (push)
+<REDACTED_EMAIL>:entirehq/git-sync.git	
+origin	<REDACTED_EMAIL>:entireio/git-sync.git (fetch) [blob:none]
+origin	<REDACTED_EMAIL>:entireio/git-sync.git (push)
 ```
 
 > AGENT
@@ -61,7 +61,7 @@ id: toolu_01KtvZVysDLNpezG5VjZdnKD
 ```json
 {
   "description": "Find ref-update limit and push logic",
-  "prompt": "In the Go repository at /Users/soph/Work/entire/devenv/git-sync, I'm investigating this error:\n\n\"too many ref-update commands: 55006 (limit 25000)\"\n\nThis happens during sync/replicate relay when pushing to a receive-pack endpoint (git-receive-pack). The error message originates from the receive-pack server side.\n\nPlease find and report (with file_path:line_number references and relevant code excerpts):\n\n1. Where the limit \"25000\" / \"too many ref-update commands\" error message is defined (the receive-pack server side that enforces this limit). Search for strings like \"too many ref-update\", \"ref-update commands\", \"25000\", and any constant like maxRefUpdate, MaxRefUpdates, refUpdateLimit etc.\n\n2. The push/replicate path that SENDS the ref-update commands. Look in the sync/replicate code — search for \"replicate relay\", \"push target refs\", \"receive-pack\", \"git-receive-pack\". I want to understand how refs are batched (or not) when pushing. Does it send all refs in one receive-pack request, or does it chunk/batch them?\n\n3. Any existing constants, config, or batching logic for ref updates anywhere in the codebase.\n\n4. The relevant types and function signatures involved in the push so I understand how to add batching if needed.\n\nReport findings concisely with exact file paths and line numbers. Do not make any code changes.",
+  "prompt": "In the Go repository at /home/<USER>/Work/entire/devenv/git-sync, I'm investigating this error:\n\n\"too many ref-update commands: 55006 (limit 25000)\"\n\nThis happens during sync/replicate relay when pushing to a receive-pack endpoint (git-receive-pack). The error message originates from the receive-pack server side.\n\nPlease find and report (with file_path:line_number references and relevant code excerpts):\n\n1. Where the limit \"25000\" / \"too many ref-update commands\" error message is defined (the receive-pack server side that enforces this limit). Search for strings like \"too many ref-update\", \"ref-update commands\", \"25000\", and any constant like maxRefUpdate, MaxRefUpdates, refUpdateLimit etc.\n\n2. The push/replicate path that SENDS the ref-update commands. Look in the sync/replicate code — search for \"replicate relay\", \"push target refs\", \"receive-pack\", \"git-receive-pack\". I want to understand how refs are batched (or not) when pushing. Does it send all refs in one receive-pack request, or does it chunk/batch them?\n\n3. Any existing constants, config, or batching logic for ref updates anywhere in the codebase.\n\n4. The relevant types and function signatures involved in the push so I understand how to add batching if needed.\n\nReport findings concisely with exact file paths and line numbers. Do not make any code changes.",
   "subagent_type": "Explore"
 }
 ```
@@ -112,7 +112,7 @@ tool_use Bash
 id: toolu_01JFwnDpvHmPSFKbmAmHaFeS
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv && grep -rn \"too many ref-update\\|ref-update commands\\|25000\\|MaxRefUpdate\\|maxRefUpdate\\|refUpdateLimit\\|RefUpdateLimit\\|ref.update.command\" --include=\"*.go\" entire/ 2>/dev/null | head -50",
+  "command": "cd /home/<USER>/Work/entire/devenv && grep -rn \"too many ref-update\\|ref-update commands\\|25000\\|MaxRefUpdate\\|maxRefUpdate\\|refUpdateLimit\\|RefUpdateLimit\\|ref.update.command\" --include=\"*.go\" entire/ 2>/dev/null | head -50",
   "description": "Search entire backend for ref-update limit"
 }
 ```
@@ -167,7 +167,7 @@ tool_use Read
 id: toolu_01KpPqcT5mY6qpcGLocmhCRa
 ```json
 {
-  "file_path": "/Users/soph/Work/entiredb/server/githttp/receive_pack.go",
+  "file_path": "/home/<USER>/Work/entiredb/server/githttp/receive_pack.go",
   "limit": 80,
   "offset": 40
 }
@@ -178,7 +178,7 @@ id: toolu_01KpPqcT5mY6qpcGLocmhCRa
 tool_result ERROR
 id: toolu_01KpPqcT5mY6qpcGLocmhCRa
 ```
-File does not exist. Note: your current working directory is /Users/soph/Work/entire/devenv/git-sync.
+File does not exist. Note: your current working directory is /home/<USER>/Work/entire/devenv/git-sync.
 ```
 
 > AGENT
@@ -191,7 +191,7 @@ tool_use Read
 id: toolu_01WXTSNdG5jhaHDCfbNg1zWn
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/replicate/replicate.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/replicate/replicate.go"
 }
 ```
 
@@ -260,7 +260,7 @@ tool_use Read
 id: toolu_01E3ZaLdqJ2deGo5mdKQUErb
 ```json
 {
-  "file_path": "/Users/soph/Work/entiredb/server/githttp/receive_pack.go",
+  "file_path": "/home/<USER>/Work/entiredb/server/githttp/receive_pack.go",
   "limit": 40,
   "offset": 40
 }
@@ -271,7 +271,7 @@ id: toolu_01E3ZaLdqJ2deGo5mdKQUErb
 tool_result ERROR
 id: toolu_01E3ZaLdqJ2deGo5mdKQUErb
 ```
-File does not exist. Note: your current working directory is /Users/soph/Work/entire/devenv/git-sync.
+File does not exist. Note: your current working directory is /home/<USER>/Work/entire/devenv/git-sync.
 ```
 
 > TOOL
@@ -338,7 +338,7 @@ tool_use Read
 id: toolu_01VK3fDFweQf9m7ooTW9wF9B
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "limit": 130
 }
 ```
@@ -462,7 +462,7 @@ tool_use Read
 id: toolu_019iP4D8kABmHuAkrotAZkkN
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/incremental/incremental.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/incremental/incremental.go"
 }
 ```
 
@@ -591,7 +591,7 @@ tool_use Read
 id: toolu_012annYQWddByLhZujhS6mrP
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 130,
   "limit": 200
 }
@@ -636,7 +636,7 @@ tool_use Read
 id: toolu_01SvW4LKxPCJoYWNdDhUif9a
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 330,
   "limit": 220
 }
@@ -716,7 +716,7 @@ tool_use Read
 id: toolu_011vz3UP6sTRyWdVyQysg4xM
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 557,
   "limit": 80
 }
@@ -897,7 +897,7 @@ tool_use Read
 id: toolu_01Bqf622x7RnT2gnKixxFXnf
 ```json
 {
-  "file_path": "/Users/soph/Work/entiredb/server/githttp/receive_pack_connectivity.go"
+  "file_path": "/home/<USER>/Work/entiredb/server/githttp/receive_pack_connectivity.go"
 }
 ```
 
@@ -906,7 +906,7 @@ id: toolu_01Bqf622x7RnT2gnKixxFXnf
 tool_result ERROR
 id: toolu_01Bqf622x7RnT2gnKixxFXnf
 ```
-File does not exist. Note: your current working directory is /Users/soph/Work/entire/devenv/git-sync.
+File does not exist. Note: your current working directory is /home/<USER>/Work/entire/devenv/git-sync.
 ```
 
 > TOOL
@@ -1096,7 +1096,7 @@ tool_use Read
 id: toolu_01YMrhrwSKMBhGTKEJEXvocm
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/strategy/materialized/materialized.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/strategy/materialized/materialized.go",
   "offset": 100,
   "limit": 40
 }
@@ -1388,7 +1388,7 @@ id: toolu_01U7H8ZBhNZh7m5huYTBNLmR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// PushPack streams a pack to the target.\nfunc (p *Pusher) PushPack(ctx context.Context, commands []PushCommand, pack io.ReadCloser) error {",
   "new_string": "// maxRefUpdatesPerPush bounds how many ref-update commands ride in a single\n// receive-pack request. entire-server rejects a push carrying more than 25_000\n// commands (server/githttp.maxRefUpdateCommands), and other servers may impose\n// their own caps; staying well under that lets a sync of a many-ref repo split\n// across several pushes instead of failing outright.\n//\n// Splitting is safe because the pack accompanying the first batch carries every\n// object for the whole push: receive-pack commits the entire received pack into\n// the object store (entire-server via CommitQuarantinedFanout, canonical git via\n// tmp_objdir_migrate — neither prunes objects unreachable from the pushed tips),\n// so the remaining batches only need to move ref pointers and carry no pack.\nconst maxRefUpdatesPerPush = 20_000\n\n// chunkRefUpdates splits commands into batches no larger than\n// maxRefUpdatesPerPush. Input that already fits is returned as a single batch\n// (including the empty slice, so callers preserve their one-request behavior).\nfunc chunkRefUpdates(commands []PushCommand) [][]PushCommand {\n\tif len(commands) <= maxRefUpdatesPerPush {\n\t\treturn [][]PushCommand{commands}\n\t}\n\tbatches := make([][]PushCommand, 0, (len(commands)+maxRefUpdatesPerPush-1)/maxRefUpdatesPerPush)\n\tfor start := 0; start < len(commands); start += maxRefUpdatesPerPush {\n\t\tend := min(start+maxRefUpdatesPerPush, len(commands))\n\t\tbatches = append(batches, commands[start:end])\n\t}\n\treturn batches\n}\n\n// PushPack […]
 
@@ -1397,7 +1397,7 @@ id: toolu_01U7H8ZBhNZh7m5huYTBNLmR
 tool_result
 id: toolu_01U7H8ZBhNZh7m5huYTBNLmR
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1411,7 +1411,7 @@ id: toolu_01GeZSNXUkygvkyv8eA7SAEb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "\treq, _, _, err := buildUpdateRequest(adv, commands, verbose)\n\tif err != nil {\n\t\t_ = pack.Close()\n\t\treturn err\n\t}\n\n\terr = sendReceivePack(ctx, conn, req, pack, verbose, onRejection)\n\tcloseErr := pack.Close()\n\tif err != nil {\n\t\treturn err\n\t}\n\tif closeErr != nil {\n\t\treturn fmt.Errorf(\"close pack: %w\", closeErr)\n\t}\n\treturn nil\n}",
   "new_string": "\t// The pack carries every object for all commands, so it rides with the\n\t// first batch; once committed the remaining refs update without re-sending\n\t// objects. This keeps each request under the server's per-push ref-update\n\t// cap (see maxRefUpdatesPerPush).\n\tfirst, rest := commands, []PushCommand(nil)\n\tif len(commands) > maxRefUpdatesPerPush {\n\t\tfirst, rest = commands[:maxRefUpdatesPerPush], commands[maxRefUpdatesPerPush:]\n\t}\n\n\treq, _, _, err := buildUpdateRequest(adv, first, verbose)\n\tif err != nil {\n\t\t_ = pack.Close()\n\t\treturn err\n\t}\n\n\terr = sendReceivePack(ctx, conn, req, pack, verbose, onRejection)\n\tcloseErr := pack.Close()\n\tif err != nil {\n\t\treturn err\n\t}\n\tif closeErr != nil {\n\t\treturn fmt.Errorf(\"close pack: %w\", closeErr)\n\t}\n\n\tif len(rest) > 0 {\n\t\treturn PushCommands(ctx, conn, adv, rest, verbose, onRejection)\n\t}\n\treturn nil\n}"
 }
@@ -1422,7 +1422,7 @@ id: toolu_01GeZSNXUkygvkyv8eA7SAEb
 tool_result
 id: toolu_01GeZSNXUkygvkyv8eA7SAEb
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1436,7 +1436,7 @@ id: toolu_01FtZfqmvbDChuy8PFbjoEFr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "func PushCommands(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\treq, _, hasUpdates, err := buildUpdateRequest(adv, commands, verbose)\n\tif err != nil {\n\t\treturn err\n\t}\n\tvar packData io.Reader\n\tif hasUpdates {\n\t\tpackData = bytes.NewReader(emptyPack(adv))\n\t}\n\treturn sendReceivePack(ctx, conn, req, packData, verbose, onRejection)\n}",
   "new_string": "func PushCommands(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\tfor _, batch := range chunkRefUpdates(commands) {\n\t\tif err := pushCommandsBatch(ctx, conn, adv, batch, verbose, onRejection); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}\n\n// pushCommandsBatch sends one receive-pack request for a single batch of\n// ref-only commands; the referenced objects must already exist on the target.\nfunc pushCommandsBatch(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\treq, _, hasUpdates, err := buildUpdateRequest(adv, commands, verbose)\n\tif err != nil {\n\t\treturn err\n\t}\n\tvar packData io.Reader\n\tif hasUpdates {\n\t\tpackData = bytes.NewReader(emptyPack(adv))\n\t}\n\treturn sendReceivePack(ctx, conn, req, packData, verbose, onRejection)\n}"
 }
@@ -1447,7 +1447,7 @@ id: toolu_01FtZfqmvbDChuy8PFbjoEFr
 tool_result
 id: toolu_01FtZfqmvbDChuy8PFbjoEFr
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1461,7 +1461,7 @@ id: toolu_01ScGWkwd5Dp5cVMEEHJ837y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// PushObjects pushes locally-materialized objects to the target.\n//\n// Delta selection runs synchronously up front via",
   "new_string": "// PushObjects pushes locally-materialized objects to the target.\n//\n// A push within the per-request ref-update cap (maxRefUpdatesPerPush) is a\n// single atomic receive-pack request. A larger push is split: the materialized\n// pack — which carries every object for the whole push — rides with the first\n// batch of object-bearing commands, then the remaining refs (and any deletes)\n// move as ref-only updates because the objects are already committed.\nfunc PushObjects(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tstore storer.Storer,\n\thashes []plumbing.Hash,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\tif len(commands) <= maxRefUpdatesPerPush {\n\t\treturn pushObjectsBatch(ctx, conn, adv, commands, store, hashes, verbose, onRejection)\n\t}\n\n\tupdates := make([]PushCommand, 0, len(commands))\n\tvar deletes []PushCommand\n\tfor _, c := range commands {\n\t\tif c.Delete {\n\t\t\tdeletes = append(deletes, c)\n\t\t} else {\n\t\t\tupdates = append(updates, c)\n\t\t}\n\t}\n\n\tif len(updates) > 0 {\n\t\tfirst, rest := updates, []PushCommand(nil)\n\t\tif len(updates) > maxRefUpdatesPerPush {\n\t\t\tfirst, rest = updates[:maxRefUpdatesPerPush], updates[maxRefUpdatesPerPush:]\n\t\t}\n\t\tif err := pushObjectsBatch(ctx, conn, adv, first, store, hashes, verbose, onRejection); err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif len(rest) > 0 {\n\t\t\tif err := PushCommands(ctx, conn, adv, rest, verbose, onRejection); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\tif len(deletes) > 0 {\n\t\treturn PushCommands(ctx, conn, adv, deletes, verbose, onRejection)\n\t}\n\treturn nil\n}\n\n// pushObjectsBatch encodes the […]
 
@@ -1470,7 +1470,7 @@ id: toolu_01ScGWkwd5Dp5cVMEEHJ837y
 tool_result
 id: toolu_01ScGWkwd5Dp5cVMEEHJ837y
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1480,7 +1480,7 @@ id: toolu_01Ssap2TaAWPxnpGccVDcH2h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// See go-git PR #2142 for the API hook.\nfunc PushObjects(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tstore storer.Storer,\n\thashes []plumbing.Hash,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\treq, _, hasUpdates, err := buildUpdateRequest(adv, commands, verbose)",
   "new_string": "// See go-git PR #2142 for the API hook.\nfunc pushObjectsBatch(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tstore storer.Storer,\n\thashes []plumbing.Hash,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\treq, _, hasUpdates, err := buildUpdateRequest(adv, commands, verbose)"
 }
@@ -1537,7 +1537,7 @@ tool_use Read
 id: toolu_01V9p7X5p3BNX9u8yr2QyqqC
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 449,
   "limit": 2
 }
@@ -1559,7 +1559,7 @@ id: toolu_01HYJSVsJJiDrr8wu6Mmj7Xo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// the connection. See go-git PR #2142 for the API hook.\nfunc PushObjects(\n\tctx context.Context,",
   "new_string": "// the connection. See go-git PR #2142 for the API hook.\nfunc pushObjectsBatch(\n\tctx context.Context,"
 }
@@ -1570,7 +1570,7 @@ id: toolu_01HYJSVsJJiDrr8wu6Mmj7Xo
 tool_result
 id: toolu_01HYJSVsJJiDrr8wu6Mmj7Xo
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1659,7 +1659,7 @@ tool_use Read
 id: toolu_018gihChzhk96x9Vffjqu36s
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "offset": 1,
   "limit": 144
 }
@@ -1739,7 +1739,7 @@ tool_use Read
 id: toolu_01Rnux1X9Ruc4dzGuxrpjwHh
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "offset": 380,
   "limit": 120
 }
@@ -1855,7 +1855,7 @@ id: toolu_01E38xM7F9BTatFqxH1rSqbn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "\t\"net/http\"\n\t\"net/http/httptest\"\n\t\"strings\"\n\t\"testing\"\n\t\"time\"",
   "new_string": "\t\"net/http\"\n\t\"net/http/httptest\"\n\t\"strings\"\n\t\"sync\"\n\t\"testing\"\n\t\"time\""
 }
@@ -1866,7 +1866,7 @@ id: toolu_01E38xM7F9BTatFqxH1rSqbn
 tool_result
 id: toolu_01E38xM7F9BTatFqxH1rSqbn
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1900,7 +1900,7 @@ tool_use Read
 id: toolu_01M67yigsahjTv18E3esthiK
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "offset": 733,
   "limit": 6
 }
@@ -1926,7 +1926,7 @@ id: toolu_014pBb4gVvo6NhEFWhZ3feMi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "\tvar rej *RefRejectedError\n\tif !errors.As(wrapped, &rej) || rej.Reason != \"remote ref has changed\" {\n\t\tt.Fatalf(\"must classify the pointer form as *RefRejectedError; got %#v\", wrapped)\n\t}\n}",
   "new_string": "\tvar rej *RefRejectedError\n\tif !errors.As(wrapped, &rej) || rej.Reason != \"remote ref has changed\" {\n\t\tt.Fatalf(\"must classify the pointer form as *RefRejectedError; got %#v\", wrapped)\n\t}\n}\n\n// recordedPush captures one receive-pack request as the server saw it: how\n// many ref-update commands it carried and the pack bytes that followed them.\ntype recordedPush struct {\n\tcommands int\n\tpack     []byte\n}\n\n// pushRecorder is a receive-pack server that records every request, so a test\n// can assert how a single PushPack/PushCommands call split into batches.\ntype pushRecorder struct {\n\tmu     sync.Mutex\n\tpushes []recordedPush\n}\n\nfunc (rec *pushRecorder) server(t *testing.T) *httptest.Server {\n\tt.Helper()\n\treturn httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\tbody, err := io.ReadAll(r.Body)\n\t\tif err != nil {\n\t\t\tt.Errorf(\"read request body: %v\", err)\n\t\t}\n\t\t_ = r.Body.Close()\n\n\t\trd := bytes.NewReader(body)\n\t\treq := &packp.UpdateRequests{}\n\t\tif err := req.Decode(rd); err != nil {\n\t\t\tt.Errorf(\"decode update requests: %v\", err)\n\t\t}\n\t\trest, err := io.ReadAll(rd)\n\t\tif err != nil {\n\t\t\tt.Errorf(\"read pack remainder: %v\", err)\n\t\t}\n\n\t\trec.mu.Lock()\n\t\trec.pushes = append(rec.pushes, recordedPush{commands: len(req.Commands), pack: rest})\n\t\trec.mu.Unlock()\n\n\t\tw.WriteHeader(http.StatusOK)\n\t}))\n}\n\nfunc makeCreateCommands(n int) []PushCommand {\n\th := plumbing.NewHash(\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\")\n\tcmds := make([]PushCommand, n)\n\tfor i := range cmds {\n\t\tcmds[i] = PushCommand{\n\t\t\tName: plumbing.ReferenceName(fmt.Sprintf(\"refs/heads/b-%d\", i)),\n\t\t\tNew:  h,\n\t\t}\n\t}\n\treturn cmds\n}\n\nfunc TestChunkRefUpdates(t *testing.T) {\n\trequire.Len(t, chunkRefUpdates(nil), 1)\n\trequire.Len(t, chunkRefUpdates(make([]PushCommand, maxRefUpdatesPerPush)), 1)\n\n\tbatches := chunkRefUpdates(make([]PushCommand, maxRefUpdatesPerPush+1))\n\trequire.Len(t, batches, 2)\n\trequire.Len(t, […]
 
@@ -1935,7 +1935,7 @@ id: toolu_014pBb4gVvo6NhEFWhZ3feMi
 tool_result
 id: toolu_014pBb4gVvo6NhEFWhZ3feMi
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2085,7 +2085,7 @@ tool_use Bash
 id: toolu_01Qw3vsbcE1LpBEepSGhj2cv
 ```json
 {
-  "command": "cat \"/Users/soph/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/MEMORY.md\" 2>/dev/null | head -20 || echo \"NO MEMORY.md\"",
+  "command": "cat \"/home/<USER>/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/MEMORY.md\" 2>/dev/null | head -20 || echo \"NO MEMORY.md\"",
   "description": "Check existing memory index"
 }
 ```
@@ -2104,8 +2104,8 @@ tool_use Write
 id: toolu_019jWdgAsjL94VYWNKUwGRBL
 ```json
 {
-  "file_path": "/Users/soph/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/entire-backend-location.md",
-  "content": "---\nname: entire-backend-location\ndescription: Where the entire Go backend (git server / receive-pack) lives on disk\nmetadata:\n  type: project\n---\n\nThe `entire` Go backend lives at `/Users/soph/Work/entiredb` (i.e. `../entiredb` from the git-sync working dir), NOT at `devenv/entire` as the devenv CLAUDE.md implies.\n\nThe server-side git receive-pack code is under `entiredb/server/githttp/` (e.g. `receive_pack.go`, `receive_pack_connectivity.go`); the quarantine/commit logic is in `entiredb/diss/store_with_check.go`.\n\n**Why:** git-sync is the push client; debugging push/sync errors (limits, connectivity) usually requires reading the server enforcement code in entiredb.\n"
+  "file_path": "/home/<USER>/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/entire-backend-location.md",
+  "content": "---\nname: entire-backend-location\ndescription: Where the entire Go backend (git server / receive-pack) lives on disk\nmetadata:\n  type: project\n---\n\nThe `entire` Go backend lives at `/home/<USER>/Work/entiredb` (i.e. `../entiredb` from the git-sync working dir), NOT at `devenv/entire` as the devenv CLAUDE.md implies.\n\nThe server-side git receive-pack code is under `entiredb/server/githttp/` (e.g. `receive_pack.go`, `receive_pack_connectivity.go`); the quarantine/commit logic is in `entiredb/diss/store_with_check.go`.\n\n**Why:** git-sync is the push client; debugging push/sync errors (limits, connectivity) usually requires reading the server enforcement code in entiredb.\n"
 }
 ```
 
@@ -2114,7 +2114,7 @@ id: toolu_019jWdgAsjL94VYWNKUwGRBL
 tool_result
 id: toolu_019jWdgAsjL94VYWNKUwGRBL
 ```
-File created successfully at: /Users/soph/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/entire-backend-location.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/entire-backend-location.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2123,7 +2123,7 @@ tool_use Write
 id: toolu_01GRrrNG3S1hvawR16vPbpVT
 ```json
 {
-  "file_path": "/Users/soph/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/MEMORY.md",
   "content": "- [entire backend location](entire-backend-location.md) — the Go git server is at ../entiredb, not devenv/entire\n"
 }
 ```
@@ -2133,7 +2133,7 @@ id: toolu_01GRrrNG3S1hvawR16vPbpVT
 tool_result
 id: toolu_01GRrrNG3S1hvawR16vPbpVT
 ```
-File created successfully at: /Users/soph/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/MEMORY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-soph-Work-entire-devenv-git-sync/memory/MEMORY.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2196,7 +2196,7 @@ id: toolu_01HzqsZd54im9oGJSvScYyt6
 ```json
 {
   "description": "Reuse review",
-  "prompt": "Review a code change in the git-sync Go repo at /Users/soph/Work/entire/devenv/git-sync for REUSE issues only (not correctness bugs).\n\nThe change is in `internal/gitproto/push.go` and `internal/gitproto/push_test.go`. Get the diff with: `git -C /Users/soph/Work/entire/devenv/git-sync diff HEAD -- internal/gitproto/push.go internal/gitproto/push_test.go`\n\nIt adds ref-update batching: a `maxRefUpdatesPerPush` constant, a `chunkRefUpdates` helper, and reworks `PushPack`/`PushCommands`/`PushObjects` to split large pushes into batches. Tests add a `pushRecorder` server helper and `makeCreateCommands`.\n\nYour job: flag any NEW code that re-implements something the codebase already has. Grep the package (`internal/gitproto/`) and adjacent test files for existing helpers — e.g. existing chunk/batch utilities, existing test server helpers (there's already `captureReceivePackBody`, `fakeReceivePackServer`, `connForServer`), existing command-builder helpers. Name the existing helper that should be called instead.\n\nReport concise findings as a list, each with: file, line, one-line summary, and the concrete cost (what is duplicated). If the code reuses appropriately and you find nothing, say so. Do not make any edits.",
+  "prompt": "Review a code change in the git-sync Go repo at /home/<USER>/Work/entire/devenv/git-sync for REUSE issues only (not correctness bugs).\n\nThe change is in `internal/gitproto/push.go` and `internal/gitproto/push_test.go`. Get the diff with: `git -C /home/<USER>/Work/entire/devenv/git-sync diff HEAD -- internal/gitproto/push.go internal/gitproto/push_test.go`\n\nIt adds ref-update batching: a `maxRefUpdatesPerPush` constant, a `chunkRefUpdates` helper, and reworks `PushPack`/`PushCommands`/`PushObjects` to split large pushes into batches. Tests add a `pushRecorder` server helper and `makeCreateCommands`.\n\nYour job: flag any NEW code that re-implements something the codebase already has. Grep the package (`internal/gitproto/`) and adjacent test files for existing helpers — e.g. existing chunk/batch utilities, existing test server helpers (there's already `captureReceivePackBody`, `fakeReceivePackServer`, `connForServer`), existing command-builder helpers. Name the existing helper that should be called instead.\n\nReport concise findings as a list, each with: file, line, one-line summary, and the concrete cost (what is duplicated). If the code reuses appropriately and you find nothing, say so. Do not make any edits.",
   "subagent_type": "Explore"
 }
 ```
@@ -2221,7 +2221,7 @@ id: toolu_01Xb37mSUCeut6FNAUaQAqut
 ```json
 {
   "description": "Simplification review",
-  "prompt": "Review a code change in the git-sync Go repo at /Users/soph/Work/entire/devenv/git-sync for SIMPLIFICATION issues only (not correctness bugs).\n\nGet the diff with: `git -C /Users/soph/Work/entire/devenv/git-sync diff HEAD -- internal/gitproto/push.go internal/gitproto/push_test.go`\n\nIt adds ref-update batching: a `maxRefUpdatesPerPush` constant, a `chunkRefUpdates` helper returning [][]PushCommand, and reworks `PushPack`/`PushCommands`/`PushObjects` to split large pushes. `PushPack` manually splits first/rest; `PushObjects` partitions updates/deletes then manually splits first/rest; `PushCommands` loops over `chunkRefUpdates`.\n\nYour job: flag unnecessary complexity the diff adds — redundant or derivable state, copy-paste with slight variation (note the repeated `first, rest := ...; if len > cap {...}` pattern appears in both PushPack and PushObjects), deep nesting, dead code. Name the simpler form that does the same job. Consider whether the first/rest splitting could reuse chunkRefUpdates or a small shared helper.\n\nRead the actual file at internal/gitproto/push.go to judge in context. Report concise findings as a list: file, line, one-line summary, concrete cost, and the simpler form. If nothing, say so. Do not make any edits.",
+  "prompt": "Review a code change in the git-sync Go repo at /home/<USER>/Work/entire/devenv/git-sync for SIMPLIFICATION issues only (not correctness bugs).\n\nGet the diff with: `git -C /home/<USER>/Work/entire/devenv/git-sync diff HEAD -- internal/gitproto/push.go internal/gitproto/push_test.go`\n\nIt adds ref-update batching: a `maxRefUpdatesPerPush` constant, a `chunkRefUpdates` helper returning [][]PushCommand, and reworks `PushPack`/`PushCommands`/`PushObjects` to split large pushes. `PushPack` manually splits first/rest; `PushObjects` partitions updates/deletes then manually splits first/rest; `PushCommands` loops over `chunkRefUpdates`.\n\nYour job: flag unnecessary complexity the diff adds — redundant or derivable state, copy-paste with slight variation (note the repeated `first, rest := ...; if len > cap {...}` pattern appears in both PushPack and PushObjects), deep nesting, dead code. Name the simpler form that does the same job. Consider whether the first/rest splitting could reuse chunkRefUpdates or a small shared helper.\n\nRead the actual file at internal/gitproto/push.go to judge in context. Report concise findings as a list: file, line, one-line summary, concrete cost, and the simpler form. If nothing, say so. Do not make any edits.",
   "subagent_type": "Explore"
 }
 ```
@@ -2246,7 +2246,7 @@ id: toolu_01D2KTZJdrxXPVgBD8pqSgAq
 ```json
 {
   "description": "Efficiency review",
-  "prompt": "Review a code change in the git-sync Go repo at /Users/soph/Work/entire/devenv/git-sync for EFFICIENCY issues only (not correctness bugs).\n\nGet the diff with: `git -C /Users/soph/Work/entire/devenv/git-sync diff HEAD -- internal/gitproto/push.go internal/gitproto/push_test.go`\n\nIt adds ref-update batching to push functions. Look for wasted work the diff introduces: unnecessary slice allocations/copies (e.g. `chunkRefUpdates` building a [][]PushCommand, `PushObjects` allocating `updates`/`deletes` slices even when not needed), redundant computation, or allocations in the common small-push path that didn't exist before. The common case (commands <= cap) should stay allocation-light.\n\nNote: chunkRefUpdates returns `[][]PushCommand{commands}` for the small case — assess whether that single-element wrapper slice allocation matters on the hot path. Assess whether PushObjects' partition into two new slices is avoidable when len(commands) <= cap (it has an early return) vs when over cap.\n\nRead internal/gitproto/push.go in context. Report concise findings: file, line, one-line summary, concrete cost, cheaper alternative. If negligible/clean, say so. Do not make any edits.",
+  "prompt": "Review a code change in the git-sync Go repo at /home/<USER>/Work/entire/devenv/git-sync for EFFICIENCY issues only (not correctness bugs).\n\nGet the diff with: `git -C /home/<USER>/Work/entire/devenv/git-sync diff HEAD -- internal/gitproto/push.go internal/gitproto/push_test.go`\n\nIt adds ref-update batching to push functions. Look for wasted work the diff introduces: unnecessary slice allocations/copies (e.g. `chunkRefUpdates` building a [][]PushCommand, `PushObjects` allocating `updates`/`deletes` slices even when not needed), redundant computation, or allocations in the common small-push path that didn't exist before. The common case (commands <= cap) should stay allocation-light.\n\nNote: chunkRefUpdates returns `[][]PushCommand{commands}` for the small case — assess whether that single-element wrapper slice allocation matters on the hot path. Assess whether PushObjects' partition into two new slices is avoidable when len(commands) <= cap (it has an early return) vs when over cap.\n\nRead internal/gitproto/push.go in context. Report concise findings: file, line, one-line summary, concrete cost, cheaper alternative. If negligible/clean, say so. Do not make any edits.",
   "subagent_type": "Explore"
 }
 ```
@@ -2271,7 +2271,7 @@ id: toolu_01WimQFD8PP1xmZRmby9v6e2
 ```json
 {
   "description": "Altitude review",
-  "prompt": "Review a code change in the git-sync Go repo at /Users/soph/Work/entire/devenv/git-sync for ALTITUDE issues only (not correctness bugs).\n\nGet the diff with: `git -C /Users/soph/Work/entire/devenv/git-sync diff HEAD -- internal/gitproto/push.go internal/gitproto/push_test.go`\n\nThe change adds ref-update command batching to keep receive-pack requests under a server-side cap of 25000 commands. It batches inside three functions: `PushPack`, `PushCommands`, `PushObjects` in internal/gitproto/push.go, using a constant `maxRefUpdatesPerPush = 20_000`.\n\nYour job: check the change is implemented at the right depth, not a fragile bandaid.\n- Is batching at the gitproto push-primitive layer the right altitude, or should it be in the strategy layer (internal/strategy/replicate, incremental, materialized)? Consider that all strategies funnel through these three functions — is centralizing here correct, or does it hide behavior strategies should control?\n- Three functions each grow their own splitting logic (PushPack does first/rest, PushObjects partitions then first/rest, PushCommands loops). Is there a generalization that handles \"send pack with first batch, ref-only for the rest\" once instead of three special cases?\n- Is the hardcoded 20_000 at the right altitude (vs configurable, vs derived)? The codebase has other limits like MaxPackBytes/TargetMaxPack that are configurable — check how those are plumbed and whether this should match.\n\nExplore internal/strategy/ […]
+  "prompt": "Review a code change in the git-sync Go repo at /home/<USER>/Work/entire/devenv/git-sync for ALTITUDE issues only (not correctness bugs).\n\nGet the diff with: `git -C /home/<USER>/Work/entire/devenv/git-sync diff HEAD -- internal/gitproto/push.go internal/gitproto/push_test.go`\n\nThe change adds ref-update command batching to keep receive-pack requests under a server-side cap of 25000 commands. It batches inside three functions: `PushPack`, `PushCommands`, `PushObjects` in internal/gitproto/push.go, using a constant `maxRefUpdatesPerPush = 20_000`.\n\nYour job: check the change is implemented at the right depth, not a fragile bandaid.\n- Is batching at the gitproto push-primitive layer the right altitude, or should it be in the strategy layer (internal/strategy/replicate, incremental, materialized)? Consider that all strategies funnel through these three functions — is centralizing here correct, or does it hide behavior strategies should control?\n- Three functions each grow their own splitting logic (PushPack does first/rest, PushObjects partitions then first/rest, PushCommands loops). Is there a generalization that handles \"send pack with first batch, ref-only for the rest\" once instead of three special cases?\n- Is the hardcoded 20_000 at the right altitude (vs configurable, vs derived)? The codebase has other limits like MaxPackBytes/TargetMaxPack that are configurable — check how those are plumbed and whether this should match.\n\nExplore internal/strategy/ […]
 
 > TOOL
 
@@ -2410,7 +2410,7 @@ id: toolu_01477b8pUFC3nrG6KUyXbKX4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "\tbatches := make([][]PushCommand, 0, (len(commands)+maxRefUpdatesPerPush-1)/maxRefUpdatesPerPush)\n\tfor start := 0; start < len(commands); start += maxRefUpdatesPerPush {\n\t\tend := min(start+maxRefUpdatesPerPush, len(commands))\n\t\tbatches = append(batches, commands[start:end])\n\t}\n\treturn batches\n}",
   "new_string": "\tbatches := make([][]PushCommand, 0, (len(commands)+maxRefUpdatesPerPush-1)/maxRefUpdatesPerPush)\n\tfor start := 0; start < len(commands); start += maxRefUpdatesPerPush {\n\t\tend := min(start+maxRefUpdatesPerPush, len(commands))\n\t\tbatches = append(batches, commands[start:end])\n\t}\n\treturn batches\n}\n\n// splitFirstBatch peels off the first batch (up to maxRefUpdatesPerPush) so a\n// push can carry the pack with that batch and send the remainder as ref-only\n// follow-ups. rest is nil when commands already fit in a single request.\nfunc splitFirstBatch(commands []PushCommand) (first, rest []PushCommand) {\n\tif len(commands) <= maxRefUpdatesPerPush {\n\t\treturn commands, nil\n\t}\n\treturn commands[:maxRefUpdatesPerPush], commands[maxRefUpdatesPerPush:]\n}"
 }
@@ -2421,7 +2421,7 @@ id: toolu_01477b8pUFC3nrG6KUyXbKX4
 tool_result
 id: toolu_01477b8pUFC3nrG6KUyXbKX4
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2431,7 +2431,7 @@ id: toolu_01NLbRiu9XsBychj4yPcqkGd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "\tif len(updates) > 0 {\n\t\tfirst, rest := updates, []PushCommand(nil)\n\t\tif len(updates) > maxRefUpdatesPerPush {\n\t\t\tfirst, rest = updates[:maxRefUpdatesPerPush], updates[maxRefUpdatesPerPush:]\n\t\t}\n\t\tif err := pushObjectsBatch(ctx, conn, adv, first, store, hashes, verbose, onRejection); err != nil {",
   "new_string": "\tif len(updates) > 0 {\n\t\tfirst, rest := splitFirstBatch(updates)\n\t\tif err := pushObjectsBatch(ctx, conn, adv, first, store, hashes, verbose, onRejection); err != nil {"
 }
@@ -2442,7 +2442,7 @@ id: toolu_01NLbRiu9XsBychj4yPcqkGd
 tool_result
 id: toolu_01NLbRiu9XsBychj4yPcqkGd
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2452,7 +2452,7 @@ id: toolu_01XXJx2MDVQWadbT3TBYRczB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "\t// The pack carries every object for all commands, so it rides with the\n\t// first batch; once committed the remaining refs update without re-sending\n\t// objects. This keeps each request under the server's per-push ref-update\n\t// cap (see maxRefUpdatesPerPush).\n\tfirst, rest := commands, []PushCommand(nil)\n\tif len(commands) > maxRefUpdatesPerPush {\n\t\tfirst, rest = commands[:maxRefUpdatesPerPush], commands[maxRefUpdatesPerPush:]\n\t}\n\n\treq, _, _, err := buildUpdateRequest(adv, first, verbose)",
   "new_string": "\t// The pack carries every object for all commands, so it rides with the\n\t// first batch; once committed the remaining refs update without re-sending\n\t// objects. This keeps each request under the server's per-push ref-update\n\t// cap (see maxRefUpdatesPerPush).\n\tfirst, rest := splitFirstBatch(commands)\n\n\treq, _, _, err := buildUpdateRequest(adv, first, verbose)"
 }
@@ -2463,7 +2463,7 @@ id: toolu_01XXJx2MDVQWadbT3TBYRczB
 tool_result
 id: toolu_01XXJx2MDVQWadbT3TBYRczB
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2565,7 +2565,7 @@ tool_use Bash
 id: toolu_01Ux9M9CrPidSjxzLscnR46n
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nBatch ref-update commands to stay under receive-pack cap\n\nA sync of a repo with many refs sent every ref-update command in a single\nreceive-pack request, which entire-server rejects past 25,000 commands\n(\"too many ref-update commands: 55006 (limit 25000)\"). The relay/materialize\nstrategies (replicate, incremental, materialized) had no command-count\nbatching.\n\nBatch inside the gitproto push primitives so every strategy benefits:\n\n- PushPack / PushObjects send the pack with the first batch and the remaining\n  refs as ref-only follow-ups. The pack carries every object for the whole\n  push, and receive-pack commits the entire received pack (entire-server via\n  CommitQuarantinedFanout, canonical git via tmp_objdir_migrate — neither\n  prunes objects unreachable from the pushed tips), so later batches only move\n  ref pointers.\n- PushCommands chunks all commands under maxRefUpdatesPerPush (20_000, with\n  headroom under the server's 25_000 cap).\n\nWorks against both entire-server and canonical git/GitHub (GitHub's per-push\nbranch/tag limit is opt-in, default unlimited).\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nBatch ref-update commands to stay under receive-pack cap\n\nA sync of a repo with many refs sent every ref-update command in a single\nreceive-pack request, which entire-server rejects past 25,000 commands\n(\"too many ref-update commands: 55006 (limit 25000)\"). The relay/materialize\nstrategies (replicate, incremental, materialized) had no command-count\nbatching.\n\nBatch inside the gitproto push primitives so every strategy benefits:\n\n- PushPack / PushObjects send the pack with the first batch and the remaining\n  refs as ref-only follow-ups. The pack carries every object for the whole\n  push, and receive-pack commits the entire received pack (entire-server via\n  CommitQuarantinedFanout, canonical git via tmp_objdir_migrate — neither\n  prunes objects unreachable from the pushed tips), so later batches only move\n  ref pointers.\n- PushCommands chunks all commands under maxRefUpdatesPerPush (20_000, with\n  headroom under the server's 25_000 cap).\n\nWorks against both entire-server and canonical git/GitHub (GitHub's per-push\nbranch/tag limit is opt-in, default unlimited).\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the batching change"
 }
 ```
@@ -2879,7 +2879,7 @@ id: toolu_01Y1tFhmuC5dx3Rs2A7Faq2a
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// maxRefUpdatesPerPush bounds how many ref-update commands ride in a single\n// receive-pack request. entire-server rejects a push carrying more than 25_000\n// commands (server/githttp.maxRefUpdateCommands), and other servers may impose\n// their own caps; staying well under that lets a sync of a many-ref repo split\n// across several pushes instead of failing outright.\n//\n// Splitting is safe because the pack accompanying the first batch carries every\n// object for the whole push: receive-pack commits the entire received pack into\n// the object store (entire-server via CommitQuarantinedFanout, canonical git via\n// tmp_objdir_migrate — neither prunes objects unreachable from the pushed tips),\n// so the remaining batches only need to move ref pointers and carry no pack.\nconst maxRefUpdatesPerPush = 20_000",
   "new_string": "// defaultMaxRefUpdatesPerPush bounds how many ref-update commands ride in a\n// single receive-pack request. entire-server rejects a push carrying more than\n// 25_000 commands (server/githttp.maxRefUpdateCommands), and other servers\n// impose their own (often lower, undocumented) limits; staying under the cap\n// lets a sync of a many-ref repo split across several pushes instead of failing\n// outright.\n//\n// Splitting is safe because the pack accompanying the first batch carries every\n// object for the whole push: receive-pack commits the entire received pack into\n// the object […]
 
@@ -2888,7 +2888,7 @@ id: toolu_01Y1tFhmuC5dx3Rs2A7Faq2a
 tool_result
 id: toolu_01Y1tFhmuC5dx3Rs2A7Faq2a
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2902,7 +2902,7 @@ id: toolu_014rPddBMAFdahTNjGJaS7NQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "\t\"io\"\n\t\"os\"\n\t\"slices\"\n\t\"strings\"",
   "new_string": "\t\"io\"\n\t\"os\"\n\t\"slices\"\n\t\"strconv\"\n\t\"strings\""
 }
@@ -2913,7 +2913,7 @@ id: toolu_014rPddBMAFdahTNjGJaS7NQ
 tool_result
 id: toolu_014rPddBMAFdahTNjGJaS7NQ
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3042,7 +3042,7 @@ id: toolu_01L44dgZcwJkAkgBG2fkeHnv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// defaultMaxRefUpdatesPerPush bounds how many ref-update commands ride in a\n// single receive-pack request. entire-server rejects a push carrying more than\n// 25_000 commands (server/githttp.maxRefUpdateCommands), and other servers\n// impose their own (often lower, undocumented) limits; staying under the cap\n// lets a sync of a many-ref repo split across several pushes instead of failing\n// outright.\n//\n// Splitting is safe because the pack accompanying the first batch carries every\n// object for the whole push: receive-pack commits the entire received pack into\n// the object store (entire-server via CommitQuarantinedFanout, canonical git via\n// tmp_objdir_migrate — neither prunes objects unreachable from the pushed tips),\n// so the remaining batches only need to move ref pointers and carry no pack.\nconst defaultMaxRefUpdatesPerPush = 20_000\n\n// MaxRefUpdatesEnv overrides defaultMaxRefUpdatesPerPush with a positive\n// integer. Some hosted providers (notably GitHub) return 500 Internal Server\n// Error when a single push updates tens of thousands of refs at once — far\n// below entire-server's 25_000 cap — so a smaller batch is needed to mirror a\n// many-ref repo there. Invalid or non-positive values fall back to the default.\nconst MaxRefUpdatesEnv = \"GITSYNC_MAX_REF_UPDATES_PER_PUSH\"",
   "new_string": "// defaultMaxRefUpdatesPerPush bounds how many ref-update commands ride in a\n// single receive-pack request. The default is […]
 
@@ -3051,7 +3051,7 @@ id: toolu_01L44dgZcwJkAkgBG2fkeHnv
 tool_result
 id: toolu_01L44dgZcwJkAkgBG2fkeHnv
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3088,7 +3088,7 @@ id: toolu_01UaR2Zj35vuBTu23vhNnJJn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "func TestChunkRefUpdates(t *testing.T) {",
   "new_string": "func TestResolveMaxRefUpdatesPerPush(t *testing.T) {\n\tt.Setenv(MaxRefUpdatesEnv, \"\")\n\trequire.Equal(t, defaultMaxRefUpdatesPerPush, resolveMaxRefUpdatesPerPush())\n\n\tt.Setenv(MaxRefUpdatesEnv, \"20000\")\n\trequire.Equal(t, 20000, resolveMaxRefUpdatesPerPush())\n\n\t// Invalid or non-positive values fall back to the default.\n\tfor _, bad := range []string{\"0\", \"-5\", \"lots\"} {\n\t\tt.Setenv(MaxRefUpdatesEnv, bad)\n\t\trequire.Equal(t, defaultMaxRefUpdatesPerPush, resolveMaxRefUpdatesPerPush(), \"value %q\", bad)\n\t}\n}\n\nfunc TestChunkRefUpdates(t *testing.T) {"
 }
@@ -3099,7 +3099,7 @@ id: toolu_01UaR2Zj35vuBTu23vhNnJJn
 tool_result
 id: toolu_01UaR2Zj35vuBTu23vhNnJJn
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3142,7 +3142,7 @@ tool_use Bash
 id: toolu_018yb3wcaGgXEYrpECG86A4x
 ```json
 {
-  "command": "git add internal/gitproto/push.go internal/gitproto/push_test.go && git commit -m \"$(cat <<'EOF'\nDefault ref-update batch to 5000; make it env-tunable\n\nGitHub returns 500 Internal Server Error when a single push updates ~10k refs\nat once but accepts 5k — well below entire-server's 25k cap. Lower the default\nbatch to 5_000 so mirroring a many-ref repo works against GitHub out of the\nbox, and add GITSYNC_MAX_REF_UPDATES_PER_PUSH to raise it for targets known to\ntolerate larger pushes (entire-server, up to 25k) and cut round trips.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git push 2>&1 | tail -5",
+  "command": "git add internal/gitproto/push.go internal/gitproto/push_test.go && git commit -m \"$(cat <<'EOF'\nDefault ref-update batch to 5000; make it env-tunable\n\nGitHub returns 500 Internal Server Error when a single push updates ~10k refs\nat once but accepts 5k — well below entire-server's 25k cap. Lower the default\nbatch to 5_000 so mirroring a many-ref repo works against GitHub out of the\nbox, and add GITSYNC_MAX_REF_UPDATES_PER_PUSH to raise it for targets known to\ntolerate larger pushes (entire-server, up to 25k) and cut round trips.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git push 2>&1 | tail -5",
   "description": "Commit default change and push"
 }
 ```
@@ -3255,7 +3255,7 @@ tool_use Bash
 id: toolu_016FNZ1Kx7onAsPsC9tTDGLS
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\necho \"=== target-max-pack-bytes / TargetMaxPack plumbing ===\"\ngrep -rn \"target-max-pack-bytes\\|TargetMaxPack\\|MaxPackBytes\\|targetMaxPack\" --include=\"*.go\" cmd/ internal/ | grep -v \"_test\" | head -40",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\necho \"=== target-max-pack-bytes / TargetMaxPack plumbing ===\"\ngrep -rn \"target-max-pack-bytes\\|TargetMaxPack\\|MaxPackBytes\\|targetMaxPack\" --include=\"*.go\" cmd/ internal/ | grep -v \"_test\" | head -40",
   "description": "Trace max-pack-bytes flag plumbing"
 }
 ```
@@ -3299,7 +3299,7 @@ tool_use Bash
 id: toolu_01Da7HH56a859h9ZdiP54VyB
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\necho \"=== direct calls to package-level PushPack/PushCommands/PushObjects (non-method) ===\"\ngrep -rn \"gitproto\\.\\(PushPack\\|PushCommands\\|PushObjects\\)\\|[^.]\\bPushPack(\\|[^.]\\bPushCommands(\\|[^.]\\bPushObjects(\" --include=\"*.go\" internal/ cmd/ unstable/ internalbridge/ | grep -v \"_test\\|func (p \\*Pusher)\\|func PushPack\\|func PushCommands\\|func PushObjects\\|func pushObjectsBatch\\|func pushCommandsBatch\" | head -30\necho \"=== NewPusher callers ===\"\ngrep -rn \"NewPusher\\|gitproto.Pusher{\" --include=\"*.go\" internal/ cmd/ unstable/ internalbridge/ | grep -v \"_test\" | head",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\necho \"=== direct calls to package-level PushPack/PushCommands/PushObjects (non-method) ===\"\ngrep -rn \"gitproto\\.\\(PushPack\\|PushCommands\\|PushObjects\\)\\|[^.]\\bPushPack(\\|[^.]\\bPushCommands(\\|[^.]\\bPushObjects(\" --include=\"*.go\" internal/ cmd/ unstable/ internalbridge/ | grep -v \"_test\\|func (p \\*Pusher)\\|func PushPack\\|func PushCommands\\|func PushObjects\\|func pushObjectsBatch\\|func pushCommandsBatch\" | head -30\necho \"=== NewPusher callers ===\"\ngrep -rn \"NewPusher\\|gitproto.Pusher{\" --include=\"*.go\" internal/ cmd/ unstable/ internalbridge/ | grep -v \"_test\" | head",
   "description": "Find direct push-func callers and Pusher construction"
 }
 ```
@@ -3339,7 +3339,7 @@ tool_use Bash
 id: toolu_016U3xBp9uagYYPMPyZvb6Py
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\necho \"=== syncplan.go flag + req.Options region ===\"\nsed -n '120,160p' cmd/git-sync/syncplan.go\necho \"=== where req.Options is defined (type) ===\"\ngrep -rn \"TargetMaxPackBytes\\|Options \" cmd/git-sync/*.go | grep -iv \"flag\\|_test\" | head\necho \"=== syncer Config struct around MaxPackBytes ===\"\nsed -n '78,95p' internal/syncer/syncer.go",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\necho \"=== syncplan.go flag + req.Options region ===\"\nsed -n '120,160p' cmd/git-sync/syncplan.go\necho \"=== where req.Options is defined (type) ===\"\ngrep -rn \"TargetMaxPackBytes\\|Options \" cmd/git-sync/*.go | grep -iv \"flag\\|_test\" | head\necho \"=== syncer Config struct around MaxPackBytes ===\"\nsed -n '78,95p' internal/syncer/syncer.go",
   "description": "Read flag and config plumbing"
 }
 ```
@@ -3379,7 +3379,7 @@ tool_use Bash
 id: toolu_01BMcK6wG4ruN2xSCUA2Wnme
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\necho \"=== Options struct definition ===\"\ngrep -rn \"TargetMaxPackBytes\" --include=\"*.go\" . | grep -iv \"_test\\|cmd/\\|syncer.go\\|bootstrap.go\" \necho \"=== find the struct holding these Options fields ===\"\ngrep -rn \"MaterializedMaxObjects\\b\" --include=\"*.go\" . | grep -iv \"_test\\|cmd/\" | head",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\necho \"=== Options struct definition ===\"\ngrep -rn \"TargetMaxPackBytes\" --include=\"*.go\" . | grep -iv \"_test\\|cmd/\\|syncer.go\\|bootstrap.go\" \necho \"=== find the struct holding these Options fields ===\"\ngrep -rn \"MaterializedMaxObjects\\b\" --include=\"*.go\" . | grep -iv \"_test\\|cmd/\" | head",
   "description": "Locate Options struct type"
 }
 ```
@@ -3411,7 +3411,7 @@ tool_use Bash
 id: toolu_014ubjVet1nMXygBvqMY3Kit
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\necho \"=== unstable/client.go Options struct (38-50) ===\"\nsed -n '38,50p' unstable/client.go\necho \"=== unstable/client.go mapping to syncer cfg (270,320) ===\"\nsed -n '270,320p' unstable/client.go\necho \"=== syncer pusher creation (735,745) ===\"\nsed -n '735,745p' internal/syncer/syncer.go",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\necho \"=== unstable/client.go Options struct (38-50) ===\"\nsed -n '38,50p' unstable/client.go\necho \"=== unstable/client.go mapping to syncer cfg (270,320) ===\"\nsed -n '270,320p' unstable/client.go\necho \"=== syncer pusher creation (735,745) ===\"\nsed -n '735,745p' internal/syncer/syncer.go",
   "description": "Read Options struct and mappings"
 }
 ```
@@ -3501,7 +3501,7 @@ tool_use Bash
 id: toolu_017gMdvkYw8j5B92Y378Xhh6
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\ngrep -rn \"ProgressWriter() \\|ProgressWriter()\" internal/gitproto/conn.go internal/gitproto/*.go | grep -v \"_test\\|conn.ProgressWriter()\" | head; echo \"=== progressSink ===\"; sed -n '/func progressSink/,/^}/p' internal/gitproto/*.go | head -25",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\ngrep -rn \"ProgressWriter() \\|ProgressWriter()\" internal/gitproto/conn.go internal/gitproto/*.go | grep -v \"_test\\|conn.ProgressWriter()\" | head; echo \"=== progressSink ===\"; sed -n '/func progressSink/,/^}/p' internal/gitproto/*.go | head -25",
   "description": "Find ProgressWriter and progressSink"
 }
 ```
@@ -3537,7 +3537,7 @@ tool_use Read
 id: toolu_013p3MGVecSZWJRUWRr7j5yh
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 41,
   "limit": 130
 }
@@ -3585,7 +3585,7 @@ id: toolu_01AmZ1rfcpjV8N2vTpNb7Jmd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "type Pusher struct {\n\tConn        Conn\n\tAdv         *packp.AdvRefs\n\tVerbose     bool\n\tOnRejection func(refName plumbing.ReferenceName, status string)\n}",
   "new_string": "type Pusher struct {\n\tConn        Conn\n\tAdv         *packp.AdvRefs\n\tVerbose     bool\n\tOnRejection func(refName plumbing.ReferenceName, status string)\n\n\t// MaxRefUpdates caps ref-update commands per receive-pack request. Zero\n\t// uses the env-or-default limit (see MaxRefUpdatesEnv); a positive value\n\t// overrides it — e.g. from the --target-max-ref-updates flag.\n\tMaxRefUpdates int\n}"
 }
@@ -3596,7 +3596,7 @@ id: toolu_01AmZ1rfcpjV8N2vTpNb7Jmd
 tool_result
 id: toolu_01AmZ1rfcpjV8N2vTpNb7Jmd
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3606,7 +3606,7 @@ id: toolu_01WFcnTVnLEM8CT9LQJ1Subr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// chunkRefUpdates splits commands into batches no larger than\n// maxRefUpdatesPerPush. Input that already fits is returned as a single batch\n// (including the empty slice, so callers preserve their one-request behavior).\nfunc chunkRefUpdates(commands []PushCommand) [][]PushCommand {\n\tif len(commands) <= maxRefUpdatesPerPush {\n\t\treturn [][]PushCommand{commands}\n\t}\n\tbatches := make([][]PushCommand, 0, (len(commands)+maxRefUpdatesPerPush-1)/maxRefUpdatesPerPush)\n\tfor start := 0; start < len(commands); start += maxRefUpdatesPerPush {\n\t\tend := min(start+maxRefUpdatesPerPush, len(commands))\n\t\tbatches = append(batches, commands[start:end])\n\t}\n\treturn batches\n}\n\n// splitFirstBatch peels off the first batch (up to maxRefUpdatesPerPush) so a\n// push can carry the pack with that batch and send the remainder as ref-only\n// follow-ups. rest is nil when commands already fit in a single request.\nfunc splitFirstBatch(commands []PushCommand) (first, rest []PushCommand) {\n\tif len(commands) <= maxRefUpdatesPerPush {\n\t\treturn commands, nil\n\t}\n\treturn commands[:maxRefUpdatesPerPush], commands[maxRefUpdatesPerPush:]\n}\n\n// PushPack streams a pack to the target.\nfunc (p *Pusher) PushPack(ctx context.Context, commands []PushCommand, pack io.ReadCloser) error {\n\treturn PushPack(ctx, p.Conn, p.Adv, commands, pack, p.Verbose, p.OnRejection)\n}\n\n// PushCommands sends ref-only updates. Creates/updates carry an empty pack;\n// delete-only pushes carry no pack. See the package-level PushCommands.\nfunc (p *Pusher) PushCommands(ctx context.Context, commands []PushCommand) error {\n\treturn PushCommands(ctx, p.Conn, p.Adv, commands, p.Verbose, p.OnRejection)\n}\n\n// PushObjects encodes and pushes locally materialized objects.\nfunc (p *Pusher) PushObjects(ctx context.Context, commands []PushCommand, store storer.Storer, hashes []plumbing.Hash) error {\n\treturn PushObjects(ctx, p.Conn, p.Adv, […]
 
 > TOOL
@@ -3614,7 +3614,7 @@ id: toolu_01WFcnTVnLEM8CT9LQJ1Subr
 tool_result
 id: toolu_01WFcnTVnLEM8CT9LQJ1Subr
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3627,7 +3627,7 @@ tool_use Read
 id: toolu_01DujgnB7Hp9h7Ga2ANoSKYk
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 420,
   "limit": 55
 }
@@ -3683,7 +3683,7 @@ id: toolu_015BgmrG2KLXdVKAdTepzEYW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// PushObjects pushes locally-materialized objects to the target.\n//\n// A push within the per-request ref-update cap (maxRefUpdatesPerPush) is a\n// single atomic receive-pack request. A larger push is split: the materialized\n// pack — which carries every object for the whole push — rides with the first\n// batch of object-bearing commands, then the remaining refs (and any deletes)\n// move as ref-only updates because the objects are already committed.\nfunc PushObjects(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tstore storer.Storer,\n\thashes []plumbing.Hash,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\tif len(commands) <= maxRefUpdatesPerPush {\n\t\treturn pushObjectsBatch(ctx, conn, adv, commands, store, hashes, verbose, onRejection)\n\t}\n\n\tupdates := make([]PushCommand, 0, len(commands))\n\tvar deletes []PushCommand\n\tfor _, c := range commands {\n\t\tif c.Delete {\n\t\t\tdeletes = append(deletes, c)\n\t\t} else {\n\t\t\tupdates = append(updates, c)\n\t\t}\n\t}\n\n\tif len(updates) > 0 {\n\t\tfirst, rest := splitFirstBatch(updates)\n\t\tif err := pushObjectsBatch(ctx, conn, adv, first, store, hashes, verbose, onRejection); err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif len(rest) > 0 {\n\t\t\tif err := PushCommands(ctx, conn, adv, rest, verbose, onRejection); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\tif len(deletes) > 0 {\n\t\treturn PushCommands(ctx, conn, adv, deletes, verbose, onRejection)\n\t}\n\treturn nil\n}",
   "new_string": "// PushObjects pushes locally-materialized objects to the target.\n//\n// A push within the per-request ref-update limit (see effectiveMaxRefUpdates)\n// is a single atomic receive-pack request. A larger push is […]
 
@@ -3692,7 +3692,7 @@ id: toolu_015BgmrG2KLXdVKAdTepzEYW
 tool_result
 id: toolu_015BgmrG2KLXdVKAdTepzEYW
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3705,7 +3705,7 @@ tool_use Read
 id: toolu_01VX2iFknzvbf9HrXkCWC9FT
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 655,
   "limit": 80
 }
@@ -3771,7 +3771,7 @@ tool_use Read
 id: toolu_01VpLAGdkLMcD1Kppg7FfKSi
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "offset": 734,
   "limit": 60
 }
@@ -3822,7 +3822,7 @@ id: toolu_01XD1gkFddrmdgzXxFaeYRH1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "// PushPack pushes a pack stream (relay) to the target.\nfunc PushPack(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tpack io.ReadCloser,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\tfor _, cmd := range commands {\n\t\tif cmd.Delete {\n\t\t\t_ = pack.Close()\n\t\t\treturn errors.New(\"pack push only supports create and update actions\")\n\t\t}\n\t}\n\n\t// The pack carries every object for all commands, so it rides with the\n\t// first batch; once committed the remaining refs update without re-sending\n\t// objects. This keeps each request under the server's per-push ref-update\n\t// cap (see maxRefUpdatesPerPush).\n\tfirst, rest := splitFirstBatch(commands)\n\n\treq, _, _, err := buildUpdateRequest(adv, first, verbose)\n\tif err != nil {\n\t\t_ = pack.Close()\n\t\treturn err\n\t}\n\n\terr = sendReceivePack(ctx, conn, req, pack, verbose, onRejection)\n\tcloseErr := pack.Close()\n\tif err != nil {\n\t\treturn err\n\t}\n\tif closeErr != nil {\n\t\treturn fmt.Errorf(\"close pack: %w\", closeErr)\n\t}\n\n\tif len(rest) > 0 {\n\t\treturn PushCommands(ctx, conn, adv, rest, verbose, onRejection)\n\t}\n\treturn nil\n}",
   "new_string": "// PushPack pushes a pack stream (relay) to the target.\nfunc PushPack(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tpack io.ReadCloser,\n\tmaxRefUpdates int,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\tfor _, cmd := range commands {\n\t\tif cmd.Delete {\n\t\t\t_ = pack.Close()\n\t\t\treturn errors.New(\"pack push only supports create and update actions\")\n\t\t}\n\t}\n\n\t// The pack carries every object for all commands, so it rides with the\n\t// first batch; once committed the remaining refs update without re-sending\n\t// […]
 
@@ -3831,7 +3831,7 @@ id: toolu_01XD1gkFddrmdgzXxFaeYRH1
 tool_result
 id: toolu_01XD1gkFddrmdgzXxFaeYRH1
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3841,7 +3841,7 @@ id: toolu_013H7RhFR8ZYHERHae7nDDWq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go",
   "old_string": "func PushCommands(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\tfor _, batch := range chunkRefUpdates(commands) {\n\t\tif err := pushCommandsBatch(ctx, conn, adv, batch, verbose, onRejection); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}\n\n// pushCommandsBatch sends one receive-pack request for a single batch of\n// ref-only commands; the referenced objects must already exist on the target.",
   "new_string": "func PushCommands(\n\tctx context.Context,\n\tconn Conn,\n\tadv *packp.AdvRefs,\n\tcommands []PushCommand,\n\tmaxRefUpdates int,\n\tverbose bool,\n\tonRejection func(plumbing.ReferenceName, string),\n) error {\n\tbatches := chunkRefUpdates(commands, effectiveMaxRefUpdates(maxRefUpdates))\n\tfor i, batch := range batches {\n\t\t// Ref-only batches carry no useful target progress; suppress the empty\n\t\t// sideband (verbose=false) and report completion ourselves so a large\n\t\t// push doesn't spew a bare \"target:\" line per batch.\n\t\tif err := pushCommandsBatch(ctx, conn, adv, batch, false, onRejection); err != nil {\n\t\t\treturn err\n\t\t}\n\t\tlogRefUpdateBatch(conn, verbose, i+1, len(batches), len(batch))\n\t}\n\treturn nil\n}\n\n// pushCommandsBatch sends one receive-pack request for a single batch of\n// ref-only commands; the referenced objects must already exist on the target."
 }
@@ -3852,7 +3852,7 @@ id: toolu_013H7RhFR8ZYHERHae7nDDWq
 tool_result
 id: toolu_013H7RhFR8ZYHERHae7nDDWq
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3866,7 +3866,7 @@ id: toolu_01CHVt8ivLyxQn2bsYwCeWHf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "old_string": "\tMaxPackBytes           int64\n\tTargetMaxPackBytes     int64\n\tMaterializedMaxObjects int",
   "new_string": "\tMaxPackBytes           int64\n\tTargetMaxPackBytes     int64\n\tTargetMaxRefUpdates    int\n\tMaterializedMaxObjects int"
 }
@@ -3886,7 +3886,7 @@ tool_use Read
 id: toolu_014ojZgsEJMoekWQ2mW2dDU6
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "offset": 84,
   "limit": 10
 }
@@ -3916,7 +3916,7 @@ id: toolu_0129cFPqyRwtezAyV1UKsGzT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "old_string": "\tMaxPackBytes           int64\n\tTargetMaxPackBytes     int64\n\tMaterializedMaxObjects int\n\tProtocolMode           string",
   "new_string": "\tMaxPackBytes           int64\n\tTargetMaxPackBytes     int64\n\tTargetMaxRefUpdates    int\n\tMaterializedMaxObjects int\n\tProtocolMode           string"
 }
@@ -3927,7 +3927,7 @@ id: toolu_0129cFPqyRwtezAyV1UKsGzT
 tool_result
 id: toolu_0129cFPqyRwtezAyV1UKsGzT
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3937,7 +3937,7 @@ id: toolu_01Dri9pSsMMeWhST3dT6igGb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "old_string": "\ts.target.pusher = gitproto.NewPusher(targetConn, targetAdv, cfg.Verbose)",
   "new_string": "\ts.target.pusher = gitproto.NewPusher(targetConn, targetAdv, cfg.Verbose)\n\ts.target.pusher.MaxRefUpdates = cfg.TargetMaxRefUpdates"
 }
@@ -3948,7 +3948,7 @@ id: toolu_01Dri9pSsMMeWhST3dT6igGb
 tool_result
 id: toolu_01Dri9pSsMMeWhST3dT6igGb
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3962,7 +3962,7 @@ id: toolu_016HQcp1PrAJePaMv9pvR8mR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/unstable/client.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/unstable/client.go",
   "old_string": "\tMaxPackBytes           int64  `json:\"maxPackBytes\"`\n\tTargetMaxPackBytes     int64  `json:\"targetMaxPackBytes\"`\n\tMaterializedMaxObjects int    `json:\"materializedMaxObjects\"`",
   "new_string": "\tMaxPackBytes           int64  `json:\"maxPackBytes\"`\n\tTargetMaxPackBytes     int64  `json:\"targetMaxPackBytes\"`\n\tTargetMaxRefUpdates    int    `json:\"targetMaxRefUpdates\"`\n\tMaterializedMaxObjects int    `json:\"materializedMaxObjects\"`"
 }
@@ -3982,7 +3982,7 @@ tool_use Read
 id: toolu_01HC9em1rT2xtvScnsefRfG3
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/unstable/client.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/unstable/client.go",
   "offset": 38,
   "limit": 10
 }
@@ -4012,7 +4012,7 @@ id: toolu_01T6sY8bBhBuSswrJeDY1GPX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/unstable/client.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/unstable/client.go",
   "old_string": "\tMaxPackBytes           int64  `json:\"maxPackBytes\"`\n\tTargetMaxPackBytes     int64  `json:\"targetMaxPackBytes\"`\n\tMaterializedMaxObjects int    `json:\"materializedMaxObjects\"`\n\tBootstrapStrategy      string `json:\"bootstrapStrategy,omitempty\"`\n}",
   "new_string": "\tMaxPackBytes           int64  `json:\"maxPackBytes\"`\n\tTargetMaxPackBytes     int64  `json:\"targetMaxPackBytes\"`\n\tTargetMaxRefUpdates    int    `json:\"targetMaxRefUpdates\"`\n\tMaterializedMaxObjects int    `json:\"materializedMaxObjects\"`\n\tBootstrapStrategy      string `json:\"bootstrapStrategy,omitempty\"`\n}"
 }
@@ -4023,7 +4023,7 @@ id: toolu_01T6sY8bBhBuSswrJeDY1GPX
 tool_result
 id: toolu_01T6sY8bBhBuSswrJeDY1GPX
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/unstable/client.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/unstable/client.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4037,7 +4037,7 @@ id: toolu_017ZG18pXDiWzX5QzjFt7KD3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/unstable/client.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/unstable/client.go",
   "old_string": "\t\tMaxPackBytes:           req.Options.MaxPackBytes,\n\t\tTargetMaxPackBytes:     req.Options.TargetMaxPackBytes,\n\t\tMaterializedMaxObjects: maxObjects,\n\t\tProtocolMode:           protocolString(req.Policy.Protocol),",
   "new_string": "\t\tMaxPackBytes:           req.Options.MaxPackBytes,\n\t\tTargetMaxPackBytes:     req.Options.TargetMaxPackBytes,\n\t\tTargetMaxRefUpdates:    req.Options.TargetMaxRefUpdates,\n\t\tMaterializedMaxObjects: maxObjects,\n\t\tProtocolMode:           protocolString(req.Policy.Protocol),"
 }
@@ -4048,7 +4048,7 @@ id: toolu_017ZG18pXDiWzX5QzjFt7KD3
 tool_result
 id: toolu_017ZG18pXDiWzX5QzjFt7KD3
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/unstable/client.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/unstable/client.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4058,7 +4058,7 @@ id: toolu_01CVvA86tp9XKV3SsBdwbKtJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/unstable/client.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/unstable/client.go",
   "old_string": "\t\tMaxPackBytes:       req.Options.MaxPackBytes,\n\t\tTargetMaxPackBytes: req.Options.TargetMaxPackBytes,\n\t\tProtocolMode:       protocolString(req.Protocol),",
   "new_string": "\t\tMaxPackBytes:        req.Options.MaxPackBytes,\n\t\tTargetMaxPackBytes:  req.Options.TargetMaxPackBytes,\n\t\tTargetMaxRefUpdates: req.Options.TargetMaxRefUpdates,\n\t\tProtocolMode:        protocolString(req.Protocol),"
 }
@@ -4069,7 +4069,7 @@ id: toolu_01CVvA86tp9XKV3SsBdwbKtJ
 tool_result
 id: toolu_01CVvA86tp9XKV3SsBdwbKtJ
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/unstable/client.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/unstable/client.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4083,7 +4083,7 @@ id: toolu_01HT9Qtsq8d91rwAkmrpSMyC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/cmd/git-sync/syncplan.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/cmd/git-sync/syncplan.go",
   "old_string": "\tcmd.Flags().Int64Var(&req.Options.TargetMaxPackBytes, \"target-max-pack-bytes\", 0, \"target receive-pack body size limit; batches are planned and auto-subdivided to fit\")\n\tcmd.Flags().StringVar(&req.Options.BootstrapStrategy, \"bootstrap-strategy\", \"\", \"checkpoint chain ordering for bootstrap: \\\"first-parent\\\" (default) or \\\"topo\\\". Use \\\"topo\\\" for merge-heavy repos where individual first-parent steps drag in unboundedly large side branches; requires the target to allow non-fast-forward updates on the refs/gitsync/ namespace\")",
   "new_string": "\tcmd.Flags().Int64Var(&req.Options.TargetMaxPackBytes, \"target-max-pack-bytes\", 0, \"target receive-pack body size limit; batches are planned and auto-subdivided to fit\")\n\tcmd.Flags().IntVar(&req.Options.TargetMaxRefUpdates, \"target-max-ref-updates\", 0, \"max ref-update commands per receive-pack request; 0 uses the default (env GITSYNC_MAX_REF_UPDATES_PER_PUSH or 5000). Raise for entire-server targets (up to 25000); lower for providers that reject large ref pushes\")\n\tcmd.Flags().StringVar(&req.Options.BootstrapStrategy, \"bootstrap-strategy\", \"\", \"checkpoint chain ordering for bootstrap: \\\"first-parent\\\" (default) or \\\"topo\\\". Use \\\"topo\\\" for merge-heavy repos where individual first-parent steps drag in unboundedly large side branches; requires the target to allow non-fast-forward updates on the refs/gitsync/ namespace\")"
 }
@@ -4103,7 +4103,7 @@ tool_use Read
 id: toolu_01GZWMXsUzmJyY4kEds6WBdv
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/cmd/git-sync/syncplan.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/cmd/git-sync/syncplan.go",
   "offset": 139,
   "limit": 4
 }
@@ -4127,7 +4127,7 @@ id: toolu_013nMw1QoPtmiRhjR3skquBG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/cmd/git-sync/syncplan.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/cmd/git-sync/syncplan.go",
   "old_string": "\tcmd.Flags().Int64Var(&req.Options.TargetMaxPackBytes, \"target-max-pack-bytes\", 0, \"target receive-pack body size limit; batches are planned and auto-subdivided to fit\")\n\tcmd.Flags().StringVar(&req.Options.BootstrapStrategy, \"bootstrap-strategy\", \"\", \"checkpoint chain ordering for bootstrap: \\\"first-parent\\\" (default) or \\\"topo\\\". Use \\\"topo\\\" for merge-heavy repos where individual first-parent steps drag in unboundedly large side branches; requires the target to allow non-fast-forward updates on the refs/gitsync/ namespace\")\n\taddProtocolFlag(cmd, &protocolVal)",
   "new_string": "\tcmd.Flags().Int64Var(&req.Options.TargetMaxPackBytes, \"target-max-pack-bytes\", 0, \"target receive-pack body size limit; batches are planned and auto-subdivided to fit\")\n\tcmd.Flags().IntVar(&req.Options.TargetMaxRefUpdates, \"target-max-ref-updates\", 0, \"max ref-update commands per receive-pack request; 0 uses the default (env GITSYNC_MAX_REF_UPDATES_PER_PUSH or 5000). Raise for entire-server targets (up to 25000); lower for providers that reject large ref pushes\")\n\tcmd.Flags().StringVar(&req.Options.BootstrapStrategy, \"bootstrap-strategy\", \"\", \"checkpoint chain ordering for bootstrap: \\\"first-parent\\\" (default) or \\\"topo\\\". Use \\\"topo\\\" for merge-heavy repos where individual first-parent steps drag in unboundedly large side branches; requires the target to allow non-fast-forward updates on the refs/gitsync/ namespace\")\n\taddProtocolFlag(cmd, &protocolVal)"
 }
@@ -4138,7 +4138,7 @@ id: toolu_013nMw1QoPtmiRhjR3skquBG
 tool_result
 id: toolu_013nMw1QoPtmiRhjR3skquBG
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/cmd/git-sync/syncplan.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/cmd/git-sync/syncplan.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4147,7 +4147,7 @@ tool_use Read
 id: toolu_012rdw86HCfGPurnRjeb7zdz
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/cmd/git-sync/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/cmd/git-sync/bootstrap.go",
   "offset": 79,
   "limit": 4
 }
@@ -4171,7 +4171,7 @@ id: toolu_01RrVFP4RgSKkTNeMSnMjmH9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/cmd/git-sync/bootstrap.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/cmd/git-sync/bootstrap.go",
   "old_string": "\tcmd.Flags().Int64Var(&req.Options.TargetMaxPackBytes, \"target-max-pack-bytes\", 0, \"target receive-pack body size limit; batches are planned and auto-subdivided to fit\")\n\tcmd.Flags().StringVar(&req.Options.BootstrapStrategy, \"bootstrap-strategy\", \"\", \"checkpoint chain ordering: \\\"first-parent\\\" (default) or \\\"topo\\\". Use \\\"topo\\\" for merge-heavy repos where individual first-parent steps drag in unboundedly large side branches; requires the target to allow non-fast-forward updates on the refs/gitsync/ namespace\")",
   "new_string": "\tcmd.Flags().Int64Var(&req.Options.TargetMaxPackBytes, \"target-max-pack-bytes\", 0, \"target receive-pack body size limit; batches are planned and auto-subdivided to fit\")\n\tcmd.Flags().IntVar(&req.Options.TargetMaxRefUpdates, \"target-max-ref-updates\", 0, \"max ref-update commands per receive-pack request; 0 uses the default (env GITSYNC_MAX_REF_UPDATES_PER_PUSH or 5000). Raise for entire-server targets (up to 25000); lower for providers that reject large ref pushes\")\n\tcmd.Flags().StringVar(&req.Options.BootstrapStrategy, \"bootstrap-strategy\", \"\", \"checkpoint chain ordering: \\\"first-parent\\\" (default) or \\\"topo\\\". Use \\\"topo\\\" for merge-heavy repos where individual first-parent steps drag in unboundedly large side branches; requires the target to allow non-fast-forward updates on the refs/gitsync/ namespace\")"
 }
@@ -4182,7 +4182,7 @@ id: toolu_01RrVFP4RgSKkTNeMSnMjmH9
 tool_result
 id: toolu_01RrVFP4RgSKkTNeMSnMjmH9
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/cmd/git-sync/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/cmd/git-sync/bootstrap.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4239,7 +4239,7 @@ tool_use Bash
 id: toolu_01KdmSumrveADHdudPvrstNv
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\ngrep -n \"PushPack(context\\|PushCommands(context\\|PushObjects(context\\|chunkRefUpdates(\\|splitFirstBatch(\\|maxRefUpdatesPerPush\" internal/gitproto/push_test.go",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\ngrep -n \"PushPack(context\\|PushCommands(context\\|PushObjects(context\\|chunkRefUpdates(\\|splitFirstBatch(\\|maxRefUpdatesPerPush\" internal/gitproto/push_test.go",
   "description": "List test call sites needing the param"
 }
 ```
@@ -4274,7 +4274,7 @@ tool_use Read
 id: toolu_01P4TidMCnC8NxbTcRTEcb14
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "offset": 144,
   "limit": 75
 }
@@ -4337,7 +4337,7 @@ tool_use Bash
 id: toolu_01A2XeDSBP6uj3fRqBRjqcQp
 ```json
 {
-  "command": "cd /Users/soph/Work/entire/devenv/git-sync\nsed -n '318,326p;415,445p;493,500p' internal/gitproto/push_test.go",
+  "command": "cd /home/<USER>/Work/entire/devenv/git-sync\nsed -n '318,326p;415,445p;493,500p' internal/gitproto/push_test.go",
   "description": "Read remaining call sites"
 }
 ```
@@ -4407,7 +4407,7 @@ id: toolu_019U7GAdmk71Qv7W2oUCFsNx
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "\t}}, pack, false, nil)",
   "new_string": "\t}}, pack, 0, false, nil)"
 }
@@ -4418,7 +4418,7 @@ id: toolu_019U7GAdmk71Qv7W2oUCFsNx
 tool_result
 id: toolu_019U7GAdmk71Qv7W2oUCFsNx
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4428,7 +4428,7 @@ id: toolu_01DjXvG4an9Jd8yXAdEs7DyZ
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "\t}}, false, nil)",
   "new_string": "\t}}, 0, false, nil)"
 }
@@ -4439,7 +4439,7 @@ id: toolu_01DjXvG4an9Jd8yXAdEs7DyZ
 tool_result
 id: toolu_01DjXvG4an9Jd8yXAdEs7DyZ
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4449,7 +4449,7 @@ id: toolu_017sGAWYz4cgvCizskDkcC8p
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "\t}}, memory.NewStorage(), nil, false, nil)",
   "new_string": "\t}}, memory.NewStorage(), nil, 0, false, nil)"
 }
@@ -4460,7 +4460,7 @@ id: toolu_017sGAWYz4cgvCizskDkcC8p
 tool_result
 id: toolu_017sGAWYz4cgvCizskDkcC8p
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4470,7 +4470,7 @@ id: toolu_015nTwLsA2bBF49kMe1XF9Hx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "\terr = PushPack(context.Background(), conn, adv, []PushCommand{\n\t\t{Name: \"refs/heads/old\", Delete: true},\n\t}, pack, false, nil)",
   "new_string": "\terr = PushPack(context.Background(), conn, adv, []PushCommand{\n\t\t{Name: \"refs/heads/old\", Delete: true},\n\t}, pack, 0, false, nil)"
 }
@@ -4481,7 +4481,7 @@ id: toolu_015nTwLsA2bBF49kMe1XF9Hx
 tool_result
 id: toolu_015nTwLsA2bBF49kMe1XF9Hx
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4494,7 +4494,7 @@ tool_use Read
 id: toolu_01SDH9RPx3CJpN2JBxFx9r4L
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "offset": 793,
   "limit": 80
 }
@@ -4558,7 +4558,7 @@ id: toolu_01J7G5yfzn24qBjAAvrLz71j
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "func TestChunkRefUpdates(t *testing.T) {\n\trequire.Len(t, chunkRefUpdates(nil), 1)\n\trequire.Len(t, chunkRefUpdates(make([]PushCommand, maxRefUpdatesPerPush)), 1)\n\n\tbatches := chunkRefUpdates(make([]PushCommand, maxRefUpdatesPerPush+1))\n\trequire.Len(t, batches, 2)\n\trequire.Len(t, batches[0], maxRefUpdatesPerPush)\n\trequire.Len(t, batches[1], 1)\n}\n\n// TestPushCommandsBatchesOverCap guards that a ref-only push exceeding the\n// per-request cap splits into multiple receive-pack requests, each within the\n// cap, so the server's too-many-ref-update-commands limit isn't tripped.\nfunc TestPushCommandsBatchesOverCap(t *testing.T) {\n\trec := &pushRecorder{}\n\tsrv := rec.server(t)\n\tdefer srv.Close()\n\n\tconn := connForServer(t, srv)\n\tadv := &packp.AdvRefs{}\n\n\tn := maxRefUpdatesPerPush + 5\n\trequire.NoError(t, PushCommands(context.Background(), conn, adv, makeCreateCommands(n), false, nil))\n\n\trec.mu.Lock()\n\tdefer rec.mu.Unlock()\n\trequire.Len(t, rec.pushes, 2)\n\trequire.Equal(t, maxRefUpdatesPerPush, rec.pushes[0].commands)\n\trequire.Equal(t, 5, rec.pushes[1].commands)\n\t// Every create batch carries a valid empty pack.\n\trequire.True(t, bytes.HasSuffix(rec.pushes[0].pack, emptyPack(adv)))\n\trequire.True(t, bytes.HasSuffix(rec.pushes[1].pack, emptyPack(adv)))\n}\n\n// TestPushPackBatchesOverCap guards that a pack push exceeding the per-request\n// cap sends the pack with the first batch and the remaining refs as ref-only\n// follow-up batches (the objects are already committed by the first request).\nfunc TestPushPackBatchesOverCap(t *testing.T) {\n\trec := &pushRecorder{}\n\tsrv := rec.server(t)\n\tdefer srv.Close()\n\n\tconn := connForServer(t, srv)\n\tadv := &packp.AdvRefs{}\n\n\tmarker := []byte(\"REAL-PACK-PAYLOAD-MARKER\")\n\tpack := io.NopCloser(bytes.NewReader(marker))\n\n\tn := maxRefUpdatesPerPush + 5\n\trequire.NoError(t, PushPack(context.Background(), conn, adv, makeCreateCommands(n), pack, false, nil))\n\n\trec.mu.Lock()\n\tdefer rec.mu.Unlock()\n\trequire.Len(t, rec.pushes, 2)\n\t// First batch: the real pack rides with a full cap's worth of commands.\n\trequire.Equal(t, maxRefUpdatesPerPush, rec.pushes[0].commands)\n\trequire.Equal(t, marker, rec.pushes[0].pack)\n\t// Remaining refs follow ref-only: an empty pack, no object payload.\n\trequire.Equal(t, 5, rec.pushes[1].commands)\n\trequire.True(t, bytes.HasSuffix(rec.pushes[1].pack, emptyPack(adv)))\n\trequire.False(t, bytes.Contains(rec.pushes[1].pack, marker))\n}",
   "new_string": "func TestChunkRefUpdates(t *testing.T) {\n\trequire.Len(t, […]
 
@@ -4567,7 +4567,7 @@ id: toolu_01J7G5yfzn24qBjAAvrLz71j
 tool_result
 id: toolu_01J7G5yfzn24qBjAAvrLz71j
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4633,7 +4633,7 @@ id: toolu_01NQ1GTdkT8rxPoUVwu8FzEp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go",
   "old_string": "// TestPushPackUsesDefaultLimitWhenZero confirms maxRefUpdates=0 falls back to",
   "new_string": "// TestPushCommandsVerboseLogsBatches confirms a multi-batch push reports each\n// batch to the progress writer when verbose, and stays quiet for one batch.\nfunc TestPushCommandsVerboseLogsBatches(t *testing.T) {\n\trec := &pushRecorder{}\n\tsrv := rec.server(t)\n\tdefer srv.Close()\n\n\tadv := &packp.AdvRefs{}\n\n\tvar buf bytes.Buffer\n\tconn := connForServer(t, srv)\n\tconn.ProgressOut = &buf\n\trequire.NoError(t, PushCommands(context.Background(), conn, adv, makeCreateCommands(7), 3, true, nil))\n\n\tout := buf.String()\n\trequire.Contains(t, out, \"pushed ref-update batch 1/3 (3 refs)\")\n\trequire.Contains(t, out, \"pushed ref-update batch 2/3 (3 refs)\")\n\trequire.Contains(t, out, \"pushed ref-update batch 3/3 (1 refs)\")\n\n\t// Single batch: no per-batch noise.\n\tvar single bytes.Buffer\n\tconn2 := connForServer(t, srv)\n\tconn2.ProgressOut = &single\n\trequire.NoError(t, PushCommands(context.Background(), conn2, adv, makeCreateCommands(2), 3, true, nil))\n\trequire.NotContains(t, single.String(), \"pushed ref-update batch\")\n}\n\n// TestPushPackUsesDefaultLimitWhenZero confirms maxRefUpdates=0 falls back to"
 }
@@ -4644,7 +4644,7 @@ id: toolu_01NQ1GTdkT8rxPoUVwu8FzEp
 tool_result
 id: toolu_01NQ1GTdkT8rxPoUVwu8FzEp
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/gitproto/push_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4726,7 +4726,7 @@ tool_use Bash
 id: toolu_01AbSMiMLhYZNxREe6rrAP9q
 ```json
 {
-  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nAdd --target-max-ref-updates flag; quiet ref-only batch progress\n\nPlumb a per-target ref-update batch size through the Pusher (MaxRefUpdates),\nthe syncer config, the unstable Options, and the replicate/sync/plan/bootstrap\ncommands as --target-max-ref-updates. Zero keeps the env-or-default limit\n(GITSYNC_MAX_REF_UPDATES_PER_PUSH or 5000); a positive value overrides it —\nraise it for entire-server targets (up to 25k), lower it for stricter\nproviders. No global mutable state: the value rides on the Pusher.\n\nAlso stop spewing a bare \"target:\" sideband line per ref-only follow-up batch:\nthose carry no useful progress, so push them with progress suppressed and,\nwhen verbose, emit one concise \"pushed ref-update batch N/M (K refs)\" line per\nbatch instead.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git push 2>&1 | tail -3",
+  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nAdd --target-max-ref-updates flag; quiet ref-only batch progress\n\nPlumb a per-target ref-update batch size through the Pusher (MaxRefUpdates),\nthe syncer config, the unstable Options, and the replicate/sync/plan/bootstrap\ncommands as --target-max-ref-updates. Zero keeps the env-or-default limit\n(GITSYNC_MAX_REF_UPDATES_PER_PUSH or 5000); a positive value overrides it —\nraise it for entire-server targets (up to 25k), lower it for stricter\nproviders. No global mutable state: the value rides on the Pusher.\n\nAlso stop spewing a bare \"target:\" sideband line per ref-only follow-up batch:\nthose carry no useful progress, so push them with progress suppressed and,\nwhen verbose, emit one concise \"pushed ref-update batch N/M (K refs)\" line per\nbatch instead.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git push 2>&1 | tail -3",
   "description": "Commit and push flag + progress changes"
 }
 ```

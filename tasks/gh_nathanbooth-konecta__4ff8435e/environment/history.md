@@ -231,7 +231,7 @@ tool_use Read
 id: toolu_012yXhuzHCK1aCnBprQjjxpk
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md"
 }
 ```
 
@@ -241,7 +241,7 @@ tool_use Read
 id: toolu_01K55iphbXErMKzZqqiLCT9c
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md"
 }
 ```
 
@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_01X4QX4SuCc5jB7TCndo6xUm
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/developer-guidelines.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/developer-guidelines.md"
 }
 ```
 
@@ -261,7 +261,7 @@ tool_use Read
 id: toolu_01GGvX7aXLzJhxyuQdy6vCpD
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md"
 }
 ```
 
@@ -271,7 +271,7 @@ tool_use Read
 id: toolu_017JsTd78uoyNodzBt1wZCre
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
 }
 ```
 
@@ -281,7 +281,7 @@ tool_use Read
 id: toolu_015wdSKsSGfRC45qHxSWKicD
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/development-toolkit.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/development-toolkit.md"
 }
 ```
 
@@ -570,7 +570,7 @@ tool_use Read
 id: toolu_01GaFyLhA5qzXET7RbbATPJv
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js"
 }
 ```
 
@@ -580,7 +580,7 @@ tool_use Read
 id: toolu_017ny4QXy9kQCcEnGv3TbRuH
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
 }
 ```
 
@@ -590,7 +590,7 @@ tool_use Read
 id: toolu_01EukGY9DkH1kFfPDCZGSyCA
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md"
 }
 ```
 
@@ -600,7 +600,7 @@ tool_use Read
 id: toolu_01Tx9pkhuNVfqpuFGCaq33sJ
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md"
 }
 ```
 
@@ -834,7 +834,7 @@ tool_use Read
 id: toolu_015kJzvozuokw7UJZikeGJf3
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/building-use-cases.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/building-use-cases.md"
 }
 ```
 
@@ -844,7 +844,7 @@ tool_use Read
 id: toolu_01NN8qfti97uE48kW8jccTPt
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/app-migration/service-guides/index.md"
 }
 ```
 
@@ -854,7 +854,7 @@ tool_use Read
 id: toolu_01GvCeJcQvZzGnApSHUZ1UuA
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js"
 }
 ```
 
@@ -1098,9 +1098,9 @@ id: toolu_01YGfmT3tFKD7Gcyw8Yfk5ie
 tool_result
 id: toolu_0116TWdvftYhYC967nshSBeF
 ```
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/REVIEW_NEW_APPLICATIONS_DOCS.md
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/REVIEW_FINDINGS_AT_A_GLANCE.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/REVIEW_NEW_APPLICATIONS_DOCS.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/REVIEW_FINDINGS_AT_A_GLANCE.md
 ```
 
 > TOOL
@@ -1108,7 +1108,7 @@ id: toolu_0116TWdvftYhYC967nshSBeF
 tool_result
 id: toolu_01P1wzm9P9MN84o3R21kdtwC
 ```
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/CRITICAL_FIXES_NEEDED.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/CRITICAL_FIXES_NEEDED.md
 ```
 
 > TOOL
@@ -1116,7 +1116,7 @@ id: toolu_01P1wzm9P9MN84o3R21kdtwC
 tool_result
 id: toolu_01YGfmT3tFKD7Gcyw8Yfk5ie
 ```
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/ARCHITECTURE_AND_CLARITY_ISSUES.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/ARCHITECTURE_AND_CLARITY_ISSUES.md
 ```
 
 > TOOL
@@ -1124,7 +1124,7 @@ id: toolu_01YGfmT3tFKD7Gcyw8Yfk5ie
 tool_result
 id: toolu_019WgBsHjxQVFp1Nvg6cAMER
 ```
-/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md
+/home/<USER>/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md
 ```
 
 > TOOL
@@ -1133,7 +1133,7 @@ tool_use Bash
 id: toolu_01U7FyJFvR18B1Vy5HepHj1w
 ```json
 {
-  "command": "rm /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/REVIEW_NEW_APPLICATIONS_DOCS.md /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/REVIEW_FINDINGS_AT_A_GLANCE.md /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/CRITICAL_FIXES_NEEDED.md /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/ARCHITECTURE_AND_CLARITY_ISSUES.md",
+  "command": "rm /home/<USER>/code/konecta-ix-platform/kix-platform-docs/REVIEW_NEW_APPLICATIONS_DOCS.md /home/<USER>/code/konecta-ix-platform/kix-platform-docs/TECHNICAL_REVIEW_SUMMARY.md /home/<USER>/code/konecta-ix-platform/kix-platform-docs/REVIEW_FINDINGS_AT_A_GLANCE.md /home/<USER>/code/konecta-ix-platform/kix-platform-docs/CRITICAL_FIXES_NEEDED.md /home/<USER>/code/konecta-ix-platform/kix-platform-docs/ARCHITECTURE_AND_CLARITY_ISSUES.md",
   "description": "Remove review artifacts from repo"
 }
 ```
@@ -1313,7 +1313,7 @@ id: toolu_01P4taCQFhx41nxdc6crHpvD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js",
   "old_string": "      { label: 'Technology Specs', to: '/docs/developer-guide/technology-specs' },",
   "new_string": "      { label: 'Technology Specs', to: '/docs/applications/technology-specs' },"
 }
@@ -1325,7 +1325,7 @@ tool_use Read
 id: toolu_01ARVABX5NShno5xGVfTaveF
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md"
 }
 ```
 
@@ -1334,7 +1334,7 @@ id: toolu_01ARVABX5NShno5xGVfTaveF
 tool_result
 id: toolu_01P4taCQFhx41nxdc6crHpvD
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/src/pages/index.js has been updated successfully.
 ```
 
 > TOOL
@@ -1455,7 +1455,7 @@ id: toolu_01YGkPxCCcNt5y6cfFZ94ZRR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md",
   "old_string": "This guide explains how to build services on the KIX Platform. It covers what the platform provides, how to build use cases, service patterns, and technology specifications.\n\n**Audience:** Use case developers building on KIX\n\n## Architecture Layers\n\n| Layer | Purpose | Components |\n|-------|---------|------------|\n| **Northbound** | Service exposure to consumers | Kong API Gateway, LiteLLM MCP Gateway, Admin UI |\n| **Capability** | Business logic and orchestration | Control Plane, Agents, Voice, Messaging, Knowledge |\n| **Southbound** | Infrastructure (abstracted) | GCP services, databases, storage, events |\n\n## Service Consumption Model\n\nConsumers access platform capabilities through three methods:\n\n| Method | Consumer Type | Authentication |\n|--------|---------------|----------------|\n| REST API (Kong) | External systems, applications | API Key or JWT |\n| MCP Tools (LiteLLM) | AI agents | Service account |\n| Admin UI | Internal users | OIDC |\n\nAll requests are authenticated, routed through the appropriate gateway, and executed by the capability layer. Infrastructure is never exposed directly to consumers.\n\n## Sections\n\n- **[Platform Overview](./platform-overview)** — What the platform provides and what developers build\n- **[Building Use Cases](./building-use-cases)** — Service patterns, development flow, and deployment\n- **[Branching Strategy](./branching-strategy)** — Gitflow model and branch-to-environment mapping\n- **[Technology Specs](./technology-specs)** — Detailed specifications for each platform component\n- […]
 
 > TOOL
@@ -1463,7 +1463,7 @@ id: toolu_01YGkPxCCcNt5y6cfFZ94ZRR
 tool_result
 id: toolu_01YGkPxCCcNt5y6cfFZ94ZRR
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/index.md has been updated successfully.
 ```
 
 > TOOL
@@ -1546,7 +1546,7 @@ id: toolu_01FYy8hCuChCFC92EkKp8DFL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js",
   "old_string": "        'developer-guide/secrets-management',\n        'developer-guide/development-toolkit',\n        'developer-guide/claude-code',",
   "new_string": "        'developer-guide/secrets-management',\n        // 'developer-guide/development-toolkit', // Placeholder — re-enable when content is added\n        'developer-guide/claude-code',"
 }
@@ -1558,7 +1558,7 @@ tool_use Read
 id: toolu_01A43dwRTdpyKgj7nTcSDNXu
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md"
 }
 ```
 
@@ -1567,7 +1567,7 @@ id: toolu_01A43dwRTdpyKgj7nTcSDNXu
 tool_result
 id: toolu_01FYy8hCuChCFC92EkKp8DFL
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/sidebars.js has been updated successfully.
 ```
 
 > TOOL
@@ -1689,7 +1689,7 @@ id: toolu_01PqKN2TMtpDSAroY6auLhF8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md",
   "old_string": "## What Developers Build\n\n| Component | Responsibility |\n|-----------|----------------|\n| **Agent Logic** | Business logic using CrewAI framework |\n| **API Endpoints** | Request handlers behind Kong routes |\n| **Data Schema** | Database tables and vector collections |\n| **Prompts** | LLM prompts and configurations |\n| **Workflows** | Multi-step orchestration (if needed) |",
   "new_string": "## Developer Responsibilities\n\nFor an overview of the components you build (CrewAI flows, MCP Servers, Python tools, custom UI), see the [Applications overview](/docs/applications). The table below summarises what you are responsible for once your use case is onboarded:\n\n| Responsibility | What This Means |\n|----------------|-----------------|\n| **Agent Logic** | Business logic using the CrewAI framework |\n| **API Endpoints** | Request handlers behind Kong routes |\n| **Data Schema** | Database tables and vector collections |\n| **Prompts** | LLM prompts and configurations |\n| **Workflows** | Multi-step orchestration (if needed) |"
 }
@@ -1700,7 +1700,7 @@ id: toolu_01PqKN2TMtpDSAroY6auLhF8
 tool_result
 id: toolu_01PqKN2TMtpDSAroY6auLhF8
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/platform-overview.md has been updated successfully.
 ```
 
 > AGENT
@@ -1714,7 +1714,7 @@ id: toolu_011PmEL5ahL4xNGy6CfWTkA1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md",
   "old_string": "# Applications\n\nThe KIX Platform for AI Solutions is a modular architecture designed to build, deploy and operate AI-powered applications at Konecta. It connects front-end applications, agentic workflows, language models, tool servers and observability through well-defined integration points — so AI developers can focus on creating the building blocks for their use case while the platform handles infrastructure, routing, authentication and governance.\n\n## What Developers Build\n\nDevelopers contribute one or more of the following components:\n\n- **Python tools** — Custom code logic consumed by AI agents\n- **Agentic flows** — CrewAI Crews and Flows that orchestrate multi-step AI tasks\n- **MCP Servers** — Expose APIs and data sources to LLMs as callable tools\n- **Custom UI** — A dedicated front-end, or use **Konecta IQ** as a ready-made interface to interact with agents\n\nEach component is developed and tested locally against an environment that mirrors production, then submitted for packaging and deployment through the standard CI/CD pipeline.\n\n## In This Section\n\n| Page | Description |\n|---|---|\n| [Application Architecture](./application-architecture) | Production architecture overview — LiteLLM, CrewAI, MCP Servers, models and observability |\n| [Local Development Setup](./local-development-setup) | Set up the full platform locally with step-by-step instructions for each component |\n\nSee also the […]
 
 > TOOL
@@ -1731,7 +1731,7 @@ tool_use Read
 id: toolu_01WPhpeUc2TjhkaSwsmXLKw8
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md"
 }
 ```
 
@@ -1775,7 +1775,7 @@ id: toolu_014Db7CLxsZyZfFL2CWNPaEF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md",
   "old_string": "# Applications\n\nThe KIX Platform for AI Solutions is a modular architecture designed to build, deploy and operate AI-powered applications at Konecta. It connects front-end applications, agentic workflows, language models, tool servers and observability through well-defined integration points — so AI developers can focus on creating the building blocks for their use case while the platform handles infrastructure, routing, authentication and governance.\n\n## What Developers Build\n\nDevelopers contribute one or more of the following components:\n\n- **Python tools** — Custom code logic consumed by AI agents\n- **Agentic flows** — CrewAI Crews and Flows that orchestrate multi-step AI tasks\n- **MCP Servers** — Expose APIs and data sources to LLMs as callable tools\n- **Custom UI** — A dedicated front-end, or use **Konecta IQ** as a ready-made interface to interact with agents\n\nEach component is developed and tested locally against an environment that mirrors production, then submitted for packaging and deployment through the standard CI/CD pipeline.\n\n## In This Section\n\n| Page | Description |\n|---|---|\n| [Application Architecture](./application-architecture) | Production architecture overview — LiteLLM, CrewAI, MCP Servers, models and observability |\n| [Local Development Setup](./local-development-setup) | Set up the full platform locally with step-by-step instructions for each component |\n\nSee also the […]
 
 > TOOL
@@ -1783,7 +1783,7 @@ id: toolu_014Db7CLxsZyZfFL2CWNPaEF
 tool_result
 id: toolu_014Db7CLxsZyZfFL2CWNPaEF
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/index.md has been updated successfully.
 ```
 
 > TOOL
@@ -1865,7 +1865,7 @@ tool_use Read
 id: toolu_01HHSAfsjagTCJZ1qbVq8zAQ
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md"
 }
 ```
 
@@ -1875,7 +1875,7 @@ tool_use Read
 id: toolu_01Wg7C9ParQiQuaMfnvEc8vu
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md"
 }
 ```
 
@@ -1885,7 +1885,7 @@ tool_use Read
 id: toolu_01RSc4eT3xfRkbwJvfizCoAy
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md"
 }
 ```
 
@@ -2019,7 +2019,7 @@ id: toolu_0139BPaQrih248eke2rzRXuP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md",
   "old_string": "---\ntitle: \"Application Architecture\"\nsidebar_label: \"Application Architecture\"\nsidebar_position: 4\ndescription: \"Architecture patterns and standards for KIX Platform applications\"\n---",
   "new_string": "---\ntitle: \"Application Architecture\"\nsidebar_label: \"Application Architecture\"\nsidebar_position: 2\ndescription: \"Architecture patterns and standards for KIX Platform applications\"\n---"
 }
@@ -2032,7 +2032,7 @@ id: toolu_01Lo1oTXubbQSa1T4ZaKPhYk
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md",
   "old_string": "## Related Documentation\n\n- [Platform Architecture](/docs/architecture) — Infrastructure-level view of the KIX Platform (GCP, GKE, networking)\n- [LiteLLM Gateway](/docs/services/litellm-gateway) — Detailed configuration and operations guide for the AI gateway\n- [Observability](/docs/app-migration/observability) — Full monitoring, logging and tracing stack details",
   "new_string": "## Next Steps\n\n- [Technology Specs](./technology-specs) — Detailed specifications for each platform component\n- [Local Development Setup](./local-development-setup) — Replicate this architecture on your local machine\n\n## Related Documentation\n\n- [Platform Architecture](/docs/architecture) — Infrastructure-level view of the KIX Platform (GCP, GKE, networking)\n- [LiteLLM Gateway](/docs/services/litellm-gateway) — Detailed configuration and operations guide for the AI gateway\n- [Observability](/docs/app-migration/observability) — Monitoring, logging and tracing stack details"
 }
@@ -2045,7 +2045,7 @@ id: toolu_01PZiWDy3ZELuVhQSkkCmKsC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
   "old_string": "---\ntitle: \"Local Development Setup\"\nsidebar_label: \"Local Development Setup\"\nsidebar_position: 5\ndescription: \"Setting up your local environment for KIX Platform application development\"\n---",
   "new_string": "---\ntitle: \"Local Development Setup\"\nsidebar_label: \"Local Development Setup\"\nsidebar_position: 4\ndescription: \"Setting up your local environment for KIX Platform application development\"\n---"
 }
@@ -2058,7 +2058,7 @@ id: toolu_01Djv6ffLeDnQj6kZzJ2nhar
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
   "old_string": "## What AI Developers Build\n\nAI developers are expected to use the platform and focus on creating the building blocks required for their use case. The platform handles infrastructure, routing, authentication and observability — developers provide the logic. Typical contributions include:\n\n- **Python tools** — Custom code logic consumed by agents\n- **Agentic flows** — CrewAI Crews and Flows that orchestrate multi-step AI tasks\n- **MCP Servers** — Make APIs and data sources accessible to LLMs as tools\n- **Custom UI** — A dedicated front-end for a specific use case, or simply use **Konecta IQ** as a readily available UI to interact with agents without building any interface\n\n## Production Architecture Recap\n\nThe KIX Platform for AI Solutions runs a modular architecture in production where applications connect to an AI gateway (LiteLLM), an agentic orchestration layer (CrewAI), MCP Servers for tool capabilities and a full observability stack. For a detailed breakdown of each component and how they interact, see the [Application Architecture](./application-architecture) page.",
   "new_string": "The production architecture (LiteLLM, CrewAI, MCP Servers, observability) can be replicated on your local machine so you can develop and test before deploying. For a breakdown of each component see the [Application […]
 
@@ -2069,7 +2069,7 @@ id: toolu_01LMkG9QHSzNHPkhmqsSRg25
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md",
   "old_string": "*Documentation on local observability setup coming soon.*",
   "new_string": "*Documentation on local observability setup coming soon.*\n\n## Next Steps\n\n- [Deploy First Service](/docs/developer-guide/deploy-first-service) — End-to-end tutorial taking code through to production via Terraform, Helm and ArgoCD\n- [Building Use Cases](/docs/developer-guide/building-use-cases) — Service patterns, development flow and governance requirements\n- [Secrets Management](/docs/developer-guide/secrets-management) — External Secrets Operator and GCP Secret Manager"
 }
@@ -2082,7 +2082,7 @@ id: toolu_01SAvcb1jDiuz7S4uaF32W9J
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md",
   "old_string": "---\ntitle: \"Technology Specifications\"\nsidebar_label: \"Technology Specs\"\nsidebar_position: 7\ndescription: \"Detailed specifications for each platform component including CrewAI, LiteLLM, Kong, databases, and more\"\n---",
   "new_string": "---\ntitle: \"Technology Specifications\"\nsidebar_label: \"Technology Specs\"\nsidebar_position: 3\ndescription: \"Detailed specifications for each platform component including CrewAI, LiteLLM, Kong, databases, and more\"\n---"
 }
@@ -2093,7 +2093,7 @@ id: toolu_01SAvcb1jDiuz7S4uaF32W9J
 tool_result
 id: toolu_0139BPaQrih248eke2rzRXuP
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md has been updated successfully.
 ```
 
 > TOOL
@@ -2101,7 +2101,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01Lo1oTXubbQSa1T4ZaKPhYk
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/application-architecture.md has been updated successfully.
 ```
 
 > TOOL
@@ -2109,7 +2109,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01PZiWDy3ZELuVhQSkkCmKsC
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
 ```
 
 > TOOL
@@ -2117,7 +2117,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01Djv6ffLeDnQj6kZzJ2nhar
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
 ```
 
 > TOOL
@@ -2125,7 +2125,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01LMkG9QHSzNHPkhmqsSRg25
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/local-development-setup.md has been updated successfully.
 ```
 
 > TOOL
@@ -2133,7 +2133,7 @@ The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/appl
 tool_result
 id: toolu_01SAvcb1jDiuz7S4uaF32W9J
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/applications/technology-specs.md has been updated successfully.
 ```
 
 > AGENT
@@ -2146,7 +2146,7 @@ tool_use Read
 id: toolu_01Rzeb6QLp8UHWSwNbXb4m7L
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md",
   "offset": 1005,
   "limit": 30
 }
@@ -2191,7 +2191,7 @@ id: toolu_0195YqnbY8QSt3rZo4ZEA3CR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md",
+  "file_path": "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md",
   "old_string": "**Learn More:**\n- [Secrets Management](/docs/developer-guide/secrets-management) - Advanced ESO patterns\n- [Kong Gateway Guide](/docs/services/kong-gateway) - Authentication, rate limiting, plugins\n\n**Platform Services:**\n- [LiteLLM Gateway](/docs/services/litellm-gateway) - AI model routing\n- [Cloud SQL](/docs/services/cloud-sql) - Managed PostgreSQL\n- [Memorystore Redis](/docs/services/redis) - Managed Redis cache",
   "new_string": "**Learn More:**\n- [Local Development Setup](/docs/applications/local-development-setup) - Run the full platform locally (LiteLLM, CrewAI, MCP Servers)\n- [Secrets Management](/docs/developer-guide/secrets-management) - Advanced ESO patterns\n- [Kong Gateway Guide](/docs/services/kong-gateway) - Authentication, rate limiting, plugins\n\n**Platform Services:**\n- [LiteLLM Gateway](/docs/services/litellm-gateway) - AI model routing\n- [Cloud SQL](/docs/services/cloud-sql) - Managed PostgreSQL\n- [Memorystore Redis](/docs/services/redis) - Managed Redis cache"
 }
@@ -2202,7 +2202,7 @@ id: toolu_0195YqnbY8QSt3rZo4ZEA3CR
 tool_result
 id: toolu_0195YqnbY8QSt3rZo4ZEA3CR
 ```
-The file /home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md has been updated successfully.
+The file /home/<USER>/code/konecta-ix-platform/kix-platform-docs/docs/developer-guide/deploy-first-service.md has been updated successfully.
 ```
 
 > TOOL
@@ -2299,7 +2299,7 @@ id: toolu_01Wim4PYCcFbyLuqCRjbJXrK
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-Warn: `blogDir` doesn't exist: "/home/nathan_booth/code/konecta-ix-platform/kix-platform-docs/blog".
+Warn: `blogDir` doesn't exist: "/home/<USER>/code/konecta-ix-platform/kix-platform-docs/blog".
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
 [webpackbar] ✔ Server: Compiled successfully in 57.48s

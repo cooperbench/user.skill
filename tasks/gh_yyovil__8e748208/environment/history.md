@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -66,8 +66,8 @@ tool_use exec_command
 id: call_sTs1TqksJ3iT0POdu2pXbn3b
 ```json
 {
-  "cmd": "rg -n \"file-preview|yyork-file-preview|file preview|FilePreview\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"file-preview|yyork-file-preview|file preview|FilePreview\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -79,8 +79,8 @@ tool_use exec_command
 id: call_5qrKawLFHmiYVHM9B9Als9gp
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.codex/skills/.system/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/skills/.system/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -92,8 +92,8 @@ tool_use exec_command
 id: call_ZYfTnJnIg7d9IH0lyrIBUut7
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/Projects/yyork/AGENTS.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/Projects/yyork/AGENTS.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -123,7 +123,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 35
 Output:
-sed: /Users/tanishqpalandurkar/.codex/skills/.system/browser/26.602.71036/skills/control-in-app-browser/SKILL.md: No such file or directory
+sed: /home/<USER>/.codex/skills/.system/browser/26.602.71036/skills/control-in-app-browser/SKILL.md: No such file or directory
 
 ```
 
@@ -154,8 +154,8 @@ tool_use exec_command
 id: call_OSaNX3Kdmxi875mNEzXTtRjK
 ```json
 {
-  "cmd": "sed -n '172,184p' /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '172,184p' /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -167,8 +167,8 @@ tool_use exec_command
 id: call_N8l4TXQ9AVLwIiy87d1PaXYV
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -180,8 +180,8 @@ tool_use exec_command
 id: call_3fv5H2dJLSrrKIVcBCvF3VAp
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.agents/skills/react-doctor/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/react-doctor/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -194,7 +194,7 @@ id: call_eLPUEPZrSiBu8k7rs0kVDOx4
 ```json
 {
   "cmd": "rg -n \"yyork-file-preview|file-preview|FilePreview|CodeView\" web . --glob '!node_modules' --glob '!web/node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -211,7 +211,7 @@ Process exited with code 0
 Original token count: 1084
 Output:
 - The Review tab implementation pattern was: add a backend-normalized session diff endpoint, keep the frontend query keyed by the project selector plus real session id, render with a thin `@pierre/diffs` adapter in `canvas-diff-view.tsx`, and verify with a browser probe that hunks render in shadow DOM and only the session-scoped diff endpoint is called [Task 2] [chronicle memory]
-- The concrete files surfaced for the Review diff feature were `internal/server/diff.go`, `internal/server/diff_test.go`, `internal/server/server.go`, `web/src/features/home/components/organisms/canvas-diff-view.tsx`, `web/src/features/home/data/canvas-diff.ts`, `web/src/features/home/domain/canvas-tabs.ts`, and related session-files/session-workspace wiring [Task 2] [chronicle memory]
+- The concrete files surfaced for the Review diff feature were `internal/server/diff.go`, `internal/server/diff_test.go`, `internal/server/server.go`, `web/src/features/home/<USER>/organisms/canvas-diff-view.tsx`, `web/src/features/home/<USER>/canvas-diff.ts`, `web/src/features/home/<USER>/canvas-tabs.ts`, and related session-files/session-workspace wiring [Task 2] [chronicle memory]
 - The Zellij root cause was `writeLaunchLayout` generating a single bare agent pane; the fix shape wrapped that pane with explicit `tab-bar` and `status-bar` plugin panes, then rebuilt only the Go binary through `scripts/run-go.mjs` because the change was backend-only and the embedded dashboard assets were already current enough for validation [Task 3] [chronicle memory]
 - A later, separate statusline explanation pinned the remaining browser-vs-Cursor difference on the managed browser-attach config: `internal/session/workspace_source.go` routes browser attaches through a managed Zellij config, `internal/zellijconfig/zellijconfig.go` sets `simplified_ui true`, and that intentionally removes the segmented powerline-style separators even though tab-bar and status-bar […]
 
@@ -249,7 +249,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 24
 Output:
-sed: /Users/tanishqpalandurkar/.agents/skills/react-doctor/SKILL.md: No such file or directory
+sed: /home/<USER>/.agents/skills/react-doctor/SKILL.md: No such file or directory
 
 ```
 
@@ -267,44 +267,44 @@ web/src/styles/app.css:317:.yyork-file-preview-pane {
 web/src/styles/app.css:325:.yyork-file-preview-floating-action {
 web/src/styles/app.css:333:.yyork-file-preview-header {
 web/src/styles/app.css:347:.yyork-file-preview-body {
-web/src/features/home/components/organisms/canvas-panel.tsx:2:  CodeView,
-web/src/features/home/components/organisms/canvas-panel.tsx:3:  type CodeViewItem,
-web/src/features/home/components/organisms/canvas-panel.tsx:4:  type CodeViewProps,
-web/src/features/home/components/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
-web/src/features/home/components/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
-web/src/features/home/components/organisms/canvas-panel.tsx:78:const FILE_PREVIEW_PANEL_ID = 'file-preview';
-web/src/features/home/components/organisms/canvas-panel.tsx:326:    <CanvasFilePreview
-web/src/features/home/components/organisms/canvas-panel.tsx:390:function CanvasFilePreview(props: {
-web/src/features/home/components/organisms/canvas-panel.tsx:413:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
-web/src/features/home/components/organisms/canvas-panel.tsx:416:        <div className="yyork-file-preview-header">
-web/src/features/home/components/organisms/canvas-panel.tsx:426:        <div className="yyork-file-preview-floating-action">
-web/src/features/home/components/organisms/canvas-panel.tsx:433:      <div className="yyork-file-preview-body">
-web/src/features/home/components/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
-web/src/features/home/components/organisms/canvas-panel.tsx:467:              <CodeView
-web/src/features/home/components/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
-web/src/features/home/components/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
-web/src/features/home/components/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
-web/src/features/home/components/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
-web/src/features/home/components/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
-./web/src/features/home/components/organisms/canvas-panel.tsx:2:  CodeView,
-./web/src/features/home/components/organisms/canvas-panel.tsx:3:  type CodeViewItem,
-./web/src/features/home/components/organisms/canvas-panel.tsx:4:  type CodeViewProps,
-./web/src/features/home/components/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
-./web/src/features/home/components/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
-./web/src/features/home/components/organisms/canvas-panel.tsx:78:const FILE_PREVIEW_PANEL_ID = 'file-preview';
-./web/src/features/home/components/organisms/canvas-panel.tsx:326:    <CanvasFilePreview
-./web/src/features/home/components/organisms/canvas-panel.tsx:390:function CanvasFilePreview(props: {
-./web/src/features/home/components/organisms/canvas-panel.tsx:413:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
-./web/src/features/home/components/organisms/canvas-panel.tsx:416:        <div className="yyork-file-preview-header">
-./web/src/features/home/components/organisms/canvas-panel.tsx:426:        <div className="yyork-file-preview-floating-action">
-./web/src/features/home/components/organisms/canvas-panel.tsx:433:      <div className="yyork-file-preview-body">
-./web/src/features/home/components/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
-./web/src/features/home/components/organisms/canvas-panel.tsx:467:              <CodeView
-./web/src/features/home/components/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
-./web/src/features/home/components/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
-./web/src/features/home/components/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
-./web/src/features/home/components/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
-./web/src/features/home/components/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:2:  CodeView,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:3:  type CodeViewItem,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:4:  type CodeViewProps,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:78:const FILE_PREVIEW_PANEL_ID = 'file-preview';
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:326:    <CanvasFilePreview
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:390:function CanvasFilePreview(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:413:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:416:        <div className="yyork-file-preview-header">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:426:        <div className="yyork-file-preview-floating-action">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:433:      <div className="yyork-file-preview-body">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:467:              <CodeView
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:2:  CodeView,
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:3:  type CodeViewItem,
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:4:  type CodeViewProps,
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:78:const FILE_PREVIEW_PANEL_ID = 'file-preview';
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:326:    <CanvasFilePreview
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:390:function CanvasFilePreview(props: {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:413:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:416:        <div className="yyork-file-preview-header">
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:426:        <div className="yyork-file-preview-floating-action">
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:433:      <div className="yyork-file-preview-body">
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:467:              <CodeView
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
 ./web/src/styles/app.css:317:.yyork-file-preview-pane {
 ./web/src/styles/app.css:325:.yyork-file-preview-floating-action {
 ./web/src/styles/app.css:333:.yyork-file-preview-header {
@@ -314,7 +314,7 @@ web/src/features/home/components/organisms/canvas-panel.tsx:617:): CodeViewItem<
 
 > AGENT
 
-The target is in `web/src/features/home/components/organisms/canvas-panel.tsx`, with the header styled from `web/src/styles/app.css`. I’m checking the existing spacing rules before changing the CSS so this remains scoped to the preview header.
+The target is in `web/src/features/home/<USER>/organisms/canvas-panel.tsx`, with the header styled from `web/src/styles/app.css`. I’m checking the existing spacing rules before changing the CSS so this remains scoped to the preview header.
 
 > TOOL
 
@@ -322,8 +322,8 @@ tool_use exec_command
 id: call_U2lW2dNfz3uG8YweVq1LcvPL
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -336,7 +336,7 @@ id: call_e7wADq1WvsiFklQKKXB3C64Z
 ```json
 {
   "cmd": "sed -n '300,365p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -348,8 +348,8 @@ tool_use exec_command
 id: call_qVRa1oy7WiybEovEdlej1cQh
 ```json
 {
-  "cmd": "sed -n '390,485p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '390,485p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -362,7 +362,7 @@ id: call_zHxMkATeCkdOePRx9Cw9PxiX
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -680,7 +680,7 @@ id: call_FCWhRmBF60cHGoHndQCZLnNZ
 ```json
 {
   "cmd": "git diff -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -763,7 +763,7 @@ id: call_DIcM8mdQcGm2XdlUo5j5dBd2
 ```json
 {
   "cmd": "git diff -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -776,7 +776,7 @@ id: call_dJNSK1zTCLk4awqE3wtoAkMm
 ```json
 {
   "cmd": "git diff --check -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -789,7 +789,7 @@ id: call_QUGIXI9NyZ15Sh7CROpfEeqq
 ```json
 {
   "cmd": "if [ -x web/node_modules/.bin/react-doctor ]; then printf 'available:web/node_modules/.bin/react-doctor\\n'; elif [ -x node_modules/.bin/react-doctor ]; then printf 'available:node_modules/.bin/react-doctor\\n'; else printf 'missing\\n'; fi",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -894,7 +894,7 @@ tool_use js
 id: call_efRxmXAcGLLGWGuE3HXeedlK
 ```json
 {
-  "code": "const { setupBrowserRuntime } = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
+  "code": "const { setupBrowserRuntime } = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000,
   "title": "Connect to browser"
 }

@@ -80,7 +80,7 @@ tool_result
 id: toolu_01NaWUzCVWN5BMZoVkwwhpXJ
 ```
 <persisted-output>
-Output too large (58.7KB). Full output saved to: /Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt
+Output too large (58.7KB). Full output saved to: /home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt
 
 Preview (first 2KB):
 author:	raman325
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_017YuhotdVT4S5BFzTqEWgU7
 ```json
 {
-  "file_path": "/Users/raman/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt"
+  "file_path": "/home/<USER>/.claude/projects/-Users-raman-projects-lock-code-manager/767d0b4b-61ce-40e4-a26a-8aa50590fb1c/tool-results/b0d35tgiv.txt"
 }
 ```
 
@@ -303,7 +303,7 @@ tool_use Read
 id: toolu_019YUg54d3oKT2HWTYyPzAiX
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py"
 }
 ```
 
@@ -373,7 +373,7 @@ tool_use Read
 id: toolu_0184qYPC6B4nN7wtGZ4FhzTr
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 200,
   "limit": 120
 }
@@ -453,7 +453,7 @@ tool_use Read
 id: toolu_016sq4NGDnWepbFe3WMs4ibR
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 200,
   "limit": 110
 }
@@ -514,7 +514,7 @@ tool_use Read
 id: toolu_01Qntki8P2NJMXuB2ovJ5Ee2
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 860,
   "limit": 90
 }
@@ -580,7 +580,7 @@ tool_use Read
 id: toolu_01FBmtrNmYFavaH97ph32bfQ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 780,
   "limit": 130
 }
@@ -669,7 +669,7 @@ tool_use Read
 id: toolu_018eXNvVDfkpU6U2eCinS48P
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 325,
   "limit": 70
 }
@@ -740,7 +740,7 @@ tool_use Read
 id: toolu_01QDhjfCpCGBz5GhmnbKfFDg
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/matter.py",
   "offset": 1,
   "limit": 60
 }
@@ -929,7 +929,7 @@ tool_use Bash
 id: toolu_01W6ovCiFmAax85orjPcg3iB
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; grep -rn \"async_config_entry_first_refresh\\|async_refresh\\|first_refresh\\|async_request_refresh\" custom_components/lock_code_manager/ | grep -v test | head -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager; grep -rn \"async_config_entry_first_refresh\\|async_refresh\\|first_refresh\\|async_request_refresh\" custom_components/lock_code_manager/ | grep -v test | head -20",
   "description": "Find how coordinator first refresh is triggered"
 }
 ```
@@ -967,7 +967,7 @@ tool_use Bash
 id: toolu_01DJVMqdr2sEBLL6ZtvdwnV6
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; grep -rn \"last_update_success\\|coordinator.data\\|self.coordinator\\|available\" custom_components/lock_code_manager/binary_sensor.py custom_components/lock_code_manager/sensor.py 2>/dev/null | head -30",
+  "command": "cd /home/<USER>/projects/lock_code_manager; grep -rn \"last_update_success\\|coordinator.data\\|self.coordinator\\|available\" custom_components/lock_code_manager/binary_sensor.py custom_components/lock_code_manager/sensor.py 2>/dev/null | head -30",
   "description": "Find how entities derive availability from coordinator"
 }
 ```
@@ -995,7 +995,7 @@ tool_use Read
 id: toolu_013XhsX4MimzVCYSd375WdZs
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 655,
   "limit": 95
 }
@@ -1070,7 +1070,7 @@ tool_use Bash
 id: toolu_01AabHiUzXp3L4TWpttwwajp
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; echo \"=== blame on the guard (coordinator.py ~378-382) ===\"; git log -1 --format=\"%h %ai %s\" -S \"if not self.last_update_success\" -- custom_components/lock_code_manager/domain/coordinator.py; echo; echo \"=== blame on the try/except (base ~674) ===\"; git log -1 --format=\"%h %ai %s\" -S \"Entities will be created but unavailable until lock is ready\" -- custom_components/lock_code_manager/providers/_base.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager; echo \"=== blame on the guard (coordinator.py ~378-382) ===\"; git log -1 --format=\"%h %ai %s\" -S \"if not self.last_update_success\" -- custom_components/lock_code_manager/domain/coordinator.py; echo; echo \"=== blame on the try/except (base ~674) ===\"; git log -1 --format=\"%h %ai %s\" -S \"Entities will be created but unavailable until lock is ready\" -- custom_components/lock_code_manager/providers/_base.py",
   "description": "Find when guard and try/except were introduced"
 }
 ```
@@ -1093,7 +1093,7 @@ tool_use Bash
 id: toolu_01Bj7w2GUWFoTVK7VkVVajgM
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; grep -rn \"last_update_success\\|return {}\\|cold start\\|cold-start\" tests/ | grep -i \"coordinator\\|cold\\|update_success\" | head -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager; grep -rn \"last_update_success\\|return {}\\|cold start\\|cold-start\" tests/ | grep -i \"coordinator\\|cold\\|update_success\" | head -20",
   "description": "Check tests asserting cold-start return {} behavior"
 }
 ```
@@ -1135,7 +1135,7 @@ tool_use Read
 id: toolu_01NZwHufvBjJAg5nWJec46yZ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_coordinator.py",
   "offset": 455,
   "limit": 130
 }
@@ -1307,7 +1307,7 @@ tool_use Bash
 id: toolu_01R27qx1YcLLbx9cKoZDCnm1
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git checkout -b fix/coordinator-cold-start-false-success 2>&1 | tail -1",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git checkout -b fix/coordinator-cold-start-false-success 2>&1 | tail -1",
   "description": "Create feature branch"
 }
 ```
@@ -1318,7 +1318,7 @@ tool_use Read
 id: toolu_01G3njCaeLTFLh1oQCm3vre9
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_coordinator.py",
   "offset": 1,
   "limit": 60
 }
@@ -1403,7 +1403,7 @@ tool_use Read
 id: toolu_016amETwNoUJgnRZkKNj2Lqm
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_coordinator.py",
   "offset": 60,
   "limit": 120
 }
@@ -1480,7 +1480,7 @@ id: toolu_01C4L7hwkg1yLzCsJxKFqAec
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_coordinator.py",
   "old_string": "async def test_backoff_first_failure_returns_empty_dict(\n    poll_coordinator: LockUsercodeUpdateCoordinator,\n    poll_lock: MockLCMLock,\n) -> None:\n    \"\"\"Test that first failure returns empty dict when no prior success.\"\"\"\n    # No successful update yet\n    poll_coordinator.last_update_success = False\n\n    mock_get = AsyncMock(side_effect=LockDisconnected(\"Lock offline\"))\n    with patch.object(poll_lock, \"async_internal_get_usercodes\", mock_get):\n        result = await poll_coordinator.async_get_usercodes()\n\n    assert result == {}\n    assert poll_coordinator._lock_breaker.failure_count == 1",
   "new_string": "async def test_cold_start_failure_raises_update_failed(\n    poll_coordinator: LockUsercodeUpdateCoordinator,\n    poll_lock: MockLCMLock,\n) -> None:\n    \"\"\"A failure before any successful poll raises UpdateFailed, never a false success.\n\n    Returning {} here would be recorded by DataUpdateCoordinator as a successful\n    update, flipping last_update_success to True and logging a misleading\n    \"recovered\" while the lock is still unreachable (issue #1268). The breaker\n    still records the failure.\n    \"\"\"\n    # No successful update yet (cold start).\n    poll_coordinator.last_update_success = False\n\n    mock_get = AsyncMock(side_effect=LockDisconnected(\"Lock offline\"))\n    with patch.object(poll_lock, \"async_internal_get_usercodes\", mock_get):\n        with pytest.raises(UpdateFailed):\n            await poll_coordinator.async_get_usercodes()\n\n    assert poll_coordinator._lock_breaker.failure_count == 1\n\n\nasync def test_cold_start_repeated_failures_keep_raising(\n    poll_coordinator: LockUsercodeUpdateCoordinator,\n    poll_lock: MockLCMLock,\n) -> None:\n    \"\"\"Sustained cold-start failures keep raising; no tick masquerades as success.\n\n    Regression for issue #1268: the old guard returned {} whenever\n    last_update_success was False. DataUpdateCoordinator records that as a\n    successful empty update -- flipping last_update_success True (logged\n    \"recovered\" / \"success: True\" in 0.000s), feeding empty data to the sync\n    layer […]
 
@@ -1489,7 +1489,7 @@ id: toolu_01C4L7hwkg1yLzCsJxKFqAec
 tool_result
 id: toolu_01C4L7hwkg1yLzCsJxKFqAec
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1502,7 +1502,7 @@ tool_use Bash
 id: toolu_01HM1drSoxtanNDDns5KuwSG
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -30",
+  "command": "cd /home/<USER>/projects/lock_code_manager; python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -30",
   "description": "Run new cold-start tests (expect RED)"
 }
 ```
@@ -1525,7 +1525,7 @@ tool_use Bash
 id: toolu_01AjvhZXrQ7cDmqr3cLPUsgS
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; ls -d .venv venv 2>/dev/null; which uv; ls Makefile pyproject.toml tox.ini 2>/dev/null",
+  "command": "cd /home/<USER>/projects/lock_code_manager; ls -d .venv venv 2>/dev/null; which uv; ls Makefile pyproject.toml tox.ini 2>/dev/null",
   "description": "Locate venv and test tooling"
 }
 ```
@@ -1547,7 +1547,7 @@ tool_use Bash
 id: toolu_012DsgbfNjUFswyqnUF3YGgv
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -35",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -35",
   "description": "Run cold-start tests in venv (expect RED)"
 }
 ```
@@ -1603,7 +1603,7 @@ id: toolu_01TX88qJnptpfotGxQaUXEBi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py",
   "old_string": "        try:\n            data = await self._lock.async_internal_get_usercodes()\n        except LockCodeManagerError as err:\n            self._apply_backoff()\n            # During cold start (before the first successful poll), do not\n            # raise UpdateFailed. That would fail the initial refresh and\n            # keep coordinator-backed entities unavailable until a\n            # successful poll completes.\n            if not self.last_update_success:\n                return {}\n            raise UpdateFailed from err",
   "new_string": "        try:\n            data = await self._lock.async_internal_get_usercodes()\n        except LockCodeManagerError as err:\n            self._apply_backoff()\n            # Always surface the failure. Returning {} here would be recorded\n            # by DataUpdateCoordinator as a successful (empty) update -- flipping\n            # last_update_success to True, logging a misleading \"recovered\", and\n            # feeding empty data to the sync layer while the lock is still\n            # unreachable (issue #1268). The initial-refresh caller in\n            # BaseLock.async_setup_internal already catches UpdateFailed so a\n            # cold-start failure leaves entities unavailable without aborting\n            # setup; coordinator-backed entities key on slot presence in\n            # ``data`` (still the initialized {} either way), so raising changes\n            # no user-visible state -- it only keeps the coordinator honest.\n            raise UpdateFailed from err"
 }
@@ -1614,7 +1614,7 @@ id: toolu_01TX88qJnptpfotGxQaUXEBi
 tool_result
 id: toolu_01TX88qJnptpfotGxQaUXEBi
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1627,7 +1627,7 @@ tool_use Bash
 id: toolu_01Kmneefm9Wbg1ZhAbdLA5nY
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -k \"cold_start\" -q 2>&1 | tail -8",
   "description": "Run cold-start tests (expect GREEN)"
 }
 ```
@@ -1651,7 +1651,7 @@ tool_use Bash
 id: toolu_01WhjgEc3fDAEtKGLRoqVahk
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/projects/lock_code_manager; .venv/bin/python -m pytest tests/test_coordinator.py -q 2>&1 | tail -8",
   "description": "Run full coordinator test file"
 }
 ```
@@ -1671,7 +1671,7 @@ tool_use Bash
 id: toolu_01FZ4YzzSag2dTPaL7MGeoi9
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; time .venv/bin/python -m pytest tests/ -q 2>&1 | tail -15",
+  "command": "cd /home/<USER>/projects/lock_code_manager; time .venv/bin/python -m pytest tests/ -q 2>&1 | tail -15",
   "description": "Run full test suite"
 }
 ```
@@ -1691,7 +1691,7 @@ id: toolu_01FZ4YzzSag2dTPaL7MGeoi9
 .............................................                            [100%]
 =============================== warnings summary ===============================
 tests/providers/zha/test_provider.py: 172 warnings
-  /Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
+  /home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
     description=port.description,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -1714,7 +1714,7 @@ tool_use Bash
 id: toolu_01VJkLihD5yryGYhYWoYErgK
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git add -A; prek run --files custom_components/lock_code_manager/domain/coordinator.py tests/test_coordinator.py 2>&1 | tail -25",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git add -A; prek run --files custom_components/lock_code_manager/domain/coordinator.py tests/test_coordinator.py 2>&1 | tail -25",
   "description": "Run pre-commit checks on changed files"
 }
 ```
@@ -1725,7 +1725,7 @@ tool_use Bash
 id: toolu_01F9AMjUGcsZKoCvzU5oeuNJ
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; cat .github/PULL_REQUEST_TEMPLATE.md 2>/dev/null || ls .github/",
+  "command": "cd /home/<USER>/projects/lock_code_manager; cat .github/PULL_REQUEST_TEMPLATE.md 2>/dev/null || ls .github/",
   "description": "Show PR template"
 }
 ```
@@ -1807,7 +1807,7 @@ tool_use Bash
 id: toolu_016xoRHShHYfAUuF1vAKPHHq
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git diff --cached --stat; echo \"===\"; git diff --cached custom_components/lock_code_manager/domain/coordinator.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git diff --cached --stat; echo \"===\"; git diff --cached custom_components/lock_code_manager/domain/coordinator.py",
   "description": "Review staged diff"
 }
 ```
@@ -1853,7 +1853,7 @@ tool_use Bash
 id: toolu_01EJme8k4QvK7HQSmyeAykh2
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git commit -F - <<'EOF'\nfix(coordinator): stop cold-start failures masquerading as success (#1268)\n\nThe cold-start guard in async_get_usercodes returned {} on any failure\nbefore the first successful poll. DataUpdateCoordinator records a returned\nvalue as a successful update, so returning {} flipped last_update_success\nto True, logged a misleading \"recovered\" / \"success: True in 0.000s\", and\nnotified the sync layer with empty data (\"Slot not in coordinator data,\nskipping\") -- all while the lock was still unreachable. Because the guard\nkeyed on last_update_success, which it itself flipped, the coordinator\noscillated between raising UpdateFailed and faking a recovery every tick.\n\nAlways raise UpdateFailed instead. The initial-refresh caller in\nBaseLock.async_setup_internal already catches UpdateFailed, so a cold-start\nfailure still leaves entities created-but-unavailable without aborting\nsetup. Coordinator-backed entities key on slot presence in `data` (the\ninitialized {} whether we raise or return {}), so this changes no\nuser-visible state -- it only keeps the coordinator's success/failure\nsignal honest.\n\nThis is Bug 2 from #1268; the Matter availability false-negative (Bug 1)\nthat prevents recovery is tracked separately.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git commit -F - <<'EOF'\nfix(coordinator): stop cold-start failures masquerading as success (#1268)\n\nThe cold-start guard in async_get_usercodes returned {} on any failure\nbefore the first successful poll. DataUpdateCoordinator records a returned\nvalue as a successful update, so returning {} flipped last_update_success\nto True, logged a misleading \"recovered\" / \"success: True in 0.000s\", and\nnotified the sync layer with empty data (\"Slot not in coordinator data,\nskipping\") -- all while the lock was still unreachable. Because the guard\nkeyed on last_update_success, which it itself flipped, the coordinator\noscillated between raising UpdateFailed and faking a recovery every tick.\n\nAlways raise UpdateFailed instead. The initial-refresh caller in\nBaseLock.async_setup_internal already catches UpdateFailed, so a cold-start\nfailure still leaves entities created-but-unavailable without aborting\nsetup. Coordinator-backed entities key on slot presence in `data` (the\ninitialized {} whether we raise or return {}), so this changes no\nuser-visible state -- it only keeps the coordinator's success/failure\nsignal honest.\n\nThis is Bug 2 from #1268; the Matter availability false-negative (Bug 1)\nthat prevents recovery is tracked separately.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF",
   "description": "Commit the fix"
 }
 ```
@@ -1899,7 +1899,7 @@ tool_use Bash
 id: toolu_01NDu7t97YYnFUJajm2PxFRP
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; git push -u origin fix/coordinator-cold-start-false-success 2>&1 | tail -5",
+  "command": "cd /home/<USER>/projects/lock_code_manager; git push -u origin fix/coordinator-cold-start-false-success 2>&1 | tail -5",
   "description": "Push feature branch"
 }
 ```
@@ -1922,7 +1922,7 @@ tool_use Bash
 id: toolu_01YUr7sAX2pMYBMe2gETywUM
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; gh pr create --title \"fix(coordinator): stop cold-start failures masquerading as success (#1268)\" --body \"$(cat <<'EOF'\n## Proposed change\n\nFixes **Bug 2** from #1268: a Matter lock coordinator that, after a joint HA + matter-server restart, logs a contradictory \"Update failed N consecutive times\" immediately followed by \"recovered\" / \"Finished fetching ... in 0.000 seconds (success: True)\", then \"Slot not in coordinator data, skipping\" for every slot.\n\nRoot cause is in `domain/coordinator.py::async_get_usercodes`. The cold-start guard returned `{}` on any failure before the first successful poll:\n\n```python\nif not self.last_update_success:\n    return {}\nraise UpdateFailed from err\n```\n\n`DataUpdateCoordinator` records *any returned value* as a successful update. So returning `{}`:\n\n- flipped `last_update_success` to `True` and logged a misleading **\"recovered\" / \"success: True in 0.000s\"** while the lock was still unreachable;\n- notified the sync layer with **empty data**, producing \"Slot not in coordinator data, skipping\" for every slot;\n- and, because the guard keyed on `last_update_success` (which it itself flipped), made the coordinator **oscillate** between raising `UpdateFailed` and faking a recovery on alternating ticks.\n\nThe fix is to always `raise UpdateFailed`. The initial-refresh caller in `BaseLock.async_setup_internal` already catches `UpdateFailed`/`ConfigEntryNotReady`, so a cold-start failure still leaves entities created-but-unavailable **without aborting setup**. Coordinator-backed entities key on slot […]
+  "command": "cd /home/<USER>/projects/lock_code_manager; gh pr create --title \"fix(coordinator): stop cold-start failures masquerading as success (#1268)\" --body \"$(cat <<'EOF'\n## Proposed change\n\nFixes **Bug 2** from #1268: a Matter lock coordinator that, after a joint HA + matter-server restart, logs a contradictory \"Update failed N consecutive times\" immediately followed by \"recovered\" / \"Finished fetching ... in 0.000 seconds (success: True)\", then \"Slot not in coordinator data, skipping\" for every slot.\n\nRoot cause is in `domain/coordinator.py::async_get_usercodes`. The cold-start guard returned `{}` on any failure before the first successful poll:\n\n```python\nif not self.last_update_success:\n    return {}\nraise UpdateFailed from err\n```\n\n`DataUpdateCoordinator` records *any returned value* as a successful update. So returning `{}`:\n\n- flipped `last_update_success` to `True` and logged a misleading **\"recovered\" / \"success: True in 0.000s\"** while the lock was still unreachable;\n- notified the sync layer with **empty data**, producing \"Slot not in coordinator data, skipping\" for every slot;\n- and, because the guard keyed on `last_update_success` (which it itself flipped), made the coordinator **oscillate** between raising `UpdateFailed` and faking a recovery on alternating ticks.\n\nThe fix is to always `raise UpdateFailed`. The initial-refresh caller in `BaseLock.async_setup_internal` already catches `UpdateFailed`/`ConfigEntryNotReady`, so a cold-start failure still leaves entities created-but-unavailable **without aborting setup**. Coordinator-backed entities key on slot […]
 
 > TOOL
 

@@ -12,8 +12,8 @@ tool_use exec_command
 id: call_tfjgINO7gGZiSNTkBMMGBR04
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/goose-guest/Documents/work/planetfall-seed-signalkit/.codex/skills/trail/SKILL.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "cmd": "sed -n '1,240p' /home/<USER>/Documents/work/planetfall-seed-signalkit/.codex/skills/trail/SKILL.md",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -26,7 +26,7 @@ id: call_lEs7MQglSVU8ewhIad0xKfap
 ```json
 {
   "cmd": "pwd && rg --files -g '!*node_modules*' -g '!*.png' -g '!*.jpg' -g '!*.jpeg' -g '!*.gif' | sed -n '1,220p'",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -70,7 +70,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 158
 Output:
-/Users/goose-guest/Documents/work/planetfall-seed-signalkit
+/home/<USER>/Documents/work/planetfall-seed-signalkit
 src/memoryProps.js
 src/debris.js
 src/islandView.js
@@ -119,7 +119,7 @@ id: call_8w048OausZcp4S49TLlZ2Itd
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -132,7 +132,7 @@ id: call_4NohZGc0zBeCBL9TN9B6l79Y
 ```json
 {
   "cmd": "git branch --show-current",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -145,7 +145,7 @@ id: call_nio9bqSecHCMWcyTCwrOxqsR
 ```json
 {
   "cmd": "sed -n '1,260p' PLAN.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -158,7 +158,7 @@ id: call_Nbdkp17rQimxRIMpZJzHohaM
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -171,7 +171,7 @@ id: call_KFcMkyWelvyx4hWc3nAM8AP0
 ```json
 {
   "cmd": "entire trail show",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -290,7 +290,7 @@ id: call_SDVKJxMl0VVU0mA6Bn1pQYIv
 ```json
 {
   "cmd": "git symbolic-ref --short refs/remotes/origin/HEAD || true",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -303,7 +303,7 @@ id: call_E3SB5Pm1ffKlF85edCHq5Lr8
 ```json
 {
   "cmd": "git log --oneline origin/main..HEAD",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -316,7 +316,7 @@ id: call_hHE3aenalAhRe2oyksN7JhiD
 ```json
 {
   "cmd": "git branch --list 'codex/leaderboard-route'",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -373,7 +373,7 @@ id: call_mUEuwsHkRvYqpphMszgbowuI
 ```json
 {
   "cmd": "body=$(cat <<'EOF'\nAdd a direct browser route so visiting /leaderboard renders the existing leaderboard experience without needing to enter through the title menu. Preserve the current score API, title-screen leaderboard wiring, and game progression behavior.\n\nSpec: PLAN.md\nEOF\n)\nentire trail create --status open --branch codex/leaderboard-route --checkout --title \"Render leaderboard at /leaderboard\" --body \"$body\"",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -407,7 +407,7 @@ id: call_tMmpqBaDao5sk0jzrN0IJBPD
 ```json
 {
   "cmd": "entire trail show",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -420,7 +420,7 @@ id: call_25RPfQDIZhCP9QQ1K9lu27gx
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -475,5 +475,5 @@ Spec linked in body: `PLAN.md`
 
 The branch was created, checked out, and pushed to origin. Existing untracked `.codex/` files were left untouched.
 
-::git-create-branch{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit" branch="codex/leaderboard-route"}
-::git-push{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit" branch="codex/leaderboard-route"}
+::git-create-branch{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit" branch="codex/leaderboard-route"}
+::git-push{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit" branch="codex/leaderboard-route"}

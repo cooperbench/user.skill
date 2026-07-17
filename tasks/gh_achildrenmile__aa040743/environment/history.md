@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_01MfH312HXZsP2uQzMJhDgJy
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/.eleventy.js"
+  "file_path": "/home/<USER>/bosarsa/.eleventy.js"
 }
 ```
 
@@ -192,7 +192,7 @@ tool_use Read
 id: toolu_01RRpDeTw6DTNCSnmfR371Lv
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk"
 }
 ```
 
@@ -258,7 +258,7 @@ tool_use Read
 id: toolu_017MXLzCxbAz27c1uiwExZ7q
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/sitemap.njk"
+  "file_path": "/home/<USER>/bosarsa/src/sitemap.njk"
 }
 ```
 
@@ -317,7 +317,7 @@ tool_use Read
 id: toolu_01ELGhHvBVNEVr8Hp7jxfcJN
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/llms.njk"
+  "file_path": "/home/<USER>/bosarsa/src/llms.njk"
 }
 ```
 
@@ -369,7 +369,7 @@ tool_use Read
 id: toolu_01Ur8pY7kq86t3v36RVkKTHe
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/base.css"
+  "file_path": "/home/<USER>/bosarsa/src/css/base.css"
 }
 ```
 
@@ -427,7 +427,7 @@ tool_use Read
 id: toolu_01JLTWBfEGa8PLYisq9rqJZ6
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/presse.njk"
+  "file_path": "/home/<USER>/bosarsa/src/presse.njk"
 }
 ```
 
@@ -472,7 +472,7 @@ id: toolu_015AAB9Mc45ofSj8MVenyXt5
 ```json
 {
   "pattern": "*.jpeg",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -491,7 +491,7 @@ id: toolu_01KTRwGmMjTmMFpNgwB11vMZ
 ```json
 {
   "pattern": "bosarsa.*",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -510,7 +510,7 @@ id: toolu_019ZKx749JsMbuxACQbgygjZ
 ```json
 {
   "pattern": "*.{jpeg,jpg,webp,png}",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -519,26 +519,26 @@ id: toolu_019ZKx749JsMbuxACQbgygjZ
 tool_result
 id: toolu_019ZKx749JsMbuxACQbgygjZ
 ```
-/home/achildrenmile/bosarsa/favicon/web-app-manifest-512x512.png
-/home/achildrenmile/bosarsa/favicon/web-app-manifest-192x192.png
-/home/achildrenmile/bosarsa/favicon/favicon-96x96.png
-/home/achildrenmile/bosarsa/favicon/apple-touch-icon.png
-/home/achildrenmile/bosarsa/_site/web-app-manifest-512x512.png
-/home/achildrenmile/bosarsa/_site/web-app-manifest-192x192.png
-/home/achildrenmile/bosarsa/_site/favicon-96x96.png
-/home/achildrenmile/bosarsa/_site/apple-touch-icon.png
-/home/achildrenmile/bosarsa/_site/logo-web.png
-/home/achildrenmile/bosarsa/logo-web.png
-/home/achildrenmile/bosarsa/logo.webp
-/home/achildrenmile/bosarsa/_site/logo.webp
-/home/achildrenmile/bosarsa/_site/og-image.png
-/home/achildrenmile/bosarsa/og-image.png
-/home/achildrenmile/bosarsa/ueber-uns.webp
-/home/achildrenmile/bosarsa/_site/ueber-uns.webp
-/home/achildrenmile/bosarsa/notfunk-header.webp
-/home/achildrenmile/bosarsa/_site/notfunk-header.webp
-/home/achildrenmile/bosarsa/sicherheitstage-2026.webp
-/home/achildrenmile/bosarsa/_site/sicherheitstage-2026.webp
+/home/<USER>/bosarsa/favicon/web-app-manifest-512x512.png
+/home/<USER>/bosarsa/favicon/web-app-manifest-192x192.png
+/home/<USER>/bosarsa/favicon/favicon-96x96.png
+/home/<USER>/bosarsa/favicon/apple-touch-icon.png
+/home/<USER>/bosarsa/_site/web-app-manifest-512x512.png
+/home/<USER>/bosarsa/_site/web-app-manifest-192x192.png
+/home/<USER>/bosarsa/_site/favicon-96x96.png
+/home/<USER>/bosarsa/_site/apple-touch-icon.png
+/home/<USER>/bosarsa/_site/logo-web.png
+/home/<USER>/bosarsa/logo-web.png
+/home/<USER>/bosarsa/logo.webp
+/home/<USER>/bosarsa/_site/logo.webp
+/home/<USER>/bosarsa/_site/og-image.png
+/home/<USER>/bosarsa/og-image.png
+/home/<USER>/bosarsa/ueber-uns.webp
+/home/<USER>/bosarsa/_site/ueber-uns.webp
+/home/<USER>/bosarsa/notfunk-header.webp
+/home/<USER>/bosarsa/_site/notfunk-header.webp
+/home/<USER>/bosarsa/sicherheitstage-2026.webp
+/home/<USER>/bosarsa/_site/sicherheitstage-2026.webp
 ```
 
 > TOOL
@@ -548,7 +548,7 @@ id: toolu_018knFpdZP9BQjVTE9JdUpSF
 ```json
 {
   "pattern": "js/**",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -557,7 +557,7 @@ id: toolu_018knFpdZP9BQjVTE9JdUpSF
 tool_result
 id: toolu_018knFpdZP9BQjVTE9JdUpSF
 ```
-/home/achildrenmile/bosarsa/js/lucide.min.js
+/home/<USER>/bosarsa/js/lucide.min.js
 ```
 
 > TOOL
@@ -567,7 +567,7 @@ id: toolu_01ACz1MYZTY9SpjjVcmJG6U5
 ```json
 {
   "pattern": "*.pdf",
-  "path": "/home/achildrenmile/bosarsa"
+  "path": "/home/<USER>/bosarsa"
 }
 ```
 
@@ -589,7 +589,7 @@ tool_use Read
 id: toolu_01JXy7J3v6KB4JgKqL9EjSuH
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/base.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/base.njk"
 }
 ```
 
@@ -650,7 +650,7 @@ id: toolu_01RMynmPteDYWU969JemnFeF
 ```json
 {
   "description": "Read plan transcript for details",
-  "prompt": "Read the file /home/achildrenmile/.REDACTED.jsonl and extract the detailed information about:\n1. The Krisenkommunikation form fields and structure (the 7 W-Fragen, the Weitergabe table organizations, etc.)\n2. Any specific details about how the PDF generation should work\n3. Any details about the static PDF that needs to be created\n4. Any specific CSS design details\n\nReturn ALL the details you find about the form structure, field names, organizations for the Weitergabe table, and PDF layout.",
+  "prompt": "Read the file /home/<USER>/.REDACTED.jsonl and extract the detailed information about:\n1. The Krisenkommunikation form fields and structure (the 7 W-Fragen, the Weitergabe table organizations, etc.)\n2. Any specific details about how the PDF generation should work\n3. Any details about the static PDF that needs to be created\n4. Any specific CSS design details\n\nReturn ALL the details you find about the form structure, field names, organizations for the Weitergabe table, and PDF layout.",
   "subagent_type": "Explore"
 }
 ```
@@ -664,7 +664,7 @@ Good. I have the main information. Now let me compile a comprehensive report. Ba
 
 ## COMPREHENSIVE EXTRACTION: Krisenkommunikation Form Structure and PDF Generation Details
 
-Based on my analysis of `/home/achildrenmile/.REDACTED.jsonl`, here are ALL the detailed specifications for the Krisenkommunikation form:
+Based on my analysis of `/home/<USER>/.REDACTED.jsonl`, here are ALL the detailed specifications for the Krisenkommunikation form:
 
 ### 1. FORM FIELDS STRUCTURE (7 W-Fragen and other fields)
 
@@ -723,7 +723,7 @@ tool_use Bash
 id: toolu_01Scb7ifiysnmvTP5jVyJnYK
 ```json
 {
-  "command": "ls -la /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular.pdf 2>/dev/null || echo \"PDF not found in Downloads\"",
+  "command": "ls -la /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular.pdf 2>/dev/null || echo \"PDF not found in Downloads\"",
   "description": "Check for static PDF in Downloads"
 }
 ```
@@ -733,7 +733,7 @@ id: toolu_01Scb7ifiysnmvTP5jVyJnYK
 tool_result
 id: toolu_01Scb7ifiysnmvTP5jVyJnYK
 ```
--rw-r--r-- 1 achildrenmile users 586213 Mar  8 00:11 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular.pdf
+-rw-r--r-- 1 achildrenmile users 586213 Mar  8 00:11 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular.pdf
 ```
 
 > TOOL
@@ -742,7 +742,7 @@ tool_use Bash
 id: toolu_01KKaSLE9R3pAn5QyqJCHuXZ
 ```json
 {
-  "command": "cp /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular.pdf /home/achildrenmile/bosarsa/Krisenkommunikation-Aufnahmeformular.pdf",
+  "command": "cp /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular.pdf /home/<USER>/bosarsa/Krisenkommunikation-Aufnahmeformular.pdf",
   "description": "Copy static PDF to project root"
 }
 ```
@@ -765,7 +765,7 @@ tool_use Bash
 id: toolu_0188uiVKD83bKrn8HebUTddd
 ```json
 {
-  "command": "curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js\" -o /home/achildrenmile/bosarsa/js/jspdf.umd.min.js && wc -c /home/achildrenmile/bosarsa/js/jspdf.umd.min.js",
+  "command": "curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js\" -o /home/<USER>/bosarsa/js/jspdf.umd.min.js && wc -c /home/<USER>/bosarsa/js/jspdf.umd.min.js",
   "description": "Download jsPDF UMD bundle from cdnjs",
   "timeout": 30000
 }
@@ -776,7 +776,7 @@ id: toolu_0188uiVKD83bKrn8HebUTddd
 tool_result
 id: toolu_0188uiVKD83bKrn8HebUTddd
 ```
-548 /home/achildrenmile/bosarsa/js/jspdf.umd.min.js
+548 /home/<USER>/bosarsa/js/jspdf.umd.min.js
 ```
 
 > AGENT
@@ -789,7 +789,7 @@ tool_use Bash
 id: toolu_014GF5hkQkDzqYY5SvGkxFv6
 ```json
 {
-  "command": "head -c 200 /home/achildrenmile/bosarsa/js/jspdf.umd.min.js",
+  "command": "head -c 200 /home/<USER>/bosarsa/js/jspdf.umd.min.js",
   "description": "Check what was downloaded"
 }
 ```
@@ -856,7 +856,7 @@ tool_use Bash
 id: toolu_01C8GSpRGGaP9ojQuzHEGtiR
 ```json
 {
-  "command": "curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js\" -o /home/achildrenmile/bosarsa/js/jspdf.umd.min.js && wc -c /home/achildrenmile/bosarsa/js/jspdf.umd.min.js",
+  "command": "curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js\" -o /home/<USER>/bosarsa/js/jspdf.umd.min.js && wc -c /home/<USER>/bosarsa/js/jspdf.umd.min.js",
   "description": "Download jsPDF 2.5.1 from cdnjs",
   "timeout": 30000
 }
@@ -867,7 +867,7 @@ id: toolu_01C8GSpRGGaP9ojQuzHEGtiR
 tool_result
 id: toolu_01C8GSpRGGaP9ojQuzHEGtiR
 ```
-364463 /home/achildrenmile/bosarsa/js/jspdf.umd.min.js
+364463 /home/<USER>/bosarsa/js/jspdf.umd.min.js
 ```
 
 > AGENT
@@ -880,7 +880,7 @@ tool_use Bash
 id: toolu_01HAq2aNGG2rceDBHLobEQJy
 ```json
 {
-  "command": "head -c 100 /home/achildrenmile/bosarsa/js/jspdf.umd.min.js",
+  "command": "head -c 100 /home/<USER>/bosarsa/js/jspdf.umd.min.js",
   "description": "Verify jsPDF is valid JS"
 }
 ```
@@ -949,7 +949,7 @@ id: toolu_016QKDdJpLzZzESJTQrM3bds
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/.eleventy.js",
+  "file_path": "/home/<USER>/bosarsa/.eleventy.js",
   "old_string": "  eleventyConfig.addPassthroughCopy({ \"*.webp\": \"/\" });\n  eleventyConfig.addPassthroughCopy(\"src/css\");",
   "new_string": "  eleventyConfig.addPassthroughCopy({ \"*.webp\": \"/\" });\n  eleventyConfig.addPassthroughCopy({ \"*.pdf\": \"/\" });\n  eleventyConfig.addPassthroughCopy({ \"js\": \"js\" });\n  eleventyConfig.addPassthroughCopy(\"src/css\");"
 }
@@ -960,7 +960,7 @@ id: toolu_016QKDdJpLzZzESJTQrM3bds
 tool_result
 id: toolu_016QKDdJpLzZzESJTQrM3bds
 ```
-The file /home/achildrenmile/bosarsa/.eleventy.js has been updated successfully.
+The file /home/<USER>/bosarsa/.eleventy.js has been updated successfully.
 ```
 
 > TOOL
@@ -1011,7 +1011,7 @@ tool_use Write
 id: toolu_01DjkaqZKyFB77z3FygycKHB
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "content": "/* ===== Krisenkommunikation Page ===== */\n\n.krisen-page {\n  max-width: 860px;\n  margin: 0 auto;\n  padding: calc(var(--nav-h) + 48px) 24px 80px;\n}\n\n.krisen-page h1 {\n  font-size: 1.6rem;\n  font-weight: 800;\n  color: var(--gray-900);\n  margin-bottom: 8px;\n}\n\n.krisen-page .subtitle {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 40px;\n}\n\n/* ===== Download Card ===== */\n.download-card {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 24px;\n  padding: 28px 32px;\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  transition: border-color .2s, box-shadow .2s;\n}\n\n.download-card:hover {\n  border-color: var(--polizei-mid);\n  box-shadow: 0 2px 12px rgba(59,90,140,.08);\n}\n\n.download-card__info h2 {\n  font-size: 1.05rem;\n  font-weight: 700;\n  color: var(--gray-900);\n  margin-bottom: 4px;\n}\n\n.download-card__info p {\n  font-size: .85rem;\n  color: var(--gray-500);\n}\n\n.download-card .btn i {\n  width: 18px;\n  height: 18px;\n}\n\n/* ===== Divider ===== */\n.form-divider {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  margin: 40px 0;\n  color: var(--gray-300);\n  font-size: .82rem;\n  font-weight: 600;\n  letter-spacing: .5px;\n  text-transform: uppercase;\n}\n\n.form-divider::before,\n.form-divider::after {\n  content: '';\n  flex: 1;\n  height: 1px;\n  background: var(--gray-200);\n}\n\n/* ===== Form ===== */\n.krisen-form {\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  padding: 32px;\n}\n\n.krisen-form__section {\n  margin-bottom: 32px;\n}\n\n.krisen-form__section-title {\n  font-size: .72rem;\n  font-family: var(--font-mono);\n  letter-spacing: 3px;\n  text-transform: uppercase;\n  color: var(--bos-gold);\n  margin-bottom: 16px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--gray-100);\n}\n\n.krisen-form__row {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n  margin-bottom: 16px;\n}\n\n.krisen-form__row--2 {\n  grid-template-columns: repeat(2, 1fr);\n}\n\n.krisen-form__row--3 {\n  grid-template-columns: repeat(3, 1fr);\n}\n\n.krisen-form__group {\n  display: flex;\n  flex-direction: column;\n  gap: […]
 
 > TOOL
@@ -1019,7 +1019,7 @@ id: toolu_01DjkaqZKyFB77z3FygycKHB
 tool_result
 id: toolu_01DjkaqZKyFB77z3FygycKHB
 ```
-File created successfully at: /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css
+File created successfully at: /home/<USER>/bosarsa/src/css/krisenkommunikation.css
 ```
 
 > AGENT
@@ -1032,7 +1032,7 @@ tool_use Write
 id: toolu_01G5eFfv8LvjEEVxQLS3T5BX
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/js/krisenkommunikation-pdf.js",
+  "file_path": "/home/<USER>/bosarsa/js/krisenkommunikation-pdf.js",
   "content": "/* Krisenkommunikation — PDF-Generator (jsPDF) */\n(function () {\n  'use strict';\n\n  var logoBase64 = null;\n\n  // Preload logo as Base64\n  function preloadLogo() {\n    var img = new Image();\n    img.crossOrigin = 'anonymous';\n    img.onload = function () {\n      var canvas = document.createElement('canvas');\n      canvas.width = img.naturalWidth;\n      canvas.height = img.naturalHeight;\n      canvas.getContext('2d').drawImage(img, 0, 0);\n      logoBase64 = canvas.toDataURL('image/png');\n    };\n    img.src = '/logo-web.png';\n  }\n\n  function val(id) {\n    var el = document.getElementById(id);\n    return el ? el.value.trim() : '';\n  }\n\n  function checked(id) {\n    var el = document.getElementById(id);\n    return el ? el.checked : false;\n  }\n\n  function generatePDF() {\n    var jsPDF = window.jspdf.jsPDF;\n    var doc = new jsPDF({ unit: 'mm', format: 'a4' });\n    var pw = 210;\n    var ml = 15;          // margin left\n    var mr = 15;          // margin right\n    var cw = pw - ml - mr; // content width\n    var y = 15;\n\n    // Colors\n    var navy = [15, 26, 46];\n    var gold = [212, 168, 67];\n    var gray = [100, 110, 130];\n    var lightGray = [200, 207, 215];\n    var black = [17, 24, 39];\n\n    // ===== Header =====\n    if (logoBase64) {\n      doc.addImage(logoBase64, 'PNG', ml, y, 18, 18);\n    }\n    doc.setFont('helvetica', 'bold');\n    doc.setFontSize(16);\n    doc.setTextColor.apply(doc, navy);\n    doc.text('Krisenkommunikation', ml + 22, y + […]
 
 > TOOL
@@ -1040,7 +1040,7 @@ id: toolu_01G5eFfv8LvjEEVxQLS3T5BX
 tool_result
 id: toolu_01G5eFfv8LvjEEVxQLS3T5BX
 ```
-File created successfully at: /home/achildrenmile/bosarsa/js/krisenkommunikation-pdf.js
+File created successfully at: /home/<USER>/bosarsa/js/krisenkommunikation-pdf.js
 ```
 
 > AGENT
@@ -1053,7 +1053,7 @@ tool_use Write
 id: toolu_019yp1rBRuyopq7ZAQF7cg6D
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "content": "---\nlayout: base.njk\ntitle: \"Krisenkommunikation — BOS-ARSA\"\ndescription: \"Krisenkommunikation-Aufnahmeformular zum Download und Online-Ausfüllen. Strukturierte Erfassung von Notrufen für den BOS-Funkbetrieb.\"\ncanonical: \"https://bosarsa.oeradio.at/krisenkommunikation/\"\nactiveNav: krisenkommunikation\npageCSSFile: \"/css/krisenkommunikation.css\"\npermalink: /krisenkommunikation/\n---\n\n<div class=\"krisen-page\">\n  <h1>Krisenkommunikation</h1>\n  <p class=\"subtitle\">Aufnahmeformular für strukturierte Notfallmeldungen im BOS-Funkbetrieb</p>\n\n  {# ===== Download Card ===== #}\n  <div class=\"download-card\">\n    <div class=\"download-card__info\">\n      <h2>Aufnahmeformular als PDF</h2>\n      <p>Druckfertige Version zum Ausfüllen per Hand — ideal für den Einsatz im Feld.</p>\n    </div>\n    <a href=\"/Krisenkommunikation-Aufnahmeformular.pdf\" download class=\"btn btn--gold\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>\n\n  {# ===== Divider ===== #}\n  <div class=\"form-divider\">oder online ausfüllen</div>\n\n  {# ===== Online Form ===== #}\n  <form id=\"krisenForm\" class=\"krisen-form\" autocomplete=\"off\">\n\n    {# --- Lfd. Nr. --- #}\n    <div class=\"krisen-form__section\">\n      <div class=\"krisen-form__row--2\">\n        <div class=\"krisen-form__group\">\n          <label for=\"lfdnr\">Lfd. Nr.</label>\n          <input type=\"text\" id=\"lfdnr\" placeholder=\"z.B. 001\">\n        </div>\n      </div>\n    </div>\n\n    {# --- Entgegennahme --- #}\n    <div class=\"krisen-form__section\">\n      <div class=\"krisen-form__section-title\">Entgegennahme durch</div>\n      <div class=\"krisen-form__row\">\n        <div class=\"krisen-form__group\">\n          <label for=\"rufzeichen\">Mein Rufzeichen</label>\n          <input type=\"text\" id=\"rufzeichen\" placeholder=\"z.B. OE8ABC\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"qth\">Mein QTH</label>\n          <input type=\"text\" id=\"qth\" placeholder=\"z.B. Klagenfurt\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"qrg\">QRG</label>\n          <input type=\"text\" id=\"qrg\" placeholder=\"z.B. 145.7625 MHz\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"telefon\">Telefon</label>\n          <input type=\"tel\" id=\"telefon\" placeholder=\"z.B. +43 664 ...\">\n        </div>\n      </div>\n    </div>\n\n    {# --- Datum / Uhrzeit --- #}\n    <div class=\"krisen-form__section\">\n      <div class=\"krisen-form__row--2\">\n        <div class=\"krisen-form__group\">\n          <label for=\"datum\">Aufnahmedatum</label>\n          <input type=\"date\" id=\"datum\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label […]
 
 > TOOL
@@ -1061,7 +1061,7 @@ id: toolu_019yp1rBRuyopq7ZAQF7cg6D
 tool_result
 id: toolu_019yp1rBRuyopq7ZAQF7cg6D
 ```
-File created successfully at: /home/achildrenmile/bosarsa/src/krisenkommunikation.njk
+File created successfully at: /home/<USER>/bosarsa/src/krisenkommunikation.njk
 ```
 
 > TOOL
@@ -1113,7 +1113,7 @@ id: toolu_01GUy5FRg96NSUkAG66Y7CCs
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk",
   "old_string": "          <li><a href=\"/presse/\">Presse</a></li>\n          <li><a href=\"mailto:{{ site.email }}\">Kontakt</a></li>",
   "new_string": "          <li><a href=\"/presse/\">Presse</a></li>\n          <li><a href=\"/krisenkommunikation/\">Krisenkommunikation</a></li>\n          <li><a href=\"mailto:{{ site.email }}\">Kontakt</a></li>"
 }
@@ -1124,7 +1124,7 @@ id: toolu_01GUy5FRg96NSUkAG66Y7CCs
 tool_result
 id: toolu_01GUy5FRg96NSUkAG66Y7CCs
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/footer.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/footer.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1134,7 +1134,7 @@ id: toolu_01555Qzzegj8XFypXqPDXYWA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/sitemap.njk",
+  "file_path": "/home/<USER>/bosarsa/src/sitemap.njk",
   "old_string": "  <url>\n    <loc>{{ site.url }}/impressum/</loc>",
   "new_string": "  <url>\n    <loc>{{ site.url }}/krisenkommunikation/</loc>\n    <lastmod>2026-03-08</lastmod>\n    <changefreq>yearly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  <url>\n    <loc>{{ site.url }}/impressum/</loc>"
 }
@@ -1145,7 +1145,7 @@ id: toolu_01555Qzzegj8XFypXqPDXYWA
 tool_result
 id: toolu_01555Qzzegj8XFypXqPDXYWA
 ```
-The file /home/achildrenmile/bosarsa/src/sitemap.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/sitemap.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1155,7 +1155,7 @@ id: toolu_018ZhAJydHK82oFD2fvzCtHq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/llms.njk",
+  "file_path": "/home/<USER>/bosarsa/src/llms.njk",
   "old_string": "## Kontakt",
   "new_string": "## Krisenkommunikation\n\nBOS-ARSA stellt ein Krisenkommunikation-Aufnahmeformular bereit, das im Notfunkbetrieb zur strukturierten Erfassung von Notrufen verwendet wird. Das Formular enthält Felder für die Entgegennahme (Rufzeichen, QTH, QRG), Datum/Uhrzeit, die 7 W-Fragen (WER, WAS, WANN, WO, WIE, WOMIT, WARUM) sowie eine Weitergabe-Tabelle für Organisationen wie ÖRK-LZ, LAWZ und Polizei-LLZ. Es ist als druckbare PDF und als interaktives Online-Formular verfügbar unter: {{ site.url }}/krisenkommunikation/\n\n## Kontakt"
 }
@@ -1166,7 +1166,7 @@ id: toolu_018ZhAJydHK82oFD2fvzCtHq
 tool_result
 id: toolu_018ZhAJydHK82oFD2fvzCtHq
 ```
-The file /home/achildrenmile/bosarsa/src/llms.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/llms.njk has been updated successfully.
 ```
 
 > TOOL
@@ -1250,7 +1250,7 @@ tool_use Bash
 id: toolu_01AwxE9BdCuQobXTnRSJCAjy
 ```json
 {
-  "command": "ls -la /home/achildrenmile/bosarsa/_site/krisenkommunikation/index.html /home/achildrenmile/bosarsa/_site/js/jspdf.umd.min.js /home/achildrenmile/bosarsa/_site/js/krisenkommunikation-pdf.js /home/achildrenmile/bosarsa/_site/Krisenkommunikation-Aufnahmeformular.pdf /home/achildrenmile/bosarsa/_site/css/krisenkommunikation.css /home/achildrenmile/bosarsa/_site/js/lucide.min.js",
+  "command": "ls -la /home/<USER>/bosarsa/_site/krisenkommunikation/index.html /home/<USER>/bosarsa/_site/js/jspdf.umd.min.js /home/<USER>/bosarsa/_site/js/krisenkommunikation-pdf.js /home/<USER>/bosarsa/_site/Krisenkommunikation-Aufnahmeformular.pdf /home/<USER>/bosarsa/_site/css/krisenkommunikation.css /home/<USER>/bosarsa/_site/js/lucide.min.js",
   "description": "Verify all output files exist"
 }
 ```
@@ -1260,12 +1260,12 @@ id: toolu_01AwxE9BdCuQobXTnRSJCAjy
 tool_result
 id: toolu_01AwxE9BdCuQobXTnRSJCAjy
 ```
--rw-r--r-- 1 achildrenmile users   5468 Mar  8 00:32 /home/achildrenmile/bosarsa/_site/css/krisenkommunikation.css
--rw-r--r-- 1 achildrenmile users 364463 Mar  8 00:31 /home/achildrenmile/bosarsa/_site/js/jspdf.umd.min.js
--rw-r--r-- 1 achildrenmile users   8024 Mar  8 00:33 /home/achildrenmile/bosarsa/_site/js/krisenkommunikation-pdf.js
--rw-r--r-- 1 achildrenmile users 392129 Feb 22 14:35 /home/achildrenmile/bosarsa/_site/js/lucide.min.js
--rw-r--r-- 1 achildrenmile users 586213 Mar  8 00:31 /home/achildrenmile/bosarsa/_site/Krisenkommunikation-Aufnahmeformular.pdf
--rw-r--r-- 1 achildrenmile users  14497 Mar  8 00:34 /home/achildrenmile/bosarsa/_site/krisenkommunikation/index.html
+-rw-r--r-- 1 achildrenmile users   5468 Mar  8 00:32 /home/<USER>/bosarsa/_site/css/krisenkommunikation.css
+-rw-r--r-- 1 achildrenmile users 364463 Mar  8 00:31 /home/<USER>/bosarsa/_site/js/jspdf.umd.min.js
+-rw-r--r-- 1 achildrenmile users   8024 Mar  8 00:33 /home/<USER>/bosarsa/_site/js/krisenkommunikation-pdf.js
+-rw-r--r-- 1 achildrenmile users 392129 Feb 22 14:35 /home/<USER>/bosarsa/_site/js/lucide.min.js
+-rw-r--r-- 1 achildrenmile users 586213 Mar  8 00:31 /home/<USER>/bosarsa/_site/Krisenkommunikation-Aufnahmeformular.pdf
+-rw-r--r-- 1 achildrenmile users  14497 Mar  8 00:34 /home/<USER>/bosarsa/_site/krisenkommunikation/index.html
 ```
 
 > AGENT
@@ -1320,7 +1320,7 @@ tool_use Bash
 id: toolu_01XzXez5ZkDDx7VZ3t9WjiUx
 ```json
 {
-  "command": "bash /home/achildrenmile/bosarsa/deploy-production.sh 2>&1",
+  "command": "bash /home/<USER>/bosarsa/deploy-production.sh 2>&1",
   "description": "Deploy to production via rsync + docker",
   "timeout": 120000
 }
@@ -1333,7 +1333,7 @@ id: toolu_01XzXez5ZkDDx7VZ3t9WjiUx
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -1435,7 +1435,7 @@ tool_use Read
 id: toolu_01QGv7NaVhs9BgTygg99XfVt
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "offset": 78,
   "limit": 30
 }
@@ -1494,7 +1494,7 @@ id: toolu_011X72dXA71RKLJdtpwijMY1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-form__group {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n}",
   "new_string": ".krisen-form__group {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n}"
 }
@@ -1505,7 +1505,7 @@ id: toolu_011X72dXA71RKLJdtpwijMY1
 tool_result
 id: toolu_011X72dXA71RKLJdtpwijMY1
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > AGENT
@@ -1519,7 +1519,7 @@ id: toolu_01PEULbUFHBimQJdzmqwadN7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-form__group input,\n.krisen-form__group textarea {\n  font-family: var(--font-main);\n  font-size: .88rem;\n  padding: 10px 12px;\n  border: 1px solid var(--gray-200);\n  border-radius: var(--radius);\n  background: var(--off-white);\n  color: var(--gray-900);\n  transition: border-color .2s, box-shadow .2s;\n}",
   "new_string": ".krisen-form__group input,\n.krisen-form__group textarea {\n  font-family: var(--font-main);\n  font-size: .88rem;\n  padding: 10px 12px;\n  border: 1px solid var(--gray-200);\n  border-radius: var(--radius);\n  background: var(--off-white);\n  color: var(--gray-900);\n  transition: border-color .2s, box-shadow .2s;\n  width: 100%;\n  min-width: 0;\n}"
 }
@@ -1530,7 +1530,7 @@ id: toolu_01PEULbUFHBimQJdzmqwadN7
 tool_result
 id: toolu_01PEULbUFHBimQJdzmqwadN7
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > AGENT
@@ -1544,7 +1544,7 @@ id: toolu_012TNU2oG5etw4P4EXCjcPt7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": "/* ===== Responsive ===== */\n@media (max-width: 768px) {",
   "new_string": "/* ===== Responsive ===== */\n@media (max-width: 900px) {\n  .krisen-form__row {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n\n@media (max-width: 768px) {"
 }
@@ -1555,7 +1555,7 @@ id: toolu_012TNU2oG5etw4P4EXCjcPt7
 tool_result
 id: toolu_012TNU2oG5etw4P4EXCjcPt7
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > TOOL
@@ -1564,7 +1564,7 @@ tool_use Bash
 id: toolu_012zPs7pV2HdS2e5kg6y7qgw
 ```json
 {
-  "command": "bash /home/achildrenmile/bosarsa/deploy-production.sh 2>&1",
+  "command": "bash /home/<USER>/bosarsa/deploy-production.sh 2>&1",
   "description": "Deploy fix to production",
   "timeout": 120000
 }
@@ -1577,7 +1577,7 @@ id: toolu_012zPs7pV2HdS2e5kg6y7qgw
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -1658,7 +1658,7 @@ id: toolu_011fsbvGz1i2Hqub5f1piXYB
 ```json
 {
   "pattern": "**/*.png",
-  "path": "/home/achildrenmile/Downloads"
+  "path": "/home/<USER>/Downloads"
 }
 ```
 
@@ -1667,55 +1667,55 @@ id: toolu_011fsbvGz1i2Hqub5f1piXYB
 tool_result
 id: toolu_011fsbvGz1i2Hqub5f1piXYB
 ```
-/home/achildrenmile/Downloads/ChatGPT Image Jan 7, 2026, 10_54_22 AM.png
+/home/<USER>/Downloads/ChatGPT Image Jan 7, 2026, 10_54_22 AM.png
 REDACTED.png
-/home/achildrenmile/Downloads/AFU_Spittal_-_Logo_final-min.png
-/home/achildrenmile/Downloads/oeradio.png
-/home/achildrenmile/Downloads/OERadio_1200x675.png
+/home/<USER>/Downloads/AFU_Spittal_-_Logo_final-min.png
+/home/<USER>/Downloads/oeradio.png
+/home/<USER>/Downloads/OERadio_1200x675.png
 REDACTED (1).png
-/home/achildrenmile/Downloads/ChatGPT Image Jan 7, 2026, 08_21_48 PM.png
-/home/achildrenmile/Downloads/ChatGPT Image Jan 7, 2026, 08_21_56 PM.png
-/home/achildrenmile/Downloads/OE8HAM.png
-/home/achildrenmile/Downloads/OE8DSQ.png
-/home/achildrenmile/Downloads/OE8WAL.png
-/home/achildrenmile/Downloads/OE8LUA.png
-/home/achildrenmile/Downloads/OE8URQ.png
-/home/achildrenmile/Downloads/OE8ASR.png
-/home/achildrenmile/Downloads/OE8ASR_M.png
-/home/achildrenmile/Downloads/OE8CNI.png
-/home/achildrenmile/Downloads/OE8RMJ.png
-/home/achildrenmile/Downloads/OE8CKK.png
-/home/achildrenmile/Downloads/OE8KSM.png
-/home/achildrenmile/Downloads/OE8YYY.png
-/home/achildrenmile/Downloads/Telegram Desktop/OE8LUA (1).png
-/home/achildrenmile/Downloads/vellach_vorm_grundstück_files/logo.png
-/home/achildrenmile/Downloads/Ferienhaus Bela - Urlaub mit Hund in Kärnten, Österreich_files/logo.png
-/home/achildrenmile/Downloads/DEMO_OE0TEST_DEMO.png
-/home/achildrenmile/Downloads/internalnewsletter.png
-/home/achildrenmile/Downloads/qsl-card-generator-linux/data/flutter_assets/assets/icon/app_icon.png
-/home/achildrenmile/Downloads/qsl-card-generator-linux/data/flutter_assets/assets/icon/app_icon_foreground.png
+/home/<USER>/Downloads/ChatGPT Image Jan 7, 2026, 08_21_48 PM.png
+/home/<USER>/Downloads/ChatGPT Image Jan 7, 2026, 08_21_56 PM.png
+/home/<USER>/Downloads/OE8HAM.png
+/home/<USER>/Downloads/OE8DSQ.png
+/home/<USER>/Downloads/OE8WAL.png
+/home/<USER>/Downloads/OE8LUA.png
+/home/<USER>/Downloads/OE8URQ.png
+/home/<USER>/Downloads/OE8ASR.png
+/home/<USER>/Downloads/OE8ASR_M.png
+/home/<USER>/Downloads/OE8CNI.png
+/home/<USER>/Downloads/OE8RMJ.png
+/home/<USER>/Downloads/OE8CKK.png
+/home/<USER>/Downloads/OE8KSM.png
+/home/<USER>/Downloads/OE8YYY.png
+/home/<USER>/Downloads/Telegram Desktop/OE8LUA (1).png
+/home/<USER>/Downloads/vellach_vorm_grundstück_files/logo.png
+/home/<USER>/Downloads/Ferienhaus Bela - Urlaub mit Hund in Kärnten, Österreich_files/logo.png
+/home/<USER>/Downloads/DEMO_OE0TEST_DEMO.png
+/home/<USER>/Downloads/internalnewsletter.png
+/home/<USER>/Downloads/qsl-card-generator-linux/data/flutter_assets/assets/icon/app_icon.png
+/home/<USER>/Downloads/qsl-card-generator-linux/data/flutter_assets/assets/icon/app_icon_foreground.png
 REDACTED.png
-/home/achildrenmile/Downloads/antennenblick_Halbwellen-Dipol_20m_10m.png
-/home/achildrenmile/Downloads/antennenblick_Halbwellen-Dipol_20m_10m (1).png
-/home/achildrenmile/Downloads/antennenblick_Halbwellen-Dipol_20m_10m (2).png
-/home/achildrenmile/Downloads/favicon/web-app-manifest-512x512.png
-/home/achildrenmile/Downloads/favicon/web-app-manifest-192x192.png
-/home/achildrenmile/Downloads/favicon/favicon-96x96.png
-/home/achildrenmile/Downloads/favicon/apple-touch-icon.png
-/home/achildrenmile/Downloads/ChatGPT Image Jan 22, 2026, 02_50_30 PM.png
-/home/achildrenmile/Downloads/hamsip.png
-/home/achildrenmile/Downloads/hamnetsip.png
-/home/achildrenmile/Downloads/oeradiologoicon.png
+/home/<USER>/Downloads/antennenblick_Halbwellen-Dipol_20m_10m.png
+/home/<USER>/Downloads/antennenblick_Halbwellen-Dipol_20m_10m (1).png
+/home/<USER>/Downloads/antennenblick_Halbwellen-Dipol_20m_10m (2).png
+/home/<USER>/Downloads/favicon/web-app-manifest-512x512.png
+/home/<USER>/Downloads/favicon/web-app-manifest-192x192.png
+/home/<USER>/Downloads/favicon/favicon-96x96.png
+/home/<USER>/Downloads/favicon/apple-touch-icon.png
+/home/<USER>/Downloads/ChatGPT Image Jan 22, 2026, 02_50_30 PM.png
+/home/<USER>/Downloads/hamsip.png
+/home/<USER>/Downloads/hamnetsip.png
+/home/<USER>/Downloads/oeradiologoicon.png
 REDACTED.png
-/home/achildrenmile/Downloads/ChatGPT Image Jan 28, 2026, 11_55_44 AM.png
-/home/achildrenmile/Downloads/oeradiologo-300x200.png
-/home/achildrenmile/Downloads/ChatGPT Image Feb 2, 2026, 08_19_40 AM.png
+/home/<USER>/Downloads/ChatGPT Image Jan 28, 2026, 11_55_44 AM.png
+/home/<USER>/Downloads/oeradiologo-300x200.png
+/home/<USER>/Downloads/ChatGPT Image Feb 2, 2026, 08_19_40 AM.png
 REDACTED.png
-/home/achildrenmile/Downloads/ChatGPT Image Feb 10, 2026, 01_37_14 PM.png
-/home/achildrenmile/Downloads/ChatGPT Image Feb 10, 2026, 01_38_20 PM.png
-/home/achildrenmile/Downloads/oeradiokl.png
-/home/achildrenmile/Downloads/ChatGPT Image Feb 14, 2026, 02_17_03 PM.png
-/home/achildrenmile/Downloads/ChatGPT Image Feb 14, 2026, 02_31_01 PM.png
+/home/<USER>/Downloads/ChatGPT Image Feb 10, 2026, 01_37_14 PM.png
+/home/<USER>/Downloads/ChatGPT Image Feb 10, 2026, 01_38_20 PM.png
+/home/<USER>/Downloads/oeradiokl.png
+/home/<USER>/Downloads/ChatGPT Image Feb 14, 2026, 02_17_03 PM.png
+/home/<USER>/Downloads/ChatGPT Image Feb 14, 2026, 02_31_01 PM.png
 REDACTED.png
 REDACTED.png
 REDACTED (1).png
@@ -1730,22 +1730,22 @@ REDACTED.png
 REDACTED.png
 REDACTED (1).png
 REDACTED.png
-/home/achildrenmile/Downloads/bosarsa.png
-/home/achildrenmile/Downloads/ChatGPT Image Feb 19, 2026, 05_11_23 PM.png
-/home/achildrenmile/Downloads/ChatGPT Image Feb 21, 2026, 11_07_33 PM.png
+/home/<USER>/Downloads/bosarsa.png
+/home/<USER>/Downloads/ChatGPT Image Feb 19, 2026, 05_11_23 PM.png
+/home/<USER>/Downloads/ChatGPT Image Feb 21, 2026, 11_07_33 PM.png
 REDACTED.png
 REDACTED (5).png
-/home/achildrenmile/Downloads/noschnitzel.png
-/home/achildrenmile/Downloads/noschnitzel (1).png
+/home/<USER>/Downloads/noschnitzel.png
+/home/<USER>/Downloads/noschnitzel (1).png
 REDACTED.png
 REDACTED (1).png
 REDACTED.png
-/home/achildrenmile/Downloads/oeradioaprshund.png
-/home/achildrenmile/Downloads/ChatGPT Image Feb 26, 2026, 08_45_04 PM.png
-/home/achildrenmile/Downloads/oe8hfs/Screenshot From 2026-03-01 13-20-05.png
-/home/achildrenmile/Downloads/oe8hfs/Screenshot From 2026-03-01 13-20-15.png
-/home/achildrenmile/Downloads/oe8hfs/Screenshot From 2026-03-01 13-20-24.png
-/home/achildrenmile/Downloads/ChatGPT Image Mar 2, 2026, 05_19_34 PM.png […]
+/home/<USER>/Downloads/oeradioaprshund.png
+/home/<USER>/Downloads/ChatGPT Image Feb 26, 2026, 08_45_04 PM.png
+/home/<USER>/Downloads/oe8hfs/Screenshot From 2026-03-01 13-20-05.png
+/home/<USER>/Downloads/oe8hfs/Screenshot From 2026-03-01 13-20-15.png
+/home/<USER>/Downloads/oe8hfs/Screenshot From 2026-03-01 13-20-24.png
+/home/<USER>/Downloads/ChatGPT Image Mar 2, 2026, 05_19_34 PM.png […]
 
 > TOOL
 
@@ -1753,7 +1753,7 @@ tool_use Bash
 id: toolu_01JgLsQiYaahbJHsXJ4epUeE
 ```json
 {
-  "command": "ls -lt /home/achildrenmile/Downloads/*.png 2>/dev/null | head -5",
+  "command": "ls -lt /home/<USER>/Downloads/*.png 2>/dev/null | head -5",
   "description": "Find most recent screenshot"
 }
 ```
@@ -1763,11 +1763,11 @@ id: toolu_01JgLsQiYaahbJHsXJ4epUeE
 tool_result
 id: toolu_01JgLsQiYaahbJHsXJ4epUeE
 ```
--rw-r--r-- 1 achildrenmile users 2576060 Mar  8 00:21 /home/achildrenmile/Downloads/ChatGPT Image Mar 8, 2026, 12_21_31 AM.png
--rw-r--r-- 1 achildrenmile users 2397574 Mar  8 00:13 /home/achildrenmile/Downloads/ChatGPT Image Mar 8, 2026, 12_13_16 AM.png
--rw-r--r-- 1 achildrenmile users 2784143 Mar  7 17:06 /home/achildrenmile/Downloads/ChatGPT Image Mar 7, 2026, 05_06_10 PM.png
--rw-r--r-- 1 achildrenmile users 1510755 Mar  7 15:37 /home/achildrenmile/Downloads/ChatGPT Image Mar 7, 2026, 03_37_39 PM.png
--rw-r--r-- 1 achildrenmile users 2753583 Mar  7 14:12 /home/achildrenmile/Downloads/ChatGPT Image Mar 7, 2026, 02_12_47 PM.png
+-rw-r--r-- 1 achildrenmile users 2576060 Mar  8 00:21 /home/<USER>/Downloads/ChatGPT Image Mar 8, 2026, 12_21_31 AM.png
+-rw-r--r-- 1 achildrenmile users 2397574 Mar  8 00:13 /home/<USER>/Downloads/ChatGPT Image Mar 8, 2026, 12_13_16 AM.png
+-rw-r--r-- 1 achildrenmile users 2784143 Mar  7 17:06 /home/<USER>/Downloads/ChatGPT Image Mar 7, 2026, 05_06_10 PM.png
+-rw-r--r-- 1 achildrenmile users 1510755 Mar  7 15:37 /home/<USER>/Downloads/ChatGPT Image Mar 7, 2026, 03_37_39 PM.png
+-rw-r--r-- 1 achildrenmile users 2753583 Mar  7 14:12 /home/<USER>/Downloads/ChatGPT Image Mar 7, 2026, 02_12_47 PM.png
 ```
 
 > AGENT
@@ -1780,7 +1780,7 @@ tool_use Bash
 id: toolu_01A1sZpmu77rVhFYCeK7m7RL
 ```json
 {
-  "command": "ls -lt /home/achildrenmile/Pictures/*.png /home/achildrenmile/Pictures/Screenshots/*.png /tmp/*.png ~/Desktop/*.png 2>/dev/null | head -10",
+  "command": "ls -lt /home/<USER>/Pictures/*.png /home/<USER>/Pictures/Screenshots/*.png /tmp/*.png ~/Desktop/*.png 2>/dev/null | head -10",
   "description": "Find screenshots in common locations"
 }
 ```
@@ -1790,7 +1790,7 @@ id: toolu_01A1sZpmu77rVhFYCeK7m7RL
 tool_result
 id: toolu_01A1sZpmu77rVhFYCeK7m7RL
 ```
--rw-r--r-- 1 achildrenmile users   71082 Mar  8 08:17 /home/achildrenmile/Pictures/Screenshots/Screenshot From 2026-03-08 08-17-04.png
+-rw-r--r-- 1 achildrenmile users   71082 Mar  8 08:17 /home/<USER>/Pictures/Screenshots/Screenshot From 2026-03-08 08-17-04.png
 -rw-r--r-- 1 achildrenmile users  134750 Mar  8 00:02 /tmp/logo-clean2.png
 -rw-r--r-- 1 achildrenmile users  142904 Mar  8 00:01 /tmp/logo-clean.png
 -rw-r--r-- 1 achildrenmile users  148294 Mar  8 00:00 /tmp/logo-crop-240.png
@@ -1808,7 +1808,7 @@ tool_use Read
 id: toolu_01RWEBYRL4uCCM7vDu77oJCU
 ```json
 {
-  "file_path": "/home/achildrenmile/Pictures/Screenshots/Screenshot From 2026-03-08 08-17-04.png"
+  "file_path": "/home/<USER>/Pictures/Screenshots/Screenshot From 2026-03-08 08-17-04.png"
 }
 ```
 
@@ -1837,7 +1837,7 @@ tool_use Read
 id: toolu_01BBjPy7S994hXWK8WwMmJCL
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "offset": 78,
   "limit": 40
 }
@@ -1902,7 +1902,7 @@ id: toolu_01QpoDaiZWSUuNKWz8EmAKRy
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-form {\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  padding: 32px;\n}",
   "new_string": ".krisen-form {\n  background: var(--white);\n  border: 1px solid var(--gray-100);\n  border-radius: var(--radius);\n  padding: 32px;\n  overflow: hidden;\n}"
 }
@@ -1913,7 +1913,7 @@ id: toolu_01QpoDaiZWSUuNKWz8EmAKRy
 tool_result
 id: toolu_01QpoDaiZWSUuNKWz8EmAKRy
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > TOOL
@@ -1923,7 +1923,7 @@ id: toolu_012KbF4L6uJp3T5cPDKzJzVt
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": "  grid-template-columns: repeat(4, 1fr);\n  gap: 16px;\n  margin-bottom: 16px;\n}\n\n.krisen-form__row--2 {\n  grid-template-columns: repeat(2, 1fr);\n}\n\n.krisen-form__row--3 {\n  grid-template-columns: repeat(3, 1fr);\n}",
   "new_string": "  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 16px;\n  margin-bottom: 16px;\n}\n\n.krisen-form__row--2 {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n\n.krisen-form__row--3 {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}"
 }
@@ -1934,7 +1934,7 @@ id: toolu_012KbF4L6uJp3T5cPDKzJzVt
 tool_result
 id: toolu_012KbF4L6uJp3T5cPDKzJzVt
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > AGENT
@@ -1947,7 +1947,7 @@ tool_use Read
 id: toolu_01J1eybZRTSDXvoqSu7iTq6f
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "offset": 26,
   "limit": 20
 }
@@ -1996,7 +1996,7 @@ id: toolu_01SNzcswuS2ACRrDczsaPxqm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-form__row--2 {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n\n.krisen-form__row--3 {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}",
   "new_string": ".krisen-form__row--2 {\n  display: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  gap: 16px;\n  margin-bottom: 16px;\n}\n\n.krisen-form__row--3 {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 16px;\n  margin-bottom: 16px;\n}"
 }
@@ -2007,7 +2007,7 @@ id: toolu_01SNzcswuS2ACRrDczsaPxqm
 tool_result
 id: toolu_01SNzcswuS2ACRrDczsaPxqm
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > TOOL
@@ -2016,7 +2016,7 @@ tool_use Bash
 id: toolu_01WBHyPJtQLKCJY5mGwfGf1N
 ```json
 {
-  "command": "bash /home/achildrenmile/bosarsa/deploy-production.sh 2>&1",
+  "command": "bash /home/<USER>/bosarsa/deploy-production.sh 2>&1",
   "description": "Deploy overflow fix",
   "timeout": 120000
 }
@@ -2029,7 +2029,7 @@ id: toolu_01WBHyPJtQLKCJY5mGwfGf1N
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -2112,7 +2112,7 @@ tool_use Bash
 id: toolu_016nkGioxkLmjyJGxkUjFLrp
 ```json
 {
-  "command": "ls -lt /home/achildrenmile/Downloads/*.pdf 2>/dev/null | head -10",
+  "command": "ls -lt /home/<USER>/Downloads/*.pdf 2>/dev/null | head -10",
   "description": "Find PDF files in Downloads"
 }
 ```
@@ -2124,14 +2124,14 @@ id: toolu_016nkGioxkLmjyJGxkUjFLrp
 ```
 -rw-r--r-- 1 achildrenmile users   359938 Mar  8 08:21 REDACTED.3.3 (1).pdf
 -rw-r--r-- 1 achildrenmile users   359938 Mar  8 08:19 REDACTED.3.3.pdf
--rw-r--r-- 1 achildrenmile users  1024352 Mar  8 08:13 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular (6).pdf
--rw-r--r-- 1 achildrenmile users   586213 Mar  8 00:11 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular.pdf
--rw-r--r-- 1 achildrenmile users   378333 Mar  7 23:40 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular (5).pdf
--rw-r--r-- 1 achildrenmile users   378333 Mar  7 22:02 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular (4).pdf
--rw-r--r-- 1 achildrenmile users   378333 Mar  7 21:24 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular (3).pdf
--rw-r--r-- 1 achildrenmile users   378333 Mar  7 21:21 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular (2).pdf
--rw-r--r-- 1 achildrenmile users   378333 Mar  7 20:18 /home/achildrenmile/Downloads/Krisenkommunikation-Aufnahmeformular (1).pdf
--rw-r--r-- 1 achildrenmile users   163601 Mar  6 14:49 /home/achildrenmile/Downloads/Angebot_WoGa-MCT_Strali.pdf
+-rw-r--r-- 1 achildrenmile users  1024352 Mar  8 08:13 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular (6).pdf
+-rw-r--r-- 1 achildrenmile users   586213 Mar  8 00:11 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular.pdf
+-rw-r--r-- 1 achildrenmile users   378333 Mar  7 23:40 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular (5).pdf
+-rw-r--r-- 1 achildrenmile users   378333 Mar  7 22:02 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular (4).pdf
+-rw-r--r-- 1 achildrenmile users   378333 Mar  7 21:24 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular (3).pdf
+-rw-r--r-- 1 achildrenmile users   378333 Mar  7 21:21 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular (2).pdf
+-rw-r--r-- 1 achildrenmile users   378333 Mar  7 20:18 /home/<USER>/Downloads/Krisenkommunikation-Aufnahmeformular (1).pdf
+-rw-r--r-- 1 achildrenmile users   163601 Mar  6 14:49 /home/<USER>/Downloads/Angebot_WoGa-MCT_Strali.pdf
 ```
 
 > AGENT
@@ -2182,7 +2182,7 @@ tool_use Bash
 id: toolu_0132oCf3s5k1zwPxs4HuZsBS
 ```json
 {
-  "command": "cp \"REDACTED.3.3.pdf\" /home/achildrenmile/bosarsa/Notfunk-Konzept.pdf",
+  "command": "cp \"REDACTED.3.3.pdf\" /home/<USER>/bosarsa/Notfunk-Konzept.pdf",
   "description": "Copy Notfunk-Konzept PDF to project root"
 }
 ```
@@ -2205,7 +2205,7 @@ tool_use Read
 id: toolu_01LBqX56sTYNNSc8eK2wGJ9k
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "offset": 13,
   "limit": 15
 }
@@ -2245,7 +2245,7 @@ id: toolu_01QTgCncKTgCPKTHVHWNFTny
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "old_string": "  {# ===== Divider ===== #}\n  <div class=\"form-divider\">oder online ausfüllen</div>",
   "new_string": "  {# ===== Download Card 2 ===== #}\n  <div class=\"download-card\" style=\"margin-top: 16px\">\n    <div class=\"download-card__info\">\n      <h2>Notfunk-Konzept</h2>\n      <p>Konzeptdokument für den Notfunkbetrieb — Grundlagen, Abläufe und Organisation.</p>\n    </div>\n    <a href=\"/Notfunk-Konzept.pdf\" download class=\"btn btn--polizei\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>\n\n  {# ===== Divider ===== #}\n  <div class=\"form-divider\">oder online ausfüllen</div>"
 }
@@ -2256,7 +2256,7 @@ id: toolu_01QTgCncKTgCPKTHVHWNFTny
 tool_result
 id: toolu_01QTgCncKTgCPKTHVHWNFTny
 ```
-The file /home/achildrenmile/bosarsa/src/krisenkommunikation.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/krisenkommunikation.njk has been updated successfully.
 ```
 
 > TOOL
@@ -2265,7 +2265,7 @@ tool_use Bash
 id: toolu_01LD5RNwsHDH9Tt2vZJ8CFwV
 ```json
 {
-  "command": "bash /home/achildrenmile/bosarsa/deploy-production.sh 2>&1",
+  "command": "bash /home/<USER>/bosarsa/deploy-production.sh 2>&1",
   "description": "Deploy with Notfunk-Konzept PDF",
   "timeout": 120000
 }
@@ -2278,7 +2278,7 @@ id: toolu_01LD5RNwsHDH9Tt2vZJ8CFwV
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -2353,7 +2353,7 @@ tool_use Read
 id: toolu_01CD2M1CyVhoGjJxQUNoAtLH
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk"
 }
 ```
 
@@ -2401,7 +2401,7 @@ tool_use Read
 id: toolu_01Lto4RYPfjBjUGDd2h1DugY
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk"
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk"
 }
 ```
 
@@ -2474,7 +2474,7 @@ id: toolu_01GBnfrowT4sz2FvUSgZBQtY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "old_string": "<div class=\"krisen-page\">\n  <h1>Krisenkommunikation</h1>\n  <p class=\"subtitle\">Aufnahmeformular für strukturierte Notfallmeldungen im BOS-Funkbetrieb</p>\n\n  {# ===== Download Card ===== #}\n  <div class=\"download-card\">\n    <div class=\"download-card__info\">\n      <h2>Aufnahmeformular als PDF</h2>\n      <p>Druckfertige Version zum Ausfüllen per Hand — ideal für den Einsatz im Feld.</p>\n    </div>\n    <a href=\"/Krisenkommunikation-Aufnahmeformular.pdf\" download class=\"btn btn--gold\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>\n\n  {# ===== Download Card 2 ===== #}\n  <div class=\"download-card\" style=\"margin-top: 16px\">\n    <div class=\"download-card__info\">\n      <h2>Notfunk-Konzept</h2>\n      <p>Konzeptdokument für den Notfunkbetrieb — Grundlagen, Abläufe und Organisation.</p>\n    </div>\n    <a href=\"/Notfunk-Konzept.pdf\" download class=\"btn btn--polizei\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>\n\n  {# ===== Divider ===== #}\n  <div class=\"form-divider\">oder online ausfüllen</div>\n\n  {# ===== Online Form ===== #}\n  <form id=\"krisenForm\" class=\"krisen-form\" autocomplete=\"off\">",
   "new_string": "<div class=\"krisen-page\">\n  <h1>Krisenkommunikation</h1>\n  <p class=\"subtitle\">Strukturierte Erfassung und Weitergabe von Notfallmeldungen im BOS-Funkbetrieb</p>\n\n  <p class=\"krisen-intro\">\n    Im Notfunkbetrieb ist eine klare und strukturierte Kommunikation entscheidend.\n    Das Krisenkommunikation-Aufnahmeformular unterstützt Funkoperatoren bei der\n    systematischen Erfassung von Notrufen nach dem bewährten 7-W-Fragen-Schema und\n    stellt sicher, dass alle relevanten Informationen vollständig weitergegeben werden.\n  </p>\n\n  {# ===== Downloads ===== #}\n  <h2 class=\"krisen-section-title\"><i data-lucide=\"folder-down\"></i> Dokumente & Downloads</h2>\n\n  <div class=\"download-card\">\n    <div class=\"download-card__info\">\n      <h3>Aufnahmeformular</h3>\n      <p>Druckfertige Version zum Ausfüllen per Hand — ideal für den Einsatz im Feld.</p>\n    </div>\n    <a href=\"/Krisenkommunikation-Aufnahmeformular.pdf\" download class=\"btn btn--gold\">\n      <i data-lucide=\"download\"></i> PDF […]
 
@@ -2483,7 +2483,7 @@ id: toolu_01GBnfrowT4sz2FvUSgZBQtY
 tool_result
 id: toolu_01GBnfrowT4sz2FvUSgZBQtY
 ```
-The file /home/achildrenmile/bosarsa/src/krisenkommunikation.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/krisenkommunikation.njk has been updated successfully.
 ```
 
 > AGENT
@@ -2497,7 +2497,7 @@ id: toolu_01BNTiTkdHQtfgeuY49cNDLL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-page .subtitle {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 40px;\n}",
   "new_string": ".krisen-page .subtitle {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 20px;\n}\n\n.krisen-intro {\n  font-size: .92rem;\n  color: var(--gray-700);\n  line-height: 1.7;\n  margin-bottom: 40px;\n}\n\n.krisen-section-title {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: var(--polizei-navy);\n  margin-bottom: 16px;\n  margin-top: 40px;\n}\n\n.krisen-section-title:first-of-type {\n  margin-top: 0;\n}\n\n.krisen-section-title i {\n  width: 20px;\n  height: 20px;\n  color: var(--bos-gold);\n}\n\n.krisen-form-intro {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 16px;\n}"
 }
@@ -2508,7 +2508,7 @@ id: toolu_01BNTiTkdHQtfgeuY49cNDLL
 tool_result
 id: toolu_01BNTiTkdHQtfgeuY49cNDLL
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > AGENT
@@ -2522,7 +2522,7 @@ id: toolu_0113CmAPAM4mGeHCQMB6rJY2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "old_string": "  <div class=\"download-card\">\n    <div class=\"download-card__info\">\n      <h3>Aufnahmeformular</h3>\n      <p>Druckfertige Version zum Ausfüllen per Hand — ideal für den Einsatz im Feld.</p>\n    </div>\n    <a href=\"/Krisenkommunikation-Aufnahmeformular.pdf\" download class=\"btn btn--gold\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>\n\n  <div class=\"download-card\" style=\"margin-top: 12px\">\n    <div class=\"download-card__info\">\n      <h3>Notfunk-Konzept</h3>\n      <p>Konzeptdokument für den Notfunkbetrieb — Grundlagen, Abläufe und Organisation.</p>\n    </div>\n    <a href=\"/Notfunk-Konzept.pdf\" download class=\"btn btn--polizei\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>",
   "new_string": "  <div class=\"download-card\">\n    <div class=\"download-card__info\">\n      <h3>Notfunk-Konzept</h3>\n      <p>Konzeptdokument für den Notfunkbetrieb — Grundlagen, Abläufe und Organisation.</p>\n    </div>\n    <a href=\"/Notfunk-Konzept.pdf\" download class=\"btn btn--polizei\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>\n\n  <div class=\"download-card\" style=\"margin-top: 12px\">\n    <div class=\"download-card__info\">\n      <h3>Aufnahmeformular</h3>\n      <p>Druckfertige Version zum Ausfüllen per Hand — ideal für den Einsatz im Feld.</p>\n    </div>\n    <a href=\"/Krisenkommunikation-Aufnahmeformular.pdf\" download class=\"btn btn--gold\">\n      <i data-lucide=\"download\"></i> PDF herunterladen\n    </a>\n  </div>"
 }
@@ -2533,7 +2533,7 @@ id: toolu_0113CmAPAM4mGeHCQMB6rJY2
 tool_result
 id: toolu_0113CmAPAM4mGeHCQMB6rJY2
 ```
-The file /home/achildrenmile/bosarsa/src/krisenkommunikation.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/krisenkommunikation.njk has been updated successfully.
 ```
 
 > AGENT
@@ -2547,7 +2547,7 @@ id: toolu_01NXony8ge9Nu3MT8Sj7Xiky
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk",
   "old_string": "      <li><a href=\"/presse/\"{% if activeNav == \"presse\" %} class=\"active\"{% endif %}>Presse</a></li>\n      <li><a href=\"{{ prefix }}kontakt\">Kontakt</a></li>",
   "new_string": "      <li><a href=\"/presse/\"{% if activeNav == \"presse\" %} class=\"active\"{% endif %}>Presse</a></li>\n      <li><a href=\"/krisenkommunikation/\"{% if activeNav == \"krisenkommunikation\" %} class=\"active\"{% endif %}>Krisenkommunikation</a></li>\n      <li><a href=\"{{ prefix }}kontakt\">Kontakt</a></li>"
 }
@@ -2558,7 +2558,7 @@ id: toolu_01NXony8ge9Nu3MT8Sj7Xiky
 tool_result
 id: toolu_01NXony8ge9Nu3MT8Sj7Xiky
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/nav.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/nav.njk has been updated successfully.
 ```
 
 > TOOL
@@ -2567,7 +2567,7 @@ tool_use Bash
 id: toolu_01LhSRZmsPVBoUMkwraHyfjd
 ```json
 {
-  "command": "bash /home/achildrenmile/bosarsa/deploy-production.sh 2>&1",
+  "command": "bash /home/<USER>/bosarsa/deploy-production.sh 2>&1",
   "description": "Deploy page restructure + nav item",
   "timeout": 120000
 }
@@ -2580,7 +2580,7 @@ id: toolu_01LhSRZmsPVBoUMkwraHyfjd
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -2659,7 +2659,7 @@ tool_use Read
 id: toolu_01CA7evqkffkHou2CmdQXR8q
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css"
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css"
 }
 ```
 
@@ -2755,7 +2755,7 @@ id: toolu_01LPDrhHqRHYTrGqqjrxHY9v
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-page h1 {\n  font-size: 1.6rem;\n  font-weight: 800;\n  color: var(--gray-900);\n  margin-bottom: 8px;\n}\n\n.krisen-page .subtitle {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 20px;\n}\n\n.krisen-intro {\n  font-size: .92rem;\n  color: var(--gray-700);\n  line-height: 1.7;\n  margin-bottom: 40px;\n}\n\n.krisen-section-title {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: var(--polizei-navy);\n  margin-bottom: 16px;\n  margin-top: 40px;\n}\n\n.krisen-section-title:first-of-type {\n  margin-top: 0;\n}\n\n.krisen-section-title i {\n  width: 20px;\n  height: 20px;\n  color: var(--bos-gold);\n}\n\n.krisen-form-intro {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 16px;\n}",
   "new_string": ".krisen-page h1 {\n  font-size: 1.6rem;\n  font-weight: 800;\n  color: var(--gray-900);\n  margin-bottom: 12px;\n}\n\n.krisen-page .subtitle {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 28px;\n}\n\n.krisen-intro {\n  font-size: .92rem;\n  color: var(--gray-700);\n  line-height: 1.75;\n  margin-bottom: 48px;\n}\n\n.krisen-section-title {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: var(--polizei-navy);\n  margin-bottom: 20px;\n  margin-top: 56px;\n}\n\n.krisen-section-title:first-of-type {\n  margin-top: 0;\n}\n\n.krisen-section-title i {\n  width: 20px;\n  height: 20px;\n  color: var(--bos-gold);\n}\n\n.krisen-form-intro {\n  font-size: .85rem;\n  color: var(--gray-500);\n  margin-bottom: 20px;\n}"
 }
@@ -2766,7 +2766,7 @@ id: toolu_01LPDrhHqRHYTrGqqjrxHY9v
 tool_result
 id: toolu_01LPDrhHqRHYTrGqqjrxHY9v
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > TOOL
@@ -2776,7 +2776,7 @@ id: toolu_01QSXBAGoMQntZGPm6yUJ7iw
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".download-card__info h2 {\n  font-size: 1.05rem;\n  font-weight: 700;\n  color: var(--gray-900);\n  margin-bottom: 4px;\n}\n\n.download-card__info p {\n  font-size: .85rem;\n  color: var(--gray-500);\n}",
   "new_string": ".download-card__info h2,\n.download-card__info h3 {\n  font-size: 1.05rem;\n  font-weight: 700;\n  color: var(--gray-900);\n  margin-bottom: 6px;\n}\n\n.download-card__info p {\n  font-size: .85rem;\n  color: var(--gray-500);\n  line-height: 1.5;\n}"
 }
@@ -2787,7 +2787,7 @@ id: toolu_01QSXBAGoMQntZGPm6yUJ7iw
 tool_result
 id: toolu_01QSXBAGoMQntZGPm6yUJ7iw
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > AGENT
@@ -2801,7 +2801,7 @@ id: toolu_016Bph8UitTcYNopEv1tMKSx
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-form__section {\n  margin-bottom: 32px;\n}\n\n.krisen-form__section-title {\n  font-size: .72rem;\n  font-family: var(--font-mono);\n  letter-spacing: 3px;\n  text-transform: uppercase;\n  color: var(--bos-gold);\n  margin-bottom: 16px;\n  padding-bottom: 8px;\n  border-bottom: 1px solid var(--gray-100);\n}",
   "new_string": ".krisen-form__section {\n  margin-bottom: 36px;\n}\n\n.krisen-form__section:last-child {\n  margin-bottom: 0;\n}\n\n.krisen-form__section-title {\n  font-size: .72rem;\n  font-family: var(--font-mono);\n  letter-spacing: 3px;\n  text-transform: uppercase;\n  color: var(--bos-gold);\n  margin-bottom: 20px;\n  padding-bottom: 10px;\n  border-bottom: 1px solid var(--gray-100);\n}"
 }
@@ -2812,7 +2812,7 @@ id: toolu_016Bph8UitTcYNopEv1tMKSx
 tool_result
 id: toolu_016Bph8UitTcYNopEv1tMKSx
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > TOOL
@@ -2822,7 +2822,7 @@ id: toolu_01Ju1MRD3WbBGDCpwzv5J4Ta
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-form__group {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n}",
   "new_string": ".krisen-form__group {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  min-width: 0;\n}"
 }
@@ -2833,7 +2833,7 @@ id: toolu_01Ju1MRD3WbBGDCpwzv5J4Ta
 tool_result
 id: toolu_01Ju1MRD3WbBGDCpwzv5J4Ta
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > AGENT
@@ -2847,7 +2847,7 @@ id: toolu_01Wh8KMS5xj6SMDcagMeFsbV
 ```json
 {
   "replace_all": true,
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "old_string": "style=\"margin-bottom:12px\"",
   "new_string": "style=\"margin-bottom:16px\""
 }
@@ -2858,7 +2858,7 @@ id: toolu_01Wh8KMS5xj6SMDcagMeFsbV
 tool_result
 id: toolu_01Wh8KMS5xj6SMDcagMeFsbV
 ```
-The file /home/achildrenmile/bosarsa/src/krisenkommunikation.njk has been updated. All occurrences of 'style="margin-bottom:12px"' were successfully replaced with 'style="margin-bottom:16px"'.
+The file /home/<USER>/bosarsa/src/krisenkommunikation.njk has been updated. All occurrences of 'style="margin-bottom:12px"' were successfully replaced with 'style="margin-bottom:16px"'.
 ```
 
 > AGENT
@@ -2872,7 +2872,7 @@ id: toolu_01XQNLRYpaYgVWFb9WA2KjLf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/krisenkommunikation.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/krisenkommunikation.css",
   "old_string": ".krisen-form__actions {\n  display: flex;\n  gap: 12px;\n  margin-top: 32px;\n  padding-top: 24px;\n  border-top: 1px solid var(--gray-100);\n}",
   "new_string": ".krisen-form__actions {\n  display: flex;\n  gap: 16px;\n  margin-top: 40px;\n  padding-top: 28px;\n  border-top: 1px solid var(--gray-100);\n}"
 }
@@ -2883,7 +2883,7 @@ id: toolu_01XQNLRYpaYgVWFb9WA2KjLf
 tool_result
 id: toolu_01XQNLRYpaYgVWFb9WA2KjLf
 ```
-The file /home/achildrenmile/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/krisenkommunikation.css has been updated successfully.
 ```
 
 > TOOL
@@ -2892,7 +2892,7 @@ tool_use Bash
 id: toolu_018FvsSFo72TujvMUx9xCZDi
 ```json
 {
-  "command": "bash /home/achildrenmile/bosarsa/deploy-production.sh 2>&1",
+  "command": "bash /home/<USER>/bosarsa/deploy-production.sh 2>&1",
   "description": "Deploy spacing improvements",
   "timeout": 120000
 }
@@ -2905,7 +2905,7 @@ id: toolu_018FvsSFo72TujvMUx9xCZDi
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 
@@ -2996,7 +2996,7 @@ tool_use Bash
 id: toolu_01BcvfxoctRXhRhrE1PSAstJ
 ```json
 {
-  "command": "ls -lt /home/achildrenmile/Pictures/Screenshots/*.png | head -3",
+  "command": "ls -lt /home/<USER>/Pictures/Screenshots/*.png | head -3",
   "description": "Find latest screenshot"
 }
 ```
@@ -3006,9 +3006,9 @@ id: toolu_01BcvfxoctRXhRhrE1PSAstJ
 tool_result
 id: toolu_01BcvfxoctRXhRhrE1PSAstJ
 ```
--rw-r--r-- 1 achildrenmile users  125851 Mar  8 08:26 /home/achildrenmile/Pictures/Screenshots/Screenshot From 2026-03-08 08-26-44.png
--rw-r--r-- 1 achildrenmile users   71082 Mar  8 08:17 /home/achildrenmile/Pictures/Screenshots/Screenshot From 2026-03-08 08-17-04.png
--rw-r--r-- 1 achildrenmile users  104976 Mar  7 14:38 /home/achildrenmile/Pictures/Screenshots/Screenshot From 2026-03-07 14-38-57.png
+-rw-r--r-- 1 achildrenmile users  125851 Mar  8 08:26 /home/<USER>/Pictures/Screenshots/Screenshot From 2026-03-08 08-26-44.png
+-rw-r--r-- 1 achildrenmile users   71082 Mar  8 08:17 /home/<USER>/Pictures/Screenshots/Screenshot From 2026-03-08 08-17-04.png
+-rw-r--r-- 1 achildrenmile users  104976 Mar  7 14:38 /home/<USER>/Pictures/Screenshots/Screenshot From 2026-03-07 14-38-57.png
 ```
 
 > TOOL
@@ -3017,7 +3017,7 @@ tool_use Read
 id: toolu_01ANo5h3NsdRizMYUPhjBLjd
 ```json
 {
-  "file_path": "/home/achildrenmile/Pictures/Screenshots/Screenshot From 2026-03-08 08-26-44.png"
+  "file_path": "/home/<USER>/Pictures/Screenshots/Screenshot From 2026-03-08 08-26-44.png"
 }
 ```
 
@@ -3047,7 +3047,7 @@ id: toolu_01RGN8mh43We1uDKN7vCshjH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/krisenkommunikation.njk",
+  "file_path": "/home/<USER>/bosarsa/src/krisenkommunikation.njk",
   "old_string": "      <div class=\"krisen-form__section-title\">Entgegennahme durch</div>\n      <div class=\"krisen-form__row\">\n        <div class=\"krisen-form__group\">\n          <label for=\"rufzeichen\">Mein Rufzeichen</label>\n          <input type=\"text\" id=\"rufzeichen\" placeholder=\"z.B. OE8ABC\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"qth\">Mein QTH</label>\n          <input type=\"text\" id=\"qth\" placeholder=\"z.B. Klagenfurt\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"qrg\">QRG</label>\n          <input type=\"text\" id=\"qrg\" placeholder=\"z.B. 145.7625 MHz\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"telefon\">Telefon</label>\n          <input type=\"tel\" id=\"telefon\" placeholder=\"z.B. +43 664 ...\">\n        </div>\n      </div>",
   "new_string": "      <div class=\"krisen-form__section-title\">Entgegennahme durch</div>\n      <div class=\"krisen-form__row--2\">\n        <div class=\"krisen-form__group\">\n          <label for=\"rufzeichen\">Mein Rufzeichen</label>\n          <input type=\"text\" id=\"rufzeichen\" placeholder=\"z.B. OE8ABC\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"qth\">Mein QTH</label>\n          <input type=\"text\" id=\"qth\" placeholder=\"z.B. Klagenfurt\">\n        </div>\n      </div>\n      <div class=\"krisen-form__row--2\">\n        <div class=\"krisen-form__group\">\n          <label for=\"qrg\">QRG</label>\n          <input type=\"text\" id=\"qrg\" placeholder=\"z.B. 145.7625 MHz\">\n        </div>\n        <div class=\"krisen-form__group\">\n          <label for=\"telefon\">Telefon</label>\n          <input type=\"tel\" id=\"telefon\" placeholder=\"z.B. +43 664 ...\">\n        </div>\n      </div>"
 }
@@ -3058,7 +3058,7 @@ id: toolu_01RGN8mh43We1uDKN7vCshjH
 tool_result
 id: toolu_01RGN8mh43We1uDKN7vCshjH
 ```
-The file /home/achildrenmile/bosarsa/src/krisenkommunikation.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/krisenkommunikation.njk has been updated successfully.
 ```
 
 > TOOL
@@ -3067,7 +3067,7 @@ tool_use Bash
 id: toolu_01STcG9yoBaQfoewiSugDSPQ
 ```json
 {
-  "command": "bash /home/achildrenmile/bosarsa/deploy-production.sh 2>&1",
+  "command": "bash /home/<USER>/bosarsa/deploy-production.sh 2>&1",
   "description": "Deploy 2-column Entgegennahme fix",
   "timeout": 120000
 }
@@ -3080,7 +3080,7 @@ id: toolu_01STcG9yoBaQfoewiSugDSPQ
 ```
 [0;32m=== Deploying BOS-ARSA to achildrenmile@host-node-01 ===[0m
 Host: achildrenmile@host-node-01
-Remote dir: /home/achildrenmile/apps/bosarsa
+Remote dir: /home/<USER>/apps/bosarsa
 Container: bosarsa
 Port: 3417:80
 

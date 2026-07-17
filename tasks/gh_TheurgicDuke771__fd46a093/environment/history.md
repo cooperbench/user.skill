@@ -218,7 +218,7 @@ tool_use Read
 id: toolu_01GdC9LGgkwmNc6JRFzvDdWp
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/snowflake.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/snowflake.py"
 }
 ```
 
@@ -266,7 +266,7 @@ tool_use Read
 id: toolu_01BcWLDnX9MjD2v4UX5DCsf2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/unity_catalog.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/unity_catalog.py"
 }
 ```
 
@@ -367,7 +367,7 @@ tool_use Read
 id: toolu_014fMtn1Mk6LGvuLqy6vmgv2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/flatfile.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/flatfile.py"
 }
 ```
 
@@ -436,7 +436,7 @@ tool_use Read
 id: toolu_017jjaN1TVc3pip8wg8m4pz9
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py"
 }
 ```
 
@@ -488,7 +488,7 @@ tool_use Read
 id: toolu_013XLqttm2ZZUQ7upCb8degA
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py"
 }
 ```
 
@@ -637,7 +637,7 @@ tool_use Read
 id: toolu_01PCQaYSv1EvieNrAswqQ2Fh
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0029-dbt-orchestration-provider.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0029-dbt-orchestration-provider.md"
 }
 ```
 
@@ -723,7 +723,7 @@ tool_use Write
 id: toolu_01UJWYv7BttUu3MUP5F9Bgav
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
   "content": "# ADR 0030 — Apache Iceberg support: native `pyiceberg` read (v2) behind a self-contained `iceberg` datasource\n\n- **Status:** Accepted (spike decision, 2026-07-07; native impl deferred — see Consequences)\n- **Date:** 2026-07-07\n- **Deciders:** solo-dev\n- **Related:** [0003](0003-gx-only-for-v1.md) (GX-only; DQX swap seam), [0011](0011-extensibility-seams-for-deferred-integrations.md) (second-impl-deferred seams — `CheckRunner`/`ConnectionAdapter`), [0012](0012-monitor-kind-seam.md) (freshness/schema-drift monitor kinds this feeds), [0010](0010-provider-agnostic-infrastructure-seams.md)/[0013](0013-marketplace-distribution-and-anti-lock-in.md) (anti-lock-in), [0015](README.md) (pending two-connection model — the Option B evolution). Issue [#286](https://github.com/TheurgicDuke771/DataQ/issues/286).\n\n## Context\n\nApache Iceberg is increasingly the default open table format on Databricks (Unity Catalog managed tables), Snowflake, and object storage (S3 Tables / ADLS + Polaris). #286 asks whether DataQ should read Iceberg tables natively. The spike (this session) answered two prior questions first, because they collapse most of the scope:\n\n1. **Does reading Iceberg through a query engine need new DataQ code?** No. `SnowflakeCheckRunner` (`add_table_asset` → SQL pushdown, `backend/app/datasources/snowflake.py`) and `UnityCatalogCheckRunner` (`pd.read_sql_table` over the SQL Warehouse, `backend/app/datasources/unity_catalog.py`) talk **SQL to the engine, never to the file format**. Whether an identifier resolves to a native FDN/Delta table or an Iceberg table (`CREATE ICEBERG TABLE … CATALOG_SOURCE=OBJECT_STORE`, or a Databricks foreign/UniForm table) is transparent to the connector, GX, and DataQ. A user can point a suite at an engine-registered Iceberg table **today, with […]
 
 > TOOL
@@ -731,7 +731,7 @@ id: toolu_01UJWYv7BttUu3MUP5F9Bgav
 tool_result
 id: toolu_01UJWYv7BttUu3MUP5F9Bgav
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -745,7 +745,7 @@ id: toolu_01Tvw7pQheTe2Dhva6Shjsij
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |\n\n## Pending (to be written in their respective weeks)",
   "new_string": "| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |\n| [0030](0030-iceberg-native-read-path.md) | Apache Iceberg — engine-level read (Snowflake/UC iceberg tables) is free, zero-code; the only new build is a **native `pyiceberg` read** (v2 baseline, v3 deferred) behind a thin `IcebergCheckRunner` (scan → DataFrame → `gx_runner`); new **self-contained** `iceberg` connection type (Option A: own catalog + storage credential — independent lifecycle, cascade-safe), Option B two-connection ref deferred to 0015; native impl deferred (#286) | Accepted (spike; native impl deferred) |\n\n## Pending (to be written in their respective weeks)"
 }
@@ -765,7 +765,7 @@ tool_use Read
 id: toolu_013J19WeFS4Q8bT6cFHp6CTh
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "offset": 40
 }
 ```
@@ -797,7 +797,7 @@ id: toolu_011Yv3gBdQX5YJC1v6eg3C6M
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |\n\n## Pending (to be written in their respective weeks)",
   "new_string": "| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |\n| [0030](0030-iceberg-native-read-path.md) | Apache Iceberg — engine-level read (Snowflake/UC iceberg tables) is free & zero-code; the only new build is a **native `pyiceberg` read** (v2 baseline, v3 deferred) behind a thin `IcebergCheckRunner` (scan → DataFrame → `gx_runner`); new **self-contained** `iceberg` connection type (Option A: own catalog + storage credential — independent lifecycle, cascade-safe), Option B two-connection ref deferred to 0015; reads Delta UniForm too; native impl deferred (#286) | Accepted (spike; native impl deferred) |\n\n## Pending (to be written in their respective weeks)"
 }
@@ -808,7 +808,7 @@ id: toolu_011Yv3gBdQX5YJC1v6eg3C6M
 tool_result
 id: toolu_011Yv3gBdQX5YJC1v6eg3C6M
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1015,7 +1015,7 @@ tool_use Bash
 id: toolu_01RFarmooavm9QymJsLGAqF9
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\nPYTHONPATH=/Users/arijit/Coding/Python/DataQ \\\n  /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/8bb76f13-05da-451c-ab08-dc5056bf7a39/scratchpad/iceberg-venv/bin/python \\\n  /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/8bb76f13-05da-451c-ab08-dc5056bf7a39/scratchpad/iceberg_proof.py 2>&1 | grep -v \"WARNING\\|UserWarning\\|warnings.warn\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\nPYTHONPATH=/home/<USER>/Coding/Python/DataQ \\\n  /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/8bb76f13-05da-451c-ab08-dc5056bf7a39/scratchpad/iceberg-venv/bin/python \\\n  /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/8bb76f13-05da-451c-ab08-dc5056bf7a39/scratchpad/iceberg_proof.py 2>&1 | grep -v \"WARNING\\|UserWarning\\|warnings.warn\"",
   "description": "Run the pyiceberg proof script"
 }
 ```
@@ -1206,7 +1206,7 @@ tool_use Bash
 id: toolu_01QQNZcZf31ypDCuVss7iL78
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\nPYTHONPATH=/Users/arijit/Coding/Python/DataQ \\\n  /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/8bb76f13-05da-451c-ab08-dc5056bf7a39/scratchpad/iceberg-venv/bin/python \\\n  /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/8bb76f13-05da-451c-ab08-dc5056bf7a39/scratchpad/iceberg_proof.py 2>&1 | grep -v \"WARNING\\|UserWarning\\|warnings.warn\\|MarshmallowWarning\\|return self.dispatch\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\nPYTHONPATH=/home/<USER>/Coding/Python/DataQ \\\n  /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/8bb76f13-05da-451c-ab08-dc5056bf7a39/scratchpad/iceberg-venv/bin/python \\\n  /private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/8bb76f13-05da-451c-ab08-dc5056bf7a39/scratchpad/iceberg_proof.py 2>&1 | grep -v \"WARNING\\|UserWarning\\|warnings.warn\\|MarshmallowWarning\\|return self.dispatch\"",
   "description": "Re-run the pyiceberg proof"
 }
 ```
@@ -1226,7 +1226,19 @@ snapshots      = 3 (appends + delete)
 scan().to_pandas() → 4 rows, order_id = [1, 3, 4, 5]
 columns        = ['order_id', 'customer', 'channel']
 ✓ current snapshot only, delete applied, schema-by-id reconciled
-Calculating Metrics:   0%|          | 0/23 [00:00<?, ?it/s]Calculating Metrics:   0%|          | 0/23 [00:00<?, ?it/s]Calculating Metrics:  17%|█▋        | 4/23 [00:00<00:00, 5277.51it/s]Calculating Metrics:  17%|█▋        | 4/23 [00:00<00:00, 4746.03it/s]Calculating Metrics:  26%|██▌       | 6/23 [00:00<00:00, 6718.05it/s]Calculating Metrics:  26%|██▌       | 6/23 [00:00<00:00, 6375.94it/s]Calculating Metrics:  43%|████▎     | 10/23 [00:00<00:00, 5602.12it/s]Calculating Metrics:  43%|████▎     | 10/23 [00:00<00:00, 5473.45it/s]Calculating Metrics: 100%|██████████| 23/23 [00:00<00:00, 6592.11it/s]Calculating Metrics: 100%|██████████| 23/23 [00:00<00:00, 6520.82it/s]Calculating Metrics: 100%|██████████| 23/23 [00:00<00:00, 6482.26it/s]Calculating Metrics: 100%|██████████| 23/23 [00:00<00:00, 6428.27it/s]
+
+Calculating Metrics:   0%|          | 0/23 [00:00<?, ?it/s]
+Calculating Metrics:   0%|          | 0/23 [00:00<?, ?it/s]
+Calculating Metrics:  17%|█▋        | 4/23 [00:00<00:00, 5277.51it/s]
+Calculating Metrics:  17%|█▋        | 4/23 [00:00<00:00, 4746.03it/s]
+Calculating Metrics:  26%|██▌       | 6/23 [00:00<00:00, 6718.05it/s]
+Calculating Metrics:  26%|██▌       | 6/23 [00:00<00:00, 6375.94it/s]
+Calculating Metrics:  43%|████▎     | 10/23 [00:00<00:00, 5602.12it/s]
+Calculating Metrics:  43%|████▎     | 10/23 [00:00<00:00, 5473.45it/s]
+Calculating Metrics: 100%|██████████| 23/23 [00:00<00:00, 6592.11it/s]
+Calculating Metrics: 100%|██████████| 23/23 [00:00<00:00, 6520.82it/s]
+Calculating Metrics: 100%|██████████| 23/23 [00:00<00:00, 6482.26it/s]
+Calculating Metrics: 100%|██████████| 23/23 [00:00<00:00, 6428.27it/s]
 
 run_expectations → success=True, 3 checks
   ✓ expect_column_values_to_not_be_null
@@ -1248,7 +1260,7 @@ tool_use Bash
 id: toolu_01XfPt32bmbWdoViYPj298tH
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\necho \"=== open milestones ===\"; gh api repos/:owner/:repo/milestones --jq '.[] | \"\\(.number)\\t\\(.title)\"'\necho \"=== labels (subset) ===\"; gh label list 2>/dev/null | grep -iE \"enhancement|backlog|priority|datasource|tech\" | head",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\necho \"=== open milestones ===\"; gh api repos/:owner/:repo/milestones --jq '.[] | \"\\(.number)\\t\\(.title)\"'\necho \"=== labels (subset) ===\"; gh label list 2>/dev/null | grep -iE \"enhancement|backlog|priority|datasource|tech\" | head",
   "description": "List milestones and labels"
 }
 ```
@@ -1285,7 +1297,7 @@ tool_use Bash
 id: toolu_01Yaaty6W8G5HpeQqNe6C3yu
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngh issue create \\\n  --title \"Implement native Iceberg read: \\`IcebergCheckRunner\\` + self-contained \\`iceberg\\` connection (ADR 0030)\" \\\n  --milestone \"v1.1 Backlog\" \\\n  --label \"enhancement\" --label \"priority/P3\" \\\n  --body \"$(cat <<'EOF'\nBuild the native Apache Iceberg read path decided in **[ADR 0030](../blob/main/docs/adr/0030-iceberg-native-read-path.md)** and spiked in #286. Engine-level reads (Snowflake iceberg tables / Databricks foreign or UniForm catalog) already work with zero code under the existing `snowflake`/`unity_catalog` connections; this issue is the **native, no-query-engine** path.\n\n## Scope (v2 baseline)\n\n- [ ] Add `pyiceberg[pyarrow]` (+ the relevant catalog extra) to `backend/requirements.txt` with a pinned version and a CVE-surface check. **Spike-verified compatible:** `pyiceberg==0.11.1` resolves cleanly with the repo's pinned `pyarrow==24.0.0` and `great-expectations==1.17.2` (no pyarrow conflict) — #286.\n- [ ] `IcebergConnectionAdapter` (`backend/app/datasources/iceberg.py`) — **self-contained (Option A)**: catalog config (REST / SQL / Glue / Hive / Unity IRC) + warehouse/storage location + its **own** storage credential (single `secret_ref`). `validate_config` + a lightweight `test` (load catalog + `list_tables` or a metadata read).\n- [ ] `IcebergCheckRunner` — `catalog.load_table(...).scan().to_pandas()` → `gx_runner.run_expectations`, mirroring `UnityCatalogCheckRunner` (thin). The `table` arg carries `namespace.table`.\n- [ ] Register `iceberg` in `datasources/registry.py` (`_ADAPTERS` + `_RUNNER_BUILDERS`). No change to flat-file/SQL dispatch.\n- [ ] Column profiler dispatch for `iceberg` (reuse the `profile_dataframe` […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngh issue create \\\n  --title \"Implement native Iceberg read: \\`IcebergCheckRunner\\` + self-contained \\`iceberg\\` connection (ADR 0030)\" \\\n  --milestone \"v1.1 Backlog\" \\\n  --label \"enhancement\" --label \"priority/P3\" \\\n  --body \"$(cat <<'EOF'\nBuild the native Apache Iceberg read path decided in **[ADR 0030](../blob/main/docs/adr/0030-iceberg-native-read-path.md)** and spiked in #286. Engine-level reads (Snowflake iceberg tables / Databricks foreign or UniForm catalog) already work with zero code under the existing `snowflake`/`unity_catalog` connections; this issue is the **native, no-query-engine** path.\n\n## Scope (v2 baseline)\n\n- [ ] Add `pyiceberg[pyarrow]` (+ the relevant catalog extra) to `backend/requirements.txt` with a pinned version and a CVE-surface check. **Spike-verified compatible:** `pyiceberg==0.11.1` resolves cleanly with the repo's pinned `pyarrow==24.0.0` and `great-expectations==1.17.2` (no pyarrow conflict) — #286.\n- [ ] `IcebergConnectionAdapter` (`backend/app/datasources/iceberg.py`) — **self-contained (Option A)**: catalog config (REST / SQL / Glue / Hive / Unity IRC) + warehouse/storage location + its **own** storage credential (single `secret_ref`). `validate_config` + a lightweight `test` (load catalog + `list_tables` or a metadata read).\n- [ ] `IcebergCheckRunner` — `catalog.load_table(...).scan().to_pandas()` → `gx_runner.run_expectations`, mirroring `UnityCatalogCheckRunner` (thin). The `table` arg carries `namespace.table`.\n- [ ] Register `iceberg` in `datasources/registry.py` (`_ADAPTERS` + `_RUNNER_BUILDERS`). No change to flat-file/SQL dispatch.\n- [ ] Column profiler dispatch for `iceberg` (reuse the `profile_dataframe` […]
 
 > TOOL
 
@@ -1301,7 +1313,7 @@ tool_use Bash
 id: toolu_01Dh7Tz8oY7m7jrsjAKZXkM4
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngh issue create \\\n  --title \"Revisit Iceberg v3 support (deletion vectors, row lineage) behind a capability gate — ADR 0030\" \\\n  --milestone \"v1.1 Backlog\" \\\n  --label \"enhancement\" --label \"priority/P3\" \\\n  --body \"$(cat <<'EOF'\nTracking issue from **[ADR 0030](../blob/main/docs/adr/0030-iceberg-native-read-path.md)** §2. The native Iceberg build (#716) ships **format-version 2** as the baseline. Iceberg **v3** — deletion vectors, row lineage, multi-arg/variant transforms — is deferred because engine support is uneven and `pyiceberg`'s v3 read path is still maturing.\n\n## When to pick this up\n\n- `pyiceberg` v3 read is GA/stable, **and**\n- the engines DataQ users actually read from (Snowflake, Databricks/UniForm, Spark) converge on v3.\n\nNote: Delta UniForm currently emits **v2** (`delta.enableIcebergCompatV2`) and is mutually exclusive with deletion vectors, so it stays in v2 territory regardless.\n\n## Scope when revisited\n\n- [ ] Gate v3-only features behind a capability flag on the `iceberg` connection (v2 remains the default/baseline).\n- [ ] Verify `pyiceberg` reads a v3 table with deletion vectors correctly into the DataFrame.\n- [ ] Docs: v2-vs-v3 capability matrix per engine.\n\nDepends on #716.\nEOF\n)\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngh issue create \\\n  --title \"Revisit Iceberg v3 support (deletion vectors, row lineage) behind a capability gate — ADR 0030\" \\\n  --milestone \"v1.1 Backlog\" \\\n  --label \"enhancement\" --label \"priority/P3\" \\\n  --body \"$(cat <<'EOF'\nTracking issue from **[ADR 0030](../blob/main/docs/adr/0030-iceberg-native-read-path.md)** §2. The native Iceberg build (#716) ships **format-version 2** as the baseline. Iceberg **v3** — deletion vectors, row lineage, multi-arg/variant transforms — is deferred because engine support is uneven and `pyiceberg`'s v3 read path is still maturing.\n\n## When to pick this up\n\n- `pyiceberg` v3 read is GA/stable, **and**\n- the engines DataQ users actually read from (Snowflake, Databricks/UniForm, Spark) converge on v3.\n\nNote: Delta UniForm currently emits **v2** (`delta.enableIcebergCompatV2`) and is mutually exclusive with deletion vectors, so it stays in v2 territory regardless.\n\n## Scope when revisited\n\n- [ ] Gate v3-only features behind a capability flag on the `iceberg` connection (v2 remains the default/baseline).\n- [ ] Verify `pyiceberg` reads a v3 table with deletion vectors correctly into the DataFrame.\n- [ ] Docs: v2-vs-v3 capability matrix per engine.\n\nDepends on #716.\nEOF\n)\"",
   "description": "File Iceberg v3 revisit tracker"
 }
 ```
@@ -1324,7 +1336,7 @@ tool_use Bash
 id: toolu_01TAgxdCY1GYWne6442kcnbF
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngh issue comment 286 --body \"$(cat <<'EOF'\n## Spike complete — decision recorded in ADR 0030, native read proven, closing\n\n### Outcome (both ACs met)\n\n**AC 1 — read path decided & recorded → [ADR 0030](../blob/main/docs/adr/0030-iceberg-native-read-path.md) (Accepted).** The spike answered two prior questions that collapse most of the scope:\n\n- **Engine-level read is free, zero-code.** `SnowflakeCheckRunner` (`add_table_asset` → SQL pushdown) and `UnityCatalogCheckRunner` (`read_sql_table` over the SQL Warehouse) talk SQL to the engine, never to the file format — so a Snowflake iceberg table or a Databricks foreign/UniForm catalog table is just another table under the existing `snowflake`/`unity_catalog` connection. **We deliberately did NOT stand up a Snowflake external volume / Databricks foreign catalog**: format-transparency is guaranteed by the code, so a live setup would only re-confirm it at real infra cost during the subscription wind-down. Zero decision value.\n- **An Iceberg table is not a parquet file** — it can't reuse `FlatFileCheckRunner` (which reads one object). The only genuinely new capability is a **native `pyiceberg` read directly from object storage, no query engine**: `catalog.load_table(...).scan().to_pandas()` → the existing `gx_runner`.\n- **v2 baseline, v3 deferred** (uneven engine support + maturing pyiceberg v3). **Connection model = Option A self-contained** (`iceberg` type owns […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngh issue comment 286 --body \"$(cat <<'EOF'\n## Spike complete — decision recorded in ADR 0030, native read proven, closing\n\n### Outcome (both ACs met)\n\n**AC 1 — read path decided & recorded → [ADR 0030](../blob/main/docs/adr/0030-iceberg-native-read-path.md) (Accepted).** The spike answered two prior questions that collapse most of the scope:\n\n- **Engine-level read is free, zero-code.** `SnowflakeCheckRunner` (`add_table_asset` → SQL pushdown) and `UnityCatalogCheckRunner` (`read_sql_table` over the SQL Warehouse) talk SQL to the engine, never to the file format — so a Snowflake iceberg table or a Databricks foreign/UniForm catalog table is just another table under the existing `snowflake`/`unity_catalog` connection. **We deliberately did NOT stand up a Snowflake external volume / Databricks foreign catalog**: format-transparency is guaranteed by the code, so a live setup would only re-confirm it at real infra cost during the subscription wind-down. Zero decision value.\n- **An Iceberg table is not a parquet file** — it can't reuse `FlatFileCheckRunner` (which reads one object). The only genuinely new capability is a **native `pyiceberg` read directly from object storage, no query engine**: `catalog.load_table(...).scan().to_pandas()` → the existing `gx_runner`.\n- **v2 baseline, v3 deferred** (uneven engine support + maturing pyiceberg v3). **Connection model = Option A self-contained** (`iceberg` type owns […]
 
 > TOOL
 
@@ -1345,7 +1357,7 @@ tool_use Bash
 id: toolu_01ATAr8phXChUnzygJxnkvR5
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ; grep -n \"#286\\|Iceberg\" docs/progress.md",
+  "command": "cd /home/<USER>/Coding/Python/DataQ; grep -n \"#286\\|Iceberg\" docs/progress.md",
   "description": "Find #286 references in progress.md"
 }
 ```
@@ -1363,7 +1375,7 @@ tool_use Read
 id: toolu_012sabyN2qduXaGAqd6sPDdy
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 274,
   "limit": 8
 }
@@ -1391,7 +1403,7 @@ id: toolu_0188yFu2yZNsLjx7ARgiiTh8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ⬜ | [#286](https://github.com/TheurgicDuke771/DataQ/issues/286) Apache Iceberg v2/v3 table-format support (spike first) | Theme 2 |",
   "new_string": "| ✅ | [#286](https://github.com/TheurgicDuke771/DataQ/issues/286) Apache Iceberg — **spike DONE 2026-07-07** (ADR [0030](adr/0030-iceberg-native-read-path.md): engine-level read is free/zero-code; native `pyiceberg` v2 read is the only new build, proven green end-to-end; self-contained `iceberg` connection). Native build → [#716](https://github.com/TheurgicDuke771/DataQ/issues/716), v3 revisit → [#717](https://github.com/TheurgicDuke771/DataQ/issues/717) | Theme 2 |"
 }
@@ -1402,7 +1414,7 @@ id: toolu_0188yFu2yZNsLjx7ARgiiTh8
 tool_result
 id: toolu_0188yFu2yZNsLjx7ARgiiTh8
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1412,7 +1424,7 @@ id: toolu_018561mugzyjm9aWfPgxwXAr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "#605 [#702](https://github.com/TheurgicDuke771/DataQ/pull/702) redaction-safe run failure_reason); **#286 Iceberg deferred to its own session**.",
   "new_string": "#605 [#702](https://github.com/TheurgicDuke771/DataQ/pull/702) redaction-safe run failure_reason); **#286 Iceberg spike DONE 2026-07-07** (ADR 0030 — engine-level read free/zero-code, native `pyiceberg` v2 read proven green, self-contained `iceberg` connection; native build → #716, v3 revisit → #717)."
 }
@@ -1423,7 +1435,7 @@ id: toolu_018561mugzyjm9aWfPgxwXAr
 tool_result
 id: toolu_018561mugzyjm9aWfPgxwXAr
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1436,7 +1448,7 @@ tool_use Bash
 id: toolu_01VEYBoo3ZrE5nReAmjMenud
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ; gh issue list --state open --limit 500 --json number --jq 'length'",
+  "command": "cd /home/<USER>/Coding/Python/DataQ; gh issue list --state open --limit 500 --json number --jq 'length'",
   "description": "Count open issues"
 }
 ```
@@ -1456,7 +1468,7 @@ id: toolu_01FYEoj26uQ1AHi8jsCVj2AM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **52** (W2 2026-07-07 — **W2 exit gate MET 14/14**",
   "new_string": "| **Open issues** | **54** (W2 2026-07-07 — **W2 exit gate MET 14/14**"
 }
@@ -1467,7 +1479,7 @@ id: toolu_01FYEoj26uQ1AHi8jsCVj2AM
 tool_result
 id: toolu_01FYEoj26uQ1AHi8jsCVj2AM
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1481,7 +1493,7 @@ id: toolu_01A47E4oxYN3jWayAQ92QwnR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "**exit gate MET (14/14 tracked)**; 4 of 5 in-week follow-ups cleared (#571/#640/#643/#605), #286 deferred",
   "new_string": "**exit gate MET (14/14 tracked)**; 4 of 5 in-week follow-ups cleared (#571/#640/#643/#605), #286 spike closed (ADR 0030)"
 }
@@ -1492,7 +1504,7 @@ id: toolu_01A47E4oxYN3jWayAQ92QwnR
 tool_result
 id: toolu_01A47E4oxYN3jWayAQ92QwnR
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1502,7 +1514,7 @@ id: toolu_01583AaKAjYqYLGPYTwf6cpG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "**#286 (Iceberg v2/v3) deferred to its own focused session** — it needs a `pyiceberg` dependency eval + an ADR and touches the unsettled two-connection model (ADR 0015); still open on the W2 milestone.",
   "new_string": "**#286 (Iceberg v2/v3) spike DONE 2026-07-07** in its own focused session → **ADR [0030](adr/0030-iceberg-native-read-path.md)**: engine-level read (Snowflake/UC iceberg tables) is free & zero-code; the only new build is a native `pyiceberg` **v2** read (proven green end-to-end in an isolated venv — snapshot/delete/schema-evolution all correctly resolved; `pyiceberg==0.11.1` compat with the pinned pyarrow 24/GX 1.17.2), behind a **self-contained** `iceberg` connection (Option A; Option B two-connection ref deferred to ADR 0015). Native build → [#716](https://github.com/TheurgicDuke771/DataQ/issues/716), Iceberg-v3 revisit → [#717](https://github.com/TheurgicDuke771/DataQ/issues/717)."
 }
@@ -1513,7 +1525,7 @@ id: toolu_01583AaKAjYqYLGPYTwf6cpG
 tool_result
 id: toolu_01583AaKAjYqYLGPYTwf6cpG
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1526,7 +1538,7 @@ tool_use Bash
 id: toolu_01AMg6gJFuXvVb5BfoPN96aS
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ; gh issue view 597 --json body --jq '.body' | grep -n \"286\" || echo \"no #286 reference in epic #597\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ; gh issue view 597 --json body --jq '.body' | grep -n \"286\" || echo \"no #286 reference in epic #597\"",
   "description": "Check epic #597 for #286 reference"
 }
 ```
@@ -1546,7 +1558,7 @@ tool_use Bash
 id: toolu_01CW3qC3iWNRphrXoSnqVx3a
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\nbody=$(gh issue view 597 --json body --jq '.body')\nprintf '%s' \"$body\" \\\n  | sed 's/- \\[ \\] #286 (Iceberg v2 ADLS spike — pulled forward from W7 stretch 2026-07-04)/- [x] #286 (Iceberg v2 spike DONE 2026-07-07 — ADR 0030; native build #716, v3 #717)/' \\\n  | sed 's/- \\[ \\] #286 (Iceberg table format)/- [x] #286 (Iceberg spike DONE — ADR 0030; native build → #716)/' \\\n  | gh issue edit 597 --body-file -\necho \"epic updated\"; gh issue view 597 --json body --jq '.body' | grep -n \"286\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\nbody=$(gh issue view 597 --json body --jq '.body')\nprintf '%s' \"$body\" \\\n  | sed 's/- \\[ \\] #286 (Iceberg v2 ADLS spike — pulled forward from W7 stretch 2026-07-04)/- [x] #286 (Iceberg v2 spike DONE 2026-07-07 — ADR 0030; native build #716, v3 #717)/' \\\n  | sed 's/- \\[ \\] #286 (Iceberg table format)/- [x] #286 (Iceberg spike DONE — ADR 0030; native build → #716)/' \\\n  | gh issue edit 597 --body-file -\necho \"epic updated\"; gh issue view 597 --json body --jq '.body' | grep -n \"286\"",
   "description": "Tick #286 in epic #597 checklist"
 }
 ```
@@ -1633,7 +1645,7 @@ tool_use Bash
 id: toolu_01PfhcSVVj6ZimeFKbQ9fqrB
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngh issue edit 716 --milestone \"v1.1 Week 3 — Azure wind-down + local-first posture\" --body \"$(cat <<'EOF'\nBuild the native Apache Iceberg read path decided in **[ADR 0030](../blob/main/docs/adr/0030-iceberg-native-read-path.md)** and spiked in #286. Engine-level reads (Snowflake iceberg tables / Databricks foreign or UniForm catalog) already work with zero code under the existing `snowflake`/`unity_catalog` connections; this issue is the **native, no-query-engine** path.\n\n## Scope (v2 baseline)\n\n- [ ] Add `pyiceberg[pyarrow]` (+ the relevant catalog extra) to `backend/requirements.txt` with a pinned version and a CVE-surface check. **Spike-verified compatible:** `pyiceberg==0.11.1` resolves cleanly with the repo's pinned `pyarrow==24.0.0` and `great-expectations==1.17.2` (no pyarrow conflict) — #286.\n- [ ] `IcebergConnectionAdapter` (`backend/app/datasources/iceberg.py`) — **self-contained (Option A)**: catalog config (REST / SQL / Glue / Hive / Unity IRC) + warehouse/storage location + its **own** storage credential (single `secret_ref`). `validate_config` + a lightweight `test` (load catalog + `list_tables` or a metadata read).\n- [ ] `IcebergCheckRunner` — `catalog.load_table(...).scan()` → DataFrame → `gx_runner.run_expectations`, mirroring `UnityCatalogCheckRunner` (thin). The `table` arg carries `namespace.table`. **Materialization — do NOT use the bare `scan().to_pandas()` shortcut** (see note below).\n- [ ] Register `iceberg` in `datasources/registry.py` (`_ADAPTERS` + `_RUNNER_BUILDERS`). No change to flat-file/SQL dispatch.\n- [ ] Column profiler dispatch for `iceberg` (reuse […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngh issue edit 716 --milestone \"v1.1 Week 3 — Azure wind-down + local-first posture\" --body \"$(cat <<'EOF'\nBuild the native Apache Iceberg read path decided in **[ADR 0030](../blob/main/docs/adr/0030-iceberg-native-read-path.md)** and spiked in #286. Engine-level reads (Snowflake iceberg tables / Databricks foreign or UniForm catalog) already work with zero code under the existing `snowflake`/`unity_catalog` connections; this issue is the **native, no-query-engine** path.\n\n## Scope (v2 baseline)\n\n- [ ] Add `pyiceberg[pyarrow]` (+ the relevant catalog extra) to `backend/requirements.txt` with a pinned version and a CVE-surface check. **Spike-verified compatible:** `pyiceberg==0.11.1` resolves cleanly with the repo's pinned `pyarrow==24.0.0` and `great-expectations==1.17.2` (no pyarrow conflict) — #286.\n- [ ] `IcebergConnectionAdapter` (`backend/app/datasources/iceberg.py`) — **self-contained (Option A)**: catalog config (REST / SQL / Glue / Hive / Unity IRC) + warehouse/storage location + its **own** storage credential (single `secret_ref`). `validate_config` + a lightweight `test` (load catalog + `list_tables` or a metadata read).\n- [ ] `IcebergCheckRunner` — `catalog.load_table(...).scan()` → DataFrame → `gx_runner.run_expectations`, mirroring `UnityCatalogCheckRunner` (thin). The `table` arg carries `namespace.table`. **Materialization — do NOT use the bare `scan().to_pandas()` shortcut** (see note below).\n- [ ] Register `iceberg` in `datasources/registry.py` (`_ADAPTERS` + `_RUNNER_BUILDERS`). No change to flat-file/SQL dispatch.\n- [ ] Column profiler dispatch for `iceberg` (reuse […]
 
 > TOOL
 
@@ -1658,7 +1670,7 @@ tool_use Read
 id: toolu_0179BAtJthKb5gq7QQhgAwP2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
   "offset": 20,
   "limit": 5
 }
@@ -1683,7 +1695,7 @@ id: toolu_01288sUBC7nC3zxXRrUn75bX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
   "old_string": "- **Native `pyiceberg` — the new build.** `IcebergCheckRunner` reads a table via `pyiceberg` (`catalog.load_table(...).scan().to_pandas()`) and hands the frame to `gx_runner.run_expectations` — thin, like `UnityCatalogCheckRunner`. Payoff over engine-level: **no warehouse compute**, and **direct access to snapshot + schema history** — the natural feed for the reserved `freshness` / `schema_drift` monitor kinds (ADR 0012).",
   "new_string": "- **Native `pyiceberg` — the new build.** `IcebergCheckRunner` reads a table via `pyiceberg` (`catalog.load_table(...).scan()`) and hands the frame to `gx_runner.run_expectations` — thin, like `UnityCatalogCheckRunner`. Materialize via `.to_arrow()` → Arrow-backed pandas (**not** the bare `.to_pandas()` shortcut, which drops to numpy dtypes — keep parity with `FlatFileCheckRunner`'s `dtype_backend=\"pyarrow\"`) for the exact-expectation path; use `.to_arrow_batch_reader()` for the streamable monitor/aggregate path. See #716 for the materialization detail. Payoff over engine-level: **no warehouse compute**, and **direct access to snapshot + schema history** — the natural feed for the reserved `freshness` / `schema_drift` monitor kinds (ADR 0012)."
 }
@@ -1694,7 +1706,7 @@ id: toolu_01288sUBC7nC3zxXRrUn75bX
 tool_result
 id: toolu_01288sUBC7nC3zxXRrUn75bX
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1703,7 +1715,7 @@ tool_use Read
 id: toolu_01Mu6UbHLiB33WTdwuA9PEGN
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
   "offset": 54,
   "limit": 4
 }
@@ -1725,7 +1737,7 @@ id: toolu_014Ej1LUf6Y5aK4DTnxH2VSZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
   "old_string": "Whole-snapshot `to_pandas()` is memory-bound like the flat-file/UC DataFrame paths — same scale ceiling (G-b scale-aware execution, post-v1).",
   "new_string": "The exact-expectation path materializes the whole snapshot (via `.to_arrow()`), memory-bound like the flat-file/UC DataFrame paths — same scale ceiling (G-b scale-aware execution, post-v1); `.to_arrow_batch_reader()` is the streaming escape hatch for the monitor/aggregate path (#716)."
 }
@@ -1736,7 +1748,7 @@ id: toolu_014Ej1LUf6Y5aK4DTnxH2VSZ
 tool_result
 id: toolu_014Ej1LUf6Y5aK4DTnxH2VSZ
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1792,7 +1804,7 @@ tool_use Bash
 id: toolu_019FTZT3jigHQyXJUTwfdBUm
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngit checkout -b docs/adr-0030-iceberg-spike\ngit add docs/adr/0030-iceberg-native-read-path.md docs/adr/README.md docs/progress.md\ngit commit -m \"$(cat <<'EOF'\ndocs: ADR 0030 — Iceberg spike outcome (native pyiceberg v2 read path)\n\nClose the #286 Iceberg spike. Records the decision: engine-level reads\n(Snowflake iceberg tables / Databricks foreign or UniForm catalog) are free\nand zero-code; the only new build is a native pyiceberg v2 read behind a thin\nIcebergCheckRunner (scan → Arrow-backed DataFrame → gx_runner), fronted by a\nself-contained `iceberg` connection type (Option A — own catalog + storage\ncredential; Option B two-connection ref deferred to ADR 0015). v2 baseline,\nv3 deferred. Native path proven green end-to-end in the spike (snapshot,\ndelete, and schema-evolution all correctly resolved; pyiceberg 0.11.1 compat\nwith pinned pyarrow 24 / GX 1.17.2). Also reads Delta UniForm (read-only).\n\nNative build tracked in #716 (v1.1 Week 3), Iceberg v3 revisit in #717.\n\n- add docs/adr/0030-iceberg-native-read-path.md + index row\n- progress.md: #286 spike closed, snapshot count 52→54, W2 section\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\"\ngit push -u origin docs/adr-0030-iceberg-spike 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngit checkout -b docs/adr-0030-iceberg-spike\ngit add docs/adr/0030-iceberg-native-read-path.md docs/adr/README.md docs/progress.md\ngit commit -m \"$(cat <<'EOF'\ndocs: ADR 0030 — Iceberg spike outcome (native pyiceberg v2 read path)\n\nClose the #286 Iceberg spike. Records the decision: engine-level reads\n(Snowflake iceberg tables / Databricks foreign or UniForm catalog) are free\nand zero-code; the only new build is a native pyiceberg v2 read behind a thin\nIcebergCheckRunner (scan → Arrow-backed DataFrame → gx_runner), fronted by a\nself-contained `iceberg` connection type (Option A — own catalog + storage\ncredential; Option B two-connection ref deferred to ADR 0015). v2 baseline,\nv3 deferred. Native path proven green end-to-end in the spike (snapshot,\ndelete, and schema-evolution all correctly resolved; pyiceberg 0.11.1 compat\nwith pinned pyarrow 24 / GX 1.17.2). Also reads Delta UniForm (read-only).\n\nNative build tracked in #716 (v1.1 Week 3), Iceberg v3 revisit in #717.\n\n- add docs/adr/0030-iceberg-native-read-path.md + index row\n- progress.md: #286 spike closed, snapshot count 52→54, W2 section\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"\ngit push -u origin docs/adr-0030-iceberg-spike 2>&1 | tail -5",
   "description": "Create branch, commit doc set, push"
 }
 ```
@@ -1823,7 +1835,7 @@ tool_use Bash
 id: toolu_0124efeMxqm3yBHxLnUdU39D
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngh pr create --title \"docs: ADR 0030 — Iceberg spike outcome (native pyiceberg v2 read path)\" \\\n  --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" \\\n  --body \"$(cat <<'EOF'\nCloses the #286 Apache Iceberg spike (docs-only — no code touched).\n\n## What's here\n\n- **ADR [0030](../blob/docs/adr-0030-iceberg-spike/docs/adr/0030-iceberg-native-read-path.md)** (Accepted; native impl deferred) + index row. Records:\n  - **Engine-level read is free, zero-code** — Snowflake iceberg tables / Databricks foreign or UniForm catalog are just tables under the existing `snowflake`/`unity_catalog` connections (SQL runners are format-transparent). We deliberately did **not** stand up an external volume / foreign catalog — zero decision value at real infra cost during wind-down.\n  - **Native `pyiceberg` v2 read** is the only new build: thin `IcebergCheckRunner` (`scan()` → Arrow-backed DataFrame → `gx_runner`), materialized via `.to_arrow()` for expectations and `.to_arrow_batch_reader()` for monitors (never bare `.to_pandas()`).\n  - **Self-contained `iceberg` connection (Option A)** — own catalog + storage credential; independent lifecycle, cascade-safe. Option B (two-connection ref) deferred to ADR 0015.\n  - **v2 baseline, v3 deferred.** Reads Delta **UniForm** too (read-only, v2, async lag).\n- **progress.md** — #286 spike marked done, snapshot count 52→54, W2 section + backlog row updated.\n\n## Spike evidence\n\nNative v2 read proven green […]
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngh pr create --title \"docs: ADR 0030 — Iceberg spike outcome (native pyiceberg v2 read path)\" \\\n  --milestone \"v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth\" \\\n  --body \"$(cat <<'EOF'\nCloses the #286 Apache Iceberg spike (docs-only — no code touched).\n\n## What's here\n\n- **ADR [0030](../blob/docs/adr-0030-iceberg-spike/docs/adr/0030-iceberg-native-read-path.md)** (Accepted; native impl deferred) + index row. Records:\n  - **Engine-level read is free, zero-code** — Snowflake iceberg tables / Databricks foreign or UniForm catalog are just tables under the existing `snowflake`/`unity_catalog` connections (SQL runners are format-transparent). We deliberately did **not** stand up an external volume / foreign catalog — zero decision value at real infra cost during wind-down.\n  - **Native `pyiceberg` v2 read** is the only new build: thin `IcebergCheckRunner` (`scan()` → Arrow-backed DataFrame → `gx_runner`), materialized via `.to_arrow()` for expectations and `.to_arrow_batch_reader()` for monitors (never bare `.to_pandas()`).\n  - **Self-contained `iceberg` connection (Option A)** — own catalog + storage credential; independent lifecycle, cascade-safe. Option B (two-connection ref) deferred to ADR 0015.\n  - **v2 baseline, v3 deferred.** Reads Delta **UniForm** too (read-only, v2, async lag).\n- **progress.md** — #286 spike marked done, snapshot count 52→54, W2 section + backlog row updated.\n\n## Spike evidence\n\nNative v2 read proven green […]
 
 > TOOL
 
@@ -1843,7 +1855,7 @@ tool_use Bash
 id: toolu_0175uctZDfmpJNmEHk77jBaS
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngh pr merge 718 --squash --auto --delete-branch 2>&1 | tail -3\necho \"=== checks ===\"; sleep 5; gh pr checks 718 2>&1 | head -20",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngh pr merge 718 --squash --auto --delete-branch 2>&1 | tail -3\necho \"=== checks ===\"; sleep 5; gh pr checks 718 2>&1 | head -20",
   "description": "Enable squash auto-merge and show checks"
 }
 ```
@@ -1879,7 +1891,7 @@ tool_use Bash
 id: toolu_01QMr6v9wN93WMqzugJqTYyB
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngh pr view 718 --json state,autoMergeRequest,mergeStateStatus --jq '{state, autoMerge: (.autoMergeRequest.mergeMethod // \"OFF\"), mergeState: .mergeStateStatus}'",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngh pr view 718 --json state,autoMergeRequest,mergeStateStatus --jq '{state, autoMerge: (.autoMergeRequest.mergeMethod // \"OFF\"), mergeState: .mergeStateStatus}'",
   "description": "Confirm auto-merge queue state"
 }
 ```
@@ -1902,7 +1914,7 @@ tool_use Bash
 id: toolu_01LnQUncBYCRHunbnR3RRHB2
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\nfor i in $(seq 1 24); do\n  state=$(gh pr view 718 --json state --jq '.state')\n  if [ \"$state\" != \"OPEN\" ]; then echo \"PR 718 state=$state after ~$((i*30))s\"; break; fi\n  sleep 30\ndone\necho \"=== final ===\"\ngh pr view 718 --json state,mergedAt,mergeCommit --jq '{state, mergedAt, mergeCommit: .mergeCommit.oid}'\necho \"=== any failed checks ===\"; gh pr checks 718 2>/dev/null | grep -iE \"fail|cancel\" || echo \"none failed\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\nfor i in $(seq 1 24); do\n  state=$(gh pr view 718 --json state --jq '.state')\n  if [ \"$state\" != \"OPEN\" ]; then echo \"PR 718 state=$state after ~$((i*30))s\"; break; fi\n  sleep 30\ndone\necho \"=== final ===\"\ngh pr view 718 --json state,mergedAt,mergeCommit --jq '{state, mergedAt, mergeCommit: .mergeCommit.oid}'\necho \"=== any failed checks ===\"; gh pr checks 718 2>/dev/null | grep -iE \"fail|cancel\" || echo \"none failed\"",
   "description": "Poll until PR 718 merges or fails",
   "run_in_background": true
 }
@@ -1960,7 +1972,7 @@ tool_use Bash
 id: toolu_016Z7b9ehEvdskWGxEFHnaNx
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ\ngit checkout main -q && git pull --ff-only -q 2>&1 | tail -2\necho \"=== on main, recent ===\"; git log --oneline -3\necho \"=== local branch cleanup ===\"; git branch -d docs/adr-0030-iceberg-spike 2>&1 || echo \"(already gone)\"",
+  "command": "cd /home/<USER>/Coding/Python/DataQ\ngit checkout main -q && git pull --ff-only -q 2>&1 | tail -2\necho \"=== on main, recent ===\"; git log --oneline -3\necho \"=== local branch cleanup ===\"; git branch -d docs/adr-0030-iceberg-spike 2>&1 || echo \"(already gone)\"",
   "description": "Sync local main and clean up branch"
 }
 ```

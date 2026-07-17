@@ -30,7 +30,7 @@ Perfect! Now I have all the information needed. Let me compile a comprehensive r
 ### 1. **Frontend Directory Structure**
 
 ```
-/Users/cyyeh/Desktop/duckdb-data-agent/frontend/
+/home/<USER>/Desktop/duckdb-data-agent/frontend/
 ├── src/
 │   ├── agent/
 │   │   └── agentService.ts          # Server-Sent Events (SSE) stream handler
@@ -71,7 +71,7 @@ tool_use Read
 id: toolu_01Kh1YWoPtMV5rB3FXxoHWs1
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css"
 }
 ```
 
@@ -167,7 +167,7 @@ tool_use Read
 id: toolu_019dKWAb59FDg7F9axwXUvb7
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.tsx"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.tsx"
 }
 ```
 
@@ -220,7 +220,7 @@ tool_use Read
 id: toolu_018bEGiph3nWpeWCcGUM1ZTX
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/AgentPanel.css"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/AgentPanel.css"
 }
 ```
 
@@ -290,7 +290,7 @@ tool_use Read
 id: toolu_01Q5bUSdXrBJsLbW8hwLshUy
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/App.css"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/App.css"
 }
 ```
 
@@ -391,7 +391,7 @@ id: toolu_015vgZaLpAFB5n7TQHcuHCDG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css",
   "old_string": ".message-bubble__thinking-body {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  margin-top: 8px;\n}",
   "new_string": ".message-bubble__thinking-body {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  margin-top: 8px;\n  overflow-x: auto;\n  min-width: 0;\n}"
 }
@@ -402,7 +402,7 @@ id: toolu_015vgZaLpAFB5n7TQHcuHCDG
 tool_result
 id: toolu_015vgZaLpAFB5n7TQHcuHCDG
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css has been updated successfully.
 ```
 
 > TOOL
@@ -412,7 +412,7 @@ id: toolu_01Bf5tUFX8BXZFH5RzpFfF3c
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css",
   "old_string": ".message-bubble__segment--thinking {\n  background: #f9fafb;\n  border-left: 3px solid #d1d5db;\n}",
   "new_string": ".message-bubble__segment--thinking {\n  background: #f9fafb;\n  border-left: 3px solid #d1d5db;\n  overflow: hidden;\n  min-width: 0;\n}"
 }
@@ -423,7 +423,7 @@ id: toolu_01Bf5tUFX8BXZFH5RzpFfF3c
 tool_result
 id: toolu_01Bf5tUFX8BXZFH5RzpFfF3c
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css has been updated successfully.
 ```
 
 > AGENT
@@ -437,7 +437,7 @@ id: toolu_01D5Lvvw52KWnqDs77fZ2s36
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css",
   "old_string": ".message-bubble__segments {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}",
   "new_string": ".message-bubble__segments {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  min-width: 0;\n}"
 }
@@ -448,7 +448,7 @@ id: toolu_01D5Lvvw52KWnqDs77fZ2s36
 tool_result
 id: toolu_01D5Lvvw52KWnqDs77fZ2s36
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/MessageBubble.css has been updated successfully.
 ```
 
 > AGENT
@@ -461,7 +461,7 @@ tool_use Read
 id: toolu_018JVt782MyLjH2kkDfhqJe3
 ```json
 {
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/AgentPanel.tsx"
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/AgentPanel.tsx"
 }
 ```
 
@@ -523,7 +523,7 @@ id: toolu_01KRJCy8pxG6y7jaLMTuKFZL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/AgentPanel.css",
+  "file_path": "/home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/AgentPanel.css",
   "old_string": ".agent-panel__messages {\n  flex: 1;\n  overflow-y: auto;\n  padding: 16px;\n}",
   "new_string": ".agent-panel__messages {\n  flex: 1;\n  overflow-y: auto;\n  overflow-x: hidden;\n  padding: 16px;\n  min-width: 0;\n}"
 }
@@ -534,7 +534,7 @@ id: toolu_01KRJCy8pxG6y7jaLMTuKFZL
 tool_result
 id: toolu_01KRJCy8pxG6y7jaLMTuKFZL
 ```
-The file /Users/cyyeh/Desktop/duckdb-data-agent/frontend/src/components/AgentPanel.css has been updated successfully.
+The file /home/<USER>/Desktop/duckdb-data-agent/frontend/src/components/AgentPanel.css has been updated successfully.
 ```
 
 > AGENT

@@ -575,7 +575,7 @@ id: toolu_01Kcu1a5w68aGhK8CZ5Vixg6
 ```
 Exit code 13
 Target harness folder(s): .claude, .agents, .github
-Install impeccable skills into 3 folder(s)? (Y/n) Warning: Detected unsettled top-level await at file:///Users/sumeet/.cache/npm/_npx/1a4eb60c8f6b0f89/node_modules/impeccable/cli/bin/cli.js:50
+Install impeccable skills into 3 folder(s)? (Y/n) Warning: Detected unsettled top-level await at file:///home/<USER>/.cache/npm/_npx/1a4eb60c8f6b0f89/node_modules/impeccable/cli/bin/cli.js:50
   await run(args.slice(1));
   ^
 ```
@@ -616,7 +616,7 @@ All three installed:
 - **emil-design-eng** — `.agents/skills/emil-design-eng`
 - **Impeccable** — installed into `.claude`, `.agents`, `.github`
 
-Heads up: these went into the **project** (`/Users/sumeet/matrix/web/babbi.world/.agents/`, `.claude/`, `.github/`), not your global `~/.claude/`. So they're scoped to babbi.world only. If you wanted them globally available, let me know and I can move/reinstall.
+Heads up: these went into the **project** (`/home/<USER>/matrix/web/babbi.world/.agents/`, `.claude/`, `.github/`), not your global `~/.claude/`. So they're scoped to babbi.world only. If you wanted them globally available, let me know and I can move/reinstall.
 
 Next step for Impeccable: run `/impeccable init` in your harness to set up the design context. You'll also probably want to restart this session so the new skills get picked up in the available-skills list.
 
@@ -634,7 +634,7 @@ tool_use Bash
 id: toolu_01FzaBf1KSpjVmTZQokSb17K
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/babbi.world/.agents/skills/ && echo \"---\" && ls /Users/sumeet/matrix/web/babbi.world/.claude/ 2>/dev/null",
+  "command": "ls /home/<USER>/matrix/web/babbi.world/.agents/skills/ && echo \"---\" && ls /home/<USER>/matrix/web/babbi.world/.claude/ 2>/dev/null",
   "description": "List installed skills"
 }
 ```
@@ -670,7 +670,7 @@ tool_use Bash
 id: toolu_01FQ3aMJ7FRPL59PgqH7kwdg
 ```json
 {
-  "command": "for d in /Users/sumeet/matrix/web/babbi.world/.agents/skills/*/; do\n  name=$(basename \"$d\")\n  desc=$(grep -m1 -E \"^description:\" \"$d/SKILL.md\" 2>/dev/null | sed 's/^description: *//' | tr -d '\"' | cut -c1-200)\n  echo \"• $name — $desc\"\ndone",
+  "command": "for d in /home/<USER>/matrix/web/babbi.world/.agents/skills/*/; do\n  name=$(basename \"$d\")\n  desc=$(grep -m1 -E \"^description:\" \"$d/SKILL.md\" 2>/dev/null | sed 's/^description: *//' | tr -d '\"' | cut -c1-200)\n  echo \"• $name — $desc\"\ndone",
   "description": "Extract description from each SKILL.md"
 }
 ```

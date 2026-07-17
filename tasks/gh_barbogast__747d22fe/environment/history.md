@@ -36,7 +36,7 @@ tool_use Read
 id: toolu_01QUqQ6m8pjuMfkRv3J9UnN6
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_01Y7omVHg1YCqxrWxvPGpES7
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/constants.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/constants.ts"
 }
 ```
 
@@ -112,7 +112,7 @@ tool_use Read
 id: toolu_018UjqZyJxKtzvEzF5J2A3u3
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
   "limit": 60
 }
 ```
@@ -158,7 +158,7 @@ tool_use Read
 id: toolu_01QiUmdm5Esp3hxqWiQoam7Y
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
   "offset": 125,
   "limit": 45
 }
@@ -219,7 +219,7 @@ tool_use Read
 id: toolu_01Fp8RC6Y9RD4ucNxNgZCuy2
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/ThumbnailPanel.tsx",
   "offset": 255,
   "limit": 35
 }
@@ -273,7 +273,7 @@ tool_use Read
 id: toolu_01Li4cNTbFSrbLVxkwqyRhm2
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx"
 }
 ```
 
@@ -340,7 +340,7 @@ id: toolu_01SHW2DXvi86RsMH6JygNVjL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport GroupNode from './GroupNode'\nimport FileList from './FileList'\nimport { useFileTree } from './useFileTree'\nimport { useDriveAssignments, DriveAssignment, PickerTarget } from './useDriveAssignments'\n\nconst LEFT_PANEL_WIDTH = 300",
   "new_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport GroupNode from './GroupNode'\nimport FileList from './FileList'\nimport { useFileTree } from './useFileTree'\nimport { useDriveAssignments, DriveAssignment, PickerTarget } from './useDriveAssignments'\nimport { DRAG_HANDLE_WIDTH } from '../../constants'\n\nconst DEFAULT_LEFT_PANEL_WIDTH = 300\nconst MIN_LEFT_PANEL_WIDTH = 180\nconst MAX_LEFT_PANEL_WIDTH = 600"
 }
@@ -351,7 +351,7 @@ id: toolu_01SHW2DXvi86RsMH6JygNVjL
 tool_result
 id: toolu_01SHW2DXvi86RsMH6JygNVjL
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -361,7 +361,7 @@ id: toolu_01MNoGdVxjXQ1ZSSgyay3Uy8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "  const assignments = useDriveAssignments()\n  const [pickerTarget, setPickerTarget] = useState<PickerTarget | null>(null)\n  const handlePicked = (folder: DriveAssignment) => {\n    if (pickerTarget?.type === 'group') assignments.setGroupAssignment(pickerTarget.key, folder)\n    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)\n    setPickerTarget(null)\n  }\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: LEFT_PANEL_WIDTH,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n          borderRight: '1px solid var(--mantine-color-gray-3)',\n          padding: 12,\n        }}\n      >",
   "new_string": "  const assignments = useDriveAssignments()\n  const [pickerTarget, setPickerTarget] = useState<PickerTarget | null>(null)\n  const handlePicked = (folder: DriveAssignment) => {\n    if (pickerTarget?.type === 'group') assignments.setGroupAssignment(pickerTarget.key, folder)\n    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)\n    setPickerTarget(null)\n  }\n\n  const [leftWidth, setLeftWidth] = useState(DEFAULT_LEFT_PANEL_WIDTH)\n  const startDrag = (e: React.MouseEvent) => {\n    const startX = e.clientX\n    const startWidth = leftWidth\n    const clamp = (w: number) => Math.max(MIN_LEFT_PANEL_WIDTH, Math.min(MAX_LEFT_PANEL_WIDTH, w))\n    const onMove = (ev: MouseEvent) => setLeftWidth(clamp(startWidth + ev.clientX - startX))\n    const onUp = (ev: MouseEvent) => {\n      setLeftWidth(clamp(startWidth + ev.clientX - startX))\n      document.removeEventListener('mousemove', onMove)\n      document.removeEventListener('mouseup', onUp)\n    }\n    document.addEventListener('mousemove', onMove)\n    document.addEventListener('mouseup', onUp)\n    e.preventDefault()\n  }\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: leftWidth,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n          padding: 12,\n        }}\n      >"
 }
@@ -372,7 +372,7 @@ id: toolu_01MNoGdVxjXQ1ZSSgyay3Uy8
 tool_result
 id: toolu_01MNoGdVxjXQ1ZSSgyay3Uy8
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -386,7 +386,7 @@ id: toolu_01GQKgWM4r4G1igqXmGG2V7p
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "      </Box>\n\n      <Box\n        style={{\n          flex: '0 0 auto', width: 220, height: '100%',\n          display: 'flex', alignItems: 'center', justifyContent: 'center',\n          background: 'var(--mantine-color-gray-1)',\n          borderRight: '1px solid var(--mantine-color-gray-3)',\n        }}\n      >\n        <Text size=\"sm\" c=\"dimmed\">Select a file to preview</Text>\n      </Box>\n\n      <Box style={{ flex: 1, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />\n    </Box>\n  )\n}",
   "new_string": "      </Box>\n\n      <Box\n        onMouseDown={startDrag}\n        style={{\n          width: DRAG_HANDLE_WIDTH,\n          height: '100%',\n          cursor: 'col-resize',\n          flexShrink: 0,\n          background: 'var(--mantine-color-gray-3)',\n        }}\n      />\n\n      <Box style={{ display: 'flex', flex: 1, minWidth: 0, height: '100%' }}>\n        <Box\n          style={{\n            flex: '0 1 220px', minWidth: 0, height: '100%',\n            display: 'flex', alignItems: 'center', justifyContent: 'center',\n            background: 'var(--mantine-color-gray-1)',\n            borderRight: '1px solid var(--mantine-color-gray-3)',\n          }}\n        >\n          <Text size=\"sm\" c=\"dimmed\">Select a file to preview</Text>\n        </Box>\n\n        <Box style={{ flex: 1, minWidth: 0, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />\n      </Box>\n    </Box>\n  )\n}"
 }
@@ -397,7 +397,7 @@ id: toolu_01GQKgWM4r4G1igqXmGG2V7p
 tool_result
 id: toolu_01GQKgWM4r4G1igqXmGG2V7p
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -464,7 +464,7 @@ id: toolu_01F5Tj3PZB7fxhGZFq9EHEPM
 tool_result
 id: toolu_01F5Tj3PZB7fxhGZFq9EHEPM
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/index.test.tsx  (3 tests) 330ms
 
@@ -547,7 +547,7 @@ tool_use Bash
 id: toolu_01Hk7cwZcq9tXYYWWvb8WfNs
 ```json
 {
-  "command": "git add frontend/src/components/DriveUploadMode/index.tsx && git commit -m \"$(cat <<'EOF'\nMake DriveUploadMode's left panel resizable\n\nMiddle and right panels are wrapped in a shared flex container so both\nshrink together as the left panel widens, instead of only the right\npanel absorbing the change.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"\ngit status",
+  "command": "git add frontend/src/components/DriveUploadMode/index.tsx && git commit -m \"$(cat <<'EOF'\nMake DriveUploadMode's left panel resizable\n\nMiddle and right panels are wrapped in a shared flex container so both\nshrink together as the left panel widens, instead of only the right\npanel absorbing the change.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"\ngit status",
   "description": "Commit the resizable panel change"
 }
 ```
@@ -576,7 +576,7 @@ tool_use Read
 id: toolu_01PRBF4fNoJF29Rnn3GgPwdA
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -626,7 +626,7 @@ id: toolu_01W211FgE8iySjf99v7rhPAo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "      <Box style={{ display: 'flex', flex: 1, minWidth: 0, height: '100%' }}>\n        <Box\n          style={{\n            flex: '0 1 220px', minWidth: 0, height: '100%',\n            display: 'flex', alignItems: 'center', justifyContent: 'center',\n            background: 'var(--mantine-color-gray-1)',\n            borderRight: '1px solid var(--mantine-color-gray-3)',\n          }}\n        >\n          <Text size=\"sm\" c=\"dimmed\">Select a file to preview</Text>\n        </Box>\n\n        <Box style={{ flex: 1, minWidth: 0, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />\n      </Box>\n    </Box>\n  )\n}",
   "new_string": "      <Box\n        style={{\n          flex: '0 0 auto', width: 220, height: '100%',\n          display: 'flex', alignItems: 'center', justifyContent: 'center',\n          background: 'var(--mantine-color-gray-1)',\n          borderRight: '1px solid var(--mantine-color-gray-3)',\n        }}\n      >\n        <Text size=\"sm\" c=\"dimmed\">Select a file to preview</Text>\n      </Box>\n\n      <Box style={{ flex: 1, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />\n    </Box>\n  )\n}"
 }
@@ -637,7 +637,7 @@ id: toolu_01W211FgE8iySjf99v7rhPAo
 tool_result
 id: toolu_01W211FgE8iySjf99v7rhPAo
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -676,7 +676,7 @@ id: toolu_01SwdcMmiXoQ8P4DXV39xPFD
 tool_result
 id: toolu_01SwdcMmiXoQ8P4DXV39xPFD
 ```
-/Users/ben/git/paper-scan-processor/frontend
+/home/<USER>/git/paper-scan-processor/frontend
 ```
 
 > AGENT
@@ -703,7 +703,7 @@ id: toolu_01QhDqwSNq24ptqAktfUk5xd
 > tsc
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/index.test.tsx  (3 tests) 400ms
 
@@ -723,7 +723,7 @@ tool_use Bash
 id: toolu_016UWfVxaXhTy27r3yboHtjg
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git diff @{upstream}...HEAD 2>&1 | head -5; echo \"---\"; git diff main...HEAD 2>&1 | head -5; echo \"---status---\"; git status; echo \"---diff HEAD---\"; git diff HEAD",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git diff @{upstream}...HEAD 2>&1 | head -5; echo \"---\"; git diff main...HEAD 2>&1 | head -5; echo \"---status---\"; git status; echo \"---diff HEAD---\"; git diff HEAD",
   "description": "Gather diff for review"
 }
 ```
@@ -783,7 +783,7 @@ tool_use Read
 id: toolu_01Dpde15MbGCLDJnC7dqgwQC
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -834,7 +834,7 @@ id: toolu_01GvoBur3AxNsWSUiyCfDHAx
 {
   "subagent_type": "fork",
   "description": "Line-by-line diff scan (angle A)",
-  "prompt": "You are running finder angle A (line-by-line diff scan) for a code review of the current diff (git diff HEAD in /Users/ben/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx — adding a resizable left panel via mouse drag.\n\nRead every hunk in the diff line by line, and read the enclosing function (the whole DriveUploadMode component, and the startDrag handler) for context. For every changed line ask: what input, state, timing, or platform makes this line wrong? Look specifically for: inverted/wrong conditions, off-by-one, null/undefined deref, missing await, falsy-zero checks, wrong-variable copy-paste, error swallowed, stale closures over React state (e.g. startDrag capturing leftWidth from render scope vs. current value), event listener leaks (mousemove/mouseup added but not cleaned up on unmount, multiple drags stacking listeners), missing cleanup in useEffect equivalents.\n\nReport up to 6 candidates as a list, each with file, line, one-line summary, and a concrete failure_scenario. If you find fewer than 6 genuine issues, only report what's real — do not pad. If nothing is wrong, say so plainly."
+  "prompt": "You are running finder angle A (line-by-line diff scan) for a code review of the current diff (git diff HEAD in /home/<USER>/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx — adding a resizable left panel via mouse drag.\n\nRead every hunk in the diff line by line, and read the enclosing function (the whole DriveUploadMode component, and the startDrag handler) for context. For every changed line ask: what input, state, timing, or platform makes this line wrong? Look specifically for: inverted/wrong conditions, off-by-one, null/undefined deref, missing await, falsy-zero checks, wrong-variable copy-paste, error swallowed, stale closures over React state (e.g. startDrag capturing leftWidth from render scope vs. current value), event listener leaks (mousemove/mouseup added but not cleaned up on unmount, multiple drags stacking listeners), missing cleanup in useEffect equivalents.\n\nReport up to 6 candidates as a list, each with file, line, one-line summary, and a concrete failure_scenario. If you find fewer than 6 genuine issues, only report what's real — do not pad. If nothing is wrong, say so plainly."
 }
 ```
 
@@ -846,7 +846,7 @@ id: toolu_016Su886kuLFVhJUbgVd3U6F
 {
   "subagent_type": "fork",
   "description": "Removed-behavior audit (angle B)",
-  "prompt": "You are running finder angle B (removed-behavior auditor) for a code review of the current diff (git diff HEAD in /Users/ben/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx.\n\nFor every line the diff DELETES or replaces (e.g. the removed `borderRight` on the left panel, the renamed `LEFT_PANEL_WIDTH` constant, the change from fixed width to state-driven width), name the invariant or visual/behavioral guarantee it enforced, then check whether that invariant is re-established elsewhere in the new code. If not, that's a candidate (e.g., a removed visual divider that was providing a needed affordance, a removed test case, a dropped edge case).\n\nReport up to 6 candidates with file, line, summary, and failure_scenario. Only report genuine issues — do not pad to reach 6."
+  "prompt": "You are running finder angle B (removed-behavior auditor) for a code review of the current diff (git diff HEAD in /home/<USER>/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx.\n\nFor every line the diff DELETES or replaces (e.g. the removed `borderRight` on the left panel, the renamed `LEFT_PANEL_WIDTH` constant, the change from fixed width to state-driven width), name the invariant or visual/behavioral guarantee it enforced, then check whether that invariant is re-established elsewhere in the new code. If not, that's a candidate (e.g., a removed visual divider that was providing a needed affordance, a removed test case, a dropped edge case).\n\nReport up to 6 candidates with file, line, summary, and failure_scenario. Only report genuine issues — do not pad to reach 6."
 }
 ```
 
@@ -871,7 +871,7 @@ id: toolu_01CgFZWDSSiGUBByGrUWSjut
 {
   "subagent_type": "fork",
   "description": "Cross-file caller/callee trace (angle C)",
-  "prompt": "You are running finder angle C (cross-file tracer) for a code review of the current diff (git diff HEAD in /Users/ben/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx.\n\nThe diff adds local state `leftWidth`, a `startDrag` handler, and a new drag-handle `Box`, and renames the module constant `LEFT_PANEL_WIDTH` to `DEFAULT_LEFT_PANEL_WIDTH` (plus new `MIN_LEFT_PANEL_WIDTH`/`MAX_LEFT_PANEL_WIDTH`). Grep the codebase for any other references to `LEFT_PANEL_WIDTH`, and for any other file that imports from `DriveUploadMode/index.tsx` or relies on its exact rendered DOM structure (e.g. tests, snapshot tests, other components measuring layout). Also check `frontend/src/components/DriveUploadMode/index.test.tsx` for anything that could break due to the new drag handle being inserted as a new sibling Box, or due to removed borderRight style.\n\nReport up to 6 candidates with file, line, summary, and failure_scenario. Only report genuine issues."
+  "prompt": "You are running finder angle C (cross-file tracer) for a code review of the current diff (git diff HEAD in /home/<USER>/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx.\n\nThe diff adds local state `leftWidth`, a `startDrag` handler, and a new drag-handle `Box`, and renames the module constant `LEFT_PANEL_WIDTH` to `DEFAULT_LEFT_PANEL_WIDTH` (plus new `MIN_LEFT_PANEL_WIDTH`/`MAX_LEFT_PANEL_WIDTH`). Grep the codebase for any other references to `LEFT_PANEL_WIDTH`, and for any other file that imports from `DriveUploadMode/index.tsx` or relies on its exact rendered DOM structure (e.g. tests, snapshot tests, other components measuring layout). Also check `frontend/src/components/DriveUploadMode/index.test.tsx` for anything that could break due to the new drag handle being inserted as a new sibling Box, or due to removed borderRight style.\n\nReport up to 6 candidates with file, line, summary, and failure_scenario. Only report genuine issues."
 }
 ```
 
@@ -909,7 +909,7 @@ id: toolu_01M5RuVPRpQt1kxnq7cfVJAj
 {
   "subagent_type": "fork",
   "description": "Reuse angle for drag logic",
-  "prompt": "You are running a \"reuse\" cleanup angle for a code review of the current diff (git diff HEAD in /Users/ben/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx, which adds a mouse-drag resize handler (startDrag, using document mousemove/mouseup listeners with clamped width) for a left panel.\n\nYou already know (from earlier research in this conversation) that this exact drag-resize pattern (startX/startWidth capture, clamp function, document-level mousemove/mouseup listeners, DRAG_HANDLE_WIDTH constant, gray-3 background handle div) is duplicated near-verbatim in frontend/src/components/SplitMode/ThumbnailPanel.tsx and frontend/src/components/MergeMode/ThumbnailPanel.tsx. This new diff adds a THIRD near-identical copy in DriveUploadMode/index.tsx.\n\nConfirm this by reading the three implementations, and produce ONE finding (this is the main thing to check) about the duplication: file/line for the new copy, a summary, and in place of \"failure_scenario\" describe the concrete maintenance cost (three copies to keep in sync, bug fixed in one not others, etc.) and name what a shared hook (e.g. `useResizableWidth(default, min, max)`) would look like.\n\nAlso scan briefly for any other reuse opportunities in the diff. Report up to 6 candidates total (duplication finding first), each with file, line, summary, failure_scenario (cost description). Only report genuine findings."
+  "prompt": "You are running a \"reuse\" cleanup angle for a code review of the current diff (git diff HEAD in /home/<USER>/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx, which adds a mouse-drag resize handler (startDrag, using document mousemove/mouseup listeners with clamped width) for a left panel.\n\nYou already know (from earlier research in this conversation) that this exact drag-resize pattern (startX/startWidth capture, clamp function, document-level mousemove/mouseup listeners, DRAG_HANDLE_WIDTH constant, gray-3 background handle div) is duplicated near-verbatim in frontend/src/components/SplitMode/ThumbnailPanel.tsx and frontend/src/components/MergeMode/ThumbnailPanel.tsx. This new diff adds a THIRD near-identical copy in DriveUploadMode/index.tsx.\n\nConfirm this by reading the three implementations, and produce ONE finding (this is the main thing to check) about the duplication: file/line for the new copy, a summary, and in place of \"failure_scenario\" describe the concrete maintenance cost (three copies to keep in sync, bug fixed in one not others, etc.) and name what a shared hook (e.g. `useResizableWidth(default, min, max)`) would look like.\n\nAlso scan briefly for any other reuse opportunities in the diff. Report up to 6 candidates total (duplication finding first), each with file, line, summary, failure_scenario (cost description). Only report genuine findings."
 }
 ```
 
@@ -921,7 +921,7 @@ id: toolu_01FjFqm6DbmsrKAc5TpQgHxt
 {
   "subagent_type": "fork",
   "description": "Simplification angle",
-  "prompt": "You are running a \"simplification\" cleanup angle for a code review of the current diff (git diff HEAD in /Users/ben/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx, which adds resizable-left-panel state and a drag handler.\n\nFlag any unnecessary complexity the diff adds: redundant or derivable state, copy-paste with slight variation, deep nesting, dead code, over-parameterization (e.g. are MIN/MAX/DEFAULT constants all actually needed or could this be simpler), anything computed twice. Read the full current file at frontend/src/components/DriveUploadMode/index.tsx to see the diff in context.\n\nReport up to 6 candidates with file, line, summary, and failure_scenario (describe the concrete simplification cost/opportunity). Only report genuine findings — do not pad."
+  "prompt": "You are running a \"simplification\" cleanup angle for a code review of the current diff (git diff HEAD in /home/<USER>/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx, which adds resizable-left-panel state and a drag handler.\n\nFlag any unnecessary complexity the diff adds: redundant or derivable state, copy-paste with slight variation, deep nesting, dead code, over-parameterization (e.g. are MIN/MAX/DEFAULT constants all actually needed or could this be simpler), anything computed twice. Read the full current file at frontend/src/components/DriveUploadMode/index.tsx to see the diff in context.\n\nReport up to 6 candidates with file, line, summary, and failure_scenario (describe the concrete simplification cost/opportunity). Only report genuine findings — do not pad."
 }
 ```
 
@@ -959,7 +959,7 @@ id: toolu_01C5Sd7zKPUosp8BQ6JQT9b9
 {
   "subagent_type": "fork",
   "description": "Efficiency angle",
-  "prompt": "You are running an \"efficiency\" cleanup angle for a code review of the current diff (git diff HEAD in /Users/ben/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx, which adds a mouse-drag resize handler for a left panel using document-level mousemove/mouseup listeners and React state updates on every mousemove.\n\nFlag any wasted work: e.g., does every mousemove trigger a full React re-render of the whole DriveUploadMode tree (including the file tree, GroupNode/FileList children) rather than just the resized panel? Is there redundant computation in the clamp/startDrag closures? Would this cause jank when dragging over a large file tree? Compare against how SplitMode/MergeMode's ThumbnailPanel.tsx handle the same pattern (do they isolate re-renders better, e.g. by being a separate component from the heavy list content, whereas DriveUploadMode's resize state lives in the same component as the big Stack/tree render)?\n\nReport up to 6 candidates with file, line, summary, and failure_scenario (concrete performance cost). Only report genuine findings."
+  "prompt": "You are running an \"efficiency\" cleanup angle for a code review of the current diff (git diff HEAD in /home/<USER>/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx, which adds a mouse-drag resize handler for a left panel using document-level mousemove/mouseup listeners and React state updates on every mousemove.\n\nFlag any wasted work: e.g., does every mousemove trigger a full React re-render of the whole DriveUploadMode tree (including the file tree, GroupNode/FileList children) rather than just the resized panel? Is there redundant computation in the clamp/startDrag closures? Would this cause jank when dragging over a large file tree? Compare against how SplitMode/MergeMode's ThumbnailPanel.tsx handle the same pattern (do they isolate re-renders better, e.g. by being a separate component from the heavy list content, whereas DriveUploadMode's resize state lives in the same component as the big Stack/tree render)?\n\nReport up to 6 candidates with file, line, summary, and failure_scenario (concrete performance cost). Only report genuine findings."
 }
 ```
 
@@ -984,7 +984,7 @@ id: toolu_01BTZZJ8YPjJY2rHeM7Dkigi
 {
   "subagent_type": "fork",
   "description": "Altitude angle",
-  "prompt": "You are running an \"altitude\" angle for a code review of the current diff (git diff HEAD in /Users/ben/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx, adding a resizable left panel via a bespoke inline drag handler.\n\nCheck whether this change is implemented at the right depth, or if it's a fragile bandaid/special case layered on top of shared infrastructure. Specifically: the codebase already has this exact resize pattern duplicated in SplitMode and MergeMode's ThumbnailPanel.tsx; this diff adds a third inline copy rather than generalizing the mechanism into a shared hook/component. Is this the kind of \"special case on shared infra\" the altitude check should flag, or is it acceptable for now given the CLAUDE.md convention to keep changes small and reviewable?\n\nReport up to 6 candidates with file, line, summary, failure_scenario (describe why the current depth is wrong and what deeper fix would look like). It's fine to report just 1 finding (or 0) if that's all that's genuinely there — do not pad."
+  "prompt": "You are running an \"altitude\" angle for a code review of the current diff (git diff HEAD in /home/<USER>/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx, adding a resizable left panel via a bespoke inline drag handler.\n\nCheck whether this change is implemented at the right depth, or if it's a fragile bandaid/special case layered on top of shared infrastructure. Specifically: the codebase already has this exact resize pattern duplicated in SplitMode and MergeMode's ThumbnailPanel.tsx; this diff adds a third inline copy rather than generalizing the mechanism into a shared hook/component. Is this the kind of \"special case on shared infra\" the altitude check should flag, or is it acceptable for now given the CLAUDE.md convention to keep changes small and reviewable?\n\nReport up to 6 candidates with file, line, summary, failure_scenario (describe why the current depth is wrong and what deeper fix would look like). It's fine to report just 1 finding (or 0) if that's all that's genuinely there — do not pad."
 }
 ```
 
@@ -1009,7 +1009,7 @@ id: toolu_01HTy474eZP4KHTHxKYm2A4u
 {
   "subagent_type": "fork",
   "description": "CLAUDE.md conventions angle",
-  "prompt": "You are running a \"conventions\" angle for a code review of the current diff (git diff HEAD in /Users/ben/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx.\n\nYou already have the repo-root CLAUDE.md content in your context from this conversation (Paper Scan Processor, Wails app — conventions section: don't hand-edit frontend/wailsjs/ bindings; break checklist work into small independently reviewable steps 1a/1b/1c unless trivial; point out unrelated cleanups rather than folding into feature commits, commit separately; never git commit without explicit go-ahead this same turn). Check if there's also a CLAUDE.md or CLAUDE.local.md inside frontend/ or frontend/src/components/DriveUploadMode/ (ls and check) — read it if it exists.\n\nCheck the diff strictly against these rules. Only flag a violation if you can quote the exact rule text and the exact line/change that breaks it. Do not flag vague style preferences. If nothing is a clear-cut sourced violation, report zero findings and say so.\n\nReport findings (0 to 6) with file, line, summary, and failure_scenario (state which CLAUDE.md rule is violated, quoted)."
+  "prompt": "You are running a \"conventions\" angle for a code review of the current diff (git diff HEAD in /home/<USER>/git/paper-scan-processor) touching frontend/src/components/DriveUploadMode/index.tsx.\n\nYou already have the repo-root CLAUDE.md content in your context from this conversation (Paper Scan Processor, Wails app — conventions section: don't hand-edit frontend/wailsjs/ bindings; break checklist work into small independently reviewable steps 1a/1b/1c unless trivial; point out unrelated cleanups rather than folding into feature commits, commit separately; never git commit without explicit go-ahead this same turn). Check if there's also a CLAUDE.md or CLAUDE.local.md inside frontend/ or frontend/src/components/DriveUploadMode/ (ls and check) — read it if it exists.\n\nCheck the diff strictly against these rules. Only flag a violation if you can quote the exact rule text and the exact line/change that breaks it. Do not flag vague style preferences. If nothing is a clear-cut sourced violation, report zero findings and say so.\n\nReport findings (0 to 6) with file, line, summary, and failure_scenario (state which CLAUDE.md rule is violated, quoted)."
 }
 ```
 
@@ -1232,7 +1232,7 @@ tool_use Bash
 id: toolu_01XMFx9fbGUXU1i4vZ3FwXEM
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nMake DriveUploadMode's left panel resizable\n\nAdds a drag handle so the left file-tree panel can be resized; the\nmiddle/right panels stay as they were, with the right panel absorbing\nthe width change as before.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"\ngit status",
+  "command": "git commit -m \"$(cat <<'EOF'\nMake DriveUploadMode's left panel resizable\n\nAdds a drag handle so the left file-tree panel can be resized; the\nmiddle/right panels stay as they were, with the right panel absorbing\nthe width change as before.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"\ngit status",
   "description": "Commit the resizable panel change"
 }
 ```
@@ -1280,7 +1280,7 @@ id: toolu_01JJihV9Xrp6Um2aq2fDNbFx
 ```json
 {
   "file_path": "/private/tmp/claude-501/-Users-ben-git-paper-scan-processor/e5c1478e-b9ed-4518-8bb9-29fccac13c1b/scratchpad/commit-msg.txt",
-  "content": "Make DriveUploadMode's left panel resizable\n\nAdds a drag handle so the left file-tree panel can be resized; the\nmiddle/right panels stay as they were, with the right panel absorbing\nthe width change as before.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\n"
+  "content": "Make DriveUploadMode's left panel resizable\n\nAdds a drag handle so the left file-tree panel can be resized; the\nmiddle/right panels stay as they were, with the right panel absorbing\nthe width change as before.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\n"
 }
 ```
 
@@ -1328,7 +1328,7 @@ tool_use Read
 id: toolu_011gY21NooXizMsfC81RyA3z
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx"
 }
 ```
 
@@ -1391,7 +1391,7 @@ tool_use Read
 id: toolu_01PaToWqC2ST9bL95ErR5sQc
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts"
 }
 ```
 
@@ -1435,7 +1435,7 @@ tool_use Read
 id: toolu_01ESipyWwyE6Gqs9McgNUiBu
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
 }
 ```
 
@@ -1491,7 +1491,7 @@ tool_use Write
 id: toolu_01XyrcmawbnffzMR3kZSkDv7
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/ResizableLeftPanel.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/ResizableLeftPanel.tsx",
   "content": "import { useState, ReactNode } from 'react'\nimport { Box } from '@mantine/core'\nimport { DRAG_HANDLE_WIDTH } from '../../constants'\n\nconst DEFAULT_LEFT_PANEL_WIDTH = 300\nconst MIN_LEFT_PANEL_WIDTH = 180\nconst MAX_LEFT_PANEL_WIDTH = 600\n\ninterface Props {\n  left: ReactNode\n  children: ReactNode\n}\n\n// Owns the drag-resize width state itself so that dragging the handle only\n// re-renders this component, not the (possibly large, unmemoized) `left`\n// and `children` trees passed in from the parent's last render.\nexport default function ResizableLeftPanel({ left, children }: Props) {\n  const [leftWidth, setLeftWidth] = useState(DEFAULT_LEFT_PANEL_WIDTH)\n\n  const startDrag = (e: React.MouseEvent) => {\n    const startX = e.clientX\n    const startWidth = leftWidth\n    const clamp = (w: number) => Math.max(MIN_LEFT_PANEL_WIDTH, Math.min(MAX_LEFT_PANEL_WIDTH, w))\n    const onMove = (ev: MouseEvent) => setLeftWidth(clamp(startWidth + ev.clientX - startX))\n    const onUp = (ev: MouseEvent) => {\n      setLeftWidth(clamp(startWidth + ev.clientX - startX))\n      document.removeEventListener('mousemove', onMove)\n      document.removeEventListener('mouseup', onUp)\n    }\n    document.addEventListener('mousemove', onMove)\n    document.addEventListener('mouseup', onUp)\n    e.preventDefault()\n  }\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: leftWidth,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n          padding: 12,\n        }}\n      >\n        {left}\n      </Box>\n\n      <Box\n        onMouseDown={startDrag}\n        style={{\n          width: DRAG_HANDLE_WIDTH,\n          height: '100%',\n          cursor: 'col-resize',\n          flexShrink: 0,\n          background: 'var(--mantine-color-gray-3)',\n        }}\n      />\n\n      {children}\n    </Box>\n  )\n}\n"
 }
 ```
@@ -1501,7 +1501,7 @@ id: toolu_01XyrcmawbnffzMR3kZSkDv7
 tool_result
 id: toolu_01XyrcmawbnffzMR3kZSkDv7
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/ResizableLeftPanel.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/ResizableLeftPanel.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1515,7 +1515,7 @@ id: toolu_01Kxzecxmyf8DrjXpNdVdaYQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport GroupNode from './GroupNode'\nimport FileList from './FileList'\nimport { useFileTree } from './useFileTree'\nimport { useDriveAssignments, DriveAssignment, PickerTarget } from './useDriveAssignments'\nimport { DRAG_HANDLE_WIDTH } from '../../constants'\n\nconst DEFAULT_LEFT_PANEL_WIDTH = 300\nconst MIN_LEFT_PANEL_WIDTH = 180\nconst MAX_LEFT_PANEL_WIDTH = 600",
   "new_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport GroupNode from './GroupNode'\nimport FileList from './FileList'\nimport ResizableLeftPanel from './ResizableLeftPanel'\nimport { useFileTree } from './useFileTree'\nimport { useDriveAssignments, DriveAssignment, PickerTarget } from './useDriveAssignments'"
 }
@@ -1526,7 +1526,7 @@ id: toolu_01Kxzecxmyf8DrjXpNdVdaYQ
 tool_result
 id: toolu_01Kxzecxmyf8DrjXpNdVdaYQ
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1536,7 +1536,7 @@ id: toolu_01K6o8RbKD37Aq7u3FL4vHVU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "  const [leftWidth, setLeftWidth] = useState(DEFAULT_LEFT_PANEL_WIDTH)\n  const startDrag = (e: React.MouseEvent) => {\n    const startX = e.clientX\n    const startWidth = leftWidth\n    const clamp = (w: number) => Math.max(MIN_LEFT_PANEL_WIDTH, Math.min(MAX_LEFT_PANEL_WIDTH, w))\n    const onMove = (ev: MouseEvent) => setLeftWidth(clamp(startWidth + ev.clientX - startX))\n    const onUp = (ev: MouseEvent) => {\n      setLeftWidth(clamp(startWidth + ev.clientX - startX))\n      document.removeEventListener('mousemove', onMove)\n      document.removeEventListener('mouseup', onUp)\n    }\n    document.addEventListener('mousemove', onMove)\n    document.addEventListener('mouseup', onUp)\n    e.preventDefault()\n  }\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: leftWidth,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n          padding: 12,\n        }}\n      >\n        <Box mb=\"sm\">\n          <ClippedPath path={root} onClick={pickRoot} placeholder=\"Choose root folder…\" />\n        </Box>\n\n        <DriveFolderPickerModal\n          opened={pickerTarget !== null}\n          onClose={() => setPickerTarget(null)}\n          onSelect={handlePicked}\n        />\n\n        {loading && <Loader size=\"sm\" />}\n        {error && <Text size=\"sm\" c=\"red\">{error}</Text>}\n        {!loading && !error && isEmpty && (\n          <Text size=\"sm\" c=\"dimmed\">No PDF files found under this folder.</Text>\n        )}\n        {!loading && !root && (\n          <Button size=\"xs\" onClick={pickRoot}>Choose Root Folder</Button>\n        )}\n\n        {tree && (\n          <Stack gap=\"md\" mt=\"sm\">\n            {tree.subgroups.map(group => (\n              <GroupNode\n                key={group.name}\n                group={group}\n                groupKey={group.name}\n                collapsedGroups={collapsedGroups}\n                onToggle={toggleGroup}\n                assignments={assignments}\n                inheritedAssignment={null}\n                onPick={setPickerTarget}\n              />\n            ))}\n            <FileList files={tree.files} assignments={assignments} inheritedAssignment={null} onPick={setPickerTarget} />\n          </Stack>\n        )}\n      </Box>\n\n      <Box\n        onMouseDown={startDrag}\n        style={{\n          width: DRAG_HANDLE_WIDTH,\n          height: '100%',\n          cursor: 'col-resize',\n          flexShrink: 0,\n          background: 'var(--mantine-color-gray-3)',\n        }}\n      />\n\n      <Box\n […]
 
 > TOOL
@@ -1544,7 +1544,7 @@ id: toolu_01K6o8RbKD37Aq7u3FL4vHVU
 tool_result
 id: toolu_01K6o8RbKD37Aq7u3FL4vHVU
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1553,7 +1553,7 @@ tool_use Read
 id: toolu_0129Xjw6xmcw7W1uW6YzwjKK
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -1607,7 +1607,7 @@ tool_use Bash
 id: toolu_01VSLAr5UxQoAt1iDxF9M7U3
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -30",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -30",
   "description": "Typecheck frontend"
 }
 ```
@@ -1637,7 +1637,7 @@ id: toolu_01Aq9ZY6A374ctnidXn77xxP
 tool_result
 id: toolu_01Aq9ZY6A374ctnidXn77xxP
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/index.test.tsx  (3 tests) 413ms
 

@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/hedde/code/evorto
+# AGENTS.md instructions for /home/<USER>/code/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -60,7 +60,7 @@ id: call_LoM8r6Zq5a3NSCcsysy7UdAF
 ```json
 {
   "cmd": "pwd && git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -72,8 +72,8 @@ tool_use exec_command
 id: call_3v0Nmke6oJrlRBuoFyoNES8E
 ```json
 {
-  "cmd": "rg -n \"Conservative branch sync|git fetch --no-tags|git town sync|latest changes|branch sync|FETCH_HEAD\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "rg -n \"Conservative branch sync|git fetch --no-tags|git town sync|latest changes|branch sync|FETCH_HEAD\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -86,7 +86,7 @@ id: call_homYq57rdYn6elZrkcqQnpVP
 ```json
 {
   "cmd": "find .. -name AGENTS.md -print",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -102,7 +102,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 15
 Output:
-/Users/hedde/code/evorto
+/home/<USER>/code/evorto
 ## main...origin/main [behind 2]
 
 ```
@@ -120,7 +120,7 @@ Output:
 116:- bun outdated --json, angular-22, typescript-6, node-24.15.0, @types/pg, TS7016, git rebase --onto FETCH_HEAD, codex/pr62-split-06-browser-transport-blocker, PR 76, chore: refresh dependencies and vendored sources
 139:- For stacked PRs, check `git rev-parse`/`merge-base` before rebasing; when the base has advanced, `git rebase --onto FETCH_HEAD <old-base-commit>` is the safe shape for replaying only the dependency-refresh commit onto the fetched PR62 tip. [Task 1]
 147:- Symptom: rebasing onto the refreshed PR62 base replays the old base commit and creates conflicts. Cause: a broad/plain rebase targeted the wrong commit range. Fix: abort and rebase only the dependency-refresh commit with `git rebase --onto FETCH_HEAD <old-base-commit>`. [Task 1]
-417:scope: Neon branch cleanup, root-cause forensics for unexpected branch growth, and the repo-specific mitigation/push workflow for `/Users/hedde/code/evorto`; use when Neon Local or Neon branch state is involved, not for generic git branch sync tasks.
+417:scope: Neon branch cleanup, root-cause forensics for unexpected branch growth, and the repo-specific mitigation/push workflow for `/home/<USER>/code/evorto`; use when Neon Local or Neon branch state is involved, not for generic git branch sync tasks.
 
 ```
 
@@ -160,8 +160,8 @@ tool_use exec_command
 id: call_pgXYvkSjeWO89NWuHmnGXfzM
 ```json
 {
-  "cmd": "rg -n \"update-evorto-branch|Conservative branch sync|git fetch --no-tags|FETCH_HEAD|latest changes|origin sync\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "rg -n \"update-evorto-branch|Conservative branch sync|git fetch --no-tags|FETCH_HEAD|latest changes|origin sync\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -174,7 +174,7 @@ id: call_t9EJFO1mlYJ3pt5l9RPkLWyQ
 ```json
 {
   "cmd": "rg --files -g 'AGENTS.md' -g 'README.md' -g 'PRODUCT.md' -g 'ARCHITECTURE.md' -g 'QUALITY.md'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -287,7 +287,7 @@ id: call_2j3th133ZXUzfOahLTFTOcLh
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -300,7 +300,7 @@ id: call_RqY1U8sjL6QAySrjDYkYVSlu
 ```json
 {
   "cmd": "git branch --show-current && git rev-parse --abbrev-ref --symbolic-full-name @{u}",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -343,7 +343,7 @@ id: call_N8sknq59j2stxGz4M5CRINQG
 ```json
 {
   "cmd": "git fetch --no-tags origin main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -375,7 +375,7 @@ id: call_ZFvRB6AdB9kbeRr4jIVkoFgo
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -388,7 +388,7 @@ id: call_lhTQbVKW9z8Tr4Zj1os82y65
 ```json
 {
   "cmd": "git rev-list --left-right --count HEAD...origin/main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -401,7 +401,7 @@ id: call_q63cEHqZaZG2bvFzr1ENcp4o
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=5 HEAD..origin/main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -461,7 +461,7 @@ id: call_oqnKirhk7lozQGJjOT3V5Dub
 ```json
 {
   "cmd": "git merge --ff-only origin/main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -536,7 +536,7 @@ id: call_Ng0OySpfGeoZMzdarjnUMArj
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -549,7 +549,7 @@ id: call_2zKgyLF0mSWTUbUnRp9UUiTP
 ```json
 {
   "cmd": "git rev-parse --short HEAD && git log --oneline --decorate --max-count=3",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -562,7 +562,7 @@ id: call_Ufh9rZIrOBie2f9Al6tujUQk
 ```json
 {
   "cmd": "git rev-list --left-right --count HEAD...origin/main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -615,7 +615,7 @@ Output:
 
 > AGENT
 
-Updated `/Users/hedde/code/evorto` from remote.
+Updated `/home/<USER>/code/evorto` from remote.
 
 `main` fast-forwarded from `c1edf30384f` to `70215b09fb2`, bringing in 2 commits from `origin/main`. Final status is clean and aligned with remote: `HEAD...origin/main` is `0 0`.
 
@@ -645,7 +645,7 @@ id: call_ZF4pwhr3k5IZQXdxy8HrHHwz
 ```json
 {
   "cmd": "rg --files -g 'dependabot.yml' -g 'dependabot.yaml' -g '*.yml' -g '*.yaml' .github",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -658,7 +658,7 @@ id: call_QVGeHMdqL29TcWIWmzrPB5DN
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -671,7 +671,7 @@ id: call_hiuAJg0K7YfRtrS7fTB3Wlst
 ```json
 {
   "cmd": "sed -n '1,220p' AGENTS.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -765,7 +765,7 @@ id: call_qEBJykjFmii75CEfG3KNZzSM
 ```json
 {
   "cmd": "rg -n \"dependabot|dependency[-_ ]review|dependency graph|dependency-review|package-ecosystem|directories:|exclude-paths|repos/\" .github package.json bun.lock README.md QUALITY.md ARCHITECTURE.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -778,7 +778,7 @@ id: call_GBr4fTRazPXI9AJw06Wlidsn
 ```json
 {
   "cmd": "find .github -maxdepth 3 -type f -print",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -791,7 +791,7 @@ id: call_KpEnjwyXSr4dJOV0Sa9G44Ab
 ```json
 {
   "cmd": "ls -la .github",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -858,7 +858,7 @@ id: call_1kAo4KY2VgWVFg26yDqX9Ban
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -871,7 +871,7 @@ id: call_elbmS2WcIEE7hC6OiQ9olsBg
 ```json
 {
   "cmd": "find . -maxdepth 3 \\( -name package.json -o -name bun.lock -o -name package-lock.json -o -name pnpm-lock.yaml -o -name yarn.lock -o -name go.mod -o -name Gemfile \\) -not -path './.git/*' -print | sort",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -905,7 +905,7 @@ Output:
     "test:e2e:integration": "bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-integration --project=docs-integration",
     "test:e2e:live-esncard": "bun run env:runtime && dotenv -c dev -- playwright test tests/specs/profile/user-profile-live-esncard.spec.ts --project=local-chrome-integration --grep '@needs-live-esncard'",
     "test:e2e:docs": "bun run env:runtime && dotenv -c dev -- playwright test --project=docs-baseline",
-    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
+    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
     "test:e2e:install": "playwright install",
     "test:e2e:report": "playwright show-report",
     "db:push": "bun run env:runtime && dotenv -c dev -- drizzle-kit push --force",
@@ -1117,7 +1117,7 @@ id: call_K94tT3il5s4PLaDy4NrAKa8X
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1174,7 +1174,7 @@ id: call_gdPqGZax4iaQOJGaN2d6OjhC
 ```json
 {
   "cmd": "bun run lint",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1210,7 +1210,7 @@ id: call_9uXCOMcX2qIO0CPnUUbY2iq9
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1223,7 +1223,7 @@ id: call_TmddNkzQZCNv8glsG8LVIOB6
 ```json
 {
   "cmd": "git diff -- .github/dependabot.yml",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1236,7 +1236,7 @@ id: call_wPryFnsp6sJp108Jsczw55v2
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1310,7 +1310,7 @@ id: call_pzH5dAljfSYFeBEXL98tcTjp
 ```json
 {
   "cmd": "git diff -- migration/index.ts src/app/events/event-details/event-details.component.ts src/app/templates/categories/category-list/category-list.component.ts src/app/templates/shared/template-form/template-question-form.utilities.ts src/server/effect/rpc/handlers/admin.handlers.ts src/server/effect/rpc/handlers/events/event-registration.service.ts src/server/http/stripe-webhook.web-handler.ts src/server/utils/validate-tax-rate.ts | git apply -R",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1340,7 +1340,7 @@ id: call_8wQRaReD73xTs6UchOF6JG81
 ```json
 {
   "cmd": "bunx prettier --check .github/dependabot.yml",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1353,7 +1353,7 @@ id: call_d0dfGBOW8SnJpT7ncVboiDTG
 ```json
 {
   "cmd": "ruby -e 'require \"yaml\"; YAML.load_file(\".github/dependabot.yml\"); puts \"ok\"'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1366,7 +1366,7 @@ id: call_066VqdRcZ9NM2mPI9KaAuJye
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1428,7 +1428,7 @@ id: call_P8ZPKfVzJypC8QHIWVlwXzkN
 ```json
 {
   "cmd": "bun run lint",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1464,7 +1464,7 @@ id: call_h0KGbZrrglHrWnPB0aMHjV1j
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1477,7 +1477,7 @@ id: call_baohK0ItwBgwYatRkEnhOJva
 ```json
 {
   "cmd": "sed -n '1,80p' .github/dependabot.yml",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1490,7 +1490,7 @@ id: call_mCpzKRxc5UEZOJUKNMniqzLu
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1546,7 +1546,7 @@ Output:
 
 > AGENT
 
-Added [`.github/dependabot.yml`](/Users/hedde/code/evorto/.github/dependabot.yml) with a Bun Dependabot update config and `exclude-paths: ["repos/**"]`, so Dependabot skips vendored manifests under `repos/` during update scans. This uses GitHub’s current `exclude-paths` option and Bun ecosystem support docs: [exclude-paths](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#exclude-paths), [Bun support](https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#bun).
+Added [`.github/dependabot.yml`](/home/<USER>/code/evorto/.github/dependabot.yml) with a Bun Dependabot update config and `exclude-paths: ["repos/**"]`, so Dependabot skips vendored manifests under `repos/` during update scans. This uses GitHub’s current `exclude-paths` option and Bun ecosystem support docs: [exclude-paths](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#exclude-paths), [Bun support](https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#bun).
 
 Verified:
 - `bun run format:write` completed, with existing Prettier config warnings

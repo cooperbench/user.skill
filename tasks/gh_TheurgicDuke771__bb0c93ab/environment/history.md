@@ -13,7 +13,7 @@ tool_use Bash
 id: toolu_0126uwSnACrbF6JNHs6bazMq
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/.claude/agents/",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/.claude/agents/",
   "description": "List agent definitions"
 }
 ```
@@ -55,7 +55,7 @@ tool_use Read
 id: toolu_01Y3sUDqk4f8DLo1A8wYjbLC
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md"
 }
 ```
 
@@ -81,7 +81,7 @@ tool_use Read
 id: toolu_01UAmK6kCycP2725HkJhbTuL
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md"
 }
 ```
 
@@ -110,7 +110,7 @@ tool_use Bash
 id: toolu_01TAx2Kt1viLEZJjCM82yvBz
 ```json
 {
-  "command": "grep -n \"run:\" /Users/arijit/Coding/Python/DataQ/.github/workflows/ci.yml | head -40",
+  "command": "grep -n \"run:\" /home/<USER>/Coding/Python/DataQ/.github/workflows/ci.yml | head -40",
   "description": "List CI job commands"
 }
 ```
@@ -160,7 +160,7 @@ tool_use Bash
 id: toolu_01XkZXiXgzeM7LYxyWwmwhEM
 ```json
 {
-  "command": "grep -rn \"dbt\" /Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts /Users/arijit/Coding/Python/DataQ/frontend/src/api/connectionSources.ts 2>/dev/null | head; echo ---; grep -rn \"scroll={{\" /Users/arijit/Coding/Python/DataQ/frontend/src --include=\"*.tsx\" -l | head; echo ---; grep -n \"projects:\" -A 20 /Users/arijit/Coding/Python/DataQ/frontend/playwright.config.ts",
+  "command": "grep -rn \"dbt\" /home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts /home/<USER>/Coding/Python/DataQ/frontend/src/api/connectionSources.ts 2>/dev/null | head; echo ---; grep -rn \"scroll={{\" /home/<USER>/Coding/Python/DataQ/frontend/src --include=\"*.tsx\" -l | head; echo ---; grep -n \"projects:\" -A 20 /home/<USER>/Coding/Python/DataQ/frontend/playwright.config.ts",
   "description": "Check dbt in frontend enums, table scroll props, playwright projects"
 }
 ```
@@ -170,11 +170,11 @@ id: toolu_01XkZXiXgzeM7LYxyWwmwhEM
 tool_result
 id: toolu_01XkZXiXgzeM7LYxyWwmwhEM
 ```
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:5: * ADF, Airflow + dbt are orchestration providers, not datasources, but they are
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:16:  'dbt',
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:37:  dbt: 'orchestration',
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:68:  dbt: null,
-/Users/arijit/Coding/Python/DataQ/frontend/src/api/connections.ts:120:  dbt: 'dbt',
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:5: * ADF, Airflow + dbt are orchestration providers, not datasources, but they are
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:16:  'dbt',
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:37:  dbt: 'orchestration',
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:68:  dbt: null,
+/home/<USER>/Coding/Python/DataQ/frontend/src/api/connections.ts:120:  dbt: 'dbt',
 ---
 ---
 41:  projects: [
@@ -205,7 +205,7 @@ tool_use Bash
 id: toolu_01MgZZZybnR7bZQN92FzaRVs
 ```json
 {
-  "command": "grep -rn \"events/\" /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration*.py | grep -i \"post\\|router\" | head; echo ---; grep -rn \"ORCHESTRATION_PROVIDERS\\|'dbt'\" /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py | head -5; echo ---; grep -n \"addopts\" /Users/arijit/Coding/Python/DataQ/pyproject.toml",
+  "command": "grep -rn \"events/\" /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration*.py | grep -i \"post\\|router\" | head; echo ---; grep -rn \"ORCHESTRATION_PROVIDERS\\|'dbt'\" /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py | head -5; echo ---; grep -n \"addopts\" /home/<USER>/Coding/Python/DataQ/pyproject.toml",
   "description": "Check dbt webhook endpoint, provider enum, pytest addopts"
 }
 ```
@@ -215,14 +215,14 @@ id: toolu_01MgZZZybnR7bZQN92FzaRVs
 tool_result
 id: toolu_01MgZZZybnR7bZQN92FzaRVs
 ```
-/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:7:- `POST /orchestration/events/adf` — Azure Monitor. Auth = shared secret in the
-/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:10:- `POST /orchestration/events/airflow` — our DAG callback snippet. Auth =
-/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:14:- `POST /orchestration/events/dbt` — our post-build callback snippet. Same
+/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:7:- `POST /orchestration/events/adf` — Azure Monitor. Auth = shared secret in the
+/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:10:- `POST /orchestration/events/airflow` — our DAG callback snippet. Auth =
+/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/orchestration.py:14:- `POST /orchestration/events/dbt` — our post-build callback snippet. Same
 ---
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:40:ORCHESTRATION_PROVIDERS = ("adf", "airflow", "dbt")
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:132:                "type IN (" + ", ".join(f"'{p}'" for p in ORCHESTRATION_PROVIDERS) + ")"
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:441:        _in_check("provider", ORCHESTRATION_PROVIDERS, "provider_valid"),
-/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py:467:        _in_check("provider", ORCHESTRATION_PROVIDERS, "provider_valid"),
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:40:ORCHESTRATION_PROVIDERS = ("adf", "airflow", "dbt")
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:132:                "type IN (" + ", ".join(f"'{p}'" for p in ORCHESTRATION_PROVIDERS) + ")"
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:441:        _in_check("provider", ORCHESTRATION_PROVIDERS, "provider_valid"),
+/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py:467:        _in_check("provider", ORCHESTRATION_PROVIDERS, "provider_valid"),
 ---
 101:addopts = "--cov=backend/app --cov-report=term-missing --cov-fail-under=80"
 125:# bring the whole importable package + tests + this config, and `-o addopts=`
@@ -235,7 +235,7 @@ tool_use Bash
 id: toolu_019cgPYnKuQ4LCde2QH6CBWZ
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/frontend/src/pages/; echo ---; gh issue list --repo TheurgicDuke771/DataQ --state open --label bug --json number,title --jq '.[] | \"#\\(.number) \\(.title)\"' | head -15",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/frontend/src/pages/; echo ---; gh issue list --repo TheurgicDuke771/DataQ --state open --label bug --json number,title --jq '.[] | \"#\\(.number) \\(.title)\"' | head -15",
   "description": "List frontend pages and open bug issues"
 }
 ```
@@ -281,7 +281,7 @@ tool_use Bash
 id: toolu_01NUC9NukiX1sLpyZx4X3G3W
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/.claude/skills/ 2>/dev/null; ls /Users/arijit/Coding/Python/DataQ/.claude/commands/ 2>/dev/null",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/.claude/skills/ 2>/dev/null; ls /home/<USER>/Coding/Python/DataQ/.claude/commands/ 2>/dev/null",
   "description": "Check for repo-local skills/commands"
 }
 ```
@@ -304,7 +304,7 @@ id: toolu_01D8yoY7avGWXLaWUcgKamrX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "| Types | `pnpm typecheck` |\n| Tests | `pnpm test` |",
   "new_string": "| Types | `pnpm typecheck` |\n| Tests + coverage gate | `pnpm test:coverage` |"
 }
@@ -315,7 +315,7 @@ id: toolu_01D8yoY7avGWXLaWUcgKamrX
 tool_result
 id: toolu_01D8yoY7avGWXLaWUcgKamrX
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -325,7 +325,7 @@ id: toolu_01C3zkg3vQYJBWRx4Jy1jJmg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "- **pytest addopts carry `--cov`** — a second `--cov` on the CLI is a pytest usage error (exit 4). Use `--cov=<module> --cov-report=term-missing -o addopts=` when you need targeted coverage.",
   "new_string": "- **pytest addopts carry `--cov` AND `--cov-fail-under=80`** — a second `--cov` on the CLI is a pytest usage error (exit 4), and a targeted subset run will spuriously fail the repo-wide 80% floor. Use `--cov=<module> --cov-report=term-missing -o addopts=` when you need targeted coverage. Frontend equivalent: the `lines: 80` gate only runs under `pnpm test:coverage`, not `pnpm test`."
 }
@@ -336,7 +336,7 @@ id: toolu_01C3zkg3vQYJBWRx4Jy1jJmg
 tool_result
 id: toolu_01C3zkg3vQYJBWRx4Jy1jJmg
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -346,7 +346,7 @@ id: toolu_015wkNwEwaBoEusNBzxTXpkM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "2. **Orchestration tests covering only one provider** — parametrize over both `adf` and `airflow` (ADF-only fixtures mean the abstraction is rotting).",
   "new_string": "2. **Orchestration tests covering only one provider** — parametrize over the full `ORCHESTRATION_PROVIDERS` tuple (`adf`, `airflow`, `dbt` since ADR 0029), not a hardcoded subset (single-provider fixtures mean the abstraction is rotting)."
 }
@@ -357,7 +357,7 @@ id: toolu_015wkNwEwaBoEusNBzxTXpkM
 tool_result
 id: toolu_015wkNwEwaBoEusNBzxTXpkM
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -367,7 +367,7 @@ id: toolu_01D29EGPPDfoTQgYS29PtiTR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "1. **Check-authoring edge cases** — through `POST/PATCH` on suites/checks: unknown expectation type; args missing/wrong-typed; thresholds inverted (warn worse than critical) or out of range; column names with quotes/unicode/SQL metacharacters; oversized strings. Expect 422/400 envelopes, never a 500 or a silently-persisted invalid check.",
   "new_string": "1. **Check-authoring edge cases** — through `POST/PATCH` on suites/checks: unknown expectation type; args missing/wrong-typed; thresholds inverted (warn worse than critical) or out of range; column names with quotes/unicode/SQL metacharacters/**NUL bytes and control characters** (`\u0000` in a string field 500'd all of v1 until #570 — always include it); oversized strings. Cover non-`expectation` kinds too: a `freshness`/`volume` check with kind-inappropriate or missing config must 422, not persist. Expect 422/400 envelopes, never a 500 or a silently-persisted invalid check."
 }
@@ -378,7 +378,7 @@ id: toolu_01D29EGPPDfoTQgYS29PtiTR
 tool_result
 id: toolu_01D29EGPPDfoTQgYS29PtiTR
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -388,7 +388,7 @@ id: toolu_01SVCsNbLdnKyQ7S1EoxEV4y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "5. **Authz probes** — with a second demo user (seeded), verify: view-only user gets 403 on edit endpoints; non-shared suite invisible in lists AND 403/404 by direct id (no IDOR); admin endpoints 403 for non-admins.\n6. **Webhook hostility** — POST to `/api/v1/orchestration/events/{adf,airflow}` with: missing/wrong auth (secret/HMAC), valid auth + malformed JSON, valid JSON missing required fields, duplicate delivery (dedup index #456 should absorb it). Expect 401/422 envelopes and no phantom `pipeline_runs` rows.",
   "new_string": "5. **Authz probes** — with a second demo user (seeded), verify: view-only user gets 403 on edit endpoints; non-shared suite invisible in lists AND 403/404 by direct id (no IDOR); admin endpoints 403 for non-admins.\n5a. **PAT surface** (ADR 0026, #613) — garbage, expired, and revoked `dq_live_…` tokens must all return a **uniform 401** (no oracle distinguishing \"unknown\" from \"expired\"); a valid PAT must carry the owner's authz scope, not more; the plaintext token must never appear in any read-back after mint (sha256-at-rest, show-once).\n6. **Webhook hostility** — POST to `/api/v1/orchestration/events/{adf,airflow,dbt}` with: missing/wrong auth (secret/HMAC per provider), valid auth + malformed JSON, valid JSON missing required fields, duplicate delivery (dedup index #456 should absorb it). Expect 401/422 envelopes and […]
 
@@ -399,7 +399,7 @@ id: toolu_01PhLp2DtHHQpYuon96GSK6V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "Findings that warrant deferred work should be called out for `/gh-issue-from-finding` (working-agreement #3) — never silently dropped.",
   "new_string": "Before reporting a finding as new, check it against open issues (`gh issue list --state open --search \"<keywords>\"`) — a rediscovery of a known issue is reported as `known — #N (still reproduces)`, not as a fresh finding, and doesn't count toward the verdict unless the diff was supposed to fix it. Findings that warrant deferred work should be called out for `/gh-issue-from-finding` (working-agreement #3) — never silently dropped."
 }
@@ -410,7 +410,7 @@ id: toolu_01PhLp2DtHHQpYuon96GSK6V
 tool_result
 id: toolu_01SVCsNbLdnKyQ7S1EoxEV4y
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -418,7 +418,7 @@ The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has bee
 tool_result
 id: toolu_01PhLp2DtHHQpYuon96GSK6V
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -427,7 +427,7 @@ tool_use Bash
 id: toolu_01RGKJY6Bt5xBZaTcQvnLz9e
 ```json
 {
-  "command": "grep -n \"NUL\" /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md | cat -v",
+  "command": "grep -n \"NUL\" /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md | cat -v",
   "description": "Verify NUL-byte edit rendered cleanly"
 }
 ```
@@ -446,7 +446,7 @@ tool_use Bash
 id: toolu_01CJtc1JWrVEnjAFKvjsKht8
 ```json
 {
-  "command": "grep -an \"NUL\" /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md | cat -v",
+  "command": "grep -an \"NUL\" /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md | cat -v",
   "description": "Check for literal NUL byte in file (binary-safe grep)"
 }
 ```
@@ -469,7 +469,7 @@ tool_use Bash
 id: toolu_0152FuzB6aStFVPa5TKgwq99
 ```json
 {
-  "command": "perl -pi -e 's/\\x00/\\\\x00/g' /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md && grep -n \"x00\" /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "command": "perl -pi -e 's/\\x00/\\\\x00/g' /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md && grep -n \"x00\" /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "description": "Replace literal NUL byte with \\x00 escape text"
 }
 ```
@@ -489,7 +489,7 @@ id: toolu_01QfxCRnDjN3D56wdcGSey6X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "- **Frontend:** React + Vite + Ant Design (antd v6), Monaco, recharts. Routes are deep-linkable pages (ADR 0022): `/dashboard`, `/connections`, `/connections/new`, `/suites`, `/suites/:id`, `/suites/new`, check editor under a suite, `/results`, run detail, `/profile`, `/settings`, `/admin`.",
   "new_string": "- **Frontend:** React + Vite + Ant Design (antd v6), Monaco, recharts. Routes are deep-linkable pages (ADR 0022): `/dashboard`, `/connections`, `/connections/new`, `/connections/:id/edit`, `/suites`, `/suites/:id`, `/suites/new`, suite edit, check editor + check edit under a suite, `/results` (Runs + Pipeline runs tabs), run detail, `/profile`, `/settings`, `/admin`, plus the 404 page. `frontend/src/pages/` is the authoritative list — check it for screens added since this file was written."
 }
@@ -500,7 +500,7 @@ id: toolu_01QfxCRnDjN3D56wdcGSey6X
 tool_result
 id: toolu_01QfxCRnDjN3D56wdcGSey6X
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -510,7 +510,7 @@ id: toolu_01SGs4spj2nYzAKUu1PNBMqV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "Before starting, get oriented cheaply: `git log --oneline -5`, and skim `frontend/src/api/` + `frontend/src/pages/` + `backend/app/api/v1/`.",
   "new_string": "Before starting, get oriented cheaply: `git log --oneline -5`, and skim `frontend/src/api/` + `frontend/src/pages/` + `backend/app/api/v1/`.\n\n**Known-issue triage (do this first):** pull the open bug list — `gh issue list --state open --label bug --json number,title` — before the sweep. A defect that matches an open issue is reported as **`known — #N (still reproduces)`**, never as a new finding; only genuinely new symptoms (or a known issue's stated scope clearly not covering what you see) go in the findings list. This keeps the report actionable and avoids re-filing e.g. an open mobile-responsiveness umbrella issue screen by screen."
 }
@@ -521,7 +521,7 @@ id: toolu_01SGs4spj2nYzAKUu1PNBMqV
 tool_result
 id: toolu_01SGs4spj2nYzAKUu1PNBMqV
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -531,7 +531,7 @@ id: toolu_01TH1gvwYpdSVsXT2JBk21K7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "- **Horizontal overflow:** the page `<body>` must not scroll sideways. Check via `browser_evaluate` → `document.documentElement.scrollWidth > document.documentElement.clientWidth`. Wide content (tables, the Monaco editor, charts, run-detail rows) must scroll **inside its own container**, not push the page.\n- **Navigation:** the sidebar/nav must be reachable (collapsed/hamburger) and every route still navigable by tap.\n- **Forms & modals:** the add-connection drawer, check editor, notifications panel, and modals (create-PAT, run-now) must be usable — inputs reachable, buttons not off-screen, Selects openable, the copy-once PAT token visible.\n- **Tap targets & truncation:** controls aren't overlapping or clipped; labels truncate rather than break layout.\n- Exercise at least one **core flow** on mobile (e.g. open a suite → open the notifications panel → toggle a threshold) to prove functionality, not just rendering.\n\nCapture a screenshot of any screen that misbehaves at mobile width — it's the clearest evidence.",
   "new_string": "- **Horizontal overflow:** the page `<body>` must not scroll sideways. Check via `browser_evaluate` → `document.documentElement.scrollWidth > document.documentElement.clientWidth`. Wide content (tables, the Monaco editor, charts, run-detail rows) must scroll **inside its own container**, not push the page.\n- **Navigation:** the sidebar/nav must be reachable (collapsed/hamburger) and every route still navigable by tap.\n- **Forms […]
 
@@ -540,7 +540,7 @@ id: toolu_01TH1gvwYpdSVsXT2JBk21K7
 tool_result
 id: toolu_01TH1gvwYpdSVsXT2JBk21K7
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -554,7 +554,7 @@ id: toolu_01AUvew3zpcDroUkReGsBpyx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "- Find the frontend client for each: `frontend/src/api/*.ts`. A backend router with **no** matching client, or endpoints a client never calls, is a candidate gap (e.g. the historic `api_keys` router with no `apiKeys.ts`, or `dbt` missing from `CONNECTION_TYPES`).",
   "new_string": "- Find the frontend client for each: `frontend/src/api/*.ts`. A backend router with **no** matching client, or endpoints a client never calls, is a candidate gap (historic examples, both since fixed: the `api_keys` router shipping with no `apiKeys.ts`; `dbt` landing in the backend enums before the frontend `CONNECTION_TYPES`)."
 }
@@ -567,7 +567,7 @@ id: toolu_01FcpLKfoMcSv4WjS88tX4rn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md",
   "old_string": "- **Summary line:** desktop OK/issues, mobile OK/issues, N parity gaps.\n- **Desktop findings** and **Mobile findings**: each with the screen/route, what's wrong (with a repro: viewport + steps), severity (**blocker** = broken/unusable · **major** = degraded but usable · **minor** = cosmetic), and a screenshot reference where you took one. Call out console errors and 4xx/5xx `/api` calls explicitly.",
   "new_string": "- **Summary line:** desktop OK/issues, mobile OK/issues, N parity gaps, N known issues re-confirmed.\n- **Desktop findings** and **Mobile findings**: each with the screen/route, what's wrong (with a repro: viewport + steps + measured numbers where you probed), severity (**blocker** = broken/unusable · **major** = degraded but usable · **minor** = cosmetic), the root-cause `file:line` where found, and a screenshot path where you took one. Call out console errors and 4xx/5xx `/api` calls explicitly. List `known — #N` re-confirmations separately from new findings."
 }
@@ -578,7 +578,7 @@ id: toolu_01FcpLKfoMcSv4WjS88tX4rn
 tool_result
 id: toolu_01AUvew3zpcDroUkReGsBpyx
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -586,7 +586,7 @@ The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been 
 tool_result
 id: toolu_01FcpLKfoMcSv4WjS88tX4rn
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/ui-tester.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -666,7 +666,7 @@ tool_use Bash
 id: toolu_015kBbCUWVDMU6DKTGpRz58J
 ```json
 {
-  "command": "git add .claude/agents/qa-verifier.md .claude/agents/ui-tester.md && git commit -m \"chore(agents): optimize qa-verifier + ui-tester definitions\n\nqa-verifier:\n- fix CI drift: frontend tests gate is pnpm test:coverage (the lines:80\n  gate never runs under plain pnpm test); note --cov-fail-under=80 rides\n  pytest addopts (targeted runs need -o addopts=)\n- cover all three orchestration providers (adf/airflow/dbt, ADR 0029) in\n  the Mode-2 parametrize flag and the Mode-3 webhook-hostility scenario\n- add NUL-byte/control-char hostile inputs (the #567/#570 lesson) and\n  freshness/volume kind-config 422s to the authoring battery\n- add PAT authenticator probes (ADR 0026: uniform 401, owner scope,\n  no plaintext read-back)\n- dedupe findings against open issues (known — #N, not fresh findings)\n\nui-tester:\n- mandatory known-issue triage pre-flight (gh issue list) so open bugs\n  like #617/#618 are re-confirmed, not re-reported as new\n- mobile failure-signature toolbox: measured probes for char-per-line\n  squeezes, clipped tables (antd scroll={{x}}), overlapping floating\n  controls, non-wrapping headers — measure, don't eyeball\n- require root-cause file:line + fix direction on every defect; flag a\n  missing mobile-viewport Playwright project as a regression-guard gap\n- refresh routes (edit pages, 404) and mark the dbt/api_keys parity\n  examples historic (both since fixed)\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>\"",
+  "command": "git add .claude/agents/qa-verifier.md .claude/agents/ui-tester.md && git commit -m \"chore(agents): optimize qa-verifier + ui-tester definitions\n\nqa-verifier:\n- fix CI drift: frontend tests gate is pnpm test:coverage (the lines:80\n  gate never runs under plain pnpm test); note --cov-fail-under=80 rides\n  pytest addopts (targeted runs need -o addopts=)\n- cover all three orchestration providers (adf/airflow/dbt, ADR 0029) in\n  the Mode-2 parametrize flag and the Mode-3 webhook-hostility scenario\n- add NUL-byte/control-char hostile inputs (the #567/#570 lesson) and\n  freshness/volume kind-config 422s to the authoring battery\n- add PAT authenticator probes (ADR 0026: uniform 401, owner scope,\n  no plaintext read-back)\n- dedupe findings against open issues (known — #N, not fresh findings)\n\nui-tester:\n- mandatory known-issue triage pre-flight (gh issue list) so open bugs\n  like #617/#618 are re-confirmed, not re-reported as new\n- mobile failure-signature toolbox: measured probes for char-per-line\n  squeezes, clipped tables (antd scroll={{x}}), overlapping floating\n  controls, non-wrapping headers — measure, don't eyeball\n- require root-cause file:line + fix direction on every defect; flag a\n  missing mobile-viewport Playwright project as a regression-guard gap\n- refresh routes (edit pages, 404) and mark the dbt/api_keys parity\n  examples historic (both since fixed)\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>\"",
   "description": "Commit agent definition updates"
 }
 ```
@@ -686,7 +686,7 @@ tool_use Read
 id: toolu_01Ltqa1JqyDWpXNk3bnJiKx5
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.github/pull_request_template.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.github/pull_request_template.md"
 }
 ```
 
@@ -815,7 +815,7 @@ id: toolu_01UvbE2w6ph76PNFwYw5epS8
   "description": "Angle A: line-by-line scan",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review FINDER (angle A: line-by-line diff scan) for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD` to get the diff under review. The changed files are `.claude/agents/qa-verifier.md` and `.claude/agents/ui-tester.md` — these are AGENT PROMPT DEFINITIONS (instructions a QA subagent will follow), not executable code.\n\nRead every hunk line by line, then Read the full enclosing sections of both files. For agent-prompt files, a \"bug\" is: a factually WRONG claim (verify against the repo with Read/Grep/Bash — e.g. does `pnpm test:coverage` exist in frontend/package.json? is `--cov-fail-under=80` really in pyproject.toml addopts? is ORCHESTRATION_PROVIDERS really (\"adf\",\"airflow\",\"dbt\") in backend/app/db/models.py? does `/api/v1/orchestration/events/dbt` exist? do issues/PRs/ADRs cited (#570, #613, #456, ADR 0026, ADR 0029) plausibly match what they're claimed to be?), a command that would FAIL as written (check flags, e.g. `gh issue list --state open --label bug --json number,title`, `grep -rn \"scroll={{\" frontend/src` under fish shell quoting), an internal CONTRADICTION between instructions, an instruction that would make the agent take a destructive/forbidden action, or markdown that breaks meaning (e.g. the `5a.` item inserted into an ordered list — check how that renders/reads). Bugs in UNCHANGED […]
+  "prompt": "You are a code-review FINDER (angle A: line-by-line diff scan) for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD` to get the diff under review. The changed files are `.claude/agents/qa-verifier.md` and `.claude/agents/ui-tester.md` — these are AGENT PROMPT DEFINITIONS (instructions a QA subagent will follow), not executable code.\n\nRead every hunk line by line, then Read the full enclosing sections of both files. For agent-prompt files, a \"bug\" is: a factually WRONG claim (verify against the repo with Read/Grep/Bash — e.g. does `pnpm test:coverage` exist in frontend/package.json? is `--cov-fail-under=80` really in pyproject.toml addopts? is ORCHESTRATION_PROVIDERS really (\"adf\",\"airflow\",\"dbt\") in backend/app/db/models.py? does `/api/v1/orchestration/events/dbt` exist? do issues/PRs/ADRs cited (#570, #613, #456, ADR 0026, ADR 0029) plausibly match what they're claimed to be?), a command that would FAIL as written (check flags, e.g. `gh issue list --state open --label bug --json number,title`, `grep -rn \"scroll={{\" frontend/src` under fish shell quoting), an internal CONTRADICTION between instructions, an instruction that would make the agent take a destructive/forbidden action, or markdown that breaks meaning (e.g. the `5a.` item inserted into an ordered list — check how that renders/reads). Bugs in UNCHANGED […]
 
 > TOOL
 
@@ -839,7 +839,7 @@ id: toolu_01D5AwXsZwbsVQeGRHpXuTMS
   "description": "Angle B: removed-behavior audit",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review FINDER (angle B: removed-behavior auditor) for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. The changed files are `.claude/agents/qa-verifier.md` and `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS.\n\nFor every line the diff DELETES or replaces, name the instruction/guardrail/fact it carried, then check the new text re-establishes it. Examples to scrutinize: the old `pnpm test` gate row (is plain `pnpm test` still needed anywhere, or fully superseded by `pnpm test:coverage`? check frontend/package.json scripts and .github/workflows/ci.yml — does CI run BOTH `pnpm test` and `pnpm test:coverage` in different jobs? If CI still runs plain `pnpm test` somewhere, the table claiming to mirror CI may now be incomplete the other way). The old \"parametrize over both adf and airflow\". The old webhook scenario without dbt (does the dbt webhook endpoint + its auth actually exist in backend/app/api/v1/orchestration.py, or does the new instruction tell the QA agent to test an endpoint that doesn't exist?). The old screenshot sentence \"Capture a screenshot … it's the clearest evidence\" replaced by scratchpad-save instructions (is a scratchpad guaranteed to exist for that agent?). The old \"Fixes #\" / route […]
+  "prompt": "You are a code-review FINDER (angle B: removed-behavior auditor) for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. The changed files are `.claude/agents/qa-verifier.md` and `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS.\n\nFor every line the diff DELETES or replaces, name the instruction/guardrail/fact it carried, then check the new text re-establishes it. Examples to scrutinize: the old `pnpm test` gate row (is plain `pnpm test` still needed anywhere, or fully superseded by `pnpm test:coverage`? check frontend/package.json scripts and .github/workflows/ci.yml — does CI run BOTH `pnpm test` and `pnpm test:coverage` in different jobs? If CI still runs plain `pnpm test` somewhere, the table claiming to mirror CI may now be incomplete the other way). The old \"parametrize over both adf and airflow\". The old webhook scenario without dbt (does the dbt webhook endpoint + its auth actually exist in backend/app/api/v1/orchestration.py, or does the new instruction tell the QA agent to test an endpoint that doesn't exist?). The old screenshot sentence \"Capture a screenshot … it's the clearest evidence\" replaced by scratchpad-save instructions (is a scratchpad guaranteed to exist for that agent?). The old \"Fixes #\" / route […]
 
 > TOOL
 
@@ -863,7 +863,7 @@ id: toolu_01VufzetnzdUPWrWMUcZ789j
   "description": "Angle C: cross-file tracer",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review FINDER (angle C: cross-file tracer) for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS whose \"callers\" are the harness and whose \"callees\" are every repo file, command, endpoint, and tool they reference.\n\nVerify every NEW cross-reference the diff introduces actually resolves, by checking the repo:\n1. `pnpm test:coverage` script exists in frontend/package.json and matches what .github/workflows/ci.yml runs.\n2. pyproject.toml addopts really carries `--cov-fail-under=80`; confirm the claim \"a targeted subset run will spuriously fail the repo-wide 80% floor\" is mechanically right (does -o addopts= remove it?).\n3. `ORCHESTRATION_PROVIDERS` tuple name + value in backend/app/db/models.py.\n4. `POST /api/v1/orchestration/events/dbt` route exists AND its auth mechanism matches \"secret/HMAC per provider\"; ALSO check whether the dbt webhook is actually reachable/enabled in the local docker-compose stack the qa-verifier targets (backend/app/api/v1/orchestration.py + config) — if dbt events need a signing key that local dev doesn't seed, the instructed scenario can't run as written.\n5. PAT claims: `dq_live_` prefix, sha256-at-rest, show-once, uniform 401 — check backend (grep dq_live_, api_keys service/router) and that frontend/src/api has apiKeys client (\"both since fixed\" claim).\n6. ui-tester route list vs […]
+  "prompt": "You are a code-review FINDER (angle C: cross-file tracer) for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS whose \"callers\" are the harness and whose \"callees\" are every repo file, command, endpoint, and tool they reference.\n\nVerify every NEW cross-reference the diff introduces actually resolves, by checking the repo:\n1. `pnpm test:coverage` script exists in frontend/package.json and matches what .github/workflows/ci.yml runs.\n2. pyproject.toml addopts really carries `--cov-fail-under=80`; confirm the claim \"a targeted subset run will spuriously fail the repo-wide 80% floor\" is mechanically right (does -o addopts= remove it?).\n3. `ORCHESTRATION_PROVIDERS` tuple name + value in backend/app/db/models.py.\n4. `POST /api/v1/orchestration/events/dbt` route exists AND its auth mechanism matches \"secret/HMAC per provider\"; ALSO check whether the dbt webhook is actually reachable/enabled in the local docker-compose stack the qa-verifier targets (backend/app/api/v1/orchestration.py + config) — if dbt events need a signing key that local dev doesn't seed, the instructed scenario can't run as written.\n5. PAT claims: `dq_live_` prefix, sha256-at-rest, show-once, uniform 401 — check backend (grep dq_live_, api_keys service/router) and that frontend/src/api has apiKeys client (\"both since fixed\" claim).\n6. ui-tester route list vs […]
 
 > TOOL
 
@@ -874,7 +874,7 @@ id: toolu_01HmxfeZA99FuMsLgvhj2V4i
   "description": "Angle: reuse audit",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review FINDER (reuse angle) for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS.\n\nFlag NEW text that re-implements/duplicates guidance that already lives elsewhere and should be POINTED TO instead of copied (duplication = drift risk). Check: CONTRIBUTING.md, CLAUDE.md, docs/ (e.g. is the known-issue-dedup rule already stated somewhere canonical? is the NUL-byte case already in backend/tests/support/adversarial.py — if the battery already includes NUL bytes, the prompt could reference it rather than restate it — verify by reading that file), the other agent files under .claude/agents/ (is the known-issue triage now duplicated across qa-verifier.md and ui-tester.md with slightly different wording — same rule, two phrasings, drift risk?), and .claude/commands/. Name the existing artifact that should be referenced.\n\nReturn up to 6 candidates as a JSON array: {\"file\", \"line\" (new-file line), \"summary\", \"failure_scenario\" (concrete cost: what duplicates what, why it will drift)}. Don't silently drop half-believed candidates. If none, []."
+  "prompt": "You are a code-review FINDER (reuse angle) for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS.\n\nFlag NEW text that re-implements/duplicates guidance that already lives elsewhere and should be POINTED TO instead of copied (duplication = drift risk). Check: CONTRIBUTING.md, CLAUDE.md, docs/ (e.g. is the known-issue-dedup rule already stated somewhere canonical? is the NUL-byte case already in backend/tests/support/adversarial.py — if the battery already includes NUL bytes, the prompt could reference it rather than restate it — verify by reading that file), the other agent files under .claude/agents/ (is the known-issue triage now duplicated across qa-verifier.md and ui-tester.md with slightly different wording — same rule, two phrasings, drift risk?), and .claude/commands/. Name the existing artifact that should be referenced.\n\nReturn up to 6 candidates as a JSON array: {\"file\", \"line\" (new-file line), \"summary\", \"failure_scenario\" (concrete cost: what duplicates what, why it will drift)}. Don't silently drop half-believed candidates. If none, []."
 }
 ```
 
@@ -913,7 +913,7 @@ id: toolu_013bhzuMXL4bFZxtwYcqUw96
   "description": "Angle: simplification audit",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review FINDER (simplification angle) for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS read by an LLM subagent; excess length costs tokens and attention every invocation.\n\nFlag unnecessary complexity the diff ADDS: redundant restatements (same rule said twice in one file), over-specified detail that adds no decision value to the executing agent, awkward structure (e.g. the `5a.` item wedged into an ordered list instead of renumbering or nesting — check how markdown renders it and whether a cleaner structure exists), dead/contradictory leftovers (e.g. does the ui-tester now say both \"clean up temporary artifacts\" at the top AND \"don't delete screenshots until the report is delivered\" — is that a contradiction or fine?), and sentences whose meaning the agent already gets from an adjacent line. Name the simpler form for each.\n\nReturn up to 6 candidates as a JSON array: {\"file\", \"line\" (new-file line), \"summary\", \"failure_scenario\" (concrete cost)}. Don't silently drop half-believed candidates. If none, []."
+  "prompt": "You are a code-review FINDER (simplification angle) for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS read by an LLM subagent; excess length costs tokens and attention every invocation.\n\nFlag unnecessary complexity the diff ADDS: redundant restatements (same rule said twice in one file), over-specified detail that adds no decision value to the executing agent, awkward structure (e.g. the `5a.` item wedged into an ordered list instead of renumbering or nesting — check how markdown renders it and whether a cleaner structure exists), dead/contradictory leftovers (e.g. does the ui-tester now say both \"clean up temporary artifacts\" at the top AND \"don't delete screenshots until the report is delivered\" — is that a contradiction or fine?), and sentences whose meaning the agent already gets from an adjacent line. Name the simpler form for each.\n\nReturn up to 6 candidates as a JSON array: {\"file\", \"line\" (new-file line), \"summary\", \"failure_scenario\" (concrete cost)}. Don't silently drop half-believed candidates. If none, []."
 }
 ```
 
@@ -939,7 +939,7 @@ id: toolu_01PJT8FrBtSmq5XbQ5bk2i6T
   "description": "Angle: efficiency audit",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review FINDER (efficiency angle) for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS. \"Efficiency\" here = wasted work the instructions cause the executing agent (or the humans downstream) to do.\n\nFlag: instructions that force redundant tool calls or repeated I/O (e.g. does the known-issue triage tell BOTH agents to pull the same issue list every run — fine — or anything that makes the agent re-do work per screen that could be done once?); the new qa-verifier dedup line tells it to run `gh issue list --state open --search \"<keywords>\"` PER FINDING — is one up-front `gh issue list --state open` cheaper and sufficient (the ui-tester got the up-front version; the qa-verifier got the per-finding version — inconsistent and slower)?; instructions that will blow up runtime (e.g. running measurement probes on EVERY screen vs only suspect ones — check the wording); anything instructing serial work that could be batched. Also flag stale-fact maintenance cost: hardcoded facts (provider tuples, route lists) that the prompt could instead derive from source-of-truth files at runtime — note […]
+  "prompt": "You are a code-review FINDER (efficiency angle) for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS. \"Efficiency\" here = wasted work the instructions cause the executing agent (or the humans downstream) to do.\n\nFlag: instructions that force redundant tool calls or repeated I/O (e.g. does the known-issue triage tell BOTH agents to pull the same issue list every run — fine — or anything that makes the agent re-do work per screen that could be done once?); the new qa-verifier dedup line tells it to run `gh issue list --state open --search \"<keywords>\"` PER FINDING — is one up-front `gh issue list --state open` cheaper and sufficient (the ui-tester got the up-front version; the qa-verifier got the per-finding version — inconsistent and slower)?; instructions that will blow up runtime (e.g. running measurement probes on EVERY screen vs only suspect ones — check the wording); anything instructing serial work that could be batched. Also flag stale-fact maintenance cost: hardcoded facts (provider tuples, route lists) that the prompt could instead derive from source-of-truth files at runtime — note […]
 
 > TOOL
 
@@ -963,7 +963,7 @@ id: toolu_01E2RRNvYd3WcypGU7RUTg2p
   "description": "Angle: altitude audit",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review FINDER (altitude angle) for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS.\n\nCheck each change is encoded at the right depth, not as a fragile special case. Signals: (1) hardcoded facts that WILL drift (the provider tuple `adf, airflow, dbt`, the CI command table, the route list) — the diff sometimes adds a pointer to the source of truth (`frontend/src/pages/ is the authoritative list`) and sometimes doesn't (the gate table has a \"ci.yml wins\" escape hatch — does every new hardcoded fact have an equivalent?); (2) one-off lessons encoded as narrow special cases instead of the general rule (is \"NUL bytes 500'd until #570\" better generalized as \"control characters + anything that breaks C-string/DB-driver assumptions\"? is the ☰-trigger overlap example over-specific vs the general floating-control rule — or did the diff generalize correctly?); (3) rules placed in the wrong artifact (should the known-issue-dedup convention live once in CONTRIBUTING.md or a shared agent preamble rather than per-agent — check whether other agents in .claude/agents/ file issues/findings too, e.g. migration-safety, orchestration-abstraction-guard, and would need […]
+  "prompt": "You are a code-review FINDER (altitude angle) for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md` — AGENT PROMPT DEFINITIONS.\n\nCheck each change is encoded at the right depth, not as a fragile special case. Signals: (1) hardcoded facts that WILL drift (the provider tuple `adf, airflow, dbt`, the CI command table, the route list) — the diff sometimes adds a pointer to the source of truth (`frontend/src/pages/ is the authoritative list`) and sometimes doesn't (the gate table has a \"ci.yml wins\" escape hatch — does every new hardcoded fact have an equivalent?); (2) one-off lessons encoded as narrow special cases instead of the general rule (is \"NUL bytes 500'd until #570\" better generalized as \"control characters + anything that breaks C-string/DB-driver assumptions\"? is the ☰-trigger overlap example over-specific vs the general floating-control rule — or did the diff generalize correctly?); (3) rules placed in the wrong artifact (should the known-issue-dedup convention live once in CONTRIBUTING.md or a shared agent preamble rather than per-agent — check whether other agents in .claude/agents/ file issues/findings too, e.g. migration-safety, orchestration-abstraction-guard, and would need […]
 
 > TOOL
 
@@ -987,7 +987,7 @@ id: toolu_01FamFSZnaMbqifaNX2WqroY
   "description": "Angle: CLAUDE.md conventions",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review FINDER (conventions angle) for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md`.\n\nRead the repo-root CLAUDE.md (and ~/.claude/CLAUDE.md if it exists; there are no per-directory CLAUDE.md files under .claude/). Check the diff for CLEAR violations of rules stated there — quote the exact rule and the exact diff line that breaks it. Relevant candidates to check: CLAUDE.md §4 datasource-vs-orchestration framing (does any new text mis-describe dbt/ADF/Airflow?); §6 working agreements (does any new instruction tell an agent to do something the agreements forbid, or contradict the \"defects → GitHub issue, never silent fixes\" rule — e.g. does the new \"known — #N, doesn't count toward the verdict\" dedup line conflict with rule expectations?); §11 \"What NOT to do\" list; the claim \"no `--ignore-vuln` flags since #553\" and other CI-facts restated in qa-verifier.md vs what CLAUDE.md says; factual consistency with CLAUDE.md's own statements about pnpm test:coverage (#558), PATs (#613/ADR 0026), dbt (ADR 0029). A verifiable factual conflict WITH CLAUDE.md counts. No style preferences, no \"spirit of the doc\" stretches.\n\nReturn up to 6 candidates as a JSON array: {\"file\", […]
+  "prompt": "You are a code-review FINDER (conventions angle) for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Run `git diff main...HEAD`. Changed files: `.claude/agents/qa-verifier.md`, `.claude/agents/ui-tester.md`.\n\nRead the repo-root CLAUDE.md (and ~/.claude/CLAUDE.md if it exists; there are no per-directory CLAUDE.md files under .claude/). Check the diff for CLEAR violations of rules stated there — quote the exact rule and the exact diff line that breaks it. Relevant candidates to check: CLAUDE.md §4 datasource-vs-orchestration framing (does any new text mis-describe dbt/ADF/Airflow?); §6 working agreements (does any new instruction tell an agent to do something the agreements forbid, or contradict the \"defects → GitHub issue, never silent fixes\" rule — e.g. does the new \"known — #N, doesn't count toward the verdict\" dedup line conflict with rule expectations?); §11 \"What NOT to do\" list; the claim \"no `--ignore-vuln` flags since #553\" and other CI-facts restated in qa-verifier.md vs what CLAUDE.md says; factual consistency with CLAUDE.md's own statements about pnpm test:coverage (#558), PATs (#613/ADR 0026), dbt (ADR 0029). A verifiable factual conflict WITH CLAUDE.md counts. No style preferences, no \"spirit of the doc\" stretches.\n\nReturn up to 6 candidates as a JSON array: {\"file\", […]
 
 > TOOL
 
@@ -1152,7 +1152,7 @@ id: toolu_018wDLZGCMhS3sg2xstuBBzE
   "description": "Verify label-filter candidate",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review VERIFIER for repo /Users/arijit/Coding/Python/DataQ. Candidate finding to verify — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED, plus 2-3 sentences of evidence.\n\nCandidate: `.claude/agents/ui-tester.md` line 18 (branch chore/agents-qa-ui-optimize) instructs the ui-tester agent to dedup its findings against `gh issue list --state open --label bug` — the claim is that this label filter is too narrow: several open issues describing real UI/functional gaps the agent would rediscover are NOT labeled `bug` (claimed examples: #605, #532, #520), so the agent would re-file them as fresh findings.\n\nVerify: run `gh issue list --repo TheurgicDuke771/DataQ --state open --json number,title,labels --limit 100` and check (a) whether #605/#532/#520 (or similar open issues describing user-visible UI/feature gaps that a UI sweep would plausibly rediscover) exist, are open, and lack the `bug` label; (b) roughly how many open issues describing observable defects/gaps would be excluded by `--label bug`. REFUTED only if the label filter actually captures everything a UI sweep could rediscover, or the cited issues are closed/bug-labeled."
+  "prompt": "You are a code-review VERIFIER for repo /home/<USER>/Coding/Python/DataQ. Candidate finding to verify — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED, plus 2-3 sentences of evidence.\n\nCandidate: `.claude/agents/ui-tester.md` line 18 (branch chore/agents-qa-ui-optimize) instructs the ui-tester agent to dedup its findings against `gh issue list --state open --label bug` — the claim is that this label filter is too narrow: several open issues describing real UI/functional gaps the agent would rediscover are NOT labeled `bug` (claimed examples: #605, #532, #520), so the agent would re-file them as fresh findings.\n\nVerify: run `gh issue list --repo TheurgicDuke771/DataQ --state open --json number,title,labels --limit 100` and check (a) whether #605/#532/#520 (or similar open issues describing user-visible UI/feature gaps that a UI sweep would plausibly rediscover) exist, are open, and lack the `bug` label; (b) roughly how many open issues describing observable defects/gaps would be excluded by `--label bug`. REFUTED only if the label filter actually captures everything a UI sweep could rediscover, or the cited issues are closed/bug-labeled."
 }
 ```
 
@@ -1178,7 +1178,7 @@ id: toolu_013M1oKoDDCCgPM34pw2JveL
   "description": "Verify webhook-secret seeding claim",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review VERIFIER for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Candidate finding to verify — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED, plus 2-4 sentences of evidence.\n\nCandidate: `.claude/agents/qa-verifier.md` Mode-3 scenario 6 tells the qa-verifier agent to POST to `/api/v1/orchestration/events/{adf,airflow,dbt}` locally including \"valid auth + malformed JSON\" and \"valid JSON missing required fields\" sub-cases. Claim: on the local docker-compose stack, no seeding path (seed script, setup.sh, admin endpoint, docs) ever writes the adf/airflow/dbt webhook secrets into the local SecretStore, and `.env.app.example` doesn't list DBT_WEBHOOK_SECRET_NAME at all — so the \"valid auth\" sub-cases cannot be exercised as written without the agent manually planting secrets (something the instructions never tell it to do). The instruction is therefore partially un-runnable as written.\n\nVerify by checking: backend/scripts/seed_dev* (or wherever `python -m backend.scripts.seed_dev` points), scripts/setup.sh, .env.app.example, backend/app/core/config.py (webhook secret name settings + defaults), and how the webhook auth reads secrets (backend/app/api/v1/orchestration.py + secret store service). Consider: does the local dev secret store (redis?) get these secrets from anywhere? Could the qa-verifier plausibly create an orchestration *connection* via the API which would store a webhook secret as part […]
+  "prompt": "You are a code-review VERIFIER for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Candidate finding to verify — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED, plus 2-4 sentences of evidence.\n\nCandidate: `.claude/agents/qa-verifier.md` Mode-3 scenario 6 tells the qa-verifier agent to POST to `/api/v1/orchestration/events/{adf,airflow,dbt}` locally including \"valid auth + malformed JSON\" and \"valid JSON missing required fields\" sub-cases. Claim: on the local docker-compose stack, no seeding path (seed script, setup.sh, admin endpoint, docs) ever writes the adf/airflow/dbt webhook secrets into the local SecretStore, and `.env.app.example` doesn't list DBT_WEBHOOK_SECRET_NAME at all — so the \"valid auth\" sub-cases cannot be exercised as written without the agent manually planting secrets (something the instructions never tell it to do). The instruction is therefore partially un-runnable as written.\n\nVerify by checking: backend/scripts/seed_dev* (or wherever `python -m backend.scripts.seed_dev` points), scripts/setup.sh, .env.app.example, backend/app/core/config.py (webhook secret name settings + defaults), and how the webhook auth reads secrets (backend/app/api/v1/orchestration.py + secret store service). Consider: does the local dev secret store (redis?) get these secrets from anywhere? Could the qa-verifier plausibly create an orchestration *connection* via the API which would store a webhook secret as part […]
 
 > TOOL
 
@@ -1202,7 +1202,7 @@ id: toolu_01NMPY3FqE15Q31irhFU79rt
   "description": "Verify admin_service dbt bug",
   "subagent_type": "general-purpose",
   "model": "sonnet",
-  "prompt": "You are a code-review VERIFIER for repo /Users/arijit/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Candidate finding to verify — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED, plus 2-4 sentences of evidence with exact file:line quotes.\n\nCandidate: `backend/app/services/admin_service.py` around line 228 — claim: the `webhook_configs()` function loops over `ORCHESTRATION_PROVIDERS` (now `(\"adf\",\"airflow\",\"dbt\")`) but its body only branches `if provider == \"adf\": ... else: <airflow>`, so for `dbt` connections it emits `provider=\"airflow\"` and `inbound_url=.../orchestration/events/airflow` — the admin webhook-config surface mislabels dbt connections as airflow and points at the wrong endpoint + wrong signing-secret name.\n\nRead the actual function and confirm or refute: does the else-branch really hardcode \"airflow\" strings, and does the loop really include dbt (check the import/loop source)? Also check whether anything downstream (frontend admin page, tests) depends on it, whether a test asserts the wrong behavior, and whether dbt is perhaps deliberately excluded from that loop somewhere (a filter/guard). Quote the exact lines. Also check git log/blame briefly: did this predate the dbt provider (i.e. a pre-existing two-provider assumption that ADR 0029's migration missed)?"
+  "prompt": "You are a code-review VERIFIER for repo /home/<USER>/Coding/Python/DataQ (branch chore/agents-qa-ui-optimize checked out). Candidate finding to verify — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED, plus 2-4 sentences of evidence with exact file:line quotes.\n\nCandidate: `backend/app/services/admin_service.py` around line 228 — claim: the `webhook_configs()` function loops over `ORCHESTRATION_PROVIDERS` (now `(\"adf\",\"airflow\",\"dbt\")`) but its body only branches `if provider == \"adf\": ... else: <airflow>`, so for `dbt` connections it emits `provider=\"airflow\"` and `inbound_url=.../orchestration/events/airflow` — the admin webhook-config surface mislabels dbt connections as airflow and points at the wrong endpoint + wrong signing-secret name.\n\nRead the actual function and confirm or refute: does the else-branch really hardcode \"airflow\" strings, and does the loop really include dbt (check the import/loop source)? Also check whether anything downstream (frontend admin page, tests) depends on it, whether a test asserts the wrong behavior, and whether dbt is perhaps deliberately excluded from that loop somewhere (a filter/guard). Quote the exact lines. Also check git log/blame briefly: did this predate the dbt provider (i.e. a pre-existing two-provider assumption that ADR 0029's migration missed)?"
 }
 ```
 
@@ -1286,7 +1286,7 @@ id: toolu_016hhxRCujemQtEgWhjs1Sh1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "5a. **PAT surface** (ADR 0026, #613) — garbage, expired, and revoked `dq_live_…` tokens must all return a **uniform 401** (no oracle distinguishing \"unknown\" from \"expired\"); a valid PAT must carry the owner's authz scope, not more; the plaintext token must never appear in any read-back after mint (sha256-at-rest, show-once).\n6. **Webhook hostility** — POST to `/api/v1/orchestration/events/{adf,airflow,dbt}` with: missing/wrong auth (secret/HMAC per provider), valid auth + malformed JSON, valid JSON missing required fields, duplicate delivery (dedup index #456 should absorb it). Expect 401/422 envelopes and no phantom `pipeline_runs` rows. Parametrize over all three providers — don't stop at ADF.\n7. **Deletion integrity** — delete a scratch suite *after* it has runs/results; must cascade cleanly (the #540/#542 regression), leaving no orphaned rows (`runs`, `results`, shares, schedules).\n8. **Redaction spot check** — where a response carries failing-sample rows, confirm PII-configured columns come back redacted (#417) and secrets never appear in any connection read-back.",
   "new_string": "6. **PAT surface** (ADR 0026, #613) — garbage, expired, and revoked `dq_live_…` tokens must all return a **uniform 401** (no oracle distinguishing \"unknown\" from \"expired\"); a valid PAT must carry the owner's authz scope, not more; the plaintext token must never […]
 
@@ -1295,7 +1295,7 @@ id: toolu_016hhxRCujemQtEgWhjs1Sh1
 tool_result
 id: toolu_016hhxRCujemQtEgWhjs1Sh1
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1305,7 +1305,7 @@ id: toolu_014bJjNQcB1NarnjCywgiE41
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "2. **Orchestration tests covering only one provider** — parametrize over the full `ORCHESTRATION_PROVIDERS` tuple (`adf`, `airflow`, `dbt` since ADR 0029), not a hardcoded subset (single-provider fixtures mean the abstraction is rotting).",
   "new_string": "2. **Orchestration tests covering only one provider** — parametrize over the full `ORCHESTRATION_PROVIDERS` tuple in `backend/app/db/models.py` (currently `adf`/`airflow`/`dbt` — re-derive from source, don't trust this snapshot), not a hardcoded subset (single-provider fixtures mean the abstraction is rotting)."
 }
@@ -1316,7 +1316,7 @@ id: toolu_014bJjNQcB1NarnjCywgiE41
 tool_result
 id: toolu_014bJjNQcB1NarnjCywgiE41
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1326,7 +1326,7 @@ id: toolu_01AiqWEm6tfPUbLEFeUHhz9Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "Before reporting a finding as new, check it against open issues (`gh issue list --state open --search \"<keywords>\"`) — a rediscovery of a known issue is reported as `known — #N (still reproduces)`, not as a fresh finding, and doesn't count toward the verdict unless the diff was supposed to fix it.",
   "new_string": "Pull the open-issue list **once** before reporting (`gh issue list --state open --json number,title --limit 200` — no label filter; known gaps are often labelled `enhancement`, not `bug`) and match every finding against it — a rediscovery of a known issue is reported as `known — #N (still reproduces)`, not as a fresh finding, and doesn't count toward the verdict unless the diff was supposed to fix it."
 }
@@ -1339,7 +1339,7 @@ id: toolu_0112M7UjgkQBhZDTW34srmEo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md",
   "old_string": "Use `--cov=<module> --cov-report=term-missing -o addopts=` when you need targeted coverage. Frontend equivalent: the `lines: 80` gate only runs under `pnpm test:coverage`, not `pnpm test`.",
   "new_string": "Use `--cov=<module> --cov-report=term-missing -o addopts=` when you need targeted coverage."
 }
@@ -1350,7 +1350,7 @@ id: toolu_0112M7UjgkQBhZDTW34srmEo
 tool_result
 id: toolu_01AiqWEm6tfPUbLEFeUHhz9Q
 ```
-The file /Users/arijit/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.claude/agents/qa-verifier.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

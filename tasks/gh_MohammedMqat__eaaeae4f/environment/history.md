@@ -27,7 +27,7 @@ tool_use Read
 id: toolu_011eNeBvNkTvR1cYHpjWUDUx
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/detail/app.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/detail/app.js"
 }
 ```
 
@@ -36,7 +36,7 @@ id: toolu_011eNeBvNkTvR1cYHpjWUDUx
 tool_result ERROR
 id: toolu_011eNeBvNkTvR1cYHpjWUDUx
 ```
-File does not exist. Note: your current working directory is /home/mohmqat/Work/week-5-project-express.
+File does not exist. Note: your current working directory is /home/<USER>/Work/week-5-project-express.
 ```
 
 > TOOL
@@ -45,7 +45,7 @@ tool_use Read
 id: toolu_01TtnHXuDFkNJooPUyavDU3e
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/detail/index.html"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/detail/index.html"
 }
 ```
 
@@ -54,7 +54,7 @@ id: toolu_01TtnHXuDFkNJooPUyavDU3e
 tool_result ERROR
 id: toolu_01TtnHXuDFkNJooPUyavDU3e
 ```
-File does not exist. Note: your current working directory is /home/mohmqat/Work/week-5-project-express.
+File does not exist. Note: your current working directory is /home/<USER>/Work/week-5-project-express.
 ```
 
 > AGENT
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_01SKjN6v8XPDUVjtFhcRbKmf
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/entity/app.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/entity/app.js"
 }
 ```
 
@@ -154,7 +154,7 @@ tool_use Read
 id: toolu_01D231uD2fKjuZ2qkTNJYHrt
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/public/entity/index.html"
+  "file_path": "/home/<USER>/Work/week-5-project-express/public/entity/index.html"
 }
 ```
 
@@ -204,7 +204,7 @@ tool_use Read
 id: toolu_01Jz7JCLXXAzASzXPzE15QkC
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/router.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/router.js"
 }
 ```
 

@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01PLmzcm6pyMnvcA3NdSS6fe
 ```json
 {
-  "command": "find /Users/ta93abe/Developer/github.com/ta93abe/slides/contents -type f -name \"*.md\" | xargs grep -l -i \"workflow\" 2>/dev/null | head -20",
+  "command": "find /home/<USER>/Developer/github.com/ta93abe/slides/contents -type f -name \"*.md\" | xargs grep -l -i \"workflow\" 2>/dev/null | head -20",
   "description": "Find slides containing workflow references"
 }
 ```
@@ -18,11 +18,11 @@ id: toolu_01PLmzcm6pyMnvcA3NdSS6fe
 tool_result
 id: toolu_01PLmzcm6pyMnvcA3NdSS6fe
 ```
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/note.md
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/note.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md
 ```
 
 > TOOL
@@ -31,7 +31,7 @@ tool_use Read
 id: toolu_01HnJrUvTzPWvN55TSh3AGH4
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md"
 }
 ```
 
@@ -292,7 +292,7 @@ tool_use Bash
 id: toolu_01RLwq8icMuNPUQsmpokKgAU
 ```json
 {
-  "command": "ls -la /Users/ta93abe/Developer/github.com/ta93abe/ 2>/dev/null | head -20",
+  "command": "ls -la /home/<USER>/Developer/github.com/ta93abe/ 2>/dev/null | head -20",
   "description": "親ディレクトリの中身を確認"
 }
 ```
@@ -883,7 +883,7 @@ tool_use Bash
 id: toolu_01E3LXEnXNTDqart9vZBLXkj
 ```json
 {
-  "command": "mkdir -p /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/src /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py/src && cd /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples && git init -b main && ls -la",
+  "command": "mkdir -p /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/src /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py/src && cd /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples && git init -b main && ls -la",
   "description": "cf-workflows-examples ディレクトリと ts/py サブディレクトリを作成し git init"
 }
 ```
@@ -893,14 +893,14 @@ id: toolu_01E3LXEnXNTDqart9vZBLXkj
 tool_result
 id: toolu_01E3LXEnXNTDqart9vZBLXkj
 ```
-Initialized empty Git repository in /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/.git/
+Initialized empty Git repository in /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/.git/
 total 0
 drwxr-xr-x@  5 ta93abe  staff   160 May 13 17:41 .
 drwxr-xr-x@ 32 ta93abe  staff  1024 May 13 17:41 ..
 drwxr-xr-x@  9 ta93abe  staff   288 May 13 17:41 .git
 drwxr-xr-x@  3 ta93abe  staff    96 May 13 17:41 py
 drwxr-xr-x@  3 ta93abe  staff    96 May 13 17:41 ts
-Shell cwd was reset to /Users/ta93abe/Developer/github.com/ta93abe/slides
+Shell cwd was reset to /home/<USER>/Developer/github.com/ta93abe/slides
 ```
 
 > AGENT
@@ -913,7 +913,7 @@ tool_use Write
 id: toolu_01W7MWKnEWuo6d4vPv8xJxbL
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/.gitignore",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/.gitignore",
   "content": "node_modules/\n.wrangler/\n.dev.vars\n.DS_Store\ndist/\n.venv/\n__pycache__/\n*.pyc\nworker-configuration.d.ts\n"
 }
 ```
@@ -924,7 +924,7 @@ tool_use Write
 id: toolu_01Cb6KPqYyS9Af9MGMtKD1BG
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/README.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/README.md",
   "content": "# cf-workflows-examples\n\nCloudflare Workflows のサンプル 2 種を 1 リポジトリにまとめたもの。Cloudflare Data Platform 登壇 (2026-05-13) のスライド `cloudflare-data-platform/pages/workflows.md` で取り上げたコードを実際にデプロイ可能な形にしたもの。\n\n## 構成\n\n```\n.\n├── ts/    TypeScript: ImageProcessingWorkflow (R2 → Workers AI → human approval → R2)\n└── py/    Python:     IngestWorkflow         (引数名で依存解決する diamond DAG)\n```\n\n両者は 1 Worker = 1 言語の制約があるため、独立した Worker としてデプロイされる。\n\n## デプロイ\n\n### TypeScript\n\n```sh\ncd ts\npnpm install\npnpm dlx wrangler deploy\n```\n\n### Python\n\n```sh\ncd py\npnpm dlx wrangler deploy\n```\n\n## ゴール\n\n`wrangler deploy` が成功する最小構成。R2 / Workers AI / 承認 API といった実行時依存は Workflow を実際に動かす段階で別途用意する想定。\n"
 }
 ```
@@ -934,7 +934,7 @@ id: toolu_01Cb6KPqYyS9Af9MGMtKD1BG
 tool_result
 id: toolu_01W7MWKnEWuo6d4vPv8xJxbL
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/.gitignore (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/.gitignore (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -942,7 +942,7 @@ File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-wor
 tool_result
 id: toolu_01Cb6KPqYyS9Af9MGMtKD1BG
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -995,7 +995,7 @@ tool_use Write
 id: toolu_019HF1e51qt8jsBur8W1YidB
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/package.json",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/package.json",
   "content": "{\n  \"name\": \"image-processing-workflow\",\n  \"version\": \"0.0.0\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"deploy\": \"wrangler deploy\",\n    \"dev\": \"wrangler dev\",\n    \"types\": \"wrangler types\"\n  },\n  \"devDependencies\": {\n    \"@cloudflare/workers-types\": \"^4.20260304.0\",\n    \"typescript\": \"^5.6.0\",\n    \"wrangler\": \"^4.90.0\"\n  }\n}\n"
 }
 ```
@@ -1005,7 +1005,7 @@ id: toolu_019HF1e51qt8jsBur8W1YidB
 tool_result
 id: toolu_019HF1e51qt8jsBur8W1YidB
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/package.json (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/package.json (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1014,7 +1014,7 @@ tool_use Write
 id: toolu_01Kp1oMYhQ9nYuS6bzeZZMqX
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/tsconfig.json",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/tsconfig.json",
   "content": "{\n  \"compilerOptions\": {\n    \"target\": \"es2022\",\n    \"module\": \"es2022\",\n    \"moduleResolution\": \"bundler\",\n    \"lib\": [\"es2022\"],\n    \"types\": [\"@cloudflare/workers-types\"],\n    \"strict\": true,\n    \"esModuleInterop\": true,\n    \"skipLibCheck\": true,\n    \"noEmit\": true\n  },\n  \"include\": [\"src/**/*.ts\"]\n}\n"
 }
 ```
@@ -1024,7 +1024,7 @@ id: toolu_01Kp1oMYhQ9nYuS6bzeZZMqX
 tool_result
 id: toolu_01Kp1oMYhQ9nYuS6bzeZZMqX
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/tsconfig.json (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/tsconfig.json (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1033,7 +1033,7 @@ tool_use Write
 id: toolu_01MJRoPbeQiWisaESU1WvxZM
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/wrangler.jsonc",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/wrangler.jsonc",
   "content": "{\n  \"$schema\": \"./node_modules/wrangler/config-schema.json\",\n  \"name\": \"image-processing-workflow\",\n  \"main\": \"src/index.ts\",\n  \"compatibility_date\": \"2026-05-13\",\n  \"observability\": {\n    \"enabled\": true\n  },\n  \"workflows\": [\n    {\n      \"name\": \"image-processing\",\n      \"binding\": \"IMAGE_PROCESSING\",\n      \"class_name\": \"ImageProcessingWorkflow\"\n    }\n  ]\n  // R2 / Workers AI binding は Workflow を実行する段階で追加する。\n  // 例:\n  // \"r2_buckets\": [{ \"binding\": \"BUCKET\", \"bucket_name\": \"your-bucket\" }],\n  // \"ai\": { \"binding\": \"AI\" }\n}\n"
 }
 ```
@@ -1043,7 +1043,7 @@ id: toolu_01MJRoPbeQiWisaESU1WvxZM
 tool_result
 id: toolu_01MJRoPbeQiWisaESU1WvxZM
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/wrangler.jsonc (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/wrangler.jsonc (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1056,7 +1056,7 @@ tool_use Write
 id: toolu_011e9CPNmLNwtmRSLabfKNR8
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/src/index.ts",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/src/index.ts",
   "content": "import {\n  WorkflowEntrypoint,\n  type WorkflowEvent,\n  type WorkflowStep,\n} from \"cloudflare:workers\";\n\ntype Env = {\n  IMAGE_PROCESSING: Workflow;\n  BUCKET?: R2Bucket;\n  AI?: Ai;\n};\n\ntype Params = {\n  imageKey: string;\n};\n\nexport class ImageProcessingWorkflow extends WorkflowEntrypoint<Env, Params> {\n  async run(event: WorkflowEvent<Params>, step: WorkflowStep) {\n    const imageData = await step.do(\"fetch image\", async () => {\n      const object = await this.env.BUCKET!.get(event.payload.imageKey);\n      return await object!.arrayBuffer();\n    });\n\n    const description = await step.do(\"generate description\", async () => {\n      const imageArray = Array.from(new Uint8Array(imageData));\n      return await this.env.AI!.run(\"@cf/llava-hf/llava-1.5-7b-hf\", {\n        image: imageArray,\n        prompt: \"Describe this image in one sentence\",\n        max_tokens: 50,\n      });\n    });\n\n    await step.waitForEvent(\"await approval\", {\n      type: \"approved\",\n      timeout: \"24 hours\",\n    });\n\n    await step.do(\"publish\", async () => {\n      await this.env.BUCKET!.put(`public/${event.payload.imageKey}`, imageData);\n      return { description };\n    });\n  }\n}\n\nexport default {\n  async fetch(request: Request, env: Env): Promise<Response> {\n    const url = new URL(request.url);\n\n    if (url.pathname === \"/start\") {\n      const imageKey = url.searchParams.get(\"imageKey\") ?? \"sample.jpg\";\n      const instance = await env.IMAGE_PROCESSING.create({\n        params: { imageKey },\n      });\n      return Response.json({ id: instance.id, status: await instance.status() });\n    }\n\n    if (url.pathname === \"/status\") {\n      const id = url.searchParams.get(\"id\");\n      if (!id) return new Response(\"missing id\", { status: 400 });\n      const instance = await env.IMAGE_PROCESSING.get(id);\n      return Response.json(await instance.status());\n    }\n\n    return new Response(\n      \"ImageProcessingWorkflow demo\\n\" +\n        \"POST or […]
 
 > TOOL
@@ -1064,7 +1064,7 @@ id: toolu_011e9CPNmLNwtmRSLabfKNR8
 tool_result
 id: toolu_011e9CPNmLNwtmRSLabfKNR8
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/src/index.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/src/index.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1073,7 +1073,7 @@ tool_use Bash
 id: toolu_01KA3YFdqVP9U6qwe6Tig3GN
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts && pnpm install 2>&1 | tail -15",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts && pnpm install 2>&1 | tail -15",
   "description": "TS Worker の依存をインストール"
 }
 ```
@@ -1188,7 +1188,7 @@ tool_use Write
 id: toolu_01DTU2VWRkcJu7JhSQb61n3o
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py/wrangler.jsonc",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py/wrangler.jsonc",
   "content": "{\n  \"$schema\": \"./node_modules/wrangler/config-schema.json\",\n  \"name\": \"ingest-workflow-py\",\n  \"main\": \"src/entry.py\",\n  \"compatibility_date\": \"2026-05-13\",\n  \"compatibility_flags\": [\"python_workers\", \"python_workflows\"],\n  \"observability\": {\n    \"enabled\": true\n  },\n  \"workflows\": [\n    {\n      \"name\": \"ingest-workflow\",\n      \"binding\": \"INGEST\",\n      \"class_name\": \"IngestWorkflow\"\n    }\n  ]\n}\n"
 }
 ```
@@ -1198,7 +1198,7 @@ id: toolu_01DTU2VWRkcJu7JhSQb61n3o
 tool_result
 id: toolu_01DTU2VWRkcJu7JhSQb61n3o
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py/wrangler.jsonc (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py/wrangler.jsonc (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1207,7 +1207,7 @@ tool_use Write
 id: toolu_01XiPQvDHFhJ7ZCENGdowNWB
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py/src/entry.py",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py/src/entry.py",
   "content": "from workers import Response, WorkerEntrypoint, WorkflowEntrypoint\n\n\nasync def get_a():\n    return {\"source\": \"a\", \"value\": 1}\n\n\nasync def get_b():\n    return {\"source\": \"b\", \"value\": 2}\n\n\ndef combine(a, b):\n    return {\"merged\": [a, b]}\n\n\nclass IngestWorkflow(WorkflowEntrypoint):\n    async def run(self, event, step):\n        @step.do()\n        async def fetch_a():\n            return await get_a()\n\n        @step.do()\n        async def fetch_b():\n            return await get_b()\n\n        @step.do(concurrent=True)\n        async def merge(fetch_a, fetch_b):\n            return combine(fetch_a, fetch_b)\n\n        return await merge()\n\n\nclass Default(WorkerEntrypoint):\n    async def fetch(self, request):\n        instance = await self.env.INGEST.create()\n        status = await instance.status()\n        return Response.json({\"id\": instance.id, \"status\": status})\n"
 }
 ```
@@ -1217,7 +1217,7 @@ id: toolu_01XiPQvDHFhJ7ZCENGdowNWB
 tool_result
 id: toolu_01XiPQvDHFhJ7ZCENGdowNWB
 ```
-File created successfully at: /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py/src/entry.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py/src/entry.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1226,7 +1226,7 @@ tool_use Bash
 id: toolu_01RboySgMbAyAYK79EQr66ro
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py && pnpm dlx wrangler deploy --dry-run 2>&1 | tail -40",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py && pnpm dlx wrangler deploy --dry-run 2>&1 | tail -40",
   "description": "Python Worker の deploy 検証 (dry-run)"
 }
 ```
@@ -1294,7 +1294,7 @@ tool_use Bash
 id: toolu_01KZBFCR3fUzHYWeZzJxTxjY
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts && pnpm dlx wrangler deploy 2>&1 | tail -30",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts && pnpm dlx wrangler deploy 2>&1 | tail -30",
   "description": "TS Worker を本番デプロイ"
 }
 ```
@@ -1328,7 +1328,7 @@ tool_use Bash
 id: toolu_017Zwt16XBDDiaN3EG8MpWJZ
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py && pnpm dlx wrangler deploy 2>&1 | tail -30",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py && pnpm dlx wrangler deploy 2>&1 | tail -30",
   "description": "Python Worker を本番デプロイ"
 }
 ```
@@ -1367,7 +1367,7 @@ id: toolu_017Zwt16XBDDiaN3EG8MpWJZ
   If you think this is a bug, please open an issue at: [4mhttps://github.com/cloudflare/workers-sdk/issues/new/choose[0m
 
 
-🪵  Logs were written to "/Users/ta93abe/Library/Preferences/.wrangler/logs/wrangler-2026-05-13_08-43-32_574.log"
+🪵  Logs were written to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-13_08-43-32_574.log"
 ```
 
 > AGENT
@@ -1429,7 +1429,7 @@ id: toolu_019dFHLDxbqqD2G7qVk9X2oh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py/wrangler.jsonc",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py/wrangler.jsonc",
   "old_string": "  \"compatibility_flags\": [\"python_workers\", \"python_workflows\"],",
   "new_string": "  \"compatibility_flags\": [\n    \"python_workers\",\n    \"python_workflows\",\n    \"disable_python_external_sdk\"\n  ],"
 }
@@ -1440,7 +1440,7 @@ id: toolu_019dFHLDxbqqD2G7qVk9X2oh
 tool_result
 id: toolu_019dFHLDxbqqD2G7qVk9X2oh
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/py/wrangler.jsonc has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/py/wrangler.jsonc has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1884,7 +1884,7 @@ tool_use Write
 id: toolu_01LSkfmbAxyzW1PBoeCt4wGb
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/src/index.ts",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/src/index.ts",
   "content": "import {\n  WorkflowEntrypoint,\n  type WorkflowEvent,\n  type WorkflowStep,\n} from \"cloudflare:workers\";\n\ntype Env = {\n  IMAGE_PROCESSING: Workflow;\n  BUCKET?: R2Bucket;\n  AI?: Ai;\n};\n\ntype Params = {\n  imageKeys: string[];\n  autoApproveThreshold: number;\n};\n\ntype AnalysisResult = {\n  description: string;\n  confidence: number;\n};\n\ntype ProcessedImage = {\n  key: string;\n  description: string;\n  confidence: number;\n  approval: \"auto\" | \"human\";\n};\n\nexport class ImageProcessingWorkflow extends WorkflowEntrypoint<Env, Params> {\n  async run(event: WorkflowEvent<Params>, step: WorkflowStep) {\n    const { imageKeys, autoApproveThreshold } = event.payload;\n    const processed: ProcessedImage[] = [];\n\n    for (const imageKey of imageKeys) {\n      const imageData = await step.do(`fetch image: ${imageKey}`, async () => {\n        const object = await this.env.BUCKET!.get(imageKey);\n        return await object!.arrayBuffer();\n      });\n\n      const analysis = await step.do(\n        `analyze: ${imageKey}`,\n        async (): Promise<AnalysisResult> => {\n          const imageArray = Array.from(new Uint8Array(imageData));\n          const result = await this.env.AI!.run(\n            \"@cf/llava-hf/llava-1.5-7b-hf\",\n            {\n              image: imageArray,\n              prompt: \"Describe this image in one sentence\",\n              max_tokens: 50,\n            },\n          );\n          const description = (result as { description: string }).description;\n          return {\n            description,\n            confidence: Math.min(description.length / 60, 1),\n          };\n        },\n      );\n\n      if (analysis.confidence >= autoApproveThreshold) {\n        await step.do(`auto-publish: ${imageKey}`, async () => {\n          await this.env.BUCKET!.put(`public/${imageKey}`, imageData);\n        });\n        processed.push({\n          key: imageKey,\n          description: analysis.description,\n          confidence: analysis.confidence,\n          approval: \"auto\",\n        });\n      } else {\n        await step.waitForEvent(`await approval: ${imageKey}`, {\n          type: `approved:${imageKey}`,\n          timeout: \"24 hours\",\n […]
 
 > TOOL
@@ -1892,7 +1892,7 @@ id: toolu_01LSkfmbAxyzW1PBoeCt4wGb
 tool_result
 id: toolu_01LSkfmbAxyzW1PBoeCt4wGb
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts/src/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts/src/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1901,7 +1901,7 @@ tool_use Bash
 id: toolu_01GC1DAihAjLfXANAFmSNHQt
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/cf-workflows-examples/ts && pnpm dlx wrangler deploy --dry-run 2>&1 | tail -15",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/cf-workflows-examples/ts && pnpm dlx wrangler deploy --dry-run 2>&1 | tail -15",
   "description": "変更後の TS Worker を dry-run 検証"
 }
 ```

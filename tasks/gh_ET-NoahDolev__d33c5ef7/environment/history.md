@@ -41,7 +41,7 @@ I've conducted a thorough search of the Rune codebase. Here are all infrastructu
 
 ### 1. DevPod & Development Container Configuration
 
-**File:** `/Users/noahdolevelixir/Code/rune/.devcontainer/devcontainer.json`
+**File:** `/home/<USER>/Code/rune/.devcontainer/devcontainer.json`
 - Container image: `nvidia/cuda:13.0.2-cudnn-devel-ubuntu22.04`
 - GPU support: `--gpus all --shm-size=8g`
 - Features: Python 3.12, Git, GitHub CLI, AWS CLI
@@ -49,7 +49,7 @@ I've conducted a thorough search of the Rune codebase. Here are all infrastructu
 - GPU environment variables: `NVIDIA_VISIBLE_DEVICES=all`, CUDA library paths
 - Post-create hook: `bash .devcontainer/post-create.sh`
 
-**File:** `/Users/noahdolevelixir/Code/rune/.devcontainer/post-create.sh`
+**File:** `/home/<USER>/Code/rune/.devcontainer/post-create.sh`
 - Installs Node.js LTS, uv (Python package manager), Claude Code CLI
 - **AWS Secrets Manager Integration:** Fetches HuggingFace token from AWS Secrets Manager
   - Secret ID: `elixirtrials/dev/huggingface-token`
@@ -61,7 +61,7 @@ I've conducted a thorough search of the Rune codebase. Here are all infrastructu
 
 ### 2. Docker Configuration
 
-**File:** `/Users/noahdolevelixir/Code/rune/services/lora-server/Dockerfile`
+**File:** `/home/<USER>/Code/rune/services/lora-server/Dockerfile`
 ```dockerfile
 FROM vllm/vllm-openai:v0.16.0
 ENV VLLM_ALLOW_RUNTIME_LORA_UPDATING=True
@@ -70,7 +70,7 @@ EXPOSE 8000 8001
 CMD ["./startup.sh"]
 ```
 
-**File:** `/Users/noahdolevelixir/Code/rune/services/lora-server/config.yaml`
+**File:** `/home/<USER>/Code/rune/services/lora-server/config.yaml`
 - Model: `Qwen/Qwen2.5-Coder-7B-Instruct`
 - GPU parallelism settings:
   - `pipeline_parallel_size: 1` (default single GPU)
@@ -96,21 +96,21 @@ Based on my thorough exploration of the Rune codebase, here's everything related
 ## 1. TRAINING SCRIPTS AND CONFIGURATION
 
 ### Key Training Files:
-- **/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py** - Main QLoRA training orchestrator
+- **/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py** - Main QLoRA training orchestrator
   - `train_qlora()` - Core training function with NF4 quantization, PEFT adapter configuration
   - `train_and_register()` - Trains adapter and registers it in the adapter registry
   - Handles warm-start from pre-trained adapters and model registry defaults
 
-- **/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py** - KL-divergence context distillation training
+- **/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py** - KL-divergence context distillation training
   - `train_d2l_qwen3()` - Distillation training loop for Qwen3-Coder-Next
   - Three execution modes: dry-run, smoke-test, full training
   - Supports tiered checkpointing and MLflow tracking
 
-- **/Users/noahdolevelixir/Code/rune/scripts/e2e_training_smoke.py** - End-to-end training smoke test
+- **/home/<USER>/Code/rune/scripts/e2e_training_smoke.py** - End-to-end training smoke test
   - Uses HuggingFaceTB/SmolLM2-135M for validation
   - Proves LoRA fine-tuning, shift-aware loss, and adapter merging work
 
-- **/Users/noahdolevelixir/Code/rune/services/training-svc/src/training_svc/routers/training.py** - FastAPI training service endpoints
+- **/home/<USER>/Code/rune/services/training-svc/src/training_svc/routers/training.py** - FastAPI training service endpoints
   - `POST /train/lora` - Dispatch QLoRA training jobs
   - `POST /train/hypernetwork` - Dispatch hypernetwork adapter generation
   - `GET /jobs/{job_id}` - Job status polling
@@ -120,7 +120,7 @@ Based on my thorough exploration of the Rune codebase, here's everything related
 ## 2. DEVPOD AND CLOUD TRAINING CONFIGURATION
 
 ### DevContainer Setup:
-**File: /Users/noahdolevelixir/Code/rune/.devcontainer/devcontainer.json**
+**File: /home/<USER>/Code/rune/.devcontainer/devcontainer.json**
 ```json
 {
   "name": "rune GPU […]

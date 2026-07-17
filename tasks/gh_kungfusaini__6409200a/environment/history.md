@@ -315,7 +315,7 @@ tool_result
 id: toolu_01U5S8geMwk3NGwZMwV87jvw
 ```
 ---
-/Users/sumeet/.claude/settings.json
+/home/<USER>/.claude/settings.json
 settings.json exists
 ```
 
@@ -395,9 +395,9 @@ tool_result
 id: toolu_011DJ83iYsWzUQY7p3m87cdK
 ```
 ---
-/Users/sumeet/Documents/work/IBM/rapid/cio-dashboard/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
-/Users/sumeet/Documents/arc/compsci/kings/aiSoc/ai-soc-welcome/app/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
-/Users/sumeet/matrix/arc/ai/aiSocWelcome/app/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
+/home/<USER>/Documents/work/IBM/rapid/cio-dashboard/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
+/home/<USER>/Documents/arc/compsci/kings/aiSoc/ai-soc-welcome/app/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
+/home/<USER>/matrix/arc/ai/aiSocWelcome/app/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
 ```
 
 > TOOL
@@ -684,12 +684,12 @@ id: toolu_01UY1BogX8Ce4RXq5Xf39L4R
 tool_result
 id: toolu_01UY1BogX8Ce4RXq5Xf39L4R
 ```
-PATH: /Users/sumeet/.local/share/../bin:/Users/sumeet/.config/zsh/conf/scripts:/usr/local/bin:/usr/local/sbin:/Users/sumeet/.config/zsh/conf/scripts:/Users/sumeet/.local/share/pyenv/shims:/Users/sumeet/.local/share/pyenv/bin:/Users/sumeet/.nix-profile/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/bin:/bin:/usr/sbin:/sbin:/nix/store/07cs2lpb75vdw7zmk0wdgpqbandp0h6c-kitty-0.44.0/bin:/nix/store/q783f0iksvpkyc99a4gmnyf6bbzhds7y-imagemagick-7.1.2-19/bin:/nix/store/a2vlbg69j8r5wapjyndbprxrrf26sp9g-ncurses-6.5-dev/bin
+PATH: /home/<USER>/.local/share/../bin:/home/<USER>/.config/zsh/conf/scripts:/usr/local/bin:/usr/local/sbin:/home/<USER>/.config/zsh/conf/scripts:/home/<USER>/.local/share/pyenv/shims:/home/<USER>/.local/share/pyenv/bin:/home/<USER>/.nix-profile/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/bin:/bin:/usr/sbin:/sbin:/nix/store/07cs2lpb75vdw7zmk0wdgpqbandp0h6c-kitty-0.44.0/bin:/nix/store/q783f0iksvpkyc99a4gmnyf6bbzhds7y-imagemagick-7.1.2-19/bin:/nix/store/a2vlbg69j8r5wapjyndbprxrrf26sp9g-ncurses-6.5-dev/bin
 ---
 notifyutil
 notifyd
 ---GLOBAL_NPM---
-/Users/sumeet/.local/share/npm/lib/node_modules
+/home/<USER>/.local/share/npm/lib/node_modules
 ---BUN_GLOBAL---
 ```
 
@@ -705,7 +705,7 @@ tool_use Write
 id: toolu_01YCeTUVxwtKPppY1NUGxczq
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\ninput=$(cat)\ncwd=$(printf '%s' \"$input\" | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\" | jq -r '.message // \"Done\"')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n\n# Stop hook has no .message; show a fixed body\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\n# Escape double quotes for AppleScript\nesc() { printf '%s' \"$1\" | sed 's/\\\\/\\\\\\\\/g; s/\"/\\\\\"/g'; }\n\nosascript -e \"display notification \\\"$(esc \"$msg\")\\\" with title \\\"$(esc \"$title\")\\\"\"\n"
 }
 ```
@@ -715,7 +715,7 @@ id: toolu_01YCeTUVxwtKPppY1NUGxczq
 tool_result
 id: toolu_01YCeTUVxwtKPppY1NUGxczq
 ```
-File created successfully at: /Users/sumeet/.claude/bin/notify.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/bin/notify.sh (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -724,7 +724,7 @@ tool_use Bash
 id: toolu_011gGNAEqj21ruMNAjauKWps
 ```json
 {
-  "command": "chmod +x ~/.claude/bin/notify.sh && echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"Test from setup\",\"hook_event_name\":\"Notification\",\"session_id\":\"abc\"}' | ~/.claude/bin/notify.sh && echo \"OK\"",
+  "command": "chmod +x ~/.claude/bin/notify.sh && echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"Test from setup\",\"hook_event_name\":\"Notification\",\"session_id\":\"abc\"}' | ~/.claude/bin/notify.sh && echo \"OK\"",
   "description": "Make script executable and test it"
 }
 ```

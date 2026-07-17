@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_016Vuf6YcEiFK1ChLbfe8XUG
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md"
 }
 ```
 
@@ -30,7 +30,7 @@ id: toolu_016Vuf6YcEiFK1ChLbfe8XUG
 7	  originSessionId: 3e2935ae-8ba4-4cef-8c03-b322a01108ac
 8	---
 9	
-10	**PR #52 MERGED by the user (merge commit `55aa7d0`, 2026-07-05); branches deleted local+remote.** 9 commits incl. the CodeRabbit review-fix `b46f1c5` (real finding: multi-cell door prediction stranded its sibling half on a lost race — onJournal now surfaces unconfirmed siblings for revert). Second CodeRabbit round: 0 actionable. **STILL PENDING: Fly deploy carrying BOTH the 512 MB VM resize and the ord→sjc region move, then the exactly-one-machine check; also the two-player ping re-test (expect NA 60–100 ms, Asia 200–400 ms) and a manual two-browser gameplay pass with `setSimulatedLatency(450, 100)`.** Next feature decided: **PWA in a fresh session** — plan ready at `/Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md` (branch `feature/pwa`; manifest + ImageResponse pixel icons + hand-rolled sw.js; NOT mobile play).
+10	**PR #52 MERGED by the user (merge commit `55aa7d0`, 2026-07-05); branches deleted local+remote.** 9 commits incl. the CodeRabbit review-fix `b46f1c5` (real finding: multi-cell door prediction stranded its sibling half on a lost race — onJournal now surfaces unconfirmed siblings for revert). Second CodeRabbit round: 0 actionable. **STILL PENDING: Fly deploy carrying BOTH the 512 MB VM resize and the ord→sjc region move, then the exactly-one-machine check; also the two-player ping re-test (expect NA 60–100 ms, Asia 200–400 ms) and a manual two-browser gameplay pass with `setSimulatedLatency(450, 100)`.** Next feature decided: **PWA in a fresh session** — plan ready at `/home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md` (branch `feature/pwa`; manifest + ImageResponse pixel icons + hand-rolled sw.js; NOT mobile play).
 11	
 12	Root cause of the 700–1100 ms ping: pure route latency, Asia player → Fly `ord` (Chicago). NA players at 50–80 ms proved the server healthy.
 13	
@@ -42,7 +42,7 @@ tool_use Bash
 id: toolu_01V6RsrkPvMU7Vq5bh9zpm4D
 ```json
 {
-  "command": "ls /Users/hutusi/.claude/plans/ 2>/dev/null | head -30",
+  "command": "ls /home/<USER>/.claude/plans/ 2>/dev/null | head -30",
   "description": "List existing plan files"
 }
 ```
@@ -90,7 +90,7 @@ tool_use Read
 id: toolu_01QErkhVrHPUNjo342dRG2Xw
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md"
+  "file_path": "/home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md"
 }
 ```
 
@@ -118,7 +118,7 @@ id: toolu_01LphAxUutPKxKpfCwSJyZVb
   "description": "Verify PWA plan assumptions",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "In the repo /Users/hutusi/workspace/ai/david/monecraft (a Next.js 16 App Router + Bun + TypeScript voxel game), verify the following assumptions from an implementation plan. Search breadth: medium. For each numbered item, report TRUE/FALSE/CHANGED plus the relevant file:line evidence and a short excerpt where useful.\n\n1. There is NO `public/` directory, NO `app/manifest.ts`, NO service worker, NO `app/icon.tsx` / `app/apple-icon.tsx`, and no PWA-related meta anywhere.\n2. `app/layout.tsx` — current contents: what metadata does it export (title? viewport? themeColor?), what components does it render.\n3. `next.config.mjs` (or .ts/.js) — does it exist, what's in it, does it already have a `headers()` function?\n4. `eslint.config.mjs` — flat config structure; is there any existing per-directory override block I could pattern-match for adding a `public/**/*.js` override with service-worker globals?\n5. `lib/auth/client.ts` — the `minecraft_online_v1` localStorage gate / `onlineUsed()` function that suppresses auth network probes for logged-out users: still present and unchanged?\n6. `lib/world/blocks.ts` — is `BLOCK_COLORS` still there around lines 139-140 with Grass/Dirt entries; is the Block enum a `const enum`? Also check `lib/world/atlas.ts` for the `tone()` color helper.\n7. `app/menu.css` — around line 12, gradient colors of the menu gate background (looking for `#2a2d3a` / `#15171f` […]
+  "prompt": "In the repo /home/<USER>/workspace/ai/david/monecraft (a Next.js 16 App Router + Bun + TypeScript voxel game), verify the following assumptions from an implementation plan. Search breadth: medium. For each numbered item, report TRUE/FALSE/CHANGED plus the relevant file:line evidence and a short excerpt where useful.\n\n1. There is NO `public/` directory, NO `app/manifest.ts`, NO service worker, NO `app/icon.tsx` / `app/apple-icon.tsx`, and no PWA-related meta anywhere.\n2. `app/layout.tsx` — current contents: what metadata does it export (title? viewport? themeColor?), what components does it render.\n3. `next.config.mjs` (or .ts/.js) — does it exist, what's in it, does it already have a `headers()` function?\n4. `eslint.config.mjs` — flat config structure; is there any existing per-directory override block I could pattern-match for adding a `public/**/*.js` override with service-worker globals?\n5. `lib/auth/client.ts` — the `minecraft_online_v1` localStorage gate / `onlineUsed()` function that suppresses auth network probes for logged-out users: still present and unchanged?\n6. `lib/world/blocks.ts` — is `BLOCK_COLORS` still there around lines 139-140 with Grass/Dirt entries; is the Block enum a `const enum`? Also check `lib/world/atlas.ts` for the `tone()` color helper.\n7. `app/menu.css` — around line 12, gradient colors of the menu gate background (looking for `#2a2d3a` / `#15171f` […]
 
 > TOOL
 
@@ -136,17 +136,17 @@ All items verified. Here is the numbered report.
 
 ## 2. `app/layout.tsx` — CHANGED (relative to "no metadata")
 
-File `/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx`:
+File `/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx`:
 - Exports `metadata: Metadata` (line 9-12) with **`title: "Minecraft Clone"`** and `description` only. **No `viewport`, no `themeColor`.**
 - Renders `<html lang="en" className={pixelFont.variable}>` with `<body>{children}</body>` (lines 14-20). Imports 4 CSS files (`base.css`, `hud.css`, `ui.css`, `menu.css`) and `pixelFont` from `./fonts`. No client components rendered directly here.
 
 ## 3. `next.config.mjs` — TRUE (exists), no `headers()`
 
-`/Users/hutusi/workspace/ai/david/monecraft/next.config.mjs` (10 lines). Contents: `reactStrictMode: true` and `serverExternalPackages: ["@electric-sql/pglite"]`. **No `headers()` function.** No `.ts`/`.js` variant exists.
+`/home/<USER>/workspace/ai/david/monecraft/next.config.mjs` (10 lines). Contents: `reactStrictMode: true` and `serverExternalPackages: ["@electric-sql/pglite"]`. **No `headers()` function.** No `.ts`/`.js` variant exists.
 
 ## 4. `eslint.config.mjs` — flat config, YES existing per-directory override blocks to pattern-match
 
-`/Users/hutusi/workspace/ai/david/monecraft/eslint.config.mjs` uses `defineConfig([...])`. Two existing `files:`-scoped override blocks you can pattern-match:
+`/home/<USER>/workspace/ai/david/monecraft/eslint.config.mjs` uses `defineConfig([...])`. Two existing `files:`-scoped override blocks you can pattern-match:
 - lines 30-49: `files: ["server/**/*.ts"]` with `no-restricted-imports`.
 - lines 50-69: […]
 
@@ -156,7 +156,7 @@ tool_use Read
 id: toolu_017WSQ8GyJDkJ9QDt6DZzmXs
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "offset": 70,
   "limit": 50
 }
@@ -203,7 +203,7 @@ tool_use Bash
 id: toolu_01RURSAumurec8RSoTHHaQXq
 ```json
 {
-  "command": "grep -n \"createDefaultGraph\\|unlock\\|catch\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -20",
+  "command": "grep -n \"createDefaultGraph\\|unlock\\|catch\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -20",
   "description": "Find unlock() and error handling around the zzfx import"
 }
 ```
@@ -232,7 +232,7 @@ tool_use Read
 id: toolu_01DKFXR2LgtixYeNPrZ97Ej7
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "offset": 168,
   "limit": 30
 }
@@ -315,7 +315,7 @@ tool_use Write
 id: toolu_015RTRh7iFKdLXseFM9tf8hC
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md",
+  "file_path": "/home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md",
   "content": "# PWA: installable, offline-capable Monecraft (`feature/pwa`)\n\n## Context\n\nNext feature after the MP-latency work (PR #52, merged `55aa7d0`): make Monecraft installable from the browser as a desktop app, with single-player fully offline after the first visit. The codebase is already ~90% offline-ready — `/` prerenders statically, a logged-out cold load makes zero network requests (the `minecraft_online_v1` gate in `lib/auth/client.ts:36-44` suppresses all auth probes — verified unchanged), the font is self-hosted via `next/font/local`, and all art is runtime-generated. What's missing is exactly the PWA layer: no `public/` dir, no manifest, no icons, no service worker, no theme/viewport meta (all re-verified against current main, 2026-07-05).\n\nOnline features (accounts, cloud saves, multiplayer) are untouched and degrade gracefully offline. **Explicitly not mobile play** — pointer lock, no touch input; documented future work.\n\nZero-binary-assets rule holds: icons are generated from pixel code via `ImageResponse`; `public/` gains only `sw.js` (code, not an asset — AGENTS.md gets a clarifying line).\n\n**Plan provenance**: authored in a prior session (`problem-high-multiplayer-latency-parsed-hamming.md`), re-verified this session against post-#52 main. #52 touched none of the files this plan edits (`app/layout.tsx`, `next.config.mjs`, `eslint.config.mjs`, `e2e/helpers.ts`, `playwright.config.ts` all untouched). One correction found — see the zzfx note below. Slice 4 confirmed **in** […]
 
 > TOOL
@@ -323,7 +323,7 @@ id: toolu_015RTRh7iFKdLXseFM9tf8hC
 tool_result
 id: toolu_015RTRh7iFKdLXseFM9tf8hC
 ```
-File created successfully at: /Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -381,7 +381,7 @@ id: toolu_01PPwLGE5kBu2btUbMzQ57y3
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md
+Your plan has been saved to: /home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -568,7 +568,7 @@ tool_use Read
 id: toolu_01M16aQY6erFatGGhLhBFbRJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx"
 }
 ```
 
@@ -606,7 +606,7 @@ tool_use Read
 id: toolu_01C2bZN1AT1WRPjgSofUh1fw
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "offset": 140,
   "limit": 30
 }
@@ -655,7 +655,7 @@ tool_use Read
 id: toolu_012H4bUSxV7j2LzeXH9SEToD
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "offset": 1,
   "limit": 60
 }
@@ -700,7 +700,7 @@ tool_use Bash
 id: toolu_01JySpbi7bbw6yS9aYXqgYGk
 ```json
 {
-  "command": "grep -n \"Grass\" /Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts | head; grep -n \"\\[BlockId.Grass\\]\" /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "command": "grep -n \"Grass\" /home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts | head; grep -n \"\\[BlockId.Grass\\]\" /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "description": "Find grass paint logic in atlas and Grass palette entry"
 }
 ```
@@ -723,7 +723,7 @@ tool_use Read
 id: toolu_01UZLbKqmTHBUn8EmYxL6Qfj
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "offset": 60,
   "limit": 70
 }
@@ -754,7 +754,7 @@ tool_use Bash
 id: toolu_01NQfPmGmHsR9asgctfo1yQ8
 ```json
 {
-  "command": "head -20 /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts; grep -n '\"paths\"' -A3 /Users/hutusi/workspace/ai/david/monecraft/tsconfig.json; grep -rn 'from \"@/' /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx | head -3; grep -n '\"next\"' /Users/hutusi/workspace/ai/david/monecraft/package.json",
+  "command": "head -20 /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts; grep -n '\"paths\"' -A3 /home/<USER>/workspace/ai/david/monecraft/tsconfig.json; grep -rn 'from \"@/' /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx | head -3; grep -n '\"next\"' /home/<USER>/workspace/ai/david/monecraft/package.json",
   "description": "Check blocks.ts imports, tsconfig alias, Next version"
 }
 ```
@@ -788,9 +788,9 @@ export const enum BlockId {
 23-      "@/*": ["./*"]
 24-    }
 25-  },
-/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx:4:import MinecraftGame from "@/components/MinecraftGame";
-/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx:5:import AccountProfileSelect from "@/components/menu/AccountProfileSelect";
-/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx:6:import AuthScreen from "@/components/menu/AuthScreen";
+/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx:4:import MinecraftGame from "@/components/MinecraftGame";
+/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx:5:import AccountProfileSelect from "@/components/menu/AccountProfileSelect";
+/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx:6:import AuthScreen from "@/components/menu/AuthScreen";
 22:    "next": "16.2.9",
 ```
 
@@ -800,7 +800,7 @@ tool_use Bash
 id: toolu_01Gn1wcko1mFJybombpMewZ5
 ```json
 {
-  "command": "ls /Users/hutusi/workspace/ai/david/monecraft/lib/ui/ 2>/dev/null; ls /Users/hutusi/workspace/ai/david/monecraft/lib/",
+  "command": "ls /home/<USER>/workspace/ai/david/monecraft/lib/ui/ 2>/dev/null; ls /home/<USER>/workspace/ai/david/monecraft/lib/",
   "description": "Check whether lib/ui exists"
 }
 ```
@@ -832,7 +832,7 @@ tool_use Bash
 id: toolu_018SLBu4wCBf9LJYpEY5eJr8
 ```json
 {
-  "command": "head -40 /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts; echo ---; head -30 /Users/hutusi/workspace/ai/david/monecraft/lib/ui/hudPixels.ts",
+  "command": "head -40 /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts; echo ---; head -30 /home/<USER>/workspace/ai/david/monecraft/lib/ui/hudPixels.ts",
   "description": "Look at existing pixel-art helper style in lib/ui"
 }
 ```
@@ -878,7 +878,7 @@ tool_use Bash
 id: toolu_01BhXNLFwPZAqByvNQea4U62
 ```json
 {
-  "command": "cat /Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts 2>/dev/null | head -20; grep -n \"pixelHash\" /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "command": "cat /home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts 2>/dev/null | head -20; grep -n \"pixelHash\" /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "description": "Check lib/world barrel exports and pixelHash location"
 }
 ```
@@ -923,7 +923,7 @@ tool_use Write
 id: toolu_01PnZNSaZ3woXXXEGa9Yn3us
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/appIcon.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/appIcon.tsx",
   "content": "import { BLOCK_COLORS, BlockId } from \"@/lib/world\";\n\n/**\n * The app icon as pixel art: an 8x8 grass-block face (green cap over dirt)\n * painted from the same BLOCK_COLORS palette as the world atlas. Rendered as\n * nested flex rows of colored divs because Satori (next/og ImageResponse)\n * supports flexbox but not canvas or CSS grid.\n */\n\nconst ICON_GRID = 8;\n/** Rows fully covered by grass; one more row below is jagged. */\nconst GRASS_ROWS = 2;\n\ntype Rgb = [number, number, number];\n\nfunction clamp01(v: number): number {\n  return Math.max(0, Math.min(1, v));\n}\n\nfunction tone(c: Rgb, mul: number): Rgb {\n  return [clamp01(c[0] * mul), clamp01(c[1] * mul), clamp01(c[2] * mul)];\n}\n\nfunction css(c: Rgb): string {\n  return `rgb(${Math.floor(c[0] * 255)}, ${Math.floor(c[1] * 255)}, ${Math.floor(c[2] * 255)})`;\n}\n\n// Deterministic per-pixel hash for texture noise (same idea as the atlas).\nfunction pixelHash(x: number, y: number): number {\n  const v = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;\n  return v - Math.floor(v);\n}\n\nfunction cellColor(x: number, y: number): string {\n  const grass = y < GRASS_ROWS || (y === GRASS_ROWS && pixelHash(x, 97) > 0.45);\n  const base = grass ? BLOCK_COLORS[BlockId.Grass] : BLOCK_COLORS[BlockId.Dirt];\n  return css(tone(base, (grass ? 0.95 : 0.88) + pixelHash(x, y) * 0.22));\n}\n\nconst […]
 
 > TOOL
@@ -931,7 +931,7 @@ id: toolu_01PnZNSaZ3woXXXEGa9Yn3us
 tool_result
 id: toolu_01PnZNSaZ3woXXXEGa9Yn3us
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/ui/appIcon.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/ui/appIcon.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -940,7 +940,7 @@ tool_use Write
 id: toolu_01DwfZzBBYNpcy8BX4KnJhfD
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icon.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icon.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const size = { width: 32, height: 32 };\nexport const contentType = \"image/png\";\n\nexport default function Icon() {\n  return new ImageResponse(<AppIcon />, size);\n}\n"
 }
 ```
@@ -950,7 +950,7 @@ id: toolu_01DwfZzBBYNpcy8BX4KnJhfD
 tool_result
 id: toolu_01DwfZzBBYNpcy8BX4KnJhfD
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/icon.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/icon.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -959,7 +959,7 @@ tool_use Write
 id: toolu_016mLvfzmyjWdLiJ546jdsDg
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/apple-icon.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/apple-icon.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const size = { width: 180, height: 180 };\nexport const contentType = \"image/png\";\n\n// iOS rounds the corners itself and dislikes transparency, so the art sits on\n// the menu-gate background color.\nexport default function AppleIcon() {\n  return new ImageResponse(<AppIcon scale={0.78} background=\"#15171f\" />, size);\n}\n"
 }
 ```
@@ -969,7 +969,7 @@ id: toolu_016mLvfzmyjWdLiJ546jdsDg
 tool_result
 id: toolu_016mLvfzmyjWdLiJ546jdsDg
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/apple-icon.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/apple-icon.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -978,7 +978,7 @@ tool_use Write
 id: toolu_01YLqGzgrWkfrsu5SFs9DHBP
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icons/192/route.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icons/192/route.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const dynamic = \"force-static\";\n\nexport function GET() {\n  return new ImageResponse(<AppIcon />, { width: 192, height: 192 });\n}\n"
 }
 ```
@@ -988,7 +988,7 @@ id: toolu_01YLqGzgrWkfrsu5SFs9DHBP
 tool_result
 id: toolu_01YLqGzgrWkfrsu5SFs9DHBP
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/icons/192/route.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/icons/192/route.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -997,7 +997,7 @@ tool_use Write
 id: toolu_01GjBJVjvTfmEDV1q6UsLELe
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icons/512/route.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icons/512/route.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const dynamic = \"force-static\";\n\nexport function GET() {\n  return new ImageResponse(<AppIcon />, { width: 512, height: 512 });\n}\n"
 }
 ```
@@ -1007,7 +1007,7 @@ id: toolu_01GjBJVjvTfmEDV1q6UsLELe
 tool_result
 id: toolu_01GjBJVjvTfmEDV1q6UsLELe
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/icons/512/route.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/icons/512/route.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1016,7 +1016,7 @@ tool_use Write
 id: toolu_01JmNufQTQArknQ71dEH13eo
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icons/maskable/route.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icons/maskable/route.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const dynamic = \"force-static\";\n\n// Maskable icons get cropped to arbitrary shapes; keep the art inside the\n// safe zone on a full-bleed menu-gate background.\nexport function GET() {\n  return new ImageResponse(<AppIcon scale={0.6} background=\"#15171f\" />, { width: 512, height: 512 });\n}\n"
 }
 ```
@@ -1026,7 +1026,7 @@ id: toolu_01JmNufQTQArknQ71dEH13eo
 tool_result
 id: toolu_01JmNufQTQArknQ71dEH13eo
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/icons/maskable/route.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/icons/maskable/route.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1035,7 +1035,7 @@ tool_use Write
 id: toolu_018UL8JJZw8J9GS7QU1wSL5X
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/manifest.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/manifest.ts",
   "content": "import type { MetadataRoute } from \"next\";\n\n// theme/background match the menu gate's gradient (menu.css .menu-screen) —\n// the first frame every visitor sees, so the install splash blends into it.\nexport default function manifest(): MetadataRoute.Manifest {\n  return {\n    name: \"Monecraft\",\n    short_name: \"Monecraft\",\n    description: \"A Minecraft-inspired voxel game that runs entirely in your browser.\",\n    id: \"/\",\n    start_url: \"/\",\n    display: \"standalone\",\n    orientation: \"landscape\",\n    theme_color: \"#2a2d3a\",\n    background_color: \"#15171f\",\n    // File-convention icons (app/icon.tsx) don't auto-wire into the manifest,\n    // so the installable sizes are explicit route handlers under /icons.\n    icons: [\n      { src: \"/icons/192\", sizes: \"192x192\", type: \"image/png\", purpose: \"any\" },\n      { src: \"/icons/512\", sizes: \"512x512\", type: \"image/png\", purpose: \"any\" },\n      { src: \"/icons/maskable\", sizes: \"512x512\", type: \"image/png\", purpose: \"maskable\" }\n    ]\n  };\n}\n"
 }
 ```
@@ -1045,7 +1045,7 @@ id: toolu_018UL8JJZw8J9GS7QU1wSL5X
 tool_result
 id: toolu_018UL8JJZw8J9GS7QU1wSL5X
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/manifest.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/manifest.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1055,7 +1055,7 @@ id: toolu_012cwrEZkr49GSQLcZUaS51e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx",
   "old_string": "import type { Metadata } from \"next\";\nimport type { ReactNode } from \"react\";\nimport { pixelFont } from \"./fonts\";\n\nexport const metadata: Metadata = {\n  title: \"Minecraft Clone\",\n  description: \"Minecraft-like game built with Next.js + Three.js\"\n};",
   "new_string": "import type { Metadata, Viewport } from \"next\";\nimport type { ReactNode } from \"react\";\nimport { pixelFont } from \"./fonts\";\n\nexport const metadata: Metadata = {\n  title: \"Monecraft\",\n  description: \"Minecraft-like game built with Next.js + Three.js\"\n};\n\nexport const viewport: Viewport = {\n  themeColor: \"#2a2d3a\"\n};"
 }
@@ -1066,7 +1066,7 @@ id: toolu_012cwrEZkr49GSQLcZUaS51e
 tool_result
 id: toolu_012cwrEZkr49GSQLcZUaS51e
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1079,7 +1079,7 @@ tool_use Read
 id: toolu_01WokX9RqUFBLsHdwe2QxCsp
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "limit": 40
 }
 ```
@@ -1106,7 +1106,7 @@ tool_use Bash
 id: toolu_01H6PJCPMikeEZDUNbzZSm2N
 ```json
 {
-  "command": "grep -n \"shell\\|Shell\\|layout\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md | head -20",
+  "command": "grep -n \"shell\\|Shell\\|layout\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md | head -20",
   "description": "Find the shell-layer section in architecture.md"
 }
 ```
@@ -1126,7 +1126,7 @@ tool_use Read
 id: toolu_01BeRAtwFgu4YKEsbQunRHR5
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "offset": 1,
   "limit": 32
 }
@@ -1170,7 +1170,7 @@ id: toolu_01BJeXaKX1NFKyxRKvK688sk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added\n\n- **Zero-config local dev**:",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **Installable app identity (PWA, part 1)**: the app now ships a web-app manifest (name **Monecraft**, standalone landscape window, theme colors matched to the menu gate) and browser/install icons — an 8×8 grass-block face generated at request time from the same `BLOCK_COLORS` palette as the world atlas, via `ImageResponse` pixel code (`lib/ui/appIcon.tsx`), keeping the zero-binary-assets rule. The document title changes from \"Minecraft Clone\" to **Monecraft**, matching the in-game logo. Offline support (the service worker) lands separately.\n- **Zero-config local dev**:"
 }
@@ -1181,7 +1181,7 @@ id: toolu_01BJeXaKX1NFKyxRKvK688sk
 tool_result
 id: toolu_01BJeXaKX1NFKyxRKvK688sk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1191,7 +1191,7 @@ id: toolu_01CLSxPFoRY6TXwhkq56zBpw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "old_string": "- Item hovers use `useItemTooltip`",
   "new_string": "- The installable app identity is procedural too: `app/manifest.ts` (name \"Monecraft\", standalone/landscape, theme colors from the menu gate's gradient in `menu.css`) plus icons generated from pixel code — `lib/ui/appIcon.tsx` paints an 8×8 grass-block face from `BLOCK_COLORS` as nested flex divs (Satori supports flex, not canvas/grid), wired through the `app/icon.tsx`/`app/apple-icon.tsx` file conventions and the explicit `/icons/{192,512,maskable}` route handlers the manifest references (file-convention icons don't auto-wire into the manifest).\n- Item hovers use `useItemTooltip`"
 }
@@ -1202,7 +1202,7 @@ id: toolu_01CLSxPFoRY6TXwhkq56zBpw
 tool_result
 id: toolu_01CLSxPFoRY6TXwhkq56zBpw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1425,7 +1425,7 @@ id: toolu_01GQyMpNp8KKPiKTMX3a57Sy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icons/maskable/route.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icons/maskable/route.tsx",
   "old_string": "// Maskable icons get cropped to arbitrary shapes; keep the art inside the\n// safe zone on a full-bleed menu-gate background.\nexport function GET() {\n  return new ImageResponse(<AppIcon scale={0.6} background=\"#15171f\" />, { width: 512, height: 512 });\n}",
   "new_string": "// Maskable icons get cropped to arbitrary shapes; keep the art inside the\n// safe zone on a full-bleed menu-gate background. The scale must land the art\n// on a multiple of the 8-cell grid (512 * 0.625 = 320 → 40px cells) or the\n// fractional cell edges antialias into visible seams.\nexport function GET() {\n  return new ImageResponse(<AppIcon scale={0.625} background=\"#15171f\" />, { width: 512, height: 512 });\n}"
 }
@@ -1436,7 +1436,7 @@ id: toolu_01GQyMpNp8KKPiKTMX3a57Sy
 tool_result
 id: toolu_01GQyMpNp8KKPiKTMX3a57Sy
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/icons/maskable/route.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/icons/maskable/route.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1446,7 +1446,7 @@ id: toolu_01JmMTtuBezFV12vG77VR4ir
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/apple-icon.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/apple-icon.tsx",
   "old_string": "// iOS rounds the corners itself and dislikes transparency, so the art sits on\n// the menu-gate background color.\nexport default function AppleIcon() {\n  return new ImageResponse(<AppIcon scale={0.78} background=\"#15171f\" />, size);\n}",
   "new_string": "// iOS rounds the corners itself and dislikes transparency, so the art sits on\n// the menu-gate background color. 180 * 0.8 = 144 keeps the cells on whole\n// pixels (see the maskable route for the seam artifact this avoids).\nexport default function AppleIcon() {\n  return new ImageResponse(<AppIcon scale={0.8} background=\"#15171f\" />, size);\n}"
 }
@@ -1457,7 +1457,7 @@ id: toolu_01JmMTtuBezFV12vG77VR4ir
 tool_result
 id: toolu_01JmMTtuBezFV12vG77VR4ir
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/apple-icon.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/apple-icon.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1532,7 +1532,7 @@ MD5 (maskable.png) = d5be58b633d3b2e44b7f2f51e0077629
 MD5 (maskable2.png) = d5be58b633d3b2e44b7f2f51e0077629
 COMMAND   PID   USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 node    35372 hutusi   12u  IPv6 0x4d5d6ae7df7916fc      0t0  TCP *:hbci (LISTEN)
-Shell cwd was reset to /Users/hutusi/workspace/ai/david/monecraft
+Shell cwd was reset to /home/<USER>/workspace/ai/david/monecraft
 ```
 
 > TOOL
@@ -1699,7 +1699,7 @@ tool_use Read
 id: toolu_01DmSbgs1K58YFuQnERwESX8
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/eslint.config.mjs"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/eslint.config.mjs"
 }
 ```
 
@@ -1765,7 +1765,7 @@ tool_use Read
 id: toolu_017uVJtRXtDGRmJyggrKiiqu
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/next.config.mjs"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/next.config.mjs"
 }
 ```
 
@@ -1797,7 +1797,7 @@ tool_use Write
 id: toolu_017EiVGYncdpzvAt9KUuBpLK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/public/sw.js",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/public/sw.js",
   "content": "/**\n * Monecraft service worker: offline app shell for single-player.\n *\n * Strategy (docs/architecture.md \"Offline / PWA\"):\n * - Navigations to \"/\" are network-first with cache fallback — deploys land\n *   normally while online, the cached shell boots the game offline. When the\n *   HTML changes, its /_next/static references are re-precached.\n * - /_next/static/* is cache-first: content-hashed, immutable, trimmed to a\n *   bounded count in insertion order.\n * - The manifest and icon routes are stale-while-revalidate.\n * - Everything else — /api/*, cross-origin (the game server), non-GET, RSC\n *   payloads, /join/* navigations — is never touched: the classifier's\n *   default is bypass, so online features can't be broken by a stale cache.\n *\n * Bump SW_VERSION only when the cache shape changes (old caches are dropped\n * on activate). HTML freshness never depends on it, so skipWaiting is safe.\n */\n\nconst SW_VERSION = \"v1\";\nconst SHELL_CACHE = `monecraft-shell-${SW_VERSION}`;\nconst ASSET_CACHE = `monecraft-assets-${SW_VERSION}`;\nconst SHELL_URL = \"/\";\n/** Precached beside the shell so an offline install prompt has its icons. */\nconst SHELL_EXTRAS = [\"/manifest.webmanifest\", \"/icons/192\", \"/icons/512\", \"/icons/maskable\"];\n/** Paths served stale-while-revalidate (pathname match; queries vary). */\nconst SHELL_EXTRA_PATHS = new Set([...SHELL_EXTRAS, \"/icon\", \"/apple-icon\"]);\n/** Insertion-order cap on cached immutable assets […]
 
 > TOOL
@@ -1805,7 +1805,7 @@ id: toolu_017EiVGYncdpzvAt9KUuBpLK
 tool_result
 id: toolu_017EiVGYncdpzvAt9KUuBpLK
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/public/sw.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/public/sw.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1818,7 +1818,7 @@ tool_use Write
 id: toolu_01XJxcPfB6spfiXvPnKFZQVK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/ServiceWorkerRegistration.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/ServiceWorkerRegistration.tsx",
   "content": "\"use client\";\n\nimport { useEffect } from \"react\";\n\n/**\n * Registers /sw.js after load in production builds. In development it does\n * the opposite — unregisters any service worker and deletes monecraft-*\n * caches. That cleanup is mandatory, not a nicety: e2e runs a prod build on\n * localhost:3000, and a service worker left registered there would serve\n * stale chunks to `bun run dev` on the same origin.\n */\nexport default function ServiceWorkerRegistration() {\n  useEffect(() => {\n    if (!(\"serviceWorker\" in navigator)) return;\n\n    if (process.env.NODE_ENV !== \"production\") {\n      void navigator.serviceWorker\n        .getRegistrations()\n        .then((registrations) => Promise.all(registrations.map((r) => r.unregister())))\n        .catch(() => {});\n      if (\"caches\" in window) {\n        void caches\n          .keys()\n          .then((keys) => Promise.all(keys.filter((k) => k.startsWith(\"monecraft-\")).map((k) => caches.delete(k))))\n          .catch(() => {});\n      }\n      return;\n    }\n\n    // Registering twice (StrictMode double-effect) is idempotent; waiting for\n    // load keeps SW installation off the game's startup path. updateViaCache\n    // \"none\" + the no-cache header on /sw.js make updates purely server-driven.\n    const register = () => {\n      navigator.serviceWorker.register(\"/sw.js\", { updateViaCache: \"none\" }).catch(() => {\n        // The app is fully functional without offline support.\n      });\n    };\n    if (document.readyState === \"complete\") {\n      register();\n      return;\n    }\n    window.addEventListener(\"load\", register, { once: true });\n    return () => window.removeEventListener(\"load\", […]
 
 > TOOL
@@ -1826,7 +1826,7 @@ id: toolu_01XJxcPfB6spfiXvPnKFZQVK
 tool_result
 id: toolu_01XJxcPfB6spfiXvPnKFZQVK
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/components/ServiceWorkerRegistration.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/components/ServiceWorkerRegistration.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1836,7 +1836,7 @@ id: toolu_01WpjGYY2LsryMKXmmqNp91e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx",
   "old_string": "import type { Metadata, Viewport } from \"next\";\nimport type { ReactNode } from \"react\";\nimport { pixelFont } from \"./fonts\";",
   "new_string": "import type { Metadata, Viewport } from \"next\";\nimport type { ReactNode } from \"react\";\nimport ServiceWorkerRegistration from \"@/components/ServiceWorkerRegistration\";\nimport { pixelFont } from \"./fonts\";"
 }
@@ -1847,7 +1847,7 @@ id: toolu_01WpjGYY2LsryMKXmmqNp91e
 tool_result
 id: toolu_01WpjGYY2LsryMKXmmqNp91e
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1857,7 +1857,7 @@ id: toolu_01UW67LdQW9Tcxw2vvwoSt5r
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx",
   "old_string": "      <body>{children}</body>",
   "new_string": "      <body>\n        <ServiceWorkerRegistration />\n        {children}\n      </body>"
 }
@@ -1868,7 +1868,7 @@ id: toolu_01UW67LdQW9Tcxw2vvwoSt5r
 tool_result
 id: toolu_01UW67LdQW9Tcxw2vvwoSt5r
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1878,7 +1878,7 @@ id: toolu_015aeMxHinskjD26aMi5AHYK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/next.config.mjs",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/next.config.mjs",
   "old_string": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  // PGlite (the pglite:// DATABASE_URL branch used by the Playwright online\n  // suite and daemon-free dev) resolves its WASM relative to the package —\n  // bundling breaks that; load it from node_modules at runtime instead.\n  serverExternalPackages: [\"@electric-sql/pglite\"]\n};",
   "new_string": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  // PGlite (the pglite:// DATABASE_URL branch used by the Playwright online\n  // suite and daemon-free dev) resolves its WASM relative to the package —\n  // bundling breaks that; load it from node_modules at runtime instead.\n  serverExternalPackages: [\"@electric-sql/pglite\"],\n  async headers() {\n    return [\n      {\n        // The service worker must never be served stale, or an old cache\n        // strategy outlives a deploy (registration also sets updateViaCache\n        // \"none\" — this covers the CDN/proxy layer).\n        source: \"/sw.js\",\n        headers: [{ key: \"Cache-Control\", value: \"no-cache, max-age=0, must-revalidate\" }]\n      }\n    ];\n  }\n};"
 }
@@ -1889,7 +1889,7 @@ id: toolu_015aeMxHinskjD26aMi5AHYK
 tool_result
 id: toolu_015aeMxHinskjD26aMi5AHYK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/next.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/next.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1899,7 +1899,7 @@ id: toolu_01PfnJfQHP2cemdhjcryfqy3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/eslint.config.mjs",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/eslint.config.mjs",
   "old_string": "  {\n    // Engine systems must address players explicitly: the flat GameState",
   "new_string": "  {\n    // The service worker is plain JS in worker scope: no DOM lib, no module\n    // system, tsc ignores it (allowJs off) — lint is its only static check.\n    files: [\"public/**/*.js\"],\n    languageOptions: {\n      globals: {\n        self: \"readonly\",\n        caches: \"readonly\",\n        fetch: \"readonly\",\n        Response: \"readonly\",\n        URL: \"readonly\"\n      }\n    }\n  },\n  {\n    // Engine systems must address players explicitly: the flat GameState"
 }
@@ -1910,7 +1910,7 @@ id: toolu_01PfnJfQHP2cemdhjcryfqy3
 tool_result
 id: toolu_01PfnJfQHP2cemdhjcryfqy3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/eslint.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/eslint.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1923,7 +1923,7 @@ tool_use Bash
 id: toolu_01CrEEtfj5KNneNDTBicKyzw
 ```json
 {
-  "command": "grep -E '\"include\"|\"allowJs\"' /Users/hutusi/workspace/ai/david/monecraft/tsconfig.json; bun run format >/dev/null 2>&1; bun run lint 2>&1 | tail -4; bun run typecheck 2>&1 | tail -3",
+  "command": "grep -E '\"include\"|\"allowJs\"' /home/<USER>/workspace/ai/david/monecraft/tsconfig.json; bun run format >/dev/null 2>&1; bun run lint 2>&1 | tail -4; bun run typecheck 2>&1 | tail -3",
   "description": "Verify tsconfig excludes sw.js; run format, lint, typecheck",
   "timeout": 180000
 }
@@ -1951,7 +1951,7 @@ tool_use Bash
 id: toolu_017KX7c4zwQLKt9pmQo7dp5L
 ```json
 {
-  "command": "grep -n \"^#\" /Users/hutusi/workspace/ai/david/monecraft/README.md | head -20; echo ---; grep -n \"^#\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "command": "grep -n \"^#\" /home/<USER>/workspace/ai/david/monecraft/README.md | head -20; echo ---; grep -n \"^#\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "description": "List README and architecture.md section headings"
 }
 ```
@@ -1986,7 +1986,7 @@ tool_use Read
 id: toolu_01QRiWMwoJ2X5F9pzkGmpLEh
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/README.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/README.md",
   "offset": 1,
   "limit": 50
 }
@@ -2013,7 +2013,7 @@ id: toolu_013U2mp7RKWi6bkEm1X3ohQ5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/README.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/README.md",
   "old_string": "Then open `http://localhost:3000`.",
   "new_string": "Then open `http://localhost:3000`.\n\nMonecraft is also an installable **PWA**: in a Chromium browser, the address-bar install button turns it into a desktop app, and after the first visit **single-player works fully offline** (online features — accounts, cloud saves, co-op — still need a connection). Not a mobile game: it needs a mouse and pointer lock."
 }
@@ -2024,7 +2024,7 @@ id: toolu_013U2mp7RKWi6bkEm1X3ohQ5
 tool_result
 id: toolu_013U2mp7RKWi6bkEm1X3ohQ5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2034,7 +2034,7 @@ id: toolu_01HsCCVYKaoL126bt1GpRG1Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "old_string": "## Engine invariants & gotchas",
   "new_string": "## Offline / PWA (`app/manifest.ts`, `public/sw.js`)\n\nThe app installs as a desktop PWA and boots single-player offline after one online visit. `app/manifest.ts` plus the programmatic icons (shell section above) are the identity; `public/sw.js` — hand-rolled plain JS, no workbox/serwist dependency — owns offline caching:\n\n| Request                                                                        | Strategy                                                                                        |\n| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |\n| navigation to `/`                                                              | network-first, cached shell as offline fallback; changed HTML re-precaches its static refs       |\n| `/_next/static/*`                                                              | cache-first (content-hashed, immutable), insertion-order trim at 100 entries                     |\n| manifest + icon routes                                                         | stale-while-revalidate                                                                           |\n| everything else — `/api/*`, cross-origin, non-GET, RSC payloads, `/join/*` nav | **bypass, never touched** — the classifier's default, so online features can't be cache-poisoned |\n\n- Install fetches `/` fresh and precaches every `/_next/static` URL parsed out of the HTML. All play-critical JS is statically imported from `/`; the one dynamic import (zzfx, gesture-gated — see Audio) is picked up by cache-first on the first online audio unlock, and missing it degrades to a silent game, never a broken one.\n- `SW_VERSION` bumps only on cache-shape changes; HTML freshness never depends on it, which is what makes `skipWaiting`+`clients.claim` safe. […]
 
@@ -2043,7 +2043,7 @@ id: toolu_01HsCCVYKaoL126bt1GpRG1Q
 tool_result
 id: toolu_01HsCCVYKaoL126bt1GpRG1Q
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2053,7 +2053,7 @@ id: toolu_01XzegXio62tsSuwbid3v9fm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/AGENTS.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/AGENTS.md",
   "old_string": "The one sanctioned exception is the UI pixel font (Monocraft, a Minecraft-style face under the SIL OFL 1.1), self-hosted via `next/font/local` from the committed woff2 in `app/fonts/` — don't \"fix\" it back to a system font.",
   "new_string": "The one sanctioned exception is the UI pixel font (Monocraft, a Minecraft-style face under the SIL OFL 1.1), self-hosted via `next/font/local` from the committed woff2 in `app/fonts/` — don't \"fix\" it back to a system font. `public/` holds only code (the service worker `sw.js`) — no images or media belong there."
 }
@@ -2064,7 +2064,7 @@ id: toolu_01XzegXio62tsSuwbid3v9fm
 tool_result
 id: toolu_01XzegXio62tsSuwbid3v9fm
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2074,7 +2074,7 @@ id: toolu_017kmZbZNhSE3Tggt8TnEhA2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "- **Installable app identity (PWA, part 1)**:",
   "new_string": "- **Offline play (PWA, part 2)**: after one online visit, single-player boots with no connection — a hand-rolled service worker (`public/sw.js`, no workbox/serwist dependency) precaches the app shell and its static chunks, serves navigations network-first (deploys land normally and apply silently on the next online load), and **never touches** `/api/*`, the game-server connection, or invite links, so accounts, cloud saves, and multiplayer behave exactly as before. In development the registration component instead unregisters workers and clears caches, keeping `bun run dev` immune to a stale prod worker on the same origin.\n- **Installable app identity (PWA, part 1)**:"
 }
@@ -2085,7 +2085,7 @@ id: toolu_017kmZbZNhSE3Tggt8TnEhA2
 tool_result
 id: toolu_017kmZbZNhSE3Tggt8TnEhA2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2261,7 +2261,7 @@ tool_use Read
 id: toolu_014eoY9p86tVazHmMz4M896g
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/helpers.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/helpers.ts"
 }
 ```
 
@@ -2303,7 +2303,7 @@ tool_use Bash
 id: toolu_013kGif6JPzwC2AA83amCU1t
 ```json
 {
-  "command": "ls /Users/hutusi/workspace/ai/david/monecraft/tests/ 2>/dev/null; ls /Users/hutusi/workspace/ai/david/monecraft/e2e/; head -30 /Users/hutusi/workspace/ai/david/monecraft/e2e/smoke.e2e.ts 2>/dev/null",
+  "command": "ls /home/<USER>/workspace/ai/david/monecraft/tests/ 2>/dev/null; ls /home/<USER>/workspace/ai/david/monecraft/e2e/; head -30 /home/<USER>/workspace/ai/david/monecraft/e2e/smoke.e2e.ts 2>/dev/null",
   "description": "List tests and e2e directories, peek at a spec"
 }
 ```
@@ -2363,7 +2363,7 @@ tool_use Bash
 id: toolu_01KCY5UKv9VnCJzgHBb7to5G
 ```json
 {
-  "command": "cat /Users/hutusi/workspace/ai/david/monecraft/bunfig.toml 2>/dev/null; find /Users/hutusi/workspace/ai/david/monecraft -name \"*.test.ts*\" -not -path \"*/node_modules/*\" | sed 's|.*/monecraft/||' | sort | head -40",
+  "command": "cat /home/<USER>/workspace/ai/david/monecraft/bunfig.toml 2>/dev/null; find /home/<USER>/workspace/ai/david/monecraft -name \"*.test.ts*\" -not -path \"*/node_modules/*\" | sed 's|.*/monecraft/||' | sort | head -40",
   "description": "Check bunfig and test file locations"
 }
 ```
@@ -2424,7 +2424,7 @@ tool_use Write
 id: toolu_01STha1MzTFPKsUM7pMNgW6K
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/tests/sw.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/tests/sw.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport { readFileSync } from \"node:fs\";\nimport { join } from \"node:path\";\n\n/**\n * Unit coverage for the service worker's pure helpers (public/sw.js). The\n * worker is plain JS outside the TS program, so it's evaluated here with a\n * stub `self` and asserted through its `self.__sw` test hook. The classify\n * cases pin the contract that matters: /api, cross-origin, non-GET, RSC\n * payloads, and /join navigations are NEVER touched by the cache.\n */\n\nconst ORIGIN = \"http://localhost:3000\";\n\ntype StubRequest = {\n  method: string;\n  mode: string;\n  url: string;\n  headers: { get(name: string): string | null };\n};\n\ntype SwHooks = {\n  classify: (request: StubRequest, origin: string) => \"bypass\" | \"navigation\" | \"asset\" | \"shell-extra\";\n  extractShellAssets: (html: string) => string[];\n  SHELL_EXTRA_PATHS: Set<string>;\n  MAX_ASSETS: number;\n};\n\nfunction loadSw(): SwHooks {\n  const source = readFileSync(join(import.meta.dir, \"..\", \"public\", \"sw.js\"), \"utf8\");\n  const self: { __sw?: SwHooks; addEventListener: () => void; location: { origin: string } } = {\n    addEventListener: () => {},\n    location: { origin: ORIGIN }\n  };\n  // caches/fetch are only referenced inside handlers, never during evaluation.\n  new Function(\"self\", source)(self);\n  if (!self.__sw) throw new Error(\"sw.js did not expose self.__sw\");\n  return self.__sw;\n}\n\nconst sw = loadSw();\n\nfunction req(url: string, […]
 
 > TOOL
@@ -2432,7 +2432,7 @@ id: toolu_01STha1MzTFPKsUM7pMNgW6K
 tool_result
 id: toolu_01STha1MzTFPKsUM7pMNgW6K
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/tests/sw.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/tests/sw.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2465,7 +2465,7 @@ tool_use Write
 id: toolu_016uLzrnnUW1Bu1cF99AhdHz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/pwa.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/pwa.e2e.ts",
   "content": "import { expect, test } from \"@playwright/test\";\nimport { WORLDGEN_VERSION } from \"@/lib/game/config\";\n\n/**\n * PWA coverage: installable identity (manifest/icons) and the offline app\n * shell. Raw Playwright tests rather than the gamePage fixture — the offline\n * flow needs its own navigation choreography (online warm-up → offline →\n * reload), and going offline makes the browser log fetch failures for\n * legitimately bypassed requests, so the fixture's console-error assertion\n * doesn't apply. Non-interference with online play is pinned by the sw.js\n * classifier unit tests (tests/sw.test.ts) plus the existing e2e suites,\n * which now run with the service worker registering by design.\n */\n\ntest(\"serves the manifest, icons, and an uncacheable service worker\", async ({ request }) => {\n  const manifest = await request.get(\"/manifest.webmanifest\");\n  expect(manifest.status()).toBe(200);\n  const body = await manifest.json();\n  expect(body.name).toBe(\"Monecraft\");\n  expect(body.display).toBe(\"standalone\");\n  expect(body.start_url).toBe(\"/\");\n  expect(body.icons.map((icon: { src: string }) => icon.src)).toEqual([\"/icons/192\", \"/icons/512\", \"/icons/maskable\"]);\n  expect(body.icons.some((icon: { purpose?: string }) => icon.purpose === \"maskable\")).toBe(true);\n\n  for (const path of [\"/icons/192\", \"/icons/512\", \"/icons/maskable\", \"/icon\", \"/apple-icon\"]) {\n    const response = await request.get(path);\n    expect(response.status(), path).toBe(200);\n    expect(response.headers()[\"content-type\"], path).toContain(\"image/png\");\n  }\n\n  const sw = await request.get(\"/sw.js\");\n  expect(sw.status()).toBe(200);\n  expect(sw.headers()[\"cache-control\"]).toContain(\"no-cache\");\n});\n\ntest(\"plays single-player fully offline after one online visit\", async ({ page, context }) => {\n  // Seed […]
 
 > TOOL
@@ -2473,7 +2473,7 @@ id: toolu_016uLzrnnUW1Bu1cF99AhdHz
 tool_result
 id: toolu_016uLzrnnUW1Bu1cF99AhdHz
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/e2e/pwa.e2e.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/e2e/pwa.e2e.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2483,7 +2483,7 @@ id: toolu_01MoUQpiKHuhPGPTok23FQ8H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/helpers.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/helpers.ts",
   "old_string": "    page.on(\"console\", (message) => {\n      if (message.type() !== \"error\") return;\n      // The app ships no favicon; Chrome's automatic /favicon.ico 404 is noise.\n      if (message.text().includes(\"Failed to load resource\") && message.location().url.endsWith(\"/favicon.ico\")) return;\n      errors.push(`${message.text()} (${message.location().url})`);\n    });",
   "new_string": "    page.on(\"console\", (message) => {\n      if (message.type() !== \"error\") return;\n      errors.push(`${message.text()} (${message.location().url})`);\n    });"
 }
@@ -2494,7 +2494,7 @@ id: toolu_01MoUQpiKHuhPGPTok23FQ8H
 tool_result
 id: toolu_01MoUQpiKHuhPGPTok23FQ8H
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/helpers.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/helpers.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2544,7 +2544,7 @@ tool_use Read
 id: toolu_018ZipkZhVgdEY1xLZJoqX1z
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md"
 }
 ```
 
@@ -2573,7 +2573,7 @@ id: toolu_016AKWQVS8tdXU1JFtFYcn2G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "- **`bun test`** — unit, integration, and component tests, colocated as `*.test.ts[x]` next to the code they cover. The shared setup (`tests/setup.ts`, preloaded via `bunfig.toml`) registers happy-dom so React component tests run under the same runner; the game engine itself needs no DOM (see [architecture.md](architecture.md)).",
   "new_string": "- **`bun test`** — unit, integration, and component tests, colocated as `*.test.ts[x]` next to the code they cover (one exception: the service worker's tests live in `tests/sw.test.ts` — `public/` is deployed verbatim, so no test files belong there). The shared setup (`tests/setup.ts`, preloaded via `bunfig.toml`) registers happy-dom so React component tests run under the same runner; the game engine itself needs no DOM (see [architecture.md](architecture.md))."
 }
@@ -2584,7 +2584,7 @@ id: toolu_016AKWQVS8tdXU1JFtFYcn2G
 tool_result
 id: toolu_016AKWQVS8tdXU1JFtFYcn2G
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2594,7 +2594,7 @@ id: toolu_011oorG6dxadtZpbCHxiRP3x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Game modes                    | `lib/game/gameModes.test.ts`, `lib/game/engine/gameMode{Creative,Spectator,Adventure,Switch}.test.ts`",
   "new_string": "| Service worker                | `tests/sw.test.ts`                                                                                                                                                                                                                                            | The offline-cache classifier (public/sw.js evaluated with a stub `self`, asserted through its `self.__sw` hook): navigations to `/` are the only cached navigations (`/join/*` bypasses), non-GET / `/api/*` / cross-origin / RSC-prefetch payloads are never touched whatever the path, hashed `/_next/static` assets are cache-first, manifest/icons are shell extras (queries included), and anything unrecognized falls through to the network; plus shell-HTML asset extraction (scripts/styles/preloads, deduped, `&amp;` unescaped, foreign hosts ignored)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |\n| Browser E2E (PWA)             | `e2e/pwa.e2e.ts`                                                                                                                                                                                                                                              | The installable identity (manifest shape — name/standalone/start_url/maskable icon set — and every icon route serving a real PNG; `/sw.js` with its no-cache header) and the offline story end to end: an online visit precaches the shell + assets, the network is cut (`context.setOffline`), a reload is served from the worker's cache (`transferSize === 0` proves it wasn't a network leak around the emulation), the welcome gate renders, a seeded local world boots and draws, and no `/api/` URL ever appears in any cache                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |\n| Game modes                    | `lib/game/gameModes.test.ts`, `lib/game/engine/gameMode{Creative,Spectator,Adventure,Switch}.test.ts`"
 }
@@ -2605,7 +2605,7 @@ id: toolu_011oorG6dxadtZpbCHxiRP3x
 tool_result
 id: toolu_011oorG6dxadtZpbCHxiRP3x
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2615,7 +2615,7 @@ id: toolu_01QkZPxDP15CeS3TJcY1n69B
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "Playwright boots **two** servers (`playwright.config.ts`): the Next production build with a full online stack on an in-process ephemeral Postgres (`DATABASE_URL=pglite://memory` — no Docker; `db/index.ts` applies `db/ddl.ts` at boot) and the Bun game server (`PERSISTENCE=memory`) on port 18080. The offline suites never touch either backend; `multiplayer.e2e.ts` exercises both.",
   "new_string": "Playwright boots **two** servers (`playwright.config.ts`): the Next production build with a full online stack on an in-process ephemeral Postgres (`DATABASE_URL=pglite://memory` — no Docker; `db/index.ts` applies `db/ddl.ts` at boot) and the Bun game server (`PERSISTENCE=memory`) on port 18080. The offline suites never touch either backend; `multiplayer.e2e.ts` exercises both.\n\nBecause e2e runs the production build, **every suite runs with the service worker registering** — the existing suites double as a non-interference regression (the fixture's console-error gate catches a worker that breaks a page), and each test's fresh browser context starts with empty caches, so nothing leaks between tests. Only `pwa.e2e.ts` goes offline."
 }
@@ -2626,7 +2626,7 @@ id: toolu_01QkZPxDP15CeS3TJcY1n69B
 tool_result
 id: toolu_01QkZPxDP15CeS3TJcY1n69B
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2636,7 +2636,7 @@ id: toolu_01GNC5TCUfT7vgBirD8f9XX3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "In development the registration component instead unregisters workers and clears caches, keeping `bun run dev` immune to a stale prod worker on the same origin.",
   "new_string": "In development the registration component instead unregisters workers and clears caches, keeping `bun run dev` immune to a stale prod worker on the same origin. Pinned by classifier unit tests (`tests/sw.test.ts`) and an offline e2e (`e2e/pwa.e2e.ts`) that cuts the network and boots a world from the worker's cache."
 }
@@ -2647,7 +2647,7 @@ id: toolu_01GNC5TCUfT7vgBirD8f9XX3
 tool_result
 id: toolu_01GNC5TCUfT7vgBirD8f9XX3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2721,7 +2721,7 @@ tool_use Read
 id: toolu_0123VkBe58RVdCHBHKdNt1hR
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx"
 }
 ```
 
@@ -2770,7 +2770,7 @@ tool_use Read
 id: toolu_01FrY8Q3enPDifsHLfF4LjZN
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx"
 }
 ```
 
@@ -2821,7 +2821,7 @@ tool_use Write
 id: toolu_01EsC8hEnqrDdSRDJszbcN41
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/useOnlineStatus.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/useOnlineStatus.ts",
   "content": "\"use client\";\n\nimport { useSyncExternalStore } from \"react\";\n\nfunction subscribe(onStoreChange: () => void): () => void {\n  window.addEventListener(\"online\", onStoreChange);\n  window.addEventListener(\"offline\", onStoreChange);\n  return () => {\n    window.removeEventListener(\"online\", onStoreChange);\n    window.removeEventListener(\"offline\", onStoreChange);\n  };\n}\n\n/**\n * Live navigator.onLine. SSR assumes online (the overwhelmingly common case);\n * useSyncExternalStore re-reads the real value right after hydration, so an\n * offline PWA boot corrects on the client without a hydration mismatch.\n */\nexport function useOnlineStatus(): boolean {\n  return useSyncExternalStore(\n    subscribe,\n    () => navigator.onLine,\n    () => true\n  );\n}\n"
 }
 ```
@@ -2831,7 +2831,7 @@ id: toolu_01EsC8hEnqrDdSRDJszbcN41
 tool_result
 id: toolu_01EsC8hEnqrDdSRDJszbcN41
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/ui/useOnlineStatus.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/ui/useOnlineStatus.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2841,7 +2841,7 @@ id: toolu_01M35FFaaC2NSHoGG9vWhN1Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
   "old_string": "\"use client\";\n\nimport MenuScreen from \"@/components/menu/MenuScreen\";",
   "new_string": "\"use client\";\n\nimport MenuScreen from \"@/components/menu/MenuScreen\";\nimport { useOnlineStatus } from \"@/lib/ui/useOnlineStatus\";"
 }
@@ -2852,7 +2852,7 @@ id: toolu_01M35FFaaC2NSHoGG9vWhN1Z
 tool_result
 id: toolu_01M35FFaaC2NSHoGG9vWhN1Z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2862,7 +2862,7 @@ id: toolu_01JAJVLaKz22Y9HXrwhVWp4J
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
   "old_string": "export default function WelcomeScreen({ onSignIn, onPlayLocally }: WelcomeScreenProps) {\n  return (\n    <MenuScreen title=\"Welcome\">\n      <button type=\"button\" className=\"mc-button menu-primary\" data-testid=\"welcome-sign-in\" onClick={onSignIn}>",
   "new_string": "export default function WelcomeScreen({ onSignIn, onPlayLocally }: WelcomeScreenProps) {\n  const online = useOnlineStatus();\n  return (\n    <MenuScreen title=\"Welcome\">\n      {/* Sign in stays enabled offline — AccountForm's failure copy is the\n          real guard; this just points at the door that works. */}\n      {!online && (\n        <p className=\"menu-note\" data-testid=\"welcome-offline-note\">\n          Offline — local play only.\n        </p>\n      )}\n      <button type=\"button\" className=\"mc-button menu-primary\" data-testid=\"welcome-sign-in\" onClick={onSignIn}>"
 }
@@ -2873,7 +2873,7 @@ id: toolu_01JAJVLaKz22Y9HXrwhVWp4J
 tool_result
 id: toolu_01JAJVLaKz22Y9HXrwhVWp4J
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2883,7 +2883,7 @@ id: toolu_01UvTZoWZCr8gPpUjCQqFvcY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx",
   "old_string": "import { describe, expect, mock, test } from \"bun:test\";\nimport { render, screen } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\nimport WelcomeScreen from \"@/components/menu/WelcomeScreen\";",
   "new_string": "import { describe, expect, mock, test } from \"bun:test\";\nimport { act, render, screen } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\nimport WelcomeScreen from \"@/components/menu/WelcomeScreen\";"
 }
@@ -2894,7 +2894,7 @@ id: toolu_01UvTZoWZCr8gPpUjCQqFvcY
 tool_result
 id: toolu_01UvTZoWZCr8gPpUjCQqFvcY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2904,7 +2904,7 @@ id: toolu_011JuBHyznQphy2wiGsxNkBK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx",
   "old_string": "    await user.click(screen.getByRole(\"button\", { name: \"Play locally\" }));\n    expect(onPlayLocally).toHaveBeenCalled();\n  });\n});",
   "new_string": "    await user.click(screen.getByRole(\"button\", { name: \"Play locally\" }));\n    expect(onPlayLocally).toHaveBeenCalled();\n  });\n\n  test(\"shows the offline hint only while offline, with Sign in still enabled\", () => {\n    const setOnLine = (value: boolean) => Object.defineProperty(window.navigator, \"onLine\", { value, configurable: true });\n    render(<WelcomeScreen onSignIn={mock()} onPlayLocally={mock()} />);\n    expect(screen.queryByTestId(\"welcome-offline-note\")).toBeNull();\n\n    setOnLine(false);\n    act(() => {\n      window.dispatchEvent(new Event(\"offline\"));\n    });\n    expect(screen.getByText(\"Offline — local play only.\")).toBeTruthy();\n    // Sign in stays a live door: AccountForm's failure copy is the real guard.\n    expect((screen.getByRole(\"button\", { name: \"Sign in\" }) as HTMLButtonElement).disabled).toBe(false);\n\n    setOnLine(true);\n    act(() => {\n      window.dispatchEvent(new Event(\"online\"));\n    });\n    expect(screen.queryByTestId(\"welcome-offline-note\")).toBeNull();\n  });\n});"
 }
@@ -2915,7 +2915,7 @@ id: toolu_011JuBHyznQphy2wiGsxNkBK
 tool_result
 id: toolu_011JuBHyznQphy2wiGsxNkBK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2949,7 +2949,7 @@ id: toolu_01ABDrx5LCqf1igLW9WaEdb8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "the welcome gate (`WelcomeScreen` — exactly two doors with the exact accessible names \"Sign in\" / \"Play locally\" the e2e keys on)",
   "new_string": "the welcome gate (`WelcomeScreen` — exactly two doors with the exact accessible names \"Sign in\" / \"Play locally\" the e2e keys on, plus the \"Offline — local play only\" hint shown only while offline with Sign in left enabled)"
 }
@@ -2960,7 +2960,7 @@ id: toolu_01ABDrx5LCqf1igLW9WaEdb8
 tool_result
 id: toolu_01ABDrx5LCqf1igLW9WaEdb8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2970,7 +2970,7 @@ id: toolu_01GpF54p3zEcu1pcqdh3FWia
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "- **Installable app identity (PWA, part 1)**:",
   "new_string": "- **Welcome-gate offline hint**: opened without a connection (say, as an installed PWA on a plane), the welcome gate says \"Offline — local play only.\" so the working door is obvious. Sign in stays enabled — its own failure copy already covers a dead network — and the hint tracks connectivity live via a new `useOnlineStatus` hook.\n- **Installable app identity (PWA, part 1)**:"
 }
@@ -2981,7 +2981,7 @@ id: toolu_01GpF54p3zEcu1pcqdh3FWia
 tool_result
 id: toolu_01GpF54p3zEcu1pcqdh3FWia
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3189,7 +3189,7 @@ tool_use Write
 id: toolu_01EtuRgko2eF45w6NjuBTzSj
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "content": "---\nname: pwa-branch\ndescription: \"PWA feature — branch feature/pwa BUILT + full gate green (2026-07-05, 4 commits, tip d205ac8); PR not opened (user-authorized); manual Vercel-preview pass pending\"\nmetadata:\n  type: project\n---\n\n**Branch `feature/pwa` complete locally (2026-07-05), 4 commits: `7ea8ccf` manifest+ImageResponse icons+title \"Monecraft\", `7d8d9a7` hand-rolled `public/sw.js`+registration+headers, `5247ab6` tests (tests/sw.test.ts classifier + e2e/pwa.e2e.ts offline flow; dropped the favicon-404 e2e mute), `d205ac8` welcome-gate offline hint (`lib/ui/useOnlineStatus.ts`).** Full gate green: lint/typecheck/format/1203 unit tests/build/24 e2e (all suites now run SW-controlled). Plan executed from `~/.claude/plans/start-the-pwa-plan-goofy-kahn.md`.\n\n**Why:** installable desktop app + offline single-player; codebase was already offline-ready except the PWA layer ([[mp-latency-branch]] chose this as the next feature).\n\n**How to apply / what's left:**\n- **PR not opened, nothing pushed** — user authorizes that (see [[no-pr-attribution]]).\n- **Manual pass on a Vercel preview pending**: Lighthouse PWA, Chrome desktop install, real offline session, second deploy updates on next online load, no `/api` cache entries.\n- Gotchas discovered: Satori icon cells must land on whole pixels (scale × size divisible by 8) or grid seams appear; Playwright `context.setOffline` DOES cut SW fetches on current Chromium (the `transferSize === 0` assertion in pwa.e2e.ts would catch a regression); zzfx stays a gesture-gated dynamic import — offline-before-first-unlock = silent game by design (`audioDirector.ts` […]
 
 > TOOL
@@ -3197,7 +3197,7 @@ id: toolu_01EtuRgko2eF45w6NjuBTzSj
 tool_result
 id: toolu_01EtuRgko2eF45w6NjuBTzSj
 ```
-File created successfully at: /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3207,8 +3207,8 @@ id: toolu_01H1vKZBKkK816BKMtMUAMaw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md",
-  "old_string": "Next feature decided: **PWA in a fresh session** — plan ready at `/Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md` (branch `feature/pwa`; manifest + ImageResponse pixel icons + hand-rolled sw.js; NOT mobile play).",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md",
+  "old_string": "Next feature decided: **PWA in a fresh session** — plan ready at `/home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md` (branch `feature/pwa`; manifest + ImageResponse pixel icons + hand-rolled sw.js; NOT mobile play).",
   "new_string": "Next feature (PWA) is now built — see [[pwa-branch]]."
 }
 ```
@@ -3218,7 +3218,7 @@ id: toolu_01H1vKZBKkK816BKMtMUAMaw
 tool_result
 id: toolu_01H1vKZBKkK816BKMtMUAMaw
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3228,7 +3228,7 @@ id: toolu_01KPKMDantfjEuMDWr5Lp5pa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [MP latency branch](mp-latency-branch.md) — **✅ PR #52 MERGED `55aa7d0`** (prediction/adaptive-interp/deflate + region ord→sjc); **Fly deploy + 1-machine check + ping re-test PENDING**; next: PWA in fresh session (plan file ready)",
   "new_string": "- [MP latency branch](mp-latency-branch.md) — **✅ PR #52 MERGED `55aa7d0`** (prediction/adaptive-interp/deflate + region ord→sjc); **Fly deploy + 1-machine check + ping re-test PENDING**\n- [PWA branch](pwa-branch.md) — **✅ `feature/pwa` BUILT, full gate green** (4 commits, tip `d205ac8`, 2026-07-05); PR/push awaits user; Vercel-preview manual pass pending"
 }
@@ -3248,7 +3248,7 @@ tool_use Read
 id: toolu_01GKsHaapf9G85xHCLWS1Gnb
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
 }
 ```
 
@@ -3272,7 +3272,7 @@ id: toolu_01V4fCn12Cg2F4yJNW2ycjsb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [MP latency branch](mp-latency-branch.md) — **✅ PR #52 MERGED `55aa7d0`** (prediction/adaptive-interp/deflate + region ord→sjc); **Fly deploy + 1-machine check + ping re-test PENDING**; next: PWA in fresh session (plan file ready)",
   "new_string": "- [MP latency branch](mp-latency-branch.md) — **✅ PR #52 MERGED `55aa7d0`** (prediction/adaptive-interp/deflate + region ord→sjc); **Fly deploy + 1-machine check + ping re-test PENDING**\n- [PWA branch](pwa-branch.md) — **✅ `feature/pwa` BUILT, full gate green** (4 commits, tip `d205ac8`, 2026-07-05); PR/push awaits user; Vercel-preview manual pass pending"
 }
@@ -3283,7 +3283,7 @@ id: toolu_01V4fCn12Cg2F4yJNW2ycjsb
 tool_result
 id: toolu_01V4fCn12Cg2F4yJNW2ycjsb
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3347,7 +3347,7 @@ id: toolu_01EdocNEZTF9rbXxPvWFVnUj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "description: \"PWA feature — branch feature/pwa BUILT + full gate green (2026-07-05, 4 commits, tip d205ac8); PR not opened (user-authorized); manual Vercel-preview pass pending\"",
   "new_string": "description: \"PWA feature — PR #53 OPEN (feature/pwa, 4 commits, tip d205ac8, full gate green, 2026-07-05); manual Vercel-preview pass pending\""
 }
@@ -3358,7 +3358,7 @@ id: toolu_01EdocNEZTF9rbXxPvWFVnUj
 tool_result
 id: toolu_01EdocNEZTF9rbXxPvWFVnUj
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3368,7 +3368,7 @@ id: toolu_01FTTNh5bcyDmU4d1iPmPpv2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "- **PR not opened, nothing pushed** — user authorizes that (see [[no-pr-attribution]]).",
   "new_string": "- **PR #53 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/53), branch pushed on user request."
 }
@@ -3379,7 +3379,7 @@ id: toolu_01FTTNh5bcyDmU4d1iPmPpv2
 tool_result
 id: toolu_01FTTNh5bcyDmU4d1iPmPpv2
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3389,7 +3389,7 @@ id: toolu_016BNHZCkdHiTyAkSk2x8nZR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [PWA branch](pwa-branch.md) — **✅ `feature/pwa` BUILT, full gate green** (4 commits, tip `d205ac8`, 2026-07-05); PR/push awaits user; Vercel-preview manual pass pending",
   "new_string": "- [PWA branch](pwa-branch.md) — **✅ PR #53 OPEN** (`feature/pwa`, 4 commits, full gate green, 2026-07-05); Vercel-preview manual pass pending"
 }
@@ -3400,7 +3400,7 @@ id: toolu_016BNHZCkdHiTyAkSk2x8nZR
 tool_result
 id: toolu_016BNHZCkdHiTyAkSk2x8nZR
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3622,7 +3622,7 @@ id: toolu_01VxXN9rum1tRj1yb4FJ1uhD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/public/sw.js",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/public/sw.js",
   "old_string": "  } catch {\n    // Installed while offline: the first online navigation fills the caches.\n  }\n  await precacheExtras();\n}",
   "new_string": "  } catch {\n    // Installed while offline: the first online navigation fills the caches.\n  }\n  try {\n    await precacheExtras();\n  } catch {\n    // Best-effort like every other cache write: a storage failure here must\n    // not reject waitUntil and abort the whole installation.\n  }\n}"
 }
@@ -3633,7 +3633,7 @@ id: toolu_01VxXN9rum1tRj1yb4FJ1uhD
 tool_result
 id: toolu_01VxXN9rum1tRj1yb4FJ1uhD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/public/sw.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/public/sw.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3643,7 +3643,7 @@ id: toolu_01YKU3hAR8t1v8Nqa21CAQg6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
   "old_string": "        <p className=\"menu-note\" data-testid=\"welcome-offline-note\">\n          Offline — local play only.\n        </p>",
   "new_string": "        <p className=\"menu-note\" data-testid=\"welcome-offline-note\" aria-live=\"polite\">\n          Offline — local play only.\n        </p>"
 }
@@ -3654,7 +3654,7 @@ id: toolu_01YKU3hAR8t1v8Nqa21CAQg6
 tool_result
 id: toolu_01YKU3hAR8t1v8Nqa21CAQg6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3781,7 +3781,7 @@ id: toolu_01QWQ12WNWuYsQS4DmX9JZiv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "- **PR #53 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/53), branch pushed on user request.",
   "new_string": "- **PR #53 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/53). CodeRabbit round 1: 2 fixes applied + pushed (`0e8f1ed` — precacheExtras try/catch so a storage failure can't abort SW install; aria-live on the offline note), icon-route dedup nitpick skipped (routes differ, helper can't live in a route dir). PR `verify` green; e2e skips on PRs (runs on merge to main). **Vercel preview NOT built for this PR (\"Canceled by Ignored Build Step\") — the manual PWA pass must happen on prod after merge unless the Ignored Build Step is changed.**"
 }
@@ -3792,7 +3792,7 @@ id: toolu_01QWQ12WNWuYsQS4DmX9JZiv
 tool_result
 id: toolu_01QWQ12WNWuYsQS4DmX9JZiv
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3884,7 +3884,7 @@ tool_use Bash
 id: toolu_01Cw7f5t2hhrLWBUrdf3baEr
 ```json
 {
-  "command": "grep -n \"never reorders sends\" -A 40 /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head -60",
+  "command": "grep -n \"never reorders sends\" -A 40 /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head -60",
   "description": "Read the flaky test's implementation"
 }
 ```
@@ -3944,7 +3944,7 @@ id: toolu_01Q3yR5rLMEmX1qo1jveGgV4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "old_string": "    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    await new Promise((resolve) => setTimeout(resolve, 300));\n    const chats = instances[0].sent\n      .slice(before)\n      .map((s) => JSON.parse(s) as { t: string; text?: string })\n      .filter((m) => m.t === \"chat\")\n      .map((m) => m.text);\n    expect(chats).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));",
   "new_string": "    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    const chatsSoFar = () =>\n      instances[0].sent\n        .slice(before)\n        .map((s) => JSON.parse(s) as { t: string; text?: string })\n        .filter((m) => m.t === \"chat\")\n        .map((m) => m.text);\n    // Poll for completeness rather than sleeping a fixed 300 ms — a loaded CI\n    // runner can starve the delivery timers past any fixed deadline, and this\n    // test is about ORDER, not delivery speed.\n    const deadline = Date.now() + 5000;\n    while (chatsSoFar().length < 20 && Date.now() < deadline) {\n      await new Promise((resolve) => setTimeout(resolve, 25));\n    }\n    expect(chatsSoFar()).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));"
 }
@@ -3983,7 +3983,7 @@ tool_use Read
 id: toolu_013cVVQ9x1iPY2Xx4ZGwMKJD
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "offset": 295,
   "limit": 20
 }
@@ -4023,7 +4023,7 @@ id: toolu_011t9KevBBTGs9iBQQjXsiY3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "old_string": "    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    await new Promise((resolve) => setTimeout(resolve, 300));\n    const chats = instances[0].sent\n      .slice(before)\n      .map((s) => JSON.parse(s) as { t: string; text?: string })\n      .filter((m) => m.t === \"chat\")\n      .map((m) => m.text);\n    expect(chats).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));",
   "new_string": "    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    const chatsSoFar = () =>\n      instances[0].sent\n        .slice(before)\n        .map((s) => JSON.parse(s) as { t: string; text?: string })\n        .filter((m) => m.t === \"chat\")\n        .map((m) => m.text);\n    // Poll for completeness rather than sleeping a fixed 300 ms — a loaded CI\n    // runner can starve the delivery timers past any fixed deadline, and this\n    // test is about ORDER, not delivery speed.\n    const deadline = Date.now() + 5000;\n    while (chatsSoFar().length < 20 && Date.now() < deadline) {\n      await new Promise((resolve) => setTimeout(resolve, 25));\n    }\n    expect(chatsSoFar()).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));"
 }
@@ -4034,7 +4034,7 @@ id: toolu_011t9KevBBTGs9iBQQjXsiY3
 tool_result
 id: toolu_011t9KevBBTGs9iBQQjXsiY3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4101,7 +4101,7 @@ id: toolu_01FX2SbgmDJruDpN95wusWj5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "- Gotchas discovered:",
   "new_string": "- **CI flake found + fixed**: `NetworkSession.test.ts` \"jittered FIFO\" test (from #52) failed verify on a loaded runner — fixed-300ms sleep truncates; deflake commit `176d647` (poll-for-completeness) sits LOCAL on feature/pwa, unpushed; rerun made the PR green meanwhile.\n- Gotchas discovered:"
 }
@@ -4112,7 +4112,7 @@ id: toolu_01FX2SbgmDJruDpN95wusWj5
 tool_result
 id: toolu_01FX2SbgmDJruDpN95wusWj5
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4254,7 +4254,7 @@ id: toolu_019McjKZiFmBmSzaogkLst7Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "- **CI flake found + fixed**: `NetworkSession.test.ts` \"jittered FIFO\" test (from #52) failed verify on a loaded runner — fixed-300ms sleep truncates; deflake commit `176d647` (poll-for-completeness) sits LOCAL on feature/pwa, unpushed; rerun made the PR green meanwhile.",
   "new_string": "- **CI flake found + fixed**: `NetworkSession.test.ts` \"jittered FIFO\" test (from #52) failed verify on a loaded runner — fixed-300ms sleep truncates under timer starvation; deflake `176d647` (poll-for-completeness) PUSHED, verify green on it. PR is 6 commits, all checks green, ready to merge."
 }
@@ -4265,7 +4265,7 @@ id: toolu_019McjKZiFmBmSzaogkLst7Q
 tool_result
 id: toolu_019McjKZiFmBmSzaogkLst7Q
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4437,7 +4437,7 @@ id: toolu_01AyACy5YDMUjLfaEQX3p2M6
   "description": "Explore combat + net hit path",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "Repo: /Users/hutusi/workspace/ai/david/monecraft — a voxel game with online co-op: browser client runs a replica engine, a Bun game server (server/) runs the authoritative engine at fixed 20 Hz ticks. I'm planning SERVER-SIDE LAG COMPENSATION for combat (rewinding entity poses when judging a high-ping player's melee/bow hits). Search breadth: very thorough. Answer each item with file:line evidence and short excerpts.\n\n1. **Melee hit flow today**: find the attack command path — what exactly does the client send when the player left-clicks a mob (a command with target mob id? a look direction/raycast done client-side? or does the server raycast)? Trace: input controller → command dispatch → `routeDispatch` interception in online play (lib/net/NetworkSession.ts) → server room command handling → the combat system (lib/game/engine/systems/combat.ts or similar) → mob damage + `lastHitByPlayer`. Where is the hit target resolved, client or server, and against what positions?\n\n2. **Bow/arrow flow**: where arrows spawn from a `fireBow`-like command, how the server simulates them (lib/game/engine/projectiles.ts, systems/projectileAI.ts), and whether arrow-vs-mob/player hits use current positions each tick.\n\n3. **What the server knows about time/history**: does the server room keep any per-tick history of mob/player positions […]
+  "prompt": "Repo: /home/<USER>/workspace/ai/david/monecraft — a voxel game with online co-op: browser client runs a replica engine, a Bun game server (server/) runs the authoritative engine at fixed 20 Hz ticks. I'm planning SERVER-SIDE LAG COMPENSATION for combat (rewinding entity poses when judging a high-ping player's melee/bow hits). Search breadth: very thorough. Answer each item with file:line evidence and short excerpts.\n\n1. **Melee hit flow today**: find the attack command path — what exactly does the client send when the player left-clicks a mob (a command with target mob id? a look direction/raycast done client-side? or does the server raycast)? Trace: input controller → command dispatch → `routeDispatch` interception in online play (lib/net/NetworkSession.ts) → server room command handling → the combat system (lib/game/engine/systems/combat.ts or similar) → mob damage + `lastHitByPlayer`. Where is the hit target resolved, client or server, and against what positions?\n\n2. **Bow/arrow flow**: where arrows spawn from a `fireBow`-like command, how the server simulates them (lib/game/engine/projectiles.ts, systems/projectileAI.ts), and whether arrow-vs-mob/player hits use current positions each tick.\n\n3. **What the server knows about time/history**: does the server room keep any per-tick history of mob/player positions […]
 
 > TOOL
 
@@ -4470,7 +4470,7 @@ id: toolu_01NiFQgzcWNeYtDayp5GxhH7
   "description": "Design lag compensation plan",
   "subagent_type": "Plan",
   "run_in_background": false,
-  "prompt": "Design a detailed implementation plan for SERVER-SIDE COMBAT LAG COMPENSATION in /Users/hutusi/workspace/ai/david/monecraft (voxel game, Bun game server at 20 Hz authoritative engine, browser replica client; strict TS; tests via bun test + Playwright e2e).\n\n## Verified current state (from exploration — trust these, cite them in the plan)\n\n- Melee: client sends bare `{type:\"attack\"}` cmd + claimed eye pose (`lib/net/NetworkSession.ts:677-690`); server room re-applies pose via `applyRemotePose` then `engine.dispatch(cmd, playerId)` (`server/room.ts:327-346`); `findAimedMobIndex` (`lib/game/engine/systems/combat.ts:44-65`) raycasts from eye along look dir against CURRENT `mob.position` within `ATTACK_REACH` + `ATTACK_AIM_DOT` cone; `tryAttackMob` (75-101) applies damage + `lastHitByPlayer`.\n- Client renders remote mobs/players 125–450 ms in the past (adaptive interpolation). The render-time on the server timeline is computed each frame at `NetworkSession.ts:805`: `clock.estimatedServerTimeMs(nowMs) - delayCtl.effectiveDelayMs(nowMs)` (`lib/net/clock.ts` min-RTT sync; `lib/net/interpolation.ts` DelayController). NOT attached to outbound cmds today.\n- Tick: `Room.tick` 20 Hz, `tickCount` counter (`room.ts:396-463`); tick msg carries tick number `n` (`lib/net/protocol.ts:168-187`); client converts n→ms via `n * 50` (`NetworkSession.ts:540`). No server-side pose history exists; nearest precedents: `mobShadow` map (deadbanding, current-only) and `commandLog` ring buffer (4096, replay diagnostics) in room.ts.\n- Mobs have stable numeric wire ids (`mob.id` / `MobPose.id`); players string ids.\n- Combat is PvE […]
+  "prompt": "Design a detailed implementation plan for SERVER-SIDE COMBAT LAG COMPENSATION in /home/<USER>/workspace/ai/david/monecraft (voxel game, Bun game server at 20 Hz authoritative engine, browser replica client; strict TS; tests via bun test + Playwright e2e).\n\n## Verified current state (from exploration — trust these, cite them in the plan)\n\n- Melee: client sends bare `{type:\"attack\"}` cmd + claimed eye pose (`lib/net/NetworkSession.ts:677-690`); server room re-applies pose via `applyRemotePose` then `engine.dispatch(cmd, playerId)` (`server/room.ts:327-346`); `findAimedMobIndex` (`lib/game/engine/systems/combat.ts:44-65`) raycasts from eye along look dir against CURRENT `mob.position` within `ATTACK_REACH` + `ATTACK_AIM_DOT` cone; `tryAttackMob` (75-101) applies damage + `lastHitByPlayer`.\n- Client renders remote mobs/players 125–450 ms in the past (adaptive interpolation). The render-time on the server timeline is computed each frame at `NetworkSession.ts:805`: `clock.estimatedServerTimeMs(nowMs) - delayCtl.effectiveDelayMs(nowMs)` (`lib/net/clock.ts` min-RTT sync; `lib/net/interpolation.ts` DelayController). NOT attached to outbound cmds today.\n- Tick: `Room.tick` 20 Hz, `tickCount` counter (`room.ts:396-463`); tick msg carries tick number `n` (`lib/net/protocol.ts:168-187`); client converts n→ms via `n * 50` (`NetworkSession.ts:540`). No server-side pose history exists; nearest precedents: `mobShadow` map (deadbanding, current-only) and `commandLog` ring buffer (4096, replay diagnostics) in room.ts.\n- Mobs have stable numeric wire ids (`mob.id` / `MobPose.id`); players string ids.\n- Combat is PvE […]
 
 > TOOL
 
@@ -4493,7 +4493,7 @@ tool_use Read
 id: toolu_01HSkg8twXrP1Sb61b7QNgma
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "offset": 670,
   "limit": 30
 }
@@ -4542,7 +4542,7 @@ tool_use Read
 id: toolu_01JAiXKSJboym8NTjVXGe7wH
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "offset": 320,
   "limit": 30
 }
@@ -4591,7 +4591,7 @@ tool_use Read
 id: toolu_01F28DVDTZh9nA4E2VFPL1FY
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
   "offset": 40,
   "limit": 65
 }
@@ -4645,7 +4645,7 @@ tool_use Write
 id: toolu_01YBkbPw77y3rQiaiaWDNqqY
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md",
+  "file_path": "/home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md",
   "content": "# Server-side melee lag compensation (`feature/lag-compensation`)\n\n## Context\n\nThe #52 latency work made building/mining feel instant at high ping, and its CHANGELOG named combat \"the next frontier\". The remaining pain: the client renders remote mobs 125–450 ms in the past (adaptive interpolation), so a high-ping player clicks a mob dead under their crosshair and the server — raycasting against *current* positions — misses. Fix: the client stamps attack commands with the server-timeline instant it was rendering; the server rewinds **melee target selection** to that instant (bounded), while damage/knockback/kill-credit still apply to the live mob. PvE only (no PvP exists); arrows stay as-is (travel time means players lead — documented future work). Chosen by the user 2026-07-05 over mobile/touch, IndexedDB saves, and a content batch.\n\nUnstamped commands, single-player, and every other command are byte-for-byte current behavior. `docs/protocol.md:124-127` explicitly anticipated this (\"the envelope already carries what stricter server-side rewind validation would need\").\n\n## Verified ground truth\n\n- Client sends bare `{type:\"attack\"}` + claimed foot pose (`lib/net/NetworkSession.ts:677-690`); room re-applies pose then `engine.dispatch(cmd, playerId)` (`server/room.ts:327-346`); `findAimedMobIndex` raycasts eye→look-dir against current `mob.position` within `ATTACK_REACH`/`ATTACK_AIM_DOT` (`lib/game/engine/systems/combat.ts:44-65`); `tryAttackMob` (75-101) damages + stamps `lastHitByPlayer`, knockback from live position.\n- The render time on the server […]
 
 > TOOL
@@ -4653,7 +4653,7 @@ id: toolu_01YBkbPw77y3rQiaiaWDNqqY
 tool_result
 id: toolu_01YBkbPw77y3rQiaiaWDNqqY
 ```
-The file /Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4685,7 +4685,7 @@ id: toolu_01LHBaA56txig8gBvpPWXcnz
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md
+Your plan has been saved to: /home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -4763,7 +4763,7 @@ id: toolu_01EzwMXbw17x2sAdFKynTDeT
 tool_result
 id: toolu_01EzwMXbw17x2sAdFKynTDeT
 ```
-e2e	Run bun run test:e2e	2026-07-05T11:08:19.4747457Z ········××F::error file=e2e/multiplayer.e2e.ts,title=[chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link,line=186,col=5::  1) [chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link %0A    Error: the lagged break went through the prediction ledger%0A%0A    expect(received).toBe(expected) // Object.is equality%0A%0A    Expected: true%0A    Received: false%0A%0A      184 |     await friend.evaluate(() => (window as unknown as { __sawPrediction: boolean }).__sawPrediction),%0A      185 |     "the lagged break went through the prediction ledger"%0A    > 186 |   ).toBe(true);%0A          |     ^%0A      187 |   await expect.poll(() => host.evaluate(() => window.__monecraft!.engine.state.blockChanges.changes().length), { timeout: 30000 }).toBeGreaterThan(friendEdits);%0A      188 |   await friend.evaluate(() => window.__monecraft!.net!.setSimulatedLatency(0));%0A      189 |%0A        at /home/runner/work/monecraft/monecraft/e2e/multiplayer.e2e.ts:186:5
+e2e	Run bun run test:e2e	2026-07-05T11:08:19.4747457Z ········××F::error file=e2e/multiplayer.e2e.ts,title=[chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link,line=186,col=5::  1) [chromium] › e2e/multiplayer.e2e.ts:51:5 › two accounts share an online world via an invite link %0A    Error: the lagged break went through the prediction ledger%0A%0A    expect(received).toBe(expected) // Object.is equality%0A%0A    Expected: true%0A    Received: false%0A%0A      184 |     await friend.evaluate(() => (window as unknown as { __sawPrediction: boolean }).__sawPrediction),%0A      185 |     "the lagged break went through the prediction ledger"%0A    > 186 |   ).toBe(true);%0A          |     ^%0A      187 |   await expect.poll(() => host.evaluate(() => window.__monecraft!.engine.state.blockChanges.changes().length), { timeout: 30000 }).toBeGreaterThan(friendEdits);%0A      188 |   await friend.evaluate(() => window.__monecraft!.net!.setSimulatedLatency(0));%0A      189 |%0A        at /home/<USER>/work/monecraft/monecraft/e2e/multiplayer.e2e.ts:186:5
 e2e	Run bun run test:e2e	    Error: the lagged break went through the prediction ledger
 e2e	Run bun run test:e2e	    expect(received).toBe(expected) // Object.is equality
 e2e	Run bun run test:e2e	    Error: the lagged break went through the prediction ledger
@@ -5022,7 +5022,7 @@ tool_use Read
 id: toolu_01NRW5sRASQgRbu1kfKbxbW2
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts",
   "offset": 1,
   "limit": 80
 }
@@ -5064,7 +5064,7 @@ tool_use Read
 id: toolu_01SYEXdG2dxcwq6zShMP3Cds
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts",
   "offset": 290,
   "limit": 40
 }
@@ -5107,7 +5107,7 @@ id: toolu_01JaZ3ktC9iNUH9isMn1Zrz3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts",
   "old_string": "export const PROTOCOL_VERSION = 2;",
   "new_string": "export const PROTOCOL_VERSION = 3;"
 }
@@ -5118,7 +5118,7 @@ id: toolu_01JaZ3ktC9iNUH9isMn1Zrz3
 tool_result
 id: toolu_01JaZ3ktC9iNUH9isMn1Zrz3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5128,7 +5128,7 @@ id: toolu_01Y6CpAjscsCfGqQdZNsipaK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts",
   "old_string": "/**\n * A discrete command. Carries the client's claimed eye pose at click time:\n * the server applies it (sanity-checked like any pose) before dispatch, so\n * aimed raycasts (attack/placeBlock) resolve against the server's world from\n * where the client actually looked.\n */\nexport type CmdMessage = { t: \"cmd\"; seq: number; cmd: Command; pose: { x: number; y: number; z: number; yaw: number; pitch: number } };",
   "new_string": "/**\n * A discrete command. Carries the client's claimed eye pose at click time:\n * the server applies it (sanity-checked like any pose) before dispatch, so\n * aimed raycasts (attack/placeBlock) resolve against the server's world from\n * where the client actually looked. `view` (v3) is the client's render-time\n * view of the world — ms on the server tick timeline (`tick × 50`), i.e. the\n * instant the interpolated mobs on its screen were sampled at — letting the\n * server rewind melee target selection to what the player saw. Absent while\n * the clock isn't synced; the server clamps it, never trusts it.\n */\nexport type CmdMessage = { t: \"cmd\"; seq: number; cmd: Command; pose: { x: number; y: number; […]
 
@@ -5137,7 +5137,7 @@ id: toolu_01Y6CpAjscsCfGqQdZNsipaK
 tool_result
 id: toolu_01Y6CpAjscsCfGqQdZNsipaK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5147,7 +5147,7 @@ id: toolu_01APbkhzGmeB22vixKDQS2tU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts",
   "old_string": "    case \"cmd\": {\n      if (!isNum(m.seq)) return null;\n      const cmd = readCommand(m.cmd);\n      const pose = readEyePose(m.pose);\n      if (!cmd || !pose) return null;\n      return { t: \"cmd\", seq: m.seq, cmd, pose };\n    }",
   "new_string": "    case \"cmd\": {\n      if (!isNum(m.seq)) return null;\n      if (m.view !== undefined && !isNum(m.view)) return null;\n      const cmd = readCommand(m.cmd);\n      const pose = readEyePose(m.pose);\n      if (!cmd || !pose) return null;\n      return { t: \"cmd\", seq: m.seq, cmd, pose, ...(m.view !== undefined ? { view: m.view } : {}) };\n    }"
 }
@@ -5158,7 +5158,7 @@ id: toolu_01APbkhzGmeB22vixKDQS2tU
 tool_result
 id: toolu_01APbkhzGmeB22vixKDQS2tU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5167,7 +5167,7 @@ tool_use Bash
 id: toolu_01VSLbfmjdzqbaHRuTRNsx1u
 ```json
 {
-  "command": "grep -n \"function isNum\" -A2 /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts; sed -n '1,50p' /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "command": "grep -n \"function isNum\" -A2 /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts; sed -n '1,50p' /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "description": "Check isNum and existing protocol test style"
 }
 ```
@@ -5211,7 +5211,7 @@ tool_use Read
 id: toolu_01CSoYPLA3QGGTckgSPxJkhW
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts",
   "offset": 210,
   "limit": 12
 }
@@ -5243,7 +5243,7 @@ id: toolu_01LLozB7NehuTpWYhknqqbAu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "old_string": "    expect(readClientMessage({ t: \"cmd\", seq: 2, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } })).toMatchObject({\n      t: \"cmd\",\n      cmd: { type: \"attack\" }\n    });",
   "new_string": "    expect(readClientMessage({ t: \"cmd\", seq: 2, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } })).toMatchObject({\n      t: \"cmd\",\n      cmd: { type: \"attack\" }\n    });\n    // v3 view stamp: optional, carried through when numeric, absent when omitted.\n    expect(readClientMessage({ t: \"cmd\", seq: 2, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: 12345 })).toMatchObject({\n      t: \"cmd\",\n      view: 12345\n    });\n    const unstamped = readClientMessage({ t: \"cmd\", seq: 2, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } });\n    expect(unstamped && unstamped.t === \"cmd\" ? \"view\" in unstamped : null).toBe(false);\n    // The reader doesn't police which command types carry it — that's the room's call.\n    expect(readClientMessage({ t: \"cmd\", seq: 3, cmd: { type: \"pause\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: 50 })).toMatchObject({\n […]
 
@@ -5262,7 +5262,7 @@ id: toolu_01Q4QvHZjxidy2oR3Duf7iJZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "old_string": "      { t: \"cmd\", seq: 1, cmd: { type: \"hackTheGibson\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: \"here\", y: 0, z: 0, yaw: 0, pitch: 0 } },",
   "new_string": "      { t: \"cmd\", seq: 1, cmd: { type: \"hackTheGibson\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: \"here\", y: 0, z: 0, yaw: 0, pitch: 0 } },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: \"abc\" },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: Number.NaN },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: Number.POSITIVE_INFINITY },"
 }
@@ -5282,7 +5282,7 @@ tool_use Read
 id: toolu_01NMBbvEVLqktb8SUYeVPbVA
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "offset": 1,
   "limit": 55
 }
@@ -5323,7 +5323,7 @@ tool_use Bash
 id: toolu_01K2QY9jE5eaT96dGn4MPow4
 ```json
 {
-  "command": "grep -n '\"pause\"\\|readCommand' /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.ts | head -8",
+  "command": "grep -n '\"pause\"\\|readCommand' /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.ts | head -8",
   "description": "Check pause is in the command allow-list"
 }
 ```
@@ -5348,7 +5348,7 @@ id: toolu_01M4XU9x3xDpvG9N7yTRSFpa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "old_string": "    expect(readClientMessage({ t: \"cmd\", seq: 2, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } })).toMatchObject({\n      t: \"cmd\",\n      cmd: { type: \"attack\" }\n    });\n    expect(readClientMessage({ t: \"chat\", text: \"hi\" })).toMatchObject({ t: \"chat\", text: \"hi\" });",
   "new_string": "    expect(readClientMessage({ t: \"cmd\", seq: 2, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } })).toMatchObject({\n      t: \"cmd\",\n      cmd: { type: \"attack\" }\n    });\n    // v3 view stamp: optional; carried through when numeric, absent when omitted.\n    expect(readClientMessage({ t: \"cmd\", seq: 2, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: 12345 })).toMatchObject({\n      t: \"cmd\",\n      view: 12345\n    });\n    const unstamped = readClientMessage({ t: \"cmd\", seq: 2, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } });\n    expect(unstamped && unstamped.t === \"cmd\" ? \"view\" in unstamped : null).toBe(false);\n    // The reader doesn't police which command types carry it — that's the room's call.\n    expect(readClientMessage({ t: \"cmd\", seq: 3, cmd: { type: \"selectSlot\", index: 3 }, pose: { x: […]
 
@@ -5357,7 +5357,7 @@ id: toolu_01M4XU9x3xDpvG9N7yTRSFpa
 tool_result
 id: toolu_01M4XU9x3xDpvG9N7yTRSFpa
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5367,7 +5367,7 @@ id: toolu_019RJvbtuMsp9rjSWdw1fmRr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts",
   "old_string": "      { t: \"cmd\", seq: 1, cmd: { type: \"hackTheGibson\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: \"here\", y: 0, z: 0, yaw: 0, pitch: 0 } },",
   "new_string": "      { t: \"cmd\", seq: 1, cmd: { type: \"hackTheGibson\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 } },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: \"here\", y: 0, z: 0, yaw: 0, pitch: 0 } },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: \"abc\" },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: Number.NaN },\n      { t: \"cmd\", seq: 1, cmd: { type: \"attack\" }, pose: { x: 0, y: 0, z: 0, yaw: 0, pitch: 0 }, view: Number.POSITIVE_INFINITY },"
 }
@@ -5378,7 +5378,7 @@ id: toolu_019RJvbtuMsp9rjSWdw1fmRr
 tool_result
 id: toolu_019RJvbtuMsp9rjSWdw1fmRr
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/protocol.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/protocol.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5409,7 +5409,7 @@ tool_use Bash
 id: toolu_019yqmdMdEZM8boMbNcAbyhF
 ```json
 {
-  "command": "grep -rn \"PROTOCOL_VERSION\\|pv.*2\\b\" --include=\"*.ts\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/tickets.test.ts /Users/hutusi/workspace/ai/david/monecraft/server/*.test.ts 2>/dev/null | grep -v \"PROTOCOL_VERSION,\" | head; grep -rn \"protocol.*[:=] *2\\|version.*2\" /Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md | head -5",
+  "command": "grep -rn \"PROTOCOL_VERSION\\|pv.*2\\b\" --include=\"*.ts\" /home/<USER>/workspace/ai/david/monecraft/lib/net/tickets.test.ts /home/<USER>/workspace/ai/david/monecraft/server/*.test.ts 2>/dev/null | grep -v \"PROTOCOL_VERSION,\" | head; grep -rn \"protocol.*[:=] *2\\|version.*2\" /home/<USER>/workspace/ai/david/monecraft/docs/protocol.md | head -5",
   "description": "Check for hardcoded protocol version references"
 }
 ```
@@ -5419,10 +5419,10 @@ id: toolu_019yqmdMdEZM8boMbNcAbyhF
 tool_result
 id: toolu_019yqmdMdEZM8boMbNcAbyhF
 ```
-/Users/hutusi/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts:3:import { PROTOCOL_VERSION } from "@/lib/net/protocol";
-/Users/hutusi/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts:48:    const ticket = await signTicket({ sub: "smoke-1", wid: "smoke-world", name: "Smoke", skinId: null, role: "owner", pv: PROTOCOL_VERSION }, SECRET);
-/Users/hutusi/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts:63:      ws.onopen = () => ws.send(JSON.stringify({ t: "hello", ticket, protocol: PROTOCOL_VERSION }));
-/Users/hutusi/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts:75:      bad.onopen = () => bad.send(JSON.stringify({ t: "hello", ticket: "garbage", protocol: PROTOCOL_VERSION }));
+/home/<USER>/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts:3:import { PROTOCOL_VERSION } from "@/lib/net/protocol";
+/home/<USER>/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts:48:    const ticket = await signTicket({ sub: "smoke-1", wid: "smoke-world", name: "Smoke", skinId: null, role: "owner", pv: PROTOCOL_VERSION }, SECRET);
+/home/<USER>/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts:63:      ws.onopen = () => ws.send(JSON.stringify({ t: "hello", ticket, protocol: PROTOCOL_VERSION }));
+/home/<USER>/workspace/ai/david/monecraft/server/server.e2e-smoke.test.ts:75:      bad.onopen = () => bad.send(JSON.stringify({ t: "hello", ticket: "garbage", protocol: PROTOCOL_VERSION }));
 ```
 
 > AGENT
@@ -5502,7 +5502,7 @@ tool_use Read
 id: toolu_01TcR5WBDbM6JrCtULCNreio
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 700,
   "limit": 40
 }
@@ -5555,7 +5555,7 @@ tool_use Read
 id: toolu_01FCzBhT6UVfzywGRg2DdJ3x
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 918,
   "limit": 35
 }
@@ -5609,7 +5609,7 @@ tool_use Read
 id: toolu_011HfA85YxVtmhfBL9ubCpmb
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
   "offset": 1,
   "limit": 40
 }
@@ -5669,7 +5669,7 @@ id: toolu_01XXzUgE3kbLWC1jMEDZyrBE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
   "old_string": "import type { InventorySlot, MobKind } from \"@/lib/game/types\";\nimport type { EmitGameEvent, GameState, PlayerState } from \"../state\";",
   "new_string": "import type { InventorySlot, MobKind } from \"@/lib/game/types\";\nimport type { EmitGameEvent, GameState, MobState, PlayerState } from \"../state\";"
 }
@@ -5680,7 +5680,7 @@ id: toolu_01XXzUgE3kbLWC1jMEDZyrBE
 tool_result
 id: toolu_01XXzUgE3kbLWC1jMEDZyrBE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5690,7 +5690,7 @@ id: toolu_01X3YTYmy7J6PdYRjtUjFDsn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
   "old_string": "/**\n * Index of the mob nearest the crosshair within melee reach and aim cone, or\n * -1. Shared by attacking and by feeding animals (Phase 5) so both use the same\n * \"what am I pointing at\" rule.\n */\nexport function findAimedMobIndex(state: GameState, player: PlayerState, reach = ATTACK_REACH): number {\n  const { position } = player;\n  scratchOrigin.set(position.x, position.y + EYE_HEIGHT, position.z);\n  lookDirection(player.yaw, player.pitch, scratchForward);\n\n  let bestIndex = -1;\n  let bestDist = Number.POSITIVE_INFINITY;\n\n  for (let i = 0; i < state.mobs.length; i += 1) {\n    const mob = state.mobs[i];\n    scratchToMob.copy(mob.position).sub(scratchOrigin);",
   "new_string": "/**\n * Where a mob counts as standing for melee target selection. The default is\n * its live position; a server room substitutes a historical position (lag\n * compensation — the mob where the ATTACKER saw it). Selection only: damage,\n * knockback, and kill credit always act on the live mob.\n */\nexport type MobPositionOf = (mob: MobState) => { x: number; y: number; z: number };\n\nconst livePosition: MobPositionOf = (mob) => mob.position;\n\n/**\n * Index of the mob nearest the crosshair within melee reach and aim cone, or\n * -1. Shared by attacking and by feeding animals (Phase 5) so […]
 
@@ -5699,7 +5699,7 @@ id: toolu_01X3YTYmy7J6PdYRjtUjFDsn
 tool_result
 id: toolu_01X3YTYmy7J6PdYRjtUjFDsn
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5709,7 +5709,7 @@ id: toolu_01VnP9S94N7P2P8H6Pa1dTYj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts",
   "old_string": "export function tryAttackMob(\n  state: GameState,\n  player: PlayerState,\n  damage: number,\n  onMobKilled: (index: number, lootingLevel?: number) => void,\n  reach = ATTACK_REACH,\n  knockback = 0,\n  lootingLevel = 0\n): MobKind | null {\n  const { position } = player;\n  const bestIndex = findAimedMobIndex(state, player, reach);",
   "new_string": "export function tryAttackMob(\n  state: GameState,\n  player: PlayerState,\n  damage: number,\n  onMobKilled: (index: number, lootingLevel?: number) => void,\n  reach = ATTACK_REACH,\n  knockback = 0,\n  lootingLevel = 0,\n  posOf: MobPositionOf = livePosition\n): MobKind | null {\n  const { position } = player;\n  const bestIndex = findAimedMobIndex(state, player, reach, posOf);"
 }
@@ -5720,7 +5720,7 @@ id: toolu_01VnP9S94N7P2P8H6Pa1dTYj
 tool_result
 id: toolu_01VnP9S94N7P2P8H6Pa1dTYj
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5730,7 +5730,7 @@ id: toolu_017b1fvo9UfMresz1nJfAcQ6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  /**\n   * Applies a discrete player intent. `playerId` says whose intent it is —\n   * the single-player shell omits it (primary); a server passes the sender's\n   * id, so every mutation in here acts on the commanding player.\n   */\n  dispatch(command: Command, playerId?: PlayerId): void {\n    if (this.routeDispatch && playerId === undefined) {\n      this.routeDispatch(command);\n      return;\n    }\n    const state = this.state;\n    const player = mustGetPlayer(state, playerId ?? state.primaryPlayerId);\n    // Scope emitted events (craft/place/eat/enchant…) to the commanding player so\n    // their progression is attributed to them, not the primary.\n    const priorActor = this.actingPlayer;\n    this.actingPlayer = player.id;\n    try {\n      this.dispatchCommand(state, player, command);\n    } finally {\n      this.actingPlayer = priorActor;\n    }\n  }\n\n  private dispatchCommand(state: GameState, player: PlayerState, command: Command): void {",
   "new_string": "  /**\n   * Applies a discrete player intent. `playerId` says whose intent it is —\n   * the single-player shell omits it (primary); a server passes the sender's\n   * id, so every mutation in here acts on the commanding player.\n   *\n   * `opts` is server-only lag compensation: the room is the sole producer\n   * (a local engine never rewinds), and opts do NOT travel through\n   * `routeDispatch` — a replica's rerouted command reaches […]
 
@@ -5739,7 +5739,7 @@ id: toolu_017b1fvo9UfMresz1nJfAcQ6
 tool_result
 id: toolu_017b1fvo9UfMresz1nJfAcQ6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5749,7 +5749,7 @@ id: toolu_01UCmEYCXKpoEsNS8vL5iwtV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "        const heldWeapon = player.inventory[player.selectedSlot];\n        const hitKind = tryAttackMob(\n          state,\n          player,\n          weaponDamage(player) + strengthBonus(player) + sharpnessBonus(heldWeapon),\n          this.removeMobAt,\n          weaponReach(player),\n          knockbackBonus(heldWeapon),\n          lootingLevel(heldWeapon)\n        );",
   "new_string": "        const heldWeapon = player.inventory[player.selectedSlot];\n        const hitKind = tryAttackMob(\n          state,\n          player,\n          weaponDamage(player) + strengthBonus(player) + sharpnessBonus(heldWeapon),\n          this.removeMobAt,\n          weaponReach(player),\n          knockbackBonus(heldWeapon),\n          lootingLevel(heldWeapon),\n          opts?.mobPosOf\n        );"
 }
@@ -5760,7 +5760,7 @@ id: toolu_01UCmEYCXKpoEsNS8vL5iwtV
 tool_result
 id: toolu_01UCmEYCXKpoEsNS8vL5iwtV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5769,7 +5769,7 @@ tool_use Bash
 id: toolu_01WL5HziJJUbDAqRcWsTNkYm
 ```json
 {
-  "command": "grep -n \"from \\\"./systems/combat\\\"\\|from \\\"@/lib/game/engine/systems/combat\\\"\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts; grep -n \"^export type\\|^export class GameEngine\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -8",
+  "command": "grep -n \"from \\\"./systems/combat\\\"\\|from \\\"@/lib/game/engine/systems/combat\\\"\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts; grep -n \"^export type\\|^export class GameEngine\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -8",
   "description": "Find combat import and type export locations in GameEngine"
 }
 ```
@@ -5791,7 +5791,7 @@ id: toolu_01Gmwzh4VNz6AGuCWFc66dyu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import { isBow, tryAttackMob, tryFireBow, weaponDamage, weaponReach } from \"./systems/combat\";",
   "new_string": "import { isBow, tryAttackMob, tryFireBow, weaponDamage, weaponReach, type MobPositionOf } from \"./systems/combat\";"
 }
@@ -5802,7 +5802,7 @@ id: toolu_01Gmwzh4VNz6AGuCWFc66dyu
 tool_result
 id: toolu_01Gmwzh4VNz6AGuCWFc66dyu
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5811,7 +5811,7 @@ tool_use Read
 id: toolu_015T4jJtCB4tDvb9b95sZ7xz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 200,
   "limit": 16
 }
@@ -5847,7 +5847,7 @@ id: toolu_01XSHQr53ifkeJNKwGpe8gU2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "/** Upper bound on the gap `applyRemotePose` scales its speed clamps by, so a withheld-pose gap can't inflate them. */\nconst MAX_REMOTE_POSE_ELAPSED = 0.5;",
   "new_string": "/** Upper bound on the gap `applyRemotePose` scales its speed clamps by, so a withheld-pose gap can't inflate them. */\nconst MAX_REMOTE_POSE_ELAPSED = 0.5;\n\n/**\n * Per-dispatch server-side context. `mobPosOf` rewinds melee TARGET SELECTION\n * to where the attacker saw each mob (lag compensation) — damage, knockback,\n * and kill credit still act on the live mob. The server room is the sole\n * producer; a local engine never rewinds, and options never travel through\n * `routeDispatch` (a replica's rerouted command reaches the server as a plain\n * wire cmd — the server derives its own rewind from the cmd's view stamp).\n */\nexport type DispatchOptions = { mobPosOf?: MobPositionOf };"
 }
@@ -5858,7 +5858,7 @@ id: toolu_01XSHQr53ifkeJNKwGpe8gU2
 tool_result
 id: toolu_01XSHQr53ifkeJNKwGpe8gU2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5871,7 +5871,7 @@ tool_use Read
 id: toolu_01XAnJTuhzZPD8PvfLcVgZtt
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts",
   "offset": 1,
   "limit": 90
 }
@@ -5928,7 +5928,7 @@ tool_use Bash
 id: toolu_01XWE9kXX8MqscSB4rai9yez
 ```json
 {
-  "command": "grep -n \"describe(\\\"tryAttackMob\\\"\" -A 40 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts | head -55",
+  "command": "grep -n \"describe(\\\"tryAttackMob\\\"\" -A 40 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts | head -55",
   "description": "Read the tryAttackMob test block"
 }
 ```
@@ -5947,7 +5947,7 @@ tool_use Bash
 id: toolu_01WKMpaphxSuXuGLwJCgZadB
 ```json
 {
-  "command": "grep -n \"tryAttackMob\\|describe(\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts",
+  "command": "grep -n \"tryAttackMob\\|describe(\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts",
   "description": "Locate tryAttackMob tests"
 }
 ```
@@ -5973,7 +5973,7 @@ tool_use Read
 id: toolu_01Y4gGpvyi1eScnpDwpjwLqK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts",
   "offset": 131,
   "limit": 45
 }
@@ -6020,7 +6020,7 @@ id: toolu_01UqWy6LnmALvS6XmtWFEPEh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts",
   "old_string": "  test(\"a melee hit stamps the attacker on the mob for kill credit\", () => {\n    const state = makeState(inventory([[\"diamond_sword\", 1]]));\n    (state as { id: string }).id = \"hero\";\n    const mob = mobInFront(); // hp 100 — survives, so we test the stamp, not the kill\n    state.mobs = [mob];\n    tryAttackMob(state, state, 5, () => {}, 5, 0);\n    expect(mob.lastHitByPlayer).toBe(\"hero\");\n  });\n});",
   "new_string": "  test(\"a melee hit stamps the attacker on the mob for kill credit\", () => {\n    const state = makeState(inventory([[\"diamond_sword\", 1]]));\n    (state as { id: string }).id = \"hero\";\n    const mob = mobInFront(); // hp 100 — survives, so we test the stamp, not the kill\n    state.mobs = [mob];\n    tryAttackMob(state, state, 5, () => {}, 5, 0);\n    expect(mob.lastHitByPlayer).toBe(\"hero\");\n  });\n});\n\ndescribe(\"tryAttackMob lag compensation (posOf resolver)\", () => {\n  test(\"selection uses the resolver's position; damage and knockback act on the live mob\", () => {\n    const state = makeState(inventory([[\"diamond_sword\", 1]]));\n    const mob = mobInFront();\n    // Live position: 20 blocks BEHIND the player (+Z) — a guaranteed live miss.\n    mob.position.set(0, 64 + EYE_HEIGHT, 20);\n    state.mobs = [mob];\n\n    // Without a resolver the attack whiffs.\n    expect(tryAttackMob(state, state, 5, () => {}, 5, 0)).toBeNull();\n    expect(mob.hp).toBe(100);\n\n […]
 
@@ -6029,7 +6029,7 @@ id: toolu_01UqWy6LnmALvS6XmtWFEPEh
 tool_result
 id: toolu_01UqWy6LnmALvS6XmtWFEPEh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/combat.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6038,7 +6038,7 @@ tool_use Bash
 id: toolu_01M5iWX9E5h9wvm2emGUjUZZ
 ```json
 {
-  "command": "grep -n \"pushZombie\\|dispatch({ type: \\\"attack\\\"\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts | head",
+  "command": "grep -n \"pushZombie\\|dispatch({ type: \\\"attack\\\"\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts | head",
   "description": "Find pushZombie helper and attack dispatch precedent"
 }
 ```
@@ -6062,7 +6062,7 @@ tool_use Read
 id: toolu_01GMu5Q9KKWBNzByH9u6svdy
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts",
   "offset": 118,
   "limit": 55
 }
@@ -6128,7 +6128,7 @@ id: toolu_01Hp7mUUK3UMTEDSruZHrg9q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts",
   "old_string": "  test(\"kill credit follows the last player to hit the mob — the sweep credits them, not the primary\", () => {",
   "new_string": "  test(\"a rewind resolver on dispatch hits a mob that live-stands out of reach (lag compensation)\", () => {\n    const engine = makeEngine(\"server\");\n    calm(engine);\n    engine.state.mobs = [];\n    const second = engine.addPlayer({ id: \"acct-2\" });\n    second.yaw = 0;\n    second.pitch = 0;\n    // Live zombie 30 blocks away — an unassisted attack can't touch it.\n    const zombie = pushZombie(engine, second.position.x + 30, second.position.z + 30);\n    engine.dispatch({ type: \"attack\" }, \"acct-2\");\n    expect(zombie.hp).toBe(20);\n\n    // The room's resolver says acct-2 SAW it two blocks ahead (yaw 0 → -Z).\n    engine.dispatch(\n      { type: \"attack\" },\n      \"acct-2\",\n      { mobPosOf: () => ({ x: second.position.x, y: second.position.y + 1.6, z: second.position.z - 2 }) }\n    );\n    expect(zombie.hp).toBeLessThan(20);\n    expect(zombie.lastHitByPlayer).toBe(\"acct-2\");\n  });\n\n  test(\"kill credit follows the last player to hit the mob — the sweep credits them, not the primary\", () => {"
 }
@@ -6139,7 +6139,7 @@ id: toolu_01Hp7mUUK3UMTEDSruZHrg9q
 tool_result
 id: toolu_01Hp7mUUK3UMTEDSruZHrg9q
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6240,7 +6240,7 @@ tool_use Write
 id: toolu_0182gFegzaCCvAUC5fGY2SWQ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/mobHistory.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/mobHistory.ts",
   "content": "/**\n * Per-tick history of authoritative mob positions, for melee lag compensation:\n * when a high-ping player attacks, the room resolves each mob where THAT\n * player saw it (their stamped view tick), not where it stands now.\n *\n * A fixed ring keyed by `tick % depth`: each slot holds the tick it was\n * written for plus parallel arrays (id/x/y/z) reused across writes, so the\n * steady state allocates nothing. Queries happen only on attack clicks, so a\n * linear id scan per slot is plenty.\n */\n\nimport { MELEE_REWIND_MAX_MS } from \"@/lib/game/config\";\nimport { TICK_SECONDS } from \"@/lib/game/engine/tickDriver\";\n\n/** Ticks the rewind clamp allows (18 at 900 ms / 50 ms ticks). */\nexport const MELEE_REWIND_MAX_TICKS = Math.round(MELEE_REWIND_MAX_MS / (TICK_SECONDS * 1000));\n\n/** Ring depth: the full rewind window plus slack for the recording tick itself. */\nexport const MOB_HISTORY_DEPTH = MELEE_REWIND_MAX_TICKS + 6;\n\ntype HistorySlot = {\n  tick: number;\n  count: number;\n  ids: number[];\n  xs: number[];\n  ys: number[];\n  zs: number[];\n};\n\nexport type MobPoseHistory = {\n  /** Record every mob's position for `tick` (call once per tick, post-step). */\n  record(tick: number, mobs: ReadonlyArray<{ id: number; position: { x: number; y: number; z: number } }>): void;\n  /** […]
 
 > TOOL
@@ -6248,7 +6248,7 @@ id: toolu_0182gFegzaCCvAUC5fGY2SWQ
 tool_result
 id: toolu_0182gFegzaCCvAUC5fGY2SWQ
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/server/mobHistory.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/server/mobHistory.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6257,7 +6257,7 @@ tool_use Bash
 id: toolu_01F2rssJpC3dRTAbLwHm5BDd
 ```json
 {
-  "command": "grep -n \"TICK_SECONDS\\|TICK_RATE\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/tickDriver.ts | head -4; sed -n '108,118p' /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "command": "grep -n \"TICK_SECONDS\\|TICK_RATE\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/tickDriver.ts | head -4; sed -n '108,118p' /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "description": "Check TICK_SECONDS export and config combat block"
 }
 ```
@@ -6289,7 +6289,7 @@ tool_use Read
 id: toolu_01E8QMsqjuRYMnRVrEwEHWmu
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "offset": 112,
   "limit": 5
 }
@@ -6314,7 +6314,7 @@ id: toolu_018JtEA28sF7R3qgMz4EeCAX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "old_string": "export const MELEE_KNOCKBACK_IMPULSE = 0.75; // base horizontal shove on a melee hit (Knockback enchant adds to it)",
   "new_string": "export const MELEE_KNOCKBACK_IMPULSE = 0.75; // base horizontal shove on a melee hit (Knockback enchant adds to it)\n// How far back (ms) the game server may rewind melee target selection toward a\n// high-ping attacker's stamped view of the world: covers the max interpolation\n// delay (450) plus a generous half-RTT budget. Server-only; single-player never\n// rewinds. Raising it forgives more lag but widens the ghost-hit window\n// (a mob visibly gone can still be struck by a laggy player).\nexport const MELEE_REWIND_MAX_MS = 900;"
 }
@@ -6325,7 +6325,7 @@ id: toolu_018JtEA28sF7R3qgMz4EeCAX
 tool_result
 id: toolu_018JtEA28sF7R3qgMz4EeCAX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6334,7 +6334,7 @@ tool_use Write
 id: toolu_018NuokpwiwHXrzZoTmBcbYn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/mobHistory.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/mobHistory.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport { createMobPoseHistory, MELEE_REWIND_MAX_TICKS, MOB_HISTORY_DEPTH } from \"./mobHistory\";\n\nconst mob = (id: number, x: number, y = 64, z = 0) => ({ id, position: { x, y, z } });\n\ndescribe(\"createMobPoseHistory\", () => {\n  test(\"records a tick and returns each mob's position at it\", () => {\n    const history = createMobPoseHistory();\n    history.record(10, [mob(1, 1.5), mob(2, -3, 60, 4)]);\n    expect(history.positionAt(10, 1)).toEqual({ x: 1.5, y: 64, z: 0 });\n    expect(history.positionAt(10, 2)).toEqual({ x: -3, y: 60, z: 4 });\n  });\n\n  test(\"unknown mob ids and never-recorded ticks are null\", () => {\n    const history = createMobPoseHistory();\n    history.record(10, [mob(1, 1)]);\n    expect(history.positionAt(10, 999)).toBeNull(); // mob didn't exist then\n    expect(history.positionAt(9, 1)).toBeNull(); // tick never recorded\n  });\n\n  test(\"the ring evicts ticks older than its depth\", () => {\n    const history = createMobPoseHistory(4);\n    for (let tick = 0; tick < 8; tick += 1) history.record(tick, [mob(1, tick)]);\n    expect(history.positionAt(3, 1)).toBeNull(); // evicted (slot reused by tick 7)\n    expect(history.positionAt(4, 1)).toEqual({ x: 4, y: 64, z: 0 });\n    expect(history.positionAt(7, 1)).toEqual({ x: 7, y: 64, z: 0 });\n  });\n\n  test(\"re-recording a slot replaces it cleanly, including a shrunk mob list\", () => {\n    const history = createMobPoseHistory(4);\n    history.record(1, […]
 
 > TOOL
@@ -6342,7 +6342,7 @@ id: toolu_018NuokpwiwHXrzZoTmBcbYn
 tool_result
 id: toolu_018NuokpwiwHXrzZoTmBcbYn
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/server/mobHistory.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/server/mobHistory.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6423,7 +6423,7 @@ tool_use Read
 id: toolu_01VpFcbQpmhzFpVFmhCfGsM2
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "offset": 90,
   "limit": 65
 }
@@ -6466,7 +6466,7 @@ tool_use Read
 id: toolu_01Sr1xaQcbj9KZiSZQV3P4ty
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "offset": 396,
   "limit": 30
 }
@@ -6515,7 +6515,7 @@ tool_use Bash
 id: toolu_01SKuHTFAUKCxhVv7rZyq8RS
 ```json
 {
-  "command": "sed -n '1,40p' /Users/hutusi/workspace/ai/david/monecraft/server/room.ts | grep -n \"import\" ",
+  "command": "sed -n '1,40p' /home/<USER>/workspace/ai/david/monecraft/server/room.ts | grep -n \"import\" ",
   "description": "Check room.ts imports"
 }
 ```
@@ -6544,7 +6544,7 @@ id: toolu_01NS5QMrfUwiWthetocagPwz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "import { GameEngine } from \"@/lib/game/engine/GameEngine\";\nimport type { Command } from \"@/lib/game/engine/commands\";",
   "new_string": "import { GameEngine, type DispatchOptions } from \"@/lib/game/engine/GameEngine\";\nimport type { Command } from \"@/lib/game/engine/commands\";\nimport { createMobPoseHistory, MELEE_REWIND_MAX_TICKS } from \"./mobHistory\";"
 }
@@ -6555,7 +6555,7 @@ id: toolu_01NS5QMrfUwiWthetocagPwz
 tool_result
 id: toolu_01NS5QMrfUwiWthetocagPwz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6565,7 +6565,7 @@ id: toolu_01Abg3YTDRisKTs2LZVYu7Po
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "/** One entry in a room's replay log: a dispatched command (with its claimed eye pose) or a periodic pose anchor. */\nexport type CommandLogEntry =\n  | { tick: number; playerId: string; cmd: Command; pose: { x: number; y: number; z: number; yaw: number; pitch: number } }\n  | { tick: number; playerId: string; pose: { x: number; y: number; z: number; yaw: number; pitch: number } };",
   "new_string": "/**\n * One entry in a room's replay log: a dispatched command (with its claimed eye\n * pose, plus the v3 view stamp when present) or a periodic pose anchor. Replay\n * ignores `view` — attack-replay fidelity was already approximate (1 s pose\n * anchors); it's recorded for offline diagnosis of rewind disputes.\n */\nexport type CommandLogEntry =\n  | { tick: number; playerId: string; cmd: Command; pose: { x: number; y: number; z: number; yaw: number; pitch: number }; view?: number }\n  | { tick: number; playerId: string; pose: { x: number; y: number; z: number; yaw: number; pitch: number } };"
 }
@@ -6576,7 +6576,7 @@ id: toolu_01Abg3YTDRisKTs2LZVYu7Po
 tool_result
 id: toolu_01Abg3YTDRisKTs2LZVYu7Po
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6586,7 +6586,7 @@ id: toolu_01EK9XRsALQWoSSW619uQcDY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "  private readonly mobShadow = new Map<number, { x: number; y: number; z: number; hp: number }>();",
   "new_string": "  private readonly mobShadow = new Map<number, { x: number; y: number; z: number; hp: number }>();\n  /** Per-tick mob positions for melee lag compensation (see handleMessage \"cmd\"). */\n  private readonly mobHistory = createMobPoseHistory();"
 }
@@ -6597,7 +6597,7 @@ id: toolu_01EK9XRsALQWoSSW619uQcDY
 tool_result
 id: toolu_01EK9XRsALQWoSSW619uQcDY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6607,7 +6607,7 @@ id: toolu_01APDzb2hRwQRQkekZdXGseE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "    this.engine.step(dt);\n    const events = this.engine.consumeEvents();",
   "new_string": "    this.engine.step(dt);\n    // Post-step positions: exactly what this tick's mp/keyframe broadcasts,\n    // i.e. the timeline the client's interpolation buffers (and view stamps)\n    // live on.\n    this.mobHistory.record(this.tickCount, this.engine.state.mobs);\n    const events = this.engine.consumeEvents();"
 }
@@ -6618,7 +6618,7 @@ id: toolu_01APDzb2hRwQRQkekZdXGseE
 tool_result
 id: toolu_01APDzb2hRwQRQkekZdXGseE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6628,7 +6628,7 @@ id: toolu_012Li66Pcy9QDCrjhhvcNpjT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "        // Advance the pose clock on an accepted cmd pose too — otherwise a\n        // client sending only cmds lets `elapsed` grow and inflate the clamp.\n        if (accepted) conn.lastPoseTick = this.tickCount;\n        this.recordLog({ tick: this.tickCount, playerId, cmd: message.cmd, pose: message.pose });\n        this.engine.dispatch(message.cmd, playerId);\n        return;",
   "new_string": "        // Advance the pose clock on an accepted cmd pose too — otherwise a\n        // client sending only cmds lets `elapsed` grow and inflate the clamp.\n        if (accepted) conn.lastPoseTick = this.tickCount;\n        this.recordLog({ tick: this.tickCount, playerId, cmd: message.cmd, pose: message.pose, ...(message.view !== undefined ? { view: message.view } : {}) });\n        // Melee lag compensation: a stamped attack rewinds TARGET SELECTION to\n        // the tick the attacker was rendering, clamped into the rewind window.\n        // Everything degrades to live behavior: unstamped/future/too-stale\n        // stamps, mobs without history (spawned since), non-attack commands.\n        let opts: DispatchOptions | undefined;\n        if (message.cmd.type === \"attack\" && message.view !== undefined) {\n          const viewTick = Math.round(message.view / (TICK_SECONDS * 1000));\n          const rewindTick = Math.min(this.tickCount, Math.max(viewTick, this.tickCount - MELEE_REWIND_MAX_TICKS));\n          if (rewindTick < this.tickCount) {\n            opts = { mobPosOf: (mob) => this.mobHistory.positionAt(rewindTick, mob.id) ?? mob.position };\n          }\n        }\n        this.engine.dispatch(message.cmd, playerId, opts);\n        return;"
 }
@@ -6639,7 +6639,7 @@ id: toolu_012Li66Pcy9QDCrjhhvcNpjT
 tool_result
 id: toolu_012Li66Pcy9QDCrjhhvcNpjT
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6652,7 +6652,7 @@ tool_use Read
 id: toolu_01MrVxp4XJCgShVCK4JoQSKc
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts",
   "offset": 1,
   "limit": 150
 }
@@ -6697,7 +6697,7 @@ tool_use Bash
 id: toolu_01B4GZ3asYNokW4qX56tA6MW
 ```json
 {
-  "command": "grep -n \"faction:\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts | head -6; grep -n \"faction\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts | head -4; grep -rn \"kind: \\\"sheep\\\"\\|kind: \\\"cow\\\"\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts | head -3",
+  "command": "grep -n \"faction:\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts | head -6; grep -n \"faction\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts | head -4; grep -rn \"kind: \\\"sheep\\\"\\|kind: \\\"cow\\\"\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts | head -3",
   "description": "Check faction values and passive mob fixtures"
 }
 ```
@@ -6717,7 +6717,7 @@ tool_use Bash
 id: toolu_018hazS5U22jJjdiUBU9GHm2
 ```json
 {
-  "command": "grep -n \"MobFaction\\|FACTION_BY_KIND\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts 2>/dev/null | head -6; grep -rn \"FACTION_BY_KIND\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/*.ts | head -3",
+  "command": "grep -n \"MobFaction\\|FACTION_BY_KIND\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts 2>/dev/null | head -6; grep -rn \"FACTION_BY_KIND\" /home/<USER>/workspace/ai/david/monecraft/lib/game/*.ts | head -3",
   "description": "Find MobFaction type and FACTION_BY_KIND map"
 }
 ```
@@ -6727,14 +6727,14 @@ id: toolu_018hazS5U22jJjdiUBU9GHm2
 tool_result
 id: toolu_018hazS5U22jJjdiUBU9GHm2
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts:6:import type { EffectId, EnchantmentId, EquippedArmor, InventorySlot, MobFaction, MobKind, Profession, SaveData, VehicleKind } from "@/lib/game/types";
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts:104:  /** Targeting allegiance (set at spawn from FACTION_BY_KIND; a tamed pet becomes "ally"). Persisted (save v14). */
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts:105:  faction: MobFaction;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts:1:import type { MobFaction, MobKind } from "@/lib/game/types";
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts:182: * The allegiance each kind spawns with (see MobFaction). The targeting axis, set
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts:187:export const FACTION_BY_KIND: Record<MobKind, MobFaction> = {
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts:187:export const FACTION_BY_KIND: Record<MobKind, MobFaction> = {
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts:110: * health-bar, and Peaceful despawn). Set at spawn from FACTION_BY_KIND; a tamed
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts:6:import type { EffectId, EnchantmentId, EquippedArmor, InventorySlot, MobFaction, MobKind, Profession, SaveData, VehicleKind } from "@/lib/game/types";
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts:104:  /** Targeting allegiance (set at spawn from FACTION_BY_KIND; a tamed pet becomes "ally"). Persisted (save v14). */
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts:105:  faction: MobFaction;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts:1:import type { MobFaction, MobKind } from "@/lib/game/types";
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts:182: * The allegiance each kind spawns with (see MobFaction). The targeting axis, set
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts:187:export const FACTION_BY_KIND: Record<MobKind, MobFaction> = {
+/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts:187:export const FACTION_BY_KIND: Record<MobKind, MobFaction> = {
+/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts:110: * health-bar, and Peaceful despawn). Set at spawn from FACTION_BY_KIND; a tamed
 ```
 
 > TOOL
@@ -6743,7 +6743,7 @@ tool_use Bash
 id: toolu_017hRoRxdZ4XU6VDwUMj2Pee
 ```json
 {
-  "command": "grep -n \"gravity\\|position.y\\|groundHeight\\|terrainHeight\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts | head -12",
+  "command": "grep -n \"gravity\\|position.y\\|groundHeight\\|terrainHeight\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts | head -12",
   "description": "Check how mobAI handles mob vertical position"
 }
 ```
@@ -6773,7 +6773,7 @@ tool_use Bash
 id: toolu_01F9mEZQ5Xw3uX2ACrSopiQo
 ```json
 {
-  "command": "grep -n \"export function lookDirection\" -A 8 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/playerMotion.ts",
+  "command": "grep -n \"export function lookDirection\" -A 8 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/playerMotion.ts",
   "description": "Read lookDirection formula for aim inversion"
 }
 ```
@@ -6800,7 +6800,7 @@ tool_use Bash
 id: toolu_01FHFVzZUGCFApsBY6RBVgFe
 ```json
 {
-  "command": "grep -n \"FACTION_BY_KIND: Record\" -A 16 /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts | head -20",
+  "command": "grep -n \"FACTION_BY_KIND: Record\" -A 16 /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts | head -20",
   "description": "List mob kinds and factions"
 }
 ```
@@ -6839,7 +6839,7 @@ tool_use Bash
 id: toolu_019Ch2nsKGnn7zci3QatTcuv
 ```json
 {
-  "command": "tail -5 /Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts; grep -c \"\" /Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts",
+  "command": "tail -5 /home/<USER>/workspace/ai/david/monecraft/server/room.test.ts; grep -c \"\" /home/<USER>/workspace/ai/david/monecraft/server/room.test.ts",
   "description": "Check end of room.test.ts"
 }
 ```
@@ -6882,7 +6882,7 @@ tool_use Read
 id: toolu_01Vb63Yj9jjMRjQwDKTqXBDn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts",
   "offset": 440,
   "limit": 16
 }
@@ -6918,7 +6918,7 @@ id: toolu_01Lv2tbrrXa8VmqfaswchNuH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts",
   "old_string": "    a.frames.length = 0;\n    await room.handleMessage(\"alice\", { t: \"cmd\", seq: 999, cmd: { type: \"attack\" }, pose: { x: x + 60, y, z: z + 60, yaw: 0, pitch: 0 } });\n    expect(alice.position.x).toBeCloseTo(x, 3); // the jump was clamped, not admitted\n  });\n});",
   "new_string": "    a.frames.length = 0;\n    await room.handleMessage(\"alice\", { t: \"cmd\", seq: 999, cmd: { type: \"attack\" }, pose: { x: x + 60, y, z: z + 60, yaw: 0, pitch: 0 } });\n    expect(alice.position.x).toBeCloseTo(x, 3); // the jump was clamped, not admitted\n  });\n});\n\ndescribe(\"melee lag compensation (view-stamped attacks)\", () => {\n  /** A stationary passive mob the AI won't move, burn, or aggro. */\n  function pushSheep(room: Room, id: number, x: number, y: number, z: number): MobState {\n    const sheep = {\n      id,\n      kind: \"sheep\",\n      hostile: false,\n      faction: FACTION_BY_KIND.sheep,\n      targetId: null,\n      retargetTimer: 0,\n      hp: 50,\n      position: new THREE.Vector3(x, y, z),\n      direction: new THREE.Vector3(),\n      yaw: 0,\n      turnTimer: 9999,\n      speed: 0,\n      moveSpeed: 0,\n      detectRange: 0,\n      attackDamage: 0,\n      attackCooldown: 1,\n      attackTimer: 0,\n      halfHeight: 0.9,\n      bobSeed: 0,\n      fedTimer: 0,\n      ageTimer: 0\n    } as unknown as MobState;\n    room.engine.state.mobs.push(sheep);\n    return sheep;\n  }\n\n  /**\n   * One room per suite (worldgen is slow); each scenario […]
 
@@ -6927,7 +6927,7 @@ id: toolu_01Lv2tbrrXa8VmqfaswchNuH
 tool_result
 id: toolu_01Lv2tbrrXa8VmqfaswchNuH
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > DEVELOPER
@@ -6941,7 +6941,7 @@ id: toolu_01EsNAzy3AhKjymki6CcDfHz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts",
   "old_string": "import { describe, expect, test } from \"bun:test\";\nimport * as THREE from \"three\";\nimport { PROTOCOL_VERSION, type ServerMessage, type WorldSync } from \"@/lib/net/protocol\";\nimport { gunzipWorldSync } from \"@/lib/net/codec\";\nimport { restoreVehicle } from \"@/lib/game/engine/systems/vehicles\";\nimport type { TicketClaims } from \"@/lib/net/tickets\";\nimport { createMemoryPersistence, parseSaveBlob } from \"./persistence\";\nimport { Room, type ClientSink } from \"./room\";",
   "new_string": "import { describe, expect, test } from \"bun:test\";\nimport * as THREE from \"three\";\nimport { PROTOCOL_VERSION, type ServerMessage, type WorldSync } from \"@/lib/net/protocol\";\nimport { gunzipWorldSync } from \"@/lib/net/codec\";\nimport { restoreVehicle } from \"@/lib/game/engine/systems/vehicles\";\nimport type { TicketClaims } from \"@/lib/net/tickets\";\nimport { FACTION_BY_KIND } from \"@/lib/game/mobs\";\nimport type { MobState } from \"@/lib/game/engine/state\";\nimport { createMemoryPersistence, parseSaveBlob } from \"./persistence\";\nimport { MELEE_REWIND_MAX_TICKS } from \"./mobHistory\";\nimport { Room, type ClientSink } from \"./room\";"
 }
@@ -6952,7 +6952,7 @@ id: toolu_01EsNAzy3AhKjymki6CcDfHz
 tool_result
 id: toolu_01EsNAzy3AhKjymki6CcDfHz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7045,7 +7045,7 @@ tool_use Bash
 id: toolu_01UFAEQbLgZm1D35i9kigDMJ
 ```json
 {
-  "command": "grep -n \"budget\" /Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "command": "grep -n \"budget\" /home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "description": "Locate budget struct and resets"
 }
 ```
@@ -7091,7 +7091,7 @@ id: toolu_01P7KzFoSmJCionkfjxdFM2f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "const DEFAULT_COMMAND_LOG_SIZE = 4096;",
   "new_string": "const DEFAULT_COMMAND_LOG_SIZE = 4096;\n/**\n * Per-second cap on attack commands per client. Far above honest clicking,\n * but with lag-compensated rewind an unbounded rate would let a scripted\n * client sweep a mob's whole 900 ms position trail with varied view stamps.\n */\nconst MELEE_ATTACKS_PER_SECOND = 12;"
 }
@@ -7102,7 +7102,7 @@ id: toolu_01P7KzFoSmJCionkfjxdFM2f
 tool_result
 id: toolu_01P7KzFoSmJCionkfjxdFM2f
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7112,7 +7112,7 @@ id: toolu_01UdYULiYuttgFWqJ1vLFJEZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.ts",
   "old_string": "        if (conn.budget.cmd >= 60) return; // per-second flood guard\n        conn.budget.cmd += 1;",
   "new_string": "        if (conn.budget.cmd >= 60) return; // per-second flood guard\n        conn.budget.cmd += 1;\n        if (message.cmd.type === \"attack\") {\n          if (conn.budget.attack >= MELEE_ATTACKS_PER_SECOND) return;\n          conn.budget.attack += 1;\n        }"
 }
@@ -7123,7 +7123,7 @@ id: toolu_01UdYULiYuttgFWqJ1vLFJEZ
 tool_result
 id: toolu_01UdYULiYuttgFWqJ1vLFJEZ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7137,7 +7137,7 @@ id: toolu_0176wxjoMv8n9Dro3gXmCUTc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts",
   "old_string": "  test(\"a view stamp on a non-attack command is inert\", async () => {",
   "new_string": "  test(\"attack commands are budgeted per second; the budget refills at the boundary\", async () => {\n    const { room } = await makeRoom();\n    const a = fakeSink();\n    const b = fakeSink();\n    await room.join(claimsFor(\"alice\", \"w1\", \"owner\"), a);\n    await room.join(claimsFor(\"bob\", \"w1\"), b);\n    const alice = room.engine.state.players.get(\"alice\")!;\n    const pose = { x: alice.position.x, y: alice.position.y, z: alice.position.z, yaw: 0, pitch: 0 };\n    const tick = () => (room as unknown as { tick(dt: number): void }).tick(0.05);\n\n    // A 20-attack burst inside one second: only 12 swings make it through.\n    for (let i = 0; i < 20; i += 1) await room.handleMessage(\"alice\", { t: \"cmd\", seq: i + 1, cmd: { type: \"attack\" }, pose });\n    tick();\n    const swings = b\n      .messagesOf(\"tick\")\n      .at(-1)\n      ?.ev.filter((e) => e.type === \"attackSwung\").length;\n    expect(swings).toBe(12);\n\n    // Cross a second boundary (budgets reset every 20th tick) and swing again.\n    for (let i = 0; i < 20; i += 1) tick();\n    await room.handleMessage(\"alice\", { t: \"cmd\", seq: 99, cmd: { type: \"attack\" }, pose });\n    tick();\n    expect(\n      b\n        .messagesOf(\"tick\")\n        .at(-1)\n        ?.ev.filter((e) => e.type […]
 
@@ -7146,7 +7146,7 @@ id: toolu_0176wxjoMv8n9Dro3gXmCUTc
 tool_result
 id: toolu_0176wxjoMv8n9Dro3gXmCUTc
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/server/room.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7244,7 +7244,7 @@ tool_use Read
 id: toolu_01CnT2esDwKJYjbdEneCyf1j
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "offset": 790,
   "limit": 45
 }
@@ -7306,7 +7306,7 @@ id: toolu_01EZANcJe6qCmPGzwQnTzrU8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "      // Interpolation: remote entities render in the past, far enough to\n      // absorb the measured arrival jitter (adaptive, slewed — no warping).\n      const renderTime = (clock.ready() ? clock.estimatedServerTimeMs(nowMs) : serverTickTimeMs) - delayCtl.effectiveDelayMs(nowMs);",
   "new_string": "      // Interpolation: remote entities render in the past, far enough to\n      // absorb the measured arrival jitter (adaptive, slewed — no warping).\n      const renderTime = (clock.ready() ? clock.estimatedServerTimeMs(nowMs) : serverTickTimeMs) - delayCtl.effectiveDelayMs(nowMs);\n      // The view stamp for lag compensation: a click lands between frames, so\n      // the mobs on screen are the ones THIS sample time drew. Only trusted\n      // once the clock is synced — until then attacks go out unstamped.\n      if (clock.ready()) lastRenderTimeMs = renderTime;"
 }
@@ -7317,7 +7317,7 @@ id: toolu_01EZANcJe6qCmPGzwQnTzrU8
 tool_result
 id: toolu_01EZANcJe6qCmPGzwQnTzrU8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7327,7 +7327,7 @@ id: toolu_0113E89dtQoijQo236Y8D1eE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "old_string": "  // ── outbound ────────────────────────────────────────────────────────────────\n  let seq = 0;\n  let lastPoseSentMs = 0;\n  let lastPingMs = 0;\n\n  const sendCmd = (command: Command) => {\n    seq += 1;\n    // Foot position (matching the pose stream): the server clamps it into\n    // player.position, then the engine derives the eye/aim ray from it by\n    // adding EYE_HEIGHT — sending eye height here would double that offset.\n    delayedSend(\n      encodeClientMessage({\n        t: \"cmd\",\n        seq,\n        cmd: command,\n        pose: { x: qPos(self.position.x), y: qPos(self.position.y), z: qPos(self.position.z), yaw: qAng(self.yaw), pitch: qAng(self.pitch) }\n      })\n    );\n  };",
   "new_string": "  // ── outbound ────────────────────────────────────────────────────────────────\n  let seq = 0;\n  let lastPoseSentMs = 0;\n  let lastPingMs = 0;\n  /** The last frame's interpolation render time (server timeline ms) — the attack view stamp. Null until the clock syncs. */\n  let lastRenderTimeMs: number | null = null;\n\n  const sendCmd = (command: Command) => {\n    seq += 1;\n    // Foot position (matching the pose stream): the server clamps it into\n    // player.position, then the engine derives the eye/aim ray from it by\n    // adding EYE_HEIGHT — sending eye height here would double that offset.\n    // Attacks additionally carry the render-time view stamp so the server […]
 
@@ -7336,7 +7336,7 @@ id: toolu_0113E89dtQoijQo236Y8D1eE
 tool_result
 id: toolu_0113E89dtQoijQo236Y8D1eE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7345,7 +7345,7 @@ tool_use Bash
 id: toolu_014hRVT78VXoGBBerh9S8RVk
 ```json
 {
-  "command": "grep -n \"pong\\|afterFrame\\|routeDispatch\\|dispatch({ type: \\\"attack\\\"\\|sendChat\\|emit(tick\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head -25",
+  "command": "grep -n \"pong\\|afterFrame\\|routeDispatch\\|dispatch({ type: \\\"attack\\\"\\|sendChat\\|emit(tick\" /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head -25",
   "description": "Survey NetworkSession test harness usage"
 }
 ```
@@ -7383,7 +7383,7 @@ tool_use Read
 id: toolu_01GGxNKdtW32TuwjHjhnZUBB
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "offset": 575,
   "limit": 35
 }
@@ -7429,7 +7429,7 @@ tool_use Bash
 id: toolu_015bdyY91ED3zF7K2u9zw69r
 ```json
 {
-  "command": "grep -n \"function tick(\\|function socketFactory\\|function pushWorldSync\\|const WELCOME\\|t: \\\"pong\\\"\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head; grep -n \"onPong\\|\\\"pong\\\"\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts | head -5",
+  "command": "grep -n \"function tick(\\|function socketFactory\\|function pushWorldSync\\|const WELCOME\\|t: \\\"pong\\\"\" /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head; grep -n \"onPong\\|\\\"pong\\\"\" /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts | head -5",
   "description": "Find harness helpers and pong handling"
 }
 ```
@@ -7456,7 +7456,7 @@ tool_use Read
 id: toolu_0175WwAQiCtAZ5vxmaKZZYYf
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "offset": 100,
   "limit": 30
 }
@@ -7506,7 +7506,7 @@ id: toolu_0134fwsZtombE7AdKhoWutoF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "old_string": "    instances[0].emit(tick(undefined, { ev: [{ type: \"attackSwung\", playerId: \"acct-2\" }] }));\n    expect(session.drainEvents().some((e) => e.type === \"attackSwung\")).toBe(true); // someone else's\n    session.dispose();\n  });\n});",
   "new_string": "    instances[0].emit(tick(undefined, { ev: [{ type: \"attackSwung\", playerId: \"acct-2\" }] }));\n    expect(session.drainEvents().some((e) => e.type === \"attackSwung\")).toBe(true); // someone else's\n    session.dispose();\n  });\n\n  test(\"attack cmds carry the render-time view stamp once the clock is synced; nothing else does\", async () => {\n    const { make, instances } = socketFactory();\n    const session = await connectNetworkSession(\"ws://game\", \"ticket-1\", {}, { makeSocket: make, worldSize: SMALL });\n    await pushWorldSync(instances[0], worldSync(WELCOME.players));\n    const lastCmd = () =>\n      instances[0].sent\n        .map((s) => JSON.parse(s) as { t: string; cmd?: { type: string }; view?: number })\n        .filter((m) => m.t === \"cmd\")\n        .at(-1)!;\n\n    // Before any pong the clock isn't synced: attacks go out unstamped.\n    session.dispatch({ type: \"attack\" });\n    expect(lastCmd().cmd?.type).toBe(\"attack\");\n    expect(\"view\" in lastCmd()).toBe(false);\n\n    // One pong (serverTick 100 → the 5000 ms mark on the server timeline) syncs\n    // the clock; the next frame samples the interpolation render time.\n    instances[0].emit(JSON.stringify({ t: \"pong\", id: 1, tMs: performance.now() - 20, serverTick: 100 }));\n    session.afterFrame(performance.now());\n    session.dispatch({ type: \"attack\" });\n    const stamped = lastCmd();\n    expect(stamped.view).toBeDefined();\n    // The stamp is the render time: behind the […]
 
@@ -7515,7 +7515,7 @@ id: toolu_0134fwsZtombE7AdKhoWutoF
 tool_result
 id: toolu_0134fwsZtombE7AdKhoWutoF
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7611,7 +7611,7 @@ tool_use Bash
 id: toolu_01Pp43vQdUsYbFgTvn11VM9r
 ```json
 {
-  "command": "grep -n \"cmd\\|view\\|Trust model\\|soft spot\\|rewind\\|v2\\|v3\\|protocol version\\|PROTOCOL_VERSION\" /Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md | head -25",
+  "command": "grep -n \"cmd\\|view\\|Trust model\\|soft spot\\|rewind\\|v2\\|v3\\|protocol version\\|PROTOCOL_VERSION\" /home/<USER>/workspace/ai/david/monecraft/docs/protocol.md | head -25",
   "description": "Survey protocol.md for sections to update"
 }
 ```
@@ -7639,7 +7639,7 @@ tool_use Read
 id: toolu_01F9T2jHrr9dU4uF5idSsL44
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/protocol.md",
   "offset": 40,
   "limit": 45
 }
@@ -7682,7 +7682,7 @@ tool_use Read
 id: toolu_018vf5DxzBf5gGstDC6X65Ct
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/protocol.md",
   "offset": 112,
   "limit": 20
 }
@@ -7719,7 +7719,7 @@ id: toolu_01KKXBYX89M7ZokCMxSvac2V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/protocol.md",
   "old_string": "# Wire protocol (v2)",
   "new_string": "# Wire protocol (v3)"
 }
@@ -7730,7 +7730,7 @@ id: toolu_01KKXBYX89M7ZokCMxSvac2V
 tool_result
 id: toolu_01KKXBYX89M7ZokCMxSvac2V
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7740,7 +7740,7 @@ id: toolu_01MQiPb4VF9WHHkyaCKAwajH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/protocol.md",
   "old_string": "- `cmd` — a discrete `Command` + the claimed eye pose (applied through the\n  same clamps before dispatch, so aimed raycasts resolve where the client\n  looked). Validated against a per-type **allow-list**; local-presentation\n  commands (pause/debug/camera) never travel. Budget: 60/s.",
   "new_string": "- `cmd` — a discrete `Command` + the claimed eye pose (applied through the\n  same clamps before dispatch, so aimed raycasts resolve where the client\n  looked). Validated against a per-type **allow-list**; local-presentation\n  commands (pause/debug/camera) never travel. Budget: 60/s (attacks\n  additionally 12/s — see the rewind note below).\n- `view` on `cmd` (v3, optional) — the sender's render-time view of the world:\n  ms on the server tick timeline (`tick × 50`), i.e. the instant the\n  interpolated mobs on their screen were sampled at. Attacks carry it once the\n  clock is synced; the server uses it for **melee lag compensation** — target\n  selection rewinds to the stamped tick (clamped to ≤`MELEE_REWIND_MAX_MS`,\n  900 ms), while damage/knockback/kill-credit act on the live mob. Anything\n  degenerate (unstamped, future, too stale, mob spawned since) degrades to\n  live selection."
 }
@@ -7751,7 +7751,7 @@ id: toolu_01MQiPb4VF9WHHkyaCKAwajH
 tool_result
 id: toolu_01MQiPb4VF9WHHkyaCKAwajH
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7761,7 +7761,7 @@ id: toolu_01H8HupgXqwj2GwPT7E46fZs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/protocol.md",
   "old_string": "journal confirms, overrides, or (by timeout) the client reverts. Nothing a\nclient predicts changes what the server accepts. The\nclaimed eye pose on `cmd` is the hybrid model's soft spot — acceptable for\ninvite-only co-op, and the envelope already carries what stricter server-side\nrewind validation would need.",
   "new_string": "journal confirms, overrides, or (by timeout) the client reverts. Nothing a\nclient predicts changes what the server accepts. The\nclaimed eye pose on `cmd` is the hybrid model's soft spot — acceptable for\ninvite-only co-op. The v3 `view` stamp is bounded the same way a claimed pose\nis clamped: the server rewinds melee **selection only**, never more than\n`MELEE_REWIND_MAX_MS` (900 ms) into its own recorded history, treats every\nmalformed or out-of-window stamp as \"judge it live\", and caps attacks at 12/s\nso a scripted client can't sweep a mob's whole position trail with varied\nstamps. A dishonest stamp can therefore claim at most what an honestly-laggy\nclient would see anyway."
 }
@@ -7772,7 +7772,7 @@ id: toolu_01H8HupgXqwj2GwPT7E46fZs
 tool_result
 id: toolu_01H8HupgXqwj2GwPT7E46fZs
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/protocol.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7781,7 +7781,7 @@ tool_use Read
 id: toolu_01Y6b3LSrvnN2XbNsrfjyd7i
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/protocol.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/protocol.md",
   "offset": 1,
   "limit": 20
 }
@@ -7824,7 +7824,7 @@ tool_use Bash
 id: toolu_01NvNnRemo9VTF9N27aHwe4h
 ```json
 {
-  "command": "grep -n \"Combat (\\`systems/combat\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md; grep -n \"An \\`attack\\` plays its swing\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "command": "grep -n \"Combat (\\`systems/combat\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md; grep -n \"An \\`attack\\` plays its swing\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "description": "Locate the two architecture.md passages"
 }
 ```
@@ -7843,7 +7843,7 @@ tool_use Read
 id: toolu_01RYxqpatSM8fnwpzWuKd6nV
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "offset": 125,
   "limit": 6
 }
@@ -7864,7 +7864,7 @@ id: toolu_015ziwwXMq4oNs1zahcW7LUi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "old_string": "Combat (`systems/combat.ts`) runs on the `attack` command rather than per frame: a held bow branches to `tryFireBow` (instant click-to-fire, no draw-charge), a spear melees at its longer `weaponReach`, and otherwise `tryAttackMob` swings.",
   "new_string": "Combat (`systems/combat.ts`) runs on the `attack` command rather than per frame: a held bow branches to `tryFireBow` (instant click-to-fire, no draw-charge), a spear melees at its longer `weaponReach`, and otherwise `tryAttackMob` swings. Melee target selection (`findAimedMobIndex`) takes an optional `MobPositionOf` resolver saying where each mob counts as standing — the default is the live position; a server room substitutes the historical position a high-ping attacker actually saw (lag compensation, threaded via `dispatch`'s `DispatchOptions`). Selection only: damage, knockback direction, and kill credit always act on the live mob, and a local (single-player) engine never rewinds."
 }
@@ -7875,7 +7875,7 @@ id: toolu_015ziwwXMq4oNs1zahcW7LUi
 tool_result
 id: toolu_015ziwwXMq4oNs1zahcW7LUi
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7885,7 +7885,7 @@ id: toolu_01XYSLDZAtw8Lf2c7ypyVgis
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "old_string": "An `attack` plays its swing at click time (the attributed echo is swallowed); hit results stay server-owned.",
   "new_string": "An `attack` plays its swing at click time (the attributed echo is swallowed); hit results stay server-owned but are **lag-compensated** (protocol v3): each attack cmd carries the previous frame's interpolation render time as a `view` stamp (captured in `afterFrame` — never recomputed at click, which would advance the clock slew), and the server rewinds melee target selection to that tick against its own recorded mob history, clamped to `MELEE_REWIND_MAX_MS` (900 ms) — so clicking a mob dead under your crosshair connects even though your screen runs 125–450 ms behind the server. Precision note: server history is true 20 Hz, the client renders deadbanded 10 Hz mob deltas, and the stamp rounds to the nearest tick — worst-case selection skew ≈0.1 m against the 27° aim cone, negligible."
 }
@@ -7896,7 +7896,7 @@ id: toolu_01XYSLDZAtw8Lf2c7ypyVgis
 tool_result
 id: toolu_01XYSLDZAtw8Lf2c7ypyVgis
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7905,7 +7905,7 @@ tool_use Bash
 id: toolu_012CHoAreCUzdjNtBee8KrUF
 ```json
 {
-  "command": "grep -n \"ATTACK_REACH\\|MELEE_KNOCKBACK\\|^##\\|^###\" /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md | head -25",
+  "command": "grep -n \"ATTACK_REACH\\|MELEE_KNOCKBACK\\|^##\\|^###\" /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md | head -25",
   "description": "Survey tuning.md structure"
 }
 ```
@@ -7948,7 +7948,7 @@ tool_use Read
 id: toolu_01AfvGjrQ4JeUQiSv76G3oiQ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "offset": 256,
   "limit": 22
 }
@@ -7990,7 +7990,7 @@ id: toolu_01JxgL8UddkoqxVC4kxA1FHc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "old_string": "`MINE_REACH`, `MINING_RATE`, `BARE_HAND_MINE_POWER`, `FIST_DAMAGE`, `ATTACK_REACH`,\n`ATTACK_AIM_DOT`, `MELEE_KNOCKBACK_IMPULSE`, `SPEAR_MELEE_REACH`, `SPEAR_THROW_SPEED`,\n`SPEAR_THROW_GRAVITY`, `SPEAR_THROW_LIFETIME_SECONDS`,\n`SPEAR_STUCK_SECONDS`, `SPEAR_THROW_COOLDOWN_SECONDS`, `SPEAR_HIT_RADIUS`.",
   "new_string": "`MINE_REACH`, `MINING_RATE`, `BARE_HAND_MINE_POWER`, `FIST_DAMAGE`, `ATTACK_REACH`,\n`ATTACK_AIM_DOT`, `MELEE_KNOCKBACK_IMPULSE`, `MELEE_REWIND_MAX_MS`, `SPEAR_MELEE_REACH`,\n`SPEAR_THROW_SPEED`, `SPEAR_THROW_GRAVITY`, `SPEAR_THROW_LIFETIME_SECONDS`,\n`SPEAR_STUCK_SECONDS`, `SPEAR_THROW_COOLDOWN_SECONDS`, `SPEAR_HIT_RADIUS`."
 }
@@ -8001,7 +8001,7 @@ id: toolu_01JxgL8UddkoqxVC4kxA1FHc
 tool_result
 id: toolu_01JxgL8UddkoqxVC4kxA1FHc
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8011,7 +8011,7 @@ id: toolu_019kYawRmnyf5Rr9wSZCEBXh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/tuning.md",
   "old_string": "The per-ore **tool-tier\ngate** itself lives in `systems/mining.ts` (`canMineBlock`), not config. Spears\noverride only melee reach; their projectile speed, gravity, lifetime, cooldown,\nterrain embed duration, and collision radius are global, while tier\ndamage/durability live in `items.ts`.",
   "new_string": "The per-ore **tool-tier\ngate** itself lives in `systems/mining.ts` (`canMineBlock`), not config. Spears\noverride only melee reach; their projectile speed, gravity, lifetime, cooldown,\nterrain embed duration, and collision radius are global, while tier\ndamage/durability live in `items.ts`.\n\n`MELEE_REWIND_MAX_MS` (900, **online only**) is how far back the game server may\nrewind melee target selection toward a high-ping attacker's stamped view of the\nworld — the max interpolation delay (450 ms) plus a generous half-RTT budget.\nRaising it forgives more lag; lowering it makes laggy players whiff on moving\nmobs again. The trade-off is the ghost-hit window: other players can see a mob\nstruck up to this long after it visibly moved away. Single-player never rewinds.\nThe server's history ring depth derives from it (`server/mobHistory.ts`), and a\nrelated room constant, `MELEE_ATTACKS_PER_SECOND` (12, `server/room.ts`), caps\nattack spam so the rewind window can't be trawled with varied stamps."
 }
@@ -8022,7 +8022,7 @@ id: toolu_019kYawRmnyf5Rr9wSZCEBXh
 tool_result
 id: toolu_019kYawRmnyf5Rr9wSZCEBXh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/tuning.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/tuning.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8036,7 +8036,7 @@ id: toolu_01WmgARCgM3sRVrXf3npDCUw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Game server & protocol        | `lib/net/protocol.test.ts`, `lib/net/codec.test.ts`, `server/room.test.ts`, `server/server.e2e-smoke.test.ts`",
   "new_string": "| Game server & protocol        | `lib/net/protocol.test.ts`, `lib/net/codec.test.ts`, `server/room.test.ts`, `server/mobHistory.test.ts`, `server/server.e2e-smoke.test.ts`"
 }
@@ -8047,7 +8047,7 @@ id: toolu_01WmgARCgM3sRVrXf3npDCUw
 tool_result
 id: toolu_01WmgARCgM3sRVrXf3npDCUw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8057,7 +8057,7 @@ id: toolu_01NgPEamAYYEyYwxHzSD8D8M
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "and one real socket against the spawned server (hello→welcome+binary, bad ticket → 4000, /health, token-gated /rooms + /rooms/:id/log with a 404 for an unknown room)",
   "new_string": "and one real socket against the spawned server (hello→welcome+binary, bad ticket → 4000, /health, token-gated /rooms + /rooms/:id/log with a 404 for an unknown room). **Melee lag compensation** (v3): the `view` stamp validates totally (garbage drops the frame, non-attack cmds may carry it), a stamped attack hits where the attacker saw the mob while an unstamped one misses live, stale/future stamps clamp to live behavior, a mob with no history at the viewed tick falls back to its live position, the 12/s attack budget drops the burst overflow and refills at the second boundary, and the pose-history ring (`mobHistory.test.ts`) pins record/query, wraparound eviction, slot re-record, and window coverage"
 }
@@ -8068,7 +8068,7 @@ id: toolu_01NgPEamAYYEyYwxHzSD8D8M
 tool_result
 id: toolu_01NgPEamAYYEyYwxHzSD8D8M
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8078,7 +8078,7 @@ id: toolu_0159smGeP6BukZqTG7aTFYij
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "and the session-level optimistic placement paths (instant place, journal confirm with echo suppression, lost-race override with refund, timeout revert, world-sync clear, no-prediction fallbacks). The full browser journey is the multiplayer e2e below",
   "new_string": "and the session-level optimistic placement paths (instant place, journal confirm with echo suppression, lost-race override with refund, timeout revert, world-sync clear, no-prediction fallbacks); attack cmds carry the render-time `view` stamp only once the clock is synced, and never on other commands. The full browser journey is the multiplayer e2e below"
 }
@@ -8089,7 +8089,7 @@ id: toolu_0159smGeP6BukZqTG7aTFYij
 tool_result
 id: toolu_0159smGeP6BukZqTG7aTFYij
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8099,7 +8099,7 @@ id: toolu_01Lg3GpT9PV47avu2BUUQR7X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "bow fire (ammo + durability + cooldown, refusals); skeleton kite + fire vs zombie melee",
   "new_string": "bow fire (ammo + durability + cooldown, refusals); skeleton kite + fire vs zombie melee; melee selection honors a historical position resolver (hits where the attacker saw the mob) while damage/knockback/kill-credit act on the live mob"
 }
@@ -8110,7 +8110,7 @@ id: toolu_01Lg3GpT9PV47avu2BUUQR7X
 tool_result
 id: toolu_01Lg3GpT9PV47avu2BUUQR7X
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8120,7 +8120,7 @@ id: toolu_014cLUks8EcyPjNHJ89ecieX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "pause ignored under server authority, and the replica boot combination (`bootPlayer: false` with a React shell — no snapshot until the primary is seated, a real one the moment they are)",
   "new_string": "pause ignored under server authority, the replica boot combination (`bootPlayer: false` with a React shell — no snapshot until the primary is seated, a real one the moment they are), and a rewind resolver on dispatch opts hitting a mob that live-stands out of reach"
 }
@@ -8131,7 +8131,7 @@ id: toolu_014cLUks8EcyPjNHJ89ecieX
 tool_result
 id: toolu_014cLUks8EcyPjNHJ89ecieX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8141,7 +8141,7 @@ id: toolu_01H3dU4ThjPKY71gKViKbBFu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added\n",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **Melee lag compensation — clicking the mob you SEE now hits it at any ping (protocol v2→v3)**: in an online world your screen renders mobs 125–450 ms in the past (the interpolation delay), so at high ping a melee swing aimed dead at a mob used to whiff — the server judged it against positions your screen hadn't shown yet. Attacks now carry the instant of the world you were looking at (the frame's render time on the server clock), and the server rewinds **target selection** to that instant against its own recorded mob history, bounded to 900 ms (`MELEE_REWIND_MAX_MS`) — damage, knockback, and kill credit still land on the live mob, so nothing is resurrected and no consequence time-travels. Anything degenerate (an unsynced clock, a stale or future stamp, a mob spawned since) simply judges live, exactly as before; single-player is untouched. A 12-attacks/second server budget keeps the rewind window from being trawled by scripted spam. The protocol bump means web app and game server deploy together; a stale tab is refused cleanly and refreshes. Bow arrows keep current behavior on […]
 
@@ -8159,7 +8159,7 @@ tool_use Read
 id: toolu_01MjmfG7kaFxP76MFgrhRcza
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "offset": 1,
   "limit": 12
 }
@@ -8188,7 +8188,7 @@ id: toolu_01U52864dbT9G7vpvS8jcG9f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added\n\n- **Offline play (PWA, part 2)**:",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **Melee lag compensation — clicking the mob you SEE now hits it at any ping (protocol v2→v3)**: in an online world your screen renders mobs 125–450 ms in the past (the interpolation delay), so at high ping a melee swing aimed dead at a mob used to whiff — the server judged it against positions your screen hadn't shown yet. Attacks now carry the instant of the world you were looking at (the frame's render time on the server clock), and the server rewinds **target selection** to that instant against its own recorded mob history, bounded to 900 ms (`MELEE_REWIND_MAX_MS`) — damage, knockback, and kill credit still land on the live mob, so nothing resurrects and no consequence time-travels. Anything degenerate (an unsynced clock, a stale or future stamp, a mob spawned since the viewed tick) simply judges live, exactly as before; single-player is untouched. A 12-attacks/second server budget keeps the rewind window from being trawled by scripted spam. The protocol bump means the web app and game server deploy together; a stale tab is refused cleanly […]
 
@@ -8197,7 +8197,7 @@ id: toolu_01U52864dbT9G7vpvS8jcG9f
 tool_result
 id: toolu_01U52864dbT9G7vpvS8jcG9f
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8360,7 +8360,7 @@ tool_use Read
 id: toolu_01NRxtFDXuRRBePyd21gyvom
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "offset": 140,
   "limit": 55
 }
@@ -8399,7 +8399,7 @@ id: toolu_01NfLKQiAoWRRpnBmYXYd6wX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "old_string": "  // ── prediction under latency: a lagged client's own break is local-first ──\n  // 400±100 ms simulated one-way (~800 ms RTT): the friend digs, the block\n  // must vanish from the friend's OWN world via the prediction ledger (a rAF\n  // watcher catches the pending entry — polling from outside could miss the\n  // confirm window), and the edit must still reach the host through the\n  // lagged link. Wire-format details are unit-tested; this is the journey.\n  await friend.evaluate(() => {\n    window.__monecraft!.net!.setSimulatedLatency(400, 100);\n    (window as unknown as { __sawPrediction: boolean }).__sawPrediction = false;\n    const watch = () => {\n      if ((window.__monecraft?.net?.netStats().pendingPredictions ?? 0) > 0) {\n        (window as unknown as { __sawPrediction: boolean }).__sawPrediction = true;\n      }\n      requestAnimationFrame(watch);\n    };\n    requestAnimationFrame(watch);\n  });\n  const friendEdits = await friend.evaluate(() => window.__monecraft!.engine.state.blockChanges.changes().length);\n  await acquirePointerLock(friend);\n  await friend.waitForTimeout(1000); // settle (slow CI renderers need the margin — same as the host break)\n  await friend.evaluate(() => {\n    window.__monecraft!.engine.state.player.pitch = -Math.PI / 2 + 0.02;\n  });\n  await friend.mouse.down();\n  await expect\n    .poll(() => friend.evaluate(() => window.__monecraft!.engine.state.blockChanges.changes().length), { timeout: 30000 })\n    .toBeGreaterThan(friendEdits);\n  await friend.mouse.up();\n  expect(\n    await friend.evaluate(() => (window as unknown as { __sawPrediction: boolean }).__sawPrediction),\n    \"the lagged […]
 
 > TOOL
@@ -8407,7 +8407,7 @@ id: toolu_01NfLKQiAoWRRpnBmYXYd6wX
 tool_result
 id: toolu_01NfLKQiAoWRRpnBmYXYd6wX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8465,7 +8465,7 @@ tool_use Bash
 id: toolu_01MkknXuY5deTWjnuN8FG5Tr
 ```json
 {
-  "command": "ls -t /Users/hutusi/workspace/ai/david/monecraft/test-results/ 2>/dev/null | head -3; lsof -ti :3000 -sTCP:LISTEN 2>/dev/null | xargs kill 2>/dev/null; lsof -ti :18080 -sTCP:LISTEN 2>/dev/null | xargs kill 2>/dev/null; bun run test:e2e -- multiplayer.e2e.ts > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/400e0f6d-23d3-4ef2-9a64-230acdb2ee02/scratchpad/mp-e2e.log 2>&1; echo \"exit=$?\"; grep -B2 -A15 \"Error\" /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/400e0f6d-23d3-4ef2-9a64-230acdb2ee02/scratchpad/mp-e2e.log | head -40",
+  "command": "ls -t /home/<USER>/workspace/ai/david/monecraft/test-results/ 2>/dev/null | head -3; lsof -ti :3000 -sTCP:LISTEN 2>/dev/null | xargs kill 2>/dev/null; lsof -ti :18080 -sTCP:LISTEN 2>/dev/null | xargs kill 2>/dev/null; bun run test:e2e -- multiplayer.e2e.ts > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/400e0f6d-23d3-4ef2-9a64-230acdb2ee02/scratchpad/mp-e2e.log 2>&1; echo \"exit=$?\"; grep -B2 -A15 \"Error\" /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/400e0f6d-23d3-4ef2-9a64-230acdb2ee02/scratchpad/mp-e2e.log | head -40",
   "description": "Re-run multiplayer e2e capturing full failure output",
   "timeout": 600000
 }
@@ -8487,7 +8487,7 @@ id: toolu_016whsWFRNuVXU2N8XeSAbJo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "old_string": "  await friend.mouse.down();\n  await expect\n    .poll(() => friend.evaluate(() => window.__monecraft!.engine.state.blockChanges.changes().length), { timeout: 30000 })\n    .toBeGreaterThan(friendEdits);\n  // The instant the break committed locally its ledger entry is still pending —\n  // the journal confirm needs a full simulated round-trip (≥800 ms), and the\n  // poll above detects the commit within ~300 ms. Read the ledger directly:\n  // an in-page rAF watcher flaked here twice (2026-07-05, CI then local) —\n  // headless Chromium throttles rAF on occluded pages, and the friend page\n  // sits behind the host's.\n  expect(\n    await friend.evaluate(() => window.__monecraft!.net!.netStats().pendingPredictions),\n    \"the lagged break went through the prediction ledger\"\n  ).toBeGreaterThan(0);\n  await friend.mouse.up();",
   "new_string": "  await friend.mouse.down();\n  // Poll at a fixed 100 ms cadence until the break commits locally; every\n  // sample also latches whether the ledger held a pending entry. The pending\n  // window is ~700–1800 ms wide (the confirm needs a full simulated round\n  // trip), so the latch cannot miss it. Two rejected designs flaked here on\n  // 2026-07-05: an in-page rAF watcher (headless Chromium throttles rAF on\n  // occluded pages — the friend page sits behind the host's) and a one-shot\n  // ledger read after a […]
 
@@ -8496,7 +8496,7 @@ id: toolu_016whsWFRNuVXU2N8XeSAbJo
 tool_result
 id: toolu_016whsWFRNuVXU2N8XeSAbJo
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8565,7 +8565,7 @@ id: toolu_01S7yX3CCUGAYJePKa2ZF1b9
 
       186 |       { timeout: 30000, intervals: [100], message: "the lagged break commits locally through the prediction ledger" }
 --
-        at /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:188:6
+        at /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:188:6
 
     Error Context: test-results/multiplayer.e2e.ts-two-acc-bebbb-ne-world-via-an-invite-link-chromium/error-context.md
 
@@ -8620,7 +8620,7 @@ id: toolu_018v5VEiT4NVGhhRKXAizyvP
 
       186 |       { timeout: 30000, intervals: [100], message: "the lagged break commits locally through the prediction ledger" }
 --
-        at /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:188:6
+        at /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts:188:6
 
     Error Context: test-results/multiplayer.e2e.ts-two-acc-bebbb-ne-world-via-an-invite-link-chromium/error-context.md
 
@@ -8643,7 +8643,7 @@ tool_use Bash
 id: toolu_01U4BCnkHELc6azHnEUpRL51
 ```json
 {
-  "command": "grep -n \"predict\\|crack\\|mining\" /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts | head -20",
+  "command": "grep -n \"predict\\|crack\\|mining\" /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts | head -20",
   "description": "Locate predictive breaking in NetworkSession"
 }
 ```
@@ -8679,7 +8679,7 @@ tool_use Read
 id: toolu_01Y3h5E35ukV9we56cQ9sWCm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.ts",
   "offset": 745,
   "limit": 40
 }
@@ -8728,7 +8728,7 @@ id: toolu_01E7Yo4d8Sd3xpMGuhVRZBzW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "old_string": "        friend.evaluate((before) => {\n          const w = window as unknown as { __sawPending?: boolean };\n          if ((window.__monecraft?.net?.netStats().pendingPredictions ?? 0) > 0) w.__sawPending = true;\n          return { broke: window.__monecraft!.engine.state.blockChanges.changes().length > before, pendingSeen: w.__sawPending === true };\n        }, friendEdits),",
   "new_string": "        friend.evaluate((before) => {\n          const w = window as unknown as { __sawPending?: boolean };\n          if ((window.__monecraft?.net?.netStats().pendingPredictions ?? 0) > 0) w.__sawPending = true;\n          const st = window.__monecraft!.engine.state as unknown as { mining?: unknown; dayClock: number; player: { mining?: unknown; pitch: number } };\n          return {\n            broke: window.__monecraft!.engine.state.blockChanges.changes().length > before,\n            pendingSeen: w.__sawPending === true,\n            dbgMining: JSON.stringify(st.player.mining ?? st.mining ?? null),\n            dbgDayClock: st.dayClock,\n            dbgPitch: st.player.pitch\n          };\n        }, friendEdits),"
 }
@@ -8739,7 +8739,7 @@ id: toolu_01E7Yo4d8Sd3xpMGuhVRZBzW
 tool_result
 id: toolu_01E7Yo4d8Sd3xpMGuhVRZBzW
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8795,7 +8795,7 @@ id: toolu_01CrgxBaQV11KauDTjZkBKaP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts",
   "old_string": "  await expect\n    .poll(\n      () =>\n        friend.evaluate((before) => {\n          const w = window as unknown as { __sawPending?: boolean };\n          if ((window.__monecraft?.net?.netStats().pendingPredictions ?? 0) > 0) w.__sawPending = true;\n          const st = window.__monecraft!.engine.state as unknown as { mining?: unknown; dayClock: number; player: { mining?: unknown; pitch: number } };\n          return {\n            broke: window.__monecraft!.engine.state.blockChanges.changes().length > before,\n            pendingSeen: w.__sawPending === true,\n            dbgMining: JSON.stringify(st.player.mining ?? st.mining ?? null),\n            dbgDayClock: st.dayClock,\n            dbgPitch: st.player.pitch\n          };\n        }, friendEdits),\n      { timeout: 30000, intervals: [100], message: \"the lagged break commits locally through the prediction ledger\" }\n    )\n    .toEqual({ broke: true, pendingSeen: true });\n  await friend.mouse.up();",
   "new_string": "  const samples: string[] = [];\n  let last: { broke: boolean; pendingSeen: boolean } = { broke: false, pendingSeen: false };\n  for (let i = 0; i < 300; i += 1) {\n    last = await friend.evaluate((before) => {\n      const w = window as unknown as { __sawPending?: boolean };\n      if ((window.__monecraft?.net?.netStats().pendingPredictions ?? 0) > 0) w.__sawPending = true;\n      const st = window.__monecraft!.engine.state as unknown as {\n        dayClock: number;\n        player: { mining?: { targetKey: string; progress: number }; position: { y: number }; pitch: number };\n      };\n      return {\n        broke: window.__monecraft!.engine.state.blockChanges.changes().length […]
 
@@ -8804,7 +8804,7 @@ id: toolu_01CrgxBaQV11KauDTjZkBKaP
 tool_result
 id: toolu_01CrgxBaQV11KauDTjZkBKaP
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/multiplayer.e2e.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8963,7 +8963,7 @@ tool_use Write
 id: toolu_01NmLyRiLCjrhBU4TJj9LBrK
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md",
   "content": "---\nname: lag-comp-branch\ndescription: \"Melee lag compensation — branch feature/lag-compensation BUILT + full gate green (2026-07-05, 8 commits, tip 29e8509, protocol v2→v3); PR/push awaits user; SYNCHRONIZED web+game-server deploy required\"\nmetadata:\n  type: project\n---\n\n**Branch `feature/lag-compensation` complete locally (2026-07-05), 8 commits, tip `29e8509`.** Client stamps attacks with the previous frame's interpolation render time (`view` on cmd, protocol **v2→v3**); server keeps a 24-tick mob-pose ring (`server/mobHistory.ts`) and rewinds melee TARGET SELECTION only (clamped `MELEE_REWIND_MAX_MS` 900 ms; damage/knockback/kill-credit stay live); 12/s room attack budget bounds stamp-trawling. SP untouched; degenerate stamps judge live. Full gate green: lint/typecheck/format/1217 unit/build/24 e2e.\n\n**Why:** #52 fixed building/mining feel at high ping but melee still whiffed — the screen renders mobs 125–450 ms in the past. User picked this over mobile/touch, IndexedDB saves, content batch.\n\n**How to apply:**\n- **PR/push awaits the user.** PR must note: **web app + game server deploy TOGETHER** (v3 tickets refuse stale peers; same rollover as MP v2). Fly single-machine invariant unchanged.\n- Manual pass after deploy: two browsers, attacker `setSimulatedLatency(300, 50)`, melee a walking mob under the crosshair — previously-whiffing hits register; latency-0 and SP feel unchanged.\n- **Flaky-test saga (2026-07-05, all pre-existing #52 tests, both deflaked on this branch + PWA branch):** jitter-FIFO […]
 
 > TOOL
@@ -8971,7 +8971,7 @@ id: toolu_01NmLyRiLCjrhBU4TJj9LBrK
 tool_result
 id: toolu_01NmLyRiLCjrhBU4TJj9LBrK
 ```
-File created successfully at: /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8981,7 +8981,7 @@ id: toolu_012h8fqhT2w6syjhhXRVpEdS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [PWA branch](pwa-branch.md) — **✅ PR #53 OPEN** (`feature/pwa`, 4 commits, full gate green, 2026-07-05); Vercel-preview manual pass pending",
   "new_string": "- [PWA branch](pwa-branch.md) — **✅ PR #53 MERGED `aeb6236`** (2026-07-05; main e2e flake passed on rerun); prod manual PWA pass pending (no Vercel preview — Ignored Build Step)\n- [Lag-comp branch](lag-comp-branch.md) — **✅ `feature/lag-compensation` BUILT, full gate green** (8 commits, tip `29e8509`, protocol v3, 2026-07-05); PR/push awaits user; **synchronized web+server deploy required**"
 }
@@ -8992,7 +8992,7 @@ id: toolu_012h8fqhT2w6syjhhXRVpEdS
 tool_result
 id: toolu_012h8fqhT2w6syjhhXRVpEdS
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9002,7 +9002,7 @@ id: toolu_01NKsFrFguxrUNCoPm7iHqrx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "description: \"PWA feature — PR #53 OPEN (feature/pwa, 4 commits, tip d205ac8, full gate green, 2026-07-05); manual Vercel-preview pass pending\"",
   "new_string": "description: \"PWA feature — PR #53 MERGED to main (aeb6236, 2026-07-05, 6 commits incl. review fixes + FIFO deflake); post-merge main e2e flaked (rAF-watcher test, passed on rerun, properly deflaked on the lag-comp branch); manual PWA pass on PROD pending (no Vercel preview)\""
 }
@@ -9013,7 +9013,7 @@ id: toolu_01NKsFrFguxrUNCoPm7iHqrx
 tool_result
 id: toolu_01NKsFrFguxrUNCoPm7iHqrx
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9087,7 +9087,7 @@ id: toolu_0134ZsnGKAupyotHVw8aMkFm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md",
   "old_string": "description: \"Melee lag compensation — branch feature/lag-compensation BUILT + full gate green (2026-07-05, 8 commits, tip 29e8509, protocol v2→v3); PR/push awaits user; SYNCHRONIZED web+game-server deploy required\"",
   "new_string": "description: \"Melee lag compensation — PR #54 OPEN (feature/lag-compensation, 8 commits, tip 29e8509, protocol v2→v3, full gate green, 2026-07-05); SYNCHRONIZED web+game-server deploy required at rollout\""
 }
@@ -9098,7 +9098,7 @@ id: toolu_0134ZsnGKAupyotHVw8aMkFm
 tool_result
 id: toolu_0134ZsnGKAupyotHVw8aMkFm
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9108,7 +9108,7 @@ id: toolu_01WCwiM5swtyHzA7MscHD438
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md",
   "old_string": "- **PR/push awaits the user.** PR must note: **web app + game server deploy TOGETHER** (v3 tickets refuse stale peers; same rollover as MP v2). Fly single-machine invariant unchanged.",
   "new_string": "- **PR #54 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/54); its description carries the synchronized-deploy warning (**web app + game server deploy TOGETHER** — v3 tickets refuse stale peers; same rollover as MP v2). Fly single-machine invariant unchanged."
 }
@@ -9119,7 +9119,7 @@ id: toolu_01WCwiM5swtyHzA7MscHD438
 tool_result
 id: toolu_01WCwiM5swtyHzA7MscHD438
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9129,7 +9129,7 @@ id: toolu_015fLGkPQUAYe99R8JLPNfqZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Lag-comp branch](lag-comp-branch.md) — **✅ `feature/lag-compensation` BUILT, full gate green** (8 commits, tip `29e8509`, protocol v3, 2026-07-05); PR/push awaits user; **synchronized web+server deploy required**",
   "new_string": "- [Lag-comp branch](lag-comp-branch.md) — **✅ PR #54 OPEN** (`feature/lag-compensation`, 8 commits, protocol v3, full gate green, 2026-07-05); **synchronized web+server deploy required at rollout**"
 }
@@ -9140,7 +9140,7 @@ id: toolu_015fLGkPQUAYe99R8JLPNfqZ
 tool_result
 id: toolu_015fLGkPQUAYe99R8JLPNfqZ
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9246,7 +9246,7 @@ id: toolu_01KY8rgxaciLYCndRzmo1dLZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md",
   "old_string": "- **PR #54 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/54); its description carries the synchronized-deploy warning",
   "new_string": "- **PR #54 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/54), all checks green same day (verify pass; e2e gates merge on main), **CodeRabbit: 0 actionable findings** (incl. a user-triggered re-review); its description carries the synchronized-deploy warning"
 }
@@ -9257,7 +9257,7 @@ id: toolu_01KY8rgxaciLYCndRzmo1dLZ
 tool_result
 id: toolu_01KY8rgxaciLYCndRzmo1dLZ
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/lag-comp-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

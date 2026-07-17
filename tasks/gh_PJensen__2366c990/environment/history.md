@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -70,7 +70,7 @@ id: call_ecLOLMx6wcCYXRHIG2Lbrans
 ```json
 {
   "cmd": "rg -n \"audio|sound|ambient|mp3|woodcutter|wood|chop|fell|tree\" src tests index.html deno.json",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -83,7 +83,7 @@ id: call_u1riil5ebiOXw6XG7lb79PCw
 ```json
 {
   "cmd": "find . -maxdepth 4 -type f \\( -name '*.mp3' -o -name '*audio*' -o -name '*sound*' \\)",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -95,8 +95,8 @@ tool_use exec_command
 id: call_mOplaHLVmC3WJQSXf5zBrNIG
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/.codex/RTK.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/RTK.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -389,7 +389,7 @@ id: call_GVmok7LIMyfeueENV9jQSPsX
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/display/audio/sounds.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -402,7 +402,7 @@ id: call_HYUtFHo9AbJlsfQqPkFvhopy
 ```json
 {
   "cmd": "rtk sed -n '1,300p' src/display/audio/audioWiring.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -415,7 +415,7 @@ id: call_5gWj0pJzuuEsVCgIQNBJS8dO
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/display/audio/localEmitterAmbientController.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -428,7 +428,7 @@ id: call_HS0Gps34AR2QbknkTnEP9psO
 ```json
 {
   "cmd": "rtk sed -n '1080,1180p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -441,7 +441,7 @@ id: call_50lQuBMZcVpWxNf4G8Guv6m6
 ```json
 {
   "cmd": "rtk sed -n '1,260p' tests/audioSoundsRegistry.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -454,7 +454,7 @@ id: call_Wng36mqK467afJilmBuQH9gz
 ```json
 {
   "cmd": "rtk sed -n '1,220p' tests/audioWiring.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -864,7 +864,7 @@ id: call_8Kl5MtTvKhwSWdbiYFgmzkpT
 ```json
 {
   "cmd": "rtk rg -n \"audio:play|startLoop|localEmitter|audioEmitters|SoundEmitter|profile\" src/display src/bridge src/rules tests | head -n 200",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -877,7 +877,7 @@ id: call_gVWGqmBtwXFfs48xavztuAXw
 ```json
 {
   "cmd": "rtk rg -n \"audioEmitters|SoundEmitter|AudioEmitter|profile\" src/bridge src/rules src/main tests | head -n 240",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -890,7 +890,7 @@ id: call_0x8nm0PYCkKuZJsuGx7Lr3sX
 ```json
 {
   "cmd": "rtk sed -n '300,620p' src/display/audio/audioWiring.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -903,7 +903,7 @@ id: call_EMv6HBgmjQDNfi2MixC9ZYvA
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/bridge/schema/worldView.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -916,7 +916,7 @@ id: call_UAfG0bmeJ1R2W2MNg7i5rNfC
 ```json
 {
   "cmd": "rtk rg -n \"TownfolkJob|TOWNFOLK_STATES|workSiteKind|audioEmitters\" src/rules/components src/bridge src/rules -g '*.js'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1139,7 +1139,7 @@ id: call_3JuORKKuALaBxFro6SMFqkEh
 ```json
 {
   "cmd": "rtk sed -n '1,90p' src/rules/components/AudioEmitter.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1152,7 +1152,7 @@ id: call_e78Rfcps5WoRUnNPGTyza7lb
 ```json
 {
   "cmd": "rtk sed -n '930,1120p' src/bridge/schema/worldView.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -1165,7 +1165,7 @@ id: call_vZShPrTN2Rvsdnwni9KQN0Rc
 ```json
 {
   "cmd": "rtk sed -n '1,140p' tests/worldViewAudioEmitters.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1178,7 +1178,7 @@ id: call_ycVmu1t0L8imrjA4sM56LArB
 ```json
 {
   "cmd": "rtk sed -n '1,170p' tests/localEmitterAmbientController.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1191,7 +1191,7 @@ id: call_68YAxwUJVtwLGAIzTTe0EI1Y
 ```json
 {
   "cmd": "rtk sed -n '1,120p' src/rules/components/TownfolkJob.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1204,7 +1204,7 @@ id: call_L2Eit0R6I39Hl4JKoAp3vqCh
 ```json
 {
   "cmd": "rtk sed -n '930,1010p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1519,7 +1519,7 @@ id: call_F1yER1OXTvKchSZoYWC2NHVw
 ```json
 {
   "cmd": "rtk rg -n \"townfolk:chopped|woodcutter|chop\" tests/aiTownfolk.test.mjs tests/*.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1532,7 +1532,7 @@ id: call_mIBZdx3V6fB1xFSH8Wd48Hie
 ```json
 {
   "cmd": "rtk sed -n '1,90p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1545,7 +1545,7 @@ id: call_XHiMFwIaFYtRArD8QRcSXziB
 ```json
 {
   "cmd": "rtk sed -n '620,900p' src/display/audio/audioWiring.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -1691,7 +1691,7 @@ id: call_r3icWEsF2eGU93Eqdysxbauj
 ```json
 {
   "cmd": "rtk rg -n \"world\\.on\\('audio:play'|world\\.on\\(\\\"audio:play\\\"|resolveAudioPlayKey|audio:play\" src/display/audio/audioWiring.js tests/audioWiring.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1728,7 +1728,7 @@ id: call_v9NG4AtOZehorTElcXpJ9vkC
 ```json
 {
   "cmd": "rtk sed -n '1340,1375p' src/display/audio/audioWiring.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1741,7 +1741,7 @@ id: call_GCxyjNZ1F3sQS5XHq6axaMNh
 ```json
 {
   "cmd": "rtk sed -n '400,465p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1754,7 +1754,7 @@ id: call_XC1mHTt0NN4WnlPF9WW6BCTp
 ```json
 {
   "cmd": "rtk sed -n '90,130p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }

@@ -86,7 +86,7 @@ tool_use Bash
 id: toolu_01B7LtVEsd6TUiRNQruyJHmG
 ```json
 {
-  "command": "/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh status 2>/dev/null | head -20",
+  "command": "/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh status 2>/dev/null | head -20",
   "description": "Verificar status dos containers"
 }
 ```
@@ -160,7 +160,7 @@ tool_use Bash
 id: toolu_01JcjphvfQrZJ93Uhhce5mj9
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\ngrep -o 'font-style[^;\"]*italic[^;\"]*\\|font-style:italic\\|font-style: italic\\|italic' wordpress/wp-content/uploads/2023/02/gt9_pt_desk.svg | sort | uniq -c\necho \"=== contagem total de 'italic' por arquivo ===\"\nfor f in wordpress/wp-content/uploads/2023/02/gt9_pt_desk.svg wordpress/wp-content/uploads/2023/02/gt9_en_desk.svg wordpress/wp-content/uploads/2023/02/gt9_pt_mobile.svg wordpress/wp-content/uploads/2023/02/gt9_en_mobile.svg; do\n  echo \"$f: $(grep -o 'italic' \"$f\" | wc -l | tr -d ' ') ocorrências de 'italic'\"\ndone",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\ngrep -o 'font-style[^;\"]*italic[^;\"]*\\|font-style:italic\\|font-style: italic\\|italic' wordpress/wp-content/uploads/2023/02/gt9_pt_desk.svg | sort | uniq -c\necho \"=== contagem total de 'italic' por arquivo ===\"\nfor f in wordpress/wp-content/uploads/2023/02/gt9_pt_desk.svg wordpress/wp-content/uploads/2023/02/gt9_en_desk.svg wordpress/wp-content/uploads/2023/02/gt9_pt_mobile.svg wordpress/wp-content/uploads/2023/02/gt9_en_mobile.svg; do\n  echo \"$f: $(grep -o 'italic' \"$f\" | wc -l | tr -d ' ') ocorrências de 'italic'\"\ndone",
   "description": "Contar ocorrências de italic nos SVGs da colmeia"
 }
 ```
@@ -343,7 +343,7 @@ tool_use Bash
 id: toolu_01TwShZDSRHDas8oE1Pbs7iz
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\nDD=/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh\necho \"=== PT post 26666: existe widget com gtSVG/italic? ===\"\n$DD wp eval '\n$ids = [26666, 71726];\nforeach ($ids as $id) {\n  $d = get_post_meta($id, \"_elementor_data\", true);\n  if (!$d) { echo \"$id: SEM _elementor_data\\n\"; continue; }\n  $hasGt = strpos($d, \"gtSVG\") !== false ? \"SIM\" : \"nao\";\n  $hasItalicRule = strpos($d, \".italic\") !== false ? \"SIM\" : \"nao\";\n  $countItalicClass = substr_count($d, \"class=\\\"italic\\\"\") + substr_count($d, \"class=\\\\\\\"italic\\\\\\\"\");\n  $title = get_the_title($id);\n  echo \"$id [$title]: gtSVG=$hasGt | regra .italic=$hasItalicRule\\n\";\n}\n' 2>&1 | grep -v \"Cores ativadas\\|BIT BPO\\|Docker\\|Devil\\|docker-dev\\|Versao\\|Ambiente\\|^\\s*[│╭╰├]\"",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\nDD=/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh\necho \"=== PT post 26666: existe widget com gtSVG/italic? ===\"\n$DD wp eval '\n$ids = [26666, 71726];\nforeach ($ids as $id) {\n  $d = get_post_meta($id, \"_elementor_data\", true);\n  if (!$d) { echo \"$id: SEM _elementor_data\\n\"; continue; }\n  $hasGt = strpos($d, \"gtSVG\") !== false ? \"SIM\" : \"nao\";\n  $hasItalicRule = strpos($d, \".italic\") !== false ? \"SIM\" : \"nao\";\n  $countItalicClass = substr_count($d, \"class=\\\"italic\\\"\") + substr_count($d, \"class=\\\\\\\"italic\\\\\\\"\");\n  $title = get_the_title($id);\n  echo \"$id [$title]: gtSVG=$hasGt | regra .italic=$hasItalicRule\\n\";\n}\n' 2>&1 | grep -v \"Cores ativadas\\|BIT BPO\\|Docker\\|Devil\\|docker-dev\\|Versao\\|Ambiente\\|^\\s*[│╭╰├]\"",
   "description": "Verificar _elementor_data dos posts PT e EN da colmeia"
 }
 ```
@@ -376,7 +376,7 @@ tool_use Bash
 id: toolu_01SPxvE8vbYFfg5VjvyvnGnX
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\nDD=/Users/dcambria/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh\n$DD wp eval '\nforeach ([26666, 71726] as $id) {\n  $d = get_post_meta($id, \"_elementor_data\", true);\n  echo \"===== POST $id =====\\n\";\n  // Contar todas as ocorrências de \"italic\" e mostrar contexto\n  echo \"font-style:italic ocorre: \" . substr_count($d, \"font-style: italic\") . \" (com espaco)\\n\";\n  echo \"font-style:italic ocorre: \" . substr_count($d, \"font-style:italic\") . \" (sem espaco)\\n\";\n  echo \"class=italic (escaped) ocorre: \" . substr_count($d, \"class=\\\\\\\"italic\\\\\\\"\") . \"\\n\";\n  // mostrar 200 chars ao redor da regra .gtSVG .italic\n  $pos = strpos($d, \".italic\");\n  if ($pos !== false) {\n    echo \"CONTEXTO regra:\\n\";\n    echo substr($d, max(0,$pos-30), 120) . \"\\n\";\n  }\n}\n' 2>&1 | grep -vE \"Cores ativadas|BIT BPO|Docker|Devil|docker-dev\\.sh|Versao|Ambiente WordPress|^\\s*[│╭╰├╮]|^\\s*$\" ",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\nDD=/home/<USER>/scripts/server-tools/v2/docker-dev/common/bin/docker-dev.sh\n$DD wp eval '\nforeach ([26666, 71726] as $id) {\n  $d = get_post_meta($id, \"_elementor_data\", true);\n  echo \"===== POST $id =====\\n\";\n  // Contar todas as ocorrências de \"italic\" e mostrar contexto\n  echo \"font-style:italic ocorre: \" . substr_count($d, \"font-style: italic\") . \" (com espaco)\\n\";\n  echo \"font-style:italic ocorre: \" . substr_count($d, \"font-style:italic\") . \" (sem espaco)\\n\";\n  echo \"class=italic (escaped) ocorre: \" . substr_count($d, \"class=\\\\\\\"italic\\\\\\\"\") . \"\\n\";\n  // mostrar 200 chars ao redor da regra .gtSVG .italic\n  $pos = strpos($d, \".italic\");\n  if ($pos !== false) {\n    echo \"CONTEXTO regra:\\n\";\n    echo substr($d, max(0,$pos-30), 120) . \"\\n\";\n  }\n}\n' 2>&1 | grep -vE \"Cores ativadas|BIT BPO|Docker|Devil|docker-dev\\.sh|Versao|Ambiente WordPress|^\\s*[│╭╰├╮]|^\\s*$\" ",
   "description": "Extrair formato exato da regra italic no elementor_data"
 }
 ```
@@ -547,7 +547,7 @@ tool_use Bash
 id: toolu_0151Y9HxEtR83ntJHSFpd7pC
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\ncat > tmp/remove-colmeia-italic.php <<'PHP'\n<?php\n/**\n * Remove itálico da colmeia (Grupos de Trabalho).\n * Troca `font-style: italic` -> `font-style: normal` na regra `.gtSVG .italic`\n * do _elementor_data dos posts PT (26666) e EN (71726).\n * Idempotente. Faz backup do meta original em _elementor_data_pre_italic_fix.\n *\n * Uso:  wp eval-file remove-colmeia-italic.php          (dry-run, só relata)\n *       APPLY=1 wp eval-file remove-colmeia-italic.php   (aplica de fato)\n */\n\n$apply  = getenv( 'APPLY' ) === '1';\n$ids    = array( 26666, 71726 );\n$search = 'font-style: italic';\n$repl   = 'font-style: normal';\n\nforeach ( $ids as $id ) {\n    $title = get_the_title( $id );\n    $data  = get_post_meta( $id, '_elementor_data', true );\n\n    if ( ! $data ) {\n        echo \"[$id] $title — SEM _elementor_data, pulado\\n\";\n        continue;\n    }\n\n    $count = substr_count( $data, $search );\n    echo \"[$id] $title — ocorrências de '$search': $count\\n\";\n\n    if ( $count === 0 ) {\n        echo \"      nada a fazer (já normal ou ausente)\\n\";\n        continue;\n    }\n\n    if ( ! $apply ) {\n        echo \"      [DRY-RUN] trocaria $count ocorrência(s) por '$repl'\\n\";\n        continue;\n    }\n\n    // backup uma única vez\n    if ( ! get_post_meta( $id, '_elementor_data_pre_italic_fix', true ) ) {\n        update_post_meta( $id, '_elementor_data_pre_italic_fix', wp_slash( $data ) );\n        echo \"      backup salvo em _elementor_data_pre_italic_fix\\n\";\n    }\n\n    $new = str_replace( $search, $repl, […]
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\ncat > tmp/remove-colmeia-italic.php <<'PHP'\n<?php\n/**\n * Remove itálico da colmeia (Grupos de Trabalho).\n * Troca `font-style: italic` -> `font-style: normal` na regra `.gtSVG .italic`\n * do _elementor_data dos posts PT (26666) e EN (71726).\n * Idempotente. Faz backup do meta original em _elementor_data_pre_italic_fix.\n *\n * Uso:  wp eval-file remove-colmeia-italic.php          (dry-run, só relata)\n *       APPLY=1 wp eval-file remove-colmeia-italic.php   (aplica de fato)\n */\n\n$apply  = getenv( 'APPLY' ) === '1';\n$ids    = array( 26666, 71726 );\n$search = 'font-style: italic';\n$repl   = 'font-style: normal';\n\nforeach ( $ids as $id ) {\n    $title = get_the_title( $id );\n    $data  = get_post_meta( $id, '_elementor_data', true );\n\n    if ( ! $data ) {\n        echo \"[$id] $title — SEM _elementor_data, pulado\\n\";\n        continue;\n    }\n\n    $count = substr_count( $data, $search );\n    echo \"[$id] $title — ocorrências de '$search': $count\\n\";\n\n    if ( $count === 0 ) {\n        echo \"      nada a fazer (já normal ou ausente)\\n\";\n        continue;\n    }\n\n    if ( ! $apply ) {\n        echo \"      [DRY-RUN] trocaria $count ocorrência(s) por '$repl'\\n\";\n        continue;\n    }\n\n    // backup uma única vez\n    if ( ! get_post_meta( $id, '_elementor_data_pre_italic_fix', true ) ) {\n        update_post_meta( $id, '_elementor_data_pre_italic_fix', wp_slash( $data ) );\n        echo \"      backup salvo em _elementor_data_pre_italic_fix\\n\";\n    }\n\n    $new = str_replace( $search, $repl, […]
 
 > TOOL
 
@@ -568,7 +568,7 @@ tool_use Bash
 id: toolu_01PkKpQrFrjC5jqV6z3fehSX
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\ndocker cp tmp/remove-colmeia-italic.php concertacao-dev-wordpress:/tmp/remove-colmeia-italic.php\necho \"=== DRY-RUN ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/remove-colmeia-italic.php --path=/var/www/html 2>&1",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\ndocker cp tmp/remove-colmeia-italic.php concertacao-dev-wordpress:/tmp/remove-colmeia-italic.php\necho \"=== DRY-RUN ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp eval-file /tmp/remove-colmeia-italic.php --path=/var/www/html 2>&1",
   "description": "Dry-run da remoção do itálico em DEV"
 }
 ```
@@ -596,7 +596,7 @@ tool_use Bash
 id: toolu_01Xx42h28empfZtbhTWohbca
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== APLICANDO ===\"\ndocker exec -u www-data -e APPLY=1 concertacao-dev-wordpress wp eval-file /tmp/remove-colmeia-italic.php --path=/var/www/html 2>&1\necho \"\"\necho \"=== Limpando caches (WP Rocket + Redis + OPcache) ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>&1\ndocker exec -u www-data concertacao-dev-wordpress wp eval 'if(function_exists(\"rocket_clean_domain\")){rocket_clean_domain();echo \"WP Rocket limpo\\n\";}' --path=/var/www/html 2>&1\ndocker exec -u www-data concertacao-dev-wordpress wp eval 'if(function_exists(\"opcache_reset\")){opcache_reset();echo \"OPcache reset\\n\";}' --path=/var/www/html 2>&1",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao\necho \"=== APLICANDO ===\"\ndocker exec -u www-data -e APPLY=1 concertacao-dev-wordpress wp eval-file /tmp/remove-colmeia-italic.php --path=/var/www/html 2>&1\necho \"\"\necho \"=== Limpando caches (WP Rocket + Redis + OPcache) ===\"\ndocker exec -u www-data concertacao-dev-wordpress wp cache flush --path=/var/www/html 2>&1\ndocker exec -u www-data concertacao-dev-wordpress wp eval 'if(function_exists(\"rocket_clean_domain\")){rocket_clean_domain();echo \"WP Rocket limpo\\n\";}' --path=/var/www/html 2>&1\ndocker exec -u www-data concertacao-dev-wordpress wp eval 'if(function_exists(\"opcache_reset\")){opcache_reset();echo \"OPcache reset\\n\";}' --path=/var/www/html 2>&1",
   "description": "Aplicar remoção do itálico e limpar caches em DEV"
 }
 ```
@@ -799,7 +799,7 @@ tool_use Read
 id: toolu_01TBALkp6M8NceJZD7nZvKc5
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.playwright-mcp/colmeia-dev-pt-sem-italico.png"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.playwright-mcp/colmeia-dev-pt-sem-italico.png"
 }
 ```
 
@@ -808,7 +808,7 @@ id: toolu_01TBALkp6M8NceJZD7nZvKc5
 tool_result ERROR
 id: toolu_01TBALkp6M8NceJZD7nZvKc5
 ```
-File does not exist. Note: your current working directory is /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao.
+File does not exist. Note: your current working directory is /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao.
 ```
 
 > TOOL
@@ -817,7 +817,7 @@ tool_use Bash
 id: toolu_019NhxKknPys1ybD6zwWw4iz
 ```json
 {
-  "command": "find /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao -name \"colmeia-dev-pt-sem-italico.png\" 2>/dev/null; echo \"---\"; ls -la /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/.playwright-mcp/ 2>/dev/null | tail -5",
+  "command": "find /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao -name \"colmeia-dev-pt-sem-italico.png\" 2>/dev/null; echo \"---\"; ls -la /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/.playwright-mcp/ 2>/dev/null | tail -5",
   "description": "Localizar screenshot salvo"
 }
 ```
@@ -827,7 +827,7 @@ id: toolu_019NhxKknPys1ybD6zwWw4iz
 tool_result
 id: toolu_019NhxKknPys1ybD6zwWw4iz
 ```
-/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/colmeia-dev-pt-sem-italico.png
+/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/colmeia-dev-pt-sem-italico.png
 ---
 -rw-r--r--@    1 dcambria  staff    783896  1 dez  2025 sobre-nos-final.png
 -rw-r--r--@    1 dcambria  staff     83402  3 fev 00:35 sobre-nos-full.png
@@ -842,7 +842,7 @@ tool_use Read
 id: toolu_01C4XFAWNNLU25b7Zbawb7tg
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/colmeia-dev-pt-sem-italico.png"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/colmeia-dev-pt-sem-italico.png"
 }
 ```
 

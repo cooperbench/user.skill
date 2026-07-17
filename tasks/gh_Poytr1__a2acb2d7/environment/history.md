@@ -239,7 +239,7 @@ tool_use Read
 id: toolu_bdrk_01AqJjn9QXgjjWX3UYRJHt34
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.worktrees/pivot/internal/api/auth.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.worktrees/pivot/internal/api/auth.go",
   "limit": 50
 }
 ```
@@ -343,7 +343,7 @@ id: toolu_bdrk_017VQryqVxLrK3w4j5PjGp3p
 {
   "pattern": "GITHUB_CLIENT|OAuth|github.*auth",
   "glob": "\"*.go\"",
-  "path": "/Users/pc/web3/ReleaseBeacon"
+  "path": "/home/<USER>/web3/ReleaseBeacon"
 }
 ```
 
@@ -362,7 +362,7 @@ id: toolu_bdrk_01YYtQ3QFiLuKZ2KPDTvzeSY
 ```json
 {
   "glob": "\"*.go\"",
-  "path": "/Users/pc/web3/ReleaseBeacon/.worktrees/pivot",
+  "path": "/home/<USER>/web3/ReleaseBeacon/.worktrees/pivot",
   "pattern": "GITHUB_CLIENT|OAuth|github.*callback|NO_AUTH"
 }
 ```
@@ -381,7 +381,7 @@ tool_use Read
 id: toolu_bdrk_011ZQ3mQvKcvt1rBxT67a1ka
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-16-github-oauth-login.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/plans/2026-03-16-github-oauth-login.md",
   "limit": 60
 }
 ```
@@ -426,7 +426,7 @@ id: toolu_bdrk_019rUtjhuChQhcRqAHzavkYd
 ```json
 {
   "glob": "\"*.go\"",
-  "path": "/Users/pc/web3/ReleaseBeacon",
+  "path": "/home/<USER>/web3/ReleaseBeacon",
   "pattern": "NO_AUTH|NoAuth"
 }
 ```
@@ -463,7 +463,7 @@ tool_use Read
 id: toolu_bdrk_01Euoh9fP282VshCYptZQhvN
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/cmd/server/main.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/cmd/server/main.go",
   "limit": 80
 }
 ```
@@ -545,7 +545,7 @@ tool_use Write
 id: toolu_bdrk_011teiK85MkVgadKGykvjnx6
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/scripts/add-allowed-user.sh",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/scripts/add-allowed-user.sh",
   "content": "#!/usr/bin/env bash\nset -euo pipefail\n\nRESOURCE_GROUP=\"${AZURE_RESOURCE_GROUP:-changelogue-rg}\"\nAPP_NAME=\"${AZURE_APP_NAME:-changelogue-app}\"\n\nif [ $# -lt 1 ]; then\n  echo \"Usage: $0 <github-username> [github-username ...]\"\n  echo \"Adds GitHub usernames to ALLOWED_GITHUB_USERS on Azure App Service.\"\n  exit 1\nfi\n\n# Get current value\ncurrent=$(az webapp config appsettings list \\\n  --resource-group \"$RESOURCE_GROUP\" \\\n  --name \"$APP_NAME\" \\\n  --query \"[?name=='ALLOWED_GITHUB_USERS'].value | [0]\" \\\n  --output tsv 2>/dev/null || echo \"\")\n\n# Append new users (comma-separated, deduped)\nfor user in \"$@\"; do\n  if [ -z \"$current\" ]; then\n    current=\"$user\"\n  elif echo \",$current,\" | grep -qi \",$user,\"; then\n    echo \"User '$user' already in allowlist, skipping.\"\n  else\n    current=\"$current,$user\"\n  fi\ndone\n\necho \"Setting ALLOWED_GITHUB_USERS=$current\"\n\naz webapp config appsettings set \\\n  --resource-group \"$RESOURCE_GROUP\" \\\n  --name \"$APP_NAME\" \\\n  --settings \"ALLOWED_GITHUB_USERS=$current\" \\\n  --output table\n\necho \"Done. App will restart automatically to pick up the change.\"\n"
 }
 ```
@@ -555,7 +555,7 @@ id: toolu_bdrk_011teiK85MkVgadKGykvjnx6
 tool_result
 id: toolu_bdrk_011teiK85MkVgadKGykvjnx6
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/scripts/add-allowed-user.sh
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/scripts/add-allowed-user.sh
 ```
 
 > TOOL
@@ -564,7 +564,7 @@ tool_use Bash
 id: toolu_bdrk_015tDuVbNfjvvLNGnKgki2eo
 ```json
 {
-  "command": "chmod +x /Users/pc/web3/ReleaseBeacon/scripts/add-allowed-user.sh"
+  "command": "chmod +x /home/<USER>/web3/ReleaseBeacon/scripts/add-allowed-user.sh"
 }
 ```
 
@@ -705,7 +705,7 @@ id: toolu_bdrk_01GZpZoLRJbaphNjc6rHRfZT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/scripts/add-allowed-user.sh",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/scripts/add-allowed-user.sh",
   "old_string": "RESOURCE_GROUP=\"${AZURE_RESOURCE_GROUP:-changelogue-rg}\"",
   "new_string": "RESOURCE_GROUP=\"${AZURE_RESOURCE_GROUP:-changelogue-res}\""
 }
@@ -716,7 +716,7 @@ id: toolu_bdrk_01GZpZoLRJbaphNjc6rHRfZT
 tool_result
 id: toolu_bdrk_01GZpZoLRJbaphNjc6rHRfZT
 ```
-The file /Users/pc/web3/ReleaseBeacon/scripts/add-allowed-user.sh has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/scripts/add-allowed-user.sh has been updated successfully.
 ```
 
 > AGENT

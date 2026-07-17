@@ -1,1 +1,8 @@
-{"point_id": "ses_2fd419c71ffeqSOLZEn9Pmpv8P#18", "developer": "gh:khaong", "condition": "noprofile", "real": "Can you open a pull request for the current branch for me?", "prev_agent": "All changes are fully reverted. Now, what exactly would you like the `.opencode/plugins/entire.ts` file to use? Just to confirm: you want it to call `go run <this repo's path>/cmd/entire/main.go` instead of `entire` \u2014 so something like `go run /Users/pfleidi/entire/cli/cmd/entire/main.go`?", "gold_move": null}
+{
+  "point_id": "ses_2fd419c71ffeqSOLZEn9Pmpv8P#18",
+  "developer": "gh:khaong",
+  "condition": "noprofile",
+  "real": "Can you open a pull request for the current branch for me?",
+  "prev_agent": "All changes are fully reverted. Now, what exactly would you like the `.opencode/plugins/entire.ts` file to use? Just to confirm: you want it to call `go run <this repo's path>/cmd/entire/main.go` instead of `entire` — so something like `go run /home/<USER>/entire/cli/cmd/entire/main.go`?",
+  "gold_move": null
+}

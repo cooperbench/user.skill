@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_012Zai4hixUeQj7fQT9VLvpT
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && git status 2>/dev/null | head -5; echo \"---\"; ls -la",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && git status 2>/dev/null | head -5; echo \"---\"; ls -la",
   "description": "Check extension folder structure"
 }
 ```
@@ -23,7 +23,7 @@ tool_use Bash
 id: toolu_01MvXVhW3QGV4vMW5VaCc644
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' | head -60",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' | head -60",
   "description": "List source files"
 }
 ```
@@ -133,7 +133,7 @@ tool_use Read
 id: toolu_015RSykYgbGRzsbvAo2Ebmh7
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
 }
 ```
 
@@ -186,7 +186,7 @@ tool_use Read
 id: toolu_01CJxupho8t48bVE2G7EdBk8
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/CLAUDE.md"
 }
 ```
 
@@ -215,7 +215,7 @@ tool_use Read
 id: toolu_01XmFHCNhVxUbiCNcHhcN32V
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx"
 }
 ```
 
@@ -283,7 +283,7 @@ tool_use Read
 id: toolu_01JNmQRqefBjsk9LHcATzgef
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/hooks.ts"
 }
 ```
 
@@ -348,7 +348,7 @@ tool_use Read
 id: toolu_01RKenftDUMcqe6mxQkB9oTa
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
 }
 ```
 
@@ -420,7 +420,7 @@ tool_use Read
 id: toolu_01KHQvUWemynkn9VearLZHtU
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/engine.ts"
 }
 ```
 
@@ -482,7 +482,7 @@ tool_use Bash
 id: toolu_0195BVsfiUsJpgyTr2WVpPG5
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"patch\" src --include=*.ts -i | grep -i \"draft\\|visit\\|addon\\|calendar\" | head",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"patch\" src --include=*.ts -i | grep -i \"draft\\|visit\\|addon\\|calendar\" | head",
   "description": "Find engine draft patch handler"
 }
 ```
@@ -545,7 +545,7 @@ tool_use Read
 id: toolu_01KpepJyvRBhnxeN6BZzooQw
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
   "offset": 674,
   "limit": 60
 }
@@ -600,7 +600,7 @@ tool_use Bash
 id: toolu_01QcEttQF342sHJciZdhcSAK
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"guest\" design/global.css",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"guest\" design/global.css",
   "description": "Find guest CSS classes"
 }
 ```
@@ -632,7 +632,7 @@ tool_use Read
 id: toolu_01FxKj8cGLK7KKQPL4D6eGzp
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/index.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/index.ts"
 }
 ```
 
@@ -659,7 +659,7 @@ tool_use Read
 id: toolu_01VJh35KPVTVobFww6qiLDby
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "offset": 336,
   "limit": 60
 }
@@ -723,7 +723,7 @@ tool_use Read
 id: toolu_01UP8o6oTzCjrtDhmBQrXtMe
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/IconButton.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/IconButton.tsx"
 }
 ```
 
@@ -766,7 +766,7 @@ tool_use Read
 id: toolu_01UTnq5Xs8LkUibFKRfEckcj
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Button.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Button.tsx"
 }
 ```
 
@@ -823,7 +823,7 @@ tool_use Read
 id: toolu_01X7dQAA8k1Muh4sinvdWoe3
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/TextField.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/TextField.tsx"
 }
 ```
 
@@ -931,7 +931,7 @@ id: toolu_014wugymTqqY7CHJL9391bSM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "import { useEffect, useState } from 'react';\nimport { Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';",
   "new_string": "import { useEffect, useState } from 'react';\nimport { Check, Pencil, Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';"
 }
@@ -942,7 +942,7 @@ id: toolu_014wugymTqqY7CHJL9391bSM
 tool_result
 id: toolu_014wugymTqqY7CHJL9391bSM
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -952,7 +952,7 @@ id: toolu_01NR7LJ7seLewuycGgwupTDS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "  const [name, setName] = useState(guest.name);\n  const [phone, setPhone] = useState(guest.phone ?? '');\n\n  // Keep local inputs in sync when the server reconciles the row.\n  useEffect(() => setName(guest.name), [guest.name]);\n  useEffect(() => setPhone(guest.phone ?? ''), [guest.phone]);\n\n  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  const editable = guest.include && !sent;\n\n  return (",
   "new_string": "  const [name, setName] = useState(guest.name);\n  const [phone, setPhone] = useState(guest.phone ?? '');\n  // Details stay collapsed by default so each card is compact; the host opens\n  // them only to make a correction. Sent guests are editable too — re-sending\n  // pushes the change onto the already-issued pass.\n  const [editing, setEditing] = useState(false);\n\n  // Keep local inputs in sync when the server reconciles the row.\n  useEffect(() => setName(guest.name), [guest.name]);\n  useEffect(() => setPhone(guest.phone ?? ''), [guest.phone]);\n\n  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  // Anyone we'd actually send/update a pass for can be corrected — included\n  // guests whether or not their pass has already gone out.\n  const editable = guest.include && !cancelled;\n\n  return ("
 } […]
@@ -962,7 +962,7 @@ id: toolu_01NR7LJ7seLewuycGgwupTDS
 tool_result
 id: toolu_01NR7LJ7seLewuycGgwupTDS
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -976,7 +976,7 @@ id: toolu_0177zvGShXjaNFHsUrxCyjgM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "      {editable ? (\n        <div className=\"guest__form\">\n          <TextField\n            label=\"Visitor name\"\n            value={name}\n            leadingIcon={<User size={16} strokeWidth={2} />}\n            onChange={(e) => setName(e.target.value)}\n            onBlur={() => name !== guest.name && onChange({ name })}\n            placeholder=\"Full name\"\n          />\n          <TextField\n            label=\"Phone (for WhatsApp pass)\"\n            value={phone}\n            inputMode=\"tel\"\n            leadingIcon={<Phone size={16} strokeWidth={2} />}\n            onChange={(e) => setPhone(e.target.value)}\n            onBlur={() => phone !== (guest.phone ?? '') && onChange({ phone })}\n            placeholder=\"+91…\"\n          />\n        </div>\n      ) : (\n        !guest.include &&\n        !cancelled && (\n          <div className=\"guest__hint type-label-sm\">Won’t receive a pass — toggle on to invite</div>\n        )\n      )}",
   "new_string": "      {editable ? (\n        editing ? (\n          <div className=\"guest__form\">\n            <TextField\n              label=\"Visitor name\"\n              value={name}\n              leadingIcon={<User size={16} strokeWidth={2} />}\n              onChange={(e) => setName(e.target.value)}\n              onBlur={() => name !== guest.name && onChange({ name })}\n              placeholder=\"Full name\"\n            />\n            <TextField\n              label=\"Phone (for WhatsApp pass)\"\n              value={phone}\n              inputMode=\"tel\"\n              leadingIcon={<Phone size={16} strokeWidth={2} />}\n              onChange={(e) => setPhone(e.target.value)}\n              onBlur={() => phone !== (guest.phone ?? '') && onChange({ phone })}\n              placeholder=\"+91…\"\n            />\n            {sent && (\n              <div className=\"type-label-sm text-muted\">\n                Re-send to update the pass that’s already been issued.\n              </div>\n            )}\n            <button type=\"button\" className=\"guest__done\" onClick={() => setEditing(false)}>\n              <Check size={14} strokeWidth={2.5} />\n              Done\n            </button>\n          </div>\n        ) : (\n          <div className=\"guest__summary\">\n            {guest.phone && (\n              <span className=\"guest__phone type-label-sm text-muted\">\n                <Phone size={13} strokeWidth={2} />\n                <span className=\"row__ellipsis\">{guest.phone}</span>\n              </span>\n            )}\n            <button […]
 
@@ -985,7 +985,7 @@ id: toolu_0177zvGShXjaNFHsUrxCyjgM
 tool_result
 id: toolu_0177zvGShXjaNFHsUrxCyjgM
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -999,7 +999,7 @@ id: toolu_01XUczNeysSeNcEs3yEkVFCk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "old_string": ".guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n  color: var(--color-on-surface-variant);\n  font-weight: 500;\n}\n@keyframes guest-expand {\n  from { opacity: 0; transform: translateY(-4px); }\n  to { opacity: 1; transform: none; }\n}",
   "new_string": ".guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n  color: var(--color-on-surface-variant);\n  font-weight: 500;\n}\n@keyframes guest-expand {\n  from { opacity: 0; transform: translateY(-4px); }\n  to { opacity: 1; transform: none; }\n}\n\n/* Collapsed details row: a compact phone glimpse + an inline \"Edit\" affordance,\n   aligned under the name so it reads as this guest's detail. Keeps cards short\n   until the host actually wants to correct something. */\n.guest__summary {\n  display: flex;\n  align-items: center;\n  gap: var(--space-sm);\n  min-width: 0;\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n}\n.guest__phone {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  min-width: 0;\n}\n.guest__edit,\n.guest__done {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  flex: 0 0 auto;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--color-primary);\n  padding: 4px 8px;\n  border-radius: var(--radius-sm);\n  transition: background-color var(--motion-base) var(--motion-easing);\n}\n.guest__edit:hover,\n.guest__done:hover { background: var(--color-surface-high); }\n.guest__done { justify-self: start; margin-right: auto; }"
 }
@@ -1010,7 +1010,7 @@ id: toolu_01XUczNeysSeNcEs3yEkVFCk
 tool_result
 id: toolu_01XUczNeysSeNcEs3yEkVFCk
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1023,7 +1023,7 @@ tool_use Read
 id: toolu_011pJmcVvnSz31ViqsdV5LqQ
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json"
 }
 ```
 
@@ -1074,7 +1074,7 @@ id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.1.1\",",
   "new_string": "  \"version\": \"0.2.0\","
 }
@@ -1085,7 +1085,7 @@ id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 tool_result
 id: toolu_01JVK3fJ6ik7MAHJPntZuV1G
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1118,7 +1118,7 @@ tool_use Read
 id: toolu_019niso1E84bqbwLSsGHUuMS
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "offset": 40,
   "limit": 75
 }
@@ -1273,7 +1273,7 @@ tool_use Bash
 id: toolu_01Arc6zmGmi96vnuUWCFqTX4
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/.clasp*' | head -80; echo \"===\"; cat CLAUDE.md 2>/dev/null | head -60",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace && find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/.clasp*' | head -80; echo \"===\"; cat CLAUDE.md 2>/dev/null | head -60",
   "description": "List add-on files and CLAUDE.md"
 }
 ```
@@ -1350,7 +1350,7 @@ tool_use Read
 id: toolu_01BJAjijsEoibGFmhjw31BkX
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js"
 }
 ```
 
@@ -1395,7 +1395,7 @@ tool_use Read
 id: toolu_01Gcmp85rJknh19xB6NYiA3u
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Card.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Card.tsx"
 }
 ```
 
@@ -1419,7 +1419,7 @@ tool_use Read
 id: toolu_01KyfhzuQFz4sLCbc2DTzsrH
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Chip.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Chip.tsx"
 }
 ```
 
@@ -1465,7 +1465,7 @@ tool_use Bash
 id: toolu_01HoxYuwmXvC3tuUpUgbhPtf
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"\\.card\" design/global.css | head; echo \"---tokens---\"; grep -n \"space-lg\\|space-md\\|space-sm\\|surface-high\\|surface-low\\b\" design/global.css | head",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && grep -n \"\\.card\" design/global.css | head; echo \"---tokens---\"; grep -n \"space-lg\\|space-md\\|space-sm\\|surface-high\\|surface-low\\b\" design/global.css | head",
   "description": "Find card padding and tokens"
 }
 ```
@@ -1495,7 +1495,7 @@ tool_use Read
 id: toolu_012zRRePd4RzG1P2SgVus1RJ
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "offset": 150,
   "limit": 10
 }
@@ -1528,7 +1528,7 @@ tool_use Bash
 id: toolu_01325AC47pdvQwes1vtebFPH
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine && grep -rn \"cancel\\|include\" src/mastra/modules/visitor/visit-drafts.ts | grep -i \"include\\|cancel\" | head -30",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine && grep -rn \"cancel\\|include\" src/mastra/modules/visitor/visit-drafts.ts | grep -i \"include\\|cancel\" | head -30",
   "description": "Find apply/cancel logic in visit-drafts"
 }
 ```
@@ -1592,7 +1592,7 @@ tool_use Read
 id: toolu_01GAVgSKTtS9Uog67XGvPbnA
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/visit-drafts.ts",
   "offset": 840,
   "limit": 40
 }
@@ -1653,7 +1653,7 @@ Here's the design I'm going to build for the edit affordance (your "opening a sc
 COLLAPSED (compact)                    EXPANDED (unrolled)
 ┌─────────────────────────────────┐    ┌─────────────────────────────────┐
 │ (JD) Jane Doe      [Pass sent] ◉ │    │ (JD) Jane Doe      [Pass sent] ◉ │
-│      jane@acme.com               │    │      jane@acme.com               │
+│      <REDACTED_EMAIL>               │    │      <REDACTED_EMAIL>               │
 ├─────────────────────────────────┤    ├─────────────────────────────────┤ ← full-bleed
 │      ⌄  Edit details            │    │  Visitor name                    │   subtle panel
 └─────────────────────────────────┘    │  [ 👤 Jane Doe              ]    │
@@ -1674,7 +1674,7 @@ id: toolu_01GuZpMSVC4QUAhncd7HqQQP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "import { useEffect, useState } from 'react';\nimport { Check, Pencil, Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';",
   "new_string": "import { useEffect, useState } from 'react';\nimport { ChevronDown, Phone, User } from 'lucide-react';\nimport { Chip, Switch, TextField } from '@/design/components';\nimport type { DraftGuest } from '@/lib/types';"
 }
@@ -1685,7 +1685,7 @@ id: toolu_01GuZpMSVC4QUAhncd7HqQQP
 tool_result
 id: toolu_01GuZpMSVC4QUAhncd7HqQQP
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1706,7 +1706,7 @@ tool_use Read
 id: toolu_01KYzfxfEb7YDMCvLEaQ7SrK
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx"
 }
 ```
 
@@ -1760,7 +1760,7 @@ id: toolu_01UFCTeyFwyzDNcrwMmUTPFT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx",
   "old_string": "  const sent = guest.status === 'sent';\n  const cancelled = guest.status === 'cancelled';\n  const display = guest.name || guest.email;\n  // Anyone we'd actually send/update a pass for can be corrected — included\n  // guests whether or not their pass has already gone out.\n  const editable = guest.include && !cancelled;\n\n  return (\n    <div className={`guest${guest.include ? '' : ' guest--dim'}`}>\n      <div className=\"guest__head\">\n        <span\n          className={\n            'guest__avatar' +\n            (sent ? ' guest__avatar--sent' : guest.include ? '' : ' guest__avatar--dim')\n          }\n          aria-hidden\n        >\n          {monogram(guest.name || guest.email.split('@')[0])}\n        </span>\n\n        <div className=\"guest__id\">\n          <div className=\"guest__name\">\n            <span className=\"type-label row__ellipsis\">{display}</span>\n            {guest.internal && !sent && <Chip>Internal</Chip>}\n            {sent && <Chip tone=\"success\">Pass sent</Chip>}\n            {cancelled && <Chip tone=\"error\">Cancelled</Chip>}\n          </div>\n          <div className=\"type-label-sm text-muted row__ellipsis\">{guest.email}</div>\n        </div>\n\n        <Switch\n          checked={guest.include}\n          disabled={sent}\n          onChange={(v) => onChange({ include: v })}\n          label={`${guest.include ? 'Don’t invite' : 'Invite'} ${guest.email}`}\n        />\n      </div>\n\n      {editable ? (\n        editing ? (\n          <div className=\"guest__form\">\n            <TextField\n              label=\"Visitor name\"\n              value={name}\n              leadingIcon={<User size={16} strokeWidth={2} />}\n              onChange={(e) => setName(e.target.value)}\n              onBlur={() => name !== guest.name && onChange({ name })}\n              placeholder=\"Full name\"\n            />\n            <TextField\n              label=\"Phone (for WhatsApp pass)\"\n              value={phone}\n              inputMode=\"tel\"\n              leadingIcon={<Phone size={16} strokeWidth={2} />}\n              onChange={(e) => setPhone(e.target.value)}\n              onBlur={() => phone !== (guest.phone ?? '') && onChange({ phone })}\n              placeholder=\"+91…\"\n            />\n            {sent && (\n              <div […]
 
 > TOOL
@@ -1768,7 +1768,7 @@ id: toolu_01UFCTeyFwyzDNcrwMmUTPFT
 tool_result
 id: toolu_01UFCTeyFwyzDNcrwMmUTPFT
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/RosterRow.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1781,7 +1781,7 @@ tool_use Read
 id: toolu_01MqSzY8A7sk7xQdBEf9Ncs4
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "offset": 372,
   "limit": 62
 }
@@ -1841,7 +1841,7 @@ id: toolu_01SqfjJGkijptG9r4gJeS94F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css",
   "old_string": "/* Inline edit form, recessed under the identity so it reads as \"this guest's\n   details\" rather than free-floating inputs. Indented to align under the name. */\n.guest__form {\n  display: grid;\n  gap: var(--space-sm);\n  margin: var(--space-sm) 0 var(--space-xs) calc(36px + var(--space-md));\n  padding: var(--space-md);\n  background: var(--color-surface-low);\n  border-radius: var(--radius-md);\n  animation: guest-expand var(--motion-base) var(--motion-easing) both;\n}\n.guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n  color: var(--color-on-surface-variant);\n  font-weight: 500;\n}\n@keyframes guest-expand {\n  from { opacity: 0; transform: translateY(-4px); }\n  to { opacity: 1; transform: none; }\n}\n\n/* Collapsed details row: a compact phone glimpse + an inline \"Edit\" affordance,\n   aligned under the name so it reads as this guest's detail. Keeps cards short\n   until the host actually wants to correct something. */\n.guest__summary {\n  display: flex;\n  align-items: center;\n  gap: var(--space-sm);\n  min-width: 0;\n  margin: var(--space-xs) 0 0 calc(36px + var(--space-md));\n}\n.guest__phone {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  min-width: 0;\n}\n.guest__edit,\n.guest__done {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  flex: 0 0 auto;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font: inherit;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--color-primary);\n  padding: 4px 8px;\n  border-radius: var(--radius-sm);\n  transition: background-color var(--motion-base) var(--motion-easing);\n}\n.guest__edit:hover,\n.guest__done:hover { background: var(--color-surface-high); }\n.guest__done { justify-self: start; margin-right: auto; }",
   "new_string": ".guest__hint {\n  margin: var(--space-xs) 0 0 calc(36px […]
 
@@ -1850,7 +1850,7 @@ id: toolu_01SqfjJGkijptG9r4gJeS94F
 tool_result
 id: toolu_01SqfjJGkijptG9r4gJeS94F
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/global.css has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1864,7 +1864,7 @@ id: toolu_01V2wqLrdGC6GaSXBbarRY4u
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx",
   "old_string": "            <Card style={{ paddingTop: 0, paddingBottom: 0 }}>",
   "new_string": "            <Card style={{ paddingTop: 0, paddingBottom: 0, overflow: 'hidden' }}>"
 }
@@ -1875,7 +1875,7 @@ id: toolu_01V2wqLrdGC6GaSXBbarRY4u
 tool_result
 id: toolu_01V2wqLrdGC6GaSXBbarRY4u
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/VisitPanel.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1888,7 +1888,7 @@ tool_use Read
 id: toolu_0195u4dcvd2ebKco3W1xnwQq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Switch.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/design/components/Switch.tsx"
 }
 ```
 
@@ -1938,7 +1938,7 @@ tool_use Bash
 id: toolu_011gGoaSnF6RQH9PsAtnoS5i
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -15",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -15",
   "description": "Type-check extension"
 }
 ```
@@ -1963,7 +1963,7 @@ id: toolu_01TvkW7qkvEX8Z5744kp8WyR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.2.0\",",
   "new_string": "  \"version\": \"0.3.0\","
 }
@@ -1974,7 +1974,7 @@ id: toolu_01TvkW7qkvEX8Z5744kp8WyR
 tool_result
 id: toolu_01TvkW7qkvEX8Z5744kp8WyR
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2013,7 +2013,7 @@ tool_use Read
 id: toolu_01Y7uy7xS4iH3B8TA84jwpGq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/PreviewSheet.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/PreviewSheet.tsx"
 }
 ```
 
@@ -2051,7 +2051,7 @@ tool_use Read
 id: toolu_01Kco2LHZQwbFdXHUmG2pXDC
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/EmptyState.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/EmptyState.tsx"
 }
 ```
 
@@ -2137,7 +2137,7 @@ tool_use Read
 id: toolu_01UDJ8SgJj6YVP72RPvn7S2k
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/AccountMenu.tsx"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/features/visit/AccountMenu.tsx"
 }
 ```
 
@@ -2205,7 +2205,7 @@ Build is done (v0.3.0). Here's everything.
 COLLAPSED (default — compact)              EXPANDED (pulled open)
 ┌────────────────────────────────┐         ┌────────────────────────────────┐
 │ (JD) Jane Doe     [Pass sent] ◉ │         │ (JD) Jane Doe     [Pass sent] ◉ │
-│      jane@acme.com              │         │      jane@acme.com              │
+│      <REDACTED_EMAIL>              │         │      <REDACTED_EMAIL>              │
 │════════════════════════════════│         │════════════════════════════════│
 │        ⌄  Edit details         │ ←tinted │        ⌃  Hide details         │
 └────────────────────────────────┘  strip  │  Visitor name                  │
@@ -2234,7 +2234,7 @@ tool_use Read
 id: toolu_01PSzQDiqMKGV5czWYwDZ2wX
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
 }
 ```
 
@@ -2295,7 +2295,7 @@ tool_use Read
 id: toolu_0113PHYHBUJkeJjqK4gR8uMG
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/config.ts"
 }
 ```
 
@@ -2321,7 +2321,7 @@ id: toolu_0113PHYHBUJkeJjqK4gR8uMG
 15	/** Marker that makes an event a "visitor event" (Phase 2). Lower-cased for
 16	 *  case-insensitive matching against attendee emails / location text. */
 17	export const MAGIC_ADDRESS = (
-18	  import.meta.env.WXT_MAGIC_ADDRESS ?? 'visitors@auxilio.app'
+18	  import.meta.env.WXT_MAGIC_ADDRESS ?? '<REDACTED_EMAIL>'
 19	).toLowerCase();
 20	
 21	/** All engine addon endpoints live under this prefix. */
@@ -2390,7 +2390,7 @@ tool_use Bash
 id: toolu_013oZ18p8xqsd3Qh7sztqDkd
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"connectUrl\\|access_type\\|refresh_token\\|calendar.*watch\\|events.watch\\|oauth\" src 2>/dev/null | grep -i \"calendar\\|oauth\\|visitor\\|connect\" | head -30",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine && grep -rln \"connectUrl\\|access_type\\|refresh_token\\|calendar.*watch\\|events.watch\\|oauth\" src 2>/dev/null | grep -i \"calendar\\|oauth\\|visitor\\|connect\" | head -30",
   "description": "Find OAuth/connect/watch files"
 }
 ```
@@ -2425,7 +2425,7 @@ tool_use Read
 id: toolu_011Dg4Xv3FuiS4AtMPw8EgsY
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-oauth.ts"
 }
 ```
 
@@ -2469,7 +2469,7 @@ tool_use Read
 id: toolu_01G6MgT1JmjFiC2Q6trZCUeF
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-sync.ts"
 }
 ```
 
@@ -2561,7 +2561,7 @@ tool_use Read
 id: toolu_01Bz2wE9FCZSXgFKxoPsXTWM
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "offset": 707,
   "limit": 120
 }
@@ -2613,7 +2613,7 @@ tool_use Read
 id: toolu_01Uw2Bkj9jvxJSMn8o6Bnx79
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "offset": 884,
   "limit": 90
 }
@@ -2727,7 +2727,7 @@ tool_use Read
 id: toolu_015xvJZxcyzHkxERe8tZHsWj
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "offset": 40,
   "limit": 75
 }
@@ -2782,7 +2782,7 @@ tool_use Read
 id: toolu_01RhfH77LZjEB4mvpX6etnGq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/addon-auth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/addon-auth.ts"
 }
 ```
 
@@ -2855,7 +2855,7 @@ tool_use Read
 id: toolu_01Nc9ShoqWSzLKPThW3GKimv
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
 }
 ```
 
@@ -2908,7 +2908,7 @@ tool_use Read
 id: toolu_014LY3oWeApXRv8ENzmZwpxV
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
 }
 ```
 
@@ -2957,7 +2957,7 @@ tool_use Read
 id: toolu_01GbKft4sGEKmwWgN3QYgfdJ
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/calendar-watch.ts",
   "offset": 124,
   "limit": 40
 }
@@ -3012,7 +3012,7 @@ tool_use Read
 id: toolu_01VaVJz2d1PG6irGGu7ioWqC
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/lib/config.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/lib/config.ts",
   "offset": 95,
   "limit": 25
 }
@@ -3056,7 +3056,7 @@ tool_use Bash
 id: toolu_01BVuEYVGVzY9ysooYfLxF6F
 ```json
 {
-  "command": "grep -n \"envOptional\\|function env\\b\\|const env\" src/mastra/lib/config.ts | head; echo \"=== .env.example (extension) ===\"; cat /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/.env.example",
+  "command": "grep -n \"envOptional\\|function env\\b\\|const env\" src/mastra/lib/config.ts | head; echo \"=== .env.example (extension) ===\"; cat /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/.env.example",
   "description": "Config env helper + extension env example"
 }
 ```
@@ -3089,7 +3089,7 @@ WXT_OAUTH_CLIENT_ID=
 
 # The magic address that marks an event as a "visitor event" (Phase 2 auto-nudge).
 # Must match what the engine ingest pipeline keys on. Placeholder until confirmed.
-WXT_MAGIC_ADDRESS=visitors@auxilio.app
+WXT_MAGIC_ADDRESS=<REDACTED_EMAIL>
 ```
 
 > TOOL
@@ -3098,7 +3098,7 @@ tool_use Read
 id: toolu_016Fd65ZTUBYpJ7pyjyDFAmW
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/office-ops-engine/src/mastra/modules/visitor/routes.ts",
   "offset": 833,
   "limit": 52
 }
@@ -3188,7 +3188,7 @@ tool_use Write
 id: toolu_01EzmYFud3qBFK9GB6wjAc5S
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "content": "# Plan: single-consent extension sign-in that also connects the engine calendar (closed-panel sync)\n\n## Goal\nMake the `auxilio-extension` sign-in establish, in **one Google consent**, both (a) the client tokens it\nalready uses and (b) an engine-side **refresh token** stored in `calendar_connections`, so the engine's\nexisting 5-minute background poll keeps visitor passes in sync when a meeting is moved/cancelled **with the\nside panel closed**. No second \"Connect calendar\" prompt. \"Done\" = after a fresh interactive sign-in,\n`calendar_connections` has a `connected` row with a refresh token for that host, the background poll syncs\nthat host, and `addon/draft` returns `calendarSync.connected: true`.\n\n## Background (verified facts — do not re-investigate)\n- Extension sign-in (`auxilio-extension/lib/auth.ts`) uses the **implicit** flow (`response_type=token id_token`),\n  scope `openid email profile calendar.events.readonly`, against a **Web** OAuth client (`WXT_OAUTH_CLIENT_ID`).\n  Tokens live in `chrome.storage.session`; the engine only ever receives the **id_token** as Bearer.\n- The engine already has the full connect/sync machinery in `office-ops-engine/src/mastra/modules/visitor/`:\n  - `calendar-oauth.ts`: `calendar_connections` store, `upsertCalendarConnection`, `getCalendarConnection`,\n    `exchangeCalendarCode` (bound to the **engine's** `GOOGLE_OAUTH_*` client + `/connect/callback` redirect),\n    `clientForRefreshToken` (builds the **engine** client), `CURRENT_SCOPE_VERSION = 'v3-events-rw'`,\n    `isWriteCapableConnection` (true only when `scope_version === CURRENT_SCOPE_VERSION`),\n    `listScopeStaleConnections` (flags anything `IS DISTINCT FROM CURRENT_SCOPE_VERSION`).\n  - `calendar-sync.ts`: `startCalendarSyncLoop()` polls every connected host every 5 min (poll-based by […]
 
 > TOOL
@@ -3196,7 +3196,7 @@ id: toolu_01EzmYFud3qBFK9GB6wjAc5S
 tool_result
 id: toolu_01EzmYFud3qBFK9GB6wjAc5S
 ```
-File created successfully at: /Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3209,7 +3209,7 @@ tool_use Write
 id: toolu_01KPM7nNYqhTCfMzwoRUfy8i
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_single_consent_connect.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_single_consent_connect.md",
   "content": "---\nname: project_extension_single_consent_connect\ndescription: auxilio-extension single sign-in also connects engine calendar for closed-panel sync (planned, not built)\nmetadata:\n  type: project\n---\n\nGoal: one Google consent at extension sign-in establishes BOTH the client tokens AND an engine-side\nrefresh token in `calendar_connections`, so the engine's 5-min poll syncs move/cancel when the side panel\nis closed. No second \"Connect calendar\" prompt. User cares about closed-panel sync but refused a second sign-in.\n\nKey facts (verified in code): extension sign-in is implicit (`token id_token`), readonly scope, Web OAuth\nclient; engine already has the full connect/poll/watch machinery (`calendar-oauth.ts`, `calendar-sync.ts` poll\nevery 5 min, `calendar-watch.ts`). Closed-panel sync = \"just get a refresh token into calendar_connections.\"\n\nLocked design (see Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md):\n- Interactive `mint` → hybrid `response_type=code token id_token` + `access_type=offline`; silent renew stays\n  implicit. Fragment yields client tokens (cached as today) + a `code`.\n- Extension POSTs `{code, redirectUri}` (Bearer id_token) to NEW engine route\n  `POST /api/visitor/calendar/addon/connect-calendar`; engine exchanges code with the EXTENSION client\n  (new `AUXILIO_EXTENSION_OAUTH_CLIENT_SECRET`) → stores refresh token. Best-effort; CTA stays as fallback.\n- CRITICAL: a refresh token can only be refreshed by its minting client. Extension token ≠ engine GOOGLE_OAUTH\n  client → add `clientForConnection(conn)` selecting client by `scope_version`; use it in poll + watch, else the\n  first poll throws invalid_grant […]
 
 > TOOL
@@ -3217,7 +3217,7 @@ id: toolu_01KPM7nNYqhTCfMzwoRUfy8i
 tool_result
 id: toolu_01KPM7nNYqhTCfMzwoRUfy8i
 ```
-File created successfully at: /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_single_consent_connect.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_extension_single_consent_connect.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3226,7 +3226,7 @@ tool_use Read
 id: toolu_01KgKAbqsfzUgs8jeKmKGV9u
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "limit": 5
 }
 ```
@@ -3249,7 +3249,7 @@ tool_use Bash
 id: toolu_013cBhDdjcdTWws95BfRXdBy
 ```json
 {
-  "command": "cd /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory && printf '%s\\n' '- [Extension single-consent calendar connect](project_extension_single_consent_connect.md) — Planned: hybrid sign-in grants engine a calendar refresh token so closed-panel move/cancel sync works without a 2nd consent; per-connection OAuth client is the must-not-break part.' >> MEMORY.md && tail -1 MEMORY.md",
+  "command": "cd /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory && printf '%s\\n' '- [Extension single-consent calendar connect](project_extension_single_consent_connect.md) — Planned: hybrid sign-in grants engine a calendar refresh token so closed-panel move/cancel sync works without a 2nd consent; per-connection OAuth client is the must-not-break part.' >> MEMORY.md && tail -1 MEMORY.md",
   "description": "Append pointer to MEMORY.md"
 }
 ```
@@ -3260,7 +3260,7 @@ tool_result
 id: toolu_013cBhDdjcdTWws95BfRXdBy
 ```
 - [Extension single-consent calendar connect](project_extension_single_consent_connect.md) — Planned: hybrid sign-in grants engine a calendar refresh token so closed-panel move/cancel sync works without a 2nd consent; per-connection OAuth client is the must-not-break part.
-Shell cwd was reset to /Users/appointy/work/OfficeOperationsUmbrella
+Shell cwd was reset to /home/<USER>/work/OfficeOperationsUmbrella
 ```
 
 > AGENT
@@ -3318,7 +3318,7 @@ tool_use Read
 id: toolu_014j6BYL65yHiGa8njqttnf3
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "offset": 36,
   "limit": 12
 }
@@ -3353,7 +3353,7 @@ tool_use Read
 id: toolu_01Wigu84xz9QbwysSQ5a2mJS
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "offset": 30,
   "limit": 6
 }
@@ -3379,7 +3379,7 @@ id: toolu_01DCXVLpoXjoAJwWY4Kgrve4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "old_string": "- **Client-binding invariant (the reason for the per-connection client selector below):** a Google refresh\n  token can only be exchanged for access tokens by the **same client_id + client_secret** that minted it.\n  The extension token is minted by the extension Web client, so the engine must refresh/watch it with the\n  **extension** client — not the `GOOGLE_OAUTH_*` engine client.\n\n## Open questions (resolve before building)",
   "new_string": "- **Client-binding invariant (the reason for the per-connection client selector below):** a Google refresh\n  token can only be exchanged for access tokens by the **same client_id + client_secret** that minted it.\n  The extension token is minted by the extension Web client, so the engine must refresh/watch it with the\n  **extension** client — not the `GOOGLE_OAUTH_*` engine client.\n\n## Why the extension needs special handling (vs. Slack / add-on)\n\nThe Slack connect and the Calendar add-on have **no** dual-client problem, and their move/delete sync already\nworks while those surfaces are closed. Understanding why pins down exactly what the extension must replicate.\n\n- **One client, end to end (Slack & add-on).** Both route the actual calendar grant through the engine's browser\n  redirect flow: `\"Connect calendar\" → GET /connect/start → Google consent (engine […]
 
@@ -3388,7 +3388,7 @@ id: toolu_01DCXVLpoXjoAJwWY4Kgrve4
 tool_result
 id: toolu_01DCXVLpoXjoAJwWY4Kgrve4
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3431,7 +3431,7 @@ tool_use Read
 id: toolu_01PsVkieGJgkrRYJWfhzN1WC
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "offset": 63,
   "limit": 14
 }
@@ -3462,7 +3462,7 @@ id: toolu_017rc6oeLbUaL2MudvFSZowj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md",
   "old_string": "| | **Option 1 (this plan)** — keep the extension's own Web client | **Option 2** — extension adopts the engine `GOOGLE_OAUTH_*` client (mirror Slack/add-on) |\n|---|---|---|\n| New refresh logic | `clientForConnection(conn)` picks client by `scope_version` (~10 lines + 4 call-site swaps) | **None** — poll/watch already use the engine client |\n| OAuth client coupling | Extension stays isolated | Extension's chrome redirect must be registered on the **admin-SSO** client |\n| `/addon/*` auth trust | Unchanged | Must add `GOOGLE_OAUTH_CLIENT_ID` to the addon audience → **any admin-SSO id_token could call `/addon/*`** |\n| Consent scope | `calendar.events.readonly` (lighter) | `calendar.events` read-**write** (heavier consent text) |\n| Client-side live reads | Unchanged | Now use an engine-client access token (works, but must be re-tested) |\n\n**Decision: Option 1**, chosen mainly to avoid pouring admin-SSO tokens into the `/addon/*` audience and to keep\nleast-privilege scope. `clientForConnection` is fully deterministic — the only failure mode is forgetting a\ncall-site swap, caught at build / first poll. If you later prefer the extension to be a carbon copy of the\nSlack/add-on flow (accepting the audience-widening and rw scope), switch to Option 2: drop steps 6, 9, 10 and the\n`scope_version` handling, […]
 
 > TOOL
@@ -3470,7 +3470,7 @@ id: toolu_017rc6oeLbUaL2MudvFSZowj
 tool_result
 id: toolu_017rc6oeLbUaL2MudvFSZowj
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/Planning-docs/2026-06-23_extension_single_consent_calendar_connect_plan.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

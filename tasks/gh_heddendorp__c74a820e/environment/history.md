@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/hedde/.codex/worktrees/0bda/evorto
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/0bda/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -50,7 +50,7 @@ More specific guidance may exist deeper in […]
 /goal Implement the changes from these decisions
 
 Referenced pasted text files:
-- pasted text file: /Users/hedde/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt. Read this file before continuing.
+- pasted text file: /home/<USER>/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt. Read this file before continuing.
 
 > TOOL
 
@@ -58,7 +58,7 @@ tool_use create_goal
 id: call_0xRCoLRH9R1Pw1nZh6YN8RHw
 ```json
 {
-  "objective": "Implement the changes from the referenced decisions in /Users/hedde/.codex/worktrees/0bda/evorto"
+  "objective": "Implement the changes from the referenced decisions in /home/<USER>/.codex/worktrees/0bda/evorto"
 }
 ```
 
@@ -80,8 +80,8 @@ tool_use exec_command
 id: call_eTQQRhQvSnyAkfyY4F3YaPDp
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -92,8 +92,8 @@ tool_use exec_command
 id: call_LEVmEUmrb2sYESNvBIeT83ZI
 ```json
 {
-  "cmd": "rg -n \"0bda|evorto-app/app|relaunch|registration|payments|permissions|blocked actions|EventConflictError|new schema\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "rg -n \"0bda|evorto-app/app|relaunch|registration|payments|permissions|blocked actions|EventConflictError|new schema\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -105,7 +105,7 @@ id: call_rDpsEghfyxb30coGSuHxCNJ0
 ```json
 {
   "cmd": "pwd && rg --files -g 'AGENTS.md' -g 'PRODUCT.md' -g 'ARCHITECTURE.md' -g 'QUALITY.md' -g 'README.md' | sed -n '1,120p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -155,10 +155,10 @@ Process exited with code 0
 Original token count: 852
 Output:
 105:scope: Refresh dependencies on top of the PR62 browser-transport stack, research migration/toolchain impacts, and switch to CI-only validation when local Docker is off-limits; use for `evorto-app/app` stacked dependency refreshes, not for generic package bump work outside this repo.
-106:applies_to: cwd=/Users/hedde/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked dependency-refresh workflows across similar worktrees, but treat exact package versions, CI run ids, branch names, and PR numbers as time-specific evidence.
+106:applies_to: cwd=/home/<USER>/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked dependency-refresh workflows across similar worktrees, but treat exact package versions, CI run ids, branch names, and PR numbers as time-specific evidence.
 126:- run the tests only in ci, I need control over local docker atm, gh run view, gh api repos/evorto-app/app/actions/jobs, Playwright E2E (functional + docs), in_progress, Docker build, remote-only validation
 152:scope: Re-verify stacked PR readiness in `evorto-app/app`, inspect CI/review-thread state deeply, and update PR descriptions with validation guidance; use for stacked-review verification or PR-body refresh work, not for unrelated feature delivery in the repo.
-153:applies_to: cwd=/Users/hedde/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked-PR verification workflows across similar worktrees, but treat exact PR numbers, CI failures, and file counts as time-specific evidence.
+153:applies_to: cwd=/home/<USER>/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked-PR verification workflows across similar worktrees, but treat exact PR numbers, CI failures, and file counts as time-specific evidence.
 163:- github-pr, gh pr view, reviewThreads, gh run watch, PR62, PR63, docs-baseline, templates.test.ts, EventConflictError, current state, STABILIZATION.md, file cap, local validation instructions
 169:- For `evorto-app/app` relaunch […]
 
@@ -172,7 +172,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 522
 Output:
-/Users/hedde/.codex/worktrees/0bda/evorto
+/home/<USER>/.codex/worktrees/0bda/evorto
 src/db/AGENTS.md
 src/server/AGENTS.md
 tests/AGENTS.md
@@ -244,7 +244,7 @@ id: call_MimxoxUo49yXrunptPH32ydD
 ```json
 {
   "cmd": "sed -n '1,240p' AGENTS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -256,7 +256,7 @@ id: call_yi2CoDhz3nwGSBo2rJLEcqKp
 ```json
 {
   "cmd": "sed -n '1,220p' PRODUCT.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -268,7 +268,7 @@ id: call_eukySmymFbqx5aKv4E8KEjKO
 ```json
 {
   "cmd": "sed -n '1,260p' ARCHITECTURE.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -280,7 +280,7 @@ id: call_zhMiME7XoBqPH8jyCPnuYNzT
 ```json
 {
   "cmd": "sed -n '1,260p' QUALITY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -463,7 +463,7 @@ id: call_9bEdowkVRSkEDut4f3UPOIYd
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/AGENTS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -475,7 +475,7 @@ id: call_t4hKUcp6VxsKIHtddPZ9YJlA
 ```json
 {
   "cmd": "sed -n '1,260p' src/server/AGENTS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -487,7 +487,7 @@ id: call_KVVRAMbEDxhcdoOjvUp0EB05
 ```json
 {
   "cmd": "sed -n '1,240p' src/db/AGENTS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -499,7 +499,7 @@ id: call_KgA1O9F4ragbM2PiqRXjhzzn
 ```json
 {
   "cmd": "sed -n '1,220p' tests/AGENTS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -632,8 +632,8 @@ tool_use exec_command
 id: call_Dv5194fqf8kJavhTW7ml1oL5
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.codex/worktrees/0bda/evorto/.agents/skills/project-design/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/worktrees/0bda/evorto/.agents/skills/project-design/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -644,8 +644,8 @@ tool_use exec_command
 id: call_HpbRxBJ0udTxj4hERBKBr7yJ
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.agents/skills/angular-developer/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/angular-developer/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -656,8 +656,8 @@ tool_use exec_command
 id: call_EwuGpr1CIloypdxO8ux16aTI
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.agents/skills/effect-best-practices/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/effect-best-practices/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -668,8 +668,8 @@ tool_use exec_command
 id: call_KhTsZW8nnFxOM28sSzN0ONgH
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.agents/skills/resend/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/resend/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -680,8 +680,8 @@ tool_use exec_command
 id: call_7fe5DoJyfOLBWOE335ZpRPsT
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.agents/skills/react-email/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/react-email/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -692,8 +692,8 @@ tool_use exec_command
 id: call_zvq9TgCVjH3k6Dls7trKmnWh
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.agents/skills/vibesec-skill/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/vibesec-skill/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -982,8 +982,8 @@ tool_use exec_command
 id: call_589fF8tHwz5VcwBwoWPr9S1e
 ```json
 {
-  "cmd": "sed -n '260,620p' /Users/hedde/.agents/skills/vibesec-skill/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '260,620p' /home/<USER>/.agents/skills/vibesec-skill/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -994,8 +994,8 @@ tool_use exec_command
 id: call_RP51W0JihJzWEVLnvNaas9lO
 ```json
 {
-  "cmd": "sed -n '260,620p' /Users/hedde/.agents/skills/resend/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '260,620p' /home/<USER>/.agents/skills/resend/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -1006,8 +1006,8 @@ tool_use exec_command
 id: call_5SgtGogJJHi4ixRqMcwLi3Fx
 ```json
 {
-  "cmd": "sed -n '260,620p' /Users/hedde/.agents/skills/react-email/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '260,620p' /home/<USER>/.agents/skills/react-email/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -1018,8 +1018,8 @@ tool_use exec_command
 id: call_ASN1zBwZCI6XndVAqYPGLRCe
 ```json
 {
-  "cmd": "sed -n '260,620p' /Users/hedde/.agents/skills/effect-best-practices/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '260,620p' /home/<USER>/.agents/skills/effect-best-practices/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -1059,7 +1059,7 @@ Any endpoint accepting a URL for redirection must be protected against open redi
 
 | Technique | Example | Why It Works |
 |-----------|---------|--------------|
-| @ symbol | `https://legit.com@evil.com` | Browser navigates to evil.com with legit.com as username |
+| @ symbol | `https://<REDACTED_EMAIL>` | Browser navigates to evil.com with legit.com as username |
 | Subdomain abuse | `https://legit.com.evil.com` | evil.com owns the subdomain |
 | Protocol tricks | `javascript:alert(1)` | XSS via redirect |
 | Double URL encoding | `%252f%252fevil.com` | Decodes to `//evil.com` after double decode |
@@ -1144,8 +1144,8 @@ import { WelcomeEmail } from './emails/welcome';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const { data, error } = await resend.emails.send({
-  from: 'Acme <onboarding@resend.dev>',
-  to: ['user@example.com'],
+  from: 'Acme <<REDACTED_EMAIL>>',
+  to: ['<REDACTED_EMAIL>'],
   subject: 'Welcome to Acme',
   react: <WelcomeEmail name="John" verificationUrl="https://example.com/verify" />
 });
@@ -1246,8 +1246,8 @@ tool_use exec_command
 id: call_d7MIdHGPw0HfKYa5haGrcxUq
 ```json
 {
-  "cmd": "sed -n '620,980p' /Users/hedde/.agents/skills/vibesec-skill/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '620,980p' /home/<USER>/.agents/skills/vibesec-skill/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -1259,7 +1259,7 @@ id: call_flA6l1tpdixI9b9sCQGUiuI3
 ```json
 {
   "cmd": "rg -n \"registrationMode|registration mode|manual approval|manual|random|waitlist|approval|approved|pending|scanner|check.?in|tenant settings|sender|Resend|react-email|receipt reviewed|role assignment|assign.*role|remove.*role|custom domain|impersonat|coming soon|Unknown registration option|console\\.error\" src shared tests package.json drizzle.config.ts .changeset --glob '!repos/**'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 50000
 }
 ```
@@ -1271,7 +1271,7 @@ id: call_iBHcU8RmvrOckgNGbavM3GfC
 ```json
 {
   "cmd": "find src/app src/server src/shared src/db -maxdepth 3 -type f | sed -n '1,240p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -1283,7 +1283,7 @@ id: call_NsVEOj6CzulcCsfV1eDOuOQL
 ```json
 {
   "cmd": "git status --short && git branch --show-current && git log --oneline -5",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -1592,7 +1592,7 @@ id: call_znfLoHZcySp1SomTyE0roqSk
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -1604,7 +1604,7 @@ id: call_AICHWi206dUSaqQt9RrA4vUE
 ```json
 {
   "cmd": "sed -n '1,260p' src/shared/registration-modes.ts && sed -n '1,260p' src/shared/rpc-contracts/app-rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -1616,7 +1616,7 @@ id: call_nh4l367ibrwmKnqxjcXldUlA
 ```json
 {
   "cmd": "rg -n \"registrationMode|manual|application|random|eventRegistration|registrationOptions|tenantSettings|sender|email|resend|role|capabilit|scanner\" src/db src/shared src/server/effect/rpc --glob '!**/*.spec.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 50000
 }
 ```
@@ -1628,7 +1628,7 @@ id: call_7jeWV03CGsQTdnRYrhS0styf
 ```json
 {
   "cmd": "sed -n '1,260p' src/db/schema.ts 2>/dev/null || rg --files src/db | sed -n '1,120p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -1661,7 +1661,7 @@ Output:
     "test:e2e:integration": "bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-integration --project=docs-integration",
     "test:e2e:live-esncard": "bun run env:runtime && dotenv -c dev -- playwright test tests/specs/profile/user-profile-live-esncard.spec.ts --project=local-chrome-integration --grep '@needs-live-esncard'",
     "test:e2e:docs": "bun run env:runtime && dotenv -c dev -- playwright test --project=docs-baseline",
-    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
+    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
     "test:e2e:install": "playwright install",
     "test:e2e:report": "playwright show-report",
     "db:push": "bun run env:runtime && dotenv -c dev -- drizzle-kit push --force",
@@ -1826,7 +1826,7 @@ id: call_Z3hy9YaifHxazVrgTFNcxRAS
 ```json
 {
   "cmd": "sed -n '1,360p' src/shared/rpc-contracts/app-rpcs/admin.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -1838,7 +1838,7 @@ id: call_keldDdpL0uTd34SF56DsYGyI
 ```json
 {
   "cmd": "sed -n '1,780p' src/server/effect/rpc/handlers/admin.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 50000
 }
 ```
@@ -1850,7 +1850,7 @@ id: call_gzF3UVrgTk9K1XLp3Uc1PShU
 ```json
 {
   "cmd": "sed -n '1,320p' src/shared/permissions/permissions.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -1862,7 +1862,7 @@ id: call_Mqp2Ke4oKz3dqSlApQ0xyhuG
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/admin/admin.routes.ts && sed -n '1,260p' src/app/admin/admin-overview/admin-overview.component.html && sed -n '1,260p' src/app/admin/user-list/user-list.component.ts && sed -n '1,260p' src/app/admin/user-list/user-list.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 40000
 }
 ```
@@ -2225,7 +2225,7 @@ id: call_CWI0Ux1vJ5I8bMcad57s8UD5
 ```json
 {
   "cmd": "sed -n '1,220p' src/shared/rpc-contracts/app-rpcs/users.rpcs.ts && sed -n '1,160p' src/shared/rpc-contracts/app-rpcs/admin.errors.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 24000
 }
 ```
@@ -2237,7 +2237,7 @@ id: call_MjmtZ0bdF6mIsj7T2sxf8Ygi
 ```json
 {
   "cmd": "sed -n '760,900p' src/server/effect/rpc/handlers/admin.handlers.ts && sed -n '430,560p' src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -2249,7 +2249,7 @@ id: call_g7ZN5tfG6rWFDLuKNPfPZj98
 ```json
 {
   "cmd": "sed -n '1,220p' src/db/schema/users.ts && sed -n '1,220p' src/db/schema/roles.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -2261,7 +2261,7 @@ id: call_bxrHFOPLA4zehz59foGspagu
 ```json
 {
   "cmd": "sed -n '1,280p' src/app/admin/general-settings/general-settings.component.ts && sed -n '1,340p' src/app/admin/general-settings/general-settings.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 40000
 }
 ```
@@ -2614,7 +2614,7 @@ id: call_3UGKs3eKmcuKcJyo6bOTuVyZ
 ```json
 {
   "cmd": "sed -n '1,180p' src/shared/rpc-contracts/app-rpcs/users.errors.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -2626,7 +2626,7 @@ id: call_Pjl7S8c4JVE8k1khXQF5xuwf
 ```json
 {
   "cmd": "sed -n '1,120p' src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -2638,7 +2638,7 @@ id: call_94PknziHyFH2bCujAeXnqqI2
 ```json
 {
   "cmd": "sed -n '1,220p' src/server/effect/rpc/handlers/users.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -2650,7 +2650,7 @@ id: call_tITAiRTMb0c84xnmpSuiXJWF
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/admin/user-list/user-list.component.spec.ts 2>/dev/null || true",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -2816,8 +2816,8 @@ const createTenant = () => ({
 const createUser = () => ({
   attributes: [],
   auth0Id: 'auth0|user-1',
-  communicationEmail: 'notify@example.com',
-  email: 'alice@example.com',
+  communicationEmail: '<REDACTED_EMAIL>',
+  email: '<REDACTED_EMAIL>',
   firstName: 'Alice',
   iban: null,
   id: 'user-1',
@@ -2833,7 +2833,7 @@ const createCreateAccountHeaders = (
 ) => ({
   [RPC_CONTEXT_HEADERS.AUTH_DATA]: encodeRpcContextHeaderJson(
     authData ?? {
-      email: 'alice@example.com',
+      email: '<REDACTED_EMAIL>',
       sub: 'auth0|alice',
     },
   ),
@@ -2874,7 +2874,7 @@ id: call_MDv2ao2k7eQFt6kQvoGpv2Ma
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/core/navigation/navigation.component.ts && sed -n '1,260p' src/app/core/navigation/navigation.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -2886,7 +2886,7 @@ id: call_izbvF1aCM8FpVSggGkY29x7l
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/core/permissions.service.ts && sed -n '1,180p' src/app/shared/directives/if-permission.directive.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 24000
 }
 ```
@@ -2898,7 +2898,7 @@ id: call_G0IbanpXdC3873Lr1C0HkqX5
 ```json
 {
   "cmd": "sed -n '1,220p' src/shared/rpc-contracts/app-rpcs/config.rpcs.ts && sed -n '1,220p' src/server/effect/rpc/handlers/config.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -2910,7 +2910,7 @@ id: call_ixtiN4gVnk7ZHjIJXv3smqEr
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/scanning/scanning.routes.ts && sed -n '1,240p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -3253,7 +3253,7 @@ id: call_eXgcKZC7IdRqJgWkwmEw7PHp
 ```json
 {
   "cmd": "sed -n '1,180p' src/shared/rpc-contracts/app-rpcs/roles.rpcs.ts && sed -n '1,150p' src/server/effect/rpc/handlers/roles.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -3348,7 +3348,7 @@ id: call_kwmwzsbXyfdXHF2lfuwwolOp
 ```json
 {
   "cmd": "sed -n '1,40p' src/server/effect/rpc/handlers/users.handlers.ts && sed -n '540,620p' src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -3438,7 +3438,7 @@ id: call_06nMySxmllgcyRQZ8sy8aOa4
 ```json
 {
   "cmd": "sed -n '500,555p' src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -3519,7 +3519,7 @@ id: call_TLlZUc38WXBlpclg9d2asXd2
 ```json
 {
   "cmd": "sed -n '555,625p' src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -3623,7 +3623,7 @@ id: call_hrShRqVM6xcJlzp6RBjE0NVU
 ```json
 {
   "cmd": "rg -n \"injectMutation\\(\\(\\) =>[\\s\\S]{0,160}mutationOptions|mutateAsync\\(|mutate\\(\" src/app --glob '*.ts' | sed -n '1,160p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -3635,7 +3635,7 @@ id: call_6onDaWedomoGx3Qhq7j5Tb3D
 ```json
 {
   "cmd": "sed -n '240,320p' src/app/admin/general-settings/general-settings.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -3647,7 +3647,7 @@ id: call_4ha6BI61VrU7knnz32GRvjzI
 ```json
 {
   "cmd": "sed -n '250,340p' src/app/events/event-registration-option/event-registration-option.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -3877,7 +3877,7 @@ id: call_DfezPZdQSAni6w8GNuQ5ruaK
 ```json
 {
   "cmd": "sed -n '1,30p' src/server/effect/rpc/handlers/users.handlers.ts && rg -n \"return 'notRequired'|export const userHandlers|users.authData\" src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -3935,7 +3935,7 @@ id: call_7FNL7mGxW1b6rRlX83nLRsnM
 ```json
 {
   "cmd": "sed -n '130,180p' src/server/effect/rpc/handlers/users.handlers.ts && sed -n '220,245p' src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -4049,7 +4049,7 @@ id: call_80ZvfvP9SHTlfofjH6HzeOeK
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/core/navigation/navigation.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -4139,7 +4139,7 @@ id: call_jUlpM1J4sl417bdp8eZpJYW8
 ```json
 {
   "cmd": "sed -n '1,180p' src/app/shared/directives/if-any-permission.directive.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -4214,7 +4214,7 @@ id: call_uNOzu932iI6efZAFsaSixkFi
 ```json
 {
   "cmd": "sed -n '1,130p' src/app/templates/shared/template-form/template-registration-option-form.component.ts && sed -n '1,130p' src/app/templates/template-edit/template-edit.component.ts && sed -n '1,120p' src/app/templates/template-create/template-create.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 24000
 }
 ```
@@ -4226,7 +4226,7 @@ id: call_h7znmy39QJqQQlfDG41PQfUB
 ```json
 {
   "cmd": "rg -n \"registrationModes\\s*=|registrationModes:|registrationMode: 'application'|registrationMode: 'random'|RegistrationMode\\[]|registrationModeLabel\" src/app src/server src/shared tests --glob '!repos/**'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 24000
 }
 ```
@@ -4238,7 +4238,7 @@ id: call_Dk1e3KXOUZqHXt5vlTtcBIyr
 ```json
 {
   "cmd": "sed -n '1,130p' src/db/schema/global-enums.ts && sed -n '1,80p' src/app/templates/shared/template-form/template-registration-option-form.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -4465,7 +4465,7 @@ id: call_88HPru86hdn97sdlBpM3YO4e
 ```json
 {
   "cmd": "sed -n '80,190p' src/app/events/event-edit/event-edit.ts && sed -n '80,130p' src/app/templates/template-create-event/template-create-event.component.ts && sed -n '1,70p' src/shared/registration-modes.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -4574,7 +4574,7 @@ id: call_Cd0lOI8EfHGXJ1whOd941hTl
 ```json
 {
   "cmd": "sed -n '1,35p' src/app/templates/template-create.component.ts 2>/dev/null || sed -n '1,35p' src/app/templates/template-create/template-create.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 8000
 }
 ```
@@ -4586,7 +4586,7 @@ id: call_hPF00RIHjpQhKiCF79dzAWwV
 ```json
 {
   "cmd": "sed -n '1,35p' src/app/templates/template-edit/template-edit.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 8000
 }
 ```
@@ -4598,7 +4598,7 @@ id: call_UMRLDRTTWi5wbgLhiHYS75vG
 ```json
 {
   "cmd": "sed -n '1,35p' src/app/templates/template-create-event/template-create-event.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 8000
 }
 ```
@@ -4610,7 +4610,7 @@ id: call_EfiS5lMDtO585nhMTYczKTtf
 ```json
 {
   "cmd": "sed -n '1,35p' src/app/events/event-edit/event-edit.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 8000
 }
 ```
@@ -4822,7 +4822,7 @@ id: call_2f25ZkSvULo8szt6gCQIoXGX
 ```json
 {
   "cmd": "rg -n \"registrationMode\" src/shared/rpc-contracts/app-rpcs src/server/effect/rpc/handlers/events src/shared/components/forms src/app/shared/components/forms --glob '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -4834,7 +4834,7 @@ id: call_bz1qlAr0DTIiM0ROF7Pk2Wip
 ```json
 {
   "cmd": "sed -n '1,260p' src/shared/rpc-contracts/app-rpcs/events.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -4846,7 +4846,7 @@ id: call_qr7YeIWenPw3Dn5N4lfIMi2T
 ```json
 {
   "cmd": "sed -n '1,260p' src/shared/rpc-contracts/app-rpcs/templates.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -4858,7 +4858,7 @@ id: call_IESjjCL9x2eq1QtqZiyIj0KH
 ```json
 {
   "cmd": "sed -n '1,160p' src/app/shared/components/forms/registration-option-form/registration-option-form.ts && sed -n '1,220p' src/app/shared/components/forms/registration-option-form/registration-option-form.schema.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 26000
 }
 ```
@@ -5177,7 +5177,7 @@ id: call_DMmvarn7wTYpkWFXRlqafPHh
 ```json
 {
   "cmd": "sed -n '540,610p' src/shared/rpc-contracts/app-rpcs/events.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 10000
 }
 ```
@@ -5281,7 +5281,7 @@ id: call_tQoP9COOiRDkwSm7hU5nztAG
 ```json
 {
   "cmd": "sed -n '330,760p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 50000
 }
 ```
@@ -5293,7 +5293,7 @@ id: call_bQV7QCu3m0bOrInZbL17A5f2
 ```json
 {
   "cmd": "sed -n '1030,1235p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -5305,7 +5305,7 @@ id: call_7cqyJlnjKbmA08FZBuxq2BIn
 ```json
 {
   "cmd": "sed -n '1,130p' src/db/schema/event-registrations.ts && sed -n '1,90p' src/db/schema/event-registration-options.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -5317,7 +5317,7 @@ id: call_OGW2H0YM6VrMbU5emPnbNcrn
 ```json
 {
   "cmd": "sed -n '1,180p' src/app/events/event-registration-option/event-registration-option.component.ts && sed -n '1,150p' src/app/events/event-registration-option/event-registration-option.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -5667,7 +5667,7 @@ id: call_AfAIdVg78nxhfYAtjZ7evVkM
 ```json
 {
   "cmd": "sed -n '168,240p' src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 14000
 }
 ```
@@ -5769,7 +5769,7 @@ id: call_jAqeK1yt6GWtXTVzaLOgD9ab
 ```json
 {
   "cmd": "sed -n '240,290p' src/server/effect/rpc/handlers/users.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 10000
 }
 ```
@@ -5853,7 +5853,7 @@ id: call_AyM3gcWmTF4QJlVh0coKnjoc
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -5866,7 +5866,7 @@ id: call_8oQHvgJcwwE3uiESTqvKBVFn
 ```json
 {
   "cmd": "git diff -- src/shared/rpc-contracts/app-rpcs/users.rpcs.ts src/shared/rpc-contracts/app-rpcs/users.errors.ts src/server/effect/rpc/handlers/users.handlers.ts src/app/admin/user-list/user-list.component.ts src/app/admin/user-list/user-list.component.html src/app/core/navigation/navigation.component.ts src/app/core/navigation/navigation.component.html src/shared/registration-modes.ts src/shared/rpc-contracts/app-rpcs/events.rpcs.ts src/shared/rpc-contracts/app-rpcs/templates.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -5982,7 +5982,7 @@ id: call_9scrDJwEj0vkDC2ykiabZWgH
 ```json
 {
   "cmd": "bun run lint",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6019,7 +6019,7 @@ id: call_EvCyvtgsfS1Q0T76P4nftVvt
 ```json
 {
   "cmd": "node -v && which node && ls -a | rg \"node|tool|mise|volta|nvm|bun\" && find .. -maxdepth 2 \\( -name '.node-version' -o -name '.nvmrc' -o -name 'mise.toml' -o -name '.tool-versions' -o -name 'package.json' \\) -print",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -6043,7 +6043,7 @@ Process exited with code 0
 Original token count: 30
 Output:
 v24.2.0
-/Users/hedde/.nvm/versions/node/v24.2.0/bin/node
+/home/<USER>/.nvm/versions/node/v24.2.0/bin/node
 bun.lock
 bunfig.toml
 node_modules
@@ -6062,13 +6062,13 @@ Workspace dependencies are available for this local desktop thread.
 ### Workspace Dependencies
 Use these bundled paths for sheets, slides, documents, PDFs, images, or browser automation:
 - Bundle version: `26.630.12135`
-- Git executable: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/git`
-- Node.js executable: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node`
-- Node.js packages: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules`
-- pnpm executable: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/pnpm`
-- Python executable: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`
-- Python packages: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/python`
-- Native binaries: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin`
+- Git executable: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/git`
+- Node.js executable: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node`
+- Node.js packages: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules`
+- pnpm executable: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/pnpm`
+- Python executable: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`
+- Python packages: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python`
+- Native binaries: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin`
 ```
 
 > AGENT
@@ -6081,8 +6081,8 @@ tool_use exec_command
 id: call_XBzsKAJ9EkvJ4d4aYLrlvsM1
 ```json
 {
-  "cmd": "/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node -v && /Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node -v && /home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node ./node_modules/@angular/cli/bin/ng.js lint --fix",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6118,7 +6118,7 @@ id: call_DecSJfzpJMx32AhDG5k0KlqP
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 -v",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -6149,7 +6149,7 @@ id: call_jOVa0t454TcFsSchNJbLnPp5
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6184,7 +6184,7 @@ id: call_TB4nK08Dt68g70AEtN58nKqh
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/users.handlers.spec.ts src/shared/registration-modes.spec.ts src/shared/permissions/permissions.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6201,14 +6201,14 @@ Process exited with code 1
 Original token count: 750
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
 stdout | src/server/effect/rpc/handlers/users.handlers.spec.ts > userHandlers > users.findMany paginates tenant users before loading role join rows
 [16:50:35.981] ERROR (#59): Error [AssertionError]: expected [ …(2) ] to deeply equal [ …(2) ]
-    at Array.<anonymous> (/Users/hedde/.codex/worktrees/0bda/evorto/src/server/effect/rpc/handlers/users.handlers.spec.ts:729:30) {
+    at Array.<anonymous> (/home/<USER>/.codex/worktrees/0bda/evorto/src/server/effect/rpc/handlers/users.handlers.spec.ts:729:30) {
   actual: [
     {
-      email: 'a@example.com',
+      email: '<REDACTED_EMAIL>',
       firstName: 'Alice',
       id: 'user-1',
       lastName: 'One',
@@ -6216,7 +6216,7 @@ stdout | src/server/effect/rpc/handlers/users.handlers.spec.ts > userHandlers > 
       roles: []
     },
     {
-      email: 'b@example.com',
+      email: '<REDACTED_EMAIL>',
       firstName: 'Bob',
       id: 'user-2',
       lastName: 'Two',
@@ -6226,14 +6226,14 @@ stdout | src/server/effect/rpc/handlers/users.handlers.spec.ts > userHandlers > 
   ],
   expected: [
     {
-      email: 'a@example.com',
+      email: '<REDACTED_EMAIL>',
       firstName: 'Alice',
       id: 'user-1',
       lastName: 'One',
       roles: [Array]
     },
     {
-      email: 'b@example.com',
+      email: '<REDACTED_EMAIL>',
       firstName: 'Bob',
       id: 'user-2',
       lastName: 'Two',
@@ -6258,7 +6258,7 @@ AssertionError: expected [ …(2) ] to deeply equal [ …(2) ]
 
 @@ -2,18 +2,17 @@
     {
-      "email": "a@example.com",
+      "email": "<REDACTED_EMAIL>",
       "firstName": "Alice",
       "id": "user-1",
       "lastName": "One",
@@ -6279,7 +6279,7 @@ id: call_cnkirz1KsO4RHAp1dxnrAPFk
 ```json
 {
   "cmd": "sed -n '660,750p' src/server/effect/rpc/handlers/users.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -6308,14 +6308,14 @@ Output:
                       limit: () =>
                         Effect.succeed([
                           {
-                            email: 'a@example.com',
+                            email: '<REDACTED_EMAIL>',
                             firstName: 'Alice',
                             id: 'user-1',
                             lastName: 'One',
                             userTenantId: 'user-tenant-1',
                           },
                           {
-                            email: 'b@example.com',
+                            email: '<REDACTED_EMAIL>',
                             firstName: 'Bob',
                             id: 'user-2',
                             lastName: 'Two',
@@ -6365,14 +6365,14 @@ Output:
         expect(result.usersCount).toBe(2);
         expect(result.users).toEqual([
           {
-            email: 'a@example.com',
+            email: '<REDACTED_EMAIL>',
             firstName: 'Alice',
             id: 'user-1',
             lastName: 'One',
             roles: ['Admin', 'Editor'],
           },
           {
-            email: 'b@example.com',
+            email: '<REDACTED_EMAIL>',
             firstName: 'Bob',
             id: 'user-2',
             lastName: 'Two',
@@ -6403,7 +6403,7 @@ id: call_li1TBNuwUokJWm0RixOQkQnQ
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/users.handlers.spec.ts src/shared/registration-modes.spec.ts src/shared/permissions/permissions.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6420,7 +6420,7 @@ Process exited with code 0
 Original token count: 57
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
 
  Test Files  1 passed (1)
@@ -6442,7 +6442,7 @@ id: call_2yhgNhtRaqSWlf136PD7ElNZ
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6479,7 +6479,7 @@ id: call_95W4VAoyTfRNyiC0B8q6DLC4
 ```json
 {
   "cmd": "sed -n '1,130p' src/app/templates/shared/template-form/template-registration-option-form.utilities.ts && sed -n '1,220p' src/app/templates/shared/template-form/template-form.utilities.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 24000
 }
 ```
@@ -6491,7 +6491,7 @@ id: call_10Mr9Ld3XP3wNhpfzmu1T0IV
 ```json
 {
   "cmd": "sed -n '160,230p' src/app/templates/template-create/template-create.component.ts && sed -n '190,220p' src/app/templates/template-edit/template-edit.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -6503,7 +6503,7 @@ id: call_d1UlXov423SEriK88WaX8Snf
 ```json
 {
   "cmd": "sed -n '165,220p' src/app/templates/template-create-event/template-create-event.component.ts && sed -n '165,210p' src/app/events/event-edit/event-edit.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -6804,7 +6804,7 @@ id: call_Db6PK9spHaVPFf2g4v9weTUU
 ```json
 {
   "cmd": "sed -n '12,28p' src/app/templates/template-create-event/template-create-event.component.ts && rg -n \"registrationMode:\" src/app/templates/template-create-event/template-create-event.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 8000
 }
 ```
@@ -6816,7 +6816,7 @@ id: call_mfPHcApvOXmlRP0ExcecPKTh
 ```json
 {
   "cmd": "sed -n '16,32p' src/app/events/event-edit/event-edit.ts && rg -n \"registrationMode:\" src/app/events/event-edit/event-edit.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 8000
 }
 ```
@@ -6899,7 +6899,7 @@ id: call_sh5qmn9w9gLrpB6QRoC9Z7RZ
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -6912,7 +6912,7 @@ id: call_JnsNpCxfWOkxymXaRlGbwg8Z
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/users.handlers.spec.ts src/shared/registration-modes.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -6969,7 +6969,7 @@ Process exited with code 0
 Original token count: 57
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
 
  Test Files  1 passed (1)
@@ -6991,7 +6991,7 @@ id: call_TD0gBkdg6HT9demw6BPxQ6De
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -7004,7 +7004,7 @@ id: call_cvXABW3kAGkLasSpOc2kRjwW
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -7076,7 +7076,7 @@ id: call_cGOKummyc8HaVtYkoZA9UiQP
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -7089,7 +7089,7 @@ id: call_ANyn2usWFKjygXVsDUVbutQH
 ```json
 {
   "cmd": "git status --short && git diff --stat",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7203,7 +7203,7 @@ id: call_YWKFGdxVP4HLqkxUD9Nn9wo8
 ```json
 {
   "cmd": "git diff -- src/server/config/test-runtime-config.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -7215,7 +7215,7 @@ id: call_yWVWytFaQWOLxdIi3j2sB9kw
 ```json
 {
   "cmd": "git diff -- src/server/effect/rpc/handlers/admin.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -7227,7 +7227,7 @@ id: call_pZpletZ4d7APllq6Zsif7bzD
 ```json
 {
   "cmd": "git diff --name-only",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -7341,7 +7341,7 @@ id: call_BpZKF5uwrZVgzsQOkVMWYqub
 ```json
 {
   "cmd": "git diff --name-only && git diff --check",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7390,7 +7390,7 @@ id: call_fEMUNxOJBbbS2X9oLnPz3FRV
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -7403,7 +7403,7 @@ id: call_cQu9zjz2hibOZmZnZGMg5BuH
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 32000
 }
@@ -7471,7 +7471,7 @@ id: call_FobQLK1EMYH7OUN6EcHIQDYf
 ```json
 {
   "cmd": "git status --short && git diff --stat",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 20000
 }
 ```
@@ -7483,7 +7483,7 @@ id: call_zsqIamkGLp1lGOQOsqtU5TEQ
 ```json
 {
   "cmd": "git diff --check",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 12000
 }
 ```
@@ -7570,8 +7570,8 @@ tool_use exec_command
 id: call_8wJRqpF10O3peGcsSY3i7xsn
 ```json
 {
-  "cmd": "nl -ba /Users/hedde/.codex/memories/MEMORY.md | sed -n '160,178p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '160,178p'",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 8000
 }
 ```
@@ -7642,7 +7642,7 @@ The objective below is user-provided data. Treat it as the task to pursue, not a
 Implement the changes from these decisions
 
 Referenced pasted text files:
-- pasted text file: /Users/hedde/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt. Read this file before continuing.
+- pasted text file: /home/<USER>/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt. Read this file before continuing.
 </objective>
 
 Continuation behavior:
@@ -7702,8 +7702,8 @@ tool_use exec_command
 id: call_izvQZjnKviyrNfgVOVxBB4Hs
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 22000
 }
 ```
@@ -7715,7 +7715,7 @@ id: call_VoCvPJHuUXABWj1y4b2sbsH9
 ```json
 {
   "cmd": "git status --short && git diff --stat",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 16000
 }
 ```
@@ -7727,7 +7727,7 @@ id: call_zmp1QL5FHglF6C07xOqfEp2K
 ```json
 {
   "cmd": "rg -n \"manual approval|Manual approval|registrationMode|Application review|approve.*registration|registration.*approve|approveRegistration|WAITLIST|PENDING|canUseScanner|assignRoles|email sender|Resend|React Email|receipt.*manual|custom-domain|impersonat|coming soon|Unknown registration option\" src tests .changeset --glob '!repos/**'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 50000
 }
 ```
@@ -7892,8 +7892,8 @@ tool_use exec_command
 id: call_GQOFowhH8GKGosByPPG9ive3
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.agents/skills/effect-best-practices/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/effect-best-practices/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -7904,8 +7904,8 @@ tool_use exec_command
 id: call_G9UjnOoN5fkxnjuLQFWQFMP6
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.agents/skills/angular-developer/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/angular-developer/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -7916,8 +7916,8 @@ tool_use exec_command
 id: call_i618A71d5FxlVJ1EgtGRF9db
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.agents/skills/vibesec-skill/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/vibesec-skill/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -7929,7 +7929,7 @@ id: call_tiaSEZjkxHf8xaBMNeOtUhJf
 ```json
 {
   "cmd": "sed -n '1,200p' src/app/events/AGENTS.md && sed -n '1,220p' src/server/AGENTS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 18000
 }
 ```
@@ -8097,7 +8097,7 @@ id: call_4ow0Qez6RuKr4mv6olMACBrM
 ```json
 {
   "cmd": "sed -n '760,1035p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 34000
 }
 ```
@@ -8109,7 +8109,7 @@ id: call_xwlwj1kh0UenJesOZfo56VZu
 ```json
 {
   "cmd": "sed -n '1,220p' src/db/schema/transactions.ts && sed -n '1,420p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 42000
 }
 ```
@@ -8121,7 +8121,7 @@ id: call_e0QDAK7t8siwHEhEP7NhqL2w
 ```json
 {
   "cmd": "sed -n '1,260p' src/shared/rpc-contracts/app-rpcs/events.rpcs.ts && sed -n '260,640p' src/shared/rpc-contracts/app-rpcs/events.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 52000
 }
 ```
@@ -8133,7 +8133,7 @@ id: call_7VtoxvDPuw5vOLHGj35okoBa
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/events/event-active-registration/event-active-registration.component.ts && sed -n '1,130p' src/app/events/event-active-registration/event-active-registration.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "max_output_tokens": 30000
 }
 ```
@@ -8489,8 +8489,8 @@ tool_use exec_command
 id: call_WUWQEfjOnZEqBHCwbuSY2WAo
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.agents/skills/angular-developer/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/angular-developer/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8502,8 +8502,8 @@ tool_use exec_command
 id: call_K4skkDQxllYgFr8uh4ZJMioi
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.agents/skills/effect-best-practices/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/effect-best-practices/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8515,8 +8515,8 @@ tool_use exec_command
 id: call_1GbPb45zs1CaSNCwV6r6fAeb
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.agents/skills/vibe-security-skill/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/vibe-security-skill/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8528,8 +8528,8 @@ tool_use exec_command
 id: call_04Qd5ZjHDnAUKnWBqhiopmd6
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.codex/worktrees/0bda/evorto/.agents/skills/project-design/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/worktrees/0bda/evorto/.agents/skills/project-design/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8716,8 +8716,8 @@ tool_use exec_command
 id: call_j94qAy1E5A3HQ3h7yPRJtk0l
 ```json
 {
-  "cmd": "sed -n '221,520p' /Users/hedde/.agents/skills/effect-best-practices/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '221,520p' /home/<USER>/.agents/skills/effect-best-practices/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -8729,8 +8729,8 @@ tool_use exec_command
 id: call_qLVqaD0RuijppkiBT4wjYXGU
 ```json
 {
-  "cmd": "sed -n '221,520p' /Users/hedde/.agents/skills/vibe-security-skill/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '221,520p' /home/<USER>/.agents/skills/vibe-security-skill/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -8743,7 +8743,7 @@ id: call_LorJLfvqAWeu4UZTHpA0VFtT
 ```json
 {
   "cmd": "sed -n '1,260p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -8756,7 +8756,7 @@ id: call_ExKJVGEOYC005Uw8SsgEInju
 ```json
 {
   "cmd": "sed -n '1,240p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -9051,8 +9051,8 @@ tool_use exec_command
 id: call_IulgjKekmxFrjSLGvXfEwfES
 ```json
 {
-  "cmd": "sed -n '521,980p' /Users/hedde/.agents/skills/vibe-security-skill/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '521,980p' /home/<USER>/.agents/skills/vibe-security-skill/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9065,7 +9065,7 @@ id: call_yeTOLRwV8ElLKdzCjCIs0Din
 ```json
 {
   "cmd": "sed -n '240,620p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -9078,7 +9078,7 @@ id: call_zzPHOo3YWTNB7RPzrWO2oG0t
 ```json
 {
   "cmd": "sed -n '260,760p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -9091,7 +9091,7 @@ id: call_n1bBiAdx8htqIgP3fjdeSQL7
 ```json
 {
   "cmd": "sed -n '1,240p' src/shared/rpc-contracts/app-rpcs/events.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -9452,7 +9452,7 @@ id: call_FJbmPZaNUUUDCYQzLBhVizd1
 ```json
 {
   "cmd": "sed -n '760,1260p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -9465,7 +9465,7 @@ id: call_SdptAeWSSjNBpTj4RboNehzN
 ```json
 {
   "cmd": "sed -n '240,620p' src/shared/rpc-contracts/app-rpcs/events.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -9478,7 +9478,7 @@ id: call_s4KoU986RbBKJIcH4XUNc8lw
 ```json
 {
   "cmd": "sed -n '620,1100p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -9491,7 +9491,7 @@ id: call_S57o7vw3pMcajCaDNq4HM7An
 ```json
 {
   "cmd": "sed -n '1,220p' src/db/schema/transactions.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9862,7 +9862,7 @@ id: call_6F2ljClR7UqsUl1hoRpm4Bf4
 ```json
 {
   "cmd": "sed -n '620,760p' src/shared/rpc-contracts/app-rpcs/events.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9875,7 +9875,7 @@ id: call_Ft2xSjrvY7cZFDiSVKAYGDeb
 ```json
 {
   "cmd": "sed -n '1,220p' src/shared/rpc-contracts/app-rpcs/events.errors.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9888,7 +9888,7 @@ id: call_3CGvJTNUOY2r2XmW7BSHTOGW
 ```json
 {
   "cmd": "rg -n \"getOrganizeOverview|EventsGetOrganizeOverview|registrationId|approve|cancelEventRegistration|transferEventRegistration\" src/app/events -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9901,7 +9901,7 @@ id: call_LviqmxBTynwH13DgTMiMYf1Z
 ```json
 {
   "cmd": "rg -n \"getRegistrationStatus|paymentPending|checkoutUrl|PENDING|registeredDescription|registrationDeferredActionCopy\" src/app/events src/app/profile -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -10136,7 +10136,7 @@ id: call_m0Xh9dsvdQDpjguP50I3vPUf
 ```json
 {
   "cmd": "rg -n \"getRegistrationStatus|getOrganizeOverview|paymentPending|checkoutUrl|EventsGetOrganizeOverviewUser\" src/server/effect/rpc/handlers/events -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -10149,7 +10149,7 @@ id: call_jKMbdlJT9Iw5Z30DEd3mRcmU
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/events/event-active-registration/event-active-registration.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -10162,7 +10162,7 @@ id: call_lWJtpAbRjx7tHsh1WzeF5ROq
 ```json
 {
   "cmd": "sed -n '1,140p' src/app/events/event-active-registration/event-active-registration.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10175,7 +10175,7 @@ id: call_h6YcRDOVN0rB77RCHMJQGSIm
 ```json
 {
   "cmd": "sed -n '1,460p' src/app/events/event-organize/event-organize.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -10412,7 +10412,7 @@ id: call_xbiDmq1721ebdh81dx9zMLkE
 ```json
 {
   "cmd": "sed -n '1,280p' src/app/events/event-organize/event-organize.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -10425,7 +10425,7 @@ id: call_Y6vPE6YFhouiI61Gtzk5IbcV
 ```json
 {
   "cmd": "sed -n '1220,1410p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -10438,7 +10438,7 @@ id: call_VUt5tEJDLBeJkNS6tYaBnYbz
 ```json
 {
   "cmd": "sed -n '780,940p' src/server/effect/rpc/handlers/events/events-query.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -10451,7 +10451,7 @@ id: call_XEXu04nbApmmKHtK0ZepAVFt
 ```json
 {
   "cmd": "sed -n '1,220p' src/db/schema/event-registrations.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10788,7 +10788,7 @@ id: call_hQV7yT5BPOoaaA8vaxeNZFdK
 ```json
 {
   "cmd": "sed -n '940,1060p' src/server/effect/rpc/handlers/events/events-query.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -10801,7 +10801,7 @@ id: call_X4RXUwabwLKMEpgby9BL52jT
 ```json
 {
   "cmd": "rg -n \"EventRegistrationService|registerForEvent\\(|joinWaitlist\\(|cancelRegistration\\(|events\\.registerForEvent|events\\.getRegistrationStatus|eventRegistrationOptions|registrationMode: 'application'|registrationMode.*application\" src/server/**/*.spec.ts tests src/app/**/*.spec.ts -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -10814,7 +10814,7 @@ id: call_Q59rQelYPXnAPsMLf4NGoUBM
 ```json
 {
   "cmd": "rg -n \"expires_at|buildCheckoutSessionExpiresAt|checkout.sessions.expire|stripeCheckoutUrl|webhook|reservedSpots|paymentPending\" src/server src/shared src/app -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -10827,7 +10827,7 @@ id: call_G9nG8DyKpfXhSCjMygPmMOug
 ```json
 {
   "cmd": "sed -n '1,220p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts 2>/dev/null || true",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -11118,7 +11118,7 @@ id: call_KLMpOQGxHxYvl8G1k7ibR2Qs
 ```json
 {
   "cmd": "sed -n '220,380p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -11131,7 +11131,7 @@ id: call_FhpjBFDkTpRh7KAfcdCjRAkg
 ```json
 {
   "cmd": "sed -n '380,740p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -11144,7 +11144,7 @@ id: call_JPIgY5bCxKC8NMyjJnvrG055
 ```json
 {
   "cmd": "sed -n '900,1040p' src/server/http/stripe-webhook.web-handler.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -11157,7 +11157,7 @@ id: call_Z3wTFTHzWTTDkZrcYW6I98Ue
 ```json
 {
   "cmd": "sed -n '480,620p' src/server/http/stripe-webhook.web-handler.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -11215,7 +11215,7 @@ Output:
             stripeAccountId: undefined,
           },
           user: {
-            email: 'alice@example.com',
+            email: '<REDACTED_EMAIL>',
             id: 'user-1',
             roleIds: ['role-1'],
           },
@@ -11310,7 +11310,7 @@ Output:
             stripeAccountId: undefined,
           },
           user: {
-            email: 'alice@example.com',
+            email: '<REDACTED_EMAIL>',
             id: 'user-1',
             roleIds: ['role-1'],
           },
@@ -11352,7 +11352,7 @@ Output:
           stripeAccountId: undefined,
         },
         user: {
-          email: 'alice@example.com',
+          email: '<REDACTED_EMAIL>',
           id: 'user-1', […]
 
 > TOOL
@@ -11487,7 +11487,7 @@ id: call_0gDiZ3KLcslqNQC1GuJkll5d
 ```json
 {
   "cmd": "sed -n '620,700p' src/server/http/stripe-webhook.web-handler.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -11500,7 +11500,7 @@ id: call_9EZLnMBltdaPf8ofeQpXE9UL
 ```json
 {
   "cmd": "sed -n '1,160p' src/server/integrations/stripe-checkout.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -11513,7 +11513,7 @@ id: call_HEoQW5v3O2RO3KVNyM55kmo4
 ```json
 {
   "cmd": "sed -n '1,220p' src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -11526,7 +11526,7 @@ id: call_SooLwOpfnDh8jukiP5SWQ9em
 ```json
 {
   "cmd": "sed -n '1,140p' src/app/events/event-registration-option/event-registration-option.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11827,7 +11827,7 @@ id: call_PkI7T5OXdbVdf9vEIuEypX3X
 ```json
 {
   "cmd": "sed -n '140,520p' src/app/events/event-registration-option/event-registration-option.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -11840,7 +11840,7 @@ id: call_kPefdOsLPbYttb1dYqTFiDlS
 ```json
 {
   "cmd": "sed -n '1,320p' src/app/events/event-registration-option/event-registration-option.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -11853,7 +11853,7 @@ id: call_RVe9y0OsE6IgKMklmPfBOdxJ
 ```json
 {
   "cmd": "sed -n '1,180p' src/app/events/event-registration-option/event-registration-option.component.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -11866,7 +11866,7 @@ id: call_iGWB1tKuWWNxjMso7GNugPR0
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/events/event-active-registration/event-active-registration.component.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -12202,7 +12202,7 @@ id: call_C7kvtvckIFOPnJvSBaITDazH
 ```json
 {
   "cmd": "sed -n '1,80p' src/server/effect/rpc/handlers/events/events.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -12215,7 +12215,7 @@ id: call_LlTJNqtdXNc9DX4DDPOTEaSf
 ```json
 {
   "cmd": "sed -n '1,120p' src/server/effect/rpc/handlers/events/events-query.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -12228,7 +12228,7 @@ id: call_quTO0zVunLAwZiFYlON153xE
 ```json
 {
   "cmd": "sed -n '1,160p' src/server/effect/rpc/handlers/events/events.shared.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -12241,7 +12241,7 @@ id: call_2MPJOqbAo2fwSkGti2HbZEtO
 ```json
 {
   "cmd": "rg -n \"eventRegistrationHandlers|eventsRegistration|handlers\" src/server/effect/rpc/handlers/events -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -12558,7 +12558,7 @@ id: call_U9ssAeR7qftsFa0JISD9GLHp
 ```json
 {
   "cmd": "sed -n '1410,1465p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -12648,7 +12648,7 @@ id: call_5EY2ByLkDdxEfl9Nmax8GruL
 ```json
 {
   "cmd": "sed -n '280,430p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -12760,7 +12760,7 @@ id: call_l7Arp05ENzDNMpM16CnuZmt0
 ```json
 {
   "cmd": "sed -n '430,470p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -12835,7 +12835,7 @@ id: call_ireFUOkgFONXjJfWpYww7IDC
 ```json
 {
   "cmd": "sed -n '50,280p' src/app/events/event-organize/event-organize.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -12932,7 +12932,7 @@ id: call_JqS5Lax1kXi8pZOuAdDZ62s5
 ```json
 {
   "cmd": "sed -n '280,390p' src/app/events/event-organize/event-organize.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13061,7 +13061,7 @@ id: call_wL9bJqWWU5rn9BbrxdJUlLIe
 ```json
 {
   "cmd": "sed -n '390,460p' src/app/events/event-organize/event-organize.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -13166,7 +13166,7 @@ id: call_LKy3ZxvFNTmGY4uIvoYO1wrn
 ```json
 {
   "cmd": "sed -n '1,130p' src/server/effect/rpc/handlers/events/events-rpcs.schema.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -13268,7 +13268,7 @@ id: call_khKP4rmbO3MwgFpfw5Eb53Ho
 ```json
 {
   "cmd": "rg -n \"mode|application|not available|unsupported|available yet|registrationMode\" src/server/effect/rpc/handlers/events/event-registration.service.spec.ts src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -13307,7 +13307,7 @@ id: call_Hlx41L4nMGciFl7VOiKe10sz
 ```json
 {
   "cmd": "sed -n '740,840p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -13330,7 +13330,7 @@ Output:
           stripeAccountId: undefined,
         },
         user: {
-          email: 'alice@example.com',
+          email: '<REDACTED_EMAIL>',
           id: 'user-1',
           roleIds: ['role-1'],
         },
@@ -13380,7 +13380,7 @@ Output:
           stripeAccountId: undefined,
         },
         user: {
-          email: 'alice@example.com',
+          email: '<REDACTED_EMAIL>',
           id: 'user-1',
           roleIds: ['role-1'],
         },
@@ -13421,7 +13421,7 @@ id: call_h4b6VDpnH4jhD66KwSpJUaoT
 ```json
 {
   "cmd": "sed -n '900,1030p' src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -13528,7 +13528,7 @@ id: call_4VC0WTVhDUqLga9KwkT0i8Zw
 ```json
 {
   "cmd": "rg -n \"organizerRegistrationActionDisabled|organizerRegistrationTransferDisabled|EventOrganize\" src/app/events/event-organize -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13592,7 +13592,7 @@ id: call_dWDlDpXEQ8K5eJWowLzNORKq
 ```json
 {
   "cmd": "sed -n '1,140p' src/app/events/event-organize/event-organize.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13657,11 +13657,11 @@ describe('transferParticipantLabel', () => {
   it('shows the participant identity before organizer-assisted transfer', () => {
     expect(
       transferParticipantLabel({
-        email: 'alex@example.com',
+        email: '<REDACTED_EMAIL>',
         firstName: 'Alex',
         lastName: 'Able',
       }),
-    ).toBe('Alex Able (alex@example.com)');
+    ).toBe('Alex Able (<REDACTED_EMAIL>)');
   });
 });
 
@@ -13702,7 +13702,7 @@ id: call_50aCUbpNrWhR1HJQScBMgYZV
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -13737,7 +13737,7 @@ id: call_ZMkIN569DOJFQ4csJVAkjLfL
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -13794,7 +13794,7 @@ id: call_eKuangwdL4NWUFh9doOkJRpR
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/events/event-registration.service.spec.ts src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts src/server/effect/rpc/handlers/events/events-rpcs.schema.spec.ts src/server/effect/rpc/handlers/events/events.handlers.spec.ts src/app/events/event-registration-option/event-registration-option.component.spec.ts src/app/events/event-active-registration/event-active-registration.component.spec.ts src/app/events/event-organize/event-organize.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -13811,17 +13811,17 @@ Process exited with code 1
 Original token count: 724
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
 stdout | src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts > event registration cancellation handlers > cancels pending registrations and releases a reserved spot
 [17:03:40.979] ERROR (#74): Error [TypeError]: yield* (intermediate value)(intermediate value) is not iterable
-    at Array.<anonymous> (/Users/hedde/.codex/worktrees/0bda/evorto/src/server/effect/rpc/handlers/events/events-registration.handlers.ts:430:16) {
+    at Array.<anonymous> (/home/<USER>/.codex/worktrees/0bda/evorto/src/server/effect/rpc/handlers/events/events-registration.handlers.ts:430:16) {
   [cause]: undefined
 }
 
 stdout | src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts > event registration cancellation handlers > cancels pending guest registrations and releases buyer plus guest reserved spots
 [17:03:40.982] ERROR (#98): Error [TypeError]: yield* (intermediate value)(intermediate value) is not iterable
-    at Array.<anonymous> (/Users/hedde/.codex/worktrees/0bda/evorto/src/server/effect/rpc/handlers/events/events-registration.handlers.ts:430:16) {
+    at Array.<anonymous> (/home/<USER>/.codex/worktrees/0bda/evorto/src/server/effect/rpc/handlers/events/events-registration.handlers.ts:430:16) {
   [cause]: undefined
 }
 
@@ -13855,7 +13855,7 @@ id: call_gpM88UOMtlsPE4KmRYpXcd6T
 ```json
 {
   "cmd": "sed -n '120,180p' src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts && sed -n '920,970p' src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -13954,7 +13954,7 @@ id: call_zVGbImRJkw3scbAjwSUAnkBH
 ```json
 {
   "cmd": "nl -ba src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts | sed -n '145,210p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -14033,7 +14033,7 @@ id: call_IDFqM95hdLPjkeRDJA9Qztif
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/events/event-registration.service.spec.ts src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts src/server/effect/rpc/handlers/events/events-rpcs.schema.spec.ts src/server/effect/rpc/handlers/events/events.handlers.spec.ts src/app/events/event-registration-option/event-registration-option.component.spec.ts src/app/events/event-active-registration/event-active-registration.component.spec.ts src/app/events/event-organize/event-organize.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -14050,7 +14050,7 @@ Process exited with code 0
 Original token count: 57
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
 
  Test Files  4 passed (4)
@@ -14072,7 +14072,7 @@ id: call_kjMsyGLzDVCKsbgPx7L4anBc
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -14117,7 +14117,7 @@ id: call_DGjngg9hHhY1HwXR71cobxrG
 ```json
 {
   "cmd": "tail -n 40 src/server/effect/rpc/handlers/events/event-registration.service.ts && rg -n \"approveManualRegistration|return \\{\" src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -14202,7 +14202,7 @@ id: call_CAhWG0Zp3qrWuCpiilpmitCl
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -14252,7 +14252,7 @@ id: call_soIupyM63YqIsq6oMPDOcfOQ
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -14283,7 +14283,7 @@ id: call_K5limcYGGuzMWpttOfLcdy94
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -14340,7 +14340,7 @@ id: call_d9kQnYTsdhhFddrksVRafLHD
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -14353,7 +14353,7 @@ id: call_x1e69gjXS9isJloXNQgGrVjD
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -14366,7 +14366,7 @@ id: call_X25WZnv7lN6hnyCOqBKDsUC5
 ```json
 {
   "cmd": "git diff -- src/server/effect/rpc/handlers/events/event-registration.service.ts src/server/effect/rpc/handlers/events/events-registration.handlers.ts src/server/effect/rpc/handlers/events/events-query.handlers.ts | sed -n '1,260p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -14379,7 +14379,7 @@ id: call_CxBlitWmEQEuIszjThpAaxV4
 ```json
 {
   "cmd": "git diff -- src/app/events/event-registration-option/event-registration-option.component.ts src/app/events/event-active-registration/event-active-registration.component.ts src/app/events/event-organize/event-organize.ts src/app/events/event-organize/event-organize.html | sed -n '1,260p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -14630,7 +14630,7 @@ id: call_QTb0NORXOaf5RH1vrQWoFQsv
 ```json
 {
   "cmd": "git diff -- src/server/effect/rpc/handlers/admin.handlers.ts src/server/config/test-runtime-config.ts | sed -n '1,220p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -14643,7 +14643,7 @@ id: call_KxCnTrnR7bnwTK5ggDbILZyT
 ```json
 {
   "cmd": "git diff -- src/shared/rpc-contracts/app-rpcs/events.rpcs.ts src/server/effect/rpc/handlers/events/events-query.handlers.ts src/server/effect/rpc/handlers/events/events-registration.handlers.ts | sed -n '260,620p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -14656,7 +14656,7 @@ id: call_GOgamBbo3YQTPRILEmLEZRPg
 ```json
 {
   "cmd": "git diff -- tests/docs/roles/roles.doc.ts tests/docs/admin/general-settings.doc.ts tests/specs/events/negative-registration-states.spec.ts | sed -n '1,220p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -14669,7 +14669,7 @@ id: call_M0cCCRfapbdpNfBoHnvnlE98
 ```json
 {
   "cmd": "rg -n \"manual|application|approve|users:assignRoles|read-only|deferred|email sender|Stripe account|registration limits|Unknown registration option|standalone\" tests/docs src/app src/server src/shared -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -14866,7 +14866,7 @@ id: call_t3g20NdUzCjsHdggMfXTjodr
 ```json
 {
   "cmd": "sed -n '80,115p' src/app/events/event-details/event-details.component.ts && sed -n '145,180p' src/app/events/event-details/event-details.component.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -14879,7 +14879,7 @@ id: call_CsVc0ymmSe9DfbeNOJPyFp42
 ```json
 {
   "cmd": "sed -n '35,60p' src/app/templates/template-details/template-details.component.ts && sed -n '80,105p' src/app/templates/template-details/template-details.component.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -14892,7 +14892,7 @@ id: call_plrkLKBEZEoo7fbHpAjU5SVT
 ```json
 {
   "cmd": "sed -n '1,90p' src/app/templates/template-create-event/template-create-event.component.ts && sed -n '40,65p' src/app/templates/template-create-event/template-create-event.component.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -14905,7 +14905,7 @@ id: call_mEfd10Wpfy6bKkPqQgzdQR0r
 ```json
 {
   "cmd": "sed -n '35,85p' tests/docs/roles/roles.doc.ts && sed -n '140,160p' tests/docs/roles/roles.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -15150,7 +15150,7 @@ Start by navigating to **Admin tools**. The current relaunch admin surface separ
       page.getByRole('columnheader', { name: 'Roles' }),
     ).toBeVisible();
     await expect(
-      page.getByRole('cell', { exact: true, name: 'admin@evorto.app' }),
+      page.getByRole('cell', { exact: true, name: '<REDACTED_EMAIL>' }),
     ).toBeVisible();
     await expect(page.getByText('Admin').first()).toBeVisible();
     await expect(page.getByText('Edit template')).toHaveCount(0);
@@ -15173,7 +15173,7 @@ id: call_mMkMwowPzpy6HqIv9Esz0MpM
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/admin/user-list/user-list.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -15283,7 +15283,7 @@ id: call_mpat667sENkevNxgux6QVsEs
 ```json
 {
   "cmd": "rg -n \"AddonPurchaseTiming|PurchaseTiming|allowPurchaseBeforeEvent|allowPurchaseDuringEvent|standalone before-event\" src/app/templates tests/docs/templates src/app/templates -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -15329,7 +15329,7 @@ id: call_l3F5klw21nLFnBlA1gHghfl5
 ```json
 {
   "cmd": "sed -n '1,180p' src/app/templates/shared/template-form/template-addon-form.utilities.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -15342,7 +15342,7 @@ id: call_IAFrSTAVAYsafIYapncfGa4d
 ```json
 {
   "cmd": "sed -n '1,130p' src/app/templates/shared/template-form/template-addon-form.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -15355,7 +15355,7 @@ id: call_pR5VbotcGSsVWZvhz4SF4dDS
 ```json
 {
   "cmd": "sed -n '1,90p' src/app/templates/shared/template-form/template-addon-form.schema.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -15368,7 +15368,7 @@ id: call_2k9CGPz1mdwvPeaA2jtlyZ63
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/templates/shared/template-form/template-addon-form.utilities.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -15737,7 +15737,7 @@ id: call_V05DX5U4UYXFMMM37ScD6bIh
 ```json
 {
   "cmd": "sed -n '35,75p' src/app/templates/template-details/template-details.component.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -15816,7 +15816,7 @@ id: call_oCfByNeqlBuUZ6qgXIAoy7e7
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -15847,7 +15847,7 @@ id: call_IEcYuzzyYUPYELV46jldT33G
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -15904,7 +15904,7 @@ id: call_PiactJ6BXnHt90SC1GVvtatg
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/events/event-registration.service.spec.ts src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts src/server/effect/rpc/handlers/events/events-rpcs.schema.spec.ts src/server/effect/rpc/handlers/events/events.handlers.spec.ts src/app/events/event-registration-option/event-registration-option.component.spec.ts src/app/events/event-active-registration/event-active-registration.component.spec.ts src/app/events/event-organize/event-organize.spec.ts src/app/events/event-details/event-details.component.spec.ts src/app/templates/template-details/template-details.component.spec.ts src/app/templates/template-create-event/template-create-event.component.spec.ts src/app/templates/shared/template-form/template-addon-form.utilities.spec.ts src/shared/registration-modes.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -15921,7 +15921,7 @@ Process exited with code 0
 Original token count: 57
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
 
  Test Files  4 passed (4)
@@ -15943,7 +15943,7 @@ id: call_zVexldpTPk4MWUUkFxBnWuvR
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -15993,7 +15993,7 @@ id: call_jYitenLIYvdTyonLLK3QKe6e
 ```json
 {
   "cmd": "sed -n '1,220p' src/db/schema/tenants.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -16006,7 +16006,7 @@ id: call_i3ytXWnftUOSkzdLBpDwwbzs
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/admin/general-settings/general-settings.identity.ts && sed -n '1,180p' src/app/admin/general-settings/general-settings.component.html && sed -n '1,220p' src/app/admin/general-settings/general-settings.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -16019,7 +16019,7 @@ id: call_dI68Awh87DC7R2TRMQH16F8W
 ```json
 {
   "cmd": "rg -n \"tenant|generalSettings|settings|email sender|sender|registration limit|review policy|stripeAccount|Stripe account\" src/shared/rpc-contracts src/server/effect/rpc/handlers src/app/admin -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -16032,7 +16032,7 @@ id: call_fvPQ9SUwLI0rCFhGhmj7nJDg
 ```json
 {
   "cmd": "rg -n \"Resend|react-email|email|mail|notification|send\" package.json src server tests -S",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -16271,7 +16271,7 @@ id: call_Iqgk3whrMeK0IhzkJquqUm40
 ```json
 {
   "cmd": "sed -n '1,330p' src/shared/rpc-contracts/app-rpcs/admin.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -16284,7 +16284,7 @@ id: call_epQwjcV3rtb7aCNK0inlKTD6
 ```json
 {
   "cmd": "sed -n '1,240p' src/app/admin/general-settings/general-settings.payload.ts && sed -n '1,130p' src/app/admin/general-settings/general-settings.payload.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -16297,7 +16297,7 @@ id: call_ykTA7oSIHNrdhsBzOYIq0RKm
 ```json
 {
   "cmd": "sed -n '660,790p' src/server/effect/rpc/handlers/admin.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -16310,7 +16310,7 @@ id: call_zCwvt9XK1dE4QfwRTHaUMcxW
 ```json
 {
   "cmd": "sed -n '1,120p' src/types/custom/tenant.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -16635,7 +16635,7 @@ id: call_8UKAs8lseZoJVAIXt21tQHuL
 ```json
 {
   "cmd": "sed -n '120,260p' src/types/custom/tenant.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -16701,7 +16701,7 @@ id: call_Qp4p0Ejbowb9z6l0i3sQBgbt
 ```json
 {
   "cmd": "node -e \"const p=require('./package.json'); console.log({resend:p.dependencies?.resend, reactEmail:p.dependencies?.['@react-email/components'], reactEmailRender:p.dependencies?.['@react-email/render']})\"",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -16714,7 +16714,7 @@ id: call_rimnFYbdkRFrj16DtydWDjJv
 ```json
 {
   "cmd": "sed -n '1,140p' src/shared/rpc-contracts/app-rpcs/admin.rpcs.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -16727,7 +16727,7 @@ id: call_5Smp59rxIFB1qr2tkHYUFsSv
 ```json
 {
   "cmd": "sed -n '1,130p' src/app/admin/general-settings/general-settings.identity.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -16740,7 +16740,7 @@ id: call_KgBiEzpjHLSxiDi1sqdV1vei
 ```json
 {
   "cmd": "sed -n '160,240p' src/server/effect/rpc/handlers/admin.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -17038,7 +17038,7 @@ id: call_wbgOI3mDatwr992344mQ6JyO
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -17051,7 +17051,7 @@ id: call_ch86gXyZ063vzs6hzoEh5sFZ
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/admin/general-settings/general-settings.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -17064,7 +17064,7 @@ id: call_Ie30t4oiG6Y0p8X1Z9sSMSlu
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/admin/general-settings/general-settings.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -17077,7 +17077,7 @@ id: call_KU8Rqt0HQ0QxmyQ460cUj46L
 ```json
 {
   "cmd": "sed -n '1,260p' src/server/effect/rpc/handlers/admin.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -17360,7 +17360,7 @@ id: call_94Ue3W8XNaYbXDX2DzOzZUI9
 ```json
 {
   "cmd": "sed -n '260,620p' src/server/effect/rpc/handlers/admin.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -17373,7 +17373,7 @@ id: call_R4CyNKbZQPcjAt7gcZ4WIQWc
 ```json
 {
   "cmd": "sed -n '260,620p' src/app/admin/general-settings/general-settings.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -17386,7 +17386,7 @@ id: call_Sz0JkJDTywG1a2GESVl5U7PP
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/admin/general-settings/general-settings.identity.ts && sed -n '1,220p' src/app/admin/general-settings/general-settings.identity.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 25000
 }
@@ -17399,7 +17399,7 @@ id: call_utExjXbIOhuSZ1R526SBQXmU
 ```json
 {
   "cmd": "sed -n '1,260p' src/shared/rpc-contracts/app-rpcs/admin.rpcs.spec.ts && sed -n '1,260p' src/server/effect/rpc/handlers/admin.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 40000
 }
@@ -17722,7 +17722,7 @@ id: call_s444RWRjwl6GjKHK0SaI30vH
 ```json
 {
   "cmd": "sed -n '620,980p' src/server/effect/rpc/handlers/admin.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -17735,7 +17735,7 @@ id: call_njxRSC5XJX5IA0Tw5HWieO0r
 ```json
 {
   "cmd": "sed -n '260,560p' src/server/effect/rpc/handlers/admin.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -17748,7 +17748,7 @@ id: call_YBLoXipD0ChauFXvo8WBYWQF
 ```json
 {
   "cmd": "sed -n '1,260p' tests/docs/admin/general-settings.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -17761,7 +17761,7 @@ id: call_kJ1IFbE2jLNR9sB3BhJO87dG
 ```json
 {
   "cmd": "rg -n \"email sender|Email sender|review policy|registration limits|Stripe account management|impersonat|not implemented|manual\" src/app tests/docs src/shared src/server | head -n 200",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -18008,7 +18008,7 @@ id: call_Yt9S08oAvQyhOtsed2e7n1dE
 ```json
 {
   "cmd": "rg -n \"RegisterForEventArguments|registerForEvent|existingRegistration|eventRegistrations|registrationSpotCount|maxActive\" src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -18021,7 +18021,7 @@ id: call_p98cNEl8xQ9f4UFImwh9IDef
 ```json
 {
   "cmd": "sed -n '1,220p' src/db/schema/event-registrations.ts && sed -n '1,180p' src/db/schema/event-instances.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -18034,7 +18034,7 @@ id: call_FDTy7s2xQTgP6jZTjDBXKP2l
 ```json
 {
   "cmd": "sed -n '900,1080p' src/server/effect/rpc/handlers/events/event-registration.service.ts && sed -n '1080,1310p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 40000
 }
@@ -18047,7 +18047,7 @@ id: call_GxgXuUrVqnR6upnOj9my28x6
 ```json
 {
   "cmd": "sed -n '760,900p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts && sed -n '1,120p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 40000
 }
@@ -18322,7 +18322,7 @@ Output:
           stripeAccountId: undefined,
         },
         user: {
-          email: 'alice@example.com',
+          email: '<REDACTED_EMAIL>',
           id: 'user-1',
           roleIds: ['role-1'],
         },
@@ -18379,7 +18379,7 @@ id: call_6HS1SNRdg17C3V4SEUlATryd
 ```json
 {
   "cmd": "sed -n '150,210p' src/server/effect/rpc/handlers/events/event-registration.service.ts && sed -n '1,80p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18392,7 +18392,7 @@ id: call_BcPA0tdm81RTrcYxylLFEREl
 ```json
 {
   "cmd": "rg -n \"registerForEvent\\(|EventRegistrationService.registerForEvent|tenant: \\{\" src/server/effect/rpc/handlers/events src/app tests | head -n 120",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -18405,7 +18405,7 @@ id: call_AXYwl0xWrUmXkXEqCCUgQGEP
 ```json
 {
   "cmd": "sed -n '240,340p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -18418,7 +18418,7 @@ id: call_XWRbU4MvxbKdgbhqSefi1GxB
 ```json
 {
   "cmd": "sed -n '330,430p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -18756,7 +18756,7 @@ id: call_cqhQHS02pRwUr81NMgtgsMyM
 ```json
 {
   "cmd": "sed -n '1430,1495p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18848,7 +18848,7 @@ id: call_NuNJykwYp6ShOhvyE9be458t
 ```json
 {
   "cmd": "rg -n \"relations\\(|eventRegistrations\" src/db/schema -g'*.ts' | head -n 80",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18899,7 +18899,7 @@ id: call_pr4lqi8GGKCAIZTmxIXOE2KU
 ```json
 {
   "cmd": "sed -n '1,80p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -18912,7 +18912,7 @@ id: call_jKSfTX97wJqRpROTSvu3WFen
 ```json
 {
   "cmd": "sed -n '1,120p' src/shared/rpc-contracts/app-rpcs/admin.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -18925,7 +18925,7 @@ id: call_Za2dKhdEaxOL3NGrTCqFvnDn
 ```json
 {
   "cmd": "sed -n '120,260p' src/shared/rpc-contracts/app-rpcs/admin.rpcs.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -18938,7 +18938,7 @@ id: call_KYSh4irkZNyuaRM8zFTsgBBq
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/admin/general-settings/general-settings.payload.ts && sed -n '1,220p' src/app/admin/general-settings/general-settings.payload.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -19305,7 +19305,7 @@ id: call_36OSyNAoFRWmhMGmaT3EEsP0
 ```json
 {
   "cmd": "sed -n '220,340p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts && sed -n '340,460p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -19363,7 +19363,7 @@ Output:
             stripeAccountId: undefined,
           },
           user: {
-            email: 'alice@example.com',
+            email: '<REDACTED_EMAIL>',
             id: 'user-1',
             roleIds: ['role-1'],
           },
@@ -19420,7 +19420,7 @@ id: call_bZXnQJbbt1C9deIfToFxKN8h
 ```json
 {
   "cmd": "rg -n \"Email sender, review policy|registration limit, and Stripe account management gaps|Stripe connection are read-only|not implemented here|Notify the submitter manually|notification is still manual|detail page shows the manual submitter|Unknown registration option|random\" src/app tests/docs src/shared src/server | head -n 240",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -19433,7 +19433,7 @@ id: call_11Owar3d3p9i7qxEVYPmWnoF
 ```json
 {
   "cmd": "sed -n '820,940p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -19446,7 +19446,7 @@ id: call_qxSgx4IvsG2a8mXUNJa5JiMn
 ```json
 {
   "cmd": "sed -n '1,120p' src/app/finance/receipt-approval-detail/receipt-approval-detail.component.ts && sed -n '1,80p' src/app/finance/receipt-approval-detail/receipt-approval-detail.component.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -19459,7 +19459,7 @@ id: call_gpJxfMArs1qPdpajGSz7USoc
 ```json
 {
   "cmd": "sed -n '1,220p' src/types/custom/tenant.ts && sed -n '1,160p' src/db/schema/tenants.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -19566,7 +19566,7 @@ Output:
             stripeAccountId: undefined,
           },
           user: {
-            email: 'alice@example.com',
+            email: '<REDACTED_EMAIL>',
             id: 'user-1',
             roleIds: ['role-1'],
           },
@@ -19732,7 +19732,7 @@ id: call_QsbCPMPsp4TKk87bDaSeAgG1
 ```json
 {
   "cmd": "rg -n \"resend|React Email|sendEmail|email|notification\" package.json src/server src/shared src/app | head -n 240",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -19745,7 +19745,7 @@ id: call_ngbCn6us58WZUY0qYKTwQZkH
 ```json
 {
   "cmd": "cat package.json",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -19758,7 +19758,7 @@ id: call_Twesw805I7Ud7IirIaPQy0yB
 ```json
 {
   "cmd": "sed -n '1,220p' src/server/config/server-config.ts && sed -n '1,200p' src/server/config/AGENTS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -19780,7 +19780,7 @@ src/shared/rpc-contracts/app-rpcs/users.rpcs.ts:17:  Schema.isPattern(notificati
 src/shared/rpc-contracts/app-rpcs/users.rpcs.ts:21:  email: Schema.optional(Schema.NullOr(Schema.String)),
 src/shared/rpc-contracts/app-rpcs/users.rpcs.ts:22:  email_verified: Schema.optional(Schema.NullOr(Schema.Boolean)),
 src/shared/rpc-contracts/app-rpcs/users.rpcs.ts:71:  email: Schema.String,
-src/shared/rpc-contracts/app-rpcs/admin.rpcs.spec.ts:14:  emailSenderEmail: 'events@section.example.org',
+src/shared/rpc-contracts/app-rpcs/admin.rpcs.spec.ts:14:  emailSenderEmail: '<REDACTED_EMAIL>',
 src/shared/rpc-contracts/app-rpcs/admin.rpcs.spec.ts:15:  emailSenderName: 'Example Section',
 src/shared/rpc-contracts/app-rpcs/events.rpcs.ts:2:import { notificationEmailPattern } from '@shared/notification-email';
 src/shared/rpc-contracts/app-rpcs/events.rpcs.ts:28:  Schema.isPattern(notificationEmailPattern),
@@ -19805,7 +19805,7 @@ src/app/events/event-active-registration/event-registration-transfer-dialog.comp
 src/app/events/event-active-registration/event-registration-transfer-dialog.component.ts:72:        'Enter a valid email address for the new participant.',
 src/app/events/event-active-registration/event-active-registration.component.spec.ts:137:        'You can transfer this unpaid registration to another eligible tenant member by email.',
 src/app/events/event-active-registration/event-active-registration.component.spec.ts:231:  it('normalizes participant-entered target emails before submit', () => {
-src/app/events/event-organize/event-organize.spec.ts:51:        email: 'alex@example.com',
+src/app/events/event-organize/event-organize.spec.ts:51:        email: '<REDACTED_EMAIL>',
 src/app/events/event-active-registration/event-registration-transfer-dialog.component.html:6:      email.
 src/app/events/event-active-registration/event-registration-transfer-dialog.component.html:10:      <mat-label>New participant email</mat-label>
 src/app/events/event-active-registration/event-registration-transfer-dialog.component.html:13:        type="email"
@@ -19839,7 +19839,7 @@ Output:
     "test:e2e:integration": "bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-integration --project=docs-integration",
     "test:e2e:live-esncard": "bun run env:runtime && dotenv -c dev -- playwright test tests/specs/profile/user-profile-live-esncard.spec.ts --project=local-chrome-integration --grep '@needs-live-esncard'",
     "test:e2e:docs": "bun run env:runtime && dotenv -c dev -- playwright test --project=docs-baseline",
-    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
+    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
     "test:e2e:install": "playwright install",
     "test:e2e:report": "playwright show-report",
     "db:push": "bun run env:runtime && dotenv -c dev -- drizzle-kit push --force",
@@ -19949,7 +19949,7 @@ id: call_YpRyJEvmHiOE4xD1nWlnHxuF
 ```json
 {
   "cmd": "rg -n \"Effect.Service|Context.Tag|Layer.effect|Layer.succeed|Default\" src/server/effect src/server -g'*.ts' | head -n 160",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -19962,7 +19962,7 @@ id: call_5slM9Gl9JFLjfMdbubJdu6mC
 ```json
 {
   "cmd": "sed -n '1,240p' src/server/effect/rpc/app-rpcs.request-handler.ts && sed -n '1,220p' src/server/effect/rpc/rpc-server.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -19975,7 +19975,7 @@ id: call_kMizY31rWXxTEeeXdGhFdr6m
 ```json
 {
   "cmd": "rg -n \"EventRegistrationService.Default|provide\\(|Layer\\.merge|RpcAccess.Default|appRpcs\" src/server src/main.ts -g'*.ts' | head -n 160",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -20209,7 +20209,7 @@ id: call_scE5z1oaQ3f5eW4lJ8Kf6fSs
 ```json
 {
   "cmd": "sed -n '1,120p' src/server/effect/rpc/app-rpcs.web-handler.ts && sed -n '180,280p' src/app/finance/receipt-approval-detail/receipt-approval-detail.component.ts && sed -n '1,160p' src/server/effect/rpc/handlers/finance/finance-receipts.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -20304,7 +20304,7 @@ id: call_569dIZ7AiBzyv4naC6sux7j5
 ```json
 {
   "cmd": "rg -n \"finance.receipts.review|review\" src/server/effect/rpc/handlers/finance/finance-receipts.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -20341,7 +20341,7 @@ id: call_Ac8bT8KAzts1IpeMZPEZoIpF
 ```json
 {
   "cmd": "sed -n '520,710p' src/server/effect/rpc/handlers/finance/finance-receipts.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -20444,7 +20444,7 @@ id: call_z6LIeMnqbl28eiStwtdlAEHh
 ```json
 {
   "cmd": "bun add resend @react-email/components @react-email/render",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -20622,7 +20622,7 @@ id: call_CIxBJn14qPfwAoJUfcmSsfNX
 ```json
 {
   "cmd": "sed -n '1,120p' src/server/config/config-string.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -20669,7 +20669,7 @@ id: call_JWGDozuhY2RqGBXJQ8HToiVO
 ```json
 {
   "cmd": "sed -n '320,540p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -20792,7 +20792,7 @@ id: call_lltCuPZMlRtdNWRBIA5FwOTA
 ```json
 {
   "cmd": "sed -n '540,760p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -20904,7 +20904,7 @@ id: call_FRiggIYVR6DR6fDnFlq5AmIS
 ```json
 {
   "cmd": "sed -n '760,850p' src/server/effect/rpc/handlers/events/event-registration.service.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -21025,7 +21025,7 @@ id: call_mUmWpa4MvqGm4VwCW5NzDEaZ
 ```json
 {
   "cmd": "rg -n \"approveManualRegistration\\(|events.approveRegistration|tenant: \\{\" src/server/effect/rpc/handlers/events/events-registration.handlers.ts | head -n 40 && sed -n '830,880p' src/server/effect/rpc/handlers/events/events-registration.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -21107,7 +21107,7 @@ id: call_Ht2W93LsuhCvme5ErfB8kuIT
 ```json
 {
   "cmd": "rg -n \"Notify the submitter manually|notification is still manual|manual submitter|Email sender, review policy|registration limit, and Stripe account management gaps|not implemented here|Stripe connection are read-only\" src/app tests/docs src/server src/shared",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -21120,7 +21120,7 @@ id: call_UNcKGDQCVLSvF3IM7Fm3CEIo
 ```json
 {
   "cmd": "sed -n '930,1015p' src/server/effect/rpc/handlers/events/event-registration.service.spec.ts && sed -n '1,130p' src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -21133,7 +21133,7 @@ id: call_wiHNfI716FBF8baA9Nxzwjfw
 ```json
 {
   "cmd": "rg -n \"finance.receipts.review|findOneForApproval|pendingApprovalGrouped\" src/server/effect/rpc/handlers/finance/*.spec.ts src/server/effect/rpc/handlers/finance -g'*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -21198,7 +21198,7 @@ Output:
             stripeAccountId: undefined,
           },
           user: {
-            email: 'alice@example.com',
+            email: '<REDACTED_EMAIL>',
             id: 'user-1',
             roleIds: ['role-1'],
           },
@@ -21285,7 +21285,7 @@ id: call_MiERFWOStOVq8FZHcJ0GlwVp
 ```json
 {
   "cmd": "sed -n '680,830p' src/server/effect/rpc/handlers/finance/finance.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -21406,7 +21406,7 @@ id: call_vDkXyGjFdbyE5vdAbWv8QFrL
 ```json
 {
   "cmd": "rg -n \"databaseWithSubmittedReceipt|databaseWithReviewReceiptStatus|createContextLayer\" src/server/effect/rpc/handlers/finance/finance.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -21419,7 +21419,7 @@ id: call_xMwjycscMtQUkzeb8VSYKrMi
 ```json
 {
   "cmd": "sed -n '1,140p' src/server/effect/rpc/handlers/finance/finance.handlers.spec.ts && sed -n '140,260p' src/server/effect/rpc/handlers/finance/finance.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -21432,7 +21432,7 @@ id: call_RUuDfx8ETkhbMpC3UW67K2du
 ```json
 {
   "cmd": "sed -n '320,370p' src/server/effect/rpc/handlers/finance/finance.handlers.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -21523,7 +21523,7 @@ const tenant = {
 const createUser = (permissions: readonly Permission[]) => ({
   attributes: [],
   auth0Id: 'auth0|user-1',
-  email: 'alice@example.com',
+  email: '<REDACTED_EMAIL>',
   firstName: 'Alice',
   iban: null,
   id: 'user-1',
@@ -21602,16 +21602,16 @@ describe('finance profile receipt reads', () => {
   it('uses notification email for finance receipt submitter displays', () => {
     expect(
       financeReceiptSubmitterEmail({
-        submittedByCommunicationEmail: 'notify@example.com',
-        submittedByEmail: 'login@example.com',
+        submittedByCommunicationEmail: '<REDACTED_EMAIL>',
+        submittedByEmail: '<REDACTED_EMAIL>',
       }),
-    ).toBe('notify@example.com');
+    ).toBe('<REDACTED_EMAIL>');
     expect(
       financeReceiptSubmitterEmail({
         submittedByCommunicationEmail: null,
-        submittedByEmail: 'login@example.com',
+        submittedByEmail: '<REDACTED_EMAIL>',
       }),
-    ).toBe('login@example.com');
+    ).toBe('<REDACTED_EMAIL>');
     expect(
 
 ```
@@ -21631,7 +21631,7 @@ id: call_ALIoELcKgfoM0yN37zxeidpb
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -21666,7 +21666,7 @@ id: call_a5BvxllhZnL3cAeEEYHsb05J
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -21723,7 +21723,7 @@ id: call_JDGrED8j9zUQm8d5iuU59x6v
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -21754,7 +21754,7 @@ id: call_y3GjPHPH7qlOFhMwLSzr6LBF
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 80000
 }
@@ -21809,7 +21809,7 @@ Application bundle generation failed. [14.702 seconds] - 2026-07-01T15:18:34.318
          ╵   ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-✘ [ERROR] TS2339: Property 'catchAll' does not exist on type 'typeof import("/Users/hedde/.codex/worktrees/0bda/evorto/node_modules/effect/dist/Effect")'. [plugin angular-compiler]
+✘ [ERROR] TS2339: Property 'catchAll' does not exist on type 'typeof import("/home/<USER>/.codex/worktrees/0bda/evorto/node_modules/effect/dist/Effect")'. [plugin angular-compiler]
 
     src/server/notifications/email-delivery.ts:151:17:
       151 │   }).pipe(Effect.catchAll(() => Effect.void));
@@ -21830,7 +21830,7 @@ id: call_VhXRLeMPsw6Nt8DvuatAl0cp
 ```json
 {
   "cmd": "sed -n '84,102p' src/app/admin/general-settings/general-settings.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -21843,7 +21843,7 @@ id: call_2lyQNHehBVExYqf9vB6t3YfF
 ```json
 {
   "cmd": "sed -n '135,195p' src/server/notifications/email-delivery.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -21856,7 +21856,7 @@ id: call_d72JqMQmIcYmfmEsYRoINW3x
 ```json
 {
   "cmd": "sed -n '692,710p' src/server/effect/rpc/handlers/finance/finance-receipts.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -22008,7 +22008,7 @@ id: call_vaTqrYHXUDpsY8aLF7DTbeQb
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -22061,7 +22061,7 @@ id: call_XywOoegX52Lw00RSopdAc0Su
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 80000
 }
@@ -22111,7 +22111,7 @@ id: call_MHD7hrANj9gxeKCsfQUMXOH0
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/events/event-registration.service.spec.ts src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts src/server/effect/rpc/handlers/events/events-rpcs.schema.spec.ts src/server/effect/rpc/handlers/events/events.handlers.spec.ts src/server/effect/rpc/handlers/admin.handlers.spec.ts src/server/effect/rpc/handlers/finance/finance.handlers.spec.ts src/app/admin/general-settings/general-settings.identity.spec.ts src/app/admin/general-settings/general-settings.payload.spec.ts src/shared/rpc-contracts/app-rpcs/admin.rpcs.spec.ts src/app/events/event-registration-option/event-registration-option.component.spec.ts src/app/events/event-active-registration/event-active-registration.component.spec.ts src/app/events/event-organize/event-organize.spec.ts src/app/finance/receipt-approval-detail/receipt-approval-detail.component.spec.ts src/app/templates/template-details/template-details.component.spec.ts src/app/templates/shared/template-form/template-addon-form.utilities.spec.ts src/shared/registration-modes.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 80000
 }
@@ -22128,7 +22128,7 @@ Process exited with code 0
 Original token count: 57
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
 
  Test Files  6 passed (6)
@@ -22150,7 +22150,7 @@ id: call_GFpaxFiP75ky6XMPYJFJrTLZ
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 120000
 }
@@ -22170,7 +22170,7 @@ Warning: truncated output (original token count: 12577)
 Total output lines: 1244
 
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
  ❯ helpers/testing/generated-docs-source.spec.ts (13 tests | 3 failed) 44ms
      × keeps tenant general-settings docs aligned with implemented branding and legal routes 9ms
@@ -22205,7 +22205,7 @@ id: call_4WxdOZ7NVenE6pAbmgm1RomQ
 ```json
 {
   "cmd": "sed -n '1,260p' helpers/testing/generated-docs-source.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -22218,7 +22218,7 @@ id: call_vkvPKhEF7Tp5boYQ5be3BI5R
 ```json
 {
   "cmd": "sed -n '1,140p' helpers/testing/user-list-source.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -22231,7 +22231,7 @@ id: call_mHRr3JpiUnGu9x83gyMtG7gU
 ```json
 {
   "cmd": "sed -n '1,120p' helpers/testing/registration-mode-source.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -22418,7 +22418,7 @@ id: call_wXnKX9jbPTSX7p02sYnZGT5a
 ```json
 {
   "cmd": "sed -n '260,420p' helpers/testing/generated-docs-source.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -22493,7 +22493,7 @@ id: call_3CVGcsFOZfmFa6YMGHfle9Pp
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -22546,7 +22546,7 @@ id: call_g4CKXlRa6gTQ8ouHxMP14iyI
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 100000
 }
@@ -22563,7 +22563,7 @@ Process exited with code 1
 Original token count: 3914
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
  ❯ helpers/testing/generated-docs-source.spec.ts (13 tests | 1 failed) 14ms
      × keeps template docs aligned with the simple-mode relaunch surface 9ms
@@ -22611,7 +22611,7 @@ id: call_3ORMCVzxpMMYtAaJhe5XLAaC
 ```json
 {
   "cmd": "rg -n \"Purchase timing|purchase timing|registration-time|standalone|Reusable add-ons|Add-ons can\" tests/docs/templates/templates.doc.ts helpers/testing/generated-docs-source.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -22654,7 +22654,7 @@ id: call_N12BEDeMdIW3jCQKO1lK02Bq
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 25000
 }
@@ -22707,7 +22707,7 @@ id: call_wzRtWptwt2iY4SHlXhxOIRp7
 ```json
 {
   "cmd": "bunx vitest run --config vitest.config.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 80000
 }
@@ -22724,7 +22724,7 @@ Process exited with code 0
 Original token count: 58
 Output:
 
- RUN  v4.1.9 /Users/hedde/.codex/worktrees/0bda/evorto
+ RUN  v4.1.9 /home/<USER>/.codex/worktrees/0bda/evorto
 
 
  Test Files  50 passed (50)
@@ -22746,7 +22746,7 @@ id: call_z2rDN0VHH2a9WlKjPDWxZznk
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -22777,7 +22777,7 @@ id: call_q8a03dZJkok2lqE1gYhgKulR
 ```json
 {
   "cmd": "NG_BUILD_PARTIAL_SSR=1 bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js build",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 80000
 }
@@ -22827,7 +22827,7 @@ id: call_oqU2psbbKK9lHaRZgIJ4V0Ej
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -22840,7 +22840,7 @@ id: call_Zq42XuAtgV3e9WiLJVimUu1u
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -22853,7 +22853,7 @@ id: call_CNs8HsBm9Qm0iUhKSyMGPim6
 ```json
 {
   "cmd": "git diff -- package.json bun.lock | sed -n '1,220p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -22866,7 +22866,7 @@ id: call_TmrhVjDPbK1o0YYP2G3G4TnC
 ```json
 {
   "cmd": "sed -n '1,160p' .changeset/relaunch-admin-registration-scanner.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -23057,7 +23057,7 @@ id: call_kOm2IHXR3P4RdVrsgf5BNWn4
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 25000
 }
@@ -23114,7 +23114,7 @@ id: call_hgrFHDQYvLFWU55pWTk2082L
 ```json
 {
   "cmd": "bunx --bun node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -23149,7 +23149,7 @@ id: call_naDv2vvQRWW5E0V4QC7h3MaW
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -23162,7 +23162,7 @@ id: call_fJOkqUFpKSiRPoIXhXZSMEQI
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -23175,7 +23175,7 @@ id: call_HYfQPqlRxtSt8ZchKruiWrKx
 ```json
 {
   "cmd": "git diff -- src/server/config/test-runtime-config.ts | sed -n '1,160p'",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -23371,7 +23371,7 @@ id: call_6TSOXXwaNJrFv9JZFgWjqgRR
 tool_result
 id: call_6TSOXXwaNJrFv9JZFgWjqgRR
 ```
-{"goal":{"threadId":"019f1e20-8e85-7a12-b45b-bc85c4271faa","objective":"Implement the changes from these decisions\n\nReferenced pasted text files:\n- pasted text file: /Users/hedde/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt. Read this file before continuing.","status":"active","tokensUsed":1160088,"timeUsedSeconds":2432,"createdAt":1782916878,"updatedAt":1782919310},"remainingTokens":null,"completionBudgetReport":null}
+{"goal":{"threadId":"019f1e20-8e85-7a12-b45b-bc85c4271faa","objective":"Implement the changes from these decisions\n\nReferenced pasted text files:\n- pasted text file: /home/<USER>/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt. Read this file before continuing.","status":"active","tokensUsed":1160088,"timeUsedSeconds":2432,"createdAt":1782916878,"updatedAt":1782919310},"remainingTokens":null,"completionBudgetReport":null}
 ```
 
 > AGENT
@@ -23393,7 +23393,7 @@ id: call_xTHvLTxPiVTGpDgpVv7tbJ54
 tool_result
 id: call_xTHvLTxPiVTGpDgpVv7tbJ54
 ```
-{"goal":{"threadId":"019f1e20-8e85-7a12-b45b-bc85c4271faa","objective":"Implement the changes from these decisions\n\nReferenced pasted text files:\n- pasted text file: /Users/hedde/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt. Read this file before continuing.","status":"complete","tokensUsed":1163226,"timeUsedSeconds":2440,"createdAt":1782916878,"updatedAt":1782919319},"remainingTokens":null,"completionBudgetReport":"Goal achieved. Report final usage from this tool result's structured goal fields. If `goal.tokenBudget` is present, include token usage from `goal.tokensUsed` and `goal.tokenBudget`. If `goal.timeUsedSeconds` is greater than 0, summarize elapsed time in a concise, human-friendly form appropriate to the response language."}
+{"goal":{"threadId":"019f1e20-8e85-7a12-b45b-bc85c4271faa","objective":"Implement the changes from these decisions\n\nReferenced pasted text files:\n- pasted text file: /home/<USER>/.codex/attachments/e9a91949-6828-47d5-bdcd-33233f16cd0a/pasted-text-1.txt. Read this file before continuing.","status":"complete","tokensUsed":1163226,"timeUsedSeconds":2440,"createdAt":1782916878,"updatedAt":1782919319},"remainingTokens":null,"completionBudgetReport":"Goal achieved. Report final usage from this tool result's structured goal fields. If `goal.tokenBudget` is present, include token usage from `goal.tokensUsed` and `goal.tokenBudget`. If `goal.timeUsedSeconds` is greater than 0, summarize elapsed time in a concise, human-friendly form appropriate to the response language."}
 ```
 
 > AGENT
@@ -23406,8 +23406,8 @@ tool_use exec_command
 id: call_WW1zdTRhOBCvYBER68KUFHyo
 ```json
 {
-  "cmd": "rg -n \"do not add or maintain migration code|develop against the new schema directly|new schema\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "rg -n \"do not add or maintain migration code|develop against the new schema directly|new schema\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -23438,8 +23438,8 @@ tool_use exec_command
 id: call_h2N9KtbPv0Ngz1XyVL77YnsO
 ```json
 {
-  "cmd": "sed -n '160,180p' /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/0bda/evorto",
+  "cmd": "sed -n '160,180p' /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/0bda/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }

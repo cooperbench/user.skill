@@ -25,7 +25,7 @@ tool_use Read
 id: toolu_01JuWCxknz77pjAAa3HuL6TM
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Poop.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Poop.ts"
 }
 ```
 
@@ -109,7 +109,7 @@ tool_use Read
 id: toolu_01Nc7C6NtmDQFEiKB81UUUhb
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/PoolablePoopBase.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/PoolablePoopBase.ts"
 }
 ```
 
@@ -226,7 +226,7 @@ tool_use Read
 id: toolu_01NNkFnDQc8e16FCJfPDKQuA
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 534,
   "limit": 120
 }
@@ -281,7 +281,7 @@ tool_use Read
 id: toolu_01WmV4Zn2xHc6KJWZvvca2Bp
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 712,
   "limit": 130
 }
@@ -339,7 +339,7 @@ tool_use Read
 id: toolu_01JqGr11U31DY8YU9hKgmVHB
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 326,
   "limit": 160
 }
@@ -401,7 +401,7 @@ tool_use Read
 id: toolu_013VwLrWYAVuymfJUzHKv9uL
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 647,
   "limit": 65
 }
@@ -547,7 +547,7 @@ tool_use Read
 id: toolu_01Lfb2wWRh9jvoLBjwiBVwBm
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts"
 }
 ```
 
@@ -607,7 +607,7 @@ tool_use Read
 id: toolu_01LBpyYFEsxbHPjCEk2HzAgG
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 515,
   "limit": 20
 }
@@ -661,7 +661,7 @@ tool_use Read
 id: toolu_01CpAP4pyfXzHXWGKVm1p2a1
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/GlitchAbility.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/GlitchAbility.ts"
 }
 ```
 
@@ -747,7 +747,7 @@ tool_use Read
 id: toolu_01XU2hBvWewnQRa6hNopdB8F
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 843,
   "limit": 95
 }
@@ -985,7 +985,7 @@ tool_use Read
 id: toolu_01X6UoXmVxMpe2oPonJYCsQQ
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 256,
   "limit": 70
 }
@@ -1052,7 +1052,7 @@ tool_use Bash
 id: toolu_01Ntono1LSJvh3CCNwc8Rd74
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; for f in Mugi Sentinel Gumi Legacy Knight; do echo \"=== $f onUpdate 내부 객체 생성 여부 ===\"; awk '/onUpdate/,/^  [a-zA-Z]/' src/abilities/${f}Ability.ts 2>/dev/null | grep -n \"add\\.\\|new Phaser\\|tweens.add\\|graphics(\" | head -8; done",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; for f in Mugi Sentinel Gumi Legacy Knight; do echo \"=== $f onUpdate 내부 객체 생성 여부 ===\"; awk '/onUpdate/,/^  [a-zA-Z]/' src/abilities/${f}Ability.ts 2>/dev/null | grep -n \"add\\.\\|new Phaser\\|tweens.add\\|graphics(\" | head -8; done",
   "description": "캐릭터 능력 onUpdate 내부 프레임당 객체 생성 점검"
 }
 ```
@@ -1085,7 +1085,7 @@ id: toolu_01KEAM3Xr7bdw1CxmiQSkxQC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts",
   "old_string": "      gravity: { y: 0, x: 0 },\n      debug: false, // 히트박스 on/off\n      fixedStep: false\n    }",
   "new_string": "      gravity: { y: 0, x: 0 },\n      debug: false, // 히트박스 on/off\n      // 고정 타임스텝(Phaser 기본) — 프레임 변동을 accumulator로 흡수해 낙하가 부드러움.\n      // 안티치트는 this.time.now(rAF 루프) 기준이라 물리 스텝과 무관 → 켜도 영향 없음.\n      fixedStep: true\n    }"
 }
@@ -1098,7 +1098,7 @@ id: toolu_019xpH5J8qFg9Ehmvxrs79Tu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/main.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/main.ts",
   "old_string": "  fps: {\n    smoothStep: false // 네이티브 리프레시 레이트 사용, raw delta로 프레임 타이밍 드리프트 방지\n  }",
   "new_string": "  fps: {\n    smoothStep: true // delta 스무딩으로 프레임 지터 흡수 → 모션 부드러움 (안티치트 ratio 허용폭 0.70~1.30 내라 안전)\n  }"
 }
@@ -1109,7 +1109,7 @@ id: toolu_019xpH5J8qFg9Ehmvxrs79Tu
 tool_result
 id: toolu_01KEAM3Xr7bdw1CxmiQSkxQC
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1117,7 +1117,7 @@ The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated
 tool_result
 id: toolu_019xpH5J8qFg9Ehmvxrs79Tu
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/main.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1130,7 +1130,7 @@ tool_use Bash
 id: toolu_01BD7F6YYKbn5JyzNMSk2Rxf
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; echo \"=== git 추적 여부 ===\"; git ls-files public/assets/illustrations_bak | head -3; echo \"추적 파일 수: $(git ls-files public/assets/illustrations_bak | wc -l | tr -d ' ')\"; echo \"=== 코드에서 illustrations_bak 참조 여부 (없어야 안전) ===\"; grep -rn \"illustrations_bak\" src/ public/ 2>/dev/null | grep -v \"Binary\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; echo \"=== git 추적 여부 ===\"; git ls-files public/assets/illustrations_bak | head -3; echo \"추적 파일 수: $(git ls-files public/assets/illustrations_bak | wc -l | tr -d ' ')\"; echo \"=== 코드에서 illustrations_bak 참조 여부 (없어야 안전) ===\"; grep -rn \"illustrations_bak\" src/ public/ 2>/dev/null | grep -v \"Binary\" | head",
   "description": "_bak 폴더 git 추적 및 참조 여부 확인"
 }
 ```
@@ -1158,7 +1158,7 @@ tool_use Bash
 id: toolu_018YaLurEciLeEJF8tZ9PvBp
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game; git rm -r -q public/assets/illustrations_bak && echo \"제거 완료. 스테이징된 삭제 파일 수: $(git diff --cached --name-only | wc -l | tr -d ' ')\"; echo \"=== 타입 검사 ===\"; npx tsc --noEmit && echo \"✅ tsc 통과\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game; git rm -r -q public/assets/illustrations_bak && echo \"제거 완료. 스테이징된 삭제 파일 수: $(git diff --cached --name-only | wc -l | tr -d ' ')\"; echo \"=== 타입 검사 ===\"; npx tsc --noEmit && echo \"✅ tsc 통과\"",
   "description": "백업 폴더 git 제거 후 타입 검사"
 }
 ```

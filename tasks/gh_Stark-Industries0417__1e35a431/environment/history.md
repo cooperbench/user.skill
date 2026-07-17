@@ -14,13 +14,13 @@ Agents (Claude Code, Gemini CLI) store transcripts in directories derived from t
 - Claude: `~/.claude/projects/-Users-alice-projects-cli/session.jsonl`
 - Gemini: `~/.gemini/tmp/-Users-alice-projects-cli/chats/session.json`
 
-The "project directory" component (`-Users-alice-projects-cli`) is created by sanitizing the repo absolute path (`/Users/alice/projects/cli`), replacing non-alphanumeric characters with dashes.
+The "project directory" component (`-Users-alice-projects-cli`) is created by sanitizing the repo absolute path (`/home/<USER>/projects/cli`), replacing non-alphanumeric characters with dashes.
 
 **When a project moves:**
-1. Checkpoint created on machine A: `/Users/alice/projects/cli`
+1. Checkpoint created on machine A: `/home/<USER>/projects/cli`
 2. Transcript stored at: `~/.claude/projects/-Users-alice-projects-cli/session.jsonl`
 3. Checkpoint metadata saves: `.claude/projects/-Users-alice-projects-cli/session.jsonl`
-4. Project cloned on machine B: `/Users/bob/work/cli`
+4. Project cloned on machine B: `/home/<USER>/work/cli`
 5. Agent now stores transcripts at: `~/.claude/projects/-Users-bob-work-cli/session.jsonl`
 6. Resume tries to restore to: `~/.claude/projects/-Users-alice-projects-cli/session.jsonl` (WRONG!)
 
@@ -46,7 +46,7 @@ tool_use Read
 id: toolu_018VAxFK5ZyBp3pTVczF3etW
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_condensation.go"
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_condensation.go"
 }
 ```
 
@@ -56,7 +56,7 @@ tool_use Read
 id: toolu_019FZWo9geonomB6dZMiMAZr
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go"
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go"
 }
 ```
 
@@ -66,7 +66,7 @@ tool_use Read
 id: toolu_01Pb5gZChZRAdej6PeV36HHP
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go"
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go"
 }
 ```
 
@@ -259,7 +259,7 @@ tool_use Bash
 id: toolu_01RDmjtUTsABPvLS9SAYvQ2n
 ```json
 {
-  "command": "grep -n \"SessionTranscriptPath\" /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/auto_commit.go"
+  "command": "grep -n \"SessionTranscriptPath\" /home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/auto_commit.go"
 }
 ```
 
@@ -284,7 +284,7 @@ id: toolu_01Xre7DtnedogeE3MQ5GdWmc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_condensation.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_condensation.go",
   "old_string": "\t// Write checkpoint metadata using the checkpoint store\n\tif err := store.WriteCommitted(context.Background(), cpkg.WriteCommittedOptions{\n\t\tCheckpointID:                checkpointID,\n\t\tSessionID:                   state.SessionID,\n\t\tStrategy:                    StrategyNameManualCommit,\n\t\tBranch:                      branchName,\n\t\tTranscript:                  sessionData.Transcript,\n\t\tPrompts:                     sessionData.Prompts,\n\t\tContext:                     sessionData.Context,\n\t\tFilesTouched:                sessionData.FilesTouched,\n\t\tCheckpointsCount:            state.StepCount,\n\t\tEphemeralBranch:             shadowBranchName,\n\t\tAuthorName:                  authorName,\n\t\tAuthorEmail:                 authorEmail,\n\t\tAgent:                       state.AgentType,\n\t\tTurnID:                      state.TurnID,\n\t\tTranscriptIdentifierAtStart: state.TranscriptIdentifierAtStart,\n\t\tCheckpointTranscriptStart:   state.CheckpointTranscriptStart,\n\t\tTokenUsage:                  sessionData.TokenUsage,\n\t\tInitialAttribution:          attribution,\n\t\tSummary:                     summary,\n\t\tSessionTranscriptPath:       homeRelativePath(state.TranscriptPath),\n\t}); err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to write checkpoint metadata: %w\", err)\n\t}",
   "new_string": "\t// Write checkpoint metadata using the checkpoint store\n\tif err := store.WriteCommitted(context.Background(), cpkg.WriteCommittedOptions{\n\t\tCheckpointID:                checkpointID,\n\t\tSessionID:                   state.SessionID,\n\t\tStrategy:                    StrategyNameManualCommit,\n\t\tBranch:                      branchName,\n\t\tTranscript:                  sessionData.Transcript,\n\t\tPrompts:                     sessionData.Prompts,\n\t\tContext:                     sessionData.Context,\n\t\tFilesTouched:                sessionData.FilesTouched,\n\t\tCheckpointsCount:            state.StepCount,\n\t\tEphemeralBranch:             shadowBranchName,\n\t\tAuthorName:                  authorName,\n\t\tAuthorEmail:                 authorEmail,\n\t\tAgent:                       state.AgentType,\n\t\tTurnID:                      state.TurnID,\n\t\tTranscriptIdentifierAtStart: state.TranscriptIdentifierAtStart,\n\t\tCheckpointTranscriptStart:   state.CheckpointTranscriptStart,\n\t\tTokenUsage:                  sessionData.TokenUsage,\n\t\tInitialAttribution:          attribution,\n\t\tSummary:                     summary,\n\t}); err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to write checkpoint metadata: %w\", err)\n\t}"
 }
@@ -295,7 +295,7 @@ id: toolu_01Xre7DtnedogeE3MQ5GdWmc
 tool_result
 id: toolu_01Xre7DtnedogeE3MQ5GdWmc
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_condensation.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_condensation.go has been updated successfully.
 ```
 
 > AGENT
@@ -309,7 +309,7 @@ id: toolu_01Pvm32a3itRyoRTqNdvkZmc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go",
   "old_string": "\t\t// Prefer transcript path from checkpoint metadata (works for all agents).\n\t\t// Fall back to agent-based resolution for old checkpoints without this field.\n\t\tvar sessionFile string\n\t\tif resolved := resolveTranscriptPathFromMetadata(content.Metadata.TranscriptPath); resolved != \"\" {\n\t\t\tsessionFile = resolved\n\t\t} else {\n\t\t\tsessionAgentDir, dirErr := sessionAgent.GetSessionDir(repoRoot)\n\t\t\tif dirErr != nil {\n\t\t\t\tfmt.Fprintf(os.Stderr, \"  Warning: failed to get session dir for session %d: %v\\n\", i, dirErr)\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tsessionFile = ResolveSessionFilePath(sessionID, sessionAgent, sessionAgentDir)\n\t\t}",
   "new_string": "\t\t// Compute transcript path from current repo location.\n\t\t// Always use the current repo location to handle repo moves and cross-machine portability.\n\t\tsessionAgentDir, dirErr := sessionAgent.GetSessionDir(repoRoot)\n\t\tif dirErr != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"  Warning: failed to get session dir for session %d: %v\\n\", i, dirErr)\n\t\t\tcontinue\n\t\t}\n\t\tsessionFile := ResolveSessionFilePath(sessionID, sessionAgent, sessionAgentDir)"
 }
@@ -320,7 +320,7 @@ id: toolu_01Pvm32a3itRyoRTqNdvkZmc
 tool_result
 id: toolu_01Pvm32a3itRyoRTqNdvkZmc
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go has been updated successfully.
 ```
 
 > TOOL
@@ -329,7 +329,7 @@ tool_use Bash
 id: toolu_01RscZRWUDPmiUVmf2mMZixb
 ```json
 {
-  "command": "grep -r \"homeRelativePath\" /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/ --include=\"*.go\" | grep -v test | grep -v \"_test.go\""
+  "command": "grep -r \"homeRelativePath\" /home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/ --include=\"*.go\" | grep -v test | grep -v \"_test.go\""
 }
 ```
 
@@ -338,8 +338,8 @@ id: toolu_01RscZRWUDPmiUVmf2mMZixb
 tool_result
 id: toolu_01RscZRWUDPmiUVmf2mMZixb
 ```
-/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/common.go:// homeRelativePath strips the $HOME/ prefix from an absolute path,
-/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/common.go:func homeRelativePath(absPath string) string {
+/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/common.go:// homeRelativePath strips the $HOME/ prefix from an absolute path,
+/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/common.go:func homeRelativePath(absPath string) string {
 ```
 
 > AGENT
@@ -353,7 +353,7 @@ id: toolu_01KRJpt4nEEyFQGRCRSss8c4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go",
   "old_string": "\t\t// Prefer transcript path from checkpoint metadata, fall back to agent-based resolution.\n\t\tvar localPath string\n\t\tif resolved := resolveTranscriptPathFromMetadata(content.Metadata.TranscriptPath); resolved != \"\" {\n\t\t\tlocalPath = resolved\n\t\t} else {\n\t\t\tsessionAgentDir, dirErr := sessionAgent.GetSessionDir(repoRoot)\n\t\t\tif dirErr != nil {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tlocalPath = ResolveSessionFilePath(sessionID, sessionAgent, sessionAgentDir)\n\t\t}",
   "new_string": "\t\t// Compute transcript path from current repo location.\n\t\t// Always use the current repo location to handle repo moves and cross-machine portability.\n\t\tsessionAgentDir, dirErr := sessionAgent.GetSessionDir(repoRoot)\n\t\tif dirErr != nil {\n\t\t\tcontinue\n\t\t}\n\t\tlocalPath := ResolveSessionFilePath(sessionID, sessionAgent, sessionAgentDir)"
 }
@@ -364,7 +364,7 @@ id: toolu_01KRJpt4nEEyFQGRCRSss8c4
 tool_result
 id: toolu_01KRJpt4nEEyFQGRCRSss8c4
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go has been updated successfully.
 ```
 
 > AGENT
@@ -378,7 +378,7 @@ id: toolu_01Dp8auFbACdaCnF74HHRq2f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go",
   "old_string": "// resolveTranscriptPathFromMetadata expands a home-relative transcript path\n// from checkpoint metadata to an absolute path. Returns \"\" if the path is empty.\nfunc resolveTranscriptPathFromMetadata(homeRelPath string) string {\n\tif homeRelPath == \"\" {\n\t\treturn \"\"\n\t}\n\thome, err := os.UserHomeDir()\n\tif err != nil || home == \"\" {\n\t\treturn \"\"\n\t}\n\treturn filepath.Join(home, homeRelPath)\n}\n\n// ResolveAgentForRewind resolves the agent from checkpoint metadata.",
   "new_string": "// ResolveAgentForRewind resolves the agent from checkpoint metadata."
 }
@@ -389,7 +389,7 @@ id: toolu_01Dp8auFbACdaCnF74HHRq2f
 tool_result
 id: toolu_01Dp8auFbACdaCnF74HHRq2f
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go has been updated successfully.
 ```
 
 > TOOL
@@ -398,7 +398,7 @@ tool_use Read
 id: toolu_01LP6mrgphnrKta2B7kPSZXe
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/manual_commit_rewind.go",
   "offset": 755,
   "limit": 30
 }
@@ -454,7 +454,7 @@ id: toolu_01NJSgYNhgHWrZijYBsKf5jZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go",
   "old_string": "\t// SessionTranscriptPath is the home-relative path to the session transcript file.\n\t// Persisted in CommittedMetadata so restore can write the transcript back to\n\t// the correct location without reconstructing agent-specific paths.\n\tSessionTranscriptPath string\n}",
   "new_string": "\t// SessionTranscriptPath is DEPRECATED. Do not write to this field.\n\t// Transcript paths are now always computed from the current repo location at restore time\n\t// using agent.GetSessionDir(repoRoot), which handles repo moves and cross-machine portability.\n\t// This field is kept for backward compatibility with old checkpoints only.\n\tSessionTranscriptPath string\n}"
 }
@@ -465,7 +465,7 @@ id: toolu_01NJSgYNhgHWrZijYBsKf5jZ
 tool_result
 id: toolu_01NJSgYNhgHWrZijYBsKf5jZ
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go has been updated successfully.
 ```
 
 > TOOL
@@ -475,7 +475,7 @@ id: toolu_01HDhivsmmwPK3KCi8pR9upu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go",
   "old_string": "\t// TranscriptPath is the home-relative path to the session transcript file.\n\t// Persisted so restore can write the transcript back to the correct location\n\t// without needing to reconstruct agent-specific paths (e.g. SHA-256 hashed dirs for Gemini).\n\tTranscriptPath string `json:\"transcript_path,omitempty\"`",
   "new_string": "\t// TranscriptPath is DEPRECATED. Do not use this field for new checkpoints.\n\t// Transcript paths are now always computed from the current repo location at restore time\n\t// using agent.GetSessionDir(repoRoot), which handles repo moves and cross-machine portability.\n\t// This field is kept for backward compatibility with old checkpoints only.\n\tTranscriptPath string `json:\"transcript_path,omitempty\"`"
 }
@@ -486,7 +486,7 @@ id: toolu_01HDhivsmmwPK3KCi8pR9upu
 tool_result
 id: toolu_01HDhivsmmwPK3KCi8pR9upu
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/checkpoint/checkpoint.go has been updated successfully.
 ```
 
 > AGENT
@@ -550,7 +550,7 @@ tool_use Read
 id: toolu_014zLxE1wipy6WvY8UM2rQwz
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/common.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/common.go",
   "offset": 240,
   "limit": 20
 }
@@ -595,7 +595,7 @@ id: toolu_01HG3Gp7rmjkDndNLpTXZkGo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/common.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/common.go",
   "old_string": "\n// homeRelativePath strips the $HOME/ prefix from an absolute path,\n// returning a home-relative path suitable for persisting in metadata.\n// Returns \"\" if the path is empty or not under $HOME.\nfunc homeRelativePath(absPath string) string {\n\tif absPath == \"\" {\n\t\treturn \"\"\n\t}\n\thome, err := os.UserHomeDir()\n\tif err != nil || home == \"\" {\n\t\treturn \"\"\n\t}\n\tprefix := home + string(filepath.Separator)\n\tif !strings.HasPrefix(absPath, prefix) {\n\t\treturn \"\"\n\t}\n\treturn absPath[len(prefix):]\n}\n\n// isSpecificAgentType returns true if the agent type is a known, specific value",
   "new_string": "\n// isSpecificAgentType returns true if the agent type is a known, specific value"
 }
@@ -606,7 +606,7 @@ id: toolu_01HG3Gp7rmjkDndNLpTXZkGo
 tool_result
 id: toolu_01HG3Gp7rmjkDndNLpTXZkGo
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/strategy/common.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/strategy/common.go has been updated successfully.
 ```
 
 > TOOL
@@ -692,7 +692,7 @@ tool_use Write
 id: toolu_01MUoAHJ5MKbpytnrpnfhVVh
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
   "content": "//go:build e2e\n\npackage e2e_test\n\nimport (\n\t\"fmt\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n)\n\n// TestE2E_ResumeInRelocatedRepo verifies that entire resume works when a repository\n// is moved to a different location after checkpoint creation. This validates that\n// transcript paths are computed from the current repo location, not stored paths\n// from checkpoint creation time.\n//\n// The test:\n// 1. Creates and enables a repo at original location\n// 2. Prompts an agent to create a checkpoint\n// 3. Moves the repo to a new location\n// 4. Runs 'entire resume' in the new location\n// 5. Verifies transcript was restored to the NEW location's session directory\n// 6. Verifies the OLD location's session directory was NOT used\nfunc TestE2E_ResumeInRelocatedRepo(t *testing.T) {\n\tif testing.Short() {\n\t\tt.Skip(\"skipping E2E test in short mode\")\n\t}\n\n\t// Create temporary directories for original and new locations\n\ttempBase := t.TempDir()\n\toriginalDir := filepath.Join(tempBase, \"original-location\", \"test-repo\")\n\tnewDir := filepath.Join(tempBase, \"new-location\", \"test-repo\")\n\n\t// Create directories\n\tif err := os.MkdirAll(originalDir, 0o755); err != nil {\n\t\tt.Fatalf(\"failed to create original directory: %v\", err)\n\t}\n\n\t// Setup original repository\n\tt.Logf(\"Setting up repository at original location: %s\", originalDir)\n\trepo := initRepo(t, originalDir)\n\tdefer repo.Close()\n\n\t// Enable entire\n\tenableEntire(t, repo, \"manual-commit\")\n\n\t// Create initial commit to have a proper base\n\twriteFile(t, repo, \"README.md\", \"# Test Project\\n\")\n\tcommit(t, repo, \"Initial commit\")\n\n\t// Prompt the agent to make changes\n\tt.Log(\"Prompting agent to create checkpoint...\")\n\tprompt := \"Create a simple test.txt file […]
 
 > TOOL
@@ -700,7 +700,7 @@ id: toolu_01MUoAHJ5MKbpytnrpnfhVVh
 tool_result
 id: toolu_01MUoAHJ5MKbpytnrpnfhVVh
 ```
-File created successfully at: /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go
+File created successfully at: /home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go
 ```
 
 > TOOL
@@ -730,7 +730,7 @@ tool_use Bash
 id: toolu_01VFMorkheKSmXbc4u2Q6kmi
 ```json
 {
-  "command": "ls -la /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/"
+  "command": "ls -la /home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/"
 }
 ```
 
@@ -762,7 +762,7 @@ tool_use Read
 id: toolu_01M8i4gbAS4UiwjoH4qV6Bx9
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/scenario_basic_workflow_test.go"
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/scenario_basic_workflow_test.go"
 }
 ```
 
@@ -821,7 +821,7 @@ tool_use Read
 id: toolu_01UmebnhYk9PMvRrSprESuQk
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/e2e_test/testenv.go",
+  "file_path": "/home/<USER>/wks/cli/cli/e2e_test/testenv.go",
   "offset": 1,
   "limit": 100
 }
@@ -841,7 +841,7 @@ tool_use Read
 id: toolu_01NM56JX81J6BNuhPM4kB5kJ
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/testenv.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/testenv.go",
   "offset": 1,
   "limit": 100
 }
@@ -917,7 +917,7 @@ id: toolu_012adiE8YrMLe3uUr9xsgRMq
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
   "old_string": "//go:build e2e\n\npackage e2e_test\n\nimport (\n\t\"fmt\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n)\n\n// TestE2E_ResumeInRelocatedRepo verifies that entire resume works when a repository\n// is moved to a different location after checkpoint creation. This validates that\n// transcript paths are computed from the current repo location, not stored paths\n// from checkpoint creation time.\n//\n// The test:\n// 1. Creates and enables a repo at original location\n// 2. Prompts an agent to create a checkpoint\n// 3. Moves the repo to a new location\n// 4. Runs 'entire resume' in the new location\n// 5. Verifies transcript was restored to the NEW location's session directory\n// 6. Verifies the OLD location's session directory was NOT used\nfunc TestE2E_ResumeInRelocatedRepo(t *testing.T) {\n\tif testing.Short() {\n\t\tt.Skip(\"skipping E2E test in short mode\")\n\t}\n\n\t// Create temporary directories for original and new locations\n\ttempBase := t.TempDir()\n\toriginalDir := filepath.Join(tempBase, \"original-location\", \"test-repo\")\n\tnewDir := filepath.Join(tempBase, \"new-location\", \"test-repo\")\n\n\t// Create directories\n\tif err := os.MkdirAll(originalDir, 0o755); err != nil {\n\t\tt.Fatalf(\"failed to create original directory: %v\", err)\n\t}\n\n\t// Setup original repository\n\tt.Logf(\"Setting up repository at original location: %s\", originalDir)\n\trepo := initRepo(t, originalDir)\n\tdefer repo.Close()\n\n\t// Enable entire\n\tenableEntire(t, repo, \"manual-commit\")\n\n\t// Create initial commit to have a proper base\n\twriteFile(t, repo, \"README.md\", \"# Test Project\\n\")\n\tcommit(t, repo, \"Initial commit\")\n\n\t// Prompt the agent to make changes\n\tt.Log(\"Prompting agent to create checkpoint...\")\n\tprompt := \"Create a simple […]
 
 > TOOL
@@ -925,7 +925,7 @@ id: toolu_012adiE8YrMLe3uUr9xsgRMq
 tool_result
 id: toolu_012adiE8YrMLe3uUr9xsgRMq
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go has been updated. All occurrences of '//go:build e2e
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go has been updated. All occurrences of '//go:build e2e
 
 package e2e_test
 
@@ -974,7 +974,7 @@ tool_use Bash
 id: toolu_01UciZdRW8LHvWP5hbco4RDS
 ```json
 {
-  "command": "grep -n \"func (env \\*TestEnv)\" /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/testenv.go | head -30"
+  "command": "grep -n \"func (env \\*TestEnv)\" /home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/testenv.go | head -30"
 }
 ```
 
@@ -1021,7 +1021,7 @@ id: toolu_0159SLzPrSo1ZHY82x6Ksh9x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
   "old_string": "\t// Step 5: Get current session ID before moving repo\n\t// We'll use this to verify resume actually ran\n\tsessionID := env.GetSessionID()\n\tt.Logf(\"Session ID: %s\", sessionID)",
   "new_string": ""
 }
@@ -1032,7 +1032,7 @@ id: toolu_0159SLzPrSo1ZHY82x6Ksh9x
 tool_result
 id: toolu_0159SLzPrSo1ZHY82x6Ksh9x
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -1042,7 +1042,7 @@ id: toolu_01XunDrtQn4tTTaQXTxabFSe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
   "old_string": "\t// Step 5: Move the repository to a new location\n\t// This simulates moving the repo between machines or directories\n\tt.Log(\"Step 5: Moving repository to new location\")",
   "new_string": "\t// Step 5: Move the repository to a new location\n\t// This simulates moving the repo between machines or directories\n\tt.Log(\"Step 4: Moving repository to new location\")"
 }
@@ -1066,7 +1066,7 @@ id: toolu_01DkDKxooBDAN7o7kpJWrPeo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
+  "file_path": "/home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go",
   "old_string": "\t// Step 8: Run entire resume in the new location\n\tt.Log(\"Step 7: Running 'entire resume' in new location\")\n\toutput := newEnv.RunEntireCommand(\"resume\", \"--force\")\n\tt.Logf(\"Resume output (first 500 chars):\\n%s\", truncateOutput(output, 500))",
   "new_string": "\t// Step 8: Run entire resume in the new location\n\tt.Log(\"Step 7: Running 'entire resume' in new location\")\n\toutput := newEnv.RunCLI(\"resume\", \"--force\")\n\tt.Logf(\"Resume output (first 500 chars):\\n%s\", truncateOutput(output, 500))"
 }
@@ -1077,7 +1077,7 @@ id: toolu_01DkDKxooBDAN7o7kpJWrPeo
 tool_result
 id: toolu_01DkDKxooBDAN7o7kpJWrPeo
 ```
-The file /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test/resume_relocated_repo_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -1095,7 +1095,7 @@ id: toolu_01DPEzAYxTawDw5TgY8R4ctv
 tool_result
 id: toolu_01DPEzAYxTawDw5TgY8R4ctv
 ```
-package github.com/entireio/cli/cmd/entire/cli/e2e_test: build constraints exclude all Go files in /Users/gtrrz-victor/wks/cli/cli/cmd/entire/cli/e2e_test
+package github.com/entireio/cli/cmd/entire/cli/e2e_test: build constraints exclude all Go files in /home/<USER>/wks/cli/cli/cmd/entire/cli/e2e_test
 [fmt] $ gofmt -s -w .
 ```
 
@@ -1421,7 +1421,7 @@ tool_use Bash
 id: toolu_01356QJ42C8yXRM4MqZ2eHLG
 ```json
 {
-  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nfix: remove stored transcript path from checkpoint metadata for location independence\n\nInstead of storing home-relative transcript paths in checkpoint metadata,\nalways compute paths from the current repository location at restore time\nusing agent.GetSessionDir(repoRoot). This makes resume portable across\nmachine moves and directory changes.\n\n## Changes\n\n1. **Remove SessionTranscriptPath writes** (manual_commit_condensation.go)\n   - Stop embedding sanitized repo path in checkpoint metadata\n\n2. **Update RestoreLogsOnly()** (manual_commit_rewind.go)\n   - Always compute transcript path from current repo location\n   - Remove resolveTranscriptPathFromMetadata() helper (now unused)\n   - Apply same fix to classifySessionsForRestore()\n\n3. **Add deprecation comments** (checkpoint.go)\n   - Mark TranscriptPath fields as DEPRECATED\n   - Keep for backward compatibility with old checkpoints\n   - Document new computation approach\n\n4. **Add E2E test** (resume_relocated_repo_test.go)\n   - Verify resume works after repo relocation\n   - Ensure transcript restores to NEW location, not stored old location\n\n## Why This Works\n\n- **Location-independent**: agent.GetSessionDir() uses current repo path\n- **Cross-machine portable**: No stored paths embedded in metadata\n- **Backward compatible**: Old checkpoints with transcript_path still work\n- **Simpler**: Removes fallback logic, always uses computed paths\n\nFixes issue where resume failed when projects moved directories or\nwere cloned to different machines with different absolute paths.\n\nCo-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>\nEOF\n)\"\n"
+  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nfix: remove stored transcript path from checkpoint metadata for location independence\n\nInstead of storing home-relative transcript paths in checkpoint metadata,\nalways compute paths from the current repository location at restore time\nusing agent.GetSessionDir(repoRoot). This makes resume portable across\nmachine moves and directory changes.\n\n## Changes\n\n1. **Remove SessionTranscriptPath writes** (manual_commit_condensation.go)\n   - Stop embedding sanitized repo path in checkpoint metadata\n\n2. **Update RestoreLogsOnly()** (manual_commit_rewind.go)\n   - Always compute transcript path from current repo location\n   - Remove resolveTranscriptPathFromMetadata() helper (now unused)\n   - Apply same fix to classifySessionsForRestore()\n\n3. **Add deprecation comments** (checkpoint.go)\n   - Mark TranscriptPath fields as DEPRECATED\n   - Keep for backward compatibility with old checkpoints\n   - Document new computation approach\n\n4. **Add E2E test** (resume_relocated_repo_test.go)\n   - Verify resume works after repo relocation\n   - Ensure transcript restores to NEW location, not stored old location\n\n## Why This Works\n\n- **Location-independent**: agent.GetSessionDir() uses current repo path\n- **Cross-machine portable**: No stored paths embedded in metadata\n- **Backward compatible**: Old checkpoints with transcript_path still work\n- **Simpler**: Removes fallback logic, always uses computed paths\n\nFixes issue where resume failed when projects moved directories or\nwere cloned to different machines with different absolute paths.\n\nCo-Authored-By: Claude Haiku 4.5 <<REDACTED_EMAIL>>\nEOF\n)\"\n"
 }
 ```
 
@@ -1573,7 +1573,7 @@ tool_use Bash
 id: toolu_01HcqVj6jZR9h4YitP3E3oQ6
 ```json
 {
-  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nfix: remove stored transcript path from checkpoint metadata for location independence\n\nInstead of storing home-relative transcript paths in checkpoint metadata,\nalways compute paths from the current repository location at restore time\nusing agent.GetSessionDir(repoRoot). This makes resume portable across\nmachine moves and directory changes.\n\n## Changes\n\n1. **Remove SessionTranscriptPath writes** (manual_commit_condensation.go)\n   - Stop embedding sanitized repo path in checkpoint metadata\n\n2. **Update RestoreLogsOnly()** (manual_commit_rewind.go)\n   - Always compute transcript path from current repo location\n   - Remove resolveTranscriptPathFromMetadata() helper (now unused)\n   - Apply same fix to classifySessionsForRestore()\n\n3. **Add deprecation comments** (checkpoint.go)\n   - Mark TranscriptPath fields as DEPRECATED\n   - Keep for backward compatibility with old checkpoints\n   - Document new computation approach\n\n4. **Add E2E test** (resume_relocated_repo_test.go)\n   - Verify resume works after repo relocation\n   - Ensure transcript restores to NEW location, not stored old location\n\n## Why This Works\n\n- **Location-independent**: agent.GetSessionDir() uses current repo path\n- **Cross-machine portable**: No stored paths embedded in metadata\n- **Backward compatible**: Old checkpoints with transcript_path still work\n- **Simpler**: Removes fallback logic, always uses computed paths\n\nFixes issue where resume failed when projects moved directories or\nwere cloned to different machines with different absolute paths.\n\nCo-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>\nEOF\n)\"\n"
+  "command": "git add -A && git commit -m \"$(cat <<'EOF'\nfix: remove stored transcript path from checkpoint metadata for location independence\n\nInstead of storing home-relative transcript paths in checkpoint metadata,\nalways compute paths from the current repository location at restore time\nusing agent.GetSessionDir(repoRoot). This makes resume portable across\nmachine moves and directory changes.\n\n## Changes\n\n1. **Remove SessionTranscriptPath writes** (manual_commit_condensation.go)\n   - Stop embedding sanitized repo path in checkpoint metadata\n\n2. **Update RestoreLogsOnly()** (manual_commit_rewind.go)\n   - Always compute transcript path from current repo location\n   - Remove resolveTranscriptPathFromMetadata() helper (now unused)\n   - Apply same fix to classifySessionsForRestore()\n\n3. **Add deprecation comments** (checkpoint.go)\n   - Mark TranscriptPath fields as DEPRECATED\n   - Keep for backward compatibility with old checkpoints\n   - Document new computation approach\n\n4. **Add E2E test** (resume_relocated_repo_test.go)\n   - Verify resume works after repo relocation\n   - Ensure transcript restores to NEW location, not stored old location\n\n## Why This Works\n\n- **Location-independent**: agent.GetSessionDir() uses current repo path\n- **Cross-machine portable**: No stored paths embedded in metadata\n- **Backward compatible**: Old checkpoints with transcript_path still work\n- **Simpler**: Removes fallback logic, always uses computed paths\n\nFixes issue where resume failed when projects moved directories or\nwere cloned to different machines with different absolute paths.\n\nCo-Authored-By: Claude Haiku 4.5 <<REDACTED_EMAIL>>\nEOF\n)\"\n"
 }
 ```
 
@@ -1608,7 +1608,7 @@ nothing to commit, working tree clean
 05d6517e fix: remove stored transcript path from checkpoint metadata for location independence
 ---
 commit 05d6517ea4bf80bcb6d78c7c8e9df43468538446
-Author: Victor Gutierrez Calderon <victor@entire.io>
+Author: Victor Gutierrez Calderon <<REDACTED_EMAIL>>
 Date:   Wed Feb 18 15:34:02 2026 +1100
 
     fix: remove stored transcript path from checkpoint metadata for location independence

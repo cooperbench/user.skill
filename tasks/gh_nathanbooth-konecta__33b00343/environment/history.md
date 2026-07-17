@@ -20,7 +20,7 @@ id: toolu_018EY6pTwkT3ytxRkj5p79Ef
 ```json
 {
   "pattern": "repository|repo.*url|source.*repo|chart.*repo",
-  "path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq",
+  "path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq",
   "output_mode": "content",
   "glob": "*.{yaml,yml,tf}",
   "-i": true
@@ -70,7 +70,7 @@ tool_use Read
 id: toolu_01KRXPzb13PN6C4Xyrj39Vdb
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal/values-dev.yaml"
+  "file_path": "/home/<USER>/code/konecta-ix-workloads/kix-workload-konectaiq/environments/dev/helm/kix-app-iqportal/values-dev.yaml"
 }
 ```
 

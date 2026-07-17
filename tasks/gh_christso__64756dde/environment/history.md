@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/entity/projects/EntityProcess/agentv
+# AGENTS.md instructions for /home/<USER>/projects/EntityProcess/agentv
 
 <INSTRUCTIONS>
 # AgentV Agent Guide
@@ -31,8 +31,8 @@ tool_use exec_command
 id: call_2n6XC2qDFNqUrQFuCXuu4vwN
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -43,8 +43,8 @@ tool_use exec_command
 id: call_0LslzAB7b0QlzvMR4SIGiHpV
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.agents/skills/workmux/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/workmux/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -55,8 +55,8 @@ tool_use exec_command
 id: call_LYBzPSke8YcM6jvfsklBtXjN
 ```json
 {
-  "cmd": "sed -n '1,240p' /home/entity/.codex/plugins/cache/agentv/agentv-dev/1.0.0/skills/agentv-dev/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/plugins/cache/agentv/agentv-dev/1.0.0/skills/agentv-dev/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -67,8 +67,8 @@ tool_use exec_command
 id: call_4KK6HdpM4wiBLjCZyAwwnkkm
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/allagents/deepwiki/1.0.0/skills/deepwiki/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/allagents/deepwiki/1.0.0/skills/deepwiki/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -83,7 +83,7 @@ Wall time: 0.0001 seconds
 Process exited with code 2
 Original token count: 34
 Output:
-sed: can't read /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md: No such file or directory
+sed: can't read /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md: No such file or directory
 
 ```
 
@@ -207,8 +207,8 @@ tool_use exec_command
 id: call_DFHvdY1zRBsnVGegaDn2cios
 ```json
 {
-  "cmd": "rg --files /home/entity/.codex /home/entity/.agents | rg '/beads/.*/SKILL.md$|/skills/beads/SKILL.md$'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg --files /home/<USER>/.codex /home/<USER>/.agents | rg '/beads/.*/SKILL.md$|/skills/beads/SKILL.md$'",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -220,7 +220,7 @@ id: call_h7uqRgCFwXDt05biBnmXx7yW
 ```json
 {
   "cmd": "git fetch origin",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -233,7 +233,7 @@ id: call_vhlXYzcSUEmRZ95TsTApkiC4
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -245,7 +245,7 @@ id: call_4cQkOdbx6iOhrsHcqWbyMVOk
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -257,7 +257,7 @@ id: call_fhmYiROIDCe3L865G0ZW561Y
 ```json
 {
   "cmd": "sed -n '1,260p' STRATEGY.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -269,7 +269,7 @@ id: call_a7h1RPL7sXAeLMQ13RDCbVHy
 ```json
 {
   "cmd": "sed -n '1,260p' ROADMAP.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -284,7 +284,7 @@ Wall time: 0.0761 seconds
 Process exited with code 0
 Original token count: 22
 Output:
-/home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md
+/home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md
 
 ```
 
@@ -405,8 +405,8 @@ tool_use exec_command
 id: call_jpvZJLm8BIFQPakXlDGVPoyF
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -417,8 +417,8 @@ tool_use exec_command
 id: call_FApBBc9hdUANqQW1aNpX6Sv4
 ```json
 {
-  "cmd": "sed -n '261,620p' /home/entity/.agents/skills/workmux/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '261,620p' /home/<USER>/.agents/skills/workmux/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -430,7 +430,7 @@ id: call_IMFHj0wOyEusFiUFDWBuw5gt
 ```json
 {
   "cmd": "sed -n '1,320p' .agents/product-boundary.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 40000
 }
 ```
@@ -442,7 +442,7 @@ id: call_tLFFtQBPGjE9wjNN3JQ9Cewr
 ```json
 {
   "cmd": "bd where && bd status --short || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -454,7 +454,7 @@ id: call_4pJilZpENi4eF23J9aXktYZs
 ```json
 {
   "cmd": "bd ready --limit 10 || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -479,7 +479,7 @@ description: >
   whenever managing multi-session work, tracking dependencies, or recovering context.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.60.0"
-author: "Steve Yegge <steve.yegge@gmail.com>"
+author: "Steve Yegge <<REDACTED_EMAIL>>"
 license: "MIT"
 compatible-with: [claude-code, codex]
 tags: [issue-tracking, task-management, multi-session, dependencies]
@@ -590,9 +590,9 @@ Wall time: 2.5659 seconds
 Process exited with code 0
 Original token count: 420
 Output:
-/home/entity/projects/EntityProcess/agentv/.beads
+/home/<USER>/projects/EntityProcess/agentv/.beads
   prefix: av
-  database: /home/entity/projects/EntityProcess/agentv/.beads/embeddeddolt
+  database: /home/<USER>/projects/EntityProcess/agentv/.beads/embeddeddolt
 Error: unknown flag: --short
 Usage:
   bd status [flags]
@@ -651,7 +651,7 @@ Status: ○ open  ◐ […]
 
 > AGENT
 
-Beads is available at `/home/entity/projects/EntityProcess/agentv/.beads`. I’m going to create a research Bead for this investigation and claim it so the spawned worker has a durable scope and does not collide with any existing active owner.
+Beads is available at `/home/<USER>/projects/EntityProcess/agentv/.beads`. I’m going to create a research Bead for this investigation and claim it so the spawned worker has a durable scope and does not collide with any existing active owner.
 
 > TOOL
 
@@ -660,7 +660,7 @@ id: call_6zIQJZUZyNLrEcAeyfytW2oF
 ```json
 {
   "cmd": "bd update --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -672,7 +672,7 @@ id: call_Fw5IChZ3NqReitGoCyJPlfGH
 ```json
 {
   "cmd": "workmux --version && workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -684,7 +684,7 @@ id: call_sGnEjmm6QbqsarsAHE4kKL6z
 ```json
 {
   "cmd": "test -f .workmux.yaml && sed -n '1,160p' .workmux.yaml || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -695,8 +695,8 @@ tool_use exec_command
 id: call_oR5bcV4n1RyZ0NZHs8vN6EoY
 ```json
 {
-  "cmd": "git rev-parse HEAD && git -C /home/entity/projects/promptfoo/promptfoo rev-parse HEAD && git -C /home/entity/projects/promptfoo/promptfoo status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git rev-parse HEAD && git -C /home/<USER>/projects/promptfoo/promptfoo rev-parse HEAD && git -C /home/<USER>/projects/promptfoo/promptfoo status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -707,8 +707,8 @@ tool_use exec_command
 id: call_NfHjbQfDdYxLTf0yf35szZ55
 ```json
 {
-  "cmd": "test -d /home/entity/projects/vercel-labs/agent-evals && git -C /home/entity/projects/vercel-labs/agent-evals rev-parse HEAD && git -C /home/entity/projects/vercel-labs/agent-evals status --short --branch || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "test -d /home/<USER>/projects/vercel-labs/agent-evals && git -C /home/<USER>/projects/vercel-labs/agent-evals rev-parse HEAD && git -C /home/<USER>/projects/vercel-labs/agent-evals status --short --branch || true",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -858,7 +858,7 @@ id: call_P5UzRmO1a1xIUCDxd44V9ZmN
 ```json
 {
   "cmd": "bd create --title=\"research: compare agent grader patterns across Promptfoo and Vercel agent-evals\" --description=\"Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.\" --type=task --priority=2 --acceptance=\"Research cites local clone commits or official source URLs; conclusions distinguish Promptfoo behavior from Vercel agent-evals behavior; any actionable AgentV follow-ups are created as Beads with self-contained scope and acceptance criteria.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -870,8 +870,8 @@ tool_use exec_command
 id: call_FnDo40eG0GcwgEYlFe6Yf1TO
 ```json
 {
-  "cmd": "rg --files /home/entity/projects/promptfoo/promptfoo | rg 'grader|assert|provider|redteam|agent|eval|llm' | head -200",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg --files /home/<USER>/projects/promptfoo/promptfoo | rg 'grader|assert|provider|redteam|agent|eval|llm' | head -200",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -882,8 +882,8 @@ tool_use exec_command
 id: call_OUzOkiUyWXrtUpSw22kc4Zhr
 ```json
 {
-  "cmd": "rg -n \"agentic|agent grader|grader|llm-rubric|rubric|assertion|provider|agent\" /home/entity/projects/promptfoo/promptfoo/src /home/entity/projects/promptfoo/promptfoo/site /home/entity/projects/promptfoo/promptfoo/docs 2>/dev/null | head -240",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"agentic|agent grader|grader|llm-rubric|rubric|assertion|provider|agent\" /home/<USER>/projects/promptfoo/promptfoo/src /home/<USER>/projects/promptfoo/promptfoo/site /home/<USER>/projects/promptfoo/promptfoo/docs 2>/dev/null | head -240",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -905,7 +905,7 @@ Output:
   "description": "Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.",
   "id": "av-l4pl",
   "issue_type": "task",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 2,
   "schema_version": 1,
   "status": "open",
@@ -925,185 +925,185 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 4128
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts
-/home/entity/projects/promptfoo/promptfoo/src/evaluate.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluatorHelpers.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/providers.slack.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/integration/function-provider-grading.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluate.jsonl.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/agentSkills/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/test/agentSkills/promptfooPlugin.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator.integration.transforms.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/architecture/evaluatorStoreBoundary.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/architecture/providerRedteamBoundary.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/output-and-assertions.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/not-script-assertions.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/eval.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/configs-and-providers.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/dynamic-value.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/check-length.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/check_keywords.py
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/dynamic-value.py
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/go-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/exec-provider-stdin.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/file-ref-assertion-value.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/assert-dynamic-var.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/llm-rubric-stateful-grader-assert-set-order.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/python-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/latency-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/multi-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-label.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/weighted-assertions.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/multi-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-ts.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/function-provider-defaulttest.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/ends-with-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/function-providers-9383.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/not-contains-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/python-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/inline-js-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-python-named.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-cjs.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-json-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-ts-transitive.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/providers-with-config.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/redteam-class-provider-7353.yaml
-/home/entity/projects/promptfoo/promptfoo/src/validators/redteam.ts
-/home/entity/projects/promptfoo/promptfoo/src/validators/providers.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/icontains-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/json-schema-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-esm.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/class-provider-7353.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/not-script-assertions.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/skill-used-provider-esm.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/failing-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/levenshtein-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/dynamic-var-assertion-7334.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/starts-with-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-any-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/file-provider-env-7079.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/exec-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/js-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/ruby-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/llm-rubric-stateful-grader-order.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars-tests.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/cost-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars-default.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/assertions.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-with-config.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-all-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/docs/agents/coding-agent-provider-taxonomy.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/python.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/database-security.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/pr-conventions.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/git-workflow.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/codex-app-server-provider-notes.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/dependency-management.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/logging.md
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo_provider.py
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/go.mod
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts-transitive.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/skill-metadata-esm.mjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/redteam-class-provider-7353.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/defaulttest-llm-rubric-grader.cjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/stateful-ollama-grader.cjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-cjs.cjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ruby.rb
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-go.go
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo_provider_named.py
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/grader-function.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-esm.mjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts-transitive-helper.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/exec-provider-reads-stdin.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/circular-ref-provider.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/cjs-module-exports.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/file-provider-env-7079.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/cjs-with-require.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/class-provider-prototype-id.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/subdir/config-relative-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/subdir/local-provider.js
-/home/entity/projects/promptfoo/promptfoo/src/providers/novita.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/sagemaker.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/cerebras.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/http.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/aimlapi.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/packageParser.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/litellm.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/watsonx.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/src/providers/constants.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/provider.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/promptfooconfig.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/src/utils.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/tsconfig.json
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/agent.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/chat.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/tools.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/responses.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/device-auth.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/embedding.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/cohere.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/data/file-provider-env-7079.env
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/assistant.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/chat.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/video.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/defaults.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/moderation.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/warnings.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/responses.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/util.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/foundry-agent.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/embedding.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/errors.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/completion.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/image.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/generic.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/simulatedUser.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/a2a/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/a2a/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/a2a/transforms.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/jfrog.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/truefoundry.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/alibaba.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/llamaApi.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/registry.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/modelslab.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/transformUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/llama.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/webhook.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/evalTableUtils.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterPrompts.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/redteamWarning.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterTests.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterProviders.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/summary.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterTestsUtil.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterFailingBug.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/scripts/capture-conversation-relevance-grader.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/features-and-assertions.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/provider.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/redteam/setup.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/redteam/init.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/redteam/report.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/eval.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/evalSetup.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/transforms.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/setup.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/assertions.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/trace-integration.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/tokenUsage.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/lifecycle.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/defaultTest.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/inMemoryStore.test.ts […]
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluate.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluatorHelpers.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/providers.slack.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/integration/function-provider-grading.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluate.jsonl.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/agentSkills/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/test/agentSkills/promptfooPlugin.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator.integration.transforms.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/architecture/evaluatorStoreBoundary.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/architecture/providerRedteamBoundary.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/output-and-assertions.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/not-script-assertions.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/eval.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/configs-and-providers.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/dynamic-value.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/check-length.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/check_keywords.py
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/dynamic-value.py
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/go-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/exec-provider-stdin.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/file-ref-assertion-value.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/assert-dynamic-var.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/llm-rubric-stateful-grader-assert-set-order.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/python-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/latency-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/multi-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-label.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/weighted-assertions.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/multi-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-ts.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/function-provider-defaulttest.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/ends-with-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/function-providers-9383.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/not-contains-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/python-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/inline-js-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-python-named.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-cjs.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-json-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-ts-transitive.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/providers-with-config.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/redteam-class-provider-7353.yaml
+/home/<USER>/projects/promptfoo/promptfoo/src/validators/redteam.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/validators/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/icontains-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/json-schema-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-esm.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/class-provider-7353.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/not-script-assertions.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/skill-used-provider-esm.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/failing-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/levenshtein-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/dynamic-var-assertion-7334.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/starts-with-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-any-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/file-provider-env-7079.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/exec-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/js-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/ruby-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/llm-rubric-stateful-grader-order.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars-tests.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/cost-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars-default.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/assertions.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-with-config.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-all-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/coding-agent-provider-taxonomy.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/python.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/database-security.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/pr-conventions.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/git-workflow.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/codex-app-server-provider-notes.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/dependency-management.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/logging.md
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo_provider.py
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/go.mod
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts-transitive.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/skill-metadata-esm.mjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/redteam-class-provider-7353.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/defaulttest-llm-rubric-grader.cjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/stateful-ollama-grader.cjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-cjs.cjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ruby.rb
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-go.go
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo_provider_named.py
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/grader-function.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-esm.mjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts-transitive-helper.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/exec-provider-reads-stdin.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/circular-ref-provider.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/cjs-module-exports.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/file-provider-env-7079.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/cjs-with-require.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/class-provider-prototype-id.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/subdir/config-relative-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/subdir/local-provider.js
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/novita.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/sagemaker.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/cerebras.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/http.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/aimlapi.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/packageParser.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/litellm.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/watsonx.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/constants.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/provider.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/promptfooconfig.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/src/utils.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/tsconfig.json
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/agent.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/chat.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/tools.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/responses.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/device-auth.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/embedding.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/cohere.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/data/file-provider-env-7079.env
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/assistant.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/chat.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/video.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/defaults.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/moderation.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/warnings.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/responses.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/util.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/foundry-agent.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/embedding.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/errors.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/completion.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/image.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/generic.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/simulatedUser.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/a2a/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/a2a/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/a2a/transforms.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/jfrog.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/truefoundry.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/alibaba.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/llamaApi.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/registry.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/modelslab.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/transformUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/llama.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/webhook.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/evalTableUtils.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterPrompts.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/redteamWarning.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterTests.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterProviders.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/summary.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterTestsUtil.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterFailingBug.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/scripts/capture-conversation-relevance-grader.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/features-and-assertions.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/provider.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/redteam/setup.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/redteam/init.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/redteam/report.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/eval.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/evalSetup.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/transforms.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/setup.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/assertions.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/trace-integration.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/tokenUsage.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/lifecycle.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/defaultTest.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/inMemoryStore.test.ts […]
 
 > TOOL
 
@@ -1115,32 +1115,32 @@ Wall time: 0.0041 seconds
 Process exited with code 0
 Original token count: 9151
 Output:
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:15:   server/UI hosting, redteam, and provider families.
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:23:path to provider packs and future products without forcing a flag day.
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:36:- many provider SDKs
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:44:  imported migrations, models, sharing, provider loading, and redteam APIs.
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:51:- Provider loading is centralized enough that optional/provider dependencies are
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:62:- Do not turn providers into runtime-installed plugins as a prerequisite for the
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:72:   Lightweight consumers should not pay for servers, databases, CLIs, or provider
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:99:  providers["@promptfoo/provider-*"]
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:107:  core --> providers
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:111:  providers --> facade
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:133:- `fs`, `@libsql/client`, Express, provider SDKs, CLI libraries, server code
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:145:- Test planning, prompt expansion, assertions, scoring, result aggregation
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:146:- Provider/assertion interfaces
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:147:- No direct filesystem, DB, HTTP-server, or provider-SDK assumptions
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:159:- concrete provider SDK packages
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:164:- It should be possible to run it with fake providers and in-memory adapters.
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:194:- redteam generation, strategies, graders, plugins, reporting
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:245:### `@promptfoo/provider-*`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:251:  - `@promptfoo/provider-openai`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:252:  - `@promptfoo/provider-anthropic`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:253:  - `@promptfoo/provider-aws`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:254:  - `@promptfoo/provider-google`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:255:  - eventually a small `@promptfoo/providers-core` for zero-extra-dependency or
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:256:    very common providers
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:261:- provider SDKs owned by that package
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:266:- It also makes provider ownership and release notes much […]
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:15:   server/UI hosting, redteam, and provider families.
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:23:path to provider packs and future products without forcing a flag day.
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:36:- many provider SDKs
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:44:  imported migrations, models, sharing, provider loading, and redteam APIs.
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:51:- Provider loading is centralized enough that optional/provider dependencies are
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:62:- Do not turn providers into runtime-installed plugins as a prerequisite for the
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:72:   Lightweight consumers should not pay for servers, databases, CLIs, or provider
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:99:  providers["@promptfoo/provider-*"]
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:107:  core --> providers
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:111:  providers --> facade
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:133:- `fs`, `@libsql/client`, Express, provider SDKs, CLI libraries, server code
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:145:- Test planning, prompt expansion, assertions, scoring, result aggregation
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:146:- Provider/assertion interfaces
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:147:- No direct filesystem, DB, HTTP-server, or provider-SDK assumptions
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:159:- concrete provider SDK packages
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:164:- It should be possible to run it with fake providers and in-memory adapters.
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:194:- redteam generation, strategies, graders, plugins, reporting
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:245:### `@promptfoo/provider-*`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:251:  - `@promptfoo/provider-openai`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:252:  - `@promptfoo/provider-anthropic`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:253:  - `@promptfoo/provider-aws`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:254:  - `@promptfoo/provider-google`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:255:  - eventually a small `@promptfoo/providers-core` for zero-extra-dependency or
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:256:    very common providers
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:261:- provider SDKs owned by that package
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:266:- It also makes provider ownership and release notes much […]
 
 > AGENT
 
@@ -1152,8 +1152,8 @@ tool_use exec_command
 id: call_VWbuwUXlZvrA7etw94NixrzC
 ```json
 {
-  "cmd": "bd update av-l4pl --claim --set-metadata machine=$(hostname) --set-metadata worker=codex-main --set-metadata branch=main --set-metadata worktree=/home/entity/projects/EntityProcess/agentv --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-l4pl --claim --set-metadata machine=$(hostname) --set-metadata worker=codex-main --set-metadata branch=main --set-metadata worktree=/home/<USER>/projects/EntityProcess/agentv --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1165,8 +1165,8 @@ tool_use exec_command
 id: call_40HgT1JS9ckGWNuklpMqQ2Ec
 ```json
 {
-  "cmd": "rg -n \"runAssertion|matchesLlmRubric|llm-rubric|GradingResult|ProviderResponse|rubric|assertion\" /home/entity/projects/promptfoo/promptfoo/src/assertions /home/entity/projects/promptfoo/promptfoo/src/providers /home/entity/projects/promptfoo/promptfoo/src/types.ts /home/entity/projects/promptfoo/promptfoo/src/evaluator.ts /home/entity/projects/promptfoo/promptfoo/src/util 2>/dev/null | head -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"runAssertion|matchesLlmRubric|llm-rubric|GradingResult|ProviderResponse|rubric|assertion\" /home/<USER>/projects/promptfoo/promptfoo/src/assertions /home/<USER>/projects/promptfoo/promptfoo/src/providers /home/<USER>/projects/promptfoo/promptfoo/src/types.ts /home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts /home/<USER>/projects/promptfoo/promptfoo/src/util 2>/dev/null | head -260",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -1177,8 +1177,8 @@ tool_use exec_command
 id: call_OSxgNCZItSHpkATybYIYpZuD
 ```json
 {
-  "cmd": "rg --files /home/entity/projects/promptfoo/promptfoo/src | rg 'assert|grade|rubric|evaluator|provider|types'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg --files /home/<USER>/projects/promptfoo/promptfoo/src | rg 'assert|grade|rubric|evaluator|provider|types'",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -1203,7 +1203,7 @@ Output:
     "priority": 2,
     "issue_type": "task",
     "assignee": "Christopher Tso",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T12:24:42Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T12:24:54Z",
@@ -1212,7 +1212,7 @@ Output:
       "branch": "main",
       "worker": "codex-main",
       "machine": "entity-vps",
-      "worktree": "/home/entity/projects/EntityProcess/agentv"
+      "worktree": "/home/<USER>/projects/EntityProcess/agentv"
     }
   }
 ]
@@ -1229,38 +1229,38 @@ Wall time: 0.0002 seconds
 Process exited with code 0
 Original token count: 8083
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:4:import type { AssertionParams, GradingResult } from '../types/index';
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:7:  assertion,
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:11:}: AssertionParams): Promise<GradingResult> => {
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:12:  invariant(typeof renderedValue === 'string', '"pi" assertion type must have a string value');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:13:  invariant(typeof prompt === 'string', '"pi" assertion must have a prompt that is a string');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:14:  return matchesPiScore(renderedValue, prompt, outputString, assertion);
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:3:import type { AssertionParams, GradingResult } from '../types/index';
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:6:  assertion,
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:10:}: AssertionParams): GradingResult {
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:11:  const value = renderedValue ?? assertion.value;
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:12:  invariant(typeof value === 'string', '"finish-reason" assertion type must have a string value');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:20:      assertion,
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:35:    assertion,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:13:  runAssertions,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:15:} from './assertions/index';
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:62:  type GradingResult,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:65:  type ProviderResponse,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:367: * Update token usage metrics with assertion token usage
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:371:  assertionTokens: Partial<TokenUsage>,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:373:  if (metrics.tokenUsage && assertionTokens) {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:374:    if (!metrics.tokenUsage.assertions) {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:375:      metrics.tokenUsage.assertions = createEmptyAssertions();
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:378:    // Accumulate assertion tokens using the specialized assertion function
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:379:    accumulateAssertionTokenUsage(metrics.tokenUsage.assertions, assertionTokens);
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:403:function isGeneratedRedteamAssertion(assertion: { type?: string }): boolean {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:404:  return typeof assertion.type === 'string' && assertion.type.startsWith('promptfoo:redteam:');
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:412:function hasNestedRedteamAssertion(assertion: NestedAssertion): boolean {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:413:  if (isGeneratedRedteamAssertion(assertion)) {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:418:    assertion.type === 'assert-set' &&
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:419:    Array.isArray(assertion.assert) &&
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:420:    assertion.assert.some(hasNestedRedteamAssertion)
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:451:  // but they still carry […]
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:4:import type { AssertionParams, GradingResult } from '../types/index';
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:7:  assertion,
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:11:}: AssertionParams): Promise<GradingResult> => {
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:12:  invariant(typeof renderedValue === 'string', '"pi" assertion type must have a string value');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:13:  invariant(typeof prompt === 'string', '"pi" assertion must have a prompt that is a string');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:14:  return matchesPiScore(renderedValue, prompt, outputString, assertion);
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:3:import type { AssertionParams, GradingResult } from '../types/index';
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:6:  assertion,
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:10:}: AssertionParams): GradingResult {
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:11:  const value = renderedValue ?? assertion.value;
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:12:  invariant(typeof value === 'string', '"finish-reason" assertion type must have a string value');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:20:      assertion,
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:35:    assertion,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:13:  runAssertions,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:15:} from './assertions/index';
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:62:  type GradingResult,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:65:  type ProviderResponse,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:367: * Update token usage metrics with assertion token usage
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:371:  assertionTokens: Partial<TokenUsage>,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:373:  if (metrics.tokenUsage && assertionTokens) {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:374:    if (!metrics.tokenUsage.assertions) {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:375:      metrics.tokenUsage.assertions = createEmptyAssertions();
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:378:    // Accumulate assertion tokens using the specialized assertion function
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:379:    accumulateAssertionTokenUsage(metrics.tokenUsage.assertions, assertionTokens);
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:403:function isGeneratedRedteamAssertion(assertion: { type?: string }): boolean {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:404:  return typeof assertion.type === 'string' && assertion.type.startsWith('promptfoo:redteam:');
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:412:function hasNestedRedteamAssertion(assertion: NestedAssertion): boolean {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:413:  if (isGeneratedRedteamAssertion(assertion)) {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:418:    assertion.type === 'assert-set' &&
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:419:    Array.isArray(assertion.assert) &&
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:420:    assertion.assert.some(hasNestedRedteamAssertion)
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:451:  // but they still carry […]
 
 > TOOL
 
@@ -1272,185 +1272,185 @@ Wall time: 0.0119 seconds
 Process exited with code 0
 Original token count: 7373
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/blobs/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/validators/providers.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/generate/assertions.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/mcp/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/mcp/lib/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/types/webPage.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/grading/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/graders.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/iterativeImage.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/constants.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/indirectWebPwn.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/agentic/memoryPoisoning.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/registry.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/iterativeMeta.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/voiceCrescendo/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/iterative.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/traceFormatting.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/prompts.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/tracingOptions.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/goat.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/iterativeTree.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/mischievousUser.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/bestOfN.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/README.md
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/hydra/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/prompts.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/LICENSE
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/authoritativeMarkupInjection.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/custom/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/plugins/harmful/graders.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/plugins/teenSafety/graderExamples.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/plugins/codingAgent/graders.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/strategies/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/ngrams.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/src/assertions/gleu.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/toolCallF1.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/bleu.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/sql.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/webhook.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/trajectory.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/traceErrorSpans.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contextFaithfulness.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/perplexity.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/validateAssertions.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/guardrails.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/openai.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/factuality.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/xml.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/redteam.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/rouge.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contains.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/moderation.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contextUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/searchRubric.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/cost.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/json.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/geval.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contextRelevance.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/synthesis.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/regex.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/ruby.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/classifier.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/agentRubric.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/javascript.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/traceSpanDuration.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/scriptResultNormalization.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contextRecall.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/answerRelevance.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/meteor.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/latency.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/refusal.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/html.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/llmRubric.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/traceUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/trajectoryUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/wordCount.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/functionToolCall.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/python.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/modelGradedClosedQa.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/levenshtein.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/traceSpanCount.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/utils.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/equals.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/startsWith.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/assertionsResult.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/similar.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/agent.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/src/types/codeScan.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/transform.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/prompts.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/build.d.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/internal.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/optional-deps.d.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/eventSource.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/targetLink.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/tracing.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/traces.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/media.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/user.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/eval.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/server.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/redteam.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/providers.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/configs.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/blobs.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/common.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/version.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/modelAudit.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/env.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/cache.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/modelAudit.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/email.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/utils/providerResponse.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/utils/providerResponse.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/ResultsTable.providerExtraction.test.tsx
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/providerConfig.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/providerConfig.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionValueValidation.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionPrerequisites.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionValueValidation.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionPrerequisites.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/Targets/providerDocumentationMap.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/Targets/providerDocumentationMap.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/strategies/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/media/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/model-audit/ModelAudit.types.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/store/providersStore.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/store/providersStore.ts
-/home/entity/projects/promptfoo/promptfoo/src/server/routes/providers.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/components/data-table/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/evaluatorHelpers.ts
-/home/entity/projects/promptfoo/promptfoo/src/storage/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/util/provider.ts
-/home/entity/projects/promptfoo/promptfoo/src/util/providerRef.ts
-/home/entity/projects/promptfoo/promptfoo/src/util/providerResponse.ts
-/home/entity/projects/promptfoo/promptfoo/src/util/fetch/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts
-/home/entity/projects/promptfoo/promptfoo/src/node/evaluatorRuntime.ts
-/home/entity/projects/promptfoo/promptfoo/src/external/assertions/deepeval.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/atlascloud.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/fireworks/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/fireworks/chat.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/fireworks/embedding.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/voyage.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mistral.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/echo.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/transform.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/authProvider.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/client.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/auth.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/util.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/transforms.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/webSearchUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/rubyCompletion.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/opencode-sdk.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/promptfooModel.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/nscale/image.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/responses/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/responses/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/responses/processor.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/providerRegistry.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/claude-agent-sdk.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/httpMultipart.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/pythonCompletion.ts […]
+/home/<USER>/projects/promptfoo/promptfoo/src/blobs/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/validators/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/generate/assertions.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/mcp/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/mcp/lib/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/types/webPage.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/grading/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/graders.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/iterativeImage.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/constants.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/indirectWebPwn.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/agentic/memoryPoisoning.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/registry.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/iterativeMeta.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/voiceCrescendo/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/iterative.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/traceFormatting.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/prompts.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/tracingOptions.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/goat.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/iterativeTree.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/mischievousUser.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/bestOfN.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/README.md
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/hydra/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/prompts.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/LICENSE
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/authoritativeMarkupInjection.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/custom/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/plugins/harmful/graders.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/plugins/teenSafety/graderExamples.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/plugins/codingAgent/graders.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/strategies/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/ngrams.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/gleu.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/toolCallF1.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/bleu.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/sql.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/webhook.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/trajectory.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/traceErrorSpans.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contextFaithfulness.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/perplexity.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/validateAssertions.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/guardrails.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/openai.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/factuality.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/xml.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/redteam.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/rouge.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contains.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/moderation.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contextUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/searchRubric.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/cost.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/json.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/geval.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contextRelevance.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/synthesis.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/regex.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/ruby.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/classifier.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/agentRubric.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/javascript.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/traceSpanDuration.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/scriptResultNormalization.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contextRecall.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/answerRelevance.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/meteor.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/latency.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/refusal.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/html.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/llmRubric.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/traceUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/trajectoryUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/wordCount.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/functionToolCall.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/python.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/modelGradedClosedQa.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/levenshtein.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/traceSpanCount.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/utils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/equals.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/startsWith.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/assertionsResult.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/similar.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/agent.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/src/types/codeScan.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/transform.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/prompts.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/build.d.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/internal.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/optional-deps.d.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/eventSource.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/targetLink.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/tracing.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/traces.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/media.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/user.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/eval.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/server.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/redteam.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/configs.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/blobs.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/common.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/version.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/modelAudit.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/env.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/cache.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/modelAudit.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/email.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/utils/providerResponse.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/utils/providerResponse.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/ResultsTable.providerExtraction.test.tsx
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/providerConfig.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/providerConfig.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionValueValidation.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionPrerequisites.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionValueValidation.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionPrerequisites.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/Targets/providerDocumentationMap.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/Targets/providerDocumentationMap.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/strategies/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/media/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/model-audit/ModelAudit.types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/store/providersStore.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/store/providersStore.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/server/routes/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/components/data-table/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluatorHelpers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/storage/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/util/provider.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/util/providerRef.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/util/providerResponse.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/util/fetch/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/node/evaluatorRuntime.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/external/assertions/deepeval.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/atlascloud.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/fireworks/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/fireworks/chat.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/fireworks/embedding.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/voyage.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mistral.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/echo.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/transform.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/authProvider.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/client.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/auth.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/util.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/transforms.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/webSearchUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/rubyCompletion.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/opencode-sdk.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/promptfooModel.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/nscale/image.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/responses/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/responses/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/responses/processor.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/providerRegistry.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/claude-agent-sdk.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/httpMultipart.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/pythonCompletion.ts […]
 
 > AGENT
 
@@ -1463,7 +1463,7 @@ id: call_npXgR1RmYgkR44tWziAqWU46
 ```json
 {
   "cmd": "mkdir -p .workmux/prompts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1497,7 +1497,7 @@ id: call_Xx6BUdaviRJgoYR0F41HZGGl
 ```json
 {
   "cmd": "workmux add grader-research -b research/agent-grader-patterns -P .workmux/prompts/agent-grader-research.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1532,7 +1532,7 @@ id: call_2FcDDbJWR4wPmaaSErrn3ESb
 ```json
 {
   "cmd": "workmux add --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -1588,7 +1588,7 @@ id: call_8Crjp1xeC7mY1X9z6lR43nb3
 ```json
 {
   "cmd": "workmux add research/agent-grader-patterns --base origin/main --name grader-research -b -P .workmux/prompts/agent-grader-research.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1606,13 +1606,13 @@ Original token count: 48
 Output:
 ✓ Successfully created worktree and tmux window for 'research/agent-grader-patterns'
   Base: origin/main
-  Worktree: /home/entity/projects/EntityProcess/agentv__worktrees/grader-research
+  Worktree: /home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research
 
 ```
 
 > AGENT
 
-The worker worktree was created at `/home/entity/projects/EntityProcess/agentv__worktrees/grader-research` from `origin/main`. I’m checking its pane now to confirm Codex accepted the prompt rather than sitting idle.
+The worker worktree was created at `/home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research` from `origin/main`. I’m checking its pane now to confirm Codex accepted the prompt rather than sitting idle.
 
 > TOOL
 
@@ -1621,7 +1621,7 @@ id: call_uFv8IU1SCu5OlEP6bSFao5Ue
 ```json
 {
   "cmd": "workmux status grader-research",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1633,7 +1633,7 @@ id: call_cr0I7Sj5hQbUQY4eh0ZS8BIp
 ```json
 {
   "cmd": "workmux capture grader-research",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1645,8 +1645,8 @@ tool_use exec_command
 id: call_9XqncHi1ibTiM7Cri4q0ShtS
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/grader-research status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1704,7 +1704,7 @@ id: call_C9K5HMTOXxOM9wVaHHpEmTnp
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -1716,7 +1716,7 @@ id: call_eorzTVU7xJaMbGlhDEJ5kji5
 ```json
 {
   "cmd": "find . -path '*dispatch-codex-prompt.sh' -o -path '*/scripts/dispatch-codex-prompt.sh'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1728,7 +1728,7 @@ id: call_aXLsR7V9Cc1gOtIDBD3MZ7ek
 ```json
 {
   "cmd": "tmux list-windows -a -F '#{session_name}:#{window_index}:#{window_name}:#{pane_current_path}:#{pane_current_command}' | rg 'grader-research|agent-grader|research/agent-grader' || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1773,7 +1773,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 27
 Output:
-agentv:3: grader-research:/home/entity/projects/EntityProcess/agentv__worktrees/grader-research:codex
+agentv:3: grader-research:/home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research:codex
 
 ```
 
@@ -1801,7 +1801,7 @@ id: call_asNLD9QkWgqrvUNoVAk368XY
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:3 -p -S -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -1813,7 +1813,7 @@ id: call_GhPJU8J9mPDN8Zulf0n8jOIr
 ```json
 {
   "cmd": "ls scripts | rg 'dispatch-.*prompt' || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1856,7 +1856,7 @@ Output:
 • You have 3 usage limit resets available. Run /usage to use one.
 
 
-› You are a research-only worker in /home/entity/projects/EntityProcess/agentv.
+› You are a research-only worker in /home/<USER>/projects/EntityProcess/agentv.
 
   Goal: research agent grader patterns for AgentV. Do not edit tracked files. Do not run bun install, builds, tests, or evals. Inspect source, docs, and git metadata only.
 
@@ -1866,7 +1866,7 @@ Output:
   - If you identify concrete AgentV follow-up work, report it to the coordinator; do not create Beads yourself unless explicitly instructed later.
 
   Research questions:
-  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/entity/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
+  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/<USER>/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
 
 > TOOL
 
@@ -1892,7 +1892,7 @@ id: call_cOR7kFDThHE7Lf3MPiqc39GN
 ```json
 {
   "cmd": "rm -rf /tmp/agent-evals && git clone --depth=1 https://github.com/vercel-labs/agent-evals.git /tmp/agent-evals && git -C /tmp/agent-evals rev-parse HEAD && git -C /tmp/agent-evals status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1904,8 +1904,8 @@ tool_use exec_command
 id: call_AaJvb8huNJuddKyBa9Syuc63
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/projects/promptfoo/promptfoo/src/assertions/agentRubric.ts && sed -n '1,260p' /home/entity/projects/promptfoo/promptfoo/src/assertions/llmRubric.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/projects/promptfoo/promptfoo/src/assertions/agentRubric.ts && sed -n '1,260p' /home/<USER>/projects/promptfoo/promptfoo/src/assertions/llmRubric.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -1916,8 +1916,8 @@ tool_use exec_command
 id: call_11Qe5UMvQJHUoPZS4YXUfqRw
 ```json
 {
-  "cmd": "rg -n \"agent-rubric|llm-rubric|MODEL_GRADED_ASSERTION_TYPES|matchesLlmRubric|matchesAgentRubric|agentRubric|rubricPrompt\" /home/entity/projects/promptfoo/promptfoo/src /home/entity/projects/promptfoo/promptfoo/test /home/entity/projects/promptfoo/promptfoo/site/docs 2>/dev/null | head -280",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"agent-rubric|llm-rubric|MODEL_GRADED_ASSERTION_TYPES|matchesLlmRubric|matchesAgentRubric|agentRubric|rubricPrompt\" /home/<USER>/projects/promptfoo/promptfoo/src /home/<USER>/projects/promptfoo/promptfoo/test /home/<USER>/projects/promptfoo/promptfoo/site/docs 2>/dev/null | head -280",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -1928,8 +1928,8 @@ tool_use exec_command
 id: call_G74ahiWmqXcPqtAmB7Cql9Mw
 ```json
 {
-  "cmd": "rg -n \"interface GradingResult|type GradingResult|ProviderResponse|ApiProvider|AssertionParams|agent-rubric|llm-rubric\" /home/entity/projects/promptfoo/promptfoo/src/types/index.ts /home/entity/projects/promptfoo/promptfoo/src/types/providers.ts /home/entity/projects/promptfoo/promptfoo/src/types/shared.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"interface GradingResult|type GradingResult|ProviderResponse|ApiProvider|AssertionParams|agent-rubric|llm-rubric\" /home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts /home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts /home/<USER>/projects/promptfoo/promptfoo/src/types/shared.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2036,39 +2036,39 @@ Wall time: 0.2750 seconds
 Process exited with code 0
 Original token count: 9441
 Output:
-/home/entity/projects/promptfoo/promptfoo/test/evaluate.jsonl.test.ts:299:              type: 'llm-rubric',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:7:import { matchesLlmRubric } from '../../src/matchers/llmGrading';
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:62:describe('matchesLlmRubric', () => {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:92:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:101:    await expect(matchesLlmRubric(expected, output, options)).resolves.toEqual(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:122:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:131:    await expect(matchesLlmRubric(expected, output, options)).resolves.toEqual(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:159:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:160:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:178:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:179:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:200:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:201:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:221:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:222:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:244:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:245:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:270:    const result = await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:274:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:305:          label: 'llm-rubric',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:325:    const result = await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:329:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:361:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:365:        rubricPrompt: JSON.stringify([
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:405:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:409:        rubricPrompt: [
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:452:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:456:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:494:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:498:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:533:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:537:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:574:    await […]
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluate.jsonl.test.ts:299:              type: 'llm-rubric',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:7:import { matchesLlmRubric } from '../../src/matchers/llmGrading';
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:62:describe('matchesLlmRubric', () => {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:92:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:101:    await expect(matchesLlmRubric(expected, output, options)).resolves.toEqual(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:122:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:131:    await expect(matchesLlmRubric(expected, output, options)).resolves.toEqual(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:159:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:160:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:178:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:179:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:200:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:201:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:221:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:222:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:244:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:245:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:270:    const result = await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:274:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:305:          label: 'llm-rubric',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:325:    const result = await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:329:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:361:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:365:        rubricPrompt: JSON.stringify([
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:405:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:409:        rubricPrompt: [
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:452:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:456:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:494:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:498:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:533:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:537:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:574:    await […]
 
 > TOOL
 
@@ -2080,48 +2080,48 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1303
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:3:import type { MinimalApiProvider } from '../contracts/prompts';
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:8:  ProviderResponse,
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:24:  ProviderResponse,
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:30:export type ProviderFunction = ApiProvider['callApi'];
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:35:  | ApiProvider
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:38:export type ProvidersConfig = ProviderId | ProviderFunction | ApiProvider | ProviderConfig[];
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:50:export type ProviderTypeMap = Partial<Record<ProviderType, string | ProviderOptions | ApiProvider>>;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:56:  providerResponse?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:79:  originalProvider?: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:116:export interface ApiProvider extends MinimalApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:135:export interface ApiEmbeddingProvider extends ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:139:export interface ApiSimilarityProvider extends ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:143:export interface ApiClassificationProvider extends ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:147:export interface ApiModerationProvider extends ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:158:  ): Promise<ProviderResponse>;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:162:export function isApiProvider(provider: any): provider is ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:190:  providerResponse: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:191:  unalignedProviderResult?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:192:  redteamProviderResult?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:200:  embeddingProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:201:  gradingJsonProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:202:  gradingProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:203:  llmRubricProvider?: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:204:  moderationProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:205:  suggestionsProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:206:  synthesizeProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:207:  webSearchProvider?: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:8:import { ApiProviderSchema, ProviderOptionsSchema, ProvidersSchema } from '../validators/providers';
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:32:  ApiProvider,
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:36:  ProviderResponse,
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:47:    provider: ApiProvider,
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:210:  provider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:389:  response?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:421:  response?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:515:export interface GradingResult {
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:590:  'agent-rubric',
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:626:  'llm-rubric',
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:720:  // Some assertions (similarity, llm-rubric, agent-rubric) require a grading provider
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:751:  provider: ApiProvider | undefined;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:752:  providerResponse: ProviderResponse | undefined;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:755:  metadata?: ProviderResponse['metadata'];
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:767:export interface AssertionParams […]
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:3:import type { MinimalApiProvider } from '../contracts/prompts';
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:8:  ProviderResponse,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:24:  ProviderResponse,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:30:export type ProviderFunction = ApiProvider['callApi'];
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:35:  | ApiProvider
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:38:export type ProvidersConfig = ProviderId | ProviderFunction | ApiProvider | ProviderConfig[];
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:50:export type ProviderTypeMap = Partial<Record<ProviderType, string | ProviderOptions | ApiProvider>>;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:56:  providerResponse?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:79:  originalProvider?: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:116:export interface ApiProvider extends MinimalApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:135:export interface ApiEmbeddingProvider extends ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:139:export interface ApiSimilarityProvider extends ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:143:export interface ApiClassificationProvider extends ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:147:export interface ApiModerationProvider extends ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:158:  ): Promise<ProviderResponse>;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:162:export function isApiProvider(provider: any): provider is ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:190:  providerResponse: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:191:  unalignedProviderResult?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:192:  redteamProviderResult?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:200:  embeddingProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:201:  gradingJsonProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:202:  gradingProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:203:  llmRubricProvider?: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:204:  moderationProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:205:  suggestionsProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:206:  synthesizeProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:207:  webSearchProvider?: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:8:import { ApiProviderSchema, ProviderOptionsSchema, ProvidersSchema } from '../validators/providers';
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:32:  ApiProvider,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:36:  ProviderResponse,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:47:    provider: ApiProvider,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:210:  provider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:389:  response?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:421:  response?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:515:export interface GradingResult {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:590:  'agent-rubric',
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:626:  'llm-rubric',
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:720:  // Some assertions (similarity, llm-rubric, agent-rubric) require a grading provider
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:751:  provider: ApiProvider | undefined;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:752:  providerResponse: ProviderResponse | undefined;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:755:  metadata?: ProviderResponse['metadata'];
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:767:export interface AssertionParams […]
 
 > AGENT
 
@@ -2134,7 +2134,7 @@ id: call_SnRkVtOQ9I1Smct0feuOo9uv
 ```json
 {
   "cmd": "rm -rf /tmp/agent-eval && git clone --depth=1 https://github.com/vercel-labs/agent-eval.git /tmp/agent-eval && git -C /tmp/agent-eval rev-parse HEAD && git -C /tmp/agent-eval status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2146,8 +2146,8 @@ tool_use exec_command
 id: call_v3P8RioCdSBCmfmvpLf1A5Jg
 ```json
 {
-  "cmd": "sed -n '500,660p' /home/entity/projects/promptfoo/promptfoo/src/types/index.ts && sed -n '700,810p' /home/entity/projects/promptfoo/promptfoo/src/types/index.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '500,660p' /home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts && sed -n '700,810p' /home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2158,8 +2158,8 @@ tool_use exec_command
 id: call_vWNQRO4isEXXuwJN72hKtl5P
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/projects/promptfoo/promptfoo/src/matchers/agent.ts && sed -n '1,360p' /home/entity/projects/promptfoo/promptfoo/src/matchers/llmGrading.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/agent.ts && sed -n '1,360p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/llmGrading.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 40000
 }
 ```
@@ -2170,8 +2170,8 @@ tool_use exec_command
 id: call_jyZsmSJXDftGWemBKANe1NmL
 ```json
 {
-  "cmd": "sed -n '1,180p' /home/entity/projects/promptfoo/promptfoo/test/matchers/agent-rubric.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,180p' /home/<USER>/projects/promptfoo/promptfoo/test/matchers/agent-rubric.test.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 22000
 }
 ```
@@ -2413,8 +2413,8 @@ tool_use exec_command
 id: call_IZQOsd1MuKVdKePK5dyuEw1q
 ```json
 {
-  "cmd": "rg -n \"function runJsonGradingPrompt|export async function runJsonGradingPrompt|parse|threshold|graderFail|metadata|callProviderWithContext\" /home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts /home/entity/projects/promptfoo/promptfoo/src/matchers/shared.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"function runJsonGradingPrompt|export async function runJsonGradingPrompt|parse|threshold|graderFail|metadata|callProviderWithContext\" /home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts /home/<USER>/projects/promptfoo/promptfoo/src/matchers/shared.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 24000
 }
 ```
@@ -2425,8 +2425,8 @@ tool_use exec_command
 id: call_jEiQtbzM4MszaW4xn7CEJjJP
 ```json
 {
-  "cmd": "sed -n '1,340p' /home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts && sed -n '1,180p' /home/entity/projects/promptfoo/promptfoo/src/matchers/shared.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,340p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts && sed -n '1,180p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/shared.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 40000
 }
 ```
@@ -2437,8 +2437,8 @@ tool_use exec_command
 id: call_RGSb1o2rVwevA2RtDLqVtULb
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/projects/promptfoo/promptfoo/src/providers/agentic-utils.ts && rg -n \"isAgenticProvider|agentic|codex-sdk|claude-agent-sdk|opencode\" /home/entity/projects/promptfoo/promptfoo/src/providers -g'*.ts' | head -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/projects/promptfoo/promptfoo/src/providers/agentic-utils.ts && rg -n \"isAgenticProvider|agentic|codex-sdk|claude-agent-sdk|opencode\" /home/<USER>/projects/promptfoo/promptfoo/src/providers -g'*.ts' | head -120",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 24000
 }
 ```
@@ -2450,7 +2450,7 @@ id: call_IcHSC4y2oSmrFQfcLutdpuzR
 ```json
 {
   "cmd": "rg -n \"agentic|grader|judge|llm|eval|score|verify|structured|json|generateObject|zod|schema|pass|reason|rubric\" /tmp/agent-eval | head -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2465,32 +2465,32 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1445
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:12:import { parseFileUrl } from '../util/functions/loadFunction';
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:16:import { callProviderWithContext, getAndCheckProvider } from './providers';
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:17:import { graderFail, normalizeMatcherTokenUsage } from './shared';
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:80:    const { filePath, functionName } = parseFileUrl(renderedFilePath);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:89:      // would fail to parse before rendering.
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:146:    const parsed = JSON.parse(rubricPrompt, (_k, v) =>
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:149:    return JSON.stringify(parsed);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:220:    const [metadata, rawPayload] = trimmed.split(',', 2);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:221:    if (!rawPayload || !metadata.toLowerCase().includes(';base64')) {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:226:    if (!metadata.toLowerCase().startsWith('data:image/')) {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:230:    normalizedMimeType = metadata.slice('data:'.length).split(';', 1)[0].trim();
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:667:  let parsed: ChatMessageLike[] | undefined;
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:671:      parsed = yaml.load(renderedPrompt) as ChatMessageLike[] | undefined;
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:679:      parsed = JSON.parse(renderedPrompt);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:684:  if (isChatMessageArray(parsed)) {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:685:    const messages = parsed.map((message) => ({ ...message }));
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:737:function parseJsonGradingResponse(
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:740:): { parsed?: Partial<GradingResult>; failure?: Omit<GradingResult, 'assertion'> } {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:741:  const failWithTokens = (reason: string) => graderFail(reason, resp.tokenUsage);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:769:  const parsed = jsonObjects[0];
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:770:  if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:773:        `${label} produced malformed response. We were not able to parse the response as JSON. Output: ${JSON.stringify(resp.output)}`,
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:778:  return { parsed: parsed as Partial<GradingResult> };
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:781:export async function runJsonGradingPrompt({
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:819:  const resp = await callProviderWithContext(
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:830:    return graderFail(resp.error || 'No output', […]
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:12:import { parseFileUrl } from '../util/functions/loadFunction';
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:16:import { callProviderWithContext, getAndCheckProvider } from './providers';
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:17:import { graderFail, normalizeMatcherTokenUsage } from './shared';
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:80:    const { filePath, functionName } = parseFileUrl(renderedFilePath);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:89:      // would fail to parse before rendering.
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:146:    const parsed = JSON.parse(rubricPrompt, (_k, v) =>
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:149:    return JSON.stringify(parsed);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:220:    const [metadata, rawPayload] = trimmed.split(',', 2);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:221:    if (!rawPayload || !metadata.toLowerCase().includes(';base64')) {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:226:    if (!metadata.toLowerCase().startsWith('data:image/')) {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:230:    normalizedMimeType = metadata.slice('data:'.length).split(';', 1)[0].trim();
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:667:  let parsed: ChatMessageLike[] | undefined;
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:671:      parsed = yaml.load(renderedPrompt) as ChatMessageLike[] | undefined;
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:679:      parsed = JSON.parse(renderedPrompt);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:684:  if (isChatMessageArray(parsed)) {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:685:    const messages = parsed.map((message) => ({ ...message }));
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:737:function parseJsonGradingResponse(
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:740:): { parsed?: Partial<GradingResult>; failure?: Omit<GradingResult, 'assertion'> } {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:741:  const failWithTokens = (reason: string) => graderFail(reason, resp.tokenUsage);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:769:  const parsed = jsonObjects[0];
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:770:  if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:773:        `${label} produced malformed response. We were not able to parse the response as JSON. Output: ${JSON.stringify(resp.output)}`,
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:778:  return { parsed: parsed as Partial<GradingResult> };
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:781:export async function runJsonGradingPrompt({
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:819:  const resp = await callProviderWithContext(
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:830:    return graderFail(resp.error || 'No output', […]
 
 > TOOL
 
@@ -2681,7 +2681,7 @@ id: call_YJG9NTZgCNHeIpbbPs8sN88U
 ```json
 {
   "cmd": "rg --files /tmp/agent-eval/packages/agent-eval/src | rg 'judge|eval|matcher|validation|vitest|agent|sandbox|transcript|criterion|score'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -2693,7 +2693,7 @@ id: call_ZUd6aJ9RXbW1dhOlBrwgMlMQ
 ```json
 {
   "cmd": "rg -n \"judge|toSatisfyCriterion|toScoreAtLeast|environment|transcript|criterion|score|same agent|validation\" /tmp/agent-eval/packages/agent-eval/src /tmp/agent-eval/packages/agent-eval/test /tmp/agent-eval/README.md | head -300",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2705,7 +2705,7 @@ id: call_w3PbGG9DtNRwOsZMjz41TzU3
 ```json
 {
   "cmd": "sed -n '160,225p' /tmp/agent-eval/README.md && sed -n '288,304p' /tmp/agent-eval/README.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 16000
 }
 ```
@@ -2717,7 +2717,7 @@ id: call_lsDv2mwneRQHUdANN8frGprM
 ```json
 {
   "cmd": "find /tmp/agent-eval/packages/agent-eval/src -maxdepth 4 -type f | sort | sed -n '1,220p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -2935,7 +2935,7 @@ id: call_lq17v0mBSVBTh45HrLIULEkE
 ```json
 {
   "cmd": "sed -n '1,260p' /tmp/agent-eval/packages/agent-eval/src/lib/agents/eval-helper.mjs",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2947,7 +2947,7 @@ id: call_GiBu9c9dakU946GdvmymdHp9
 ```json
 {
   "cmd": "sed -n '1,320p' /tmp/agent-eval/packages/agent-eval/src/lib/agents/shared.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -2959,7 +2959,7 @@ id: call_qvL7YioDOsS063rcbrOFGRRf
 ```json
 {
   "cmd": "sed -n '80,180p' /tmp/agent-eval/packages/agent-eval/src/lib/types.ts && sed -n '40,100p' /tmp/agent-eval/packages/agent-eval/src/lib/config.ts && sed -n '180,250p' /tmp/agent-eval/packages/agent-eval/src/lib/fingerprint.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 26000
 }
 ```
@@ -2971,7 +2971,7 @@ id: call_0LuOKIDNiOwUDedYQqpDQdRp
 ```json
 {
   "cmd": "sed -n '300,425p' /tmp/agent-eval/packages/agent-eval/src/integration.test.ts && sed -n '1,260p' /tmp/agent-eval/packages/agent-eval/src/lib/agents/eval-helper.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -3167,8 +3167,8 @@ tool_use exec_command
 id: call_6wEMCitJ7miqJV6F7jHb49s3
 ```json
 {
-  "cmd": "sed -n '720,890p' /home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '720,890p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 22000
 }
 ```
@@ -3248,7 +3248,7 @@ id: call_8VLqO5lhiG0dRCoxIERFkQAu
 ```json
 {
   "cmd": "rg -n \"llm-rubric|g-eval|grader|GradingResult|defineScriptGrader|script grader|structured|json|assertion\" packages apps plugins examples docs CONCEPTS.md | head -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -3260,7 +3260,7 @@ id: call_FSHH8jEnaDzazbrtfZfeQHSg
 ```json
 {
   "cmd": "rg --files packages apps plugins examples docs | rg 'grader|assert|eval|schema|types|config|yaml' | head -220",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -3272,7 +3272,7 @@ id: call_RVH8Agn8CP7wM699QxELiPzO
 ```json
 {
   "cmd": "bd show av-l4pl --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -3284,7 +3284,7 @@ id: call_qyDri3whfEpKvhX5ivcBsCFw
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:3 -p -S -180",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -3521,7 +3521,7 @@ METADATA
   branch: main
   machine: entity-vps
   worker: codex-main
-  worktree: /home/entity/projects/EntityProcess/agentv
+  worktree: /home/<USER>/projects/EntityProcess/agentv
 
 
 ```
@@ -3551,7 +3551,7 @@ Output:
 • You have 3 usage limit resets available. Run /usage to use one.
 
 
-› You are a research-only worker in /home/entity/projects/EntityProcess/agentv.
+› You are a research-only worker in /home/<USER>/projects/EntityProcess/agentv.
 
   Goal: research agent grader patterns for AgentV. Do not edit tracked files. Do not run bun install, builds, tests, or evals. Inspect source, docs, and git metadata only.
 
@@ -3561,7 +3561,7 @@ Output:
   - If you identify concrete AgentV follow-up work, report it to the coordinator; do not create Beads yourself unless explicitly instructed later.
 
   Research questions:
-  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/entity/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
+  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/<USER>/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
 
 > AGENT
 
@@ -3574,7 +3574,7 @@ id: call_xJeXHdzosbO8hMrd4oM62baE
 ```json
 {
   "cmd": "rg -n \"type: llm-rubric|llm-rubric|g-eval|script|code-grader|defineScriptGrader|GraderResult|assertions\" packages/core/src packages/sdk/src apps/cli/src apps/web/src/content/docs/docs/v4.42.4/graders plugins/agentv-dev 2>/dev/null | head -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -3586,7 +3586,7 @@ id: call_zpzTrRztMjQ31lFSXrOmeUNZ
 ```json
 {
   "cmd": "rg --files packages/core/src packages/sdk/src apps/cli/src | rg 'grader|grading|assert|yaml|parser|types'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 22000
 }
 ```
@@ -3598,7 +3598,7 @@ id: call_u146uAGpQrLTXbE30FsWdHds
 ```json
 {
   "cmd": "sed -n '1,240p' packages/core/src/evaluation/graders/types.ts && sed -n '1,260p' packages/core/src/evaluation/graders/llm-grader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -3610,7 +3610,7 @@ id: call_XGjAHcMy9efqbE5HEB79rJpG
 ```json
 {
   "cmd": "sed -n '1,260p' packages/core/src/evaluation/loaders/grader-parser.ts && sed -n '1,220p' packages/core/src/evaluation/graders/code-grader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -3846,7 +3846,7 @@ id: call_ZIFhi5mOF01T041JaxR8RHDu
 ```json
 {
   "cmd": "rg -n \"DEFAULT_MAX_STEPS|agent|filesystem|tool|readFile|search|steps|agent mode|maxSteps|isAgentProvider|isAgent\" packages/core/src/evaluation/graders/llm-grader.ts | head -220",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 24000
 }
 ```
@@ -3858,7 +3858,7 @@ id: call_qj0QCrivyFhijQQqrbg4hVu8
 ```json
 {
   "cmd": "sed -n '240,620p' packages/core/src/evaluation/graders/llm-grader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 42000
 }
 ```
@@ -3870,7 +3870,7 @@ id: call_RZjQYqdEI6BuzdQ5VnP2Gme5
 ```json
 {
   "cmd": "sed -n '620,1040p' packages/core/src/evaluation/graders/llm-grader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 42000
 }
 ```
@@ -3882,7 +3882,7 @@ id: call_XThgzkaCEHaZyefrYvopG6xs
 ```json
 {
   "cmd": "rg -n \"agent-rubric|llm-rubric|unsupported|future scope|agent grader|maxSteps|max_steps|grader_target|graderTarget|llm-grader\" packages/core/test packages/core/src apps/web/src/content/docs/docs/v4.42.4 examples plugins/agentv-dev 2>/dev/null | head -300",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -4079,7 +4079,7 @@ id: call_RSTpwzEWiaieGsmbg7vpTx0o
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:3 -p -S -240",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -4110,7 +4110,7 @@ Output:
 • You have 3 usage limit resets available. Run /usage to use one.
 
 
-› You are a research-only worker in /home/entity/projects/EntityProcess/agentv.
+› You are a research-only worker in /home/<USER>/projects/EntityProcess/agentv.
 
   Goal: research agent grader patterns for AgentV. Do not edit tracked files. Do not run bun install, builds, tests, or evals. Inspect source, docs, and git metadata only.
 
@@ -4120,7 +4120,7 @@ Output:
   - If you identify concrete AgentV follow-up work, report it to the coordinator; do not create Beads yourself unless explicitly instructed later.
 
   Research questions:
-  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/entity/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
+  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/<USER>/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
 
 > AGENT
 
@@ -4137,7 +4137,7 @@ id: call_oKWhvUrdckcwddO3YQIF60W3
 ```json
 {
   "cmd": "tmux send-keys -t agentv:3 -l \"Repo name correction: GitHub search and direct clone show the public repo is vercel-labs/agent-eval (singular), not vercel-labs/agent-evals. Continue with https://github.com/vercel-labs/agent-eval and cite the checked commit/source paths. Keep report concise.\" && tmux send-keys -t agentv:3 Enter",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4166,8 +4166,8 @@ tool_use exec_command
 id: call_EM5fcMgSB2oLHVtabliHUpqv
 ```json
 {
-  "cmd": "bd update av-l4pl --append-notes \"Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript sentinels and Vitest matchers, builds a skeptical judge prompt, spawns the agent runner in the same sandbox, prefers verdict JSON file then runner output/stdout, and returns pass/score/reason; README documents pinned judge config. AgentV already has agent-backed llm-grader/llm-rubric paths in packages/core/src/evaluation/graders/llm-grader.ts (built-in agent mode for agentv provider, delegated agent provider mode, grader target mode), but parser/validator currently reject promptfoo agent-rubric as future scope. Pattern to copy: agent execution may inspect workspace/transcript, but final grader contract should remain structured JSON/EvaluationScore.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-l4pl --append-notes \"Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript sentinels and Vitest matchers, builds a skeptical judge prompt, spawns the agent runner in the same sandbox, prefers verdict JSON file then runner output/stdout, and returns pass/score/reason; README documents pinned judge config. AgentV already has agent-backed llm-grader/llm-rubric paths in packages/core/src/evaluation/graders/llm-grader.ts (built-in agent mode for agentv provider, delegated agent provider mode, grader target mode), but parser/validator currently reject promptfoo agent-rubric as future scope. Pattern to copy: agent execution may inspect workspace/transcript, but final grader contract should remain structured JSON/EvaluationScore.\" --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4180,7 +4180,7 @@ id: call_XtyvFp7WD5mzl8ZnmoqJzaTA
 ```json
 {
   "cmd": "bd create --title=\"docs: document agent-backed grader pattern\" --description=\"AgentV already supports agent-backed grading through the existing llm-grader/llm-rubric contract when the grader provider or explicit grader target resolves to an agent provider. Research against Promptfoo agent-rubric and Vercel agent-eval shows agent graders still finish by returning structured pass/score/reason-style JSON; the distinction is that the grader is allowed to inspect workspace/transcript evidence before producing the same structured result. Update public docs and AI-facing eval-authoring guidance so users understand how to configure this in AgentV without expecting a separate unstructured agent-grader result contract.\" --type=task --priority=2 --acceptance=\"Docs show an AgentV YAML example for an agent-backed llm-grader or llm-rubric using an explicit grader target/provider; docs state that agent graders must return the normal structured EvaluationScore JSON; docs explain workspace/transcript evidence and step-budget behavior; docs cite or paraphrase the Promptfoo/Vercel pattern without making their schemas authoritative; AI-facing guidance for eval authoring is updated if it currently implies only plain LLM graders exist.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4193,7 +4193,7 @@ id: call_rrCsoXIp6dYmGug2OIIGmOiU
 ```json
 {
   "cmd": "bd create --title=\"decision: handle Promptfoo agent-rubric compatibility\" --description=\"AgentV currently rejects Promptfoo assertion type agent-rubric as future scope in packages/core/src/evaluation/loaders/grader-parser.ts and validation paths. Promptfoo now has a concrete agent-rubric assertion that requires an agentic grading provider but reuses the same structured JSON grading result. Decide whether AgentV should accept agent-rubric as a compatibility alias/composition over existing llm-rubric/llm-grader agent-backed modes, or keep rejecting it and document the intentional divergence. Keep the decision aligned with AgentV's product boundary: peer frameworks are evidence, not schema authority, and existing primitives should be preferred when composition is enough.\" --type=decision --priority=2 --acceptance=\"Decision records whether agent-rubric should be supported as an alias/composition or remain unsupported; rationale references Promptfoo local commit 6bfc5a0/origin 85aaf62 and Vercel agent-eval commit 1d1f4f60; if accepted, follow-up implementation scope covers parser, validator, docs, examples, focused tests, and live dogfood; if rejected, error/help docs explain the supported AgentV pattern using llm-rubric/llm-grader with an agent grader target.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4215,7 +4215,7 @@ Output:
     "title": "research: compare agent grader patterns across Promptfoo and Vercel agent-evals",
     "description": "Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.",
     "acceptance_criteria": "Research cites local clone commits or official source URLs; conclusions distinguish Promptfoo behavior from Vercel agent-evals behavior; any actionable AgentV follow-ups are created as Beads with self-contained scope and acceptance criteria.",
-    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
+    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
 
 > TOOL
 
@@ -4234,7 +4234,7 @@ Output:
   "description": "AgentV already supports agent-backed grading through the existing llm-grader/llm-rubric contract when the grader provider or explicit grader target resolves to an agent provider. Research against Promptfoo agent-rubric and Vercel agent-eval shows agent graders still finish by returning structured pass/score/reason-style JSON; the distinction is that the grader is allowed to inspect workspace/transcript evidence before producing the same structured result. Update public docs and AI-facing eval-authoring guidance so users understand how to configure this in AgentV without expecting a separate unstructured agent-grader result contract.",
   "id": "av-jbi9",
   "issue_type": "task",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 2,
   "schema_version": 1,
   "status": "open",
@@ -4261,7 +4261,7 @@ Output:
   "description": "AgentV currently rejects Promptfoo assertion type agent-rubric as future scope in packages/core/src/evaluation/loaders/grader-parser.ts and validation paths. Promptfoo now has a concrete agent-rubric assertion that requires an agentic grading provider but reuses the same structured JSON grading result. Decide whether AgentV should accept agent-rubric as a compatibility alias/composition over existing llm-rubric/llm-grader agent-backed modes, or keep rejecting it and document the intentional divergence. Keep the decision aligned with AgentV's product boundary: peer frameworks are evidence, not schema authority, and existing primitives should be preferred when composition is enough.",
   "id": "av-aw6m",
   "issue_type": "decision",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 2,
   "schema_version": 1,
   "status": "open",
@@ -4282,7 +4282,7 @@ id: call_dBMtxP2TMgfBLxqhyVRpwrsV
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:3 -p -S -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -4306,7 +4306,7 @@ Output:
   - If you identify concrete AgentV follow-up work, report it to the coordinator; do not create Beads yourself unless explicitly instructed later.
 
   Research questions:
-  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/entity/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. Explain how agent-rubric differs from llm-
+  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/<USER>/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. Explain how agent-rubric differs from llm-
   rubric and how it returns structured grading results.
   2. Vercel Labs agent-evals: Inspect the public vercel-labs/agent-evals repo. If no local clone exists, use GitHub/source download or DeepWiki, then verify exact code/source URLs. Find the "agentic LLM grader" implementation and explain how it works,
   what it returns, and how structured output is enforced or normalized.
@@ -4323,7 +4323,7 @@ id: call_hr10kOIUFcvp5zMkxtl0pbl8
 ```json
 {
   "cmd": "sleep 20; tmux capture-pane -t agentv:3 -p -S -220",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4371,7 +4371,7 @@ id: call_wor5UgzVdF32GV3TL6hQSL8L
 ```json
 {
   "cmd": "sleep 30; tmux capture-pane -t agentv:3 -p -S -240",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4422,7 +4422,7 @@ id: call_XOvBWEXRVLuBYOn7mLbZ9Erx
 ```json
 {
   "cmd": "tmux send-keys -t agentv:3 C-c && sleep 1 && tmux send-keys -t agentv:3 -l \"Stop further source inspection and produce the concise final research report now from the evidence already gathered. Include Promptfoo yes/no, Vercel singular repo correction, structured JSON return mechanics, AgentV implications, and proposed Beads av-jbi9 and av-aw6m already created by coordinator.\" && tmux send-keys -t agentv:3 Enter",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -4448,7 +4448,7 @@ id: call_yDFK4uBOEUzQnXxyaT4jCok7
 ```json
 {
   "cmd": "sleep 10; tmux capture-pane -t agentv:3 -p -S -160",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4507,7 +4507,7 @@ id: call_Do3Qnu5AzTwKQNgfv4RnAIKG
 ```json
 {
   "cmd": "tmux send-keys -t agentv:3 Escape && sleep 2 && tmux capture-pane -t agentv:3 -p -S -80",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -4564,7 +4564,7 @@ id: call_6MYCc6q1zx3B1vxW9wEjtoh8
 ```json
 {
   "cmd": "tmux send-keys -t agentv:3 Enter && sleep 20 && tmux capture-pane -t agentv:3 -p -S -180",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4621,7 +4621,7 @@ id: call_0sBmDoHu7c2bgx3ZBdUbQz9b
 ```json
 {
   "cmd": "sleep 12; tmux capture-pane -t agentv:3 -p -S -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4681,7 +4681,7 @@ id: call_YpKgZSXg0O43ZmdIuhubZfpR
 ```json
 {
   "cmd": "bd close av-l4pl --reason=\"Research complete. Promptfoo agent-rubric and Vercel agent-eval agentic judge patterns were inspected with source commits recorded; follow-up Beads av-jbi9 and av-aw6m were created for docs and compatibility decision work.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4694,7 +4694,7 @@ id: call_OKEQucdVpOB04JBz5pJSsh0T
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4706,7 +4706,7 @@ id: call_nk1qG2uYqMuVboZXFfuiAtE0
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4717,8 +4717,8 @@ tool_use exec_command
 id: call_xWDlZ4s0dSEzp4k7cw9BJ11L
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/grader-research status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4730,7 +4730,7 @@ id: call_Tv9IX3wfTav1QqnUs4oZpIaX
 ```json
 {
   "cmd": "bd show av-jbi9 --long && bd show av-aw6m --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -4751,7 +4751,7 @@ Output:
     "title": "research: compare agent grader patterns across Promptfoo and Vercel agent-evals",
     "description": "Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.",
     "acceptance_criteria": "Research cites local clone commits or official source URLs; conclusions distinguish Promptfoo behavior from Vercel agent-evals behavior; any actionable AgentV follow-ups are created as Beads with self-contained scope and acceptance criteria.",
-    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
+    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
 
 > TOOL
 
@@ -4833,7 +4833,7 @@ id: call_TTcqZR6p4b5yDQsiRks80PGj
 ```json
 {
   "cmd": "workmux remove --help || workmux rm --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -4875,7 +4875,7 @@ id: call_D4J0ugSEf6mFfMMWnMhFKGRw
 ```json
 {
   "cmd": "workmux remove grader-research -f",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -4906,7 +4906,7 @@ id: call_gIJCsIK7aE2D2RALjkpRQdsr
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4918,7 +4918,7 @@ id: call_0uOnRMvolIrOUh8FUSLl9wCC
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4930,7 +4930,7 @@ id: call_kD71QWSrJ0jnMp4iZ7fENY1y
 ```json
 {
   "cmd": "bd list --status=in_progress --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -4942,7 +4942,7 @@ id: call_ua4EZjTJBUwAjCp2H2kHouJN
 ```json
 {
   "cmd": "bd show av-l4pl --long && bd show av-jbi9 --long && bd show av-aw6m --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -4998,7 +4998,7 @@ Total output lines: 353
     "title": "Make Dashboard test rows open full-page case detail and debug WTG quality failure",
     "description": "User found the WTG dogfood case-detail screenshot worse than desired because clicking a test row leaves a row-detail style view instead of making the test case the full page. Also investigate why the WTG AI prompts experiment dogfood dropped to 0% quality after updating to latest AgentV, distinguishing UI/AgentV regressions from WTG eval or target changes.",
     "acceptance_criteria": "Clicking a test row in Dashboard automatically navigates into a full-page test case detail view instead of leaving the case as a secondary row-detail panel. The WTG quality failure is investigated from the run artifacts/transcripts with a clear root-cause summary and any necessary fixes scoped to the correct repo. Focused Dashboard validation and browser UAT are completed, with screenshot evidence published privately if screenshots are captured.",
-    "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.\nImplemented Dashboard result-row […]
+    "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.\nImplemented Dashboard result-row […]
 
 > TOOL
 
@@ -5019,7 +5019,7 @@ DESCRIPTION
 Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.
 
 NOTES
-Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text […]
+Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text […]
 
 > AGENT
 
@@ -5032,7 +5032,7 @@ id: call_5xCJQ32EIAzpTeQdZjTveLHK
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -5045,7 +5045,7 @@ id: call_3kLIT4nHlhyzXdXzA7wKOhiE
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -5058,7 +5058,7 @@ id: call_d0MCKeFb9k0YMklOtcJ5jMwT
 ```json
 {
   "cmd": "bd show av-l4pl --json && bd show av-jbi9 --json && bd show av-aw6m --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -5112,7 +5112,7 @@ Output:
     "title": "research: compare agent grader patterns across Promptfoo and Vercel agent-evals",
     "description": "Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.",
     "acceptance_criteria": "Research cites local clone commits or official source URLs; conclusions distinguish Promptfoo behavior from Vercel agent-evals behavior; any actionable AgentV follow-ups are created as Beads with self-contained scope and acceptance criteria.",
-    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
+    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
 
 > AGENT
 
@@ -5151,8 +5151,8 @@ tool_use exec_command
 id: call_v3MzYhdSRnBP5OvAqQkuTL2q
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-pov/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-pov/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5168,7 +5168,7 @@ Wall time: 0.0001 seconds
 Process exited with code 2
 Original token count: 39
 Output:
-sed: can't read /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-pov/SKILL.md: No such file or directory
+sed: can't read /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-pov/SKILL.md: No such file or directory
 
 ```
 
@@ -5182,8 +5182,8 @@ tool_use exec_command
 id: call_8i6I2Z9aJJUU2O8UjHYERWrk
 ```json
 {
-  "cmd": "find /home/entity/.codex/plugins/cache -path '*skills/ce-pov/SKILL.md' -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.codex/plugins/cache -path '*skills/ce-pov/SKILL.md' -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -5199,7 +5199,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 29
 Output:
-/home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-pov/SKILL.md
+/home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-pov/SKILL.md
 
 ```
 
@@ -5213,8 +5213,8 @@ tool_use exec_command
 id: call_CzZ4NLS3guGGLZKEiQHQFjxq
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-pov/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-pov/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5257,7 +5257,7 @@ id: call_wEvtdHpfwf4rR0BlUxMpPHvE
 ```json
 {
   "cmd": "rg -n \"agent-rubric|UNSUPPORTED_PROMPTFOO_ASSERTION_TYPES|llm-rubric|graderTargetProvider|isAgentProvider|evaluateWithDelegatedAgent\" packages/core/src apps/cli/src apps/web/src/content/docs",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -5269,8 +5269,8 @@ tool_use exec_command
 id: call_R6Ztmhd0izQk4AG0PQn0YbaC
 ```json
 {
-  "cmd": "find /home/entity/projects/promptfoo/promptfoo -maxdepth 2 \\( -name LICENSE -o -name package.json \\) -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/projects/promptfoo/promptfoo -maxdepth 2 \\( -name LICENSE -o -name package.json \\) -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -5283,7 +5283,7 @@ id: call_7bQyH3zXJHKrYqfNXEdujxnG
 ```json
 {
   "cmd": "find . -maxdepth 2 \\( -name LICENSE -o -name package.json \\) -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -5295,8 +5295,8 @@ tool_use exec_command
 id: call_V666THG9kyAM7qXkCEQSqO4o
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-pov/references/method.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-pov/references/method.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5348,10 +5348,10 @@ Wall time: 0.0001 seconds
 Process exited with code 0
 Original token count: 60
 Output:
-/home/entity/projects/promptfoo/promptfoo/code-scan-action/package.json
-/home/entity/projects/promptfoo/promptfoo/site/package.json
-/home/entity/projects/promptfoo/promptfoo/LICENSE
-/home/entity/projects/promptfoo/promptfoo/package.json
+/home/<USER>/projects/promptfoo/promptfoo/code-scan-action/package.json
+/home/<USER>/projects/promptfoo/promptfoo/site/package.json
+/home/<USER>/projects/promptfoo/promptfoo/LICENSE
+/home/<USER>/projects/promptfoo/promptfoo/package.json
 
 ```
 
@@ -5407,7 +5407,7 @@ id: call_m2ZosciLYiKealdCtMcVSbpw
 ```json
 {
   "cmd": "sed -n '1,80p' LICENSE",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -5420,7 +5420,7 @@ id: call_am4CflpiHLVbwx6hOq63HEzR
 ```json
 {
   "cmd": "sed -n '1,80p' LICENSE",
-  "workdir": "/home/entity/projects/promptfoo/promptfoo",
+  "workdir": "/home/<USER>/projects/promptfoo/promptfoo",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -5433,7 +5433,7 @@ id: call_C2SoENoH8DwTNFIW6X2dpyze
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -5446,7 +5446,7 @@ id: call_lM0yROdu6N0cMQH7f4FQVBwE
 ```json
 {
   "cmd": "bd show av-aw6m --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -5577,7 +5577,7 @@ Output:
     "status": "open",
     "priority": 2,
     "issue_type": "decision",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T12:28:54Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T12:28:54Z",
@@ -5600,7 +5600,7 @@ id: call_3eXAlh0KQpSi8VwyyKn6mHR4
 ```json
 {
   "cmd": "bd update av-aw6m --claim --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -5626,7 +5626,7 @@ Output:
     "priority": 2,
     "issue_type": "decision",
     "assignee": "Christopher Tso",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T12:28:54Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T12:39:30Z",
@@ -5646,8 +5646,8 @@ tool_use exec_command
 id: call_sNhL4COpkMEM3yYT0lpEVqAg
 ```json
 {
-  "cmd": "bd update av-aw6m --notes=\"Decision: support Promptfoo-compatible agent-rubric, but implement it as an AgentV-native alias/composition over existing llm-rubric/llm-grader agent-backed modes. Do not vendor or copy Promptfoo implementation code. Rationale: Promptfoo agent-rubric at local 6bfc5a0 / origin 85aaf62 uses an agentic provider but still normalizes through JSON grading result fields; Vercel agent-eval at 1d1f4f60 likewise uses an agentic judge that inspects workspace/transcript evidence and returns normalized pass/score/reason JSON. AgentV already has built-in/delegated/explicit-target agent grader paths in packages/core/src/evaluation/graders/llm-grader.ts, while parser/validator currently reject agent-rubric. The compatibility layer should parse and validate agent-rubric into AgentV's existing structured EvaluationScore path, preserving target/provider semantics and structured output.\" --design=\"Accept agent-rubric as a compatibility assertion type. Treat Promptfoo as reference evidence, not schema authority: map its user-facing concept into AgentV primitives instead of importing Promptfoo's matcher/provider code. Follow-up implementation must cover parser, validator/schema, docs/parity docs, examples, focused tests, and live provider dogfood because this touches grader execution behavior.\" --metadata machine=entity-vps --metadata worker=codex-main --metadata branch=main --metadata worktree=/home/entity/projects/EntityProcess/agentv --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-aw6m --notes=\"Decision: support Promptfoo-compatible agent-rubric, but implement it as an AgentV-native alias/composition over existing llm-rubric/llm-grader agent-backed modes. Do not vendor or copy Promptfoo implementation code. Rationale: Promptfoo agent-rubric at local 6bfc5a0 / origin 85aaf62 uses an agentic provider but still normalizes through JSON grading result fields; Vercel agent-eval at 1d1f4f60 likewise uses an agentic judge that inspects workspace/transcript evidence and returns normalized pass/score/reason JSON. AgentV already has built-in/delegated/explicit-target agent grader paths in packages/core/src/evaluation/graders/llm-grader.ts, while parser/validator currently reject agent-rubric. The compatibility layer should parse and validate agent-rubric into AgentV's existing structured EvaluationScore path, preserving target/provider semantics and structured output.\" --design=\"Accept agent-rubric as a compatibility assertion type. Treat Promptfoo as reference evidence, not schema authority: map its user-facing concept into AgentV primitives instead of importing Promptfoo's matcher/provider code. Follow-up implementation must cover parser, validator/schema, docs/parity docs, examples, focused tests, and live provider dogfood because this touches grader execution behavior.\" --metadata machine=entity-vps --metadata worker=codex-main --metadata branch=main --metadata worktree=/home/<USER>/projects/EntityProcess/agentv --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -5680,8 +5680,8 @@ tool_use exec_command
 id: call_skFfvyb50VeWwFSmYTVJcVjN
 ```json
 {
-  "cmd": "bd update av-aw6m --notes=\"Decision: support Promptfoo-compatible agent-rubric, but implement it as an AgentV-native alias/composition over existing llm-rubric/llm-grader agent-backed modes. Do not vendor or copy Promptfoo implementation code. Rationale: Promptfoo agent-rubric at local 6bfc5a0 / origin 85aaf62 uses an agentic provider but still normalizes through JSON grading result fields; Vercel agent-eval at 1d1f4f60 likewise uses an agentic judge that inspects workspace/transcript evidence and returns normalized pass/score/reason JSON. AgentV already has built-in/delegated/explicit-target agent grader paths in packages/core/src/evaluation/graders/llm-grader.ts, while parser/validator currently reject agent-rubric. The compatibility layer should parse and validate agent-rubric into AgentV's existing structured EvaluationScore path, preserving target/provider semantics and structured output.\" --design=\"Accept agent-rubric as a compatibility assertion type. Treat Promptfoo as reference evidence, not schema authority: map its user-facing concept into AgentV primitives instead of importing Promptfoo's matcher/provider code. Follow-up implementation must cover parser, validator/schema, docs/parity docs, examples, focused tests, and live provider dogfood because this touches grader execution behavior.\" --metadata '{\"machine\":\"entity-vps\",\"worker\":\"codex-main\",\"branch\":\"main\",\"worktree\":\"/home/entity/projects/EntityProcess/agentv\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-aw6m --notes=\"Decision: support Promptfoo-compatible agent-rubric, but implement it as an AgentV-native alias/composition over existing llm-rubric/llm-grader agent-backed modes. Do not vendor or copy Promptfoo implementation code. Rationale: Promptfoo agent-rubric at local 6bfc5a0 / origin 85aaf62 uses an agentic provider but still normalizes through JSON grading result fields; Vercel agent-eval at 1d1f4f60 likewise uses an agentic judge that inspects workspace/transcript evidence and returns normalized pass/score/reason JSON. AgentV already has built-in/delegated/explicit-target agent grader paths in packages/core/src/evaluation/graders/llm-grader.ts, while parser/validator currently reject agent-rubric. The compatibility layer should parse and validate agent-rubric into AgentV's existing structured EvaluationScore path, preserving target/provider semantics and structured output.\" --design=\"Accept agent-rubric as a compatibility assertion type. Treat Promptfoo as reference evidence, not schema authority: map its user-facing concept into AgentV primitives instead of importing Promptfoo's matcher/provider code. Follow-up implementation must cover parser, validator/schema, docs/parity docs, examples, focused tests, and live provider dogfood because this touches grader execution behavior.\" --metadata '{\"machine\":\"entity-vps\",\"worker\":\"codex-main\",\"branch\":\"main\",\"worktree\":\"/home/<USER>/projects/EntityProcess/agentv\"}' --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -5712,7 +5712,7 @@ id: call_voA297zZDWVaEXRqBT8VB7Pw
 ```json
 {
   "cmd": "bd create --title=\"feature: support Promptfoo agent-rubric compatibility\" --description=\"Support Promptfoo-compatible agent-rubric assertions in AgentV by mapping them onto existing AgentV llm-rubric/llm-grader agent-backed grading paths. The goal is compatibility and clearer authoring, not copying Promptfoo internals or adding a separate unstructured agent-grader result contract. Relevant current touchpoints: packages/core/src/evaluation/loaders/grader-parser.ts and packages/core/src/evaluation/validation/eval-validator.ts currently classify agent-rubric as unsupported; packages/core/src/evaluation/graders/llm-grader.ts already supports built-in, delegated, and explicit-target agent-backed grading while returning structured EvaluationScore results.\" --type=feature --priority=2 --acceptance=\"agent-rubric parses and validates as a supported assertion type; implementation maps to AgentV's existing structured llm-rubric/llm-grader result path instead of vendoring Promptfoo matcher/provider code; explicit grader target/provider semantics work for agent providers and fail clearly for non-agent provider configurations when the compatibility contract requires an agent; docs and promptfoo parity reference explain the mapping; focused parser/validator/grader tests cover supported and invalid cases; live provider dogfood is run and private evidence is published before review because this touches grader execution behavior.\" --design=\"Use Promptfoo and Vercel as reference evidence only. Preserve AgentV wire-format conventions and EvaluationScore output. Prefer a thin parser/validator compatibility mapping over a new core grader abstraction. Promptfoo source reference: local 6bfc5a0 / origin 85aaf62. Vercel agent-eval source reference: 1d1f4f60.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": […]
 
 > TOOL
@@ -5743,7 +5743,7 @@ id: call_goWQAnGBfrAdjSwsb9PjkJAZ
 ```json
 {
   "cmd": "bd close av-aw6m --reason=\"Decision complete: support Promptfoo-compatible agent-rubric as an AgentV-native alias/composition over existing agent-backed llm-rubric/llm-grader behavior. Do not vendor Promptfoo implementation code. Follow-up implementation is tracked by av-8pjk; docs work remains tracked by av-jbi9.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -5778,7 +5778,7 @@ id: call_4rY19YMdvdIeJQqGjz1gLxi0
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -5791,7 +5791,7 @@ id: call_A8E9stA59PUpxIhdFvpXT5U2
 ```json
 {
   "cmd": "bd show av-8pjk --json && bd show av-jbi9 --json && bd show av-aw6m --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 7000
 }
@@ -5859,8 +5859,8 @@ tool_use exec_command
 id: call_laeJuOr1w4IQWtlGzeP1wQf9
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-brainstorm/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-brainstorm/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -5901,7 +5901,7 @@ id: call_HGa94YRXXy508Qm7BP60aJhU
 ```json
 {
   "cmd": "sed -n '1,220p' STRATEGY.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -5914,7 +5914,7 @@ id: call_f8wiorupdg9dwvuWOnDarMVF
 ```json
 {
   "cmd": "sed -n '1,220p' ROADMAP.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -5927,7 +5927,7 @@ id: call_gCdzREUsJYKedCFac2y4T8yD
 ```json
 {
   "cmd": "sed -n '1,220p' .agents/product-boundary.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -5940,7 +5940,7 @@ id: call_q5b36o8rVyt8V4rrGd7ztT2d
 ```json
 {
   "cmd": "rg -n \"targets|providers|label|promptfoo|authoring|compat\" STRATEGY.md ROADMAP.md CONCEPTS.md docs apps/web/src/content/docs/docs/next/reference/promptfoo-parity.mdx packages/core/src/evaluation/types.ts | head -n 120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6079,7 +6079,7 @@ id: call_yh8YbMZY3MJcwwHfl5wlY8S3
 ```json
 {
   "cmd": "bd create --title=\"decision: Promptfoo-first authoring surface and target/provider naming\" --description=\"Evaluate whether AgentV should pivot from its current target/provider authoring boundary toward Promptfoo-compatible naming: top-level providers for systems under test, provider id as backend spec, label as display/stable comparison name, and AgentV differentiation concentrated in Dashboard, environment setup, artifacts, and agent-native workflows. This is broader than agent-rubric compatibility and may supersede current product-boundary guidance if accepted.\" --type=decision --priority=1 --acceptance=\"Decision compares at least three options: preserve AgentV targets with Promptfoo import compatibility, add Promptfoo-style providers as accepted authoring aliases while keeping AgentV internals stable, or pivot fully to Promptfoo-first semantics; rationale addresses migration cost, docs reuse, dashboard/artifact contracts, environment recipe ownership, compatibility with existing evals, and whether AgentV becomes a fork/derivative or a compatible product; outcome updates CONCEPTS/product-boundary/docs if accepted.\" --design=\"Initial brainstorm hypothesis: prefer Promptfoo-compatible authoring aliases over a hard semantic fork unless evidence shows current AgentV naming is blocking adoption. Do not rename internal artifact fields or result indexes casually because Dashboard/run-bundle consumers already use target identity. Treat Promptfoo docs/code as reference evidence; reuse docs only with license attribution and after deciding maintenance/trademark boundaries.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -6113,7 +6113,7 @@ id: call_2ZdfZMMP61jSt1RmbKNLSOxo
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -6501,7 +6501,7 @@ id: call_aw8FB80msk2D3YT6AFH4NxMb
 ```json
 {
   "cmd": "nl -ba src/matchers/agent.ts | sed -n '1,220p'",
-  "workdir": "/home/entity/projects/promptfoo/promptfoo",
+  "workdir": "/home/<USER>/projects/promptfoo/promptfoo",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -6514,7 +6514,7 @@ id: call_IlXDH8gKo50xHv5sQsdtPhcD
 ```json
 {
   "cmd": "nl -ba src/matchers/rubric.ts | sed -n '1,260p'",
-  "workdir": "/home/entity/projects/promptfoo/promptfoo",
+  "workdir": "/home/<USER>/projects/promptfoo/promptfoo",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -6527,7 +6527,7 @@ id: call_mSqPkibvGl4oJn81xGq3gc4v
 ```json
 {
   "cmd": "rg -n \"DEFAULT_AGENT_GRADING_PROMPT|runJsonGradingPrompt|graderFail|extractJson|JSON\" src/matchers src/assertions src/util src/providers | head -n 120",
-  "workdir": "/home/entity/projects/promptfoo/promptfoo",
+  "workdir": "/home/<USER>/projects/promptfoo/promptfoo",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6681,7 +6681,7 @@ id: call_cKc2AzEN6zQe8FJiLVKFfdbI
 ```json
 {
   "cmd": "nl -ba src/matchers/rubric.ts | sed -n '660,880p' && nl -ba src/prompts/grading.ts | sed -n '1,220p'",
-  "workdir": "/home/entity/projects/promptfoo/promptfoo",
+  "workdir": "/home/<USER>/projects/promptfoo/promptfoo",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -6746,10 +6746,10 @@ Promptfoo enforces it mostly by **prompting + post-parse failure**, not by a sep
 For `agent-rubric`, Promptfoo does this:
 
 1. `matchesAgentRubric()` requires the grading provider to be agentic.
-   See `/home/entity/projects/promptfoo/promptfoo/src/matchers/agent.ts:30`.
+   See `/home/<USER>/projects/promptfoo/promptfoo/src/matchers/agent.ts:30`.
 
 2. It calls the shared `runJsonGradingPrompt()` path.
-   See `/home/entity/projects/promptfoo/promptfoo/src/matchers/agent.ts:42`.
+   See `/home/<USER>/projects/promptfoo/promptfoo/src/matchers/agent.ts:42`.
 
 3. The default agent grading prompt tells the agent to respond with JSON:
 
@@ -6758,20 +6758,20 @@ Respond with a JSON object with this structure:
 {reason: string, pass: boolean, score: number}
 ```
 
-Source: `/home/entity/projects/promptfoo/promptfoo/src/prompts/grading.ts:32`.
+Source: `/home/<USER>/projects/promptfoo/promptfoo/src/prompts/grading.ts:32`.
 
 4. After the provider returns, Promptfoo parses the response with `parseJsonGradingResponse()`.
    If output is a string, it tries to extract JSON objects from the string. If output is already an object, it uses it directly.
-   Source: `/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:737`.
+   Source: `/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:737`.
 
 5. If it cannot extract/parse JSON, it returns a grader failure:
-   `/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:747`.
+   `/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:747`.
 
 6. If JSON exists, it normalizes loose values:
    - `pass` can be boolean-ish text
    - `score` can be numeric text
    - missing `reason` gets a fallback
-   Source: `/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:837`.
+   Source: `/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:837`.
 
 So Promptfoo’s contract is fairly forgiving:
 
@@ -6838,7 +6838,7 @@ id: call_pKHux6Xr01IM5AmHiD3rUDCK
 ```json
 {
   "cmd": "git fetch origin",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 3000
 }
@@ -6851,7 +6851,7 @@ id: call_IDJHvHvhcXGo5W2S42J9ygZa
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -6864,7 +6864,7 @@ id: call_UalaHYPAgrJFGL0QtgfFnMt9
 ```json
 {
   "cmd": "sed -n '1,240p' .agents/conventions.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6877,7 +6877,7 @@ id: call_HqRfHRIVtXXigVnZGAWcFl6D
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/verification.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -6890,7 +6890,7 @@ id: call_zz5NIxa4xepebY1wlPkURo0Y
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -7026,8 +7026,8 @@ tool_use exec_command
 id: call_ZeNLhej1Fbi5Hox44wGoyyZU
 ```json
 {
-  "cmd": "find /home/entity/.codex/plugins/cache -path '*skills/ce-work/SKILL.md' -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.codex/plugins/cache -path '*skills/ce-work/SKILL.md' -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -7039,8 +7039,8 @@ tool_use exec_command
 id: call_jpqF16RIqSb6faJNJSUletpA
 ```json
 {
-  "cmd": "find /home/entity/.codex/plugins/cache -path '*skills/ce-commit-push-pr/SKILL.md' -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.codex/plugins/cache -path '*skills/ce-commit-push-pr/SKILL.md' -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -7053,7 +7053,7 @@ id: call_BC9hUvVEEBj4p67C6EmrNyjP
 ```json
 {
   "cmd": "bd show av-8pjk --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -7069,7 +7069,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 29
 Output:
-/home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-work/SKILL.md
+/home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-work/SKILL.md
 
 ```
 
@@ -7083,7 +7083,7 @@ Wall time: 0.0001 seconds
 Process exited with code 0
 Original token count: 31
 Output:
-/home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-commit-push-pr/SKILL.md
+/home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-commit-push-pr/SKILL.md
 
 ```
 
@@ -7115,8 +7115,8 @@ tool_use exec_command
 id: call_eNpSPFou8JV6RhSEGPdYNNjl
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-work/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-work/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -7128,8 +7128,8 @@ tool_use exec_command
 id: call_sUPH76Ak2dznfc4ZnXdHJnns
 ```json
 {
-  "cmd": "sed -n '1,300p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-commit-push-pr/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,300p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-commit-push-pr/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -7203,8 +7203,8 @@ tool_use exec_command
 id: call_Mk77LE99GyMzeoCBX99awR8Q
 ```json
 {
-  "cmd": "find /home/entity/.codex/plugins/cache -path '*skills/ce-worktree/SKILL.md' -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.codex/plugins/cache -path '*skills/ce-worktree/SKILL.md' -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -7216,8 +7216,8 @@ tool_use exec_command
 id: call_nQfshvN8QiOZBmYFFYgYzl06
 ```json
 {
-  "cmd": "bd update av-8pjk --claim --metadata '{\"machine\":\"entity-vps\",\"worker\":\"codex-main\",\"branch\":\"feat/av-8pjk-agent-rubric\",\"worktree\":\"/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-8pjk --claim --metadata '{\"machine\":\"entity-vps\",\"worker\":\"codex-main\",\"branch\":\"feat/av-8pjk-agent-rubric\",\"worktree\":\"/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric\"}' --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -7233,7 +7233,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-/home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-worktree/SKILL.md
+/home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-worktree/SKILL.md
 
 ```
 
@@ -7265,8 +7265,8 @@ tool_use exec_command
 id: call_IThSH8cTxLeNSdUG7TFwCFdM
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-worktree/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-worktree/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -7305,7 +7305,7 @@ id: call_CxeRKDPOLONDRglfmyc58UG4
 ```json
 {
   "cmd": "git worktree list --porcelain",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -7318,7 +7318,7 @@ id: call_fCoIMtqTgwtPce9xSbCgv7d7
 ```json
 {
   "cmd": "git rev-parse origin/main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 1000
 }
@@ -7331,7 +7331,7 @@ id: call_JuoXXcqF1OfxKVagJwu3hXJS
 ```json
 {
   "cmd": "test -e .env && printf env-present || printf env-missing",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 1000
 }
@@ -7347,111 +7347,111 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1186
 Output:
-worktree /home/entity/projects/EntityProcess/agentv
+worktree /home/<USER>/projects/EntityProcess/agentv
 HEAD 589c01ad7a7776fc2c2709a211fbe39eb76db6ed
 branch refs/heads/main
 
-worktree /home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail
+worktree /home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail
 HEAD cc025adecf4f140440258aefcf42df081ca2d39c
 branch refs/heads/fix/av-wkwg-dashboard-case-detail
 
-worktree /home/entity/projects/EntityProcess/agentv.worktrees/christso-sdk-experiment-canonical
+worktree /home/<USER>/projects/EntityProcess/agentv.worktrees/christso-sdk-experiment-canonical
 HEAD ac0ef566893a0ba67160872fcf3cd2478b8af12f
 branch refs/heads/christso/sdk-experiment-canonical
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-ii3p-integration
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-ii3p-integration
 HEAD c1adf790ecc9429ae1a222d34e0f5c2c45b5dcae
 branch refs/heads/integration/av-ii3p-run-policy
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-2-codex
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-2-codex
 HEAD 0ebcc152b4e6e0cd38eb9066f0e2a1b1e0bd24f8
 branch refs/heads/av-y7eq-2-codex
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-6-results
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-6-results
 HEAD 8b8b2420541d38e7983d71a74a7090fc1e756147
 branch refs/heads/av-y7eq-6-results
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-8-docs
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-8-docs
 HEAD ab250f7a374d6de6c247028e8faa5036c2540f64
 branch refs/heads/av-y7eq-8-docs
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/case-contract-impl
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/case-contract-impl
 HEAD bed2cdbc2c1d04aecfad95d29bbb7b2a64ff34dc
 branch refs/heads/case-contract-impl
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/create-agentv-beads-copyfiles
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/create-agentv-beads-copyfiles
 HEAD 8868c11ddc96927f3a6ac97cb7dd68fb39f7f2ae
 branch refs/heads/create-agentv-beads-copyfiles
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/dashboard-remote-ux-audit
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/dashboard-remote-ux-audit
 HEAD ad6df05e92828edc1a086b2104a7387f21951c04
 branch refs/heads/dashboard-remote-ux-audit
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/exploitbench-workspace-research
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/exploitbench-workspace-research
 HEAD bed2cdbc2c1d04aecfad95d29bbb7b2a64ff34dc
 branch refs/heads/exploitbench-workspace-research
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/kfik14-extensions
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/kfik14-extensions
 HEAD ca0019330e76101e94ea422d4a5fcca2a32f64e8
 branch refs/heads/feat/av-kfik-14-extensions
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/kfik7-graders
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/kfik7-graders
 HEAD 5d727840d5be91380a97287d88d5613912b57be7
 branch refs/heads/feat/av-kfik-7-graders
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/local-openai-dogfood
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/local-openai-dogfood
 HEAD 7741f9d976491acb064549803dc99a5d93050edd
 detached
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/local-openai-proxy-env
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/local-openai-proxy-env
 HEAD 6a330652ff1075d373a1c13f4234c7b95723e5b5
 branch refs/heads/fix/local-openai-proxy-env
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/nawg-metrics-contract
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/nawg-metrics-contract
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/research/av-nawg-metrics-contract
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/pi-extension-research
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/pi-extension-research
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/research/pi-extension-patterns
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/pr1594-final-beads-audit
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/pr1594-final-beads-audit
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/audit/pr1594-final-beads
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik10
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik10
 HEAD 0b707fdf04dec1c31e4d8e84a7412665f72bd745
 branch refs/heads/review/av-kfik-10-pr1604
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik11
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik11
 HEAD 2c76b5575fdf303f984ee4705f397ff46c4b987f
 branch refs/heads/review/av-kfik-11-pr1603
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik14
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik14
 HEAD 73ac81a2d1089b1fac4e2dfc5e14dc88d8ae0409
 branch refs/heads/review/av-kfik-14-pr1605
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik7-pr1599
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik7-pr1599
 HEAD eb6073aa0c2268e9d75438916fbd4f936311b9b7
 branch refs/heads/review/av-kfik-7-pr1599
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1603
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1603
 HEAD 916eccdc4d5ff988735a14aa6efd4b83f1bceffc
 branch refs/heads/review-pr1603
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1608
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1608
 HEAD 24c93648b4f2352ac5e5979b5dfec4d9d8cbb8c1
 branch refs/heads/review-pr1608
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1609
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1609
 HEAD 916eccdc4d5ff988735a14aa6efd4b83f1bceffc
 branch refs/heads/review-pr1609
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood
 HEAD 45f7ed1506c54b5e2a6ad6cbcf6ffbedf6ea05c7
 branch refs/heads/wtg-prompts-dogfood
 
-worktree /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-agentv-pr679-environment/tmp/agentv-origin-main
+worktree /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-agentv-pr679-environment/tmp/agentv-origin-main
 HEAD 935cdc260a4f4b8efb992ac0ff9cf6f39e6cafbb
 detached
 
@@ -7499,8 +7499,8 @@ tool_use exec_command
 id: call_QDVU0Ecqsz6jhCofrhjNaWnO
 ```json
 {
-  "cmd": "git worktree add /home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric -b feat/av-8pjk-agent-rubric origin/main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git worktree add /home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric -b feat/av-8pjk-agent-rubric origin/main",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 6000
 }
@@ -7524,7 +7524,7 @@ HEAD is now at 589c01ad fix(eval): surface pending-merge branch and raw grader r
 
 > AGENT
 
-The worktree is ready at `/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric`. I’m installing/verifying dependencies and Beads discovery there before editing.
+The worktree is ready at `/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric`. I’m installing/verifying dependencies and Beads discovery there before editing.
 
 > TOOL
 
@@ -7532,8 +7532,8 @@ tool_use exec_command
 id: call_RLIurnWVGRTsot3OXtWQKd1d
 ```json
 {
-  "cmd": "cp /home/entity/projects/EntityProcess/agentv/.env .env && printf copied",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
+  "cmd": "cp /home/<USER>/projects/EntityProcess/agentv/.env .env && printf copied",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
   "yield_time_ms": 10000,
   "max_output_tokens": 1000
 }
@@ -7546,7 +7546,7 @@ id: call_9r6Kk6jFlYAVvjELEekojoxJ
 ```json
 {
   "cmd": "git rev-parse HEAD && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -7591,7 +7591,7 @@ id: call_XZJh8lZO6LojqtPYVwSd4BSM
 ```json
 {
   "cmd": "bun install",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -7639,7 +7639,7 @@ id: call_QAX2NfD6wwTj3s8V0nNw3eRt
 ```json
 {
   "cmd": "bun run beads:check",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
   "yield_time_ms": 30000,
   "max_output_tokens": 4000
 }
@@ -7652,7 +7652,7 @@ id: call_ZmpXsuqGE3nGufYIAvy91QcN
 ```json
 {
   "cmd": "bd worktree info",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -7665,7 +7665,7 @@ id: call_m2W16fDfWUi4M7q32N95s7mi
 ```json
 {
   "cmd": "bd where",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -7698,8 +7698,8 @@ WARN: .beads/config.yaml is missing
 OK: git origin is EntityProcess/agentv
 OK: current bd context uses database av and expected project ID
 OK: bd context uses the primary checkout Beads directory
-  repo_root: /home/entity/projects/EntityProcess/agentv
-  beads_dir: /home/entity/projects/EntityProcess/agentv/.beads
+  repo_root: /home/<USER>/projects/EntityProcess/agentv
+  beads_dir: /home/<USER>/projects/EntityProcess/agentv/.beads
 
 0 error(s), 1 warning(s)
 
@@ -7715,10 +7715,10 @@ Wall time: 0.7853 seconds
 Process exited with code 0
 Original token count: 61
 Output:
-Worktree: /home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric
+Worktree: /home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric
   Name: feat-av-8pjk-agent-rubric
   Branch: feat/av-8pjk-agent-rubric
-  Main repo: /home/entity/projects/EntityProcess/agentv
+  Main repo: /home/<USER>/projects/EntityProcess/agentv
   Beads: local (no redirect)
 
 ```
@@ -7733,9 +7733,9 @@ Wall time: 1.4434 seconds
 Process exited with code 0
 Original token count: 35
 Output:
-/home/entity/projects/EntityProcess/agentv/.beads
+/home/<USER>/projects/EntityProcess/agentv/.beads
   prefix: av
-  database: /home/entity/projects/EntityProcess/agentv/.beads/embeddeddolt
+  database: /home/<USER>/projects/EntityProcess/agentv/.beads/embeddeddolt
 
 ```
 
@@ -7753,8 +7753,8 @@ tool_use exec_command
 id: call_tDgB9FOVksVKLQ2RLyDnG3cb
 ```json
 {
-  "cmd": "sed -n '1,280p' /home/entity/.agents/skills/workmux/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,280p' /home/<USER>/.agents/skills/workmux/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -7801,7 +7801,7 @@ id: call_kRd8Tsld3j4TMlIiVONEk4Id
 ```json
 {
   "cmd": "workmux --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -7814,7 +7814,7 @@ id: call_ZXX4uSuOdJN9mbdXL5zPxSW8
 ```json
 {
   "cmd": "workmux add --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -7827,7 +7827,7 @@ id: call_cUSipFSHkFxzWLfuWN3yYQpI
 ```json
 {
   "cmd": "workmux open --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -7969,7 +7969,7 @@ id: call_ZDujSO6veXhB2HY4yicYAh1P
 ```json
 {
   "cmd": "mkdir -p .workmux/prompts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 1000
 }
@@ -8002,8 +8002,8 @@ tool_use exec_command
 id: call_D6WW1nEv70cMMZboF04WKAtf
 ```json
 {
-  "cmd": "bd update av-8pjk --assignee \"workmux:agent-rubric-impl\" --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:agent-rubric-impl\",\"branch\":\"feat/av-8pjk-agent-rubric\",\"worktree\":\"/home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-8pjk --assignee \"workmux:agent-rubric-impl\" --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:agent-rubric-impl\",\"branch\":\"feat/av-8pjk-agent-rubric\",\"worktree\":\"/home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric\"}' --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -8015,8 +8015,8 @@ tool_use exec_command
 id: call_12tEIERZi9f6FE7Yfgx6OcU4
 ```json
 {
-  "cmd": "workmux open feat-av-8pjk-agent-rubric -P /home/entity/projects/EntityProcess/agentv/.workmux/prompts/av-8pjk-agent-rubric-impl.md --target-name agent-rubric-impl",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "workmux open feat-av-8pjk-agent-rubric -P /home/<USER>/projects/EntityProcess/agentv/.workmux/prompts/av-8pjk-agent-rubric-impl.md --target-name agent-rubric-impl",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -8051,7 +8051,7 @@ Process exited with code 0
 Original token count: 37
 Output:
 ✓ Opened tmux window for 'feat-av-8pjk-agent-rubric'
-  Worktree: /home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric
+  Worktree: /home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric
 
 ```
 
@@ -8066,7 +8066,7 @@ id: call_NuvJTXbZdQklTWaXcZNDMs5w
 ```json
 {
   "cmd": "workmux status agent-rubric-impl",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -8079,7 +8079,7 @@ id: call_O0NkG6VjYqE0jnd7U6PdIZ9V
 ```json
 {
   "cmd": "workmux capture agent-rubric-impl",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -8125,7 +8125,7 @@ id: call_kPfNjXWRJitz1bedmeH4goAm
 ```json
 {
   "cmd": "workmux status feat-av-8pjk-agent-rubric",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -8138,7 +8138,7 @@ id: call_vHYJ3Q9IjpSjhXHKKGkvOId7
 ```json
 {
   "cmd": "workmux capture feat-av-8pjk-agent-rubric",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -8151,7 +8151,7 @@ id: call_0bdwfazlOjSrCpBA2FTdO1JJ
 ```json
 {
   "cmd": "workmux list",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -8182,7 +8182,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2693
 Output:
-  - Main checkout: `/home/entity/projects/EntityProcess/agentv`
+  - Main checkout: `/home/<USER>/projects/EntityProcess/agentv`
 
   Goal:
   Support Promptfoo-compatible `agent-rubric` assertions in AgentV by mapping them onto existing AgentV `llm-rubric` / `llm-grader` agent-backed grading paths. Add a verdict-file contract for agent graders so an agentic grader writes valid JSON to a
@@ -8261,7 +8261,7 @@ id: call_oWr3EVC0p6aOomY2I0MK2gSo
 ```json
 {
   "cmd": "workmux wait feat-av-8pjk-agent-rubric --status done",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 4000
 }
@@ -8321,7 +8321,7 @@ id: call_catINyUk5ZvdLyz7JNFJ9l8P
 ```json
 {
   "cmd": "workmux capture feat-av-8pjk-agent-rubric",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -8436,7 +8436,7 @@ id: call_HD50daZzDPiLumAuthctqmtn
 ```json
 {
   "cmd": "workmux capture feat-av-8pjk-agent-rubric",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -8554,8 +8554,8 @@ tool_use exec_command
 id: call_a3d3Ewn8gtbyrAyxzz2zIE7w
 ```json
 {
-  "cmd": "bd create --title=\"research: Promptfoo primitives for AgentV environment compatibility\" --description=\"Brainstorm whether AgentV's authored environment recipe can be expressed using existing Promptfoo primitives, including providers, targets, extensions, defaultTest/options, setup hooks, or the Promptfoo SDK. Evaluate whether AgentV could transpile environment-bearing evals into Promptfoo-compatible config and run Promptfoo SDK under the hood while preserving AgentV's repo-native workspace setup, run artifacts, Dashboard, and grader semantics.\" --type=task --priority=1 --acceptance=\"Research compares at least three approaches: keep AgentV environment native with Promptfoo import/export adapters; transpile AgentV environment into Promptfoo primitives while AgentV still orchestrates execution; or delegate execution to Promptfoo SDK under the hood. Findings cite AgentV files and Promptfoo local clone commit/source files. Output identifies which Promptfoo primitives can cover environment setup, which AgentV environment semantics cannot be represented faithfully, risks to artifacts/Dashboard/live dogfood, and recommended next Beads if implementation work is warranted.\" --design=\"Use local Promptfoo clone /home/entity/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd create --title=\"research: Promptfoo primitives for AgentV environment compatibility\" --description=\"Brainstorm whether AgentV's authored environment recipe can be expressed using existing Promptfoo primitives, including providers, targets, extensions, defaultTest/options, setup hooks, or the Promptfoo SDK. Evaluate whether AgentV could transpile environment-bearing evals into Promptfoo-compatible config and run Promptfoo SDK under the hood while preserving AgentV's repo-native workspace setup, run artifacts, Dashboard, and grader semantics.\" --type=task --priority=1 --acceptance=\"Research compares at least three approaches: keep AgentV environment native with Promptfoo import/export adapters; transpile AgentV environment into Promptfoo primitives while AgentV still orchestrates execution; or delegate execution to Promptfoo SDK under the hood. Findings cite AgentV files and Promptfoo local clone commit/source files. Output identifies which Promptfoo primitives can cover environment setup, which AgentV environment semantics cannot be represented faithfully, risks to artifacts/Dashboard/live dogfood, and recommended next Beads if implementation work is warranted.\" --design=\"Use local Promptfoo clone /home/<USER>/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.\" --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -8568,7 +8568,7 @@ id: call_59F4sFeXZDptp8KsvjrWeCH3
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -8589,10 +8589,10 @@ Output:
   "created_at": "2026-07-06T13:10:59.790135112Z",
   "created_by": "Christopher Tso",
   "description": "Brainstorm whether AgentV's authored environment recipe can be expressed using existing Promptfoo primitives, including providers, targets, extensions, defaultTest/options, setup hooks, or the Promptfoo SDK. Evaluate whether AgentV could transpile environment-bearing evals into Promptfoo-compatible config and run Promptfoo SDK under the hood while preserving AgentV's repo-native workspace setup, run artifacts, Dashboard, and grader semantics.",
-  "design": "Use local Promptfoo clone /home/entity/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.",
+  "design": "Use local Promptfoo clone /home/<USER>/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.",
   "id": "av-236z",
   "issue_type": "task",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 1,
   "schema_version": 1,
   "status": "open",
@@ -8631,7 +8631,7 @@ id: call_w3WdSZGiKwIUoJ1jhiX2DDD5
 ```json
 {
   "cmd": "bd update av-236z --assignee \"workmux:promptfoo-env-brainstorm\" --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:promptfoo-env-brainstorm\",\"branch\":\"research/av-236z-promptfoo-environment\",\"worktree\":\"workmux:promptfoo-env-brainstorm\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -8643,8 +8643,8 @@ tool_use exec_command
 id: call_vCtKZoBEpIR4xxH5j9rcNhQw
 ```json
 {
-  "cmd": "workmux add research/av-236z-promptfoo-environment --base origin/main --name promptfoo-env-brainstorm -b -P /home/entity/projects/EntityProcess/agentv/.workmux/prompts/av-236z-promptfoo-environment-brainstorm.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "workmux add research/av-236z-promptfoo-environment --base origin/main --name promptfoo-env-brainstorm -b -P /home/<USER>/projects/EntityProcess/agentv/.workmux/prompts/av-236z-promptfoo-environment-brainstorm.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -8665,7 +8665,7 @@ Output:
     "id": "av-236z",
     "title": "research: Promptfoo primitives for AgentV environment compatibility",
     "description": "Brainstorm whether AgentV's authored environment recipe can be expressed using existing Promptfoo primitives, including providers, targets, extensions, defaultTest/options, setup hooks, or the Promptfoo SDK. Evaluate whether AgentV could transpile environment-bearing evals into Promptfoo-compatible config and run Promptfoo SDK under the hood while preserving AgentV's repo-native workspace setup, run artifacts, Dashboard, and grader semantics.",
-    "design": "Use local Promptfoo clone /home/entity/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.",
+    "design": "Use local Promptfoo clone /home/<USER>/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.",
     "acceptance_criteria": "Research compares at least three approaches: keep AgentV environment native with Promptfoo import/export adapters; transpile AgentV environment into Promptfoo primitives while AgentV still orchestrates execution; or delegate execution to Promptfoo SDK under the hood. Findings cite AgentV files and Promptfoo local clone commit/source files. Output identifies which Promptfoo primitives can cover environment setup, which AgentV environment semantics cannot be represented faithfully, risks to artifacts/Dashboard/live dogfood, and recommended next Beads if implementation work is warranted.",
     "status": "open",
     "priority": 1,
@@ -8684,13 +8684,13 @@ Original token count: 52
 Output:
 ✓ Successfully created worktree and tmux window for 'research/av-236z-promptfoo-environment'
   Base: origin/main
-  Worktree: /home/entity/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm
+  Worktree: /home/<USER>/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm
 
 ```
 
 > AGENT
 
-The research worker is spawned in `/home/entity/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm`. I’m updating the Bead with the concrete worktree path and verifying the worker is active.
+The research worker is spawned in `/home/<USER>/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm`. I’m updating the Bead with the concrete worktree path and verifying the worker is active.
 
 > TOOL
 
@@ -8698,8 +8698,8 @@ tool_use exec_command
 id: call_kf2mcNewCUfUKrTRjKU7oHS8
 ```json
 {
-  "cmd": "bd update av-236z --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:promptfoo-env-brainstorm\",\"branch\":\"research/av-236z-promptfoo-environment\",\"worktree\":\"/home/entity/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-236z --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:promptfoo-env-brainstorm\",\"branch\":\"research/av-236z-promptfoo-environment\",\"worktree\":\"/home/<USER>/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm\"}' --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -8712,7 +8712,7 @@ id: call_ofIR4hPCOpLatHge3UtqzAeY
 ```json
 {
   "cmd": "workmux status promptfoo-env-brainstorm",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -8725,7 +8725,7 @@ id: call_Snz5ZwdIxAN4SV5Y3NpxuhiT
 ```json
 {
   "cmd": "workmux capture promptfoo-env-brainstorm",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -8746,7 +8746,7 @@ Output:
     "id": "av-236z",
     "title": "research: Promptfoo primitives for AgentV environment compatibility",
     "description": "Brainstorm whether AgentV's authored environment recipe can be expressed using existing Promptfoo primitives, including providers, targets, extensions, defaultTest/options, setup hooks, or the Promptfoo SDK. Evaluate whether AgentV could transpile environment-bearing evals into Promptfoo-compatible config and run Promptfoo SDK under the hood while preserving AgentV's repo-native workspace setup, run artifacts, Dashboard, and grader semantics.",
-    "design": "Use local Promptfoo clone /home/entity/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.",
+    "design": "Use local Promptfoo clone /home/<USER>/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.",
     "acceptance_criteria": "Research compares at least three approaches: keep AgentV environment native with Promptfoo import/export adapters; transpile AgentV environment into Promptfoo primitives while AgentV still orchestrates execution; or delegate execution to Promptfoo SDK under the hood. Findings cite AgentV files and Promptfoo local clone commit/source files. Output identifies which Promptfoo primitives can cover environment setup, which AgentV environment semantics cannot be represented faithfully, risks to artifacts/Dashboard/live dogfood, and recommended next Beads if implementation work is warranted.",
     "status": "open",
     "priority": 1,
@@ -8792,7 +8792,7 @@ id: call_WxcHwDLk9TtYW0hCRP00eksp
 ```json
 {
   "cmd": "workmux list",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -8805,7 +8805,7 @@ id: call_CqiQOhsiXbFe1tsisiMMi2Zf
 ```json
 {
   "cmd": "tmux list-windows -a | rg 'promptfoo-env|av-236z|agentv'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -8817,8 +8817,8 @@ tool_use exec_command
 id: call_gXiYTpFfIFVZZC1Sy8BcMXv2
 ```json
 {
-  "cmd": "find /home/entity -path '*dispatch-codex-prompt.sh' -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER> -path '*dispatch-codex-prompt.sh' -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -8939,7 +8939,7 @@ id: call_2WF99TnQUIn8YLwfWN7WX0pt
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:4 -p -S -80",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -8951,8 +8951,8 @@ tool_use exec_command
 id: call_FgqmkH8lIqE0MXFURVo9rlSB
 ```json
 {
-  "cmd": "find /home/entity/.agents /home/entity/.codex -path '*dispatch-codex-prompt.sh' -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.agents /home/<USER>/.codex -path '*dispatch-codex-prompt.sh' -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -9036,8 +9036,8 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 49
 Output:
-/home/entity/.agents/skills/workmux/scripts/dispatch-codex-prompt.sh
-/home/entity/.codex/.tmp/marketplaces/EntityProcess-plugins/plugins/workmux/skills/workmux/scripts/dispatch-codex-prompt.sh
+/home/<USER>/.agents/skills/workmux/scripts/dispatch-codex-prompt.sh
+/home/<USER>/.codex/.tmp/marketplaces/EntityProcess-plugins/plugins/workmux/skills/workmux/scripts/dispatch-codex-prompt.sh
 
 ```
 
@@ -9052,7 +9052,7 @@ id: call_UQf9etCGefInADlP8TIZZCfv
 ```json
 {
   "cmd": "workmux wait promptfoo-env-brainstorm --status done",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 4000
 }
@@ -9112,7 +9112,7 @@ id: call_jh8AjlFiX2PwYLzeW7KPzXnF
 ```json
 {
   "cmd": "workmux capture promptfoo-env-brainstorm",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -9225,7 +9225,7 @@ id: call_x0dZCtWxHW8down5u9ihjSQS
 ```json
 {
   "cmd": "workmux capture promptfoo-env-brainstorm",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -9311,7 +9311,7 @@ id: call_k14VbPR2WwKZRdqicGyROzm4
 ```json
 {
   "cmd": "workmux status wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -9324,7 +9324,7 @@ id: call_xz1QDFnLkYgv2KQZ4F8GrkRW
 ```json
 {
   "cmd": "workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -9336,8 +9336,8 @@ tool_use exec_command
 id: call_6JSkUZsFyIxIh8tAJWUMdWOW
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood status --short --branch && git -C /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood log --oneline -5",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood status --short --branch && git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood log --oneline -5",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -9507,7 +9507,7 @@ id: call_yP2tLvxBgxND2jhngI7W78pd
 ```json
 {
   "cmd": "workmux capture promptfoo-env-brainstorm",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -9530,20 +9530,20 @@ Output:
 
 • The policy text already says environment is an AgentV primitive, while Promptfoo compatibility is a composition boundary rather than wholesale schema adoption. I’m checking the Bead now so the research answers the exact live question.
 
-• Ran git -C /home/entity/projects/promptfoo/promptfoo status --short --branch
+• Ran git -C /home/<USER>/projects/promptfoo/promptfoo status --short --branch
   └ ## main...origin/main [behind 238]
 
 • Explored
   └ Read CONCEPTS.md
 
-• Ran git -C /home/entity/projects/promptfoo/promptfoo rev-parse HEAD
+• Ran git -C /home/<USER>/projects/promptfoo/promptfoo rev-parse HEAD
   └ 6bfc5a0c7f16f9c4717ac731d276b578e63d0769
 
 • Ran bd show av-236z --long
   └ ○ av-236z · research: Promptfoo primitives for AgentV environment compatibility   [● P1 · OPEN]
     Owner: Christopher Tso · Assignee: workmux:promptfoo-env-brainstorm · Type: task
     … +15 lines (ctrl + t to view transcript)
-      worktree: /home/entity/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm
+      worktree: /home/<USER>/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm
 
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -9584,7 +9584,7 @@ id: call_vd6ugYK3QqL1pOQMnW1ImsIM
 ```json
 {
   "cmd": "workmux status promptfoo-env-brainstorm",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -9597,7 +9597,7 @@ id: call_MplDSqlYBIWf6tRWFQytHStF
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:4 -p -S -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -9610,7 +9610,7 @@ id: call_qLsUAZE9CfEGUrXYx7HSxklj
 ```json
 {
   "cmd": "bd show av-236z --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -9692,7 +9692,7 @@ Output:
     "id": "av-236z",
     "title": "research: Promptfoo primitives for AgentV environment compatibility",
     "description": "Brainstorm whether AgentV's authored environment recipe can be expressed using existing Promptfoo primitives, including providers, targets, extensions, defaultTest/options, setup hooks, or the Promptfoo SDK. Evaluate whether AgentV could transpile environment-bearing evals into Promptfoo-compatible config and run Promptfoo SDK under the hood while preserving AgentV's repo-native workspace setup, run artifacts, Dashboard, and grader semantics.",
-    "design": "Use local Promptfoo clone /home/entity/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.",
+    "design": "Use local Promptfoo clone /home/<USER>/projects/promptfoo/promptfoo before web search. Treat Promptfoo as reference evidence, not schema authority. This is brainstorming/research only: do not edit code, run installs, or create commits.",
     "acceptance_criteria": "Research compares at least three approaches: keep AgentV environment native with Promptfoo import/export adapters; transpile AgentV environment into Promptfoo primitives while AgentV still orchestrates execution; or delegate execution to Promptfoo SDK under the hood. Findings cite AgentV files and Promptfoo local clone commit/source files. Output identifies which Promptfoo primitives can cover environment setup, which AgentV environment semantics cannot be represented faithfully, risks to artifacts/Dashboard/live dogfood, and recommended next Beads if implementation work is warranted.",
     "status": "closed",
     "priority": 1,
@@ -9709,8 +9709,8 @@ tool_use exec_command
 id: call_9n287WzMD3NzC1qyG96fAUfm
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/promptfoo-env-brainstorm status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -9723,7 +9723,7 @@ id: call_5n0DA1G3HaMFk19rNfy51yGL
 ```json
 {
   "cmd": "workmux status feat-av-8pjk-agent-rubric",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -9736,7 +9736,7 @@ id: call_xdMOMiXgUrhjRvVa6rXYZLjw
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -9797,7 +9797,7 @@ id: call_Agptobfhpm17o2EXRD0VWoyy
 ```json
 {
   "cmd": "workmux remove promptfoo-env-brainstorm -f",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 4000
 }
@@ -9862,8 +9862,8 @@ tool_use exec_command
 id: call_9sOEbTpcV3EtunPGLdP2DwQc
 ```json
 {
-  "cmd": "find /home/entity/.codex/plugins/cache -path '*skills/ce-debug/SKILL.md' -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.codex/plugins/cache -path '*skills/ce-debug/SKILL.md' -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -9875,8 +9875,8 @@ tool_use exec_command
 id: call_wFvywPMX6hXYM6nLPhd6fJsL
 ```json
 {
-  "cmd": "find /home/entity/.codex/plugins/cache -path '*skills/ce-compound/SKILL.md' -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.codex/plugins/cache -path '*skills/ce-compound/SKILL.md' -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -9889,7 +9889,7 @@ id: call_iI6CKoGuk8ovHXpCxNgR6i3j
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -9902,7 +9902,7 @@ id: call_8l5YHSqDiCbQefaNefMUE3k0
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -9918,7 +9918,7 @@ Wall time: 1.2106 seconds
 Process exited with code 0
 Original token count: 29
 Output:
-/home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-debug/SKILL.md
+/home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-debug/SKILL.md
 
 ```
 
@@ -9932,7 +9932,7 @@ Wall time: 0.7762 seconds
 Process exited with code 0
 Original token count: 30
 Output:
-/home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-compound/SKILL.md
+/home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-compound/SKILL.md
 
 ```
 
@@ -9979,8 +9979,8 @@ tool_use exec_command
 id: call_Th2hEPJ5dZfoXbnUsHsXgGma
 ```json
 {
-  "cmd": "sed -n '1,240p' /home/entity/.agents/skills/workmux/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,240p' /home/<USER>/.agents/skills/workmux/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -9992,8 +9992,8 @@ tool_use exec_command
 id: call_53ZjQB5uUagoiUxLTwJMsbJY
 ```json
 {
-  "cmd": "sed -n '1,280p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-debug/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,280p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-debug/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -10005,8 +10005,8 @@ tool_use exec_command
 id: call_4XsPTienDNLtUwBCfL0PtnwK
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10089,7 +10089,7 @@ description: >
   whenever managing multi-session work, tracking dependencies, or recovering context.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.60.0"
-author: "Steve Yegge <steve.yegge@gmail.com>"
+author: "Steve Yegge <<REDACTED_EMAIL>>"
 license: "MIT"
 compatible-with: [claude-code, codex]
 tags: [issue-tracking, task-management, multi-session, dependencies]
@@ -10130,7 +10130,7 @@ id: call_uIPRHA6Ogf2xhHgg4rgR5eM0
 ```json
 {
   "cmd": "bd create --title=\"docs: ADR for Promptfoo compatibility and AgentV environment boundary\" --description=\"Document the research conclusion that AgentV should keep environment as an AgentV-native typed testbed primitive while supporting Promptfoo-compatible authoring and adapters for overlapping matrix fields. Capture why Promptfoo primitives/extensions/provider working_dir are insufficient as the canonical environment runtime, and why using the Promptfoo SDK under the hood is not recommended for environment-bearing evals.\" --type=task --priority=1 --acceptance=\"ADR added under docs/adr/ following existing ADR style; cites local AgentV source/docs and Promptfoo clone commit 6bfc5a0 where appropriate; records decision, context, considered options, consequences, and relationship to Promptfoo-first authoring; does not change runtime code; focused docs validation or markdown sanity check run if available.\" --design=\"Use research from closed Bead av-236z. Decision should preserve AgentV-owned environment orchestration, run bundles, transcripts, Dashboard identity, and grader/workspace provenance while allowing Promptfoo import/export/transpile adapters for overlapping fields.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -10142,8 +10142,8 @@ tool_use exec_command
 id: call_x7zLF0jL7iAyhvlqWELf2412
 ```json
 {
-  "cmd": "bd create --title=\"bug: fix WTG PR50857 dogfood quality failures\" --description=\"The WTG AI prompts PR50857 dogfood run completed with infrastructure working but quality failed: 0/2 passed and 0 execution errors. Investigate the live run artifacts, transcripts, WTG eval config, and agent prompts/targets to identify why the expected PR50857 rubrics/skill-used assertions failed, then implement the smallest WTG-side or eval-side fix that makes the dogfood pass without weakening the intended quality bar.\" --type=bug --priority=1 --acceptance=\"Root cause explains why the two quality assertions failed using transcript/run artifact evidence; compatibility edits from prior WTG worktree are preserved; fix is implemented in the WTG compatibility worktree or a clearly named branch; live eval is rerun with the same PR50857 scenario and passes or a blocker is recorded with exact command/output; changed files and validation evidence are summarized; do not change AgentV core unless root cause proves AgentV behavior is wrong and a separate AgentV Bead is created.\" --design=\"Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd create --title=\"bug: fix WTG PR50857 dogfood quality failures\" --description=\"The WTG AI prompts PR50857 dogfood run completed with infrastructure working but quality failed: 0/2 passed and 0 execution errors. Investigate the live run artifacts, transcripts, WTG eval config, and agent prompts/targets to identify why the expected PR50857 rubrics/skill-used assertions failed, then implement the smallest WTG-side or eval-side fix that makes the dogfood pass without weakening the intended quality bar.\" --type=bug --priority=1 --acceptance=\"Root cause explains why the two quality assertions failed using transcript/run artifact evidence; compatibility edits from prior WTG worktree are preserved; fix is implemented in the WTG compatibility worktree or a clearly named branch; live eval is rerun with the same PR50857 scenario and passes or a blocker is recorded with exact command/output; changed files and validation evidence are summarized; do not change AgentV core unless root cause proves AgentV behavior is wrong and a separate AgentV Bead is created.\" --design=\"Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.\" --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -10167,7 +10167,7 @@ Output:
   "design": "Use research from closed Bead av-236z. Decision should preserve AgentV-owned environment orchestration, run bundles, transcripts, Dashboard identity, and grader/workspace provenance while allowing Promptfoo import/export/transpile adapters for overlapping fields.",
   "id": "av-oxub",
   "issue_type": "task",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 1,
   "schema_version": 1,
   "status": "open",
@@ -10193,7 +10193,7 @@ Output:
   "created_at": "2026-07-06T13:20:55.813376411Z",
   "created_by": "Christopher Tso",
   "description": "The WTG AI prompts PR50857 dogfood run completed with infrastructure working but quality failed: 0/2 passed and 0 execution errors. Investigate the live run artifacts, transcripts, WTG eval config, and agent prompts/targets to identify why the expected PR50857 rubrics/skill-used assertions failed, then implement the smallest WTG-side or eval-side fix that makes the dogfood pass without weakening the intended quality bar.",
-  "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
+  "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
   "id": "av-8ipz",
   "issue_type": […]
 
@@ -10208,7 +10208,7 @@ id: call_SH4N9EGuLmeixskmmPIfyw49
 ```json
 {
   "cmd": "git status --short --branch && git rev-parse --show-toplevel && find .. -name AGENTS.md -print",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -10221,7 +10221,7 @@ id: call_tf0gtWiHD8ekr0Ups7TVkZSe
 ```json
 {
   "cmd": "git status --short --branch && find . -maxdepth 2 -type f | sed 's#^./##' | head -80",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -10234,7 +10234,7 @@ id: call_P130rZP9hOuhJo9PXZ6nSBLl
 ```json
 {
   "cmd": "ls docs/adr | tail -20 && sed -n '1,160p' docs/adr/0017-output-artifact-and-workspace-resolver-contract.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -10251,7 +10251,7 @@ Process running with session ID 22304
 Original token count: 38
 Output:
 ## av-x0ym-agentv-latest...origin/av-x0ym-agentv-latest
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest
 
 ```
 
@@ -10446,8 +10446,8 @@ tool_use exec_command
 id: call_eMEf1zaapLcv1VwlGMchECtz
 ```json
 {
-  "cmd": "find /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest -maxdepth 3 -name AGENTS.md -print -o -name CLAUDE.md -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest -maxdepth 3 -name AGENTS.md -print -o -name CLAUDE.md -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -10459,8 +10459,8 @@ tool_use exec_command
 id: call_hZaqEgUpfEljDDgmRaXhTVc7
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest status --short --branch && git -C /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest diff --stat",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest status --short --branch && git -C /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest diff --stat",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -10473,7 +10473,7 @@ id: call_BTHhAXtOkGWNrmfMu4RlaIRW
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -10485,8 +10485,8 @@ tool_use exec_command
 id: call_aLd7L6oiFIX1MSSAHjDisbAU
 ```json
 {
-  "cmd": "ls -la /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest | head -60",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "ls -la /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest | head -60",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -10574,7 +10574,7 @@ id: call_JkJw1f2EbFvuvBkXgDhwIdhz
 ```json
 {
   "cmd": "bd update av-oxub --assignee \"workmux:env-boundary-adr\" --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:env-boundary-adr\",\"branch\":\"docs/av-oxub-environment-boundary-adr\",\"worktree\":\"workmux:env-boundary-adr\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -10587,7 +10587,7 @@ id: call_skhk5VWvD9laz3E4uGeloBKS
 ```json
 {
   "cmd": "bd update av-8ipz --assignee \"workmux:wtg-quality-fix\" --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:wtg-quality-fix\",\"branch\":\"fix/av-8ipz-wtg-pr50857-quality\",\"worktree\":\"workmux:wtg-quality-fix\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -10599,8 +10599,8 @@ tool_use exec_command
 id: call_dBLUzcbrjhfxNLi7vEmgdjoa
 ```json
 {
-  "cmd": "workmux add docs/av-oxub-environment-boundary-adr --base origin/main --name env-boundary-adr -b -P /home/entity/projects/EntityProcess/agentv/.workmux/prompts/av-oxub-env-boundary-adr.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "workmux add docs/av-oxub-environment-boundary-adr --base origin/main --name env-boundary-adr -b -P /home/<USER>/projects/EntityProcess/agentv/.workmux/prompts/av-oxub-env-boundary-adr.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -10612,8 +10612,8 @@ tool_use exec_command
 id: call_YuosLLuauN2UT44jqpr2Uiez
 ```json
 {
-  "cmd": "workmux add fix/av-8ipz-wtg-pr50857-quality --base origin/av-x0ym-agentv-latest --name wtg-quality-fix -b -P /home/entity/projects/EntityProcess/agentv/.workmux/prompts/av-8ipz-wtg-quality-fix.md",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "cmd": "workmux add fix/av-8ipz-wtg-pr50857-quality --base origin/av-x0ym-agentv-latest --name wtg-quality-fix -b -P /home/<USER>/projects/EntityProcess/agentv/.workmux/prompts/av-8ipz-wtg-quality-fix.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -10640,7 +10640,7 @@ Output:
     "priority": 1,
     "issue_type": "task",
     "assignee": "workmux:env-boundary-adr",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T13:20:51Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T13:22:43Z",
@@ -10670,7 +10670,7 @@ Output:
     "id": "av-8ipz",
     "title": "bug: fix WTG PR50857 dogfood quality failures",
     "description": "The WTG AI prompts PR50857 dogfood run completed with infrastructure working but quality failed: 0/2 passed and 0 execution errors. Investigate the live run artifacts, transcripts, WTG eval config, and agent prompts/targets to identify why the expected PR50857 rubrics/skill-used assertions failed, then implement the smallest WTG-side or eval-side fix that makes the dogfood pass without weakening the intended quality bar.",
-    "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
+    "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
     "acceptance_criteria": "Root cause explains why the two quality assertions failed using transcript/run artifact evidence; compatibility edits from prior WTG worktree are preserved; fix is implemented in the WTG compatibility worktree or a clearly named branch; live eval is rerun with the same PR50857 scenario and passes or a blocker is recorded with exact command/output; changed files and validation evidence are summarized; do not change AgentV core unless root cause proves AgentV behavior is wrong and a separate AgentV […]
 
 > TOOL
@@ -10685,7 +10685,7 @@ Original token count: 50
 Output:
 ✓ Successfully created worktree and tmux window for 'docs/av-oxub-environment-boundary-adr'
   Base: origin/main
-  Worktree: /home/entity/projects/EntityProcess/agentv__worktrees/env-boundary-adr
+  Worktree: /home/<USER>/projects/EntityProcess/agentv__worktrees/env-boundary-adr
 
 ```
 
@@ -10701,7 +10701,7 @@ Original token count: 57
 Output:
 ✓ Successfully created worktree and tmux window for 'fix/av-8ipz-wtg-pr50857-quality'
   Base: origin/av-x0ym-agentv-latest
-  Worktree: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix
+  Worktree: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix
 
 ```
 
@@ -10715,8 +10715,8 @@ tool_use exec_command
 id: call_7nctUfzZX9AFLjRftZSgpnbf
 ```json
 {
-  "cmd": "bd update av-oxub --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:env-boundary-adr\",\"branch\":\"docs/av-oxub-environment-boundary-adr\",\"worktree\":\"/home/entity/projects/EntityProcess/agentv__worktrees/env-boundary-adr\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-oxub --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:env-boundary-adr\",\"branch\":\"docs/av-oxub-environment-boundary-adr\",\"worktree\":\"/home/<USER>/projects/EntityProcess/agentv__worktrees/env-boundary-adr\"}' --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -10728,8 +10728,8 @@ tool_use exec_command
 id: call_aEDv1uJnAYnDRp6ohmosl3zQ
 ```json
 {
-  "cmd": "bd update av-8ipz --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:wtg-quality-fix\",\"branch\":\"fix/av-8ipz-wtg-pr50857-quality\",\"worktree\":\"/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix\"}' --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-8ipz --metadata '{\"machine\":\"entity-vps\",\"worker\":\"workmux:wtg-quality-fix\",\"branch\":\"fix/av-8ipz-wtg-pr50857-quality\",\"worktree\":\"/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix\"}' --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -10742,7 +10742,7 @@ id: call_rCJxpqKk3hrM3FcBTlrIVuXm
 ```json
 {
   "cmd": "workmux status env-boundary-adr && workmux capture env-boundary-adr",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -10755,7 +10755,7 @@ id: call_a8emBtW6njwZhZCJl6mFxq2I
 ```json
 {
   "cmd": "workmux status wtg-quality-fix && workmux capture wtg-quality-fix",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10782,7 +10782,7 @@ Output:
     "priority": 1,
     "issue_type": "task",
     "assignee": "workmux:env-boundary-adr",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T13:20:51Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T13:23:03Z",
@@ -10790,7 +10790,7 @@ Output:
       "branch": "docs/av-oxub-environment-boundary-adr",
       "worker": "workmux:env-boundary-adr",
       "machine": "entity-vps",
-      "worktree": "/home/entity/projects/EntityProcess/agentv__worktrees/env-boundary-adr"
+      "worktree": "/home/<USER>/projects/EntityProcess/agentv__worktrees/env-boundary-adr"
     }
   }
 ]
@@ -10812,7 +10812,7 @@ Output:
     "id": "av-8ipz",
     "title": "bug: fix WTG PR50857 dogfood quality failures",
     "description": "The WTG AI prompts PR50857 dogfood run completed with infrastructure working but quality failed: 0/2 passed and 0 execution errors. Investigate the live run artifacts, transcripts, WTG eval config, and agent prompts/targets to identify why the expected PR50857 rubrics/skill-used assertions failed, then implement the smallest WTG-side or eval-side fix that makes the dogfood pass without weakening the intended quality bar.",
-    "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
+    "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
     "acceptance_criteria": "Root cause explains why the two quality assertions failed using transcript/run artifact evidence; compatibility edits from prior WTG worktree are preserved; fix is implemented in the WTG compatibility worktree or a clearly named branch; live eval is rerun with the same PR50857 scenario and passes or a blocker is recorded with exact command/output; changed files and validation evidence are summarized; do not change AgentV core unless root cause proves AgentV behavior is wrong and a separate AgentV […]
 
 > TOOL
@@ -10830,7 +10830,7 @@ env-boundary-adr (docs/av-oxub-environment-boundary-adr)  working  1s       ⠏ 
   Add an ADR under `docs/adr/` documenting the Promptfoo compatibility and AgentV `environment` boundary research from Bead `av-236z`.
 
   Scope:
-  - Repository: `/home/entity/projects/EntityProcess/agentv`
+  - Repository: `/home/<USER>/projects/EntityProcess/agentv`
   - Branch: create/use Workmux branch `docs/av-oxub-environment-boundary-adr`
   - Do not change runtime code.
   - Do not commit, push, or open PRs. The lead will review and handle git operations.
@@ -10886,7 +10886,7 @@ id: call_Wq4IOGLvwGzAw712SWAqewW8
 ```json
 {
   "cmd": "tmux list-windows -a | rg 'wtg-quality|agentv|wtg'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -10899,7 +10899,7 @@ id: call_TtkBerkVhjCSvgn0B5Vr7DTT
 ```json
 {
   "cmd": "workmux list",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -10912,7 +10912,7 @@ id: call_FCJoOq0S2yQSZpSFoci0UzA4
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:$(tmux list-windows -t agentv -F '#I #W' | awk '/wtg-quality-fix/{print $1; exit}') -p -S -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10975,10 +10975,10 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2570
 Output:
-  - Prior AgentV worker worktree: `/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood`
+  - Prior AgentV worker worktree: `/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood`
   - Private evidence branch: `EntityProcess/agentv-private` branch `evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06`, commit `81011037413c9efbd9c3f338388dc5c17911ed0f`.
   - Live run directory:
-    `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z`
+    `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z`
   - Key sample directory:
     `pr50857-online-chunking-review--36c7a66c6432/sample-1`
   - Transcript paths:
@@ -10991,7 +10991,7 @@ Output:
   Startup:
   1. Run `git fetch origin` and `git status --short --branch`.
   2. Inspect local instructions: `README.md`, any `AGENTS.md`/`CLAUDE.md` if present, and relevant eval docs in the worktree.
-  3. Inspect Bead `av-8ipz` from the AgentV Beads workspace. If plain `bd` does not resolve in this repo, run it from `/home/entity/projects/EntityProcess/agentv` or use `BEADS_DIR=/home/entity/projects/EntityProcess/agentv/.beads`.
+  3. Inspect Bead `av-8ipz` from the AgentV Beads workspace. If plain `bd` does not resolve in this repo, run it from `/home/<USER>/projects/EntityProcess/agentv` or use `BEADS_DIR=/home/<USER>/projects/EntityProcess/agentv/.beads`.
   4. Confirm `.env` exists. If missing, copy from the existing WTG worktree or report blocker.
 
   Debug process:
@@ -11020,7 +11020,7 @@ id: call_nXgXTZYX21CBMil1bloBVcc4
 ```json
 {
   "cmd": "bd update av-oxub --status in_progress --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -11033,7 +11033,7 @@ id: call_YRmGfFyhcrBKx2hetdeP2OzZ
 ```json
 {
   "cmd": "bd update av-8ipz --status in_progress --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -11046,7 +11046,7 @@ id: call_Hl3e4ZOHcPK4jpnGJjzY3qpG
 ```json
 {
   "cmd": "workmux status env-boundary-adr",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -11059,7 +11059,7 @@ id: call_pllUGo7yLwLLKB1JRyzIlU89
 ```json
 {
   "cmd": "workmux status wtg-quality-fix",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -11086,7 +11086,7 @@ Output:
     "priority": 1,
     "issue_type": "task",
     "assignee": "workmux:env-boundary-adr",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T13:20:51Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T13:23:25Z",
@@ -11095,7 +11095,7 @@ Output:
       "branch": "docs/av-oxub-environment-boundary-adr",
       "worker": "workmux:env-boundary-adr",
       "machine": "entity-vps",
-      "worktree": "/home/entity/projects/EntityProcess/agentv__worktrees/env-boundary-adr"
+      "worktree": "/home/<USER>/projects/EntityProcess/agentv__worktrees/env-boundary-adr"
     }
   }
 ]
@@ -11117,7 +11117,7 @@ Output:
     "id": "av-8ipz",
     "title": "bug: fix WTG PR50857 dogfood quality failures",
     "description": "The WTG AI prompts PR50857 dogfood run completed with infrastructure working but quality failed: 0/2 passed and 0 execution errors. Investigate the live run artifacts, transcripts, WTG eval config, and agent prompts/targets to identify why the expected PR50857 rubrics/skill-used assertions failed, then implement the smallest WTG-side or eval-side fix that makes the dogfood pass without weakening the intended quality bar.",
-    "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
+    "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
     "acceptance_criteria": "Root cause explains why the two quality assertions failed using transcript/run artifact evidence; compatibility edits from prior WTG worktree are preserved; fix is implemented in the WTG compatibility worktree or a clearly named branch; live eval is rerun with the same PR50857 scenario and passes or a blocker is recorded with exact command/output; changed files and validation evidence are summarized; do not change AgentV core unless root cause proves AgentV behavior is wrong and a separate AgentV […]
 
 > TOOL
@@ -11161,7 +11161,7 @@ id: call_JU9PGWQiN3E1Sr1u0rnXvBeZ
 ```json
 {
   "cmd": "workmux wait env-boundary-adr --status done",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 3000
 }
@@ -11174,7 +11174,7 @@ id: call_4cv0vMvyqTW5B6zCUCUxzRV5
 ```json
 {
   "cmd": "workmux wait wtg-quality-fix --status done",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 30000,
   "max_output_tokens": 3000
 }
@@ -11273,7 +11273,7 @@ id: call_JffsMXQJltWUmuDSC1HtQM3C
 ```json
 {
   "cmd": "workmux capture env-boundary-adr",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -11286,7 +11286,7 @@ id: call_8MKpXEfVYJmFbGeT0dgaS595
 ```json
 {
   "cmd": "workmux capture wtg-quality-fix",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -11376,8 +11376,8 @@ tool_use exec_command
 id: call_uIFI76hA4lO4eGxpO6UniNDJ
 ```json
 {
-  "cmd": "workmux send wtg-quality-fix -f /home/entity/projects/EntityProcess/agentv/.workmux/prompts/av-8ipz-wtg-quality-fix-followup.md",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "cmd": "workmux send wtg-quality-fix -f /home/<USER>/projects/EntityProcess/agentv/.workmux/prompts/av-8ipz-wtg-quality-fix-followup.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -11520,7 +11520,7 @@ id: call_BaQLrWlwJ4ACKrsvzqEntpYt
 ```json
 {
   "cmd": "workmux capture env-boundary-adr",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -11533,7 +11533,7 @@ id: call_PtJ1sYTUfBVM8b3SttgbfPi9
 ```json
 {
   "cmd": "git status --short --branch && git diff --stat && git diff --check",
-  "workdir": "/home/entity/projects/EntityProcess/agentv__worktrees/env-boundary-adr",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv__worktrees/env-boundary-adr",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -11546,7 +11546,7 @@ id: call_zOHJwhty3UXOcB66P1A86pdS
 ```json
 {
   "cmd": "git diff -- docs/adr",
-  "workdir": "/home/entity/projects/EntityProcess/agentv__worktrees/env-boundary-adr",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv__worktrees/env-boundary-adr",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -11569,7 +11569,7 @@ Output:
      53 +  `environment` as an AgentV extension used for host/Docker workdir, setup,
      54 +  fixtures, services, and repo materialization.
      55 +
-     56 +Promptfoo was checked locally at `/home/entity/projects/promptfoo/promptfoo`
+     56 +Promptfoo was checked locally at `/home/<USER>/projects/promptfoo/promptfoo`
      57 +commit `6bfc5a0c7f16f9c4717ac731d276b578e63d0769`. Relevant findings:
      58 +
      59 +- `src/types/index.ts` centers the suite schema on `providers`, `prompts`,
@@ -11684,7 +11684,7 @@ id: call_6v5m1fkGYEWmB5n4pNHsUhpd
 ```json
 {
   "cmd": "workmux capture wtg-quality-fix",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -11710,7 +11710,7 @@ Output:
     Search av-x0ym|transcript|README|evidence
     Read skill-used.ts, cw-sql-schema-migration-trigger.eval.yaml, data-transformation-e2e.eval.yaml, sql-transformations-online.eval.yaml, runner.ts
 
-• Ran git -C /home/entity/projects/EntityProcess/agentv-private show --stat --oneline 81011037413c9efbd9c3f338388dc5c17911ed0f && git -C /home/entity/projects/EntityProcess/agentv-private show --name-only --format=
+• Ran git -C /home/<USER>/projects/EntityProcess/agentv-private show --stat --oneline 81011037413c9efbd9c3f338388dc5c17911ed0f && git -C /home/<USER>/projects/EntityProcess/agentv-private show --name-only --format=
   │ 81011037413c9efbd9c3f338388dc5c17911ed0f | sed -n '1,200p'
   └ dogfood/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06/README.md
     dogfood/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06/artifact-tree.txt
@@ -11726,7 +11726,7 @@ Output:
 • Explored
   └ Read pi-coding-agent.ts, sql-transformations-online.eval.yaml, data-transformation.eval.yaml
 
-• Ran git -C /home/entity/projects/EntityProcess/agentv-private show 81011037413c9efbd9c3f338388dc5c17911ed0f:dogfood/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06/README.md
+• Ran git -C /home/<USER>/projects/EntityProcess/agentv-private show 81011037413c9efbd9c3f338388dc5c17911ed0f:dogfood/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06/README.md
   └ # av-x0ym WTG AI Prompts Transcript Dogfood
 
     … +80 lines (ctrl + t to view transcript)
@@ -11764,7 +11764,7 @@ id: call_TJWWFyWBKmasH4dzvJ3gtPrL
 ```json
 {
   "cmd": "workmux status feat-av-8pjk-agent-rubric",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -11869,7 +11869,7 @@ id: call_mygsxsiiKSwTUMcNHWLCHTh4
 ```json
 {
   "cmd": "workmux capture wtg-quality-fix",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -11885,8 +11885,8 @@ Wall time: 0.0588 seconds
 Process exited with code 0
 Original token count: 5605
 Output:
-    /home/entity/.local/bin/pi
-    /home/entity/.local/bin/claude
+    /home/<USER>/.local/bin/pi
+    /home/<USER>/.local/bin/claude
     CODEX_CI=1
     CODEX_THREAD_ID=019f3798-736a-7081-a67e-ac7717c9f17a
 
@@ -11981,7 +11981,7 @@ id: call_dyyUYnz0zfIGhTzuwCrzWGqd
 ```json
 {
   "cmd": "workmux capture wtg-quality-fix",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -11999,7 +11999,7 @@ Original token count: 5203
 Output:
 
 • Ran env -i bash -lc 'set -a; source .env; set +a; env | sed -E "s/(API_KEY|TOKEN|SECRET|PASSWORD)=.*/\\1=[redacted]/" | sort | rg "OPENAI|AGENTV|PI|CODEX|EVAL_CARGO|CARGOWISE|ANTHROPIC" || true'
-  └ /home/entity/.profile: line 29: /.cargo/env: No such file or directory
+  └ /home/<USER>/.profile: line 29: /.cargo/env: No such file or directory
     OPENAI_API_KEY=[redacted]
     OPENAI_ENDPOINT=http://127.0.0.1:10531/v1
     OPENAI_MODEL=gpt-5.3-codex-spark
@@ -12069,7 +12069,7 @@ id: call_J6E8zzLEpuVILCIlqDt6d18w
 ```json
 {
   "cmd": "workmux capture wtg-quality-fix",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -12116,14 +12116,14 @@ Output:
     +            - type: file
     +              value: /evals/cargowise/database/snippets/job-consol-transport-schema-pr50857.sql
 
-• Ran bun /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts validate framework-parity/agentv/.agentv/targets.yaml
+• Ran bun /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts validate framework-parity/agentv/.agentv/targets.yaml
   └
     Validation Summary
     … +5 lines (ctrl + t to view transcript)
     Invalid: 0
 
 
-• Ran bun /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts validate framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml […]
+• Ran bun /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts validate framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml […]
 
 > AGENT
 
@@ -12135,8 +12135,8 @@ tool_use exec_command
 id: call_TVyXFJ4GHQ0VVEpl2sAvZHmI
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/EntityProcess-plugins/agent-setup/0.1.0/skills/agent-setup/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/EntityProcess-plugins/agent-setup/0.1.0/skills/agent-setup/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -12205,7 +12205,7 @@ id: call_IJxJL1jAf1aHqda7gC7BEqRg
 ```json
 {
   "cmd": "curl -sS http://127.0.0.1:10531/v1/models 2>&1 | sed -E 's/(api[_-]?key|token|authorization)[^,}]*/\\1=[redacted]/Ig' | head -40",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -12218,7 +12218,7 @@ id: call_LiQTP7Csui2bVmUKZ84jZRAS
 ```json
 {
   "cmd": "ps -ef | rg 'openai-oauth|10531' | rg -v rg",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -12231,7 +12231,7 @@ id: call_WOFakVVYaX08rYJuJzwOI46e
 ```json
 {
   "cmd": "bd show av-xdwn --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -12244,7 +12244,7 @@ id: call_dD9xRxueOidUcBFE3Y7bN4e8
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -12257,7 +12257,7 @@ id: call_VlonQiSJHh5gCDce1a8FUTWb
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv__worktrees/env-boundary-adr",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv__worktrees/env-boundary-adr",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -12310,7 +12310,7 @@ Output:
     "status": "open",
     "priority": 1,
     "issue_type": "bug",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T13:32:19Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T13:32:19Z",
@@ -12365,7 +12365,7 @@ ADR worker:
 - Not committed or pushed yet.
 
 WTG quality worker:
-- Worked in `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix` on `fix/av-8ipz-wtg-pr50857-quality`.
+- Worked in `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix` on `fix/av-8ipz-wtg-pr50857-quality`.
 - Root cause found:
   - The migrated eval lost the original schema/workspace context needed for PR50857.
   - `pi-coding-agent` does not emit `ProviderResponse.metadata.skillCalls`, so `skill-used` reports `Actual skills: (none)` even when skill files are read.
@@ -12408,7 +12408,7 @@ id: call_VtYQpIxd4KfPmwiqT5CnbtFg
 ```json
 {
   "cmd": "curl -sS http://127.0.0.1:10531/v1/models | head -40",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -12421,7 +12421,7 @@ id: call_V63pdOm5wZo1pupCwTZ07jyK
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -12467,8 +12467,8 @@ tool_use exec_command
 id: call_T8nM1saLeHLgKQiX5qANENPf
 ```json
 {
-  "cmd": "bash -lc 'set -a; source /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/.env; set +a; bun /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts eval run evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml --targets .agentv/targets.yaml --target agent --workers 1 --agent-timeout 900 --experiment av-8ipz-wtg-pr50857-quality-rerun --no-results-push --keep-workspaces'",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
+  "cmd": "bash -lc 'set -a; source /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/.env; set +a; bun /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts eval run evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml --targets .agentv/targets.yaml --target agent --workers 1 --agent-timeout 900 --experiment av-8ipz-wtg-pr50857-quality-rerun --no-results-push --keep-workspaces'",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -12484,7 +12484,7 @@ Wall time: 30.0012 seconds
 Process running with session ID 21643
 Original token count: 63
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z
+Artifact directory: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z
 Using target: agent
 0/2   🔄 pr50857-offline-implementation-review | agent
 
@@ -12581,15 +12581,15 @@ Top performing tests:
 Lowest performing tests:
   1. pr50857-offline-implementation-review: 0%
   2. pr50857-online-chunking-review: 0%
-Artifact bundle written to: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z
-  Run manifest: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z/.internal/index.jsonl
-  Per-test artifacts: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z (2 test directories)
-  Summary: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z/summary.json
+Artifact bundle written to: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z
+  Run manifest: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z/.internal/index.jsonl
+  Per-test artifacts: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z (2 test directories)
+  Summary: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z/summary.json
 
-Results written to: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z/.internal/index.jsonl
+Results written to: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z/.internal/index.jsonl
 
-Results written under: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z
-  /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z/.internal/index.jsonl
+Results written under: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z
+  /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-36-53-459Z/.internal/index.jsonl
 
 ```
 
@@ -12604,7 +12604,7 @@ id: call_aAGQczBnrtQlIJ5wvZY8TGQS
 ```json
 {
   "cmd": "jq '{run_id,status,counts,pass_rate,tests}' .agentv/results/2026-07-06T13-36-53-459Z/summary.json",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -12617,7 +12617,7 @@ id: call_Up5UmHmKOsaaPthdfEHoLtb2
 ```json
 {
   "cmd": "for f in .agentv/results/2026-07-06T13-36-53-459Z/*/sample-1/grading.json; do echo '###' $f; jq '{pass,score,reason,component_results}' $f; done",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -12630,7 +12630,7 @@ id: call_DC32NCpEqQQmDqO1QHfUTGIU
 ```json
 {
   "cmd": "for f in .agentv/results/2026-07-06T13-36-53-459Z/*/sample-1/outputs/answer.md; do echo '###' $f; sed -n '1,220p' $f; done",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -12643,7 +12643,7 @@ id: call_MH0Qrr38ourJd3yY1E3d8A3f
 ```json
 {
   "cmd": "for f in .agentv/results/2026-07-06T13-36-53-459Z/*/sample-1/result.json; do echo '###' $f; jq '{execution_status,quality_status,score,scores,target_execution}' $f; done",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -12870,8 +12870,8 @@ tool_use exec_command
 id: call_unGDjm2tLDECnyvuTmezV5xW
 ```json
 {
-  "cmd": "rg -n \"sandbox_mode|approval_policy|danger-full|workspace-write|read-only|bwrap\" /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/examples | head -120",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "cmd": "rg -n \"sandbox_mode|approval_policy|danger-full|workspace-write|read-only|bwrap\" /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/examples | head -120",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -12884,7 +12884,7 @@ id: call_D7flQuSlohdCbgRtHFxRfazS
 ```json
 {
   "cmd": "sed -n '1,80p' framework-parity/agentv/.agentv/targets.yaml && sed -n '1,130p' framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -12896,8 +12896,8 @@ tool_use exec_command
 id: call_o7Uu3OJnNRsFPWs3dqdC48nZ
 ```json
 {
-  "cmd": "rg -n \"codex-sdk|sandbox_mode|approval_policy\" /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers -g '*.ts'",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "cmd": "rg -n \"codex-sdk|sandbox_mode|approval_policy\" /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers -g '*.ts'",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -12913,33 +12913,33 @@ Wall time: 0.0324 seconds
 Process exited with code 0
 Original token count: 1774
 Output:
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/workspace/file-changes.ts:13: * 2. **Snapshot baseline** (fallback when git is unavailable / path is read-only):
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/workspace/file-changes.ts:19: *      read-only session-state directories, etc.).
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/tools/results.mdx:213:Do not use `results export` as an AgentV-to-Phoenix path. Phoenix is read-only
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/results-repo.ts:1998:      // Dashboard status is read-only; explicit sync paths do the fetch.
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:501:  readonly sandbox_mode?: string | unknown | undefined;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:502:  readonly approval_policy?: string | unknown | undefined;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:649:  ['sandboxMode', 'sandbox_mode'],
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:650:  ['approvalPolicy', 'approval_policy'],
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:655:export type CodexSandboxMode = 'read-only' | 'workspace-write' | 'danger-full-access';
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:669:  'read-only',
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:670:  'workspace-write',
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:671:  'danger-full-access',
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1474:  const sandboxModeSource = target.sandbox_mode;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1475:  const approvalPolicySource = target.approval_policy;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1775:    `codex sandbox_mode must be one of: ${[...CODEX_SANDBOX_MODE_VALUES].join(', ')}`,
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1790:    `codex approval_policy must be one of: ${[...CODEX_APPROVAL_POLICY_VALUES].join(', ')}`,
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/types.ts:670:  /** Target exploration ratio (0-1, proportion of read-only tool calls) */
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/trace.ts:1418: * Default tool names considered as exploration/read-only operations.
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/validation/targets-validator.ts:150:  'sandbox_mode',
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/validation/targets-validator.ts:151:  'approval_policy',
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/tools/inspect.mdx:14:- Legacy simple trace JSONL files for read-only migration scenarios
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/targets/coding-agents.mdx:72:      sandbox_mode: workspace-write
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/targets/coding-agents.mdx:73:      approval_policy: never
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/targets/coding-agents.mdx:184:`model_verbosity`, `base_url`, `api_key`, `api_format`, `sandbox_mode`,
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/targets/coding-agents.mdx:185:`approval_policy`, `cwd`, `timeout_seconds`, `log_dir`, `stream_log`, and
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/graders/execution-metrics.mdx:24:    target_exploration_ratio: 0.6   # Target ratio of read-only tool calls
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/graders/execution-metrics.mdx:44:| `target_exploration_ratio` | number | Target ratio of […]
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/workspace/file-changes.ts:13: * 2. **Snapshot baseline** (fallback when git is unavailable / path is read-only):
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/workspace/file-changes.ts:19: *      read-only session-state directories, etc.).
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/tools/results.mdx:213:Do not use `results export` as an AgentV-to-Phoenix path. Phoenix is read-only
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/results-repo.ts:1998:      // Dashboard status is read-only; explicit sync paths do the fetch.
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:501:  readonly sandbox_mode?: string | unknown | undefined;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:502:  readonly approval_policy?: string | unknown | undefined;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:649:  ['sandboxMode', 'sandbox_mode'],
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:650:  ['approvalPolicy', 'approval_policy'],
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:655:export type CodexSandboxMode = 'read-only' | 'workspace-write' | 'danger-full-access';
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:669:  'read-only',
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:670:  'workspace-write',
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:671:  'danger-full-access',
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1474:  const sandboxModeSource = target.sandbox_mode;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1475:  const approvalPolicySource = target.approval_policy;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1775:    `codex sandbox_mode must be one of: ${[...CODEX_SANDBOX_MODE_VALUES].join(', ')}`,
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1790:    `codex approval_policy must be one of: ${[...CODEX_APPROVAL_POLICY_VALUES].join(', ')}`,
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/types.ts:670:  /** Target exploration ratio (0-1, proportion of read-only tool calls) */
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/trace.ts:1418: * Default tool names considered as exploration/read-only operations.
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/validation/targets-validator.ts:150:  'sandbox_mode',
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/validation/targets-validator.ts:151:  'approval_policy',
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/tools/inspect.mdx:14:- Legacy simple trace JSONL files for read-only migration scenarios
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/targets/coding-agents.mdx:72:      sandbox_mode: workspace-write
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/targets/coding-agents.mdx:73:      approval_policy: never
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/targets/coding-agents.mdx:184:`model_verbosity`, `base_url`, `api_key`, `api_format`, `sandbox_mode`,
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/targets/coding-agents.mdx:185:`approval_policy`, `cwd`, `timeout_seconds`, `log_dir`, `stream_log`, and
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/graders/execution-metrics.mdx:24:    target_exploration_ratio: 0.6   # Target ratio of read-only tool calls
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/web/src/content/docs/docs/next/graders/execution-metrics.mdx:44:| `target_exploration_ratio` | number | Target ratio of […]
 
 > TOOL
 
@@ -13015,32 +13015,32 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1670
 Output:
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:30:      codexSdkModule = await import('@openai/codex-sdk');
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:33:        `Failed to load @openai/codex-sdk. AgentV declares SDK beta packages as optional dependencies; run bun install to hydrate optional dependencies, or install this SDK explicitly:\n  bun add --optional @openai/codex-sdk\n  npm install @openai/codex-sdk\n\nOriginal error: ${error instanceof Error ? error.message : String(error)}`,
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:43: * Codex SDK provider using the @openai/codex-sdk library directly.
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:47: * If optional dependencies were omitted, install @openai/codex-sdk explicitly.
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:51:  readonly kind = 'codex-sdk' as const;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:58:    this.id = `codex-sdk:${targetName}`;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:288:        normalizeToolCall('codex-sdk', {
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:299:        normalizeToolCall('codex-sdk', {
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:309:        normalizeToolCall('codex-sdk', {
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:23:  | 'codex-sdk'
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:50:  'codex-sdk',
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:93:  'codex-sdk',
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:501:  readonly sandbox_mode?: string | unknown | undefined;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:502:  readonly approval_policy?: string | unknown | undefined;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/index.ts:199:    .register('codex-sdk', (t) =>
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/index.ts:202:        : new SdkChildProvider('codex-sdk', t.name, t.config),
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/sdk-child-protocol.ts:12:export type SdkChildProviderKind = 'codex-sdk' | 'claude-sdk' | 'copilot-sdk' | 'pi-sdk';
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:649:  ['sandboxMode', 'sandbox_mode'],
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:650:  ['approvalPolicy', 'approval_policy'],
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:876:      readonly kind: 'codex-cli' | 'codex-app-server' | 'codex-sdk';
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1173:        `Target "${parsed.name}" uses ambiguous provider 'codex'. Choose 'codex-cli', 'codex-app-server', or 'codex-sdk'.`,
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1177:    case 'codex-sdk':
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1179:        kind: provider as 'codex-cli' | 'codex-app-server' | 'codex-sdk',
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1474:  const sandboxModeSource = target.sandbox_mode;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1475:  const approvalPolicySource = target.approval_policy;
-/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1484:      `Target […]
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:30:      codexSdkModule = await import('@openai/codex-sdk');
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:33:        `Failed to load @openai/codex-sdk. AgentV declares SDK beta packages as optional dependencies; run bun install to hydrate optional dependencies, or install this SDK explicitly:\n  bun add --optional @openai/codex-sdk\n  npm install @openai/codex-sdk\n\nOriginal error: ${error instanceof Error ? error.message : String(error)}`,
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:43: * Codex SDK provider using the @openai/codex-sdk library directly.
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:47: * If optional dependencies were omitted, install @openai/codex-sdk explicitly.
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:51:  readonly kind = 'codex-sdk' as const;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:58:    this.id = `codex-sdk:${targetName}`;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:288:        normalizeToolCall('codex-sdk', {
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:299:        normalizeToolCall('codex-sdk', {
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/codex.ts:309:        normalizeToolCall('codex-sdk', {
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:23:  | 'codex-sdk'
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:50:  'codex-sdk',
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:93:  'codex-sdk',
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:501:  readonly sandbox_mode?: string | unknown | undefined;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/types.ts:502:  readonly approval_policy?: string | unknown | undefined;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/index.ts:199:    .register('codex-sdk', (t) =>
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/index.ts:202:        : new SdkChildProvider('codex-sdk', t.name, t.config),
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/sdk-child-protocol.ts:12:export type SdkChildProviderKind = 'codex-sdk' | 'claude-sdk' | 'copilot-sdk' | 'pi-sdk';
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:649:  ['sandboxMode', 'sandbox_mode'],
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:650:  ['approvalPolicy', 'approval_policy'],
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:876:      readonly kind: 'codex-cli' | 'codex-app-server' | 'codex-sdk';
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1173:        `Target "${parsed.name}" uses ambiguous provider 'codex'. Choose 'codex-cli', 'codex-app-server', or 'codex-sdk'.`,
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1177:    case 'codex-sdk':
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1179:        kind: provider as 'codex-cli' | 'codex-app-server' | 'codex-sdk',
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1474:  const sandboxModeSource = target.sandbox_mode;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1475:  const approvalPolicySource = target.approval_policy;
+/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/packages/core/src/evaluation/providers/targets.ts:1484:      `Target […]
 
 > AGENT
 
@@ -13057,7 +13057,7 @@ id: call_Xl3HrkpDalLXlYQr2TrNJnXQ
 ```json
 {
   "cmd": "rg -n \"sandbox_mode|provider:|approval_policy|model:\" framework-parity/agentv/.agentv/targets.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13070,7 +13070,7 @@ id: call_H4SZy5mFxxTof1vJsNc2IWgy
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13128,8 +13128,8 @@ tool_use exec_command
 id: call_or80qModAr7TQ9iidGWsFZBC
 ```json
 {
-  "cmd": "bun /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts validate framework-parity/agentv/.agentv/targets.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "cmd": "bun /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts validate framework-parity/agentv/.agentv/targets.yaml",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -13141,8 +13141,8 @@ tool_use exec_command
 id: call_yvk2mhbZ3OVZeFAs8v6kaE9w
 ```json
 {
-  "cmd": "bun /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts validate framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "cmd": "bun /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts validate framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -13161,7 +13161,7 @@ Output:
 
 Validation Summary
 
-✓ /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/targets.yaml
+✓ /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/targets.yaml
 
 Total files: 1
 Valid: 1
@@ -13183,7 +13183,7 @@ Output:
 
 Validation Summary
 
-✓ /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml
+✓ /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml
 
 Total files: 1
 Valid: 1
@@ -13202,8 +13202,8 @@ tool_use exec_command
 id: call_D8rvcxb9IcyazeVZiuWTDSt9
 ```json
 {
-  "cmd": "bash -lc 'set -a; source /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/.env; set +a; bun /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts eval run evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml --targets .agentv/targets.yaml --target agent --workers 1 --agent-timeout 900 --experiment av-8ipz-wtg-pr50857-quality-rerun2 --no-results-push --keep-workspaces'",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
+  "cmd": "bash -lc 'set -a; source /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/.env; set +a; bun /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood/apps/cli/src/cli.ts eval run evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml --targets .agentv/targets.yaml --target agent --workers 1 --agent-timeout 900 --experiment av-8ipz-wtg-pr50857-quality-rerun2 --no-results-push --keep-workspaces'",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -13219,7 +13219,7 @@ Wall time: 30.0020 seconds
 Process running with session ID 85865
 Original token count: 63
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z
+Artifact directory: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z
 Using target: agent
 0/2   🔄 pr50857-offline-implementation-review | agent
 
@@ -13345,15 +13345,15 @@ Top performing tests:
 Lowest performing tests:
   1. pr50857-online-chunking-review: 100%
   2. pr50857-offline-implementation-review: 80%
-Artifact bundle written to: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z
-  Run manifest: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z/.internal/index.jsonl
-  Per-test artifacts: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z (2 test directories)
-  Summary: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z/summary.json
+Artifact bundle written to: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z
+  Run manifest: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z/.internal/index.jsonl
+  Per-test artifacts: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z (2 test directories)
+  Summary: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z/summary.json
 
-Results written to: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z/.internal/index.jsonl
+Results written to: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z/.internal/index.jsonl
 
-Results written under: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z
-  /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z/.internal/index.jsonl
+Results written under: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z
+  /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv/.agentv/results/2026-07-06T13-40-47-253Z/.internal/index.jsonl
 
 ```
 
@@ -13368,7 +13368,7 @@ id: call_fPBZL8JTaxbjyeekZwhmtti3
 ```json
 {
   "cmd": "jq '{total: .total, passed: .passed, mean_score: .mean_score, min_score: .min_score, max_score: .max_score}' .agentv/results/2026-07-06T13-40-47-253Z/summary.json",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13381,7 +13381,7 @@ id: call_K9dAHmkuAg4xMTkYdnjDdo6j
 ```json
 {
   "cmd": "git diff -- framework-parity/agentv/.agentv/targets.yaml framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml framework-parity/agentv/evals/cargowise/database/snippets/job-consol-transport-schema-pr50857.sql",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -13394,7 +13394,7 @@ id: call_UzrcgxEmyA7BBeMpm5hOUJCR
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13502,7 +13502,7 @@ id: call_7vcR3IOXI4Va3eiPO9vzVWMI
 ```json
 {
   "cmd": "jq 'keys, .' .agentv/results/2026-07-06T13-40-47-253Z/summary.json",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix/framework-parity/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -13515,7 +13515,7 @@ id: call_3CKdvpNrSjyj9HlZjJH52vHT
 ```json
 {
   "cmd": "sed -n '1,220p' framework-parity/agentv/evals/cargowise/database/snippets/job-consol-transport-schema-pr50857.sql",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13528,7 +13528,7 @@ id: call_Ouh1SAkMrQzDTZ3AwryqTboX
 ```json
 {
   "cmd": "find framework-parity/agentv/.agents framework-parity/agentv/.claude framework-parity/agentv/.codex framework-parity/agentv/.pi -maxdepth 2 -type f | head -40",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13706,7 +13706,7 @@ id: call_1f8j2zslFarUxbGiqbcFiWpV
 ```json
 {
   "cmd": "rm -rf framework-parity/agentv/.agents framework-parity/agentv/.claude framework-parity/agentv/.codex framework-parity/agentv/.pi",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13736,7 +13736,7 @@ id: call_EUpqAp4e2OKxpyAX0iRO7wgE
 ```json
 {
   "cmd": "git status --short --branch && git diff --check",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -13749,7 +13749,7 @@ id: call_mmDf7YaY0tAZqWcFdANoe3fS
 ```json
 {
   "cmd": "bd show av-8ipz --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -13787,7 +13787,7 @@ Output:
     "id": "av-8ipz",
     "title": "bug: fix WTG PR50857 dogfood quality failures",
     "description": "The WTG AI prompts PR50857 dogfood run completed with infrastructure working but quality failed: 0/2 passed and 0 execution errors. Investigate the live run artifacts, transcripts, WTG eval config, and agent prompts/targets to identify why the expected PR50857 rubrics/skill-used assertions failed, then implement the smallest WTG-side or eval-side fix that makes the dogfood pass without weakening the intended quality bar.",
-    "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
+    "design": "Start from prior evidence: run .agentv/results/2026-07-06T10-29-36-153Z in /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv. Existing compatibility worktree has modified targets.yaml and data-transformation-pr50857-e2e.eval.yaml. Treat quality failure as a debugging task, not a schema migration.",
     "acceptance_criteria": "Root cause explains why the two quality assertions failed using transcript/run artifact evidence; compatibility edits from prior WTG worktree are preserved; fix is implemented in the WTG compatibility worktree or a clearly named branch; live eval is rerun with the same PR50857 scenario and passes or a blocker is recorded with exact command/output; changed files and validation evidence are summarized; do not change AgentV core unless root cause proves AgentV behavior is wrong and a separate AgentV […]
 
 > AGENT
@@ -13801,7 +13801,7 @@ id: call_dhzKtA6jDnrNvYp132V2l3j4
 ```json
 {
   "cmd": "bd update --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -13854,7 +13854,7 @@ id: call_DpK1eX6G4OW09s7jhy5t9ZS7
 ```json
 {
   "cmd": "find .. -name AGENTS.md -print",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13867,7 +13867,7 @@ id: call_SirSXYnSwg6kJBaHfj9O4bok
 ```json
 {
   "cmd": "git remote -v && git branch --show-current && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -13973,7 +13973,7 @@ id: call_nUM0FGtdYKFaTMCAZtm87oig
 ```json
 {
   "cmd": "rg --files -g 'AGENTS.md' -g '!node_modules' -g '!**/.agentv/results/**'",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14005,7 +14005,7 @@ id: call_3qyQQbfjoaPPM6cIyfgsPPb6
 ```json
 {
   "cmd": "bd update av-8ipz --append-notes \"2026-07-06 lead rerun after OAuth refresh: changed codex-sdk sandbox_mode to danger-full-access to avoid local bwrap RTM_NEWADDR failure from workspace-write sandbox. Validation passed for framework-parity/agentv/.agentv/targets.yaml and framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml. Live rerun command used target agent, workers 1, agent-timeout 900, experiment av-8ipz-wtg-pr50857-quality-rerun2, no-results-push, keep-workspaces. Result bundle .agentv/results/2026-07-06T13-40-47-253Z passed 2/2: offline 80%, online 100%, mean 90%, 0 infra failures. per_grader_summary shows skill-used-cw-sql-schema-migration mean 1.0 and llm-rubric mean 0.875. WTG branch fix/av-8ipz-wtg-pr50857-quality has intended changes only: target switch to codex-sdk danger-full-access, eval instructions requiring cw-sql-schema-migration references, and new JobConsolTransport schema fixture.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14036,7 +14036,7 @@ id: call_xXQ05AC67lxuL3zkQ4R68c0l
 ```json
 {
   "cmd": "sed -n '1,140p' framework-parity/agentv/.agentv/targets.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14049,7 +14049,7 @@ id: call_xpks7oPre191HM87w77CgNOe
 ```json
 {
   "cmd": "sed -n '1,140p' framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -14062,7 +14062,7 @@ id: call_u31UEQCd5dd7y2XpzsWRqfbQ
 ```json
 {
   "cmd": "sed -n '1,120p' framework-parity/agentv/evals/cargowise/database/snippets/job-consol-transport-schema-pr50857.sql",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14200,7 +14200,7 @@ id: call_LWcgVLO2YMvsnR5b3v9YUu3C
 ```json
 {
   "cmd": "bd close --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14263,7 +14263,7 @@ id: call_UexR3ZoNnxjR1TtNCKOCrGnN
 ```json
 {
   "cmd": "bd close av-8ipz --reason \"WTG PR50857 quality failures fixed in worktree branch fix/av-8ipz-wtg-pr50857-quality. Validation passed for targets/eval YAML. Live AgentV rerun 2026-07-06T13-40-47-253Z passed 2/2 with mean 90%, 0 infra failures; offline 80%, online 100%; skill-used cw-sql-schema-migration mean 1.0. No AgentV core change was needed; follow-up av-xdwn tracks pi-coding-agent skillCalls metadata support.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14294,7 +14294,7 @@ id: call_YZaI3smzoKIP6RDQk7DT3FEz
 ```json
 {
   "cmd": "git add framework-parity/agentv/.agentv/targets.yaml framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml framework-parity/agentv/evals/cargowise/database/snippets/job-consol-transport-schema-pr50857.sql && git commit -m \"Fix AgentV PR50857 dogfood quality\"",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -14329,7 +14329,7 @@ id: call_FSvfOfWpPgLnV71OoGOUfhGX
 ```json
 {
   "cmd": "git ls-files framework-parity/agentv/.agentv/targets.yaml framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml framework-parity/agentv/evals/cargowise/database/snippets/job-consol-transport-schema-pr50857.sql",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14342,7 +14342,7 @@ id: call_4tVJR6HsX1B7hSSYV9HceM5i
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14391,7 +14391,7 @@ id: call_A4zXmXhAYvfkknJMeH8vkfEw
 ```json
 {
   "cmd": "git commit -m \"Fix AgentV PR50857 dogfood quality\"",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -14424,7 +14424,7 @@ id: call_wRxnkrhGOipJX3lq6aqVYzve
 ```json
 {
   "cmd": "bd update av-8ipz --append-notes \"2026-07-06 lead: committed WTG fix locally on fix/av-8ipz-wtg-pr50857-quality as 3c1547f (Fix AgentV PR50857 dogfood quality).\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14437,7 +14437,7 @@ id: call_GhNIDlIOMHbqF2MOaoeFTlwy
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14450,7 +14450,7 @@ id: call_LnoC34RvskkIHwIhJ9S6Yqd5
 ```json
 {
   "cmd": "git log -1 --oneline",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-quality-fix",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14539,8 +14539,8 @@ tool_use exec_command
 id: call_b1xN4H1avDF48460sW0nIIpO
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -14552,8 +14552,8 @@ tool_use exec_command
 id: call_2GzuRojMe7To2DJTEufddnbm
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-worktree/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-worktree/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -14565,8 +14565,8 @@ tool_use exec_command
 id: call_jFPM4GOH4sP2Ge6YPviJs7ba
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-work/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-work/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -14582,7 +14582,7 @@ Wall time: 0.0009 seconds
 Process exited with code 2
 Original token count: 34
 Output:
-sed: can't read /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md: No such file or directory
+sed: can't read /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md: No such file or directory
 
 ```
 
@@ -14596,7 +14596,7 @@ Wall time: 0.0000 seconds
 Process exited with code 2
 Original token count: 41
 Output:
-sed: can't read /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-worktree/SKILL.md: No such file or directory
+sed: can't read /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-worktree/SKILL.md: No such file or directory
 
 ```
 
@@ -14610,7 +14610,7 @@ Wall time: 0.0000 seconds
 Process exited with code 2
 Original token count: 40
 Output:
-sed: can't read /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-work/SKILL.md: No such file or directory
+sed: can't read /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.17.1/skills/ce-work/SKILL.md: No such file or directory
 
 ```
 
@@ -14624,8 +14624,8 @@ tool_use exec_command
 id: call_vBaqEfbyOEqy0iXoWgkhG0GZ
 ```json
 {
-  "cmd": "find /home/entity/.codex/plugins/cache -path '*/skills/beads/SKILL.md' -o -path '*/skills/ce-worktree/SKILL.md' -o -path '*/skills/ce-work/SKILL.md' | sort",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.codex/plugins/cache -path '*/skills/beads/SKILL.md' -o -path '*/skills/ce-worktree/SKILL.md' -o -path '*/skills/ce-work/SKILL.md' | sort",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -14637,8 +14637,8 @@ tool_use exec_command
 id: call_TLhnqgi8NnNYvBe4O3dpep8V
 ```json
 {
-  "cmd": "find /home/entity/.agents/skills -maxdepth 3 -name SKILL.md | sort | rg '/(beads|worktree|workmux)/SKILL.md'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/.agents/skills -maxdepth 3 -name SKILL.md | sort | rg '/(beads|worktree|workmux)/SKILL.md'",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14654,9 +14654,9 @@ Wall time: 0.1785 seconds
 Process exited with code 0
 Original token count: 80
 Output:
-/home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md
-/home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-work/SKILL.md
-/home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-worktree/SKILL.md
+/home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md
+/home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-work/SKILL.md
+/home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-worktree/SKILL.md
 
 ```
 
@@ -14670,8 +14670,8 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 23
 Output:
-/home/entity/.agents/skills/workmux/SKILL.md
-/home/entity/.agents/skills/worktree/SKILL.md
+/home/<USER>/.agents/skills/workmux/SKILL.md
+/home/<USER>/.agents/skills/worktree/SKILL.md
 
 ```
 
@@ -14685,8 +14685,8 @@ tool_use exec_command
 id: call_CZynKfRslC7OeZUdcJQ22N6G
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -14698,8 +14698,8 @@ tool_use exec_command
 id: call_0bTphtGcCuWow9mxx8OoPErl
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-worktree/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-worktree/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -14711,8 +14711,8 @@ tool_use exec_command
 id: call_7abqyrUxWTGQpbJs0gmpoMLD
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-work/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.18.0/skills/ce-work/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -14738,7 +14738,7 @@ description: >
   whenever managing multi-session work, tracking dependencies, or recovering context.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.60.0"
-author: "Steve Yegge <steve.yegge@gmail.com>"
+author: "Steve Yegge <<REDACTED_EMAIL>>"
 license: "MIT"
 compatible-with: [claude-code, codex]
 tags: [issue-tracking, task-management, multi-session, dependencies]
@@ -14839,7 +14839,7 @@ id: call_BtRFxCGS6ocvWaVOIzVQgloP
 ```json
 {
   "cmd": "git fetch origin",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -14852,7 +14852,7 @@ id: call_ZMhoBAaZYfg7obW6vtUZvioZ
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -14865,7 +14865,7 @@ id: call_0nvNXjfPYl7B2kEVjm4VgRQJ
 ```json
 {
   "cmd": "bd show av-xdwn --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -14917,7 +14917,7 @@ Output:
     "status": "open",
     "priority": 1,
     "issue_type": "bug",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T13:32:19Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T13:32:19Z",
@@ -14940,7 +14940,7 @@ id: call_CaMQYsc9xvz7gWA23J5GbfsO
 ```json
 {
   "cmd": "sed -n '1,220p' STRATEGY.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -14953,7 +14953,7 @@ id: call_JuoGaNbjhWgEMJOnQRMcTQf7
 ```json
 {
   "cmd": "sed -n '1,260p' ROADMAP.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -14966,7 +14966,7 @@ id: call_9N98QSeTU4BQbSTBDYaKTTvy
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/conventions.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -14979,7 +14979,7 @@ id: call_7IZfjTNUtQQFHZmTfZB3rj91
 ```json
 {
   "cmd": "sed -n '1,280p' .agents/verification.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -15125,7 +15125,7 @@ id: call_k91CsJKlmDvVd6atssSfNOGy
 ```json
 {
   "cmd": "sed -n '1,300p' .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -15138,7 +15138,7 @@ id: call_K51QsXawNxZBoSJMGGFMnwZa
 ```json
 {
   "cmd": "sed -n '1,320p' .agents/product-boundary.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -15212,7 +15212,7 @@ id: call_1Dt4jJMV6Zn74hluZPznVXjf
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/publish.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -15263,7 +15263,7 @@ id: call_7bqEEAnri6ATwfEUSRNU4ZkJ
 ```json
 {
   "cmd": "git worktree list --porcelain",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -15276,7 +15276,7 @@ id: call_i36F6YmILkpURbgyrvZttzEz
 ```json
 {
   "cmd": "git rev-parse origin/main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -15292,119 +15292,119 @@ Wall time: 0.0001 seconds
 Process exited with code 0
 Original token count: 1276
 Output:
-worktree /home/entity/projects/EntityProcess/agentv
+worktree /home/<USER>/projects/EntityProcess/agentv
 HEAD 589c01ad7a7776fc2c2709a211fbe39eb76db6ed
 branch refs/heads/main
 
-worktree /home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail
+worktree /home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail
 HEAD cc025adecf4f140440258aefcf42df081ca2d39c
 branch refs/heads/fix/av-wkwg-dashboard-case-detail
 
-worktree /home/entity/projects/EntityProcess/agentv.worktrees/christso-sdk-experiment-canonical
+worktree /home/<USER>/projects/EntityProcess/agentv.worktrees/christso-sdk-experiment-canonical
 HEAD ac0ef566893a0ba67160872fcf3cd2478b8af12f
 branch refs/heads/christso/sdk-experiment-canonical
 
-worktree /home/entity/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric
+worktree /home/<USER>/projects/EntityProcess/agentv.worktrees/feat-av-8pjk-agent-rubric
 HEAD 589c01ad7a7776fc2c2709a211fbe39eb76db6ed
 branch refs/heads/feat/av-8pjk-agent-rubric
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-ii3p-integration
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-ii3p-integration
 HEAD c1adf790ecc9429ae1a222d34e0f5c2c45b5dcae
 branch refs/heads/integration/av-ii3p-run-policy
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-2-codex
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-2-codex
 HEAD 0ebcc152b4e6e0cd38eb9066f0e2a1b1e0bd24f8
 branch refs/heads/av-y7eq-2-codex
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-6-results
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-6-results
 HEAD 8b8b2420541d38e7983d71a74a7090fc1e756147
 branch refs/heads/av-y7eq-6-results
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-8-docs
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-8-docs
 HEAD ab250f7a374d6de6c247028e8faa5036c2540f64
 branch refs/heads/av-y7eq-8-docs
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/case-contract-impl
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/case-contract-impl
 HEAD bed2cdbc2c1d04aecfad95d29bbb7b2a64ff34dc
 branch refs/heads/case-contract-impl
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/create-agentv-beads-copyfiles
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/create-agentv-beads-copyfiles
 HEAD 8868c11ddc96927f3a6ac97cb7dd68fb39f7f2ae
 branch refs/heads/create-agentv-beads-copyfiles
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/dashboard-remote-ux-audit
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/dashboard-remote-ux-audit
 HEAD ad6df05e92828edc1a086b2104a7387f21951c04
 branch refs/heads/dashboard-remote-ux-audit
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/env-boundary-adr
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/env-boundary-adr
 HEAD 589c01ad7a7776fc2c2709a211fbe39eb76db6ed
 branch refs/heads/docs/av-oxub-environment-boundary-adr
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/exploitbench-workspace-research
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/exploitbench-workspace-research
 HEAD bed2cdbc2c1d04aecfad95d29bbb7b2a64ff34dc
 branch refs/heads/exploitbench-workspace-research
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/kfik14-extensions
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/kfik14-extensions
 HEAD ca0019330e76101e94ea422d4a5fcca2a32f64e8
 branch refs/heads/feat/av-kfik-14-extensions
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/kfik7-graders
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/kfik7-graders
 HEAD 5d727840d5be91380a97287d88d5613912b57be7
 branch refs/heads/feat/av-kfik-7-graders
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/local-openai-dogfood
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/local-openai-dogfood
 HEAD 7741f9d976491acb064549803dc99a5d93050edd
 detached
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/local-openai-proxy-env
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/local-openai-proxy-env
 HEAD 6a330652ff1075d373a1c13f4234c7b95723e5b5
 branch refs/heads/fix/local-openai-proxy-env
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/nawg-metrics-contract
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/nawg-metrics-contract
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/research/av-nawg-metrics-contract
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/pi-extension-research
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/pi-extension-research
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/research/pi-extension-patterns
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/pr1594-final-beads-audit
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/pr1594-final-beads-audit
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/audit/pr1594-final-beads
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik10
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik10
 HEAD 0b707fdf04dec1c31e4d8e84a7412665f72bd745
 branch refs/heads/review/av-kfik-10-pr1604
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik11
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik11
 HEAD 2c76b5575fdf303f984ee4705f397ff46c4b987f
 branch refs/heads/review/av-kfik-11-pr1603
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik14
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik14
 HEAD 73ac81a2d1089b1fac4e2dfc5e14dc88d8ae0409
 branch refs/heads/review/av-kfik-14-pr1605
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik7-pr1599
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik7-pr1599
 HEAD eb6073aa0c2268e9d75438916fbd4f936311b9b7
 branch refs/heads/review/av-kfik-7-pr1599
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1603
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1603
 HEAD 916eccdc4d5ff988735a14aa6efd4b83f1bceffc
 branch refs/heads/review-pr1603
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1608
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1608
 HEAD 24c93648b4f2352ac5e5979b5dfec4d9d8cbb8c1
 branch refs/heads/review-pr1608
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1609
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1609
 HEAD 916eccdc4d5ff988735a14aa6efd4b83f1bceffc
 branch refs/heads/review-pr1609
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood
 HEAD 45f7ed1506c54b5e2a6ad6cbcf6ffbedf6ea05c7
 branch refs/heads/wtg-prompts-dogfood
 
-worktree /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-agentv-pr679-environment/tmp/agentv-origin-main
+worktree /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-agentv-pr679-environment/tmp/agentv-origin-main
 HEAD 935cdc260a4f4b8efb992ac0ff9cf6f39e6cafbb
 detached
 
@@ -15440,7 +15440,7 @@ id: call_AMZOZj0XWrwm0d9tnFT89val
 ```json
 {
   "cmd": "git worktree add ../agentv.worktrees/av-xdwn-provider-skill-calls -b fix/av-xdwn-provider-skill-calls origin/main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -15458,7 +15458,29 @@ Original token count: 256
 Output:
 Preparing worktree (new branch 'fix/av-xdwn-provider-skill-calls')
 branch 'fix/av-xdwn-provider-skill-calls' set up to track 'origin/main'.
-Updating files:  79% (1201/1510)Updating files:  80% (1208/1510)Updating files:  81% (1224/1510)Updating files:  82% (1239/1510)Updating files:  83% (1254/1510)Updating files:  84% (1269/1510)Updating files:  85% (1284/1510)Updating files:  86% (1299/1510)Updating files:  87% (1314/1510)Updating files:  88% (1329/1510)Updating files:  89% (1344/1510)Updating files:  90% (1359/1510)Updating files:  91% (1375/1510)Updating files:  92% (1390/1510)Updating files:  93% (1405/1510)Updating files:  94% (1420/1510)Updating files:  95% (1435/1510)Updating files:  96% (1450/1510)Updating files:  97% (1465/1510)Updating files:  98% (1480/1510)Updating files:  99% (1495/1510)Updating files: 100% (1510/1510)Updating files: 100% (1510/1510), done.
+Updating files:  79% (1201/1510)
+Updating files:  80% (1208/1510)
+Updating files:  81% (1224/1510)
+Updating files:  82% (1239/1510)
+Updating files:  83% (1254/1510)
+Updating files:  84% (1269/1510)
+Updating files:  85% (1284/1510)
+Updating files:  86% (1299/1510)
+Updating files:  87% (1314/1510)
+Updating files:  88% (1329/1510)
+Updating files:  89% (1344/1510)
+Updating files:  90% (1359/1510)
+Updating files:  91% (1375/1510)
+Updating files:  92% (1390/1510)
+Updating files:  93% (1405/1510)
+Updating files:  94% (1420/1510)
+Updating files:  95% (1435/1510)
+Updating files:  96% (1450/1510)
+Updating files:  97% (1465/1510)
+Updating files:  98% (1480/1510)
+Updating files:  99% (1495/1510)
+Updating files: 100% (1510/1510)
+Updating files: 100% (1510/1510), done.
 HEAD is now at 9379736c feat(config)!: hard-deprecate the graders: config block — a grader is just a target (#1705)
 
 ```
@@ -15474,7 +15496,7 @@ id: call_QAEgXIQ63sTScfLKjIanAAzD
 ```json
 {
   "cmd": "bun install",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -15486,8 +15508,8 @@ tool_use exec_command
 id: call_rivTJjAiodNloTxfz9BTguuP
 ```json
 {
-  "cmd": "test -f /home/entity/projects/EntityProcess/agentv/.env && cp /home/entity/projects/EntityProcess/agentv/.env .env && echo copied || echo missing",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "cmd": "test -f /home/<USER>/projects/EntityProcess/agentv/.env && cp /home/<USER>/projects/EntityProcess/agentv/.env .env && echo copied || echo missing",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -15499,8 +15521,8 @@ tool_use exec_command
 id: call_2yZ88zD7l7tytOI6big9Owup
 ```json
 {
-  "cmd": "bd update av-xdwn --claim --description \"Provider skill-call metadata is inconsistent. WTG PR50857 dogfood showed pi-coding-agent returns normalized tool-call output but no ProviderResponse.metadata.skillCalls, so skill-used reports Actual skills: (none). Expand this fix across all agent providers that can expose trajectories: ensure providers emit normalized skillCalls metadata when sessions read/use repo skills; hard-deprecate the legacy skill trigger field; incorporate any useful detection logic from that legacy field into the canonical metadata derivation path; and verify against focused tests plus live dogfood where practical.\" --acceptance \"All agent providers with tool-call or transcript trajectories either emit ProviderResponse.metadata.skillCalls or have a documented explicit no-signal reason; legacy skill trigger authoring is rejected/hard-deprecated rather than silently accepted; useful legacy trigger/path matching logic is preserved in the canonical skillCalls derivation helper; skill-used assertions consume the canonical metadata consistently; focused tests cover provider derivation and deprecation behavior; Promptfoo local clone or DeepWiki research is recorded in notes; live provider/grader dogfood is run or exact blockers are recorded.\" --set-metadata machine=entity-vps --set-metadata worker=lead-codex --set-metadata branch=fix/av-xdwn-provider-skill-calls --set-metadata worktree=/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-xdwn --claim --description \"Provider skill-call metadata is inconsistent. WTG PR50857 dogfood showed pi-coding-agent returns normalized tool-call output but no ProviderResponse.metadata.skillCalls, so skill-used reports Actual skills: (none). Expand this fix across all agent providers that can expose trajectories: ensure providers emit normalized skillCalls metadata when sessions read/use repo skills; hard-deprecate the legacy skill trigger field; incorporate any useful detection logic from that legacy field into the canonical metadata derivation path; and verify against focused tests plus live dogfood where practical.\" --acceptance \"All agent providers with tool-call or transcript trajectories either emit ProviderResponse.metadata.skillCalls or have a documented explicit no-signal reason; legacy skill trigger authoring is rejected/hard-deprecated rather than silently accepted; useful legacy trigger/path matching logic is preserved in the canonical skillCalls derivation helper; skill-used assertions consume the canonical metadata consistently; focused tests cover provider derivation and deprecation behavior; Promptfoo local clone or DeepWiki research is recorded in notes; live provider/grader dogfood is run or exact blockers are recorded.\" --set-metadata machine=entity-vps --set-metadata worker=lead-codex --set-metadata branch=fix/av-xdwn-provider-skill-calls --set-metadata worktree=/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -15576,7 +15598,7 @@ id: call_3e7KZuV98b0zJG5MGvK7v4qL
 ```json
 {
   "cmd": "bun run beads:check",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -15589,7 +15611,7 @@ id: call_V9P5hqvw753TFjzB2pSEmbya
 ```json
 {
   "cmd": "bd worktree info",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -15602,7 +15624,7 @@ id: call_iHOqh8qvS9emvNli083Fs7Y4
 ```json
 {
   "cmd": "bd where",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -15615,7 +15637,7 @@ id: call_vHYQOC9TsPtoZiN1sFFtrj9A
 ```json
 {
   "cmd": "git status --short --branch && git rev-parse HEAD && git merge-base --is-ancestor origin/main HEAD && echo based-on-origin-main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -15648,8 +15670,8 @@ WARN: .beads/config.yaml is missing
 OK: git origin is EntityProcess/agentv
 OK: current bd context uses database av and expected project ID
 OK: bd context uses the primary checkout Beads directory
-  repo_root: /home/entity/projects/EntityProcess/agentv
-  beads_dir: /home/entity/projects/EntityProcess/agentv/.beads
+  repo_root: /home/<USER>/projects/EntityProcess/agentv
+  beads_dir: /home/<USER>/projects/EntityProcess/agentv/.beads
 
 0 error(s), 1 warning(s)
 
@@ -15665,10 +15687,10 @@ Wall time: 2.5133 seconds
 Process exited with code 0
 Original token count: 65
 Output:
-Worktree: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls
+Worktree: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls
   Name: av-xdwn-provider-skill-calls
   Branch: fix/av-xdwn-provider-skill-calls
-  Main repo: /home/entity/projects/EntityProcess/agentv
+  Main repo: /home/<USER>/projects/EntityProcess/agentv
   Beads: local (no redirect)
 
 ```
@@ -15683,9 +15705,9 @@ Wall time: 0.8412 seconds
 Process exited with code 0
 Original token count: 35
 Output:
-/home/entity/projects/EntityProcess/agentv/.beads
+/home/<USER>/projects/EntityProcess/agentv/.beads
   prefix: av
-  database: /home/entity/projects/EntityProcess/agentv/.beads/embeddeddolt
+  database: /home/<USER>/projects/EntityProcess/agentv/.beads/embeddeddolt
 
 ```
 
@@ -15763,7 +15785,7 @@ id: call_PvAKKcunmVwkI9Xtu8IAHlOi
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch && git rev-parse HEAD && git rev-parse origin/main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -15776,7 +15798,7 @@ id: call_qJs0ZxN3RFELxDsN257zNboo
 ```json
 {
   "cmd": "rg -n \"skillCalls|skill calls|skill-used|skill_used|skillTrigger|skill trigger|trigger\" packages apps examples plugins docs -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -15789,7 +15811,7 @@ id: call_7KO4Z7Gj2vYsXiMjxi9NjluN
 ```json
 {
   "cmd": "rg -n \"graders:|grader_target|defaults\\.grader|config block|graders\" packages apps examples docs plugins -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -15865,7 +15887,7 @@ id: call_OiSvWLM0nM5ah2ohCZ8yTo7e
 ```json
 {
   "cmd": "rg -n \"deriveSkillCallsFromToolCalls|skillCallMetadata|metadata:\\s*\\{|toolCalls|messages:\" packages/core/src/evaluation/providers packages/core/test/evaluation/providers -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -15878,7 +15900,7 @@ id: call_ch81rbcebj6FSacWTymW7ASZ
 ```json
 {
   "cmd": "sed -n '1,260p' packages/core/src/evaluation/providers/skill-calls.ts && sed -n '200,390p' packages/core/src/evaluation/providers/types.ts && sed -n '1,260p' packages/core/src/evaluation/graders/skill-trigger.ts && sed -n '1,250p' packages/core/src/evaluation/graders/skill-used.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -15890,8 +15912,8 @@ tool_use exec_command
 id: call_OXLKHfcq1oSMqRDk1ZnIoArm
 ```json
 {
-  "cmd": "rg -n \"skill-used|skillUsed|skillCalls|skill_calls|assert.*skill|tool-call|toolCall\" /home/entity/projects/promptfoo/promptfoo/src /home/entity/projects/promptfoo/promptfoo/test -g '!**/node_modules/**'",
-  "workdir": "/home/entity/projects/promptfoo/promptfoo",
+  "cmd": "rg -n \"skill-used|skillUsed|skillCalls|skill_calls|assert.*skill|tool-call|toolCall\" /home/<USER>/projects/promptfoo/promptfoo/src /home/<USER>/projects/promptfoo/promptfoo/test -g '!**/node_modules/**'",
+  "workdir": "/home/<USER>/projects/promptfoo/promptfoo",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -15904,7 +15926,7 @@ id: call_Q7vzAGXF47d0AvcIdUhkvYFd
 ```json
 {
   "cmd": "git rev-parse HEAD",
-  "workdir": "/home/entity/projects/promptfoo/promptfoo",
+  "workdir": "/home/<USER>/projects/promptfoo/promptfoo",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -16054,27 +16076,27 @@ Output:
 Warning: truncated output (original token count: 14634)
 Total output lines: 420
 
-/home/entity/projects/promptfoo/promptfoo/src/tracing/otlpReceiver.ts:161:  /** Tool names whose tool-call spans should be normalized as command steps. */
-/home/entity/projects/promptfoo/promptfoo/src/tracing/otlpReceiver.ts:169:  /** Tool names whose tool-call spans should be normalized as command steps. */
-/home/entity/projects/promptfoo/promptfoo/src/assertions/index.ts:89:import { handleToolCallF1 } from './toolCallF1';
-/home/entity/projects/promptfoo/promptfoo/src/assertions/index.ts:299:  'skill-used': handleSkillUsed,
-/home/entity/projects/promptfoo/promptfoo/src/assertions/index.ts:305:  'tool-call-f1': handleToolCallF1,
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:13:  const rawSkillCalls = params.providerResponse?.metadata?.skillCalls;
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:52:      throw new Error(`skill-used assertion object ${field} must be a finite non-negative integer`);
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:80:      throw new Error('skill-used assertion object must include a name or pattern property');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:93:      throw new Error('skill-used assertion object max must be greater than or equal to min');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:107:  throw new Error('skill-used assertion must have a string, string array, or object value');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:112:  skillCalls: SkillCallEntry[],
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:117:    (matcher) => !skillCalls.some((skillCall) => matchesSkill(skillCall, matcher)),
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:120:    skillCalls.some((skillCall) => matchesSkill(skillCall, matcher)),
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:147:  skillCalls: SkillCallEntry[],
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:155:  const matchingSkillCalls = skillCalls.filter((skillCall) => matchesSkill(skillCall, matcher));
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:162:        'not-skill-used object assertions only support name/pattern with no count bounds, or max: 0',
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:196:  const skillCalls = getSkillCalls(params);
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:197:  const actualSkills = skillCalls.map(formatSkillCall);
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:201:    return handleListSkillAssertion(params, skillCalls, actualSkills, expected);
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts:204:  return handleCountSkillAssertion(params, skillCalls, actualSkills, expected.matcher);
-/home/entity/projects/promptfoo/promptfoo/src/assertions/toolCallF1.ts:14: * - Google Live format: […]
+/home/<USER>/projects/promptfoo/promptfoo/src/tracing/otlpReceiver.ts:161:  /** Tool names whose tool-call spans should be normalized as command steps. */
+/home/<USER>/projects/promptfoo/promptfoo/src/tracing/otlpReceiver.ts:169:  /** Tool names whose tool-call spans should be normalized as command steps. */
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/index.ts:89:import { handleToolCallF1 } from './toolCallF1';
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/index.ts:299:  'skill-used': handleSkillUsed,
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/index.ts:305:  'tool-call-f1': handleToolCallF1,
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:13:  const rawSkillCalls = params.providerResponse?.metadata?.skillCalls;
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:52:      throw new Error(`skill-used assertion object ${field} must be a finite non-negative integer`);
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:80:      throw new Error('skill-used assertion object must include a name or pattern property');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:93:      throw new Error('skill-used assertion object max must be greater than or equal to min');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:107:  throw new Error('skill-used assertion must have a string, string array, or object value');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:112:  skillCalls: SkillCallEntry[],
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:117:    (matcher) => !skillCalls.some((skillCall) => matchesSkill(skillCall, matcher)),
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:120:    skillCalls.some((skillCall) => matchesSkill(skillCall, matcher)),
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:147:  skillCalls: SkillCallEntry[],
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:155:  const matchingSkillCalls = skillCalls.filter((skillCall) => matchesSkill(skillCall, matcher));
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:162:        'not-skill-used object assertions only support name/pattern with no count bounds, or max: 0',
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:196:  const skillCalls = getSkillCalls(params);
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:197:  const actualSkills = skillCalls.map(formatSkillCall);
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:201:    return handleListSkillAssertion(params, skillCalls, actualSkills, expected);
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts:204:  return handleCountSkillAssertion(params, skillCalls, actualSkills, expected.matcher);
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/toolCallF1.ts:14: * - Google Live format: […]
 
 > TOOL
 
@@ -16100,8 +16122,8 @@ tool_use exec_command
 id: call_fq4a5ElEKZF7HAOnBZjw5iHF
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts && sed -n '1,240p' /home/entity/projects/promptfoo/promptfoo/src/providers/openai/codexSkillMetadata.ts && sed -n '600,950p' /home/entity/projects/promptfoo/promptfoo/test/providers/openai-codex-sdk.test.ts",
-  "workdir": "/home/entity/projects/promptfoo/promptfoo",
+  "cmd": "sed -n '1,260p' /home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts && sed -n '1,240p' /home/<USER>/projects/promptfoo/promptfoo/src/providers/openai/codexSkillMetadata.ts && sed -n '600,950p' /home/<USER>/projects/promptfoo/promptfoo/test/providers/openai-codex-sdk.test.ts",
+  "workdir": "/home/<USER>/projects/promptfoo/promptfoo",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -16114,7 +16136,7 @@ id: call_i8JobqjGmdlho42WCGYNyYtg
 ```json
 {
   "cmd": "sed -n '1,280p' packages/core/src/evaluation/providers/pi-coding-agent.ts && sed -n '460,540p' packages/core/src/evaluation/providers/pi-coding-agent.ts && sed -n '730,850p' packages/core/src/evaluation/providers/pi-coding-agent.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -16127,7 +16149,7 @@ id: call_GWM4KEJ7bYPZrFfk6wVAiq4k
 ```json
 {
   "cmd": "sed -n '1,280p' packages/core/src/evaluation/providers/pi-cli.ts && sed -n '700,940p' packages/core/src/evaluation/providers/pi-cli.ts && sed -n '1000,1085p' packages/core/src/evaluation/providers/pi-cli.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -16140,7 +16162,7 @@ id: call_icis1ERO0miR2n18Lg7OtvLU
 ```json
 {
   "cmd": "sed -n '1,260p' packages/core/src/evaluation/providers/cli.ts && sed -n '540,845p' packages/core/src/evaluation/providers/cli.ts && sed -n '1,220p' packages/core/src/evaluation/providers/target-execution.ts && sed -n '1,180p' packages/core/src/evaluation/providers/pi-process.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -16398,7 +16420,7 @@ id: call_Kg5ClfYnApClfL1q6upnzK4T
 ```json
 {
   "cmd": "sed -n '1,260p' packages/core/src/evaluation/providers/copilot-cli.ts && sed -n '300,370p' packages/core/src/evaluation/providers/copilot-cli.ts && sed -n '1,340p' packages/core/src/evaluation/providers/copilot-sdk.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -16411,7 +16433,7 @@ id: call_EAFA7YqmQD6IOzxK5PIvDhVG
 ```json
 {
   "cmd": "sed -n '1,280p' packages/core/src/evaluation/providers/codex-sdk.ts && sed -n '1,280p' packages/core/src/evaluation/providers/codex-cli.ts && sed -n '1,240p' packages/core/src/evaluation/providers/codex.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 60000
 }
@@ -16424,7 +16446,7 @@ id: call_1enul49bN9woqGPRfM58uhb2
 ```json
 {
   "cmd": "sed -n '1,260p' packages/core/src/evaluation/providers/sdk-child-provider.ts && sed -n '1,180p' packages/core/test/evaluation/providers/sdk-child-provider.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -16437,7 +16459,7 @@ id: call_8tPef8pVQHfKCLR9IVfT3f6t
 ```json
 {
   "cmd": "rg -n \"createBuiltinRegistry|SkillTriggerGrader|skill-trigger|GRADER_KIND_VALUES|AssertionType\" packages/core/src packages/sdk/src packages/core/test/evaluation/graders packages/core/test/evaluation/loaders packages/core/test/evaluation/validation -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -16649,7 +16671,7 @@ id: call_0wTis2Y076VT4s1p6WLEcxa8
 ```json
 {
   "cmd": "rg --files packages/core/src/evaluation/providers | sort | rg 'codex|openai|sdk-child|replay|transcript'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -16662,7 +16684,7 @@ id: call_Wah3Nt4IpceRzQC54GBaRLpv
 ```json
 {
   "cmd": "sed -n '240,380p' packages/core/src/evaluation/providers/copilot-cli.ts && sed -n '300,390p' packages/core/src/evaluation/providers/copilot-sdk.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -16675,7 +16697,7 @@ id: call_WxeyoUL6d84dbyO6kb18ofIE
 ```json
 {
   "cmd": "sed -n '520,650p' packages/core/src/evaluation/providers/cli.ts && sed -n '800,850p' packages/core/src/evaluation/providers/cli.ts && sed -n '1010,1045p' packages/core/src/evaluation/providers/cli.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -16688,7 +16710,7 @@ id: call_HIUym6lgqYHZzDj3J7fhuore
 ```json
 {
   "cmd": "sed -n '160,230p' packages/core/src/evaluation/types.ts && sed -n '880,1005p' packages/core/src/evaluation/types.ts && sed -n '35,70p' packages/sdk/src/assertion.ts && sed -n '1,90p' packages/core/src/evaluation/graders/index.ts && sed -n '430,460p' packages/core/src/evaluation/registry/builtin-graders.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -16949,7 +16971,7 @@ id: call_rFzr1leUi0fAlSglfe68zCtM
 ```json
 {
   "cmd": "sed -n '1,220p' packages/core/test/evaluation/providers/skill-calls.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -16962,7 +16984,7 @@ id: call_R22HITJkqXmoViLnlh9NnUJ0
 ```json
 {
   "cmd": "sed -n '1,220p' packages/core/test/evaluation/providers/pi-runtime.test.ts && sed -n '1,380p' packages/core/test/evaluation/providers/pi-cli-tool-extraction.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -16975,7 +16997,7 @@ id: call_eveEAMC7ZEEAXezyRLirtK93
 ```json
 {
   "cmd": "sed -n '240,330p' packages/core/test/evaluation/providers/claude.test.ts && sed -n '430,465p' packages/core/test/evaluation/providers/codex-sdk.test.ts 2>/dev/null || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -16988,7 +17010,7 @@ id: call_qOml8tNEeEfmQVWgPVJYyTC1
 ```json
 {
   "cmd": "rg --files packages/core/test/evaluation/providers | sort | rg 'codex|copilot|pi|cli'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -17259,7 +17281,7 @@ id: call_ej3W2Joxh1Uu8vqZqwlzQiZY
 ```json
 {
   "cmd": "rg -n \"attemptedSkillCalls|isError|is_error|skillCallMetadata\\(|deriveSkillCallsFrom\" packages/core/src packages/core/test -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -17320,7 +17342,7 @@ id: call_3Fg6ivadpyXd0FW1KmR4xbpO
 ```json
 {
   "cmd": "rg -n \"return \\{|output,|targetExecution|extractMessages|metadata:\" packages/core/src/evaluation/providers/pi-rpc.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -17361,7 +17383,7 @@ id: call_k4a9dOcv7Seyo9hpbSVMBQs1
 ```json
 {
   "cmd": "sed -n '1,175p' packages/core/src/evaluation/providers/pi-rpc.ts && sed -n '300,350p' packages/core/src/evaluation/providers/pi-rpc.ts && sed -n '510,550p' packages/core/src/evaluation/providers/pi-rpc.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -17460,7 +17482,7 @@ id: call_Wp9T9S9b2Z8p3iyYYWCRHRG3
 ```json
 {
   "cmd": "rg -n \"parseOutputContent|parseJsonlBatchOutput|interface Parsed\" packages/core/src/evaluation/providers/cli.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -17490,7 +17512,7 @@ id: call_9yxY7iUryicCJLxmGl3Y2hiI
 ```json
 {
   "cmd": "sed -n '850,960p' packages/core/src/evaluation/providers/cli.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -17556,7 +17578,7 @@ id: call_F68vbhBCBzQPe2jkqzgYii8Z
 ```json
 {
   "cmd": "sed -n '960,1035p' packages/core/src/evaluation/providers/cli.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -17635,7 +17657,7 @@ id: call_6jcOsS0cgU6kyr2TVQDCpQQz
 ```json
 {
   "cmd": "rg -n \"providerResponseFromWire|metadata|skillCalls\" packages/core/src/evaluation/providers/sdk-child-protocol.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -17668,7 +17690,7 @@ id: call_lROgVHKKH0PRX29WmLj1Q3ij
 ```json
 {
   "cmd": "sed -n '130,180p' packages/core/src/evaluation/providers/sdk-child-protocol.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -17753,7 +17775,7 @@ id: call_4hhuPZMSdeofYVGxJwLb0kiK
 ```json
 {
   "cmd": "sed -n '1,30p' packages/core/src/evaluation/providers/sdk-child-protocol.ts && sed -n '1,35p' packages/core/src/evaluation/providers/cli.ts && sed -n '1,35p' packages/core/src/evaluation/providers/pi-coding-agent.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -17766,7 +17788,7 @@ id: call_9gi9nPe5tpDVM7cMRxZ5tYut
 ```json
 {
   "cmd": "git diff -- packages/core/src/evaluation/providers/skill-calls.ts packages/core/src/evaluation/providers/pi-coding-agent.ts packages/core/src/evaluation/providers/pi-cli.ts packages/core/src/evaluation/providers/copilot-cli.ts packages/core/src/evaluation/providers/copilot-sdk.ts packages/core/src/evaluation/providers/cli.ts packages/core/src/evaluation/providers/sdk-child-protocol.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -17911,7 +17933,7 @@ id: call_1tadgpstMzTwh49rZlQFqtH3
 ```json
 {
   "cmd": "sed -n '1,90p' packages/core/src/evaluation/registry/builtin-graders.ts && sed -n '250,275p' packages/core/src/evaluation/registry/builtin-graders.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -18028,7 +18050,7 @@ id: call_mKKNyP96B8yI4KUGp8RoiKJ5
 ```json
 {
   "cmd": "sed -n '1,150p' packages/core/src/evaluation/loaders/eval-yaml-transpiler.ts && sed -n '240,430p' packages/core/src/evaluation/loaders/eval-yaml-transpiler.ts && sed -n '1380,1420p' packages/core/src/evaluation/loaders/grader-parser.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -18041,7 +18063,7 @@ id: call_7uHtft0SW9wCriW2KXAREJMq
 ```json
 {
   "cmd": "sed -n '1,190p' packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts && sed -n '640,690p' packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -18054,7 +18076,7 @@ id: call_yhFc9MQ9bgEbxYuEcdHIMH5r
 ```json
 {
   "cmd": "rg -n \"should_trigger|skill-trigger|SkillTrigger\" packages/core/src packages/core/test packages/sdk/src apps/web/src/content/docs/docs/next examples/features/agent-skills-evals plugins/agentv-dev -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -18257,7 +18279,7 @@ id: call_PQwpgp66zMMyVrdeoYOAmzW9
 ```json
 {
   "cmd": "sed -n '100,135p' packages/core/src/evaluation/loaders/eval-yaml-transpiler.ts && sed -n '245,265p' packages/core/src/evaluation/loaders/eval-yaml-transpiler.ts && sed -n '360,450p' packages/core/src/evaluation/loaders/eval-yaml-transpiler.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -18342,7 +18364,7 @@ id: call_bJ74IFbBk02FapCTxD8vBKFQ
 ```json
 {
   "cmd": "sed -n '1,240p' packages/core/test/evaluation/providers/pi-coding-agent.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -18355,7 +18377,7 @@ id: call_hD0YnjomyGYY8TJlQjzN7B3w
 ```json
 {
   "cmd": "sed -n '540,720p' packages/core/test/evaluation/providers/cli.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -18368,7 +18390,7 @@ id: call_YhCIVgvuaXawH9rOurBM0uPL
 ```json
 {
   "cmd": "sed -n '450,520p' packages/core/test/evaluation/providers/copilot-sdk.test.ts && sed -n '1,220p' packages/core/test/evaluation/providers/copilot-cli.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -18381,7 +18403,7 @@ id: call_wva70IYGetwAFWPxKRUA6Pm5
 ```json
 {
   "cmd": "sed -n '1,80p' packages/core/test/evaluation/graders/promptfoo-assertions.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -18687,7 +18709,7 @@ id: call_7ueDRQZ47h9pkfBADYamAvws
 ```json
 {
   "cmd": "rg -n \"tool_call|tool_call_update|rawInput|toolCalls|Read\" packages/core/test/evaluation/providers/copilot-cli.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -18721,7 +18743,7 @@ id: call_RHHndZJzTsMUcaLNeUYr1qdc
 ```json
 {
   "cmd": "sed -n '120,230p' packages/core/test/evaluation/providers/sdk-child-provider.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -18801,7 +18823,7 @@ id: call_Qt1ImT1LrKvHu2X21OZRr8Cs
 ```json
 {
   "cmd": "sed -n '230,300p' packages/core/test/evaluation/providers/sdk-child-provider.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -18871,7 +18893,7 @@ id: call_hns1SDSI77p9TB3eHlIzlQWr
 ```json
 {
   "cmd": "perl -0pi -e \"s/\\{ type: 'skill-trigger', skill: '([^']+)', should_trigger: true \\}/{ type: 'skill-used', value: '\\1' }/g; s/\\{ type: 'skill-trigger', skill: '([^']+)', should_trigger: false \\}/{ type: 'not-skill-used', value: '\\1' }/g\" packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -18901,7 +18923,7 @@ id: call_RC1Qa0tTmdgu2bVmmSaF4fZi
 ```json
 {
   "cmd": "rg -n \"skill-trigger|should_trigger\" packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts packages/core/src/evaluation/loaders/eval-yaml-transpiler.ts packages/core/test/evaluation/graders packages/core/src/evaluation packages/sdk/src/assertion.ts apps/web/src/content/docs/docs/next examples/features/agent-skills-evals -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -18950,7 +18972,7 @@ id: call_ooMXv15eXJxakPmr7Bx0PRsL
 ```json
 {
   "cmd": "sed -n '100,150p' packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts && sed -n '360,390p' packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts && sed -n '650,690p' packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -19035,7 +19057,7 @@ id: call_URi8COFU2vjR3h024AtXa3jl
 ```json
 {
   "cmd": "rg -n \"SkillTrigger|skillTrigger|skill-trigger\" packages/core/src packages/sdk/src packages/core/test apps/web/src/content/docs/docs/next examples/features/agent-skills-evals plugins/agentv-dev -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -19048,7 +19070,7 @@ id: call_g3F13phhx59lzZ5RdRll3Jef
 ```json
 {
   "cmd": "rg -n \"graders:\" .agentv examples apps/web/src/content/docs/docs/next packages/core/test/evaluation/validation packages/core/src/evaluation/providers/targets.ts packages/core/src/evaluation/config -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -19061,7 +19083,7 @@ id: call_4b3GI9nuEUgMpawR6SaxB17r
 ```json
 {
   "cmd": "git diff --stat && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -19217,7 +19239,7 @@ id: call_Qlm1uHy2BxnPglju7jIwNzbT
 ```json
 {
   "cmd": "sed -n '2035,2062p' packages/core/src/evaluation/loaders/grader-parser.ts && sed -n '130,170p' apps/web/src/content/docs/docs/next/graders/llm-graders.mdx && sed -n '55,75p' apps/web/src/content/docs/docs/next/targets/configuration.mdx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -19295,7 +19317,7 @@ id: call_kdj2qRYg1e5v211CPzbQhnnN
 ```json
 {
   "cmd": "rg -n \"skill-trigger|graders: file://|eval-local `graders`|^graders:\" apps/web/src/content/docs/docs/next plugins/agentv-dev packages/core/src packages/sdk/src examples/features/agent-skills-evals -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -19336,7 +19358,7 @@ id: call_iTRG750FSt8sgF16ZfQXOsZc
 ```json
 {
   "cmd": "rg -n 'skill-trigger|graders: file://|eval-local `graders`|^graders:' apps/web/src/content/docs/docs/next plugins/agentv-dev packages/core/src packages/sdk/src examples/features/agent-skills-evals -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -19375,7 +19397,7 @@ id: call_yTqgz0ZHGQadHpm9QERxbBJZ
 ```json
 {
   "cmd": "sed -n '20,45p' packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts && sed -n '650,685p' packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -19388,7 +19410,7 @@ id: call_ELNj6T0yau1suWagNegUTeYd
 ```json
 {
   "cmd": "git diff -- packages/core/src/evaluation/providers/skill-calls.ts packages/core/src/evaluation/providers/pi-cli.ts packages/core/src/evaluation/providers/cli.ts packages/core/src/evaluation/registry/builtin-graders.ts packages/core/src/evaluation/types.ts apps/web/src/content/docs/docs/next/graders/llm-graders.mdx | sed -n '1,260p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -19526,7 +19548,7 @@ id: call_vaypZvJuPTNUY64hQmnTR97u
 ```json
 {
   "cmd": "rg -n \"metadata\\)\\.toBeUndefined|metadata\\?\\.skillCalls|metadata\\?\\.attemptedSkillCalls|metadata\\.toEqual\" packages/core/test/evaluation/providers packages/core/test/evaluation -g '!**/dist/**'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -19581,7 +19603,7 @@ id: call_2ReUmGwUwU3dewLQqwJ2m6qe
 ```json
 {
   "cmd": "bun test packages/core/test/evaluation/providers/skill-calls.test.ts packages/core/test/evaluation/providers/pi-runtime.test.ts packages/core/test/evaluation/providers/cli.test.ts packages/core/test/evaluation/providers/copilot-sdk.test.ts packages/core/test/evaluation/providers/copilot-cli.test.ts packages/core/test/evaluation/providers/sdk-child-provider.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -19594,7 +19616,7 @@ id: call_3YalwaY70PxQoskUSbuBxj1r
 ```json
 {
   "cmd": "bun test packages/core/test/evaluation/graders/promptfoo-assertions.test.ts packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts packages/core/test/evaluation/loaders/grader-parser.test.ts packages/core/test/evaluation/validation/eval-file-schema.test.ts packages/core/test/evaluation/validation/eval-validator.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -19674,7 +19696,7 @@ id: call_xttdhTxVSmasl1M5op9Z2oVR
 ```json
 {
   "cmd": "bun test packages/core/test/evaluation/graders/promptfoo-assertions.test.ts packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts packages/core/test/evaluation/loaders/grader-parser.test.ts packages/core/test/evaluation/validation/eval-file-schema.test.ts packages/core/test/evaluation/validation/eval-validator.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -19723,7 +19745,7 @@ id: call_1XhOBUOrZjUTGoxBy6GVHmyU
 ```json
 {
   "cmd": "cat package.json | sed -n '1,120p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -19780,7 +19802,7 @@ id: call_GNi8DvhlguOnyB1Uett0aDQQ
 ```json
 {
   "cmd": "bun run typecheck",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -19793,7 +19815,7 @@ id: call_Indw1jYX8Zw1p1yS1TaekKoR
 ```json
 {
   "cmd": "bun run lint",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -19878,7 +19900,7 @@ id: call_Te0EmaSqIqnEkJAxvtn3MZO4
 ```json
 {
   "cmd": "sed -n '1360,1402p' packages/core/src/evaluation/loaders/grader-parser.ts && sed -n '180,212p' packages/core/src/evaluation/loaders/grader-parser.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -19954,7 +19976,7 @@ id: call_tmwzPhdomsVQ6laLqNMsqtdW
 ```json
 {
   "cmd": "bunx biome format --write packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts packages/core/test/evaluation/providers/copilot-cli.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -19985,7 +20007,7 @@ id: call_fK8FF0NT2DNmTPLC9t89YoYf
 ```json
 {
   "cmd": "bun run typecheck",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -19998,7 +20020,7 @@ id: call_CkRz7GlrYs6nhhISAzbLzPI0
 ```json
 {
   "cmd": "bun run lint",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -20020,7 +20042,7 @@ $ bun --filter @agentv/core typecheck && bun --filter @agentv/sdk typecheck && b
 @agentv/sdk typecheck: @agentv/core build: CLI Building entry: src/index.ts, src/evaluation/providers/sdk-child-runner.ts, src/evaluation/validation/index.ts
 @agentv/sdk typecheck: @agentv/core build: CLI Using tsconfig: tsconfig.build.json
 @agentv/sdk typecheck: @agentv/core build: CLI tsup v8.3.5
-@agentv/sdk typecheck: @agentv/core build: CLI Using tsup config: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/core/tsup.config.ts
+@agentv/sdk typecheck: @agentv/core build: CLI Using tsup config: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/core/tsup.config.ts
 @agentv/sdk typecheck: @agentv/core build: CLI Target: node20
 @agentv/sdk typecheck: @agentv/core build: CLI Cleaning output folder
 @agentv/sdk typecheck: @agentv/core build: ESM Build start
@@ -20137,7 +20159,7 @@ agentv typecheck: $ bun --cwd ../.. --filter @agentv/core build
 agentv typecheck: @agentv/core build: CLI Building entry: src/index.ts, src/evaluation/providers/sdk-child-runner.ts, src/evaluation/validation/index.ts
 agentv typecheck: @agentv/core build: CLI Using tsconfig: tsconfig.build.json
 agentv typecheck: @agentv/core build: CLI tsup v8.3.5
-agentv typecheck: @agentv/core build: CLI Using tsup config: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/core/tsup.config.ts
+agentv typecheck: @agentv/core build: CLI Using tsup config: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/core/tsup.config.ts
 agentv typecheck: @agentv/core build: CLI Target: node20
 agentv typecheck: @agentv/core build: CLI Cleaning output folder
 agentv typecheck: @agentv/core build: ESM Build start
@@ -20185,7 +20207,7 @@ agentv typecheck: @agentv/core build: Exited with code 0
 agentv typecheck: CLI Building entry: src/index.ts
 agentv typecheck: CLI Using tsconfig: tsconfig.json
 agentv typecheck: CLI tsup v8.3.5
-agentv typecheck: CLI Using tsup config: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/sdk/tsup.config.ts
+agentv typecheck: CLI Using tsup config: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/sdk/tsup.config.ts
 agentv typecheck: CLI Target: node20
 agentv typecheck: CLI Cleaning output folder
 agentv typecheck: ESM Build start
@@ -20210,7 +20232,7 @@ id: call_K6n70uizQOdE7AAIoCUCuj7b
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -20223,7 +20245,7 @@ id: call_6dvb5G9ynsM07A1KqLKM9Yxa
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -20236,7 +20258,7 @@ id: call_VFzPucdqLP1BBczwOmuZScLz
 ```json
 {
   "cmd": "git diff --name-only",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -20369,7 +20391,7 @@ id: call_dR4f1TU80brIkyAe3oQN286q
 ```json
 {
   "cmd": "rg -n \"skill-trigger|not-skill-trigger\" .",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -20382,7 +20404,7 @@ id: call_NY9LnwkkSykPxB5DoiGYWRTr
 ```json
 {
   "cmd": "rg -n \"graders:\" apps/web/src/content/docs packages/core/test packages/core/src examples docs | head -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -20395,7 +20417,7 @@ id: call_8wRo6qj4Hd7i0CUQO8lwLqDg
 ```json
 {
   "cmd": "git diff -- packages/core/src/evaluation/providers/skill-calls.ts packages/core/src/evaluation/loaders/eval-yaml-transpiler.ts packages/core/src/evaluation/providers/sdk-child-protocol.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -20536,7 +20558,7 @@ id: call_lUHYO3hbWtFEopO01yqjIG4w
 ```json
 {
   "cmd": "bun test packages/core/test/evaluation/providers/sdk-child-provider.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -20549,7 +20571,7 @@ id: call_vakjqHb64IWMwuPODAi5XG8H
 ```json
 {
   "cmd": "rg -n \"provider: codex|codex-sdk|openai|base_url|baseUrl|api_key|apiKey|targets:\" examples apps/web/src/content/docs/docs/next packages/core/test | head -200",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -20562,7 +20584,7 @@ id: call_TSTKaDNVbBli9QttgWlMvw2u
 ```json
 {
   "cmd": "find examples -maxdepth 4 -iname '*skill*' -o -iname '*codex*' | head -100",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -20696,7 +20718,7 @@ id: call_yAfhEmN7mpAVLP8kDQ4RoJLg
 ```json
 {
   "cmd": "sed -n '1,220p' examples/features/agent-skills-evals/multi-provider-skill-use.EVAL.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -20709,7 +20731,7 @@ id: call_IssWtsfqb3WMsm1VTfKLbRzk
 ```json
 {
   "cmd": "sed -n '300,390p' packages/core/test/evaluation/validation/targets-validator.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -20722,7 +20744,7 @@ id: call_zXHvdA8Ipy6dmjyHdaCpTQCA
 ```json
 {
   "cmd": "sed -n '1,180p' apps/web/src/content/docs/docs/next/targets/configuration.mdx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -20735,7 +20757,7 @@ id: call_Ieu7Oa25CmUnRsc8jZChpkAu
 ```json
 {
   "cmd": "rg -n \"agentv run|run .*EVAL|eval\" apps/cli/src packages/core/src/evaluation apps/web/src/content/docs/docs/next/evaluation/running-evals.mdx | head -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -20963,7 +20985,7 @@ id: call_B1bJxuUbRlSiTkpHpgZiAnbC
 ```json
 {
   "cmd": "sed -n '700,740p' apps/web/src/content/docs/docs/next/evaluation/running-evals.mdx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -20976,7 +20998,7 @@ id: call_i5RRTHYpdedR0rE0oJpbQ4Ep
 ```json
 {
   "cmd": "rg -n \"interface .*Codex|type .*Codex|baseUrl|base_url|apiKey|api_key|modelProvider|model_provider|codex-sdk\" packages/core/src/evaluation/providers packages/core/src/evaluation/loaders packages/core/src/evaluation/types.ts | head -200",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -20989,7 +21011,7 @@ id: call_NeIcIDIgKFJgBqCXTLuAs6HZ
 ```json
 {
   "cmd": "cut -d= -f1 .env | rg 'OPENAI|LOCAL_OPENAI|CODEX' || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -21002,7 +21024,7 @@ id: call_wEDCO2O5XpkjnePXxZHcM5Pr
 ```json
 {
   "cmd": "curl -sS --max-time 5 http://127.0.0.1:10531/v1/models | head -c 1000",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -21026,13 +21048,13 @@ projects: file://projects.yaml
 ```yaml
 # $AGENTV_HOME/projects.yaml
 - id: agentv
-  path: /home/user/projects/agentv
+  path: /home/<USER>/projects/agentv
 ```
 
 When running AgentV from a worktree that needs environment from a primary checkout, load the primary `.env` through the runtime instead of shell-sourcing it:
 
 ```bash
-bun --env-file /home/user/projects/agentv/.env apps/cli/src/cli.ts eval evals/smoke.eval.yaml
+bun --env-file /home/<USER>/projects/agentv/.env apps/cli/src/cli.ts eval evals/smoke.eval.yaml
 ```
 
 This keeps `.env` parsing in Bun's dotenv loader and avoids executing shell syntax from an environment file.
@@ -21146,7 +21168,7 @@ id: call_D3sOqYuAuSAz2rHjBJj0Etz0
 ```json
 {
   "cmd": "rg -n \"^\\.agentv|tmp|results\" .gitignore .git/info/exclude",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -21159,7 +21181,7 @@ id: call_OVm1z1rVhcRLeCurUqLAodjq
 ```json
 {
   "cmd": "sed -n '1,120p' apps/web/src/content/docs/docs/next/evaluation/running-evals.mdx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -21172,7 +21194,7 @@ id: call_AeT9yHDbXvLTuk18Bhw7kqBO
 ```json
 {
   "cmd": "sed -n '1500,1590p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -21346,7 +21368,7 @@ id: call_SmHMWdZlqdWwsCAhDK9gJRoz
 ```json
 {
   "cmd": "bun --env-file .env -e 'console.log(JSON.stringify({OPENAI_ENDPOINT: process.env.OPENAI_ENDPOINT, OPENAI_MODEL: process.env.OPENAI_MODEL, hasKey: Boolean(process.env.OPENAI_API_KEY)}))'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -21359,7 +21381,7 @@ id: call_rdX8FtQAuDyos0PkqmK4Qq3c
 ```json
 {
   "cmd": "sed -n '40,120p' packages/core/src/evaluation/providers/codex.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -21372,7 +21394,7 @@ id: call_WE06A3impvv4haH3SpHPBpS6
 ```json
 {
   "cmd": "sed -n '1,110p' packages/core/src/evaluation/providers/sdk-child-runner.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -21541,7 +21563,7 @@ id: call_FKExQY8v8R1lf0wp6AHN3u39
 ```json
 {
   "cmd": "sed -n '850,930p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -21554,7 +21576,7 @@ id: call_OjQjHS3yriQ7QsLGCa0n2toQ
 ```json
 {
   "cmd": "rg -n \"defaults:|grader:|llm-rubric|target:\" packages/core/test/evaluation apps/web/src/content/docs/docs/next/graders apps/web/src/content/docs/docs/next/evaluation | head -160",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -21567,7 +21589,7 @@ id: call_s2kLGuirpimD65JGcdMsWILy
 ```json
 {
   "cmd": "sed -n '190,240p' packages/core/test/evaluation/validation/eval-file-schema.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -21730,7 +21752,7 @@ id: call_fRjLMt0dQu2ZlGttfgbRjVxt
 ```json
 {
   "cmd": "sed -n '350,390p' packages/core/src/evaluation/providers/targets.ts && sed -n '1348,1390p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -21743,7 +21765,7 @@ id: call_FGxgxVQFKt6h2NGCosyFUlD8
 ```json
 {
   "cmd": "mkdir -p /tmp/agentv-skill-dogfood-av-xdwn/workspace/.agents/skills/csv-analyzer /tmp/agentv-skill-dogfood-av-xdwn/results",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -21833,7 +21855,7 @@ id: call_HmDm6JvlKrmtBsYfiHsQHJGv
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env -e 'console.log(process.env.OPENAI_ENDPOINT, process.env.OPENAI_MODEL, process.env.OPENAI_API_KEY)'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -21846,7 +21868,7 @@ id: call_HE2cBoLq29Cr5tqROZQWvfGg
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts validate /tmp/agentv-skill-dogfood-av-xdwn/skill-metadata.eval.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -21900,7 +21922,7 @@ id: call_jzJHLTGU7RguuDuLf8RJDGTj
 ```json
 {
   "cmd": "mkdir -p .agentv/results/dogfood-av-xdwn/workspace/.agents/skills/csv-analyzer .agentv/results/dogfood-av-xdwn/run",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -21930,7 +21952,7 @@ id: call_GBfLVdDz51LYzmn6n4GQ88eG
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts validate .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -21949,7 +21971,7 @@ Output:
 
 Validation Summary
 
-✓ /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml
+✓ /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml
 
 Total files: 1
 Valid: 1
@@ -21969,7 +21991,7 @@ id: call_siHNKbRLeQUiw2BYvAIvkpME
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts eval .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml --output .agentv/results/dogfood-av-xdwn/run --workers 1",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -21985,9 +22007,9 @@ Wall time: 1.0897 seconds
 Process exited with code 1
 Original token count: 263
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run
+Artifact directory: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run
 
-Warnings in /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
+Warnings in /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
   ⚠ [targets[13].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
   ⚠ [targets[21].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
 
@@ -22010,7 +22032,7 @@ id: call_lyonCW4VzgBUytUQjBqOQXWn
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts validate .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -22023,7 +22045,7 @@ id: call_DSpi8OMVlG9p4cquTLidXxo8
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts eval .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml --output .agentv/results/dogfood-av-xdwn/run --workers 1",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -22042,7 +22064,7 @@ Output:
 
 Validation Summary
 
-✓ /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml
+✓ /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml
 
 Total files: 1
 Valid: 1
@@ -22061,9 +22083,9 @@ Wall time: 1.0756 seconds
 Process exited with code 1
 Original token count: 263
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run
+Artifact directory: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run
 
-Warnings in /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
+Warnings in /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
   ⚠ [targets[13].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
   ⚠ [targets[21].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
 
@@ -22078,7 +22100,7 @@ id: call_DIkfEEoiTXhU4SHporWenAlK
 ```json
 {
   "cmd": "sed -n '1200,1255p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -22091,7 +22113,7 @@ id: call_MdaOU1Hu4mCbPtSjOslf2ViN
 ```json
 {
   "cmd": "sed -n '930,1015p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -22104,7 +22126,7 @@ id: call_BeSwrJaTuAv2PSpheQZ6ssJT
 ```json
 {
   "cmd": "sed -n '1465,1525p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -22325,7 +22347,7 @@ id: call_7uvC8BBrMRmlCBGus5qXF8ov
 ```json
 {
   "cmd": "rg -n \"function resolveOptionalString|function resolveString|must use|SECRET_ENV_TEMPLATE\" packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -22338,7 +22360,7 @@ id: call_BkcgistvP39kToeg2ViTwEeg
 ```json
 {
   "cmd": "sed -n '1060,1145p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -22351,7 +22373,7 @@ id: call_9NSVvHEPAnKGmAGNXoX1qYSg
 ```json
 {
   "cmd": "sed -n '112,135p' packages/core/test/evaluation/validation/config-validator.test.ts && sed -n '24,65p' packages/core/test/evaluation/validation/targets-validator.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -22531,7 +22553,7 @@ id: call_iQ4QJ5yvNxjfg73l1s4yL3jA
 ```json
 {
   "cmd": "sed -n '2720,2810p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -22544,7 +22566,7 @@ id: call_q0AJIG5uptCzeek4fXjPTNCd
 ```json
 {
   "cmd": "rg -n \"function normalizeTargetDefinition|normalizeTargetDefinition\" packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -22557,7 +22579,7 @@ id: call_XyeO2Lg1Bp09GCD5Y25fLCyf
 ```json
 {
   "cmd": "sed -n '1000,1060p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -22701,7 +22723,7 @@ id: call_CVq06DbwVGZKbS1DjnZSQau6
 ```json
 {
   "cmd": "sed -n '680,750p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -22767,7 +22789,7 @@ id: call_PHGMFp7Ok3CY2uB9fJfZPB0m
 ```json
 {
   "cmd": "rg -n \"allowLiteral|literal secret|allow.*secret|api_key|bearer_token|OPENAI_API_KEY\" apps/cli/src packages/core/src/evaluation | head -200",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -22780,7 +22802,7 @@ id: call_2tAvJBXeqi20l1QvBTNw7Oo5
 ```json
 {
   "cmd": "sed -n '80,150p' apps/cli/src/index.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -22793,7 +22815,7 @@ id: call_VNdyzw67c1yB5qVp5kfzpaN9
 ```json
 {
   "cmd": "rg -n \"renderEnvTemplate|resolveEnv|env template|envTemplate\" packages/core/src/evaluation apps/cli/src | head -200",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -22963,7 +22985,7 @@ id: call_jrlhQSTTlz23txy1gR2UBQer
 ```json
 {
   "cmd": "sed -n '1,160p' packages/core/src/evaluation/providers/agentv-provider.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -22976,7 +22998,7 @@ id: call_ad7rugnijfBiSSmvV9EbvPES
 ```json
 {
   "cmd": "sed -n '1310,1332p' packages/core/src/evaluation/providers/targets.ts && sed -n '232,292p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -22989,7 +23011,7 @@ id: call_VE4utFmEO6kNITbVqQtjTbzw
 ```json
 {
   "cmd": "rg -n \"provider: agentv|agentv.*model\" packages/core/test apps/web/src/content/docs examples | head -80",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -23144,7 +23166,7 @@ id: call_vtfWNr56AkTY2QsiNxZ8vqvZ
 ```json
 {
   "cmd": "sed -n '450,515p' packages/core/src/evaluation/providers/llm-providers.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -23202,7 +23224,7 @@ id: call_0rscO2UCgFJL1Hqlls4O2AE2
 ```json
 {
   "cmd": "rg -n \"function defaultBaseUrlFor|defaultBaseUrlFor\" packages/core/src/evaluation/providers/llm-providers.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -23230,7 +23252,7 @@ id: call_20x8FquMzbKvOLusH3ENbvbK
 ```json
 {
   "cmd": "sed -n '515,540p' packages/core/src/evaluation/providers/llm-providers.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -23286,7 +23308,7 @@ id: call_DFarZRibeLpR1aG90b5cNCLA
 ```json
 {
   "cmd": "sed -n '1360,1384p' packages/core/src/evaluation/providers/targets.ts && sed -n '1318,1328p' packages/core/src/evaluation/providers/targets.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -23348,7 +23370,7 @@ id: call_WWPjXYaGx1gKZ4mTKqS7vC1A
 ```json
 {
   "cmd": "rg -n \"renderEnvTemplateString|env\\.\" packages/core/src/evaluation/yaml-parser.ts packages/core/src/evaluation/loaders packages/core/src/evaluation/config-loader.ts packages/core/src/evaluation/loaders/config-loader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -23361,7 +23383,7 @@ id: call_pjoYcYJlZXT4HtHoXGCOxdcI
 ```json
 {
   "cmd": "rg -n \"config:\\s*\\{|normalizeTargetDefinition|resolveTargetDefinition\" packages/core/src/evaluation/yaml-parser.ts packages/core/src/evaluation/loaders apps/cli/src/commands/eval -g '*.ts' | head -160",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -23417,7 +23439,7 @@ id: call_TkW3K08Hkb2pI17Pz70dF40w
 ```json
 {
   "cmd": "sed -n '200,245p' apps/cli/src/commands/eval/targets.ts && sed -n '1388,1410p' apps/cli/src/commands/eval/run-eval.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -23430,7 +23452,7 @@ id: call_DwG2sYvgJ3fMQUFW8ClNf7v6
 ```json
 {
   "cmd": "sed -n '540,575p' packages/core/src/evaluation/loaders/config-loader.ts && sed -n '2680,2720p' packages/core/src/evaluation/yaml-parser.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -23443,7 +23465,7 @@ id: call_eqawscYvtwVMrpgBMQd1LMYn
 ```json
 {
   "cmd": "rg -n \"interpol|template|vars|env\" packages/core/src/evaluation/yaml-parser.ts | head -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -23611,7 +23633,7 @@ id: call_ZHfydVqP0pOghRWwVK98KaP9
 ```json
 {
   "cmd": "sed -n '1,120p' packages/core/src/evaluation/interpolation.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -23690,7 +23712,7 @@ id: call_VP1haAEhXTfWPXGW8Gm9pDDw
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts eval .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml --output .agentv/results/dogfood-av-xdwn/run --workers 1",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -23706,9 +23728,9 @@ Wall time: 1.2304 seconds
 Process exited with code 1
 Original token count: 263
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run
+Artifact directory: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run
 
-Warnings in /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
+Warnings in /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
   ⚠ [targets[13].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
   ⚠ [targets[21].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
 
@@ -23731,7 +23753,7 @@ id: call_i5ZrzDwmfBa7jfP3nJvJRpxF
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts eval .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml --output .agentv/results/dogfood-av-xdwn/run-skill-used --workers 1",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -23747,9 +23769,9 @@ Wall time: 1.3232 seconds
 Process exited with code 2
 Original token count: 912
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used
+Artifact directory: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used
 
-Warnings in /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
+Warnings in /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
   ⚠ [targets[13].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
   ⚠ [targets[21].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
 
@@ -23787,7 +23809,7 @@ id: call_DLOpLPZzKi4ZLfdeqHDsuU9r
 ```json
 {
   "cmd": "bun -e \"import { readFileSync } from 'fs'; import YAML from 'yaml'; const doc=YAML.parse(readFileSync('.agentv/targets.yaml','utf8')); for (const [i,t] of (doc.targets??[]).entries()) console.log(i, t.id ?? t.name ?? t.label, t.provider, t.use_target ? 'use_target='+t.use_target : '');\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -23844,7 +23866,7 @@ id: call_J2tdBeGkoA7CYX0b3ayVopbu
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts eval .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml --output .agentv/results/dogfood-av-xdwn/run-skill-used-local-grader --workers 1 --grader-target local-openai-grader",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -23860,9 +23882,9 @@ Wall time: 1.4765 seconds
 Process exited with code 2
 Original token count: 885
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader
+Artifact directory: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader
 
-Warnings in /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
+Warnings in /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
   ⚠ [targets[13].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
   ⚠ [targets[21].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
 
@@ -23913,7 +23935,7 @@ id: call_ltmyFWvLek4uQ3bE635XuNzm
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark LOCAL_OPENAI_PROXY_BASE_URL=http://127.0.0.1:10531/v1 LOCAL_OPENAI_PROXY_API_KEY=dummy LOCAL_OPENAI_PROXY_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts eval .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml --output .agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env --workers 1 --grader-target local-openai-grader",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -23929,9 +23951,9 @@ Wall time: 30.0011 seconds
 Process running with session ID 61627
 Original token count: 246
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env
+Artifact directory: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env
 
-Warnings in /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
+Warnings in /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
   ⚠ [targets[13].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
   ⚠ [targets[21].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
 
@@ -24038,15 +24060,15 @@ Execution errors by stage:
 
 Execution errors by reason:
   provider_error: 1
-Artifact bundle written to: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env
-  Run manifest: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env/.internal/index.jsonl
-  Per-test artifacts: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env (1 test directories)
-  Summary: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env/summary.json
+Artifact bundle written to: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env
+  Run manifest: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env/.internal/index.jsonl
+  Per-test artifacts: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env (1 test directories)
+  Summary: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env/summary.json
 
-Results written to: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env/.internal/index.jsonl
+Results written to: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env/.internal/index.jsonl
 
-Results written under: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env
-  /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env/.internal/index.jsonl
+Results written under: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env
+  /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env/.internal/index.jsonl
 
 Tip: 1 execution error(s) detected. Re-run failed tests with:
   agentv eval run .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml --rerun-failed .agentv/results/dogfood-av-xdwn/run-skill-used-local-grader-env
@@ -24064,7 +24086,7 @@ id: call_diHC9cnT61So4XH9QeGYetL4
 ```json
 {
   "cmd": "env OPENAI_ENDPOINT=http://127.0.0.1:10531/v1 OPENAI_API_KEY=dummy OPENAI_MODEL=gpt-5.3-codex-spark CODEX_API_KEY=dummy LOCAL_OPENAI_PROXY_BASE_URL=http://127.0.0.1:10531/v1 LOCAL_OPENAI_PROXY_API_KEY=dummy LOCAL_OPENAI_PROXY_MODEL=gpt-5.3-codex-spark bun --env-file .env apps/cli/src/cli.ts eval .agentv/results/dogfood-av-xdwn/skill-metadata.eval.yaml --output .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key --workers 1 --grader-target local-openai-grader",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -24080,9 +24102,9 @@ Wall time: 24.3734 seconds
 Process exited with code 0
 Original token count: 693
 Output:
-Artifact directory: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key
+Artifact directory: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key
 
-Warnings in /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
+Warnings in /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/targets.yaml:
   ⚠ [targets[13].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
   ⚠ [targets[21].provider] Unknown provider 'codex'. Known providers: openai, openrouter, azure, anthropic, gemini, codex-cli, codex-app-server, codex-sdk, copilot-sdk, copilot-cli, pi-sdk, pi-coding-agent, pi-cli, pi-rpc, claude-cli, claude-sdk, cli, mock, vscode, vscode-insiders, agentv, transcript, replay
 
@@ -24116,15 +24138,15 @@ Top performing tests:
 
 Lowest performing tests:
   1. codex-sdk-skill-metadata: 100%
-Artifact bundle written to: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key
-  Run manifest: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/.internal/index.jsonl
-  Per-test artifacts: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key (1 test directories)
-  Summary: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/summary.json
+Artifact bundle written to: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key
+  Run manifest: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/.internal/index.jsonl
+  Per-test artifacts: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key (1 test directories)
+  Summary: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/summary.json
 
-Results written to: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/.internal/index.jsonl
+Results written to: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/.internal/index.jsonl
 
-Results written under: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key
-  /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/.internal/index.jsonl
+Results written under: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key
+  /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/.agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/.internal/index.jsonl
 
 ```
 
@@ -24139,7 +24161,7 @@ id: call_IjlUfVCkz4NQ5ScZVLYUyxa6
 ```json
 {
   "cmd": "jq -C '{test_id, target, pass, score, scores, output, metadata: (.metadata // .provider_response.metadata // .providerResponse.metadata // .response.metadata), result_metadata: .result_metadata}' .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/.internal/index.jsonl",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -24152,7 +24174,7 @@ id: call_4zLWBRBZVdWcy6W9JpOU70YE
 ```json
 {
   "cmd": "rg -n \"skillCalls|attemptedSkillCalls|csv-analyzer|metadata\" .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key -g '*.json' -g '*.jsonl'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -24165,7 +24187,7 @@ id: call_RUBICMzGAZQxSpigzNtFsjoY
 ```json
 {
   "cmd": "find .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key -maxdepth 3 -type f | sort | sed -n '1,120p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -24268,7 +24290,7 @@ id: call_lu1u7cq9GmpYobMDlPAi8Tt4
 ```json
 {
   "cmd": "jq 'keys, {provider_metadata: .provider_response.metadata, response_metadata: .response.metadata, metadata: .metadata, output_messages: (.output | length), tool_calls: [.output[]?.tool_calls[]? | {tool,input,output}]}' .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/codex-sdk-skill-metadata--992cd6de4429/sample-1/result.json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -24281,7 +24303,7 @@ id: call_8cZPSpuYtQy6pzXVjXAtCMm7
 ```json
 {
   "cmd": "jq '{keys: keys, metadata, scores: [.scores[] | {name,type,metadata,reason}]}' .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/codex-sdk-skill-metadata--992cd6de4429/sample-1/grading.json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -24294,7 +24316,7 @@ id: call_uYpzXdjIBtdFT9DYGQhhsBue
 ```json
 {
   "cmd": "jq 'paths | map(tostring) | join(\".\")' .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/codex-sdk-skill-metadata--992cd6de4429/sample-1/result.json | rg 'metadata|skill|provider|response'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -24374,7 +24396,7 @@ id: call_Ynh9bfG2bML3oeP5uLBCRHTG
 ```json
 {
   "cmd": "jq . .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/codex-sdk-skill-metadata--992cd6de4429/sample-1/grading.json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -24387,7 +24409,7 @@ id: call_btC4nmVkM48UkKUtaoEXzVjn
 ```json
 {
   "cmd": "jq '{tool_calls: [.tool_calls[]? | {tool, input, output}], skills: [.tool_calls[]? | select((.input.command? // .input.path? // \"\") | test(\"SKILL.md|csv-analyzer\"))]}' .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/codex-sdk-skill-metadata--992cd6de4429/sample-1/metrics.json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -24400,7 +24422,7 @@ id: call_8FIgKNcr4VFvMTwj6ZlELC7m
 ```json
 {
   "cmd": "jq 'keys' .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key/codex-sdk-skill-metadata--992cd6de4429/sample-1/metrics.json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -24535,7 +24557,7 @@ id: call_VgytHcO86bHWgW2YTAyHb7vz
 ```json
 {
   "cmd": "bun test packages/core/test/evaluation/providers/skill-calls.test.ts packages/core/test/evaluation/providers/pi-runtime.test.ts packages/core/test/evaluation/providers/cli.test.ts packages/core/test/evaluation/providers/copilot-sdk.test.ts packages/core/test/evaluation/providers/copilot-cli.test.ts packages/core/test/evaluation/providers/sdk-child-provider.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -24548,7 +24570,7 @@ id: call_vSNBWXpCCLAgrNINLs6Cqouy
 ```json
 {
   "cmd": "bun test packages/core/test/evaluation/graders/promptfoo-assertions.test.ts packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts packages/core/test/evaluation/loaders/grader-parser.test.ts packages/core/test/evaluation/validation/eval-file-schema.test.ts packages/core/test/evaluation/validation/eval-validator.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -24561,7 +24583,7 @@ id: call_8UNNZ2LY8pWT7GAvvOqg8Eri
 ```json
 {
   "cmd": "bun run lint",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -24656,7 +24678,7 @@ id: call_DKTbecfQJE0su4JwCT8CuYY1
 ```json
 {
   "cmd": "bun run typecheck",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -24678,7 +24700,7 @@ $ bun --filter @agentv/core typecheck && bun --filter @agentv/sdk typecheck && b
 @agentv/sdk typecheck: @agentv/core build: CLI Building entry: src/index.ts, src/evaluation/providers/sdk-child-runner.ts, src/evaluation/validation/index.ts
 @agentv/sdk typecheck: @agentv/core build: CLI Using tsconfig: tsconfig.build.json
 @agentv/sdk typecheck: @agentv/core build: CLI tsup v8.3.5
-@agentv/sdk typecheck: @agentv/core build: CLI Using tsup config: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/core/tsup.config.ts
+@agentv/sdk typecheck: @agentv/core build: CLI Using tsup config: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/core/tsup.config.ts
 @agentv/sdk typecheck: @agentv/core build: CLI Target: node20
 @agentv/sdk typecheck: @agentv/core build: CLI Cleaning output folder
 @agentv/sdk typecheck: @agentv/core build: ESM Build start
@@ -24768,7 +24790,7 @@ agentv typecheck: $ bun --cwd ../.. --filter @agentv/core build
 agentv typecheck: @agentv/core build: CLI Building entry: src/index.ts, src/evaluation/providers/sdk-child-runner.ts, src/evaluation/validation/index.ts
 agentv typecheck: @agentv/core build: CLI Using tsconfig: tsconfig.build.json
 agentv typecheck: @agentv/core build: CLI tsup v8.3.5
-agentv typecheck: @agentv/core build: CLI Using tsup config: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/core/tsup.config.ts
+agentv typecheck: @agentv/core build: CLI Using tsup config: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/core/tsup.config.ts
 agentv typecheck: @agentv/core build: CLI Target: node20
 agentv typecheck: @agentv/core build: CLI Cleaning output folder
 agentv typecheck: @agentv/core build: ESM Build start
@@ -24826,7 +24848,7 @@ agentv typecheck: @agentv/core build: Exited with code 0
 agentv typecheck: CLI Building entry: src/index.ts
 agentv typecheck: CLI Using tsconfig: tsconfig.json
 agentv typecheck: CLI tsup v8.3.5
-agentv typecheck: CLI Using tsup config: /home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/sdk/tsup.config.ts
+agentv typecheck: CLI Using tsup config: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls/packages/sdk/tsup.config.ts
 agentv typecheck: CLI Target: node20
 agentv typecheck: CLI Cleaning output folder
 agentv typecheck: ESM Build start
@@ -24851,7 +24873,7 @@ id: call_eMyrzoRnanHfSiaXwwUK7oCj
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -24864,7 +24886,7 @@ id: call_1Mka1XVeJlTlZtaguCYkwP9B
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -24877,7 +24899,7 @@ id: call_w2aA0zTFtt4clcJZ7U3CUdc9
 ```json
 {
   "cmd": "bd show av-xdwn --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -24981,7 +25003,7 @@ Output:
     "priority": 1,
     "issue_type": "bug",
     "assignee": "Christopher Tso",
-    "owner": "christso@gmail.com", […]
+    "owner": "<REDACTED_EMAIL>", […]
 
 > TOOL
 
@@ -24990,7 +25012,7 @@ id: call_wcvqbprpiSaFJltSONoj4eiu
 ```json
 {
   "cmd": "bd --help | sed -n '1,160p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -25003,7 +25025,7 @@ id: call_hUK2spVmhzGHv0QGpOjTuW0t
 ```json
 {
   "cmd": "bd update --help | sed -n '1,160p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -25095,7 +25117,7 @@ tool_use exec_command
 id: call_nd1GoIV4XIpxBMaDO9olnAeC
 ```json
 {
-  "cmd": "bd update av-xdwn --append-notes \"2026-07-06 lead-codex implementation note:\n- Promptfoo local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769: skill-used reads providerResponse.metadata.skillCalls, excludes is_error=true failures, supports attempted vs confirmed skill calls. Mirrored the useful pattern by separating confirmed metadata.skillCalls from metadata.attemptedSkillCalls while retaining AgentV legacy path/command/SKILL.md detection.\n- Implemented canonical skill-call metadata derivation in packages/core/src/evaluation/providers/skill-calls.ts and wired it through pi-coding-agent, pi-cli, pi-rpc, copilot-cli, copilot-sdk, cli provider parsed outputs, and SDK child provider fallback metadata merging.\n- Hard-deprecated skill-trigger runtime surface: removed SkillTriggerGrader implementation/registration/type/sdk assertion type and updated parser/transpiler/schema tests so authored skill-trigger is rejected with skill-used/not-skill-used migration guidance. Grader config remains target-only; no graders: block reintroduced.\n- Focused verification passed: provider metadata tests 82 pass; grader/parser/validation tests 335 pass; bun run lint passed; bun run typecheck passed.\n- Live dogfood: ran Codex SDK live target against local OpenAI-compatible proxy with local-openai-grader and skill-used assertion. Command succeeded with PASS 1/1 at .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key. Evidence: grading reason observed csv-analyzer via .agents/skills/csv-analyzer/SKILL.md; transcript shows live target read that skill file and final answer included the sentinel.\n- Dogfood caveats/blockers observed but not fixed in this bead: eval YAML interpolation renders inline target api_key {{ env.* }} before target secret validation, so inline OpenAI grader target failed as […]
+  "cmd": "bd update av-xdwn --append-notes \"2026-07-06 lead-codex implementation note:\n- Promptfoo local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769: skill-used reads providerResponse.metadata.skillCalls, excludes is_error=true failures, supports attempted vs confirmed skill calls. Mirrored the useful pattern by separating confirmed metadata.skillCalls from metadata.attemptedSkillCalls while retaining AgentV legacy path/command/SKILL.md detection.\n- Implemented canonical skill-call metadata derivation in packages/core/src/evaluation/providers/skill-calls.ts and wired it through pi-coding-agent, pi-cli, pi-rpc, copilot-cli, copilot-sdk, cli provider parsed outputs, and SDK child provider fallback metadata merging.\n- Hard-deprecated skill-trigger runtime surface: removed SkillTriggerGrader implementation/registration/type/sdk assertion type and updated parser/transpiler/schema tests so authored skill-trigger is rejected with skill-used/not-skill-used migration guidance. Grader config remains target-only; no graders: block reintroduced.\n- Focused verification passed: provider metadata tests 82 pass; grader/parser/validation tests 335 pass; bun run lint passed; bun run typecheck passed.\n- Live dogfood: ran Codex SDK live target against local OpenAI-compatible proxy with local-openai-grader and skill-used assertion. Command succeeded with PASS 1/1 at .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key. Evidence: grading reason observed csv-analyzer via .agents/skills/csv-analyzer/SKILL.md; transcript shows live target read that skill file and final answer included the sentinel.\n- Dogfood caveats/blockers observed but not fixed in this bead: eval YAML interpolation renders inline target api_key {{ env.* }} before target secret validation, so inline OpenAI grader target failed as […]
 
 > TOOL
 
@@ -25122,7 +25144,7 @@ id: call_9jFMGP7dCtMfUuzPjmh3DRC8
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -25135,7 +25157,7 @@ id: call_FiV4XMW6MYjjmImDt1vvLrNv
 ```json
 {
   "cmd": "git rev-parse HEAD && git log -1 --oneline",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -25148,7 +25170,7 @@ id: call_rlC9djNV9dZz3ocsrEV9NeRj
 ```json
 {
   "cmd": "bd show av-xdwn --json | jq '.[0] | {id,status,metadata,notes}'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -25225,15 +25247,15 @@ Output:
     "branch": "fix/av-xdwn-provider-skill-calls",
     "worker": "lead-codex",
     "machine": "entity-vps",
-    "worktree": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls"
+    "worktree": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls"
   },
-  "notes": "2026-07-06 lead-codex implementation note:\n- Promptfoo local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769: skill-used reads providerResponse.metadata.skillCalls, excludes is_error=true failures, supports attempted vs confirmed skill calls. Mirrored the useful pattern by separating confirmed metadata.skillCalls from metadata.attemptedSkillCalls while retaining AgentV legacy path/command/SKILL.md detection.\n- Implemented canonical skill-call metadata derivation in packages/core/src/evaluation/providers/skill-calls.ts and wired it through pi-coding-agent, pi-cli, pi-rpc, copilot-cli, copilot-sdk, cli provider parsed outputs, and SDK child provider fallback metadata merging.\n- Hard-deprecated skill-trigger runtime surface: removed SkillTriggerGrader implementation/registration/type/sdk assertion type and updated parser/transpiler/schema tests so authored skill-trigger is rejected with skill-used/not-skill-used migration guidance. Grader config remains target-only; no graders: block reintroduced.\n- Focused verification passed: provider metadata tests 82 pass; grader/parser/validation tests 335 pass; bun run lint passed; bun run typecheck passed.\n- Live dogfood: ran Codex SDK live target against local OpenAI-compatible proxy with local-openai-grader and skill-used assertion. Command succeeded with PASS 1/1 at .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key. Evidence: grading reason observed csv-analyzer via .agents/skills/csv-analyzer/SKILL.md; transcript shows live target read that skill file and final answer included the sentinel.\n- Dogfood caveats/blockers observed […]
+  "notes": "2026-07-06 lead-codex implementation note:\n- Promptfoo local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769: skill-used reads providerResponse.metadata.skillCalls, excludes is_error=true failures, supports attempted vs confirmed skill calls. Mirrored the useful pattern by separating confirmed metadata.skillCalls from metadata.attemptedSkillCalls while retaining AgentV legacy path/command/SKILL.md detection.\n- Implemented canonical skill-call metadata derivation in packages/core/src/evaluation/providers/skill-calls.ts and wired it through pi-coding-agent, pi-cli, pi-rpc, copilot-cli, copilot-sdk, cli provider parsed outputs, and SDK child provider fallback metadata merging.\n- Hard-deprecated skill-trigger runtime surface: removed SkillTriggerGrader implementation/registration/type/sdk assertion type and updated parser/transpiler/schema tests so authored skill-trigger is rejected with skill-used/not-skill-used migration guidance. Grader config remains target-only; no graders: block reintroduced.\n- Focused verification passed: provider metadata tests 82 pass; grader/parser/validation tests 335 pass; bun run lint passed; bun run typecheck passed.\n- Live dogfood: ran Codex SDK live target against local OpenAI-compatible proxy with local-openai-grader and skill-used assertion. Command succeeded with PASS 1/1 at .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key. Evidence: grading reason observed csv-analyzer via .agents/skills/csv-analyzer/SKILL.md; transcript shows live target read that skill file and final answer included the sentinel.\n- Dogfood caveats/blockers observed […]
 
 > AGENT
 
 Implemented in worktree:
 
-`/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls` on `fix/av-xdwn-provider-skill-calls`, based on latest `origin/main` at `9379736c`.
+`/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls` on `fix/av-xdwn-provider-skill-calls`, based on latest `origin/main` at `9379736c`.
 
 What changed:
 - Wired canonical `metadata.skillCalls` derivation through `pi-coding-agent`, `pi-cli`, `pi-rpc`, `copilot-cli`, `copilot-sdk`, `cli`, and SDK child fallback responses.
@@ -25266,8 +25288,8 @@ tool_use exec_command
 id: call_jMbtJfrsdTBRAXUwxDeqwZnn
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.agents/skills/merge/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/merge/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -25279,8 +25301,8 @@ tool_use exec_command
 id: call_88ndLzIXXUFjlAyvMlzOLfIg
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -25354,7 +25376,7 @@ Wall time: 0.0000 seconds
 Process exited with code 2
 Original token count: 34
 Output:
-sed: can't read /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md: No such file or directory
+sed: can't read /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md: No such file or directory
 
 ```
 
@@ -25369,7 +25391,7 @@ id: call_fwY7GvqJXSvZZ8EI0q8UY2tG
 ```json
 {
   "cmd": "sed -n '1,220p' AGENTS.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -25382,7 +25404,7 @@ id: call_ibtMfqiwwaOMOPTWXiTLO7y7
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -25395,7 +25417,7 @@ id: call_x622AaoXyuCEugDY3sdRiFCG
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/verification.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -25408,7 +25430,7 @@ id: call_8kaU9EMpPWcBVKyFLOUxPGPR
 ```json
 {
   "cmd": "sed -n '1,220p' .agents/publish.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -25529,7 +25551,7 @@ id: call_zZd4zdEaWbvSjoyx9wYTJFLx
 ```json
 {
   "cmd": "git fetch origin",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -25542,7 +25564,7 @@ id: call_VZWqo6Am8AYWMihvsYC1f4Ay
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -25611,7 +25633,7 @@ id: call_gUzaMzDzE6nyDeOOlUU9prZu
 ```json
 {
   "cmd": "git rev-parse HEAD origin/main && git log --oneline --decorate --max-count=5 origin/main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -25624,7 +25646,7 @@ id: call_L8cXpT3mS3uJgvpwKZtOK6XM
 ```json
 {
   "cmd": "git diff --check",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -25637,7 +25659,7 @@ id: call_hf4JJGV7MBpDBbAPIsB89JS7
 ```json
 {
   "cmd": "git diff -- apps/web/src/content/docs/docs/next/graders/llm-graders.mdx packages/core/src/evaluation/providers/skill-calls.ts packages/core/src/evaluation/providers/sdk-child-protocol.ts packages/core/src/evaluation/types.ts packages/sdk/src/assertion.ts | sed -n '1,260p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -25747,7 +25769,7 @@ id: call_xbKFpzokHlee0zR6fRK9yTBg
 ```json
 {
   "cmd": "git add apps/web/src/content/docs/docs/next/graders/llm-graders.mdx packages/core/src/evaluation/graders/index.ts packages/core/src/evaluation/graders/skill-trigger.ts packages/core/src/evaluation/loaders/eval-yaml-transpiler.ts packages/core/src/evaluation/loaders/grader-parser.ts packages/core/src/evaluation/providers/cli.ts packages/core/src/evaluation/providers/copilot-cli.ts packages/core/src/evaluation/providers/copilot-sdk.ts packages/core/src/evaluation/providers/pi-cli.ts packages/core/src/evaluation/providers/pi-coding-agent.ts packages/core/src/evaluation/providers/pi-rpc.ts packages/core/src/evaluation/providers/sdk-child-protocol.ts packages/core/src/evaluation/providers/skill-calls.ts packages/core/src/evaluation/registry/builtin-graders.ts packages/core/src/evaluation/types.ts packages/core/test/evaluation/graders/promptfoo-assertions.test.ts packages/core/test/evaluation/graders/skill-trigger.test.ts packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts packages/core/test/evaluation/providers/cli.test.ts packages/core/test/evaluation/providers/copilot-cli.test.ts packages/core/test/evaluation/providers/copilot-sdk.test.ts packages/core/test/evaluation/providers/pi-runtime.test.ts packages/core/test/evaluation/providers/sdk-child-provider.test.ts packages/core/test/evaluation/providers/skill-calls.test.ts packages/sdk/src/assertion.ts && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -25803,7 +25825,7 @@ id: call_SLxgpEUpF2MTy6PYrmqgtwqc
 ```json
 {
   "cmd": "git commit -m \"fix(providers): emit skill call metadata\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -25837,7 +25859,7 @@ id: call_pHcOyd6XW5sfllIMvQgQJRbz
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -25850,7 +25872,7 @@ id: call_B8Yj0B9wbLwyLiKS5ibav6X4
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=3",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -25897,7 +25919,7 @@ id: call_IAPVsuyjEbRZfV7GAFERp9rX
 ```json
 {
   "cmd": "git push -u origin HEAD:fix/av-xdwn-provider-skill-calls",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -25933,8 +25955,8 @@ tool_use exec_command
 id: call_atGoDkf2FCnoZzgTywjAHU5K
 ```json
 {
-  "cmd": "gh pr create --base main --head fix/av-xdwn-provider-skill-calls --title \"fix(providers): emit skill call metadata\" --body \"## Summary\n- derive canonical skill call metadata from normalized provider messages and wire it through pi, copilot, cli, and SDK child providers\n- separate confirmed skillCalls from attemptedSkillCalls for failed skill reads, following Promptfoo's useful metadata pattern\n- hard-deprecate the legacy skill-trigger grader surface and reject authored skill-trigger with skill-used / not-skill-used migration guidance\n- update LLM grader docs to reflect target-only grader config\n\n## Verification\n- bun test packages/core/test/evaluation/providers/skill-calls.test.ts packages/core/test/evaluation/providers/pi-runtime.test.ts packages/core/test/evaluation/providers/cli.test.ts packages/core/test/evaluation/providers/copilot-sdk.test.ts packages/core/test/evaluation/providers/copilot-cli.test.ts packages/core/test/evaluation/providers/sdk-child-provider.test.ts\n- bun test packages/core/test/evaluation/graders/promptfoo-assertions.test.ts packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts packages/core/test/evaluation/loaders/grader-parser.test.ts packages/core/test/evaluation/validation/eval-file-schema.test.ts packages/core/test/evaluation/validation/eval-validator.test.ts\n- bun run lint\n- bun run typecheck\n- live dogfood: Codex SDK target + local-openai-grader + skill-used assertion passed 1/1; bundle: .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key\n\n## Notes\n- Promptfoo reference checked locally at /home/entity/projects/promptfoo/promptfoo commit 6bfc5a0c7f16f9c4717ac731d276b578e63d0769.\n- Existing local dogfood caveats observed: inline eval target api_key templates are rendered before target secret validation, so the dogfood used the existing local-openai-grader target with LOCAL_OPENAI_PROXY_* and CODEX_API_KEY env overrides.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "cmd": "gh pr create --base main --head fix/av-xdwn-provider-skill-calls --title \"fix(providers): emit skill call metadata\" --body \"## Summary\n- derive canonical skill call metadata from normalized provider messages and wire it through pi, copilot, cli, and SDK child providers\n- separate confirmed skillCalls from attemptedSkillCalls for failed skill reads, following Promptfoo's useful metadata pattern\n- hard-deprecate the legacy skill-trigger grader surface and reject authored skill-trigger with skill-used / not-skill-used migration guidance\n- update LLM grader docs to reflect target-only grader config\n\n## Verification\n- bun test packages/core/test/evaluation/providers/skill-calls.test.ts packages/core/test/evaluation/providers/pi-runtime.test.ts packages/core/test/evaluation/providers/cli.test.ts packages/core/test/evaluation/providers/copilot-sdk.test.ts packages/core/test/evaluation/providers/copilot-cli.test.ts packages/core/test/evaluation/providers/sdk-child-provider.test.ts\n- bun test packages/core/test/evaluation/graders/promptfoo-assertions.test.ts packages/core/test/evaluation/loaders/eval-yaml-transpiler.test.ts packages/core/test/evaluation/loaders/grader-parser.test.ts packages/core/test/evaluation/validation/eval-file-schema.test.ts packages/core/test/evaluation/validation/eval-validator.test.ts\n- bun run lint\n- bun run typecheck\n- live dogfood: Codex SDK target + local-openai-grader + skill-used assertion passed 1/1; bundle: .agentv/results/dogfood-av-xdwn/run-skill-used-codex-key\n\n## Notes\n- Promptfoo reference checked locally at /home/<USER>/projects/promptfoo/promptfoo commit 6bfc5a0c7f16f9c4717ac731d276b578e63d0769.\n- Existing local dogfood caveats observed: inline eval target api_key templates are rendered before target secret validation, so the dogfood used the existing local-openai-grader target with LOCAL_OPENAI_PROXY_* and CODEX_API_KEY env overrides.\"",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -25965,7 +25987,7 @@ id: call_BVHpEGbKJbX87ZbM4PTghxER
 ```json
 {
   "cmd": "gh pr view 1706 --json number,url,state,isDraft,mergeStateStatus,reviewDecision,statusCheckRollup,headRefOid,headRefName,baseRefName",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -25996,7 +26018,7 @@ id: call_jFYPfap4wzS9Xif14ic45Gkn
 ```json
 {
   "cmd": "gh pr checks 1706 --watch --interval 30",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -26169,7 +26191,7 @@ id: call_cKGCRqQMEQ72UvxO3MbwPDsy
 ```json
 {
   "cmd": "gh pr view 1706 --json number,url,state,isDraft,mergeStateStatus,reviewDecision,statusCheckRollup,mergeable",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -26200,7 +26222,7 @@ id: call_xRX74bPVKfwcQ9dVjdGy4p5h
 ```json
 {
   "cmd": "gh pr merge 1706 --squash --delete-branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -26216,7 +26238,7 @@ Wall time: 2.5319 seconds
 Process exited with code 1
 Original token count: 28
 Output:
-failed to run git: fatal: 'main' is already used by worktree at '/home/entity/projects/EntityProcess/agentv'
+failed to run git: fatal: 'main' is already used by worktree at '/home/<USER>/projects/EntityProcess/agentv'
 
 
 ```
@@ -26232,7 +26254,7 @@ id: call_A0XCOSUZZC6ApRoUzHthQKuC
 ```json
 {
   "cmd": "gh pr view 1706 --json number,url,state,mergedAt,mergeCommit,headRefName,mergeStateStatus",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -26263,7 +26285,7 @@ id: call_XuptsXKuf8vMG0SXzx2W1Sqh
 ```json
 {
   "cmd": "bd close av-xdwn --reason \"Merged PR #1706 after local focused validation, live dogfood, and passing GitHub Actions.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -26276,7 +26298,7 @@ id: call_MxeguI7kjths65E2yUskDFxL
 ```json
 {
   "cmd": "git fetch origin --prune",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -26325,7 +26347,7 @@ id: call_LOVFGqUMnz6t82LxIJlsLIPo
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -26338,7 +26360,7 @@ id: call_za4mxLVZ2jsxDq3QIKDOZ9bu
 ```json
 {
   "cmd": "gh pr view 1706 --json number,url,state,mergedAt,mergeCommit,headRefName,baseRefName",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -26351,7 +26373,7 @@ id: call_9qc2ds6Xsw47xwarPx06i9fI
 ```json
 {
   "cmd": "bd show av-xdwn --json | jq '.[0] | {id,status,closed_at,metadata}'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -26364,7 +26386,7 @@ id: call_t6ESmALWDLIy9SSCLpCwArKf
 ```json
 {
   "cmd": "git branch -vv | sed -n '1,80p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -26416,7 +26438,7 @@ Output:
     "branch": "fix/av-xdwn-provider-skill-calls",
     "worker": "lead-codex",
     "machine": "entity-vps",
-    "worktree": "/home/entity/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls"
+    "worktree": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-xdwn-provider-skill-calls"
   }
 }
 
@@ -26464,8 +26486,8 @@ tool_use exec_command
 id: call_yNN2xV8Rxrh4jAJ70xHmUzsy
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.agents/skills/workmux/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/workmux/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -26478,7 +26500,7 @@ id: call_jwwCSvcngEpfYxe2OayBLNBU
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -26540,7 +26562,7 @@ id: call_A53OU5Iar32tRYhrxV3TYZOQ
 ```json
 {
   "cmd": "test -f .workmux.yaml && sed -n '1,120p' .workmux.yaml || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -26553,7 +26575,7 @@ id: call_kPNve0nSmZTnQ4txLp8r2UeE
 ```json
 {
   "cmd": "workmux --version && workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -26566,7 +26588,7 @@ id: call_5HpiY6FjJCP1gOuG0j8Fx1dx
 ```json
 {
   "cmd": "bd create --title=\"Research Promptfoo environment transpiler and Harbor-style eval setup\" --description=\"Investigate how AgentV could support Margin/Harbor-style environment setup by reusing Promptfoo primitives where possible. Compare options: native AgentV environment recipes, a transpiler from AgentV environment to Promptfoo config YAML, and a worst-case Promptfoo wrapper. Research local Promptfoo clone and any relevant Harbor/Margin eval patterns available locally or through official docs if needed. Produce a concise recommendation with implementation shape, risks, and follow-up Beads if concrete work is identified.\" --acceptance=\"Research notes cover Promptfoo primitives that can or cannot model AgentV environment setup; recommendation explains whether a Promptfoo-wrapper/transpiler is viable and what AgentV would lose or need to own; concrete next-step Beads are created if implementation actions are identified; no code changes, installs, builds, tests, or evals unless explicitly justified.\" --type=task --priority=2 --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -26660,7 +26682,7 @@ Output:
   "description": "Investigate how AgentV could support Margin/Harbor-style environment setup by reusing Promptfoo primitives where possible. Compare options: native AgentV environment recipes, a transpiler from AgentV environment to Promptfoo config YAML, and a worst-case Promptfoo wrapper. Research local Promptfoo clone and any relevant Harbor/Margin eval patterns available locally or through official docs if needed. Produce a concise recommendation with implementation shape, risks, and follow-up Beads if concrete work is identified.",
   "id": "av-jrvx",
   "issue_type": "task",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 2,
   "schema_version": 1,
   "status": "open",
@@ -26681,7 +26703,7 @@ id: call_UEmq3Ol1jbmcfCe3fxoR20YU
 ```json
 {
   "cmd": "mkdir -p .workmux/prompts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -26711,7 +26733,7 @@ id: call_65tmLFOL5xTKMBerVX1Cdfwk
 ```json
 {
   "cmd": "workmux add av-jrvx-env-transpiler -b research/av-jrvx-environment-transpiler --base origin/main -P .workmux/prompts/av-jrvx-promptfoo-environment-transpiler.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -26746,7 +26768,7 @@ id: call_QXNBzZd5FtFiTXTkVEeQJDeG
 ```json
 {
   "cmd": "workmux add --help | sed -n '1,220p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -26803,7 +26825,7 @@ id: call_9zxfSjIkVNEKpmpj5FLKGQsG
 ```json
 {
   "cmd": "workmux add research/av-jrvx-environment-transpiler --name av-jrvx-env-transpiler --target-name av-jrvx-env-transpiler -b --base origin/main -P .workmux/prompts/av-jrvx-promptfoo-environment-transpiler.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -26821,13 +26843,13 @@ Original token count: 52
 Output:
 ✓ Successfully created worktree and tmux window for 'research/av-jrvx-environment-transpiler'
   Base: origin/main
-  Worktree: /home/entity/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler
+  Worktree: /home/<USER>/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler
 
 ```
 
 > AGENT
 
-The worker worktree was created at `/home/entity/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler`. I’m checking capture/status to confirm the prompt submitted and the worker is active.
+The worker worktree was created at `/home/<USER>/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler`. I’m checking capture/status to confirm the prompt submitted and the worker is active.
 
 > TOOL
 
@@ -26836,7 +26858,7 @@ id: call_RR26KrBy3ZBKchAGwIQTDkdg
 ```json
 {
   "cmd": "workmux status av-jrvx-env-transpiler",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -26849,7 +26871,7 @@ id: call_j38pkbUMfKJDCMIeUKEjnHvQ
 ```json
 {
   "cmd": "workmux capture av-jrvx-env-transpiler",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -26861,8 +26883,8 @@ tool_use exec_command
 id: call_d93Q7rutRMZ7Z2ThGYVpE5k2
 ```json
 {
-  "cmd": "bd update av-jrvx --set-metadata branch=research/av-jrvx-environment-transpiler --set-metadata worker=av-jrvx-env-transpiler --set-metadata machine=entity-vps --set-metadata worktree=/home/entity/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-jrvx --set-metadata branch=research/av-jrvx-environment-transpiler --set-metadata worker=av-jrvx-env-transpiler --set-metadata machine=entity-vps --set-metadata worktree=/home/<USER>/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -26915,7 +26937,7 @@ Output:
     "status": "open",
     "priority": 2,
     "issue_type": "task",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T22:34:25Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T22:35:18Z",
@@ -26923,7 +26945,7 @@ Output:
       "branch": "research/av-jrvx-environment-transpiler",
       "worker": "av-jrvx-env-transpiler",
       "machine": "entity-vps",
-      "worktree": "/home/entity/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler"
+      "worktree": "/home/<USER>/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler"
     }
   }
 ]
@@ -26941,7 +26963,7 @@ id: call_Lpjq44fofeuRyLizk348sT2Z
 ```json
 {
   "cmd": "ls scripts/dispatch-codex-prompt.sh plugins/workmux/skills/workmux/scripts/dispatch-codex-prompt.sh 2>/dev/null || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -26954,7 +26976,7 @@ id: call_o1zWFOjIGtBdkhkoAdlWebnC
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -26967,7 +26989,7 @@ id: call_fiQnjyzZXeqM1E9IlbYJnKfC
 ```json
 {
   "cmd": "tmux list-windows -a | rg 'av-jrvx|env-transpiler|workmux|wm-' || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -27030,7 +27052,7 @@ id: call_y7KyBFxKpzXTyqqKR4pv4pDo
 ```json
 {
   "cmd": "tmux capture-pane -t 'agentv:6' -p -S -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -27043,7 +27065,7 @@ id: call_NBNyqSe2SMVDPrwx7Nc4ZZNS
 ```json
 {
   "cmd": "tmux display-message -p -t 'agentv:6' '#{pane_current_command} #{pane_current_path}'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -27055,8 +27077,8 @@ tool_use exec_command
 id: call_478nnGyTJsf66KEDUotVgen2
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -27116,7 +27138,7 @@ Wall time: 0.0001 seconds
 Process exited with code 0
 Original token count: 21
 Output:
-codex /home/entity/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler
+codex /home/<USER>/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler
 
 ```
 
@@ -27145,7 +27167,7 @@ id: call_RbDAO5c08gwa4owMu4Wja4A4
 ```json
 {
   "cmd": "sleep 8; tmux capture-pane -t 'agentv:6' -p -S -80",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 15000,
   "max_output_tokens": 16000
 }
@@ -27214,7 +27236,7 @@ I also spawned the requested research worker:
 - Bead: `av-jrvx`
 - Worker: `av-jrvx-env-transpiler`
 - Branch: `research/av-jrvx-environment-transpiler`
-- Worktree: `/home/entity/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler`
+- Worktree: `/home/<USER>/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler`
 
 The worker is active and currently reading the AgentV docs before researching Promptfoo environment/transpiler options.
 
@@ -27233,7 +27255,7 @@ id: call_6tA9DT4xQOpzc5InTFUIiQqr
 ```json
 {
   "cmd": "bd show av-jrvx --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -27246,7 +27268,7 @@ id: call_EmJayGc0vvsB0I7lfSVjDndh
 ```json
 {
   "cmd": "tmux capture-pane -t 'agentv:6' -p -S -240",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -27258,8 +27280,8 @@ tool_use exec_command
 id: call_qYZF0zMe1uhY3AsL0a14gCVU
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/av-jrvx-env-transpiler status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -27281,7 +27303,7 @@ Output:
     "title": "Research Promptfoo environment transpiler and Harbor-style eval setup",
     "description": "Investigate how AgentV could support Margin/Harbor-style environment setup by reusing Promptfoo primitives where possible. Compare options: native AgentV environment recipes, a transpiler from AgentV environment to Promptfoo config YAML, and a worst-case Promptfoo wrapper. Research local Promptfoo clone and any relevant Harbor/Margin eval patterns available locally or through official docs if needed. Produce a concise recommendation with implementation shape, risks, and follow-up Beads if concrete work is identified.",
     "acceptance_criteria": "Research notes cover Promptfoo primitives that can or cannot model AgentV environment setup; recommendation explains whether a Promptfoo-wrapper/transpiler is viable and what AgentV would lose or need to own; concrete next-step Beads are created if implementation actions are identified; no code changes, installs, builds, tests, or evals unless explicitly justified.",
-    "notes": "2026-07-07 research note: Promptfoo environment transpiler / Harbor-style setup\n\nLocal sources inspected:\n- AgentV docs/guides: AGENTS.md, STRATEGY.md, ROADMAP.md, .agents/product-boundary.md, .agents/workflow.md, .agents/verification.md, CONCEPTS.md, docs/solutions/architecture-patterns/blend-promptfoo-margin-harbor-environment-recipes.md.\n- AgentV code/examples: packages/core/src/evaluation/loaders/environment-recipe.ts, packages/sdk/src/eval.ts, packages/core/src/evaluation/types.ts/search hits, packages/core/src/evaluation/validation/eval-file.schema.ts/search hits, examples/features/docker-workspace/evals/docker-example.EVAL.yaml, examples/features/workspace-shared-config/environment.yaml, related environment/workspace tests via rg.\n- Promptfoo clone: /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769. Local clone is behind […]
+    "notes": "2026-07-07 research note: Promptfoo environment transpiler / Harbor-style setup\n\nLocal sources inspected:\n- AgentV docs/guides: AGENTS.md, STRATEGY.md, ROADMAP.md, .agents/product-boundary.md, .agents/workflow.md, .agents/verification.md, CONCEPTS.md, docs/solutions/architecture-patterns/blend-promptfoo-margin-harbor-environment-recipes.md.\n- AgentV code/examples: packages/core/src/evaluation/loaders/environment-recipe.ts, packages/sdk/src/eval.ts, packages/core/src/evaluation/types.ts/search hits, packages/core/src/evaluation/validation/eval-file.schema.ts/search hits, examples/features/docker-workspace/evals/docker-example.EVAL.yaml, examples/features/workspace-shared-config/environment.yaml, related environment/workspace tests via rg.\n- Promptfoo clone: /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769. Local clone is behind […]
 
 > TOOL
 
@@ -27353,13 +27375,13 @@ evaluator.ts
   Margin and Harbor clones now to cite their concrete
   environment contracts without relying on summaries.
 
-• Ran test -d /home/entity/projects/Margin-Lab/evals && git
-  │ -C /home/entity/projects/Margin-Lab/evals rev-parse
+• Ran test -d /home/<USER>/projects/Margin-Lab/evals && git
+  │ -C /home/<USER>/projects/Margin-Lab/evals rev-parse
   │ HEAD || true
   └ 53fb2fd080689efaf7934573d8759d14fc1043e4
 
-• Ran test -d /home/entity/projects/harbor-framework/harbor
-  │ && git -C /home/entity/projects/harbor-framework/
+• Ran test -d /home/<USER>/projects/harbor-framework/harbor
+  │ && git -C /home/<USER>/projects/harbor-framework/
   │ harbor rev-parse HEAD || true
   └ a9148a9509a0bc0cbeb80375aa619bd5cdb5845c
 
@@ -27390,7 +27412,7 @@ id: call_HkndaeTkKmzbnFY0808rkQ7R
 ```json
 {
   "cmd": "bd close av-jrvx --reason \"Research reviewed; recommendation is native AgentV environment ownership with selective Promptfoo reuse, not Promptfoo as execution substrate.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }

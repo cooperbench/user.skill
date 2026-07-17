@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01CJBZ7MQCjwcjYT5m36anm5
 ```json
 {
-  "command": "rtk ls /Users/gabadi/workspace/addi/drywall",
+  "command": "rtk ls /home/<USER>/workspace/addi/drywall",
   "description": "List repo root contents"
 }
 ```
@@ -54,7 +54,7 @@ tool_use Bash
 id: toolu_01N98wxCcWgm5oZGDhnJ8bpk
 ```json
 {
-  "command": "rtk ls /Users/gabadi/workspace/addi/drywall/docs; echo ---; find /Users/gabadi/workspace/addi/drywall -iname \"*pypi*\" -o -iname \"*pyproject*\" -o -iname \"*maturin*\" 2>/dev/null; echo ---; cat /Users/gabadi/workspace/addi/drywall/Cargo.toml",
+  "command": "rtk ls /home/<USER>/workspace/addi/drywall/docs; echo ---; find /home/<USER>/workspace/addi/drywall -iname \"*pypi*\" -o -iname \"*pyproject*\" -o -iname \"*maturin*\" 2>/dev/null; echo ---; cat /home/<USER>/workspace/addi/drywall/Cargo.toml",
   "description": "Check docs dir and search for python packaging files"
 }
 ```
@@ -106,7 +106,7 @@ tool_use Bash
 id: toolu_01FKyzVD7DWpyxiafApGYkFw
 ```json
 {
-  "command": "rtk cat /Users/gabadi/workspace/addi/drywall/README.md; echo ===GITHUB===; rtk ls /Users/gabadi/workspace/addi/drywall/.github/workflows 2>/dev/null; echo ===; find /Users/gabadi/workspace/addi/drywall/.github /Users/gabadi/workspace/addi/drywall -iname \"*distribut*\" -o -iname \"*install*\" 2>/dev/null | grep -v .git/",
+  "command": "rtk cat /home/<USER>/workspace/addi/drywall/README.md; echo ===GITHUB===; rtk ls /home/<USER>/workspace/addi/drywall/.github/workflows 2>/dev/null; echo ===; find /home/<USER>/workspace/addi/drywall/.github /home/<USER>/workspace/addi/drywall -iname \"*distribut*\" -o -iname \"*install*\" 2>/dev/null | grep -v .git/",
   "description": "Check README and search for distribution/install docs"
 }
 ```

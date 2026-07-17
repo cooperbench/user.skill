@@ -44,8 +44,8 @@ tool_use exec_command
 id: call_fS1t9y3ZFFH1xazl59JMRByg
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/SKILL.md",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "sed -n '1,220p' /home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/SKILL.md",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -58,7 +58,7 @@ id: call_hYz9VgBoHYZhW3mUp2xmVUD6
 ```json
 {
   "cmd": "sed -n '1,220p' docs/architecture/architecture.md",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -71,7 +71,7 @@ id: call_ZMOeiwMIxNzFpk6rMdf99lzU
 ```json
 {
   "cmd": "sed -n '1,260p' docs/architecture/review-session-pivot.md",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -84,7 +84,7 @@ id: call_5sQHRZVdBZaOrv51WCaZU74m
 ```json
 {
   "cmd": "sed -n '1,260p' docs/architecture/review-session-implementation-handoff.md",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -293,7 +293,7 @@ id: call_AJSEPAz7yVwetjgddC0bBaIt
 ```json
 {
   "cmd": "sed -n '1,260p' packages/cli/src/app/reviews/studio-create.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -306,7 +306,7 @@ id: call_mTjYXEvdVTzrNCdxI4ZF7mpR
 ```json
 {
   "cmd": "sed -n '1,260p' packages/cli/src/app/reviews/ui-proxy.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -319,7 +319,7 @@ id: call_cE0DCUablvGBLSLTidQBUvjr
 ```json
 {
   "cmd": "sed -n '1,260p' packages/cli/src/app/reviews/materialize.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -332,7 +332,7 @@ id: call_JxOSarzSG9RzdWsrQigWMs5M
 ```json
 {
   "cmd": "sed -n '1,260p' packages/report-ui/src/lib/review.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -345,7 +345,7 @@ id: call_C6CdEAFa2OrORqvYRaqw0aas
 ```json
 {
   "cmd": "sed -n '1,260p' packages/report-ui/src/types.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -357,8 +357,8 @@ tool_use exec_command
 id: call_WmqbNR3FDvxJAEeFL9immnvk
 ```json
 {
-  "cmd": "ls -R /Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "ls -R /home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max | sed -n '1,220p'",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -712,7 +712,7 @@ SKILL.md
 data
 scripts
 
-/Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/data:
+/home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/data:
 charts.csv
 colors.csv
 icons.csv
@@ -726,7 +726,7 @@ ui-reasoning.csv
 ux-guidelines.csv
 web-interface.csv
 
-/Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/data/stacks:
+/home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/data/stacks:
 astro.csv
 flutter.csv
 html-tailwind.csv
@@ -741,13 +741,13 @@ svelte.csv
 swiftui.csv
 vue.csv
 
-/Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts:
+/home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts:
 __pycache__
 core.py
 design_system.py
 search.py
 
-/Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/__pycache__:
+/home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/__pycache__:
 core.cpython-314.pyc
 design_system.cpython-314.pyc
 search.cpython-314.pyc
@@ -765,7 +765,7 @@ id: call_UBK3pz32t6Oxs4OUTuo9B2Ts
 ```json
 {
   "cmd": "rg -n \"STUDIO_NEW_REVIEW|activity|reviewed-diff|local-review|aggregate|context\" packages/cli/src/app/reviews/ui-proxy.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -778,7 +778,7 @@ id: call_85Kx0wZopEpmHyR2urlCrp2H
 ```json
 {
   "cmd": "sed -n '260,620p' packages/cli/src/app/reviews/ui-proxy.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -791,7 +791,7 @@ id: call_hbGLLlGGhopQQAoAucT9RG6m
 ```json
 {
   "cmd": "sed -n '260,520p' packages/report-ui/src/types.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -804,7 +804,7 @@ id: call_k2BHe15d8hVgdRV7oY59KSR1
 ```json
 {
   "cmd": "sed -n '260,620p' packages/report-ui/src/lib/review.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -816,8 +816,8 @@ tool_use exec_command
 id: call_vbA2mwohvuSKXSXbkK9RPhm9
 ```json
 {
-  "cmd": "python3 /Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"developer operator console code review session minimal honest restrained motion\" --design-system -p \"Nimbus Review Studio\" -f markdown",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "python3 /home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"developer operator console code review session minimal honest restrained motion\" --design-system -p \"Nimbus Review Studio\" -f markdown",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -829,8 +829,8 @@ tool_use exec_command
 id: call_1vKGC5XXgcTYjzfXROl2Uyrz
 ```json
 {
-  "cmd": "python3 /Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"operator console minimal data dense terminal-inspired\" --domain ux -n 8",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "python3 /home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"operator console minimal data dense terminal-inspired\" --domain ux -n 8",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1164,7 +1164,7 @@ id: call_Z0xfNb4S0wUCUdscMUZ1mHF3
 ```json
 {
   "cmd": "rg -n \"UI|Studio|launch|live|diff|adopt|merge-back|report-first|history|operator|console\" docs/architecture/review-session-implementation-handoff.md",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1177,7 +1177,7 @@ id: call_RT8MQrFicGK1sqREAMtxjueR
 ```json
 {
   "cmd": "sed -n '520,860p' docs/architecture/review-session-implementation-handoff.md",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1190,7 +1190,7 @@ id: call_HWd3axs5VHW8k5IG4Y4svU9w
 ```json
 {
   "cmd": "sed -n '620,1160p' packages/cli/src/app/reviews/ui-proxy.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1203,7 +1203,7 @@ id: call_KUYEQesJTtoDwJsAp4pM9eq9
 ```json
 {
   "cmd": "sed -n '520,900p' packages/report-ui/src/lib/review.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -1452,7 +1452,7 @@ id: call_GcEwykThO88EwQA8A50N5NBu
 ```json
 {
   "cmd": "sed -n '1,260p' packages/report-ui/src/App.tsx",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1465,7 +1465,7 @@ id: call_klc01bjh7xgLYXlM4ntLN5x6
 ```json
 {
   "cmd": "rg -n \"studio|session|new-review|ReviewHistoryPage|BranchReviewsPage|ReportPage\" packages/report-ui/src -g '!**/*.test.*'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1478,7 +1478,7 @@ id: call_5sOp1YAYiMO7KiZeZVYSZgRY
 ```json
 {
   "cmd": "sed -n '1,260p' packages/report-ui/src/components/ReviewHistoryPage.tsx",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1491,7 +1491,7 @@ id: call_npsG3sb2qAP6x4W3gqEzlAJ7
 ```json
 {
   "cmd": "sed -n '1,260p' packages/report-ui/src/components/ReportPage.tsx",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1751,7 +1751,7 @@ id: call_w2OUz54l6ZAAFSvnNiCegGqc
 ```json
 {
   "cmd": "sed -n '1,220p' packages/report-ui/src/components/ReviewSessionPage.tsx",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1764,7 +1764,7 @@ id: call_ReXlBlKUdAlGqMPtFH6IdZdM
 ```json
 {
   "cmd": "sed -n '220,520p' packages/report-ui/src/components/ReviewSessionPage.tsx",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -2003,7 +2003,7 @@ id: call_b76WbK6mfrZWeCuY5zBlHkPO
 ```json
 {
   "cmd": "sed -n '260,620p' packages/cli/src/app/reviews/studio-create.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -2016,7 +2016,7 @@ id: call_Cmb7j4fq34IW3PNFTOm1Ekmr
 ```json
 {
   "cmd": "rg -n \"existing session|routePath|sessionId|buildStudioSessionRoutePath|buildStudioReviewRoutePath|startStudioNewReview\" packages/cli/src/app/reviews/studio-create.ts packages/cli/src/app/reviews/create-shared.ts packages/cli/src/app/reviews/session.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2029,7 +2029,7 @@ id: call_FioYLIbPSC4U7vMl6u51nttm
 ```json
 {
   "cmd": "sed -n '1,240p' packages/cli/src/app/reviews/create-shared.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -2042,7 +2042,7 @@ id: call_gGYuR5mh148X1poXyjZkDcNQ
 ```json
 {
   "cmd": "sed -n '1,260p' packages/cli/src/app/reviews/adoption.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2312,8 +2312,8 @@ tool_use exec_command
 id: call_Yp3eqrrhw4mLaabzEMs6Zwoj
 ```json
 {
-  "cmd": "python3 /Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"minimal brutalism industrial developer console\" --domain style -n 6",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "python3 /home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"minimal brutalism industrial developer console\" --domain style -n 6",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2325,8 +2325,8 @@ tool_use exec_command
 id: call_lsetlYY6DH8bMQ8EHy37GTB1
 ```json
 {
-  "cmd": "python3 /Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"developer tool infrastructure terminal\" --domain color -n 6",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "python3 /home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"developer tool infrastructure terminal\" --domain color -n 6",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2338,8 +2338,8 @@ tool_use exec_command
 id: call_JVKqoKVVWinpUx8tOgKVKHnx
 ```json
 {
-  "cmd": "python3 /Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"developer tool documentation technical precise\" --domain typography -n 6",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "python3 /home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"developer tool documentation technical precise\" --domain typography -n 6",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2351,8 +2351,8 @@ tool_use exec_command
 id: call_JOanXP1jk1tCfUWIGfCjSSCp
 ```json
 {
-  "cmd": "python3 /Users/nickdejesus/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"react realtime log diff viewer keyboard focus\" --stack react",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "python3 /home/<USER>/Code/nimbus/.codex/skills/ui-ux-pro-max/scripts/search.py \"react realtime log diff viewer keyboard focus\" --stack react",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2365,7 +2365,7 @@ id: call_uceblr1F8HrnSUEshaYXeTpd
 ```json
 {
   "cmd": "sed -n '520,760p' docs/architecture/review-session-implementation-handoff.md",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2607,7 +2607,7 @@ id: call_X1pCyrRmUcqT3PTsxsisiKWR
 ```json
 {
   "cmd": "sed -n '420,620p' packages/report-ui/src/types.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2620,7 +2620,7 @@ id: call_1KSgwaBBagAIgrDGyitvYxOS
 ```json
 {
   "cmd": "rg -n \"StudioSessionAggregateResponse|StudioReviewedDiffResponse|StudioLocalReviewEnvironment|StudioSessionActivityEntry\" packages/report-ui/src/types.ts packages/report-ui/src/lib/review.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2633,7 +2633,7 @@ id: call_vpAJMH1J61YLeF9QMG6k7SAC
 ```json
 {
   "cmd": "sed -n '1280,1455p' packages/report-ui/src/lib/review.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -2829,7 +2829,7 @@ id: call_iI2hJzLAw1QzvqLovbAwv1mf
 ```json
 {
   "cmd": "rg -n \"api/review-sessions|review-sessions\\?limit|listReviewSessions|getReviewSession\" packages/cli packages/report-ui packages/worker/src -g '!**/*.test.*'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -2842,7 +2842,7 @@ id: call_TmsPdJeXWGtoU0oQvujIm4oi
 ```json
 {
   "cmd": "sed -n '1,240p' packages/cli/src/clients/worker/reviews.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -2988,7 +2988,7 @@ id: call_rQ6rec8URododYVboNLOLD75
 ```json
 {
   "cmd": "git branch --show-current",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -3019,7 +3019,7 @@ id: call_tUZ4qqIUsNiZdRTd6Hm1gyBu
 ```json
 {
   "cmd": "nl -ba packages/cli/src/app/reviews/studio-create.ts | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -3032,7 +3032,7 @@ id: call_CGoN9CXtLOurgKbI3Pxj008G
 ```json
 {
   "cmd": "nl -ba packages/cli/src/app/reviews/studio-create.ts | sed -n '430,630p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -3045,7 +3045,7 @@ id: call_bdTFtmNcMtBmjvjKQb2srWT7
 ```json
 {
   "cmd": "nl -ba packages/cli/src/app/reviews/ui-proxy.ts | sed -n '360,520p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -3058,7 +3058,7 @@ id: call_vt6RstG394pAchnp9FOeN8hn
 ```json
 {
   "cmd": "nl -ba packages/cli/src/app/reviews/ui-proxy.ts | sed -n '740,1185p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 11000
 }
@@ -3071,7 +3071,7 @@ id: call_Tpo34LR7d9JRCZh9sxC5TkmO
 ```json
 {
   "cmd": "nl -ba packages/cli/src/app/reviews/materialize.ts | sed -n '200,420p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -3084,7 +3084,7 @@ id: call_4KFX6k7ag1aa3CPWXY8aOSgp
 ```json
 {
   "cmd": "nl -ba packages/report-ui/src/types.ts | sed -n '280,610p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -3448,8 +3448,8 @@ Planning only. No code changes made.
 One concrete note before the plan: your prompt says “post-review-session-redesign branch,” but this checkout currently reports `main`. I treated this as continuing the post-redesign UI planning work from the current tree plus the April 15, 2026 handoff docs.
 
 **Reusable Contracts**
-- The launch/preflight contract is already good enough to keep unchanged. [`resolveStudioNewReviewPreflight`](</Users/nickdejesus/Code/nimbus/packages/cli/src/app/reviews/studio-create.ts:217>) and the proxied `/api/studio/new-review/preflight` route already expose `startability`, `contextMode`, `commitSha`, `checks`, warnings, and blocking issues. See [studio-create.ts](</Users/nickdejesus/Code/nimbus/packages/cli/src/app/reviews/studio-create.ts:34>) and [ui-proxy.ts](</Users/nickdejesus/Code/nimbus/packages/cli/src/app/reviews/ui-proxy.ts:764>).
-- The launch action contract is reusable unchanged. [`startStudioNewReview`](</Users/nickdejesus/Code/nimbus/packages/cli/src/app/reviews/studio-create.ts:435>) already emits staged progress, preserves branch-context safety, returns `sessionId`, and hands back a canonical `routePath` for routing. The SSE proxy for that is already in [ui-proxy.ts](</Users/nickdejesus/Code/nimbus/packages/cli/src/app/reviews/ui-proxy.ts:841>).
-- The session object is the right primary UI object and already has the fields we need: phase, pass count, current status, outcome, and pass summaries. See [types.ts](</Users/nickdejesus/Code/nimbus/packages/report-ui/src/types.ts:247>) and [types.ts](</Users/nickdejesus/Code/nimbus/packages/report-ui/src/types.ts:577>).
-- The live session aggregate contract is already strong enough for slices 2 and 3. [`loadStudioSessionAggregate`](</Users/nickdejesus/Code/nimbus/packages/cli/src/app/reviews/ui-proxy.ts:369>) already composes session, reviews, findings rollup, activity snapshot, reviewed diff availability, local environments, and capabilities into one UI-facing payload.
+- The launch/preflight contract is already good enough to keep unchanged. [`resolveStudioNewReviewPreflight`](</home/<USER>/Code/nimbus/packages/cli/src/app/reviews/studio-create.ts:217>) and the proxied `/api/studio/new-review/preflight` route already expose `startability`, `contextMode`, `commitSha`, `checks`, warnings, and blocking issues. See [studio-create.ts](</home/<USER>/Code/nimbus/packages/cli/src/app/reviews/studio-create.ts:34>) and [ui-proxy.ts](</home/<USER>/Code/nimbus/packages/cli/src/app/reviews/ui-proxy.ts:764>).
+- The launch action contract is reusable unchanged. [`startStudioNewReview`](</home/<USER>/Code/nimbus/packages/cli/src/app/reviews/studio-create.ts:435>) already emits staged progress, preserves branch-context safety, returns `sessionId`, and hands back a canonical `routePath` for routing. The SSE proxy for that is already in [ui-proxy.ts](</home/<USER>/Code/nimbus/packages/cli/src/app/reviews/ui-proxy.ts:841>).
+- The session object is the right primary UI object and already has the fields we need: phase, pass count, current status, outcome, and pass summaries. See [types.ts](</home/<USER>/Code/nimbus/packages/report-ui/src/types.ts:247>) and [types.ts](</home/<USER>/Code/nimbus/packages/report-ui/src/types.ts:577>).
+- The live session aggregate contract is already strong enough for slices 2 and 3. [`loadStudioSessionAggregate`](</home/<USER>/Code/nimbus/packages/cli/src/app/reviews/ui-proxy.ts:369>) already composes session, reviews, findings rollup, activity snapshot, reviewed diff availability, local environments, and capabilities into one UI-facing payload.
 - The activity model is reusable unchanged. The session activity snapshot and streamed entries already distinguish active vs waiting vs terminal and normalize […]

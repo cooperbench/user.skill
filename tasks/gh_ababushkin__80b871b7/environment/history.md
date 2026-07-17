@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01ALhMa6Lzg6GjFroikJua5t
 ```json
 {
-  "file_path": "/Users/anton/.claude/skills/shape-idea/references/idea-elicitation.md"
+  "file_path": "/home/<USER>/.claude/skills/shape-idea/references/idea-elicitation.md"
 }
 ```
 
@@ -17,7 +17,7 @@ id: toolu_01ALhMa6Lzg6GjFroikJua5t
 tool_result ERROR
 id: toolu_01ALhMa6Lzg6GjFroikJua5t
 ```
-File does not exist. Note: your current working directory is /Users/anton/src/drain-cycle.
+File does not exist. Note: your current working directory is /home/<USER>/src/drain-cycle.
 ```
 
 > TOOL
@@ -26,7 +26,7 @@ tool_use Bash
 id: toolu_016E4QHCdoLuMzV7HnPs5EnA
 ```json
 {
-  "command": "ls /Users/anton/src/drain-cycle/docs/app-context.md 2>/dev/null && echo \"EXISTS\" || echo \"MISSING\"; echo \"---\"; ls /Users/anton/src/drain-cycle/docs/",
+  "command": "ls /home/<USER>/src/drain-cycle/docs/app-context.md 2>/dev/null && echo \"EXISTS\" || echo \"MISSING\"; echo \"---\"; ls /home/<USER>/src/drain-cycle/docs/",
   "description": "Check for app-context.md and list docs"
 }
 ```
@@ -56,7 +56,7 @@ tool_use Bash
 id: toolu_015aScjpgUqdsxLkM3dSk8nZ
 ```json
 {
-  "command": "ls /Users/anton/.claude/skills/shape-idea/references/ 2>/dev/null; echo \"===\"; find /Users/anton/.claude/skills/shape-idea -maxdepth 2 -type f | head -40",
+  "command": "ls /home/<USER>/.claude/skills/shape-idea/references/ 2>/dev/null; echo \"===\"; find /home/<USER>/.claude/skills/shape-idea -maxdepth 2 -type f | head -40",
   "description": "List shape-idea references"
 }
 ```
@@ -75,7 +75,7 @@ tool_use Read
 id: toolu_017UTwBqgWjXsZnT8bZGhnwq
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/architecture.md"
+  "file_path": "/home/<USER>/src/drain-cycle/docs/architecture.md"
 }
 ```
 
@@ -84,7 +84,7 @@ id: toolu_017UTwBqgWjXsZnT8bZGhnwq
 tool_result ERROR
 id: toolu_017UTwBqgWjXsZnT8bZGhnwq
 ```
-File does not exist. Note: your current working directory is /Users/anton/src/drain-cycle. Did you mean architecture.html?
+File does not exist. Note: your current working directory is /home/<USER>/src/drain-cycle. Did you mean architecture.html?
 ```
 
 > TOOL
@@ -93,7 +93,7 @@ tool_use Read
 id: toolu_01PMwMsTDjGfgtT3y7htvjVi
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/vision.md"
+  "file_path": "/home/<USER>/src/drain-cycle/docs/vision.md"
 }
 ```
 
@@ -119,7 +119,7 @@ tool_use Bash
 id: toolu_01NgNYSMShj9Q31Exwya7iYT
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; grep -oiE \"persona|sub-agent|subagent|supervis|orchestrat|worker|reviewer|simplif|code-review|exec:[a-z-]+\" docs/architecture.html | sort | uniq -c | sort -rn | head -40",
+  "command": "cd /home/<USER>/src/drain-cycle; grep -oiE \"persona|sub-agent|subagent|supervis|orchestrat|worker|reviewer|simplif|code-review|exec:[a-z-]+\" docs/architecture.html | sort | uniq -c | sort -rn | head -40",
   "description": "Survey personas/agents in architecture.html"
 }
 ```
@@ -211,7 +211,7 @@ tool_use Bash
 id: toolu_01VDnzCdUaa4y5NbH9ENPGvJ
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; grep -rlE \"peak|turn .*tok|· [0-9]+m\" --include=*.py src lib 2>/dev/null | head; echo \"===\"; grep -rnE \"turn|peak|tok\" --include=*.py . 2>/dev/null | grep -iE \"f\\\"|f'|format|render|print|status\" | head -20",
+  "command": "cd /home/<USER>/src/drain-cycle; grep -rlE \"peak|turn .*tok|· [0-9]+m\" --include=*.py src lib 2>/dev/null | head; echo \"===\"; grep -rnE \"turn|peak|tok\" --include=*.py . 2>/dev/null | grep -iE \"f\\\"|f'|format|render|print|status\" | head -20",
   "description": "Find default output rendering code"
 }
 ```
@@ -232,7 +232,7 @@ tool_use Bash
 id: toolu_01FQGW4K8hU8Ut98DJLi5WTe
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; ls; echo \"=== peak/turn ===\"; grep -rnE \"peak|turn\" -l . --include=\"*.py\" 2>/dev/null | head; grep -rn \"peak\" . 2>/dev/null | grep -v \".git/\" | head -15",
+  "command": "cd /home/<USER>/src/drain-cycle; ls; echo \"=== peak/turn ===\"; grep -rnE \"peak|turn\" -l . --include=\"*.py\" 2>/dev/null | head; grep -rn \"peak\" . 2>/dev/null | grep -v \".git/\" | head -15",
   "description": "Locate output rendering source"
 }
 ```
@@ -296,7 +296,7 @@ tool_use Bash
 id: toolu_01DHj94dxQ3DLsGcnfxz8A6j
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle/drain_cycle; ls; echo \"=== status/progress files ===\"; ls -la | grep -iE \"status|progress|watch|render|console|tui|display\"",
+  "command": "cd /home/<USER>/src/drain-cycle/drain_cycle; ls; echo \"=== status/progress files ===\"; ls -la | grep -iE \"status|progress|watch|render|console|tui|display\"",
   "description": "List drain_cycle modules"
 }
 ```
@@ -342,7 +342,7 @@ tool_use Read
 id: toolu_01Vp4RnjTomkghLw1HGS2k3q
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/progress.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/progress.py"
 }
 ```
 
@@ -403,7 +403,7 @@ tool_use Read
 id: toolu_01N2F7NdJL31vGv34eKkTKRQ
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/console.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/console.py"
 }
 ```
 
@@ -511,7 +511,7 @@ tool_use Bash
 id: toolu_014tdA8EyfRcBXYL4fFBtawX
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; echo \"=== docs/ideas ===\"; ls docs/ideas/ 2>/dev/null | head; echo \"=== idea-bank? ===\"; ls docs/idea-bank/ 2>/dev/null || echo \"(no idea-bank dir)\"",
+  "command": "cd /home/<USER>/src/drain-cycle; echo \"=== docs/ideas ===\"; ls docs/ideas/ 2>/dev/null | head; echo \"=== idea-bank? ===\"; ls docs/idea-bank/ 2>/dev/null || echo \"(no idea-bank dir)\"",
   "description": "Check idea record location convention"
 }
 ```
@@ -589,7 +589,7 @@ tool_use Write
 id: toolu_011H4BGGs3f4tugbMBWT4n9E
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/ideas/live-execution-swimlanes.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/ideas/live-execution-swimlanes.md",
   "content": "# Triage record: live-execution-swimlanes\n\n## Raw intake\n<!-- Verbatim capture of the idea as received. Do not edit. -->\nswim lanes to show me which \"agents\" are doing what during the execution run\n\nfor example i want to be able to see something like:\n\nABA-313: Issue Picked Up\n--| Starting supervising agent\n--| [Code is written]\n----| Starting code-review sub-agent\n----| Starting code-simplification sub-agent\n\netc\n\nBasically it should follow the architecture and personas I have but I want to be able to see what's going on while drain-cycle is running\n\nThis is equivalent to a kanban board, but in a vertical UI rather than a horizontal Kanban\n\n## Refined intent\n<!-- The confirmed six-line restate from the elicitation loop, in the user's own words. -->\n- Outcome: The default drain-cycle run output shows a live, vertically-nested tree of the agent hierarchy for the issue in flight — supervisor → current `exec:*` skill step → sub-agent persona — with the active node visibly marked.\n- User: The operator running a drain-cycle, who wants to trust the run without babysitting it.\n- Why now: The current default output is a flat, timestamped event stream plus a token line; it never shows *where in the standard chain* the work is, so […]
 
 > TOOL
@@ -597,7 +597,7 @@ id: toolu_011H4BGGs3f4tugbMBWT4n9E
 tool_result
 id: toolu_011H4BGGs3f4tugbMBWT4n9E
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/ideas/live-execution-swimlanes.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/ideas/live-execution-swimlanes.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -626,7 +626,7 @@ tool_use Bash
 id: toolu_013vRnWiyVsK27JFKAb5Wo3Z
 ```json
 {
-  "command": "cd /Users/anton/src/drain-cycle; cat /Users/anton/.claude/skills/shape-design/references/design-spike-templates.md 2>/dev/null | sed -n '1,400p'; echo \"=== dirs ===\"; ls docs/prototypes 2>/dev/null || echo \"(no prototypes dir)\"; ls docs/spikes 2>/dev/null || echo \"(no spikes dir)\"",
+  "command": "cd /home/<USER>/src/drain-cycle; cat /home/<USER>/.claude/skills/shape-design/references/design-spike-templates.md 2>/dev/null | sed -n '1,400p'; echo \"=== dirs ===\"; ls docs/prototypes 2>/dev/null || echo \"(no prototypes dir)\"; ls docs/spikes 2>/dev/null || echo \"(no spikes dir)\"",
   "description": "Load templates, check prototype/spike dirs"
 }
 ```
@@ -647,7 +647,7 @@ tool_use Bash
 id: toolu_01VTU6ueSZoeHyPrrE61JUgp
 ```json
 {
-  "command": "ls -la /Users/anton/.claude/skills/shape-design/ 2>/dev/null; echo \"=== references ===\"; ls -la /Users/anton/.claude/skills/shape-design/references/ 2>/dev/null",
+  "command": "ls -la /home/<USER>/.claude/skills/shape-design/ 2>/dev/null; echo \"=== references ===\"; ls -la /home/<USER>/.claude/skills/shape-design/references/ 2>/dev/null",
   "description": "Inspect shape-design skill dir"
 }
 ```
@@ -777,7 +777,7 @@ tool_use Write
 id: toolu_01YELzm5rqjwNWwqRi8y9EPh
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
+  "file_path": "/home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md",
   "content": "# Prototype finding: live-execution-swimlanes\n\n**Track:** C — product spike (narrative mode)\n**Upstream:** `docs/ideas/live-execution-swimlanes.md`\n**Recommendation:** **Proceed** → `shape:design` Track A (design document)\n\n## Question\nGlancing at a vertical nested tree of the live run, can the operator instantly tell which `exec:*` step and persona is active — and what's done vs upcoming — well enough to trust the run without reading the scrolling log?\n\n## Approach\nNarrative mode. No code (a coded prototype would depend on the observability plumbing the upstream record flagged as an unproven assumption). Built three annotated ASCII mockups of the rendered terminal output, all showing the **same live moment** — ABA-313 mid-`review`, `security-auditor` running — varying only on the axis that drives trust: how much of the chain is visible and how the active node is emphasized. The operator (the user) was the observer; their reaction across two rounds is the observation.\n\n- **Round 1** — three layouts: (A) full vertical status tree, whole `exec:*` chain always drawn with per-node state marks; (B) progressive append-only log-tree, closest to the operator's original sketch, upcoming steps not shown; (C) compact horizontal stepper spine + vertical drill-down of the active step's personas.\n- **Round 2** — refined the round-1 winner […]
 
 > TOOL
@@ -785,7 +785,7 @@ id: toolu_01YELzm5rqjwNWwqRi8y9EPh
 tool_result
 id: toolu_01YELzm5rqjwNWwqRi8y9EPh
 ```
-File created successfully at: /Users/anton/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/src/drain-cycle/docs/prototypes/live-execution-swimlanes/finding.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

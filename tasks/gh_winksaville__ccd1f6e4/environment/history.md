@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_019LAngcMeZvixQKA9767SDW
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "offset": 0,
   "limit": 60
 }
@@ -421,7 +421,7 @@ tool_use Read
 id: toolu_01X2i9tQJVcM55g6Q6HYxS3w
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/cycle-protocol.md"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/cycle-protocol.md"
 }
 ```
 
@@ -467,7 +467,7 @@ tool_use Read
 id: toolu_01CfFLURoKivPVgS9LWQ6Lr2
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/versioning.md"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/versioning.md"
 }
 ```
 
@@ -521,7 +521,7 @@ tool_use Read
 id: toolu_01TvbMhcifQS3PKhpMmbgUJ4
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "offset": 60
 }
 ```
@@ -766,7 +766,7 @@ id: toolu_01VujE5AC4E4WjxQ7DsGMCVD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.14.0\"",
   "new_string": "version = \"0.15.0-0\""
 }
@@ -786,7 +786,7 @@ tool_use Read
 id: toolu_01MdSCrQp8gG2pB7m5Jw8dDi
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml"
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml"
 }
 ```
 
@@ -828,7 +828,7 @@ id: toolu_01VpjcaqgMpCTf8BfM1CzETM
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.14.0\"",
   "new_string": "version = \"0.15.0-0\""
 }
@@ -873,7 +873,7 @@ id: toolu_013jTdGJDF64ycyyWYhAP2tB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.14.0\"",
   "new_string": "version = \"0.15.0-0\""
 }
@@ -884,7 +884,7 @@ id: toolu_013jTdGJDF64ycyyWYhAP2tB
 tool_result
 id: toolu_013jTdGJDF64ycyyWYhAP2tB
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -894,7 +894,7 @@ id: toolu_011R1FW6xnvGqKBJwp2wFTnk
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "## In Progress\n\n_No cycle currently in progress._",
   "new_string": "## In Progress\n\n**feat: Sender/Receiver endpoints + overflow FIFO**\n\nSending a pool message today is ~20 demo lines of alloc /\ninto_desc / try-send / error juggling, `resolve`'s unsafe is\nre-audited at every call site, and ring Full is a user-visible\nfailure. Paired endpoints own all of that once [[11]]. SPSC\nloses cross-core to MPSC by ~26–40% (line-transfer economics\n[[21]]) and its one-accessor rule complicates execution\ncontexts, so the ring goes MPSC-only and the endpoints design\nagainst one flavor.\n\n- Decisions:\n  - drop SPSC (src/spsc, demo fns, tp-matrix flavor); the\n    \"Seam-word SPSC variant\" Todo retires with it; Cargo.toml\n    `description` loses \"SPSC\";\n  - no-CAS targets (RP2040/thumbv6m, RV32IMC) return later\n    via portable-atomic critical-section CAS — Idea lands\n    at -1 replacing the \"Embedded floor\" Idea;\n  - types `Sender` / `Receiver`; methods `try_send` /\n    `send` / `recv`;\n  - `try_send` drains pending first, never appends; if the\n    ring is still Full it returns `Err(Full(BufSlot))` — the\n    guard comes back, no leak;\n  - `send(BufSlot)` is infallible: ring if possible, else\n    append to a sender-private intrusive pending FIFO\n    [details](ring-buffer-design.md#overflow-fifo-future);\n    backpressure moves to `alloc`.\n- Ladder:\n  - 0.15.0-0 chore: open endpoints cycle (current)\n  - 0.15.0-1 refactor: drop spsc ring; endpoints […]
 
@@ -903,7 +903,7 @@ id: toolu_011R1FW6xnvGqKBJwp2wFTnk
 tool_result
 id: toolu_011R1FW6xnvGqKBJwp2wFTnk
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -913,7 +913,7 @@ id: toolu_016XEUMjLhNnrS2AjSXT6y5L
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "1. Descriptor queue endpoints: paired DescSender (loan +\n   send) / DescReceiver (recv) [[11]]:\n   - own ring endpoint + registry access;\n   - the demo's ~20-line send path becomes ~3 lines;\n   - `resolve`'s unsafe is audited once inside the crate\n     (recv safe by construction);\n   - guard handed back on Full;\n   - design against both ring flavors (SPSC + MPSC);\n   - the sender is also where each sender's private\n     overflow pending list will live.\n2. Overflow FIFO: on ring Full, append the message to a\n   sender-private pending list instead of failing\n   [details](ring-buffer-design.md#overflow-fifo-future):\n   - intrusive — the same embedded next-link the\n     free-stack uses, so zero allocation;\n   - naturally bounded by pool capacity;\n   - composes per-sender with MPSC — see\n     [Overflow readiness](ring-buffer-design.md#overflow-readiness).\n3. Seam-word SPSC variant:",
   "new_string": "1. Seam-word SPSC variant:"
 }
@@ -924,7 +924,7 @@ id: toolu_016XEUMjLhNnrS2AjSXT6y5L
 tool_result
 id: toolu_016XEUMjLhNnrS2AjSXT6y5L
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -934,7 +934,7 @@ id: toolu_01KrxojordNyy4dfcPEZVzX6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- Black-box test split: move the public-API protocol tests",
   "new_string": "- Graduate to a production crate when endpoints + overflow\n  prove out: new repo with a curated fresh history and a real\n  name (`zc-ring` / `zc-msg`); `zc-ring-x1` stays behind as\n  the lab notebook holding the measured rationale (chores,\n  perf findings). A future decision point, not a now-task.\n- Black-box test split: move the public-API protocol tests"
 }
@@ -945,7 +945,7 @@ id: toolu_01KrxojordNyy4dfcPEZVzX6
 tool_result
 id: toolu_01KrxojordNyy4dfcPEZVzX6
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1392,7 +1392,7 @@ tool_use Write
 id: toolu_01WxRALvpqJm7dteuJ43zn2w
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/zc-msg-x1.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/zc-msg-x1.md",
   "content": "# zc-msg-x1 — follow-on repo plan\n\nDevelopment moves to\n[zc-msg-x1](https://github.com/winksaville/zc-msg-x1), a new\nrepo focused on the MPSC messaging layer (ring + pools +\ndescriptor-queue endpoints). zc-ring-x1 is frozen as the\nring-protocol lab notebook: two working protocols (SPSC +\nMPSC), the tp-matrix comparison harness, and the measured\nfindings stay here intact — nothing is deleted.\n\n## Why MPSC-only\n\n- Cross-core, SPSC moves ~10.0 cache lines per round trip vs\n  MPSC's ~6.7 and loses ~26–40%; the whole gap is\n  line-transfer economics [[1]]. SPSC's remaining wins are\n  same-core/SMT placements and the load-store-only floor.\n- SPSC's one-accessor rule complicates\n  [Execution contexts](ring-buffer-design.md#execution-contexts):\n  the \"threads sharing an endpoint\" (mutex) and \"ISR sharing\n  an endpoint\" (irqsave + try-and-bail) cases exist only\n  because SPSC has exactly one producer slot. MPSC's answer\n  is uniform — every context gets its own Sender; the CAS\n  claim serializes lock-free.\n- The planned endpoints (below) then design against one ring\n  flavor instead of two.\n- Prior art: io_uring's completion side chose the same shape\n  — spill to a kernel-side overflow list and throttle the\n  source — while its submission side fails fast to the\n  caller.\n\n## No-CAS targets (RP2040 / thumbv6m / RV32IMC)\n\nDropping SPSC drops the load-store-only floor; the plan for\nCAS-less targets is\n[portable-atomic](https://crates.io/crates/portable-atomic):\n\n- native atomics where the […]
 
 > TOOL
@@ -1400,7 +1400,7 @@ id: toolu_01WxRALvpqJm7dteuJ43zn2w
 tool_result
 id: toolu_01WxRALvpqJm7dteuJ43zn2w
 ```
-File created successfully at: /home/wink/data/prgs/rust/zc-ring-x1/notes/zc-msg-x1.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/data/prgs/rust/zc-ring-x1/notes/zc-msg-x1.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1410,7 +1410,7 @@ id: toolu_01YLqRRJqTjKrDMD8NXc6XrJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/README.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/README.md",
   "old_string": "# zc-ring-x1\n\nZero copy ring buffer experiment 1",
   "new_string": "# zc-ring-x1\n\nZero copy ring buffer experiment 1\n\n> **Development has moved to\n> [zc-msg-x1](https://github.com/winksaville/zc-msg-x1)**,\n> the follow-on focused on the MPSC messaging layer (ring +\n> pools + endpoints). This repo remains the ring-protocol\n> record — SPSC and MPSC, compared and measured. Why and\n> what moves: [notes/zc-msg-x1.md](notes/zc-msg-x1.md)."
 }
@@ -1421,7 +1421,7 @@ id: toolu_01YLqRRJqTjKrDMD8NXc6XrJ
 tool_result
 id: toolu_01YLqRRJqTjKrDMD8NXc6XrJ
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1446,7 +1446,7 @@ id: toolu_01JTf51ACMFeFgRCCEf6G5Ys
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml",
   "old_string": "version = \"0.14.0\"",
   "new_string": "version = \"0.15.0\""
 }
@@ -1457,7 +1457,7 @@ id: toolu_01JTf51ACMFeFgRCCEf6G5Ys
 tool_result
 id: toolu_01JTf51ACMFeFgRCCEf6G5Ys
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/Cargo.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1471,7 +1471,7 @@ id: toolu_01B1v2PLSa6YjHHMp2wybdhG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/chores/chores-02.md",
   "old_string": "# References",
   "new_string": "## docs: move development to zc-msg-x1\n\nCommits:\n\nDevelopment moves to\n[zc-msg-x1](https://github.com/winksaville/zc-msg-x1) to\nfocus on the MPSC messaging layer; zc-ring-x1 freezes as the\nring-protocol lab notebook (SPSC + MPSC, tp-matrix, measured\nfindings — nothing deleted). The full plan — MPSC-only\nrationale, portable-atomic for no-CAS targets, endpoint\ndecisions, benches/examples library shape, seeding — lives\nin [notes/zc-msg-x1.md](../zc-msg-x1.md).\n\n# References"
 }
@@ -1568,7 +1568,7 @@ tool_use Read
 id: toolu_01D6ubxBYai3nN7tcTWFq99T
 ```json
 {
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "offset": 150,
   "limit": 20
 }
@@ -1606,7 +1606,7 @@ id: toolu_01DfqLqQeXvHuFpwTUdEXKeP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md",
+  "file_path": "/home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md",
   "old_string": "- perf: explore spsc vs mpsc 2t gap [[12]]\n- feat: tp-matrix perf counters + tables [[13]]\n\n# References\n\n[11]: chores/chores-01.md#follow-on-endpoints-and-wait-policies\n[12]: chores/chores-02.md#perf-explore-spsc-vs-mpsc-2t-gap\n[13]: chores/chores-02.md#feat-tp-matrix-perf-counters--tables\n[21]: chores/chores-02.md#findings-the-gap-is-line-transfer-economics",
   "new_string": "- perf: explore spsc vs mpsc 2t gap [[12]]\n- feat: tp-matrix perf counters + tables [[13]]\n- docs: move development to zc-msg-x1 [[14]]\n\n# References\n\n[11]: chores/chores-01.md#follow-on-endpoints-and-wait-policies\n[12]: chores/chores-02.md#perf-explore-spsc-vs-mpsc-2t-gap\n[13]: chores/chores-02.md#feat-tp-matrix-perf-counters--tables\n[14]: chores/chores-02.md#docs-move-development-to-zc-msg-x1\n[21]: chores/chores-02.md#findings-the-gap-is-line-transfer-economics"
 }
@@ -1617,7 +1617,7 @@ id: toolu_01DfqLqQeXvHuFpwTUdEXKeP
 tool_result
 id: toolu_01DfqLqQeXvHuFpwTUdEXKeP
 ```
-The file /home/wink/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/data/prgs/rust/zc-ring-x1/notes/todo.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1642,7 +1642,7 @@ id: toolu_01RCAquUcB7fXPDcivfYsNDa
 ```
 sccache: error: Operation not permitted (os error 1)
 
-error: process didn't exit successfully: `sccache /home/wink/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc -vV` (exit status: 2)
+error: process didn't exit successfully: `sccache /home/<USER>/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc -vV` (exit status: 2)
 --- stderr
 sccache: error: Operation not permitted (os error 1)
 ```

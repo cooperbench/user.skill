@@ -91,7 +91,7 @@ tool_use Read
 id: toolu_01Rc43RJWYfa958ufnmq66ac
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 150,
   "limit": 30
 }
@@ -241,7 +241,7 @@ tool_use Read
 id: toolu_014noXJHSsA3Bw5PMZtNpfbU
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py"
 }
 ```
 
@@ -360,7 +360,7 @@ tool_use Read
 id: toolu_01GVwBi9GYidse7QecyRhASd
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/auth.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/auth.py",
   "offset": 220,
   "limit": 45
 }
@@ -414,7 +414,7 @@ tool_use Read
 id: toolu_01QLcGbMZwwDZurCBdoWcFeo
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/suite_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/suite_service.py",
   "offset": 28,
   "limit": 65
 }
@@ -478,7 +478,7 @@ tool_use Read
 id: toolu_014KdzeZSZdV5mSakNMmu2LZ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/suite_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/suite_service.py",
   "offset": 113,
   "limit": 30
 }
@@ -546,7 +546,7 @@ tool_use Read
 id: toolu_01Vgx6zUi2AxJETHkuH7Noz8
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/schedule_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/schedule_service.py",
   "offset": 81,
   "limit": 40
 }
@@ -628,7 +628,7 @@ tool_use Read
 id: toolu_017AwyQ6xwMjdbVwUi4uaCJi
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/schedules.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/schedules.py",
   "offset": 1,
   "limit": 95
 }
@@ -736,7 +736,7 @@ id: toolu_019vS8vMeFexFR6zYuv5J4Y4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/schedule_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/schedule_service.py",
   "old_string": "def list_schedules(\n    session: Session,\n    *,\n    user_id: uuid.UUID,\n    suite_id: uuid.UUID | None = None,\n    enabled: bool | None = None,\n) -> list[Schedule]:\n    \"\"\"Schedules on suites the user can access (owned or shared), newest first.\"\"\"\n    # Reuse the single source of truth for suite visibility (suite_service) — the\n    # same owned-OR-shared subquery the suite + run reads use, so the authz rule\n    # can't silently diverge here.\n    stmt = (\n        select(Schedule)\n        .where(Schedule.suite_id.in_(suite_service.accessible_suite_ids(user_id)))\n        .order_by(Schedule.created_at.desc())\n    )",
   "new_string": "def list_schedules(\n    session: Session,\n    *,\n    user_id: uuid.UUID,\n    suite_id: uuid.UUID | None = None,\n    enabled: bool | None = None,\n    include_all: bool = False,\n) -> list[Schedule]:\n    \"\"\"Schedules on suites the user can access (owned or shared), newest first — or\n    on *every* suite when ``include_all`` (the workspace-admin view, ADR 0027).\"\"\"\n    # Reuse the single source of truth for suite visibility (suite_service) — the\n    # same owned-OR-shared subquery the suite + run reads use, so the authz rule\n    # can't silently diverge here.\n    stmt = (\n        select(Schedule)\n        .where(\n            Schedule.suite_id.in_(\n                suite_service.accessible_suite_ids(user_id, include_all=include_all)\n            )\n        )\n        .order_by(Schedule.created_at.desc())\n    )"
 }
@@ -747,7 +747,7 @@ id: toolu_019vS8vMeFexFR6zYuv5J4Y4
 tool_result
 id: toolu_019vS8vMeFexFR6zYuv5J4Y4
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/schedule_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/schedule_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -761,7 +761,7 @@ id: toolu_01QgQkdV4K9rucGHHHFc6bVk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/schedules.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/schedules.py",
   "old_string": "from backend.app.core.auth import get_current_user",
   "new_string": "from backend.app.core.auth import get_current_user, is_workspace_admin"
 }
@@ -772,7 +772,7 @@ id: toolu_01QgQkdV4K9rucGHHHFc6bVk
 tool_result
 id: toolu_01QgQkdV4K9rucGHHHFc6bVk
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/schedules.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/schedules.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -782,7 +782,7 @@ id: toolu_01MvpBBnpMavrNofx8peMZan
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/schedules.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/schedules.py",
   "old_string": "    return svc.list_schedules(db, user_id=current_user.id, suite_id=suite_id, enabled=enabled)",
   "new_string": "    return svc.list_schedules(\n        db,\n        user_id=current_user.id,\n        suite_id=suite_id,\n        enabled=enabled,\n        include_all=is_workspace_admin(current_user),\n    )"
 }
@@ -793,7 +793,7 @@ id: toolu_01MvpBBnpMavrNofx8peMZan
 tool_result
 id: toolu_01MvpBBnpMavrNofx8peMZan
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/schedules.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/schedules.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -807,7 +807,7 @@ id: toolu_01Cu7UnS8qdpM93VaWTvX8a2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py",
   "old_string": "from backend.app.core.config import get_settings",
   "new_string": "from backend.app.core.auth import is_workspace_admin\nfrom backend.app.core.config import get_settings"
 }
@@ -818,7 +818,7 @@ id: toolu_01Cu7UnS8qdpM93VaWTvX8a2
 tool_result
 id: toolu_01Cu7UnS8qdpM93VaWTvX8a2
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -832,7 +832,7 @@ id: toolu_017iQfDZhq2sGpdsAxntg3HV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py",
   "old_string": "    the environment (dev / qa /\n    uat), how many checks it has, and the status + time of its most recent run\n    (null if it has never run). Scoped to suites the user owns or has a share on.\n    \"\"\"\n    with _ctx() as (session, user):\n        suites = suite_service.list_suites(session, user_id=user.id)",
   "new_string": "    the environment (dev / qa /\n    uat), how many checks it has, and the status + time of its most recent run\n    (null if it has never run). Scoped to suites the user owns or has a share on\n    (a workspace-admin sees every suite).\n    \"\"\"\n    with _ctx() as (session, user):\n        suites = suite_service.list_suites(\n            session, user_id=user.id, include_all=is_workspace_admin(user)\n        )"
 }
@@ -859,7 +859,7 @@ id: toolu_016uGvNBkfhGMiWnv8ZPYjQ6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py",
   "old_string": "    (null if it has never run). Scoped to suites the user owns or has a share on.\n    \"\"\"\n    with _ctx() as (session, user):\n        suites = suite_service.list_suites(session, user_id=user.id)",
   "new_string": "    (null if it has never run). Scoped to suites the user owns or has a share on\n    (a workspace-admin sees every suite).\n    \"\"\"\n    with _ctx() as (session, user):\n        suites = suite_service.list_suites(\n            session, user_id=user.id, include_all=is_workspace_admin(user)\n        )"
 }
@@ -870,7 +870,7 @@ id: toolu_016uGvNBkfhGMiWnv8ZPYjQ6
 tool_result
 id: toolu_016uGvNBkfhGMiWnv8ZPYjQ6
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -884,7 +884,7 @@ id: toolu_01LxcXK7JckvcdCb84MKeJuK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py",
   "old_string": "    per-day trend of the score. Scoped to the suites the user can access.\n    \"\"\"\n    if window_days < 1 or window_days > 90:\n        raise ToolError(\"window_days must be between 1 and 90\")\n    with _ctx() as (session, user):\n        summary = dashboard_service.dashboard_summary(\n            session, user_id=user.id, window_days=window_days\n        )",
   "new_string": "    per-day trend of the score. Scoped to the suites the user can access\n    (a workspace-admin sees the whole workspace).\n    \"\"\"\n    if window_days < 1 or window_days > 90:\n        raise ToolError(\"window_days must be between 1 and 90\")\n    with _ctx() as (session, user):\n        summary = dashboard_service.dashboard_summary(\n            session,\n            user_id=user.id,\n            window_days=window_days,\n            include_all=is_workspace_admin(user),\n        )"
 }
@@ -895,7 +895,7 @@ id: toolu_01LxcXK7JckvcdCb84MKeJuK
 tool_result
 id: toolu_01LxcXK7JckvcdCb84MKeJuK
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -909,7 +909,7 @@ id: toolu_01FhH2USbUVD9Vdzt8jmFo1x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py",
   "old_string": "        runs = orchestration_service.list_pipeline_runs(session, provider=provider, limit=limit)\n        accessible = set(session.scalars(suite_service.accessible_suite_ids(user.id)))",
   "new_string": "        runs = orchestration_service.list_pipeline_runs(session, provider=provider, limit=limit)\n        accessible = set(\n            session.scalars(\n                suite_service.accessible_suite_ids(\n                    user.id, include_all=is_workspace_admin(user)\n                )\n            )\n        )"
 }
@@ -920,7 +920,7 @@ id: toolu_01FhH2USbUVD9Vdzt8jmFo1x
 tool_result
 id: toolu_01FhH2USbUVD9Vdzt8jmFo1x
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1010,7 +1010,7 @@ tool_use Read
 id: toolu_01EuZLqvV8vUz6iyp6ctCUbL
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_suites.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_suites.py",
   "offset": 395,
   "limit": 45
 }
@@ -1080,7 +1080,7 @@ tool_use Read
 id: toolu_017R5S9YoWDVVA7YrSXtcm5G
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/conftest.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/conftest.py",
   "offset": 1,
   "limit": 75
 }
@@ -1149,7 +1149,7 @@ tool_use Read
 id: toolu_012bLSP33V7L62gN7ugsk4SZ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
   "offset": 1,
   "limit": 90
 }
@@ -1182,7 +1182,7 @@ id: toolu_012bLSP33V7L62gN7ugsk4SZ
 20	from backend.app.services import profile_service, run_dispatch
 21	
 22	
-23	def _user(db_session: Any, email: str = "ada@acme.io") -> User:
+23	def _user(db_session: Any, email: str = "<REDACTED_EMAIL>") -> User:
 24	    u = User(aad_object_id=uuid.uuid4().hex, email=email)
 25	    db_session.add(u)
 26	    db_session.flush()
@@ -1251,7 +1251,7 @@ tool_use Read
 id: toolu_015rtmMRGZxxep5YiFFV2EAh
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
   "offset": 101,
   "limit": 45
 }
@@ -1263,9 +1263,9 @@ tool_result
 id: toolu_015rtmMRGZxxep5YiFFV2EAh
 ```
 101	def test_get_suite_results_denied_for_inaccessible_suite(db_session: Any, monkeypatch: Any) -> None:
-102	    owner = _user(db_session, "owner@acme.io")
+102	    owner = _user(db_session, "<REDACTED_EMAIL>")
 103	    suite = _suite(db_session, owner)
-104	    outsider = _user(db_session, "outsider@acme.io")
+104	    outsider = _user(db_session, "<REDACTED_EMAIL>")
 105	    _as(monkeypatch, db_session, outsider)
 106	    with pytest.raises(ToolError):
 107	        server.get_suite_results(str(suite.id))
@@ -1319,7 +1319,7 @@ tool_use Read
 id: toolu_016tDUrRNBZzzqwXCHgfpTKg
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
   "offset": 59,
   "limit": 14
 }
@@ -1353,9 +1353,9 @@ id: toolu_01DAtwVvZRAMeYHcfVJKD3eV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
   "old_string": "    out = server.list_suites()\n    assert len(out) == 1\n    assert out[0][\"name\"] == \"Orders\"\n    assert out[0][\"datasource\"] == \"snowflake\"\n    assert out[0][\"env\"] == \"dev\"\n    assert out[0][\"check_count\"] == 1\n    assert out[0][\"last_run\"] is None",
-  "new_string": "    out = server.list_suites()\n    assert len(out) == 1\n    assert out[0][\"name\"] == \"Orders\"\n    assert out[0][\"datasource\"] == \"snowflake\"\n    assert out[0][\"env\"] == \"dev\"\n    assert out[0][\"check_count\"] == 1\n    assert out[0][\"last_run\"] is None\n\n\ndef test_list_suites_hides_unowned_suites_from_non_admin(\n    db_session: Any, monkeypatch: Any\n) -> None:\n    # Baseline for the admin case below: an outsider who is not a workspace-admin\n    # sees none of another user's suites.\n    owner = _user(db_session, \"owner@acme.io\")\n    _suite(db_session, owner)\n    outsider = _user(db_session, \"outsider@acme.io\")\n    _as(monkeypatch, db_session, outsider)\n    assert server.list_suites() == []\n\n\ndef test_list_suites_workspace_admin_sees_every_suite(\n    db_session: Any, monkeypatch: Any, make_workspace_admin: Any\n) -> None:\n    # A workspace-admin driving DataQ over MCP gets the workspace-wide view (ADR\n    # 0027), same as the REST list — even a suite they neither own nor share.\n    owner = _user(db_session, \"owner@acme.io\")\n    suite = _suite(db_session, owner)\n    admin = _user(db_session, \"admin@acme.io\")\n    make_workspace_admin(admin.email)\n    _as(monkeypatch, db_session, admin)\n    listed = {s[\"id\"] for s in server.list_suites()}\n    assert str(suite.id) in listed"
+  "new_string": "    out = server.list_suites()\n    assert len(out) == 1\n    assert out[0][\"name\"] == \"Orders\"\n    assert out[0][\"datasource\"] == \"snowflake\"\n    assert out[0][\"env\"] == \"dev\"\n    assert out[0][\"check_count\"] == 1\n    assert out[0][\"last_run\"] is None\n\n\ndef test_list_suites_hides_unowned_suites_from_non_admin(\n    db_session: Any, monkeypatch: Any\n) -> None:\n    # Baseline for the admin case below: an outsider who is not a workspace-admin\n    # sees none of another user's suites.\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    _suite(db_session, owner)\n    outsider = _user(db_session, \"<REDACTED_EMAIL>\")\n    _as(monkeypatch, db_session, outsider)\n    assert server.list_suites() == []\n\n\ndef test_list_suites_workspace_admin_sees_every_suite(\n    db_session: Any, monkeypatch: Any, make_workspace_admin: Any\n) -> None:\n    # A workspace-admin driving DataQ over MCP gets the workspace-wide view (ADR\n    # 0027), same as the REST list — even a suite they neither own nor share.\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    suite = _suite(db_session, owner)\n    admin = _user(db_session, \"<REDACTED_EMAIL>\")\n    make_workspace_admin(admin.email)\n    _as(monkeypatch, db_session, admin)\n    listed = {s[\"id\"] for s in server.list_suites()}\n    assert str(suite.id) in listed"
 }
 ```
 
@@ -1364,7 +1364,7 @@ id: toolu_01DAtwVvZRAMeYHcfVJKD3eV
 tool_result
 id: toolu_01DAtwVvZRAMeYHcfVJKD3eV
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1377,7 +1377,7 @@ tool_use Read
 id: toolu_018cKdddomgdcHGjJVdzBuMT
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
   "offset": 148,
   "limit": 22
 }
@@ -1419,9 +1419,9 @@ id: toolu_01HDvpzragLANoDYpSac9zmF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
   "old_string": "    out = server.get_adf_pipeline_status()\n    assert out[0][\"pipeline\"] == \"load_orders\"\n    assert out[0][\"dq_run\"][\"status\"] == \"succeeded\"",
-  "new_string": "    out = server.get_adf_pipeline_status()\n    assert out[0][\"pipeline\"] == \"load_orders\"\n    assert out[0][\"dq_run\"][\"status\"] == \"succeeded\"\n\n\ndef _adf_run_on_unowned_suite(db_session: Any) -> User:\n    \"\"\"Seed a pipeline run correlated to a DQ run on a suite owned by someone\n    else, and return a fresh outsider to view it. Shared by the admin +\n    non-admin correlation-visibility tests below.\"\"\"\n    owner = _user(db_session, \"owner@acme.io\")\n    suite = _suite(db_session, owner)\n    db_session.add(\n        PipelineRun(\n            provider=\"adf\",\n            connection_id=suite.connection_id,\n            provider_run_id=\"run-1\",\n            pipeline_or_dag_id=\"load_orders\",\n            env=\"dev\",\n            status=\"succeeded\",\n        )\n    )\n    db_session.add(Run(suite_id=suite.id, status=\"succeeded\", triggered_by=\"adf:load_orders:run-1\"))\n    db_session.commit()\n    return _user(db_session, \"outsider@acme.io\")\n\n\ndef test_get_adf_pipeline_status_hides_unowned_correlation_from_non_admin(\n    db_session: Any, monkeypatch: Any\n) -> None:\n    # The pipeline run itself is workspace-wide, but the correlated DQ run is\n    # scoped: a non-admin outsider sees the pipeline row with dq_run == None.\n    outsider = _adf_run_on_unowned_suite(db_session)\n    _as(monkeypatch, db_session, outsider)\n    out = server.get_adf_pipeline_status()\n    assert out[0][\"pipeline\"] == \"load_orders\"\n    assert out[0][\"dq_run\"] is None\n\n\ndef test_get_adf_pipeline_status_workspace_admin_correlates_unowned_run(\n    db_session: Any, monkeypatch: Any, make_workspace_admin: Any\n) -> None:\n    # A workspace-admin sees the correlated DQ run even on a suite they don't own\n    # (ADR 0027 parity with the REST orchestration view).\n    admin = _adf_run_on_unowned_suite(db_session)\n    make_workspace_admin(admin.email)\n    _as(monkeypatch, db_session, admin)\n    out = server.get_adf_pipeline_status()\n    assert out[0][\"dq_run\"][\"status\"] == \"succeeded\""
+  "new_string": "    out = server.get_adf_pipeline_status()\n    assert out[0][\"pipeline\"] == \"load_orders\"\n    assert out[0][\"dq_run\"][\"status\"] == \"succeeded\"\n\n\ndef _adf_run_on_unowned_suite(db_session: Any) -> User:\n    \"\"\"Seed a pipeline run correlated to a DQ run on a suite owned by someone\n    else, and return a fresh outsider to view it. Shared by the admin +\n    non-admin correlation-visibility tests below.\"\"\"\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    suite = _suite(db_session, owner)\n    db_session.add(\n        PipelineRun(\n            provider=\"adf\",\n            connection_id=suite.connection_id,\n            provider_run_id=\"run-1\",\n            pipeline_or_dag_id=\"load_orders\",\n            env=\"dev\",\n            status=\"succeeded\",\n        )\n    )\n    db_session.add(Run(suite_id=suite.id, status=\"succeeded\", triggered_by=\"adf:load_orders:run-1\"))\n    db_session.commit()\n    return _user(db_session, \"<REDACTED_EMAIL>\")\n\n\ndef test_get_adf_pipeline_status_hides_unowned_correlation_from_non_admin(\n    db_session: Any, monkeypatch: Any\n) -> None:\n    # The pipeline run itself is workspace-wide, but the correlated DQ run is\n    # scoped: a non-admin outsider sees the pipeline row with dq_run == None.\n    outsider = _adf_run_on_unowned_suite(db_session)\n    _as(monkeypatch, db_session, outsider)\n    out = server.get_adf_pipeline_status()\n    assert out[0][\"pipeline\"] == \"load_orders\"\n    assert out[0][\"dq_run\"] is None\n\n\ndef test_get_adf_pipeline_status_workspace_admin_correlates_unowned_run(\n    db_session: Any, monkeypatch: Any, make_workspace_admin: Any\n) -> None:\n    # A workspace-admin sees the correlated DQ run even on a suite they don't own\n    # (ADR 0027 parity with the REST orchestration view).\n    admin = _adf_run_on_unowned_suite(db_session)\n    make_workspace_admin(admin.email)\n    _as(monkeypatch, db_session, admin)\n    out = server.get_adf_pipeline_status()\n    assert out[0][\"dq_run\"][\"status\"] == \"succeeded\""
 }
 ```
 
@@ -1430,7 +1430,7 @@ id: toolu_01HDvpzragLANoDYpSac9zmF
 tool_result
 id: toolu_01HDvpzragLANoDYpSac9zmF
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1443,7 +1443,7 @@ tool_use Read
 id: toolu_012NBZmDa7E139ssTuMLWqeM
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_schedules.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_schedules.py",
   "offset": 1,
   "limit": 75
 }
@@ -1486,7 +1486,7 @@ id: toolu_012NBZmDa7E139ssTuMLWqeM
 30	
 31	
 32	def _connection(db_session: Any) -> Connection:
-33	    owner = User(aad_object_id=uuid.uuid4().hex, email="owner@example.com")
+33	    owner = User(aad_object_id=uuid.uuid4().hex, email="<REDACTED_EMAIL>")
 34	    db_session.add(owner)
 35	    db_session.flush()
 36	    conn = Connection(
@@ -1542,7 +1542,7 @@ id: toolu_012dPJrUhu9uJyzUSKeya22N
 176:    sid = client.post("/api/v1/schedules", json=_payload(suite_id)).json()["id"]
 ---DEV USER---
 backend/app/core/auth.py:18:  resolve in dev bypass when presented — the same seam order.)
-backend/app/core/auth.py:43:DEV_BYPASS_EMAIL = "dev-bypass@dataq.local"
+backend/app/core/auth.py:43:DEV_BYPASS_EMAIL = "<REDACTED_EMAIL>"
 backend/app/core/auth.py:47:def _dev_bypass_allowed(settings: Settings) -> bool:
 backend/app/core/auth.py:50:        and settings.auth_dev_bypass
 backend/app/core/auth.py:152:    if _dev_bypass_allowed(_settings):
@@ -1559,7 +1559,7 @@ tool_use Read
 id: toolu_018mawjY1LXozLjMLZQtSDij
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_schedules.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_schedules.py",
   "offset": 136,
   "limit": 22
 }
@@ -1601,7 +1601,7 @@ id: toolu_014dqDkkVcouEBKLJUhSsNsN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_schedules.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_schedules.py",
   "old_string": "    listed = client.get(\"/api/v1/schedules\")\n    assert listed.status_code == 200\n    assert {s[\"suite_id\"] for s in listed.json()} == {mine}",
   "new_string": "    listed = client.get(\"/api/v1/schedules\")\n    assert listed.status_code == 200\n    assert {s[\"suite_id\"] for s in listed.json()} == {mine}\n\n\ndef test_workspace_admin_lists_schedules_workspace_wide(\n    client: TestClient, db_session: Any, make_workspace_admin: Any\n) -> None:\n    # A workspace-admin's schedules list spans every suite (ADR 0027, #488),\n    # mirroring the REST suites/runs/dashboard visibility — including a schedule\n    # on a suite they neither own nor are shared on.\n    conn = _connection(db_session)\n    theirs = _unowned_suite(db_session, conn)\n    db_session.add(\n        Schedule(\n            suite_id=theirs.id,\n            cron=\"0 0 * * *\",\n            timezone=\"UTC\",\n            next_run_at=datetime(2030, 1, 1, tzinfo=UTC),\n            created_by=theirs.created_by,\n        )\n    )\n    db_session.commit()\n    make_workspace_admin(DEV_BYPASS_EMAIL)\n\n    listed = client.get(\"/api/v1/schedules\")\n    assert listed.status_code == 200\n    assert str(theirs.id) in {s[\"suite_id\"] for s in listed.json()}"
 }
@@ -1612,7 +1612,7 @@ id: toolu_014dqDkkVcouEBKLJUhSsNsN
 tool_result
 id: toolu_014dqDkkVcouEBKLJUhSsNsN
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_schedules.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_schedules.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1626,7 +1626,7 @@ id: toolu_01TYTSRjMgsnxgSj7G1SkzFe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_schedules.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_schedules.py",
   "old_string": "from backend.app.db.models import Connection, Schedule, Suite, User",
   "new_string": "from backend.app.core.auth import DEV_BYPASS_EMAIL\nfrom backend.app.db.models import Connection, Schedule, Suite, User"
 }
@@ -1637,7 +1637,7 @@ id: toolu_01TYTSRjMgsnxgSj7G1SkzFe
 tool_result
 id: toolu_01TYTSRjMgsnxgSj7G1SkzFe
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_schedules.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_schedules.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1708,7 +1708,7 @@ tool_use Read
 id: toolu_01QYwTFvnh7SjZK8QPucQSCX
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/conftest.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/conftest.py",
   "offset": 108,
   "limit": 55
 }
@@ -1902,7 +1902,7 @@ tool_use Read
 id: toolu_018tZYkHJpCMTXqNe1MSgYDt
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/context/DataQ_platform_roadmap.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/context/DataQ_platform_roadmap.md",
   "offset": 325,
   "limit": 30
 }
@@ -1933,7 +1933,7 @@ tool_use Read
 id: toolu_015oqEKkc8KNyTgohqydf4Rd
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/mcp-setup.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/mcp-setup.md",
   "offset": 80,
   "limit": 30
 }
@@ -2117,7 +2117,7 @@ tool_use Write
 id: toolu_01TAYjUCu8paNSwTrMu8Q7z2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.vscode/mcp.json",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.vscode/mcp.json",
   "content": "{\n\t\"inputs\": [\n\t\t{\n\t\t\t\"type\": \"promptString\",\n\t\t\t\"id\": \"dataq-pat\",\n\t\t\t\"description\": \"DataQ Personal Access Token (starts with dq_live_) — minted in the DataQ UI (Profile → API keys), ADR 0026. VS Code stores it in its secret storage, not this file.\",\n\t\t\t\"password\": true\n\t\t}\n\t],\n\t\"servers\": {\n\t\t\"DataQ_MCP\": {\n\t\t\t\"type\": \"http\",\n\t\t\t\"url\": \"https://dataq-app-frontend.purplefield-f7322a1b.westus2.azurecontainerapps.io/mcp/\",\n\t\t\t\"headers\": { \"Authorization\": \"Bearer ${input:dataq-pat}\" }\n\t\t}\n\t}\n}\n"
 }
 ```
@@ -2136,7 +2136,7 @@ tool_use Read
 id: toolu_014k2ieJJMFcttqTH1em356b
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.vscode/mcp.json"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.vscode/mcp.json"
 }
 ```
 
@@ -2163,7 +2163,7 @@ tool_use Write
 id: toolu_01RTtkz5gAtvyNLvsYH5upkM
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.vscode/mcp.json",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.vscode/mcp.json",
   "content": "{\n\t\"inputs\": [\n\t\t{\n\t\t\t\"type\": \"promptString\",\n\t\t\t\"id\": \"dataq-pat\",\n\t\t\t\"description\": \"DataQ Personal Access Token (starts with dq_live_) — mint in the DataQ UI under Profile → API keys (ADR 0026). VS Code stores it in its own secret storage, never in this file.\",\n\t\t\t\"password\": true\n\t\t}\n\t],\n\t\"servers\": {\n\t\t\"DataQ_MCP\": {\n\t\t\t\"type\": \"http\",\n\t\t\t\"url\": \"https://dataq-app-frontend.purplefield-f7322a1b.westus2.azurecontainerapps.io/mcp/\",\n\t\t\t\"headers\": { \"Authorization\": \"Bearer ${input:dataq-pat}\" }\n\t\t}\n\t}\n}\n"
 }
 ```
@@ -2173,7 +2173,7 @@ id: toolu_01RTtkz5gAtvyNLvsYH5upkM
 tool_result
 id: toolu_01RTtkz5gAtvyNLvsYH5upkM
 ```
-The file /Users/arijit/Coding/Python/DataQ/.vscode/mcp.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/.vscode/mcp.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2285,7 +2285,7 @@ tool_use Bash
 id: toolu_0178VbSMw4fd84YhsqTPauWG
 ```json
 {
-  "command": "git add backend/ && git commit -q -F - <<'EOF'\nfeat(mcp): extend workspace-admin workspace-wide visibility to MCP tools + schedules\n\nFollow-up to #482 step 3 (ADR 0027): workspace-admins already get a\nworkspace-wide view on the REST Suites/Runs/Dashboard lists via\n`accessible_suite_ids(..., include_all=...)`, but two surfaces were left at the\nowned-or-shared default — safe (narrower, no leak) but inconsistent with the\n\"implicit admin on every suite\" framing.\n\nThread `include_all=is_workspace_admin(<resolved principal>)` into:\n- the MCP list/aggregate tools — `list_suites`, `get_health_score` (via\n  `dashboard_summary`), and the `accessible_suite_ids` correlation in\n  `get_adf_pipeline_status`; per-suite MCP tools already grant admin via\n  `require_permission`, so only the list/aggregate paths were scoped.\n- `schedule_service.list_schedules` (+ the `/schedules` REST endpoint).\n\nThe MCP surface authenticates as the same real user (Azure AD token or a W1\nPAT), so an admin driving DataQ over MCP now sees what they see over REST —\nparity, not a privilege change. Non-admin visibility is unchanged.\n\nAuthz tests added for both admin and non-admin visibility on the MCP\n`list_suites`/`get_adf_pipeline_status` tools and the schedules list.\n\nFixes #488\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\ngit log --oneline -1",
+  "command": "git add backend/ && git commit -q -F - <<'EOF'\nfeat(mcp): extend workspace-admin workspace-wide visibility to MCP tools + schedules\n\nFollow-up to #482 step 3 (ADR 0027): workspace-admins already get a\nworkspace-wide view on the REST Suites/Runs/Dashboard lists via\n`accessible_suite_ids(..., include_all=...)`, but two surfaces were left at the\nowned-or-shared default — safe (narrower, no leak) but inconsistent with the\n\"implicit admin on every suite\" framing.\n\nThread `include_all=is_workspace_admin(<resolved principal>)` into:\n- the MCP list/aggregate tools — `list_suites`, `get_health_score` (via\n  `dashboard_summary`), and the `accessible_suite_ids` correlation in\n  `get_adf_pipeline_status`; per-suite MCP tools already grant admin via\n  `require_permission`, so only the list/aggregate paths were scoped.\n- `schedule_service.list_schedules` (+ the `/schedules` REST endpoint).\n\nThe MCP surface authenticates as the same real user (Azure AD token or a W1\nPAT), so an admin driving DataQ over MCP now sees what they see over REST —\nparity, not a privilege change. Non-admin visibility is unchanged.\n\nAuthz tests added for both admin and non-admin visibility on the MCP\n`list_suites`/`get_adf_pipeline_status` tools and the schedules list.\n\nFixes #488\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -1",
   "description": "Commit #488 changes"
 }
 ```
@@ -2434,7 +2434,7 @@ id: toolu_01X8qCoNU8sJYPiopxyPe4xf
   "description": "Correctness review of #488 diff",
   "subagent_type": "general-purpose",
   "run_in_background": false,
-  "prompt": "Review the diff `git diff main...HEAD` on branch feature/488-mcp-admin-visibility in /Users/arijit/Coding/Python/DataQ for CORRECTNESS bugs only.\n\nThe change threads `include_all=is_workspace_admin(user)` into MCP tools (backend/app/mcp/server.py: list_suites, get_health_score, get_adf_pipeline_status) and into schedule_service.list_schedules + the /schedules REST endpoint, to give workspace-admins a workspace-wide view (ADR 0027 parity).\n\nDo these angles:\n- A) Line-by-line: read every changed hunk AND the enclosing function. Wrong conditions, wrong variable, null deref, missing await, etc.\n- B) Removed-behavior: for every replaced line, name the invariant it enforced and confirm it's re-established.\n- C) Cross-file tracer: check callers/callees of the changed functions. In particular verify `is_workspace_admin(user)` works with the MCP-resolved User object (from resolve_current_user) — does it have `.email` populated? And that `accessible_suite_ids(include_all=True)` returns select(Suite.id) which is correct for the get_adf_pipeline_status correlation set. And that dashboard_service.dashboard_summary and suite_service.list_suites actually accept include_all (verify signatures).\n\nRead the actual files: backend/app/mcp/server.py, backend/app/services/schedule_service.py, backend/app/api/v1/schedules.py, backend/app/services/suite_service.py, backend/app/services/dashboard_service.py, backend/app/core/auth.py (is_workspace_admin), backend/app/mcp/auth.py (resolve_current_user).\n\nReturn a JSON array (max 6) of candidate findings, each {file, line, summary, failure_scenario}. Only real, nameable failure scenarios. If none, return []. Be concise — return ONLY the JSON."
+  "prompt": "Review the diff `git diff main...HEAD` on branch feature/488-mcp-admin-visibility in /home/<USER>/Coding/Python/DataQ for CORRECTNESS bugs only.\n\nThe change threads `include_all=is_workspace_admin(user)` into MCP tools (backend/app/mcp/server.py: list_suites, get_health_score, get_adf_pipeline_status) and into schedule_service.list_schedules + the /schedules REST endpoint, to give workspace-admins a workspace-wide view (ADR 0027 parity).\n\nDo these angles:\n- A) Line-by-line: read every changed hunk AND the enclosing function. Wrong conditions, wrong variable, null deref, missing await, etc.\n- B) Removed-behavior: for every replaced line, name the invariant it enforced and confirm it's re-established.\n- C) Cross-file tracer: check callers/callees of the changed functions. In particular verify `is_workspace_admin(user)` works with the MCP-resolved User object (from resolve_current_user) — does it have `.email` populated? And that `accessible_suite_ids(include_all=True)` returns select(Suite.id) which is correct for the get_adf_pipeline_status correlation set. And that dashboard_service.dashboard_summary and suite_service.list_suites actually accept include_all (verify signatures).\n\nRead the actual files: backend/app/mcp/server.py, backend/app/services/schedule_service.py, backend/app/api/v1/schedules.py, backend/app/services/suite_service.py, backend/app/services/dashboard_service.py, backend/app/core/auth.py (is_workspace_admin), backend/app/mcp/auth.py (resolve_current_user).\n\nReturn a JSON array (max 6) of candidate findings, each {file, line, summary, failure_scenario}. Only real, nameable failure scenarios. If none, return []. Be concise — return ONLY the JSON."
 }
 ```
 
@@ -2447,7 +2447,7 @@ id: toolu_01MGYKaEvn7nkSQ1HvicFSA6
   "description": "Cleanup + test-quality review of #488",
   "subagent_type": "general-purpose",
   "run_in_background": false,
-  "prompt": "Review the diff `git diff main...HEAD` on branch feature/488-mcp-admin-visibility in /Users/arijit/Coding/Python/DataQ for CLEANUP, ALTITUDE, TEST-QUALITY, and CLAUDE.md CONVENTION issues (not correctness crashes).\n\nThe change threads `include_all=is_workspace_admin(user)` into MCP tools (backend/app/mcp/server.py) and schedule_service.list_schedules + the /schedules endpoint (ADR 0027 workspace-admin parity). Tests added in backend/tests/mcp/test_mcp_tools.py and backend/tests/api/test_schedules.py.\n\nAngles:\n- Reuse: does new code reimplement an existing helper? (Grep for patterns.)\n- Simplification: redundant/derivable state, copy-paste.\n- Altitude: is threading include_all at each call site the right depth, or should it be centralized? (Note the REST endpoints already do exactly this pattern — dashboard.py/suites.py/runs.py — so per-call-site is the established convention; only flag if there's a genuinely better seam.)\n- Test quality: do the added tests actually assert admin vs non-admin visibility divergence (failure-mode coverage), or are they happy-path only? Do they mock the seam under test? Read both test files.\n- Conventions: read /Users/arijit/Coding/Python/DataQ/CLAUDE.md and backend CLAUDE.md if any. Only flag a rule you can quote exactly against a specific changed line.\n\nRead the actual changed files plus backend/app/api/v1/dashboard.py (for the established pattern). Return a JSON array (max 6) of {file, line, summary, failure_scenario}. Only nameable issues. If none, return []. […]
+  "prompt": "Review the diff `git diff main...HEAD` on branch feature/488-mcp-admin-visibility in /home/<USER>/Coding/Python/DataQ for CLEANUP, ALTITUDE, TEST-QUALITY, and CLAUDE.md CONVENTION issues (not correctness crashes).\n\nThe change threads `include_all=is_workspace_admin(user)` into MCP tools (backend/app/mcp/server.py) and schedule_service.list_schedules + the /schedules endpoint (ADR 0027 workspace-admin parity). Tests added in backend/tests/mcp/test_mcp_tools.py and backend/tests/api/test_schedules.py.\n\nAngles:\n- Reuse: does new code reimplement an existing helper? (Grep for patterns.)\n- Simplification: redundant/derivable state, copy-paste.\n- Altitude: is threading include_all at each call site the right depth, or should it be centralized? (Note the REST endpoints already do exactly this pattern — dashboard.py/suites.py/runs.py — so per-call-site is the established convention; only flag if there's a genuinely better seam.)\n- Test quality: do the added tests actually assert admin vs non-admin visibility divergence (failure-mode coverage), or are they happy-path only? Do they mock the seam under test? Read both test files.\n- Conventions: read /home/<USER>/Coding/Python/DataQ/CLAUDE.md and backend CLAUDE.md if any. Only flag a rule you can quote exactly against a specific changed line.\n\nRead the actual changed files plus backend/app/api/v1/dashboard.py (for the established pattern). Return a JSON array (max 6) of {file, line, summary, failure_scenario}. Only nameable issues. If none, return []. […]
 
 > TOOL
 
@@ -2500,7 +2500,7 @@ tool_use Read
 id: toolu_01WwsRFm4sYmhyjij9W3DitC
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/dashboard_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/dashboard_service.py",
   "offset": 305,
   "limit": 45
 }
@@ -2591,7 +2591,7 @@ tool_use Read
 id: toolu_01MvpSjr3v9fZWxefa3w1cJM
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/dashboard_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/dashboard_service.py",
   "offset": 252,
   "limit": 12
 }
@@ -2627,9 +2627,9 @@ id: toolu_013d7FbZuCcqc5LKapMrsTpk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
   "old_string": "def test_get_health_score_rejects_bad_window(db_session: Any, monkeypatch: Any) -> None:\n    _as(monkeypatch, db_session, _user(db_session))\n    with pytest.raises(ToolError):\n        server.get_health_score(window_days=0)",
-  "new_string": "def test_get_health_score_rejects_bad_window(db_session: Any, monkeypatch: Any) -> None:\n    _as(monkeypatch, db_session, _user(db_session))\n    with pytest.raises(ToolError):\n        server.get_health_score(window_days=0)\n\n\ndef test_get_health_score_workspace_admin_aggregates_unowned_runs(\n    db_session: Any, monkeypatch: Any, make_workspace_admin: Any\n) -> None:\n    # The aggregate honours the workspace-admin view (ADR 0027): a run on a suite\n    # the caller doesn't own counts for an admin but not for a plain outsider.\n    owner = _user(db_session, \"owner@acme.io\")\n    suite = _suite(db_session, owner)\n    db_session.add(Run(suite_id=suite.id, status=\"succeeded\"))\n    db_session.commit()\n\n    outsider = _user(db_session, \"outsider@acme.io\")\n    _as(monkeypatch, db_session, outsider)\n    assert server.get_health_score()[\"total_runs\"] == 0\n\n    admin = _user(db_session, \"admin@acme.io\")\n    make_workspace_admin(admin.email)\n    _as(monkeypatch, db_session, admin)\n    assert server.get_health_score()[\"total_runs\"] >= 1"
+  "new_string": "def test_get_health_score_rejects_bad_window(db_session: Any, monkeypatch: Any) -> None:\n    _as(monkeypatch, db_session, _user(db_session))\n    with pytest.raises(ToolError):\n        server.get_health_score(window_days=0)\n\n\ndef test_get_health_score_workspace_admin_aggregates_unowned_runs(\n    db_session: Any, monkeypatch: Any, make_workspace_admin: Any\n) -> None:\n    # The aggregate honours the workspace-admin view (ADR 0027): a run on a suite\n    # the caller doesn't own counts for an admin but not for a plain outsider.\n    owner = _user(db_session, \"<REDACTED_EMAIL>\")\n    suite = _suite(db_session, owner)\n    db_session.add(Run(suite_id=suite.id, status=\"succeeded\"))\n    db_session.commit()\n\n    outsider = _user(db_session, \"<REDACTED_EMAIL>\")\n    _as(monkeypatch, db_session, outsider)\n    assert server.get_health_score()[\"total_runs\"] == 0\n\n    admin = _user(db_session, \"<REDACTED_EMAIL>\")\n    make_workspace_admin(admin.email)\n    _as(monkeypatch, db_session, admin)\n    assert server.get_health_score()[\"total_runs\"] >= 1"
 }
 ```
 
@@ -2638,7 +2638,7 @@ id: toolu_013d7FbZuCcqc5LKapMrsTpk
 tool_result
 id: toolu_013d7FbZuCcqc5LKapMrsTpk
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2677,7 +2677,7 @@ tool_use Bash
 id: toolu_01GQfWCiqEKVHB1sgqfwWQ6A
 ```json
 {
-  "command": "git add backend/tests/mcp/test_mcp_tools.py && git commit -q -m \"test(mcp): cover workspace-admin divergence for get_health_score\n\nCode review found get_health_score got the include_all thread but no\nadmin-vs-non-admin visibility test (unlike list_suites and\nget_adf_pipeline_status). Add a divergence assertion: a run on an unowned\nsuite counts in the aggregate for a workspace-admin but not a plain outsider.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\" && git push 2>&1 | tail -2",
+  "command": "git add backend/tests/mcp/test_mcp_tools.py && git commit -q -m \"test(mcp): cover workspace-admin divergence for get_health_score\n\nCode review found get_health_score got the include_all thread but no\nadmin-vs-non-admin visibility test (unlike list_suites and\nget_adf_pipeline_status). Add a divergence assertion: a run on an unowned\nsuite counts in the aggregate for a workspace-admin but not a plain outsider.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\" && git push 2>&1 | tail -2",
   "description": "Commit and push test coverage fix"
 }
 ```
@@ -2724,7 +2724,7 @@ tool_use Read
 id: toolu_01EVqTyhZ4DSguAvUbVaUCuP
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 150,
   "limit": 2
 }
@@ -2746,7 +2746,7 @@ id: toolu_011qL59R3ZeiR52d7VDzXCEp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 11/14",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 12/14"
 }
@@ -2757,7 +2757,7 @@ id: toolu_011qL59R3ZeiR52d7VDzXCEp
 tool_result
 id: toolu_011qL59R3ZeiR52d7VDzXCEp
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2767,7 +2767,7 @@ id: toolu_0113QTMWetrbBjs8XXtg87iN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ⬜ | [#488](https://github.com/TheurgicDuke771/DataQ/issues/488) Workspace-admin visibility in MCP tools + schedules — rides PATs + #584 (mapped 2026-07-04) | Theme 3 |",
   "new_string": "| ✅ | [#488](https://github.com/TheurgicDuke771/DataQ/issues/488) Workspace-admin **workspace-wide visibility** threaded into the MCP list/aggregate tools (`list_suites`, `get_health_score`, `get_adf_pipeline_status` correlation) + `schedule_service.list_schedules` (+ `/schedules` endpoint), mirroring the ADR-0027 REST view; per-suite MCP tools already grant admin via `require_permission`. Admin+non-admin authz tests on both surfaces ([#695](https://github.com/TheurgicDuke771/DataQ/pull/695)) | Theme 3 |"
 }
@@ -2778,7 +2778,7 @@ id: toolu_0113QTMWetrbBjs8XXtg87iN
 tool_result
 id: toolu_0113QTMWetrbBjs8XXtg87iN
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2791,7 +2791,7 @@ tool_use Bash
 id: toolu_01R7gNk76QsuKaun48APseKz
 ```json
 {
-  "command": "conda run -n dataq bash -c 'python -c \"import mistune\" 2>/dev/null; true'; cd /Users/arijit/Coding/Python/DataQ && git add docs/progress.md && git commit -q -m \"docs(progress): tick W2 #488 (MCP + schedules workspace-admin visibility)\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\" && git push 2>&1 | tail -2",
+  "command": "conda run -n dataq bash -c 'python -c \"import mistune\" 2>/dev/null; true'; cd /home/<USER>/Coding/Python/DataQ && git add docs/progress.md && git commit -q -m \"docs(progress): tick W2 #488 (MCP + schedules workspace-admin visibility)\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\" && git push 2>&1 | tail -2",
   "description": "Commit and push progress.md tick"
 }
 ```
@@ -3016,7 +3016,7 @@ tool_use Read
 id: toolu_01P76rnNwTXFCuYz1DXpcgEy
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 150,
   "limit": 1
 }
@@ -3037,7 +3037,7 @@ id: toolu_016hUuJfpRbBzVCtrGuS9Y14
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 12/14",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 13/14"
 }
@@ -3048,7 +3048,7 @@ id: toolu_016hUuJfpRbBzVCtrGuS9Y14
 tool_result
 id: toolu_016hUuJfpRbBzVCtrGuS9Y14
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3058,7 +3058,7 @@ id: toolu_01RQnw95oRQHyPQxsr59XgTL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ⬜ | [#584](https://github.com/TheurgicDuke771/DataQ/issues/584) MCP NL tool-selection spot-check vs live `/mcp` (4 canonical queries), authenticated via the W1 PATs | Theme 13 |",
   "new_string": "| ✅ | [#584](https://github.com/TheurgicDuke771/DataQ/issues/584) MCP NL tool-selection spot-check vs live `/mcp` — a real client (VS Code Copilot Agent mode, W1 PAT) routed all 4 canonical queries to the correct tools unprompted; no docstring misses (offline audit concurred). Query-1's missing \"recent failures across all suites\" aggregate is a tool-inventory gap → Theme 13 (#529/#530), not a description bug | Theme 13 |"
 }
@@ -3069,7 +3069,7 @@ id: toolu_01RQnw95oRQHyPQxsr59XgTL
 tool_result
 id: toolu_01RQnw95oRQHyPQxsr59XgTL
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3131,7 +3131,7 @@ id: toolu_01KbxppjgcQi6wfWUfM2fVGa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **59** (W2 2026-07-05 — **alerting batch**:",
   "new_string": "| **Open issues** | **57** (W2 2026-07-07 — **#488 closed via [#695](https://github.com/TheurgicDuke771/DataQ/pull/695)** — workspace-admin workspace-wide visibility threaded into the MCP list/aggregate tools + `schedule_service.list_schedules`/`/schedules` (ADR-0027 REST parity; admin+non-admin authz tests); **#584 closed** — MCP NL tool-selection spot-check passed against live `/mcp` (VS Code Copilot Agent mode + W1 PAT routed all 4 canonical queries correctly, no docstring misses). **W2 now 13/14 — only [#532](https://github.com/TheurgicDuke771/DataQ/issues/532) dry-run UC+flat-file remains.** Earlier, W2 2026-07-05 — **alerting batch**:"
 }
@@ -3142,7 +3142,7 @@ id: toolu_01KbxppjgcQi6wfWUfM2fVGa
 tool_result
 id: toolu_01KbxppjgcQi6wfWUfM2fVGa
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3190,7 +3190,7 @@ tool_use Bash
 id: toolu_01YbDtfqWsGEQPKj6HiTqtJK
 ```json
 {
-  "command": "git checkout -b docs/close-584-w2-tick && git add docs/progress.md && git commit -q -m \"docs(progress): tick W2 #584 (MCP NL tool-selection spot-check passed); refresh counts\n\n#584 closed via a live-client spot-check (VS Code Copilot Agent mode + W1 PAT\nrouted all 4 canonical queries correctly). W2 now 13/14 — only #532 remains.\nOpen-issue snapshot 59 → 57 (#488 + #584 closed).\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\" && git push -u origin docs/close-584-w2-tick 2>&1 | tail -3",
+  "command": "git checkout -b docs/close-584-w2-tick && git add docs/progress.md && git commit -q -m \"docs(progress): tick W2 #584 (MCP NL tool-selection spot-check passed); refresh counts\n\n#584 closed via a live-client spot-check (VS Code Copilot Agent mode + W1 PAT\nrouted all 4 canonical queries correctly). W2 now 13/14 — only #532 remains.\nOpen-issue snapshot 59 → 57 (#488 + #584 closed).\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\" && git push -u origin docs/close-584-w2-tick 2>&1 | tail -3",
   "description": "Create docs branch, commit tick, push"
 }
 ```
@@ -3368,7 +3368,7 @@ tool_use Read
 id: toolu_01V2a1KzYroHAmfJZY7nwJBQ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/dryrun_service.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/dryrun_service.py"
 }
 ```
 
@@ -3487,7 +3487,7 @@ tool_use Read
 id: toolu_01SnX9UipSBbCMN5JFuebn5q
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py"
 }
 ```
 
@@ -3543,7 +3543,7 @@ tool_use Read
 id: toolu_017ex7uxJukhi1i8P1ADr5eE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/worker/tasks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/worker/tasks.py",
   "offset": 80,
   "limit": 80
 }
@@ -3636,7 +3636,7 @@ tool_use Read
 id: toolu_01GmXB6BAw9W7ux9mNQArLFu
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py",
   "offset": 285,
   "limit": 75
 }
@@ -3743,7 +3743,7 @@ tool_use Read
 id: toolu_01QCCamDedLcShJTaUpmyyP4
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx"
 }
 ```
 
@@ -3785,7 +3785,7 @@ tool_use Read
 id: toolu_01HBKD3JQXLou6Evc3ebTN3h
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_target.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_target.py",
   "offset": 82,
   "limit": 100
 }
@@ -4000,7 +4000,7 @@ tool_use Read
 id: toolu_01CYwkbhWNmgA2fZjzsavHbE
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "offset": 920,
   "limit": 125
 }
@@ -4071,7 +4071,7 @@ tool_use Read
 id: toolu_01XYpPQ1WgSB1P1coNJPyXPU
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "offset": 1055,
   "limit": 70
 }
@@ -4160,7 +4160,7 @@ tool_use Read
 id: toolu_01PEewacwRyQRViWuNX5cFgS
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "offset": 33,
   "limit": 75
 }
@@ -4177,7 +4177,7 @@ id: toolu_01PEewacwRyQRViWuNX5cFgS
 36	    `conn_type` lets a test pick the datasource (e.g. 's3' to exercise custom-SQL
 37	    datasource gating); defaults to Snowflake.
 38	    """
-39	    owner = User(aad_object_id=uuid.uuid4().hex, email="owner@example.com")
+39	    owner = User(aad_object_id=uuid.uuid4().hex, email="<REDACTED_EMAIL>")
 40	    db_session.add(owner)
 41	    db_session.flush()
 42	    config = {"account": "ab12345.eu-west-1"} if conn_type == "snowflake" else {}
@@ -4262,7 +4262,7 @@ tool_use Write
 id: toolu_01M4fibFJN2aDsDvo49uXMtr
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/dryrun_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/dryrun_service.py",
   "content": "\"\"\"Check dry-run — execute one ad-hoc check against live data, persist nothing.\n\nThe \"preview before saving\" path for the check editor: build the datasource\nrunner for the suite's connection, run a single `CheckSpec` against the suite's\nrun target, and map the outcome to a preview (severity tier + the\nSQL-aggregatable metric + observed/expected), **without** creating a `Run` or\n`Result`. Reuses the severity derivation (ADR 0005/0016) and JSON sanitisation\nthat the persisted run path uses.\n\nThe runner and the target are resolved exactly like the worker run path\n(`build_check_runner` registry + `run_target`), so dry-run works on every\ndatasource that has a `CheckRunner` — Snowflake, Unity Catalog, and flat files\n(ADLS / S3 / local) — with no per-type branching here (#532). Only\n`expectation` checks are previewable (ADR 0012); other kinds are a 422.\n\nSynchronous + blocking (datasource connect + GX): the API runs it in a threadpool.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom dataclasses import dataclass\nfrom decimal import Decimal\nfrom typing import Any\n\nfrom backend.app.core.errors import DataQError\nfrom backend.app.core.jsonsafe import sanitize_json\nfrom backend.app.core.logging import get_logger\nfrom backend.app.core.secrets import SecretStore\nfrom backend.app.datasources.base import CheckSpec\nfrom backend.app.datasources.flatfile import BatchNotFoundError\nfrom backend.app.datasources.registry import (\n    UnsupportedConnectionTypeError,\n    build_check_runner,\n)\nfrom backend.app.db.models import Connection\nfrom backend.app.services import run_target\nfrom backend.app.services.custom_sql import validate_custom_sql_check\nfrom backend.app.services.severity import resolve_status\n\nlog = get_logger(__name__)\n\n_EXPECTATION_KIND = \"expectation\"\n\n\nclass DryRunUnsupportedError(DataQError):\n    status_code = 422\n    code = […]
 
 > TOOL
@@ -4270,7 +4270,7 @@ id: toolu_01M4fibFJN2aDsDvo49uXMtr
 tool_result
 id: toolu_01M4fibFJN2aDsDvo49uXMtr
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/dryrun_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/dryrun_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4284,7 +4284,7 @@ id: toolu_01BjtWBTWRgsDk5YDa6RXXry
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py",
   "old_string": "class CheckDryRunRequest(ApiModel):\n    kind: str = \"expectation\"\n    expectation_type: str = Field(min_length=1, max_length=128)\n    config: dict[str, Any] = Field(default_factory=dict)\n    warn_threshold: Decimal | None = None\n    fail_threshold: Decimal | None = None\n    critical_threshold: Decimal | None = None\n    table: str = Field(min_length=1, description=\"Target table the check runs against\")\n    schema_: str | None = Field(default=None, alias=\"schema\")",
   "new_string": "class CheckDryRunRequest(ApiModel):\n    kind: str = \"expectation\"\n    expectation_type: str = Field(min_length=1, max_length=128)\n    config: dict[str, Any] = Field(default_factory=dict)\n    warn_threshold: Decimal | None = None\n    fail_threshold: Decimal | None = None\n    critical_threshold: Decimal | None = None\n    # The target comes from the suite's own run target (#215/#532) — resolved\n    # server-side exactly like a persisted run, so the preview runs against what a\n    # saved run would (and flat-file `path` / UC `catalog` / batch resolution are\n    # handled for free). No client-supplied table."
 }
@@ -4295,7 +4295,7 @@ id: toolu_01BjtWBTWRgsDk5YDa6RXXry
 tool_result
 id: toolu_01BjtWBTWRgsDk5YDa6RXXry
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4305,7 +4305,7 @@ id: toolu_01EB8PwCiGqLabzz1zeBph72
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py",
   "old_string": "        warn_threshold=payload.warn_threshold,\n        fail_threshold=payload.fail_threshold,\n        critical_threshold=payload.critical_threshold,\n        table=payload.table,\n        schema=payload.schema_,\n        secret_store=secret_store,\n    )",
   "new_string": "        warn_threshold=payload.warn_threshold,\n        fail_threshold=payload.fail_threshold,\n        critical_threshold=payload.critical_threshold,\n        target=suite.target,\n        secret_store=secret_store,\n    )"
 }
@@ -4316,7 +4316,7 @@ id: toolu_01EB8PwCiGqLabzz1zeBph72
 tool_result
 id: toolu_01EB8PwCiGqLabzz1zeBph72
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4330,7 +4330,7 @@ id: toolu_01LHmG7HthVFqXyvezVm9AD2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts",
   "old_string": "/** Mirrors `CheckDryRunRequest` — preview one check against live data, no persist.\n *  `table`/`schema` come from the suite's run target (#215). v1: Snowflake only. */\nexport interface CheckDryRunRequest {\n  expectation_type: string;\n  config: Record<string, unknown>;\n  warn_threshold?: number | null;\n  fail_threshold?: number | null;\n  critical_threshold?: number | null;\n  table: string;\n  schema?: string | null;\n}",
   "new_string": "/** Mirrors `CheckDryRunRequest` — preview one check against live data, no persist.\n *  The target is resolved server-side from the suite's own run target (#215/#532),\n *  so no target fields are sent; works on Snowflake, Unity Catalog, and flat files. */\nexport interface CheckDryRunRequest {\n  expectation_type: string;\n  config: Record<string, unknown>;\n  warn_threshold?: number | null;\n  fail_threshold?: number | null;\n  critical_threshold?: number | null;\n}"
 }
@@ -4350,7 +4350,7 @@ tool_use Read
 id: toolu_01GBTZ2zAkoPmsPSkWFwvZkH
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts",
   "offset": 283,
   "limit": 12
 }
@@ -4382,7 +4382,7 @@ id: toolu_01GttFrZBZiJScVZvn3wWTK4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts",
   "old_string": "/** Mirrors `CheckDryRunRequest` — preview one check against live data, no persist.\n *  `table`/`schema` come from the suite's run target (#215). v1: Snowflake only. */\nexport interface CheckDryRunRequest {\n  expectation_type: string;\n  config: Record<string, unknown>;\n  warn_threshold?: number | null;\n  fail_threshold?: number | null;\n  critical_threshold?: number | null;\n  table: string;\n  schema?: string | null;\n}",
   "new_string": "/** Mirrors `CheckDryRunRequest` — preview one check against live data, no persist.\n *  The target is resolved server-side from the suite's own run target (#215/#532),\n *  so no target fields are sent; works on Snowflake, Unity Catalog, and flat files. */\nexport interface CheckDryRunRequest {\n  expectation_type: string;\n  config: Record<string, unknown>;\n  warn_threshold?: number | null;\n  fail_threshold?: number | null;\n  critical_threshold?: number | null;\n}"
 }
@@ -4393,7 +4393,7 @@ id: toolu_01GttFrZBZiJScVZvn3wWTK4
 tool_result
 id: toolu_01GttFrZBZiJScVZvn3wWTK4
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4407,7 +4407,7 @@ id: toolu_01DGBbpa2a35CdKcQgFsuSsK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx",
   "old_string": " * Inline \"preview before saving\" affordance for the check editor: runs the\n * in-progress check against the suite's live target via the dry-run API\n * (`POST /suites/{id}/checks/dryrun`) and shows the severity outcome — without\n * persisting a Run/Result. Shared by the create page (`CheckNew`) and the edit\n * page (`CheckEdit`); both pass the suite's run target (#215) so the same\n * `table`/`schema` the run would use is previewed.\n *\n * v1 backend limits (surfaced as the API's error message): dry-run needs a\n * table target and a Snowflake connection. The button is disabled (with a\n * reason) until an expectation is picked and the suite has a table target;\n * everything else (no credential, unreachable warehouse, wrong datasource) comes\n * back as a clean error from the API and renders in the alert.\n */",
   "new_string": " * Inline \"preview before saving\" affordance for the check editor: runs the\n * in-progress check against the suite's live target via the dry-run API\n * (`POST /suites/{id}/checks/dryrun`) and shows the severity outcome — without\n * persisting a Run/Result. Shared by the create page (`CheckNew`) and the edit\n * page (`CheckEdit`). The target […]
 
@@ -4416,7 +4416,7 @@ id: toolu_01DGBbpa2a35CdKcQgFsuSsK
 tool_result
 id: toolu_01DGBbpa2a35CdKcQgFsuSsK
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4426,7 +4426,7 @@ id: toolu_01DKM2Tki7w8X97CArGcVHjF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx",
   "old_string": "  const table = targetString(target, 'table');\n  const schema = targetString(target, 'schema') ?? null;\n\n  const disabledReason = !expectationType\n    ? 'Pick an expectation to preview it.'\n    : !table\n      ? 'Set a table target on the suite to preview against live data.'\n      : undefined;\n\n  const run = async () => {\n    if (!expectationType || !table) return;\n    setState({ status: 'running' });\n    try {\n      // Reuse the create/update payload shaping so the preview runs exactly the\n      // config (and thresholds) the saved check would — name is irrelevant here.\n      const payload = buildCheckPayload({\n        ...form.getFieldsValue(true),\n        expectation_type: expectationType,\n      });\n      const result = await dryRunCheck(suiteId, {\n        expectation_type: expectationType,\n        config: payload.config,\n        warn_threshold: payload.warn_threshold,\n        fail_threshold: payload.fail_threshold,\n        critical_threshold: payload.critical_threshold,\n        table,\n        schema,\n      });",
   "new_string": "  // A suite is previewable once it has a run target of any shape: a SQL/UC table,\n  // a literal flat-file path, or a flat-file batch pattern (#532). The concrete\n  // target is resolved server-side.\n  const hasTarget =\n    !!targetString(target, 'table') ||\n    !!targetString(target, 'path') ||\n    !!targetString(target, 'pattern');\n\n  const disabledReason = !expectationType\n    ? 'Pick an expectation to preview it.'\n    : !hasTarget\n      ? 'Set a run target on the suite to preview against live data.'\n      : undefined;\n\n  const run […]
 
@@ -4435,7 +4435,7 @@ id: toolu_01DKM2Tki7w8X97CArGcVHjF
 tool_result
 id: toolu_01DKM2Tki7w8X97CArGcVHjF
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4519,7 +4519,7 @@ id: toolu_01Qp59pFW9BuN3CvRZu6tRSK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx",
   "old_string": "  // A suite is previewable once it has a run target of any shape: a SQL/UC table,\n  // a literal flat-file path, or a flat-file batch pattern (#532). The concrete\n  // target is resolved server-side.\n  const hasTarget =\n    !!targetString(target, 'table') ||\n    !!targetString(target, 'path') ||\n    !!targetString(target, 'pattern');\n\n  const disabledReason = !expectationType\n    ? 'Pick an expectation to preview it.'\n    : !hasTarget\n      ? 'Set a run target on the suite to preview against live data.'\n      : undefined;",
   "new_string": "  // A suite is previewable once it has a run target — a SQL/UC table or a\n  // flat-file path (#532), mirroring the column profiler's gate. The concrete\n  // target (incl. UC catalog / flat-file batch) is resolved server-side.\n  const hasTarget = !!targetString(target, 'table') || !!targetString(target, 'path');\n\n  const disabledReason = !expectationType\n    ? 'Pick an expectation to preview it.'\n    : !hasTarget\n      ? 'Set a table or file target on the suite to preview against live data.'\n      : undefined;"
 }
@@ -4530,7 +4530,7 @@ id: toolu_01Qp59pFW9BuN3CvRZu6tRSK
 tool_result
 id: toolu_01Qp59pFW9BuN3CvRZu6tRSK
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4543,7 +4543,7 @@ tool_use Read
 id: toolu_018QqUZG5rBrjJcUJ99jx9vq
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "offset": 1,
   "limit": 32
 }
@@ -4599,16 +4599,16 @@ id: toolu_017LZJT7fqkf7resDMU5ZQew
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
-  "old_string": "def _suite_id(client: TestClient, db_session: Any, conn_type: str = \"snowflake\") -> str:\n    \"\"\"Create a connection (ORM) + suite (API) and return the suite id.\n\n    `conn_type` lets a test pick the datasource (e.g. 's3' to exercise custom-SQL\n    datasource gating); defaults to Snowflake.\n    \"\"\"\n    owner = User(aad_object_id=uuid.uuid4().hex, email=\"owner@example.com\")\n    db_session.add(owner)\n    db_session.flush()\n    config = {\"account\": \"ab12345.eu-west-1\"} if conn_type == \"snowflake\" else {}\n    conn = Connection(\n        name=f\"{conn_type}-{uuid.uuid4().hex[:8]}\",\n        type=conn_type,\n        env=\"dev\",\n        config=config,\n        created_by=owner.id,\n    )\n    db_session.add(conn)\n    db_session.commit()\n    resp = client.post(\n        \"/api/v1/suites\",\n        json={\"name\": \"finance\", \"description\": None, \"connection_id\": str(conn.id)},\n    )\n    return str(resp.json()[\"id\"])",
-  "new_string": "def _suite_id(\n    client: TestClient,\n    db_session: Any,\n    conn_type: str = \"snowflake\",\n    target: dict[str, Any] | None = None,\n) -> str:\n    \"\"\"Create a connection (ORM) + suite (API) and return the suite id.\n\n    `conn_type` lets a test pick the datasource (e.g. 's3' to exercise custom-SQL\n    datasource gating); defaults to Snowflake. `target` sets the suite's run\n    target (needed by dry-run, which resolves the target server-side).\n    \"\"\"\n    owner = User(aad_object_id=uuid.uuid4().hex, email=\"owner@example.com\")\n    db_session.add(owner)\n    db_session.flush()\n    config = {\"account\": \"ab12345.eu-west-1\"} if conn_type == \"snowflake\" else {}\n    conn = Connection(\n        name=f\"{conn_type}-{uuid.uuid4().hex[:8]}\",\n        type=conn_type,\n        env=\"dev\",\n        config=config,\n        created_by=owner.id,\n    )\n    db_session.add(conn)\n    db_session.commit()\n    body: dict[str, Any] = {\"name\": \"finance\", \"description\": None, \"connection_id\": str(conn.id)}\n    if target is not None:\n        body[\"target\"] = […]
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "old_string": "def _suite_id(client: TestClient, db_session: Any, conn_type: str = \"snowflake\") -> str:\n    \"\"\"Create a connection (ORM) + suite (API) and return the suite id.\n\n    `conn_type` lets a test pick the datasource (e.g. 's3' to exercise custom-SQL\n    datasource gating); defaults to Snowflake.\n    \"\"\"\n    owner = User(aad_object_id=uuid.uuid4().hex, email=\"<REDACTED_EMAIL>\")\n    db_session.add(owner)\n    db_session.flush()\n    config = {\"account\": \"ab12345.eu-west-1\"} if conn_type == \"snowflake\" else {}\n    conn = Connection(\n        name=f\"{conn_type}-{uuid.uuid4().hex[:8]}\",\n        type=conn_type,\n        env=\"dev\",\n        config=config,\n        created_by=owner.id,\n    )\n    db_session.add(conn)\n    db_session.commit()\n    resp = client.post(\n        \"/api/v1/suites\",\n        json={\"name\": \"finance\", \"description\": None, \"connection_id\": str(conn.id)},\n    )\n    return str(resp.json()[\"id\"])",
+  "new_string": "def _suite_id(\n    client: TestClient,\n    db_session: Any,\n    conn_type: str = \"snowflake\",\n    target: dict[str, Any] | None = None,\n) -> str:\n    \"\"\"Create a connection (ORM) + suite (API) and return the suite id.\n\n    `conn_type` lets a test pick the datasource (e.g. 's3' to exercise custom-SQL\n    datasource gating); defaults to Snowflake. `target` sets the suite's run\n    target (needed by dry-run, which resolves the target server-side).\n    \"\"\"\n    owner = User(aad_object_id=uuid.uuid4().hex, email=\"<REDACTED_EMAIL>\")\n    db_session.add(owner)\n    db_session.flush()\n    config = {\"account\": \"ab12345.eu-west-1\"} if conn_type == \"snowflake\" else {}\n    conn = Connection(\n        name=f\"{conn_type}-{uuid.uuid4().hex[:8]}\",\n        type=conn_type,\n        env=\"dev\",\n        config=config,\n        created_by=owner.id,\n    )\n    db_session.add(conn)\n    db_session.commit()\n    body: dict[str, Any] = {\"name\": \"finance\", \"description\": None, \"connection_id\": str(conn.id)}\n    if target is not None:\n        body[\"target\"] = […]
 
 > TOOL
 
 tool_result
 id: toolu_017LZJT7fqkf7resDMU5ZQew
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4622,7 +4622,7 @@ id: toolu_01EaHa9S9NCpU8FzwoxDq7Ev
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "def _patch_runner(monkeypatch: pytest.MonkeyPatch, runner: _FakeRunner) -> None:\n    monkeypatch.setattr(dryrun_service, \"build_snowflake_runner\", lambda **_kw: runner)\n\n\ndef _dryrun_body(**overrides: Any) -> dict[str, Any]:\n    body: dict[str, Any] = {\n        \"expectation_type\": \"expect_column_values_to_not_be_null\",\n        \"config\": {\"column\": \"order_id\"},\n        \"table\": \"ORDERS\",\n    }\n    body.update(overrides)\n    return body",
   "new_string": "def _patch_runner(\n    monkeypatch: pytest.MonkeyPatch, runner: _FakeRunner, calls: list[dict[str, Any]] | None = None\n) -> None:\n    \"\"\"Patch the runner registry so dry-run gets the fake runner for any datasource.\n    When ``calls`` is given, it captures the kwargs `build_check_runner` was called\n    with (e.g. to assert the UC ``catalog`` is threaded through).\"\"\"\n\n    def _fake_build(**kw: Any) -> _FakeRunner:\n        if calls is not None:\n            calls.append(kw)\n        return runner\n\n    monkeypatch.setattr(dryrun_service, \"build_check_runner\", _fake_build)\n\n\ndef _dryrun_body(**overrides: Any) -> dict[str, Any]:\n    body: dict[str, Any] = {\n        \"expectation_type\": \"expect_column_values_to_not_be_null\",\n        \"config\": {\"column\": \"order_id\"},\n    }\n    body.update(overrides)\n    return body\n\n\n_SF_TARGET = {\"table\": \"ORDERS\"}"
 }
@@ -4633,7 +4633,7 @@ id: toolu_01EaHa9S9NCpU8FzwoxDq7Ev
 tool_result
 id: toolu_01EaHa9S9NCpU8FzwoxDq7Ev
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4646,7 +4646,7 @@ tool_use Read
 id: toolu_01BZHqLkL6eZNVFYjTv8YDfg
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "offset": 982,
   "limit": 160
 }
@@ -4720,7 +4720,7 @@ id: toolu_01XDpMZHqUfPQBZxnLVDz1vE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "    sid = _suite_id(client, db_session)\n    _patch_runner(\n        monkeypatch,\n        _FakeRunner(\n            SuiteOutcome(\n                success=True,\n                checks=[CheckOutcome(\"x\", success=True, observed_value={\"observed_value\": 5})],\n            )\n        ),\n    )\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body())\n    assert resp.status_code == 200\n    body = resp.json()\n    assert body[\"status\"] == \"pass\"\n    assert body[\"observed_value\"] == {\"observed_value\": 5}",
   "new_string": "    sid = _suite_id(client, db_session, target=_SF_TARGET)\n    _patch_runner(\n        monkeypatch,\n        _FakeRunner(\n            SuiteOutcome(\n                success=True,\n                checks=[CheckOutcome(\"x\", success=True, observed_value={\"observed_value\": 5})],\n            )\n        ),\n    )\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body())\n    assert resp.status_code == 200\n    body = resp.json()\n    assert body[\"status\"] == \"pass\"\n    assert body[\"observed_value\"] == {\"observed_value\": 5}"
 }
@@ -4731,7 +4731,7 @@ id: toolu_01XDpMZHqUfPQBZxnLVDz1vE
 tool_result
 id: toolu_01XDpMZHqUfPQBZxnLVDz1vE
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4741,7 +4741,7 @@ id: toolu_01LpbtjZWeE8xjF7BTW55rL9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "    sid = _suite_id(client, db_session)\n    _patch_runner(\n        monkeypatch,\n        _FakeRunner(\n            SuiteOutcome(\n                success=False,\n                checks=[\n                    CheckOutcome(\"x\", success=False, sample_failures={\"unexpected_percent\": 7.5})\n                ],\n            )\n        ),\n    )",
   "new_string": "    sid = _suite_id(client, db_session, target=_SF_TARGET)\n    _patch_runner(\n        monkeypatch,\n        _FakeRunner(\n            SuiteOutcome(\n                success=False,\n                checks=[\n                    CheckOutcome(\"x\", success=False, sample_failures={\"unexpected_percent\": 7.5})\n                ],\n            )\n        ),\n    )"
 }
@@ -4752,7 +4752,7 @@ id: toolu_01LpbtjZWeE8xjF7BTW55rL9
 tool_result
 id: toolu_01LpbtjZWeE8xjF7BTW55rL9
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4762,7 +4762,7 @@ id: toolu_01S5uGKER5abyi67Ky85ZYXJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "    tag — so the editor preview matches what a persisted run would record (#122).\"\"\"\n    sid = _suite_id(client, db_session)",
   "new_string": "    tag — so the editor preview matches what a persisted run would record (#122).\"\"\"\n    sid = _suite_id(client, db_session, target=_SF_TARGET)"
 }
@@ -4773,7 +4773,7 @@ id: toolu_01S5uGKER5abyi67Ky85ZYXJ
 tool_result
 id: toolu_01S5uGKER5abyi67Ky85ZYXJ
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4783,7 +4783,7 @@ id: toolu_01WkgipNc18A4F8FLJ4g9Xnp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "    sid = _suite_id(client, db_session)\n    _patch_runner(\n        monkeypatch,\n        _FakeRunner(\n            SuiteOutcome(\n                success=True,\n                checks=[\n                    CheckOutcome(\"x\", success=True, observed_value={\"observed_value\": float(\"nan\")})\n                ],\n            )\n        ),\n    )\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body())\n    assert resp.status_code == 200\n    assert resp.json()[\"observed_value\"] == {\"observed_value\": None}\n\n\ndef test_dryrun_rejects_non_expectation_kind(client: TestClient, db_session: Any) -> None:\n    sid = _suite_id(client, db_session)\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body(kind=\"freshness\"))\n    assert resp.status_code == 422\n    assert resp.json()[\"error\"][\"code\"] == \"dry_run_unsupported\"\n\n\ndef test_dryrun_rejects_non_snowflake_connection(client: TestClient, db_session: Any) -> None:\n    owner = User(aad_object_id=uuid.uuid4().hex, email=\"o@ex\")\n    db_session.add(owner)\n    db_session.flush()\n    conn = Connection(\n        name=f\"s3-{uuid.uuid4().hex[:8]}\",\n        type=\"s3\",\n        env=\"dev\",\n        config={\"bucket\": \"b\", \"region\": \"us-east-1\"},\n        created_by=owner.id,\n    )\n    db_session.add(conn)\n    db_session.flush()\n    suite = Suite(name=\"s\", connection_id=conn.id, created_by=owner.id)\n    db_session.add(suite)\n    db_session.commit()\n    _as(owner)\n    resp = client.post(f\"/api/v1/suites/{suite.id}/checks/dryrun\", json=_dryrun_body())\n    assert resp.status_code == 422\n    assert resp.json()[\"error\"][\"code\"] == \"dry_run_unsupported\"",
   "new_string": "    sid = _suite_id(client, db_session, target=_SF_TARGET)\n    _patch_runner(\n        monkeypatch,\n        _FakeRunner(\n            SuiteOutcome(\n                success=True,\n                checks=[\n                    CheckOutcome(\"x\", success=True, observed_value={\"observed_value\": float(\"nan\")})\n                ],\n            )\n        ),\n    )\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body())\n    assert resp.status_code == 200\n    assert resp.json()[\"observed_value\"] == {\"observed_value\": None}\n\n\ndef test_dryrun_rejects_non_expectation_kind(client: TestClient, db_session: Any) -> None:\n    sid = _suite_id(client, db_session, target=_SF_TARGET)\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body(kind=\"freshness\"))\n    assert resp.status_code == 422\n    assert resp.json()[\"error\"][\"code\"] == \"dry_run_unsupported\"\n\n\ndef _ok_runner() -> _FakeRunner:\n    return _FakeRunner(\n        SuiteOutcome(\n            success=True,\n            checks=[CheckOutcome(\"x\", success=True, observed_value={\"observed_value\": 1})],\n        )\n    )\n\n\ndef test_dryrun_supports_flatfile_suite(\n    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # #532: flat-file (S3/local) suites are now previewable via the […]
 
@@ -4792,7 +4792,7 @@ id: toolu_01WkgipNc18A4F8FLJ4g9Xnp
 tool_result
 id: toolu_01WkgipNc18A4F8FLJ4g9Xnp
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4806,7 +4806,7 @@ id: toolu_01VVRiSKZ387pKzi7TUq2SYE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "    # reached.\n    sid = _suite_id(client, db_session)\n    runner = _FakeRunner(outcome=SuiteOutcome(success=True, checks=[]))",
   "new_string": "    # reached.\n    sid = _suite_id(client, db_session, target=_SF_TARGET)\n    runner = _FakeRunner(outcome=SuiteOutcome(success=True, checks=[]))"
 }
@@ -4817,7 +4817,7 @@ id: toolu_01VVRiSKZ387pKzi7TUq2SYE
 tool_result
 id: toolu_01VVRiSKZ387pKzi7TUq2SYE
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4827,7 +4827,7 @@ id: toolu_01HbUX6FzFVygBe75mJkYisS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "    sid = _suite_id(client, db_session)\n    _patch_runner(monkeypatch, _FakeRunner(raises=RuntimeError(\"warehouse unreachable\")))",
   "new_string": "    sid = _suite_id(client, db_session, target=_SF_TARGET)\n    _patch_runner(monkeypatch, _FakeRunner(raises=RuntimeError(\"warehouse unreachable\")))"
 }
@@ -4838,7 +4838,7 @@ id: toolu_01HbUX6FzFVygBe75mJkYisS
 tool_result
 id: toolu_01HbUX6FzFVygBe75mJkYisS
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4912,7 +4912,7 @@ id: toolu_017gUMm6dHgZv5ReqbSR17WN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "    from backend.app.datasources.flatfile import BatchNotFoundError\n\n    sid = _suite_id(\n        client,\n        db_session,\n        conn_type=\"s3\",\n        target={\"pattern\": r\"orders_(\\d+)\\.csv\", \"strategy\": \"latest\"},\n    )\n    _patch_runner(monkeypatch, _ok_runner())\n    monkeypatch.setattr(\n        dryrun_service.run_target,\n        \"materialize_path\",\n        lambda *a, **k: (_ for _ in ()).throw(BatchNotFoundError(\"no file\")),\n    )",
   "new_string": "    from backend.app.datasources.flatfile import BatchNotFoundError\n    from backend.app.services import run_target\n\n    sid = _suite_id(\n        client,\n        db_session,\n        conn_type=\"s3\",\n        target={\"pattern\": r\"orders_(\\d+)\\.csv\", \"strategy\": \"latest\"},\n    )\n    _patch_runner(monkeypatch, _ok_runner())\n\n    def _raise_not_found(*_a: Any, **_k: Any) -> str:\n        raise BatchNotFoundError(\"no file\")\n\n    # dryrun_service calls `run_target.materialize_path` on this same module object.\n    monkeypatch.setattr(run_target, \"materialize_path\", _raise_not_found)"
 }
@@ -4923,7 +4923,7 @@ id: toolu_017gUMm6dHgZv5ReqbSR17WN
 tool_result
 id: toolu_017gUMm6dHgZv5ReqbSR17WN
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4996,7 +4996,7 @@ tool_use Read
 id: toolu_01JcjRsf2Q6TdMzrJ9pZDoF5
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx"
 }
 ```
 
@@ -5061,7 +5061,7 @@ id: toolu_01Fytf7zBhBD9pEjDawryp3W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx",
   "old_string": "  it('is disabled with a reason when the suite has no table target', () => {\n    render(<Harness expectationType={NOT_NULL} target={null} />);\n    expect(screen.getByRole('button', { name: 'Dry-run preview' })).toBeDisabled();\n    expect(screen.getByText(/Set a table target/)).toBeInTheDocument();\n  });",
   "new_string": "  it('is disabled with a reason when the suite has no run target', () => {\n    render(<Harness expectationType={NOT_NULL} target={null} />);\n    expect(screen.getByRole('button', { name: 'Dry-run preview' })).toBeDisabled();\n    expect(screen.getByText(/Set a table or file target/)).toBeInTheDocument();\n  });\n\n  it('is enabled for a flat-file suite whose target is a path (#532)', () => {\n    render(<Harness expectationType={NOT_NULL} target={{ path: 's3://b/orders.csv' }} />);\n    expect(screen.getByRole('button', { name: 'Dry-run preview' })).toBeEnabled();\n  });"
 }
@@ -5072,7 +5072,7 @@ id: toolu_01Fytf7zBhBD9pEjDawryp3W
 tool_result
 id: toolu_01Fytf7zBhBD9pEjDawryp3W
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5082,7 +5082,7 @@ id: toolu_016K6yvKQDtgLpgRmhTb4ZMA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx",
   "old_string": "    // Sends the suite's table/schema + the form's config + thresholds.\n    await waitFor(() =>\n      expect(mockDryRun).toHaveBeenCalledWith('s1', {\n        expectation_type: NOT_NULL,\n        config: { column: 'order_id' },\n        warn_threshold: 1,\n        fail_threshold: null,\n        critical_threshold: null,\n        table: 'ORDERS',\n        schema: 'PUBLIC',\n      }),\n    );",
   "new_string": "    // Sends only the form's config + thresholds; the target is resolved\n    // server-side from the suite (#532), so no table/schema is sent.\n    await waitFor(() =>\n      expect(mockDryRun).toHaveBeenCalledWith('s1', {\n        expectation_type: NOT_NULL,\n        config: { column: 'order_id' },\n        warn_threshold: 1,\n        fail_threshold: null,\n        critical_threshold: null,\n      }),\n    );"
 }
@@ -5093,7 +5093,7 @@ id: toolu_016K6yvKQDtgLpgRmhTb4ZMA
 tool_result
 id: toolu_016K6yvKQDtgLpgRmhTb4ZMA
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5102,7 +5102,7 @@ tool_use Bash
 id: toolu_01VxxqGVWf1Vzcyo4dqPZGgQ
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/frontend && pnpm exec vitest run tests/components/DryRunPreview.test.tsx 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/frontend && pnpm exec vitest run tests/components/DryRunPreview.test.tsx 2>&1 | tail -20",
   "description": "Run frontend DryRunPreview tests"
 }
 ```
@@ -5112,7 +5112,7 @@ id: toolu_01VxxqGVWf1Vzcyo4dqPZGgQ
 tool_result
 id: toolu_01VxxqGVWf1Vzcyo4dqPZGgQ
 ```
- RUN  v4.1.8 /Users/arijit/Coding/Python/DataQ/frontend
+ RUN  v4.1.8 /home/<USER>/Coding/Python/DataQ/frontend
 
 
  Test Files  1 passed (1)
@@ -5197,7 +5197,7 @@ tool_use Bash
 id: toolu_01WXCkjmtf9RCZ6HA8NXjj3A
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && grep -rlniE \"dry.?run\" docs frontend/docs 2>/dev/null | grep -v node_modules | head; echo \"=== all dryrun in repo docs/md ===\"; grep -rniE \"dry.?run\" --include=*.md . 2>/dev/null | grep -iv \"progress\\|node_modules\\|CHANGELOG\" | grep -iE \"snowflake|only|supported|preview\" | head",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && grep -rlniE \"dry.?run\" docs frontend/docs 2>/dev/null | grep -v node_modules | head; echo \"=== all dryrun in repo docs/md ===\"; grep -rniE \"dry.?run\" --include=*.md . 2>/dev/null | grep -iv \"progress\\|node_modules\\|CHANGELOG\" | grep -iE \"snowflake|only|supported|preview\" | head",
   "description": "Search markdown for dry-run supported-datasource claims"
 }
 ```
@@ -5247,7 +5247,7 @@ tool_use Read
 id: toolu_01QHWLUKvVyn7VgeKfbNBTZd
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/feature-matrix.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/feature-matrix.md",
   "offset": 1,
   "limit": 30
 }
@@ -5291,7 +5291,7 @@ id: toolu_01XPQLnUDea6eyxTgcAeD1Rp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/feature-matrix.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/feature-matrix.md",
   "old_string": "| Dry-run preview | ✅ | — | — | — |\n\nCustom SQL and the freshness/volume monitors run a SQL query, so they're **SQL-datasource\nonly** (flat-file support is a tracked enhancement,\n[#520](https://github.com/TheurgicDuke771/DataQ/issues/520)). Flat-file suites target a\nfile or a batch pattern (e.g. `orders_*.csv`) in CSV or Parquet. Dry-run preview is\n**Snowflake-only in v1** — extending it to Unity Catalog + flat files is tracked in\n[#532](https://github.com/TheurgicDuke771/DataQ/issues/532).",
   "new_string": "| Dry-run preview | ✅ | ✅ | ✅ | ✅ |\n\nCustom SQL and the freshness/volume monitors run a SQL query, so they're **SQL-datasource\nonly** (flat-file support is a tracked enhancement,\n[#520](https://github.com/TheurgicDuke771/DataQ/issues/520)). Flat-file suites target a\nfile or a batch pattern (e.g. `orders_*.csv`) in CSV or Parquet. Dry-run preview works on\nevery datasource with a runner — Snowflake, Unity Catalog, and flat files ([#532](https://github.com/TheurgicDuke771/DataQ/issues/532))."
 }
@@ -5302,7 +5302,7 @@ id: toolu_01XPQLnUDea6eyxTgcAeD1Rp
 tool_result
 id: toolu_01XPQLnUDea6eyxTgcAeD1Rp
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/feature-matrix.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/feature-matrix.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5343,7 +5343,7 @@ tool_use Bash
 id: toolu_016Kycd9Ht7zrJ5mzHYvjzyV
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && git checkout -b feature/532-dryrun-all-datasources && git add backend/app/services/dryrun_service.py backend/app/api/v1/checks.py backend/tests/api/test_checks.py frontend/src/api/suites.ts frontend/src/components/checks/DryRunPreview.tsx frontend/tests/components/DryRunPreview.test.tsx docs/feature-matrix.md && git status --short",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && git checkout -b feature/532-dryrun-all-datasources && git add backend/app/services/dryrun_service.py backend/app/api/v1/checks.py backend/tests/api/test_checks.py frontend/src/api/suites.ts frontend/src/components/checks/DryRunPreview.tsx frontend/tests/components/DryRunPreview.test.tsx docs/feature-matrix.md && git status --short",
   "description": "Create branch and stage changes"
 }
 ```
@@ -5436,7 +5436,7 @@ id: toolu_01CPrMYsa9gMKkKQPHhDqsCR
   "description": "Correctness review of #532 diff",
   "subagent_type": "general-purpose",
   "run_in_background": false,
-  "prompt": "Review the diff `git diff main...HEAD` on branch feature/532-dryrun-all-datasources in /Users/arijit/Coding/Python/DataQ for CORRECTNESS bugs.\n\nContext: #532 extends check dry-run preview from Snowflake-only to all datasources. Backend `dryrun_service.dry_run_check` was rewritten to route through `build_check_runner` registry and resolve the target server-side from the suite's run target via `run_target.resolve_target` + `run_target.materialize_path`, instead of a hardcoded Snowflake builder + client-supplied table/schema. New error `DryRunNoDataError` (422) for flat-file batch-not-landed. The API endpoint now passes `target=suite.target` and dropped the `table`/`schema_` request fields. Frontend `DryRunPreview.tsx` stops sending target fields and enables when the suite has a table or path.\n\nAngles:\n- A) Line-by-line: read every changed hunk AND the enclosing function. Focus on the new control flow in dryrun_service.py: ordering of resolve_target vs validate_custom_sql_check vs build_check_runner vs materialize_path vs run_checks; which exceptions are caught where; whether any exception path can leak a 500 instead of a clean 4xx/502. Check that `resolve_target` raising SuiteTargetInvalidError (a DataQError 422) propagates correctly through the endpoint (is it caught by anything / does the API map DataQError to the right status?).\n- B) Removed-behavior: the old code had `_SUPPORTED_TYPES` gate + `_EXPECTATION_KIND` check + custom-SQL guard + snowflake runner. […]
+  "prompt": "Review the diff `git diff main...HEAD` on branch feature/532-dryrun-all-datasources in /home/<USER>/Coding/Python/DataQ for CORRECTNESS bugs.\n\nContext: #532 extends check dry-run preview from Snowflake-only to all datasources. Backend `dryrun_service.dry_run_check` was rewritten to route through `build_check_runner` registry and resolve the target server-side from the suite's run target via `run_target.resolve_target` + `run_target.materialize_path`, instead of a hardcoded Snowflake builder + client-supplied table/schema. New error `DryRunNoDataError` (422) for flat-file batch-not-landed. The API endpoint now passes `target=suite.target` and dropped the `table`/`schema_` request fields. Frontend `DryRunPreview.tsx` stops sending target fields and enables when the suite has a table or path.\n\nAngles:\n- A) Line-by-line: read every changed hunk AND the enclosing function. Focus on the new control flow in dryrun_service.py: ordering of resolve_target vs validate_custom_sql_check vs build_check_runner vs materialize_path vs run_checks; which exceptions are caught where; whether any exception path can leak a 500 instead of a clean 4xx/502. Check that `resolve_target` raising SuiteTargetInvalidError (a DataQError 422) propagates correctly through the endpoint (is it caught by anything / does the API map DataQError to the right status?).\n- B) Removed-behavior: the old code had `_SUPPORTED_TYPES` gate + `_EXPECTATION_KIND` check + custom-SQL guard + snowflake runner. […]
 
 > TOOL
 
@@ -5447,7 +5447,7 @@ id: toolu_01RY5CP5DABZNPRTS46HbhBK
   "description": "Test-quality + cleanup review of #532",
   "subagent_type": "general-purpose",
   "run_in_background": false,
-  "prompt": "Review the diff `git diff main...HEAD` on branch feature/532-dryrun-all-datasources in /Users/arijit/Coding/Python/DataQ for TEST-QUALITY, CLEANUP, ALTITUDE, and CLAUDE.md CONVENTION issues (not correctness crashes).\n\nContext: #532 extends dry-run preview to UC + flat-file. Backend `dryrun_service` now routes through the `build_check_runner` registry and resolves the target from `suite.target` via `run_target`. Tests in backend/tests/api/test_checks.py, frontend tests in frontend/tests/components/DryRunPreview.test.tsx.\n\nAngles:\n- Test quality: Do the new backend tests (test_dryrun_supports_flatfile_suite, test_dryrun_supports_unity_catalog_suite, test_dryrun_targetless_suite_returns_422, test_dryrun_flatfile_batch_not_landed_returns_422) actually exercise the new code paths, or do they over-mock and assert nothing meaningful? The `_patch_runner` now patches `build_check_runner` (returns a fake runner) — is that mocking the seam under test, or a reasonable boundary? Note the memory rule \"don't mock the seam under test\". Consider: the UC test asserts catalog is threaded via captured kwargs — good. The flat-file test asserts the path reaches the runner as `table` — is materialize_path actually exercised (not mocked) for the literal-path case? Verify by reading run_target.materialize_path (literal path = no-op returning resolved.table). The batch test mocks materialize_path to raise — is that acceptable given it's testing the error mapping, not batch resolution itself?\n- Is there now a coverage gap: the […]
+  "prompt": "Review the diff `git diff main...HEAD` on branch feature/532-dryrun-all-datasources in /home/<USER>/Coding/Python/DataQ for TEST-QUALITY, CLEANUP, ALTITUDE, and CLAUDE.md CONVENTION issues (not correctness crashes).\n\nContext: #532 extends dry-run preview to UC + flat-file. Backend `dryrun_service` now routes through the `build_check_runner` registry and resolves the target from `suite.target` via `run_target`. Tests in backend/tests/api/test_checks.py, frontend tests in frontend/tests/components/DryRunPreview.test.tsx.\n\nAngles:\n- Test quality: Do the new backend tests (test_dryrun_supports_flatfile_suite, test_dryrun_supports_unity_catalog_suite, test_dryrun_targetless_suite_returns_422, test_dryrun_flatfile_batch_not_landed_returns_422) actually exercise the new code paths, or do they over-mock and assert nothing meaningful? The `_patch_runner` now patches `build_check_runner` (returns a fake runner) — is that mocking the seam under test, or a reasonable boundary? Note the memory rule \"don't mock the seam under test\". Consider: the UC test asserts catalog is threaded via captured kwargs — good. The flat-file test asserts the path reaches the runner as `table` — is materialize_path actually exercised (not mocked) for the literal-path case? Verify by reading run_target.materialize_path (literal path = no-op returning resolved.table). The batch test mocks materialize_path to raise — is that acceptable given it's testing the error mapping, not batch resolution itself?\n- Is there now a coverage gap: the […]
 
 > TOOL
 
@@ -5509,7 +5509,7 @@ id: toolu_012zGr7HeEnSBeYEWZqexeHm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/dryrun_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/dryrun_service.py",
   "old_string": "    try:\n        runner = build_check_runner(\n            conn_type=connection.type,\n            config=connection.config,\n            secret_ref=connection.secret_ref,\n            secret_store=secret_store,\n            catalog=resolved.catalog,\n        )\n    except UnsupportedConnectionTypeError as exc:\n        # Defensive: resolve_target already rejects non-datasource types, so this\n        # is only reachable if the runner registry drifts from the adapter set.\n        raise DryRunUnsupportedError(\n            f\"dry-run is not supported for {connection.type!r} connections\",\n            detail={\"type\": connection.type},\n        ) from exc\n\n    # Materialize a flat-file batch target to a concrete file (lists the store) —\n    # a no-op for SQL / UC / literal flat-file targets. Batch-not-found is \"no data\n    # yet\", a clean 422, not a datasource failure.\n    try:\n        table = run_target.materialize_path(\n            connection.type,\n            connection.config,\n            resolved,\n            secret_ref=connection.secret_ref,\n            secret_store=secret_store,\n        )\n    except BatchNotFoundError as exc:\n        raise DryRunNoDataError(\n            \"no file has landed for the suite's batch target yet — dry-run needs live data\",\n            detail={\"connection_type\": connection.type},\n        ) from exc",
   "new_string": "    try:\n        runner = build_check_runner(\n            conn_type=connection.type,\n            config=connection.config,\n            secret_ref=connection.secret_ref,\n            secret_store=secret_store,\n            catalog=resolved.catalog,\n        )\n    except UnsupportedConnectionTypeError as exc:\n        # Defensive: resolve_target already rejects non-datasource types, so this\n        # is only reachable if the runner registry drifts from the adapter set.\n        raise DryRunUnsupportedError(\n            f\"dry-run is not supported for {connection.type!r} connections\",\n            detail={\"type\": connection.type},\n        ) from exc\n    except Exception as exc:\n        # The builders resolve the secret eagerly — […]
 
@@ -5518,7 +5518,7 @@ id: toolu_012zGr7HeEnSBeYEWZqexeHm
 tool_result
 id: toolu_012zGr7HeEnSBeYEWZqexeHm
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/app/services/dryrun_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/app/services/dryrun_service.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5531,7 +5531,7 @@ tool_use Read
 id: toolu_01FVe7eB1eXBvAycbRdHDGv8
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts",
   "offset": 44,
   "limit": 12
 }
@@ -5563,7 +5563,7 @@ id: toolu_012ExuwvwQem8CabHbbXvF9y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts",
   "old_string": "export interface RunTarget {\n  table?: string;\n  schema?: string;\n  catalog?: string;\n  path?: string;\n  file_format?: 'csv' | 'parquet';\n}",
   "new_string": "export interface RunTarget {\n  table?: string;\n  schema?: string;\n  catalog?: string;\n  path?: string;\n  file_format?: 'csv' | 'parquet';\n  /** Flat-file *batch* selector (a literal `path` and `pattern` are mutually exclusive). */\n  pattern?: string;\n}"
 }
@@ -5574,7 +5574,7 @@ id: toolu_012ExuwvwQem8CabHbbXvF9y
 tool_result
 id: toolu_012ExuwvwQem8CabHbbXvF9y
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/api/suites.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/api/suites.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5584,7 +5584,7 @@ id: toolu_01MYLNzo1iN2sKxXcM3JahNr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx",
   "old_string": "  // A suite is previewable once it has a run target — a SQL/UC table or a\n  // flat-file path (#532), mirroring the column profiler's gate. The concrete\n  // target (incl. UC catalog / flat-file batch) is resolved server-side.\n  const hasTarget = !!targetString(target, 'table') || !!targetString(target, 'path');",
   "new_string": "  // A suite is previewable once it has a run target of any shape — a SQL/UC\n  // table, a literal flat-file path, or a flat-file batch pattern (#532). The\n  // concrete target (incl. UC catalog + batch file resolution) is resolved\n  // server-side; a batch whose file hasn't landed comes back as a clean 422.\n  const hasTarget =\n    !!targetString(target, 'table') ||\n    !!targetString(target, 'path') ||\n    !!targetString(target, 'pattern');"
 }
@@ -5595,7 +5595,7 @@ id: toolu_01MYLNzo1iN2sKxXcM3JahNr
 tool_result
 id: toolu_01MYLNzo1iN2sKxXcM3JahNr
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/src/components/checks/DryRunPreview.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5609,7 +5609,7 @@ id: toolu_01QNrwFsKrsfnbMEtLYcZVuG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py",
   "old_string": "    sid = _suite_id(client, db_session, target=_SF_TARGET)\n    _patch_runner(monkeypatch, _FakeRunner(raises=RuntimeError(\"warehouse unreachable\")))\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body())\n    assert resp.status_code == 502\n    assert resp.json()[\"error\"][\"code\"] == \"dry_run_failed\"",
   "new_string": "    sid = _suite_id(client, db_session, target=_SF_TARGET)\n    _patch_runner(monkeypatch, _FakeRunner(raises=RuntimeError(\"warehouse unreachable\")))\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body())\n    assert resp.status_code == 502\n    assert resp.json()[\"error\"][\"code\"] == \"dry_run_failed\"\n\n\ndef test_dryrun_runner_build_failure_returns_502(\n    client: TestClient, db_session: Any, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    # The runner builders resolve the secret eagerly — a missing/unreadable\n    # credential fails at build time and must be a clean 502, not a 500.\n    sid = _suite_id(client, db_session, target=_SF_TARGET)\n\n    def _boom(**_kw: Any) -> Any:\n        raise RuntimeError(\"secret not found in key vault\")\n\n    monkeypatch.setattr(dryrun_service, \"build_check_runner\", _boom)\n    resp = client.post(f\"/api/v1/suites/{sid}/checks/dryrun\", json=_dryrun_body())\n    assert resp.status_code == 502\n    assert resp.json()[\"error\"][\"code\"] == \"dry_run_failed\""
 }
@@ -5620,7 +5620,7 @@ id: toolu_01QNrwFsKrsfnbMEtLYcZVuG
 tool_result
 id: toolu_01QNrwFsKrsfnbMEtLYcZVuG
 ```
-The file /Users/arijit/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/backend/tests/api/test_checks.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5634,7 +5634,7 @@ id: toolu_01RLc9mtoLvRbLeCJQzRctQf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx",
   "old_string": "  it('is enabled for a flat-file suite whose target is a path (#532)', () => {\n    render(<Harness expectationType={NOT_NULL} target={{ path: 's3://b/orders.csv' }} />);\n    expect(screen.getByRole('button', { name: 'Dry-run preview' })).toBeEnabled();\n  });",
   "new_string": "  it('is enabled for a flat-file suite whose target is a path (#532)', () => {\n    render(<Harness expectationType={NOT_NULL} target={{ path: 's3://b/orders.csv' }} />);\n    expect(screen.getByRole('button', { name: 'Dry-run preview' })).toBeEnabled();\n  });\n\n  it('is enabled for a flat-file suite whose target is a batch pattern (#532)', () => {\n    render(\n      <Harness expectationType={NOT_NULL} target={{ pattern: 'orders_(\\\\d+).csv', strategy: 'latest' }} />,\n    );\n    expect(screen.getByRole('button', { name: 'Dry-run preview' })).toBeEnabled();\n  });"
 }
@@ -5645,7 +5645,7 @@ id: toolu_01RLc9mtoLvRbLeCJQzRctQf
 tool_result
 id: toolu_01RLc9mtoLvRbLeCJQzRctQf
 ```
-The file /Users/arijit/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/frontend/tests/components/DryRunPreview.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5684,7 +5684,7 @@ tool_use Bash
 id: toolu_01UYcMbxpsShpojDiVbTaKXB
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ/frontend && pnpm exec prettier --write tests/components/DryRunPreview.test.tsx src/components/checks/DryRunPreview.tsx src/api/suites.ts 2>&1 | tail -2 && echo \"=== tests ===\" && pnpm exec vitest run tests/components/DryRunPreview.test.tsx 2>&1 | tail -6 && echo \"=== tsc ===\" && pnpm exec tsc --noEmit 2>&1 | tail -3 && echo \"=== eslint ===\" && pnpm exec eslint src/components/checks/DryRunPreview.tsx src/api/suites.ts tests/components/DryRunPreview.test.tsx 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Coding/Python/DataQ/frontend && pnpm exec prettier --write tests/components/DryRunPreview.test.tsx src/components/checks/DryRunPreview.tsx src/api/suites.ts 2>&1 | tail -2 && echo \"=== tests ===\" && pnpm exec vitest run tests/components/DryRunPreview.test.tsx 2>&1 | tail -6 && echo \"=== tsc ===\" && pnpm exec tsc --noEmit 2>&1 | tail -3 && echo \"=== eslint ===\" && pnpm exec eslint src/components/checks/DryRunPreview.tsx src/api/suites.ts tests/components/DryRunPreview.test.tsx 2>&1 | tail -3",
   "description": "Re-verify frontend after review fixes"
 }
 ```
@@ -5761,7 +5761,7 @@ tool_use Bash
 id: toolu_01B2jBdbDsj4T2cm5TaixhRJ
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ && conda run -n dataq python -m pytest backend/tests/api/test_checks.py -q -p no:cacheprovider 2>&1 | grep -E \"passed|failed|error\" | grep -v \"core/errors\" | tail -2",
+  "command": "cd /home/<USER>/Coding/Python/DataQ && conda run -n dataq python -m pytest backend/tests/api/test_checks.py -q -p no:cacheprovider 2>&1 | grep -E \"passed|failed|error\" | grep -v \"core/errors\" | tail -2",
   "description": "Full test_checks.py from repo root"
 }
 ```
@@ -5785,7 +5785,7 @@ tool_use Bash
 id: toolu_01KuuohNtSLQ6GQwyhHMg1Ri
 ```json
 {
-  "command": "git add backend/app/services/dryrun_service.py backend/tests/api/test_checks.py frontend/src/api/suites.ts frontend/src/components/checks/DryRunPreview.tsx frontend/tests/components/DryRunPreview.test.tsx && git commit -q -m \"fixup: map dry-run build/materialize failures to 502, enable batch targets in UI\n\nCode review (two reviewers) found:\n- CONFIRMED regression: narrowing the runner-build try to UnsupportedConnectionTypeError\n  let an eager secret-fetch failure escape as 500 instead of the documented 502.\n  Now build failures → DryRunFailedError (502), with a regression test.\n- CONFIRMED: materialize_path store-listing failures (batch auth/network) also\n  escaped as 500 → now 502; a SuiteTargetInvalidError (422) still propagates.\n- UI gap: the Dry-run button gated on table||path, so a batch (pattern-only)\n  flat-file suite stayed disabled though the backend supports it. Added 'pattern'\n  to RunTarget + the enable-gate, with a test.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\" && git push 2>&1 | tail -2",
+  "command": "git add backend/app/services/dryrun_service.py backend/tests/api/test_checks.py frontend/src/api/suites.ts frontend/src/components/checks/DryRunPreview.tsx frontend/tests/components/DryRunPreview.test.tsx && git commit -q -m \"fixup: map dry-run build/materialize failures to 502, enable batch targets in UI\n\nCode review (two reviewers) found:\n- CONFIRMED regression: narrowing the runner-build try to UnsupportedConnectionTypeError\n  let an eager secret-fetch failure escape as 500 instead of the documented 502.\n  Now build failures → DryRunFailedError (502), with a regression test.\n- CONFIRMED: materialize_path store-listing failures (batch auth/network) also\n  escaped as 500 → now 502; a SuiteTargetInvalidError (422) still propagates.\n- UI gap: the Dry-run button gated on table||path, so a batch (pattern-only)\n  flat-file suite stayed disabled though the backend supports it. Added 'pattern'\n  to RunTarget + the enable-gate, with a test.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\" && git push 2>&1 | tail -2",
   "description": "Commit review fixes and push"
 }
 ```
@@ -6004,7 +6004,7 @@ tool_use Read
 id: toolu_01BdDzDbgWbEGBmre4hjykX3
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "offset": 150,
   "limit": 2
 }
@@ -6026,7 +6026,7 @@ id: toolu_01Ntik8PPae3qwhBRgsSThDm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — 13/14",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — **COMPLETE 14/14** (exit gate MET)"
 }
@@ -6037,7 +6037,7 @@ id: toolu_01Ntik8PPae3qwhBRgsSThDm
 tool_result
 id: toolu_01Ntik8PPae3qwhBRgsSThDm
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6047,7 +6047,7 @@ id: toolu_014BFPvTcKc1MRTg731o5wgi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| ⬜ | [#532](https://github.com/TheurgicDuke771/DataQ/issues/532) Dry-run preview: extend Snowflake-only → Unity Catalog + flat-file (moved from W1 — cloud-independent, no deadline) | Theme 8 |",
   "new_string": "| ✅ | [#532](https://github.com/TheurgicDuke771/DataQ/issues/532) Dry-run preview extended Snowflake-only → **all datasources** — routed through the `build_check_runner` registry + server-side target resolution from `suite.target` (`run_target`), so UC `catalog` + flat-file `path`/batch work for free; clean 4xx/502 mapping (targetless/orchestration → 422, batch-not-landed → new `dry_run_no_data` 422, cred/reachability → 502); check-editor button enables for table/path/batch targets; feature-matrix corrected ([#697](https://github.com/TheurgicDuke771/DataQ/pull/697), 2-reviewer agentic review — 500→502 regression + batch-UI gap caught & fixed in-PR) | Theme 8 |"
 }
@@ -6058,7 +6058,7 @@ id: toolu_014BFPvTcKc1MRTg731o5wgi
 tool_result
 id: toolu_014BFPvTcKc1MRTg731o5wgi
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6072,7 +6072,7 @@ id: toolu_01C8ssgqZJ9XgiXSbMh7pQga
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "| **Open issues** | **57** (W2 2026-07-07 — **#488 closed via [#695](https://github.com/TheurgicDuke771/DataQ/pull/695)** — workspace-admin workspace-wide visibility threaded into the MCP list/aggregate tools + `schedule_service.list_schedules`/`/schedules` (ADR-0027 REST parity; admin+non-admin authz tests); **#584 closed** — MCP NL tool-selection spot-check passed against live `/mcp` (VS Code Copilot Agent mode + W1 PAT routed all 4 canonical queries correctly, no docstring misses). **W2 now 13/14 — only [#532](https://github.com/TheurgicDuke771/DataQ/issues/532) dry-run UC+flat-file remains.** Earlier, W2 2026-07-05 — **alerting batch**:",
   "new_string": "| **Open issues** | **56** (W2 2026-07-07 — **W2 COMPLETE 14/14** (exit gate MET): **#488 closed via [#695](https://github.com/TheurgicDuke771/DataQ/pull/695)** — workspace-admin workspace-wide visibility threaded into the MCP list/aggregate tools + `schedule_service.list_schedules`/`/schedules` (ADR-0027 REST parity; admin+non-admin authz tests); **#584 closed** — MCP NL tool-selection spot-check passed against live `/mcp` (VS Code Copilot Agent mode + W1 PAT routed all 4 canonical queries correctly, no docstring misses); **#532 closed via [#697](https://github.com/TheurgicDuke771/DataQ/pull/697)** — dry-run preview extended to all datasources via the `build_check_runner` registry + server-side target resolution (2-reviewer agentic review, 500→502 regression + batch-UI gap fixed in-PR). Earlier, W2 2026-07-05 — **alerting batch**:"
 }
@@ -6083,7 +6083,7 @@ id: toolu_01C8ssgqZJ9XgiXSbMh7pQga
 tool_result
 id: toolu_01C8ssgqZJ9XgiXSbMh7pQga
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6180,7 +6180,7 @@ id: toolu_01BJpJCVfs4t19WGmkyCUiDc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "**Next milestone:** **v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18).** **W1 closed COMPLETE 2026-07-05** (milestone closed; exit gate MET):",
   "new_string": "**Next milestone:** **v1.1 Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** **W2 closed COMPLETE 2026-07-07** (milestone exit gate MET — observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource): OTel logs #524/#589, `SecretStore.delete` #372 + least-priv KV role #622, dbt as a third `OrchestrationProvider` #609/#611, alerting-hardening batch #386–#389/#416, **#488** workspace-admin visibility in MCP tools + schedules ([#695](https://github.com/TheurgicDuke771/DataQ/pull/695)), **#584** MCP NL tool-selection spot-check passed vs live `/mcp` (VS Code Copilot + W1 PAT), **#532** dry-run preview extended to all datasources ([#697](https://github.com/TheurgicDuke771/DataQ/pull/697)). **W1 closed COMPLETE 2026-07-05** (milestone closed; exit gate MET):"
 }
@@ -6200,7 +6200,7 @@ tool_use Read
 id: toolu_01AcKViiQHMLaQZzUkPGBHRM
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "offset": 283,
   "limit": 1
 }
@@ -6220,7 +6220,7 @@ id: toolu_01VvYLw6PfdLbJebDyzEDLo2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "**Next milestone:** **v1.1 Week 2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18).** **W1 closed COMPLETE 2026-07-05** (milestone closed; exit gate MET): #194/#195 encrypted key-pair",
   "new_string": "**Next milestone:** **v1.1 Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** **W2 closed COMPLETE 14/14 2026-07-07** (exit gate MET — observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource): OTel logs #524/#589 · `SecretStore.delete` #372 + least-priv KV role #622 · dbt as a third `OrchestrationProvider` #609/#611 (ADR 0029) · alerting-hardening batch #386–#389/#416 · **#488** workspace-admin visibility in MCP tools + schedules ([#695](https://github.com/TheurgicDuke771/DataQ/pull/695)) · **#584** MCP NL tool-selection spot-check passed vs live `/mcp` (VS Code Copilot + W1 PAT, all 4 canonical queries correct) · **#532** dry-run preview extended to all datasources ([#697](https://github.com/TheurgicDuke771/DataQ/pull/697)). **W1 closed COMPLETE 2026-07-05** (milestone closed; exit gate MET): #194/#195 encrypted key-pair"
 }
@@ -6231,7 +6231,7 @@ id: toolu_01VvYLw6PfdLbJebDyzEDLo2
 tool_result
 id: toolu_01VvYLw6PfdLbJebDyzEDLo2
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6244,7 +6244,7 @@ tool_use Bash
 id: toolu_01Hv51jPT6YAvPYuvqqwKEWd
 ```json
 {
-  "command": "git checkout -b docs/w2-complete && git add docs/progress.md CLAUDE.md && git commit -q -m \"docs: mark v1.1 W2 COMPLETE (14/14) — tick #532, advance headline to W3\n\nW2 exit gate met: #488 (#695), #584 (live MCP spot-check), #532 (#697) all\nlanded. progress.md W2 → 14/14 + #532 row + snapshot 57→56; CLAUDE.md §13\nnext-milestone advanced to W3. Cycle epic #597 W2 checklist ticked separately.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\" && git push -u origin docs/w2-complete 2>&1 | tail -2",
+  "command": "git checkout -b docs/w2-complete && git add docs/progress.md CLAUDE.md && git commit -q -m \"docs: mark v1.1 W2 COMPLETE (14/14) — tick #532, advance headline to W3\n\nW2 exit gate met: #488 (#695), #584 (live MCP spot-check), #532 (#697) all\nlanded. progress.md W2 → 14/14 + #532 row + snapshot 57→56; CLAUDE.md §13\nnext-milestone advanced to W3. Cycle epic #597 W2 checklist ticked separately.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\" && git push -u origin docs/w2-complete 2>&1 | tail -2",
   "description": "Commit and push docs W2-complete branch"
 }
 ```
@@ -6381,7 +6381,7 @@ id: toolu_01DR5SVDvD85UNiCCSimvC1k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/progress.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/progress.md",
   "old_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — **COMPLETE 14/14** (exit gate MET)",
   "new_string": "### v1.1 W2 — Portability: OTel logs, secrets lifecycle, dry-run depth (due 2026-07-18) — **exit gate MET (14/14 tracked)**; clearing 5 in-week follow-ups (#640/#571/#605/#643/#286) before close"
 }
@@ -6392,7 +6392,7 @@ id: toolu_01DR5SVDvD85UNiCCSimvC1k
 tool_result
 id: toolu_01DR5SVDvD85UNiCCSimvC1k
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/progress.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6402,7 +6402,7 @@ id: toolu_017pk8HujfUEWtzfrQvacZZa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "**Next milestone:** **v1.1 Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** **W2 closed COMPLETE 14/14 2026-07-07** (milestone exit gate MET — observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource):",
   "new_string": "**Next milestone:** **v1.1 Week 2 (exit gate MET 14/14 2026-07-07 — clearing 5 in-week follow-ups #640/#571/#605/#643/#286 before close) → Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** W2 exit gate MET (observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource):"
 }
@@ -6442,7 +6442,7 @@ id: toolu_01Y16bhgcggoMNnSQDHdcH98
 court
 <invoke name="Edit">
 <parameter name="replace_all">false</parameter>
-<parameter name="file_path">/Users/arijit/Coding/Python/DataQ/CLAUDE.md</parameter>
+<parameter name="file_path">/home/<USER>/Coding/Python/DataQ/CLAUDE.md</parameter>
 <parameter name="old_string">**Next milestone:** **v1.1 Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** **W2 closed COMPLETE 14/14 2026-07-07** (exit gate MET — observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource):</parameter>
 <parameter name="new_string">**Next milestone:** **v1.1 Week 2 (exit gate MET 14/14 2026-07-07 — clearing 5 in-week follow-ups #640/#571/#605/#643/#286 before close) → Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** W2 exit gate MET (observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource):</parameter>
 </invoke>
@@ -6451,7 +6451,7 @@ court
 
 court
 <invoke name="Edit">
-<parameter name="file_path">/Users/arijit/Coding/Python/DataQ/CLAUDE.md</parameter>
+<parameter name="file_path">/home/<USER>/Coding/Python/DataQ/CLAUDE.md</parameter>
 <parameter name="old_string">**Next milestone:** **v1.1 Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** **W2 closed COMPLETE 14/14 2026-07-07** (exit gate MET — observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource):</parameter>
 <parameter name="new_string">**Next milestone:** **v1.1 Week 2 (exit gate MET 14/14 2026-07-07 — clearing 5 in-week follow-ups #640/#571/#605/#643/#286 before close) → Week 3 — Azure wind-down + local-first posture (due 2026-07-25).** W2 exit gate MET (observability + secrets + alerting vendor-neutral & Azure-verified, dry-run all-datasource):</parameter>
 </invoke>

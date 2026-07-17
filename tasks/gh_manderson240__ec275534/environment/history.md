@@ -13,7 +13,7 @@ tool_use Read
 id: toolu_01XgnQ5kyDgzdGuwy1U2LUVk
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/settings.json"
+  "file_path": "/home/<USER>/.claude/settings.json"
 }
 ```
 
@@ -127,7 +127,7 @@ id: toolu_017956XZbWuW5giNEyDius9a
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"statusLine\": {\n    \"refreshInterval\": 30\n  },\n  \"spinnerTipsEnabled\": false,",
   "new_string": "  \"spinnerTipsEnabled\": false,"
 }
@@ -138,7 +138,7 @@ id: toolu_017956XZbWuW5giNEyDius9a
 tool_result
 id: toolu_017956XZbWuW5giNEyDius9a
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/settings.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

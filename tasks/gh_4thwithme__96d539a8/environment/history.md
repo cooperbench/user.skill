@@ -112,7 +112,7 @@ tool_use Read
 id: toolu_01WVVvKQWkRMtEHuQtcBrpyM
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/ci-header-footer/src/components/ci-ask-ai/ci-ask-ai.tsx",
+  "file_path": "/home/<USER>/Documents/repo/ci-header-footer/src/components/ci-ask-ai/ci-ask-ai.tsx",
   "limit": 80
 }
 ```

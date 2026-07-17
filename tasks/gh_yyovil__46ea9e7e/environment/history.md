@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -66,8 +66,8 @@ tool_use exec_command
 id: call_sTs1TqksJ3iT0POdu2pXbn3b
 ```json
 {
-  "cmd": "rg -n \"file-preview|yyork-file-preview|file preview|FilePreview\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"file-preview|yyork-file-preview|file preview|FilePreview\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -79,8 +79,8 @@ tool_use exec_command
 id: call_5qrKawLFHmiYVHM9B9Als9gp
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.codex/skills/.system/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/skills/.system/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -92,8 +92,8 @@ tool_use exec_command
 id: call_ZYfTnJnIg7d9IH0lyrIBUut7
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/Projects/yyork/AGENTS.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/Projects/yyork/AGENTS.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -123,7 +123,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 35
 Output:
-sed: /Users/tanishqpalandurkar/.codex/skills/.system/browser/26.602.71036/skills/control-in-app-browser/SKILL.md: No such file or directory
+sed: /home/<USER>/.codex/skills/.system/browser/26.602.71036/skills/control-in-app-browser/SKILL.md: No such file or directory
 
 ```
 
@@ -154,8 +154,8 @@ tool_use exec_command
 id: call_OSaNX3Kdmxi875mNEzXTtRjK
 ```json
 {
-  "cmd": "sed -n '172,184p' /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '172,184p' /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -167,8 +167,8 @@ tool_use exec_command
 id: call_N8l4TXQ9AVLwIiy87d1PaXYV
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -180,8 +180,8 @@ tool_use exec_command
 id: call_3fv5H2dJLSrrKIVcBCvF3VAp
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.agents/skills/react-doctor/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/react-doctor/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -194,7 +194,7 @@ id: call_eLPUEPZrSiBu8k7rs0kVDOx4
 ```json
 {
   "cmd": "rg -n \"yyork-file-preview|file-preview|FilePreview|CodeView\" web . --glob '!node_modules' --glob '!web/node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -211,7 +211,7 @@ Process exited with code 0
 Original token count: 1084
 Output:
 - The Review tab implementation pattern was: add a backend-normalized session diff endpoint, keep the frontend query keyed by the project selector plus real session id, render with a thin `@pierre/diffs` adapter in `canvas-diff-view.tsx`, and verify with a browser probe that hunks render in shadow DOM and only the session-scoped diff endpoint is called [Task 2] [chronicle memory]
-- The concrete files surfaced for the Review diff feature were `internal/server/diff.go`, `internal/server/diff_test.go`, `internal/server/server.go`, `web/src/features/home/components/organisms/canvas-diff-view.tsx`, `web/src/features/home/data/canvas-diff.ts`, `web/src/features/home/domain/canvas-tabs.ts`, and related session-files/session-workspace wiring [Task 2] [chronicle memory]
+- The concrete files surfaced for the Review diff feature were `internal/server/diff.go`, `internal/server/diff_test.go`, `internal/server/server.go`, `web/src/features/home/<USER>/organisms/canvas-diff-view.tsx`, `web/src/features/home/<USER>/canvas-diff.ts`, `web/src/features/home/<USER>/canvas-tabs.ts`, and related session-files/session-workspace wiring [Task 2] [chronicle memory]
 - The Zellij root cause was `writeLaunchLayout` generating a single bare agent pane; the fix shape wrapped that pane with explicit `tab-bar` and `status-bar` plugin panes, then rebuilt only the Go binary through `scripts/run-go.mjs` because the change was backend-only and the embedded dashboard assets were already current enough for validation [Task 3] [chronicle memory]
 - A later, separate statusline explanation pinned the remaining browser-vs-Cursor difference on the managed browser-attach config: `internal/session/workspace_source.go` routes browser attaches through a managed Zellij config, `internal/zellijconfig/zellijconfig.go` sets `simplified_ui true`, and that intentionally removes the segmented powerline-style separators even though tab-bar and status-bar […]
 
@@ -249,7 +249,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 24
 Output:
-sed: /Users/tanishqpalandurkar/.agents/skills/react-doctor/SKILL.md: No such file or directory
+sed: /home/<USER>/.agents/skills/react-doctor/SKILL.md: No such file or directory
 
 ```
 
@@ -267,44 +267,44 @@ web/src/styles/app.css:317:.yyork-file-preview-pane {
 web/src/styles/app.css:325:.yyork-file-preview-floating-action {
 web/src/styles/app.css:333:.yyork-file-preview-header {
 web/src/styles/app.css:347:.yyork-file-preview-body {
-web/src/features/home/components/organisms/canvas-panel.tsx:2:  CodeView,
-web/src/features/home/components/organisms/canvas-panel.tsx:3:  type CodeViewItem,
-web/src/features/home/components/organisms/canvas-panel.tsx:4:  type CodeViewProps,
-web/src/features/home/components/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
-web/src/features/home/components/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
-web/src/features/home/components/organisms/canvas-panel.tsx:78:const FILE_PREVIEW_PANEL_ID = 'file-preview';
-web/src/features/home/components/organisms/canvas-panel.tsx:326:    <CanvasFilePreview
-web/src/features/home/components/organisms/canvas-panel.tsx:390:function CanvasFilePreview(props: {
-web/src/features/home/components/organisms/canvas-panel.tsx:413:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
-web/src/features/home/components/organisms/canvas-panel.tsx:416:        <div className="yyork-file-preview-header">
-web/src/features/home/components/organisms/canvas-panel.tsx:426:        <div className="yyork-file-preview-floating-action">
-web/src/features/home/components/organisms/canvas-panel.tsx:433:      <div className="yyork-file-preview-body">
-web/src/features/home/components/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
-web/src/features/home/components/organisms/canvas-panel.tsx:467:              <CodeView
-web/src/features/home/components/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
-web/src/features/home/components/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
-web/src/features/home/components/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
-web/src/features/home/components/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
-web/src/features/home/components/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
-./web/src/features/home/components/organisms/canvas-panel.tsx:2:  CodeView,
-./web/src/features/home/components/organisms/canvas-panel.tsx:3:  type CodeViewItem,
-./web/src/features/home/components/organisms/canvas-panel.tsx:4:  type CodeViewProps,
-./web/src/features/home/components/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
-./web/src/features/home/components/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
-./web/src/features/home/components/organisms/canvas-panel.tsx:78:const FILE_PREVIEW_PANEL_ID = 'file-preview';
-./web/src/features/home/components/organisms/canvas-panel.tsx:326:    <CanvasFilePreview
-./web/src/features/home/components/organisms/canvas-panel.tsx:390:function CanvasFilePreview(props: {
-./web/src/features/home/components/organisms/canvas-panel.tsx:413:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
-./web/src/features/home/components/organisms/canvas-panel.tsx:416:        <div className="yyork-file-preview-header">
-./web/src/features/home/components/organisms/canvas-panel.tsx:426:        <div className="yyork-file-preview-floating-action">
-./web/src/features/home/components/organisms/canvas-panel.tsx:433:      <div className="yyork-file-preview-body">
-./web/src/features/home/components/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
-./web/src/features/home/components/organisms/canvas-panel.tsx:467:              <CodeView
-./web/src/features/home/components/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
-./web/src/features/home/components/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
-./web/src/features/home/components/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
-./web/src/features/home/components/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
-./web/src/features/home/components/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:2:  CodeView,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:3:  type CodeViewItem,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:4:  type CodeViewProps,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:78:const FILE_PREVIEW_PANEL_ID = 'file-preview';
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:326:    <CanvasFilePreview
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:390:function CanvasFilePreview(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:413:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:416:        <div className="yyork-file-preview-header">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:426:        <div className="yyork-file-preview-floating-action">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:433:      <div className="yyork-file-preview-body">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:467:              <CodeView
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:2:  CodeView,
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:3:  type CodeViewItem,
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:4:  type CodeViewProps,
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:78:const FILE_PREVIEW_PANEL_ID = 'file-preview';
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:326:    <CanvasFilePreview
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:390:function CanvasFilePreview(props: {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:413:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:416:        <div className="yyork-file-preview-header">
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:426:        <div className="yyork-file-preview-floating-action">
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:433:      <div className="yyork-file-preview-body">
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:467:              <CodeView
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
 ./web/src/styles/app.css:317:.yyork-file-preview-pane {
 ./web/src/styles/app.css:325:.yyork-file-preview-floating-action {
 ./web/src/styles/app.css:333:.yyork-file-preview-header {
@@ -314,7 +314,7 @@ web/src/features/home/components/organisms/canvas-panel.tsx:617:): CodeViewItem<
 
 > AGENT
 
-The target is in `web/src/features/home/components/organisms/canvas-panel.tsx`, with the header styled from `web/src/styles/app.css`. I’m checking the existing spacing rules before changing the CSS so this remains scoped to the preview header.
+The target is in `web/src/features/home/<USER>/organisms/canvas-panel.tsx`, with the header styled from `web/src/styles/app.css`. I’m checking the existing spacing rules before changing the CSS so this remains scoped to the preview header.
 
 > TOOL
 
@@ -322,8 +322,8 @@ tool_use exec_command
 id: call_U2lW2dNfz3uG8YweVq1LcvPL
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -336,7 +336,7 @@ id: call_e7wADq1WvsiFklQKKXB3C64Z
 ```json
 {
   "cmd": "sed -n '300,365p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -348,8 +348,8 @@ tool_use exec_command
 id: call_qVRa1oy7WiybEovEdlej1cQh
 ```json
 {
-  "cmd": "sed -n '390,485p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '390,485p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -362,7 +362,7 @@ id: call_zHxMkATeCkdOePRx9Cw9PxiX
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -680,7 +680,7 @@ id: call_FCWhRmBF60cHGoHndQCZLnNZ
 ```json
 {
   "cmd": "git diff -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -763,7 +763,7 @@ id: call_DIcM8mdQcGm2XdlUo5j5dBd2
 ```json
 {
   "cmd": "git diff -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -776,7 +776,7 @@ id: call_dJNSK1zTCLk4awqE3wtoAkMm
 ```json
 {
   "cmd": "git diff --check -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -789,7 +789,7 @@ id: call_QUGIXI9NyZ15Sh7CROpfEeqq
 ```json
 {
   "cmd": "if [ -x web/node_modules/.bin/react-doctor ]; then printf 'available:web/node_modules/.bin/react-doctor\\n'; elif [ -x node_modules/.bin/react-doctor ]; then printf 'available:node_modules/.bin/react-doctor\\n'; else printf 'missing\\n'; fi",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -894,7 +894,7 @@ tool_use js
 id: call_efRxmXAcGLLGWGuE3HXeedlK
 ```json
 {
-  "code": "const { setupBrowserRuntime } = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
+  "code": "const { setupBrowserRuntime } = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000,
   "title": "Connect to browser"
 }
@@ -963,7 +963,7 @@ id: call_vtDg8Hp0Wc1nFtLCtxEaBF2C
 ```json
 {
   "cmd": "rg -n \"function CodeView|const CodeView|export .*CodeView|CodeView\" web/src web/node_modules node_modules --glob '!**/.cache/**' --glob '!**/dist/**' --glob '!**/build/**'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -975,8 +975,8 @@ tool_use exec_command
 id: call_xqZYL0wklwZRJqc5IWlSslw8
 ```json
 {
-  "cmd": "rg -n \"diffs|CodeView|code-view|\\.diff|padding|margin\" web/src/styles web/src/features/home/components -g '*.css' -g '*.tsx'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"diffs|CodeView|code-view|\\.diff|padding|margin\" web/src/styles web/src/features/home/<USER> -g '*.css' -g '*.tsx'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -988,8 +988,8 @@ tool_use exec_command
 id: call_UeKIYsg6U7gn5eKffDwVvDZK
 ```json
 {
-  "cmd": "sed -n '1,110p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,110p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1005,18 +1005,18 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 315
 Output:
-web/src/features/home/components/organisms/canvas-panel.tsx:2:  CodeView,
-web/src/features/home/components/organisms/canvas-panel.tsx:3:  type CodeViewItem,
-web/src/features/home/components/organisms/canvas-panel.tsx:4:  type CodeViewProps,
-web/src/features/home/components/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
-web/src/features/home/components/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
-web/src/features/home/components/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
-web/src/features/home/components/organisms/canvas-panel.tsx:467:              <CodeView
-web/src/features/home/components/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
-web/src/features/home/components/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
-web/src/features/home/components/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
-web/src/features/home/components/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
-web/src/features/home/components/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:2:  CodeView,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:3:  type CodeViewItem,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:4:  type CodeViewProps,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:467:              <CodeView
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
 
 ```
 
@@ -1030,9 +1030,9 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1006
 Output:
-web/src/features/home/components/organisms/canvas-diff-view.tsx:1:import type { PatchDiffProps } from '@pierre/diffs/react';
-web/src/features/home/components/organisms/canvas-diff-view.tsx:2:import { PatchDiff, Virtualizer } from '@pierre/diffs/react';
-web/src/features/home/components/organisms/canvas-diff-view.tsx:48:  const layout = props.reviewPreferences?.diffLayout ?? 'split';
+web/src/features/home/<USER>/organisms/canvas-diff-view.tsx:1:import type { PatchDiffProps } from '@pierre/diffs/react';
+web/src/features/home/<USER>/organisms/canvas-diff-view.tsx:2:import { PatchDiff, Virtualizer } from '@pierre/diffs/react';
+web/src/features/home/<USER>/organisms/canvas-diff-view.tsx:48:  const layout = props.reviewPreferences?.diffLayout ?? 'split';
 web/src/styles/app.css:340:  padding: 1rem;
 web/src/styles/app.css:363:.yyork-file-code-viewer {
 web/src/styles/app.css:370:  --diffs-font-family: var(--font-mono);
@@ -1046,31 +1046,31 @@ web/src/styles/app.css:430:  --trees-padding-inline-override: 0.5rem;
 web/src/styles/app.css:455:  --diffs-font-family: var(--font-mono);
 web/src/styles/app.css:456:  --diffs-font-size: 0.75rem;
 web/src/styles/app.css:457:  --diffs-line-height: 1.45;
-web/src/features/home/components/organisms/terminal-panel.tsx:532:      const paddingLeft = parseFloat(styles.paddingLeft) || 0;
-web/src/features/home/components/organisms/terminal-panel.tsx:533:      const paddingRight = parseFloat(styles.paddingRight) || 0;
-web/src/features/home/components/organisms/terminal-panel.tsx:534:      const paddingTop = parseFloat(styles.paddingTop) || 0;
-web/src/features/home/components/organisms/terminal-panel.tsx:535:      const paddingBottom = parseFloat(styles.paddingBottom) || 0;
-web/src/features/home/components/organisms/terminal-panel.tsx:536:      const contentWidth = rect.width - paddingLeft - paddingRight;
-web/src/features/home/components/organisms/terminal-panel.tsx:537:      const contentHeight = rect.height - paddingTop - paddingBottom;
-web/src/features/home/components/organisms/terminal-panel.tsx:543:                ((event.clientX - rect.left - paddingLeft) / contentWidth) *
-web/src/features/home/components/organisms/terminal-panel.tsx:553:                ((event.clientY - rect.top - paddingTop) / contentHeight) *
-web/src/features/home/components/organisms/canvas-panel.tsx:2:  CodeView,
-web/src/features/home/components/organisms/canvas-panel.tsx:3:  type CodeViewItem,
-web/src/features/home/components/organisms/canvas-panel.tsx:4:  type CodeViewProps,
-web/src/features/home/components/organisms/canvas-panel.tsx:5:} from '@pierre/diffs/react';
-web/src/features/home/components/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
-web/src/features/home/components/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
-web/src/features/home/components/organisms/canvas-panel.tsx:67:    paddingBottom: 0,
-web/src/features/home/components/organisms/canvas-panel.tsx:68:    paddingTop: 0,
-web/src/features/home/components/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
-web/src/features/home/components/organisms/canvas-panel.tsx:467:              <CodeView
-web/src/features/home/components/organisms/canvas-panel.tsx:468:                className="yyork-file-code-viewer"
-web/src/features/home/components/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
-web/src/features/home/components/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
-web/src/features/home/components/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
-web/src/features/home/components/organisms/canvas-panel.tsx:581:    event.currentTarget.querySelector<HTMLElement>('.yyork-file-code-viewer') ??
-web/src/features/home/components/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
-web/src/features/home/components/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:532:      const paddingLeft = parseFloat(styles.paddingLeft) || 0;
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:533:      const paddingRight = parseFloat(styles.paddingRight) || 0;
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:534:      const paddingTop = parseFloat(styles.paddingTop) || 0;
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:535:      const paddingBottom = parseFloat(styles.paddingBottom) || 0;
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:536:      const contentWidth = rect.width - paddingLeft - paddingRight;
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:537:      const contentHeight = rect.height - paddingTop - paddingBottom;
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:543:                ((event.clientX - rect.left - paddingLeft) / contentWidth) *
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:553:                ((event.clientY - rect.top - paddingTop) / contentHeight) *
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:2:  CodeView,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:3:  type CodeViewItem,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:4:  type CodeViewProps,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:5:} from '@pierre/diffs/react';
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:61:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>['options']>;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:63:const fileCodeViewOptions: FileCodeViewOptions = {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:67:    paddingBottom: 0,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:68:    paddingTop: 0,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:465:              onWheel={handleFileCodeViewWheel}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:467:              <CodeView
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:468:                className="yyork-file-code-viewer"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:469:                items={getCodeViewItemsForFile(fileData)}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:470:                options={fileCodeViewOptions}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:579:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:581:    event.currentTarget.querySelector<HTMLElement>('.yyork-file-code-viewer') ??
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:615:function getCodeViewItemsForFile(
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:617:): CodeViewItem<undefined>[] {
 
 ```
 
@@ -1122,20 +1122,20 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
+import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
 import {
   type SessionFileContent,
   sessionFileContentQueryOptions,
   sessionFilesQueryOptions,
-} from '@/features/home/data/session-files';
-import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/session-files';
+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 import {
   type CanvasTab,
   isCanvasTab,
-} from '@/features/home/domain/canvas-tabs';
+} from '@/features/home/<USER>/canvas-tabs';
 
-export type { CanvasTab } from '@/features/home/domain/canvas-tabs';
+export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs';
 
 export interface CanvasTargetSummary {
   cwd?: string;
@@ -1220,7 +1220,7 @@ id: call_KVqtmmxFrdsnzVoxktSR8OAZ
 ```json
 {
   "cmd": "rg --files web/node_modules node_modules | rg '(@pierre|pierre|diffs)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1233,7 +1233,7 @@ id: call_YiOgS2hNBeW7noKTIvKAhVv9
 ```json
 {
   "cmd": "pnpm --dir web list @pierre/diffs --depth 1",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -1265,7 +1265,7 @@ Output:
 [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
 Legend: production dependency, optional only, dev only
 
-@yyork/web@0.0.1 /Users/tanishqpalandurkar/Projects/yyork/web (PRIVATE)
+@yyork/web@0.0.1 /home/<USER>/Projects/yyork/web (PRIVATE)
 
 dependencies:
 @pierre/diffs 1.2.7
@@ -1279,7 +1279,7 @@ id: call_s90cLxhqLDbofJdUbxNwSeJd
 ```json
 {
   "cmd": "ls -la web/node_modules/@pierre",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1292,7 +1292,7 @@ id: call_u1eOje1IPxJ6kEMpIUhtu6Ko
 ```json
 {
   "cmd": "readlink web/node_modules/@pierre/diffs",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1305,7 +1305,7 @@ id: call_JtPk6bxheDAR2p0xDnfip8x8
 ```json
 {
   "cmd": "find web/node_modules/.pnpm -maxdepth 3 -type d -name '*diffs*' | head -20",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1364,7 +1364,7 @@ id: call_Sm7j8IKwqW96QRrDV3wW4aWv
 ```json
 {
   "cmd": "rg -n \"paddingTop|sticky|disableFileHeader|function CodeView|const CodeView|gap|layout\" node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs -g '*.js' -g '*.mjs' -g '*.ts' -g '*.tsx' -g '*.css'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -1377,7 +1377,7 @@ id: call_jw4jrPYoxwCot4c8hx4vqSIA
 ```json
 {
   "cmd": "find node_modules/.pnpm/@pierre+diffs@1.2.7* -maxdepth 5 -type f | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1436,7 +1436,7 @@ id: call_yv62uODc2d88iXbKfJXCvZBZ
 ```json
 {
   "cmd": "sed -n '1,260p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/index.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1449,7 +1449,7 @@ id: call_dXVPQdJaCF9h9I7RYbXRzCxo
 ```json
 {
   "cmd": "sed -n '1,260p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/style.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1462,7 +1462,7 @@ id: call_f9TbPdGRyZKv8dw8MKbCVfUJ
 ```json
 {
   "cmd": "sed -n '1,220p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/index.d.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -1546,7 +1546,7 @@ id: call_bRH87XnI9xYb2NAitZ5QO5BD
 ```json
 {
   "cmd": "sed -n '1,260p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/CodeView.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1559,7 +1559,7 @@ id: call_Svl9nxD2RgtfR8F1s2HIsuWR
 ```json
 {
   "cmd": "sed -n '1,260p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/Virtualizer.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1572,7 +1572,7 @@ id: call_cfG9IZ8y7xD8BioRY9rI0QEK
 ```json
 {
   "cmd": "sed -n '1,180p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/constants.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1824,7 +1824,7 @@ id: call_xEJKruTaEyaWXmDNkyodZJby
 ```json
 {
   "cmd": "rg -n \"stickyTop|stickyBottom|stickyHeight|paddingTop|layout|stickyContainer|stickyOffset|scrollHeight|itemMetricsCache\" node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/CodeView.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -1837,7 +1837,7 @@ id: call_3yguM3fIDIDYgqm7aoIg56ay
 ```json
 {
   "cmd": "sed -n '260,620p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/CodeView.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -1850,7 +1850,7 @@ id: call_3gTAdQmqswig755TS0ivMVkK
 ```json
 {
   "cmd": "sed -n '620,1040p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/CodeView.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -2071,7 +2071,7 @@ id: call_pOsC7wDcNgPRn1Ey0ATUJAAm
 ```json
 {
   "cmd": "sed -n '1180,1345p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/CodeView.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -2084,7 +2084,7 @@ id: call_9gTYj0DPj3RzsxViC3Qx7cKr
 ```json
 {
   "cmd": "sed -n '1345,1635p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/CodeView.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -2097,7 +2097,7 @@ id: call_B1T331TAIOGPq70r0gHnDigp
 ```json
 {
   "cmd": "sed -n '1,260p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/VirtualizedFile.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -2271,7 +2271,7 @@ id: call_eX96Cjk6SmgKjXXPFAEhyDs5
 ```json
 {
   "cmd": "sed -n '260,620p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/VirtualizedFile.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -2284,7 +2284,7 @@ id: call_PJdRobyCF1F2XAs1nWrvjIhn
 ```json
 {
   "cmd": "sed -n '1,220p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/utils/computeVirtualFileMetrics.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -2297,7 +2297,7 @@ id: call_apjWuvFVG9i1J4nA1T6ORmp3
 ```json
 {
   "cmd": "sed -n '1,220p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/react.js 2>/dev/null || true; find node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist -maxdepth 2 -type f -name '*react*' -o -name 'react.*'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -2460,7 +2460,7 @@ id: call_qw650V5tUS0KCPHSbWlpMn0s
 ```json
 {
   "cmd": "find node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs -maxdepth 4 -type f | rg '/react|React|components'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2473,7 +2473,7 @@ id: call_RimBCCj6GsSXzdMNEprez6GW
 ```json
 {
   "cmd": "rg -n \"CodeView\\(|new CodeView|stickyHeaders|isContainerManaged|useEffect|useLayoutEffect\" node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs -g '*.js' -g '*.mjs' -g '*.d.ts'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -2485,8 +2485,8 @@ tool_use exec_command
 id: call_FrCnQYJIPwvdU8NF1WLXlhri
 ```json
 {
-  "cmd": "sed -n '360,480p' web/src/features/home/components/organisms/canvas-panel.tsx && sed -n '345,375p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '360,480p' web/src/features/home/<USER>/organisms/canvas-panel.tsx && sed -n '345,375p' web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2742,7 +2742,7 @@ id: call_zweOdEwbzzUnsaZKYe9Kpzcv
 ```json
 {
   "cmd": "sed -n '1,260p' 'node_modules/.pnpm/@pierre+diffs@1.2.7_react-dom@19.3.0-canary-d5736f09-20260507_react@19.3.0-canary-d5736_6772602b97d1d5320c8b0d11ce37ba1f/node_modules/@pierre/diffs/dist/react/CodeView.js'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -2755,7 +2755,7 @@ id: call_S7T66jNaBlnb0Rxii1IvELrV
 ```json
 {
   "cmd": "sed -n '1,220p' 'node_modules/.pnpm/@pierre+diffs@1.2.7_react-dom@19.3.0-canary-d5736f09-20260507_react@19.3.0-canary-d5736_6772602b97d1d5320c8b0d11ce37ba1f/node_modules/@pierre/diffs/dist/react/CodeView.d.ts'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2768,7 +2768,7 @@ id: call_D559uHub2Ap8jEO4F8Lz7K5g
 ```json
 {
   "cmd": "sed -n '1,180p' 'node_modules/.pnpm/@pierre+diffs@1.2.7_react-dom@19.3.0-canary-d5736f09-20260507_react@19.3.0-canary-d5736_6772602b97d1d5320c8b0d11ce37ba1f/node_modules/@pierre/diffs/README.md'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2946,7 +2946,7 @@ id: call_413bDLCtzVvCYbNmpPmGj636
 ```json
 {
   "cmd": "sed -n '1,240p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/utils/createWindowFromScrollPosition.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -3028,7 +3028,7 @@ id: call_GP3lYBx9uTMEUyUIyA3ESeOF
 ```json
 {
   "cmd": "rg -n \"interface CodeViewOptions|type CodeViewOptions|itemMetrics|CodeViewLayout|VirtualFileMetrics|lineHeight|paddingTop\" node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/types.d.ts node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/CodeView.d.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3068,7 +3068,7 @@ id: call_1K343HQpNeCUwUHVk6Kf0aL6
 ```json
 {
   "cmd": "sed -n '80,110p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/components/CodeView.d.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3081,7 +3081,7 @@ id: call_AmK13Ic1M6gVnMVla5U1wuSG
 ```json
 {
   "cmd": "sed -n '572,616p' node_modules/.pnpm/@pierre+diffs@1.2.7*/node_modules/@pierre/diffs/dist/types.d.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3094,7 +3094,7 @@ id: call_R039Myb0tyrpeLzYj0GlOyRl
 ```json
 {
   "cmd": "rg -n \"--diffs-font-size|--diffs-line-height|yyork-file-code-viewer\" web/src/styles web/src -g '*.css' -g '*.tsx'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -3206,7 +3206,7 @@ id: call_kQlvCaprPMudPpLLDHcfPv66
 ```json
 {
   "cmd": "rg -n -- \"--diffs-font-size|--diffs-line-height|yyork-file-code-viewer\" web/src/styles web/src -g '*.css' -g '*.tsx'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -3236,8 +3236,8 @@ web/src/styles/app.css:371:  --diffs-font-size: 0.75rem;
 web/src/styles/app.css:372:  --diffs-line-height: 1.45;
 web/src/styles/app.css:456:  --diffs-font-size: 0.75rem;
 web/src/styles/app.css:457:  --diffs-line-height: 1.45;
-web/src/features/home/components/organisms/canvas-panel.tsx:468:                className="yyork-file-code-viewer"
-web/src/features/home/components/organisms/canvas-panel.tsx:581:    event.currentTarget.querySelector<HTMLElement>('.yyork-file-code-viewer') ??
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:468:                className="yyork-file-code-viewer"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:581:    event.currentTarget.querySelector<HTMLElement>('.yyork-file-code-viewer') ??
 
 ```
 
@@ -3307,8 +3307,8 @@ tool_use exec_command
 id: call_R9fGYqb6oY4PzBHvEhX6MC2B
 ```json
 {
-  "cmd": "git diff --check -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -3321,7 +3321,7 @@ id: call_8mfxMydaTePCq7Zlk6rOLO7P
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -3333,8 +3333,8 @@ tool_use exec_command
 id: call_5DJWeGlLiisHWVelwLrMVaoa
 ```json
 {
-  "cmd": "git diff -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3377,10 +3377,10 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 7809
 Output:
-diff --git a/web/src/features/home/components/organisms/canvas-panel.tsx b/web/src/features/home/components/organisms/canvas-panel.tsx
+diff --git a/web/src/features/home/<USER>/organisms/canvas-panel.tsx b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 index bee33e6..90a8cef 100644
---- a/web/src/features/home/components/organisms/canvas-panel.tsx
-+++ b/web/src/features/home/components/organisms/canvas-panel.tsx
+--- a/web/src/features/home/<USER>/organisms/canvas-panel.tsx
++++ b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 @@ -1,19 +1,176 @@
 +import {
 +  CodeView,
@@ -3420,21 +3420,21 @@ index bee33e6..90a8cef 100644
 +  TooltipTrigger,
 +} from '@/components/ui/tooltip';
  
- import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-+import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+ import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
++import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
 +import {
 +  type SessionFileContent,
 +  sessionFileContentQueryOptions,
 +  sessionFilesQueryOptions,
-+} from '@/features/home/data/session-files';
-+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
++} from '@/features/home/<USER>/session-files';
++import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 +import {
 +  type CanvasTab,
 +  isCanvasTab,
-+} from '@/features/home/domain/canvas-tabs';
++} from '@/features/home/<USER>/canvas-tabs';
  
 -export type CanvasTab = 'files' | 'review' | 'browser';
-+export type { CanvasTab } from '@/features/home/domain/canvas-tabs'; […]
++export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs'; […]
 
 > AGENT
 
@@ -3446,8 +3446,8 @@ tool_use exec_command
 id: call_NqTXaU6XBhEBrD9HsmzJcXPO
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '55,78p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '55,78p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -3460,7 +3460,7 @@ id: call_U3EudxjtbdVoUuFQWr7w6vwf
 ```json
 {
   "cmd": "nl -ba web/src/styles/app.css | sed -n '330,345p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -3472,8 +3472,8 @@ tool_use exec_command
 id: call_9NLMYo0aIo1sR2MWNmUDzgZK
 ```json
 {
-  "cmd": "git status --short web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git status --short web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -3555,7 +3555,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 23
 Output:
- M web/src/features/home/components/organisms/canvas-panel.tsx
+ M web/src/features/home/<USER>/organisms/canvas-panel.tsx
  M web/src/styles/app.css
 
 ```
@@ -3570,8 +3570,8 @@ tool_use exec_command
 id: call_MW3PlNwL6lfk1rSNCOmJHwUO
 ```json
 {
-  "cmd": "nl -ba /Users/tanishqpalandurkar/.codex/memories/MEMORY.md | sed -n '176,182p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '176,182p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -3596,7 +3596,7 @@ Output:
 
 The gap was the full-height parent exposing a `CodeView` virtual sizing mismatch: the viewer was 1199px tall, while `@pierre/diffs` still estimated rows at 20px. Our CSS renders rows at 17.4px, so the short file’s virtual height was about 49.6px taller than the real rendered code, and that leaked out as the top spacer.
 
-I fixed it by passing matching metrics in [canvas-panel.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/canvas-panel.tsx:63). I also kept the requested 16px header padding in [app.css](/Users/tanishqpalandurkar/Projects/yyork/web/src/styles/app.css:333).
+I fixed it by passing matching metrics in [canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:63). I also kept the requested 16px header padding in [app.css](/home/<USER>/Projects/yyork/web/src/styles/app.css:333).
 
 Verified in the browser: header padding is `16px`, `CodeView` code content now starts at `codeRelTop: 0`, with only its normal 8px internal code padding before line 1. `pnpm --dir web exec tsc --noEmit` and `git diff --check` both pass. I did not run `react-doctor` because it is not installed locally and I did not install it via `npx`.
 
@@ -3673,8 +3673,8 @@ tool_use exec_command
 id: call_g2xNM0nkzpIyhxkbnYUePN6q
 ```json
 {
-  "cmd": "rg -n \"file-preview|yyork-files-workspace|CodeView|collapsed\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"file-preview|yyork-files-workspace|CodeView|collapsed\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -3686,8 +3686,8 @@ tool_use exec_command
 id: call_QIcaA9nexZ5MyEtjJZ2SLDiu
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -3700,7 +3700,7 @@ id: call_4ECkk3wvvpKETrrVuFDP6TXo
 ```json
 {
   "cmd": "sed -n '300,375p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -3712,8 +3712,8 @@ tool_use exec_command
 id: call_Ccw4AgJFyYf2uhX2Cj5oggfh
 ```json
 {
-  "cmd": "sed -n '385,480p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '385,480p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -3729,7 +3729,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 402
 Output:
-71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
+71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
 80:- canvas-panel.tsx, app.css, CodeView, session-files, Files tab, file tree, right-sidebar show/hide, react-resizable-panels, @pierre/trees, git -C <worktree> ls-files --cached --others --exclude-standard, .gitignore /yyork, .entire/, .antigravitycli/, .playwright-cli/, .crush/, crush.local.json, hasYyork false, ygkp7s, v042rv, yyork stop, merge before wipe, worktree lifecycle [chronicle memory]
 123:## Task 5: File-browser rendering through `CodeView`, symlinked-directory handling, and scroll verification [chronicle memory]
 131:- CodeView, session-files.unit.spec.ts, internal/server/files.go, internal/server/files_test.go, internal/server/server.go, symlinked-directory handling, pnpm-lock.yaml, wheel scroll, scrollTop 900, direnv exec . go test ./internal/server, git diff --check [chronicle memory]
@@ -3948,7 +3948,7 @@ tool_use js
 id: call_ttVlSmsP87tCUHouO5Hefsd2
 ```json
 {
-  "code": "if (!globalThis.browser) {\n  const { setupBrowserRuntime } = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\n  await setupBrowserRuntime({ globals: globalThis });\n  globalThis.browser = await agent.browsers.get('iab');\n}\nglobalThis.tab = globalThis.tab ?? await browser.tabs.selected();\nconst widthReport = await tab.playwright.evaluate(() => {\n  const workspace = document.querySelector('.yyork-files-workspace');\n  const preview = document.querySelector('.yyork-file-preview-pane');\n  const header = document.querySelector('.yyork-file-preview-header');\n  const body = document.querySelector('.yyork-file-preview-body');\n  const scroll = document.querySelector('.yyork-file-code-scroll');\n  const viewer = document.querySelector('.yyork-file-code-viewer');\n  const code = viewer?.querySelector('diffs-container')?.shadowRoot?.querySelector('[data-code]');\n  function info(el) {\n    if (!el) return null;\n    const r = el.getBoundingClientRect();\n    const s = getComputedStyle(el);\n    return {\n      className: String(el.className),\n      display: s.display,\n      flex: s.flex,\n      flexGrow: s.flexGrow,\n      flexShrink: s.flexShrink,\n      widthStyle: s.width,\n      minWidth: s.minWidth,\n      scrollWidth: el.scrollWidth,\n      clientWidth: el.clientWidth,\n      rect: { left: r.left, top: r.top, width: r.width, height: r.height },\n    };\n  }\n  return {\n    url: location.href,\n    workspace: info(workspace),\n    preview: info(preview),\n    header: info(header),\n    body: info(body),\n    scroll: info(scroll),\n    viewer: info(viewer),\n    code: info(code),\n  };\n});\nnodeRepl.write(JSON.stringify(widthReport, null, 2));",
+  "code": "if (!globalThis.browser) {\n  const { setupBrowserRuntime } = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\n  await setupBrowserRuntime({ globals: globalThis });\n  globalThis.browser = await agent.browsers.get('iab');\n}\nglobalThis.tab = globalThis.tab ?? await browser.tabs.selected();\nconst widthReport = await tab.playwright.evaluate(() => {\n  const workspace = document.querySelector('.yyork-files-workspace');\n  const preview = document.querySelector('.yyork-file-preview-pane');\n  const header = document.querySelector('.yyork-file-preview-header');\n  const body = document.querySelector('.yyork-file-preview-body');\n  const scroll = document.querySelector('.yyork-file-code-scroll');\n  const viewer = document.querySelector('.yyork-file-code-viewer');\n  const code = viewer?.querySelector('diffs-container')?.shadowRoot?.querySelector('[data-code]');\n  function info(el) {\n    if (!el) return null;\n    const r = el.getBoundingClientRect();\n    const s = getComputedStyle(el);\n    return {\n      className: String(el.className),\n      display: s.display,\n      flex: s.flex,\n      flexGrow: s.flexGrow,\n      flexShrink: s.flexShrink,\n      widthStyle: s.width,\n      minWidth: s.minWidth,\n      scrollWidth: el.scrollWidth,\n      clientWidth: el.clientWidth,\n      rect: { left: r.left, top: r.top, width: r.width, height: r.height },\n    };\n  }\n  return {\n    url: location.href,\n    workspace: info(workspace),\n    preview: info(preview),\n    header: info(header),\n    body: info(body),\n    scroll: info(scroll),\n    viewer: info(viewer),\n    code: info(code),\n  };\n});\nnodeRepl.write(JSON.stringify(widthReport, null, 2));",
   "timeout_ms": 30000,
   "title": "Measure collapsed preview widths"
 }
@@ -4004,8 +4004,8 @@ tool_use exec_command
 id: call_h7aZTbkUrZ1ljAjesbTb7u15
 ```json
 {
-  "cmd": "git diff --check -- web/src/styles/app.css web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- web/src/styles/app.css web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -4018,7 +4018,7 @@ id: call_wY0oTjPEZAttRYWYQNNjw2WK
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -4031,7 +4031,7 @@ id: call_3hFDukyRMvd9xFPI7c4wpqx6
 ```json
 {
   "cmd": "nl -ba web/src/styles/app.css | sed -n '315,345p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4044,7 +4044,7 @@ id: call_vRBxFfnmX9otGuDK2rCWvZ8j
 ```json
 {
   "cmd": "git diff -- web/src/styles/app.css | sed -n '1,220p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4185,7 +4185,7 @@ index d508865..1bd42c6 100644
 
 > AGENT
 
-Fixed the collapsed-width issue by making the preview pane fill its flex parent: [app.css](/Users/tanishqpalandurkar/Projects/yyork/web/src/styles/app.css:317) now gives `.yyork-file-preview-pane` `flex: 1 1 auto` and `width: 100%`. That lets the existing `CodeView` `width: 100%` resolve against the full available preview area after the file tree is collapsed.
+Fixed the collapsed-width issue by making the preview pane fill its flex parent: [app.css](/home/<USER>/Projects/yyork/web/src/styles/app.css:317) now gives `.yyork-file-preview-pane` `flex: 1 1 auto` and `width: 100%`. That lets the existing `CodeView` `width: 100%` resolve against the full available preview area after the file tree is collapsed.
 
 Verification: `git diff --check` passed for the touched files, and `pnpm --dir web exec tsc --noEmit` passed. I could not do the final live browser measurement because the Browser API refused access to that URL under its URL policy, so I did not route around it.
 
@@ -4245,8 +4245,8 @@ tool_use exec_command
 id: call_GwI0bJoxsMc0pcy8IlIgla5S
 ```json
 {
-  "cmd": "rg -n \"FileTreeSidebarToggle|size-7|size-9|icon-xs|buttonVariants|size:\" web/src/components web/src/features/home/components -g '*.tsx' -g '*.ts'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"FileTreeSidebarToggle|size-7|size-9|icon-xs|buttonVariants|size:\" web/src/components web/src/features/home/<USER> -g '*.tsx' -g '*.ts'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -4258,8 +4258,8 @@ tool_use exec_command
 id: call_8BpngviCZ3CvbWa25W4uBrpU
 ```json
 {
-  "cmd": "sed -n '480,555p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '480,555p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -4272,7 +4272,7 @@ id: call_vElf04yZ3onPsymhg53G6gP0
 ```json
 {
   "cmd": "sed -n '1,220p' web/src/components/ui/button.tsx && sed -n '1,220p' web/src/components/ui/button-variants.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4284,8 +4284,8 @@ tool_use exec_command
 id: call_yl3QJx6HUtEGRVI4FaR5blBJ
 ```json
 {
-  "cmd": "git status --short web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git status --short web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4301,31 +4301,31 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2106
 Output:
-web/src/features/home/components/organisms/terminal-panel.tsx:87:  onTerminalResize: (cols: number, rows: number) => void;
-web/src/features/home/components/organisms/terminal-panel.tsx:388:        size: terminalSizeRef.current,
-web/src/features/home/components/organisms/terminal-panel.tsx:484:        size: terminalSizeRef.current,
-web/src/features/home/components/organisms/terminal-panel.tsx:599:      size: { cols, rows },
-web/src/features/home/components/organisms/terminal-panel.tsx:695:    onTerminalResize: handleTerminalResize,
-web/src/features/home/components/organisms/terminal-panel.tsx:821:                      className="size-9 cursor-pointer rounded-none border-r-0 shadow-none"
-web/src/features/home/components/organisms/terminal-panel.tsx:894:            className={cn('size-9 rounded-none shadow-none', props.className)}
-web/src/features/home/components/organisms/terminal-panel.tsx:956:  size: TerminalSize;
-web/src/features/home/components/organisms/main-topbar.tsx:130:          <div aria-hidden="true" className="size-9" />
-web/src/features/home/components/organisms/main-topbar.tsx:150:            className="size-9 rounded-sm border-sidebar-border bg-sidebar shadow-none"
-web/src/features/home/components/organisms/canvas-diff-view.tsx:250:                className="size-7 rounded-sm"
-web/src/features/home/components/organisms/canvas-diff-view.tsx:268:                size="icon-xs"
-web/src/features/home/components/organisms/canvas-diff-view.tsx:269:                className="size-7 rounded-sm text-muted-foreground hover:text-foreground"
-web/src/features/home/components/organisms/canvas-panel.tsx:372:            <FileTreeSidebarToggle
-web/src/features/home/components/organisms/canvas-panel.tsx:422:            <FileTreeSidebarToggle
-web/src/features/home/components/organisms/canvas-panel.tsx:430:          <FileTreeSidebarToggle
-web/src/features/home/components/organisms/canvas-panel.tsx:483:function FileTreeSidebarToggle(props: {
-web/src/features/home/components/organisms/canvas-panel.tsx:496:            size="icon-xs"
-web/src/features/home/components/organisms/canvas-panel.tsx:497:            className="size-7 rounded-sm text-muted-foreground hover:text-foreground"
-web/src/features/home/components/organisms/canvas-panel.tsx:539:            size="icon-xs"
-web/src/features/home/components/organisms/canvas-panel.tsx:540:            className="size-7 rounded-sm text-muted-foreground hover:text-foreground"
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:554:            className="size-9 rounded-sm border-sidebar-border bg-sidebar shadow-none"
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:673:                className="flex size-7 shrink-0 items-center justify-center rounded-sm text-muted-foreground outline-hidden hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 focus-visible:ring-sidebar-ring [&>svg]:size-4 [&>svg]:opacity-60"
-web/src/features/home/components/organisms/project-orchestrator-sidebar.stories.tsx:942:          size="icon-xs"
-web/src/features/home/components/organisms/workspace-status-view.tsx:35:              'flex size-9 shrink-0 items-center justify-center border border-border bg-background text-muted-foreground',
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:87:  onTerminalResize: (cols: number, rows: number) => void;
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:388:        size: terminalSizeRef.current,
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:484:        size: terminalSizeRef.current,
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:599:      size: { cols, rows },
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:695:    onTerminalResize: handleTerminalResize,
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:821:                      className="size-9 cursor-pointer rounded-none border-r-0 shadow-none"
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:894:            className={cn('size-9 rounded-none shadow-none', props.className)}
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:956:  size: TerminalSize;
+web/src/features/home/<USER>/organisms/main-topbar.tsx:130:          <div aria-hidden="true" className="size-9" />
+web/src/features/home/<USER>/organisms/main-topbar.tsx:150:            className="size-9 rounded-sm border-sidebar-border bg-sidebar shadow-none"
+web/src/features/home/<USER>/organisms/canvas-diff-view.tsx:250:                className="size-7 rounded-sm"
+web/src/features/home/<USER>/organisms/canvas-diff-view.tsx:268:                size="icon-xs"
+web/src/features/home/<USER>/organisms/canvas-diff-view.tsx:269:                className="size-7 rounded-sm text-muted-foreground hover:text-foreground"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:372:            <FileTreeSidebarToggle
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:422:            <FileTreeSidebarToggle
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:430:          <FileTreeSidebarToggle
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:483:function FileTreeSidebarToggle(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:496:            size="icon-xs"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:497:            className="size-7 rounded-sm text-muted-foreground hover:text-foreground"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:539:            size="icon-xs"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:540:            className="size-7 rounded-sm text-muted-foreground hover:text-foreground"
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:554:            className="size-9 rounded-sm border-sidebar-border bg-sidebar shadow-none"
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:673:                className="flex size-7 shrink-0 items-center justify-center rounded-sm text-muted-foreground outline-hidden hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 focus-visible:ring-sidebar-ring [&>svg]:size-4 [&>svg]:opacity-60"
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.stories.tsx:942:          size="icon-xs"
+web/src/features/home/<USER>/organisms/workspace-status-view.tsx:35:              'flex size-9 shrink-0 items-center justify-center border border-border bg-background text-muted-foreground',
 web/src/components/form/form-field.tsx:23:    size: props.size,
 web/src/components/form/field-radio-group/index.tsx:48:              size: ctx.size,
 web/src/components/ui/input-group.tsx:36:      size: {
@@ -4514,7 +4514,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 23
 Output:
- M web/src/features/home/components/organisms/canvas-panel.tsx
+ M web/src/features/home/<USER>/organisms/canvas-panel.tsx
  M web/src/styles/app.css
 
 ```
@@ -4533,8 +4533,8 @@ tool_use exec_command
 id: call_nYOndW1WKqruXAZOygLybJWG
 ```json
 {
-  "cmd": "git diff --check -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -4547,7 +4547,7 @@ id: call_I0eing48fYL79VfoRtotEOw9
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -4559,8 +4559,8 @@ tool_use exec_command
 id: call_Jhp2esNkaQzIZipN3ZCNDh9b
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '488,508p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '488,508p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4572,8 +4572,8 @@ tool_use exec_command
 id: call_R0m6V1thpro4LxKh2pU4sTnm
 ```json
 {
-  "cmd": "git diff -- web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '1,160p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff -- web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '1,160p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -4650,10 +4650,10 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1122
 Output:
-diff --git a/web/src/features/home/components/organisms/canvas-panel.tsx b/web/src/features/home/components/organisms/canvas-panel.tsx
+diff --git a/web/src/features/home/<USER>/organisms/canvas-panel.tsx b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 index bee33e6..abbb8b1 100644
---- a/web/src/features/home/components/organisms/canvas-panel.tsx
-+++ b/web/src/features/home/components/organisms/canvas-panel.tsx
+--- a/web/src/features/home/<USER>/organisms/canvas-panel.tsx
++++ b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 @@ -1,19 +1,176 @@
 +import {
 +  CodeView,
@@ -4693,25 +4693,25 @@ index bee33e6..abbb8b1 100644
 +  TooltipTrigger,
 +} from '@/components/ui/tooltip';
  
- import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-+import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+ import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
++import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
 +import {
 +  type SessionFileContent,
 +  sessionFileContentQueryOptions,
 +  sessionFilesQueryOptions,
-+} from '@/features/home/data/session-files';
-+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
++} from '@/features/home/<USER>/session-files';
++import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 +import {
 +  type CanvasTab,
 +  isCanvasTab,
-+} from '@/features/home/domain/canvas-tabs';
++} from '@/features/home/<USER>/canvas-tabs';
  
 -export type CanvasTab = 'files' | 'review' | 'browser';
-+export type { CanvasTab } from '@/features/home/domain/canvas-tabs'; […]
++export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs'; […]
 
 > AGENT
 
-Changed the file-tree show/hide toggle to the standard 36x36 icon button size: [canvas-panel.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/canvas-panel.tsx:493). It now uses `size="icon"` instead of `icon-xs` plus `size-7`.
+Changed the file-tree show/hide toggle to the standard 36x36 icon button size: [canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:493). It now uses `size="icon"` instead of `icon-xs` plus `size-7`.
 
 Verification passed: `git diff --check` and `pnpm --dir web exec tsc --noEmit`.
 
@@ -4770,8 +4770,8 @@ tool_use exec_command
 id: call_sEYpVcILCDMajOoboDAlHxOz
 ```json
 {
-  "cmd": "sed -n '520,550p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '520,550p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4783,8 +4783,8 @@ tool_use exec_command
 id: call_fv9tNgE0MYMb4MM3Zv22Oph9
 ```json
 {
-  "cmd": "sed -n '1,120p' /Users/tanishqpalandurkar/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,120p' /home/<USER>/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4796,8 +4796,8 @@ tool_use exec_command
 id: call_hproEVVER8rUuj4TcEi61pJ2
 ```json
 {
-  "cmd": "rg -n \"file preview path|CodeView|validation\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"file preview path|CodeView|validation\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -4897,13 +4897,13 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2294
 Output:
-34:- extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md, updated_at=2026-06-07T23:32:00+00:00, thread_id=None, early `yyork-portless` route/service validation and detached dev-session context) [chronicle memory]
+34:- extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md, updated_at=2026-06-07T23:32:00+00:00, thread_id=None, early `yyork-portless` route/service validation and detached dev-session context) [chronicle memory]
 62:# Task Group: `Projects/yyork` dashboard review/files workflows, Zellij session validation, and terminal-gap debugging [chronicle memory]
 63:scope: Use for recent `yyork` dogfooding in the browser dashboard and local worktrees: Files/Review behavior, hook-review context, file-browser/layout changes, session-scoped diff rendering, Zellij layout/statusline validation, recap requests, merge-before-wipe semantics, and terminal gap measurement under disk pressure.
-64:applies_to: cwd=/Users/tanishqpalandurkar/Projects/yyork plus local worktrees under /Users/tanishqpalandurkar/.yyork/worktrees/*; reuse_rule=safe for similar yyork dashboard/session UX and validation work in this checkout, but re-open the touched backend/frontend files before claiming the current UI shape because several observations came from active local sessions and Chronicle windows
-71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
+64:applies_to: cwd=/home/<USER>/Projects/yyork plus local worktrees under /home/<USER>/.yyork/worktrees/*; reuse_rule=safe for similar yyork dashboard/session UX and validation work in this checkout, but re-open the touched backend/frontend files before claiming the current UI shape because several observations came from active local sessions and Chronicle windows
+71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
 80:- canvas-panel.tsx, app.css, CodeView, session-files, Files tab, file tree, right-sidebar show/hide, react-resizable-panels, @pierre/trees, git -C <worktree> ls-files --cached --others --exclude-standard, .gitignore /yyork, .entire/, .antigravitycli/, .playwright-cli/, .crush/, crush.local.json, hasYyork false, ygkp7s, v042rv, yyork stop, merge before wipe, worktree lifecycle [chronicle memory]
-117:- extensions/chronicle/resources/2026-06-07T07-43-00-DkaV-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T07-43-00-DkaV-10min-memory-summary.md, updated_at=2026-06-07T07:43:00+00:00, thread_id=None, terminal panel wasted-space report after Zellij layout […]
+117:- extensions/chronicle/resources/2026-06-07T07-43-00-DkaV-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T07-43-00-DkaV-10min-memory-summary.md, updated_at=2026-06-07T07:43:00+00:00, thread_id=None, terminal panel wasted-space report after Zellij layout […]
 
 > AGENT
 
@@ -4919,8 +4919,8 @@ tool_use exec_command
 id: call_kNz4y6P6XXsHPsUtLmBga3in
 ```json
 {
-  "cmd": "git diff --check -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -4933,7 +4933,7 @@ id: call_NBkRq8AiQGNqz2erANx8vBwZ
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -4945,8 +4945,8 @@ tool_use exec_command
 id: call_ehTNpAXYNaTETK36HVG0CJIb
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '490,545p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '490,545p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -4959,7 +4959,7 @@ id: call_Y3O4Bn20Suke3G46GVWKzkGr
 ```json
 {
   "cmd": "if [ -x web/node_modules/.bin/react-doctor ]; then printf 'available:web/node_modules/.bin/react-doctor\\n'; elif [ -x node_modules/.bin/react-doctor ]; then printf 'available:node_modules/.bin/react-doctor\\n'; else printf 'missing\\n'; fi",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5077,7 +5077,7 @@ missing
 
 > AGENT
 
-Updated the “Expand all folders” button to 36x36 by switching it to `size="icon"` and removing the `size-7` override: [canvas-panel.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/canvas-panel.tsx:536).
+Updated the “Expand all folders” button to 36x36 by switching it to `size="icon"` and removing the `size-7` override: [canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:536).
 
 Checks passed: `git diff --check` and `pnpm --dir web exec tsc --noEmit`. `react-doctor` is still not installed locally, so I did not run or install it.
 
@@ -5136,8 +5136,8 @@ tool_use exec_command
 id: call_1ZHdN0jyikMjq4BOQxDVhvd7
 ```json
 {
-  "cmd": "sed -n '1,80p' web/src/lib/tailwind/utils.ts && nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '488,505p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,80p' web/src/lib/tailwind/utils.ts && nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '488,505p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -5194,8 +5194,8 @@ tool_use exec_command
 id: call_ikrqFKpufNwy4YL4uVNnPn80
 ```json
 {
-  "cmd": "git diff --check -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -5208,7 +5208,7 @@ id: call_thJuiEjOUAJbyqMyvdLRGIPo
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -5220,8 +5220,8 @@ tool_use exec_command
 id: call_yMSjwkQcmFSi0a6YPOieAoRg
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '490,542p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '490,542p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -5322,7 +5322,7 @@ Output:
 
 > AGENT
 
-Made the “Hide file tree” button explicitly 36x36: [canvas-panel.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/canvas-panel.tsx:493) now has `size="icon"` plus `className="size-9 ..."`. I also made the expand/collapse button explicit the same way for consistency.
+Made the “Hide file tree” button explicitly 36x36: [canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:493) now has `size="icon"` plus `className="size-9 ..."`. I also made the expand/collapse button explicit the same way for consistency.
 
 Checks passed: `git diff --check` and `pnpm --dir web exec tsc --noEmit`.
 
@@ -5384,8 +5384,8 @@ tool_use exec_command
 id: call_W8ClvvUh6jYej9vXBws1GF08
 ```json
 {
-  "cmd": "rg -n \"file tree|FileTreeSidebarToggle|FileTreeExpansionToggle|CodeView\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"file tree|FileTreeSidebarToggle|FileTreeExpansionToggle|CodeView\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5397,8 +5397,8 @@ tool_use exec_command
 id: call_MnDwYanzUJUOGXW8GrFfeK8k
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '355,382p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '355,382p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5411,7 +5411,7 @@ id: call_zfAHInhsSMv2mVEfEkbX7TmS
 ```json
 {
   "cmd": "nl -ba web/src/styles/app.css | sed -n '392,408p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5427,12 +5427,12 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 483
 Output:
-71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
+71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
 80:- canvas-panel.tsx, app.css, CodeView, session-files, Files tab, file tree, right-sidebar show/hide, react-resizable-panels, @pierre/trees, git -C <worktree> ls-files --cached --others --exclude-standard, .gitignore /yyork, .entire/, .antigravitycli/, .playwright-cli/, .crush/, crush.local.json, hasYyork false, ygkp7s, v042rv, yyork stop, merge before wipe, worktree lifecycle [chronicle memory]
 123:## Task 5: File-browser rendering through `CodeView`, symlinked-directory handling, and scroll verification [chronicle memory]
 131:- CodeView, session-files.unit.spec.ts, internal/server/files.go, internal/server/files_test.go, internal/server/server.go, symlinked-directory handling, pnpm-lock.yaml, wheel scroll, scrollTop 900, direnv exec . go test ./internal/server, git diff --check [chronicle memory]
 180:- A separate Files/browser task showed the file preview path had shifted to `CodeView`, symlinked-directory handling needed to reject directory-like entries before file-content fetches, and a useful visual check was a real wheel-scroll on `pnpm-lock.yaml` that moved the preview container from `scrollTop: 0` to roughly `scrollTop: 900` [Task 5] [chronicle memory]
-264:- Current live `yyork` UI context includes sidebar-driven project/session navigation, a board with `Working`/`Prompt`/`Triage`/`Done`, a `Files` tab that still says the file tree is not wired, and local worktrees under `/Users/tanishqpalandurkar/.yyork/worktrees/...` such as […]
+264:- Current live `yyork` UI context includes sidebar-driven project/session navigation, a board with `Working`/`Prompt`/`Triage`/`Done`, a `Files` tab that still says the file tree is not wired, and local worktrees under `/home/<USER>/.yyork/worktrees/...` such as […]
 
 > TOOL
 
@@ -5519,8 +5519,8 @@ tool_use exec_command
 id: call_OpNyDgHJPPmRSvg7V4DzJAhg
 ```json
 {
-  "cmd": "git diff --check -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -5533,7 +5533,7 @@ id: call_6DmPfkph0kKKwZg8eFT2JVWu
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -5545,8 +5545,8 @@ tool_use exec_command
 id: call_1jpMVposuKZbZpwUWvJgO2we
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '367,382p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '367,382p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5619,7 +5619,7 @@ id: call_LgYxtrG1qZSJAvharIPVWCdr
 ```json
 {
   "cmd": "if [ -x web/node_modules/.bin/react-doctor ]; then printf 'available:web/node_modules/.bin/react-doctor\\n'; elif [ -x node_modules/.bin/react-doctor ]; then printf 'available:node_modules/.bin/react-doctor\\n'; else printf 'missing\\n'; fi",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5641,7 +5641,7 @@ missing
 
 > AGENT
 
-Swapped the toolbar positions: “Expand all folders” now renders first and “Hide file tree” second, so with the existing `space-between` layout they trade sides. Change is at [canvas-panel.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/canvas-panel.tsx:371).
+Swapped the toolbar positions: “Expand all folders” now renders first and “Hide file tree” second, so with the existing `space-between` layout they trade sides. Change is at [canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:371).
 
 Checks passed: `git diff --check` and `pnpm --dir web exec tsc --noEmit`. `react-doctor` is not installed locally, so I did not run or install it.
 
@@ -5690,8 +5690,8 @@ tool_use exec_command
 id: call_TUoA84EpBvVByalBzNywRput
 ```json
 {
-  "cmd": "rg -n \"file preview|CodeView|validation\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"file preview|CodeView|validation\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5704,7 +5704,7 @@ id: call_GT4gO3DFtZ6C7z1mRFhUIkbD
 ```json
 {
   "cmd": "sed -n '333,345p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5716,8 +5716,8 @@ tool_use exec_command
 id: call_G9jUzEMoBp4AlCEdjxotBFOO
 ```json
 {
-  "cmd": "sed -n '1,80p' /Users/tanishqpalandurkar/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,80p' /home/<USER>/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5733,13 +5733,13 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2294
 Output:
-34:- extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md, updated_at=2026-06-07T23:32:00+00:00, thread_id=None, early `yyork-portless` route/service validation and detached dev-session context) [chronicle memory]
+34:- extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md, updated_at=2026-06-07T23:32:00+00:00, thread_id=None, early `yyork-portless` route/service validation and detached dev-session context) [chronicle memory]
 62:# Task Group: `Projects/yyork` dashboard review/files workflows, Zellij session validation, and terminal-gap debugging [chronicle memory]
 63:scope: Use for recent `yyork` dogfooding in the browser dashboard and local worktrees: Files/Review behavior, hook-review context, file-browser/layout changes, session-scoped diff rendering, Zellij layout/statusline validation, recap requests, merge-before-wipe semantics, and terminal gap measurement under disk pressure.
-64:applies_to: cwd=/Users/tanishqpalandurkar/Projects/yyork plus local worktrees under /Users/tanishqpalandurkar/.yyork/worktrees/*; reuse_rule=safe for similar yyork dashboard/session UX and validation work in this checkout, but re-open the touched backend/frontend files before claiming the current UI shape because several observations came from active local sessions and Chronicle windows
-71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
+64:applies_to: cwd=/home/<USER>/Projects/yyork plus local worktrees under /home/<USER>/.yyork/worktrees/*; reuse_rule=safe for similar yyork dashboard/session UX and validation work in this checkout, but re-open the touched backend/frontend files before claiming the current UI shape because several observations came from active local sessions and Chronicle windows
+71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
 80:- canvas-panel.tsx, app.css, CodeView, session-files, Files tab, file tree, right-sidebar show/hide, react-resizable-panels, @pierre/trees, git -C <worktree> ls-files --cached --others --exclude-standard, .gitignore /yyork, .entire/, .antigravitycli/, .playwright-cli/, .crush/, crush.local.json, hasYyork false, ygkp7s, v042rv, yyork stop, merge before wipe, worktree lifecycle [chronicle memory]
-117:- extensions/chronicle/resources/2026-06-07T07-43-00-DkaV-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T07-43-00-DkaV-10min-memory-summary.md, updated_at=2026-06-07T07:43:00+00:00, thread_id=None, terminal panel wasted-space report after Zellij layout […]
+117:- extensions/chronicle/resources/2026-06-07T07-43-00-DkaV-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T07-43-00-DkaV-10min-memory-summary.md, updated_at=2026-06-07T07:43:00+00:00, thread_id=None, terminal panel wasted-space report after Zellij layout […]
 
 > TOOL
 
@@ -5821,8 +5821,8 @@ tool_use exec_command
 id: call_c9GkGt1xavxUAkO4pNrwhoNp
 ```json
 {
-  "cmd": "git diff --check -- web/src/styles/app.css web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- web/src/styles/app.css web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -5835,7 +5835,7 @@ id: call_oy5ML8cQRdsPsOYwpRuj35vD
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -5848,7 +5848,7 @@ id: call_TgRtwdSMDVnypYkveIPzhcYK
 ```json
 {
   "cmd": "if [ -x web/node_modules/.bin/react-doctor ]; then printf 'available:web/node_modules/.bin/react-doctor\\n'; elif [ -x node_modules/.bin/react-doctor ]; then printf 'available:node_modules/.bin/react-doctor\\n'; else printf 'missing\\n'; fi",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5861,7 +5861,7 @@ id: call_RJjlB0DJVkQeS6blJ0gXHHjt
 ```json
 {
   "cmd": "nl -ba web/src/styles/app.css | sed -n '333,345p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5936,7 +5936,7 @@ Output:
 
 > AGENT
 
-Changed the file-preview header padding to 12px: [app.css](/Users/tanishqpalandurkar/Projects/yyork/web/src/styles/app.css:335) now uses `padding: 0.75rem`.
+Changed the file-preview header padding to 12px: [app.css](/home/<USER>/Projects/yyork/web/src/styles/app.css:335) now uses `padding: 0.75rem`.
 
 Checks passed: `git diff --check` and `pnpm --dir web exec tsc --noEmit`. `react-doctor` is not installed locally, so I did not run or install it.
 
@@ -5991,8 +5991,8 @@ tool_use exec_command
 id: call_Dh4FV437AlbBOIYMIC32CXfr
 ```json
 {
-  "cmd": "rg -n \"file preview|CodeView|app.css\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"file preview|CodeView|app.css\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -6005,7 +6005,7 @@ id: call_LpLpyZMusyFAURNvFFk4gzeC
 ```json
 {
   "cmd": "nl -ba web/src/styles/app.css | sed -n '335,343p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -6018,7 +6018,7 @@ id: call_X4gqxidK87PVjB0aAw5x9hZo
 ```json
 {
   "cmd": "git diff --check -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -6034,7 +6034,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 489
 Output:
-71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
+71:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
 80:- canvas-panel.tsx, app.css, CodeView, session-files, Files tab, file tree, right-sidebar show/hide, react-resizable-panels, @pierre/trees, git -C <worktree> ls-files --cached --others --exclude-standard, .gitignore /yyork, .entire/, .antigravitycli/, .playwright-cli/, .crush/, crush.local.json, hasYyork false, ygkp7s, v042rv, yyork stop, merge before wipe, worktree lifecycle [chronicle memory]
 123:## Task 5: File-browser rendering through `CodeView`, symlinked-directory handling, and scroll verification [chronicle memory]
 131:- CodeView, session-files.unit.spec.ts, internal/server/files.go, internal/server/files_test.go, internal/server/server.go, symlinked-directory handling, pnpm-lock.yaml, wheel scroll, scrollTop 900, direnv exec . go test ./internal/server, git diff --check [chronicle memory]
@@ -6078,7 +6078,7 @@ Output:
 
 > AGENT
 
-Already applied. The file-preview header owner is [app.css](/Users/tanishqpalandurkar/Projects/yyork/web/src/styles/app.css:335), and it now uses `padding: 0.75rem`, which is 12px. `git diff --check` passes for that file.
+Already applied. The file-preview header owner is [app.css](/home/<USER>/Projects/yyork/web/src/styles/app.css:335), and it now uses `padding: 0.75rem`, which is 12px. `git diff --check` passes for that file.
 
 <oai-mem-citation>
 <citation_entries>
@@ -6108,8 +6108,8 @@ tool_use exec_command
 id: call_kBjLjMNKnQhpm0CREQoJKJsN
 ```json
 {
-  "cmd": "rg -n \"dashboard|embed|vite|dist|yyork.localhost|portless|copy-dashboard|run-go\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"dashboard|embed|vite|dist|yyork.localhost|portless|copy-dashboard|run-go\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -6122,7 +6122,7 @@ id: call_K6eDunCoguu4K9tmMafhnXkQ
 ```json
 {
   "cmd": "rg -n \"dashboard|embed|dist|vite|assets|static|localhost|portless|web/dist|cmd/yyork/dashboard|yyork.localhost\" . --glob '!node_modules' --glob '!web/node_modules' --glob '!web/output'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -6134,8 +6134,8 @@ tool_use exec_command
 id: call_0ACVuPsaBrk5UKnhJekRLr6i
 ```json
 {
-  "cmd": "git diff -- web/src/styles/app.css web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '1,260p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff -- web/src/styles/app.css web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '1,260p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -6147,8 +6147,8 @@ tool_use exec_command
 id: call_I4jEFS3jrgp1uE5ebKKhP0at
 ```json
 {
-  "cmd": "git status --short dashboard.go cmd/yyork/dashboard web/src/styles/app.css web/src/features/home/components/organisms/canvas-panel.tsx web/dist web/package.json package.json justfile",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git status --short dashboard.go cmd/yyork/dashboard web/src/styles/app.css web/src/features/home/<USER>/organisms/canvas-panel.tsx web/dist web/package.json package.json justfile",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -6167,10 +6167,10 @@ Output:
 1:# Task Group: `Projects/yyork` in-app browser readiness, Agentation delivery, portless routing, and bundled Browser plugin internals [chronicle memory]
 2:scope: Use for recent `yyork` work around the Browser tab/IAB path, Agentation annotation delivery, portless-backed local routing, and local inspection of Codex’s bundled Browser plugin files when the user is tracing the real control path or debugging why preview behavior differs from the expected proxied app.
 5:## Task 1: Inspect the bundled Browser plugin API/control path for `iab` and distinguish it from external browser-use libraries [chronicle memory]
-32:- extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md, updated_at=2026-06-09T03:26:00+00:00, thread_id=None, portless-backed route shape, stale raw listener cleanup, missing preview asset, and dev-mode patch direction) [chronicle memory]
-33:- extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md, updated_at=2026-06-09T03:16:00+00:00, thread_id=None, stale server/proxy diagnosis, `508 LOOP DETECTED`, and direct-loopback-vs-preview-proxy distinction) [chronicle memory]
-34:- extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md, updated_at=2026-06-07T23:32:00+00:00, thread_id=None, early `yyork-portless` route/service validation and detached dev-session context) [chronicle memory]
-35:- extensions/chronicle/resources/2026-06-07T23-22-00-FhhB-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T23-22-00-FhhB-10min-memory-summary.md, updated_at=2026-06-07T23:22:00+00:00, thread_id=None, `~/.portless` ownership fix, `routes.json` context, and shift from direct local port to Portless-backed routing) [chronicle memory]
+32:- extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md, updated_at=2026-06-09T03:26:00+00:00, thread_id=None, portless-backed route shape, stale raw listener cleanup, missing preview asset, and dev-mode patch direction) [chronicle memory]
+33:- extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md, updated_at=2026-06-09T03:16:00+00:00, thread_id=None, stale server/proxy diagnosis, `508 LOOP DETECTED`, and direct-loopback-vs-preview-proxy distinction) [chronicle memory]
+34:- extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md, updated_at=2026-06-07T23:32:00+00:00, thread_id=None, early `yyork-portless` route/service validation and detached dev-session context) [chronicle memory]
+35:- extensions/chronicle/resources/2026-06-07T23-22-00-FhhB-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T23-22-00-FhhB-10min-memory-summary.md, updated_at=2026-06-07T23:22:00+00:00, thread_id=None, `~/.portless` ownership fix, `routes.json` context, and shift from direct local port to Portless-backed routing) [chronicle memory]
 39:- Assess IAB end-to-end readiness, BROWSER_PLAN.md, portless, pnpm dev, direnv exec, yyork.localhost, yyork-preview.yyork.localhost, 127.0.0.1:4204, 508 LOOP DETECTED, […]
 
 > TOOL
@@ -6222,10 +6222,10 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1930
 Output:
-diff --git a/web/src/features/home/components/organisms/canvas-panel.tsx b/web/src/features/home/components/organisms/canvas-panel.tsx
+diff --git a/web/src/features/home/<USER>/organisms/canvas-panel.tsx b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 index bee33e6..0e8628c 100644
---- a/web/src/features/home/components/organisms/canvas-panel.tsx
-+++ b/web/src/features/home/components/organisms/canvas-panel.tsx
+--- a/web/src/features/home/<USER>/organisms/canvas-panel.tsx
++++ b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 @@ -1,19 +1,176 @@
 +import {
 +  CodeView,
@@ -6265,21 +6265,21 @@ index bee33e6..0e8628c 100644
 +  TooltipTrigger,
 +} from '@/components/ui/tooltip';
  
- import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-+import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+ import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
++import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
 +import {
 +  type SessionFileContent,
 +  sessionFileContentQueryOptions,
 +  sessionFilesQueryOptions,
-+} from '@/features/home/data/session-files';
-+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
++} from '@/features/home/<USER>/session-files';
++import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 +import {
 +  type CanvasTab,
 +  isCanvasTab,
-+} from '@/features/home/domain/canvas-tabs';
++} from '@/features/home/<USER>/canvas-tabs';
  
 -export type CanvasTab = 'files' | 'review' | 'browser';
-+export type { CanvasTab } from '@/features/home/domain/canvas-tabs'; […]
++export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs'; […]
 
 > TOOL
 
@@ -6294,7 +6294,7 @@ Output:
  M justfile
  M package.json
  M web/package.json
- M web/src/features/home/components/organisms/canvas-panel.tsx
+ M web/src/features/home/<USER>/organisms/canvas-panel.tsx
  M web/src/styles/app.css
 ?? dashboard.go
 
@@ -6311,7 +6311,7 @@ id: call_JJr11n89JIPl53ckH241Cchn
 ```json
 {
   "cmd": "sed -n '1,120p' dashboard.go && sed -n '1,120p' main.go && sed -n '360,430p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6324,7 +6324,7 @@ id: call_fRtLjwAmFrYvHi9PyK0UU5LA
 ```json
 {
   "cmd": "sed -n '1,130p' package.json && sed -n '1,80p' web/package.json && sed -n '1,120p' web/vite.config.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -6337,7 +6337,7 @@ id: call_URtoxibUo5Zedk5ocpDPRH4h
 ```json
 {
   "cmd": "find cmd/yyork/dashboard -maxdepth 3 -type f | sort | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -6350,7 +6350,7 @@ id: call_5MC5FMmSzjU769uGeZ0PzYqo
 ```json
 {
   "cmd": "ps -axo pid,ppid,command | rg -i \"(yyork|vite|portless|pnpm|go run|air|node)\" | rg -v \"rg -i\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6442,7 +6442,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -6599,19 +6599,19 @@ Output:
   438     1 /usr/libexec/airportd
   923     1 /System/Library/CoreServices/AirPlayUIAgent.app/Contents/MacOS/AirPlayUIAgent --launchd
  2168     1 /System/Library/PrivateFrameworks/CoreFP.framework/Versions/A/fairplayd
- 3904  3752 /Applications/Figma.app/Contents/Frameworks/Figma Helper.app/Contents/MacOS/Figma Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Users/tanishqpalandurkar/Library/Application Support/Figma/DesktopProfile/v39 --standard-schemes=file --secure-schemes=desktop-file --fetch-schemes=desktop-file,file --streaming-schemes=file --shared-files --field-trial-handle=1718379636,r,9126737382375077103,4058903578794746829,262144 --enable-features=PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=LocalNetworkAccessChecks,MacWebContentsOcclusion,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708994745248135
+ 3904  3752 /Applications/Figma.app/Contents/Frameworks/Figma Helper.app/Contents/MacOS/Figma Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/home/<USER>/Library/Application Support/Figma/DesktopProfile/v39 --standard-schemes=file --secure-schemes=desktop-file --fetch-schemes=desktop-file,file --streaming-schemes=file --shared-files --field-trial-handle=1718379636,r,9126737382375077103,4058903578794746829,262144 --enable-features=PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=LocalNetworkAccessChecks,MacWebContentsOcclusion,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708994745248135
  6629 80926 Cursor Helper (Plugin): extension-host (user) yyork [1-5]                      
  6630 80926 Cursor Helper (Plugin): extension-host (retrieval) yyork [1-6]                      
  6631 80926 Cursor Helper (Plugin): extension-host (always-local) yyork [1-7]                      
  6632 80926 Cursor Helper (Plugin): extension-host (agent-exec) yyork [1-8]                      
  7243  6629 /Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin) /Applications/Cursor.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=6629
- 7294  7134 /Applications/Cursor.app/Contents/Resources/app/resources/helpers/node /Applications/Cursor.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/tanishqpalandurkar/Library/Caches/typescript/5.9 --enableTelemetry --typesMapLocation /Applications/Cursor.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation
- 7398  6629 /Users/tanishqpalandurkar/Projects/yyork/.go/bin/gopls
- 7409  7398 /Users/tanishqpalandurkar/Projects/yyork/.go/bin/gopls ** telemetry **
- 7491  6629 /Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin) /Users/tanishqpalandurkar/.cursor/extensions/github.vscode-github-actions-0.31.5-universal/dist/server-node.js --node-ipc --clientProcessId=6629
- 8540  8042 node /Users/tanishqpalandurkar/.npm/_npx/d66c5096c7023bfb/node_modules/.bin/shadcn mcp
-14413     1 /Users/tanishqpalandurkar/.nix-profile/bin/zellij --server /tmp/ao-zellij-501/contract_version_1/yyork-1
-27082     1 /Users/tanishqpalandurkar/.nix-profile/bin/zellij --server /tmp/ao-zellij-501/contract_version_1/yyork-2
+ 7294  7134 /Applications/Cursor.app/Contents/Resources/app/resources/helpers/node /Applications/Cursor.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /home/<USER>/Library/Caches/typescript/5.9 --enableTelemetry --typesMapLocation /Applications/Cursor.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation
+ 7398  6629 /home/<USER>/Projects/yyork/.go/bin/gopls
+ 7409  7398 /home/<USER>/Projects/yyork/.go/bin/gopls ** telemetry **
+ 7491  6629 /Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin) /home/<USER>/.cursor/extensions/github.vscode-github-actions-0.31.5-universal/dist/server-node.js --node-ipc --clientProcessId=6629
+ 8540  8042 node /home/<USER>/.npm/_npx/d66c5096c7023bfb/node_modules/.bin/shadcn mcp
+14413     1 /home/<USER>/.nix-profile/bin/zellij --server /tmp/ao-zellij-501/contract_version_1/yyork-1
+27082     1 /home/<USER>/.nix-profile/bin/zellij --server /tmp/ao-zellij-501/contract_version_1/yyork-2
 28765 93334 /Applications/Codex.app/Contents/Resources/node_repl
 28766 93334 node ./mcp/server.mjs
 31671 93334 /Applications/Codex.app/Contents/Resources/node_repl
@@ -6623,7 +6623,7 @@ Output:
 40983 93334 node ./mcp/server.mjs
 40984 93334 /Applications/Codex.app/Contents/Resources/node_repl
 43953  6629 /Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin) /Applications/Cursor.app/Contents/Resources/app/extensions/markdown-language-features/dist/serverWorkerMain --node-ipc --clientProcessId=6629
-44143     1 /Users/tanishqpalandurkar/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node /Users/tanishqpalandurkar/Projects/yyork/node_modules/.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js proxy […]
+44143     1 /home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node /home/<USER>/Projects/yyork/node_modules/.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js proxy […]
 
 > AGENT
 
@@ -6636,7 +6636,7 @@ id: call_jov0mOO4TUm474Fd8beyOwwL
 ```json
 {
   "cmd": "rg -n \"dev|web:dev|WebDir|VITE|7331|3000|proxy|exec.Command|pnpm --dir web dev|Start\" internal cmd main.go dashboard.go bin justfile package.json --glob '!node_modules'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -6649,7 +6649,7 @@ id: call_JK6F2AgNrhVXr1TLSMyNNwaG
 ```json
 {
   "cmd": "sed -n '1,260p' internal/cli/*.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -6662,7 +6662,7 @@ id: call_SO3t4hQqZx0WQsnCJj1M7wUy
 ```json
 {
   "cmd": "lsof -nP -iTCP -sTCP:LISTEN | rg \"(7331|3000|443|5173|4204|yyork|vite|node|portless)\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6675,7 +6675,7 @@ id: call_AAGyxzUAYnmfJNHIRfoYMIMw
 ```json
 {
   "cmd": "curl -k -sSI https://yyork.localhost/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A5pcyw3 | sed -n '1,80p' && printf '\\n--- HTML refs ---\\n' && curl -k -sS https://yyork.localhost/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A5pcyw3 | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6867,8 +6867,8 @@ tool_use exec_command
 id: call_4icuHeWRTCGmU6deP0AYjIel
 ```json
 {
-  "cmd": "sed -n '1,180p' /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6881,7 +6881,7 @@ id: call_K2S4jbj5S7o06xsWNO2w9p3P
 ```json
 {
   "cmd": "rg -n \"yyork-file-preview-header|yyork-file-preview-pane\" web/src/styles/app.css && curl -k -sS https://yyork.localhost/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A5pcyw3 | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6970,7 +6970,7 @@ id: call_fJTdEO4Vt3nQtcqKMU86eLxG
 ```json
 {
   "cmd": "sed -n '312,352p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -6983,7 +6983,7 @@ id: call_iPOHMGMLhjtOnPb3P7qllmFB
 ```json
 {
   "cmd": "sed -n '1,80p' web/src/main.tsx && curl -k -sS https://yyork.localhost/src/styles/app.css | sed -n '312,352p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6996,7 +6996,7 @@ id: call_OBolyBEfo2t05SzvR4pAgDfh
 ```json
 {
   "cmd": "ps -axo pid,ppid,command | rg \"(portless run|go run \\. dev|yyork dev|vite dev|pnpm --dir web dev)\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -7110,7 +7110,7 @@ Output:
 34852 34850 rg (portless run|go run \. dev|yyork dev|vite dev|pnpm --dir web dev)
 61476 61398 go run . dev
 62030 61476 /var/folders/3k/f45nj0jn3b11jfvyvt0nxj4w0000gn/T/go-build1436679778/b001/exe/yyork dev
-62133 62030 node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm --dir web dev
+62133 62030 node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm --dir web dev
 
 ```
 
@@ -7125,7 +7125,7 @@ id: call_liRBCITmHYQ7vhp5jB3dwQmV
 ```json
 {
   "cmd": "curl -k -sS https://yyork.localhost/src/styles/app.css | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -7138,7 +7138,7 @@ id: call_GCWFos2jlgxFDJi865xFUxXu
 ```json
 {
   "cmd": "curl -k -sS 'https://yyork.localhost/src/main.tsx?t=1780983129755' | sed -n '1,120p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -7150,8 +7150,8 @@ tool_use exec_command
 id: call_kTLVq4pKF5LJaka3tUG8RptF
 ```json
 {
-  "cmd": "git diff -- web/src/styles/app.css web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '1,220p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff -- web/src/styles/app.css web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '1,220p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -7170,7 +7170,7 @@ Output:
 Total output lines: 6
 
 import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/styles/app.css");import { updateStyle as __vite__updateStyle, removeStyle as __vite__removeStyle } from "/@vite/client"
-const __vite__id = "/Users/tanishqpalandurkar/Projects/yyork/web/src/styles/app.css"
+const __vite__id = "/home/<USER>/Projects/yyork/web/src/styles/app.css"
 const __vite__css = "/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */\n@layer properties;\n@layer theme, base, components, utilities;\n.wterm {\n  --term-fg: #d4d4d4;\n  --term-bg: #1e1e1e;\n  --term-cursor: #aeafad;\n  --term-color-0: #1e1e1e;\n  --term-color-1: #f44747;\n  --term-color-2: #6a9955;\n  --term-color-3: #d7ba7d;\n  --term-color-4: #569cd6;\n  --term-color-5: #c586c0;\n  --term-color-6: #4ec9b0;\n  --term-color-7: #d4d4d4;\n  --term-color-8: #808080;\n  --term-color-9: #f44747;\n  --term-color-10: #6a9955;\n  --term-color-11: #d7ba7d;\n  --term-color-12: #569cd6;\n  --term-color-13: #c586c0;\n  --term-color-14: #4ec9b0;\n  --term-color-15: #ffffff;\n  --term-font-family: 'Menlo', 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;\n  --term-font-size: 14px;\n  --term-line-height: 1.2;\n  --term-row-height: 17px;\n  position: relative;\n  background: var(--term-bg);\n  color: var(--term-fg);\n  font-family: var(--term-font-family);\n  font-size: var(--term-font-size);\n  line-height: var(--term-line-height);\n  padding: 12px;\n  border-radius: 8px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);\n  outline: none;\n  overflow: hidden;\n}\n.wterm:focus,\n.wterm:focus-visible {\n  outline: none;\n}\n.term-grid {\n  display: block;\n  white-space: pre;\n  contain: layout paint style;\n  will-change: contents;\n}\n.term-row {\n  display: block;\n  height: var(--term-row-height);\n  line-height: var(--term-row-height);\n  contain: layout style;\n}\n.term-row > span {\n  display: inline-block;\n  height: var(--term-row-height);\n  vertical-align: top;\n}\n.term-block {\n  width: 1ch;\n  overflow: hidden;\n}\n.term-cursor {\n  outline: 1px solid var(--term-cursor);\n  outline-offset: -1px;\n}\n.wterm.focused .term-cursor {\n  background: var(--term-cursor);\n  color: var(--term-bg);\n  outline: […]
 
 > TOOL
@@ -7195,11 +7195,11 @@ if (!rootElement) {
   throw new Error("#root element not found in index.html");
 }
 createRoot(rootElement).render(/* @__PURE__ */ jsxDEV(StrictMode, { children: /* @__PURE__ */ jsxDEV(RouterProvider, { router }, void 0, false, {
-  fileName: "/Users/tanishqpalandurkar/Projects/yyork/web/src/main.tsx",
+  fileName: "/home/<USER>/Projects/yyork/web/src/main.tsx",
   lineNumber: 18,
   columnNumber: 5
 }, this) }, void 0, false, {
-  fileName: "/Users/tanishqpalandurkar/Projects/yyork/web/src/main.tsx",
+  fileName: "/home/<USER>/Projects/yyork/web/src/main.tsx",
   lineNumber: 17,
   columnNumber: 32
 }, this));
@@ -7217,10 +7217,10 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1690
 Output:
-diff --git a/web/src/features/home/components/organisms/canvas-panel.tsx b/web/src/features/home/components/organisms/canvas-panel.tsx
+diff --git a/web/src/features/home/<USER>/organisms/canvas-panel.tsx b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 index bee33e6..0e8628c 100644
---- a/web/src/features/home/components/organisms/canvas-panel.tsx
-+++ b/web/src/features/home/components/organisms/canvas-panel.tsx
+--- a/web/src/features/home/<USER>/organisms/canvas-panel.tsx
++++ b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 @@ -1,19 +1,176 @@
 +import {
 +  CodeView,
@@ -7260,21 +7260,21 @@ index bee33e6..0e8628c 100644
 +  TooltipTrigger,
 +} from '@/components/ui/tooltip';
  
- import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-+import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+ import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
++import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
 +import {
 +  type SessionFileContent,
 +  sessionFileContentQueryOptions,
 +  sessionFilesQueryOptions,
-+} from '@/features/home/data/session-files';
-+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
++} from '@/features/home/<USER>/session-files';
++import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 +import {
 +  type CanvasTab,
 +  isCanvasTab,
-+} from '@/features/home/domain/canvas-tabs';
++} from '@/features/home/<USER>/canvas-tabs';
  
 -export type CanvasTab = 'files' | 'review' | 'browser';
-+export type { CanvasTab } from '@/features/home/domain/canvas-tabs'; […]
++export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs'; […]
 
 > AGENT
 
@@ -7286,7 +7286,7 @@ tool_use js
 id: call_qxn6DWSgqhnu0d4rs0MbzAcw
 ```json
 {
-  "code": "const { setupBrowserRuntime } = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
+  "code": "const { setupBrowserRuntime } = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000,
   "title": "Connect to in-app browser"
 }
@@ -7312,7 +7312,7 @@ tool_use js
 id: call_9tJEvfhpxDpKRiHMCYtWCvWN
 ```json
 {
-  "code": "if (!globalThis.browser) {\n  const mod = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\n  await mod.setupBrowserRuntime({ globals: globalThis });\n  globalThis.browser = await agent.browsers.get('iab');\n}\nnodeRepl.write(await browser.documentation());",
+  "code": "if (!globalThis.browser) {\n  const mod = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\n  await mod.setupBrowserRuntime({ globals: globalThis });\n  globalThis.browser = await agent.browsers.get('iab');\n}\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000,
   "title": "Read browser docs"
 }
@@ -7425,8 +7425,8 @@ tool_use exec_command
 id: call_XWHfqlV2vKpcoA7orvhPVQK2
 ```json
 {
-  "cmd": "rg -n \"yyork-file-preview-header|yyork-file-preview-pane|FileTreeSidebarToggle|FileTreeExpansionToggle|ResizablePanel|CanvasFilesPanel|file tree\" web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"yyork-file-preview-header|yyork-file-preview-pane|FileTreeSidebarToggle|FileTreeExpansionToggle|ResizablePanel|CanvasFilesPanel|file tree\" web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -7438,8 +7438,8 @@ tool_use exec_command
 id: call_U7WoRBKRBvcm6J7XNFj4GnD8
 ```json
 {
-  "cmd": "rg -n \"yyork.*preview|file preview|CodeView|portless|stale\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"yyork.*preview|file preview|CodeView|portless|stale\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -7455,27 +7455,27 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 559
 Output:
-web/src/features/home/components/organisms/canvas-panel.tsx:29:  ResizablePanel,
-web/src/features/home/components/organisms/canvas-panel.tsx:30:  ResizablePanelGroup,
-web/src/features/home/components/organisms/canvas-panel.tsx:192:          <CanvasFilesPanel
-web/src/features/home/components/organisms/canvas-panel.tsx:219:function CanvasFilesPanel(props: {
-web/src/features/home/components/organisms/canvas-panel.tsx:262:            : 'The selected workspace file tree could not be loaded.'
-web/src/features/home/components/organisms/canvas-panel.tsx:346:    <ResizablePanelGroup
-web/src/features/home/components/organisms/canvas-panel.tsx:352:      <ResizablePanel
-web/src/features/home/components/organisms/canvas-panel.tsx:358:      </ResizablePanel>
-web/src/features/home/components/organisms/canvas-panel.tsx:360:      <ResizablePanel
-web/src/features/home/components/organisms/canvas-panel.tsx:368:          aria-label="Workspace file tree"
-web/src/features/home/components/organisms/canvas-panel.tsx:372:            <FileTreeExpansionToggle
-web/src/features/home/components/organisms/canvas-panel.tsx:377:            <FileTreeSidebarToggle
-web/src/features/home/components/organisms/canvas-panel.tsx:388:      </ResizablePanel>
-web/src/features/home/components/organisms/canvas-panel.tsx:389:    </ResizablePanelGroup>
-web/src/features/home/components/organisms/canvas-panel.tsx:416:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
-web/src/features/home/components/organisms/canvas-panel.tsx:419:        <div className="yyork-file-preview-header">
-web/src/features/home/components/organisms/canvas-panel.tsx:422:            <FileTreeSidebarToggle
-web/src/features/home/components/organisms/canvas-panel.tsx:430:          <FileTreeSidebarToggle
-web/src/features/home/components/organisms/canvas-panel.tsx:483:function FileTreeSidebarToggle(props: {
-web/src/features/home/components/organisms/canvas-panel.tsx:487:  const label = props.fileTreeOpen ? 'Hide file tree' : 'Show file tree';
-web/src/features/home/components/organisms/canvas-panel.tsx:519:function FileTreeExpansionToggle(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:29:  ResizablePanel,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:30:  ResizablePanelGroup,
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:192:          <CanvasFilesPanel
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:219:function CanvasFilesPanel(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:262:            : 'The selected workspace file tree could not be loaded.'
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:346:    <ResizablePanelGroup
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:352:      <ResizablePanel
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:358:      </ResizablePanel>
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:360:      <ResizablePanel
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:368:          aria-label="Workspace file tree"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:372:            <FileTreeExpansionToggle
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:377:            <FileTreeSidebarToggle
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:388:      </ResizablePanel>
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:389:    </ResizablePanelGroup>
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:416:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:419:        <div className="yyork-file-preview-header">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:422:            <FileTreeSidebarToggle
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:430:          <FileTreeSidebarToggle
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:483:function FileTreeSidebarToggle(props: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:487:  const label = props.fileTreeOpen ? 'Hide file tree' : 'Show file tree';
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:519:function FileTreeExpansionToggle(props: {
 web/src/styles/app.css:317:.yyork-file-preview-pane {
 web/src/styles/app.css:335:.yyork-file-preview-header {
 
@@ -7493,11 +7493,11 @@ Original token count: 2986
 Output:
 1:# Task Group: `Projects/yyork` in-app browser readiness, Agentation delivery, portless routing, and bundled Browser plugin internals [chronicle memory]
 2:scope: Use for recent `yyork` work around the Browser tab/IAB path, Agentation annotation delivery, portless-backed local routing, and local inspection of Codex’s bundled Browser plugin files when the user is tracing the real control path or debugging why preview behavior differs from the expected proxied app.
-3:applies_to: cwd=/Users/tanishqpalandurkar/Projects/yyork plus local Browser-plugin cache paths under /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/*; reuse_rule=safe for similar yyork browser-preview and local Browser-plugin forensics on this machine, but re-open the current `yyork` dev scripts, preview host wiring, and installed plugin version before claiming exact runtime behavior
-32:- extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md, updated_at=2026-06-09T03:26:00+00:00, thread_id=None, portless-backed route shape, stale raw listener cleanup, missing preview asset, and dev-mode patch direction) [chronicle memory]
-33:- extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md, updated_at=2026-06-09T03:16:00+00:00, thread_id=None, stale server/proxy diagnosis, `508 LOOP DETECTED`, and direct-loopback-vs-preview-proxy distinction) [chronicle memory]
-34:- extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md, updated_at=2026-06-07T23:32:00+00:00, thread_id=None, early `yyork-portless` route/service validation and detached dev-session context) [chronicle memory]
-35:- extensions/chronicle/resources/2026-06-07T23-22-00-FhhB-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T23-22-00-FhhB-10min-memory-summary.md, updated_at=2026-06-07T23:22:00+00:00, thread_id=None, `~/.portless` ownership fix, `routes.json` context, and shift from direct local port to Portless-backed routing) […]
+3:applies_to: cwd=/home/<USER>/Projects/yyork plus local Browser-plugin cache paths under /home/<USER>/.codex/plugins/cache/openai-bundled/browser/*; reuse_rule=safe for similar yyork browser-preview and local Browser-plugin forensics on this machine, but re-open the current `yyork` dev scripts, preview host wiring, and installed plugin version before claiming exact runtime behavior
+32:- extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-09T03-26-00-AQhM-10min-memory-summary.md, updated_at=2026-06-09T03:26:00+00:00, thread_id=None, portless-backed route shape, stale raw listener cleanup, missing preview asset, and dev-mode patch direction) [chronicle memory]
+33:- extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-09T03-16-00-bOOV-10min-memory-summary.md, updated_at=2026-06-09T03:16:00+00:00, thread_id=None, stale server/proxy diagnosis, `508 LOOP DETECTED`, and direct-loopback-vs-preview-proxy distinction) [chronicle memory]
+34:- extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T23-32-00-BFRR-10min-memory-summary.md, updated_at=2026-06-07T23:32:00+00:00, thread_id=None, early `yyork-portless` route/service validation and detached dev-session context) [chronicle memory]
+35:- extensions/chronicle/resources/2026-06-07T23-22-00-FhhB-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T23-22-00-FhhB-10min-memory-summary.md, updated_at=2026-06-07T23:22:00+00:00, thread_id=None, `~/.portless` ownership fix, `routes.json` context, and shift from direct local port to Portless-backed routing) […]
 
 > AGENT
 
@@ -7509,8 +7509,8 @@ tool_use exec_command
 id: call_wwYf6nx0BRkaABKXGs7xVIGF
 ```json
 {
-  "cmd": "sed -n '219,455p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '219,455p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -7522,8 +7522,8 @@ tool_use exec_command
 id: call_O7PKn52EBDZklnCEDk8adyjZ
 ```json
 {
-  "cmd": "sed -n '455,565p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '455,565p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -7536,7 +7536,7 @@ id: call_t8FmRs7xOFCyWJToCatPOSww
 ```json
 {
   "cmd": "sed -n '317,382p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -7826,7 +7826,7 @@ tool_use js
 id: call_LCDrNNb7s4j2Y1eFk15Ig4hb
 ```json
 {
-  "code": "if (!globalThis.browser) {\n  const mod = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\n  await mod.setupBrowserRuntime({ globals: globalThis });\n  globalThis.browser = await agent.browsers.get('iab');\n}\nglobalThis.tab = await browser.tabs.selected();\nvar measureHeaderState = async (label) => {\n  return await globalThis.tab.playwright.evaluate((label) => {\n    const header = document.querySelector('.yyork-file-preview-header');\n    const body = document.querySelector('.yyork-file-preview-body');\n    const previewPane = document.querySelector('.yyork-file-preview-pane');\n    const treePane = document.querySelector('.yyork-file-tree-pane');\n    const buttons = Array.from(document.querySelectorAll('button[aria-label]')).map((button) => {\n      const rect = button.getBoundingClientRect();\n      return {\n        label: button.getAttribute('aria-label'),\n        width: rect.width,\n        height: rect.height,\n        parentClass: button.parentElement?.className || '',\n      };\n    });\n    const headerStyle = header ? getComputedStyle(header) : null;\n    const headerRect = header?.getBoundingClientRect();\n    const bodyRect = body?.getBoundingClientRect();\n    const paneRect = previewPane?.getBoundingClientRect();\n    return {\n      label,\n      fileTreeOpen: Boolean(treePane),\n      headerHeight: headerRect?.height,\n      headerTop: headerRect?.top,\n      headerBottom: headerRect?.bottom,\n      bodyTop: bodyRect?.top,\n      paneWidth: paneRect?.width,\n      padding: headerStyle ? [headerStyle.paddingTop, headerStyle.paddingRight, headerStyle.paddingBottom, headerStyle.paddingLeft] : null,\n      alignItems: headerStyle?.alignItems,\n      buttons,\n    };\n  }, label);\n};\nvar beforeHeaderMeasure = await measureHeaderState('before');\nnodeRepl.write(JSON.stringify(beforeHeaderMeasure, null, 2));",
+  "code": "if (!globalThis.browser) {\n  const mod = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\n  await mod.setupBrowserRuntime({ globals: globalThis });\n  globalThis.browser = await agent.browsers.get('iab');\n}\nglobalThis.tab = await browser.tabs.selected();\nvar measureHeaderState = async (label) => {\n  return await globalThis.tab.playwright.evaluate((label) => {\n    const header = document.querySelector('.yyork-file-preview-header');\n    const body = document.querySelector('.yyork-file-preview-body');\n    const previewPane = document.querySelector('.yyork-file-preview-pane');\n    const treePane = document.querySelector('.yyork-file-tree-pane');\n    const buttons = Array.from(document.querySelectorAll('button[aria-label]')).map((button) => {\n      const rect = button.getBoundingClientRect();\n      return {\n        label: button.getAttribute('aria-label'),\n        width: rect.width,\n        height: rect.height,\n        parentClass: button.parentElement?.className || '',\n      };\n    });\n    const headerStyle = header ? getComputedStyle(header) : null;\n    const headerRect = header?.getBoundingClientRect();\n    const bodyRect = body?.getBoundingClientRect();\n    const paneRect = previewPane?.getBoundingClientRect();\n    return {\n      label,\n      fileTreeOpen: Boolean(treePane),\n      headerHeight: headerRect?.height,\n      headerTop: headerRect?.top,\n      headerBottom: headerRect?.bottom,\n      bodyTop: bodyRect?.top,\n      paneWidth: paneRect?.width,\n      padding: headerStyle ? [headerStyle.paddingTop, headerStyle.paddingRight, headerStyle.paddingBottom, headerStyle.paddingLeft] : null,\n      alignItems: headerStyle?.alignItems,\n      buttons,\n    };\n  }, label);\n};\nvar beforeHeaderMeasure = await measureHeaderState('before');\nnodeRepl.write(JSON.stringify(beforeHeaderMeasure, null, 2));",
   "timeout_ms": 30000,
   "title": "Measure header current state"
 }
@@ -7880,8 +7880,8 @@ tool_use exec_command
 id: call_rddlTBpQzEFzQrAkvtfyqFmp
 ```json
 {
-  "cmd": "git diff --check -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff --check -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -7894,7 +7894,7 @@ id: call_yUjuRvl2wFLZtClSWDTuBoaI
 ```json
 {
   "cmd": "pnpm --dir web exec tsc --noEmit",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -8016,7 +8016,7 @@ id: call_qpR5Hi6oGqLWZBRjc9G4OWe2
 ```json
 {
   "cmd": "pnpm --dir web run lint",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -8034,15 +8034,15 @@ Original token count: 154
 Output:
 [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
 
-> @yyork/web@0.0.1 lint /Users/tanishqpalandurkar/Projects/yyork/web
+> @yyork/web@0.0.1 lint /home/<USER>/Projects/yyork/web
 > run-p lint:*
 
 
-> @yyork/web@0.0.1 lint:ts /Users/tanishqpalandurkar/Projects/yyork/web
+> @yyork/web@0.0.1 lint:ts /home/<USER>/Projects/yyork/web
 > tsc --noEmit
 
 
-> @yyork/web@0.0.1 lint:oxlint /Users/tanishqpalandurkar/Projects/yyork/web
+> @yyork/web@0.0.1 lint:oxlint /home/<USER>/Projects/yyork/web
 > oxlint --fix --ignore-pattern public/storybook --ignore-pattern dist .
 
 Found 0 warnings and 0 errors.
@@ -8060,8 +8060,8 @@ tool_use exec_command
 id: call_BdBROCagE9kF8TpwCCNV6oTH
 ```json
 {
-  "cmd": "git diff -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git diff -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -8073,8 +8073,8 @@ tool_use exec_command
 id: call_c63HF294Jeg2Shszg07jIEOP
 ```json
 {
-  "cmd": "git status --short -- web/src/features/home/components/organisms/canvas-panel.tsx web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "git status --short -- web/src/features/home/<USER>/organisms/canvas-panel.tsx web/src/styles/app.css",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -8090,10 +8090,10 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 7938
 Output:
-diff --git a/web/src/features/home/components/organisms/canvas-panel.tsx b/web/src/features/home/components/organisms/canvas-panel.tsx
+diff --git a/web/src/features/home/<USER>/organisms/canvas-panel.tsx b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 index bee33e6..9726ace 100644
---- a/web/src/features/home/components/organisms/canvas-panel.tsx
-+++ b/web/src/features/home/components/organisms/canvas-panel.tsx
+--- a/web/src/features/home/<USER>/organisms/canvas-panel.tsx
++++ b/web/src/features/home/<USER>/organisms/canvas-panel.tsx
 @@ -1,19 +1,176 @@
 +import {
 +  CodeView,
@@ -8133,21 +8133,21 @@ index bee33e6..9726ace 100644
 +  TooltipTrigger,
 +} from '@/components/ui/tooltip';
  
- import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-+import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+ import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
++import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
 +import {
 +  type SessionFileContent,
 +  sessionFileContentQueryOptions,
 +  sessionFilesQueryOptions,
-+} from '@/features/home/data/session-files';
-+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
++} from '@/features/home/<USER>/session-files';
++import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 +import {
 +  type CanvasTab,
 +  isCanvasTab,
-+} from '@/features/home/domain/canvas-tabs';
++} from '@/features/home/<USER>/canvas-tabs';
  
 -export type CanvasTab = 'files' | 'review' | 'browser';
-+export type { CanvasTab } from '@/features/home/domain/canvas-tabs'; […]
++export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs'; […]
 
 > TOOL
 
@@ -8159,7 +8159,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 23
 Output:
- M web/src/features/home/components/organisms/canvas-panel.tsx
+ M web/src/features/home/<USER>/organisms/canvas-panel.tsx
  M web/src/styles/app.css
 
 ```
@@ -8174,8 +8174,8 @@ tool_use exec_command
 id: call_w2lb8PcDAkbj1RW5xqEwEjfc
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/organisms/canvas-panel.tsx | sed -n '408,438p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/organisms/canvas-panel.tsx | sed -n '408,438p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -8188,7 +8188,7 @@ id: call_WUykavwulfB2sALgGI41T0TH
 ```json
 {
   "cmd": "nl -ba web/src/styles/app.css | sed -n '330,365p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -8296,8 +8296,8 @@ Open tree: preview header contains only the filename text, so height is roughly 
 Closed tree: preview header also contained the 36x36 “Show file tree” button in normal flex flow, so the row became `36px button + 12px + 12px`. That made it look like the header padding changed.
 
 I fixed it by taking that collapsed-state button out of layout flow while keeping it visually inside the header at 36x36:
-[canvas-panel.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/organisms/canvas-panel.tsx:419)
-[app.css](/Users/tanishqpalandurkar/Projects/yyork/web/src/styles/app.css:335)
+[canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:419)
+[app.css](/home/<USER>/Projects/yyork/web/src/styles/app.css:335)
 
 Checks passed: `git diff --check`, `pnpm --dir web exec tsc --noEmit`, and `pnpm --dir web run lint`.
 

@@ -1,1 +1,8 @@
-{"point_id": "019e3e97-32b7-79d1-9430-fe0279854daa#51", "developer": "gh:jhoetter", "condition": "noprofile", "real": "is it exhaustive?", "prev_agent": "Created [performance-quality-tracker.md](/Users/jhoetter/repos/bim-ai/spec/performance-quality-tracker.md).\n\nIt includes the measured baselines, school-style grades, backend/frontend architectural findings, milestone plan, and a detailed backlog across command latency, room derivation, evidence package, websocket bootstrap, projection/schedule caching, frontend selectors, 2D/3D interaction performance, bundle size, and CI perf gates.\n\nNo tests were needed; this was a spec-only addition.", "gold_move": null}
+{
+  "point_id": "019e3e97-32b7-79d1-9430-fe0279854daa#51",
+  "developer": "gh:jhoetter",
+  "condition": "noprofile",
+  "real": "is it exhaustive?",
+  "prev_agent": "Created [performance-quality-tracker.md](/home/<USER>/repos/bim-ai/spec/performance-quality-tracker.md).\n\nIt includes the measured baselines, school-style grades, backend/frontend architectural findings, milestone plan, and a detailed backlog across command latency, room derivation, evidence package, websocket bootstrap, projection/schedule caching, frontend selectors, 2D/3D interaction performance, bundle size, and CI perf gates.\n\nNo tests were needed; this was a spec-only addition.",
+  "gold_move": null
+}

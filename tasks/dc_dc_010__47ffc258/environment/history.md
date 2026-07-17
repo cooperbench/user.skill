@@ -507,7 +507,7 @@ tool_use exec_command
 
 tool_use exec_command
 ```json
-{'cmd': "jq '{mode, generated_at, language, dimensions, reviewable_file_count: (.reviewable_files|length), all_file_count: (.all_files|length), system_prompt_present: (.system_prompt!=null), holistic_context_keys: (.holistic_context|keys)}' .desloppify/review_packet_blind.json", 'workdir': '/Users/p
+{'cmd': "jq '{mode, generated_at, language, dimensions, reviewable_file_count: (.reviewable_files|length), all_file_count: (.all_files|length), system_prompt_present: (.system_prompt!=null), holistic_context_keys: (.holistic_context|keys)}' .desloppify/review_packet_blind.json", 'workdir': '/home/<USER>
 ```
 
 > TOOL

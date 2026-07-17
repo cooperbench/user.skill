@@ -39,7 +39,7 @@ tool_use Read
 id: toolu_01QRrGVXLWUMGxUMicMe23wP
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go"
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go"
 }
 ```
 

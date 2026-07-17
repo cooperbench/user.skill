@@ -188,7 +188,7 @@ tool_result
 id: toolu_0168JNYjFRRMt3bJau9P1NPA
 ```
 commit 2e68a65072af6db79c5fe8cc921917bbd81f3565
-Author: Thies C. Arntzen <thieso@gmail.com>
+Author: Thies C. Arntzen <<REDACTED_EMAIL>>
 Date:   Wed May 6 14:05:13 2026 +0000
 
     Show DNS records in sandbox list
@@ -217,7 +217,7 @@ tool_result
 id: toolu_01UDErBKFt5wLbU9rs91Nkj4
 ```
 commit 2e68a65072af6db79c5fe8cc921917bbd81f3565
-Author: Thies C. Arntzen <thieso@gmail.com>
+Author: Thies C. Arntzen <<REDACTED_EMAIL>>
 Date:   Wed May 6 14:05:13 2026 +0000
 
     Show DNS records in sandbox list
@@ -714,7 +714,7 @@ tool_use Bash
 id: toolu_013gmVednh3bN8a2LTKi3dqm
 ```json
 {
-  "command": "git -C /persisted/Projects/Sandcastle/vendor/sandcastle-cli add cmd/tui.go && git -C /persisted/Projects/Sandcastle/vendor/sandcastle-cli commit -m \"$(cat <<'EOF'\nShow DNS records in TUI sandbox list\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /persisted/Projects/Sandcastle/vendor/sandcastle-cli add cmd/tui.go && git -C /persisted/Projects/Sandcastle/vendor/sandcastle-cli commit -m \"$(cat <<'EOF'\nShow DNS records in TUI sandbox list\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit tui.go change"
 }
 ```

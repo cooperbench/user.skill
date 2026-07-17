@@ -142,7 +142,7 @@ tool_result
 id: toolu_01UKwwTQKwgypSEsrmCZPMh7
 ```
 commit e4e7490b1a27c5bee2d76dcacf03e9c22bb5b2d6
-Author: kmiki0 <127822545+kmiki0@users.noreply.github.com>
+Author: kmiki0 <<REDACTED_EMAIL>>
 Date:   Sat Apr 25 10:18:53 2026 +0900
 
     feat: F2キーでラベル編集 + パネル一括開閉ボタン (#49, #48)
@@ -151,7 +151,7 @@ Date:   Sat Apr 25 10:18:53 2026 +0900
     - ツールバーにMaximize2/Minimize2ボタンで両サイドパネルの一括開閉
     - ヘルプパネル・i18nにF2ショートカット追加
     
-    Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: ce162cf5cb54
 
  src/components/canvas/FlowCanvas.tsx   |  1 +
@@ -165,7 +165,7 @@ Date:   Sat Apr 25 10:18:53 2026 +0900
  8 files changed, 83 insertions(+), 3 deletions(-)
 ====
 commit cc8e6339b569c827d2da8f9d2903d71e9286eee5
-Author: kmiki0 <127822545+kmiki0@users.noreply.github.com>
+Author: kmiki0 <<REDACTED_EMAIL>>
 Date:   Sat Apr 25 10:54:45 2026 +0900
 
     fix: 初回ノード配置時にキャンバスのズームが変わる問題を修正
@@ -173,14 +173,14 @@ Date:   Sat Apr 25 10:54:45 2026 +0900
     ReactFlowのfitView propを削除。空キャンバスに初めてノードを配置した際に
     保留中のfitViewが発動してズームレベルが変わっていた。
     
-    Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: 74c25d264bdb
 
  src/components/canvas/FlowCanvas.tsx | 1 -
  1 file changed, 1 deletion(-)
 ====
 commit 6de88ad44e7c1a088734f4f093d726a177f7aaa4
-Author: kmiki0 <127822545+kmiki0@users.noreply.github.com>
+Author: kmiki0 <<REDACTED_EMAIL>>
 Date:   Sat Apr 25 10:59:49 2026 +0900
 
     fix: Mermaid Importのプレースホルダーを flowchart TD に更新 (#25)
@@ -188,7 +188,7 @@ Date:   Sat Apr 25 10:59:49 2026 +0900
     パーサーは既にflowchart/graph両方に対応済み。
     プレースホルダーテキストをflowchart形式に統一。
     
-    Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: 90631e60d403
 
  src/components/layout/MermaidImportDialog.tsx | 2 +-
@@ -254,7 +254,7 @@ tool_use Bash
 id: toolu_0187c6BaCnFNGYtjnxxa6FCa
 ```json
 {
-  "command": "git add specs/references/modern-swatch-picker.jsx specs/references/petal-picker.jsx && git commit -m \"$(cat <<'EOF'\nchore: カラーピッカー参考実装を specs/references/ に追加\n\nmodern-swatch-picker.jsx と petal-picker.jsx を参考資料として保存。\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add specs/references/modern-swatch-picker.jsx specs/references/petal-picker.jsx && git commit -m \"$(cat <<'EOF'\nchore: カラーピッカー参考実装を specs/references/ に追加\n\nmodern-swatch-picker.jsx と petal-picker.jsx を参考資料として保存。\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit reference color picker files"
 }
 ```
@@ -16669,7 +16669,7 @@ tool_use Bash
 id: toolu_016tba3K44idqGWWbryMFuqL
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nfeat: Nodemaidノードエディタモード（Phase 1-2）\n\nFlowmaidにノードエディタモード「Nodemaid」を追加。\nフローチャートモードとトグルスイッチで切替可能。\nER図のテーブル定義・カラム編集・カーディナリティ設定・\nエクスポート/インポート(.nodeeditor)に対応。\n\n主な機能:\n- モード切替トグル（スライディングピル）\n- カード型ノード（Generic/Service/Table）\n- テーブルノード: カラム直接編集、PK/FK/NN/UQ制約、論理名/物理名切替\n- テーブル詳細編集モーダル（D&Dカラム並替、チェックボックス制約）\n- ポート間エッジ接続（ホバーハンドル、接続済み常時表示）\n- エッジ右クリックでカーディナリティ設定（1:1, 1:N, N:M, 0:1, 0:N）\n- フォーマットバー（色・枠線スタイル、ピン固定）\n- Ctrl+C/V コピー&ペースト、Ctrl+Z/Shift+Z undo/redo\n- .nodeeditor エクスポート/インポート\n- zustand+zundo独立ストア、localStorage自動保存\n- i18n対応（日本語/英語）\n\nアーキテクチャ:\n- src/features/node-editor/ に完全隔離（既存コード変更最小限）\n- src/shared/components/ に共通UI（ModeTitle, ColorDropdown）\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nfeat: Nodemaidノードエディタモード（Phase 1-2）\n\nFlowmaidにノードエディタモード「Nodemaid」を追加。\nフローチャートモードとトグルスイッチで切替可能。\nER図のテーブル定義・カラム編集・カーディナリティ設定・\nエクスポート/インポート(.nodeeditor)に対応。\n\n主な機能:\n- モード切替トグル（スライディングピル）\n- カード型ノード（Generic/Service/Table）\n- テーブルノード: カラム直接編集、PK/FK/NN/UQ制約、論理名/物理名切替\n- テーブル詳細編集モーダル（D&Dカラム並替、チェックボックス制約）\n- ポート間エッジ接続（ホバーハンドル、接続済み常時表示）\n- エッジ右クリックでカーディナリティ設定（1:1, 1:N, N:M, 0:1, 0:N）\n- フォーマットバー（色・枠線スタイル、ピン固定）\n- Ctrl+C/V コピー&ペースト、Ctrl+Z/Shift+Z undo/redo\n- .nodeeditor エクスポート/インポート\n- zustand+zundo独立ストア、localStorage自動保存\n- i18n対応（日本語/英語）\n\nアーキテクチャ:\n- src/features/node-editor/ に完全隔離（既存コード変更最小限）\n- src/shared/components/ に共通UI（ModeTitle, ColorDropdown）\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit node editor changes"
 }
 ```
@@ -16789,7 +16789,7 @@ tool_use Bash
 id: toolu_01XKcL4ByAAGvWh52P7oHYhf
 ```json
 {
-  "command": "git remote set-url origin git@github.com:kmiki0/flowmaid.git && git push",
+  "command": "git remote set-url origin <REDACTED_EMAIL>:kmiki0/flowmaid.git && git push",
   "description": "Switch to SSH and push"
 }
 ```
@@ -17066,7 +17066,7 @@ tool_use Bash
 id: toolu_01G4dwqNYyYSM9PojFDUZk9C
 ```json
 {
-  "command": "git add CHANGELOG.md && git commit -m \"$(cat <<'EOF'\nrelease: v0.5.0\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git tag v0.5.0 && git push origin main --follow-tags",
+  "command": "git add CHANGELOG.md && git commit -m \"$(cat <<'EOF'\nrelease: v0.5.0\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git tag v0.5.0 && git push origin main --follow-tags",
   "description": "Commit, tag and push release"
 }
 ```

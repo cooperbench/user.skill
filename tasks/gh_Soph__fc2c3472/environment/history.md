@@ -46,7 +46,7 @@ tool_result
 id: toolu_01BmvRgWJdmc6s5GR7Vg9GsP
 ```
 27e145fd gitproto: document the orig-path keying choice on challengeURLFor
-/Users/soph/Work/entire/devenv/git-sync
+/home/<USER>/Work/entire/devenv/git-sync
 CHANGELOG.md
 client_test.go
 client.go
@@ -185,9 +185,9 @@ id: toolu_01Tu5U8zf3Y4B4fUb49T4jeR
 tool_result
 id: toolu_01Tu5U8zf3Y4B4fUb49T4jeR
 ```
-lint	UNKNOWN STEP	2026-05-29T15:32:19.6798141Z   GOBIN: /home/runner/.local/share/mise/installs/go/1.26.2/bin
-lint	UNKNOWN STEP	2026-05-29T15:32:19.6798556Z   GOROOT: /home/runner/.local/share/mise/installs/go/1.26.2
-lint	UNKNOWN STEP	2026-05-29T15:32:19.6801029Z   PATH: /home/runner/.local/share/mise/installs/go/1.26.2/bin:/home/runner/.local/share/mise/installs/golangci-lint/2.11.4/golangci-lint-2.11.4-linux-amd64:/home/runner/.local/share/mise/installs/shellcheck/latest/shellcheck-v0.11.0:/home/runner/.local/share/mise/shims:/home/runner/.local/share/mise/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.26.3/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+lint	UNKNOWN STEP	2026-05-29T15:32:19.6798141Z   GOBIN: /home/<USER>/.local/share/mise/installs/go/1.26.2/bin
+lint	UNKNOWN STEP	2026-05-29T15:32:19.6798556Z   GOROOT: /home/<USER>/.local/share/mise/installs/go/1.26.2
+lint	UNKNOWN STEP	2026-05-29T15:32:19.6801029Z   PATH: /home/<USER>/.local/share/mise/installs/go/1.26.2/bin:/home/<USER>/.local/share/mise/installs/golangci-lint/2.11.4/golangci-lint-2.11.4-linux-amd64:/home/<USER>/.local/share/mise/installs/shellcheck/latest/shellcheck-v0.11.0:/home/<USER>/.local/share/mise/shims:/home/<USER>/.local/share/mise/bin:/home/<USER>/go/bin:/opt/hostedtoolcache/go/1.26.3/x64/bin:/snap/bin:/home/<USER>/.local/bin:/opt/pipx_bin:/home/<USER>/.cargo/bin:/home/<USER>/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/<USER>/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 lint	UNKNOWN STEP	2026-05-29T15:32:19.6803100Z ##[endgroup]
 lint	UNKNOWN STEP	2026-05-29T15:32:19.7115748Z ^[[38;5;14m[lint:gofmt]^[[0m ^[[1m$ ~/work/git-sync/git-sync/mise-tasks/lint/gofmt^[[0m
 lint	UNKNOWN STEP	2026-05-29T15:32:19.7140153Z ^[[32m^[[1m[lint:shellcheck]^[[0m ^[[1m$ ~/work/git-sync/git-sync/mise-tasks/lint/shellcheck^[[0m

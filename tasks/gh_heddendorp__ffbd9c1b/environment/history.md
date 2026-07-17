@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/hedde/.codex/worktrees/5671/evorto
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/5671/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -47,13 +47,13 @@ More specific guidance may exist deeper in […]
 
 > DEVELOPER
 
-Create a new PR on top of codex/pr62-split-06-browser-transport-blocker with update for all dependencies, research all of the changes and migrations that might be needed and [$grill-with-docs](/Users/hedde/.agents/skills/grill-with-docs/SKILL.md) on any decisions that have to be taken
+Create a new PR on top of codex/pr62-split-06-browser-transport-blocker with update for all dependencies, research all of the changes and migrations that might be needed and [$grill-with-docs](/home/<USER>/.agents/skills/grill-with-docs/SKILL.md) on any decisions that have to be taken
 
 > SYSTEM
 
 <skill>
 <name>grill-with-docs</name>
-<path>/Users/hedde/.agents/skills/grill-with-docs/SKILL.md</path>
+<path>/home/<USER>/.agents/skills/grill-with-docs/SKILL.md</path>
 ---
 name: grill-with-docs
 description: Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates documentation (CONTEXT.md, ADRs) inline as decisions crystallise. Use when user wants to stress-test a plan against their project's language and documented decisions.
@@ -112,8 +112,8 @@ tool_use exec_command
 id: call_wruUgkRG8y2MwkHawx7Stz9I
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/hedde/.agents/skills/grill-with-docs/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "cmd": "sed -n '1,240p' /home/<USER>/.agents/skills/grill-with-docs/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -125,8 +125,8 @@ tool_use exec_command
 id: call_iB1dumxxMk9KKGsKcpJYqyfN
 ```json
 {
-  "cmd": "rg -n \"dependency|dependencies|codex/pr62|PR62|pr62|evorto\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "cmd": "rg -n \"dependency|dependencies|codex/pr62|PR62|pr62|evorto\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -139,7 +139,7 @@ id: call_I8LYNhPBhQeEZNjyg1K6fTEf
 ```json
 {
   "cmd": "pwd && rg --files -g 'AGENTS.md' -g 'PRODUCT.md' -g 'ARCHITECTURE.md' -g 'QUALITY.md' -g 'CONTEXT.md' -g 'CONTEXT-MAP.md' -g 'docs/adr/*.md' -g 'package.json' -g 'bun.lock' -g '.changeset/*.md'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -211,9 +211,9 @@ Output:
 83:- Symptom: Biome exhaustive-deps rejects the first chart-range cleanup fix. Cause: hover reset lived in `useEffect([rangeMode])`. Fix: move the reset directly into the range button handler instead of dependency-driven cleanup. [Task 4]
 86:# Task Group: evorto / stacked PR verification and PR body readiness
 88:scope: Re-verify stacked PR readiness in `evorto-app/app`, inspect CI/review-thread state deeply, and update PR descriptions with validation guidance; use for stacked-review verification or PR-body refresh work, not for unrelated feature delivery in the repo.
-89:applies_to: cwd=/Users/hedde/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked-PR verification workflows across similar worktrees, but treat exact PR numbers, CI failures, and file counts as time-specific evidence.
+89:applies_to: cwd=/home/<USER>/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked-PR verification workflows across similar worktrees, but treat exact PR numbers, CI failures, and file counts as time-specific evidence.
 91:## Task 1: Re-verify the PR62 split stack, uncover the real blocker, and prepare PR bodies for validation-oriented rewrites, partial
-95:- rollout_summaries/2026-06-22T06-28-26-6Mwf-evorto_pr62_split_stack_reverify_and_pr_body_update.md (cwd=/Users/hedde/.codex/worktrees/d0b2/evorto, rollout_path=/Users/hedde/.codex/sessions/2026/06/22/rollout-2026-06-22T08-28-26-019eee04-186b-7b81-9d8d-04cc08e75aff.jsonl, updated_at=2026-06-22T23:49:25+00:00, thread_id=019eee04-186b-7b81-9d8d-04cc08e75aff, stack was rechecked end-to-end but PR63 still ended on docs-baseline failures)
+95:- rollout_summaries/2026-06-22T06-28-26-6Mwf-evorto_pr62_split_stack_reverify_and_pr_body_update.md (cwd=/home/<USER>/.codex/worktrees/d0b2/evorto, rollout_path=/home/<USER>/.codex/sessions/2026/06/22/rollout-2026-06-22T08-28-26-019eee04-186b-7b81-9d8d-04cc08e75aff.jsonl, updated_at=2026-06-22T23:49:25+00:00, thread_id=019eee04-186b-7b81-9d8d-04cc08e75aff, stack was rechecked end-to-end but PR63 still ended on docs-baseline failures)
 99:- github-pr, gh pr view, reviewThreads, gh run watch, PR62, PR63, docs-baseline, templates.test.ts, EventConflictError, current state, STABILIZATION.md, file cap, local validation instructions
 105:- For `evorto-app/app` relaunch stack work, do not add or maintain migration code in this stack; develop against […]
 
@@ -227,7 +227,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 625
 Output:
-/Users/hedde/.codex/worktrees/5671/evorto
+/home/<USER>/.codex/worktrees/5671/evorto
 src/db/AGENTS.md
 src/server/AGENTS.md
 package.json
@@ -304,8 +304,8 @@ tool_use exec_command
 id: call_sSJZ4WWxpT6mokz70PwqoAwy
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.agents/skills/CONTEXT-FORMAT.md",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/CONTEXT-FORMAT.md",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -317,8 +317,8 @@ tool_use exec_command
 id: call_3PxbfZJXX1LnpBB6JIR0fvop
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.agents/skills/ADR-FORMAT.md",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/ADR-FORMAT.md",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -331,7 +331,7 @@ id: call_jJKByn3am1kSoKo8atjoN1K4
 ```json
 {
   "cmd": "git status --short --branch && git branch --show-current && git rev-parse --abbrev-ref HEAD && git rev-parse HEAD && git merge-base HEAD origin/codex/pr62-split-06-browser-transport-blocker 2>/dev/null || true",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -344,7 +344,7 @@ id: call_bjXlFvVnrePw6kf1aeW5ZKqK
 ```json
 {
   "cmd": "sed -n '1,240p' PRODUCT.md && sed -n '1,260p' ARCHITECTURE.md && sed -n '1,260p' QUALITY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -360,7 +360,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 20
 Output:
-sed: /Users/hedde/.agents/skills/CONTEXT-FORMAT.md: No such file or directory
+sed: /home/<USER>/.agents/skills/CONTEXT-FORMAT.md: No such file or directory
 
 ```
 
@@ -374,7 +374,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 19
 Output:
-sed: /Users/hedde/.agents/skills/ADR-FORMAT.md: No such file or directory
+sed: /home/<USER>/.agents/skills/ADR-FORMAT.md: No such file or directory
 
 ```
 
@@ -434,8 +434,8 @@ tool_use exec_command
 id: call_G1rx8b8bzIsYs9NomxZZbU4R
 ```json
 {
-  "cmd": "ls -la /Users/hedde/.agents/skills/grill-with-docs /Users/hedde/.agents/skills",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "cmd": "ls -la /home/<USER>/.agents/skills/grill-with-docs /home/<USER>/.agents/skills",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -448,7 +448,7 @@ id: call_dLQnjv7uZQx19vQv53T3MSAC
 ```json
 {
   "cmd": "sed -n '1,260p' package.json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -461,7 +461,7 @@ id: call_btIkG72eREKB5KC9lMHGllDT
 ```json
 {
   "cmd": "rg -n \"catalog|workspace|patchedDependencies|overrides|trustedDependencies|minimumReleaseAge|packageManager|dependencies|devDependencies|peerDependencies\" package.json bunfig.toml .npmrc .yarnrc.yml pnpm-workspace.yaml bun.lockb bun.lock 2>/dev/null",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -474,7 +474,7 @@ id: call_jJKpZL9ONz8kdwlTjZuDQg25
 ```json
 {
   "cmd": "find . -path './repos' -prune -o -path './node_modules' -prune -o -name package.json -print",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -490,7 +490,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 665
 Output:
-/Users/hedde/.agents/skills:
+/home/<USER>/.agents/skills:
 total 8
 drwxr-xr-x@ 37 hedde  staff  1184 Jun 25 09:48 .
 drwxr-xr-x@  4 hedde  staff   128 Jan 24 14:04 ..
@@ -539,7 +539,7 @@ Output:
     "test:e2e": "bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-baseline",
     "test:e2e:ui": "bun run env:runtime && dotenv -c dev -- playwright test --ui",
     "test:e2e:docs": "bun run env:runtime && dotenv -c dev -- playwright test --project=docs-baseline",
-    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
+    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
     "test:e2e:install": "playwright install",
     "test:e2e:report": "playwright show-report",
     "db:push": "bun run env:runtime && dotenv -c dev -- drizzle-kit push --force",
@@ -602,8 +602,8 @@ tool_use exec_command
 id: call_t7DpWoQ31iWomenS9lEUDYsO
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/hedde/.agents/skills/grill-with-docs/CONTEXT-FORMAT.md",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/grill-with-docs/CONTEXT-FORMAT.md",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -615,8 +615,8 @@ tool_use exec_command
 id: call_aDLPTckm5mYyPnMdAn8BsxfQ
 ```json
 {
-  "cmd": "sed -n '1,300p' /Users/hedde/.agents/skills/grill-with-docs/ADR-FORMAT.md",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "cmd": "sed -n '1,300p' /home/<USER>/.agents/skills/grill-with-docs/ADR-FORMAT.md",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -629,7 +629,7 @@ id: call_VoxaNqgdsNwTximHEsoB1uje
 ```json
 {
   "cmd": "git ls-remote --heads origin codex/pr62-split-06-browser-transport-blocker",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -642,7 +642,7 @@ id: call_t0tEbAvIpxrbI5VGAyDFW9td
 ```json
 {
   "cmd": "rg -n \"from '(@angular|@effect|effect|@effect/sql-pg|drizzle-orm|@tanstack|@sentry|stripe|@auth0|auth0|@fortawesome|@tiptap|cloudflare|@googlemaps|qr-scanner|skia-canvas|happy-dom|vitest|playwright|eslint|typescript)'|from \\\"(@angular|@effect|effect|@effect/sql-pg|drizzle-orm|@tanstack|@sentry|stripe|@auth0|auth0|@fortawesome|@tiptap|cloudflare|@googlemaps|qr-scanner|skia-canvas|happy-dom|vitest|playwright|eslint|typescript)\"\" src tests helpers e2e --glob '!**/*.md'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -775,7 +775,7 @@ id: call_LQ80r1QKkLc5CTq7vfMwD9pG
 ```json
 {
   "cmd": "git rev-parse origin/codex/pr62-split-06-browser-transport-blocker",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -788,7 +788,7 @@ id: call_bVVjfWYxm0KZ8aoHNK9283Ck
 ```json
 {
   "cmd": "rg -n \"from ['\\\"](@angular|@effect|effect|@effect/sql-pg|drizzle-orm|@tanstack|@sentry|stripe|@auth0|auth0|@fortawesome|@tiptap|cloudflare|@googlemaps|qr-scanner|skia-canvas|happy-dom|vitest|playwright|eslint|typescript)\" src tests helpers e2e --glob '!**/*.md'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -801,7 +801,7 @@ id: call_2WtSBiOt9QQSD2ZkplvMFueL
 ```json
 {
   "cmd": "find . -maxdepth 3 -type f \\( -name '*config*' -o -name 'angular.json' -o -name 'tsconfig*.json' -o -name 'eslint.config.*' -o -name 'drizzle.config.*' -o -name 'playwright.config.*' -o -name 'vitest.config.*' -o -name '.npmrc' \\) -not -path './repos/*' -not -path './node_modules/*' -print",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -814,7 +814,7 @@ id: call_Y3UQBkSHZU06mqdPJQed8tnm
 ```json
 {
   "cmd": "find docs -maxdepth 3 -type f -print 2>/dev/null",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -930,7 +930,7 @@ id: call_7rMuK72T2DK4Y7AUSF4hmdQc
 ```json
 {
   "cmd": "bun outdated --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 60000
 }
@@ -995,7 +995,7 @@ id: call_NZFwVBTpTMdqOqxrqrAGiSpN
 ```json
 {
   "cmd": "npm view @angular/core@22.0.4 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1008,7 +1008,7 @@ id: call_x1cWZE2dPZ5wFlSJQliqPHoS
 ```json
 {
   "cmd": "npm view @angular/compiler-cli@22.0.4 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1021,7 +1021,7 @@ id: call_IFzPdfqG64q9DkpGvPPgfuLx
 ```json
 {
   "cmd": "npm view @angular/build@22.0.4 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1034,7 +1034,7 @@ id: call_boIzSBEcCnMNFXzwUT6NOY8C
 ```json
 {
   "cmd": "npm view angular-eslint@22.0.0 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1047,7 +1047,7 @@ id: call_PPCNdgmdKTPLeaqjkdh3C0Ae
 ```json
 {
   "cmd": "npm view typescript@6.0.3 engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1060,7 +1060,7 @@ id: call_sAHEpgTVzqmdyB1Earuaw4oO
 ```json
 {
   "cmd": "npm view @fortawesome/angular-fontawesome@5.0.0 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1220,7 +1220,7 @@ id: call_oJ366TwgWmUuyD3FQlmXh2aj
 ```json
 {
   "cmd": "rg -n \"node-version|setup-node|node:|FROM node|BUN_VERSION|bun-version|oven/bun|bun@|Bun\" .github Dockerfile docker-compose.yml bunfig.toml .npmrc package.json .tool-versions .nvmrc mise.toml 2>/dev/null",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1233,7 +1233,7 @@ id: call_c3VTuWSqejbxKiXoV3CAZwho
 ```json
 {
   "cmd": "find .github -maxdepth 3 -type f -print 2>/dev/null",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1246,7 +1246,7 @@ id: call_rsTVTKzqq5bl49ap0P7yGIsZ
 ```json
 {
   "cmd": "bun --version",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1259,7 +1259,7 @@ id: call_lppEcY9dmmgYkCmlHq2TYVgZ
 ```json
 {
   "cmd": "node --version",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1347,7 +1347,7 @@ id: call_UdSBAM2xDJEuBVK99S135Whs
 ```json
 {
   "cmd": "bun -e \"console.log(process.version); console.log(process.versions.node); console.log(process.versions.bun)\"",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1360,7 +1360,7 @@ id: call_mbE8pXIWxJG0I2ZerRiNuvwB
 ```json
 {
   "cmd": "sed -n '1,220p' Dockerfile",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1373,7 +1373,7 @@ id: call_viMcXuvuGATgnCledfinLX2O
 ```json
 {
   "cmd": "sed -n '1,180p' .github/workflows/e2e-baseline.yml",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1386,7 +1386,7 @@ id: call_zWJrWydbsNzd4iYChJ34tRPX
 ```json
 {
   "cmd": "sed -n '1,180p' .github/workflows/fly-deploy.yml",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1399,7 +1399,7 @@ id: call_P5UjkhRDBlMY4JUNVNjo5CcV
 ```json
 {
   "cmd": "sed -n '1,180p' .github/workflows/copilot-setup-steps.yml",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1456,9 +1456,9 @@ ENV NG_BUILD_MAX_WORKERS=2
 
 COPY package.json bun.lock bunfig.toml ./
 COPY patches/@material-material-color-utilities-npm-0.4.0-9d48ca70b8.patch patches/@material-material-color-utilities-npm-0.4.0-9d48ca70b8.patch
-RUN --mount=type=cache,id=bun-install-cache,target=/home/bun/.bun/install/cache,uid=1000,gid=1000,sharing=locked \
+RUN --mount=type=cache,id=bun-install-cache,target=/home/<USER>/.bun/install/cache,uid=1000,gid=1000,sharing=locked \
     --mount=type=secret,id=FONT_AWESOME_TOKEN,mode=0444,required=true \
-    FONT_AWESOME_TOKEN="$(cat /run/secrets/FONT_AWESOME_TOKEN)" bun install --frozen-lockfile --cache-dir /home/bun/.bun/install/cache
+    FONT_AWESOME_TOKEN="$(cat /run/secrets/FONT_AWESOME_TOKEN)" bun install --frozen-lockfile --cache-dir /home/<USER>/.bun/install/cache
 
 FROM dependencies AS build
 COPY . .
@@ -1473,8 +1473,8 @@ RUN --mount=type=secret,id=SENTRY_AUTH_TOKEN,mode=0444,required=false \
 
 FROM dependencies AS production-dependencies
 RUN rm -rf node_modules
-RUN --mount=type=cache,id=bun-install-cache,target=/home/bun/.bun/install/cache,uid=1000,gid=1000,sharing=locked \
-    bun install --frozen-lockfile --production --offline --cache-dir /home/bun/.bun/install/cache
+RUN --mount=type=cache,id=bun-install-cache,target=/home/<USER>/.bun/install/cache,uid=1000,gid=1000,sharing=locked \
+    bun install --frozen-lockfile --production --offline --cache-dir /home/<USER>/.bun/install/cache
 
 FROM base AS production
 
@@ -1669,7 +1669,7 @@ id: call_P66y702HU34hAjRrjXc7Mkev
 ```json
 {
   "cmd": "sed -n '1,220p' bunfig.toml",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1682,7 +1682,7 @@ id: call_O8gHtAYUpm3D9Jx8rqCuC1bT
 ```json
 {
   "cmd": "npm view bun dist-tags version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1695,7 +1695,7 @@ id: call_LICiCrJCGS5xUbVeXJFtj9Jc
 ```json
 {
   "cmd": "npm view cloudflare@6.5.0 engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1708,7 +1708,7 @@ id: call_O6Q0Y7gsKlxdQ0lY4AnHnVZd
 ```json
 {
   "cmd": "npm view stripe@22.3.0 engines version types --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1721,7 +1721,7 @@ id: call_vkrtrjrS2XklQLbqK9TH7eqe
 ```json
 {
   "cmd": "npm view marked@18.0.5 engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1734,7 +1734,7 @@ id: call_2ECUnWmIiqRtyUE91ohczJbQ
 ```json
 {
   "cmd": "npm view html-to-text@10.0.0 engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1857,7 +1857,7 @@ id: call_pTtSdFofoIc4wrqjoeE76nj2
 ```json
 {
   "cmd": "sed -n '1,220p' tsconfig.json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1870,7 +1870,7 @@ id: call_1jK74oWynZxbUP5uHUGjKxlC
 ```json
 {
   "cmd": "sed -n '1,220p' tsconfig.app.json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1883,7 +1883,7 @@ id: call_drALyEyqZvzDXh6gcSi5e43T
 ```json
 {
   "cmd": "sed -n '1,220p' tsconfig.spec.json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1896,7 +1896,7 @@ id: call_IhG0VfS3jTxDLYp31nRNWjND
 ```json
 {
   "cmd": "rg -n \"\\bbaseUrl\\b|moduleResolution|outFile|alwaysStrict|downlevelIteration|allowSyntheticDefaultImports|esModuleInterop|asserts \\{ type|no-default-lib|\\btarget\\b|\\btypes\\b|\\brootDir\\b|\\bmodule\\b\" tsconfig*.json src tests helpers migration angular.json package.json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2064,7 +2064,7 @@ id: call_J1lK8JRhz63WA220NFTlxGpP
 ```json
 {
   "cmd": "rg -n \"from ['\\\"]stripe|new Stripe|Stripe\\.\" src tests helpers migration",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2077,7 +2077,7 @@ id: call_LdC8zZkw259YEfaCCWKqwnXB
 ```json
 {
   "cmd": "rg -n \"from ['\\\"]cloudflare|new Cloudflare|Cloudflare\\.\" src tests helpers migration",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2090,7 +2090,7 @@ id: call_K3Fn2UJsYUINHh0KEF9XUJAM
 ```json
 {
   "cmd": "rg -n \"from ['\\\"]marked|marked\\(|parse\\(|Marked\" src tests helpers migration",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2103,7 +2103,7 @@ id: call_kfhzP6Ji5TVQdt5qc5KLX0Pr
 ```json
 {
   "cmd": "rg -n \"from ['\\\"]html-to-text|htmlToText|convert\\(\" src tests helpers migration",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2116,7 +2116,7 @@ id: call_IwkW5lqiXfSyMNCDgSV1U3H5
 ```json
 {
   "cmd": "rg -n \"from ['\\\"]@googlemaps/js-api-loader|new Loader|importLibrary\\(\" src tests helpers migration",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2129,7 +2129,7 @@ id: call_UdQXuUoQKUlSR4lASS49q2wY
 ```json
 {
   "cmd": "rg -n \"from ['\\\"]@tiptap|new Editor|EditorContent|StarterKit\" src tests helpers migration",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2289,7 +2289,7 @@ id: call_beGvduirbKfPAShqTjxpw1fZ
 ```json
 {
   "cmd": "sed -n '1,140p' src/server/integrations/cloudflare-images.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2302,7 +2302,7 @@ id: call_TOKHgp5Lnh4xNyWtGlkrzUPS
 ```json
 {
   "cmd": "sed -n '1,120p' src/server/stripe-client.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2315,7 +2315,7 @@ id: call_JCFWVBbIOxVLHIDrrXUzN8J3
 ```json
 {
   "cmd": "sed -n '1,130p' src/server/integrations/stripe-checkout.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2328,7 +2328,7 @@ id: call_3G5opHF7veroPqkWzlz04gmr
 ```json
 {
   "cmd": "sed -n '250,290p' src/app/events/event-details/event-details.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2341,7 +2341,7 @@ id: call_OTnk44eaJio4TnM58MED4yuO
 ```json
 {
   "cmd": "sed -n '130,175p' migration/steps/events.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2354,7 +2354,7 @@ id: call_OwE1TEXlgPP4hL8SKZfbcQOd
 ```json
 {
   "cmd": "sed -n '1,130p' src/app/core/location-search.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2742,7 +2742,7 @@ id: call_kqs9jgiCIWO9Vta9D9re5iH4
 ```json
 {
   "cmd": "curl -L --max-time 20 https://raw.githubusercontent.com/stripe/stripe-node/master/CHANGELOG.md | sed -n '1,220p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2755,7 +2755,7 @@ id: call_dDtin2sQoW2qnJ5ZgrjhWYGz
 ```json
 {
   "cmd": "curl -L --max-time 20 https://raw.githubusercontent.com/cloudflare/cloudflare-typescript/main/CHANGELOG.md | sed -n '1,240p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2768,7 +2768,7 @@ id: call_HODd0lIOo5Kyly8blD87fo7r
 ```json
 {
   "cmd": "curl -L --max-time 20 https://raw.githubusercontent.com/markedjs/marked/master/.changeset/README.md | sed -n '1,160p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -2781,7 +2781,7 @@ id: call_3rO5dOffPX6cYkiGJfG29RVY
 ```json
 {
   "cmd": "curl -L --max-time 20 https://raw.githubusercontent.com/markedjs/marked/master/docs/USING_ADVANCED.md | sed -n '1,120p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -2799,7 +2799,8 @@ Original token count: 7965
 Output:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0# Changelog
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0# Changelog
 
 ## 22.3.0 - 2026-06-24
 This release changes the pinned API version to 2026-06-24.dahlia.
@@ -2831,7 +2832,8 @@ Original token count: 6518
 Output:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0# Changelog
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0# Changelog
 
 ## 6.5.0 (2026-06-23)
 
@@ -2879,7 +2881,9 @@ Original token count: 83
 Output:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    14  100    14    0     0     57      0 --:--:-- --:--:-- --:--:--    57
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100    14  100    14    0     0     57      0 --:--:-- --:--:-- --:--:--    57
 404: Not Found
 ```
 
@@ -2895,7 +2899,9 @@ Original token count: 2408
 Output:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 18551  100 18551    0     0  92466      0 --:--:-- --:--:-- --:--:-- 92755
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 18551  100 18551    0     0  92466      0 --:--:-- --:--:-- --:--:-- 92755
 <h2 id="instance">Marked instance</h2>
 
 By default, Marked stores options and extensions in the global scope. That means changing the options in one script will also change the options in another script since they share the same instance.
@@ -2934,7 +2940,7 @@ id: call_gCl3txiVKrPh3cYfTETac1qt
 ```json
 {
   "cmd": "curl -sSL --max-time 20 https://raw.githubusercontent.com/stripe/stripe-node/master/CHANGELOG.md | rg -n \"^## 22\\.0\\.0|^## 21\\.|Migration guide|Removed top-level|Stripe\\.LatestApiVersion|apiVersion|TypeScript\" -C 3",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2947,7 +2953,7 @@ id: call_jeWXXWOd8rKf0CSQ5HyWwksX
 ```json
 {
   "cmd": "curl -sSL --max-time 20 https://raw.githubusercontent.com/cloudflare/cloudflare-typescript/main/CHANGELOG.md | rg -n \"^## 6\\.5\\.0|^## 6\\.3\\.0|^## 6\\.2\\.0|^## 6\\.0\\.0|Breaking Changes|Migration Guide|images|directUploads|direct uploads\" -C 3",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2960,7 +2966,7 @@ id: call_oNbvmjj3U0T1arlkxq9F5V8b
 ```json
 {
   "cmd": "curl -sSL --max-time 20 https://raw.githubusercontent.com/markedjs/marked/master/packages/marked/CHANGELOG.md | sed -n '1,180p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -2973,7 +2979,7 @@ id: call_WdcoscvTtf1PqcjViHK0lily
 ```json
 {
   "cmd": "curl -sSL --max-time 20 https://raw.githubusercontent.com/html-to-text/node-html-to-text/master/packages/html-to-text/CHANGELOG.md | sed -n '1,200p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 24000
 }
@@ -2986,7 +2992,7 @@ id: call_gHakTr9TOhWhb0F1UAuI68BB
 ```json
 {
   "cmd": "curl -sSL --max-time 20 https://raw.githubusercontent.com/prettier-plugin-tailwindcss/prettier-plugin-tailwindcss/main/CHANGELOG.md | sed -n '1,160p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2999,7 +3005,7 @@ id: call_3pWuRvHfyDNOqSPuG1ujW5Di
 ```json
 {
   "cmd": "curl -sSL --max-time 20 https://raw.githubusercontent.com/sindresorhus/eslint-plugin-unicorn/main/package.json | sed -n '1,120p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -3166,7 +3172,7 @@ Output:
 	"funding": "https://github.com/sindresorhus/eslint-plugin-unicorn?sponsor=1",
 	"author": {
 		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
+		"email": "<REDACTED_EMAIL>",
 		"url": "https://sindresorhus.com"
 	},
 	"type": "module",
@@ -3238,7 +3244,7 @@ id: call_m8XpEkbRM6te7UrEzFahciYd
 ```json
 {
   "cmd": "npm view marked@18.0.5 engines version dependencies peerDependencies repository homepage --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3251,7 +3257,7 @@ id: call_L0GTTcqiVaKCOJGxuiNj1w1o
 ```json
 {
   "cmd": "npm view prettier-plugin-tailwindcss@0.8.0 engines version peerDependencies dependencies repository homepage --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3264,7 +3270,7 @@ id: call_iKazrVE0hcCBEIsAIiI1Rjtv
 ```json
 {
   "cmd": "npm view eslint-plugin-unicorn@69.0.0 engines version peerDependencies repository homepage --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3277,7 +3283,7 @@ id: call_v7W3CX3lIJqiQB3tCcMgbphk
 ```json
 {
   "cmd": "npm view playwright-ng-schematics@22.0.1 peerDependencies engines version repository --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3290,7 +3296,7 @@ id: call_0PYRUbF6W9iteT3O5U5A0Bwn
 ```json
 {
   "cmd": "npm view @playwright/test@1.61.1 engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3303,7 +3309,7 @@ id: call_wZQXkpa5Hgy4jSzbp3DTKlsy
 ```json
 {
   "cmd": "npm view @effect/language-service@0.86.2 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3472,7 +3478,7 @@ id: call_uPOuh2NMO0663UVGNU0f8lOk
 ```json
 {
   "cmd": "npm view effect dist-tags version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3485,7 +3491,7 @@ id: call_QW4Gt0LMsHeOamc3XDMcX70y
 ```json
 {
   "cmd": "npm view @effect/platform-bun dist-tags version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3498,7 +3504,7 @@ id: call_WUrRSNa3ALRomVBp8xWwbdNw
 ```json
 {
   "cmd": "npm view @effect/sql-pg dist-tags version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3511,7 +3517,7 @@ id: call_Cbwz91zzDn8Wq4pSjgLcrouA
 ```json
 {
   "cmd": "npm view @effect/opentelemetry dist-tags version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3524,7 +3530,7 @@ id: call_NtLjjZfvtbJRHktV81Po7YiT
 ```json
 {
   "cmd": "npm view @effect/vitest dist-tags version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3537,7 +3543,7 @@ id: call_OraOfcEeduxyUS9GmdOMRBNQ
 ```json
 {
   "cmd": "npm view drizzle-orm drizzle-kit drizzle-seed dist-tags version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3726,7 +3732,7 @@ id: call_Tczj5vWn1Dr9p4ZdLczSpSQ7
 ```json
 {
   "cmd": "npm view drizzle-orm@rc version && npm view drizzle-kit@rc version && npm view drizzle-seed@rc version",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3739,7 +3745,7 @@ id: call_XgiaMOeKD2R61b9yLMVuK9un
 ```json
 {
   "cmd": "npm view drizzle-orm@1.0.0-rc.4 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3752,7 +3758,7 @@ id: call_0UaZACKdRymnOv6k3ncdDEho
 ```json
 {
   "cmd": "npm view drizzle-kit@1.0.0-rc.4 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3765,7 +3771,7 @@ id: call_ygjsp6LP70PoeLj7ImUqwcNE
 ```json
 {
   "cmd": "npm view drizzle-seed@1.0.0-rc.4 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3778,7 +3784,7 @@ id: call_5iApioWy6RmKS6RpGt04VbaU
 ```json
 {
   "cmd": "npm view effect@beta version && npm view @effect/platform-bun@beta version && npm view @effect/sql-pg@beta version && npm view @effect/vitest@beta version && npm view @effect/opentelemetry@beta version",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3927,7 +3933,7 @@ id: call_CsHTCowOT4hKpNz4bE9tqQ0O
 ```json
 {
   "cmd": "sed -n '1,180p' repos/effect/LLMS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -3940,7 +3946,7 @@ id: call_1CUR8CosZGOA6vGHdMwKh1DW
 ```json
 {
   "cmd": "jq -r '.version' repos/effect/packages/effect/package.json repos/effect/packages/platform-bun/package.json repos/effect/packages/sql/pg/package.json repos/effect/packages/vitest/package.json repos/effect/packages/opentelemetry/package.json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3953,7 +3959,7 @@ id: call_xMtQ0Pq579AAMEZcH6bZG2P1
 ```json
 {
   "cmd": "jq -r '.version' repos/drizzle/drizzle-orm/package.json repos/drizzle/drizzle-kit/package.json repos/drizzle/drizzle-seed/package.json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3966,7 +3972,7 @@ id: call_NkJdbkOxJHTMX8P8ztyZuE9o
 ```json
 {
   "cmd": "rg -n \"beta\\.92|4\\.0\\.0-beta|beta\\.60|breaking|migration|unstable/rpc|Context.Service|Schema.TaggedError|drizzle-effect|effect-postgres\" repos/effect/LLMS.md repos/effect/packages/effect/CHANGELOG.md repos/effect/packages/platform-bun/CHANGELOG.md repos/effect/packages/sql/pg/CHANGELOG.md repos/drizzle/drizzle-orm/CHANGELOG.md repos/drizzle/drizzle-kit/CHANGELOG.md repos/drizzle/drizzle-seed/CHANGELOG.md 2>/dev/null",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -4162,7 +4168,7 @@ id: call_n8umLT5UWKq2CTu3b4R3wl7U
 ```json
 {
   "cmd": "curl -sSL --max-time 20 https://angular.dev/reference/versions | rg -n \"22\\.0|21\\.|Node|TypeScript|RxJS|Actively supported\" -C 2",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4175,7 +4181,7 @@ id: call_8hHQeJPrKq1L3FAdIaRiQqNR
 ```json
 {
   "cmd": "curl -sSL --max-time 20 https://angular.dev/update-guide | rg -n \"v\\.21|v\\.22|Before updating|ng update|Node|TypeScript|Material|Angular CLI\" -C 2",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4188,7 +4194,7 @@ id: call_I4BScJSRlYBg8UFKqGArZ3WP
 ```json
 {
   "cmd": "npm view @angular/core@22.0.4 dist.tarball --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4201,7 +4207,7 @@ id: call_axOpTBUH40JlDSAdVWjWX7xT
 ```json
 {
   "cmd": "npm view @angular/core@22.0.4 peerDependencies engines version --json",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4388,8 +4394,8 @@ tool_use exec_command
 id: call_yPWdPYvWMZ5WKWOiDKVqu208
 ```json
 {
-  "cmd": "nl -ba /Users/hedde/.codex/memories/MEMORY.md | sed -n '86,110p'",
-  "workdir": "/Users/hedde/.codex/worktrees/5671/evorto",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '86,110p'",
+  "workdir": "/home/<USER>/.codex/worktrees/5671/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4408,13 +4414,13 @@ Output:
     86	# Task Group: evorto / stacked PR verification and PR body readiness
     87	
     88	scope: Re-verify stacked PR readiness in `evorto-app/app`, inspect CI/review-thread state deeply, and update PR descriptions with validation guidance; use for stacked-review verification or PR-body refresh work, not for unrelated feature delivery in the repo.
-    89	applies_to: cwd=/Users/hedde/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked-PR verification workflows across similar worktrees, but treat exact PR numbers, CI failures, and file counts as time-specific evidence.
+    89	applies_to: cwd=/home/<USER>/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked-PR verification workflows across similar worktrees, but treat exact PR numbers, CI failures, and file counts as time-specific evidence.
     90	
     91	## Task 1: Re-verify the PR62 split stack, uncover the real blocker, and prepare PR bodies for validation-oriented rewrites, partial
     92	
     93	### rollout_summary_files
     94	
-    95	- rollout_summaries/2026-06-22T06-28-26-6Mwf-evorto_pr62_split_stack_reverify_and_pr_body_update.md (cwd=/Users/hedde/.codex/worktrees/d0b2/evorto, rollout_path=/Users/hedde/.codex/sessions/2026/06/22/rollout-2026-06-22T08-28-26-019eee04-186b-7b81-9d8d-04cc08e75aff.jsonl, updated_at=2026-06-22T23:49:25+00:00, thread_id=019eee04-186b-7b81-9d8d-04cc08e75aff, stack was rechecked end-to-end but PR63 still ended on docs-baseline failures)
+    95	- rollout_summaries/2026-06-22T06-28-26-6Mwf-evorto_pr62_split_stack_reverify_and_pr_body_update.md (cwd=/home/<USER>/.codex/worktrees/d0b2/evorto, rollout_path=/home/<USER>/.codex/sessions/2026/06/22/rollout-2026-06-22T08-28-26-019eee04-186b-7b81-9d8d-04cc08e75aff.jsonl, updated_at=2026-06-22T23:49:25+00:00, thread_id=019eee04-186b-7b81-9d8d-04cc08e75aff, stack was rechecked end-to-end but PR63 still ended on docs-baseline failures)
     96	
     97	### keywords
     98	

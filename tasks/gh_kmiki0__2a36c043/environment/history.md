@@ -142,7 +142,7 @@ tool_result
 id: toolu_01UKwwTQKwgypSEsrmCZPMh7
 ```
 commit e4e7490b1a27c5bee2d76dcacf03e9c22bb5b2d6
-Author: kmiki0 <127822545+kmiki0@users.noreply.github.com>
+Author: kmiki0 <<REDACTED_EMAIL>>
 Date:   Sat Apr 25 10:18:53 2026 +0900
 
     feat: F2キーでラベル編集 + パネル一括開閉ボタン (#49, #48)
@@ -151,7 +151,7 @@ Date:   Sat Apr 25 10:18:53 2026 +0900
     - ツールバーにMaximize2/Minimize2ボタンで両サイドパネルの一括開閉
     - ヘルプパネル・i18nにF2ショートカット追加
     
-    Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: ce162cf5cb54
 
  src/components/canvas/FlowCanvas.tsx   |  1 +
@@ -165,7 +165,7 @@ Date:   Sat Apr 25 10:18:53 2026 +0900
  8 files changed, 83 insertions(+), 3 deletions(-)
 ====
 commit cc8e6339b569c827d2da8f9d2903d71e9286eee5
-Author: kmiki0 <127822545+kmiki0@users.noreply.github.com>
+Author: kmiki0 <<REDACTED_EMAIL>>
 Date:   Sat Apr 25 10:54:45 2026 +0900
 
     fix: 初回ノード配置時にキャンバスのズームが変わる問題を修正
@@ -173,14 +173,14 @@ Date:   Sat Apr 25 10:54:45 2026 +0900
     ReactFlowのfitView propを削除。空キャンバスに初めてノードを配置した際に
     保留中のfitViewが発動してズームレベルが変わっていた。
     
-    Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: 74c25d264bdb
 
  src/components/canvas/FlowCanvas.tsx | 1 -
  1 file changed, 1 deletion(-)
 ====
 commit 6de88ad44e7c1a088734f4f093d726a177f7aaa4
-Author: kmiki0 <127822545+kmiki0@users.noreply.github.com>
+Author: kmiki0 <<REDACTED_EMAIL>>
 Date:   Sat Apr 25 10:59:49 2026 +0900
 
     fix: Mermaid Importのプレースホルダーを flowchart TD に更新 (#25)
@@ -188,7 +188,7 @@ Date:   Sat Apr 25 10:59:49 2026 +0900
     パーサーは既にflowchart/graph両方に対応済み。
     プレースホルダーテキストをflowchart形式に統一。
     
-    Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: 90631e60d403
 
  src/components/layout/MermaidImportDialog.tsx | 2 +-
@@ -254,7 +254,7 @@ tool_use Bash
 id: toolu_0187c6BaCnFNGYtjnxxa6FCa
 ```json
 {
-  "command": "git add specs/references/modern-swatch-picker.jsx specs/references/petal-picker.jsx && git commit -m \"$(cat <<'EOF'\nchore: カラーピッカー参考実装を specs/references/ に追加\n\nmodern-swatch-picker.jsx と petal-picker.jsx を参考資料として保存。\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add specs/references/modern-swatch-picker.jsx specs/references/petal-picker.jsx && git commit -m \"$(cat <<'EOF'\nchore: カラーピッカー参考実装を specs/references/ に追加\n\nmodern-swatch-picker.jsx と petal-picker.jsx を参考資料として保存。\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit reference color picker files"
 }
 ```

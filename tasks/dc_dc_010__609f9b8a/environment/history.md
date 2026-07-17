@@ -507,7 +507,7 @@ tool_use exec_command
 
 tool_use exec_command
 ```json
-{'cmd': "jq '{mode, generated_at, language, dimensions, reviewable_file_count: (.reviewable_files|length), all_file_count: (.all_files|length), system_prompt_present: (.system_prompt!=null), holistic_context_keys: (.holistic_context|keys)}' .desloppify/review_packet_blind.json", 'workdir': '/Users/p
+{'cmd': "jq '{mode, generated_at, language, dimensions, reviewable_file_count: (.reviewable_files|length), all_file_count: (.all_files|length), system_prompt_present: (.system_prompt!=null), holistic_context_keys: (.holistic_context|keys)}' .desloppify/review_packet_blind.json", 'workdir': '/home/<USER>
 ```
 
 > TOOL
@@ -3485,7 +3485,7 @@ tool_use exec_command
 
 tool_use exec_command
 ```json
-{'cmd': 'rg -n "LOW_SCORE|findings cap|run.log|batch heartbeat|dimension_notes|unreported_risk|below" /user_c042661f/Documents/desloppify/desloppify/tests/review/test_review_commands.py /user_c042661f/Documents/desloppify/desloppify/tests/review/test_review_submodules.py /Users/peteromalle
+{'cmd': 'rg -n "LOW_SCORE|findings cap|run.log|batch heartbeat|dimension_notes|unreported_risk|below" /user_c042661f/Documents/desloppify/desloppify/tests/review/test_review_commands.py /user_c042661f/Documents/desloppify/desloppify/tests/review/test_review_submodules.py /home/<USER>
 ```
 
 > TOOL
@@ -3545,7 +3545,7 @@ tool_use exec_command
 
 tool_use exec_command
 ```json
-{'cmd': 'rg -n "\\b85\\b|LOW_SCORE_FINDING_THRESHOLD|ASSESSMENT_FEEDBACK_THRESHOLD|max_batch_findings_for_dimension_count|GLOBAL REVIEW CONTRACT" /user_c042661f/Documents/desloppify/desloppify/app/commands/review /user_c042661f/Documents/desloppify/desloppify/intelligence/review /Users/pet
+{'cmd': 'rg -n "\\b85\\b|LOW_SCORE_FINDING_THRESHOLD|ASSESSMENT_FEEDBACK_THRESHOLD|max_batch_findings_for_dimension_count|GLOBAL REVIEW CONTRACT" /user_c042661f/Documents/desloppify/desloppify/app/commands/review /user_c042661f/Documents/desloppify/desloppify/intelligence/review /home/<USER>
 ```
 
 > AGENT

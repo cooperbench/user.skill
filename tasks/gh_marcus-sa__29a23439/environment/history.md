@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -144,7 +144,7 @@ tool_use Read
 id: toolu_01JTHEdbyGUs4z338Egwudcb
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/graph/AgentStatusSection.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/graph/AgentStatusSection.tsx"
 }
 ```
 
@@ -154,7 +154,7 @@ tool_use Read
 id: toolu_01Lws4h2sfA1XKREruEyeDoR
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/client/AGENTS.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/client/AGENTS.md"
 }
 ```
 
@@ -163,7 +163,7 @@ id: toolu_01Lws4h2sfA1XKREruEyeDoR
 tool_result ERROR
 id: toolu_01Lws4h2sfA1XKREruEyeDoR
 ```
-File does not exist. Note: your current working directory is /Users/marcus/conductor/workspaces/brain-v1/munich-v2.
+File does not exist. Note: your current working directory is /home/<USER>/conductor/workspaces/brain-v1/munich-v2.
 ```
 
 > TOOL
@@ -245,7 +245,7 @@ tool_use Read
 id: toolu_01KgG5kwehaiAHW5UEtoWW9M
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/ui/select.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/ui/select.tsx"
 }
 ```
 
@@ -323,7 +323,7 @@ tool_use Read
 id: toolu_015NuYkh4G7Z218oMY2GopAc
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/tool-registry/CreateProviderDialog.tsx",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/tool-registry/CreateProviderDialog.tsx",
   "offset": 150,
   "limit": 30
 }
@@ -377,7 +377,7 @@ id: toolu_01WcBBbXzDfAJgHqGmEiy5iV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/graph/AgentStatusSection.tsx",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/graph/AgentStatusSection.tsx",
   "old_string": "          <Select value={selectedAgentId ?? \"\"} onValueChange={(v) => setSelectedAgentId(v ?? undefined)}>\n            <SelectTrigger className=\"w-full\" data-testid=\"agent-picker-trigger\">\n              <SelectValue placeholder=\"Select an agent...\" />\n            </SelectTrigger>\n            <SelectContent>\n              {assignableAgents.map((agent) => (\n                <SelectItem key={agent.id} value={agent.id} data-testid={`agent-picker-option-${agent.id}`}>\n                  {agent.name} ({agent.runtime})\n                </SelectItem>\n              ))}\n            </SelectContent>\n          </Select>",
   "new_string": "          <Select\n            value={selectedAgentId ?? \"\"}\n            onValueChange={(v) => setSelectedAgentId(v ?? undefined)}\n            items={Object.fromEntries(\n              assignableAgents.map((agent) => [agent.id, `${agent.name} (${agent.runtime})`]),\n            )}\n          >\n            <SelectTrigger className=\"w-full\" data-testid=\"agent-picker-trigger\">\n              <SelectValue placeholder=\"Select an agent...\" />\n            </SelectTrigger>\n            <SelectContent>\n              {assignableAgents.map((agent) => (\n                <SelectItem key={agent.id} value={agent.id} data-testid={`agent-picker-option-${agent.id}`}>\n                  {agent.name} ({agent.runtime})\n                </SelectItem>\n              ))}\n            </SelectContent>\n          </Select>"
 }
@@ -388,7 +388,7 @@ id: toolu_01WcBBbXzDfAJgHqGmEiy5iV
 tool_result
 id: toolu_01WcBBbXzDfAJgHqGmEiy5iV
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/graph/AgentStatusSection.tsx has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/client/components/graph/AgentStatusSection.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -397,7 +397,7 @@ tool_use Write
 id: toolu_01HuFJ4mUxmLP5T3LF2hGVnT
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/client/AGENTS.md",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/client/AGENTS.md",
   "content": "## Base UI Select: `items` Prop Required for Trigger Label\n\nThe shadcn `Select` component wraps `@base-ui/react/select`, **not** Radix UI. Unlike Radix, Base UI does not automatically propagate `SelectItem` children text to the `SelectValue` trigger display.\n\nWithout an explicit `items` prop on `<Select>`, the trigger renders the raw `value` string (e.g. a UUID) instead of the human-readable label.\n\n**Always pass `items`** when the value differs from the display label:\n\n```tsx\n<Select\n  value={selectedId}\n  onValueChange={setSelectedId}\n  items={Object.fromEntries(\n    options.map((o) => [o.id, o.label]),\n  )}\n>\n  <SelectTrigger>\n    <SelectValue placeholder=\"Choose...\" />\n  </SelectTrigger>\n  <SelectContent>\n    {options.map((o) => (\n      <SelectItem key={o.id} value={o.id}>{o.label}</SelectItem>\n    ))}\n  </SelectContent>\n</Select>\n```\n\nThe `items` prop accepts `Record<string, ReactNode>` mapping values to display labels. `SelectValue` uses this map to resolve what to show in the trigger after selection.\n"
 }
 ```
@@ -407,7 +407,7 @@ id: toolu_01HuFJ4mUxmLP5T3LF2hGVnT
 tool_result
 id: toolu_01HuFJ4mUxmLP5T3LF2hGVnT
 ```
-File created successfully at: /Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/client/AGENTS.md
+File created successfully at: /home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/client/AGENTS.md
 ```
 
 > AGENT

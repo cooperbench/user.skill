@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_019GcSiCVLKr4jP3u8pvMaoR
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/init.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/init.rs"
 }
 ```
 
@@ -79,7 +79,7 @@ id: toolu_01QWnYBVpxsLQNf81M1iBojt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/init.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/init.rs",
   "old_string": "    let skip_push     = !ask_yn(\"Auto-push sessions on git push\", false)?;",
   "new_string": "    let skip_push     = !ask_yn(\"Auto-push sessions on git push\", true)?;"
 }
@@ -90,7 +90,7 @@ id: toolu_01QWnYBVpxsLQNf81M1iBojt
 tool_result
 id: toolu_01QWnYBVpxsLQNf81M1iBojt
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/init.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/init.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -116,8 +116,8 @@ id: toolu_01D4HjRhrxgGW2ZSFcJMmgYr
 ```
 warning: `gossamer` (bin "gossamer") generated 9 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 1m 16s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT

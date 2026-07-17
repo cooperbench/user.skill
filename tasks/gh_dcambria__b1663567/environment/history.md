@@ -36,7 +36,7 @@ id: toolu_01E3ZACqyUTGHwTqgG9pKp5M
 {
   "description": "Find font configuration in project",
   "subagent_type": "Explore",
-  "prompt": "Investigate how web fonts are configured/loaded in this WordPress project at /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao.\n\nI need to know:\n1. Which font families are used in the project (look in child theme CSS, Elementor global fonts, @font-face declarations, Google Fonts imports, etc.)\n2. How fonts are loaded — are they self-hosted (look for .woff, .woff2, .ttf, .otf files), loaded via Google Fonts, via Elementor's font manager, or via WP Rocket/plugin font hosting?\n3. Specifically look for whether italic font variants/weights are being loaded. The user says \"the fonts we're using in the project are without italic, can you incorporate italic?\" — so I need to find where the non-italic fonts are declared and whether italic faces are missing.\n\nSearch thoroughly:\n- The child theme directory: wordpress/wp-content/themes/hello-elementor-child/ (style.css, functions.php, any css/ folder, any fonts/ folder)\n- Any @font-face declarations across the theme and mu-plugins\n- Any references to \"italic\", \"font-style\", font weights like 400, 700, \"normal\"\n- Any self-hosted font files (find .woff2, .woff, .ttf, .otf)\n- Any Google Fonts URLs (fonts.googleapis.com) and check if they include italic variants (e.g. \"ital,wght@\" or \":ital\")\n- Elementor font settings if stored in DB dump or kit files\n\nReport back:\n- The exact font family […]
+  "prompt": "Investigate how web fonts are configured/loaded in this WordPress project at /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao.\n\nI need to know:\n1. Which font families are used in the project (look in child theme CSS, Elementor global fonts, @font-face declarations, Google Fonts imports, etc.)\n2. How fonts are loaded — are they self-hosted (look for .woff, .woff2, .ttf, .otf files), loaded via Google Fonts, via Elementor's font manager, or via WP Rocket/plugin font hosting?\n3. Specifically look for whether italic font variants/weights are being loaded. The user says \"the fonts we're using in the project are without italic, can you incorporate italic?\" — so I need to find where the non-italic fonts are declared and whether italic faces are missing.\n\nSearch thoroughly:\n- The child theme directory: wordpress/wp-content/themes/hello-elementor-child/ (style.css, functions.php, any css/ folder, any fonts/ folder)\n- Any @font-face declarations across the theme and mu-plugins\n- Any references to \"italic\", \"font-style\", font weights like 400, 700, \"normal\"\n- Any self-hosted font files (find .woff2, .woff, .ttf, .otf)\n- Any Google Fonts URLs (fonts.googleapis.com) and check if they include italic variants (e.g. \"ital,wght@\" or \":ital\")\n- Elementor font settings if stored in DB dump or kit files\n\nReport back:\n- The exact font family […]
 
 > TOOL
 
@@ -47,7 +47,7 @@ Perfect! Now I have all the information I need. Let me compile a comprehensive r
 
 ## Font Configuration Investigation Report
 
-Based on my thorough search of the WordPress project at `/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao`, here's the complete font configuration:
+Based on my thorough search of the WordPress project at `/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao`, here's the complete font configuration:
 
 ---
 
@@ -94,7 +94,7 @@ tool_use Read
 id: toolu_01UehH3GTq1pUUz4rpfnmL3a
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/functions.php",
   "offset": 169,
   "limit": 100
 }
@@ -172,7 +172,7 @@ tool_use Bash
 id: toolu_01LK2JA98RqUaQachkKK9E9Y
 ```json
 {
-  "command": "ls -la /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/fonts/woff2/",
+  "command": "ls -la /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/fonts/woff2/",
   "description": "List font files in child theme"
 }
 ```

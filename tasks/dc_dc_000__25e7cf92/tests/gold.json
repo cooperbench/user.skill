@@ -1,1 +1,8 @@
-{"point_id": "fb389f4d-7b4b-48de-8a78-60dee11da18e#2", "developer": "dc:dc_000", "condition": "noprofile", "real": "Read the full megaplan phase prompt from this file and follow it exactly: /Users/user_c042661f/Documents/Veas/.megaplan/plans/hector-commitments-sprint/review_shannon_prompt.txt. Your final response must satisfy the structured output contract in that file. Do not summarize the file; execute its instructions.", "prev_agent": "Okay, ready.", "gold_move": null}
+{
+  "point_id": "fb389f4d-7b4b-48de-8a78-60dee11da18e#2",
+  "developer": "dc:dc_000",
+  "condition": "noprofile",
+  "real": "Read the full megaplan phase prompt from this file and follow it exactly: /home/<USER>/Documents/Veas/.megaplan/plans/hector-commitments-sprint/review_shannon_prompt.txt. Your final response must satisfy the structured output contract in that file. Do not summarize the file; execute its instructions.",
+  "prev_agent": "Okay, ready.",
+  "gold_move": null
+}

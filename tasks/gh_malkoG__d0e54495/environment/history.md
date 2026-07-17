@@ -21,7 +21,7 @@ id: toolu_01WGkd2eYJrtgZRE6DgjnDD2
 tool_result
 id: toolu_01WGkd2eYJrtgZRE6DgjnDD2
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux
 On branch fix/search-ux
 nothing to commit, working tree clean
 6c6bb34 Merge pull request #124 from dalinaum/feat/settings-back-and-theme-picker
@@ -74,7 +74,7 @@ tool_use Read
 id: toolu_01EgZLEGhcMXtd8XgpMAUkDP
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt"
 }
 ```
 
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_01LerVkgqiKsMsQwTsKtLxH3
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt"
 }
 ```
 

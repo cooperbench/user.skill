@@ -18,7 +18,7 @@ id: toolu_01EbwCpESxX1Bh71cFRQq71g
 {
   "description": "Explore release notes and config",
   "subagent_type": "Explore",
-  "prompt": "I need to find three things in this codebase and local environment:\n\n1. **Release notes**: Check if there's a `/release-notes` skill, file, or command available. Search for:\n   - Skills matching \"release-notes\" in the skills list\n   - Files named release-notes anywhere in the project or ~/.claude/\n   - Any references to release notes in CLAUDE.md or settings\n\n2. **Current Claude Code configuration**: Read and summarize the current state of:\n   - ~/.claude/settings.json (the main config)\n   - ~/.claude/settings.local.json (if exists)\n   - Any .claude/settings.json in the project directory /home/mike-anderson/dev/cohezion/.claude/\n   - ~/.claude.json (legacy config if exists)\n\n3. **Current hooks and agents**: List what's currently configured:\n   - All files in ~/.claude/agents/\n   - All hook configurations in settings\n   - Any MCP server configurations\n\nBe thorough — read file contents, not just list paths. Report exact contents of config files."
+  "prompt": "I need to find three things in this codebase and local environment:\n\n1. **Release notes**: Check if there's a `/release-notes` skill, file, or command available. Search for:\n   - Skills matching \"release-notes\" in the skills list\n   - Files named release-notes anywhere in the project or ~/.claude/\n   - Any references to release notes in CLAUDE.md or settings\n\n2. **Current Claude Code configuration**: Read and summarize the current state of:\n   - ~/.claude/settings.json (the main config)\n   - ~/.claude/settings.local.json (if exists)\n   - Any .claude/settings.json in the project directory /home/<USER>/dev/cohezion/.claude/\n   - ~/.claude.json (legacy config if exists)\n\n3. **Current hooks and agents**: List what's currently configured:\n   - All files in ~/.claude/agents/\n   - All hook configurations in settings\n   - Any MCP server configurations\n\nBe thorough — read file contents, not just list paths. Report exact contents of config files."
 }
 ```
 
@@ -100,7 +100,7 @@ I've completed a thorough search of the Claude Code configuration and found deta
 **Status: Not found**
 
 There is NO `/release-notes` skill, command, or dedicated release notes file in:
-- Skills list (despite extensive skill marketplace in `/home/mike-anderson/.claude/skills/`)
+- Skills list (despite extensive skill marketplace in `/home/<USER>/.claude/skills/`)
 - Files named "release*" anywhere in `~/.claude/` or the project directories
 - CLAUDE.md or settings references
 
@@ -110,7 +110,7 @@ The closest reference is in `~/.claude.json` (legacy config): `"lastReleaseNotes
 
 ### 2. Current Claude Code Configuration
 
-**Global Configuration: `/home/mike-anderson/.claude/settings.json`**
+**Global Configuration: `/home/<USER>/.claude/settings.json`**
 
 Key settings (247 lines):
 - **Environment Variables**: Task tracking enabled, experimental agent teams enabled, LSP enabled, MCP timeout 30s
@@ -129,7 +129,7 @@ tool_use Read
 id: toolu_019TUbYnSgTfFydQYZqshEbX
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/settings.json"
+  "file_path": "/home/<USER>/.claude/settings.json"
 }
 ```
 
@@ -139,7 +139,7 @@ tool_use Read
 id: toolu_01H9ZXq5rz1ZVcWsZdNPNz5o
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/settings.json"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/settings.json"
 }
 ```
 
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_01UGcFtYSVFoEeyFfZW6HBjA
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/settings.local.json"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/settings.local.json"
 }
 ```
 
@@ -369,7 +369,7 @@ tool_use Bash
 id: toolu_0177ajGPHXNKt2hTZPzhpo4W
 ```json
 {
-  "command": "cat /home/mike-anderson/.claude.json | python3 -c \"import sys,json; d=json.load(sys.stdin); print('lastReleaseNotesSeen:', d.get('lastReleaseNotesSeen','unknown')); print('autoUpdaterStatus:', d.get('autoUpdaterStatus','unknown')); print('startupCount:', d.get('startupCount','unknown'))\" 2>/dev/null",
+  "command": "cat /home/<USER>/.claude.json | python3 -c \"import sys,json; d=json.load(sys.stdin); print('lastReleaseNotesSeen:', d.get('lastReleaseNotesSeen','unknown')); print('autoUpdaterStatus:', d.get('autoUpdaterStatus','unknown')); print('startupCount:', d.get('startupCount','unknown'))\" 2>/dev/null",
   "description": "Check last seen release notes and auto-update status"
 }
 ```
@@ -380,7 +380,7 @@ tool_use Bash
 id: toolu_01Hani1nUzRjHLU2YVYErfqh
 ```json
 {
-  "command": "ls -la /home/mike-anderson/.claude/hooks/ 2>/dev/null",
+  "command": "ls -la /home/<USER>/.claude/hooks/ 2>/dev/null",
   "description": "List global hook scripts"
 }
 ```
@@ -443,7 +443,7 @@ tool_use Read
 id: toolu_01AHFjtP4ntXKBgaqDS6i51b
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/post-compact-context.sh"
+  "file_path": "/home/<USER>/.claude/hooks/post-compact-context.sh"
 }
 ```
 
@@ -453,7 +453,7 @@ tool_use Read
 id: toolu_016zXxpRv4WG59fcSU7SKfgv
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/check-settings-size.sh"
+  "file_path": "/home/<USER>/.claude/hooks/check-settings-size.sh"
 }
 ```
 
@@ -562,7 +562,7 @@ tool_use Write
 id: toolu_01B5v2DKNeW8wEzhteL3wjBZ
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "content": "# Plan: Autonomous Config Optimization System\n\n## Context\n\n**Problem:** Claude Code ships ~8 releases per 9 days (April 2026 cadence). New features, settings, env vars, hooks, and security hardening arrive faster than any human can track. Currently, your only signal is the built-in `/release-notes` picker — reactive, manual, and easy to skip.\n\n**Current State:** Version 2.1.100 (latest). 23 plugins, 9 global hooks, 22 project hooks, comprehensive permissions. Well-tuned but with several recent features unadopted.\n\n**Goal:** Build a self-maintaining system that (1) applies immediate optimizations from the current gap analysis, (2) automatically surfaces and recommends new features on every version bump, and (3) provides a one-command audit to diff your config against known best practices.\n\n**Outcome:** You always know what's new, config stays optimized, and no feature falls through the cracks.\n\n---\n\n## Phase 1: Immediate Config Optimizations (settings.json edits)\n\nThese are features from recent releases (v2.1.94–2.1.100) that your config doesn't yet leverage.\n\n### Task 1.1: Add new env vars for rendering and sandboxing\n\n**File:** `~/.claude/settings.json` → `env` block\n\nAdd:\n```json\n\"CLAUDE_CODE_NO_FLICKER\": \"1\",\n\"CLAUDE_CODE_SUBPROCESS_ENV_SCRUB\": \"1\"\n```\n\n- `NO_FLICKER` enables alt-screen rendering with virtualized scrollback — eliminates terminal flicker during tool calls. Unlocks the Focus View toggle (`Ctrl+O`).\n- `SUBPROCESS_ENV_SCRUB` enables PID namespace isolation for subprocesses — security hardening that […]
 
 > TOOL
@@ -570,7 +570,7 @@ id: toolu_01B5v2DKNeW8wEzhteL3wjBZ
 tool_result
 id: toolu_01B5v2DKNeW8wEzhteL3wjBZ
 ```
-File created successfully at: /home/mike-anderson/.claude/plans/elegant-singing-tome.md
+File created successfully at: /home/<USER>/.claude/plans/elegant-singing-tome.md
 ```
 
 > AGENT
@@ -658,7 +658,7 @@ id: toolu_01VeLSR87KeonRauc3L5UyXe
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "- Log the denied tool + reason to `~/.claude/logs/denied-tools.log`\n- Track denial patterns (frequent false-positive denials → candidate for permission allow-list)\n- Return `{\"retry\": true}` for known-safe patterns (configurable allowlist)",
   "new_string": "- Log the denied tool + reason to `~/.claude/logs/denied-tools.log`\n- Track denial patterns (frequent false-positive denials → candidate for permission allow-list)\n- Return `{\"retry\": true}` for known-safe read-only patterns (configurable allowlist in `~/.claude/hooks/safe-retry-patterns.txt`)\n- **Decision: Log + auto-retry safe patterns** (user confirmed)"
 }
@@ -669,7 +669,7 @@ id: toolu_01VeLSR87KeonRauc3L5UyXe
 tool_result
 id: toolu_01VeLSR87KeonRauc3L5UyXe
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > TOOL
@@ -679,7 +679,7 @@ id: toolu_018tVZLiy1EJ1NtWoAiT1adN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "| `hookify` | **Consider enabling** | Auto-generates hooks from natural language — could simplify Phase 2 |\n| `agent-sdk-dev` | **Consider enabling** | Managed Agents just hit public beta — relevant for compound loop |\n\nDecision: Present to user for selection.",
   "new_string": "| `hookify` | **Enable** | Auto-generates hooks from natural language — simplifies hook creation |\n| `agent-sdk-dev` | **Enable** | Managed Agents just hit public beta — relevant for compound loop |\n\n**Decision: Enable both** (user confirmed)"
 }
@@ -704,7 +704,7 @@ id: toolu_01WT3URvrUhcvxKLjjbVkwjr
 ```json
 {
   "pattern": "hookify.*Consider",
-  "path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "output_mode": "content"
 }
 ```
@@ -723,7 +723,7 @@ tool_use Read
 id: toolu_01TpJRHSjL77ZvA5p8xsCt4h
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "offset": 155,
   "limit": 15
 }
@@ -758,7 +758,7 @@ id: toolu_013xpi9wmb59GVirKcpDwbCm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "| `hookify` | **Consider enabling** | Auto-generates hooks from natural language — could simplify Phase 2 |\n| `agent-sdk-dev` | **Consider enabling** | Managed Agents just hit public beta — relevant for compound loop |\n| `claude-code-setup` | Skip | One-time setup, you're already configured |\n| `document-skills` | Skip | Anthropic agent skills for doc generation — low relevance |\n| `frontend-design` | Skip | Not relevant to Cohezion's Python backend |\n\nDecision: Present to user for selection.",
   "new_string": "| `hookify` | **Enable** | Auto-generates hooks from natural language — simplifies hook creation |\n| `agent-sdk-dev` | **Enable** | Managed Agents hit public beta — relevant for compound loop |\n| `claude-code-setup` | Skip | One-time setup, already configured |\n| `document-skills` | Skip | Low relevance |\n| `frontend-design` | Skip | Not relevant to Python backend |\n\n**Decision: Enable hookify + agent-sdk-dev** (user confirmed)"
 }
@@ -769,7 +769,7 @@ id: toolu_013xpi9wmb59GVirKcpDwbCm
 tool_result
 id: toolu_013xpi9wmb59GVirKcpDwbCm
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1070,7 +1070,7 @@ tool_use Read
 id: toolu_01ST1VLzXgzusj6csYnSbCNf
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md"
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md"
 }
 ```
 
@@ -1115,7 +1115,7 @@ tool_use Write
 id: toolu_01LJP9S5kxYRdEEMBydAL3py
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "content": "# Plan: Full-Spectrum Anthropic Intelligence Feed + Config Optimization\n\n## Context\n\n**Problem:** Anthropic ships across 11+ channels — CLI releases (~3/week), API platform changes (~4/month), model launches, deprecation deadlines, research papers, alignment findings, blog posts, system cards, and more. Currently your only signal is the built-in `/release-notes` picker — reactive, manual, CLI-only, and blind to the API/research/blog surface.\n\n**Current State:** Claude Code v2.1.100 (latest). 23 plugins, 9 global hooks, 22 project hooks, comprehensive permissions. Well-tuned but with gaps from recent releases and zero coverage of the broader Anthropic ecosystem.\n\n**Urgent deadlines discovered:**\n- **April 19, 2026:** Claude Haiku 3 (`claude-3-haiku-20240307`) retires — any code referencing this model ID will break\n- **April 30, 2026:** 1M context beta header (`context-1m-2025-08-07`) stops working for Sonnet 4.5/4 — must migrate to Sonnet 4.6 or Opus 4.6\n\n**Goal:** Build an autonomous system that (1) applies immediate optimizations from today's gap analysis, (2) monitors all 11 Anthropic sources for changes, (3) routes findings to the right action (config edit, code change, vault knowledge, or strategy), and (4) provides a one-command audit to check your config against all known features.\n\n---\n\n## Phase 1: Immediate Config Optimizations\n\nFeatures from v2.1.89–2.1.100 that your config doesn't leverage yet.\n\n### Task […]
 
 > TOOL
@@ -1123,7 +1123,7 @@ id: toolu_01LJP9S5kxYRdEEMBydAL3py
 tool_result
 id: toolu_01LJP9S5kxYRdEEMBydAL3py
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1258,7 +1258,7 @@ tool_use Read
 id: toolu_01QPzHLsxYsjxmyxfCLrZW1t
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "offset": 92,
   "limit": 50
 }
@@ -1311,7 +1311,7 @@ id: toolu_01ByC4p5GcpqVoLdaQbgHKqq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.2: Create version-watch SessionStart hook\n\n**New file:** `~/.claude/hooks/version-watch.sh`\n\nLogic:\n1. Read `~/.claude/anthropic-intel/.last-known-version` (seed with `2.1.100`)\n2. Compare against `claude --version`\n3. If changed → emit: `\"[version-watch] Claude Code updated: {old} → {new}. Run /release-notes or /anthropic-scan to review.\"`\n4. If unchanged → silent\n\n**Wire into:** `~/.claude/settings.json` → `hooks.SessionStart`\n\n### Task 3.3: Create `/anthropic-scan` slash command\n\n**New file:** `~/.claude/commands/anthropic-scan.md`\n\nThe comprehensive \"pull\" command. When invoked:",
   "new_string": "### Task 3.2: Create version-watch + scan-trigger SessionStart hook\n\n**New file:** `~/.claude/hooks/version-watch.sh`\n\nLogic:\n1. Read `~/.claude/anthropic-intel/.last-known-version` (seed with `2.1.100`)\n2. Compare against `claude --version`\n3. If changed → emit version bump notice\n4. **Always** emit: `\"[anthropic-intel] Run /anthropic-scan for full Anthropic ecosystem check.\"`\n\nThis ensures every session starts with a proactive scan directive.\n\n**Wire into:** `~/.claude/settings.json` → `hooks.SessionStart`\n\n### Task 3.3: Create proactive scan rule\n\n**New file:** `~/.claude/rules/anthropic-intel-scan.md`\n\nA rule that instructs Claude to:\n- When the `[anthropic-intel]` directive appears in SessionStart hook output, **proactively run `/anthropic-scan`** at the start of the session before responding to the user's first message\n- Present the scan results as a brief summary (URGENT items highlighted, rest collapsed)\n- Offer to apply recommended config changes or route findings to vault\n\nThis is what makes it truly proactive — the hook triggers the directive, the rule ensures Claude acts on it.\n\n### Task […]
 
@@ -1320,7 +1320,7 @@ id: toolu_01ByC4p5GcpqVoLdaQbgHKqq
 tool_result
 id: toolu_01ByC4p5GcpqVoLdaQbgHKqq
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1334,7 +1334,7 @@ id: toolu_01XMANzHs6JN71WYNVYo6zL5
 ```json
 {
   "replace_all": true,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.4: Create known-features manifest",
   "new_string": "### Task 3.5: Create known-features manifest"
 }
@@ -1356,7 +1356,7 @@ id: toolu_01WnY2XHf8rWP2bsCYmbKD9n
 ```json
 {
   "pattern": "### Task 3\\.",
-  "path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "output_mode": "content"
 }
 ```
@@ -1380,7 +1380,7 @@ tool_use Read
 id: toolu_015QTsZr8hV11JixE7FRcdSy
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "offset": 283,
   "limit": 25
 }
@@ -1425,7 +1425,7 @@ id: toolu_019sGQsx3F8BGMPuC8eDUWJZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.4: Create features manifest\n\n**New file:** `~/.claude/anthropic-intel/features-manifest.json`",
   "new_string": "### Task 3.5: Create features manifest\n\n**New file:** `~/.claude/anthropic-intel/features-manifest.json`"
 }
@@ -1436,7 +1436,7 @@ id: toolu_019sGQsx3F8BGMPuC8eDUWJZ
 tool_result
 id: toolu_019sGQsx3F8BGMPuC8eDUWJZ
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > TOOL
@@ -1446,7 +1446,7 @@ id: toolu_01AsHnEUfGUZ8cHmegocExUn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.5: Create API features manifest",
   "new_string": "### Task 3.6: Create API features manifest"
 }
@@ -1457,7 +1457,7 @@ id: toolu_01AsHnEUfGUZ8cHmegocExUn
 tool_result
 id: toolu_01AsHnEUfGUZ8cHmegocExUn
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1471,7 +1471,7 @@ id: toolu_019w7qPmenkukGPwk3BpHA3z
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "| `~/.claude/commands/anthropic-scan.md` | Create: full-spectrum audit slash command |",
   "new_string": "| `~/.claude/rules/anthropic-intel-scan.md` | Create: proactive scan rule (triggers scan every session) |\n| `~/.claude/commands/anthropic-scan.md` | Create: full-spectrum audit slash command |"
 }
@@ -1482,7 +1482,7 @@ id: toolu_019w7qPmenkukGPwk3BpHA3z
 tool_result
 id: toolu_019w7qPmenkukGPwk3BpHA3z
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1559,7 +1559,7 @@ id: toolu_01ScCrkgWyobp2WNDMsW721L
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.2: Create version-watch + scan-trigger SessionStart hook\n\n**New file:** `~/.claude/hooks/version-watch.sh`\n\nLogic:\n1. Read `~/.claude/anthropic-intel/.last-known-version` (seed with `2.1.100`)\n2. Compare against `claude --version`\n3. If changed → emit version bump notice\n4. **Always** emit: `\"[anthropic-intel] Run /anthropic-scan for full Anthropic ecosystem check.\"`\n\nThis ensures every session starts with a proactive scan directive.\n\n**Wire into:** `~/.claude/settings.json` → `hooks.SessionStart`\n\n### Task 3.3: Create proactive scan rule\n\n**New file:** `~/.claude/rules/anthropic-intel-scan.md`\n\nA rule that instructs Claude to:\n- When the `[anthropic-intel]` directive appears in SessionStart hook output, **proactively run `/anthropic-scan`** at the start of the session before responding to the user's first message\n- Present the scan results as a brief summary (URGENT items highlighted, rest collapsed)\n- Offer to apply recommended config changes or route findings to vault\n\nThis is what makes it truly proactive — the hook triggers the directive, the rule ensures Claude acts on it.\n\n### Task 3.4: Create `/anthropic-scan` slash command",
   "new_string": "### Task 3.2: Create version-watch + staleness-check SessionStart hook\n\n**New file:** `~/.claude/hooks/version-watch.sh`\n\nLogic (all instant, local filesystem only — zero network calls):\n1. Read `~/.claude/anthropic-intel/.last-known-version` (seed with `2.1.100`)\n2. Compare against `claude --version`\n3. If version changed → emit: `\"[version-watch] Claude Code updated: {old} → {new}. Run /release-notes to review CLI changes, or /anthropic-scan for full […]
 
@@ -1568,7 +1568,7 @@ id: toolu_01ScCrkgWyobp2WNDMsW721L
 tool_result
 id: toolu_01ScCrkgWyobp2WNDMsW721L
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1582,7 +1582,7 @@ id: toolu_01STG8CZAVBd8Vxmztt336n9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "| `~/.claude/rules/anthropic-intel-scan.md` | Create: proactive scan rule (triggers scan every session) |",
   "new_string": "| `~/.claude/rules/anthropic-intel-scan.md` | Create: tiered proactivity rule (staleness nudge + scan behavior) |"
 }
@@ -1593,7 +1593,7 @@ id: toolu_01STG8CZAVBd8Vxmztt336n9
 tool_result
 id: toolu_01STG8CZAVBd8Vxmztt336n9
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1674,7 +1674,7 @@ Perfect. Now I have comprehensive information. Let me create a detailed audit re
 
 ## EXHAUSTIVE AUDIT: Claude Code Features NOT Being Used in Cohezion
 
-Based on thorough analysis of `/home/mike-anderson/.claude/settings.json` and the Cohezion codebase (`src/cohezion/`), here's what's available but NOT being leveraged:
+Based on thorough analysis of `/home/<USER>/.claude/settings.json` and the Cohezion codebase (`src/cohezion/`), here's what's available but NOT being leveraged:
 
 ---
 
@@ -1730,7 +1730,7 @@ tool_use Read
 id: toolu_01X1zMd4Vy7jhf1KbVtAasyh
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md"
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md"
 }
 ```
 
@@ -1763,7 +1763,7 @@ tool_use Write
 id: toolu_01VALb1Yiu7b6RKxCwsod8bC
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "content": "# Plan: Full-Spectrum Anthropic Intelligence Feed + Config Optimization\n\n## Context\n\n**Problem:** Anthropic ships across 11+ channels — CLI releases (~3/week), API platform changes (~4/month), model launches, deprecation deadlines, research papers, alignment findings, blog posts, system cards, and more. Currently your only signal is the built-in `/release-notes` picker — reactive, manual, CLI-only, and blind to the API/research/blog surface. Additionally, a deep audit reveals significant untapped capabilities in both Claude Code settings and the Anthropic API that Cohezion's codebase doesn't leverage.\n\n**Current State:** Claude Code v2.1.100 (latest). 23 plugins, 9 global hooks, 22 project hooks. Well-tuned but with:\n- 11+ unused env vars from recent releases\n- 9+ unused hook types\n- 7 Claude API features not leveraged in the codebase\n- Hardcoded model IDs/costs in `cost_aware_router.py` instead of Models API\n- No Anthropic prompt caching in CompoundExecutor\n- No compaction API usage\n\n**Urgent deadlines discovered:**\n- **April 19, 2026:** Claude Haiku 3 (`claude-3-haiku-20240307`) retires — any code referencing this model ID will break\n- **April 30, 2026:** 1M context beta header (`context-1m-2025-08-07`) stops working for Sonnet 4.5/4\n\n**Goal:** Build an autonomous system that:\n1. Applies immediate optimizations from the gap analysis\n2. Monitors all 11 Anthropic sources for changes\n3. **Agentically runs a full scan** when staleness […]
 
 > TOOL
@@ -1771,7 +1771,7 @@ id: toolu_01VALb1Yiu7b6RKxCwsod8bC
 tool_result
 id: toolu_01VALb1Yiu7b6RKxCwsod8bC
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1840,7 +1840,7 @@ id: toolu_01TX8QLAakhtLoWi48gu3wRq
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/mike-anderson/.claude/plans/elegant-singing-tome.md
+Your plan has been saved to: /home/<USER>/.claude/plans/elegant-singing-tome.md
 You can refer back to it if needed during implementation.
 
 If this plan can be broken down into multiple independent tasks, consider using the TeamCreate tool to create a team and parallelize the work.
@@ -2024,7 +2024,7 @@ tool_use Bash
 id: toolu_01KvzC6ptdjLMzjgLQ6owUH1
 ```json
 {
-  "command": "mkdir -p /home/mike-anderson/.claude/anthropic-intel /home/mike-anderson/.claude/logs",
+  "command": "mkdir -p /home/<USER>/.claude/anthropic-intel /home/<USER>/.claude/logs",
   "description": "Create directories for anthropic-intel and logs"
 }
 ```
@@ -2073,7 +2073,7 @@ id: toolu_01SJa2CnnQjaV831QXqHeGfu
 ```json
 {
   "pattern": "claude-3-opus-20240229|claude-3-7-sonnet-20250219|claude-3-5-haiku-20241022|claude-3-5-sonnet-2024",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "output_mode": "content",
   "-C": 3
 }
@@ -2085,7 +2085,7 @@ tool_use Read
 id: toolu_01GAru1fqRPSSNSsvpG4cEmB
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "offset": 1,
   "limit": 20
 }
@@ -2164,7 +2164,7 @@ id: toolu_013q7Pn3YJofQV8NqBXMz3J6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "        \"anthropic\": {\n            \"claude-3-5-sonnet-20241022\": {\"input\": 3.00, \"output\": 15.00},\n            \"claude-3-opus-20240229\": {\"input\": 15.00, \"output\": 75.00},\n        },",
   "new_string": "        \"anthropic\": {\n            \"claude-sonnet-4-6\": {\"input\": 3.00, \"output\": 15.00},\n            \"claude-opus-4-6\": {\"input\": 15.00, \"output\": 75.00},\n        },"
 }
@@ -2177,7 +2177,7 @@ id: toolu_011dwvs1sKB8SrMbMWV5dCGS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "                self.model = \"claude-3-5-sonnet-20241022\"",
   "new_string": "                self.model = \"claude-sonnet-4-6\""
 }
@@ -2190,7 +2190,7 @@ id: toolu_0136zzpCHREAZGf2GYrq6EWo
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "        model: Model name (e.g., \"gpt-4o-mini\", \"claude-3-5-sonnet-20241022\")",
   "new_string": "        model: Model name (e.g., \"gpt-4o-mini\", \"claude-sonnet-4-6\")"
 }
@@ -2226,7 +2226,7 @@ tool_use Read
 id: toolu_01KftkxoqkX24DNhXzh1TKJH
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py"
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py"
 }
 ```
 
@@ -2301,7 +2301,7 @@ id: toolu_011ZJLJuFDLMrF2Tttpfkk8n
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "    - anthropic: Claude 3.5 Sonnet, Claude 3 Opus\n\n    Args:\n        provider: \"openai\" or \"anthropic\"\n        model: Model name (e.g., \"gpt-4o-mini\", \"claude-3-5-sonnet-20241022\")",
   "new_string": "    - anthropic: Claude Sonnet 4.6, Claude Opus 4.6\n\n    Args:\n        provider: \"openai\" or \"anthropic\"\n        model: Model name (e.g., \"gpt-4o-mini\", \"claude-sonnet-4-6\")"
 }
@@ -2314,7 +2314,7 @@ id: toolu_01Wzr1DrsdksMAMRB2HZohE6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "        \"anthropic\": {\n            \"claude-3-5-sonnet-20241022\": {\"input\": 3.00, \"output\": 15.00},\n            \"claude-3-opus-20240229\": {\"input\": 15.00, \"output\": 75.00},\n        },",
   "new_string": "        \"anthropic\": {\n            \"claude-sonnet-4-6\": {\"input\": 3.00, \"output\": 15.00},\n            \"claude-opus-4-6\": {\"input\": 15.00, \"output\": 75.00},\n        },"
 }
@@ -2327,7 +2327,7 @@ id: toolu_01JxUmQMbhhcYCLjYauazh2Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "                self.model = \"claude-3-5-sonnet-20241022\"",
   "new_string": "                self.model = \"claude-sonnet-4-6\""
 }
@@ -2338,7 +2338,7 @@ id: toolu_01JxUmQMbhhcYCLjYauazh2Q
 tool_result
 id: toolu_011ZJLJuFDLMrF2Tttpfkk8n
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
 ```
 
 > TOOL
@@ -2346,7 +2346,7 @@ The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/a
 tool_result
 id: toolu_01Wzr1DrsdksMAMRB2HZohE6
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
 ```
 
 > TOOL
@@ -2354,7 +2354,7 @@ The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/a
 tool_result
 id: toolu_01JxUmQMbhhcYCLjYauazh2Q
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
 ```
 
 > AGENT
@@ -2379,7 +2379,7 @@ id: toolu_01LXisrCiWGEcsPsV8xkQCSt
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "    \"CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS\": \"5000\"\n  },",
   "new_string": "    \"CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS\": \"5000\",\n    \"CLAUDE_CODE_NO_FLICKER\": \"1\",\n    \"CLAUDE_CODE_SUBPROCESS_ENV_SCRUB\": \"1\",\n    \"CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE\": \"true\"\n  },"
 }
@@ -2398,7 +2398,7 @@ Updated task #4 status
 tool_result
 id: toolu_01LXisrCiWGEcsPsV8xkQCSt
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > AGENT
@@ -2412,9 +2412,9 @@ id: toolu_01JZvF5Aod1hPEX5vwgkvpiA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
-  "old_string": "      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/post-bash-cleanup.sh\"\n          }\n        ]\n      }\n    ]\n  },",
-  "new_string": "      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/post-bash-cleanup.sh\"\n          }\n        ]\n      }\n    ],\n    \"PermissionDenied\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/on-permission-denied.sh\"\n          }\n        ]\n      }\n    ]\n  },"
+  "file_path": "/home/<USER>/.claude/settings.json",
+  "old_string": "      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/post-bash-cleanup.sh\"\n          }\n        ]\n      }\n    ]\n  },",
+  "new_string": "      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/post-bash-cleanup.sh\"\n          }\n        ]\n      }\n    ],\n    \"PermissionDenied\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/on-permission-denied.sh\"\n          }\n        ]\n      }\n    ]\n  },"
 }
 ```
 
@@ -2423,7 +2423,7 @@ id: toolu_01JZvF5Aod1hPEX5vwgkvpiA
 tool_result
 id: toolu_01JZvF5Aod1hPEX5vwgkvpiA
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > AGENT
@@ -2437,9 +2437,9 @@ id: toolu_01V9KgR9AYT1tD6WLcabDv86
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
-  "old_string": "    \"SessionStart\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/check-settings-size.sh\"\n          }\n        ]\n      }\n    ],",
-  "new_string": "    \"SessionStart\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/check-settings-size.sh\"\n          }\n        ]\n      },\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/version-watch.sh\"\n          }\n        ]\n      }\n    ],"
+  "file_path": "/home/<USER>/.claude/settings.json",
+  "old_string": "    \"SessionStart\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/check-settings-size.sh\"\n          }\n        ]\n      }\n    ],",
+  "new_string": "    \"SessionStart\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/check-settings-size.sh\"\n          }\n        ]\n      },\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/version-watch.sh\"\n          }\n        ]\n      }\n    ],"
 }
 ```
 
@@ -2448,7 +2448,7 @@ id: toolu_01V9KgR9AYT1tD6WLcabDv86
 tool_result
 id: toolu_01V9KgR9AYT1tD6WLcabDv86
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > AGENT
@@ -2462,7 +2462,7 @@ id: toolu_01SgHjy6o3uroUwfFxFxuzpH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "      \"Bash(pre-commit:*)\",",
   "new_string": "      \"Bash(pre-commit:*)\",\n      \"Bash(tput:*)\",\n      \"Bash(stat:*)\",\n      \"Bash(ant:*)\",\n      \"Bash(cat:*)\",\n      \"Bash(diff:*)\",\n      \"Bash(which:*)\",\n      \"Bash(file:*)\",\n      \"Bash(readlink:*)\",\n      \"Bash(realpath:*)\","
 }
@@ -2473,7 +2473,7 @@ id: toolu_01SgHjy6o3uroUwfFxFxuzpH
 tool_result
 id: toolu_01SgHjy6o3uroUwfFxFxuzpH
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > TOOL
@@ -2483,7 +2483,7 @@ id: toolu_016eZapYPSDuPZZ54oEpRAYZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "    \"hookify@claude-plugins-official\": false,",
   "new_string": "    \"hookify@claude-plugins-official\": true,"
 }
@@ -2496,7 +2496,7 @@ id: toolu_01HHapzgwryQUrLtGPmUCmHH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "    \"agent-sdk-dev@claude-plugins-official\": false,",
   "new_string": "    \"agent-sdk-dev@claude-plugins-official\": true,"
 }
@@ -2509,7 +2509,7 @@ id: toolu_01HBGCFtRn3R4NbV8X63qB58
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"autoCompactPrompt\": \"Preserve: active plan file paths, task IDs, file paths being edited, test results, error messages, and architectural decisions. Summarize exploration and research. Drop verbose tool outputs and intermediate search results.\",",
   "new_string": "  \"autoCompactPrompt\": \"Preserve: active plan file paths, task IDs, file paths being edited, test results, error messages, architectural decisions, anthropic-scan findings, version-watch alerts, deprecation deadlines, and model ID references. Summarize exploration and research. Drop verbose tool outputs and intermediate search results.\","
 }
@@ -2522,7 +2522,7 @@ id: toolu_018WgHaCKe3VmusDG1GWDWPD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"spinnerTipsEnabled\": false,",
   "new_string": "  \"statusLine\": {\n    \"refreshInterval\": 30\n  },\n  \"spinnerTipsEnabled\": false,"
 }
@@ -2533,7 +2533,7 @@ id: toolu_018WgHaCKe3VmusDG1GWDWPD
 tool_result
 id: toolu_016eZapYPSDuPZZ54oEpRAYZ
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > TOOL
@@ -2541,7 +2541,7 @@ The file /home/mike-anderson/.claude/settings.json has been updated successfully
 tool_result
 id: toolu_01HHapzgwryQUrLtGPmUCmHH
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > TOOL
@@ -2549,7 +2549,7 @@ The file /home/mike-anderson/.claude/settings.json has been updated successfully
 tool_result
 id: toolu_01HBGCFtRn3R4NbV8X63qB58
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > TOOL
@@ -2557,7 +2557,7 @@ The file /home/mike-anderson/.claude/settings.json has been updated successfully
 tool_result
 id: toolu_018WgHaCKe3VmusDG1GWDWPD
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > AGENT
@@ -2612,7 +2612,7 @@ tool_use Write
 id: toolu_01DQfJx6HzW6sUNMjVJpuNCc
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/version-watch.sh",
+  "file_path": "/home/<USER>/.claude/hooks/version-watch.sh",
   "content": "#!/usr/bin/env bash\n# SessionStart hook: version-watch + staleness-check\n# Detects CLI version bumps and stale anthropic-intel scans.\n# Zero network calls — all local filesystem checks.\n\nINTEL_DIR=\"$HOME/.claude/anthropic-intel\"\nVERSION_FILE=\"$INTEL_DIR/.last-known-version\"\nSCAN_DATE_FILE=\"$INTEL_DIR/.last-scan-date\"\nSTALENESS_THRESHOLD_HOURS=24\n\n# Ensure intel directory exists\nmkdir -p \"$INTEL_DIR\"\n\n# --- Version check ---\nCURRENT_VERSION=$(claude --version 2>/dev/null | head -1 | grep -oP '[\\d.]+' | head -1)\n\nif [ -z \"$CURRENT_VERSION\" ]; then\n    exit 0  # Can't determine version, skip silently\nfi\n\nif [ -f \"$VERSION_FILE\" ]; then\n    LAST_VERSION=$(cat \"$VERSION_FILE\" 2>/dev/null)\n    if [ \"$CURRENT_VERSION\" != \"$LAST_VERSION\" ]; then\n        echo \"[version-watch] Claude Code updated: $LAST_VERSION -> $CURRENT_VERSION. Run /release-notes to review CLI changes.\"\n        echo \"$CURRENT_VERSION\" > \"$VERSION_FILE\"\n    fi\nelse\n    # First run — seed the version file\n    echo \"$CURRENT_VERSION\" > \"$VERSION_FILE\"\nfi\n\n# --- Staleness check ---\nif [ -f \"$SCAN_DATE_FILE\" ]; then\n    LAST_SCAN=$(cat \"$SCAN_DATE_FILE\" 2>/dev/null)\n    LAST_SCAN_EPOCH=$(date -d \"$LAST_SCAN\" +%s 2>/dev/null || echo \"0\")\n    NOW_EPOCH=$(date +%s)\n    DIFF_HOURS=$(( (NOW_EPOCH - LAST_SCAN_EPOCH) / 3600 ))\n\n    if [ \"$DIFF_HOURS\" -ge \"$STALENESS_THRESHOLD_HOURS\" ]; then\n        echo \"[anthropic-intel:stale] Last full scan was ${DIFF_HOURS}h ago (threshold: ${STALENESS_THRESHOLD_HOURS}h). Triggering background scan.\"\n    fi\nelse\n    # No scan ever run\n    echo \"[anthropic-intel:stale] No previous scan found. Triggering background scan.\"\nfi\n\nexit 0\n"
 }
 ```
@@ -2623,7 +2623,7 @@ tool_use Write
 id: toolu_018XBNyVpufMzeUwvVTLqahH
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/on-permission-denied.sh",
+  "file_path": "/home/<USER>/.claude/hooks/on-permission-denied.sh",
   "content": "#!/usr/bin/env bash\n# PermissionDenied hook: log denials + auto-retry safe patterns\n# Reads tool_name and reason from CLAUDE_HOOK_TOOL_NAME / CLAUDE_HOOK_DENIED_REASON env vars.\n\nLOG_DIR=\"$HOME/.claude/logs\"\nLOG_FILE=\"$LOG_DIR/denied-tools.log\"\nSAFE_PATTERNS_FILE=\"$HOME/.claude/hooks/safe-retry-patterns.txt\"\n\nmkdir -p \"$LOG_DIR\"\n\n# Extract tool info from hook context (passed via stdin as JSON)\nHOOK_INPUT=$(cat)\nTOOL_NAME=$(echo \"$HOOK_INPUT\" | python3 -c \"import sys,json; d=json.load(sys.stdin); print(d.get('tool_name', d.get('toolName', 'unknown')))\" 2>/dev/null || echo \"unknown\")\n\n# Log the denial\necho \"$(date -Iseconds) DENIED: $TOOL_NAME\" >> \"$LOG_FILE\"\n\n# Check if tool matches safe-retry patterns\nif [ -f \"$SAFE_PATTERNS_FILE\" ]; then\n    while IFS= read -r pattern; do\n        # Skip comments and empty lines\n        [[ \"$pattern\" =~ ^#.*$ || -z \"$pattern\" ]] && continue\n        if echo \"$TOOL_NAME\" | grep -qE \"$pattern\"; then\n            echo '{\"retry\": true}'\n            exit 0\n        fi\n    done < \"$SAFE_PATTERNS_FILE\"\nfi\n\n# Default: don't retry\nexit 0\n"
 }
 ```
@@ -2634,7 +2634,7 @@ tool_use Write
 id: toolu_011AtW2GAwcSTAHNWbZJAEVT
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/safe-retry-patterns.txt",
+  "file_path": "/home/<USER>/.claude/hooks/safe-retry-patterns.txt",
   "content": "# Patterns for safe auto-retry on PermissionDenied\n# One regex pattern per line. Lines starting with # are comments.\n# Matches against the tool name (e.g., \"Bash(ls:*)\", \"Read(/path)\")\n\n^Bash\\(ls:\n^Bash\\(stat:\n^Bash\\(cat:\n^Bash\\(which:\n^Bash\\(file:\n^Bash\\(readlink:\n^Bash\\(realpath:\n^Bash\\(tput:\n^Bash\\(wc:\n^Bash\\(diff:\n^Read\\(\n^Glob\\(\n^Grep\\(\n"
 }
 ```
@@ -2645,7 +2645,7 @@ tool_use Write
 id: toolu_011xbx33g8NeTXTvkh2cdjUR
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/rules/anthropic-intel-scan.md",
+  "file_path": "/home/<USER>/.claude/rules/anthropic-intel-scan.md",
   "content": "# Anthropic Intelligence Feed — Agentic Scan Rule\n\n## Trigger: `[anthropic-intel:stale]`\n\nWhen the SessionStart hook emits `[anthropic-intel:stale]`, **automatically spawn a background agent** to run `/anthropic-scan`:\n\n```\nAgent({\n  description: \"Anthropic ecosystem scan\",\n  prompt: \"Run /anthropic-scan to check all 11 Anthropic content sources for updates. Write findings to ~/.claude/anthropic-intel/latest-digest.md and update ~/.claude/anthropic-intel/.last-scan-date to today's ISO date. Focus on: deprecation deadlines, new CLI features, API changes, and research papers.\",\n  run_in_background: true\n})\n```\n\nThe main session continues unblocked. When the agent completes:\n\n1. Read `~/.claude/anthropic-intel/latest-digest.md`\n2. Surface a **brief summary** (3-5 lines max)\n3. Highlight any **URGENT** items (deprecation deadlines within 30 days, breaking changes)\n4. Offer to auto-apply **AUTO-APPLY** items (low-risk config changes)\n5. List **REVIEW** items for user decision\n\n## Trigger: `[version-watch]`\n\nWhen the hook detects a version bump, suggest running `/release-notes` for CLI-specific details.\n\n## Auto-Integration Behavior\n\nAfter any `/anthropic-scan` run, classify findings by risk tier:\n\n| Risk | Action |\n|------|--------|\n| **Low** (env vars, permissions, plugin enables) | Batch and present: \"Found N improvements. Apply all? [Y/n]\" |\n| **Medium** (hooks, structural settings, beta headers) | Present each individually with description + risk |\n| **High** (code changes, API migrations, architectural) | Report only with documentation links |\n\nAll applied changes are logged to `~/.claude/anthropic-intel/change-log.md`.\n\n## Do NOT\n\n- Run the scan if […]
 
 > TOOL
@@ -2653,7 +2653,7 @@ id: toolu_011xbx33g8NeTXTvkh2cdjUR
 tool_result
 id: toolu_01DQfJx6HzW6sUNMjVJpuNCc
 ```
-File created successfully at: /home/mike-anderson/.claude/hooks/version-watch.sh
+File created successfully at: /home/<USER>/.claude/hooks/version-watch.sh
 ```
 
 > TOOL
@@ -2661,7 +2661,7 @@ File created successfully at: /home/mike-anderson/.claude/hooks/version-watch.sh
 tool_result
 id: toolu_018XBNyVpufMzeUwvVTLqahH
 ```
-File created successfully at: /home/mike-anderson/.claude/hooks/on-permission-denied.sh
+File created successfully at: /home/<USER>/.claude/hooks/on-permission-denied.sh
 ```
 
 > TOOL
@@ -2669,7 +2669,7 @@ File created successfully at: /home/mike-anderson/.claude/hooks/on-permission-de
 tool_result
 id: toolu_011AtW2GAwcSTAHNWbZJAEVT
 ```
-File created successfully at: /home/mike-anderson/.claude/hooks/safe-retry-patterns.txt
+File created successfully at: /home/<USER>/.claude/hooks/safe-retry-patterns.txt
 ```
 
 > TOOL
@@ -2677,7 +2677,7 @@ File created successfully at: /home/mike-anderson/.claude/hooks/safe-retry-patte
 tool_result
 id: toolu_011xbx33g8NeTXTvkh2cdjUR
 ```
-File created successfully at: /home/mike-anderson/.claude/rules/anthropic-intel-scan.md
+File created successfully at: /home/<USER>/.claude/rules/anthropic-intel-scan.md
 ```
 
 > AGENT
@@ -2690,7 +2690,7 @@ tool_use Bash
 id: toolu_012LwJV6akx79Q6LG1VCijLB
 ```json
 {
-  "command": "chmod +x /home/mike-anderson/.claude/hooks/version-watch.sh /home/mike-anderson/.claude/hooks/on-permission-denied.sh",
+  "command": "chmod +x /home/<USER>/.claude/hooks/version-watch.sh /home/<USER>/.claude/hooks/on-permission-denied.sh",
   "description": "Make hook scripts executable"
 }
 ```
@@ -2701,7 +2701,7 @@ tool_use Write
 id: toolu_01FCg4xmVfdg5xjyidfPy8bu
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/commands/anthropic-scan.md",
+  "file_path": "/home/<USER>/.claude/commands/anthropic-scan.md",
   "content": "---\nname: anthropic-scan\ndescription: Full-spectrum scan of all 11 Anthropic content sources with auto-integration\n---\n\n# Anthropic Ecosystem Scan\n\nYou are running a full scan of the Anthropic ecosystem. Check all sources, classify findings by risk, and write a structured digest.\n\n## Step 1: CLI Feature Audit\n\nRead `~/.claude/settings.json` and compare against `~/.claude/anthropic-intel/features-manifest.json`:\n- Which features are adopted?\n- Which are available but not enabled?\n- Which are deprecated or superseded?\n\n## Step 2: API Platform Scan\n\nWebFetch `https://platform.claude.com/docs/en/release-notes/api` and extract:\n- New entries since last scan (check `~/.claude/anthropic-intel/.last-scan-date`)\n- **Deprecation deadlines** within 30 days → mark as URGENT\n- Beta headers that went GA → mark as AUTO-APPLY (remove beta header)\n- New tools and features → mark as REVIEW\n\n## Step 3: Model Deprecation Check\n\nWebFetch `https://platform.claude.com/docs/en/about-claude/model-deprecations` and cross-reference against:\n- Model IDs in `src/cohezion/swarm/cost_aware_router.py`\n- Model IDs in `src/cohezion/integrations/agentverse/api_llm_executor.py`\n- Any model IDs in test fixtures\n\nFlag any matches as URGENT.\n\n## Step 4: Research & Blog Scan\n\nWebFetch `https://www.anthropic.com/research` — list new papers since last scan.\nWebFetch `https://www.anthropic.com/news` — list new announcements.\n\nFor each item, classify relevance to Cohezion:\n- **High relevance**: alignment, agents, safety, interpretability, economic index\n- **Medium relevance**: model capabilities, API features, partnerships\n- **Low relevance**: consumer features, hiring, general AI policy\n\n## Step 5: Write Digest\n\nWrite findings to `~/.claude/anthropic-intel/latest-digest.md` with these sections:\n\n```markdown\n---\nscan_date: <ISO […]
 
 > TOOL
@@ -2710,7 +2710,7 @@ tool_use Write
 id: toolu_01LdYhvVms7v6C1WxdJSWqhZ
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/sources.json",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/sources.json",
   "content": "{\n  \"sources\": [\n    {\n      \"id\": \"claude-code-cli\",\n      \"name\": \"Claude Code CLI Releases\",\n      \"url\": \"https://github.com/anthropics/claude-code/releases\",\n      \"rss\": \"https://github.com/anthropics/claude-code/releases.atom\",\n      \"cadence\": \"3-4/week\",\n      \"action_type\": \"config\",\n      \"check_method\": \"version_compare\"\n    },\n    {\n      \"id\": \"claude-api-platform\",\n      \"name\": \"Claude API Platform Release Notes\",\n      \"url\": \"https://platform.claude.com/docs/en/release-notes/api\",\n      \"cadence\": \"2-4/month\",\n      \"action_type\": \"code_change\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"claude-code-docs\",\n      \"name\": \"Claude Code Documentation\",\n      \"url\": \"https://code.claude.com/docs/en/changelog\",\n      \"cadence\": \"3-4/week\",\n      \"action_type\": \"config\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"anthropic-blog\",\n      \"name\": \"Anthropic Blog / News\",\n      \"url\": \"https://www.anthropic.com/news\",\n      \"cadence\": \"4-6/month\",\n      \"action_type\": \"strategy\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"anthropic-research\",\n      \"name\": \"Anthropic Research\",\n      \"url\": \"https://www.anthropic.com/research\",\n      \"cadence\": \"2-4/month\",\n      \"action_type\": \"vault_knowledge\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"alignment-science\",\n      \"name\": \"Alignment Science Blog\",\n      \"url\": \"https://alignment.anthropic.com\",\n      \"cadence\": \"1-2/month\",\n      \"action_type\": \"vault_knowledge\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"system-cards\",\n      \"name\": \"Model System Cards\",\n      \"url\": \"https://www.anthropic.com/system-cards\",\n      \"cadence\": \"per_model_release\",\n      \"action_type\": \"vault_knowledge\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"model-deprecations\",\n      \"name\": \"Model Deprecation Schedule\",\n      \"url\": \"https://platform.claude.com/docs/en/about-claude/model-deprecations\",\n      \"cadence\": \"per_deprecation\",\n      \"action_type\": \"urgent_code_change\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"claude-help-center\",\n      \"name\": \"Claude Help Center Release Notes\",\n      \"url\": \"https://support.claude.com/en/articles/12138966-release-notes\",\n      \"cadence\": \"weekly\",\n      \"action_type\": \"awareness\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"project-glasswing\",\n      \"name\": \"Project Glasswing / Red Team\",\n      \"url\": \"https://red.anthropic.com\",\n      \"cadence\": \"per_release\",\n      \"action_type\": \"security_knowledge\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"economic-index\",\n      \"name\": \"Anthropic Economic Index\",\n      \"url\": \"https://www.anthropic.com/research\",\n      \"cadence\": \"monthly\",\n      \"action_type\": \"strategy\",\n      \"check_method\": \"web_fetch_diff\"\n    }\n  ]\n}\n"
 }
 ```
@@ -2728,7 +2728,7 @@ id: toolu_012LwJV6akx79Q6LG1VCijLB
 tool_result
 id: toolu_01FCg4xmVfdg5xjyidfPy8bu
 ```
-File created successfully at: /home/mike-anderson/.claude/commands/anthropic-scan.md
+File created successfully at: /home/<USER>/.claude/commands/anthropic-scan.md
 ```
 
 > TOOL
@@ -2736,7 +2736,7 @@ File created successfully at: /home/mike-anderson/.claude/commands/anthropic-sca
 tool_result
 id: toolu_01LdYhvVms7v6C1WxdJSWqhZ
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/sources.json
+File created successfully at: /home/<USER>/.claude/anthropic-intel/sources.json
 ```
 
 > AGENT
@@ -2749,7 +2749,7 @@ tool_use Write
 id: toolu_01CXKke2CgLjGucJNiAsQLPP
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/features-manifest.json",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/features-manifest.json",
   "content": "{\n  \"manifest_version\": \"1.0.0\",\n  \"last_updated\": \"2026-04-10\",\n  \"features\": [\n    {\n      \"id\": \"no_flicker\",\n      \"name\": \"Flicker-free alt-screen rendering\",\n      \"version_added\": \"2.1.90\",\n      \"type\": \"env_var\",\n      \"key\": \"CLAUDE_CODE_NO_FLICKER\",\n      \"value\": \"1\",\n      \"risk\": \"low\",\n      \"category\": \"rendering\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"subprocess_env_scrub\",\n      \"name\": \"PID namespace isolation for subprocesses\",\n      \"version_added\": \"2.1.98\",\n      \"type\": \"env_var\",\n      \"key\": \"CLAUDE_CODE_SUBPROCESS_ENV_SCRUB\",\n      \"value\": \"1\",\n      \"risk\": \"low\",\n      \"category\": \"security\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"plugin_keep_marketplace\",\n      \"name\": \"Keep plugin marketplace cache on git pull failure\",\n      \"version_added\": \"2.1.90\",\n      \"type\": \"env_var\",\n      \"key\": \"CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE\",\n      \"value\": \"true\",\n      \"risk\": \"low\",\n      \"category\": \"resilience\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"permission_denied_hook\",\n      \"name\": \"PermissionDenied hook for auto-mode denials\",\n      \"version_added\": \"2.1.90\",\n      \"type\": \"hook_type\",\n      \"key\": \"PermissionDenied\",\n      \"risk\": \"medium\",\n      \"category\": \"hooks\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"status_line_refresh\",\n      \"name\": \"Status line refreshInterval setting\",\n      \"version_added\": \"2.1.97\",\n      \"type\": \"setting\",\n      \"key\": \"statusLine.refreshInterval\",\n      \"risk\": \"low\",\n      \"category\": \"ui\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"focus_view_toggle\",\n      \"name\": \"Focus view toggle (Ctrl+O) in NO_FLICKER mode\",\n      \"version_added\": \"2.1.97\",\n      \"type\": \"tool\",\n      \"key\": \"Ctrl+O\",\n      \"risk\": \"low\",\n      \"category\": \"ui\",\n      \"adopted\": true,\n      \"note\": \"Available via NO_FLICKER env var\"\n    },\n    {\n      \"id\": \"perforce_mode\",\n      \"name\": \"Perforce read-only file handling\",\n      \"version_added\": \"2.1.98\",\n      \"type\": \"env_var\",\n      \"key\": \"CLAUDE_CODE_PERFORCE_MODE\",\n      \"value\": \"1\",\n      \"risk\": \"low\",\n      \"category\": \"vcs\",\n      \"adopted\": false,\n      \"note\": \"Only relevant for Perforce users\"\n    },\n    {\n      \"id\": \"monitor_tool\",\n      \"name\": \"Monitor tool for streaming background […]
 
 > TOOL
@@ -2758,7 +2758,7 @@ tool_use Write
 id: toolu_01NUBT5ZiDs9VSsqqYuBZUgM
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/api-manifest.json",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/api-manifest.json",
   "content": "{\n  \"manifest_version\": \"1.0.0\",\n  \"last_updated\": \"2026-04-10\",\n  \"models\": {\n    \"current\": [\n      {\"id\": \"claude-opus-4-6\", \"alias\": \"claude-opus-4-6\", \"released\": \"2026-02-05\", \"context\": \"1M\", \"max_output\": \"128K\"},\n      {\"id\": \"claude-sonnet-4-6\", \"alias\": \"claude-sonnet-4-6\", \"released\": \"2026-02-17\", \"context\": \"1M\", \"max_output\": \"64K\"},\n      {\"id\": \"claude-haiku-4-5-20251001\", \"alias\": \"claude-haiku-4-5\", \"released\": \"2025-10-15\", \"context\": \"200K\", \"max_output\": \"8K\"},\n      {\"id\": \"claude-opus-4-5\", \"alias\": \"claude-opus-4-5\", \"released\": \"2025-11-24\", \"context\": \"200K\", \"max_output\": \"16K\"},\n      {\"id\": \"claude-sonnet-4-5-20250929\", \"alias\": \"claude-sonnet-4-5\", \"released\": \"2025-09-29\", \"context\": \"1M (beta)\", \"max_output\": \"16K\"}\n    ],\n    \"deprecated\": [\n      {\"id\": \"claude-3-haiku-20240307\", \"retirement_date\": \"2026-04-19\", \"replacement\": \"claude-haiku-4-5\"},\n      {\"id\": \"claude-3-5-sonnet-20241022\", \"retirement_date\": \"2025-10-28\", \"replacement\": \"claude-sonnet-4-5\"},\n      {\"id\": \"claude-3-5-sonnet-20240620\", \"retirement_date\": \"2025-10-28\", \"replacement\": \"claude-sonnet-4-5\"},\n      {\"id\": \"claude-3-5-haiku-20241022\", \"retirement_date\": \"2026-02-19\", \"replacement\": \"claude-haiku-4-5\"},\n      {\"id\": \"claude-3-7-sonnet-20250219\", \"retirement_date\": \"2026-02-19\", \"replacement\": \"claude-sonnet-4-6\"},\n      {\"id\": \"claude-3-opus-20240229\", \"retirement_date\": \"2026-01-05\", \"replacement\": \"claude-opus-4-5\"}\n    ]\n  },\n  \"beta_headers\": {\n    \"active\": [\n      {\"header\": \"managed-agents-2026-04-01\", \"feature\": \"Claude Managed Agents\", \"since\": \"2026-04-08\"},\n      {\"header\": \"advisor-tool-2026-03-01\", \"feature\": \"Advisor tool (executor + advisor pairing)\", \"since\": \"2026-04-09\"},\n      {\"header\": \"output-300k-2026-03-24\", \"feature\": \"300K output tokens on Batches API\", \"since\": \"2026-03-30\"}\n    ],\n    \"retired\": [\n      {\"header\": \"context-1m-2025-08-07\", \"feature\": \"1M context for Sonnet 4.5/4\", \"retirement_date\": \"2026-04-30\", \"note\": \"Opus 4.6 and Sonnet 4.6 have native 1M support\"},\n      {\"header\": \"structured-outputs-2025-11-13\", \"feature\": \"Structured outputs\", \"retirement_date\": \"2026-01-29\", \"note\": \"Now GA\"},\n      {\"header\": \"fine-grained-tool-streaming-2025-05-14\", \"feature\": \"Fine-grained tool streaming\", \"retirement_date\": \"2026-02-05\", \"note\": \"Now GA\"},\n      {\"header\": \"search-results-2025-06-09\", \"feature\": \"Search results content blocks\", \"retirement_date\": \"2025-08-08\", \"note\": \"Now GA\"}\n […]
 
 > TOOL
@@ -2767,7 +2767,7 @@ tool_use Write
 id: toolu_019he9RKohTqp6i2wEZRkVuk
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/change-log.md",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/change-log.md",
   "content": "---\npurpose: Append-only log of all config changes applied by /anthropic-scan\nlast_updated: \"2026-04-10\"\n---\n\n# Anthropic Intel Change Log\n\n## 2026-04-10 (Initial Setup)\n\n- [AUTO] Added env var CLAUDE_CODE_NO_FLICKER=1 (v2.1.90, low risk)\n- [AUTO] Added env var CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1 (v2.1.98, low risk)\n- [AUTO] Added env var CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=true (v2.1.90, low risk)\n- [AUTO] Added PermissionDenied hook with auto-retry (v2.1.90, medium risk)\n- [AUTO] Added version-watch SessionStart hook (custom)\n- [AUTO] Added statusLine.refreshInterval=30 (v2.1.97, low risk)\n- [AUTO] Added 9 Bash permissions (tput, stat, ant, cat, diff, which, file, readlink, realpath)\n- [MANUAL] Enabled hookify plugin (user confirmed)\n- [MANUAL] Enabled agent-sdk-dev plugin (user confirmed)\n- [AUTO] Updated autocompact prompt to preserve anthropic-intel context\n- [FIX] Updated deprecated model IDs in api_llm_executor.py (claude-3-5-sonnet → claude-sonnet-4-6, claude-3-opus → claude-opus-4-6)\n"
 }
 ```
@@ -2778,7 +2778,7 @@ tool_use Bash
 id: toolu_01JStkLGhasdif9YULXS1q5D
 ```json
 {
-  "command": "echo \"2026-04-10T$(date +%H:%M:%S)\" > /home/mike-anderson/.claude/anthropic-intel/.last-scan-date && echo \"2.1.100\" > /home/mike-anderson/.claude/anthropic-intel/.last-known-version",
+  "command": "echo \"2026-04-10T$(date +%H:%M:%S)\" > /home/<USER>/.claude/anthropic-intel/.last-scan-date && echo \"2.1.100\" > /home/<USER>/.claude/anthropic-intel/.last-known-version",
   "description": "Create tracking files with current values"
 }
 ```
@@ -2788,7 +2788,7 @@ id: toolu_01JStkLGhasdif9YULXS1q5D
 tool_result
 id: toolu_01CXKke2CgLjGucJNiAsQLPP
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/features-manifest.json
+File created successfully at: /home/<USER>/.claude/anthropic-intel/features-manifest.json
 ```
 
 > TOOL
@@ -2796,7 +2796,7 @@ File created successfully at: /home/mike-anderson/.claude/anthropic-intel/featur
 tool_result
 id: toolu_01NUBT5ZiDs9VSsqqYuBZUgM
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/api-manifest.json
+File created successfully at: /home/<USER>/.claude/anthropic-intel/api-manifest.json
 ```
 
 > TOOL
@@ -2804,7 +2804,7 @@ File created successfully at: /home/mike-anderson/.claude/anthropic-intel/api-ma
 tool_result
 id: toolu_019he9RKohTqp6i2wEZRkVuk
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/change-log.md
+File created successfully at: /home/<USER>/.claude/anthropic-intel/change-log.md
 ```
 
 > TOOL
@@ -2867,7 +2867,7 @@ tool_use Bash
 id: toolu_015Nd8MhNtPR2YBNh4kNU7Gs
 ```json
 {
-  "command": "python3 -c \"import json; json.load(open('/home/mike-anderson/.claude/settings.json')); print('settings.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/mike-anderson/.claude/anthropic-intel/sources.json')); print('sources.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/mike-anderson/.claude/anthropic-intel/features-manifest.json')); print('features-manifest.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/mike-anderson/.claude/anthropic-intel/api-manifest.json')); print('api-manifest.json: valid JSON')\"",
+  "command": "python3 -c \"import json; json.load(open('/home/<USER>/.claude/settings.json')); print('settings.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/<USER>/.claude/anthropic-intel/sources.json')); print('sources.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/<USER>/.claude/anthropic-intel/features-manifest.json')); print('features-manifest.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/<USER>/.claude/anthropic-intel/api-manifest.json')); print('api-manifest.json: valid JSON')\"",
   "description": "Validate all JSON files are well-formed"
 }
 ```
@@ -2878,7 +2878,7 @@ tool_use Bash
 id: toolu_01HpPpW5dPrSB23dxixYDFgQ
 ```json
 {
-  "command": "ls -la /home/mike-anderson/.claude/anthropic-intel/ && echo \"---\" && ls -la /home/mike-anderson/.claude/hooks/version-watch.sh /home/mike-anderson/.claude/hooks/on-permission-denied.sh && echo \"---\" && ls -la /home/mike-anderson/.claude/rules/anthropic-intel-scan.md /home/mike-anderson/.claude/commands/anthropic-scan.md",
+  "command": "ls -la /home/<USER>/.claude/anthropic-intel/ && echo \"---\" && ls -la /home/<USER>/.claude/hooks/version-watch.sh /home/<USER>/.claude/hooks/on-permission-denied.sh && echo \"---\" && ls -la /home/<USER>/.claude/rules/anthropic-intel-scan.md /home/<USER>/.claude/commands/anthropic-scan.md",
   "description": "Verify all created files exist"
 }
 ```
@@ -2909,11 +2909,11 @@ drwxrwxr-x 30 mike-anderson mike-anderson   43 Apr 10 14:32 ..
 -rw-rw-r--  1 mike-anderson mike-anderson   20 Apr 10 15:02 .last-scan-date
 -rw-rw-r--  1 mike-anderson mike-anderson 2884 Apr 10 14:34 sources.json
 ---
--rwxrwxr-x 1 mike-anderson mike-anderson 1076 Apr 10 14:33 /home/mike-anderson/.claude/hooks/on-permission-denied.sh
--rwxrwxr-x 1 mike-anderson mike-anderson 1648 Apr 10 14:33 /home/mike-anderson/.claude/hooks/version-watch.sh
+-rwxrwxr-x 1 mike-anderson mike-anderson 1076 Apr 10 14:33 /home/<USER>/.claude/hooks/on-permission-denied.sh
+-rwxrwxr-x 1 mike-anderson mike-anderson 1648 Apr 10 14:33 /home/<USER>/.claude/hooks/version-watch.sh
 ---
--rw-rw-r-- 1 mike-anderson mike-anderson 2875 Apr 10 14:34 /home/mike-anderson/.claude/commands/anthropic-scan.md
--rw-rw-r-- 1 mike-anderson mike-anderson 1892 Apr 10 14:33 /home/mike-anderson/.claude/rules/anthropic-intel-scan.md
+-rw-rw-r-- 1 mike-anderson mike-anderson 2875 Apr 10 14:34 /home/<USER>/.claude/commands/anthropic-scan.md
+-rw-rw-r-- 1 mike-anderson mike-anderson 1892 Apr 10 14:33 /home/<USER>/.claude/rules/anthropic-intel-scan.md
 ```
 
 > AGENT
@@ -2926,7 +2926,7 @@ tool_use Write
 id: toolu_016GHuZ1bLEUGivDQJ2nctHn
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/latest-digest.md",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/latest-digest.md",
   "content": "---\nscan_date: \"2026-04-10\"\nsources_checked: 11\nfindings: 14\n---\n\n# Anthropic Intelligence Digest — 2026-04-10\n\n## URGENT\n\n- **Haiku 3 retirement (April 19, 2026):** `claude-3-haiku-20240307` will stop accepting requests. Fixed: updated `api_llm_executor.py` to use `claude-sonnet-4-6`.\n- **1M context beta retirement (April 30, 2026):** `context-1m-2025-08-07` header stops working for Sonnet 4.5/4. No references found in codebase — safe.\n\n## AUTO-APPLY (Applied)\n\n- Added `CLAUDE_CODE_NO_FLICKER=1` (alt-screen rendering, Focus View via Ctrl+O)\n- Added `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1` (PID namespace isolation)\n- Added `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=true` (offline resilience)\n- Added `PermissionDenied` hook with auto-retry for safe patterns\n- Added `statusLine.refreshInterval=30`\n- Added 9 Bash permissions (tput, stat, ant, cat, diff, which, file, readlink, realpath)\n- Enabled `hookify` and `agent-sdk-dev` plugins\n\n## REVIEW\n\n- **Advisor tool** (beta `advisor-tool-2026-03-01`): Pair fast executor with intelligent advisor. High relevance for Cohezion's compound loop. Evaluate for ExecutionOrchestrator.\n- **Managed Agents** (beta `managed-agents-2026-04-01`): Fully managed agent harness. Medium relevance — evaluate vs self-hosted swarm.\n- **Models API capabilities**: `GET /v1/models` now returns `max_input_tokens`, `max_tokens`, `capabilities`. High relevance — could replace hardcoded dicts in `cost_aware_router.py`.\n- **Automatic caching**: Single `cache_control` field enables automatic prompt caching. High relevance for CompoundExecutor token savings.\n- **MCP result size override** (`_meta[\"anthropic/maxResultSizeChars\"]` up to 500K): Useful for large SurrealDB query results.\n\n## API\n\n- **New GA features**: Web search, code execution, memory tool, structured outputs, effort […]
 
 > TOOL
@@ -2934,7 +2934,7 @@ id: toolu_016GHuZ1bLEUGivDQJ2nctHn
 tool_result
 id: toolu_016GHuZ1bLEUGivDQJ2nctHn
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/latest-digest.md
+File created successfully at: /home/<USER>/.claude/anthropic-intel/latest-digest.md
 ```
 
 > AGENT
@@ -3131,7 +3131,7 @@ tool_use Read
 id: toolu_01JfgCbGGopeK5aQaQ9yF4cm
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
   "offset": 270,
   "limit": 20
 }
@@ -3143,7 +3143,7 @@ tool_use Read
 id: toolu_01MHmshUvBfMVHwjZ7zpMzyr
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
   "offset": 110,
   "limit": 20
 }
@@ -3155,7 +3155,7 @@ tool_use Read
 id: toolu_017Sf3E2NYhpttgW6PBe8Vac
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md"
+  "file_path": "/home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md"
 }
 ```
 
@@ -3207,22 +3207,22 @@ id: toolu_017Sf3E2NYhpttgW6PBe8Vac
 6	
 7	## 1. PROPRIOCEPTION (Ouroboros Service)
 8	*The Nervous System: Health, Hygiene, and Self-Correction.*
-9	- **Reflex**: [SELF_HEALING_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/SELF_HEALING_PRIME.md) (ReflexAgent).
-10	- **Pruning**: [REPO_HYGIENE_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/REPO_HYGIENE_PRIME.md) (PrunerAgent).
-11	- **Rescue**: [KNOWLEDGE_HARVESTING_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/KNOWLEDGE_HARVESTING_PRIME.md) (Ghost Harvest).
-12	- **Telemetry**: [SYSTEM_MONITORING_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/SYSTEM_MONITORING_PRIME.md).
+9	- **Reflex**: [SELF_HEALING_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/SELF_HEALING_PRIME.md) (ReflexAgent).
+10	- **Pruning**: [REPO_HYGIENE_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/REPO_HYGIENE_PRIME.md) (PrunerAgent).
+11	- **Rescue**: [KNOWLEDGE_HARVESTING_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/KNOWLEDGE_HARVESTING_PRIME.md) (Ghost Harvest).
+12	- **Telemetry**: [SYSTEM_MONITORING_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/SYSTEM_MONITORING_PRIME.md).
 13	- **Maintenance MCP**: `cohezion-maintenance-mcp/` — 6 tools: graph_health, graph_prune_orphans, graph_compact, verify_graph_schema, vault_audit, surreal_table_stats.
 14	- **Graph HIHO**: Weighted metric (connectivity 0.3, reciprocity 0.2, freshness 0.2, 1-orphan_ratio 0.3). Target: 0.5 +/- 0.15.
 15	
 16	## 2. COGNITION (FLUME Service)
 17	*The Mind: Latent Navigation & Logic.*
-18	- **Manifold**: [FLUME_METHODOLOGY_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/FLUME_METHODOLOGY_PRIME.md).
-19	- **Reasoning**: [SEQUENTIAL_THINKING_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/sequential_thinking_prime.md) (MCP).
-20	- **Compression**: [REDUCER_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/REDUCER_PRIME.md).
+18	- **Manifold**: [FLUME_METHODOLOGY_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/FLUME_METHODOLOGY_PRIME.md).
+19	- **Reasoning**: [SEQUENTIAL_THINKING_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/sequential_thinking_prime.md) (MCP).
+20	- **Compression**: [REDUCER_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/REDUCER_PRIME.md).
 21	
 22	## 3. GOVERNANCE (Quadrature Nexus)
 23	*The Will: Intent & Orchestration.*
-24	- **Orchestration**: [SWARM_ORCHESTRATION_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/SWARM_ORCHESTRATION_PRIME.md).
+24	- **Orchestration**: [SWARM_ORCHESTRATION_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/SWARM_ORCHESTRATION_PRIME.md).
 25	- **Ethics**: […]
 
 > AGENT
@@ -3236,7 +3236,7 @@ id: toolu_01LYAGjbaRsgxnyFiLbZq48h
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
   "old_string": "### Learning 296: Aspirational Test Specs Must Target Existing APIs\n`TestExecuteGraphWiring` tested `ExecutionOrchestrator.execute_graph()` which was never implemented. Tests failed with `AttributeError` for months as a pre-existing failure. Fix: rewrite to use `GraphEngine.execute()` which actually exists and provides the same FLUX integration. Pattern: forward-looking test specs are fine, but they must be marked `@pytest.mark.skip(reason=\"API not yet implemented\")` or target the existing API that provides equivalent functionality.",
   "new_string": "### Learning 296: Aspirational Test Specs Must Target Existing APIs\n`TestExecuteGraphWiring` tested `ExecutionOrchestrator.execute_graph()` which was never implemented. Tests failed with `AttributeError` for months as a pre-existing failure. Fix: rewrite to use `GraphEngine.execute()` which actually exists and provides the same FLUX integration. Pattern: forward-looking test specs are fine, but they must be marked `@pytest.mark.skip(reason=\"API not yet implemented\")` or target the existing API that provides equivalent functionality.\n\n### Learning 297: Tiered Proactivity for Autonomous Monitoring (Session 96b)\nBuilt Anthropic Intelligence Feed: 11-source registry, version-watch SessionStart hook, `/anthropic-scan` command, risk-tiered auto-integration. Key architecture insight: **three feedback loops** — Push (version-watch hook, instant local check every session), Pull (`/anthropic-scan` on-demand deep scan), Persist (vault routing for research/decisions). Staleness check (>24h) triggers background agent scan automatically. Different sources need different action types: […]
 
@@ -3245,7 +3245,7 @@ id: toolu_01LYAGjbaRsgxnyFiLbZq48h
 tool_result
 id: toolu_01LYAGjbaRsgxnyFiLbZq48h
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md has been updated successfully.
 ```
 
 > AGENT
@@ -3258,7 +3258,7 @@ tool_use Read
 id: toolu_013JDttYA8SrveNDb6rsgkte
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
   "limit": 15
 }
 ```
@@ -3287,7 +3287,7 @@ id: toolu_01XonmaSde4JkhKWNz9vWPBc
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
   "old_string": "### [2026-04-10] SESSION 96: DYNAMIC CONTEXT POLICY — ADAPTIVE BREADTH/DEPTH",
   "new_string": "### [2026-04-10] SESSION 96b: ANTHROPIC INTELLIGENCE FEED — AUTONOMOUS CONFIG OPTIMIZATION\n- **Anthropic Intel system**: Built full-spectrum monitoring across 11 Anthropic content sources (CLI releases, API platform, blog, research, alignment science, system cards, deprecations, help center, Glasswing, economic index). Version-watch SessionStart hook (instant local check), `/anthropic-scan` command (11-source deep scan), agentic background scan on staleness (>24h).\n- **Auto-integration engine**: Risk-tiered auto-apply — low risk (env vars, permissions) auto-apply with batch confirm, medium (hooks, settings) per-item confirm, high (code changes) report only. All changes logged to `~/.claude/anthropic-intel/change-log.md`.\n- **Config optimizations applied**: `CLAUDE_CODE_NO_FLICKER`, `SUBPROCESS_ENV_SCRUB`, `PLUGIN_KEEP_MARKETPLACE_ON_FAILURE`, `PermissionDenied` hook with auto-retry, `statusLine.refreshInterval=30`, 9 new Bash permissions, enabled `hookify` + `agent-sdk-dev` plugins, updated autocompact prompt.\n- **Deprecation fix**: Updated 3 retired model IDs in `api_llm_executor.py` (`claude-3-5-sonnet-20241022` → `claude-sonnet-4-6`, `claude-3-opus-20240229` → `claude-opus-4-6`). 16/16 agentverse tests pass.\n- **Feature manifests**: `features-manifest.json` (24 CLI features tracked), `api-manifest.json` (models, beta headers, GA features, new tools), `sources.json` (11-source registry). Initial digest written.\n- **Files created**: 13 new files in `~/.claude/anthropic-intel/`, `~/.claude/hooks/`, `~/.claude/rules/`, `~/.claude/commands/`. 1 settings.json (6 edits). 1 source fix.\n- **Learnings**: L297-L299.\n\n### [2026-04-10] SESSION 96: DYNAMIC CONTEXT POLICY — ADAPTIVE BREADTH/DEPTH"
 }
@@ -3298,7 +3298,7 @@ id: toolu_01XonmaSde4JkhKWNz9vWPBc
 tool_result
 id: toolu_01XonmaSde4JkhKWNz9vWPBc
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md has been updated successfully.
 ```
 
 > AGENT
@@ -3312,7 +3312,7 @@ id: toolu_01VCJNkwYETgNDB1VqqjJc9B
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
+  "file_path": "/home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
   "old_string": "**Last updated**: 2026-04-10 (Session 95 retrospective). **6,162 tests collected (full suite runs to completion), 35 genesis physics+world_model+env modules, 11 frontend tsx components. 348 genesis tests passing (0 failing). 1,839 prompt_artifacts + 1,822 universe_snapshots in SurrealDB (port 8001, consolidated). 206 skill definitions (151 PRIME). Autoresearch (UCB1 K-Search + Step 5.91) wired. A2A GET /agents returns 7 specialist agents.**",
   "new_string": "**Last updated**: 2026-04-10 (Session 96b retrospective). **6,184 tests collected (full suite runs to completion), 35 genesis physics+world_model+env modules, 11 frontend tsx components. 348 genesis tests passing (0 failing). 1,839 prompt_artifacts + 1,822 universe_snapshots in SurrealDB (port 8001, consolidated). 206 skill definitions (151 PRIME). Autoresearch (UCB1 K-Search + Step 5.91) wired. A2A GET /agents returns 7 specialist agents. Anthropic Intelligence Feed: 11-source monitoring + auto-integration.**"
 }
@@ -3323,7 +3323,7 @@ id: toolu_01VCJNkwYETgNDB1VqqjJc9B
 tool_result
 id: toolu_01VCJNkwYETgNDB1VqqjJc9B
 ```
-The file /home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md has been updated successfully.
 ```
 
 > TOOL
@@ -3333,7 +3333,7 @@ id: toolu_01CbTzZfPv4EpmaRKAwVVsEY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
+  "file_path": "/home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
   "old_string": "- **A2A Discovery**: `GET /agents` returns all registered specialist agents via `CapabilityRegistry._scan_claude_agents()` (scans `.claude/agents/*.md` YAML frontmatter).\n\n## 6. INFRASTRUCTURE (VLIW Service)",
   "new_string": "- **A2A Discovery**: `GET /agents` returns all registered specialist agents via `CapabilityRegistry._scan_claude_agents()` (scans `.claude/agents/*.md` YAML frontmatter).\n- **Anthropic Intelligence Feed**: Autonomous monitoring of 11 Anthropic sources (CLI releases, API platform, research, alignment, system cards, deprecations, blog, help center, Glasswing, economic index). Components: `version-watch.sh` (SessionStart hook), `/anthropic-scan` (11-source scan command), `anthropic-intel-scan.md` (agentic background scan rule), risk-tiered auto-integration, `features-manifest.json` + `api-manifest.json` (feature registries), `change-log.md` (audit trail). Located at `~/.claude/anthropic-intel/`.\n- **ContextPolicy**: Adaptive context breadth/depth control (`compound/context_policy.py`). ROUTINE/FOCUSED/EXPLORATORY profiles, hybrid reactive adjustment, YAML frontmatter persistence.\n\n## 6. INFRASTRUCTURE (VLIW Service)"
 }
@@ -3344,7 +3344,7 @@ id: toolu_01CbTzZfPv4EpmaRKAwVVsEY
 tool_result
 id: toolu_01CbTzZfPv4EpmaRKAwVVsEY
 ```
-The file /home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md has been updated successfully.
 ```
 
 > AGENT
@@ -3357,7 +3357,7 @@ tool_use Read
 id: toolu_019VD9EhDiFSn4mEkXVTiSm2
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "offset": 90,
   "limit": 20
 }
@@ -3394,7 +3394,7 @@ tool_use Read
 id: toolu_011Kk76EqsB9xBtEMxtUdrfN
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "offset": 109,
   "limit": 15
 }
@@ -3429,7 +3429,7 @@ id: toolu_013pqcHWjruipnzSE8CUoYnb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "old_string": "| **Knowledge** | Vault-First (decisions/patterns/experiments), auto-compiled MEMORY.md | `vault_find_relevant_context` |",
   "new_string": "| **Knowledge** | Vault-First (decisions/patterns/experiments), auto-compiled MEMORY.md | `vault_find_relevant_context` |\n| **Anthropic Intel** | 11-source monitor, version-watch hook, `/anthropic-scan`, risk-tiered auto-integration | `/anthropic-scan` |"
 }
@@ -3440,7 +3440,7 @@ id: toolu_013pqcHWjruipnzSE8CUoYnb
 tool_result
 id: toolu_013pqcHWjruipnzSE8CUoYnb
 ```
-The file /home/mike-anderson/dev/cohezion/CLAUDE.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/CLAUDE.md has been updated successfully.
 ```
 
 > AGENT
@@ -3454,7 +3454,7 @@ id: toolu_01VRobXMYAUbe3CUesy3xCs7
 ```json
 {
   "pattern": "Tests.*6,184|6,162",
-  "path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "output_mode": "content"
 }
 ```
@@ -3478,7 +3478,7 @@ id: toolu_01LdKsZXuQBjTErZvEKZSkYs
 ```json
 {
   "pattern": "Local Models.*Ollama",
-  "path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "output_mode": "content"
 }
 ```
@@ -3497,7 +3497,7 @@ tool_use Read
 id: toolu_01MmPiZrs56PFGfT5vEKR2ge
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "offset": 238,
   "limit": 1
 }
@@ -3518,7 +3518,7 @@ id: toolu_0135j9MgtZu4zHbXxApei3tu
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "old_string": "- **Local Models**: Ollama (deepseek-r1:70b, qwen3-coder:30b, phi3:mini). **Global limit = 4 concurrent**",
   "new_string": "- **Local Models**: Ollama (deepseek-r1:70b, qwen3-coder:30b, phi3:mini, internlm/intern-s1-mini). **Global limit = 4 concurrent**"
 }
@@ -3529,7 +3529,7 @@ id: toolu_0135j9MgtZu4zHbXxApei3tu
 tool_result
 id: toolu_0135j9MgtZu4zHbXxApei3tu
 ```
-The file /home/mike-anderson/dev/cohezion/CLAUDE.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/CLAUDE.md has been updated successfully.
 ```
 
 > AGENT
@@ -3543,7 +3543,7 @@ id: toolu_019nZz5s7CMjoYrmoKt7PqZx
 ```json
 {
   "pattern": "Check alignment",
-  "path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "output_mode": "content"
 }
 ```
@@ -3563,7 +3563,7 @@ id: toolu_01V4W3H5HqdsjGJNbvE2pWXZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "old_string": "| Check alignment | `RequestAlignmentAnalyzer.analyze(...)` | `src/cohezion/compound/request_alignment_analyzer.py` |",
   "new_string": "| Check alignment | `RequestAlignmentAnalyzer.analyze(...)` | `src/cohezion/compound/request_alignment_analyzer.py` |\n| Anthropic scan | `/anthropic-scan` | `~/.claude/commands/anthropic-scan.md` |\n| Config audit | Read `~/.claude/anthropic-intel/latest-digest.md` | `~/.claude/anthropic-intel/` |"
 }
@@ -3574,7 +3574,7 @@ id: toolu_01V4W3H5HqdsjGJNbvE2pWXZ
 tool_result
 id: toolu_01V4W3H5HqdsjGJNbvE2pWXZ
 ```
-The file /home/mike-anderson/dev/cohezion/CLAUDE.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/CLAUDE.md has been updated successfully.
 ```
 
 > AGENT
@@ -3600,7 +3600,7 @@ tool_use Bash
 id: toolu_01VchJkBdQoB22cs7cq5n1VT
 ```json
 {
-  "command": "wc -l /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md /home/mike-anderson/dev/cohezion/memory/MEMORY.md /home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
+  "command": "wc -l /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md /home/<USER>/dev/cohezion/memory/MEMORY.md /home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
   "description": "Check line counts of updated files"
 }
 ```
@@ -3622,10 +3622,10 @@ Found 1 error.
 tool_result
 id: toolu_01VchJkBdQoB22cs7cq5n1VT
 ```
-  289 /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md
-  133 /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md
-  160 /home/mike-anderson/dev/cohezion/memory/MEMORY.md
-   75 /home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md
+  289 /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md
+  133 /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md
+  160 /home/<USER>/dev/cohezion/memory/MEMORY.md
+   75 /home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md
   657 total
 ```
 

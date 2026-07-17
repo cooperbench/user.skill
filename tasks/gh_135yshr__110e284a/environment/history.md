@@ -170,7 +170,7 @@ tool_result
 id: toolu_01W4BwUi3WDTYZQf1XHzEqBA
 ```
 commit 638a79f6b1a76f30793adfb86cab738e72619eb6
-Author: 135yshr <isago@oreha.dev>
+Author: 135yshr <<REDACTED_EMAIL>>
 Date:   Mon Mar 16 11:29:47 2026 +0900
 
     🔍 seo: Improve search engine visibility for Meow website
@@ -183,7 +183,7 @@ Date:   Mon Mar 16 11:29:47 2026 +0900
     - Enable RSS and SITEMAP outputs for homepage
     - Add meta description to top page _index.md
     
-    Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: 24c6e56fcaa1
 
  website/content/_index.md            |  1 +
@@ -358,7 +358,7 @@ tool_use Read
 id: toolu_01PWnukszrijmuWMZTGcACnu
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/baseof.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/baseof.html"
 }
 ```
 
@@ -421,7 +421,7 @@ tool_result
 id: toolu_01J1BAx5DtDU2tV9LogS2g3L
 ```
 <persisted-output>
-Output too large (51.5KB). Full output saved to: /Users/135yshr/.claude/projects/-Users-135yshr-go-src-github-com-135yshr-meow/bfa79c3a-f711-4814-b4b5-1ee194c356a1/tool-results/b51hwqh4d.txt
+Output too large (51.5KB). Full output saved to: /home/<USER>/.claude/projects/-Users-135yshr-go-src-github-com-135yshr-meow/bfa79c3a-f711-4814-b4b5-1ee194c356a1/tool-results/b51hwqh4d.txt
 
 Preview (first 2KB):
 website/public/learn/tutorial/index.html:<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tutorial - Meow Programming Language</title><meta name="description" content="A step-by-step guide to learning the Meow programming language"><link rel="canonical" href="https://135yshr.github.io/meow/learn/tutorial/"><meta property="og:title" content="Tutorial - Meow Programming Language"><meta property="og:description" content="A step-by-step guide to learning the Meow programming language"><meta property="og:type" content="article"><meta property="og:url" content="https://135yshr.github.io/meow/learn/tutorial/"><meta property="og:image" content="https://135yshr.github.io/meow/images/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="Meow Programming Language"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tutorial - Meow Programming Language"><meta name="twitter:description" content="A step-by-step guide to learning the Meow programming language"><meta name="twitter:image" content="https://135yshr.github.io/meow/images/ogp.png"><meta name="twitter:image:src" content="https://135yshr.github.io/meow/images/ogp.png"><meta name="twitter:image:alt" content="Tutorial - Meow Programming Language"><meta name="twitter:site" content="@135yshr"><meta name="twitter:creator" content="@135yshr"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Tutorial","description":"A step-by-step guide to learning the Meow programming language","url":"https:\/\/135yshr.github.io\/meow\/learn\/tutorial\/","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/135yshr.github.io\/meow\/learn\/tutorial\/"},"author":{"@type":"Organization","name":"Meow Language","url":"https:\/\/135yshr.github.io\/meow
@@ -435,7 +435,7 @@ tool_use Read
 id: toolu_0131aRAX2hPp3T31JuWkZ3Ww
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/hugo.toml"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/hugo.toml"
 }
 ```
 
@@ -581,7 +581,7 @@ id: toolu_01AgWKipT36vVuj9xAiCoC4H
 {
   "description": "SEO現状分析と改善点調査",
   "subagent_type": "Explore",
-  "prompt": "Analyze the website at /Users/135yshr/go/src/github.com/135yshr/meow/website/ for SEO improvement opportunities. I need a thorough analysis of:\n\n1. All HTML template files in website/layouts/ - check for missing SEO elements (h1 tags, alt attributes on images, internal linking, breadcrumbs, etc.)\n2. All content markdown files in website/content/ - check for meta descriptions, proper frontmatter\n3. The sitemap.xml template - check if all pages are included with proper priorities\n4. Check if there's a 404 page\n5. Check CSS for performance issues (large files, render-blocking)\n6. Check if there are any accessibility issues in templates\n7. Look at the playground page specifically - does it have proper SEO?\n\nReport findings organized by priority (high/medium/low impact on SEO)."
+  "prompt": "Analyze the website at /home/<USER>/go/src/github.com/135yshr/meow/website/ for SEO improvement opportunities. I need a thorough analysis of:\n\n1. All HTML template files in website/layouts/ - check for missing SEO elements (h1 tags, alt attributes on images, internal linking, breadcrumbs, etc.)\n2. All content markdown files in website/content/ - check for meta descriptions, proper frontmatter\n3. The sitemap.xml template - check if all pages are included with proper priorities\n4. Check if there's a 404 page\n5. Check CSS for performance issues (large files, render-blocking)\n6. Check if there are any accessibility issues in templates\n7. Look at the playground page specifically - does it have proper SEO?\n\nReport findings organized by priority (high/medium/low impact on SEO)."
 }
 ```
 
@@ -602,7 +602,7 @@ tool_use Bash
 id: toolu_014Ro8CD65PgY7HNwhesLfV1
 ```json
 {
-  "command": "cd /Users/135yshr/go/src/github.com/135yshr/meow/website && find content -name \"*.md\" -type f | sort",
+  "command": "cd /home/<USER>/go/src/github.com/135yshr/meow/website && find content -name \"*.md\" -type f | sort",
   "description": "List all content pages"
 }
 ```
@@ -668,14 +668,14 @@ Excellent! Now let me create a comprehensive SEO analysis report based on all fi
 
 ## SEO Analysis Report: Meow Programming Language Website
 
-Based on a thorough analysis of the website at `/Users/135yshr/go/src/github.com/135yshr/meow/website/`, here are the SEO improvement opportunities organized by priority:
+Based on a thorough analysis of the website at `/home/<USER>/go/src/github.com/135yshr/meow/website/`, here are the SEO improvement opportunities organized by priority:
 
 ---
 
 ## HIGH IMPACT FINDINGS
 
 ### 1. Incomplete Sitemap (CRITICAL)
-**File:** `/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml`
+**File:** `/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml`
 
 The sitemap only includes 6 section-level pages but excludes 16+ individual content pages:
 
@@ -846,7 +846,7 @@ tool_use Read
 id: toolu_01JP21sV1TJbMUcc6WAAUDGC
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml"
 }
 ```
 
@@ -881,7 +881,7 @@ tool_use Read
 id: toolu_017UrLutzo98vbymNvw87CV3
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html"
 }
 ```
 
@@ -1078,7 +1078,7 @@ id: toolu_01MLYNffJCEJmwFcnGocnZAP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml",
   "old_string": "{{ printf \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\" standalone=\\\"yes\\\"?>\" | safeHTML }}\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\n  xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">\n  <url>\n    <loc>{{ .Site.BaseURL }}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n  {{ range .Data.Pages }}{{ if not .IsHome }}\n  <url>\n    <loc>{{ .Permalink }}</loc>\n    {{ if not .Lastmod.IsZero }}<lastmod>{{ .Lastmod.Format \"2006-01-02T15:04:05Z07:00\" }}</lastmod>{{ end }}\n    <changefreq>{{ with .Sitemap.ChangeFreq }}{{ . }}{{ else }}weekly{{ end }}</changefreq>\n    <priority>{{ if eq .Kind \"section\" }}0.8{{ else }}0.6{{ end }}</priority>\n  </url>\n  {{ end }}{{ end }}\n</urlset>",
   "new_string": "{{ printf \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\" standalone=\\\"yes\\\"?>\" | safeHTML }}\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\n  xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">\n  <url>\n    <loc>{{ .Site.BaseURL }}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n  {{ range where .Site.AllPages \"IsHome\" false }}{{ if ne .RelPermalink \"/meow/404.html\" }}\n  <url>\n    <loc>{{ .Permalink }}</loc>\n    {{ if not .Lastmod.IsZero }}<lastmod>{{ .Lastmod.Format \"2006-01-02T15:04:05Z07:00\" }}</lastmod>{{ end }}\n    <changefreq>{{ with .Sitemap.ChangeFreq }}{{ . }}{{ else }}weekly{{ end }}</changefreq>\n    <priority>{{ if eq .Kind \"section\" }}0.8{{ else }}0.6{{ end }}</priority>\n  </url>\n  {{ end }}{{ end }}\n</urlset>"
 }
@@ -1089,7 +1089,7 @@ id: toolu_01MLYNffJCEJmwFcnGocnZAP
 tool_result
 id: toolu_01MLYNffJCEJmwFcnGocnZAP
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1140,7 +1140,7 @@ tool_use Write
 id: toolu_01CYnpfiuReQHkymbp9iwhpg
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
   "content": "{{ if .IsHome }}\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebSite\",\n  \"name\": \"{{ .Site.Title }}\",\n  \"url\": \"{{ .Site.BaseURL }}\",\n  \"description\": \"{{ .Site.Params.description }}\",\n  \"inLanguage\": \"en\"\n}\n</script>\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"SoftwareApplication\",\n  \"name\": \"Meow Programming Language\",\n  \"description\": \"{{ .Site.Params.description }}\",\n  \"url\": \"{{ .Site.BaseURL }}\",\n  \"applicationCategory\": \"DeveloperApplication\",\n  \"operatingSystem\": \"Cross-platform\",\n  \"programmingLanguage\": \"Go\",\n  \"offers\": {\n    \"@type\": \"Offer\",\n    \"price\": \"0\",\n    \"priceCurrency\": \"USD\"\n  },\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Meow Language\",\n    \"url\": \"{{ .Site.BaseURL }}\"\n  },\n  \"codeRepository\": \"{{ .Site.Params.githubRepo }}\"\n}\n</script>\n{{ else }}\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"{{ .Site.BaseURL }}\"\n    }{{ if .Parent }}{{ if not .Parent.IsHome }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"{{ .Parent.Title }}\",\n      \"item\": \"{{ .Parent.Permalink }}\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": \"{{ .Title }}\",\n      \"item\": \"{{ .Permalink }}\"\n    }{{ else }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"{{ .Title }}\",\n      \"item\": \"{{ .Permalink }}\"\n    }{{ end }}{{ else }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"{{ .Title }}\",\n      \"item\": \"{{ .Permalink }}\"\n    }{{ end }}\n  ]\n}\n</script>\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  {{ if and (eq .Section \"blog\") (ne .Kind \"section\") }}\"@type\": \"BlogPosting\",{{ else }}\"@type\": \"Article\",{{ end }}\n  \"headline\": \"{{ .Title }}\",\n  \"description\": \"{{ with .Description […]
 
 > TOOL
@@ -1148,7 +1148,7 @@ id: toolu_01CYnpfiuReQHkymbp9iwhpg
 tool_result
 id: toolu_01CYnpfiuReQHkymbp9iwhpg
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1227,7 +1227,7 @@ id: toolu_01LzGV2iQarVJesqhtmSQA7Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/_index.md",
   "old_string": "description: \"Meow language documentation\"",
   "new_string": "description: \"Meow programming language documentation — language specification, standard library reference, quick reference card, and compiler internals\""
 }
@@ -1248,7 +1248,7 @@ id: toolu_01PmvReSdhPmJWySSrfaRRDc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/_index.md",
   "old_string": "description: \"Get started with the Meow programming language\"",
   "new_string": "description: \"Learn the Meow programming language — tutorials, idiomatic patterns, and a side-by-side comparison with Go for developers\""
 }
@@ -1269,7 +1269,7 @@ id: toolu_01KKcGZaSRSFpZ83v7vPJ6Mm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/community/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/community/_index.md",
   "old_string": "description: \"Join the Meow community\"",
   "new_string": "description: \"Join the Meow programming language community — contribute on GitHub, report issues, and collaborate with other developers\""
 }
@@ -1290,7 +1290,7 @@ id: toolu_019gNTxXoQuqSo17QV1aEtLm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md",
   "old_string": "description: \"Practical recipes and patterns for Meow\"",
   "new_string": "description: \"Practical recipes and code patterns for the Meow programming language — file I/O, HTTP requests, error handling, and more\""
 }
@@ -1311,7 +1311,7 @@ id: toolu_01UurHHoSPHHX4zs7hhiFTku
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/blog/_index.md",
   "old_string": "description: \"News and updates from the Meow project\"",
   "new_string": "description: \"News, release notes, and updates from the Meow programming language project\""
 }
@@ -1323,7 +1323,7 @@ tool_use Read
 id: toolu_012e3hyy47Fun3KVpXH5MRZK
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/_index.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/_index.md"
 }
 ```
 
@@ -1347,7 +1347,7 @@ tool_use Read
 id: toolu_01XoRjzmQhYv469zXbCVUZbH
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/_index.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/_index.md"
 }
 ```
 
@@ -1371,7 +1371,7 @@ tool_use Read
 id: toolu_01UYZ7JzuKC64DC8KZfi1cf6
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/community/_index.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/community/_index.md"
 }
 ```
 
@@ -1399,7 +1399,7 @@ tool_use Read
 id: toolu_01KbuaZed1baAibMpwS21JyZ
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md"
 }
 ```
 
@@ -1474,7 +1474,7 @@ tool_use Read
 id: toolu_01XKGNiacdjxohg6BPtTw7SG
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog/_index.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/blog/_index.md"
 }
 ```
 
@@ -1499,7 +1499,7 @@ id: toolu_01Xx51dt83LhNibjD7b2YDUw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/_index.md",
   "old_string": "description: \"Meow language documentation\"",
   "new_string": "description: \"Meow programming language documentation — language specification, standard library reference, quick reference card, and compiler internals\""
 }
@@ -1510,7 +1510,7 @@ id: toolu_01Xx51dt83LhNibjD7b2YDUw
 tool_result
 id: toolu_01Xx51dt83LhNibjD7b2YDUw
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1520,7 +1520,7 @@ id: toolu_017YFKcugV1tJQRNpSSvxC7f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/_index.md",
   "old_string": "description: \"Get started with the Meow programming language\"",
   "new_string": "description: \"Learn the Meow programming language — tutorials, idiomatic patterns, and a side-by-side comparison with Go for developers\""
 }
@@ -1531,7 +1531,7 @@ id: toolu_017YFKcugV1tJQRNpSSvxC7f
 tool_result
 id: toolu_017YFKcugV1tJQRNpSSvxC7f
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1541,7 +1541,7 @@ id: toolu_01C4135Zevna2gUf11oLqmPs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/community/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/community/_index.md",
   "old_string": "description: \"Join the Meow community\"",
   "new_string": "description: \"Join the Meow programming language community — contribute on GitHub, report issues, and collaborate with other developers\""
 }
@@ -1552,7 +1552,7 @@ id: toolu_01C4135Zevna2gUf11oLqmPs
 tool_result
 id: toolu_01C4135Zevna2gUf11oLqmPs
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/content/community/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/content/community/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1562,7 +1562,7 @@ id: toolu_0168Jm5eqmwaRbhkChimzyP9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md",
   "old_string": "description: \"Practical recipes and patterns for Meow\"",
   "new_string": "description: \"Practical recipes and code patterns for the Meow programming language — file I/O, HTTP requests, error handling, and more\""
 }
@@ -1573,7 +1573,7 @@ id: toolu_0168Jm5eqmwaRbhkChimzyP9
 tool_result
 id: toolu_0168Jm5eqmwaRbhkChimzyP9
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1583,7 +1583,7 @@ id: toolu_01LkcWYkgCeSDWMjB2zTMXK8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog/_index.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/blog/_index.md",
   "old_string": "description: \"News and updates from the Meow project\"",
   "new_string": "description: \"News, release notes, and updates from the Meow programming language project\""
 }
@@ -1594,7 +1594,7 @@ id: toolu_01LkcWYkgCeSDWMjB2zTMXK8
 tool_result
 id: toolu_01LkcWYkgCeSDWMjB2zTMXK8
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/content/blog/_index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1645,7 +1645,7 @@ tool_use Read
 id: toolu_013nFT7S35WhwYsESM9A7aTg
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/baseof.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/baseof.html"
 }
 ```
 
@@ -1663,7 +1663,7 @@ tool_use Bash
 id: toolu_012DKvzHf7f1akYQz3kvtcSv
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/",
   "description": "List layout directory"
 }
 ```
@@ -1685,7 +1685,7 @@ tool_use Read
 id: toolu_012HZ5TvdNjL3TVJL45xhaX7
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/static/css/style.css",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/static/css/style.css",
   "limit": 50
 }
 ```
@@ -1753,7 +1753,7 @@ tool_use Write
 id: toolu_01UcY1Dt8jx88hgxriJFLFmv
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/404.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/404.html",
   "content": "{{ define \"main\" }}\n<section style=\"text-align: center; padding: 4rem 1rem;\">\n  <div style=\"font-size: 6rem; line-height: 1;\">&#128049;</div>\n  <h1 style=\"font-size: 2.5rem; margin-top: 1rem; color: var(--color-primary);\">404</h1>\n  <p style=\"font-size: 1.25rem; color: var(--color-text-secondary); margin-top: 0.5rem;\">\n    Hiss! This page wandered off and got lost.\n  </p>\n  <p style=\"margin-top: 2rem;\">\n    <a href=\"{{ \"/\" | relURL }}\" style=\"display: inline-block; padding: 0.75rem 1.5rem; background: var(--color-primary); color: var(--color-text-inverse); border-radius: var(--radius); text-decoration: none; font-weight: 600;\">Back to Home</a>\n  </p>\n  <nav style=\"margin-top: 2rem;\">\n    <p style=\"color: var(--color-text-secondary); margin-bottom: 0.5rem;\">Or try one of these:</p>\n    <ul style=\"list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;\">\n      <li><a href=\"{{ \"learn/\" | relURL }}\">Learn</a></li>\n      <li><a href=\"{{ \"doc/\" | relURL }}\">Docs</a></li>\n      <li><a href=\"{{ \"cookbook/\" | relURL }}\">Cookbook</a></li>\n      <li><a href=\"{{ \"playground/\" | relURL }}\">Playground</a></li>\n    </ul>\n  </nav>\n</section>\n{{ end }}\n"
 }
 ```
@@ -1763,7 +1763,7 @@ id: toolu_01UcY1Dt8jx88hgxriJFLFmv
 tool_result
 id: toolu_01UcY1Dt8jx88hgxriJFLFmv
 ```
-File created successfully at: /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/404.html (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/404.html (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2273,7 +2273,7 @@ id: toolu_01Ax88eUN8CPhijAn9skhnzX
 tool_result
 id: toolu_01Ax88eUN8CPhijAn9skhnzX
 ```
-/Users/135yshr/go/src/github.com/135yshr/meow/website
+/home/<USER>/go/src/github.com/135yshr/meow/website
 ```
 
 > TOOL
@@ -2282,7 +2282,7 @@ tool_use Bash
 id: toolu_013Tj9GyVsqrmpzUVoULob4B
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow add website/content/blog/_index.md website/content/community/_index.md website/content/cookbook/_index.md website/content/doc/_index.md website/content/learn/_index.md website/layouts/_default/sitemap.xml website/layouts/partials/jsonld.html website/layouts/404.html",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow add website/content/blog/_index.md website/content/community/_index.md website/content/cookbook/_index.md website/content/doc/_index.md website/content/learn/_index.md website/layouts/_default/sitemap.xml website/layouts/partials/jsonld.html website/layouts/404.html",
   "description": "Stage files from repo root"
 }
 ```
@@ -2301,7 +2301,7 @@ tool_use Bash
 id: toolu_01XCgWoVodCC1nQj9dFHWBoW
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow commit -m \"$(cat <<'EOF'\n🔍 seo: Enhance search engine discoverability\n\n- Fix sitemap.xml to include all pages (6 → 17 URLs) using Site.AllPages\n- Add BreadcrumbList structured data to all non-home pages\n- Add BlogPosting schema type for blog articles\n- Add publisher and image to Article/BlogPosting JSON-LD\n- Improve meta descriptions with specific keywords for section pages\n- Add custom 404 page with navigation links\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow commit -m \"$(cat <<'EOF'\n🔍 seo: Enhance search engine discoverability\n\n- Fix sitemap.xml to include all pages (6 → 17 URLs) using Site.AllPages\n- Add BreadcrumbList structured data to all non-home pages\n- Add BlogPosting schema type for blog articles\n- Add publisher and image to Article/BlogPosting JSON-LD\n- Improve meta descriptions with specific keywords for section pages\n- Add custom 404 page with navigation links\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Create commit with SEO improvements"
 }
 ```
@@ -2351,7 +2351,7 @@ tool_use Bash
 id: toolu_01CR9pan4PgMWiRzas7ZhRcB
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow status",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow status",
   "description": "Check working tree status"
 }
 ```
@@ -2371,7 +2371,7 @@ tool_use Bash
 id: toolu_01M11HmXwY5C7PTSuSRVP4J6
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow diff main...HEAD --stat",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow diff main...HEAD --stat",
   "description": "Check diff from main to HEAD"
 }
 ```
@@ -2398,7 +2398,7 @@ tool_use Bash
 id: toolu_013WvpBTit4xbaJHojLsrYey
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow log main...HEAD --oneline",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow log main...HEAD --oneline",
   "description": "Check commits ahead of main"
 }
 ```
@@ -2417,7 +2417,7 @@ tool_use Bash
 id: toolu_011nVUsUZg2SyA3HmtnTTKVY
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow push -u origin seo/enhance-discoverability",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow push -u origin seo/enhance-discoverability",
   "description": "Push branch to remote"
 }
 ```
@@ -2443,7 +2443,7 @@ tool_use Bash
 id: toolu_01WxY1LYW89vwchCdPRvTEyc
 ```json
 {
-  "command": "cd /Users/135yshr/go/src/github.com/135yshr/meow && gh pr create --title \"🔍 seo: Enhance search engine discoverability\" --body \"$(cat <<'EOF'\n## Summary\n- **Sitemap**: Fix `sitemap.xml` to include all pages (6 → 17 URLs) by switching from `.Data.Pages` to `.Site.AllPages`\n- **Structured Data**: Add `BreadcrumbList` schema to all non-home pages, use `BlogPosting` type for blog articles, and add `publisher`/`image` fields to Article JSON-LD\n- **Meta Descriptions**: Improve section page descriptions with specific keywords for better SERP snippets\n- **404 Page**: Add custom 404 page with navigation links to reduce bounce rate\n\n## Background\nThe previous SEO commit (v0.5.2) added canonical URLs, basic JSON-LD, robots.txt, and sitemap. However, the sitemap only contained 6 section-level pages — 70% of content pages were missing because `.Data.Pages` only returns direct children of the home page. This PR fixes that and adds additional structured data signals for Google.\n\n## Test plan\n- [x] `hugo --environment production` builds successfully (29 pages)\n- [ ] Verify `sitemap.xml` contains all 17 URLs after deploy\n- [ ] Validate JSON-LD with [Google Rich Results Test](https://search.google.com/test/rich-results)\n- [ ] Verify 404 page renders at `/meow/nonexistent`\n- [ ] Resubmit sitemap in Google Search Console after deploy\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\"",
+  "command": "cd /home/<USER>/go/src/github.com/135yshr/meow && gh pr create --title \"🔍 seo: Enhance search engine discoverability\" --body \"$(cat <<'EOF'\n## Summary\n- **Sitemap**: Fix `sitemap.xml` to include all pages (6 → 17 URLs) by switching from `.Data.Pages` to `.Site.AllPages`\n- **Structured Data**: Add `BreadcrumbList` schema to all non-home pages, use `BlogPosting` type for blog articles, and add `publisher`/`image` fields to Article JSON-LD\n- **Meta Descriptions**: Improve section page descriptions with specific keywords for better SERP snippets\n- **404 Page**: Add custom 404 page with navigation links to reduce bounce rate\n\n## Background\nThe previous SEO commit (v0.5.2) added canonical URLs, basic JSON-LD, robots.txt, and sitemap. However, the sitemap only contained 6 section-level pages — 70% of content pages were missing because `.Data.Pages` only returns direct children of the home page. This PR fixes that and adds additional structured data signals for Google.\n\n## Test plan\n- [x] `hugo --environment production` builds successfully (29 pages)\n- [ ] Verify `sitemap.xml` contains all 17 URLs after deploy\n- [ ] Validate JSON-LD with [Google Rich Results Test](https://search.google.com/test/rich-results)\n- [ ] Verify 404 page renders at `/meow/nonexistent`\n- [ ] Resubmit sitemap in Google Search Console after deploy\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\"",
   "description": "Create pull request"
 }
 ```
@@ -2468,7 +2468,7 @@ tool_use Bash
 id: toolu_01Xju63v8nRY2wR4ezFWZgTm
 ```json
 {
-  "command": "node \"/Users/135yshr/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs\" setup --json",
+  "command": "node \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs\" setup --json",
   "description": "Check Codex CLI setup status"
 }
 ```
@@ -2532,7 +2532,7 @@ tool_use Bash
 id: toolu_012k8qBFMAmgJVUNQknR3gTX
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow status --short --untracked-files=all",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow status --short --untracked-files=all",
   "description": "Check working tree status"
 }
 ```
@@ -2551,7 +2551,7 @@ tool_use Bash
 id: toolu_016vA2JzaTPdFoKGttCw92SG
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow diff --shortstat main...HEAD",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow diff --shortstat main...HEAD",
   "description": "Check branch diff size"
 }
 ```
@@ -2630,7 +2630,7 @@ tool_use Bash
 id: toolu_01SQz3pK2KQKrjXnGHAgkb4Q
 ```json
 {
-  "command": "node \"/Users/135yshr/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs\" review \"\"",
+  "command": "node \"/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs\" review \"\"",
   "description": "Codex review",
   "run_in_background": true
 }
@@ -2694,7 +2694,7 @@ id: toolu_01832sevS2S36tthY8cd7GrV
 {
   "description": "SEO変更のコードレビュー",
   "subagent_type": "coderabbit:code-reviewer",
-  "prompt": "Review the changes on the current branch `seo/enhance-discoverability` compared to `main` in the repo at /Users/135yshr/go/src/github.com/135yshr/meow.\n\nThe changes are SEO improvements to a Hugo-based website (8 files, 77 insertions, 8 deletions):\n1. website/layouts/_default/sitemap.xml — Changed `.Data.Pages` to `.Site.AllPages` to include all pages\n2. website/layouts/partials/jsonld.html — Added BreadcrumbList schema, BlogPosting type, publisher/image fields\n3. website/layouts/404.html — New custom 404 page\n4. website/content/{blog,community,cookbook,doc,learn}/_index.md — Improved meta descriptions\n\nFocus on:\n- Hugo template correctness (proper use of Hugo functions/variables)\n- JSON-LD schema validity (correct schema.org types and required fields)\n- Sitemap correctness (proper filtering, no broken pages included)\n- Any potential issues with the 404 page template\n- Whether the BreadcrumbList handles all edge cases (section pages, leaf pages, home)",
+  "prompt": "Review the changes on the current branch `seo/enhance-discoverability` compared to `main` in the repo at /home/<USER>/go/src/github.com/135yshr/meow.\n\nThe changes are SEO improvements to a Hugo-based website (8 files, 77 insertions, 8 deletions):\n1. website/layouts/_default/sitemap.xml — Changed `.Data.Pages` to `.Site.AllPages` to include all pages\n2. website/layouts/partials/jsonld.html — Added BreadcrumbList schema, BlogPosting type, publisher/image fields\n3. website/layouts/404.html — New custom 404 page\n4. website/content/{blog,community,cookbook,doc,learn}/_index.md — Improved meta descriptions\n\nFocus on:\n- Hugo template correctness (proper use of Hugo functions/variables)\n- JSON-LD schema validity (correct schema.org types and required fields)\n- Sitemap correctness (proper filtering, no broken pages included)\n- Any potential issues with the 404 page template\n- Whether the BreadcrumbList handles all edge cases (section pages, leaf pages, home)",
   "run_in_background": true,
   "name": "seo-review"
 }
@@ -2738,7 +2738,7 @@ tool_use Read
 id: toolu_013rLvRc2MnaeVkESdAP4FVT
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml"
 }
 ```
 
@@ -2773,7 +2773,7 @@ tool_use Read
 id: toolu_01Kjo5x2332ASjNvu7MJcNpx
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html"
 }
 ```
 
@@ -2847,7 +2847,7 @@ tool_use Read
 id: toolu_01DzkFc444wMRYtzLeZHnU9U
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/404.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/404.html"
 }
 ```
 
@@ -2887,7 +2887,7 @@ id: toolu_01HMhog21bDJ2QgXiMdL8cPW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml",
   "old_string": "  {{ range where .Site.AllPages \"IsHome\" false }}{{ if ne .RelPermalink \"/meow/404.html\" }}",
   "new_string": "  {{ range where .Site.AllPages \"IsHome\" false }}{{ if not (strings.HasSuffix .RelPermalink \"/404.html\") }}"
 }
@@ -2898,7 +2898,7 @@ id: toolu_01HMhog21bDJ2QgXiMdL8cPW
 tool_result
 id: toolu_01HMhog21bDJ2QgXiMdL8cPW
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2908,7 +2908,7 @@ id: toolu_01FmY545yPf6qcGFhx31ur8N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
   "old_string": "    }{{ if .Parent }}{{ if not .Parent.IsHome }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"{{ .Parent.Title }}\",\n      \"item\": \"{{ .Parent.Permalink }}\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": \"{{ .Title }}\",\n      \"item\": \"{{ .Permalink }}\"\n    }{{ else }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"{{ .Title }}\",\n      \"item\": \"{{ .Permalink }}\"\n    }{{ end }}{{ else }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"{{ .Title }}\",\n      \"item\": \"{{ .Permalink }}\"\n    }{{ end }}",
   "new_string": "    }{{ if and .Parent (not .Parent.IsHome) }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"{{ .Parent.Title }}\",\n      \"item\": \"{{ .Parent.Permalink }}\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": \"{{ .Title }}\"\n    }{{ else }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"{{ .Title }}\"\n    }{{ end }}"
 }
@@ -2919,7 +2919,7 @@ id: toolu_01FmY545yPf6qcGFhx31ur8N
 tool_result
 id: toolu_01FmY545yPf6qcGFhx31ur8N
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2929,7 +2929,7 @@ id: toolu_01NaxZvgmNhhfBFw7mqy2Lf1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
   "old_string": "  {{ if and (eq .Section \"blog\") (ne .Kind \"section\") }}\"@type\": \"BlogPosting\",{{ else }}\"@type\": \"Article\",{{ end }}",
   "new_string": "  {{ if and (eq .Section \"blog\") (ne .Kind \"section\") }}\"@type\": \"BlogPosting\",{{ else if eq .Kind \"section\" }}\"@type\": \"WebPage\",{{ else }}\"@type\": \"Article\",{{ end }}"
 }
@@ -2940,7 +2940,7 @@ id: toolu_01NaxZvgmNhhfBFw7mqy2Lf1
 tool_result
 id: toolu_01NaxZvgmNhhfBFw7mqy2Lf1
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2950,7 +2950,7 @@ id: toolu_01LUVf86Ck8J9LjJdQ1bLf7v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
   "old_string": "  \"image\": \"{{ .Site.BaseURL }}{{ .Site.Params.ogpImage }}\"{{ if not .Date.IsZero }},",
   "new_string": "  \"image\": \"{{ .Site.BaseURL }}{{ with .Site.Params.ogpImage }}{{ . }}{{ else }}favicon.svg{{ end }}\"{{ if not .Date.IsZero }},"
 }
@@ -2961,7 +2961,7 @@ id: toolu_01LUVf86Ck8J9LjJdQ1bLf7v
 tool_result
 id: toolu_01LUVf86Ck8J9LjJdQ1bLf7v
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2971,7 +2971,7 @@ id: toolu_01S5QFx3xrKnzhJEt8SXTuDH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/404.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/404.html",
   "old_string": "    <ul style=\"list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;\">",
   "new_string": "    <ul style=\"list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;\">"
 }
@@ -2982,7 +2982,7 @@ id: toolu_01S5QFx3xrKnzhJEt8SXTuDH
 tool_result
 id: toolu_01S5QFx3xrKnzhJEt8SXTuDH
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/404.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/404.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2995,7 +2995,7 @@ tool_use Bash
 id: toolu_015uFqMVpx9Ls6V5JFZDsFRB
 ```json
 {
-  "command": "cd /Users/135yshr/go/src/github.com/135yshr/meow/website && hugo --environment production 2>&1 | tail -5",
+  "command": "cd /home/<USER>/go/src/github.com/135yshr/meow/website && hugo --environment production 2>&1 | tail -5",
   "description": "Verify Hugo build after fixes"
 }
 ```
@@ -3114,7 +3114,7 @@ tool_use Bash
 id: toolu_01U8UkkSkmGCybBTHJyuo22e
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow diff --stat",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow diff --stat",
   "description": "Check changes to commit"
 }
 ```
@@ -3136,7 +3136,7 @@ tool_use Bash
 id: toolu_01XQyYGCY41uUHCDfmkKKssX
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow add website/layouts/404.html website/layouts/_default/sitemap.xml website/layouts/partials/jsonld.html && git -C /Users/135yshr/go/src/github.com/135yshr/meow commit -m \"$(cat <<'EOF'\n🐛 fix: Address code review findings for SEO templates\n\n- Use HasSuffix for 404 exclusion in sitemap instead of hardcoded path\n- Use WebPage type for section index pages instead of Article\n- Remove item from last BreadcrumbList entry per schema.org best practice\n- Collapse duplicated BreadcrumbList branches\n- Add fallback guard for ogpImage in Article/BlogPosting schema\n- Add padding: 0 to 404 page ul element\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow add website/layouts/404.html website/layouts/_default/sitemap.xml website/layouts/partials/jsonld.html && git -C /home/<USER>/go/src/github.com/135yshr/meow commit -m \"$(cat <<'EOF'\n🐛 fix: Address code review findings for SEO templates\n\n- Use HasSuffix for 404 exclusion in sitemap instead of hardcoded path\n- Use WebPage type for section index pages instead of Article\n- Remove item from last BreadcrumbList entry per schema.org best practice\n- Collapse duplicated BreadcrumbList branches\n- Add fallback guard for ogpImage in Article/BlogPosting schema\n- Add padding: 0 to 404 page ul element\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit review fixes"
 }
 ```
@@ -3160,7 +3160,7 @@ tool_use Bash
 id: toolu_01KZS3FdverfPgjX3tMndKj9
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow push",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow push",
   "description": "Push review fix commit to PR"
 }
 ```
@@ -3264,7 +3264,7 @@ tool_use Read
 id: toolu_01W1bE6PDTxfF2pSJMZMGH7b
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml"
 }
 ```
 
@@ -3299,7 +3299,7 @@ tool_use Read
 id: toolu_01H977hrR5zcfKwdDWvw4hU9
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html"
 }
 ```
 
@@ -3375,7 +3375,7 @@ id: toolu_01NvBAwAf42mmSWAu8NjJfKB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml",
   "old_string": "  {{ range where .Site.AllPages \"IsHome\" false }}{{ if not (strings.HasSuffix .RelPermalink \"/404.html\") }}\n  <url>\n    <loc>{{ .Permalink }}</loc>\n    {{ if not .Lastmod.IsZero }}<lastmod>{{ .Lastmod.Format \"2006-01-02T15:04:05Z07:00\" }}</lastmod>{{ end }}\n    <changefreq>{{ with .Sitemap.ChangeFreq }}{{ . }}{{ else }}weekly{{ end }}</changefreq>\n    <priority>{{ if eq .Kind \"section\" }}0.8{{ else }}0.6{{ end }}</priority>\n  </url>\n  {{ end }}{{ end }}",
   "new_string": "  {{ range where (where .Site.AllPages \"IsHome\" false) \"Kind\" \"ne\" \"404\" }}\n  <url>\n    <loc>{{ .Permalink }}</loc>\n    {{ if not .Lastmod.IsZero }}<lastmod>{{ .Lastmod.Format \"2006-01-02T15:04:05Z07:00\" }}</lastmod>{{ end }}\n    <changefreq>{{ with .Sitemap.ChangeFreq }}{{ . }}{{ else }}weekly{{ end }}</changefreq>\n    <priority>{{ if eq .Kind \"section\" }}0.8{{ else }}0.6{{ end }}</priority>\n  </url>\n  {{ end }}"
 }
@@ -3386,7 +3386,7 @@ id: toolu_01NvBAwAf42mmSWAu8NjJfKB
 tool_result
 id: toolu_01NvBAwAf42mmSWAu8NjJfKB
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3399,7 +3399,7 @@ tool_use Write
 id: toolu_01DPQ6tviJR2ZDp2MF2TiwTs
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html",
   "content": "{{ if .IsHome }}\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebSite\",\n  \"name\": {{ .Site.Title | jsonify }},\n  \"url\": {{ .Site.BaseURL | jsonify }},\n  \"description\": {{ .Site.Params.description | jsonify }},\n  \"inLanguage\": \"en\"\n}\n</script>\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"SoftwareApplication\",\n  \"name\": \"Meow Programming Language\",\n  \"description\": {{ .Site.Params.description | jsonify }},\n  \"url\": {{ .Site.BaseURL | jsonify }},\n  \"applicationCategory\": \"DeveloperApplication\",\n  \"operatingSystem\": \"Cross-platform\",\n  \"programmingLanguage\": \"Go\",\n  \"offers\": {\n    \"@type\": \"Offer\",\n    \"price\": \"0\",\n    \"priceCurrency\": \"USD\"\n  },\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Meow Language\",\n    \"url\": {{ .Site.BaseURL | jsonify }}\n  },\n  \"codeRepository\": {{ .Site.Params.githubRepo | jsonify }}\n}\n</script>\n{{ else }}\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": {{ .Site.BaseURL | jsonify }}\n    }{{ if and .Parent (not .Parent.IsHome) }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": {{ .Parent.Title | jsonify }},\n      \"item\": {{ .Parent.Permalink | jsonify }}\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": {{ .Title | jsonify }}\n    }{{ else }},\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": {{ .Title | jsonify }}\n    }{{ end }}\n  ]\n}\n</script>\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  {{ if and (eq .Section \"blog\") (ne .Kind \"section\") }}\"@type\": \"BlogPosting\",{{ else if eq .Kind \"section\" }}\"@type\": \"WebPage\",{{ else }}\"@type\": \"Article\",{{ end }}\n  \"headline\": {{ .Title | […]
 
 > TOOL
@@ -3407,7 +3407,7 @@ id: toolu_01DPQ6tviJR2ZDp2MF2TiwTs
 tool_result
 id: toolu_01DPQ6tviJR2ZDp2MF2TiwTs
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3420,7 +3420,7 @@ tool_use Bash
 id: toolu_018YMqbAmGLCybHSza9NDU1a
 ```json
 {
-  "command": "cd /Users/135yshr/go/src/github.com/135yshr/meow/website && hugo --environment production 2>&1 | tail -10",
+  "command": "cd /home/<USER>/go/src/github.com/135yshr/meow/website && hugo --environment production 2>&1 | tail -10",
   "description": "Verify Hugo build"
 }
 ```
@@ -3542,7 +3542,7 @@ tool_use Bash
 id: toolu_013sTzQTt7ZMcts3XRmXWvzf
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow add website/layouts/_default/sitemap.xml website/layouts/partials/jsonld.html && git -C /Users/135yshr/go/src/github.com/135yshr/meow commit -m \"$(cat <<'EOF'\n♻️ refactor: Apply CodeRabbit review feedback\n\n- Use Kind-based filtering for 404 exclusion in sitemap instead of path check\n- Escape all JSON-LD string values with Hugo's jsonify filter\n- Use printf+jsonify for concatenated URL values\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow add website/layouts/_default/sitemap.xml website/layouts/partials/jsonld.html && git -C /home/<USER>/go/src/github.com/135yshr/meow commit -m \"$(cat <<'EOF'\n♻️ refactor: Apply CodeRabbit review feedback\n\n- Use Kind-based filtering for 404 exclusion in sitemap instead of path check\n- Escape all JSON-LD string values with Hugo's jsonify filter\n- Use printf+jsonify for concatenated URL values\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit CodeRabbit review fixes"
 }
 ```
@@ -3566,7 +3566,7 @@ tool_use Bash
 id: toolu_017NYe5No3V7C2X4j8nZrsnm
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow push",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow push",
   "description": "Push to PR"
 }
 ```
@@ -3602,7 +3602,7 @@ tool_use Bash
 id: toolu_018UaqHizmWE6BNqGoy7Fx9A
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow log main --oneline -3",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow log main --oneline -3",
   "description": "Check current main version"
 }
 ```
@@ -3634,7 +3634,7 @@ tool_use Bash
 id: toolu_01NT6TqseuWPaMNmrg6X7ZuY
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow tag --sort=-v:refname | head -5",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow tag --sort=-v:refname | head -5",
   "description": "Check latest tags"
 }
 ```
@@ -3665,7 +3665,7 @@ tool_use Bash
 id: toolu_01WVouwVnb2Py2p8srd3bFLN
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/meow/.github/workflows/",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/meow/.github/workflows/",
   "description": "Check CI/CD workflows"
 }
 ```
@@ -3687,7 +3687,7 @@ tool_use Read
 id: toolu_01CNP17AWqfMojf1pDtnzoDD
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/.github/workflows/auto-release.yml"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/.github/workflows/auto-release.yml"
 }
 ```
 
@@ -3822,7 +3822,7 @@ release	Run GoReleaser	2026-04-18T02:29:06.6364196Z   MACOS_NOTARY_ISSUER_ID: **
 release	Run GoReleaser	2026-04-18T02:29:06.6364424Z ##[endgroup]
 release	Run GoReleaser	2026-04-18T02:29:06.9778780Z Downloading https://github.com/goreleaser/goreleaser/releases/download/v2.15.3/goreleaser_Linux_x86_64.tar.gz
 release	Run GoReleaser	2026-04-18T02:29:07.3031170Z Extracting GoReleaser
-release	Run GoReleaser	2026-04-18T02:29:07.3137535Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/5f573654-80e4-44e7-b151-bbff8fb9bc9f -f /home/runner/work/_temp/6cd51054-918a-41e9-8a59-a4789b28beda
+release	Run GoReleaser	2026-04-18T02:29:07.3137535Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/<USER>/work/_temp/5f573654-80e4-44e7-b151-bbff8fb9bc9f -f /home/<USER>/work/_temp/6cd51054-918a-41e9-8a59-a4789b28beda
 release	Run GoReleaser	2026-04-18T02:29:07.8576650Z GoReleaser ~> v2 installed successfully
 release	Run GoReleaser	2026-04-18T02:29:07.8656405Z [command]/opt/hostedtoolcache/goreleaser-action/2.15.3/x64/goreleaser release --clean
 release	Run GoReleaser	2026-04-18T02:29:07.8852550Z [1;94m  •[m [1mstarting release[m

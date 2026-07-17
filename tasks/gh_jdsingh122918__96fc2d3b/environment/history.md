@@ -8,7 +8,7 @@
 
 **Suggestions (nice to have):**
 
-1. `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs` line 483 -- The `IterationAudit` is referenced via fully-qualified path `forge::audit::IterationAudit` rather than being imported alongside the other audit types at line 31. While functional, adding it to the import would be more consistent with the existing style. The import at line 31 currently reads:
+1. `/home/<USER>/Projects/AI/forge/src/cmd/run.rs` line 483 -- The `IterationAudit` is referenced via fully-qualified path `forge::audit::IterationAudit` rather than being imported alongside the other audit types at line 31. While functional, adding it to the import would be more consistent with the existing style. The import at line 31 currently reads:
    ```
    use forge::audit::{AuditLogger, FileChangeSummary, PhaseAudit, PhaseOutcome, RunConfig};
    ```
@@ -118,7 +118,7 @@ let review_config = if forge_toml.reviews.enabled {
 };
 ```
 
-The implementation at `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs` lines 104-126 is significantly more comprehensive:
+The implementation at `/home/<USER>/Projects/AI/forge/src/cmd/run.rs` lines 104-126 is significantly more comprehensive:
 
 ```rust
 let review_integration = if forge_toml.reviews.enabled {
@@ -164,7 +164,7 @@ The plan specified using `completed_at_iteration` to track which iteration compl
 
 **Status: Matches plan with beneficial improvements.**
 
-At `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs`, lines 399-494:
+At `/home/<USER>/Projects/AI/forge/src/cmd/run.rs`, lines 399-494:
 
 1. The timing setup at lines 399-400 (`iter_started_at` and `iter_start_instant`) matches the plan exactly.
 
@@ -188,7 +188,7 @@ git_snapshot_after: tracker.head_sha(),
 
 This is a better approach. The plan's version would create a new git tag/reference (via `snapshot_before`) for every iteration just to capture the SHA, which is side-effect-heavy and semantically misleading (it is calling `snapshot_before` for an "after" snapshot). The implementation correctly reads the current HEAD SHA directly via `tracker.head_sha()`, which is side-effect-free and semantically clear. This is a justified deviation.
 
-3. The implementation uses `phase_audit.add_iteration(...)` (line 483) instead of directly pushing to `phase_audit.iterations`. This is slightly better because it uses the dedicated `add_iteration` method defined at `/Users/jdsingh/Projects/AI/forge/src/audit/mod.rs` line 173, which provides a cleaner API. However, the effect is identical.
+3. The implementation uses `phase_audit.add_iteration(...)` (line 483) instead of directly pushing to `phase_audit.iterations`. This is slightly better because it uses the dedicated `add_iteration` method defined at `/home/<USER>/Projects/AI/forge/src/audit/mod.rs` line 173, which provides a cleaner API. However, the effect is identical.
 
 4. The `IterationAudit` import is done via the fully qualified path `forge::audit::IterationAudit` inline at line 483 rather than importing it at the top of […]
 
@@ -198,7 +198,7 @@ This is a better approach. The plan's version would create a new git tag/referen
 
 **Status: Matches plan.**
 
-At `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs`, lines 403-420, the call site correctly uses `run_effective_iteration` with identical arguments to what the plan specifies. The `run_effective_iteration` method in `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs` at lines 345-373 correctly routes to `run_council_iteration` or `run_iteration_with_context` based on the guardrailed check. The `run_iteration` convenience method at line 334 was also updated to delegate through `run_effective_iteration`, which is a good consistency improvement not explicitly in the plan but beneficial.
+At `/home/<USER>/Projects/AI/forge/src/cmd/run.rs`, lines 403-420, the call site correctly uses `run_effective_iteration` with identical arguments to what the plan specifies. The `run_effective_iteration` method in `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs` at lines 345-373 correctly routes to `run_council_iteration` or `run_iteration_with_context` based on the guardrailed check. The `run_iteration` convenience method at line 334 was also updated to delegate through `run_effective_iteration`, which is a good consistency improvement not explicitly in the plan but beneficial.
 
 No issues found.
 
@@ -232,13 +232,13 @@ The implementation faithfully follows the plan with several beneficial improveme
 All 1554 tests pass. The code compiles cleanly. The architecture is sound -- the layered approach (`resolve_enabled` -> `should_use_council` -> `should_use_council_effective` -> `run_effective_iteration`) provides clean separation of concerns with each layer adding one responsibility.
 
 **Relevant files reviewed:**
-- `/Users/jdsingh/Projects/AI/forge/docs/superpowers/plans/2026-03-11-council-integration.md` -- plan document
-- `/Users/jdsingh/Projects/AI/forge/src/council/config.rs` -- Stream A1, C1 implementation
-- `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs` -- Stream A2-A4, C2 implementation
-- `/Users/jdsingh/Projects/AI/forge/src/forge_config.rs` -- Stream C3 implementation (PhaseOverride, PhaseSettings, phase_settings())
-- `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs` -- Stream A5, B1, B2, C4 implementation
-- `/Users/jdsingh/Projects/AI/forge/src/audit/mod.rs` -- Stream B1 supporting change
-- `/Users/jdsingh/Projects/AI/forge/src/phase.rs` -- `use_council()` method on Phase (context)</result>
+- `/home/<USER>/Projects/AI/forge/docs/superpowers/plans/2026-03-11-council-integration.md` -- plan document
+- `/home/<USER>/Projects/AI/forge/src/council/config.rs` -- Stream A1, C1 implementation
+- `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs` -- Stream A2-A4, C2 implementation
+- `/home/<USER>/Projects/AI/forge/src/forge_config.rs` -- Stream C3 implementation (PhaseOverride, PhaseSettings, phase_settings())
+- `/home/<USER>/Projects/AI/forge/src/cmd/run.rs` -- Stream A5, B1, B2, C4 implementation
+- `/home/<USER>/Projects/AI/forge/src/audit/mod.rs` -- Stream B1 supporting change
+- `/home/<USER>/Projects/AI/forge/src/phase.rs` -- `use_council()` method on Phase (context)</result>
 <usage><total_tokens>62377</total_tokens><tool_uses>35</tool_uses><duration_ms>174740</duration_ms></usage>
 </task-notification>
 Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI-forge/c9de2d74-440d-4cc7-a4eb-9abcfa1a6bac/tasks/aa2043d3705f83eef.output
@@ -259,7 +259,7 @@ The `test_run_effective_iteration_compiles` test (line 1643) only verifies compi
 
 **SUGGESTION -- Warning message in `should_use_council_effective` could include a hint**
 
-At `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs`, line 326, the warning reads:
+At `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs`, line 326, the warning reads:
 ```
 "Council is enabled but […]
 
@@ -310,7 +310,7 @@ if let Ok(val) = std::env::var("COUNCIL_ENABLED") {
 }
 ```
 
-Implementation at `/Users/jdsingh/Projects/AI/forge/src/council/config.rs`, lines 43-51:
+Implementation at `/home/<USER>/Projects/AI/forge/src/council/config.rs`, lines 43-51:
 ```rust
 if let Ok(value) = std::env::var("COUNCIL_ENABLED")
     && let Ok(enabled) = value.to_ascii_lowercase().parse::<bool>()
@@ -323,7 +323,7 @@ Assessment: **Beneficial.** The `to_ascii_lowercase()` call makes the env var ca
 
 **Deviation 2 (Beneficial): Task C4 -- council override applied via `phase_settings()` instead of inline code**
 
-The plan (Task C4) specified adding inline code in `cmd/run.rs` to manually look up the override pattern and apply `council_override`. Instead, the implementation adds the `council` field to `PhaseSettings` and resolves it inside `ForgeToml::phase_settings()` at `/Users/jdsingh/Projects/AI/forge/src/forge_config.rs`, lines 711-713:
+The plan (Task C4) specified adding inline code in `cmd/run.rs` to manually look up the override pattern and apply `council_override`. Instead, the implementation adds the `council` field to `PhaseSettings` and resolves it inside `ForgeToml::phase_settings()` at `/home/<USER>/Projects/AI/forge/src/forge_config.rs`, lines 711-713:
 ```rust
 if let Some(council) = override_cfg.council {
     settings.council = Some(council);
@@ -399,13 +399,13 @@ The implementation is well-executed and closely follows the plan. All 1554 libra
 
 ### Relevant Files
 
-- `/Users/jdsingh/Projects/AI/forge/docs/superpowers/plans/2026-03-11-council-integration.md` -- the plan
-- `/Users/jdsingh/Projects/AI/forge/src/forge_config.rs` -- Stream C: `PhaseOverride.council`, `PhaseSettings.council`, `phase_settings()` resolution
-- `/Users/jdsingh/Projects/AI/forge/src/audit/mod.rs` -- Stream B: `PhaseAudit::add_iteration()`
-- `/Users/jdsingh/Projects/AI/forge/src/council/config.rs` -- Tasks A1+C1: `has_minimum_workers()`, `resolve_enabled()`, `COUNCIL_ENV_MUTEX`
-- `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs` -- Tasks A2-A4, C2: `run_effective_iteration`, `should_use_council_effective`, `run_council_iteration` upgrade
-- `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs` -- Tasks A5, B1, B2, C4: call site wiring, iteration audit, review integration, council override application
-- `/Users/jdsingh/Projects/AI/forge/src/cmd/autoresearch/mod.rs` -- unplanned autoresearch wiring (out of scope but clean)
+- `/home/<USER>/Projects/AI/forge/docs/superpowers/plans/2026-03-11-council-integration.md` -- the plan
+- `/home/<USER>/Projects/AI/forge/src/forge_config.rs` -- Stream C: `PhaseOverride.council`, `PhaseSettings.council`, `phase_settings()` resolution
+- `/home/<USER>/Projects/AI/forge/src/audit/mod.rs` -- Stream B: `PhaseAudit::add_iteration()`
+- `/home/<USER>/Projects/AI/forge/src/council/config.rs` -- Tasks A1+C1: `has_minimum_workers()`, `resolve_enabled()`, `COUNCIL_ENV_MUTEX`
+- `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs` -- Tasks A2-A4, C2: `run_effective_iteration`, `should_use_council_effective`, `run_council_iteration` upgrade
+- `/home/<USER>/Projects/AI/forge/src/cmd/run.rs` -- Tasks A5, B1, B2, C4: call site wiring, iteration audit, review integration, council override application
+- `/home/<USER>/Projects/AI/forge/src/cmd/autoresearch/mod.rs` -- unplanned autoresearch wiring (out of scope but clean)
 
 **Overall assessment: […]
 
@@ -515,7 +515,7 @@ Overall, the implementation is well-executed and follows the plan closely. The c
 
 **Status: Matches plan.**
 
-At `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs`, lines 403-420, the call site correctly uses `run_effective_iteration` with identical arguments to what the plan specifies. The `run_effective_iteration` method in `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs` at lines 345-373 correctly routes to `run_council_iteration` or `run_iteration_with_context` based on the guardrailed check. The `run_iteration` convenience method at line 334 was also updated to delegate through `run_effective_iteration`, which is a good consistency improvement not explicitly in the plan but beneficial.
+At `/home/<USER>/Projects/AI/forge/src/cmd/run.rs`, lines 403-420, the call site correctly uses `run_effective_iteration` with identical arguments to what the plan specifies. The `run_effective_iteration` method in `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs` at lines 345-373 correctly routes to `run_council_iteration` or `run_iteration_with_context` based on the guardrailed check. The `run_iteration` convenience method at line 334 was also updated to delegate through `run_effective_iteration`, which is a good consistency improvement not explicitly in the plan but beneficial.
 
 No issues found.
 
@@ -525,7 +525,7 @@ No issues found.
 
 **Status: Matches plan with beneficial improvements.**
 
-At `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs`, lines 399-494:
+At `/home/<USER>/Projects/AI/forge/src/cmd/run.rs`, lines 399-494:
 
 1. The timing setup […]
 
@@ -648,7 +648,7 @@ Waiting for all three to complete...
 <output-file>/private/tmp/claude-501/-Users-jdsingh-Projects-AI-forge/c9de2d74-440d-4cc7-a4eb-9abcfa1a6bac/tasks/a18f6654d9887b82e.output</output-file>
 <status>completed</status>
 <summary>Agent "Add actionable hint to warning" completed</summary>
-<result>Done. Updated the warning message at line 326 in `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs` to include the actionable hint: `Add at least 2 workers in [council.workers] in forge.toml.`</result>
+<result>Done. Updated the warning message at line 326 in `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs` to include the actionable hint: `Add at least 2 workers in [council.workers] in forge.toml.`</result>
 <usage><total_tokens>11874</total_tokens><tool_uses>3</tool_uses><duration_ms>43005</duration_ms></usage>
 </task-notification>
 Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI-forge/c9de2d74-440d-4cc7-a4eb-9abcfa1a6bac/tasks/a18f6654d9887b82e.output
@@ -665,7 +665,7 @@ Agent 1 (warning hint) done. Waiting for the other two...
 <output-file>/private/tmp/claude-501/-Users-jdsingh-Projects-AI-forge/c9de2d74-440d-4cc7-a4eb-9abcfa1a6bac/tasks/a55f02729125c1c81.output</output-file>
 <status>completed</status>
 <summary>Agent "Add IterationAudit to imports" completed</summary>
-<result>Both changes have been made to `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs`:
+<result>Both changes have been made to `/home/<USER>/Projects/AI/forge/src/cmd/run.rs`:
 
 1. **Line 31**: Added `IterationAudit` to the import statement.
 2. **Line 483**: Changed `forge::audit::IterationAudit {` to `IterationAudit {`.</result>
@@ -685,7 +685,7 @@ Agent 2 (import cleanup) done. Waiting for agent 3...
 <output-file>/private/tmp/claude-501/-Users-jdsingh-Projects-AI-forge/c9de2d74-440d-4cc7-a4eb-9abcfa1a6bac/tasks/a566a1febfde0b748.output</output-file>
 <status>completed</status>
 <summary>Agent "Add env var integration test" completed</summary>
-<result>Both tests compile and pass. I added the two tests to `/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs` after the existing `test_should_use_council_effective_disabled` test:
+<result>Both tests compile and pass. I added the two tests to `/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs` after the existing `test_should_use_council_effective_disabled` test:
 
 1. **`test_should_use_council_env_override_enables`** - Verifies that setting `COUNCIL_ENABLED=true` env var causes `should_use_council()` to return `true` even when the config has `enabled = false`.
 

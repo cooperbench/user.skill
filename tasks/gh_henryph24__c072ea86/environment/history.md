@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_014ivczXcAWz1vLMsnSdGoHe
 ```json
 {
-  "command": "find /Users/hungpq2412/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" 2>/dev/null | head -5",
+  "command": "find /home/<USER>/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" 2>/dev/null | head -5",
   "description": "Find main.tex location"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_014ivczXcAWz1vLMsnSdGoHe
 tool_result
 id: toolu_014ivczXcAWz1vLMsnSdGoHe
 ```
-/Users/hungpq2412/neuralips26/main.tex
+/home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_019T4UMoUoxkwG1kCx3YC9vH
 ```json
 {
-  "command": "grep -n \"Problem Setup\\|problem_setup\\|sec:problem\\|problem-setup\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"Problem Setup\\|problem_setup\\|sec:problem\\|problem-setup\" /home/<USER>/neuralips26/main.tex",
   "description": "Find Problem Setup section"
 }
 ```
@@ -46,7 +46,7 @@ tool_use Bash
 id: toolu_01DHH9zMDCBtpNqnuDawcD1x
 ```json
 {
-  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\subsection\" /Users/hungpq2412/neuralips26/main.tex | head -40",
+  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\subsection\" /home/<USER>/neuralips26/main.tex | head -40",
   "description": "List all section headers"
 }
 ```
@@ -98,7 +98,7 @@ tool_use Bash
 id: toolu_01CRH1ShGDA8jiwC412WBytB
 ```json
 {
-  "command": "grep -n -i \"problem\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n -i \"problem\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find problem-related text"
 }
 ```
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_01XzyKfz4AsphvaxrrJAQcqs
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 240,
   "limit": 80
 }
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_01Hw6viYb37VwfNKouD9Uyh7
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 61,
   "limit": 170
 }
@@ -174,7 +174,7 @@ tool_use Read
 id: toolu_01BbxFq7EWyhFcMkAP592rk1
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 228,
   "limit": 15
 }

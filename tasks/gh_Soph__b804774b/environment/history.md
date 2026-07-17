@@ -318,7 +318,7 @@ tool_use Read
 id: toolu_01PtjRxwK28r29PmNvhTRdQp
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go",
   "offset": 409,
   "limit": 95
 }
@@ -364,7 +364,7 @@ id: toolu_01Ks12zx4vyQfkzGwukc1f5W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go",
   "old_string": "const (\n\t// AncestryReachable means targetHash is provably an ancestor of startHash:\n\t// the update is a fast-forward.\n\tAncestryReachable AncestryResult = iota",
   "new_string": "const (\n\t// AncestryInvalid is the zero value and is returned alongside every error.\n\t// Keeping it distinct from AncestryReachable means a caller that ignores\n\t// the error (result, _ := CheckAncestry(...)) reads a failure as invalid\n\t// rather than mistaking it for a provable fast-forward.\n\tAncestryInvalid AncestryResult = iota\n\t// AncestryReachable means targetHash is provably an ancestor of startHash:\n\t// the update is a fast-forward.\n\tAncestryReachable"
 }
@@ -375,7 +375,7 @@ id: toolu_01Ks12zx4vyQfkzGwukc1f5W
 tool_result
 id: toolu_01Ks12zx4vyQfkzGwukc1f5W
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -385,7 +385,7 @@ id: toolu_01ML66L2fDMi8k3ZSUGyFUrB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go",
   "old_string": "\t\treturn 0, fmt.Errorf(\"load source commit %s: %w\", startHash, err)",
   "new_string": "\t\treturn AncestryInvalid, fmt.Errorf(\"load source commit %s: %w\", startHash, err)"
 }
@@ -396,7 +396,7 @@ id: toolu_01ML66L2fDMi8k3ZSUGyFUrB
 tool_result
 id: toolu_01ML66L2fDMi8k3ZSUGyFUrB
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -406,7 +406,7 @@ id: toolu_01CLT7guMD76U7b9Q1KFuYfo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go",
   "old_string": "\t\t\treturn 0, ErrAncestryDepthExceeded",
   "new_string": "\t\t\treturn AncestryInvalid, ErrAncestryDepthExceeded"
 }
@@ -417,7 +417,7 @@ id: toolu_01CLT7guMD76U7b9Q1KFuYfo
 tool_result
 id: toolu_01CLT7guMD76U7b9Q1KFuYfo
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -427,7 +427,7 @@ id: toolu_01Rc9uCmBri9NxLqMaWsUTBU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go",
   "old_string": "\t\t\t\treturn 0, fmt.Errorf(\"load parent commit %s: %w\", parentHash, err)",
   "new_string": "\t\t\t\treturn AncestryInvalid, fmt.Errorf(\"load parent commit %s: %w\", parentHash, err)"
 }
@@ -438,7 +438,7 @@ id: toolu_01Rc9uCmBri9NxLqMaWsUTBU
 tool_result
 id: toolu_01Rc9uCmBri9NxLqMaWsUTBU
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/planner/planner.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/planner/planner.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

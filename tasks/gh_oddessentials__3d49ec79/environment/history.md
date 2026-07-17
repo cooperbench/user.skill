@@ -3001,7 +3001,7 @@ tool_use Bash
 id: toolu_018vT1P1pepvQRb45xZmAbJb
 ```json
 {
-  "command": "cd /workspaces/ado-git-repo-insights\ngit add CLAUDE.md .devcontainer/devcontainer.json 2>&1 || true\necho \"=== staged ===\"; git diff --cached --name-only\ngit commit -m \"$(cat <<'EOF'\ndocs: correct stale CLAUDE.md and devcontainer hook-wiring comments\n\nCLAUDE.md pointed at the deleted specs/364-devcontainer-refactor plan;\nrepoint to the living authoritative docs (invariants, parity, contributing,\ndevcontainer). devcontainer.json described hook self-heal via the removed\nrepair_husky_hook_dispatchers; correct it to the install-githooks.cjs\nself-contained dispatcher mechanism.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "cd /workspaces/ado-git-repo-insights\ngit add CLAUDE.md .devcontainer/devcontainer.json 2>&1 || true\necho \"=== staged ===\"; git diff --cached --name-only\ngit commit -m \"$(cat <<'EOF'\ndocs: correct stale CLAUDE.md and devcontainer hook-wiring comments\n\nCLAUDE.md pointed at the deleted specs/364-devcontainer-refactor plan;\nrepoint to the living authoritative docs (invariants, parity, contributing,\ndevcontainer). devcontainer.json described hook self-heal via the removed\nrepair_husky_hook_dispatchers; correct it to the install-githooks.cjs\nself-contained dispatcher mechanism.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the two doc fixes"
 }
 ```
@@ -3019,7 +3019,7 @@ hint: Disable this message with "git config set advice.addIgnoredFile false"
 .devcontainer/devcontainer.json
 [PASS] QG-40: No staged Python files under src/, tests/, or scripts/
 [WARNING] Unstaged files detected.
-[INFO] Stashing unstaged files to /home/vscode/.cache/pre-commit/patch1780968358-55769.
+[INFO] Stashing unstaged files to /home/<USER>/.cache/pre-commit/patch1780968358-55769.
 ruff (legacy alias)..................................(no files to check)Skipped
 ruff format..........................................(no files to check)Skipped
 trim trailing whitespace.................................................Passed
@@ -3030,7 +3030,7 @@ check for merge conflicts................................................Passed
 detect private key.......................................................Passed
 Environment Variable Guard...............................................Passed
 Tool Version Parity......................................................Passed
-[INFO] Restored changes from /home/vscode/.cache/pre-commit/patch1780968358-55769.
+[INFO] Restored changes from /home/<USER>/.cache/pre-commit/patch1780968358-55769.
 [pre-commit] running staged suppression guard
 [pre-commit] staged suppression guard passed
 [pre-commit] running staged suppression justification guard
@@ -3090,7 +3090,7 @@ tool_use Bash
 id: toolu_01UDRSJbKhjTM7HsN7UV74VQ
 ```json
 {
-  "command": "cd /workspaces/ado-git-repo-insights\ngit add .specify/feature.json\ngit commit -m \"$(cat <<'EOF'\nchore(speckit): point feature.json at 365-pr-url-double-encoding\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\"\necho \"=== tree ===\"; git status --short && echo \"(clean)\"",
+  "command": "cd /workspaces/ado-git-repo-insights\ngit add .specify/feature.json\ngit commit -m \"$(cat <<'EOF'\nchore(speckit): point feature.json at 365-pr-url-double-encoding\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"\necho \"=== tree ===\"; git status --short && echo \"(clean)\"",
   "description": "Commit speckit pointer, confirm clean"
 }
 ```

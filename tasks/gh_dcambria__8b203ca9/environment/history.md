@@ -139,7 +139,7 @@ tool_use Read
 id: toolu_01MRGq5YMpyxEmqp1R9NVckv
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css"
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/css/base.css"
 }
 ```
 
@@ -238,7 +238,7 @@ tool_use Bash
 id: toolu_01RqmnKBfCJxwh9fYhV1LCRQ
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ && grep -rn \"user-select\\|user-drag\\|pointer-events\\|::selection\\|::-moz-selection\" --include=\"*.css\" css/ style.css 2>/dev/null",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ && grep -rn \"user-select\\|user-drag\\|pointer-events\\|::selection\\|::-moz-selection\" --include=\"*.css\" css/ style.css 2>/dev/null",
   "description": "Find user-select and selection in active child CSS"
 }
 ```
@@ -269,7 +269,7 @@ tool_use Bash
 id: toolu_01KcyUuVaXYQKQuL5yC2avBr
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ && grep -rn \"ucpa-color-accent\\|ucpa-color-main\\|ucpa-color-white\\|ucpa-color-offwhite\\|--ucpa-color\" --include=\"*.css\" . 2>/dev/null | grep -v \"\\.backup\\|\\.new\\|\\.old\" | grep \":\" | grep -E \"ucpa-color-(accent|main|white|offwhite)\\s*:\" ",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ && grep -rn \"ucpa-color-accent\\|ucpa-color-main\\|ucpa-color-white\\|ucpa-color-offwhite\\|--ucpa-color\" --include=\"*.css\" . 2>/dev/null | grep -v \"\\.backup\\|\\.new\\|\\.old\" | grep \":\" | grep -E \"ucpa-color-(accent|main|white|offwhite)\\s*:\" ",
   "description": "Find ucpa color variable definitions"
 }
 ```
@@ -280,7 +280,7 @@ tool_use Bash
 id: toolu_017Fbj2PbneiAiF8bGA5qvJ8
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ && grep -rn -- \"--ucpa-color-accent\\|--ucpa-color-main\\|--ucpa-color-white\\|--ucpa-color-offwhite\" --include=\"*.css\" . 2>/dev/null | grep -v \"\\.backup\\|\\.new\\|\\.old\"",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ && grep -rn -- \"--ucpa-color-accent\\|--ucpa-color-main\\|--ucpa-color-white\\|--ucpa-color-offwhite\" --include=\"*.css\" . 2>/dev/null | grep -v \"\\.backup\\|\\.new\\|\\.old\"",
   "description": "Find all ucpa color references"
 }
 ```
@@ -330,7 +330,7 @@ tool_use Read
 id: toolu_01YLUdthiSjiDcJL1DGS3yTB
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
   "offset": 140,
   "limit": 70
 }
@@ -379,7 +379,7 @@ tool_use Read
 id: toolu_01Qbo6ZbmBj9RYuyCD2mifyB
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
   "offset": 90,
   "limit": 52
 }
@@ -424,7 +424,7 @@ tool_use Read
 id: toolu_01XDmRhVX9Vq6eXbGxq3wwxW
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
   "offset": 55,
   "limit": 35
 }
@@ -465,7 +465,7 @@ tool_use Read
 id: toolu_01AtYpgd6Q3B1wfQQiW4tpiB
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/style.css",
   "offset": 20,
   "limit": 36
 }
@@ -548,7 +548,7 @@ tool_use Bash
 id: toolu_01JCAoWjbAHfU3wGfNX59MQx
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/ && grep -rln \"user-select\" mu-plugins/ themes/hello-elementor-child/ 2>/dev/null | grep -v \"\\.backup\\|\\.new\\|\\.old\\|node_modules\"",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/ && grep -rln \"user-select\" mu-plugins/ themes/hello-elementor-child/ 2>/dev/null | grep -v \"\\.backup\\|\\.new\\|\\.old\\|node_modules\"",
   "description": "Search user-select in mu-plugins and child theme all files"
 }
 ```
@@ -559,7 +559,7 @@ tool_use Bash
 id: toolu_015gz1vPkjyBtQcPdjeFKgDZ
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ && grep -n \"base.css\\|wp_enqueue\\|css/pages\\|css/plugins\\|header-menu\" functions.php 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/themes/hello-elementor-child/ && grep -n \"base.css\\|wp_enqueue\\|css/pages\\|css/plugins\\|header-menu\" functions.php 2>/dev/null | head -40",
   "description": "Check how child theme enqueues CSS files"
 }
 ```
@@ -630,7 +630,7 @@ tool_use Bash
 id: toolu_01Aifpw2bu6NdNhy4h5GYJ9A
 ```json
 {
-  "command": "cd /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ && grep -n -B3 -A2 \"user-select\" bit-inline-submenu.css bureau-a11y/bureau-a11y.css",
+  "command": "cd /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/wordpress/wp-content/mu-plugins/ && grep -n -B3 -A2 \"user-select\" bit-inline-submenu.css bureau-a11y/bureau-a11y.css",
   "description": "Show context of user-select in mu-plugin CSS"
 }
 ```
@@ -816,7 +816,7 @@ tool_use Read
 id: toolu_01W1BwnLm3S7m5m6atHHf5RB
 ```json
 {
-  "file_path": "/Users/dcambria/.claude/skills/playground/templates/design-playground.md"
+  "file_path": "/home/<USER>/.claude/skills/playground/templates/design-playground.md"
 }
 ```
 
@@ -875,7 +875,7 @@ tool_use Write
 id: toolu_01KiDX8BiQ7CZXe1UYQSAfcV
 ```json
 {
-  "file_path": "/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/playground/text-selection-color.html",
+  "file_path": "/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/playground/text-selection-color.html",
   "content": "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>Concertação — Cor de Seleção de Texto</title>\n<style>\n  :root {\n    --bg: #14110f;\n    --panel: #1f1b18;\n    --panel-2: #2a2521;\n    --line: #3a332d;\n    --txt: #e8e3dc;\n    --txt-dim: #a59d92;\n    --accent: #F0C400;\n    --plum: #900042;\n    --ok: #4AA521;\n    --warn: #C86F47;\n    --err: #C84747;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  }\n  * { box-sizing: border-box; }\n  body {\n    margin: 0; background: var(--bg); color: var(--txt);\n    display: grid; grid-template-columns: 380px 1fr; min-height: 100vh;\n  }\n  /* ---------- Controls ---------- */\n  .controls {\n    background: var(--panel); border-right: 1px solid var(--line);\n    padding: 24px; overflow-y: auto; max-height: 100vh;\n  }\n  .controls h1 { font-size: 18px; margin: 0 0 4px; }\n  .controls .sub { color: var(--txt-dim); font-size: 13px; margin: 0 0 20px; line-height: 1.4; }\n  .group { margin-bottom: 24px; }\n  .group > label.title {\n    display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em;\n    color: var(--txt-dim); margin-bottom: 10px; font-weight: 600;\n  }\n  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }\n  .swatch {\n    aspect-ratio: 1; border-radius: 8px; border: 2px solid transparent; cursor: pointer;\n    position: relative; display: flex; align-items: flex-end; justify-content: center;\n    font-size: 9px; padding-bottom: 4px; color: rgba(0,0,0,.55); font-weight: 700;\n    transition: transform .1s, border-color .1s;\n  }\n  .swatch:hover { transform: translateY(-2px); }\n  .swatch.sel { border-color: #fff; box-shadow: 0 0 0 […]
 
 > TOOL
@@ -883,7 +883,7 @@ id: toolu_01KiDX8BiQ7CZXe1UYQSAfcV
 tool_result
 id: toolu_01KiDX8BiQ7CZXe1UYQSAfcV
 ```
-File created successfully at: /Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/playground/text-selection-color.html (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/playground/text-selection-color.html (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -892,7 +892,7 @@ tool_use Bash
 id: toolu_01HPTrbzxyUrY1weCcFgdxeW
 ```json
 {
-  "command": "open \"/Users/dcambria/scripts/server-tools/v2/docker-dev/sites/concertacao/playground/text-selection-color.html\"",
+  "command": "open \"/home/<USER>/scripts/server-tools/v2/docker-dev/sites/concertacao/playground/text-selection-color.html\"",
   "description": "Open playground in default browser"
 }
 ```

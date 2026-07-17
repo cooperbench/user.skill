@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01LoHskMMM445tuhNUHz41WC
 ```json
 {
-  "command": "grep -rl \"FileList\" /Users/ben/git/paper-scan-processor/frontend/src --include=\"*.tsx\" --include=\"*.ts\" -i"
+  "command": "grep -rl \"FileList\" /home/<USER>/git/paper-scan-processor/frontend/src --include=\"*.tsx\" --include=\"*.ts\" -i"
 }
 ```
 
@@ -17,9 +17,9 @@ id: toolu_01LoHskMMM445tuhNUHz41WC
 tool_result
 id: toolu_01LoHskMMM445tuhNUHz41WC
 ```
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx
 ```
 
 > TOOL
@@ -28,7 +28,7 @@ tool_use Read
 id: toolu_01WtFuNK232sPJQCk6Npky5g
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
 }
 ```
 
@@ -85,7 +85,7 @@ tool_use Bash
 id: toolu_01HyknhhUwG9A4dFnsB41ihD
 ```json
 {
-  "command": "grep -n \"name\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts* 2>/dev/null | head -50"
+  "command": "grep -n \"name\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts* 2>/dev/null | head -50"
 }
 ```
 
@@ -104,7 +104,7 @@ tool_use Bash
 id: toolu_01FBKTU1WuzGYmAsAvWdXpq2
 ```json
 {
-  "command": "find /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode -iname \"useFileTree*\""
+  "command": "find /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode -iname \"useFileTree*\""
 }
 ```
 
@@ -113,8 +113,8 @@ id: toolu_01FBKTU1WuzGYmAsAvWdXpq2
 tool_result
 id: toolu_01FBKTU1WuzGYmAsAvWdXpq2
 ```
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts
 ```
 
 > TOOL
@@ -123,7 +123,7 @@ tool_use Read
 id: toolu_01GCZvYzDYiY97GVZAGU16rF
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts"
 }
 ```
 
@@ -191,7 +191,7 @@ tool_use Bash
 id: toolu_01C8GyQCdzAq1SVU8dcSCRFk
 ```json
 {
-  "command": "grep -rn \"ScanLocalRoot\\|LocalFile{\" /Users/ben/git/paper-scan-processor --include=\"*.go\" | grep -v _test"
+  "command": "grep -rn \"ScanLocalRoot\\|LocalFile{\" /home/<USER>/git/paper-scan-processor --include=\"*.go\" | grep -v _test"
 }
 ```
 
@@ -200,10 +200,10 @@ id: toolu_01C8GyQCdzAq1SVU8dcSCRFk
 tool_result
 id: toolu_01C8GyQCdzAq1SVU8dcSCRFk
 ```
-/Users/ben/git/paper-scan-processor/filetree.go:53:	files := []LocalFile{}
-/Users/ben/git/paper-scan-processor/filetree.go:86:		files = append(files, LocalFile{
-/Users/ben/git/paper-scan-processor/app.go:125:// ScanLocalRoot recursively scans root and returns it as a LocalFileGroup
-/Users/ben/git/paper-scan-processor/app.go:128:func (a *App) ScanLocalRoot(root string) (LocalFileGroup, error) {
+/home/<USER>/git/paper-scan-processor/filetree.go:53:	files := []LocalFile{}
+/home/<USER>/git/paper-scan-processor/filetree.go:86:		files = append(files, LocalFile{
+/home/<USER>/git/paper-scan-processor/app.go:125:// ScanLocalRoot recursively scans root and returns it as a LocalFileGroup
+/home/<USER>/git/paper-scan-processor/app.go:128:func (a *App) ScanLocalRoot(root string) (LocalFileGroup, error) {
 ```
 
 > TOOL
@@ -212,7 +212,7 @@ tool_use Read
 id: toolu_01HVuDHyia9r2nvhFdJssAZ4
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "offset": 50,
   "limit": 50
 }
@@ -276,7 +276,7 @@ tool_use Read
 id: toolu_01AwfXsbqduutgBdRMEaXPK8
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx"
 }
 ```
 
@@ -319,7 +319,7 @@ tool_use Bash
 id: toolu_018su69hYQUyGVbQuzD1iVAj
 ```json
 {
-  "command": "grep -rn \"file\\.name\\|file\\.name\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/*.tsx"
+  "command": "grep -rn \"file\\.name\\|file\\.name\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/*.tsx"
 }
 ```
 
@@ -328,9 +328,9 @@ id: toolu_018su69hYQUyGVbQuzD1iVAj
 tool_result
 id: toolu_018su69hYQUyGVbQuzD1iVAj
 ```
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:37:                <TruncatedText label={file.name} size="sm" c={file.corrupt ? 'red' : undefined}>
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:38:                  📄 {file.name}
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:47:                label={file.name}
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:37:                <TruncatedText label={file.name} size="sm" c={file.corrupt ? 'red' : undefined}>
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:38:                  📄 {file.name}
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx:47:                label={file.name}
 ```
 
 > TOOL
@@ -339,7 +339,7 @@ tool_use Bash
 id: toolu_015zWL6cFyE3hQPoiJc7jBYE
 ```json
 {
-  "command": "grep -n \"label\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "command": "grep -n \"label\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -363,7 +363,7 @@ id: toolu_01UQKJFEPB1ELN1NCNTuiupX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
   "old_string": "      {files.map(file => {\n        const own = assignments.fileOverrides.get(file.path) ?? null\n        const effective = own ?? inheritedAssignment\n        return (",
   "new_string": "      {files.map(file => {\n        const own = assignments.fileOverrides.get(file.path) ?? null\n        const effective = own ?? inheritedAssignment\n        const displayName = `${file.name}.pdf`\n        return ("
 }
@@ -374,7 +374,7 @@ id: toolu_01UQKJFEPB1ELN1NCNTuiupX
 tool_result
 id: toolu_01UQKJFEPB1ELN1NCNTuiupX
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -384,7 +384,7 @@ id: toolu_01JbxuHPQk2JAQfGgCfFETSQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
   "old_string": "                <TruncatedText label={file.name} size=\"sm\" c={file.corrupt ? 'red' : undefined}>\n                  📄 {file.name}\n                </TruncatedText>",
   "new_string": "                <TruncatedText label={displayName} size=\"sm\" c={file.corrupt ? 'red' : undefined}>\n                  📄 {displayName}\n                </TruncatedText>"
 }
@@ -395,7 +395,7 @@ id: toolu_01JbxuHPQk2JAQfGgCfFETSQ
 tool_result
 id: toolu_01JbxuHPQk2JAQfGgCfFETSQ
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -405,7 +405,7 @@ id: toolu_01BbjKBh6iWufvBojKBgTj2o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
   "old_string": "              <DriveAssignmentField\n                label={file.name}",
   "new_string": "              <DriveAssignmentField\n                label={displayName}"
 }
@@ -416,7 +416,7 @@ id: toolu_01BbjKBh6iWufvBojKBgTj2o
 tool_result
 id: toolu_01BbjKBh6iWufvBojKBgTj2o
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -429,7 +429,7 @@ tool_use Bash
 id: toolu_01R7irnCb7TzWQZBzqn9BBuu
 ```json
 {
-  "command": "find /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode -iname \"FileList.test*\""
+  "command": "find /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode -iname \"FileList.test*\""
 }
 ```
 
@@ -451,7 +451,7 @@ tool_use Bash
 id: toolu_01GjvBKfKG39ADhCpaENZk3e
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -30"
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -30"
 }
 ```
 

@@ -41,7 +41,7 @@ Now I have a complete picture. Let me write the comprehensive investigation repo
 
 ### 1. **What is the Gate?**
 
-The gate is a per-project mechanism defined in `/Users/pc/web3/ReleaseBeacon/internal/models/release_gate.go`:
+The gate is a per-project mechanism defined in `/home/<USER>/web3/ReleaseBeacon/internal/models/release_gate.go`:
 
 - **ReleaseGate**: Configuration that controls when the LLM agent runs for multi-source projects
   - `RequiredSources`: UUIDs of sources that must release before triggering the agent
@@ -120,7 +120,7 @@ id: toolu_vrtx_01EB8Fcf9bjhg48eEKMUhHvc
 ```json
 {
   "pattern": "ListProjects|GetProject",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "output_mode": "content",
   "-n": true
 }
@@ -133,7 +133,7 @@ id: toolu_vrtx_01YMZeTSk88m6tKWm5HEW9mR
 ```json
 {
   "pattern": "semantic_release|urgency",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "output_mode": "content",
   "-n": true,
   "head_limit": 60
@@ -187,7 +187,7 @@ tool_use Read
 id: toolu_vrtx_017jK8CWUccQpFxBifMg61pz
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "offset": 40,
   "limit": 80
 }
@@ -199,7 +199,7 @@ tool_use Read
 id: toolu_vrtx_014p9W4Mt7oKB7MqcaMiiDeu
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/models/project.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/models/project.go"
 }
 ```
 
@@ -292,7 +292,7 @@ tool_use Read
 id: toolu_vrtx_01AUSy5PptegTgcGvngPAKKh
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/projects/page.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/projects/page.tsx"
 }
 ```
 
@@ -303,7 +303,7 @@ id: toolu_vrtx_019m5eU9o2aatMXwvz3G5YTF
 ```json
 {
   "pattern": "urgency|semantic_release",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/app/projects",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/app/projects",
   "output_mode": "content",
   "-n": true
 }
@@ -381,7 +381,7 @@ id: toolu_vrtx_01XBZzy2xSRNX3VvaWkUmXB3
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts",
+  "path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts",
   "pattern": "semanticReleases|semantic"
 }
 ```
@@ -392,7 +392,7 @@ tool_use Read
 id: toolu_vrtx_01Xr5ug896Hbpvd8rjggKsDZ
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/lib/api/types.ts"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/lib/api/types.ts"
 }
 ```
 
@@ -490,7 +490,7 @@ tool_use Read
 id: toolu_vrtx_01NEKXahjceJHMXux5zewDeR
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/app/releases/page.tsx",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/app/releases/page.tsx",
   "limit": 50,
   "offset": 370
 }
@@ -502,7 +502,7 @@ tool_use Read
 id: toolu_vrtx_01Qb6iQfTHcugYEdwChTy14i
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 100,
   "offset": 310
 }
@@ -610,7 +610,7 @@ tool_use Read
 id: toolu_vrtx_0173UHxmEmfFvXpcjMUXwiF4
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "limit": 60,
   "offset": 420
 }
@@ -622,7 +622,7 @@ tool_use Read
 id: toolu_vrtx_01X2Qq2vLTWBz6iLwyAifiaX
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 80,
   "offset": 1170
 }
@@ -733,7 +733,7 @@ tool_use Read
 id: toolu_vrtx_01NGGvdWwcS9cECPzGshxUBi
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/gate/worker.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/gate/worker.go"
 }
 ```
 
@@ -796,7 +796,7 @@ id: toolu_vrtx_01Vwp52UEhs72bYDG8VkEh3p
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/gate",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/gate",
   "pattern": "NormalizeVersionForSource"
 }
 ```
@@ -809,7 +809,7 @@ id: toolu_vrtx_01UL9iMdbnxMTtaV8wXYPEJr
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "pattern": "func.*RunAgent|func.*executeAgent|version\""
 }
 ```
@@ -846,7 +846,7 @@ tool_use Read
 id: toolu_vrtx_01Fc1FNs2GP4xspZLGZS4UbS
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "limit": 50,
   "offset": 316
 }
@@ -907,7 +907,7 @@ tool_use Read
 id: toolu_vrtx_011A2XqZf54zeNJPVPzqXmJR
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/gate/version.go"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/gate/version.go"
 }
 ```
 
@@ -983,7 +983,7 @@ id: toolu_vrtx_01ABUuHT82KBpm6eEpFqMooi
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "pattern": "sr\\.version = r\\.version|sr\\.project_id = p\\.id AND sr\\.version"
 }
 ```
@@ -1013,7 +1013,7 @@ id: toolu_vrtx_01DgG5aGY5X7wWxhoD4e9YYw
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/routing/worker.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/worker.go",
   "pattern": "EnqueueAgentRun|version|Version"
 }
 ```
@@ -1136,7 +1136,7 @@ This is the correct approach because it addresses both failure points with minim
 
 ### Part 1: Fix Orchestrator Join Table Population
 
-**File**: `/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go`, lines 429-440
+**File**: `/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go`, lines 429-440
 
 **Current code** (line 436-439):
 ```go
@@ -1152,7 +1152,7 @@ tool_use Read
 id: toolu_vrtx_01FUwZFHr7WDbttDw14f1tD3
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 40,
   "offset": 570
 }
@@ -1164,7 +1164,7 @@ tool_use Read
 id: toolu_vrtx_01T7jLm8PVU1gbZcd1v7z3Vt
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 40,
   "offset": 610
 }
@@ -1176,7 +1176,7 @@ tool_use Read
 id: toolu_vrtx_018FbbN2toPnnxkqz3FETTY8
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 40,
   "offset": 450
 }
@@ -1328,7 +1328,7 @@ tool_use Read
 id: toolu_vrtx_01SMdjRfb8ZmeHWDFrmihyCt
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "limit": 10,
   "offset": 1
 }
@@ -1373,7 +1373,7 @@ id: toolu_vrtx_01F8fektPfZYdLUJekn9Sq4E
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go",
   "pattern": "func.*Migrate|Step|step|migration",
   "head_limit": 20
 }
@@ -1399,7 +1399,7 @@ tool_use Read
 id: toolu_vrtx_01HZLDrMcyop74sRqRbbyC14
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go",
   "limit": 60,
   "offset": 250
 }
@@ -1451,7 +1451,7 @@ tool_use Write
 id: toolu_vrtx_01EggfJSPr5VHmUeSNZBzMds
 ```json
 {
-  "file_path": "/Users/pc/.claude/plans/parallel-chasing-simon.md",
+  "file_path": "/home/<USER>/.claude/plans/parallel-chasing-simon.md",
   "content": "# Fix: Semantic release not associated with source releases after gate normalization\n\n## Context\n\nWhen a release gate normalizes versions (e.g., `v1.10.15` → `1.10.15`), the semantic release is stored with the normalized version while source releases keep the raw version. This causes two failures:\n\n1. **Orchestrator** (`internal/agent/orchestrator.go:436-439`): `r.Version == version` compares raw vs normalized — join table `semantic_release_sources` gets zero rows\n2. **LATERAL joins** (`internal/api/pgstore.go` — 4 locations): `sr.version = r.version` never matches — urgency is empty in API responses\n\nNon-gate path works fine because `release.Version` (raw) is passed through unchanged.\n\n## Changes\n\n### 1. Fix orchestrator version matching\n**File:** `internal/agent/orchestrator.go` (lines 429-440)\n\nImport `gate` package. Replace exact comparison with normalized comparison:\n```go\n// Before:\nif r.Version == version {\n\n// After:\nif gate.NormalizeVersion(r.Version, nil) == gate.NormalizeVersion(version, nil) {\n```\n\nThis handles v-prefix and case differences on both gate and non-gate paths.\n\n### 2. Fix LATERAL joins in pgstore.go\n**File:** `internal/api/pgstore.go` — 4 LATERAL joins at lines ~338, ~462, ~585, ~625\n\nFor the `semantic_releases` subquery, add `OR EXISTS` through the join table:\n```sql\nWHERE sr.project_id = p.id\n  AND (sr.version = r.version\n       OR EXISTS (SELECT 1 FROM semantic_release_sources srs\n                  WHERE srs.semantic_release_id = sr.id AND srs.release_id = r.id))\n```\n\nFor the `agent_runs` subquery, add SQL-level normalization fallback:\n```sql\nWHERE ar.project_id = p.id\n  AND (ar.version = r.version\n       OR ar.version […]
 
 > TOOL
@@ -1459,7 +1459,7 @@ id: toolu_vrtx_01EggfJSPr5VHmUeSNZBzMds
 tool_result
 id: toolu_vrtx_01EggfJSPr5VHmUeSNZBzMds
 ```
-File created successfully at: /Users/pc/.claude/plans/parallel-chasing-simon.md
+File created successfully at: /home/<USER>/.claude/plans/parallel-chasing-simon.md
 ```
 
 > TOOL
@@ -1491,7 +1491,7 @@ id: toolu_vrtx_01H1nDDcdfYhi9sA1huTsdRE
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/pc/.claude/plans/parallel-chasing-simon.md
+Your plan has been saved to: /home/<USER>/.claude/plans/parallel-chasing-simon.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
@@ -1630,7 +1630,7 @@ tool_use Read
 id: toolu_vrtx_01HvWdFt6BPrzD1BoPHeUjPv
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "limit": 15,
   "offset": 1
 }
@@ -1669,7 +1669,7 @@ tool_use Read
 id: toolu_vrtx_01BV31otBtABH5UqAUfiD4GG
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "limit": 30,
   "offset": 15
 }
@@ -1728,7 +1728,7 @@ id: toolu_vrtx_01Gfoh4ZUKDpL8geHpBQJaDT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "old_string": "\toaimodel \"github.com/sentioxyz/changelogue/internal/agent/openai\"\n\t\"github.com/sentioxyz/changelogue/internal/models\"\n\t\"github.com/sentioxyz/changelogue/internal/routing\"",
   "new_string": "\toaimodel \"github.com/sentioxyz/changelogue/internal/agent/openai\"\n\t\"github.com/sentioxyz/changelogue/internal/gate\"\n\t\"github.com/sentioxyz/changelogue/internal/models\"\n\t\"github.com/sentioxyz/changelogue/internal/routing\""
 }
@@ -1739,7 +1739,7 @@ id: toolu_vrtx_01Gfoh4ZUKDpL8geHpBQJaDT
 tool_result
 id: toolu_vrtx_01Gfoh4ZUKDpL8geHpBQJaDT
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go has been updated successfully.
 ```
 
 > TOOL
@@ -1749,7 +1749,7 @@ id: toolu_vrtx_018Z3ZAqb2DiUb8tJgbAQyPA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "old_string": "\treleaseIDs := make([]string, 0, len(releases))\n\tfor _, r := range releases {\n\t\tif r.Version == version {\n\t\t\treleaseIDs = append(releaseIDs, r.ID)\n\t\t}\n\t}",
   "new_string": "\treleaseIDs := make([]string, 0, len(releases))\n\tnormalizedVersion := gate.NormalizeVersion(version, nil)\n\tfor _, r := range releases {\n\t\tif gate.NormalizeVersion(r.Version, nil) == normalizedVersion {\n\t\t\treleaseIDs = append(releaseIDs, r.ID)\n\t\t}\n\t}"
 }
@@ -1760,7 +1760,7 @@ id: toolu_vrtx_018Z3ZAqb2DiUb8tJgbAQyPA
 tool_result
 id: toolu_vrtx_018Z3ZAqb2DiUb8tJgbAQyPA
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go has been updated successfully.
 ```
 
 > TOOL
@@ -1812,7 +1812,7 @@ id: toolu_vrtx_01D21Auq57Yhpme4uM1tN3TF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "old_string": "\t\t LEFT JOIN LATERAL (\n\t\t     (SELECT sr.id, sr.status, sr.report->>'urgency' AS urgency, 0 AS priority\n\t\t      FROM semantic_releases sr\n\t\t      WHERE sr.project_id = p.id AND sr.version = r.version\n\t\t      ORDER BY sr.created_at DESC LIMIT 1)\n\t\t     UNION ALL\n\t\t     (SELECT NULL::uuid, 'processing', '', 1\n\t\t      FROM agent_runs ar\n\t\t      WHERE ar.project_id = p.id AND ar.version = r.version\n\t\t        AND ar.status IN ('pending', 'running')\n\t\t      LIMIT 1)\n\t\t     ORDER BY priority LIMIT 1\n\t\t ) sr_info ON true`+dataWhere+`\n\t\t ORDER BY COALESCE(r.released_at, r.created_at) DESC`+limitClause, dataArgs...)",
   "new_string": "\t\t LEFT JOIN LATERAL (\n\t\t     (SELECT sr.id, sr.status, sr.report->>'urgency' AS urgency, 0 AS priority\n\t\t      FROM semantic_releases sr\n\t\t      WHERE sr.project_id = p.id AND (sr.version = r.version\n\t\t            OR EXISTS (SELECT 1 FROM semantic_release_sources srs\n\t\t                       WHERE srs.semantic_release_id = sr.id AND srs.release_id = r.id))\n\t\t      ORDER BY sr.created_at DESC LIMIT 1)\n\t\t     UNION ALL\n\t\t     (SELECT NULL::uuid, 'processing', '', 1\n\t\t      FROM agent_runs ar\n\t\t      WHERE ar.project_id = p.id\n\t\t        AND (ar.version = r.version\n\t\t             OR ar.version = LOWER(TRIM(LEADING 'v' FROM TRIM(LEADING 'V' FROM r.version))))\n\t\t        AND ar.status IN ('pending', 'running')\n\t\t      LIMIT 1)\n\t\t     ORDER BY priority LIMIT 1\n\t\t ) sr_info ON true`+dataWhere+`\n\t\t ORDER BY COALESCE(r.released_at, r.created_at) DESC`+limitClause, dataArgs...)"
 }
@@ -1851,7 +1851,7 @@ id: toolu_vrtx_01PrgYbjoama7X5TsU1sJ5UY
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "old_string": "\t\t LEFT JOIN LATERAL (\n\t\t     (SELECT sr.id, sr.status, sr.report->>'urgency' AS urgency, 0 AS priority\n\t\t      FROM semantic_releases sr\n\t\t      WHERE sr.project_id = p.id AND sr.version = r.version\n\t\t      ORDER BY sr.created_at DESC LIMIT 1)\n\t\t     UNION ALL\n\t\t     (SELECT NULL::uuid, 'processing', '', 1\n\t\t      FROM agent_runs ar\n\t\t      WHERE ar.project_id = p.id AND ar.version = r.version\n\t\t        AND ar.status IN ('pending', 'running')\n\t\t      LIMIT 1)\n\t\t     ORDER BY priority LIMIT 1\n\t\t ) sr_info ON true`+dataWhere+`\n\t\t ORDER BY COALESCE(r.released_at, r.created_at) DESC`+limitClause, dataArgs...)",
   "new_string": "\t\t LEFT JOIN LATERAL (\n\t\t     (SELECT sr.id, sr.status, sr.report->>'urgency' AS urgency, 0 AS priority\n\t\t      FROM semantic_releases sr\n\t\t      WHERE sr.project_id = p.id AND (sr.version = r.version\n\t\t            OR EXISTS (SELECT 1 FROM semantic_release_sources srs\n\t\t                       WHERE srs.semantic_release_id = sr.id AND srs.release_id = r.id))\n\t\t      ORDER BY sr.created_at DESC LIMIT 1)\n\t\t     UNION ALL\n\t\t     (SELECT NULL::uuid, 'processing', '', 1\n\t\t      FROM agent_runs ar\n\t\t      WHERE ar.project_id = p.id\n\t\t        AND (ar.version = r.version\n\t\t             OR ar.version = LOWER(TRIM(LEADING 'v' FROM TRIM(LEADING 'V' FROM r.version))))\n\t\t        AND ar.status IN ('pending', 'running')\n\t\t      LIMIT 1)\n\t\t     ORDER BY priority LIMIT 1\n\t\t ) sr_info ON true`+dataWhere+`\n\t\t ORDER BY COALESCE(r.released_at, r.created_at) DESC`+limitClause, dataArgs...)"
 }
@@ -1862,7 +1862,7 @@ id: toolu_vrtx_01PrgYbjoama7X5TsU1sJ5UY
 tool_result
 id: toolu_vrtx_01PrgYbjoama7X5TsU1sJ5UY
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go has been updated. All occurrences were successfully replaced.
+The file /home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go has been updated. All occurrences were successfully replaced.
 ```
 
 > AGENT
@@ -1876,7 +1876,7 @@ id: toolu_vrtx_01Dbd6vKbJwVeDQ1JSWRt8xC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "old_string": "\t LEFT JOIN LATERAL (\n\t     (SELECT sr.id, sr.status, sr.report->>'urgency' AS urgency, 0 AS priority\n\t      FROM semantic_releases sr\n\t      WHERE sr.project_id = p.id AND sr.version = r.version\n\t      ORDER BY sr.created_at DESC LIMIT 1)\n\t     UNION ALL\n\t     (SELECT NULL::uuid, 'processing', '', 1\n\t      FROM agent_runs ar\n\t      WHERE ar.project_id = p.id AND ar.version = r.version\n\t        AND ar.status IN ('pending', 'running')\n\t      LIMIT 1)\n\t     ORDER BY priority LIMIT 1\n\t ) sr_info ON true\n\t WHERE r.id = $1`, id,",
   "new_string": "\t LEFT JOIN LATERAL (\n\t     (SELECT sr.id, sr.status, sr.report->>'urgency' AS urgency, 0 AS priority\n\t      FROM semantic_releases sr\n\t      WHERE sr.project_id = p.id AND (sr.version = r.version\n\t            OR EXISTS (SELECT 1 FROM semantic_release_sources srs\n\t                       WHERE srs.semantic_release_id = sr.id AND srs.release_id = r.id))\n\t      ORDER BY sr.created_at DESC LIMIT 1)\n\t     UNION ALL\n\t     (SELECT NULL::uuid, 'processing', '', 1\n\t      FROM agent_runs ar\n\t      WHERE ar.project_id = p.id\n\t        AND (ar.version = r.version\n\t             OR ar.version = LOWER(TRIM(LEADING 'v' FROM TRIM(LEADING 'V' FROM r.version))))\n\t        AND ar.status IN ('pending', 'running')\n\t      LIMIT 1)\n\t     ORDER BY priority LIMIT 1\n\t ) sr_info ON true\n\t WHERE r.id = $1`, id,"
 }
@@ -1914,7 +1914,7 @@ tool_use Read
 id: toolu_vrtx_01N9Rbap9HiUvFxjF19KqYum
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 30,
   "offset": 618
 }
@@ -1965,7 +1965,7 @@ tool_use Read
 id: toolu_vrtx_01X3NUC3SHsfZvBdX3TCnMeU
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 10,
   "offset": 647
 }
@@ -2000,7 +2000,7 @@ id: toolu_vrtx_01AxeqffwAMpbV7NnTuwT9cD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "old_string": "\t\t LEFT JOIN LATERAL (\n\t\t     (SELECT sr.id, sr.status, sr.report->>'urgency' AS urgency, 0 AS priority\n\t\t      FROM semantic_releases sr\n\t\t      WHERE sr.project_id = p.id AND sr.version = r.version\n\t\t      ORDER BY sr.created_at DESC LIMIT 1)\n\t\t     UNION ALL\n\t\t     (SELECT NULL::uuid, 'processing', '', 1\n\t\t      FROM agent_runs ar\n\t\t      WHERE ar.project_id = p.id AND ar.version = r.version\n\t\t        AND ar.status IN ('pending', 'running')\n\t\t      LIMIT 1)\n\t\t     ORDER BY priority LIMIT 1\n\t\t ) sr_info ON true\n\t\t WHERE r.id = $1`, id,",
   "new_string": "\t\t LEFT JOIN LATERAL (\n\t\t     (SELECT sr.id, sr.status, sr.report->>'urgency' AS urgency, 0 AS priority\n\t\t      FROM semantic_releases sr\n\t\t      WHERE sr.project_id = p.id AND (sr.version = r.version\n\t\t            OR EXISTS (SELECT 1 FROM semantic_release_sources srs\n\t\t                       WHERE srs.semantic_release_id = sr.id AND srs.release_id = r.id))\n\t\t      ORDER BY sr.created_at DESC LIMIT 1)\n\t\t     UNION ALL\n\t\t     (SELECT NULL::uuid, 'processing', '', 1\n\t\t      FROM agent_runs ar\n\t\t      WHERE ar.project_id = p.id\n\t\t        AND (ar.version = r.version\n\t\t             OR ar.version = LOWER(TRIM(LEADING 'v' FROM TRIM(LEADING 'V' FROM r.version))))\n\t\t        AND ar.status IN ('pending', 'running')\n\t\t      LIMIT 1)\n\t\t     ORDER BY priority LIMIT 1\n\t\t ) sr_info ON true\n\t\t WHERE r.id = $1`, id,"
 }
@@ -2011,7 +2011,7 @@ id: toolu_vrtx_01AxeqffwAMpbV7NnTuwT9cD
 tool_result
 id: toolu_vrtx_01AxeqffwAMpbV7NnTuwT9cD
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go has been updated successfully.
 ```
 
 > AGENT
@@ -2026,7 +2026,7 @@ id: toolu_vrtx_01XiirDr7Q3DXvCAJ9avxBnb
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "pattern": "sr\\.version = r\\.version"
 }
 ```
@@ -2054,7 +2054,7 @@ id: toolu_vrtx_01DiDJyMV8hHd57mjszaRZU5
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "pattern": "TRIM.*LEADING.*v.*FROM"
 }
 ```
@@ -2122,7 +2122,7 @@ tool_use Read
 id: toolu_vrtx_01Kk7gwrGmZqGpbVjF8SZ2aK
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go",
   "limit": 80,
   "offset": 300
 }
@@ -2170,7 +2170,7 @@ id: toolu_vrtx_01TgJvmJa9oosmHEo7YaoSo6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go",
   "old_string": "\t// Auto-create release_gates for projects with WaitForAllSources enabled.\n\tif _, err := pool.Exec(ctx, `\n\t\tINSERT INTO release_gates (project_id, timeout_hours, enabled)\n\t\tSELECT p.id, 168, true\n\t\tFROM projects p\n\t\tWHERE p.agent_rules->>'wait_for_all_sources' = 'true'\n\t\tON CONFLICT (project_id) DO NOTHING\n\t`); err != nil {\n\t\treturn fmt.Errorf(\"wait_for_all_sources migration: %w\", err)\n\t}\n\n\treturn nil\n}",
   "new_string": "\t// Auto-create release_gates for projects with WaitForAllSources enabled.\n\tif _, err := pool.Exec(ctx, `\n\t\tINSERT INTO release_gates (project_id, timeout_hours, enabled)\n\t\tSELECT p.id, 168, true\n\t\tFROM projects p\n\t\tWHERE p.agent_rules->>'wait_for_all_sources' = 'true'\n\t\tON CONFLICT (project_id) DO NOTHING\n\t`); err != nil {\n\t\treturn fmt.Errorf(\"wait_for_all_sources migration: %w\", err)\n\t}\n\n\t// Backfill semantic_release_sources for existing semantic releases that were\n\t// created with normalized versions (e.g., gate stripped v-prefix).\n\tif _, err := pool.Exec(ctx, `\n\t\tINSERT INTO semantic_release_sources (semantic_release_id, release_id)\n\t\tSELECT sr.id, r.id\n\t\tFROM semantic_releases sr\n\t\tJOIN sources s ON s.project_id = sr.project_id\n\t\tJOIN releases r ON r.source_id = s.id\n\t\t  AND LOWER(TRIM(LEADING 'v' FROM TRIM(LEADING 'V' FROM r.version)))\n\t\t    = LOWER(TRIM(LEADING 'v' FROM TRIM(LEADING 'V' FROM sr.version)))\n\t\tWHERE NOT EXISTS (\n\t\t    SELECT 1 FROM semantic_release_sources srs\n\t\t    WHERE srs.semantic_release_id = sr.id AND srs.release_id = r.id\n\t\t)\n\t\tON CONFLICT DO NOTHING\n\t`); err != nil {\n\t\treturn fmt.Errorf(\"backfill semantic_release_sources: %w\", err)\n\t}\n\n\treturn nil\n}"
 }
@@ -2181,7 +2181,7 @@ id: toolu_vrtx_01TgJvmJa9oosmHEo7YaoSo6
 tool_result
 id: toolu_vrtx_01TgJvmJa9oosmHEo7YaoSo6
 ```
-The file /Users/pc/web3/ReleaseBeacon/internal/db/migrations.go has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go has been updated successfully.
 ```
 
 > TOOL
@@ -2496,7 +2496,7 @@ tool_use Bash
 id: toolu_vrtx_01LvU3Ws8Yad3JYRofR9LDBY
 ```json
 {
-  "command": "git add internal/agent/orchestrator.go internal/api/pgstore.go internal/db/migrations.go && git commit -m \"$(cat <<'EOF'\nfix(gate): associate semantic releases with source releases after version normalization\n\nGate-normalized versions (e.g., v1.10.15 → 1.10.15) caused semantic releases\nto be unlinked from source releases, making urgency invisible on releases and\nprojects pages. Fix orchestrator version matching, LATERAL joins, and backfill\nexisting data.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add internal/agent/orchestrator.go internal/api/pgstore.go internal/db/migrations.go && git commit -m \"$(cat <<'EOF'\nfix(gate): associate semantic releases with source releases after version normalization\n\nGate-normalized versions (e.g., v1.10.15 → 1.10.15) caused semantic releases\nto be unlinked from source releases, making urgency invisible on releases and\nprojects pages. Fix orchestrator version matching, LATERAL joins, and backfill\nexisting data.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the fix"
 }
 ```
@@ -2707,7 +2707,7 @@ tool_use Read
 id: toolu_bdrk_01P5LaWs7XHPURwQhTQrRNmT
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 30,
   "offset": 960
 }
@@ -2768,7 +2768,7 @@ id: toolu_bdrk_01LhBY1yxcF7t17diGvQynGZ
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/agent/orchestrator.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/agent/orchestrator.go",
   "pattern": "ListReleasesByProject"
 }
 ```
@@ -2789,7 +2789,7 @@ id: toolu_bdrk_01EtUDuK6TqWWKU6NFwTiwqW
 {
   "-n": true,
   "output_mode": "content",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "pattern": "func.*ListReleasesByProject"
 }
 ```
@@ -2808,7 +2808,7 @@ tool_use Read
 id: toolu_bdrk_012UcB5BEu9DTmG7CxtptCiS
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 20,
   "offset": 500
 }
@@ -2893,7 +2893,7 @@ id: toolu_bdrk_01DiUEkmk45deaeuQZd2g5p6
 {
   "output_mode": "files_with_matches",
   "pattern": "semantic-release-detail|SemanticReleaseDetail",
-  "path": "/Users/pc/web3/ReleaseBeacon/web"
+  "path": "/home/<USER>/web3/ReleaseBeacon/web"
 }
 ```
 
@@ -2913,7 +2913,7 @@ tool_use Read
 id: toolu_bdrk_01CrVYyCEyfz78DcPEHQCAtW
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/web/components/semantic-releases/semantic-release-detail.tsx"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/web/components/semantic-releases/semantic-release-detail.tsx"
 }
 ```
 
@@ -3025,7 +3025,7 @@ tool_use Read
 id: toolu_bdrk_01FDfvk8tbw3Y5BEk6x73HYR
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go",
   "limit": 20,
   "offset": 319
 }
@@ -3100,7 +3100,7 @@ tool_use Read
 id: toolu_bdrk_01QQphdXwAx678Vse4a85FrF
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/.github/workflows/deploy.yml"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/.github/workflows/deploy.yml"
 }
 ```
 
@@ -3392,7 +3392,7 @@ tool_result
 id: toolu_bdrk_01WZDvTpGWDpQr6MSdFzxFs5
 ```
 <persisted-output>
-Output too large (55.1KB). Full output saved to: /Users/pc/.REDACTED.txt
+Output too large (55.1KB). Full output saved to: /home/<USER>/.REDACTED.txt
 
 Preview (first 2KB):
 {

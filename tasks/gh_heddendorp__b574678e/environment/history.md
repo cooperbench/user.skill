@@ -6,7 +6,7 @@ Here is a list of plugins that are available but not installed. If the user's qu
 - Atlassian Rovo (atlassian-rovo@openai-curated-remote)
 - Slack (slack@openai-curated-remote)
 </recommended_plugins>
-# AGENTS.md instructions for /Users/hedde/.codex/worktrees/55d7/evorto
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/55d7/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -33,7 +33,7 @@ Keep these files concise. Put implementation-specific guidance in the nearest mo
 > DEVELOPER
 
 /goal Update us to the latest main and review the full application for compliance with our base product documents and [STABILIZATION.md](STABILIZATION.md) . While you are going through the code folder by folder you can save your findings in a new file to prepare them for being worked on later.
-Review our code with [$effect-ts](/Users/hedde/code/evorto/.agents/skills/effect-ts/SKILL.md) and [$uncodixfy](/Users/hedde/code/evorto/.agents/skills/uncodixfy/SKILL.md) as well as [$material-3:material-3](/Users/hedde/code/evorto/.agents/skills/material-3/SKILL.md) 
+Review our code with [$effect-ts](/home/<USER>/code/evorto/.agents/skills/effect-ts/SKILL.md) and [$uncodixfy](/home/<USER>/code/evorto/.agents/skills/uncodixfy/SKILL.md) as well as [$material-3:material-3](/home/<USER>/code/evorto/.agents/skills/material-3/SKILL.md) 
 Remember that we use angular material so not all material guidance may apply.
 Also collect any open questions that have to be cleared up in your file.
 
@@ -406,13 +406,13 @@ The unrelated formatter change is gone. I’m running the final lint and a targe
 
 Rebased onto latest `origin/main` (`9545a2c`) and completed the audit in about 15 minutes.
 
-The prioritized backlog, evidence, deferred scope, and open decisions are in [APPLICATION_COMPLIANCE_AUDIT.md](/Users/hedde/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:1).
+The prioritized backlog, evidence, deferred scope, and open decisions are in [APPLICATION_COMPLIANCE_AUDIT.md](/home/<USER>/.codex/worktrees/55d7/evorto/APPLICATION_COMPLIANCE_AUDIT.md:1).
 
 Key release blockers include QR scanning being globally disabled by `camera=()` policy ([MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/camera)), payment approval/webhook integrity gaps, missing required notification flows, unavailable paid transfers, stale stabilization claims, and finance docs excluded from CI.
 
 Validated with `bun run lint` and the docs test inventory (31 tests across 19 files). Only the new audit document is uncommitted on `codex/full-application-compliance-audit`.
 
-::git-create-branch{cwd="/Users/hedde/.codex/worktrees/55d7/evorto" branch="codex/full-application-compliance-audit"}
+::git-create-branch{cwd="/home/<USER>/.codex/worktrees/55d7/evorto" branch="codex/full-application-compliance-audit"}
 
 <oai-mem-citation>
 <citation_entries>

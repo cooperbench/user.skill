@@ -25,7 +25,7 @@ tool_use Bash
 id: toolu_01Jmo81zQBW4LXgCWof6ctSF
 ```json
 {
-  "command": "ls -1 /Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/autoresearch-tasks/ | sort",
+  "command": "ls -1 /home/<USER>/Projects/AI/forge/docs/superpowers/specs/autoresearch-tasks/ | sort",
   "description": "List task files sorted"
 }
 ```
@@ -35,7 +35,7 @@ id: toolu_01Jmo81zQBW4LXgCWof6ctSF
 tool_result
 id: toolu_016g5XJa6jDLechL8ZtPiryk
 ```
-   Compiling forge v0.1.0 (/Users/jdsingh/Projects/AI/forge)
+   Compiling forge v0.1.0 (/home/<USER>/Projects/AI/forge)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 5.39s
      Running `target/debug/forge --help`
 AI-powered development orchestrator
@@ -356,7 +356,7 @@ tool_use Read
 id: toolu_013tVAEG6VciUbu3acWvUDtM
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/autoresearch-tasks/T01-prompt-config-and-loader.md"
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/autoresearch-tasks/T01-prompt-config-and-loader.md"
 }
 ```
 
@@ -380,8 +380,8 @@ id: toolu_013tVAEG6VciUbu3acWvUDtM
     13→
     14→## Session Startup
     15→Read these files in order before starting:
-    16→1. `/Users/jdsingh/Projects/AI/forge/src/review/mod.rs` -- module structure and re-exports
-    17→2. `/Users/jdsingh/Projects/AI/forge/src/review/specialists.rs` -- `SpecialistType` […]
+    16→1. `/home/<USER>/Projects/AI/forge/src/review/mod.rs` -- module structure and re-exports
+    17→2. `/home/<USER>/Projects/AI/forge/src/review/specialists.rs` -- `SpecialistType` […]
 
 > TOOL
 
@@ -389,7 +389,7 @@ tool_use Read
 id: toolu_018efchkJwRe4bsg9ET86FWB
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/autoresearch-tasks/T02-extract-prompt-files.md"
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/autoresearch-tasks/T02-extract-prompt-files.md"
 }
 ```
 
@@ -413,8 +413,8 @@ id: toolu_018efchkJwRe4bsg9ET86FWB
     13→
     14→## Session Startup
     15→Read these files in order before starting:
-    16→1. `/Users/jdsingh/Projects/AI/forge/src/review/prompt_loader.rs` -- the loader you are testing against
-    17→2. `/Users/jdsingh/Projects/AI/forge/src/review/specialists.rs` -- `SpecialistType` enum with `focus_areas()`, `display_name()`, `agent_name()`, `default_gating()`, `description()` […]
+    16→1. `/home/<USER>/Projects/AI/forge/src/review/prompt_loader.rs` -- the loader you are testing against
+    17→2. `/home/<USER>/Projects/AI/forge/src/review/specialists.rs` -- `SpecialistType` enum with `focus_areas()`, `display_name()`, `agent_name()`, `default_gating()`, `description()` […]
 
 > TOOL
 
@@ -422,7 +422,7 @@ tool_use Read
 id: toolu_01HiU2wPzrFhQ3KArE9rsXyH
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/autoresearch-tasks/T04-benchmark-types-and-loader.md"
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/autoresearch-tasks/T04-benchmark-types-and-loader.md"
 }
 ```
 
@@ -471,7 +471,7 @@ tool_use Read
 id: toolu_01X2aXSa1SrcgwHAJCmh4b8m
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/docs/superpowers/specs/2026-03-11-forge-autoresearch-plan.md"
+  "file_path": "/home/<USER>/Projects/AI/forge/docs/superpowers/specs/2026-03-11-forge-autoresearch-plan.md"
 }
 ```
 
@@ -556,7 +556,7 @@ tool_use Bash
 id: toolu_01CFY4UtTsZQr5UR1m35K1us
 ```json
 {
-  "command": "cd /Users/jdsingh/Projects/AI/forge && ./target/release/forge implement docs/superpowers/specs/autoresearch-tasks/T01-prompt-config-and-loader.md --autonomous 2>&1 | tail -30",
+  "command": "cd /home/<USER>/Projects/AI/forge && ./target/release/forge implement docs/superpowers/specs/autoresearch-tasks/T01-prompt-config-and-loader.md --autonomous 2>&1 | tail -30",
   "description": "Execute T01 - PromptConfig + PromptLoader (Wave 1)",
   "timeout": "600"
 }
@@ -577,7 +577,7 @@ tool_use Bash
 id: toolu_01EbAHHuEjBuYPFDtV1hMsrz
 ```json
 {
-  "command": "cd /Users/jdsingh/Projects/AI/forge && ./target/release/forge implement docs/superpowers/specs/autoresearch-tasks/T01-prompt-config-and-loader.md --autonomous 2>&1 | tail -30",
+  "command": "cd /home/<USER>/Projects/AI/forge && ./target/release/forge implement docs/superpowers/specs/autoresearch-tasks/T01-prompt-config-and-loader.md --autonomous 2>&1 | tail -30",
   "description": "Execute T01 - PromptConfig + PromptLoader (Wave 1)",
   "timeout": "600"
 }
@@ -1539,7 +1539,7 @@ tool_use Bash
 id: toolu_014czFnXpv4xb2y83Uvh3VaS
 ```json
 {
-  "command": "grep -n \"approve\\|yes\\|auto_approve\\|auto-approve\" /Users/jdsingh/Projects/AI/forge/src/cmd/implement.rs 2>&1 | head -20",
+  "command": "grep -n \"approve\\|yes\\|auto_approve\\|auto-approve\" /home/<USER>/Projects/AI/forge/src/cmd/implement.rs 2>&1 | head -20",
   "description": "Search for approval logic in implement.rs"
 }
 ```
@@ -1549,7 +1549,7 @@ id: toolu_014czFnXpv4xb2y83Uvh3VaS
 tool_result
 id: toolu_014czFnXpv4xb2y83Uvh3VaS
 ```
-grep: /Users/jdsingh/Projects/AI/forge/src/cmd/implement.rs: No such file or directory
+grep: /home/<USER>/Projects/AI/forge/src/cmd/implement.rs: No such file or directory
 ```
 
 > TOOL
@@ -1558,7 +1558,7 @@ tool_use Bash
 id: toolu_01XfFqibUrGrGF3Qk8cM4Vyt
 ```json
 {
-  "command": "grep -rn \"approve\\|yes_flag\\|auto_approve\" /Users/jdsingh/Projects/AI/forge/src/cmd/ --include=\"*.rs\" 2>&1 | grep -i implement | head -20",
+  "command": "grep -rn \"approve\\|yes_flag\\|auto_approve\" /home/<USER>/Projects/AI/forge/src/cmd/ --include=\"*.rs\" 2>&1 | grep -i implement | head -20",
   "description": "Search for implement approval logic"
 }
 ```
@@ -1577,7 +1577,7 @@ tool_use Bash
 id: toolu_01MgqdUmeWnPR1aAWK37yDDj
 ```json
 {
-  "command": "grep -rn \"implement\" /Users/jdsingh/Projects/AI/forge/src/cmd/mod.rs 2>&1",
+  "command": "grep -rn \"implement\" /home/<USER>/Projects/AI/forge/src/cmd/mod.rs 2>&1",
   "description": "Find implement module location"
 }
 ```
@@ -1587,8 +1587,8 @@ id: toolu_01MgqdUmeWnPR1aAWK37yDDj
 tool_result
 id: toolu_01MgqdUmeWnPR1aAWK37yDDj
 ```
-/Users/jdsingh/Projects/AI/forge/src/cmd/mod.rs:1://! CLI command implementations.
-/Users/jdsingh/Projects/AI/forge/src/cmd/mod.rs:32:pub use project::{cmd_generate, cmd_implement, cmd_init, cmd_interview};
+/home/<USER>/Projects/AI/forge/src/cmd/mod.rs:1://! CLI command implementations.
+/home/<USER>/Projects/AI/forge/src/cmd/mod.rs:32:pub use project::{cmd_generate, cmd_implement, cmd_init, cmd_interview};
 ```
 
 > TOOL
@@ -1597,7 +1597,7 @@ tool_use Bash
 id: toolu_01UnRjgPqiiLnY3GrVs9f5xi
 ```json
 {
-  "command": "grep -n \"approve\\|a]pprove\\|edit phase\\|read.*input\\|confirm\\|yes\" /Users/jdsingh/Projects/AI/forge/src/cmd/project.rs 2>&1 | head -30",
+  "command": "grep -n \"approve\\|a]pprove\\|edit phase\\|read.*input\\|confirm\\|yes\" /home/<USER>/Projects/AI/forge/src/cmd/project.rs 2>&1 | head -30",
   "description": "Find phase approval logic in project.rs"
 }
 ```
@@ -1617,7 +1617,7 @@ tool_use Bash
 id: toolu_01A4QaCMY3RsjuUn2q8z7kqc
 ```json
 {
-  "command": "grep -n \"implement\\|approve\\|yes\" /Users/jdsingh/Projects/AI/forge/src/cmd/project.rs 2>&1 | head -30",
+  "command": "grep -n \"implement\\|approve\\|yes\" /home/<USER>/Projects/AI/forge/src/cmd/project.rs 2>&1 | head -30",
   "description": "Find implement function in project.rs"
 }
 ```
@@ -1641,7 +1641,7 @@ tool_use Read
 id: toolu_01LhUg3ymc7mvKAytwXqK19o
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/cmd/project.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/cmd/project.rs",
   "offset": 61,
   "limit": 30
 }
@@ -1670,7 +1670,7 @@ tool_use Bash
 id: toolu_01KRjdaNk8yVXUSAL1TmCwZF
 ```json
 {
-  "command": "grep -n \"approve\\|confirm\\|a]pprove\\|read_line\\|input\" /Users/jdsingh/Projects/AI/forge/src/implement.rs 2>&1 | head -30",
+  "command": "grep -n \"approve\\|confirm\\|a]pprove\\|read_line\\|input\" /home/<USER>/Projects/AI/forge/src/implement.rs 2>&1 | head -30",
   "description": "Find approval logic in implement.rs"
 }
 ```
@@ -1680,7 +1680,7 @@ id: toolu_01KRjdaNk8yVXUSAL1TmCwZF
 tool_result
 id: toolu_01KRjdaNk8yVXUSAL1TmCwZF
 ```
-grep: /Users/jdsingh/Projects/AI/forge/src/implement.rs: No such file or directory
+grep: /home/<USER>/Projects/AI/forge/src/implement.rs: No such file or directory
 ```
 
 > TOOL
@@ -1689,7 +1689,7 @@ tool_use Bash
 id: toolu_01W5t3Sc5SnX52hHKUkSpy9L
 ```json
 {
-  "command": "grep -rn \"a]pprove\\|approve_phases\\|read_line\\|Failed to read user input\" /Users/jdsingh/Projects/AI/forge/src/ --include=\"*.rs\" 2>&1 | head -20",
+  "command": "grep -rn \"a]pprove\\|approve_phases\\|read_line\\|Failed to read user input\" /home/<USER>/Projects/AI/forge/src/ --include=\"*.rs\" 2>&1 | head -20",
   "description": "Find the approval prompt code"
 }
 ```
@@ -1699,13 +1699,13 @@ id: toolu_01W5t3Sc5SnX52hHKUkSpy9L
 tool_result
 id: toolu_01W5t3Sc5SnX52hHKUkSpy9L
 ```
-/Users/jdsingh/Projects/AI/forge/src/interview/mod.rs:278:        if stdin.lock().read_line(&mut user_input)? == 0 {
-/Users/jdsingh/Projects/AI/forge/src/interview/mod.rs:319:                if stdin.lock().read_line(&mut answer)? == 0 {
-/Users/jdsingh/Projects/AI/forge/src/generate/mod.rs:274:    bail!("Invalid action. Use [a]pprove, [e]dit <phase>, [r]egenerate, or [q]uit");
-/Users/jdsingh/Projects/AI/forge/src/generate/mod.rs:367:        println!("[a]pprove  [e]dit phase  [r]egenerate  [q]uit");
-/Users/jdsingh/Projects/AI/forge/src/generate/mod.rs:374:            .context("Failed to read user input")?;
-/Users/jdsingh/Projects/AI/forge/src/implement/mod.rs:90:        println!("[a]pprove  [e]dit phase  [r]egenerate  [q]uit");
-/Users/jdsingh/Projects/AI/forge/src/implement/mod.rs:96:            .context("Failed to read user input")?;
+/home/<USER>/Projects/AI/forge/src/interview/mod.rs:278:        if stdin.lock().read_line(&mut user_input)? == 0 {
+/home/<USER>/Projects/AI/forge/src/interview/mod.rs:319:                if stdin.lock().read_line(&mut answer)? == 0 {
+/home/<USER>/Projects/AI/forge/src/generate/mod.rs:274:    bail!("Invalid action. Use [a]pprove, [e]dit <phase>, [r]egenerate, or [q]uit");
+/home/<USER>/Projects/AI/forge/src/generate/mod.rs:367:        println!("[a]pprove  [e]dit phase  [r]egenerate  [q]uit");
+/home/<USER>/Projects/AI/forge/src/generate/mod.rs:374:            .context("Failed to read user input")?;
+/home/<USER>/Projects/AI/forge/src/implement/mod.rs:90:        println!("[a]pprove  [e]dit phase  [r]egenerate  [q]uit");
+/home/<USER>/Projects/AI/forge/src/implement/mod.rs:96:            .context("Failed to read user input")?;
 ```
 
 > TOOL
@@ -1714,7 +1714,7 @@ tool_use Read
 id: toolu_01SF7cQuM7PaPaPx9FHLVZPQ
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/implement/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/implement/mod.rs",
   "offset": 70,
   "limit": 50
 }
@@ -1783,7 +1783,7 @@ tool_use Read
 id: toolu_01SjKa5tRrV6PVnyrShj9wJs
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/implement/mod.rs"
+  "file_path": "/home/<USER>/Projects/AI/forge/src/implement/mod.rs"
 }
 ```
 
@@ -1988,7 +1988,7 @@ id: toolu_01RgvHNsdeQ95JAa4YbfEzrY
 tool_result
 id: toolu_01RgvHNsdeQ95JAa4YbfEzrY
 ```
-Audit log saved to: /Users/jdsingh/Projects/AI/forge/.forge/audit/runs/2026-03-11T14-10-20_7d2d239c.json
+Audit log saved to: /home/<USER>/Projects/AI/forge/.forge/audit/runs/2026-03-11T14-10-20_7d2d239c.json
 ```
 
 > TOOL
@@ -1997,7 +1997,7 @@ tool_use Bash
 id: toolu_01R7TLm7my8Vyd4XUF2onCqS
 ```json
 {
-  "command": "cat /Users/jdsingh/Projects/AI/forge/.forge/audit/runs/2026-03-11T14-10-20_7d2d239c.json | python3 -m json.tool 2>&1 | head -60",
+  "command": "cat /home/<USER>/Projects/AI/forge/.forge/audit/runs/2026-03-11T14-10-20_7d2d239c.json | python3 -m json.tool 2>&1 | head -60",
   "description": "Check T01 audit log for results"
 }
 ```
@@ -2015,8 +2015,8 @@ id: toolu_01R7TLm7my8Vyd4XUF2onCqS
         "auto_approve_threshold": 5,
         "skip_permissions": true,
         "verbose": false,
-        "spec_file": "/Users/jdsingh/Projects/AI/forge/.forge/spec.md",
-        "project_dir": "/Users/jdsingh/Projects/AI/forge"
+        "spec_file": "/home/<USER>/Projects/AI/forge/.forge/spec.md",
+        "project_dir": "/home/<USER>/Projects/AI/forge"
     },
     "phases": []
 }
@@ -2028,7 +2028,7 @@ tool_use Bash
 id: toolu_01LucY1KQ29298XsZ57v5KNx
 ```json
 {
-  "command": "cat /Users/jdsingh/Projects/AI/forge/.forge/phases.json | python3 -m json.tool 2>&1 | head -50",
+  "command": "cat /home/<USER>/Projects/AI/forge/.forge/phases.json | python3 -m json.tool 2>&1 | head -50",
   "description": "Check phases.json content"
 }
 ```
@@ -2265,7 +2265,7 @@ tool_use Write
 id: toolu_01PuhAa6AmUGZFqWABJP69pk
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh",
+  "file_path": "/home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh",
   "content": "#!/usr/bin/env bash\nset -euo pipefail\n\n# Autoresearch task runner — executes all tasks in wave order\n# Council is enabled via .forge/forge.toml\n\nFORGE=\"./target/release/forge\"\nTASKS_DIR=\"docs/superpowers/specs/autoresearch-tasks\"\nLOG_DIR=\"/tmp/forge-autoresearch-logs\"\n\nmkdir -p \"$LOG_DIR\"\n\nGREEN='\\033[0;32m'\nRED='\\033[0;31m'\nYELLOW='\\033[1;33m'\nCYAN='\\033[0;36m'\nNC='\\033[0m'\n\nrun_task() {\n    local task_file=\"$1\"\n    local task_name\n    task_name=$(basename \"$task_file\" .md)\n    local log_file=\"$LOG_DIR/${task_name}.log\"\n\n    echo -e \"${CYAN}━━━ Starting: ${task_name} ━━━${NC}\"\n\n    # Step 1: Generate phases\n    echo -e \"  ${YELLOW}[1/3]${NC} Generating phases...\"\n    if ! $FORGE implement \"${TASKS_DIR}/${task_file}\" --autonomous --dry-run >> \"$log_file\" 2>&1; then\n        echo -e \"  ${RED}FAILED${NC} generating phases. See: $log_file\"\n        return 1\n    fi\n\n    # Step 2: Reset state\n    echo -e \"  ${YELLOW}[2/3]${NC} Resetting state...\"\n    $FORGE reset --force >> \"$log_file\" 2>&1\n\n    # Step 3: Execute\n    echo -e \"  ${YELLOW}[3/3]${NC} Running phases...\"\n    if $FORGE run --autonomous --yes >> \"$log_file\" 2>&1; then\n        echo -e \"  ${GREEN}✓ DONE${NC}: ${task_name}\"\n    else\n        echo -e \"  ${RED}✗ FAILED${NC}: ${task_name}. See: $log_file\"\n        return 1\n    fi\n\n    echo \"\"\n}\n\nrun_wave() {\n    local wave_num=\"$1\"\n    shift\n    local tasks=(\"$@\")\n\n    echo -e \"${CYAN}══════════════════════════════════════${NC}\"\n    echo -e \"${CYAN}  Wave ${wave_num} (${#tasks[@]} tasks)${NC}\"\n    echo -e \"${CYAN}══════════════════════════════════════${NC}\"\n    echo \"\"\n\n    for task in \"${tasks[@]}\"; do\n        run_task \"${task}\" || {\n            echo -e \"${RED}Wave ${wave_num} halted due to failure in ${task}${NC}\"\n            exit 1\n        }\n    done\n\n    echo -e \"${GREEN}Wave ${wave_num} complete.${NC}\"\n    echo \"\"\n}\n\n# Ensure binary is built\necho \"Building forge...\"\ncargo build --release 2>&1 | tail -1\necho \"\"\n\n# Wave […]
 
 > TOOL
@@ -2273,7 +2273,7 @@ id: toolu_01PuhAa6AmUGZFqWABJP69pk
 tool_result
 id: toolu_01PuhAa6AmUGZFqWABJP69pk
 ```
-File created successfully at: /Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh
+File created successfully at: /home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh
 ```
 
 > TOOL
@@ -2282,7 +2282,7 @@ tool_use Bash
 id: toolu_019zMwDdrQkQ3LB48b3UZRcD
 ```json
 {
-  "command": "chmod +x /Users/jdsingh/Projects/AI/forge/scripts/run-autoresearch-tasks.sh",
+  "command": "chmod +x /home/<USER>/Projects/AI/forge/scripts/run-autoresearch-tasks.sh",
   "description": "Make script executable"
 }
 ```
@@ -2300,7 +2300,7 @@ id: toolu_019zMwDdrQkQ3LB48b3UZRcD
 Run it from a separate terminal:
 
 ```bash
-cd /Users/jdsingh/Projects/AI/forge
+cd /home/<USER>/Projects/AI/forge
 ./scripts/run-autoresearch-tasks.sh
 ```
 

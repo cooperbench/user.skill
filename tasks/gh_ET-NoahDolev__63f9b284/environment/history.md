@@ -1,6 +1,6 @@
 > DEVELOPER
 
-Can you explain to me what we hope to achieve with these code changes: '/Users/noahdolevelixir/Code/rune/docs/superpowers/handoffs/2026-04-22-plan-execution-handoff.md'? What are our goals?
+Can you explain to me what we hope to achieve with these code changes: '/home/<USER>/Code/rune/docs/superpowers/handoffs/2026-04-22-plan-execution-handoff.md'? What are our goals?
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01HiCYc6oJDgmB25h7wrwhrf
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/superpowers/handoffs/2026-04-22-plan-execution-handoff.md"
+  "file_path": "/home/<USER>/Code/rune/docs/superpowers/handoffs/2026-04-22-plan-execution-handoff.md"
 }
 ```
 
@@ -51,7 +51,7 @@ tool_use Read
 id: toolu_014ixW6PRbk2kqrCLro5u8Qp
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/superpowers/specs/2026-04-22-phase-benchmark-pivot.yaml"
+  "file_path": "/home/<USER>/Code/rune/docs/superpowers/specs/2026-04-22-phase-benchmark-pivot.yaml"
 }
 ```
 

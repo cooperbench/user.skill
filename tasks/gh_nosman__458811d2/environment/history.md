@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_01DsSsUf63wTHX44R8mxwYgM
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs"
 }
 ```
 
@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_01EMUQjujhCKLsReSRRCdhcr
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/db.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/db.rs"
 }
 ```
 
@@ -130,7 +130,7 @@ tool_use Read
 id: toolu_01JKNqDnb9576FDi4ZssGZow
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/index.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/index.rs"
 }
 ```
 
@@ -162,8 +162,8 @@ id: toolu_01JKNqDnb9576FDi4ZssGZow
 21	///   3. **Backfill / no indexing context**: derive remote from cwd.
 22	///      a. `git -C cwd remote get-url origin` matched against `repositories.remote`
 23	///      b. cwd longest-prefix against tracked dirs (cross-machine fallback)
-24	///      c. user-home-stripped suffix match (Scott's `/Users/sholodak/cosmos/X`
-25	///         matches my `/Users/stsoucas/cosmos/X`) […]
+24	///      c. user-home-stripped suffix match (Scott's `/home/<USER>/cosmos/X`
+25	///         matches my `/home/<USER>/cosmos/X`) […]
 
 > AGENT
 
@@ -174,7 +174,7 @@ LEFT JOIN repositories r
   ON (s.cwd = r.directory OR s.cwd LIKE r.directory || '/%')
 ```
 
-This fails for worktrees because their `cwd` is a sibling path (e.g. `/Users/.../gossamer-checkpoints-visualization`) not a subdirectory of the registered repo (`/Users/.../gossamer`). However, `sessions.repo_id` is already correctly resolved during indexing via `RepoResolver` which uses git remote URL matching. The fix is to add `s.repo_id = r.id` as the primary join condition.
+This fails for worktrees because their `cwd` is a sibling path (e.g. `/home/<USER>/gossamer-checkpoints-visualization`) not a subdirectory of the registered repo (`/home/<USER>/gossamer`). However, `sessions.repo_id` is already correctly resolved during indexing via `RepoResolver` which uses git remote URL matching. The fix is to add `s.repo_id = r.id` as the primary join condition.
 
 > TOOL
 
@@ -183,7 +183,7 @@ id: toolu_01S2Rwx85Asr8vW4o82RprGR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs",
   "old_string": "                    \"SELECT s.agent_name, s.updated_at, COALESCE(r.remote, ''),\n                            COALESCE(r.name, ''),\n                            COALESCE(c.author_name, ''), COALESCE(c.author_email, ''),\n                            COALESCE(c.os_user, '')\n                     FROM sessions s\n                     LEFT JOIN repositories r\n                       ON (s.cwd = r.directory OR s.cwd LIKE r.directory || '/%')",
   "new_string": "                    \"SELECT s.agent_name, s.updated_at, COALESCE(r.remote, ''),\n                            COALESCE(r.name, ''),\n                            COALESCE(c.author_name, ''), COALESCE(c.author_email, ''),\n                            COALESCE(c.os_user, '')\n                     FROM sessions s\n                     LEFT JOIN repositories r\n                       ON (s.repo_id = r.id\n                           OR s.cwd = r.directory\n                           OR s.cwd LIKE r.directory || '/%')"
 }
@@ -194,7 +194,7 @@ id: toolu_01S2Rwx85Asr8vW4o82RprGR
 tool_result
 id: toolu_01S2Rwx85Asr8vW4o82RprGR
 ```
-The file /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-checkpoints-visualization/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

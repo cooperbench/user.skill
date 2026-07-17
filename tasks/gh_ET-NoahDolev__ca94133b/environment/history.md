@@ -1,6 +1,6 @@
 > DEVELOPER
 
-Proceed to close the gaps: '/Users/noahdolevelixir/Code/rune/instructions/gaps.md'
+Proceed to close the gaps: '/home/<USER>/Code/rune/instructions/gaps.md'
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_0118NUdggLN78kJuN4Bh2YWm
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/gaps.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/gaps.md"
 }
 ```
 
@@ -314,7 +314,7 @@ tool_use Bash
 id: toolu_01PGeDxbnZF28eo5TQs4r5Jb
 ```json
 {
-  "command": "cat /Users/noahdolevelixir/Code/rune/pyproject.toml | head -100",
+  "command": "cat /home/<USER>/Code/rune/pyproject.toml | head -100",
   "description": "Read root pyproject.toml"
 }
 ```
@@ -451,7 +451,7 @@ tool_use Bash
 id: toolu_01NMC22GHgaXWSZviuXo13VQ
 ```json
 {
-  "command": "cat /Users/noahdolevelixir/Code/rune/pyproject.toml | sed -n '100,200p'",
+  "command": "cat /home/<USER>/Code/rune/pyproject.toml | sed -n '100,200p'",
   "description": "Read rest of pyproject.toml"
 }
 ```
@@ -635,7 +635,7 @@ tool_use Bash
 id: toolu_012richL1YecJNC8eXJdrmiT
 ```json
 {
-  "command": "cat /Users/noahdolevelixir/Code/rune/pyproject.toml | sed -n '200,400p'",
+  "command": "cat /home/<USER>/Code/rune/pyproject.toml | sed -n '200,400p'",
   "description": "Read rest of pyproject.toml"
 }
 ```
@@ -1336,7 +1336,7 @@ tool_use Read
 id: toolu_01Be9NX57Vh9yLrnb9vY8YcL
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "offset": 55,
   "limit": 80
 }
@@ -1416,7 +1416,7 @@ id: toolu_018gBUu3eBy6XTru7824nA74
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "old_string": "[dependency-groups]\ndev = [\n    \"mypy>=1.19.0\",\n    \"pytest>=9.0.2\",\n    \"pytest-asyncio>=1.2.0\",\n    \"pytest-cov>=6.0.0\",\n    \"ruff>=0.14.8\",\n    \"aioresponses>=0.7.8\",\n    \"mlflow>=3.8.1\",\n    \"pytest-xdist>=3.8.0\",\n    \"requests-mock>=1.12.1\",\n]",
   "new_string": "[dependency-groups]\ndev = [\n    \"mypy>=1.19.0\",\n    \"pytest>=9.0.2\",\n    \"pytest-asyncio>=1.2.0\",\n    \"pytest-cov>=6.0.0\",\n    \"ruff>=0.14.8\",\n    \"aioresponses>=0.7.8\",\n    \"mlflow>=3.8.1\",\n    \"pytest-xdist>=3.8.0\",\n    \"requests-mock>=1.12.1\",\n    \"pandas-stubs>=3.0.0.260204\",\n]"
 }
@@ -1427,7 +1427,7 @@ id: toolu_018gBUu3eBy6XTru7824nA74
 tool_result
 id: toolu_018gBUu3eBy6XTru7824nA74
 ```
-The file /Users/noahdolevelixir/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1436,7 +1436,7 @@ tool_use Read
 id: toolu_01GLvSW7BbMnT9ra5QTstofy
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "offset": 155,
   "limit": 80
 }
@@ -1536,7 +1536,7 @@ id: toolu_01VVc7f98qSF8AsQxagzmuG2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "old_string": "    \"optuna\",\n    \"optuna.*\",\n    \"inference\",\n    \"inference.factory\",\n    \"inference.transformers_provider\",\n    \"evaluation\",\n    \"evaluation.metrics\",\n    \"scoring\",\n    \"task_pool\",\n    \"template_library\",\n    \"evalplus\",\n    \"evalplus.*\",\n    \"run_training_hpo\",\n]\nignore_missing_imports = true",
   "new_string": "    \"optuna\",\n    \"optuna.*\",\n    \"inference\",\n    \"inference.*\",\n    \"evaluation\",\n    \"evaluation.*\",\n    \"scoring\",\n    \"task_pool\",\n    \"template_library\",\n    \"evalplus\",\n    \"evalplus.*\",\n    \"run_training_hpo\",\n    \"pandas\",\n    \"pandas.*\",\n]\nignore_missing_imports = true"
 }
@@ -1547,7 +1547,7 @@ id: toolu_01VVc7f98qSF8AsQxagzmuG2
 tool_result
 id: toolu_01VVc7f98qSF8AsQxagzmuG2
 ```
-The file /Users/noahdolevelixir/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1591,11 +1591,11 @@ id: toolu_01C916bBwEbQFQoK28RgJ4kF
 Resolved 240 packages in 320ms
 Uninstalled 5 packages in 28ms
 Installed 1 package in 7ms
- - adapter-registry==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/adapter-registry)
+ - adapter-registry==0.1.0 (from file:///home/<USER>/Code/rune/libs/adapter-registry)
  - bitsandbytes==0.49.2
- - model-training==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/model-training)
+ - model-training==0.1.0 (from file:///home/<USER>/Code/rune/libs/model-training)
  + pandas-stubs==3.0.0.260204
- - shared==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/shared)
+ - shared==0.1.0 (from file:///home/<USER>/Code/rune/libs/shared)
  - trl==0.29.0
 ```
 
@@ -1633,7 +1633,7 @@ id: toolu_01Np1wTamvVZDSPh6SNE74fi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "old_string": "    \"shared\",\n    \"shared.models\",\n    \"training_svc\",\n    \"training_svc.*\",\n]\nignore_missing_imports = true",
   "new_string": "    \"shared\",\n    \"shared.*\",\n    \"training_svc\",\n    \"training_svc.*\",\n]\nignore_missing_imports = true"
 }
@@ -1644,7 +1644,7 @@ id: toolu_01Np1wTamvVZDSPh6SNE74fi
 tool_result
 id: toolu_01Np1wTamvVZDSPh6SNE74fi
 ```
-The file /Users/noahdolevelixir/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1713,7 +1713,7 @@ id: toolu_01BJE7yJVB1UeJT12BfS5YFf
 tool_result
 id: toolu_01BJE7yJVB1UeJT12BfS5YFf
 ```
-/Users/noahdolevelixir/Code/rune/.venv/lib/python3.12/site-packages
+/home/<USER>/Code/rune/.venv/lib/python3.12/site-packages
 ---
 .venv/lib/python3.12/site-packages/multiprocess/shared_memory.py
 .venv/lib/python3.12/site-packages/multiprocess/sharedctypes.py
@@ -1739,17 +1739,17 @@ id: toolu_0155E8A47tiRyZbpLP47xdYb
 ```
 Resolved 240 packages in 218ms
 Installed 11 packages in 12ms
- + adapter-registry==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/adapter-registry)
- + api-service==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/services/api-service)
- + corpus-producer==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/corpus-producer)
- + evaluation==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/evaluation)
- + events-py==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/events-py)
- + evolution-svc==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/services/evolution-svc)
- + inference==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/inference)
- + model-training==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/model-training)
- + rune-agent==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/services/rune-agent)
- + shared==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/libs/shared)
- + training-svc==0.1.0 (from file:///Users/noahdolevelixir/Code/rune/services/training-svc)
+ + adapter-registry==0.1.0 (from file:///home/<USER>/Code/rune/libs/adapter-registry)
+ + api-service==0.1.0 (from file:///home/<USER>/Code/rune/services/api-service)
+ + corpus-producer==0.1.0 (from file:///home/<USER>/Code/rune/libs/corpus-producer)
+ + evaluation==0.1.0 (from file:///home/<USER>/Code/rune/libs/evaluation)
+ + events-py==0.1.0 (from file:///home/<USER>/Code/rune/libs/events-py)
+ + evolution-svc==0.1.0 (from file:///home/<USER>/Code/rune/services/evolution-svc)
+ + inference==0.1.0 (from file:///home/<USER>/Code/rune/libs/inference)
+ + model-training==0.1.0 (from file:///home/<USER>/Code/rune/libs/model-training)
+ + rune-agent==0.1.0 (from file:///home/<USER>/Code/rune/services/rune-agent)
+ + shared==0.1.0 (from file:///home/<USER>/Code/rune/libs/shared)
+ + training-svc==0.1.0 (from file:///home/<USER>/Code/rune/services/training-svc)
 ```
 
 > TOOL
@@ -1876,7 +1876,7 @@ tool_use Read
 id: toolu_01JFiAfHfZUXEkYE8Kst6BCK
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/apps.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/apps.py"
 }
 ```
 
@@ -1988,7 +1988,7 @@ tool_use Read
 id: toolu_015qqeRtAETDB3pmqpDzaWv6
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py"
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py"
 }
 ```
 
@@ -2087,7 +2087,7 @@ tool_use Read
 id: toolu_01GbY1patRw1D3V5phHQxRmi
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py"
 }
 ```
 
@@ -2183,7 +2183,7 @@ tool_use Read
 id: toolu_0127xvDojf3veAb8rJ7deTuv
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/protocol.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/protocol.py"
 }
 ```
 
@@ -2271,7 +2271,7 @@ tool_use Read
 id: toolu_01FeK9jZTmbag3w6ca7ePY42
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/runner.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/runner.py"
 }
 ```
 
@@ -2337,7 +2337,7 @@ tool_use Read
 id: toolu_017rvgFmhng7Gfg9UkSGhDNV
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "offset": 40,
   "limit": 12
 }
@@ -2369,7 +2369,7 @@ id: toolu_01ABTbpdEFg11brE8TNzaPNi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py",
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py",
   "old_string": "\"\"\"Unified benchmark harness for Pass@1 evaluation.\n\nPublic API re-exported for convenience:\n\n    from evaluation.benchmarks import (\n        Problem,\n        PassVerdict,\n        BenchmarkAdapter,\n        BenchmarkConfig,\n        BenchmarkResult,\n        run_benchmark,\n        load_adapter_stack,\n    )\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom evaluation.benchmarks.protocol import (\n    BenchmarkAdapter,\n    BenchmarkConfig,\n    BenchmarkResult,\n    PassVerdict,\n    Problem,\n)\n\n__all__ = [\n    \"BenchmarkAdapter\",\n    \"BenchmarkConfig\",\n    \"BenchmarkResult\",\n    \"PassVerdict\",\n    \"Problem\",\n    \"run_benchmark\",\n    \"load_adapter_stack\",\n]\n\n\ndef __getattr__(name: str) -> object:\n    \"\"\"Lazy-load run_benchmark and load_adapter_stack on first access.\n\n    These are deferred so that importing submodules (e.g.\n    evaluation.benchmarks.protocol) does not require runner.py and\n    adapter_stack.py to exist. Once those modules are implemented, direct\n    imports like ``from evaluation.benchmarks import run_benchmark`` work\n    exactly as if they were eagerly imported.\n\n    Args:\n        name: Attribute name requested.\n\n    Returns:\n        The requested object.\n\n    Raises:\n        AttributeError: If name is not a known lazy export.\n    \"\"\"\n    if name == \"run_benchmark\":\n        from evaluation.benchmarks.runner import run_benchmark  # noqa: PLC0415\n\n        return run_benchmark\n    if name == \"load_adapter_stack\":\n        from evaluation.benchmarks.adapter_stack import (\n            load_adapter_stack,  # noqa: PLC0415\n        )\n\n        return load_adapter_stack\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
   "new_string": "\"\"\"Unified benchmark harness for Pass@1 evaluation.\n\nPublic API re-exported for convenience:\n\n    from evaluation.benchmarks import (\n        Problem,\n        PassVerdict,\n        BenchmarkAdapter,\n        BenchmarkConfig,\n        BenchmarkResult,\n        run_benchmark,\n        load_adapter_stack,\n        load_problems,\n    )\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom evaluation.benchmarks.protocol import (\n    BenchmarkAdapter,\n    BenchmarkConfig,\n    BenchmarkResult,\n    PassVerdict,\n    Problem,\n)\n\n__all__ = [\n    \"BenchmarkAdapter\",\n    \"BenchmarkConfig\",\n    \"BenchmarkResult\",\n    \"PassVerdict\",\n    \"Problem\",\n    \"run_benchmark\",\n    \"load_adapter_stack\",\n […]
 
@@ -2378,7 +2378,7 @@ id: toolu_01ABTbpdEFg11brE8TNzaPNi
 tool_result
 id: toolu_01ABTbpdEFg11brE8TNzaPNi
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/__init__.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2388,7 +2388,7 @@ id: toolu_013yrM3zRfATPJLN6qMhpw1m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/phase_corpus_producer.py",
   "old_string": "    try:\n        from evaluation.benchmarks import load_problems  # type: ignore[import]\n\n        problems = load_problems(\n            benchmark, problem_ids=problem_ids, max_samples=max_problems\n        )\n        return [(p.problem_id, p.prompt) for p in problems]\n    except ImportError:\n        logger.warning(\n            \"evaluation.benchmarks not available — using stub problem list for %s\",\n            benchmark,\n        )\n        n = max_problems or 1\n        return [\n            (f\"{benchmark.upper()}/{i}\", f\"Stub problem {i} for {benchmark}.\")\n            for i in range(n)\n        ]",
   "new_string": "    try:\n        from evaluation.benchmarks import load_problems\n\n        problems = load_problems(\n            benchmark, problem_ids=problem_ids, max_samples=max_problems\n        )\n        return [(p.problem_id, p.prompt) for p in problems]\n    except ImportError:\n        logger.warning(\n            \"evaluation.benchmarks not available — using stub problem list for %s\",\n            benchmark,\n        )\n        n = max_problems or 1\n        return [\n            (f\"{benchmark.upper()}/{i}\", f\"Stub problem {i} for {benchmark}.\")\n            for i in range(n)\n        ]"
 }
@@ -2399,7 +2399,7 @@ id: toolu_013yrM3zRfATPJLN6qMhpw1m
 tool_result
 id: toolu_013yrM3zRfATPJLN6qMhpw1m
 ```
-The file /Users/noahdolevelixir/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/scripts/phase_corpus_producer.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2444,7 +2444,7 @@ tool_use Read
 id: toolu_01K2Pbsw1J9XxgZ6ZF3FiJmT
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/tests/test_apps_adapter.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/tests/test_apps_adapter.py"
 }
 ```
 
@@ -2510,7 +2510,7 @@ tool_use Read
 id: toolu_01JYdYpxzAC7fhL8KrkUmdac
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/tests/test_runner.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/tests/test_runner.py"
 }
 ```
 
@@ -2565,15 +2565,15 @@ tool_use Write
 id: toolu_0163YHNzqBzrMmPBsyRqGzcL
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/tests/test_load_problems.py",
-  "content": "\"\"\"Tests for module-level ``evaluation.benchmarks.load_problems``.\n\nThis function is the APPS-stratification parity surface between Plan A\n(benchmark harness) and Plan C (phase corpus producer). Plan C relies on\n``load_problems(\"apps\", max_samples=N)`` to return a stratified sample\nby difficulty identical to what ``run_benchmark`` would see.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\n\nimport pytest\n\nAPPS_FIXTURE = Path(__file__).parent / \"fixtures\" / \"apps_mini.parquet\"\nHUMANEVAL_FIXTURE = Path(__file__).parent / \"fixtures\" / \"humaneval_mini.parquet\"\n\n\n@pytest.fixture(autouse=True)\ndef use_fixtures_offline(monkeypatch: pytest.MonkeyPatch) -> None:\n    \"\"\"Use local parquet fixtures; set HF offline mode.\"\"\"\n    monkeypatch.setenv(\"HF_DATASETS_OFFLINE\", \"1\")\n    monkeypatch.setattr(\n        \"evaluation.benchmarks.apps.APPSAdapter._fixture_path\", APPS_FIXTURE\n    )\n    monkeypatch.setattr(\n        \"evaluation.benchmarks.humaneval.HumanEvalAdapter._fixture_path\",\n        HUMANEVAL_FIXTURE,\n    )\n\n\ndef test_load_problems_apps_delegates_to_adapter() -> None:\n    \"\"\"load_problems('apps', max_samples=N) uses the APPSAdapter stratified sampler.\"\"\"\n    from evaluation.benchmarks import load_problems\n    from evaluation.benchmarks.apps import APPSAdapter\n\n    expected = APPSAdapter().load_problems(max_samples=3, seed=42)\n    got = load_problems(\"apps\", max_samples=3, seed=42)\n    assert [p.problem_id for p in got] == [p.problem_id for p in expected]\n\n\ndef test_load_problems_apps_stratified_seed_determinism() -> None:\n    \"\"\"Same seed produces same ordering across load_problems calls.\"\"\"\n    from evaluation.benchmarks import load_problems\n\n    a = load_problems(\"apps\", max_samples=3, seed=42)\n    b = load_problems(\"apps\", max_samples=3, seed=42)\n    assert [p.problem_id for p in a] == [p.problem_id for p in b]\n\n\ndef test_load_problems_humaneval_max_samples() -> None:\n    \"\"\"load_problems with max_samples returns at most N problems.\"\"\"\n    from evaluation.benchmarks import load_problems\n\n    got = load_problems(\"humaneval\", max_samples=2)\n    assert len(got) <= 2\n\n\ndef test_load_problems_problem_ids_filter() -> None:\n    \"\"\"problem_ids restricts the returned list to matching ids.\"\"\"\n    from evaluation.benchmarks import […]
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/tests/test_load_problems.py",
+  "content": "\"\"\"Tests for module-level ``evaluation.benchmarks.load_problems``.\n\nThis function is the APPS-stratification parity surface between Plan A\n(benchmark harness) and Plan C (phase corpus producer). Plan C relies on\n``load_problems(\"apps\", max_samples=N)`` to return a stratified sample\nby difficulty identical to what ``run_benchmark`` would see.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\n\nimport pytest\n\nAPPS_FIXTURE = Path(__file__).parent / \"fixtures\" / \"apps_mini.parquet\"\nHUMANEVAL_FIXTURE = Path(__file__).parent / \"fixtures\" / \"humaneval_mini.parquet\"\n\n\<REDACTED_EMAIL>(autouse=True)\ndef use_fixtures_offline(monkeypatch: pytest.MonkeyPatch) -> None:\n    \"\"\"Use local parquet fixtures; set HF offline mode.\"\"\"\n    monkeypatch.setenv(\"HF_DATASETS_OFFLINE\", \"1\")\n    monkeypatch.setattr(\n        \"evaluation.benchmarks.apps.APPSAdapter._fixture_path\", APPS_FIXTURE\n    )\n    monkeypatch.setattr(\n        \"evaluation.benchmarks.humaneval.HumanEvalAdapter._fixture_path\",\n        HUMANEVAL_FIXTURE,\n    )\n\n\ndef test_load_problems_apps_delegates_to_adapter() -> None:\n    \"\"\"load_problems('apps', max_samples=N) uses the APPSAdapter stratified sampler.\"\"\"\n    from evaluation.benchmarks import load_problems\n    from evaluation.benchmarks.apps import APPSAdapter\n\n    expected = APPSAdapter().load_problems(max_samples=3, seed=42)\n    got = load_problems(\"apps\", max_samples=3, seed=42)\n    assert [p.problem_id for p in got] == [p.problem_id for p in expected]\n\n\ndef test_load_problems_apps_stratified_seed_determinism() -> None:\n    \"\"\"Same seed produces same ordering across load_problems calls.\"\"\"\n    from evaluation.benchmarks import load_problems\n\n    a = load_problems(\"apps\", max_samples=3, seed=42)\n    b = load_problems(\"apps\", max_samples=3, seed=42)\n    assert [p.problem_id for p in a] == [p.problem_id for p in b]\n\n\ndef test_load_problems_humaneval_max_samples() -> None:\n    \"\"\"load_problems with max_samples returns at most N problems.\"\"\"\n    from evaluation.benchmarks import load_problems\n\n    got = load_problems(\"humaneval\", max_samples=2)\n    assert len(got) <= 2\n\n\ndef test_load_problems_problem_ids_filter() -> None:\n    \"\"\"problem_ids restricts the returned list to matching ids.\"\"\"\n    from evaluation.benchmarks import […]
 
 > TOOL
 
 tool_result
 id: toolu_0163YHNzqBzrMmPBsyRqGzcL
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/libs/evaluation/tests/test_load_problems.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/libs/evaluation/tests/test_load_problems.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2715,7 +2715,7 @@ tool_use Bash
 id: toolu_016L4bQ7dmwjsWb4cyc471cy
 ```json
 {
-  "command": "git add pyproject.toml uv.lock libs/evaluation/src/evaluation/benchmarks/__init__.py libs/evaluation/tests/test_load_problems.py scripts/phase_corpus_producer.py && git commit -m \"$(cat <<'EOF'\nfix(evaluation,mypy): close workspace mypy gap and APPS stratification parity\n\n- root pyproject: add pandas-stubs to dev deps, widen inference/shared/\n  evaluation mypy overrides to .* globs so root-level mypy cleanly scans\n  libs/evaluation/ without subworkspace config\n- evaluation.benchmarks: add module-level load_problems() that delegates to\n  the runner's _ADAPTER_REGISTRY so Plan C's phase_corpus_producer picks up\n  Plan A's APPSAdapter stratified-random sampler by difficulty (previously\n  the import failed silently and the script fell back to stub problems)\n- phase_corpus_producer: drop stale '# type: ignore[import]' on the\n  load_problems import now that the public API exists\n- add test_load_problems.py covering delegation, seed determinism,\n  problem_ids filter, and unknown-benchmark error\n\nCloses gaps.md items:\n- \"workspace-mypy config gap for a follow-on plan\"\n- \"APPS stratification parity check with Plan A\"\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add pyproject.toml uv.lock libs/evaluation/src/evaluation/benchmarks/__init__.py libs/evaluation/tests/test_load_problems.py scripts/phase_corpus_producer.py && git commit -m \"$(cat <<'EOF'\nfix(evaluation,mypy): close workspace mypy gap and APPS stratification parity\n\n- root pyproject: add pandas-stubs to dev deps, widen inference/shared/\n  evaluation mypy overrides to .* globs so root-level mypy cleanly scans\n  libs/evaluation/ without subworkspace config\n- evaluation.benchmarks: add module-level load_problems() that delegates to\n  the runner's _ADAPTER_REGISTRY so Plan C's phase_corpus_producer picks up\n  Plan A's APPSAdapter stratified-random sampler by difficulty (previously\n  the import failed silently and the script fell back to stub problems)\n- phase_corpus_producer: drop stale '# type: ignore[import]' on the\n  load_problems import now that the public API exists\n- add test_load_problems.py covering delegation, seed determinism,\n  problem_ids filter, and unknown-benchmark error\n\nCloses gaps.md items:\n- \"workspace-mypy config gap for a follow-on plan\"\n- \"APPS stratification parity check with Plan A\"\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit mypy fix and APPS parity"
 }
 ```
@@ -2738,7 +2738,7 @@ tool_use Bash
 id: toolu_01Uo5hbriXzv3T8qcV7iMhQq
 ```json
 {
-  "command": "git add pyproject.toml libs/evaluation/src/evaluation/benchmarks/__init__.py libs/evaluation/tests/test_load_problems.py scripts/phase_corpus_producer.py && git commit -m \"$(cat <<'EOF'\nfix(evaluation,mypy): close workspace mypy gap and APPS stratification parity\n\n- root pyproject: add pandas-stubs to dev deps, widen inference/shared/\n  evaluation mypy overrides to .* globs so root-level mypy cleanly scans\n  libs/evaluation/ without subworkspace config\n- evaluation.benchmarks: add module-level load_problems() that delegates to\n  the runner's _ADAPTER_REGISTRY so Plan C's phase_corpus_producer picks up\n  Plan A's APPSAdapter stratified-random sampler by difficulty (previously\n  the import failed silently and the script fell back to stub problems)\n- phase_corpus_producer: drop stale '# type: ignore[import]' on the\n  load_problems import now that the public API exists\n- add test_load_problems.py covering delegation, seed determinism,\n  problem_ids filter, and unknown-benchmark error\n\nCloses gaps.md items:\n- \"workspace-mypy config gap for a follow-on plan\"\n- \"APPS stratification parity check with Plan A\"\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add pyproject.toml libs/evaluation/src/evaluation/benchmarks/__init__.py libs/evaluation/tests/test_load_problems.py scripts/phase_corpus_producer.py && git commit -m \"$(cat <<'EOF'\nfix(evaluation,mypy): close workspace mypy gap and APPS stratification parity\n\n- root pyproject: add pandas-stubs to dev deps, widen inference/shared/\n  evaluation mypy overrides to .* globs so root-level mypy cleanly scans\n  libs/evaluation/ without subworkspace config\n- evaluation.benchmarks: add module-level load_problems() that delegates to\n  the runner's _ADAPTER_REGISTRY so Plan C's phase_corpus_producer picks up\n  Plan A's APPSAdapter stratified-random sampler by difficulty (previously\n  the import failed silently and the script fell back to stub problems)\n- phase_corpus_producer: drop stale '# type: ignore[import]' on the\n  load_problems import now that the public API exists\n- add test_load_problems.py covering delegation, seed determinism,\n  problem_ids filter, and unknown-benchmark error\n\nCloses gaps.md items:\n- \"workspace-mypy config gap for a follow-on plan\"\n- \"APPS stratification parity check with Plan A\"\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit mypy fix and APPS parity without uv.lock"
 }
 ```
@@ -2801,7 +2801,7 @@ tool_use Read
 id: toolu_01GBmzqmhK1Ar4it8FwcHgqo
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/tests/test_swe_bench_adapter.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/tests/test_swe_bench_adapter.py"
 }
 ```
 
@@ -2888,7 +2888,7 @@ tool_use Read
 id: toolu_01VFjMJMLQNnpyAEeK597xce
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/shared/src/shared/sandbox.py",
+  "file_path": "/home/<USER>/Code/rune/libs/shared/src/shared/sandbox.py",
   "limit": 80
 }
 ```
@@ -2981,7 +2981,7 @@ tool_use Read
 id: toolu_01TyqkNgc4fgTHLcADMSeAov
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py"
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py"
 }
 ```
 
@@ -3045,7 +3045,7 @@ tool_use Write
 id: toolu_01L6rQUL4WcyDfZmSmpbhgWY
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py",
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py",
   "content": "\"\"\"SWE-Bench-Lite benchmark adapter.\n\nload_problems() loads the 300-problem Lite split from\nprinceton-nlp/SWE-bench_Lite and surfaces repo/test metadata needed for\nscoring (FAIL_TO_PASS, PASS_TO_PASS, test_patch, environment_setup_commit).\n\nscore() implements the repo-checkout + git-apply + pytest preflight:\n    1. Shallow-clone ``metadata['repo']`` into a temp dir at base_commit.\n    2. Apply ``test_patch`` so the oracle tests are present.\n    3. Apply the model's ``generation`` (unified diff) with ``git apply``.\n    4. Install the checkout in editable mode (best-effort — failure is treated\n       as an environment error, not a patch failure).\n    5. Run pytest on ``FAIL_TO_PASS`` and ``PASS_TO_PASS`` node ids.\n    6. PASS iff every FAIL_TO_PASS and PASS_TO_PASS test passes.\n\nThe score pipeline is gated behind the ``RUNE_SWE_BENCH_SCORE`` env var. When\nunset, score() raises NotImplementedError to preserve Plan A's CI contract\n(no network / Docker in CI). Set ``RUNE_SWE_BENCH_SCORE=1`` to enable.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport json\nimport logging\nimport os\nimport random\nimport shutil\nimport subprocess\nimport sys\nimport tempfile\nfrom dataclasses import dataclass\nfrom pathlib import Path\nfrom typing import Any\n\nfrom evaluation.benchmarks.protocol import PassVerdict, Problem\n\nlogger = logging.getLogger(__name__)\n\n_DEFAULT_FIXTURE = (\n    Path(__file__).parent.parent.parent.parent.parent.parent\n    / \"tests\"\n    / \"fixtures\"\n    / \"swe_bench_lite_mini.parquet\"\n)\n\n_SCORE_ENV_FLAG = \"RUNE_SWE_BENCH_SCORE\"\n\n\n@dataclass(frozen=True)\nclass _CmdResult:\n    \"\"\"Lightweight wrapper over subprocess.run for readability.\"\"\"\n\n    returncode: int\n    stdout: str\n    stderr: str\n    timed_out: bool\n\n\nclass SWEBenchLiteAdapter:\n    \"\"\"Benchmark adapter for SWE-Bench-Lite (held-out generalization set).\n\n    Attributes:\n        benchmark_id: \"swe_bench_lite\".\n\n    Note:\n        score() performs a heavyweight preflight (git […]
 
 > TOOL
@@ -3053,7 +3053,7 @@ id: toolu_01L6rQUL4WcyDfZmSmpbhgWY
 tool_result
 id: toolu_01L6rQUL4WcyDfZmSmpbhgWY
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3062,15 +3062,15 @@ tool_use Write
 id: toolu_01BVtkRyiMkMxZmvnqhBUcMa
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/tests/test_swe_bench_adapter.py",
-  "content": "\"\"\"Tests for SWEBenchLiteAdapter.\n\n- load_problems() works with fixture data and surfaces scoring metadata.\n- score() defaults to NotImplementedError (CI contract) unless the\n  RUNE_SWE_BENCH_SCORE env var is set.\n- When enabled, score() performs a clone/apply/pytest pipeline; the pipeline\n  helpers are monkeypatched here so the tests stay hermetic.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\n\nimport pytest\nfrom evaluation.benchmarks import swe_bench as swe_bench_mod\nfrom evaluation.benchmarks.swe_bench import SWEBenchLiteAdapter, _CmdResult\n\nFIXTURE = Path(__file__).parent / \"fixtures\" / \"swe_bench_lite_mini.parquet\"\n\n\n@pytest.fixture(autouse=True)\ndef use_fixture_offline(monkeypatch: pytest.MonkeyPatch) -> None:\n    \"\"\"Use local parquet fixture; set HF offline mode.\"\"\"\n    monkeypatch.setenv(\"HF_DATASETS_OFFLINE\", \"1\")\n    monkeypatch.setattr(\n        \"evaluation.benchmarks.swe_bench.SWEBenchLiteAdapter._fixture_path\",\n        FIXTURE,\n    )\n\n\ndef test_load_problems_returns_list() -> None:\n    \"\"\"load_problems() works even though scoring is env-gated.\"\"\"\n    adapter = SWEBenchLiteAdapter()\n    problems = adapter.load_problems()\n    assert len(problems) > 0\n\n\ndef test_benchmark_id() -> None:\n    \"\"\"benchmark_id is 'swe_bench_lite'.\"\"\"\n    assert SWEBenchLiteAdapter.benchmark_id == \"swe_bench_lite\"\n\n\ndef test_problem_has_repo_in_metadata() -> None:\n    \"\"\"SWE-Bench problems include repo in metadata.\"\"\"\n    adapter = SWEBenchLiteAdapter()\n    for p in adapter.load_problems():\n        assert \"repo\" in p.metadata\n\n\ndef test_problem_includes_scoring_metadata() -> None:\n    \"\"\"Scoring-related fields are surfaced in metadata.\"\"\"\n    adapter = SWEBenchLiteAdapter()\n    p = adapter.load_problems()[0]\n    for key in (\"test_patch\", \"FAIL_TO_PASS\", \"PASS_TO_PASS\", \"base_commit\"):\n        assert key in p.metadata, key\n\n\ndef test_score_raises_not_implemented_by_default(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"Without RUNE_SWE_BENCH_SCORE, score() preserves the CI contract.\"\"\"\n    monkeypatch.delenv(\"RUNE_SWE_BENCH_SCORE\", raising=False)\n    adapter = SWEBenchLiteAdapter()\n    problems = adapter.load_problems()\n    with pytest.raises(\n        NotImplementedError, match=\"preflight clone/apply not yet implemented\"\n […]
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/tests/test_swe_bench_adapter.py",
+  "content": "\"\"\"Tests for SWEBenchLiteAdapter.\n\n- load_problems() works with fixture data and surfaces scoring metadata.\n- score() defaults to NotImplementedError (CI contract) unless the\n  RUNE_SWE_BENCH_SCORE env var is set.\n- When enabled, score() performs a clone/apply/pytest pipeline; the pipeline\n  helpers are monkeypatched here so the tests stay hermetic.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\n\nimport pytest\nfrom evaluation.benchmarks import swe_bench as swe_bench_mod\nfrom evaluation.benchmarks.swe_bench import SWEBenchLiteAdapter, _CmdResult\n\nFIXTURE = Path(__file__).parent / \"fixtures\" / \"swe_bench_lite_mini.parquet\"\n\n\<REDACTED_EMAIL>(autouse=True)\ndef use_fixture_offline(monkeypatch: pytest.MonkeyPatch) -> None:\n    \"\"\"Use local parquet fixture; set HF offline mode.\"\"\"\n    monkeypatch.setenv(\"HF_DATASETS_OFFLINE\", \"1\")\n    monkeypatch.setattr(\n        \"evaluation.benchmarks.swe_bench.SWEBenchLiteAdapter._fixture_path\",\n        FIXTURE,\n    )\n\n\ndef test_load_problems_returns_list() -> None:\n    \"\"\"load_problems() works even though scoring is env-gated.\"\"\"\n    adapter = SWEBenchLiteAdapter()\n    problems = adapter.load_problems()\n    assert len(problems) > 0\n\n\ndef test_benchmark_id() -> None:\n    \"\"\"benchmark_id is 'swe_bench_lite'.\"\"\"\n    assert SWEBenchLiteAdapter.benchmark_id == \"swe_bench_lite\"\n\n\ndef test_problem_has_repo_in_metadata() -> None:\n    \"\"\"SWE-Bench problems include repo in metadata.\"\"\"\n    adapter = SWEBenchLiteAdapter()\n    for p in adapter.load_problems():\n        assert \"repo\" in p.metadata\n\n\ndef test_problem_includes_scoring_metadata() -> None:\n    \"\"\"Scoring-related fields are surfaced in metadata.\"\"\"\n    adapter = SWEBenchLiteAdapter()\n    p = adapter.load_problems()[0]\n    for key in (\"test_patch\", \"FAIL_TO_PASS\", \"PASS_TO_PASS\", \"base_commit\"):\n        assert key in p.metadata, key\n\n\ndef test_score_raises_not_implemented_by_default(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"Without RUNE_SWE_BENCH_SCORE, score() preserves the CI contract.\"\"\"\n    monkeypatch.delenv(\"RUNE_SWE_BENCH_SCORE\", raising=False)\n    adapter = SWEBenchLiteAdapter()\n    problems = adapter.load_problems()\n    with pytest.raises(\n        NotImplementedError, match=\"preflight clone/apply not yet implemented\"\n […]
 
 > TOOL
 
 tool_result
 id: toolu_01BVtkRyiMkMxZmvnqhBUcMa
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/evaluation/tests/test_swe_bench_adapter.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/evaluation/tests/test_swe_bench_adapter.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3163,7 +3163,7 @@ id: toolu_018CpH3L7ab2pyhhZyfDWDHN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py",
+  "file_path": "/home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py",
   "old_string": "    if not patch_text.strip():\n        return _CmdResult(returncode=0, stdout=\"\", stderr=\"empty patch\", timed_out=False)",
   "new_string": "    if not patch_text.strip():\n        return _CmdResult(\n            returncode=0, stdout=\"\", stderr=\"empty patch\", timed_out=False\n        )"
 }
@@ -3174,7 +3174,7 @@ id: toolu_018CpH3L7ab2pyhhZyfDWDHN
 tool_result
 id: toolu_018CpH3L7ab2pyhhZyfDWDHN
 ```
-The file /Users/noahdolevelixir/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/rune/libs/evaluation/src/evaluation/benchmarks/swe_bench.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3203,7 +3203,7 @@ tool_use Bash
 id: toolu_01KZYXVmjVMBamRSEAtu2R3n
 ```json
 {
-  "command": "git add libs/evaluation/src/evaluation/benchmarks/swe_bench.py libs/evaluation/tests/test_swe_bench_adapter.py && git commit -m \"$(cat <<'EOF'\nfeat(evaluation): implement SWE-Bench-Lite score with env-gated pipeline\n\nReplaces the unconditional NotImplementedError with a real\nclone + git-apply + pytest scoring pipeline. The heavy path is gated\nbehind RUNE_SWE_BENCH_SCORE so CI remains hermetic: unset -> preserves\nPlan A's NotImplementedError contract; set -> performs the pipeline.\n\n- _row_to_problem now surfaces test_patch, FAIL_TO_PASS, PASS_TO_PASS,\n  and environment_setup_commit so score() can reach them\n- pipeline helpers are module-level so tests can monkeypatch them;\n  each helper wraps subprocess.run with timeout + capture\n- PASS iff every FAIL_TO_PASS and PASS_TO_PASS node id passes pytest\n- pip install -e . is best-effort (failure logged, not fatal) so repos\n  already importable in the runtime work without a build\n\nTests cover: hermetic default NotImplementedError, happy path (all\npipeline stages return 0 -> PASS), patch rejection, pytest timeout,\nmissing-metadata guard.\n\nCloses gaps.md: SWE-Bench-Lite score implementation (Plan A follow-up)\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add libs/evaluation/src/evaluation/benchmarks/swe_bench.py libs/evaluation/tests/test_swe_bench_adapter.py && git commit -m \"$(cat <<'EOF'\nfeat(evaluation): implement SWE-Bench-Lite score with env-gated pipeline\n\nReplaces the unconditional NotImplementedError with a real\nclone + git-apply + pytest scoring pipeline. The heavy path is gated\nbehind RUNE_SWE_BENCH_SCORE so CI remains hermetic: unset -> preserves\nPlan A's NotImplementedError contract; set -> performs the pipeline.\n\n- _row_to_problem now surfaces test_patch, FAIL_TO_PASS, PASS_TO_PASS,\n  and environment_setup_commit so score() can reach them\n- pipeline helpers are module-level so tests can monkeypatch them;\n  each helper wraps subprocess.run with timeout + capture\n- PASS iff every FAIL_TO_PASS and PASS_TO_PASS node id passes pytest\n- pip install -e . is best-effort (failure logged, not fatal) so repos\n  already importable in the runtime work without a build\n\nTests cover: hermetic default NotImplementedError, happy path (all\npipeline stages return 0 -> PASS), patch rejection, pytest timeout,\nmissing-metadata guard.\n\nCloses gaps.md: SWE-Bench-Lite score implementation (Plan A follow-up)\n\nCo-Authored-By: Claude Opus 4.7 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit SWE-Bench score"
 }
 ```
@@ -3284,7 +3284,7 @@ tool_use Read
 id: toolu_01Y5GcojXgT8ZELcnzsxEUm3
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/run_benchmark.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/run_benchmark.py",
   "offset": 1,
   "limit": 60
 }
@@ -3360,7 +3360,7 @@ tool_use Write
 id: toolu_01DgCMbeTon2vzR1wrVgBomD
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py",
+  "file_path": "/home/<USER>/Code/rune/scripts/validate_oracles.py",
   "content": "r\"\"\"Oracle validation runner — per-oracle \"beat base by >=3% absolute\" gate.\n\nFor each oracle adapter (identified by bin key ``<phase>_<benchmark>`` or\n``diagnose_pooled``), this runner:\n\n  1. Evaluates the *base* model on the bin's benchmark via ``run_benchmark``.\n  2. Evaluates the *base + oracle adapter* stack on the same benchmark.\n  3. Reports Pass@1 delta and marks the oracle as PASS iff\n     ``stack - base >= THRESHOLD`` (default 0.03 = 3 absolute points).\n\nThe runner is a thin CLI around ``evaluation.benchmarks.run_benchmark``.\nIt is CPU-safe at import time (heavy imports deferred into ``main``).\n\nUsage:\n    uv run python scripts/validate_oracles.py \\\n        --base-model Qwen/Qwen3.5-9B \\\n        --oracle decompose humaneval:adapter-id-123 \\\n        --oracle plan humaneval:adapter-id-456 \\\n        --max-samples 50 \\\n        --output oracles.json\n\nOracle spec syntax: ``<bin_key>:<adapter_id>`` where ``bin_key`` is one of\n``<phase>_<benchmark>`` (e.g. ``decompose_humaneval``) or ``diagnose_pooled``.\nThe benchmark to evaluate against is derived from the bin_key.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport json\nimport logging\nimport sys\nfrom pathlib import Path\nfrom typing import Any\n\nlogger = logging.getLogger(__name__)\n\nDEFAULT_THRESHOLD = 0.03\nDEFAULT_POOLED_BENCHMARK = \"humaneval\"\n\n\ndef _parse_oracle_spec(spec: str) -> tuple[str, str, str]:\n    \"\"\"Parse ``<bin_key>:<adapter_id>`` into (bin_key, benchmark, adapter_id).\n\n    Args:\n        spec: \"<bin_key>:<adapter_id>\" string.\n\n    Returns:\n        Tuple of (bin_key, benchmark_id, adapter_id). For ``diagnose_pooled``\n        the benchmark defaults to DEFAULT_POOLED_BENCHMARK.\n\n    Raises:\n        ValueError: If the spec is malformed.\n    \"\"\"\n    if \":\" not in spec:\n        raise ValueError(\n            f\"Oracle spec […]
 
 > TOOL
@@ -3368,7 +3368,7 @@ id: toolu_01DgCMbeTon2vzR1wrVgBomD
 tool_result
 id: toolu_01DgCMbeTon2vzR1wrVgBomD
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/scripts/validate_oracles.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/scripts/validate_oracles.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3377,7 +3377,7 @@ tool_use Write
 id: toolu_01Hjzk86R81RPbxbM6yVQwtS
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/tests/test_validate_oracles.py",
+  "file_path": "/home/<USER>/Code/rune/tests/test_validate_oracles.py",
   "content": "\"\"\"Tests for scripts/validate_oracles.py oracle validation runner.\"\"\"\n\nfrom __future__ import annotations\n\nimport importlib.util\nfrom pathlib import Path\n\nimport pytest\n\n_SPEC = importlib.util.spec_from_file_location(\n    \"validate_oracles\",\n    Path(__file__).resolve().parent.parent / \"scripts\" / \"validate_oracles.py\",\n)\nassert _SPEC is not None and _SPEC.loader is not None\n_MOD = importlib.util.module_from_spec(_SPEC)\n_SPEC.loader.exec_module(_MOD)\n\n\ndef test_parse_oracle_spec_phase_benchmark() -> None:\n    \"\"\"'<phase>_<benchmark>:<adapter>' parses to (bin_key, benchmark, adapter).\"\"\"\n    assert _MOD._parse_oracle_spec(\"decompose_humaneval:adapter-1\") == (\n        \"decompose_humaneval\",\n        \"humaneval\",\n        \"adapter-1\",\n    )\n\n\ndef test_parse_oracle_spec_diagnose_pooled() -> None:\n    \"\"\"diagnose_pooled uses the pooled default benchmark.\"\"\"\n    bin_key, benchmark, adapter = _MOD._parse_oracle_spec(\n        \"diagnose_pooled:adapter-99\"\n    )\n    assert bin_key == \"diagnose_pooled\"\n    assert benchmark == _MOD.DEFAULT_POOLED_BENCHMARK\n    assert adapter == \"adapter-99\"\n\n\ndef test_parse_oracle_spec_rejects_missing_colon() -> None:\n    \"\"\"Specs without ':' are rejected.\"\"\"\n    with pytest.raises(ValueError, match=\"<bin_key>:<adapter_id>\"):\n        _MOD._parse_oracle_spec(\"decompose_humaneval\")\n\n\ndef test_parse_oracle_spec_rejects_bad_bin_key() -> None:\n    \"\"\"Bin keys that are neither <phase>_<benchmark> nor diagnose_pooled fail.\"\"\"\n    with pytest.raises(ValueError, match=\"<phase>_<benchmark>\"):\n        _MOD._parse_oracle_spec(\"justone:adapter-1\")\n\n\ndef test_dry_run_produces_stub_results() -> None:\n    \"\"\"--dry-run emits one stub per spec without loading models.\"\"\"\n    results = _MOD.validate_oracles(\n        base_model=\"Qwen/Qwen3.5-9B\",\n        oracle_specs=[\n            \"decompose_humaneval:adapter-a\",\n            \"diagnose_pooled:adapter-b\",\n        ],\n        dry_run=True,\n    )\n    assert len(results) == 2\n    assert all(r[\"dry_run\"] is True for r in results)\n    assert results[0][\"bin_key\"] == \"decompose_humaneval\"\n    assert results[1][\"bin_key\"] == \"diagnose_pooled\"\n\n\ndef test_validate_oracles_marks_pass_when_delta_exceeds_threshold(\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"When stack beats base by >= threshold, oracle is marked passed.\"\"\"\n\n    def fake_eval(**_kwargs: object) -> dict[str, object]:\n        return {\n            \"bin_key\": \"decompose_humaneval\",\n            \"benchmark\": \"humaneval\",\n            \"adapter_id\": \"adapter-x\",\n            \"base_pass_at_1\": 0.50,\n            \"stack_pass_at_1\": 0.55,\n            \"delta\": 0.05,\n            \"threshold\": 0.03,\n            \"passed\": True,\n            \"dry_run\": False,\n        }\n\n […]
 
 > TOOL
@@ -3385,7 +3385,7 @@ id: toolu_01Hjzk86R81RPbxbM6yVQwtS
 tool_result
 id: toolu_01Hjzk86R81RPbxbM6yVQwtS
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/tests/test_validate_oracles.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/tests/test_validate_oracles.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

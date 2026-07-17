@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01PEWPi1RqczZt8LR7GfVSKm
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md"
 }
 ```
 
@@ -39,7 +39,7 @@ tool_use Read
 id: toolu_01HhrGj4CdoYqKpyiAihHhnk
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/ledger-project.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/ledger-project.md"
 }
 ```
 
@@ -72,7 +72,7 @@ tool_use Read
 id: toolu_01DgMrDkUMKne8SCncUNDAHw
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/ledger-swarmforge.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/ledger-swarmforge.md"
 }
 ```
 
@@ -110,7 +110,7 @@ tool_use Bash
 id: toolu_01MgYNLGrZthoc53HhGDhwiL
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi/crap4py/.agents/skills -type f | sort",
+  "command": "find /home/<USER>/workspace/addi/crap4py/.agents/skills -type f | sort",
   "description": "List all files in .agents/skills"
 }
 ```
@@ -120,8 +120,8 @@ id: toolu_01MgYNLGrZthoc53HhGDhwiL
 tool_result
 id: toolu_01MgYNLGrZthoc53HhGDhwiL
 ```
-/Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback/SKILL.md
 ```
 
 > TOOL
@@ -130,7 +130,7 @@ tool_use Read
 id: toolu_01QqzyjhCtpYUiR8WD8eXHwK
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback/SKILL.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback/SKILL.md"
 }
 ```
 
@@ -180,7 +180,7 @@ tool_use Read
 id: toolu_0161FC1gy5KqgnCV1Jc2d8xN
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback/SKILL.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback/SKILL.md"
 }
 ```
 
@@ -269,7 +269,7 @@ tool_use Bash
 id: toolu_01QoHWRRkvuQ1KiHcQbx2kDi
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi/crap4py/.claude/skills -type f | sort && echo \"---\" && find /Users/gabadi/.claude/skills -type f 2>/dev/null | sort | head -30",
+  "command": "find /home/<USER>/workspace/addi/crap4py/.claude/skills -type f | sort && echo \"---\" && find /home/<USER>/.claude/skills -type f 2>/dev/null | sort | head -30",
   "description": "Find agent-retro skill in project and global skill dirs"
 }
 ```
@@ -279,28 +279,28 @@ id: toolu_01QoHWRRkvuQ1KiHcQbx2kDi
 tool_result
 id: toolu_01QoHWRRkvuQ1KiHcQbx2kDi
 ```
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/agent-retro/scripts/extract.py
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/domain-modeling/ADR-FORMAT.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/domain-modeling/CONTEXT-FORMAT.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/domain-modeling/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/explain/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/grill-with-docs/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/grilling/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/recall/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/replay/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/review/references/review-rules.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/review/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/search/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/session-crosslink/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/session-handoff/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/session-to-skill/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/setup-swarm/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/teach/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/using-entire/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.claude/skills/what-happened/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/agent-retro/scripts/extract.py
+/home/<USER>/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/domain-modeling/ADR-FORMAT.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/domain-modeling/CONTEXT-FORMAT.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/domain-modeling/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/explain/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/grill-with-docs/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/grilling/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/recall/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/replay/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/review/references/review-rules.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/review/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/search/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/session-crosslink/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/session-handoff/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/session-to-skill/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/setup-swarm/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/teach/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/using-entire/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.claude/skills/what-happened/SKILL.md
 ---
-/Users/gabadi/.claude/skills/.skillshare-manifest.json
+/home/<USER>/.claude/skills/.skillshare-manifest.json
 ```
 
 > TOOL
@@ -335,7 +335,7 @@ tool_use Bash
 id: toolu_01GvCtf8dsNbaw7voLhH7C9n
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi/crap4py/.entire -type f | sort",
+  "command": "find /home/<USER>/workspace/addi/crap4py/.entire -type f | sort",
   "description": "List all files in .entire directory"
 }
 ```
@@ -345,17 +345,17 @@ id: toolu_01GvCtf8dsNbaw7voLhH7C9n
 tool_result
 id: toolu_01GvCtf8dsNbaw7voLhH7C9n
 ```
-/Users/gabadi/workspace/addi/crap4py/.entire/.gitignore
-/Users/gabadi/workspace/addi/crap4py/.entire/logs/entire.log
-/Users/gabadi/workspace/addi/crap4py/.entire/metadata/07f1de1c-82a3-4dd2-8508-85b99d956e66/full.jsonl
-/Users/gabadi/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/full.jsonl
-/Users/gabadi/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/prompt.txt
-/Users/gabadi/workspace/addi/crap4py/.entire/metadata/e1bc4d7c-9832-42da-b388-d22c27cc5200/full.jsonl
-/Users/gabadi/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/full.jsonl
-/Users/gabadi/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/prompt.txt
-/Users/gabadi/workspace/addi/crap4py/.entire/metadata/e9ed0d5e-8075-4b83-b9e6-ba9945fbadb3/full.jsonl
-/Users/gabadi/workspace/addi/crap4py/.entire/settings.json
-/Users/gabadi/workspace/addi/crap4py/.entire/tmp/pre-prompt-e1fdc5d2-1baf-408c-9b53-3188433f4f02.json
+/home/<USER>/workspace/addi/crap4py/.entire/.gitignore
+/home/<USER>/workspace/addi/crap4py/.entire/logs/entire.log
+/home/<USER>/workspace/addi/crap4py/.entire/metadata/07f1de1c-82a3-4dd2-8508-85b99d956e66/full.jsonl
+/home/<USER>/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/full.jsonl
+/home/<USER>/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/prompt.txt
+/home/<USER>/workspace/addi/crap4py/.entire/metadata/e1bc4d7c-9832-42da-b388-d22c27cc5200/full.jsonl
+/home/<USER>/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/full.jsonl
+/home/<USER>/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/prompt.txt
+/home/<USER>/workspace/addi/crap4py/.entire/metadata/e9ed0d5e-8075-4b83-b9e6-ba9945fbadb3/full.jsonl
+/home/<USER>/workspace/addi/crap4py/.entire/settings.json
+/home/<USER>/workspace/addi/crap4py/.entire/tmp/pre-prompt-e1fdc5d2-1baf-408c-9b53-3188433f4f02.json
 ```
 
 > TOOL
@@ -364,7 +364,7 @@ tool_use Bash
 id: toolu_01DUvSWSSVQL2N9d6nupad5G
 ```json
 {
-  "command": "cat /Users/gabadi/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/prompt.txt && echo \"===\" && cat /Users/gabadi/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/prompt.txt",
+  "command": "cat /home/<USER>/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/prompt.txt && echo \"===\" && cat /home/<USER>/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/prompt.txt",
   "description": "Read prompt files from sessions with prompts"
 }
 ```
@@ -374,7 +374,7 @@ id: toolu_01DUvSWSSVQL2N9d6nupad5G
 tool_result ERROR
 id: toolu_01DUvSWSSVQL2N9d6nupad5G
 ```
-Permission to use Bash with command cat /Users/gabadi/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/prompt.txt && echo "===" && cat /Users/gabadi/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/prompt.txt has been denied.
+Permission to use Bash with command cat /home/<USER>/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/prompt.txt && echo "===" && cat /home/<USER>/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/prompt.txt has been denied.
 ```
 
 > TOOL
@@ -383,7 +383,7 @@ tool_use Read
 id: toolu_019rbhGb4pCKhMH4qg86DKzg
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/prompt.txt"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.entire/metadata/40f9401a-0793-4be6-b882-a4c65e7e38c5/prompt.txt"
 }
 ```
 
@@ -401,7 +401,7 @@ tool_use Read
 id: toolu_01CeeCyKCbPvRBLZdpUkdcf7
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/prompt.txt"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.entire/metadata/e1fdc5d2-1baf-408c-9b53-3188433f4f02/prompt.txt"
 }
 ```
 
@@ -419,7 +419,7 @@ tool_use Bash
 id: toolu_01AzCe2Te7efJfuAxBmNZ2UP
 ```json
 {
-  "command": "grep -l \"agent-retro\\|curator\\|patch\\|skill\" /Users/gabadi/workspace/addi/crap4py/.entire/metadata/*/full.jsonl 2>/dev/null",
+  "command": "grep -l \"agent-retro\\|curator\\|patch\\|skill\" /home/<USER>/workspace/addi/crap4py/.entire/metadata/*/full.jsonl 2>/dev/null",
   "description": "Find JSONL files mentioning agent-retro or curator"
 }
 ```
@@ -429,7 +429,7 @@ id: toolu_01AzCe2Te7efJfuAxBmNZ2UP
 tool_result ERROR
 id: toolu_01AzCe2Te7efJfuAxBmNZ2UP
 ```
-Permission to use Bash with command grep -l "agent-retro\|curator\|patch\|skill" /Users/gabadi/workspace/addi/crap4py/.entire/metadata/*/full.jsonl 2>/dev/null has been denied.
+Permission to use Bash with command grep -l "agent-retro\|curator\|patch\|skill" /home/<USER>/workspace/addi/crap4py/.entire/metadata/*/full.jsonl 2>/dev/null has been denied.
 ```
 
 > AGENT
@@ -446,7 +446,7 @@ tool_use Read
 id: toolu_017X5eMmxcnoc5Kea36bRVLg
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md"
 }
 ```
 
@@ -510,7 +510,7 @@ tool_use Read
 id: toolu_01VdJQ1bv4rvQ4sW2trDSsZM
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/roles/curator.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/roles/curator.md"
 }
 ```
 
@@ -533,7 +533,7 @@ tool_use Read
 id: toolu_01DAiPw2Pi52re8TGjyo8sr4
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.claude/skills/session-to-skill/SKILL.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.claude/skills/session-to-skill/SKILL.md"
 }
 ```
 
@@ -592,7 +592,7 @@ tool_use Read
 id: toolu_01Hu3pkRc2KqczvRFTXiQRyH
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md",
   "offset": 1,
   "limit": 15
 }
@@ -653,7 +653,7 @@ id: toolu_01VULTKJQ8munuhocdHvCQk7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md",
   "old_string": "**Primary path (entire):**\n1. Run `entire session current --json` to get the active session ID and worktree path.\n2. If a session ID is returned:\n   - Run `entire session info <id> --transcript > /tmp/retro-session.jsonl`\n   - Verify: `python3 ${CLAUDE_SKILL_DIR}/scripts/extract.py /tmp/retro-session.jsonl --metadata-only`\n   - If verification succeeds, run full extraction: `python3 ${CLAUDE_SKILL_DIR}/scripts/extract.py /tmp/retro-session.jsonl --summary > /tmp/retro-extract.json`\n   - Proceed to Step 2 with `/tmp/retro-extract.json`.\n\n**Fallback path (Claude Code only):**\nIf `entire` is not installed or `entire session current` returns no session:\n1. Look for session pid files in `~/.claude/sessions/*.json`. Read each, match `cwd` to `$PWD`. Take the most recently modified matching entry.\n2. If found: use the `sessionId` to find the transcript in `~/.claude/projects/<encoded-cwd>/<session-id>.jsonl`.\n3. If not found via pid: take the most recently modified `.jsonl` in `~/.claude/projects/<encoded-cwd>/`.",
   "new_string": "**Primary path (entire):**\n1. Run `entire session current --json` to get the active session ID and worktree path.\n2. Check: does `worktree_path` in the result match `$PWD`?\n   - If **NO** (stale result — wrong repo or ended session) → skip `entire session info` entirely; go to **JSONL fallback** below.\n   - If **YES** → proceed:\n     - Run `entire session info <id> --transcript > /tmp/retro-session.jsonl`\n     - Verify: `python3 ${CLAUDE_SKILL_DIR}/scripts/extract.py /tmp/retro-session.jsonl --metadata-only`\n     - If verification succeeds, […]
 
@@ -662,7 +662,7 @@ id: toolu_01VULTKJQ8munuhocdHvCQk7
 tool_result
 id: toolu_01VULTKJQ8munuhocdHvCQk7
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -672,7 +672,7 @@ id: toolu_01YMZGDacHC686bFTJFPoye7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md",
   "old_string": "Read `conversation_arc` from `/tmp/retro-extract.json`. This is the full story of the session: every user message and assistant response in order.\n\nIdentify:",
   "new_string": "Read `conversation_arc` from `/tmp/retro-extract.json`. This is the full story of the session: every user message and assistant response in order.\n\n**Null-arc guard:** Before using the arc, check whether content is populated:\n```bash\npython3 -c \"\nimport json\nd = json.load(open('/tmp/retro-extract.json'))\narc = d.get('conversation_arc', [])\nnon_null = sum(1 for e in arc if e.get('content'))\nprint(f'arc entries: {len(arc)}, non-null content: {non_null}')\n\"\n```\nIf `non_null == 0` and `len(arc) > 0`, `extract.py` silently failed. Fall back to **in-context reconstruction**: write the retro from live session memory — (1) what tool calls succeeded first try, (2) what failed or needed retries, (3) any user corrections or redirects, (4) token budget marked as `(unavailable — extract.py returned no cost data)`. Do not fabricate metrics.\n\nIdentify:"
 }
@@ -683,7 +683,7 @@ id: toolu_01YMZGDacHC686bFTJFPoye7
 tool_result
 id: toolu_01YMZGDacHC686bFTJFPoye7
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.claude/skills/agent-retro/SKILL.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -693,7 +693,7 @@ id: toolu_01Gomebc9wi9vv7UhRTEETFA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/roles/curator.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/roles/curator.md",
   "old_string": "## session-to-skill Is Interactive — Write Skills Directly in Autonomous Runs\n\n`session-to-skill` dispatches confirmation prompts and stalls when run unattended. For second-occurrence skill promotions in autonomous curator runs: write `.agents/skills/<name>/SKILL.md` directly from ledger evidence + recalled session facts. Do NOT invoke `session-to-skill` expecting unattended execution. (curator 45b70da6)",
   "new_string": "## session-to-skill Is Interactive — Write Skills Directly in Autonomous Runs\n\n`session-to-skill` dispatches confirmation prompts and stalls when run unattended. For second-occurrence skill promotions in autonomous curator runs: write `.agents/skills/<name>/SKILL.md` directly from ledger evidence + recalled session facts. Do NOT invoke `session-to-skill` expecting unattended execution. (curator 45b70da6)\n\n## skill-update: Edit Existing Skills, Don't Create Sibling Patches\n\nWhen ledger evidence targets an existing named skill (e.g. `agent-retro`), open that skill's `SKILL.md` and patch the relevant steps in-place. Do NOT create a new sibling skill directory (e.g. `agent-retro-worktree-fallback`). Sibling patches are invisible to agents using the main skill and accumulate as dead files.\n\nProcess: read the existing `SKILL.md` → identify the step(s) to change → edit in-place with before/after diff in the ledger entry → record as `skill-update` action in the retro table."
 }
@@ -704,7 +704,7 @@ id: toolu_01Gomebc9wi9vv7UhRTEETFA
 tool_result
 id: toolu_01Gomebc9wi9vv7UhRTEETFA
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/roles/curator.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/roles/curator.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -714,7 +714,7 @@ id: toolu_01JJ7inS2MN19fn7euAG2gRR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md",
   "old_string": "2026-06-22 | swarmforge-pattern | tool-error | curator,specifier,cleaner | pending | `entire session current` returns wrong/stale session across 3 roles — agent-retro must verify returned worktree_path matches $PWD before trusting; add sanity-check to SKILL.md",
   "new_string": "2026-06-22 | swarmforge-pattern | tool-error | curator,specifier,cleaner | applied | `entire session current` returns wrong/stale session across 3 roles — agent-retro must verify returned worktree_path matches $PWD before trusting; add sanity-check to SKILL.md"
 }
@@ -725,7 +725,7 @@ id: toolu_01JJ7inS2MN19fn7euAG2gRR
 tool_result
 id: toolu_01JJ7inS2MN19fn7euAG2gRR
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -738,7 +738,7 @@ tool_use Bash
 id: toolu_01NtUNUgviT3qHw9mMJnfhXd
 ```json
 {
-  "command": "rm -rf /Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback /Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback && ls /Users/gabadi/workspace/addi/crap4py/.agents/skills/",
+  "command": "rm -rf /home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback /home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback && ls /home/<USER>/workspace/addi/crap4py/.agents/skills/",
   "description": "Delete patch skill directories and confirm"
 }
 ```
@@ -757,7 +757,7 @@ tool_use Bash
 id: toolu_01NZwud3FtNdUbJ38Ht6Gh73
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi/crap4py/.agents/skills -type f | sort",
+  "command": "find /home/<USER>/workspace/addi/crap4py/.agents/skills -type f | sort",
   "description": "Confirm patch skill dirs are gone"
 }
 ```
@@ -781,7 +781,7 @@ id: toolu_017sQkJ9Z9ZpKp3rhte8QqVT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/ledger-project.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/ledger-project.md",
   "old_string": "## 2026-06-22 — knowledge/c4-crap-report-command run (late retros)",
   "new_string": "## 2026-06-23 — fix/curator-skill-update-pattern\n\n2026-06-23 | human | curator | convention-gap | promoted→.agents/roles/curator.md | skill-update must edit existing SKILL.md in-place; sibling patch dirs are invisible to agents using the main skill\n2026-06-23 | human | curator | tool-error | promoted→.claude/skills/agent-retro/SKILL.md | merged agent-retro-worktree-fallback: add worktree_path/$PWD guard in Step 1 before calling entire session info\n2026-06-23 | human | curator | tool-error | promoted→.claude/skills/agent-retro/SKILL.md | merged agent-retro-arc-fallback: add null-arc guard in Step 2 with in-context reconstruction fallback\n2026-06-23 | human | curator | convention-gap | deleted | .agents/skills/agent-retro-worktree-fallback and agent-retro-arc-fallback removed after patches merged into main skill\n\n## 2026-06-22 — knowledge/c4-crap-report-command run (late retros)"
 }
@@ -792,7 +792,7 @@ id: toolu_017sQkJ9Z9ZpKp3rhte8QqVT
 tool_result
 id: toolu_017sQkJ9Z9ZpKp3rhte8QqVT
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/ledger-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/ledger-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -833,7 +833,7 @@ tool_use Bash
 id: toolu_01XpoumRrq1kVwEKP42tJBcf
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi/crap4py -name \"curator*\" -o -name \"*.prompt\" 2>/dev/null | grep -v \".entire\" | sort",
+  "command": "find /home/<USER>/workspace/addi/crap4py -name \"curator*\" -o -name \"*.prompt\" 2>/dev/null | grep -v \".entire\" | sort",
   "description": "Find curator prompt files"
 }
 ```
@@ -843,202 +843,202 @@ id: toolu_01XpoumRrq1kVwEKP42tJBcf
 tool_result
 id: toolu_01XpoumRrq1kVwEKP42tJBcf
 ```
-/Users/gabadi/workspace/addi/crap4py/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.git/logs/refs/heads/fix/curator-skill-update-pattern
-/Users/gabadi/workspace/addi/crap4py/.git/refs/heads/fix/curator-skill-update-pattern
-/Users/gabadi/workspace/addi/crap4py/.git/worktrees/curator
-/Users/gabadi/workspace/addi/crap4py/.swarmforge/prompts/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/architect/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/coder/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/curator/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/hardender/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/integrator/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/QA/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/.agents/roles/curator.md
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/specifier/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/curator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/hardender.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/integrator.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/QA.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/specifier.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/ux-engineer.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/scripts/shared-articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/scripts/shared-articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/scripts/shared-articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/handoffs.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/local-engineering.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/local-workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/project.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/constitution/articles/workflow.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/roles/architect.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/roles/cleaner.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/roles/coder.prompt
-/Users/gabadi/workspace/addi/crap4py/swarmforge/roles/curator.prompt […]
+/home/<USER>/workspace/addi/crap4py/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.git/logs/refs/heads/fix/curator-skill-update-pattern
+/home/<USER>/workspace/addi/crap4py/.git/refs/heads/fix/curator-skill-update-pattern
+/home/<USER>/workspace/addi/crap4py/.git/worktrees/curator
+/home/<USER>/workspace/addi/crap4py/.swarmforge/prompts/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/architect/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/cleaner/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/coder/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/curator/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/hardender/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/integrator/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/QA/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/.agents/roles/curator.md
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/specifier/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/curator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/hardender.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/integrator.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/QA.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/specifier.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/roles/ux-engineer.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/scripts/shared-articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/scripts/shared-articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/.worktrees/ux-engineer/swarmforge/scripts/shared-articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/constitution.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/engineering.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/handoffs.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/local-engineering.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/local-workflow.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/project.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/constitution/articles/workflow.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/roles/architect.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/roles/cleaner.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/roles/coder.prompt
+/home/<USER>/workspace/addi/crap4py/swarmforge/roles/curator.prompt […]
 
 > TOOL
 
@@ -1046,7 +1046,7 @@ tool_use Read
 id: toolu_01RcBn7m6Af8MvXbNPDG84pX
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.swarmforge/prompts/curator.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.swarmforge/prompts/curator.md"
 }
 ```
 
@@ -1065,7 +1065,7 @@ tool_use Read
 id: toolu_01AdLsPF3CwvGCnpAad87fGy
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/swarmforge/roles/curator.prompt"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/swarmforge/roles/curator.prompt"
 }
 ```
 
@@ -1134,7 +1134,7 @@ id: toolu_01NhjHA3DRQQmxebofyw8wqs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/ledger-project.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/ledger-project.md",
   "old_string": "## 2026-06-23 — fix/curator-skill-update-pattern\n\n2026-06-23 | human | curator | convention-gap | promoted→.agents/roles/curator.md | skill-update must edit existing SKILL.md in-place; sibling patch dirs are invisible to agents using the main skill\n2026-06-23 | human | curator | tool-error | promoted→.claude/skills/agent-retro/SKILL.md | merged agent-retro-worktree-fallback: add worktree_path/$PWD guard in Step 1 before calling entire session info\n2026-06-23 | human | curator | tool-error | promoted→.claude/skills/agent-retro/SKILL.md | merged agent-retro-arc-fallback: add null-arc guard in Step 2 with in-context reconstruction fallback\n2026-06-23 | human | curator | convention-gap | deleted | .agents/skills/agent-retro-worktree-fallback and agent-retro-arc-fallback removed after patches merged into main skill\n\n## 2026-06-22 — knowledge/c4-crap-report-command run (late retros)",
   "new_string": "## 2026-06-22 — knowledge/c4-crap-report-command run (late retros)"
 }
@@ -1145,7 +1145,7 @@ id: toolu_01NhjHA3DRQQmxebofyw8wqs
 tool_result
 id: toolu_01NhjHA3DRQQmxebofyw8wqs
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/ledger-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/ledger-project.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1169,7 +1169,7 @@ id: toolu_01BRe1VN5EYBA2YEzvKhfC1W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md",
   "old_string": "2026-06-22 | swarmforge-pattern | tool-error | curator,specifier,cleaner | applied | `entire session current` returns wrong/stale session across 3 roles — agent-retro must verify returned worktree_path matches $PWD before trusting; add sanity-check to SKILL.md",
   "new_string": "2026-06-22 | swarmforge-pattern | tool-error | curator,specifier,cleaner | pending | `entire session current` returns wrong/stale session across 3 roles — agent-retro must verify returned worktree_path matches $PWD before trusting; add sanity-check to SKILL.md"
 }
@@ -1180,7 +1180,7 @@ id: toolu_01BRe1VN5EYBA2YEzvKhfC1W
 tool_result
 id: toolu_01BRe1VN5EYBA2YEzvKhfC1W
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1229,7 +1229,7 @@ id: toolu_015UfpQt6o5119QrPobw54Ke
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md",
   "old_string": "2026-06-22 | swarmforge-pattern | tool-error | curator,specifier,cleaner | pending | `entire session current` returns wrong/stale session across 3 roles — agent-retro must verify returned worktree_path matches $PWD before trusting; add sanity-check to SKILL.md",
   "new_string": "2026-06-22 | swarmforge-pattern | tool-error | curator,specifier,cleaner | applied | `entire session current` returns wrong/stale session across 3 roles — agent-retro must verify returned worktree_path matches $PWD before trusting; add sanity-check to SKILL.md"
 }
@@ -1240,7 +1240,7 @@ id: toolu_015UfpQt6o5119QrPobw54Ke
 tool_result
 id: toolu_015UfpQt6o5119QrPobw54Ke
 ```
-The file /Users/gabadi/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/.agents/backlog.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

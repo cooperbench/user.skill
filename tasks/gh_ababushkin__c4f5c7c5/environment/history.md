@@ -67,14 +67,14 @@ tool_result
 id: toolu_01NVVKxdU6JxJ5Pqbm5PvwmC
 ```
 <persisted-output>
-Output too large (165.1KB). Full output saved to: /Users/anton/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/b42391o6k.txt
+Output too large (165.1KB). Full output saved to: /home/<USER>/.claude/projects/-Users-anton-src-drain-cycle/6d19145b-86d2-4b0d-9077-624706537065/tool-results/b42391o6k.txt
 
 Preview (first 2KB):
 Binary file ./drain_cycle/__pycache__/grade.cpython-314.pyc matches
 ./drain_cycle/grade.py:108:                f"drain-cycle grade: warning: {issue} is a draft — excluded from rate",
 Binary file ./.worktrees/ABA-334/drain_cycle/__pycache__/grade.cpython-312.pyc matches
 ./.worktrees/ABA-334/drain_cycle/grade.py:108:                f"drain-cycle grade: warning: {issue} is a draft — excluded from rate",
-./.worktrees/ABA-334/.entire/metadata/51c362f7-1d19-487b-a57d-f83ee5dd1961/full.jsonl:182:{"parentUuid":"88225320-3cfe-4ab1-bb6f-db2839314ea3","isSidechain":false,"message":{"model":"claude-sonnet-4-6","id":"msg_01AgYS8KAfuXvaKEFhWKhmPQ","type":"message","role":"assistant","content":[{"type":"tool_use","id":"toolu_013bi4uDppPLWK7kuLnBFQuQ","name":"Write","input":{"file_path":"/Users/anton/src/drain-cycle/.worktrees/ABA-334/drain_cycle/grade.py","content":"\"\"\"``drain-cycle grade``: initiative health from confirmed grade files.\n\nReads every grade file at ``~/.drain-cycle/grades/*.md``, separates\nconfirmed from draft, and reports:\n\n1. Total tickets graded (confirmed count).\n2. Pass-rate: confirmed entries without a silent-Done violation,\n   expressed as ``N/D (P%)``.\n3. Silent-Done violations: confirmed Done entries where the outcome\n   verifier never ran (``outcome_verdict == null`` in the run log).\n4. Draft files are warned about on stderr and excluded from the count.\n\nA *silent-Done violation* is the condition the halt-on-fail gate (ABA-328)\nis supposed to prevent: a ticket reaches Done in Linear without the outcome\nverifier running. Only ``outcome_verdict == null`` counts — a verdict of any\nkind (pass or fail) clears the violation.\n\nExit code: 0 if no violations; 1 if any silent-Done violation is found.\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport sys\nfrom pathlib import Path\nfrom typing import Any\n\nfrom . import grade_draft, runlog\n\n\ndef default_grades_dir() -> Path:\n    return grade_draft.grades_dir()\n\n\ndef default
+./.worktrees/ABA-334/.entire/metadata/51c362f7-1d19-487b-a57d-f83ee5dd1961/full.jsonl:182:{"parentUuid":"88225320-3cfe-4ab1-bb6f-db2839314ea3","isSidechain":false,"message":{"model":"claude-sonnet-4-6","id":"msg_01AgYS8KAfuXvaKEFhWKhmPQ","type":"message","role":"assistant","content":[{"type":"tool_use","id":"toolu_013bi4uDppPLWK7kuLnBFQuQ","name":"Write","input":{"file_path":"/home/<USER>/src/drain-cycle/.worktrees/ABA-334/drain_cycle/grade.py","content":"\"\"\"``drain-cycle grade``: initiative health from confirmed grade files.\n\nReads every grade file at ``~/.drain-cycle/grades/*.md``, separates\nconfirmed from draft, and reports:\n\n1. Total tickets graded (confirmed count).\n2. Pass-rate: confirmed entries without a silent-Done violation,\n   expressed as ``N/D (P%)``.\n3. Silent-Done violations: confirmed Done entries where the outcome\n   verifier never ran (``outcome_verdict == null`` in the run log).\n4. Draft files are warned about on stderr and excluded from the count.\n\nA *silent-Done violation* is the condition the halt-on-fail gate (ABA-328)\nis supposed to prevent: a ticket reaches Done in Linear without the outcome\nverifier running. Only ``outcome_verdict == null`` counts — a verdict of any\nkind (pass or fail) clears the violation.\n\nExit code: 0 if no violations; 1 if any silent-Done violation is found.\n\"\"\"\nfrom __future__ import annotations\n\nimport json\nimport sys\nfrom pathlib import Path\nfrom typing import Any\n\nfrom . import grade_draft, runlog\n\n\ndef default_grades_dir() -> Path:\n    return grade_draft.grades_dir()\n\n\ndef default
 ...
 </persisted-output>
 ```
@@ -89,7 +89,7 @@ tool_use Read
 id: toolu_01Q2E3MHusYMwuA4TLnZgep6
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/grade.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/grade.py",
   "offset": 80,
   "limit": 50
 }
@@ -176,7 +176,7 @@ id: toolu_013CA93yFNnYrbjHdvGN4Aj3
 tool_result
 id: toolu_013CA93yFNnYrbjHdvGN4Aj3
 ```
-644  /Users/anton/.drain-cycle/grades/ABA-406.md  432B
+644  /home/<USER>/.drain-cycle/grades/ABA-406.md  432B
 --- head ---
 ---
 issue: ABA-406
@@ -268,7 +268,7 @@ tool_use Read
 id: toolu_01E7r97wWCoDeeHDKf8k5AM9
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/grade_draft.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/grade_draft.py",
   "offset": 58,
   "limit": 40
 }

@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01MKsdzsLq8jSe6YTG76SSpd
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md"
 }
 ```
 

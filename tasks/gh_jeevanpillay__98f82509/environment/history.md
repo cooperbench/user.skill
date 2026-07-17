@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_016rNTdJ8xLrBwckBoDFqQD5
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx"
 }
 ```
 
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_01MfHLrS8BLhrM1EutHfpcve
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/account-card.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/account-card.tsx"
 }
 ```
 
@@ -192,7 +192,7 @@ tool_use Read
 id: toolu_01RDxzCA4RUBeiTAR85zWDUg
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css"
 }
 ```
 
@@ -283,7 +283,7 @@ tool_use Bash
 id: toolu_01Gyi8gNkBy7NmF9dsDnja6P
 ```json
 {
-  "command": "find /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer -name \"*.html\" -o -name \"*.ts\" -o -name \"*.tsx\" | head -30",
+  "command": "find /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer -name \"*.html\" -o -name \"*.ts\" -o -name \"*.tsx\" | head -30",
   "description": "List renderer source files"
 }
 ```
@@ -293,18 +293,18 @@ id: toolu_01Gyi8gNkBy7NmF9dsDnja6P
 tool_result
 id: toolu_01Gyi8gNkBy7NmF9dsDnja6P
 ```
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/vite-env.d.ts
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/error-boundary.ts
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/hotkey.ts
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/sidebar.ts
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/signed-out-shell.tsx
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/account-card.tsx
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/vite-env.d.ts
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/error-boundary.ts
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/hotkey.ts
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/sidebar.ts
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/signed-out-shell.tsx
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/account-card.tsx
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx
 ```
 
 > TOOL
@@ -313,7 +313,7 @@ tool_use Bash
 id: toolu_01BPk1BrPaqYaqmSX7PG9zUX
 ```json
 {
-  "command": "grep -r \"lucide\\|@repo/ui\" /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json",
+  "command": "grep -r \"lucide\\|@repo/ui\" /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json",
   "description": "Check desktop app deps for icons and UI"
 }
 ```
@@ -332,7 +332,7 @@ tool_use Read
 id: toolu_016mtQbzxWG4bpMSRA8b2At3
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html"
 }
 ```
 
@@ -418,7 +418,7 @@ tool_use Read
 id: toolu_014QM5fJxekdnHrL5RyhCtxr
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/main.ts"
 }
 ```
 
@@ -490,7 +490,7 @@ tool_use Read
 id: toolu_01Co2eGvBJn4J4RJhRhB3JoY
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json"
 }
 ```
 
@@ -561,7 +561,7 @@ tool_use Read
 id: toolu_01FpGEZDairUzTSq1ouLaHRD
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
 }
 ```
 
@@ -600,7 +600,7 @@ tool_use Read
 id: toolu_01GqoSYb2iVxv8K4SbcSNKzG
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/vite.renderer.config.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/vite.renderer.config.ts"
 }
 ```
 
@@ -648,7 +648,7 @@ tool_use Read
 id: toolu_01VgoExNi1BjgteHL2HonL5G
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/tsconfig.json"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/tsconfig.json"
 }
 ```
 
@@ -684,7 +684,7 @@ tool_use Bash
 id: toolu_013LsmqDd3kckEqRx3hrdXcc
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/tailwind.config.ts 2>/dev/null; ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/postcss.config.* 2>/dev/null; cat /Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/package.json | head -30",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/app/tailwind.config.ts 2>/dev/null; ls /home/<USER>/Code/@lightfastai/lightfast/apps/app/postcss.config.* 2>/dev/null; cat /home/<USER>/Code/@lightfastai/lightfast/packages/ui/package.json | head -30",
   "description": "Check Tailwind setup in main app and UI package"
 }
 ```
@@ -694,7 +694,7 @@ id: toolu_013LsmqDd3kckEqRx3hrdXcc
 tool_result
 id: toolu_013LsmqDd3kckEqRx3hrdXcc
 ```
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/postcss.config.mjs
+/home/<USER>/Code/@lightfastai/lightfast/apps/app/postcss.config.mjs
 {
   "name": "@repo/ui",
   "license": "MIT",
@@ -733,7 +733,7 @@ tool_use Bash
 id: toolu_015GL7o6i66EWWVGFqDEd2PX
 ```json
 {
-  "command": "grep -r \"tailwindcss\\|@tailwindcss\" /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/package.json | head -5",
+  "command": "grep -r \"tailwindcss\\|@tailwindcss\" /home/<USER>/Code/@lightfastai/lightfast/apps/app/package.json | head -5",
   "description": "Check tailwind deps in main app"
 }
 ```
@@ -743,8 +743,8 @@ id: toolu_015GL7o6i66EWWVGFqDEd2PX
 tool_result
 id: toolu_015GL7o6i66EWWVGFqDEd2PX
 ```
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/package.json:    "@tailwindcss/postcss": "catalog:tailwind4",
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/package.json:    "tailwindcss": "catalog:tailwind4",
+/home/<USER>/Code/@lightfastai/lightfast/apps/app/package.json:    "@tailwindcss/postcss": "catalog:tailwind4",
+/home/<USER>/Code/@lightfastai/lightfast/apps/app/package.json:    "tailwindcss": "catalog:tailwind4",
 ```
 
 > TOOL
@@ -753,7 +753,7 @@ tool_use Bash
 id: toolu_01DJcDJiPaKte5g7vy4ZnyT4
 ```json
 {
-  "command": "cat /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/postcss.config.mjs",
+  "command": "cat /home/<USER>/Code/@lightfastai/lightfast/apps/app/postcss.config.mjs",
   "description": "Read postcss config"
 }
 ```
@@ -772,7 +772,7 @@ tool_use Read
 id: toolu_01FSeNjheuQhdJc4TynUxFhn
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/src/globals.css",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/packages/ui/src/globals.css",
   "limit": 60
 }
 ```
@@ -850,7 +850,7 @@ tool_use Read
 id: toolu_01Re1D2BepmxQeE1a88uEgFp
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/postcss.config.mjs"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/packages/ui/postcss.config.mjs"
 }
 ```
 
@@ -875,7 +875,7 @@ tool_use Read
 id: toolu_01YSAsJyCJ58GuMoDFLEi91J
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/src/globals.css"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/packages/ui/src/globals.css"
 }
 ```
 
@@ -962,7 +962,7 @@ tool_use Bash
 id: toolu_01Qjsq6YCv6G7v47ytdNZ1Tf
 ```json
 {
-  "command": "grep -r \"lucide-react\\|@radix-ui/react-dropdown-menu\\|@radix-ui/react-avatar\" /Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/package.json | head -10",
+  "command": "grep -r \"lucide-react\\|@radix-ui/react-dropdown-menu\\|@radix-ui/react-avatar\" /home/<USER>/Code/@lightfastai/lightfast/packages/ui/package.json | head -10",
   "description": "Check UI package for Radix deps"
 }
 ```
@@ -972,9 +972,9 @@ id: toolu_01Qjsq6YCv6G7v47ytdNZ1Tf
 tool_result
 id: toolu_01Qjsq6YCv6G7v47ytdNZ1Tf
 ```
-/Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/package.json:    "@radix-ui/react-avatar": "^1.1.11",
-/Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/package.json:    "@radix-ui/react-dropdown-menu": "^2.1.15",
-/Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/package.json:    "lucide-react": "catalog:",
+/home/<USER>/Code/@lightfastai/lightfast/packages/ui/package.json:    "@radix-ui/react-avatar": "^1.1.11",
+/home/<USER>/Code/@lightfastai/lightfast/packages/ui/package.json:    "@radix-ui/react-dropdown-menu": "^2.1.15",
+/home/<USER>/Code/@lightfastai/lightfast/packages/ui/package.json:    "lucide-react": "catalog:",
 ```
 
 > TOOL
@@ -983,7 +983,7 @@ tool_use Read
 id: toolu_01GsjZeSV3wkdvaPfFXc13m7
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/packages/ui/src/components/ui/dropdown-menu.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/packages/ui/src/components/ui/dropdown-menu.tsx"
 }
 ```
 
@@ -1065,7 +1065,7 @@ tool_use Read
 id: toolu_01JEhvfnwBjXgjMFQCcn4yep
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/vite-env.d.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/vite-env.d.ts"
 }
 ```
 
@@ -1075,7 +1075,7 @@ tool_use Read
 id: toolu_013Wx4QjRkfaVsqN2doKDX9w
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts"
 }
 ```
 
@@ -1206,7 +1206,7 @@ tool_use Write
 id: toolu_01TVyQDovYT6ZKjfSD2VW6ui
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx",
   "content": "import * as DropdownMenu from \"@radix-ui/react-dropdown-menu\";\nimport { useTRPC } from \"@repo/app-trpc/react\";\nimport { useQuery } from \"@tanstack/react-query\";\nimport { LogOut, Settings, User } from \"lucide-react\";\n\nexport function UserMenu() {\n  const trpc = useTRPC();\n  const query = useQuery(trpc.account.get.queryOptions());\n\n  const email = query.data?.primaryEmailAddress ?? \"\";\n  const initials = getInitials(query.data?.fullName, email);\n\n  return (\n    <DropdownMenu.Root>\n      <DropdownMenu.Trigger asChild>\n        <button type=\"button\" className=\"user-menu-trigger\" aria-label=\"Account\">\n          <span className=\"user-menu-avatar\">{initials}</span>\n        </button>\n      </DropdownMenu.Trigger>\n\n      <DropdownMenu.Portal>\n        <DropdownMenu.Content\n          className=\"user-menu-content\"\n          side=\"top\"\n          align=\"start\"\n          sideOffset={6}\n        >\n          <DropdownMenu.Label className=\"user-menu-label\">\n            <User size={14} className=\"user-menu-icon\" />\n            <span className=\"user-menu-email\">{email}</span>\n          </DropdownMenu.Label>\n\n          <DropdownMenu.Separator className=\"user-menu-separator\" />\n\n          <DropdownMenu.Item\n            className=\"user-menu-item\"\n            onSelect={() => {\n              window.location.hash = \"#/settings\";\n            }}\n          >\n            <Settings size={14} className=\"user-menu-icon\" />\n            Settings\n          </DropdownMenu.Item>\n\n          <DropdownMenu.Separator className=\"user-menu-separator\" />\n\n          <DropdownMenu.Item\n            className=\"user-menu-item user-menu-item--destructive\"\n            onSelect={() => void window.lightfastBridge.auth.signOut()}\n          >\n            <LogOut size={14} className=\"user-menu-icon\" />\n            Log out\n          </DropdownMenu.Item>\n        </DropdownMenu.Content>\n      </DropdownMenu.Portal>\n    </DropdownMenu.Root>\n  );\n}\n\nfunction getInitials(\n  fullName: string | null | undefined,\n  email: string,\n): string {\n  if (fullName) {\n    const parts = fullName.trim().split(/\\s+/);\n    return (parts[0]?.[0] ?? \"\").toUpperCase() + (parts[1]?.[0] ?? \"\").toUpperCase();\n  }\n  return (email[0] ?? \"?\").toUpperCase();\n}\n"
 }
 ```
@@ -1216,7 +1216,7 @@ id: toolu_01TVyQDovYT6ZKjfSD2VW6ui
 tool_result
 id: toolu_01TVyQDovYT6ZKjfSD2VW6ui
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx
 ```
 
 > AGENT
@@ -1230,7 +1230,7 @@ id: toolu_01WCJUhtVFm2HeFGghrztULp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
   "old_string": "          <button type=\"button\" class=\"item\" data-route-to=\"settings\">\n            Settings\n          </button>\n        </nav>\n      </aside>",
   "new_string": "          <button type=\"button\" class=\"item\" data-route-to=\"settings\">\n            Settings\n          </button>\n        </nav>\n        <div class=\"sidebar-footer\">\n          <div id=\"user-menu-root\"></div>\n        </div>\n      </aside>"
 }
@@ -1241,7 +1241,7 @@ id: toolu_01WCJUhtVFm2HeFGghrztULp
 tool_result
 id: toolu_01WCJUhtVFm2HeFGghrztULp
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html has been updated successfully.
 ```
 
 > AGENT
@@ -1255,7 +1255,7 @@ id: toolu_01Nu2QT3XSeLBLNmgVeBBF9j
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx",
   "old_string": "import { DesktopTRPCProvider } from \"@repo/app-trpc/desktop\";\nimport { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport { AppShell } from \"./app-shell\";\n\nconst appOrigin = window.lightfastBridge.appOrigin;\n\nfunction Root() {\n  return (\n    <StrictMode>\n      <DesktopTRPCProvider baseUrl={appOrigin}>\n        <AppShell />\n      </DesktopTRPCProvider>\n    </StrictMode>\n  );\n}\n\nconst container = document.getElementById(\"react-root\");\nif (container) {\n  createRoot(container).render(<Root />);\n}",
   "new_string": "import { DesktopTRPCProvider } from \"@repo/app-trpc/desktop\";\nimport { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport { AppShell } from \"./app-shell\";\nimport { UserMenu } from \"./user-menu\";\n\nconst appOrigin = window.lightfastBridge.appOrigin;\n\nfunction Providers({ children }: { children: React.ReactNode }) {\n  return (\n    <StrictMode>\n      <DesktopTRPCProvider baseUrl={appOrigin}>{children}</DesktopTRPCProvider>\n    </StrictMode>\n  );\n}\n\nconst container = document.getElementById(\"react-root\");\nif (container) {\n  createRoot(container).render(\n    <Providers>\n      <AppShell />\n    </Providers>,\n  );\n}\n\nconst userMenuContainer = document.getElementById(\"user-menu-root\");\nif (userMenuContainer) {\n  createRoot(userMenuContainer).render(\n    <Providers>\n      <UserMenu />\n    </Providers>,\n  );\n}"
 }
@@ -1266,7 +1266,7 @@ id: toolu_01Nu2QT3XSeLBLNmgVeBBF9j
 tool_result
 id: toolu_01Nu2QT3XSeLBLNmgVeBBF9j
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1280,7 +1280,7 @@ id: toolu_01XSbLJ7BE5Pyq8qxL7LXD6f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
   "old_string": "/* Settings */",
   "new_string": "/* Sidebar footer / user menu */\n\n.sidebar-footer {\n  margin-top: auto;\n  padding: calc(var(--spacing) * 2);\n  border-top: 1px solid var(--color-border-light);\n}\n\n.user-menu-trigger {\n  -webkit-app-region: no-drag;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  padding: 0;\n  appearance: none;\n  cursor: default;\n  background: var(--color-background-button-tertiary);\n  border: 1px solid var(--color-border);\n  border-radius: 6px;\n  transition:\n    background 120ms ease,\n    border-color 120ms ease;\n}\n\n.user-menu-trigger:hover {\n  background: var(--color-background-button-tertiary-hover);\n  border-color: var(--color-border-heavy);\n}\n\n.user-menu-avatar {\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 1;\n  color: var(--color-text-foreground-secondary);\n}\n\n.user-menu-content {\n  min-width: 200px;\n  padding: calc(var(--spacing) * 1);\n  background: var(--color-background-elevated-primary-opaque);\n  border: 1px solid var(--color-border);\n  border-radius: 8px;\n  box-shadow:\n    0 4px 16px color-mix(in oklab, #000 30%, transparent),\n    0 1px 4px color-mix(in oklab, #000 15%, transparent);\n  animation: user-menu-enter 120ms ease;\n  z-index: 100;\n}\n\n@keyframes user-menu-enter {\n  from {\n    opacity: 0;\n    transform: translateY(4px) scale(0.97);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0) scale(1);\n  }\n}\n\n.user-menu-label {\n  display: flex;\n  align-items: center;\n  gap: calc(var(--spacing) * 2);\n  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);\n  font-size: var(--text-sm);\n  color: var(--color-text-foreground-secondary);\n  user-select: none;\n}\n\n.user-menu-email {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.user-menu-icon {\n  flex-shrink: 0;\n  color: var(--color-text-foreground-tertiary);\n}\n\n.user-menu-separator {\n  height: 1px;\n  margin: calc(var(--spacing) * 1) 0;\n  background: var(--color-border-light);\n}\n\n.user-menu-item {\n  display: flex;\n  align-items: center;\n  gap: calc(var(--spacing) * 2);\n  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);\n  font-size: var(--text-sm);\n  color: […]
 
@@ -1289,7 +1289,7 @@ id: toolu_01XSbLJ7BE5Pyq8qxL7LXD6f
 tool_result
 id: toolu_01XSbLJ7BE5Pyq8qxL7LXD6f
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
 ```
 
 > AGENT
@@ -1303,7 +1303,7 @@ id: toolu_012HPS3TM3HM4oEyCCfP2AQG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx",
   "old_string": "import { useQueryClient } from \"@tanstack/react-query\";\nimport { useEffect, useState } from \"react\";\nimport type { AuthSnapshot } from \"../../../shared/ipc\";\nimport { AccountCard } from \"./account-card\";\nimport { SignedOutShell } from \"./signed-out-shell\";\n\nexport function AppShell() {\n  const [auth, setAuth] = useState<AuthSnapshot>(\n    () => window.lightfastBridge.auth.snapshot\n  );\n  const queryClient = useQueryClient();\n\n  useEffect(() => window.lightfastBridge.auth.onChanged(setAuth), []);\n\n  useEffect(() => {\n    const unsub = queryClient.getQueryCache().subscribe((event) => {\n      if (event.type !== \"updated\") {\n        return;\n      }\n      const err = event.query.state.error;\n      if (!err) {\n        return;\n      }\n      const code = (err as { data?: { code?: string } }).data?.code;\n      if (code === \"UNAUTHORIZED\") {\n        void window.lightfastBridge.auth.signOut();\n      }\n    });\n    return unsub;\n  }, [queryClient]);\n\n  if (!auth.isSignedIn) {\n    return (\n      <SignedOutShell\n        onLearnMore={() =>\n          void window.lightfastBridge.openExternal(\"https://lightfast.ai\")\n        }\n        onSignIn={() => void window.lightfastBridge.auth.signIn()}\n      />\n    );\n  }\n\n  return (\n    <div>\n      <AccountCard />\n      <button\n        onClick={() => void window.lightfastBridge.auth.signOut()}\n        type=\"button\"\n      >\n        Sign out\n      </button>\n    </div>\n  );\n}",
   "new_string": "import { useQueryClient } from \"@tanstack/react-query\";\nimport { useEffect, useState } from \"react\";\nimport type { AuthSnapshot } from \"../../../shared/ipc\";\nimport { SignedOutShell } from \"./signed-out-shell\";\n\nexport function AppShell() {\n  const [auth, setAuth] = useState<AuthSnapshot>(\n    () => window.lightfastBridge.auth.snapshot\n  );\n  const queryClient = useQueryClient();\n\n  useEffect(() => window.lightfastBridge.auth.onChanged(setAuth), []);\n\n  useEffect(() => {\n    const unsub = queryClient.getQueryCache().subscribe((event) => {\n      if (event.type !== […]
 
@@ -1312,7 +1312,7 @@ id: toolu_012HPS3TM3HM4oEyCCfP2AQG
 tool_result
 id: toolu_012HPS3TM3HM4oEyCCfP2AQG
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/app-shell.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -1326,7 +1326,7 @@ id: toolu_01MtCPUYAEqT3QJkf1qahXzg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/vite.renderer.config.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/vite.renderer.config.ts",
   "old_string": "  optimizeDeps: {\n    include: [\n      \"@repo/app-trpc/desktop\",\n      \"@repo/app-trpc/react\",\n      \"superjson\",\n      \"sonner\",\n    ],\n  },",
   "new_string": "  optimizeDeps: {\n    include: [\n      \"@repo/app-trpc/desktop\",\n      \"@repo/app-trpc/react\",\n      \"@radix-ui/react-dropdown-menu\",\n      \"lucide-react\",\n      \"superjson\",\n      \"sonner\",\n    ],\n  },"
 }
@@ -1337,7 +1337,7 @@ id: toolu_01MtCPUYAEqT3QJkf1qahXzg
 tool_result
 id: toolu_01MtCPUYAEqT3QJkf1qahXzg
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/vite.renderer.config.ts has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/vite.renderer.config.ts has been updated successfully.
 ```
 
 > AGENT
@@ -1350,7 +1350,7 @@ tool_use Bash
 id: toolu_01K69XEswTMb4NdZyDmwKLt4
 ```json
 {
-  "command": "cd /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop && npx tsc --noEmit -p tsconfig.json 2>&1 | head -40",
+  "command": "cd /home/<USER>/Code/@lightfastai/lightfast/apps/desktop && npx tsc --noEmit -p tsconfig.json 2>&1 | head -40",
   "description": "Typecheck desktop app",
   "timeout": 30000
 }
@@ -1374,7 +1374,7 @@ tool_use Read
 id: toolu_013bvnpywNtMin54JsrctnEi
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
 }
 ```
 
@@ -1453,7 +1453,7 @@ tool_use Read
 id: toolu_018Pwf9RowfDgkYNwt65B1VV
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx"
 }
 ```
 
@@ -1607,11 +1607,11 @@ id: toolu_0134f2W4UovagBXPBrPQdJ5a
 tool_result
 id: toolu_0134f2W4UovagBXPBrPQdJ5a
 ```
-> @lightfast/desktop@0.0.0 dev /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop
+> @lightfast/desktop@0.0.0 dev /home/<USER>/Code/@lightfastai/lightfast/apps/desktop
 > pnpm with-env electron-forge start
 
 
-> @lightfast/desktop@0.0.0 with-env /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop
+> @lightfast/desktop@0.0.0 with-env /home/<USER>/Code/@lightfastai/lightfast/apps/desktop
 > dotenv -e ./.vercel/.env.development.local -- electron-forge start
 
 ❯ Checking your system
@@ -1879,7 +1879,7 @@ tool_use Bash
 id: toolu_01V39XdhVw6FMFHzKRinjaqC
 ```json
 {
-  "command": "grep -n \"sidebar-footer\\|user-menu\" /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css | head -20",
+  "command": "grep -n \"sidebar-footer\\|user-menu\" /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css | head -20",
   "description": "Check if user menu CSS is still present"
 }
 ```
@@ -1912,7 +1912,7 @@ tool_use Bash
 id: toolu_01G4EY2WdYZyPrqy5fsYKJWK
 ```json
 {
-  "command": "grep -n \"user-menu-root\\|sidebar-footer\" /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
+  "command": "grep -n \"user-menu-root\\|sidebar-footer\" /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
   "description": "Check if user menu mount point is still in HTML"
 }
 ```
@@ -2268,7 +2268,7 @@ tool_use Bash
 id: toolu_0149U7we7BfQZ4gFfxWGaS9m
 ```json
 {
-  "command": "grep \"dev:desktop\" /Users/jeevanpillay/Code/@lightfastai/lightfast/package.json",
+  "command": "grep \"dev:desktop\" /home/<USER>/Code/@lightfastai/lightfast/package.json",
   "description": "Check dev:desktop script"
 }
 ```
@@ -2306,7 +2306,7 @@ tool_use Bash
 id: toolu_011CKDvDtztbZ4j6yZ6MpW8P
 ```json
 {
-  "command": "cd /Users/jeevanpillay/Code/@lightfastai/lightfast && tail -f /dev/null | pnpm dev:desktop > /tmp/lightfast-desktop.log 2>&1 &\necho \"Started with PID: $!\"",
+  "command": "cd /home/<USER>/Code/@lightfastai/lightfast && tail -f /dev/null | pnpm dev:desktop > /tmp/lightfast-desktop.log 2>&1 &\necho \"Started with PID: $!\"",
   "description": "Start desktop app via dev:desktop"
 }
 ```
@@ -2845,7 +2845,7 @@ tool_use Read
 id: toolu_01WGGrcJ5smn3jiWxfAknzyz
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx"
 }
 ```
 
@@ -2859,7 +2859,7 @@ tool_use Read
 id: toolu_014w4LgJJwbCCCCuVbmbCj2z
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html",
   "limit": 120
 }
 ```
@@ -2946,7 +2946,7 @@ id: toolu_019zgRUMGJy4gU2einSLs4ky
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx",
   "old_string": "import * as DropdownMenu from \"@radix-ui/react-dropdown-menu\";\nimport { useTRPC } from \"@repo/app-trpc/react\";\nimport { useQuery } from \"@tanstack/react-query\";\nimport { LogOut, Settings, User } from \"lucide-react\";\n\nexport function UserMenu() {\n  const trpc = useTRPC();\n  const query = useQuery(trpc.account.get.queryOptions());\n\n  const email = query.data?.primaryEmailAddress ?? \"\";\n  const initials = getInitials(query.data?.fullName, email);\n\n  return (\n    <DropdownMenu.Root>\n      <DropdownMenu.Trigger asChild>\n        <button type=\"button\" className=\"user-menu-trigger\" aria-label=\"Account\">\n          <span className=\"user-menu-avatar\">{initials}</span>\n        </button>\n      </DropdownMenu.Trigger>\n\n      <DropdownMenu.Portal>\n        <DropdownMenu.Content\n          className=\"user-menu-content\"\n          side=\"top\"\n          align=\"start\"\n          sideOffset={6}\n        >\n          <DropdownMenu.Label className=\"user-menu-label\">\n            <User size={14} className=\"user-menu-icon\" />\n            <span className=\"user-menu-email\">{email}</span>\n          </DropdownMenu.Label>\n\n          <DropdownMenu.Separator className=\"user-menu-separator\" />\n\n          <DropdownMenu.Item\n            className=\"user-menu-item\"\n            onSelect={() => {\n              window.location.hash = \"#/settings\";\n            }}\n          >\n            <Settings size={14} className=\"user-menu-icon\" />\n            Settings\n          </DropdownMenu.Item>\n\n          <DropdownMenu.Separator className=\"user-menu-separator\" />\n\n          <DropdownMenu.Item\n            className=\"user-menu-item user-menu-item--destructive\"\n            onSelect={() => void window.lightfastBridge.auth.signOut()}\n          >\n            <LogOut size={14} className=\"user-menu-icon\" />\n            Log out\n          </DropdownMenu.Item>\n        </DropdownMenu.Content>\n      </DropdownMenu.Portal>\n    </DropdownMenu.Root>\n  );\n}\n\nfunction getInitials(\n  fullName: string | null | undefined,\n  email: string,\n): string {\n  if (fullName) {\n    const parts = fullName.trim().split(/\\s+/);\n    return (parts[0]?.[0] ?? \"\").toUpperCase() + (parts[1]?.[0] ?? \"\").toUpperCase();\n  }\n  return (email[0] ?? \"?\").toUpperCase();\n}",
   "new_string": "import * as DropdownMenu from \"@radix-ui/react-dropdown-menu\";\nimport { useTRPC } from \"@repo/app-trpc/react\";\nimport { useQuery } from \"@tanstack/react-query\";\nimport { LogOut, Settings, User } from \"lucide-react\";\n\nexport function UserMenu() {\n  const trpc = useTRPC();\n  const query = useQuery(trpc.account.get.queryOptions());\n\n  const email = query.data?.primaryEmailAddress ?? \"\";\n\n  return (\n […]
 
@@ -2955,7 +2955,7 @@ id: toolu_019zgRUMGJy4gU2einSLs4ky
 tool_result
 id: toolu_019zgRUMGJy4gU2einSLs4ky
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/user-menu.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -2969,7 +2969,7 @@ id: toolu_017vXPvjqcTUKj65ke6ubudX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css",
   "old_string": ".user-menu-trigger {\n  -webkit-app-region: no-drag;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  padding: 0;\n  appearance: none;\n  cursor: default;\n  background: var(--color-background-button-tertiary);\n  border: 1px solid var(--color-border);\n  border-radius: 6px;\n  transition:\n    background 120ms ease,\n    border-color 120ms ease;\n}\n\n.user-menu-trigger:hover {\n  background: var(--color-background-button-tertiary-hover);\n  border-color: var(--color-border-heavy);\n}\n\n.user-menu-avatar {\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 1;\n  color: var(--color-text-foreground-secondary);\n}\n\n.user-menu-content {",
   "new_string": ".user-menu-content {"
 }
@@ -2980,7 +2980,7 @@ id: toolu_017vXPvjqcTUKj65ke6ubudX
 tool_result
 id: toolu_017vXPvjqcTUKj65ke6ubudX
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
+The file /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css has been updated successfully.
 ```
 
 > AGENT
@@ -2993,7 +2993,7 @@ tool_use Bash
 id: toolu_01Ap3xhgvM6kzYGSgrVyA8T4
 ```json
 {
-  "command": "cd /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop && npx tsc --noEmit -p tsconfig.json 2>&1 | head -20",
+  "command": "cd /home/<USER>/Code/@lightfastai/lightfast/apps/desktop && npx tsc --noEmit -p tsconfig.json 2>&1 | head -20",
   "description": "Typecheck desktop app",
   "timeout": 30000
 }

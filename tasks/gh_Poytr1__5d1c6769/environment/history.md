@@ -1153,7 +1153,7 @@ tool_use Bash
 id: toolu_bdrk_01R4wnYc8AM4ajisoEDVUYhN
 ```json
 {
-  "command": "ls /Users/pc/web3/ReleaseBeacon/docs/",
+  "command": "ls /home/<USER>/web3/ReleaseBeacon/docs/",
   "description": "List docs directory contents"
 }
 ```
@@ -1175,7 +1175,7 @@ tool_use Bash
 id: toolu_bdrk_01DkSfT5SH1qGBaMMFUqWpKL
 ```json
 {
-  "command": "ls /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/ 2>/dev/null || echo \"directory does not exist\"",
+  "command": "ls /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/ 2>/dev/null || echo \"directory does not exist\"",
   "description": "Check if specs directory exists"
 }
 ```
@@ -1198,7 +1198,7 @@ tool_use Write
 id: toolu_bdrk_01ThEoLPk7k7y8dAproT8GZ6
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "content": "# Release Gate Design\n\n**Date:** 2026-03-23\n**Status:** Draft\n\n## Problem\n\nUsers want release notifications optionally postponed until all relevant sources for a version are available. For example, a third-party Docker image may lag months behind a GitHub release. Today, notifications fire immediately per-source and the semantic report runs independently — resulting in two separate notifications and potentially incomplete analysis.\n\n## Goals\n\n1. Allow multi-source projects to delay agent analysis until all (or critical) sources report a version\n2. Unify release + semantic report into a single notification for users who prefer it\n3. Support configurable version mapping across sources (GitHub `v1.21.0` ↔ Docker Hub `1.21.0`)\n4. Provide hybrid readiness rules: structured (deterministic) + natural language (LLM-evaluated)\n5. Timeout gracefully with partial reports when sources never arrive\n6. No behavior change for single-source projects or users who want immediate notifications\n\n## Non-Goals\n\n- Changing the existing `source_release` / `semantic_release` subscription model\n- Replacing the agent rules system (gate controls timing; agent rules control whether to run)\n- Real-time push notifications for gate status changes (polling/dashboard only)\n\n## Design\n\n### Subscription Model (Unchanged)\n\nThe existing subscription types handle both use cases:\n\n| Type | Behavior |\n|------|----------|\n| `source_release` | Fires immediately when a source detects a release (unchanged) |\n| `semantic_release` | Fires when […]
 
 > TOOL
@@ -1206,7 +1206,7 @@ id: toolu_bdrk_01ThEoLPk7k7y8dAproT8GZ6
 tool_result
 id: toolu_bdrk_01ThEoLPk7k7y8dAproT8GZ6
 ```
-File created successfully at: /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md
+File created successfully at: /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md
 ```
 
 > AGENT
@@ -1219,7 +1219,7 @@ tool_use Read
 id: toolu_bdrk_01DZZHsiGQGtcRvXSHcY3G7S
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "offset": 230
 }
 ```
@@ -1278,7 +1278,7 @@ id: toolu_bdrk_01BJnAGYoosiCUfSSDGrgifD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "old_string": "### Error Handling",
   "new_string": "### Observability: Gate Event History\n\nA `gate_events` table records every state transition for auditing and debugging:\n\n```sql\nCREATE TABLE gate_events (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    version_readiness_id UUID NOT NULL REFERENCES version_readiness(id) ON DELETE CASCADE,\n    project_id UUID NOT NULL REFERENCES projects(id) ON DELETE CASCADE,\n    version VARCHAR(100) NOT NULL,\n    event_type VARCHAR(30) NOT NULL\n        CHECK (event_type IN (\n            'source_met',       -- a required source reported this version\n            'gate_opened',      -- all structured rules passed, gate opened\n            'gate_timed_out',   -- timeout expired, gate force-opened\n            'nl_eval_started',  -- NL rule LLM evaluation began\n            'nl_eval_passed',   -- NL rule evaluated to true\n            'nl_eval_failed',   -- NL rule evaluated to false\n            'agent_triggered',  -- agent job enqueued after gate opened\n            'agent_completed',  -- agent finished, semantic report created\n            'notified'          -- semantic_release notifications sent\n        )),\n    source_id UUID,                       -- which source (for source_met events)\n    details JSONB,                        -- event-specific context\n    created_at TIMESTAMPTZ NOT NULL DEFAULT now()\n);\n\nCREATE INDEX idx_gate_events_readiness ON gate_events(version_readiness_id, created_at);\nCREATE INDEX idx_gate_events_project ON gate_events(project_id, created_at);\n```\n\n**`details` JSONB examples by event type:**\n\n| Event | Details |\n|-------|---------|\n| `source_met` | `{\"source_name\": \"Docker Hub\", \"raw_version\": \"1.21.0\", \"normalized_version\": \"1.21.0\", \"sources_met\": 2, \"sources_required\": 3}` |\n| `gate_timed_out` | `{\"sources_missing\": [\"uuid-dockerhub\"], \"waited_hours\": 168}` |\n| `nl_eval_passed` | `{\"rule\": \"Wait until Docker image has […]
 
@@ -1287,7 +1287,7 @@ id: toolu_bdrk_01BJnAGYoosiCUfSSDGrgifD
 tool_result
 id: toolu_bdrk_01BJnAGYoosiCUfSSDGrgifD
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -1300,7 +1300,7 @@ tool_use Bash
 id: toolu_bdrk_01FE1iAA23VgvMovAwFNHG8t
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: add release gate design spec\n\nSpec for postponing notifications until all required sources report a\nversion, with hybrid structured + NL rules, timeout with partial\nreports, version mapping, gate event history for observability, and\nenriched unified semantic notifications.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: add release gate design spec\n\nSpec for postponing notifications until all required sources report a\nversion, with hybrid structured + NL rules, timeout with partial\nreports, version mapping, gate event history for observability, and\nenriched unified semantic notifications.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the design spec"
 }
 ```
@@ -1365,7 +1365,7 @@ id: toolu_bdrk_01ATXESncM84c7cvH3DwinRr
 {
   "description": "Review release gate spec",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "You are reviewing a design spec document for technical correctness, completeness, and clarity. This is NOT a code review — it's a spec review.\n\n**Spec file:** `/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`\n\n**Project context:**\n- Changelogue is a Go-based release intelligence platform\n- It polls registries (Docker Hub, GitHub, etc.) for new releases\n- It uses River job queue (PostgreSQL-based) for async processing\n- It uses LLM agents (ADK-Go) for semantic analysis of releases\n- Architecture docs: `ARCH.md`, `DESIGN.md`, `API.md`\n- Key directories: `internal/ingestion/`, `internal/routing/`, `internal/agent/`, `internal/queue/`\n\n**Review criteria:**\n1. **Completeness:** Are there gaps in the design? Missing edge cases? Undefined behaviors?\n2. **Consistency:** Does the design align with the existing codebase patterns (transactional outbox, River jobs, sender interface)?\n3. **Clarity:** Is the spec unambiguous? Could an implementer follow it without guessing?\n4. **Feasibility:** Are there technical issues that would block implementation?\n5. **Data model:** Are the schema definitions complete and correct? Foreign keys, constraints, indexes?\n\nRead the spec file, then read relevant existing code files to verify consistency. Output:\n- **APPROVED** if no blocking issues\n- **Issues Found** with specific, actionable items to fix\n\nDo NOT suggest style/formatting changes. Focus on substance."
+  "prompt": "You are reviewing a design spec document for technical correctness, completeness, and clarity. This is NOT a code review — it's a spec review.\n\n**Spec file:** `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`\n\n**Project context:**\n- Changelogue is a Go-based release intelligence platform\n- It polls registries (Docker Hub, GitHub, etc.) for new releases\n- It uses River job queue (PostgreSQL-based) for async processing\n- It uses LLM agents (ADK-Go) for semantic analysis of releases\n- Architecture docs: `ARCH.md`, `DESIGN.md`, `API.md`\n- Key directories: `internal/ingestion/`, `internal/routing/`, `internal/agent/`, `internal/queue/`\n\n**Review criteria:**\n1. **Completeness:** Are there gaps in the design? Missing edge cases? Undefined behaviors?\n2. **Consistency:** Does the design align with the existing codebase patterns (transactional outbox, River jobs, sender interface)?\n3. **Clarity:** Is the spec unambiguous? Could an implementer follow it without guessing?\n4. **Feasibility:** Are there technical issues that would block implementation?\n5. **Data model:** Are the schema definitions complete and correct? Foreign keys, constraints, indexes?\n\nRead the spec file, then read relevant existing code files to verify consistency. Output:\n- **APPROVED** if no blocking issues\n- **Issues Found** with specific, actionable items to fix\n\nDo NOT suggest style/formatting changes. Focus on substance."
 }
 ```
 
@@ -1380,7 +1380,7 @@ I now have a thorough understanding of the codebase and the spec. Let me compile
 
 ## Spec Review: Release Gate Design
 
-**File:** `/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`
+**File:** `/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md`
 
 ### What the spec does well
 
@@ -1392,7 +1392,7 @@ The design addresses a real and clearly articulated problem. The separation betw
 
 #### Issue 1 -- CRITICAL: Subscription type naming inconsistency
 
-The spec uses `source_release` and `semantic_release` in the Subscription Model table (line 31-36), which matches the **actual codebase** (`/Users/pc/web3/ReleaseBeacon/internal/db/migrations.go`, line 96):
+The spec uses `source_release` and `semantic_release` in the Subscription Model table (line 31-36), which matches the **actual codebase** (`/home/<USER>/web3/ReleaseBeacon/internal/db/migrations.go`, line 96):
 
 ```sql
 CHECK (type IN ('source_release', 'semantic_release'))
@@ -1419,7 +1419,7 @@ tool_use Read
 id: toolu_bdrk_018ThUUT4wqGq8HTq3U2bwgG
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md"
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md"
 }
 ```
 
@@ -1468,7 +1468,7 @@ tool_use Write
 id: toolu_bdrk_013HbDzrYqzMb9CN2HiHLujB
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md",
   "content": "# Release Gate Design\n\n**Date:** 2026-03-23\n**Status:** Draft\n\n## Problem\n\nUsers want release notifications optionally postponed until all relevant sources for a version are available. For example, a third-party Docker image may lag months behind a GitHub release. Today, notifications fire immediately per-source and the semantic report runs independently — resulting in two separate notifications and potentially incomplete analysis.\n\n## Goals\n\n1. Allow multi-source projects to delay agent analysis until all (or critical) sources report a version\n2. Unify release + semantic report into a single notification for users who prefer it\n3. Support configurable version mapping across sources (GitHub `v1.21.0` ↔ Docker Hub `1.21.0`)\n4. Provide hybrid readiness rules: structured (deterministic) + natural language (LLM-evaluated)\n5. Timeout gracefully with partial reports when sources never arrive\n6. No behavior change for single-source projects or users who want immediate notifications\n\n## Non-Goals\n\n- Changing the existing `source_release` / `semantic_release` subscription model\n- Replacing the agent rules system (gate controls timing; agent rules control whether to run)\n- Real-time push notifications for gate status changes (polling/dashboard only)\n\n## Design\n\n### Subscription Model (Unchanged)\n\nThe existing subscription types handle both use cases:\n\n| Type | Behavior |\n|------|----------|\n| `source_release` | Fires immediately when a source detects a release (unchanged) |\n| `semantic_release` | Fires when […]
 
 > TOOL
@@ -1476,7 +1476,7 @@ id: toolu_bdrk_013HbDzrYqzMb9CN2HiHLujB
 tool_result
 id: toolu_bdrk_013HbDzrYqzMb9CN2HiHLujB
 ```
-The file /Users/pc/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
+The file /home/<USER>/web3/ReleaseBeacon/docs/superpowers/specs/2026-03-23-release-gate-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1485,7 +1485,7 @@ tool_use Bash
 id: toolu_bdrk_01LDKpBnLuAtwcS1mVY7cnG9
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: address spec review findings for release gate design\n\nFix all 10 review items:\n- Use JSONB arrays instead of UUID[] for codebase consistency\n- Specify unconditional GateCheckJob enqueue (worker short-circuits)\n- Add concurrency control with INSERT ON CONFLICT + WHERE status guard\n- Add partial index for timeout sweep queries\n- Specify GateTimeoutWorker periodic registration and SKIP LOCKED sweep\n- Clarify multi-variant tag handling via existing source filters\n- Document NL rule failure behavior and re-evaluation triggers\n- Define WaitForAllSources deprecation/migration strategy\n- Explain gate_events denormalization rationale\n- Note DESIGN.md subscription type naming discrepancy\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-03-23-release-gate-design.md && git commit -m \"$(cat <<'EOF'\ndocs: address spec review findings for release gate design\n\nFix all 10 review items:\n- Use JSONB arrays instead of UUID[] for codebase consistency\n- Specify unconditional GateCheckJob enqueue (worker short-circuits)\n- Add concurrency control with INSERT ON CONFLICT + WHERE status guard\n- Add partial index for timeout sweep queries\n- Specify GateTimeoutWorker periodic registration and SKIP LOCKED sweep\n- Clarify multi-variant tag handling via existing source filters\n- Document NL rule failure behavior and re-evaluation triggers\n- Define WaitForAllSources deprecation/migration strategy\n- Explain gate_events denormalization rationale\n- Note DESIGN.md subscription type naming discrepancy\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the revised spec"
 }
 ```

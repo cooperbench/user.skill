@@ -126,7 +126,7 @@ id: toolu_01PmDL44tw9e2rmVwv6hdhKy
 
 ### 1. 캐릭터 정의 및 저장 구조
 
-**파일:** `/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts`
+**파일:** `/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts`
 
 **CharacterDef 인터페이스 (줄 8-25):**
 ```typescript
@@ -172,7 +172,7 @@ tool_use Read
 id: toolu_01EkR11XpiuojuHHvMYeZVRj
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts"
 }
 ```
 
@@ -237,7 +237,7 @@ tool_use Read
 id: toolu_01Y4MFkYbfEyRqPDx2xjqv2W
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts"
 }
 ```
 
@@ -344,7 +344,7 @@ tool_use Read
 id: toolu_01264voxS6cTzECpHmPnY9BX
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts"
 }
 ```
 
@@ -358,7 +358,7 @@ tool_use Write
 id: toolu_01CHMEUNmenC825G523mzsK1
 ```json
 {
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "content": "# EXTREME 캐릭터별 랭킹 필터 구현 계획\n\n## Context\n현재 LeaderboardScene은 난이도별(NORMAL/HARD/EXTREME/PHYSICAL) 탭만 지원한다. EXTREME은 가장 어려운 모드로, 캐릭터 능력이 생존에 직접 영향을 미쳐 \"어떤 캐릭터로 얼마나 버텼나\"가 의미 있는 지표다. EXTREME 탭 선택 시 캐릭터 필터 칩 행을 추가해 \"같은 캐릭터끼리의 경쟁\"을 가능하게 한다.\n\n**핵심 사실**:\n- `leaderboard` 테이블에 이미 `character_type` 컬럼 존재 — 제출 시 이미 저장됨\n- `leaderboard-top` 응답에서 이미 `characterType` 필드 반환\n- 데이터 인프라는 준비됨 — Edge Function 필터 추가 + UI 구현만 필요\n\n---\n\n## 변경 파일 목록\n\n### 1. `supabase/functions/leaderboard-top/index.ts`\n**변경 내용**: 선택적 `characterType` 파라미터 지원 추가\n\n```\nreq.json() → { difficulty, limit, characterType }   // characterType 파싱 추가\n```\n\n- 메인 리더보드 쿼리(줄 96-107): `characterType` truthy 시 `.eq('character_type', characterType)` 체이닝\n- `characterType` 제공 시 `currentUserRank`와 `prevSeasonReward` 계산 스킵 (캐릭터 필터뷰에서는 난이도 전체 순위/보상이 무의미)\n\n---\n\n### 2. `src/utils/leaderboard.ts`\n**변경 내용**: `getLeaderboard()` 시그니처에 선택적 파라미터 추가\n\n```typescript\n// 줄 150 변경\nexport async function getLeaderboard(\n  difficulty: Difficulty,\n  limit: number = 100,\n  characterType?: string   // 추가\n): Promise<LeaderboardResponse>\n```\n\n- body에 `characterType` truthy 시만 포함: `...(characterType ? { characterType } : {})`\n\n---\n\n### 3. `src/scenes/LeaderboardScene.ts`\n**변경 내용**: EXTREME 선택 시 캐릭터 필터 칩 행 표시\n\n#### 새 프로퍼티 (줄 13 클래스 상단)\n```typescript\nprivate selectedCharFilter: string | null = null;   // null = 전체\nprivate availableChars: string[] = [];               // 전체 로드 후 채워짐\nprivate charFilterObjects: […]
 
 > TOOL
@@ -366,7 +366,7 @@ id: toolu_01CHMEUNmenC825G523mzsK1
 tool_result
 id: toolu_01CHMEUNmenC825G523mzsK1
 ```
-File created successfully at: /Users/johyunduk/.claude/plans/unified-herding-owl.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/unified-herding-owl.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -441,7 +441,7 @@ tool_use Write
 id: toolu_01Smf9fvdpERTbGDy2V3YvY5
 ```json
 {
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "content": "# EXTREME 캐릭터별 랭킹 필터 구현 계획\n\n## Context\n현재 LeaderboardScene은 난이도별(NORMAL/HARD/EXTREME/PHYSICAL) 탭만 지원한다. EXTREME은 가장 어려운 모드로, 캐릭터 능력이 생존에 직접 영향을 미쳐 \"어떤 캐릭터로 얼마나 버텼나\"가 의미 있는 지표다.\n\n**핵심 버그 (이번에 함께 수정)**:\n현재 `leaderboard` 테이블 PK가 `(user_id, difficulty, year_month)`이라 사용자당 월 1개 기록만 존재한다. 레거시 2만점 기록 보유 시 무기로 5천점을 달성해도 \"5천 < 2만\" 조건에 의해 무기 점수가 저장되지 않는다. 캐릭터 필터를 의미 있게 만들려면 이 구조를 반드시 변경해야 한다.\n\n---\n\n## DB 스키마 변경 (Migration)\n\n### 변경 내용\n```sql\n-- 기존 PK 제거: (user_id, difficulty, year_month)\n-- 신규 PK 추가: (user_id, difficulty, year_month, character_type)\n\nALTER TABLE leaderboard DROP CONSTRAINT leaderboard_pkey;\nALTER TABLE leaderboard ADD PRIMARY KEY (user_id, difficulty, year_month, character_type);\n```\n\n### 전체 랭킹용 VIEW 생성\n전체 랭킹(캐릭터 필터 없음) 조회 시 유저당 최고 점수 1개만 노출하기 위한 뷰:\n\n```sql\nCREATE OR REPLACE VIEW leaderboard_best AS\nSELECT DISTINCT ON (user_id, difficulty, year_month)\n  user_id, difficulty, year_month, character_type, score, season, updated_at\nFROM leaderboard\nORDER BY user_id, difficulty, year_month, score DESC;\n```\n\n→ `leaderboard-top`에서 캐릭터 필터 없을 때 이 VIEW를 사용.\n\n---\n\n## 변경 파일 목록\n\n### 1. `supabase/migrations/YYYYMMDD_leaderboard_char_pk.sql` (신규)\n위 migration SQL 파일 생성.\n\n---\n\n### 2. `supabase/functions/leaderboard-submit/index.ts`\n**변경 내용**: UPSERT conflict target 변경\n\n```typescript\n// 기존: conflict target = (user_id, difficulty, year_month)\n// 변경: conflict target = (user_id, difficulty, year_month, character_type)\n\n.upsert({\n  user_id, difficulty, year_month, character_type,\n  score, season, updated_at\n}, […]
 
 > TOOL
@@ -449,7 +449,7 @@ id: toolu_01Smf9fvdpERTbGDy2V3YvY5
 tool_result
 id: toolu_01Smf9fvdpERTbGDy2V3YvY5
 ```
-The file /Users/johyunduk/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -524,7 +524,7 @@ tool_use Write
 id: toolu_01NEo7s7Ztb17Pi3nRDufBWM
 ```json
 {
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "content": "# EXTREME 캐릭터별 랭킹 구현 계획\n\n## Context\n현재 LeaderboardScene은 난이도별(NORMAL/HARD/EXTREME/PHYSICAL) 탭만 지원한다. EXTREME은 가장 어려운 모드로, 캐릭터 능력이 생존에 직접 영향을 미쳐 \"어떤 캐릭터로 얼마나 버텼나\"가 의미 있는 지표다. EXTREME 탭 선택 시 캐릭터 필터 칩 행을 추가해 \"같은 캐릭터끼리의 경쟁\"을 가능하게 한다.\n\n**핵심 버그 (함께 수정)**:\n현재 `leaderboard` PK는 `(user_id, difficulty, year_month)` — 사용자당 월 1개 기록만 존재. 레거시 2만점 보유 시 무기로 5천점을 달성해도 저장되지 않는다.\n\n**해결 전략: 별도 테이블 분리**\n- `leaderboard` 테이블은 완전 무변경 (기존 보상 시스템과 얽혀 있음)\n- EXTREME 전용 `leaderboard_extreme_char` 테이블을 신규 생성\n- PK: `(user_id, year_month, character_type)` — 캐릭터별 베스트 스코어 저장\n- EXTREME 플레이 시 기존 `leaderboard` + 새 테이블에 각각 write\n\n---\n\n## 변경 파일 목록\n\n### 1. `supabase/migrations/YYYYMMDD_leaderboard_extreme_char.sql` (신규)\n\n```sql\nCREATE TABLE leaderboard_extreme_char (\n  user_id       UUID        NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,\n  year_month    TEXT        NOT NULL,  -- 'YYYY-MM'\n  character_type TEXT       NOT NULL DEFAULT 'chibi',\n  score         INTEGER     NOT NULL DEFAULT 0,\n  season        INTEGER     NOT NULL DEFAULT 1,\n  updated_at    TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n  PRIMARY KEY (user_id, year_month, character_type)\n);\n\n-- 점수 내림차순 인덱스 (랭킹 조회 성능)\nCREATE INDEX idx_extreme_char_score\n  ON leaderboard_extreme_char (year_month, character_type, score DESC);\n\n-- RLS: 누구나 읽기 가능, 본인만 쓰기\nALTER TABLE leaderboard_extreme_char ENABLE ROW LEVEL SECURITY;\nCREATE POLICY \"read all\" ON leaderboard_extreme_char FOR SELECT USING (true);\nCREATE […]
 
 > TOOL
@@ -532,7 +532,7 @@ id: toolu_01NEo7s7Ztb17Pi3nRDufBWM
 tool_result
 id: toolu_01NEo7s7Ztb17Pi3nRDufBWM
 ```
-The file /Users/johyunduk/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -569,7 +569,7 @@ id: toolu_01VgJ2AZRmpdJankTjKW5BZU
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/johyunduk/.claude/plans/unified-herding-owl.md
+Your plan has been saved to: /home/<USER>/.claude/plans/unified-herding-owl.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
@@ -613,7 +613,7 @@ tool_use Read
 id: toolu_01J6NWp9RUvsYZsuMhh2gBpM
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts"
 }
 ```
 
@@ -669,7 +669,7 @@ tool_use Bash
 id: toolu_01Ah78Xnr41iBKo1sGeJmYWx
 ```json
 {
-  "command": "ls /Users/johyunduk/Projects/ddong-avoid-game/supabase/migrations/ 2>/dev/null || echo \"no migrations dir\"",
+  "command": "ls /home/<USER>/Projects/ddong-avoid-game/supabase/migrations/ 2>/dev/null || echo \"no migrations dir\"",
   "description": "List migrations directory"
 }
 ```
@@ -732,7 +732,7 @@ id: toolu_012oLndvYX6pRXKUKpkpcGq1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts",
   "old_string": "    const yearMonth = getCurrentYearMonth();\n    const season = calcSeason(yearMonth);\n\n    // 현재 시즌 기존 점수 조회\n    const { data: existing } = await supabaseAdmin\n      .from('leaderboard')\n      .select('score')\n      .eq('user_id', user.id)\n      .eq('difficulty', difficulty)\n      .eq('year_month', yearMonth)\n      .single();\n\n    const previousScore = existing?.score ?? null;\n    const isNewRecord = previousScore === null || score > previousScore;\n\n    // 최고 점수만 저장 (upsert)\n    if (isNewRecord) {\n      const validCharacterTypes = [\n        'chibi', 'mugi', 'gumi', 'knight',\n        'log', 'swap', 'sum', 'fork', 'seed', 'session', 'branch', 'hook', 'socket', 'index',\n        'hacker', 'miner', 'maehwa', 'archieve', 'glitch', 'noise',\n        'sentinel', 'legacy',\n      ];\n      const safeCharacterType = validCharacterTypes.includes(characterType) ? characterType : 'chibi';\n\n      const { error: upsertError } = await supabaseAdmin\n        .from('leaderboard')\n        .upsert(\n          {\n            user_id: user.id,\n            difficulty,\n            score,\n            character_type: safeCharacterType,\n            year_month: yearMonth,\n            season,\n            updated_at: new Date().toISOString(),\n          },\n          { onConflict: 'user_id,difficulty,year_month' }\n        );\n\n      if (upsertError) {\n        console.error('Upsert error:', upsertError);\n        return new Response(\n          JSON.stringify({ error: 'Failed to save score' }),\n          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }\n        );\n      }\n    }",
   "new_string": "    const yearMonth = getCurrentYearMonth();\n    const season = calcSeason(yearMonth);\n\n    const validCharacterTypes = [\n      'chibi', 'mugi', 'gumi', 'knight',\n      'log', 'swap', 'sum', 'fork', 'seed', 'session', 'branch', 'hook', 'socket', 'index',\n      'hacker', 'miner', 'maehwa', 'archieve', 'glitch', 'noise',\n      'sentinel', 'legacy',\n    ];\n    const safeCharacterType = […]
 
@@ -741,7 +741,7 @@ id: toolu_012oLndvYX6pRXKUKpkpcGq1
 tool_result
 id: toolu_012oLndvYX6pRXKUKpkpcGq1
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -755,7 +755,7 @@ id: toolu_01S3kH8fChNfn5e86ubsPvSv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "old_string": "    const { difficulty, limit: limitParam } = await req.json().catch(() => ({}));\n    const limit = parseInt(limitParam ?? '100', 10);",
   "new_string": "    const { difficulty, limit: limitParam, characterType } = await req.json().catch(() => ({}));\n    const limit = parseInt(limitParam ?? '100', 10);"
 }
@@ -766,7 +766,7 @@ id: toolu_01S3kH8fChNfn5e86ubsPvSv
 tool_result
 id: toolu_01S3kH8fChNfn5e86ubsPvSv
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -780,7 +780,7 @@ id: toolu_019sSWCyqXXYcxcR9Qxu6GvT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "old_string": "    const yearMonth = getCurrentYearMonth();\n    const prevYearMonth = getPrevYearMonth(yearMonth);\n\n    // 현재 시즌 리더보드 조회 (profiles와 JOIN하여 이니셜 포함)",
   "new_string": "    const yearMonth = getCurrentYearMonth();\n    const prevYearMonth = getPrevYearMonth(yearMonth);\n\n    // EXTREME 캐릭터 필터: leaderboard_extreme_char 테이블 조회 후 조기 반환\n    if (characterType && difficulty === 'extreme') {\n      const { data: charData, error: charError } = await supabaseAdmin\n        .from('leaderboard_extreme_char')\n        .select('user_id, score, character_type, profiles!inner(initials)')\n        .eq('year_month', yearMonth)\n        .eq('character_type', characterType)\n        .order('score', { ascending: false })\n        .limit(safeLimit);\n\n      if (charError) {\n        console.error('Extreme char leaderboard error:', charError);\n        return new Response(\n          JSON.stringify({ error: 'Failed to fetch character leaderboard' }),\n          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }\n        );\n      }\n\n      const charEntries = (charData ?? []).map((entry, index) => ({\n        userId: entry.user_id,\n        userName: (entry.profiles as { initials: string | null }).initials ?? '???',\n        score: entry.score,\n        rank: index + 1,\n        characterType: (entry as Record<string, unknown>).character_type ?? 'chibi',\n      }));\n\n      return new Response(\n        JSON.stringify({\n          success: true,\n          difficulty,\n          yearMonth,\n          season: calcSeason(yearMonth),\n          leaderboard: charEntries,\n          currentUserRank: null,\n          totalEntries: charEntries.length,\n          prevSeasonReward: null,\n        }),\n        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }\n      );\n    }\n\n    // 현재 시즌 리더보드 조회 (profiles와 JOIN하여 이니셜 포함)"
 }
@@ -791,7 +791,7 @@ id: toolu_019sSWCyqXXYcxcR9Qxu6GvT
 tool_result
 id: toolu_019sSWCyqXXYcxcR9Qxu6GvT
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -805,7 +805,7 @@ id: toolu_01VxHDyvhtKfHnvWATJY9Lgq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts",
   "old_string": "export async function getLeaderboard(\n  difficulty: Difficulty,\n  limit: number = 100\n): Promise<LeaderboardResponse> {\n  const { data, error } = await supabase.functions.invoke('leaderboard-top', {\n    body: { difficulty, limit },\n  });",
   "new_string": "export async function getLeaderboard(\n  difficulty: Difficulty,\n  limit: number = 100,\n  characterType?: string\n): Promise<LeaderboardResponse> {\n  const body: Record<string, unknown> = { difficulty, limit };\n  if (characterType) body.characterType = characterType;\n\n  const { data, error } = await supabase.functions.invoke('leaderboard-top', {\n    body,\n  });"
 }
@@ -816,7 +816,7 @@ id: toolu_01VxHDyvhtKfHnvWATJY9Lgq
 tool_result
 id: toolu_01VxHDyvhtKfHnvWATJY9Lgq
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -830,7 +830,7 @@ id: toolu_01E7sVt5We2rGN49DFVuBQjx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  private selectedDifficulty: Difficulty = DifficultyEnum.NORMAL;\n  private leaderboardData: LeaderboardEntry[] = [];\n  private leaderboardTexts: Phaser.GameObjects.GameObject[] = [];\n  private loadingText?: Phaser.GameObjects.Text;\n  private errorText?: Phaser.GameObjects.Text;\n  private currentRequestId: number = 0;\n  private difficultyButtons = new Map<Difficulty, Phaser.GameObjects.Rectangle>();",
   "new_string": "  private selectedDifficulty: Difficulty = DifficultyEnum.NORMAL;\n  private leaderboardData: LeaderboardEntry[] = [];\n  private leaderboardTexts: Phaser.GameObjects.GameObject[] = [];\n  private loadingText?: Phaser.GameObjects.Text;\n  private errorText?: Phaser.GameObjects.Text;\n  private currentRequestId: number = 0;\n  private difficultyButtons = new Map<Difficulty, Phaser.GameObjects.Rectangle>();\n\n  // EXTREME 캐릭터 필터\n  private selectedCharFilter: string | null = null;\n  private availableChars: string[] = [];\n  private charFilterObjects: Phaser.GameObjects.GameObject[] = [];"
 }
@@ -841,7 +841,7 @@ id: toolu_01E7sVt5We2rGN49DFVuBQjx
 tool_result
 id: toolu_01E7sVt5We2rGN49DFVuBQjx
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -851,7 +851,7 @@ id: toolu_01G1XysFMfmPLjwYgyv8NNNd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  private selectDifficulty(difficulty: Difficulty) {\n    // 같은 난이도면 무시\n    if (this.selectedDifficulty === difficulty) {\n      return;\n    }\n\n    this.selectedDifficulty = difficulty;\n\n    // 모든 버튼 스타일 재설정\n    this.difficultyButtons.forEach((btn, diff) => {\n      const isSelected = diff === difficulty;\n      btn.setFillStyle(isSelected ? 0xffff99 : 0xffffff);\n      btn.setStrokeStyle(3, isSelected ? 0xff0000 : 0x000000);\n    });\n\n    // 새로운 난이도 데이터 로드\n    this.loadLeaderboard();\n  }",
   "new_string": "  private selectDifficulty(difficulty: Difficulty) {\n    if (this.selectedDifficulty === difficulty) return;\n\n    this.selectedDifficulty = difficulty;\n\n    // 난이도 전환 시 캐릭터 필터 초기화\n    this.selectedCharFilter = null;\n    this.availableChars = [];\n    this.charFilterObjects.forEach(o => o.destroy());\n    this.charFilterObjects = [];\n\n    this.difficultyButtons.forEach((btn, diff) => {\n      const isSelected = diff === difficulty;\n      btn.setFillStyle(isSelected ? 0xffff99 : 0xffffff);\n      btn.setStrokeStyle(3, isSelected ? 0xff0000 : 0x000000);\n    });\n\n    this.loadLeaderboard();\n  }"
 }
@@ -862,7 +862,7 @@ id: toolu_01G1XysFMfmPLjwYgyv8NNNd
 tool_result
 id: toolu_01G1XysFMfmPLjwYgyv8NNNd
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -872,7 +872,7 @@ id: toolu_01Qtzdm3pqU3jgrNyqQgCVY5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    try {\n      const response = await getLeaderboard(this.selectedDifficulty, 10);\n\n      // 응답이 도착했을 때 최신 요청인지 확인\n      if (requestId !== this.currentRequestId) {\n        // 이미 새로운 요청이 시작됨 - 이 응답은 무시\n        return;\n      }\n\n      this.leaderboardData = response.leaderboard;",
   "new_string": "    try {\n      const response = await getLeaderboard(\n        this.selectedDifficulty,\n        10,\n        this.selectedCharFilter ?? undefined\n      );\n\n      if (requestId !== this.currentRequestId) return;\n\n      this.leaderboardData = response.leaderboard;\n\n      // EXTREME 전체 로드 시 캐릭터 목록 갱신 (필터 없을 때만)\n      if (this.selectedDifficulty === DifficultyEnum.EXTREME && this.selectedCharFilter === null) {\n        this.availableChars = [\n          ...new Set(response.leaderboard.map(e => e.characterType ?? 'chibi').filter(Boolean)),\n        ];\n      }"
 }
@@ -883,7 +883,7 @@ id: toolu_01Qtzdm3pqU3jgrNyqQgCVY5
 tool_result
 id: toolu_01Qtzdm3pqU3jgrNyqQgCVY5
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -893,7 +893,7 @@ id: toolu_018kFA3zShpYF9Ta6ByNBeiH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "      if (this.loadingText) {\n        this.loadingText.setVisible(false);\n      }\n\n      this.displayLeaderboard();\n      this.updateRewardUI();",
   "new_string": "      if (this.loadingText) {\n        this.loadingText.setVisible(false);\n      }\n\n      this.displayLeaderboard();\n      this.updateCharFilterRow();\n      this.updateRewardUI();"
 }
@@ -904,7 +904,7 @@ id: toolu_018kFA3zShpYF9Ta6ByNBeiH
 tool_result
 id: toolu_018kFA3zShpYF9Ta6ByNBeiH
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -918,7 +918,7 @@ id: toolu_011FN2RrkjGkvDNshmLWSGrV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  private displayLeaderboard() {\n    const W = this.scale.width;\n    const yOff = (this.scale.height - 600) / 2;\n    const startY = 130 + yOff;",
   "new_string": "  private displayLeaderboard() {\n    const W = this.scale.width;\n    const yOff = (this.scale.height - 600) / 2;\n    const startY = (this.selectedDifficulty === DifficultyEnum.EXTREME ? 170 : 130) + yOff;"
 }
@@ -929,7 +929,7 @@ id: toolu_011FN2RrkjGkvDNshmLWSGrV
 tool_result
 id: toolu_011FN2RrkjGkvDNshmLWSGrV
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -943,7 +943,7 @@ id: toolu_014sheHnvsqyoU8GdpFPWRLx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** 보상수령 버튼 상태 갱신 */\n  private updateRewardUI() {\n    if (!this.rewardBtnBg || !this.rewardBtnLabel) return;\n\n    const btn = this.rewardBtnBg;\n    const label = this.rewardBtnLabel;\n    const reward = this.prevSeasonReward;",
   "new_string": "  /** 보상수령 버튼 상태 갱신 */\n  private updateRewardUI() {\n    if (!this.rewardBtnBg || !this.rewardBtnLabel) return;\n\n    const btn = this.rewardBtnBg;\n    const label = this.rewardBtnLabel;\n\n    // 캐릭터 필터 활성 시 보상 버튼 비활성 (캐릭터별 순위에서 보상은 무의미)\n    if (this.selectedCharFilter !== null) {\n      btn.setFillStyle(0x555555).setStrokeStyle(3, 0x333333);\n      btn.disableInteractive();\n      btn.removeAllListeners();\n      label.setText('보상수령').setColor('#999999');\n      return;\n    }\n\n    const reward = this.prevSeasonReward;"
 }
@@ -954,7 +954,7 @@ id: toolu_014sheHnvsqyoU8GdpFPWRLx
 tool_result
 id: toolu_014sheHnvsqyoU8GdpFPWRLx
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -968,7 +968,7 @@ id: toolu_01DdZedRhXHumkcYrPA7ZCEr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** 이번 달 말일까지 남은 일수 */\n  private calcDaysUntilMonthEnd(): number {",
   "new_string": "  /** EXTREME 선택 시 캐릭터 필터 칩 행 렌더 (그 외 난이도에서는 숨김) */\n  private updateCharFilterRow() {\n    this.charFilterObjects.forEach(o => o.destroy());\n    this.charFilterObjects = [];\n\n    if (this.selectedDifficulty !== DifficultyEnum.EXTREME) return;\n\n    const W = this.scale.width;\n    const yOff = (this.scale.height - 600) / 2;\n    const cy = 145 + yOff;\n\n    const CHIP_W = 32, CHIP_H = 26, GAP = 5;\n\n    type Chip = { id: string | null; label?: string; charId?: string };\n    const chips: Chip[] = [\n      { id: null, label: '전체' },\n      ...this.availableChars.slice(0, 9).map(id => ({ id, charId: id })),\n    ];\n\n    const totalW = chips.length * CHIP_W + (chips.length - 1) * GAP;\n    let x = W / 2 - totalW / 2 + CHIP_W / 2;\n\n    chips.forEach(chip => {\n      const isSel = this.selectedCharFilter === chip.id;\n\n      const bg = this.add.rectangle(x, cy, CHIP_W, CHIP_H, isSel ? 0x334477 : 0x1a1a2e, 1);\n      bg.setStrokeStyle(2, isSel ? 0xaaccff : 0x333355);\n      bg.setInteractive({ useHandCursor: true });\n      bg.on('pointerdown', () => {\n        if (this.selectedCharFilter !== chip.id) {\n          this.selectedCharFilter = chip.id;\n          this.loadLeaderboard();\n        }\n      });\n      this.charFilterObjects.push(bg);\n\n      if (chip.label) {\n        const txt = this.add.text(x, cy, chip.label, {\n          fontSize: '10px',\n […]
 
@@ -977,7 +977,7 @@ id: toolu_01DdZedRhXHumkcYrPA7ZCEr
 tool_result
 id: toolu_01DdZedRhXHumkcYrPA7ZCEr
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1013,7 +1013,7 @@ tool_use Read
 id: toolu_01RUKPpDUBG24r83TgCM5fnz
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "offset": 189,
   "limit": 60
 }
@@ -1109,7 +1109,7 @@ tool_use Bash
 id: toolu_01GBnBggD36rJVvKgLgSi8ax
 ```json
 {
-  "command": "cat /Users/johyunduk/Projects/ddong-avoid-game/supabase/config.toml 2>/dev/null | grep project_id | head -3",
+  "command": "cat /home/<USER>/Projects/ddong-avoid-game/supabase/config.toml 2>/dev/null | grep project_id | head -3",
   "description": "Get Supabase project ID from config"
 }
 ```
@@ -1181,7 +1181,7 @@ tool_use Write
 id: toolu_015Fw6J8ecJ8aAWnwT7JzogZ
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/deploy-extreme-char-leaderboard.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/deploy-extreme-char-leaderboard.md",
   "content": "# EXTREME 캐릭터별 랭킹 배포 가이드\n\n## 배포 순서\n\n### 1단계 — DB Migration\n\nSupabase 대시보드 → **SQL Editor** → 아래 SQL 실행\n\n```sql\nCREATE TABLE IF NOT EXISTS leaderboard_extreme_char (\n  user_id        UUID        NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,\n  year_month     TEXT        NOT NULL,\n  character_type TEXT        NOT NULL DEFAULT 'chibi',\n  score          INTEGER     NOT NULL DEFAULT 0,\n  season         INTEGER     NOT NULL DEFAULT 1,\n  updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n  PRIMARY KEY (user_id, year_month, character_type)\n);\n\nCREATE INDEX IF NOT EXISTS idx_extreme_char_score\n  ON leaderboard_extreme_char (year_month, character_type, score DESC);\n\nALTER TABLE leaderboard_extreme_char ENABLE ROW LEVEL SECURITY;\n\nCREATE POLICY \"extreme_char_read_all\" ON leaderboard_extreme_char\n  FOR SELECT USING (true);\n\nCREATE POLICY \"extreme_char_insert_own\" ON leaderboard_extreme_char\n  FOR INSERT WITH CHECK (auth.uid() = user_id);\n\nCREATE POLICY \"extreme_char_update_own\" ON leaderboard_extreme_char\n  FOR UPDATE USING (auth.uid() = user_id);\n```\n\n### 2단계 — Edge Function 배포\n\n```bash\nsupabase functions deploy leaderboard-submit --no-verify-jwt\n```\n\n```bash\nsupabase functions deploy leaderboard-top --no-verify-jwt\n```\n\n---\n\n## 검증\n\n1. EXTREME 플레이 후 Supabase 대시보드 → Table Editor → `leaderboard_extreme_char` 에 행 생성 확인\n2. 동일 유저로 다른 캐릭터 플레이 → 캐릭터별 독립 행 존재 확인\n3. 랭킹보드 → EXTREME 탭 → 캐릭터 필터 칩 행 표시 확인\n4. 캐릭터 칩 클릭 → 해당 캐릭터 점수만 필터링 확인\n\n---\n\n## 참고\n\n- SQL Editor를 쓰는 이유: 기존 migration이 이미 원격 적용된 상태라 `supabase db push`는 이전 migration 재실행을 시도할 […]
 
 > TOOL
@@ -1189,7 +1189,7 @@ id: toolu_015Fw6J8ecJ8aAWnwT7JzogZ
 tool_result
 id: toolu_015Fw6J8ecJ8aAWnwT7JzogZ
 ```
-File created successfully at: /Users/johyunduk/Projects/ddong-avoid-game/docs/deploy-extreme-char-leaderboard.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/ddong-avoid-game/docs/deploy-extreme-char-leaderboard.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1325,7 +1325,7 @@ tool_use Bash
 id: toolu_011Jiq5eLHE2xy86X3aEVaAS
 ```json
 {
-  "command": "grep -n \"isNewRecord\\|newRecord\\|최고\\|highscore\\|high_score\\|bestScore\\|이니셜\\|initials\\|submitScore\\|gameOver\\|게임오버\" /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts | head -50",
+  "command": "grep -n \"isNewRecord\\|newRecord\\|최고\\|highscore\\|high_score\\|bestScore\\|이니셜\\|initials\\|submitScore\\|gameOver\\|게임오버\" /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts | head -50",
   "description": "Find score submission condition in GameScene"
 }
 ```
@@ -1376,7 +1376,7 @@ tool_use Read
 id: toolu_01JLiHqCgHQyEc9WBVYZUd9H
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 1459,
   "limit": 60
 }
@@ -1442,7 +1442,7 @@ tool_use Read
 id: toolu_014uaobM59GcvWKxGVjFGc2C
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 1555,
   "limit": 220
 }
@@ -1513,7 +1513,7 @@ tool_use Read
 id: toolu_017Nbs1c9DpnXVba2um2SarH
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 1510,
   "limit": 65
 }
@@ -1591,7 +1591,7 @@ id: toolu_01VToEwjF1GRaQZWYfuNe2Q1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "      // 재시작 안내\n      this.showRestartButton(false);\n    }\n  }\n\n  /**\n   * 이니셜 입력 UI 표시\n   */\n  private showInitialInputUI() {",
   "new_string": "      // EXTREME 비신기록: 저장된 이니셜로 캐릭터 랭킹 조용히 제출\n      if (this.scoreDifficulty === 'extreme') {\n        const savedInitials = getUserInitials();\n        if (savedInitials) {\n          this.submitScoreForCharRanking(savedInitials);\n        }\n      }\n\n      // 재시작 안내\n      this.showRestartButton(false);\n    }\n  }\n\n  private async submitScoreForCharRanking(initials: string) {\n    try {\n      const sessionId = await this.sessionPromise;\n      await submitScore(\n        this.score,\n        this.scoreDifficulty,\n        initials,\n        {\n          gameStartTime: this.gameStartTime,\n          gameEndTime: realNow(),\n          goldCollected: this.goldCollected,\n          diamondCollected: this.diamondCollected,\n          topazCollected: this.topazCollected,\n          rainbowCollected: this.rainbowCollected,\n          collectBonusTotal: this.collectBonusTotal,\n          abilityBonusTotal: this.abilityBonusTotal,\n        },\n        this.selectedCharId,\n        sessionId\n      );\n    } catch {\n      // 캐릭터 랭킹 제출 실패 시 UX 영향 없이 조용히 무시\n    }\n  }\n\n  /**\n   * 이니셜 입력 UI 표시\n   */\n  private showInitialInputUI() {"
 }
@@ -1635,7 +1635,7 @@ id: toolu_017fVg37hdZLNKdckMioewCG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "old_string": "### 2. `supabase/functions/leaderboard-submit/index.ts`",
   "new_string": "### 1-1. `src/utils/extremeCharBest.ts` (신규)\n캐릭터별 EXTREME 베스트 점수를 localStorage에 저장/조회하는 유틸.\ndjb2 서명 패턴 적용 (MEMORY.md 패턴과 동일).\n\n```typescript\n// localStorage 키\n// extremeCharBest:    { \"chibi\": 1234, \"mugi\": 5678, ... }\n// extremeCharBestSig: djb2 서명\n\nexport function getExtremeCharBest(charId: string): number\n  // 없으면 0 반환, 서명 불일치 시 초기화\n\nexport function updateExtremeCharBest(charId: string, score: number): void\n  // score > 기존값일 때만 갱신\n```\n\n---\n\n### 2. `supabase/functions/leaderboard-submit/index.ts`"
 }
@@ -1646,7 +1646,7 @@ id: toolu_017fVg37hdZLNKdckMioewCG
 tool_result
 id: toolu_017fVg37hdZLNKdckMioewCG
 ```
-The file /Users/johyunduk/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1656,7 +1656,7 @@ id: toolu_01Nx9SwNBZpNZkav5mhWrbpC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "old_string": "---\n\n## 레이아웃 (EXTREME 선택 시)",
   "new_string": "---\n\n### 6. `src/scenes/GameScene.ts`\n**변경 내용**: EXTREME 캐릭터 최고 점수 HUD 표시 + 게임오버 시 캐릭터 기록 갱신 제출\n\n#### 새 프로퍼티\n```typescript\nprivate charHighScore: number = 0;\nprivate charHighScoreText?: Phaser.GameObjects.Text;\n```\n\n#### `init()` 수정\n```typescript\n// EXTREME 모드일 때 캐릭터 베스트 로드\nif (this.difficulty === 'extreme') {\n  this.charHighScore = getExtremeCharBest(this.selectedCharId);\n}\n```\n\n#### HUD 생성 수정 (create 내 highScoreText 생성 부근)\nEXTREME 모드일 때 \"최고: XXXXX\" 아래에 캐릭터 최고 점수 텍스트 추가:\n```\n최고: XXXXX       ← 기존 (난이도별 전체 최고)\n캐릭터: XXXXX     ← 신규 (이 캐릭터의 EXTREME 최고)\n```\n\n#### `update()` 내 점수 갱신 로직 수정\n```typescript\n// 실시간 캐릭터 최고 점수 갱신\nif (this.scoreDifficulty === 'extreme' && this.score > this.charHighScore) {\n  this.charHighScore = this.score;\n  this.charHighScoreText?.setText(`캐릭터: ${this.charHighScore}`);\n}\n```\n\n#### `hitPoop()` → 게임오버 처리 수정 (1459~1463 부근)\n```typescript\nconst isNewRecord = updateHighScore(this.scoreDifficulty, this.score);\nconst isCharNewRecord = this.scoreDifficulty === 'extreme'\n  && this.score > getExtremeCharBest(this.selectedCharId);\n\nthis.showGameOverUI(isNewRecord, isCharNewRecord);\n```\n\n#### `showGameOverUI(isNewRecord, isCharNewRecord)` 수정\n- `else` 분기 (비신기록)에서 `isCharNewRecord`가 true일 때:\n  - 저장된 이니셜로 `submitScoreForCharRanking()` 호출\n  - 성공 후 `updateExtremeCharBest(this.selectedCharId, this.score)` 호출\n- `if (isNewRecord)` 분기에서 제출 성공 후:\n  - 추가로 `updateExtremeCharBest(this.selectedCharId, this.score)` 호출\n\n#### `submitScoreForCharRanking(initials)` 신규 private 메서드\n저장된 이니셜로 조용히 `submitScore()` 호출. 성공/실패 모두 UX 영향 없음.\n\n---\n\n## 레이아웃 (EXTREME 선택 시)"
 }
@@ -1667,7 +1667,7 @@ id: toolu_01Nx9SwNBZpNZkav5mhWrbpC
 tool_result
 id: toolu_01Nx9SwNBZpNZkav5mhWrbpC
 ```
-The file /Users/johyunduk/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1681,7 +1681,7 @@ id: toolu_013qVJ3QLqnSPHEVnP3VkRxU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "old_string": "## 검증 방법\n1. Migration 적용: `leaderboard_extreme_char` 테이블 생성 확인\n2. EXTREME 플레이 후 `leaderboard_extreme_char`에 캐릭터별 행 저장 확인\n3. 동일 유저, 다른 캐릭터로 재플레이 → 각각 독립 행 존재 확인\n4. `npx tsc --noEmit` — 타입 에러 없음\n5. LeaderboardScene → EXTREME 탭 → 캐릭터 필터 행 등장 확인\n6. 캐릭터 칩 클릭 → 해당 캐릭터 점수만 필터링, 보상 버튼 숨김 확인\n7. EXTREME → HARD 전환 → 필터 행 사라짐 확인\n8. 기존 NORMAL/HARD 랭킹 정상 작동 확인 (기존 테이블 무변경)",
   "new_string": "## 검증 방법\n1. Migration 적용: `leaderboard_extreme_char` 테이블 생성 확인\n2. EXTREME 플레이 중: HUD에 \"최고: XXXXX\" + \"캐릭터: XXXXX\" 두 줄 표시 확인\n3. 전체 최고 갱신 시: 이니셜 입력 → 제출 → `leaderboard_extreme_char` + localStorage 갱신 확인\n4. 전체 최고 미갱신, 캐릭터 최고 갱신 시: 자동 제출 → `leaderboard_extreme_char` 갱신 확인\n5. 전체/캐릭터 최고 모두 미갱신 시: 네트워크 요청 없음 확인\n6. `npx tsc --noEmit` — 타입 에러 없음\n7. LeaderboardScene → EXTREME 탭 → 캐릭터 필터 행 등장 확인\n8. 캐릭터 칩 클릭 → 해당 캐릭터 점수만 필터링, 보상 버튼 숨김 확인\n9. EXTREME → HARD 전환 → 필터 행 사라짐 확인\n10. 기존 NORMAL/HARD 랭킹 정상 작동 확인 (기존 테이블 무변경)"
 }
@@ -1692,7 +1692,7 @@ id: toolu_013qVJ3QLqnSPHEVnP3VkRxU
 tool_result
 id: toolu_013qVJ3QLqnSPHEVnP3VkRxU
 ```
-The file /Users/johyunduk/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1716,7 +1716,7 @@ id: toolu_01Xg4NZbfVFqjwdCNQPRpupQ
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/johyunduk/.claude/plans/unified-herding-owl.md
+Your plan has been saved to: /home/<USER>/.claude/plans/unified-herding-owl.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
@@ -1758,7 +1758,7 @@ tool_use Read
 id: toolu_016dQWaxqySRHXvkMw3ixrWS
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 430,
   "limit": 30
 }
@@ -1807,7 +1807,7 @@ tool_use Read
 id: toolu_0163Q493FL8TqAvEGcvVX2xm
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 836,
   "limit": 20
 }
@@ -1846,7 +1846,7 @@ tool_use Bash
 id: toolu_013rhwwTLzBT5iHNReExitiy
 ```json
 {
-  "command": "grep -n \"realNow\\|import.*leaderboard\\|showGameOverUI\" /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts | head -20",
+  "command": "grep -n \"realNow\\|import.*leaderboard\\|showGameOverUI\" /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts | head -20",
   "description": "Find realNow usage and showGameOverUI signature in GameScene"
 }
 ```
@@ -1880,7 +1880,7 @@ tool_use Bash
 id: toolu_01C1jnzeqQrjSbpEBApKZyR2
 ```json
 {
-  "command": "grep -rn \"showGameOverUI\\|extends GameScene\" /Users/johyunduk/Projects/ddong-avoid-game/src/ | grep -v \"GameScene.ts\"",
+  "command": "grep -rn \"showGameOverUI\\|extends GameScene\" /home/<USER>/Projects/ddong-avoid-game/src/ | grep -v \"GameScene.ts\"",
   "description": "Check if showGameOverUI is overridden in subclasses"
 }
 ```
@@ -1905,7 +1905,7 @@ tool_use Write
 id: toolu_01AX7Ad5DQMvDhtjQ5DEwiRL
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts",
   "content": "import { djb2 } from './signing';\n\nconst _KEY = 'extremeCharBest';\nconst _SIG_KEY = 'extremeCharBestSig';\nconst _SALT = 'ddong-extreme-char-v1';\n\nfunction _sign(map: Record<string, number>): string {\n  const str =\n    Object.entries(map)\n      .sort(([a], [b]) => a.localeCompare(b))\n      .map(([k, v]) => `${k}:${v}`)\n      .join(',') + _SALT;\n  return djb2(str);\n}\n\nfunction _load(): Record<string, number> {\n  try {\n    const raw = localStorage.getItem(_KEY);\n    const sig = localStorage.getItem(_SIG_KEY);\n    if (!raw) return {};\n    const parsed = JSON.parse(raw) as Record<string, number>;\n    if (sig && sig !== _sign(parsed)) {\n      localStorage.removeItem(_KEY);\n      localStorage.removeItem(_SIG_KEY);\n      return {};\n    }\n    return parsed;\n  } catch {\n    return {};\n  }\n}\n\nfunction _save(map: Record<string, number>): void {\n  localStorage.setItem(_KEY, JSON.stringify(map));\n  localStorage.setItem(_SIG_KEY, _sign(map));\n}\n\nexport function getExtremeCharBest(charId: string): number {\n  return _load()[charId] ?? 0;\n}\n\nexport function updateExtremeCharBest(charId: string, score: number): void {\n  const map = _load();\n  if (score > (map[charId] ?? 0)) {\n    map[charId] = score;\n    _save(map);\n  }\n}\n"
 }
 ```
@@ -1915,7 +1915,7 @@ id: toolu_01AX7Ad5DQMvDhtjQ5DEwiRL
 tool_result
 id: toolu_01AX7Ad5DQMvDhtjQ5DEwiRL
 ```
-File created successfully at: /Users/johyunduk/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1924,7 +1924,7 @@ tool_use Bash
 id: toolu_01EwF9p5a8BqXFRHN3hUzACa
 ```json
 {
-  "command": "grep -n \"^export function djb2\\|export.*djb2\" /Users/johyunduk/Projects/ddong-avoid-game/src/utils/signing.ts 2>/dev/null | head -5",
+  "command": "grep -n \"^export function djb2\\|export.*djb2\" /home/<USER>/Projects/ddong-avoid-game/src/utils/signing.ts 2>/dev/null | head -5",
   "description": "Verify djb2 export exists in signing.ts"
 }
 ```
@@ -1943,7 +1943,7 @@ tool_use Bash
 id: toolu_01E5oZtgFC7bgxvovKYgSZPN
 ```json
 {
-  "command": "find /Users/johyunduk/Projects/ddong-avoid-game/src -name \"signing.ts\" | xargs grep -n \"djb2\" 2>/dev/null | head -10",
+  "command": "find /home/<USER>/Projects/ddong-avoid-game/src -name \"signing.ts\" | xargs grep -n \"djb2\" 2>/dev/null | head -10",
   "description": "Find djb2 function location"
 }
 ```
@@ -1962,7 +1962,7 @@ tool_use Bash
 id: toolu_012L2Br8CVmEXA9y2x3P14R6
 ```json
 {
-  "command": "grep -rn \"djb2\\|function.*sign\" /Users/johyunduk/Projects/ddong-avoid-game/src/utils/ | head -15",
+  "command": "grep -rn \"djb2\\|function.*sign\" /home/<USER>/Projects/ddong-avoid-game/src/utils/ | head -15",
   "description": "Find where djb2 is defined"
 }
 ```
@@ -1972,21 +1972,21 @@ id: toolu_012L2Br8CVmEXA9y2x3P14R6
 tool_result
 id: toolu_012L2Br8CVmEXA9y2x3P14R6
 ```
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts:1:import { djb2 } from './signing';
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts:7:function _sign(map: Record<string, number>): string {
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts:13:  return djb2(str);
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/battleLeaderboard.ts:49:// ── 랭크 캐시 (localStorage + djb2 서명) ──────────────────────────────
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/battleLeaderboard.ts:57:function _signCache(c: RatingCache): string {
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts:171:// 보안: djb2 서명으로 변조 방지 (실제 이중 수령은 서버 UNIQUE 제약이 방어)
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts:177:function _djb2(str: string): string {
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts:186:function _signClaims(claims: Record<string, number>): string {
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts:191:  return _djb2(str);
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts:358:/** djb2 해시 — key:value 쌍을 정렬 후 직렬화해 서명 */
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts:359:function _signDupes(map: Record<string, number>): string {
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts:422:/** djb2 해시 → base36 문자열 (무결성 서명용) */
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts:423:function _sign(list: string[]): string {
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/wallpaper.ts:101:// ── localStorage 서명 (djb2, character.ts 패턴과 동일) ──────────────────────
-/Users/johyunduk/Projects/ddong-avoid-game/src/utils/wallpaper.ts:108:function _signWpList(list: string[]): string {
+/home/<USER>/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts:1:import { djb2 } from './signing';
+/home/<USER>/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts:7:function _sign(map: Record<string, number>): string {
+/home/<USER>/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts:13:  return djb2(str);
+/home/<USER>/Projects/ddong-avoid-game/src/utils/battleLeaderboard.ts:49:// ── 랭크 캐시 (localStorage + djb2 서명) ──────────────────────────────
+/home/<USER>/Projects/ddong-avoid-game/src/utils/battleLeaderboard.ts:57:function _signCache(c: RatingCache): string {
+/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts:171:// 보안: djb2 서명으로 변조 방지 (실제 이중 수령은 서버 UNIQUE 제약이 방어)
+/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts:177:function _djb2(str: string): string {
+/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts:186:function _signClaims(claims: Record<string, number>): string {
+/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts:191:  return _djb2(str);
+/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts:358:/** djb2 해시 — key:value 쌍을 정렬 후 직렬화해 서명 */
+/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts:359:function _signDupes(map: Record<string, number>): string {
+/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts:422:/** djb2 해시 → base36 문자열 (무결성 서명용) */
+/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts:423:function _sign(list: string[]): string {
+/home/<USER>/Projects/ddong-avoid-game/src/utils/wallpaper.ts:101:// ── localStorage 서명 (djb2, character.ts 패턴과 동일) ──────────────────────
+/home/<USER>/Projects/ddong-avoid-game/src/utils/wallpaper.ts:108:function _signWpList(list: string[]): string {
 ```
 
 > AGENT
@@ -2000,7 +2000,7 @@ id: toolu_01TQysLETDja7u96KbNurXXP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts",
   "old_string": "import { djb2 } from './signing';\n\nconst _KEY = 'extremeCharBest';\nconst _SIG_KEY = 'extremeCharBestSig';\nconst _SALT = 'ddong-extreme-char-v1';\n\nfunction _sign(map: Record<string, number>): string {\n  const str =\n    Object.entries(map)\n      .sort(([a], [b]) => a.localeCompare(b))\n      .map(([k, v]) => `${k}:${v}`)\n      .join(',') + _SALT;\n  return djb2(str);\n}",
   "new_string": "const _KEY = 'extremeCharBest';\nconst _SIG_KEY = 'extremeCharBestSig';\nconst _SALT = 'ddong-extreme-char-v1';\n\nfunction _djb2(str: string): string {\n  let h = 5381;\n  for (let i = 0; i < str.length; i++) {\n    h = ((h << 5) + h) ^ str.charCodeAt(i);\n    h = h >>> 0;\n  }\n  return h.toString(36);\n}\n\nfunction _sign(map: Record<string, number>): string {\n  const str =\n    Object.entries(map)\n      .sort(([a], [b]) => a.localeCompare(b))\n      .map(([k, v]) => `${k}:${v}`)\n      .join(',') + _SALT;\n  return _djb2(str);\n}"
 }
@@ -2011,7 +2011,7 @@ id: toolu_01TQysLETDja7u96KbNurXXP
 tool_result
 id: toolu_01TQysLETDja7u96KbNurXXP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/extremeCharBest.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2024,7 +2024,7 @@ tool_use Read
 id: toolu_01Cq6TGvsEq6okDRsBqw8vRT
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 62,
   "limit": 30
 }
@@ -2061,7 +2061,7 @@ tool_use Read
 id: toolu_01X56S7SWGM2xEoZXh9rDgoW
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 115,
   "limit": 45
 }
@@ -2119,7 +2119,7 @@ tool_use Bash
 id: toolu_01XzZBETooC5jBt1JzXmped4
 ```json
 {
-  "command": "grep -n \"highScoreText\\|highScore\" /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts | head -15",
+  "command": "grep -n \"highScoreText\\|highScore\" /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts | head -15",
   "description": "Find highScore property declarations"
 }
 ```
@@ -2152,7 +2152,7 @@ id: toolu_011G4ZMZdYjxhrh1bHYE74j8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "  private highScore: number = 0;\n  protected highScoreText!: Phaser.GameObjects.Text;",
   "new_string": "  private highScore: number = 0;\n  protected highScoreText!: Phaser.GameObjects.Text;\n  private charHighScore: number = 0;\n  private charHighScoreText?: Phaser.GameObjects.Text;"
 }
@@ -2163,7 +2163,7 @@ id: toolu_011G4ZMZdYjxhrh1bHYE74j8
 tool_result
 id: toolu_011G4ZMZdYjxhrh1bHYE74j8
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2177,7 +2177,7 @@ id: toolu_014ZFArF42PXbzrDugxQLZNh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "import { submitScore, getUserInitials, setUserInitials, startGameSession } from '../utils/leaderboard';",
   "new_string": "import { submitScore, getUserInitials, setUserInitials, startGameSession } from '../utils/leaderboard';\nimport { getExtremeCharBest, updateExtremeCharBest } from '../utils/extremeCharBest';"
 }
@@ -2188,7 +2188,7 @@ id: toolu_014ZFArF42PXbzrDugxQLZNh
 tool_result
 id: toolu_014ZFArF42PXbzrDugxQLZNh
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2201,7 +2201,7 @@ tool_use Read
 id: toolu_01N3NQeVyJqqtjZ1VXBumL1M
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 265,
   "limit": 10
 }
@@ -2231,7 +2231,7 @@ id: toolu_01T6JxkDsKGoUMSdNTgjchMQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "    // 난이도별 최고 점수 로드\n    this.highScore = getHighScore(this.scoreDifficulty);",
   "new_string": "    // 난이도별 최고 점수 로드\n    this.highScore = getHighScore(this.scoreDifficulty);\n    // EXTREME: 캐릭터별 최고 점수 로드\n    this.charHighScore = this.scoreDifficulty === 'extreme'\n      ? getExtremeCharBest(this.selectedCharId)\n      : 0;"
 }
@@ -2242,7 +2242,7 @@ id: toolu_01T6JxkDsKGoUMSdNTgjchMQ
 tool_result
 id: toolu_01T6JxkDsKGoUMSdNTgjchMQ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2254,7 +2254,7 @@ The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has 
 tool_result
 id: toolu_01QXLx2oWNGjSgVKQxQEbBc9
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2264,7 +2264,7 @@ id: toolu_01QXLx2oWNGjSgVKQxQEbBc9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "    // 최고 점수 텍스트 (오른쪽 위)\n    this.highScoreText = this.add.text(W - 16, hudTextY, `최고: ${this.highScore}`, {\n      fontSize: '18px',\n      color: '#FFD700',\n      fontStyle: 'bold',\n      stroke: '#000000',\n      strokeThickness: 3\n    }).setOrigin(1, 0).setDepth(10);\n\n    // 조작 안내",
   "new_string": "    // 최고 점수 텍스트 (오른쪽 위)\n    this.highScoreText = this.add.text(W - 16, hudTextY, `최고: ${this.highScore}`, {\n      fontSize: '18px',\n      color: '#FFD700',\n      fontStyle: 'bold',\n      stroke: '#000000',\n      strokeThickness: 3\n    }).setOrigin(1, 0).setDepth(10);\n\n    // EXTREME: 캐릭터 최고 점수 텍스트 (최고 점수 아래)\n    if (this.scoreDifficulty === 'extreme') {\n      this.charHighScoreText = this.add.text(W - 16, hudTextY + 22, `캐릭터: ${this.charHighScore}`, {\n        fontSize: '14px',\n        color: '#aaddff',\n        fontStyle: 'bold',\n        stroke: '#000000',\n        strokeThickness: 3\n      }).setOrigin(1, 0).setDepth(10);\n    }\n\n    // 조작 안내"
 }
@@ -2281,7 +2281,7 @@ id: toolu_01Fp1F7tWES9KExn9cp5ixz3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "      // 실시간으로 최고 점수 갱신\n      if (this.score > this.highScore) {\n        this.highScore = this.score;\n        this.highScoreText.setText(`최고: ${this.highScore}`);\n      }",
   "new_string": "      // 실시간으로 최고 점수 갱신\n      if (this.score > this.highScore) {\n        this.highScore = this.score;\n        this.highScoreText.setText(`최고: ${this.highScore}`);\n      }\n\n      // EXTREME: 캐릭터 최고 점수 실시간 갱신\n      if (this.charHighScoreText && this.score > this.charHighScore) {\n        this.charHighScore = this.score;\n        this.charHighScoreText.setText(`캐릭터: ${this.charHighScore}`);\n      }"
 }
@@ -2292,7 +2292,7 @@ id: toolu_01Fp1F7tWES9KExn9cp5ixz3
 tool_result
 id: toolu_01Fp1F7tWES9KExn9cp5ixz3
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2306,7 +2306,7 @@ id: toolu_01KKadzHmDfnDNpZ3GJ8qB7a
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "    // 최고 점수 업데이트 및 갱신 여부 확인\n    const isNewRecord = updateHighScore(this.scoreDifficulty, this.score);\n\n    // 게임 오버 UI 표시 (비동기 처리)\n    this.showGameOverUI(isNewRecord);",
   "new_string": "    // 최고 점수 업데이트 및 갱신 여부 확인\n    const isNewRecord = updateHighScore(this.scoreDifficulty, this.score);\n    const isCharNewRecord = this.scoreDifficulty === 'extreme'\n      && this.score > getExtremeCharBest(this.selectedCharId);\n\n    // 게임 오버 UI 표시 (비동기 처리)\n    this.showGameOverUI(isNewRecord, isCharNewRecord);"
 }
@@ -2317,7 +2317,7 @@ id: toolu_01KKadzHmDfnDNpZ3GJ8qB7a
 tool_result
 id: toolu_01KKadzHmDfnDNpZ3GJ8qB7a
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2331,7 +2331,7 @@ id: toolu_015ZZik58sEujozxQ44iSpTt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "  protected async showGameOverUI(isNewRecord: boolean) {",
   "new_string": "  protected async showGameOverUI(isNewRecord: boolean, isCharNewRecord: boolean = false) {"
 }
@@ -2342,7 +2342,7 @@ id: toolu_015ZZik58sEujozxQ44iSpTt
 tool_result
 id: toolu_015ZZik58sEujozxQ44iSpTt
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2356,7 +2356,7 @@ id: toolu_01GquzfaXD9mY5WYB77tCLah
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "        submittingText.destroy();\n\n        // 순위 표시\n        if (result.rank !== null) {",
   "new_string": "        submittingText.destroy();\n\n        // EXTREME: 캐릭터 베스트 localStorage 갱신\n        if (this.scoreDifficulty === 'extreme') {\n          updateExtremeCharBest(this.selectedCharId, this.score);\n        }\n\n        // 순위 표시\n        if (result.rank !== null) {"
 }
@@ -2367,7 +2367,7 @@ id: toolu_01GquzfaXD9mY5WYB77tCLah
 tool_result
 id: toolu_01GquzfaXD9mY5WYB77tCLah
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2381,7 +2381,7 @@ id: toolu_019QzviayvVGpbBC1cHGsVsy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "      // 재시작 안내\n      this.showRestartButton(false);\n    }\n  }\n\n  /**\n   * 이니셜 입력 UI 표시\n   */\n  private showInitialInputUI() {",
   "new_string": "      // EXTREME 비신기록: 캐릭터 최고 갱신 시 저장된 이니셜로 조용히 제출\n      if (isCharNewRecord) {\n        const savedInitials = getUserInitials();\n        if (savedInitials) {\n          this.submitScoreForCharRanking(savedInitials);\n        }\n      }\n\n      // 재시작 안내\n      this.showRestartButton(false);\n    }\n  }\n\n  private async submitScoreForCharRanking(initials: string) {\n    try {\n      const sessionId = await this.sessionPromise;\n      await submitScore(\n        this.score,\n        this.scoreDifficulty,\n        initials,\n        {\n          gameStartTime: this.gameStartTime,\n          gameEndTime: realNow(),\n          goldCollected: this.goldCollected,\n          diamondCollected: this.diamondCollected,\n          topazCollected: this.topazCollected,\n          rainbowCollected: this.rainbowCollected,\n          collectBonusTotal: this.collectBonusTotal,\n          abilityBonusTotal: this.abilityBonusTotal,\n        },\n        this.selectedCharId,\n        sessionId\n      );\n      updateExtremeCharBest(this.selectedCharId, this.score);\n    } catch {\n      // 캐릭터 랭킹 제출 실패 시 UX 영향 없이 무시\n    }\n  }\n\n  /**\n   * 이니셜 입력 UI 표시\n   */\n  private showInitialInputUI() {"
 }
@@ -2392,7 +2392,7 @@ id: toolu_019QzviayvVGpbBC1cHGsVsy
 tool_result
 id: toolu_019QzviayvVGpbBC1cHGsVsy
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2478,7 +2478,7 @@ tool_use Read
 id: toolu_018vP5BEENgXxRLN4kJ8SNet
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "offset": 13,
   "limit": 12
 }
@@ -2510,7 +2510,7 @@ id: toolu_01HCKk31a1EgKoXkdgcZkUsu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  // EXTREME 캐릭터 필터\n  private selectedCharFilter: string | null = null;\n  private availableChars: string[] = [];\n  private charFilterObjects: Phaser.GameObjects.GameObject[] = [];",
   "new_string": "  // EXTREME 캐릭터 필터\n  private selectedCharFilter: string | null = null;\n  private charFilterObjects: Phaser.GameObjects.GameObject[] = [];\n  private charOverlayObjects: Phaser.GameObjects.GameObject[] = [];"
 }
@@ -2521,7 +2521,7 @@ id: toolu_01HCKk31a1EgKoXkdgcZkUsu
 tool_result
 id: toolu_01HCKk31a1EgKoXkdgcZkUsu
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2535,7 +2535,7 @@ id: toolu_0196CU3msUNr6bD9mGzQAdVP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // 난이도 전환 시 캐릭터 필터 초기화\n    this.selectedCharFilter = null;\n    this.availableChars = [];\n    this.charFilterObjects.forEach(o => o.destroy());\n    this.charFilterObjects = [];",
   "new_string": "    // 난이도 전환 시 캐릭터 필터 초기화\n    this.selectedCharFilter = null;\n    this.charFilterObjects.forEach(o => o.destroy());\n    this.charFilterObjects = [];"
 }
@@ -2546,7 +2546,7 @@ id: toolu_0196CU3msUNr6bD9mGzQAdVP
 tool_result
 id: toolu_0196CU3msUNr6bD9mGzQAdVP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2560,7 +2560,7 @@ id: toolu_01Eof51r1fq53M9UMHHdqKfy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "      this.leaderboardData = response.leaderboard;\n\n      // EXTREME 전체 로드 시 캐릭터 목록 갱신 (필터 없을 때만)\n      if (this.selectedDifficulty === DifficultyEnum.EXTREME && this.selectedCharFilter === null) {\n        this.availableChars = [\n          ...new Set(response.leaderboard.map(e => e.characterType ?? 'chibi').filter(Boolean)),\n        ];\n      }\n\n      // 시즌 텍스트 갱신",
   "new_string": "      this.leaderboardData = response.leaderboard;\n\n      // 시즌 텍스트 갱신"
 }
@@ -2571,7 +2571,7 @@ id: toolu_01Eof51r1fq53M9UMHHdqKfy
 tool_result
 id: toolu_01Eof51r1fq53M9UMHHdqKfy
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2585,7 +2585,7 @@ id: toolu_01P2ET3P4xcBiDE3fwbCA1zW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** EXTREME 선택 시 캐릭터 필터 칩 행 렌더 (그 외 난이도에서는 숨김) */\n  private updateCharFilterRow() {\n    this.charFilterObjects.forEach(o => o.destroy());\n    this.charFilterObjects = [];\n\n    if (this.selectedDifficulty !== DifficultyEnum.EXTREME) return;\n\n    const W = this.scale.width;\n    const yOff = (this.scale.height - 600) / 2;\n    const cy = 145 + yOff;\n\n    const CHIP_W = 32, CHIP_H = 26, GAP = 5;\n\n    type Chip = { id: string | null; label?: string; charId?: string };\n    const chips: Chip[] = [\n      { id: null, label: '전체' },\n      ...this.availableChars.slice(0, 9).map(id => ({ id, charId: id })),\n    ];\n\n    const totalW = chips.length * CHIP_W + (chips.length - 1) * GAP;\n    let x = W / 2 - totalW / 2 + CHIP_W / 2;\n\n    chips.forEach(chip => {\n      const isSel = this.selectedCharFilter === chip.id;\n\n      const bg = this.add.rectangle(x, cy, CHIP_W, CHIP_H, isSel ? 0x334477 : 0x1a1a2e, 1);\n      bg.setStrokeStyle(2, isSel ? 0xaaccff : 0x333355);\n      bg.setInteractive({ useHandCursor: true });\n      bg.on('pointerdown', () => {\n        if (this.selectedCharFilter !== chip.id) {\n          this.selectedCharFilter = chip.id;\n          this.loadLeaderboard();\n        }\n      });\n      this.charFilterObjects.push(bg);\n\n      if (chip.label) {\n        const txt = this.add.text(x, cy, chip.label, {\n          fontSize: '10px',\n          color: isSel ? '#ffffff' : '#667799',\n          fontStyle: 'bold',\n        }).setOrigin(0.5);\n        this.charFilterObjects.push(txt);\n      } else if […]
 
 > TOOL
@@ -2593,7 +2593,7 @@ id: toolu_01P2ET3P4xcBiDE3fwbCA1zW
 tool_result
 id: toolu_01P2ET3P4xcBiDE3fwbCA1zW
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2657,7 +2657,7 @@ id: toolu_01BF6u6HSeXxLJpmzTMjXQHm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // 캐릭터 아이콘 (랭킹 표시용)\n    CHARACTERS.forEach(char => {\n      if (!this.textures.exists(char.imageKey)) {\n        this.load.image(char.imageKey, char.imagePath);\n      }\n    });",
   "new_string": "    // 캐릭터 아이콘 (랭킹 표시용) + 일러스트 (캐릭터 선택 오버레이용)\n    CHARACTERS.forEach(char => {\n      if (!this.textures.exists(char.imageKey)) {\n        this.load.image(char.imageKey, char.imagePath);\n      }\n      if (!this.textures.exists(char.illustKey)) {\n        this.load.image(char.illustKey, char.illustPath);\n      }\n    });"
 }
@@ -2668,7 +2668,7 @@ id: toolu_01BF6u6HSeXxLJpmzTMjXQHm
 tool_result
 id: toolu_01BF6u6HSeXxLJpmzTMjXQHm
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2677,7 +2677,7 @@ tool_use Read
 id: toolu_01RTrduzwkpwyphCrKFVLW48
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts"
 }
 ```
 
@@ -2751,7 +2751,7 @@ id: toolu_01RxaRHXSbawKc8ZFxvjUY7B
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  // EXTREME 캐릭터 필터\n  private selectedCharFilter: string | null = null;\n  private charFilterObjects: Phaser.GameObjects.GameObject[] = [];\n  private charOverlayObjects: Phaser.GameObjects.GameObject[] = [];",
   "new_string": "  // EXTREME 캐릭터 필터\n  private selectedCharFilter: string | null = null;\n  private charFilterObjects: Phaser.GameObjects.GameObject[] = [];\n  private charOverlayObjects: Phaser.GameObjects.GameObject[] = [];\n  private overlayCleanup?: () => void;"
 }
@@ -2762,7 +2762,7 @@ id: toolu_01RxaRHXSbawKc8ZFxvjUY7B
 tool_result
 id: toolu_01RxaRHXSbawKc8ZFxvjUY7B
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2772,7 +2772,7 @@ id: toolu_01KQBk5MbAj3c79rL4gr9V1W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** 캐릭터 선택 오버레이 표시 */\n  private showCharSelectOverlay() {\n    if (this.charOverlayObjects.length > 0) return;\n\n    const W = this.scale.width;\n    const H = this.scale.height;\n    const cx = W / 2;\n    const yOff = (H - 600) / 2;\n    const DEPTH = 500;\n\n    // 반투명 배경\n    const bg = this.add.rectangle(cx, H / 2, W, H, 0x000000, 0.88).setDepth(DEPTH).setInteractive();\n    this.charOverlayObjects.push(bg);\n\n    // 타이틀\n    const title = this.add.text(cx, 38 + yOff, '캐릭터 선택', {\n      fontSize: '20px', color: '#ffffff', fontStyle: 'bold',\n      stroke: '#000', strokeThickness: 4,\n    }).setOrigin(0.5).setDepth(DEPTH + 1);\n    this.charOverlayObjects.push(title);\n\n    // \"전체\" 버튼\n    const allSel = this.selectedCharFilter === null;\n    const allBg = this.add.rectangle(cx, 70 + yOff, 160, 30,\n      allSel ? 0x334488 : 0x222233, 1).setDepth(DEPTH + 1);\n    allBg.setStrokeStyle(2, allSel ? 0xaaccff : 0x444466);\n    const allTxt = this.add.text(cx, 70 + yOff, '전체 랭킹', {\n      fontSize: '13px', color: allSel ? '#ffffff' : '#8899bb', fontStyle: 'bold',\n    }).setOrigin(0.5).setDepth(DEPTH + 2);\n    allBg.setInteractive({ useHandCursor: true });\n    allBg.on('pointerdown', () => {\n      this.hideCharSelectOverlay();\n      if (this.selectedCharFilter !== null) {\n        this.selectedCharFilter = null;\n        this.loadLeaderboard();\n      }\n    });\n    this.charOverlayObjects.push(allBg, allTxt);\n\n    // 캐릭터 그리드 (4열)\n    const COLS = 4;\n    const CELL_W = 88, CELL_H = 72;\n    const gridLeft = (W - COLS * CELL_W) / 2;\n    const gridTop = 100 + […]
 
 > TOOL
@@ -2780,7 +2780,7 @@ id: toolu_01KQBk5MbAj3c79rL4gr9V1W
 tool_result
 id: toolu_01KQBk5MbAj3c79rL4gr9V1W
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2794,7 +2794,7 @@ id: toolu_01RSQVH6Bn5a23LhQXZaFfEF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** 캐릭터 선택 오버레이 숨김 */\n  private hideCharSelectOverlay() {\n    this.charOverlayObjects.forEach(o => o.destroy());\n    this.charOverlayObjects = [];\n    // 버튼 레이블 갱신\n    this.updateCharFilterRow();\n  }",
   "new_string": "  /** 캐릭터 선택 오버레이 숨김 */\n  private hideCharSelectOverlay() {\n    this.overlayCleanup?.();\n    this.overlayCleanup = undefined;\n    this.charOverlayObjects.forEach(o => o.destroy());\n    this.charOverlayObjects = [];\n    this.updateCharFilterRow();\n  }"
 }
@@ -2805,7 +2805,7 @@ id: toolu_01RSQVH6Bn5a23LhQXZaFfEF
 tool_result
 id: toolu_01RSQVH6Bn5a23LhQXZaFfEF
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2842,7 +2842,7 @@ id: toolu_01FfTv31enk25wzPTjnvMcmP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "      scroll.y = Phaser.Math.Clamp(scroll.startScrollY + delta, 0, maxScroll);",
   "new_string": "      scroll.y = Math.max(0, Math.min(maxScroll, scroll.startScrollY + delta));"
 }
@@ -2853,7 +2853,7 @@ id: toolu_01FfTv31enk25wzPTjnvMcmP
 tool_result
 id: toolu_01FfTv31enk25wzPTjnvMcmP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2905,7 +2905,7 @@ tool_use Read
 id: toolu_017jAABZvnFsVHvA1mEFqCBi
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "offset": 442,
   "limit": 180
 }
@@ -2959,7 +2959,7 @@ id: toolu_019JSZzuNYHrzfn2k6TaY7hg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // 스크롤 상태\n    const scroll = { y: 0, startY: 0, startScrollY: 0, active: false, hasDragged: false };",
   "new_string": "    // 스크롤 상태 + 고스트 클릭 방지 플래그\n    // readyForInput: 오버레이를 연 pointerdown 이후 손가락을 뗄 때의 pointerup은 무시해야 함.\n    // 오버레이가 열린 뒤 새 pointerdown이 발생해야 비로소 입력을 수락.\n    const scroll = { y: 0, startY: 0, startScrollY: 0, active: false, hasDragged: false, readyForInput: false };"
 }
@@ -2970,7 +2970,7 @@ id: toolu_019JSZzuNYHrzfn2k6TaY7hg
 tool_result
 id: toolu_019JSZzuNYHrzfn2k6TaY7hg
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2980,7 +2980,7 @@ id: toolu_018fdGHTm5ZrN7sEsURY4jXe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    allBg.on('pointerup', () => {\n      if (scroll.hasDragged) return;\n      this.hideCharSelectOverlay();\n      if (this.selectedCharFilter !== null) {\n        this.selectedCharFilter = null;\n        this.loadLeaderboard();\n      }\n    });",
   "new_string": "    allBg.on('pointerup', () => {\n      if (!scroll.readyForInput || scroll.hasDragged) return;\n      this.hideCharSelectOverlay();\n      if (this.selectedCharFilter !== null) {\n        this.selectedCharFilter = null;\n        this.loadLeaderboard();\n      }\n    });"
 }
@@ -2991,7 +2991,7 @@ id: toolu_018fdGHTm5ZrN7sEsURY4jXe
 tool_result
 id: toolu_018fdGHTm5ZrN7sEsURY4jXe
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3001,7 +3001,7 @@ id: toolu_01WqaSU9bc1X65RUCBYwxY4E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    closeBg.on('pointerup', () => { if (!scroll.hasDragged) this.hideCharSelectOverlay(); });",
   "new_string": "    closeBg.on('pointerup', () => { if (scroll.readyForInput && !scroll.hasDragged) this.hideCharSelectOverlay(); });"
 }
@@ -3012,7 +3012,7 @@ id: toolu_01WqaSU9bc1X65RUCBYwxY4E
 tool_result
 id: toolu_01WqaSU9bc1X65RUCBYwxY4E
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3022,7 +3022,7 @@ id: toolu_01MhkpJo3xizPoFDXt1YKsFR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "      cardBg.on('pointerup', (ptr: Phaser.Input.Pointer) => {\n        if (scroll.hasDragged) return;\n        if (ptr.y < SCROLL_TOP || ptr.y > SCROLL_BOTTOM) return;\n        this.hideCharSelectOverlay();\n        if (this.selectedCharFilter !== char.id) {\n          this.selectedCharFilter = char.id;\n          this.loadLeaderboard();\n        }\n      });",
   "new_string": "      cardBg.on('pointerup', (ptr: Phaser.Input.Pointer) => {\n        if (!scroll.readyForInput || scroll.hasDragged) return;\n        if (ptr.y < SCROLL_TOP || ptr.y > SCROLL_BOTTOM) return;\n        this.hideCharSelectOverlay();\n        if (this.selectedCharFilter !== char.id) {\n          this.selectedCharFilter = char.id;\n          this.loadLeaderboard();\n        }\n      });"
 }
@@ -3033,7 +3033,7 @@ id: toolu_01MhkpJo3xizPoFDXt1YKsFR
 tool_result
 id: toolu_01MhkpJo3xizPoFDXt1YKsFR
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3047,7 +3047,7 @@ id: toolu_01W6TD3ZxiC6L7XBSzBGcKa9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // 씬 레벨 드래그 핸들러 (스크롤)\n    const onDown = (ptr: Phaser.Input.Pointer) => {\n      if (ptr.y < SCROLL_TOP || ptr.y > SCROLL_BOTTOM) return;\n      scroll.startY = ptr.y;\n      scroll.startScrollY = scroll.y;\n      scroll.active = true;\n      scroll.hasDragged = false;\n    };",
   "new_string": "    // 씬 레벨 드래그 핸들러 (스크롤)\n    const onDown = (ptr: Phaser.Input.Pointer) => {\n      scroll.readyForInput = true; // 새 press가 시작됐으므로 입력 수락 허용\n      if (ptr.y < SCROLL_TOP || ptr.y > SCROLL_BOTTOM) return;\n      scroll.startY = ptr.y;\n      scroll.startScrollY = scroll.y;\n      scroll.active = true;\n      scroll.hasDragged = false;\n    };"
 }
@@ -3058,7 +3058,7 @@ id: toolu_01W6TD3ZxiC6L7XBSzBGcKa9
 tool_result
 id: toolu_01W6TD3ZxiC6L7XBSzBGcKa9
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3112,7 +3112,7 @@ id: toolu_01G9AhEqTHX5MaztkDQsA2Px
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // 스크롤 상태 + 고스트 클릭 방지 플래그\n    // readyForInput: 오버레이를 연 pointerdown 이후 손가락을 뗄 때의 pointerup은 무시해야 함.\n    // 오버레이가 열린 뒤 새 pointerdown이 발생해야 비로소 입력을 수락.\n    const scroll = { y: 0, startY: 0, startScrollY: 0, active: false, hasDragged: false, readyForInput: false };",
   "new_string": "    // 스크롤 상태 + 고스트 클릭 방지 플래그\n    // readyForInput: 오버레이를 연 pointerdown/pointerup 사이클이 끝날 때까지 입력 무시.\n    // delayedCall(0)으로 다음 프레임에 true — 현재 press 사이클의 pointerup이 처리된 후에 허용.\n    const scroll = { y: 0, startY: 0, startScrollY: 0, active: false, hasDragged: false, readyForInput: false };\n    this.time.delayedCall(0, () => { scroll.readyForInput = true; });"
 }
@@ -3123,7 +3123,7 @@ id: toolu_01G9AhEqTHX5MaztkDQsA2Px
 tool_result
 id: toolu_01G9AhEqTHX5MaztkDQsA2Px
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3133,7 +3133,7 @@ id: toolu_013pPHwLenrZ9aMWfBpvbjb1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    // 씬 레벨 드래그 핸들러 (스크롤)\n    const onDown = (ptr: Phaser.Input.Pointer) => {\n      scroll.readyForInput = true; // 새 press가 시작됐으므로 입력 수락 허용\n      if (ptr.y < SCROLL_TOP || ptr.y > SCROLL_BOTTOM) return;",
   "new_string": "    // 씬 레벨 드래그 핸들러 (스크롤)\n    const onDown = (ptr: Phaser.Input.Pointer) => {\n      if (ptr.y < SCROLL_TOP || ptr.y > SCROLL_BOTTOM) return;"
 }
@@ -3144,7 +3144,7 @@ id: toolu_013pPHwLenrZ9aMWfBpvbjb1
 tool_result
 id: toolu_013pPHwLenrZ9aMWfBpvbjb1
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3329,7 +3329,7 @@ tool_use Read
 id: toolu_01TjRaNMeyVtcRQzRPQmJ5mn
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 1,
   "limit": 25
 }
@@ -3373,7 +3373,7 @@ tool_use Bash
 id: toolu_01XXKdgFzJFYRmm9VS23kfVw
 ```json
 {
-  "command": "grep -n 'EXTREME\\|Difficulty' /Users/johyunduk/Projects/ddong-avoid-game/src/types/GameMode.ts | head -20"
+  "command": "grep -n 'EXTREME\\|Difficulty' /home/<USER>/Projects/ddong-avoid-game/src/types/GameMode.ts | head -20"
 }
 ```
 
@@ -3400,7 +3400,7 @@ tool_use Read
 id: toolu_015gG423k9B6fSc9Yxta8Vnh
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 265,
   "limit": 15
 }
@@ -3434,7 +3434,7 @@ tool_use Read
 id: toolu_01LYXsHzYKdoknYsxKvL6RLH
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 447,
   "limit": 16
 }
@@ -3469,7 +3469,7 @@ tool_use Read
 id: toolu_01KjvJz3FTDig9fRX2GuGtCu
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 863,
   "limit": 12
 }
@@ -3500,7 +3500,7 @@ tool_use Read
 id: toolu_01JsHAeqZoS8ptgKjAJ6dL6s
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 1479,
   "limit": 12
 }
@@ -3531,7 +3531,7 @@ tool_use Read
 id: toolu_016VBHKQAuC8PYF6ogmC5cmX
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 1785,
   "limit": 10
 }
@@ -3565,7 +3565,7 @@ id: toolu_01EmwXRKE2eJJTXQgjNU3E4N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "    // 난이도별 최고 점수 로드\n    this.highScore = getHighScore(this.scoreDifficulty);\n    // EXTREME: 캐릭터별 최고 점수 로드\n    this.charHighScore = this.scoreDifficulty === 'extreme'\n      ? getExtremeCharBest(this.selectedCharId)\n      : 0;",
   "new_string": "    this.highScore = getHighScore(this.scoreDifficulty);\n    this.charHighScore = this.scoreDifficulty === Difficulty.EXTREME\n      ? getExtremeCharBest(this.selectedCharId)\n      : 0;"
 }
@@ -3576,7 +3576,7 @@ id: toolu_01EmwXRKE2eJJTXQgjNU3E4N
 tool_result
 id: toolu_01EmwXRKE2eJJTXQgjNU3E4N
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3586,7 +3586,7 @@ id: toolu_01K6ULickG9bE7E9WdfiGFGp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "    // EXTREME: 캐릭터 최고 점수 텍스트 (최고 점수 아래)\n    if (this.scoreDifficulty === 'extreme') {",
   "new_string": "    if (this.scoreDifficulty === Difficulty.EXTREME) {"
 }
@@ -3597,7 +3597,7 @@ id: toolu_01K6ULickG9bE7E9WdfiGFGp
 tool_result
 id: toolu_01K6ULickG9bE7E9WdfiGFGp
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3607,7 +3607,7 @@ id: toolu_019rHbbzriu5MP7qkUWH1v78
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "      // EXTREME: 캐릭터 최고 점수 실시간 갱신\n      if (this.charHighScoreText && this.score > this.charHighScore) {",
   "new_string": "      if (this.charHighScoreText && this.score > this.charHighScore) {"
 }
@@ -3618,7 +3618,7 @@ id: toolu_019rHbbzriu5MP7qkUWH1v78
 tool_result
 id: toolu_019rHbbzriu5MP7qkUWH1v78
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3628,7 +3628,7 @@ id: toolu_01SMZBJUERNChbLNuVWqnUSN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "    // 최고 점수 업데이트 및 갱신 여부 확인\n    const isNewRecord = updateHighScore(this.scoreDifficulty, this.score);\n    const isCharNewRecord = this.scoreDifficulty === 'extreme'\n      && this.score > getExtremeCharBest(this.selectedCharId);",
   "new_string": "    const isNewRecord = updateHighScore(this.scoreDifficulty, this.score);\n    const isCharNewRecord = this.scoreDifficulty === Difficulty.EXTREME\n      && this.score > this.charHighScore;"
 }
@@ -3639,7 +3639,7 @@ id: toolu_01SMZBJUERNChbLNuVWqnUSN
 tool_result
 id: toolu_01SMZBJUERNChbLNuVWqnUSN
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3649,7 +3649,7 @@ id: toolu_01RMpxM81r96vLVDiYP9DKEu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "        // EXTREME: 캐릭터 베스트 localStorage 갱신\n        if (this.scoreDifficulty === 'extreme') {",
   "new_string": "        if (this.scoreDifficulty === Difficulty.EXTREME) {"
 }
@@ -3660,7 +3660,7 @@ id: toolu_01RMpxM81r96vLVDiYP9DKEu
 tool_result
 id: toolu_01RMpxM81r96vLVDiYP9DKEu
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3673,7 +3673,7 @@ tool_use Read
 id: toolu_018CdMZ2MkaD7YNCe15nndnQ
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "offset": 61,
   "limit": 10
 }
@@ -3703,7 +3703,7 @@ id: toolu_01HYpoN9uP2ZMXLonVJF75sv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  create() {\n    super.create();\n\n    const W = this.scale.width;\n    const H = this.scale.height;\n    const cx = W / 2;\n    const yOff = (H - 600) / 2;\n\n    // 배경 이미지 추가",
   "new_string": "  create() {\n    super.create();\n\n    this.events.once('shutdown', () => this.overlayCleanup?.());\n\n    const W = this.scale.width;\n    const H = this.scale.height;\n    const cx = W / 2;\n    const yOff = (H - 600) / 2;\n\n    // 배경 이미지 추가"
 }
@@ -3714,7 +3714,7 @@ id: toolu_01HYpoN9uP2ZMXLonVJF75sv
 tool_result
 id: toolu_01HYpoN9uP2ZMXLonVJF75sv
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

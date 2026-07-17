@@ -14,7 +14,7 @@ id: toolu_01UYUfT4XzNFqCn2g6BmevxA
 {
   "subagent_type": "Explore",
   "description": "Explore session file loading",
-  "prompt": "I'm working in the agent-brain-visualizer project at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer. \n\nI need to understand how the app currently loads agent session data from local files. Please explore thoroughly (medium breadth) and report back:\n\n1. How are agent session/trajectory files currently loaded? Find the code that reads local files from disk. What file formats (JSON, JSONL, etc.)? What directory/paths?\n2. What is the overall architecture — is this a frontend-only app, does it have a backend/server, what framework (Next.js, Vite, Express, etc.)? Check package.json.\n3. Where is the data model / types for a \"session\" or \"trajectory\" defined?\n4. How does the app configure things today (the recent .env commit #39)? What config exists?\n5. Any existing data-access layer, API routes, or abstraction over file reading that would be the natural seam to swap in persistent storage?\n\nReport specific file paths and code snippets. Do not write any code — this is exploration only."
+  "prompt": "I'm working in the agent-brain-visualizer project at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer. \n\nI need to understand how the app currently loads agent session data from local files. Please explore thoroughly (medium breadth) and report back:\n\n1. How are agent session/trajectory files currently loaded? Find the code that reads local files from disk. What file formats (JSON, JSONL, etc.)? What directory/paths?\n2. What is the overall architecture — is this a frontend-only app, does it have a backend/server, what framework (Next.js, Vite, Express, etc.)? Check package.json.\n3. Where is the data model / types for a \"session\" or \"trajectory\" defined?\n4. How does the app configure things today (the recent .env commit #39)? What config exists?\n5. Any existing data-access layer, API routes, or abstraction over file reading that would be the natural seam to swap in persistent storage?\n\nReport specific file paths and code snippets. Do not write any code — this is exploration only."
 }
 ```
 
@@ -39,7 +39,7 @@ id: toolu_01C9jCJ7DvhAe76CNYAz5FK2
 {
   "subagent_type": "Explore",
   "description": "Explore data structures and tech stack",
-  "prompt": "I'm working in the agent-brain-visualizer project at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer.\n\nI need to understand the tech stack and deployment shape of this app so I can plan adding persistent storage (e.g. a database or cloud object store) to replace local file reading of agent session trajectories.\n\nPlease explore thoroughly (medium breadth) and report back:\n1. Full tech stack: languages, frameworks, package manager, build tooling. Read package.json, and any config files (vite/next/tsconfig, docker, etc.).\n2. Is there any existing database, ORM, or persistence layer already present? Search for prisma, drizzle, sqlite, postgres, sequelize, mongoose, etc.\n3. Is there any server-side runtime, or is it purely a static/client app? How is it run (README, scripts)?\n4. How large are the session files typically and what is their structure? Find sample data files.\n5. Are there existing tests and what testing framework is used?\n6. The README mentions Java 25/mise — is there a Java/JVM component too? Clarify the languages involved.\n\nReport specific file paths and findings. Do not write any code — exploration only."
+  "prompt": "I'm working in the agent-brain-visualizer project at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer.\n\nI need to understand the tech stack and deployment shape of this app so I can plan adding persistent storage (e.g. a database or cloud object store) to replace local file reading of agent session trajectories.\n\nPlease explore thoroughly (medium breadth) and report back:\n1. Full tech stack: languages, frameworks, package manager, build tooling. Read package.json, and any config files (vite/next/tsconfig, docker, etc.).\n2. Is there any existing database, ORM, or persistence layer already present? Search for prisma, drizzle, sqlite, postgres, sequelize, mongoose, etc.\n3. Is there any server-side runtime, or is it purely a static/client app? How is it run (README, scripts)?\n4. How large are the session files typically and what is their structure? Find sample data files.\n5. Are there existing tests and what testing framework is used?\n6. The README mentions Java 25/mise — is there a Java/JVM component too? Clarify the languages involved.\n\nReport specific file paths and findings. Do not write any code — exploration only."
 }
 ```
 
@@ -66,7 +66,7 @@ tool_use Bash
 id: toolu_019acFFTcToQGWDqBi4ffkwi
 ```json
 {
-  "command": "cat /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/package.json 2>/dev/null; echo \"---README---\"; head -60 /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md 2>/dev/null",
+  "command": "cat /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/package.json 2>/dev/null; echo \"---README---\"; head -60 /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md 2>/dev/null",
   "description": "Read package.json and README head"
 }
 ```
@@ -122,7 +122,7 @@ tool_use Bash
 id: toolu_01AqJ6jxRyok8jtsKs4btXJQ
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer; echo \"===README tail===\"; tail -n +60 README.md | head -120; echo \"===TOP LEVEL===\"; ls -la; echo \"===find build.gradle/pom===\"; find . -maxdepth 3 -name \"build.gradle*\" -o -maxdepth 3 -name \"pom.xml\" 2>/dev/null | grep -v node_modules",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer; echo \"===README tail===\"; tail -n +60 README.md | head -120; echo \"===TOP LEVEL===\"; ls -la; echo \"===find build.gradle/pom===\"; find . -maxdepth 3 -name \"build.gradle*\" -o -maxdepth 3 -name \"pom.xml\" 2>/dev/null | grep -v node_modules",
   "description": "Read README backend section and repo layout"
 }
 ```
@@ -163,7 +163,7 @@ tool_use Bash
 id: toolu_01UccJByPW1j4BDMwwDuNdtb
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer; echo \"===Java sources===\"; find src -name \"*.java\" | grep -v build | sort; echo; echo \"===build.gradle deps===\"; sed -n '/dependencies/,/^}/p' build.gradle",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer; echo \"===Java sources===\"; find src -name \"*.java\" | grep -v build | sort; echo; echo \"===build.gradle deps===\"; sed -n '/dependencies/,/^}/p' build.gradle",
   "description": "List Java sources and gradle deps"
 }
 ```
@@ -296,7 +296,7 @@ tool_use Read
 id: toolu_01Dc5E8o8HUzciCayDHB7C4Z
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionCollector.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionCollector.java"
 }
 ```
 
@@ -347,7 +347,7 @@ tool_use Read
 id: toolu_01Y1fFTynbvvTbDGJ7qgniQs
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SummaryCache.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SummaryCache.java"
 }
 ```
 
@@ -395,7 +395,7 @@ tool_use Read
 id: toolu_016KR4KW1sj62yahvsa69jFy
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/BrainController.java"
 }
 ```
 
@@ -460,7 +460,7 @@ tool_use Read
 id: toolu_013EAMEiRRCX1YRJnbC6zBqP
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionSource.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SessionSource.java"
 }
 ```
 
@@ -507,7 +507,7 @@ tool_use Read
 id: toolu_01S1YXoPMztNhdhFNs2XnCYr
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapter.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeAdapter.java"
 }
 ```
 
@@ -555,7 +555,7 @@ tool_use Read
 id: toolu_01MEXDYNBo3SurtsMi2SHWaP
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunStore.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunStore.java"
 }
 ```
 
@@ -607,7 +607,7 @@ tool_use Read
 id: toolu_016AjvAGK4yEY19osoYEFndL
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AiConfig.java"
 }
 ```
 
@@ -656,7 +656,7 @@ tool_use Read
 id: toolu_01WL996iQDTW6JAMxf2EujLb
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AntigravityPaths.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AntigravityPaths.java"
 }
 ```
 
@@ -700,7 +700,7 @@ tool_use Read
 id: toolu_01C58GuF4n7AKyoKSaBug9Ka
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/ClaudeCodeSessionReader.java"
 }
 ```
 
@@ -813,8 +813,8 @@ I now have a complete picture of the architecture. Here is my report.
 
 This is **NOT a frontend-only app and NOT a Node/Next/Vite app**. It is a **Micronaut (Java) web server** with a zero-build vanilla-JS frontend.
 
-- **Backend:** Micronaut framework, Java. Build system is **Gradle** (`build.gradle`, `gradlew`, `micronaut-cli.yml`, `settings.gradle`), Java 25 via `mise` (`mise.toml`). Also has GraalVM native-image config (`reachability-metadata.json`). Entry point: `/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java` (`Micronaut.run(...)`).
-- **Frontend:** static vanilla JS served from classpath. `application.yml` maps `classpath:public` to `/**`. Source at `/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/` (`app.js`, `index.html`, `style.css`, plus ES modules in `public/modules/`). The frontend talks to the backend purely over `/api/...` REST endpoints (e.g. `app.js` line 243 `fetch("/api/brain/conversations?flavor=${flavor}")`).
+- **Backend:** Micronaut framework, Java. Build system is **Gradle** (`build.gradle`, `gradlew`, `micronaut-cli.yml`, `settings.gradle`), Java 25 via `mise` (`mise.toml`). Also has GraalVM native-image config (`reachability-metadata.json`). Entry point: `/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java` (`Micronaut.run(...)`).
+- **Frontend:** static vanilla JS served from classpath. `application.yml` maps `classpath:public` to `/**`. Source at `/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/public/` (`app.js`, `index.html`, `style.css`, plus ES modules in `public/modules/`). The frontend talks to the backend purely over `/api/...` REST endpoints (e.g. `app.js` line 243 `fetch("/api/brain/conversations?flavor=${flavor}")`).
 - **The `package.json` is a red herring** — it is `agy-brain-visualizer-frontend-tests`, a dev-only Vitest/Playwright harness for the JS modules. It has no runtime role.
 - **REST controllers** (all under `/api`): `BrainController` (`/api/brain`), `AnalysisController` (`/api/analysis`), `InsightsController` (`/api/insights`), `MineController` (`/api/mine`), `EvalController` (`/api/eval`), `OptimizeController` (`/api/optimize`).
 
@@ -860,7 +860,7 @@ This is a **Java (Micronaut) backend serving a zero-build vanilla-JS frontend**,
 
 ### 1. Full tech stack
 
-**Backend (the real app)** — `/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle`
+**Backend (the real app)** — `/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle`
 - **Language**: Java 25 (`sourceCompatibility`/`targetCompatibility` = 25; requires a Java 25 JVM)
 - **Framework**: Micronaut 5 (netty runtime), `micronaut-serde-jackson` for JSON
 - **AI layer**: LangChain4j 1.16.1 (BOM) with Google GenAI (Gemini) and Ollama integrations, plus `micronaut-langchain4j`
@@ -933,7 +933,7 @@ id: toolu_01Fj3WYfGhavFeUaX8Bm55LJ
 {
   "subagent_type": "Plan",
   "description": "Design Postgres storage backend",
-  "prompt": "Design a detailed implementation plan for adding a shared Postgres persistent store to the \"agent-brain-visualizer\" app at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer. Do NOT write any code — produce a design/plan only. Read the relevant files to ground your design.\n\n## Product decisions already made (do not re-litigate)\n- Store: **Postgres** (local for dev, hosted like Neon/Supabase/Cloud SQL for multi-machine sharing).\n- **Remote is the source of truth**: after ingest, the app READS sessions/summaries/eval-runs only from Postgres. Local agent files (`~/.gemini`, `~/.codex`, `~/.claude`) become just an INGEST source, run per-machine.\n- **Single user across their own machines**: one shared connection string, no per-user auth/isolation needed.\n- Goal: capture a trajectory on computer A, run ingest, and see it on computer B pointed at the same DB.\n\n## Architecture facts (already explored — trust these)\n- Backend: **Micronaut 5, Java 25**, Gradle, `com.gradleup.shadow` fat jar, `io.micronaut.aot`, and **GraalVM `nativeCompile`** (reachability metadata at `src/main/resources/META-INF/native-image/.../reachability-metadata.json`). Native binary is a shipped artifact — the Postgres JDBC driver will need native-image reachability config; call this out.\n- Package: `io.github.glaforge.agybrainviz`. All Java under `src/main/java/io/github/glaforge/agybrainviz/`.\n- Config today: `.env` file parsed by `DotEnv.java`; precedence real env var > `.env` > default. `AiConfig.java` is the pattern for […]
+  "prompt": "Design a detailed implementation plan for adding a shared Postgres persistent store to the \"agent-brain-visualizer\" app at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer. Do NOT write any code — produce a design/plan only. Read the relevant files to ground your design.\n\n## Product decisions already made (do not re-litigate)\n- Store: **Postgres** (local for dev, hosted like Neon/Supabase/Cloud SQL for multi-machine sharing).\n- **Remote is the source of truth**: after ingest, the app READS sessions/summaries/eval-runs only from Postgres. Local agent files (`~/.gemini`, `~/.codex`, `~/.claude`) become just an INGEST source, run per-machine.\n- **Single user across their own machines**: one shared connection string, no per-user auth/isolation needed.\n- Goal: capture a trajectory on computer A, run ingest, and see it on computer B pointed at the same DB.\n\n## Architecture facts (already explored — trust these)\n- Backend: **Micronaut 5, Java 25**, Gradle, `com.gradleup.shadow` fat jar, `io.micronaut.aot`, and **GraalVM `nativeCompile`** (reachability metadata at `src/main/resources/META-INF/native-image/.../reachability-metadata.json`). Native binary is a shipped artifact — the Postgres JDBC driver will need native-image reachability config; call this out.\n- Package: `io.github.glaforge.agybrainviz`. All Java under `src/main/java/io/github/glaforge/agybrainviz/`.\n- Config today: `.env` file parsed by `DotEnv.java`; precedence real env var > `.env` > default. `AiConfig.java` is the pattern for […]
 
 > TOOL
 
@@ -958,7 +958,7 @@ tool_use Read
 id: toolu_011Cgb6w8KH1q4tYvRRJdF1t
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java"
 }
 ```
 
@@ -1013,7 +1013,7 @@ tool_use Read
 id: toolu_01P2Za5z7ppKVURX95R2B1Dc
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/AnalysisController.java"
 }
 ```
 
@@ -1128,7 +1128,7 @@ tool_use Write
 id: toolu_016G5FxVULFCXX7EkdKEVi19
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "content": "# Plan: Shared Postgres store for agent trajectories\n\n## Context\n\nThe Agent Brain Visualizer (Micronaut/Java 25 backend + zero-build vanilla-JS\nfrontend) today reads agent session transcripts **directly off the local\nfilesystem** on whatever machine you launch it from — Antigravity from\n`~/.gemini/<flavor>/brain/**`, Codex from `~/.codex/sessions/**`, Claude Code\nfrom `~/.claude/projects/**`. AI summaries and eval-run history are also cached\nto local disk (`SummaryCache`, per-session `summary.json`, `~/.agybrainviz/eval-runs.jsonl`).\n\nBecause everything is machine-local, a trajectory captured on computer A is\ninvisible on computer B. This plan adds a **shared Postgres database** so\ntrajectories, summaries, and eval runs live in one place and are visible from\nany machine pointed at the same DB.\n\n**Decisions (confirmed with you):**\n- **Store:** Postgres — local for dev, a hosted URL (Neon/Supabase/Cloud SQL) for sharing.\n- **Remote is the source of truth:** after ingest, the app **reads only from Postgres**.\n  Local agent files become an **ingest source**, run per-machine.\n- **Single user across your own machines:** one shared connection string, no per-user auth.\n\n**End-to-end goal:** capture a trajectory on computer A → run *Sync* (ingest) →\nsee it on computer B pointed at the same DB.\n\n## Guiding shape\n\nToday each read is a per-flavor file scan (`SessionSource` for Codex/Claude,\ninline `Files` calls for Antigravity). We invert this to:\n\n```\nlocal files ──Ingest──▶ […]
 
 > TOOL
@@ -1136,7 +1136,7 @@ id: toolu_016G5FxVULFCXX7EkdKEVi19
 tool_result
 id: toolu_016G5FxVULFCXX7EkdKEVi19
 ```
-File created successfully at: /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1214,7 +1214,7 @@ tool_use Read
 id: toolu_013MfyuVfKfdpJBbMPcVyoNj
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "offset": 1,
   "limit": 20
 }
@@ -1254,7 +1254,7 @@ id: toolu_01VMPYN285ywazPZkN7Zd1Ke
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "**Decisions (confirmed with you):**\n- **Store:** Postgres — local for dev, a hosted URL (Neon/Supabase/Cloud SQL) for sharing.\n- **Remote is the source of truth:** after ingest, the app **reads only from Postgres**.\n  Local agent files become an **ingest source**, run per-machine.\n- **Single user across your own machines:** one shared connection string, no per-user auth.\n\n**End-to-end goal:** capture a trajectory on computer A → run *Sync* (ingest) →\nsee it on computer B pointed at the same DB.",
   "new_string": "**Decisions (confirmed with you):**\n- **Store:** Postgres — local for dev, a hosted URL (Neon/Supabase/Cloud SQL) for sharing.\n- **Remote is the source of truth:** after ingest, the app **reads only from Postgres**.\n  Local agent files become an **ingest source**.\n- **Push-based ingest via a Go CLI:** a small Go binary runs on any machine, scans\n  local trajectories, and **pushes them to the app over HTTP**. The app normalizes and\n  upserts into Postgres. Any client can send trajectories this way — the app+Postgres\n  can live centrally while clients push from wherever the agents ran.\n- **Stable IDs so nothing duplicates:** every trajectory has a stable `(source, id)`\n  identity + a content hash, so re-pushing the same session is […]
 
@@ -1263,7 +1263,7 @@ id: toolu_01VMPYN285ywazPZkN7Zd1Ke
 tool_result
 id: toolu_01VMPYN285ywazPZkN7Zd1Ke
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1277,7 +1277,7 @@ id: toolu_01HG5eZADz1cr8GxMyGpT7Bh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "Today each read is a per-flavor file scan (`SessionSource` for Codex/Claude,\ninline `Files` calls for Antigravity). We invert this to:\n\n```\nlocal files ──Ingest──▶ Postgres ──▶ all reads\n```\n\n`flavor` stops selecting a `SessionSource` and becomes a **`source` column\nfilter**. The local readers survive only as ingest adapters.",
   "new_string": "Today each read is a per-flavor file scan (`SessionSource` for Codex/Claude,\ninline `Files` calls for Antigravity). We invert this to:\n\n```\n                          any machine                    central\n  local agent files ──▶ agy-ingest (Go CLI) ──HTTP push──▶ app ──normalize──▶ Postgres ──▶ all reads\n```\n\n`flavor` stops selecting a `SessionSource` and becomes a **`source` column\nfilter**. Filesystem scanning moves out of the Java app into the Go CLI; the\nexisting tool-native adapters stay in Java and are invoked by the push endpoint\n(the CLI stays \"dumb\" and never reimplements the schemas)."
 }
@@ -1288,7 +1288,7 @@ id: toolu_01HG5eZADz1cr8GxMyGpT7Bh
 tool_result
 id: toolu_01HG5eZADz1cr8GxMyGpT7Bh
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1302,7 +1302,7 @@ id: toolu_01KQKDQb3vndFPDLLzVXjqBB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "## 5. Ingest (per-machine)\n\nNew **`Ingestor.java`** (`@Singleton`) + **`IngestController.java`**\n(`@Controller(\"/api/ingest\")`, `POST` → `{scanned, ingested, skipped}` per source).\n\nRefactor the readers behind a slim **`IngestReader`** interface (today's\n`SessionSource` minus cache methods): `source()`, `list()` → `(id, title, mtime,\nrawText)`, `toSteps(rawText)` → normalized array. `ClaudeCodeSessionReader` /\n`CodexSessionReader` already do this via their adapters — trim them to it. Add\n**`AntigravityIngestReader.java`** walking `~/.gemini/<flavor>/brain/**` via\n`AntigravityPaths` (reusing the transcript-vs-`transcript_full` selection and the\nUSER_INPUT summary-derivation logic lifted from the deleted `BrainController`\nbranch), for `antigravity-cli` and `antigravity-ide`.\n\nAlgorithm per source: list `(id, mtime)` cheaply; one `existingMtimes(source)`\nquery; for each candidate newer-than-stored (or absent) read + normalize, hash\n(SHA-256 of raw bytes), `upsert` (the `WHERE content_hash <>` guard makes an\nunchanged re-read a no-op). Idempotent, skip-if-unchanged, keyed `(source, id)`.\n\n**Trigger — both, Sync-button primary:** `POST /api/ingest` wired to a **\"Sync\"\nbutton** in the frontend (explicit, shows counts) as the main path; an optional\non-startup scan gated by `AGY_INGEST_ON_STARTUP` (default `false`) via an\n`ApplicationEventListener<StartupEvent>`. On first ingest, optionally import any\npre-existing on-disk Antigravity `summary.json`/`short_title.txt` into `summaries`\nso historical summaries aren't lost.",
   "new_string": "## 5. Ingest API (server side — normalize + upsert)\n\nThe app becomes an **ingest server**. Filesystem scanning moves to the Go CLI\n(§5b); the server accepts pushed **raw tool-native** trajectories, normalizes\nthem with the existing adapters, and upserts […]
 
@@ -1311,7 +1311,7 @@ id: toolu_01KQKDQb3vndFPDLLzVXjqBB
 tool_result
 id: toolu_01KQKDQb3vndFPDLLzVXjqBB
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1325,7 +1325,7 @@ id: toolu_015dCJsTZkXt33ExBqvpGvmS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "`.env.example` additions: `DATABASE_URL`, `POSTGRES_USER`, `POSTGRES_PASSWORD`\n(+ commented `POSTGRES_SSLMODE`, `AGY_INGEST_ON_STARTUP`).",
   "new_string": "`.env.example` additions: `DATABASE_URL`, `POSTGRES_USER`, `POSTGRES_PASSWORD`\n(+ commented `POSTGRES_SSLMODE`, `INGEST_TOKEN`). `StorageConfig` also exposes\n`ingestToken()` for the auth guard (§5)."
 }
@@ -1336,7 +1336,7 @@ id: toolu_015dCJsTZkXt33ExBqvpGvmS
 tool_result
 id: toolu_015dCJsTZkXt33ExBqvpGvmS
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1346,7 +1346,7 @@ id: toolu_01U22Kx3uQrupJZ7oDPKXoma
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "**New:** `db/schema.sql`, `StorageConfig.java`, `SessionRepository.java`,\n`SummaryRepository.java`, `EvalRunRepository.java`, `SchemaBootstrap.java`,\n`IngestReader.java`, `AntigravityIngestReader.java`, `Ingestor.java`,\n`IngestController.java` (+ a \"Sync\" button in `public/app.js` / `public/index.html`).",
   "new_string": "**New (Java):** `db/schema.sql`, `StorageConfig.java`, `SessionRepository.java`,\n`SummaryRepository.java`, `EvalRunRepository.java`, `SchemaBootstrap.java`,\n`SourceNormalizer.java` (+ per-source impls), `Ingestor.java`,\n`IngestController.java`, an ingest-auth filter.\n\n**New (Go CLI):** `cli/go.mod`, `cli/main.go`, `cli/internal/scan/…` (per-source\nlocators + stable-id derivation), `cli/internal/client/…` (manifest + push HTTP\nclient), `cli/README.md`."
 }
@@ -1357,7 +1357,7 @@ id: toolu_01U22Kx3uQrupJZ7oDPKXoma
 tool_result
 id: toolu_01U22Kx3uQrupJZ7oDPKXoma
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1367,7 +1367,7 @@ id: toolu_01CyYGwP5eAL8xrF5WFBzTJg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "3. **Ingest, writes only** — `IngestReader` refactor + `AntigravityIngestReader`,\n   `Ingestor` + `/api/ingest` + Sync button, optional startup scan. Reads still local; DB fills.\n4. **Flip reads to DB** — `SessionRepository`/`SummaryRepository`; reshape\n   `BrainController`/`AnalysisController`/`SessionCollector` to query by `source`;\n   remove Antigravity read special-casing + `SessionSource` registry injection.\n   Rework `BrainControllerTest`; add Postgres to e2e. **This is the source-of-truth flip.**\n5. **Delete dead write paths** — `SummaryCache`, Antigravity in-session summary\n   writes, file `EvalRunStore`, `SessionSource` cache methods. Update docs.",
   "new_string": "3. **Ingest API, writes only** — `SourceNormalizer` (adapter reuse), `Ingestor`,\n   `POST /api/ingest/sessions` + `GET /api/ingest/manifest`, `INGEST_TOKEN` auth\n   guard. Reads still come from local files; DB starts filling. Testable server-side\n   with synthetic push payloads.\n4. **Go CLI `agy-ingest`** — `cli/` module: scan → stable id → manifest-skip →\n   push. End-to-end: run it against the app, watch rows appear. Ship a build target.\n5. **Flip reads to DB** — `SessionRepository`/`SummaryRepository`; reshape\n   `BrainController`/`AnalysisController`/`SessionCollector` to query by `source`;\n   remove Antigravity read special-casing + `SessionSource` registry injection.\n   Rework `BrainControllerTest`; add Postgres to e2e. **This is the source-of-truth flip.**\n6. **Delete dead write paths** — `SummaryCache`, Antigravity in-session summary\n   writes, file `EvalRunStore`, `SessionSource` cache methods, and the readers'\n   filesystem-walk code now superseded by the CLI. Update […]
 
@@ -1376,7 +1376,7 @@ id: toolu_01CyYGwP5eAL8xrF5WFBzTJg
 tool_result
 id: toolu_01CyYGwP5eAL8xrF5WFBzTJg
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1390,7 +1390,7 @@ id: toolu_01N297VbbuCdRv8p2BVWgwum
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "- **e2e:** add a Postgres service container to the `e2e` CI job; set\n  `DATABASE_URL`/`POSTGRES_*` in Playwright `webServer.env`; add a seed step calling\n  `POST /api/ingest` in `global-setup.mjs` so the seeded `build/e2e-home` fixtures\n  flow into the DB (also smoke-tests ingest end-to-end). Keep `-Duser.home` +\n  `-Ddotenv.enabled=false`.\n- **Manual multi-machine proof:** start local Postgres (`docker run postgres`), point\n  `DATABASE_URL` at it, run *Sync*, confirm sessions render from the DB. Then point a\n  second checkout at the same DB (no local agent files) and confirm the same\n  trajectories appear — this is the whole point of the change.",
   "new_string": "- **Ingest API:** unit-test `SourceNormalizer` per source against the existing\n  `e2e/fixtures.mjs` shapes; integration-test `POST /api/ingest/sessions` +\n  `GET /api/ingest/manifest` against Testcontainers Postgres, asserting idempotency\n  (push twice → one row, second reports `skipped`) and the `INGEST_TOKEN` guard\n  (401 without token when set).\n- **Go CLI:** `go test` in `cli/` for stable-id derivation and manifest-diff/skip\n  logic (table-driven, using `--home` fixtures); a small end-to-end test that runs\n  the CLI against a stub HTTP server and asserts the pushed batch. Wire `go build`\n  + `go test ./cli/...` into CI as a separate job.\n- **e2e:** add a Postgres service container to the `e2e` […]
 
@@ -1399,7 +1399,7 @@ id: toolu_01N297VbbuCdRv8p2BVWgwum
 tool_result
 id: toolu_01N297VbbuCdRv8p2BVWgwum
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1412,7 +1412,7 @@ tool_use Read
 id: toolu_016sWFTX3S6FQ6BZMG7YH77w
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "offset": 176,
   "limit": 18
 }
@@ -1449,7 +1449,7 @@ tool_use Read
 id: toolu_014EkypnUmddVtnNLBmC8fMk
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "offset": 230,
   "limit": 22
 }
@@ -1490,7 +1490,7 @@ tool_use Read
 id: toolu_011wyy3QfXemTCEfQnQQpeDt
 ```json
 {
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "offset": 251,
   "limit": 12
 }
@@ -1522,7 +1522,7 @@ id: toolu_01CUY8s8CURn3k4ijQgaLXxj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md",
+  "file_path": "/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md",
   "old_string": "`reachability-metadata.json` (register `db/schema.sql` + any pgjdbc gaps),\n`README.md` / `AGENTS.md`.\n\n**Remove (final step):** `SummaryCache.java`, `EvalRunStore.java`, the\n`SessionSource` cache methods and Antigravity in-session summary writes.",
   "new_string": "`reachability-metadata.json` (register `db/schema.sql` + any pgjdbc gaps),\n`.github/workflows/ci.yml` (Postgres service for backend/e2e jobs + a Go\nbuild/test job), `README.md` / `AGENTS.md` (document the CLI + DB setup).\n\n**Remove (final step):** `SummaryCache.java`, `EvalRunStore.java`, the\n`SessionSource` cache methods, the Antigravity in-session summary writes, and the\nfilesystem-walk code in `ClaudeCodeSessionReader`/`CodexSessionReader` now\nsuperseded by the CLI (keeping their adapter-invoking `SourceNormalizer` logic)."
 }
@@ -1533,7 +1533,7 @@ id: toolu_01CUY8s8CURn3k4ijQgaLXxj
 tool_result
 id: toolu_01CUY8s8CURn3k4ijQgaLXxj
 ```
-The file /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1583,7 +1583,7 @@ tool_use Bash
 id: toolu_019nz51uaiHyENctLM8CknN7
 ```json
 {
-  "command": "cd /Users/scottdensmore/.claude/plans && grep -n \"agy-ingest\" the-app-today-uses-adaptive-reddy.md",
+  "command": "cd /home/<USER>/.claude/plans && grep -n \"agy-ingest\" the-app-today-uses-adaptive-reddy.md",
   "description": "Find agy-ingest occurrences"
 }
 ```
@@ -1600,7 +1600,7 @@ id: toolu_019nz51uaiHyENctLM8CknN7
 272:4. **Go CLI `agy-ingest`** — `cli/` module: scan → stable id → manifest-skip →
 325:  `agy-ingest` (or a direct `POST /api/ingest/sessions`) against the seeded
 330:  `agy-ingest --server http://localhost:8080`, confirm sessions render in the app.
-Shell cwd was reset to /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer
+Shell cwd was reset to /home/<USER>/Developer/scottdensmore/agent-brain-visualizer
 ```
 
 > TOOL
@@ -1609,7 +1609,7 @@ tool_use Bash
 id: toolu_01XnbJNkKPkWt2bTwq4qZrkj
 ```json
 {
-  "command": "cd /Users/scottdensmore/.claude/plans && sed -i '' 's/agy-ingest/agent-ingest/g' the-app-today-uses-adaptive-reddy.md && grep -n \"agent-ingest\\|agy-ingest\" the-app-today-uses-adaptive-reddy.md",
+  "command": "cd /home/<USER>/.claude/plans && sed -i '' 's/agy-ingest/agent-ingest/g' the-app-today-uses-adaptive-reddy.md && grep -n \"agent-ingest\\|agy-ingest\" the-app-today-uses-adaptive-reddy.md",
   "description": "Rename agy-ingest to agent-ingest"
 }
 ```
@@ -1626,7 +1626,7 @@ id: toolu_01XnbJNkKPkWt2bTwq4qZrkj
 272:4. **Go CLI `agent-ingest`** — `cli/` module: scan → stable id → manifest-skip →
 325:  `agent-ingest` (or a direct `POST /api/ingest/sessions`) against the seeded
 330:  `agent-ingest --server http://localhost:8080`, confirm sessions render in the app.
-Shell cwd was reset to /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer
+Shell cwd was reset to /home/<USER>/Developer/scottdensmore/agent-brain-visualizer
 ```
 
 > AGENT
@@ -1659,7 +1659,7 @@ Can you propose the plan again (I thikn the file already exists for the plan)
 
 > AGENT
 
-The plan file is already written at [the-app-today-uses-adaptive-reddy.md](/Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md) with the `agent-ingest` rename applied. Re-proposing it now.
+The plan file is already written at [the-app-today-uses-adaptive-reddy.md](/home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md) with the `agent-ingest` rename applied. Re-proposing it now.
 
 **Recap of what it covers:**
 
@@ -1712,7 +1712,7 @@ id: toolu_0181UJwZvvgeFA4bCvJ3xXxr
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/scottdensmore/.claude/plans/the-app-today-uses-adaptive-reddy.md
+Your plan has been saved to: /home/<USER>/.claude/plans/the-app-today-uses-adaptive-reddy.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -1909,7 +1909,7 @@ tool_use Read
 id: toolu_01U1oT2K7nZ3fgzEkS7bawqU
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle"
 }
 ```
 
@@ -1919,7 +1919,7 @@ tool_use Read
 id: toolu_017rVckwTZgduA38MJTJsz3r
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml"
 }
 ```
 
@@ -1929,7 +1929,7 @@ tool_use Read
 id: toolu_01LWh6QAJEtM22kvbTMfkWEh
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.env.example"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.env.example"
 }
 ```
 
@@ -1987,7 +1987,7 @@ tool_use Read
 id: toolu_01RhSyrgBkz1VBwAq1Pnc2D3
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle"
 }
 ```
 
@@ -2070,7 +2070,7 @@ tool_use Read
 id: toolu_01417utkeJhdrVymDQBmUcL6
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml"
 }
 ```
 
@@ -2096,7 +2096,7 @@ tool_use Read
 id: toolu_0121YYhn5Mg97ppCfk6KFazq
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.env.example"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.env.example"
 }
 ```
 
@@ -2144,7 +2144,7 @@ tool_use Read
 id: toolu_01StSx6CMHNgjHk84QXTPNoB
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/DotEnv.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/DotEnv.java"
 }
 ```
 
@@ -2197,7 +2197,7 @@ tool_use Read
 id: toolu_01HHTGvoZrfoCi3UndcJYyfy
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/spotless.license"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/spotless.license"
 }
 ```
 
@@ -2350,7 +2350,7 @@ tool_use Write
 id: toolu_01FifDCEtgFrSSdEFkddPkck
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/docker-compose.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/docker-compose.yml",
   "content": "# Local Postgres for the Agent Brain Visualizer.\n#\n#     docker compose up -d      # start (data survives restarts in the named volume)\n#     docker compose down       # stop, keeping the data\n#     docker compose down -v    # stop and wipe the data\n#\n# The credentials below match the defaults in `.env.example`, so `./gradlew run`\n# works against this container with no extra configuration.\nservices:\n  postgres:\n    image: postgres:17-alpine\n    container_name: agent-brain-viz-db\n    restart: unless-stopped\n    environment:\n      POSTGRES_DB: agentbrainviz\n      POSTGRES_USER: agentviz\n      POSTGRES_PASSWORD: agentviz\n    ports:\n      - \"5432:5432\"\n    volumes:\n      - pgdata:/var/lib/postgresql/data\n    healthcheck:\n      test: [\"CMD-SHELL\", \"pg_isready -U agentviz -d agentbrainviz\"]\n      interval: 5s\n      timeout: 5s\n      retries: 10\n\nvolumes:\n  pgdata:\n"
 }
 ```
@@ -2360,7 +2360,7 @@ id: toolu_01FifDCEtgFrSSdEFkddPkck
 tool_result
 id: toolu_01FifDCEtgFrSSdEFkddPkck
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/docker-compose.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/docker-compose.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2369,7 +2369,7 @@ tool_use Write
 id: toolu_01NecifdXYZ5EUM9Nva367h7
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/db/schema.sql",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/db/schema.sql",
   "content": "-- Schema for the shared Agent Brain Visualizer store.\n--\n-- Every statement is idempotent (IF NOT EXISTS), so SchemaBootstrap can run this\n-- on every boot, from several machines, against one shared database.\n\n-- One row per ingested agent trajectory. `steps` holds the normalized timeline\n-- the frontend renders; the tool-native transcript is normalized at ingest time.\nCREATE TABLE IF NOT EXISTS sessions (\n    source       text        NOT NULL,\n    id           text        NOT NULL,\n    title        text,\n    updated_at   timestamptz NOT NULL,\n    steps        jsonb       NOT NULL,\n    content_hash text        NOT NULL,\n    source_mtime bigint      NOT NULL,\n    raw_source   text,\n    ingested_at  timestamptz NOT NULL DEFAULT now(),\n    PRIMARY KEY (source, id)\n);\n\n-- `id` breaks ties so LIMIT-ed listings stay stable across identical mtimes.\nCREATE INDEX IF NOT EXISTS sessions_source_updated\n    ON sessions (source, updated_at DESC, id);\n\n-- Cached AI analyses, keyed to the session they describe.\nCREATE TABLE IF NOT EXISTS summaries (\n    source      text        NOT NULL,\n    session_id  text        NOT NULL,\n    summary     jsonb       NOT NULL,\n    short_title text,\n    updated_at  timestamptz NOT NULL DEFAULT now(),\n    PRIMARY KEY (source, session_id)\n);\n\n-- Saved eval runs. `saved_at` is an ISO-8601 instant, so it is both the delete\n-- key and a lexicographic stand-in for chronological order.\nCREATE TABLE IF NOT EXISTS eval_runs (\n    saved_at           text             PRIMARY KEY,\n    flavor […]
 
 > TOOL
@@ -2377,7 +2377,7 @@ id: toolu_01NecifdXYZ5EUM9Nva367h7
 tool_result
 id: toolu_01NecifdXYZ5EUM9Nva367h7
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/db/schema.sql (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/db/schema.sql (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2391,7 +2391,7 @@ id: toolu_01PAwPWJ8DbkafPMFyJanMc8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle",
   "old_string": "    // Micronaut Langchain4j\n    annotationProcessor(\"io.micronaut.langchain4j:micronaut-langchain4j-processor:2.0.1\")\n    implementation(\"io.micronaut.langchain4j:micronaut-langchain4j-core:2.0.1\")\n    \n    // Dependencies end here\n}",
   "new_string": "    // Micronaut Langchain4j\n    annotationProcessor(\"io.micronaut.langchain4j:micronaut-langchain4j-processor:2.0.1\")\n    implementation(\"io.micronaut.langchain4j:micronaut-langchain4j-core:2.0.1\")\n\n    // Shared Postgres store: a pooled DataSource + the driver. The repositories use\n    // plain JDBC, so the driver is only needed at runtime.\n    implementation(\"io.micronaut.sql:micronaut-jdbc-hikari\")\n    runtimeOnly(\"org.postgresql:postgresql:42.7.4\")\n\n    // Testcontainers: H2's Postgres mode does not honour jsonb or `ON CONFLICT ... WHERE`,\n    // so repository tests run against a real Postgres.\n    testImplementation(\"org.testcontainers:postgresql:1.20.4\")\n    testImplementation(\"org.testcontainers:junit-jupiter:1.20.4\")\n\n    // Dependencies end here\n}"
 }
@@ -2402,7 +2402,7 @@ id: toolu_01PAwPWJ8DbkafPMFyJanMc8
 tool_result
 id: toolu_01PAwPWJ8DbkafPMFyJanMc8
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build.gradle has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build.gradle has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2411,7 +2411,7 @@ tool_use Write
 id: toolu_01QjfCQ2fQKU3RHJfS5NpbXo
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml",
   "content": "micronaut:\n  application:\n    name: visualizer\n  router:\n    static-resources:\n      default:\n        paths: classpath:public\n        mapping: \"/**\"\n\n# The shared trajectory store. Defaults match `docker-compose.yml`, so\n# `docker compose up -d && ./gradlew run` works with no configuration.\n# `Application.applyDatasourceSettings()` overrides these from DATABASE_URL /\n# POSTGRES_USER / POSTGRES_PASSWORD (real env var first, then `.env`).\ndatasources:\n  default:\n    url: \"jdbc:postgresql://localhost:5432/agentbrainviz\"\n    username: agentviz\n    password: agentviz\n    driver-class-name: org.postgresql.Driver\n    dialect: POSTGRES\n    maximum-pool-size: 5\n    minimum-idle: 0\n    # Never fail application startup because the database is down: the UI must\n    # still load, and queries surface a 503 instead.\n    initialization-fail-timeout: -1\n    # Skip JMX registration, which would drag management reflection into the\n    # GraalVM native image for no benefit.\n    register-mbeans: false\n"
 }
 ```
@@ -2421,7 +2421,7 @@ id: toolu_01QjfCQ2fQKU3RHJfS5NpbXo
 tool_result
 id: toolu_01QjfCQ2fQKU3RHJfS5NpbXo
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2434,7 +2434,7 @@ tool_use Write
 id: toolu_01SFwTCFXo6PWLXBsQVxLhXf
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport jakarta.inject.Inject;\nimport jakarta.inject.Singleton;\nimport java.util.Optional;\n\n/**\n * Configuration for the shared Postgres store that holds ingested trajectories, their cached AI\n * analyses, and the eval-run history. Settings come from environment variables (or a {@code .env}\n * file):\n *\n * <ul>\n *   <li>{@code DATABASE_URL} — JDBC URL, default {@value #DEFAULT_DATABASE_URL}\n *   <li>{@code POSTGRES_USER}, {@code POSTGRES_PASSWORD}\n *   <li>{@code INGEST_TOKEN} — when set, the {@code /api/ingest} endpoints require\n *       {@code Authorization: Bearer <token>}. Unset leaves them open, which is fine while the\n *       server is only reachable on localhost.\n * </ul>\n *\n * <p>The defaults match the checked-in {@code […]
 
 > TOOL
@@ -2442,7 +2442,7 @@ id: toolu_01SFwTCFXo6PWLXBsQVxLhXf
 tool_result
 id: toolu_01SFwTCFXo6PWLXBsQVxLhXf
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2451,7 +2451,7 @@ tool_use Write
 id: toolu_018KVP6TStHuYcA8ACf3diHq
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SchemaBootstrap.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SchemaBootstrap.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport io.micronaut.context.event.ApplicationEventListener;\nimport io.micronaut.context.event.StartupEvent;\nimport jakarta.inject.Singleton;\nimport java.io.IOException;\nimport java.io.InputStream;\nimport java.nio.charset.StandardCharsets;\nimport java.sql.Connection;\nimport java.sql.SQLException;\nimport java.sql.Statement;\nimport javax.sql.DataSource;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\n/**\n * Creates the store's tables on startup by running the bundled {@code db/schema.sql}.\n *\n * <p>Every statement in that script is {@code CREATE ... IF NOT EXISTS}, so running it on each boot —\n * and concurrently from several machines sharing one database — is safe. That idempotence is why a\n * migration framework isn't needed yet; introduce one only when the schema starts to evolve.\n *\n * <p>A database that is missing or unreachable must not stop the application from […]
 
 > TOOL
@@ -2459,7 +2459,7 @@ id: toolu_018KVP6TStHuYcA8ACf3diHq
 tool_result
 id: toolu_018KVP6TStHuYcA8ACf3diHq
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SchemaBootstrap.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/SchemaBootstrap.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2473,7 +2473,7 @@ id: toolu_01Mh7cAzebiX6JSL18BEsZXZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
   "old_string": "        applyDotEnvFrameworkSettings();\n        Micronaut.run(Application.class, args);\n    }",
   "new_string": "        applyDotEnvFrameworkSettings();\n        applyDatasourceSettings(DotEnv.values());\n        Micronaut.run(Application.class, args);\n    }\n\n    /**\n     * Maps the store's connection settings onto Micronaut's {@code datasources.default} properties.\n     * Unlike {@code MICRONAUT_*}, these names don't correspond to a framework property, so a real\n     * {@code DATABASE_URL} environment variable has to be bridged explicitly too — not just the\n     * {@code .env} entries. Precedence stays the same: real environment variable, then {@code .env},\n     * and an explicit {@code -D} flag beats both. Values left unset fall through to the defaults in\n     * {@code application.yml}, which match {@code docker-compose.yml}.\n     */\n    static void applyDatasourceSettings(Map<String, String> dotEnvValues) {\n        applyDatasourceSetting(\"DATABASE_URL\", \"datasources.default.url\", dotEnvValues);\n        applyDatasourceSetting(\"POSTGRES_USER\", \"datasources.default.username\", dotEnvValues);\n        applyDatasourceSetting(\"POSTGRES_PASSWORD\", \"datasources.default.password\", dotEnvValues);\n    }\n\n    private static void applyDatasourceSetting(\n        String key,\n        String property,\n        Map<String, String> dotEnvValues\n    ) {\n        String value = System.getenv(key);\n        if (value == null) value = dotEnvValues.get(key);\n        // A blank value would fail Micronaut's property resolution; leave the yml default in place.\n        if (value == null || value.isBlank()) return;\n        if (System.getProperty(property) == null) { // an explicit -D flag wins\n            System.setProperty(property, value);\n        }\n    }"
 }
@@ -2484,7 +2484,7 @@ id: toolu_01Mh7cAzebiX6JSL18BEsZXZ
 tool_result
 id: toolu_01Mh7cAzebiX6JSL18BEsZXZ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2498,7 +2498,7 @@ id: toolu_01FHeoL93TDuD1Ja6yKEgA66
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
   "old_string": "                Environment Variables (or .env entries):\n                  AI_PROVIDER                      `gemini` (default) or `ollama`\n                  GEMINI_API_KEY                   Required to generate summaries with Gemini\n                  GEMINI_MODEL                     Gemini model name\n                  OLLAMA_BASE_URL, OLLAMA_MODEL    Local Ollama server and model\n                  MICRONAUT_SERVER_PORT            Overrides the default server port\n                \"\"\");",
   "new_string": "                Environment Variables (or .env entries):\n                  AI_PROVIDER                      `gemini` (default) or `ollama`\n                  GEMINI_API_KEY                   Required to generate summaries with Gemini\n                  GEMINI_MODEL                     Gemini model name\n                  OLLAMA_BASE_URL, OLLAMA_MODEL    Local Ollama server and model\n                  MICRONAUT_SERVER_PORT            Overrides the default server port\n                  DATABASE_URL                     Postgres JDBC URL for the trajectory store\n                  POSTGRES_USER, POSTGRES_PASSWORD Store credentials\n                  INGEST_TOKEN                     Bearer token required by /api/ingest, if set\n\n                Start a local store with `docker compose up -d` (the defaults match it).\n                \"\"\");"
 }
@@ -2509,7 +2509,7 @@ id: toolu_01FHeoL93TDuD1Ja6yKEgA66
 tool_result
 id: toolu_01FHeoL93TDuD1Ja6yKEgA66
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2519,7 +2519,7 @@ id: toolu_013A5gftkEyXXNdNfBZ59FFZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.env.example",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.env.example",
   "old_string": "# ---------------------------------------------------------------------------\n# Server\n# ---------------------------------------------------------------------------\n# Optional. Defaults to 8080\n# MICRONAUT_SERVER_PORT=8080",
   "new_string": "# ---------------------------------------------------------------------------\n# Server\n# ---------------------------------------------------------------------------\n# Optional. Defaults to 8080\n# MICRONAUT_SERVER_PORT=8080\n\n# ---------------------------------------------------------------------------\n# Trajectory store (Postgres)\n# ---------------------------------------------------------------------------\n# Sessions, cached AI analyses, and eval runs live here rather than on local\n# disk, so trajectories captured on one machine are visible from another.\n#\n# For local development, start the checked-in container — its credentials are\n# exactly the defaults below, so you can leave this whole section commented out:\n#\n#     docker compose up -d\n#\n# To share trajectories across machines, point every machine at one hosted\n# Postgres (Neon, Supabase, Cloud SQL, ...) instead.\n# DATABASE_URL=jdbc:postgresql://localhost:5432/agentbrainviz\n# POSTGRES_USER=agentviz\n# POSTGRES_PASSWORD=REDACTED\n\n# Hosted providers usually require TLS; append it to the URL, e.g.\n# DATABASE_URL=jdbc:postgresql://host:5432/db?sslmode=require\n\n# The `agent-ingest` CLI pushes trajectories to /api/ingest. Once the server is\n# reachable off localhost, set a shared secret here (and pass the same value to\n# the CLI via --token or AGENT_INGEST_TOKEN). Unset leaves ingest unguarded.\n# INGEST_TOKEN="
 }
@@ -2530,7 +2530,7 @@ id: toolu_013A5gftkEyXXNdNfBZ59FFZ
 tool_result
 id: toolu_013A5gftkEyXXNdNfBZ59FFZ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.env.example has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.env.example has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2574,7 +2574,7 @@ tool_use Write
 id: toolu_01RyL9R9eFYjqZDRNx59g8Q4
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/META-INF/native-image/io.github.glaforge/agybrainviz/reachability-metadata.json",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/META-INF/native-image/io.github.glaforge/agybrainviz/reachability-metadata.json",
   "content": "{\n  \"reflection\": [\n    {\n      \"type\": {\n        \"proxy\": [\n          \"io.github.glaforge.agybrainviz.AnalyzerService\"\n        ]\n      }\n    }\n  ],\n  \"resources\": [\n    {\n      \"glob\": \"db/schema.sql\"\n    }\n  ]\n}\n"
 }
 ```
@@ -2593,7 +2593,7 @@ tool_use Read
 id: toolu_0128bhEBF5B4Lp1YxcWYfzZK
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/META-INF/native-image/io.github.glaforge/agybrainviz/reachability-metadata.json"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/META-INF/native-image/io.github.glaforge/agybrainviz/reachability-metadata.json"
 }
 ```
 
@@ -2623,7 +2623,7 @@ id: toolu_014BrwKn4M4JXy7TjHpHETEB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/META-INF/native-image/io.github.glaforge/agybrainviz/reachability-metadata.json",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/META-INF/native-image/io.github.glaforge/agybrainviz/reachability-metadata.json",
   "old_string": "{\n  \"reflection\": [\n    {\n      \"type\": {\n        \"proxy\": [\n          \"io.github.glaforge.agybrainviz.AnalyzerService\"\n        ]\n      }\n    }\n  ]\n}",
   "new_string": "{\n  \"reflection\": [\n    {\n      \"type\": {\n        \"proxy\": [\n          \"io.github.glaforge.agybrainviz.AnalyzerService\"\n        ]\n      }\n    }\n  ],\n  \"resources\": [\n    {\n      \"glob\": \"db/schema.sql\"\n    }\n  ]\n}"
 }
@@ -2634,7 +2634,7 @@ id: toolu_014BrwKn4M4JXy7TjHpHETEB
 tool_result
 id: toolu_014BrwKn4M4JXy7TjHpHETEB
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/META-INF/native-image/io.github.glaforge/agybrainviz/reachability-metadata.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/META-INF/native-image/io.github.glaforge/agybrainviz/reachability-metadata.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2672,7 +2672,7 @@ tool_use Read
 id: toolu_01MfbLAcqn3wqUw2e6ZW4kVs
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/AiConfigTest.java",
   "limit": 45
 }
 ```
@@ -2774,7 +2774,7 @@ tool_use Read
 id: toolu_01KSYV2GkssmJKSBGUShrbKn
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ApplicationTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ApplicationTest.java",
   "offset": 16,
   "limit": 25
 }
@@ -2823,7 +2823,7 @@ id: toolu_01HtwnbPVrFk3QVhsP18nnSY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java",
   "old_string": "    private static void applyDatasourceSetting(\n        String key,\n        String property,\n        Map<String, String> dotEnvValues\n    ) {",
   "new_string": "    /** The pure half of {@link #applyDatasourceSettings}, so the precedence rules are testable. */\n    static void applyDatasourceSetting(\n        String key,\n        String property,\n        Map<String, String> dotEnvValues\n    ) {"
 }
@@ -2834,7 +2834,7 @@ id: toolu_01HtwnbPVrFk3QVhsP18nnSY
 tool_result
 id: toolu_01HtwnbPVrFk3QVhsP18nnSY
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/Application.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2843,7 +2843,7 @@ tool_use Write
 id: toolu_01WpSLSzDxSNpbpZVT9AWwSX
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport java.util.Optional;\nimport org.junit.jupiter.api.Test;\n\nclass StorageConfigTest {\n\n    private StorageConfig config(String url, String user, String password, String token) {\n        return new StorageConfig(url, user, password, token);\n    }\n\n    @Test\n    void fallsBackToTheDockerComposeDefaults() {\n        StorageConfig unset = config(null, null, null, null);\n        assertEquals(StorageConfig.DEFAULT_DATABASE_URL, unset.databaseUrl());\n        assertEquals(StorageConfig.DEFAULT_USER, unset.user());\n        assertEquals(StorageConfig.DEFAULT_PASSWORD, unset.password());\n\n        // A blank value is a missing value, not a deliberate override: an empty `.env` entry must\n        // not produce an unusable connection.\n        StorageConfig blank = config(\"  \", \"\", \" \", null);\n        assertEquals(StorageConfig.DEFAULT_DATABASE_URL, blank.databaseUrl());\n        assertEquals(StorageConfig.DEFAULT_USER, blank.user());\n        assertEquals(StorageConfig.DEFAULT_PASSWORD, blank.password());\n    }\n\n    @Test\n    void explicitValuesWinOverTheDefaults() {\n        StorageConfig hosted = config(\n            \"jdbc:postgresql://db.example.com:5432/prod?sslmode=require\",\n […]
 
 > TOOL
@@ -2851,7 +2851,7 @@ id: toolu_01WpSLSzDxSNpbpZVT9AWwSX
 tool_result
 id: toolu_01WpSLSzDxSNpbpZVT9AWwSX
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2865,7 +2865,7 @@ id: toolu_01KQyV27YGwenCMtQ8VvNW96
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java",
   "old_string": "    /** @return the shared ingest token, or empty when the ingest endpoints are unguarded. */\n    public Optional<String> ingestToken() {\n        return (ingestToken == null || ingestToken.isBlank())\n            ? Optional.empty()\n            : Optional.of(ingestToken);\n    }\n\n    /** @return whether a store is configured at all. Only a blank {@code DATABASE_URL} disables it. */\n    public boolean isConfigured() {\n        return !databaseUrl.isBlank();\n    }\n\n    /**\n     * @return a user-facing message explaining why the store cannot be reached when\n     *     {@link #isConfigured()} is false.\n     */\n    public String notConfiguredMessage() {\n        return \"Error: DATABASE_URL is blank, so no trajectory store is configured. \" +\n        \"Run `docker compose up -d` and copy `.env.example` to `.env`.\";\n    }\n\n    /**",
   "new_string": "    /** @return the shared ingest token, or empty when the ingest endpoints are unguarded. */\n    public Optional<String> ingestToken() {\n        return (ingestToken == null || ingestToken.isBlank())\n            ? Optional.empty()\n            : Optional.of(ingestToken);\n    }\n\n    /**"
 }
@@ -2876,7 +2876,7 @@ id: toolu_01KQyV27YGwenCMtQ8VvNW96
 tool_result
 id: toolu_01KQyV27YGwenCMtQ8VvNW96
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2886,7 +2886,7 @@ id: toolu_01PVn6XDrjxh9dKSaPntpagG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java",
   "old_string": "    @Test\n    void aStoreIsConfiguredUnlessTheUrlIsDeliberatelyBlanked() {\n        assertTrue(config(null, null, null, null).isConfigured());\n        assertTrue(config(\"jdbc:postgresql://host/db\", null, null, null).isConfigured());\n    }\n\n    @Test\n    void theIngestTokenIsAbsentUntilItIsSet() {\n        assertEquals(Optional.empty(), config(null, null, null, null).ingestToken());\n        assertEquals(Optional.empty(), config(null, null, null, \"   \").ingestToken());\n        assertEquals(Optional.of(\"t0ken\"), config(null, null, null, \"t0ken\").ingestToken());\n    }\n\n    @Test\n    void theNotConfiguredMessagePointsAtDockerCompose() {\n        assertFalse(config(null, null, null, null).notConfiguredMessage().isBlank());\n        assertTrue(\n            config(null, null, null, null).notConfiguredMessage().contains(\"docker compose up\")\n        );\n    }\n}",
   "new_string": "    @Test\n    void theIngestTokenIsAbsentUntilItIsSet() {\n        assertEquals(Optional.empty(), config(null, null, null, null).ingestToken());\n        assertEquals(Optional.empty(), config(null, null, null, \"   \").ingestToken());\n        assertEquals(Optional.of(\"t0ken\"), config(null, null, null, \"t0ken\").ingestToken());\n    }\n}"
 }
@@ -2897,7 +2897,7 @@ id: toolu_01PVn6XDrjxh9dKSaPntpagG
 tool_result
 id: toolu_01PVn6XDrjxh9dKSaPntpagG
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2911,7 +2911,7 @@ id: toolu_016RPzKa6KiXhuMBjroz3ANr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java",
   "old_string": "import static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport java.util.Optional;\nimport org.junit.jupiter.api.Test;",
   "new_string": "import static org.junit.jupiter.api.Assertions.assertEquals;\n\nimport java.util.Optional;\nimport org.junit.jupiter.api.Test;"
 }
@@ -2922,7 +2922,7 @@ id: toolu_016RPzKa6KiXhuMBjroz3ANr
 tool_result
 id: toolu_016RPzKa6KiXhuMBjroz3ANr
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2931,7 +2931,7 @@ tool_use Read
 id: toolu_01GFpYis3iLBgQhAks9XyTsJ
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ApplicationTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ApplicationTest.java",
   "offset": 53,
   "limit": 14
 }
@@ -2965,7 +2965,7 @@ id: toolu_01HF7K3jfobu27WjHzDoeXwp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ApplicationTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ApplicationTest.java",
   "old_string": "    @Test\n    void skipsBlankValuesRatherThanBreakingPropertyResolution() {\n        Application.applyFrameworkSettings(Map.of(KEY, \"   \"));\n        assertNull(System.getProperty(PROPERTY));\n    }\n}",
   "new_string": "    @Test\n    void skipsBlankValuesRatherThanBreakingPropertyResolution() {\n        Application.applyFrameworkSettings(Map.of(KEY, \"   \"));\n        assertNull(System.getProperty(PROPERTY));\n    }\n\n    // The datasource bridge, exercised through a made-up property so the test JVM's real\n    // `datasources.default.*` settings are never touched.\n\n    private static final String DS_KEY = \"FOO_DATABASE_URL\";\n    private static final String DS_PROPERTY = \"datasources.foo.url\";\n\n    @AfterEach\n    void clearDatasourceProperty() {\n        System.clearProperty(DS_PROPERTY);\n    }\n\n    @Test\n    void bridgesADotEnvValueOntoTheDatasourceProperty() {\n        Application.applyDatasourceSetting(DS_KEY, DS_PROPERTY, Map.of(DS_KEY, \"jdbc:postgresql://h/d\"));\n        assertEquals(\"jdbc:postgresql://h/d\", System.getProperty(DS_PROPERTY));\n    }\n\n    @Test\n    void anExplicitSystemPropertyWinsOverTheDotEnvDatasourceValue() {\n        System.setProperty(DS_PROPERTY, \"jdbc:postgresql://explicit/db\"); // as if passed with -D\n        Application.applyDatasourceSetting(DS_KEY, DS_PROPERTY, Map.of(DS_KEY, \"jdbc:postgresql://h/d\"));\n        assertEquals(\"jdbc:postgresql://explicit/db\", System.getProperty(DS_PROPERTY));\n    }\n\n    @Test\n    void leavesTheYamlDefaultInPlaceWhenNothingIsSet() {\n        Application.applyDatasourceSetting(DS_KEY, DS_PROPERTY, Map.of());\n        assertNull(System.getProperty(DS_PROPERTY));\n    }\n\n    @Test\n    void treatsABlankDatasourceValueAsUnset() {\n        Application.applyDatasourceSetting(DS_KEY, DS_PROPERTY, Map.of(DS_KEY, \"   \"));\n        assertNull(System.getProperty(DS_PROPERTY));\n    }\n}"
 }
@@ -2976,7 +2976,7 @@ id: toolu_01HF7K3jfobu27WjHzDoeXwp
 tool_result
 id: toolu_01HF7K3jfobu27WjHzDoeXwp
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ApplicationTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/ApplicationTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3033,7 +3033,7 @@ id: toolu_011wQamCrZsJQXP6YY2C8Vru
 tool_result
 id: toolu_011wQamCrZsJQXP6YY2C8Vru
 ```
-[Incubating] Problems report is available at: file:///Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///home/<USER>/Developer/scottdensmore/agent-brain-visualizer/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
@@ -3362,7 +3362,7 @@ id: toolu_01NSTv36Vd7Taj6dbnjc7R2w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml",
   "old_string": "    maximum-pool-size: 5\n    minimum-idle: 0\n    # Never fail application startup because the database is down: the UI must\n    # still load, and queries surface a 503 instead.\n    initialization-fail-timeout: -1",
   "new_string": "    maximum-pool-size: 5\n    minimum-idle: 0\n    # Never fail application startup because the database is down: the UI must\n    # still load, and queries surface a 503 instead.\n    initialization-fail-timeout: -1\n    # Hikari's 30s default would stall startup for half a minute whenever the\n    # database is down, since the schema bootstrap asks for a connection.\n    connection-timeout: 5000"
 }
@@ -3373,7 +3373,7 @@ id: toolu_01NSTv36Vd7Taj6dbnjc7R2w
 tool_result
 id: toolu_01NSTv36Vd7Taj6dbnjc7R2w
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/application.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3540,7 +3540,7 @@ tool_use Bash
 id: toolu_01BSekpKADLzJmQJLcAtWug6
 ```json
 {
-  "command": "git commit -q -F - <<'EOF'\nfeat: wire up a shared Postgres store (no behavior change yet)\n\nThe visualizer reads agent transcripts straight off local disk, so a\ntrajectory captured on one computer is invisible on another. This is the\nfirst step toward a shared store: the plumbing exists, but nothing reads\nor writes it yet.\n\nAdds a docker-compose.yml running Postgres with a named volume for local\ndevelopment. Its credentials are the defaults in application.yml and\nStorageConfig, so `docker compose up -d && ./gradlew run` needs no\nconfiguration.\n\nSchemaBootstrap applies db/schema.sql on startup. Every statement is\nCREATE ... IF NOT EXISTS, so it is safe to run on each boot and from\nseveral machines against one shared database — which is why a migration\nframework isn't needed yet.\n\nStorageConfig follows AiConfig (env var > .env > default, with a\npackage-private test seam), and Application.applyDatasourceSettings\nbridges DATABASE_URL/POSTGRES_USER/POSTGRES_PASSWORD onto Micronaut's\ndatasource properties using the same precedence as the MICRONAUT_* bridge.\n\nA database that is down must never stop the app from booting, so the\nschema failure is logged rather than thrown. Hikari's 30s default\nconnection-timeout stalled startup for half a minute in that case, since\nthe bootstrap asks for a connection; 5s keeps it snappy.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit log --oneline -1",
+  "command": "git commit -q -F - <<'EOF'\nfeat: wire up a shared Postgres store (no behavior change yet)\n\nThe visualizer reads agent transcripts straight off local disk, so a\ntrajectory captured on one computer is invisible on another. This is the\nfirst step toward a shared store: the plumbing exists, but nothing reads\nor writes it yet.\n\nAdds a docker-compose.yml running Postgres with a named volume for local\ndevelopment. Its credentials are the defaults in application.yml and\nStorageConfig, so `docker compose up -d && ./gradlew run` needs no\nconfiguration.\n\nSchemaBootstrap applies db/schema.sql on startup. Every statement is\nCREATE ... IF NOT EXISTS, so it is safe to run on each boot and from\nseveral machines against one shared database — which is why a migration\nframework isn't needed yet.\n\nStorageConfig follows AiConfig (env var > .env > default, with a\npackage-private test seam), and Application.applyDatasourceSettings\nbridges DATABASE_URL/POSTGRES_USER/POSTGRES_PASSWORD onto Micronaut's\ndatasource properties using the same precedence as the MICRONAUT_* bridge.\n\nA database that is down must never stop the app from booting, so the\nschema failure is logged rather than thrown. Hikari's 30s default\nconnection-timeout stalled startup for half a minute in that case, since\nthe bootstrap asks for a connection; 5s keeps it snappy.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -1",
   "description": "Commit step 1" […]
 
 > TOOL
@@ -3580,7 +3580,7 @@ tool_use Read
 id: toolu_01XYpdedXXxytxo9Bm8MSi7u
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunSnapshot.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunSnapshot.java"
 }
 ```
 
@@ -3627,7 +3627,7 @@ tool_use Read
 id: toolu_01PQSnNQpWmq8soiNQqYmt3w
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunStoreTest.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunStoreTest.java"
 }
 ```
 
@@ -3687,7 +3687,7 @@ tool_use Read
 id: toolu_01VNmExhJ5tDgScT9tGo4jEM
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java"
 }
 ```
 
@@ -3742,7 +3742,7 @@ tool_use Read
 id: toolu_01YaGDqfbC1huSz3sisn1ZC6
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NameCount.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/NameCount.java"
 }
 ```
 
@@ -3786,7 +3786,7 @@ tool_use Read
 id: toolu_01A8kcWHqPaKbt7c92YbmxNw
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalReport.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalReport.java"
 }
 ```
 
@@ -3834,7 +3834,7 @@ id: toolu_01LNp5D2ZxnzndVDn8fZYL2q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/db/schema.sql",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/db/schema.sql",
   "old_string": "-- Saved eval runs. `saved_at` is an ISO-8601 instant, so it is both the delete\n-- key and a lexicographic stand-in for chronological order.\nCREATE TABLE IF NOT EXISTS eval_runs (\n    saved_at           text             PRIMARY KEY,\n    flavor             text             NOT NULL,\n    model_label        text             NOT NULL,\n    session_count      int              NOT NULL,\n    evaluated_sessions int              NOT NULL,\n    avg_score          double precision NOT NULL,\n    check_pass_rates   jsonb            NOT NULL,\n    judged             boolean          NOT NULL,\n    judged_sessions    int              NOT NULL,\n    avg_faithfulness   double precision NOT NULL,\n    avg_actionability  double precision NOT NULL,\n    avg_clarity        double precision NOT NULL\n);\n\nCREATE INDEX IF NOT EXISTS eval_runs_flavor_saved\n    ON eval_runs (flavor, saved_at DESC);",
   "new_string": "-- Saved eval runs. `saved_at` is an ISO-8601 instant, so it doubles as the\n-- delete key and a lexicographic stand-in for chronological order. It is NOT\n-- unique: two runs saved in the same instant are two rows, and deleting by\n-- `saved_at` removes both — the behaviour of the file-backed store it replaces.\n-- Hence the surrogate key, which also breaks ordering ties.\nCREATE TABLE IF NOT EXISTS eval_runs (\n    run_id             bigserial        PRIMARY KEY,\n    saved_at           text             NOT NULL,\n    flavor             text             NOT NULL,\n    model_label        text             NOT NULL,\n    session_count      int              NOT NULL,\n    evaluated_sessions int              NOT NULL,\n    avg_score          double precision NOT NULL,\n    check_pass_rates […]
 
@@ -3843,7 +3843,7 @@ id: toolu_01LNp5D2ZxnzndVDn8fZYL2q
 tool_result
 id: toolu_01LNp5D2ZxnzndVDn8fZYL2q
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/db/schema.sql has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/resources/db/schema.sql has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3856,7 +3856,7 @@ tool_use Write
 id: toolu_01JFPL9rJAuTpm9QvHpgnYYC
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StoreUnavailableException.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StoreUnavailableException.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\n/**\n * The trajectory store could not be reached or queried.\n *\n * <p>Repositories raise this instead of letting a {@link java.sql.SQLException} escape, so\n * {@link StoreUnavailableHandler} can answer with a 503 and an actionable message. Answering with an\n * empty list would be worse than an error: the caller could not tell \"the database is down\" from\n * \"you have no sessions yet\".\n */\npublic class StoreUnavailableException extends RuntimeException {\n\n    public StoreUnavailableException(String message, Throwable cause) {\n        super(message, cause);\n    }\n}\n"
 }
 ```
@@ -3866,7 +3866,7 @@ id: toolu_01JFPL9rJAuTpm9QvHpgnYYC
 tool_result
 id: toolu_01JFPL9rJAuTpm9QvHpgnYYC
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StoreUnavailableException.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StoreUnavailableException.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3875,7 +3875,7 @@ tool_use Write
 id: toolu_01C8VewRucmZr7ahgUsKU7xu
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StoreUnavailableHandler.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StoreUnavailableHandler.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport io.micronaut.context.annotation.Requires;\nimport io.micronaut.http.HttpRequest;\nimport io.micronaut.http.HttpResponse;\nimport io.micronaut.http.HttpStatus;\nimport io.micronaut.http.annotation.Produces;\nimport io.micronaut.http.server.exceptions.ExceptionHandler;\nimport jakarta.inject.Singleton;\nimport java.util.Map;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\n/** Turns a store outage into a 503 that says what to do about it, rather than a bare 500. */\n@Produces\n@Singleton\n@Requires(classes = { StoreUnavailableException.class, ExceptionHandler.class })\npublic class StoreUnavailableHandler\n    implements ExceptionHandler<StoreUnavailableException, HttpResponse<?>> {\n\n    private static final Logger LOG = LoggerFactory.getLogger(StoreUnavailableHandler.class);\n\n    @Override\n    public HttpResponse<?> handle(HttpRequest request, StoreUnavailableException exception) {\n        LOG.warn(\"Store unavailable serving {}: {}\", request.getPath(), exception.getMessage());\n        return HttpResponse\n            .status(HttpStatus.SERVICE_UNAVAILABLE)\n            .body(\n                Map.of(\n                    \"error\",\n                    \"The trajectory store is unavailable. Is the database running? Try `docker compose up -d`.\"\n                )\n            );\n    }\n}\n"
 }
 ```
@@ -3885,7 +3885,7 @@ id: toolu_01C8VewRucmZr7ahgUsKU7xu
 tool_result
 id: toolu_01C8VewRucmZr7ahgUsKU7xu
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StoreUnavailableHandler.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StoreUnavailableHandler.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3898,7 +3898,7 @@ tool_use Write
 id: toolu_01WuuM4jGqnxmjAdBgiaGZtP
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.fasterxml.jackson.core.type.TypeReference;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport jakarta.inject.Singleton;\nimport java.sql.Connection;\nimport java.sql.PreparedStatement;\nimport java.sql.ResultSet;\nimport java.sql.SQLException;\nimport java.sql.Types;\nimport java.time.Instant;\nimport java.util.ArrayList;\nimport java.util.List;\nimport javax.sql.DataSource;\n\n/**\n * Persists {@link EvalRunSnapshot}s to the shared store so eval quality can be tracked and compared\n * across runs — and across machines, which the file-backed predecessor could not do.\n *\n * <p>The history is capped at {@link #MAX_RUNS} rows globally; on overflow the oldest runs are\n * dropped. Concurrent writers from two machines are safe without an application lock: each save is a\n * single INSERT, and two overlapping cap-trims both converge on \"keep the newest {@value #MAX_RUNS}\".\n */\n@Singleton\npublic class […]
 
 > TOOL
@@ -3906,7 +3906,7 @@ id: toolu_01WuuM4jGqnxmjAdBgiaGZtP
 tool_result
 id: toolu_01WuuM4jGqnxmjAdBgiaGZtP
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3920,7 +3920,7 @@ id: toolu_01FmH4T2mjxohzEKWdNuRVye
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java",
   "old_string": "    private final EvalService evalService;\n    private final EvalRunStore runStore;\n\n    @Inject\n    public EvalController(EvalService evalService, EvalRunStore runStore) {\n        this.evalService = evalService;\n        this.runStore = runStore;\n    }",
   "new_string": "    private final EvalService evalService;\n    private final EvalRunRepository runStore;\n\n    @Inject\n    public EvalController(EvalService evalService, EvalRunRepository runStore) {\n        this.evalService = evalService;\n        this.runStore = runStore;\n    }"
 }
@@ -3931,7 +3931,7 @@ id: toolu_01FmH4T2mjxohzEKWdNuRVye
 tool_result
 id: toolu_01FmH4T2mjxohzEKWdNuRVye
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3941,7 +3941,7 @@ id: toolu_01K8ykZnVSBfX1aWCpqAg3z8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java",
   "old_string": "    /** Saves a snapshot of a completed eval run so it can be compared against later runs. */\n    @ExecuteOn(TaskExecutors.IO)\n    @Post(value = \"/runs\", produces = \"application/json\")\n    public EvalRunSnapshot saveRun(@Body EvalReport report) throws IOException {\n        return runStore.save(report);\n    }\n\n    /** The saved run history for a flavor, newest first. */\n    @ExecuteOn(TaskExecutors.IO)\n    @Get(value = \"/runs\", produces = \"application/json\")\n    public List<EvalRunSnapshot> listRuns(@QueryValue Optional<String> flavor) throws IOException {\n        return runStore.list(flavor.orElse(\"antigravity-cli\"));\n    }\n\n    /** Deletes the saved run identified by its {@code savedAt} timestamp. */\n    @ExecuteOn(TaskExecutors.IO)\n    @Delete(value = \"/runs\", produces = \"application/json\")\n    public DeleteResult deleteRun(@QueryValue String savedAt) throws IOException {\n        return new DeleteResult(runStore.delete(savedAt));\n    }",
   "new_string": "    /** Saves a snapshot of a completed eval run so it can be compared against later runs. */\n    @ExecuteOn(TaskExecutors.IO)\n    @Post(value = \"/runs\", produces = \"application/json\")\n    public EvalRunSnapshot saveRun(@Body EvalReport report) {\n        return runStore.save(report);\n    }\n\n    /** The saved run history for a flavor, newest first. */\n    @ExecuteOn(TaskExecutors.IO)\n    @Get(value = \"/runs\", produces = \"application/json\")\n    public List<EvalRunSnapshot> listRuns(@QueryValue Optional<String> flavor) {\n        return runStore.list(flavor.orElse(\"antigravity-cli\"));\n    }\n\n    /** Deletes the saved run identified by its {@code savedAt} timestamp. */\n    @ExecuteOn(TaskExecutors.IO)\n    @Delete(value = \"/runs\", produces = \"application/json\")\n    public DeleteResult deleteRun(@QueryValue String savedAt) {\n        return new DeleteResult(runStore.delete(savedAt));\n    }" […]
 
@@ -3950,7 +3950,7 @@ id: toolu_01K8ykZnVSBfX1aWCpqAg3z8
 tool_result
 id: toolu_01K8ykZnVSBfX1aWCpqAg3z8
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalController.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3963,7 +3963,7 @@ tool_use Write
 id: toolu_01XUjHNECg9vJcxFJX1ZkqeV
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunRepositoryTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunRepositoryTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nimport java.sql.SQLException;\nimport java.util.List;\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.api.Test;\n\n/** Tests the Postgres-backed eval run history against a real database. */\nclass EvalRunRepositoryTest extends PostgresTest {\n\n    private EvalRunRepository store;\n\n    @BeforeEach\n    void setUp() throws SQLException {\n        store = new EvalRunRepository(dataSource());\n        truncate(\"eval_runs\");\n    }\n\n    private EvalReport report(String flavor, double avgScore, JudgeSummary judge) {\n        return new EvalReport(\n            flavor,\n            10,\n            10,\n            5,\n            avgScore,\n            \"gemini · gemini-3.5-flash\",\n            List.of(new NameCount(\"schema-complete\", 4)),\n            List.of(),\n            judge\n        );\n    }\n\n    @Test\n    void savesAndListsNewestFirst() {\n        store.save(report(\"codex\", 70.0, JudgeSummary.notRun(\"n\")));\n        store.save(report(\"codex\", 80.0, JudgeSummary.notRun(\"n\")));\n\n        List<EvalRunSnapshot> runs = store.list(\"codex\");\n        assertEquals(2, runs.size());\n        assertEquals(80.0, runs.get(0).avgScore()); // newest first\n        assertEquals(70.0, runs.get(1).avgScore());\n        assertFalse(runs.get(0).judged());\n        assertEquals(\"codex\", runs.get(0).flavor());\n […]
 
 > TOOL
@@ -3971,7 +3971,7 @@ id: toolu_01XUjHNECg9vJcxFJX1ZkqeV
 tool_result
 id: toolu_01XUjHNECg9vJcxFJX1ZkqeV
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunRepositoryTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunRepositoryTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3984,7 +3984,7 @@ tool_use Write
 id: toolu_01Vwd46RangJMp52Y9RUSYXj
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/PostgresTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/PostgresTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.zaxxer.hikari.HikariConfig;\nimport com.zaxxer.hikari.HikariDataSource;\nimport java.io.IOException;\nimport java.sql.Connection;\nimport java.sql.SQLException;\nimport java.sql.Statement;\nimport javax.sql.DataSource;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.testcontainers.containers.PostgreSQLContainer;\n\n/**\n * Base class for repository tests, backed by a real Postgres.\n *\n * <p>H2's Postgres compatibility mode supports neither {@code jsonb} nor the conditional\n * {@code ON CONFLICT ... WHERE} the ingest upsert relies on, so an in-memory stand-in would test a\n * different database than the one that ships.\n *\n * <p>One container is started for the whole test JVM and left for Ryuk to reap, rather than one per\n * test class: container startup dominates the runtime of these tests. The schema […]
 
 > TOOL
@@ -3992,7 +3992,7 @@ id: toolu_01Vwd46RangJMp52Y9RUSYXj
 tool_result
 id: toolu_01Vwd46RangJMp52Y9RUSYXj
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/PostgresTest.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/PostgresTest.java (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4180,7 +4180,7 @@ id: toolu_01NqsVGWky8YUS3FLLAh53Li
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java",
   "old_string": "    /** Records a snapshot of the given report (server-stamped) and returns it. */\n    public EvalRunSnapshot save(EvalReport report) {\n        EvalRunSnapshot snapshot = snapshotOf(report, Instant.now().toString());\n        try (Connection connection = dataSource.getConnection()) {\n            insert(connection, snapshot);\n            trimToMaxRuns(connection);\n        } catch (SQLException e) {\n            throw new StoreUnavailableException(\"Could not save the eval run\", e);\n        }\n        return snapshot;\n    }",
   "new_string": "    /** Records a snapshot of the given report (server-stamped) and returns it. */\n    public EvalRunSnapshot save(EvalReport report) {\n        return save(report, Instant.now().toString());\n    }\n\n    /**\n     * Test seam: stamp the run with an explicit instant. {@code Instant.now()} repeats often enough\n     * under a tight loop that two runs really can share a timestamp, which is why {@code saved_at}\n     * is not the primary key — so tests need to force the collision rather than race for it.\n     */\n    EvalRunSnapshot save(EvalReport report, String savedAt) {\n        EvalRunSnapshot snapshot = snapshotOf(report, savedAt);\n        try (Connection connection = dataSource.getConnection()) {\n            insert(connection, snapshot);\n            trimToMaxRuns(connection);\n        } catch (SQLException e) {\n            throw new StoreUnavailableException(\"Could not save the eval run\", e);\n        }\n        return snapshot;\n    }"
 }
@@ -4191,7 +4191,7 @@ id: toolu_01NqsVGWky8YUS3FLLAh53Li
 tool_result
 id: toolu_01NqsVGWky8YUS3FLLAh53Li
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4201,7 +4201,7 @@ id: toolu_01FHSoDfdwJtZGFJQBxSxVgN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunRepositoryTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunRepositoryTest.java",
   "old_string": "    @Test\n    void twoRunsSavedInTheSameInstantBothPersistAndBothDelete() {\n        // savedAt is a timestamp, not a unique key: a coarse clock must not collapse two runs into\n        // one row, and deleting by that shared instant removes both.\n        int before = store.list(\"codex\").size();\n        for (int i = 0; i < 50; i++) {\n            store.save(report(\"codex\", i, JudgeSummary.notRun(\"n\")));\n        }\n        List<EvalRunSnapshot> runs = store.list(\"codex\");\n        assertEquals(before + 50, runs.size());\n\n        String shared = runs.get(0).savedAt();\n        long sharing = runs.stream().filter(r -> shared.equals(r.savedAt())).count();\n        assertEquals(sharing, store.delete(shared));\n    }\n}",
   "new_string": "    @Test\n    void twoRunsSharingAnInstantBothPersistAndBothDelete() {\n        // Instant.now() repeats under a tight loop, so savedAt is a timestamp rather than a unique\n        // key: a collision must not collapse two runs into one row (nor throw), and deleting by the\n        // shared instant removes both — the behaviour of the file-backed store this replaces.\n        String shared = \"2026-07-09T12:00:00Z\";\n        store.save(report(\"codex\", 70.0, JudgeSummary.notRun(\"n\")), shared);\n        store.save(report(\"codex\", 80.0, JudgeSummary.notRun(\"n\")), shared);\n        store.save(report(\"codex\", 90.0, JudgeSummary.notRun(\"n\")), \"2026-07-09T12:00:01Z\");\n\n        assertEquals(3, store.list(\"codex\").size());\n        assertEquals(2, store.delete(shared));\n\n        List<EvalRunSnapshot> remaining = store.list(\"codex\");\n        assertEquals(1, remaining.size());\n        assertEquals(90.0, remaining.get(0).avgScore());\n    }\n\n    @Test\n    void ordersRunsSharingAnInstantByInsertionSoTheNewestStillLeads() {\n        String shared = \"2026-07-09T12:00:00Z\";\n        store.save(report(\"codex\", 70.0, JudgeSummary.notRun(\"n\")), shared);\n        store.save(report(\"codex\", 80.0, JudgeSummary.notRun(\"n\")), shared);\n\n        // The tie is broken by the surrogate key, so the later save still lists first.\n        assertEquals(80.0, […]
 
@@ -4210,7 +4210,7 @@ id: toolu_01FHSoDfdwJtZGFJQBxSxVgN
 tool_result
 id: toolu_01FHSoDfdwJtZGFJQBxSxVgN
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunRepositoryTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalRunRepositoryTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4305,7 +4305,7 @@ id: toolu_01JYrQD6hatM5b4LZkeoSH1V
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java",
   "old_string": "        FROM eval_runs\n        WHERE flavor = ?\n        ORDER BY saved_at DESC\n        \"\"\";\n\n    private static final String TRIM_SQL = \"\"\"\n        DELETE FROM eval_runs\n        WHERE saved_at NOT IN (\n            SELECT saved_at FROM eval_runs ORDER BY saved_at DESC LIMIT ?\n        )\n        \"\"\";",
   "new_string": "        FROM eval_runs\n        WHERE flavor = ?\n        ORDER BY saved_at DESC, run_id DESC\n        \"\"\";\n\n    private static final String TRIM_SQL = \"\"\"\n        DELETE FROM eval_runs\n        WHERE run_id NOT IN (\n            SELECT run_id FROM eval_runs ORDER BY saved_at DESC, run_id DESC LIMIT ?\n        )\n        \"\"\";"
 }
@@ -4316,7 +4316,7 @@ id: toolu_01JYrQD6hatM5b4LZkeoSH1V
 tool_result
 id: toolu_01JYrQD6hatM5b4LZkeoSH1V
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/EvalRunRepository.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4447,7 +4447,7 @@ tool_use Bash
 id: toolu_0173wAUGgqxaojVuK3kURy7Z
 ```json
 {
-  "command": "git commit -q -F - <<'EOF'\nfeat: move the eval run history into Postgres\n\nReplaces the file-backed EvalRunStore (~/.agybrainviz/eval-runs.jsonl,\nsingle-machine by construction) with EvalRunRepository, so eval quality\ncan be compared across machines. EvalController swaps the injected bean;\nits public API is unchanged.\n\nsaved_at is deliberately not the primary key. delete(savedAt) returns a\ncount and may remove several rows, and Instant.now() genuinely repeats:\n1000 calls in a tight loop yield only ~786 distinct values here. Making\nit the key would throw on a collision and silently lose a run. So the\ntable takes a surrogate run_id, which also breaks ordering ties, and\ntests force the collision rather than race for it via a savedAt seam.\n\nA store outage now answers 503 with an actionable message rather than a\nbare 500. Returning an empty list would be worse than an error: the\ncaller could not tell \"the database is down\" from \"no runs yet\".\n\nRepository tests run against a real Postgres via Testcontainers, using\nthe same db/schema.sql the application bootstraps with. H2's Postgres\nmode supports neither jsonb nor the conditional ON CONFLICT ... WHERE\nthat the ingest upsert will need, so it would test a different database\nthan the one that ships.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit log --oneline -2",
+  "command": "git commit -q -F - <<'EOF'\nfeat: move the eval run history into Postgres\n\nReplaces the file-backed EvalRunStore (~/.agybrainviz/eval-runs.jsonl,\nsingle-machine by construction) with EvalRunRepository, so eval quality\ncan be compared across machines. EvalController swaps the injected bean;\nits public API is unchanged.\n\nsaved_at is deliberately not the primary key. delete(savedAt) returns a\ncount and may remove several rows, and Instant.now() genuinely repeats:\n1000 calls in a tight loop yield only ~786 distinct values here. Making\nit the key would throw on a collision and silently lose a run. So the\ntable takes a surrogate run_id, which also breaks ordering ties, and\ntests force the collision rather than race for it via a savedAt seam.\n\nA store outage now answers 503 with an actionable message rather than a\nbare 500. Returning an empty list would be worse than an error: the\ncaller could not tell \"the database is down\" from \"no runs yet\".\n\nRepository tests run against a real Postgres via Testcontainers, using\nthe same db/schema.sql the application bootstraps with. H2's Postgres\nmode supports neither jsonb nor the conditional ON CONFLICT ... WHERE\nthat the ingest upsert will need, so it would test a different database\nthan the one that ships.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -2",
   "description": "Commit step 2"
 } […]
 
@@ -4503,7 +4503,7 @@ tool_use Read
 id: toolu_01QfPJPVktWha86teyuJqDPX
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java"
 }
 ```
 
@@ -4560,7 +4560,7 @@ tool_use Read
 id: toolu_01HRNmCqukcpTuv73TrrZCGy
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml"
 }
 ```
 
@@ -4667,7 +4667,7 @@ tool_use Write
 id: toolu_01V5DBpPbmMVzJHcWqTzCSNy
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TestPostgres.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TestPostgres.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport com.zaxxer.hikari.HikariConfig;\nimport com.zaxxer.hikari.HikariDataSource;\nimport java.util.Map;\nimport javax.sql.DataSource;\nimport org.testcontainers.containers.PostgreSQLContainer;\n\n/**\n * The one Postgres container shared by every test in the JVM.\n *\n * <p>Tests must not depend on a developer's {@code docker compose} stack being up, or on CI adding a\n * service container: those make {@code ./gradlew build} pass or fail based on ambient state. The\n * container is started on first use and left for Testcontainers' reaper, since starting it dominates\n * the runtime of the tests that need it.\n */\nfinal class TestPostgres {\n\n    private TestPostgres() {}\n\n    private static PostgreSQLContainer<?> container;\n    private static HikariDataSource dataSource;\n\n […]
 
 > TOOL
@@ -4675,7 +4675,7 @@ id: toolu_01V5DBpPbmMVzJHcWqTzCSNy
 tool_result
 id: toolu_01V5DBpPbmMVzJHcWqTzCSNy
 ```
-File created successfully at: /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TestPostgres.java (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/TestPostgres.java (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4684,7 +4684,7 @@ tool_use Write
 id: toolu_01AjNeuzH6YLyXkW2vbrdjz5
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/PostgresTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/PostgresTest.java",
   "content": "/*\n * Copyright 2026 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage io.github.glaforge.agybrainviz;\n\nimport java.sql.Connection;\nimport java.sql.SQLException;\nimport java.sql.Statement;\nimport javax.sql.DataSource;\n\n/**\n * Base class for repository tests, backed by the real Postgres of {@link TestPostgres}.\n *\n * <p>H2's Postgres compatibility mode supports neither {@code jsonb} nor the conditional\n * {@code ON CONFLICT ... WHERE} the ingest upsert relies on, so an in-memory stand-in would test a\n * different database than the one that ships. The schema comes from the same {@code db/schema.sql}\n * the application bootstraps with, so a schema change cannot pass the tests and then fail in\n * production.\n */\nabstract class PostgresTest {\n\n    static DataSource dataSource() {\n        return […]
 
 > TOOL
@@ -4692,7 +4692,7 @@ id: toolu_01AjNeuzH6YLyXkW2vbrdjz5
 tool_result
 id: toolu_01AjNeuzH6YLyXkW2vbrdjz5
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/PostgresTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/PostgresTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4706,7 +4706,7 @@ id: toolu_01XfM12ma1FutvHJ16VKpyKM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java",
   "old_string": "import io.micronaut.test.extensions.junit5.annotation.MicronautTest;\nimport jakarta.inject.Inject;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.util.stream.StreamSupport;\nimport org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.parallel.ResourceLock;\n\n/** Integration test for the eval endpoint over a temporary {@code user.home}. */\n@MicronautTest\n@ResourceLock(\"user.home\")\nclass EvalControllerTest {\n\n    @Inject\n    @Client(\"/\")\n    HttpClient client;",
   "new_string": "import io.micronaut.test.extensions.junit5.annotation.MicronautTest;\nimport io.micronaut.test.support.TestPropertyProvider;\nimport jakarta.inject.Inject;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.util.Map;\nimport java.util.stream.StreamSupport;\nimport org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.parallel.ResourceLock;\n\n/**\n * Integration test for the eval endpoint: sessions come from a temporary {@code user.home}, run\n * history from the shared test Postgres.\n */\n@MicronautTest\n@ResourceLock(\"user.home\")\nclass EvalControllerTest implements TestPropertyProvider {\n\n    /** Point the application context at the test container, not a developer's local Postgres. */\n    @Override\n    public Map<String, String> getProperties() {\n        return TestPostgres.datasourceProperties();\n    }\n\n    @Inject\n    @Client(\"/\")\n    HttpClient client;"
 }
@@ -4717,7 +4717,7 @@ id: toolu_01XfM12ma1FutvHJ16VKpyKM
 tool_result
 id: toolu_01XfM12ma1FutvHJ16VKpyKM
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4779,7 +4779,7 @@ id: toolu_0185aCXFKWZkR8Yr7qSfW41T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java",
   "old_string": "/**\n * Integration test for the eval endpoint: sessions come from a temporary {@code user.home}, run\n * history from the shared test Postgres.\n */\n@MicronautTest\n@ResourceLock(\"user.home\")\nclass EvalControllerTest implements TestPropertyProvider {",
   "new_string": "/**\n * Integration test for the eval endpoint: sessions come from a temporary {@code user.home}, run\n * history from the shared test Postgres.\n */\n@MicronautTest\n@ResourceLock(\"user.home\")\n@TestInstance(TestInstance.Lifecycle.PER_CLASS) // required by TestPropertyProvider\nclass EvalControllerTest implements TestPropertyProvider {"
 }
@@ -4790,7 +4790,7 @@ id: toolu_0185aCXFKWZkR8Yr7qSfW41T
 tool_result
 id: toolu_0185aCXFKWZkR8Yr7qSfW41T
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4800,7 +4800,7 @@ id: toolu_019qsDmNSdYTF1Yc3yoZziXQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java",
   "old_string": "import org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.parallel.ResourceLock;",
   "new_string": "import org.junit.jupiter.api.AfterAll;\nimport org.junit.jupiter.api.BeforeAll;\nimport org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.TestInstance;\nimport org.junit.jupiter.api.parallel.ResourceLock;"
 }
@@ -4811,7 +4811,7 @@ id: toolu_019qsDmNSdYTF1Yc3yoZziXQ
 tool_result
 id: toolu_019qsDmNSdYTF1Yc3yoZziXQ
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/test/java/io/github/glaforge/agybrainviz/EvalControllerTest.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4879,7 +4879,7 @@ tool_use Read
 id: toolu_01C7PWEYpcAL4TGcvRg7VC4u
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js"
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/playwright.config.js"
 }
 ```
 
@@ -4997,7 +4997,7 @@ id: toolu_01Ri7JCrd7q3VqAzbxx9xVSC
 === postgres down (CI condition) ===
       65 |
       66 |     // Target the newest run specifically (robust to any other saved runs in the shared home).
-        at /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/e2e/eval.spec.js:63:52
+        at /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/e2e/eval.spec.js:63:52
 
     Error Context: test-results/eval-Analysis-Eval-deletin-ed826-removes-it-from-the-history-chromium/error-context.md
 
@@ -5020,7 +5020,7 @@ id: toolu_018Eb65aa5FqeTMwdtZDmzEe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml",
   "old_string": "  e2e:\n    name: End-to-end (Playwright)\n    runs-on: ubuntu-latest\n    timeout-minutes: 20\n    steps:\n      - uses: actions/checkout@v7",
   "new_string": "  e2e:\n    name: End-to-end (Playwright)\n    runs-on: ubuntu-latest\n    timeout-minutes: 20\n    # The eval run history lives in Postgres, so the jar under test needs one. The credentials and\n    # port match `docker-compose.yml`, which are also the app's built-in defaults — so the server\n    # command needs no extra configuration. (The backend job needs no service: its repository tests\n    # start their own container via Testcontainers.)\n    services:\n      postgres:\n        image: postgres:17-alpine\n        env:\n          POSTGRES_DB: agentbrainviz\n          POSTGRES_USER: agentviz\n          POSTGRES_PASSWORD: agentviz\n        ports:\n          - 5432:5432\n        options: >-\n          --health-cmd \"pg_isready -U agentviz -d agentbrainviz\"\n          --health-interval 5s\n          --health-timeout 5s\n          --health-retries 10\n    steps:\n      - uses: actions/checkout@v7"
 }
@@ -5031,7 +5031,7 @@ id: toolu_018Eb65aa5FqeTMwdtZDmzEe
 tool_result
 id: toolu_018Eb65aa5FqeTMwdtZDmzEe
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/.github/workflows/ci.yml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5067,7 +5067,7 @@ tool_use Read
 id: toolu_01VCpRYeTTmuASzW5TXSZxQ3
 ```json
 {
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "offset": 80,
   "limit": 16
 }
@@ -5103,7 +5103,7 @@ id: toolu_01PCyaqLJwYSFNQCGLzHkzAn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "Running an older JDK fails at configuration time with *\"Dependency requires at least JVM runtime\nversion 25\"*. (Node.js is only needed for the frontend/e2e tests — see [Development & Tests](#development--tests).)\n\n### Configuration — the `.env` file",
   "new_string": "Running an older JDK fails at configuration time with *\"Dependency requires at least JVM runtime\nversion 25\"*. (Node.js is only needed for the frontend/e2e tests — see [Development & Tests](#development--tests).)\n\nYou also need **Docker**, for the Postgres store described next.\n\n### The trajectory store — Postgres\n\nSaved eval runs are kept in a Postgres database rather than on local disk, so they can be shared\nacross the machines you work on. Start one with the checked-in compose file:\n\n```bash\ndocker compose up -d      # data persists in a named volume across restarts\n```\n\nIts credentials are the application's built-in defaults, so nothing else is needed to run locally.\nTo share data between machines, point each of them at one hosted Postgres (Neon, Supabase, Cloud\nSQL, …) by setting `DATABASE_URL`, `POSTGRES_USER`, and `POSTGRES_PASSWORD` — see `.env.example`.\n\nThe app still starts if the database is down; it logs a warning, serves the UI, and answers the\nendpoints that need the store with a `503`.\n\n> [!NOTE]\n> The eval run history […]
 
@@ -5112,7 +5112,7 @@ id: toolu_01PCyaqLJwYSFNQCGLzHkzAn
 tool_result
 id: toolu_01PCyaqLJwYSFNQCGLzHkzAn
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5169,7 +5169,7 @@ id: toolu_01Ghp53Fft7kxtjpsj6gHAhN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md",
   "old_string": "| `OLLAMA_MODEL`    | ollama     | `gemma4`                 | Local model tag to use                       |\n\nOnce the server starts, open your web browser and navigate to [http://localhost:8080](http://localhost:8080) to interact with the visualizer.",
   "new_string": "| `OLLAMA_MODEL`    | ollama     | `gemma4`                 | Local model tag to use                       |\n\n#### Store configuration reference\n\n| Variable            | Default                                        | Description                          |\n| ------------------- | ---------------------------------------------- | ------------------------------------ |\n| `DATABASE_URL`      | `jdbc:postgresql://localhost:5432/agentbrainviz` | JDBC URL of the trajectory store    |\n| `POSTGRES_USER`     | `agentviz`                                     | Store username                       |\n| `POSTGRES_PASSWORD` | `agentviz`                                     | Store password                       |\n\nOnce the server starts, open your web browser and navigate to [http://localhost:8080](http://localhost:8080) to interact with the visualizer."
 }
@@ -5180,7 +5180,7 @@ id: toolu_01Ghp53Fft7kxtjpsj6gHAhN
 tool_result
 id: toolu_01Ghp53Fft7kxtjpsj6gHAhN
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5194,7 +5194,7 @@ id: toolu_01DqCR8pu2hSKPAi8QTMRW7r
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java",
   "old_string": " * <ul>\n *   <li>{@code DATABASE_URL} — JDBC URL, default {@value #DEFAULT_DATABASE_URL}\n *   <li>{@code POSTGRES_USER}, {@code POSTGRES_PASSWORD}\n *   <li>{@code INGEST_TOKEN} — when set, the {@code /api/ingest} endpoints require\n *       {@code Authorization: Bearer <token>}. Unset leaves them open, which is fine while the\n *       server is only reachable on localhost.\n * </ul>",
   "new_string": " * <ul>\n *   <li>{@code DATABASE_URL} — JDBC URL, default {@value #DEFAULT_DATABASE_URL}\n *   <li>{@code POSTGRES_USER}, {@code POSTGRES_PASSWORD}\n * </ul>"
 }
@@ -5205,7 +5205,7 @@ id: toolu_01DqCR8pu2hSKPAi8QTMRW7r
 tool_result
 id: toolu_01DqCR8pu2hSKPAi8QTMRW7r
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5215,7 +5215,7 @@ id: toolu_01FG8wyFdE8yGCFF7PmUkmTi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java",
+  "file_path": "/home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java",
   "old_string": " * <p>{@link Application#applyDatasourceSettings} feeds the same three connection values into\n * Micronaut's {@code datasources.default} properties. This bean exists so application code can ask\n * about the store (and the ingest token) without reaching into the environment inline; the\n * package-private constructor gives tests a seam.\n */\n@Singleton\npublic class StorageConfig {\n\n    static final String DEFAULT_DATABASE_URL = \"jdbc:postgresql://localhost:5432/agentbrainviz\";\n    static final String DEFAULT_USER = \"agentviz\";\n    static final String DEFAULT_PASSWORD = \"agentviz\";\n\n    private final String databaseUrl;\n    private final String user;\n    private final String password;\n    private final String ingestToken;\n\n    @Inject\n    public StorageConfig() {\n        this(\n            envOr(\"DATABASE_URL\", DEFAULT_DATABASE_URL),\n            envOr(\"POSTGRES_USER\", DEFAULT_USER),\n            envOr(\"POSTGRES_PASSWORD\", DEFAULT_PASSWORD),\n            env(\"INGEST_TOKEN\")\n        );\n    }\n\n    // Test seam: construct with explicit values, bypassing the environment.\n    StorageConfig(String databaseUrl, String user, String password, String ingestToken) {\n        this.databaseUrl = blankTo(databaseUrl, DEFAULT_DATABASE_URL);\n        this.user = blankTo(user, DEFAULT_USER);\n        this.password = blankTo(password, DEFAULT_PASSWORD);\n        this.ingestToken = ingestToken;\n    }\n\n    public String databaseUrl() {\n        return databaseUrl;\n    }\n\n    public String user() {\n        return user;\n    }\n\n    public String password() {\n        return password;\n    }\n\n    /** @return the shared ingest token, or empty when the ingest endpoints are unguarded. */\n    public Optional<String> ingestToken() {\n        return (ingestToken == null || ingestToken.isBlank())\n            ? Optional.empty()\n            : Optional.of(ingestToken);\n    }\n\n    /**",
   "new_string": " * <p>{@link […]
 
@@ -5224,7 +5224,7 @@ id: toolu_01FG8wyFdE8yGCFF7PmUkmTi
 tool_result
 id: toolu_01FG8wyFdE8yGCFF7PmUkmTi
 ```
-The file /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/scottdensmore/agent-brain-visualizer/src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5233,7 +5233,7 @@ tool_use Bash
 id: toolu_01BkACy2kGRBsxB44RZzXYJW
 ```json
 {
-  "command": "cd /Users/scottdensmore/Developer/scottdensmore/agent-brain-visualizer\npython3 - <<'PY'\nimport re,io\n# StorageConfig: drop now-unused Optional import and the env() helper if unused\np='src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java'\ns=open(p).read()\ns=s.replace(\"import jakarta.inject.Singleton;\\nimport java.util.Optional;\\n\",\"import jakarta.inject.Singleton;\\n\")\nopen(p,'w').write(s)\n\n# StorageConfigTest: 3-arg ctor, drop token test\np='src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java'\ns=open(p).read()\ns=s.replace(\"\"\"    private StorageConfig config(String url, String user, String password, String token) {\n        return new StorageConfig(url, user, password, token);\n    }\"\"\",\"\"\"    private StorageConfig config(String url, String user, String password) {\n        return new StorageConfig(url, user, password);\n    }\"\"\")\ns=re.sub(r'\\n    @Test\\n    void theIngestTokenIsAbsentUntilItIsSet\\(\\) \\{.*?\\n    \\}\\n', '\\n', s, flags=re.S)\ns=s.replace('config(null, null, null, null)','config(null, null, null)')\ns=s.replace('config(\"  \", \"\", \" \", null)','config(\"  \", \"\", \" \")')\ns=s.replace('''            \"s3cret\",\n            null\n        );''','''            \"s3cret\"\n        );''')\ns=s.replace(\"import java.util.Optional;\\n\",\"\")\nopen(p,'w').write(s)\n\n# Application help text\np='src/main/java/io/github/glaforge/agybrainviz/Application.java'\ns=open(p).read()\ns=s.replace(\"                  INGEST_TOKEN                     Bearer token required by /api/ingest, if set\\n\",\"\")\nopen(p,'w').write(s)\n\n# .env.example\np='.env.example'\ns=open(p).read()\ns=re.sub(r'\\n# The `agent-ingest` CLI pushes.*?# INGEST_TOKEN=\\n', '\\n', s, flags=re.S)\nopen(p,'w').write(s)\nPY\necho \"--- residual INGEST_TOKEN references ---\"; grep -rn \"INGEST_TOKEN\\|ingestToken\" src/ .env.example README.md 2>/dev/null || echo \"none\"",
+  "command": "cd /home/<USER>/Developer/scottdensmore/agent-brain-visualizer\npython3 - <<'PY'\nimport re,io\n# StorageConfig: drop now-unused Optional import and the env() helper if unused\np='src/main/java/io/github/glaforge/agybrainviz/StorageConfig.java'\ns=open(p).read()\ns=s.replace(\"import jakarta.inject.Singleton;\\nimport java.util.Optional;\\n\",\"import jakarta.inject.Singleton;\\n\")\nopen(p,'w').write(s)\n\n# StorageConfigTest: 3-arg ctor, drop token test\np='src/test/java/io/github/glaforge/agybrainviz/StorageConfigTest.java'\ns=open(p).read()\ns=s.replace(\"\"\"    private StorageConfig config(String url, String user, String password, String token) {\n        return new StorageConfig(url, user, password, token);\n    }\"\"\",\"\"\"    private StorageConfig config(String url, String user, String password) {\n        return new StorageConfig(url, user, password);\n    }\"\"\")\ns=re.sub(r'\\n    @Test\\n    void theIngestTokenIsAbsentUntilItIsSet\\(\\) \\{.*?\\n    \\}\\n', '\\n', s, flags=re.S)\ns=s.replace('config(null, null, null, null)','config(null, null, null)')\ns=s.replace('config(\"  \", \"\", \" \", null)','config(\"  \", \"\", \" \")')\ns=s.replace('''            \"s3cret\",\n            null\n        );''','''            \"s3cret\"\n        );''')\ns=s.replace(\"import java.util.Optional;\\n\",\"\")\nopen(p,'w').write(s)\n\n# Application help text\np='src/main/java/io/github/glaforge/agybrainviz/Application.java'\ns=open(p).read()\ns=s.replace(\"                  INGEST_TOKEN                     Bearer token required by /api/ingest, if set\\n\",\"\")\nopen(p,'w').write(s)\n\n# .env.example\np='.env.example'\ns=open(p).read()\ns=re.sub(r'\\n# The `agent-ingest` CLI pushes.*?# INGEST_TOKEN=\\n', '\\n', s, flags=re.S)\nopen(p,'w').write(s)\nPY\necho \"--- residual INGEST_TOKEN references ---\"; grep -rn \"INGEST_TOKEN\\|ingestToken\" src/ .env.example README.md 2>/dev/null || echo \"none\"",
   "description": "Remove premature INGEST_TOKEN plumbing"
 }
 ```
@@ -5375,7 +5375,7 @@ tool_use Bash
 id: toolu_01XffbmxprKNBmhbwNfMQxkb
 ```json
 {
-  "command": "git commit -q -F - <<'EOF'\nfix: make the test suite independent of an ambient Postgres\n\nThe previous two commits passed locally only because a `docker compose`\nPostgres happened to be listening on 5432. With it stopped —\nwhich is what CI sees — EvalControllerTest failed on POST /api/eval/runs,\nand three Playwright eval specs failed too.\n\nTests must not pass or fail on ambient state. Docker is already required\nby the repository tests, so TestPostgres owns one container for the whole\nJVM and EvalControllerTest points its Micronaut context at it through\nTestPropertyProvider, rather than at whatever is on localhost:5432.\n(TestPropertyProvider requires the PER_CLASS lifecycle.)\n\nThe Playwright job boots the real jar, so it cannot use Testcontainers;\nit gets a Postgres service container instead, with the credentials the\napp already defaults to.\n\nAlso drops StorageConfig and the INGEST_TOKEN documentation. Nothing\ninjected StorageConfig — Application reads DotEnv directly — and a token\ndocumented as guarding /api/ingest guards nothing until that endpoint\nexists. Both come back with their consumers.\n\nREADME now states the Docker prerequisite and warns that an eval history\nsaved to ~/.agybrainviz/eval-runs.jsonl is no longer read.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit log --oneline -3",
+  "command": "git commit -q -F - <<'EOF'\nfix: make the test suite independent of an ambient Postgres\n\nThe previous two commits passed locally only because a `docker compose`\nPostgres happened to be listening on 5432. With it stopped —\nwhich is what CI sees — EvalControllerTest failed on POST /api/eval/runs,\nand three Playwright eval specs failed too.\n\nTests must not pass or fail on ambient state. Docker is already required\nby the repository tests, so TestPostgres owns one container for the whole\nJVM and EvalControllerTest points its Micronaut context at it through\nTestPropertyProvider, rather than at whatever is on localhost:5432.\n(TestPropertyProvider requires the PER_CLASS lifecycle.)\n\nThe Playwright job boots the real jar, so it cannot use Testcontainers;\nit gets a Postgres service container instead, with the credentials the\napp already defaults to.\n\nAlso drops StorageConfig and the INGEST_TOKEN documentation. Nothing\ninjected StorageConfig — Application reads DotEnv directly — and a token\ndocumented as guarding /api/ingest guards nothing until that endpoint\nexists. Both come back with their consumers.\n\nREADME now states the Docker prerequisite and warns that an eval history\nsaved to ~/.agybrainviz/eval-runs.jsonl is no longer read.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -3",
   "description": "Commit CI-correctness fix"
 }
 ```
@@ -5403,7 +5403,7 @@ tool_use Bash
 id: toolu_01Fce2tLr3mPwWMgKmB3dzVJ
 ```json
 {
-  "command": "git commit -q -F - <<'EOF'\nfix: make the test suite independent of an ambient Postgres\n\nThe previous two commits passed locally only because a `docker compose`\nPostgres happened to be listening on 5432. With it stopped — which is\nwhat CI sees — EvalControllerTest failed on POST /api/eval/runs, and\nthree Playwright eval specs failed too.\n\nTests must not pass or fail on ambient state. Docker is already required\nby the repository tests, so TestPostgres owns one container for the whole\nJVM and EvalControllerTest points its Micronaut context at it through\nTestPropertyProvider, rather than at whatever is on localhost:5432.\n(TestPropertyProvider requires the PER_CLASS lifecycle.)\n\nThe Playwright job boots the real jar, so it cannot use Testcontainers;\nit gets a Postgres service container instead, with the credentials the\napp already defaults to.\n\nAlso drops StorageConfig and the INGEST_TOKEN documentation. Nothing\ninjected StorageConfig — Application reads DotEnv directly — and a token\ndocumented as guarding /api/ingest guards nothing until that endpoint\nexists. Both come back with their consumers.\n\nREADME now states the Docker prerequisite and warns that an eval history\nsaved to ~/.agybrainviz/eval-runs.jsonl is no longer read.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF\ngit log --oneline -3",
+  "command": "git commit -q -F - <<'EOF'\nfix: make the test suite independent of an ambient Postgres\n\nThe previous two commits passed locally only because a `docker compose`\nPostgres happened to be listening on 5432. With it stopped — which is\nwhat CI sees — EvalControllerTest failed on POST /api/eval/runs, and\nthree Playwright eval specs failed too.\n\nTests must not pass or fail on ambient state. Docker is already required\nby the repository tests, so TestPostgres owns one container for the whole\nJVM and EvalControllerTest points its Micronaut context at it through\nTestPropertyProvider, rather than at whatever is on localhost:5432.\n(TestPropertyProvider requires the PER_CLASS lifecycle.)\n\nThe Playwright job boots the real jar, so it cannot use Testcontainers;\nit gets a Postgres service container instead, with the credentials the\napp already defaults to.\n\nAlso drops StorageConfig and the INGEST_TOKEN documentation. Nothing\ninjected StorageConfig — Application reads DotEnv directly — and a token\ndocumented as guarding /api/ingest guards nothing until that endpoint\nexists. Both come back with their consumers.\n\nREADME now states the Docker prerequisite and warns that an eval history\nsaved to ~/.agybrainviz/eval-runs.jsonl is no longer read.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nEOF\ngit log --oneline -3",
   "description": "Retry commit"
 }
 ```

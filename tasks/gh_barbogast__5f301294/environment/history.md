@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_019KUyGZEgSPTrLSHAa3qpqh
 ```json
 {
-  "command": "grep -ril \"drive upload\" /Users/ben/git/paper-scan-processor --include=\"*.md\" 2>/dev/null; echo \"---\"; find /Users/ben/git/paper-scan-processor -iname \"*checklist*\" -o -iname \"*plan*\" 2>/dev/null | grep -v node_modules",
+  "command": "grep -ril \"drive upload\" /home/<USER>/git/paper-scan-processor --include=\"*.md\" 2>/dev/null; echo \"---\"; find /home/<USER>/git/paper-scan-processor -iname \"*checklist*\" -o -iname \"*plan*\" 2>/dev/null | grep -v node_modules",
   "description": "Search repo for Drive Upload Mode documentation"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_019KUyGZEgSPTrLSHAa3qpqh
 tool_result
 id: toolu_019KUyGZEgSPTrLSHAa3qpqh
 ```
-/Users/ben/git/paper-scan-processor/spec.md
+/home/<USER>/git/paper-scan-processor/spec.md
 ---
 ```
 
@@ -28,7 +28,7 @@ tool_use Bash
 id: toolu_01WnBNm24GmkKqazHWoNZKsf
 ```json
 {
-  "command": "grep -n -i \"drive upload\\|^#\\|^-\\s*\\[\" /Users/ben/git/paper-scan-processor/spec.md | head -200",
+  "command": "grep -n -i \"drive upload\\|^#\\|^-\\s*\\[\" /home/<USER>/git/paper-scan-processor/spec.md | head -200",
   "description": "Find headings and checklist items in spec.md"
 }
 ```
@@ -69,7 +69,7 @@ tool_use Read
 id: toolu_01CHbBUWsoJ4ev28tkHV5Ldr
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "offset": 166,
   "limit": 80
 }
@@ -168,7 +168,7 @@ tool_use Read
 id: toolu_01BsbtCDcRRfuieDnNUCY1Zk
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go"
 }
 ```
 
@@ -269,7 +269,7 @@ tool_use Read
 id: toolu_019Bcg34UKvQrZog6LBgnpBq
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/App.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/App.tsx"
 }
 ```
 
@@ -439,24 +439,24 @@ tool_result
 id: toolu_01K43tmAbxCZ42DPFa5vxbQn
 ```
 commit a239bbdf4f775545f0e531d9448aa6fc2713d929
-Author: Benjamin Arbogast <benjamin.arbogast@gmail.com>
+Author: Benjamin Arbogast <<REDACTED_EMAIL>>
 Date:   Wed Jul 1 16:39:08 2026 +0200
 
     Add Drive Upload mode to spec; remove Drive from Split mode
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
     Entire-Checkpoint: a983d9bfc270
 
  spec.md | 122 ++++++++++++++++++++++++++++++++++++++++++++++++----------------
  1 file changed, 92 insertions(+), 30 deletions(-)
 ---
 commit a239bbdf4f775545f0e531d9448aa6fc2713d929
-Author: Benjamin Arbogast <benjamin.arbogast@gmail.com>
+Author: Benjamin Arbogast <<REDACTED_EMAIL>>
 Date:   Wed Jul 1 16:39:08 2026 +0200
 
     Add Drive Upload mode to spec; remove Drive from Split mode
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
     Entire-Checkpoint: a983d9bfc270
 
 diff --git a/spec.md b/spec.md
@@ -666,7 +666,7 @@ tool_use Read
 id: toolu_01QmrKSFU663x15Jv3ocda65
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/MergeMode/ThumbnailPanel.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/MergeMode/ThumbnailPanel.tsx"
 }
 ```
 
@@ -840,7 +840,7 @@ tool_use Read
 id: toolu_019JeDpWE6xDpAYgifYGQ6wV
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/pdf.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/pdf.go"
 }
 ```
 
@@ -1005,7 +1005,7 @@ tool_use Read
 id: toolu_017k6XAUioAAF8gY4NddWcvo
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/pdf_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/pdf_test.go",
   "offset": 1,
   "limit": 40
 }
@@ -1088,7 +1088,7 @@ tool_use Read
 id: toolu_01SWCFoi1UjHw3XcQrb1nFxe
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/OutputFileHeader.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/OutputFileHeader.tsx"
 }
 ```
 
@@ -1156,7 +1156,7 @@ tool_use Read
 id: toolu_01QBHDbiDNsD3Ct3uZPB8fZW
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/utils.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/utils.ts"
 }
 ```
 
@@ -1181,7 +1181,7 @@ tool_use Read
 id: toolu_01QUW7jAzqu1JtfLuNB45CD4
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/ClippedPath.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/ClippedPath.tsx"
 }
 ```
 
@@ -1231,7 +1231,7 @@ tool_use Write
 id: toolu_012nGsREw81CyVQvKAMZQuHx
 ```json
 {
-  "file_path": "/Users/ben/.claude/plans/glowing-roaming-stardust.md",
+  "file_path": "/home/<USER>/.claude/plans/glowing-roaming-stardust.md",
   "content": "# Drive Upload mode — Step 2: Filesystem scan + file tree UI\n\n## Context\n\nDrive Upload mode's Go backend exists (Steps 1a-1c: OAuth, folder listing, upload)\nbut there is no UI at all yet — `App.tsx`'s `AppMode` type only has `'split' | 'merge'`,\nand the \"Open in Drive Upload\" button the spec/checklist describes for Split mode's\nexport success modal was never actually implemented (it was written into the spec in\ncommit `a239bbd` but no corresponding code followed). Step 2 is the first UI-bearing\npiece of Drive Upload mode: a root folder picker and a recursive scan that displays\nlocal PDFs grouped by subfolder, with size/page-count metadata. Drive assignment,\npreviewing, and uploading are later steps (3-5) and out of scope here.\n\nDecisions already made with the user:\n- Make Drive Upload mode reachable now via a plain third tab, independent of the\n  (still-missing) Split-mode \"Open in Drive Upload\" button. Wiring that button is\n  left as a separate future task.\n- Scan one level deep only (root + its immediate subfolders), matching the spec's\n  mockup. Add a checklist item to expand to arbitrary nesting later.\n\n## Cleanup (separate commit, before the feature work)\n\n`ClippedPath.tsx` (`frontend/src/components/SplitMode/ClippedPath.tsx`) is a generic\ntruncated-path-with-click-to-change control (`path`, `onClick`, `placeholder` props\nonly) that Drive Upload […]
 
 > TOOL
@@ -1239,7 +1239,7 @@ id: toolu_012nGsREw81CyVQvKAMZQuHx
 tool_result
 id: toolu_012nGsREw81CyVQvKAMZQuHx
 ```
-File created successfully at: /Users/ben/.claude/plans/glowing-roaming-stardust.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/glowing-roaming-stardust.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1257,7 +1257,7 @@ id: toolu_012XXMYrQdFRdZGLsjDoXv49
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/ben/.claude/plans/glowing-roaming-stardust.md
+Your plan has been saved to: /home/<USER>/.claude/plans/glowing-roaming-stardust.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -1285,7 +1285,7 @@ tool_use Read
 id: toolu_01Qw2gtZhT6CsjYKZrPUdtP5
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "offset": 277,
   "limit": 14
 }
@@ -1313,7 +1313,7 @@ id: toolu_0126mGYrvhPWCxaEMVFa4HzY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] **Step 2: Filesystem scan + file tree UI** — root folder picker; recursive scan and display of files grouped by subfolder; file size and page count as secondary metadata\n- [ ] **Step 3: Drive folder assignment UI + inline renaming**",
   "new_string": "- [ ] **Step 2a: Filesystem scan backend** — `scanDriveRoot` + `ScanDriveRoot` RPC; scans root folder one level deep (root + immediate subfolders only); returns files grouped by subfolder with size and page count\n- [ ] **Step 2b: File tree UI** — new Drive Upload tab; root folder picker; three-column layout shell; file tree display wired to the scan, with file size and page count as secondary metadata\n- [ ] ~~Step 2 follow-up: Recursive subfolder scanning~~ — extend `scanDriveRoot` beyond one level deep once nested output folders are a real need\n- [ ] **Step 3: Drive folder assignment UI + inline renaming**"
 }
@@ -1324,7 +1324,7 @@ id: toolu_0126mGYrvhPWCxaEMVFa4HzY
 tool_result
 id: toolu_0126mGYrvhPWCxaEMVFa4HzY
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1334,7 +1334,7 @@ id: toolu_015wcSPzeCPYjPHtaosydZST
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] ~~Step 2 follow-up: Recursive subfolder scanning~~ — extend `scanDriveRoot` beyond one level deep once nested output folders are a real need",
   "new_string": "- [ ] **Step 2 follow-up: Recursive subfolder scanning** — extend `scanDriveRoot` beyond one level deep once nested output folders are a real need"
 }
@@ -1345,7 +1345,7 @@ id: toolu_015wcSPzeCPYjPHtaosydZST
 tool_result
 id: toolu_015wcSPzeCPYjPHtaosydZST
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1404,7 +1404,7 @@ id: toolu_01LTtYEx3hjnz6N2ybahS2DN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/OutputFileHeader.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/OutputFileHeader.tsx",
   "old_string": "import ClippedPath from './ClippedPath'",
   "new_string": "import ClippedPath from '../ClippedPath'"
 }
@@ -1415,7 +1415,7 @@ id: toolu_01LTtYEx3hjnz6N2ybahS2DN
 tool_result
 id: toolu_01LTtYEx3hjnz6N2ybahS2DN
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/OutputFileHeader.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/OutputFileHeader.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1667,7 +1667,7 @@ tool_use Write
 id: toolu_01JmodbAphTgEpAbVbB2XVFM
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "content": "package main\n\nimport (\n\t\"os\"\n\t\"path/filepath\"\n\t\"sort\"\n\t\"strings\"\n)\n\n// DriveFile describes one local PDF discovered by scanDriveRoot.\ntype DriveFile struct {\n\tPath      string `json:\"path\"`\n\tName      string `json:\"name\"` // filename without extension; display-only for now\n\tSizeBytes int64  `json:\"sizeBytes\"`\n\tPageCount int    `json:\"pageCount\"`\n}\n\n// DriveFileGroup is one subfolder's worth of files. Name is \"\" for files\n// found directly in the scanned root.\ntype DriveFileGroup struct {\n\tName  string      `json:\"name\"`\n\tFiles []DriveFile `json:\"files\"`\n}\n\n// scanDriveRoot scans root one level deep: PDFs directly in root form a\n// single group with Name \"\", and each immediate subdirectory of root forms\n// its own group containing only its direct PDF children. Files that fail to\n// parse as PDFs are skipped rather than failing the whole scan.\nfunc scanDriveRoot(root string) ([]DriveFileGroup, error) {\n\tentries, err := os.ReadDir(root)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar groups []DriveFileGroup\n\n\trootFiles, err := scanDir(root, entries)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif len(rootFiles) > 0 {\n\t\tgroups = append(groups, DriveFileGroup{Name: \"\", Files: rootFiles})\n\t}\n\n\tvar subdirs []string\n\tfor _, e := range entries {\n\t\tif e.IsDir() && !strings.HasPrefix(e.Name(), \".\") {\n\t\t\tsubdirs = append(subdirs, e.Name())\n\t\t}\n\t}\n\tsort.Strings(subdirs)\n\n\tfor _, name := range subdirs {\n\t\tdir := filepath.Join(root, name)\n\t\tsubEntries, err := os.ReadDir(dir)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tfiles, err := scanDir(dir, subEntries)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif len(files) > 0 {\n\t\t\tgroups = append(groups, DriveFileGroup{Name: name, Files: […]
 
 > TOOL
@@ -1675,7 +1675,7 @@ id: toolu_01JmodbAphTgEpAbVbB2XVFM
 tool_result
 id: toolu_01JmodbAphTgEpAbVbB2XVFM
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/filetree.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/filetree.go (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1688,7 +1688,7 @@ tool_use Read
 id: toolu_01Wkeb97BAV6YQRYuvcz8QGU
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/pdf_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/pdf_test.go",
   "offset": 40,
   "limit": 95
 }
@@ -1750,7 +1750,7 @@ tool_use Write
 id: toolu_017yLi6Jv54uvzDDjj9vLuij
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go",
   "content": "package main\n\nimport (\n\t\"os\"\n\t\"path/filepath\"\n\t\"testing\"\n)\n\nfunc TestScanDriveRootFilesInRootAndSubfolder(t *testing.T) {\n\troot := t.TempDir()\n\twritePDF(t, filepath.Join(root, \"misc.pdf\"), []string{\"p1\", \"p2\"})\n\tif err := os.Mkdir(filepath.Join(root, \"invoices\"), 0o755); err != nil {\n\t\tt.Fatal(err)\n\t}\n\twritePDF(t, filepath.Join(root, \"invoices\", \"b.pdf\"), []string{\"p1\"})\n\twritePDF(t, filepath.Join(root, \"invoices\", \"a.pdf\"), []string{\"p1\", \"p2\", \"p3\"})\n\n\tgroups, err := scanDriveRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(groups) != 2 {\n\t\tt.Fatalf(\"got %d groups, want 2: %+v\", len(groups), groups)\n\t}\n\n\trootGroup := groups[0]\n\tif rootGroup.Name != \"\" {\n\t\tt.Errorf(\"root group name = %q, want \\\"\\\"\", rootGroup.Name)\n\t}\n\tif len(rootGroup.Files) != 1 || rootGroup.Files[0].Name != \"misc\" || rootGroup.Files[0].PageCount != 2 {\n\t\tt.Errorf(\"root group files = %+v\", rootGroup.Files)\n\t}\n\tif rootGroup.Files[0].SizeBytes <= 0 {\n\t\tt.Errorf(\"root file size = %d, want > 0\", rootGroup.Files[0].SizeBytes)\n\t}\n\n\tsub := groups[1]\n\tif sub.Name != \"invoices\" {\n\t\tt.Errorf(\"subgroup name = %q, want invoices\", sub.Name)\n\t}\n\tif len(sub.Files) != 2 {\n\t\tt.Fatalf(\"got %d files in invoices, want 2: %+v\", len(sub.Files), sub.Files)\n\t}\n\t// alphabetical by filename\n\tif sub.Files[0].Name != \"a\" || sub.Files[1].Name != \"b\" {\n\t\tt.Errorf(\"invoices files not sorted: %+v\", sub.Files)\n\t}\n\tif sub.Files[0].PageCount != 3 || sub.Files[1].PageCount != 1 {\n\t\tt.Errorf(\"unexpected page counts: %+v\", sub.Files)\n\t}\n}\n\nfunc TestScanDriveRootEmptySubfolderOmitted(t *testing.T) {\n\troot := t.TempDir()\n\tif err := os.Mkdir(filepath.Join(root, \"empty\"), 0o755); err != nil {\n\t\tt.Fatal(err)\n\t}\n\twritePDF(t, filepath.Join(root, \"top.pdf\"), []string{\"p1\"})\n\n\tgroups, err := scanDriveRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(groups) != 1 {\n\t\tt.Fatalf(\"got %d groups, want 1 (empty subfolder should be omitted): %+v\", len(groups), groups)\n\t}\n\tif groups[0].Name != \"\" {\n\t\tt.Errorf(\"group name = %q, […]
 
 > TOOL
@@ -1758,7 +1758,7 @@ id: toolu_017yLi6Jv54uvzDDjj9vLuij
 tool_result
 id: toolu_017yLi6Jv54uvzDDjj9vLuij
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/filetree_test.go (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/filetree_test.go (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1842,7 +1842,7 @@ id: toolu_014QR7SEzN6TY3JAchx8LS7n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go",
   "old_string": "// PickFolder shows a folder-select dialog and returns the chosen path.\n// Returns an empty string if the user cancels.\nfunc (a *App) PickFolder() (string, error) {\n\treturn runtime.OpenDirectoryDialog(a.ctx, runtime.OpenDialogOptions{\n\t\tTitle: \"Choose Output Folder\",\n\t})\n}",
   "new_string": "// PickFolder shows a folder-select dialog with the given title and returns\n// the chosen path. Returns an empty string if the user cancels.\nfunc (a *App) PickFolder(title string) (string, error) {\n\treturn runtime.OpenDirectoryDialog(a.ctx, runtime.OpenDialogOptions{\n\t\tTitle: title,\n\t})\n}\n\n// ScanDriveRoot scans root one level deep and returns its PDFs grouped by\n// subfolder, with size and page count metadata.\nfunc (a *App) ScanDriveRoot(root string) ([]DriveFileGroup, error) {\n\treturn scanDriveRoot(root)\n}"
 }
@@ -1853,7 +1853,7 @@ id: toolu_014QR7SEzN6TY3JAchx8LS7n
 tool_result
 id: toolu_014QR7SEzN6TY3JAchx8LS7n
 ```
-The file /Users/ben/git/paper-scan-processor/app.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/app.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1910,7 +1910,7 @@ tool_use Read
 id: toolu_01UztSHKMkRSuQR3JUbLQCU3
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx",
   "offset": 95,
   "limit": 10
 }
@@ -1940,7 +1940,7 @@ id: toolu_016JsizXy8x9T1kBDqKQkGn3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx",
   "old_string": "    const folder = await PickFolder()\n    if (folder) setOutputFolder(folder)",
   "new_string": "    const folder = await PickFolder('Choose Output Folder')\n    if (folder) setOutputFolder(folder)"
 }
@@ -1951,7 +1951,7 @@ id: toolu_016JsizXy8x9T1kBDqKQkGn3
 tool_result
 id: toolu_016JsizXy8x9T1kBDqKQkGn3
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1960,7 +1960,7 @@ tool_use Read
 id: toolu_01GMQksHR25Tscvig4L2WggM
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/useOutputFiles.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/useOutputFiles.ts",
   "offset": 40,
   "limit": 15
 }
@@ -1995,7 +1995,7 @@ id: toolu_01LFpqrcWcHCGh7MzZHavb5w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/useOutputFiles.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/useOutputFiles.ts",
   "old_string": "    const folder = await PickFolder()\n    if (!folder) return",
   "new_string": "    const folder = await PickFolder('Choose Output Folder')\n    if (!folder) return"
 }
@@ -2006,7 +2006,7 @@ id: toolu_01LFpqrcWcHCGh7MzZHavb5w
 tool_result
 id: toolu_01LFpqrcWcHCGh7MzZHavb5w
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/useOutputFiles.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/useOutputFiles.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2076,7 +2076,7 @@ tool_use Read
 id: toolu_0154xYngaoeqGxiyMpsJTVe8
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/useOutputFiles.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/useOutputFiles.ts",
   "offset": 1,
   "limit": 40
 }
@@ -2135,7 +2135,7 @@ tool_use Write
 id: toolu_016L3NDrYA3M1NejLN1DvFzP
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
   "content": "import { useState, useCallback } from 'react'\nimport { PickFolder, ScanDriveRoot } from '../../../wailsjs/go/main/App'\n\nexport interface DriveFile {\n  path: string\n  name: string\n  sizeBytes: number\n  pageCount: number\n}\n\nexport interface DriveFileGroup {\n  name: string\n  files: DriveFile[]\n}\n\nexport interface FileTreeHandle {\n  root: string | null\n  groups: DriveFileGroup[]\n  loading: boolean\n  error: string | null\n  pickRoot: () => Promise<void>\n}\n\nexport function useFileTree(): FileTreeHandle {\n  const [root, setRoot] = useState<string | null>(null)\n  const [groups, setGroups] = useState<DriveFileGroup[]>([])\n  const [loading, setLoading] = useState(false)\n  const [error, setError] = useState<string | null>(null)\n\n  const pickRoot = useCallback(async () => {\n    const folder = await PickFolder('Choose Root Folder')\n    if (!folder) return\n\n    setRoot(folder)\n    setLoading(true)\n    setError(null)\n    try {\n      const scanned = await ScanDriveRoot(folder)\n      setGroups(scanned as DriveFileGroup[])\n    } catch (e) {\n      setGroups([])\n      setError(String(e))\n    } finally {\n      setLoading(false)\n    }\n  }, [])\n\n  return { root, groups, loading, error, pickRoot }\n}\n"
 }
 ```
@@ -2145,7 +2145,7 @@ id: toolu_016L3NDrYA3M1NejLN1DvFzP
 tool_result
 id: toolu_016L3NDrYA3M1NejLN1DvFzP
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2234,7 +2234,7 @@ id: toolu_01Xn1vz9Gm9gSgRM5sZknrUp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
   "old_string": "      const scanned = await ScanDriveRoot(folder)\n      setGroups(scanned as DriveFileGroup[])",
   "new_string": "      setGroups(await ScanDriveRoot(folder))"
 }
@@ -2245,7 +2245,7 @@ id: toolu_01Xn1vz9Gm9gSgRM5sZknrUp
 tool_result
 id: toolu_01Xn1vz9Gm9gSgRM5sZknrUp
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2258,7 +2258,7 @@ tool_use Write
 id: toolu_01KYkit2whCxrtEaTB3x5jjD
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
   "content": "import { describe, it, expect, vi } from 'vitest'\nimport { act, renderHook, waitFor } from '@testing-library/react'\nimport { useFileTree } from './useFileTree'\nimport { PickFolder, ScanDriveRoot } from '../../../wailsjs/go/main/App'\n\nvi.mock('../../../wailsjs/go/main/App', () => ({\n  PickFolder: vi.fn(),\n  ScanDriveRoot: vi.fn(),\n}))\n\ndescribe('useFileTree', () => {\n  it('starts with no root and an empty tree', () => {\n    const { result } = renderHook(() => useFileTree())\n    expect(result.current.root).toBeNull()\n    expect(result.current.groups).toEqual([])\n    expect(result.current.loading).toBe(false)\n    expect(result.current.error).toBeNull()\n  })\n\n  it('does nothing when the folder picker is cancelled', async () => {\n    vi.mocked(PickFolder).mockResolvedValueOnce('')\n    const { result } = renderHook(() => useFileTree())\n    await act(async () => { await result.current.pickRoot() })\n    expect(result.current.root).toBeNull()\n    expect(ScanDriveRoot).not.toHaveBeenCalled()\n  })\n\n  it('scans the chosen root and stores the resulting groups', async () => {\n    vi.mocked(PickFolder).mockResolvedValueOnce('/output/batch')\n    const groups = [{ name: 'invoices', files: [{ path: '/output/batch/invoices/a.pdf', name: 'a', sizeBytes: 100, pageCount: 2 }] }]\n    vi.mocked(ScanDriveRoot).mockResolvedValueOnce(groups)\n\n    const { result } = renderHook(() => useFileTree())\n    await act(async () => { await result.current.pickRoot() })\n\n    expect(result.current.root).toBe('/output/batch')\n    expect(result.current.groups).toEqual(groups)\n    expect(result.current.loading).toBe(false)\n    expect(result.current.error).toBeNull()\n  })\n\n  it('sets an error and clears groups when the scan fails', async () => {\n    vi.mocked(PickFolder).mockResolvedValueOnce('/output/batch')\n    vi.mocked(ScanDriveRoot).mockRejectedValueOnce(new Error('permission denied'))\n\n    const { result } = renderHook(() => useFileTree())\n    await act(async () => { await result.current.pickRoot() })\n\n    await waitFor(() => expect(result.current.error).toContain('permission denied'))\n    expect(result.current.groups).toEqual([])\n    expect(result.current.loading).toBe(false)\n  })\n})\n"
 }
 ```
@@ -2268,7 +2268,7 @@ id: toolu_01KYkit2whCxrtEaTB3x5jjD
 tool_result
 id: toolu_01KYkit2whCxrtEaTB3x5jjD
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2287,7 +2287,7 @@ id: toolu_01SNcPC2yP95KkpebunoLhS7
 tool_result
 id: toolu_01SNcPC2yP95KkpebunoLhS7
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
 
@@ -2345,7 +2345,7 @@ tool_use Read
 id: toolu_015KFDkEV9nw2GyopKJvuW3D
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx",
   "offset": 140,
   "limit": 45
 }
@@ -2430,7 +2430,7 @@ tool_use Read
 id: toolu_01CbxTcM76AJiY58u8LptNaw
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx",
   "offset": 185,
   "limit": 75
 }
@@ -2506,7 +2506,7 @@ id: toolu_01R9JNeVWFucSGBcQysrfAC8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/utils.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/utils.ts",
   "old_string": "export function ellipsisPath(p: string) {\n  return '…/' + (p.split(/[\\\\/]/).pop() ?? p)\n}",
   "new_string": "export function ellipsisPath(p: string) {\n  return '…/' + (p.split(/[\\\\/]/).pop() ?? p)\n}\n\nexport function formatFileSize(bytes: number): string {\n  if (bytes < 1024) return `${bytes} B`\n  const units = ['KB', 'MB', 'GB']\n  let value = bytes / 1024\n  let unitIndex = 0\n  while (value >= 1024 && unitIndex < units.length - 1) {\n    value /= 1024\n    unitIndex++\n  }\n  return `${value.toFixed(1)} ${units[unitIndex]}`\n}"
 }
@@ -2517,7 +2517,7 @@ id: toolu_01R9JNeVWFucSGBcQysrfAC8
 tool_result
 id: toolu_01R9JNeVWFucSGBcQysrfAC8
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/utils.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/utils.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2530,7 +2530,7 @@ tool_use Write
 id: toolu_01SE9b6mKr9WXzGJtiCceLdf
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "content": "import { Box, Button, Loader, Stack, Text } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport { useFileTree, DriveFile } from './useFileTree'\nimport { formatFileSize } from '../../utils'\n\nconst LEFT_PANEL_WIDTH = 300\n\nexport default function DriveUploadMode() {\n  const { root, groups, loading, error, pickRoot } = useFileTree()\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: LEFT_PANEL_WIDTH,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n          borderRight: '1px solid var(--mantine-color-gray-3)',\n          padding: 12,\n        }}\n      >\n        <Box mb=\"sm\">\n          <ClippedPath path={root} onClick={pickRoot} placeholder=\"Choose root folder…\" />\n        </Box>\n\n        {loading && <Loader size=\"sm\" />}\n        {error && <Text size=\"sm\" c=\"red\">{error}</Text>}\n        {!loading && !error && root && groups.length === 0 && (\n          <Text size=\"sm\" c=\"dimmed\">No PDF files found under this folder.</Text>\n        )}\n        {!loading && !root && (\n          <Button size=\"xs\" onClick={pickRoot}>Choose Root Folder</Button>\n        )}\n\n        <Stack gap=\"md\" mt=\"sm\">\n          {groups.filter(g => g.name !== '').map(group => (\n            <Box key={group.name}>\n              <Text size=\"sm\" fw={600}>📁 {group.name}</Text>\n              <FileList files={group.files} />\n            </Box>\n          ))}\n          {groups.find(g => g.name === '') && (\n            <FileList files={groups.find(g => g.name === '')!.files} />\n          )}\n        </Stack>\n      </Box>\n\n      <Box style={{ flex: '0 0 auto', width: 220, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--mantine-color-gray-1)' }} />\n\n      <Box style={{ flex: 1, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} […]
 
 > TOOL
@@ -2538,7 +2538,7 @@ id: toolu_01SE9b6mKr9WXzGJtiCceLdf
 tool_result
 id: toolu_01SE9b6mKr9WXzGJtiCceLdf
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2548,7 +2548,7 @@ id: toolu_01WoVJH8KQpi2mAKFVnDw333
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "      <Box style={{ flex: '0 0 auto', width: 220, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--mantine-color-gray-1)' }} />\n\n      <Box style={{ flex: 1, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />",
   "new_string": "      <Box\n        style={{\n          flex: '0 0 auto', width: 220, height: '100%',\n          display: 'flex', alignItems: 'center', justifyContent: 'center',\n          background: 'var(--mantine-color-gray-1)',\n          borderRight: '1px solid var(--mantine-color-gray-3)',\n        }}\n      >\n        <Text size=\"sm\" c=\"dimmed\">Select a file to preview</Text>\n      </Box>\n\n      <Box style={{ flex: 1, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />"
 }
@@ -2559,7 +2559,7 @@ id: toolu_01WoVJH8KQpi2mAKFVnDw333
 tool_result
 id: toolu_01WoVJH8KQpi2mAKFVnDw333
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2568,7 +2568,7 @@ tool_use Read
 id: toolu_019avWa17RMhPKnwvKSxdBoy
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -2628,7 +2628,7 @@ id: toolu_01Pm9mZrJRbt6a2FCvUXgmRL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "export default function DriveUploadMode() {\n  const { root, groups, loading, error, pickRoot } = useFileTree()\n\n  return (",
   "new_string": "export default function DriveUploadMode() {\n  const { root, groups, loading, error, pickRoot } = useFileTree()\n  const rootGroup = groups.find(g => g.name === '')\n  const subfolderGroups = groups.filter(g => g.name !== '')\n\n  return ("
 }
@@ -2639,7 +2639,7 @@ id: toolu_01Pm9mZrJRbt6a2FCvUXgmRL
 tool_result
 id: toolu_01Pm9mZrJRbt6a2FCvUXgmRL
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2649,7 +2649,7 @@ id: toolu_014Ke9VfPoJhdGe2MUC8MwjG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "          {groups.filter(g => g.name !== '').map(group => (\n            <Box key={group.name}>\n              <Text size=\"sm\" fw={600}>📁 {group.name}</Text>\n              <FileList files={group.files} />\n            </Box>\n          ))}\n          {groups.find(g => g.name === '') && (\n            <FileList files={groups.find(g => g.name === '')!.files} />\n          )}",
   "new_string": "          {subfolderGroups.map(group => (\n            <Box key={group.name}>\n              <Text size=\"sm\" fw={600}>📁 {group.name}</Text>\n              <FileList files={group.files} />\n            </Box>\n          ))}\n          {rootGroup && <FileList files={rootGroup.files} />}"
 }
@@ -2660,7 +2660,7 @@ id: toolu_014Ke9VfPoJhdGe2MUC8MwjG
 tool_result
 id: toolu_014Ke9VfPoJhdGe2MUC8MwjG
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2674,7 +2674,7 @@ id: toolu_011bm3b1S2mArewnrpeGbmrh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/App.tsx",
   "old_string": "import { useState } from 'react'\nimport { Box, Group, Tabs, Text } from '@mantine/core'\nimport MergeMode from './components/MergeMode'\nimport SplitMode from './components/SplitMode'\n\ntype AppMode = 'split' | 'merge'",
   "new_string": "import { useState } from 'react'\nimport { Box, Group, Tabs, Text } from '@mantine/core'\nimport MergeMode from './components/MergeMode'\nimport SplitMode from './components/SplitMode'\nimport DriveUploadMode from './components/DriveUploadMode'\n\ntype AppMode = 'split' | 'merge' | 'drive'"
 }
@@ -2685,7 +2685,7 @@ id: toolu_011bm3b1S2mArewnrpeGbmrh
 tool_result
 id: toolu_011bm3b1S2mArewnrpeGbmrh
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2695,7 +2695,7 @@ id: toolu_01MNYSiJ4RwihivbhMzeiytr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/App.tsx",
   "old_string": "            <Tabs.List>\n              <Tabs.Tab value=\"split\">Split</Tabs.Tab>\n              <Tabs.Tab value=\"merge\">Merge</Tabs.Tab>\n            </Tabs.List>",
   "new_string": "            <Tabs.List>\n              <Tabs.Tab value=\"split\">Split</Tabs.Tab>\n              <Tabs.Tab value=\"merge\">Merge</Tabs.Tab>\n              <Tabs.Tab value=\"drive\">Drive Upload</Tabs.Tab>\n            </Tabs.List>"
 }
@@ -2706,7 +2706,7 @@ id: toolu_01MNYSiJ4RwihivbhMzeiytr
 tool_result
 id: toolu_01MNYSiJ4RwihivbhMzeiytr
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2716,7 +2716,7 @@ id: toolu_01BUvWNLgiyKbE6m7SymmTyq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/App.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/App.tsx",
   "old_string": "      <Box style={{ flex: 1, overflow: 'hidden' }}>\n        {mode === 'split'\n          ? <SplitMode initialPath={splitInitialPath} />\n          : <MergeMode onOpenInSplitMode={handleOpenInSplitMode} />}\n      </Box>",
   "new_string": "      <Box style={{ flex: 1, overflow: 'hidden' }}>\n        {mode === 'split' && <SplitMode initialPath={splitInitialPath} />}\n        {mode === 'merge' && <MergeMode onOpenInSplitMode={handleOpenInSplitMode} />}\n        {mode === 'drive' && <DriveUploadMode />}\n      </Box>"
 }
@@ -2727,7 +2727,7 @@ id: toolu_01BUvWNLgiyKbE6m7SymmTyq
 tool_result
 id: toolu_01BUvWNLgiyKbE6m7SymmTyq
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/App.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2797,7 +2797,7 @@ tool_use Bash
 id: toolu_015a9LPwMp3bY6TwZn2D1tRo
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go test ./... 2>&1 | tail -30",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go test ./... 2>&1 | tail -30",
   "description": "Run full Go test suite"
 }
 ```
@@ -2816,7 +2816,7 @@ tool_use Bash
 id: toolu_01B3MFsBeLCKqdLKD1W2WeYn
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm test 2>&1 | tail -60",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm test 2>&1 | tail -60",
   "description": "Run frontend test suite"
 }
 ```
@@ -2830,7 +2830,7 @@ id: toolu_01B3MFsBeLCKqdLKD1W2WeYn
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 14ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 15ms
@@ -2874,7 +2874,7 @@ tool_use Bash
 id: toolu_01R3iaPEvtWKgWY3G4xEBUCA
 ```json
 {
-  "command": "grep -n \"ScanDriveRoot\\|DriveFileGroup\\|DriveFile\\b\" /Users/ben/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts /Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts 2>/dev/null",
+  "command": "grep -n \"ScanDriveRoot\\|DriveFileGroup\\|DriveFile\\b\" /home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts /home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts 2>/dev/null",
   "description": "Check if wailsjs bindings already regenerated with new types"
 }
 ```
@@ -2884,13 +2884,13 @@ id: toolu_01R3iaPEvtWKgWY3G4xEBUCA
 tool_result
 id: toolu_01R3iaPEvtWKgWY3G4xEBUCA
 ```
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts:25:export function ScanDriveRoot(arg1:string):Promise<Array<main.DriveFileGroup>>;
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:3:	export class DriveFile {
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:10:	        return new DriveFile(source);
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:21:	export class DriveFileGroup {
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:23:	    files: DriveFile[];
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:26:	        return new DriveFileGroup(source);
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:32:	        this.files = this.convertValues(source["files"], DriveFile);
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts:25:export function ScanDriveRoot(arg1:string):Promise<Array<main.DriveFileGroup>>;
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:3:	export class DriveFile {
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:10:	        return new DriveFile(source);
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:21:	export class DriveFileGroup {
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:23:	    files: DriveFile[];
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:26:	        return new DriveFileGroup(source);
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:32:	        this.files = this.convertValues(source["files"], DriveFile);
 ```
 
 > TOOL
@@ -2899,7 +2899,7 @@ tool_use Read
 id: toolu_01CGe4Rba77aLNj1tBfghNkn
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts"
 }
 ```
 
@@ -2963,7 +2963,7 @@ tool_use Bash
 id: toolu_01XyZ8PgSPxBQqS7s9Y11xqK
 ```json
 {
-  "command": "grep -rn \"as any\\|as unknown\" /Users/ben/git/paper-scan-processor/frontend/src --include=\"*.test.ts\" --include=\"*.test.tsx\"",
+  "command": "grep -rn \"as any\\|as unknown\" /home/<USER>/git/paper-scan-processor/frontend/src --include=\"*.test.ts\" --include=\"*.test.tsx\"",
   "description": "Check for existing 'as any' casts in test files"
 }
 ```
@@ -2982,7 +2982,7 @@ tool_use Read
 id: toolu_01YXZtq24EWbw2K9MMTRaRvE
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
   "offset": 28,
   "limit": 6
 }
@@ -3008,7 +3008,7 @@ id: toolu_01GGZG6xRzBP8NG28qCG3ZdR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
   "old_string": "    vi.mocked(ScanDriveRoot).mockResolvedValueOnce(groups)",
   "new_string": "    vi.mocked(ScanDriveRoot).mockResolvedValueOnce(groups as any)"
 }
@@ -3019,7 +3019,7 @@ id: toolu_01GGZG6xRzBP8NG28qCG3ZdR
 tool_result
 id: toolu_01GGZG6xRzBP8NG28qCG3ZdR
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3052,7 +3052,7 @@ tool_use Bash
 id: toolu_01KspNiJewPLSumnWeBdcaD9
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -20 && echo \"---frontend---\" && cd frontend && npm test 2>&1 | tail -20",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -20 && echo \"---frontend---\" && cd frontend && npm test 2>&1 | tail -20",
   "description": "Final full verification pass: Go build/vet/test and frontend tests"
 }
 ```
@@ -3069,7 +3069,7 @@ ok  	paper-scan-processor	(cached)
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 13ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 15ms
@@ -3090,7 +3090,7 @@ tool_use Bash
 id: toolu_01XYk3hdcZa8zMNCVqHwzbxs
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status --short",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status --short",
   "description": "Show final git status"
 }
 ```
@@ -3146,7 +3146,7 @@ tool_use Read
 id: toolu_011cU9N8QFWoMAUCuJtHZM5Q
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -3315,7 +3315,7 @@ tool_use Bash
 id: toolu_01WSRjuPt2h52nPYax8eNHzw
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nMove ClippedPath.tsx out of SplitMode into shared components\n\nIt only depends on generic path/onClick/placeholder props, and Drive\nUpload mode needs the same truncated-path control for its root folder\ndisplay.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nMove ClippedPath.tsx out of SplitMode into shared components\n\nIt only depends on generic path/onClick/placeholder props, and Drive\nUpload mode needs the same truncated-path control for its root folder\ndisplay.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
   "description": "Commit the ClippedPath cleanup separately from feature work"
 }
 ```
@@ -3340,7 +3340,7 @@ tool_use Write
 id: toolu_01VnmAAbzGESrfmQyie59gYc
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md",
   "content": "---\nname: feedback-separate-commits\ndescription: Point out cleanups before writing feature code; commit them immediately, before starting implementation — don't batch until the end\nmetadata:\n  type: feedback\n---\n\nWhen a task involves both a cleanup (e.g. moving/renaming a file, extracting a shared component) and new feature work, commit the cleanup on its own **immediately after making it**, before starting the feature implementation. Don't stage it and leave it uncommitted until the whole task is done.\n\n**Why:** User corrected this on 2026-07-02 — I staged a cleanup (moving `ClippedPath.tsx` to a shared location) at the start of a Drive Upload mode feature but only committed everything together at the end when asked. They want the cleanup's own commit created right away, decoupled from whatever comes next, rather than sitting staged/mixed in until the feature is finished.\n\n**How to apply:** As soon as a cleanup step is identified and applied (per [[feedback_checklist_substeps]]-style upfront planning), `git add` + commit it right then with its own descriptive message, then proceed to the feature work as separate, later commit(s). Don't wait for the user to ask \"did you commit that?\" at the end.\n"
 }
 ```
@@ -3359,7 +3359,7 @@ tool_use Read
 id: toolu_01DEEiSbetzAdsWgd3ue9uJs
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md"
 }
 ```
 
@@ -3397,7 +3397,7 @@ id: toolu_01GnTPJmhTLMN3D18w6GCfou
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md",
   "old_string": "---\nname: feedback-separate-commits\ndescription: \"Don't mix cleanups with feature code — point them out first, then commit separately\"\nmetadata: \n  node_type: memory\n  type: feedback\n  originSessionId: 00890b75-3b73-40ea-a572-24824f035a7f\n---\n\nBefore writing feature code, if there's cleanup to do (unused props, dead code, etc.), point it out and ask whether to clean up first. If yes, commit the cleanup separately from the feature.\n\n**Why:** User wants a clean git history where each commit does one thing.\n\n**How to apply:** When starting a feature, scan the files to be modified for unused/dead code. If found, mention it before writing any feature code: \"I noticed X and Y are unused — should I clean those up in a separate commit first?\" Only after that's decided, write the feature code.",
   "new_string": "---\nname: feedback-separate-commits\ndescription: \"Don't mix cleanups with feature code — point them out first, commit them immediately, before starting feature work\"\nmetadata: \n  node_type: memory\n  type: feedback\n  originSessionId: 00890b75-3b73-40ea-a572-24824f035a7f\n---\n\nBefore writing feature code, if there's cleanup to do (unused props, dead code, a component that should move to a shared location, etc.), point it out and ask whether to clean up first. If yes, apply the cleanup and **commit it right away** — don't […]
 
@@ -3406,7 +3406,7 @@ id: toolu_01GnTPJmhTLMN3D18w6GCfou
 tool_result
 id: toolu_01GnTPJmhTLMN3D18w6GCfou
 ```
-The file /Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3668,7 +3668,7 @@ tool_use Read
 id: toolu_01UEmheEXt1Y1SXL5oC5u4UJ
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -3782,7 +3782,7 @@ tool_use Read
 id: toolu_01Eqhujg7kMBdMhBCgFL2Gyc
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go",
   "offset": 117,
   "limit": 14
 }
@@ -3852,7 +3852,7 @@ id: toolu_01MVVJFA4MmB3URj77pT11y9
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 14ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
@@ -3873,7 +3873,7 @@ tool_use Bash
 id: toolu_0161Ep3dtLtCpqUh44mnio9L
 ```json
 {
-  "command": "grep -n \"ScanLocalRoot\\|LocalFileGroup\" /Users/ben/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts /Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts",
+  "command": "grep -n \"ScanLocalRoot\\|LocalFileGroup\" /home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts /home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts",
   "description": "Confirm wailsjs bindings picked up the rename"
 }
 ```
@@ -3883,9 +3883,9 @@ id: toolu_0161Ep3dtLtCpqUh44mnio9L
 tool_result
 id: toolu_0161Ep3dtLtCpqUh44mnio9L
 ```
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts:25:export function ScanLocalRoot(arg1:string):Promise<Array<main.LocalFileGroup>>;
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:21:	export class LocalFileGroup {
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:26:	        return new LocalFileGroup(source);
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts:25:export function ScanLocalRoot(arg1:string):Promise<Array<main.LocalFileGroup>>;
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:21:	export class LocalFileGroup {
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:26:	        return new LocalFileGroup(source);
 ```
 
 > AGENT
@@ -3906,7 +3906,7 @@ tool_use Read
 id: toolu_016fm58XEFLD6U21NzvwzWbb
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "offset": 71,
   "limit": 32
 }
@@ -3958,7 +3958,7 @@ id: toolu_01YDtRuaM5Es9ypMFrRvoqy7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "// scanDir builds the LocalFile list for the PDFs directly within dir's\n// entries, sorted alphabetically by filename.\nfunc scanDir(dir string, entries []os.DirEntry) ([]LocalFile, error) {\n\tvar names []string\n\tfor _, e := range entries {\n\t\tif e.IsDir() || strings.HasPrefix(e.Name(), \".\") || !strings.HasSuffix(strings.ToLower(e.Name()), \".pdf\") {\n\t\t\tcontinue\n\t\t}\n\t\tnames = append(names, e.Name())\n\t}\n\tsort.Strings(names)\n\n\tfiles := make([]LocalFile, 0, len(names))\n\tfor _, name := range names {\n\t\tpath := filepath.Join(dir, name)",
   "new_string": "// scanDir builds the LocalFile list for the PDFs directly within dir's\n// entries, sorted alphabetically by filename.\nfunc scanDir(dir string, entries []os.DirEntry) ([]LocalFile, error) {\n\tfiles := make([]LocalFile, 0, len(entries))\n\tfor _, e := range entries {\n\t\tname := e.Name()\n\t\tif e.IsDir() || strings.HasPrefix(name, \".\") || !strings.HasSuffix(strings.ToLower(name), \".pdf\") {\n\t\t\tcontinue\n\t\t}\n\t\tpath := filepath.Join(dir, name)"
 }
@@ -3969,7 +3969,7 @@ id: toolu_01YDtRuaM5Es9ypMFrRvoqy7
 tool_result
 id: toolu_01YDtRuaM5Es9ypMFrRvoqy7
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3978,7 +3978,7 @@ tool_use Read
 id: toolu_01KySGvMmtWpHHuRH4nXcjhk
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -4038,7 +4038,7 @@ id: toolu_01Q4CNgyHoBpqqkM9aq2y6VW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "\tvar subdirs []string\n\tfor _, e := range entries {\n\t\tif e.IsDir() && !strings.HasPrefix(e.Name(), \".\") {\n\t\t\tsubdirs = append(subdirs, e.Name())\n\t\t}\n\t}\n\tsort.Strings(subdirs)\n\n\tfor _, name := range subdirs {\n\t\tdir := filepath.Join(root, name)",
   "new_string": "\tfor _, e := range entries {\n\t\tif !e.IsDir() || strings.HasPrefix(e.Name(), \".\") {\n\t\t\tcontinue\n\t\t}\n\t\tname := e.Name()\n\t\tdir := filepath.Join(root, name)"
 }
@@ -4049,7 +4049,7 @@ id: toolu_01Q4CNgyHoBpqqkM9aq2y6VW
 tool_result
 id: toolu_01Q4CNgyHoBpqqkM9aq2y6VW
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4059,7 +4059,7 @@ id: toolu_013ueUSphG7xCyCWPg6r8pgs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "import (\n\t\"os\"\n\t\"path/filepath\"\n\t\"sort\"\n\t\"strings\"\n)",
   "new_string": "import (\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n)"
 }
@@ -4070,7 +4070,7 @@ id: toolu_013ueUSphG7xCyCWPg6r8pgs
 tool_result
 id: toolu_013ueUSphG7xCyCWPg6r8pgs
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4079,7 +4079,7 @@ tool_use Read
 id: toolu_01HzVfAfRzPgMJc5uS7jtN2a
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -4137,7 +4137,7 @@ tool_use Bash
 id: toolu_01QGBXAdXLAmedY9FUSVRijG
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... -run TestScanLocalRoot -v 2>&1 | tail -30",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... -run TestScanLocalRoot -v 2>&1 | tail -30",
   "description": "Build, vet, and test after simplifying scanDir/scanLocalRoot"
 }
 ```
@@ -4177,7 +4177,7 @@ tool_use Read
 id: toolu_019jFpLM38mj4uz6FfnzRHSV
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go"
 }
 ```
 
@@ -4241,7 +4241,7 @@ id: toolu_015YsNw3bYxkSSuArQJsvjCc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "// LocalFile describes one local PDF discovered by scanLocalRoot.\ntype LocalFile struct {\n\tPath      string `json:\"path\"`\n\tName      string `json:\"name\"` // filename without extension; display-only for now\n\tSizeBytes int64  `json:\"sizeBytes\"`\n\tPageCount int    `json:\"pageCount\"`\n}",
   "new_string": "// LocalFile describes one local PDF discovered by scanLocalRoot.\ntype LocalFile struct {\n\tPath      string `json:\"path\"`\n\tName      string `json:\"name\"` // filename without extension; display-only for now\n\tSizeBytes int64  `json:\"sizeBytes\"`\n\tPageCount int    `json:\"pageCount\"`\n\tCorrupt   bool   `json:\"corrupt\"` // true if the file's page count could not be read\n}"
 }
@@ -4252,7 +4252,7 @@ id: toolu_015YsNw3bYxkSSuArQJsvjCc
 tool_result
 id: toolu_015YsNw3bYxkSSuArQJsvjCc
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4262,7 +4262,7 @@ id: toolu_01EaWRa8iJU9LDTiiVZcjnju
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "\t\tpath := filepath.Join(dir, name)\n\t\tcount, err := pdfPageCount(path)\n\t\tif err != nil {\n\t\t\tcontinue // corrupt or non-PDF despite the extension; skip it\n\t\t}\n\t\tinfo, err := os.Stat(path)\n\t\tif err != nil {\n\t\t\tcontinue\n\t\t}\n\t\tfiles = append(files, LocalFile{\n\t\t\tPath:      path,\n\t\t\tName:      strings.TrimSuffix(name, filepath.Ext(name)),\n\t\t\tSizeBytes: info.Size(),\n\t\t\tPageCount: count,\n\t\t})",
   "new_string": "\t\tpath := filepath.Join(dir, name)\n\t\tinfo, err := os.Stat(path)\n\t\tif err != nil {\n\t\t\tcontinue\n\t\t}\n\t\tcount, err := pdfPageCount(path)\n\t\tfiles = append(files, LocalFile{\n\t\t\tPath:      path,\n\t\t\tName:      strings.TrimSuffix(name, filepath.Ext(name)),\n\t\t\tSizeBytes: info.Size(),\n\t\t\tPageCount: count,\n\t\t\tCorrupt:   err != nil, // corrupt or non-PDF despite the extension\n\t\t})"
 }
@@ -4273,7 +4273,7 @@ id: toolu_01EaWRa8iJU9LDTiiVZcjnju
 tool_result
 id: toolu_01EaWRa8iJU9LDTiiVZcjnju
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4282,7 +4282,7 @@ tool_use Read
 id: toolu_01JCMGSd2BaDZFvGBEPh1Agc
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -4339,7 +4339,7 @@ id: toolu_01HRNx1Mfh7CFHhR1YCu8Krr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "// scanLocalRoot scans root one level deep: PDFs directly in root form a\n// single group with Name \"\", and each immediate subdirectory of root forms\n// its own group containing only its direct PDF children. Files that fail to\n// parse as PDFs are skipped rather than failing the whole scan.",
   "new_string": "// scanLocalRoot scans root one level deep: PDFs directly in root form a\n// single group with Name \"\", and each immediate subdirectory of root forms\n// its own group containing only its direct PDF children. Files whose page\n// count can't be read (corrupt or non-PDF despite the extension) are still\n// included, flagged via LocalFile.Corrupt, rather than dropped from the scan."
 }
@@ -4350,7 +4350,7 @@ id: toolu_01HRNx1Mfh7CFHhR1YCu8Krr
 tool_result
 id: toolu_01HRNx1Mfh7CFHhR1YCu8Krr
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4364,7 +4364,7 @@ id: toolu_01JxpwYg1axtzrKtdkYM4V13
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go",
   "old_string": "func TestScanLocalRootSkipsCorruptPDF(t *testing.T) {\n\troot := t.TempDir()\n\twritePDF(t, filepath.Join(root, \"good.pdf\"), []string{\"p1\"})\n\tif err := os.WriteFile(filepath.Join(root, \"bad.pdf\"), []byte(\"not a pdf\"), 0o644); err != nil {\n\t\tt.Fatal(err)\n\t}\n\n\tgroups, err := scanLocalRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(groups) != 1 || len(groups[0].Files) != 1 || groups[0].Files[0].Name != \"good\" {\n\t\tt.Fatalf(\"expected only good.pdf to survive the scan, got %+v\", groups)\n\t}\n}",
   "new_string": "func TestScanLocalRootFlagsCorruptPDF(t *testing.T) {\n\troot := t.TempDir()\n\twritePDF(t, filepath.Join(root, \"good.pdf\"), []string{\"p1\"})\n\tif err := os.WriteFile(filepath.Join(root, \"bad.pdf\"), []byte(\"not a pdf\"), 0o644); err != nil {\n\t\tt.Fatal(err)\n\t}\n\n\tgroups, err := scanLocalRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(groups) != 1 || len(groups[0].Files) != 2 {\n\t\tt.Fatalf(\"expected both files to appear in the scan, got %+v\", groups)\n\t}\n\n\tfiles := groups[0].Files\n\tif files[0].Name != \"bad\" || !files[0].Corrupt || files[0].PageCount != 0 {\n\t\tt.Errorf(\"bad.pdf = %+v, want Corrupt=true, PageCount=0\", files[0])\n\t}\n\tif files[0].SizeBytes <= 0 {\n\t\tt.Errorf(\"bad.pdf size = %d, want > 0\", files[0].SizeBytes)\n\t}\n\tif files[1].Name != \"good\" || files[1].Corrupt || files[1].PageCount != 1 {\n\t\tt.Errorf(\"good.pdf = %+v, want Corrupt=false, PageCount=1\", files[1])\n\t}\n}"
 }
@@ -4375,7 +4375,7 @@ id: toolu_01JxpwYg1axtzrKtdkYM4V13
 tool_result
 id: toolu_01JxpwYg1axtzrKtdkYM4V13
 ```
-The file /Users/ben/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4420,7 +4420,7 @@ tool_use Read
 id: toolu_01PsgnjZyNUoph162Lcmeate
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts"
 }
 ```
 
@@ -4439,7 +4439,7 @@ id: toolu_01BSpLQxqvrGak7hwMGJkPMn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
   "old_string": "export interface LocalFile {\n  path: string\n  name: string\n  sizeBytes: number\n  pageCount: number\n}",
   "new_string": "export interface LocalFile {\n  path: string\n  name: string\n  sizeBytes: number\n  pageCount: number\n  corrupt: boolean\n}"
 }
@@ -4450,7 +4450,7 @@ id: toolu_01BSpLQxqvrGak7hwMGJkPMn
 tool_result
 id: toolu_01BSpLQxqvrGak7hwMGJkPMn
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4463,7 +4463,7 @@ tool_use Read
 id: toolu_011Z1ghLWDtBeXdC3uhjVRyn
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -4522,7 +4522,7 @@ id: toolu_01WgqbJxLKE4UvQ3XirdUKoS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "import { Box, Button, Loader, Stack, Text } from '@mantine/core'",
   "new_string": "import { Box, Button, Loader, Stack, Text, Tooltip } from '@mantine/core'"
 }
@@ -4533,7 +4533,7 @@ id: toolu_01WgqbJxLKE4UvQ3XirdUKoS
 tool_result
 id: toolu_01WgqbJxLKE4UvQ3XirdUKoS
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4543,7 +4543,7 @@ id: toolu_01ArqLsKDiffZHUfQLnW1wqC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "function FileList({ files }: { files: LocalFile[] }) {\n  return (\n    <Stack gap={6} mt={4}>\n      {files.map(file => (\n        <Box key={file.path} pl={4}>\n          <Text size=\"sm\">📄 {file.name}</Text>\n          <Text size=\"xs\" c=\"dimmed\">{file.pageCount} pages · {formatFileSize(file.sizeBytes)}</Text>\n        </Box>\n      ))}\n    </Stack>\n  )\n}",
   "new_string": "function FileList({ files }: { files: LocalFile[] }) {\n  return (\n    <Stack gap={6} mt={4}>\n      {files.map(file => (\n        <Box key={file.path} pl={4}>\n          <Text size=\"sm\" c={file.corrupt ? 'red' : undefined}>\n            📄 {file.name}\n            {file.corrupt && (\n              <Tooltip label=\"Could not read this file — it may be corrupt or not a valid PDF\">\n                <span> ⚠️</span>\n              </Tooltip>\n            )}\n          </Text>\n          <Text size=\"xs\" c=\"dimmed\">\n            {file.corrupt ? 'Unreadable' : `${file.pageCount} pages`} · {formatFileSize(file.sizeBytes)}\n          </Text>\n        </Box>\n      ))}\n    </Stack>\n  )\n}"
 }
@@ -4554,7 +4554,7 @@ id: toolu_01ArqLsKDiffZHUfQLnW1wqC
 tool_result
 id: toolu_01ArqLsKDiffZHUfQLnW1wqC
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4567,7 +4567,7 @@ tool_use Read
 id: toolu_0131DSpTQ4b5ivrKj6d5mBoF
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts"
 }
 ```
 
@@ -4585,7 +4585,7 @@ tool_use Bash
 id: toolu_01VjLMeSvpd9kHgutVin9Mjj
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm test 2>&1 | tail -30 && npm run tsc 2>&1 | tail -60",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm test 2>&1 | tail -30 && npm run tsc 2>&1 | tail -60",
   "description": "Run frontend tests and typecheck after adding corrupt flag UI"
 }
 ```
@@ -4599,7 +4599,7 @@ id: toolu_01VjLMeSvpd9kHgutVin9Mjj
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 13ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
@@ -4624,7 +4624,7 @@ tool_use Bash
 id: toolu_011KsFTYvHNYvB1hLM38Dtd2
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
   "description": "Final full Go verification"
 }
 ```
@@ -4692,7 +4692,7 @@ tool_use Bash
 id: toolu_01Nx8gDuqiV1sspL55hjZ95W
 ```json
 {
-  "command": "grep -n \"Step 2\" /Users/ben/git/paper-scan-processor/spec.md",
+  "command": "grep -n \"Step 2\" /home/<USER>/git/paper-scan-processor/spec.md",
   "description": "Check current checklist state for Step 2 items"
 }
 ```
@@ -4716,7 +4716,7 @@ id: toolu_01VKmDDmujZhQSBBkfF7k9EB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] **Step 2a: Filesystem scan backend** — `scanDriveRoot` + `ScanDriveRoot` RPC; scans root folder one level deep (root + immediate subfolders only); returns files grouped by subfolder with size and page count\n- [ ] **Step 2b: File tree UI** — new Drive Upload tab; root folder picker; three-column layout shell; file tree display wired to the scan, with file size and page count as secondary metadata",
   "new_string": "- [x] **Step 2a: Filesystem scan backend** — `scanLocalRoot` + `ScanLocalRoot` RPC; scans root folder one level deep (root + immediate subfolders only); returns files grouped by subfolder with size and page count; files whose page count can't be read are included and flagged via `Corrupt` rather than dropped\n- [x] **Step 2b: File tree UI** — new Drive Upload tab; root folder picker; three-column layout shell; file tree display wired to the scan, with file size and page count as secondary metadata; corrupt files shown with a warning icon"
 }
@@ -4727,7 +4727,7 @@ id: toolu_01VKmDDmujZhQSBBkfF7k9EB
 tool_result
 id: toolu_01VKmDDmujZhQSBBkfF7k9EB
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4777,7 +4777,7 @@ tool_use Bash
 id: toolu_01BfjhKhUp7G5MLk2aTTBYXF
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nAdd Drive Upload Step 2: local filesystem scan + file tree UI\n\nAdds scanLocalRoot (one level deep: root + immediate subfolders,\ngrouped, with size/page-count metadata) and its ScanLocalRoot RPC,\nplus a new Drive Upload tab with a root folder picker and a\nthree-column layout shell showing the scanned tree. Files whose page\ncount can't be read are included and flagged as corrupt (red name,\nwarning tooltip) instead of being silently dropped from the scan.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nAdd Drive Upload Step 2: local filesystem scan + file tree UI\n\nAdds scanLocalRoot (one level deep: root + immediate subfolders,\ngrouped, with size/page-count metadata) and its ScanLocalRoot RPC,\nplus a new Drive Upload tab with a root folder picker and a\nthree-column layout shell showing the scanned tree. Files whose page\ncount can't be read are included and flagged as corrupt (red name,\nwarning tooltip) instead of being silently dropped from the scan.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
   "description": "Commit Drive Upload Step 2 feature work"
 }
 ```
@@ -4798,7 +4798,7 @@ tool_use Bash
 id: toolu_0194ZEU5pL46NFXduGBh9S3i
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nAdd Drive Upload Step 2: local filesystem scan and file tree UI\n\nAdds scanLocalRoot (one level deep: root plus immediate subfolders,\ngrouped, with size and page-count metadata) and its ScanLocalRoot RPC,\nplus a new Drive Upload tab with a root folder picker and a\nthree-column layout shell showing the scanned tree. Files whose page\ncount cannot be read are included and flagged as corrupt (red name,\nwarning tooltip) instead of being silently dropped from the scan.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nAdd Drive Upload Step 2: local filesystem scan and file tree UI\n\nAdds scanLocalRoot (one level deep: root plus immediate subfolders,\ngrouped, with size and page-count metadata) and its ScanLocalRoot RPC,\nplus a new Drive Upload tab with a root folder picker and a\nthree-column layout shell showing the scanned tree. Files whose page\ncount cannot be read are included and flagged as corrupt (red name,\nwarning tooltip) instead of being silently dropped from the scan.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
   "description": "Commit Drive Upload Step 2 feature work (retry without apostrophes)"
 }
 ```
@@ -4858,7 +4858,7 @@ tool_use Read
 id: toolu_012HqkUhAEHFYijxTNUhJCuq
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -4916,7 +4916,7 @@ tool_use Bash
 id: toolu_01ACoPsLhcScNcZ7bHxXaTX3
 ```json
 {
-  "command": "find /Users/ben/git/paper-scan-processor/frontend/src -iname \"*IconButton*\"",
+  "command": "find /home/<USER>/git/paper-scan-processor/frontend/src -iname \"*IconButton*\"",
   "description": "Find ThumbnailIconButton component for accessible button pattern reference"
 }
 ```
@@ -4936,7 +4936,7 @@ id: toolu_01THbpueB4JEouBcvKnirb9d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "import { Box, Button, Loader, Stack, Text, Tooltip } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport { useFileTree, LocalFile } from './useFileTree'\nimport { formatFileSize } from '../../utils'\n\nconst LEFT_PANEL_WIDTH = 300\n\nexport default function DriveUploadMode() {\n  const { root, groups, loading, error, pickRoot } = useFileTree()\n  const rootGroup = groups.find(g => g.name === '')\n  const subfolderGroups = groups.filter(g => g.name !== '')",
   "new_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text, Tooltip } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport { useFileTree, LocalFile } from './useFileTree'\nimport { formatFileSize } from '../../utils'\n\nconst LEFT_PANEL_WIDTH = 300\n\nexport default function DriveUploadMode() {\n  const { root, groups, loading, error, pickRoot } = useFileTree()\n  const rootGroup = groups.find(g => g.name === '')\n  const subfolderGroups = groups.filter(g => g.name !== '')\n\n  // Groups start expanded; presence in this set means collapsed.\n  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())\n  const toggleGroup = (name: string) => {\n    setCollapsedGroups(prev => {\n      const next = new Set(prev)\n      if (next.has(name)) next.delete(name); else next.add(name)\n      return next\n    })\n  }"
 }
@@ -4947,7 +4947,7 @@ id: toolu_01THbpueB4JEouBcvKnirb9d
 tool_result
 id: toolu_01THbpueB4JEouBcvKnirb9d
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4957,7 +4957,7 @@ id: toolu_01Po8TYKVg9zSmjx1eCsnAGY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "        <Stack gap=\"md\" mt=\"sm\">\n          {subfolderGroups.map(group => (\n            <Box key={group.name}>\n              <Text size=\"sm\" fw={600}>📁 {group.name}</Text>\n              <FileList files={group.files} />\n            </Box>\n          ))}\n          {rootGroup && <FileList files={rootGroup.files} />}\n        </Stack>",
   "new_string": "        <Stack gap=\"md\" mt=\"sm\">\n          {subfolderGroups.map(group => {\n            const expanded = !collapsedGroups.has(group.name)\n            return (\n              <Box key={group.name}>\n                <button\n                  type=\"button\"\n                  onClick={() => toggleGroup(group.name)}\n                  aria-expanded={expanded}\n                  style={{\n                    display: 'flex',\n                    alignItems: 'center',\n                    gap: 6,\n                    width: '100%',\n                    border: 'none',\n                    background: 'transparent',\n                    padding: 0,\n                    cursor: 'pointer',\n                    textAlign: 'left',\n                    fontFamily: 'inherit',\n                  }}\n                >\n                  <Text size=\"xs\" c=\"dimmed\" style={{ width: 10, flexShrink: 0 }}>{expanded ? '▼' : '▶'}</Text>\n                  <Text size=\"sm\" fw={600}>📁 {group.name}</Text>\n                </button>\n                {expanded && <FileList files={group.files} />}\n              </Box>\n            )\n          })}\n          {rootGroup && <FileList files={rootGroup.files} />}\n        </Stack>"
 }
@@ -4968,7 +4968,7 @@ id: toolu_01Po8TYKVg9zSmjx1eCsnAGY
 tool_result
 id: toolu_01Po8TYKVg9zSmjx1eCsnAGY
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4981,7 +4981,7 @@ tool_use Bash
 id: toolu_01WW14Rafm6N4vrpzYjDEKwd
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -60 && npm test 2>&1 | tail -30",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -60 && npm test 2>&1 | tail -30",
   "description": "Typecheck and test after adding collapsible groups"
 }
 ```
@@ -4999,7 +4999,7 @@ id: toolu_01WW14Rafm6N4vrpzYjDEKwd
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 12ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 13ms
@@ -5020,7 +5020,7 @@ tool_use Read
 id: toolu_01G76YQbA2JeiJU39EakdmAz
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -5140,7 +5140,7 @@ tool_use Read
 id: toolu_01TPmUMssNw7JHyWyBPZDKYb
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -5158,7 +5158,7 @@ tool_use Read
 id: toolu_01WAW6cRpbc4smvi9kMFwS4G
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -5211,7 +5211,7 @@ id: toolu_013hsi49tuc9onXsZKJj1fbd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "// LocalFileGroup is one subfolder's worth of files. Name is \"\" for files\n// found directly in the scanned root.\ntype LocalFileGroup struct {\n\tName  string      `json:\"name\"`\n\tFiles []LocalFile `json:\"files\"`\n}\n\n// scanLocalRoot scans root one level deep: PDFs directly in root form a\n// single group with Name \"\", and each immediate subdirectory of root forms\n// its own group containing only its direct PDF children. Files whose page\n// count can't be read (corrupt or non-PDF despite the extension) are still\n// included, flagged via LocalFile.Corrupt, rather than dropped from the scan.\nfunc scanLocalRoot(root string) ([]LocalFileGroup, error) {\n\tentries, err := os.ReadDir(root)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar groups []LocalFileGroup\n\n\trootFiles, err := scanDir(root, entries)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif len(rootFiles) > 0 {\n\t\tgroups = append(groups, LocalFileGroup{Name: \"\", Files: rootFiles})\n\t}\n\n\tfor _, e := range entries {\n\t\tif !e.IsDir() || strings.HasPrefix(e.Name(), \".\") {\n\t\t\tcontinue\n\t\t}\n\t\tname := e.Name()\n\t\tdir := filepath.Join(root, name)\n\t\tsubEntries, err := os.ReadDir(dir)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tfiles, err := scanDir(dir, subEntries)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif len(files) > 0 {\n\t\t\tgroups = append(groups, LocalFileGroup{Name: name, Files: files})\n\t\t}\n\t}\n\n\treturn groups, nil\n}",
   "new_string": "// LocalFileGroup is one folder's worth of files, plus its nested\n// subfolders. Name is \"\" for files found directly in the […]
 
@@ -5220,7 +5220,7 @@ id: toolu_013hsi49tuc9onXsZKJj1fbd
 tool_result
 id: toolu_013hsi49tuc9onXsZKJj1fbd
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5233,7 +5233,7 @@ tool_use Read
 id: toolu_01DD22vf4qvgTvYLkVsqJy4q
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go",
   "offset": 124,
   "limit": 6
 }
@@ -5259,7 +5259,7 @@ id: toolu_01TxvKafqsfHXSXjx68PrTjU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go",
   "old_string": "// ScanLocalRoot scans root one level deep and returns its PDFs grouped by\n// subfolder, with size and page count metadata.",
   "new_string": "// ScanLocalRoot recursively scans root and returns its PDFs grouped by\n// subfolder (nested to match the folder structure), with size and page\n// count metadata."
 }
@@ -5270,7 +5270,7 @@ id: toolu_01TxvKafqsfHXSXjx68PrTjU
 tool_result
 id: toolu_01TxvKafqsfHXSXjx68PrTjU
 ```
-The file /Users/ben/git/paper-scan-processor/app.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/app.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5283,7 +5283,7 @@ tool_use Read
 id: toolu_01MxCUyzzphEL2MKkHgQTV9h
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go"
 }
 ```
 
@@ -5343,7 +5343,7 @@ id: toolu_0113GfCBdbdAY7jCL9FucLWe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go",
   "old_string": "func TestScanLocalRootDoesNotRecurseTwoLevels(t *testing.T) {\n\troot := t.TempDir()\n\tnested := filepath.Join(root, \"a\", \"b\")\n\tif err := os.MkdirAll(nested, 0o755); err != nil {\n\t\tt.Fatal(err)\n\t}\n\twritePDF(t, filepath.Join(nested, \"deep.pdf\"), []string{\"p1\"})\n\twritePDF(t, filepath.Join(root, \"a\", \"shallow.pdf\"), []string{\"p1\"})\n\n\tgroups, err := scanLocalRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(groups) != 1 || groups[0].Name != \"a\" || len(groups[0].Files) != 1 || groups[0].Files[0].Name != \"shallow\" {\n\t\tt.Fatalf(\"expected only the one-level-deep file, got %+v\", groups)\n\t}\n}",
   "new_string": "func TestScanLocalRootRecursesMultipleLevels(t *testing.T) {\n\troot := t.TempDir()\n\tnested := filepath.Join(root, \"a\", \"b\")\n\tif err := os.MkdirAll(nested, 0o755); err != nil {\n\t\tt.Fatal(err)\n\t}\n\twritePDF(t, filepath.Join(nested, \"deep.pdf\"), []string{\"p1\"})\n\twritePDF(t, filepath.Join(root, \"a\", \"shallow.pdf\"), []string{\"p1\"})\n\n\tgroups, err := scanLocalRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(groups) != 1 || groups[0].Name != \"a\" {\n\t\tt.Fatalf(\"expected a single top-level group \\\"a\\\", got %+v\", groups)\n\t}\n\n\ta := groups[0]\n\tif len(a.Files) != 1 || a.Files[0].Name != \"shallow\" {\n\t\tt.Errorf(\"a's direct files = %+v, want just shallow.pdf\", a.Files)\n\t}\n\tif len(a.Subgroups) != 1 || a.Subgroups[0].Name != \"b\" {\n\t\tt.Fatalf(\"a's subgroups = %+v, want a single subgroup \\\"b\\\"\", a.Subgroups)\n\t}\n\n\tb := a.Subgroups[0]\n\tif len(b.Files) != 1 || b.Files[0].Name != \"deep\" {\n\t\tt.Errorf(\"b's files = %+v, want just deep.pdf\", b.Files)\n\t}\n\tif len(b.Subgroups) != 0 {\n\t\tt.Errorf(\"b's subgroups = %+v, want none\", b.Subgroups)\n\t}\n}\n\nfunc TestScanLocalRootOmitsSubtreeWithNoPDFsAtAnyDepth(t *testing.T) {\n\troot := t.TempDir()\n\temptyNested := filepath.Join(root, \"empty\", \"also-empty\")\n\tif err := os.MkdirAll(emptyNested, 0o755); err != nil {\n\t\tt.Fatal(err)\n\t}\n\twritePDF(t, filepath.Join(root, \"top.pdf\"), []string{\"p1\"})\n\n\tgroups, err := scanLocalRoot(root)\n\tif […]
 
@@ -5352,7 +5352,7 @@ id: toolu_0113GfCBdbdAY7jCL9FucLWe
 tool_result
 id: toolu_0113GfCBdbdAY7jCL9FucLWe
 ```
-The file /Users/ben/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5361,7 +5361,7 @@ tool_use Bash
 id: toolu_01SyzGmpmWNBSaB8GWLRuRHj
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... -run TestScanLocalRoot -v 2>&1 | tail -60",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... -run TestScanLocalRoot -v 2>&1 | tail -60",
   "description": "Build and run scan tests after adding recursion"
 }
 ```
@@ -5401,7 +5401,7 @@ tool_use Read
 id: toolu_01FrfkXQNYESLwPtE9AHsX6e
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts"
 }
 ```
 
@@ -5469,7 +5469,7 @@ id: toolu_01QQGMi2u9DNFPZZVEAz2thx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
   "old_string": "export interface LocalFileGroup {\n  name: string\n  files: LocalFile[]\n}",
   "new_string": "export interface LocalFileGroup {\n  name: string\n  files: LocalFile[]\n  subgroups: LocalFileGroup[]\n}"
 }
@@ -5480,7 +5480,7 @@ id: toolu_01QQGMi2u9DNFPZZVEAz2thx
 tool_result
 id: toolu_01QQGMi2u9DNFPZZVEAz2thx
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5494,7 +5494,7 @@ id: toolu_01MFauSfyRL8cG9PrwoXeHvT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text, Tooltip } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport { useFileTree, LocalFile } from './useFileTree'\nimport { formatFileSize } from '../../utils'\n\nconst LEFT_PANEL_WIDTH = 300",
   "new_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text, Tooltip } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport { useFileTree, LocalFile, LocalFileGroup } from './useFileTree'\nimport { formatFileSize } from '../../utils'\n\nconst LEFT_PANEL_WIDTH = 300\nconst INDENT_PER_LEVEL = 16"
 }
@@ -5505,7 +5505,7 @@ id: toolu_01MFauSfyRL8cG9PrwoXeHvT
 tool_result
 id: toolu_01MFauSfyRL8cG9PrwoXeHvT
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5514,7 +5514,7 @@ tool_use Read
 id: toolu_01RXGuQ1okNVkmnHNLWr7n8J
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -5572,7 +5572,7 @@ id: toolu_01V3fyzkZQVRxrJheHckdKEP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "  // Groups start expanded; presence in this set means collapsed.\n  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())\n  const toggleGroup = (name: string) => {\n    setCollapsedGroups(prev => {\n      const next = new Set(prev)\n      if (next.has(name)) next.delete(name); else next.add(name)\n      return next\n    })\n  }",
   "new_string": "  // Groups start expanded; presence in this set (keyed by the group's full\n  // path, e.g. \"invoices/2026\") means collapsed.\n  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())\n  const toggleGroup = (groupKey: string) => {\n    setCollapsedGroups(prev => {\n      const next = new Set(prev)\n      if (next.has(groupKey)) next.delete(groupKey); else next.add(groupKey)\n      return next\n    })\n  }"
 }
@@ -5583,7 +5583,7 @@ id: toolu_01V3fyzkZQVRxrJheHckdKEP
 tool_result
 id: toolu_01V3fyzkZQVRxrJheHckdKEP
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5593,7 +5593,7 @@ id: toolu_01WK6aiEyGMnzQ2FnMtKeUYq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "        <Stack gap=\"md\" mt=\"sm\">\n          {subfolderGroups.map(group => {\n            const expanded = !collapsedGroups.has(group.name)\n            return (\n              <Box key={group.name}>\n                <button\n                  type=\"button\"\n                  onClick={() => toggleGroup(group.name)}\n                  aria-expanded={expanded}\n                  style={{\n                    display: 'flex',\n                    alignItems: 'center',\n                    gap: 6,\n                    width: '100%',\n                    border: 'none',\n                    background: 'transparent',\n                    padding: 0,\n                    cursor: 'pointer',\n                    textAlign: 'left',\n                    fontFamily: 'inherit',\n                  }}\n                >\n                  <Text size=\"xs\" c=\"dimmed\" style={{ width: 10, flexShrink: 0 }}>{expanded ? '▼' : '▶'}</Text>\n                  <Text size=\"sm\" fw={600}>📁 {group.name}</Text>\n                </button>\n                {expanded && <FileList files={group.files} />}\n              </Box>\n            )\n          })}\n          {rootGroup && <FileList files={rootGroup.files} />}\n        </Stack>",
   "new_string": "        <Stack gap=\"md\" mt=\"sm\">\n          {subfolderGroups.map(group => (\n            <GroupNode\n              key={group.name}\n              group={group}\n              groupKey={group.name}\n              collapsedGroups={collapsedGroups}\n              onToggle={toggleGroup}\n            />\n          ))}\n          {rootGroup && <FileList files={rootGroup.files} />}\n        </Stack>"
 }
@@ -5604,7 +5604,7 @@ id: toolu_01WK6aiEyGMnzQ2FnMtKeUYq
 tool_result
 id: toolu_01WK6aiEyGMnzQ2FnMtKeUYq
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5618,7 +5618,7 @@ id: toolu_01GHBfhKvmbGpfEm8ZCyDboQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "function FileList({ files }: { files: LocalFile[] }) {",
   "new_string": "interface GroupNodeProps {\n  group: LocalFileGroup\n  groupKey: string\n  collapsedGroups: Set<string>\n  onToggle: (groupKey: string) => void\n}\n\nfunction GroupNode({ group, groupKey, collapsedGroups, onToggle }: GroupNodeProps) {\n  const expanded = !collapsedGroups.has(groupKey)\n  return (\n    <Box>\n      <button\n        type=\"button\"\n        onClick={() => onToggle(groupKey)}\n        aria-expanded={expanded}\n        style={{\n          display: 'flex',\n          alignItems: 'center',\n          gap: 6,\n          width: '100%',\n          border: 'none',\n          background: 'transparent',\n          padding: 0,\n          cursor: 'pointer',\n          textAlign: 'left',\n          fontFamily: 'inherit',\n        }}\n      >\n        <Text size=\"xs\" c=\"dimmed\" style={{ width: 10, flexShrink: 0 }}>{expanded ? '▼' : '▶'}</Text>\n        <Text size=\"sm\" fw={600}>📁 {group.name}</Text>\n      </button>\n      {expanded && (\n        <Box pl={INDENT_PER_LEVEL}>\n          <FileList files={group.files} />\n          {group.subgroups.map(sub => (\n            <GroupNode\n              key={sub.name}\n              group={sub}\n              groupKey={`${groupKey}/${sub.name}`}\n              collapsedGroups={collapsedGroups}\n              onToggle={onToggle}\n            />\n          ))}\n        </Box>\n      )}\n    </Box>\n  )\n}\n\nfunction FileList({ files }: { files: LocalFile[] }) {"
 }
@@ -5629,7 +5629,7 @@ id: toolu_01GHBfhKvmbGpfEm8ZCyDboQ
 tool_result
 id: toolu_01GHBfhKvmbGpfEm8ZCyDboQ
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5638,7 +5638,7 @@ tool_use Read
 id: toolu_01XhVGimRrkBgYdtgvVS9ghH
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -5694,7 +5694,7 @@ id: toolu_01RNkGa5du7xGQz2eRpu4PLZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "      {expanded && (\n        <Box pl={INDENT_PER_LEVEL}>\n          <FileList files={group.files} />\n          {group.subgroups.map(sub => (\n            <GroupNode\n              key={sub.name}\n              group={sub}\n              groupKey={`${groupKey}/${sub.name}`}\n              collapsedGroups={collapsedGroups}\n              onToggle={onToggle}\n            />\n          ))}\n        </Box>\n      )}",
   "new_string": "      {expanded && (\n        <Box pl={INDENT_PER_LEVEL}>\n          <FileList files={group.files} />\n          {group.subgroups.length > 0 && (\n            <Stack gap={8} mt={4}>\n              {group.subgroups.map(sub => (\n                <GroupNode\n                  key={sub.name}\n                  group={sub}\n                  groupKey={`${groupKey}/${sub.name}`}\n                  collapsedGroups={collapsedGroups}\n                  onToggle={onToggle}\n                />\n              ))}\n            </Stack>\n          )}\n        </Box>\n      )}"
 }
@@ -5705,7 +5705,7 @@ id: toolu_01RNkGa5du7xGQz2eRpu4PLZ
 tool_result
 id: toolu_01RNkGa5du7xGQz2eRpu4PLZ
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5718,7 +5718,7 @@ tool_use Read
 id: toolu_01EdddcpTRZ9UQE9oAP3Rbez
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts"
 }
 ```
 
@@ -5737,7 +5737,7 @@ id: toolu_01FaM5qM4qhNyAmQ88uFv2ro
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
   "old_string": "    const groups = [{ name: 'invoices', files: [{ path: '/output/batch/invoices/a.pdf', name: 'a', sizeBytes: 100, pageCount: 2 }] }]",
   "new_string": "    const groups = [{ name: 'invoices', files: [{ path: '/output/batch/invoices/a.pdf', name: 'a', sizeBytes: 100, pageCount: 2, corrupt: false }], subgroups: [] }]"
 }
@@ -5748,7 +5748,7 @@ id: toolu_01FaM5qM4qhNyAmQ88uFv2ro
 tool_result
 id: toolu_01FaM5qM4qhNyAmQ88uFv2ro
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5761,7 +5761,7 @@ tool_use Bash
 id: toolu_01QWyejw4ud1JFsqYikhTVQw
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm test 2>&1 | tail -30 && npm run tsc 2>&1 | tail -60",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm test 2>&1 | tail -30 && npm run tsc 2>&1 | tail -60",
   "description": "Run frontend tests and typecheck after recursive tree implementation"
 }
 ```
@@ -5775,7 +5775,7 @@ id: toolu_01QWyejw4ud1JFsqYikhTVQw
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 13ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
@@ -5800,7 +5800,7 @@ tool_use Bash
 id: toolu_01EMzJbZsKiX53jXhN3tT8jr
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
   "description": "Final full Go verification"
 }
 ```
@@ -5819,7 +5819,7 @@ tool_use Bash
 id: toolu_01UXCRFR5DScUt5CJWgD9Xi7
 ```json
 {
-  "command": "grep -n \"Step 2\" /Users/ben/git/paper-scan-processor/spec.md",
+  "command": "grep -n \"Step 2\" /home/<USER>/git/paper-scan-processor/spec.md",
   "description": "Locate Step 2 checklist lines in spec.md"
 }
 ```
@@ -5843,7 +5843,7 @@ id: toolu_01VdL8fuSeC6QvdEKNsuvJp5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [x] **Step 2a: Filesystem scan backend** — `scanLocalRoot` + `ScanLocalRoot` RPC; scans root folder one level deep (root + immediate subfolders only); returns files grouped by subfolder with size and page count; files whose page count can't be read are included and flagged via `Corrupt` rather than dropped\n- [x] **Step 2b: File tree UI** — new Drive Upload tab; root folder picker; three-column layout shell; file tree display wired to the scan, with file size and page count as secondary metadata; corrupt files shown with a warning icon\n- [ ] **Step 2 follow-up: Recursive subfolder scanning** — extend `scanDriveRoot` beyond one level deep once nested output folders are a real need",
   "new_string": "- [x] **Step 2a: Filesystem scan backend** — `scanLocalRoot` + `ScanLocalRoot` RPC; scans root folder recursively, returning files grouped by subfolder (nested to match the folder structure) with size and page count; symlinked directories are not followed; files whose page count can't be read are included and flagged via `Corrupt` rather than dropped\n- [x] **Step 2b: File tree UI** — new Drive Upload tab; root folder picker; three-column layout shell; recursive, collapsible (default expanded) file tree […]
 
@@ -5852,7 +5852,7 @@ id: toolu_01VdL8fuSeC6QvdEKNsuvJp5
 tool_result
 id: toolu_01VdL8fuSeC6QvdEKNsuvJp5
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5861,7 +5861,7 @@ tool_use Read
 id: toolu_01Lm4oG7x4FfkUx9wMCax7cK
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "offset": 181,
   "limit": 30
 }
@@ -5897,7 +5897,7 @@ id: toolu_01STwmUqeB1ctm75XCFgd4Y9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- **Left panel** (fixed width) — the file tree: root folder → subfolders → files. Each subfolder header shows an editable name and its Drive destination folder. Each file shows an editable filename, inherits the parent subfolder's Drive destination (with an option to override), and — space permitting — displays file size and page count as secondary metadata. Edited names are the names used on Drive; the local files are not renamed on disk.",
   "new_string": "- **Left panel** (fixed width) — the file tree: root folder → subfolders (nested to match the local folder structure) → files. Each subfolder header is collapsible (starting expanded), shows an editable name, and its Drive destination folder. Each file shows an editable filename, inherits the parent subfolder's Drive destination (with an option to override), and — space permitting — displays file size and page count as secondary metadata. Edited names are the names used on Drive; the local files are not renamed on disk."
 }
@@ -5908,7 +5908,7 @@ id: toolu_01STwmUqeB1ctm75XCFgd4Y9
 tool_result
 id: toolu_01STwmUqeB1ctm75XCFgd4Y9
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5921,7 +5921,7 @@ tool_use Read
 id: toolu_0137MU4yxL2NWBACuTbjoQaE
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -5984,7 +5984,7 @@ tool_use Read
 id: toolu_01A9WNwg2NW3ms5LkMyME8Az
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -6007,7 +6007,7 @@ id: toolu_01LCUyVwArxM6USNZKM84azF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "\tentries, err := os.ReadDir(root)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar groups []LocalFileGroup\n\n\trootFiles, err := scanDir(root, entries)",
   "new_string": "\tentries, err := os.ReadDir(root)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tgroups := []LocalFileGroup{}\n\n\trootFiles, err := scanDir(root, entries)"
 }
@@ -6018,7 +6018,7 @@ id: toolu_01LCUyVwArxM6USNZKM84azF
 tool_result
 id: toolu_01LCUyVwArxM6USNZKM84azF
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6028,7 +6028,7 @@ id: toolu_016f55dR817pkEPiFvwcHZCc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "\tfiles, err := scanDir(dir, entries)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar subgroups []LocalFileGroup\n\tfor _, e := range entries {",
   "new_string": "\tfiles, err := scanDir(dir, entries)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tsubgroups := []LocalFileGroup{}\n\tfor _, e := range entries {"
 }
@@ -6039,7 +6039,7 @@ id: toolu_016f55dR817pkEPiFvwcHZCc
 tool_result
 id: toolu_016f55dR817pkEPiFvwcHZCc
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6052,7 +6052,7 @@ tool_use Read
 id: toolu_01TaQJaPUsXUsXEHfNegdi7B
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go",
   "offset": 1,
   "limit": 10
 }
@@ -6082,7 +6082,7 @@ id: toolu_019JNYnX9ZEit4WbaCDwgJcs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go",
   "old_string": "import (\n\t\"os\"\n\t\"path/filepath\"\n\t\"testing\"\n)",
   "new_string": "import (\n\t\"encoding/json\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n)"
 }
@@ -6093,7 +6093,7 @@ id: toolu_019JNYnX9ZEit4WbaCDwgJcs
 tool_result
 id: toolu_019JNYnX9ZEit4WbaCDwgJcs
 ```
-The file /Users/ben/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6102,7 +6102,7 @@ tool_use Bash
 id: toolu_01CrRYDTAw13UjRA6iD5PJZz
 ```json
 {
-  "command": "tail -30 /Users/ben/git/paper-scan-processor/filetree_test.go",
+  "command": "tail -30 /home/<USER>/git/paper-scan-processor/filetree_test.go",
   "description": "View end of filetree_test.go to append new test"
 }
 ```
@@ -6151,7 +6151,7 @@ id: toolu_01Bufcj73KN3c9i5GcSgAgaK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go",
   "old_string": "\tgot := []string{groups[0].Name, groups[1].Name, groups[2].Name}\n\twant := []string{\"alpha\", \"mid\", \"zeta\"}\n\tfor i := range want {\n\t\tif got[i] != want[i] {\n\t\t\tt.Errorf(\"group order = %v, want %v\", got, want)\n\t\t\tbreak\n\t\t}\n\t}\n}",
   "new_string": "\tgot := []string{groups[0].Name, groups[1].Name, groups[2].Name}\n\twant := []string{\"alpha\", \"mid\", \"zeta\"}\n\tfor i := range want {\n\t\tif got[i] != want[i] {\n\t\t\tt.Errorf(\"group order = %v, want %v\", got, want)\n\t\t\tbreak\n\t\t}\n\t}\n}\n\n// TestScanLocalRootJSONNeverUsesNullForSlices guards against Go's nil-slice\n// marshaling to JSON `null` instead of `[]`, which crashes the frontend\n// (e.g. `group.subgroups.length` throws on null). A leaf group (no\n// subfolders) is exactly the case that previously produced a nil Subgroups\n// slice.\nfunc TestScanLocalRootJSONNeverUsesNullForSlices(t *testing.T) {\n\troot := t.TempDir()\n\twritePDF(t, filepath.Join(root, \"leaf.pdf\"), []string{\"p1\"})\n\tif err := os.Mkdir(filepath.Join(root, \"childless\"), 0o755); err != nil {\n\t\tt.Fatal(err)\n\t}\n\twritePDF(t, filepath.Join(root, \"childless\", \"doc.pdf\"), []string{\"p1\"})\n\n\tgroups, err := scanLocalRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\n\tdata, err := json.Marshal(groups)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif strings.Contains(string(data), \"null\") {\n\t\tt.Errorf(\"JSON output contains null (should be [] for empty slices): %s\", data)\n\t}\n}"
 }
@@ -6162,7 +6162,7 @@ id: toolu_01Bufcj73KN3c9i5GcSgAgaK
 tool_result
 id: toolu_01Bufcj73KN3c9i5GcSgAgaK
 ```
-The file /Users/ben/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6219,7 +6219,7 @@ tool_use Read
 id: toolu_01Pbabv2rV1rjFz8AouZf2BT
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "offset": 36,
   "limit": 14
 }
@@ -6253,7 +6253,7 @@ id: toolu_01Q1T9ExBUNzLNHERDUhSuPi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "\tif len(rootFiles) > 0 {\n\t\tgroups = append(groups, LocalFileGroup{Name: \"\", Files: rootFiles})",
   "new_string": "\tif len(rootFiles) > 0 {\n\t\tgroups = append(groups, LocalFileGroup{Name: \"\", Files: rootFiles, Subgroups: []LocalFileGroup{}})"
 }
@@ -6264,7 +6264,7 @@ id: toolu_01Q1T9ExBUNzLNHERDUhSuPi
 tool_result
 id: toolu_01Q1T9ExBUNzLNHERDUhSuPi
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6277,7 +6277,7 @@ tool_use Read
 id: toolu_01TknB4sbbypdC875o7VRtBa
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -6325,7 +6325,7 @@ id: toolu_01Bf17AP6yGjWTKrXTLZpM5T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "// LocalFileGroup is one folder's worth of files, plus its nested\n// subfolders. Name is \"\" for files found directly in the scanned root.\ntype LocalFileGroup struct {\n\tName      string           `json:\"name\"`\n\tFiles     []LocalFile      `json:\"files\"`\n\tSubgroups []LocalFileGroup `json:\"subgroups\"`\n}",
   "new_string": "// LocalFileGroup is one folder's worth of files, plus its nested\n// subfolders. Name is \"\" for files found directly in the scanned root.\ntype LocalFileGroup struct {\n\tName      string           `json:\"name\"`\n\tFiles     []LocalFile      `json:\"files\"`\n\tSubgroups []LocalFileGroup `json:\"subgroups\"`\n}\n\n// newLocalFileGroup builds a LocalFileGroup, normalizing nil slices to\n// empty ones. A nil Go slice marshals to JSON `null`, which crashes the\n// frontend (e.g. `group.subgroups.length` throws on null), so every\n// LocalFileGroup must go through here rather than a bare struct literal.\nfunc newLocalFileGroup(name string, files []LocalFile, subgroups []LocalFileGroup) LocalFileGroup {\n\tif files == nil {\n\t\tfiles = []LocalFile{}\n\t}\n\tif subgroups == nil {\n\t\tsubgroups = []LocalFileGroup{}\n\t}\n\treturn LocalFileGroup{Name: name, Files: files, Subgroups: subgroups}\n}"
 }
@@ -6336,7 +6336,7 @@ id: toolu_01Bf17AP6yGjWTKrXTLZpM5T
 tool_result
 id: toolu_01Bf17AP6yGjWTKrXTLZpM5T
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6346,7 +6346,7 @@ id: toolu_01DUFsdfPVyhpugPjuMvAwAb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "\tif len(rootFiles) > 0 {\n\t\tgroups = append(groups, LocalFileGroup{Name: \"\", Files: rootFiles, Subgroups: []LocalFileGroup{}})\n\t}",
   "new_string": "\tif len(rootFiles) > 0 {\n\t\tgroups = append(groups, newLocalFileGroup(\"\", rootFiles, nil))\n\t}"
 }
@@ -6357,7 +6357,7 @@ id: toolu_01DUFsdfPVyhpugPjuMvAwAb
 tool_result
 id: toolu_01DUFsdfPVyhpugPjuMvAwAb
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6367,7 +6367,7 @@ id: toolu_0129Y2GXdjkbKWUJWZGocbka
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "\tif len(files) == 0 && len(subgroups) == 0 {\n\t\treturn nil, nil\n\t}\n\treturn &LocalFileGroup{Name: name, Files: files, Subgroups: subgroups}, nil\n}",
   "new_string": "\tif len(files) == 0 && len(subgroups) == 0 {\n\t\treturn nil, nil\n\t}\n\tgroup := newLocalFileGroup(name, files, subgroups)\n\treturn &group, nil\n}"
 }
@@ -6378,7 +6378,7 @@ id: toolu_0129Y2GXdjkbKWUJWZGocbka
 tool_result
 id: toolu_0129Y2GXdjkbKWUJWZGocbka
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6387,7 +6387,7 @@ tool_use Read
 id: toolu_015gGwtZjmcfyMx6ddNWPhwU
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -6516,7 +6516,7 @@ tool_use Bash
 id: toolu_019SE4ripzRqQissFbSuScUZ
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm test 2>&1 | tail -30 && npm run tsc 2>&1 | tail -60",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm test 2>&1 | tail -30 && npm run tsc 2>&1 | tail -60",
   "description": "Run frontend tests and typecheck after backend fix"
 }
 ```
@@ -6530,7 +6530,7 @@ id: toolu_019SE4ripzRqQissFbSuScUZ
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 14ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
@@ -6564,7 +6564,7 @@ tool_use Bash
 id: toolu_01MqQfL8BVa1LMuMVA1Wm35s
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status --short && echo \"---\" && git diff --stat",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status --short && echo \"---\" && git diff --stat",
   "description": "Check current git status before committing"
 }
 ```
@@ -6672,7 +6672,7 @@ tool_use Bash
 id: toolu_01Dp6A52PwfD4ZegQ1J7ydhH
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nSupport nested folders in Drive Upload tree, collapsible per level\n\nscanLocalRoot now recurses through arbitrary folder depth instead of\nstopping one level deep, returning a nested LocalFileGroup.Subgroups\ntree (symlinked directories are not followed, so a symlink loop is\nsimply skipped rather than recursing forever). The frontend tree\nrenders this recursively via GroupNode, indenting each level and\nletting any folder collapse independently, starting expanded.\n\nAlso fixes a real bug this surfaced: LocalFileGroup was sometimes\nbuilt with a nil Files or Subgroups slice, which encoding/json\nmarshals as null instead of []. That crashed the frontend wherever it\ncalled .length on a group field. All construction now goes through\nnewLocalFileGroup, which normalizes nil to an empty slice, backed by a\nnew test that checks the actual JSON output rather than just the Go\nstruct.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nSupport nested folders in Drive Upload tree, collapsible per level\n\nscanLocalRoot now recurses through arbitrary folder depth instead of\nstopping one level deep, returning a nested LocalFileGroup.Subgroups\ntree (symlinked directories are not followed, so a symlink loop is\nsimply skipped rather than recursing forever). The frontend tree\nrenders this recursively via GroupNode, indenting each level and\nletting any folder collapse independently, starting expanded.\n\nAlso fixes a real bug this surfaced: LocalFileGroup was sometimes\nbuilt with a nil Files or Subgroups slice, which encoding/json\nmarshals as null instead of []. That crashed the frontend wherever it\ncalled .length on a group field. All construction now goes through\nnewLocalFileGroup, which normalizes nil to an empty slice, backed by a\nnew test that checks the actual JSON output rather than just the Go\nstruct.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
   "description": "Commit recursive folder scan, collapsible tree UI, and null-slice bugfix"
 }
 ```
@@ -6756,7 +6756,7 @@ tool_use Read
 id: toolu_018jubvAdub8n4uA8hW1bcYg
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -6775,7 +6775,7 @@ id: toolu_01Jo2kD6LE5pifBfzHNswhkW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "func scanLocalRoot(root string) ([]LocalFileGroup, error) {\n\tentries, err := os.ReadDir(root)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tgroups := []LocalFileGroup{}\n\n\trootFiles, err := scanDir(root, entries)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif len(rootFiles) > 0 {\n\t\tgroups = append(groups, newLocalFileGroup(\"\", rootFiles, nil))\n\t}\n\n\tfor _, e := range entries {\n\t\tif !e.IsDir() || strings.HasPrefix(e.Name(), \".\") {\n\t\t\tcontinue\n\t\t}\n\t\tgroup, err := scanSubfolder(root, e.Name())\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif group != nil {\n\t\t\tgroups = append(groups, *group)\n\t\t}\n\t}\n\n\treturn groups, nil\n}\n\n// scanSubfolder recursively scans the subdirectory name within parent. It\n// returns nil if the subtree rooted there contains no PDFs at all, so empty\n// (sub)folders are omitted from the result.\nfunc scanSubfolder(parent, name string) (*LocalFileGroup, error) {\n\tdir := filepath.Join(parent, name)\n\tentries, err := os.ReadDir(dir)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tfiles, err := scanDir(dir, entries)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tsubgroups := []LocalFileGroup{}\n\tfor _, e := range entries {\n\t\tif !e.IsDir() || strings.HasPrefix(e.Name(), \".\") {\n\t\t\tcontinue\n\t\t}\n\t\tsub, err := scanSubfolder(dir, e.Name())\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif sub != nil {\n\t\t\tsubgroups = append(subgroups, *sub)\n\t\t}\n\t}\n\n\tif len(files) == 0 && len(subgroups) == 0 {\n\t\treturn nil, nil\n\t}\n\tgroup := newLocalFileGroup(name, files, subgroups)\n\treturn &group, nil\n}",
   "new_string": "func scanLocalRoot(root string) ([]LocalFileGroup, error) {\n\trootFiles, subgroups, err := scanChildren(root)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tgroups := []LocalFileGroup{}\n\tif len(rootFiles) […]
 
@@ -6784,7 +6784,7 @@ id: toolu_01Jo2kD6LE5pifBfzHNswhkW
 tool_result
 id: toolu_01Jo2kD6LE5pifBfzHNswhkW
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6793,7 +6793,7 @@ tool_use Read
 id: toolu_013RxtDWuVanuAAVnQ4mc28R
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -6898,7 +6898,7 @@ tool_use Read
 id: toolu_01FGz85zwa3bEBfhgBmD6HwY
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -6917,7 +6917,7 @@ id: toolu_019H3TEJbgKtRqn7hYaSkjhr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "// LocalFileGroup is one folder's worth of files, plus its nested\n// subfolders. Name is \"\" for files found directly in the scanned root.",
   "new_string": "// LocalFileGroup is one folder's worth of files, plus its nested\n// subfolders. Name is \"\" only for the root LocalFileGroup returned by\n// scanLocalRoot; every subgroup has a real folder name."
 }
@@ -6928,7 +6928,7 @@ id: toolu_019H3TEJbgKtRqn7hYaSkjhr
 tool_result
 id: toolu_019H3TEJbgKtRqn7hYaSkjhr
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6938,7 +6938,7 @@ id: toolu_019uGhe6H8hu2bkxhd8gxYzc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "old_string": "// scanLocalRoot scans root recursively: PDFs directly in root form a single\n// group with Name \"\", and every subdirectory (at any depth) forms its own\n// nested group containing its direct PDF children plus its own subgroups.\n// Folders with no PDFs anywhere in their subtree are omitted entirely.\n// Symlinked directories are not followed — os.DirEntry.IsDir() reflects the\n// directory entry itself rather than the resolved target, so a symlink\n// (including one that would otherwise form a loop) is simply skipped.\n// Files whose page count can't be read (corrupt or non-PDF despite the\n// extension) are still included, flagged via LocalFile.Corrupt, rather than\n// dropped from the scan.\nfunc scanLocalRoot(root string) ([]LocalFileGroup, error) {\n\trootFiles, subgroups, err := scanChildren(root)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tgroups := []LocalFileGroup{}\n\tif len(rootFiles) > 0 {\n\t\tgroups = append(groups, newLocalFileGroup(\"\", rootFiles, nil))\n\t}\n\treturn append(groups, subgroups...), nil\n}",
   "new_string": "// scanLocalRoot scans root recursively and returns it as a LocalFileGroup:\n// its own direct PDFs in Files, and every subdirectory (at any depth) as a\n// nested Subgroups entry. Unlike a subfolder, the root is always returned\n// even if it's entirely empty, so the UI has something to render a \"no\n// files\" state from. Subfolders with no […]
 
@@ -6947,7 +6947,7 @@ id: toolu_019uGhe6H8hu2bkxhd8gxYzc
 tool_result
 id: toolu_019uGhe6H8hu2bkxhd8gxYzc
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6960,7 +6960,7 @@ tool_use Read
 id: toolu_01MLfiXL9y1rxKidSbZ2oyfC
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go",
   "offset": 124,
   "limit": 6
 }
@@ -6986,7 +6986,7 @@ id: toolu_01TUEHDEephMAuxGKfN943r7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go",
   "old_string": "// ScanLocalRoot recursively scans root and returns its PDFs grouped by\n// subfolder (nested to match the folder structure), with size and page\n// count metadata.\nfunc (a *App) ScanLocalRoot(root string) ([]LocalFileGroup, error) {\n\treturn scanLocalRoot(root)",
   "new_string": "// ScanLocalRoot recursively scans root and returns it as a LocalFileGroup\n// tree (nested to match the folder structure), with size and page count\n// metadata for each file.\nfunc (a *App) ScanLocalRoot(root string) (LocalFileGroup, error) {\n\treturn scanLocalRoot(root)"
 }
@@ -6997,7 +6997,7 @@ id: toolu_01TUEHDEephMAuxGKfN943r7
 tool_result
 id: toolu_01TUEHDEephMAuxGKfN943r7
 ```
-The file /Users/ben/git/paper-scan-processor/app.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/app.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7010,7 +7010,7 @@ tool_use Read
 id: toolu_016MpSiunJcLEynJHGrFimxR
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go"
 }
 ```
 
@@ -7074,7 +7074,7 @@ tool_use Write
 id: toolu_014tZYAgEBBRDM6fTw9LUv7x
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree_test.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree_test.go",
   "content": "package main\n\nimport (\n\t\"encoding/json\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"testing\"\n)\n\nfunc TestScanLocalRootFilesInRootAndSubfolder(t *testing.T) {\n\troot := t.TempDir()\n\twritePDF(t, filepath.Join(root, \"misc.pdf\"), []string{\"p1\", \"p2\"})\n\tif err := os.Mkdir(filepath.Join(root, \"invoices\"), 0o755); err != nil {\n\t\tt.Fatal(err)\n\t}\n\twritePDF(t, filepath.Join(root, \"invoices\", \"b.pdf\"), []string{\"p1\"})\n\twritePDF(t, filepath.Join(root, \"invoices\", \"a.pdf\"), []string{\"p1\", \"p2\", \"p3\"})\n\n\ttree, err := scanLocalRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\n\tif tree.Name != \"\" {\n\t\tt.Errorf(\"root name = %q, want \\\"\\\"\", tree.Name)\n\t}\n\tif len(tree.Files) != 1 || tree.Files[0].Name != \"misc\" || tree.Files[0].PageCount != 2 {\n\t\tt.Errorf(\"root files = %+v\", tree.Files)\n\t}\n\tif tree.Files[0].SizeBytes <= 0 {\n\t\tt.Errorf(\"root file size = %d, want > 0\", tree.Files[0].SizeBytes)\n\t}\n\n\tif len(tree.Subgroups) != 1 {\n\t\tt.Fatalf(\"got %d subgroups, want 1: %+v\", len(tree.Subgroups), tree.Subgroups)\n\t}\n\tsub := tree.Subgroups[0]\n\tif sub.Name != \"invoices\" {\n\t\tt.Errorf(\"subgroup name = %q, want invoices\", sub.Name)\n\t}\n\tif len(sub.Files) != 2 {\n\t\tt.Fatalf(\"got %d files in invoices, want 2: %+v\", len(sub.Files), sub.Files)\n\t}\n\t// alphabetical by filename\n\tif sub.Files[0].Name != \"a\" || sub.Files[1].Name != \"b\" {\n\t\tt.Errorf(\"invoices files not sorted: %+v\", sub.Files)\n\t}\n\tif sub.Files[0].PageCount != 3 || sub.Files[1].PageCount != 1 {\n\t\tt.Errorf(\"unexpected page counts: %+v\", sub.Files)\n\t}\n}\n\nfunc TestScanLocalRootEmptySubfolderOmitted(t *testing.T) {\n\troot := t.TempDir()\n\tif err := os.Mkdir(filepath.Join(root, \"empty\"), 0o755); err != nil {\n\t\tt.Fatal(err)\n\t}\n\twritePDF(t, filepath.Join(root, \"top.pdf\"), []string{\"p1\"})\n\n\ttree, err := scanLocalRoot(root)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(tree.Subgroups) != 0 {\n\t\tt.Fatalf(\"expected the empty subfolder to be omitted, got %+v\", tree.Subgroups)\n\t}\n\tif len(tree.Files) != 1 || tree.Files[0].Name != \"top\" {\n\t\tt.Errorf(\"root files = %+v\", tree.Files)\n\t}\n}\n\nfunc TestScanLocalRootFlagsCorruptPDF(t *testing.T) […]
 
 > TOOL
@@ -7082,7 +7082,7 @@ id: toolu_014tZYAgEBBRDM6fTw9LUv7x
 tool_result
 id: toolu_014tZYAgEBBRDM6fTw9LUv7x
 ```
-The file /Users/ben/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7139,7 +7139,7 @@ tool_use Read
 id: toolu_01VZZy4mgpnrAvzBfvKfQxyy
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts"
 }
 ```
 
@@ -7207,7 +7207,7 @@ tool_use Write
 id: toolu_01HW67MQ9j6GvJoERyHcxTxp
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts",
   "content": "import { useState, useCallback } from 'react'\nimport { PickFolder, ScanLocalRoot } from '../../../wailsjs/go/main/App'\n\nexport interface LocalFile {\n  path: string\n  name: string\n  sizeBytes: number\n  pageCount: number\n  corrupt: boolean\n}\n\nexport interface LocalFileGroup {\n  name: string\n  files: LocalFile[]\n  subgroups: LocalFileGroup[]\n}\n\nexport interface FileTreeHandle {\n  root: string | null\n  tree: LocalFileGroup | null\n  loading: boolean\n  error: string | null\n  pickRoot: () => Promise<void>\n}\n\nexport function useFileTree(): FileTreeHandle {\n  const [root, setRoot] = useState<string | null>(null)\n  const [tree, setTree] = useState<LocalFileGroup | null>(null)\n  const [loading, setLoading] = useState(false)\n  const [error, setError] = useState<string | null>(null)\n\n  const pickRoot = useCallback(async () => {\n    const folder = await PickFolder('Choose Root Folder')\n    if (!folder) return\n\n    setRoot(folder)\n    setLoading(true)\n    setError(null)\n    try {\n      setTree(await ScanLocalRoot(folder))\n    } catch (e) {\n      setTree(null)\n      setError(String(e))\n    } finally {\n      setLoading(false)\n    }\n  }, [])\n\n  return { root, tree, loading, error, pickRoot }\n}\n"
 }
 ```
@@ -7217,7 +7217,7 @@ id: toolu_01HW67MQ9j6GvJoERyHcxTxp
 tool_result
 id: toolu_01HW67MQ9j6GvJoERyHcxTxp
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7230,7 +7230,7 @@ tool_use Read
 id: toolu_017hCX9wYWpq7gbbVVk9Joih
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -7286,7 +7286,7 @@ id: toolu_01Maps8pDVcJfFDGA3Etfsea
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "export default function DriveUploadMode() {\n  const { root, groups, loading, error, pickRoot } = useFileTree()\n  const rootGroup = groups.find(g => g.name === '')\n  const subfolderGroups = groups.filter(g => g.name !== '')\n\n  // Groups start expanded; presence in this set (keyed by the group's full",
   "new_string": "export default function DriveUploadMode() {\n  const { root, tree, loading, error, pickRoot } = useFileTree()\n  const isEmpty = tree !== null && tree.files.length === 0 && tree.subgroups.length === 0\n\n  // Groups start expanded; presence in this set (keyed by the group's full"
 }
@@ -7297,7 +7297,7 @@ id: toolu_01Maps8pDVcJfFDGA3Etfsea
 tool_result
 id: toolu_01Maps8pDVcJfFDGA3Etfsea
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7307,7 +7307,7 @@ id: toolu_01W3RdctXjakj8NjazwmkSZc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "        {loading && <Loader size=\"sm\" />}\n        {error && <Text size=\"sm\" c=\"red\">{error}</Text>}\n        {!loading && !error && root && groups.length === 0 && (\n          <Text size=\"sm\" c=\"dimmed\">No PDF files found under this folder.</Text>\n        )}\n        {!loading && !root && (\n          <Button size=\"xs\" onClick={pickRoot}>Choose Root Folder</Button>\n        )}\n\n        <Stack gap=\"md\" mt=\"sm\">\n          {subfolderGroups.map(group => (\n            <GroupNode\n              key={group.name}\n              group={group}\n              groupKey={group.name}\n              collapsedGroups={collapsedGroups}\n              onToggle={toggleGroup}\n            />\n          ))}\n          {rootGroup && <FileList files={rootGroup.files} />}\n        </Stack>\n      </Box>",
   "new_string": "        {loading && <Loader size=\"sm\" />}\n        {error && <Text size=\"sm\" c=\"red\">{error}</Text>}\n        {!loading && !error && isEmpty && (\n          <Text size=\"sm\" c=\"dimmed\">No PDF files found under this folder.</Text>\n        )}\n        {!loading && !root && (\n          <Button size=\"xs\" onClick={pickRoot}>Choose Root Folder</Button>\n        )}\n\n        {tree && (\n          <Stack gap=\"md\" mt=\"sm\">\n            {tree.subgroups.map(group => (\n              <GroupNode\n                key={group.name}\n                group={group}\n                groupKey={group.name}\n                collapsedGroups={collapsedGroups}\n                onToggle={toggleGroup}\n              />\n            ))}\n            <FileList files={tree.files} />\n          </Stack>\n        )}\n      </Box>"
 }
@@ -7318,7 +7318,7 @@ id: toolu_01W3RdctXjakj8NjazwmkSZc
 tool_result
 id: toolu_01W3RdctXjakj8NjazwmkSZc
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7331,7 +7331,7 @@ tool_use Read
 id: toolu_01Pqukbu6JLHftWjFtSeWXxX
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -7390,7 +7390,7 @@ tool_use Read
 id: toolu_013xaySXGrYovkZUPd2wksSw
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts"
 }
 ```
 
@@ -7445,7 +7445,7 @@ tool_use Write
 id: toolu_01FdynSVoSVi3pL9pzHiATUt
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts",
   "content": "import { describe, it, expect, vi } from 'vitest'\nimport { act, renderHook, waitFor } from '@testing-library/react'\nimport { useFileTree } from './useFileTree'\nimport { PickFolder, ScanLocalRoot } from '../../../wailsjs/go/main/App'\n\nvi.mock('../../../wailsjs/go/main/App', () => ({\n  PickFolder: vi.fn(),\n  ScanLocalRoot: vi.fn(),\n}))\n\ndescribe('useFileTree', () => {\n  it('starts with no root and no tree', () => {\n    const { result } = renderHook(() => useFileTree())\n    expect(result.current.root).toBeNull()\n    expect(result.current.tree).toBeNull()\n    expect(result.current.loading).toBe(false)\n    expect(result.current.error).toBeNull()\n  })\n\n  it('does nothing when the folder picker is cancelled', async () => {\n    vi.mocked(PickFolder).mockResolvedValueOnce('')\n    const { result } = renderHook(() => useFileTree())\n    await act(async () => { await result.current.pickRoot() })\n    expect(result.current.root).toBeNull()\n    expect(ScanLocalRoot).not.toHaveBeenCalled()\n  })\n\n  it('scans the chosen root and stores the resulting tree', async () => {\n    vi.mocked(PickFolder).mockResolvedValueOnce('/output/batch')\n    const tree = {\n      name: '',\n      files: [],\n      subgroups: [{ name: 'invoices', files: [{ path: '/output/batch/invoices/a.pdf', name: 'a', sizeBytes: 100, pageCount: 2, corrupt: false }], subgroups: [] }],\n    }\n    vi.mocked(ScanLocalRoot).mockResolvedValueOnce(tree as any)\n\n    const { result } = renderHook(() => useFileTree())\n    await act(async () => { await result.current.pickRoot() })\n\n    expect(result.current.root).toBe('/output/batch')\n    expect(result.current.tree).toEqual(tree)\n    expect(result.current.loading).toBe(false)\n    expect(result.current.error).toBeNull()\n  })\n\n  it('sets an error and clears the tree when the scan fails', async () => {\n    vi.mocked(PickFolder).mockResolvedValueOnce('/output/batch')\n    vi.mocked(ScanLocalRoot).mockRejectedValueOnce(new Error('permission denied'))\n\n    const { result } = renderHook(() => useFileTree())\n    await act(async () => { […]
 
 > TOOL
@@ -7453,7 +7453,7 @@ id: toolu_01FdynSVoSVi3pL9pzHiATUt
 tool_result
 id: toolu_01FdynSVoSVi3pL9pzHiATUt
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useFileTree.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7462,7 +7462,7 @@ tool_use Bash
 id: toolu_01LoZQ56cnPZxjETTyDofKoQ
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm test 2>&1 | tail -40 && npm run tsc 2>&1 | tail -60",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm test 2>&1 | tail -40 && npm run tsc 2>&1 | tail -60",
   "description": "Run frontend tests and typecheck after root/subfolder unification"
 }
 ```
@@ -7476,7 +7476,7 @@ id: toolu_01LoZQ56cnPZxjETTyDofKoQ
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 13ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
@@ -7501,7 +7501,7 @@ tool_use Bash
 id: toolu_01FLS8MbMw1ufbuAF3kitgAi
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
   "description": "Final full Go verification"
 }
 ```
@@ -7520,7 +7520,7 @@ tool_use Bash
 id: toolu_011qyndMHbxPrWEfcghjr6bX
 ```json
 {
-  "command": "grep -n \"Step 2a\\|Step 2b\" /Users/ben/git/paper-scan-processor/spec.md",
+  "command": "grep -n \"Step 2a\\|Step 2b\" /home/<USER>/git/paper-scan-processor/spec.md",
   "description": "Check Step 2a/2b checklist wording for staleness"
 }
 ```
@@ -7550,7 +7550,7 @@ tool_use Bash
 id: toolu_01EfQ7fkmS9s1FNxAmHBGU5J
 ```json
 {
-  "command": "grep -rn \"newLocalFileGroup\\|scanDir\\b\\|scanChildren\\|scanSubfolder\" /Users/ben/git/paper-scan-processor --include=\"*.go\"",
+  "command": "grep -rn \"newLocalFileGroup\\|scanDir\\b\\|scanChildren\\|scanSubfolder\" /home/<USER>/git/paper-scan-processor --include=\"*.go\"",
   "description": "Find all references to functions being merged"
 }
 ```
@@ -7560,22 +7560,22 @@ id: toolu_01EfQ7fkmS9s1FNxAmHBGU5J
 tool_result
 id: toolu_01EfQ7fkmS9s1FNxAmHBGU5J
 ```
-/Users/ben/git/paper-scan-processor/filetree.go:27:// newLocalFileGroup builds a LocalFileGroup, normalizing nil slices to
-/Users/ben/git/paper-scan-processor/filetree.go:31:func newLocalFileGroup(name string, files []LocalFile, subgroups []LocalFileGroup) LocalFileGroup {
-/Users/ben/git/paper-scan-processor/filetree.go:53:	files, subgroups, err := scanChildren(root)
-/Users/ben/git/paper-scan-processor/filetree.go:57:	return newLocalFileGroup("", files, subgroups), nil
-/Users/ben/git/paper-scan-processor/filetree.go:60:// scanSubfolder recursively scans the subdirectory name within parent. It
-/Users/ben/git/paper-scan-processor/filetree.go:63:func scanSubfolder(parent, name string) (*LocalFileGroup, error) {
-/Users/ben/git/paper-scan-processor/filetree.go:65:	files, subgroups, err := scanChildren(dir)
-/Users/ben/git/paper-scan-processor/filetree.go:72:	group := newLocalFileGroup(name, files, subgroups)
-/Users/ben/git/paper-scan-processor/filetree.go:76:// scanChildren scans dir's direct entries, returning its own PDFs (via
-/Users/ben/git/paper-scan-processor/filetree.go:77:// scanDir) plus the LocalFileGroup for each non-hidden subdirectory whose
-/Users/ben/git/paper-scan-processor/filetree.go:79:// scanSubfolder, which differ only in how they package this into a result.
-/Users/ben/git/paper-scan-processor/filetree.go:80:func scanChildren(dir string) ([]LocalFile, []LocalFileGroup, error) {
-/Users/ben/git/paper-scan-processor/filetree.go:86:	files, err := scanDir(dir, entries)
-/Users/ben/git/paper-scan-processor/filetree.go:96:		sub, err := scanSubfolder(dir, e.Name())
-/Users/ben/git/paper-scan-processor/filetree.go:107:// scanDir builds the LocalFile list for the PDFs directly within dir's
-/Users/ben/git/paper-scan-processor/filetree.go:109:func scanDir(dir string, entries []os.DirEntry) ([]LocalFile, error) {
+/home/<USER>/git/paper-scan-processor/filetree.go:27:// newLocalFileGroup builds a LocalFileGroup, normalizing nil slices to
+/home/<USER>/git/paper-scan-processor/filetree.go:31:func newLocalFileGroup(name string, files []LocalFile, subgroups []LocalFileGroup) LocalFileGroup {
+/home/<USER>/git/paper-scan-processor/filetree.go:53:	files, subgroups, err := scanChildren(root)
+/home/<USER>/git/paper-scan-processor/filetree.go:57:	return newLocalFileGroup("", files, subgroups), nil
+/home/<USER>/git/paper-scan-processor/filetree.go:60:// scanSubfolder recursively scans the subdirectory name within parent. It
+/home/<USER>/git/paper-scan-processor/filetree.go:63:func scanSubfolder(parent, name string) (*LocalFileGroup, error) {
+/home/<USER>/git/paper-scan-processor/filetree.go:65:	files, subgroups, err := scanChildren(dir)
+/home/<USER>/git/paper-scan-processor/filetree.go:72:	group := newLocalFileGroup(name, files, subgroups)
+/home/<USER>/git/paper-scan-processor/filetree.go:76:// scanChildren scans dir's direct entries, returning its own PDFs (via
+/home/<USER>/git/paper-scan-processor/filetree.go:77:// scanDir) plus the LocalFileGroup for each non-hidden subdirectory whose
+/home/<USER>/git/paper-scan-processor/filetree.go:79:// scanSubfolder, which differ only in how they package this into a result.
+/home/<USER>/git/paper-scan-processor/filetree.go:80:func scanChildren(dir string) ([]LocalFile, []LocalFileGroup, error) {
+/home/<USER>/git/paper-scan-processor/filetree.go:86:	files, err := scanDir(dir, entries)
+/home/<USER>/git/paper-scan-processor/filetree.go:96:		sub, err := scanSubfolder(dir, e.Name())
+/home/<USER>/git/paper-scan-processor/filetree.go:107:// scanDir builds the LocalFile list for the PDFs directly within dir's
+/home/<USER>/git/paper-scan-processor/filetree.go:109:func scanDir(dir string, entries []os.DirEntry) ([]LocalFile, error) {
 ```
 
 > AGENT
@@ -7588,7 +7588,7 @@ tool_use Read
 id: toolu_01B4E86GK6LRfXtDPk3aig9f
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go"
 }
 ```
 
@@ -7638,7 +7638,7 @@ tool_use Write
 id: toolu_01XqkMn4JGLcLCr4RBtUeNsD
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/filetree.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/filetree.go",
   "content": "package main\n\nimport (\n\t\"os\"\n\t\"path/filepath\"\n\t\"strings\"\n)\n\n// LocalFile describes one local PDF discovered by scanLocalRoot.\ntype LocalFile struct {\n\tPath      string `json:\"path\"`\n\tName      string `json:\"name\"` // filename without extension; display-only for now\n\tSizeBytes int64  `json:\"sizeBytes\"`\n\tPageCount int    `json:\"pageCount\"`\n\tCorrupt   bool   `json:\"corrupt\"` // true if the file's page count could not be read\n}\n\n// LocalFileGroup is one folder's worth of files, plus its nested\n// subfolders. Name is \"\" only for the root LocalFileGroup returned by\n// scanLocalRoot; every subgroup has a real folder name.\ntype LocalFileGroup struct {\n\tName      string           `json:\"name\"`\n\tFiles     []LocalFile      `json:\"files\"`\n\tSubgroups []LocalFileGroup `json:\"subgroups\"`\n}\n\n// scanLocalRoot scans root recursively and returns it as a LocalFileGroup:\n// its own direct PDFs in Files, and every subdirectory (at any depth) as a\n// nested Subgroups entry. Unlike a subfolder, the root is always returned\n// even if it's entirely empty, so the UI has something to render a \"no\n// files\" state from.\nfunc scanLocalRoot(root string) (LocalFileGroup, error) {\n\treturn scanDirectory(root, \"\")\n}\n\n// scanDirectory scans dir's direct entries in a single pass: each PDF\n// becomes a LocalFile, each non-hidden subdirectory is scanned recursively\n// (skipping symlinks) and — if its subtree contains no PDFs at all — is\n// omitted from Subgroups. name is used as the returned group's Name (pass \"\"\n// for the scan root). Files […]
 
 > TOOL
@@ -7646,7 +7646,7 @@ id: toolu_01XqkMn4JGLcLCr4RBtUeNsD
 tool_result
 id: toolu_01XqkMn4JGLcLCr4RBtUeNsD
 ```
-The file /Users/ben/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/filetree.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7801,7 +7801,7 @@ tool_use Bash
 id: toolu_01HXAEvnhg5YAXcpzSAdRNtw
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nSimplify local scan tree: root is a normal group, one scan function\n\nScanLocalRoot now returns a single LocalFileGroup for the scan root\ninstead of a flat []LocalFileGroup with the root files special-cased\nas a sibling entry with an empty name. Root is just a normal group\nnow, with two justified differences from a subfolder: it is never\nomitted even when empty (so the UI can render a no-files state), and\nit has no name to display. This removes the rootGroup/subfolderGroups\nsplit-and-filter dance from the frontend tree component entirely.\n\nAlso collapses scanChildren, scanSubfolder, and scanDir into a single\nscanDirectory function. The previous split had scanChildren run\nscanDir over the directory entries to collect files, then loop over\nthe same entries again to find subdirectories and recurse via\nscanSubfolder - three functions handing partial results back and\nforth for what is really one decision per entry: file or directory.\nscanDirectory dispatches on that in a single pass.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nSimplify local scan tree: root is a normal group, one scan function\n\nScanLocalRoot now returns a single LocalFileGroup for the scan root\ninstead of a flat []LocalFileGroup with the root files special-cased\nas a sibling entry with an empty name. Root is just a normal group\nnow, with two justified differences from a subfolder: it is never\nomitted even when empty (so the UI can render a no-files state), and\nit has no name to display. This removes the rootGroup/subfolderGroups\nsplit-and-filter dance from the frontend tree component entirely.\n\nAlso collapses scanChildren, scanSubfolder, and scanDir into a single\nscanDirectory function. The previous split had scanChildren run\nscanDir over the directory entries to collect files, then loop over\nthe same entries again to find subdirectories and recurse via\nscanSubfolder - three functions handing partial results back and\nforth for what is really one decision per entry: file or directory.\nscanDirectory dispatches on that in a single pass.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
   "description": "Commit scan tree simplification refactor"
 }
 ```
@@ -7858,7 +7858,7 @@ tool_use Bash
 id: toolu_01L8JkaF2jsd8R37Bc8AEGNo
 ```json
 {
-  "command": "grep -n \"Step 3\" /Users/ben/git/paper-scan-processor/spec.md",
+  "command": "grep -n \"Step 3\" /home/<USER>/git/paper-scan-processor/spec.md",
   "description": "Find Step 3 checklist entries in spec.md"
 }
 ```
@@ -7880,7 +7880,7 @@ id: toolu_019CDEgd4CLJCvb8hebcrpUB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] **Step 3: Drive folder assignment UI + inline renaming** — folder browser modal with lazy-loaded Drive tree and recently used list; assignment at subfolder and file level; batch assignment for multi-select; inline editable name for each subfolder and file (controls the Drive upload name, not the local filename)",
   "new_string": "- [ ] **Step 3a: Drive folder assignment UI** — folder browser modal with lazy-loaded Drive tree and recently used list; assignment at subfolder and file level; batch assignment for multi-select\n- [ ] **Step 3b: Inline renaming** — inline editable name for each subfolder and file (controls the Drive upload name, not the local filename)"
 }
@@ -7891,7 +7891,7 @@ id: toolu_019CDEgd4CLJCvb8hebcrpUB
 tool_result
 id: toolu_019CDEgd4CLJCvb8hebcrpUB
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7935,7 +7935,7 @@ tool_use Bash
 id: toolu_01VDEVKhNKpX4Cbv3jggaSq7
 ```json
 {
-  "command": "git add spec.md && git commit -m \"$(cat <<'EOF'\nSplit Drive Upload Step 3 into 3a/3b\n\nFolder assignment UI and inline renaming are distinct pieces of work\nbundled into one checklist item; split them so each can be tracked\nand built independently.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
+  "command": "git add spec.md && git commit -m \"$(cat <<'EOF'\nSplit Drive Upload Step 3 into 3a/3b\n\nFolder assignment UI and inline renaming are distinct pieces of work\nbundled into one checklist item; split them so each can be tracked\nand built independently.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
   "description": "Commit the Step 3a/3b checklist split"
 }
 ```
@@ -7990,7 +7990,7 @@ tool_use Bash
 id: toolu_01WDJhHbityrg6R3PrmMD4pa
 ```json
 {
-  "command": "grep -n \"ssignment\" /Users/ben/git/paper-scan-processor/spec.md",
+  "command": "grep -n \"ssignment\" /home/<USER>/git/paper-scan-processor/spec.md",
   "description": "Locate the typo in spec.md"
 }
 ```
@@ -8019,7 +8019,7 @@ tool_use Read
 id: toolu_01HE6Hqjj9J8dcn8P7V9ncxT
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "offset": 282,
   "limit": 6
 }
@@ -8045,7 +8045,7 @@ id: toolu_01Q93Rkd5Aa4HAtKVY1HmuoR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] **Step 3b: Drive folder assignment UI** — ssignment at subfolder and file level",
   "new_string": "- [ ] **Step 3b: Drive folder assignment UI** — assignment at subfolder and file level"
 }
@@ -8056,7 +8056,7 @@ id: toolu_01Q93Rkd5Aa4HAtKVY1HmuoR
 tool_result
 id: toolu_01Q93Rkd5Aa4HAtKVY1HmuoR
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8065,7 +8065,7 @@ tool_use Read
 id: toolu_01CJJS4NJsc4vdSGLDkoHbCM
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md"
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md"
 }
 ```
 
@@ -8115,7 +8115,7 @@ id: toolu_01Ba7sdMjEcK9AKTKTGJkagZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "A desktop application for post-processing PDF files containing batches of scanned documents. The app has two modes: **Merge** and **Split**.",
   "new_string": "A desktop application for post-processing PDF files containing batches of scanned documents. The app has three modes: **Merge**, **Split**, and **Drive Upload**."
 }
@@ -8126,7 +8126,7 @@ id: toolu_01Ba7sdMjEcK9AKTKTGJkagZ
 tool_result
 id: toolu_01Ba7sdMjEcK9AKTKTGJkagZ
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8136,7 +8136,7 @@ id: toolu_01P3agrMdYvNXERjPGFMTm97
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "The Go backend exposes a per-page render method returning a base64-encoded PNG; the frontend requests thumbnails as they scroll into view (`mutool draw` subprocess).",
   "new_string": "The Go backend exposes a per-page render method returning a base64-encoded PNG; the frontend requests thumbnails as they scroll into view (`pdftoppm` subprocess)."
 }
@@ -8147,7 +8147,7 @@ id: toolu_01P3agrMdYvNXERjPGFMTm97
 tool_result
 id: toolu_01P3agrMdYvNXERjPGFMTm97
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8204,7 +8204,7 @@ tool_use Bash
 id: toolu_01S5aaT8RAHjixkrXXd65xpA
 ```json
 {
-  "command": "git add spec.md && git commit -m \"$(cat <<'EOF'\nSplit Drive Upload Step 3 into 3a/3b/3c; fix stale doc text\n\nFurther splits the folder-assignment-UI checklist item into its three\nconstituent pieces (modal/tree/recent list, per-level assignment,\nmulti-select batch assignment), renumbering the remaining Drive\nUpload steps accordingly. Also fixes a typo introduced while editing\n(Step 3b description) and two pre-existing stale claims caught on\nreread: the intro paragraph still said the app has two modes when\nDrive Upload has been a third mode for a while, and the thumbnail\npanel section still referenced mutool even though the tech stack\nsection and an already-closed findings item both confirm pdftoppm is\nwhat is actually used.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
+  "command": "git add spec.md && git commit -m \"$(cat <<'EOF'\nSplit Drive Upload Step 3 into 3a/3b/3c; fix stale doc text\n\nFurther splits the folder-assignment-UI checklist item into its three\nconstituent pieces (modal/tree/recent list, per-level assignment,\nmulti-select batch assignment), renumbering the remaining Drive\nUpload steps accordingly. Also fixes a typo introduced while editing\n(Step 3b description) and two pre-existing stale claims caught on\nreread: the intro paragraph still said the app has two modes when\nDrive Upload has been a third mode for a while, and the thumbnail\npanel section still referenced mutool even though the tech stack\nsection and an already-closed findings item both confirm pdftoppm is\nwhat is actually used.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
   "description": "Commit spec.md updates"
 }
 ```
@@ -8232,7 +8232,7 @@ tool_use Read
 id: toolu_01W6dUvVKqxTkEjh78Gevf8Q
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md"
 }
 ```
 
@@ -8265,7 +8265,7 @@ id: toolu_0149FyF82eb3bbzQrGmV1EWs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md",
   "old_string": "---\nname: feedback-checklist-substeps\ndescription: \"When a checklist step has multiple sub-tasks, split them into separate items named 1a, 1b, 1c rather than combining into one bullet\"\nmetadata: \n  node_type: memory\n  type: feedback\n  originSessionId: b9caef86-2dfc-48a3-a969-7f2e0f8e77ab\n---\n\nWhen a spec checklist step contains multiple distinct sub-tasks, break them into separate list items named with letter suffixes (1a, 1b, 1c, ...) rather than listing them all in a single bullet.\n\n**Why:** Makes it easier to track and commit progress incrementally, one sub-task at a time.\n\n**How to apply:** Any time a new checklist step is written that contains multiple discrete deliverables, split it up-front rather than waiting to be asked.",
   "new_string": "---\nname: feedback-checklist-substeps\ndescription: \"Build checklists as small, independently reviewable steps (1a, 1b, 1c...); only bundle for genuinely trivial features\"\nmetadata: \n  node_type: memory\n  type: feedback\n  originSessionId: b9caef86-2dfc-48a3-a969-7f2e0f8e77ab\n---\n\nWhen writing or updating a spec checklist, default to small steps sized as independently reviewable chunks — each one a self-contained diff someone could review on its own — rather than bundling multiple distinct deliverables into one bullet. Use letter suffixes (1a, 1b, 1c, ...) for sub-steps of a larger item. The only exception is genuinely trivial features, which don't need splitting.\n\n**Why:** Confirmed twice […]
 
@@ -8274,7 +8274,7 @@ id: toolu_0149FyF82eb3bbzQrGmV1EWs
 tool_result
 id: toolu_0149FyF82eb3bbzQrGmV1EWs
 ```
-The file /Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8283,7 +8283,7 @@ tool_use Read
 id: toolu_016cZyAb9FU2CaYVm2ztjFfd
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md"
 }
 ```
 
@@ -8311,7 +8311,7 @@ id: toolu_012e4Ces1WRJDYCH8ou6dKCQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md",
   "old_string": "- [Feedback: checklist sub-steps](feedback_checklist_substeps.md) — Split multi-task checklist steps into 1a, 1b, 1c items up-front",
   "new_string": "- [Feedback: checklist sub-steps](feedback_checklist_substeps.md) — Default to small, independently reviewable checklist steps (1a/1b/1c); only bundle trivial features"
 }
@@ -8322,7 +8322,7 @@ id: toolu_012e4Ces1WRJDYCH8ou6dKCQ
 tool_result
 id: toolu_012e4Ces1WRJDYCH8ou6dKCQ
 ```
-The file /Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8437,7 +8437,7 @@ tool_use Bash
 id: toolu_01FuE3iWRCZ9cW1QvFeu47pW
 ```json
 {
-  "command": "grep -n \"driveConfigDir\\|drive_token.json\\|ConfigDir\" /Users/ben/git/paper-scan-processor/drive_auth.go | head -20",
+  "command": "grep -n \"driveConfigDir\\|drive_token.json\\|ConfigDir\" /home/<USER>/git/paper-scan-processor/drive_auth.go | head -20",
   "description": "Check existing local config/persistence pattern used for Drive auth token"
 }
 ```
@@ -8491,7 +8491,7 @@ tool_use Read
 id: toolu_01XjQzTnNGC89AuhBVqP2dBd
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/drive_auth.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/drive_auth.go"
 }
 ```
 
@@ -8557,7 +8557,7 @@ tool_use Bash
 id: toolu_01WxrYpgLz6qsW484ANVZnCg
 ```json
 {
-  "command": "grep -n \"Modal\" /Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx | head; echo \"---\"; grep -rn \"Modal\" /Users/ben/git/paper-scan-processor/frontend/src/components --include=\"*.tsx\" -l",
+  "command": "grep -n \"Modal\" /home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx | head; echo \"---\"; grep -rn \"Modal\" /home/<USER>/git/paper-scan-processor/frontend/src/components --include=\"*.tsx\" -l",
   "description": "Check existing Modal usage conventions in the frontend"
 }
 ```
@@ -8578,8 +8578,8 @@ id: toolu_01WxrYpgLz6qsW484ANVZnCg
 158:            <Button size="xs" variant="default" onClick={() => OpenFile(successModal.outputPath)}>
 165:            <Text size="sm" c="dimmed" mb="sm">{successModal.inputPath.split('/').pop()}</Text>
 ---
-/Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx
-/Users/ben/git/paper-scan-processor/frontend/src/components/MergeMode/index.tsx
+/home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx
+/home/<USER>/git/paper-scan-processor/frontend/src/components/MergeMode/index.tsx
 ```
 
 > TOOL
@@ -8588,7 +8588,7 @@ tool_use Read
 id: toolu_01TEyLiXpNqy5oYtjKxsFB8Q
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/drive_folders_test.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/drive_folders_test.go"
 }
 ```
 
@@ -8653,7 +8653,7 @@ tool_use Read
 id: toolu_01G7iswTgDPfCMCPa8uZPn7z
 ```json
 {
-  "file_path": "/Users/ben/.claude/plans/glowing-roaming-stardust.md",
+  "file_path": "/home/<USER>/.claude/plans/glowing-roaming-stardust.md",
   "offset": 1,
   "limit": 5
 }
@@ -8681,7 +8681,7 @@ tool_use Write
 id: toolu_01Dz2eXtR6fuA12m73V6ujYZ
 ```json
 {
-  "file_path": "/Users/ben/.claude/plans/glowing-roaming-stardust.md",
+  "file_path": "/home/<USER>/.claude/plans/glowing-roaming-stardust.md",
   "content": "# Drive Upload mode — Step 3a: Drive folder browser backend\n\n## Context\n\nThe user asked to start Step 3, as currently written in spec.md:\n\n> Step 3a: Drive folder assignment UI — folder browser modal with lazy-loaded\n> Drive tree and recently used list\n\nPer the just-established checklist convention (small, independently\nreviewable steps; only bundle trivial features), this bundles three\nseparable pieces, confirmed by reading the code:\n\n1. **No Drive RPC is exposed to the frontend at all.** `DriveListFolder`/\n   `DriveFindFolder` (`drive_folders.go`) are free functions taking a\n   `context.Context`, only ever called from Go tests. `app.go`'s `App`\n   struct — the only thing Wails exposes to the frontend — has zero Drive\n   methods. The modal can't fetch anything until this exists.\n2. **The modal UI itself** (open/close, lazy tree expansion, folder\n   selection) — a real, multi-file frontend piece.\n3. **\"Recently used folders\"** needs persistence, and nothing like that\n   exists anywhere in this app yet — not even Split mode's own already-spec'd\n   \"last-used output folder\" / \"filename template\" (Step 12, unchecked).\n   This is new infrastructure, not a UI detail.\n\nThis plan covers only piece 1 — the smallest, foundation-first slice,\nmatching how Drive Upload's original Steps 1a/1b/1c were sequenced\n(backend-only steps before any UI consumed them). Pieces […]
 
 > TOOL
@@ -8689,7 +8689,7 @@ id: toolu_01Dz2eXtR6fuA12m73V6ujYZ
 tool_result
 id: toolu_01Dz2eXtR6fuA12m73V6ujYZ
 ```
-The file /Users/ben/.claude/plans/glowing-roaming-stardust.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/glowing-roaming-stardust.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8707,7 +8707,7 @@ id: toolu_01WpNzUB6ATdyptoyoEk4eHJ
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/ben/.claude/plans/glowing-roaming-stardust.md
+Your plan has been saved to: /home/<USER>/.claude/plans/glowing-roaming-stardust.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -8744,7 +8744,7 @@ tool_use Bash
 id: toolu_01P65sbTyP5ynm4NaG46geiS
 ```json
 {
-  "command": "grep -n \"Step 3a\\|Step 3b\\|Step 3c\\|Step 4:\\|Step 5:\\|Step 6:\\|Step 7:\\|Step 8:\\|Step 9:\\|Step 10:\" /Users/ben/git/paper-scan-processor/spec.md | grep -A1 \"Drive Upload\" ; grep -n \"^- \\[ \\] \\*\\*Step\" /Users/ben/git/paper-scan-processor/spec.md",
+  "command": "grep -n \"Step 3a\\|Step 3b\\|Step 3c\\|Step 4:\\|Step 5:\\|Step 6:\\|Step 7:\\|Step 8:\\|Step 9:\\|Step 10:\" /home/<USER>/git/paper-scan-processor/spec.md | grep -A1 \"Drive Upload\" ; grep -n \"^- \\[ \\] \\*\\*Step\" /home/<USER>/git/paper-scan-processor/spec.md",
   "description": "Locate Drive Upload checklist steps to renumber"
 }
 ```
@@ -8771,7 +8771,7 @@ tool_use Read
 id: toolu_01XQzepKj7oFmQJqEmXTwdzd
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "offset": 284,
   "limit": 10
 }
@@ -8799,7 +8799,7 @@ id: toolu_01WkEskKD65k6boJbpzjhn6W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] **Step 3a: Drive folder assignment UI** — folder browser modal with lazy-loaded Drive tree and recently used list\n- [ ] **Step 3b: Drive folder assignment UI** — assignment at subfolder and file level\n- [ ] **Step 3c: Drive folder assignment UI** — batch assignment for multi-select\n- [ ] **Step 4: Inline renaming** — inline editable name for each subfolder and file (controls the Drive upload name, not the local filename)\n- [ ] **Step 5: PDF preview** — selecting a file loads it into the middle thumbnail strip and right detail panel (reuses existing primitives)\n- [ ] **Step 6: Upload queue** — per-file upload with progress; inline error + Retry on failure; \"Open in Drive\" link per group after completion\n- [ ] **Step 7: Remembered folder mappings** — auto-fill Drive destination from saved subfolder-name→Drive-folder mapping; persisted across sessions\n- [ ] **Step 8: Post-upload cleanup** — prompt to delete or archive source files; archive moves files to a user-specified local archive folder\n- [ ] **Step 9: Conflict detection** — check Drive for filename conflicts before uploading; flag conflicting files\n- [ ] **Step 10: Keychain storage** — store the […]
 
 > TOOL
@@ -8807,7 +8807,7 @@ id: toolu_01WkEskKD65k6boJbpzjhn6W
 tool_result
 id: toolu_01WkEskKD65k6boJbpzjhn6W
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8816,7 +8816,7 @@ tool_use Read
 id: toolu_01Lk9cfDeFqkcuE9nJDG3QEc
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "offset": 277,
   "limit": 18
 }
@@ -8846,7 +8846,7 @@ tool_use Read
 id: toolu_01LqpqxaS1ZuZJ6StsUNcPVj
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/drive_folders.go"
+  "file_path": "/home/<USER>/git/paper-scan-processor/drive_folders.go"
 }
 ```
 
@@ -8905,7 +8905,7 @@ id: toolu_01PNvdZP3h4QQS5C19krq95w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/drive_folders.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/drive_folders.go",
   "old_string": "// DriveItem represents a file or folder in Google Drive.\ntype DriveItem struct {\n\tID       string\n\tName     string\n\tIsFolder bool\n\tSize     int64 // bytes; 0 for folders\n}",
   "new_string": "// DriveItem represents a file or folder in Google Drive.\ntype DriveItem struct {\n\tID       string `json:\"id\"`\n\tName     string `json:\"name\"`\n\tIsFolder bool   `json:\"isFolder\"`\n\tSize     int64  `json:\"size\"` // bytes; 0 for folders\n}"
 }
@@ -8916,7 +8916,7 @@ id: toolu_01PNvdZP3h4QQS5C19krq95w
 tool_result
 id: toolu_01PNvdZP3h4QQS5C19krq95w
 ```
-The file /Users/ben/git/paper-scan-processor/drive_folders.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/drive_folders.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8929,7 +8929,7 @@ tool_use Read
 id: toolu_01G2Dc2y4JRWvF15cSkcK6KT
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go",
   "offset": 117,
   "limit": 14
 }
@@ -8963,7 +8963,7 @@ id: toolu_015rKgNAfTUot5AUvSyCvfir
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/app.go",
+  "file_path": "/home/<USER>/git/paper-scan-processor/app.go",
   "old_string": "// ScanLocalRoot recursively scans root and returns it as a LocalFileGroup\n// tree (nested to match the folder structure), with size and page count\n// metadata for each file.\nfunc (a *App) ScanLocalRoot(root string) (LocalFileGroup, error) {\n\treturn scanLocalRoot(root)\n}",
   "new_string": "// ScanLocalRoot recursively scans root and returns it as a LocalFileGroup\n// tree (nested to match the folder structure), with size and page count\n// metadata for each file.\nfunc (a *App) ScanLocalRoot(root string) (LocalFileGroup, error) {\n\treturn scanLocalRoot(root)\n}\n\n// ListDriveFolder returns the direct children of the Drive folder with the\n// given ID (\"root\" for the top level of My Drive), folders first then\n// files. Triggers the OAuth flow on first use if no token is cached yet.\nfunc (a *App) ListDriveFolder(folderID string) ([]DriveItem, error) {\n\treturn DriveListFolder(a.ctx, folderID)\n}"
 }
@@ -8974,7 +8974,7 @@ id: toolu_015rKgNAfTUot5AUvSyCvfir
 tool_result
 id: toolu_015rKgNAfTUot5AUvSyCvfir
 ```
-The file /Users/ben/git/paper-scan-processor/app.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/app.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9024,7 +9024,7 @@ id: toolu_01B9CEfndcwxNRFACT7jbBDm
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 13ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
@@ -9046,7 +9046,7 @@ id: toolu_01PP9pRZj2AM6iYCFVcwp1jF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] **Step 3a: Drive folder browser backend** — `ListDriveFolder` App RPC, thin wrapper over the existing `DriveListFolder`",
   "new_string": "- [x] **Step 3a: Drive folder browser backend** — `ListDriveFolder` App RPC, thin wrapper over the existing `DriveListFolder`"
 }
@@ -9057,7 +9057,7 @@ id: toolu_01PP9pRZj2AM6iYCFVcwp1jF
 tool_result
 id: toolu_01PP9pRZj2AM6iYCFVcwp1jF
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9066,7 +9066,7 @@ tool_use Bash
 id: toolu_01TetDV75wRTAdBPBBsjuEcB
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status --short && echo \"---\" && git diff -- app.go drive_folders.go spec.md",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status --short && echo \"---\" && git diff -- app.go drive_folders.go spec.md",
   "description": "Review full diff before committing Step 3a"
 }
 ```
@@ -9130,7 +9130,7 @@ tool_use Bash
 id: toolu_016EKgB6HMAN4gWDiWy5MwCs
 ```json
 {
-  "command": "grep -n \"ListDriveFolder\\|DriveItem\" /Users/ben/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts /Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts",
+  "command": "grep -n \"ListDriveFolder\\|DriveItem\" /home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts /home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts",
   "description": "Confirm generated bindings for ListDriveFolder and DriveItem"
 }
 ```
@@ -9140,9 +9140,9 @@ id: toolu_016EKgB6HMAN4gWDiWy5MwCs
 tool_result
 id: toolu_016EKgB6HMAN4gWDiWy5MwCs
 ```
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts:11:export function ListDriveFolder(arg1:string):Promise<Array<main.DriveItem>>;
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:3:	export class DriveItem {
-/Users/ben/git/paper-scan-processor/frontend/wailsjs/go/models.ts:10:	        return new DriveItem(source);
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/main/App.d.ts:11:export function ListDriveFolder(arg1:string):Promise<Array<main.DriveItem>>;
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:3:	export class DriveItem {
+/home/<USER>/git/paper-scan-processor/frontend/wailsjs/go/models.ts:10:	        return new DriveItem(source);
 ```
 
 > AGENT
@@ -9155,7 +9155,7 @@ tool_use Bash
 id: toolu_01GYuTHTuHE5gmiheqmoCFkz
 ```json
 {
-  "command": "git add app.go drive_folders.go spec.md \\\n  frontend/wailsjs/go/main/App.d.ts frontend/wailsjs/go/main/App.js frontend/wailsjs/go/models.ts && \\\ngit commit -m \"$(cat <<'EOF'\nAdd Drive Upload Step 3a: Drive folder browser backend\n\nExposes the existing DriveListFolder (list Drive children, folders\nfirst) to the frontend as an App RPC for the first time - nothing on\nthe App struct touched Drive before this. Also splits the spec\nchecklist's Step 3a further: the folder browser modal and its\nrecently-used-folders list are real, separate pieces of work (the\nlatter needs persistence that does not exist anywhere in this app\nyet), so they get their own steps (3b, 3c) instead of being bundled\nwith this backend piece.\n\nAdds JSON tags to DriveItem to match the camelCase convention already\nused for LocalFile/LocalFileGroup, since this is the first time it is\nserialized to the frontend.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
+  "command": "git add app.go drive_folders.go spec.md \\\n  frontend/wailsjs/go/main/App.d.ts frontend/wailsjs/go/main/App.js frontend/wailsjs/go/models.ts && \\\ngit commit -m \"$(cat <<'EOF'\nAdd Drive Upload Step 3a: Drive folder browser backend\n\nExposes the existing DriveListFolder (list Drive children, folders\nfirst) to the frontend as an App RPC for the first time - nothing on\nthe App struct touched Drive before this. Also splits the spec\nchecklist's Step 3a further: the folder browser modal and its\nrecently-used-folders list are real, separate pieces of work (the\nlatter needs persistence that does not exist anywhere in this app\nyet), so they get their own steps (3b, 3c) instead of being bundled\nwith this backend piece.\n\nAdds JSON tags to DriveItem to match the camelCase convention already\nused for LocalFile/LocalFileGroup, since this is the first time it is\nserialized to the frontend.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\n)\"",
   "description": "Commit Step 3a: Drive folder browser backend"
 }
 ```
@@ -9176,7 +9176,7 @@ tool_use Bash
 id: toolu_01NYKQwXXwhB99x8C5PpdaUt
 ```json
 {
-  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nAdd Drive Upload Step 3a: Drive folder browser backend\n\nExposes the existing DriveListFolder (list Drive children, folders\nfirst) to the frontend as an App RPC for the first time - nothing on\nthe App struct touched Drive before this. Also splits the spec\nchecklist Step 3a further: the folder browser modal and its\nrecently-used-folders list are real, separate pieces of work (the\nlatter needs persistence that does not exist anywhere in this app\nyet), so they get their own steps (3b, 3c) instead of being bundled\nwith this backend piece.\n\nAdds JSON tags to DriveItem to match the camelCase convention already\nused for LocalFile/LocalFileGroup, since this is the first time it is\nserialized to the frontend.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt",
+  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nAdd Drive Upload Step 3a: Drive folder browser backend\n\nExposes the existing DriveListFolder (list Drive children, folders\nfirst) to the frontend as an App RPC for the first time - nothing on\nthe App struct touched Drive before this. Also splits the spec\nchecklist Step 3a further: the folder browser modal and its\nrecently-used-folders list are real, separate pieces of work (the\nlatter needs persistence that does not exist anywhere in this app\nyet), so they get their own steps (3b, 3c) instead of being bundled\nwith this backend piece.\n\nAdds JSON tags to DriveItem to match the camelCase convention already\nused for LocalFile/LocalFileGroup, since this is the first time it is\nserialized to the frontend.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt",
   "description": "Commit Step 3a using a message file to avoid heredoc quoting issues"
 }
 ```
@@ -9277,7 +9277,7 @@ tool_use Bash
 id: toolu_01647jcimHsQjxV2PqBNP2FF
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && cat package.json | grep -A3 '\"devDependencies\"' -A 40 | grep -i \"test\\|vitest\\|jsdom\\|@testing\"; echo \"---setup---\"; find src -iname \"*setup*\"; echo \"---vite config test section---\"; cat vite.config.ts 2>/dev/null || cat vitest.config.ts 2>/dev/null",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && cat package.json | grep -A3 '\"devDependencies\"' -A 40 | grep -i \"test\\|vitest\\|jsdom\\|@testing\"; echo \"---setup---\"; find src -iname \"*setup*\"; echo \"---vite config test section---\"; cat vite.config.ts 2>/dev/null || cat vitest.config.ts 2>/dev/null",
   "description": "Check test tooling and setup file"
 }
 ```
@@ -9333,7 +9333,7 @@ tool_use Bash
 id: toolu_019D4fUjy7ZJyG7gcWBEHa5H
 ```json
 {
-  "command": "grep -n \"INDENT_PER_LEVEL\\|import.*mantine\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "command": "grep -n \"INDENT_PER_LEVEL\\|import.*mantine\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "description": "Check existing indent constant and mantine imports in DriveUploadMode"
 }
 ```
@@ -9417,7 +9417,7 @@ tool_use Write
 id: toolu_012oh4ncPN3RA6cXLkwapfmQ
 ```json
 {
-  "file_path": "/Users/ben/.claude/plans/glowing-roaming-stardust.md",
+  "file_path": "/home/<USER>/.claude/plans/glowing-roaming-stardust.md",
   "content": "# Drive Upload mode — Step 3b: Folder browser modal UI\n\n## Context\n\nStep 3a (committed as `1454d77`) exposed `ListDriveFolder` as an App RPC but\nwired it into nothing. Step 3b is the folder browser modal itself: lazy Drive\ntree browsing and folder selection, per spec.md's \"Drive folder assignment\"\nsection — no recently-used list yet (Step 3c) and no real per-subfolder/file\ntrigger fields yet (Step 3d, which doesn't exist until the assignment UI is\nbuilt). Per the user's decision, this step adds a small temporary trigger\nbutton in `DriveUploadMode` so the modal is manually testable end-to-end\n(including live OAuth + real Drive folders) before Step 3d exists; that\ntrigger gets replaced by real per-field buttons in Step 3d.\n\n## Design\n\n**`frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx`** —\nnew file, two components:\n\n- `DriveTreeNode` — recursive, owns its own `expanded`/`children`/`loading`/\n  `error` state (mirrors the `GroupNode` pattern already in `index.tsx`, but\n  fetches lazily instead of reading pre-computed subgroups). Chevron button\n  toggles expand/collapse; fetches `ListDriveFolder(item.id)` only on first\n  expand and caches the result (`children !== null` guards re-fetching).\n  Filters results to `isFolder` items only — files aren't shown, since this\n  picks an upload destination. Clicking the row itself (separate from the\n  chevron) selects that folder, highlighting it. Path is built by joining\n  ancestor […]
 
 > TOOL
@@ -9425,7 +9425,7 @@ id: toolu_012oh4ncPN3RA6cXLkwapfmQ
 tool_result
 id: toolu_012oh4ncPN3RA6cXLkwapfmQ
 ```
-The file /Users/ben/.claude/plans/glowing-roaming-stardust.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/glowing-roaming-stardust.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9443,7 +9443,7 @@ id: toolu_01HmWx74SXMSwmKg32MroM3P
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/ben/.claude/plans/glowing-roaming-stardust.md
+Your plan has been saved to: /home/<USER>/.claude/plans/glowing-roaming-stardust.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -9572,7 +9572,7 @@ tool_use Read
 id: toolu_01K9qMqegY1Q4ZMsfX5GiNV1
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -9590,7 +9590,7 @@ tool_use Write
 id: toolu_017d3usj3QMDfZygDf8tjYbb
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
   "content": "import { useEffect, useState } from 'react'\nimport { Box, Button, Group, Loader, Modal, Text } from '@mantine/core'\nimport { ListDriveFolder } from '../../../wailsjs/go/main/App'\n\ninterface DriveFolder {\n  id: string\n  name: string\n}\n\nconst ROOT: DriveFolder = { id: 'root', name: 'My Drive' }\nconst INDENT_PER_LEVEL = 16\n\ninterface DriveTreeNodeProps {\n  item: DriveFolder\n  path: string\n  selectedId: string | null\n  onSelect: (item: DriveFolder, path: string) => void\n  defaultExpanded?: boolean\n}\n\nfunction DriveTreeNode({ item, path, selectedId, onSelect, defaultExpanded }: DriveTreeNodeProps) {\n  const [expanded, setExpanded] = useState(defaultExpanded ?? false)\n  const [children, setChildren] = useState<DriveFolder[] | null>(null)\n  const [loading, setLoading] = useState(false)\n  const [error, setError] = useState<string | null>(null)\n\n  const load = async () => {\n    setLoading(true)\n    setError(null)\n    try {\n      const items = await ListDriveFolder(item.id)\n      setChildren(items.filter(i => i.isFolder).map(i => ({ id: i.id, name: i.name })))\n    } catch (e) {\n      setError(String(e))\n    } finally {\n      setLoading(false)\n    }\n  }\n\n  useEffect(() => {\n    if (defaultExpanded && children === null) load()\n    // eslint-disable-next-line react-hooks/exhaustive-deps\n  }, [])\n\n  const toggle = () => {\n    if (!expanded && children === null) load()\n    setExpanded(prev => !prev)\n  }\n\n  return (\n    <Box>\n      <Group gap={4} wrap=\"nowrap\">\n        <button\n          type=\"button\"\n          onClick={toggle}\n          aria-expanded={expanded}\n          aria-label={expanded ? `Collapse ${item.name}` : `Expand ${item.name}`}\n          style={{ width: 16, flexShrink: 0, border: 'none', background: 'transparent', padding: […]
 
 > TOOL
@@ -9598,7 +9598,7 @@ id: toolu_017d3usj3QMDfZygDf8tjYbb
 tool_result
 id: toolu_017d3usj3QMDfZygDf8tjYbb
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9645,7 +9645,7 @@ tool_use Bash
 id: toolu_01V7eJQrE3s4ogrxZMP5EdFF
 ```json
 {
-  "command": "grep -n \"notifications\" /Users/ben/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx | head -5",
+  "command": "grep -n \"notifications\" /home/<USER>/git/paper-scan-processor/frontend/src/components/SplitMode/index.tsx | head -5",
   "description": "Check notifications import pattern in SplitMode"
 }
 ```
@@ -9672,7 +9672,7 @@ tool_use Read
 id: toolu_01URHFYXMB5CxmUoDAfy4BJz
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -9691,7 +9691,7 @@ id: toolu_01J26U3iTUzQM7U1xtLGQFMx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text, Tooltip } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport { useFileTree, LocalFile, LocalFileGroup } from './useFileTree'\nimport { formatFileSize } from '../../utils'",
   "new_string": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text, Tooltip } from '@mantine/core'\nimport { notifications } from '@mantine/notifications'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport { useFileTree, LocalFile, LocalFileGroup } from './useFileTree'\nimport { formatFileSize } from '../../utils'"
 }
@@ -9702,7 +9702,7 @@ id: toolu_01J26U3iTUzQM7U1xtLGQFMx
 tool_result
 id: toolu_01J26U3iTUzQM7U1xtLGQFMx
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9712,7 +9712,7 @@ id: toolu_017b2nHBiajEh7V3mDtEpDyY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "  // Groups start expanded; presence in this set (keyed by the group's full\n  // path, e.g. \"invoices/2026\") means collapsed.\n  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())\n  const toggleGroup = (groupKey: string) => {\n    setCollapsedGroups(prev => {\n      const next = new Set(prev)\n      if (next.has(groupKey)) next.delete(groupKey); else next.add(groupKey)\n      return next\n    })\n  }",
   "new_string": "  // Groups start expanded; presence in this set (keyed by the group's full\n  // path, e.g. \"invoices/2026\") means collapsed.\n  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())\n  const toggleGroup = (groupKey: string) => {\n    setCollapsedGroups(prev => {\n      const next = new Set(prev)\n      if (next.has(groupKey)) next.delete(groupKey); else next.add(groupKey)\n      return next\n    })\n  }\n\n  // Temporary: lets the Drive folder picker modal (Step 3b) be tried out\n  // manually before Step 3d wires it into real per-subfolder/file fields.\n  const [pickerOpen, setPickerOpen] = useState(false)"
 }
@@ -9723,7 +9723,7 @@ id: toolu_017b2nHBiajEh7V3mDtEpDyY
 tool_result
 id: toolu_017b2nHBiajEh7V3mDtEpDyY
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9736,7 +9736,7 @@ tool_use Read
 id: toolu_015tmiXhkbJueeUGffZi44sd
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "offset": 28,
   "limit": 30
 }
@@ -9786,7 +9786,7 @@ id: toolu_018iUDdMyBMvSQBzTfWbhw8h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "        <Box mb=\"sm\">\n          <ClippedPath path={root} onClick={pickRoot} placeholder=\"Choose root folder…\" />\n        </Box>\n\n        {loading && <Loader size=\"sm\" />}",
   "new_string": "        <Box mb=\"sm\">\n          <ClippedPath path={root} onClick={pickRoot} placeholder=\"Choose root folder…\" />\n        </Box>\n\n        <Button size=\"xs\" variant=\"default\" mb=\"sm\" onClick={() => setPickerOpen(true)}>\n          Pick Drive folder (test)\n        </Button>\n        <DriveFolderPickerModal\n          opened={pickerOpen}\n          onClose={() => setPickerOpen(false)}\n          onSelect={folder => notifications.show({ title: 'Drive folder selected', message: folder.path })}\n        />\n\n        {loading && <Loader size=\"sm\" />}"
 }
@@ -9797,7 +9797,7 @@ id: toolu_018iUDdMyBMvSQBzTfWbhw8h
 tool_result
 id: toolu_018iUDdMyBMvSQBzTfWbhw8h
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9806,7 +9806,7 @@ tool_use Bash
 id: toolu_018f2hKhXK2CUCju1rp9KTv2
 ```json
 {
-  "command": "grep -n \"Notifications\\|@mantine/notifications\" /Users/ben/git/paper-scan-processor/frontend/src/main.tsx",
+  "command": "grep -n \"Notifications\\|@mantine/notifications\" /home/<USER>/git/paper-scan-processor/frontend/src/main.tsx",
   "description": "Confirm Mantine Notifications provider is already mounted"
 }
 ```
@@ -9880,13 +9880,13 @@ id: toolu_01CgYfEUVr9QMS5nycMdfyJr
 tool_result
 id: toolu_01CgYfEUVr9QMS5nycMdfyJr
 ```
-/Users/ben/git/paper-scan-processor/frontend
+/home/<USER>/git/paper-scan-processor/frontend
 
 > frontend@0.0.0 test
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 13ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
@@ -9926,7 +9926,7 @@ tool_use Write
 id: toolu_01EJA5mhubhjb4aQ7NTMqqQe
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "content": "import { describe, it, expect, vi, beforeEach } from 'vitest'\nimport { render, screen, fireEvent } from '@testing-library/react'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport { ListDriveFolder } from '../../../wailsjs/go/main/App'\n\nvi.mock('../../../wailsjs/go/main/App', () => ({\n  ListDriveFolder: vi.fn(),\n}))\n\nconst ROOT_ITEMS = [\n  { id: 'f1', name: 'Finance', isFolder: true, size: 0 },\n  { id: 'file1', name: 'notes.txt', isFolder: false, size: 123 },\n]\nconst FINANCE_ITEMS = [\n  { id: 'f2', name: 'Invoices', isFolder: true, size: 0 },\n]\n\nfunction setup() {\n  const onClose = vi.fn()\n  const onSelect = vi.fn()\n  render(<DriveFolderPickerModal opened onClose={onClose} onSelect={onSelect} />)\n  return { onClose, onSelect }\n}\n\nbeforeEach(() => {\n  vi.mocked(ListDriveFolder).mockReset()\n  vi.mocked(ListDriveFolder).mockImplementation(async (folderID: string) => {\n    if (folderID === 'root') return ROOT_ITEMS as any\n    if (folderID === 'f1') return FINANCE_ITEMS as any\n    return []\n  })\n})\n\ndescribe('DriveFolderPickerModal', () => {\n  it('loads root-level folders and filters out files', async () => {\n    setup()\n    expect(await screen.findByText(/Finance/)).toBeTruthy()\n    expect(screen.queryByText(/notes\\.txt/)).toBeNull()\n  })\n\n  it('expands lazily and does not refetch on collapse/re-expand', async () => {\n    setup()\n    await screen.findByText(/Finance/)\n\n    fireEvent.click(screen.getByRole('button', { name: 'Expand Finance' }))\n    expect(await screen.findByText(/Invoices/)).toBeTruthy()\n    expect(vi.mocked(ListDriveFolder)).toHaveBeenCalledWith('f1')\n    expect(vi.mocked(ListDriveFolder).mock.calls.filter(c => c[0] === 'f1')).toHaveLength(1)\n\n    fireEvent.click(screen.getByRole('button', { name: 'Collapse Finance' }))\n    expect(screen.queryByText(/Invoices/)).toBeNull()\n\n    fireEvent.click(screen.getByRole('button', { name: 'Expand Finance' }))\n    expect(await screen.findByText(/Invoices/)).toBeTruthy()\n    expect(vi.mocked(ListDriveFolder).mock.calls.filter(c => c[0] === 'f1')).toHaveLength(1)\n  })\n\n  it('selecting a folder enables Select, which reports id and […]
 
 > TOOL
@@ -9934,7 +9934,7 @@ id: toolu_01EJA5mhubhjb4aQ7NTMqqQe
 tool_result
 id: toolu_01EJA5mhubhjb4aQ7NTMqqQe
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9957,7 +9957,7 @@ id: toolu_01YWzWo22iUP8hNp9kUQCZRM
 tool_result
 id: toolu_01YWzWo22iUP8hNp9kUQCZRM
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ❯ src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx  (0 test)
 
@@ -10002,7 +10002,7 @@ id: toolu_01V3iZzaJCqfQjrM9tFjxUg9
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ❯ src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx  (0 test)
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 17ms
@@ -10051,7 +10051,7 @@ id: toolu_01M4HgM1dgkEttQnVfcNjMMm
 31:    "@vitejs/plugin-react": "^2.0.1",
 34:    "vite": "^3.0.7",
 ---installed---
-frontend@0.0.0 /Users/ben/git/paper-scan-processor/frontend
+frontend@0.0.0 /home/<USER>/git/paper-scan-processor/frontend
 ├─┬ @dnd-kit/core@6.3.1
 │ ├─┬ @dnd-kit/accessibility@3.1.1
 │ │ └── react@19.2.7 deduped
@@ -10162,7 +10162,7 @@ tool_use Read
 id: toolu_01AWAukgspwVzYm8Kf8X3gf1
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/vite.config.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/vite.config.ts"
 }
 ```
 
@@ -10191,7 +10191,7 @@ id: toolu_011KVwrZTL1btRnWqzHURwaU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/vite.config.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/vite.config.ts",
   "old_string": "// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n  },\n})",
   "new_string": "// https://vitejs.dev/config/\nexport default defineConfig({\n  // Fast Refresh is dev-server-only and breaks component rendering under\n  // Vitest (\"@vitejs/plugin-react can't detect preamble\"), so disable it\n  // when running tests.\n  plugins: [react({ fastRefresh: !process.env.VITEST })],\n  test: {\n    environment: 'jsdom',\n  },\n})"
 }
@@ -10202,7 +10202,7 @@ id: toolu_011KVwrZTL1btRnWqzHURwaU
 tool_result
 id: toolu_011KVwrZTL1btRnWqzHURwaU
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/vite.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/vite.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10225,7 +10225,7 @@ id: toolu_014TWASfaPvcsGcmBQBy5Hwm
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 12ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 14ms
@@ -10252,7 +10252,7 @@ tool_use Read
 id: toolu_01BvthcqMZiBMUacHb8Wpfs9
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/main.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/main.tsx"
 }
 ```
 
@@ -10290,7 +10290,7 @@ tool_use Bash
 id: toolu_01GJLwZGPagZKJXYX6H7grF9
 ```json
 {
-  "command": "find /Users/ben/git/paper-scan-processor/frontend/src -iname \"*test-util*\" -o -iname \"*testUtils*\" -o -iname \"setupTests*\"; grep -n \"setupFiles\" /Users/ben/git/paper-scan-processor/frontend/vite.config.ts /Users/ben/git/paper-scan-processor/frontend/package.json",
+  "command": "find /home/<USER>/git/paper-scan-processor/frontend/src -iname \"*test-util*\" -o -iname \"*testUtils*\" -o -iname \"setupTests*\"; grep -n \"setupFiles\" /home/<USER>/git/paper-scan-processor/frontend/vite.config.ts /home/<USER>/git/paper-scan-processor/frontend/package.json",
   "description": "Check for existing shared test setup/utils file"
 }
 ```
@@ -10309,7 +10309,7 @@ tool_use Read
 id: toolu_01B6MezhZWuajKfSfMp7zGfc
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "offset": 1,
   "limit": 22
 }
@@ -10351,7 +10351,7 @@ id: toolu_01QBxwLNVywwUgoq49UgJMVd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "old_string": "import { describe, it, expect, vi, beforeEach } from 'vitest'\nimport { render, screen, fireEvent } from '@testing-library/react'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport { ListDriveFolder } from '../../../wailsjs/go/main/App'",
   "new_string": "import { describe, it, expect, vi, beforeEach } from 'vitest'\nimport { render, screen, fireEvent } from '@testing-library/react'\nimport { MantineProvider } from '@mantine/core'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport { ListDriveFolder } from '../../../wailsjs/go/main/App'"
 }
@@ -10362,7 +10362,7 @@ id: toolu_01QBxwLNVywwUgoq49UgJMVd
 tool_result
 id: toolu_01QBxwLNVywwUgoq49UgJMVd
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10372,7 +10372,7 @@ id: toolu_0119KNw6d2LiYi8J8iP4ry6Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "old_string": "function setup() {\n  const onClose = vi.fn()\n  const onSelect = vi.fn()\n  render(<DriveFolderPickerModal opened onClose={onClose} onSelect={onSelect} />)\n  return { onClose, onSelect }",
   "new_string": "function setup() {\n  const onClose = vi.fn()\n  const onSelect = vi.fn()\n  render(\n    <MantineProvider>\n      <DriveFolderPickerModal opened onClose={onClose} onSelect={onSelect} />\n    </MantineProvider>\n  )\n  return { onClose, onSelect }"
 }
@@ -10383,7 +10383,7 @@ id: toolu_0119KNw6d2LiYi8J8iP4ry6Y
 tool_result
 id: toolu_0119KNw6d2LiYi8J8iP4ry6Y
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10414,19 +10414,19 @@ id: toolu_01HdTfdPAooR1ijgJnAhZpUg
  ❯ src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx:76:35
 
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
-Serialized Error: { errors: [ { stack: 'TypeError: window.matchMedia is not a function\n    at setColorSchemeAttribute (file:///Users/ben/git/paper-scan-processor/frontend/node_modules/@mantine/core/src/core/MantineProvider/use-mantine-color-scheme/use-provider-color-scheme.ts:13:12)\n    at file:///Users/ben/git/paper-scan-processor/frontend/node_modules/@mantine/core/src/core/MantineProvider/use-mantine-color-scheme/use-provider-color-scheme.ts:62:5\n    at Object.react_stack_bottom_frame (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)\n    at runWithFiberInDEV (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:874:13)\n    at commitHookEffectListMount (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)\n    at commitHookLayoutEffects (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13213:11)\n    at commitLayoutEffectOnFiber (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13951:13)\n    at recursivelyTraverseLayoutEffects (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:15159:11)\n    at commitLayoutEffectOnFiber (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:14031:11)\n    at flushLayoutEffects (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:18138:15)', message: 'window.matchMedia is not a function', constructor: 'Function<TypeError>', name: 'TypeError', toString: 'Function<toString>' }, { stack: 'TypeError: window.matchMedia is not a function\n    at setColorSchemeAttribute (file:///Users/ben/git/paper-scan-processor/frontend/node_modules/@mantine/core/src/core/MantineProvider/use-mantine-color-scheme/use-provider-color-scheme.ts:13:12)\n    at file:///Users/ben/git/paper-scan-processor/frontend/node_modules/@mantine/core/src/core/MantineProvider/use-mantine-color-scheme/use-provider-color-scheme.ts:72:7\n    at Object.react_stack_bottom_frame (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)\n    at runWithFiberInDEV (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:874:13)\n    at commitHookEffectListMount (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)\n    at commitHookPassiveMountEffects (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13336:11)\n    at commitPassiveMountOnFiber (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:15484:13)\n    at recursivelyTraversePassiveMountEffects (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:15439:11)\n    at commitPassiveMountOnFiber (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:15519:11)\n    at flushPassiveEffects (/Users/ben/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:18432:9)', message: 'window.matchMedia is not a function', constructor: 'Function<TypeError>', name: 'TypeError', toString: 'Function<toString>' } ] }
+Serialized Error: { errors: [ { stack: 'TypeError: window.matchMedia is not a function\n    at setColorSchemeAttribute (file:///home/<USER>/git/paper-scan-processor/frontend/node_modules/@mantine/core/src/core/MantineProvider/use-mantine-color-scheme/use-provider-color-scheme.ts:13:12)\n    at file:///home/<USER>/git/paper-scan-processor/frontend/node_modules/@mantine/core/src/core/MantineProvider/use-mantine-color-scheme/use-provider-color-scheme.ts:62:5\n    at Object.react_stack_bottom_frame (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)\n    at runWithFiberInDEV (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:874:13)\n    at commitHookEffectListMount (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)\n    at commitHookLayoutEffects (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13213:11)\n    at commitLayoutEffectOnFiber (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13951:13)\n    at recursivelyTraverseLayoutEffects (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:15159:11)\n    at commitLayoutEffectOnFiber (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:14031:11)\n    at flushLayoutEffects (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:18138:15)', message: 'window.matchMedia is not a function', constructor: 'Function<TypeError>', name: 'TypeError', toString: 'Function<toString>' }, { stack: 'TypeError: window.matchMedia is not a function\n    at setColorSchemeAttribute (file:///home/<USER>/git/paper-scan-processor/frontend/node_modules/@mantine/core/src/core/MantineProvider/use-mantine-color-scheme/use-provider-color-scheme.ts:13:12)\n    at file:///home/<USER>/git/paper-scan-processor/frontend/node_modules/@mantine/core/src/core/MantineProvider/use-mantine-color-scheme/use-provider-color-scheme.ts:72:7\n    at Object.react_stack_bottom_frame (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)\n    at runWithFiberInDEV (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:874:13)\n    at commitHookEffectListMount (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)\n    at commitHookPassiveMountEffects (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:13336:11)\n    at commitPassiveMountOnFiber (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:15484:13)\n    at recursivelyTraversePassiveMountEffects (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:15439:11)\n    at commitPassiveMountOnFiber (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:15519:11)\n    at flushPassiveEffects (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:18432:9)', message: 'window.matchMedia is not a function', constructor: 'Function<TypeError>', name: 'TypeError', toString: 'Function<toString>' } ] }
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
 
  FAIL  src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx > DriveFolderPickerModal > shows an inline error instead of crashing when a fetch fails
 {
   stack: 'AggregateError: \n' +
-    '    at aggregateErrors (/Users/ben/git/paper-scan-processor/frontend/node_modules/react/cjs/react.development.js:551:11)\n' +
-    '    at process.env.NODE_ENV.exports.act (/Users/ben/git/paper-scan-processor/frontend/node_modules/react/cjs/react.development.js:897:24)\n' +
-    '    at /Users/ben/git/paper-scan-processor/frontend/node_modules/@testing-library/react/dist/act-compat.js:46:25\n' +
-    '    at renderRoot (/Users/ben/git/paper-scan-processor/frontend/node_modules/@testing-library/react/dist/pure.js:189:26)\n' +
-    '    at render (/Users/ben/git/paper-scan-processor/frontend/node_modules/@testing-library/react/dist/pure.js:291:10)\n' +
-    '    at setup (/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx:22:3)\n' +
-    '    at /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx:87:5\n' +
+    '    at aggregateErrors (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react/cjs/react.development.js:551:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (/home/<USER>/git/paper-scan-processor/frontend/node_modules/react/cjs/react.development.js:897:24)\n' +
+    '    at /home/<USER>/git/paper-scan-processor/frontend/node_modules/@testing-library/react/dist/act-compat.js:46:25\n' +
+    '    at renderRoot (/home/<USER>/git/paper-scan-processor/frontend/node_modules/@testing-library/react/dist/pure.js:189:26)\n' +
+    '    at render (/home/<USER>/git/paper-scan-processor/frontend/node_modules/@testing-library/react/dist/pure.js:291:10)\n' +
+    '    at setup (/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx:22:3)\n' +
+    '    at /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx:87:5\n' +
     ' […]
 
 > AGENT
@@ -10439,7 +10439,7 @@ tool_use Bash
 id: toolu_019nu3fnRoP4Q4NosMAGL1Fq
 ```json
 {
-  "command": "ls /Users/ben/git/paper-scan-processor/frontend/src/*.ts 2>/dev/null",
+  "command": "ls /home/<USER>/git/paper-scan-processor/frontend/src/*.ts 2>/dev/null",
   "description": "Check existing top-level src files for naming convention"
 }
 ```
@@ -10449,9 +10449,9 @@ id: toolu_019nu3fnRoP4Q4NosMAGL1Fq
 tool_result
 id: toolu_019nu3fnRoP4Q4NosMAGL1Fq
 ```
-/Users/ben/git/paper-scan-processor/frontend/src/constants.ts
-/Users/ben/git/paper-scan-processor/frontend/src/utils.ts
-/Users/ben/git/paper-scan-processor/frontend/src/vite-env.d.ts
+/home/<USER>/git/paper-scan-processor/frontend/src/constants.ts
+/home/<USER>/git/paper-scan-processor/frontend/src/utils.ts
+/home/<USER>/git/paper-scan-processor/frontend/src/vite-env.d.ts
 ```
 
 > TOOL
@@ -10460,7 +10460,7 @@ tool_use Write
 id: toolu_015VKo2H4LCm2kJeEuPNcdhg
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/test-setup.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/test-setup.ts",
   "content": "// jsdom doesn't implement matchMedia; Mantine's MantineProvider needs it to\n// detect color-scheme preference.\nif (typeof window.matchMedia !== 'function') {\n  window.matchMedia = (query: string) =>\n    ({\n      matches: false,\n      media: query,\n      onchange: null,\n      addListener: () => {},\n      removeListener: () => {},\n      addEventListener: () => {},\n      removeEventListener: () => {},\n      dispatchEvent: () => false,\n    }) as unknown as MediaQueryList\n}\n"
 }
 ```
@@ -10470,7 +10470,7 @@ id: toolu_015VKo2H4LCm2kJeEuPNcdhg
 tool_result
 id: toolu_015VKo2H4LCm2kJeEuPNcdhg
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/test-setup.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/test-setup.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10480,7 +10480,7 @@ id: toolu_01XvB9TBimjSDf7uw9QxCKgD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/vite.config.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/vite.config.ts",
   "old_string": "  plugins: [react({ fastRefresh: !process.env.VITEST })],\n  test: {\n    environment: 'jsdom',\n  },",
   "new_string": "  plugins: [react({ fastRefresh: !process.env.VITEST })],\n  test: {\n    environment: 'jsdom',\n    setupFiles: ['./src/test-setup.ts'],\n  },"
 }
@@ -10491,7 +10491,7 @@ id: toolu_01XvB9TBimjSDf7uw9QxCKgD
 tool_result
 id: toolu_01XvB9TBimjSDf7uw9QxCKgD
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/vite.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/vite.config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10643,7 +10643,7 @@ id: toolu_01LkNp4PDXNqpr9iq2JXuVM8
 tool_result
 id: toolu_01LkNp4PDXNqpr9iq2JXuVM8
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx  (5 tests | 4 skipped) 103ms
 
@@ -10663,7 +10663,7 @@ tool_use Read
 id: toolu_01HHExDzNx6VofuQvCupShQg
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/test-setup.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/test-setup.ts"
 }
 ```
 
@@ -10697,7 +10697,7 @@ id: toolu_01UaARQTjySe1C9MiVzr9vs6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/test-setup.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/test-setup.ts",
   "old_string": "// jsdom doesn't implement matchMedia; Mantine's MantineProvider needs it to\n// detect color-scheme preference.",
   "new_string": "import { afterEach } from 'vitest'\nimport { cleanup } from '@testing-library/react'\n\n// vite.config.ts doesn't set test.globals, so @testing-library/react's\n// automatic afterEach-based cleanup never registers; without this, each\n// test's render stays mounted in document.body and leaks into later tests\n// in the same file (e.g. duplicate elements from a previous test's render).\nafterEach(() => {\n  cleanup()\n})\n\n// jsdom doesn't implement matchMedia; Mantine's MantineProvider needs it to\n// detect color-scheme preference."
 }
@@ -10708,7 +10708,7 @@ id: toolu_01UaARQTjySe1C9MiVzr9vs6
 tool_result
 id: toolu_01UaARQTjySe1C9MiVzr9vs6
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/test-setup.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/test-setup.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10717,7 +10717,7 @@ tool_use Read
 id: toolu_01VDrKdprJh1aYqzZobSVyLS
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "offset": 83,
   "limit": 8
 }
@@ -10745,7 +10745,7 @@ id: toolu_01KJ3zHUSySS54cCGmf7ayz8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "old_string": "    expect(await screen.findByText(/boom/)).toBeTruthy()\n    expect(screen.getByText('My Drive')).toBeTruthy()",
   "new_string": "    expect(await screen.findByText(/boom/)).toBeTruthy()\n    expect(screen.getByText(/My Drive/)).toBeTruthy()"
 }
@@ -10756,7 +10756,7 @@ id: toolu_01KJ3zHUSySS54cCGmf7ayz8
 tool_result
 id: toolu_01KJ3zHUSySS54cCGmf7ayz8
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10779,7 +10779,7 @@ id: toolu_01YENKWG9WehMvcDKgcEtYeC
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 16ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 16ms
@@ -10859,7 +10859,7 @@ tool_use Bash
 id: toolu_01PuJ6UKf9Z1MhUwf2KpU8L1
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
   "description": "Verify Go side unaffected"
 }
 ```
@@ -10882,7 +10882,7 @@ tool_use Bash
 id: toolu_01VJs6s7AJQgP4r8knbn3tgk
 ```json
 {
-  "command": "grep -n \"Step 3b\" /Users/ben/git/paper-scan-processor/spec.md",
+  "command": "grep -n \"Step 3b\" /home/<USER>/git/paper-scan-processor/spec.md",
   "description": "Locate Step 3b checklist line"
 }
 ```
@@ -10902,7 +10902,7 @@ id: toolu_01RzohPKbXRBSpCNrFbUrdSo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] **Step 3b: Folder browser modal UI** — lazy-loaded Drive tree browsing and folder selection; no recently-used list yet",
   "new_string": "- [x] **Step 3b: Folder browser modal UI** — lazy-loaded Drive tree browsing and folder selection; no recently-used list yet"
 }
@@ -10913,7 +10913,7 @@ id: toolu_01RzohPKbXRBSpCNrFbUrdSo
 tool_result
 id: toolu_01RzohPKbXRBSpCNrFbUrdSo
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10986,7 +10986,7 @@ tool_use Bash
 id: toolu_01VwM3i9HP1xuVwjJ8ye5mpP
 ```json
 {
-  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nFix component-rendering test infra: Fast Refresh, matchMedia, cleanup\n\nEvery existing frontend test used renderHook, never a full component\nrender, so three gaps in the Vitest setup went unnoticed until now:\n\n- @vitejs/plugin-react defaults to Fast Refresh enabled even under\n  Vitest, which is dev-server-only and produces \"cant detect\n  preamble\" as soon as a real .tsx component is rendered. Disabled it\n  when VITEST is set.\n- jsdom does not implement window.matchMedia, which\n  MantineProvider needs for color-scheme detection. Added a minimal\n  polyfill.\n- vite.config.ts does not set test.globals, so\n  testing-library/react's automatic afterEach cleanup never\n  registers; renders from one test were leaking into the next test in\n  the same file. Added an explicit afterEach(cleanup).\n\nAll three now live in a shared src/test-setup.ts wired into\nvite.config.ts, so future component tests get this for free.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt",
+  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nFix component-rendering test infra: Fast Refresh, matchMedia, cleanup\n\nEvery existing frontend test used renderHook, never a full component\nrender, so three gaps in the Vitest setup went unnoticed until now:\n\n- @vitejs/plugin-react defaults to Fast Refresh enabled even under\n  Vitest, which is dev-server-only and produces \"cant detect\n  preamble\" as soon as a real .tsx component is rendered. Disabled it\n  when VITEST is set.\n- jsdom does not implement window.matchMedia, which\n  MantineProvider needs for color-scheme detection. Added a minimal\n  polyfill.\n- vite.config.ts does not set test.globals, so\n  testing-library/react's automatic afterEach cleanup never\n  registers; renders from one test were leaking into the next test in\n  the same file. Added an explicit afterEach(cleanup).\n\nAll three now live in a shared src/test-setup.ts wired into\nvite.config.ts, so future component tests get this for free.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt",
   "description": "Commit test infrastructure fixes separately"
 }
 ```
@@ -11039,7 +11039,7 @@ tool_use Bash
 id: toolu_01YPDH4Qbwx6Xv2tEbLk7UBf
 ```json
 {
-  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nAdd Drive Upload Step 3b: folder browser modal UI\n\nDriveFolderPickerModal lazily browses the Drive tree via Step 3as\nListDriveFolder RPC: each DriveTreeNode fetches and caches its own\nchildren on first expand, shows folders only (this picks an upload\ndestination, not a file), and builds a breadcrumb path as it\nrecurses. Clicking a row selects it; the modal reports {id, path}\non confirm.\n\nDriveUploadMode gets a temporary \"Pick Drive folder (test)\" button so\nthis is manually testable end-to-end (including live OAuth) before\nStep 3d exists to trigger it from real per-subfolder/file fields.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt",
+  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nAdd Drive Upload Step 3b: folder browser modal UI\n\nDriveFolderPickerModal lazily browses the Drive tree via Step 3as\nListDriveFolder RPC: each DriveTreeNode fetches and caches its own\nchildren on first expand, shows folders only (this picks an upload\ndestination, not a file), and builds a breadcrumb path as it\nrecurses. Clicking a row selects it; the modal reports {id, path}\non confirm.\n\nDriveUploadMode gets a temporary \"Pick Drive folder (test)\" button so\nthis is manually testable end-to-end (including live OAuth) before\nStep 3d exists to trigger it from real per-subfolder/file fields.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt",
   "description": "Commit Step 3b: folder browser modal UI"
 }
 ```
@@ -11121,7 +11121,7 @@ tool_use Bash
 id: toolu_01Vqn3xeWH5P14mhm1XtZK4e
 ```json
 {
-  "command": "grep -rli \"commit\" /Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/*.md 2>/dev/null",
+  "command": "grep -rli \"commit\" /home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/*.md 2>/dev/null",
   "description": "Check existing memory files mentioning commit behavior"
 }
 ```
@@ -11131,9 +11131,9 @@ id: toolu_01Vqn3xeWH5P14mhm1XtZK4e
 tool_result
 id: toolu_01Vqn3xeWH5P14mhm1XtZK4e
 ```
-/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md
-/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md
-/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md
+/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_checklist_substeps.md
+/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_separate_commits.md
+/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md
 ```
 
 > AGENT
@@ -11146,7 +11146,7 @@ tool_use Write
 id: toolu_015moaX4PyVgQVk8PFiqNT1k
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_commit_confirmation.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_commit_confirmation.md",
   "content": "---\nname: feedback-commit-confirmation\ndescription: Never commit without the user's explicit confirmation on that turn — a prior \"commit\" doesn't carry forward to later work\nmetadata:\n  type: feedback\n---\n\nNever run `git commit` unless the user has explicitly asked for it in this turn. An earlier \"commit\" instruction does not authorize committing again later in the session — each commit (or batch of commits for one piece of work) needs its own explicit go-ahead. After finishing a reviewable chunk of work, stop and ask whether to commit; don't just do it because that's the rhythm the conversation fell into.\n\n**Why:** User corrected this on 2026-07-02: after saying \"commit\" once (for Step 2 work), I kept committing on my own for subsequent steps (Step 3a, a test-infra fix, Step 3b) without being asked again each time. This is a standing rule already stated in CLAUDE.md-level instructions (\"NEVER commit changes unless the user explicitly asks you to\"), but it's easy to drift from once a back-and-forth commit rhythm gets established — worth being explicit about since the drift already happened once.\n\n**How to apply:** Finish the work, run verification (build/test/typecheck), summarize what changed, and explicitly ask \"want me to commit this?\" […]
 
 > TOOL
@@ -11154,7 +11154,7 @@ id: toolu_015moaX4PyVgQVk8PFiqNT1k
 tool_result
 id: toolu_015moaX4PyVgQVk8PFiqNT1k
 ```
-File created successfully at: /Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_commit_confirmation.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/feedback_commit_confirmation.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11163,7 +11163,7 @@ tool_use Read
 id: toolu_01LkQirK1MrZ4PQoRUAT88pW
 ```json
 {
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md"
 }
 ```
 
@@ -11191,7 +11191,7 @@ id: toolu_01JKyUeSFUzdXM1S2YF4QSjS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md",
   "old_string": "- [Feedback: checklist sub-steps](feedback_checklist_substeps.md) — Default to small, independently reviewable checklist steps (1a/1b/1c); only bundle trivial features",
   "new_string": "- [Feedback: checklist sub-steps](feedback_checklist_substeps.md) — Default to small, independently reviewable checklist steps (1a/1b/1c); only bundle trivial features\n- [Feedback: commit confirmation](feedback_commit_confirmation.md) — Never commit without explicit confirmation this turn; a prior \"commit\" doesn't carry forward"
 }
@@ -11202,7 +11202,7 @@ id: toolu_01JKyUeSFUzdXM1S2YF4QSjS
 tool_result
 id: toolu_01JKyUeSFUzdXM1S2YF4QSjS
 ```
-The file /Users/ben/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-ben-git-paper-scan-processor/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11254,7 +11254,7 @@ tool_use Read
 id: toolu_01655Huajum2v12nWmptnxyE
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -11401,7 +11401,7 @@ tool_use Write
 id: toolu_01QtAwF1FNVF7Qutcpi5YeBg
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts",
   "content": "import { useState, useCallback } from 'react'\n\nexport interface DriveAssignment {\n  id: string\n  path: string\n}\n\nexport interface DriveAssignmentsHandle {\n  groupAssignments: Map<string, DriveAssignment>\n  fileOverrides: Map<string, DriveAssignment>\n  setGroupAssignment: (groupKey: string, assignment: DriveAssignment) => void\n  clearGroupAssignment: (groupKey: string) => void\n  setFileOverride: (filePath: string, assignment: DriveAssignment) => void\n  clearFileOverride: (filePath: string) => void\n}\n\n// Tracks Drive folder assignments made directly on a subfolder group or on\n// an individual file (a file-level assignment overrides its group's).\n// Resolving the *effective* assignment for a given group/file (own, else\n// inherited from the nearest ancestor group, else none) is the caller's\n// job, since only the caller knows the tree structure to walk.\nexport function useDriveAssignments(): DriveAssignmentsHandle {\n  const [groupAssignments, setGroupAssignments] = useState<Map<string, DriveAssignment>>(new Map())\n  const [fileOverrides, setFileOverrides] = useState<Map<string, DriveAssignment>>(new Map())\n\n  const setGroupAssignment = useCallback((groupKey: string, assignment: DriveAssignment) => {\n    setGroupAssignments(prev => new Map(prev).set(groupKey, assignment))\n  }, [])\n\n  const clearGroupAssignment = useCallback((groupKey: string) => {\n    setGroupAssignments(prev => {\n      const next = new Map(prev)\n      next.delete(groupKey)\n      return next\n    })\n  }, [])\n\n  const setFileOverride = useCallback((filePath: string, assignment: DriveAssignment) => {\n    setFileOverrides(prev => new Map(prev).set(filePath, assignment))\n  }, [])\n\n  const clearFileOverride = useCallback((filePath: string) => {\n    setFileOverrides(prev => {\n      const next = new Map(prev)\n      next.delete(filePath)\n      return next\n    })\n  }, […]
 
 > TOOL
@@ -11409,7 +11409,7 @@ id: toolu_01QtAwF1FNVF7Qutcpi5YeBg
 tool_result
 id: toolu_01QtAwF1FNVF7Qutcpi5YeBg
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11422,7 +11422,7 @@ tool_use Write
 id: toolu_018ChjvyqfMtsKDaT6BmFEqL
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts",
   "content": "import { describe, it, expect } from 'vitest'\nimport { act, renderHook } from '@testing-library/react'\nimport { useDriveAssignments } from './useDriveAssignments'\n\nconst FINANCE = { id: 'f1', path: 'My Drive / Finance' }\nconst INVOICES = { id: 'f2', path: 'My Drive / Finance / Invoices' }\n\ndescribe('useDriveAssignments', () => {\n  it('starts with no assignments or overrides', () => {\n    const { result } = renderHook(() => useDriveAssignments())\n    expect(result.current.groupAssignments.size).toBe(0)\n    expect(result.current.fileOverrides.size).toBe(0)\n  })\n\n  it('sets and clears a group assignment independently of other groups', () => {\n    const { result } = renderHook(() => useDriveAssignments())\n    act(() => { result.current.setGroupAssignment('invoices', FINANCE) })\n    act(() => { result.current.setGroupAssignment('invoices/2026', INVOICES) })\n\n    expect(result.current.groupAssignments.get('invoices')).toEqual(FINANCE)\n    expect(result.current.groupAssignments.get('invoices/2026')).toEqual(INVOICES)\n\n    act(() => { result.current.clearGroupAssignment('invoices') })\n    expect(result.current.groupAssignments.get('invoices')).toBeUndefined()\n    expect(result.current.groupAssignments.get('invoices/2026')).toEqual(INVOICES)\n  })\n\n  it('sets and clears a file override independently of other files', () => {\n    const { result } = renderHook(() => useDriveAssignments())\n    act(() => { result.current.setFileOverride('/root/a.pdf', FINANCE) })\n    act(() => { result.current.setFileOverride('/root/b.pdf', INVOICES) })\n\n    expect(result.current.fileOverrides.get('/root/a.pdf')).toEqual(FINANCE)\n    expect(result.current.fileOverrides.get('/root/b.pdf')).toEqual(INVOICES)\n\n    act(() => { result.current.clearFileOverride('/root/a.pdf') })\n    expect(result.current.fileOverrides.get('/root/a.pdf')).toBeUndefined()\n    expect(result.current.fileOverrides.get('/root/b.pdf')).toEqual(INVOICES)\n  })\n\n  it('keeps group assignments and file overrides in separate namespaces', () => {\n    const { result } = renderHook(() => useDriveAssignments())\n    act(() => { result.current.setGroupAssignment('shared-key', FINANCE) })\n    act(() => { result.current.setFileOverride('shared-key', INVOICES) })\n\n    expect(result.current.groupAssignments.get('shared-key')).toEqual(FINANCE)\n    expect(result.current.fileOverrides.get('shared-key')).toEqual(INVOICES)\n  })\n\n  it('overwrites an existing assignment […]
 
 > TOOL
@@ -11430,7 +11430,7 @@ id: toolu_018ChjvyqfMtsKDaT6BmFEqL
 tool_result
 id: toolu_018ChjvyqfMtsKDaT6BmFEqL
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11439,7 +11439,7 @@ tool_use Bash
 id: toolu_01XmutM1ug7F61a14GJBr8kk
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npx vitest run src/components/DriveUploadMode/useDriveAssignments.test.ts 2>&1 | tail -40",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npx vitest run src/components/DriveUploadMode/useDriveAssignments.test.ts 2>&1 | tail -40",
   "description": "Run the new hook test"
 }
 ```
@@ -11449,7 +11449,7 @@ id: toolu_01XmutM1ug7F61a14GJBr8kk
 tool_result
 id: toolu_01XmutM1ug7F61a14GJBr8kk
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useDriveAssignments.test.ts  (5 tests) 12ms
 
@@ -11507,7 +11507,7 @@ tool_use Write
 id: toolu_01A6SSnRofaxQeaYWU25MCtS
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "content": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text, Tooltip } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport { useFileTree, LocalFile, LocalFileGroup } from './useFileTree'\nimport { useDriveAssignments, DriveAssignment, DriveAssignmentsHandle } from './useDriveAssignments'\nimport { formatFileSize } from '../../utils'\n\nconst LEFT_PANEL_WIDTH = 300\nconst INDENT_PER_LEVEL = 16\n\ntype PickerTarget = { type: 'group'; key: string } | { type: 'file'; path: string }\n\nexport default function DriveUploadMode() {\n  const { root, tree, loading, error, pickRoot } = useFileTree()\n  const isEmpty = tree !== null && tree.files.length === 0 && tree.subgroups.length === 0\n\n  // Groups start expanded; presence in this set (keyed by the group's full\n  // path, e.g. \"invoices/2026\") means collapsed.\n  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())\n  const toggleGroup = (groupKey: string) => {\n    setCollapsedGroups(prev => {\n      const next = new Set(prev)\n      if (next.has(groupKey)) next.delete(groupKey); else next.add(groupKey)\n      return next\n    })\n  }\n\n  const assignments = useDriveAssignments()\n  const [pickerTarget, setPickerTarget] = useState<PickerTarget | null>(null)\n  const handlePicked = (folder: DriveAssignment) => {\n    if (pickerTarget?.type === 'group') assignments.setGroupAssignment(pickerTarget.key, folder)\n    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)\n    setPickerTarget(null)\n  }\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: LEFT_PANEL_WIDTH,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n […]
 
 > TOOL
@@ -11515,7 +11515,7 @@ id: toolu_01A6SSnRofaxQeaYWU25MCtS
 tool_result
 id: toolu_01A6SSnRofaxQeaYWU25MCtS
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11562,7 +11562,7 @@ id: toolu_01X5yjuJ6RYfZmyitYe9nLic
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useDriveAssignments.test.ts  (5 tests) 16ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 16ms
@@ -11627,7 +11627,7 @@ tool_use Read
 id: toolu_011uTg1G6RutzttECxszTLLr
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "offset": 195,
   "limit": 40
 }
@@ -11687,7 +11687,7 @@ id: toolu_011GUZxJEJfiPU8LedgptGUQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "interface DriveAssignmentFieldProps {\n  assignment: DriveAssignment | null\n  isOwn: boolean\n  onPick: () => void\n  onClear: () => void\n}\n\nfunction DriveAssignmentField({ assignment, isOwn, onPick, onClear }: DriveAssignmentFieldProps) {\n  return (\n    <Box style={{ display: 'flex', alignItems: 'center', gap: 4 }}>\n      <button\n        type=\"button\"\n        onClick={onPick}\n        style={{\n          flex: 1,\n          textAlign: 'left',\n          border: 'none',\n          background: 'transparent',\n          padding: 0,\n          cursor: 'pointer',\n          fontFamily: 'inherit',\n          minWidth: 0,\n        }}\n      >\n        <Text size=\"xs\" c=\"dimmed\" fs={!isOwn && assignment ? 'italic' : undefined} truncate=\"end\">\n          Drive: {assignment ? assignment.path : 'not assigned'}\n        </Text>\n      </button>\n      {isOwn && (\n        <button\n          type=\"button\"\n          onClick={onClear}\n          aria-label=\"Clear Drive assignment\"\n          style={{ border: 'none', background: 'transparent', padding: 0, cursor: 'pointer', flexShrink: 0 }}\n        >\n          <Text size=\"xs\" c=\"dimmed\">✕</Text>\n        </button>\n      )}\n    </Box>\n  )\n}",
   "new_string": "interface DriveAssignmentFieldProps {\n  label: string\n  assignment: DriveAssignment | null\n  isOwn: boolean\n  onPick: () => void\n  onClear: () => void\n}\n\nfunction DriveAssignmentField({ label, assignment, isOwn, onPick, onClear }: DriveAssignmentFieldProps) {\n  return (\n    <Box style={{ display: 'flex', alignItems: 'center', gap: 4 }}>\n      <button\n        type=\"button\"\n        onClick={onPick}\n        aria-label={`Set Drive folder for ${label}`}\n        style={{\n          flex: 1,\n          textAlign: 'left',\n          border: 'none',\n          background: 'transparent',\n          padding: 0,\n          cursor: 'pointer',\n          fontFamily: 'inherit',\n          minWidth: 0,\n        }}\n      >\n        <Text size=\"xs\" c=\"dimmed\" fs={!isOwn && assignment ? 'italic' : undefined} truncate=\"end\">\n          Drive: {assignment ? assignment.path […]
 
@@ -11696,7 +11696,7 @@ id: toolu_011GUZxJEJfiPU8LedgptGUQ
 tool_result
 id: toolu_011GUZxJEJfiPU8LedgptGUQ
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11709,7 +11709,7 @@ tool_use Bash
 id: toolu_01EsiNAgUYVW6Cq4rEN46xBn
 ```json
 {
-  "command": "grep -n \"DriveAssignmentField$\" -A4 /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "command": "grep -n \"DriveAssignmentField$\" -A4 /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "description": "Find DriveAssignmentField call sites"
 }
 ```
@@ -11739,7 +11739,7 @@ id: toolu_012SBeZ27UVXvFtw9bd3UKtD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "      <DriveAssignmentField\n        assignment={effective}\n        isOwn={own !== null}\n        onPick={() => onPick({ type: 'group', key: groupKey })}\n        onClear={() => assignments.clearGroupAssignment(groupKey)}",
   "new_string": "      <DriveAssignmentField\n        label={group.name}\n        assignment={effective}\n        isOwn={own !== null}\n        onPick={() => onPick({ type: 'group', key: groupKey })}\n        onClear={() => assignments.clearGroupAssignment(groupKey)}"
 }
@@ -11750,7 +11750,7 @@ id: toolu_012SBeZ27UVXvFtw9bd3UKtD
 tool_result
 id: toolu_012SBeZ27UVXvFtw9bd3UKtD
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11760,7 +11760,7 @@ id: toolu_01WxCGjRjaLM4Kq7d5qbjtkg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "old_string": "            <DriveAssignmentField\n              assignment={effective}\n              isOwn={own !== null}\n              onPick={() => onPick({ type: 'file', path: file.path })}\n              onClear={() => assignments.clearFileOverride(file.path)}",
   "new_string": "            <DriveAssignmentField\n              label={file.name}\n              assignment={effective}\n              isOwn={own !== null}\n              onPick={() => onPick({ type: 'file', path: file.path })}\n              onClear={() => assignments.clearFileOverride(file.path)}"
 }
@@ -11771,7 +11771,7 @@ id: toolu_01WxCGjRjaLM4Kq7d5qbjtkg
 tool_result
 id: toolu_01WxCGjRjaLM4Kq7d5qbjtkg
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11804,7 +11804,7 @@ tool_use Write
 id: toolu_014s4F342e9VFVRver2XvFv3
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "content": "import { describe, it, expect, vi, beforeEach } from 'vitest'\nimport { render, screen, fireEvent } from '@testing-library/react'\nimport { MantineProvider } from '@mantine/core'\nimport DriveUploadMode from './index'\nimport { PickFolder, ScanLocalRoot, ListDriveFolder } from '../../../wailsjs/go/main/App'\n\nvi.mock('../../../wailsjs/go/main/App', () => ({\n  PickFolder: vi.fn(),\n  ScanLocalRoot: vi.fn(),\n  ListDriveFolder: vi.fn(),\n}))\n\nconst TREE = {\n  name: '',\n  files: [{ path: '/root/misc.pdf', name: 'misc', sizeBytes: 100, pageCount: 1, corrupt: false }],\n  subgroups: [\n    {\n      name: 'invoices',\n      files: [{ path: '/root/invoices/a.pdf', name: 'a', sizeBytes: 200, pageCount: 2, corrupt: false }],\n      subgroups: [],\n    },\n  ],\n}\n\nconst DRIVE_ROOT_ITEMS = [{ id: 'f1', name: 'Finance', isFolder: true, size: 0 }]\n\nasync function setupWithTree() {\n  vi.mocked(PickFolder).mockResolvedValueOnce('/root')\n  vi.mocked(ScanLocalRoot).mockResolvedValueOnce(TREE as any)\n  vi.mocked(ListDriveFolder).mockImplementation(async () => DRIVE_ROOT_ITEMS as any)\n\n  render(\n    <MantineProvider>\n      <DriveUploadMode />\n    </MantineProvider>\n  )\n  fireEvent.click(screen.getByRole('button', { name: 'Choose Root Folder' }))\n  await screen.findByText(/invoices/)\n}\n\ndescribe('DriveUploadMode assignment fields', () => {\n  beforeEach(() => {\n    vi.mocked(PickFolder).mockReset()\n    vi.mocked(ScanLocalRoot).mockReset()\n    vi.mocked(ListDriveFolder).mockReset()\n  })\n\n  it('assigning a group folder propagates to its files until overridden', async () => {\n    await setupWithTree()\n\n    fireEvent.click(screen.getByRole('button', { name: 'Set Drive folder for invoices' }))\n    fireEvent.click(await screen.findByRole('button', { name: '📁 Finance' }))\n    fireEvent.click(screen.getByRole('button', { name: 'Select \"Finance\"' }))\n\n    expect(await screen.findByRole('button', { name: 'Set Drive folder for invoices' }))\n      .toHaveTextContent('My Drive / Finance')\n    expect(screen.getByRole('button', { name: 'Set Drive folder […]
 
 > TOOL
@@ -11812,7 +11812,7 @@ id: toolu_014s4F342e9VFVRver2XvFv3
 tool_result
 id: toolu_014s4F342e9VFVRver2XvFv3
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11831,7 +11831,7 @@ id: toolu_012ZPLFJikiK7cupvvqo6Myh
 tool_result
 id: toolu_012ZPLFJikiK7cupvvqo6Myh
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ❯ src/components/DriveUploadMode/index.test.tsx  (3 tests | 3 failed) 246ms
    ❯ src/components/DriveUploadMode/index.test.tsx > DriveUploadMode assignment fields > assigning a group folder propagates to its files until overridden
@@ -11875,7 +11875,7 @@ tool_use Read
 id: toolu_01CabjNGsYZLSxLow1D5o2Ms
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx"
 }
 ```
 
@@ -11940,7 +11940,7 @@ id: toolu_01VkXbdGvEJLLGpvMPLfSWeW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "old_string": "const DRIVE_ROOT_ITEMS = [{ id: 'f1', name: 'Finance', isFolder: true, size: 0 }]",
   "new_string": "const DRIVE_ROOT_ITEMS = [{ id: 'f1', name: 'Finance', isFolder: true, size: 0 }]\n\nfunction textOf(el: HTMLElement) {\n  return el.textContent ?? ''\n}"
 }
@@ -11951,7 +11951,7 @@ id: toolu_01VkXbdGvEJLLGpvMPLfSWeW
 tool_result
 id: toolu_01VkXbdGvEJLLGpvMPLfSWeW
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11961,7 +11961,7 @@ id: toolu_01RtSxFm5WdwjZGbTqFcTYYh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "old_string": "    expect(await screen.findByRole('button', { name: 'Set Drive folder for invoices' }))\n      .toHaveTextContent('My Drive / Finance')\n    expect(screen.getByRole('button', { name: 'Set Drive folder for a' }))\n      .toHaveTextContent('My Drive / Finance')\n\n    fireEvent.click(screen.getByRole('button', { name: 'Set Drive folder for a' }))\n    fireEvent.click(await screen.findByRole('button', { name: '📁 Finance' }))\n    fireEvent.click(screen.getByRole('button', { name: 'Select \"Finance\"' }))\n\n    expect(screen.getByRole('button', { name: 'Set Drive folder for a' })).toHaveTextContent('My Drive / Finance')\n    expect(screen.getByRole('button', { name: 'Clear Drive folder for a' })).toBeTruthy()",
   "new_string": "    expect(textOf(await screen.findByRole('button', { name: 'Set Drive folder for invoices' })))\n      .toContain('My Drive / Finance')\n    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for a' })))\n      .toContain('My Drive / Finance')\n\n    fireEvent.click(screen.getByRole('button', { name: 'Set Drive folder for a' }))\n    fireEvent.click(await screen.findByRole('button', { name: '📁 Finance' }))\n    fireEvent.click(screen.getByRole('button', { name: 'Select \"Finance\"' }))\n\n    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for a' }))).toContain('My Drive / Finance')\n    expect(screen.getByRole('button', { name: 'Clear Drive folder for a' })).toBeTruthy()"
 }
@@ -11972,7 +11972,7 @@ id: toolu_01RtSxFm5WdwjZGbTqFcTYYh
 tool_result
 id: toolu_01RtSxFm5WdwjZGbTqFcTYYh
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11982,7 +11982,7 @@ id: toolu_01MnWTkPPHMUWm7wQxyGx7Jr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "old_string": "    expect(screen.getByRole('button', { name: 'Set Drive folder for a' })).toHaveTextContent('My Drive / Finance')\n\n    fireEvent.click(screen.getByRole('button', { name: 'Clear Drive folder for invoices' }))\n\n    expect(screen.getByRole('button', { name: 'Set Drive folder for invoices' })).toHaveTextContent('not assigned')\n    expect(screen.getByRole('button', { name: 'Set Drive folder for a' })).toHaveTextContent('not assigned')\n  })\n\n  it('a root-level loose file has no group to inherit from', async () => {\n    await setupWithTree()\n    expect(screen.getByRole('button', { name: 'Set Drive folder for misc' })).toHaveTextContent('not assigned')\n    expect(screen.queryByRole('button', { name: 'Clear Drive folder for misc' })).toBeNull()\n  })",
   "new_string": "    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for a' }))).toContain('My Drive / Finance')\n\n    fireEvent.click(screen.getByRole('button', { name: 'Clear Drive folder for invoices' }))\n\n    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for invoices' }))).toContain('not assigned')\n    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for a' }))).toContain('not assigned')\n  })\n\n  it('a root-level loose file has no group to inherit from', async () => {\n    await setupWithTree()\n    expect(textOf(screen.getByRole('button', { name: 'Set Drive folder for misc' }))).toContain('not assigned')\n    expect(screen.queryByRole('button', { name: 'Clear Drive folder for misc' })).toBeNull()\n  })"
 }
@@ -11993,7 +11993,7 @@ id: toolu_01MnWTkPPHMUWm7wQxyGx7Jr
 tool_result
 id: toolu_01MnWTkPPHMUWm7wQxyGx7Jr
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12012,7 +12012,7 @@ id: toolu_01GMsDu5rgLEQT1afENhoEqD
 tool_result
 id: toolu_01GMsDu5rgLEQT1afENhoEqD
 ```
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/index.test.tsx  (3 tests) 303ms
 
@@ -12084,7 +12084,7 @@ id: toolu_013EdLpqx4d6YeFV3sHNoB4Z
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useDriveAssignments.test.ts  (5 tests) 16ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 16ms
@@ -12112,7 +12112,7 @@ tool_use Bash
 id: toolu_01W8qyhF1hVaaHKSQhgp7cm2
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... && go test ./... 2>&1 | tail -10",
   "description": "Verify Go build/tests unaffected"
 }
 ```
@@ -12131,7 +12131,7 @@ tool_use Bash
 id: toolu_013xHjoyKTJmcySmbR8bBoJV
 ```json
 {
-  "command": "grep -n \"Step 3d\" /Users/ben/git/paper-scan-processor/spec.md",
+  "command": "grep -n \"Step 3d\" /home/<USER>/git/paper-scan-processor/spec.md",
   "description": "Locate Step 3d checklist line"
 }
 ```
@@ -12151,7 +12151,7 @@ id: toolu_013GdZA68ggjTkdWKge1bTsi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/spec.md",
+  "file_path": "/home/<USER>/git/paper-scan-processor/spec.md",
   "old_string": "- [ ] **Step 3d: Drive folder assignment UI** — assignment at subfolder and file level",
   "new_string": "- [x] **Step 3d: Drive folder assignment UI** — assignment at subfolder and file level; a subfolder's assignment propagates to all files and nested subfolders beneath it unless overridden closer to the leaf; a clear (✕) control resets an explicit assignment back to inherited/not-assigned"
 }
@@ -12162,7 +12162,7 @@ id: toolu_013GdZA68ggjTkdWKge1bTsi
 tool_result
 id: toolu_013GdZA68ggjTkdWKge1bTsi
 ```
-The file /Users/ben/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/spec.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12171,7 +12171,7 @@ tool_use Read
 id: toolu_01UsS6HgsxCP8x6T9mLcQ6cF
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -12265,7 +12265,7 @@ tool_use Bash
 id: toolu_01GBETr2mb8jcEj3nDHEAgF9
 ```json
 {
-  "command": "grep -rn \"DriveAssignment\\b\" /Users/ben/git/paper-scan-processor/frontend/src",
+  "command": "grep -rn \"DriveAssignment\\b\" /home/<USER>/git/paper-scan-processor/frontend/src",
   "description": "Find all usages of the DriveAssignment type"
 }
 ```
@@ -12275,20 +12275,20 @@ id: toolu_01GBETr2mb8jcEj3nDHEAgF9
 tool_result
 id: toolu_01GBETr2mb8jcEj3nDHEAgF9
 ```
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:6:import { useDriveAssignments, DriveAssignment, DriveAssignmentsHandle } from './useDriveAssignments'
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:31:  const handlePicked = (folder: DriveAssignment) => {
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:109:  inheritedAssignment: DriveAssignment | null
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:175:  inheritedAssignment: DriveAssignment | null
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:214:  assignment: DriveAssignment | null
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:3:export interface DriveAssignment {
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:9:  groupAssignments: Map<string, DriveAssignment>
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:10:  fileOverrides: Map<string, DriveAssignment>
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:11:  setGroupAssignment: (groupKey: string, assignment: DriveAssignment) => void
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:13:  setFileOverride: (filePath: string, assignment: DriveAssignment) => void
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:23:  const [groupAssignments, setGroupAssignments] = useState<Map<string, DriveAssignment>>(new Map())
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:24:  const [fileOverrides, setFileOverrides] = useState<Map<string, DriveAssignment>>(new Map())
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:26:  const setGroupAssignment = useCallback((groupKey: string, assignment: DriveAssignment) => {
-/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:38:  const setFileOverride = useCallback((filePath: string, assignment: DriveAssignment) => {
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:6:import { useDriveAssignments, DriveAssignment, DriveAssignmentsHandle } from './useDriveAssignments'
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:31:  const handlePicked = (folder: DriveAssignment) => {
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:109:  inheritedAssignment: DriveAssignment | null
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:175:  inheritedAssignment: DriveAssignment | null
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx:214:  assignment: DriveAssignment | null
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:3:export interface DriveAssignment {
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:9:  groupAssignments: Map<string, DriveAssignment>
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:10:  fileOverrides: Map<string, DriveAssignment>
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:11:  setGroupAssignment: (groupKey: string, assignment: DriveAssignment) => void
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:13:  setFileOverride: (filePath: string, assignment: DriveAssignment) => void
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:23:  const [groupAssignments, setGroupAssignments] = useState<Map<string, DriveAssignment>>(new Map())
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:24:  const [fileOverrides, setFileOverrides] = useState<Map<string, DriveAssignment>>(new Map())
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:26:  const setGroupAssignment = useCallback((groupKey: string, assignment: DriveAssignment) => {
+/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts:38:  const setFileOverride = useCallback((filePath: string, assignment: DriveAssignment) => {
 ```
 
 > AGENT
@@ -12301,7 +12301,7 @@ tool_use Read
 id: toolu_013ev6H1pXhrjfD19wWduC1j
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts",
   "offset": 1,
   "limit": 6
 }
@@ -12327,7 +12327,7 @@ id: toolu_019aJPta3ocNnmxC3bS3SimK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts",
   "old_string": "export interface DriveAssignment {\n  id: string\n  path: string\n}",
   "new_string": "export interface DriveAssignment {\n  driveFolderId: string\n  path: string\n}"
 }
@@ -12338,7 +12338,7 @@ id: toolu_019aJPta3ocNnmxC3bS3SimK
 tool_result
 id: toolu_019aJPta3ocNnmxC3bS3SimK
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12351,7 +12351,7 @@ tool_use Read
 id: toolu_01KNELyVhqYejuyTkUfdfVXV
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx"
 }
 ```
 
@@ -12410,7 +12410,7 @@ id: toolu_01C3tzKNL3nLYYXodgTAxefF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
   "old_string": "import { useEffect, useState } from 'react'\nimport { Box, Button, Group, Loader, Modal, Text } from '@mantine/core'\nimport { ListDriveFolder } from '../../../wailsjs/go/main/App'",
   "new_string": "import { useEffect, useState } from 'react'\nimport { Box, Button, Group, Loader, Modal, Text } from '@mantine/core'\nimport { ListDriveFolder } from '../../../wailsjs/go/main/App'\nimport { DriveAssignment } from './useDriveAssignments'"
 }
@@ -12421,7 +12421,7 @@ id: toolu_01C3tzKNL3nLYYXodgTAxefF
 tool_result
 id: toolu_01C3tzKNL3nLYYXodgTAxefF
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12431,7 +12431,7 @@ id: toolu_017cLYFMUztRoRPTmT3bp7wY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx",
   "old_string": "interface Props {\n  opened: boolean\n  onClose: () => void\n  onSelect: (folder: { id: string; path: string }) => void\n}\n\nexport default function DriveFolderPickerModal({ opened, onClose, onSelect }: Props) {\n  const [selected, setSelected] = useState<{ id: string; name: string; path: string } | null>(null)\n\n  useEffect(() => {\n    if (!opened) setSelected(null)\n  }, [opened])\n\n  const confirm = () => {\n    if (!selected) return\n    onSelect({ id: selected.id, path: selected.path })\n    onClose()\n  }",
   "new_string": "interface Props {\n  opened: boolean\n  onClose: () => void\n  onSelect: (folder: DriveAssignment) => void\n}\n\nexport default function DriveFolderPickerModal({ opened, onClose, onSelect }: Props) {\n  const [selected, setSelected] = useState<{ id: string; name: string; path: string } | null>(null)\n\n  useEffect(() => {\n    if (!opened) setSelected(null)\n  }, [opened])\n\n  const confirm = () => {\n    if (!selected) return\n    onSelect({ driveFolderId: selected.id, path: selected.path })\n    onClose()\n  }"
 }
@@ -12442,7 +12442,7 @@ id: toolu_017cLYFMUztRoRPTmT3bp7wY
 tool_result
 id: toolu_017cLYFMUztRoRPTmT3bp7wY
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12455,7 +12455,7 @@ tool_use Bash
 id: toolu_018Zx2SA46V5pNAxD6UzgybR
 ```json
 {
-  "command": "grep -n \"assignment.id\\|\\.id\\b\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "command": "grep -n \"assignment.id\\|\\.id\\b\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "description": "Check index.tsx for DriveAssignment.id references"
 }
 ```
@@ -12474,7 +12474,7 @@ tool_use Read
 id: toolu_01Q3EssCKJVx6c92GtZDt9qJ
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts",
   "offset": 1,
   "limit": 8
 }
@@ -12502,7 +12502,7 @@ id: toolu_01Jt8sMy9hTPve9Gzxk9P6Tp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts",
   "old_string": "const FINANCE = { id: 'f1', path: 'My Drive / Finance' }\nconst INVOICES = { id: 'f2', path: 'My Drive / Finance / Invoices' }",
   "new_string": "const FINANCE = { driveFolderId: 'f1', path: 'My Drive / Finance' }\nconst INVOICES = { driveFolderId: 'f2', path: 'My Drive / Finance / Invoices' }"
 }
@@ -12513,7 +12513,7 @@ id: toolu_01Jt8sMy9hTPve9Gzxk9P6Tp
 tool_result
 id: toolu_01Jt8sMy9hTPve9Gzxk9P6Tp
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12526,7 +12526,7 @@ tool_use Bash
 id: toolu_01BXFJb33BAaCEChjy7S1fFb
 ```json
 {
-  "command": "grep -n \"id: 'f1'\\|onSelect).toHaveBeenCalledWith\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "command": "grep -n \"id: 'f1'\\|onSelect).toHaveBeenCalledWith\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "description": "Find the assertion that needs updating"
 }
 ```
@@ -12546,7 +12546,7 @@ tool_use Read
 id: toolu_013VjTkpKqMDsw8dQYxq69Zd
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "offset": 65,
   "limit": 10
 }
@@ -12576,7 +12576,7 @@ id: toolu_01XmYKfHNrBzuns2ZyLviLpP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx",
   "old_string": "    expect(onSelect).toHaveBeenCalledWith({ id: 'f1', path: 'My Drive / Finance' })",
   "new_string": "    expect(onSelect).toHaveBeenCalledWith({ driveFolderId: 'f1', path: 'My Drive / Finance' })"
 }
@@ -12587,7 +12587,7 @@ id: toolu_01XmYKfHNrBzuns2ZyLviLpP
 tool_result
 id: toolu_01XmYKfHNrBzuns2ZyLviLpP
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveFolderPickerModal.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12600,7 +12600,7 @@ tool_use Bash
 id: toolu_01UpSSobAteMPyZxJfoWJxFA
 ```json
 {
-  "command": "grep -n \"id:\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "command": "grep -n \"id:\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "description": "Check index.test.tsx for id references"
 }
 ```
@@ -12623,7 +12623,7 @@ tool_use Bash
 id: toolu_016Pvqb9wZdGCh7A57E446EH
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
   "description": "Typecheck after renaming DriveAssignment.id to driveFolderId"
 }
 ```
@@ -12657,7 +12657,7 @@ id: toolu_01Pak5CNzAjgsBmddsVPhyut
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useDriveAssignments.test.ts  (5 tests) 15ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 16ms
@@ -12685,7 +12685,7 @@ tool_use Bash
 id: toolu_01ASSZWmqWSu5uvpb9khtuyW
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status --short && echo \"---diff stat---\" && git diff --stat",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status --short && echo \"---diff stat---\" && git diff --stat",
   "description": "Check status and diff before committing Step 3d"
 }
 ```
@@ -12757,7 +12757,7 @@ tool_use Bash
 id: toolu_015e1k6Y5SweGGVbjjuxyDSh
 ```json
 {
-  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nAdd Drive Upload Step 3d: Drive folder assignment UI\n\nEach subfolder group and each file in the Step 2b tree now has a\nDrive destination field. A subfolder's assignment propagates to its\nfiles and nested subgroups; a file (or deeper subgroup) can override\nit, and a clear control resets an explicit assignment back to\ninherited/not-assigned. Effective assignment resolves bottom-up as a\nplain prop (own value, else whatever the parent already resolved to)\nrather than needing a separate resolution function.\n\nuseDriveAssignments holds the two assignment maps (by group path, by\nfile path) as local component state - nothing here touches Drive\nitself, so no RPC mocking is needed to test it. A single\nDriveFolderPickerModal instance is now targeted by whichever field\nwas clicked, replacing the temporary test button from Step 3b.\n\nDriveAssignment's Drive-side identifier field is named driveFolderId\nrather than id, so it reads unambiguously next to the local-side\ngroupKey/filePath keys used throughout this same code.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt",
+  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nAdd Drive Upload Step 3d: Drive folder assignment UI\n\nEach subfolder group and each file in the Step 2b tree now has a\nDrive destination field. A subfolder's assignment propagates to its\nfiles and nested subgroups; a file (or deeper subgroup) can override\nit, and a clear control resets an explicit assignment back to\ninherited/not-assigned. Effective assignment resolves bottom-up as a\nplain prop (own value, else whatever the parent already resolved to)\nrather than needing a separate resolution function.\n\nuseDriveAssignments holds the two assignment maps (by group path, by\nfile path) as local component state - nothing here touches Drive\nitself, so no RPC mocking is needed to test it. A single\nDriveFolderPickerModal instance is now targeted by whichever field\nwas clicked, replacing the temporary test button from Step 3b.\n\nDriveAssignment's Drive-side identifier field is named driveFolderId\nrather than id, so it reads unambiguously next to the local-side\ngroupKey/filePath keys used throughout this same code.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt",
   "description": "Commit Step 3d: Drive folder assignment UI"
 }
 ```
@@ -12816,7 +12816,7 @@ tool_use Read
 id: toolu_019GVdqptPuDp2zZbDyNu7ym
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx"
 }
 ```
 
@@ -12834,7 +12834,7 @@ tool_use Read
 id: toolu_017rHe9ZnKx5dTRYueaZkF2D
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts"
 }
 ```
 
@@ -12889,7 +12889,7 @@ id: toolu_01LDKPLL8TvYtf1nEUdUcBRq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts",
   "old_string": "export interface DriveAssignment {\n  driveFolderId: string\n  path: string\n}",
   "new_string": "export interface DriveAssignment {\n  driveFolderId: string\n  path: string\n}\n\n// Identifies what a picked Drive folder should be applied to: a subfolder\n// group (by its path key) or an individual file (by its filesystem path).\nexport type PickerTarget = { type: 'group'; key: string } | { type: 'file'; path: string }"
 }
@@ -12900,7 +12900,7 @@ id: toolu_01LDKPLL8TvYtf1nEUdUcBRq
 tool_result
 id: toolu_01LDKPLL8TvYtf1nEUdUcBRq
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12913,7 +12913,7 @@ tool_use Write
 id: toolu_01VCDRXa7yTbhqgHduxWz5Rb
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
   "content": "import { Box, Text } from '@mantine/core'\nimport { DriveAssignment } from './useDriveAssignments'\n\ninterface Props {\n  label: string\n  assignment: DriveAssignment | null\n  isOwn: boolean\n  onPick: () => void\n  onClear: () => void\n}\n\nexport default function DriveAssignmentField({ label, assignment, isOwn, onPick, onClear }: Props) {\n  return (\n    <Box style={{ display: 'flex', alignItems: 'center', gap: 4 }}>\n      <button\n        type=\"button\"\n        onClick={onPick}\n        aria-label={`Set Drive folder for ${label}`}\n        style={{\n          flex: 1,\n          textAlign: 'left',\n          border: 'none',\n          background: 'transparent',\n          padding: 0,\n          cursor: 'pointer',\n          fontFamily: 'inherit',\n          minWidth: 0,\n        }}\n      >\n        <Text size=\"xs\" c=\"dimmed\" fs={!isOwn && assignment ? 'italic' : undefined} truncate=\"end\">\n          Drive: {assignment ? assignment.path : 'not assigned'}\n        </Text>\n      </button>\n      {isOwn && (\n        <button\n          type=\"button\"\n          onClick={onClear}\n          aria-label={`Clear Drive folder for ${label}`}\n          style={{ border: 'none', background: 'transparent', padding: 0, cursor: 'pointer', flexShrink: 0 }}\n        >\n          <Text size=\"xs\" c=\"dimmed\">✕</Text>\n        </button>\n      )}\n    </Box>\n  )\n}\n"
 }
 ```
@@ -12923,7 +12923,7 @@ id: toolu_01VCDRXa7yTbhqgHduxWz5Rb
 tool_result
 id: toolu_01VCDRXa7yTbhqgHduxWz5Rb
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12936,7 +12936,7 @@ tool_use Write
 id: toolu_013M5WYR927XSzNwumRyDT4T
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
   "content": "import { Box, Stack, Text, Tooltip } from '@mantine/core'\nimport DriveAssignmentField from './DriveAssignmentField'\nimport { LocalFile } from './useFileTree'\nimport { DriveAssignment, DriveAssignmentsHandle, PickerTarget } from './useDriveAssignments'\nimport { formatFileSize } from '../../utils'\n\ninterface Props {\n  files: LocalFile[]\n  assignments: DriveAssignmentsHandle\n  inheritedAssignment: DriveAssignment | null\n  onPick: (target: PickerTarget) => void\n}\n\nexport default function FileList({ files, assignments, inheritedAssignment, onPick }: Props) {\n  return (\n    <Stack gap={6} mt={4}>\n      {files.map(file => {\n        const own = assignments.fileOverrides.get(file.path) ?? null\n        const effective = own ?? inheritedAssignment\n        return (\n          <Box key={file.path} pl={4}>\n            <Text size=\"sm\" c={file.corrupt ? 'red' : undefined}>\n              📄 {file.name}\n              {file.corrupt && (\n                <Tooltip label=\"Could not read this file — it may be corrupt or not a valid PDF\">\n                  <span> ⚠️</span>\n                </Tooltip>\n              )}\n            </Text>\n            <Text size=\"xs\" c=\"dimmed\">\n              {file.corrupt ? 'Unreadable' : `${file.pageCount} pages`} · {formatFileSize(file.sizeBytes)}\n            </Text>\n            <DriveAssignmentField\n              label={file.name}\n              assignment={effective}\n              isOwn={own !== null}\n              onPick={() => onPick({ type: 'file', path: file.path })}\n              onClear={() => assignments.clearFileOverride(file.path)}\n            />\n          </Box>\n        )\n      })}\n    </Stack>\n  )\n}\n"
 }
 ```
@@ -12946,7 +12946,7 @@ id: toolu_013M5WYR927XSzNwumRyDT4T
 tool_result
 id: toolu_013M5WYR927XSzNwumRyDT4T
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12959,7 +12959,7 @@ tool_use Write
 id: toolu_01G4qfptnbXPQmjuaLzsZbmf
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx",
   "content": "import { Box, Stack, Text } from '@mantine/core'\nimport DriveAssignmentField from './DriveAssignmentField'\nimport FileList from './FileList'\nimport { LocalFileGroup } from './useFileTree'\nimport { DriveAssignment, DriveAssignmentsHandle, PickerTarget } from './useDriveAssignments'\n\nconst INDENT_PER_LEVEL = 16\n\ninterface Props {\n  group: LocalFileGroup\n  groupKey: string\n  collapsedGroups: Set<string>\n  onToggle: (groupKey: string) => void\n  assignments: DriveAssignmentsHandle\n  inheritedAssignment: DriveAssignment | null\n  onPick: (target: PickerTarget) => void\n}\n\nexport default function GroupNode({ group, groupKey, collapsedGroups, onToggle, assignments, inheritedAssignment, onPick }: Props) {\n  const expanded = !collapsedGroups.has(groupKey)\n  const own = assignments.groupAssignments.get(groupKey) ?? null\n  const effective = own ?? inheritedAssignment\n\n  return (\n    <Box>\n      <button\n        type=\"button\"\n        onClick={() => onToggle(groupKey)}\n        aria-expanded={expanded}\n        style={{\n          display: 'flex',\n          alignItems: 'center',\n          gap: 6,\n          width: '100%',\n          border: 'none',\n          background: 'transparent',\n          padding: 0,\n          cursor: 'pointer',\n          textAlign: 'left',\n          fontFamily: 'inherit',\n        }}\n      >\n        <Text size=\"xs\" c=\"dimmed\" style={{ width: 10, flexShrink: 0 }}>{expanded ? '▼' : '▶'}</Text>\n        <Text size=\"sm\" fw={600}>📁 {group.name}</Text>\n      </button>\n      <DriveAssignmentField\n        label={group.name}\n        assignment={effective}\n        isOwn={own !== null}\n        onPick={() => onPick({ type: 'group', key: groupKey })}\n        onClear={() => assignments.clearGroupAssignment(groupKey)}\n      />\n      {expanded && (\n        <Box pl={INDENT_PER_LEVEL}>\n          <FileList files={group.files} assignments={assignments} inheritedAssignment={effective} onPick={onPick} />\n          {group.subgroups.length > 0 && (\n            <Stack gap={8} mt={4}>\n              {group.subgroups.map(sub => (\n                <GroupNode\n                  key={sub.name}\n                  group={sub}\n                  groupKey={`${groupKey}/${sub.name}`}\n                  collapsedGroups={collapsedGroups}\n                  onToggle={onToggle}\n                  assignments={assignments}\n                  inheritedAssignment={effective}\n                  onPick={onPick}\n                />\n              ))}\n            </Stack>\n          )}\n        </Box>\n      )}\n    </Box>\n  )\n}\n"
 }
 ```
@@ -12969,7 +12969,7 @@ id: toolu_01G4qfptnbXPQmjuaLzsZbmf
 tool_result
 id: toolu_01G4qfptnbXPQmjuaLzsZbmf
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12982,7 +12982,7 @@ tool_use Write
 id: toolu_01B1vCTmb3aSyrF1p6vt9YmQ
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx",
   "content": "import { useState } from 'react'\nimport { Box, Button, Loader, Stack, Text } from '@mantine/core'\nimport ClippedPath from '../ClippedPath'\nimport DriveFolderPickerModal from './DriveFolderPickerModal'\nimport GroupNode from './GroupNode'\nimport FileList from './FileList'\nimport { useFileTree } from './useFileTree'\nimport { useDriveAssignments, DriveAssignment, PickerTarget } from './useDriveAssignments'\n\nconst LEFT_PANEL_WIDTH = 300\n\nexport default function DriveUploadMode() {\n  const { root, tree, loading, error, pickRoot } = useFileTree()\n  const isEmpty = tree !== null && tree.files.length === 0 && tree.subgroups.length === 0\n\n  // Groups start expanded; presence in this set (keyed by the group's full\n  // path, e.g. \"invoices/2026\") means collapsed.\n  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())\n  const toggleGroup = (groupKey: string) => {\n    setCollapsedGroups(prev => {\n      const next = new Set(prev)\n      if (next.has(groupKey)) next.delete(groupKey); else next.add(groupKey)\n      return next\n    })\n  }\n\n  const assignments = useDriveAssignments()\n  const [pickerTarget, setPickerTarget] = useState<PickerTarget | null>(null)\n  const handlePicked = (folder: DriveAssignment) => {\n    if (pickerTarget?.type === 'group') assignments.setGroupAssignment(pickerTarget.key, folder)\n    else if (pickerTarget?.type === 'file') assignments.setFileOverride(pickerTarget.path, folder)\n    setPickerTarget(null)\n  }\n\n  return (\n    <Box style={{ display: 'flex', height: '100%' }}>\n      <Box\n        style={{\n          width: LEFT_PANEL_WIDTH,\n          flexShrink: 0,\n          height: '100%',\n          overflowY: 'auto',\n          borderRight: '1px solid var(--mantine-color-gray-3)',\n          padding: 12,\n        }}\n      >\n        <Box mb=\"sm\">\n          <ClippedPath path={root} onClick={pickRoot} placeholder=\"Choose root folder…\" />\n        </Box>\n\n        <DriveFolderPickerModal\n          opened={pickerTarget […]
 
 > TOOL
@@ -12990,7 +12990,7 @@ id: toolu_01B1vCTmb3aSyrF1p6vt9YmQ
 tool_result
 id: toolu_01B1vCTmb3aSyrF1p6vt9YmQ
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13003,7 +13003,7 @@ tool_use Bash
 id: toolu_016d3Gpd52qzBtQrpRuLVBf8
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
   "description": "Typecheck after splitting index.tsx into separate component files"
 }
 ```
@@ -13041,7 +13041,7 @@ id: toolu_015eSe4SKaPyPEDLqor3LTHe
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useDriveAssignments.test.ts  (5 tests) 17ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 18ms
@@ -13065,7 +13065,7 @@ tool_use Bash
 id: toolu_0159FouGfNYuvv8b7QQ1QBL8
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... && go vet ./... 2>&1 | tail -10 && echo OK",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... && go vet ./... 2>&1 | tail -10 && echo OK",
   "description": "Confirm Go side unaffected"
 }
 ```
@@ -13161,7 +13161,7 @@ tool_use Bash
 id: toolu_01JUTjk8e3HFRM3K77NcyHLW
 ```json
 {
-  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nSplit DriveUploadMode/index.tsx into one file per component\n\nindex.tsx had grown to four components (DriveUploadMode, GroupNode,\nFileList, DriveAssignmentField) in one file. Split GroupNode, FileList,\nand DriveAssignmentField into their own files, matching the existing\nconvention in SplitMode/MergeMode of one component per file. index.tsx\nnow holds only the top-level DriveUploadMode component.\n\nPickerTarget moved into useDriveAssignments.ts (it describes what a\npicked Drive folder applies to, alongside DriveAssignment) rather than\nstaying in index.tsx, since GroupNode.tsx and FileList.tsx both need\nit and importing it back from index.tsx would be circular.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt",
+  "command": "cat > /tmp/commit_msg.txt <<'EOF'\nSplit DriveUploadMode/index.tsx into one file per component\n\nindex.tsx had grown to four components (DriveUploadMode, GroupNode,\nFileList, DriveAssignmentField) in one file. Split GroupNode, FileList,\nand DriveAssignmentField into their own files, matching the existing\nconvention in SplitMode/MergeMode of one component per file. index.tsx\nnow holds only the top-level DriveUploadMode component.\n\nPickerTarget moved into useDriveAssignments.ts (it describes what a\npicked Drive folder applies to, alongside DriveAssignment) rather than\nstaying in index.tsx, since GroupNode.tsx and FileList.tsx both need\nit and importing it back from index.tsx would be circular.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\nEOF\ngit commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt",
   "description": "Commit the DriveUploadMode component split"
 }
 ```
@@ -13215,7 +13215,7 @@ tool_use Bash
 id: toolu_01EJ3dhhfH1PwHpHzDVXQD4s
 ```json
 {
-  "command": "for f in ~/.claude/settings.json /Users/ben/git/paper-scan-processor/.claude/settings.json /Users/ben/git/paper-scan-processor/.claude/settings.local.json; do\n  echo \"=== $f ===\"\n  if [ -f \"$f\" ]; then cat \"$f\"; else echo \"(missing)\"; fi\n  echo\ndone",
+  "command": "for f in ~/.claude/settings.json /home/<USER>/git/paper-scan-processor/.claude/settings.json /home/<USER>/git/paper-scan-processor/.claude/settings.local.json; do\n  echo \"=== $f ===\"\n  if [ -f \"$f\" ]; then cat \"$f\"; else echo \"(missing)\"; fi\n  echo\ndone",
   "description": "Inspect existing settings files at user, project, and local scope"
 }
 ```
@@ -13225,7 +13225,7 @@ id: toolu_01EJ3dhhfH1PwHpHzDVXQD4s
 tool_result
 id: toolu_01EJ3dhhfH1PwHpHzDVXQD4s
 ```
-=== /Users/ben/.claude/settings.json ===
+=== /home/<USER>/.claude/settings.json ===
 {
   "statusLine": {
     "type": "command",
@@ -13247,7 +13247,7 @@ id: toolu_01EJ3dhhfH1PwHpHzDVXQD4s
   }
 }
 
-=== /Users/ben/git/paper-scan-processor/.claude/settings.json ===
+=== /home/<USER>/git/paper-scan-processor/.claude/settings.json ===
 {
   "hooks": {
     "PostToolUse": [
@@ -13348,7 +13348,7 @@ tool_use Read
 id: toolu_01StevEZCAzYhxT1Tx2qfsz3
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/.claude/settings.local.json"
+  "file_path": "/home/<USER>/git/paper-scan-processor/.claude/settings.local.json"
 }
 ```
 
@@ -13386,7 +13386,7 @@ id: toolu_017rcj1oa1zThEFwMiQKDqzQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/.claude/settings.local.json",
+  "file_path": "/home/<USER>/git/paper-scan-processor/.claude/settings.local.json",
   "old_string": "      \"Bash(npx vite *)\"\n    ]\n  }\n}",
   "new_string": "      \"Bash(npx vite *)\"\n    ],\n    \"ask\": [\n      \"Bash(git commit *)\"\n    ]\n  }\n}"
 }
@@ -13397,7 +13397,7 @@ id: toolu_017rcj1oa1zThEFwMiQKDqzQ
 tool_result
 id: toolu_017rcj1oa1zThEFwMiQKDqzQ
 ```
-The file /Users/ben/git/paper-scan-processor/.claude/settings.local.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/.claude/settings.local.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13406,7 +13406,7 @@ tool_use Bash
 id: toolu_019sJhwdVF2RkKj4TWLsMZGE
 ```json
 {
-  "command": "jq -e '.permissions.ask[]' /Users/ben/git/paper-scan-processor/.claude/settings.local.json",
+  "command": "jq -e '.permissions.ask[]' /home/<USER>/git/paper-scan-processor/.claude/settings.local.json",
   "description": "Validate the settings JSON and confirm the new ask rule"
 }
 ```
@@ -13445,7 +13445,7 @@ tool_use Bash
 id: toolu_01RUrETtTLCYCN1tme1Tamfp
 ```json
 {
-  "command": "rm /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts",
+  "command": "rm /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/useDriveAssignments.test.ts",
   "description": "Delete the low-value hook test file"
 }
 ```
@@ -13468,7 +13468,7 @@ tool_use Bash
 id: toolu_01EePkHepQZyihkEJQPHDFdJ
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm test 2>&1 | tail -30",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm test 2>&1 | tail -30",
   "description": "Run frontend tests after removing the hook test"
 }
 ```
@@ -13482,7 +13482,7 @@ id: toolu_01EePkHepQZyihkEJQPHDFdJ
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 20ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 20ms
@@ -13509,7 +13509,7 @@ tool_use Bash
 id: toolu_01JhVvNDeEV86RnVzZXanmXX
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status --short",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status --short",
   "description": "Check status before committing the test removal"
 }
 ```
@@ -13595,7 +13595,7 @@ tool_use Read
 id: toolu_01SyhYXwKvthTou1qAEenqLe
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
 }
 ```
 
@@ -13658,7 +13658,7 @@ tool_use Read
 id: toolu_01SzSbiUinSbn2g2EW79i8KA
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -13722,7 +13722,7 @@ tool_use Write
 id: toolu_011Z1WtwGUgGTxFTn71miZGy
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
   "content": "import { Badge, Box } from '@mantine/core'\nimport { DriveAssignment } from './useDriveAssignments'\n\ninterface Props {\n  label: string\n  assignment: DriveAssignment | null\n  isOwn: boolean\n  onPick: () => void\n  onClear: () => void\n}\n\nexport default function DriveAssignmentField({ label, assignment, isOwn, onPick, onClear }: Props) {\n  return (\n    <Box mt={4} style={{ display: 'flex', alignItems: 'center', gap: 4, maxWidth: '100%' }}>\n      <Badge\n        component=\"button\"\n        type=\"button\"\n        onClick={onPick}\n        aria-label={`Set Drive folder for ${label}`}\n        color={assignment ? 'blue' : 'gray'}\n        variant={isOwn ? 'light' : 'outline'}\n        size=\"sm\"\n        radius=\"sm\"\n        style={{ cursor: 'pointer', fontWeight: isOwn ? 600 : 400, maxWidth: '100%', flexShrink: 1 }}\n        styles={{ label: { overflow: 'hidden', textOverflow: 'ellipsis' } }}\n      >\n        📁 {assignment ? assignment.path : 'Not assigned'}\n      </Badge>\n      {isOwn && (\n        <button\n          type=\"button\"\n          onClick={onClear}\n          aria-label={`Clear Drive folder for ${label}`}\n          style={{ border: 'none', background: 'transparent', padding: 0, cursor: 'pointer', flexShrink: 0, opacity: 0.6 }}\n        >\n          ✕\n        </button>\n      )}\n    </Box>\n  )\n}\n"
 }
 ```
@@ -13732,7 +13732,7 @@ id: toolu_011Z1WtwGUgGTxFTn71miZGy
 tool_result
 id: toolu_011Z1WtwGUgGTxFTn71miZGy
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13745,7 +13745,7 @@ tool_use Read
 id: toolu_01QTrDjCChMeZVH2GtWn7kRF
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
 }
 ```
 
@@ -13764,7 +13764,7 @@ id: toolu_01BZA2VwnRsZc5S3TBPjuW9D
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
   "old_string": "    <Stack gap={6} mt={4}>\n      {files.map(file => {\n        const own = assignments.fileOverrides.get(file.path) ?? null\n        const effective = own ?? inheritedAssignment\n        return (\n          <Box key={file.path} pl={4}>",
   "new_string": "    <Stack gap={10} mt={4}>\n      {files.map(file => {\n        const own = assignments.fileOverrides.get(file.path) ?? null\n        const effective = own ?? inheritedAssignment\n        return (\n          <Box key={file.path} pl={4}>"
 }
@@ -13775,7 +13775,7 @@ id: toolu_01BZA2VwnRsZc5S3TBPjuW9D
 tool_result
 id: toolu_01BZA2VwnRsZc5S3TBPjuW9D
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13788,7 +13788,7 @@ tool_use Bash
 id: toolu_01DTa4xSugfrQE1JAQFBnarh
 ```json
 {
-  "command": "grep -n \"not assigned\" /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "command": "grep -n \"not assigned\" /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "description": "Find test assertions referencing the old lowercase text"
 }
 ```
@@ -13810,7 +13810,7 @@ tool_use Read
 id: toolu_01Cw3eiUnL7JD9De92KUXgQF
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "offset": 78,
   "limit": 12
 }
@@ -13842,7 +13842,7 @@ id: toolu_01FCqweDQEnTtPpa2zWrzNZt
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx",
   "old_string": "toContain('not assigned')",
   "new_string": "toContain('Not assigned')"
 }
@@ -13853,7 +13853,7 @@ id: toolu_01FCqweDQEnTtPpa2zWrzNZt
 tool_result
 id: toolu_01FCqweDQEnTtPpa2zWrzNZt
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/index.test.tsx has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13866,7 +13866,7 @@ tool_use Bash
 id: toolu_017pVAKZUvtJTJKY5U59qcKx
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
   "description": "Typecheck after redesigning DriveAssignmentField"
 }
 ```
@@ -13900,7 +13900,7 @@ id: toolu_01VZ3XAgNV4upRmb7izA599s
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 17ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 17ms
@@ -13923,7 +13923,7 @@ tool_use Bash
 id: toolu_01JTxSvR5pj1wtfJbkUWycF1
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... 2>&1 | tail -10 && echo OK",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... 2>&1 | tail -10 && echo OK",
   "description": "Confirm Go side unaffected"
 }
 ```
@@ -13964,7 +13964,7 @@ tool_use Read
 id: toolu_01HGXxHpFivCdQMnPtbZb889
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -14024,7 +14024,7 @@ id: toolu_017KWZqnuX7asfNQcZGSapHw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
   "old_string": "        style={{ cursor: 'pointer', fontWeight: isOwn ? 600 : 400, maxWidth: '100%', flexShrink: 1 }}\n        styles={{ label: { overflow: 'hidden', textOverflow: 'ellipsis' } }}",
   "new_string": "        style={{ cursor: 'pointer', fontWeight: isOwn ? 600 : 400, textTransform: 'none', maxWidth: '100%', flexShrink: 1 }}\n        styles={{ label: { overflow: 'hidden', textOverflow: 'ellipsis' } }}"
 }
@@ -14035,7 +14035,7 @@ id: toolu_017KWZqnuX7asfNQcZGSapHw
 tool_result
 id: toolu_017KWZqnuX7asfNQcZGSapHw
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14048,7 +14048,7 @@ tool_use Bash
 id: toolu_016WknCVMuvEU7J3Y8RAonDZ
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -60 && npm test 2>&1 | tail -30",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -60 && npm test 2>&1 | tail -30",
   "description": "Typecheck and test after removing badge uppercase transform"
 }
 ```
@@ -14066,7 +14066,7 @@ id: toolu_016WknCVMuvEU7J3Y8RAonDZ
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 15ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 16ms
@@ -14093,7 +14093,7 @@ tool_use Bash
 id: toolu_01Lj6EcYUmg1R5wKVuyPj456
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status --short && echo \"---diff---\" && git diff --stat",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status --short && echo \"---diff---\" && git diff --stat",
   "description": "Check status before committing FileList design changes"
 }
 ```
@@ -14125,7 +14125,7 @@ tool_use Bash
 id: toolu_01YPaf8NoXKxC2t54dsqRaj5
 ```json
 {
-  "command": "git add frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx \\\n  frontend/src/components/DriveUploadMode/FileList.tsx \\\n  frontend/src/components/DriveUploadMode/index.test.tsx && \\\ngit commit -m \"Restyle Drive assignment field as a colored badge\n\nPage count/size and the Drive destination used identical dimmed xs\ntext, so it was hard to scan which files had a Drive folder assigned.\nDriveAssignmentField is now a Badge: blue when assigned (light for an\nexplicit assignment, outline for inherited), gray outline for not\nassigned, with the default all-caps transform disabled since it hurt\nlegibility on longer Drive paths. Also bumped FileList's per-file\ngap so each file's name/metadata/badge reads as one group.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\"",
+  "command": "git add frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx \\\n  frontend/src/components/DriveUploadMode/FileList.tsx \\\n  frontend/src/components/DriveUploadMode/index.test.tsx && \\\ngit commit -m \"Restyle Drive assignment field as a colored badge\n\nPage count/size and the Drive destination used identical dimmed xs\ntext, so it was hard to scan which files had a Drive folder assigned.\nDriveAssignmentField is now a Badge: blue when assigned (light for an\nexplicit assignment, outline for inherited), gray outline for not\nassigned, with the default all-caps transform disabled since it hurt\nlegibility on longer Drive paths. Also bumped FileList's per-file\ngap so each file's name/metadata/badge reads as one group.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\"",
   "description": "Commit the FileList/DriveAssignmentField design changes"
 }
 ```
@@ -14185,7 +14185,7 @@ tool_use Read
 id: toolu_019XeBgysH2pmuJY2nKDKXez
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx"
 }
 ```
 
@@ -14245,7 +14245,7 @@ id: toolu_01Uc2TMxSjUj5aK8qYQERgx8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx",
   "old_string": "export default function DriveAssignmentField({ label, assignment, isOwn, onPick, onClear }: Props) {\n  return (\n    <Box mt={4} style={{ display: 'flex', alignItems: 'center', gap: 4, maxWidth: '100%' }}>\n      <Badge\n        component=\"button\"\n        type=\"button\"\n        onClick={onPick}\n        aria-label={`Set Drive folder for ${label}`}\n        color={assignment ? 'blue' : 'gray'}\n        variant={isOwn ? 'light' : 'outline'}\n        size=\"sm\"\n        radius=\"sm\"\n        style={{ cursor: 'pointer', fontWeight: isOwn ? 600 : 400, textTransform: 'none', maxWidth: '100%', flexShrink: 1 }}\n        styles={{ label: { overflow: 'hidden', textOverflow: 'ellipsis' } }}\n      >\n        📁 {assignment ? assignment.path : 'Not assigned'}\n      </Badge>\n      {isOwn && (\n        <button\n          type=\"button\"\n          onClick={onClear}\n          aria-label={`Clear Drive folder for ${label}`}\n          style={{ border: 'none', background: 'transparent', padding: 0, cursor: 'pointer', flexShrink: 0, opacity: 0.6 }}\n        >\n          ✕\n        </button>\n      )}\n    </Box>\n  )\n}",
   "new_string": "// Pinned to the right of its row (filename or folder header) by the caller,\n// so badges land at a consistent horizontal position regardless of nesting\n// depth - scannable as a column rather than a per-row detail.\nexport default function DriveAssignmentField({ label, assignment, isOwn, onPick, onClear }: Props) {\n  return (\n    <Box style={{ display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>\n      <Badge\n        component=\"button\"\n        type=\"button\"\n        onClick={onPick}\n        aria-label={`Set Drive folder for ${label}`}\n        color={assignment ? 'blue' : 'gray'}\n        variant={isOwn […]
 
@@ -14254,7 +14254,7 @@ id: toolu_01Uc2TMxSjUj5aK8qYQERgx8
 tool_result
 id: toolu_01Uc2TMxSjUj5aK8qYQERgx8
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14267,7 +14267,7 @@ tool_use Read
 id: toolu_01UBcQ5rrioZU8hZLwcQnDZN
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
 }
 ```
 
@@ -14326,7 +14326,7 @@ tool_use Write
 id: toolu_01GTjF6e1UckgG5RaYJAnAmA
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
   "content": "import { Box, Group, Stack, Text, Tooltip } from '@mantine/core'\nimport DriveAssignmentField from './DriveAssignmentField'\nimport { LocalFile } from './useFileTree'\nimport { DriveAssignment, DriveAssignmentsHandle, PickerTarget } from './useDriveAssignments'\nimport { formatFileSize } from '../../utils'\n\ninterface Props {\n  files: LocalFile[]\n  assignments: DriveAssignmentsHandle\n  inheritedAssignment: DriveAssignment | null\n  onPick: (target: PickerTarget) => void\n}\n\nexport default function FileList({ files, assignments, inheritedAssignment, onPick }: Props) {\n  return (\n    <Stack gap={10} mt={4}>\n      {files.map(file => {\n        const own = assignments.fileOverrides.get(file.path) ?? null\n        const effective = own ?? inheritedAssignment\n        return (\n          <Box key={file.path} pl={4}>\n            <Group gap={8} wrap=\"nowrap\" align=\"center\">\n              <Group gap={4} wrap=\"nowrap\" style={{ flex: 1, minWidth: 0 }}>\n                <Text size=\"sm\" c={file.corrupt ? 'red' : undefined} truncate=\"end\">\n                  📄 {file.name}\n                </Text>\n                {file.corrupt && (\n                  <Tooltip label=\"Could not read this file — it may be corrupt or not a valid PDF\">\n                    <span>⚠️</span>\n                  </Tooltip>\n                )}\n              </Group>\n              <DriveAssignmentField\n                label={file.name}\n                assignment={effective}\n                isOwn={own !== null}\n                onPick={() => onPick({ type: 'file', path: file.path })}\n                onClear={() => assignments.clearFileOverride(file.path)}\n              />\n            </Group>\n            <Text size=\"xs\" c=\"dimmed\" mt={2}>\n              {file.corrupt ? 'Unreadable' : `${file.pageCount} pages`} · {formatFileSize(file.sizeBytes)}\n            </Text>\n          </Box>\n        )\n      })}\n    </Stack>\n  )\n}\n"
 }
 ```
@@ -14336,7 +14336,7 @@ id: toolu_01GTjF6e1UckgG5RaYJAnAmA
 tool_result
 id: toolu_01GTjF6e1UckgG5RaYJAnAmA
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14349,7 +14349,7 @@ tool_use Read
 id: toolu_0155LNrCuE11JVHRnQ375v6D
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx"
 }
 ```
 
@@ -14415,7 +14415,7 @@ tool_use Write
 id: toolu_01898Uqu3mSvw83H2uPKYAnr
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx",
   "content": "import { Box, Group, Stack, Text } from '@mantine/core'\nimport DriveAssignmentField from './DriveAssignmentField'\nimport FileList from './FileList'\nimport { LocalFileGroup } from './useFileTree'\nimport { DriveAssignment, DriveAssignmentsHandle, PickerTarget } from './useDriveAssignments'\n\nconst INDENT_PER_LEVEL = 16\n\ninterface Props {\n  group: LocalFileGroup\n  groupKey: string\n  collapsedGroups: Set<string>\n  onToggle: (groupKey: string) => void\n  assignments: DriveAssignmentsHandle\n  inheritedAssignment: DriveAssignment | null\n  onPick: (target: PickerTarget) => void\n}\n\nexport default function GroupNode({ group, groupKey, collapsedGroups, onToggle, assignments, inheritedAssignment, onPick }: Props) {\n  const expanded = !collapsedGroups.has(groupKey)\n  const own = assignments.groupAssignments.get(groupKey) ?? null\n  const effective = own ?? inheritedAssignment\n\n  return (\n    <Box>\n      <Group gap={8} wrap=\"nowrap\" align=\"center\">\n        <button\n          type=\"button\"\n          onClick={() => onToggle(groupKey)}\n          aria-expanded={expanded}\n          style={{\n            display: 'flex',\n            alignItems: 'center',\n            gap: 6,\n            flex: 1,\n            minWidth: 0,\n            border: 'none',\n            background: 'transparent',\n            padding: 0,\n            cursor: 'pointer',\n            textAlign: 'left',\n            fontFamily: 'inherit',\n          }}\n        >\n          <Text size=\"xs\" c=\"dimmed\" style={{ width: 10, flexShrink: 0 }}>{expanded ? '▼' : '▶'}</Text>\n          <Text size=\"sm\" fw={600} truncate=\"end\">📁 {group.name}</Text>\n        </button>\n        <DriveAssignmentField\n          label={group.name}\n          assignment={effective}\n          isOwn={own !== null}\n          onPick={() => onPick({ type: 'group', key: groupKey })}\n          onClear={() => assignments.clearGroupAssignment(groupKey)}\n        />\n      </Group>\n      {expanded && (\n        <Box pl={INDENT_PER_LEVEL}>\n          <FileList files={group.files} assignments={assignments} inheritedAssignment={effective} onPick={onPick} />\n          {group.subgroups.length > 0 && (\n            <Stack gap={8} mt={4}>\n              {group.subgroups.map(sub => (\n                <GroupNode\n                  key={sub.name}\n                  group={sub}\n                  groupKey={`${groupKey}/${sub.name}`}\n                  collapsedGroups={collapsedGroups}\n                  onToggle={onToggle}\n                  assignments={assignments}\n                  inheritedAssignment={effective}\n                  onPick={onPick}\n                />\n […]
 
 > TOOL
@@ -14423,7 +14423,7 @@ id: toolu_01898Uqu3mSvw83H2uPKYAnr
 tool_result
 id: toolu_01898Uqu3mSvw83H2uPKYAnr
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14436,7 +14436,7 @@ tool_use Bash
 id: toolu_01R67mvfVjhhtmBczWS3NQbW
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
   "description": "Typecheck after moving badge inline with name/header rows"
 }
 ```
@@ -14470,7 +14470,7 @@ id: toolu_016WMgdHqwNCji3Z1D3D61RG
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 16ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 17ms
@@ -14493,7 +14493,7 @@ tool_use Bash
 id: toolu_01YXyShYeD3xVKhHxrxx9tPb
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && go build ./... 2>&1 | tail -10 && echo OK",
+  "command": "cd /home/<USER>/git/paper-scan-processor && go build ./... 2>&1 | tail -10 && echo OK",
   "description": "Confirm Go side unaffected"
 }
 ```
@@ -14558,7 +14558,7 @@ tool_use Bash
 id: toolu_01WkKiXiBq9cYForqQuvh5mC
 ```json
 {
-  "command": "git add frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx \\\n  frontend/src/components/DriveUploadMode/FileList.tsx \\\n  frontend/src/components/DriveUploadMode/GroupNode.tsx && \\\ngit commit -m \"Pin Drive badge to the right of the name row, not stacked below\n\nFilename/folder name and the Drive badge now share one flex row (name\ntruncates via flex:1 + minWidth:0, badge is flexShrink:0 and capped at\nmaxWidth:140 so a long Drive path cannot crowd out the name). Since\nindentation only shifts the left edge, every badge - file or folder,\nat any nesting depth - now lands flush against the same right edge of\nthe panel, so Drive assignment status reads as a scannable column\ninstead of a per-row detail on its own line.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\"",
+  "command": "git add frontend/src/components/DriveUploadMode/DriveAssignmentField.tsx \\\n  frontend/src/components/DriveUploadMode/FileList.tsx \\\n  frontend/src/components/DriveUploadMode/GroupNode.tsx && \\\ngit commit -m \"Pin Drive badge to the right of the name row, not stacked below\n\nFilename/folder name and the Drive badge now share one flex row (name\ntruncates via flex:1 + minWidth:0, badge is flexShrink:0 and capped at\nmaxWidth:140 so a long Drive path cannot crowd out the name). Since\nindentation only shifts the left edge, every badge - file or folder,\nat any nesting depth - now lands flush against the same right edge of\nthe panel, so Drive assignment status reads as a scannable column\ninstead of a per-row detail on its own line.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\"",
   "description": "Commit the badge right-alignment change"
 }
 ```
@@ -14614,7 +14614,7 @@ tool_use Read
 id: toolu_01KAvaWArxaeRvMUCpfUijAt
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
 }
 ```
 
@@ -14675,7 +14675,7 @@ tool_use Read
 id: toolu_0176b6FZRjeRhpg6Zun1ZGjD
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/ClippedPath.tsx"
 }
 ```
 
@@ -14725,7 +14725,7 @@ tool_use Write
 id: toolu_01NqsCPxtjq3K3Esu5iPC58X
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
   "content": "import { useLayoutEffect, useRef, useState } from 'react'\nimport { Box, Group, Stack, Text, Tooltip } from '@mantine/core'\nimport DriveAssignmentField from './DriveAssignmentField'\nimport { LocalFile } from './useFileTree'\nimport { DriveAssignment, DriveAssignmentsHandle, PickerTarget } from './useDriveAssignments'\nimport { formatFileSize } from '../../utils'\n\ninterface Props {\n  files: LocalFile[]\n  assignments: DriveAssignmentsHandle\n  inheritedAssignment: DriveAssignment | null\n  onPick: (target: PickerTarget) => void\n}\n\nexport default function FileList({ files, assignments, inheritedAssignment, onPick }: Props) {\n  return (\n    <Stack gap={10} mt={4}>\n      {files.map(file => {\n        const own = assignments.fileOverrides.get(file.path) ?? null\n        const effective = own ?? inheritedAssignment\n        return (\n          <Box key={file.path} pl={4}>\n            <Group gap={8} wrap=\"nowrap\" align=\"center\">\n              <Group gap={4} wrap=\"nowrap\" style={{ flex: 1, minWidth: 0 }}>\n                <FileName file={file} />\n                {file.corrupt && (\n                  <Tooltip label=\"Could not read this file — it may be corrupt or not a valid PDF\">\n                    <span>⚠️</span>\n                  </Tooltip>\n                )}\n              </Group>\n              <DriveAssignmentField\n                label={file.name}\n                assignment={effective}\n                isOwn={own !== null}\n                onPick={() => onPick({ type: 'file', path: file.path })}\n                onClear={() => assignments.clearFileOverride(file.path)}\n              />\n            </Group>\n            <Text size=\"xs\" c=\"dimmed\" mt={2}>\n              {file.corrupt ? 'Unreadable' : `${file.pageCount} pages`} · {formatFileSize(file.sizeBytes)}\n            </Text>\n          </Box>\n        )\n      })}\n    </Stack>\n  )\n}\n\n// Only shows a tooltip when the name is actually truncated, matching the\n// pattern in ../ClippedPath.tsx.\nfunction FileName({ file }: { file: LocalFile }) {\n  const ref = useRef<HTMLParagraphElement>(null)\n  const […]
 
 > TOOL
@@ -14733,7 +14733,7 @@ id: toolu_01NqsCPxtjq3K3Esu5iPC58X
 tool_result
 id: toolu_01NqsCPxtjq3K3Esu5iPC58X
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14746,7 +14746,7 @@ tool_use Bash
 id: toolu_01VvwF3iRWvBqBb8gRvJ67N7
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
+  "command": "cd /home/<USER>/git/paper-scan-processor/frontend && npm run tsc 2>&1 | tail -80",
   "description": "Typecheck after adding truncation-aware tooltip for filenames"
 }
 ```
@@ -14780,7 +14780,7 @@ id: toolu_01HJaGXqgYivVWPaUQejZx9W
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 16ms
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 16ms
@@ -14811,7 +14811,7 @@ tool_use Write
 id: toolu_011mWQR1rquxifmWPHS6q8wW
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx",
   "content": "import { useLayoutEffect, useRef, useState } from 'react'\nimport { Text, TextProps, Tooltip } from '@mantine/core'\n\ninterface Props extends Omit<TextProps, 'children' | 'truncate'> {\n  children: React.ReactNode\n  label: string\n}\n\n// Renders children as truncating text, showing a tooltip with label only\n// once the text is actually clipped - same technique as ../ClippedPath.tsx.\n// label is separate from children since children may include a decorative\n// prefix (e.g. an icon) that shouldn't appear in the tooltip.\nexport default function TruncatedText({ children, label, ...textProps }: Props) {\n  const ref = useRef<HTMLParagraphElement>(null)\n  const [truncated, setTruncated] = useState(false)\n\n  useLayoutEffect(() => {\n    const el = ref.current\n    if (!el) return\n    setTruncated(el.scrollWidth > el.clientWidth)\n  }, [label])\n\n  const text = (\n    <Text ref={ref} truncate=\"end\" {...textProps}>\n      {children}\n    </Text>\n  )\n\n  return truncated ? <Tooltip label={label} openDelay={500}>{text}</Tooltip> : text\n}\n"
 }
 ```
@@ -14821,7 +14821,7 @@ id: toolu_011mWQR1rquxifmWPHS6q8wW
 tool_result
 id: toolu_011mWQR1rquxifmWPHS6q8wW
 ```
-File created successfully at: /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/TruncatedText.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14834,7 +14834,7 @@ tool_use Read
 id: toolu_01DhSm1Upbpp7JHsnfVoyCbZ
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx"
 }
 ```
 
@@ -14890,7 +14890,7 @@ tool_use Write
 id: toolu_01Jb4i49NedmKa7YaLyMbCBT
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx",
   "content": "import { Box, Group, Stack, Text, Tooltip } from '@mantine/core'\nimport DriveAssignmentField from './DriveAssignmentField'\nimport TruncatedText from './TruncatedText'\nimport { LocalFile } from './useFileTree'\nimport { DriveAssignment, DriveAssignmentsHandle, PickerTarget } from './useDriveAssignments'\nimport { formatFileSize } from '../../utils'\n\ninterface Props {\n  files: LocalFile[]\n  assignments: DriveAssignmentsHandle\n  inheritedAssignment: DriveAssignment | null\n  onPick: (target: PickerTarget) => void\n}\n\nexport default function FileList({ files, assignments, inheritedAssignment, onPick }: Props) {\n  return (\n    <Stack gap={10} mt={4}>\n      {files.map(file => {\n        const own = assignments.fileOverrides.get(file.path) ?? null\n        const effective = own ?? inheritedAssignment\n        return (\n          <Box key={file.path} pl={4}>\n            <Group gap={8} wrap=\"nowrap\" align=\"center\">\n              <Group gap={4} wrap=\"nowrap\" style={{ flex: 1, minWidth: 0 }}>\n                <TruncatedText label={file.name} size=\"sm\" c={file.corrupt ? 'red' : undefined}>\n                  📄 {file.name}\n                </TruncatedText>\n                {file.corrupt && (\n                  <Tooltip label=\"Could not read this file — it may be corrupt or not a valid PDF\">\n                    <span>⚠️</span>\n                  </Tooltip>\n                )}\n              </Group>\n              <DriveAssignmentField\n                label={file.name}\n                assignment={effective}\n                isOwn={own !== null}\n                onPick={() => onPick({ type: 'file', path: file.path })}\n                onClear={() => assignments.clearFileOverride(file.path)}\n              />\n            </Group>\n            <Text size=\"xs\" c=\"dimmed\" mt={2}>\n              {file.corrupt ? 'Unreadable' : `${file.pageCount} pages`} · {formatFileSize(file.sizeBytes)}\n            </Text>\n          </Box>\n        )\n      })}\n    </Stack>\n  )\n}\n"
 }
 ```
@@ -14900,7 +14900,7 @@ id: toolu_01Jb4i49NedmKa7YaLyMbCBT
 tool_result
 id: toolu_01Jb4i49NedmKa7YaLyMbCBT
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/FileList.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14913,7 +14913,7 @@ tool_use Read
 id: toolu_01CjHUXZRE7N31KHwGk6XEuZ
 ```json
 {
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx"
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx"
 }
 ```
 
@@ -14978,7 +14978,7 @@ id: toolu_01P5h7Shf5anNH75fgaN1the
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx",
   "old_string": "import { Box, Group, Stack, Text } from '@mantine/core'\nimport DriveAssignmentField from './DriveAssignmentField'\nimport FileList from './FileList'",
   "new_string": "import { Box, Group, Stack, Text } from '@mantine/core'\nimport DriveAssignmentField from './DriveAssignmentField'\nimport TruncatedText from './TruncatedText'\nimport FileList from './FileList'"
 }
@@ -14989,7 +14989,7 @@ id: toolu_01P5h7Shf5anNH75fgaN1the
 tool_result
 id: toolu_01P5h7Shf5anNH75fgaN1the
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14999,7 +14999,7 @@ id: toolu_018pWsxUfV18wgJhtXKeP2yx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx",
+  "file_path": "/home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx",
   "old_string": "          <Text size=\"xs\" c=\"dimmed\" style={{ width: 10, flexShrink: 0 }}>{expanded ? '▼' : '▶'}</Text>\n          <Text size=\"sm\" fw={600} truncate=\"end\">📁 {group.name}</Text>",
   "new_string": "          <Text size=\"xs\" c=\"dimmed\" style={{ width: 10, flexShrink: 0 }}>{expanded ? '▼' : '▶'}</Text>\n          <TruncatedText label={group.name} size=\"sm\" fw={600}>📁 {group.name}</TruncatedText>"
 }
@@ -15010,7 +15010,7 @@ id: toolu_018pWsxUfV18wgJhtXKeP2yx
 tool_result
 id: toolu_018pWsxUfV18wgJhtXKeP2yx
 ```
-The file /Users/ben/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/git/paper-scan-processor/frontend/src/components/DriveUploadMode/GroupNode.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15057,7 +15057,7 @@ id: toolu_01G2orBkGDTkn2fQcoGvkHkE
 > vitest run
 
 
- RUN  v0.34.6 /Users/ben/git/paper-scan-processor/frontend
+ RUN  v0.34.6 /home/<USER>/git/paper-scan-processor/frontend
 
  ✓ src/components/DriveUploadMode/useFileTree.test.ts  (4 tests) 18ms
  ✓ src/components/SplitMode/useOutputFiles.test.ts  (6 tests) 17ms
@@ -15089,7 +15089,7 @@ tool_use Bash
 id: toolu_01LEBGCP3qemsteUUNFzMgHn
 ```json
 {
-  "command": "cd /Users/ben/git/paper-scan-processor && git status --short && echo \"---diff stat---\" && git diff --stat",
+  "command": "cd /home/<USER>/git/paper-scan-processor && git status --short && echo \"---diff stat---\" && git diff --stat",
   "description": "Check status before committing TruncatedText extraction"
 }
 ```
@@ -15120,7 +15120,7 @@ tool_use Bash
 id: toolu_01H2hsse2kAmSJA3Z7tN2xog
 ```json
 {
-  "command": "git add frontend/src/components/DriveUploadMode/TruncatedText.tsx \\\n  frontend/src/components/DriveUploadMode/FileList.tsx \\\n  frontend/src/components/DriveUploadMode/GroupNode.tsx && \\\ngit commit -m \"Add openDelay to truncated-name tooltips; extract shared TruncatedText\n\nSame truncation-tooltip logic was needed for both file names and\nfolder names, so it moved into a shared TruncatedText component\n(measures clipping the same way ../ClippedPath.tsx does, only shows\na tooltip when actually truncated) instead of duplicating it. Added\nopenDelay=500 to match ClippedPath's existing tooltip delay.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\"",
+  "command": "git add frontend/src/components/DriveUploadMode/TruncatedText.tsx \\\n  frontend/src/components/DriveUploadMode/FileList.tsx \\\n  frontend/src/components/DriveUploadMode/GroupNode.tsx && \\\ngit commit -m \"Add openDelay to truncated-name tooltips; extract shared TruncatedText\n\nSame truncation-tooltip logic was needed for both file names and\nfolder names, so it moved into a shared TruncatedText component\n(measures clipping the same way ../ClippedPath.tsx does, only shows\na tooltip when actually truncated) instead of duplicating it. Added\nopenDelay=500 to match ClippedPath's existing tooltip delay.\n\nCo-Authored-By: Claude Sonnet 5 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_01CRd2ZPBHfcj2NvbZvbdzhB\"",
   "description": "Commit the TruncatedText extraction and tooltip delay"
 }
 ```
@@ -15191,7 +15191,7 @@ id: toolu_011TCbFt11UtkTJ99qRnNPeh
 tool_result
 id: toolu_011TCbFt11UtkTJ99qRnNPeh
 ```
-/Users/ben/.local/bin/entire
+/home/<USER>/.local/bin/entire
 Entire CLI 0.7.5
 Go version: go1.26.4
 OS/Arch: darwin/arm64
@@ -15337,7 +15337,7 @@ id: toolu_01QAEhUFseGhMAoQDtVuvC3t
   "session_id": "abe32586-308d-4f53-b1ca-d53cf131bc5e",
   "agent": "Claude Code",
   "status": "active",
-  "worktree_path": "/Users/ben/git/paper-scan-processor",
+  "worktree_path": "/home/<USER>/git/paper-scan-processor",
   "started_at": "2026-07-02T13:40:50.183498+02:00",
   "last_active": "2026-07-06T11:23:24.073623+02:00",
   "turns": 45,
@@ -15504,8 +15504,8 @@ id: toolu_01SUcvbPsRmaD2LEpKxCbeQk
 ```
 Schwerwiegend: Kein Upstream-Branch für Branch 'main' konfiguriert.
 ---remote---
-origin	git@github.com:barbogast/paper-scan-processor.git (fetch)
-origin	git@github.com:barbogast/paper-scan-processor.git (push)
+origin	<REDACTED_EMAIL>:barbogast/paper-scan-processor.git (fetch)
+origin	<REDACTED_EMAIL>:barbogast/paper-scan-processor.git (push)
 ---status---
 ?? .claude/
 ?? .entire/
@@ -15588,7 +15588,7 @@ id: toolu_01UaqGdbBtmv8C4fqqWKEWUB
 {
   "description": "Code review angle A: line-by-line scan",
   "subagent_type": "general-purpose",
-  "prompt": "You are one of several independent reviewers examining a git diff for bugs. Work in the repo at /Users/ben/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, using existing drive_folders.go), and a whole new React component tree (frontend/src/components/DriveUploadMode/) for browsing that local tree, browsing a Drive folder picker modal, and assigning Drive destination folders to local subfolders/files with inheritance/override semantics.\n\nYour job — Angle A, line-by-line diff scan:\nRead every hunk in the diff, line by line. Then Read the enclosing function for each hunk in the actual file (not just the diff context) — bugs in unchanged lines of a touched function are in scope, since the PR re-exposes or fails to fix them. For every line ask: what input, state, timing, or platform makes this line wrong? Look specifically for: inverted or wrong conditions, off-by-one errors, null/undefined dereference, missing await/error handling, falsy-zero […]
+  "prompt": "You are one of several independent reviewers examining a git diff for bugs. Work in the repo at /home/<USER>/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, using existing drive_folders.go), and a whole new React component tree (frontend/src/components/DriveUploadMode/) for browsing that local tree, browsing a Drive folder picker modal, and assigning Drive destination folders to local subfolders/files with inheritance/override semantics.\n\nYour job — Angle A, line-by-line diff scan:\nRead every hunk in the diff, line by line. Then Read the enclosing function for each hunk in the actual file (not just the diff context) — bugs in unchanged lines of a touched function are in scope, since the PR re-exposes or fails to fix them. For every line ask: what input, state, timing, or platform makes this line wrong? Look specifically for: inverted or wrong conditions, off-by-one errors, null/undefined dereference, missing await/error handling, falsy-zero […]
 
 > TOOL
 
@@ -15611,7 +15611,7 @@ id: toolu_016hTaz8uefqXbNaPpGbUdNC
 {
   "description": "Code review angle B: removed-behavior audit",
   "subagent_type": "general-purpose",
-  "prompt": "You are one of several independent reviewers examining a git diff for bugs. Work in the repo at /Users/ben/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, using existing drive_folders.go), and a whole new React component tree (frontend/src/components/DriveUploadMode/) for browsing that local tree, browsing a Drive folder picker modal, and assigning Drive destination folders to local subfolders/files with inheritance/override semantics. Note this diff also contains several internal refactors (e.g. a one-level-deep scan became recursive, then the root/subfolder data shape was unified, then three scan helper functions were merged into one) — pay special attention to whether any behavior present in an earlier version of a refactored function quietly disappeared in a later version within this same diff.\n\nYour job — Angle B, removed-behavior auditor:\nFor every line the diff DELETES or replaces, name the invariant or behavior it enforced, then search the new code […]
+  "prompt": "You are one of several independent reviewers examining a git diff for bugs. Work in the repo at /home/<USER>/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, using existing drive_folders.go), and a whole new React component tree (frontend/src/components/DriveUploadMode/) for browsing that local tree, browsing a Drive folder picker modal, and assigning Drive destination folders to local subfolders/files with inheritance/override semantics. Note this diff also contains several internal refactors (e.g. a one-level-deep scan became recursive, then the root/subfolder data shape was unified, then three scan helper functions were merged into one) — pay special attention to whether any behavior present in an earlier version of a refactored function quietly disappeared in a later version within this same diff.\n\nYour job — Angle B, removed-behavior auditor:\nFor every line the diff DELETES or replaces, name the invariant or behavior it enforced, then search the new code […]
 
 > TOOL
 
@@ -15634,7 +15634,7 @@ id: toolu_019xEz9h5EX6Cn5DiZDcfvkD
 {
   "description": "Code review angle C: cross-file tracer",
   "subagent_type": "general-purpose",
-  "prompt": "You are one of several independent reviewers examining a git diff for bugs. Work in the repo at /Users/ben/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, using existing drive_folders.go), and a whole new React component tree (frontend/src/components/DriveUploadMode/) for browsing that local tree, browsing a Drive folder picker modal, and assigning Drive destination folders to local subfolders/files with inheritance/override semantics. Also note: DriveItem gained JSON tags in this diff, PickFolder's signature changed (added a title parameter) with two existing call sites in SplitMode updated, and ScanLocalRoot's return type changed from a slice to a single struct partway through this diff.\n\nYour job — Angle C, cross-file tracer:\nFor each function the diff changes (especially ones with changed signatures or return shapes: PickFolder, ScanLocalRoot, ListDriveFolder, DriveItem, and any exported React component/hook whose props changed), find its callers (Grep for the symbol across the whole repo, […]
+  "prompt": "You are one of several independent reviewers examining a git diff for bugs. Work in the repo at /home/<USER>/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, using existing drive_folders.go), and a whole new React component tree (frontend/src/components/DriveUploadMode/) for browsing that local tree, browsing a Drive folder picker modal, and assigning Drive destination folders to local subfolders/files with inheritance/override semantics. Also note: DriveItem gained JSON tags in this diff, PickFolder's signature changed (added a title parameter) with two existing call sites in SplitMode updated, and ScanLocalRoot's return type changed from a slice to a single struct partway through this diff.\n\nYour job — Angle C, cross-file tracer:\nFor each function the diff changes (especially ones with changed signatures or return shapes: PickFolder, ScanLocalRoot, ListDriveFolder, DriveItem, and any exported React component/hook whose props changed), find its callers (Grep for the symbol across the whole repo, […]
 
 > TOOL
 
@@ -15657,7 +15657,7 @@ id: toolu_01C7ffNKkKaxXHKxQtSuQiws
 {
   "description": "Code review angle D: reuse",
   "subagent_type": "general-purpose",
-  "prompt": "You are one of several independent reviewers examining a git diff for cleanup opportunities (not correctness bugs). Work in the repo at /Users/ben/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, using existing drive_folders.go), and a whole new React component tree (frontend/src/components/DriveUploadMode/: index.tsx, GroupNode.tsx, FileList.tsx, DriveAssignmentField.tsx, TruncatedText.tsx, DriveFolderPickerModal.tsx, useFileTree.ts, useDriveAssignments.ts) for browsing a local file tree, browsing a Drive folder picker modal, and assigning Drive destination folders. There's an existing sibling mode, frontend/src/components/SplitMode/, and shared primitives in frontend/src/components/ (DetailPanel.tsx, ClippedPath.tsx) and frontend/src/utils.ts / constants.ts.\n\nYour job — Reuse:\nFlag new code in the diff that re-implements something the codebase already has elsewhere. Grep frontend/src/components/SplitMode, frontend/src/components/MergeMode, frontend/src/utils.ts, frontend/src/constants.ts, and other shared files for similar existing logic (path truncation/tooltip helpers, tree/list rendering patterns, badge or pill styling, size/count formatting, keyboard-accessible toggle buttons, etc.) that the new Drive Upload code duplicates instead of reusing. Name the existing helper/component/pattern […]
+  "prompt": "You are one of several independent reviewers examining a git diff for cleanup opportunities (not correctness bugs). Work in the repo at /home/<USER>/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, using existing drive_folders.go), and a whole new React component tree (frontend/src/components/DriveUploadMode/: index.tsx, GroupNode.tsx, FileList.tsx, DriveAssignmentField.tsx, TruncatedText.tsx, DriveFolderPickerModal.tsx, useFileTree.ts, useDriveAssignments.ts) for browsing a local file tree, browsing a Drive folder picker modal, and assigning Drive destination folders. There's an existing sibling mode, frontend/src/components/SplitMode/, and shared primitives in frontend/src/components/ (DetailPanel.tsx, ClippedPath.tsx) and frontend/src/utils.ts / constants.ts.\n\nYour job — Reuse:\nFlag new code in the diff that re-implements something the codebase already has elsewhere. Grep frontend/src/components/SplitMode, frontend/src/components/MergeMode, frontend/src/utils.ts, frontend/src/constants.ts, and other shared files for similar existing logic (path truncation/tooltip helpers, tree/list rendering patterns, badge or pill styling, size/count formatting, keyboard-accessible toggle buttons, etc.) that the new Drive Upload code duplicates instead of reusing. Name the existing helper/component/pattern […]
 
 > TOOL
 
@@ -15680,7 +15680,7 @@ id: toolu_01GLqNFzkvD9wRXZRSjLPgWA
 {
   "description": "Code review angle E: simplification",
   "subagent_type": "general-purpose",
-  "prompt": "You are one of several independent reviewers examining a git diff for cleanup opportunities (not correctness bugs). Work in the repo at /Users/ben/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go), and a new React component tree (frontend/src/components/DriveUploadMode/) implementing a local file tree with collapsible nested groups, a Drive folder picker modal with lazy loading, and a Drive-folder assignment system with group/file-level overrides and inheritance resolved bottom-up through props.\n\nYour job — Simplification:\nFlag unnecessary complexity the diff adds: redundant or derivable state (state that could instead be computed from other state/props), copy-paste with slight variation across similar components (e.g. GroupNode.tsx vs FileList.tsx vs DriveFolderPickerModal.tsx's DriveTreeNode, which are structurally similar recursive/list-rendering components), deep nesting, dead code, over-general abstractions for a single call site, props threaded through multiple levels that could be simplified. Name the simpler form that would do the same job.\n\nReport up to 6 […]
+  "prompt": "You are one of several independent reviewers examining a git diff for cleanup opportunities (not correctness bugs). Work in the repo at /home/<USER>/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go), and a new React component tree (frontend/src/components/DriveUploadMode/) implementing a local file tree with collapsible nested groups, a Drive folder picker modal with lazy loading, and a Drive-folder assignment system with group/file-level overrides and inheritance resolved bottom-up through props.\n\nYour job — Simplification:\nFlag unnecessary complexity the diff adds: redundant or derivable state (state that could instead be computed from other state/props), copy-paste with slight variation across similar components (e.g. GroupNode.tsx vs FileList.tsx vs DriveFolderPickerModal.tsx's DriveTreeNode, which are structurally similar recursive/list-rendering components), deep nesting, dead code, over-general abstractions for a single call site, props threaded through multiple levels that could be simplified. Name the simpler form that would do the same job.\n\nReport up to 6 […]
 
 > TOOL
 
@@ -15703,7 +15703,7 @@ id: toolu_0132YYxohFKn1vgnmmhntLCt
 {
   "description": "Code review angle F: efficiency",
   "subagent_type": "general-purpose",
-  "prompt": "You are one of several independent reviewers examining a git diff for cleanup opportunities (not correctness bugs). Work in the repo at /Users/ben/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go, which for every PDF file calls pdfPageCount via a pdfcpu API call and os.Stat), a Go RPC exposing Google Drive folder listing, and a React component tree (frontend/src/components/DriveUploadMode/) rendering a recursive, collapsible file tree with per-file and per-group Drive-assignment lookups against two Maps, plus a lazily-loaded Drive folder picker modal (each expand triggers a live Google Drive API call).\n\nYour job — Efficiency:\nFlag wasted work the diff introduces: redundant computation or repeated I/O (e.g. redundant filesystem stats, redundant Drive API calls, recomputing something on every render that could be memoized), independent operations run sequentially that could run concurrently (e.g. per-file page-count scanning across a large tree — is it parallelized or fully sequential, and does that matter at the scale this tool is meant […]
+  "prompt": "You are one of several independent reviewers examining a git diff for cleanup opportunities (not correctness bugs). Work in the repo at /home/<USER>/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go, which for every PDF file calls pdfPageCount via a pdfcpu API call and os.Stat), a Go RPC exposing Google Drive folder listing, and a React component tree (frontend/src/components/DriveUploadMode/) rendering a recursive, collapsible file tree with per-file and per-group Drive-assignment lookups against two Maps, plus a lazily-loaded Drive folder picker modal (each expand triggers a live Google Drive API call).\n\nYour job — Efficiency:\nFlag wasted work the diff introduces: redundant computation or repeated I/O (e.g. redundant filesystem stats, redundant Drive API calls, recomputing something on every render that could be memoized), independent operations run sequentially that could run concurrently (e.g. per-file page-count scanning across a large tree — is it parallelized or fully sequential, and does that matter at the scale this tool is meant […]
 
 > TOOL
 
@@ -15726,7 +15726,7 @@ id: toolu_017CksGqHnKAuCckrzqHWem6
 {
   "description": "Code review angle G: altitude",
   "subagent_type": "general-purpose",
-  "prompt": "You are one of several independent reviewers examining a git diff for design-level issues (not correctness bugs, not local cleanup). Work in the repo at /Users/ben/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, a thin wrapper over the pre-existing DriveListFolder in drive_folders.go which itself has known unresolved issues: unescaped query string interpolation, no pagination, no client caching — see the \"Drive Upload (code not finished)\" section near the end of spec.md), and a new React component tree (frontend/src/components/DriveUploadMode/) implementing a local file tree with collapsible nested groups and a Drive-folder assignment system (group/file-level, with inheritance resolved bottom-up via props: each component computes \"own assignment ?? inherited assignment\" and passes the result down to children).\n\nYour job — Altitude:\nCheck whether each change in the diff is implemented at the right depth, not as a fragile bandaid or special case layered on shared infrastructure. Specifically […]
+  "prompt": "You are one of several independent reviewers examining a git diff for design-level issues (not correctness bugs, not local cleanup). Work in the repo at /home/<USER>/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nContext: this diff adds a \"Drive Upload\" mode to a Wails (Go backend + TypeScript/React frontend) desktop app for post-processing scanned PDFs. It adds: a Go recursive local-filesystem tree scanner (filetree.go), a Go RPC exposing Google Drive folder listing (ListDriveFolder in app.go, a thin wrapper over the pre-existing DriveListFolder in drive_folders.go which itself has known unresolved issues: unescaped query string interpolation, no pagination, no client caching — see the \"Drive Upload (code not finished)\" section near the end of spec.md), and a new React component tree (frontend/src/components/DriveUploadMode/) implementing a local file tree with collapsible nested groups and a Drive-folder assignment system (group/file-level, with inheritance resolved bottom-up via props: each component computes \"own assignment ?? inherited assignment\" and passes the result down to children).\n\nYour job — Altitude:\nCheck whether each change in the diff is implemented at the right depth, not as a fragile bandaid or special case layered on shared infrastructure. Specifically […]
 
 > TOOL
 
@@ -15749,7 +15749,7 @@ id: toolu_01QnUun7PgEov2TGfHHcKZRE
 {
   "description": "Code review angle H: CLAUDE.md conventions",
   "subagent_type": "general-purpose",
-  "prompt": "You are one of several independent reviewers checking a git diff against project conventions. Work in the repo at /Users/ben/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nYour job — Conventions:\nFind every CLAUDE.md file that governs the changed code: check for ~/.claude/CLAUDE.md (user-level, may not exist), a repo-root CLAUDE.md, and any CLAUDE.md or CLAUDE.local.md in a directory that is an ancestor of a changed file (a directory's CLAUDE.md only applies to files at or below it — e.g. a frontend/CLAUDE.md would apply to frontend/src/... changes). Use `find /Users/ben/git/paper-scan-processor -iname \"CLAUDE.md\" -o -iname \"CLAUDE.local.md\"` and also check `ls -a ~/.claude/CLAUDE.md` to find them all. Read each one that exists in full.\n\nThen check the diff (git diff 64e4207 HEAD) for clear violations of the rules those files state. Only flag a violation when you can quote the exact rule text and the exact line of the diff/file that breaks it — no style preferences, no vague \"spirit of the document\" inferences. If no CLAUDE.md file applies to any of the changed files, or none of the changes violate anything stated, return an empty result and […]
+  "prompt": "You are one of several independent reviewers checking a git diff against project conventions. Work in the repo at /home/<USER>/git/paper-scan-processor.\n\nGet the diff under review with:\n  git diff 64e4207 HEAD\n\nYour job — Conventions:\nFind every CLAUDE.md file that governs the changed code: check for ~/.claude/CLAUDE.md (user-level, may not exist), a repo-root CLAUDE.md, and any CLAUDE.md or CLAUDE.local.md in a directory that is an ancestor of a changed file (a directory's CLAUDE.md only applies to files at or below it — e.g. a frontend/CLAUDE.md would apply to frontend/src/... changes). Use `find /home/<USER>/git/paper-scan-processor -iname \"CLAUDE.md\" -o -iname \"CLAUDE.local.md\"` and also check `ls -a ~/.claude/CLAUDE.md` to find them all. Read each one that exists in full.\n\nThen check the diff (git diff 64e4207 HEAD) for clear violations of the rules those files state. Only flag a violation when you can quote the exact rule text and the exact line of the diff/file that breaks it — no style preferences, no vague \"spirit of the document\" inferences. If no CLAUDE.md file applies to any of the changed files, or none of the changes violate anything stated, return an empty result and […]
 
 > TOOL
 
@@ -15804,7 +15804,7 @@ id: toolu_012HC1VcQ9u3VM5YXNqNwRkh
 {
   "description": "Verify correctness batch 1",
   "subagent_type": "general-purpose",
-  "prompt": "You are verifying candidate bug reports against actual code, for a code review. Work in the repo at /Users/ben/git/paper-scan-processor. The diff under review is `git diff 64e4207 HEAD` (adds a Drive Upload mode: Go recursive file-tree scanner + Drive folder RPC + React tree/assignment UI).\n\nFor EACH candidate below, read the actual current file(s) (not just trust the description) and decide: CONFIRMED (you traced the exact bug and can point to the exact lines), PLAUSIBLE (realistic given plausible state/timing/input, even if you can't 100% prove it fires), or REFUTED (only if: factually wrong — quote the actual line; provably impossible; already handled elsewhere — cite the guard; or pure style with zero observable effect). Do NOT refute for being \"speculative\" if the triggering state is realistic (races, rare-but-reachable paths, TOCTOU, concurrent user actions are all realistic — treat as PLAUSIBLE, not REFUTED).\n\nCandidate 1:\nfile: frontend/src/components/DriveUploadMode/index.tsx\nsummary: Picking a new root folder does not reset useDriveAssignments() state or collapsedGroups, so Drive-folder assignments from a previous scan silently carry over and can misattach to a same-named subfolder/file in the new tree.\nfailure_scenario: User scans root A, assigns its \"invoices\" subfolder to Drive […]
+  "prompt": "You are verifying candidate bug reports against actual code, for a code review. Work in the repo at /home/<USER>/git/paper-scan-processor. The diff under review is `git diff 64e4207 HEAD` (adds a Drive Upload mode: Go recursive file-tree scanner + Drive folder RPC + React tree/assignment UI).\n\nFor EACH candidate below, read the actual current file(s) (not just trust the description) and decide: CONFIRMED (you traced the exact bug and can point to the exact lines), PLAUSIBLE (realistic given plausible state/timing/input, even if you can't 100% prove it fires), or REFUTED (only if: factually wrong — quote the actual line; provably impossible; already handled elsewhere — cite the guard; or pure style with zero observable effect). Do NOT refute for being \"speculative\" if the triggering state is realistic (races, rare-but-reachable paths, TOCTOU, concurrent user actions are all realistic — treat as PLAUSIBLE, not REFUTED).\n\nCandidate 1:\nfile: frontend/src/components/DriveUploadMode/index.tsx\nsummary: Picking a new root folder does not reset useDriveAssignments() state or collapsedGroups, so Drive-folder assignments from a previous scan silently carry over and can misattach to a same-named subfolder/file in the new tree.\nfailure_scenario: User scans root A, assigns its \"invoices\" subfolder to Drive […]
 
 > TOOL
 
@@ -15827,7 +15827,7 @@ id: toolu_01CkNX4nKMEEu2pDjpb8bd1f
 {
   "description": "Verify correctness batch 2",
   "subagent_type": "general-purpose",
-  "prompt": "You are verifying candidate bug reports against actual code, for a code review. Work in the repo at /Users/ben/git/paper-scan-processor. The diff under review is `git diff 64e4207 HEAD` (adds a Drive Upload mode: Go recursive file-tree scanner + Drive folder RPC + React tree/assignment UI).\n\nFor EACH candidate below, read the actual current file(s) (not just trust the description) and decide: CONFIRMED (you traced the exact bug and can point to the exact lines), PLAUSIBLE (realistic given plausible state/timing/input, even if you can't 100% prove it fires), or REFUTED (only if: factually wrong — quote the actual line; provably impossible; already handled elsewhere — cite the guard; or pure style with zero observable effect). Do NOT refute for being \"speculative\" if the triggering state is realistic (TOCTOU races, rare-but-reachable error paths, rapid user clicks are all realistic — treat as PLAUSIBLE, not REFUTED).\n\nCandidate 1:\nfile: filetree.go\nsummary: When os.Stat fails for a .pdf-named entry inside scanDir/scanDirectory, the file is silently dropped (continue) instead of being included and flagged — this contradicts the function's own doc comment, which says files whose page count can't be read \"are still included, flagged […]
+  "prompt": "You are verifying candidate bug reports against actual code, for a code review. Work in the repo at /home/<USER>/git/paper-scan-processor. The diff under review is `git diff 64e4207 HEAD` (adds a Drive Upload mode: Go recursive file-tree scanner + Drive folder RPC + React tree/assignment UI).\n\nFor EACH candidate below, read the actual current file(s) (not just trust the description) and decide: CONFIRMED (you traced the exact bug and can point to the exact lines), PLAUSIBLE (realistic given plausible state/timing/input, even if you can't 100% prove it fires), or REFUTED (only if: factually wrong — quote the actual line; provably impossible; already handled elsewhere — cite the guard; or pure style with zero observable effect). Do NOT refute for being \"speculative\" if the triggering state is realistic (TOCTOU races, rare-but-reachable error paths, rapid user clicks are all realistic — treat as PLAUSIBLE, not REFUTED).\n\nCandidate 1:\nfile: filetree.go\nsummary: When os.Stat fails for a .pdf-named entry inside scanDir/scanDirectory, the file is silently dropped (continue) instead of being included and flagged — this contradicts the function's own doc comment, which says files whose page count can't be read \"are still included, flagged […]
 
 > TOOL
 
@@ -15850,7 +15850,7 @@ id: toolu_01SA1Ft8XhCWbUgttszUjbPf
 {
   "description": "Verify altitude/design findings",
   "subagent_type": "general-purpose",
-  "prompt": "You are verifying candidate design/altitude findings against actual code, for a code review. Work in the repo at /Users/ben/git/paper-scan-processor. The diff under review is `git diff 64e4207 HEAD` (adds a Drive Upload mode: Go recursive file-tree scanner + Drive folder RPC + React tree/assignment UI). Also read spec.md's \"Drive Upload (code not finished — findings apply to Steps 1a-1c)\" section and the \"Drive Upload mode\" checklist section (search for \"Step 3\" and \"Step 4\" in spec.md) for planned next steps.\n\nFor EACH candidate below, verify against the actual code/spec and decide CONFIRMED, PLAUSIBLE, or REFUTED (only refute if factually wrong, provably impossible, already handled, or pure style with zero effect).\n\nCandidate 1 (most important — check carefully):\nfile: frontend/src/components/DriveUploadMode/GroupNode.tsx\nsummary: groupKey (used as the Map key for Drive folder assignments in useDriveAssignments.ts) is built purely by joining folder DISPLAY NAMES (`${groupKey}/${sub.name}`), not any stable id. spec.md's next planned step (Step 4: Inline renaming) makes subfolder/file display names user-editable for Drive upload purposes.\nfailure_scenario: Once inline renaming ships, renaming a subfolder changes the key its Drive assignment is stored under, silently orphaning any already-set assignment (falls back to \"not assigned\", or could collide […]
+  "prompt": "You are verifying candidate design/altitude findings against actual code, for a code review. Work in the repo at /home/<USER>/git/paper-scan-processor. The diff under review is `git diff 64e4207 HEAD` (adds a Drive Upload mode: Go recursive file-tree scanner + Drive folder RPC + React tree/assignment UI). Also read spec.md's \"Drive Upload (code not finished — findings apply to Steps 1a-1c)\" section and the \"Drive Upload mode\" checklist section (search for \"Step 3\" and \"Step 4\" in spec.md) for planned next steps.\n\nFor EACH candidate below, verify against the actual code/spec and decide CONFIRMED, PLAUSIBLE, or REFUTED (only refute if factually wrong, provably impossible, already handled, or pure style with zero effect).\n\nCandidate 1 (most important — check carefully):\nfile: frontend/src/components/DriveUploadMode/GroupNode.tsx\nsummary: groupKey (used as the Map key for Drive folder assignments in useDriveAssignments.ts) is built purely by joining folder DISPLAY NAMES (`${groupKey}/${sub.name}`), not any stable id. spec.md's next planned step (Step 4: Inline renaming) makes subfolder/file display names user-editable for Drive upload purposes.\nfailure_scenario: Once inline renaming ships, renaming a subfolder changes the key its Drive assignment is stored under, silently orphaning any already-set assignment (falls back to \"not assigned\", or could collide […]
 
 > TOOL
 
@@ -15873,7 +15873,7 @@ id: toolu_01XQTuzaLwmxqiX5qXzbPngW
 {
   "description": "Verify reuse/cleanup findings",
   "subagent_type": "general-purpose",
-  "prompt": "You are verifying candidate cleanup/reuse/efficiency findings against actual code, for a code review. Work in the repo at /Users/ben/git/paper-scan-processor. The diff under review is `git diff 64e4207 HEAD` (adds a Drive Upload mode to a Wails+Go+React app).\n\nFor EACH candidate below, verify against the actual code and decide CONFIRMED, PLAUSIBLE, or REFUTED (only refute if factually wrong — quote the actual line; provably impossible; already handled; or pure style with zero effect). Two of these candidates (2 and 3) claim specific icon components exist elsewhere in the codebase — verify these especially carefully by actually grepping for the claimed imports, since they may be fabricated.\n\nCandidate 1:\nfile: frontend/src/components/DriveUploadMode/TruncatedText.tsx\nsummary: Reimplements the exact \"measure scrollWidth vs clientWidth in useLayoutEffect, conditionally wrap in Tooltip\" truncation-detection technique already implemented in frontend/src/components/ClippedPath.tsx, instead of sharing one hook/utility.\nCheck: read both files, compare the measurement logic.\n\nCandidate 2 (verify the claim carefully — grep first):\nfile: frontend/src/components/DriveUploadMode/FileList.tsx\nsummary: Renders a corrupt-file warning as a raw emoji (⚠️) inside a Tooltip, whereas frontend/src/components/MergeMode/index.tsx already establishes a convention of using `IconAlertTriangle` from `@tabler/icons-react` for warning-with-tooltip UI, at lines 113-120 of that file.\nCheck: run `grep -rn \"IconAlertTriangle\\|@tabler/icons-react\" frontend/src` and `sed -n '100,125p' […]
+  "prompt": "You are verifying candidate cleanup/reuse/efficiency findings against actual code, for a code review. Work in the repo at /home/<USER>/git/paper-scan-processor. The diff under review is `git diff 64e4207 HEAD` (adds a Drive Upload mode to a Wails+Go+React app).\n\nFor EACH candidate below, verify against the actual code and decide CONFIRMED, PLAUSIBLE, or REFUTED (only refute if factually wrong — quote the actual line; provably impossible; already handled; or pure style with zero effect). Two of these candidates (2 and 3) claim specific icon components exist elsewhere in the codebase — verify these especially carefully by actually grepping for the claimed imports, since they may be fabricated.\n\nCandidate 1:\nfile: frontend/src/components/DriveUploadMode/TruncatedText.tsx\nsummary: Reimplements the exact \"measure scrollWidth vs clientWidth in useLayoutEffect, conditionally wrap in Tooltip\" truncation-detection technique already implemented in frontend/src/components/ClippedPath.tsx, instead of sharing one hook/utility.\nCheck: read both files, compare the measurement logic.\n\nCandidate 2 (verify the claim carefully — grep first):\nfile: frontend/src/components/DriveUploadMode/FileList.tsx\nsummary: Renders a corrupt-file warning as a raw emoji (⚠️) inside a Tooltip, whereas frontend/src/components/MergeMode/index.tsx already establishes a convention of using `IconAlertTriangle` from `@tabler/icons-react` for warning-with-tooltip UI, at lines 113-120 of that file.\nCheck: run `grep -rn \"IconAlertTriangle\\|@tabler/icons-react\" frontend/src` and `sed -n '100,125p' […]
 
 > TOOL
 

@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -37,7 +37,7 @@ id: call_Dlm8F6JvWRZQOEZ1J2co98Hs
 ```json
 {
   "cmd": "rg -n \"go:embed|embed|frontend|web/dist|dist\" -S .",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -50,7 +50,7 @@ id: call_s30i0HhOkEsq0ji1QPWBU89i
 ```json
 {
   "cmd": "rg --files -g 'yyork' -g 'bin/**' -g 'cmd/**' -g 'web/dist/**' -g 'frontend/**'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -62,8 +62,8 @@ tool_use exec_command
 id: call_o8I5tCl94xypSOBrYHOg4JZ2
 ```json
 {
-  "cmd": "rg -n \"yyork|embedded frontend|frontend\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"yyork|embedded frontend|frontend\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -302,13 +302,13 @@ Original token count: 8004
 Output:
 1:# Task Group: `Projects/yyork` dashboard review/files workflows, Zellij session validation, and terminal-gap debugging [chronicle memory]
 2:scope: Use for recent `yyork` dogfooding in the browser dashboard and local worktrees: Files/Review behavior, hook-review context, file-browser/layout changes, session-scoped diff rendering, Zellij layout/statusline validation, recap requests, merge-before-wipe semantics, and terminal gap measurement under disk pressure.
-3:applies_to: cwd=/Users/tanishqpalandurkar/Projects/yyork plus local worktrees under /Users/tanishqpalandurkar/.yyork/worktrees/*; reuse_rule=safe for similar yyork dashboard/session UX and validation work in this checkout, but re-open the touched backend/frontend files before claiming the current UI shape because several observations came from active local sessions and Chronicle windows
-9:- extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md, updated_at=2026-06-07T22:17:00+00:00, thread_id=None, Files sidebar/header ergonomics, right-sidebar show/hide, and resizable-panel follow-up) [chronicle memory]
-10:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
-11:- extensions/chronicle/resources/2026-06-07T17-04-00-YxmL-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T17-04-00-YxmL-10min-memory-summary.md, updated_at=2026-06-07T17:04:00+00:00, thread_id=None, `.gitignore` local artifact ignores and `yyork` Files/Review dashboard context) [chronicle memory]
-12:- extensions/chronicle/resources/2026-06-07T17-03-00-pksH-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T17-03-00-pksH-10min-memory-summary.md, updated_at=2026-06-07T17:03:00+00:00, thread_id=None, Cursor `.gitignore` context and local agent/session artifact ignores) [chronicle memory]
-13:- extensions/chronicle/resources/2026-06-07T07-23-00-MplA-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T07-23-00-MplA-10min-memory-summary.md, updated_at=2026-06-07T07:23:00+00:00, thread_id=None, Files tab dogfooding, built-binary visibility explanation, and merge-before-wipe discussion) [chronicle memory]
-14:- extensions/chronicle/resources/2026-06-07T07-13-00-tibN-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, […]
+3:applies_to: cwd=/home/<USER>/Projects/yyork plus local worktrees under /home/<USER>/.yyork/worktrees/*; reuse_rule=safe for similar yyork dashboard/session UX and validation work in this checkout, but re-open the touched backend/frontend files before claiming the current UI shape because several observations came from active local sessions and Chronicle windows
+9:- extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T22-17-00-hHns-10min-memory-summary.md, updated_at=2026-06-07T22:17:00+00:00, thread_id=None, Files sidebar/header ergonomics, right-sidebar show/hide, and resizable-panel follow-up) [chronicle memory]
+10:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
+11:- extensions/chronicle/resources/2026-06-07T17-04-00-YxmL-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T17-04-00-YxmL-10min-memory-summary.md, updated_at=2026-06-07T17:04:00+00:00, thread_id=None, `.gitignore` local artifact ignores and `yyork` Files/Review dashboard context) [chronicle memory]
+12:- extensions/chronicle/resources/2026-06-07T17-03-00-pksH-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T17-03-00-pksH-10min-memory-summary.md, updated_at=2026-06-07T17:03:00+00:00, thread_id=None, Cursor `.gitignore` context and local agent/session artifact ignores) [chronicle memory]
+13:- extensions/chronicle/resources/2026-06-07T07-23-00-MplA-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T07-23-00-MplA-10min-memory-summary.md, updated_at=2026-06-07T07:23:00+00:00, thread_id=None, Files tab dogfooding, built-binary visibility explanation, and merge-before-wipe discussion) [chronicle memory]
+14:- extensions/chronicle/resources/2026-06-07T07-13-00-tibN-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, […]
 
 > AGENT
 
@@ -321,7 +321,7 @@ id: call_0DfMQrMBk6n8E7QQB6kXC9LS
 ```json
 {
   "cmd": "file yyork",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -334,7 +334,7 @@ id: call_0Ecc2JCCA46vueJbNvl4DTkj
 ```json
 {
   "cmd": "bytes=$(wc -c < yyork); awk -v b=\"$bytes\" 'BEGIN { printf \"bytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -347,7 +347,7 @@ id: call_HtZLYcawSA3yIDeN4txS3ehR
 ```json
 {
   "cmd": "ls -lh yyork",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -399,7 +399,7 @@ Output:
 
 > AGENT
 
-The current root binary [yyork](/Users/tanishqpalandurkar/Projects/yyork/yyork) is **42.37 MB** decimal, or **40.41 MiB**.
+The current root binary [yyork](/home/<USER>/Projects/yyork/yyork) is **42.37 MB** decimal, or **40.41 MiB**.
 
 I measured it directly with `wc -c`; `ls -lh` reports it as `40M`.
 
@@ -426,7 +426,7 @@ id: call_QwNx0ztRm1UwKkvZ4C34wmBP
 ```json
 {
   "cmd": "command -v strip && strip -h 2>&1 | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -439,7 +439,7 @@ id: call_mfMotzfoQ5YAzkuEpcmYyNi9
 ```json
 {
   "cmd": "bytes=$(wc -c < yyork); awk -v b=\"$bytes\" 'BEGIN { printf \"original_bytes=%d\\noriginal_MB=%.2f\\noriginal_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -488,7 +488,7 @@ id: call_ZnlZawD0FZ53jDER0rDvVE75
 ```json
 {
   "cmd": "man strip | col -b | sed -n '1,180p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -520,7 +520,7 @@ id: call_e99OxWFnHzbD9V1HTrdFXRNS
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-all.XXXXXX); cp -p yyork \"$tmp\"; strip \"$tmp\"; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=strip_default\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -533,7 +533,7 @@ id: call_rNK7xqfshRNRFgd1oP11wYKZ
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-S.XXXXXX); cp -p yyork \"$tmp\"; strip -S \"$tmp\"; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=strip_S\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -546,7 +546,7 @@ id: call_iyAhsWkz6gjn5KXLJuwtFJge
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-x.XXXXXX); cp -p yyork \"$tmp\"; strip -x \"$tmp\"; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=strip_x\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -614,7 +614,7 @@ id: call_eoSN4ikShOYJqflxMAweOLtx
 ```json
 {
   "cmd": "bytes=$(wc -c < yyork); awk -v b=\"$bytes\" 'BEGIN { printf \"repo_binary_bytes=%d\\nrepo_binary_MB=%.2f\\nrepo_binary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -627,7 +627,7 @@ id: call_qtHIXiYskKDzpQLnqhca0vBm
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-verify.XXXXXX); cp -p yyork \"$tmp\"; strip \"$tmp\"; orig=$(wc -c < yyork); stripped=$(wc -c < \"$tmp\"); awk -v o=\"$orig\" -v s=\"$stripped\" 'BEGIN { printf \"saved_bytes=%d\\nsaved_MB=%.2f\\nsaved_MiB=%.2f\\nreduction_pct=%.2f\\n\", o-s, (o-s)/1000000, (o-s)/1048576, (o-s)*100/o }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -668,7 +668,7 @@ reduction_pct=2.43
 
 > AGENT
 
-After stripping a temporary copy of [yyork](/Users/tanishqpalandurkar/Projects/yyork/yyork), the binary is **41.34 MB** decimal, or **39.42 MiB**.
+After stripping a temporary copy of [yyork](/home/<USER>/Projects/yyork/yyork), the binary is **41.34 MB** decimal, or **39.42 MiB**.
 
 That saves **1.03 MB** decimal, about **2.43%**. I did not modify the repo’s actual `./yyork` binary.
 
@@ -687,7 +687,7 @@ id: call_WNGTdJ8xI3fg15pmW4lAOzQA
 ```json
 {
   "cmd": "go version && go help build | sed -n '1,220p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -700,7 +700,7 @@ id: call_wzLFYW44nEcXpOIw3AvT7tSy
 ```json
 {
   "cmd": "go tool link -h 2>&1 | sed -n '1,180p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -713,7 +713,7 @@ id: call_dB3tYdugKLyHErClApriSvMj
 ```json
 {
   "cmd": "sed -n '1,220p' bin/install-yyork.mjs && sed -n '1,180p' web/vite.config.ts && sed -n '1,140p' package.json && sed -n '1,120p' web/package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -726,7 +726,7 @@ id: call_zJtkMnMNiFBAwFvZfXdtG8ot
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app -type f -print0 | xargs -0 du -k | sort -nr | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -930,7 +930,7 @@ id: call_gqYmSrbMUZLHa2qnARzA0pvw
 ```json
 {
   "cmd": "rg --files scripts . | rg 'run-go|go|direnv|flake|shell|mise|tool'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -943,7 +943,7 @@ id: call_PBl7z7PfkiR7Qo1jA1mWtAg3
 ```json
 {
   "cmd": "sed -n '1,220p' scripts/run-go.mjs 2>/dev/null; sed -n '1,220p' flake.nix 2>/dev/null; sed -n '1,120p' .envrc 2>/dev/null",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -956,7 +956,7 @@ id: call_Ai2Yr8o3cRxmsTS7EbdWlJtR
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app -type f | wc -l && du -sk cmd/yyork/dashboard/app && du -sk cmd/yyork/dashboard/app/assets cmd/yyork/dashboard/app/__yyork_browser 2>/dev/null",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -969,7 +969,7 @@ id: call_AKQxJuQM1950jkKpJb3T0AGQ
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app -type f \\( -name '*.map' -o -name '*.gz' -o -name '*.br' \\) -print -exec du -k {} \\;",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -1191,7 +1191,7 @@ id: call_rHSVCEsXaE0tDyPJbZQ31oFG
 ```json
 {
   "cmd": "command -v nix; command -v direnv; command -v pnpm; command -v node; command -v otool; command -v size; command -v dwarfdump; command -v dsymutil",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1204,7 +1204,7 @@ id: call_VheysnZBgSkDYs65OxhhJp1t
 ```json
 {
   "cmd": "otool -l yyork | sed -n '1,260p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1217,7 +1217,7 @@ id: call_GD6TlNjvRzxdKEXopZIkbWzw
 ```json
 {
   "cmd": "size -m yyork 2>&1 | sed -n '1,160p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1230,7 +1230,7 @@ id: call_X2j12Uw0DOSbz0o83ymZUfuL
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app -type f -print0 | xargs -0 stat -f '%z %N' | awk '{s=$1; $1=\"\"; sub(/^ /,\"\"); path=$0; ext=path; sub(/^.*\\./,\"\",ext); if (path !~ /\\./) ext=\"[none]\"; byext[ext]+=s; count[ext]++} END {for (e in byext) printf \"%10d %5d %s\\n\", byext[e], count[e], e}' | sort -nr | sed -n '1,40p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -1433,7 +1433,7 @@ id: call_2dDByXLiTvHAAXlJxe0grpp8
 ```json
 {
   "cmd": "direnv exec . go version",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 6000
 }
@@ -1446,7 +1446,7 @@ id: call_CVP4NzmJQeW2YbPUZcQFFnp8
 ```json
 {
   "cmd": "direnv exec . go help build | sed -n '1,220p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000
 }
@@ -1459,7 +1459,7 @@ id: call_Bqys3Cd5U4xuvmtfUBq0ST9u
 ```json
 {
   "cmd": "direnv exec . go tool link -h 2>&1 | sed -n '1,180p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 18000
 }
@@ -1579,7 +1579,7 @@ id: call_O2O2ebguqvLwEGPQPwbnmjmc
 ```json
 {
   "cmd": "version=$(node -e \"console.log(JSON.parse(require('fs').readFileSync('package.json','utf8')).version)\"); tmp=$(mktemp /tmp/yyork-prod.XXXXXX); direnv exec . go build -trimpath -ldflags \"-s -w -X github.com/yyopc/yyork/internal/cli.Version=$version\" -o \"$tmp\" .; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=trimpath_s_w\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; size -m \"$tmp\" 2>&1 | sed -n '1,80p'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1592,7 +1592,7 @@ id: call_6MgSSWu6bWitFAbyuft2rRl3
 ```json
 {
   "cmd": "version=$(node -e \"console.log(JSON.parse(require('fs').readFileSync('package.json','utf8')).version)\"); tmp=$(mktemp /tmp/yyork-prod-novcs.XXXXXX); direnv exec . go build -trimpath -buildvcs=false -ldflags \"-s -w -X github.com/yyopc/yyork/internal/cli.Version=$version\" -o \"$tmp\" .; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=trimpath_buildvcs_false_s_w\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; size -m \"$tmp\" 2>&1 | sed -n '1,80p'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1605,7 +1605,7 @@ id: call_Q9aJuGXlXfAuAsmXBKimZNmX
 ```json
 {
   "cmd": "version=$(node -e \"console.log(JSON.parse(require('fs').readFileSync('package.json','utf8')).version)\"); tmp=$(mktemp /tmp/yyork-prod-buildid.XXXXXX); direnv exec . go build -trimpath -buildvcs=false -ldflags \"-s -w -buildid= -X github.com/yyopc/yyork/internal/cli.Version=$version\" -o \"$tmp\" .; bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=trimpath_buildvcs_false_s_w_empty_buildid\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; size -m \"$tmp\" 2>&1 | sed -n '1,80p'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1745,7 +1745,7 @@ id: call_xDypdBGiPnnJWPaovtrk99mW
 ```json
 {
   "cmd": "version=$(node -e \"console.log(JSON.parse(require('fs').readFileSync('package.json','utf8')).version)\"); tmp=$(mktemp /tmp/yyork-prod-strip.XXXXXX); direnv exec . go build -trimpath -ldflags \"-s -w -X github.com/yyopc/yyork/internal/cli.Version=$version\" -o \"$tmp\" .; before=$(wc -c < \"$tmp\"); strip \"$tmp\"; after=$(wc -c < \"$tmp\"); awk -v before=\"$before\" -v after=\"$after\" 'BEGIN { printf \"before_bytes=%d\\nbefore_MB=%.2f\\nafter_bytes=%d\\nafter_MB=%.2f\\nsaved_bytes=%d\\n\", before, before/1000000, after, after/1000000, before-after }'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 6000
 }
@@ -1758,7 +1758,7 @@ id: call_KfgIPXq6OOBGYnW7wIbYtAhX
 ```json
 {
   "cmd": "version=$(node -e \"console.log(JSON.parse(require('fs').readFileSync('package.json','utf8')).version)\"); tmp=$(mktemp /tmp/yyork-prod-meta.XXXXXX); direnv exec . go build -trimpath -ldflags \"-s -w -X github.com/yyopc/yyork/internal/cli.Version=$version\" -o \"$tmp\" .; direnv exec . go version -m \"$tmp\" | sed -n '1,120p'; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -1771,7 +1771,7 @@ id: call_6C4SIYO0dWnlmsaQ75Rx8tmE
 ```json
 {
   "cmd": "tmp=$(mktemp /tmp/yyork-strip-dwarf.XXXXXX); cp -p yyork \"$tmp\"; strip -S \"$tmp\"; size -m \"$tmp\" 2>&1 | rg -n \"__DWARF|__LINKEDIT|total|Section __zdebug\" -C 1; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1897,7 +1897,7 @@ id: call_bW9IA2EE8Kp12drrhGvFIxch
 ```json
 {
   "cmd": "orig=$(wc -c < yyork); prod=30590226; embed=$(find cmd/yyork/dashboard/app -type f -print0 | xargs -0 stat -f '%z' | awk '{s+=$1} END {print s}'); awk -v o=\"$orig\" -v p=\"$prod\" -v e=\"$embed\" 'BEGIN { printf \"orig_bytes=%d\\nprod_bytes=%d\\nsaved_bytes=%d\\nsaved_MB=%.2f\\nsaved_pct=%.2f\\nembed_bytes=%d\\nembed_MB=%.2f\\nembed_pct_of_prod=%.2f\\n\", o,p,o-p,(o-p)/1000000,(o-p)*100/o,e,e/1000000,e*100/p }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1910,7 +1910,7 @@ id: call_2zgGs5UB17OH3DzsJeAzbuDC
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app/assets -type f -name '*.js' -print0 | xargs -0 stat -f '%z %N' | awk '{s+=$1; c++} END {printf \"asset_js_files=%d\\nasset_js_bytes=%d\\nasset_js_MB=%.2f\\n\", c, s, s/1000000}' && find cmd/yyork/dashboard/app/assets -type f -name '*.woff2' -print0 | xargs -0 stat -f '%z %N' | awk '{s+=$1; c++} END {printf \"font_files=%d\\nfont_bytes=%d\\nfont_MB=%.2f\\n\", c, s, s/1000000}'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1923,7 +1923,7 @@ id: call_RO8TbeOrMMud85iu8a8wlfdq
 ```json
 {
   "cmd": "rg -n \"shiki|createHighlighter|bundledLanguages|bundledThemes|codeToHtml|highlight|Language|theme\" web/src web/package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1989,20 +1989,20 @@ web/src/lib/i18n/index.ts:9:export const syncLanguage = (langKey: string) => {
 web/src/lib/i18n/index.ts:13:i18n.on('languageChanged', (langKey) => syncLanguage(langKey));
 web/src/locales/en/common.json:3:    "label": "Language",
 web/src/locales/en/common.json:11:  "themes": {
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:22:import { useTheme } from 'next-themes';
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:86:const themeOptions = [
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:453:  const { setTheme, theme } = useTheme();
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:455:  const selectedTheme = hydrated ? theme : undefined;
-web/src/features/home/components/organisms/project-orchestrator-sidebar.tsx:487:            {themeOptions.map((option) => {
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:22:import { useTheme } from 'next-themes';
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:86:const themeOptions = [
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:453:  const { setTheme, theme } = useTheme();
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:455:  const selectedTheme = hydrated ? theme : undefined;
+web/src/features/home/<USER>/organisms/project-orchestrator-sidebar.tsx:487:            {themeOptions.map((option) => {
 web/src/lib/i18n/constants.ts:3:export type Language = {
 web/src/lib/i18n/constants.ts:9:export const DEFAULT_LANGUAGE_KEY: Language['key'] = 'en';
 web/src/lib/i18n/constants.ts:11:export type LanguageKey = (typeof AVAILABLE_LANGUAGES)[number]['key'];
 web/src/lib/i18n/constants.ts:16:] satisfies Language[];
-web/src/features/home/components/organisms/xterm-terminal.tsx:35:// xterm.js theme colors must be concrete color strings, but our palette lives
-web/src/features/home/components/organisms/xterm-terminal.tsx:53:// custom properties, set per light/dark theme) onto xterm's theme. ANSI index
-web/src/features/home/components/organisms/xterm-terminal.tsx:155:        theme: buildTheme(host),
-web/src/features/home/components/organisms/canvas-diff-view.tsx:72:    theme: {
-web/src/features/home/components/organisms/canvas-panel.tsx:72:  theme: {
+web/src/features/home/<USER>/organisms/xterm-terminal.tsx:35:// xterm.js theme colors must be concrete color strings, but our palette lives
+web/src/features/home/<USER>/organisms/xterm-terminal.tsx:53:// custom properties, set per light/dark theme) onto xterm's theme. ANSI index
+web/src/features/home/<USER>/organisms/xterm-terminal.tsx:155:        theme: buildTheme(host),
+web/src/features/home/<USER>/organisms/canvas-diff-view.tsx:72:    theme: {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:72:  theme: {
 web/src/components/ui/context-menu.tsx:92:        "relative flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-highlighted:bg-accent data-highlighted:text-accent-foreground data-inset:pl-8 data-[variant=destructive]:text-destructive data-[variant=destructive]:data-highlighted:bg-destructive/10 data-[variant=destructive]:data-highlighted:text-destructive dark:data-[variant=destructive]:data-highlighted:bg-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground data-[variant=destructive]:*:[svg]:text-destructive!",
 web/src/components/ui/local-switcher.tsx:1:import { CheckIcon, ChevronsUpDownIcon, LanguagesIcon } from 'lucide-react';
 web/src/components/ui/local-switcher.tsx:4:import { AVAILABLE_LANGUAGES, LanguageKey } from '@/lib/i18n/constants';
@@ -2020,7 +2020,7 @@ id: call_F8qVoDscwbk5jsHnGeFJ2hbO
 ```json
 {
   "cmd": "rg -n \"shiki|Shiki|tmLanguage|language-|theme-|bundled|createHighlighter|highlighter|javascript-|typescript-|cpp-|emacs-lisp|monaco|highlight\" cmd/yyork/dashboard/app/assets web/src web/node_modules/@pierre web/node_modules/@wterm 2>/dev/null",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2033,7 +2033,7 @@ id: call_lt1nxWmtEa5qoSwjjAmbz8Sp
 ```json
 {
   "cmd": "sed -n '1,220p' cmd/yyork/dashboard/app/assets/_app.terminal._sessionId-BliI2PrR.js && sed -n '1,120p' cmd/yyork/dashboard/app/assets/index-BE_wgoGn.js && sed -n '1,80p' cmd/yyork/dashboard/app/assets/emacs-lisp-C9XAeP06.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2046,7 +2046,7 @@ id: call_gQKP56QevHfFEfyLFjw3mXP9
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app/assets -type f -name '*.js' -print0 | xargs -0 rg -l \"emacs-lisp-C9XAeP06|cpp-CofmeUqb|wasm-CG6Dc4jp|github-dark|github-light|shiki\" | sort",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2059,7 +2059,7 @@ id: call_lFn8gHutMRtx29efWe5vCUQO
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app -type f -print0 | xargs -0 shasum -a 256 | sort | awk 'prev==$1 {print last; print $0} {prev=$1; last=$0}' | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2175,7 +2175,7 @@ id: call_NWUDgfld5P70ZPUFunEc9Ivq
 ```json
 {
   "cmd": "rg -n \"@wterm|@xterm|wterm|xterm|import\\(\" web/src web/node_modules/@wterm web/node_modules/@pierre web/node_modules/@xterm 2>/dev/null",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2188,7 +2188,7 @@ id: call_H3zG8wK8fw7eCsrLR1AxTGau
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app/assets -type f -name '*.js' -print0 | xargs -0 stat -f '%z %N' | sort -nr | awk 'NR<=25 {printf \"%.2f MB %s\\n\", $1/1000000, $2}'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2201,7 +2201,7 @@ id: call_ptdd1KPfGJrty1H3dwwL5O9T
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app/__yyork_browser -type f -print0 | xargs -0 stat -f '%z %N' | sort -nr | awk '{printf \"%.3f MB %s\\n\", $1/1000000, $2}'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2214,7 +2214,7 @@ id: call_9cG4nVHTgFCel8Vm2sbVC3WR
 ```json
 {
   "cmd": "rg -n \"FileServer|ServeContent|Content-Encoding|gzip|brotli|embed|dashboardFS|WebFS|webFS\" internal dashboard.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2233,24 +2233,24 @@ Output:
 web/src/styles/app.css:1:@import '@wterm/react/css';
 web/src/styles/app.css:121:     xterm-terminal.tsx. Dark-theme overrides live in the .dark block below. */
 web/src/styles/app.css:288:  /* The terminal backends (xterm/wterm) own their internal scrollback, so this
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:7:import type { TerminalHandle } from './xterm-terminal';
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:22:// Replace the WASM-backed wterm <Terminal> with a bare div whose onReady we fire
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:25:vi.mock('@wterm/react', async () => {
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:26:  const React = await import('react');
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:145:  // These tests exercise the wterm renderer (mocked above); the panel now
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:146:  // defaults to xterm, so opt into wterm explicitly.
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:147:  window.localStorage.setItem('ao-terminal-backend', 'wterm');
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:216:// wterm has no scroll engine — it relies on the browser's native overflow
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:266:    .element(page.getByRole('menuitemradio', { name: /wterm/ }))
-web/src/features/home/components/organisms/terminal-panel.browser.spec.tsx:269:    .element(page.getByRole('menuitemradio', { name: /xterm/ }))
-web/src/features/home/components/organisms/terminal-panel.tsx:1:import { Terminal } from '@wterm/react';
-web/src/features/home/components/organisms/terminal-panel.tsx:53:} from '@/features/home/components/organisms/xterm-terminal';
-web/src/features/home/components/organisms/terminal-panel.tsx:90:  terminalBackend: 'wterm' | 'xterm';
-web/src/features/home/components/organisms/terminal-panel.tsx:211:  // Experiment toggle: render the PTY through wterm (DOM) or xterm.js (WebGL).
-web/src/features/home/components/organisms/terminal-panel.tsx:212:  // xterm is the default — it ships a real scrollback/viewport engine and feels
-web/src/features/home/components/organisms/terminal-panel.tsx:213:  // good; wterm is the rough experiment. Persisted so a reload keeps whichever
-web/src/features/home/components/organisms/terminal-panel.tsx:214:  // renderer you were comparing; only an explicit 'wterm' opt-in selects wterm.
-web/src/features/home/components/organisms/terminal-panel.tsx:215: […]
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:7:import type { TerminalHandle } from './xterm-terminal';
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:22:// Replace the WASM-backed wterm <Terminal> with a bare div whose onReady we fire
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:25:vi.mock('@wterm/react', async () => {
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:26:  const React = await import('react');
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:145:  // These tests exercise the wterm renderer (mocked above); the panel now
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:146:  // defaults to xterm, so opt into wterm explicitly.
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:147:  window.localStorage.setItem('ao-terminal-backend', 'wterm');
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:216:// wterm has no scroll engine — it relies on the browser's native overflow
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:266:    .element(page.getByRole('menuitemradio', { name: /wterm/ }))
+web/src/features/home/<USER>/organisms/terminal-panel.browser.spec.tsx:269:    .element(page.getByRole('menuitemradio', { name: /xterm/ }))
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:1:import { Terminal } from '@wterm/react';
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:53:} from '@/features/home/<USER>/organisms/xterm-terminal';
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:90:  terminalBackend: 'wterm' | 'xterm';
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:211:  // Experiment toggle: render the PTY through wterm (DOM) or xterm.js (WebGL).
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:212:  // xterm is the default — it ships a real scrollback/viewport engine and feels
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:213:  // good; wterm is the rough experiment. Persisted so a reload keeps whichever
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:214:  // renderer you were comparing; only an explicit 'wterm' opt-in selects wterm.
+web/src/features/home/<USER>/organisms/terminal-panel.tsx:215: […]
 
 > TOOL
 
@@ -2366,8 +2366,8 @@ tool_use exec_command
 id: call_isNvLWizCgKkLJfqHEkI6gIW
 ```json
 {
-  "cmd": "sed -n '360,470p' internal/server/server.go && sed -n '490,530p' internal/server/browser_preview.go && sed -n '740,790p' web/src/features/home/components/organisms/terminal-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '360,470p' internal/server/server.go && sed -n '490,530p' internal/server/browser_preview.go && sed -n '740,790p' web/src/features/home/<USER>/organisms/terminal-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2380,7 +2380,7 @@ id: call_FqVfdfFZ7v9W27ifnGbld61l
 ```json
 {
   "cmd": "rg -n \"manualChunks|rollupOptions|sourcemap|modulePreload|assetsInclude|terser|minify|visualizer\" web/vite.config.ts web/vite.preview.config.ts web/src",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2393,7 +2393,7 @@ id: call_yObBoT6pwfz0IPNvzzWpAc6R
 ```json
 {
   "cmd": "sed -n '1,220p' web/vite.preview.config.ts 2>/dev/null",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2406,7 +2406,7 @@ id: call_gtT9YA26bzn3YQAx6McGtDdY
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app -type f -print0 | xargs -0 gzip -9 -c | wc -c | awk '{printf \"gzip_streamed_all_assets_bytes=%d\\ngzip_streamed_all_assets_MB=%.2f\\n\", $1, $1/1000000}'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -2571,7 +2571,7 @@ id: call_T0I1KpcyXz6ciOmNahVuBhe0
 ```json
 {
   "cmd": "sum=0; count=0; while IFS= read -r -d '' f; do b=$(gzip -9 -c \"$f\" | wc -c); sum=$((sum + b)); count=$((count + 1)); done < <(find cmd/yyork/dashboard/app -type f -print0); awk -v s=\"$sum\" -v c=\"$count\" 'BEGIN { printf \"gzip_individual_files=%d\\ngzip_individual_bytes=%d\\ngzip_individual_MB=%.2f\\n\", c, s, s/1000000 }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 4000
 }
@@ -2584,7 +2584,7 @@ id: call_Fyi3IbDXZLUoCeT70rYBWYQi
 ```json
 {
   "cmd": "command -v brotli; command -v zstd; command -v upx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -2597,7 +2597,7 @@ id: call_tZZ9ujsH0ENFlbRODp8QrTf7
 ```json
 {
   "cmd": "node - <<'NODE'\nconst fs = require('fs');\nconst path = 'cmd/yyork/dashboard/app/assets/_app.terminal._sessionId-BliI2PrR.js';\nconst s = fs.readFileSync(path, 'utf8');\nconst m = s.match(/m\\.f\\|\\|\\(m\\.f=\\[([\\s\\S]*?)\\]\\)/);\nif (!m) { console.log('no map'); process.exit(0); }\nconst refs = [...m[1].matchAll(/\"([^\"]+)\"/g)].map(x => x[1]);\nlet total = 0, missing = 0;\nfor (const ref of refs) {\n  const p = 'cmd/yyork/dashboard/app/' + ref;\n  try { total += fs.statSync(p).size; } catch { missing++; }\n}\nconsole.log(`terminal_dynamic_refs=${refs.length}`);\nconsole.log(`terminal_dynamic_ref_bytes=${total}`);\nconsole.log(`terminal_dynamic_ref_MB=${(total/1e6).toFixed(2)}`);\nconsole.log(`missing=${missing}`);\nNODE",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -2610,7 +2610,7 @@ id: call_HQIpMPiN9VCuXbSd3YsqwXvO
 ```json
 {
   "cmd": "du -sk web/node_modules/@wterm web/node_modules/@xterm web/node_modules/@pierre 2>/dev/null",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -2689,7 +2689,7 @@ id: call_3wwjIQXPY8ps6nJWkT7JDlo2
 ```json
 {
   "cmd": "version=$(node -e \"console.log(JSON.parse(require('fs').readFileSync('package.json','utf8')).version)\"); tmp=$(mktemp /tmp/yyork-prod-nocgo.XXXXXX); if direnv exec . env CGO_ENABLED=0 go build -trimpath -ldflags \"-s -w -X github.com/yyopc/yyork/internal/cli.Version=$version\" -o \"$tmp\" .; then bytes=$(wc -c < \"$tmp\"); awk -v b=\"$bytes\" 'BEGIN { printf \"mode=CGO_ENABLED_0_trimpath_s_w\\nbytes=%d\\ndecimal_MB=%.2f\\nbinary_MiB=%.2f\\n\", b, b/1000000, b/1048576 }'; direnv exec . go version -m \"$tmp\" | rg \"CGO_ENABLED|GOOS|GOARCH|path|mod\\s\"; else echo 'CGO_ENABLED=0 build failed'; fi; rm -f \"$tmp\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 8000
 }
@@ -2702,7 +2702,7 @@ id: call_lUuEGjSnznNaUe1M3H3mvSUp
 ```json
 {
   "cmd": "direnv exec . go env CGO_ENABLED GOOS GOARCH GOMOD GOWORK",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -2744,7 +2744,7 @@ Output:
 1
 darwin
 arm64
-/Users/tanishqpalandurkar/Projects/yyork/go.mod
+/home/<USER>/Projects/yyork/go.mod
 
 
 ```
@@ -2760,7 +2760,7 @@ id: call_8UM9eDjkMnK6KNzLySqqfWyS
 ```json
 {
   "cmd": "codesign -dv --verbose=4 yyork 2>&1 | sed -n '1,120p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2773,7 +2773,7 @@ id: call_dsruUftwq8615ZJIscfAgpTN
 ```json
 {
   "cmd": "otool -l yyork | rg -n \"LC_CODE_SIGNATURE|LC_UUID|LC_BUILD_VERSION|LC_SOURCE_VERSION|cmd LC\" -A8 -B1",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2786,7 +2786,7 @@ id: call_I2472xa0v2IRfP1uNlHfrA83
 ```json
 {
   "cmd": "orig=$(wc -c < yyork); prod=30590226; gz=3440963; embed=13521850; awk -v prod=\"$prod\" -v embed=\"$embed\" -v gz=\"$gz\" 'BEGIN { printf \"theoretical_prod_if_assets_gz_only_MB=%.2f\\nasset_raw_to_gzip_saved_MB=%.2f\\n\", (prod-embed+gz)/1000000, (embed-gz)/1000000 }'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -2802,7 +2802,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 203
 Output:
-Executable=/Users/tanishqpalandurkar/Projects/yyork/yyork
+Executable=/home/<USER>/Projects/yyork/yyork
 Identifier=a.out
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=328542 flags=0x20002(adhoc,linker-signed) hashes=10264+0 location=embedded

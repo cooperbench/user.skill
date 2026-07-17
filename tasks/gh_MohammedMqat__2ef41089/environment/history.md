@@ -59,7 +59,7 @@ tool_use Read
 id: toolu_01XKp3uzRfE9ijSaKWJ1QTX8
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/auth.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/auth.js"
 }
 ```
 
@@ -120,7 +120,7 @@ tool_use Read
 id: toolu_01FvsWHXkmHoJezgRTzumdEj
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/middleware/error.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/middleware/error.js"
 }
 ```
 
@@ -142,7 +142,7 @@ tool_use Read
 id: toolu_01UVaWaAsQjoTjFF3ddmrTjF
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/favorites.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/favorites.js"
 }
 ```
 
@@ -199,7 +199,7 @@ tool_use Read
 id: toolu_01NC9sQhZfrEZUnNBdtKEznV
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/router.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/router.js"
 }
 ```
 
@@ -246,7 +246,7 @@ tool_use Read
 id: toolu_017FD71F92mVXGWLDgEh9g9R
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/middleware/auth.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/middleware/auth.js"
 }
 ```
 
@@ -397,7 +397,7 @@ tool_use Read
 id: toolu_01EKYAyY7pakKGPPdPKbch94
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/favorites.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/favorites.js"
 }
 ```
 
@@ -482,7 +482,7 @@ tool_use Read
 id: toolu_01Ckacpti6Y8CUvavsV2jVkV
 ```json
 {
-  "file_path": "/home/mohmqat/Work/week-5-project-express/src/controllers/favorites.js"
+  "file_path": "/home/<USER>/Work/week-5-project-express/src/controllers/favorites.js"
 }
 ```
 

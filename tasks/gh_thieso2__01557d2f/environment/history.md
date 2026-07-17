@@ -2,7 +2,16 @@
 
 my local resolver does has some issues:
 
-~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman.                                                       [codex/fix-caddy-ca-eperm]PING tubu.sc.sandman (10.206.10.3): 56 data bytes64 bytes from 10.206.10.3: icmp_seq=0 ttl=63 time=22.932 ms--- tubu.sc.sandman ping statistics ---1 packets transmitted, 1 packets received, 0.0% packet lossround-trip min/avg/max/stddev = 22.932/22.932/22.932/0.000 ms~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman                                                        [codex/fix-caddy-ca-eperm]ping: cannot resolve tubu.sc.sandman: Unknown host~/Projects/GitHub/Sandcastle %                                                                                  [codex/fix-caddy-ca-eperm]
+~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman.                                                       [codex/fix-caddy-ca-eperm]
+PING tubu.sc.sandman (10.206.10.3): 56 data bytes
+64 bytes from 10.206.10.3: icmp_seq=0 ttl=63 time=22.932 ms
+
+--- tubu.sc.sandman ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 22.932/22.932/22.932/0.000 ms
+~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman                                                        [codex/fix-caddy-ca-eperm]
+ping: cannot resolve tubu.sc.sandman: Unknown host
+~/Projects/GitHub/Sandcastle %                                                                                  [codex/fix-caddy-ca-eperm]
 
 > AGENT
 
@@ -427,7 +436,7 @@ tool_use Read
 id: toolu_01MvUsRkojyvnzCMrq8xxFb6
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "offset": 280,
   "limit": 80
 }
@@ -1025,7 +1034,7 @@ tool_use Read
 id: toolu_012WCNjWBnRF79ZN3GfgNoev
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go"
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go"
 }
 ```
 
@@ -1128,7 +1137,7 @@ tool_use Read
 id: toolu_01YaS7FYZXQdmWf9jrokixxp
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/api/types.go",
   "offset": 420,
   "limit": 35
 }
@@ -1235,7 +1244,7 @@ id: toolu_01Ah4pBgG3R7vQKGkzyGNR6R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "const resolverMarker = \"# Managed by sandcastle dns\"",
   "new_string": "const (\n\tresolverMarker  = \"# Managed by sandcastle dns\"\n\thostsBeginMark  = \"# BEGIN sandcastle-dns\"\n\thostsEndMark    = \"# END sandcastle-dns\"\n\thostsTargetPath = \"/etc/hosts\"\n)"
 }
@@ -1246,7 +1255,7 @@ id: toolu_01Ah4pBgG3R7vQKGkzyGNR6R
 tool_result
 id: toolu_01Ah4pBgG3R7vQKGkzyGNR6R
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1256,7 +1265,7 @@ id: toolu_01QyS45yHWYyPmPm1LLBxq1P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "\tdnsCmd.AddCommand(dnsSearchCmd)\n\n\tdnsInstallCmd.Flags().BoolVar(&dnsInstallSearch, \"search\", false, \"Also add the instance suffix to the macOS DNS search path\")",
   "new_string": "\tdnsCmd.AddCommand(dnsSearchCmd)\n\tdnsCmd.AddCommand(dnsHostsCmd)\n\n\tdnsHostsCmd.AddCommand(dnsHostsSyncCmd)\n\tdnsHostsCmd.AddCommand(dnsHostsClearCmd)\n\tdnsHostsCmd.AddCommand(dnsHostsStatusCmd)\n\n\tdnsInstallCmd.Flags().BoolVar(&dnsInstallSearch, \"search\", false, \"Also add the instance suffix to the macOS DNS search path\")"
 }
@@ -1267,7 +1276,7 @@ id: toolu_01QyS45yHWYyPmPm1LLBxq1P
 tool_result
 id: toolu_01QyS45yHWYyPmPm1LLBxq1P
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1281,7 +1290,7 @@ id: toolu_01KFNPRoQxc68kThN3n4TG1Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "func requireDarwin() error {",
   "new_string": "var dnsHostsCmd = &cobra.Command{\n\tUse:   \"hosts\",\n\tShort: \"Manage /etc/hosts entries for Sandcastle sandboxes\",\n\tLong: \"Write a managed block of sandbox name→IP mappings into /etc/hosts.\\n\" +\n\t\t\"Useful when /etc/resolver-based DNS is unreliable (for example when the\\n\" +\n\t\t\"resolver is reached over Tailscale and macOS treats it as transient).\",\n}\n\nvar dnsHostsSyncCmd = &cobra.Command{\n\tUse:   \"sync\",\n\tShort: \"Write the current sandbox list into /etc/hosts\",\n\tRunE: func(cmd *cobra.Command, args []string) error {\n\t\tclient, err := api.NewClient()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tprintServer(client)\n\n\t\tstatus, err := client.DNSStatus()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif len(status.Records) == 0 {\n\t\t\tfmt.Println(\"No DNS records returned by server; clearing managed block.\")\n\t\t\treturn clearHostsBlock()\n\t\t}\n\t\tif err := writeHostsBlock(status.Records); err != nil {\n\t\t\treturn err\n\t\t}\n\t\tfmt.Printf(\"Wrote %d entries to %s\\n\", len(status.Records), hostsTargetPath)\n\t\treturn nil\n\t},\n}\n\nvar dnsHostsClearCmd = &cobra.Command{\n\tUse:   \"clear\",\n\tShort: \"Remove the Sandcastle-managed block from /etc/hosts\",\n\tRunE: func(cmd *cobra.Command, args []string) error {\n\t\treturn clearHostsBlock()\n\t},\n}\n\nvar dnsHostsStatusCmd = &cobra.Command{\n\tUse:   \"status\",\n\tShort: \"Show the Sandcastle-managed block in /etc/hosts\",\n\tRunE: func(cmd *cobra.Command, args []string) error {\n\t\tblock, err := readHostsBlock()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif block == \"\" {\n\t\t\tfmt.Printf(\"No Sandcastle-managed block in %s\\n\", hostsTargetPath)\n\t\t\treturn nil\n\t\t}\n\t\tfmt.Print(block)\n\t\treturn nil\n\t},\n}\n\nfunc requireDarwin() error {"
 }
@@ -1292,7 +1301,7 @@ id: toolu_01KFNPRoQxc68kThN3n4TG1Q
 tool_result
 id: toolu_01KFNPRoQxc68kThN3n4TG1Q
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1306,7 +1315,7 @@ id: toolu_01UPpNx2pxcdKuNVEdDtFLzg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "func resolverPath(suffix string) string {\n\treturn filepath.Join(\"/etc/resolver\", suffix)\n}",
   "new_string": "func resolverPath(suffix string) string {\n\treturn filepath.Join(\"/etc/resolver\", suffix)\n}\n\nfunc writeHostsBlock(records []api.DNSRecord) error {\n\tcurrent, err := os.ReadFile(hostsTargetPath)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"read %s: %w\", hostsTargetPath, err)\n\t}\n\tstripped, err := stripHostsBlock(current)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tvar block bytes.Buffer\n\tfmt.Fprintln(&block, hostsBeginMark)\n\tfor _, r := range records {\n\t\tif r.Name == \"\" || r.IP == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tif r.SandboxID != 0 {\n\t\t\tfmt.Fprintf(&block, \"%s\\t%s\\t# sandbox %d\\n\", r.IP, r.Name, r.SandboxID)\n\t\t} else {\n\t\t\tfmt.Fprintf(&block, \"%s\\t%s\\n\", r.IP, r.Name)\n\t\t}\n\t}\n\tfmt.Fprintln(&block, hostsEndMark)\n\n\tupdated := stripped\n\tif len(updated) > 0 && !bytes.HasSuffix(updated, []byte(\"\\n\")) {\n\t\tupdated = append(updated, '\\n')\n\t}\n\tupdated = append(updated, block.Bytes()...)\n\treturn writeHostsFile(updated)\n}\n\nfunc clearHostsBlock() error {\n\tcurrent, err := os.ReadFile(hostsTargetPath)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"read %s: %w\", hostsTargetPath, err)\n\t}\n\tstripped, err := stripHostsBlock(current)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif bytes.Equal(stripped, current) {\n\t\treturn nil\n\t}\n\treturn writeHostsFile(stripped)\n}\n\nfunc readHostsBlock() (string, error) {\n\tcurrent, err := os.ReadFile(hostsTargetPath)\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"read %s: %w\", hostsTargetPath, err)\n\t}\n\tbegin := bytes.Index(current, []byte(hostsBeginMark))\n\tif begin < 0 {\n\t\treturn \"\", nil\n\t}\n\tend := bytes.Index(current[begin:], []byte(hostsEndMark))\n\tif end < 0 {\n\t\treturn \"\", fmt.Errorf(\"%s contains %q without matching %q\", hostsTargetPath, hostsBeginMark, hostsEndMark)\n\t}\n\tend += begin + len(hostsEndMark)\n\tif eol := bytes.IndexByte(current[end:], '\\n'); eol >= 0 {\n\t\tend += eol + 1\n\t}\n\treturn string(current[begin:end]), nil\n}\n\nfunc stripHostsBlock(data []byte) ([]byte, error) {\n\tbegin := bytes.Index(data, []byte(hostsBeginMark))\n\tif begin < 0 {\n\t\tif […]
 
@@ -1315,7 +1324,7 @@ id: toolu_01UPpNx2pxcdKuNVEdDtFLzg
 tool_result
 id: toolu_01UPpNx2pxcdKuNVEdDtFLzg
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1575,7 +1584,7 @@ id: toolu_014hjUCvy2x2GaiK4mWuyBNB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "\tvar block bytes.Buffer\n\tfmt.Fprintln(&block, hostsBeginMark)\n\tfor _, r := range records {\n\t\tif r.Name == \"\" || r.IP == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tif r.SandboxID != 0 {\n\t\t\tfmt.Fprintf(&block, \"%s\\t%s\\t# sandbox %d\\n\", r.IP, r.Name, r.SandboxID)\n\t\t} else {\n\t\t\tfmt.Fprintf(&block, \"%s\\t%s\\n\", r.IP, r.Name)\n\t\t}\n\t}\n\tfmt.Fprintln(&block, hostsEndMark)",
   "new_string": "\tvar block bytes.Buffer\n\tfmt.Fprintln(&block, hostsBeginMark)\n\tfor _, r := range records {\n\t\tif r.Name == \"\" || r.IP == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tnames := hostsAliases(r.Name)\n\t\tfmt.Fprintf(&block, \"%s\\t%s\", r.IP, strings.Join(names, \" \"))\n\t\tif r.SandboxID != 0 {\n\t\t\tfmt.Fprintf(&block, \"\\t# sandbox %d\", r.SandboxID)\n\t\t}\n\t\tfmt.Fprintln(&block)\n\t}\n\tfmt.Fprintln(&block, hostsEndMark)"
 }
@@ -1586,7 +1595,7 @@ id: toolu_014hjUCvy2x2GaiK4mWuyBNB
 tool_result
 id: toolu_014hjUCvy2x2GaiK4mWuyBNB
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1596,7 +1605,7 @@ id: toolu_01584ageTKyUf6q65qYwpd1E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "old_string": "func writeHostsFile(data []byte) error {",
   "new_string": "func hostsAliases(fqdn string) []string {\n\tparts := strings.Split(fqdn, \".\")\n\tout := make([]string, 0, len(parts))\n\tfor i := 1; i <= len(parts); i++ {\n\t\tout = append(out, strings.Join(parts[:i], \".\"))\n\t}\n\treturn out\n}\n\nfunc writeHostsFile(data []byte) error {"
 }
@@ -1607,7 +1616,7 @@ id: toolu_01584ageTKyUf6q65qYwpd1E
 tool_result
 id: toolu_01584ageTKyUf6q65qYwpd1E
 ```
-The file /Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1680,7 +1689,7 @@ id: toolu_01A7oLhrfMLoWZg32zV36r4s
 {
   "description": "Map alias-feature surfaces",
   "subagent_type": "Explore",
-  "prompt": "I'm implementing a \"sandbox aliases\" feature for the Sandcastle project at /Users/thies/Projects/GitHub/Sandcastle. Each sandbox already has a name like `tubu` and an FQDN like `tubu.<project>.<instance>`. We want to let users attach extra hostnames to a sandbox:\n- subdomains: `admin.dev` (becomes `admin.dev.<project>.<instance>` when an alias is registered with type=sub for sandbox `dev`)\n- fqdns: `www.heise.de` (used verbatim)\n\nBoth kinds end up:\n1. Stored per-sandbox in the database\n2. Returned by the server's DNS records endpoint (the one the Go CLI calls via `client.DNSStatus()` returning records of `{Name, IP, SandboxID}`)\n3. Provisioned via mkcert so HTTPS routing works\n4. Manageable from the Rails web UI, the Go CLI, and a TUI\n\nI need a precise map of the surfaces I'll touch. Report concisely (under 400 words). I do NOT want you to write any code — just locate things.\n\nFind and report:\n\n1. **Sandbox model** — file path, key columns/associations, any existing alias-like field. Look in `app/models/`.\n2. **DNS records production** — what assembles the `records` array returned by the API's DNS status endpoint. Likely a service (`app/services/`) and a controller (`app/controllers/api/`). Show the file paths and the key method that builds the record list. Note how the FQDN is […]
+  "prompt": "I'm implementing a \"sandbox aliases\" feature for the Sandcastle project at /home/<USER>/Projects/GitHub/Sandcastle. Each sandbox already has a name like `tubu` and an FQDN like `tubu.<project>.<instance>`. We want to let users attach extra hostnames to a sandbox:\n- subdomains: `admin.dev` (becomes `admin.dev.<project>.<instance>` when an alias is registered with type=sub for sandbox `dev`)\n- fqdns: `www.heise.de` (used verbatim)\n\nBoth kinds end up:\n1. Stored per-sandbox in the database\n2. Returned by the server's DNS records endpoint (the one the Go CLI calls via `client.DNSStatus()` returning records of `{Name, IP, SandboxID}`)\n3. Provisioned via mkcert so HTTPS routing works\n4. Manageable from the Rails web UI, the Go CLI, and a TUI\n\nI need a precise map of the surfaces I'll touch. Report concisely (under 400 words). I do NOT want you to write any code — just locate things.\n\nFind and report:\n\n1. **Sandbox model** — file path, key columns/associations, any existing alias-like field. Look in `app/models/`.\n2. **DNS records production** — what assembles the `records` array returned by the API's DNS status endpoint. Likely a service (`app/services/`) and a controller (`app/controllers/api/`). Show the file paths and the key method that builds the record list. Note how the FQDN is […]
 
 > TOOL
 
@@ -1692,28 +1701,28 @@ Perfect. Now I have all the information I need. Let me compile the report:
 ## Surface Area Map for Sandbox Aliases Feature
 
 ### 1. Sandbox Model
-**File:** `/Users/thies/Projects/GitHub/Sandcastle/app/models/sandbox.rb`
+**File:** `/home/<USER>/Projects/GitHub/Sandcastle/app/models/sandbox.rb`
 - Key columns: `name`, `project_name`, `user_id`, `status`
 - Associations: `belongs_to :user`, `has_many :routes`
 - No existing alias field; will need new `has_many :sandbox_aliases` association
 
 ### 2. DNS Records Production
 **Files:**
-- Controller: `/Users/thies/Projects/GitHub/Sandcastle/app/controllers/api/dns_controller.rb` (calls `DnsManager.new.status()`)
-- Service: `/Users/thies/Projects/GitHub/Sandcastle/app/services/dns_manager.rb`
+- Controller: `/home/<USER>/Projects/GitHub/Sandcastle/app/controllers/api/dns_controller.rb` (calls `DnsManager.new.status()`)
+- Service: `/home/<USER>/Projects/GitHub/Sandcastle/app/services/dns_manager.rb`
 - Key method: `records_for(user)` (line 116) builds array of `Record` structs with `name`, `ip`, `sandbox_id`
 - FQDN composition: `fqdn_for(sandbox)` (line 233) assembles `"#{sandbox_label}.#{project_label}.#{instance_label}"` where labels are DNS-safe via `dns_label()`
 - Returns via API: `Api::DnsController#status` renders JSON with `records` array (line 33)
 
 ### 3. Cert Provisioning (mkcert/Caddy)
-**File:** `/Users/thies/Projects/GitHub/Sandcastle/app/services/caddy_certificate_authority.rb`
+**File:** `/home/<USER>/Projects/GitHub/Sandcastle/app/services/caddy_certificate_authority.rb`
 - mkcert integration: lines 124–133 (`run_mkcert` method)
 - Authority uses mkcert if available in PATH (line 135–139), falls back to OpenSSL
 - Certificate generation: `generate_mkcert_authority` (line 102) or `generate_openssl_authority` (line 116)
 - SANs for hostnames: mkcert is called with hardcoded test names ("sandcastle.local", "sandcastle-check.local") — no dynamic SAN list currently; Caddy reverse-proxy routes based on DNS records from DnsManager
 
 ### 4. CLI Sandbox Commands
-**File:** `/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/sandbox.go`
+**File:** `/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/sandbox.go`
 - Existing subcommands: `create`, `list`, `delete`, `start`, `stop`, `rebuild`, `use`, `set`, `rename`, `archive_restore`
 - Pattern for […]
 

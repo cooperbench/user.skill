@@ -39,7 +39,7 @@ id: toolu_01Xjko4sRi9cpdb2Jy7AjUqH
 ```json
 {
   "pattern": "abbr|syntax.highlight|zsh-syntax",
-  "path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix",
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix",
   "output_mode": "content"
 }
 ```
@@ -59,20 +59,20 @@ id: toolu_01Ssyuzsq8cF7B4ZWUvTRRrk
 tool_result
 id: toolu_01Ssyuzsq8cF7B4ZWUvTRRrk
 ```
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gh-q.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/jb.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gwt.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/g.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/cd-up.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/oh-my-zsh.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/claude-zai.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/ct.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/dev.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/nfi.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/difit-cmux.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/README.md
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gh-q.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/jb.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gwt.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/g.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/cd-up.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/oh-my-zsh.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/claude-zai.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/ct.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/dev.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/nfi.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/difit-cmux.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/README.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh
 ```
 
 > TOOL
@@ -123,7 +123,7 @@ tool_use Read
 id: toolu_01X1UuRadFLFYzMWRSzPeaiT
 ```json
 {
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
 }
 ```
 
@@ -218,7 +218,7 @@ tool_use Read
 id: toolu_01GfnXARXJZCEZevNUmCMY8J
 ```json
 {
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh"
 }
 ```
 
@@ -287,7 +287,7 @@ id: toolu_01PKqmtgm5SSqAEUryMpU22B
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
   "old_string": "# zsh plugins\nsource ~/.zsh/plugins/zsh-abbr/zsh-abbr.plugin.zsh\nsource ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh\nsource ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh",
   "new_string": "# zsh plugins\nZSH_HIGHLIGHT_HIGHLIGHTERS+=(regexp)\nsource ~/.zsh/plugins/zsh-abbr/zsh-abbr.plugin.zsh\nsource ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh\nsource ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 }
@@ -298,7 +298,7 @@ id: toolu_01PKqmtgm5SSqAEUryMpU22B
 tool_result
 id: toolu_01PKqmtgm5SSqAEUryMpU22B
 ```
-The file /home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
 ```
 
 > AGENT
@@ -318,7 +318,7 @@ id: toolu_01L7iojeZCnzkXcm9NxHCfsm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
   "old_string": "ZSH_HIGHLIGHT_HIGHLIGHTERS+=(regexp)\nsource ~/.zsh/plugins/zsh-abbr/zsh-abbr.plugin.zsh",
   "new_string": "source ~/.zsh/plugins/zsh-abbr/zsh-abbr.plugin.zsh"
 }
@@ -329,7 +329,7 @@ id: toolu_01L7iojeZCnzkXcm9NxHCfsm
 tool_result
 id: toolu_01L7iojeZCnzkXcm9NxHCfsm
 ```
-The file /home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
 ```
 
 > AGENT
@@ -354,7 +354,7 @@ tool_use Read
 id: toolu_01QUMXvePt7U1ipHxePze9GH
 ```json
 {
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
 }
 ```
 
@@ -524,7 +524,7 @@ id: toolu_013VjRCH21uFtyXfyqpnCAbR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
   "old_string": "# aliases & abbreviations (must be after functions loop and zsh-abbr)\nsource ~/.config/zsh/config/aliases.zsh",
   "new_string": "# aliases & abbreviations (must be after functions loop and zsh-abbr)\nsource ~/.config/zsh/config/aliases.zsh\n\n# Highlight abbreviations as valid commands for zsh-syntax-highlighting\nZSH_HIGHLIGHT_HIGHLIGHTERS+=(regexp)\ntypeset -gA ZSH_HIGHLIGHT_REGEXP\nZSH_HIGHLIGHT_REGEXP+=('^[[:blank:][:space:]]*('${(j:|:)${(k)ABBR_REGULAR_SESSION_ABBREVIATIONS}}')$' 'fg=blue')\nZSH_HIGHLIGHT_REGEXP+=('\\<('${(j:|:)${(k)ABBR_GLOBAL_SESSION_ABBREVIATIONS}}')$' 'fg=blue')"
 }
@@ -535,7 +535,7 @@ id: toolu_013VjRCH21uFtyXfyqpnCAbR
 tool_result
 id: toolu_013VjRCH21uFtyXfyqpnCAbR
 ```
-The file /home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
 ```
 
 > AGENT
@@ -600,7 +600,7 @@ tool_use Read
 id: toolu_01LQkdduCAUuQnHZEPY4eKAr
 ```json
 {
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
 }
 ```
 
@@ -672,7 +672,7 @@ id: toolu_01SYgWaiARhARYXjhJ7uvBer
 ```json
 {
   "replace_all": true,
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh",
   "old_string": "abbr -S -qq",
   "new_string": "abbr -f -qq"
 }
@@ -685,7 +685,7 @@ id: toolu_01VKcNdE8a5WqBaEsJkXhkYh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
   "old_string": "# Highlight abbreviations as valid commands for zsh-syntax-highlighting\nZSH_HIGHLIGHT_HIGHLIGHTERS+=(regexp)\ntypeset -gA ZSH_HIGHLIGHT_REGEXP\nZSH_HIGHLIGHT_REGEXP+=('^[[:blank:][:space:]]*('${(j:|:)${(k)ABBR_REGULAR_SESSION_ABBREVIATIONS}}')$' 'fg=blue')\nZSH_HIGHLIGHT_REGEXP+=('\\<('${(j:|:)${(k)ABBR_GLOBAL_SESSION_ABBREVIATIONS}}')$' 'fg=blue')",
   "new_string": "# Highlight abbreviations as valid commands for zsh-syntax-highlighting\nZSH_HIGHLIGHT_HIGHLIGHTERS+=(regexp)\ntypeset -gA ZSH_HIGHLIGHT_REGEXP\nZSH_HIGHLIGHT_REGEXP+=('^[[:blank:][:space:]]*('${(j:|:)${(k)ABBR_REGULAR_USER_ABBREVIATIONS}}')$' 'fg=blue')\nZSH_HIGHLIGHT_REGEXP+=('\\<('${(j:|:)${(k)ABBR_GLOBAL_USER_ABBREVIATIONS}}')$' 'fg=blue')"
 }
@@ -696,7 +696,7 @@ id: toolu_01VKcNdE8a5WqBaEsJkXhkYh
 tool_result
 id: toolu_01SYgWaiARhARYXjhJ7uvBer
 ```
-The file /home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh has been updated. All occurrences of 'abbr -S -qq' were successfully replaced with 'abbr -f -qq'.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh has been updated. All occurrences of 'abbr -S -qq' were successfully replaced with 'abbr -f -qq'.
 ```
 
 > TOOL
@@ -704,7 +704,7 @@ The file /home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zs
 tool_result
 id: toolu_01VKcNdE8a5WqBaEsJkXhkYh
 ```
-The file /home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
 ```
 
 > AGENT
@@ -827,7 +827,7 @@ id: toolu_0178KHpqPuqbgsXb6RLrnRAx
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
   "old_string": "# Highlight abbreviations as valid commands for zsh-syntax-highlighting\nZSH_HIGHLIGHT_HIGHLIGHTERS+=(regexp)\ntypeset -gA ZSH_HIGHLIGHT_REGEXP\nZSH_HIGHLIGHT_REGEXP+=('^[[:blank:][:space:]]*('${(j:|:)${(k)ABBR_REGULAR_USER_ABBREVIATIONS}}')$' 'fg=blue')\nZSH_HIGHLIGHT_REGEXP+=('\\<('${(j:|:)${(k)ABBR_GLOBAL_USER_ABBREVIATIONS}}')$' 'fg=blue')",
   "new_string": "# Highlight abbreviations as valid commands for zsh-syntax-highlighting\nZSH_HIGHLIGHT_HIGHLIGHTERS+=(regexp)\ntypeset -gA ZSH_HIGHLIGHT_REGEXP\n() {\n  local keys=(${(k)ABBR_REGULAR_USER_ABBREVIATIONS})\n  keys=(${keys//\\\"/})\n  ZSH_HIGHLIGHT_REGEXP+=('^[[:blank:][:space:]]*('${(j:|:)keys}')$' 'fg=blue')\n}"
 }
@@ -838,7 +838,7 @@ id: toolu_0178KHpqPuqbgsXb6RLrnRAx
 tool_result
 id: toolu_0178KHpqPuqbgsXb6RLrnRAx
 ```
-The file /home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
 ```
 
 > TOOL
@@ -1034,7 +1034,7 @@ tool_use Bash
 id: toolu_01V69MisVLt9EhTCTEq7TfbF
 ```json
 {
-  "command": "git add zsh/config/aliases.zsh zsh/zshrc && git commit -m \"$(cat <<'EOF'\nzsh: switch abbr from session to user abbreviations and fix syntax highlighting\n\n- Change `abbr -S` (session) to `abbr -f` (user, force) so abbreviations\n  persist without re-registering every shell startup\n- Add regexp highlighter to color abbreviations as valid commands (fg=blue)\n  instead of unknown command (red), working around quoted keys in\n  ABBR_REGULAR_USER_ABBREVIATIONS\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add zsh/config/aliases.zsh zsh/zshrc && git commit -m \"$(cat <<'EOF'\nzsh: switch abbr from session to user abbreviations and fix syntax highlighting\n\n- Change `abbr -S` (session) to `abbr -f` (user, force) so abbreviations\n  persist without re-registering every shell startup\n- Add regexp highlighter to color abbreviations as valid commands (fg=blue)\n  instead of unknown command (red), working around quoted keys in\n  ABBR_REGULAR_USER_ABBREVIATIONS\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit zsh abbr and syntax highlighting changes"
 }
 ```
@@ -1045,10 +1045,10 @@ tool_result
 id: toolu_01V69MisVLt9EhTCTEq7TfbF
 ```
 [WARNING] Unstaged files detected.
-[INFO] Stashing unstaged files to /home/yuta/.cache/pre-commit/patch1773119260-262065.
+[INFO] Stashing unstaged files to /home/<USER>/.cache/pre-commit/patch1773119260-262065.
 git-secrets..............................................................Passed
 treefmt..................................................................Passed
-[INFO] Restored changes from /home/yuta/.cache/pre-commit/patch1773119260-262065.
+[INFO] Restored changes from /home/<USER>/.cache/pre-commit/patch1773119260-262065.
 [main 8e0887e] zsh: switch abbr from session to user abbreviations and fix syntax highlighting
  2 files changed, 49 insertions(+), 40 deletions(-)
 ```
@@ -1079,15 +1079,15 @@ Failed query: select "id", "name", "url", "description", "category", "category_s
 
 Error: Failed query: select "id", "name", "url", "description", "category", "category_slug", "kind", "created_at", "updated_at" from "sources" "sources" order by "sources"."name" asc
 params: 
-    at D1PreparedQuery.queryWithCache (/home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-B2WUCUQQ.js:3541:15)
-    at D1PreparedQuery.values (/home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/drizzle-orm_d1.js:220:12)
-    at D1PreparedQuery.all (/home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/drizzle-orm_d1.js:172:18)
+    at D1PreparedQuery.queryWithCache (/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-B2WUCUQQ.js:3541:15)
+    at D1PreparedQuery.values (/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/drizzle-orm_d1.js:220:12)
+    at D1PreparedQuery.all (/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/drizzle-orm_d1.js:172:18)
     at async Promise.all (index 0)
-    at loader (/home/yuta/ghq/github.com/yutakobayashidev/feed-app/app/routes/home.tsx:52:42)
-    at callRouteHandler (/home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-GJTNTGJK.js:11522:16)
-    at commonRoute.loader (/home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-GJTNTGJK.js:11666:19)
-    at /home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-GJTNTGJK.js:5136:19
-    at callLoaderOrAction (/home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-GJTNTGJK.js:5188:16)
+    at loader (/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/app/routes/home.tsx:52:42)
+    at callRouteHandler (/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-GJTNTGJK.js:11522:16)
+    at commonRoute.loader (/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-GJTNTGJK.js:11666:19)
+    at /home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-GJTNTGJK.js:5136:19
+    at callLoaderOrAction (/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.vite/deps_ssr/chunk-GJTNTGJK.js:5188:16)
     at async Promise.all (index 0)
 
 > AGENT
@@ -1101,7 +1101,7 @@ id: toolu_01RqkMEnMLWFgB9GCjFVfjKA
 ```json
 {
   "pattern": "**/*migration*/**/*.sql",
-  "path": "/home/yuta/ghq/github.com/yutakobayashidev/feed-app"
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/feed-app"
 }
 ```
 
@@ -1112,7 +1112,7 @@ id: toolu_01SA5KfsZjyybfhC2X1zPuND
 ```json
 {
   "pattern": "**/drizzle/**/*.sql",
-  "path": "/home/yuta/ghq/github.com/yutakobayashidev/feed-app"
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/feed-app"
 }
 ```
 
@@ -1123,7 +1123,7 @@ id: toolu_01H9DSUBQyfRbdxUVqxFb6x8
 ```json
 {
   "pattern": "**/wrangler.*",
-  "path": "/home/yuta/ghq/github.com/yutakobayashidev/feed-app"
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/feed-app"
 }
 ```
 
@@ -1132,16 +1132,16 @@ id: toolu_01H9DSUBQyfRbdxUVqxFb6x8
 tool_result
 id: toolu_01RqkMEnMLWFgB9GCjFVfjKA
 ```
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0006_gray_chat.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0005_late_rictor.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0002_nosy_paibok.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0003_colorful_mysterio.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0004_curved_rocket_raccoon.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0001_special_the_santerians.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0000_dazzling_iceman.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0007_flashy_echo.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0008_left_warbird.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0009_medical_rocket_raccoon.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0006_gray_chat.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0005_late_rictor.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0002_nosy_paibok.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0003_colorful_mysterio.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0004_curved_rocket_raccoon.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0001_special_the_santerians.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0000_dazzling_iceman.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0007_flashy_echo.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0008_left_warbird.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0009_medical_rocket_raccoon.sql
 ```
 
 > TOOL
@@ -1157,11 +1157,11 @@ No files found
 tool_result
 id: toolu_01H9DSUBQyfRbdxUVqxFb6x8
 ```
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/wrangler.scheduled.jsonc
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.pnpm/wrangler@4.54.0/node_modules/wrangler/bin/wrangler.js
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/node_modules/.pnpm/wrangler@4.54.0/node_modules/wrangler/templates/remoteBindings/wrangler.jsonc
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/wrangler.jsonc
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/build/server/wrangler.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/wrangler.scheduled.jsonc
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.pnpm/wrangler@4.54.0/node_modules/wrangler/bin/wrangler.js
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/node_modules/.pnpm/wrangler@4.54.0/node_modules/wrangler/templates/remoteBindings/wrangler.jsonc
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/wrangler.jsonc
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/build/server/wrangler.json
 ```
 
 > TOOL
@@ -1171,7 +1171,7 @@ id: toolu_0173X84Ct9yuQ5iqf5trfHj7
 ```json
 {
   "pattern": "sources",
-  "path": "/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations",
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1182,7 +1182,7 @@ tool_use Read
 id: toolu_01TerqyNqzZ1XjATT7NvBszF
 ```json
 {
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/feed-app/wrangler.jsonc"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/wrangler.jsonc"
 }
 ```
 
@@ -1256,23 +1256,23 @@ tool_result
 id: toolu_0173X84Ct9yuQ5iqf5trfHj7
 ```
 Found 17 files
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0009_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0008_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0007_flashy_echo.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0007_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0000_dazzling_iceman.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0001_special_the_santerians.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0002_nosy_paibok.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0003_colorful_mysterio.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0004_curved_rocket_raccoon.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/0006_gray_chat.sql
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0000_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0001_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0002_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0003_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0004_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0005_snapshot.json
-/home/yuta/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0006_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0009_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0008_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0007_flashy_echo.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0007_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0000_dazzling_iceman.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0001_special_the_santerians.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0002_nosy_paibok.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0003_colorful_mysterio.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0004_curved_rocket_raccoon.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/0006_gray_chat.sql
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0000_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0001_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0002_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0003_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0004_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0005_snapshot.json
+/home/<USER>/ghq/github.com/yutakobayashidev/feed-app/migrations/meta/0006_snapshot.json
 ```
 
 > AGENT
@@ -1282,7 +1282,7 @@ D1 の設定で `"remote": true` になっているので、ローカルでは�
 ローカル開発で動かすなら、マイグレーションをローカル D1 に適用する必要があります。
 
 ```bash
-cd /home/yuta/ghq/github.com/yutakobayashidev/feed-app
+cd /home/<USER>/ghq/github.com/yutakobayashidev/feed-app
 npx wrangler d1 migrations apply radar --local
 ```
 
@@ -1300,7 +1300,7 @@ tool_use Bash
 id: toolu_017s26QF4eKFSpHip9cxdSrM
 ```json
 {
-  "command": "cd /home/yuta/ghq/github.com/yutakobayashidev/feed-app && git status && git diff --stat",
+  "command": "cd /home/<USER>/ghq/github.com/yutakobayashidev/feed-app && git status && git diff --stat",
   "description": "Check git status and diff in feed-app"
 }
 ```
@@ -1346,7 +1346,7 @@ tool_use Bash
 id: toolu_01URUkMH1QiMDmRihUEJjMUG
 ```json
 {
-  "command": "cd /home/yuta/ghq/github.com/yutakobayashidev/feed-app && git diff && echo \"---UNTRACKED---\" && for f in $(git ls-files --others --exclude-standard); do echo \"=== $f ===\"; cat \"$f\"; echo; done",
+  "command": "cd /home/<USER>/ghq/github.com/yutakobayashidev/feed-app && git diff && echo \"---UNTRACKED---\" && for f in $(git ls-files --others --exclude-standard); do echo \"=== $f ===\"; cat \"$f\"; echo; done",
   "description": "Show full diff and untracked file contents"
 }
 ```
@@ -1357,7 +1357,7 @@ tool_use Bash
 id: toolu_01WCStHVtEpafjXxi3K51LG9
 ```json
 {
-  "command": "cd /home/yuta/ghq/github.com/yutakobayashidev/feed-app && git log --oneline -5",
+  "command": "cd /home/<USER>/ghq/github.com/yutakobayashidev/feed-app && git log --oneline -5",
   "description": "Show recent commits for message style"
 }
 ```
@@ -1445,7 +1445,7 @@ tool_use Bash
 id: toolu_01Cn2HD4ReWi1nm2aHjHD46V
 ```json
 {
-  "command": "cd /home/yuta/ghq/github.com/yutakobayashidev/feed-app && git add app/components/feed/CardGrid.tsx app/components/feed/index.ts app/components/feed/NostrTimeline.tsx app/components/layout/Sidebar.tsx app/routes.ts app/routes/nostr.tsx app/data/nostr-config.ts app/hooks/useNostr.ts package.json pnpm-lock.yaml && git commit -m \"$(cat <<'EOF'\nfeat: add Nostr timeline feed\n\n- Add Nostr page with real-time note streaming via rx-nostr\n- Display notes from followed pubkeys with profile metadata\n- Add Nostr link to sidebar navigation\n- Export LinkifiedText for reuse in NostrTimeline\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "cd /home/<USER>/ghq/github.com/yutakobayashidev/feed-app && git add app/components/feed/CardGrid.tsx app/components/feed/index.ts app/components/feed/NostrTimeline.tsx app/components/layout/Sidebar.tsx app/routes.ts app/routes/nostr.tsx app/data/nostr-config.ts app/hooks/useNostr.ts package.json pnpm-lock.yaml && git commit -m \"$(cat <<'EOF'\nfeat: add Nostr timeline feed\n\n- Add Nostr page with real-time note streaming via rx-nostr\n- Display notes from followed pubkeys with profile metadata\n- Add Nostr link to sidebar navigation\n- Export LinkifiedText for reuse in NostrTimeline\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit Nostr feed feature"
 }
 ```
@@ -1477,7 +1477,7 @@ tool_use Bash
 id: toolu_01UAGRzrMGdWM6mrsNxmHnh9
 ```json
 {
-  "command": "cd /home/yuta/ghq/github.com/yutakobayashidev/feed-app && git push",
+  "command": "cd /home/<USER>/ghq/github.com/yutakobayashidev/feed-app && git push",
   "description": "Push to remote"
 }
 ```

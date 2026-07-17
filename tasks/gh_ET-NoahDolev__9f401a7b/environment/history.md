@@ -41,7 +41,7 @@ I've conducted a thorough search of the Rune codebase. Here are all infrastructu
 
 ### 1. DevPod & Development Container Configuration
 
-**File:** `/Users/noahdolevelixir/Code/rune/.devcontainer/devcontainer.json`
+**File:** `/home/<USER>/Code/rune/.devcontainer/devcontainer.json`
 - Container image: `nvidia/cuda:13.0.2-cudnn-devel-ubuntu22.04`
 - GPU support: `--gpus all --shm-size=8g`
 - Features: Python 3.12, Git, GitHub CLI, AWS CLI
@@ -49,7 +49,7 @@ I've conducted a thorough search of the Rune codebase. Here are all infrastructu
 - GPU environment variables: `NVIDIA_VISIBLE_DEVICES=all`, CUDA library paths
 - Post-create hook: `bash .devcontainer/post-create.sh`
 
-**File:** `/Users/noahdolevelixir/Code/rune/.devcontainer/post-create.sh`
+**File:** `/home/<USER>/Code/rune/.devcontainer/post-create.sh`
 - Installs Node.js LTS, uv (Python package manager), Claude Code CLI
 - **AWS Secrets Manager Integration:** Fetches HuggingFace token from AWS Secrets Manager
   - Secret ID: `elixirtrials/dev/huggingface-token`
@@ -61,7 +61,7 @@ I've conducted a thorough search of the Rune codebase. Here are all infrastructu
 
 ### 2. Docker Configuration
 
-**File:** `/Users/noahdolevelixir/Code/rune/services/lora-server/Dockerfile`
+**File:** `/home/<USER>/Code/rune/services/lora-server/Dockerfile`
 ```dockerfile
 FROM vllm/vllm-openai:v0.16.0
 ENV VLLM_ALLOW_RUNTIME_LORA_UPDATING=True
@@ -70,7 +70,7 @@ EXPOSE 8000 8001
 CMD ["./startup.sh"]
 ```
 
-**File:** `/Users/noahdolevelixir/Code/rune/services/lora-server/config.yaml`
+**File:** `/home/<USER>/Code/rune/services/lora-server/config.yaml`
 - Model: `Qwen/Qwen2.5-Coder-7B-Instruct`
 - GPU parallelism settings:
   - `pipeline_parallel_size: 1` (default single GPU)
@@ -96,21 +96,21 @@ Based on my thorough exploration of the Rune codebase, here's everything related
 ## 1. TRAINING SCRIPTS AND CONFIGURATION
 
 ### Key Training Files:
-- **/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py** - Main QLoRA training orchestrator
+- **/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py** - Main QLoRA training orchestrator
   - `train_qlora()` - Core training function with NF4 quantization, PEFT adapter configuration
   - `train_and_register()` - Trains adapter and registers it in the adapter registry
   - Handles warm-start from pre-trained adapters and model registry defaults
 
-- **/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_train.py** - KL-divergence context distillation training
+- **/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_train.py** - KL-divergence context distillation training
   - `train_d2l_qwen3()` - Distillation training loop for Qwen3-Coder-Next
   - Three execution modes: dry-run, smoke-test, full training
   - Supports tiered checkpointing and MLflow tracking
 
-- **/Users/noahdolevelixir/Code/rune/scripts/e2e_training_smoke.py** - End-to-end training smoke test
+- **/home/<USER>/Code/rune/scripts/e2e_training_smoke.py** - End-to-end training smoke test
   - Uses HuggingFaceTB/SmolLM2-135M for validation
   - Proves LoRA fine-tuning, shift-aware loss, and adapter merging work
 
-- **/Users/noahdolevelixir/Code/rune/services/training-svc/src/training_svc/routers/training.py** - FastAPI training service endpoints
+- **/home/<USER>/Code/rune/services/training-svc/src/training_svc/routers/training.py** - FastAPI training service endpoints
   - `POST /train/lora` - Dispatch QLoRA training jobs
   - `POST /train/hypernetwork` - Dispatch hypernetwork adapter generation
   - `GET /jobs/{job_id}` - Job status polling
@@ -120,7 +120,7 @@ Based on my thorough exploration of the Rune codebase, here's everything related
 ## 2. DEVPOD AND CLOUD TRAINING CONFIGURATION
 
 ### DevContainer Setup:
-**File: /Users/noahdolevelixir/Code/rune/.devcontainer/devcontainer.json**
+**File: /home/<USER>/Code/rune/.devcontainer/devcontainer.json**
 ```json
 {
   "name": "rune GPU […]
@@ -282,7 +282,7 @@ Based on my thorough exploration of the training code, here are the complete fin
   - A `generated_code` field containing the solution code
   - A `task_description` field
 
-**File:** `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py`
+**File:** `/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py`
 - Lines 94-273: `train_qlora()` function
 - Lines 186-191: Trajectory loading and validation
 - Lines 185-191: Code that requires successful trajectory
@@ -314,7 +314,7 @@ Based on my thorough exploration of the training code, here are the complete fin
 }
 ```
 
-**File:** `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trajectory.py`
+**File:** `/home/<USER>/Code/rune/libs/model-training/src/model_training/trajectory.py`
 - Lines 30-71: `record_trajectory()` shows […]
 
 > TOOL
@@ -330,7 +330,7 @@ Based on my careful review, here are the critical assumptions that could fail on
 
 ### **1. CUDA Version Compatibility Issue** ⚠️ CRITICAL
 
-**File:** `/Users/noahdolevelixir/Code/rune/pyproject.toml` (line 41) & `.devcontainer/devcontainer.json` (line 3)
+**File:** `/home/<USER>/Code/rune/pyproject.toml` (line 41) & `.devcontainer/devcontainer.json` (line 3)
 
 **Problem:**
 - Container uses: **CUDA 13.0.2** (`nvidia/cuda:13.0.2-cudnn-devel-ubuntu22.04`)
@@ -349,7 +349,7 @@ Based on my careful review, here are the critical assumptions that could fail on
 
 ### **2. Flash-Attn Wheel URL Brittleness** ⚠️ HIGH RISK
 
-**File:** `/Users/noahdolevelixir/Code/rune/pyproject.toml` (lines 70–71)
+**File:** `/home/<USER>/Code/rune/pyproject.toml` (lines 70–71)
 
 ```toml
 flash-attn = { url = "https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.9.4/flash_attn-2.8.3+cu130torch2.11-cp312-cp312-linux_x86_64.whl" }
@@ -374,7 +374,7 @@ I've traced the DeltaCoder warm-start code path end-to-end. Here are the critica
 
 ### 1. How warm_start_adapter_id Gets Resolved
 
-**File:** `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/model_configs.py` (line 117)
+**File:** `/home/<USER>/Code/rune/libs/model-training/src/model_training/model_configs.py` (line 117)
 
 The `qwen3.5-9b` config has:
 ```python
@@ -391,7 +391,7 @@ This is a **HuggingFace Hub ID** (org/repo format), not a local path.
 
 ### 2. HuggingFace Download Behavior - AUTOMATIC
 
-**File:** `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py` (line 220)
+**File:** `/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py` (line 220)
 
 When `PeftModel.from_pretrained()` receives a HF Hub ID like `"danielcherubini/Qwen3.5-DeltaCoder-9B"`:
 
@@ -407,7 +407,7 @@ if warm_start:
 
 **Critical findings:**
 
-**a) Trajectory Directory** - `/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trajectory.py` (line 18-27):
+**a) Trajectory Directory** - `/home/<USER>/Code/rune/libs/model-training/src/model_training/trajectory.py` (line 18-27):
 ```python
 def _get_trajectory_dir() -> Path:
     env_dir = […]
@@ -451,7 +451,7 @@ tool_use Read
 id: toolu_01ETiXBiVZX2y5rfdx7UNdz2
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml"
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml"
 }
 ```
 
@@ -543,7 +543,7 @@ tool_use Read
 id: toolu_016D5dVZBRB9SSD6xgjL9LNz
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/.devcontainer/post-create.sh"
+  "file_path": "/home/<USER>/Code/rune/.devcontainer/post-create.sh"
 }
 ```
 
@@ -602,7 +602,7 @@ id: toolu_01Mar1o5YuH9TAvc6ByRci3e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "old_string": "    \"torch>=2.10.0\",",
   "new_string": "    \"torch>=2.11.0,<2.12\","
 }
@@ -613,7 +613,7 @@ id: toolu_01Mar1o5YuH9TAvc6ByRci3e
 tool_result
 id: toolu_01Mar1o5YuH9TAvc6ByRci3e
 ```
-The file /Users/noahdolevelixir/Code/rune/pyproject.toml has been updated successfully.
+The file /home/<USER>/Code/rune/pyproject.toml has been updated successfully.
 ```
 
 > TOOL
@@ -623,7 +623,7 @@ id: toolu_01WBkTk9CmXuVFqnT9DcEDAT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/noahdolevelixir/Code/rune/.devcontainer/post-create.sh",
+  "file_path": "/home/<USER>/Code/rune/.devcontainer/post-create.sh",
   "old_string": "  uv sync --extra gpu 2>/dev/null || echo \"uv sync failed — run manually: uv sync --extra gpu\"\nfi",
   "new_string": "  uv sync --extra gpu || { echo \"ERROR: uv sync --extra gpu failed\"; exit 1; }\n\n  # Verify GPU stack works\n  echo \"Verifying GPU stack...\"\n  uv run python -c \"\nimport torch\nassert torch.cuda.is_available(), 'CUDA not available'\nprint(f'GPU OK: {torch.cuda.get_device_name(0)}')\nprint(f'CUDA: {torch.version.cuda}')\nprint(f'PyTorch: {torch.__version__}')\n\" || { echo \"WARNING: GPU verification failed — check CUDA drivers and torch installation\"; }\nfi"
 }
@@ -634,7 +634,7 @@ id: toolu_01WBkTk9CmXuVFqnT9DcEDAT
 tool_result
 id: toolu_01WBkTk9CmXuVFqnT9DcEDAT
 ```
-The file /Users/noahdolevelixir/Code/rune/.devcontainer/post-create.sh has been updated successfully.
+The file /home/<USER>/Code/rune/.devcontainer/post-create.sh has been updated successfully.
 ```
 
 > AGENT
@@ -647,7 +647,7 @@ tool_use Read
 id: toolu_01RMGbgXqxTayWQgbg7zzym1
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/pyproject.toml",
+  "file_path": "/home/<USER>/Code/rune/pyproject.toml",
   "limit": 42,
   "offset": 39
 }
@@ -708,7 +708,7 @@ tool_use Read
 id: toolu_01WFYTJRd5Eefanph6CxTVne
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/.devcontainer/post-create.sh"
+  "file_path": "/home/<USER>/Code/rune/.devcontainer/post-create.sh"
 }
 ```
 

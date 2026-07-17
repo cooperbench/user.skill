@@ -170,7 +170,7 @@ tool_use Read
 id: toolu_01MxhVPEn3vQWtiMmakJkBm2
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/sw.ts"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/sw.ts"
 }
 ```
 
@@ -236,7 +236,7 @@ tool_use Read
 id: toolu_018DAdBngRUnCBBcxDHdYiMh
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs"
 }
 ```
 
@@ -299,7 +299,7 @@ tool_use Read
 id: toolu_01Nh6iwK9LQfQGnUHTpDSCbN
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/push.ts"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/push.ts"
 }
 ```
 
@@ -379,57 +379,57 @@ id: toolu_0135f65VHMY2xJTSNPVHVHG6
 tool_result
 id: toolu_0135f65VHMY2xJTSNPVHVHG6
 ```
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-170-        self.state.last_run_error(run_id).await
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-171-    }
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-172-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-173-    // ── Push notifications ──────────────────────────────────────────────────
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-174-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-170-        self.state.last_run_error(run_id).await
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-171-    }
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-172-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-173-    // ── Push notifications ──────────────────────────────────────────────────
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-174-
 crates/gateway/src/chat.rs:175:    async fn send_push_notification(
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-176-        &self,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-176-        &self,
 crates/gateway/src/chat.rs-177-        title: &str,
 crates/gateway/src/chat.rs-178-        body: &str,
 crates/gateway/src/chat.rs-179-        url: Option<&str>,
 crates/gateway/src/chat.rs-180-        session_key: Option<&str>,
 crates/gateway/src/chat.rs-181-    ) -> error::Result<usize> {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-182-        #[cfg(feature = "push-notifications")]
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-183-        {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-184-            if let Some(push_service) = self.state.get_push_service().await {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-182-        #[cfg(feature = "push-notifications")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-183-        {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-184-            if let Some(push_service) = self.state.get_push_service().await {
 crates/gateway/src/chat.rs:185:                return crate::push::send_push_notification(
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-186-                    &push_service,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-187-                    title,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-188-                    body,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-189-                    url,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-190-                    session_key,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-186-                    &push_service,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-187-                    title,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-188-                    body,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-189-                    url,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-190-                    session_key,
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-132-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-133-    // ── Push notifications ───────────────────────────────────────────────
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-134-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-135-    /// Send a push notification to all subscribed devices.
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-136-    /// Returns the number of devices notified, or an error.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-132-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-133-    // ── Push notifications ───────────────────────────────────────────────
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-134-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-135-    /// Send a push notification to all subscribed devices.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-136-    /// Returns the number of devices notified, or an error.
 crates/chat/src/runtime.rs:137:    async fn send_push_notification(
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-138-        &self,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-138-        &self,
 crates/chat/src/runtime.rs-139-        title: &str,
 crates/chat/src/runtime.rs-140-        body: &str,
 crates/chat/src/runtime.rs-141-        url: Option<&str>,
 crates/chat/src/runtime.rs-142-        session_key: Option<&str>,
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-29-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-30-    let title = "Message received";
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-31-    let url = format!("/chat/{session_key}");
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-32-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-33-    match state
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-29-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-30-    let title = "Message received";
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-31-    let url = format!("/chat/{session_key}");
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-32-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-33-    match state
 crates/chat/src/channels.rs:34:        .send_push_notification(title, &summary, Some(&url), Some(session_key))
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-35-        .await
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-36-    {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-37-        Ok(sent) => {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-35-        .await
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-36-    {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-37-        Ok(sent) => {
 crates/chat/src/channels.rs-38-            tracing::info!(sent, "push notification sent");
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-39-        },
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-39-        },
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-275-        Ok(())
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-276-    }
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-277-}
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-278-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-279-/// Send a push notification to all subscribers.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-275-        Ok(())
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-276-    }
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-277-}
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-278-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-279-/// Send a push notification to all subscribers.
 crates/gateway/src/push.rs:280:pub async fn send_push_notification(
 crates/gateway/src/push.rs-281-    push_service: &Arc<PushService>,
 crates/gateway/src/push.rs-282-    title: &str,
@@ -456,34 +456,34 @@ id: toolu_01SAvYezmbxyYFG6E46deyjN
 tool_result
 id: toolu_01SAvYezmbxyYFG6E46deyjN
 ```
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-51-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-52-/// Payload for a push notification.
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-53-#[derive(Debug, Clone, Serialize)]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-51-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-52-/// Payload for a push notification.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-53-#[derive(Debug, Clone, Serialize)]
 crates/gateway/src/push.rs:54:pub struct PushPayload {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-55-    /// Notification title.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-55-    /// Notification title.
 crates/gateway/src/push.rs-56-    pub title: String,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-57-    /// Notification body text.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-57-    /// Notification body text.
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-191-    }
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-192-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-193-    /// Send a push notification to all subscriptions.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-191-    }
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-192-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-193-    /// Send a push notification to all subscriptions.
 crates/gateway/src/push.rs:194:    pub async fn send_to_all(&self, payload: &PushPayload) -> Result<usize> {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-195-        let (vapid, subscriptions) = {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-196-            let store = self.store.read().await;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-197-            (store.vapid.clone(), store.subscriptions.clone())
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-195-        let (vapid, subscriptions) = {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-196-            let store = self.store.read().await;
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-197-            (store.vapid.clone(), store.subscriptions.clone())
 --
 crates/gateway/src/push.rs-284-    url: Option<&str>,
 crates/gateway/src/push.rs-285-    session_key: Option<&str>,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-286-) -> Result<usize> {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-286-) -> Result<usize> {
 crates/gateway/src/push.rs:287:    let payload = PushPayload {
 crates/gateway/src/push.rs-288-        title: title.to_string(),
 crates/gateway/src/push.rs-289-        body: body.to_string(),
 crates/gateway/src/push.rs-290-        url: url.map(String::from),
 crates/gateway/src/push.rs-291-        session_key: session_key.map(String::from),
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-292-    };
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-293-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-292-    };
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-293-
 crates/gateway/src/push.rs:294:    push_service.send_to_all(&payload).await
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-295-}
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/push.rs-295-}
 ```
 
 > AGENT
@@ -499,7 +499,7 @@ id: toolu_012QbSJUPNQoyua9Z6Jk216p
   "pattern": "send_push_notification",
   "output_mode": "content",
   "-C": 10,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src"
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src"
 }
 ```
 
@@ -508,49 +508,49 @@ id: toolu_012QbSJUPNQoyua9Z6Jk216p
 tool_result
 id: toolu_012QbSJUPNQoyua9Z6Jk216p
 ```
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-127-    /// Get the active chat service (for draining queued messages recursively).
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-127-    /// Get the active chat service (for draining queued messages recursively).
 crates/chat/src/runtime.rs-128-    async fn chat_service(&self) -> Arc<dyn moltis_service_traits::ChatService>;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-129-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-130-    /// Take (and remove) the last error for a run_id.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-129-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-130-    /// Take (and remove) the last error for a run_id.
 crates/chat/src/runtime.rs-131-    async fn last_run_error(&self, run_id: &str) -> Option<String>;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-132-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-133-    // ── Push notifications ───────────────────────────────────────────────
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-134-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-135-    /// Send a push notification to all subscribed devices.
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-136-    /// Returns the number of devices notified, or an error.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-132-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-133-    // ── Push notifications ───────────────────────────────────────────────
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-134-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-135-    /// Send a push notification to all subscribed devices.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-136-    /// Returns the number of devices notified, or an error.
 crates/chat/src/runtime.rs:137:    async fn send_push_notification(
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-138-        &self,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-138-        &self,
 crates/chat/src/runtime.rs-139-        title: &str,
 crates/chat/src/runtime.rs-140-        body: &str,
 crates/chat/src/runtime.rs-141-        url: Option<&str>,
 crates/chat/src/runtime.rs-142-        session_key: Option<&str>,
 crates/chat/src/runtime.rs-143-    ) -> crate::error::Result<usize>;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-144-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-145-    // ── Local LLM ────────────────────────────────────────────────────────
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-146-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-147-    /// Ensure a local model is cached/downloaded. No-op if local-llm is disabled.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-144-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-145-    // ── Local LLM ────────────────────────────────────────────────────────
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-146-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/runtime.rs-147-    /// Ensure a local model is cached/downloaded. No-op if local-llm is disabled.
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-24-    let summary = if text.len() > 100 {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-25-        format!("{}…", truncate_at_char_boundary(text, 100))
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-26-    } else {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-27-        text.to_string()
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-28-    };
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-29-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-30-    let title = "Message received";
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-31-    let url = format!("/chat/{session_key}");
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-32-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-33-    match state
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-24-    let summary = if text.len() > 100 {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-25-        format!("{}…", truncate_at_char_boundary(text, 100))
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-26-    } else {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-27-        text.to_string()
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-28-    };
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-29-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-30-    let title = "Message received";
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-31-    let url = format!("/chat/{session_key}");
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-32-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-33-    match state
 crates/chat/src/channels.rs:34:        .send_push_notification(title, &summary, Some(&url), Some(session_key))
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-35-        .await
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-36-    {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-37-        Ok(sent) => {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-35-        .await
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-36-    {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-37-        Ok(sent) => {
 crates/chat/src/channels.rs-38-            tracing::info!(sent, "push notification sent");
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-39-        },
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-40-        Err(e) => {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-39-        },
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-40-        Err(e) => {
 crates/chat/src/channels.rs-41-            tracing::warn!("failed to send push notification: {e}");
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-42-        },
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-43-    }
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-44-}
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-42-        },
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-43-    }
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-44-}
 ```
 
 > TOOL
@@ -562,7 +562,7 @@ id: toolu_01MF8UEZWxL2PbQxfsLr98eS
   "pattern": "send_push",
   "output_mode": "content",
   "-C": 10,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs"
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs"
 }
 ```
 
@@ -583,7 +583,7 @@ id: toolu_01NbXQCGySkRKqv2mDQhMe1A
   "pattern": "send_push",
   "output_mode": "content",
   "-C": 10,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs"
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs"
 }
 ```
 
@@ -604,7 +604,7 @@ id: toolu_01T6ef7BTCFVZXbPGBCkgdix
   "pattern": "send_push|push_notify|notify_push",
   "output_mode": "content",
   "-C": 10,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs"
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs"
 }
 ```
 
@@ -629,7 +629,7 @@ id: toolu_01P73u2cwcjSk89CekQcGfRP
   "pattern": "send_push|push_notif",
   "output_mode": "content",
   "-C": 10,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/httpd"
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/httpd"
 }
 ```
 
@@ -650,7 +650,7 @@ id: toolu_013pkiokxdrkUEr5QLeixr3i
   "pattern": "/chat/|/chats",
   "output_mode": "content",
   "-C": 3,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src",
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src",
   "glob": "*.ts*"
 }
 ```
@@ -660,47 +660,47 @@ id: toolu_013pkiokxdrkUEr5QLeixr3i
 tool_result
 id: toolu_013pkiokxdrkUEr5QLeixr3i
 ```
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-19-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-19-
 crates/web/ui/src/ws/sandbox-handlers.ts-20-let sandboxPrepareIndicatorEl: HTMLElement | null = null;
 crates/web/ui/src/ws/sandbox-handlers.ts-21-export function handleSandboxPrepare(payload: SandboxPhasePayload): void {
 crates/web/ui/src/ws/sandbox-handlers.ts:22:	const isChatPage = currentPrefix === "/chats";
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-23-	if (!isChatPage) return;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-24-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-25-	if (payload.phase === "start") {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-23-	if (!isChatPage) return;
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-24-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-25-	if (payload.phase === "start") {
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-49-	// Update the sandboxInfo signal so all pages (chat, settings) reflect the build state.
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-50-	updateSandboxBuildingFlag(phase === "start");
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-51-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-49-	// Update the sandboxInfo signal so all pages (chat, settings) reflect the build state.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-50-	updateSandboxBuildingFlag(phase === "start");
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-51-
 crates/web/ui/src/ws/sandbox-handlers.ts:52:	const isChatPage = currentPrefix === "/chats";
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-53-	if (!isChatPage) return;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-54-	if (phase === "start") {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-55-		chatAddMsg("system", "Building sandbox image (installing packages)\u2026");
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-53-	if (!isChatPage) return;
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-54-	if (phase === "start") {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-55-		chatAddMsg("system", "Building sandbox image (installing packages)\u2026");
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-64-}
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-65-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-64-}
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-65-
 crates/web/ui/src/ws/sandbox-handlers.ts-66-export function handleSandboxImageProvision(payload: SandboxPhasePayload): void {
 crates/web/ui/src/ws/sandbox-handlers.ts:67:	const isChatPage = currentPrefix === "/chats";
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-68-	if (!isChatPage) return;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-69-	if (payload.phase === "start") {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-70-		chatAddMsg("system", "Provisioning sandbox packages\u2026");
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-68-	if (!isChatPage) return;
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-69-	if (payload.phase === "start") {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-70-		chatAddMsg("system", "Provisioning sandbox packages\u2026");
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-79-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-79-
 crates/web/ui/src/ws/sandbox-handlers.ts-80-/ biome-ignore lint/complexity/noExcessiveCognitiveComplexity: Provisioning UI with multiple phases
 crates/web/ui/src/ws/sandbox-handlers.ts-81-export function handleSandboxHostProvision(payload: SandboxPhasePayload): void {
 crates/web/ui/src/ws/sandbox-handlers.ts:82:	const isChatPage = currentPrefix === "/chats";
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-83-	if (!isChatPage) return;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-84-	if (payload.phase === "start") {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-83-	if (!isChatPage) return;
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-84-	if (payload.phase === "start") {
 crates/web/ui/src/ws/sandbox-handlers.ts-85-		const msg = `Installing ${payload.count || ""} package${payload.count === 1 ? "" : "s"} on host\u2026`;
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-97-}
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-98-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-97-}
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-98-
 crates/web/ui/src/ws/sandbox-handlers.ts-99-export function handleBrowserImagePull(payload: SandboxPhasePayload): void {
 crates/web/ui/src/ws/sandbox-handlers.ts:100:	const isChatPage = currentPrefix === "/chats";
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-101-	if (!isChatPage) return;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-102-	const image = payload.image || "browser container";
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-103-	if (payload.phase === "start") {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-101-	if (!isChatPage) return;
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-102-	const image = payload.image || "browser container";
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-103-	if (payload.phase === "start") {
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-116-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/ws/sandbox-handlers.ts-116-
 crates/web/ui/src/ws/sandbox-handlers.ts-117-/ biome-ignore […]
 
 > AGENT
@@ -713,7 +713,7 @@ tool_use Read
 id: toolu_01YaCSFk64wdTicQhRxPRv7d
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs"
 }
 ```
 
@@ -782,7 +782,7 @@ id: toolu_01WBDR1kLceFdPuSYnmz5Kxr
   "pattern": "push_notif|send_push",
   "output_mode": "content",
   "-C": 10,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates",
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates",
   "glob": "**/cron*\""
 }
 ```
@@ -805,7 +805,7 @@ tool_use Read
 id: toolu_014dCUPrGrqDnSSXGAUkNJvu
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/router.ts"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/router.ts"
 }
 ```
 
@@ -898,7 +898,7 @@ tool_use Read
 id: toolu_01HHc8K5JBdtdmzqFL35u145
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/routes.ts"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/ui/src/routes.ts"
 }
 ```
 
@@ -934,7 +934,7 @@ id: toolu_01QJVdW4ddd8FvWWsu3s6nAk
   "-i": true,
   "output_mode": "content",
   "-C": 10,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates",
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates",
   "glob": "*.rs"
 }
 ```
@@ -944,46 +944,46 @@ id: toolu_01QJVdW4ddd8FvWWsu3s6nAk
 tool_result
 id: toolu_01QJVdW4ddd8FvWWsu3s6nAk
 ```
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-175-    async fn send_push_notification(
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-176-        &self,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-175-    async fn send_push_notification(
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-176-        &self,
 crates/gateway/src/chat.rs-177-        title: &str,
 crates/gateway/src/chat.rs-178-        body: &str,
 crates/gateway/src/chat.rs-179-        url: Option<&str>,
 crates/gateway/src/chat.rs-180-        session_key: Option<&str>,
 crates/gateway/src/chat.rs-181-    ) -> error::Result<usize> {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-182-        #[cfg(feature = "push-notifications")]
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-183-        {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-184-            if let Some(push_service) = self.state.get_push_service().await {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-182-        #[cfg(feature = "push-notifications")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-183-        {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-184-            if let Some(push_service) = self.state.get_push_service().await {
 crates/gateway/src/chat.rs:185:                return crate::push::send_push_notification(
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-186-                    &push_service,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-187-                    title,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-188-                    body,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-189-                    url,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-190-                    session_key,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-191-                )
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-192-                .await
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-186-                    &push_service,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-187-                    title,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-188-                    body,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-189-                    url,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-190-                    session_key,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-191-                )
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-192-                .await
 crates/gateway/src/chat.rs-193-                .map_err(|source| error::Error::message(source.to_string()));
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-194-            }
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-195-        }
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-194-            }
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/chat.rs-195-        }
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-265-    /// When the setup code was created (for 30-minute expiry).
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-265-    /// When the setup code was created (for 30-minute expiry).
 crates/gateway/src/state.rs-266-    pub setup_code_created_at: Option<Instant>,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-267-    /// Auto-update availability state from GitHub releases.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-267-    /// Auto-update availability state from GitHub releases.
 crates/gateway/src/state.rs-268-    pub update: crate::update_check::UpdateAvailability,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-269-    /// Last error per run_id (short-lived, for send_sync to retrieve).
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-270-    /// Capped at 1000 entries; entries older than 5 minutes are evicted.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-269-    /// Last error per run_id (short-lived, for send_sync to retrieve).
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-270-    /// Capped at 1000 entries; entries older than 5 minutes are evicted.
 crates/gateway/src/state.rs-271-    pub run_errors: HashMap<String, (String, Instant)>,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-272-    /// Historical metrics data for time-series charts (in-memory cache).
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-273-    #[cfg(feature = "metrics")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-272-    /// Historical metrics data for time-series charts (in-memory cache).
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-273-    #[cfg(feature = "metrics")]
 crates/gateway/src/state.rs-274-    pub metrics_history: MetricsHistory,
 crates/gateway/src/state.rs:275:    /// Push notification service for sending notifications to subscribed devices.
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-276-    #[cfg(feature = "push-notifications")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-276-    #[cfg(feature = "push-notifications")]
 crates/gateway/src/state.rs-277-    pub push_service: Option<Arc<crate::push::PushService>>,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-278-    /// LLM provider registry for lightweight generation (e.g. TTS phrases).
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-278-    /// LLM provider registry for lightweight generation (e.g. TTS phrases).
 crates/gateway/src/state.rs-279-    pub llm_providers: Option<Arc<RwLock<moltis_providers::ProviderRegistry>>>,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-280-    /// Cached user geolocation from browser Geolocation API, persisted to `USER.md`.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-280-    /// Cached user geolocation from browser Geolocation API, persisted to `USER.md`.
 crates/gateway/src/state.rs-281-    pub cached_location: Option<moltis_config::GeoLocation>,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-282-    /// Per-session buffer for channel status messages (tool use, […]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/gateway/src/state.rs-282-    /// Per-session buffer for channel status messages (tool use, […]
 
 > AGENT
 
@@ -1008,63 +1008,63 @@ id: toolu_01N95f6eb9GgiPDeo787WiXR
 ```
 crates/chat/src/run_with_tools.rs-51-    service::{ActiveAssistantDraft, build_tool_call_assistant_message, persist_tool_history_pair},
 crates/chat/src/run_with_tools.rs-52-    types::*,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-53-};
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-54-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-55-#[cfg(feature = "push-notifications")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-53-};
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-54-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-55-#[cfg(feature = "push-notifications")]
 crates/chat/src/run_with_tools.rs:56:use crate::channels::send_chat_push_notification;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-57-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-58-pub(crate) async fn run_with_tools(
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-57-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-58-pub(crate) async fn run_with_tools(
 crates/chat/src/run_with_tools.rs-59-    persona: PromptPersona,
 crates/chat/src/run_with_tools.rs-60-    state: &Arc<dyn ChatRuntime>,
 crates/chat/src/run_with_tools.rs-61-    model_store: &Arc<RwLock<DisabledModelsStore>>,
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1112-            if !is_silent {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1113-                // Send push notification when chat response completes
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1114-                #[cfg(feature = "push-notifications")]
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1115-                {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1112-            if !is_silent {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1113-                // Send push notification when chat response completes
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1114-                #[cfg(feature = "push-notifications")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1115-                {
 crates/chat/src/run_with_tools.rs-1116-                    tracing::info!("push: checking push notification (agent mode)");
 crates/chat/src/run_with_tools.rs:1117:                    send_chat_push_notification(state, session_key, &display_text).await;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1118-                }
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1119-                deliver_channel_replies(
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1120-                    state,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1121-                    session_key,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1122-                    &display_text,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1118-                }
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1119-                deliver_channel_replies(
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1120-                    state,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1121-                    session_key,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/run_with_tools.rs-1122-                    &display_text,
 --
 crates/chat/src/streaming.rs-36-    service::ActiveAssistantDraft,
 crates/chat/src/streaming.rs-37-    types::*,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-38-};
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-39-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-40-#[cfg(feature = "push-notifications")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-38-};
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-39-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-40-#[cfg(feature = "push-notifications")]
 crates/chat/src/streaming.rs:41:use crate::channels::send_chat_push_notification;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-42-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-42-
 crates/chat/src/streaming.rs-43-const STREAM_RETRYABLE_SERVER_PATTERNS: &[&str] = &[
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-44-    "http 500",
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-45-    "http 502",
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-46-    "http 503",
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-44-    "http 500",
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-45-    "http 502",
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-46-    "http 503",
 --
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-433-                    if !is_silent {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-434-                        // Send push notification when chat response completes
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-435-                        #[cfg(feature = "push-notifications")]
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-436-                        {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-433-                    if !is_silent {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-434-                        // Send push notification when chat response completes
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-435-                        #[cfg(feature = "push-notifications")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-436-                        {
 crates/chat/src/streaming.rs-437-                            tracing::info!("push: checking push notification");
 crates/chat/src/streaming.rs:438:                            send_chat_push_notification(state, session_key, &accumulated).await;
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-439-                        }
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-440-                        deliver_channel_replies(
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-441-                            state,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-442-                            session_key,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-443-                            &accumulated,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-439-                        }
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-440-                        deliver_channel_replies(
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-441-                            state,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-442-                            session_key,
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/streaming.rs-443-                            &accumulated,
 --
 crates/chat/src/channels.rs-13-use crate::{
 crates/chat/src/channels.rs-14-    agent_loop::ChannelReplyTargetKey, compaction_run, error, runtime::ChatRuntime, types::*,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-15-};
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-16-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-17-#[cfg(feature = "push-notifications")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-15-};
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-16-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-17-#[cfg(feature = "push-notifications")]
 crates/chat/src/channels.rs:18:pub(crate) async fn send_chat_push_notification(
 crates/chat/src/channels.rs-19-    state: &Arc<dyn ChatRuntime>,
 crates/chat/src/channels.rs-20-    session_key: &str,
 crates/chat/src/channels.rs-21-    text: &str,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-22-) {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-23-    // Create a short summary of the response (first 100 chars)
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-22-) {
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs-23-    // Create a short summary of the response (first 100 chars)
 ```
 
 > AGENT
@@ -1098,14 +1098,14 @@ id: toolu_012gjPkRzYKFnsrFSE86vp18
 ```
 crates/web/src/templates.rs-11-    moltis_gateway::state::GatewayState,
 crates/web/src/templates.rs-12-    tracing::warn,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-13-};
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-14-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-13-};
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-14-
 crates/web/src/templates.rs-15-use crate::assets::{asset_content_hash, is_dev_assets};
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-16-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-17-// ── SPA routes ───────────────────────────────────────────────────────────────
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-18-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-16-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-17-// ── SPA routes ───────────────────────────────────────────────────────────────
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-18-
 crates/web/src/templates.rs-19-#[derive(serde::Serialize, Clone)]
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-20-#[serde(rename_all = "camelCase")]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-20-#[serde(rename_all = "camelCase")]
 crates/web/src/templates.rs:21:pub(crate) struct SpaRoutes {
 crates/web/src/templates.rs-22-    chats: &'static str,
 crates/web/src/templates.rs-23-    settings: &'static str,
@@ -1121,8 +1121,8 @@ crates/web/src/templates.rs-32-    skills: &'static str,
 crates/web/src/templates.rs-33-    crons: &'static str,
 crates/web/src/templates.rs-34-    monitoring: &'static str,
 crates/web/src/templates.rs-35-    graphql: &'static str,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-36-}
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-37-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-36-}
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-37-
 crates/web/src/templates.rs:38:pub(crate) static SPA_ROUTES: SpaRoutes = SpaRoutes {
 crates/web/src/templates.rs-39-    chats: "/chats",
 crates/web/src/templates.rs-40-    settings: "/settings",
@@ -1147,14 +1147,14 @@ crates/web/src/templates.rs-79-    update: moltis_gateway::update_check::UpdateA
 crates/web/src/templates.rs-80-    sandbox: SandboxGonInfo,
 crates/web/src/templates.rs:81:    routes: SpaRoutes,
 crates/web/src/templates.rs-82-    started_at: u64,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-83-    /// Whether an OpenClaw installation was detected (for import UI).
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-83-    /// Whether an OpenClaw installation was detected (for import UI).
 crates/web/src/templates.rs-84-    openclaw_detected: bool,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-85-    /// Small recent session snapshot for instant sidebar paint.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-85-    /// Small recent session snapshot for instant sidebar paint.
 crates/web/src/templates.rs-86-    sessions_recent: Vec<serde_json::Value>,
 crates/web/src/templates.rs-87-    agents: Vec<serde_json::Value>,
 crates/web/src/templates.rs-88-    webhooks: Vec<serde_json::Value>,
 crates/web/src/templates.rs-89-    webhook_profiles: Vec<serde_json::Value>,
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-90-    #[cfg(feature […]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/templates.rs-90-    #[cfg(feature […]
 
 > AGENT
 
@@ -1214,7 +1214,7 @@ id: toolu_01SeeKHqSwkqwv4D3wZmNT65
 {
   "pattern": "#\\[cfg\\(test\\)\\]|#\\[test\\]",
   "output_mode": "files_with_matches",
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs"
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs"
 }
 ```
 
@@ -1266,7 +1266,7 @@ tool_use Read
 id: toolu_01YCYuszMGJDDtaFaPs6nDyA
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
   "limit": 50
 }
 ```
@@ -1340,7 +1340,7 @@ id: toolu_01WY9QvoV8xfuJbncT95MeUt
   "pattern": "fn truncate_at_char_boundary",
   "output_mode": "content",
   "-C": 5,
-  "path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat"
+  "path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat"
 }
 ```
 
@@ -1349,16 +1349,16 @@ id: toolu_01WY9QvoV8xfuJbncT95MeUt
 tool_result
 id: toolu_01WY9QvoV8xfuJbncT95MeUt
 ```
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-489-        .unwrap_or_default()
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-490-        .as_millis() as u64
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-491-}
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-492-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-493-#[must_use]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-489-        .unwrap_or_default()
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-490-        .as_millis() as u64
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-491-}
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-492-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-493-#[must_use]
 crates/chat/src/types.rs:494:pub(crate) fn truncate_at_char_boundary(text: &str, max_bytes: usize) -> &str {
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-495-    &text[..text.floor_char_boundary(max_bytes)]
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-496-}
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-497-
-/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-498-/// Extract preview text from a single message JSON value.
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-495-    &text[..text.floor_char_boundary(max_bytes)]
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-496-}
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-497-
+/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/types.rs-498-/// Extract preview text from a single message JSON value.
 crates/chat/src/types.rs-499-pub(crate) fn extract_preview_from_value(msg: &Value) -> Option<String> {
 ```
 
@@ -1373,7 +1373,7 @@ id: toolu_01A9KdEe1c1Vye2VPh1EVv4X
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
   "old_string": "#[cfg(feature = \"push-notifications\")]\npub(crate) async fn send_chat_push_notification(\n    state: &Arc<dyn ChatRuntime>,\n    session_key: &str,\n    text: &str,\n) {\n    // Create a short summary of the response (first 100 chars)\n    let summary = if text.len() > 100 {\n        format!(\"{}…\", truncate_at_char_boundary(text, 100))\n    } else {\n        text.to_string()\n    };\n\n    let title = \"Message received\";\n    let url = format!(\"/chat/{session_key}\");\n\n    match state\n        .send_push_notification(title, &summary, Some(&url), Some(session_key))\n        .await\n    {\n        Ok(sent) => {\n            tracing::info!(sent, \"push notification sent\");\n        },\n        Err(e) => {\n            tracing::warn!(\"failed to send push notification: {e}\");\n        },\n    }\n}",
   "new_string": "/// Build the SPA URL for a push notification click-through.\n///\n/// Must match the frontend `sessionPath()` in `router.ts`:\n/// `/chats/${key.replace(/:/g, \"/\")}`.\npub(crate) fn push_notification_url(session_key: &str) -> String {\n    format!(\"/chats/{}\", session_key.replace(':', \"/\"))\n}\n\n#[cfg(feature = \"push-notifications\")]\npub(crate) async fn send_chat_push_notification(\n    state: &Arc<dyn ChatRuntime>,\n    session_key: &str,\n    text: &str,\n) {\n    // Create a short summary of the response (first 100 chars)\n    let summary = if text.len() > 100 {\n        format!(\"{}…\", truncate_at_char_boundary(text, 100))\n    } else {\n        text.to_string()\n    };\n\n    let title = \"Message received\";\n    let url = push_notification_url(session_key);\n\n    match state\n        .send_push_notification(title, &summary, Some(&url), Some(session_key))\n        .await\n    {\n        Ok(sent) => {\n            tracing::info!(sent, \"push notification sent\");\n        },\n        Err(e) => {\n            tracing::warn!(\"failed to send push notification: {e}\");\n        },\n    }\n}"
 }
@@ -1384,7 +1384,7 @@ id: toolu_01A9KdEe1c1Vye2VPh1EVv4X
 tool_result
 id: toolu_01A9KdEe1c1Vye2VPh1EVv4X
 ```
-The file /Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1397,7 +1397,7 @@ tool_use Read
 id: toolu_01QV6VAqAUCEC1S9akxfyMAr
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
   "offset": 1300
 }
 ```
@@ -1432,7 +1432,7 @@ id: toolu_013HhQjHiAaXxe9TZAHnWLEw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
   "old_string": "    for task in tasks {\n        if let Err(e) = task.await {\n            warn!(error = %e, \"channel location task join failed\");\n        }\n    }\n}",
   "new_string": "    for task in tasks {\n        if let Err(e) = task.await {\n            warn!(error = %e, \"channel location task join failed\");\n        }\n    }\n}\n\n#[cfg(test)]\nmod tests {\n    use super::*;\n\n    #[test]\n    fn push_notification_url_uses_chats_prefix_and_replaces_colons() {\n        // Must match frontend sessionPath(): `/chats/${key.replace(/:/g, \"/\")}`\n        assert_eq!(\n            push_notification_url(\"session:42\"),\n            \"/chats/session/42\"\n        );\n    }\n\n    #[test]\n    fn push_notification_url_handles_nested_session_keys() {\n        assert_eq!(\n            push_notification_url(\"telegram:bot123:chat456\"),\n            \"/chats/telegram/bot123/chat456\"\n        );\n    }\n\n    #[test]\n    fn push_notification_url_handles_key_without_colons() {\n        assert_eq!(push_notification_url(\"main\"), \"/chats/main\");\n    }\n}"
 }
@@ -1443,7 +1443,7 @@ id: toolu_013HhQjHiAaXxe9TZAHnWLEw
 tool_result
 id: toolu_013HhQjHiAaXxe9TZAHnWLEw
 ```
-The file /Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1548,7 +1548,7 @@ tool_use Read
 id: toolu_0149nVixKmJFW626D53MTmxm
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/web/src/assets/sw.js",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/web/src/assets/sw.js",
   "offset": 1,
   "limit": 5
 }
@@ -1615,7 +1615,7 @@ tool_result ERROR
 id: toolu_011PPdGKv3rvbnsXky1HmaB7
 ```
 Exit code 1
-Diff in /Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs:1320:
+Diff in /home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs:1320:
      #[test]
      fn push_notification_url_uses_chats_prefix_and_replaces_colons() {
          // Must match frontend sessionPath(): `/chats/${key.replace(/:/g, "/")}`
@@ -1636,7 +1636,7 @@ id: toolu_015qeGhKBue4XQuxdcqMRbHE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs",
   "old_string": "        assert_eq!(\n            push_notification_url(\"session:42\"),\n            \"/chats/session/42\"\n        );",
   "new_string": "        assert_eq!(push_notification_url(\"session:42\"), \"/chats/session/42\");"
 }
@@ -1647,7 +1647,7 @@ id: toolu_015qeGhKBue4XQuxdcqMRbHE
 tool_result
 id: toolu_015qeGhKBue4XQuxdcqMRbHE
 ```
-The file /Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat/src/channels.rs has been updated successfully.
 ```
 
 > TOOL
@@ -1687,7 +1687,7 @@ id: toolu_01Xyf7RYaGEHXW5bVVafqZDN
 tool_result
 id: toolu_01Xyf7RYaGEHXW5bVVafqZDN
 ```
-   Compiling moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/precious-sunflower/crates/chat)
+   Compiling moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/precious-sunflower/crates/chat)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 11.41s
      Running unittests src/lib.rs (target/debug/deps/moltis_chat-e4c170935452980a)
 

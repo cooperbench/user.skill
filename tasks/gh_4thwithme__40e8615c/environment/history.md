@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01NgqNyWMBmdWLG6rRZioX6c
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-github-phase2-data-ingestion.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-github-phase2-data-ingestion.md"
 }
 ```
 
@@ -71,7 +71,7 @@ tool_use Read
 id: toolu_01SM5S3bWF8aa7FYJJs4NqDr
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md"
 }
 ```
 
@@ -350,7 +350,7 @@ tool_use Read
 id: toolu_01AEXry5a1u2TMGeAaje2LAo
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/integrations/jira-api.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/integrations/jira-api.md"
 }
 ```
 
@@ -404,7 +404,7 @@ tool_use Read
 id: toolu_019kANZsphpKLUtMZVJZyuKS
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/architecture/overview.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/architecture/overview.md"
 }
 ```
 
@@ -498,7 +498,7 @@ tool_use Read
 id: toolu_01XqtkeWVuK5s4rEUnxCyu7P
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/github-install.service.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/github-install.service.ts"
 }
 ```
 
@@ -562,7 +562,7 @@ tool_use Read
 id: toolu_01YPapeu3kFkargWMG1XLNmA
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/github-webhook.service.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/github-webhook.service.ts"
 }
 ```
 
@@ -628,7 +628,7 @@ tool_use Read
 id: toolu_01VmPQtTKFz56apduubJj43w
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/github-backfill.service.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/github-backfill.service.ts"
 }
 ```
 
@@ -1038,7 +1038,7 @@ What do you see after logging in?
         <link rel="shortcut icon" href="https://dac-static.atlassian.com/favicon.ico" type="image/x-icon">
         <link rel="icon" href="https://dac-static.atlassian.com/favicon.ico" type="image/x-icon">
         <link rel="search" href="https://dac-static.atlassian.com/opensearch.xml" type="application/opensearchdescription+xml">
-        <script nonce="" type="text/javascript">window.__DATA__ = {"assets":{"-----------------------.js":"https://dac-static.atlassian.com/_static/-----------------------.7e5e617b621749385b34.bundle.js","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].css":"https://dac-static.atlassian.com/_static/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].dd2f1b0fd6b2ad049661.chunk.css","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].js":"https://dac-static.atlassian.com/_static/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].7135c3c7ab98d086b4a7.bundle.js","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].dd2f1b0fd6b2ad049661.chunk.css.map","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].7135c3c7ab98d086b4a7.bundle.js.map","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-errors-supportde[REDACTED_SK]@atlaskit-internal_atlassian-custom-theme.js":"https://dac-static.atlassian.com/_static/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-errors-supportde[REDACTED_SK]@atlaskit-internal_atlassian-custom-theme.e43df7734c478bfaaa1a.bundle.js","--.js":"https://dac-static.atlassian.com/_static/--.07a722a879f038601c4b.bundle.js","-.js":"https://dac-static.atlassian.com/_static/-.b9fd768ae950bb87d4ba.bundle.js","5.4a3d7b0ee1f4fc8db28e.bundle.js":"https://dac-static.atlassian.com/_static/5.4a3d7b0ee1f4fc8db28e.bundle.js","6.433068ab93c96834f37a.bundle.js":"https://dac-static.atlassian.com/_static/6.433068ab93c96834f37a.bundle.js","7.e64070940915f687242f.bundle.js":"https://dac-static.atlassian.com/_static/7.e64070940915f687242f.bundle.js","8.bfc5fbb85a843fc99eab.bundle.js":"https://dac-static.atlassian.com/_static/8.bfc5fbb85a843fc99eab.bundle.js","---.js":"https://dac-static.atlassian.com/_static/---.1baaafe9f35eeb91e764.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations8.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations8.76fa7155469ea496fb6c.bundle.js","11.426299ef178f0178e4e9.bundle.js":"https://dac-static.atlassian.com/_static/11.426299ef178f0178e4e9.bundle.js","12.8167eb1bf8eed8d048a3.bundle.js":"https://dac-static.atlassian.com/_static/12.8167eb1bf8eed8d048a3.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations0.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations0.0c6da3241303b5534bb5.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations2.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations2.a3493492cd622dfe844d.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations4.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations4.7b2cbb2ca12c47599325.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations6.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations6.fae41be90450ea4cf65c.bundle.js","@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.4dd1371d310c1b5f3ceb.bundle.js","@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.4dd1371d310c1b5f3ceb.bundle.js.map","@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.8309c279d519135774e0.bundle.js","@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.8309c279d519135774e0.bundle.js.map","@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.3c5209442a07edff2014.bundle.js","@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.3c5209442a07edff2014.bundle.js.map","@atlaskit-internal_renderer-node_CodeBlock-@atlaskit-internal_media-code-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_CodeBlock-@atlaskit-internal_media-code-viewer.81d642e8c22832e0f277.bundle.js","@atlaskit-internal_smartcard-datacardcontent-@atlaskit-internal_smartcard-urlcardcontent.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_smartcard-datacardcontent-@atlaskit-internal_smartcard-urlcardcontent.e17a5a1b1ea39e7918bd.bundle.js","react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.95fdf0802a05a79ba536.bundle.js","react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.95fdf0802a05a79ba536.bundle.js.map","23.f74b9f064bb76ed760fc.bundle.js":"https://dac-static.atlassian.com/_static/23.f74b9f064bb76ed760fc.bundle.js","24.ff228b47a6050dadd40d.bundle.js":"https://dac-static.atlassian.com/_static/24.ff228b47a6050dadd40d.bundle.js","25.aecdaeabb4a2dcf3b428.bundle.js":"https://dac-static.atlassian.com/_static/25.aecdaeabb4a2dcf3b428.bundle.js","26.6fda7dd940b623e5f2ab.bundle.js":"https://dac-static.atlassian.com/_static/26.6fda7dd940b623e5f2ab.bundle.js","27.96a3793d5185965b8902.bundle.js":"https://dac-static.atlassian.com/_static/27.96a3793d5185965b8902.bundle.js","28.853512e8eedf39b44c4d.bundle.js":"https://dac-static.atlassian.com/_static/28.853512e8eedf39b44c4d.bundle.js","29.6a3d4e4c3ac268d55515.bundle.js":"https://dac-static.atlassian.com/_static/29.6a3d4e4c3ac268d55515.bundle.js","30.3c0d5c40e67f53a0e834.bundle.js":"https://dac-static.atlassian.com/_static/30.3c0d5c40e67f53a0e834.bundle.js","31.0f8698bece08468d0eb5.bundle.js":"https://dac-static.atlassian.com/_static/31.0f8698bece08468d0eb5.bundle.js","32.10b5b4aa16329c596d09.bundle.js":"https://dac-static.atlassian.com/_static/32.10b5b4aa16329c596d09.bundle.js","33.22ab7ab07821c5b57960.bundle.js":"https://dac-static.atlassian.com/_static/33.22ab7ab07821c5b57960.bundle.js","34.6e98574393fa97c10820.bundle.js":"https://dac-static.atlassian.com/_static/34.6e98574393fa97c10820.bundle.js","35.75d3a3301307a5047366.bundle.js":"https://dac-static.atlassian.com/_static/35.75d3a3301307a5047366.bundle.js","@atlaskit-internal_atlassian-custom-theme.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-custom-theme.6dfa9bc8f9bf71fd74e0.bundle.js","@atlaskit-internal_atlassian-custom-theme.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_atlassian-custom-theme.6dfa9bc8f9bf71fd74e0.bundle.js.map","@atlaskit-internal_atlassian-dark.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-dark.3dc6f93052bf06bd3191.bundle.js","@atlaskit-internal_atlassian-dark-brand-refresh.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-dark-brand-refresh.4b99ea1da7660ef0ccf9.bundle.js","@atlaskit-internal_atlassian-dark-future.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-dark-future.87de99e347e131b6e4da.bundle.js","@atlaskit-internal_atlassian-dark-increased-contrast.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-dark-increased-contrast.0cbec0fa81a512354793.bundle.js","@atlaskit-internal_atlassian-legacy-dark.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-legacy-dark.b7d6e3d4dcaffe774be2.bundle.js","@atlaskit-internal_atlassian-legacy-light.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-legacy-light.6eddb44b0d5d76f127cb.bundle.js","@atlaskit-internal_atlassian-light.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-light.5193be83a89bde7075d5.bundle.js","@atlaskit-internal_atlassian-light-brand-refresh.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-light-brand-refresh.a13339aae5d265467a2f.bundle.js","@atlaskit-internal_atlassian-light-future.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-light-future.07bab920869b4b49d2bd.bundle.js","@atlaskit-internal_atlassian-light-increased-contrast.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-light-increased-contrast.5726e854772e067372e0.bundle.js","@atlaskit-internal_atlassian-shape.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-shape.197b91bf17d98bf413c2.bundle.js","@atlaskit-internal_atlassian-spacing.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-spacing.a6b97e51dc38c9146abe.bundle.js","@atlaskit-internal_atlassian-typography-adg3.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-typography-adg3.a62943a1c7015e212717.bundle.js","@atlaskit-internal_atlassian-typography-modernized.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-typography-modernized.4040c6c143c5d73d23c1.bundle.js","@atlaskit-internal_atlassian-typography-refreshed.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-typography-refreshed.9c8c5d80bf44b0b75a55.bundle.js","@atlaskit-internal_media-archive-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-archive-viewer.a95bedfd4845d75f1562.bundle.js","@atlaskit-internal_media-card.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-card.7146799f8415e997fe3d.bundle.js","@atlaskit-internal_media-card-error-boundary.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-card-error-boundary.c5d11f965b0907cc1972.bundle.js","@atlaskit-internal_media-client.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client.548b4aef59469f3b7099.bundle.js","@atlaskit-internal_media-client-mobile-upload.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client-mobile-upload.d9bb9f95cda7c7511208.bundle.js","@atlaskit-internal_media-client-mobile-upload.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_media-client-mobile-upload.d9bb9f95cda7c7511208.bundle.js.map","@atlaskit-internal_media-code-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-code-viewer.21300ac17d4c1f003233.bundle.js","@atlaskit-internal_media-picker-error-boundary.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-picker-error-boundary.fc440649b0ecafc72530.bundle.js","@atlaskit-internal_media-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-viewer.bba15e546cec76aa328e.bundle.js","@atlaskit-internal_media-viewer.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_media-viewer.bba15e546cec76aa328e.bundle.js.map","@atlaskit-internal_renderer-node_BlockCard.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_BlockCard.0e45c82b9070f69b54ad.bundle.js","@atlaskit-internal_renderer-node_CodeBlock.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_CodeBlock.7014e1becdb8feb55442.bundle.js","@atlaskit-internal_renderer-node_Date.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Date.66a090ccabda47bb92c5.bundle.js","@atlaskit-internal_renderer-node_DecisionItem.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_DecisionItem.5879943b2c4a43399254.bundle.js","@atlaskit-internal_renderer-node_Expand.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Expand.8d0fc57fbd336d6f9c9c.bundle.js","@atlaskit-internal_renderer-node_InlineCard.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_InlineCard.c5f0996b1a642f8dbcf9.bundle.js","@atlaskit-internal_renderer-node_Media.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Media.4e7e1d818c43f6bb0e16.bundle.js","@atlaskit-internal_renderer-node_MediaGroup.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_MediaGroup.7d7f62a419aa00aeca27.bundle.js","@atlaskit-internal_renderer-node_Mention.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Mention.43c67b1a427ad2a3f33a.bundle.js","@atlaskit-internal_renderer-node_Status.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Status.1e630ec1fa4b9fe08d59.bundle.js","@atlaskit-internal_renderer-node_TaskItem.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_TaskItem.920df413e9e2c7e452da.bundle.js","@atlaskit-internal_resourcedEmojiComponent.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_resourcedEmojiComponent.af6396444c1748dfb0a9.bundle.js","@atlaskit-internal_smartcard-datacardcontent.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_smartcard-datacardcontent.7d7ab4ff5a73e77e4624.bundle.js","@atlaskit-internal_smartcard-urlcardcontent.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_smartcard-urlcardcontent.8930ee4366663c00a531.bundle.js","analytics-and-cookie-preferences.js":"https://dac-static.atlassian.com/_static/analytics-and-cookie-preferences.29059dce989c6006577a.bundle.js","changelogs.css":"https://dac-static.atlassian.com/_static/changelogs.a506e8158904af2b440e.css","changelogs.js":"https://dac-static.atlassian.com/_static/changelogs.3b51bb7d809da4a6e422.bundle.js","changelogs.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/changelogs.a506e8158904af2b440e.css.map","changelogs.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/changelogs.3b51bb7d809da4a6e422.bundle.js.map","cms-pages.css":"https://dac-static.atlassian.com/_static/cms-pages.3add4023b90424f4519f.css","cms-pages.js":"https://dac-static.atlassian.com/_static/cms-pages.699a76b80e1ae4f9a5ab.bundle.js","cms-pages.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/cms-pages.3add4023b90424f4519f.css.map","docs-index.css":"https://dac-static.atlassian.com/_static/docs-index.3add4023b90424f4519f.css","docs-index.js":"https://dac-static.atlassian.com/_static/docs-index.1eeff1f3355cdf47d01a.bundle.js","docs-index.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/docs-index.3add4023b90424f4519f.css.map","docs-index.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/docs-index.1eeff1f3355cdf47d01a.bundle.js.map","documentation.css":"https://dac-static.atlassian.com/_static/documentation.a506e8158904af2b440e.css","documentation.js":"https://dac-static.atlassian.com/_static/documentation.76bf6cb6fe5b416a842f.bundle.js","documentation.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/documentation.a506e8158904af2b440e.css.map","documentation.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/documentation.76bf6cb6fe5b416a842f.bundle.js.map","errors.css":"https://dac-static.atlassian.com/_static/errors.c67a7555063c3b00faae.css","errors.js":"https://dac-static.atlassian.com/_static/errors.c533aeec18eb7e0484ad.bundle.js","errors.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/errors.c67a7555063c3b00faae.css.map","errors.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/errors.c533aeec18eb7e0484ad.bundle.js.map","graphql-docs.css":"https://dac-static.atlassian.com/_static/graphql-docs.a506e8158904af2b440e.css","graphql-docs.js":"https://dac-static.atlassian.com/_static/graphql-docs.d1dc77832490579420ec.bundle.js","graphql-docs.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/graphql-docs.a506e8158904af2b440e.css.map","graphql-docs.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/graphql-docs.d1dc77832490579420ec.bundle.js.map","graphql-sandbox.css":"https://dac-static.atlassian.com/_static/graphql-sandbox.995fed24c4af842dc2b2.css","graphql-sandbox.js":"https://dac-static.atlassian.com/_static/graphql-sandbox.610acd319902c953f7a0.bundle.js","graphql-sandbox.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/graphql-sandbox.995fed24c4af842dc2b2.css.map","graphql-sandbox.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/graphql-sandbox.610acd319902c953f7a0.bundle.js.map","home-page-v2.css":"https://dac-static.atlassian.com/_static/home-page-v2.5406f3402bf7cbed3851.css","home-page-v2.js":"https://dac-static.atlassian.com/_static/home-page-v2.7dce7155ab8484883913.bundle.js","home-page-v2.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/home-page-v2.5406f3402bf7cbed3851.css.map","home-page-v2.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/home-page-v2.7dce7155ab8484883913.bundle.js.map","home-page-v3.css":"https://dac-static.atlassian.com/_static/home-page-v3.5406f3402bf7cbed3851.css","home-page-v3.js":"https://dac-static.atlassian.com/_static/home-page-v3.2ff8d25041a5be5701fe.bundle.js","home-page-v3.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/home-page-v3.5406f3402bf7cbed3851.css.map","home-page-v3.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/home-page-v3.2ff8d25041a5be5701fe.bundle.js.map","jsapi-connect-module-pages.css":"https://dac-static.atlassian.com/_static/jsapi-connect-module-pages.3add4023b90424f4519f.css","jsapi-connect-module-pages.js":"https://dac-static.atlassian.com/_static/jsapi-connect-module-pages.0bfe6b44f10593165f2a.bundle.js","jsapi-connect-module-pages.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/jsapi-connect-module-pages.3add4023b90424f4519f.css.map","jsapi-connect-module-pages.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/jsapi-connect-module-pages.0bfe6b44f10593165f2a.bundle.js.map","lazy-team-profilecard.js":"https://dac-static.atlassian.com/_static/lazy-team-profilecard.9a7977267c946a5780ab.bundle.js","lp.css":"https://dac-static.atlassian.com/_static/lp.11464f28e8477b9d57d8.css","lp.js":"https://dac-static.atlassian.com/_static/lp.9a18d68a5b7528970890.bundle.js","lp.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/lp.11464f28e8477b9d57d8.css.map","lp.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/lp.9a18d68a5b7528970890.bundle.js.map","polyfills.js":"https://dac-static.atlassian.com/_static/polyfills.d511ce2217e854a0ef96.bundle.js","pricing-cal.css":"https://dac-static.atlassian.com/_static/pricing-cal.5406f3402bf7cbed3851.css","pricing-cal.js":"https://dac-static.atlassian.com/_static/pricing-cal.d134133fdf276ba4cd82.bundle.js","pricing-cal.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/pricing-cal.5406f3402bf7cbed3851.css.map","react-syntax-highlighter/refractor-import.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter/refractor-import.c59add68b345a8220bbe.bundle.js","react-syntax-highlighter_languages_refractor_abap.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_abap.961d1b2a900e9c2b28d1.bundle.js","react-syntax-highlighter_languages_refractor_actionscript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_actionscript.4ddcb1618adab7f3a1fc.bundle.js","react-syntax-highlighter_languages_refractor_ada.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ada.9366d99999ad523476ba.bundle.js","react-syntax-highlighter_languages_refractor_apacheconf.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_apacheconf.3757918f79a68b01d4b4.bundle.js","react-syntax-highlighter_languages_refractor_apl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_apl.8efcd43f7c56dcd2bd36.bundle.js","react-syntax-highlighter_languages_refractor_applescript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_applescript.8455b5dc9fec1f79fddb.bundle.js","react-syntax-highlighter_languages_refractor_arduino.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_arduino.3d2bd9edfeb2005260a3.bundle.js","react-syntax-highlighter_languages_refractor_arff.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_arff.ed93c3abb48178a6dbd2.bundle.js","react-syntax-highlighter_languages_refractor_asciidoc.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_asciidoc.79c238f73284a5e817e1.bundle.js","react-syntax-highlighter_languages_refractor_asm6502.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_asm6502.bda37eab69edf9f1b7d0.bundle.js","react-syntax-highlighter_languages_refractor_aspnet.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_aspnet.72c1468ab0839dc0cd0f.bundle.js","react-syntax-highlighter_languages_refractor_autohotkey.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_autohotkey.3fe58b64d95c0e7ca5b6.bundle.js","react-syntax-highlighter_languages_refractor_autoit.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_autoit.40868fa6e1c848ff2d7e.bundle.js","react-syntax-highlighter_languages_refractor_bash.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_bash.2451b9f582eb9f22860c.bundle.js","react-syntax-highlighter_languages_refractor_basic.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_basic.ad43af11d3a8a0da409c.bundle.js","react-syntax-highlighter_languages_refractor_batch.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_batch.9633d4d0f11681369fb4.bundle.js","react-syntax-highlighter_languages_refractor_bison.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_bison.4384cd19795a79bfbca6.bundle.js","react-syntax-highlighter_languages_refractor_brainfuck.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_brainfuck.fcfdc0739aa975b1e978.bundle.js","react-syntax-highlighter_languages_refractor_bro.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_bro.6b0a6d13e08391c5bf5b.bundle.js","react-syntax-highlighter_languages_refractor_c.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_c.260f750dde87b90dd67a.bundle.js","react-syntax-highlighter_languages_refractor_clike.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_clike.6aad546b1f559c13a094.bundle.js","react-syntax-highlighter_languages_refractor_clojure.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_clojure.43bedcde115fed608785.bundle.js","react-syntax-highlighter_languages_refractor_coffeescript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_coffeescript.264437f11a7ac52412d7.bundle.js","react-syntax-highlighter_languages_refractor_cpp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_cpp.10bb8dea72939a51f7a7.bundle.js","react-syntax-highlighter_languages_refractor_crystal.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_crystal.5f884c13a58075abdb52.bundle.js","react-syntax-highlighter_languages_refractor_csharp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_csharp.cd00501fb18b573717df.bundle.js","react-syntax-highlighter_languages_refractor_csp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_csp.d7c1de8e4c761c3263f0.bundle.js","react-syntax-highlighter_languages_refractor_css.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_css.1ad9cebabcd3a0b14c3e.bundle.js","react-syntax-highlighter_languages_refractor_cssExtras.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_cssExtras.7f63c9fcb4bb4310193f.bundle.js","react-syntax-highlighter_languages_refractor_d.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_d.04ee96b49b41002736a8.bundle.js","react-syntax-highlighter_languages_refractor_dart.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_dart.eef5a1777d31ef81d06f.bundle.js","react-syntax-highlighter_languages_refractor_diff.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_diff.ee1540be5fe46cb5389c.bundle.js","react-syntax-highlighter_languages_refractor_django.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_django.79c80f27ff27d4b5839e.bundle.js","react-syntax-highlighter_languages_refractor_docker.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_docker.6c95de3a35cb0f2ffce6.bundle.js","react-syntax-highlighter_languages_refractor_eiffel.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_eiffel.3b7f288a094f1d627268.bundle.js","react-syntax-highlighter_languages_refractor_elixir.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_elixir.00abb46ed039ce468e22.bundle.js","react-syntax-highlighter_languages_refractor_elm.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_elm.22dc6b2dc9f5afc7e0e5.bundle.js","react-syntax-highlighter_languages_refractor_erb.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_erb.04294d685738bd5bf67b.bundle.js","react-syntax-highlighter_languages_refractor_erlang.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_erlang.8396ae43719614a73e40.bundle.js","react-syntax-highlighter_languages_refractor_flow.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_flow.d2bf92cee91754c7ca62.bundle.js","react-syntax-highlighter_languages_refractor_fortran.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_fortran.dd0a52d42f6fc21380ff.bundle.js","react-syntax-highlighter_languages_refractor_fsharp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_fsharp.c8c3139e258a93bcf3be.bundle.js","react-syntax-highlighter_languages_refractor_gedcom.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_gedcom.77dc87de060b19585a19.bundle.js","react-syntax-highlighter_languages_refractor_gherkin.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_gherkin.e5e35c0275cfb947955b.bundle.js","react-syntax-highlighter_languages_refractor_git.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_git.0c06a6669fbf67a07ad5.bundle.js","react-syntax-highlighter_languages_refractor_glsl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_glsl.99d72620b3e3bc7adb1b.bundle.js","react-syntax-highlighter_languages_refractor_go.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_go.1f0be38c29cd24b56022.bundle.js","react-syntax-highlighter_languages_refractor_graphql.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_graphql.faf76314b0c476edc3eb.bundle.js","react-syntax-highlighter_languages_refractor_groovy.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_groovy.9edc157958e1949fd151.bundle.js","react-syntax-highlighter_languages_refractor_haml.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_haml.39274382b568eff33e75.bundle.js","react-syntax-highlighter_languages_refractor_handlebars.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_handlebars.708195b33bfa4ba30c97.bundle.js","react-syntax-highlighter_languages_refractor_haskell.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_haskell.a6b9dfc1d763694033b4.bundle.js","react-syntax-highlighter_languages_refractor_haxe.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_haxe.3ce2ccee3f1262b1385d.bundle.js","react-syntax-highlighter_languages_refractor_hpkp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_hpkp.261ee14428eb3defc66b.bundle.js","react-syntax-highlighter_languages_refractor_hsts.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_hsts.c4d2ba5b3c677bc1fcae.bundle.js","react-syntax-highlighter_languages_refractor_http.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_http.13f279967cad3f56c274.bundle.js","react-syntax-highlighter_languages_refractor_ichigojam.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ichigojam.7e924d4a1d13b6ca8e98.bundle.js","react-syntax-highlighter_languages_refractor_icon.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_icon.07717666eb345982ca13.bundle.js","react-syntax-highlighter_languages_refractor_inform7.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_inform7.5b4919721b21f0421e70.bundle.js","react-syntax-highlighter_languages_refractor_ini.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ini.4ff1f422f2b4a22d9053.bundle.js","react-syntax-highlighter_languages_refractor_io.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_io.e9999984c186535a42f8.bundle.js","react-syntax-highlighter_languages_refractor_j.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_j.31bf0f17c5de76993059.bundle.js","react-syntax-highlighter_languages_refractor_java.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_java.c942477de11c67361db6.bundle.js","react-syntax-highlighter_languages_refractor_javascript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_javascript.8ba5bc5a336a768f25b1.bundle.js","react-syntax-highlighter_languages_refractor_jolie.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_jolie.ed7d1b80ba53cb1baddf.bundle.js","react-syntax-highlighter_languages_refractor_json.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_json.8154b601f75fe3934440.bundle.js","react-syntax-highlighter_languages_refractor_jsx.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_jsx.9af5dec2d44cd795e6c7.bundle.js","react-syntax-highlighter_languages_refractor_julia.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_julia.dcff25e9d6c599440774.bundle.js","react-syntax-highlighter_languages_refractor_keyman.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_keyman.4af3ff3264f5cb8bf12e.bundle.js","react-syntax-highlighter_languages_refractor_kotlin.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_kotlin.ae619c9ac3f98c12d7b7.bundle.js","react-syntax-highlighter_languages_refractor_latex.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_latex.c3ba04d6b5e27feaf5a9.bundle.js","react-syntax-highlighter_languages_refractor_less.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_less.f3eababa69b09540e12d.bundle.js","react-syntax-highlighter_languages_refractor_liquid.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_liquid.3372ea4773f16713370d.bundle.js","react-syntax-highlighter_languages_refractor_lisp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_lisp.35d0928434e1e2ea1477.bundle.js","react-syntax-highlighter_languages_refractor_livescript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_livescript.cb8a168f188f153b6de7.bundle.js","react-syntax-highlighter_languages_refractor_lolcode.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_lolcode.2c76e63521e714af5102.bundle.js","react-syntax-highlighter_languages_refractor_lua.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_lua.d9254065690f7c443176.bundle.js","react-syntax-highlighter_languages_refractor_makefile.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_makefile.546189fc9d0b3c5cb445.bundle.js","react-syntax-highlighter_languages_refractor_markdown.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_markdown.f71a61ea1eea5fb793ff.bundle.js","react-syntax-highlighter_languages_refractor_markup.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_markup.7ca955e2caf2aa0aade5.bundle.js","react-syntax-highlighter_languages_refractor_markupTemplating.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_markupTemplating.5c7fa1b70e68592ed9e1.bundle.js","react-syntax-highlighter_languages_refractor_matlab.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_matlab.bd23fd214fcd30ce04b6.bundle.js","react-syntax-highlighter_languages_refractor_mel.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_mel.dca95cec3943d8502416.bundle.js","react-syntax-highlighter_languages_refractor_mizar.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_mizar.6df8d09eb771e0e08a78.bundle.js","react-syntax-highlighter_languages_refractor_monkey.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_monkey.6c09c89afe0c10c002ef.bundle.js","react-syntax-highlighter_languages_refractor_n4js.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_n4js.22ec269d39e17b81aec4.bundle.js","react-syntax-highlighter_languages_refractor_nasm.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nasm.f90b168509c3eb9ee28e.bundle.js","react-syntax-highlighter_languages_refractor_nginx.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nginx.3737bb3c899e4d925022.bundle.js","react-syntax-highlighter_languages_refractor_nim.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nim.0d11e0bb7c9a1c52e43b.bundle.js","react-syntax-highlighter_languages_refractor_nix.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nix.eface16ccf590767e0b9.bundle.js","react-syntax-highlighter_languages_refractor_nsis.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nsis.cde4c30f47f3e2072935.bundle.js","react-syntax-highlighter_languages_refractor_objectivec.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_objectivec.628bb05d187efea8343c.bundle.js","react-syntax-highlighter_languages_refractor_ocaml.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ocaml.d5e55fe85d0331023ebc.bundle.js","react-syntax-highlighter_languages_refractor_opencl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_opencl.381c8f0d06ca8352aed4.bundle.js","react-syntax-highlighter_languages_refractor_oz.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_oz.4e739cd51a4cb86ee868.bundle.js","react-syntax-highlighter_languages_refractor_parigp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_parigp.7c013e6cf111df4a1830.bundle.js","react-syntax-highlighter_languages_refractor_parser.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_parser.fa26395244ba97a62890.bundle.js","react-syntax-highlighter_languages_refractor_pascal.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_pascal.8f2266f32dd41893589e.bundle.js","react-syntax-highlighter_languages_refractor_perl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_perl.5250710471e422811f91.bundle.js","react-syntax-highlighter_languages_refractor_php.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_php.5618a1ee8709ec4604c7.bundle.js","react-syntax-highlighter_languages_refractor_phpExtras.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_phpExtras.60f4fe7b5e615c7d02c2.bundle.js","react-syntax-highlighter_languages_refractor_plsql.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_plsql.4e0e8911ba9654060600.bundle.js","react-syntax-highlighter_languages_refractor_powershell.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_powershell.cb4ae64829f3f962d73b.bundle.js","react-syntax-highlighter_languages_refractor_processing.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_processing.97a6c1bace71c8cad732.bundle.js","react-syntax-highlighter_languages_refractor_prolog.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_prolog.e1cf6bbc22c3329694e6.bundle.js","react-syntax-highlighter_languages_refractor_properties.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_properties.c3d1cc0eb7794e20aca0.bundle.js","react-syntax-highlighter_languages_refractor_protobuf.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_protobuf.91df175f40df57cbee1a.bundle.js","react-syntax-highlighter_languages_refractor_pug.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_pug.72e6bceccb401080a5b5.bundle.js","react-syntax-highlighter_languages_refractor_puppet.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_puppet.607519ea998d0883c14d.bundle.js","react-syntax-highlighter_languages_refractor_pure.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_pure.528f35f1f82e90f5d271.bundle.js","react-syntax-highlighter_languages_refractor_python.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_python.a4c25fde069e865f28a1.bundle.js","react-syntax-highlighter_languages_refractor_q.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_q.b70662c3fa6781588154.bundle.js","react-syntax-highlighter_languages_refractor_qore.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_qore.94e126ba0db3aa247bd2.bundle.js","react-syntax-highlighter_languages_refractor_r.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_r.d7e70dbdcd7fe40f5e7b.bundle.js","react-syntax-highlighter_languages_refractor_reason.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_reason.cbdca96734e109eb6b2c.bundle.js","react-syntax-highlighter_languages_refractor_renpy.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_renpy.c586ba3176e8fbcfefa1.bundle.js","react-syntax-highlighter_languages_refractor_rest.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_rest.23ad5bac326968ef93c7.bundle.js","react-syntax-highlighter_languages_refractor_rip.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_rip.8a07808f6b565fba7258.bundle.js","react-syntax-highlighter_languages_refractor_roboconf.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_roboconf.7a6766d885c1727cfc08.bundle.js","react-syntax-highlighter_languages_refractor_ruby.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ruby.3d60893d74f53dc985b5.bundle.js","react-syntax-highlighter_languages_refractor_rust.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_rust.79aac7edbd82fab0598d.bundle.js","react-syntax-highlighter_languages_refractor_sas.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_sas.5e13a4be26d78359cecf.bundle.js","react-syntax-highlighter_languages_refractor_sass.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_sass.1f25e69b10e3ff745203.bundle.js","react-syntax-highlighter_languages_refractor_scala.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_scala.dae91668d18d9b0a4a6e.bundle.js","react-syntax-highlighter_languages_refractor_scheme.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_scheme.1ab2149121874aeb1b64.bundle.js","react-syntax-highlighter_languages_refractor_scss.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_scss.7c40c40a9bec3aa373f6.bundle.js","react-syntax-highlighter_languages_refractor_smalltalk.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_smalltalk.863161e135c37053b73c.bundle.js","react-syntax-highlighter_languages_refractor_smarty.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_smarty.99080a62a12d4e91a6bf.bundle.js","react-syntax-highlighter_languages_refractor_soy.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_soy.09744c18da94f5262a1e.bundle.js","react-syntax-highlighter_languages_refractor_sql.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_sql.148f2f3f0200b9aa4e57.bundle.js","react-syntax-highlighter_languages_refractor_stylus.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_stylus.20cc9c1ffc37e269ba3c.bundle.js","react-syntax-highlighter_languages_refractor_swift.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_swift.700552e9e5ead66a9e6d.bundle.js","react-syntax-highlighter_languages_refractor_tap.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_tap.65194b04c64ce4ec5cd6.bundle.js","react-syntax-highlighter_languages_refractor_tcl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_tcl.ccb5df82a49b5d7073cd.bundle.js","react-syntax-highlighter_languages_refractor_textile.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_textile.2c568e5400c6c6ea4a12.bundle.js","react-syntax-highlighter_languages_refractor_tsx.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_tsx.4ac89eef7cde633f7a4e.bundle.js","react-syntax-highlighter_languages_refractor_tt2.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_tt2.75bd4edf90b9189c3161.bundle.js","react-syntax-highlighter_languages_refractor_twig.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_twig.3b37deb1373adffefe94.bundle.js","react-syntax-highlighter_languages_refractor_typescript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_typescript.778ffb068b58e67f30d7.bundle.js","react-syntax-highlighter_languages_refractor_vbnet.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_vbnet.9cc6f3e46eca5ea75973.bundle.js","react-syntax-highlighter_languages_refractor_velocity.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_velocity.284ef9a84672ce468a9a.bundle.js","react-syntax-highlighter_languages_refractor_verilog.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_verilog.ae13a6dbfc5322c23796.bundle.js","react-syntax-highlighter_languages_refractor_vhdl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_vhdl.88213d4795b8b0fb6b4e.bundle.js","react-syntax-highlighter_languages_refractor_vim.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_vim.8e619c725c6210547fd4.bundle.js","react-syntax-highlighter_languages_refractor_visualBasic.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_visualBasic.3a6441c27fe386fd62ea.bundle.js","react-syntax-highlighter_languages_refractor_wasm.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_wasm.f65ca7d65025190b38bc.bundle.js","react-syntax-highlighter_languages_refractor_wiki.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_wiki.2a948bae4e23208f48d0.bundle.js","react-syntax-highlighter_languages_refractor_xeora.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_xeora.ec0279ad35de7ed64835.bundle.js","react-syntax-highlighter_languages_refractor_xojo.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_xojo.36a2426e85e0f48d5b05.bundle.js","react-syntax-highlighter_languages_refractor_xquery.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_xquery.2b09701e351414590202.bundle.js","react-syntax-highlighter_languages_refractor_yaml.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_yaml.6950be2c65c1408d73b1.bundle.js","rest-docs.css":"https://dac-static.atlassian.com/_static/rest-docs.acd127cc00132579b750.css","rest-docs.js":"https://dac-static.atlassian.com/_static/rest-docs.b1efab6847faf45f90ae.bundle.js","rest-docs.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/rest-docs.acd127cc00132579b750.css.map","rest-docs.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/rest-docs.b1efab6847faf45f90ae.bundle.js.map","search.css":"https://dac-static.atlassian.com/_static/search.a506e8158904af2b440e.css","search.js":"https://dac-static.atlassian.com/_static/search.93795c42249df71af55b.bundle.js","search.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/search.a506e8158904af2b440e.css.map","search.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/search.93795c42249df71af55b.bundle.js.map","success-stories.js":"https://dac-static.atlassian.com/_static/success-stories.bdd4fbcdfec8c6cb6026.bundle.js","supportdesk.css":"https://dac-static.atlassian.com/_static/supportdesk.5406f3402bf7cbed3851.css","supportdesk.js":"https://dac-static.atlassian.com/_static/supportdesk.7d7bca859769610ee852.bundle.js","supportdesk.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/supportdesk.5406f3402bf7cbed3851.css.map","supportdesk.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/supportdesk.7d7bca859769610ee852.bundle.js.map","tti-polyfill.js":"https://dac-static.atlassian.com/_static/tti-polyfill.0f16ae0877837dc51426.bundle.js","web-vitals.js":"https://dac-static.atlassian.com/_static/web-vitals.d8896240b41233c43302.bundle.js","247.a8d4b6dad0a25cae2030.bundle.js":"https://dac-static.atlassian.com/_static/247.a8d4b6dad0a25cae2030.bundle.js","248.26e01c5ae352cff08ee0.bundle.js":"https://dac-static.atlassian.com/_static/248.26e01c5ae352cff08ee0.bundle.js","249.f29e90c145c2845c6995.bundle.js":"https://dac-static.atlassian.com/_static/249.f29e90c145c2845c6995.bundle.js","250.db4089336920c70d5270.bundle.js":"https://dac-static.atlassian.com/_static/250.db4089336920c70d5270.bundle.js","251.4385c3d699a6e48e7b75.bundle.js":"https://dac-static.atlassian.com/_static/251.4385c3d699a6e48e7b75.bundle.js","252.86a90c3bc9788793749d.bundle.js":"https://dac-static.atlassian.com/_static/252.86a90c3bc9788793749d.bundle.js","253.7a4c94f29eba33686a0c.bundle.js":"https://dac-static.atlassian.com/_static/253.7a4c94f29eba33686a0c.bundle.js","254.692d8d91dd7bae479d2c.bundle.js":"https://dac-static.atlassian.com/_static/254.692d8d91dd7bae479d2c.bundle.js","255.d49deec97aba6020873c.bundle.js":"https://dac-static.atlassian.com/_static/255.d49deec97aba6020873c.bundle.js","256.fb8cbfdb489d548778d3.bundle.js":"https://dac-static.atlassian.com/_static/256.fb8cbfdb489d548778d3.bundle.js","257.d8a9039c54d0c7ce63e8.bundle.js":"https://dac-static.atlassian.com/_static/257.d8a9039c54d0c7ce63e8.bundle.js","258.3aa9dbb4e56ba7c35cc3.bundle.js":"https://dac-static.atlassian.com/_static/258.3aa9dbb4e56ba7c35cc3.bundle.js","259.72c3761e461aaaa7f0ac.bundle.js":"https://dac-static.atlassian.com/_static/259.72c3761e461aaaa7f0ac.bundle.js","260.7b686f3b1e8b9210e59f.bundle.js":"https://dac-static.atlassian.com/_static/260.7b686f3b1e8b9210e59f.bundle.js","261.0eba170726fbaae91426.bundle.js":"https://dac-static.atlassian.com/_static/261.0eba170726fbaae91426.bundle.js","262.ea0a543a2ec81fa2d0f4.bundle.js":"https://dac-static.atlassian.com/_static/262.ea0a543a2ec81fa2d0f4.bundle.js","263.2768b1612fb45edfded8.bundle.js":"https://dac-static.atlassian.com/_static/263.2768b1612fb45edfded8.bundle.js","264.ab4c6987b8ec06569826.bundle.js":"https://dac-static.atlassian.com/_static/264.ab4c6987b8ec06569826.bundle.js","265.d9fe41ad80367c0107ef.bundle.js":"https://dac-static.atlassian.com/_static/265.d9fe41ad80367c0107ef.bundle.js","266.543ec2b60df53852209b.bundle.js":"https://dac-static.atlassian.com/_static/266.543ec2b60df53852209b.bundle.js","267.25ac50a741ddba25c577.bundle.js":"https://dac-static.atlassian.com/_static/267.25ac50a741ddba25c577.bundle.js","268.46e70da80ece64837323.bundle.js":"https://dac-static.atlassian.com/_static/268.46e70da80ece64837323.bundle.js","269.bf675e47518d00a77575.bundle.js":"https://dac-static.atlassian.com/_static/269.bf675e47518d00a77575.bundle.js","270.2f7ea66eaa451332da34.bundle.js":"https://dac-static.atlassian.com/_static/270.2f7ea66eaa451332da34.bundle.js","271.c2da33aa43117c1ca739.bundle.js":"https://dac-static.atlassian.com/_static/271.c2da33aa43117c1ca739.bundle.js","272.d1491b1ea66641154fd9.bundle.js":"https://dac-static.atlassian.com/_static/272.d1491b1ea66641154fd9.bundle.js","273.cedaa2c8f9730c5f8326.bundle.js":"https://dac-static.atlassian.com/_static/273.cedaa2c8f9730c5f8326.bundle.js","1.svg":"https://dac-static.atlassian.com/_static/1.svg","2.svg":"https://dac-static.atlassian.com/_static/2.svg","3.svg":"https://dac-static.atlassian.com/_static/3.svg","@atlaskit-internal_atlassian-custom-theme.6dfa9bc8f9bf71fd74e0.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-custom-theme.6dfa9bc8f9bf71fd74e0.bundle.js.LICENSE.txt","@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.4dd1371d310c1b5f3ceb.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.4dd1371d310c1b5f3ceb.bundle.js.LICENSE.txt","@atlaskit-internal_media-client-mobile-upload.d9bb9f95cda7c7511208.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client-mobile-upload.d9bb9f95cda7c7511208.bundle.js.LICENSE.txt","@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.8309c279d519135774e0.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.8309c279d519135774e0.bundle.js.LICENSE.txt","@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.3c5209442a07edff2014.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.3c5209442a07edff2014.bundle.js.LICENSE.txt","@atlaskit-internal_media-viewer.bba15e546cec76aa328e.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-viewer.bba15e546cec76aa328e.bundle.js.LICENSE.txt","AIPoweredCode.svg":"https://dac-static.atlassian.com/_static/AIPoweredCode.svg","AceRichIcon.svg":"https://dac-static.atlassian.com/_static/AceRichIcon.svg","AiTeammate.svg":"https://dac-static.atlassian.com/_static/AiTeammate.svg","App.svg":"https://dac-static.atlassian.com/_static/App.svg","Art.svg":"https://dac-static.atlassian.com/_static/Art.svg","AtlasCampBanner.svg":"https://dac-static.atlassian.com/_static/AtlasCampBanner.svg","font-faces.css":"https://dac-static.atlassian.com/_static/SFProText-Semibold.woff2","Bamboo-blue.svg":"https://dac-static.atlassian.com/_static/Bamboo-blue.svg","BambooV2.svg":"https://dac-static.atlassian.com/_static/BambooV2.svg","Bitbucket-blue.svg":"https://dac-static.atlassian.com/_static/Bitbucket-blue.svg","BitbucketV2.svg":"https://dac-static.atlassian.com/_static/BitbucketV2.svg","Book.svg":"https://dac-static.atlassian.com/_static/Book.svg","Bug.svg":"https://dac-static.atlassian.com/_static/Bug.svg","shared-styles.css":"https://dac-static.atlassian.com/_static/Server.png","Cloud.svg":"https://dac-static.atlassian.com/_static/Cloud.svg","CloudAdminV2.svg":"https://dac-static.atlassian.com/_static/CloudAdminV2.svg","Compass-blue.svg":"https://dac-static.atlassian.com/_static/Compass-blue.svg","Confluence-blue.svg":"https://dac-static.atlassian.com/_static/Confluence-blue.svg","ConfluenceV2.svg":"https://dac-static.atlassian.com/_static/ConfluenceV2.svg","CreditCard.svg":"https://dac-static.atlassian.com/_static/CreditCard.svg","Crowd-blue.svg":"https://dac-static.atlassian.com/_static/Crowd-blue.svg","CrowdV2.svg":"https://dac-static.atlassian.com/_static/CrowdV2.svg","Develop.svg":"https://dac-static.atlassian.com/_static/Develop.svg","E25Banner.svg":"https://dac-static.atlassian.com/_static/E25Banner.svg","ErrorWindow.svg":"https://dac-static.atlassian.com/_static/ErrorWindow.svg","Evelation.svg":"https://dac-static.atlassian.com/_static/Evelation.svg","Fisheye-blue.svg":"https://dac-static.atlassian.com/_static/Fisheye-blue.svg","ForgeV2.svg":"https://dac-static.atlassian.com/_static/ForgeV2.svg","FourStars.svg":"https://dac-static.atlassian.com/_static/FourStars.svg","GovernmentCloud.svg":"https://dac-static.atlassian.com/_static/GovernmentCloud.svg","Growth.svg":"https://dac-static.atlassian.com/_static/Growth.svg","Guidelines.svg":"https://dac-static.atlassian.com/_static/Guidelines.svg","Hero-illustration-Desktop.svg":"https://dac-static.atlassian.com/_static/Hero-illustration-Desktop.svg","Hero-illustration-Mobile.svg":"https://dac-static.atlassian.com/_static/Hero-illustration-Mobile.svg","Hero-illustration-Tablet.svg":"https://dac-static.atlassian.com/_static/Hero-illustration-Tablet.svg","HeroLeftDesktop.svg":"https://dac-static.atlassian.com/_static/HeroLeftDesktop.svg","HeroRightDesktop.svg":"https://dac-static.atlassian.com/_static/HeroRightDesktop.svg","IncidentsError.svg":"https://dac-static.atlassian.com/_static/IncidentsError.svg","InfrastructureIcon.svg":"https://dac-static.atlassian.com/_static/InfrastructureIcon.svg","JSMV2.svg":"https://dac-static.atlassian.com/_static/JSMV2.svg","Jira Service Desk-blue.svg":"https://dac-static.atlassian.com/_static/Jira Service Desk-blue.svg","Jira Software-blue.svg":"https://dac-static.atlassian.com/_static/Jira Software-blue.svg","Jira-blue.svg":"https://dac-static.atlassian.com/_static/Jira-blue.svg","JiraSoftwareCloudV2.svg":"https://dac-static.atlassian.com/_static/JiraSoftwareCloudV2.svg","JiraV2.svg":"https://dac-static.atlassian.com/_static/JiraV2.svg","Lightbulb.svg":"https://dac-static.atlassian.com/_static/Lightbulb.svg","LockClosed.svg":"https://dac-static.atlassian.com/_static/LockClosed.svg","Newspaper.svg":"https://dac-static.atlassian.com/_static/Newspaper.svg","Opsgenie-blue-rgb.svg":"https://dac-static.atlassian.com/_static/Opsgenie-blue-rgb.svg","PageSearchSpot.svg":"https://dac-static.atlassian.com/_static/PageSearchSpot.svg","PlatformRichIcon.svg":"https://dac-static.atlassian.com/_static/PlatformRichIcon.svg","Question.svg":"https://dac-static.atlassian.com/_static/Question.svg","Rovo.svg":"https://dac-static.atlassian.com/_static/Rovo.svg","Rovo2.svg":"https://dac-static.atlassian.com/_static/Rovo2.svg","RovoLogo.svg":"https://dac-static.atlassian.com/_static/RovoLogo.svg","Satellite.svg":"https://dac-static.atlassian.com/_static/Satellite.svg","Search.svg":"https://dac-static.atlassian.com/_static/Search.svg","SearchError.svg":"https://dac-static.atlassian.com/_static/SearchError.svg","SearchNoResults.svg":"https://dac-static.atlassian.com/_static/SearchNoResults.svg","Shapes.svg":"https://dac-static.atlassian.com/_static/Shapes.svg","Slide1.svg":"https://dac-static.atlassian.com/_static/Slide1.svg","Slide2.svg":"https://dac-static.atlassian.com/_static/Slide2.svg","Slide3.svg":"https://dac-static.atlassian.com/_static/Slide3.svg","Statuspage-blue.svg":"https://dac-static.atlassian.com/_static/Statuspage-blue.svg","TeamEu25banner.svg":"https://dac-static.atlassian.com/_static/TeamEu25banner.svg","Telescope.svg":"https://dac-static.atlassian.com/_static/Telescope.svg","Trello_V2.svg":"https://dac-static.atlassian.com/_static/Trello_V2.svg","Ukraine.svg":"https://dac-static.atlassian.com/_static/Ukraine.svg","alert.svg":"https://dac-static.atlassian.com/_static/alert.svg","bugBounty.svg":"https://dac-static.atlassian.com/_static/bugBounty.svg","changelogs.3b51bb7d809da4a6e422.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/changelogs.3b51bb7d809da4a6e422.bundle.js.LICENSE.txt","communityBg.svg":"https://dac-static.atlassian.com/_static/communityBg.svg","contentComm.svg":"https://dac-static.atlassian.com/_static/contentComm.svg","customer.svg":"https://dac-static.atlassian.com/_static/customer.svg","dataAnalytics.svg":"https://dac-static.atlassian.com/_static/dataAnalytics.svg","designDiagram.svg":"https://dac-static.atlassian.com/_static/designDiagram.svg","devSandbox.svg":"https://dac-static.atlassian.com/_static/devSandbox.svg","develop-with-forge.svg":"https://dac-static.atlassian.com/_static/develop-with-forge.svg","developer-community.svg":"https://dac-static.atlassian.com/_static/developer-community.svg","developer-guide.svg":"https://dac-static.atlassian.com/_static/developer-guide.svg","docs-index.1eeff1f3355cdf47d01a.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/docs-index.1eeff1f3355cdf47d01a.bundle.js.LICENSE.txt","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].7135c3c7ab98d086b4a7.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].7135c3c7ab98d086b4a7.bundle.js.LICENSE.txt","documentation.76bf6cb6fe5b416a842f.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/documentation.76bf6cb6fe5b416a842f.bundle.js.LICENSE.txt","doubleShield.svg":"https://dac-static.atlassian.com/_static/doubleShield.svg","errors.c533aeec18eb7e0484ad.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/errors.c533aeec18eb7e0484ad.bundle.js.LICENSE.txt","events-card.svg":"https://dac-static.atlassian.com/_static/events-card.svg","events-mobile.svg":"https://dac-static.atlassian.com/_static/events-mobile.svg","events-tablet.svg":"https://dac-static.atlassian.com/_static/events-tablet.svg","events.svg":"https://dac-static.atlassian.com/_static/events.svg","extend-atlassian-products.svg":"https://dac-static.atlassian.com/_static/extend-atlassian-products.svg","eyelash.svg":"https://dac-static.atlassian.com/_static/eyelash.svg","graphql-docs.d1dc77832490579420ec.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/graphql-docs.d1dc77832490579420ec.bundle.js.LICENSE.txt","graphql-sandbox.610acd319902c953f7a0.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/graphql-sandbox.610acd319902c953f7a0.bundle.js.LICENSE.txt","hero-background.svg":"https://dac-static.atlassian.com/_static/hero-background.svg","hero-bg.svg":"https://dac-static.atlassian.com/_static/hero-bg.svg","hero-left.svg":"https://dac-static.atlassian.com/_static/hero-left.svg","hero-right.svg":"https://dac-static.atlassian.com/_static/hero-right.svg","home-page-v2.7dce7155ab8484883913.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/home-page-v2.7dce7155ab8484883913.bundle.js.LICENSE.txt","home-page-v3.2ff8d25041a5be5701fe.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/home-page-v3.2ff8d25041a5be5701fe.bundle.js.LICENSE.txt","integration.svg":"https://dac-static.atlassian.com/_static/integration.svg","integrationPlain.svg":"https://dac-static.atlassian.com/_static/integrationPlain.svg","itSupport.svg":"https://dac-static.atlassian.com/_static/itSupport.svg","jira-automation.svg":"https://dac-static.atlassian.com/_static/jira-automation.svg","jsapi-connect-module-pages.0bfe6b44f10593165f2a.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/jsapi-connect-module-pages.0bfe6b44f10593165f2a.bundle.js.LICENSE.txt","learningIllustration.svg":"https://dac-static.atlassian.com/_static/learningIllustration.svg","lock.svg":"https://dac-static.atlassian.com/_static/lock.svg","lp.9a18d68a5b7528970890.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/lp.9a18d68a5b7528970890.bundle.js.LICENSE.txt","mark-trello-blue-Blue.svg":"https://dac-static.atlassian.com/_static/mark-trello-blue-Blue.svg","marketplace-list.svg":"https://dac-static.atlassian.com/_static/marketplace-list.svg","marketplace-support.svg":"https://dac-static.atlassian.com/_static/marketplace-support.svg","newAndEvents.svg":"https://dac-static.atlassian.com/_static/newAndEvents.svg","news-hero-bg.svg":"https://dac-static.atlassian.com/_static/news-hero-bg.svg","onboarding.svg":"https://dac-static.atlassian.com/_static/onboarding.svg","onlineGroups.svg":"https://dac-static.atlassian.com/_static/onlineGroups.svg","platform.svg":"https://dac-static.atlassian.com/_static/platform.svg","projectManagement.svg":"https://dac-static.atlassian.com/_static/projectManagement.svg","quote.svg":"https://dac-static.atlassian.com/_static/quote.svg","react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.95fdf0802a05a79ba536.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.95fdf0802a05a79ba536.bundle.js.LICENSE.txt","rest-docs.b1efab6847faf45f90ae.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/rest-docs.b1efab6847faf45f90ae.bundle.js.LICENSE.txt","rollout.png":"https://dac-static.atlassian.com/_static/rollout.png","rovo-ai.svg":"https://dac-static.atlassian.com/_static/rovo-ai.svg","search.93795c42249df71af55b.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/search.93795c42249df71af55b.bundle.js.LICENSE.txt","shield.svg":"https://dac-static.atlassian.com/_static/shield.svg","softwareDev.svg":"https://dac-static.atlassian.com/_static/softwareDev.svg","speed.svg":"https://dac-static.atlassian.com/_static/speed.svg","star.svg":"https://dac-static.atlassian.com/_static/star.svg","status-page.svg":"https://dac-static.atlassian.com/_static/status-page.svg","supportdesk.7d7bca859769610ee852.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/supportdesk.7d7bca859769610ee852.bundle.js.LICENSE.txt","swag.svg":"https://dac-static.atlassian.com/_static/swag.svg","totalSales.svg":"https://dac-static.atlassian.com/_static/totalSales.svg","vault.svg":"https://dac-static.atlassian.com/_static/vault.svg","default":"https://dac-static.atlassian.com[object Object]"},"frontEndFeatures":{"shouldShowDacIntercept":true,"shouldShowGetHelpWidget":true,"renderRestRedesignedDocs":{"contentSets":[],"enableAllInternal":true,"enableAllExternal":true},"targetExternalBuilders":{"contentSets":[],"userEmails":[]},"shouldEnableAIfeatures":false,"shouldEnableDevHubV2":true,"shouldEnableGlobalNav":true,"shouldShowEuBanner":false,"shouldShowAtlasCampBanner":true,"shouldShowCsmChatWidget":false,"shouldEnableLlmPriceCalculator":false},"csmChatWidgetBaseUrl":"https://ca-csm.atlassian.net","csmChatWidgetSettings":{"widgetId":"c6b24b5c-6375-4bc7-8a89-131debc0b393","site":"ca-csm.atlassian.net","cloudId":"1f35ff1e-f63c-490b-9da6-d84597cbc813"},"shouldShowCsmChatWidget":false};</script>
+        <script nonce="" type="text/javascript">window.__DATA__ = {"assets":{"-----------------------.js":"https://dac-static.atlassian.com/_static/-----------------------.7e5e617b621749385b34.bundle.js","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].css":"https://dac-static.atlassian.com/_static/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].dd2f1b0fd6b2ad049661.chunk.css","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].js":"https://dac-static.atlassian.com/_static/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].7135c3c7ab98d086b4a7.bundle.js","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].dd2f1b0fd6b2ad049661.chunk.css.map","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].7135c3c7ab98d086b4a7.bundle.js.map","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-errors-supportde[REDACTED_SK]@atlaskit-internal_atlassian-custom-theme.js":"https://dac-static.atlassian.com/_static/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-errors-supportde[REDACTED_SK]@atlaskit-internal_atlassian-custom-theme.e43df7734c478bfaaa1a.bundle.js","--.js":"https://dac-static.atlassian.com/_static/--.07a722a879f038601c4b.bundle.js","-.js":"https://dac-static.atlassian.com/_static/-.b9fd768ae950bb87d4ba.bundle.js","5.4a3d7b0ee1f4fc8db28e.bundle.js":"https://dac-static.atlassian.com/_static/5.4a3d7b0ee1f4fc8db28e.bundle.js","6.433068ab93c96834f37a.bundle.js":"https://dac-static.atlassian.com/_static/6.433068ab93c96834f37a.bundle.js","7.e64070940915f687242f.bundle.js":"https://dac-static.atlassian.com/_static/7.e64070940915f687242f.bundle.js","8.bfc5fbb85a843fc99eab.bundle.js":"https://dac-static.atlassian.com/_static/8.bfc5fbb85a843fc99eab.bundle.js","---.js":"https://dac-static.atlassian.com/_static/---.1baaafe9f35eeb91e764.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations8.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations8.76fa7155469ea496fb6c.bundle.js","11.426299ef178f0178e4e9.bundle.js":"https://dac-static.atlassian.com/_static/11.426299ef178f0178e4e9.bundle.js","12.8167eb1bf8eed8d048a3.bundle.js":"https://dac-static.atlassian.com/_static/12.8167eb1bf8eed8d048a3.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations0.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations0.0c6da3241303b5534bb5.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations2.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations2.a3493492cd622dfe844d.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations4.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations4.7b2cbb2ca12c47599325.bundle.js","@atlaskit-internal_feedback-collector/i18n-tranlations6.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_feedback-collector/i18n-tranlations6.fae41be90450ea4cf65c.bundle.js","@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.4dd1371d310c1b5f3ceb.bundle.js","@<PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>":"https://dac-static.atlassian.com/_static/../_sourcemaps/@<PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>","@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.8309c279d519135774e0.bundle.js","@<PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>":"https://dac-static.atlassian.com/_static/../_sourcemaps/@<PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>","@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.3c5209442a07edff2014.bundle.js","@<PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>":"https://dac-static.atlassian.com/_static/../_sourcemaps/@<PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>","@atlaskit-internal_renderer-node_CodeBlock-@atlaskit-internal_media-code-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_CodeBlock-@atlaskit-internal_media-code-viewer.81d642e8c22832e0f277.bundle.js","@atlaskit-internal_smartcard-datacardcontent-@atlaskit-internal_smartcard-urlcardcontent.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_smartcard-datacardcontent-@atlaskit-internal_smartcard-urlcardcontent.e17a5a1b1ea39e7918bd.bundle.js","react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.95fdf0802a05a79ba536.bundle.js","react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.95fdf0802a05a79ba536.bundle.js.map","23.f74b9f064bb76ed760fc.bundle.js":"https://dac-static.atlassian.com/_static/23.f74b9f064bb76ed760fc.bundle.js","24.ff228b47a6050dadd40d.bundle.js":"https://dac-static.atlassian.com/_static/24.ff228b47a6050dadd40d.bundle.js","25.aecdaeabb4a2dcf3b428.bundle.js":"https://dac-static.atlassian.com/_static/25.aecdaeabb4a2dcf3b428.bundle.js","26.6fda7dd940b623e5f2ab.bundle.js":"https://dac-static.atlassian.com/_static/26.6fda7dd940b623e5f2ab.bundle.js","27.96a3793d5185965b8902.bundle.js":"https://dac-static.atlassian.com/_static/27.96a3793d5185965b8902.bundle.js","28.853512e8eedf39b44c4d.bundle.js":"https://dac-static.atlassian.com/_static/28.853512e8eedf39b44c4d.bundle.js","29.6a3d4e4c3ac268d55515.bundle.js":"https://dac-static.atlassian.com/_static/29.6a3d4e4c3ac268d55515.bundle.js","30.3c0d5c40e67f53a0e834.bundle.js":"https://dac-static.atlassian.com/_static/30.3c0d5c40e67f53a0e834.bundle.js","31.0f8698bece08468d0eb5.bundle.js":"https://dac-static.atlassian.com/_static/31.0f8698bece08468d0eb5.bundle.js","32.10b5b4aa16329c596d09.bundle.js":"https://dac-static.atlassian.com/_static/32.10b5b4aa16329c596d09.bundle.js","33.22ab7ab07821c5b57960.bundle.js":"https://dac-static.atlassian.com/_static/33.22ab7ab07821c5b57960.bundle.js","34.6e98574393fa97c10820.bundle.js":"https://dac-static.atlassian.com/_static/34.6e98574393fa97c10820.bundle.js","35.75d3a3301307a5047366.bundle.js":"https://dac-static.atlassian.com/_static/35.75d3a3301307a5047366.bundle.js","@atlaskit-internal_atlassian-custom-theme.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-custom-theme.6dfa9bc8f9bf71fd74e0.bundle.js","@atlaskit-internal_atlassian-custom-theme.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_atlassian-custom-theme.6dfa9bc8f9bf71fd74e0.bundle.js.map","@atlaskit-internal_atlassian-dark.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-dark.3dc6f93052bf06bd3191.bundle.js","@atlaskit-internal_atlassian-dark-brand-refresh.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-dark-brand-refresh.4b99ea1da7660ef0ccf9.bundle.js","@atlaskit-internal_atlassian-dark-future.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-dark-future.87de99e347e131b6e4da.bundle.js","@atlaskit-internal_atlassian-dark-increased-contrast.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-dark-increased-contrast.0cbec0fa81a512354793.bundle.js","@atlaskit-internal_atlassian-legacy-dark.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-legacy-dark.b7d6e3d4dcaffe774be2.bundle.js","@atlaskit-internal_atlassian-legacy-light.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-legacy-light.6eddb44b0d5d76f127cb.bundle.js","@atlaskit-internal_atlassian-light.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-light.5193be83a89bde7075d5.bundle.js","@atlaskit-internal_atlassian-light-brand-refresh.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-light-brand-refresh.a13339aae5d265467a2f.bundle.js","@atlaskit-internal_atlassian-light-future.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-light-future.07bab920869b4b49d2bd.bundle.js","@atlaskit-internal_atlassian-light-increased-contrast.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-light-increased-contrast.5726e854772e067372e0.bundle.js","@atlaskit-internal_atlassian-shape.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-shape.197b91bf17d98bf413c2.bundle.js","@atlaskit-internal_atlassian-spacing.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-spacing.a6b97e51dc38c9146abe.bundle.js","@atlaskit-internal_atlassian-typography-adg3.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-typography-adg3.a62943a1c7015e212717.bundle.js","@atlaskit-internal_atlassian-typography-modernized.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-typography-modernized.4040c6c143c5d73d23c1.bundle.js","@atlaskit-internal_atlassian-typography-refreshed.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-typography-refreshed.9c8c5d80bf44b0b75a55.bundle.js","@atlaskit-internal_media-archive-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-archive-viewer.a95bedfd4845d75f1562.bundle.js","@atlaskit-internal_media-card.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-card.7146799f8415e997fe3d.bundle.js","@atlaskit-internal_media-card-error-boundary.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-card-error-boundary.c5d11f965b0907cc1972.bundle.js","@atlaskit-internal_media-client.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client.548b4aef59469f3b7099.bundle.js","@atlaskit-internal_media-client-mobile-upload.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client-mobile-upload.d9bb9f95cda7c7511208.bundle.js","@atlaskit-internal_media-client-mobile-upload.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_media-client-mobile-upload.d9bb9f95cda7c7511208.bundle.js.map","@atlaskit-internal_media-code-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-code-viewer.21300ac17d4c1f003233.bundle.js","@atlaskit-internal_media-picker-error-boundary.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-picker-error-boundary.fc440649b0ecafc72530.bundle.js","@atlaskit-internal_media-viewer.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-viewer.bba15e546cec76aa328e.bundle.js","@atlaskit-internal_media-viewer.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/@atlaskit-internal_media-viewer.bba15e546cec76aa328e.bundle.js.map","@atlaskit-internal_renderer-node_BlockCard.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_BlockCard.0e45c82b9070f69b54ad.bundle.js","@atlaskit-internal_renderer-node_CodeBlock.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_CodeBlock.7014e1becdb8feb55442.bundle.js","@atlaskit-internal_renderer-node_Date.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Date.66a090ccabda47bb92c5.bundle.js","@atlaskit-internal_renderer-node_DecisionItem.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_DecisionItem.5879943b2c4a43399254.bundle.js","@atlaskit-internal_renderer-node_Expand.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Expand.8d0fc57fbd336d6f9c9c.bundle.js","@atlaskit-internal_renderer-node_InlineCard.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_InlineCard.c5f0996b1a642f8dbcf9.bundle.js","@atlaskit-internal_renderer-node_Media.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Media.4e7e1d818c43f6bb0e16.bundle.js","@atlaskit-internal_renderer-node_MediaGroup.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_MediaGroup.7d7f62a419aa00aeca27.bundle.js","@atlaskit-internal_renderer-node_Mention.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Mention.43c67b1a427ad2a3f33a.bundle.js","@atlaskit-internal_renderer-node_Status.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_Status.1e630ec1fa4b9fe08d59.bundle.js","@atlaskit-internal_renderer-node_TaskItem.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_renderer-node_TaskItem.920df413e9e2c7e452da.bundle.js","@atlaskit-internal_resourcedEmojiComponent.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_resourcedEmojiComponent.af6396444c1748dfb0a9.bundle.js","@atlaskit-internal_smartcard-datacardcontent.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_smartcard-datacardcontent.7d7ab4ff5a73e77e4624.bundle.js","@atlaskit-internal_smartcard-urlcardcontent.js":"https://dac-static.atlassian.com/_static/@atlaskit-internal_smartcard-urlcardcontent.8930ee4366663c00a531.bundle.js","analytics-and-cookie-preferences.js":"https://dac-static.atlassian.com/_static/analytics-and-cookie-preferences.29059dce989c6006577a.bundle.js","changelogs.css":"https://dac-static.atlassian.com/_static/changelogs.a506e8158904af2b440e.css","changelogs.js":"https://dac-static.atlassian.com/_static/changelogs.3b51bb7d809da4a6e422.bundle.js","changelogs.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/changelogs.a506e8158904af2b440e.css.map","changelogs.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/changelogs.3b51bb7d809da4a6e422.bundle.js.map","cms-pages.css":"https://dac-static.atlassian.com/_static/cms-pages.3add4023b90424f4519f.css","cms-pages.js":"https://dac-static.atlassian.com/_static/cms-pages.699a76b80e1ae4f9a5ab.bundle.js","cms-pages.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/cms-pages.3add4023b90424f4519f.css.map","docs-index.css":"https://dac-static.atlassian.com/_static/docs-index.3add4023b90424f4519f.css","docs-index.js":"https://dac-static.atlassian.com/_static/docs-index.1eeff1f3355cdf47d01a.bundle.js","docs-index.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/docs-index.3add4023b90424f4519f.css.map","docs-index.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/docs-index.1eeff1f3355cdf47d01a.bundle.js.map","documentation.css":"https://dac-static.atlassian.com/_static/documentation.a506e8158904af2b440e.css","documentation.js":"https://dac-static.atlassian.com/_static/documentation.76bf6cb6fe5b416a842f.bundle.js","documentation.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/documentation.a506e8158904af2b440e.css.map","documentation.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/documentation.76bf6cb6fe5b416a842f.bundle.js.map","errors.css":"https://dac-static.atlassian.com/_static/errors.c67a7555063c3b00faae.css","errors.js":"https://dac-static.atlassian.com/_static/errors.c533aeec18eb7e0484ad.bundle.js","errors.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/errors.c67a7555063c3b00faae.css.map","errors.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/errors.c533aeec18eb7e0484ad.bundle.js.map","graphql-docs.css":"https://dac-static.atlassian.com/_static/graphql-docs.a506e8158904af2b440e.css","graphql-docs.js":"https://dac-static.atlassian.com/_static/graphql-docs.d1dc77832490579420ec.bundle.js","graphql-docs.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/graphql-docs.a506e8158904af2b440e.css.map","graphql-docs.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/graphql-docs.d1dc77832490579420ec.bundle.js.map","graphql-sandbox.css":"https://dac-static.atlassian.com/_static/graphql-sandbox.995fed24c4af842dc2b2.css","graphql-sandbox.js":"https://dac-static.atlassian.com/_static/graphql-sandbox.610acd319902c953f7a0.bundle.js","graphql-sandbox.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/graphql-sandbox.995fed24c4af842dc2b2.css.map","graphql-sandbox.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/graphql-sandbox.610acd319902c953f7a0.bundle.js.map","home-page-v2.css":"https://dac-static.atlassian.com/_static/home-page-v2.5406f3402bf7cbed3851.css","home-page-v2.js":"https://dac-static.atlassian.com/_static/home-page-v2.7dce7155ab8484883913.bundle.js","home-page-v2.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/home-page-v2.5406f3402bf7cbed3851.css.map","home-page-v2.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/home-page-v2.7dce7155ab8484883913.bundle.js.map","home-page-v3.css":"https://dac-static.atlassian.com/_static/home-page-v3.5406f3402bf7cbed3851.css","home-page-v3.js":"https://dac-static.atlassian.com/_static/home-page-v3.2ff8d25041a5be5701fe.bundle.js","home-page-v3.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/home-page-v3.5406f3402bf7cbed3851.css.map","home-page-v3.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/home-page-v3.2ff8d25041a5be5701fe.bundle.js.map","jsapi-connect-module-pages.css":"https://dac-static.atlassian.com/_static/jsapi-connect-module-pages.3add4023b90424f4519f.css","jsapi-connect-module-pages.js":"https://dac-static.atlassian.com/_static/jsapi-connect-module-pages.0bfe6b44f10593165f2a.bundle.js","jsapi-connect-module-pages.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/jsapi-connect-module-pages.3add4023b90424f4519f.css.map","jsapi-connect-module-pages.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/jsapi-connect-module-pages.0bfe6b44f10593165f2a.bundle.js.map","lazy-team-profilecard.js":"https://dac-static.atlassian.com/_static/lazy-team-profilecard.9a7977267c946a5780ab.bundle.js","lp.css":"https://dac-static.atlassian.com/_static/lp.11464f28e8477b9d57d8.css","lp.js":"https://dac-static.atlassian.com/_static/lp.9a18d68a5b7528970890.bundle.js","lp.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/lp.11464f28e8477b9d57d8.css.map","lp.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/lp.9a18d68a5b7528970890.bundle.js.map","polyfills.js":"https://dac-static.atlassian.com/_static/polyfills.d511ce2217e854a0ef96.bundle.js","pricing-cal.css":"https://dac-static.atlassian.com/_static/pricing-cal.5406f3402bf7cbed3851.css","pricing-cal.js":"https://dac-static.atlassian.com/_static/pricing-cal.d134133fdf276ba4cd82.bundle.js","pricing-cal.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/pricing-cal.5406f3402bf7cbed3851.css.map","react-syntax-highlighter/refractor-import.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter/refractor-import.c59add68b345a8220bbe.bundle.js","react-syntax-highlighter_languages_refractor_abap.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_abap.961d1b2a900e9c2b28d1.bundle.js","react-syntax-highlighter_languages_refractor_actionscript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_actionscript.4ddcb1618adab7f3a1fc.bundle.js","react-syntax-highlighter_languages_refractor_ada.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ada.9366d99999ad523476ba.bundle.js","react-syntax-highlighter_languages_refractor_apacheconf.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_apacheconf.3757918f79a68b01d4b4.bundle.js","react-syntax-highlighter_languages_refractor_apl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_apl.8efcd43f7c56dcd2bd36.bundle.js","react-syntax-highlighter_languages_refractor_applescript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_applescript.8455b5dc9fec1f79fddb.bundle.js","react-syntax-highlighter_languages_refractor_arduino.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_arduino.3d2bd9edfeb2005260a3.bundle.js","react-syntax-highlighter_languages_refractor_arff.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_arff.ed93c3abb48178a6dbd2.bundle.js","react-syntax-highlighter_languages_refractor_asciidoc.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_asciidoc.79c238f73284a5e817e1.bundle.js","react-syntax-highlighter_languages_refractor_asm6502.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_asm6502.bda37eab69edf9f1b7d0.bundle.js","react-syntax-highlighter_languages_refractor_aspnet.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_aspnet.72c1468ab0839dc0cd0f.bundle.js","react-syntax-highlighter_languages_refractor_autohotkey.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_autohotkey.3fe58b64d95c0e7ca5b6.bundle.js","react-syntax-highlighter_languages_refractor_autoit.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_autoit.40868fa6e1c848ff2d7e.bundle.js","react-syntax-highlighter_languages_refractor_bash.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_bash.2451b9f582eb9f22860c.bundle.js","react-syntax-highlighter_languages_refractor_basic.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_basic.ad43af11d3a8a0da409c.bundle.js","react-syntax-highlighter_languages_refractor_batch.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_batch.9633d4d0f11681369fb4.bundle.js","react-syntax-highlighter_languages_refractor_bison.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_bison.4384cd19795a79bfbca6.bundle.js","react-syntax-highlighter_languages_refractor_brainfuck.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_brainfuck.fcfdc0739aa975b1e978.bundle.js","react-syntax-highlighter_languages_refractor_bro.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_bro.6b0a6d13e08391c5bf5b.bundle.js","react-syntax-highlighter_languages_refractor_c.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_c.260f750dde87b90dd67a.bundle.js","react-syntax-highlighter_languages_refractor_clike.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_clike.6aad546b1f559c13a094.bundle.js","react-syntax-highlighter_languages_refractor_clojure.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_clojure.43bedcde115fed608785.bundle.js","react-syntax-highlighter_languages_refractor_coffeescript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_coffeescript.264437f11a7ac52412d7.bundle.js","react-syntax-highlighter_languages_refractor_cpp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_cpp.10bb8dea72939a51f7a7.bundle.js","react-syntax-highlighter_languages_refractor_crystal.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_crystal.5f884c13a58075abdb52.bundle.js","react-syntax-highlighter_languages_refractor_csharp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_csharp.cd00501fb18b573717df.bundle.js","react-syntax-highlighter_languages_refractor_csp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_csp.d7c1de8e4c761c3263f0.bundle.js","react-syntax-highlighter_languages_refractor_css.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_css.1ad9cebabcd3a0b14c3e.bundle.js","react-syntax-highlighter_languages_refractor_cssExtras.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_cssExtras.7f63c9fcb4bb4310193f.bundle.js","react-syntax-highlighter_languages_refractor_d.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_d.04ee96b49b41002736a8.bundle.js","react-syntax-highlighter_languages_refractor_dart.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_dart.eef5a1777d31ef81d06f.bundle.js","react-syntax-highlighter_languages_refractor_diff.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_diff.ee1540be5fe46cb5389c.bundle.js","react-syntax-highlighter_languages_refractor_django.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_django.79c80f27ff27d4b5839e.bundle.js","react-syntax-highlighter_languages_refractor_docker.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_docker.6c95de3a35cb0f2ffce6.bundle.js","react-syntax-highlighter_languages_refractor_eiffel.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_eiffel.3b7f288a094f1d627268.bundle.js","react-syntax-highlighter_languages_refractor_elixir.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_elixir.00abb46ed039ce468e22.bundle.js","react-syntax-highlighter_languages_refractor_elm.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_elm.22dc6b2dc9f5afc7e0e5.bundle.js","react-syntax-highlighter_languages_refractor_erb.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_erb.04294d685738bd5bf67b.bundle.js","react-syntax-highlighter_languages_refractor_erlang.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_erlang.8396ae43719614a73e40.bundle.js","react-syntax-highlighter_languages_refractor_flow.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_flow.d2bf92cee91754c7ca62.bundle.js","react-syntax-highlighter_languages_refractor_fortran.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_fortran.dd0a52d42f6fc21380ff.bundle.js","react-syntax-highlighter_languages_refractor_fsharp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_fsharp.c8c3139e258a93bcf3be.bundle.js","react-syntax-highlighter_languages_refractor_gedcom.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_gedcom.77dc87de060b19585a19.bundle.js","react-syntax-highlighter_languages_refractor_gherkin.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_gherkin.e5e35c0275cfb947955b.bundle.js","react-syntax-highlighter_languages_refractor_git.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_git.0c06a6669fbf67a07ad5.bundle.js","react-syntax-highlighter_languages_refractor_glsl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_glsl.99d72620b3e3bc7adb1b.bundle.js","react-syntax-highlighter_languages_refractor_go.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_go.1f0be38c29cd24b56022.bundle.js","react-syntax-highlighter_languages_refractor_graphql.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_graphql.faf76314b0c476edc3eb.bundle.js","react-syntax-highlighter_languages_refractor_groovy.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_groovy.9edc157958e1949fd151.bundle.js","react-syntax-highlighter_languages_refractor_haml.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_haml.39274382b568eff33e75.bundle.js","react-syntax-highlighter_languages_refractor_handlebars.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_handlebars.708195b33bfa4ba30c97.bundle.js","react-syntax-highlighter_languages_refractor_haskell.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_haskell.a6b9dfc1d763694033b4.bundle.js","react-syntax-highlighter_languages_refractor_haxe.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_haxe.3ce2ccee3f1262b1385d.bundle.js","react-syntax-highlighter_languages_refractor_hpkp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_hpkp.261ee14428eb3defc66b.bundle.js","react-syntax-highlighter_languages_refractor_hsts.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_hsts.c4d2ba5b3c677bc1fcae.bundle.js","react-syntax-highlighter_languages_refractor_http.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_http.13f279967cad3f56c274.bundle.js","react-syntax-highlighter_languages_refractor_ichigojam.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ichigojam.7e924d4a1d13b6ca8e98.bundle.js","react-syntax-highlighter_languages_refractor_icon.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_icon.07717666eb345982ca13.bundle.js","react-syntax-highlighter_languages_refractor_inform7.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_inform7.5b4919721b21f0421e70.bundle.js","react-syntax-highlighter_languages_refractor_ini.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ini.4ff1f422f2b4a22d9053.bundle.js","react-syntax-highlighter_languages_refractor_io.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_io.e9999984c186535a42f8.bundle.js","react-syntax-highlighter_languages_refractor_j.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_j.31bf0f17c5de76993059.bundle.js","react-syntax-highlighter_languages_refractor_java.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_java.c942477de11c67361db6.bundle.js","react-syntax-highlighter_languages_refractor_javascript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_javascript.8ba5bc5a336a768f25b1.bundle.js","react-syntax-highlighter_languages_refractor_jolie.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_jolie.ed7d1b80ba53cb1baddf.bundle.js","react-syntax-highlighter_languages_refractor_json.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_json.8154b601f75fe3934440.bundle.js","react-syntax-highlighter_languages_refractor_jsx.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_jsx.9af5dec2d44cd795e6c7.bundle.js","react-syntax-highlighter_languages_refractor_julia.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_julia.dcff25e9d6c599440774.bundle.js","react-syntax-highlighter_languages_refractor_keyman.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_keyman.4af3ff3264f5cb8bf12e.bundle.js","react-syntax-highlighter_languages_refractor_kotlin.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_kotlin.ae619c9ac3f98c12d7b7.bundle.js","react-syntax-highlighter_languages_refractor_latex.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_latex.c3ba04d6b5e27feaf5a9.bundle.js","react-syntax-highlighter_languages_refractor_less.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_less.f3eababa69b09540e12d.bundle.js","react-syntax-highlighter_languages_refractor_liquid.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_liquid.3372ea4773f16713370d.bundle.js","react-syntax-highlighter_languages_refractor_lisp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_lisp.35d0928434e1e2ea1477.bundle.js","react-syntax-highlighter_languages_refractor_livescript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_livescript.cb8a168f188f153b6de7.bundle.js","react-syntax-highlighter_languages_refractor_lolcode.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_lolcode.2c76e63521e714af5102.bundle.js","react-syntax-highlighter_languages_refractor_lua.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_lua.d9254065690f7c443176.bundle.js","react-syntax-highlighter_languages_refractor_makefile.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_makefile.546189fc9d0b3c5cb445.bundle.js","react-syntax-highlighter_languages_refractor_markdown.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_markdown.f71a61ea1eea5fb793ff.bundle.js","react-syntax-highlighter_languages_refractor_markup.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_markup.7ca955e2caf2aa0aade5.bundle.js","react-syntax-highlighter_languages_refractor_markupTemplating.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_markupTemplating.5c7fa1b70e68592ed9e1.bundle.js","react-syntax-highlighter_languages_refractor_matlab.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_matlab.bd23fd214fcd30ce04b6.bundle.js","react-syntax-highlighter_languages_refractor_mel.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_mel.dca95cec3943d8502416.bundle.js","react-syntax-highlighter_languages_refractor_mizar.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_mizar.6df8d09eb771e0e08a78.bundle.js","react-syntax-highlighter_languages_refractor_monkey.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_monkey.6c09c89afe0c10c002ef.bundle.js","react-syntax-highlighter_languages_refractor_n4js.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_n4js.22ec269d39e17b81aec4.bundle.js","react-syntax-highlighter_languages_refractor_nasm.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nasm.f90b168509c3eb9ee28e.bundle.js","react-syntax-highlighter_languages_refractor_nginx.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nginx.3737bb3c899e4d925022.bundle.js","react-syntax-highlighter_languages_refractor_nim.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nim.0d11e0bb7c9a1c52e43b.bundle.js","react-syntax-highlighter_languages_refractor_nix.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nix.eface16ccf590767e0b9.bundle.js","react-syntax-highlighter_languages_refractor_nsis.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_nsis.cde4c30f47f3e2072935.bundle.js","react-syntax-highlighter_languages_refractor_objectivec.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_objectivec.628bb05d187efea8343c.bundle.js","react-syntax-highlighter_languages_refractor_ocaml.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ocaml.d5e55fe85d0331023ebc.bundle.js","react-syntax-highlighter_languages_refractor_opencl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_opencl.381c8f0d06ca8352aed4.bundle.js","react-syntax-highlighter_languages_refractor_oz.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_oz.4e739cd51a4cb86ee868.bundle.js","react-syntax-highlighter_languages_refractor_parigp.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_parigp.7c013e6cf111df4a1830.bundle.js","react-syntax-highlighter_languages_refractor_parser.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_parser.fa26395244ba97a62890.bundle.js","react-syntax-highlighter_languages_refractor_pascal.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_pascal.8f2266f32dd41893589e.bundle.js","react-syntax-highlighter_languages_refractor_perl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_perl.5250710471e422811f91.bundle.js","react-syntax-highlighter_languages_refractor_php.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_php.5618a1ee8709ec4604c7.bundle.js","react-syntax-highlighter_languages_refractor_phpExtras.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_phpExtras.60f4fe7b5e615c7d02c2.bundle.js","react-syntax-highlighter_languages_refractor_plsql.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_plsql.4e0e8911ba9654060600.bundle.js","react-syntax-highlighter_languages_refractor_powershell.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_powershell.cb4ae64829f3f962d73b.bundle.js","react-syntax-highlighter_languages_refractor_processing.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_processing.97a6c1bace71c8cad732.bundle.js","react-syntax-highlighter_languages_refractor_prolog.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_prolog.e1cf6bbc22c3329694e6.bundle.js","react-syntax-highlighter_languages_refractor_properties.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_properties.c3d1cc0eb7794e20aca0.bundle.js","react-syntax-highlighter_languages_refractor_protobuf.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_protobuf.91df175f40df57cbee1a.bundle.js","react-syntax-highlighter_languages_refractor_pug.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_pug.72e6bceccb401080a5b5.bundle.js","react-syntax-highlighter_languages_refractor_puppet.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_puppet.607519ea998d0883c14d.bundle.js","react-syntax-highlighter_languages_refractor_pure.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_pure.528f35f1f82e90f5d271.bundle.js","react-syntax-highlighter_languages_refractor_python.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_python.a4c25fde069e865f28a1.bundle.js","react-syntax-highlighter_languages_refractor_q.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_q.b70662c3fa6781588154.bundle.js","react-syntax-highlighter_languages_refractor_qore.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_qore.94e126ba0db3aa247bd2.bundle.js","react-syntax-highlighter_languages_refractor_r.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_r.d7e70dbdcd7fe40f5e7b.bundle.js","react-syntax-highlighter_languages_refractor_reason.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_reason.cbdca96734e109eb6b2c.bundle.js","react-syntax-highlighter_languages_refractor_renpy.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_renpy.c586ba3176e8fbcfefa1.bundle.js","react-syntax-highlighter_languages_refractor_rest.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_rest.23ad5bac326968ef93c7.bundle.js","react-syntax-highlighter_languages_refractor_rip.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_rip.8a07808f6b565fba7258.bundle.js","react-syntax-highlighter_languages_refractor_roboconf.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_roboconf.7a6766d885c1727cfc08.bundle.js","react-syntax-highlighter_languages_refractor_ruby.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_ruby.3d60893d74f53dc985b5.bundle.js","react-syntax-highlighter_languages_refractor_rust.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_rust.79aac7edbd82fab0598d.bundle.js","react-syntax-highlighter_languages_refractor_sas.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_sas.5e13a4be26d78359cecf.bundle.js","react-syntax-highlighter_languages_refractor_sass.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_sass.1f25e69b10e3ff745203.bundle.js","react-syntax-highlighter_languages_refractor_scala.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_scala.dae91668d18d9b0a4a6e.bundle.js","react-syntax-highlighter_languages_refractor_scheme.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_scheme.1ab2149121874aeb1b64.bundle.js","react-syntax-highlighter_languages_refractor_scss.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_scss.7c40c40a9bec3aa373f6.bundle.js","react-syntax-highlighter_languages_refractor_smalltalk.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_smalltalk.863161e135c37053b73c.bundle.js","react-syntax-highlighter_languages_refractor_smarty.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_smarty.99080a62a12d4e91a6bf.bundle.js","react-syntax-highlighter_languages_refractor_soy.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_soy.09744c18da94f5262a1e.bundle.js","react-syntax-highlighter_languages_refractor_sql.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_sql.148f2f3f0200b9aa4e57.bundle.js","react-syntax-highlighter_languages_refractor_stylus.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_stylus.20cc9c1ffc37e269ba3c.bundle.js","react-syntax-highlighter_languages_refractor_swift.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_swift.700552e9e5ead66a9e6d.bundle.js","react-syntax-highlighter_languages_refractor_tap.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_tap.65194b04c64ce4ec5cd6.bundle.js","react-syntax-highlighter_languages_refractor_tcl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_tcl.ccb5df82a49b5d7073cd.bundle.js","react-syntax-highlighter_languages_refractor_textile.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_textile.2c568e5400c6c6ea4a12.bundle.js","react-syntax-highlighter_languages_refractor_tsx.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_tsx.4ac89eef7cde633f7a4e.bundle.js","react-syntax-highlighter_languages_refractor_tt2.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_tt2.75bd4edf90b9189c3161.bundle.js","react-syntax-highlighter_languages_refractor_twig.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_twig.3b37deb1373adffefe94.bundle.js","react-syntax-highlighter_languages_refractor_typescript.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_typescript.778ffb068b58e67f30d7.bundle.js","react-syntax-highlighter_languages_refractor_vbnet.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_vbnet.9cc6f3e46eca5ea75973.bundle.js","react-syntax-highlighter_languages_refractor_velocity.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_velocity.284ef9a84672ce468a9a.bundle.js","react-syntax-highlighter_languages_refractor_verilog.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_verilog.ae13a6dbfc5322c23796.bundle.js","react-syntax-highlighter_languages_refractor_vhdl.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_vhdl.88213d4795b8b0fb6b4e.bundle.js","react-syntax-highlighter_languages_refractor_vim.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_vim.8e619c725c6210547fd4.bundle.js","react-syntax-highlighter_languages_refractor_visualBasic.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_visualBasic.3a6441c27fe386fd62ea.bundle.js","react-syntax-highlighter_languages_refractor_wasm.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_wasm.f65ca7d65025190b38bc.bundle.js","react-syntax-highlighter_languages_refractor_wiki.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_wiki.2a948bae4e23208f48d0.bundle.js","react-syntax-highlighter_languages_refractor_xeora.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_xeora.ec0279ad35de7ed64835.bundle.js","react-syntax-highlighter_languages_refractor_xojo.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_xojo.36a2426e85e0f48d5b05.bundle.js","react-syntax-highlighter_languages_refractor_xquery.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_xquery.2b09701e351414590202.bundle.js","react-syntax-highlighter_languages_refractor_yaml.js":"https://dac-static.atlassian.com/_static/react-syntax-highlighter_languages_refractor_yaml.6950be2c65c1408d73b1.bundle.js","rest-docs.css":"https://dac-static.atlassian.com/_static/rest-docs.acd127cc00132579b750.css","rest-docs.js":"https://dac-static.atlassian.com/_static/rest-docs.b1efab6847faf45f90ae.bundle.js","rest-docs.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/rest-docs.acd127cc00132579b750.css.map","rest-docs.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/rest-docs.b1efab6847faf45f90ae.bundle.js.map","search.css":"https://dac-static.atlassian.com/_static/search.a506e8158904af2b440e.css","search.js":"https://dac-static.atlassian.com/_static/search.93795c42249df71af55b.bundle.js","search.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/search.a506e8158904af2b440e.css.map","search.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/search.93795c42249df71af55b.bundle.js.map","success-stories.js":"https://dac-static.atlassian.com/_static/success-stories.bdd4fbcdfec8c6cb6026.bundle.js","supportdesk.css":"https://dac-static.atlassian.com/_static/supportdesk.5406f3402bf7cbed3851.css","supportdesk.js":"https://dac-static.atlassian.com/_static/supportdesk.7d7bca859769610ee852.bundle.js","supportdesk.css.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/supportdesk.5406f3402bf7cbed3851.css.map","supportdesk.js.map":"https://dac-static.atlassian.com/_static/../_sourcemaps/supportdesk.7d7bca859769610ee852.bundle.js.map","tti-polyfill.js":"https://dac-static.atlassian.com/_static/tti-polyfill.0f16ae0877837dc51426.bundle.js","web-vitals.js":"https://dac-static.atlassian.com/_static/web-vitals.d8896240b41233c43302.bundle.js","247.a8d4b6dad0a25cae2030.bundle.js":"https://dac-static.atlassian.com/_static/247.a8d4b6dad0a25cae2030.bundle.js","248.26e01c5ae352cff08ee0.bundle.js":"https://dac-static.atlassian.com/_static/248.26e01c5ae352cff08ee0.bundle.js","249.f29e90c145c2845c6995.bundle.js":"https://dac-static.atlassian.com/_static/249.f29e90c145c2845c6995.bundle.js","250.db4089336920c70d5270.bundle.js":"https://dac-static.atlassian.com/_static/250.db4089336920c70d5270.bundle.js","251.4385c3d699a6e48e7b75.bundle.js":"https://dac-static.atlassian.com/_static/251.4385c3d699a6e48e7b75.bundle.js","252.86a90c3bc9788793749d.bundle.js":"https://dac-static.atlassian.com/_static/252.86a90c3bc9788793749d.bundle.js","253.7a4c94f29eba33686a0c.bundle.js":"https://dac-static.atlassian.com/_static/253.7a4c94f29eba33686a0c.bundle.js","254.692d8d91dd7bae479d2c.bundle.js":"https://dac-static.atlassian.com/_static/254.692d8d91dd7bae479d2c.bundle.js","255.d49deec97aba6020873c.bundle.js":"https://dac-static.atlassian.com/_static/255.d49deec97aba6020873c.bundle.js","256.fb8cbfdb489d548778d3.bundle.js":"https://dac-static.atlassian.com/_static/256.fb8cbfdb489d548778d3.bundle.js","257.d8a9039c54d0c7ce63e8.bundle.js":"https://dac-static.atlassian.com/_static/257.d8a9039c54d0c7ce63e8.bundle.js","258.3aa9dbb4e56ba7c35cc3.bundle.js":"https://dac-static.atlassian.com/_static/258.3aa9dbb4e56ba7c35cc3.bundle.js","259.72c3761e461aaaa7f0ac.bundle.js":"https://dac-static.atlassian.com/_static/259.72c3761e461aaaa7f0ac.bundle.js","260.7b686f3b1e8b9210e59f.bundle.js":"https://dac-static.atlassian.com/_static/260.7b686f3b1e8b9210e59f.bundle.js","261.0eba170726fbaae91426.bundle.js":"https://dac-static.atlassian.com/_static/261.0eba170726fbaae91426.bundle.js","262.ea0a543a2ec81fa2d0f4.bundle.js":"https://dac-static.atlassian.com/_static/262.ea0a543a2ec81fa2d0f4.bundle.js","263.2768b1612fb45edfded8.bundle.js":"https://dac-static.atlassian.com/_static/263.2768b1612fb45edfded8.bundle.js","264.ab4c6987b8ec06569826.bundle.js":"https://dac-static.atlassian.com/_static/264.ab4c6987b8ec06569826.bundle.js","265.d9fe41ad80367c0107ef.bundle.js":"https://dac-static.atlassian.com/_static/265.d9fe41ad80367c0107ef.bundle.js","266.543ec2b60df53852209b.bundle.js":"https://dac-static.atlassian.com/_static/266.543ec2b60df53852209b.bundle.js","267.25ac50a741ddba25c577.bundle.js":"https://dac-static.atlassian.com/_static/267.25ac50a741ddba25c577.bundle.js","268.46e70da80ece64837323.bundle.js":"https://dac-static.atlassian.com/_static/268.46e70da80ece64837323.bundle.js","269.bf675e47518d00a77575.bundle.js":"https://dac-static.atlassian.com/_static/269.bf675e47518d00a77575.bundle.js","270.2f7ea66eaa451332da34.bundle.js":"https://dac-static.atlassian.com/_static/270.2f7ea66eaa451332da34.bundle.js","271.c2da33aa43117c1ca739.bundle.js":"https://dac-static.atlassian.com/_static/271.c2da33aa43117c1ca739.bundle.js","272.d1491b1ea66641154fd9.bundle.js":"https://dac-static.atlassian.com/_static/272.d1491b1ea66641154fd9.bundle.js","273.cedaa2c8f9730c5f8326.bundle.js":"https://dac-static.atlassian.com/_static/273.cedaa2c8f9730c5f8326.bundle.js","1.svg":"https://dac-static.atlassian.com/_static/1.svg","2.svg":"https://dac-static.atlassian.com/_static/2.svg","3.svg":"https://dac-static.atlassian.com/_static/3.svg","@atlaskit-internal_atlassian-custom-theme.6dfa9bc8f9bf71fd74e0.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_atlassian-custom-theme.6dfa9bc8f9bf71fd74e0.bundle.js.LICENSE.txt","@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.4dd1371d310c1b5f3ceb.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client-@atlaskit-internal_media-viewer.4dd1371d310c1b5f3ceb.bundle.js.LICENSE.txt","@atlaskit-internal_media-client-mobile-upload.d9bb9f95cda7c7511208.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-client-mobile-upload.d9bb9f95cda7c7511208.bundle.js.LICENSE.txt","@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.8309c279d519135774e0.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-pdf-viewer-@atlaskit-internal_media-archive-viewer.8309c279d519135774e0.bundle.js.LICENSE.txt","@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.3c5209442a07edff2014.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-viewer-@atlaskit-internal_media-card.3c5209442a07edff2014.bundle.js.LICENSE.txt","@atlaskit-internal_media-viewer.bba15e546cec76aa328e.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/@atlaskit-internal_media-viewer.bba15e546cec76aa328e.bundle.js.LICENSE.txt","AIPoweredCode.svg":"https://dac-static.atlassian.com/_static/AIPoweredCode.svg","AceRichIcon.svg":"https://dac-static.atlassian.com/_static/AceRichIcon.svg","AiTeammate.svg":"https://dac-static.atlassian.com/_static/AiTeammate.svg","App.svg":"https://dac-static.atlassian.com/_static/App.svg","Art.svg":"https://dac-static.atlassian.com/_static/Art.svg","AtlasCampBanner.svg":"https://dac-static.atlassian.com/_static/AtlasCampBanner.svg","font-faces.css":"https://dac-static.atlassian.com/_static/SFProText-Semibold.woff2","Bamboo-blue.svg":"https://dac-static.atlassian.com/_static/Bamboo-blue.svg","BambooV2.svg":"https://dac-static.atlassian.com/_static/BambooV2.svg","Bitbucket-blue.svg":"https://dac-static.atlassian.com/_static/Bitbucket-blue.svg","BitbucketV2.svg":"https://dac-static.atlassian.com/_static/BitbucketV2.svg","Book.svg":"https://dac-static.atlassian.com/_static/Book.svg","Bug.svg":"https://dac-static.atlassian.com/_static/Bug.svg","shared-styles.css":"https://dac-static.atlassian.com/_static/Server.png","Cloud.svg":"https://dac-static.atlassian.com/_static/Cloud.svg","CloudAdminV2.svg":"https://dac-static.atlassian.com/_static/CloudAdminV2.svg","Compass-blue.svg":"https://dac-static.atlassian.com/_static/Compass-blue.svg","Confluence-blue.svg":"https://dac-static.atlassian.com/_static/Confluence-blue.svg","ConfluenceV2.svg":"https://dac-static.atlassian.com/_static/ConfluenceV2.svg","CreditCard.svg":"https://dac-static.atlassian.com/_static/CreditCard.svg","Crowd-blue.svg":"https://dac-static.atlassian.com/_static/Crowd-blue.svg","CrowdV2.svg":"https://dac-static.atlassian.com/_static/CrowdV2.svg","Develop.svg":"https://dac-static.atlassian.com/_static/Develop.svg","E25Banner.svg":"https://dac-static.atlassian.com/_static/E25Banner.svg","ErrorWindow.svg":"https://dac-static.atlassian.com/_static/ErrorWindow.svg","Evelation.svg":"https://dac-static.atlassian.com/_static/Evelation.svg","Fisheye-blue.svg":"https://dac-static.atlassian.com/_static/Fisheye-blue.svg","ForgeV2.svg":"https://dac-static.atlassian.com/_static/ForgeV2.svg","FourStars.svg":"https://dac-static.atlassian.com/_static/FourStars.svg","GovernmentCloud.svg":"https://dac-static.atlassian.com/_static/GovernmentCloud.svg","Growth.svg":"https://dac-static.atlassian.com/_static/Growth.svg","Guidelines.svg":"https://dac-static.atlassian.com/_static/Guidelines.svg","Hero-illustration-Desktop.svg":"https://dac-static.atlassian.com/_static/Hero-illustration-Desktop.svg","Hero-illustration-Mobile.svg":"https://dac-static.atlassian.com/_static/Hero-illustration-Mobile.svg","Hero-illustration-Tablet.svg":"https://dac-static.atlassian.com/_static/Hero-illustration-Tablet.svg","HeroLeftDesktop.svg":"https://dac-static.atlassian.com/_static/HeroLeftDesktop.svg","HeroRightDesktop.svg":"https://dac-static.atlassian.com/_static/HeroRightDesktop.svg","IncidentsError.svg":"https://dac-static.atlassian.com/_static/IncidentsError.svg","InfrastructureIcon.svg":"https://dac-static.atlassian.com/_static/InfrastructureIcon.svg","JSMV2.svg":"https://dac-static.atlassian.com/_static/JSMV2.svg","Jira Service Desk-blue.svg":"https://dac-static.atlassian.com/_static/Jira Service Desk-blue.svg","Jira Software-blue.svg":"https://dac-static.atlassian.com/_static/Jira Software-blue.svg","Jira-blue.svg":"https://dac-static.atlassian.com/_static/Jira-blue.svg","JiraSoftwareCloudV2.svg":"https://dac-static.atlassian.com/_static/JiraSoftwareCloudV2.svg","JiraV2.svg":"https://dac-static.atlassian.com/_static/JiraV2.svg","Lightbulb.svg":"https://dac-static.atlassian.com/_static/Lightbulb.svg","LockClosed.svg":"https://dac-static.atlassian.com/_static/LockClosed.svg","Newspaper.svg":"https://dac-static.atlassian.com/_static/Newspaper.svg","Opsgenie-blue-rgb.svg":"https://dac-static.atlassian.com/_static/Opsgenie-blue-rgb.svg","PageSearchSpot.svg":"https://dac-static.atlassian.com/_static/PageSearchSpot.svg","PlatformRichIcon.svg":"https://dac-static.atlassian.com/_static/PlatformRichIcon.svg","Question.svg":"https://dac-static.atlassian.com/_static/Question.svg","Rovo.svg":"https://dac-static.atlassian.com/_static/Rovo.svg","Rovo2.svg":"https://dac-static.atlassian.com/_static/Rovo2.svg","RovoLogo.svg":"https://dac-static.atlassian.com/_static/RovoLogo.svg","Satellite.svg":"https://dac-static.atlassian.com/_static/Satellite.svg","Search.svg":"https://dac-static.atlassian.com/_static/Search.svg","SearchError.svg":"https://dac-static.atlassian.com/_static/SearchError.svg","SearchNoResults.svg":"https://dac-static.atlassian.com/_static/SearchNoResults.svg","Shapes.svg":"https://dac-static.atlassian.com/_static/Shapes.svg","Slide1.svg":"https://dac-static.atlassian.com/_static/Slide1.svg","Slide2.svg":"https://dac-static.atlassian.com/_static/Slide2.svg","Slide3.svg":"https://dac-static.atlassian.com/_static/Slide3.svg","Statuspage-blue.svg":"https://dac-static.atlassian.com/_static/Statuspage-blue.svg","TeamEu25banner.svg":"https://dac-static.atlassian.com/_static/TeamEu25banner.svg","Telescope.svg":"https://dac-static.atlassian.com/_static/Telescope.svg","Trello_V2.svg":"https://dac-static.atlassian.com/_static/Trello_V2.svg","Ukraine.svg":"https://dac-static.atlassian.com/_static/Ukraine.svg","alert.svg":"https://dac-static.atlassian.com/_static/alert.svg","bugBounty.svg":"https://dac-static.atlassian.com/_static/bugBounty.svg","changelogs.3b51bb7d809da4a6e422.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/changelogs.3b51bb7d809da4a6e422.bundle.js.LICENSE.txt","communityBg.svg":"https://dac-static.atlassian.com/_static/communityBg.svg","contentComm.svg":"https://dac-static.atlassian.com/_static/contentComm.svg","customer.svg":"https://dac-static.atlassian.com/_static/customer.svg","dataAnalytics.svg":"https://dac-static.atlassian.com/_static/dataAnalytics.svg","designDiagram.svg":"https://dac-static.atlassian.com/_static/designDiagram.svg","devSandbox.svg":"https://dac-static.atlassian.com/_static/devSandbox.svg","develop-with-forge.svg":"https://dac-static.atlassian.com/_static/develop-with-forge.svg","developer-community.svg":"https://dac-static.atlassian.com/_static/developer-community.svg","developer-guide.svg":"https://dac-static.atlassian.com/_static/developer-guide.svg","docs-index.1eeff1f3355cdf47d01a.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/docs-index.1eeff1f3355cdf47d01a.bundle.js.LICENSE.txt","documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].7135c3c7ab98d086b4a7.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/documentation-changelogs-docs-index-rest-docs-search-graphql-docs-graphql-sandbox-jsapi-connect-module-pages-analytics-and-cookie-preferences-errors-supportde[REDACTED_SK].7135c3c7ab98d086b4a7.bundle.js.LICENSE.txt","documentation.76bf6cb6fe5b416a842f.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/documentation.76bf6cb6fe5b416a842f.bundle.js.LICENSE.txt","doubleShield.svg":"https://dac-static.atlassian.com/_static/doubleShield.svg","errors.c533aeec18eb7e0484ad.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/errors.c533aeec18eb7e0484ad.bundle.js.LICENSE.txt","events-card.svg":"https://dac-static.atlassian.com/_static/events-card.svg","events-mobile.svg":"https://dac-static.atlassian.com/_static/events-mobile.svg","events-tablet.svg":"https://dac-static.atlassian.com/_static/events-tablet.svg","events.svg":"https://dac-static.atlassian.com/_static/events.svg","extend-atlassian-products.svg":"https://dac-static.atlassian.com/_static/extend-atlassian-products.svg","eyelash.svg":"https://dac-static.atlassian.com/_static/eyelash.svg","graphql-docs.d1dc77832490579420ec.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/graphql-docs.d1dc77832490579420ec.bundle.js.LICENSE.txt","graphql-sandbox.610acd319902c953f7a0.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/graphql-sandbox.610acd319902c953f7a0.bundle.js.LICENSE.txt","hero-background.svg":"https://dac-static.atlassian.com/_static/hero-background.svg","hero-bg.svg":"https://dac-static.atlassian.com/_static/hero-bg.svg","hero-left.svg":"https://dac-static.atlassian.com/_static/hero-left.svg","hero-right.svg":"https://dac-static.atlassian.com/_static/hero-right.svg","home-page-v2.7dce7155ab8484883913.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/home-page-v2.7dce7155ab8484883913.bundle.js.LICENSE.txt","home-page-v3.2ff8d25041a5be5701fe.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/home-page-v3.2ff8d25041a5be5701fe.bundle.js.LICENSE.txt","integration.svg":"https://dac-static.atlassian.com/_static/integration.svg","integrationPlain.svg":"https://dac-static.atlassian.com/_static/integrationPlain.svg","itSupport.svg":"https://dac-static.atlassian.com/_static/itSupport.svg","jira-automation.svg":"https://dac-static.atlassian.com/_static/jira-automation.svg","jsapi-connect-module-pages.0bfe6b44f10593165f2a.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/jsapi-connect-module-pages.0bfe6b44f10593165f2a.bundle.js.LICENSE.txt","learningIllustration.svg":"https://dac-static.atlassian.com/_static/learningIllustration.svg","lock.svg":"https://dac-static.atlassian.com/_static/lock.svg","lp.9a18d68a5b7528970890.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/lp.9a18d68a5b7528970890.bundle.js.LICENSE.txt","mark-trello-blue-Blue.svg":"https://dac-static.atlassian.com/_static/mark-trello-blue-Blue.svg","marketplace-list.svg":"https://dac-static.atlassian.com/_static/marketplace-list.svg","marketplace-support.svg":"https://dac-static.atlassian.com/_static/marketplace-support.svg","newAndEvents.svg":"https://dac-static.atlassian.com/_static/newAndEvents.svg","news-hero-bg.svg":"https://dac-static.atlassian.com/_static/news-hero-bg.svg","onboarding.svg":"https://dac-static.atlassian.com/_static/onboarding.svg","onlineGroups.svg":"https://dac-static.atlassian.com/_static/onlineGroups.svg","platform.svg":"https://dac-static.atlassian.com/_static/platform.svg","projectManagement.svg":"https://dac-static.atlassian.com/_static/projectManagement.svg","quote.svg":"https://dac-static.atlassian.com/_static/quote.svg","react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.95fdf0802a05a79ba536.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/react-syntax-highlighter/refractor-core-import-react-syntax-highlighter/refractor-import.95fdf0802a05a79ba536.bundle.js.LICENSE.txt","rest-docs.b1efab6847faf45f90ae.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/rest-docs.b1efab6847faf45f90ae.bundle.js.LICENSE.txt","rollout.png":"https://dac-static.atlassian.com/_static/rollout.png","rovo-ai.svg":"https://dac-static.atlassian.com/_static/rovo-ai.svg","search.93795c42249df71af55b.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/search.93795c42249df71af55b.bundle.js.LICENSE.txt","shield.svg":"https://dac-static.atlassian.com/_static/shield.svg","softwareDev.svg":"https://dac-static.atlassian.com/_static/softwareDev.svg","speed.svg":"https://dac-static.atlassian.com/_static/speed.svg","star.svg":"https://dac-static.atlassian.com/_static/star.svg","status-page.svg":"https://dac-static.atlassian.com/_static/status-page.svg","supportdesk.7d7bca859769610ee852.bundle.js.LICENSE.txt":"https://dac-static.atlassian.com/_static/supportdesk.7d7bca859769610ee852.bundle.js.LICENSE.txt","swag.svg":"https://dac-static.atlassian.com/_static/swag.svg","totalSales.svg":"https://dac-static.atlassian.com/_static/totalSales.svg","vault.svg":"https://dac-static.atlassian.com/_static/vault.svg","default":"https://dac-static.atlassian.com[object Object]"},"frontEndFeatures":{"shouldShowDacIntercept":true,"shouldShowGetHelpWidget":true,"renderRestRedesignedDocs":{"contentSets":[],"enableAllInternal":true,"enableAllExternal":true},"targetExternalBuilders":{"contentSets":[],"userEmails":[]},"shouldEnableAIfeatures":false,"shouldEnableDevHubV2":true,"shouldEnableGlobalNav":true,"shouldShowEuBanner":false,"shouldShowAtlasCampBanner":true,"shouldShowCsmChatWidget":false,"shouldEnableLlmPriceCalculator":false},"csmChatWidgetBaseUrl":"https://ca-csm.atlassian.net","csmChatWidgetSettings":{"widgetId":"c6b24b5c-6375-4bc7-8a89-131debc0b393","site":"ca-csm.atlassian.net","cloudId":"1f35ff1e-f63c-490b-9da6-d84597cbc813"},"shouldShowCsmChatWidget":false};</script>
         <title data-react-helmet="true"></title>
         
         
@@ -1498,7 +1498,7 @@ tool_use Read
 id: toolu_016biK5UjLz6B29meSB4fmdP
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env"
 }
 ```
 
@@ -1547,7 +1547,7 @@ id: toolu_013k7Kv7cULCAjWcXQDcXACS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env",
   "old_string": "GITHUB_APP_WEBHOOK_SECRET=[REDACTED]",
   "new_string": "GITHUB_APP_WEBHOOK_SECRET=[REDACTED]\nJIRA_CLIENT_ID=your-jira-client-id-here\nJIRA_CLIENT_SECRET=[REDACTED]\nJIRA_REDIRECT_URI=https://no-name-proj-1488-dev.loca.lt/api/jira/callback"
 }
@@ -1558,7 +1558,7 @@ id: toolu_013k7Kv7cULCAjWcXQDcXACS
 tool_result
 id: toolu_013k7Kv7cULCAjWcXQDcXACS
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/.env has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/.env has been updated successfully.
 ```
 
 > AGENT
@@ -1579,7 +1579,7 @@ tool_use Read
 id: toolu_01A3ymfLzAcYMcyLJrk3dF9a
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.example"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.example"
 }
 ```
 
@@ -1624,7 +1624,7 @@ id: toolu_01GbajtAA2hk4b2a5bbXpbnf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.example",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.example",
   "old_string": "GITHUB_APP_NAME=your-app-slug",
   "new_string": "GITHUB_APP_NAME=your-app-slug\nJIRA_CLIENT_ID=your-jira-client-id\nJIRA_CLIENT_SECRET=[REDACTED]\nJIRA_REDIRECT_URI=https://your-tunnel.loca.lt/api/jira/callback"
 }
@@ -1635,7 +1635,7 @@ id: toolu_01GbajtAA2hk4b2a5bbXpbnf
 tool_result
 id: toolu_01GbajtAA2hk4b2a5bbXpbnf
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/.env.example has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/.env.example has been updated successfully.
 ```
 
 > AGENT
@@ -1677,7 +1677,7 @@ tool_use Bash
 id: toolu_01NVhj2bww7Ja47yAotFK8jk
 ```json
 {
-  "command": "mkdir -p /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs",
+  "command": "mkdir -p /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs",
   "description": "Create specs directory"
 }
 ```
@@ -1696,7 +1696,7 @@ tool_use Write
 id: toolu_01Da5d1qmj8wwGMXxLU4Zap7
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md",
   "content": "# Jira Integration Design\n\n**Date**: 2026-04-16\n**Scope**: Phase 2 — Jira Cloud data ingestion (OAuth connect, polling sync, historical backfill)\n\n---\n\n## 1. Auth & Connect Flow\n\nJira Cloud only. OAuth 2.0 (3-legged / 3LO) — our platform registers one OAuth app in the Atlassian Developer Console. Each company connects their own Jira Cloud instance, getting their own `access_token` / `refresh_token` stored per row in `jira_installations`.\n\n**Connect flow:**\n1. Admin clicks \"Connect Jira\" → backend generates a UUID state token\n2. State stored in Redis (5-min TTL, `JIRA_INSTALL_STATE` namespace)\n3. User redirected to Atlassian OAuth authorize URL with scopes: `read:jira-work read:jira-user offline_access`\n4. Atlassian redirects to `JIRA_REDIRECT_URI` with `code` + `state`\n5. Backend validates state from Redis, deletes it, exchanges `code` for `access_token` + `refresh_token`\n6. Calls Atlassian `/oauth/token/accessible-resources` to get `cloud_id` + `site_url`\n7. Creates row in `jira_installations`, triggers async `discover_projects` job\n8. Returns installation record to caller\n\n**Token refresh:**\n- Before each sync job run, check `token_expires_at`\n- If expired (or within 5 min of expiry): call Atlassian token refresh endpoint\n- On refresh failure: mark installation `needs_reauth`, skip sync, log error\n\n**Disconnect:**\n- Mark installation `uninstalled` in DB\n- BullMQ cron jobs stop picking up the installation on next tick\n\n**Env vars (platform-level, not per-company):**\n- `JIRA_CLIENT_ID` — Atlassian OAuth app […]
 
 > TOOL
@@ -1704,7 +1704,7 @@ id: toolu_01Da5d1qmj8wwGMXxLU4Zap7
 tool_result
 id: toolu_01Da5d1qmj8wwGMXxLU4Zap7
 ```
-File created successfully at: /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md
+File created successfully at: /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md
 ```
 
 > AGENT
@@ -1717,7 +1717,7 @@ tool_use Bash
 id: toolu_01GDfrtgUQVdrRiKLS2bPA7L
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-04-16-jira-integration-design.md backend/.env.example && git commit -m \"$(cat <<'EOF'\ndocs: add Jira integration design spec and update env example\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-04-16-jira-integration-design.md backend/.env.example && git commit -m \"$(cat <<'EOF'\ndocs: add Jira integration design spec and update env example\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit spec doc and env.example update"
 }
 ```
@@ -1746,7 +1746,7 @@ tool_use Read
 id: toolu_017pK1f5HPg4SByzKRyBhgdJ
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md"
 }
 ```
 
@@ -1830,7 +1830,7 @@ tool_use Bash
 id: toolu_01BWPbRAJyBu9XoWjg6LUQEp
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj/backend && grep -r \"Cron\\|schedule\\|repeatable\" src/ --include=\"*.ts\" -l 2>/dev/null",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj/backend && grep -r \"Cron\\|schedule\\|repeatable\" src/ --include=\"*.ts\" -l 2>/dev/null",
   "description": "Check for cron/schedule usage"
 }
 ```
@@ -1854,7 +1854,7 @@ id: toolu_01ND5kh44FQj83UpS5NvFiAs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md",
   "old_string": "### Cron schedule\n- Every 12h per installation\n- Staggered by company to distribute API load (offset by installation index)",
   "new_string": "### Cron schedule\n- A single BullMQ repeatable job `poll_installations` runs every 12h\n- On each tick: fetches all active `jira_installations`, enqueues one `discover_projects` job per installation\n- Registered on module init via `Queue.add('poll_installations', {}, { repeat: { every: 43200000 } })`\n- Survives server restarts (stored in Redis)"
 }
@@ -1865,7 +1865,7 @@ id: toolu_01ND5kh44FQj83UpS5NvFiAs
 tool_result
 id: toolu_01ND5kh44FQj83UpS5NvFiAs
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -1874,7 +1874,7 @@ tool_use Bash
 id: toolu_015Xiytq5NqA7U87f2527bBB
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-04-16-jira-integration-design.md && git commit -m \"$(cat <<'EOF'\ndocs: clarify cron mechanism in Jira integration spec\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-04-16-jira-integration-design.md && git commit -m \"$(cat <<'EOF'\ndocs: clarify cron mechanism in Jira integration spec\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit spec fix"
 }
 ```
@@ -1940,7 +1940,7 @@ tool_use Read
 id: toolu_01UbpxPQeeMgzXV32ackcrCA
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts"
 }
 ```
 
@@ -1984,7 +1984,7 @@ tool_use Read
 id: toolu_014GP548PdpP56u52fQNbJjU
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/app/app.module.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/app/app.module.ts"
 }
 ```
 
@@ -2038,7 +2038,7 @@ tool_use Read
 id: toolu_01EFon96GTSaUda3MYuY7RRU
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts"
 }
 ```
 
@@ -2139,7 +2139,7 @@ tool_use Read
 id: toolu_01CVLBizGDoo8HsLhGwgsYvs
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts"
 }
 ```
 
@@ -2206,7 +2206,7 @@ tool_use Read
 id: toolu_01B3q1VrxV1hy2gXsTZMLLuK
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/github.module.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/github.module.ts"
 }
 ```
 
@@ -2268,7 +2268,7 @@ tool_use Read
 id: toolu_01RWZU6FfaYF448rQZ2LZ6jz
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/db/github-installations.model.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/db/github-installations.model.ts"
 }
 ```
 
@@ -2338,7 +2338,7 @@ tool_use Read
 id: toolu_015tMSr9B4o1XVYUZ7aiYZmF
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/github-install.controller.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/github-install.controller.ts"
 }
 ```
 
@@ -2407,7 +2407,7 @@ tool_use Read
 id: toolu_01TxDFwwpU1p2idH49cb1S3e
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/github-event.processor.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/github-event.processor.ts"
 }
 ```
 
@@ -2472,7 +2472,7 @@ tool_use Read
 id: toolu_011NdeCekg1ox1Ar8NeHps4R
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/db.constant.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/db.constant.ts"
 }
 ```
 
@@ -2520,7 +2520,7 @@ tool_use Read
 id: toolu_01AQz6kjekifLjpXY4mDXuu9
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts"
 }
 ```
 
@@ -2613,7 +2613,7 @@ tool_use Read
 id: toolu_01N9JiYgSxmrphL2HyyB8GvD
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/types/github-installation.interface.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/types/github-installation.interface.ts"
 }
 ```
 
@@ -2657,7 +2657,7 @@ tool_use Read
 id: toolu_01PcQLkHLwkdnSKwB882vcvQ
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.test"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.test"
 }
 ```
 
@@ -2701,7 +2701,7 @@ tool_use Read
 id: toolu_01Do68Ai54WhHodX9xXJzD1h
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/db/db.module.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/db/db.module.ts"
 }
 ```
 
@@ -2795,7 +2795,7 @@ tool_use Bash
 id: toolu_013sGLx9YbQD9aBVyosp5mx5
 ```json
 {
-  "command": "cat /Users/4thwithme/Documents/repo/no-name-proj/backend/package.json | grep -A5 '\"migrate\\|knex\\|migration'",
+  "command": "cat /home/<USER>/Documents/repo/no-name-proj/backend/package.json | grep -A5 '\"migrate\\|knex\\|migration'",
   "description": "Check migration commands in package.json"
 }
 ```
@@ -2898,7 +2898,7 @@ tool_use Read
 id: toolu_01NZSReKe8r9k9Fm594qaUwm
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/knexfile.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/knexfile.ts"
 }
 ```
 
@@ -2934,7 +2934,7 @@ tool_use Read
 id: toolu_01McjkH7zq1S4KHEiSHeNN2m
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-install.service.unit-spec.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-install.service.unit-spec.ts"
 }
 ```
 
@@ -3021,7 +3021,7 @@ tool_use Read
 id: toolu_01HSs6Nh49vRyGZi5sL3NN44
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-backfill.service.unit-spec.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-backfill.service.unit-spec.ts"
 }
 ```
 
@@ -3091,7 +3091,7 @@ tool_use Read
 id: toolu_01SStWUQ7af117nXUNFzVEMm
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260414120000_create_github_installations_table.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260414120000_create_github_installations_table.ts"
 }
 ```
 
@@ -3163,7 +3163,7 @@ tool_use Read
 id: toolu_01RN9imTwLH9RDNUKUVETCqy
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/cache/types/cache.interface.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/cache/types/cache.interface.ts"
 }
 ```
 
@@ -3199,7 +3199,7 @@ tool_use Read
 id: toolu_01PTZEv7BATFFAehcxfY7hTo
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-event.processor.unit-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-event.processor.unit-spec.ts",
   "limit": 80
 }
 ```
@@ -3264,7 +3264,7 @@ tool_use Read
 id: toolu_01BC8SKxRSfWrie9sjMkUK8N
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/db/github-repos.model.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/db/github-repos.model.ts"
 }
 ```
 
@@ -3342,7 +3342,7 @@ tool_use Write
 id: toolu_01UZJLsSbAVJcRm2Q1QQa1C7
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "content": "# Jira Integration Implementation Plan\n\n> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.\n\n**Goal:** Build Jira Cloud OAuth integration with polling-based data sync (issues, changelog, worklogs, sprints) using BullMQ jobs every 12h.\n\n**Architecture:** OAuth 2.0 (3LO) connect flow mirrors GitHub pattern — Redis state, callback, token storage per company. Sync uses two BullMQ job types: `poll_installations` (repeatable every 12h) fans out to `discover_projects` per installation, which fans out to `sync_project` per project. All data stored in 6 new Postgres tables via Knex.\n\n**Tech Stack:** NestJS v11, Fastify, BullMQ, Knex/PostgreSQL, `@nestjs/axios` for HTTP, class-validator for env, Redis for state tokens.\n\n---\n\n## File Map\n\n**Create:**\n- `src/migrations/20260416100000_create_jira_installations_table.ts`\n- `src/migrations/20260416100001_create_jira_projects_table.ts`\n- `src/migrations/20260416100002_create_jira_issues_table.ts`\n- `src/migrations/20260416100003_create_jira_changelog_table.ts`\n- `src/migrations/20260416100004_create_jira_worklogs_table.ts`\n- `src/migrations/20260416100005_create_jira_sprints_table.ts`\n- `src/modules/jira/types/jira-installation.interface.ts`\n- `src/modules/jira/types/jira-api.interface.ts`\n- `src/modules/jira/types/jira-sync.interface.ts`\n- `src/modules/jira/db/jira-installations.model.ts`\n- `src/modules/jira/db/jira-projects.model.ts`\n- `src/modules/jira/db/jira-issues.model.ts`\n- `src/modules/jira/db/jira-changelog.model.ts`\n- `src/modules/jira/db/jira-worklogs.model.ts`\n- `src/modules/jira/db/jira-sprints.model.ts`\n- `src/modules/jira/jira-api.service.ts`\n- `src/modules/jira/jira-install.service.ts`\n- `src/modules/jira/jira-sync.service.ts`\n- `src/modules/jira/jira-processor.service.ts`\n- `src/modules/jira/jira.controller.ts`\n- `src/modules/jira/jira.module.ts`\n- `src/unit-tests/jira-install.service.unit-spec.ts`\n- `src/unit-tests/jira-sync.service.unit-spec.ts`\n- `src/unit-tests/jira-api.service.unit-spec.ts`\n- `src/unit-tests/jira-processor.service.unit-spec.ts`\n- `test/jira.controller.e2e-spec.ts`\n\n**Modify:**\n- `src/constants/env-variables.constant.ts` — add 3 Jira env constants\n- `src/constants/db.constant.ts` — add 6 Jira table name constants\n- `src/modules/cache/types/cache.interface.ts` — add JIRA_INSTALL_STATE namespace\n- `src/configs/env-validations.config.ts` — add Jira env validation\n- `src/utils/get-env-file.util.ts` — add Jira env vars to loader\n- `src/modules/app/app.module.ts` — import JiraModule\n- `backend/.env.test` — add Jira test values\n- `backend/.env.test.example` — add Jira test placeholder values\n- […]
 
 > TOOL
@@ -3350,7 +3350,7 @@ id: toolu_01UZJLsSbAVJcRm2Q1QQa1C7
 tool_result
 id: toolu_01UZJLsSbAVJcRm2Q1QQa1C7
 ```
-File created successfully at: /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md
+File created successfully at: /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md
 ```
 
 > TOOL
@@ -3359,7 +3359,7 @@ tool_use Bash
 id: toolu_01HAXbeyRKmSMG2yT7bx63Tq
 ```json
 {
-  "command": "git add docs/superpowers/plans/2026-04-16-jira-integration.md && git commit -m \"$(cat <<'EOF'\ndocs: add Jira integration implementation plan (11 tasks)\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/plans/2026-04-16-jira-integration.md && git commit -m \"$(cat <<'EOF'\ndocs: add Jira integration implementation plan (11 tasks)\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit implementation plan"
 }
 ```
@@ -3414,7 +3414,7 @@ tool_use Read
 id: toolu_01TaEqxhxZRM4tKh2b74Aoqn
 ```json
 {
-  "file_path": "/Users/4thwithme/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/subagent-driven-development/implementer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/subagent-driven-development/implementer-prompt.md"
 }
 ```
 
@@ -3472,7 +3472,7 @@ tool_use Read
 id: toolu_01SBfysCzF8P216qqD8EdmVz
 ```json
 {
-  "file_path": "/Users/4thwithme/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/subagent-driven-development/spec-reviewer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/subagent-driven-development/spec-reviewer-prompt.md"
 }
 ```
 
@@ -3527,7 +3527,7 @@ tool_use Read
 id: toolu_01BAidm1DaqbFjAT77K6PPbt
 ```json
 {
-  "file_path": "/Users/4thwithme/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/subagent-driven-development/code-quality-reviewer-prompt.md"
+  "file_path": "/home/<USER>/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/subagent-driven-development/code-quality-reviewer-prompt.md"
 }
 ```
 
@@ -3954,13 +3954,13 @@ All 9 steps executed exactly as specified:
 **Lint:** 33 pre-existing warnings, 0 errors, 0 new issues introduced.
 
 **Files changed (committed):**
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/db.constant.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/cache/types/cache.interface.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.test.example`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/db.constant.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/cache/types/cache.interface.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/.env.test.example`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts`
 
 **Self-review findings:** None. The `.env.test` modification is gitignored by design (per CLAUDE.md: "`.env` files are gitignored in each workspace") — the test values are applied locally and the example […]
 
@@ -3970,7 +3970,7 @@ tool_use Read
 id: toolu_01TvuFa9YUHCRjkz2itPWpb1
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts",
   "limit": 50
 }
 ```
@@ -4038,7 +4038,7 @@ tool_use Read
 id: toolu_01NdTQRe7fwLiDn9FBAibV5d
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts",
   "offset": 50
 }
 ```
@@ -4116,7 +4116,7 @@ tool_use Bash
 id: toolu_01FFa8Ghi82w273omqam2a41
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj/backend && npm run type-check 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj/backend && npm run type-check 2>&1 | tail -5",
   "description": "Run type-check to confirm no real errors"
 }
 ```
@@ -4143,7 +4143,7 @@ id: toolu_01ELF7UeAGAUYN1toyLTsU3S
 ```json
 {
   "description": "Spec compliance review for Task 1",
-  "prompt": "You are reviewing whether an implementation matches its specification.\n\n## What Was Requested\n\nTask 1: Env vars, constants, cache namespace for a Jira integration in a NestJS backend.\n\nFiles to modify:\n- `src/constants/env-variables.constant.ts` — append JIRA_CLIENT_ID, JIRA_CLIENT_SECRET, JIRA_REDIRECT_URI\n- `src/constants/db.constant.ts` — append 6 table name constants: TABLE_NAME_JIRA_INSTALLATIONS, TABLE_NAME_JIRA_PROJECTS, TABLE_NAME_JIRA_ISSUES, TABLE_NAME_JIRA_CHANGELOG, TABLE_NAME_JIRA_WORKLOGS, TABLE_NAME_JIRA_SPRINTS\n- `src/modules/cache/types/cache.interface.ts` — add JIRA_INSTALL_STATE = 'jira-install-state' to Namespaces enum\n- `src/configs/env-validations.config.ts` — add @IsString() @IsNotEmpty() for all 3 Jira vars\n- `src/utils/get-env-file.util.ts` — add 3 Jira vars to getEnvVariables() return object\n- `backend/.env.test` — append 3 Jira test values\n- `backend/.env.test.example` — append 3 Jira test values\n- `test/env-config.module.e2e-spec.ts` — add imports, beforeAll assignments, and 3 it() test cases\n\n## What Implementer Claims They Built\n\nAll 9 steps executed. 29/29 tests passed. type-check clean.\n\n## CRITICAL: Do Not Trust the Report\n\nRead the actual files and verify each requirement was met.\n\n**DO:**\n- Read the actual code\n- Compare actual implementation to requirements line by line\n- Check for missing pieces\n\n## Your Job\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\n\nRead the 8 modified files and verify:\n1. All 3 env var constants added to `src/constants/env-variables.constant.ts`\n2. All 6 DB table constants added to `src/constants/db.constant.ts`\n3. JIRA_INSTALL_STATE added to Namespaces enum in `src/modules/cache/types/cache.interface.ts`\n4. 3 Jira fields with proper validators in `src/configs/env-validations.config.ts`\n5. […]
+  "prompt": "You are reviewing whether an implementation matches its specification.\n\n## What Was Requested\n\nTask 1: Env vars, constants, cache namespace for a Jira integration in a NestJS backend.\n\nFiles to modify:\n- `src/constants/env-variables.constant.ts` — append JIRA_CLIENT_ID, JIRA_CLIENT_SECRET, JIRA_REDIRECT_URI\n- `src/constants/db.constant.ts` — append 6 table name constants: TABLE_NAME_JIRA_INSTALLATIONS, TABLE_NAME_JIRA_PROJECTS, TABLE_NAME_JIRA_ISSUES, TABLE_NAME_JIRA_CHANGELOG, TABLE_NAME_JIRA_WORKLOGS, TABLE_NAME_JIRA_SPRINTS\n- `src/modules/cache/types/cache.interface.ts` — add JIRA_INSTALL_STATE = 'jira-install-state' to Namespaces enum\n- `src/configs/env-validations.config.ts` — add @IsString() @IsNotEmpty() for all 3 Jira vars\n- `src/utils/get-env-file.util.ts` — add 3 Jira vars to getEnvVariables() return object\n- `backend/.env.test` — append 3 Jira test values\n- `backend/.env.test.example` — append 3 Jira test values\n- `test/env-config.module.e2e-spec.ts` — add imports, beforeAll assignments, and 3 it() test cases\n\n## What Implementer Claims They Built\n\nAll 9 steps executed. 29/29 tests passed. type-check clean.\n\n## CRITICAL: Do Not Trust the Report\n\nRead the actual files and verify each requirement was met.\n\n**DO:**\n- Read the actual code\n- Compare actual implementation to requirements line by line\n- Check for missing pieces\n\n## Your Job\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\n\nRead the 8 modified files and verify:\n1. All 3 env var constants added to `src/constants/env-variables.constant.ts`\n2. All 6 DB table constants added to `src/constants/db.constant.ts`\n3. JIRA_INSTALL_STATE added to Namespaces enum in `src/modules/cache/types/cache.interface.ts`\n4. 3 Jira fields with proper validators in `src/configs/env-validations.config.ts`\n5. […]
 
 > TOOL
 
@@ -4206,7 +4206,7 @@ id: toolu_0155qqdtnfHKBLx9Q9zxqDbL
 {
   "description": "Code quality review for Task 1",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "Review the code quality of Task 1 implementation for a Jira integration.\n\nWHAT_WAS_IMPLEMENTED: Added Jira env var constants (JIRA_CLIENT_ID, JIRA_CLIENT_SECRET, JIRA_REDIRECT_URI), 6 DB table name constants, JIRA_INSTALL_STATE cache namespace, env validation class fields, env loader entries, .env.test values, and 3 e2e test cases.\n\nPLAN_OR_REQUIREMENTS: Task 1 from docs/superpowers/plans/2026-04-16-jira-integration.md — purely additive changes to 8 existing files following established patterns.\n\nBASE_SHA: 7bd7607fdde2d8b4146b69c2f256d9283bb86a4a\nHEAD_SHA: Run `git log --oneline -3` from `/Users/4thwithme/Documents/repo/no-name-proj/backend` to get current HEAD\n\nDESCRIPTION: Wires Jira env variables into the 5-step env pipeline this codebase enforces. All changes are small additions to existing files following exact patterns already established for GitHub vars.\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\n\nFocus on: pattern consistency with existing code, correctness of validators, completeness of test coverage."
+  "prompt": "Review the code quality of Task 1 implementation for a Jira integration.\n\nWHAT_WAS_IMPLEMENTED: Added Jira env var constants (JIRA_CLIENT_ID, JIRA_CLIENT_SECRET, JIRA_REDIRECT_URI), 6 DB table name constants, JIRA_INSTALL_STATE cache namespace, env validation class fields, env loader entries, .env.test values, and 3 e2e test cases.\n\nPLAN_OR_REQUIREMENTS: Task 1 from docs/superpowers/plans/2026-04-16-jira-integration.md — purely additive changes to 8 existing files following established patterns.\n\nBASE_SHA: 7bd7607fdde2d8b4146b69c2f256d9283bb86a4a\nHEAD_SHA: Run `git log --oneline -3` from `/home/<USER>/Documents/repo/no-name-proj/backend` to get current HEAD\n\nDESCRIPTION: Wires Jira env variables into the 5-step env pipeline this codebase enforces. All changes are small additions to existing files following exact patterns already established for GitHub vars.\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\n\nFocus on: pattern consistency with existing code, correctness of validators, completeness of test coverage."
 }
 ```
 
@@ -4239,8 +4239,8 @@ The implementation faithfully follows the 5-step env pipeline this codebase enfo
 
 Every other OAuth redirect var in this codebase uses the `*_CALLBACK_URL` suffix:
 
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts` line 17: `GITHUB_CALLBACK_URL`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts` line 20: `GOOGLE_CALLBACK_URL`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts` line 17: `GITHUB_CALLBACK_URL`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts` line 20: `GOOGLE_CALLBACK_URL`
 
 The new constant is `JIRA_REDIRECT_URI`, breaking the established `*_CALLBACK_URL` convention. This is a naming inconsistency that will cause confusion when developers look at all OAuth vars together. […]
 
@@ -4255,7 +4255,7 @@ id: toolu_01NiX1vhzC4GKpKAtjD4i6ju
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts",
   "old_string": "export const JIRA_REDIRECT_URI = 'JIRA_REDIRECT_URI';",
   "new_string": "export const JIRA_CALLBACK_URL = 'JIRA_CALLBACK_URL';"
 }
@@ -4275,7 +4275,7 @@ tool_use Read
 id: toolu_01LhDNEnkQmdtAzVoaurAxPf
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts"
 }
 ```
 
@@ -4322,7 +4322,7 @@ tool_use Read
 id: toolu_01FGwQPUp4K3LqzVpTwHZkEv
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts",
   "offset": 120
 }
 ```
@@ -4382,7 +4382,7 @@ id: toolu_01RCJxivWYox1HpZvGx3kPDH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts",
   "old_string": "export const JIRA_REDIRECT_URI = 'JIRA_REDIRECT_URI';",
   "new_string": "export const JIRA_CALLBACK_URL = 'JIRA_CALLBACK_URL';"
 }
@@ -4395,7 +4395,7 @@ id: toolu_016qLvMa5XVMoRGtBuzGq6T6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts",
   "old_string": "\t@IsString()\n\t@IsNotEmpty()\n\tJIRA_REDIRECT_URI: string;",
   "new_string": "\t@IsString()\n\t@IsNotEmpty()\n\tJIRA_CALLBACK_URL: string;"
 }
@@ -4406,7 +4406,7 @@ id: toolu_016qLvMa5XVMoRGtBuzGq6T6
 tool_result
 id: toolu_01RCJxivWYox1HpZvGx3kPDH
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/constants/env-variables.constant.ts has been updated successfully.
 ```
 
 > TOOL
@@ -4414,7 +4414,7 @@ The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/constants/env-
 tool_result
 id: toolu_016qLvMa5XVMoRGtBuzGq6T6
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/configs/env-validations.config.ts has been updated successfully.
 ```
 
 > TOOL
@@ -4423,7 +4423,7 @@ tool_use Read
 id: toolu_01GYuWKJM1KQ3qTAnxby8cU9
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts"
 }
 ```
 
@@ -4490,7 +4490,7 @@ tool_use Read
 id: toolu_01QAp1QnJFQMwTiQyo1Da8qb
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.test"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.test"
 }
 ```
 
@@ -4538,7 +4538,7 @@ id: toolu_012eM6VyLqaKNjvd8J2hS2cK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts",
   "old_string": "\tJIRA_REDIRECT_URI: process.env['JIRA_REDIRECT_URI'],",
   "new_string": "\tJIRA_CALLBACK_URL: process.env['JIRA_CALLBACK_URL'],"
 }
@@ -4551,7 +4551,7 @@ id: toolu_01LW4gcyvs3TuZn5tgWLs3E3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.test",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.test",
   "old_string": "JIRA_REDIRECT_URI=http://localhost:3001/api/jira/callback",
   "new_string": "JIRA_CALLBACK_URL=http://localhost:3001/api/jira/callback"
 }
@@ -4562,7 +4562,7 @@ id: toolu_01LW4gcyvs3TuZn5tgWLs3E3
 tool_result
 id: toolu_012eM6VyLqaKNjvd8J2hS2cK
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/utils/get-env-file.util.ts has been updated successfully.
 ```
 
 > TOOL
@@ -4570,7 +4570,7 @@ The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/utils/get-env-
 tool_result
 id: toolu_01LW4gcyvs3TuZn5tgWLs3E3
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/.env.test has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/.env.test has been updated successfully.
 ```
 
 > AGENT
@@ -4584,7 +4584,7 @@ id: toolu_01HL7brKZEejgYXXfh8BuZ6J
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts",
   "old_string": "JIRA_REDIRECT_URI",
   "new_string": "JIRA_CALLBACK_URL"
 }
@@ -4595,7 +4595,7 @@ id: toolu_01HL7brKZEejgYXXfh8BuZ6J
 tool_result
 id: toolu_01HL7brKZEejgYXXfh8BuZ6J
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts has been updated. All occurrences were successfully replaced.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/test/env-config.module.e2e-spec.ts has been updated. All occurrences were successfully replaced.
 ```
 
 > AGENT
@@ -4609,7 +4609,7 @@ id: toolu_017TfyXeCPfpZb3JQBYGKuqy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env",
   "old_string": "JIRA_REDIRECT_URI=https://no-name-proj-1488-dev.loca.lt/api/jira/callback",
   "new_string": "JIRA_CALLBACK_URL=https://no-name-proj-1488-dev.loca.lt/api/jira/callback"
 }
@@ -4620,7 +4620,7 @@ id: toolu_017TfyXeCPfpZb3JQBYGKuqy
 tool_result
 id: toolu_017TfyXeCPfpZb3JQBYGKuqy
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/.env has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/.env has been updated successfully.
 ```
 
 > TOOL
@@ -4629,7 +4629,7 @@ tool_use Read
 id: toolu_01YQa5BZvYC4Be6XPsVK6XE9
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.example",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.example",
   "offset": 25
 }
 ```
@@ -4654,7 +4654,7 @@ id: toolu_01UmYuWMzLF4LGatzvLFF7pD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.example",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.example",
   "old_string": "JIRA_REDIRECT_URI=https://your-tunnel.loca.lt/api/jira/callback",
   "new_string": "JIRA_CALLBACK_URL=https://your-tunnel.loca.lt/api/jira/callback"
 }
@@ -4665,7 +4665,7 @@ id: toolu_01UmYuWMzLF4LGatzvLFF7pD
 tool_result
 id: toolu_01UmYuWMzLF4LGatzvLFF7pD
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/.env.example has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/.env.example has been updated successfully.
 ```
 
 > TOOL
@@ -4674,7 +4674,7 @@ tool_use Read
 id: toolu_01JXwiT4f31cxnj9miJJeDNi
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.test.example",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.test.example",
   "offset": 24
 }
 ```
@@ -4700,7 +4700,7 @@ id: toolu_014Vm99ZKUU6YFC3LfKRgP4o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/.env.test.example",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/.env.test.example",
   "old_string": "JIRA_REDIRECT_URI=http://localhost:3001/api/jira/callback",
   "new_string": "JIRA_CALLBACK_URL=http://localhost:3001/api/jira/callback"
 }
@@ -4711,7 +4711,7 @@ id: toolu_014Vm99ZKUU6YFC3LfKRgP4o
 tool_result
 id: toolu_014Vm99ZKUU6YFC3LfKRgP4o
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/.env.test.example has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/.env.test.example has been updated successfully.
 ```
 
 > AGENT
@@ -4724,7 +4724,7 @@ tool_use Bash
 id: toolu_015Db2GpSWgHB8iHRPsWdStE
 ```json
 {
-  "command": "grep -n \"JIRA_REDIRECT_URI\" /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md | wc -l",
+  "command": "grep -n \"JIRA_REDIRECT_URI\" /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md | wc -l",
   "description": "Count JIRA_REDIRECT_URI occurrences in plan"
 }
 ```
@@ -4743,7 +4743,7 @@ tool_use Bash
 id: toolu_01EAs7KPqJnrg2KfX3R4CNX4
 ```json
 {
-  "command": "grep -n \"JIRA_REDIRECT_URI\" /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md | wc -l",
+  "command": "grep -n \"JIRA_REDIRECT_URI\" /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md | wc -l",
   "description": "Count JIRA_REDIRECT_URI occurrences in spec"
 }
 ```
@@ -4762,7 +4762,7 @@ tool_use Bash
 id: toolu_01G7mqC86iw4N6xFv8AYx2tb
 ```json
 {
-  "command": "sed -i '' 's/JIRA_REDIRECT_URI/JIRA_CALLBACK_URL/g' /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md && echo \"done\"",
+  "command": "sed -i '' 's/JIRA_REDIRECT_URI/JIRA_CALLBACK_URL/g' /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md && echo \"done\"",
   "description": "Replace JIRA_REDIRECT_URI with JIRA_CALLBACK_URL in plan and spec docs"
 }
 ```
@@ -4801,7 +4801,7 @@ tool_use Bash
 id: toolu_019waSBH6MYY8H4tcxpGtfaU
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj && git add backend/src/constants/env-variables.constant.ts backend/src/configs/env-validations.config.ts backend/src/utils/get-env-file.util.ts backend/test/env-config.module.e2e-spec.ts backend/.env.example backend/.env.test.example docs/superpowers/plans/2026-04-16-jira-integration.md docs/superpowers/specs/2026-04-16-jira-integration-design.md && git commit -m \"$(cat <<'EOF'\nrefactor: rename JIRA_REDIRECT_URI to JIRA_CALLBACK_URL for consistency\n\nMatches GITHUB_CALLBACK_URL and GOOGLE_CALLBACK_URL naming convention.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj && git add backend/src/constants/env-variables.constant.ts backend/src/configs/env-validations.config.ts backend/src/utils/get-env-file.util.ts backend/test/env-config.module.e2e-spec.ts backend/.env.example backend/.env.test.example docs/superpowers/plans/2026-04-16-jira-integration.md docs/superpowers/specs/2026-04-16-jira-integration-design.md && git commit -m \"$(cat <<'EOF'\nrefactor: rename JIRA_REDIRECT_URI to JIRA_CALLBACK_URL for consistency\n\nMatches GITHUB_CALLBACK_URL and GOOGLE_CALLBACK_URL naming convention.\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit JIRA_REDIRECT_URI → JIRA_CALLBACK_URL rename"
 }
 ```
@@ -4890,12 +4890,12 @@ All 6 ran clean in Batch 4 with zero errors:
 - `jira_sprints` — FK to `jira_installations._id`, unique on `(installation_id, sprint_id)`
 
 **Files changed:**
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100000_create_jira_installations_table.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100001_create_jira_projects_table.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100005_create_jira_sprints_table.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100000_create_jira_installations_table.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100001_create_jira_projects_table.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100005_create_jira_sprints_table.ts`
 agentId: ae2f11798231867b4 (use SendMessage with to: 'ae2f11798231867b4' to continue this agent)
 <usage>total_tokens: 29572
 tool_uses: 11
@@ -4908,7 +4908,7 @@ tool_use Read
 id: toolu_01DQa6qMYGiAegrgxeyApDJc
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 150
 }
 ```
@@ -4960,7 +4960,7 @@ tool_use Read
 id: toolu_012z1aWpVWTaLwxB3c5NdWA1
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 150,
   "offset": 150
 }
@@ -5031,7 +5031,7 @@ tool_use Read
 id: toolu_01F987rXrms6Z5dW5hfoekif
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 250,
   "offset": 300
 }
@@ -5256,7 +5256,7 @@ tool_use Read
 id: toolu_01FyMgvqUi2XnL2bP2orXsua
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts"
 }
 ```
 
@@ -5331,7 +5331,7 @@ tool_use Read
 id: toolu_0126oGibtTGSbcKKp8jRJz3y
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts"
 }
 ```
 
@@ -5402,7 +5402,7 @@ tool_use Read
 id: toolu_011Jir9Mzf6GiJGv1htDVm88
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts"
 }
 ```
 
@@ -5480,7 +5480,7 @@ id: toolu_01AP3CTJFNEphEwFMVzfPBhP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts",
   "old_string": "import { TABLE_NAME_JIRA_ISSUES, TABLE_NAME_JIRA_PROJECTS } from '@constants/db.constant';",
   "new_string": "import {\n\tTABLE_NAME_JIRA_INSTALLATIONS,\n\tTABLE_NAME_JIRA_ISSUES,\n\tTABLE_NAME_JIRA_PROJECTS,\n} from '@constants/db.constant';"
 }
@@ -5491,7 +5491,7 @@ id: toolu_01AP3CTJFNEphEwFMVzfPBhP
 tool_result
 id: toolu_01AP3CTJFNEphEwFMVzfPBhP
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts has been updated successfully.
 ```
 
 > TOOL
@@ -5501,7 +5501,7 @@ id: toolu_01DouxyRYcNz2fAWDuqnCBCW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts",
   "old_string": "\t\t\t\ttable.uuid('installation_id').notNullable();",
   "new_string": "\t\t\t\ttable\n\t\t\t\t\t\t.uuid('installation_id')\n\t\t\t\t\t\t.notNullable()\n\t\t\t\t\t\t.references('_id')\n\t\t\t\t\t\t.inTable(TABLE_NAME_JIRA_INSTALLATIONS);"
 }
@@ -5512,7 +5512,7 @@ id: toolu_01DouxyRYcNz2fAWDuqnCBCW
 tool_result
 id: toolu_01DouxyRYcNz2fAWDuqnCBCW
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100002_create_jira_issues_table.ts has been updated successfully.
 ```
 
 > AGENT
@@ -5526,7 +5526,7 @@ id: toolu_01GuMzwcTxVzrqUs719rvX7u
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts",
   "old_string": "import { TABLE_NAME_JIRA_CHANGELOG, TABLE_NAME_JIRA_ISSUES } from '@constants/db.constant';",
   "new_string": "import {\n\tTABLE_NAME_JIRA_CHANGELOG,\n\tTABLE_NAME_JIRA_INSTALLATIONS,\n\tTABLE_NAME_JIRA_ISSUES,\n} from '@constants/db.constant';"
 }
@@ -5537,7 +5537,7 @@ id: toolu_01GuMzwcTxVzrqUs719rvX7u
 tool_result
 id: toolu_01GuMzwcTxVzrqUs719rvX7u
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts has been updated successfully.
 ```
 
 > TOOL
@@ -5547,7 +5547,7 @@ id: toolu_017jPKP7yaXUdEdTGrxsfMCw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts",
   "old_string": "\t\t\t\ttable.uuid('installation_id').notNullable();\n\t\t\t\ttable.string('jira_history_id', 128).notNullable();",
   "new_string": "\t\t\t\ttable\n\t\t\t\t\t\t.uuid('installation_id')\n\t\t\t\t\t\t.notNullable()\n\t\t\t\t\t\t.references('_id')\n\t\t\t\t\t\t.inTable(TABLE_NAME_JIRA_INSTALLATIONS);\n\t\t\t\ttable.string('jira_history_id', 128).notNullable();"
 }
@@ -5558,7 +5558,7 @@ id: toolu_017jPKP7yaXUdEdTGrxsfMCw
 tool_result
 id: toolu_017jPKP7yaXUdEdTGrxsfMCw
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100003_create_jira_changelog_table.ts has been updated successfully.
 ```
 
 > TOOL
@@ -5568,7 +5568,7 @@ id: toolu_01AX18wHRv2dw2FnV7CCuA7Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts",
   "old_string": "import { TABLE_NAME_JIRA_ISSUES, TABLE_NAME_JIRA_WORKLOGS } from '@constants/db.constant';",
   "new_string": "import {\n\tTABLE_NAME_JIRA_INSTALLATIONS,\n\tTABLE_NAME_JIRA_ISSUES,\n\tTABLE_NAME_JIRA_WORKLOGS,\n} from '@constants/db.constant';"
 }
@@ -5579,7 +5579,7 @@ id: toolu_01AX18wHRv2dw2FnV7CCuA7Q
 tool_result
 id: toolu_01AX18wHRv2dw2FnV7CCuA7Q
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts has been updated successfully.
 ```
 
 > TOOL
@@ -5589,7 +5589,7 @@ id: toolu_01CMcLmiqXNtKD1oVL77E7Su
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts",
   "old_string": "\t\t\t\ttable.uuid('installation_id').notNullable();\n\t\t\t\ttable.string('jira_worklog_id', 128).notNullable();",
   "new_string": "\t\t\t\ttable\n\t\t\t\t\t\t.uuid('installation_id')\n\t\t\t\t\t\t.notNullable()\n\t\t\t\t\t\t.references('_id')\n\t\t\t\t\t\t.inTable(TABLE_NAME_JIRA_INSTALLATIONS);\n\t\t\t\ttable.string('jira_worklog_id', 128).notNullable();"
 }
@@ -5600,7 +5600,7 @@ id: toolu_01CMcLmiqXNtKD1oVL77E7Su
 tool_result
 id: toolu_01CMcLmiqXNtKD1oVL77E7Su
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/migrations/20260416100004_create_jira_worklogs_table.ts has been updated successfully.
 ```
 
 > AGENT
@@ -5613,7 +5613,7 @@ tool_use Bash
 id: toolu_01VbK7Ma8ymqXtLCAZg2mEWz
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj/backend && npm run migrate:rollback 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj/backend && npm run migrate:rollback 2>&1 | tail -20",
   "description": "Rollback last batch of Jira migrations",
   "timeout": 30000
 }
@@ -5628,7 +5628,7 @@ npm error Missing script: "migrate:rollback"
 npm error
 npm error To see a list of scripts, run:
 npm error   npm run
-npm error A complete log of this run can be found in: /Users/4thwithme/.npm/_logs/2026-04-16T15_35_56_765Z-debug-0.log
+npm error A complete log of this run can be found in: /home/<USER>/.npm/_logs/2026-04-16T15_35_56_765Z-debug-0.log
 ```
 
 > TOOL
@@ -5756,7 +5756,7 @@ tool_use Bash
 id: toolu_014w2nEFzgmf2iVBqDaDAJqN
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj && git add backend/src/migrations/20260416100002_create_jira_issues_table.ts backend/src/migrations/20260416100003_create_jira_changelog_table.ts backend/src/migrations/20260416100004_create_jira_worklogs_table.ts && git commit -m \"$(cat <<'EOF'\nfix: add missing installation_id FK constraints in Jira issue/changelog/worklog migrations\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj && git add backend/src/migrations/20260416100002_create_jira_issues_table.ts backend/src/migrations/20260416100003_create_jira_changelog_table.ts backend/src/migrations/20260416100004_create_jira_worklogs_table.ts && git commit -m \"$(cat <<'EOF'\nfix: add missing installation_id FK constraints in Jira issue/changelog/worklog migrations\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit FK constraint fixes"
 }
 ```
@@ -5840,7 +5840,7 @@ tool_use Read
 id: toolu_01DaK7SoKRf882sK86azPPxE
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 250,
   "offset": 548
 }
@@ -5920,7 +5920,7 @@ tool_use Read
 id: toolu_017HuEnKTqoNhYb6fLZAFZKQ
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 80,
   "offset": 798
 }
@@ -6017,7 +6017,7 @@ id: toolu_01XeVNZghFdhi5eGua3Da97k
 {
   "description": "Task 3: TypeScript interfaces",
   "subagent_type": "nestjs-agent",
-  "prompt": "You are implementing Task 3 of the Jira integration plan: TypeScript interfaces. This is a mechanical task — create 3 interface files exactly as specified below.\n\n## Context\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Task 1 (env vars/constants), Task 2 (6 DB migrations)\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code\n- No relative imports — use `@modules/*` aliases (see tsconfig.json for alias config)\n- TypeScript strict mode\n- No `console.log`\n- All functions: single object destructuring param (but these files are interfaces only, no functions)\n\nBefore creating the files, read an existing interface file for reference pattern. Look at:\n`src/modules/github/types/` — check what interface files look like in this codebase.\n\n## What to create\n\nCreate directory `src/modules/jira/types/` and 3 files in it.\n\n### File 1: `src/modules/jira/types/jira-installation.interface.ts`\n\n```typescript\nexport enum JiraInstallationStatus {\n\tACTIVE = 'active',\n\tUNINSTALLED = 'uninstalled',\n\tNEEDS_REAUTH = 'needs_reauth',\n}\n\nexport interface IJiraInstallationBase {\n\t_id: string;\n\tcompany_id: string;\n\tcloud_id: string;\n\tsite_url: string;\n\taccess_token: string;\n\trefresh_token: string;\n\ttoken_expires_at: Date;\n\tstatus: JiraInstallationStatus;\n\tcreated_at: Date;\n\tupdated_at: Date;\n}\n\nexport interface IJiraInstallationCreate {\n\tcompany_id: string;\n\tcloud_id: string;\n\tsite_url: string;\n\taccess_token: string;\n\trefresh_token: string;\n\ttoken_expires_at: Date;\n}\n\nexport interface IJiraProjectBase {\n\t_id: string;\n\tinstallation_id: string;\n\tproject_key: string;\n\tproject_id: string;\n\tname: string;\n\tproject_type: string;\n\tlast_synced_at: Date | null;\n\tcreated_at: Date;\n\tupdated_at: Date;\n}\n\nexport interface IJiraIssueBase {\n\t_id: string;\n\tproject_id: string;\n\tinstallation_id: string;\n\tissue_key: string;\n\tissue_id: string;\n\tissue_type: string | null;\n\tstatus: string | null;\n\tpriority: string | null;\n\tassignee_id: string | null;\n\treporter_id: string | null;\n\tstory_points: number | null;\n\tcreated_at: Date;\n\tupdated_at: […]
+  "prompt": "You are implementing Task 3 of the Jira integration plan: TypeScript interfaces. This is a mechanical task — create 3 interface files exactly as specified below.\n\n## Context\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Task 1 (env vars/constants), Task 2 (6 DB migrations)\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code\n- No relative imports — use `@modules/*` aliases (see tsconfig.json for alias config)\n- TypeScript strict mode\n- No `console.log`\n- All functions: single object destructuring param (but these files are interfaces only, no functions)\n\nBefore creating the files, read an existing interface file for reference pattern. Look at:\n`src/modules/github/types/` — check what interface files look like in this codebase.\n\n## What to create\n\nCreate directory `src/modules/jira/types/` and 3 files in it.\n\n### File 1: `src/modules/jira/types/jira-installation.interface.ts`\n\n```typescript\nexport enum JiraInstallationStatus {\n\tACTIVE = 'active',\n\tUNINSTALLED = 'uninstalled',\n\tNEEDS_REAUTH = 'needs_reauth',\n}\n\nexport interface IJiraInstallationBase {\n\t_id: string;\n\tcompany_id: string;\n\tcloud_id: string;\n\tsite_url: string;\n\taccess_token: string;\n\trefresh_token: string;\n\ttoken_expires_at: Date;\n\tstatus: JiraInstallationStatus;\n\tcreated_at: Date;\n\tupdated_at: Date;\n}\n\nexport interface IJiraInstallationCreate {\n\tcompany_id: string;\n\tcloud_id: string;\n\tsite_url: string;\n\taccess_token: string;\n\trefresh_token: string;\n\ttoken_expires_at: Date;\n}\n\nexport interface IJiraProjectBase {\n\t_id: string;\n\tinstallation_id: string;\n\tproject_key: string;\n\tproject_id: string;\n\tname: string;\n\tproject_type: string;\n\tlast_synced_at: Date | null;\n\tcreated_at: Date;\n\tupdated_at: Date;\n}\n\nexport interface IJiraIssueBase {\n\t_id: string;\n\tproject_id: string;\n\tinstallation_id: string;\n\tissue_key: string;\n\tissue_id: string;\n\tissue_type: string | null;\n\tstatus: string | null;\n\tpriority: string | null;\n\tassignee_id: string | null;\n\treporter_id: string | null;\n\tstory_points: number | null;\n\tcreated_at: Date;\n\tupdated_at: […]
 
 > TOOL
 
@@ -6029,9 +6029,9 @@ id: toolu_01XeVNZghFdhi5eGua3Da97k
 All three Jira TypeScript interface files have been successfully created:
 
 ✅ **Files created:**
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-installation.interface.ts` — Installation, project, issue, changelog, worklog, and sprint interfaces
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-api.interface.ts` — Atlassian API response interfaces
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-sync.interface.ts` — Job queue interfaces
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-installation.interface.ts` — Installation, project, issue, changelog, worklog, and sprint interfaces
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-api.interface.ts` — Atlassian API response interfaces
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-sync.interface.ts` — Job queue interfaces
 
 ✅ **Quality checks:**
 - Type-check passes with no TypeScript errors
@@ -6212,7 +6212,7 @@ tool_use Read
 id: toolu_0192GsNSLr6mXGsYrSJ8SNxv
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 400,
   "offset": 819
 }
@@ -6284,7 +6284,7 @@ tool_use Read
 id: toolu_01GnvBZ94JX1WoR1VX8qzqd4
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 200,
   "offset": 1219
 }
@@ -6377,7 +6377,7 @@ id: toolu_01TkLmanBbqe8SiUsAYsJuc1
 {
   "description": "Task 4: DB models (6 Jira models)",
   "subagent_type": "nestjs-agent",
-  "prompt": "You are implementing Task 4 of the Jira integration: 6 Knex-based DB model classes.\n\n## Context\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-3 (env vars, migrations, TypeScript interfaces)\n\nThe interfaces you'll import are already in `src/modules/jira/types/jira-installation.interface.ts` and `src/modules/jira/types/jira-api.interface.ts`.\n\n## BEFORE writing anything\n\nRead an existing DB model from the GitHub module to understand patterns:\n- `src/modules/github/db/github-installations.model.ts`\n\nAlso check:\n- `src/modules/db/db.constant.ts` for `KNEX_READ_CONNECTION` / `KNEX_WRITE_CONNECTION`\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code\n- No relative imports — use `@modules/*`, `@constants/*` aliases\n- TypeScript strict mode\n- No `console.log` — use NestJS `Logger`\n- All functions: single object destructuring parameter\n- `@InjectConnection(KNEX_READ_CONNECTION)` for reads, `@InjectConnection(KNEX_WRITE_CONNECTION)` for writes\n- Use `randomUUID()` from `node:crypto` for new records\n- Use `.returning('*')` after insert\n- Wrap DB calls in try/catch, log error with `this.logger.error`, rethrow\n\n## Create 6 files in `src/modules/jira/db/`\n\n### File 1: `jira-installations.model.ts`\n\n```typescript\nimport { randomUUID } from 'node:crypto';\n\nimport { Injectable, Logger } from '@nestjs/common';\nimport { Knex } from 'knex';\nimport { InjectConnection } from 'nest-knexjs';\n\nimport { KNEX_READ_CONNECTION, KNEX_WRITE_CONNECTION } from '@modules/db/db.constant';\nimport {\n\tIJiraInstallationBase,\n\tIJiraInstallationCreate,\n\tJiraInstallationStatus,\n} from '@modules/jira/types/jira-installation.interface';\n\nimport { TABLE_NAME_JIRA_INSTALLATIONS } from '@constants/db.constant';\n\n@Injectable()\nexport class JiraInstallationModel {\n\tprivate readonly logger = new Logger(JiraInstallationModel.name);\n\tprivate readonly tableName = TABLE_NAME_JIRA_INSTALLATIONS;\n\n\tconstructor(\n\t\t@InjectConnection(KNEX_READ_CONNECTION) private readonly knexRead: Knex,\n\t\t@InjectConnection(KNEX_WRITE_CONNECTION) private readonly knexWrite: Knex,\n\t) {}\n\n\tasync create({ data }: { data: IJiraInstallationCreate […]
+  "prompt": "You are implementing Task 4 of the Jira integration: 6 Knex-based DB model classes.\n\n## Context\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-3 (env vars, migrations, TypeScript interfaces)\n\nThe interfaces you'll import are already in `src/modules/jira/types/jira-installation.interface.ts` and `src/modules/jira/types/jira-api.interface.ts`.\n\n## BEFORE writing anything\n\nRead an existing DB model from the GitHub module to understand patterns:\n- `src/modules/github/db/github-installations.model.ts`\n\nAlso check:\n- `src/modules/db/db.constant.ts` for `KNEX_READ_CONNECTION` / `KNEX_WRITE_CONNECTION`\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code\n- No relative imports — use `@modules/*`, `@constants/*` aliases\n- TypeScript strict mode\n- No `console.log` — use NestJS `Logger`\n- All functions: single object destructuring parameter\n- `@InjectConnection(KNEX_READ_CONNECTION)` for reads, `@InjectConnection(KNEX_WRITE_CONNECTION)` for writes\n- Use `randomUUID()` from `node:crypto` for new records\n- Use `.returning('*')` after insert\n- Wrap DB calls in try/catch, log error with `this.logger.error`, rethrow\n\n## Create 6 files in `src/modules/jira/db/`\n\n### File 1: `jira-installations.model.ts`\n\n```typescript\nimport { randomUUID } from 'node:crypto';\n\nimport { Injectable, Logger } from '@nestjs/common';\nimport { Knex } from 'knex';\nimport { InjectConnection } from 'nest-knexjs';\n\nimport { KNEX_READ_CONNECTION, KNEX_WRITE_CONNECTION } from '@modules/db/db.constant';\nimport {\n\tIJiraInstallationBase,\n\tIJiraInstallationCreate,\n\tJiraInstallationStatus,\n} from '@modules/jira/types/jira-installation.interface';\n\nimport { TABLE_NAME_JIRA_INSTALLATIONS } from '@constants/db.constant';\n\n@Injectable()\nexport class JiraInstallationModel {\n\tprivate readonly logger = new Logger(JiraInstallationModel.name);\n\tprivate readonly tableName = TABLE_NAME_JIRA_INSTALLATIONS;\n\n\tconstructor(\n\t\t@InjectConnection(KNEX_READ_CONNECTION) private readonly knexRead: Knex,\n\t\t@InjectConnection(KNEX_WRITE_CONNECTION) private readonly knexWrite: Knex,\n\t) {}\n\n\tasync create({ data }: { data: IJiraInstallationCreate […]
 
 > TOOL
 
@@ -6434,7 +6434,7 @@ tool_use Read
 id: toolu_015GTPtwNgndETMjVxhoSkR4
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-issues.model.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-issues.model.ts"
 }
 ```
 
@@ -6502,7 +6502,7 @@ tool_use Read
 id: toolu_01RmCqMFtmQ7vUNnzC4K9gog
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-changelog.model.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-changelog.model.ts"
 }
 ```
 
@@ -6568,7 +6568,7 @@ tool_use Read
 id: toolu_01HasaS62mEuQyaQCMB5KeDt
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-worklogs.model.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-worklogs.model.ts"
 }
 ```
 
@@ -6636,7 +6636,7 @@ tool_use Read
 id: toolu_01DYoWmGWfXaxqrotdCLcXpH
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-sprints.model.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-sprints.model.ts"
 }
 ```
 
@@ -6707,7 +6707,7 @@ tool_use Bash
 id: toolu_01TUUHVVhv4mo2nGyMyArHvj
 ```json
 {
-  "command": "cd /Users/4thwithme/Documents/repo/no-name-proj/backend && npm run type-check 2>&1 | tail -10",
+  "command": "cd /home/<USER>/Documents/repo/no-name-proj/backend && npm run type-check 2>&1 | tail -10",
   "description": "Verify type-check passes after Task 4",
   "timeout": 60000
 }
@@ -6877,7 +6877,7 @@ tool_use Read
 id: toolu_011Rcu1bE1JaZCjPviSH4KmR
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 250,
   "offset": 1335
 }
@@ -6946,7 +6946,7 @@ tool_use Read
 id: toolu_015bxkxDx1Hv4YMM2ftzgsXm
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 80,
   "offset": 1583
 }
@@ -7013,7 +7013,7 @@ id: toolu_01CMjYJQayPxYPyS41pbHaRY
 {
   "description": "Task 5: JiraApiService",
   "subagent_type": "nestjs-agent",
-  "prompt": "You are implementing Task 5 of the Jira integration: the JiraApiService — the Atlassian REST API client.\n\n## Context\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-4 (env vars, migrations, interfaces, DB models)\n\nRelevant files already exist:\n- `src/modules/jira/types/jira-api.interface.ts` — API interfaces\n- `src/modules/jira/types/jira-installation.interface.ts` — installation interfaces\n- `src/modules/jira/db/jira-installations.model.ts` — JiraInstallationModel\n- `src/constants/env-variables.constant.ts` — JIRA_CLIENT_ID, JIRA_CLIENT_SECRET, JIRA_CALLBACK_URL\n\n## BEFORE writing anything\n\nRead an existing service that makes HTTP calls (e.g., `src/modules/github/github-api.service.ts`) to understand patterns for `HttpService` usage in this codebase.\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code\n- No relative imports — use `@modules/*`, `@constants/*` aliases\n- TypeScript strict mode\n- No `console.log` — use NestJS `Logger`\n- All functions: single object destructuring parameter\n\n## Create file: `src/modules/jira/jira-api.service.ts`\n\n```typescript\nimport { HttpService } from '@nestjs/axios';\nimport { Injectable, Logger } from '@nestjs/common';\n\nimport { EnvConfigService } from '@modules/env-config/env-config.service';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport {\n\tIAtlassianResource,\n\tIAtlassianTokenResponse,\n\tIJiraApiBoardResponse,\n\tIJiraApiProject,\n\tIJiraApiSearchResponse,\n\tIJiraApiSprintResponse,\n\tIJiraApiWorklog,\n} from '@modules/jira/types/jira-api.interface';\nimport { IJiraInstallationBase } from '@modules/jira/types/jira-installation.interface';\n\nimport { JIRA_CLIENT_ID, JIRA_CLIENT_SECRET, JIRA_CALLBACK_URL } from '@constants/env-variables.constant';\n\nconst TOKEN_REFRESH_BUFFER_MS = 5 * 60 * 1000;\nconst ATLASSIAN_TOKEN_URL = 'https://auth.atlassian.com/oauth/token';\nconst ATLASSIAN_RESOURCES_URL = 'https://api.atlassian.com/oauth/token/accessible-resources';\n\n@Injectable()\nexport class JiraApiService {\n\tprivate readonly logger = new Logger(JiraApiService.name);\n\n\tconstructor(\n\t\tprivate readonly httpService: HttpService,\n\t\tprivate readonly configService: EnvConfigService,\n\t\tprivate readonly installationModel: JiraInstallationModel,\n\t) {}\n\n\tasync exchangeCode({\n\t\tcode,\n\t}: {\n\t\tcode: string;\n\t}): Promise<IAtlassianTokenResponse> {\n\t\tconst { data } = await this.httpService.axiosRef.post<IAtlassianTokenResponse>(\n\t\t\tATLASSIAN_TOKEN_URL,\n\t\t\t{\n\t\t\t\tgrant_type: 'authorization_code',\n\t\t\t\tclient_id: this.configService.get<string>({ key: JIRA_CLIENT_ID }),\n\t\t\t\tclient_secret: this.configService.get<string>({ […]
+  "prompt": "You are implementing Task 5 of the Jira integration: the JiraApiService — the Atlassian REST API client.\n\n## Context\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-4 (env vars, migrations, interfaces, DB models)\n\nRelevant files already exist:\n- `src/modules/jira/types/jira-api.interface.ts` — API interfaces\n- `src/modules/jira/types/jira-installation.interface.ts` — installation interfaces\n- `src/modules/jira/db/jira-installations.model.ts` — JiraInstallationModel\n- `src/constants/env-variables.constant.ts` — JIRA_CLIENT_ID, JIRA_CLIENT_SECRET, JIRA_CALLBACK_URL\n\n## BEFORE writing anything\n\nRead an existing service that makes HTTP calls (e.g., `src/modules/github/github-api.service.ts`) to understand patterns for `HttpService` usage in this codebase.\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code\n- No relative imports — use `@modules/*`, `@constants/*` aliases\n- TypeScript strict mode\n- No `console.log` — use NestJS `Logger`\n- All functions: single object destructuring parameter\n\n## Create file: `src/modules/jira/jira-api.service.ts`\n\n```typescript\nimport { HttpService } from '@nestjs/axios';\nimport { Injectable, Logger } from '@nestjs/common';\n\nimport { EnvConfigService } from '@modules/env-config/env-config.service';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport {\n\tIAtlassianResource,\n\tIAtlassianTokenResponse,\n\tIJiraApiBoardResponse,\n\tIJiraApiProject,\n\tIJiraApiSearchResponse,\n\tIJiraApiSprintResponse,\n\tIJiraApiWorklog,\n} from '@modules/jira/types/jira-api.interface';\nimport { IJiraInstallationBase } from '@modules/jira/types/jira-installation.interface';\n\nimport { JIRA_CLIENT_ID, JIRA_CLIENT_SECRET, JIRA_CALLBACK_URL } from '@constants/env-variables.constant';\n\nconst TOKEN_REFRESH_BUFFER_MS = 5 * 60 * 1000;\nconst ATLASSIAN_TOKEN_URL = 'https://auth.atlassian.com/oauth/token';\nconst ATLASSIAN_RESOURCES_URL = 'https://api.atlassian.com/oauth/token/accessible-resources';\n\n@Injectable()\nexport class JiraApiService {\n\tprivate readonly logger = new Logger(JiraApiService.name);\n\n\tconstructor(\n\t\tprivate readonly httpService: HttpService,\n\t\tprivate readonly configService: EnvConfigService,\n\t\tprivate readonly installationModel: JiraInstallationModel,\n\t) {}\n\n\tasync exchangeCode({\n\t\tcode,\n\t}: {\n\t\tcode: string;\n\t}): Promise<IAtlassianTokenResponse> {\n\t\tconst { data } = await this.httpService.axiosRef.post<IAtlassianTokenResponse>(\n\t\t\tATLASSIAN_TOKEN_URL,\n\t\t\t{\n\t\t\t\tgrant_type: 'authorization_code',\n\t\t\t\tclient_id: this.configService.get<string>({ key: JIRA_CLIENT_ID }),\n\t\t\t\tclient_secret: this.configService.get<string>({ […]
 
 > TOOL
 
@@ -7024,7 +7024,7 @@ Perfect! The JiraApiService has been successfully implemented.
 
 ## Summary
 
-Created `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-api.service.ts` with the following capabilities:
+Created `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-api.service.ts` with the following capabilities:
 
 - **OAuth Token Exchange**: `exchangeCode()` — exchanges authorization code for Atlassian tokens
 - **Resource Discovery**: `getAccessibleResources()` — fetches available Atlassian cloud instances
@@ -7142,7 +7142,7 @@ tool_use Read
 id: toolu_014fdHHEibtSiY4gwQgH6oqt
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 300,
   "offset": 1600
 }
@@ -7210,7 +7210,7 @@ id: toolu_01UKeWLYEt4jmm27aCuc5rCE
 {
   "description": "Task 6: JiraInstallService + controller",
   "subagent_type": "nestjs-agent",
-  "prompt": "You are implementing Task 6 of the Jira integration: JiraInstallService (OAuth connect/disconnect) and JiraController.\n\n## Context\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-5\n\nBefore writing, check how similar OAuth controllers and services look in this codebase:\n- Read `src/modules/github/github-install.service.ts` (or similar) for service pattern\n- Read an existing controller (e.g., `src/modules/github/github.controller.ts`) for controller pattern including `@CurrentUser`, `@Roles`, `@LogExecution` decorators\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code (EXCEPT: `// eslint-disable-next-line` lines are allowed)\n- No relative imports — `@modules/*`, `@constants/*`, `@decorators/*` aliases\n- TypeScript strict\n- No `console.log` — Logger only\n- All methods: single object destructuring param (except controller methods that use NestJS param decorators)\n- Check import `CacheService` and `Namespaces` — look at how cache is used in other services before writing\n- Check `IRequestUser` in `@modules/auth/types/auth.interface` before writing\n\n## Create File 1: `src/modules/jira/jira-install.service.ts`\n\n```typescript\nimport { randomUUID } from 'node:crypto';\n\nimport { BadRequestException, Injectable, Logger } from '@nestjs/common';\nimport { InjectQueue } from '@nestjs/bullmq';\nimport { Queue } from 'bullmq';\n\nimport { CacheService } from '@modules/cache/cache.service';\nimport { Namespaces } from '@modules/cache/types/cache.interface';\nimport { EnvConfigService } from '@modules/env-config/env-config.service';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport { JiraApiService } from '@modules/jira/jira-api.service';\nimport { IJiraInstallationBase } from '@modules/jira/types/jira-installation.interface';\n\nimport { JIRA_CLIENT_ID, JIRA_CALLBACK_URL } from '@constants/env-variables.constant';\n\ninterface IInstallStateValue {\n\tcompanyId: string;\n\tuserId: string;\n}\n\nconst […]
+  "prompt": "You are implementing Task 6 of the Jira integration: JiraInstallService (OAuth connect/disconnect) and JiraController.\n\n## Context\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-5\n\nBefore writing, check how similar OAuth controllers and services look in this codebase:\n- Read `src/modules/github/github-install.service.ts` (or similar) for service pattern\n- Read an existing controller (e.g., `src/modules/github/github.controller.ts`) for controller pattern including `@CurrentUser`, `@Roles`, `@LogExecution` decorators\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code (EXCEPT: `// eslint-disable-next-line` lines are allowed)\n- No relative imports — `@modules/*`, `@constants/*`, `@decorators/*` aliases\n- TypeScript strict\n- No `console.log` — Logger only\n- All methods: single object destructuring param (except controller methods that use NestJS param decorators)\n- Check import `CacheService` and `Namespaces` — look at how cache is used in other services before writing\n- Check `IRequestUser` in `@modules/auth/types/auth.interface` before writing\n\n## Create File 1: `src/modules/jira/jira-install.service.ts`\n\n```typescript\nimport { randomUUID } from 'node:crypto';\n\nimport { BadRequestException, Injectable, Logger } from '@nestjs/common';\nimport { InjectQueue } from '@nestjs/bullmq';\nimport { Queue } from 'bullmq';\n\nimport { CacheService } from '@modules/cache/cache.service';\nimport { Namespaces } from '@modules/cache/types/cache.interface';\nimport { EnvConfigService } from '@modules/env-config/env-config.service';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport { JiraApiService } from '@modules/jira/jira-api.service';\nimport { IJiraInstallationBase } from '@modules/jira/types/jira-installation.interface';\n\nimport { JIRA_CLIENT_ID, JIRA_CALLBACK_URL } from '@constants/env-variables.constant';\n\ninterface IInstallStateValue {\n\tcompanyId: string;\n\tuserId: string;\n}\n\nconst […]
 
 > TOOL
 
@@ -7220,8 +7220,8 @@ id: toolu_01UKeWLYEt4jmm27aCuc5rCE
 Both files are written, type-check passes, and the commit is done.
 
 **Files created:**
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-install.service.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira.controller.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-install.service.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira.controller.ts`
 
 **Verification notes:**
 
@@ -7343,7 +7343,7 @@ tool_use Read
 id: toolu_01F3QrPick94Rfc4MBUMm1sH
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 350,
   "offset": 1865
 }
@@ -7405,7 +7405,7 @@ id: toolu_017wZBrgAcLYBRfhLPVrFdeA
 {
   "description": "Task 7: JiraSyncService",
   "subagent_type": "nestjs-agent",
-  "prompt": "You are implementing Task 7 of the Jira integration: JiraSyncService (the core sync logic).\n\n## Context\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-6\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code\n- No relative imports — `@modules/*`, `@constants/*` aliases\n- TypeScript strict\n- No `console.log` — Logger only\n- All methods: single object destructuring parameter\n\n## Create file: `src/modules/jira/jira-sync.service.ts`\n\nWrite this exactly:\n\n```typescript\nimport { InjectQueue } from '@nestjs/bullmq';\nimport { Injectable, Logger } from '@nestjs/common';\nimport { Queue } from 'bullmq';\n\nimport { JiraChangelogModel } from '@modules/jira/db/jira-changelog.model';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport { JiraIssueModel } from '@modules/jira/db/jira-issues.model';\nimport { JiraProjectModel } from '@modules/jira/db/jira-projects.model';\nimport { JiraSprintModel } from '@modules/jira/db/jira-sprints.model';\nimport { JiraWorklogModel } from '@modules/jira/db/jira-worklogs.model';\nimport { JiraApiService } from '@modules/jira/jira-api.service';\nimport { IJiraApiIssue } from '@modules/jira/types/jira-api.interface';\nimport { IJiraIssueBase } from '@modules/jira/types/jira-installation.interface';\n\nconst THREE_YEARS_MS = 3 * 365 * 24 * 60 * 60 * 1000;\n\n@Injectable()\nexport class JiraSyncService {\n\tprivate readonly logger = new Logger(JiraSyncService.name);\n\n\tconstructor(\n\t\tprivate readonly installationModel: JiraInstallationModel,\n\t\tprivate readonly projectModel: JiraProjectModel,\n\t\tprivate readonly issueModel: JiraIssueModel,\n\t\tprivate readonly changelogModel: JiraChangelogModel,\n\t\tprivate readonly worklogModel: JiraWorklogModel,\n\t\tprivate readonly sprintModel: JiraSprintModel,\n\t\tprivate readonly jiraApiService: JiraApiService,\n\t\t@InjectQueue('jira') private readonly jiraQueue: Queue,\n\t) {}\n\n\tasync discoverProjects({ installationDbId }: { installationDbId: string }): Promise<void> {\n\t\tconst installation = await this.installationModel.findById({ id: installationDbId });\n\n\t\tif (!installation) {\n\t\t\tthis.logger.warn(`Installation ${installationDbId} not found`);\n\t\t\treturn;\n\t\t}\n\n\t\tconst token = await this.jiraApiService.getValidToken({ installation […]
+  "prompt": "You are implementing Task 7 of the Jira integration: JiraSyncService (the core sync logic).\n\n## Context\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-6\n\n## Codebase conventions (CRITICAL)\n\n- No comments in code\n- No relative imports — `@modules/*`, `@constants/*` aliases\n- TypeScript strict\n- No `console.log` — Logger only\n- All methods: single object destructuring parameter\n\n## Create file: `src/modules/jira/jira-sync.service.ts`\n\nWrite this exactly:\n\n```typescript\nimport { InjectQueue } from '@nestjs/bullmq';\nimport { Injectable, Logger } from '@nestjs/common';\nimport { Queue } from 'bullmq';\n\nimport { JiraChangelogModel } from '@modules/jira/db/jira-changelog.model';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport { JiraIssueModel } from '@modules/jira/db/jira-issues.model';\nimport { JiraProjectModel } from '@modules/jira/db/jira-projects.model';\nimport { JiraSprintModel } from '@modules/jira/db/jira-sprints.model';\nimport { JiraWorklogModel } from '@modules/jira/db/jira-worklogs.model';\nimport { JiraApiService } from '@modules/jira/jira-api.service';\nimport { IJiraApiIssue } from '@modules/jira/types/jira-api.interface';\nimport { IJiraIssueBase } from '@modules/jira/types/jira-installation.interface';\n\nconst THREE_YEARS_MS = 3 * 365 * 24 * 60 * 60 * 1000;\n\n@Injectable()\nexport class JiraSyncService {\n\tprivate readonly logger = new Logger(JiraSyncService.name);\n\n\tconstructor(\n\t\tprivate readonly installationModel: JiraInstallationModel,\n\t\tprivate readonly projectModel: JiraProjectModel,\n\t\tprivate readonly issueModel: JiraIssueModel,\n\t\tprivate readonly changelogModel: JiraChangelogModel,\n\t\tprivate readonly worklogModel: JiraWorklogModel,\n\t\tprivate readonly sprintModel: JiraSprintModel,\n\t\tprivate readonly jiraApiService: JiraApiService,\n\t\t@InjectQueue('jira') private readonly jiraQueue: Queue,\n\t) {}\n\n\tasync discoverProjects({ installationDbId }: { installationDbId: string }): Promise<void> {\n\t\tconst installation = await this.installationModel.findById({ id: installationDbId });\n\n\t\tif (!installation) {\n\t\t\tthis.logger.warn(`Installation ${installationDbId} not found`);\n\t\t\treturn;\n\t\t}\n\n\t\tconst token = await this.jiraApiService.getValidToken({ installation […]
 
 > TOOL
 
@@ -7421,7 +7421,7 @@ Perfect! The file has been successfully created with all the required features:
 I've successfully implemented **Task 7: JiraSyncService** with all the core sync logic:
 
 ### File Created
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-sync.service.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-sync.service.ts`
 
 ### Implementation Details
 
@@ -7541,7 +7541,7 @@ tool_use Read
 id: toolu_01LGsYWsLDKNRmpTZTF9NaMF
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 200,
   "offset": 2208
 }
@@ -7620,7 +7620,7 @@ id: toolu_01UJp7zY45ipWumE3UiJnNUF
 {
   "description": "Task 8: JiraProcessor",
   "subagent_type": "nestjs-agent",
-  "prompt": "You are implementing Task 8 of the Jira integration: JiraProcessor (BullMQ WorkerHost).\n\n## Context\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-7\n\nBefore writing, read the existing GitHub processor to understand the WorkerHost pattern:\n- Look in `src/modules/github/` for a `*processor*` file\n\n## Codebase conventions\n\n- No comments in code\n- No relative imports — `@modules/*` aliases\n- TypeScript strict\n- No `console.log` — Logger only\n\n## Create file: `src/modules/jira/jira-processor.service.ts`\n\n```typescript\nimport { Processor, WorkerHost, OnWorkerEvent } from '@nestjs/bullmq';\nimport { Logger } from '@nestjs/common';\nimport { Job } from 'bullmq';\n\nimport { JiraSyncService } from '@modules/jira/jira-sync.service';\nimport {\n\tIDiscoverProjectsJob,\n\tIPollInstallationsJob,\n\tISyncProjectJob,\n} from '@modules/jira/types/jira-sync.interface';\n\n@Processor('jira')\nexport class JiraProcessor extends WorkerHost {\n\tprivate readonly logger = new Logger(JiraProcessor.name);\n\n\tconstructor(private readonly syncService: JiraSyncService) {\n\t\tsuper();\n\t}\n\n\tasync process(\n\t\tjob: Job<IDiscoverProjectsJob | ISyncProjectJob | IPollInstallationsJob>,\n\t): Promise<void> {\n\t\ttry {\n\t\t\tif (job.name === 'poll_installations') {\n\t\t\t\tawait this.syncService.pollAllInstallations();\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tif (job.name === 'discover_projects') {\n\t\t\t\tconst data = job.data as IDiscoverProjectsJob;\n\t\t\t\tawait this.syncService.discoverProjects({\n\t\t\t\t\tinstallationDbId: data.installationDbId,\n\t\t\t\t});\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tif (job.name === 'sync_project') {\n\t\t\t\tconst data = job.data as ISyncProjectJob;\n\t\t\t\tawait this.syncService.syncProject({\n\t\t\t\t\tinstallationDbId: data.installationDbId,\n\t\t\t\t\tprojectDbId: data.projectDbId,\n\t\t\t\t\tprojectKey: data.projectKey,\n\t\t\t\t});\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tthis.logger.warn(`Unknown job type: ${job.name}`);\n\t\t} catch (error) {\n\t\t\tthis.logger.error(\n\t\t\t\t`Job ${job.name} (${job.id}) failed: ${(error as Error).message}`,\n\t\t\t);\n\t\t\tthrow error;\n\t\t}\n\t}\n\n\t@OnWorkerEvent('completed')\n\tonCompleted({ id, name }: Job): void {\n\t\tthis.logger.debug(`Job ${name} (${id}) completed`);\n\t}\n}\n```\n\n## Steps\n\n1. Read the GitHub processor file to confirm pattern\n2. Write the file exactly as above\n3. Run `npm run type-check`\n4. Commit:\n```bash\ngit add src/modules/jira/jira-processor.service.ts\ngit commit -m \"feat: add JiraProcessor (BullMQ worker)\"\n```\n\n## […]
+  "prompt": "You are implementing Task 8 of the Jira integration: JiraProcessor (BullMQ WorkerHost).\n\n## Context\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-7\n\nBefore writing, read the existing GitHub processor to understand the WorkerHost pattern:\n- Look in `src/modules/github/` for a `*processor*` file\n\n## Codebase conventions\n\n- No comments in code\n- No relative imports — `@modules/*` aliases\n- TypeScript strict\n- No `console.log` — Logger only\n\n## Create file: `src/modules/jira/jira-processor.service.ts`\n\n```typescript\nimport { Processor, WorkerHost, OnWorkerEvent } from '@nestjs/bullmq';\nimport { Logger } from '@nestjs/common';\nimport { Job } from 'bullmq';\n\nimport { JiraSyncService } from '@modules/jira/jira-sync.service';\nimport {\n\tIDiscoverProjectsJob,\n\tIPollInstallationsJob,\n\tISyncProjectJob,\n} from '@modules/jira/types/jira-sync.interface';\n\n@Processor('jira')\nexport class JiraProcessor extends WorkerHost {\n\tprivate readonly logger = new Logger(JiraProcessor.name);\n\n\tconstructor(private readonly syncService: JiraSyncService) {\n\t\tsuper();\n\t}\n\n\tasync process(\n\t\tjob: Job<IDiscoverProjectsJob | ISyncProjectJob | IPollInstallationsJob>,\n\t): Promise<void> {\n\t\ttry {\n\t\t\tif (job.name === 'poll_installations') {\n\t\t\t\tawait this.syncService.pollAllInstallations();\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tif (job.name === 'discover_projects') {\n\t\t\t\tconst data = job.data as IDiscoverProjectsJob;\n\t\t\t\tawait this.syncService.discoverProjects({\n\t\t\t\t\tinstallationDbId: data.installationDbId,\n\t\t\t\t});\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tif (job.name === 'sync_project') {\n\t\t\t\tconst data = job.data as ISyncProjectJob;\n\t\t\t\tawait this.syncService.syncProject({\n\t\t\t\t\tinstallationDbId: data.installationDbId,\n\t\t\t\t\tprojectDbId: data.projectDbId,\n\t\t\t\t\tprojectKey: data.projectKey,\n\t\t\t\t});\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tthis.logger.warn(`Unknown job type: ${job.name}`);\n\t\t} catch (error) {\n\t\t\tthis.logger.error(\n\t\t\t\t`Job ${job.name} (${job.id}) failed: ${(error as Error).message}`,\n\t\t\t);\n\t\t\tthrow error;\n\t\t}\n\t}\n\n\t@OnWorkerEvent('completed')\n\tonCompleted({ id, name }: Job): void {\n\t\tthis.logger.debug(`Job ${name} (${id}) completed`);\n\t}\n}\n```\n\n## Steps\n\n1. Read the GitHub processor file to confirm pattern\n2. Write the file exactly as above\n3. Run `npm run type-check`\n4. Commit:\n```bash\ngit add src/modules/jira/jira-processor.service.ts\ngit commit -m \"feat: add JiraProcessor (BullMQ worker)\"\n```\n\n## […]
 
 > TOOL
 
@@ -7646,7 +7646,7 @@ I've completed Task 8 of the Jira integration by:
 
 The processor is now ready to handle async job processing for Jira installations, project discovery, and synchronization through the BullMQ queue system.
 
-File created: `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-processor.service.ts`
+File created: `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-processor.service.ts`
 
 **STATUS: DONE**
 agentId: a25c87e7c56ad9831 (use SendMessage with to: 'a25c87e7c56ad9831' to continue this agent)
@@ -7754,7 +7754,7 @@ id: toolu_018FC3k7U7ZDYADKuMZbZhAo
 {
   "description": "Task 9: JiraModule + app wiring",
   "subagent_type": "nestjs-agent",
-  "prompt": "You are implementing Task 9 of the Jira integration: create JiraModule and wire it into AppModule.\n\n## Context\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-8 — all Jira services, models, processor, controller exist\n\nBefore writing, read:\n- `src/modules/github/github.module.ts` — to understand how the GitHub module is structured (BullMQ, models, services, etc.)\n- `src/modules/app/app.module.ts` — to see exactly where to add JiraModule\n\n## Codebase conventions\n\n- No comments in code\n- No relative imports — `@modules/*` aliases\n- TypeScript strict\n\n## Create File 1: `src/modules/jira/jira.module.ts`\n\n```typescript\nimport { HttpModule } from '@nestjs/axios';\nimport { BullModule } from '@nestjs/bullmq';\nimport { Module, OnModuleInit } from '@nestjs/common';\nimport { InjectQueue } from '@nestjs/bullmq';\nimport { Queue } from 'bullmq';\n\nimport { CacheModule } from '@modules/cache/cache.module';\nimport { DbModule } from '@modules/db/db.module';\nimport { EnvConfigModule } from '@modules/env-config/env-config.module';\nimport { JiraChangelogModel } from '@modules/jira/db/jira-changelog.model';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport { JiraIssueModel } from '@modules/jira/db/jira-issues.model';\nimport { JiraProjectModel } from '@modules/jira/db/jira-projects.model';\nimport { JiraSprintModel } from '@modules/jira/db/jira-sprints.model';\nimport { JiraWorklogModel } from '@modules/jira/db/jira-worklogs.model';\nimport { JiraApiService } from '@modules/jira/jira-api.service';\nimport { JiraInstallService } from '@modules/jira/jira-install.service';\nimport { JiraProcessor } from '@modules/jira/jira-processor.service';\nimport { JiraSyncService } from '@modules/jira/jira-sync.service';\nimport { JiraController } from '@modules/jira/jira.controller';\n\nconst TWELVE_HOURS_MS = 12 * 60 * 60 * 1000;\n\n@Module({\n\timports: [\n\t\tHttpModule,\n\t\tCacheModule,\n\t\tDbModule,\n\t\tEnvConfigModule,\n\t\tBullModule.registerQueue({ name: 'jira' }),\n\t],\n\tcontrollers: [JiraController],\n\tproviders: […]
+  "prompt": "You are implementing Task 9 of the Jira integration: create JiraModule and wire it into AppModule.\n\n## Context\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-8 — all Jira services, models, processor, controller exist\n\nBefore writing, read:\n- `src/modules/github/github.module.ts` — to understand how the GitHub module is structured (BullMQ, models, services, etc.)\n- `src/modules/app/app.module.ts` — to see exactly where to add JiraModule\n\n## Codebase conventions\n\n- No comments in code\n- No relative imports — `@modules/*` aliases\n- TypeScript strict\n\n## Create File 1: `src/modules/jira/jira.module.ts`\n\n```typescript\nimport { HttpModule } from '@nestjs/axios';\nimport { BullModule } from '@nestjs/bullmq';\nimport { Module, OnModuleInit } from '@nestjs/common';\nimport { InjectQueue } from '@nestjs/bullmq';\nimport { Queue } from 'bullmq';\n\nimport { CacheModule } from '@modules/cache/cache.module';\nimport { DbModule } from '@modules/db/db.module';\nimport { EnvConfigModule } from '@modules/env-config/env-config.module';\nimport { JiraChangelogModel } from '@modules/jira/db/jira-changelog.model';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport { JiraIssueModel } from '@modules/jira/db/jira-issues.model';\nimport { JiraProjectModel } from '@modules/jira/db/jira-projects.model';\nimport { JiraSprintModel } from '@modules/jira/db/jira-sprints.model';\nimport { JiraWorklogModel } from '@modules/jira/db/jira-worklogs.model';\nimport { JiraApiService } from '@modules/jira/jira-api.service';\nimport { JiraInstallService } from '@modules/jira/jira-install.service';\nimport { JiraProcessor } from '@modules/jira/jira-processor.service';\nimport { JiraSyncService } from '@modules/jira/jira-sync.service';\nimport { JiraController } from '@modules/jira/jira.controller';\n\nconst TWELVE_HOURS_MS = 12 * 60 * 60 * 1000;\n\n@Module({\n\timports: [\n\t\tHttpModule,\n\t\tCacheModule,\n\t\tDbModule,\n\t\tEnvConfigModule,\n\t\tBullModule.registerQueue({ name: 'jira' }),\n\t],\n\tcontrollers: [JiraController],\n\tproviders: […]
 
 > TOOL
 
@@ -7763,12 +7763,12 @@ id: toolu_018FC3k7U7ZDYADKuMZbZhAo
 ```
 Done. Summary of what was done:
 
-**Created** `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira.module.ts`
+**Created** `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira.module.ts`
 - Merged the two separate `@nestjs/bullmq` imports (`BullModule`, `InjectQueue`) into a single import line to satisfy the `import/no-duplicates` ESLint rule (the spec as given had them split)
 - Registers all 6 Jira DB models, 3 services, processor, and controller
 - Implements `OnModuleInit` to schedule the `poll_installations` repeating BullMQ job every 12 hours on startup
 
-**Modified** `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/app/app.module.ts`
+**Modified** `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/app/app.module.ts`
 - Added `import { JiraModule } from '@modules/jira/jira.module'` in alphabetical order (between `InvitationModule` and `SessionModule`)
 - Added `JiraModule` to the imports array after `GithubModule`
 
@@ -7788,7 +7788,7 @@ id: toolu_01DaqMeXkGpucFsnXRPZwzNr
 ```json
 {
   "pattern": "JiraModule",
-  "path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/app/app.module.ts",
+  "path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/app/app.module.ts",
   "output_mode": "content"
 }
 ```
@@ -7872,9 +7872,9 @@ No issues detected:
 - Clean constant extraction (TWELVE_HOURS_MS) for readability ✅
 
 **Files reviewed:**
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira.module.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/app/app.module.ts`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/github/github.module.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira.module.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/app/app.module.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/github/github.module.ts`
 agentId: a4532c47e7ef1ef34 (use SendMessage with to: 'a4532c47e7ef1ef34' to continue this agent)
 <usage>total_tokens: 49723
 tool_uses: 3
@@ -7933,7 +7933,7 @@ tool_use Read
 id: toolu_01MGMuH8KFvf8VcKZnm7jE5m
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 500,
   "offset": 2393
 }
@@ -7998,7 +7998,7 @@ tool_use Read
 id: toolu_01BKpjidXghpSkL32rBdjQUK
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 200,
   "offset": 2893
 }
@@ -8077,7 +8077,7 @@ tool_use Read
 id: toolu_018MrtsJagnCfhejLKeMDUez
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "limit": 150,
   "offset": 3093
 }
@@ -8159,7 +8159,7 @@ id: toolu_01XXoKvhRedhJV8N1FxxJppF
 {
   "description": "Task 10: Unit tests for Jira services",
   "subagent_type": "test-agent",
-  "prompt": "You are implementing Task 10 of the Jira integration: create 4 unit test files.\n\n## Context\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-9\n\nUnit tests go in `src/unit-tests/` with `*.unit-spec.ts` extension. Run with `npm run test:unit`.\n\nBefore writing, read an existing unit test for reference patterns:\n- `src/unit-tests/github-install.service.unit-spec.ts` or similar\n\n## Create 4 files\n\n### File 1: `src/unit-tests/jira-install.service.unit-spec.ts`\n\n```typescript\nimport { BadRequestException, Logger } from '@nestjs/common';\nimport { getQueueToken } from '@nestjs/bullmq';\nimport { Test, TestingModule } from '@nestjs/testing';\n\nimport { CacheService } from '@modules/cache/cache.service';\nimport { Namespaces } from '@modules/cache/types/cache.interface';\nimport { EnvConfigService } from '@modules/env-config/env-config.service';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport { JiraApiService } from '@modules/jira/jira-api.service';\nimport { JiraInstallService } from '@modules/jira/jira-install.service';\nimport {\n\tIJiraInstallationBase,\n\tJiraInstallationStatus,\n} from '@modules/jira/types/jira-installation.interface';\n\nconst mockInstallation: IJiraInstallationBase = {\n\t_id: 'install-uuid-1',\n\tcompany_id: 'company-uuid-1',\n\tcloud_id: 'cloud-abc123',\n\tsite_url: 'https://acme.atlassian.net',\n\taccess_token: 'access-token',\n\trefresh_token: 'refresh-token',\n\ttoken_expires_at: new Date(Date.now() + 3600000),\n\tstatus: JiraInstallationStatus.ACTIVE,\n\tcreated_at: new Date(),\n\tupdated_at: new Date(),\n};\n\nconst mockConfigService = { get: jest.fn() };\nconst mockCacheService = { get: jest.fn(), set: jest.fn(), deleteOne: jest.fn() };\nconst mockJiraApiService = {\n\texchangeCode: jest.fn(),\n\tgetAccessibleResources: jest.fn(),\n};\nconst mockInstallationModel = { create: jest.fn(), markUninstalled: jest.fn() };\nconst mockQueue = { add: jest.fn() };\n\ndescribe('JiraInstallService', () => {\n\tlet service: JiraInstallService;\n\n\tbeforeEach(async () => {\n\t\tjest.clearAllMocks();\n\n\t\tconst module: TestingModule = await Test.createTestingModule({\n\t\t\tproviders: [\n\t\t\t\tJiraInstallService,\n\t\t\t\t{ provide: EnvConfigService, useValue: mockConfigService },\n\t\t\t\t{ provide: CacheService, useValue: mockCacheService },\n\t\t\t\t{ provide: JiraApiService, useValue: mockJiraApiService […]
+  "prompt": "You are implementing Task 10 of the Jira integration: create 4 unit test files.\n\n## Context\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\nBranch: `main`\nAlready done: Tasks 1-9\n\nUnit tests go in `src/unit-tests/` with `*.unit-spec.ts` extension. Run with `npm run test:unit`.\n\nBefore writing, read an existing unit test for reference patterns:\n- `src/unit-tests/github-install.service.unit-spec.ts` or similar\n\n## Create 4 files\n\n### File 1: `src/unit-tests/jira-install.service.unit-spec.ts`\n\n```typescript\nimport { BadRequestException, Logger } from '@nestjs/common';\nimport { getQueueToken } from '@nestjs/bullmq';\nimport { Test, TestingModule } from '@nestjs/testing';\n\nimport { CacheService } from '@modules/cache/cache.service';\nimport { Namespaces } from '@modules/cache/types/cache.interface';\nimport { EnvConfigService } from '@modules/env-config/env-config.service';\nimport { JiraInstallationModel } from '@modules/jira/db/jira-installations.model';\nimport { JiraApiService } from '@modules/jira/jira-api.service';\nimport { JiraInstallService } from '@modules/jira/jira-install.service';\nimport {\n\tIJiraInstallationBase,\n\tJiraInstallationStatus,\n} from '@modules/jira/types/jira-installation.interface';\n\nconst mockInstallation: IJiraInstallationBase = {\n\t_id: 'install-uuid-1',\n\tcompany_id: 'company-uuid-1',\n\tcloud_id: 'cloud-abc123',\n\tsite_url: 'https://acme.atlassian.net',\n\taccess_token: 'access-token',\n\trefresh_token: 'refresh-token',\n\ttoken_expires_at: new Date(Date.now() + 3600000),\n\tstatus: JiraInstallationStatus.ACTIVE,\n\tcreated_at: new Date(),\n\tupdated_at: new Date(),\n};\n\nconst mockConfigService = { get: jest.fn() };\nconst mockCacheService = { get: jest.fn(), set: jest.fn(), deleteOne: jest.fn() };\nconst mockJiraApiService = {\n\texchangeCode: jest.fn(),\n\tgetAccessibleResources: jest.fn(),\n};\nconst mockInstallationModel = { create: jest.fn(), markUninstalled: jest.fn() };\nconst mockQueue = { add: jest.fn() };\n\ndescribe('JiraInstallService', () => {\n\tlet service: JiraInstallService;\n\n\tbeforeEach(async () => {\n\t\tjest.clearAllMocks();\n\n\t\tconst module: TestingModule = await Test.createTestingModule({\n\t\t\tproviders: [\n\t\t\t\tJiraInstallService,\n\t\t\t\t{ provide: EnvConfigService, useValue: mockConfigService },\n\t\t\t\t{ provide: CacheService, useValue: mockCacheService },\n\t\t\t\t{ provide: JiraApiService, useValue: mockJiraApiService […]
 
 > TOOL
 
@@ -8170,10 +8170,10 @@ All 4 files committed successfully. Here's a summary of what was created and one
 
 ## Files Created
 
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-install.service.unit-spec.ts` — 6 tests covering `initiateConnect`, `handleCallback`, and `disconnect`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-api.service.unit-spec.ts` — 5 tests covering `getValidToken` (valid/refresh/refresh-failure) and `listProjects` (pagination)
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts` — 13 tests covering `discoverProjects`, `pollAllInstallations`, and the full `syncProject` path including changelogs, worklogs, sprint pagination, and pagination of issues
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-processor.service.unit-spec.ts` — 7 tests covering all 3 job types, error propagation, unknown job warning, and `onCompleted`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-install.service.unit-spec.ts` — 6 tests covering `initiateConnect`, `handleCallback`, and `disconnect`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-api.service.unit-spec.ts` — 5 tests covering `getValidToken` (valid/refresh/refresh-failure) and `listProjects` (pagination)
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts` — 13 tests covering `discoverProjects`, `pollAllInstallations`, and the full `syncProject` path including changelogs, worklogs, sprint pagination, and pagination of issues
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-processor.service.unit-spec.ts` — 7 tests covering all 3 job types, error propagation, unknown job warning, and `onCompleted`
 
 ## Key Fix Applied
 
@@ -8198,7 +8198,7 @@ tool_use Read
 id: toolu_01SjX9SwRJQEMJMw1xQmZPDK
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-github-phase2-data-ingestion.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-github-phase2-data-ingestion.md",
   "offset": 1,
   "limit": 50
 }
@@ -8248,7 +8248,7 @@ id: toolu_018BDvCMkLpV47RDjct3b3HP
 ```json
 {
   "pattern": "docs/superpowers/plans/*.md",
-  "path": "/Users/4thwithme/Documents/repo/no-name-proj"
+  "path": "/home/<USER>/Documents/repo/no-name-proj"
 }
 ```
 
@@ -8267,7 +8267,7 @@ id: toolu_01Y9SPjwhr4KavbE2BwFXw7e
 ```json
 {
   "pattern": "docs/superpowers/plans/**/*.md",
-  "path": "/Users/4thwithme/Documents/repo/no-name-proj"
+  "path": "/home/<USER>/Documents/repo/no-name-proj"
 }
 ```
 
@@ -8285,7 +8285,7 @@ tool_use Bash
 id: toolu_015fPFEUajgWFEhbegWJDCoc
 ```json
 {
-  "command": "find /Users/4thwithme/Documents/repo/no-name-proj/docs -name \"*.md\" 2>/dev/null | head -20",
+  "command": "find /home/<USER>/Documents/repo/no-name-proj/docs -name \"*.md\" 2>/dev/null | head -20",
   "description": "Find all markdown files in docs directory"
 }
 ```
@@ -8295,21 +8295,21 @@ id: toolu_015fPFEUajgWFEhbegWJDCoc
 tool_result
 id: toolu_015fPFEUajgWFEhbegWJDCoc
 ```
-/Users/4thwithme/Documents/repo/no-name-proj/docs/product.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/features/metrics-catalog.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/integrations/jira-api.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/integrations/github-api.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/architecture/overview.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-github-phase2-data-ingestion.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-14-github-app-integration.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-12-csrf-protection.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-03-22-auth-implementation.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-14-github-app-integration-design.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-03-22-auth-design.md
-/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-12-csrf-protection-design.md
+/home/<USER>/Documents/repo/no-name-proj/docs/product.md
+/home/<USER>/Documents/repo/no-name-proj/docs/features/metrics-catalog.md
+/home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md
+/home/<USER>/Documents/repo/no-name-proj/docs/integrations/jira-api.md
+/home/<USER>/Documents/repo/no-name-proj/docs/integrations/github-api.md
+/home/<USER>/Documents/repo/no-name-proj/docs/architecture/overview.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-github-phase2-data-ingestion.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-14-github-app-integration.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-12-csrf-protection.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-03-22-auth-implementation.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-16-jira-integration-design.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-14-github-app-integration-design.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-03-22-auth-design.md
+/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/specs/2026-04-12-csrf-protection-design.md
 ```
 
 > TOOL
@@ -8318,7 +8318,7 @@ tool_use Bash
 id: toolu_01VdP9qWTygXa8S22w68oKdZ
 ```json
 {
-  "command": "grep -n \"Task 10\\|Task 11\\|Post-Jira\\|GitHub backfill\\|E2E test\\|e2e\" /Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md | head -40",
+  "command": "grep -n \"Task 10\\|Task 11\\|Post-Jira\\|GitHub backfill\\|E2E test\\|e2e\" /home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md | head -40",
   "description": "Find task sections in Jira plan"
 }
 ```
@@ -8357,7 +8357,7 @@ tool_use Read
 id: toolu_01Dkn5B5XRVqwuxauRtMmWKB
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "offset": 2394,
   "limit": 200
 }
@@ -8422,7 +8422,7 @@ tool_use Bash
 id: toolu_01REoxFHvBikHr2n8oUQ9VMY
 ```json
 {
-  "command": "ls /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira*.unit-spec.ts 2>/dev/null",
+  "command": "ls /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira*.unit-spec.ts 2>/dev/null",
   "description": "List Jira unit test files"
 }
 ```
@@ -8432,10 +8432,10 @@ id: toolu_01REoxFHvBikHr2n8oUQ9VMY
 tool_result
 id: toolu_01REoxFHvBikHr2n8oUQ9VMY
 ```
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-api.service.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-install.service.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-processor.service.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-api.service.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-install.service.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-processor.service.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts
 ```
 
 > TOOL
@@ -8444,7 +8444,7 @@ tool_use Read
 id: toolu_013GQfqwmwTY2TWaLvvRtGmT
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-jira-integration.md",
   "offset": 2990,
   "limit": 220
 }
@@ -8563,7 +8563,7 @@ id: toolu_017jbXt57HmzN7C4Xo2zzVBp
 {
   "description": "Fix 2 missing test cases in jira-sync.service.unit-spec.ts",
   "subagent_type": "test-agent",
-  "prompt": "Fix two missing test cases in `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts`.\n\n## Context\n\nThis is a NestJS + Knex + BullMQ codebase. The file tests `JiraSyncService`. The test file already exists with passing tests. You need to ADD two missing tests without breaking existing ones.\n\nRead the current test file first, then add the two missing cases.\n\n## Missing test 1: `discoverProjects — handles empty project list`\n\nThe spec requires: when `listProjects` returns `[]`, no `sync_project` jobs should be enqueued.\n\nAdd a test to the existing `describe('discoverProjects')` block:\n\n```typescript\nit('should not enqueue any jobs when project list is empty', async () => {\n  mockJiraApiService.listProjects.mockResolvedValue([]);\n  mockJiraInstallationModel.findAllActive.mockResolvedValue([mockInstallation]);\n\n  await service.discoverProjects({ installationDbId: mockInstallation._id });\n\n  expect(mockQueue.add).not.toHaveBeenCalled();\n});\n```\n\nNote: `discoverProjects` calls `upsertMany` with the API results, then calls `findByInstallationId` to get DB projects to enqueue. When `listProjects` returns `[]`, `upsertMany` is called with `[]` (no-op), then `findByInstallationId` should return `[]` too — so nothing gets enqueued. Make sure the mock for `findByInstallationId` returns `[]` in this test (override the default mock for this test using `mockResolvedValueOnce` or set it explicitly in the test body). Check the existing mocks for `mockJiraProjectModel.findByInstallationId` in the file and ensure this test overrides it to return `[]`.\n\n## Missing […]
+  "prompt": "Fix two missing test cases in `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts`.\n\n## Context\n\nThis is a NestJS + Knex + BullMQ codebase. The file tests `JiraSyncService`. The test file already exists with passing tests. You need to ADD two missing tests without breaking existing ones.\n\nRead the current test file first, then add the two missing cases.\n\n## Missing test 1: `discoverProjects — handles empty project list`\n\nThe spec requires: when `listProjects` returns `[]`, no `sync_project` jobs should be enqueued.\n\nAdd a test to the existing `describe('discoverProjects')` block:\n\n```typescript\nit('should not enqueue any jobs when project list is empty', async () => {\n  mockJiraApiService.listProjects.mockResolvedValue([]);\n  mockJiraInstallationModel.findAllActive.mockResolvedValue([mockInstallation]);\n\n  await service.discoverProjects({ installationDbId: mockInstallation._id });\n\n  expect(mockQueue.add).not.toHaveBeenCalled();\n});\n```\n\nNote: `discoverProjects` calls `upsertMany` with the API results, then calls `findByInstallationId` to get DB projects to enqueue. When `listProjects` returns `[]`, `upsertMany` is called with `[]` (no-op), then `findByInstallationId` should return `[]` too — so nothing gets enqueued. Make sure the mock for `findByInstallationId` returns `[]` in this test (override the default mock for this test using `mockResolvedValueOnce` or set it explicitly in the test body). Check the existing mocks for `mockJiraProjectModel.findByInstallationId` in the file and ensure this test overrides it to return `[]`.\n\n## Missing […]
 
 > TOOL
 
@@ -8580,7 +8580,7 @@ Two adjustments were made from the provided snippets before the tests compiled:
 
 2. The `syncProject` backfill JQL test had `projectId` in the call signature, but the method's TypeScript type only accepts `{ installationDbId, projectDbId, projectKey }` — that field was removed.
 
-Modified file: `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts`
+Modified file: `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts`
 agentId: a9212c86f7cc8c5b5 (use SendMessage with to: 'a9212c86f7cc8c5b5' to continue this agent)
 <usage>total_tokens: 29989
 tool_uses: 8
@@ -8593,7 +8593,7 @@ tool_use Read
 id: toolu_01Remtxuhc9kgtZf4ACKtKDJ
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
   "offset": 458,
   "limit": 10
 }
@@ -8622,7 +8622,7 @@ tool_use Bash
 id: toolu_01MN2SeL85JXZeAFaDJABSCf
 ```json
 {
-  "command": "grep -n \"projectId\" /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
+  "command": "grep -n \"projectId\" /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
   "description": "Find projectId usage in test file"
 }
 ```
@@ -8641,7 +8641,7 @@ tool_use Read
 id: toolu_01VvL31a7uRiRNG34z1v4Lah
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
   "offset": 158,
   "limit": 15
 }
@@ -8675,7 +8675,7 @@ tool_use Bash
 id: toolu_01QmbaPfZ7xPUBmRV6ePJG8E
 ```json
 {
-  "command": "grep -n \"ISyncProjectJob\\|syncProject\" /Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-sync.interface.ts",
+  "command": "grep -n \"ISyncProjectJob\\|syncProject\" /home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-sync.interface.ts",
   "description": "Check ISyncProjectJob type"
 }
 ```
@@ -8694,7 +8694,7 @@ tool_use Read
 id: toolu_01TkvFaT6PaTYViqTGmnVua1
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-sync.interface.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/types/jira-sync.interface.ts"
 }
 ```
 
@@ -8726,7 +8726,7 @@ tool_use Read
 id: toolu_01AZjrmcu8sGY6HFDJ2HQPVp
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
   "offset": 440,
   "limit": 40
 }
@@ -8785,7 +8785,7 @@ tool_use Bash
 id: toolu_01Xxwkpt446KKsWUfGjJLgq4
 ```json
 {
-  "command": "grep -n \"syncProject\\|ISyncProjectJob\" /Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-sync.service.ts | head -10",
+  "command": "grep -n \"syncProject\\|ISyncProjectJob\" /home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-sync.service.ts | head -10",
   "description": "Check syncProject method signature"
 }
 ```
@@ -8804,7 +8804,7 @@ tool_use Read
 id: toolu_016aW4JZmo3s5b9Lr3ZEW2JZ
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-sync.service.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-sync.service.ts",
   "offset": 70,
   "limit": 10
 }
@@ -8833,7 +8833,7 @@ tool_use Bash
 id: toolu_01EXH1NWHYePXBUCtcJDjszW
 ```json
 {
-  "command": "grep -n \"projectId\\|syncProject\" /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
+  "command": "grep -n \"projectId\\|syncProject\" /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts",
   "description": "Find all projectId and syncProject usages"
 }
 ```
@@ -8908,7 +8908,7 @@ id: toolu_01PJMhPadtow6n6ASDehkx6Q
 {
   "description": "Code quality review for Task 10 (Jira unit tests)",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "You are a code quality reviewer. Your job is to assess whether the implementation is well-written, follows project conventions, and has no significant quality issues. Report APPROVED or NOT APPROVED with specifics.\n\n## Context\n\nNestJS v11 backend, TypeScript strict, Jest unit tests. Codebase conventions:\n- No comments in code (except ESLint disable)\n- No relative imports (use @aliases)\n- Single object destructuring parameter on custom functions\n- NestJS Logger (no console.log)\n- Mocks: `jest.clearAllMocks()` in `afterEach`\n- Test files live in `src/unit-tests/*.unit-spec.ts`\n\n## What to review\n\nThe 4 Jira unit test files:\n- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-install.service.unit-spec.ts`\n- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-api.service.unit-spec.ts`\n- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts`\n- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-processor.service.unit-spec.ts`\n\nAlso run: `cd /Users/4thwithme/Documents/repo/no-name-proj/backend && npm run test:unit -- --testPathPattern=jira`\n\n## What to check\n\n1. Imports use @aliases (no relative paths)\n2. `jest.clearAllMocks()` (or `jest.resetAllMocks()`) in afterEach\n3. Logger spies silenced in beforeEach\n4. No `console.log` calls\n5. Tests are isolated — no shared state leaking between tests\n6. Mock names are consistent throughout each file\n7. Tests actually assert behavior (not just \"it was called\" with no assertion)\n8. All tests pass\n\n## Report format\n\n- Test run result (pass/fail, count)\n- Per file: PASS or issues found\n- Final: APPROVED or NOT APPROVED"
+  "prompt": "You are a code quality reviewer. Your job is to assess whether the implementation is well-written, follows project conventions, and has no significant quality issues. Report APPROVED or NOT APPROVED with specifics.\n\n## Context\n\nNestJS v11 backend, TypeScript strict, Jest unit tests. Codebase conventions:\n- No comments in code (except ESLint disable)\n- No relative imports (use @aliases)\n- Single object destructuring parameter on custom functions\n- NestJS Logger (no console.log)\n- Mocks: `jest.clearAllMocks()` in `afterEach`\n- Test files live in `src/unit-tests/*.unit-spec.ts`\n\n## What to review\n\nThe 4 Jira unit test files:\n- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-install.service.unit-spec.ts`\n- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-api.service.unit-spec.ts`\n- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts`\n- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-processor.service.unit-spec.ts`\n\nAlso run: `cd /home/<USER>/Documents/repo/no-name-proj/backend && npm run test:unit -- --testPathPattern=jira`\n\n## What to check\n\n1. Imports use @aliases (no relative paths)\n2. `jest.clearAllMocks()` (or `jest.resetAllMocks()`) in afterEach\n3. Logger spies silenced in beforeEach\n4. No `console.log` calls\n5. Tests are isolated — no shared state leaking between tests\n6. Mock names are consistent throughout each file\n7. Tests actually assert behavior (not just \"it was called\" with no assertion)\n8. All tests pass\n\n## Report format\n\n- Test run result (pass/fail, count)\n- Per file: PASS or issues found\n- Final: APPROVED or NOT APPROVED"
 }
 ```
 
@@ -9021,7 +9021,7 @@ id: toolu_01WPmLnTW7GThjTWJBKd21zV
 {
   "description": "Task 11: E2E tests for JiraController",
   "subagent_type": "test-agent",
-  "prompt": "Implement Task 11 from the Jira integration plan: create an E2E test file for JiraController.\n\n## Working directory\n`/Users/4thwithme/Documents/repo/no-name-proj/backend`\n\n## Codebase conventions\n- No relative imports — use `@aliases` only\n- No comments in code\n- All `@aliases` defined in `tsconfig.json`: `@modules/*`, `@constants/*`, `@config/*`, `@utils/*`, etc.\n- E2E tests live in `test/*.e2e-spec.ts`\n- Uses NestJS `FastifyAdapter` — always call `await app.getHttpAdapter().getInstance().ready()` after `app.init()`\n- `app.setGlobalPrefix('api')` required to match controller routes at `/api/integrations/jira/...`\n\n## Task\n\n**Files:**\n- Create: `test/jira.controller.e2e-spec.ts`\n\n**Step 1: Write the test file exactly as specified below**\n\n`test/jira.controller.e2e-spec.ts`:\n\n```typescript\nimport { HttpStatus, INestApplication, Logger } from '@nestjs/common';\nimport { Test, TestingModule } from '@nestjs/testing';\nimport { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';\nimport * as request from 'supertest';\n\nimport { AuthGuard } from '@modules/auth/guards/auth.guard';\nimport { RolesGuard } from '@modules/auth/guards/roles.guard';\nimport { EnvConfigService } from '@modules/env-config/env-config.service';\nimport { JiraInstallService } from '@modules/jira/jira-install.service';\nimport { JiraController } from '@modules/jira/jira.controller';\n\nconst mockJiraInstallService = {\n\tinitiateConnect: jest.fn(),\n\thandleCallback: jest.fn(),\n\tdisconnect: jest.fn(),\n};\n\nconst mockConfigService = { get: jest.fn().mockReturnValue('http://localhost:3000') };\n\nconst mockUser = {\n\tuser_id: 'user-uuid-1',\n\tcompany_id: 'company-uuid-1',\n\troles: ['admin'],\n};\n\ndescribe('JiraController (e2e)', () => {\n\tlet app: INestApplication;\n\n\tbeforeAll(async () => {\n\t\tconst moduleFixture: TestingModule = await Test.createTestingModule({\n\t\t\tcontrollers: [JiraController],\n\t\t\tproviders: [\n\t\t\t\t{ provide: JiraInstallService, useValue: mockJiraInstallService },\n\t\t\t\t{ provide: EnvConfigService, useValue: mockConfigService },\n\t\t\t],\n\t\t})\n\t\t\t.overrideGuard(AuthGuard)\n\t\t\t.useValue({\n\t\t\t\tcanActivate: (ctx: unknown) => {\n\t\t\t\t\tconst req = (\n\t\t\t\t\t\tctx as { switchToHttp: () => { getRequest: () => […]
+  "prompt": "Implement Task 11 from the Jira integration plan: create an E2E test file for JiraController.\n\n## Working directory\n`/home/<USER>/Documents/repo/no-name-proj/backend`\n\n## Codebase conventions\n- No relative imports — use `@aliases` only\n- No comments in code\n- All `@aliases` defined in `tsconfig.json`: `@modules/*`, `@constants/*`, `@config/*`, `@utils/*`, etc.\n- E2E tests live in `test/*.e2e-spec.ts`\n- Uses NestJS `FastifyAdapter` — always call `await app.getHttpAdapter().getInstance().ready()` after `app.init()`\n- `app.setGlobalPrefix('api')` required to match controller routes at `/api/integrations/jira/...`\n\n## Task\n\n**Files:**\n- Create: `test/jira.controller.e2e-spec.ts`\n\n**Step 1: Write the test file exactly as specified below**\n\n`test/jira.controller.e2e-spec.ts`:\n\n```typescript\nimport { HttpStatus, INestApplication, Logger } from '@nestjs/common';\nimport { Test, TestingModule } from '@nestjs/testing';\nimport { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';\nimport * as request from 'supertest';\n\nimport { AuthGuard } from '@modules/auth/guards/auth.guard';\nimport { RolesGuard } from '@modules/auth/guards/roles.guard';\nimport { EnvConfigService } from '@modules/env-config/env-config.service';\nimport { JiraInstallService } from '@modules/jira/jira-install.service';\nimport { JiraController } from '@modules/jira/jira.controller';\n\nconst mockJiraInstallService = {\n\tinitiateConnect: jest.fn(),\n\thandleCallback: jest.fn(),\n\tdisconnect: jest.fn(),\n};\n\nconst mockConfigService = { get: jest.fn().mockReturnValue('http://localhost:3000') };\n\nconst mockUser = {\n\tuser_id: 'user-uuid-1',\n\tcompany_id: 'company-uuid-1',\n\troles: ['admin'],\n};\n\ndescribe('JiraController (e2e)', () => {\n\tlet app: INestApplication;\n\n\tbeforeAll(async () => {\n\t\tconst moduleFixture: TestingModule = await Test.createTestingModule({\n\t\t\tcontrollers: [JiraController],\n\t\t\tproviders: [\n\t\t\t\t{ provide: JiraInstallService, useValue: mockJiraInstallService },\n\t\t\t\t{ provide: EnvConfigService, useValue: mockConfigService },\n\t\t\t],\n\t\t})\n\t\t\t.overrideGuard(AuthGuard)\n\t\t\t.useValue({\n\t\t\t\tcanActivate: (ctx: unknown) => {\n\t\t\t\t\tconst req = (\n\t\t\t\t\t\tctx as { switchToHttp: () => { getRequest: () => […]
 
 > TOOL
 
@@ -9032,7 +9032,7 @@ STATUS: DONE
 
 **Test count: 6 tests, all passing**
 
-File created: `/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts`
+File created: `/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts`
 
 **Design decisions made (deviating from the task spec to match project conventions):**
 
@@ -9063,7 +9063,7 @@ id: toolu_01PgAbH5nz7CNcY22hGczxV6
 {
   "description": "Spec compliance review for Task 11 (Jira E2E tests)",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "You are a spec compliance reviewer. Check whether the implementation matches the spec. Report COMPLIANT or NON-COMPLIANT.\n\n## Task 11 Spec\n\nCreate `test/jira.controller.e2e-spec.ts` with 6 tests covering:\n\n1. `POST /api/integrations/jira/connect` — 200 with OAuth URL\n2. `POST /api/integrations/jira/connect` — 500 when service throws\n3. `GET /api/integrations/jira/callback` — 302 redirect with `connected=jira` on success\n4. `GET /api/integrations/jira/callback` — 302 redirect with `error=jira_connect_failed` on failure\n5. `DELETE /api/integrations/jira/installations/:id` — 204 on success, verify `disconnect` called with correct args\n6. `DELETE /api/integrations/jira/installations/:id` — 500 when service throws\n\nThe file was allowed to deviate from the exact code template in the plan, provided the tests cover the same behavior and use proper NestJS E2E patterns (FastifyAdapter, guards overridden or bypassed, user injected into request).\n\n**Note on route paths:** The plan specified `/api/integrations/jira/...` (with global prefix), but the project's existing E2E tests do NOT use `app.setGlobalPrefix`. If the actual implementation tests at `/integrations/jira/...` (without the `api` prefix) and they pass, this is acceptable — the controller path matters, not the prefix convention.\n\n## What to check\n\nRead the file at:\n`/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts`\n\nVerify:\n1. All 6 test cases are present and test the correct HTTP method/path/status codes\n2. The callback success test asserts […]
+  "prompt": "You are a spec compliance reviewer. Check whether the implementation matches the spec. Report COMPLIANT or NON-COMPLIANT.\n\n## Task 11 Spec\n\nCreate `test/jira.controller.e2e-spec.ts` with 6 tests covering:\n\n1. `POST /api/integrations/jira/connect` — 200 with OAuth URL\n2. `POST /api/integrations/jira/connect` — 500 when service throws\n3. `GET /api/integrations/jira/callback` — 302 redirect with `connected=jira` on success\n4. `GET /api/integrations/jira/callback` — 302 redirect with `error=jira_connect_failed` on failure\n5. `DELETE /api/integrations/jira/installations/:id` — 204 on success, verify `disconnect` called with correct args\n6. `DELETE /api/integrations/jira/installations/:id` — 500 when service throws\n\nThe file was allowed to deviate from the exact code template in the plan, provided the tests cover the same behavior and use proper NestJS E2E patterns (FastifyAdapter, guards overridden or bypassed, user injected into request).\n\n**Note on route paths:** The plan specified `/api/integrations/jira/...` (with global prefix), but the project's existing E2E tests do NOT use `app.setGlobalPrefix`. If the actual implementation tests at `/integrations/jira/...` (without the `api` prefix) and they pass, this is acceptable — the controller path matters, not the prefix convention.\n\n## What to check\n\nRead the file at:\n`/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts`\n\nVerify:\n1. All 6 test cases are present and test the correct HTTP method/path/status codes\n2. The callback success test asserts […]
 
 > TOOL
 
@@ -9108,7 +9108,7 @@ id: toolu_01DmTWMa8oAuZaXDYBwTr8pL
 {
   "description": "Code quality review for Task 11 (Jira E2E tests)",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "You are a code quality reviewer for a NestJS TypeScript codebase. Assess the code quality of one E2E test file and report APPROVED or NOT APPROVED.\n\n## Context\n\nNestJS v11, Fastify, TypeScript strict. E2E tests in `test/*.e2e-spec.ts`. \n\nProject conventions for E2E tests:\n- No relative imports — `@aliases` only\n- No `console.log`\n- `jest.clearAllMocks()` in `beforeEach` (project pattern for E2E)\n- FastifyAdapter with `app.getHttpAdapter().getInstance().ready()` after `app.init()`\n- Logger spies silenced\n- `supertest` for HTTP assertions\n\nReference pattern: look at `/Users/4thwithme/Documents/repo/no-name-proj/backend/test/github-install.service.e2e-spec.ts` if you need to compare conventions.\n\n## File to review\n\n`/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts`\n\nAlso run:\n```bash\ncd /Users/4thwithme/Documents/repo/no-name-proj/backend && npm run test:e2e -- --testPathPattern=jira\n```\n\n## What to check\n\n1. All imports use `@aliases` (no relative paths)\n2. No `console.log`\n3. `clearAllMocks` called appropriately\n4. Tests are isolated — app built once in `beforeAll`, mocks cleared between tests\n5. No leaked state between test cases\n6. FastifyAdapter setup is correct\n7. Assertions are meaningful (not just \"did not throw\")\n8. All 6 tests pass\n\n## Report\n\n- Test run result\n- Per-issue findings\n- APPROVED or NOT APPROVED"
+  "prompt": "You are a code quality reviewer for a NestJS TypeScript codebase. Assess the code quality of one E2E test file and report APPROVED or NOT APPROVED.\n\n## Context\n\nNestJS v11, Fastify, TypeScript strict. E2E tests in `test/*.e2e-spec.ts`. \n\nProject conventions for E2E tests:\n- No relative imports — `@aliases` only\n- No `console.log`\n- `jest.clearAllMocks()` in `beforeEach` (project pattern for E2E)\n- FastifyAdapter with `app.getHttpAdapter().getInstance().ready()` after `app.init()`\n- Logger spies silenced\n- `supertest` for HTTP assertions\n\nReference pattern: look at `/home/<USER>/Documents/repo/no-name-proj/backend/test/github-install.service.e2e-spec.ts` if you need to compare conventions.\n\n## File to review\n\n`/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts`\n\nAlso run:\n```bash\ncd /home/<USER>/Documents/repo/no-name-proj/backend && npm run test:e2e -- --testPathPattern=jira\n```\n\n## What to check\n\n1. All imports use `@aliases` (no relative paths)\n2. No `console.log`\n3. `clearAllMocks` called appropriately\n4. Tests are isolated — app built once in `beforeAll`, mocks cleared between tests\n5. No leaked state between test cases\n6. FastifyAdapter setup is correct\n7. Assertions are meaningful (not just \"did not throw\")\n8. All 6 tests pass\n\n## Report\n\n- Test run result\n- Per-issue findings\n- APPROVED or NOT APPROVED"
 }
 ```
 
@@ -9198,7 +9198,7 @@ id: toolu_01RC3EiGkwcb37LPsii7Toc8
 {
   "description": "Final code review for entire Jira integration",
   "subagent_type": "superpowers:code-reviewer",
-  "prompt": "You are doing a final code review of the complete Jira integration feature before it's merged. Your goal is to assess whether the implementation is production-ready, architecturally sound, and consistent with the codebase patterns.\n\n## Branch context\n\nBranch: `main` (commits since the work started: all Jira integration commits). Run `git log --oneline -20` in `/Users/4thwithme/Documents/repo/no-name-proj/backend` to see the commits.\n\n## What was built\n\nA full Jira OAuth integration + data sync pipeline:\n\n1. **Env vars** — `JIRA_CLIENT_ID`, `JIRA_CLIENT_SECRET`, `JIRA_CALLBACK_URL` added with full 5-step process (env files, constant, validator, loader, e2e test)\n2. **Database migrations** — 6 tables: `jira_installations`, `jira_projects`, `jira_issues`, `jira_changelog`, `jira_worklogs`, `jira_sprints`\n3. **TypeScript interfaces** — `jira-installation.interface.ts`, `jira-api.interface.ts`, `jira-sync.interface.ts`\n4. **DB models** — 6 models: installations, projects, issues, changelog, worklogs, sprints\n5. **JiraApiService** — token refresh with 5-min buffer, `markNeedsReauth` on failure, paginated `listProjects`\n6. **JiraInstallService** — OAuth 3LO flow, Redis state token (5-min TTL), `discover_projects` job on callback\n7. **JiraController** — `POST /integrations/jira/connect`, `GET /integrations/jira/callback`, `DELETE /integrations/jira/installations/:id`\n8. **JiraSyncService** — `discoverProjects`, `syncProject` (3-year backfill or incremental JQL), `pollAllInstallations`; sprint failure non-fatal\n9. **JiraProcessor** — `@Processor('jira')`, routes 3 job types, `@OnWorkerEvent('completed')`\n10. **JiraModule** — wires everything, registers `poll_installations` repeatable job every 12h in `OnModuleInit`\n11. **Unit tests** […]
+  "prompt": "You are doing a final code review of the complete Jira integration feature before it's merged. Your goal is to assess whether the implementation is production-ready, architecturally sound, and consistent with the codebase patterns.\n\n## Branch context\n\nBranch: `main` (commits since the work started: all Jira integration commits). Run `git log --oneline -20` in `/home/<USER>/Documents/repo/no-name-proj/backend` to see the commits.\n\n## What was built\n\nA full Jira OAuth integration + data sync pipeline:\n\n1. **Env vars** — `JIRA_CLIENT_ID`, `JIRA_CLIENT_SECRET`, `JIRA_CALLBACK_URL` added with full 5-step process (env files, constant, validator, loader, e2e test)\n2. **Database migrations** — 6 tables: `jira_installations`, `jira_projects`, `jira_issues`, `jira_changelog`, `jira_worklogs`, `jira_sprints`\n3. **TypeScript interfaces** — `jira-installation.interface.ts`, `jira-api.interface.ts`, `jira-sync.interface.ts`\n4. **DB models** — 6 models: installations, projects, issues, changelog, worklogs, sprints\n5. **JiraApiService** — token refresh with 5-min buffer, `markNeedsReauth` on failure, paginated `listProjects`\n6. **JiraInstallService** — OAuth 3LO flow, Redis state token (5-min TTL), `discover_projects` job on callback\n7. **JiraController** — `POST /integrations/jira/connect`, `GET /integrations/jira/callback`, `DELETE /integrations/jira/installations/:id`\n8. **JiraSyncService** — `discoverProjects`, `syncProject` (3-year backfill or incremental JQL), `pollAllInstallations`; sprint failure non-fatal\n9. **JiraProcessor** — `@Processor('jira')`, routes 3 job types, `@OnWorkerEvent('completed')`\n10. **JiraModule** — wires everything, registers `poll_installations` repeatable job every 12h in `OnModuleInit`\n11. **Unit tests** […]
 
 > TOOL
 
@@ -9237,7 +9237,7 @@ id: toolu_01YFoxe2UWofgxZvUSf9kQFB
 {
   "description": "Fix lint, import order, and disconnect safety issues",
   "subagent_type": "nestjs-agent",
-  "prompt": "Fix lint/quality issues in the Jira integration module. All work in `/Users/4thwithme/Documents/repo/no-name-proj/backend`.\n\n## Context\n\nNestJS v11, TypeScript strict, ESLint v9 flat config. Running `npm run test` fails because `code-quality-check` runs first and ESLint exits with errors. No tests run until lint is clean.\n\n## Step 1: Auto-fix formatting and lint\n\n```bash\ncd /Users/4thwithme/Documents/repo/no-name-proj/backend && npm run lint:fix\n```\n\nThen run:\n```bash\nnpm run format\n```\n\n## Step 2: Fix remaining manual lint violations\n\nAfter auto-fix, the following require manual edits:\n\n### A. Import order in `src/modules/jira/jira-install.service.ts`\n\n`@nestjs/bullmq` must come BEFORE `@nestjs/common` (external imports are alphabetical). Read the file and fix the import order so all `@nestjs/*` imports are alphabetically sorted.\n\n### B. Array type in `src/modules/jira/jira-sync.service.ts`\n\nFind `Array<{` and replace with `T[]` inline type syntax. The `entries` variable uses `Array<{ issue_id: string; ... }>` — replace with `Array<...>` → `{ issue_id: string; ... }[]`. Use the eslint auto-fix to help: `npm run lint:fix` may not catch this if it's in a specific format. Read the file around where `entries` is declared (in `storeChangelogs`) and fix the type syntax.\n\n### C. Nullish coalescing in `src/modules/jira/jira-sync.service.ts`\n\nFind the ternary that looks like:\n```typescript\nproject.last_synced_at ? project.last_synced_at : new Date(...)\n```\nReplace with:\n```typescript\nproject.last_synced_at ?? new Date(...)\n```\n\n### D. […]
+  "prompt": "Fix lint/quality issues in the Jira integration module. All work in `/home/<USER>/Documents/repo/no-name-proj/backend`.\n\n## Context\n\nNestJS v11, TypeScript strict, ESLint v9 flat config. Running `npm run test` fails because `code-quality-check` runs first and ESLint exits with errors. No tests run until lint is clean.\n\n## Step 1: Auto-fix formatting and lint\n\n```bash\ncd /home/<USER>/Documents/repo/no-name-proj/backend && npm run lint:fix\n```\n\nThen run:\n```bash\nnpm run format\n```\n\n## Step 2: Fix remaining manual lint violations\n\nAfter auto-fix, the following require manual edits:\n\n### A. Import order in `src/modules/jira/jira-install.service.ts`\n\n`@nestjs/bullmq` must come BEFORE `@nestjs/common` (external imports are alphabetical). Read the file and fix the import order so all `@nestjs/*` imports are alphabetically sorted.\n\n### B. Array type in `src/modules/jira/jira-sync.service.ts`\n\nFind `Array<{` and replace with `T[]` inline type syntax. The `entries` variable uses `Array<{ issue_id: string; ... }>` — replace with `Array<...>` → `{ issue_id: string; ... }[]`. Use the eslint auto-fix to help: `npm run lint:fix` may not catch this if it's in a specific format. Read the file around where `entries` is declared (in `storeChangelogs`) and fix the type syntax.\n\n### C. Nullish coalescing in `src/modules/jira/jira-sync.service.ts`\n\nFind the ternary that looks like:\n```typescript\nproject.last_synced_at ? project.last_synced_at : new Date(...)\n```\nReplace with:\n```typescript\nproject.last_synced_at ?? new Date(...)\n```\n\n### D. […]
 
 > TOOL
 
@@ -9250,25 +9250,25 @@ Here is a summary of every change made:
 
 **Files modified:**
 
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-install.service.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-install.service.ts`
   - Changed `void this.jiraQueue.add(...)` → `await this.jiraQueue.add(...)` in `handleCallback` (import order was already correct after `lint:fix`)
 
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-sync.service.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-sync.service.ts`
   - Replaced ternary `project.last_synced_at ? project.last_synced_at : new Date(...)` with `project.last_synced_at ?? new Date(...)` (nullish coalescing)
   - Reversed sprint pagination break condition: `sprintResponse.isLast || sprintResponse.values.length === 0` → `sprintResponse.values.length === 0 || sprintResponse.isLast`
   - Array type syntax (`Array<{...}>` → `{...}[]`) was auto-fixed by `lint:fix` in Step 1
 
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-api.service.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-api.service.ts`
   - Reversed project pagination break condition: `data.isLast || data.values.length === 0` → `data.values.length === 0 || data.isLast`
 
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-processor.service.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-processor.service.ts`
   - Added `// eslint-disable-next-line custom-rules/require-object-params` before the `process()` override method
 
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-installations.model.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-installations.model.ts`
   - Added `NotFoundException` import
   - Fixed `markUninstalled` to capture the row count from `.update()` and throw `NotFoundException` when count is 0
 
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/env-validations.config.unit-spec.ts`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/env-validations.config.unit-spec.ts`
   - Added `JIRA_CLIENT_ID`, `JIRA_CLIENT_SECRET`, `JIRA_CALLBACK_URL` to the `validEnvConfig` fixture so the validation test can pass with the Jira fields now required in the schema
 
 - Migration files (`20260416100001` through `20260416100005`) — auto-fixed by `lint:fix` (formatting/style issues)
@@ -9282,7 +9282,7 @@ tool_use Read
 id: toolu_011gK8GvEHw863Th978oNacS
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-install.service.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-install.service.ts",
   "offset": 1,
   "limit": 10
 }
@@ -9311,7 +9311,7 @@ tool_use Read
 id: toolu_0193q4LhJKo9BLaKEg8tHFz9
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-installations.model.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-installations.model.ts",
   "offset": 1,
   "limit": 20
 }
@@ -9374,7 +9374,7 @@ tool_use Bash
 id: toolu_01AW82NNCa5GNGCk8dJvKtDV
 ```json
 {
-  "command": "grep -n \"NotFoundException\\|markUninstalled\\|count\" /Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-installations.model.ts",
+  "command": "grep -n \"NotFoundException\\|markUninstalled\\|count\" /home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/db/jira-installations.model.ts",
   "description": "Verify markUninstalled implementation"
 }
 ```
@@ -9514,7 +9514,7 @@ tool_use Bash
 id: toolu_01XkFyd8Xr1WYZpRc4XUGin8
 ```json
 {
-  "command": "cat /Users/4thwithme/Documents/repo/no-name-proj/backend/test/jest-e2e.coverage.config.ts | tail -30",
+  "command": "cat /home/<USER>/Documents/repo/no-name-proj/backend/test/jest-e2e.coverage.config.ts | tail -30",
   "description": "Check e2e coverage collection settings"
 }
 ```
@@ -9562,7 +9562,7 @@ tool_use Bash
 id: toolu_01K7sa7z2DVdmeQQ7ar7RsrN
 ```json
 {
-  "command": "grep -n \"collectCoverage\\|coverage\" /Users/4thwithme/Documents/repo/no-name-proj/backend/test/jest-e2e.config.ts | head -10",
+  "command": "grep -n \"collectCoverage\\|coverage\" /home/<USER>/Documents/repo/no-name-proj/backend/test/jest-e2e.config.ts | head -10",
   "description": "Check if base e2e config collects coverage"
 }
 ```
@@ -9583,7 +9583,7 @@ tool_use Bash
 id: toolu_01Q2dUyHhh4BWPj9EBcFJnho
 ```json
 {
-  "command": "cat /Users/4thwithme/Documents/repo/no-name-proj/backend/test/jest-e2e.config.ts | tail -20",
+  "command": "cat /home/<USER>/Documents/repo/no-name-proj/backend/test/jest-e2e.config.ts | tail -20",
   "description": "Check e2e config coverage thresholds"
 }
 ```
@@ -9621,7 +9621,7 @@ tool_use Bash
 id: toolu_015gDAD731bmnH8JDGRLxqtC
 ```json
 {
-  "command": "grep -n \"coverageThreshold\\|collectCoverageFrom\" /Users/4thwithme/Documents/repo/no-name-proj/backend/test/jest-unit.config.ts",
+  "command": "grep -n \"coverageThreshold\\|collectCoverageFrom\" /home/<USER>/Documents/repo/no-name-proj/backend/test/jest-unit.config.ts",
   "description": "Check unit test coverage config"
 }
 ```
@@ -9640,7 +9640,7 @@ tool_use Bash
 id: toolu_01Hucka9gByk7cGw5HZSTUjD
 ```json
 {
-  "command": "grep -E '\"test:unit\"|\"test:e2e\"' /Users/4thwithme/Documents/repo/no-name-proj/backend/package.json | head -5",
+  "command": "grep -E '\"test:unit\"|\"test:e2e\"' /home/<USER>/Documents/repo/no-name-proj/backend/package.json | head -5",
   "description": "Check test:unit and test:e2e script definitions"
 }
 ```
@@ -9730,7 +9730,7 @@ tool_use Bash
 id: toolu_01NoXKNuodPKcBxGSQQ5QxcT
 ```json
 {
-  "command": "ls /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-*.unit-spec.ts | head -10",
+  "command": "ls /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-*.unit-spec.ts | head -10",
   "description": "List existing GitHub model unit tests"
 }
 ```
@@ -9740,16 +9740,16 @@ id: toolu_01NoXKNuodPKcBxGSQQ5QxcT
 tool_result
 id: toolu_01NoXKNuodPKcBxGSQQ5QxcT
 ```
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-app.service.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-backfill.service.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-commit.model.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-contributor.model.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-event.processor.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-install.controller.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-install.service.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-installations.model.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-pull-request.model.unit-spec.ts
- /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-repos.model.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-app.service.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-backfill.service.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-commit.model.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-contributor.model.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-event.processor.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-install.controller.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-install.service.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-installations.model.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-pull-request.model.unit-spec.ts
+ /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-repos.model.unit-spec.ts
 ```
 
 > TOOL
@@ -9790,7 +9790,7 @@ tool_use Read
 id: toolu_01FTB561nfNVT3fwNHft16fY
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/github-commit.model.unit-spec.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/github-commit.model.unit-spec.ts"
 }
 ```
 
@@ -9817,7 +9817,7 @@ id: toolu_01FTB561nfNVT3fwNHft16fY
 16		message: 'feat: add new feature',
 17		author_login: 'octocat',
 18		author_name: 'The Octocat',
-19		author_email: 'octocat@github.com',
+19		author_email: '<REDACTED_EMAIL>',
 20		committed_at: new Date('2026-04-14'),
 21		additions: 10,
 22		deletions: 5,
@@ -9869,7 +9869,7 @@ id: toolu_01EgUEMjC1TejjgRzodw4g9T
 {
   "description": "Add unit tests for 6 Jira model files, controller, and missing api service paths",
   "subagent_type": "test-agent",
-  "prompt": "Add unit tests for Jira model files, controller, and uncovered API service paths to bring unit test coverage above 95%.\n\nWorking directory: `/Users/4thwithme/Documents/repo/no-name-proj/backend`\n\n## Context\n\nThe test suite currently fails coverage thresholds because the Jira DB models, controller, and some API service paths have no unit tests. All existing unit tests pass (762 tests). You need to add new test files and improve existing ones.\n\n## Pattern to follow\n\nReference file: `src/unit-tests/github-commit.model.unit-spec.ts`\nKey patterns:\n- Provide KNEX_WRITE_CONNECTION as a mock Knex function: `const knexWriteFn = jest.fn().mockReturnValue(mockKnexWrite)`\n- Add `fn.now` to the write mock: `(knexWriteFn as jest.Mock & { fn: { now: jest.Mock } }).fn = { now: jest.fn().mockReturnValue('NOW()') }`\n- For write-only models, provide only KNEX_WRITE_CONNECTION (no read)\n- For read+write models (jira-installations, jira-projects), provide both\n- Mock the knex query chain: `insert().mockReturnThis()`, `onConflict().mockReturnThis()`, `merge()`, `where().mockReturnThis()`, etc.\n- `jest.clearAllMocks()` in beforeEach and afterEach\n- Silence Logger spies in beforeEach\n\n## Files to read first\n\nRead these source files to understand each model's methods before writing tests:\n- `src/modules/jira/db/jira-installations.model.ts`\n- `src/modules/jira/db/jira-projects.model.ts`\n- `src/modules/jira/db/jira-issues.model.ts`\n- `src/modules/jira/db/jira-changelog.model.ts`\n- `src/modules/jira/db/jira-worklogs.model.ts`\n- `src/modules/jira/db/jira-sprints.model.ts`\n- `src/modules/jira/jira.controller.ts`\n- `src/modules/jira/jira-api.service.ts` (to find uncovered lines 39-61, 141-225, 250)\n\nAlso read the existing unit test for api service: `src/unit-tests/jira-api.service.unit-spec.ts`\n\n## Files […]
+  "prompt": "Add unit tests for Jira model files, controller, and uncovered API service paths to bring unit test coverage above 95%.\n\nWorking directory: `/home/<USER>/Documents/repo/no-name-proj/backend`\n\n## Context\n\nThe test suite currently fails coverage thresholds because the Jira DB models, controller, and some API service paths have no unit tests. All existing unit tests pass (762 tests). You need to add new test files and improve existing ones.\n\n## Pattern to follow\n\nReference file: `src/unit-tests/github-commit.model.unit-spec.ts`\nKey patterns:\n- Provide KNEX_WRITE_CONNECTION as a mock Knex function: `const knexWriteFn = jest.fn().mockReturnValue(mockKnexWrite)`\n- Add `fn.now` to the write mock: `(knexWriteFn as jest.Mock & { fn: { now: jest.Mock } }).fn = { now: jest.fn().mockReturnValue('NOW()') }`\n- For write-only models, provide only KNEX_WRITE_CONNECTION (no read)\n- For read+write models (jira-installations, jira-projects), provide both\n- Mock the knex query chain: `insert().mockReturnThis()`, `onConflict().mockReturnThis()`, `merge()`, `where().mockReturnThis()`, etc.\n- `jest.clearAllMocks()` in beforeEach and afterEach\n- Silence Logger spies in beforeEach\n\n## Files to read first\n\nRead these source files to understand each model's methods before writing tests:\n- `src/modules/jira/db/jira-installations.model.ts`\n- `src/modules/jira/db/jira-projects.model.ts`\n- `src/modules/jira/db/jira-issues.model.ts`\n- `src/modules/jira/db/jira-changelog.model.ts`\n- `src/modules/jira/db/jira-worklogs.model.ts`\n- `src/modules/jira/db/jira-sprints.model.ts`\n- `src/modules/jira/jira.controller.ts`\n- `src/modules/jira/jira-api.service.ts` (to find uncovered lines 39-61, 141-225, 250)\n\nAlso read the existing unit test for api service: `src/unit-tests/jira-api.service.unit-spec.ts`\n\n## Files […]
 
 > TOOL
 
@@ -9883,16 +9883,16 @@ STATUS: DONE
 8 files were created or updated, adding 55 new tests (817 total, up from 762):
 
 **New files:**
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-installations.model.unit-spec.ts` — 14 tests covering `create`, `findAllActive`, `findById`, `updateTokens`, `markNeedsReauth`, `markUninstalled` (including NotFoundException path)
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-projects.model.unit-spec.ts` — 10 tests covering `upsertMany`, `findByInstallationId`, `updateLastSyncedAt`, `deleteByProjectId`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-issues.model.unit-spec.ts` — 4 tests covering `upsertMany` (empty no-op, success with `.returning('*')`, DB error)
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-changelog.model.unit-spec.ts` — 4 tests covering `upsertMany`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-worklogs.model.unit-spec.ts` — 4 tests covering `upsertMany`
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts` — 5 tests covering `upsertMany` including null dates and `completeDate` branch
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira.controller.unit-spec.ts` — 5 tests covering `connect`, `callback` (success + error), `disconnect`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-installations.model.unit-spec.ts` — 14 tests covering `create`, `findAllActive`, `findById`, `updateTokens`, `markNeedsReauth`, `markUninstalled` (including NotFoundException path)
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-projects.model.unit-spec.ts` — 10 tests covering `upsertMany`, `findByInstallationId`, `updateLastSyncedAt`, `deleteByProjectId`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-issues.model.unit-spec.ts` — 4 tests covering `upsertMany` (empty no-op, success with `.returning('*')`, DB error)
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-changelog.model.unit-spec.ts` — 4 tests covering `upsertMany`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-worklogs.model.unit-spec.ts` — 4 tests covering `upsertMany`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts` — 5 tests covering `upsertMany` including null dates and `completeDate` branch
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira.controller.unit-spec.ts` — 5 tests covering `connect`, `callback` (success + error), `disconnect`
 
 **Updated file:**
-- `/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-api.service.unit-spec.ts` — added `exchangeCode`, `getAccessibleResources`, `searchIssues`, `getWorklogsForIssue`, `listBoards`, `listSprints`
+- `/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-api.service.unit-spec.ts` — added `exchangeCode`, `getAccessibleResources`, `searchIssues`, `getWorklogsForIssue`, `listBoards`, `listSprints`
 
 **Final coverage (global):**
 - Statements: **99.29%**
@@ -9913,7 +9913,7 @@ tool_use Read
 id: toolu_016XzfzvgrPDWU6kcFfvDxr9
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts",
   "offset": 1,
   "limit": 20
 }
@@ -9952,7 +9952,7 @@ tool_use Read
 id: toolu_01Wk68G24eViFGymmHQomEWN
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts",
   "offset": 96,
   "limit": 12
 }
@@ -10011,7 +10011,7 @@ id: toolu_01TaQzu8QQaYygRR5cpup45G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts",
   "old_string": "const mockApiSprint: IJiraApiSprint = {\n\tid: 101,\n\tname: 'Sprint 1',\n\tstate: 'active',\n\tstartDate: '2026-01-01T00:00:00.000Z',\n\tendDate: '2026-01-14T00:00:00.000Z',\n\tcompleteDate: undefined,\n};",
   "new_string": "const mockApiSprint: IJiraApiSprint = {\n\tid: 101,\n\tname: 'Sprint 1',\n\tstate: 'active',\n\tstartDate: '2026-01-01T00:00:00.000Z',\n\tendDate: '2026-01-14T00:00:00.000Z',\n};"
 }
@@ -10022,7 +10022,7 @@ id: toolu_01TaQzu8QQaYygRR5cpup45G
 tool_result
 id: toolu_01TaQzu8QQaYygRR5cpup45G
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts has been updated successfully.
 ```
 
 > TOOL
@@ -10032,7 +10032,7 @@ id: toolu_018Tf7dpcqmBph4uboCcXgLQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts",
   "old_string": "\t\t\tconst sprintWithNullDates: IJiraApiSprint = {\n\t\t\t\tid: 202,\n\t\t\t\tname: 'Future Sprint',\n\t\t\t\tstate: 'future',\n\t\t\t\tstartDate: undefined,\n\t\t\t\tendDate: undefined,\n\t\t\t\tcompleteDate: undefined,\n\t\t\t};",
   "new_string": "\t\t\tconst sprintWithNullDates: IJiraApiSprint = {\n\t\t\t\tid: 202,\n\t\t\t\tname: 'Future Sprint',\n\t\t\t\tstate: 'future',\n\t\t\t};"
 }
@@ -10043,7 +10043,7 @@ id: toolu_018Tf7dpcqmBph4uboCcXgLQ
 tool_result
 id: toolu_018Tf7dpcqmBph4uboCcXgLQ
 ```
-The file /Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts has been updated successfully.
+The file /home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sprints.model.unit-spec.ts has been updated successfully.
 ```
 
 > TOOL
@@ -10112,16 +10112,16 @@ id: toolu_01Ud9g6bfryECiGzYejx1hET
 tool_result
 id: toolu_01Ud9g6bfryECiGzYejx1hET
 ```
-/Users/4thwithme/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/lib/dotenv/cli.rb:48:in `initialize': invalid option: -e (OptionParser::InvalidOption)
-	from /Users/4thwithme/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/bin/dotenv:4:in `new'
-	from /Users/4thwithme/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/bin/dotenv:4:in `<top (required)>'
-	from /Users/4thwithme/.rbenv/versions/3.3.5/bin/dotenv:25:in `load'
-	from /Users/4thwithme/.rbenv/versions/3.3.5/bin/dotenv:25:in `<main>'
-/Users/4thwithme/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/lib/dotenv/cli.rb:48:in `initialize': invalid option: e (OptionParser::InvalidOption)
-	from /Users/4thwithme/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/bin/dotenv:4:in `new'
-	from /Users/4thwithme/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/bin/dotenv:4:in `<top (required)>'
-	from /Users/4thwithme/.rbenv/versions/3.3.5/bin/dotenv:25:in `load'
-	from /Users/4thwithme/.rbenv/versions/3.3.5/bin/dotenv:25:in `<main>'
+/home/<USER>/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/lib/dotenv/cli.rb:48:in `initialize': invalid option: -e (OptionParser::InvalidOption)
+	from /home/<USER>/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/bin/dotenv:4:in `new'
+	from /home/<USER>/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/bin/dotenv:4:in `<top (required)>'
+	from /home/<USER>/.rbenv/versions/3.3.5/bin/dotenv:25:in `load'
+	from /home/<USER>/.rbenv/versions/3.3.5/bin/dotenv:25:in `<main>'
+/home/<USER>/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/lib/dotenv/cli.rb:48:in `initialize': invalid option: e (OptionParser::InvalidOption)
+	from /home/<USER>/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/bin/dotenv:4:in `new'
+	from /home/<USER>/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/dotenv-3.1.8/bin/dotenv:4:in `<top (required)>'
+	from /home/<USER>/.rbenv/versions/3.3.5/bin/dotenv:25:in `load'
+	from /home/<USER>/.rbenv/versions/3.3.5/bin/dotenv:25:in `<main>'
 ```
 
 > TOOL
@@ -10235,16 +10235,16 @@ id: toolu_0192cMZPjwPHnuVXx9DcuHHb
   161:10  warning  Unnecessary conditional, value is always truthy  @typescript-eslint/no-unnecessary-condition
   314:12  warning  Unnecessary conditional, value is always truthy  @typescript-eslint/no-unnecessary-condition
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/oauth-account/oauth-account.model.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/oauth-account/oauth-account.model.ts
   137:35  warning  Unnecessary conditional, the types have no overlap  @typescript-eslint/no-unnecessary-condition
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-projects.model.unit-spec.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-projects.model.unit-spec.ts
   122:53  error  Replace `·installationId:·'install-uuid-1'·` with `⏎↹↹↹↹installationId:·'install-uuid-1',⏎↹↹↹`  prettier/prettier
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts
   491:39  warning  Unnecessary optional chain on a non-nullish value  @typescript-eslint/no-unnecessary-condition
 
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira.controller.unit-spec.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira.controller.unit-spec.ts
     7:1   error  `@modules/jira/jira-install.service` import should occur before import of `@modules/jira/jira.controller`       import/order
    90:60  error  Replace `⏎↹↹↹↹new·Error('OAuth·failed'),⏎↹↹↹` with `new·Error('OAuth·failed')`                                  prettier/prettier
   111:32  error  Replace `⏎↹↹↹↹{·id:·'install-uuid-1'·},⏎↹↹↹↹mockAdminUser,⏎↹↹↹` with `{·id:·'install-uuid-1'·},·mockAdminUser`  prettier/prettier
@@ -10274,7 +10274,7 @@ id: toolu_01ERK6PzsbTzB1mtBuCzc7j9
 tool_result
 id: toolu_01ERK6PzsbTzB1mtBuCzc7j9
 ```
-/Users/4thwithme/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts
+/home/<USER>/Documents/repo/no-name-proj/backend/src/unit-tests/jira-sync.service.unit-spec.ts
   491:39  warning  Unnecessary optional chain on a non-nullish value  @typescript-eslint/no-unnecessary-condition
 
 ✖ 49 problems (0 errors, 49 warnings)
@@ -10360,11 +10360,11 @@ tool_result
 id: toolu_01K8jyNER8LGLeNbWC9MdSXa
 ```
 [31m[Nest] 58163  - [39m04/16/2026, 6:39:53 PM [31m  ERROR[39m [38;5;3m[JiraController.connect] [39m[31mFailed after 0.02ms: cache down[39m
-    at Object.<anonymous> (/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts:87:61)
-    at Object.<anonymous> [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mtest/jira.controller.e2e-spec.ts:87:61[90m)[39m
+    at Object.<anonymous> (/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts:87:61)
+    at Object.<anonymous> [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mtest/jira.controller.e2e-spec.ts:87:61[90m)[39m
 [31m[Nest] 58163  - [39m04/16/2026, 6:39:53 PM [31m  ERROR[39m [38;5;3m[JiraController.disconnect] [39m[31mFailed after 0.01ms: db error[39m
-    at Object.<anonymous> (/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts:137:56)
-    at Object.<anonymous> [90m(/Users/4thwithme/Documents/repo/no-name-proj/backend/[39mtest/jira.controller.e2e-spec.ts:137:56[90m)[39m
+    at Object.<anonymous> (/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.controller.e2e-spec.ts:137:56)
+    at Object.<anonymous> [90m(/home/<USER>/Documents/repo/no-name-proj/backend/[39mtest/jira.controller.e2e-spec.ts:137:56[90m)[39m
  jira                          |   37.35 |        0 |   22.22 |   36.28 |                                       
   jira-api.service.ts          |   25.42 |        0 |    8.33 |   23.21 | 39-250                                
   jira-install.service.ts      |   48.83 |        0 |      25 |   46.34 | 43-137                                
@@ -10384,7 +10384,7 @@ tool_use Read
 id: toolu_013c3ZVHELcN88hagCWE9xb6
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/github-install.service.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/github-install.service.e2e-spec.ts",
   "offset": 1,
   "limit": 60
 }
@@ -10395,7 +10395,7 @@ id: toolu_013c3ZVHELcN88hagCWE9xb6
 tool_result ERROR
 id: toolu_013c3ZVHELcN88hagCWE9xb6
 ```
-File does not exist. Note: your current working directory is /Users/4thwithme/Documents/repo/no-name-proj/backend.
+File does not exist. Note: your current working directory is /home/<USER>/Documents/repo/no-name-proj/backend.
 ```
 
 > TOOL
@@ -10404,7 +10404,7 @@ tool_use Bash
 id: toolu_017ZdEZ3gHuYXEGdUXDe6RK3
 ```json
 {
-  "command": "ls /Users/4thwithme/Documents/repo/no-name-proj/backend/test/",
+  "command": "ls /home/<USER>/Documents/repo/no-name-proj/backend/test/",
   "description": "List e2e test files"
 }
 ```
@@ -10442,7 +10442,7 @@ tool_use Read
 id: toolu_014tcf2UiYH8bLqjmhFN3cLv
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/github-install.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/github-install.e2e-spec.ts",
   "offset": 1,
   "limit": 60
 }
@@ -10510,7 +10510,7 @@ tool_use Bash
 id: toolu_01Q619ZmJySeQZbWLcW4yFPh
 ```json
 {
-  "command": "head -50 /Users/4thwithme/Documents/repo/no-name-proj/backend/test/github.module.e2e-spec.ts",
+  "command": "head -50 /home/<USER>/Documents/repo/no-name-proj/backend/test/github.module.e2e-spec.ts",
   "description": "Check if github module e2e uses real services"
 }
 ```
@@ -10589,16 +10589,16 @@ id: toolu_01YWSBiYWwoKpmja5wrnKQAF
 tool_result
 id: toolu_01YWSBiYWwoKpmja5wrnKQAF
 ```
-    at AuthService.handleCallback (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:111:10)
-    at AuthService.handleCallback (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:111:10)
-    at AuthService.exchangeCode (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:223:10)
-    at AuthService.refreshTokens (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:289:10)
-    at AuthService.refreshTokens (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:289:10)
-    at AuthService.linkAccount (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:344:10)
-    at AuthService.linkAccount (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:350:10)
-    at InvitationService.createInvitation (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/invitation/invitation.service.ts:26:10)
-    at InvitationService.acceptInvitation (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/invitation/invitation.service.ts:52:10)
-    at InvitationService.acceptInvitation (/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/invitation/invitation.service.ts:56:10)
+    at AuthService.handleCallback (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:111:10)
+    at AuthService.handleCallback (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:111:10)
+    at AuthService.exchangeCode (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:223:10)
+    at AuthService.refreshTokens (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:289:10)
+    at AuthService.refreshTokens (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:289:10)
+    at AuthService.linkAccount (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:344:10)
+    at AuthService.linkAccount (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.service.ts:350:10)
+    at InvitationService.createInvitation (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/invitation/invitation.service.ts:26:10)
+    at InvitationService.acceptInvitation (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/invitation/invitation.service.ts:52:10)
+    at InvitationService.acceptInvitation (/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/invitation/invitation.service.ts:56:10)
   auth.service.ts              |   98.33 |    88.23 |     100 |    98.3 | 79,300                                
   company.service.ts           |     100 |      100 |     100 |     100 |                                       
   company-member.service.ts    |     100 |      100 |     100 |     100 |                                       
@@ -10620,7 +10620,7 @@ tool_use Read
 id: toolu_013NeJtgyV9rc1usSxe9SUxu
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/github.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/github.module.e2e-spec.ts",
   "offset": 40,
   "limit": 100
 }
@@ -10706,7 +10706,7 @@ id: toolu_01Xonb2PYcNMS3F9Kn8obrRZ
 {
   "description": "Create jira.module.e2e-spec.ts integration test",
   "subagent_type": "test-agent",
-  "prompt": "Create a full integration e2e test file `test/jira.module.e2e-spec.ts` for the Jira integration module. This is needed to bring e2e coverage of the Jira services above 95%.\n\n## Working directory\n`/Users/4thwithme/Documents/repo/no-name-proj/backend`\n\n## Context\n\nThe codebase has a pattern for full integration e2e tests. The reference is `test/github.module.e2e-spec.ts`. Read it in full before writing the Jira test. Key patterns:\n- Uses `AppModule` (full DI)\n- Real PostgreSQL via `process.env['DATABASE_URL']`\n- Real Redis via `moduleFixture.get<Redis>(REDIS_WRITE_CLIENT)`\n- Auth tokens created via `createAccessToken` and `createSession` helpers from `test/helpers/auth.helper.ts`\n- Migrates DB in `beforeAll`: `await knex.migrate.latest({ directory: './src/migrations' })`\n- Cleans up in `beforeEach` and `afterAll`\n- Uses `jest.spyOn(httpService.axiosRef, 'post')` to mock external HTTP calls\n- Uses `app.setGlobalPrefix('api', { exclude: ['liveness', 'readiness'] })`\n\n## Files to read\n\nBefore writing the test, read ALL of these:\n1. `test/github.module.e2e-spec.ts` — full pattern reference\n2. `test/helpers/auth.helper.ts` — helper functions available\n3. `src/modules/jira/jira-install.service.ts` — to understand what it does\n4. `src/modules/jira/jira-api.service.ts` — to understand the HTTP calls it makes\n5. `src/modules/jira/jira-sync.service.ts` — to understand what discoverProjects/syncProject do\n6. `src/modules/jira/jira-processor.service.ts` — to understand the job processor\n7. `src/modules/jira/db/jira-installations.model.ts` — to understand DB schema\n\n## What to build\n\nCreate `test/jira.module.e2e-spec.ts` with these test groups:\n\n### 1. POST /api/integrations/jira/connect\n- Should return 200 with an Atlassian OAuth URL (exercises `JiraInstallService.initiateConnect` and `CacheService.set`)\n\n### 2. GET […]
+  "prompt": "Create a full integration e2e test file `test/jira.module.e2e-spec.ts` for the Jira integration module. This is needed to bring e2e coverage of the Jira services above 95%.\n\n## Working directory\n`/home/<USER>/Documents/repo/no-name-proj/backend`\n\n## Context\n\nThe codebase has a pattern for full integration e2e tests. The reference is `test/github.module.e2e-spec.ts`. Read it in full before writing the Jira test. Key patterns:\n- Uses `AppModule` (full DI)\n- Real PostgreSQL via `process.env['DATABASE_URL']`\n- Real Redis via `moduleFixture.get<Redis>(REDIS_WRITE_CLIENT)`\n- Auth tokens created via `createAccessToken` and `createSession` helpers from `test/helpers/auth.helper.ts`\n- Migrates DB in `beforeAll`: `await knex.migrate.latest({ directory: './src/migrations' })`\n- Cleans up in `beforeEach` and `afterAll`\n- Uses `jest.spyOn(httpService.axiosRef, 'post')` to mock external HTTP calls\n- Uses `app.setGlobalPrefix('api', { exclude: ['liveness', 'readiness'] })`\n\n## Files to read\n\nBefore writing the test, read ALL of these:\n1. `test/github.module.e2e-spec.ts` — full pattern reference\n2. `test/helpers/auth.helper.ts` — helper functions available\n3. `src/modules/jira/jira-install.service.ts` — to understand what it does\n4. `src/modules/jira/jira-api.service.ts` — to understand the HTTP calls it makes\n5. `src/modules/jira/jira-sync.service.ts` — to understand what discoverProjects/syncProject do\n6. `src/modules/jira/jira-processor.service.ts` — to understand the job processor\n7. `src/modules/jira/db/jira-installations.model.ts` — to understand DB schema\n\n## What to build\n\nCreate `test/jira.module.e2e-spec.ts` with these test groups:\n\n### 1. POST /api/integrations/jira/connect\n- Should return 200 with an Atlassian OAuth URL (exercises `JiraInstallService.initiateConnect` and `CacheService.set`)\n\n### 2. GET […]
 
 > TOOL
 
@@ -10719,7 +10719,7 @@ The commit was created successfully. Here's the final report:
 
 **STATUS: PASSING**
 
-**Test file created:** `/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts`
+**Test file created:** `/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts`
 
 **Test count:** 39 tests in the new file (198 e2e total, 817 unit total = 1015 overall)
 
@@ -10750,7 +10750,7 @@ tool_use Read
 id: toolu_0113Urg6moMKeCBQJzYWpdwX
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
   "offset": 1079,
   "limit": 15
 }
@@ -10784,7 +10784,7 @@ tool_use Read
 id: toolu_012k12bJGiVJXZFZxxxtx3J7
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
   "offset": 1270,
   "limit": 30
 }
@@ -10833,7 +10833,7 @@ tool_use Bash
 id: toolu_01Cm1ZzrYPV3nGaTGDY9SnA8
 ```json
 {
-  "command": "grep -n \"customfield_10016: undefined\" /Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
+  "command": "grep -n \"customfield_10016: undefined\" /home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
   "description": "Find customfield_10016 undefined usages"
 }
 ```
@@ -10852,7 +10852,7 @@ tool_use Bash
 id: toolu_01R11DeAqJ1CLcMjJjpU9qhp
 ```json
 {
-  "command": "grep -n \"searchResult\\|circularly\" /Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts | head -10",
+  "command": "grep -n \"searchResult\\|circularly\" /home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts | head -10",
   "description": "Find circular reference issue"
 }
 ```
@@ -10872,7 +10872,7 @@ tool_use Bash
 id: toolu_01StZZsp8cmPbhHgvQFK3f8n
 ```json
 {
-  "command": "grep -n \"customfield_10016\" /Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
+  "command": "grep -n \"customfield_10016\" /home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
   "description": "Find all customfield_10016 usages"
 }
 ```
@@ -10896,7 +10896,7 @@ tool_use Read
 id: toolu_01EroVcekxGAehwEKfavnTRd
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
   "offset": 1348,
   "limit": 30
 }
@@ -10945,7 +10945,7 @@ tool_use Read
 id: toolu_019FgLnEjwJtbkTbq4SrUaCu
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
   "offset": 1268,
   "limit": 30
 }
@@ -10994,7 +10994,7 @@ tool_use Bash
 id: toolu_01Je8adbKQtMtByWKvEMnz63
 ```json
 {
-  "command": "grep -n \"makeIssues\\|function make\\|const make\" /Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts | head -10",
+  "command": "grep -n \"makeIssues\\|function make\\|const make\" /home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts | head -10",
   "description": "Find makeIssues function definition"
 }
 ```
@@ -11017,7 +11017,7 @@ tool_use Read
 id: toolu_01FXC441V6onACpN3VsEcKzE
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/test/jira.module.e2e-spec.ts",
   "offset": 1335,
   "limit": 20
 }
@@ -11163,7 +11163,7 @@ tool_use Bash
 id: toolu_01KKnVZqoaZr8Q5xzYVao7qL
 ```json
 {
-  "command": "ls /Users/4thwithme/Documents/repo/no-name-proj/scripts 2>/dev/null || echo \"no scripts dir\"",
+  "command": "ls /home/<USER>/Documents/repo/no-name-proj/scripts 2>/dev/null || echo \"no scripts dir\"",
   "description": "Check if scripts directory exists"
 }
 ```
@@ -11182,7 +11182,7 @@ tool_use Bash
 id: toolu_01Ur3WLatZhcgoWb383g3NfE
 ```json
 {
-  "command": "mkdir -p /Users/4thwithme/Documents/repo/no-name-proj/scripts",
+  "command": "mkdir -p /home/<USER>/Documents/repo/no-name-proj/scripts",
   "description": "Create scripts directory"
 }
 ```
@@ -11201,15 +11201,15 @@ tool_use Write
 id: toolu_01QGpYzGFzjx8DaaWRkFiUyB
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/scripts/seed-github-test-org.sh",
-  "content": "#!/usr/bin/env bash\nset -euo pipefail\n\n# ─────────────────────────────────────────────────────────────────\n# seed-github-test-org.sh\n#\n# Creates realistic GitHub test data for the no-name-proj integration:\n#   • 3 repos with 2 years of backdated commit history\n#   • 3 simulated developer identities per repo\n#   • Feature branches, merged PRs, open PRs, closed PRs\n#   • PR reviews (approve, comment, request-changes)\n#   • PR review comments (inline)\n#\n# Prerequisites:\n#   • gh CLI installed and authenticated (gh auth login)\n#   • git installed\n#   • Create the GitHub org manually first:\n#     https://github.com/organizations/new (free plan is fine)\n#\n# Usage:\n#   ./scripts/seed-github-test-org.sh <org-name>\n#\n# Example:\n#   ./scripts/seed-github-test-org.sh my-test-org-2026\n# ─────────────────────────────────────────────────────────────────\n\nORG=\"${1:-}\"\nif [[ -z \"$ORG\" ]]; then\n  echo \"Usage: $0 <org-name>\"\n  exit 1\nfi\n\n# ── Config ──────────────────────────────────────────────────────\nREPOS=(\"app-core\" \"api-service\" \"frontend-app\")\n\n# Developer identities (these don't need to be real GitHub accounts)\n# If you want author.login to resolve, use email addresses of real\n# GitHub accounts that are members of the org.\nDEV1_NAME=\"Alice Chen\"\nDEV1_EMAIL=\"alice.chen@example.com\"\nDEV2_NAME=\"Bob Martinez\"\nDEV2_EMAIL=\"bob.martinez@example.com\"\nDEV3_NAME=\"Carol Smith\"\nDEV3_EMAIL=\"carol.smith@example.com\"\n\nWORK_DIR=$(mktemp -d)\ntrap 'rm -rf \"$WORK_DIR\"' EXIT\n\necho \"→ Work dir: $WORK_DIR\"\necho \"→ Org: $ORG\"\necho \"\"\n\n# ── Helpers ─────────────────────────────────────────────────────\n\n# Make a backdated commit with a random developer\ncommit_backdated() {\n  local date=\"$1\"\n  local message=\"$2\"\n  local dev_num=$(( RANDOM % 3 + 1 ))\n\n  case $dev_num in\n    1) name=\"$DEV1_NAME\"; email=\"$DEV1_EMAIL\" ;;\n    2) name=\"$DEV2_NAME\"; email=\"$DEV2_EMAIL\" ;;\n    3) name=\"$DEV3_NAME\"; email=\"$DEV3_EMAIL\" ;;\n  esac\n\n  # Create/modify a file so there's […]
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/scripts/seed-github-test-org.sh",
+  "content": "#!/usr/bin/env bash\nset -euo pipefail\n\n# ─────────────────────────────────────────────────────────────────\n# seed-github-test-org.sh\n#\n# Creates realistic GitHub test data for the no-name-proj integration:\n#   • 3 repos with 2 years of backdated commit history\n#   • 3 simulated developer identities per repo\n#   • Feature branches, merged PRs, open PRs, closed PRs\n#   • PR reviews (approve, comment, request-changes)\n#   • PR review comments (inline)\n#\n# Prerequisites:\n#   • gh CLI installed and authenticated (gh auth login)\n#   • git installed\n#   • Create the GitHub org manually first:\n#     https://github.com/organizations/new (free plan is fine)\n#\n# Usage:\n#   ./scripts/seed-github-test-org.sh <org-name>\n#\n# Example:\n#   ./scripts/seed-github-test-org.sh my-test-org-2026\n# ─────────────────────────────────────────────────────────────────\n\nORG=\"${1:-}\"\nif [[ -z \"$ORG\" ]]; then\n  echo \"Usage: $0 <org-name>\"\n  exit 1\nfi\n\n# ── Config ──────────────────────────────────────────────────────\nREPOS=(\"app-core\" \"api-service\" \"frontend-app\")\n\n# Developer identities (these don't need to be real GitHub accounts)\n# If you want author.login to resolve, use email addresses of real\n# GitHub accounts that are members of the org.\nDEV1_NAME=\"Alice Chen\"\nDEV1_EMAIL=\"<REDACTED_EMAIL>\"\nDEV2_NAME=\"Bob Martinez\"\nDEV2_EMAIL=\"<REDACTED_EMAIL>\"\nDEV3_NAME=\"Carol Smith\"\nDEV3_EMAIL=\"<REDACTED_EMAIL>\"\n\nWORK_DIR=$(mktemp -d)\ntrap 'rm -rf \"$WORK_DIR\"' EXIT\n\necho \"→ Work dir: $WORK_DIR\"\necho \"→ Org: $ORG\"\necho \"\"\n\n# ── Helpers ─────────────────────────────────────────────────────\n\n# Make a backdated commit with a random developer\ncommit_backdated() {\n  local date=\"$1\"\n  local message=\"$2\"\n  local dev_num=$(( RANDOM % 3 + 1 ))\n\n  case $dev_num in\n    1) name=\"$DEV1_NAME\"; email=\"$DEV1_EMAIL\" ;;\n    2) name=\"$DEV2_NAME\"; email=\"$DEV2_EMAIL\" ;;\n    3) name=\"$DEV3_NAME\"; email=\"$DEV3_EMAIL\" ;;\n  esac\n\n  # Create/modify a file so there's […]
 
 > TOOL
 
 tool_result
 id: toolu_01QGpYzGFzjx8DaaWRkFiUyB
 ```
-File created successfully at: /Users/4thwithme/Documents/repo/no-name-proj/scripts/seed-github-test-org.sh
+File created successfully at: /home/<USER>/Documents/repo/no-name-proj/scripts/seed-github-test-org.sh
 ```
 
 > TOOL
@@ -11218,7 +11218,7 @@ tool_use Bash
 id: toolu_01HKys2B5MHn9bRXtKu9jGbm
 ```json
 {
-  "command": "chmod +x /Users/4thwithme/Documents/repo/no-name-proj/scripts/seed-github-test-org.sh && bash -n /Users/4thwithme/Documents/repo/no-name-proj/scripts/seed-github-test-org.sh && echo \"syntax OK\"",
+  "command": "chmod +x /home/<USER>/Documents/repo/no-name-proj/scripts/seed-github-test-org.sh && bash -n /home/<USER>/Documents/repo/no-name-proj/scripts/seed-github-test-org.sh && echo \"syntax OK\"",
   "description": "Make executable and syntax-check the script"
 }
 ```
@@ -11257,7 +11257,7 @@ Syntax clean. Here's what the script does and the **one manual step** needed:
 | Open PRs | 1 (with change-request review) |
 | Closed PRs (no merge) | 1 |
 
-**Limitation:** The 3 developers (`alice@example.com`, etc.) won't resolve to real GitHub logins — `author.login` will be `null` in the API. This actually tests your null-handling code paths. If you want real logins, edit the `DEV*_EMAIL` vars at the top of the script to match actual GitHub accounts that are org members.
+**Limitation:** The 3 developers (`<REDACTED_EMAIL>`, etc.) won't resolve to real GitHub logins — `author.login` will be `null` in the API. This actually tests your null-handling code paths. If you want real logins, edit the `DEV*_EMAIL` vars at the top of the script to match actual GitHub accounts that are org members.
 
 **After seeding:** trigger the backfill by completing the GitHub OAuth flow — the `backfill_repo` BullMQ jobs will process all 90+ commits per repo automatically.
 

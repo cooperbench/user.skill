@@ -1,6 +1,6 @@
 > SYSTEM
 
-<system_instruction> You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel. Your work should take place in the /Users/marc/conductor/workspaces/rudel/zagreb directory (unless otherwise directed), which has been set up for you to work in. Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents. The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise. If the user asks you to work on several unrelated tasks in parallel, you can suggest they start new workspaces. If the user asks for help with Conductor, ask them to email [humans@conductor.build](mailto:humans@conductor.build) or click on the comment icon in the bottom left to send feedback. </system_instruction> <system_instruction> The user has attached these files. Read them before proceeding. - /Users/marc/conductor/workspaces/rudel/zagreb/.context/attachments/plan.md </system_instruction>
+<system_instruction> You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel. Your work should take place in the /home/<USER>/conductor/workspaces/rudel/zagreb directory (unless otherwise directed), which has been set up for you to work in. Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents. The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise. If the user asks you to work on several unrelated tasks in parallel, you can suggest they start new workspaces. If the user asks for help with Conductor, ask them to email [<REDACTED_EMAIL>](mailto:<REDACTED_EMAIL>) or click on the comment icon in the bottom left to send feedback. </system_instruction> <system_instruction> The user has attached these files. Read them before proceeding. - /home/<USER>/conductor/workspaces/rudel/zagreb/.context/attachments/plan.md </system_instruction>
 
 > AGENT
 
@@ -68,7 +68,7 @@ All 11 tasks pass — lint, type checking, tests, and build all green across the
 
 > SYSTEM
 
-<system_instruction> The user has attached these files. Read them before proceeding. - /Users/marc/conductor/workspaces/rudel/zagreb/.context/attachments/PR instructions.md </system_instruction> Create a PR
+<system_instruction> The user has attached these files. Read them before proceeding. - /home/<USER>/conductor/workspaces/rudel/zagreb/.context/attachments/PR instructions.md </system_instruction> Create a PR
 
 > AGENT
 
@@ -104,7 +104,7 @@ Perfect! PR created successfully. Here's what was completed: **PR #116** — Uni
 
 > SYSTEM
 
-<system_instruction> The user has attached these files. Read them before proceeding. - /Users/marc/conductor/workspaces/rudel/zagreb/.context/attachments/lint-pr-title_65610481438.log </system_instruction> Fix the failing CI actions. I've attached the failure logs.
+<system_instruction> The user has attached these files. Read them before proceeding. - /home/<USER>/conductor/workspaces/rudel/zagreb/.context/attachments/lint-pr-title_65610481438.log </system_instruction> Fix the failing CI actions. I've attached the failure logs.
 
 > AGENT
 

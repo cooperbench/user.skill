@@ -8,7 +8,7 @@
 - **Data Model**: `/e/projects/ado-git-repo-insights/specs/052-review-time-pipeline/data-model.md`
 - **JSON Contract**: `/e/projects/ado-git-repo-insights/specs/052-review-time-pipeline/contracts/rollup-json-contract.md`
 - **ADO Spike Evidence**: `/e/projects/ado-git-repo-insights/specs/052-review-time-pipeline/spike-ado-vote-timestamps.md`
-- **Memory Note**: `C:\Users\petep\.claude\projects\E--projects-ado-git-repo-insights\memory\project_issue217_review_time_pipeline.md`</result>
+- **Memory Note**: `C:\Users\<USER>\.claude\projects\E--projects-ado-git-repo-insights\memory\project_issue217_review_time_pipeline.md`</result>
 <usage><total_tokens>33769</total_tokens><tool_uses>15</tool_uses><duration_ms>35392</duration_ms></usage>
 </task-notification>
 
@@ -859,7 +859,7 @@ The function does `from .persistence.database import DatabaseManager` at runtime
 <task-notification>
 <task-id>a6f9ee1cac3cfdda0</task-id>
 <tool-use-id>toolu_01ReVoyYWgQoVRj8pZQVjurN</tool-use-id>
-<output-file>C:\Users\petep\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\a6f9ee1cac3cfdda0.output</output-file>
+<output-file>C:\Users\<USER>\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\a6f9ee1cac3cfdda0.output</output-file>
 <status>completed</status>
 <summary>Agent "Read issue 217 and memory context" completed</summary>
 <result>Perfect! Now I have comprehensive information about issue 217. Let me compile a complete summary:
@@ -887,7 +887,7 @@ Enable the dashboard to display review time metrics (P50 and P90 percentiles) by
 <task-notification>
 <task-id>a9cec8357ccdc293a</task-id>
 <tool-use-id>toolu_01DBbWRuSBqtgnsbr9PbHp2f</tool-use-id>
-<output-file>C:\Users\petep\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\a9cec8357ccdc293a.output</output-file>
+<output-file>C:\Users\<USER>\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\a9cec8357ccdc293a.output</output-file>
 <status>completed</status>
 <summary>Agent "Review branch 052 full diff" completed</summary>
 <result>Perfect! Now I have comprehensive understanding of the changes. Let me create a thorough summary of my findings:
@@ -922,7 +922,7 @@ I've completed a detailed analysis of all 35 commits spanning 50,000+ lines of c
 <task-notification>
 <task-id>aa471336de253bf5f</task-id>
 <tool-use-id>toolu_01Sk893qpZCj469tmz9Lp3Sv</tool-use-id>
-<output-file>C:\Users\petep\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\aa471336de253bf5f.output</output-file>
+<output-file>C:\Users\<USER>\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\aa471336de253bf5f.output</output-file>
 <status>completed</status>
 <summary>Agent "Review Python source changes in detail" completed</summary>
 <result>Perfect! Now I have a comprehensive view of all the Python files. Let me compile my findings into a detailed review document.
@@ -969,7 +969,7 @@ earliest_reviewed_at: str | None = result["earliest_reviewed_at"]
 <task-notification>
 <task-id>ac8881bf2fc69ed00</task-id>
 <tool-use-id>toolu_016Vert1zaDnghRVoPhQHrL1</tool-use-id>
-<output-file>C:\Users\petep\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\ac8881bf2fc69ed00.output</output-file>
+<output-file>C:\Users\<USER>\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\ac8881bf2fc69ed00.output</output-file>
 <status>completed</status>
 <summary>Agent "Read project invariants and standards" completed</summary>
 <result>Perfect! Now I have comprehensive information. Let me compile the complete summary:
@@ -1006,7 +1006,7 @@ Runs when relevant files are staged. Fast, selective gates:
 <task-notification>
 <task-id>bu0nj2zsz</task-id>
 <tool-use-id>toolu_01Ev2gRJFMm6Ls5g9h3v7oh7</tool-use-id>
-<output-file>C:\Users\petep\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\bu0nj2zsz.output</output-file>
+<output-file>C:\Users\<USER>\AppData\Local\Temp\claude\E--projects-ado-git-repo-insights\a2ecbda3-efc1-43ba-804e-12af40de872f\tasks\bu0nj2zsz.output</output-file>
 <status>completed</status>
 <summary>Background command "Run full test suite for summary" completed (exit code 0)</summary>
 </task-notification>

@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/ericson/.codex/worktrees/61ee/ars-ui
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/61ee/ars-ui
 
 <INSTRUCTIONS>
 ## Approach
@@ -45,8 +45,8 @@ tool_use exec_command
 id: call_GhMGKx28smKQfiY1ZBS2b7hN
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.claude/skills/using-superpowers/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.claude/skills/using-superpowers/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -57,8 +57,8 @@ tool_use exec_command
 id: call_06G39k5D7kMYJUrVxHs2XSbC
 ```json
 {
-  "cmd": "rg -n \"tabs|Tabs|checkbox|Checkbox|adapter-component-delivery|post-implementation-audit\" /Users/ericson/.codex/memories/MEMORY.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "rg -n \"tabs|Tabs|checkbox|Checkbox|adapter-component-delivery|post-implementation-audit\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -70,7 +70,7 @@ id: call_3StXgHQnMtB335TqyJ34ZocH
 ```json
 {
   "cmd": "rg --files | rg '(^docs/implementation/adapter|tabs|checkbox|crates/ars-(leptos|dioxus)/src|crates/ars-(leptos|dioxus)/tests|examples/widgets|crates/ars-e2e)'",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 20000
 }
 ```
@@ -125,7 +125,7 @@ Process exited with code 0
 Original token count: 704
 Output:
 6:## Task 1: Implement Checkbox adapter work for Leptos (#320) and Dioxus (#431), with Codex review fix-ups through approval
-10:- rollout_summaries/REDACTED.md (cwd=/Users/ericson/.codex/worktrees/e488/ars-ui, rollout_path=/Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T11-10-21-019e92f8-84a9-7fc0-bf0e-061072d47c47.jsonl, updated_at=2026-06-16T05:43:38+00:00, thread_id=019e92f8-84a9-7fc0-bf0e-061072d47c47, paired checkbox delivery plus two review-found Dioxus follow-up fixes, Codex approval reached while Coverage was still pending on the last poll)
+10:- rollout_summaries/REDACTED.md (cwd=/home/<USER>/.codex/worktrees/e488/ars-ui, rollout_path=/home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T11-10-21-019e92f8-84a9-7fc0-bf0e-061072d47c47.jsonl, updated_at=2026-06-16T05:43:38+00:00, thread_id=019e92f8-84a9-7fc0-bf0e-061072d47c47, paired checkbox delivery plus two review-found Dioxus follow-up fixes, Codex approval reached while Coverage was still pending on the last poll)
 14:- ars-ui, checkbox, leptos, dioxus, adapter delivery, issue-320, issue-431, merge_dioxus_attrs, hidden input, form reset, cargo xtask spec info checkbox, as_child, @codex review
 36:- for Checkbox, `cargo xtask spec info checkbox` mapped directly to `spec/components/input/checkbox.md`, `spec/leptos-components/input/checkbox.md`, and `spec/dioxus-components/input/checkbox.md`; `component-deps` returned none, while `issue-deps` matched the issue-body blocked-by graphs `[190,191,229]` for Leptos and `[193,194,229]` for Dioxus [Task 1]
 38:- repo patterns that paid off for adapter work were reading nearby `button`, `tabs`, `form`, `field_support`, `as_child`, and attrs helpers before editing, then following the same helper and prop-forwarding conventions in the new adapter [Task 1][Task 2]
@@ -331,8 +331,8 @@ tool_use exec_command
 id: call_oMkfQfeZDCQyK3oImbmTy76L
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.claude/skills/writing-plans/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.claude/skills/writing-plans/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -343,8 +343,8 @@ tool_use exec_command
 id: call_f8pPZ1Cp8lCJAuWhriyF3JWH
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.codex/worktrees/61ee/ars-ui/.agents/skills/leptos/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/worktrees/61ee/ars-ui/.agents/skills/leptos/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -355,8 +355,8 @@ tool_use exec_command
 id: call_ZNx1vMik1l4Yan6PXD8tLrAy
 ```json
 {
-  "cmd": "sed -n '1,260p' /Users/ericson/.codex/worktrees/61ee/ars-ui/.agents/skills/dioxus/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/worktrees/61ee/ars-ui/.agents/skills/dioxus/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -367,8 +367,8 @@ tool_use exec_command
 id: call_ztKXLaPiF3q1pNadXVUDHhgS
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 20000
 }
 ```
@@ -514,13 +514,13 @@ Original token count: 1531
 Output:
 thread_id: 019e92f8-84a9-7fc0-bf0e-061072d47c47
 updated_at: 2026-06-16T05:43:38+00:00
-rollout_path: /Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T11-10-21-019e92f8-84a9-7fc0-bf0e-061072d47c47.jsonl
-cwd: /Users/ericson/.codex/worktrees/e488/ars-ui
+rollout_path: /home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T11-10-21-019e92f8-84a9-7fc0-bf0e-061072d47c47.jsonl
+cwd: /home/<USER>/.codex/worktrees/e488/ars-ui
 git_branch: codex/issue-320-431-checkbox-adapters
 
 # Implemented Checkbox adapters for Leptos and Dioxus, then iterated through Codex review fixes until approval.
 
-Rollout context: The user requested implementation of GitHub issues #320 and #431 in `/Users/ericson/.codex/worktrees/e488/ars-ui`. The work was adapter-level Checkbox delivery, so the agent first read the adapter workflow docs, the issue bodies, the component spec, and the existing adapter patterns before editing.
+Rollout context: The user requested implementation of GitHub issues #320 and #431 in `/home/<USER>/.codex/worktrees/e488/ars-ui`. The work was adapter-level Checkbox delivery, so the agent first read the adapter workflow docs, the issue bodies, the component spec, and the existing adapter patterns before editing.
 
 ## Task 1: Implement Checkbox Leptos adapter (#320)
 
@@ -545,7 +545,7 @@ id: call_A6uW8FqHhJcRRovskPdd3nxc
 ```json
 {
   "cmd": "wc -c docs/implementation/adapter-component-delivery.md docs/implementation/adapter-components/README.md docs/implementation/adapter-components/01-before-you-code.md docs/implementation/adapter-components/02-adapter-api-and-wiring.md docs/implementation/adapter-components/03-framework-rules.md docs/implementation/adapter-components/04-adapter-tests.md docs/implementation/adapter-components/05-e2e-fixtures-and-harnesses.md docs/implementation/adapter-components/06-widgets-examples.md docs/implementation/adapter-components/07-parity-review.md docs/implementation/adapter-components/08-validation-and-pr-closeout.md docs/implementation/adapter-components/12-parity-audit-loop.md docs/implementation/adapter-components/13-composition-integration.md .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -557,7 +557,7 @@ id: call_GS3Lq71sdyIsO5tPcxupkpnO
 ```json
 {
   "cmd": "cargo xtask spec info tabs",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -570,7 +570,7 @@ id: call_HnTeggifaowBXsOSxGnHg5oO
 ```json
 {
   "cmd": "sed -n '1,240p' docs/implementation/adapter-component-delivery.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -582,7 +582,7 @@ id: call_RSVVPU3EtsZehyWQNenlfSIm
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -770,7 +770,7 @@ id: call_OWmqSr3gjJiK4euQPNokqEUW
 ```json
 {
   "cmd": "sed -n '261,620p' .agents/skills/post-implementation-audit/SKILL.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 18000
 }
 ```
@@ -782,7 +782,7 @@ id: call_vwLR6wNvBNgoQpRf5t4jJ7wo
 ```json
 {
   "cmd": "sed -n '1,240p' docs/implementation/adapter-components/README.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -794,7 +794,7 @@ id: call_GjMV2LjpDxLBmtxMb0a6TyFq
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/01-before-you-code.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -806,7 +806,7 @@ id: call_m48zTH6uUTJ3mey8kcLOkDBO
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/02-adapter-api-and-wiring.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -1017,7 +1017,7 @@ id: call_RWZccdvA3nzMg88M8C2rLsW9
 ```json
 {
   "cmd": "sed -n '261,520p' docs/implementation/adapter-components/02-adapter-api-and-wiring.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -1029,7 +1029,7 @@ id: call_HolUs8VGBVUxptBfwYMmAdN4
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/03-framework-rules.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -1041,7 +1041,7 @@ id: call_SGoqhrKYaq5mUGmbvNDmEUgN
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/04-adapter-tests.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -1053,7 +1053,7 @@ id: call_x9vT1oIuebO0ewINtACjdHiI
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/05-e2e-fixtures-and-harnesses.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -1242,7 +1242,7 @@ id: call_73lOpeviUOdZi7NajSGEbpJ8
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/06-widgets-examples.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 13000
 }
 ```
@@ -1254,7 +1254,7 @@ id: call_0ZQbuPS4POVb6ziErVhogj3E
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/07-parity-review.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -1266,7 +1266,7 @@ id: call_rGEPm2h6oJSrLLp2NRPm1vLN
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/08-validation-and-pr-closeout.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -1278,7 +1278,7 @@ id: call_vcCC91p85yAUPEkhUZMhdEt0
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/10-reference-exploration-sketch.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 13000
 }
 ```
@@ -1488,7 +1488,7 @@ id: call_dTwqvJRYYmhtwKkRXnXZgGIj
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/11-i18n-and-a11y-support.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -1500,7 +1500,7 @@ id: call_SWTIPCNgUpD03k78HV6JZ64W
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/09-browser-parity-harness.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -1512,7 +1512,7 @@ id: call_x9rSpUeS21xs8shm6gIlO5GK
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/12-parity-audit-loop.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -1524,7 +1524,7 @@ id: call_NoCBDqyeUhnftwpDrIK4fJkP
 ```json
 {
   "cmd": "sed -n '1,220p' docs/implementation/adapter-components/13-composition-integration.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 8000
 }
 ```
@@ -1715,7 +1715,7 @@ id: call_LTbKQoBHdcoHsi1KPpFc1Akb
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/checklists/component-delivery.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 14000
 }
 ```
@@ -1727,7 +1727,7 @@ id: call_CqNjMz1SFjngU5yM7B7h0PAc
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/checklists/e2e-feature-matrix.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -1739,7 +1739,7 @@ id: call_G3CQx1xvppSdVYe1rI44Uo1U
 ```json
 {
   "cmd": "sed -n '1,260p' docs/implementation/adapter-components/checklists/widgets-visual-review.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -1751,7 +1751,7 @@ id: call_v2ANogHzHdojY1tOBAGE9O9B
 ```json
 {
   "cmd": "wc -c spec/components/navigation/tabs.md spec/leptos-components/navigation/tabs.md spec/dioxus-components/navigation/tabs.md crates/ars-components/src/navigation/tabs/mod.rs crates/ars-leptos/src/navigation/tabs.rs crates/ars-dioxus/src/navigation/tabs.rs crates/ars-leptos/tests/tabs.rs crates/ars-dioxus/tests/tabs.rs crates/ars-leptos/tests/tabs_wasm.rs crates/ars-dioxus/tests/tabs_wasm.rs crates/ars-e2e/src/navigation/tabs.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -1893,7 +1893,7 @@ id: call_Sd82E1hOxElrUeCQVOD19ZDE
 ```json
 {
   "cmd": "rg -n \"^pub |^#\\[component\\]|struct .*Props|enum .*Props|fn .*(Tabs|Tab|Panel|List|Trigger)|TODO|FIXME|unwrap_or_else\\(\\|\\| use_|map_or_else\\([^\\n]*use_|adapter-rendering-glue|component-semantics|GlobalAttributes|TextProp|StoredValue|CopyValue|part_attrs|apply_part_attrs\" crates/ars-leptos/src/navigation/tabs.rs crates/ars-dioxus/src/navigation/tabs.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 22000
 }
 ```
@@ -1905,7 +1905,7 @@ id: call_SPziU97KE1FPjvu9LLudzpwq
 ```json
 {
   "cmd": "rg -n \"^# |^## |```rust|struct .*Props|enum|fn |pub |Tabs|TabList|TabPanel|TabTrigger|Counterpart|React Aria|keyboard|E2E|wasm|GlobalAttributes|TextProp\" spec/components/navigation/tabs.md spec/leptos-components/navigation/tabs.md spec/dioxus-components/navigation/tabs.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 26000
 }
 ```
@@ -1917,7 +1917,7 @@ id: call_26VywqmLaECFy1Xhkwqa8v2G
 ```json
 {
   "cmd": "rg --files docs/implementation/sketches | rg 'tabs|Tab|navigation'",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 8000
 }
 ```
@@ -1929,7 +1929,7 @@ id: call_NaNcBHNZ4DJopbUaHhWqQx9c
 ```json
 {
   "cmd": "rg -n \"tabs|Tabs|TabList|TabPanel|TabTrigger|NavigationTabs|tab\" examples/widgets-leptos/src/categories/navigation.rs examples/widgets-dioxus/src/categories/navigation.rs examples/widgets-leptos-css/src/categories/navigation.rs examples/widgets-dioxus-css/src/categories/navigation.rs examples/widgets-leptos-tailwind/src/categories/navigation.rs examples/widgets-dioxus-tailwind/src/categories/navigation.rs crates/ars-e2e/fixtures/leptos/src/categories/navigation.rs crates/ars-e2e/fixtures/dioxus/src/categories/navigation.rs crates/ars-e2e/src/navigation/tabs.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 26000
 }
 ```
@@ -2056,7 +2056,7 @@ id: call_714QkMo8DiBVnfZUbNwEDQGV
 ```json
 {
   "cmd": "rg -n '^#|^##|```rust|struct .*Props|enum|fn |pub |Tabs|TabList|TabPanel|TabTrigger|Counterpart|React Aria|keyboard|E2E|wasm|GlobalAttributes|TextProp' spec/components/navigation/tabs.md spec/leptos-components/navigation/tabs.md spec/dioxus-components/navigation/tabs.md",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 26000
 }
 ```
@@ -2068,7 +2068,7 @@ id: call_2jao9c3b09UGOO1qzic8dbUQ
 ```json
 {
   "cmd": "rg -n 'tabs|navigation|pub use .*tabs|ars_components::navigation::tabs|TabKey|Tabs' crates/ars-leptos/src/navigation/mod.rs crates/ars-dioxus/src/navigation/mod.rs crates/ars-leptos/src/prelude.rs crates/ars-dioxus/src/prelude.rs crates/ars-leptos/src/lib.rs crates/ars-dioxus/src/lib.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 16000
 }
 ```
@@ -2080,7 +2080,7 @@ id: call_b1n1JCdAE8VsarhNAOL16yqj
 ```json
 {
   "cmd": "rg --files crates/ars-leptos-components/src crates/ars-dioxus-components/src | rg 'tabs|navigation'",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 12000
 }
 ```
@@ -2092,7 +2092,7 @@ id: call_EwmDcwLA4N0mE5ZPBI91tWAW
 ```json
 {
   "cmd": "rg -n '^#\\[test\\]|^#\\[wasm_bindgen_test\\]|fn .*tabs|async fn|Tabs|keyboard|drag|close|disabled|class|style|aria|locale|axe|computed|visual' crates/ars-leptos/tests/tabs.rs crates/ars-dioxus/tests/tabs.rs crates/ars-leptos/tests/tabs_wasm.rs crates/ars-dioxus/tests/tabs_wasm.rs crates/ars-e2e/src/navigation/tabs.rs",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 30000
 }
 ```
@@ -2273,8 +2273,8 @@ tool_use exec_command
 id: call_rptC5jg51SEQM7RWiIEZbNsx
 ```json
 {
-  "cmd": "nl -ba /Users/ericson/.codex/memories/MEMORY.md | sed -n '6,14p'",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '6,14p'",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 4000
 }
 ```
@@ -2285,8 +2285,8 @@ tool_use exec_command
 id: call_dWI0YCcZSQTpycDsDqGUtROe
 ```json
 {
-  "cmd": "nl -ba /Users/ericson/.codex/memories/MEMORY.md | sed -n '36,44p'",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '36,44p'",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 4000
 }
 ```
@@ -2297,8 +2297,8 @@ tool_use exec_command
 id: call_epwzj7Mj8eqBtG2JsTHfPayd
 ```json
 {
-  "cmd": "nl -ba /Users/ericson/.codex/memories/rollout_summaries/REDACTED.md | sed -n '1,70p'",
-  "workdir": "/Users/ericson/.codex/worktrees/61ee/ars-ui",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/rollout_summaries/REDACTED.md | sed -n '1,70p'",
+  "workdir": "/home/<USER>/.codex/worktrees/61ee/ars-ui",
   "max_output_tokens": 8000
 }
 ```
@@ -2317,7 +2317,7 @@ Output:
      7	
      8	### rollout_summary_files
      9	
-    10	- rollout_summaries/REDACTED.md (cwd=/Users/ericson/.codex/worktrees/e488/ars-ui, rollout_path=/Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T11-10-21-019e92f8-84a9-7fc0-bf0e-061072d47c47.jsonl, updated_at=2026-06-16T05:43:38+00:00, thread_id=019e92f8-84a9-7fc0-bf0e-061072d47c47, paired checkbox delivery plus two review-found Dioxus follow-up fixes, Codex approval reached while Coverage was still pending on the last poll)
+    10	- rollout_summaries/REDACTED.md (cwd=/home/<USER>/.codex/worktrees/e488/ars-ui, rollout_path=/home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T11-10-21-019e92f8-84a9-7fc0-bf0e-061072d47c47.jsonl, updated_at=2026-06-16T05:43:38+00:00, thread_id=019e92f8-84a9-7fc0-bf0e-061072d47c47, paired checkbox delivery plus two review-found Dioxus follow-up fixes, Codex approval reached while Coverage was still pending on the last poll)
     11	
     12	### keywords
     13	
@@ -2353,13 +2353,13 @@ Original token count: 1386
 Output:
      1	thread_id: 019e92f8-84a9-7fc0-bf0e-061072d47c47
      2	updated_at: 2026-06-16T05:43:38+00:00
-     3	rollout_path: /Users/ericson/.codex/sessions/2026/06/04/rollout-2026-06-04T11-10-21-019e92f8-84a9-7fc0-bf0e-061072d47c47.jsonl
-     4	cwd: /Users/ericson/.codex/worktrees/e488/ars-ui
+     3	rollout_path: /home/<USER>/.codex/sessions/2026/06/04/rollout-2026-06-04T11-10-21-019e92f8-84a9-7fc0-bf0e-061072d47c47.jsonl
+     4	cwd: /home/<USER>/.codex/worktrees/e488/ars-ui
      5	git_branch: codex/issue-320-431-checkbox-adapters
      6	
      7	# Implemented Checkbox adapters for Leptos and Dioxus, then iterated through Codex review fixes until approval.
      8	
-     9	Rollout context: The user requested implementation of GitHub issues #320 and #431 in `/Users/ericson/.codex/worktrees/e488/ars-ui`. The work was adapter-level Checkbox delivery, so the agent first read the adapter workflow docs, the issue bodies, the component spec, and the existing adapter patterns before editing.
+     9	Rollout context: The user requested implementation of GitHub issues #320 and #431 in `/home/<USER>/.codex/worktrees/e488/ars-ui`. The work was adapter-level Checkbox delivery, so the agent first read the adapter workflow docs, the issue bodies, the component spec, and the existing adapter patterns before editing.
     10	
     11	## Task 1: Implement Checkbox Leptos adapter (#320)
     12	

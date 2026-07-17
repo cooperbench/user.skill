@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_01PSmNwqrXwJfTZpCeK6LqQc
 ```json
 {
-  "file_path": "/home/makoto1234/.claude/projects/-home-makoto1234-makoto-projects/memory/user_vision.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-makoto1234-makoto-projects/memory/user_vision.md"
 }
 ```
 
@@ -44,7 +44,7 @@ tool_use Read
 id: toolu_018DQfkUH9aJuoEMDPTowRQR
 ```json
 {
-  "file_path": "/home/makoto1234/.claude/projects/-home-makoto1234-makoto-projects/memory/project_current_status.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-makoto1234-makoto-projects/memory/project_current_status.md"
 }
 ```
 

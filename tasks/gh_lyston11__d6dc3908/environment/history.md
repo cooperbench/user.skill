@@ -15,8 +15,8 @@ tool_use exec_command
 id: call_7XPYy25wbvxacskWvOpVz360
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.agents/skills/agent-reach/SKILL.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/agent-reach/SKILL.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -96,7 +96,7 @@ id: call_PDjye6IZ1lKGqslvw2EIki9a
 ```json
 {
   "cmd": "pwd && ls",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -109,7 +109,7 @@ id: call_UYqDDgoeBbuArXfAVcCbxrxz
 ```json
 {
   "cmd": "command -v node && node -v && command -v npm && npm -v && command -v pnpm && pnpm -v && command -v wrangler && wrangler --version",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -122,7 +122,7 @@ id: call_QkamQMieJLca5vVcLKXhofie
 ```json
 {
   "cmd": "git --version && git status --short",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -138,7 +138,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 137
 Output:
-/Users/lyston/PycharmProjects
+/home/<USER>/PycharmProjects
 AionUi
 CLIProxyAPI
 CodexDesktop-Rebuild
@@ -193,11 +193,11 @@ Wall time: 1.0068 seconds
 Process running with session ID 34231
 Original token count: 58
 Output:
-/Users/lyston/.local/state/fnm_multishells/25781_1779512573299/bin/node
+/home/<USER>/.local/state/fnm_multishells/25781_1779512573299/bin/node
 v24.11.1
-/Users/lyston/.local/state/fnm_multishells/25781_1779512573299/bin/npm
+/home/<USER>/.local/state/fnm_multishells/25781_1779512573299/bin/npm
 11.6.2
-/Users/lyston/.local/state/fnm_multishells/25781_1779512573299/bin/pnpm
+/home/<USER>/.local/state/fnm_multishells/25781_1779512573299/bin/pnpm
 
 ```
 
@@ -254,7 +254,7 @@ id: call_XBklRjJt1a9BXLqlceYwTRcQ
 ```json
 {
   "cmd": "git clone https://github.com/dreamhunter2333/cloudflare_temp_email.git",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -311,7 +311,7 @@ id: call_Q91s922qrehUa90qecmkTjrq
 ```json
 {
   "cmd": "rg --files",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -324,7 +324,7 @@ id: call_NQz83AAxu7fBImPVs4oqzXrw
 ```json
 {
   "cmd": "sed -n '1,240p' README.md",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -337,7 +337,7 @@ id: call_Fu1EoZsUjmvVwxWKAxcDCJIK
 ```json
 {
   "cmd": "find . -maxdepth 3 -name '*wrangler*' -o -name 'package.json' -o -name '.env*'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -350,7 +350,7 @@ id: call_QRY10mToTr3ynDfWgVQXhMsv
 ```json
 {
   "cmd": "git branch --show-current && git log -1 --oneline",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -366,7 +366,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3652
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/34840_1779780373872". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/34840_1779780373872". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 CLAUDE.md
 README_EN.md
 README.md
@@ -532,7 +532,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2691
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/34839_1779780373872". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/34839_1779780373872". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 <!-- markdownlint-disable-file MD033 MD045 -->
 # Cloudflare 临时邮箱 - 免费搭建临时邮件服务
 
@@ -612,7 +612,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 167
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/34842_1779780373872". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/34842_1779780373872". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 ./frontend/.env.pages
 ./frontend/package.json
 ./frontend/.env.example
@@ -641,7 +641,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 68
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/34841_1779780373872". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/34841_1779780373872". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 main
 44b29aa feat: hide GitHub links for normal users
 
@@ -654,7 +654,7 @@ id: call_HqTCEg1JLY03IFta5f19gnLS
 ```json
 {
   "cmd": "sed -n '1,240p' vitepress-docs/docs/zh/guide/cli/pre-requisite.md",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -667,7 +667,7 @@ id: call_UDrzxC3ptUsKL3Y7tKWgAEqk
 ```json
 {
   "cmd": "sed -n '1,260p' vitepress-docs/docs/zh/guide/cli/d1.md",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -680,7 +680,7 @@ id: call_hn4LfdPGtsXC5FrQc3nBBb0v
 ```json
 {
   "cmd": "sed -n '1,300p' vitepress-docs/docs/zh/guide/cli/worker.md",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 28000
 }
@@ -693,7 +693,7 @@ id: call_uXRkPvE3W1kz0wvVpWVto8qw
 ```json
 {
   "cmd": "sed -n '1,260p' vitepress-docs/docs/zh/guide/cli/pages.md",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -709,7 +709,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 144
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/34984_1779780391098". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/34984_1779780391098". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 # 先决条件
 
 ## wrangler 的安装
@@ -740,7 +740,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 300
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/35005_1779780391137". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/35005_1779780391137". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 # 初始化/更新 D1 数据库
 
 第一次执行登录 wrangler 命令时，会提示登录, 按提示操作即可
@@ -787,7 +787,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1094
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/35006_1779780391137". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/35006_1779780391137". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 # Cloudflare Worker 后端
 
 > [!warning] 注意
@@ -855,7 +855,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 498
 Output:
-error: Can't create the symlink for multishells at "/Users/lyston/.local/state/fnm_multishells/35018_1779780391194". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
+error: Can't create the symlink for multishells at "/home/<USER>/.local/state/fnm_multishells/35018_1779780391194". Maybe there are some issues with permissions for the directory? Operation not permitted (os error 1)
 # Cloudflare Pages 前端
 
 > [!warning] 注意
@@ -927,7 +927,7 @@ id: call_wNTuZ6qYjQjwmLDlZeM4Co3f
 ```json
 {
   "cmd": "sed -n '1,260p' worker/package.json",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -941,7 +941,7 @@ id: call_XpNhWZTKrGSnQq6NyYCtXeUv
 ```json
 {
   "cmd": "sed -n '1,260p' frontend/package.json",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -955,7 +955,7 @@ id: call_ze9BX8lYta6r1baZLeF9Glpw
 ```json
 {
   "cmd": "sed -n '1,260p' pages/package.json",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -969,7 +969,7 @@ id: call_puHY0NBXYXpYSMtf5jv6lbxz
 ```json
 {
   "cmd": "sed -n '1,260p' worker/wrangler.toml.template",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -983,7 +983,7 @@ id: call_j2jcrkRgW7f9ODW5R0v5zmGj
 ```json
 {
   "cmd": "sed -n '1,180p' frontend/.env.example",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -1035,7 +1035,7 @@ Output:
   },
   "pnpm": {
     "patchedDependencies": {
-      "telegraf@4.16.3": "patches/telegraf@4.16.3.patch"
+      "telegraf@4.16.3": "patches/<REDACTED_EMAIL>"
     }
   },
   "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
@@ -1207,7 +1207,7 @@ id: call_ZN9GxACt2ZuFfVzpZY1kp7sS
 ```json
 {
   "cmd": "sed -n '1,220p' .gitignore",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -1221,7 +1221,7 @@ id: call_hW3zhqrlJbHYFgOvlHjbfiBO
 ```json
 {
   "cmd": "command -v pnpm && pnpm -v && command -v openssl && openssl version",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -1235,7 +1235,7 @@ id: call_KqjYKGyXOksLuvzGrcofDMJT
 ```json
 {
   "cmd": "env | rg '^(CLOUDFLARE|CF_|WRANGLER)_'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false
@@ -1367,7 +1367,7 @@ Wall time: 0.2937 seconds
 Process exited with code 0
 Original token count: 48
 Output:
-/Users/lyston/.local/state/fnm_multishells/25781_1779512573299/bin/pnpm
+/home/<USER>/.local/state/fnm_multishells/25781_1779512573299/bin/pnpm
 11.0.8
 /opt/homebrew/Caskroom/miniforge/base/bin/openssl
 OpenSSL 3.5.0 8 Apr 2025 (Library: OpenSSL 3.5.0 8 Apr 2025)
@@ -1398,7 +1398,7 @@ id: call_c3XqGlHeXPSvkzIy16mOB8oD
 ```json
 {
   "cmd": "pnpm install",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -1419,18 +1419,18 @@ node:fs:1349
   const result = binding.mkdir(
                          ^
 
-Error: EPERM: operation not permitted, mkdir '/Users/lyston/.cache/node/corepack/v1/corepack-35521-e0df6a05.1753d8'
+Error: EPERM: operation not permitted, mkdir '/home/<USER>/.cache/node/corepack/v1/corepack-35521-e0df6a05.1753d8'
     at mkdirSync (node:fs:1349:26)
-    at getTemporaryFolder (/Users/lyston/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:21916:31)
-    at download (/Users/lyston/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:22201:21)
-    at installVersion (/Users/lyston/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:22295:61)
-    at async Engine.ensurePackageManager (/Users/lyston/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:22846:32)
-    at async Engine.executePackageManagerRequest (/Users/lyston/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:22957:25)
-    at async Object.runMain (/Users/lyston/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:23655:7) {
+    at getTemporaryFolder (/home/<USER>/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:21916:31)
+    at download (/home/<USER>/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:22201:21)
+    at installVersion (/home/<USER>/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:22295:61)
+    at async Engine.ensurePackageManager (/home/<USER>/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:22846:32)
+    at async Engine.executePackageManagerRequest (/home/<USER>/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:22957:25)
+    at async Object.runMain (/home/<USER>/.local/share/fnm/node-versions/v24.11.1/installation/lib/node_modules/corepack/dist/lib/corepack.cjs:23655:7) {
   errno: -1,
   code: 'EPERM',
   syscall: 'mkdir',
-  path: '/Users/lyston/.cache/node/corepack/v1/corepack-35521-e0df6a05.1753d8'
+  path: '/home/<USER>/.cache/node/corepack/v1/corepack-35521-e0df6a05.1753d8'
 }
 
 Node.js v24.11.1
@@ -1448,7 +1448,7 @@ id: call_tQeNVaau4GE6rP5uChMn4zzr
 ```json
 {
   "cmd": "pnpm install",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -1602,7 +1602,7 @@ id: call_Vz0gxUEKXTq5lT9lLmlnQUju
 ```json
 {
   "cmd": "openssl rand -hex 32",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000,
   "login": false
@@ -1616,7 +1616,7 @@ id: call_0CRZGVaG1H11n8JO0MxKRcn9
 ```json
 {
   "cmd": "openssl rand -base64 24",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000,
   "login": false
@@ -1662,7 +1662,7 @@ id: call_O0xXXJg308C1g82XsWBZCgxy
 ```json
 {
   "cmd": "pnpm exec wrangler whoami",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -1705,24 +1705,24 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 672
 Output:
-[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mFailed to write to log file Error: EPERM: operation not permitted, open '/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-29-17_592.log'[0m
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mFailed to write to log file Error: EPERM: operation not permitted, open '/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-29-17_592.log'[0m
 
       at async open (node:internal/fs/promises:642:25)
       at async writeFile (node:internal/fs/promises:1249:14)
-      at async /Users/lyston/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/wrangler@4.90.0_@cloudflare+workers-types@4.20260509.1/node_modules/wrangler/wrangler-dist/cli.js:49677:7
-      at async Mutex.runWith (/Users/lyston/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/miniflare@4.20260507.1/node_modules/miniflare/dist/src/index.js:58144:48)
-      at async appendToDebugLogFile (/Users/lyston/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/wrangler@4.90.0_@cloudflare+workers-types@4.20260509.1/node_modules/wrangler/wrangler-dist/cli.js:49674:3) {
+      at async /home/<USER>/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/wrangler@4.90.0_@cloudflare+workers-types@4.20260509.1/node_modules/wrangler/wrangler-dist/cli.js:49677:7
+      at async Mutex.runWith (/home/<USER>/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/miniflare@4.20260507.1/node_modules/miniflare/dist/src/index.js:58144:48)
+      at async appendToDebugLogFile (/home/<USER>/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/wrangler@4.90.0_@cloudflare+workers-types@4.20260509.1/node_modules/wrangler/wrangler-dist/cli.js:49674:3) {
     errno: -1,
     code: 'EPERM',
     syscall: 'open',
-    path: '/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-29-17_592.log'
+    path: '/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-29-17_592.log'
   }
 
 
 [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mWould have written: [0m
 
   --- 2026-05-26T07:29:17.715Z debug
-  🪵  Writing logs to "/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-29-17_592.log"
+  🪵  Writing logs to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-29-17_592.log"
   ---
   
 
@@ -1733,8 +1733,8 @@ Output:
 Getting User settings...
 [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mFailed to fetch auth token: TypeError: fetch failed[0m
 
-      at Object.processResponse (/Users/lyston/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/wrangler@4.90.0_@cloudflare+workers-types@4.20260509.1/node_modules/wrangler/wrangler-dist/cli.js:24200:21)
-      at /Users/lyston/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/wrangler@4.90.0_@cloudflare+workers-types@4.20260509.1/node_modules/wrangler/wrangler-dist/cli.js:24586:23
+      at Object.processResponse (/home/<USER>/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/wrangler@4.90.0_@cloudflare+workers-types@4.20260509.1/node_modules/wrangler/wrangler-dist/cli.js:24200:21)
+      at /home/<USER>/PycharmProjects/cloudflare_temp_email/worker/node_modules/.pnpm/wrangler@4.90.0_@cloudflare+workers-types@4.20260509.1/node_modules/wrangler/wrangler-dist/cli.js:24586:23
       at node:internal/process/task_queues:149:7
       at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
       at AsyncResource.runMicrotask (node:internal/process/task_queues:146:8)
@@ -1753,7 +1753,7 @@ Getting User settings...
 [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNot logged in.[0m
 
 
-🪵  Logs were written to "/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-29-17_592.log"
+🪵  Logs were written to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-29-17_592.log"
 
 ```
 
@@ -1768,7 +1768,7 @@ id: call_LVGlJoNXWEhVsFTpGdM8Yo0Y
 ```json
 {
   "cmd": "pnpm exec wrangler whoami",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -1822,11 +1822,11 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 419
 Output:
-👋 You are logged in with an OAuth Token, associated with the email luotao2670028785@gmail.com.
+👋 You are logged in with an OAuth Token, associated with the email <REDACTED_EMAIL>.
 ┌──────────────────────────────────────┬──────────────────────────────────┐
 │ Account Name                         │ Account ID                       │
 ├──────────────────────────────────────┼──────────────────────────────────┤
-│ Luotao2670028785@gmail.com's Account │ 3b62689c093ad777326e77fae36ce19d │
+│ <REDACTED_EMAIL>'s Account │ 3b62689c093ad777326e77fae36ce19d │
 └──────────────────────────────────────┴──────────────────────────────────┘
 🔓 Token Permissions:
 Scope (Access)
@@ -1875,7 +1875,7 @@ id: call_UDbceAoNlkRqfSPf1FyyPDBF
 ```json
 {
   "cmd": "pnpm exec wrangler d1 create cloudflare-temp-email-db",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -1951,7 +1951,7 @@ id: call_Try8PTlApfG5tAtWGnOpPnbJ
 ```json
 {
   "cmd": "pnpm exec wrangler d1 execute cloudflare-temp-email-db --file=../db/schema.sql --remote",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false,
@@ -2067,7 +2067,7 @@ id: call_O1mewm1JbFfExpCTwWOrid9k
 ```json
 {
   "cmd": "pnpm run deploy",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false,
@@ -2092,7 +2092,7 @@ Process running with session ID 65097
 Original token count: 120
 Output:
 
-> cloudflare_temp_email@1.9.0 deploy /Users/lyston/PycharmProjects/cloudflare_temp_email/worker
+> cloudflare_temp_email@1.9.0 deploy /home/<USER>/PycharmProjects/cloudflare_temp_email/worker
 > wrangler deploy --minify
 
 
@@ -2150,7 +2150,7 @@ Uploaded cloudflare-temp-email (4.95 sec)
   For more details, refer to [4mhttps://developers.cloudflare.com/workers/configuration/routing/routes/#set-up-a-route[0m
 
 
-🪵  Logs were written to "/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-33-19_460.log"
+🪵  Logs were written to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-33-19_460.log"
  ELIFECYCLE  Command failed with exit code 1.
 
 ```
@@ -2166,7 +2166,7 @@ id: call_n5v6FMdlwvd5mqvZ0yNC85mF
 ```json
 {
   "cmd": "pnpm exec wrangler domains list",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -2187,7 +2187,7 @@ id: call_PmZ45obLWq9c5yfsvOh8QncR
 ```json
 {
   "cmd": "pnpm exec wrangler deployments list",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -2208,7 +2208,7 @@ id: call_waWb1IEJ44EJIaQAGhTYBfdi
 ```json
 {
   "cmd": "pnpm exec wrangler whoami",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -2323,7 +2323,7 @@ Process exited with code 0
 Original token count: 78
 Output:
 Created:     2026-05-26T07:33:25.855Z
-Author:      luotao2670028785@gmail.com
+Author:      <REDACTED_EMAIL>
 Source:      Upload
 Message:     Automatic deployment on upload.
 Version(s):  (100%) d156a978-22d7-4582-b4f4-437891d5f55b
@@ -2356,11 +2356,11 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 419
 Output:
-👋 You are logged in with an OAuth Token, associated with the email luotao2670028785@gmail.com.
+👋 You are logged in with an OAuth Token, associated with the email <REDACTED_EMAIL>.
 ┌──────────────────────────────────────┬──────────────────────────────────┐
 │ Account Name                         │ Account ID                       │
 ├──────────────────────────────────────┼──────────────────────────────────┤
-│ Luotao2670028785@gmail.com's Account │ 3b62689c093ad777326e77fae36ce19d │
+│ <REDACTED_EMAIL>'s Account │ 3b62689c093ad777326e77fae36ce19d │
 └──────────────────────────────────────┴──────────────────────────────────┘
 🔓 Token Permissions:
 Scope (Access)
@@ -2409,7 +2409,7 @@ id: call_cSVoV2zSPXiJyC1XNx8H8DeI
 ```json
 {
   "cmd": "dig +short NS lyston11.qzz.io.com && dig +short NS qzz.io.com && dig +short A api.lyston11.qzz.io.com",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -2423,7 +2423,7 @@ id: call_hsa5EdbKgcXJZm257BoSdF4C
 ```json
 {
   "cmd": "pnpm exec wrangler pages project list",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -2444,7 +2444,7 @@ id: call_BXUIYbuYqodDLgaRPbYWNw7o
 ```json
 {
   "cmd": "pnpm exec wrangler email --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -2527,7 +2527,7 @@ id: call_mqX88jWqsYdD1GAMbqXhJePe
 ```json
 {
   "cmd": "dig +short NS lyston11.qzz.io.com && dig +short NS qzz.io.com && dig +short A api.lyston11.qzz.io.com",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -2547,7 +2547,7 @@ id: call_CkyMM35zCP6esooqebNNINf3
 ```json
 {
   "cmd": "pnpm exec wrangler --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -2561,7 +2561,7 @@ id: call_LiwEHcxTVrnft2RR7Xz7YlKZ
 ```json
 {
   "cmd": "pnpm exec wrangler email routing --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -2699,7 +2699,7 @@ id: call_Fyv1V2wSAHDxaVY8CxG84JHb
 ```json
 {
   "cmd": "pnpm exec wrangler email routing list",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -2761,7 +2761,7 @@ No zones found with Email Routing in this account.
 
 > AGENT
 
-到这里我们到了第一个需要你确认的节点：当前 Wrangler 登录的是 `luotao2670028785@gmail.com` 这个 Cloudflare 账号，但它找不到 `lyston11.qzz.io.com` 的 zone。请你先打开 Cloudflare 控制台看一下这个域名是不是在同一个账号下，状态是否是 Active；我这边也会继续把前端依赖准备好，等你确认账号/zone 后就能继续绑定域名和邮件路由。
+到这里我们到了第一个需要你确认的节点：当前 Wrangler 登录的是 `<REDACTED_EMAIL>` 这个 Cloudflare 账号，但它找不到 `lyston11.qzz.io.com` 的 zone。请你先打开 Cloudflare 控制台看一下这个域名是不是在同一个账号下，状态是否是 Active；我这边也会继续把前端依赖准备好，等你确认账号/zone 后就能继续绑定域名和邮件路由。
 
 > TOOL
 
@@ -2770,7 +2770,7 @@ id: call_wfPK2iFUXOren84Wxrz4hFQ2
 ```json
 {
   "cmd": "pnpm install",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -2928,7 +2928,7 @@ id: call_M8xIahPzfvACSvCXhtTWV3lR
 ```json
 {
   "cmd": "pnpm exec wrangler email routing settings lyston11.qzz.io.com",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -2949,7 +2949,7 @@ id: call_i5m7YWdoI9CIvJAxHuVZ4hTw
 ```json
 {
   "cmd": "pnpm exec wrangler deployments status",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -2970,7 +2970,7 @@ id: call_KcdjWlmFG6XKTrHjgkLKA5r9
 ```json
 {
   "cmd": "pnpm run build",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -3023,7 +3023,7 @@ Process running with session ID 14559
 Original token count: 34
 Output:
 
-> cloudflare_temp_email@1.9.0 build /Users/lyston/PycharmProjects/cloudflare_temp_email/frontend
+> cloudflare_temp_email@1.9.0 build /home/<USER>/PycharmProjects/cloudflare_temp_email/frontend
 > vite build -m prod --emptyOutDir
 
 
@@ -3056,7 +3056,7 @@ Output:
 [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not find zone for `lyston11.qzz.io.com`. Make sure the domain exists in your account.[0m
 
 
-🪵  Logs were written to "/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-49-10_942.log"
+🪵  Logs were written to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-49-10_942.log"
 
 ```
 
@@ -3084,7 +3084,7 @@ Process exited with code 0
 Original token count: 78
 Output:
 Created:     2026-05-26T07:33:25.855Z
-Author:      luotao2670028785@gmail.com
+Author:      <REDACTED_EMAIL>
 Source:      Upload
 Message:     Automatic deployment on upload.
 Version(s):  (100%) d156a978-22d7-4582-b4f4-437891d5f55b
@@ -3160,7 +3160,7 @@ id: call_jjsTxw3KxP4Rz3gZpBm31kPH
 ```json
 {
   "cmd": "pnpm exec wrangler pages project list",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -3228,7 +3228,7 @@ id: call_VotU8zQKIlc2qFuWFvDIqbyQ
 ```json
 {
   "cmd": "pnpm exec wrangler deployments status --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -3242,7 +3242,7 @@ id: call_fIYxx6xwd2rLTa2FlqeQh1z9
 ```json
 {
   "cmd": "pnpm exec wrangler versions list",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -3263,7 +3263,7 @@ id: call_WmuJK8hgcK3Ui776jSIcsivg
 ```json
 {
   "cmd": "pnpm exec wrangler deploy --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -3386,7 +3386,7 @@ Original token count: 45
 Output:
 Version ID:  d156a978-22d7-4582-b4f4-437891d5f55b
 Created:     2026-05-26T07:33:25.855Z
-Author:      luotao2670028785@gmail.com
+Author:      <REDACTED_EMAIL>
 Source:      Upload
 Tag:         -
 Message:     -
@@ -3454,7 +3454,7 @@ id: call_nxhSIBdX7ofUYLz3trElysqr
 ```json
 {
   "cmd": "pnpm exec wrangler email routing settings lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -3475,7 +3475,7 @@ id: call_mbgVjiXdm875Jk4Sxcj5s2iQ
 ```json
 {
   "cmd": "dig +short NS lyston11.qzz.io && dig +short A api.lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -3550,11 +3550,11 @@ Output:
 
 
 Getting User settings...
-👋 You are logged in with an OAuth Token, associated with the email luotao2670028785@gmail.com.
+👋 You are logged in with an OAuth Token, associated with the email <REDACTED_EMAIL>.
 ┌──────────────────────────────────────┬──────────────────────────────────┐
 │ Account Name                         │ Account ID                       │
 ├──────────────────────────────────────┼──────────────────────────────────┤
-│ Luotao2670028785@gmail.com's Account │ 3b62689c093ad777326e77fae36ce19d │
+│ <REDACTED_EMAIL>'s Account │ 3b62689c093ad777326e77fae36ce19d │
 └──────────────────────────────────────┴──────────────────────────────────┘
 🔓 Token Permissions:
 Scope (Access)
@@ -3589,7 +3589,7 @@ Scope (Access)
   - browser:write
 
 
-🪵  Logs were written to "/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-04-40_040.log"
+🪵  Logs were written to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-04-40_040.log"
 
 ```
 
@@ -3631,7 +3631,7 @@ id: call_aaT5kPXjg1op3KK5ScPMwVLw
 ```json
 {
   "cmd": "pnpm run deploy",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false,
@@ -3656,7 +3656,7 @@ Process running with session ID 72108
 Original token count: 78
 Output:
 
-> cloudflare_temp_email@1.9.0 deploy /Users/lyston/PycharmProjects/cloudflare_temp_email/worker
+> cloudflare_temp_email@1.9.0 deploy /home/<USER>/PycharmProjects/cloudflare_temp_email/worker
 > wrangler deploy --minify
 
 
@@ -3723,7 +3723,7 @@ id: call_xmV8GdAB30DbCmHx7WVxmfC4
 ```json
 {
   "cmd": "curl -fsS https://api.lyston11.qzz.io/",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -3743,7 +3743,7 @@ id: call_iCtPRCpkAEWhan2IW0zK185C
 ```json
 {
   "cmd": "curl -fsS https://api.lyston11.qzz.io/health_check",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -3763,7 +3763,7 @@ id: call_zKRbz4QIqrzriKHAvXXwNoRS
 ```json
 {
   "cmd": "pnpm run build",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -3807,7 +3807,7 @@ Process running with session ID 98325
 Original token count: 51
 Output:
 
-> cloudflare_temp_email@1.9.0 build /Users/lyston/PycharmProjects/cloudflare_temp_email/frontend
+> cloudflare_temp_email@1.9.0 build /home/<USER>/PycharmProjects/cloudflare_temp_email/frontend
 > vite build -m prod --emptyOutDir
 
 vite v7.3.3 building client environment for prod...
@@ -3880,7 +3880,7 @@ id: call_BFFcCGeFPrWo188eJmCjlnit
 ```json
 {
   "cmd": "pnpm run deploy",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false,
@@ -3905,7 +3905,7 @@ Process running with session ID 47604
 Original token count: 127
 Output:
 
-> cloudflare_temp_email@1.9.0 deploy /Users/lyston/PycharmProjects/cloudflare_temp_email/frontend
+> cloudflare_temp_email@1.9.0 deploy /home/<USER>/PycharmProjects/cloudflare_temp_email/frontend
 > npm run build && wrangler pages deploy ./dist --branch production
 
 npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
@@ -3984,7 +3984,7 @@ id: call_BFRrKcWGOlt78gVqQJ7txq1M
 ```json
 {
   "cmd": "pnpm exec wrangler pages deploy ./dist --project-name cloudflare-temp-email --branch production",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false,
@@ -4045,7 +4045,7 @@ Output:
   If you think this is a bug, please open an issue at: [4mhttps://github.com/cloudflare/workers-sdk/issues/new/choose[0m
 
 
-🪵  Logs were written to "/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-18-25_311.log"
+🪵  Logs were written to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-18-25_311.log"
 
 ```
 
@@ -4060,7 +4060,7 @@ id: call_Klcr8TzdklWE2CwjvWiNaP1M
 ```json
 {
   "cmd": "pnpm exec wrangler pages project create cloudflare-temp-email --production-branch production",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false,
@@ -4129,7 +4129,7 @@ id: call_A6szQUfusO4af3xB3eXLU3cd
 ```json
 {
   "cmd": "pnpm exec wrangler pages deploy ./dist --project-name cloudflare-temp-email --branch production",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false,
@@ -4204,7 +4204,7 @@ id: call_L1L1F8WXJWK6YIAHQqSx2FJq
 ```json
 {
   "cmd": "pnpm exec wrangler pages deployment list --project-name cloudflare-temp-email",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -4225,7 +4225,7 @@ id: call_AgSLAKQUB1AttK4eADuIfqwO
 ```json
 {
   "cmd": "pnpm exec wrangler pages project --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false
@@ -4239,7 +4239,7 @@ id: call_s88DwHxpQOEzvWNEGCu9yIlE
 ```json
 {
   "cmd": "curl -fsS https://6f89ed19.cloudflare-temp-email-d2a.pages.dev/",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -4376,7 +4376,7 @@ id: call_2XNU2FtJyAy5upfWXuvu0ySr
 ```json
 {
   "cmd": "sed -n '1,260p' vitepress-docs/docs/zh/guide/email-routing.md",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000,
   "login": false
@@ -4390,7 +4390,7 @@ id: call_oy7p1bvutMXwGUIhAyvwwOgx
 ```json
 {
   "cmd": "pnpm exec wrangler email routing dns --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false
@@ -4404,7 +4404,7 @@ id: call_NezNDNszfVbXXCKe5a1PWJGp
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false
@@ -4512,7 +4512,7 @@ id: call_YkMcfSqVblqWMn3Q6vkRLhRh
 ```json
 {
   "cmd": "pnpm exec wrangler login",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -4586,7 +4586,7 @@ id: call_x5v47PVgxmc4Fj8QYdmOEgEp
 ```json
 {
   "cmd": "pnpm exec wrangler whoami",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -4607,7 +4607,7 @@ id: call_CX4z6q8GRAr6Kpis26RtWrct
 ```json
 {
   "cmd": "pnpm exec wrangler email routing settings lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -4628,7 +4628,7 @@ id: call_TXqDT3s0W1Ye3KB4XXGjIJTr
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules get lyston11.qzz.io catch-all",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -4720,11 +4720,11 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 372
 Output:
-👋 You are logged in with an OAuth Token, associated with the email luotao2670028785@gmail.com.
+👋 You are logged in with an OAuth Token, associated with the email <REDACTED_EMAIL>.
 ┌──────────────────────────────────────┬──────────────────────────────────┐
 │ Account Name                         │ Account ID                       │
 ├──────────────────────────────────────┼──────────────────────────────────┤
-│ Luotao2670028785@gmail.com's Account │ 3b62689c093ad777326e77fae36ce19d │
+│ <REDACTED_EMAIL>'s Account │ 3b62689c093ad777326e77fae36ce19d │
 └──────────────────────────────────────┴──────────────────────────────────┘
 🔓 Token Permissions:
 Scope (Access)
@@ -4830,7 +4830,7 @@ id: call_It3WmNg3uVKZvzDs3xtSkiOl
 ```json
 {
   "cmd": "pnpm exec wrangler email routing enable lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -4851,7 +4851,7 @@ id: call_Yk3fm3yJ9CET0yIz94aV2sl7
 ```json
 {
   "cmd": "pnpm exec wrangler email routing dns get lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -4872,7 +4872,7 @@ id: call_tVmy3KLFR2xVV9nlER3KehA3
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules update --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -5042,7 +5042,7 @@ id: call_pHS33ItG8YcxkfnhgUyknryi
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules update lyston11.qzz.io catch-all --enabled true --action-type worker --action-value cloudflare-temp-email",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5090,7 +5090,7 @@ id: call_UC19XsUacvoQrzICzW9IXNmI
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules get lyston11.qzz.io catch-all --json",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5150,7 +5150,7 @@ id: call_wgqj4aVRZBAprmiYAhpYANJP
 ```json
 {
   "cmd": "rg \"Catch-all rule only supports|email routing|routing rules\" node_modules/.pnpm/wrangler@4.90.0* -n",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -5164,7 +5164,7 @@ id: call_vlv7Ohsp4CGJ5aErZC47D7ds
 ```json
 {
   "cmd": "rg \"catch-all|catch_all|catch_all_rule|rules/catch\" node_modules/.pnpm/wrangler@4.90.0* -n",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false
@@ -5178,7 +5178,7 @@ id: call_RyxSM8Hjy0Jx7kxj03OuNiGx
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules list lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5278,7 +5278,7 @@ id: call_8hPHyMwBjraSEONKwuOq3MNh
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules create --help",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "login": false
@@ -5316,7 +5316,7 @@ OPTIONS
       --enabled       Whether the rule is enabled  [boolean] [default: true]
       --match-type    Matcher type (e.g. literal)  [string] [required]
       --match-field   Matcher field (e.g. to)  [string] [required]
-      --match-value   Matcher value (e.g. user@example.com)  [string] [required]
+      --match-value   Matcher value (e.g. <REDACTED_EMAIL>)  [string] [required]
       --action-type   Action type (forward, drop, or worker)  [string] [required] [choices: "forward", "drop", "worker"]
       --action-value  Action value(s) (e.g. destination email address). Required for forward/worker actions.  [array]
       --priority      Rule priority  [number]
@@ -5333,8 +5333,8 @@ tool_use exec_command
 id: call_YrXAUVoznKyXfYx9qtmwkaoR
 ```json
 {
-  "cmd": "find /Users/lyston/Library/Preferences/.wrangler -maxdepth 3 -type f -print",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "find /home/<USER>/Library/Preferences/.wrangler -maxdepth 3 -type f -print",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -5349,8 +5349,8 @@ tool_use exec_command
 id: call_zC1kO0qXPXL4OL30MDIRFKkN
 ```json
 {
-  "cmd": "find /Users/lyston/.config /Users/lyston/.wrangler -maxdepth 4 -type f -name '*wrangler*' -o -name '*.json' -o -name '*.toml'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "find /home/<USER>/.config /home/<USER>/.wrangler -maxdepth 4 -type f -name '*wrangler*' -o -name '*.json' -o -name '*.toml'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -5365,8 +5365,8 @@ tool_use exec_command
 id: call_y0s1lyXfvxV0R6jrMuhHTzQB
 ```json
 {
-  "cmd": "find /Users/lyston/Library/Application\\ Support -maxdepth 4 -iname '*wrangler*' -print",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "find /home/<USER>/Library/Application\\ Support -maxdepth 4 -iname '*wrangler*' -print",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -5385,45 +5385,45 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 826
 Output:
-/Users/lyston/Library/Preferences/.wrangler/metrics.json
-/Users/lyston/Library/Preferences/.wrangler/config/default.toml
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-06-19_153.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-34-14_764.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-18-25_311.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-32-33_355.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-49-10_942.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-05-43_036.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-34-14_102.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-33-36_698.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-31-47_426.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-04-40_040.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-54-50_195.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-29-06_946.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-31-06_301.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-29-10_715.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-32-57_895.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-00-07_204.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-05-44_158.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-38-28_506.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-03-09_019.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-26-44_727.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-19-09_707.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-33-19_460.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-57-29_554.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-14-51_124.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-02-15_619.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-34-13_512.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-34-04_072.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-10-31_838.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-21-00_158.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-22-10_593.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-29-08_364.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-49-11_620.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-31-05_676.log
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-02-05_272.log
+/home/<USER>/Library/Preferences/.wrangler/metrics.json
+/home/<USER>/Library/Preferences/.wrangler/config/default.toml
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-06-19_153.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-34-14_764.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-18-25_311.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-32-33_355.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-49-10_942.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-05-43_036.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-34-14_102.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-33-36_698.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-31-47_426.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-04-40_040.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-54-50_195.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-29-06_946.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-31-06_301.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-29-10_715.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-32-57_895.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-00-07_204.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-05-44_158.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-38-28_506.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-03-09_019.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-26-44_727.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-19-09_707.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-33-19_460.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-57-29_554.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-14-51_124.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-02-15_619.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-34-13_512.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-34-04_072.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-10-31_838.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-21-00_158.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-22-10_593.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-29-08_364.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-49-11_620.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-31-05_676.log
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-02-05_272.log
 
 ```
 
@@ -5437,13 +5437,13 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 114
 Output:
-/Users/lyston/.config/linearmouse/linearmouse.json
-/Users/lyston/.config/raycast/extensions/1d7e24ea-6166-41b0-a549-fe87467c0900/package.json
-/Users/lyston/.config/raycast/extensions/2158713f-4712-4862-ba9a-3bce3cd07e3a/package.json
-/Users/lyston/.config/karabiner/karabiner.json
-/Users/lyston/.config/karabiner/automatic_backups/karabiner_20260404.json
-/Users/lyston/.config/opencode/opencode.json
-find: /Users/lyston/.wrangler: No such file or directory
+/home/<USER>/.config/linearmouse/linearmouse.json
+/home/<USER>/.config/raycast/extensions/1d7e24ea-6166-41b0-a549-fe87467c0900/package.json
+/home/<USER>/.config/raycast/extensions/2158713f-4712-4862-ba9a-3bce3cd07e3a/package.json
+/home/<USER>/.config/karabiner/karabiner.json
+/home/<USER>/.config/karabiner/automatic_backups/karabiner_20260404.json
+/home/<USER>/.config/opencode/opencode.json
+find: /home/<USER>/.wrangler: No such file or directory
 
 ```
 
@@ -5457,16 +5457,16 @@ Wall time: 0.8981 seconds
 Process exited with code 1
 Original token count: 226
 Output:
-find: /Users/lyston/Library/Application Support/CallHistoryTransactions: Operation not permitted
-find: /Users/lyston/Library/Application Support/com.apple.sharedfilelist: Operation not permitted
-find: /Users/lyston/Library/Application Support/Knowledge: Operation not permitted
-find: /Users/lyston/Library/Application Support/com.apple.TCC: Operation not permitted
-find: /Users/lyston/Library/Application Support/FileProvider: Operation not permitted
-find: /Users/lyston/Library/Application Support/AddressBook: Operation not permitted
-find: /Users/lyston/Library/Application Support/FaceTime: Operation not permitted
-find: /Users/lyston/Library/Application Support/DifferentialPrivacy: Operation not permitted
-find: /Users/lyston/Library/Application Support/com.apple.avfoundation/Frecents: Operation not permitted
-find: /Users/lyston/Library/Application Support/CallHistoryDB: Operation not permitted
+find: /home/<USER>/Library/Application Support/CallHistoryTransactions: Operation not permitted
+find: /home/<USER>/Library/Application Support/com.apple.sharedfilelist: Operation not permitted
+find: /home/<USER>/Library/Application Support/Knowledge: Operation not permitted
+find: /home/<USER>/Library/Application Support/com.apple.TCC: Operation not permitted
+find: /home/<USER>/Library/Application Support/FileProvider: Operation not permitted
+find: /home/<USER>/Library/Application Support/AddressBook: Operation not permitted
+find: /home/<USER>/Library/Application Support/FaceTime: Operation not permitted
+find: /home/<USER>/Library/Application Support/DifferentialPrivacy: Operation not permitted
+find: /home/<USER>/Library/Application Support/com.apple.avfoundation/Frecents: Operation not permitted
+find: /home/<USER>/Library/Application Support/CallHistoryDB: Operation not permitted
 
 ```
 
@@ -5476,8 +5476,8 @@ tool_use exec_command
 id: call_khSr1XuNtczhf1onGdBCM4bY
 ```json
 {
-  "cmd": "sed -n '1,200p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "sed -n '1,200p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -5492,8 +5492,8 @@ tool_use exec_command
 id: call_RzoTBKqMnB5GQfhOyMT48lEo
 ```json
 {
-  "cmd": "rg -n \"oauth|access|refresh|token\" /Users/lyston/Library/Preferences/.wrangler/config /Users/lyston/Library/Preferences/.wrangler -g '!logs/**'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "rg -n \"oauth|access|refresh|token\" /home/<USER>/Library/Preferences/.wrangler/config /home/<USER>/Library/Preferences/.wrangler -g '!logs/**'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -5529,30 +5529,30 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1935
 Output:
-/Users/lyston/Library/Preferences/.wrangler/config/default.toml:1:oauth_token=[REDACTED].1IPk0-oKDl0BIQ95dvVi06SyXG06RMDimgWM4gkIEoE"
-/Users/lyston/Library/Preferences/.wrangler/config/default.toml:3:refresh_token=[REDACTED].745x88RnbhTnCOqUeZvhR8OWd6q1v8YncTw-l0LNWjc"
-/Users/lyston/Library/Preferences/.wrangler/config/default.toml:4:scopes = [ "account:read", "user:read", "workers:write", "workers_kv:write", "workers_routes:write", "workers_scripts:write", "workers_tail:read", "d1:write", "pages:write", "zone:read", "ssl_certs:write", "ai:write", "ai-search:write", "ai-search:run", "queues:write", "pipelines:write", "secrets_store:write", "artifacts:write", "flagship:write", "containers:write", "cloudchamber:write", "connectivity:admin", "email_routing:write", "email_sending:write", "browser:write", "offline_access" ]
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log:29:Opening a link in your default browser: https://dash.cloudflare.com/oauth2/auth?response_type=code&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&scope=account%3Aread%20user%3Aread%20workers%3Awrite%20workers_kv%3Awrite%20workers_routes%3Awrite%20workers_scripts%3Awrite%20workers_tail%3Aread%20d1%3Awrite%20pages%3Awrite%20zone%3Aread%20ssl_certs%3Awrite%20ai%3Awrite%20ai-search%3Awrite%20ai-search%3Arun%20queues%3Awrite%20pipelines%3Awrite%20secrets_store%3Awrite%20artifacts%3Awrite%20flagship%3Awrite%20containers%3Awrite%20cloudchamber%3Awrite%20connectivity%3Aadmin%20email_routing%3Awrite%20email_sending%3Awrite%20browser%3Awrite%20offline_access&state=9yu~UU_oFFgp-faAZJVvEXA2IpfHMQy6&code_challenge=sy4qtLxwCCZivnRCybX9rAJC2k-a3xC0ye_1oPjfWbk&code_challenge_method=S256
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log:33:fetching auth token grant_type=authorization_code&code=Mx4qIOfoaNrN9RrX7DT1VAvQaVVLBoP_haN90DXW7XI.jMtMHdrDIAZyXnBwaGZl21lJ2jCiKYbhwXKFVMvxO3o&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&code_verifier=Rms3TnF0MGJzSXh5SzI3Y2hOZHVkWTZzNWY0M3d0SkNMeFJoOEdIclROaDFCVlBCdDNxTkF1emJhamJUYTdiY29YTWJCbkxPSjF1RVluQU9uZVNkYW1JTHFESGNKMEhk
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log:45:Caching access switch for: dash.cloudflare.com
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log:49:Fetching auth token from https://dash.cloudflare.com/oauth2/token
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log:36:Opening a link in your default browser: https://dash.cloudflare.com/oauth2/auth?response_type=code&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&scope=account%3Aread%20user%3Aread%20workers%3Awrite%20workers_kv%3Awrite%20workers_routes%3Awrite%20workers_scripts%3Awrite%20workers_tail%3Aread%20d1%3Awrite%20pages%3Awrite%20zone%3Aread%20ssl_certs%3Awrite%20ai%3Awrite%20queues%3Awrite%20pipelines%3Awrite%20offline_access&state=vx_TZfJT8AqBoIjtNeIGfCTp5d1ApoSf&code_challenge=nevTCquRkOr-NMCLFJLDjyGf9AEZVB0EFrLH8Zzmp9A&code_challenge_method=S256
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log:40:fetching auth token grant_type=authorization_code&code=_s24dNzQO8K4MNPmnbddOmiCEEKUDAcCqJsE8Gd3dws.whf78-jfMAZNRlwdN4EZg1kwPG8ZWDVyZtyClYDrdxk&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&code_verifier=RWR1eGhfLlo1ZGpFX2tnSksxQms3QXl-ZFJ0WWVxMXFvLll2N0I3YmJ-STNkT3pBOFdJRmxFUzlLZFlwdmJCSmpBeUYxR2g1QnFvZ0NkVDJsVDd-LWdmQ3dpbnZVeERv
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log:52:Caching access switch for: dash.cloudflare.com
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log:56:Fetching auth token from https://dash.cloudflare.com/oauth2/token
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-05-43_036.log:41:Your worker has access to the following bindings:
-/Users/lyston/Library/Preferences/.wrangler/config/default.toml:1:oauth_token=[REDACTED].1IPk0-oKDl0BIQ95dvVi06SyXG06RMDimgWM4gkIEoE"
-/Users/lyston/Library/Preferences/.wrangler/config/default.toml:3:refresh_token=[REDACTED].745x88RnbhTnCOqUeZvhR8OWd6q1v8YncTw-l0LNWjc"
-/Users/lyston/Library/Preferences/.wrangler/config/default.toml:4:scopes = [ "account:read", "user:read", "workers:write", "workers_kv:write", "workers_routes:write", "workers_scripts:write", "workers_tail:read", "d1:write", "pages:write", "zone:read", "ssl_certs:write", "ai:write", "ai-search:write", "ai-search:run", "queues:write", "pipelines:write", "secrets_store:write", "artifacts:write", "flagship:write", "containers:write", "cloudchamber:write", "connectivity:admin", "email_routing:write", "email_sending:write", "browser:write", "offline_access" ]
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-21-00_158.log:127:-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/upload-token
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-21-00_158.log:163:-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/upload-token
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-06-19_153.log:212:Your worker has access to the following bindings:
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:29:fetching auth token grant_type=refresh_token&refresh_token=[REDACTED].t7hPiJPYZkYYV5G5o24-8vY6i6Tdw2m4csLN0EAldvs&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:41:Caching access switch for: dash.cloudflare.com
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:45:Fetching auth token from https://dash.cloudflare.com/oauth2/token
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:233:- offline_access 
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:241:▲ [WARNING] Wrangler is missing some expected Oauth scopes. To fix this, run `wrangler login` to refresh your token. The missing scopes are:
-/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-10-31_838.log:216:Your worker […]
+/home/<USER>/Library/Preferences/.wrangler/config/default.toml:1:oauth_token=[REDACTED].1IPk0-oKDl0BIQ95dvVi06SyXG06RMDimgWM4gkIEoE"
+/home/<USER>/Library/Preferences/.wrangler/config/default.toml:3:refresh_token=[REDACTED].745x88RnbhTnCOqUeZvhR8OWd6q1v8YncTw-l0LNWjc"
+/home/<USER>/Library/Preferences/.wrangler/config/default.toml:4:scopes = [ "account:read", "user:read", "workers:write", "workers_kv:write", "workers_routes:write", "workers_scripts:write", "workers_tail:read", "d1:write", "pages:write", "zone:read", "ssl_certs:write", "ai:write", "ai-search:write", "ai-search:run", "queues:write", "pipelines:write", "secrets_store:write", "artifacts:write", "flagship:write", "containers:write", "cloudchamber:write", "connectivity:admin", "email_routing:write", "email_sending:write", "browser:write", "offline_access" ]
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log:29:Opening a link in your default browser: https://dash.cloudflare.com/oauth2/auth?response_type=code&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&scope=account%3Aread%20user%3Aread%20workers%3Awrite%20workers_kv%3Awrite%20workers_routes%3Awrite%20workers_scripts%3Awrite%20workers_tail%3Aread%20d1%3Awrite%20pages%3Awrite%20zone%3Aread%20ssl_certs%3Awrite%20ai%3Awrite%20ai-search%3Awrite%20ai-search%3Arun%20queues%3Awrite%20pipelines%3Awrite%20secrets_store%3Awrite%20artifacts%3Awrite%20flagship%3Awrite%20containers%3Awrite%20cloudchamber%3Awrite%20connectivity%3Aadmin%20email_routing%3Awrite%20email_sending%3Awrite%20browser%3Awrite%20offline_access&state=9yu~UU_oFFgp-faAZJVvEXA2IpfHMQy6&code_challenge=sy4qtLxwCCZivnRCybX9rAJC2k-a3xC0ye_1oPjfWbk&code_challenge_method=S256
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log:33:fetching auth token grant_type=authorization_code&code=Mx4qIOfoaNrN9RrX7DT1VAvQaVVLBoP_haN90DXW7XI.jMtMHdrDIAZyXnBwaGZl21lJ2jCiKYbhwXKFVMvxO3o&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&code_verifier=Rms3TnF0MGJzSXh5SzI3Y2hOZHVkWTZzNWY0M3d0SkNMeFJoOEdIclROaDFCVlBCdDNxTkF1emJhamJUYTdiY29YTWJCbkxPSjF1RVluQU9uZVNkYW1JTHFESGNKMEhk
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log:45:Caching access switch for: dash.cloudflare.com
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-27-45_641.log:49:Fetching auth token from https://dash.cloudflare.com/oauth2/token
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log:36:Opening a link in your default browser: https://dash.cloudflare.com/oauth2/auth?response_type=code&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&scope=account%3Aread%20user%3Aread%20workers%3Awrite%20workers_kv%3Awrite%20workers_routes%3Awrite%20workers_scripts%3Awrite%20workers_tail%3Aread%20d1%3Awrite%20pages%3Awrite%20zone%3Aread%20ssl_certs%3Awrite%20ai%3Awrite%20queues%3Awrite%20pipelines%3Awrite%20offline_access&state=vx_TZfJT8AqBoIjtNeIGfCTp5d1ApoSf&code_challenge=nevTCquRkOr-NMCLFJLDjyGf9AEZVB0EFrLH8Zzmp9A&code_challenge_method=S256
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log:40:fetching auth token grant_type=authorization_code&code=_s24dNzQO8K4MNPmnbddOmiCEEKUDAcCqJsE8Gd3dws.whf78-jfMAZNRlwdN4EZg1kwPG8ZWDVyZtyClYDrdxk&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&code_verifier=RWR1eGhfLlo1ZGpFX2tnSksxQms3QXl-ZFJ0WWVxMXFvLll2N0I3YmJ-STNkT3pBOFdJRmxFUzlLZFlwdmJCSmpBeUYxR2g1QnFvZ0NkVDJsVDd-LWdmQ3dpbnZVeERv
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log:52:Caching access switch for: dash.cloudflare.com
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_02-56-20_501.log:56:Fetching auth token from https://dash.cloudflare.com/oauth2/token
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-05-43_036.log:41:Your worker has access to the following bindings:
+/home/<USER>/Library/Preferences/.wrangler/config/default.toml:1:oauth_token=[REDACTED].1IPk0-oKDl0BIQ95dvVi06SyXG06RMDimgWM4gkIEoE"
+/home/<USER>/Library/Preferences/.wrangler/config/default.toml:3:refresh_token=[REDACTED].745x88RnbhTnCOqUeZvhR8OWd6q1v8YncTw-l0LNWjc"
+/home/<USER>/Library/Preferences/.wrangler/config/default.toml:4:scopes = [ "account:read", "user:read", "workers:write", "workers_kv:write", "workers_routes:write", "workers_scripts:write", "workers_tail:read", "d1:write", "pages:write", "zone:read", "ssl_certs:write", "ai:write", "ai-search:write", "ai-search:run", "queues:write", "pipelines:write", "secrets_store:write", "artifacts:write", "flagship:write", "containers:write", "cloudchamber:write", "connectivity:admin", "email_routing:write", "email_sending:write", "browser:write", "offline_access" ]
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-21-00_158.log:127:-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/upload-token
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_08-21-00_158.log:163:-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/upload-token
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-06-19_153.log:212:Your worker has access to the following bindings:
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:29:fetching auth token grant_type=refresh_token&refresh_token=[REDACTED].t7hPiJPYZkYYV5G5o24-8vY6i6Tdw2m4csLN0EAldvs&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:41:Caching access switch for: dash.cloudflare.com
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:45:Fetching auth token from https://dash.cloudflare.com/oauth2/token
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:233:- offline_access 
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_07-30-06_379.log:241:▲ [WARNING] Wrangler is missing some expected Oauth scopes. To fix this, run `wrangler login` to refresh your token. The missing scopes are:
+/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_03-10-31_838.log:216:Your worker […]
 
 > AGENT
 
@@ -5564,8 +5564,8 @@ tool_use exec_command
 id: call_rl3jrJEmGClp3foABO3dDy4x
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/email/routing/rules/catch_all",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/email/routing/rules/catch_all",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -5593,8 +5593,8 @@ tool_use exec_command
 id: call_P2Q68v09vA1IG8VZYHCUSoDv
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -X PUT -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/email/routing/rules/catch_all --data '{\"enabled\":true,\"actions\":[{\"type\":\"worker\",\"value\":[\"cloudflare-temp-email\"]}],\"matchers\":[{\"type\":\"all\"}],\"name\":\"Catch-all to cloudflare-temp-email\"}'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -X PUT -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/email/routing/rules/catch_all --data '{\"enabled\":true,\"actions\":[{\"type\":\"worker\",\"value\":[\"cloudflare-temp-email\"]}],\"matchers\":[{\"type\":\"all\"}],\"name\":\"Catch-all to cloudflare-temp-email\"}'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5627,7 +5627,7 @@ id: call_FOnjJOJ6eK8THPeaDRG6VBkF
 ```json
 {
   "cmd": "pnpm exec wrangler email routing settings lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5648,7 +5648,7 @@ id: call_Kp1piiLtkFBxQhI324DTlYzN
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules get lyston11.qzz.io catch-all",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5668,8 +5668,8 @@ tool_use exec_command
 id: call_XR7epSJv2EWNVOyLW6paK3QW
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/domains'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/domains'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5814,8 +5814,8 @@ tool_use exec_command
 id: call_ZzNZsdgszvxKhWRE0zjvZNDa
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -X POST -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/domains --data '{\"name\":\"mail.lyston11.qzz.io\"}'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -X POST -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/domains --data '{\"name\":\"mail.lyston11.qzz.io\"}'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5895,7 +5895,7 @@ id: call_qB1A1MC85Y7ZSK7XPecV8b72
 ```json
 {
   "cmd": "rg \"api.lyston11|qzz.io.com|lyston11.qzz.io\" dist -n",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -5908,8 +5908,8 @@ tool_use exec_command
 id: call_g3G3TyKoEnEWTVG5mXrFJmoz
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/domains/mail.lyston11.qzz.io'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/domains/mail.lyston11.qzz.io'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -5925,7 +5925,7 @@ id: call_fv32F9Jb6QDpj1kRh6pdluj9
 ```json
 {
   "cmd": "curl -fsS https://mail.lyston11.qzz.io/",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "login": false,
@@ -6041,8 +6041,8 @@ tool_use exec_command
 id: call_EzPIFdImvVzlA7peM0JG3Qo1
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -X POST -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/dns_records --data '{\"type\":\"CNAME\",\"name\":\"mail\",\"content\":\"cloudflare-temp-email-d2a.pages.dev\",\"ttl\":1,\"proxied\":true}'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -X POST -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/dns_records --data '{\"type\":\"CNAME\",\"name\":\"mail\",\"content\":\"cloudflare-temp-email-d2a.pages.dev\",\"ttl\":1,\"proxied\":true}'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -6075,8 +6075,8 @@ tool_use exec_command
 id: call_6SsJprpMB0fXslTOObr7h29n
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/dns_records?name=api.lyston11.qzz.io'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/dns_records?name=api.lyston11.qzz.io'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -6091,8 +6091,8 @@ tool_use exec_command
 id: call_EZUuzNT4trOUQm1nLddWR1Xj
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/dns_records?name=mail.lyston11.qzz.io'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/dns_records?name=mail.lyston11.qzz.io'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -6107,8 +6107,8 @@ tool_use exec_command
 id: call_obBFC6zPl2vYi223kQpoxsZG
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/dns_records?type=MX&name=lyston11.qzz.io'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/dns_records?type=MX&name=lyston11.qzz.io'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -6169,8 +6169,8 @@ tool_use exec_command
 id: call_GR3krjUx3a964uxc7fCLEu5f
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/domains/mail.lyston11.qzz.io'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/frontend",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' 'https://api.cloudflare.com/client/v4/accounts/3b62689c093ad777326e77fae36ce19d/pages/projects/cloudflare-temp-email/domains/mail.lyston11.qzz.io'",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/frontend",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -6251,7 +6251,7 @@ id: call_xmvZJqmQ8rms1tOHif1I3wUc
 ```json
 {
   "cmd": "curl -fsS -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=lyston11.qzz.io&type=MX'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -6271,7 +6271,7 @@ id: call_6gvLvboAyRQUeGyoflaEBQbX
 ```json
 {
   "cmd": "curl -fsS -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=lyston11.qzz.io&type=TXT'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -6291,7 +6291,7 @@ id: call_AuaRD08Vm0v8XiPA8Fak2tnR
 ```json
 {
   "cmd": "curl -fsS -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=mail.lyston11.qzz.io&type=CNAME'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -6354,7 +6354,7 @@ id: call_HUtM7npdEvbPtaPhlAxlFlRG
 ```json
 {
   "cmd": "curl -fsS -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=cf2024-1._domainkey.lyston11.qzz.io&type=TXT'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -6374,7 +6374,7 @@ id: call_AebMs01vazwkadOVjYe8aWdP
 ```json
 {
   "cmd": "curl -fsS https://api.lyston11.qzz.io/open_api/settings",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -6394,7 +6394,7 @@ id: call_KPklHwIc8o3bAZ7b3IdC34pn
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false
@@ -6445,7 +6445,7 @@ Output:
 已推进到第一个需要你手动确认的节点：
 
 已完成：
-- 仓库已克隆到 [cloudflare_temp_email](/Users/lyston/PycharmProjects/cloudflare_temp_email)
+- 仓库已克隆到 [cloudflare_temp_email](/home/<USER>/PycharmProjects/cloudflare_temp_email)
 - D1 数据库已创建并初始化：`cloudflare-temp-email-db`
 - Worker 后端已部署成功：`https://api.lyston11.qzz.io`
 - 后端健康检查通过：`/` 和 `/health_check` 都返回 `OK`
@@ -6463,7 +6463,7 @@ Proxy: Proxied
 TTL: Auto
 ```
 
-加完后告诉我，我继续验证 `https://mail.lyston11.qzz.io`、打开前端、创建临时邮箱并做收信测试。Admin 密码我已生成在本地 [worker/wrangler.toml](/Users/lyston/PycharmProjects/cloudflare_temp_email/worker/wrangler.toml)。
+加完后告诉我，我继续验证 `https://mail.lyston11.qzz.io`、打开前端、创建临时邮箱并做收信测试。Admin 密码我已生成在本地 [worker/wrangler.toml](/home/<USER>/PycharmProjects/cloudflare_temp_email/worker/wrangler.toml)。
 
 > DEVELOPER
 
@@ -6471,7 +6471,7 @@ TTL: Auto
 
 > AGENT
 
-可以，但这里要区分两种“前缀”：项目里的 `PREFIX` 是邮箱用户名部分前缀；你说的 `edu.` 我理解是域名前缀，也就是 `xxx@edu.lyston11.qzz.io`。这个需要把 Worker 域名列表改成 `edu.lyston11.qzz.io`，并给这个子域单独配置 Email Routing。ನ
+可以，但这里要区分两种“前缀”：项目里的 `PREFIX` 是邮箱用户名部分前缀；你说的 `edu.` 我理解是域名前缀，也就是 `<REDACTED_EMAIL>`。这个需要把 Worker 域名列表改成 `edu.lyston11.qzz.io`，并给这个子域单独配置 Email Routing。ನ
 
 > TOOL
 
@@ -6499,7 +6499,7 @@ id: call_VbNz2Kyziqom7Kq7VfiVF9Hv
 ```json
 {
   "cmd": "pnpm run deploy",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000,
   "login": false,
@@ -6524,7 +6524,7 @@ Process running with session ID 18367
 Original token count: 52
 Output:
 
-> cloudflare_temp_email@1.9.0 deploy /Users/lyston/PycharmProjects/cloudflare_temp_email/worker
+> cloudflare_temp_email@1.9.0 deploy /home/<USER>/PycharmProjects/cloudflare_temp_email/worker
 > wrangler deploy --minify
 
 
@@ -6591,7 +6591,7 @@ id: call_Tu1mSW0a8o0DMCANL2cqO6xS
 ```json
 {
   "cmd": "curl -fsS https://api.lyston11.qzz.io/open_api/settings",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -6611,7 +6611,7 @@ id: call_xYtlSeVcgm6XIUg8VeDXOsVd
 ```json
 {
   "cmd": "pnpm exec wrangler email routing settings edu.lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -6632,7 +6632,7 @@ id: call_rDxQ4e2zGfy8v1hXwechDBCw
 ```json
 {
   "cmd": "pnpm exec wrangler email routing dns get edu.lyston11.qzz.io",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -6724,7 +6724,7 @@ Output:
 [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not find zone for `edu.lyston11.qzz.io`. Make sure the domain exists in your account.[0m
 
 
-🪵  Logs were written to "/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_09-46-17_115.log"
+🪵  Logs were written to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_09-46-17_115.log"
 
 ```
 
@@ -6755,7 +6755,7 @@ Output:
 [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not find zone for `edu.lyston11.qzz.io`. Make sure the domain exists in your account.[0m
 
 
-🪵  Logs were written to "/Users/lyston/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_09-46-16_144.log"
+🪵  Logs were written to "/home/<USER>/Library/Preferences/.wrangler/logs/wrangler-2026-05-26_09-46-16_144.log"
 
 ```
 
@@ -6770,7 +6770,7 @@ id: call_sH0kf5SDzBekTRn39FgQyg9V
 ```json
 {
   "cmd": "pnpm exec wrangler email routing settings edu.lyston11.qzz.io --zone-id 488095eeedfe505db323cb39d6b6cefb",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -6791,7 +6791,7 @@ id: call_NGRVA8cD7u4iBUfSgEzgrZjX
 ```json
 {
   "cmd": "pnpm exec wrangler email routing dns get edu.lyston11.qzz.io --zone-id 488095eeedfe505db323cb39d6b6cefb",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -6812,7 +6812,7 @@ id: call_SGXsvOPEqCIM0dnKHv8RSXY1
 ```json
 {
   "cmd": "pnpm exec wrangler email routing rules get edu.lyston11.qzz.io catch-all --zone-id 488095eeedfe505db323cb39d6b6cefb",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email/worker",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email/worker",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000,
   "login": false,
@@ -7009,8 +7009,8 @@ tool_use exec_command
 id: call_7Do2vwe96Koq4hnSNqKpHCUK
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/email/routing/subdomains",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/email/routing/subdomains",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -7025,8 +7025,8 @@ tool_use exec_command
 id: call_vmJSlx1hre8b4mWJaqLqljhU
 ```json
 {
-  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /Users/lyston/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/email/routing/domains",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "cmd": "TOKEN=$(sed -n 's/^oauth_token = \"\\(.*\\)\"/\\1/p' /home/<USER>/Library/Preferences/.wrangler/config/default.toml); curl -fsS -H \"Authorization: Bearer $TOKEN\" -H 'Content-Type: application/json' https://api.cloudflare.com/client/v4/zones/488095eeedfe505db323cb39d6b6cefb/email/routing/domains",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -7042,7 +7042,7 @@ id: call_Jvm5vvyoIi1ly7p3jF7QdHwJ
 ```json
 {
   "cmd": "curl -fsS -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=edu.lyston11.qzz.io&type=MX'",
-  "workdir": "/Users/lyston/PycharmProjects/cloudflare_temp_email",
+  "workdir": "/home/<USER>/PycharmProjects/cloudflare_temp_email",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "login": false,
@@ -7157,7 +7157,7 @@ curl: (56) The requested URL returned error: 404
 没问题，而且你说的这个要求应该满足的是邮箱域名形态：
 
 ```text
-xxx@edu.lyston11.qzz.io
+<REDACTED_EMAIL>
 ```
 
 我已经把项目配置改成只发放这个域名：

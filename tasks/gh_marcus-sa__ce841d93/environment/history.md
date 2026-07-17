@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -92,7 +92,7 @@ id: toolu_01NNLr6xMiJF44r5aF374wpP
 {
   "description": "Explore agent creation UI/API",
   "subagent_type": "Explore",
-  "prompt": "Explore the codebase at /Users/marcus/conductor/workspaces/brain-v1/los-angeles to understand:\n\n1. The current agent creation flow - both frontend UI and backend API\n2. How agents are defined/configured in the system (schema, types, routes)\n3. Any existing \"skills\" or \"tools\" concepts attached to agents\n4. The agent CRUD endpoints and UI components\n\nLook in:\n- app/src/client/ for agent-related UI components\n- app/src/server/ for agent routes and types\n- schema/ for agent-related schema definitions\n- Any agent-related test files\n\nThoroughness: very thorough\n\nReturn a detailed summary of the current agent creation architecture, including file paths and key types."
+  "prompt": "Explore the codebase at /home/<USER>/conductor/workspaces/brain-v1/los-angeles to understand:\n\n1. The current agent creation flow - both frontend UI and backend API\n2. How agents are defined/configured in the system (schema, types, routes)\n3. Any existing \"skills\" or \"tools\" concepts attached to agents\n4. The agent CRUD endpoints and UI components\n\nLook in:\n- app/src/client/ for agent-related UI components\n- app/src/server/ for agent routes and types\n- schema/ for agent-related schema definitions\n- Any agent-related test files\n\nThoroughness: very thorough\n\nReturn a detailed summary of the current agent creation architecture, including file paths and key types."
 }
 ```
 
@@ -109,7 +109,7 @@ I've conducted a thorough exploration of the agent creation system in Osabio. He
 
 ### 1. **Core Agent Model & Types**
 
-**File**: `/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/server/agents/types.ts`
+**File**: `/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/server/agents/types.ts`
 
 **Agent Runtimes** (3 types):
 - `"osabio"` - System-managed agents (not creatable via API)
@@ -166,7 +166,7 @@ tool_use Read
 id: toolu_012CfyqdxnSZLq35JpSPfw45
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/research/skills-sandbox-agent-integration.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/research/skills-sandbox-agent-integration.md"
 }
 ```
 
@@ -176,7 +176,7 @@ tool_use Read
 id: toolu_01J6DZLpVex77sQojM5rBA4E
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.tsx"
 }
 ```
 
@@ -289,7 +289,7 @@ All four discovery artifacts are complete. Here is the summary.
 
 ### Artifacts Produced
 
-All files are in `/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/`:
+All files are in `/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/`:
 
 1. **`problem-validation.md`** -- 5 evidence signals from codebase analysis confirming the gap between Tools (functional MCP capabilities) and Learnings (reactive corrections). The missing middle layer is proactive domain expertise. Gate G1: PASS.
 
@@ -315,7 +315,7 @@ tool_use Read
 id: toolu_01XJx4UESuyaVmykX2mSoRJF
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/solution-testing.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/solution-testing.md"
 }
 ```
 
@@ -358,7 +358,7 @@ tool_use Read
 id: toolu_01W8AUwb5N3oEydzvxXu6tih
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/lean-canvas.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/lean-canvas.md"
 }
 ```
 
@@ -397,7 +397,7 @@ tool_use Read
 id: toolu_015hyeapoSXTfkZ44ZuWMaFB
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/opportunity-tree.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/opportunity-tree.md"
 }
 ```
 
@@ -407,7 +407,7 @@ tool_use Read
 id: toolu_014zuxpth67yDztpJQyMEX2S
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/problem-validation.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/problem-validation.md"
 }
 ```
 
@@ -472,7 +472,7 @@ tool_use Write
 id: toolu_01TZvvzJr9yfAYX1s1fCeWzu
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md",
   "content": "# DISCOVER Decisions — skills\n\n## Key Decisions\n- [D1] 3-step wizard (Config > Skills > Tools) over single-page form or post-creation panel: mirrors the conceptual layers (identity > expertise > capabilities) and keeps steps skippable (see: solution-testing.md)\n- [D2] Minimal checklist for skill assignment in Step 2 over searchable catalog: right for MVP when workspace has <20 skills (see: opportunity-tree.md)\n- [D3] Two-section tool display in Step 3 (skill-derived read-only + manual selection): shows implicit tool grants transparently while allowing direct `can_use` grants (see: solution-testing.md)\n- [D4] Steps 2 and 3 are skippable: external agents don't use skills, new sandbox agents may not have skills yet (see: solution-testing.md)\n- [D5] Runtime selection consolidated into Step 1 as radio group: eliminates the current separate runtime screen, making room for the 2 new steps without increasing total steps to 4 (see: solution-testing.md)\n\n## Constraints Established\n- Skills CRUD must follow the same pattern as the Learning system (lifecycle, governance, JIT loading)\n- Source-reference architecture only — Brain stores metadata + source pointer, never file content (confirmed by research)\n- LLM-driven activation — Brain controls skill *availability*, not *activation* (Agent Skills spec confirms)\n- Agent creation transaction must remain atomic — skill `possesses` edges […]
 
 > TOOL
@@ -480,7 +480,7 @@ id: toolu_01TZvvzJr9yfAYX1s1fCeWzu
 tool_result
 id: toolu_01TZvvzJr9yfAYX1s1fCeWzu
 ```
-File created successfully at: /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md
+File created successfully at: /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/discover/wave-decisions.md
 ```
 
 > AGENT

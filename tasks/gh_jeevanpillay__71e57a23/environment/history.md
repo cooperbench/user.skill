@@ -44,13 +44,13 @@ Perfect. I have all the information I need. Let me compile the findings.
 **Current Settings Implementation Pattern:**
 
 **1. Settings Page Location:**
-- `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts` (lines 122-221)
-- HTML anchor: `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html:175-178`
+- `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/settings.ts` (lines 122-221)
+- HTML anchor: `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/index.html:175-178`
 
 **2. Current Pattern: Full-Page Route (NOT Modal, NOT Separate Window)**
 - Settings is a hash-based route (`#/settings`)
 - Rendered as a full-page section within the primary window
-- Router defined in `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts:1-6`
+- Router defined in `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/router.ts:1-6`
 - Lazy-rendered vanilla DOM on navigation (lines 68-74 in `main.ts`)
 
 **3. Renderer Surfaces:**
@@ -62,7 +62,7 @@ Perfect. I have all the information I need. Let me compile the findings.
 **4. IPC/Window Management:**
 - No separate window for settings (unlike auth-flow which opens BrowserWindows)
 - Settings broadcast via `ipcMain.send(IpcChannels.settingsChanged)` to all windows
-- Main process: `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts` handles settings sync
+- Main process: `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts` handles settings sync
 - No dedicated settings window code exists
 
 **5. Plans/Thoughts References:**

@@ -19,14 +19,14 @@ I have many posthog errors, here is one such stacktrace:
           "frames": [
             {
               "colno": 30,
-              "filename": "/C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js",
+              "filename": "/C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js",
               "function": "<anonymous>",
               "in_app": false,
               "lineno": 127
             },
             {
               "colno": 5,
-              "filename": "/C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js",
+              "filename": "/C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js",
               "function": "async run",
               "in_app": false,
               "lineno": 30
@@ -38,7 +38,7 @@ I have many posthog errors, here is one such stacktrace:
       }
     ],
     "$exception_message": "Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve",
-    "$exception_stack_trace_raw": "Error: Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve\n    at file:///C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js:127:30\n    at async run (file:///C:/Users/juan.solorzano/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js:30:5)",
+    "$exception_stack_trace_raw": "Error: Cannot connect to Ollama at  http://10.10.10.67:11434 — is it running? Start it with: ollama serve\n    at file:///C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/server-dist/routes/route-helpers.js:127:30\n    at async run (file:///C:/home/<USER>/AppData/Roaming/npm/node_modules/@code-insights/cli/node_modules/hono/dist/helper/streaming/sse.js:30:5)",
     "$exception_type": "Error",
     "$geoip_disable": true,
     "$ip": "186.4.171.244",
@@ -76,7 +76,7 @@ tool_use Bash
 id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 ```json
 {
-  "command": "find /Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes -name \"route-helpers*\" | head -5",
+  "command": "find /home/<USER>/Workspace/codeInsights/code-insights/server/src/routes -name \"route-helpers*\" | head -5",
   "description": "Find route-helpers source file"
 }
 ```
@@ -87,7 +87,7 @@ tool_use Bash
 id: toolu_017TkirexnbVCNF2it32bQoZ
 ```json
 {
-  "command": "grep -rn \"Cannot connect to Ollama\" /Users/melagiri/Workspace/codeInsights/code-insights --include=\"*.ts\" -l",
+  "command": "grep -rn \"Cannot connect to Ollama\" /home/<USER>/Workspace/codeInsights/code-insights --include=\"*.ts\" -l",
   "description": "Find where Ollama connection error is thrown"
 }
 ```
@@ -97,7 +97,7 @@ id: toolu_017TkirexnbVCNF2it32bQoZ
 tool_result
 id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts
 ```
 
 > TOOL
@@ -105,7 +105,7 @@ id: toolu_01Wqct2aVecoNLAxS5wHgS8K
 tool_result
 id: toolu_017TkirexnbVCNF2it32bQoZ
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts
+/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts
 ```
 
 > TOOL
@@ -114,7 +114,7 @@ tool_use Read
 id: toolu_014hfSGMX2SUb7qa9aEAD9AJ
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/route-helpers.ts"
 }
 ```
 
@@ -124,7 +124,7 @@ tool_use Read
 id: toolu_01E8RpN2YP2v1xFu1Txstsyy
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts"
 }
 ```
 
@@ -209,7 +209,7 @@ tool_use Bash
 id: toolu_01NkZqg2A4w6hz1EJctX3GDM
 ```json
 {
-  "command": "grep -n \"captureError\\|trackEvent\" /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts | head -40",
+  "command": "grep -n \"captureError\\|trackEvent\" /home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts | head -40",
   "description": "Find captureError and trackEvent definitions in telemetry"
 }
 ```
@@ -232,7 +232,7 @@ tool_use Bash
 id: toolu_01J9GDsMczN3L84kaWGZiCnD
 ```json
 {
-  "command": "grep -n \"ECONNREFUSED\\|fetch\\|TypeError\" /Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
+  "command": "grep -n \"ECONNREFUSED\\|fetch\\|TypeError\" /home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/providers/ollama.ts",
   "description": "Check how Ollama handles connection errors"
 }
 ```
@@ -253,7 +253,7 @@ tool_use Read
 id: toolu_01CxzxZarja3h7dAwzmCQ4Lq
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
   "offset": 185,
   "limit": 80
 }
@@ -316,7 +316,7 @@ tool_use Read
 id: toolu_01KisSGXWEFeedWyWJG7FyvP
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/src/utils/telemetry.ts",
   "offset": 100,
   "limit": 90
 }

@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01Ayjwbz1VLCS59M9mn99Z3g
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-pre-release-batch.md"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-pre-release-batch.md"
 }
 ```
 
@@ -26,7 +26,7 @@ tool_use Read
 id: toolu_018sh4Q6vB6vHeDaqyr21vu8
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-pre-release-batch.md",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-pre-release-batch.md",
   "limit": 400
 }
 ```
@@ -38,7 +38,7 @@ id: toolu_018sh4Q6vB6vHeDaqyr21vu8
 ```
 1	---
 2	date: 2026-04-23
-3	owner: jp@jeevanpillay.com
+3	owner: <REDACTED_EMAIL>
 4	branch: main
 5	based_on: thoughts/shared/research/2026-04-23-codex-vs-lightfast-desktop-production-gap.md
 6	supersedes_partial: thoughts/shared/plans/2026-04-23-desktop-codex-gap-quick-wins.md
@@ -66,7 +66,7 @@ tool_use Read
 id: toolu_01Sm39o97ADXPkPRMAxByetB
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-pre-release-batch.md",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-pre-release-batch.md",
   "offset": 400,
   "limit": 400
 }
@@ -125,7 +125,7 @@ tool_use Read
 id: toolu_01LBVgSVmeRPN8kC85Yq2jNf
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-pre-release-batch.md",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-pre-release-batch.md",
   "offset": 800
 }
 ```
@@ -165,7 +165,7 @@ tool_use Read
 id: toolu_01AJsJW5yYqv3hbVVWpDbUGb
 ```json
 {
-  "file_path": "/Users/jeevanpillay/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/memory/project_desktop_release_disabled.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/memory/project_desktop_release_disabled.md"
 }
 ```
 
@@ -199,7 +199,7 @@ tool_use Bash
 id: toolu_016yLK9p7FXa7njCg1ftyopy
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/.github/workflows/ | grep -i desktop",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/.github/workflows/ | grep -i desktop",
   "description": "List desktop-related workflows"
 }
 ```
@@ -324,7 +324,7 @@ tool_use Read
 id: toolu_01FDEPyFJbXftLim617465um
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/forge.config.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/forge.config.ts"
 }
 ```
 
@@ -392,7 +392,7 @@ tool_use Read
 id: toolu_01W76cop6Pc9MCweMcAfNU26
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/package.json"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/package.json"
 }
 ```
 
@@ -462,7 +462,7 @@ tool_use Read
 id: toolu_01NtzXP1zWFt8VchEzgur8uo
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/.github/workflows/desktop-release.yml"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/.github/workflows/desktop-release.yml"
 }
 ```
 
@@ -528,7 +528,7 @@ tool_use Read
 id: toolu_01AWrGa3sX4JmDtui6HaBLJr
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/.github/workflows/desktop-ci.yml"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/.github/workflows/desktop-ci.yml"
 }
 ```
 
@@ -603,7 +603,7 @@ tool_use Read
 id: toolu_01BAPaXTBzMHoZchbVYsRJ5C
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/.env.example"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/.env.example"
 }
 ```
 
@@ -641,7 +641,7 @@ tool_use Bash
 id: toolu_01Mn4eM9bbJKGkNwa7JiV5Du
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/",
   "description": "List src tree"
 }
 ```
@@ -664,7 +664,7 @@ tool_use Bash
 id: toolu_01KUbCPE455QPFCFuw8C7WQ2
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/env /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/scripts",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/env /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/scripts",
   "description": "List src and scripts subdirs"
 }
 ```
@@ -674,14 +674,14 @@ id: toolu_01KUbCPE455QPFCFuw8C7WQ2
 tool_result
 id: toolu_01KUbCPE455QPFCFuw8C7WQ2
 ```
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/scripts:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/scripts:
 generate-update-feed.mjs
 upload-sourcemaps.mjs
 
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/env:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/env:
 main.ts
 
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main:
 app-origin.ts
 app-url.ts
 assets
@@ -701,7 +701,7 @@ updater.ts
 window-state.ts
 windows
 
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared:
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared:
 accelerators.ts
 build-info-schema.ts
 ipc.ts
@@ -713,7 +713,7 @@ tool_use Read
 id: toolu_014JJpNFuYNGYf9kPJFBXA6F
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/env/main.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/env/main.ts"
 }
 ```
 
@@ -763,7 +763,7 @@ tool_use Read
 id: toolu_01H4ZL24mbjeLiZmSd9fHmXT
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts"
 }
 ```
 
@@ -814,7 +814,7 @@ tool_use Read
 id: toolu_01DZDF5A1s961vkD1rNET2Qt
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/app-url.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/app-url.ts"
 }
 ```
 
@@ -842,7 +842,7 @@ tool_use Read
 id: toolu_01XxB8MEuAqAna1tCqz27D4T
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/runtime-config.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/runtime-config.ts"
 }
 ```
 
@@ -879,7 +879,7 @@ tool_use Read
 id: toolu_01MqqTwgaLQRfJf9D8inGh36
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/index.ts"
 }
 ```
 
@@ -944,7 +944,7 @@ tool_use Read
 id: toolu_01EbGhNxNvikywYxUhJ1BJuG
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/auth-flow.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/auth-flow.ts"
 }
 ```
 
@@ -1003,7 +1003,7 @@ tool_use Read
 id: toolu_01EgpAasduLoc9TTneXTer9q
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/sentry.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/sentry.ts"
 }
 ```
 
@@ -1074,7 +1074,7 @@ tool_use Read
 id: toolu_01WDEFRTxMqE8YcDb2d2Vg9B
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/updater.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/updater.ts"
 }
 ```
 
@@ -1137,7 +1137,7 @@ tool_use Read
 id: toolu_0148paoX8ggHwLVRD47nmCtf
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/build-info.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/build-info.ts"
 }
 ```
 
@@ -1175,7 +1175,7 @@ tool_use Read
 id: toolu_018GVdQjpw6rogrzMjcmspdB
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/bootstrap.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/bootstrap.ts"
 }
 ```
 
@@ -1223,7 +1223,7 @@ tool_use Read
 id: toolu_01RqhsY4xKZNAkvJVKje6xXE
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/scripts/with-dev-services-env.mjs"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/scripts/with-dev-services-env.mjs"
 }
 ```
 
@@ -1300,7 +1300,7 @@ tool_use Bash
 id: toolu_01PPQGym77681cmKqNQ3ytv7
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/scripts/ | grep -i desktop",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/scripts/ | grep -i desktop",
   "description": "Find desktop-related root scripts"
 }
 ```
@@ -1319,7 +1319,7 @@ tool_use Read
 id: toolu_01R3QQtNmUuVrHiFpazHvRTu
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/scripts/with-desktop-env.mjs"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/scripts/with-desktop-env.mjs"
 }
 ```
 
@@ -1399,7 +1399,7 @@ tool_use Read
 id: toolu_018g6171SJHv8obuv397TyeR
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/auth-store.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/auth-store.ts"
 }
 ```
 
@@ -1465,7 +1465,7 @@ tool_use Bash
 id: toolu_012tAWFci86gmEi67YRw6dp8
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/build/ 2>&1 || echo \"no build dir\"",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/build/ 2>&1 || echo \"no build dir\"",
   "description": "List build dir"
 }
 ```
@@ -1488,7 +1488,7 @@ tool_use Read
 id: toolu_01YNxSFZZzvPZJcj2b6d8BhJ
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/build/entitlements.mac.plist"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/build/entitlements.mac.plist"
 }
 ```
 
@@ -1522,7 +1522,7 @@ tool_use Read
 id: toolu_01WdroUVG6sFReCWvsFqzUhd
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/scripts/generate-update-feed.mjs"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/scripts/generate-update-feed.mjs"
 }
 ```
 
@@ -1675,7 +1675,7 @@ id: toolu_01E3MxAwdyhZ6nHHjJ6GthBt
 
 ### 1. Renderer Entry + tRPC Client Wiring
 
-`/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx:9`
+`/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/react/entry.tsx:9`
 
 `appOrigin` is read directly from `window.lightfastBridge.appOrigin` at line 9. It is passed to `<DesktopTRPCProvider baseUrl={appOrigin}>` at line 19. There is no `import.meta.env.VITE_*`, no `process.env.*`, and no hardcoded `localhost` or `lightfast.ai` anywhere in the renderer tree — the origin is entirely runtime-injected via the bridge.
 
@@ -1695,7 +1695,7 @@ id: toolu_01E3MxAwdyhZ6nHHjJ6GthBt
 
 ### 2. IPC Surface (every channel)
 
-All channels are namespaced `lightfast_desktop:*` and defined in `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts`.
+All channels are namespaced `lightfast_desktop:*` and defined in `/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/shared/ipc.ts`.
 
 | Channel | Direction | What it does |
 |---|---|---|
@@ -1714,29 +1714,29 @@ The pitch deck handoff has no desktop release milestone content. Here are all re
 
 ### Research Documents
 
-`/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/research/2026-04-23-codex-vs-lightfast-desktop-production-gap.md`
+`/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/research/2026-04-23-codex-vs-lightfast-desktop-production-gap.md`
 Comprehensive gap analysis: Codex.app vs apps/desktop across auto-update (Sparkle/Ed25519), crash reporting, SQLite, multi-arch, preload isolation, i18n — with a Status Tracker table.
 Status: complete | Date: 2026-04-23
 
-`/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/research/2026-04-25-desktop-signin-agent-browser-workaround.md`
+`/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/research/2026-04-25-desktop-signin-agent-browser-workaround.md`
 Field notes on driving the Clerk OAuth loopback sign-in flow via agent-browser + Electron CDP; three experiments documented (direct nav, CDP attach, Electron built-in CDP).
 Status: no frontmatter status (reference/notes) | Date: 2026-04-25
 
 ### Implementation Plans
 
-`/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-clerk-trpc-wiring.md`
+`/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-clerk-trpc-wiring.md`
 Full wiring plan: Clerk JWT (lightfast-desktop template), system-browser OAuth, custom-protocol deep-link, safeStorage, DesktopTRPCProvider, and the dev:desktop-stack mesh setup.
 Status: no frontmatter status (likely shipped — superseded by portless work) | Date: 2026-04-23
 
-`/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-codex-gap-quick-wins.md`
+`/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-codex-gap-quick-wins.md`
 Quick-win implementation plan derived from the gap research: entitlements diet, env var stamping, Sentry source-map upload, and related hardening.
 Status: implemented | Date: 2026-04-23
 
-`/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-signed-out-onboarding.md`
+`/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-23-desktop-signed-out-onboarding.md`
 Signed-out onboarding UI plan with Codex.app reference decompile; covers the pre-auth renderer state machine.
 Status: no frontmatter status (in-progress / part of pre-release batch) | Date: 2026-04-23
 
-`/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-24-desktop-deps-major-upgrade.md`
+`/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-04-24-desktop-deps-major-upgrade.md`
 Aggressive major-version bump of all non-catalog desktop devDependencies (Electron, Forge, Vite, etc.).
 Status: no frontmatter status (draft) | Date: […]
 
@@ -1796,17 +1796,17 @@ The app-side counterpart is a standard Next.js page at `/desktop/auth` that uses
 
 ### 1. The `/desktop/auth` Route
 
-**Route file:** `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(app)/(user)/(pending-not-allowed)/desktop/auth/page.tsx:1-7`
+**Route file:** `/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(app)/(user)/(pending-not-allowed)/desktop/auth/page.tsx:1-7`
 
 The page is a thin shell that renders `<DesktopAuthClient />`. It is marked `force-dynamic` so it is never statically rendered.
 
-**Client component:** `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(app)/(user)/(pending-not-allowed)/desktop/auth/_components/desktop-auth-client.tsx`
+**Client component:** `/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(app)/(user)/(pending-not-allowed)/desktop/auth/_components/desktop-auth-client.tsx`
 
 `DesktopAuthClient` delegates to the shared `<ClientAuthBridge>` component with two arguments:
 - `jwtTemplate="lightfast-desktop"` (line 42) — this is the Clerk JWT template name
 - `buildRedirectUrl` callback (lines 31-39) — validates the `callback` query param, enforces that the URL scheme is `http:`, hostname is `127.0.0.1` or `localhost`, and pathname is exactly `/callback`; then appends `?token=<jwt>&state=<state>` to it
 
-**JWT source:** `/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/app/src/app/(app)/(user)/(pending-not-allowed)/_components/client-auth-bridge.tsx:38-43`
+**JWT source:** `/home/<USER>/Code/@lightfastai/lightfast/apps/app/src/app/(app)/(user)/(pending-not-allowed)/_components/client-auth-bridge.tsx:38-43`
 
 Inside `BridgeContent`, `useSession()` from Clerk is called. When the session is loaded, `session.getToken({ template: "lightfast-desktop" })` is called (line […]
 
@@ -1879,7 +1879,7 @@ tool_use Bash
 id: toolu_01M4r9J3eBkJ5c8SuABHrV6f
 ```json
 {
-  "command": "cat /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/build/entitlements.mac.inherit.plist",
+  "command": "cat /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/build/entitlements.mac.inherit.plist",
   "description": "Read inherit entitlements"
 }
 ```
@@ -1911,7 +1911,7 @@ tool_use Bash
 id: toolu_01FPTFFwzmVek1HiQShhAeJ4
 ```json
 {
-  "command": "grep -rn \"lightfast-desktop\" /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src 2>/dev/null; echo \"---\"; grep -rn \"PRODUCTION_APP_ORIGIN\\|lightfast.ai\" /Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src 2>/dev/null | head -10",
+  "command": "grep -rn \"lightfast-desktop\" /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src 2>/dev/null; echo \"---\"; grep -rn \"PRODUCTION_APP_ORIGIN\\|lightfast.ai\" /home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src 2>/dev/null | head -10",
   "description": "Find Clerk JWT template name and production origin references"
 }
 ```
@@ -1921,13 +1921,13 @@ id: toolu_01FPTFFwzmVek1HiQShhAeJ4
 tool_result
 id: toolu_01FPTFFwzmVek1HiQShhAeJ4
 ```
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/sidebar.ts:1:const STORAGE_KEY = "lightfast-desktop:sidebar-collapsed";
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/error-boundary.ts:3:const OVERLAY_ID = "lightfast-desktop-error-overlay";
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css:596:#lightfast-desktop-error-overlay {
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css:606:#lightfast-desktop-error-overlay[data-visible="true"] {
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/sidebar.ts:1:const STORAGE_KEY = "lightfast-desktop:sidebar-collapsed";
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/error-boundary.ts:3:const OVERLAY_ID = "lightfast-desktop-error-overlay";
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css:596:#lightfast-desktop-error-overlay {
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/renderer/src/styles.css:606:#lightfast-desktop-error-overlay[data-visible="true"] {
 ---
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts:7:const PRODUCTION_APP_ORIGIN = "https://lightfast.ai";
-/Users/jeevanpillay/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts:32:  return toOrigin(PRODUCTION_APP_ORIGIN, "Production app origin");
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts:7:const PRODUCTION_APP_ORIGIN = "https://lightfast.ai";
+/home/<USER>/Code/@lightfastai/lightfast/apps/desktop/src/main/app-origin.ts:32:  return toOrigin(PRODUCTION_APP_ORIGIN, "Production app origin");
 ```
 
 > TOOL
@@ -1974,7 +1974,7 @@ tool_use Write
 id: toolu_013Fh99uJ9851ug8qu7aXnsc
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/research/2026-05-05-desktop-prod-readiness.md",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/research/2026-05-05-desktop-prod-readiness.md",
   "content": "---\ndate: 2026-05-05\nresearcher: claude\ngit_commit: 2565270fac554cc02769ba6012eeb7c2cd9ae5d6\nbranch: desktop-portless-runtime-batch\ntopic: \"apps/desktop prod readiness — current state and gaps (esp. envs)\"\ntags: [research, desktop, electron, release, prod-readiness, env, sentry, codesigning]\nstatus: complete\nlast_updated: 2026-05-05\n---\n\n# Research: apps/desktop prod readiness — current state and gaps\n\n**Date**: 2026-05-05\n**Git Commit**: 2565270fac554cc02769ba6012eeb7c2cd9ae5d6\n**Branch**: desktop-portless-runtime-batch\n\n## Research Question\n\nWalk through `apps/desktop/` and document what we need to do to get this ready for prod — envs, signing, release pipeline, and any other gaps.\n\n## Summary\n\n`apps/desktop` is **code-complete for a v0.1.0 macOS release**. The release pipeline (signed + notarized arm64/x64 `.dmg`/`.zip`, Squirrel.Mac feed JSON, GitHub-hosted assets, Sentry source-map upload, build provenance attestation) is wired and active on `main` (PR #621, commit `aef1d3240`, 2026-04-24). The four `package.json` placeholders (`version`, `buildFlavor`, `buildNumber`, `sparkleFeedUrl`) are stamped at CI time — that is by design.\n\nThe pipeline is currently **inert because no `@lightfast/desktop@*` tag has been pushed**. Activating it requires (1) provisioning 12 secrets/vars in GitHub repo settings (8 Apple + 2 Sentry secrets + 2 Sentry vars), (2) cutting an `@lightfast/desktop@0.1.0-rc.1` tag, and (3) verifying end-to-end. Only steps the team can take in CI/code are already done.\n\nThree smaller items are \"would-be-nice before prod\" rather than blockers: (a) JWT refresh (the desktop persists the Clerk-signed JWT but […]
 
 > TOOL
@@ -1982,7 +1982,7 @@ id: toolu_013Fh99uJ9851ug8qu7aXnsc
 tool_result
 id: toolu_013Fh99uJ9851ug8qu7aXnsc
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/research/2026-05-05-desktop-prod-readiness.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/research/2026-05-05-desktop-prod-readiness.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

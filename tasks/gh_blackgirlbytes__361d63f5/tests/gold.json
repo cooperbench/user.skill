@@ -1,1 +1,8 @@
-{"point_id": "019ed94d-c6f3-7661-a59e-7d86b90bce9f#299", "developer": "gh:blackgirlbytes", "condition": "noprofile", "real": "commit and push changes", "prev_agent": "Fixed. When `LEADERBOARD` opens from the title screen, the title chrome now hides completely: `PLANETFALL`, `THE REBELLION IS WAITING`, and the menu items no longer show through.\n\nChanged:\n- [src/titleScreen.js](/Users/goose-guest/Documents/work/planetfall-seed-signalkit/src/titleScreen.js:176) adds/removes an `is-leaderboard-open` state.\n- [src/style.css](/Users/goose-guest/Documents/work/planetfall-seed-signalkit/src/style.css:84) hides the title elements and adds a darker scrim underneath the leaderboard.\n\nVerified with `npm run build` and browser-tested: leaderboard opens cleanly, title text is hidden, Back restores the title menu.", "gold_move": null}
+{
+  "point_id": "019ed94d-c6f3-7661-a59e-7d86b90bce9f#299",
+  "developer": "gh:blackgirlbytes",
+  "condition": "noprofile",
+  "real": "commit and push changes",
+  "prev_agent": "Fixed. When `LEADERBOARD` opens from the title screen, the title chrome now hides completely: `PLANETFALL`, `THE REBELLION IS WAITING`, and the menu items no longer show through.\n\nChanged:\n- [src/titleScreen.js](/home/<USER>/Documents/work/planetfall-seed-signalkit/src/titleScreen.js:176) adds/removes an `is-leaderboard-open` state.\n- [src/style.css](/home/<USER>/Documents/work/planetfall-seed-signalkit/src/style.css:84) hides the title elements and adds a darker scrim underneath the leaderboard.\n\nVerified with `npm run build` and browser-tested: leaderboard opens cleanly, title text is hidden, Back restores the title menu.",
+  "gold_move": null
+}

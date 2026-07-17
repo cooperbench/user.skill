@@ -1,6 +1,6 @@
 > DEVELOPER
 
-read the files from /Users/jobinlawrance/Project/tiny/files\ \(1\) and start /grill-with-docs
+read the files from /home/<USER>/Project/tiny/files\ \(1\) and start /grill-with-docs
 
 > TOOL
 
@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01PKB6aFRRQVeSdV7NYAcFT4
 ```json
 {
-  "command": "ls -la \"/Users/jobinlawrance/Project/tiny/files (1)\"",
+  "command": "ls -la \"/home/<USER>/Project/tiny/files (1)\"",
   "description": "List files in target directory"
 }
 ```
@@ -65,7 +65,7 @@ tool_use Read
 id: toolu_01Q8fDh8W2uGZb2rAis3DTCi
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/README.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/README.md"
 }
 ```
 
@@ -102,7 +102,7 @@ tool_use Read
 id: toolu_01TiYDEaj9tzmwZWDKwbdUt4
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/viewrr-pear-architecture.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/viewrr-pear-architecture.md"
 }
 ```
 
@@ -145,7 +145,7 @@ tool_use Read
 id: toolu_012JXm2mLEJgUtm27ArmtwfB
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/ravencloak-bip39-issue.md"
+  "file_path": "/home/<USER>/Project/tiny/files (1)/ravencloak-bip39-issue.md"
 }
 ```
 
@@ -228,7 +228,7 @@ tool_use Write
 id: toolu_01UujH48BoU66r7niLT19vai
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "content": "# viewrr — Context Glossary\n\nUbiquitous language for the viewrr P2P SVOD platform. Definitions only — no\nimplementation. When a term here conflicts with usage in a design doc, this file wins\n(or the conflict gets resolved and this file updated).\n\n---\n\n## Identity\n\nThe user's permanent cryptographic identity: an Ed25519 keypair. The `publicKey`\n**is** the account (the \"viewrr ID\"). Derived solely from the **Recovery Phrase** —\nnever from the Master Password. The server never holds any part of the secret.\n\n## Recovery Phrase\n\nA BIP39 mnemonic (12 words default, 24 optional) that is the **sole root of trust**\nfor an Identity. `mnemonic → seed → DHT.keyPair` is the one and only identity\nderivation. Entering the phrase on any device reproduces the exact same Identity.\nNever transmitted, stored, or logged.\n\n*Resolved Q1: the mnemonic — not the Master Password — is the identity root. The\nearlier `Argon2id(masterPassword)→keypair` derivation is retired; it would have made\nrecovery reconstruct a different keypair.*\n\n## Master Password\n\nA **local unlock secret only**. Encrypts the at-rest `secretKey` (and vaults) on a\nsingle device. Changing it re-encrypts the local blob and does **not** change the\nIdentity. Not synced, not the identity seed.\n"
 }
 ```
@@ -238,7 +238,7 @@ id: toolu_01UujH48BoU66r7niLT19vai
 tool_result
 id: toolu_01UujH48BoU66r7niLT19vai
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/CONTEXT.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -274,7 +274,7 @@ tool_use Write
 id: toolu_01SsbR6pmDGmXmkhwAGjJjD9
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0001-self-custody-clearkey-no-hardware-drm.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0001-self-custody-clearkey-no-hardware-drm.md",
   "content": "# 0001 — Self-custody clear-key content protection, no hardware DRM\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nviewrr's thesis is zero-infrastructure P2P, keypair identity, and \"the server never\nholds secrets.\" Content is delivered as AES-encrypted AV1 HLS segments over a\nHyperdrive swarm; the content key is sealed to the user's `publicKey` and opened\nwith their `secretKey` inside the Bare worklet (self-custody).\n\nTwo design docs also claimed Widevine L1 / FairPlay hardware DRM on the *same*\nstreams (black screen on capture, key never in app memory).\n\nThese are mutually exclusive:\n\n- Hardware DRM (L1/FairPlay) requires the platform **CDM to own the decrypt+render\n  path**, with keys delivered by a **license server** into a hardware TEE. The app\n  never sees the key, and the anti-capture guarantee exists only because the TEE owns\n  rendering.\n- Self-custody decrypts in app memory and feeds the player — this is, by definition,\n  clear-key / Widevine L3. No TEE, no black screen.\n- There is **no license server** in the architecture, and adding one (always-on,\n  key-holding) contradicts the zero-infra / self-custody thesis.\n\nviewrr's content is its own catalog + user-owned files, not third-party\nstudio-licensed content that contractually mandates L1.\n\n## Decision\n\n1. **Content protection = self-custody clear-key.** Content key sealed to `publicKey`,\n   opened with `secretKey` in […]
 
 > TOOL
@@ -282,7 +282,7 @@ id: toolu_01SsbR6pmDGmXmkhwAGjJjD9
 tool_result
 id: toolu_01SsbR6pmDGmXmkhwAGjJjD9
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0001-self-custody-clearkey-no-hardware-drm.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0001-self-custody-clearkey-no-hardware-drm.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -292,7 +292,7 @@ id: toolu_016tpmkJ125ccEz1RckNzaDx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "A **local unlock secret only**. Encrypts the at-rest `secretKey` (and vaults) on a\nsingle device. Changing it re-encrypts the local blob and does **not** change the\nIdentity. Not synced, not the identity seed.",
   "new_string": "A **local unlock secret only**. Encrypts the at-rest `secretKey` (and vaults) on a\nsingle device. Changing it re-encrypts the local blob and does **not** change the\nIdentity. Not synced, not the identity seed.\n\n## Content Key\n\nA per-title 32-byte AES key. Sealed to the user's `publicKey` on entitlement, opened\nwith their `secretKey` inside the Bare worklet, then used to derive per-segment\nAES-128 keys + IVs via HKDF. This is **self-custody clear-key** protection — decrypt\nhappens in app memory. There is no hardware DRM and no license server (see\n`docs/adr/0001`). Anti-capture is limited to OS window flags + forensic watermark, not\ncryptographic prevention."
 }
@@ -303,7 +303,7 @@ id: toolu_016tpmkJ125ccEz1RckNzaDx
 tool_result
 id: toolu_016tpmkJ125ccEz1RckNzaDx
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -407,7 +407,7 @@ tool_use Write
 id: toolu_01BU9HQdUXzMJWdQQspMUhjQ
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
   "content": "# 0002 — Desktop client is Compose Multiplatform + libVLC, not Electron\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nThe design docs contradicted each other on the desktop shell: the architecture doc\nassumed **Electron** (`systemPreferences.promptTouchID`, WebAuthn, `node-yubihsm`),\nwhile the README listed **Compose Multiplatform** covering Desktop.\n\nGoal: reduce total code and reuse one codebase. Codec direction is AV1 primary +\nH.264 fallback (AV2 deferred until hardware decode lands, ~2026-2027).\n\n## Decision\n\n1. **Desktop shell = Compose Multiplatform (JVM)** — shares the KMP codebase with\n   Android/iOS. Electron is dropped.\n2. **Video player = libVLC via vlcj** — Compose Desktop has no built-in player;\n   libVLC is codec-agnostic (AV1 today, AV2 free once VLC ships it) and avoids wiring\n   a JVM decode pipeline.\n3. **Codec = AV1 primary + H.264 fallback** for MVP. AV2 is a later config-add rung.\n4. A **segment-decrypt shim** is required regardless of player: the worklet decrypts\n   each clear-key segment in memory and feeds the player, because the content key is\n   deliberately absent from the HLS manifest.\n\n## Consequences\n\n- **Good:** One KMP codebase for Android + iOS + Desktop. Less code than a separate\n  Electron app. libVLC handles all codecs including future AV2.\n- **Good:** AV1 already delivers the \"less data\" goal without AV2's immaturity.\n- **Bad […]
 
 > TOOL
@@ -415,7 +415,7 @@ id: toolu_01BU9HQdUXzMJWdQQspMUhjQ
 tool_result
 id: toolu_01BU9HQdUXzMJWdQQspMUhjQ
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -454,7 +454,7 @@ tool_use Write
 id: toolu_01C5Sr84npwHmFgRcNZZw8nN
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0003-bare-worklet-embedding-per-platform.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0003-bare-worklet-embedding-per-platform.md",
   "content": "# 0003 — Bare worklet embedding: bare-kit on mobile, subprocess on JVM desktop\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nviewrr's entire P2P core is a **Bare worklet written in JavaScript**\n(Hyperswarm/Hyperdrive/Hyperbee/Autobase/HyperDHT). Native shells talk to it over a\ntyped RPC seam (hyperschema). The embedding mechanism is platform-specific:\n\n- Mobile (Android/iOS): `bare-kit` embeds Bare into the native app. Documented.\n- Desktop: once the shell became **Compose Multiplatform (JVM)** instead of Electron\n  (see `0002`), the worklet can no longer run in-process — a JVM cannot host Bare the\n  way an Electron/JS runtime could.\n\nRewriting the Hyper* stack in JVM (no mature impl) or switching to jvm-libp2p (loses\nall Hyper* data structures) were both rejected.\n\n## Decision\n\nRun the **same worklet JS on every platform**; only the launch mechanism differs.\n\n- **Mobile:** `bare-kit` in-app (unchanged).\n- **Desktop (JVM):** bundle the `bare` runtime binary per-OS, spawn it as a\n  **subprocess**, and communicate over a **local socket** (Unix-domain / loopback,\n  never TCP-exposed) using the same hyperschema RPC seam.\n\nThe JS core and RPC contract stay byte-identical across platforms.\n\n## Consequences\n\n- **Good:** Maximum code reuse — per-platform code is just \"how Bare is launched.\"\n- **Good:** RPC seam is the single, uniform integration surface everywhere.\n- **Security:** On desktop the `secretKey` lives in the […]
 
 > TOOL
@@ -462,7 +462,7 @@ id: toolu_01C5Sr84npwHmFgRcNZZw8nN
 tool_result
 id: toolu_01C5Sr84npwHmFgRcNZZw8nN
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0003-bare-worklet-embedding-per-platform.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0003-bare-worklet-embedding-per-platform.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -472,7 +472,7 @@ id: toolu_01DVRt9EYU4qySFc1zCFUzB5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
   "old_string": "  - **The Bare worklet can no longer run in-process.** Electron could host the JS P2P\n    core natively; a JVM app cannot. Desktop must embed Bare via subprocess/RPC (see\n    the worklet-embedding decision). This is the main new cost created by this choice.",
   "new_string": "  - **The Bare worklet can no longer run in-process.** Electron could host the JS P2P\n    core natively; a JVM app cannot. Desktop embeds Bare via a bundled subprocess +\n    local-socket RPC — resolved in `0003`. This is the main new cost of this choice."
 }
@@ -483,7 +483,7 @@ id: toolu_01DVRt9EYU4qySFc1zCFUzB5
 tool_result
 id: toolu_01DVRt9EYU4qySFc1zCFUzB5
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -522,7 +522,7 @@ tool_use Write
 id: toolu_019fXoyqpX5CrM93Un3vahJF
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0004-ownership-model-not-rental.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0004-ownership-model-not-rental.md",
   "content": "# 0004 — viewrr is a DRM-free ownership model, not enforceable rental\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nThe docs described viewrr as \"SVOD\" (subscription VOD, Netflix-style) with retention\n\"indefinite while subscription active\" — implying access is revoked when a\nsubscription lapses.\n\nThe entitlement model makes that unenforceable:\n- The `contentKey` is sealed to the user's `publicKey` and stored in the user's own\n  vault; the server holds no `secretKey` and cannot delete or claw it back.\n- Playback is fully client-side and offline — no per-play license check.\n- Deleting the Ktor entitlement row does nothing to a client that already holds the\n  key and cached segments.\n\nEnforceable rental would require per-playback online license checks and a\nkey-issuing server — directly contradicting \"server never holds secrets,\" offline\nplayback, and zero-infra.\n\n## Decision\n\nviewrr is a **DRM-free ownership model**.\n\n- Acquiring a title grants a **permanent, self-custody** content key. Once acquired,\n  the title is owned forever.\n- A **Subscription** gates *what a user may newly acquire/download*, plus seeding\n  perks and storage tier. It does **not** revoke already-acquired titles.\n- \"SVOD / revoke on cancel\" language is removed from the spec. Retention tiers\n  (`Part 8`) govern *inactive-file cleanup*, not entitlement revocation.\n\n## Consequences\n\n- **Good:** Consistent with self-custody + offline + zero-infra. […]
 
 > TOOL
@@ -530,7 +530,7 @@ id: toolu_019fXoyqpX5CrM93Un3vahJF
 tool_result
 id: toolu_019fXoyqpX5CrM93Un3vahJF
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0004-ownership-model-not-rental.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0004-ownership-model-not-rental.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -540,7 +540,7 @@ id: toolu_01GHrBJTjtFxJrn6fk5XLosu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "There is no hardware DRM and no license server (see\n`docs/adr/0001`). Anti-capture is limited to OS window flags + forensic watermark, not\ncryptographic prevention.",
   "new_string": "There is no hardware DRM and no license server (see\n`docs/adr/0001`). Anti-capture is limited to OS window flags (forensic watermark\ndeferred out of MVP), not cryptographic prevention.\n\n## Entitlement\n\nThe **permanent** right to a title, embodied by a self-custody Content Key sealed to\nthe user's `publicKey`. Once acquired, a title is **owned forever** — the server\ncannot revoke it (it holds no `secretKey`). Playback is offline and client-side. See\n`docs/adr/0004`.\n\n## Subscription\n\nA gate on **what a user may newly acquire/download**, plus seeding perks and storage\ntier. A Subscription does **not** revoke already-owned Entitlements. viewrr is an\nownership model, not enforceable rental — despite legacy \"SVOD\" wording in older docs."
 }
@@ -551,7 +551,7 @@ id: toolu_01GHrBJTjtFxJrn6fk5XLosu
 tool_result
 id: toolu_01GHrBJTjtFxJrn6fk5XLosu
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -606,7 +606,7 @@ tool_use Write
 id: toolu_01XrnKSy2UNGyAWnaePuvCi9
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md",
   "content": "# 0005 — viewrr is neutral P2P infrastructure; content is user-hosted\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nviewrr could be built as (1) a personal library, or (2) a content-distribution\nservice. The choice is Model 2, but framed as **neutral infrastructure**: users host\ntheir own files, the platform is protocol + metadata registry, not a publisher — the\nBitTorrent-client analogy, not a catalog service. The platform does not police the\nlegal rights of the files users host; content is encrypted to the owner's identity and\nleaks no PII.\n\nThe neutrality framing only holds for the **protocol/client**. Two parts of the\noriginal spec broke it by making viewrr the **origin host** and the **central index** —\nhistorically the two things that draw liability (indexes lose; protocols don't).\n\n## Decision\n\nviewrr is neutral infrastructure. To make that true (not merely asserted), three\nchanges are adopted:\n\n1. **NAS is not a content origin.** Content originates from users' own\n   devices/hosting. The NAS runs **DHT bootstrap + Ktor metadata registry** only, plus\n   an *optional paid backup* tier later. The \"origin seeder of all content variants\"\n   role is removed.\n2. **No central browseable catalog in MVP.** Discovery is **share-link + @handle +\n   follows** only. There is no viewrr-served search index of user content. […]
 
 > TOOL
@@ -614,7 +614,7 @@ id: toolu_01XrnKSy2UNGyAWnaePuvCi9
 tool_result
 id: toolu_01XrnKSy2UNGyAWnaePuvCi9
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -624,7 +624,7 @@ id: toolu_01SdTUcsja97i42P5LYoB6so
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "A Subscription does **not** revoke already-owned Entitlements. viewrr is an\nownership model, not enforceable rental — despite legacy \"SVOD\" wording in older docs.",
   "new_string": "A Subscription does **not** revoke already-owned Entitlements. viewrr is an\nownership model, not enforceable rental — despite legacy \"SVOD\" wording in older docs.\n(Subscriptions/payments are deferred out of MVP — see `docs/adr/0005`.)\n\n## NAS\n\nYour homelab node. Its viewrr role is **DHT bootstrap + Ktor metadata registry** only\n(plus an optional *paid* backup tier later). It is **not** a content origin/seeder —\ncontent originates from users' own devices. See `docs/adr/0005`. (Legacy docs calling\nthe NAS \"origin seeder of all content variants\" are superseded.)\n\n## Catalog\n\nThere is **no viewrr-hosted, browseable catalog** in MVP. Content discovery is by\n**share-link, @handle, and follows** only (\"private stash\"). TMDB metadata is optional\n**client-side** enrichment a user attaches to their own upload — never a\nplatform-served index. See `docs/adr/0005`.\n\n## Channel (phase 2)\n\nA creator-owned publishing space (SoundCloud/Dailymotion-style) for the creator's\n**own rights-cleared media**. Channels are the paid layer, deferred to phase 2 — a\ndistinct opt-in publishing model layered on top of the neutral infrastructure base.\nNot part of MVP."
 }
@@ -635,7 +635,7 @@ id: toolu_01SdTUcsja97i42P5LYoB6so
 tool_result
 id: toolu_01SdTUcsja97i42P5LYoB6so
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -683,7 +683,7 @@ tool_use Write
 id: toolu_01JvZyqkQjjaqXFdYQsWiea3
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0006-private-discovery-topics-and-pairing.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0006-private-discovery-topics-and-pairing.md",
   "content": "# 0006 — Private discovery topics are secret-derived; pairing uses ephemeral secrets\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nSeveral subsystems announced on Hyperswarm topics derived from the **public**\nidentity:\n- Private vault + multi-device sync: `Hyperswarm.join(userPublicKey)`\n- Notification mailbox: `hash(publicKey + ':notifications')`\n\n`publicKey` is world-readable (it is in the `@handle → publicKey` registry). So any\noutsider who knows a handle can compute these \"private\" topics — join the private-vault\nswarm (confirming device presence, timing activity, attempting connections/DoS) and\nobserve mailbox activity. This contradicts the `15.5` claim of \"no metadata: peers see\na topic hash, not who it belongs to.\"\n\n## Decision\n\n1. **Private vault / sync topic is secret-derived.** Derive it from a device-shared\n   secret (HKDF of `secretKey`, or a dedicated vault-sync key) that only the user's own\n   devices hold. Outsiders cannot compute or join it.\n2. **Device pairing (Vault Link) uses an ephemeral one-time secret.** The QR carries a\n   fresh pairing secret; the new device joins `hash(pairingSecret)`; device 1 sends the\n   encrypted vault/`secretKey` over that Noise channel; the pairing topic is torn down\n   afterward. The identity key is never the pairing rendezvous.\n3. **Mailbox — accept a documented limit for MVP.** Senders must reach a recipient\n   knowing only `@handle → publicKey`, so the mailbox topic […]
 
 > TOOL
@@ -691,7 +691,7 @@ id: toolu_01JvZyqkQjjaqXFdYQsWiea3
 tool_result
 id: toolu_01JvZyqkQjjaqXFdYQsWiea3
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0006-private-discovery-topics-and-pairing.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0006-private-discovery-topics-and-pairing.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -700,7 +700,7 @@ tool_use Write
 id: toolu_011RRNaS3ctdbK7r5tiGD2Jh
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0007-single-crypto-stack-libsodium-in-worklet.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0007-single-crypto-stack-libsodium-in-worklet.md",
   "content": "# 0007 — Single crypto stack: libsodium in the Bare worklet, no JVM crypto lib\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nThe desktop shell is Compose/JVM (`0002`), so a JVM crypto library such as Bouncy\nCastle was proposed to \"reduce code.\" All viewrr crypto is asymmetric + AEAD:\nEd25519 identity, NaCl `box` (X25519 + XSalsa20-Poly1305) to seal content keys,\nNoise + libsodium SecretStream transport, secretbox vaults, HKDF per-segment keys.\n\nBy existing invariant, all of this runs **inside the Bare worklet** via libsodium;\n\"keys never cross the RPC seam\" and the native shell receives only plaintext.\n\n## Decision\n\n**Keep libsodium in the worklet as the sole crypto stack. Do not add Bouncy Castle or\nany JVM-side crypto library.**\n\n- All key material and crypto operations stay in the worklet.\n- The native shell (JVM/Swift/Kotlin) does **zero** application crypto; it receives\n  plaintext over the RPC seam.\n- The only platform-side key ops are OS keystore wrapping of the at-rest `secretKey`\n  (Android Keystore / macOS Keychain / Secure Enclave) and biometric gating — platform\n  APIs, not a crypto library.\n\n## Consequences\n\n- **Good:** One audited crypto implementation, one language. No byte-for-byte interop\n  layer between libsodium and a JVM stack, which is exactly where silent crypto\n  mismatches hide (BC has no […]
 
 > TOOL
@@ -708,7 +708,7 @@ id: toolu_011RRNaS3ctdbK7r5tiGD2Jh
 tool_result
 id: toolu_011RRNaS3ctdbK7r5tiGD2Jh
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0007-single-crypto-stack-libsodium-in-worklet.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0007-single-crypto-stack-libsodium-in-worklet.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -776,7 +776,7 @@ id: toolu_01AuUbUXzuZrH5EcdsHePYap
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md",
   "old_string": "**Status:** Accepted (2026-07-01)",
   "new_string": "**Status:** Superseded by `0008` (2026-07-01) — point 2 (no central catalog) is\nreversed. Points 1 (NAS not a content origin) and 3 (payments deferred to phase-2)\nstill stand."
 }
@@ -787,7 +787,7 @@ id: toolu_01AuUbUXzuZrH5EcdsHePYap
 tool_result
 id: toolu_01AuUbUXzuZrH5EcdsHePYap
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0005-neutral-infrastructure-user-hosted.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -796,7 +796,7 @@ tool_use Write
 id: toolu_012DP8Mm58UdC8quW6DeucQC
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md",
   "content": "# 0008 — Central searchable catalog, mesh-contributed; viewrr is the index\n\n**Status:** Accepted (2026-07-01). Supersedes `0005` point 2.\n\n## Context\n\nviewrr is positioned as a Netflix-alternative SVOD. The defining feature: **media\nfiles are decentralized (no central media server), but the catalog is centralized and\nsearchable.** Anything downloaded/cached by any peer in the mesh contributes its\nmetadata + availability to a central catalog, so the catalog grows organically from\nmesh activity and every title becomes findable.\n\nThis reverses `0005` point 2 (which removed the central catalog to preserve a neutral\nposture). The neutral-transport property still holds for the *files*; it does **not**\nhold for the *index* — hosting a searchable index of user-hosted third-party content\nis the historically seized layer (indexes lose; protocols don't).\n\n`0005` points 1 (NAS is not a content origin) and 3 (payments deferred) still stand.\n\n## Decision\n\n1. **Central catalog exists and is searchable**, powered by **ParadeDB / pg_search**\n   (BM25 full-text). pg_search returns to the MVP stack.\n2. **Content identity = TMDB ID → deterministic UUID v5** (already specced). Same title\n   from different uploaders maps to one catalog entry — dedup by content UUID.\n3. **Mesh-contributed:** when a client acquires/caches a UUID-identified title, it\n   upserts the catalog entry (metadata) and registers availability. Files […]
 
 > TOOL
@@ -804,7 +804,7 @@ id: toolu_012DP8Mm58UdC8quW6DeucQC
 tool_result
 id: toolu_012DP8Mm58UdC8quW6DeucQC
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -814,7 +814,7 @@ id: toolu_01P12LE4s9aBdfcFgohciJyt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "## Catalog\n\nThere is **no viewrr-hosted, browseable catalog** in MVP. Content discovery is by\n**share-link, @handle, and follows** only (\"private stash\"). TMDB metadata is optional\n**client-side** enrichment a user attaches to their own upload — never a\nplatform-served index. See `docs/adr/0005`.",
   "new_string": "## Catalog\n\nThe **central, searchable index** of titles available in the mesh, powered by ParadeDB\n/ pg_search. Media files are decentralized (no central media server); the **catalog is\ncentralized**. Any peer acquiring a title contributes its metadata + availability, so\nthe catalog grows from mesh activity. Titles are keyed by **content UUID** (TMDB ID →\nUUID v5) so the same film from different uploaders dedups to one entry. viewrr *is* the\nindex — this is the product's core SVOD differentiator, and its main legal exposure\n(needs a takedown pipeline). See `docs/adr/0008` (supersedes the earlier \"no catalog\"\nstance in `0005`)."
 }
@@ -825,7 +825,7 @@ id: toolu_01P12LE4s9aBdfcFgohciJyt
 tool_result
 id: toolu_01P12LE4s9aBdfcFgohciJyt
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -860,7 +860,7 @@ id: toolu_01KKVdBKoXdCayFqPSZMTbCw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md",
   "old_string": "- **Open (see next decision):** whether availability records link a title to a\n  `publicKey` (deanonymizing users' libraries on the central server) or stay\n  pseudonymous. This is unresolved and gates the privacy posture.",
   "new_string": "- **Resolved:** availability is **pseudonymous**. The catalog stores **content\n  metadata only** (`contentUUID`, title, poster, tags — no `publicKey ↔ title`).\n  Peer discovery is via the **DHT** (`hash(contentUUID)` swarm), like BitTorrent;\n  the server never learns who holds what. New catalog rows are **validated against\n  TMDB** to prevent poisoning. Peer *selection* is client-side by Plus Code proximity +\n  uplink speed (`04`). No central who-watched-what DB exists."
 }
@@ -871,7 +871,7 @@ id: toolu_01KKVdBKoXdCayFqPSZMTbCw
 tool_result
 id: toolu_01KKVdBKoXdCayFqPSZMTbCw
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0008-central-catalog-mesh-contributed.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -909,7 +909,7 @@ tool_use Write
 id: toolu_01AWAyEPj7RYTYcws6Nw5MBA
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
   "content": "# 0009 — Peer selection by Plus Code proximity + uplink speed\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nA title (e.g. \"Interstellar 1080p\", keyed by `contentUUID`) may be held by many peers.\nAll copies of the same format are treated as **interchangeable sources** — there is no\n\"canonical bytes\" concept; a peer's file does not become the authoritative title. The\nquestion is purely *which source to pull from*.\n\n## Decision\n\nWhen a user requests a title, select the serving peer by:\n1. **Proximity** — nearest by Plus Code (location short code), then\n2. **Uplink speed** — fastest measured upload among nearby peers.\n\nPull the files from that peer. On drop/slowdown, use the **fallback chain** (`04`) to\nthe next-best peer. Selection is entirely **client-side** (no central reputation),\nconsistent with the pseudonymous, metadata-only catalog (`0008`).\n\n## Consequences\n\n- **Good:** Fast, local-first delivery; no central coordination or identity map.\n- **Residual risk (accepted for MVP):** with no canonical copy, a peer can seed a\n  **mislabeled** file under a popular `contentUUID`. Hyperdrive verifies bytes against\n  the drive's own hash, but not that the drive *is* the labeled title. Mitigation\n  (cheap, non-recentralizing): after pull, the client sanity-checks the file against\n  **TMDB metadata** (duration/resolution) and falls back to the next owner on mismatch.\n […]
 
 > TOOL
@@ -917,7 +917,7 @@ id: toolu_01AWAyEPj7RYTYcws6Nw5MBA
 tool_result
 id: toolu_01AWAyEPj7RYTYcws6Nw5MBA
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -931,7 +931,7 @@ id: toolu_01NTtkzN5KkjJz9NvVzZkznD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "## Channel (phase 2)",
   "new_string": "## Availability\n\nThe fact that some peer holds a given title. Discovered **P2P via the DHT**\n(`hash(contentUUID)` swarm), never from a central `publicKey ↔ title` table. All copies\nof the same format are interchangeable sources — no copy is canonical. See `docs/adr/0008`.\n\n## Peer Selection\n\nChoosing *which* available peer to pull from: **nearest by Plus Code**, then **fastest\nuplink**, with a fallback chain to the next-best peer. Entirely client-side. Governs\n*where to pull*, not *what is authentic*. See `docs/adr/0009`.\n\n## Channel (phase 2)"
 }
@@ -942,7 +942,7 @@ id: toolu_01NTtkzN5KkjJz9NvVzZkznD
 tool_result
 id: toolu_01NTtkzN5KkjJz9NvVzZkznD
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -983,7 +983,7 @@ id: toolu_01JnDDi2PuCZVt6KwixM2U6n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
   "old_string": "  **TMDB metadata** (duration/resolution) and falls back to the next owner on mismatch.\n  [Pending user decision: enable sanity-check in MVP, or accept raw risk.]",
   "new_string": "  **TMDB metadata** (duration/resolution) and falls back to the next owner on mismatch.\n  **Decision: accepted as raw risk for MVP** — no sanity-check shipped; the TMDB\n  duration/resolution guard is a post-MVP hardening."
 }
@@ -994,7 +994,7 @@ id: toolu_01JnDDi2PuCZVt6KwixM2U6n
 tool_result
 id: toolu_01JnDDi2PuCZVt6KwixM2U6n
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1035,7 +1035,7 @@ tool_use Write
 id: toolu_014Q7eU81jJgN9zwEdqFwSMG
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0010-operator-power-deindex-only-no-backdoor.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0010-operator-power-deindex-only-no-backdoor.md",
   "content": "# 0010 — Operator power is de-index only; no backdoor; public catalog is TMDB-allowlisted\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nviewrr hosts the central catalog index (`0008`) and will receive takedown notices.\nThe operator's stance: maximally decentralized, no ability to delete content, no\nbackdoor or key escrow, not legally the custodian of files.\n\n## Decision\n\n1. **The operator's only power is de-indexing** — removing a catalog row. This makes a\n   title unsearchable in the central catalog. It does **not** delete the file; the bytes\n   remain reachable via direct public link / `contentUUID` in the mesh.\n2. **No backdoor.** No admin decrypt, no key escrow, no operator-held secrets. Content\n   is encrypted to the user; the server cannot read private content. (Reaffirms the\n   self-custody invariant across `0001`/`0007`.)\n3. **Public catalog is TMDB-allowlisted.** A row may be public only if it matches a\n   TMDB title. Anything non-TMDB is **private-by-default** and never publicly indexed.\n4. **De-indexed / non-TMDB `contentUUID`s go on a blocklist** so mesh auto-contribution\n   cannot (re)insert them into the public catalog.\n\n## Consequences\n\n- **Good:** Clear, honest operator surface — one lever (de-index), no secret powers.\n- **CSAM / illegal content — architectural limit (must be understood):** the operator\n  **cannot detect or remove privately hosted content.** […]
 
 > TOOL
@@ -1043,7 +1043,7 @@ id: toolu_014Q7eU81jJgN9zwEdqFwSMG
 tool_result
 id: toolu_014Q7eU81jJgN9zwEdqFwSMG
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0010-operator-power-deindex-only-no-backdoor.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0010-operator-power-deindex-only-no-backdoor.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1052,7 +1052,7 @@ tool_use Write
 id: toolu_01ST8NtK4rbYXymFk8xXYmVm
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
   "content": "# 0011 — Multi-device storage pool (per-device ≥20% free space)\n\n**Status:** Accepted (2026-07-01). Open sub-decision: replication vs distribution +\nprivate-original durability (see Consequences).\n\n## Context\n\nA user's Identity (`0001`) spans multiple devices, discovered via the private,\nsecret-derived sync topic (`0006`). viewrr has no central media server (`0005` pt1),\nso a user's own devices must host that user's private vault **and** the public content\nthey seed.\n\n## Decision\n\n1. **Each device installation declares its free storage** and dedicates a **minimum\n   20%** of free space to viewrr.\n2. **The dedicated slices across a user's devices form a single user-scoped storage\n   pool.** The user's private content and their publicly-seeded content live in this\n   pool.\n3. The pool is the unit that hosts and seeds the user's catalogue — private (own\n   devices only) and public (mesh-visible) — with no central origin.\n\n## Consequences\n\n- **Good:** Storage scales with the user's own device fleet; no operator-hosted\n  storage. Fits self-custody + no-central-origin.\n- **Open sub-decision (to grill):** pool **replication vs distribution**:\n  - *Replicate* every file to all pooled devices → offline-tolerant, but total capacity\n    capped near the smallest device's slice.\n  - *Distribute/shard* across devices → more capacity, but a file is unavailable when\n    its host device is offline.\n  - **Durability […]
 
 > TOOL
@@ -1060,7 +1060,7 @@ id: toolu_01ST8NtK4rbYXymFk8xXYmVm
 tool_result
 id: toolu_01ST8NtK4rbYXymFk8xXYmVm
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1070,7 +1070,7 @@ id: toolu_0127uudzuHM7bWcu8oxw4ZQq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "## Channel (phase 2)",
   "new_string": "## Storage Pool\n\nThe union of storage slices contributed by a user's devices — each device dedicates\n**≥20% of free space**. The pool hosts and seeds that user's private vault and their\npublicly-seeded content. There is no central media server; a user's own device pool is\nthe origin for their content. See `docs/adr/0011`.\n\n## De-index\n\nThe operator's **only** moderation power: removing a title's row from the central\nCatalog so it is no longer searchable. It does **not** delete the file — bytes remain\nreachable via direct public link. No backdoor, no key escrow, no file deletion. See\n`docs/adr/0010`.\n\n## Channel (phase 2)"
 }
@@ -1081,7 +1081,7 @@ id: toolu_0127uudzuHM7bWcu8oxw4ZQq
 tool_result
 id: toolu_0127uudzuHM7bWcu8oxw4ZQq
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1119,7 +1119,7 @@ id: toolu_013Ms8f54AmgA4HQdBgiuPR3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
   "old_string": "**Status:** Accepted (2026-07-01). Open sub-decision: replication vs distribution +\nprivate-original durability (see Consequences).",
   "new_string": "**Status:** Accepted (2026-07-01). Durability sub-decision resolved (see Decision 4-6)."
 }
@@ -1130,7 +1130,7 @@ id: toolu_013Ms8f54AmgA4HQdBgiuPR3
 tool_result
 id: toolu_013Ms8f54AmgA4HQdBgiuPR3
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1140,7 +1140,7 @@ id: toolu_011E91FSpCBqx9yzPsMNNTbf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md",
   "old_string": "3. The pool is the unit that hosts and seeds the user's catalogue — private (own\n   devices only) and public (mesh-visible) — with no central origin.",
   "new_string": "3. The pool is the unit that hosts and seeds the user's catalogue — private (own\n   devices only) and public (mesh-visible) — with no central origin.\n4. **Private originals: replication factor ≥2** across pooled devices whenever ≥2\n   exist. **Never RF=1** for private originals. Private originals are **never evicted**\n   and take pool priority; public cached content is **RF=1, LRU-evictable** (it is\n   re-fetchable from the mesh). When the pool nears capacity, evict public cache first.\n5. **Single-device users get a loud warning** (\"data is on one device only\") — no\n   silent data-loss risk. Overflow beyond pool capacity requires adding a device or the\n   backup tier; never a silent drop.\n6. **Encrypted backup tier is in MVP** as the single-device durability escape hatch.\n   The NAS stores the user's **ciphertext-only** originals (no key, no plaintext, no\n   backdoor — consistent with `0010`). Backup ships functionally in MVP on jobin-nas;\n   **billing is deferred to phase-2 payments** (`0005` pt3 intact — free/self-hosted\n   during MVP, monetized later)."
 }
@@ -1151,7 +1151,7 @@ id: toolu_011E91FSpCBqx9yzPsMNNTbf
 tool_result
 id: toolu_011E91FSpCBqx9yzPsMNNTbf
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0011-multi-device-storage-pool.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1165,7 +1165,7 @@ id: toolu_015b6VEJfM9pswqRjS9hZMTM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/CONTEXT.md",
   "old_string": "## De-index",
   "new_string": "## Backup Tier\n\nAn optional durability service: the NAS stores a user's **ciphertext-only** private\noriginals (no key, no plaintext, no backdoor). It is the single-device durability escape\nhatch against total data loss. Ships functionally in MVP on jobin-nas; billing deferred\nto phase-2. See `docs/adr/0011`.\n\n## De-index"
 }
@@ -1176,7 +1176,7 @@ id: toolu_015b6VEJfM9pswqRjS9hZMTM
 tool_result
 id: toolu_015b6VEJfM9pswqRjS9hZMTM
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1211,7 +1211,7 @@ id: toolu_01EvHU948Sn7KH2wA5yXZBRo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md",
   "old_string": "  - Biometric/hardware-key unlock (Touch ID / Windows Hello / YubiKey) needs JVM\n    paths, not Electron APIs.",
   "new_string": "  - Biometric/hardware-key unlock (Touch ID / Windows Hello / YubiKey) needs JVM\n    paths, not Electron APIs. **Resolved:** MVP desktop unlock = **master password only**\n    (the at-rest `secretKey` is already password-encrypted per `0001`; libsodium in the\n    worklet). Desktop biometric + OS-keystore hardware binding are **deferred post-MVP**,\n    added per-OS via native bridges (macOS LocalAuthentication+Keychain, Windows\n    Hello+DPAPI/TPM, Linux password+keyring). Mobile biometric (Android Keystore, iOS\n    Secure Enclave) is unaffected. Caveat: MVP desktop at-rest security = password\n    strength only (no TPM/Enclave binding) — hardened later."
 }
@@ -1222,7 +1222,7 @@ id: toolu_01EvHU948Sn7KH2wA5yXZBRo
 tool_result
 id: toolu_01EvHU948Sn7KH2wA5yXZBRo
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0002-compose-desktop-libvlc-drop-electron.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1272,7 +1272,7 @@ id: toolu_012nsVUhmfENteB2UofreMft
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md",
   "old_string": "- **Residual risk (accepted for MVP):** with no canonical copy, a peer can seed a\n  **mislabeled** file under a popular `contentUUID`. Hyperdrive verifies bytes against\n  the drive's own hash, but not that the drive *is* the labeled title. Mitigation\n  (cheap, non-recentralizing): after pull, the client sanity-checks the file against\n  **TMDB metadata** (duration/resolution) and falls back to the next owner on mismatch.\n  **Decision: accepted as raw risk for MVP** — no sanity-check shipped; the TMDB\n  duration/resolution guard is a post-MVP hardening.",
   "new_string": "- **Residual risk — mislabeled file** under a popular `contentUUID`. Hyperdrive verifies\n  bytes against the drive's own hash, but not that the drive *is* the labeled title.\n  **Mitigations (now MVP — this is the catalogue-integrity defense, not anti-Sybil):**\n  1. **Client-side TMDB sanity-check (MVP):** after pull, verify file duration/resolution\n     against TMDB metadata; fall back to the next owner on mismatch. Catches gross fakes\n     automatically. (Promoted from deferred — the operator's actual concern is catalogue\n     poisoning, and this is its content-level fix.)\n  2. **Anonymous flagging (MVP):** users flag a bad copy; flag-count **de-prioritizes\n     that drive** in peer selection. No identity required, pseudonymity-preserving.\n  Both operate at the content level; account […]
 
@@ -1281,7 +1281,7 @@ id: toolu_012nsVUhmfENteB2UofreMft
 tool_result
 id: toolu_012nsVUhmfENteB2UofreMft
 ```
-The file /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/files (1)/docs/adr/0009-peer-selection-proximity-uplink.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1290,7 +1290,7 @@ tool_use Write
 id: toolu_014wzaos3c8A5dQBiPTqVZYc
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0012-no-device-fingerprinting.md",
+  "file_path": "/home/<USER>/Project/tiny/files (1)/docs/adr/0012-no-device-fingerprinting.md",
   "content": "# 0012 — No device/browser fingerprinting; catalogue integrity is data-layer, not identity-layer\n\n**Status:** Accepted (2026-07-01)\n\n## Context\n\nChrome/device fingerprinting was proposed to prevent spam accounts. The stated concern\nwas spam accounts **poisoning the catalogue**.\n\n## Decision\n\n**Do not build device or browser fingerprinting.** It is rejected because:\n\n- It contradicts the identity model — keypairs are permissionless and offline-\n  generatable (`0001`); account count cannot be gated without breaking self-custody.\n- It only touches the Vue **web** client (native apps have no browser fingerprint) and\n  is trivially bypassed.\n- It is a privacy regression (canvas/font/UA tracking) contradicting `0006`/`0010`, and\n  is weak/evadable with high false-positive collateral.\n- It targets the wrong layer: account count does not poison the catalogue.\n\n**Catalogue integrity is enforced at the data layer instead:**\n- **TMDB allowlist + server-fetched metadata** (`0008`): fake titles are rejected;\n  metadata comes from TMDB, not the client, so it cannot be stuffed. Accounts have no\n  arbitrary catalog write.\n- **Content-level checks** (`0009`): client-side TMDB sanity-check on pull + anonymous\n  flagging that de-prioritizes bad drives — handle the only residual (mislabeled bytes\n  under a valid UUID), which a single account can do as well as a thousand.\n\n## Consequences\n\n- **Good:** Catalogue is spam-resistant without tracking, PII, or capping […]
 
 > TOOL
@@ -1298,7 +1298,7 @@ id: toolu_014wzaos3c8A5dQBiPTqVZYc
 tool_result
 id: toolu_014wzaos3c8A5dQBiPTqVZYc
 ```
-File created successfully at: /Users/jobinlawrance/Project/tiny/files (1)/docs/adr/0012-no-device-fingerprinting.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Project/tiny/files (1)/docs/adr/0012-no-device-fingerprinting.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1430,7 +1430,7 @@ tool_result
 id: toolu_019oRAgHsTT3ZVTbs9UgDJmE
 ```
 <persisted-output>
-Output too large (30.1KB). Full output saved to: /Users/jobinlawrance/.REDACTED.txt
+Output too large (30.1KB). Full output saved to: /home/<USER>/.REDACTED.txt
 
 Preview (first 2KB):
 name:	viewrr/viewrr
@@ -1729,7 +1729,7 @@ tool_use Bash
 id: toolu_018TDZnGb6qEKqF5PgHj56ym
 ```json
 {
-  "command": "cd REDACTED\nrm -rf viewrr.wiki\ngit clone git@github.com:viewrr/viewrr.wiki.git 2>&1 | tail -3",
+  "command": "cd REDACTED\nrm -rf viewrr.wiki\ngit clone <REDACTED_EMAIL>:viewrr/viewrr.wiki.git 2>&1 | tail -3",
   "description": "Clone viewrr wiki repo"
 }
 ```
@@ -1740,7 +1740,7 @@ tool_result
 id: toolu_018TDZnGb6qEKqF5PgHj56ym
 ```
 Cloning into 'viewrr.wiki'...
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > TOOL
@@ -1772,7 +1772,7 @@ drwxr-xr-x@ 12 jobinlawrance  wheel   384 Jul  1 22:01 .git
 -rw-r--r--@  1 jobinlawrance  wheel  1253 Jul  1 22:01 Home.md
 -rw-r--r--@  1 jobinlawrance  wheel  1640 Jul  1 22:01 Network.md
 -rw-r--r--@  1 jobinlawrance  wheel  2203 Jul  1 22:01 Serving.md
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1943,7 +1943,7 @@ tool_use Bash
 id: toolu_017ZYVSKwWofgUvWnyHNr41S
 ```json
 {
-  "command": "cd REDACTED.wiki\ngit add -A && git -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"Add P2P re-architecture proposal epic page + sidebar link\" && git push origin HEAD 2>&1 | tail -3\necho \"---\"; git log --oneline -1",
+  "command": "cd REDACTED.wiki\ngit add -A && git -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"Add P2P re-architecture proposal epic page + sidebar link\" && git push origin HEAD 2>&1 | tail -3\necho \"---\"; git log --oneline -1",
   "description": "Commit and push wiki epic page"
 }
 ```
@@ -1957,7 +1957,7 @@ To github.com:viewrr/viewrr.wiki.git
    8541910..fc335d9  HEAD -> master
 ---
 fc335d9 Add P2P re-architecture proposal epic page + sidebar link
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -1993,7 +1993,7 @@ id: toolu_01AL6Dh9QgLDEaqWTDYkaz6E
 ```json
 {
   "file_path": "REDACTED.sh",
-  "content": "#!/usr/bin/env bash\nset -euo pipefail\nDIR=\"/Users/jobinlawrance/Project/tiny/files (1)\"\nADR=\"$DIR/docs/adr\"\n\necho \"== rename files ==\"\nfor f in \"$ADR\"/0*.md; do\n  b=$(basename \"$f\")\n  mv \"$f\" \"$ADR/p2p-$b\"\n  echo \"  p2p-$b\"\ndone\n\necho \"== fix path refs (docs/adr/000X -> docs/adr/p2p-000X) in ADRs + CONTEXT ==\"\nfor n in 0001 0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012; do\n  # path references\n  sed -i '' \"s|docs/adr/$n|docs/adr/p2p-$n|g\" \"$ADR\"/p2p-*.md \"$DIR/CONTEXT.md\"\n  # bare backtick cross-refs `000X` -> `P2P-ADR 000X`\n  sed -i '' \"s|\\`$n\\`|\\`P2P-ADR $n\\`|g\" \"$ADR\"/p2p-*.md \"$DIR/CONTEXT.md\"\ndone\n\necho \"== verify ==\"\nls \"$ADR\"\necho \"--- sample cross-refs ---\"\ngrep -h \"P2P-ADR\\|docs/adr/p2p\" \"$ADR/p2p-0008-central-catalog-mesh-contributed.md\" | head -6\n"
+  "content": "#!/usr/bin/env bash\nset -euo pipefail\nDIR=\"/home/<USER>/Project/tiny/files (1)\"\nADR=\"$DIR/docs/adr\"\n\necho \"== rename files ==\"\nfor f in \"$ADR\"/0*.md; do\n  b=$(basename \"$f\")\n  mv \"$f\" \"$ADR/p2p-$b\"\n  echo \"  p2p-$b\"\ndone\n\necho \"== fix path refs (docs/adr/000X -> docs/adr/p2p-000X) in ADRs + CONTEXT ==\"\nfor n in 0001 0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012; do\n  # path references\n  sed -i '' \"s|docs/adr/$n|docs/adr/p2p-$n|g\" \"$ADR\"/p2p-*.md \"$DIR/CONTEXT.md\"\n  # bare backtick cross-refs `000X` -> `P2P-ADR 000X`\n  sed -i '' \"s|\\`$n\\`|\\`P2P-ADR $n\\`|g\" \"$ADR\"/p2p-*.md \"$DIR/CONTEXT.md\"\ndone\n\necho \"== verify ==\"\nls \"$ADR\"\necho \"--- sample cross-refs ---\"\ngrep -h \"P2P-ADR\\|docs/adr/p2p\" \"$ADR/p2p-0008-central-catalog-mesh-contributed.md\" | head -6\n"
 }
 ```
 
@@ -2087,7 +2087,7 @@ id: toolu_01K1dhMuPGxDVf1dg5dNQUqx
   #130 updated
 --- verify #120 head ---
 **ADR 0001.** Migrate identity from server-side Keycloak/OIDC (#112–#115) to a client-only Ed25519 keypair.
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2127,7 +2127,7 @@ id: toolu_01Lr3Rt6fkuQsLPRY1tN5m3M
 #130:
 **P2P-ADRs 0002 + 0007.**
 double-prefix check (should be empty):
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2140,7 +2140,7 @@ tool_use Bash
 id: toolu_0122xRmbmfbVBCX15odZqZFs
 ```json
 {
-  "command": "cd REDACTED.wiki\nsed -i '' 's|`files(1)/docs/adr/`|`files(1)/docs/adr/p2p-*.md`|g; s|`files(1)/docs/adr/` and|`files(1)/docs/adr/p2p-*.md` and|g' P2P-Re-architecture.md\ngit add -A && git -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: note p2p-* ADR filenames (avoid collision with shipped docs/adr)\" && git push origin HEAD 2>&1 | tail -2\necho \"--- refs now ---\"; grep -o \"files(1)/docs/adr/[^\\`]*\" P2P-Re-architecture.md | sort -u",
+  "command": "cd REDACTED.wiki\nsed -i '' 's|`files(1)/docs/adr/`|`files(1)/docs/adr/p2p-*.md`|g; s|`files(1)/docs/adr/` and|`files(1)/docs/adr/p2p-*.md` and|g' P2P-Re-architecture.md\ngit add -A && git -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: note p2p-* ADR filenames (avoid collision with shipped docs/adr)\" && git push origin HEAD 2>&1 | tail -2\necho \"--- refs now ---\"; grep -o \"files(1)/docs/adr/[^\\`]*\" P2P-Re-architecture.md | sort -u",
   "description": "Update wiki filename refs and push"
 }
 ```
@@ -2154,7 +2154,7 @@ To github.com:viewrr/viewrr.wiki.git
    fc335d9..f761efe  HEAD -> master
 --- refs now ---
 files(1)/docs/adr/p2p-*.md
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2297,7 +2297,7 @@ tool_use Bash
 id: toolu_0117ttHSCBfbpUvUfhsFkLgs
 ```json
 {
-  "command": "cd REDACTED\nrm -rf viewrr.main\ngit clone --depth 1 git@github.com:viewrr/viewrr.git viewrr.main 2>&1 | tail -2\necho \"--- docs/adr in repo ---\"\nls viewrr.main/docs/adr/ 2>&1 || echo \"no docs/adr dir\"\necho \"--- default branch ---\"\ncd viewrr.main && git branch --show-current",
+  "command": "cd REDACTED\nrm -rf viewrr.main\ngit clone --depth 1 <REDACTED_EMAIL>:viewrr/viewrr.git viewrr.main 2>&1 | tail -2\necho \"--- docs/adr in repo ---\"\nls viewrr.main/docs/adr/ 2>&1 || echo \"no docs/adr dir\"\necho \"--- default branch ---\"\ncd viewrr.main && git branch --show-current",
   "description": "Clone viewrr main, inspect docs/adr"
 }
 ```
@@ -2316,7 +2316,7 @@ Cloning into 'viewrr.main'...
 0005-client-stack.md
 --- default branch ---
 main
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2329,7 +2329,7 @@ tool_use Bash
 id: toolu_01UtvVN9NdckwjVCbyJpQQmx
 ```json
 {
-  "command": "SRC=\"/Users/jobinlawrance/Project/tiny/files (1)\"\ncd REDACTED.main\ngit checkout -q -b docs/p2p-proposal\ncp \"$SRC\"/docs/adr/p2p-*.md docs/adr/\ncp \"$SRC\"/CONTEXT.md docs/adr/CONTEXT-p2p.md\ncat > docs/adr/p2p-INDEX.md <<'EOF'\n# P2P / Self-Custody Re-architecture — ADR set (proposal)\n\n> **Not shipped.** Design record for the P2P/self-custody migration epic\n> (milestone #20). Independent of the shipped ADRs `0001–0005` in this directory,\n> despite overlapping numbers — these are prefixed `p2p-`. See the wiki page\n> **P2P Re-architecture** and issues #120–#130.\n\n| P2P-ADR | Decision | Issue |\n|--------|----------|-------|\n| [p2p-0001](p2p-0001-self-custody-clearkey-no-hardware-drm.md) | Self-custody clear-key, no DRM/license server | #122 |\n| [p2p-0002](p2p-0002-compose-desktop-libvlc-drop-electron.md) | Compose Desktop + player; drop Electron | #130 |\n| [p2p-0003](p2p-0003-bare-worklet-embedding-per-platform.md) | Bare worklet embedding per platform | #121 |\n| [p2p-0004](p2p-0004-ownership-model-not-rental.md) | Ownership model, not rental | #123 |\n| [p2p-0005](p2p-0005-neutral-infrastructure-user-hosted.md) | Neutral infra (superseded by p2p-0008) | — |\n| [p2p-0006](p2p-0006-private-discovery-topics-and-pairing.md) | Secret-derived topics + pairing | #126 |\n| [p2p-0007](p2p-0007-single-crypto-stack-libsodium-in-worklet.md) | Single crypto stack (libsodium/worklet) | #130 |\n| [p2p-0008](p2p-0008-central-catalog-mesh-contributed.md) | Central catalog, pseudonymous DHT availability | #124 |\n| [p2p-0009](p2p-0009-peer-selection-proximity-uplink.md) | Peer selection: Plus Code + uplink | #125 |\n| [p2p-0010](p2p-0010-operator-power-deindex-only-no-backdoor.md) | De-index-only, no backdoor | #128 |\n| [p2p-0011](p2p-0011-multi-device-storage-pool.md) | Storage pool + encrypted backup | #127 |\n| [p2p-0012](p2p-0012-no-device-fingerprinting.md) | No device fingerprinting | #129 |\n\nGlossary: [CONTEXT-p2p.md](CONTEXT-p2p.md)\nEOF\ngit add -A\ngit -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"docs: add P2P/self-custody […]
+  "command": "SRC=\"/home/<USER>/Project/tiny/files (1)\"\ncd REDACTED.main\ngit checkout -q -b docs/p2p-proposal\ncp \"$SRC\"/docs/adr/p2p-*.md docs/adr/\ncp \"$SRC\"/CONTEXT.md docs/adr/CONTEXT-p2p.md\ncat > docs/adr/p2p-INDEX.md <<'EOF'\n# P2P / Self-Custody Re-architecture — ADR set (proposal)\n\n> **Not shipped.** Design record for the P2P/self-custody migration epic\n> (milestone #20). Independent of the shipped ADRs `0001–0005` in this directory,\n> despite overlapping numbers — these are prefixed `p2p-`. See the wiki page\n> **P2P Re-architecture** and issues #120–#130.\n\n| P2P-ADR | Decision | Issue |\n|--------|----------|-------|\n| [p2p-0001](p2p-0001-self-custody-clearkey-no-hardware-drm.md) | Self-custody clear-key, no DRM/license server | #122 |\n| [p2p-0002](p2p-0002-compose-desktop-libvlc-drop-electron.md) | Compose Desktop + player; drop Electron | #130 |\n| [p2p-0003](p2p-0003-bare-worklet-embedding-per-platform.md) | Bare worklet embedding per platform | #121 |\n| [p2p-0004](p2p-0004-ownership-model-not-rental.md) | Ownership model, not rental | #123 |\n| [p2p-0005](p2p-0005-neutral-infrastructure-user-hosted.md) | Neutral infra (superseded by p2p-0008) | — |\n| [p2p-0006](p2p-0006-private-discovery-topics-and-pairing.md) | Secret-derived topics + pairing | #126 |\n| [p2p-0007](p2p-0007-single-crypto-stack-libsodium-in-worklet.md) | Single crypto stack (libsodium/worklet) | #130 |\n| [p2p-0008](p2p-0008-central-catalog-mesh-contributed.md) | Central catalog, pseudonymous DHT availability | #124 |\n| [p2p-0009](p2p-0009-peer-selection-proximity-uplink.md) | Peer selection: Plus Code + uplink | #125 |\n| [p2p-0010](p2p-0010-operator-power-deindex-only-no-backdoor.md) | De-index-only, no backdoor | #128 |\n| [p2p-0011](p2p-0011-multi-device-storage-pool.md) | Storage pool + encrypted backup | #127 |\n| [p2p-0012](p2p-0012-no-device-fingerprinting.md) | No device fingerprinting | #129 |\n\nGlossary: [CONTEXT-p2p.md](CONTEXT-p2p.md)\nEOF\ngit add -A\ngit -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"docs: add P2P/self-custody […]
 
 > TOOL
 
@@ -2356,7 +2356,7 @@ be280dc docs: add P2P/self-custody proposal ADR set (epic #20)
  docs/adr/p2p-0012-no-device-fingerprinting.md      |  36 +++++++
  docs/adr/p2p-INDEX.md                              |  23 +++++
  14 files changed, 640 insertions(+)
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2380,7 +2380,7 @@ tool_result
 id: toolu_01PxigX4yEEtU5jkm59Ba1HV
 ```
 https://github.com/viewrr/viewrr/pull/131
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2393,7 +2393,7 @@ tool_use Bash
 id: toolu_01SZJvT4RDqP9t7pZBpvHRSB
 ```json
 {
-  "command": "cd REDACTED.wiki\nsed -i '' 's#`files(1)/docs/adr/p2p-\\*\\.md`#`docs/adr/p2p-*.md` (PR #131)#g; s#`files(1)/CONTEXT\\.md`#`docs/adr/CONTEXT-p2p.md`#g' P2P-Re-architecture.md\ngit add -A && git -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: point design-record links at in-repo docs/adr (PR #131)\" && git push -q origin HEAD 2>&1 | tail -1\necho \"refs now:\"; grep -oE \"(docs/adr/[^\\` ]*|PR #131)\" P2P-Re-architecture.md | sort -u",
+  "command": "cd REDACTED.wiki\nsed -i '' 's#`files(1)/docs/adr/p2p-\\*\\.md`#`docs/adr/p2p-*.md` (PR #131)#g; s#`files(1)/CONTEXT\\.md`#`docs/adr/CONTEXT-p2p.md`#g' P2P-Re-architecture.md\ngit add -A && git -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: point design-record links at in-repo docs/adr (PR #131)\" && git push -q origin HEAD 2>&1 | tail -1\necho \"refs now:\"; grep -oE \"(docs/adr/[^\\` ]*|PR #131)\" P2P-Re-architecture.md | sort -u",
   "description": "Update wiki links to in-repo path + PR"
 }
 ```
@@ -2411,7 +2411,7 @@ nothing to commit, working tree clean
 refs now:
 docs/adr/0001–0004
 docs/adr/p2p-*.md
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2424,7 +2424,7 @@ tool_use Bash
 id: toolu_01XBvyPRjkQ9FKG5wd1wVbhG
 ```json
 {
-  "command": "cd REDACTED.wiki\nsed -i '' 's@`files(1)/docs/adr/p2p-\\*\\.md`@`docs/adr/p2p-*.md` (PR #131)@g; s@`files(1)/CONTEXT\\.md`@`docs/adr/CONTEXT-p2p.md`@g' P2P-Re-architecture.md\ngrep -n \"files(1)\\|docs/adr/p2p\\|PR #131\\|CONTEXT-p2p\" P2P-Re-architecture.md\ngit add -A && git -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: point design-record links at in-repo docs/adr (PR #131)\" && git push -q origin HEAD 2>&1 | tail -1\necho \"committed+pushed\"",
+  "command": "cd REDACTED.wiki\nsed -i '' 's@`files(1)/docs/adr/p2p-\\*\\.md`@`docs/adr/p2p-*.md` (PR #131)@g; s@`files(1)/CONTEXT\\.md`@`docs/adr/CONTEXT-p2p.md`@g' P2P-Re-architecture.md\ngrep -n \"files(1)\\|docs/adr/p2p\\|PR #131\\|CONTEXT-p2p\" P2P-Re-architecture.md\ngit add -A && git -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"P2P epic: point design-record links at in-repo docs/adr (PR #131)\" && git push -q origin HEAD 2>&1 | tail -1\necho \"committed+pushed\"",
   "description": "Redo wiki link update with @ delimiter"
 }
 ```
@@ -2437,7 +2437,7 @@ id: toolu_01XBvyPRjkQ9FKG5wd1wVbhG
 8:> **independent set** living in `docs/adr/p2p-*.md` (PR #131) — they are **not** the shipped
 42:12 P2P-ADRs + a context glossary live in `docs/adr/p2p-*.md` (PR #131) and `docs/adr/CONTEXT-p2p.md`.
 committed+pushed
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2509,7 +2509,7 @@ REDACTED.main           be280dc [docs/p2p-proposal]
 REDACTED      3383afe [p2p/123-ownership]
 REDACTED        3383afe [p2p/128-deindex]
 REDACTED 3383afe [p2p/129-no-fingerprint]
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2876,7 +2876,7 @@ tool_result
 id: toolu_01JMK8FTaUUo1XwqiSUFKi8Q
 ```
 === wiring: owner vs public predicate usage ===
-REDACTED.kt:74:    // discovery (browse/search/home/Stremio) but NOT deleted. See V14 + publicCatalogOp().
+REDACTED.kt:74:    // discovery (browse/search/home/<USER>) but NOT deleted. See V14 + publicCatalogOp().
 REDACTED.kt:64:            MediaItems.selectAll().where { MediaItems.showTitle.isNull() and publicCatalogOp() }.map { it.toRow() }.toList()
 REDACTED.kt:84:            MediaItems.selectAll().where { MediaItems.showTitle.isNotNull() and publicCatalogOp() }.map { it.toRow() }.toList()
 REDACTED.kt:67:        // #128: search is an OWNER surface — mirrors notDeindexedOp() (de-index only,
@@ -2889,7 +2889,7 @@ REDACTED.kt:73:        MediaItems.selectAll().where { notDeindexedOp() }.map { i
 === branch head ===
 2402108 refactor(catalog): split gate — owner de-index-only, public TMDB allowlist (#128)
 === running tests (this may take a bit) ===
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2914,7 +2914,7 @@ id: toolu_01RxK5uDdVJYpUbhTGyAtBcP
 ```
 BUILD SUCCESSFUL in 8s
 EXIT:
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -2988,7 +2988,7 @@ id: toolu_015ySw269uaxyaLPzPS3k5Wz
 worktree wt-120-identity ready (branch p2p/120-identity off origin/main)
 --- java version in repo (Ed25519 native needs 15+) ---
 server/build.gradle.kts:21:    jvmToolchain(21)
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3192,7 +3192,7 @@ id: toolu_01VCACZtZ8EGgHFPPVn613vZ
 ```
 worktree wt-reviews ready (branch feat/editorial-reviews off origin/main)
 --- existing http client / json / scheduler deps ---
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3280,7 +3280,7 @@ REDACTED      abfa3fa [p2p/123-ownership]
 REDACTED        2402108 [p2p/128-deindex]
 REDACTED 9d707e9 [p2p/129-no-fingerprint]
 REDACTED            3383afe [feat/editorial-reviews]
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3435,7 +3435,7 @@ id: toolu_011fzigqpPVFk6A6vkepgrH4
 ?? server/src/main/resources/db/migration/V14__editorial.sql
 ?? server/src/main/resources/editorial/
 === pushed? PR? ===
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3523,7 +3523,7 @@ id: toolu_01Xrz6F3tYdqPX2YCK3A4Fe4
 
 === interfaces/abstractions smell check ===
   none
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > TOOL
@@ -3731,7 +3731,7 @@ V16__editorial.sql
 === new deps? (want none) ===
   no dep additions ✓
 === tests ===
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3755,7 +3755,7 @@ tool_result
 id: toolu_017hY78BQXuSRVoVrhYenmzZ
 ```
 BUILD SUCCESSFUL in 557ms
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -3984,7 +3984,7 @@ id: toolu_01HoZuujBxGza4fWAP8LUEby
 44 tests completed, 1 failed
 FAILURE: Build failed with an exception.
 BUILD FAILED in 10s
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4017,7 +4017,7 @@ BUILD FAILED in 4s
 === report xml ===
 <testcase name="storesAndReadsReviewsAndHighlights"
 message="org.jetbrains.exposed.v1.exceptions.UnsupportedByDialectException: INSERT IGNORE supported only on H2 v1.4.197+ with MODE=MYSQL., dialect: H2.
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4043,7 +4043,7 @@ id: toolu_01KfqGK6VAmSfhxLkDHjmnkS
 reverted. status:
 === re-test ===
 BUILD SUCCESSFUL in 5s
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4091,7 +4091,8 @@ id: toolu_01DrWmfyQsAqwfTqRMNZ4MBR
 tool_result
 id: toolu_01DrWmfyQsAqwfTqRMNZ4MBR
 ```
-Rebasing (1/1)Auto-merging server/src/main/kotlin/db/Tables.kt
+Rebasing (1/1)
+Auto-merging server/src/main/kotlin/db/Tables.kt
 CONFLICT (content): Merge conflict in server/src/main/kotlin/db/Tables.kt
 Auto-merging server/src/main/kotlin/media/MediaListRoutes.kt
 Auto-merging server/src/main/kotlin/scanner/MediaAdminRoutes.kt
@@ -4105,7 +4106,7 @@ Recorded preimage for 'server/src/main/kotlin/db/Tables.kt'
 Could not apply 98c3210... # feat: editorial ingest — critic review links + award/festival badges + TMDB star exposure
 === conflicts ===
 server/src/main/kotlin/db/Tables.kt
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4190,7 +4191,7 @@ id: toolu_01RXzDXcWQjknUJDkD8EywFu
 72	    val overview = text("overview").nullable()
 73	<<<<<<< HEAD
 74	    // #128 (P2P moderation): operator de-index flag. true => hidden from public
-75	    // discovery (browse/search/home/Stremio) but NOT deleted. See V14 + publicCatalogOp().
+75	    // discovery (browse/search/home/<USER>) but NOT deleted. See V14 + publicCatalogOp().
 76	    val deindexed = bool("deindexed").default(false)
 77	=======
 78	    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.
@@ -4219,8 +4220,8 @@ id: toolu_019LJuWHhhMgJw8zCb5iMwjs
 {
   "replace_all": false,
   "file_path": "REDACTED.kt",
-  "old_string": "<<<<<<< HEAD\n    // #128 (P2P moderation): operator de-index flag. true => hidden from public\n    // discovery (browse/search/home/Stremio) but NOT deleted. See V14 + publicCatalogOp().\n    val deindexed = bool(\"deindexed\").default(false)\n=======\n    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.\n    val tmdbVoteAverage = float(\"tmdb_vote_average\").nullable()\n    val tmdbVoteCount = integer(\"tmdb_vote_count\").nullable()\n>>>>>>> 98c3210 (feat: editorial ingest — critic review links + award/festival badges + TMDB star exposure)",
-  "new_string": "    // #128 (P2P moderation): operator de-index flag. true => hidden from public\n    // discovery (browse/search/home/Stremio) but NOT deleted. See V14 + publicCatalogOp().\n    val deindexed = bool(\"deindexed\").default(false)\n    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.\n    val tmdbVoteAverage = float(\"tmdb_vote_average\").nullable()\n    val tmdbVoteCount = integer(\"tmdb_vote_count\").nullable()"
+  "old_string": "<<<<<<< HEAD\n    // #128 (P2P moderation): operator de-index flag. true => hidden from public\n    // discovery (browse/search/home/<USER>) but NOT deleted. See V14 + publicCatalogOp().\n    val deindexed = bool(\"deindexed\").default(false)\n=======\n    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.\n    val tmdbVoteAverage = float(\"tmdb_vote_average\").nullable()\n    val tmdbVoteCount = integer(\"tmdb_vote_count\").nullable()\n>>>>>>> 98c3210 (feat: editorial ingest — critic review links + award/festival badges + TMDB star exposure)",
+  "new_string": "    // #128 (P2P moderation): operator de-index flag. true => hidden from public\n    // discovery (browse/search/home/<USER>) but NOT deleted. See V14 + publicCatalogOp().\n    val deindexed = bool(\"deindexed\").default(false)\n    // V16 (editorial): TMDB star rating exposed on the media read endpoint. Null until scan/backfill.\n    val tmdbVoteAverage = float(\"tmdb_vote_average\").nullable()\n    val tmdbVoteCount = integer(\"tmdb_vote_count\").nullable()"
 }
 ```
 
@@ -4257,7 +4258,7 @@ id: toolu_012vmkL7SrTXJseNSfHAoBb7
 Successfully rebased and updated refs/heads/feat/editorial-reviews.
 === build+test after rebase ===
 BUILD SUCCESSFUL in 5s
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4286,7 +4287,7 @@ mergeable=CONFLICTING status=DIRTY
 X Pull request viewrr/viewrr#136 is not mergeable: the merge commit cannot be cleanly created.
 To have the pull request merged after all the requirements have been met, add the `--auto` flag.
 #136 OPEN
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4311,7 +4312,7 @@ id: toolu_01J6awbTj2PeMyToiDdjrdAy
 ```
 force-pushed ok
 mergeable=MERGEABLE status=CLEAN
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4400,7 +4401,7 @@ server/src/main/kotlin/scanner/MediaExts.kt
 server/src/main/kotlin/scanner/ScannerScheduler.kt
 server/src/main/kotlin/scanner/LibraryWatcher.kt
 server/src/main/kotlin/scanner/LibraryRoutes.kt
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4929,7 +4930,7 @@ tool_result
 id: toolu_01BSbaA3U5d961pYbm6ri7es
 ```
 BUILD SUCCESSFUL in 9s
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -4942,7 +4943,7 @@ tool_use Bash
 id: toolu_01BydyytbYVBr1UGsDo6DqKr
 ```json
 {
-  "command": "cd REDACTED\ngit add -A\ngit -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"feat(editorial): periodic refresh loop\n\nEditorial ingest now runs on boot + every viewrr.editorial.refreshIntervalMinutes\n(default 360=6h; 0 disables, manual /admin/editorial/refresh only). Mirrors\nScannerScheduler's launch-loop idiom — no new dep, no cron framework.\"\ngit push -q -u origin feat/editorial-refresh 2>&1 | tail -1\nPR=$(gh pr create --repo viewrr/viewrr --base main --head feat/editorial-refresh \\\n  --title \"feat(editorial): periodic refresh loop\" \\\n  --body \"Completes the editorial ingest feature (#136 shipped it manual-only). Ingest now runs on boot + every \\`viewrr.editorial.refreshIntervalMinutes\\` (default 6h; 0 disables → manual \\`POST /admin/editorial/refresh\\` only). Reuses the app's existing launch-loop idiom (ScannerScheduler) — zero new deps, no cron framework, fire-and-forget + runCatching so a failed pass never kills the loop. Tests green.\" 2>&1 | tail -1)\necho \"PR: $PR\"\nsleep 2\ngh pr merge \"$PR\" --repo viewrr/viewrr --squash --delete-branch 2>&1 | tail -2\necho \"$PR\" | grep -oE '[0-9]+$' | xargs -I{} gh pr view {} --repo viewrr/viewrr --json state --jq '\"PR #{} \\(.state)\"'",
+  "command": "cd REDACTED\ngit add -A\ngit -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"feat(editorial): periodic refresh loop\n\nEditorial ingest now runs on boot + every viewrr.editorial.refreshIntervalMinutes\n(default 360=6h; 0 disables, manual /admin/editorial/refresh only). Mirrors\nScannerScheduler's launch-loop idiom — no new dep, no cron framework.\"\ngit push -q -u origin feat/editorial-refresh 2>&1 | tail -1\nPR=$(gh pr create --repo viewrr/viewrr --base main --head feat/editorial-refresh \\\n  --title \"feat(editorial): periodic refresh loop\" \\\n  --body \"Completes the editorial ingest feature (#136 shipped it manual-only). Ingest now runs on boot + every \\`viewrr.editorial.refreshIntervalMinutes\\` (default 6h; 0 disables → manual \\`POST /admin/editorial/refresh\\` only). Reuses the app's existing launch-loop idiom (ScannerScheduler) — zero new deps, no cron framework, fire-and-forget + runCatching so a failed pass never kills the loop. Tests green.\" 2>&1 | tail -1)\necho \"PR: $PR\"\nsleep 2\ngh pr merge \"$PR\" --repo viewrr/viewrr --squash --delete-branch 2>&1 | tail -2\necho \"$PR\" | grep -oE '[0-9]+$' | xargs -I{} gh pr view {} --repo viewrr/viewrr --json state --jq '\"PR #{} \\(.state)\"'",
   "description": "Commit, push, open + merge editorial-refresh PR"
 }
 ```
@@ -4955,7 +4956,7 @@ id: toolu_01BydyytbYVBr1UGsDo6DqKr
 remote: 
 PR: https://github.com/viewrr/viewrr/pull/137
 PR #137 MERGED
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -5002,7 +5003,7 @@ tool_use Bash
 id: toolu_015UE1Cm4SrVCKQyvJNjwgXM
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== repo top ===\"; ls -1\necho \"=== go module? ===\"; test -f go.mod && head -1 go.mod || echo \"NO go.mod (still pre-code?)\"\necho \"=== local start/stop command files ===\"; grep -rlniE \"local.*stop|\\\"stop\\\"|compose.*down|func.*[Ss]top\" --include=*.go . 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== repo top ===\"; ls -1\necho \"=== go module? ===\"; test -f go.mod && head -1 go.mod || echo \"NO go.mod (still pre-code?)\"\necho \"=== local start/stop command files ===\"; grep -rlniE \"local.*stop|\\\"stop\\\"|compose.*down|func.*[Ss]top\" --include=*.go . 2>/dev/null | head",
   "description": "Check tiny repo state + locate local stop command"
 }
 ```
@@ -5061,7 +5062,7 @@ id: toolu_01P9dMuRTwCytuNgn21s9sxR
 ```json
 {
   "pattern": "local|compose|down|Stop",
-  "path": "/Users/jobinlawrance/Project/tiny/cmd",
+  "path": "/home/<USER>/Project/tiny/cmd",
   "output_mode": "files_with_matches",
   "glob": "*.go"
 }
@@ -5081,7 +5082,7 @@ tool_use Bash
 id: toolu_018TCLpNaRnsp6xm1gQMjqp5
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== cmd tree ===\"; find cmd -name '*.go' | head -30\necho \"=== files mentioning local stop / compose down ===\"; grep -rln -e \"local\" -e \"compose\" -e \"func.*Stop\" cmd internal --include=*.go 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== cmd tree ===\"; find cmd -name '*.go' | head -30\necho \"=== files mentioning local stop / compose down ===\"; grep -rln -e \"local\" -e \"compose\" -e \"func.*Stop\" cmd internal --include=*.go 2>/dev/null | head -20",
   "description": "Find local/stop/compose Go files"
 }
 ```
@@ -5117,7 +5118,7 @@ tool_use Read
 id: toolu_014aZeYqxBc4w9vmaTFW7txA
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go"
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go"
 }
 ```
 
@@ -5189,7 +5190,7 @@ id: toolu_01ErtUvYveADU5YdrqsxeYxy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\t\t\t// No daemon means nothing is running — skip the compose call so we\n\t\t\t// don't hang on a dead socket.\n\t\t\tif !daemonUp(cmd.Context()) {\n\t\t\t\tfmt.Println(\"→ no Docker daemon reachable; nothing to stop\")\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn compose(cmd.Context(), \"down\")",
   "new_string": "\t\t\t// No daemon means nothing is running — skip the compose call so we\n\t\t\t// don't hang on a dead socket.\n\t\t\tif !daemonUp(cmd.Context()) {\n\t\t\t\tfmt.Println(\"→ no Docker daemon reachable; nothing to stop\")\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn stopStack(cmd.Context())"
 }
@@ -5200,7 +5201,7 @@ id: toolu_01ErtUvYveADU5YdrqsxeYxy
 tool_result
 id: toolu_01ErtUvYveADU5YdrqsxeYxy
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5213,7 +5214,7 @@ tool_use Read
 id: toolu_01RjhYCzsjqkp1EmYbjZfWUo
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go"
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go"
 }
 ```
 
@@ -5279,7 +5280,7 @@ id: toolu_01L3rc3NNsTGLhAh4HmVCsAF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tc.Stdout = os.Stdout\n\tc.Stderr = os.Stderr\n\tc.Stdin = os.Stdin\n\treturn c.Run()\n}",
   "new_string": "\tc.Stdout = os.Stdout\n\tc.Stderr = os.Stderr\n\tc.Stdin = os.Stdin\n\treturn c.Run()\n}\n\n// stopStack brings the compose stack down with visibility.\n//\n// `docker compose down` with no timeout waits indefinitely on a container that is\n// slow to honour SIGTERM (e.g. ClickHouse flushing on shutdown), and its TTY progress\n// renderer freezes on the stuck step — which reads as a silent hang. We: (1) stream the\n// service logs so a slow shutdown is actually visible, (2) force `--progress plain` so\n// each Stopping/Removing step prints line-by-line, and (3) bound it with `--timeout` so\n// a stubborn container is SIGKILLed instead of hanging forever.\nfunc stopStack(ctx context.Context) error {\n\tlogsCtx, cancelLogs := context.WithCancel(ctx)\n\tdefer cancelLogs()\n\tgo func() {\n\t\tlc := exec.CommandContext(logsCtx, \"docker\", \"compose\", \"logs\", \"-f\", \"--tail\", \"20\")\n\t\tlc.Stdout, lc.Stderr = os.Stdout, os.Stderr\n\t\t_ = lc.Run() // ends when the containers are removed or logsCtx is cancelled\n\t}()\n\treturn compose(ctx, \"--progress\", \"plain\", \"down\", \"--timeout\", \"30\")\n}"
 }
@@ -5290,7 +5291,7 @@ id: toolu_01L3rc3NNsTGLhAh4HmVCsAF
 tool_result
 id: toolu_01L3rc3NNsTGLhAh4HmVCsAF
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5303,7 +5304,7 @@ tool_use Bash
 id: toolu_01BMZv8qzFvNPNieAVtphQPF
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build ./cmd/tr 2>&1 | head -15 && echo \"BUILD OK\"\ngo test ./cmd/tr/ 2>&1 | tail -15",
+  "command": "cd /home/<USER>/Project/tiny\ngo build ./cmd/tr 2>&1 | head -15 && echo \"BUILD OK\"\ngo test ./cmd/tr/ 2>&1 | tail -15",
   "description": "Build tr + run cmd/tr tests"
 }
 ```
@@ -5327,7 +5328,7 @@ tool_use Bash
 id: toolu_017YvG8Gegog48cHwUwZQXtz
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nsed -n '/^func compose/,/^}/p' cmd/tr/local.go",
+  "command": "cd /home/<USER>/Project/tiny\nsed -n '/^func compose/,/^}/p' cmd/tr/local.go",
   "description": "Show compose() to verify arg placement"
 }
 ```
@@ -5382,7 +5383,7 @@ tool_use Bash
 id: toolu_01VNDqkGia8R78p1mZpXUz1o
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== docker daemon ===\"; timeout 15 docker info --format '{{.ServerVersion}} ({{.Name}})' 2>&1 | head -3 || echo \"daemon unreachable\"\necho \"=== colima ===\"; command -v colima >/dev/null && colima status 2>&1 | head -3 || echo \"no colima cmd\"\necho \"=== current compose ps ===\"; timeout 15 docker compose ps 2>&1 | head -10\necho \"=== what does local start run? ===\"; sed -n '/\"start\"/,/RunE/p' cmd/tr/local.go | head -20; grep -n '\"up\"' cmd/tr/local.go",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== docker daemon ===\"; timeout 15 docker info --format '{{.ServerVersion}} ({{.Name}})' 2>&1 | head -3 || echo \"daemon unreachable\"\necho \"=== colima ===\"; command -v colima >/dev/null && colima status 2>&1 | head -3 || echo \"no colima cmd\"\necho \"=== current compose ps ===\"; timeout 15 docker compose ps 2>&1 | head -10\necho \"=== what does local start run? ===\"; sed -n '/\"start\"/,/RunE/p' cmd/tr/local.go | head -20; grep -n '\"up\"' cmd/tr/local.go",
   "description": "Check daemon, colima, stack state, start command"
 }
 ```
@@ -5394,13 +5395,13 @@ id: toolu_01VNDqkGia8R78p1mZpXUz1o
 ```
 === docker daemon ===
  ()
-Cannot connect to the Docker daemon at unix:///Users/jobinlawrance/.colima/default/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///home/<USER>/.colima/default/docker.sock. Is the docker daemon running?
 === colima ===
 time="2026-07-02T01:30:10+05:30" level=info msg="colima is running using macOS Virtualization.Framework"
 time="2026-07-02T01:30:10+05:30" level=info msg="arch: aarch64"
 time="2026-07-02T01:30:10+05:30" level=info msg="runtime: docker"
 === current compose ps ===
-Cannot connect to the Docker daemon at unix:///Users/jobinlawrance/.colima/default/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///home/<USER>/.colima/default/docker.sock. Is the docker daemon running?
 === what does local start run? ===
 		Use:   "start",
 		Short: "Start the local dev stack via Docker Compose",
@@ -5435,7 +5436,7 @@ tool_use Bash
 id: toolu_01RgQmsDjvVLjpyiTJaNXSMf
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ntimeout 150 go run ./cmd/tr local start 2>&1 | tail -30; echo \"EXIT=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Project/tiny\ntimeout 150 go run ./cmd/tr local start 2>&1 | tail -30; echo \"EXIT=${PIPESTATUS[0]}\"",
   "description": "Run tr local start (recovers colima + brings stack up)"
 }
 ```
@@ -5463,7 +5464,7 @@ tool_use Bash
 id: toolu_011HTpw8FbHP11Nu2E1F331t
 ```json
 {
-  "command": "echo \"=== docker contexts ===\"; docker context ls 2>&1\necho \"=== current context ===\"; docker context show 2>&1\necho \"=== colima socket exists? ===\"; ls -l /Users/jobinlawrance/.colima/default/docker.sock 2>&1\necho \"=== DOCKER_HOST env ===\"; echo \"DOCKER_HOST=${DOCKER_HOST:-<unset>}\"\necho \"=== colima list ===\"; colima list 2>&1 | head",
+  "command": "echo \"=== docker contexts ===\"; docker context ls 2>&1\necho \"=== current context ===\"; docker context show 2>&1\necho \"=== colima socket exists? ===\"; ls -l /home/<USER>/.colima/default/docker.sock 2>&1\necho \"=== DOCKER_HOST env ===\"; echo \"DOCKER_HOST=${DOCKER_HOST:-<unset>}\"\necho \"=== colima list ===\"; colima list 2>&1 | head",
   "description": "Diagnose docker context/socket mismatch"
 }
 ```
@@ -5475,13 +5476,13 @@ id: toolu_011HTpw8FbHP11Nu2E1F331t
 ```
 === docker contexts ===
 NAME            DESCRIPTION                               DOCKER ENDPOINT                                           ERROR
-colima *        colima                                    unix:///Users/jobinlawrance/.colima/default/docker.sock   
+colima *        colima                                    unix:///home/<USER>/.colima/default/docker.sock   
 default         Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                               
-desktop-linux   Docker Desktop                            unix:///Users/jobinlawrance/.docker/run/docker.sock       
+desktop-linux   Docker Desktop                            unix:///home/<USER>/.docker/run/docker.sock       
 === current context ===
 colima
 === colima socket exists? ===
-srw-------@ 1 jobinlawrance  staff  0 Jul  2 00:58 /Users/jobinlawrance/.colima/default/docker.sock
+srw-------@ 1 jobinlawrance  staff  0 Jul  2 00:58 /home/<USER>/.colima/default/docker.sock
 === DOCKER_HOST env ===
 DOCKER_HOST=<unset>
 === colima list ===
@@ -5531,7 +5532,7 @@ tool_use Bash
 id: toolu_01F1wayENSrvsnP5QwSLhWPo
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== tr local start ===\"; timeout 240 go run ./cmd/tr local start 2>&1 | tail -25; echo \"START_EXIT=${PIPESTATUS[0]}\"\necho \"=== ps ===\"; timeout 20 docker compose ps 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== tr local start ===\"; timeout 240 go run ./cmd/tr local start 2>&1 | tail -25; echo \"START_EXIT=${PIPESTATUS[0]}\"\necho \"=== ps ===\"; timeout 20 docker compose ps 2>&1 | head",
   "description": "tr local start, bring stack up"
 }
 ```
@@ -5571,7 +5572,7 @@ tool_use Bash
 id: toolu_0122GrbAoRG4Zt3PGvBvJG4D
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== tr local stop (new stopStack: logs stream + plain progress + timeout) ===\"\ntime (timeout 90 go run ./cmd/tr local stop 2>&1 | tail -40); echo \"STOP_EXIT=${PIPESTATUS[0]}\"\necho \"=== ps after ===\"; timeout 20 docker compose ps 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== tr local stop (new stopStack: logs stream + plain progress + timeout) ===\"\ntime (timeout 90 go run ./cmd/tr local stop 2>&1 | tail -40); echo \"STOP_EXIT=${PIPESTATUS[0]}\"\necho \"=== ps after ===\"; timeout 20 docker compose ps 2>&1 | head",
   "description": "Run tr local stop, observe new visibility + timing"
 }
 ```
@@ -5602,7 +5603,8 @@ tinyraven-1   | time=2026-07-01T20:01:57.619Z level=INFO msg="tinyraven listenin
 tinyraven-1   | time=2026-07-01T20:02:06.076Z level=INFO msg="shutting down, draining"
  Container tiny-tinyraven-1 Stopped 
  Container tiny-tinyraven-1 Removing 
-[Ktinyraven-1 exited with code 0
+
+[Ktinyraven-1 exited with code 0
  Container tiny-tinyraven-1 Removed 
  Container tiny-redis-1 Stopping 
  Container tiny-clickhouse-1 Stopping 
@@ -5645,7 +5647,7 @@ tool_use Bash
 id: toolu_0123MGGC2bvwXw9bTiwrN2Pk
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngrep -n 'colima started but\\|\"colima\", \"start\"\\|\"up\", \"-d\"\\|func ensure\\|func start\\|daemonUp(ctx)' cmd/tr/local.go",
+  "command": "cd /home/<USER>/Project/tiny\ngrep -n 'colima started but\\|\"colima\", \"start\"\\|\"up\", \"-d\"\\|func ensure\\|func start\\|daemonUp(ctx)' cmd/tr/local.go",
   "description": "Locate colima start function + up call lines"
 }
 ```
@@ -5672,7 +5674,7 @@ tool_use Read
 id: toolu_019FYmq7cxtpS6RZGQbZwk7B
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "offset": 144,
   "limit": 12
 }
@@ -5708,7 +5710,7 @@ id: toolu_015dhLW9ZJ2Y1VubrFNpZCso
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\tif !daemonUp(ctx) {\n\t\treturn fmt.Errorf(\"colima started but the Docker daemon is still unreachable\")\n\t}\n\treturn nil\n}",
   "new_string": "\tif !daemonUp(ctx) {\n\t\t// colima reports \"already running\" while its docker socket is wedged (VM up,\n\t\t// but the in-VM dockerd / socket-forward is dead). `colima start` no-ops in that\n\t\t// state, so a plain start can't recover it — restart the VM to rebuild the socket.\n\t\tfmt.Println(\"→ colima is up but the Docker daemon is unreachable; restarting colima…\")\n\t\tif err := run(ctx, \"colima\", \"restart\"); err != nil {\n\t\t\treturn fmt.Errorf(\"colima restart failed: %w\\n\"+\n\t\t\t\t\"if the VM is wedged, try: colima delete -f && colima start\", err)\n\t\t}\n\t\tif !daemonUp(ctx) {\n\t\t\treturn fmt.Errorf(\"colima restarted but the Docker daemon is still unreachable\")\n\t\t}\n\t}\n\treturn nil\n}"
 }
@@ -5719,7 +5721,7 @@ id: toolu_015dhLW9ZJ2Y1VubrFNpZCso
 tool_result
 id: toolu_015dhLW9ZJ2Y1VubrFNpZCso
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5733,7 +5735,7 @@ id: toolu_01KtbxzxVrPcvpa7WeVoq7Sw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/local.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/local.go",
   "old_string": "\t\t\treturn compose(cmd.Context(), \"up\", \"-d\")",
   "new_string": "\t\t\treturn compose(cmd.Context(), \"--progress\", \"plain\", \"up\", \"-d\")"
 }
@@ -5744,7 +5746,7 @@ id: toolu_01KtbxzxVrPcvpa7WeVoq7Sw
 tool_result
 id: toolu_01KtbxzxVrPcvpa7WeVoq7Sw
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/local.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5757,7 +5759,7 @@ tool_use Bash
 id: toolu_01D2LpJkJq2kw9GqHDwjcP3f
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build ./cmd/tr 2>&1 | head && echo \"BUILD OK\"\ngo vet ./cmd/tr 2>&1 | head\ngo test ./cmd/tr/ 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Project/tiny\ngo build ./cmd/tr 2>&1 | head && echo \"BUILD OK\"\ngo vet ./cmd/tr 2>&1 | head\ngo test ./cmd/tr/ 2>&1 | tail -5",
   "description": "Build, vet, test after all three changes"
 }
 ```
@@ -5781,7 +5783,7 @@ tool_use Bash
 id: toolu_01JA6bhFH5U9wjN4GNeNkzfT
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== branch + status ===\"; git branch --show-current; git status --short cmd/tr/local.go\necho \"=== diff summary ===\"; git diff --stat cmd/tr/local.go\ngit add cmd/tr/local.go\ngit -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"fix(local): make tr local stop/start visible + unhangable\n\n- stop: stream service logs + --progress plain + --timeout 30 so a slow\n  shutdown (e.g. ClickHouse/Redis flushing) is visible and bounded, not a\n  silent hang.\n- start: --progress plain on 'up -d' for the same line-by-line visibility.\n- start recovery: when colima reports running but the docker socket is wedged\n  (VM up, in-VM dockerd dead), 'colima start' no-ops; fall back to 'colima\n  restart' to rebuild the socket instead of erroring out.\" && echo \"committed\"\ngit log --oneline -1",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== branch + status ===\"; git branch --show-current; git status --short cmd/tr/local.go\necho \"=== diff summary ===\"; git diff --stat cmd/tr/local.go\ngit add cmd/tr/local.go\ngit -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"fix(local): make tr local stop/start visible + unhangable\n\n- stop: stream service logs + --progress plain + --timeout 30 so a slow\n  shutdown (e.g. ClickHouse/Redis flushing) is visible and bounded, not a\n  silent hang.\n- start: --progress plain on 'up -d' for the same line-by-line visibility.\n- start recovery: when colima reports running but the docker socket is wedged\n  (VM up, in-VM dockerd dead), 'colima start' no-ops; fall back to 'colima\n  restart' to rebuild the socket instead of erroring out.\" && echo \"committed\"\ngit log --oneline -1",
   "description": "Commit the three local.go fixes"
 }
 ```
@@ -5821,7 +5823,7 @@ tool_use Bash
 id: toolu_016Chc1NFUPNwvUxeLAY8PSm
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit push origin main 2>&1 | tail -4\necho \"---\"; git log --oneline -1; git status -sb | head -1",
+  "command": "cd /home/<USER>/Project/tiny\ngit push origin main 2>&1 | tail -4\necho \"---\"; git log --oneline -1; git status -sb | head -1",
   "description": "Push local main to origin"
 }
 ```
@@ -5859,7 +5861,7 @@ tool_use Bash
 id: toolu_01RURa9dandFYph3a9jP2h91
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== prod command files ===\"; grep -rln -e '\"prod\"' -e \"prod \" cmd/tr 2>/dev/null | head\necho \"=== prod start/stop/compose refs ===\"; grep -rn -e '\"prod\"' -e \"prodStop\\|prodStart\\|func.*[Pp]rod\" -e \"ssh\" -e \"dokploy\\|Dokploy\" cmd/tr 2>/dev/null | head -25",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== prod command files ===\"; grep -rln -e '\"prod\"' -e \"prod \" cmd/tr 2>/dev/null | head\necho \"=== prod start/stop/compose refs ===\"; grep -rn -e '\"prod\"' -e \"prodStop\\|prodStart\\|func.*[Pp]rod\" -e \"ssh\" -e \"dokploy\\|Dokploy\" cmd/tr 2>/dev/null | head -25",
   "description": "Locate tr prod command + how it stops/starts"
 }
 ```
@@ -5883,7 +5885,7 @@ tool_use Bash
 id: toolu_01CXfXqvUsoSqnCsgGs2XUJw
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== all cobra Use: strings ===\"; grep -rn 'Use:' cmd/tr | head -40\necho \"=== AddCommand registrations ===\"; grep -rn 'AddCommand' cmd/tr | head -30",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== all cobra Use: strings ===\"; grep -rn 'Use:' cmd/tr | head -40\necho \"=== AddCommand registrations ===\"; grep -rn 'AddCommand' cmd/tr | head -30",
   "description": "List all tr subcommands + hierarchy"
 }
 ```
@@ -5922,7 +5924,7 @@ tool_use Bash
 id: toolu_01DTAfSXyJSqf1gnv5sGuM1D
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== deploy.go (how prod deploy works) ===\"; sed -n '1,80p' cmd/tr/deploy.go\necho \"=== prod/compose refs in scripts+deploy dirs ===\"; grep -rln -e \"compose\" -e \"ssh\" -e \"dokploy\\|Dokploy\" -e \"DOCKER_HOST\" scripts deploy 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== deploy.go (how prod deploy works) ===\"; sed -n '1,80p' cmd/tr/deploy.go\necho \"=== prod/compose refs in scripts+deploy dirs ===\"; grep -rln -e \"compose\" -e \"ssh\" -e \"dokploy\\|Dokploy\" -e \"DOCKER_HOST\" scripts deploy 2>/dev/null | head",
   "description": "Read deploy.go + find prod compose/ssh mechanism"
 }
 ```
@@ -5996,7 +5998,7 @@ tool_use Bash
 id: toolu_01K2PSGCeydzipF9AiWeSNzh
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== remote/ssh/prod-host mechanism in code+config ===\"; grep -rniE \"DOCKER_HOST|ssh://|remote host|prod.*host|docker-compose.prod|dokploy\" cmd internal scripts 2>/dev/null | grep -v _test | head -15\necho \"=== prod compose services (top) ===\"; grep -nE \"^services:|^  [a-z].*:|image:\" deploy/docker-compose.prod.yml 2>/dev/null | head -25\necho \"=== README/docs mention of prod stop/start ===\"; grep -rniE \"tr prod|prod.*(stop|start)|dokploy\" README.md docs HANDOFF.md 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== remote/ssh/prod-host mechanism in code+config ===\"; grep -rniE \"DOCKER_HOST|ssh://|remote host|prod.*host|docker-compose.prod|dokploy\" cmd internal scripts 2>/dev/null | grep -v _test | head -15\necho \"=== prod compose services (top) ===\"; grep -nE \"^services:|^  [a-z].*:|image:\" deploy/docker-compose.prod.yml 2>/dev/null | head -25\necho \"=== README/docs mention of prod stop/start ===\"; grep -rniE \"tr prod|prod.*(stop|start)|dokploy\" README.md docs HANDOFF.md 2>/dev/null | head",
   "description": "Determine prod stack management mechanism"
 }
 ```
@@ -6061,7 +6063,7 @@ tool_use Bash
 id: toolu_012bJMckt8fQFkGajj3mhTCd
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== demo refs ===\"; grep -rilE \"demo\" --exclude-dir=.git --exclude-dir=files\\ \\(1\\) . 2>/dev/null | grep -viE \"\\.zip|node_modules\" | head -15\necho \"=== how prod container runs tr (entrypoint/command) ===\"; grep -nE \"command:|entrypoint|CMD|ENTRYPOINT|tr serve\" deploy/docker-compose.prod.yml Dockerfile 2>/dev/null | head\necho \"=== any seed/demo scripts ===\"; ls scripts 2>/dev/null; grep -rn \"tr deploy\\|seed\\|examples\" scripts Makefile justfile 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== demo refs ===\"; grep -rilE \"demo\" --exclude-dir=.git --exclude-dir=files\\ \\(1\\) . 2>/dev/null | grep -viE \"\\.zip|node_modules\" | head -15\necho \"=== how prod container runs tr (entrypoint/command) ===\"; grep -nE \"command:|entrypoint|CMD|ENTRYPOINT|tr serve\" deploy/docker-compose.prod.yml Dockerfile 2>/dev/null | head\necho \"=== any seed/demo scripts ===\"; ls scripts 2>/dev/null; grep -rn \"tr deploy\\|seed\\|examples\" scripts Makefile justfile 2>/dev/null | head",
   "description": "Search for demo/seed start path + prod container command"
 }
 ```
@@ -6127,7 +6129,7 @@ tool_use Bash
 id: toolu_017udd81JAeRja6rkqjS6ubj
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== restart policy in prod compose ===\"; grep -nE \"restart:|deploy:|healthcheck:|depends_on\" deploy/docker-compose.prod.yml | head\necho \"=== ADR 0020: prod reload rule ===\"; grep -nE \"prod|restart|redeploy|hot.?reload\" docs/adr/0020-hot-reload-dev-only-pipes-instant-datasources-via-deploy.md | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== restart policy in prod compose ===\"; grep -nE \"restart:|deploy:|healthcheck:|depends_on\" deploy/docker-compose.prod.yml | head\necho \"=== ADR 0020: prod reload rule ===\"; grep -nE \"prod|restart|redeploy|hot.?reload\" docs/adr/0020-hot-reload-dev-only-pipes-instant-datasources-via-deploy.md | head",
   "description": "Confirm prod restart policy + reload semantics"
 }
 ```
@@ -6182,7 +6184,7 @@ tool_use Read
 id: toolu_019StGUNweR1kBJdMJNK1dyp
 ```json
 {
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/serve.go"
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/serve.go"
 }
 ```
 
@@ -6263,7 +6265,7 @@ id: toolu_01XsBU3fTN2FJQwCwQsZoq5S
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/cmd/tr/serve.go",
+  "file_path": "/home/<USER>/Project/tiny/cmd/tr/serve.go",
   "old_string": "\tgo proj.watch(ctx, cfg.ProjectDir) // dev-only hot reload (ADR 0020)",
   "new_string": "\tgo proj.watch(ctx, cfg.ProjectDir) // dev-only hot reload (ADR 0020)\n\n\t// SIGHUP -> reload the project registry from disk without a restart. Prod does no\n\t// file watching (ADR 0020), so after `tr deploy` an operator (or Dokploy) sends\n\t// SIGHUP to pick up new .datasource/.pipe definitions instead of restarting the\n\t// process. Reuses proj.apply: atomic registry swap, and a bad parse leaves the\n\t// previous registry in place. Kept off the shutdown context so it never drains.\n\thup := make(chan os.Signal, 1)\n\tsignal.Notify(hup, syscall.SIGHUP)\n\tgo func() {\n\t\tfor {\n\t\t\tselect {\n\t\t\tcase <-ctx.Done():\n\t\t\t\treturn\n\t\t\tcase <-hup:\n\t\t\t\tlog.Info(\"SIGHUP received, reloading project registry\", \"dir\", cfg.ProjectDir)\n\t\t\t\tif err := proj.apply(ctx, cfg.ProjectDir); err != nil {\n\t\t\t\t\tlog.Error(\"SIGHUP reload failed; keeping previous registry\", \"err\", err)\n\t\t\t\t} else {\n\t\t\t\t\tlog.Info(\"project registry reloaded\")\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}()"
 }
@@ -6274,7 +6276,7 @@ id: toolu_01XsBU3fTN2FJQwCwQsZoq5S
 tool_result
 id: toolu_01XsBU3fTN2FJQwCwQsZoq5S
 ```
-The file /Users/jobinlawrance/Project/tiny/cmd/tr/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/cmd/tr/serve.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6287,7 +6289,7 @@ tool_use Bash
 id: toolu_01RfaCnDC1snmiUyXFQZwxT6
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build ./cmd/tr 2>&1 | head -15 && echo \"BUILD OK\"\ngo vet ./cmd/tr 2>&1 | head\ngo test ./cmd/tr/ 2>&1 | tail -5",
+  "command": "cd /home/<USER>/Project/tiny\ngo build ./cmd/tr 2>&1 | head -15 && echo \"BUILD OK\"\ngo vet ./cmd/tr 2>&1 | head\ngo test ./cmd/tr/ 2>&1 | tail -5",
   "description": "Build, vet, test after SIGHUP handler"
 }
 ```
@@ -6311,7 +6313,7 @@ tool_use Bash
 id: toolu_01Wunj7kkDEr8n9srwyVH5cz
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build -o /tmp/tr-hup ./cmd/tr 2>&1 | head && echo \"built\"\necho \"=== deps up (clickhouse+redis) ===\"; timeout 120 docker compose up -d clickhouse redis 2>&1 | tail -4\n# wait for health\nfor i in $(seq 1 20); do timeout 5 docker compose ps --format '{{.Service}} {{.Health}}' 2>/dev/null | grep -q \"clickhouse healthy\" && break; sleep 2; done\necho \"=== run new tr serve, SIGHUP it, observe ===\"\n/tmp/tr-hup serve >/tmp/tr-serve.log 2>&1 & PID=$!\nsleep 4\necho \"server pid=$PID; sending SIGHUP\"; kill -HUP $PID; sleep 2\nkill -HUP $PID; sleep 2   # twice, to prove it reloads repeatedly (not one-shot)\nkill -TERM $PID; sleep 1\necho \"=== serve log (reload lines) ===\"; grep -iE \"listening|SIGHUP|reload|shutting down|error\" /tmp/tr-serve.log | head -20",
+  "command": "cd /home/<USER>/Project/tiny\ngo build -o /tmp/tr-hup ./cmd/tr 2>&1 | head && echo \"built\"\necho \"=== deps up (clickhouse+redis) ===\"; timeout 120 docker compose up -d clickhouse redis 2>&1 | tail -4\n# wait for health\nfor i in $(seq 1 20); do timeout 5 docker compose ps --format '{{.Service}} {{.Health}}' 2>/dev/null | grep -q \"clickhouse healthy\" && break; sleep 2; done\necho \"=== run new tr serve, SIGHUP it, observe ===\"\n/tmp/tr-hup serve >/tmp/tr-serve.log 2>&1 & PID=$!\nsleep 4\necho \"server pid=$PID; sending SIGHUP\"; kill -HUP $PID; sleep 2\nkill -HUP $PID; sleep 2   # twice, to prove it reloads repeatedly (not one-shot)\nkill -TERM $PID; sleep 1\necho \"=== serve log (reload lines) ===\"; grep -iE \"listening|SIGHUP|reload|shutting down|error\" /tmp/tr-serve.log | head -20",
   "description": "Live-test SIGHUP reload on the new binary"
 }
 ```
@@ -6359,7 +6361,7 @@ tool_use Bash
 id: toolu_01LQZJJtFyvyJpDh4BVPtZNr
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add cmd/tr/serve.go\ngit -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"feat(serve): SIGHUP reloads project registry without restart\n\nProd does no file watching (ADR 0020) — the registry loads once at boot, so\npicking up 'tr deploy' changes meant a full container restart. tr serve now\nreloads on SIGHUP by re-running proj.apply (atomic swap; a bad parse keeps the\nprevious registry). Kept off the shutdown context so it never drains. Verified\nlive: repeated SIGHUP reloads in ~1ms, SIGTERM still drains cleanly.\n\nUpdate flow becomes: tr deploy && docker compose kill -s HUP tinyraven (or\nDokploy exec) — no restart, no dropped connections.\" && echo committed\ngit push origin main 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Project/tiny\ngit add cmd/tr/serve.go\ngit -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"feat(serve): SIGHUP reloads project registry without restart\n\nProd does no file watching (ADR 0020) — the registry loads once at boot, so\npicking up 'tr deploy' changes meant a full container restart. tr serve now\nreloads on SIGHUP by re-running proj.apply (atomic swap; a bad parse keeps the\nprevious registry). Kept off the shutdown context so it never drains. Verified\nlive: repeated SIGHUP reloads in ~1ms, SIGTERM still drains cleanly.\n\nUpdate flow becomes: tr deploy && docker compose kill -s HUP tinyraven (or\nDokploy exec) — no restart, no dropped connections.\" && echo committed\ngit push origin main 2>&1 | tail -3",
   "description": "Commit + push SIGHUP reload"
 }
 ```
@@ -6405,7 +6407,7 @@ tool_use Bash
 id: toolu_01XUVgbFVnu6keR7qucsDXTU
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== which tr is on PATH (stale binary?) ===\"; command -v tr; ls -l \"$(command -v tr 2>/dev/null)\" 2>/dev/null | head -1\necho \"=== current stack ===\"; timeout 15 docker compose ps --format '{{.Service}} {{.Status}}' 2>&1 | head\necho \"=== run NEW binary stop with 45s ceiling ===\"\ntime (timeout 45 go run ./cmd/tr local stop 2>&1 | tail -30); echo \"EXIT=${PIPESTATUS[0]}  (124=timed out/stuck)\"",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== which tr is on PATH (stale binary?) ===\"; command -v tr; ls -l \"$(command -v tr 2>/dev/null)\" 2>/dev/null | head -1\necho \"=== current stack ===\"; timeout 15 docker compose ps --format '{{.Service}} {{.Status}}' 2>&1 | head\necho \"=== run NEW binary stop with 45s ceiling ===\"\ntime (timeout 45 go run ./cmd/tr local stop 2>&1 | tail -30); echo \"EXIT=${PIPESTATUS[0]}  (124=timed out/stuck)\"",
   "description": "Check for stale tr binary + reproduce the stop hang"
 }
 ```
@@ -6449,7 +6451,7 @@ tool_use Bash
 id: toolu_01AnakKDzqy1xbFjjsSeiFWk
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== PATH order (is a user bin before /usr/bin?) ===\"; echo \"$PATH\" | tr ':' '\\n' | grep -nE \"/usr/local/bin|/opt/homebrew/bin|go/bin|/usr/bin\" | head\necho \"=== proof: system tr hangs on 2 args (feed empty stdin so it returns) ===\"; printf '' | timeout 3 /usr/bin/tr local stop; echo \"exit=$? (0=returned; 124=would-hang-on-TTY)\"\necho \"=== GOBIN / go env ===\"; go env GOBIN GOPATH | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== PATH order (is a user bin before /usr/bin?) ===\"; echo \"$PATH\" | tr ':' '\\n' | grep -nE \"/usr/local/bin|/opt/homebrew/bin|go/bin|/usr/bin\" | head\necho \"=== proof: system tr hangs on 2 args (feed empty stdin so it returns) ===\"; printf '' | timeout 3 /usr/bin/tr local stop; echo \"exit=$? (0=returned; 124=would-hang-on-TTY)\"\necho \"=== GOBIN / go env ===\"; go env GOBIN GOPATH | head",
   "description": "Confirm PATH order + tr collision + go install target"
 }
 ```
@@ -6468,13 +6470,13 @@ id: toolu_01AnakKDzqy1xbFjjsSeiFWk
 21:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin
 24:/Library/Apple/usr/bin
 28:/usr/local/go/bin
-48:/Users/jobinlawrance/go/bin
-50:/Users/jobinlawrance/.cargo/bin
+48:/home/<USER>/go/bin
+50:/home/<USER>/.cargo/bin
 === proof: system tr hangs on 2 args (feed empty stdin so it returns) ===
 exit=0 (0=returned; 124=would-hang-on-TTY)
 === GOBIN / go env ===
 
-/Users/jobinlawrance/go
+/home/<USER>/go
 ```
 
 > AGENT
@@ -6508,7 +6510,7 @@ tool_use Bash
 id: toolu_01EB2rHdKN4NaEpenuVPYueK
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== FUNCTIONAL refs (build/docker/cobra) ===\"\ngrep -rnE 'cmd/tr\\b|-o .*\\btr\\b|Use:\\s*\"tr\"|ENTRYPOINT|\"tr\"|/tr\\b' Dockerfile docker-compose.yml deploy/docker-compose.prod.yml cmd/tr/main.go Makefile justfile scripts packaging .github 2>/dev/null | grep -viE '\\.zip' | head -30\necho\necho \"=== files referencing cmd/tr build path ===\"\ngrep -rln 'cmd/tr' . --include='*.yml' --include='*.yaml' --include='Dockerfile*' --include='*.sh' --include='*.mk' --include='Makefile' 2>/dev/null | grep -v 'files (1)' | head\necho\necho \"=== PROMPT/CLAUDE 'tr is final / binary' decision lines ===\"\ngrep -niE 'binary.*tr\\b|`tr`|\\btr\\b.*binary|never.*tb' PROMPT.md CLAUDE.md 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== FUNCTIONAL refs (build/docker/cobra) ===\"\ngrep -rnE 'cmd/tr\\b|-o .*\\btr\\b|Use:\\s*\"tr\"|ENTRYPOINT|\"tr\"|/tr\\b' Dockerfile docker-compose.yml deploy/docker-compose.prod.yml cmd/tr/main.go Makefile justfile scripts packaging .github 2>/dev/null | grep -viE '\\.zip' | head -30\necho\necho \"=== files referencing cmd/tr build path ===\"\ngrep -rln 'cmd/tr' . --include='*.yml' --include='*.yaml' --include='Dockerfile*' --include='*.sh' --include='*.mk' --include='Makefile' 2>/dev/null | grep -v 'files (1)' | head\necho\necho \"=== PROMPT/CLAUDE 'tr is final / binary' decision lines ===\"\ngrep -niE 'binary.*tr\\b|`tr`|\\btr\\b.*binary|never.*tb' PROMPT.md CLAUDE.md 2>/dev/null | head",
   "description": "Inventory functional + decision references to tr binary"
 }
 ```
@@ -6552,7 +6554,7 @@ tool_use Bash
 id: toolu_01PD7M3DqhfiSeRXjCKZELNL
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n# 1. rename the command dir\ngit mv cmd/tr cmd/tinyraven\n# 2. build-path refs cmd/tr -> cmd/tinyraven\nfor f in Dockerfile .goreleaser.yaml codecov.yml templates/ci/github-actions.yml examples/dashboards-demo/run.sh; do\n  [ -f \"$f\" ] && sed -i '' 's#cmd/tr\\b#cmd/tinyraven#g' \"$f\" && echo \"path-fixed: $f\"\ndone\n# 3. Dockerfile binary name (output, copy, entrypoint)\nsed -i '' -e 's#-o /out/tr\\b#-o /out/tinyraven#' -e 's#/out/tr /usr/local/bin/tr#/out/tinyraven /usr/local/bin/tinyraven#' -e 's#ENTRYPOINT \\[\"tr\"\\]#ENTRYPOINT [\"tinyraven\"]#' Dockerfile\n# 4. cobra root Use\nsed -i '' 's#Use:           \"tr\",#Use:           \"tinyraven\",#' cmd/tinyraven/main.go\necho \"=== Dockerfile after ===\"; grep -nE 'out/tinyraven|local/bin|ENTRYPOINT|cmd/tinyraven' Dockerfile\necho \"=== main.go Use ===\"; grep -n 'Use:' cmd/tinyraven/main.go | head -1\necho \"=== build as tinyraven ===\"; go build -o /tmp/tinyraven ./cmd/tinyraven 2>&1 | head && /tmp/tinyraven --help 2>&1 | head -3",
+  "command": "cd /home/<USER>/Project/tiny\n# 1. rename the command dir\ngit mv cmd/tr cmd/tinyraven\n# 2. build-path refs cmd/tr -> cmd/tinyraven\nfor f in Dockerfile .goreleaser.yaml codecov.yml templates/ci/github-actions.yml examples/dashboards-demo/run.sh; do\n  [ -f \"$f\" ] && sed -i '' 's#cmd/tr\\b#cmd/tinyraven#g' \"$f\" && echo \"path-fixed: $f\"\ndone\n# 3. Dockerfile binary name (output, copy, entrypoint)\nsed -i '' -e 's#-o /out/tr\\b#-o /out/tinyraven#' -e 's#/out/tr /usr/local/bin/tr#/out/tinyraven /usr/local/bin/tinyraven#' -e 's#ENTRYPOINT \\[\"tr\"\\]#ENTRYPOINT [\"tinyraven\"]#' Dockerfile\n# 4. cobra root Use\nsed -i '' 's#Use:           \"tr\",#Use:           \"tinyraven\",#' cmd/tinyraven/main.go\necho \"=== Dockerfile after ===\"; grep -nE 'out/tinyraven|local/bin|ENTRYPOINT|cmd/tinyraven' Dockerfile\necho \"=== main.go Use ===\"; grep -n 'Use:' cmd/tinyraven/main.go | head -1\necho \"=== build as tinyraven ===\"; go build -o /tmp/tinyraven ./cmd/tinyraven 2>&1 | head && /tmp/tinyraven --help 2>&1 | head -3",
   "description": "Rename cmd dir, fix Dockerfile/cobra/build paths, build tinyraven"
 }
 ```
@@ -6588,7 +6590,7 @@ tool_use Bash
 id: toolu_012BwcS99UjtgNCbNPqAZrS9
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== Dockerfile line 8 ===\"; sed -n '8p' Dockerfile\necho \"=== ANY lingering cmd/tr or /out/tr or bin/tr (not tinyraven) ===\"\ngrep -rnE 'cmd/tr[^a-z]|/out/tr[^a-z]|bin/tr[^a-z]|\"tr\"|-o tr\\b| tr$' Dockerfile .goreleaser.yaml codecov.yml templates/ci/github-actions.yml examples/dashboards-demo/run.sh packaging 2>/dev/null | grep -v tinyraven | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== Dockerfile line 8 ===\"; sed -n '8p' Dockerfile\necho \"=== ANY lingering cmd/tr or /out/tr or bin/tr (not tinyraven) ===\"\ngrep -rnE 'cmd/tr[^a-z]|/out/tr[^a-z]|bin/tr[^a-z]|\"tr\"|-o tr\\b| tr$' Dockerfile .goreleaser.yaml codecov.yml templates/ci/github-actions.yml examples/dashboards-demo/run.sh packaging 2>/dev/null | grep -v tinyraven | head",
   "description": "Verify no stale tr build refs remain"
 }
 ```
@@ -6623,7 +6625,7 @@ tool_use Bash
 id: toolu_01FvBu2cKXFRuGRsRKRKpcnR
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nfor f in .goreleaser.yaml templates/ci/github-actions.yml examples/dashboards-demo/run.sh packaging/aur/PKGBUILD packaging/homebrew/tinyraven.rb; do\n  echo \"===== $f =====\"; grep -nE '\\btr\\b|cmd/tr|/tr\\b|\"tr\"|tinyraven' \"$f\" 2>/dev/null | head -25\ndone",
+  "command": "cd /home/<USER>/Project/tiny\nfor f in .goreleaser.yaml templates/ci/github-actions.yml examples/dashboards-demo/run.sh packaging/aur/PKGBUILD packaging/homebrew/tinyraven.rb; do\n  echo \"===== $f =====\"; grep -nE '\\btr\\b|cmd/tr|/tr\\b|\"tr\"|tinyraven' \"$f\" 2>/dev/null | head -25\ndone",
   "description": "Show exact tr references in packaging/ci/goreleaser"
 }
 ```
@@ -6677,7 +6679,7 @@ tool_use Bash
 id: toolu_01UJgD9xTCmtbcGMgNqhV9Ey
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\n\n# Dockerfile: build line 8 (COPY/ENTRYPOINT already done earlier)\nperl -pi -e 's{-o /out/tr\\b}{-o /out/tinyraven}g; s{\\./cmd/tr\\b}{./cmd/tinyraven}g' Dockerfile\n\n# codecov: path only\nperl -pi -e 's{cmd/tr/}{cmd/tinyraven/}g' codecov.yml\n\n# goreleaser: binary id/name/main/archive + brew + nfpm/aur install + descriptions\nperl -pi -e '\n  s{\\./cmd/tr\\b}{./cmd/tinyraven}g;\n  s{^(\\s*- id:\\s*)tr\\s*$}{$1tinyraven\\n}gm;\n  s{^(\\s*binary:\\s*)tr\\s*$}{$1tinyraven\\n}gm;\n  s{^(\\s*-\\s*)tr\\s*$}{$1tinyraven\\n}gm;\n  s{bin\\.install \"tr\"}{bin.install \"tinyraven\"}g;\n  s{\\#\\{bin\\}/tr\\b}{#\\{bin\\}/tinyraven}g;\n  s{\"\\./tr\"}{\"./tinyraven\"}g;\n  s{/usr/bin/tr\"}{/usr/bin/tinyraven\"}g;\n  s{binary: tr\\)}{binary: tinyraven)}g;\n  s{Single Go binary \\(tr\\)}{Single Go binary (tinyraven)}g;\n' .goreleaser.yaml\n\n# aur PKGBUILD + homebrew formula: install + assert + desc\nperl -pi -e 's{\"tr\" \"\\$\\{pkgdir\\}/usr/bin/tr\"}{\"tinyraven\" \"\\${pkgdir}/usr/bin/tinyraven\"}g; s{binary: tr\\)}{binary: tinyraven)}g' packaging/aur/PKGBUILD\nperl -pi -e 's{bin\\.install \"tr\"}{bin.install \"tinyraven\"}g; s{\\#\\{bin\\}/tr\\b}{#\\{bin\\}/tinyraven}g; s{assert_match \"tr\"}{assert_match \"tinyraven\"}g; s{binary: tr\\)}{binary: tinyraven)}g; s{the `tr` binary}{the `tinyraven` binary}g' packaging/homebrew/tinyraven.rb\n\n# ci template: command invocations + install path + labels (NOT the TR_VERSION var)\nperl -pi -e '\n  s{cmd/tr\\@}{cmd/tinyraven@}g;\n  s{\\brun: tr deploy}{run: tinyraven deploy}g;\n  s{Install tr\\b}{Install tinyraven}g;\n  s{the tr binary}{the tinyraven binary}g;\n  s{the `tr` CLI}{the `tinyraven` CLI}g;\n  s{installed tr predates}{installed tinyraven predates}g;\n  s{`tr deploy}{`tinyraven deploy}g;\n  s{pin the tr version}{pin the tinyraven version}g;\n' templates/ci/github-actions.yml\n\n# demo run.sh: binary var + build comment ONLY (leave tr-ch/tr-redis container names)\nperl -pi -e 's{TR=\"\\$\\{TR:-tr\\}\"}{TR=\"\\${TR:-tinyraven}\"}g; s{go build \\./cmd/tr\\b}{go build ./cmd/tinyraven}g; s{built `tr` binary}{built `tinyraven` binary}g' examples/dashboards-demo/run.sh\n\necho \"=== VERIFY: no stale binary/build refs (want empty) ===\"\ngrep -rnE '\\-o /out/tr\\b|cmd/tr\\b|binary: tr$|id: tr$|bin\\.install \"tr\"|/usr/bin/tr\"|run: tr ' Dockerfile codecov.yml .goreleaser.yaml […]
+  "command": "cd /home/<USER>/Project/tiny\n\n# Dockerfile: build line 8 (COPY/ENTRYPOINT already done earlier)\nperl -pi -e 's{-o /out/tr\\b}{-o /out/tinyraven}g; s{\\./cmd/tr\\b}{./cmd/tinyraven}g' Dockerfile\n\n# codecov: path only\nperl -pi -e 's{cmd/tr/}{cmd/tinyraven/}g' codecov.yml\n\n# goreleaser: binary id/name/main/archive + brew + nfpm/aur install + descriptions\nperl -pi -e '\n  s{\\./cmd/tr\\b}{./cmd/tinyraven}g;\n  s{^(\\s*- id:\\s*)tr\\s*$}{$1tinyraven\\n}gm;\n  s{^(\\s*binary:\\s*)tr\\s*$}{$1tinyraven\\n}gm;\n  s{^(\\s*-\\s*)tr\\s*$}{$1tinyraven\\n}gm;\n  s{bin\\.install \"tr\"}{bin.install \"tinyraven\"}g;\n  s{\\#\\{bin\\}/tr\\b}{#\\{bin\\}/tinyraven}g;\n  s{\"\\./tr\"}{\"./tinyraven\"}g;\n  s{/usr/bin/tr\"}{/usr/bin/tinyraven\"}g;\n  s{binary: tr\\)}{binary: tinyraven)}g;\n  s{Single Go binary \\(tr\\)}{Single Go binary (tinyraven)}g;\n' .goreleaser.yaml\n\n# aur PKGBUILD + homebrew formula: install + assert + desc\nperl -pi -e 's{\"tr\" \"\\$\\{pkgdir\\}/usr/bin/tr\"}{\"tinyraven\" \"\\${pkgdir}/usr/bin/tinyraven\"}g; s{binary: tr\\)}{binary: tinyraven)}g' packaging/aur/PKGBUILD\nperl -pi -e 's{bin\\.install \"tr\"}{bin.install \"tinyraven\"}g; s{\\#\\{bin\\}/tr\\b}{#\\{bin\\}/tinyraven}g; s{assert_match \"tr\"}{assert_match \"tinyraven\"}g; s{binary: tr\\)}{binary: tinyraven)}g; s{the `tr` binary}{the `tinyraven` binary}g' packaging/homebrew/tinyraven.rb\n\n# ci template: command invocations + install path + labels (NOT the TR_VERSION var)\nperl -pi -e '\n  s{cmd/tr\\@}{cmd/tinyraven@}g;\n  s{\\brun: tr deploy}{run: tinyraven deploy}g;\n  s{Install tr\\b}{Install tinyraven}g;\n  s{the tr binary}{the tinyraven binary}g;\n  s{the `tr` CLI}{the `tinyraven` CLI}g;\n  s{installed tr predates}{installed tinyraven predates}g;\n  s{`tr deploy}{`tinyraven deploy}g;\n  s{pin the tr version}{pin the tinyraven version}g;\n' templates/ci/github-actions.yml\n\n# demo run.sh: binary var + build comment ONLY (leave tr-ch/tr-redis container names)\nperl -pi -e 's{TR=\"\\$\\{TR:-tr\\}\"}{TR=\"\\${TR:-tinyraven}\"}g; s{go build \\./cmd/tr\\b}{go build ./cmd/tinyraven}g; s{built `tr` binary}{built `tinyraven` binary}g' examples/dashboards-demo/run.sh\n\necho \"=== VERIFY: no stale binary/build refs (want empty) ===\"\ngrep -rnE '\\-o /out/tr\\b|cmd/tr\\b|binary: tr$|id: tr$|bin\\.install \"tr\"|/usr/bin/tr\"|run: tr ' Dockerfile codecov.yml .goreleaser.yaml […]
 
 > TOOL
 
@@ -6698,7 +6700,7 @@ tool_use Bash
 id: toolu_01STViQXBh5pQb5b1jQGh7Q4
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build ./... 2>&1 | head -15 && echo \"BUILD ALL OK\"\ngo test ./cmd/tinyraven/ 2>&1 | tail -5\necho \"=== goreleaser config sane? (id/binary/main) ===\"; grep -nE 'id: tinyraven|binary: tinyraven|main: \\./cmd/tinyraven' .goreleaser.yaml | head",
+  "command": "cd /home/<USER>/Project/tiny\ngo build ./... 2>&1 | head -15 && echo \"BUILD ALL OK\"\ngo test ./cmd/tinyraven/ 2>&1 | tail -5\necho \"=== goreleaser config sane? (id/binary/main) ===\"; grep -nE 'id: tinyraven|binary: tinyraven|main: \\./cmd/tinyraven' .goreleaser.yaml | head",
   "description": "Build all + test renamed cmd + verify goreleaser"
 }
 ```
@@ -6733,7 +6735,7 @@ tool_use Bash
 id: toolu_013QD7sD4cLd5aaZcZHRJ6Dp
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nperl -pi -e 's{^# Binary: tr\\b}{# Binary: tinyraven}' .goreleaser.yaml\necho \"=== PROMPT.md 71-82 ===\"; sed -n '71,82p' PROMPT.md\necho \"=== CLAUDE.md lines 9,14,22 ===\"; sed -n '9p;14p;22p' CLAUDE.md\necho \"=== docs/README tr-command usage count ===\"; grep -rlnE '(^|[^a-zA-Z._/-])tr (local|deploy|serve|token|login|status|push|--version|--help)' README.md docs examples 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\nperl -pi -e 's{^# Binary: tr\\b}{# Binary: tinyraven}' .goreleaser.yaml\necho \"=== PROMPT.md 71-82 ===\"; sed -n '71,82p' PROMPT.md\necho \"=== CLAUDE.md lines 9,14,22 ===\"; sed -n '9p;14p;22p' CLAUDE.md\necho \"=== docs/README tr-command usage count ===\"; grep -rlnE '(^|[^a-zA-Z._/-])tr (local|deploy|serve|token|login|status|push|--version|--help)' README.md docs examples 2>/dev/null | head",
   "description": "Fix goreleaser comment, read PROMPT/CLAUDE + doc usage sites"
 }
 ```
@@ -6774,7 +6776,7 @@ id: toolu_01UikWVz8nMNN8AusBE7Dc8d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/PROMPT.md",
+  "file_path": "/home/<USER>/Project/tiny/PROMPT.md",
   "old_string": "## CLI: `tr` Binary\n\n- **Binary name:** `tr`\n- **Package name (install):** `tinyraven` (not `tr`)\n- **Tinybird CLI uses** `tb` — we do NOT use `tb` to avoid installation conflicts if both exist\n- `tr` conflicts with Unix `tr` (translate characters) only superficially — they operate in completely different domains (Unix `tr` is a stdin filter, TinyRaven `tr` is a subcommand CLI)\n- Optional alias: `tb-tr` for users running both Tinybird and TinyRaven side-by-side\n\n```bash\n# Installation gives the user:\nbrew install tinyraven    # installs \"tr\" binary\ntr local start            # starts local dev stack",
   "new_string": "## CLI: `tinyraven` Binary\n\n- **Binary name:** `tinyraven`\n- **Package name (install):** `tinyraven`\n- **Renamed from `tr` (2026-07).** The earlier claim that the Unix-`tr` conflict was\n  \"only superficial\" was wrong: coreutils `tr` (translate characters) sits in\n  `/usr/bin` on every machine, and any user bin dir (`/opt/homebrew/bin`,\n  `/usr/local/bin`) that could shadow it comes *earlier* in PATH — so putting our\n  binary there breaks every script that calls coreutils `tr`, and *not* putting it\n  there means `tr local stop` runs `/usr/bin/tr`, which reads stdin and hangs forever.\n  Both are argv-0 `tr`; there is no safe coexistence. The binary is `tinyraven`.\n- **Tinybird CLI uses** `tb` — we also […]
 
@@ -6783,7 +6785,7 @@ id: toolu_01UikWVz8nMNN8AusBE7Dc8d
 tool_result
 id: toolu_01UikWVz8nMNN8AusBE7Dc8d
 ```
-The file /Users/jobinlawrance/Project/tiny/PROMPT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/PROMPT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6793,7 +6795,7 @@ id: toolu_01U6YuWV4RVCsVd8We1ySHmy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/CLAUDE.md",
+  "file_path": "/home/<USER>/Project/tiny/CLAUDE.md",
   "old_string": "- `PROMPT.md` — canonical architecture decisions and constraints. Read this first. Do **not** re-litigate decisions marked final (Go language, `chi` router, `tr` binary name, API-first / no dashboard).",
   "new_string": "- `PROMPT.md` — canonical architecture decisions and constraints. Read this first. Do **not** re-litigate decisions marked final (Go language, `chi` router, API-first / no dashboard). Note: the binary was **renamed `tr` → `tinyraven`** (coreutils `tr` collision — see PROMPT.md \"CLI: `tinyraven` Binary\")."
 }
@@ -6804,7 +6806,7 @@ id: toolu_01U6YuWV4RVCsVd8We1ySHmy
 tool_result
 id: toolu_01U6YuWV4RVCsVd8We1ySHmy
 ```
-The file /Users/jobinlawrance/Project/tiny/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6814,7 +6816,7 @@ id: toolu_01Rgm1eSd1sZAuZEBWVggvog
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/CLAUDE.md",
+  "file_path": "/home/<USER>/Project/tiny/CLAUDE.md",
   "old_string": "- **Binary = `tr`, package = `tinyraven`.** Never use `tb` (collides with the Tinybird CLI).",
   "new_string": "- **Binary = `tinyraven`, package = `tinyraven`.** Renamed from `tr` (collided with coreutils `tr`). Never use `tb` (collides with the Tinybird CLI) or `tr`."
 }
@@ -6825,7 +6827,7 @@ id: toolu_01Rgm1eSd1sZAuZEBWVggvog
 tool_result
 id: toolu_01Rgm1eSd1sZAuZEBWVggvog
 ```
-The file /Users/jobinlawrance/Project/tiny/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6838,7 +6840,7 @@ tool_use Bash
 id: toolu_0168AMtFkPy4D4MP4ZHy1sfN
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nperl -pi -e 's{the `tr` CLI}{the `tinyraven` CLI}g' CLAUDE.md\n# command-usage patterns across all docs (safe: these are our subcommands/flags)\nFILES=$(grep -rlnE '\\btr (local|deploy|serve|token|login|status|push|dev|version|create|ls|rm|--)' README.md PROMPT.md CLAUDE.md HANDOFF.md docs examples 2>/dev/null | grep -v 'files (1)')\nfor f in $FILES; do\n  perl -pi -e 's{\\btr (local|deploy|serve|token|login|status|push|dev|version|create|ls|rm)\\b}{tinyraven $1}g; s{\\btr (--[a-z])}{tinyraven $1}g' \"$f\"\ndone\necho \"changed files:\"; echo \"$FILES\" | wc -l\necho \"=== remaining `tr <subcmd>` stragglers (want empty) ===\"\ngrep -rnE '\\btr (local|deploy|serve|token|login|status|push|dev|--version|--help|--check|--project)' README.md PROMPT.md CLAUDE.md docs examples 2>/dev/null | grep -v tinyraven | grep -v 'files (1)' | head",
+  "command": "cd /home/<USER>/Project/tiny\nperl -pi -e 's{the `tr` CLI}{the `tinyraven` CLI}g' CLAUDE.md\n# command-usage patterns across all docs (safe: these are our subcommands/flags)\nFILES=$(grep -rlnE '\\btr (local|deploy|serve|token|login|status|push|dev|version|create|ls|rm|--)' README.md PROMPT.md CLAUDE.md HANDOFF.md docs examples 2>/dev/null | grep -v 'files (1)')\nfor f in $FILES; do\n  perl -pi -e 's{\\btr (local|deploy|serve|token|login|status|push|dev|version|create|ls|rm)\\b}{tinyraven $1}g; s{\\btr (--[a-z])}{tinyraven $1}g' \"$f\"\ndone\necho \"changed files:\"; echo \"$FILES\" | wc -l\necho \"=== remaining `tr <subcmd>` stragglers (want empty) ===\"\ngrep -rnE '\\btr (local|deploy|serve|token|login|status|push|dev|--version|--help|--check|--project)' README.md PROMPT.md CLAUDE.md docs examples 2>/dev/null | grep -v tinyraven | grep -v 'files (1)' | head",
   "description": "Bulk-rename tr subcommand usages in docs"
 }
 ```
@@ -6896,7 +6898,7 @@ tool_use Bash
 id: toolu_01Cqj4fQu2HzpPyRSbitNfSH
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== changed files (git) ===\"; git status --short | head -40\necho \"=== remaining tr-subcommand usages in docs (clean grep) ===\"\ngrep -rnE 'tr (local|deploy|serve|token|login|status|push|dev)' README.md PROMPT.md docs examples --include=*.md 2>/dev/null | grep -v tinyraven | grep -v 'files (1)' | head -20\necho \"=== go still builds (no .go mangled) ===\"; go build ./... 2>&1 | head -3 && echo OK",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== changed files (git) ===\"; git status --short | head -40\necho \"=== remaining tr-subcommand usages in docs (clean grep) ===\"\ngrep -rnE 'tr (local|deploy|serve|token|login|status|push|dev)' README.md PROMPT.md docs examples --include=*.md 2>/dev/null | grep -v tinyraven | grep -v 'files (1)' | head -20\necho \"=== go still builds (no .go mangled) ===\"; go build ./... 2>&1 | head -3 && echo OK",
   "description": "Verify what changed + remaining doc stragglers + build intact"
 }
 ```
@@ -6945,7 +6947,7 @@ tool_use Bash
 id: toolu_01R83P4JcaFiKZzg3Hk7r476
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngrep -rlE 'tr (local|deploy|serve|token|login|status|push|dev|create|ls|rm|--)|`tr`' README.md PROMPT.md HANDOFF.md docs examples 2>/dev/null | grep -v 'files (1)' | while IFS= read -r f; do\n  perl -pi -e 's{\\btr (local|deploy|serve|token|login|status|push|dev|create|ls|rm)\\b}{tinyraven $1}g; s{\\btr (--[a-z])}{tinyraven $1}g; s{`tr`}{`tinyraven`}g' \"$f\"\ndone\necho \"=== remaining bare-binary tr refs (want empty / only legit) ===\"\ngrep -rnE 'tr (local|deploy|serve|token|login|status|push|dev)|`tr`' README.md PROMPT.md docs examples HANDOFF.md 2>/dev/null | grep -v tinyraven | grep -v 'files (1)' | head\necho \"=== changed docs count ===\"; git status --short README.md PROMPT.md HANDOFF.md docs examples 2>/dev/null | wc -l",
+  "command": "cd /home/<USER>/Project/tiny\ngrep -rlE 'tr (local|deploy|serve|token|login|status|push|dev|create|ls|rm|--)|`tr`' README.md PROMPT.md HANDOFF.md docs examples 2>/dev/null | grep -v 'files (1)' | while IFS= read -r f; do\n  perl -pi -e 's{\\btr (local|deploy|serve|token|login|status|push|dev|create|ls|rm)\\b}{tinyraven $1}g; s{\\btr (--[a-z])}{tinyraven $1}g; s{`tr`}{`tinyraven`}g' \"$f\"\ndone\necho \"=== remaining bare-binary tr refs (want empty / only legit) ===\"\ngrep -rnE 'tr (local|deploy|serve|token|login|status|push|dev)|`tr`' README.md PROMPT.md docs examples HANDOFF.md 2>/dev/null | grep -v tinyraven | grep -v 'files (1)' | head\necho \"=== changed docs count ===\"; git status --short README.md PROMPT.md HANDOFF.md docs examples 2>/dev/null | wc -l",
   "description": "Corrected bulk doc rename + verify no stragglers"
 }
 ```
@@ -6971,7 +6973,7 @@ id: toolu_011HgQ2u67ged7JMDNT9xawv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jobinlawrance/Project/tiny/PROMPT.md",
+  "file_path": "/home/<USER>/Project/tiny/PROMPT.md",
   "old_string": "- **Renamed from `tinyraven` (2026-07).** The earlier claim that the Unix-`tinyraven` conflict was\n  \"only superficial\" was wrong: coreutils `tinyraven` (translate characters) sits in\n  `/usr/bin` on every machine, and any user bin dir (`/opt/homebrew/bin`,\n  `/usr/local/bin`) that could shadow it comes *earlier* in PATH — so putting our\n  binary there breaks every script that calls coreutils `tinyraven`, and *not* putting it\n  there means `tinyraven local stop` runs `/usr/bin/tr`, which reads stdin and hangs forever.\n  Both are argv-0 `tinyraven`; there is no safe coexistence. The binary is `tinyraven`.",
   "new_string": "- **Renamed from `tr` (2026-07).** The earlier claim that the Unix-`tr` conflict was\n  \"only superficial\" was wrong: coreutils `tr` (translate characters) sits in\n  `/usr/bin` on every machine, and any user bin dir (`/opt/homebrew/bin`,\n  `/usr/local/bin`) that could shadow it comes *earlier* in PATH — so putting our\n  binary there breaks every script that calls coreutils `tr`, and *not* putting it\n  there means `tr local stop` runs `/usr/bin/tr`, which reads stdin and hangs forever.\n  Both are argv-0 `tr`; there is no safe coexistence. The binary is `tinyraven`."
 }
@@ -6982,7 +6984,7 @@ id: toolu_011HgQ2u67ged7JMDNT9xawv
 tool_result
 id: toolu_011HgQ2u67ged7JMDNT9xawv
 ```
-The file /Users/jobinlawrance/Project/tiny/PROMPT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Project/tiny/PROMPT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6991,7 +6993,7 @@ tool_use Bash
 id: toolu_01AnLkrWHcTBFbh8ouxpCdSa
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== corruption signatures (coreutils/Unix tinyraven, translate chars) — want empty ===\"\ngrep -rnE 'coreutils `tinyraven`|Unix.?`tinyraven`|`tinyraven` \\(translate|tinyraven \\(translate characters\\)|argv-0 `tinyraven`|conflicts with Unix `tinyraven`' README.md PROMPT.md docs examples HANDOFF.md CLAUDE.md 2>/dev/null | grep -v 'files (1)' | head\necho \"=== also check CLAUDE.md wasn't hit ===\"; grep -n 'tinyraven.*translate\\|Unix.*tinyraven' CLAUDE.md\necho \"=== migrate doc: does it reference coreutils tr? (context check) ===\"; grep -niE 'translate|coreutils|unix tr' docs/migrate-from-tinybird.md 2>/dev/null | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== corruption signatures (coreutils/Unix tinyraven, translate chars) — want empty ===\"\ngrep -rnE 'coreutils `tinyraven`|Unix.?`tinyraven`|`tinyraven` \\(translate|tinyraven \\(translate characters\\)|argv-0 `tinyraven`|conflicts with Unix `tinyraven`' README.md PROMPT.md docs examples HANDOFF.md CLAUDE.md 2>/dev/null | grep -v 'files (1)' | head\necho \"=== also check CLAUDE.md wasn't hit ===\"; grep -n 'tinyraven.*translate\\|Unix.*tinyraven' CLAUDE.md\necho \"=== migrate doc: does it reference coreutils tr? (context check) ===\"; grep -niE 'translate|coreutils|unix tr' docs/migrate-from-tinybird.md 2>/dev/null | head",
   "description": "Scan for over-replacement corruption across docs"
 }
 ```
@@ -7016,7 +7018,7 @@ tool_use Bash
 id: toolu_01Pgu4tWRKuK7nM63QUR8n4v
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== build all ===\"; go build ./... 2>&1 | head && echo OK\necho \"=== test all ===\"; go test ./... 2>&1 | grep -vE \"^(ok|---)\" | tail -15; go test ./... >/dev/null 2>&1 && echo \"ALL TESTS PASS\"\necho \"=== run renamed binary ===\"; go build -o /tmp/tinyraven ./cmd/tinyraven && /tmp/tinyraven local --help 2>&1 | head -6",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== build all ===\"; go build ./... 2>&1 | head && echo OK\necho \"=== test all ===\"; go test ./... 2>&1 | grep -vE \"^(ok|---)\" | tail -15; go test ./... >/dev/null 2>&1 && echo \"ALL TESTS PASS\"\necho \"=== run renamed binary ===\"; go build -o /tmp/tinyraven ./cmd/tinyraven && /tmp/tinyraven local --help 2>&1 | head -6",
   "description": "Full build+test+run renamed binary"
 }
 ```
@@ -7052,7 +7054,7 @@ tool_use Bash
 id: toolu_01MS1cgXcnC9Rt9uvuAYbzB8
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit add -u\ngit add cmd/tinyraven\necho \"=== staged (rename-related only, no 'files (1)') ===\"; git diff --cached --name-status | head -50 | tail -40\ngit -c user.email=\"jobinlawrance@gmail.com\" -c user.name=\"jobinlawrance\" commit -q -m \"refactor: rename CLI binary tr -> tinyraven (coreutils collision)\n\nThe binary named 'tr' collided with coreutils tr (translate characters): it's in\n/usr/bin on every machine, so a bare 'tr local stop' either ran /usr/bin/tr (which\nreads stdin and hangs — the reported 'stuck on stop') or, if shadowed via an earlier\nPATH dir, broke every script using coreutils tr. No safe coexistence.\n\n- cmd/tr -> cmd/tinyraven; cobra root Use, Dockerfile build/COPY/ENTRYPOINT.\n- .goreleaser (id/binary/main/archive/brew/nfpm/aur), codecov, CI template,\n  packaging (homebrew formula, AUR PKGBUILD), demo run.sh.\n- PROMPT.md/CLAUDE.md: correct the retired 'conflict is superficial' claim; mark\n  binary = tinyraven. Docs updated to 'tinyraven <subcommand>'.\n- Follow-up: the separate ravencloak-org/homebrew-tinyraven tap repo installs 'tr'\n  and must be updated for the next release.\" && echo committed\ngit log --oneline -1",
+  "command": "cd /home/<USER>/Project/tiny\ngit add -u\ngit add cmd/tinyraven\necho \"=== staged (rename-related only, no 'files (1)') ===\"; git diff --cached --name-status | head -50 | tail -40\ngit -c user.email=\"<REDACTED_EMAIL>\" -c user.name=\"jobinlawrance\" commit -q -m \"refactor: rename CLI binary tr -> tinyraven (coreutils collision)\n\nThe binary named 'tr' collided with coreutils tr (translate characters): it's in\n/usr/bin on every machine, so a bare 'tr local stop' either ran /usr/bin/tr (which\nreads stdin and hangs — the reported 'stuck on stop') or, if shadowed via an earlier\nPATH dir, broke every script using coreutils tr. No safe coexistence.\n\n- cmd/tr -> cmd/tinyraven; cobra root Use, Dockerfile build/COPY/ENTRYPOINT.\n- .goreleaser (id/binary/main/archive/brew/nfpm/aur), codecov, CI template,\n  packaging (homebrew formula, AUR PKGBUILD), demo run.sh.\n- PROMPT.md/CLAUDE.md: correct the retired 'conflict is superficial' claim; mark\n  binary = tinyraven. Docs updated to 'tinyraven <subcommand>'.\n- Follow-up: the separate ravencloak-org/homebrew-tinyraven tap repo installs 'tr'\n  and must be updated for the next release.\" && echo committed\ngit log --oneline -1",
   "description": "Commit the tr->tinyraven rename"
 }
 ```
@@ -7117,7 +7119,7 @@ tool_use Bash
 id: toolu_01KBD7NBz7pAxXCPixdXvk5s
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngit push origin main 2>&1 | tail -3\necho \"---\"; git status -sb | head -1",
+  "command": "cd /home/<USER>/Project/tiny\ngit push origin main 2>&1 | tail -3\necho \"---\"; git status -sb | head -1",
   "description": "Push rename commit to origin main"
 }
 ```
@@ -7167,7 +7169,7 @@ tool_use Bash
 id: toolu_01WFymHvXxtqt1f5A8YUsgvD
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngo build -o ~/go/bin/tinyraven ./cmd/tinyraven 2>&1 | head && echo \"installed\"\necho \"=== resolves to? ===\"; command -v tinyraven; hash -r 2>/dev/null\necho \"=== version/help ===\"; tinyraven --version 2>&1 | head -1; tinyraven local --help 2>&1 | head -3",
+  "command": "cd /home/<USER>/Project/tiny\ngo build -o ~/go/bin/tinyraven ./cmd/tinyraven 2>&1 | head && echo \"installed\"\necho \"=== resolves to? ===\"; command -v tinyraven; hash -r 2>/dev/null\necho \"=== version/help ===\"; tinyraven --version 2>&1 | head -1; tinyraven local --help 2>&1 | head -3",
   "description": "Install tinyraven to ~/go/bin, verify resolution"
 }
 ```
@@ -7179,7 +7181,7 @@ id: toolu_01WFymHvXxtqt1f5A8YUsgvD
 ```
 installed
 === resolves to? ===
-/Users/jobinlawrance/go/bin/tinyraven
+/home/<USER>/go/bin/tinyraven
 === version/help ===
 tinyraven version dev
 Manage the local dev stack (ClickHouse + Redis + TinyRaven)
@@ -7197,7 +7199,7 @@ tool_use Bash
 id: toolu_012vNkhuCuMYwM3RXjkP3HUQ
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== tinyraven local start ===\"; time (timeout 240 tinyraven local start 2>&1 | tail -15); echo \"START_EXIT=${PIPESTATUS[0]}\"\necho; echo \"=== tinyraven local stop ===\"; time (timeout 90 tinyraven local stop 2>&1 | tail -20); echo \"STOP_EXIT=${PIPESTATUS[0]}\"\necho; echo \"=== ps after (want empty) ===\"; timeout 15 docker compose ps 2>&1 | head",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== tinyraven local start ===\"; time (timeout 240 tinyraven local start 2>&1 | tail -15); echo \"START_EXIT=${PIPESTATUS[0]}\"\necho; echo \"=== tinyraven local stop ===\"; time (timeout 90 tinyraven local stop 2>&1 | tail -20); echo \"STOP_EXIT=${PIPESTATUS[0]}\"\necho; echo \"=== ps after (want empty) ===\"; timeout 15 docker compose ps 2>&1 | head",
   "description": "Full start->stop cycle with installed tinyraven binary"
 }
 ```
@@ -7227,7 +7229,8 @@ id: toolu_012vNkhuCuMYwM3RXjkP3HUQ
 START_EXIT=
 
 === tinyraven local stop ===
-[Ktinyraven-1 exited with code 0
+
+[Ktinyraven-1 exited with code 0
  Container tiny-tinyraven-1 Removed 
  Container tiny-redis-1 Stopping 
  Container tiny-clickhouse-1 Stopping 
@@ -7239,11 +7242,13 @@ redis-1       | 1:M 02 Jul 2026 06:14:36.332 * DB saved on disk
 redis-1       | 1:M 02 Jul 2026 06:14:36.332 # Redis is now ready to exit, bye bye...
  Container tiny-redis-1 Stopped 
  Container tiny-redis-1 Removing 
-[Kredis-1 exited with code 0
+
+[Kredis-1 exited with code 0
  Container tiny-redis-1 Removed 
  Container tiny-clickhouse-1 Stopped 
  Container tiny-clickhouse-1 Removing 
-[Kclickhouse-1 exited with code 0
+
+[Kclickhouse-1 exited with code 0
  Container tiny-clickhouse-1 Removed 
  Network tiny_default Removing […]
 
@@ -7273,7 +7278,7 @@ tool_use Bash
 id: toolu_017LKPejw9BPVBzdUqkYVpVw
 ```json
 {
-  "command": "cd REDACTED\nrm -rf homebrew-tinyraven\ngit clone -q git@github.com:ravencloak-org/homebrew-tinyraven.git 2>&1 | tail -2\ncd homebrew-tinyraven\necho \"=== tree ===\"; git ls-files | head -20\necho \"=== formula(s) referencing tr ===\"; grep -rnE 'bin\\.install \"tr\"|/tr\\b|\"tr\"|binary|def install|assert' Formula/*.rb *.rb 2>/dev/null | head -20",
+  "command": "cd REDACTED\nrm -rf homebrew-tinyraven\ngit clone -q <REDACTED_EMAIL>:ravencloak-org/homebrew-tinyraven.git 2>&1 | tail -2\ncd homebrew-tinyraven\necho \"=== tree ===\"; git ls-files | head -20\necho \"=== formula(s) referencing tr ===\"; grep -rnE 'bin\\.install \"tr\"|/tr\\b|\"tr\"|binary|def install|assert' Formula/*.rb *.rb 2>/dev/null | head -20",
   "description": "Clone homebrew tap, inspect formula tr refs"
 }
 ```
@@ -7287,7 +7292,7 @@ id: toolu_017LKPejw9BPVBzdUqkYVpVw
 Formula/tinyraven.rb
 === formula(s) referencing tr ===
 (eval):6: no matches found: *.rb
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > TOOL
@@ -7414,7 +7419,7 @@ CHANGELOG.md
 LICENSE
 README.md
 tinyraven
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -7447,7 +7452,7 @@ tool_use Bash
 id: toolu_01KjvpdN6fbQ7FqQCZ5L81La
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== milestone #20 issues ===\"\ngh issue list --repo viewrr/viewrr --milestone \"P2P / Self-Custody Re-architecture\" --state all --json number,title,state --jq '.[]|\"#\\(.number) [\\(.state)] \\(.title)\"' 2>&1 | head -20\necho \"=== PR #135 (identity foundation) state ===\"\ngh pr view 135 --repo viewrr/viewrr --json state,isDraft,mergeable,mergeStateStatus --jq '\"#135 draft=\\(.isDraft) state=\\(.state) mergeable=\\(.mergeable)/\\(.mergeStateStatus)\"' 2>&1",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== milestone #20 issues ===\"\ngh issue list --repo viewrr/viewrr --milestone \"P2P / Self-Custody Re-architecture\" --state all --json number,title,state --jq '.[]|\"#\\(.number) [\\(.state)] \\(.title)\"' 2>&1 | head -20\necho \"=== PR #135 (identity foundation) state ===\"\ngh pr view 135 --repo viewrr/viewrr --json state,isDraft,mergeable,mergeStateStatus --jq '\"#135 draft=\\(.isDraft) state=\\(.state) mergeable=\\(.mergeable)/\\(.mergeStateStatus)\"' 2>&1",
   "description": "Pull current epic milestone + PR #135 state"
 }
 ```
@@ -7510,9 +7515,9 @@ id: toolu_015i4grz6jEfzjyKkfi791dv
 ```
 worktree wt-121-p2p-core ready (off origin/main)
 === bare/pear runtime available in env? ===
-/Users/jobinlawrance/.bun/bin/bun
+/home/<USER>/.bun/bin/bun
 /opt/homebrew/bin/node
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -7597,7 +7602,7 @@ tool_use Bash
 id: toolu_01EPz1eqtoL4epsoDnQkqfXw
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== PR #147 meta ===\"; gh pr view 147 --repo viewrr/viewrr --json isDraft,files,additions,baseRefName --jq '{draft:.isDraft,base:.baseRefName,adds:.additions,files:[.files[].path]}'\necho \"=== diff (the one test file) ===\"; gh pr diff 147 --repo viewrr/viewrr 2>&1 | sed -n '1,120p'",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== PR #147 meta ===\"; gh pr view 147 --repo viewrr/viewrr --json isDraft,files,additions,baseRefName --jq '{draft:.isDraft,base:.baseRefName,adds:.additions,files:[.files[].path]}'\necho \"=== diff (the one test file) ===\"; gh pr diff 147 --repo viewrr/viewrr 2>&1 | sed -n '1,120p'",
   "description": "Review PR #147 diff for ponytail assessment"
 }
 ```
@@ -7698,7 +7703,7 @@ topic.mjs
 --- node process.* usage ---
 ../wt-worklet-bare/worklet/ping.mjs
 ../wt-worklet-bare/worklet/derive.mjs
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -7767,7 +7772,7 @@ wt-120-keycloak-retire ready
 ../wt-125-ranking/server/src/main/kotlin/config/AppConfig.kt
 ../wt-125-ranking/server/src/main/kotlin/auth/AuthRoutes.kt
 ../wt-125-ranking/server/src/main/kotlin/plugins/Acquisition.kt
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -7842,7 +7847,7 @@ tool_use Bash
 id: toolu_01WBQmhpi839gTzh6RmKD5Aa
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\ngh pr diff 148 --repo viewrr/viewrr 2>&1 | sed -n '1,70p'",
+  "command": "cd /home/<USER>/Project/tiny\ngh pr diff 148 --repo viewrr/viewrr 2>&1 | sed -n '1,70p'",
   "description": "Read PR #148 PeerRanking diff"
 }
 ```
@@ -7908,7 +7913,7 @@ tool_use Bash
 id: toolu_011YZC7RR4HUXCRcze7pRGaW
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== open PRs (any new from bare-port / keycloak) ===\"\ngh pr list --repo viewrr/viewrr --state open --json number,title,headRefName,isDraft --jq '.[]|\"#\\(.number) draft=\\(.isDraft) \\(.headRefName) — \\(.title)\"' 2>&1 | head\necho \"=== branch commit state (pushed yet?) ===\"\nfor b in p2p/121-worklet-bare p2p/120-keycloak-retire; do\n  echo \"--- $b ---\"; git ls-remote --heads git@github.com:viewrr/viewrr.git \"$b\" 2>/dev/null | head -1 || echo \"not pushed\"\ndone\necho \"=== local worktree commits ===\"\nfor wt in wt-worklet-bare wt-120-keycloak-retire; do\n  d=\"REDACTED$wt\"\n  echo \"--- $wt ---\"; git -C \"$d\" log --oneline origin/main..HEAD 2>/dev/null | head -3 || echo \"no commits\"; git -C \"$d\" status --short 2>/dev/null | head -3\ndone",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== open PRs (any new from bare-port / keycloak) ===\"\ngh pr list --repo viewrr/viewrr --state open --json number,title,headRefName,isDraft --jq '.[]|\"#\\(.number) draft=\\(.isDraft) \\(.headRefName) — \\(.title)\"' 2>&1 | head\necho \"=== branch commit state (pushed yet?) ===\"\nfor b in p2p/121-worklet-bare p2p/120-keycloak-retire; do\n  echo \"--- $b ---\"; git ls-remote --heads <REDACTED_EMAIL>:viewrr/viewrr.git \"$b\" 2>/dev/null | head -1 || echo \"not pushed\"\ndone\necho \"=== local worktree commits ===\"\nfor wt in wt-worklet-bare wt-120-keycloak-retire; do\n  d=\"REDACTED$wt\"\n  echo \"--- $wt ---\"; git -C \"$d\" log --oneline origin/main..HEAD 2>/dev/null | head -3 || echo \"no commits\"; git -C \"$d\" status --short 2>/dev/null | head -3\ndone",
   "description": "Check bare-port + keycloak agents' branch/PR/commit progress"
 }
 ```
@@ -7960,7 +7965,7 @@ tool_use Bash
 id: toolu_013rMrRbbYmpss2D13VQp2vT
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== PR #149 files ===\"; gh pr view 149 --repo viewrr/viewrr --json files,isDraft --jq '{draft:.isDraft,files:[.files[].path]}'\necho \"=== worklet/stdio.mjs (the new shim) ===\"; gh pr diff 149 --repo viewrr/viewrr 2>&1 | sed -n '/stdio.mjs/,/ping.mjs b\\//p' | head -70",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== PR #149 files ===\"; gh pr view 149 --repo viewrr/viewrr --json files,isDraft --jq '{draft:.isDraft,files:[.files[].path]}'\necho \"=== worklet/stdio.mjs (the new shim) ===\"; gh pr diff 149 --repo viewrr/viewrr 2>&1 | sed -n '/stdio.mjs/,/ping.mjs b\\//p' | head -70",
   "description": "Review PR #149 bare stdio shim"
 }
 ```
@@ -8108,7 +8113,7 @@ e: file:REDACTED.kt:44:53 Unresolved reference 'maxRating'.
 e: file:REDACTED.kt:45:81 Unresolved reference 'maxRating'.
 e: file:REDACTED.kt:46:28 Unresolved reference 'toView'.
 e: file:REDACTED.kt:26:47 Unresolved reference. None of the following candidates is applicable because of a receiver type mismatch:
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -8184,7 +8189,7 @@ server/src/main/kotlin/identity/IdentityService.kt:64:        val isAdmin = pk i
 21: * admin is "you hold a key on the allowlist". Empty allowlist ⇒ no admins.
 27:    private val adminPublicKeys: Set<String> = emptySet(),
 64:        val isAdmin = pk in adminPublicKeys
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -8229,7 +8234,7 @@ worktree ready
 === how maxRatingFor is called + subject id source ===
 ../wt-parental-fix/server/src/main/kotlin/rating/Ratings.kt:32:suspend fun maxRatingFor(db: R2dbcDatabase, userId: UUID): String? = suspendTransaction(db) {
 ../wt-parental-fix/server/src/main/kotlin/Security.kt:53:                if (credential.payload.subject == null) return@validate null
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -8364,7 +8369,7 @@ server/src/main/kotlin/db/Tables.kt:155:    val userId = reference("user_id", Us
 server/src/main/kotlin/db/Tables.kt:164:    val ownerId = reference("owner_id", Users.id, onDelete = ReferenceOption.CASCADE)
 server/src/main/kotlin/db/Tables.kt:176:    val userId = reference("user_id", Users.id, onDelete = ReferenceOption.CASCADE)
 server/src/main/kotlin/db/Tables.kt:183:    val userId = reference("user_id", Users.id, onDelete = ReferenceOption.CASCADE)
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -8411,7 +8416,7 @@ worktree ready
 50:    val egressIp = text("egress_ip").nullable() // #79: node IP as the Hub saw it at register (same-LAN heuristic)
 ../wt-principal-unify/server/src/main/kotlin/identity/IdentityAccountRepository.kt:23:        val id = IdentityAccounts.insertAndGetId {
 ../wt-principal-unify/server/src/main/kotlin/identity/IdentityService.kt:30:    suspend fun register(req: RegisterIdentityRequest): Pair<AccountView, Boolean> {
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -8436,7 +8441,7 @@ tool_use Bash
 id: toolu_01GUQpgLWR5e7xeNecc8amH8
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== milestone #20 issues ===\"; gh issue list --repo viewrr/viewrr --milestone \"P2P / Self-Custody Re-architecture\" --state all --json number,title,state --jq '.[]|\"#\\(.number) [\\(.state)] \\(.title)\"' 2>&1\necho \"=== open PRs ===\"; gh pr list --repo viewrr/viewrr --state open --json number,title,isDraft --jq '.[]|\"#\\(.number) draft=\\(.isDraft) \\(.title)\"' 2>&1",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== milestone #20 issues ===\"; gh issue list --repo viewrr/viewrr --milestone \"P2P / Self-Custody Re-architecture\" --state all --json number,title,state --jq '.[]|\"#\\(.number) [\\(.state)] \\(.title)\"' 2>&1\necho \"=== open PRs ===\"; gh pr list --repo viewrr/viewrr --state open --json number,title,isDraft --jq '.[]|\"#\\(.number) draft=\\(.isDraft) \\(.title)\"' 2>&1",
   "description": "Pull current issue + open PR state for pending summary"
 }
 ```
@@ -8557,7 +8562,7 @@ wt-121-inc2 ready
 ../wt-121-inc2/worklet/ping.mjs
 ../wt-121-inc2/worklet/stdio.mjs
 ../wt-121-inc2/worklet/topic.mjs
-Shell cwd was reset to /Users/jobinlawrance/Project/tiny
+Shell cwd was reset to /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -8620,7 +8625,7 @@ tool_use Bash
 id: toolu_011Zz78Lk2JPouaCnUeh5nzR
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== open + recently merged PRs (p2p) ===\"\ngh pr list --repo viewrr/viewrr --state all --limit 8 --json number,title,state,headRefName --jq '.[]|select(.headRefName|test(\"principal-unify|121-hypercore\"))|\"#\\(.number) [\\(.state)] \\(.headRefName)\"' 2>&1\necho \"=== branches pushed yet? ===\"\nfor b in p2p/principal-unify p2p/121-hypercore; do\n  r=$(git ls-remote --heads git@github.com:viewrr/viewrr.git \"$b\" 2>/dev/null | head -1)\n  echo \"$b: ${r:-not pushed}\"\ndone",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== open + recently merged PRs (p2p) ===\"\ngh pr list --repo viewrr/viewrr --state all --limit 8 --json number,title,state,headRefName --jq '.[]|select(.headRefName|test(\"principal-unify|121-hypercore\"))|\"#\\(.number) [\\(.state)] \\(.headRefName)\"' 2>&1\necho \"=== branches pushed yet? ===\"\nfor b in p2p/principal-unify p2p/121-hypercore; do\n  r=$(git ls-remote --heads <REDACTED_EMAIL>:viewrr/viewrr.git \"$b\" 2>/dev/null | head -1)\n  echo \"$b: ${r:-not pushed}\"\ndone",
   "description": "Check if B1/inc-2 branches pushed or PRs merged"
 }
 ```
@@ -8664,7 +8669,7 @@ Applying it to the highest-stakes live question, since none was named: **is the 
 
 > AGENT
 
-Running graphify on the current directory (`/Users/jobinlawrance/Project/tiny`). Checking for an existing graph + ensuring graphify is installed.
+Running graphify on the current directory (`/home/<USER>/Project/tiny`). Checking for an existing graph + ensuring graphify is installed.
 
 > TOOL
 
@@ -8672,7 +8677,7 @@ tool_use Bash
 id: toolu_01EZ8TzodBegB8XAMCvXp7fk
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\necho \"=== existing graph? ===\"; test -f graphify-out/graph.json && echo \"graph.json EXISTS\" || echo \"no existing graph\"\necho \"=== graphify install check ===\"\nPYTHON=\"\"\nGRAPHIFY_BIN=$(which graphify 2>/dev/null)\nif [ -z \"$PYTHON\" ] && command -v uv >/dev/null 2>&1; then\n    _UV_PY=$(uv tool run graphifyy python -c \"import sys; print(sys.executable)\" 2>/dev/null)\n    [ -n \"$_UV_PY\" ] && PYTHON=\"$_UV_PY\"\nfi\nif [ -z \"$PYTHON\" ]; then PYTHON=\"python3\"; fi\nif ! \"$PYTHON\" -c \"import graphify\" 2>/dev/null; then\n    echo \"graphify not installed\"\n    command -v uv >/dev/null 2>&1 && echo \"(uv available)\" || echo \"(no uv)\"\nelse\n    echo \"graphify importable via $PYTHON\"\nfi",
+  "command": "cd /home/<USER>/Project/tiny\necho \"=== existing graph? ===\"; test -f graphify-out/graph.json && echo \"graph.json EXISTS\" || echo \"no existing graph\"\necho \"=== graphify install check ===\"\nPYTHON=\"\"\nGRAPHIFY_BIN=$(which graphify 2>/dev/null)\nif [ -z \"$PYTHON\" ] && command -v uv >/dev/null 2>&1; then\n    _UV_PY=$(uv tool run graphifyy python -c \"import sys; print(sys.executable)\" 2>/dev/null)\n    [ -n \"$_UV_PY\" ] && PYTHON=\"$_UV_PY\"\nfi\nif [ -z \"$PYTHON\" ]; then PYTHON=\"python3\"; fi\nif ! \"$PYTHON\" -c \"import graphify\" 2>/dev/null; then\n    echo \"graphify not installed\"\n    command -v uv >/dev/null 2>&1 && echo \"(uv available)\" || echo \"(no uv)\"\nelse\n    echo \"graphify importable via $PYTHON\"\nfi",
   "description": "Check existing graph + graphify install"
 }
 ```
@@ -8699,7 +8704,7 @@ tool_use Bash
 id: toolu_01Dma35egXJ8oy9U1iAQYyif
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nuv tool install --upgrade graphifyy -q 2>&1 | tail -3\nPYTHON=$(uv tool run graphifyy python -c \"import sys; print(sys.executable)\" 2>/dev/null)\n[ -z \"$PYTHON\" ] && PYTHON=\"python3\"\nmkdir -p graphify-out\n\"$PYTHON\" -c \"import sys; open('graphify-out/.graphify_python','w').write(sys.executable)\"\necho \"$(pwd)\" > graphify-out/.graphify_root\necho \"interpreter: $(cat graphify-out/.graphify_python)\"\necho \"=== detect (may take a moment on a big repo) ===\"\n\"$PYTHON\" -c \"\nimport json\nfrom graphify.detect import detect\nfrom pathlib import Path\nresult = detect(Path('.'))\nprint(json.dumps(result, ensure_ascii=False))\n\" > graphify-out/.graphify_detect.json 2>&1\n\"$PYTHON\" -c \"\nimport json\nd=json.load(open('graphify-out/.graphify_detect.json'))\nf=d.get('files',{})\nprint('total_files', d.get('total_files'))\nprint('total_words', d.get('total_words'))\nfor k in ('code','document','paper','image','video'):\n    n=len(f.get(k,[])); \n    if n: print(f'  {k}: {n}')\nprint('skipped_sensitive', len(d.get('skipped_sensitive',[])))\n\"",
+  "command": "cd /home/<USER>/Project/tiny\nuv tool install --upgrade graphifyy -q 2>&1 | tail -3\nPYTHON=$(uv tool run graphifyy python -c \"import sys; print(sys.executable)\" 2>/dev/null)\n[ -z \"$PYTHON\" ] && PYTHON=\"python3\"\nmkdir -p graphify-out\n\"$PYTHON\" -c \"import sys; open('graphify-out/.graphify_python','w').write(sys.executable)\"\necho \"$(pwd)\" > graphify-out/.graphify_root\necho \"interpreter: $(cat graphify-out/.graphify_python)\"\necho \"=== detect (may take a moment on a big repo) ===\"\n\"$PYTHON\" -c \"\nimport json\nfrom graphify.detect import detect\nfrom pathlib import Path\nresult = detect(Path('.'))\nprint(json.dumps(result, ensure_ascii=False))\n\" > graphify-out/.graphify_detect.json 2>&1\n\"$PYTHON\" -c \"\nimport json\nd=json.load(open('graphify-out/.graphify_detect.json'))\nf=d.get('files',{})\nprint('total_files', d.get('total_files'))\nprint('total_words', d.get('total_words'))\nfor k in ('code','document','paper','image','video'):\n    n=len(f.get(k,[])); \n    if n: print(f'  {k}: {n}')\nprint('skipped_sensitive', len(d.get('skipped_sensitive',[])))\n\"",
   "description": "Install graphify + detect corpus"
 }
 ```
@@ -8741,7 +8746,7 @@ tool_use Bash
 id: toolu_01EHerK1cTzXvJDs9fhgDkrX
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nGB=$(which graphify 2>/dev/null); echo \"graphify bin: $GB\"\nPY=$(head -1 \"$GB\" | sed 's/^#!//')\necho \"shebang python: $PY\"\n\"$PY\" -c \"import graphify; print('graphify importable OK', graphify.__file__)\" 2>&1 | head -2\n# persist correct interpreter\n[ -n \"$PY\" ] && \"$PY\" -c \"import graphify\" 2>/dev/null && echo \"$PY\" > graphify-out/.graphify_python && echo \"saved interpreter\"",
+  "command": "cd /home/<USER>/Project/tiny\nGB=$(which graphify 2>/dev/null); echo \"graphify bin: $GB\"\nPY=$(head -1 \"$GB\" | sed 's/^#!//')\necho \"shebang python: $PY\"\n\"$PY\" -c \"import graphify; print('graphify importable OK', graphify.__file__)\" 2>&1 | head -2\n# persist correct interpreter\n[ -n \"$PY\" ] && \"$PY\" -c \"import graphify\" 2>/dev/null && echo \"$PY\" > graphify-out/.graphify_python && echo \"saved interpreter\"",
   "description": "Find graphify venv python via shebang"
 }
 ```
@@ -8751,9 +8756,9 @@ id: toolu_01EHerK1cTzXvJDs9fhgDkrX
 tool_result
 id: toolu_01EHerK1cTzXvJDs9fhgDkrX
 ```
-graphify bin: /Users/jobinlawrance/.local/bin/graphify
-shebang python: /Users/jobinlawrance/.local/share/uv/tools/graphifyy/bin/python3
-graphify importable OK /Users/jobinlawrance/.local/share/uv/tools/graphifyy/lib/python3.14/site-packages/graphify/__init__.py
+graphify bin: /home/<USER>/.local/bin/graphify
+shebang python: /home/<USER>/.local/share/uv/tools/graphifyy/bin/python3
+graphify importable OK /home/<USER>/.local/share/uv/tools/graphifyy/lib/python3.14/site-packages/graphify/__init__.py
 saved interpreter
 ```
 
@@ -8767,7 +8772,7 @@ tool_use Bash
 id: toolu_01BN7rTnesM8rwxBZit22kKj
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nPY=$(cat graphify-out/.graphify_python)\n\"$PY\" -c \"\nimport json\nfrom graphify.detect import detect\nfrom pathlib import Path\nresult = detect(Path('.'))\nopen('graphify-out/.graphify_detect.json','w').write(json.dumps(result, ensure_ascii=False))\n\" 2>&1 | head -5\n\"$PY\" -c \"\nimport json\nd=json.load(open('graphify-out/.graphify_detect.json'))\nf=d.get('files',{})\nprint('total_files', d.get('total_files'))\nprint('total_words', d.get('total_words'))\nfor k in ('code','document','paper','image','video'):\n    n=len(f.get(k,[]))\n    if n: print(f'  {k}: {n}')\nprint('skipped_sensitive', len(d.get('skipped_sensitive',[])))\nprint('scan_root', d.get('scan_root'))\n\"",
+  "command": "cd /home/<USER>/Project/tiny\nPY=$(cat graphify-out/.graphify_python)\n\"$PY\" -c \"\nimport json\nfrom graphify.detect import detect\nfrom pathlib import Path\nresult = detect(Path('.'))\nopen('graphify-out/.graphify_detect.json','w').write(json.dumps(result, ensure_ascii=False))\n\" 2>&1 | head -5\n\"$PY\" -c \"\nimport json\nd=json.load(open('graphify-out/.graphify_detect.json'))\nf=d.get('files',{})\nprint('total_files', d.get('total_files'))\nprint('total_words', d.get('total_words'))\nfor k in ('code','document','paper','image','video'):\n    n=len(f.get(k,[]))\n    if n: print(f'  {k}: {n}')\nprint('skipped_sensitive', len(d.get('skipped_sensitive',[])))\nprint('scan_root', d.get('scan_root'))\n\"",
   "description": "Run detect with correct interpreter"
 }
 ```
@@ -8783,7 +8788,7 @@ total_words 163911
   document: 108
   image: 5
 skipped_sensitive 6
-scan_root /Users/jobinlawrance/Project/tiny
+scan_root /home/<USER>/Project/tiny
 ```
 
 > AGENT
@@ -8796,7 +8801,7 @@ tool_use Bash
 id: toolu_01YcUAvG5ho11FNsdsVbJqHb
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nPY=$(cat graphify-out/.graphify_python)\necho \"=== gemini key? ===\"; [ -n \"$GEMINI_API_KEY\" ] && echo \"GEMINI_API_KEY set\" || ([ -n \"$GOOGLE_API_KEY\" ] && echo \"GOOGLE_API_KEY set\" || echo \"no gemini/google key\")\necho \"=== AST extraction (code, deterministic) ===\"\n\"$PY\" -c \"\nimport json\nfrom graphify.extract import collect_files, extract\nfrom pathlib import Path\ncode_files=[]\ndetect=json.load(open('graphify-out/.graphify_detect.json'))\nfor f in detect.get('files',{}).get('code',[]):\n    p=Path(f); code_files.extend(collect_files(p) if p.is_dir() else [p])\nif code_files:\n    result=extract(code_files, cache_root=Path('.'))\n    open('graphify-out/.graphify_ast.json','w').write(json.dumps(result,ensure_ascii=False))\n    print(f'AST: {len(result[\\\"nodes\\\"])} nodes, {len(result[\\\"edges\\\"])} edges')\nelse:\n    open('graphify-out/.graphify_ast.json','w').write(json.dumps({'nodes':[],'edges':[],'input_tokens':0,'output_tokens':0}))\n    print('no code files')\n\" 2>&1 | tail -3",
+  "command": "cd /home/<USER>/Project/tiny\nPY=$(cat graphify-out/.graphify_python)\necho \"=== gemini key? ===\"; [ -n \"$GEMINI_API_KEY\" ] && echo \"GEMINI_API_KEY set\" || ([ -n \"$GOOGLE_API_KEY\" ] && echo \"GOOGLE_API_KEY set\" || echo \"no gemini/google key\")\necho \"=== AST extraction (code, deterministic) ===\"\n\"$PY\" -c \"\nimport json\nfrom graphify.extract import collect_files, extract\nfrom pathlib import Path\ncode_files=[]\ndetect=json.load(open('graphify-out/.graphify_detect.json'))\nfor f in detect.get('files',{}).get('code',[]):\n    p=Path(f); code_files.extend(collect_files(p) if p.is_dir() else [p])\nif code_files:\n    result=extract(code_files, cache_root=Path('.'))\n    open('graphify-out/.graphify_ast.json','w').write(json.dumps(result,ensure_ascii=False))\n    print(f'AST: {len(result[\\\"nodes\\\"])} nodes, {len(result[\\\"edges\\\"])} edges')\nelse:\n    open('graphify-out/.graphify_ast.json','w').write(json.dumps({'nodes':[],'edges':[],'input_tokens':0,'output_tokens':0}))\n    print('no code files')\n\" 2>&1 | tail -3",
   "description": "Check Gemini key + run AST extraction"
 }
 ```
@@ -8824,7 +8829,7 @@ tool_use Bash
 id: toolu_013D2pvaNZ2Cp5adg8TMVhCc
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nPY=$(cat graphify-out/.graphify_python)\n# B0: cache check\n\"$PY\" -c \"\nimport json\nfrom graphify.cache import check_semantic_cache\nfrom pathlib import Path\ndetect=json.load(open('graphify-out/.graphify_detect.json'))\n# semantic targets = docs + papers + images (NOT code; AST handles code)\ntargets=[f for k in ('document','paper','image') for f in detect['files'].get(k,[])]\ncn,ce,ch,unc = check_semantic_cache(targets)\nif cn or ce or ch: open('graphify-out/.graphify_cached.json','w').write(json.dumps({'nodes':cn,'edges':ce,'hyperedges':ch}))\nopen('graphify-out/.graphify_uncached.txt','w').write('\\n'.join(unc))\nprint(f'semantic targets={len(targets)}, cache hit={len(targets)-len(unc)}, need extraction={len(unc)}')\n\"\necho \"=== chunk plan (group by dir, ~22/chunk, images separate) ===\"\n\"$PY\" -c \"\nimport json,os,math\nfrom pathlib import Path\nfrom collections import defaultdict\ndetect=json.load(open('graphify-out/.graphify_detect.json'))\ndocs=[f for k in ('document','paper') for f in detect['files'].get(k,[])]\nimgs=detect['files'].get('image',[])\n# group docs by top dir\nby=defaultdict(list)\nroot=detect.get('scan_root','.')\nfor f in docs:\n    rel=os.path.relpath(f,root); top=rel.split(os.sep)[0] if os.sep in rel else '(root)'\n    by[top].append(f)\nchunks=[]\ncur=[]\nfor top in sorted(by):\n    for f in by[top]:\n        cur.append(f)\n        if len(cur)>=22: chunks.append(cur); cur=[]\nif cur: chunks.append(cur)\nfor im in imgs: chunks.append([im])\nimport json as J\nJ.dump(chunks, open('graphify-out/.graphify_chunkplan.json','w'))\nprint(f'{len(docs)} docs + {len(imgs)} images -> {len(chunks)} chunks')\nfor i,c in enumerate(chunks): print(f'  chunk {i+1}: {len(c)} files, e.g. {os.path.relpath(c[0],root)}')\n\"",
+  "command": "cd /home/<USER>/Project/tiny\nPY=$(cat graphify-out/.graphify_python)\n# B0: cache check\n\"$PY\" -c \"\nimport json\nfrom graphify.cache import check_semantic_cache\nfrom pathlib import Path\ndetect=json.load(open('graphify-out/.graphify_detect.json'))\n# semantic targets = docs + papers + images (NOT code; AST handles code)\ntargets=[f for k in ('document','paper','image') for f in detect['files'].get(k,[])]\ncn,ce,ch,unc = check_semantic_cache(targets)\nif cn or ce or ch: open('graphify-out/.graphify_cached.json','w').write(json.dumps({'nodes':cn,'edges':ce,'hyperedges':ch}))\nopen('graphify-out/.graphify_uncached.txt','w').write('\\n'.join(unc))\nprint(f'semantic targets={len(targets)}, cache hit={len(targets)-len(unc)}, need extraction={len(unc)}')\n\"\necho \"=== chunk plan (group by dir, ~22/chunk, images separate) ===\"\n\"$PY\" -c \"\nimport json,os,math\nfrom pathlib import Path\nfrom collections import defaultdict\ndetect=json.load(open('graphify-out/.graphify_detect.json'))\ndocs=[f for k in ('document','paper') for f in detect['files'].get(k,[])]\nimgs=detect['files'].get('image',[])\n# group docs by top dir\nby=defaultdict(list)\nroot=detect.get('scan_root','.')\nfor f in docs:\n    rel=os.path.relpath(f,root); top=rel.split(os.sep)[0] if os.sep in rel else '(root)'\n    by[top].append(f)\nchunks=[]\ncur=[]\nfor top in sorted(by):\n    for f in by[top]:\n        cur.append(f)\n        if len(cur)>=22: chunks.append(cur); cur=[]\nif cur: chunks.append(cur)\nfor im in imgs: chunks.append([im])\nimport json as J\nJ.dump(chunks, open('graphify-out/.graphify_chunkplan.json','w'))\nprint(f'{len(docs)} docs + {len(imgs)} images -> {len(chunks)} chunks')\nfor i,c in enumerate(chunks): print(f'  chunk {i+1}: {len(c)} files, e.g. {os.path.relpath(c[0],root)}')\n\"",
   "description": "Cache check + build chunk plan for semantic extraction"
 }
 ```
@@ -8859,7 +8864,7 @@ tool_use Read
 id: toolu_01DsG3doJkvBztZQ8KwXAFNW
 ```json
 {
-  "file_path": "/Users/jobinlawrance/.claude/skills/graphify/references/extraction-spec.md"
+  "file_path": "/home/<USER>/.claude/skills/graphify/references/extraction-spec.md"
 }
 ```
 
@@ -8898,7 +8903,7 @@ tool_use Bash
 id: toolu_018TRAmhYLBxoAEPEPwkdZo1
 ```json
 {
-  "command": "cd /Users/jobinlawrance/Project/tiny\nPY=$(cat graphify-out/.graphify_python)\n\"$PY\" -c \"\nimport json\nchunks=json.load(open('graphify-out/.graphify_chunkplan.json'))\nfor i in range(5):\n    print(f'===CHUNK {i+1}===')\n    for f in chunks[i]: print(f)\n\"",
+  "command": "cd /home/<USER>/Project/tiny\nPY=$(cat graphify-out/.graphify_python)\n\"$PY\" -c \"\nimport json\nchunks=json.load(open('graphify-out/.graphify_chunkplan.json'))\nfor i in range(5):\n    print(f'===CHUNK {i+1}===')\n    for f in chunks[i]: print(f)\n\"",
   "description": "Dump the 5 doc chunk file lists"
 }
 ```
@@ -8909,118 +8914,118 @@ tool_result
 id: toolu_018TRAmhYLBxoAEPEPwkdZo1
 ```
 ===CHUNK 1===
-/Users/jobinlawrance/Project/tiny/.coderabbit.yaml
-/Users/jobinlawrance/Project/tiny/.goreleaser.yaml
-/Users/jobinlawrance/Project/tiny/CHANGELOG.md
-/Users/jobinlawrance/Project/tiny/CLAUDE.md
-/Users/jobinlawrance/Project/tiny/CONTEXT.md
-/Users/jobinlawrance/Project/tiny/HANDOFF.md
-/Users/jobinlawrance/Project/tiny/MILESTONE.md
-/Users/jobinlawrance/Project/tiny/PROMPT.md
-/Users/jobinlawrance/Project/tiny/README.md
-/Users/jobinlawrance/Project/tiny/app.yaml
-/Users/jobinlawrance/Project/tiny/codecov.yml
-/Users/jobinlawrance/Project/tiny/docker-compose.yml
-/Users/jobinlawrance/Project/tiny/.github/FUNDING.yml
-/Users/jobinlawrance/Project/tiny/.github/workflows/apt-publish.yml
-/Users/jobinlawrance/Project/tiny/.github/workflows/ci.yml
-/Users/jobinlawrance/Project/tiny/.github/workflows/goreleaser.yml
-/Users/jobinlawrance/Project/tiny/.github/workflows/helm-publish.yml
-/Users/jobinlawrance/Project/tiny/.github/workflows/release.yml
-/Users/jobinlawrance/Project/tiny/charts/tinyraven/Chart.yaml
-/Users/jobinlawrance/Project/tiny/charts/tinyraven/templates/NOTES.txt
-/Users/jobinlawrance/Project/tiny/charts/tinyraven/templates/deployment.yaml
-/Users/jobinlawrance/Project/tiny/charts/tinyraven/templates/ingress.yaml
+/home/<USER>/Project/tiny/.coderabbit.yaml
+/home/<USER>/Project/tiny/.goreleaser.yaml
+/home/<USER>/Project/tiny/CHANGELOG.md
+/home/<USER>/Project/tiny/CLAUDE.md
+/home/<USER>/Project/tiny/CONTEXT.md
+/home/<USER>/Project/tiny/HANDOFF.md
+/home/<USER>/Project/tiny/MILESTONE.md
+/home/<USER>/Project/tiny/PROMPT.md
+/home/<USER>/Project/tiny/README.md
+/home/<USER>/Project/tiny/app.yaml
+/home/<USER>/Project/tiny/codecov.yml
+/home/<USER>/Project/tiny/docker-compose.yml
+/home/<USER>/Project/tiny/.github/FUNDING.yml
+/home/<USER>/Project/tiny/.github/workflows/apt-publish.yml
+/home/<USER>/Project/tiny/.github/workflows/ci.yml
+/home/<USER>/Project/tiny/.github/workflows/goreleaser.yml
+/home/<USER>/Project/tiny/.github/workflows/helm-publish.yml
+/home/<USER>/Project/tiny/.github/workflows/release.yml
+/home/<USER>/Project/tiny/charts/tinyraven/Chart.yaml
+/home/<USER>/Project/tiny/charts/tinyraven/templates/NOTES.txt
+/home/<USER>/Project/tiny/charts/tinyraven/templates/deployment.yaml
+/home/<USER>/Project/tiny/charts/tinyraven/templates/ingress.yaml
 ===CHUNK 2===
-/Users/jobinlawrance/Project/tiny/charts/tinyraven/templates/service.yaml
-/Users/jobinlawrance/Project/tiny/charts/tinyraven/values.yaml
-/Users/jobinlawrance/Project/tiny/cloudformation/tinyraven-template.yaml
-/Users/jobinlawrance/Project/tiny/deploy/cloudflared/config.example.yml
-/Users/jobinlawrance/Project/tiny/deploy/docker-compose.prod.yml
-/Users/jobinlawrance/Project/tiny/docs/MONETIZATION.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0001-redis-only-metadata.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0002-single-tenant-workspace-equals-deployment.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0003-pipe-templating-parameterized-queries.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0004-ingestion-ack-on-buffer.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0005-opaque-tokens-redis.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0006-migration-safe-auto-breaking-refuse.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0007-branch-schema-only-explicit-lifecycle.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0008-datasource-reject-undefined-no-schema-on-write.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0009-clickhouse-26.3-lts-feature-baseline.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0010-materialized-pipes-incremental-or-refreshable.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0011-sql-readonly-via-clickhouse-profile.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0012-structural-error-parity.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0013-clickhouse-access-split-native-insert-http-query.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0014-pipe-stats-via-gatherer.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0015-rate-limit-via-httprate.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0016-deploy-lock-per-branch-redis.md
+/home/<USER>/Project/tiny/charts/tinyraven/templates/service.yaml
+/home/<USER>/Project/tiny/charts/tinyraven/values.yaml
+/home/<USER>/Project/tiny/cloudformation/tinyraven-template.yaml
+/home/<USER>/Project/tiny/deploy/cloudflared/config.example.yml
+/home/<USER>/Project/tiny/deploy/docker-compose.prod.yml
+/home/<USER>/Project/tiny/docs/MONETIZATION.md
+/home/<USER>/Project/tiny/docs/adr/0001-redis-only-metadata.md
+/home/<USER>/Project/tiny/docs/adr/0002-single-tenant-workspace-equals-deployment.md
+/home/<USER>/Project/tiny/docs/adr/0003-pipe-templating-parameterized-queries.md
+/home/<USER>/Project/tiny/docs/adr/0004-ingestion-ack-on-buffer.md
+/home/<USER>/Project/tiny/docs/adr/0005-opaque-tokens-redis.md
+/home/<USER>/Project/tiny/docs/adr/0006-migration-safe-auto-breaking-refuse.md
+/home/<USER>/Project/tiny/docs/adr/0007-branch-schema-only-explicit-lifecycle.md
+/home/<USER>/Project/tiny/docs/adr/0008-datasource-reject-undefined-no-schema-on-write.md
+/home/<USER>/Project/tiny/docs/adr/0009-clickhouse-26.3-lts-feature-baseline.md
+/home/<USER>/Project/tiny/docs/adr/0010-materialized-pipes-incremental-or-refreshable.md
+/home/<USER>/Project/tiny/docs/adr/0011-sql-readonly-via-clickhouse-profile.md
+/home/<USER>/Project/tiny/docs/adr/0012-structural-error-parity.md
+/home/<USER>/Project/tiny/docs/adr/0013-clickhouse-access-split-native-insert-http-query.md
+/home/<USER>/Project/tiny/docs/adr/0014-pipe-stats-via-gatherer.md
+/home/<USER>/Project/tiny/docs/adr/0015-rate-limit-via-httprate.md
+/home/<USER>/Project/tiny/docs/adr/0016-deploy-lock-per-branch-redis.md
 ===CHUNK 3===
-/Users/jobinlawrance/Project/tiny/docs/adr/0017-openapi-runtime-from-registry.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0018-events-quarantine-validate-in-go.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0019-connectors-via-clickhouse-engines.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0020-hot-reload-dev-only-pipes-instant-datasources-via-deploy.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0021-monetization-sustainability-only.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0022-license-apache-not-copyleft.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0023-events-request-compression.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0024-health-liveness-readiness-drain.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0025-pipe-response-format-and-limits.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0026-browser-cors-now-jwt-deferred.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0027-datasource-validation-boundary.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0028-cicd-template-pr-ephemeral-branch.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0029-api-versioning-v0-frozen-tr-namespace-native.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0030-resource-token-materialization-on-deploy.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0031-single-node-scope-no-tr-horizontal-ha.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0032-drop-kin-openapi-and-viper.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0033-single-node-and-replication-roadmap.md
-/Users/jobinlawrance/Project/tiny/docs/adr/0034-no-second-store-caching-via-mv-and-redis.md
-/Users/jobinlawrance/Project/tiny/docs/benchmark.md
-/Users/jobinlawrance/Project/tiny/docs/bi-tools.md
-/Users/jobinlawrance/Project/tiny/docs/deploy/aws.md
-/Users/jobinlawrance/Project/tiny/docs/deploy/docker.md
+/home/<USER>/Project/tiny/docs/adr/0017-openapi-runtime-from-registry.md
+/home/<USER>/Project/tiny/docs/adr/0018-events-quarantine-validate-in-go.md
+/home/<USER>/Project/tiny/docs/adr/0019-connectors-via-clickhouse-engines.md
+/home/<USER>/Project/tiny/docs/adr/0020-hot-reload-dev-only-pipes-instant-datasources-via-deploy.md
+/home/<USER>/Project/tiny/docs/adr/0021-monetization-sustainability-only.md
+/home/<USER>/Project/tiny/docs/adr/0022-license-apache-not-copyleft.md
+/home/<USER>/Project/tiny/docs/adr/0023-events-request-compression.md
+/home/<USER>/Project/tiny/docs/adr/0024-health-liveness-readiness-drain.md
+/home/<USER>/Project/tiny/docs/adr/0025-pipe-response-format-and-limits.md
+/home/<USER>/Project/tiny/docs/adr/0026-browser-cors-now-jwt-deferred.md
+/home/<USER>/Project/tiny/docs/adr/0027-datasource-validation-boundary.md
+/home/<USER>/Project/tiny/docs/adr/0028-cicd-template-pr-ephemeral-branch.md
+/home/<USER>/Project/tiny/docs/adr/0029-api-versioning-v0-frozen-tr-namespace-native.md
+/home/<USER>/Project/tiny/docs/adr/0030-resource-token-materialization-on-deploy.md
+/home/<USER>/Project/tiny/docs/adr/0031-single-node-scope-no-tr-horizontal-ha.md
+/home/<USER>/Project/tiny/docs/adr/0032-drop-kin-openapi-and-viper.md
+/home/<USER>/Project/tiny/docs/adr/0033-single-node-and-replication-roadmap.md
+/home/<USER>/Project/tiny/docs/adr/0034-no-second-store-caching-via-mv-and-redis.md
+/home/<USER>/Project/tiny/docs/benchmark.md
+/home/<USER>/Project/tiny/docs/bi-tools.md
+/home/<USER>/Project/tiny/docs/deploy/aws.md
+/home/<USER>/Project/tiny/docs/deploy/docker.md
 ===CHUNK 4===
-/Users/jobinlawrance/Project/tiny/docs/deploy/dokploy.md
-/Users/jobinlawrance/Project/tiny/docs/deploy/heroku.md
-/Users/jobinlawrance/Project/tiny/docs/deploy/kubernetes.md
-/Users/jobinlawrance/Project/tiny/docs/deploy/railway.md
-/Users/jobinlawrance/Project/tiny/docs/install.md
-/Users/jobinlawrance/Project/tiny/docs/migrate-from-tinybird.md
-/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md
-/Users/jobinlawrance/Project/tiny/examples/connectors/README.md
-/Users/jobinlawrance/Project/tiny/examples/dashboards-demo/README.md
-/Users/jobinlawrance/Project/tiny/files (1)/01-p2p-stack.md
-/Users/jobinlawrance/Project/tiny/files (1)/02-identity-auth.md
-/Users/jobinlawrance/Project/tiny/files (1)/03-content-media.md
-/Users/jobinlawrance/Project/tiny/files (1)/04-peer-scoring.md
-/Users/jobinlawrance/Project/tiny/files (1)/05-security-features.md
-/Users/jobinlawrance/Project/tiny/files (1)/06-sync-backup.md
-/Users/jobinlawrance/Project/tiny/files (1)/07-payments.md
-/Users/jobinlawrance/Project/tiny/files (1)/08-database-setup.md
-/Users/jobinlawrance/Project/tiny/files (1)/09-seeder-incentives.md
-/Users/jobinlawrance/Project/tiny/files (1)/10-tv-client.md
-/Users/jobinlawrance/Project/tiny/files (1)/11-tether-risk.md
-/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md
-/Users/jobinlawrance/Project/tiny/files (1)/README.md
+/home/<USER>/Project/tiny/docs/deploy/dokploy.md
+/home/<USER>/Project/tiny/docs/deploy/heroku.md
+/home/<USER>/Project/tiny/docs/deploy/kubernetes.md
+/home/<USER>/Project/tiny/docs/deploy/railway.md
+/home/<USER>/Project/tiny/docs/install.md
+/home/<USER>/Project/tiny/docs/migrate-from-tinybird.md
+/home/<USER>/Project/tiny/docs/parity-gaps.md
+/home/<USER>/Project/tiny/examples/connectors/README.md
+/home/<USER>/Project/tiny/examples/dashboards-demo/README.md
+/home/<USER>/Project/tiny/files (1)/01-p2p-stack.md
+/home/<USER>/Project/tiny/files (1)/02-identity-auth.md
+/home/<USER>/Project/tiny/files (1)/03-content-media.md
+/home/<USER>/Project/tiny/files (1)/04-peer-scoring.md
+/home/<USER>/Project/tiny/files (1)/05-security-features.md
+/home/<USER>/Project/tiny/files (1)/06-sync-backup.md
+/home/<USER>/Project/tiny/files (1)/07-payments.md
+/home/<USER>/Project/tiny/files (1)/08-database-setup.md
+/home/<USER>/Project/tiny/files (1)/09-seeder-incentives.md
+/home/<USER>/Project/tiny/files (1)/10-tv-client.md
+/home/<USER>/Project/tiny/files (1)/11-tether-risk.md
+/home/<USER>/Project/tiny/files (1)/CONTEXT.md
+/home/<USER>/Project/tiny/files (1)/README.md
 ===CHUNK 5===
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0001-self-custody-clearkey-no-hardware-drm.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0002-compose-desktop-libvlc-drop-electron.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0003-bare-worklet-embedding-per-platform.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0004-ownership-model-not-rental.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0005-neutral-infrastructure-user-hosted.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0006-private-discovery-topics-and-pairing.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0007-single-crypto-stack-libsodium-in-worklet.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0008-central-catalog-mesh-contributed.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0009-peer-selection-proximity-uplink.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0010-operator-power-deindex-only-no-backdoor.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0011-multi-device-storage-pool.md
-/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0012-no-device-fingerprinting.md
-/Users/jobinlawrance/Project/tiny/files (1)/ravencloak-bip39-issue.md
-/Users/jobinlawrance/Project/tiny/files (1)/viewrr-pear-architecture.md
-/Users/jobinlawrance/Project/tiny/internal/api/docs_ui.html
-/Users/jobinlawrance/Project/tiny/site/AGENTS.md
-/Users/jobinlawrance/Project/tiny/site/CLAUDE.md
-/Users/jobinlawrance/Project/tiny/site/README.md
-/Users/jobinlawrance/Project/tiny/templates/ci/README.md
-/Users/jobinlawrance/Project/tiny/templates/ci/github-actions.yml
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0001-self-custody-clearkey-no-hardware-drm.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0002-compose-desktop-libvlc-drop-electron.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0003-bare-worklet-embedding-per-platform.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0004-ownership-model-not-rental.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0005-neutral-infrastructure-user-hosted.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0006-private-discovery-topics-and-pairing.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0007-single-crypto-stack-libsodium-in-worklet.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0008-central-catalog-mesh-contributed.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0009-peer-selection-proximity-uplink.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0010-operator-power-deindex-only-no-backdoor.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0011-multi-device-storage-pool.md
+/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0012-no-device-fingerprinting.md
+/home/<USER>/Project/tiny/files (1)/ravencloak-bip39-issue.md
+/home/<USER>/Project/tiny/files (1)/viewrr-pear-architecture.md
+/home/<USER>/Project/tiny/internal/api/docs_ui.html
+/home/<USER>/Project/tiny/site/AGENTS.md
+/home/<USER>/Project/tiny/site/CLAUDE.md
+/home/<USER>/Project/tiny/site/README.md
+/home/<USER>/Project/tiny/templates/ci/README.md
+/home/<USER>/Project/tiny/templates/ci/github-actions.yml
 ```
 
 > AGENT
@@ -9035,7 +9040,7 @@ id: toolu_01M1xeLfdaUHoxxC8t7pMwPY
 {
   "description": "graphify extract chunk 1",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 1 of 5):\n/Users/jobinlawrance/Project/tiny/.coderabbit.yaml\n/Users/jobinlawrance/Project/tiny/.goreleaser.yaml\n/Users/jobinlawrance/Project/tiny/CHANGELOG.md\n/Users/jobinlawrance/Project/tiny/CLAUDE.md\n/Users/jobinlawrance/Project/tiny/CONTEXT.md\n/Users/jobinlawrance/Project/tiny/HANDOFF.md\n/Users/jobinlawrance/Project/tiny/MILESTONE.md\n/Users/jobinlawrance/Project/tiny/PROMPT.md\n/Users/jobinlawrance/Project/tiny/README.md\n/Users/jobinlawrance/Project/tiny/app.yaml\n/Users/jobinlawrance/Project/tiny/codecov.yml\n/Users/jobinlawrance/Project/tiny/docker-compose.yml\n/Users/jobinlawrance/Project/tiny/.github/FUNDING.yml\n/Users/jobinlawrance/Project/tiny/.github/workflows/apt-publish.yml\n/Users/jobinlawrance/Project/tiny/.github/workflows/ci.yml\n/Users/jobinlawrance/Project/tiny/.github/workflows/goreleaser.yml\n/Users/jobinlawrance/Project/tiny/.github/workflows/helm-publish.yml\n/Users/jobinlawrance/Project/tiny/.github/workflows/release.yml\n/Users/jobinlawrance/Project/tiny/charts/tinyraven/Chart.yaml\n/Users/jobinlawrance/Project/tiny/charts/tinyraven/templates/NOTES.txt\n/Users/jobinlawrance/Project/tiny/charts/tinyraven/templates/deployment.yaml\n/Users/jobinlawrance/Project/tiny/charts/tinyraven/templates/ingress.yaml\n\nRules:\n- EXTRACTED: relationship explicit in source. INFERRED: reasonable inference. AMBIGUOUS: uncertain — flag, don't omit.\n- Doc files: extract named concepts, entities, citations. For rationale (WHY/trade-offs/intent): store as a `rationale` attribute on the relevant concept node — do NOT create a separate rationale node. Only create a node for a genuine named entity/concept. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- Semantic similarity: add `semantically_similar_to` (INFERRED, confidence 0.6-0.95) only for genuinely non-obvious cross-cutting matches.\n- Hyperedges (top-level `hyperedges` array): only when 3+ nodes share a concept/flow beyond pairwise edges. Max 3.\n- If a file has YAML frontmatter, copy source_url/captured_at/author/contributor onto every node from it.\n- confidence_score REQUIRED on every edge: EXTRACTED=1.0; INFERRED pick ONE of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]` only. Format `{parent_dir}_{filename_stem}_{entity}` (immediate parent dir + filename stem + symbol, normalized). Top-level files (no parent dir) use just filename stem […]
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 1 of 5):\n/home/<USER>/Project/tiny/.coderabbit.yaml\n/home/<USER>/Project/tiny/.goreleaser.yaml\n/home/<USER>/Project/tiny/CHANGELOG.md\n/home/<USER>/Project/tiny/CLAUDE.md\n/home/<USER>/Project/tiny/CONTEXT.md\n/home/<USER>/Project/tiny/HANDOFF.md\n/home/<USER>/Project/tiny/MILESTONE.md\n/home/<USER>/Project/tiny/PROMPT.md\n/home/<USER>/Project/tiny/README.md\n/home/<USER>/Project/tiny/app.yaml\n/home/<USER>/Project/tiny/codecov.yml\n/home/<USER>/Project/tiny/docker-compose.yml\n/home/<USER>/Project/tiny/.github/FUNDING.yml\n/home/<USER>/Project/tiny/.github/workflows/apt-publish.yml\n/home/<USER>/Project/tiny/.github/workflows/ci.yml\n/home/<USER>/Project/tiny/.github/workflows/goreleaser.yml\n/home/<USER>/Project/tiny/.github/workflows/helm-publish.yml\n/home/<USER>/Project/tiny/.github/workflows/release.yml\n/home/<USER>/Project/tiny/charts/tinyraven/Chart.yaml\n/home/<USER>/Project/tiny/charts/tinyraven/templates/NOTES.txt\n/home/<USER>/Project/tiny/charts/tinyraven/templates/deployment.yaml\n/home/<USER>/Project/tiny/charts/tinyraven/templates/ingress.yaml\n\nRules:\n- EXTRACTED: relationship explicit in source. INFERRED: reasonable inference. AMBIGUOUS: uncertain — flag, don't omit.\n- Doc files: extract named concepts, entities, citations. For rationale (WHY/trade-offs/intent): store as a `rationale` attribute on the relevant concept node — do NOT create a separate rationale node. Only create a node for a genuine named entity/concept. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- Semantic similarity: add `semantically_similar_to` (INFERRED, confidence 0.6-0.95) only for genuinely non-obvious cross-cutting matches.\n- Hyperedges (top-level `hyperedges` array): only when 3+ nodes share a concept/flow beyond pairwise edges. Max 3.\n- If a file has YAML frontmatter, copy source_url/captured_at/author/contributor onto every node from it.\n- confidence_score REQUIRED on every edge: EXTRACTED=1.0; INFERRED pick ONE of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]` only. Format `{parent_dir}_{filename_stem}_{entity}` (immediate parent dir + filename stem + symbol, normalized). Top-level files (no parent dir) use just filename stem […]
 
 > TOOL
 
@@ -9058,7 +9063,7 @@ id: toolu_01PSCFpyLCv8NBaLCeZ9boS8
 {
   "description": "graphify extract chunk 2",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 2 of 5):\n/Users/jobinlawrance/Project/tiny/charts/tinyraven/templates/service.yaml\n/Users/jobinlawrance/Project/tiny/charts/tinyraven/values.yaml\n/Users/jobinlawrance/Project/tiny/cloudformation/tinyraven-template.yaml\n/Users/jobinlawrance/Project/tiny/deploy/cloudflared/config.example.yml\n/Users/jobinlawrance/Project/tiny/deploy/docker-compose.prod.yml\n/Users/jobinlawrance/Project/tiny/docs/MONETIZATION.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0001-redis-only-metadata.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0002-single-tenant-workspace-equals-deployment.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0003-pipe-templating-parameterized-queries.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0004-ingestion-ack-on-buffer.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0005-opaque-tokens-redis.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0006-migration-safe-auto-breaking-refuse.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0007-branch-schema-only-explicit-lifecycle.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0008-datasource-reject-undefined-no-schema-on-write.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0009-clickhouse-26.3-lts-feature-baseline.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0010-materialized-pipes-incremental-or-refreshable.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0011-sql-readonly-via-clickhouse-profile.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0012-structural-error-parity.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0013-clickhouse-access-split-native-insert-http-query.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0014-pipe-stats-via-gatherer.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0015-rate-limit-via-httprate.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0016-deploy-lock-per-branch-redis.md\n\nRules:\n- EXTRACTED: explicit in source. INFERRED: reasonable inference. AMBIGUOUS: uncertain — flag, don't omit.\n- Doc/ADR files: extract named concepts, decisions, entities. Store WHY/trade-off/intent as a `rationale` attribute on the concept node — NOT a separate node. Only real named entities/concepts get nodes. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- ADRs cross-reference each other (\"see ADR 000X\") — add `references`/`cites` edges (EXTRACTED) between ADR concept nodes when explicit.\n- Semantic similarity: `semantically_similar_to` (INFERRED 0.6-0.95) only for genuinely non-obvious cross-cutting matches.\n- Hyperedges (top-level array): only when 3+ nodes share a concept/flow beyond pairwise. Max 3.\n- confidence_score REQUIRED: EXTRACTED=1.0; INFERRED one of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]`. Format `{parent_dir}_{filename_stem}_{entity}`. Deterministic from label — NEVER append chunk/sequence suffixes.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"...\",\"file_type\":\"document|concept|rationale\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"id\",\"target\":\"id\",\"relation\":\"references|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|cites\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"...\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"relative/path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nUse relative paths (strip /Users/jobinlawrance/Project/tiny/) in source_file. Write the JSON with the Write tool to exactly:\n/Users/jobinlawrance/Project/tiny/graphify-out/.graphify_chunk_02.json"
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 2 of 5):\n/home/<USER>/Project/tiny/charts/tinyraven/templates/service.yaml\n/home/<USER>/Project/tiny/charts/tinyraven/values.yaml\n/home/<USER>/Project/tiny/cloudformation/tinyraven-template.yaml\n/home/<USER>/Project/tiny/deploy/cloudflared/config.example.yml\n/home/<USER>/Project/tiny/deploy/docker-compose.prod.yml\n/home/<USER>/Project/tiny/docs/MONETIZATION.md\n/home/<USER>/Project/tiny/docs/adr/0001-redis-only-metadata.md\n/home/<USER>/Project/tiny/docs/adr/0002-single-tenant-workspace-equals-deployment.md\n/home/<USER>/Project/tiny/docs/adr/0003-pipe-templating-parameterized-queries.md\n/home/<USER>/Project/tiny/docs/adr/0004-ingestion-ack-on-buffer.md\n/home/<USER>/Project/tiny/docs/adr/0005-opaque-tokens-redis.md\n/home/<USER>/Project/tiny/docs/adr/0006-migration-safe-auto-breaking-refuse.md\n/home/<USER>/Project/tiny/docs/adr/0007-branch-schema-only-explicit-lifecycle.md\n/home/<USER>/Project/tiny/docs/adr/0008-datasource-reject-undefined-no-schema-on-write.md\n/home/<USER>/Project/tiny/docs/adr/0009-clickhouse-26.3-lts-feature-baseline.md\n/home/<USER>/Project/tiny/docs/adr/0010-materialized-pipes-incremental-or-refreshable.md\n/home/<USER>/Project/tiny/docs/adr/0011-sql-readonly-via-clickhouse-profile.md\n/home/<USER>/Project/tiny/docs/adr/0012-structural-error-parity.md\n/home/<USER>/Project/tiny/docs/adr/0013-clickhouse-access-split-native-insert-http-query.md\n/home/<USER>/Project/tiny/docs/adr/0014-pipe-stats-via-gatherer.md\n/home/<USER>/Project/tiny/docs/adr/0015-rate-limit-via-httprate.md\n/home/<USER>/Project/tiny/docs/adr/0016-deploy-lock-per-branch-redis.md\n\nRules:\n- EXTRACTED: explicit in source. INFERRED: reasonable inference. AMBIGUOUS: uncertain — flag, don't omit.\n- Doc/ADR files: extract named concepts, decisions, entities. Store WHY/trade-off/intent as a `rationale` attribute on the concept node — NOT a separate node. Only real named entities/concepts get nodes. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- ADRs cross-reference each other (\"see ADR 000X\") — add `references`/`cites` edges (EXTRACTED) between ADR concept nodes when explicit.\n- Semantic similarity: `semantically_similar_to` (INFERRED 0.6-0.95) only for genuinely non-obvious cross-cutting matches.\n- Hyperedges (top-level array): only when 3+ nodes share a concept/flow beyond pairwise. Max 3.\n- confidence_score REQUIRED: EXTRACTED=1.0; INFERRED one of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]`. Format `{parent_dir}_{filename_stem}_{entity}`. Deterministic from label — NEVER append chunk/sequence suffixes.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"...\",\"file_type\":\"document|concept|rationale\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"id\",\"target\":\"id\",\"relation\":\"references|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|cites\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"...\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"relative/path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nUse relative paths (strip /home/<USER>/Project/tiny/) in source_file. Write the JSON with the Write tool to exactly:\n/home/<USER>/Project/tiny/graphify-out/.graphify_chunk_02.json"
 }
 ```
 
@@ -9083,7 +9088,7 @@ id: toolu_01Nh84KAc8U6NmRm8vfpGbLJ
 {
   "description": "graphify extract chunk 3",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 3 of 5):\n/Users/jobinlawrance/Project/tiny/docs/adr/0017-openapi-runtime-from-registry.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0018-events-quarantine-validate-in-go.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0019-connectors-via-clickhouse-engines.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0020-hot-reload-dev-only-pipes-instant-datasources-via-deploy.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0021-monetization-sustainability-only.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0022-license-apache-not-copyleft.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0023-events-request-compression.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0024-health-liveness-readiness-drain.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0025-pipe-response-format-and-limits.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0026-browser-cors-now-jwt-deferred.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0027-datasource-validation-boundary.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0028-cicd-template-pr-ephemeral-branch.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0029-api-versioning-v0-frozen-tr-namespace-native.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0030-resource-token-materialization-on-deploy.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0031-single-node-scope-no-tr-horizontal-ha.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0032-drop-kin-openapi-and-viper.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0033-single-node-and-replication-roadmap.md\n/Users/jobinlawrance/Project/tiny/docs/adr/0034-no-second-store-caching-via-mv-and-redis.md\n/Users/jobinlawrance/Project/tiny/docs/benchmark.md\n/Users/jobinlawrance/Project/tiny/docs/bi-tools.md\n/Users/jobinlawrance/Project/tiny/docs/deploy/aws.md\n/Users/jobinlawrance/Project/tiny/docs/deploy/docker.md\n\nRules:\n- EXTRACTED / INFERRED / AMBIGUOUS as usual (flag uncertain, don't omit).\n- Doc/ADR files: named concepts/decisions/entities; WHY/trade-off as a `rationale` attribute on the concept node, NOT a separate node. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- Explicit ADR cross-refs (\"see ADR 000X\") → `references`/`cites` edges (EXTRACTED).\n- `semantically_similar_to` (INFERRED 0.6-0.95) only for non-obvious cross-cutting matches.\n- Hyperedges (top-level array) only when 3+ nodes share a concept/flow beyond pairwise. Max 3.\n- confidence_score REQUIRED: EXTRACTED=1.0; INFERRED one of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]`, `{parent_dir}_{filename_stem}_{entity}`, deterministic, NEVER chunk/sequence suffixes.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"...\",\"file_type\":\"document|concept|rationale\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"id\",\"target\":\"id\",\"relation\":\"references|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|cites\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"...\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"relative/path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nUse relative paths (strip /Users/jobinlawrance/Project/tiny/) in source_file. Write the JSON with the Write tool to exactly:\n/Users/jobinlawrance/Project/tiny/graphify-out/.graphify_chunk_03.json"
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 3 of 5):\n/home/<USER>/Project/tiny/docs/adr/0017-openapi-runtime-from-registry.md\n/home/<USER>/Project/tiny/docs/adr/0018-events-quarantine-validate-in-go.md\n/home/<USER>/Project/tiny/docs/adr/0019-connectors-via-clickhouse-engines.md\n/home/<USER>/Project/tiny/docs/adr/0020-hot-reload-dev-only-pipes-instant-datasources-via-deploy.md\n/home/<USER>/Project/tiny/docs/adr/0021-monetization-sustainability-only.md\n/home/<USER>/Project/tiny/docs/adr/0022-license-apache-not-copyleft.md\n/home/<USER>/Project/tiny/docs/adr/0023-events-request-compression.md\n/home/<USER>/Project/tiny/docs/adr/0024-health-liveness-readiness-drain.md\n/home/<USER>/Project/tiny/docs/adr/0025-pipe-response-format-and-limits.md\n/home/<USER>/Project/tiny/docs/adr/0026-browser-cors-now-jwt-deferred.md\n/home/<USER>/Project/tiny/docs/adr/0027-datasource-validation-boundary.md\n/home/<USER>/Project/tiny/docs/adr/0028-cicd-template-pr-ephemeral-branch.md\n/home/<USER>/Project/tiny/docs/adr/0029-api-versioning-v0-frozen-tr-namespace-native.md\n/home/<USER>/Project/tiny/docs/adr/0030-resource-token-materialization-on-deploy.md\n/home/<USER>/Project/tiny/docs/adr/0031-single-node-scope-no-tr-horizontal-ha.md\n/home/<USER>/Project/tiny/docs/adr/0032-drop-kin-openapi-and-viper.md\n/home/<USER>/Project/tiny/docs/adr/0033-single-node-and-replication-roadmap.md\n/home/<USER>/Project/tiny/docs/adr/0034-no-second-store-caching-via-mv-and-redis.md\n/home/<USER>/Project/tiny/docs/benchmark.md\n/home/<USER>/Project/tiny/docs/bi-tools.md\n/home/<USER>/Project/tiny/docs/deploy/aws.md\n/home/<USER>/Project/tiny/docs/deploy/docker.md\n\nRules:\n- EXTRACTED / INFERRED / AMBIGUOUS as usual (flag uncertain, don't omit).\n- Doc/ADR files: named concepts/decisions/entities; WHY/trade-off as a `rationale` attribute on the concept node, NOT a separate node. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- Explicit ADR cross-refs (\"see ADR 000X\") → `references`/`cites` edges (EXTRACTED).\n- `semantically_similar_to` (INFERRED 0.6-0.95) only for non-obvious cross-cutting matches.\n- Hyperedges (top-level array) only when 3+ nodes share a concept/flow beyond pairwise. Max 3.\n- confidence_score REQUIRED: EXTRACTED=1.0; INFERRED one of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]`, `{parent_dir}_{filename_stem}_{entity}`, deterministic, NEVER chunk/sequence suffixes.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"...\",\"file_type\":\"document|concept|rationale\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"id\",\"target\":\"id\",\"relation\":\"references|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|cites\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"...\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"relative/path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nUse relative paths (strip /home/<USER>/Project/tiny/) in source_file. Write the JSON with the Write tool to exactly:\n/home/<USER>/Project/tiny/graphify-out/.graphify_chunk_03.json"
 }
 ```
 
@@ -9108,7 +9113,7 @@ id: toolu_01F9oyEbmXuVhCvKtAGGvkHB
 {
   "description": "graphify extract chunk 4",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 4 of 5) — TinyRaven deploy/migration docs + the START of the viewrr P2P design corpus:\n/Users/jobinlawrance/Project/tiny/docs/deploy/dokploy.md\n/Users/jobinlawrance/Project/tiny/docs/deploy/heroku.md\n/Users/jobinlawrance/Project/tiny/docs/deploy/kubernetes.md\n/Users/jobinlawrance/Project/tiny/docs/deploy/railway.md\n/Users/jobinlawrance/Project/tiny/docs/install.md\n/Users/jobinlawrance/Project/tiny/docs/migrate-from-tinybird.md\n/Users/jobinlawrance/Project/tiny/docs/parity-gaps.md\n/Users/jobinlawrance/Project/tiny/examples/connectors/README.md\n/Users/jobinlawrance/Project/tiny/examples/dashboards-demo/README.md\n/Users/jobinlawrance/Project/tiny/files (1)/01-p2p-stack.md\n/Users/jobinlawrance/Project/tiny/files (1)/02-identity-auth.md\n/Users/jobinlawrance/Project/tiny/files (1)/03-content-media.md\n/Users/jobinlawrance/Project/tiny/files (1)/04-peer-scoring.md\n/Users/jobinlawrance/Project/tiny/files (1)/05-security-features.md\n/Users/jobinlawrance/Project/tiny/files (1)/06-sync-backup.md\n/Users/jobinlawrance/Project/tiny/files (1)/07-payments.md\n/Users/jobinlawrance/Project/tiny/files (1)/08-database-setup.md\n/Users/jobinlawrance/Project/tiny/files (1)/09-seeder-incentives.md\n/Users/jobinlawrance/Project/tiny/files (1)/10-tv-client.md\n/Users/jobinlawrance/Project/tiny/files (1)/11-tether-risk.md\n/Users/jobinlawrance/Project/tiny/files (1)/CONTEXT.md\n/Users/jobinlawrance/Project/tiny/files (1)/README.md\n\nRules:\n- EXTRACTED / INFERRED / AMBIGUOUS (flag uncertain, don't omit). Note: this chunk mixes TinyRaven (analytics backend) and viewrr (P2P SVOD) — keep concepts distinct but add cross-cutting `semantically_similar_to` edges where the two genuinely solve the same problem.\n- Doc files: named concepts/entities; WHY/trade-off as a `rationale` attribute on the concept node, NOT a separate node. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- `semantically_similar_to` (INFERRED 0.6-0.95) only for non-obvious cross-cutting matches.\n- Hyperedges (top-level array) only when 3+ nodes share a concept/flow beyond pairwise. Max 3.\n- confidence_score REQUIRED: EXTRACTED=1.0; INFERRED one of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]`, `{parent_dir}_{filename_stem}_{entity}` (for `files (1)/01-p2p-stack.md` the parent dir normalizes to `files_1`), deterministic, NEVER chunk/sequence suffixes.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"...\",\"file_type\":\"document|concept|rationale\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"id\",\"target\":\"id\",\"relation\":\"references|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|cites\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"...\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"relative/path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nUse relative […]
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 4 of 5) — TinyRaven deploy/migration docs + the START of the viewrr P2P design corpus:\n/home/<USER>/Project/tiny/docs/deploy/dokploy.md\n/home/<USER>/Project/tiny/docs/deploy/heroku.md\n/home/<USER>/Project/tiny/docs/deploy/kubernetes.md\n/home/<USER>/Project/tiny/docs/deploy/railway.md\n/home/<USER>/Project/tiny/docs/install.md\n/home/<USER>/Project/tiny/docs/migrate-from-tinybird.md\n/home/<USER>/Project/tiny/docs/parity-gaps.md\n/home/<USER>/Project/tiny/examples/connectors/README.md\n/home/<USER>/Project/tiny/examples/dashboards-demo/README.md\n/home/<USER>/Project/tiny/files (1)/01-p2p-stack.md\n/home/<USER>/Project/tiny/files (1)/02-identity-auth.md\n/home/<USER>/Project/tiny/files (1)/03-content-media.md\n/home/<USER>/Project/tiny/files (1)/04-peer-scoring.md\n/home/<USER>/Project/tiny/files (1)/05-security-features.md\n/home/<USER>/Project/tiny/files (1)/06-sync-backup.md\n/home/<USER>/Project/tiny/files (1)/07-payments.md\n/home/<USER>/Project/tiny/files (1)/08-database-setup.md\n/home/<USER>/Project/tiny/files (1)/09-seeder-incentives.md\n/home/<USER>/Project/tiny/files (1)/10-tv-client.md\n/home/<USER>/Project/tiny/files (1)/11-tether-risk.md\n/home/<USER>/Project/tiny/files (1)/CONTEXT.md\n/home/<USER>/Project/tiny/files (1)/README.md\n\nRules:\n- EXTRACTED / INFERRED / AMBIGUOUS (flag uncertain, don't omit). Note: this chunk mixes TinyRaven (analytics backend) and viewrr (P2P SVOD) — keep concepts distinct but add cross-cutting `semantically_similar_to` edges where the two genuinely solve the same problem.\n- Doc files: named concepts/entities; WHY/trade-off as a `rationale` attribute on the concept node, NOT a separate node. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- `semantically_similar_to` (INFERRED 0.6-0.95) only for non-obvious cross-cutting matches.\n- Hyperedges (top-level array) only when 3+ nodes share a concept/flow beyond pairwise. Max 3.\n- confidence_score REQUIRED: EXTRACTED=1.0; INFERRED one of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]`, `{parent_dir}_{filename_stem}_{entity}` (for `files (1)/01-p2p-stack.md` the parent dir normalizes to `files_1`), deterministic, NEVER chunk/sequence suffixes.\n\nSchema (exact):\n{\"nodes\":[{\"id\":\"...\",\"label\":\"...\",\"file_type\":\"document|concept|rationale\",\"source_file\":\"relative/path\",\"source_location\":null,\"source_url\":null,\"captured_at\":null,\"author\":null,\"contributor\":null}],\"edges\":[{\"source\":\"id\",\"target\":\"id\",\"relation\":\"references|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for|cites\",\"confidence\":\"EXTRACTED|INFERRED|AMBIGUOUS\",\"confidence_score\":1.0,\"source_file\":\"relative/path\",\"source_location\":null,\"weight\":1.0}],\"hyperedges\":[{\"id\":\"snake_id\",\"label\":\"...\",\"nodes\":[\"id1\",\"id2\",\"id3\"],\"relation\":\"participate_in|form\",\"confidence\":\"INFERRED\",\"confidence_score\":0.75,\"source_file\":\"relative/path\"}],\"input_tokens\":0,\"output_tokens\":0}\n\nUse relative […]
 
 > TOOL
 
@@ -9131,7 +9136,7 @@ id: toolu_01PsawLAEK3VbvgPha8sEqgR
 {
   "description": "graphify extract chunk 5",
   "subagent_type": "general-purpose",
-  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 5 of 5) — the viewrr P2P re-architecture ADRs + architecture:\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0001-self-custody-clearkey-no-hardware-drm.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0002-compose-desktop-libvlc-drop-electron.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0003-bare-worklet-embedding-per-platform.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0004-ownership-model-not-rental.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0005-neutral-infrastructure-user-hosted.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0006-private-discovery-topics-and-pairing.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0007-single-crypto-stack-libsodium-in-worklet.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0008-central-catalog-mesh-contributed.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0009-peer-selection-proximity-uplink.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0010-operator-power-deindex-only-no-backdoor.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0011-multi-device-storage-pool.md\n/Users/jobinlawrance/Project/tiny/files (1)/docs/adr/p2p-0012-no-device-fingerprinting.md\n/Users/jobinlawrance/Project/tiny/files (1)/ravencloak-bip39-issue.md\n/Users/jobinlawrance/Project/tiny/files (1)/viewrr-pear-architecture.md\n/Users/jobinlawrance/Project/tiny/internal/api/docs_ui.html\n/Users/jobinlawrance/Project/tiny/site/AGENTS.md\n/Users/jobinlawrance/Project/tiny/site/CLAUDE.md\n/Users/jobinlawrance/Project/tiny/site/README.md\n/Users/jobinlawrance/Project/tiny/templates/ci/README.md\n/Users/jobinlawrance/Project/tiny/templates/ci/github-actions.yml\n\nRules:\n- EXTRACTED / INFERRED / AMBIGUOUS (flag uncertain, don't omit).\n- These p2p-ADRs cross-reference each other heavily (supersedes, \"see p2p-000X\") — add `references`/`cites` edges (EXTRACTED) between the ADR concept nodes when explicit. e.g. p2p-0008 supersedes p2p-0005; p2p-0002 references p2p-0003/0007.\n- Doc/ADR files: named concepts/decisions; WHY/trade-off as a `rationale` attribute on the concept node, NOT a separate node. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- `semantically_similar_to` (INFERRED 0.6-0.95) only for non-obvious cross-cutting matches.\n- Hyperedges (top-level array) only when 3+ nodes share a concept/flow beyond pairwise (e.g. the self-custody-key cluster: identity + clear-key + single-crypto-stack). Max 3.\n- confidence_score REQUIRED: EXTRACTED=1.0; INFERRED one of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]`, `{parent_dir}_{filename_stem}_{entity}` (for the p2p ADRs the parent dir normalizes to `adr`), […]
+  "prompt": "You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment. Output ONLY valid JSON matching the schema below — write it with the Write tool to the exact absolute path given; no explanation.\n\nFiles (chunk 5 of 5) — the viewrr P2P re-architecture ADRs + architecture:\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0001-self-custody-clearkey-no-hardware-drm.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0002-compose-desktop-libvlc-drop-electron.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0003-bare-worklet-embedding-per-platform.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0004-ownership-model-not-rental.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0005-neutral-infrastructure-user-hosted.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0006-private-discovery-topics-and-pairing.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0007-single-crypto-stack-libsodium-in-worklet.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0008-central-catalog-mesh-contributed.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0009-peer-selection-proximity-uplink.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0010-operator-power-deindex-only-no-backdoor.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0011-multi-device-storage-pool.md\n/home/<USER>/Project/tiny/files (1)/docs/adr/p2p-0012-no-device-fingerprinting.md\n/home/<USER>/Project/tiny/files (1)/ravencloak-bip39-issue.md\n/home/<USER>/Project/tiny/files (1)/viewrr-pear-architecture.md\n/home/<USER>/Project/tiny/internal/api/docs_ui.html\n/home/<USER>/Project/tiny/site/AGENTS.md\n/home/<USER>/Project/tiny/site/CLAUDE.md\n/home/<USER>/Project/tiny/site/README.md\n/home/<USER>/Project/tiny/templates/ci/README.md\n/home/<USER>/Project/tiny/templates/ci/github-actions.yml\n\nRules:\n- EXTRACTED / INFERRED / AMBIGUOUS (flag uncertain, don't omit).\n- These p2p-ADRs cross-reference each other heavily (supersedes, \"see p2p-000X\") — add `references`/`cites` edges (EXTRACTED) between the ADR concept nodes when explicit. e.g. p2p-0008 supersedes p2p-0005; p2p-0002 references p2p-0003/0007.\n- Doc/ADR files: named concepts/decisions; WHY/trade-off as a `rationale` attribute on the concept node, NOT a separate node. `file_type` MUST be one of: `code`, `document`, `paper`, `image`, `rationale`, `concept`.\n- `semantically_similar_to` (INFERRED 0.6-0.95) only for non-obvious cross-cutting matches.\n- Hyperedges (top-level array) only when 3+ nodes share a concept/flow beyond pairwise (e.g. the self-custody-key cluster: identity + clear-key + single-crypto-stack). Max 3.\n- confidence_score REQUIRED: EXTRACTED=1.0; INFERRED one of {0.95,0.85,0.75,0.65,0.55}; AMBIGUOUS=0.1-0.3. Never 0.5.\n- Node ID: lowercase `[a-z0-9_]`, `{parent_dir}_{filename_stem}_{entity}` (for the p2p ADRs the parent dir normalizes to `adr`), […]
 
 > TOOL
 

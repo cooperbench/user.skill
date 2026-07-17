@@ -39,7 +39,7 @@ id: toolu_01Xjko4sRi9cpdb2Jy7AjUqH
 ```json
 {
   "pattern": "abbr|syntax.highlight|zsh-syntax",
-  "path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix",
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix",
   "output_mode": "content"
 }
 ```
@@ -59,20 +59,20 @@ id: toolu_01Ssyuzsq8cF7B4ZWUvTRRrk
 tool_result
 id: toolu_01Ssyuzsq8cF7B4ZWUvTRRrk
 ```
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gh-q.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/jb.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gwt.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/g.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/cd-up.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/oh-my-zsh.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/claude-zai.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/ct.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/dev.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/nfi.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/difit-cmux.zsh
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/README.md
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc
-/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gh-q.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/jb.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gwt.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/g.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/cd-up.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/oh-my-zsh.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/claude-zai.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/ct.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/dev.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/nfi.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/difit-cmux.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/README.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh
 ```
 
 > TOOL
@@ -123,7 +123,7 @@ tool_use Read
 id: toolu_01X1UuRadFLFYzMWRSzPeaiT
 ```json
 {
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
 }
 ```
 
@@ -218,7 +218,7 @@ tool_use Read
 id: toolu_01GfnXARXJZCEZevNUmCMY8J
 ```json
 {
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh"
 }
 ```
 
@@ -287,7 +287,7 @@ id: toolu_01PKqmtgm5SSqAEUryMpU22B
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc",
   "old_string": "# zsh plugins\nsource ~/.zsh/plugins/zsh-abbr/zsh-abbr.plugin.zsh\nsource ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh\nsource ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh",
   "new_string": "# zsh plugins\nZSH_HIGHLIGHT_HIGHLIGHTERS+=(regexp)\nsource ~/.zsh/plugins/zsh-abbr/zsh-abbr.plugin.zsh\nsource ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh\nsource ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 }
@@ -298,7 +298,7 @@ id: toolu_01PKqmtgm5SSqAEUryMpU22B
 tool_result
 id: toolu_01PKqmtgm5SSqAEUryMpU22B
 ```
-The file /home/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc has been updated successfully.
 ```
 
 > AGENT

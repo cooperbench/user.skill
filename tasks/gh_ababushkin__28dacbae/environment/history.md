@@ -207,7 +207,7 @@ tool_use Read
 id: toolu_01BJ6Hh1w9RmtAgZ9mTwz82o
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md"
 }
 ```
 
@@ -398,7 +398,7 @@ tool_use Bash
 id: toolu_01Sr5Ti1BBZv4bBp3isFzoMk
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== parallel / [P] markers in delivery ===\"; grep -rinE \"parallel|\\[P\\]|can run concurrently|independent\" docs/delivery-shape-contract.md skills/delivery/SKILL.md | head -20\necho \"=== constitution / project principles ===\"; grep -rinl \"constitution\" . --include=*.md | grep -v worktree | head\necho \"=== clarify / ambiguity resolution ===\"; grep -rinE \"clarif|ambigu|underspecif|open question\" skills/*/SKILL.md | head -20\necho \"=== converge / initiative-level closeout ===\"; grep -rinE \"converge|initiative.*complete|closeout|close the loop|delivered against\" skills/*/SKILL.md | head\necho \"=== cross-artifact consistency ===\"; grep -rinE \"consisten|cross-artifact|drift between|traceab\" skills/plan-review/SKILL.md skills/verify-implementation/SKILL.md | head",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== parallel / [P] markers in delivery ===\"; grep -rinE \"parallel|\\[P\\]|can run concurrently|independent\" docs/delivery-shape-contract.md skills/delivery/SKILL.md | head -20\necho \"=== constitution / project principles ===\"; grep -rinl \"constitution\" . --include=*.md | grep -v worktree | head\necho \"=== clarify / ambiguity resolution ===\"; grep -rinE \"clarif|ambigu|underspecif|open question\" skills/*/SKILL.md | head -20\necho \"=== converge / initiative-level closeout ===\"; grep -rinE \"converge|initiative.*complete|closeout|close the loop|delivered against\" skills/*/SKILL.md | head\necho \"=== cross-artifact consistency ===\"; grep -rinE \"consisten|cross-artifact|drift between|traceab\" skills/plan-review/SKILL.md skills/verify-implementation/SKILL.md | head",
   "description": "Check for existing equivalents"
 }
 ```
@@ -459,7 +459,7 @@ id: toolu_01CtnjxGW9YUMKUBL5y7USLu
 ```
 644  Day_1_v3.pdf  9.5M
 Pages:           51
-Shell cwd was reset to /Users/anton/src/agent-skills-shaper
+Shell cwd was reset to /home/<USER>/src/agent-skills-shaper
 ```
 
 > AGENT
@@ -472,7 +472,7 @@ tool_use Read
 id: toolu_01J5s4yNJL5No83iga8TDTXk
 ```json
 {
-  "file_path": "/Users/anton/Downloads/Day_1_v3.pdf",
+  "file_path": "/home/<USER>/Downloads/Day_1_v3.pdf",
   "pages": "1-18"
 }
 ```
@@ -482,12 +482,12 @@ id: toolu_01J5s4yNJL5No83iga8TDTXk
 tool_result
 id: toolu_01J5s4yNJL5No83iga8TDTXk
 ```
-PDF pages extracted: 18 page(s) from /Users/anton/Downloads/Day_1_v3.pdf (9.5MB)
+PDF pages extracted: 18 page(s) from /home/<USER>/Downloads/Day_1_v3.pdf (9.5MB)
 ```
 
 > AGENT
 
-This is Addy Osmani et al.'s "The New SDLC With Vibe Coding" (Google, May 2026). Let me read the core SDLC, harness, and orchestration sections.
+This is <PRESIDIO_ANONYMIZED_PERSON> et al.'s "The New SDLC With Vibe Coding" (Google, May 2026). Let me read the core SDLC, harness, and orchestration sections.
 
 > TOOL
 
@@ -495,7 +495,7 @@ tool_use Read
 id: toolu_01XJEsUEHeLALbR588KNkfk5
 ```json
 {
-  "file_path": "/Users/anton/Downloads/Day_1_v3.pdf",
+  "file_path": "/home/<USER>/Downloads/Day_1_v3.pdf",
   "pages": "19-38"
 }
 ```
@@ -505,7 +505,7 @@ id: toolu_01XJEsUEHeLALbR588KNkfk5
 tool_result
 id: toolu_01XJEsUEHeLALbR588KNkfk5
 ```
-PDF pages extracted: 20 page(s) from /Users/anton/Downloads/Day_1_v3.pdf (9.5MB)
+PDF pages extracted: 20 page(s) from /home/<USER>/Downloads/Day_1_v3.pdf (9.5MB)
 ```
 
 > AGENT
@@ -518,7 +518,7 @@ tool_use Read
 id: toolu_0138yqGoy655xRKDEGMARsZY
 ```json
 {
-  "file_path": "/Users/anton/Downloads/Day_1_v3.pdf",
+  "file_path": "/home/<USER>/Downloads/Day_1_v3.pdf",
   "pages": "39-48"
 }
 ```
@@ -528,7 +528,7 @@ id: toolu_0138yqGoy655xRKDEGMARsZY
 tool_result
 id: toolu_0138yqGoy655xRKDEGMARsZY
 ```
-PDF pages extracted: 10 page(s) from /Users/anton/Downloads/Day_1_v3.pdf (9.5MB)
+PDF pages extracted: 10 page(s) from /home/<USER>/Downloads/Day_1_v3.pdf (9.5MB)
 ```
 
 > AGENT
@@ -541,7 +541,7 @@ tool_use Bash
 id: toolu_01AFPkShrEyoe9Smu3pfWyXh
 ```json
 {
-  "command": "cd /Users/anton/src/agent-skills-shaper\necho \"=== evals / LM judge / rubric ===\"; grep -rinE \"\\beval(s|uation)?\\b|LM judge|rubric|benchmark\" skills/build/SKILL.md skills/verify-implementation/SKILL.md skills/execution-review/SKILL.md | head\necho \"=== trajectory ===\"; grep -rinE \"trajectory|tool call|reasoning path|how it got there\" skills/*/SKILL.md | head\necho \"=== observability / cost / token / drift ===\"; grep -rinE \"observab|token cost|latency|drift|trace|telemetry|cost\" skills/*/SKILL.md rules/*.md | head\necho \"=== model routing ===\"; grep -rinE \"Model:|model.tier|route|cheaper model|haiku|sonnet|opus\" hooks/ta[REDACTED_SK]/HOOK.md references/task-sizing.md | head\necho \"=== security persona: generated-code failure modes ===\"; grep -rinE \"hallucinat|generated code|made-up|fabricat|phantom dep\" personas/security-auditor.md | head\necho \"=== memory as artefact ===\"; grep -rinl \"memory\" skills/*/SKILL.md docs/*.md | head",
+  "command": "cd /home/<USER>/src/agent-skills-shaper\necho \"=== evals / LM judge / rubric ===\"; grep -rinE \"\\beval(s|uation)?\\b|LM judge|rubric|benchmark\" skills/build/SKILL.md skills/verify-implementation/SKILL.md skills/execution-review/SKILL.md | head\necho \"=== trajectory ===\"; grep -rinE \"trajectory|tool call|reasoning path|how it got there\" skills/*/SKILL.md | head\necho \"=== observability / cost / token / drift ===\"; grep -rinE \"observab|token cost|latency|drift|trace|telemetry|cost\" skills/*/SKILL.md rules/*.md | head\necho \"=== model routing ===\"; grep -rinE \"Model:|model.tier|route|cheaper model|haiku|sonnet|opus\" hooks/ta[REDACTED_SK]/HOOK.md references/task-sizing.md | head\necho \"=== security persona: generated-code failure modes ===\"; grep -rinE \"hallucinat|generated code|made-up|fabricat|phantom dep\" personas/security-auditor.md | head\necho \"=== memory as artefact ===\"; grep -rinl \"memory\" skills/*/SKILL.md docs/*.md | head",
   "description": "Ground eval/observability/routing claims"
 }
 ```
@@ -618,7 +618,7 @@ tool_use Read
 id: toolu_01PvqzzaALWcphfuXAXBVzRG
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/references/idea-elicitation.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/references/idea-elicitation.md"
 }
 ```
 

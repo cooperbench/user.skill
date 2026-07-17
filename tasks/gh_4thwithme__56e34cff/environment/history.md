@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01NgqNyWMBmdWLG6rRZioX6c
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-github-phase2-data-ingestion.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-16-github-phase2-data-ingestion.md"
 }
 ```
 

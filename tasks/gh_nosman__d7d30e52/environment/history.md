@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_018hpEpDzNnKvqmxdpCWCi5v
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/sessions.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/sessions.rs"
 }
 ```
 
@@ -68,7 +68,7 @@ tool_use Bash
 id: toolu_017sunYFBsse3hvLfpL5sGy5
 ```json
 {
-  "command": "find /Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src -name \"session_list.rs\" 2>/dev/null",
+  "command": "find /home/<USER>/p/gossamer-checkpoints-visualization/src -name \"session_list.rs\" 2>/dev/null",
   "description": "Find session_list module"
 }
 ```
@@ -78,7 +78,7 @@ id: toolu_017sunYFBsse3hvLfpL5sGy5
 tool_result
 id: toolu_017sunYFBsse3hvLfpL5sGy5
 ```
-/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs
+/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs
 ```
 
 > TOOL
@@ -87,7 +87,7 @@ tool_use Read
 id: toolu_018gY3aDuf1bhLjc4F2ciosv
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-checkpoints-visualization/src/commands/session_list.rs"
+  "file_path": "/home/<USER>/p/gossamer-checkpoints-visualization/src/commands/session_list.rs"
 }
 ```
 

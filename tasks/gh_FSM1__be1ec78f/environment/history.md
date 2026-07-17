@@ -123,7 +123,7 @@ id: toolu_01FGvzHsCpCHq4yCsg2igT8T
 ```
 exit=0
    15790 joblog.txt
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > TOOL
@@ -184,7 +184,7 @@ id: toolu_017EcZq5UYFjif7rHM1dRzgr
 15638:2026-07-06T18:03:59.9679324Z  running bootstrap script ... ok
 15639:2026-07-06T18:03:59.9679614Z  performing post-bootstrap initialization ... ok
 15640:2026-07-06T18:03:59.9679920Z  syncing data to disk ... ok
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > TOOL
@@ -354,7 +354,7 @@ Republish jobs fired: 1
 5537:2026-07-06T17:49:26.8035072Z Cleanup of conflict test items failed: locator.waitFor: Test ended.
 5539:2026-07-06T17:49:26.8070093Z   - waiting for locator('.file-list-item:not(.upload-inline-row)').filter({ hasText: 'conflict-folder-1783
 5540:2026-07-06T17:49:26.8074125Z     14 × locator resolved to visible <div role="row" tabindex="0" draggable="true" class="file-list-item f
-Shell cwd was reset to /Users/myankelev/Code/random/cipher-box
+Shell cwd was reset to /home/<USER>/Code/random/cipher-box
 ```
 
 > AGENT
@@ -367,7 +367,7 @@ tool_use Bash
 id: toolu_01E1f8rvDSfJ1ZSXdMVhNrBz
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== workflow files mentioning web-e2e / timeout-minutes ===\"\ngrep -rlE \"web-e2e|Web E2E\" .github/workflows/ | cat\necho \"=== timeout-minutes in web-e2e workflow ===\"\ngrep -rnE \"timeout-minutes|--shard|shard|workers|playwright test\" .github/workflows/*.yml | grep -iE \"web|e2e|shard|timeout\" | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== workflow files mentioning web-e2e / timeout-minutes ===\"\ngrep -rlE \"web-e2e|Web E2E\" .github/workflows/ | cat\necho \"=== timeout-minutes in web-e2e workflow ===\"\ngrep -rnE \"timeout-minutes|--shard|shard|workers|playwright test\" .github/workflows/*.yml | grep -iE \"web|e2e|shard|timeout\" | cat",
   "description": "Find CI timeout and shard config"
 }
 ```
@@ -396,7 +396,7 @@ tool_use Bash
 id: toolu_01GygsY7SRwWRWSihjujW7G8
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nsed -n '1,60p' .github/workflows/web-e2e.yml",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nsed -n '1,60p' .github/workflows/web-e2e.yml",
   "description": "Read web-e2e workflow head"
 }
 ```
@@ -474,7 +474,7 @@ tool_use Bash
 id: toolu_01Y3yWrpMpJTYcQr4MmkJQC6
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngrep -nE \"playwright|pnpm .*e2e|test:web|run:.*test|upload-artifact|if:\" .github/workflows/web-e2e.yml | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngrep -nE \"playwright|pnpm .*e2e|test:web|run:.*test|upload-artifact|if:\" .github/workflows/web-e2e.yml | cat",
   "description": "Find test run + artifact steps in web-e2e workflow"
 }
 ```

@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -27,7 +27,7 @@ tool_use Read
 id: toolu_014cjdx2hxCxWVX3YtrMGYPg
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/Fix errors instructions-v1.md"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/Fix errors instructions-v1.md"
 }
 ```
 
@@ -54,7 +54,7 @@ tool_use Read
 id: toolu_01B3VNb18m7um6TTRcnoWD4Q
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__extraction__69053888460.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__extraction__69053888460.log"
 }
 ```
 
@@ -72,7 +72,7 @@ tool_use Read
 id: toolu_01GBrCmtZaGTGDW6HZ2RTsGN
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__intent-evidence__69053888477.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__intent-evidence__69053888477.log"
 }
 ```
 
@@ -90,7 +90,7 @@ tool_use Read
 id: toolu_01HMezJu14n9f2FD65UPaz8f
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__unified-identity__69053888470.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__unified-identity__69053888470.log"
 }
 ```
 
@@ -108,7 +108,7 @@ tool_use Read
 id: toolu_01JRudDrWWCFhDrXuQwUHknJ
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__llm-proxy__69053888462.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__llm-proxy__69053888462.log"
 }
 ```
 
@@ -126,7 +126,7 @@ tool_use Read
 id: toolu_019HBNfByJezoLAusM6yyc5p
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__reactive__69053888469.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__reactive__69053888469.log"
 }
 ```
 
@@ -136,7 +136,7 @@ tool_use Read
 id: toolu_014yQN1HKXgiFQG9YESSf72d
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__auth__69053888422.log"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__auth__69053888422.log"
 }
 ```
 
@@ -167,7 +167,7 @@ id: toolu_01D9YZJoqrhtj6aochEKQ29r
 ```json
 {
   "pattern": "error|Error|FAIL|fail|TypeError|ReferenceError|Cannot|not assignable|Property.*does not exist",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__extraction__69053888460.log",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__extraction__69053888460.log",
   "output_mode": "content",
   "head_limit": 30
 }
@@ -200,7 +200,7 @@ id: toolu_011RnAHwV4S54rWm5KEcWJrc
 ```json
 {
   "pattern": "error|Error|FAIL|TypeError|Cannot|not assignable|Property.*does not exist",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__auth__69053888422.log",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__auth__69053888422.log",
   "output_mode": "content",
   "head_limit": 30
 }
@@ -225,7 +225,7 @@ id: toolu_013KjaL3daoJjXdqhaZ9Ryxz
 ```json
 {
   "pattern": "error|Error|FAIL|TypeError|Cannot|not assignable|Property.*does not exist",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__llm-proxy__69053888462.log",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__llm-proxy__69053888462.log",
   "output_mode": "content",
   "head_limit": 30
 }
@@ -257,7 +257,7 @@ id: toolu_012eo97K5ZA9NSnSQyete5B8
 ```json
 {
   "pattern": "error|Error|FAIL|TypeError|Cannot|not assignable|Property.*does not exist",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__reactive__69053888469.log",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__reactive__69053888469.log",
   "output_mode": "content",
   "head_limit": 30
 }
@@ -282,7 +282,7 @@ id: toolu_01V3udxEMBR4dCEj7T3GGpe2
 ```json
 {
   "pattern": "error|Error|FAIL|TypeError|Cannot|not assignable|Property.*does not exist",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__unified-identity__69053888470.log",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__unified-identity__69053888470.log",
   "output_mode": "content",
   "head_limit": 30
 }
@@ -308,7 +308,7 @@ id: toolu_01VXM9nZxMuU5c2j9bHyfH9r
 ```json
 {
   "pattern": "error|Error|FAIL|TypeError|Cannot|not assignable|Property.*does not exist",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__intent-evidence__69053888477.log",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__intent-evidence__69053888477.log",
   "output_mode": "content",
   "head_limit": 30
 }
@@ -326,9 +326,9 @@ id: toolu_01VXM9nZxMuU5c2j9bHyfH9r
 579:2026-03-29T07:51:35.1239795Z 6328 | 		case "NotFound": return new NotFoundError(options);
 580:2026-03-29T07:51:35.1240179Z 6329 | 		case "AlreadyExists": return new AlreadyExistsError(options);
 582:2026-03-29T07:51:35.1241100Z error: Database record `identity:`46d1de49-9676-443a-83e9-68f1b1646afa`` already exists
-590:2026-03-29T07:51:35.1243299Z       at createServerError (/home/runner/work/osabio/osabio/node_modules/surrealdb/dist/surrealdb.mjs:6329:32)
+590:2026-03-29T07:51:35.1243299Z       at createServerError (/home/<USER>/work/osabio/osabio/node_modules/surrealdb/dist/surrealdb.mjs:6329:32)
 593:2026-03-29T07:51:35.1384682Z ##[error]
-594:      at createServerError (/home/runner/work/osabio/osabio/node_modules/surrealdb/dist/surrealdb.mjs:6329:32)
+594:      at createServerError (/home/<USER>/work/osabio/osabio/node_modules/surrealdb/dist/surrealdb.mjs:6329:32)
 638:2026-03-29T07:51:41.9765538Z ##[error]Process completed with exit code 1.
 
 [Showing results with pagination = limit: 30, offset: 0]
@@ -344,7 +344,7 @@ tool_use Read
 id: toolu_011J4A8iXeaVW8ofwhb4iNZ8
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__extraction__69053888460.log",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__extraction__69053888460.log",
   "offset": 460,
   "limit": 40
 }
@@ -371,12 +371,12 @@ id: toolu_011J4A8iXeaVW8ofwhb4iNZ8
    473→2026-03-29T07:51:03.6067968Z Expected: 1
    474→2026-03-29T07:51:03.6068231Z Received: 4
    475→2026-03-29T07:51:03.6068377Z 
-   476→2026-03-29T07:51:03.6068939Z       at <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/extraction/extraction-quality.test.ts:44:34)
+   476→2026-03-29T07:51:03.6068939Z       at <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/extraction/extraction-quality.test.ts:44:34)
    477→2026-03-29T07:51:03.6069587Z 
    478→2026-03-29T07:51:03.6098612Z ##[error]Expected: 1
    479→Received: 4
    480→
-   481→      at <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/extraction/extraction-quality.test.ts:44:34)
+   481→      at <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/extraction/extraction-quality.test.ts:44:34)
    482→2026-03-29T07:51:03.6108230Z (fail) extraction quality smoke > filters placeholders and avoids unresolved person node creation [220.01ms]
    483→2026-03-29T07:51:03.6133948Z 
    484→2026-03-29T07:51:03.6134535Z ##[endgroup]
@@ -399,7 +399,7 @@ tool_use Read
 id: toolu_01TDX2F83SCWigjpzxZTMc1a
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__auth__69053888422.log",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__auth__69053888422.log",
   "offset": 460,
   "limit": 50
 }
@@ -421,10 +421,10 @@ id: toolu_01TDX2F83SCWigjpzxZTMc1a
    468→2026-03-29T07:50:39.1598674Z 114 |     const identityRecord = new RecordId("identity", `test-override-${randomUUID()}`);
    469→2026-03-29T07:50:39.1599002Z                                                                            ^
    470→2026-03-29T07:50:39.1599417Z ReferenceError: randomUUID is not defined
-   471→2026-03-29T07:50:39.1599842Z       at <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/auth/authority.test.ts:114:70)
+   471→2026-03-29T07:50:39.1599842Z       at <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/auth/authority.test.ts:114:70)
    472→2026-03-29T07:50:39.1600135Z 
    473→2026-03-29T07:50:39.1616466Z ##[error]
-   474→      at <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/auth/authority.test.ts:114:70)
+   474→      at <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/auth/authority.test.ts:114:70)
    475→2026-03-29T07:50:39.1622123Z (fail) checkAuthority > per-identity authorized_to edge overrides global default [9.00ms]
    476→2026-03-29T07:50:39.1624672Z (pass) identity resolution > resolveByEmail returns undefined for non-member [8.00ms]
    477→2026-03-29T07:50:39.1625207Z (pass) identity resolution > resolveWorkspaceIdentity resolves by name and rejects unknown [9.00ms]
@@ -446,7 +446,7 @@ tool_use Read
 id: toolu_01QW38ArQBVrckNFzWW5FtcL
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__llm-proxy__69053888462.log",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__llm-proxy__69053888462.log",
   "offset": 610,
   "limit": 30
 }
@@ -489,7 +489,7 @@ tool_use Read
 id: toolu_013hBTcgQCBHQcvKusf4huaF
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__reactive__69053888469.log",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__reactive__69053888469.log",
   "offset": 555,
   "limit": 40
 }
@@ -516,11 +516,11 @@ id: toolu_013hBTcgQCBHQcvKusf4huaF
    568→2026-03-29T07:51:13.1341862Z 
    569→2026-03-29T07:51:13.1342009Z Received: undefined
    570→2026-03-29T07:51:13.1342237Z 
-   571→2026-03-29T07:51:13.1343082Z       at <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/reactive/milestone-2-agent-activator.test.ts:82:28)
+   571→2026-03-29T07:51:13.1343082Z       at <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/reactive/milestone-2-agent-activator.test.ts:82:28)
    572→2026-03-29T07:51:13.1343953Z 
    573→2026-03-29T07:51:13.1381179Z ##[error]Received: undefined
    574→
-   575→      at <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/reactive/milestone-2-agent-activator.test.ts:82:28)
+   575→      at <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/reactive/milestone-2-agent-activator.test.ts:82:28)
    576→2026-03-29T07:51:13.1393579Z (fail) US-GRC-03: Agent Activator with LLM Classification > observation without active coverage activates relevant agent type [5087.16ms]
    577→2026-03-29T07:51:13.1582874Z (pass) US-GRC-03: Agent Activator with LLM Classification > observation activates multiple agent types […]
 
@@ -530,7 +530,7 @@ tool_use Read
 id: toolu_01HJ4jeDaosayEW2yWvRg9Yn
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__unified-identity__69053888470.log",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__unified-identity__69053888470.log",
   "offset": 485,
   "limit": 50
 }
@@ -558,12 +558,12 @@ id: toolu_01HJ4jeDaosayEW2yWvRg9Yn
    499→2026-03-29T07:50:53.6736060Z Expected: "owner"
    500→2026-03-29T07:50:53.6736647Z Received: "agent"
    501→2026-03-29T07:50:53.6736958Z 
-   502→2026-03-29T07:50:53.6737614Z       at <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/unified-identity/auth-rewiring.test.ts:93:29)
+   502→2026-03-29T07:50:53.6737614Z       at <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/unified-identity/auth-rewiring.test.ts:93:29)
    503→2026-03-29T07:50:53.6738718Z 
    504→2026-03-29T07:50:53.6755496Z ##[error]Expected: "owner"
    505→Received: "agent"
    506→
-   507→      at <anonymous> (/home/runner/work/osabio/osabio/tests/acceptance/unified-identity/auth-rewiring.test.ts:93:29)
+   507→      at <anonymous> (/home/<USER>/work/osabio/osabio/tests/acceptance/unified-identity/auth-rewiring.test.ts:93:29)
    508→2026-03-29T07:50:53.6762095Z (fail) US-UI-004: Auth resolves identity from person via spoke traversal > Given a user creates a workspace, when member_of is queried, then the identity (not person) is the member [3.00ms]
    509→2026-03-29T07:50:53.6892437Z (pass) US-UI-004: Auth resolves identity from person via spoke traversal > Given a user is logged in and has a workspace, when the user sends a chat message, then the chat pipeline processes the message using the user's identity as the actor [18.00ms]
    510→2026-03-29T07:50:53.7152845Z (pass) US-UI-004: […]
@@ -574,7 +574,7 @@ tool_use Read
 id: toolu_01NQkyuMjJDJTnCwZp8y98Lr
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__intent-evidence__69053888477.log",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/.context/attachments/acceptance-tests__intent-evidence__69053888477.log",
   "offset": 565,
   "limit": 60
 }
@@ -610,7 +610,7 @@ id: toolu_01NQkyuMjJDJTnCwZp8y98Lr
    587→2026-03-29T07:51:35.1242578Z   kind: "Record",
    588→2026-03-29T07:51:35.1242850Z },
    589→2026-03-29T07:51:35.1242957Z 
-   590→2026-03-29T07:51:35.1243299Z       at createServerError (/home/runner/work/osabio/osabio/node_modules/surrealdb/dist/surrealdb.mjs:6329:32) […]
+   590→2026-03-29T07:51:35.1243299Z       at createServerError (/home/<USER>/work/osabio/osabio/node_modules/surrealdb/dist/surrealdb.mjs:6329:32) […]
 
 > AGENT
 
@@ -622,7 +622,7 @@ tool_use Read
 id: toolu_013JhWrzA42zLJsPiaVrgkQs
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/auth/authority.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/auth/authority.test.ts",
   "offset": 100,
   "limit": 30
 }
@@ -671,7 +671,7 @@ tool_use Read
 id: toolu_011bwhZ4XSYh13zTEJf59PuC
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts",
   "offset": 1,
   "limit": 60
 }
@@ -732,7 +732,7 @@ tool_use Read
 id: toolu_01Qfqw7Z6KiU8KtymibkY3fP
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/unified-identity/auth-rewiring.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/unified-identity/auth-rewiring.test.ts",
   "offset": 70,
   "limit": 40
 }
@@ -744,7 +744,7 @@ tool_use Read
 id: toolu_01TTZT5Rt1zKVANAAPeNTqkk
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts",
   "offset": 60,
   "limit": 30
 }
@@ -831,7 +831,7 @@ tool_use Read
 id: toolu_01SbPb7X2fVGogXzT3KhBVWP
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-6-evidence-verification.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-6-evidence-verification.test.ts",
   "offset": 1,
   "limit": 30
 }
@@ -842,7 +842,7 @@ id: toolu_01SbPb7X2fVGogXzT3KhBVWP
 tool_result ERROR
 id: toolu_01SbPb7X2fVGogXzT3KhBVWP
 ```
-File does not exist. Note: your current working directory is /Users/marcus/conductor/workspaces/brain-v1/munich-v2.
+File does not exist. Note: your current working directory is /home/<USER>/conductor/workspaces/brain-v1/munich-v2.
 ```
 
 > AGENT
@@ -865,7 +865,7 @@ tool_use Read
 id: toolu_01NhtifDnVTSH8KiRZLq5bCX
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/auth/authority.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/auth/authority.test.ts",
   "offset": 1,
   "limit": 15
 }
@@ -876,14 +876,14 @@ id: toolu_01NhtifDnVTSH8KiRZLq5bCX
 tool_result
 id: toolu_01Y3mHfTHHiNNt3YiUincJTp
 ```
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-3-policy-monitoring.test.ts
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-4-feed-bootstrapping.test.ts
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-5-feed-evidence-cards.test.ts
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-6-evidence-drill-down.test.ts
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-7-workspace-settings.test.ts
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/walking-skeleton.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-2-fabrication-resistance.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-3-policy-monitoring.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-4-feed-bootstrapping.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-5-feed-evidence-cards.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-6-evidence-drill-down.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-7-workspace-settings.test.ts
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/walking-skeleton.test.ts
 ```
 
 > TOOL
@@ -919,7 +919,7 @@ id: toolu_01FwdQCKBjnwjBDbMRg4yptP
 ```json
 {
   "pattern": "cross-workspace evidence reference fails scope check",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence"
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence"
 }
 ```
 
@@ -938,7 +938,7 @@ tool_use Read
 id: toolu_01Jt4Hw8G7u1B9BRQYP4Re3C
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts",
   "offset": 1,
   "limit": 30
 }
@@ -988,7 +988,7 @@ id: toolu_01ArRSUfDiav2mUvVtHPASpo
 ```json
 {
   "pattern": "cross-workspace evidence reference",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts",
   "output_mode": "content",
   "-B": 5,
   "-A": 40
@@ -1048,7 +1048,7 @@ id: toolu_01WxfXLTAC6BszjHUYCCiSK1
 ```json
 {
   "pattern": "createDecisionInOtherWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence"
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence"
 }
 ```
 
@@ -1071,7 +1071,7 @@ id: toolu_01Fv75sLZVagpEeU7J7XpgsH
 ```json
 {
   "pattern": "createDecisionInOtherWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
   "output_mode": "content",
   "-A": 40
 }
@@ -1132,7 +1132,7 @@ id: toolu_01JevCnXhjzLnyjRne6Zd1m1
 ```json
 {
   "pattern": "createTestIdentity",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -1183,7 +1183,7 @@ id: toolu_01GvPuCsVNZ2Go7vnwa81LxT
 ```json
 {
   "pattern": "export.*createTestIdentity",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -1234,7 +1234,7 @@ id: toolu_01VWufAr71fGRtnba6WdZvq4
 ```json
 {
   "pattern": "export.*function createIdentity",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance"
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance"
 }
 ```
 
@@ -1254,7 +1254,7 @@ id: toolu_01W7rUteF7CCqjjfE1BwHsyV
 ```json
 {
   "pattern": "export.*function createIdentity",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/shared-fixtures.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/shared-fixtures.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -1305,7 +1305,7 @@ id: toolu_014CzaGMBog5DgG6ikmvbYZF
 ```json
 {
   "pattern": "export.*function createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
   "output_mode": "content",
   "-A": 5
 }
@@ -1326,7 +1326,7 @@ id: toolu_01JBsazUzZrU8m1wcU1N8z9u
 ```json
 {
   "pattern": "createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
   "output_mode": "content"
 }
 ```
@@ -1346,7 +1346,7 @@ id: toolu_01WRiTr2p8RfKMKeNhKAwX5i
 ```json
 {
   "pattern": "export.*function createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
   "output_mode": "content",
   "-A": 25
 }
@@ -1367,7 +1367,7 @@ id: toolu_012kJY2rEsp9wLAuuzcE9p9p
 ```json
 {
   "pattern": "createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
   "output_mode": "content"
 }
 ```
@@ -1387,7 +1387,7 @@ id: toolu_018ho2dhXxYa5eojmPhm1aAp
 ```json
 {
   "pattern": "export.*function createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/shared-fixtures.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/shared-fixtures.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -1408,7 +1408,7 @@ id: toolu_01Xya1sPGC4S8JwXjWRqXa9N
 ```json
 {
   "pattern": "createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/shared-fixtures.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/shared-fixtures.ts",
   "output_mode": "content"
 }
 ```
@@ -1428,7 +1428,7 @@ id: toolu_01S8Ja6pvP75tRHvcgaEFnNY
 ```json
 {
   "pattern": "export.*function createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance"
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance"
 }
 ```
 
@@ -1451,7 +1451,7 @@ id: toolu_0179rUXeAeSJZBL5fgSUt18Q
 ```json
 {
   "pattern": "createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
   "output_mode": "content",
   "-B": 2,
   "-A": 2
@@ -1477,7 +1477,7 @@ id: toolu_01KBeAtLZPABQNLYUyCLP7kc
 ```json
 {
   "pattern": "export.*function createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/coding-agent-orchestrator/orchestrator-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/coding-agent-orchestrator/orchestrator-test-kit.ts",
   "output_mode": "content",
   "-A": 40
 }
@@ -1593,7 +1593,7 @@ WHERE id IN (SELECT VALUE `in` FROM member_of WHERE out = $workspace);
 
 This retrieves all **identities** that are members of the workspace. The query finds all `member_of` relations where the `out` points to the workspace, extracts the `in` values (which are identity records), and then selects those identity records by id and name.
 
-**Location:** `/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts`, lines 106-113
+**Location:** `/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts`, lines 106-113
 
 ### 2. Why might it return 4 people instead of 1 after workspace creation?
 
@@ -1621,7 +1621,7 @@ Based on my analysis of the workspace creation flow and identity bootstrap proce
 
 **Yes**, but it's asynchronous and non-blocking. Here's the flow:
 
-- When `POST /api/workspaces` is called in `/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/workspace/workspace-routes.ts` (line 108-242):
+- When `POST /api/workspaces` is called in `/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/workspace/workspace-routes.ts` (line 108-242):
   1. A workspace record is created with a random UUID (line 140)
   2. A conversation and starter message are created
   3. **After** the workspace transaction commits (line 219-227), identity bootstrap runs **asynchronously** via `bootstrapWorkspaceIdentities()`
@@ -1631,7 +1631,7 @@ Based on my analysis of the workspace creation flow and identity bootstrap proce
 
 **Non-deterministic via `randomUUID()`**:
 
-From `/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/workspace/identity-bootstrap.ts` (line 69):
+From `/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/workspace/identity-bootstrap.ts` (line 69):
 ```typescript
 const buildIdentityRecord = () => new RecordId("identity", randomUUID());
 ```
@@ -1659,7 +1659,7 @@ I've identified why the test at `tests/acceptance/unified-identity/auth-rewiring
 
 ### Root Cause
 
-The issue is in the **order of operations** during workspace identity bootstrap in `/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/workspace/identity-bootstrap.ts`:
+The issue is in the **order of operations** during workspace identity bootstrap in `/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/workspace/identity-bootstrap.ts`:
 
 1. **`bootstrapWorkspaceIdentities()` calls `ensureOwnerIdentity()` first** (lines 86-90)
    - Creates the owner identity with `type: "human"` and `role: "owner"`
@@ -1692,7 +1692,7 @@ id: toolu_01B6N8esc6hdZSi8hbhuLGbD
 ```json
 {
   "pattern": "getActivatedSessions",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive",
   "output_mode": "content",
   "-A": 15,
   "head_limit": 30
@@ -1705,7 +1705,7 @@ tool_use Read
 id: toolu_01E7bp7j4ZaBzPUu2BNSsuvh
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/workspace/identity-bootstrap.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/workspace/identity-bootstrap.ts"
 }
 ```
 
@@ -1715,35 +1715,35 @@ tool_result
 id: toolu_01B6N8esc6hdZSi8hbhuLGbD
 ```
 tests/acceptance/reactive/milestone-2-agent-activator.test.ts:35:  getActivatedSessions,
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-36-  getActivationDecisions,
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-37-  openFeedStream,
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-38-} from "./reactive-test-kit";
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-39-
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-40-const getRuntime = setupReactiveSuite("agent_activator");
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-41-
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-36-  getActivationDecisions,
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-37-  openFeedStream,
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-38-} from "./reactive-test-kit";
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-39-
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-40-const getRuntime = setupReactiveSuite("agent_activator");
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-41-
 tests/acceptance/reactive/milestone-2-agent-activator.test.ts-42-describe("US-GRC-03: Agent Activator with LLM Classification", () => {
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-43-
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-44-  // ---------------------------------------------------------------------------
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-43-
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-44-  // ---------------------------------------------------------------------------
 tests/acceptance/reactive/milestone-2-agent-activator.test.ts-45-  / AC: Activator starts new agent for observation without active coverage
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-46-  // ---------------------------------------------------------------------------
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-47-  it("observation without active coverage activates relevant agent type", async () => {
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-48-    const { baseUrl, surreal } = getRuntime();
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-49-
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-50-    const { workspaceId, identityId } = await createTestWorkspace(surreal, "act-route");
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-46-  // ---------------------------------------------------------------------------
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-47-  it("observation without active coverage activates relevant agent type", async () => {
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-48-    const { baseUrl, surreal } = getRuntime();
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-49-
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-50-    const { workspaceId, identityId } = await createTestWorkspace(surreal, "act-route");
 --
 tests/acceptance/reactive/milestone-2-agent-activator.test.ts:79:    const sessions = await getActivatedSessions(surreal, workspaceId);
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-80-    expect(sessions.length).toBeGreaterThanOrEqual(1);
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-81-    const matchedSession = sessions.find((s) => s.agent === "code_agent");
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-82-    expect(matchedSession).toBeDefined();
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-83-    expect(matchedSession!.orchestrator_status).toBe("spawning");
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-84-
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-85-    // Activator should record a provisional decision for the routing choice
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-86-    const decisions = await getActivationDecisions(surreal, workspaceId);
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-87-    expect(decisions.length).toBeGreaterThanOrEqual(1);
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-88-    const routingDecision = decisions[0];
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-89-    expect(routingDecision.status).toBe("provisional");
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-90-    expect(routingDecision.category).toBe("operations");
-/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-91-    expect(routingDecision.rationale).toContain(observationText);
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-80-    expect(sessions.length).toBeGreaterThanOrEqual(1);
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-81-    const matchedSession = sessions.find((s) => s.agent === "code_agent");
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-82-    expect(matchedSession).toBeDefined();
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-83-    expect(matchedSession!.orchestrator_status).toBe("spawning");
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-84-
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-85-    // Activator should record a provisional decision for the routing choice
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-86-    const decisions = await getActivationDecisions(surreal, workspaceId);
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-87-    expect(decisions.length).toBeGreaterThanOrEqual(1);
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-88-    const routingDecision = decisions[0];
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-89-    expect(routingDecision.status).toBe("provisional");
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-90-    expect(routingDecision.category).toBe("operations");
+/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts-91-    expect(routingDecision.rationale).toContain(observationText);
 
 [Showing results with pagination = limit: 30, offset: 0]
 ```
@@ -1827,7 +1827,7 @@ id: toolu_014caEo9eqYLQaNjxUEpnQgb
 ```json
 {
   "pattern": "export.*function getActivatedSessions",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
   "output_mode": "content",
   "-A": 20
 }
@@ -1868,7 +1868,7 @@ id: toolu_01HCsosz85xP2JczUotBGq8p
 ```json
 {
   "pattern": "46d1de49-9676-443a-83e9-68f1b1646afa",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance",
   "output_mode": "content"
 }
 ```
@@ -1888,7 +1888,7 @@ id: toolu_015gHJZ7kNKUtyKXQj1aSH9F
 ```json
 {
   "pattern": "agent.*code_agent|code_agent",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server",
   "output_mode": "content",
   "head_limit": 20
 }
@@ -1911,7 +1911,7 @@ id: toolu_01QqFFJXkEFvry2NmKeQmika
 ```json
 {
   "pattern": "agent.*coder|coder.*agent",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server",
   "output_mode": "content",
   "head_limit": 15
 }
@@ -1935,7 +1935,7 @@ id: toolu_01UpDwL8zf74TU161etwnCfN
 ```json
 {
   "pattern": "activat.*agent_session|CREATE.*agent_session|agent_session.*CREATE",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server",
   "output_mode": "content",
   "-B": 5,
   "-A": 15,
@@ -1960,7 +1960,7 @@ id: toolu_01MudjNNuFLxysGh71LGdJKY
 ```json
 {
   "pattern": "activator",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1981,7 +1981,7 @@ tool_use Read
 id: toolu_012if43i2bgXKPqoUqVdD4Qs
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/app/src/server/reactive/agent-activator.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/app/src/server/reactive/agent-activator.ts"
 }
 ```
 
@@ -2030,7 +2030,7 @@ tool_use Read
 id: toolu_01PQRUqy5cZ88sEdhDBEtkYT
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/milestone-2-agent-activator.test.ts",
   "offset": 47,
   "limit": 20
 }
@@ -2070,7 +2070,7 @@ id: toolu_01CqZD6p11m484RyxXgGpwHu
 ```json
 {
   "pattern": "export.*function createTestWorkspace",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
   "output_mode": "content",
   "-A": 50
 }
@@ -2138,7 +2138,7 @@ id: toolu_01HTPtAm6NC9VSvA2ZJGvU9a
 ```json
 {
   "pattern": "export.*function registerAgent",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
   "output_mode": "content",
   "-A": 40
 }
@@ -2329,7 +2329,7 @@ tool_use Read
 id: toolu_01PWuQuhQsKe1bZQJJb6EUF4
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts",
   "offset": 1,
   "limit": 40
 }
@@ -2388,7 +2388,7 @@ tool_use Read
 id: toolu_01HEaZihV7CtrKxFZXEa2TAe
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts",
   "offset": 40,
   "limit": 50
 }
@@ -2441,7 +2441,7 @@ id: toolu_01A1hGGEM7Abry7ZsYeuDphP
 ```json
 {
   "pattern": "export.*function createTestUser",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/coding-agent-orchestrator/orchestrator-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/coding-agent-orchestrator/orchestrator-test-kit.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -2462,7 +2462,7 @@ id: toolu_01PA8tkbZpJybB3kXg2gfpux
 ```json
 {
   "pattern": "createTestUser",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/coding-agent-orchestrator/orchestrator-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/coding-agent-orchestrator/orchestrator-test-kit.ts",
   "output_mode": "content"
 }
 ```
@@ -2485,7 +2485,7 @@ id: toolu_01Qn3TiHGSzeBg41QMSbXque
 ```json
 {
   "pattern": "export.*function createTestUser[^W]",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/acceptance-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/acceptance-test-kit.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -2540,7 +2540,7 @@ id: toolu_01N2CUgY6Hbw6CSH2asLF19Z
 ```json
 {
   "pattern": "setupOrchestratorSuite",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-node/intent-test-kit.ts",
   "output_mode": "content",
   "-B": 2,
   "-A": 2
@@ -2566,7 +2566,7 @@ id: toolu_01SJe5AyUmHGLjHifq3PEki9
 ```json
 {
   "pattern": "export.*function setupOrchestratorSuite",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/coding-agent-orchestrator/orchestrator-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/coding-agent-orchestrator/orchestrator-test-kit.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -2617,7 +2617,7 @@ id: toolu_01EFvant2u1CM8wSZr7FRnvX
 ```json
 {
   "pattern": "export.*function createDecisionDirectly",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/intent-evidence-test-kit.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -2638,7 +2638,7 @@ id: toolu_016c1KKeTH8j61prEPWbHjyK
 ```json
 {
   "pattern": "export.*function createDecisionDirectly",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance"
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance"
 }
 ```
 
@@ -2658,7 +2658,7 @@ id: toolu_01SeSQkgxcf86fhYn1iY9bTo
 ```json
 {
   "pattern": "export.*function createDecisionDirectly",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/shared-fixtures.ts",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/shared-fixtures.ts",
   "output_mode": "content",
   "-A": 30
 }
@@ -2709,7 +2709,7 @@ id: toolu_01YDuqaudjp5VfHf7ZjwDN6Y
 ```json
 {
   "pattern": "DEFINE INDEX.*identity",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/schema/surreal-schema.surql",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/schema/surreal-schema.surql",
   "output_mode": "content"
 }
 ```
@@ -2749,7 +2749,7 @@ id: toolu_01WcayHBX3nXFZk4AJqAtxHR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/auth/authority.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/auth/authority.test.ts",
   "old_string": "import { describe, expect, it, beforeAll, afterAll } from \"bun:test\";\nimport { RecordId, Surreal } from \"surrealdb\";\nimport { applyTestSchema } from \"../acceptance-test-kit\";",
   "new_string": "import { describe, expect, it, beforeAll, afterAll } from \"bun:test\";\nimport { randomUUID } from \"node:crypto\";\nimport { RecordId, Surreal } from \"surrealdb\";\nimport { applyTestSchema } from \"../acceptance-test-kit\";"
 }
@@ -2760,7 +2760,7 @@ id: toolu_01WcayHBX3nXFZk4AJqAtxHR
 tool_result
 id: toolu_01WcayHBX3nXFZk4AJqAtxHR
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/auth/authority.test.ts has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/auth/authority.test.ts has been updated successfully.
 ```
 
 > TOOL
@@ -2770,7 +2770,7 @@ id: toolu_01A98w75denCScJVVVxF1VTQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts",
   "old_string": "    const initialPeople = await loadWorkspacePeople(surreal, workspaceRecord);\n    expect(initialPeople.length).toBe(1);",
   "new_string": "    const initialPeople = await loadWorkspacePeople(surreal, workspaceRecord);\n    // Owner identity + 3 template agent identities (management, coder, observer) from bootstrap\n    expect(initialPeople.length).toBe(4);"
 }
@@ -2781,7 +2781,7 @@ id: toolu_01A98w75denCScJVVVxF1VTQ
 tool_result
 id: toolu_01A98w75denCScJVVVxF1VTQ
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2795,7 +2795,7 @@ id: toolu_017HtSZHKyhp46MefF3coG5f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/unified-identity/auth-rewiring.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/unified-identity/auth-rewiring.test.ts",
   "old_string": "    const wsRecord = new RecordId(\"workspace\", sharedWorkspace.workspaceId);\n    const [members] = await surreal.query<\n      [Array<{ in: RecordId; role: string }>]\n    >(\n      \"SELECT in, role FROM member_of WHERE out = $ws LIMIT 1;\",\n      { ws: wsRecord },\n    );\n\n    expect(members.length).toBeGreaterThan(0);\n    expect((members[0].in as RecordId).table.name).toBe(\"identity\");\n    expect(members[0].role).toBe(\"owner\");",
   "new_string": "    const wsRecord = new RecordId(\"workspace\", sharedWorkspace.workspaceId);\n    const [members] = await surreal.query<\n      [Array<{ in: RecordId; role: string }>]\n    >(\n      \"SELECT in, role FROM member_of WHERE out = $ws AND role = 'owner' LIMIT 1;\",\n      { ws: wsRecord },\n    );\n\n    expect(members.length).toBeGreaterThan(0);\n    expect((members[0].in as RecordId).table.name).toBe(\"identity\");\n    expect(members[0].role).toBe(\"owner\");"
 }
@@ -2806,7 +2806,7 @@ id: toolu_017HtSZHKyhp46MefF3coG5f
 tool_result
 id: toolu_017HtSZHKyhp46MefF3coG5f
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/unified-identity/auth-rewiring.test.ts has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/unified-identity/auth-rewiring.test.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2820,7 +2820,7 @@ id: toolu_01XHHorM4kz41uCuzxGJcd9A
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
   "old_string": "  const content: Record<string, unknown> = {\n    runtime: \"brain\",\n    name: `${options.agentType}-${agentId}`,\n    managed_by: identityRecord,\n    created_at: new Date(),\n  };",
   "new_string": "  const content: Record<string, unknown> = {\n    runtime: \"brain\",\n    name: options.agentType,\n    managed_by: identityRecord,\n    created_at: new Date(),\n  };"
 }
@@ -2840,7 +2840,7 @@ tool_use Read
 id: toolu_0186LQ4eUJfUMvCtUoUa8k5a
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
   "offset": 407,
   "limit": 35
 }
@@ -2895,7 +2895,7 @@ id: toolu_011XLkFuqKg7iZ1fAAg72gBK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts",
   "old_string": "    name: `${options.agentType}-${agentId}`,",
   "new_string": "    name: options.agentType,"
 }
@@ -2906,7 +2906,7 @@ id: toolu_011XLkFuqKg7iZ1fAAg72gBK
 tool_result
 id: toolu_011XLkFuqKg7iZ1fAAg72gBK
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive/reactive-test-kit.ts has been updated successfully.
 ```
 
 > AGENT
@@ -2920,7 +2920,7 @@ id: toolu_01MXtQQhW3F5USoK1Qd65sb5
 ```json
 {
   "pattern": "agentType.*-.*agent",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive",
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/reactive",
   "output_mode": "content"
 }
 ```
@@ -2943,7 +2943,7 @@ tool_use Read
 id: toolu_01Kiy71niQ5FBZGVGP4MCvg7
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/extraction/extraction-quality.test.ts",
   "offset": 60,
   "limit": 50
 }
@@ -3014,7 +3014,7 @@ tool_use Read
 id: toolu_01M9wNixcNMD7rR9p4apLiSE
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2/tests/acceptance/intent-evidence/milestone-1-core-verification.test.ts",
   "offset": 225,
   "limit": 40
 }
@@ -3094,7 +3094,7 @@ id: toolu_01PTKYhLQ2ex43Z8rZZ1nMdY
 ```json
 {
   "pattern": "46d1de49",
-  "path": "/Users/marcus/conductor/workspaces/brain-v1/munich-v2"
+  "path": "/home/<USER>/conductor/workspaces/brain-v1/munich-v2"
 }
 ```
 

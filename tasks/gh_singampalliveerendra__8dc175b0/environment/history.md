@@ -33,7 +33,7 @@ tool_use Read
 id: toolu_01Vbhaax8yyPdUbZ2DZYptAQ
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx"
 }
 ```
 
@@ -125,7 +125,7 @@ tool_use Read
 id: toolu_01KwzTWtU2XDaGLdwUyPKpXq
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx"
 }
 ```
 
@@ -199,7 +199,7 @@ tool_use Read
 id: toolu_01XvkvMJWpMNnaiSvAPemNB7
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "offset": 536,
   "limit": 120
 }
@@ -248,7 +248,7 @@ tool_use Read
 id: toolu_01Vm4csa4tzXbvRewkDa12ve
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/region/tabs/BrowseProduceTab.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/region/tabs/BrowseProduceTab.tsx",
   "offset": 40,
   "limit": 130
 }
@@ -325,7 +325,7 @@ tool_use Read
 id: toolu_01BEbD8uNi5oEoRJZJuhEY4V
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/page.tsx",
   "offset": 1,
   "limit": 60
 }
@@ -465,7 +465,7 @@ id: toolu_01QGAueomtdoxiyVwzqrj9dw
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "old_string": "'use client'\n\nimport { useEffect, useState } from 'react'\nimport { useRouter } from 'next/navigation'\nimport { supabase } from '@/lib/supabase'\nimport { useLang } from '@/lib/LanguageContext'\nimport { localizeName } from '@/lib/localizeName'\nimport { harvestClock } from '@/lib/harvest'",
   "new_string": "'use client'\n\nimport { useEffect, useState } from 'react'\nimport { useRouter } from 'next/navigation'\nimport { supabase } from '@/lib/supabase'\nimport { useCart } from '@/components/consumer/Cart'\nimport { useConsumerAuth } from '@/lib/ConsumerAuthContext'\nimport { useLang } from '@/lib/LanguageContext'\nimport { localizeName } from '@/lib/localizeName'\nimport { harvestClock } from '@/lib/harvest'\nimport { normalizePickupSchedule } from '@/lib/pickup-slots'"
 }
@@ -476,7 +476,7 @@ id: toolu_01QGAueomtdoxiyVwzqrj9dw
 tool_result
 id: toolu_01QGAueomtdoxiyVwzqrj9dw
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -486,7 +486,7 @@ id: toolu_0147oC2kf2NzEsnFHPEXPf67
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "old_string": "function HarvestTable({ variant }: { variant: Variant }) {\n  const { lang, L } = useLang()\n  const router = useRouter()\n  const [rows, setRows] = useState<HarvestRow[]>([])\n  const [loaded, setLoaded] = useState(false)",
   "new_string": "function HarvestTable({ variant }: { variant: Variant }) {\n  const { lang, L } = useLang()\n  const router = useRouter()\n  const { addItem, cart } = useCart()\n  const { requireAuth } = useConsumerAuth()\n  const [rows, setRows] = useState<HarvestRow[]>([])\n  const [loaded, setLoaded] = useState(false)\n  // Listing ids currently being fetched-and-added, so the cart icon can show a\n  // spinner and ignore double taps.\n  const [adding, setAdding] = useState<Record<string, boolean>>({})"
 }
@@ -497,7 +497,7 @@ id: toolu_0147oC2kf2NzEsnFHPEXPf67
 tool_result
 id: toolu_0147oC2kf2NzEsnFHPEXPf67
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -511,7 +511,7 @@ id: toolu_01BJm89HME5xSNKqqZAuS63e
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "old_string": "  // One listing from the embed (handle either object or single-element array).\n  const listingOf = (r: HarvestRow): Listing | null => {\n    const l = r.produce_listings\n    if (!l) return null\n    return Array.isArray(l) ? (l[0] ?? null) : l\n  }\n\n  if (!loaded || rows.length === 0) return null",
   "new_string": "  // One listing from the embed (handle either object or single-element array).\n  const listingOf = (r: HarvestRow): Listing | null => {\n    const l = r.produce_listings\n    if (!l) return null\n    return Array.isArray(l) ? (l[0] ?? null) : l\n  }\n\n  // Add the harvest's listing straight to the cart from the table. The table\n  // only holds the listing id/name, so we fetch the full listing + its farmer\n  // on tap (light initial query) and build a complete cart item — same shape\n  // the browse cards use. requireAuth gates it behind consumer login.\n  const addListingToCart = async (listingId: string) => {\n    if (adding[listingId]) return\n    setAdding((s) => ({ ...s, [listingId]: true }))\n    const { data: listing } = await supabase\n      .from('produce_listings')\n      .select('id, name, variety, emoji, unit, stock_qty, price_tier_1_qty, price_tier_1_price, price_tier_2_qty, price_tier_2_price, price_tier_3_price, farmer_id')\n      .eq('id', listingId)\n      .single()\n    if (!listing) { […]
 
@@ -520,7 +520,7 @@ id: toolu_01BJm89HME5xSNKqqZAuS63e
 tool_result
 id: toolu_01BJm89HME5xSNKqqZAuS63e
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -534,7 +534,7 @@ id: toolu_01PsDHwNBQ7joj6PJd3b95YR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "old_string": "                {/* Chevron — signals the whole row is tappable and opens the\n                    complete harvest details. */}\n                <td className=\"pr-3 pl-1 py-3 text-right align-middle\">\n                  <span className=\"text-gray-300 text-lg leading-none\">›</span>\n                </td>",
   "new_string": "                {/* Add-to-cart — adds this harvest's listing straight to the\n                    cart without leaving the page. stopPropagation so it doesn't\n                    also open the details row. */}\n                <td className=\"pr-3 pl-1 py-3 text-right align-middle\">\n                  <button\n                    type=\"button\"\n                    onClick={(e) => { e.stopPropagation(); void addListingToCart(item.id) }}\n                    disabled={!!adding[item.id]}\n                    aria-label={L('Add to cart', 'బుట్టలో వేయండి')}\n                    className={`inline-flex items-center justify-center w-8 h-8 rounded-full active:scale-95 disabled:opacity-50 ${\n                      cart[item.id] ? 'bg-green-600 text-white' : 'bg-green-50 text-green-700'\n                    }`}\n                  >\n                    {adding[item.id] ? (\n                      <span className=\"text-xs leading-none\">…</span>\n                    ) : cart[item.id] ? (\n                      <span className=\"text-sm leading-none\">✓</span>\n                    ) : (\n                      <svg viewBox=\"0 0 24 24\" className=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2.2\" strokeLinecap=\"round\" strokeLinejoin=\"round\" aria-hidden=\"true\">\n                        <circle cx=\"9\" cy=\"20\" r=\"1.4\" />\n                        <circle cx=\"18\" cy=\"20\" r=\"1.4\" />\n                        <path d=\"M2.5 3h2l2.2 12.1a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.2L21 7H6\" />\n                      </svg>\n                    )}\n                  </button>\n                </td>"
 }
@@ -545,7 +545,7 @@ id: toolu_01PsDHwNBQ7joj6PJd3b95YR
 tool_result
 id: toolu_01PsDHwNBQ7joj6PJd3b95YR
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -555,7 +555,7 @@ id: toolu_01YKnbPEfbLzj6Zxr2HgGp61
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "old_string": "            <th className=\"w-6\" aria-hidden=\"true\"></th>",
   "new_string": "            <th className=\"w-10\" aria-hidden=\"true\"></th>"
 }
@@ -566,7 +566,7 @@ id: toolu_01YKnbPEfbLzj6Zxr2HgGp61
 tool_result
 id: toolu_01YKnbPEfbLzj6Zxr2HgGp61
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -603,7 +603,7 @@ id: toolu_01KzAmcok8XhNfVCwowSngfN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "old_string": "  const addListingToCart = async (listingId: string) => {\n    if (adding[listingId]) return\n    setAdding((s) => ({ ...s, [listingId]: true }))\n    const { data: listing } = await supabase\n      .from('produce_listings')\n      .select('id, name, variety, emoji, unit, stock_qty, price_tier_1_qty, price_tier_1_price, price_tier_2_qty, price_tier_2_price, price_tier_3_price, farmer_id')\n      .eq('id', listingId)\n      .single()\n    if (!listing) { setAdding((s) => ({ ...s, [listingId]: false })); return }\n    const { data: farmer } = await supabase\n      .from('farmers')\n      .select('id, name, phone, village, slug, pickup_locations, pickup_slots')\n      .eq('id', listing.farmer_id)\n      .single()\n    setAdding((s) => ({ ...s, [listingId]: false }))\n    if (!farmer?.phone || !listing.price_tier_1_price) return\n    requireAuth(() => {\n      addItem({",
   "new_string": "  const addListingToCart = (listingId: string) => {\n    if (adding[listingId]) return\n    requireAuth(async () => {\n      setAdding((s) => ({ ...s, [listingId]: true }))\n      const { data: listing } = await supabase\n        .from('produce_listings')\n        .select('id, name, variety, emoji, unit, stock_qty, price_tier_1_qty, price_tier_1_price, price_tier_2_qty, price_tier_2_price, price_tier_3_price, farmer_id')\n        .eq('id', listingId)\n        .single()\n      if (!listing) { setAdding((s) => ({ ...s, [listingId]: false })); return }\n      const { data: farmer } = await supabase\n        .from('farmers')\n        .select('id, name, phone, village, slug, pickup_locations, pickup_slots')\n        .eq('id', listing.farmer_id)\n        .single()\n      setAdding((s) => ({ ...s, [listingId]: false }))\n      if (!farmer?.phone || !listing.price_tier_1_price) return\n      addItem({"
 }
@@ -614,7 +614,7 @@ id: toolu_01KzAmcok8XhNfVCwowSngfN
 tool_result
 id: toolu_01KzAmcok8XhNfVCwowSngfN
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -627,7 +627,7 @@ tool_use Read
 id: toolu_01BT9Xac6eLZ32vvMyr4TSk4
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/FreshHarvestsTable.tsx",
   "offset": 100,
   "limit": 30
 }

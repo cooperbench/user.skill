@@ -150,7 +150,7 @@ tool_use Read
 id: toolu_01Gtp7CDaeHnvPADCtemm3fX
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix"
 }
 ```
 
@@ -160,7 +160,7 @@ tool_use Read
 id: toolu_01LFox4tfWHieMzgtxSYQxJe
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>"
 }
 ```
 
@@ -171,7 +171,7 @@ id: toolu_01N5ej3GR5PByfkJ5htTuCRH
 ```json
 {
   "pattern": "ldid|sshpass|keystone|gnu-tar|gnutar",
-  "path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix",
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix",
   "output_mode": "content"
 }
 ```

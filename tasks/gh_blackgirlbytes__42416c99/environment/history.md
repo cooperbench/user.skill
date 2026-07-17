@@ -17,7 +17,7 @@ id: call_GtyU3Dk5uD8T3OB7I4Ui0LU9
 ```json
 {
   "cmd": "pwd && rg --files -g '!*node_modules*' -g '!*.png' -g '!*.jpg' -g '!*.jpeg' -g '!*.gif' | head -200",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -30,7 +30,7 @@ id: call_bn6VXaWrrlQWr86c6yFL9e90
 ```json
 {
   "cmd": "find . -maxdepth 2 -type f \\( -iname 'README*' -o -iname '*guide*' -o -iname '*leaderboard*' -o -iname '*setup*' -o -iname '*.md' \\) | sort",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -43,7 +43,7 @@ id: call_GISsGe9sC3TX4BCZHipevMYh
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -59,7 +59,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 161
 Output:
-/Users/goose-guest/Documents/work/planetfall-seed-signalkit
+/home/<USER>/Documents/work/planetfall-seed-signalkit
 src/memoryProps.js
 src/debris.js
 src/islandView.js
@@ -144,7 +144,7 @@ id: call_NPPm5UxrareOCYJW8tjO7wEm
 ```json
 {
   "cmd": "sed -n '1,240p' README.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -157,7 +157,7 @@ id: call_ykFP7uW6JhTYE0yLAAHEuTxl
 ```json
 {
   "cmd": "sed -n '1,260p' api/leaderboard.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -170,7 +170,7 @@ id: call_VuKtZV2nX2SWu073St2yiXZa
 ```json
 {
   "cmd": "sed -n '1,260p' src/leaderboard.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -183,7 +183,7 @@ id: call_syTD7Z7jG0bxlWTq6pvuAOab
 ```json
 {
   "cmd": "sed -n '1,260p' src/leaderboardPanel.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -438,7 +438,7 @@ id: call_x6JT6sXnEdrC8VOTHI7lcEdY
 ```json
 {
   "cmd": "sed -n '260,560p' api/leaderboard.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -512,7 +512,7 @@ id: call_DfNFVkUy6l0UrjDWftfr5caC
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -525,7 +525,7 @@ id: call_G6e8SB71VYB1hiQEUs2rK86j
 ```json
 {
   "cmd": "sed -n '1,220p' vercel.json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -538,7 +538,7 @@ id: call_0Hmzm1TeZKH80LBtuRFOYy9J
 ```json
 {
   "cmd": "sed -n '1,220p' api/leaderboard.test.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -551,7 +551,7 @@ id: call_WujBD1CvFvQSc57sAwHcIzx3
 ```json
 {
   "cmd": "find .vercel -maxdepth 2 -type f -print | sort | xargs -I{} sh -c 'printf \"%s\\n\" \"$1\"; sed -n \"1,120p\" \"$1\"' sh {}",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -793,7 +793,7 @@ id: call_nmf7sBmwNXbSuttU5glf9fOZ
 ```json
 {
   "cmd": "rg -n \"leaderboard|location|pathname|showBoard|loadLeaderboard|/leaderboard\" src index.html api README.md vercel.json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -806,7 +806,7 @@ id: call_p3XsJHTidUho4GcKf4hyzDIE
 ```json
 {
   "cmd": "sed -n '1,260p' src/main.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -819,7 +819,7 @@ id: call_HWGHtplfUXpAaEjOFC8Ubr59
 ```json
 {
   "cmd": "sed -n '260,620p' src/main.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -960,7 +960,7 @@ id: call_7bf5zMbM6evAtBt8KYrl8zqT
 ```json
 {
   "cmd": "curl -s -o /tmp/planetfall-api.json -w '%{http_code} %{content_type}\\n' https://play-planetfall.vercel.app/api/leaderboard?limit=3 && head -c 500 /tmp/planetfall-api.json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -973,7 +973,7 @@ id: call_RNt2lCM8pwqeuSQPFFCVrr8Y
 ```json
 {
   "cmd": "curl -s -o /tmp/planetfall-leaderboard.html -w '%{http_code} %{content_type}\\n' https://play-planetfall.vercel.app/leaderboard && wc -c /tmp/planetfall-leaderboard.html",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1019,7 +1019,7 @@ id: call_CHotbRNJoe7Gpb6YEJXNm1AJ
 ```json
 {
   "cmd": "curl -s -o /tmp/planetfall-api.json -w '%{http_code} %{content_type}\\n' 'https://play-planetfall.vercel.app/api/leaderboard?limit=3' && head -c 500 /tmp/planetfall-api.json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1050,7 +1050,7 @@ id: call_e5UeKz2BcNI9ldQNEpdpRYkw
 ```json
 {
   "cmd": "sed -n '1,200p' .gitignore 2>/dev/null || true",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1063,7 +1063,7 @@ id: call_YbriroULJlhn1KjbPvGwMGZ8
 ```json
 {
   "cmd": "find . -maxdepth 2 -type d -name docs -o -name documentation",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1130,7 +1130,7 @@ id: call_KY5ZNZYAw4ptFM24KruKDHXH
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1143,7 +1143,7 @@ id: call_3w4UPP6UEkYQsTSPFLUGMLtp
 ```json
 {
   "cmd": "sed -n '1,200p' BOOTH_GUIDE.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1204,7 +1204,7 @@ Before the booth opens:
 
 > AGENT
 
-Done. I added a very simple booth handoff at [BOOTH_GUIDE.md](/Users/goose-guest/Documents/work/planetfall-seed-signalkit/BOOTH_GUIDE.md).
+Done. I added a very simple booth handoff at [BOOTH_GUIDE.md](/home/<USER>/Documents/work/planetfall-seed-signalkit/BOOTH_GUIDE.md).
 
 It says exactly the key thing:
 
@@ -1227,8 +1227,8 @@ tool_use exec_command
 id: call_gKqyP0chqYsFpIy7oceYlhTN
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/goose-guest/.codex/skills/using-entire/SKILL.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/skills/using-entire/SKILL.md",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1286,7 +1286,7 @@ id: call_KXNrLuNXUdNfOssW9C95aHR2
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1299,7 +1299,7 @@ id: call_4FLnoVdUcm8r2NPXeq1oKySj
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1312,7 +1312,7 @@ id: call_rKMKTzzr19FDPiIUNozhg6z6
 ```json
 {
   "cmd": "entire status --json 2>/dev/null || entire status",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1374,7 +1374,7 @@ id: call_wc6qoF54F0Dg3jIUaLGCWpR5
 ```json
 {
   "cmd": "git fetch origin main",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1406,7 +1406,7 @@ id: call_ooeipdTrDvW8PZqvjMpXR0pe
 ```json
 {
   "cmd": "git log --oneline --decorate --left-right --cherry-pick HEAD...origin/main | head -80",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1419,7 +1419,7 @@ id: call_tg8nyyUEHTmUuNZ3P7rJrkm4
 ```json
 {
   "cmd": "git ls-tree -r --name-only origin/main | rg -n '(^BOOTH_GUIDE.md$|leaderboard|README|vercel|package|src/main|titleScreen|style)'",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1432,7 +1432,7 @@ id: call_YYkJJRYIY9MtKXWzzD6kQonT
 ```json
 {
   "cmd": "git log --format='%H %s%n%b' -5 -- src/leaderboardPanel.js src/leaderboard.js src/main.js src/titleScreen.js src/style.css README.md | rg -B2 -A2 'Entire-Checkpoint|refresh|leaderboard'",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1509,7 +1509,7 @@ id: call_YRRuGXB6XXdxPoeXcq2xxWC1
 ```json
 {
   "cmd": "git rev-parse --short HEAD origin/main && git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1522,7 +1522,7 @@ id: call_rJcH9xdvSOegoVznAV4EGYe1
 ```json
 {
   "cmd": "entire explain --checkpoint bb2637397ebe --json --no-pager",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1535,7 +1535,7 @@ id: call_mHXseDI1eHr5FC4kfHiL11KE
 ```json
 {
   "cmd": "sed -n '1,260p' src/leaderboardPanel.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1548,7 +1548,7 @@ id: call_6jLvdPJACqXpfYLPGl2vgneh
 ```json
 {
   "cmd": "sed -n '230,320p' src/main.js && sed -n '3000,3225p' src/style.css",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1834,7 +1834,7 @@ id: call_j6BsfPn6lGzkGerEufQPsv7l
 ```json
 {
   "cmd": "git rev-parse --short HEAD && git rev-parse --short origin/main && git merge-base --is-ancestor origin/main HEAD; printf 'main_in_head=%s\\n' $? && git merge-base --is-ancestor HEAD origin/main; printf 'head_in_main=%s\\n' $?",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1847,7 +1847,7 @@ id: call_LT1KaSPLlAa75nymWKkmXTdw
 ```json
 {
   "cmd": "sed -n '3225,3325p' src/style.css",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1860,7 +1860,7 @@ id: call_vyqmgjWAufCUXPmrTAV0MqJY
 ```json
 {
   "cmd": "sed -n '1,200p' BOOTH_GUIDE.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1873,7 +1873,7 @@ id: call_FeJcLfHLFwOqIsIQTLpQtSmd
 ```json
 {
   "cmd": "git show --stat --oneline --decorate 0304160b0f5f0e6f4cb06793186c915f1dbd1b51",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2058,7 +2058,7 @@ id: call_8lTxcl1uP1prKUtvETyYEk76
 ```json
 {
   "cmd": "sed -n '1,220p' BOOTH_GUIDE.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2071,7 +2071,7 @@ id: call_0J0X2RZlJYY5xj6TI8eUbN3R
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2084,7 +2084,7 @@ id: call_LtFRQWdqEJwvgygjozOpeLrB
 ```json
 {
   "cmd": "git show --no-patch --oneline --decorate HEAD",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -2165,7 +2165,7 @@ Output:
 
 > AGENT
 
-Updated [BOOTH_GUIDE.md](/Users/goose-guest/Documents/work/planetfall-seed-signalkit/BOOTH_GUIDE.md) to mention the new leaderboard behavior:
+Updated [BOOTH_GUIDE.md](/home/<USER>/Documents/work/planetfall-seed-signalkit/BOOTH_GUIDE.md) to mention the new leaderboard behavior:
 
 - leaderboard auto-refreshes about every 15 seconds
 - booth staff can press the circular refresh button if a score does not show right away

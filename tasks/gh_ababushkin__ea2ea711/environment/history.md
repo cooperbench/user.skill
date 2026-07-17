@@ -51,8 +51,8 @@ tool_result ERROR
 id: toolu_01HpJEDan5QoMd3UvPtERq5Q
 ```
 Exit code 1
--rw-r--r--@ 1 anton  staff  24 May 23 00:48 /Users/anton/src/drain-cycle/mise.toml
-ls: /Users/anton/src/drain-cycle/.mise.toml: No such file or directory
+-rw-r--r--@ 1 anton  staff  24 May 23 00:48 /home/<USER>/src/drain-cycle/mise.toml
+ls: /home/<USER>/src/drain-cycle/.mise.toml: No such file or directory
 ---
 [tools]
 python = "3.12"
@@ -246,7 +246,7 @@ tool_use Read
 id: toolu_01M3SFjjEQy81ioy7PwfCHHV
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/worktree.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/worktree.py",
   "offset": 60,
   "limit": 160
 }
@@ -426,44 +426,44 @@ tool_result
 id: toolu_01FxK88ekBMq8YPq7i29MKtk
 ```
 === trusted-configs store ===
-755  .worktrees-ABA-188-7409a1ef9d90974b -> /Users/anton/src/agent-skills/.worktrees/ABA-188  48B
-755  .worktrees-ABA-271-1446c5cc7931ec87 -> /Users/anton/src/agent-skills/.worktrees/ABA-271  48B
-755  .worktrees-ABA-301-76030e43f06bb2ee -> /Users/anton/src/drain-cycle/.worktrees/ABA-301  47B
-755  .worktrees-ABA-302-f995767547c016c0 -> /Users/anton/src/drain-cycle/.worktrees/ABA-302  47B
-755  .worktrees-ABA-303-c6017c994c0abbe5 -> /Users/anton/src/drain-cycle/.worktrees/ABA-303  47B
-755  .worktrees-ABA-304-e4b25fe50d334dbc -> /Users/anton/src/drain-cycle/.worktrees/ABA-304  47B
-755  .worktrees-ABA-376-ce1942c7371c129e -> /Users/anton/src/drain-cycle/.worktrees/ABA-376  47B
-755  .worktrees-ABA-393-77c97afdf37339b9 -> /Users/anton/src/drain-cycle/.worktrees/ABA-393  47B
-755  .worktrees-ABA-401-88bf804069dc6583 -> /Users/anton/src/drain-cycle/.worktrees/ABA-401  47B
-755  .worktrees-ABA-410-c3d929d3052e598f -> /Users/anton/src/drain-cycle/.worktrees/ABA-410  47B
-755  .worktrees-ABA-411-87a57d2605d8d2d1 -> /Users/anton/src/drain-cycle/.worktrees/ABA-411  47B
-755  .worktrees-ABA-413-35188f8872168295 -> /Users/anton/src/drain-cycle/.worktrees/ABA-413  47B
-755  .worktrees-ABA-414-39c5e56e250ac51 -> /Users/anton/src/drain-cycle/.worktrees/ABA-414  47B
-755  .worktrees-ABA-415-8dc410637f505fbf -> /Users/anton/src/drain-cycle/.worktrees/ABA-415  47B
-755  .worktrees-ABA-416-a5e966c64a52e07e -> /Users/anton/src/drain-cycle/.worktrees/ABA-416  47B
-755  .worktrees-ABA-417-3cd1b526a018ad23 -> /Users/anton/src/drain-cycle/.worktrees/ABA-417  47B
-755  .worktrees-tmp-mise-check-d7fd98dda0d1c4f -> /Users/anton/src/drain-cycle/.worktrees/tmp-mise-check  54B
-755  Users-anton-86daaf64c4192da2 -> /Users/anton  12B
-755  agent-skills-password-audit-5e5b1e1104cbb452 -> /Users/anton/src/agent-skills/password-audit  44B
-755  mcp-edgar-9a2624dcb7835ee7 -> /Users/anton/src/stock-review/mcp/edgar  39B
-755  mcp-edgar-9bef06907bf1b17c -> /Users/anton/src/stock-screener/mcp/edgar  41B
-755  mcp-fmp-241b5694011c2332 -> /Users/anton/src/stock-review/mcp/fmp  37B
-755  mcp-yf-6997ff54509e4eac -> /Users/anton/src/stock-screener/mcp/yf  38B
-755  mcp-yf-b902c10a50311e9 -> /Users/anton/src/stock-review/mcp/yf  36B
-755  src-agent-skills-fcd1b1cfb0f1b549 -> /Users/anton/src/agent-skills  29B
-755  src-convex-8fccafc35058e6c8 -> /Users/anton/src/convex  23B
-755  src-drain-cycle-32d5840bfec7b90d -> /Users/anton/src/drain-cycle  28B
-755  src-imagedoc-850209515ca958a7 -> /Users/anton/src/imagedoc  25B
-755  src-nestl-7fe29ec9b0863128 -> /Users/anton/src/nestl  22B
-755  src-pdfmaker-d3cadfedfecd4ed6 -> /Users/anton/src/pdfmaker  25B
-755  src-the-monolith-466634fb989c37f7 -> /Users/anton/src/the-monolith  29B
-755  src-workflow-hooks-b62683d486de0224 -> /Users/anton/src/workflow-hooks  31B
+755  .worktrees-ABA-188-7409a1ef9d90974b -> /home/<USER>/src/agent-skills/.worktrees/ABA-188  48B
+755  .worktrees-ABA-271-1446c5cc7931ec87 -> /home/<USER>/src/agent-skills/.worktrees/ABA-271  48B
+755  .worktrees-ABA-301-76030e43f06bb2ee -> /home/<USER>/src/drain-cycle/.worktrees/ABA-301  47B
+755  .worktrees-ABA-302-f995767547c016c0 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-302  47B
+755  .worktrees-ABA-303-c6017c994c0abbe5 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-303  47B
+755  .worktrees-ABA-304-e4b25fe50d334dbc -> /home/<USER>/src/drain-cycle/.worktrees/ABA-304  47B
+755  .worktrees-ABA-376-ce1942c7371c129e -> /home/<USER>/src/drain-cycle/.worktrees/ABA-376  47B
+755  .worktrees-ABA-393-77c97afdf37339b9 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-393  47B
+755  .worktrees-ABA-401-88bf804069dc6583 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-401  47B
+755  .worktrees-ABA-410-c3d929d3052e598f -> /home/<USER>/src/drain-cycle/.worktrees/ABA-410  47B
+755  .worktrees-ABA-411-87a57d2605d8d2d1 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-411  47B
+755  .worktrees-ABA-413-35188f8872168295 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-413  47B
+755  .worktrees-ABA-414-39c5e56e250ac51 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-414  47B
+755  .worktrees-ABA-415-8dc410637f505fbf -> /home/<USER>/src/drain-cycle/.worktrees/ABA-415  47B
+755  .worktrees-ABA-416-a5e966c64a52e07e -> /home/<USER>/src/drain-cycle/.worktrees/ABA-416  47B
+755  .worktrees-ABA-417-3cd1b526a018ad23 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-417  47B
+755  .worktrees-tmp-mise-check-d7fd98dda0d1c4f -> /home/<USER>/src/drain-cycle/.worktrees/tmp-mise-check  54B
+755  Users-anton-86daaf64c4192da2 -> /home/<USER>  12B
+755  agent-skills-password-audit-5e5b1e1104cbb452 -> /home/<USER>/src/agent-skills/password-audit  44B
+755  mcp-edgar-9a2624dcb7835ee7 -> /home/<USER>/src/stock-review/mcp/edgar  39B
+755  mcp-edgar-9bef06907bf1b17c -> /home/<USER>/src/stock-screener/mcp/edgar  41B
+755  mcp-fmp-241b5694011c2332 -> /home/<USER>/src/stock-review/mcp/fmp  37B
+755  mcp-yf-6997ff54509e4eac -> /home/<USER>/src/stock-screener/mcp/yf  38B
+755  mcp-yf-b902c10a50311e9 -> /home/<USER>/src/stock-review/mcp/yf  36B
+755  src-agent-skills-fcd1b1cfb0f1b549 -> /home/<USER>/src/agent-skills  29B
+755  src-convex-8fccafc35058e6c8 -> /home/<USER>/src/convex  23B
+755  src-drain-cycle-32d5840bfec7b90d -> /home/<USER>/src/drain-cycle  28B
+755  src-imagedoc-850209515ca958a7 -> /home/<USER>/src/imagedoc  25B
+755  src-nestl-7fe29ec9b0863128 -> /home/<USER>/src/nestl  22B
+755  src-pdfmaker-d3cadfedfecd4ed6 -> /home/<USER>/src/pdfmaker  25B
+755  src-the-monolith-466634fb989c37f7 -> /home/<USER>/src/the-monolith  29B
+755  src-workflow-hooks-b62683d486de0224 -> /home/<USER>/src/workflow-hooks  31B
 === any mention of drain-cycle worktrees in trust store ===
 === entries mentioning drain-cycle ===
-.worktrees-ABA-301-76030e43f06bb2ee -> /Users/anton/src/drain-cycle/.worktrees/ABA-301  47B
-.worktrees-ABA-302-f995767547c016c0 -> /Users/anton/src/drain-cycle/.worktrees/ABA-302  47B
-.worktrees-ABA-303-c6017c994c0abbe5 -> /Users/anton/src/drain-cycle/.worktrees/ABA-303  47B
-.worktrees-ABA-304-e4b25fe50d334dbc -> /Users/anton/src/drain-cycle/.worktrees/ABA-304  47B
+.worktrees-ABA-301-76030e43f06bb2ee -> /home/<USER>/src/drain-cycle/.worktrees/ABA-301  47B
+.worktrees-ABA-302-f995767547c016c0 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-302  47B
+.worktrees-ABA-303-c6017c994c0abbe5 -> /home/<USER>/src/drain-cycle/.worktrees/ABA-303  47B
+.worktrees-ABA-304-e4b25fe50d334dbc -> /home/<USER>/src/drain-cycle/.worktrees/ABA-304  47B
 .worktrees-ABA-376-ce1942c7371c129e […]
 
 > AGENT
@@ -545,8 +545,8 @@ id: toolu_01SqTUjWmCnCG1H1wzEQ3xGT
 ---env var doc---
 ---current env---
 REDACTED
-PATH=/Users/anton/.local/share/mise/installs/python/3.12.13/bin:/Users/anton/.local/share/mise/installs/node/22.22.2/bin:/Users/anton/.local/share/mise/installs/ruby/3.3.11/bin:/Applications/cmux.app/Contents/Resources/bin:/Users/anton/.local/bin:/Users/anton/.local/share/mise/shims:/opt/homebrew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Users/anton/.local/share/mise/shims:/Users/anton/.local/bin:/Users/anton/.local/bin:/opt/homebrew/opt/fzf/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/github/unknown/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/playwright/unknown/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/skill-creator/unknown/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/commit-commands/unknown/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/hookify/unknown/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/chrome-devtools-mcp/1.3.0/bin:/Users/anton/.claude/plugins/cache/claude-plugins-official/ruby-lsp/1.0.0/bin:/Users/anton/.claude/plugins/cache/crit/crit/1.7.2/bin:/Users/anton/.claude/plugins/cache/superpowers-marketplace/elements-of-style/1.0.0/bin:/Users/anton/.claude/plugins/cache/superpowers-marketplace/superpowers-developing-for-claude-code/0.3.1/bin:/Users/anton/.claude/plugins/cache/superpowers-marketplace/private-journal-mcp/1.2.0/bin:/Users/anton/.claude/plugins/cache/honeycomb-plugins/honeycomb/1.1.0/bin:/Users/anton/.claude/plugins/cache/openai-codex/codex/1.0.4/bin:/Users/anton/.claude/plugins/cache/workflow-hooks/workflow-hooks/0.1.7/bin:/Users/anton/.claude/plugins/cache/stock-screener/stock-screener/0.1.0/bin
-__MISE_ORIG_PATH=/Users/anton/.local/bin:/Users/anton/.local/share/mise/shims:/opt/homebrew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Users/anton/.local/share/mise/shims:/Users/anton/.local/bin:/Applications/cmux.app/Contents/Resources/bin:/Users/anton/.local/bin:/opt/homebrew/opt/fzf/bin
+PATH=/home/<USER>/.local/share/mise/installs/python/3.12.13/bin:/home/<USER>/.local/share/mise/installs/node/22.22.2/bin:/home/<USER>/.local/share/mise/installs/ruby/3.3.11/bin:/Applications/cmux.app/Contents/Resources/bin:/home/<USER>/.local/bin:/home/<USER>/.local/share/mise/shims:/opt/homebrew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/home/<USER>/.local/share/mise/shims:/home/<USER>/.local/bin:/home/<USER>/.local/bin:/opt/homebrew/opt/fzf/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/github/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/playwright/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/skill-creator/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/commit-commands/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/hookify/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/chrome-devtools-mcp/1.3.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/ruby-lsp/1.0.0/bin:/home/<USER>/.claude/plugins/cache/crit/crit/1.7.2/bin:/home/<USER>/.claude/plugins/cache/superpowers-marketplace/elements-of-style/1.0.0/bin:/home/<USER>/.claude/plugins/cache/superpowers-marketplace/superpowers-developing-for-claude-code/0.3.1/bin:/home/<USER>/.claude/plugins/cache/superpowers-marketplace/private-journal-mcp/1.2.0/bin:/home/<USER>/.claude/plugins/cache/honeycomb-plugins/honeycomb/1.1.0/bin:/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.4/bin:/home/<USER>/.claude/plugins/cache/workflow-hooks/workflow-hooks/0.1.7/bin:/home/<USER>/.claude/plugins/cache/stock-screener/stock-screener/0.1.0/bin
+__MISE_ORIG_PATH=/home/<USER>/.local/bin:/home/<USER>/.local/share/mise/shims:/opt/homebrew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/home/<USER>/.local/share/mise/shims:/home/<USER>/.local/bin:/Applications/cmux.app/Contents/Resources/bin:/home/<USER>/.local/bin:/opt/homebrew/opt/fzf/bin
 MISE_SHELL=zsh
 __MISE_ZSH_CHPWD_RAN=0
 REDACTED/REDACTED
@@ -595,7 +595,7 @@ id: toolu_017om1Zn4Hpnt6WDr7VAvep8
       "options": [
         {
           "label": "Durable env fix (Recommended)",
-          "description": "Trust the two stale worktrees now AND set MISE_TRUSTED_CONFIG_PATHS=/Users/anton/src/drain-cycle in your global env, so any worktree under the repo is trusted no matter how it's created. Stops recurrence for manual/graphite worktrees."
+          "description": "Trust the two stale worktrees now AND set MISE_TRUSTED_CONFIG_PATHS=/home/<USER>/src/drain-cycle in your global env, so any worktree under the repo is trusted no matter how it's created. Stops recurrence for manual/graphite worktrees."
         },
         {
           "label": "Just trust the worktrees",
@@ -640,25 +640,25 @@ tool_result ERROR
 id: toolu_01GaXa2v87JoHC1idMguwiVM
 ```
 Exit code 2
-=== /Users/anton/.zshrc ===
+=== /home/<USER>/.zshrc ===
 2 matches in 1 files:
 
-/Users/anton/.zshrc:8:# mise (runtime manager)
-/Users/anton/.zshrc:9:eval "$(mise activate zsh)"
-=== /Users/anton/.zprofile ===
+/home/<USER>/.zshrc:8:# mise (runtime manager)
+/home/<USER>/.zshrc:9:eval "$(mise activate zsh)"
+=== /home/<USER>/.zprofile ===
 4 matches in 1 files:
 
-/Users/anton/.zprofile:3:# Put anything that must survive path_helper here — brew, pipx, mise shims.
-/Users/anton/.zprofile:10:# mise shims — Claude Code's Bash tool invokes `zsh -c -l`, which is a
-/Users/anton/.zprofile:13:# mise-managed toolchain.
-/Users/anton/.zprofile:14:command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh --shims)"
-=== /Users/anton/.zshenv ===
+/home/<USER>/.zprofile:3:# Put anything that must survive path_helper here — brew, pipx, mise shims.
+/home/<USER>/.zprofile:10:# mise shims — Claude Code's Bash tool invokes `zsh -c -l`, which is a
+/home/<USER>/.zprofile:13:# mise-managed toolchain.
+/home/<USER>/.zprofile:14:command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh --shims)"
+=== /home/<USER>/.zshenv ===
 3 matches in 1 files:
 
-/Users/anton/.zshenv:5:# Ensure mise + brew are on PATH for non-login shells (scripts, subshells)
-/Users/anton/.zshenv:9:# mise shims. Login shells get this re-applied in ~/.zprofile after macOS
-/Users/anton/.zshenv:11:command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh --shims)"
-=== /Users/anton/.profile ===
+/home/<USER>/.zshenv:5:# Ensure mise + brew are on PATH for non-login shells (scripts, subshells)
+/home/<USER>/.zshenv:9:# mise shims. Login shells get this re-applied in ~/.zprofile after macOS
+/home/<USER>/.zshenv:11:command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh --shims)"
+=== /home/<USER>/.profile ===
 0 matches for 'mise\|MISE'
 ```
 
@@ -668,7 +668,7 @@ tool_use Read
 id: toolu_01G1CBNT9sY6ztjA1Ma4HXXM
 ```json
 {
-  "file_path": "/Users/anton/.zshenv"
+  "file_path": "/home/<USER>/.zshenv"
 }
 ```
 
@@ -701,7 +701,7 @@ tool_use Write
 id: toolu_01RJLbJcYzSEbYiFCVQBsEFD
 ```json
 {
-  "file_path": "/Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md",
+  "file_path": "/home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md",
   "content": "# Fix: mise \"error parsing config file\" in worktrees\n\n## Context\n\nA `PostToolUse:Edit` hook surfaces this on every edit inside a worktree:\n\n```\nmise ERROR error parsing config file: ~/src/drain-cycle/.worktrees/ABA-412/mise.toml\n```\n\nThe header is misleading — the config parses fine. This plan stops the noise now and prevents it from returning for hand-created worktrees.\n\n## Root cause note\n\n```\nROOT CAUSE NOTE\nVerification: mise ls   (run with cwd inside the worktree)\n\nWhat is broken: Every mise invocation in ~/src/drain-cycle/.worktrees/ABA-412\n  prints \"error parsing config file\". A PostToolUse:Edit hook runs mise with the\n  worktree as cwd, so each edit emits the line. It is non-blocking — pure noise,\n  no work is stopped.\n\nWhere it breaks: mise's per-path trust check, not the TOML parser. The full\n  error names the real reason on its second line:\n    \"Config files in .../ABA-412/mise.toml are not trusted. Trust them with\n     `mise trust`.\"\n  The header \"error parsing config file\" is mise's generic wrapper around any\n  config-load failure, including the trust refusal.\n\nWhy it's broken: mise keys trust by absolute path. A `git worktree add` checks\n  out the repo's tracked mise.toml ([tools] / python = \"3.12\") to a brand-new\n  path that mise has never trusted, so it refuses to load it — even though […]
 
 > TOOL
@@ -709,7 +709,7 @@ id: toolu_01RJLbJcYzSEbYiFCVQBsEFD
 tool_result
 id: toolu_01RJLbJcYzSEbYiFCVQBsEFD
 ```
-File created successfully at: /Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -767,7 +767,7 @@ id: toolu_01QbbSVt4bLNVuKaSU9yNj1K
 ```json
 {
   "description": "Refine the plan prose",
-  "prompt": "Run the writing-refinement skill (/writing-refinement, via the Skill tool) over this plan file and apply its findings directly by editing the file:\n\n/Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md\n\nThis is a debugging root-cause note plus a small fix plan. Keep it technically precise — do not delete risk/dependency/constraint detail. Keep the fenced ROOT CAUSE NOTE block structure and the shell code blocks intact. Apply the prose rules (plain English, active voice, name the actor + verb, cut clutter, no metaphors). Edit the file in place and report a one-line summary of what you changed (or \"no changes needed\").",
+  "prompt": "Run the writing-refinement skill (/writing-refinement, via the Skill tool) over this plan file and apply its findings directly by editing the file:\n\n/home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md\n\nThis is a debugging root-cause note plus a small fix plan. Keep it technically precise — do not delete risk/dependency/constraint detail. Keep the fenced ROOT CAUSE NOTE block structure and the shell code blocks intact. Apply the prose rules (plain English, active voice, name the actor + verb, cut clutter, no metaphors). Edit the file in place and report a one-line summary of what you changed (or \"no changes needed\").",
   "subagent_type": "general-purpose"
 }
 ```
@@ -777,7 +777,7 @@ id: toolu_01QbbSVt4bLNVuKaSU9yNj1K
 tool_result
 id: toolu_01QbbSVt4bLNVuKaSU9yNj1K
 ```
-I ran the writing-refinement skill (review mode, plan-mode-plan type) over the file. Plan mode is active, which forbids editing any file except my own scratch plan file, so I could not apply the edits to the target file directly. I recorded the exact edits in `/Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse-agent-a8d9a582da62f0261.md`.
+I ran the writing-refinement skill (review mode, plan-mode-plan type) over the file. Plan mode is active, which forbids editing any file except my own scratch plan file, so I could not apply the edits to the target file directly. I recorded the exact edits in `/home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse-agent-a8d9a582da62f0261.md`.
 
 Verdict: accept with notes. The plan's structure is already sound — SCQA spine present, headings are achievements, every fact has one home, ROOT CAUSE NOTE and shell blocks are clean and should stay verbatim. Only two Phase-5 prose findings:
 
@@ -800,7 +800,7 @@ id: toolu_01Ce4xLbq5mtprpsNMfKy4x6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md",
+  "file_path": "/home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md",
   "old_string": "A `PostToolUse:Edit` hook surfaces this on every edit inside a worktree:",
   "new_string": "A `PostToolUse:Edit` hook prints this on every edit inside a worktree:"
 }
@@ -811,7 +811,7 @@ id: toolu_01Ce4xLbq5mtprpsNMfKy4x6
 tool_result
 id: toolu_01Ce4xLbq5mtprpsNMfKy4x6
 ```
-The file /Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -821,7 +821,7 @@ id: toolu_017EuZqqkQCpsnt3UNdeL1hM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md",
+  "file_path": "/home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md",
   "old_string": "The header is misleading — the config parses fine. This plan stops the noise now and prevents it from returning for hand-created worktrees.",
   "new_string": "The header is misleading — the config parses fine. This plan stops the error now and keeps it from returning for hand-created worktrees."
 }
@@ -832,7 +832,7 @@ id: toolu_017EuZqqkQCpsnt3UNdeL1hM
 tool_result
 id: toolu_017EuZqqkQCpsnt3UNdeL1hM
 ```
-The file /Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -860,7 +860,7 @@ id: toolu_01GqDJgcefkRoNEB3yaVQpdT
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/anton/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md
+Your plan has been saved to: /home/<USER>/.claude/plans/i-m-seeing-this-error-rustling-treehouse.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -904,7 +904,7 @@ id: toolu_019kkHRiUWe32nPfRcExYkmy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/.zshenv",
+  "file_path": "/home/<USER>/.zshenv",
   "old_string": "# mise shims. Login shells get this re-applied in ~/.zprofile after macOS\n# path_helper runs in /etc/zprofile and wipes earlier PATH edits.\ncommand -v mise >/dev/null 2>&1 && eval \"$(mise activate zsh --shims)\"",
   "new_string": "# Trust every mise config under this repo so hand-created worktrees\n# (git worktree / graphite) aren't refused as untrusted.\nexport MISE_TRUSTED_CONFIG_PATHS=\"$HOME/src/drain-cycle\"\n\n# mise shims. Login shells get this re-applied in ~/.zprofile after macOS\n# path_helper runs in /etc/zprofile and wipes earlier PATH edits.\ncommand -v mise >/dev/null 2>&1 && eval \"$(mise activate zsh --shims)\""
 }
@@ -915,7 +915,7 @@ id: toolu_019kkHRiUWe32nPfRcExYkmy
 tool_result
 id: toolu_019kkHRiUWe32nPfRcExYkmy
 ```
-The file /Users/anton/.zshenv has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.zshenv has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -959,7 +959,7 @@ tool_result
 id: toolu_01VPBjYDai33W6rngJ2Bs5jf
 ```
 === env var in fresh login shell ===
-/Users/anton/src/drain-cycle
+/home/<USER>/src/drain-cycle
 === trust --show (now) ===
 ~/src/drain-cycle/.worktrees/ABA-412: trusted
 ~/src/drain-cycle/.worktrees/ABA-334: trusted
@@ -1042,7 +1042,7 @@ tool_use Read
 id: toolu_01XfN5e8k7mRV4hstgw824ft
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/README.md",
+  "file_path": "/home/<USER>/src/drain-cycle/README.md",
   "offset": 185,
   "limit": 220
 }
@@ -1079,7 +1079,7 @@ id: toolu_01WFL4ABDB78ZELZFeTQKzqv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/anton/src/drain-cycle/README.md",
+  "file_path": "/home/<USER>/src/drain-cycle/README.md",
   "old_string": "## Design\n\nDesign decisions, alternatives considered, and deliberate out-of-scope choices live as ADRs under [`docs/adrs/`](docs/adrs/).",
   "new_string": "## Troubleshooting\n\nRough edges you may hit and how to clear them. Each entry names the symptom, the cause, and the fix.\n\n### `mise ERROR error parsing config file` in a worktree\n\nYou see a line like this, often from a hook firing inside a worktree:\n\n```\nmise ERROR error parsing config file: ~/src/<repo>/.worktrees/ABA-123/mise.toml\n```\n\nThe header is misleading — the file parses fine. The real reason is on the next line mise prints: the config is **not trusted**.\n\nmise records trust per absolute path. A git worktree checks out the repo's tracked `mise.toml` to a brand-new path that mise has never trusted, so mise refuses to load it — even though the identical repo-root config is trusted. drain-cycle trusts each worktree it creates, so you only hit this for worktrees made by hand (`git worktree add`, Graphite) or ones created before that auto-trust existed.\n\nFix it once for the whole repo by trusting every mise config beneath it. Add this to a file your shell always sources (`~/.zshenv` for zsh), so the non-interactive shells that hooks run in pick it up too:\n\n```sh\nexport […]
 
@@ -1088,7 +1088,7 @@ id: toolu_01WFL4ABDB78ZELZFeTQKzqv
 tool_result
 id: toolu_01WFL4ABDB78ZELZFeTQKzqv
 ```
-The file /Users/anton/src/drain-cycle/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/src/drain-cycle/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1102,7 +1102,7 @@ id: toolu_01Tevb42Cy9UdBJvMBDBFyGn
 ```json
 {
   "description": "Refine README troubleshooting section",
-  "prompt": "Run the writing-refinement skill (/writing-refinement via the Skill tool) over ONLY the newly added \"## Troubleshooting\" section in this file:\n\n/Users/anton/src/drain-cycle/README.md\n\nThe section sits between \"## Telemetry (optional)\" and \"## Design\". Apply the prose rules (plain English, active voice, name the actor + verb, cut clutter, no metaphors) and edit the file in place to apply your findings. Do not touch any other section. Keep the fenced code blocks and the `<repo>`/`<issue>` placeholders exactly as they are — they are intentional. Keep all technical detail (the per-path trust cause, the env-var vs direct-trust distinction). Report a one-line summary of what you changed, or \"no changes needed\".",
+  "prompt": "Run the writing-refinement skill (/writing-refinement via the Skill tool) over ONLY the newly added \"## Troubleshooting\" section in this file:\n\n/home/<USER>/src/drain-cycle/README.md\n\nThe section sits between \"## Telemetry (optional)\" and \"## Design\". Apply the prose rules (plain English, active voice, name the actor + verb, cut clutter, no metaphors) and edit the file in place to apply your findings. Do not touch any other section. Keep the fenced code blocks and the `<repo>`/`<issue>` placeholders exactly as they are — they are intentional. Keep all technical detail (the per-path trust cause, the env-var vs direct-trust distinction). Report a one-line summary of what you changed, or \"no changes needed\".",
   "subagent_type": "general-purpose"
 }
 ```
@@ -1130,7 +1130,7 @@ id: toolu_019rPet8DQmFy2hpDicnmu16
 ```json
 {
   "description": "Refine README troubleshooting section",
-  "prompt": "Run the writing-refinement skill (/writing-refinement via the Skill tool) over ONLY the newly added \"## Troubleshooting\" section in this file:\n\n/Users/anton/src/drain-cycle/README.md\n\nThe section sits between \"## Telemetry (optional)\" and \"## Design\". Apply the prose rules (plain English, active voice, name the actor + verb, cut clutter, no metaphors) and edit the file in place to apply your findings. Do not touch any other section. Keep the fenced code blocks and the `<repo>`/`<issue>` placeholders exactly as they are — they are intentional. Keep all technical detail (the per-path trust cause, the env-var vs direct-trust distinction). Report a one-line summary of what you changed, or \"no changes needed\".",
+  "prompt": "Run the writing-refinement skill (/writing-refinement via the Skill tool) over ONLY the newly added \"## Troubleshooting\" section in this file:\n\n/home/<USER>/src/drain-cycle/README.md\n\nThe section sits between \"## Telemetry (optional)\" and \"## Design\". Apply the prose rules (plain English, active voice, name the actor + verb, cut clutter, no metaphors) and edit the file in place to apply your findings. Do not touch any other section. Keep the fenced code blocks and the `<repo>`/`<issue>` placeholders exactly as they are — they are intentional. Keep all technical detail (the per-path trust cause, the env-var vs direct-trust distinction). Report a one-line summary of what you changed, or \"no changes needed\".",
   "subagent_type": "general-purpose"
 }
 ```

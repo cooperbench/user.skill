@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/hedde/code/evorto
+# AGENTS.md instructions for /home/<USER>/code/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -59,8 +59,8 @@ tool_use exec_command
 id: call_d9CAIMgs7o1sN249SKzTCHWV
 ```json
 {
-  "cmd": "rg -n \"update-evorto-branch|latest changes|git fetch|FETCH_HEAD\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "rg -n \"update-evorto-branch|latest changes|git fetch|FETCH_HEAD\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -73,7 +73,7 @@ id: call_kr0pl2m2Nm8eat9FGMhPWG8f
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -86,7 +86,7 @@ id: call_DhC1cUEb285lqgmYc0iUaEqB
 ```json
 {
   "cmd": "ls skills/update-evorto-branch && sed -n '1,220p' skills/update-evorto-branch/SKILL.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -147,8 +147,8 @@ tool_use exec_command
 id: call_EgS7jof3aXcrvh8xmzdufVNp
 ```json
 {
-  "cmd": "sed -n '408,422p' /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "sed -n '408,422p' /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -161,7 +161,7 @@ id: call_ypFx3y4BobmgkgcLelr1evsE
 ```json
 {
   "cmd": "git fetch --no-tags origin main",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -173,8 +173,8 @@ tool_use exec_command
 id: call_WCRGQMiVSkNpsC9gvwNAZAce
 ```json
 {
-  "cmd": "find /Users/hedde/code/evorto -path '*/update-evorto-branch/SKILL.md' -print",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "find /home/<USER>/code/evorto -path '*/update-evorto-branch/SKILL.md' -print",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -250,7 +250,7 @@ id: call_TMZleWAZ1cZAvVwV6geIq5cr
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -263,7 +263,7 @@ id: call_NHTrzhsuHSM3uMQzuvamAlcz
 ```json
 {
   "cmd": "git rev-parse HEAD FETCH_HEAD && git merge-base --is-ancestor HEAD FETCH_HEAD; printf 'ancestor=%s\\n' \"$?\"",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -276,7 +276,7 @@ id: call_gt9B1s86r0XIE5ffIwiT2YP5
 ```json
 {
   "cmd": "git log --oneline --decorate --max-count=5 HEAD..FETCH_HEAD",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -350,7 +350,7 @@ id: call_KJSyNRF8HvOaZRn4YcNGgGpw
 ```json
 {
   "cmd": "git merge --ff-only FETCH_HEAD",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -400,7 +400,7 @@ id: call_YzGZk5X6v80eDvJTn2fWMgWK
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -413,7 +413,7 @@ id: call_rYJKKDFZPEJ3T2yDPU80sskI
 ```json
 {
   "cmd": "git rev-parse --short HEAD && git log -1 --oneline --decorate",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -450,7 +450,7 @@ d1662b419c4 (HEAD -> main, origin/main, origin/HEAD) test: harden launch-critica
 
 > AGENT
 
-Updated `/Users/hedde/code/evorto` to the latest remote `main`.
+Updated `/home/<USER>/code/evorto` to the latest remote `main`.
 
 Current state:
 - Branch: `main`
@@ -482,7 +482,7 @@ id: call_4x7H4KM2Q5CVx0O4Pv5QDnPR
 ```json
 {
   "cmd": "rg -n \"image|sharp|jimp|canvas|magick|imagemagick|gm\\b|crop|resize|thumbnail|exif|heic|webp|png|jpeg|jpg|compress|optimi[sz]e\" package.json bun.lock src tests helpers public .github --glob '!repos/**'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -495,7 +495,7 @@ id: call_Z4dLSBd04y89PUWW0GqtjfnO
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -507,8 +507,8 @@ tool_use exec_command
 id: call_2755W6PrRESbLXTlzOCMfi7B
 ```json
 {
-  "cmd": "rg -n \"sharp|jimp|canvas|imagemagick|image-size|probe-image|exifr|piexif|heic|webp|resize|thumbnail|crop|compress\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/code/evorto",
+  "cmd": "rg -n \"sharp|jimp|canvas|imagemagick|image-size|probe-image|exifr|piexif|heic|webp|resize|thumbnail|crop|compress\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -581,7 +581,7 @@ Output:
     "test:e2e:integration": "bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-integration --project=docs-integration",
     "test:e2e:live-esncard": "bun run env:runtime && dotenv -c dev -- playwright test tests/specs/profile/user-profile-live-esncard.spec.ts --project=local-chrome-integration --grep '@needs-live-esncard'",
     "test:e2e:docs": "bun run env:runtime && dotenv -c dev -- playwright test --project=docs-baseline",
-    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
+    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
     "test:e2e:install": "playwright install",
     "test:e2e:report": "playwright show-report",
     "db:push": "bun run env:runtime && dotenv -c dev -- drizzle-kit push --force",
@@ -612,7 +612,7 @@ id: call_urkCmTlZtE69Qp3Djf8NT6Pe
 ```json
 {
   "cmd": "sed -n '1,120p' src/server/utils/icon-color.ts",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -625,7 +625,7 @@ id: call_F7zXd4puR4OhB2UTwmSLnUCv
 ```json
 {
   "cmd": "sed -n '130,195p' src/server/http/qr-code.web-handler.ts",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -638,7 +638,7 @@ id: call_gOQ1Stoiob2hFeFMbPHOcZdw
 ```json
 {
   "cmd": "sed -n '1,130p' src/server/integrations/cloudflare-images.ts",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -651,7 +651,7 @@ id: call_8XfszkLc0iPCmId3W1yfOI6F
 ```json
 {
   "cmd": "sed -n '420,525p' src/app/shared/components/controls/editor/editor.component.ts",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -664,7 +664,7 @@ id: call_luG9XoHqcOlOqPScBpIalyab
 ```json
 {
   "cmd": "rg -n \"from 'skia-canvas'|from \\\"skia-canvas\\\"|require\\(['\\\"]skia-canvas|from 'pngjs'|from \\\"pngjs\\\"|from 'qrcode'|from \\\"qrcode\\\"|@tiptap/extension-image|cloudflare-images\" src tests helpers --glob '!repos/**'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1012,7 +1012,7 @@ id: call_S8P9FIoQTFFYCviC17kJzEIW
 ```json
 {
   "cmd": "rg -n \"skia|Canvas|loadImage|ImageData|createCanvas|drawImage|toBuffer|pngjs|PNG|material-color|Quantizer|directUploads|setImage|uploadAndInsertImage|FileReader|URL\\.createObjectURL|canvas\" src tests helpers --glob '!repos/**'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1025,7 +1025,7 @@ id: call_Wb533JKMfvg8Vm7M8T0VLQsK
 ```json
 {
   "cmd": "sed -n '520,620p' src/app/shared/components/controls/editor/editor.component.ts",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1038,7 +1038,7 @@ id: call_ej6nptgRuwZwtq4BUmvIafYG
 ```json
 {
   "cmd": "sed -n '1,130p' src/server/effect/rpc/handlers/editor-media.handlers.ts",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -1051,7 +1051,7 @@ id: call_iwxKM9EbDCkHJkYsC69Qjsom
 ```json
 {
   "cmd": "sed -n '1,120p' src/server/effect/rpc/handlers/finance/receipt-media.service.ts",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -1064,7 +1064,7 @@ id: call_0LYdKKr4H2CFEpv7voQmQ8ku
 ```json
 {
   "cmd": "sed -n '1,110p' src/server/tenant-brand-assets.ts",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -1406,7 +1406,7 @@ id: call_ZHNgbalxRDNpAi0hhXf8u2EG
 ```json
 {
   "cmd": "nl -ba package.json | sed -n '70,102p'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1419,7 +1419,7 @@ id: call_V6b0PcbLACVnkBXthj5hWvrX
 ```json
 {
   "cmd": "nl -ba src/server/utils/icon-color.ts | sed -n '1,75p'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1432,7 +1432,7 @@ id: call_mMPk96erS5k5buCvnFxYcFXY
 ```json
 {
   "cmd": "nl -ba src/app/shared/components/controls/editor/editor.component.ts | sed -n '20,35p;524,555p'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1445,7 +1445,7 @@ id: call_SEoxEPShyqQKng1W6UQwDxgO
 ```json
 {
   "cmd": "nl -ba src/server/effect/rpc/handlers/editor-media.handlers.ts | sed -n '13,27p;63,99p'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1458,7 +1458,7 @@ id: call_fGP42g22FhIYFodR9vhta7eA
 ```json
 {
   "cmd": "nl -ba src/server/http/qr-code.web-handler.ts | sed -n '158,183p'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1471,7 +1471,7 @@ id: call_IupCWViV1VGvUrwJUA4XSube
 ```json
 {
   "cmd": "nl -ba src/server/integrations/cloudflare-images.ts | sed -n '72,109p'",
-  "workdir": "/Users/hedde/code/evorto",
+  "workdir": "/home/<USER>/code/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1793,10 +1793,10 @@ We are **not** using a typical image manipulation pipeline like `sharp`, `jimp`,
 
 What we do use:
 
-- `pngjs` in [src/server/utils/icon-color.ts](/Users/hedde/code/evorto/src/server/utils/icon-color.ts:6) to decode PNG bytes and inspect pixels for dominant/source color extraction.
+- `pngjs` in [src/server/utils/icon-color.ts](/home/<USER>/code/evorto/src/server/utils/icon-color.ts:6) to decode PNG bytes and inspect pixels for dominant/source color extraction.
 - `@material/material-color-utilities` in the same file to quantize/score those pixels.
-- `qrcode` in [src/server/http/qr-code.web-handler.ts](/Users/hedde/code/evorto/src/server/http/qr-code.web-handler.ts:160) to generate PNG QR code images.
-- TipTap’s image extension in [src/app/shared/components/controls/editor/editor.component.ts](/Users/hedde/code/evorto/src/app/shared/components/controls/editor/editor.component.ts:25) for editor image nodes and upload insertion.
-- Cloudflare Images direct uploads in [src/server/integrations/cloudflare-images.ts](/Users/hedde/code/evorto/src/server/integrations/cloudflare-images.ts:87), but our app initializes uploads/delivery URLs rather than transforming pixels locally.
+- `qrcode` in [src/server/http/qr-code.web-handler.ts](/home/<USER>/code/evorto/src/server/http/qr-code.web-handler.ts:160) to generate PNG QR code images.
+- TipTap’s image extension in [src/app/shared/components/controls/editor/editor.component.ts](/home/<USER>/code/evorto/src/app/shared/components/controls/editor/editor.component.ts:25) for editor image nodes and upload insertion.
+- Cloudflare Images direct uploads in [src/server/integrations/cloudflare-images.ts](/home/<USER>/code/evorto/src/server/integrations/cloudflare-images.ts:87), but our app initializes uploads/delivery URLs rather than transforming pixels locally.
 
-One oddity: `skia-canvas` is listed in [package.json](/Users/hedde/code/evorto/package.json:98), but I found no imports or usage of it under `src`, `tests`, or `helpers`.
+One oddity: `skia-canvas` is listed in [package.json](/home/<USER>/code/evorto/package.json:98), but I found no imports or usage of it under `src`, `tests`, or `helpers`.

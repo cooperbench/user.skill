@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -59,8 +59,8 @@ tool_use exec_command
 id: call_TFICYEDbVluG0PF70NNPKss4
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -71,8 +71,8 @@ tool_use exec_command
 id: call_lMW9adLnLytxbckMgruOjggQ
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/Repos/JSHack/.agents/skills/add-item/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/Repos/JSHack/.agents/skills/add-item/SKILL.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -174,7 +174,7 @@ id: call_K9iCE7xL6MNteVmRih5nIcnD
 ```json
 {
   "cmd": "entire status",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 8000
 }
 ```
@@ -185,8 +185,8 @@ tool_use exec_command
 id: call_9ljI08LKn4GEiBEJXuhUl06p
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/.codex/RTK.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/RTK.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -198,7 +198,7 @@ id: call_vQwfrKxYPfVAz67ZOkIKQCbb
 ```json
 {
   "cmd": "rg -n \"enchant|Enchanter|Enchantress|enchanter|enchantress|shop hours|hours|shop\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -210,7 +210,7 @@ id: call_USRvyLYKHs2TOpnstssJdj7n
 ```json
 {
   "cmd": "rg -n \"scroll_.*enchant|enchant_\" src/rules/data src/content src/display tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -391,7 +391,7 @@ id: call_gNryDTGsXm24ztoWZArf8ymH
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -403,7 +403,7 @@ id: call_5QrYPipYuePctZgjAG29rxTe
 ```json
 {
   "cmd": "rtk sed -n '1,150p' src/rules/data/buildings/enchanter_shop.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -415,7 +415,7 @@ id: call_9C851tvD8JoJyISxkg0FfAxk
 ```json
 {
   "cmd": "rtk sed -n '1,140p' src/rules/data/townfolk.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -427,7 +427,7 @@ id: call_BtWTtNHAb3vnT8vEBxPEGMcZ
 ```json
 {
   "cmd": "rtk sed -n '1,220p' tests/enchantingContent.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -439,7 +439,7 @@ id: call_SGMaAUwtvaJmzf5HeZHOZdGl
 ```json
 {
   "cmd": "rtk sed -n '1,240p' src/rules/data/shopStock.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -451,7 +451,7 @@ id: call_sziu85OVZlFURANp3903SDfZ
 ```json
 {
   "cmd": "rtk git log --format='%H %b' -5 -- src/rules/data/buildings/enchanter_shop.js src/rules/data/townfolk.js src/rules/data/shopStock.js tests/enchantingContent.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -709,7 +709,7 @@ c5072c68c72935c049176494cf6433d8e89e1402 Entire-Checkpoint: d31621163671
 
 79d6bc40161654686e4027f544b2cb3f7df1d751 Agent-Logs-Url: https://github.com/PJensen/JSHack/sessions/de5bad14-6722-4c0...
 
-Co-authored-by: PJensen <54164+PJensen@users.noreply.github.com>
+Co-authored-by: PJensen <<REDACTED_EMAIL>>
 
 2a08e0273acbcafcb55d549177f3184c14facb50 
 126a7b36b247d2a62d489986a993916952807041 
@@ -727,7 +727,7 @@ id: call_MYASrMdPeowDRHfoomobffGe
 ```json
 {
   "cmd": "rtk sed -n '240,420p' src/rules/data/shopStock.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -739,7 +739,7 @@ id: call_wGc42Ha8mIJiXkeb0Pg6YWqE
 ```json
 {
   "cmd": "rtk rg -n \"alchemy_shop_item|gem_shop_item|book_shop_item|shop_item|enchanting_bench|runestone|townfolk_enchantress|townfolk_.*glyph|townfolk_\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -751,7 +751,7 @@ id: call_D5PPYNsHpZhBn8ziUJkQ7tdD
 ```json
 {
   "cmd": "rtk sed -n '80,160p' src/display/palette/base.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -763,7 +763,7 @@ id: call_WS58cl3KtaVUzs6cNRbYbGKL
 ```json
 {
   "cmd": "rtk sed -n '900,1010p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 14000
 }
 ```
@@ -775,7 +775,7 @@ id: call_WRETVZ0T3dqiOvXhTw2TMHgg
 ```json
 {
   "cmd": "rtk sed -n '1520,1605p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -787,7 +787,7 @@ id: call_9Nt6jFiKAruybIinbEpWJ4j0
 ```json
 {
   "cmd": "rtk entire explain --checkpoint d31621163671 --json --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -1084,7 +1084,7 @@ id: call_OZPjOboxcSWwMs6BzzjCA914
 ```json
 {
   "cmd": "rtk rg -n \"enchantress|enchanter|townfolk_enchantress|cottage|home|house|TOWNFOLK_ROLES\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -1096,7 +1096,7 @@ id: call_dicwWkOqhzMDIdU0ohH9kZ9r
 ```json
 {
   "cmd": "rtk sed -n '200,235p' src/display/palette/base.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 8000
 }
 ```
@@ -1108,7 +1108,7 @@ id: call_AQBjYVRWwJrX8gEpDX2lKs4W
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/rules/environment/dungeon/townPlacement.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -1120,7 +1120,7 @@ id: call_SGvf55Wqk8dtLBmCkwOekIeS
 ```json
 {
   "cmd": "rtk sed -n '1,260p' tests/overworldStructures.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -1132,7 +1132,7 @@ id: call_EKt9ANUFjwmJTb6RiAlCo9Su
 ```json
 {
   "cmd": "rtk sed -n '1,140p' tests/displayGlyphCoverage.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1441,7 +1441,7 @@ id: call_tCy6jNzEILn0bmvqIfaqoLB3
 ```json
 {
   "cmd": "rtk sed -n '520,650p' src/rules/environment/dungeon/townPlacement.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 14000
 }
 ```
@@ -1453,7 +1453,7 @@ id: call_uHGfbi60JVQxyz9MwpGqnO7H
 ```json
 {
   "cmd": "rtk sed -n '620,660p' tests/shopDoorKeys.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1465,7 +1465,7 @@ id: call_TU7taNIoLzyZGT8HQoqUIRDi
 ```json
 {
   "cmd": "rtk sed -n '1,50p' src/rules/components/TownfolkJob.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 6000
 }
 ```

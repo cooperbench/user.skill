@@ -43,7 +43,7 @@ id: toolu_01JzR7eg7NWW7YRNc2BrUup5
 ```json
 {
   "pattern": "gh-q|gh auth|ghq",
-  "path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix",
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix",
   "output_mode": "files_with_matches"
 }
 ```
@@ -55,7 +55,7 @@ id: toolu_013T5Rgj6ayHiJ78DqgaHXrM
 ```json
 {
   "pattern": "**/zsh/**",
-  "path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix"
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix"
 }
 ```
 
@@ -73,7 +73,7 @@ zsh/functions/README.md
 claude/commands/repo-creator.md
 nix/hosts/Still-Legend-x870/default.nix
 nix/hosts/M2-MacBook-Air/default.nix
-nix/modules/home/programs/gh.nix
+nix/modules/home/<USER>/gh.nix
 docs/UM790Pro.md
 zsh/functions/gh-q.zsh
 zsh/functions/g.zsh
@@ -85,20 +85,20 @@ docs/M2-MacBook-Air.md
 tool_result
 id: toolu_013T5Rgj6ayHiJ78DqgaHXrM
 ```
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/oh-my-zsh.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/cd-up.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/claude-zai.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/ct.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/dev.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/g.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gh-q.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gwt.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/jb.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/nfi.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/difit-cmux.zsh
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/README.md
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/oh-my-zsh.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/cd-up.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/claude-zai.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/ct.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/dev.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/g.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gh-q.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gwt.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/jb.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/nfi.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/difit-cmux.zsh
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/README.md
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/config/aliases.zsh
 ```
 
 > TOOL
@@ -107,7 +107,7 @@ tool_use Read
 id: toolu_019BaUiPsiLjUHqCErhKi2PT
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gh-q.zsh"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/gh-q.zsh"
 }
 ```
 
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_01QNovbaTbXSz6U19AoYhdEQ
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/programs/gh.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>/gh.nix"
 }
 ```
 
@@ -127,7 +127,7 @@ tool_use Read
 id: toolu_014VubKbvBg3uUnPKPF8Ktwn
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/g.zsh"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/functions/g.zsh"
 }
 ```
 
@@ -273,7 +273,7 @@ tool_use Read
 id: toolu_01WHP7aHK5i1Wqgtc3y1Ev9L
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/zsh/zshrc"
 }
 ```
 
@@ -381,7 +381,7 @@ id: toolu_015ceBBJtDj5jSpz1bAktrEb
 ```json
 {
   "pattern": "gitconfig|git\\.config",
-  "path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix",
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix",
   "output_mode": "files_with_matches"
 }
 ```
@@ -400,7 +400,7 @@ tool_use Read
 id: toolu_01PVRwqXkZZZcFrUSSsu4yCK
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/programs/git.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>/git.nix"
 }
 ```
 

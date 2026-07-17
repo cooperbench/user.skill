@@ -229,7 +229,7 @@ tool_use Read
 id: toolu_01Sz9uzuz76sFEveGALPZoQ4
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/README.md"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/README.md"
 }
 ```
 
@@ -279,7 +279,7 @@ tool_use Read
 id: toolu_01VPxqHJPH6v4i1sX88y5HzM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/Training_Review2.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/Training_Review2.md"
 }
 ```
 
@@ -318,7 +318,7 @@ tool_use Read
 id: toolu_01MPmDWV6ac9X1Co5BhNMu47
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/wherethingsstand.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/wherethingsstand.md"
 }
 ```
 
@@ -370,7 +370,7 @@ tool_use Read
 id: toolu_01APpWYeKiDYqDRpRu6m3g7k
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md"
 }
 ```
 
@@ -413,7 +413,7 @@ tool_use Read
 id: toolu_01842mG4ySdkAuJKQd4cWSFh
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/some_new_insights.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/some_new_insights.md"
 }
 ```
 
@@ -559,7 +559,7 @@ tool_use Read
 id: toolu_01EujQ9ezFg4nsdnfXtzk2nT
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/diff_loss.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/diff_loss.py"
 }
 ```
 
@@ -619,7 +619,7 @@ tool_use Read
 id: toolu_01G1tdFDM7VPcHhH2EWteEdM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/training_common.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/training_common.py"
 }
 ```
 
@@ -678,7 +678,7 @@ tool_use Read
 id: toolu_01GZzdxySajfHL2KV4Pe3x5e
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py"
 }
 ```
 
@@ -748,7 +748,7 @@ tool_use Read
 id: toolu_01B2PXVcMTufxrRcaXFSws3E
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer_cli.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer_cli.py"
 }
 ```
 
@@ -807,7 +807,7 @@ tool_use Read
 id: toolu_014uSiQ6uWhubgn7RzM7Ewat
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/optimization/run_training_hpo.py"
+  "file_path": "/home/<USER>/Code/rune/scripts/optimization/run_training_hpo.py"
 }
 ```
 
@@ -849,7 +849,7 @@ tool_use Read
 id: toolu_019epm2a17mbPJQ6xsyUcMHh
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py"
 }
 ```
 
@@ -919,7 +919,7 @@ tool_use Bash
 id: toolu_01JSTWfqPtf9X3qbGA6sLwZR
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_diff.py && echo \"---\" && git log --oneline -1 HEAD -- libs/model-training/src/model_training/d2l_diff.py",
+  "command": "ls /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_diff.py && echo \"---\" && git log --oneline -1 HEAD -- libs/model-training/src/model_training/d2l_diff.py",
   "description": "Check if d2l_diff.py exists"
 }
 ```
@@ -929,7 +929,7 @@ id: toolu_01JSTWfqPtf9X3qbGA6sLwZR
 tool_result
 id: toolu_01JSTWfqPtf9X3qbGA6sLwZR
 ```
-/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_diff.py  3.6K
+/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_diff.py  3.6K
 
 1 files, 0 dirs (1 .py)
 ---
@@ -942,7 +942,7 @@ tool_use Read
 id: toolu_01QDaZxRNPkt1w7Yuew8onW7
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_diff.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_diff.py"
 }
 ```
 
@@ -1031,7 +1031,7 @@ tool_use Read
 id: toolu_01Lwd62Ek9fFmaWBzXq5a9aW
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/train.sh"
+  "file_path": "/home/<USER>/Code/rune/scripts/train.sh"
 }
 ```
 

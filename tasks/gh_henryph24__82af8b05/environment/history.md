@@ -122,7 +122,7 @@ tool_use Read
 id: toolu_01CsDRSMKamSxCQcM2z7TV8q
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 61,
   "limit": 170
 }
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_013DT9jzpriCkxr26zqDVuMG
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 228,
   "limit": 270
 }
@@ -171,7 +171,7 @@ tool_use Read
 id: toolu_018oKWtVAg6xJFRcxXtFrJvj
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 497,
   "limit": 170
 }
@@ -202,7 +202,7 @@ tool_use Read
 id: toolu_01WiEPhWVuVWc3gSTejVwfXW
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 1,
   "limit": 60
 }
@@ -254,15 +254,15 @@ id: toolu_01WiEPhWVuVWc3gSTejVwfXW
 39	\author{
 40	  Anonymous Author 1 \\
 41	  Anonymous Institution\\
-42	  \texttt{author1@example.com}
+42	  \texttt{<REDACTED_EMAIL>}
 43	  \And
 44	  Anonymous Author 2 \\
 45	  Anonymous Institution\\
-46	  \texttt{author2@example.com}
+46	  \texttt{<REDACTED_EMAIL>}
 47	  \And
 48	  Anonymous Author 3 \\
 49	  Anonymous Institution\\
-50	  \texttt{author3@example.com}
+50	  \texttt{<REDACTED_EMAIL>}
 51	}
 52	
 53	\begin{document}
@@ -299,7 +299,7 @@ id: toolu_01KMQhZztde3tD2XLUY9zVKm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\textbf{TSFM Adaptation.} For broader context we refer to the survey by~\\citet{wen2023tssurvey}. A complementary line shows that compact task-specific models match or beat heavyweight pretrained backbones on LTSF benchmarks",
   "new_string": "\\textbf{TSFM Adaptation.} Beyond the broad survey of~\\citet{wen2023tssurvey}, a complementary line shows that compact task-specific models match or beat heavyweight pretrained backbones on LTSF benchmarks"
 }
@@ -310,7 +310,7 @@ id: toolu_01KMQhZztde3tD2XLUY9zVKm
 tool_result
 id: toolu_01KMQhZztde3tD2XLUY9zVKm
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -320,7 +320,7 @@ id: toolu_017ZAnGZrm8XeTe3KsfMhmeV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "degrade MSE by $8$--$15\\%$ (Appendix~\\ref{app:diversity}). Pseudocode in Algorithm~\\ref{alg:rrmoa} (Appendix~\\ref{app:setup}). Because the backbone is strictly frozen,",
   "new_string": "degrade MSE by $8$--$15\\%$ (Appendix~\\ref{app:diversity}; pseudocode in Algorithm~\\ref{alg:rrmoa}, Appendix~\\ref{app:setup}). Because the backbone is strictly frozen,"
 }
@@ -331,7 +331,7 @@ id: toolu_017ZAnGZrm8XeTe3KsfMhmeV
 tool_result
 id: toolu_017ZAnGZrm8XeTe3KsfMhmeV
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -354,27 +354,27 @@ id: toolu_01PnJH33qQSsjzdGPzrbMWJr
 tool_result
 id: toolu_01PnJH33qQSsjzdGPzrbMWJr
 ```
-fonts/cmextra/cmex9.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfont
-s/cm/cmmi12.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm
-/cmmi5.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi
-6.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/h
-ungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/hungpq
-2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/hungpq2412/L
-ibrary/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/hungpq2412/Library
-/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/hungpq2412/Library/texmf
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/hungpq2412/Library/texmf/fonts
-/type1/public/amsfonts/cm/cmr9.pfb></Users/hungpq2412/Library/texmf/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></Users/hungpq2412/Library/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmsy5.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
-9.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></Users/h
+fonts/cmextra/cmex9.pfb></home/<USER>/Library/texmf/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfont
+s/cm/cmmi12.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm
+/cmmi5.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi
+6.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/<USER>
+ungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/<USER>
+2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/<USER>/L
+ibrary/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/<USER>/Library
+/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/<USER>/Library/texmf
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/<USER>/Library/texmf/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></home/<USER>/Library/texmf/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></home/<USER>/Library/texmf/fonts/type1/pub
+lic/amsfonts/cm/cmsy5.pfb></home/<USER>/Library/texmf/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></home/<USER>
 ungpq2412/Library/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr
 /local/texlive/2026basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/l

@@ -6,7 +6,7 @@ Here is a list of plugins that are available but not installed. If the user's qu
 - Atlassian Rovo (atlassian-rovo@openai-curated-remote)
 - Slack (slack@openai-curated-remote)
 </recommended_plugins>
-# AGENTS.md instructions for /Users/hedde/.codex/worktrees/06f8/evorto
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/06f8/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -2998,7 +2998,7 @@ id: call_j5Z8S9j2KTz1zCdohklBPM9p
 }
 {
   "type": "input_text",
-  "text": "[warn] Ignored unknown option { \"//  \\\"plugins\\\"\": [\"prettier-plugin-tailwindcss\"] }.\n[warn] Ignored unknown option { tailwindStylesheet: \"./src/styles.scss\" }.\nsrc/server/http/stripe-webhook.web-handler.ts 90ms\n$ bun run dev:ng lint --fix\n$ bun --define process.version=\"'v24.15.0'\" --define process.versions.node=\"'24.15.0'\" ./node_modules/@angular/cli/bin/ng.js lint --fix\n\nLinting \"evorto\"...\n\nAll files pass linting.\n\n$ bunx vitest run --config vitest.config.ts src/server/http/stripe-webhook.web-handler.spec.ts\n\n RUN  v4.1.9 /Users/hedde/.codex/worktrees/06f8/evorto\n\n\n Test Files  1 passed (1)\n      Tests  15 passed (15)\n   Start at  10:09:37\n   Duration  780ms (transform 152ms, setup 0ms, import 695ms, tests 12ms, environment 0ms)\n\n"
+  "text": "[warn] Ignored unknown option { \"//  \\\"plugins\\\"\": [\"prettier-plugin-tailwindcss\"] }.\n[warn] Ignored unknown option { tailwindStylesheet: \"./src/styles.scss\" }.\nsrc/server/http/stripe-webhook.web-handler.ts 90ms\n$ bun run dev:ng lint --fix\n$ bun --define process.version=\"'v24.15.0'\" --define process.versions.node=\"'24.15.0'\" ./node_modules/@angular/cli/bin/ng.js lint --fix\n\nLinting \"evorto\"...\n\nAll files pass linting.\n\n$ bunx vitest run --config vitest.config.ts src/server/http/stripe-webhook.web-handler.spec.ts\n\n RUN  v4.1.9 /home/<USER>/.codex/worktrees/06f8/evorto\n\n\n Test Files  1 passed (1)\n      Tests  15 passed (15)\n   Start at  10:09:37\n   Duration  780ms (transform 152ms, setup 0ms, import 695ms, tests 12ms, environment 0ms)\n\n"
 }
 ```
 
@@ -3081,7 +3081,7 @@ id: call_ivtVOU4iBSriAwZCFA9v7IAv
 }
 {
   "type": "input_text",
-  "text": "[warn] Ignored unknown option { \"//  \\\"plugins\\\"\": [\"prettier-plugin-tailwindcss\"] }.\n[warn] Ignored unknown option { tailwindStylesheet: \"./src/styles.scss\" }.\nsrc/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts 112ms (unchanged)\n$ bun run dev:ng lint --fix\n$ bun --define process.version=\"'v24.15.0'\" --define process.versions.node=\"'24.15.0'\" ./node_modules/@angular/cli/bin/ng.js lint --fix\n\nLinting \"evorto\"...\n\nAll files pass linting.\n\n$ bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts\n\n RUN  v4.1.9 /Users/hedde/.codex/worktrees/06f8/evorto\n\n\n Test Files  1 passed (1)\n      Tests  42 passed (42)\n   Start at  10:12:40\n   Duration  1.10s (transform 289ms, setup 0ms, import 990ms, tests 41ms, environment 0ms)\n\n"
+  "text": "[warn] Ignored unknown option { \"//  \\\"plugins\\\"\": [\"prettier-plugin-tailwindcss\"] }.\n[warn] Ignored unknown option { tailwindStylesheet: \"./src/styles.scss\" }.\nsrc/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts 112ms (unchanged)\n$ bun run dev:ng lint --fix\n$ bun --define process.version=\"'v24.15.0'\" --define process.versions.node=\"'24.15.0'\" ./node_modules/@angular/cli/bin/ng.js lint --fix\n\nLinting \"evorto\"...\n\nAll files pass linting.\n\n$ bunx vitest run --config vitest.config.ts src/server/effect/rpc/handlers/events/events-registration.handlers.spec.ts\n\n RUN  v4.1.9 /home/<USER>/.codex/worktrees/06f8/evorto\n\n\n Test Files  1 passed (1)\n      Tests  42 passed (42)\n   Start at  10:12:40\n   Duration  1.10s (transform 289ms, setup 0ms, import 990ms, tests 41ms, environment 0ms)\n\n"
 }
 ```
 
@@ -3131,7 +3131,7 @@ id: call_Ig6s0CYh4sDl6DgzjLt7tF4M
 }
 {
   "type": "input_text",
-  "text": "$ bun run dev:ng test\n$ bun --define process.version=\"'v24.15.0'\" --define process.versions.node=\"'24.15.0'\" ./node_modules/@angular/cli/bin/ng.js test\n\u001b[33m❯\u001b[39m Building...\n\u001b[32m✔\u001b[39m Building...\nApplication bundle generation complete. [9.847 seconds] - 2026-07-10T08:13:51.056Z\n\n\n RUN  v4.1.9 /Users/hedde/.codex/worktrees/06f8/evorto\n\n\n Test Files  56 passed (56)\n      Tests  347 passed (347)\n   Start at  10:13:51\n   Duration  3.52s (transform 3.57s, setup 6.85s, import 28.38s, tests 1.04s, environment 11.14s)\n\n"
+  "text": "$ bun run dev:ng test\n$ bun --define process.version=\"'v24.15.0'\" --define process.versions.node=\"'24.15.0'\" ./node_modules/@angular/cli/bin/ng.js test\n\u001b[33m❯\u001b[39m Building...\n\u001b[32m✔\u001b[39m Building...\nApplication bundle generation complete. [9.847 seconds] - 2026-07-10T08:13:51.056Z\n\n\n RUN  v4.1.9 /home/<USER>/.codex/worktrees/06f8/evorto\n\n\n Test Files  56 passed (56)\n      Tests  347 passed (347)\n   Start at  10:13:51\n   Duration  3.52s (transform 3.57s, setup 6.85s, import 28.38s, tests 1.04s, environment 11.14s)\n\n"
 }
 ```
 
@@ -3279,12 +3279,12 @@ Verification passed:
 
 Docker/Browser execution remains blocked by missing `NEON_API_KEY`, `CLIENT_SECRET`, and `STRIPE_API_KEY`. Production role cleanup and duplicate audits also require explicit production access. Full evidence and residual risks are in [fix_report.md](</private/var/folders/d5/ghwypcsd403dfcl8bpl7grfw0000gn/T/codex-security-scans-18uSN6/evorto/9545a2c68d209c56e723f2cbdf5f99daca11172d_20260709T182627Z_ofgqi40z/artifacts/fix_report.md>).
 
-::git-create-branch{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-registration-concurrency"}
-::git-commit{cwd="/Users/hedde/.codex/worktrees/06f8/evorto"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-permission-boundaries"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-trusted-urls-media"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-stripe-ingress-binding"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-registration-concurrency"}
+::git-create-branch{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-registration-concurrency"}
+::git-commit{cwd="/home/<USER>/.codex/worktrees/06f8/evorto"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-permission-boundaries"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-trusted-urls-media"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-stripe-ingress-binding"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-registration-concurrency"}
 
 <oai-mem-citation>
 <citation_entries>
@@ -7121,16 +7121,16 @@ CodeRabbit completed substantive reviews on #87, #88, and #90. All findings were
 
 All functional and documentation Playwright baselines passed, including [final run 29089872524](https://github.com/evorto-app/app/actions/runs/29089872524) on commit `7572b5a8a35`. The complete evidence and rollout constraints are in [fix_report.md](</private/var/folders/d5/ghwypcsd403dfcl8bpl7grfw0000gn/T/codex-security-scans-18uSN6/evorto/9545a2c68d209c56e723f2cbdf5f99daca11172d_20260709T182627Z_ofgqi40z/artifacts/fix_report.md>).
 
-::git-stage{cwd="/Users/hedde/.codex/worktrees/06f8/evorto"}
-::git-commit{cwd="/Users/hedde/.codex/worktrees/06f8/evorto"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-permission-boundaries"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-trusted-urls-media"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-stripe-ingress-binding"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-registration-concurrency"}
-::git-create-pr{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-permission-boundaries" url="https://github.com/evorto-app/app/pull/87" isDraft=false}
-::git-create-pr{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-trusted-urls-media" url="https://github.com/evorto-app/app/pull/88" isDraft=false}
-::git-create-pr{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-stripe-ingress-binding" url="https://github.com/evorto-app/app/pull/89" isDraft=false}
-::git-create-pr{cwd="/Users/hedde/.codex/worktrees/06f8/evorto" branch="codex/security-registration-concurrency" url="https://github.com/evorto-app/app/pull/90" isDraft=false}
+::git-stage{cwd="/home/<USER>/.codex/worktrees/06f8/evorto"}
+::git-commit{cwd="/home/<USER>/.codex/worktrees/06f8/evorto"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-permission-boundaries"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-trusted-urls-media"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-stripe-ingress-binding"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-registration-concurrency"}
+::git-create-pr{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-permission-boundaries" url="https://github.com/evorto-app/app/pull/87" isDraft=false}
+::git-create-pr{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-trusted-urls-media" url="https://github.com/evorto-app/app/pull/88" isDraft=false}
+::git-create-pr{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-stripe-ingress-binding" url="https://github.com/evorto-app/app/pull/89" isDraft=false}
+::git-create-pr{cwd="/home/<USER>/.codex/worktrees/06f8/evorto" branch="codex/security-registration-concurrency" url="https://github.com/evorto-app/app/pull/90" isDraft=false}
 
 <oai-mem-citation>
 <citation_entries>

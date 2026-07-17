@@ -1083,7 +1083,7 @@ EOF
 ## Step 6: Publish to npm
 
 ```bash
-cd /Users/melagiri/Workspace/codeInsights/code-insights/cli && npm publish
+cd /home/<USER>/Workspace/codeInsights/code-insights/cli && npm publish
 ```
 
 The `prepublishOnly` script in `package.json` handles building all packages and copying dashboard/server dist files automatically.
@@ -1113,7 +1113,7 @@ chore: bump version to vX.Y.Z
 
 {one-line summary of what changed}
 
-Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 EOF
 )"
 
@@ -1151,10 +1151,10 @@ Run the full build and test suite:
 
 ```bash
 # Full workspace build (this is what prepublishOnly does)
-cd /Users/melagiri/Workspace/codeInsights/code-insights && pnpm build
+cd /home/<USER>/Workspace/codeInsights/code-insights && pnpm build
 
 # Run tests
-cd /Users/melagiri/Workspace/codeInsights/code-insights/cli && pnpm test
+cd /home/<USER>/Workspace/codeInsights/code-insights/cli && pnpm test
 ```
 
 **If build fails → STOP.** Show the error. Do not continue.
@@ -3118,7 +3118,7 @@ Dev confirms all 4 items were already in the commit I just verified. My grep res
 
 > TOOL
 
-<bash-stdout>/Users/melagiri/Workspace/codeInsights/code-insights</bash-stdout><bash-stderr></bash-stderr>
+<bash-stdout>/home/<USER>/Workspace/codeInsights/code-insights</bash-stdout><bash-stderr></bash-stderr>
 
 > TOOL
 
@@ -3126,11 +3126,11 @@ Dev confirms all 4 items were already in the commit I just verified. My grep res
 
 > TOOL
 
-<bash-stdout>> code-insights-workspace@ test /Users/melagiri/Workspace/codeInsights/code-insights
+<bash-stdout>> code-insights-workspace@ test /home/<USER>/Workspace/codeInsights/code-insights
 > vitest run
 
 
-[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/melagiri/Workspace/codeInsights/code-insights[39m
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/<USER>/Workspace/codeInsights/code-insights[39m
 
  [32m✓[39m cli/src/db/schema.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 29[2mms[22m[39m
  [32m✓[39m cli/src/__tests__/package-imports.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 59[2mms[22m[39m
@@ -3903,7 +3903,7 @@ up to date, audited 3 packages in 228ms
 
 found 0 vulnerabilities
 which code-insights
-/Users/melagiri/.nvm/versions/node/v22.21.1/bin/code-insights
+/home/<USER>/.nvm/versions/node/v22.21.1/bin/code-insights
 node cli/dist/index.js insights check
 [Code Insights] 4 unanalyzed sessions in the last 7 days.
   Run: code-insights insights check --analyze to process them
@@ -3932,19 +3932,19 @@ When using `npm link`, the binary symlinks to `cli/dist/index.js` — the compil
 
 pnpm build
 
-> code-insights-workspace@ build /Users/melagiri/Workspace/codeInsights/code-insights
+> code-insights-workspace@ build /home/<USER>/Workspace/codeInsights/code-insights
 > pnpm --filter @code-insights/cli build && pnpm --filter @code-insights/server build && pnpm --filter @code-insights/dashboard build
 
 
-> @code-insights/cli@4.7.0 build /Users/melagiri/Workspace/codeInsights/code-insights/cli
+> @code-insights/cli@4.7.0 build /home/<USER>/Workspace/codeInsights/code-insights/cli
 > tsc && node -e "const{cpSync,mkdirSync}=require('fs');mkdirSync('dist/analysis/schemas',{recursive:true});cpSync('src/analysis/schemas/session-analysis.json','dist/analysis/schemas/session-analysis.json');cpSync('src/analysis/schemas/prompt-quality.json','dist/analysis/schemas/prompt-quality.json');"
 
 
-> @code-insights/server@0.1.0 build /Users/melagiri/Workspace/codeInsights/code-insights/server
+> @code-insights/server@0.1.0 build /home/<USER>/Workspace/codeInsights/code-insights/server
 > tsc
 
 
-> @code-insights/dashboard@0.1.0 build /Users/melagiri/Workspace/codeInsights/code-insights/dashboard
+> @code-insights/dashboard@0.1.0 build /home/<USER>/Workspace/codeInsights/code-insights/dashboard
 > vite build
 
 vite v6.4.1 building for production...
@@ -3964,7 +3964,7 @@ up to date, audited 3 packages in 212ms
 
 found 0 vulnerabilities
 which code-insights
-/Users/melagiri/.nvm/versions/node/v22.21.1/bin/code-insights
+/home/<USER>/.nvm/versions/node/v22.21.1/bin/code-insights
 node cli/dist/index.js insights check --analyze
 [1/4] There is a new repo in market - https://github ... failed
   [Code Insights] Command failed: claude -p --output-format json --append-system-prompt-file /var/folders/3p/__d40r6905j7x7x53n8235y80000gn/T/ci-prompt-1774921411838-grx2wh.txt --bare
@@ -3999,7 +3999,7 @@ i just turned ON extra usage.. that works?[Image #3]
 
 > DEVELOPER
 
-[Image: source: /Users/melagiri/.claude/image-cache/cc9e8aa5-769d-41ea-98ce-ff5a905f2f04/3.png]
+[Image: source: /home/<USER>/.claude/image-cache/cc9e8aa5-769d-41ea-98ce-ff5a905f2f04/3.png]
 
 > AGENT
 
@@ -4324,7 +4324,7 @@ merged
 
 > DEVELOPER
 
-[Image: source: /Users/melagiri/.claude/image-cache/cc9e8aa5-769d-41ea-98ce-ff5a905f2f04/9.png]
+[Image: source: /home/<USER>/.claude/image-cache/cc9e8aa5-769d-41ea-98ce-ff5a905f2f04/9.png]
 
 > AGENT
 

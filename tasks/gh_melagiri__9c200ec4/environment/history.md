@@ -51,7 +51,7 @@ tool_use Bash
 id: toolu_011tSXkCJK5r7mDy1Wqb5wV3
 ```json
 {
-  "command": "cat /Users/melagiri/Workspace/codeInsights/code-insights/docs/VISION.md && echo \"---ROADMAP---\" && cat /Users/melagiri/Workspace/codeInsights/code-insights/docs/ROADMAP.md",
+  "command": "cat /home/<USER>/Workspace/codeInsights/code-insights/docs/VISION.md && echo \"---ROADMAP---\" && cat /home/<USER>/Workspace/codeInsights/code-insights/docs/ROADMAP.md",
   "description": "Read VISION.md and ROADMAP.md for current project direction"
 }
 ```
@@ -131,7 +131,7 @@ tool_use Write
 id: toolu_01PoKfGSGmxBqpejpaRGdkEM
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "content": "# Codebase-Attached Knowledge — Design Spec\n\n**Feature:** `.code-insights.md` + `code-insights context` + Team Knowledge Sync  \n**Status:** Phase 1 approved for implementation · Phases 3–6 pending founder decision  \n**Date:** 2026-05-05 (consolidated from 2026-04-20 + 2026-04-22 brainstorm)  \n**Author:** Srikanth Rao M  \n**Reviewed by:** devtools-cofounder, technical-architect, ux-engineer\n\n---\n\n## 1. Problem Statement\n\ncode-insights extracts structured knowledge from AI coding sessions: architectural decisions (with reasoning and alternatives), learnings (root cause + takeaway), friction patterns (9 categories, with attribution), and effective patterns (8 categories, with driver). All of this lives in `~/.code-insights/data.db` — a personal database tied to the developer, not the codebase.\n\nWhen a new AI session starts on the same codebase, the agent knows nothing about past decisions. When a new developer joins the project, they start from zero. The knowledge built *from* working on a codebase never sticks *to* the codebase.\n\n**The compound problem:**\n- AI agents reload context fresh every session — they can't benefit from 400 sessions of accumulated codebase wisdom\n- New developers inherit no structured history of the \"why\" behind decisions\n- In teams, each developer's session knowledge is invisible to teammates\n\n---\n\n## 2. Goals\n\n- Take accumulated knowledge from AI session analysis and surface it as a file that […]
 
 > TOOL
@@ -139,7 +139,7 @@ id: toolu_01PoKfGSGmxBqpejpaRGdkEM
 tool_result
 id: toolu_01PoKfGSGmxBqpejpaRGdkEM
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md
 ```
 
 > AGENT
@@ -152,7 +152,7 @@ tool_use Bash
 id: toolu_014WNPy6cAzvaG28eDqzfHCY
 ```json
 {
-  "command": "rm /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-22-codebase-knowledge-redesign-brainstorm.md && ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/",
+  "command": "rm /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-20-codebase-knowledge-design.md /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-04-22-codebase-knowledge-redesign-brainstorm.md && ls /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/",
   "description": "Delete the two old spec files and verify"
 }
 ```
@@ -195,7 +195,7 @@ tool_use Bash
 id: toolu_01Nj8zVcVF8T4xsPRkqGrjQk
 ```json
 {
-  "command": "git add docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md && git commit -m \"$(cat <<'EOF'\ndocs: consolidate codebase knowledge spec into single authoritative file\n\nMerges 2026-04-20-codebase-knowledge-design.md and 2026-04-22-codebase-knowledge-redesign-brainstorm.md\ninto one living spec. Integrates TA + UX review findings inline (not as appendices), adds\n6-phase implementation sequence, and adds Section 9 with four proposed extensions for discussion:\npath-scoped rules, confidence decay, inline changelog, and --check CI gate.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md && git commit -m \"$(cat <<'EOF'\ndocs: consolidate codebase knowledge spec into single authoritative file\n\nMerges 2026-04-20-codebase-knowledge-design.md and 2026-04-22-codebase-knowledge-redesign-brainstorm.md\ninto one living spec. Integrates TA + UX review findings inline (not as appendices), adds\n6-phase implementation sequence, and adds Section 9 with four proposed extensions for discussion:\npath-scoped rules, confidence decay, inline changelog, and --check CI gate.\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage new spec and commit with both old files removed"
 }
 ```
@@ -251,7 +251,7 @@ id: toolu_01UJZ33ToxSFfumiVkcJF2z8
   "description": "Developer persona review of proposed extensions",
   "subagent_type": "general-purpose",
   "name": "dev-persona-reviewer",
-  "prompt": "You are a senior developer who uses AI coding tools daily (Claude Code, Cursor) and has been using \"Code Insights\" — a local CLI tool that analyzes your AI coding sessions and stores extracted knowledge (decisions, learnings, friction patterns) in a local SQLite database.\n\nYou've just read a new consolidated spec for a feature called `.code-insights.md` — a file that would be generated at your project's git root, containing YAML-structured rules for AI agents + markdown narrative for humans, both extracted from your session history.\n\n**The spec is at:** `/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file. Then focus your review on **Section 9: Proposed Extensions** (the 4 new ideas). Review each from the perspective of a developer who would actually use this tool daily.\n\nFor each extension, answer:\n1. **Would I actually use this?** (honest gut-check)\n2. **What's the friction cost?** (setup, maintenance, cognitive load)\n3. **What's the payoff?** (concrete, not theoretical)\n4. **Your verdict:** Include / Skip / Defer\n\nBe direct. Don't be polite about ideas that add complexity without clear payoff. Also flag any part of the core Phase 1 spec (Sections 4–5) that feels awkward or confusing from […]
+  "prompt": "You are a senior developer who uses AI coding tools daily (Claude Code, Cursor) and has been using \"Code Insights\" — a local CLI tool that analyzes your AI coding sessions and stores extracted knowledge (decisions, learnings, friction patterns) in a local SQLite database.\n\nYou've just read a new consolidated spec for a feature called `.code-insights.md` — a file that would be generated at your project's git root, containing YAML-structured rules for AI agents + markdown narrative for humans, both extracted from your session history.\n\n**The spec is at:** `/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file. Then focus your review on **Section 9: Proposed Extensions** (the 4 new ideas). Review each from the perspective of a developer who would actually use this tool daily.\n\nFor each extension, answer:\n1. **Would I actually use this?** (honest gut-check)\n2. **What's the friction cost?** (setup, maintenance, cognitive load)\n3. **What's the payoff?** (concrete, not theoretical)\n4. **Your verdict:** Include / Skip / Defer\n\nBe direct. Don't be polite about ideas that add complexity without clear payoff. Also flag any part of the core Phase 1 spec (Sections 4–5) that feels awkward or confusing from […]
 
 > TOOL
 
@@ -262,7 +262,7 @@ id: toolu_01WFDZrcriW5NUCpobuCmYvi
   "description": "Technical architect review of proposed extensions",
   "subagent_type": "general-purpose",
   "name": "ta-persona-reviewer",
-  "prompt": "You are a technical architect reviewing an implementation spec for a developer tool feature. The codebase is a TypeScript/Node.js pnpm monorepo with: CLI (Commander.js), server (Hono), dashboard (Vite + React), and SQLite database (better-sqlite3).\n\n**The spec is at:** `/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file. Then focus your review on two things:\n\n**1. Section 9: Proposed Extensions — technical feasibility**\n\nFor each of the 4 proposed extensions (9.1 path-scoped rules, 9.2 confidence decay, 9.3 inline changelog, 9.4 --check CI gate), answer:\n- Implementation complexity (low/medium/high)\n- Key technical risks or gotchas not mentioned in the spec\n- Whether the spec's stated trade-offs are accurate\n- Phase recommendation: Phase 1 / Phase 2 / Defer\n\n**2. Core Phase 1 architecture (Sections 5.1–5.6) — any gaps?**\n\nThe spec says \"full regeneration + YAML frontmatter built deterministically by code + markdown body from LLM.\" Does the pipeline have any edge cases or integration risks not addressed? Specific areas to check:\n- The `applyV10` schema change (topic_tags as JSON text column in SQLite — no native GIN index)\n- The transient server start model (same as `reflect`)\n- The scrubbing pipeline (3 layers)\n\nReturn your findings in under 500 words. […]
+  "prompt": "You are a technical architect reviewing an implementation spec for a developer tool feature. The codebase is a TypeScript/Node.js pnpm monorepo with: CLI (Commander.js), server (Hono), dashboard (Vite + React), and SQLite database (better-sqlite3).\n\n**The spec is at:** `/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file. Then focus your review on two things:\n\n**1. Section 9: Proposed Extensions — technical feasibility**\n\nFor each of the 4 proposed extensions (9.1 path-scoped rules, 9.2 confidence decay, 9.3 inline changelog, 9.4 --check CI gate), answer:\n- Implementation complexity (low/medium/high)\n- Key technical risks or gotchas not mentioned in the spec\n- Whether the spec's stated trade-offs are accurate\n- Phase recommendation: Phase 1 / Phase 2 / Defer\n\n**2. Core Phase 1 architecture (Sections 5.1–5.6) — any gaps?**\n\nThe spec says \"full regeneration + YAML frontmatter built deterministically by code + markdown body from LLM.\" Does the pipeline have any edge cases or integration risks not addressed? Specific areas to check:\n- The `applyV10` schema change (topic_tags as JSON text column in SQLite — no native GIN index)\n- The transient server start model (same as `reflect`)\n- The scrubbing pipeline (3 layers)\n\nReturn your findings in under 500 words. […]
 
 > TOOL
 
@@ -273,7 +273,7 @@ id: toolu_01BiW3GRUFh7iduqQkdmYaLh
   "description": "Product strategist review of proposed extensions",
   "subagent_type": "devtools-cofounder",
   "name": "product-persona-reviewer",
-  "prompt": "You are a devtools product strategist reviewing a spec for a feature called `.code-insights.md` in an open-source developer tool called Code Insights (local-first, free, privacy-first, no cloud).\n\n**The spec is at:** `/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file — especially Section 3 (Killer Use Case), Section 4 (Feature Design), and Section 9 (Proposed Extensions).\n\n**Your job: evaluate the 4 proposed extensions in Section 9 through a product strategy lens.**\n\nFor each extension (9.1 path-scoped rules, 9.2 confidence decay, 9.3 inline changelog, 9.4 --check CI gate), answer:\n1. **Does this strengthen the product narrative** — or is it complexity for its own sake?\n2. **Does this improve PLG (product-led growth) potential** — is it something a user would mention to a colleague?\n3. **Does this create differentiation** vs. other tools (CLAUDE.md, entire.io, Cursor rules)?\n4. **Your verdict:** Include / Skip / Defer + one-sentence reason\n\nAlso: does the core Phase 1 feature (the `.code-insights.md` file itself) have a strong enough story? Is there a sharper hook or a missing angle?\n\nReturn your findings in under 400 words. Opinions, not hedges."
+  "prompt": "You are a devtools product strategist reviewing a spec for a feature called `.code-insights.md` in an open-source developer tool called Code Insights (local-first, free, privacy-first, no cloud).\n\n**The spec is at:** `/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md`\n\nPlease read the full spec file — especially Section 3 (Killer Use Case), Section 4 (Feature Design), and Section 9 (Proposed Extensions).\n\n**Your job: evaluate the 4 proposed extensions in Section 9 through a product strategy lens.**\n\nFor each extension (9.1 path-scoped rules, 9.2 confidence decay, 9.3 inline changelog, 9.4 --check CI gate), answer:\n1. **Does this strengthen the product narrative** — or is it complexity for its own sake?\n2. **Does this improve PLG (product-led growth) potential** — is it something a user would mention to a colleague?\n3. **Does this create differentiation** vs. other tools (CLAUDE.md, entire.io, Cursor rules)?\n4. **Your verdict:** Include / Skip / Defer + one-sentence reason\n\nAlso: does the core Phase 1 feature (the `.code-insights.md` file itself) have a strong enough story? Is there a sharper hook or a missing angle?\n\nReturn your findings in under 400 words. Opinions, not hedges."
 }
 ```
 
@@ -431,7 +431,7 @@ tool_use Read
 id: toolu_01Gw7okgPWXnhHzaXG5Zg5K6
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md"
 }
 ```
 
@@ -478,7 +478,7 @@ id: toolu_01JAB4NLB6rcBwSuJpHiHW4h
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "They read it in 5 minutes and understand the codebase's story. The original developer did nothing special — they just used their AI tools normally. code-insights did the extraction.",
   "new_string": "They read it in 5 minutes and understand the codebase's story. The original developer did nothing special — they just used their AI tools normally. code-insights did the extraction.\n\n**The distribution angle:** `.code-insights.md` is shareable, screenshottable, and tweetable. It's the first knowledge artifact written *by* your AI tools, *for* your AI tools and your teammates. \"I ran one command and got 12 architectural decisions extracted from 400 sessions\" is the HN post. The file is the artifact; `code-insights attach` is the verb."
 }
@@ -489,7 +489,7 @@ id: toolu_01JAB4NLB6rcBwSuJpHiHW4h
 tool_result
 id: toolu_01JAB4NLB6rcBwSuJpHiHW4h
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -503,7 +503,7 @@ id: toolu_01PEnbAn5tREFG1y1Wf5ZFot
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "  - id: sqlite-wal-mode\n    rule: \"USE WAL mode for all SQLite connections\"\n    category: database\n    confidence: 95\n    context: \"Prevents SQLITE_BUSY under concurrent reads from dashboard + CLI sync\"\n\n  - id: migration-raw-sql\n    rule: \"Write SQLite migrations as raw SQL in applyVN() functions — never ORM migration tools\"\n    category: database\n    confidence: 92\n    context: \"ORM migrations failed silently on schema V6; raw SQL is auditable\"",
   "new_string": "  - id: sqlite-wal-mode\n    rule: \"USE WAL mode for all SQLite connections\"\n    category: database\n    confidence: 95\n    context: \"Prevents SQLITE_BUSY under concurrent reads from dashboard + CLI sync\"\n    last_reinforced: \"2026-04-18\"\n\n  - id: migration-raw-sql\n    rule: \"Write SQLite migrations as raw SQL in applyVN() functions — never ORM migration tools\"\n    category: database\n    confidence: 92\n    context: \"ORM migrations failed silently on schema V6; raw SQL is auditable\"\n    last_reinforced: \"2026-04-01\""
 }
@@ -514,7 +514,7 @@ id: toolu_01PEnbAn5tREFG1y1Wf5ZFot
 tool_result
 id: toolu_01PEnbAn5tREFG1y1Wf5ZFot
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -528,7 +528,7 @@ id: toolu_01ExaYioppAyEr2ZL5a7TrPj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "| `context` on rules | One-line rationale for each rule — helps AI agents judge applicability |\n| Section count caps | Prevents unreadable files for high-volume projects; caps enforced in code not by LLM |",
   "new_string": "| `context` on rules | One-line rationale for each rule — helps AI agents judge applicability |\n| `last_reinforced` on rules | ISO date of most recent session that reinforced this rule — lets agents and developers judge per-rule freshness without algorithmic decay |\n| Section count caps | Prevents unreadable files for high-volume projects; caps enforced in code not by LLM |"
 }
@@ -539,7 +539,7 @@ id: toolu_01ExaYioppAyEr2ZL5a7TrPj
 tool_result
 id: toolu_01ExaYioppAyEr2ZL5a7TrPj
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -553,7 +553,7 @@ id: toolu_012W9ri4e9ppKFEVaF5WtNvd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "```bash\n# Primary form:\ncode-insights export --format repo [options]\n\n# Short alias (more discoverable, verb-first):\ncode-insights attach [project-name]\n\nOptions:",
   "new_string": "```bash\n# Primary command (user-facing):\ncode-insights attach [project-name] [options]\n\n# Canonical underlying form (internal plumbing, not surfaced in user docs):\ncode-insights export --format repo [options]\n\nOptions:"
 }
@@ -564,7 +564,7 @@ id: toolu_012W9ri4e9ppKFEVaF5WtNvd
 tool_result
 id: toolu_012W9ri4e9ppKFEVaF5WtNvd
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -578,7 +578,7 @@ id: toolu_01143QyZ9GgLcNJ48hRCoJH4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "**Notes:**\n- `code-insights attach` is an alias for `code-insights export --format repo`\n- Fuzzy project matching: if the name matches multiple projects, show a numbered list and ask the user to pick. Never silently pick the closest match.\n- `--no-llm` mode: generates YAML frontmatter (deterministic, from SQLite aggregations) + `rules[]` from pre-existing reflect snapshot `claudeMdRules[]`. Markdown body sections omitted. Useful for CI or users without LLM configured.\n- `--check` mode: reads `sessions_at_generation` from existing file, compares to current session count. Exits 1 if delta > 50 (configurable). No generation, no output. For pre-commit hooks and CI gates.",
   "new_string": "**Notes:**\n- `attach` is the primary user-facing command. `export --format repo` is the canonical underlying form — do not surface it in user docs, help text, or the dashboard UI.\n- Fuzzy project matching: if the name matches multiple projects, show a numbered list and ask the user to pick. Never silently pick the closest match.\n- `--no-llm` mode: generates YAML frontmatter only (deterministic, from SQLite aggregations) + `rules[]` from pre-existing reflect snapshot `claudeMdRules[]`. Markdown body (Decisions, Friction, Patterns narrative) is omitted entirely. The terminal output must make this explicit: \"Generated: frontmatter + rules only (--no-llm mode; markdown […]
 
@@ -587,7 +587,7 @@ id: toolu_01143QyZ9GgLcNJ48hRCoJH4
 tool_result
 id: toolu_01143QyZ9GgLcNJ48hRCoJH4
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -601,7 +601,7 @@ id: toolu_01UGVRb6S7YdnMpTtS9z3fkn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "**CLI-to-server invocation model:** The CLI starts a transient server instance (same pattern as `code-insights reflect`), calls `POST /api/export/generate` with `format: 'repo'`, receives the response, and shuts down the server. The server is not required to be running independently.",
   "new_string": "**CLI-to-server invocation model — open implementation decision:**\n\n> ⚠ The original spec claimed `attach` would use \"the same transient server pattern as `reflect`.\" This is incorrect: `reflect.ts` calls `checkServer()` and exits if the server is not already running — it does not start a transient server instance. No existing transient server startup code exists in the codebase.\n\nTwo valid approaches for the implementer to choose between:\n\n| Option | How it works | Trade-off |\n|--------|-------------|-----------|\n| **A — Require running server** | Same as `reflect`: check server is up, call `POST /api/export/generate`. Error clearly if not running. | Consistent with `reflect` UX; user must run `code-insights dashboard` first |\n| **B — Direct DB path** | Extract `buildRepoExportContext()` so CLI calls it directly against SQLite without going through the server. LLM call still goes through the server's provider abstraction. | Lower friction (no server required); more implementation work to extract the pipeline |\n\n**Recommendation: Option B** […]
 
@@ -610,7 +610,7 @@ id: toolu_01UGVRb6S7YdnMpTtS9z3fkn
 tool_result
 id: toolu_01UGVRb6S7YdnMpTtS9z3fkn
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -624,9 +624,9 @@ id: toolu_01Q7Tx1bTkLbriigQfr1Ej9d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
-  "old_string": "  Written: /Users/dev/code-insights/.code-insights.md (4.2 KB)\n\n  → Add reference to CLAUDE.md? This helps AI agents find the file automatically.\n    Suggested line: \"See .code-insights.md for AI-extracted codebase knowledge.\"\n    [add/skip]:\n\n  Add to version control? This lets the knowledge travel with your repo.\n  Add to .gitignore instead (keep personal)? [commit/ignore/skip]: commit\n\n  Tip: Regenerate after more sessions: code-insights attach",
-  "new_string": "  Written: /Users/dev/code-insights/.code-insights.md (4.2 KB)\n\n  Add to version control? This lets the knowledge travel with your repo.\n  Add to .gitignore instead (keep personal)? [commit/ignore/skip]: commit\n\n  → Add reference to CLAUDE.md? This helps AI agents find the file automatically.\n    Suggested line: \"See .code-insights.md for AI-extracted codebase knowledge.\"\n    [add/skip]: add\n\n  Tip: Regenerate after more sessions: code-insights attach"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "old_string": "  Written: /home/<USER>/code-insights/.code-insights.md (4.2 KB)\n\n  → Add reference to CLAUDE.md? This helps AI agents find the file automatically.\n    Suggested line: \"See .code-insights.md for AI-extracted codebase knowledge.\"\n    [add/skip]:\n\n  Add to version control? This lets the knowledge travel with your repo.\n  Add to .gitignore instead (keep personal)? [commit/ignore/skip]: commit\n\n  Tip: Regenerate after more sessions: code-insights attach",
+  "new_string": "  Written: /home/<USER>/code-insights/.code-insights.md (4.2 KB)\n\n  Add to version control? This lets the knowledge travel with your repo.\n  Add to .gitignore instead (keep personal)? [commit/ignore/skip]: commit\n\n  → Add reference to CLAUDE.md? This helps AI agents find the file automatically.\n    Suggested line: \"See .code-insights.md for AI-extracted codebase knowledge.\"\n    [add/skip]: add\n\n  Tip: Regenerate after more sessions: code-insights attach"
 }
 ```
 
@@ -635,7 +635,7 @@ id: toolu_01Q7Tx1bTkLbriigQfr1Ej9d
 tool_result
 id: toolu_01Q7Tx1bTkLbriigQfr1Ej9d
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -649,7 +649,7 @@ id: toolu_018X9cF2dAG5jnV343hkKKDq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "  { pattern: /[A-Z_]{3,}=[\"']?[^\\s'\",)}\\]]{8,}[\"']?/g,\n    replacement: '[ENV_VAR]' },",
   "new_string": "  // Narrowed to secret-like names only — broad [A-Z_]= patterns false-positive on NODE_ENV, AUTH_METHOD, etc.\n  { pattern: /(?:SECRET|TOKEN|PASSWORD|KEY|CREDENTIAL|AUTH|API_KEY|ACCESS_KEY|PRIVATE)[A-Z_]*=[\"']?[^\\s'\",)}\\]]{8,}[\"']?/g,\n    replacement: '[ENV_VAR]' },"
 }
@@ -660,7 +660,7 @@ id: toolu_018X9cF2dAG5jnV343hkKKDq
 tool_result
 id: toolu_018X9cF2dAG5jnV343hkKKDq
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -674,7 +674,7 @@ id: toolu_01Xy1vQAxng1kv23xhymEuPM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "### 5.4 Schema Changes\n\n**Schema V10 — topic tag extraction (added from TA review):**\n\n```sql\n-- New column on insights table for semantic topic tagging\nALTER TABLE insights ADD COLUMN topic_tags TEXT; -- JSON array e.g. '[\"database/sqlite\", \"migrations\"]'\n\n-- GIN-equivalent full-text index for SQLite (json_each workaround)\n-- Conflict detection queries topic overlap via JSON functions\n```\n\nTopic tags are extracted by the LLM at analysis time (not derived on-the-fly at query time). A `topic-normalize.ts` module (mirrors `friction-normalize.ts`) prevents tag drift. Backfill via `reflect backfill --topics`.\n\nNew local sync tracking table:\n```sql\nCREATE TABLE IF NOT EXISTS knowledge_sync (\n  insight_id    TEXT PRIMARY KEY REFERENCES insights(id),\n  remote_id     TEXT NOT NULL,    -- UUID from team DB (Phase 3+)\n  pushed_at     TEXT NOT NULL,\n  last_status   TEXT NOT NULL     -- 'pushed' | 'conflict-pending' | 'ignored'\n);\n```",
   "new_string": "### 5.4 Schema Changes\n\n**Schema V10 (Phase 1) — topic tag extraction:**\n\n```sql\n-- New column on insights table for semantic topic tagging\n-- JSON array stored as TEXT: e.g. '[\"database/sqlite\", \"migrations\"]'\nALTER TABLE insights ADD COLUMN topic_tags TEXT;\n\n-- No SQLite GIN index needed in Phase 1 — topic_tags are only used for\n-- local conflict pre-flight (Phase 3) and context queries (Phase 2).\n-- JSON overlap queries use json_each() at query time for small local DBs.\n-- […]
 
@@ -683,7 +683,7 @@ id: toolu_01Xy1vQAxng1kv23xhymEuPM
 tool_result
 id: toolu_01Xy1vQAxng1kv23xhymEuPM
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -697,7 +697,7 @@ id: toolu_01GA72LyBz8ZUhKnutZZMtjZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "| `cli/src/db/migrate.ts` | Add `applyV10()` for `topic_tags` column + `knowledge_sync` table |",
   "new_string": "| `cli/src/db/migrate.ts` | Add `applyV10()` for `topic_tags` column only (`knowledge_sync` deferred to Phase 3 `applyV11`) |"
 }
@@ -708,7 +708,7 @@ id: toolu_01GA72LyBz8ZUhKnutZZMtjZ
 tool_result
 id: toolu_01GA72LyBz8ZUhKnutZZMtjZ
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -722,7 +722,7 @@ id: toolu_01VPrtpmaCPog4ARHC1TuszZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "## 9. Proposed Extensions — For Discussion\n\nThese are not yet approved. Each has trade-offs to decide before including in any implementation plan.\n\n---\n\n### 9.1 Path-Scoped Rules (`affects` field)\n\n**The idea:** Add an optional `affects` field to each rule in the YAML frontmatter — a glob pattern array indicating which file paths the rule applies to.\n\n```yaml\nrules:\n  - id: migration-raw-sql\n    rule: \"Write SQLite migrations as raw SQL in applyVN() functions\"\n    category: database\n    confidence: 92\n    context: \"ORM migrations failed silently on schema V6; raw SQL is auditable\"\n    affects: [\"**/migrations/**\", \"**/db/**\", \"**/migrate.ts\"]\n```\n\n**Why it matters:** AI agents currently get all rules regardless of what file they're editing. An agent editing a React component doesn't need SQLite WAL mode rules. With `affects`, agents could filter to only relevant rules — reducing noise and improving rule-to-context precision.\n\n**Trade-offs:**\n- Adds complexity to the LLM prompt (must classify which paths each rule applies to)\n- LLM-generated glob patterns may be imprecise — needs validation\n- Agents must actually implement filtering logic (can't just pass the file wholesale)\n- Could be left empty (`affects: []` = applies to all) to make it backward-compatible\n\n**Decision needed:** Worth the added LLM complexity for better agent targeting?\n\n---\n\n### 9.2 Confidence […]
 
 > TOOL
@@ -730,7 +730,7 @@ id: toolu_01VPrtpmaCPog4ARHC1TuszZ
 tool_result
 id: toolu_01VPrtpmaCPog4ARHC1TuszZ
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT
@@ -744,7 +744,7 @@ id: toolu_01QdDso33fx3SbWC3xFiQFsm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "| Schema change | V10 adds `topic_tags` to insights + `knowledge_sync` table |",
   "new_string": "| Schema change | V10 adds `topic_tags` to insights only; `knowledge_sync` deferred to Phase 3 `applyV11` |"
 }
@@ -755,7 +755,7 @@ id: toolu_01QdDso33fx3SbWC3xFiQFsm
 tool_result
 id: toolu_01QdDso33fx3SbWC3xFiQFsm
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > TOOL
@@ -765,7 +765,7 @@ id: toolu_01RRCbrjmtxvSUsPWbcJkSuL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md",
   "old_string": "| CLI invocation model | Transient server start → API call → shutdown (same as `reflect`) |",
   "new_string": "| CLI invocation model | Open decision between Option A (require running server) and Option B (direct DB + CLI LLM provider). See Section 4.2 for full analysis. Recommendation: Option B. |"
 }
@@ -776,7 +776,7 @@ id: toolu_01RRCbrjmtxvSUsPWbcJkSuL
 tool_result
 id: toolu_01RRCbrjmtxvSUsPWbcJkSuL
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md has been updated successfully.
 ```
 
 > AGENT

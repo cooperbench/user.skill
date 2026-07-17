@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -51,7 +51,7 @@ To let users choose which agent handles a task:
 
 > SYSTEM
 
-Base directory for this skill: /Users/marcus/.claude/skills/nw-design
+Base directory for this skill: /home/<USER>/.claude/skills/nw-design
 
 # NW-DESIGN: Architecture Design
 
@@ -89,7 +89,7 @@ Good. Now I have a complete picture of the current state. Let me launch the solu
 
 > SYSTEM
 
-Base directory for this skill: /Users/marcus/.claude/skills/nw-discover
+Base directory for this skill: /home/<USER>/.claude/skills/nw-discover
 
 # NW-DISCOVER: Evidence-Based Product Discovery
 

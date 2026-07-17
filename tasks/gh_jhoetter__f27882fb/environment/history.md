@@ -42,7 +42,7 @@ The project has solid foundations: strict TypeScript config, ruff/pytest, Pretti
 - frontend tests passed: `669` files / `5462` tests
 - sampled backend route assertions passed
 
-The main reason I would not rate it higher is that **the frontend does not currently typecheck**. `pnpm --filter @bim-ai/web typecheck` fails with real source errors, for example nonexistent core exports in [terraceFromFloor.ts](/Users/jhoetter/repos/bim-ai/packages/web/src/plan/terraceFromFloor.ts:1), invalid `PlanTool` usage in [PlanCanvas.tsx](/Users/jhoetter/repos/bim-ai/packages/web/src/plan/PlanCanvas.tsx:5966), missing `onSemanticCommand` references in [InspectorContent.tsx](/Users/jhoetter/repos/bim-ai/packages/web/src/workspace/inspector/InspectorContent.tsx:1673), and stale discriminated-union handling around `family_extrusion`.
+The main reason I would not rate it higher is that **the frontend does not currently typecheck**. `pnpm --filter @bim-ai/web typecheck` fails with real source errors, for example nonexistent core exports in [terraceFromFloor.ts](/home/<USER>/repos/bim-ai/packages/web/src/plan/terraceFromFloor.ts:1), invalid `PlanTool` usage in [PlanCanvas.tsx](/home/<USER>/repos/bim-ai/packages/web/src/plan/PlanCanvas.tsx:5966), missing `onSemanticCommand` references in [InspectorContent.tsx](/home/<USER>/repos/bim-ai/packages/web/src/workspace/inspector/InspectorContent.tsx:1673), and stale discriminated-union handling around `family_extrusion`.
 
 Biggest quality risks:
 
@@ -97,7 +97,7 @@ History now has two local commits ahead of `origin/main`: my doc commit and a fo
 
 > AGENT
 
-Added the active code-quality tracker at [spec/code-quality-tracker.md](/Users/jhoetter/repos/bim-ai/spec/code-quality-tracker.md).
+Added the active code-quality tracker at [spec/code-quality-tracker.md](/home/<USER>/repos/bim-ai/spec/code-quality-tracker.md).
 
 Committed it as:
 
@@ -136,7 +136,7 @@ I’ll update the active tracker so it defines an explicit “A territory” tar
 
 > AGENT
 
-The repo has several unrelated local edits right now, so I’ll keep my change isolated to [spec/code-quality-tracker.md](/Users/jhoetter/repos/bim-ai/spec/code-quality-tracker.md). I’m adding an “A-grade target” section plus additional workpackages that cover what the current tracker did not yet demand: enforced budgets, schema generation, dependency boundaries, performance/accessibility/security gates, and release discipline.
+The repo has several unrelated local edits right now, so I’ll keep my change isolated to [spec/code-quality-tracker.md](/home/<USER>/repos/bim-ai/spec/code-quality-tracker.md). I’m adding an “A-grade target” section plus additional workpackages that cover what the current tracker did not yet demand: enforced budgets, schema generation, dependency boundaries, performance/accessibility/security gates, and release discipline.
 
 > AGENT
 
@@ -144,7 +144,7 @@ The tracker now has the A-grade bar and the missing A-grade workpackages. I’m 
 
 > AGENT
 
-Updated [spec/code-quality-tracker.md](/Users/jhoetter/repos/bim-ai/spec/code-quality-tracker.md) so it now defines what “A territory” means.
+Updated [spec/code-quality-tracker.md](/home/<USER>/repos/bim-ai/spec/code-quality-tracker.md) so it now defines what “A territory” means.
 
 I added:
 
@@ -282,7 +282,7 @@ The tracker now rejects prose-only/manual exceptions and requires generated repo
 
 > AGENT
 
-Updated [spec/code-quality-tracker.md](/Users/jhoetter/repos/bim-ai/spec/code-quality-tracker.md) again to make the A-grade path explicitly **automation-first**.
+Updated [spec/code-quality-tracker.md](/home/<USER>/repos/bim-ai/spec/code-quality-tracker.md) again to make the A-grade path explicitly **automation-first**.
 
 Key corrections added:
 
@@ -2070,9 +2070,9 @@ Pushed commits:
 - `14572a1c9` `refactor(web): close inspector god file slice`
 
 What changed:
-- Added [spec/god-file-reduction-tracker.md](/Users/jhoetter/repos/bim-ai/spec/god-file-reduction-tracker.md).
-- Linked it from [spec/code-quality-tracker.md](/Users/jhoetter/repos/bim-ai/spec/code-quality-tracker.md).
-- Closed `GFR-2026-01`: [InspectorContent.tsx](/Users/jhoetter/repos/bim-ai/packages/web/src/workspace/inspector/InspectorContent.tsx) is now under the first target, down to about `5,994` lines locally.
+- Added [spec/god-file-reduction-tracker.md](/home/<USER>/repos/bim-ai/spec/god-file-reduction-tracker.md).
+- Linked it from [spec/code-quality-tracker.md](/home/<USER>/repos/bim-ai/spec/code-quality-tracker.md).
+- Closed `GFR-2026-01`: [InspectorContent.tsx](/home/<USER>/repos/bim-ai/packages/web/src/workspace/inspector/InspectorContent.tsx) is now under the first target, down to about `5,994` lines locally.
 - Added extracted inspector modules for site terrain, annotation tags, spot annotations, interior elevation markers, mass/detail-group actions, and view references.
 - Added focused tests for the new extracted branches.
 

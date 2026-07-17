@@ -32,11 +32,11 @@ Here is a complete picture of how the Acknowledge and Resolve actions work, from
 
 ### Relevant files
 
-- `/Users/pc/web3/ReleaseBeacon/web/app/todo/page.tsx` — the page component
-- `/Users/pc/web3/ReleaseBeacon/web/lib/api/client.ts` — frontend API client
-- `/Users/pc/web3/ReleaseBeacon/internal/api/todos.go` — HTTP handlers
-- `/Users/pc/web3/ReleaseBeacon/internal/api/server.go` — route registration
-- `/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go` — database implementation
+- `/home/<USER>/web3/ReleaseBeacon/web/app/todo/page.tsx` — the page component
+- `/home/<USER>/web3/ReleaseBeacon/web/lib/api/client.ts` — frontend API client
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/todos.go` — HTTP handlers
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/server.go` — route registration
+- `/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go` — database implementation
 
 ---
 
@@ -91,7 +91,7 @@ tool_use Read
 id: toolu_bdrk_01CxHGS3FuBfbdyJfWXLWqVr
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "offset": 1640,
   "limit": 100
 }
@@ -175,7 +175,7 @@ id: toolu_bdrk_01LV448DiaugMxbK8EVdZ21G
 ```json
 {
   "pattern": "CreateReleaseTodo|CreateSemanticReleaseTodo",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal/routing/worker.go",
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal/routing/worker.go",
   "output_mode": "content",
   "-C": 5
 }
@@ -221,7 +221,7 @@ tool_use Read
 id: toolu_bdrk_01LAf9xFepRn6b7FLwn5nmio
 ```json
 {
-  "file_path": "/Users/pc/web3/ReleaseBeacon/internal/api/pgstore.go",
+  "file_path": "/home/<USER>/web3/ReleaseBeacon/internal/api/pgstore.go",
   "limit": 30,
   "offset": 1731
 }
@@ -299,7 +299,7 @@ id: toolu_bdrk_01CTHgskEp2W8WCg59GKGFxY
   "glob": "*.go",
   "output_mode": "content",
   "pattern": "CREATE TABLE release_todos|release_todos\"",
-  "path": "/Users/pc/web3/ReleaseBeacon/internal"
+  "path": "/home/<USER>/web3/ReleaseBeacon/internal"
 }
 ```
 

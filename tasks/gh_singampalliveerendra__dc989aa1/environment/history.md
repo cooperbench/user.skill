@@ -249,7 +249,7 @@ tool_use Read
 id: toolu_01EfELTms4sToUGot4v38TT8
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "offset": 55,
   "limit": 180
 }
@@ -358,7 +358,7 @@ tool_use Read
 id: toolu_012HZy77gSFFEPceHibqXApu
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/GlobalNav.tsx"
 }
 ```
 
@@ -411,7 +411,7 @@ tool_use Bash
 id: toolu_01DEu3dAuH1ZRMcKRavLi3q5
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\necho \"=== files with 'Log Harvest' UI text ===\"\ngrep -rn \"Log Harvest\\|Log harvest\\|Add Harvest\\|Log a harvest\" src/ --include=*.tsx | grep -iv \"harvestlog\" | head -30",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\necho \"=== files with 'Log Harvest' UI text ===\"\ngrep -rn \"Log Harvest\\|Log harvest\\|Add Harvest\\|Log a harvest\" src/ --include=*.tsx | grep -iv \"harvestlog\" | head -30",
   "description": "Find Log Harvest UI"
 }
 ```
@@ -430,7 +430,7 @@ tool_use Bash
 id: toolu_01Ngbon63VrrqCD6wK7grNVc
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\ngrep -rln \"harvest\" src/app/farmer --include=*.tsx\necho \"=== HarvestLog / harvest components ===\"\nls src/components/farmer/tabs/ 2>/dev/null\ngrep -rln \"shelf_life_days\\|shelf life\\|Shelf life\\|Shelf Life\" src/app/farmer src/components/farmer src/app/moderator --include=*.tsx",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\ngrep -rln \"harvest\" src/app/farmer --include=*.tsx\necho \"=== HarvestLog / harvest components ===\"\nls src/components/farmer/tabs/ 2>/dev/null\ngrep -rln \"shelf_life_days\\|shelf life\\|Shelf life\\|Shelf Life\" src/app/farmer src/components/farmer src/app/moderator --include=*.tsx",
   "description": "Find harvest logging + shelf life in farmer/moderator"
 }
 ```
@@ -467,7 +467,7 @@ tool_use Bash
 id: toolu_01F3iCBS3tE4Axj7jocbLAUh
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\ngrep -n \"harvest\\|shelf\\|Shelf\\|Harvest\" src/app/farmer/dashboard/page.tsx | head -60",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\ngrep -n \"harvest\\|shelf\\|Shelf\\|Harvest\" src/app/farmer/dashboard/page.tsx | head -60",
   "description": "Find harvest/shelf in farmer dashboard"
 }
 ```
@@ -509,7 +509,7 @@ tool_use Read
 id: toolu_01YN9DL9WacdkpbV1LzXYyxz
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/page.tsx",
   "offset": 2119,
   "limit": 40
 }
@@ -567,7 +567,7 @@ tool_use Read
 id: toolu_018Ck6xMJTq1X8io1uAWo5xK
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/farmer/dashboard/page.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/farmer/dashboard/page.tsx",
   "offset": 2792,
   "limit": 220
 }
@@ -613,7 +613,7 @@ tool_use Bash
 id: toolu_019523Vk7dwxEL9eusWq4qS3
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\necho \"=== moderator ListingForm: harvest date/shelf fields ===\"\ngrep -n \"Harvest date\\|harvest_date\\|harvestDate\\|Shelf life\\|shelfLife\\|shelf_life\" src/app/moderator/listings/ListingForm.tsx | head\necho \"=== moderator: does it have a HarvestManager equivalent? ===\"\ngrep -n \"HarvestManager\\|Harvest timings\\|from('harvests')\\|Log harvest\\|Save harvest\" src/app/moderator/listings/ListingForm.tsx | head",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\necho \"=== moderator ListingForm: harvest date/shelf fields ===\"\ngrep -n \"Harvest date\\|harvest_date\\|harvestDate\\|Shelf life\\|shelfLife\\|shelf_life\" src/app/moderator/listings/ListingForm.tsx | head\necho \"=== moderator: does it have a HarvestManager equivalent? ===\"\ngrep -n \"HarvestManager\\|Harvest timings\\|from('harvests')\\|Log harvest\\|Save harvest\" src/app/moderator/listings/ListingForm.tsx | head",
   "description": "Check moderator parity for harvest fields"
 }
 ```

@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_011uz3WBbbXoTR9hyTiiRoiz
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/tmp/review.md"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/tmp/review.md"
 }
 ```
 

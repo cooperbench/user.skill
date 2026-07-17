@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01KHtm6V4UVjixrfqh9UkVfT
 ```json
 {
-  "command": "ls /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/",
+  "command": "ls /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/",
   "description": "List public directory contents"
 }
 ```
@@ -23,7 +23,7 @@ tool_use Bash
 id: toolu_0139d6ryybLq6sRE7jHoNTKU
 ```json
 {
-  "command": "grep -rn -i \"youtube\\|local explorer\\|local-explorer\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/ --include=\"*.md\" --include=\"*.vue\"",
+  "command": "grep -rn -i \"youtube\\|local explorer\\|local-explorer\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/ --include=\"*.md\" --include=\"*.vue\"",
   "description": "Find YouTube references and Local Explorer mentions"
 }
 ```
@@ -50,11 +50,11 @@ iceberg-snowflake.png
 tool_result
 id: toolu_0139d6ryybLq6sRE7jHoNTKU
 ```
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/draft.md:592:→ https://blog.cloudflare.com/cf-cli-local-explorer/
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/draft.md:599:- **Local Explorer**: `wrangler dev` 実行中にキー `e` を押すと起動。KV / R2 / D1 / Durable Objects / Workflows をローカルから検査できる
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:58:## Local Explorer
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:62:    src="https://www.youtube.com/embed/26NzILA4NIY?rel=0"
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:63:    title="Cloudflare Local Explorer"
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/draft.md:592:→ https://blog.cloudflare.com/cf-cli-local-explorer/
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/draft.md:599:- **Local Explorer**: `wrangler dev` 実行中にキー `e` を押すと起動。KV / R2 / D1 / Durable Objects / Workflows をローカルから検査できる
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:58:## Local Explorer
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:62:    src="https://www.youtube.com/embed/26NzILA4NIY?rel=0"
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:63:    title="Cloudflare Local Explorer"
 ```
 
 > AGENT
@@ -67,7 +67,7 @@ tool_use Read
 id: toolu_017yswPwpeVgVDFyMrCqRkwN
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "offset": 40,
   "limit": 40
 }
@@ -126,7 +126,7 @@ tool_use Bash
 id: toolu_0172w51Zar47Fy1bj83TiMzj
 ```json
 {
-  "command": "ls -lh /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4",
+  "command": "ls -lh /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4",
   "description": "Check the video file size"
 }
 ```
@@ -136,7 +136,7 @@ id: toolu_0172w51Zar47Fy1bj83TiMzj
 tool_result
 id: toolu_0172w51Zar47Fy1bj83TiMzj
 ```
--rw-r--r--@ 1 ta93abe  staff   929K May  6 23:38 /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4
+-rw-r--r--@ 1 ta93abe  staff   929K May  6 23:38 /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4
 ```
 
 > AGENT
@@ -156,7 +156,7 @@ id: toolu_017r9AZ5xkz9xDvkpfDjtBKx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "old_string": "<div class=\"flex justify-center mt-4\">\n  <iframe\n    src=\"https://www.youtube.com/embed/26NzILA4NIY?rel=0\"\n    title=\"Cloudflare Local Explorer\"\n    class=\"aspect-video w-[860px] max-w-full rounded border border-zinc-700/60 shadow-lg\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen\n  ></iframe>\n</div>",
   "new_string": "<div class=\"flex justify-center mt-4\">\n  <video\n    src=\"/cloudflare-local-explorer.mp4\"\n    class=\"aspect-video w-[860px] max-w-full rounded border border-zinc-700/60 shadow-lg\"\n    controls\n    muted\n    playsinline\n  ></video>\n</div>"
 }
@@ -167,7 +167,7 @@ id: toolu_017r9AZ5xkz9xDvkpfDjtBKx
 tool_result
 id: toolu_017r9AZ5xkz9xDvkpfDjtBKx
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

@@ -139,7 +139,7 @@ tool_use Bash
 id: toolu_01BuP53pSE95yAP6R3cBCQ7A
 ```json
 {
-  "command": "SP=\"REDACTED\"\ncd /Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/\nfor c in astronaut maehwa hacker; do\n  magick ${c}_right.webp -flop $SP/${c}_rightflip.png\n  magick ${c}_left.webp $SP/${c}_left.png\n  diff=$(magick compare -fuzz 12% -metric AE $SP/${c}_left.png $SP/${c}_rightflip.png null: 2>&1)\n  echo \"$c: (fuzz12%) right-flipped vs left diff = $diff\"\ndone",
+  "command": "SP=\"REDACTED\"\ncd /home/<USER>/Projects/ddong-avoid-game/public/assets/players/\nfor c in astronaut maehwa hacker; do\n  magick ${c}_right.webp -flop $SP/${c}_rightflip.png\n  magick ${c}_left.webp $SP/${c}_left.png\n  diff=$(magick compare -fuzz 12% -metric AE $SP/${c}_left.png $SP/${c}_rightflip.png null: 2>&1)\n  echo \"$c: (fuzz12%) right-flipped vs left diff = $diff\"\ndone",
   "description": "fuzz 허용오차로 mirror 여부 재확인"
 }
 ```
@@ -172,7 +172,7 @@ tool_use Read
 id: toolu_01TA8GwgBGRUJp7VFcvX8763
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/ktei_ss_gmhm_right.png"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/ktei_ss_gmhm_right.png"
 }
 ```
 
@@ -197,7 +197,7 @@ tool_use Read
 id: toolu_01UobuJhLKVwATbWzMbf8wN7
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/ktei_ss_right.png"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/ktei_ss_right.png"
 }
 ```
 
@@ -222,7 +222,7 @@ tool_use Read
 id: toolu_013rBwwKijDwM1cqkNrd83eX
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/k_front.png"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/k_front.png"
 }
 ```
 
@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_01Pd4a1qKD6gfJD8XkHKvqsc
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/ktei_front.png"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/ktei_front.png"
 }
 ```
 
@@ -276,7 +276,7 @@ tool_use Read
 id: toolu_01ADvfdh3ngyrVu5YzzggeTx
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/ktei_left.png"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/ktei_left.png"
 }
 ```
 
@@ -301,7 +301,7 @@ tool_use Read
 id: toolu_01P3xXzWnTq3dPmbNAy82u9t
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/ktei_ss_front.png"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/ktei_ss_front.png"
 }
 ```
 
@@ -326,7 +326,7 @@ tool_use Read
 id: toolu_017QJo6a4h2SFuiPXnrirB8V
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/k_right.png"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/k_right.png"
 }
 ```
 
@@ -362,7 +362,7 @@ tool_use Bash
 id: toolu_01TAZXEAzagnPy11vbN6aqhn
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== character.ts에서 gumi/mugi 등 이미지 키 패턴 ===\"\ngrep -n \"imageKey\\|imagePath\\|_left\\|_right\\|_front\" src/utils/character.ts | head -40",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== character.ts에서 gumi/mugi 등 이미지 키 패턴 ===\"\ngrep -n \"imageKey\\|imagePath\\|_left\\|_right\\|_front\" src/utils/character.ts | head -40",
   "description": "character.ts 이미지 키/경로 패턴 확인"
 }
 ```
@@ -421,7 +421,7 @@ tool_use Bash
 id: toolu_01GHb1QwGznnhehjqmMeAQbe
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== players 이미지 로드/left/right 사용처 ===\"\ngrep -rn \"_left\\|_right\\|_front\\|players/\" src/ | grep -iv \"node_modules\" | head -40",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== players 이미지 로드/left/right 사용처 ===\"\ngrep -rn \"_left\\|_right\\|_front\\|players/\" src/ | grep -iv \"node_modules\" | head -40",
   "description": "left/right 스프라이트 로드 및 사용처 검색"
 }
 ```
@@ -492,7 +492,7 @@ tool_use Bash
 id: toolu_01DwfZJBDtdhG9Ap5WVuzSFN
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/\necho \"=== 새 PNG 원본 크기 ===\"\nfor f in k_front k_right ktei_front ktei_left ktei_ss_front ktei_ss_right ktei_ss_gmhm_right; do\n  echo \"$f: $(sips -g pixelWidth -g pixelHeight $f.png 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')\"\ndone\necho \"=== 기존 최신 webp 크기(gumi/mugi/knight/gold_mugi) ===\"\nfor f in gumi_front mugi_front knight_front gold_mugi_front chibi_front; do\n  echo \"$f: $(sips -g pixelWidth -g pixelHeight $f.webp 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')  ($(du -h $f.webp | awk '{print $1}'))\"\ndone",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game/public/assets/players/\necho \"=== 새 PNG 원본 크기 ===\"\nfor f in k_front k_right ktei_front ktei_left ktei_ss_front ktei_ss_right ktei_ss_gmhm_right; do\n  echo \"$f: $(sips -g pixelWidth -g pixelHeight $f.png 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')\"\ndone\necho \"=== 기존 최신 webp 크기(gumi/mugi/knight/gold_mugi) ===\"\nfor f in gumi_front mugi_front knight_front gold_mugi_front chibi_front; do\n  echo \"$f: $(sips -g pixelWidth -g pixelHeight $f.webp 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')  ($(du -h $f.webp | awk '{print $1}'))\"\ndone",
   "description": "새 PNG와 기존 webp 해상도/용량 비교"
 }
 ```
@@ -528,7 +528,7 @@ tool_use Bash
 id: toolu_01Gtvrw24cisSbSNG8wyt4ay
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/\nSP=\"REDACTED\"\nfor q in 80 85 90; do\n  cwebp -quiet -q $q k_front.png -o $SP/test_q$q.webp\n  echo \"q=$q → $(du -h $SP/test_q$q.webp | awk '{print $1}')\"\ndone",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game/public/assets/players/\nSP=\"REDACTED\"\nfor q in 80 85 90; do\n  cwebp -quiet -q $q k_front.png -o $SP/test_q$q.webp\n  echo \"q=$q → $(du -h $SP/test_q$q.webp | awk '{print $1}')\"\ndone",
   "description": "cwebp 품질별 출력 용량 테스트"
 }
 ```
@@ -555,7 +555,7 @@ tool_use Bash
 id: toolu_01C7yW7WzuRJdNwGYHC7N77y
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/\nSP=\"REDACTED\"\nBK=\"$SP/png_backup\"; mkdir -p \"$BK\" \"$SP/flop\"\n\n# 1) 원본 PNG 백업(안전)\ncp k_front.png k_right.png ktei_front.png ktei_left.png ktei_ss_front.png ktei_ss_right.png ktei_ss_gmhm_right.png \"$BK/\"\n\n# 2) 이미 존재하는 이미지 → 그대로 webp 변환 (front + 존재하는 방향)\nfor f in k_front k_right ktei_front ktei_left ktei_ss_front ktei_ss_right ktei_ss_gmhm_right; do\n  cwebp -quiet -q 80 $f.png -o $f.webp\ndone\n\n# 3) 누락 방향 = 반대 방향을 좌우반전(-flop) 후 webp 변환\n#    k_left ← k_right | ktei_right ← ktei_left | ktei_ss_left ← ktei_ss_right | ktei_ss_gmhm_left ← ktei_ss_gmhm_right\nmirror() { # $1=src(png)  $2=out-basename\n  magick \"$1.png\" -flop \"$SP/flop/$2.png\"\n  cwebp -quiet -q 80 \"$SP/flop/$2.png\" -o \"$2.webp\"\n}\nmirror k_right           k_left\nmirror ktei_left         ktei_right\nmirror ktei_ss_right     ktei_ss_left\nmirror ktei_ss_gmhm_right ktei_ss_gmhm_left\n\n# 4) 원본 PNG 제거 (폴더 webp 전용 규칙 유지, 백업은 scratchpad에 보존)\nrm -f k_front.png k_right.png ktei_front.png ktei_left.png ktei_ss_front.png ktei_ss_right.png ktei_ss_gmhm_right.png\n\necho \"=== 결과 (신규 webp) ===\"\nls -la k_*.webp ktei_*.webp 2>/dev/null\necho \"=== 남은 png (없어야 정상) ===\"\nls *.png 2>/dev/null || echo \"png 없음 ✓\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game/public/assets/players/\nSP=\"REDACTED\"\nBK=\"$SP/png_backup\"; mkdir -p \"$BK\" \"$SP/flop\"\n\n# 1) 원본 PNG 백업(안전)\ncp k_front.png k_right.png ktei_front.png ktei_left.png ktei_ss_front.png ktei_ss_right.png ktei_ss_gmhm_right.png \"$BK/\"\n\n# 2) 이미 존재하는 이미지 → 그대로 webp 변환 (front + 존재하는 방향)\nfor f in k_front k_right ktei_front ktei_left ktei_ss_front ktei_ss_right ktei_ss_gmhm_right; do\n  cwebp -quiet -q 80 $f.png -o $f.webp\ndone\n\n# 3) 누락 방향 = 반대 방향을 좌우반전(-flop) 후 webp 변환\n#    k_left ← k_right | ktei_right ← ktei_left | ktei_ss_left ← ktei_ss_right | ktei_ss_gmhm_left ← ktei_ss_gmhm_right\nmirror() { # $1=src(png)  $2=out-basename\n  magick \"$1.png\" -flop \"$SP/flop/$2.png\"\n  cwebp -quiet -q 80 \"$SP/flop/$2.png\" -o \"$2.webp\"\n}\nmirror k_right           k_left\nmirror ktei_left         ktei_right\nmirror ktei_ss_right     ktei_ss_left\nmirror ktei_ss_gmhm_right ktei_ss_gmhm_left\n\n# 4) 원본 PNG 제거 (폴더 webp 전용 규칙 유지, 백업은 scratchpad에 보존)\nrm -f k_front.png k_right.png ktei_front.png ktei_left.png ktei_ss_front.png ktei_ss_right.png ktei_ss_gmhm_right.png\n\necho \"=== 결과 (신규 webp) ===\"\nls -la k_*.webp ktei_*.webp 2>/dev/null\necho \"=== 남은 png (없어야 정상) ===\"\nls *.png 2>/dev/null || echo \"png 없음 ✓\"",
   "description": "미러 생성 + webp 변환 + 원본 PNG 제거"
 }
 ```
@@ -592,7 +592,7 @@ tool_use Read
 id: toolu_01UYCeFcrXjup2Mq7DmGbZL2
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/k_left.webp"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/k_left.webp"
 }
 ```
 
@@ -617,7 +617,7 @@ tool_use Read
 id: toolu_016jYgNGUEQAT4d9nqh1evyF
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/ktei_right.webp"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/players/ktei_right.webp"
 }
 ```
 
@@ -646,7 +646,7 @@ tool_use Bash
 id: toolu_01Gg2up3X6Nth4TSZfy2zzJn
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/\nSP=\"REDACTED\"\necho \"=== 원본 PNG 알파/배경 코너 픽셀 ===\"\nmagick \"$SP/png_backup/k_right.png\" -format \"alpha=%[opaque] channels=%[channels]\\n\" info:\necho \"코너(0,0) 픽셀:\"; magick \"$SP/png_backup/k_right.png\"[1x1+0+0] txt: | tail -1\necho \"=== 직접변환 webp(k_right.webp) 코너 픽셀 ===\"\nmagick k_right.webp -format \"channels=%[channels]\\n\" info:\nmagick k_right.webp[1x1+0+0] txt: | tail -1\necho \"=== 미러 webp(k_left.webp) 코너 픽셀 ===\"\nmagick k_left.webp[1x1+0+0] txt: | tail -1",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game/public/assets/players/\nSP=\"REDACTED\"\necho \"=== 원본 PNG 알파/배경 코너 픽셀 ===\"\nmagick \"$SP/png_backup/k_right.png\" -format \"alpha=%[opaque] channels=%[channels]\\n\" info:\necho \"코너(0,0) 픽셀:\"; magick \"$SP/png_backup/k_right.png\"[1x1+0+0] txt: | tail -1\necho \"=== 직접변환 webp(k_right.webp) 코너 픽셀 ===\"\nmagick k_right.webp -format \"channels=%[channels]\\n\" info:\nmagick k_right.webp[1x1+0+0] txt: | tail -1\necho \"=== 미러 webp(k_left.webp) 코너 픽셀 ===\"\nmagick k_left.webp[1x1+0+0] txt: | tail -1",
   "description": "원본 PNG와 변환 webp의 알파/배경 픽셀 비교"
 }
 ```
@@ -677,7 +677,7 @@ tool_use Bash
 id: toolu_01Jw9bvHagaA6119mzaw1JZu
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/\nSP=\"REDACTED\"\nsetopt no_nomatch 2>/dev/null\necho \"=== 코너(배경) 픽셀 비교: 원본 PNG vs 직접변환 webp ===\"\necho -n \"원본 png  코너: \"; magick \"$SP/png_backup/k_right.png[1x1+0+0]\" txt: | tail -1\necho -n \"변환 webp 코너: \"; magick \"k_right.webp[1x1+0+0]\" txt: | tail -1\necho -n \"중앙배경(20,700): \"\necho -n \"원본 png  : \"; magick \"$SP/png_backup/k_right.png[1x1+20+700]\" txt: | tail -1\necho -n \"변환 webp : \"; magick \"k_right.webp[1x1+20+700]\" txt: | tail -1\necho \"=== 원본 PNG vs 직접변환 webp 전체 픽셀 차이 (RGBA 포함) ===\"\nmagick compare -metric AE \"$SP/png_backup/k_right.png\" k_right.webp null: 2>&1; echo \"\"\necho \"=== 알파 무시하고 RGB만 비교 ===\"\nmagick compare -metric AE -alpha off \"$SP/png_backup/k_right.png\" k_right.webp null: 2>&1; echo \"\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game/public/assets/players/\nSP=\"REDACTED\"\nsetopt no_nomatch 2>/dev/null\necho \"=== 코너(배경) 픽셀 비교: 원본 PNG vs 직접변환 webp ===\"\necho -n \"원본 png  코너: \"; magick \"$SP/png_backup/k_right.png[1x1+0+0]\" txt: | tail -1\necho -n \"변환 webp 코너: \"; magick \"k_right.webp[1x1+0+0]\" txt: | tail -1\necho -n \"중앙배경(20,700): \"\necho -n \"원본 png  : \"; magick \"$SP/png_backup/k_right.png[1x1+20+700]\" txt: | tail -1\necho -n \"변환 webp : \"; magick \"k_right.webp[1x1+20+700]\" txt: | tail -1\necho \"=== 원본 PNG vs 직접변환 webp 전체 픽셀 차이 (RGBA 포함) ===\"\nmagick compare -metric AE \"$SP/png_backup/k_right.png\" k_right.webp null: 2>&1; echo \"\"\necho \"=== 알파 무시하고 RGB만 비교 ===\"\nmagick compare -metric AE -alpha off \"$SP/png_backup/k_right.png\" k_right.webp null: 2>&1; echo \"\"",
   "description": "원본 PNG와 변환 webp 배경 픽셀·전체 차이 비교"
 }
 ```
@@ -710,7 +710,7 @@ tool_use Bash
 id: toolu_01YMjsFa9kA1K1dLDWatu2th
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/\necho \"=== 기존 스프라이트 코너(배경) 픽셀 — 투명 여부 ===\"\nfor f in gumi_front chibi_front astronaut_front gold_mugi_front; do\n  echo -n \"$f 코너: \"; magick \"${f}.webp[1x1+0+0]\" txt: | tail -1\ndone\necho \"\"\necho \"=== 기존 스프라이트 opaque 여부 (False=투명영역 있음) ===\"\nfor f in gumi_front chibi_front gold_mugi_front; do\n  echo \"$f: opaque=$(magick ${f}.webp -format '%[opaque]' info:)\"\ndone",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game/public/assets/players/\necho \"=== 기존 스프라이트 코너(배경) 픽셀 — 투명 여부 ===\"\nfor f in gumi_front chibi_front astronaut_front gold_mugi_front; do\n  echo -n \"$f 코너: \"; magick \"${f}.webp[1x1+0+0]\" txt: | tail -1\ndone\necho \"\"\necho \"=== 기존 스프라이트 opaque 여부 (False=투명영역 있음) ===\"\nfor f in gumi_front chibi_front gold_mugi_front; do\n  echo \"$f: opaque=$(magick ${f}.webp -format '%[opaque]' info:)\"\ndone",
   "description": "기존 스프라이트 배경 투명 여부 확인"
 }
 ```
@@ -750,7 +750,7 @@ tool_use Bash
 id: toolu_013a4Ypg7iej5EM3fyFfNX4g
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game/public/assets/players/\necho \"=== 신규 webp 투명도/해상도 검증 ===\"\nfor f in k_front k_left k_right ktei_front ktei_left ktei_right ktei_ss_front ktei_ss_left ktei_ss_right ktei_ss_gmhm_left ktei_ss_gmhm_right; do\n  printf \"%-24s opaque=%s  %s\\n\" \"$f.webp\" \"$(magick ${f}.webp -format '%[opaque]' info:)\" \"$(sips -g pixelWidth -g pixelHeight ${f}.webp 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')\"\ndone",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game/public/assets/players/\necho \"=== 신규 webp 투명도/해상도 검증 ===\"\nfor f in k_front k_left k_right ktei_front ktei_left ktei_right ktei_ss_front ktei_ss_left ktei_ss_right ktei_ss_gmhm_left ktei_ss_gmhm_right; do\n  printf \"%-24s opaque=%s  %s\\n\" \"$f.webp\" \"$(magick ${f}.webp -format '%[opaque]' info:)\" \"$(sips -g pixelWidth -g pixelHeight ${f}.webp 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')\"\ndone",
   "description": "신규 webp 11종 투명도/해상도 최종 검증"
 }
 ```
@@ -822,7 +822,7 @@ tool_use Bash
 id: toolu_01AtVQ5wo8w5JDZoNkXkN9Ye
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== GameScene 크기 ===\"; wc -l src/scenes/GameScene.ts\necho \"\"\necho \"=== 플레이어 생성/스프라이트 키/좌우전환 ===\"\ngrep -n \"player\\b\\|this.player\\|setTexture\\|_left\\|_right\\|_front\\|selectedChar\\|selChar\\|prefix\\|scale\\|setScale\" src/scenes/GameScene.ts | head -50",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== GameScene 크기 ===\"; wc -l src/scenes/GameScene.ts\necho \"\"\necho \"=== 플레이어 생성/스프라이트 키/좌우전환 ===\"\ngrep -n \"player\\b\\|this.player\\|setTexture\\|_left\\|_right\\|_front\\|selectedChar\\|selChar\\|prefix\\|scale\\|setScale\" src/scenes/GameScene.ts | head -50",
   "description": "GameScene 플레이어/스프라이트/스케일 로직 검색"
 }
 ```
@@ -875,7 +875,7 @@ tool_use Bash
 id: toolu_01MdQw7n97pdNwA7vGrAFkWK
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== 사망/게임오버 흐름 ===\"\ngrep -n \"gameOver\\|die\\|death\\|hitPoop\\|overlap\\|physics.add\" src/scenes/GameScene.ts | head -40\necho \"\"\necho \"=== 점수/updateScore 로직 ===\"\ngrep -n \"updateScore\\|this.score\\|scoreText\\|milestone\\|threshold\" src/scenes/GameScene.ts | head -40",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== 사망/게임오버 흐름 ===\"\ngrep -n \"gameOver\\|die\\|death\\|hitPoop\\|overlap\\|physics.add\" src/scenes/GameScene.ts | head -40\necho \"\"\necho \"=== 점수/updateScore 로직 ===\"\ngrep -n \"updateScore\\|this.score\\|scoreText\\|milestone\\|threshold\" src/scenes/GameScene.ts | head -40",
   "description": "GameScene 사망/점수 로직 검색"
 }
 ```
@@ -944,7 +944,7 @@ tool_use Bash
 id: toolu_01WBmG9TBwgwnnaoznU3q59B
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== gold_mugi 실제 사용처(변신 트리거/텍스처 스왑) ===\"\ngrep -rn \"gold_mugi\\|transform\\|변신\\|각성\\|awaken\" src/ | grep -iv \"load.image\\|node_modules\" | head -30\necho \"\"\necho \"=== Player 클래스 파일 위치 ===\"\ngrep -rln \"class Player\" src/\necho \"\"\necho \"=== CHARS_WITH_SPRITES 정의 ===\"\ngrep -rn \"CHARS_WITH_SPRITES\" src/ | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== gold_mugi 실제 사용처(변신 트리거/텍스처 스왑) ===\"\ngrep -rn \"gold_mugi\\|transform\\|변신\\|각성\\|awaken\" src/ | grep -iv \"load.image\\|node_modules\" | head -30\necho \"\"\necho \"=== Player 클래스 파일 위치 ===\"\ngrep -rln \"class Player\" src/\necho \"\"\necho \"=== CHARS_WITH_SPRITES 정의 ===\"\ngrep -rn \"CHARS_WITH_SPRITES\" src/ | head",
   "description": "gold_mugi 변신 로직 및 Player 클래스 위치 확인"
 }
 ```
@@ -983,7 +983,7 @@ tool_use Read
 id: toolu_01X45WmZn3RtseiicVrSQvf6
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts"
 }
 ```
 
@@ -1149,7 +1149,7 @@ tool_use Bash
 id: toolu_01DrTqRZxVb2YWkefAjuh8cX
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== supabase 폴더 구조 ===\"\nls -R supabase 2>/dev/null | head -60\necho \"\"\necho \"=== 캐릭터 소유 테이블 관련 검색 ===\"\ngrep -rin \"user_character\\|owned_character\\|character_id\\|user_id\" supabase/ src/utils/ 2>/dev/null | grep -iv \"node_modules\" | head -40",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== supabase 폴더 구조 ===\"\nls -R supabase 2>/dev/null | head -60\necho \"\"\necho \"=== 캐릭터 소유 테이블 관련 검색 ===\"\ngrep -rin \"user_character\\|owned_character\\|character_id\\|user_id\" supabase/ src/utils/ 2>/dev/null | grep -iv \"node_modules\" | head -40",
   "description": "Supabase 보유 캐릭터 테이블 스키마 검색"
 }
 ```
@@ -1378,7 +1378,7 @@ tool_use Bash
 id: toolu_01NNBS3HmtkRR6H9qvSuTXmh
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== abilities 디렉터리 ===\"; ls src/abilities/\necho \"\"\necho \"=== 능력 팩토리(getCharacterAbility) 위치/내용 ===\"\ngrep -rln \"getCharacterAbility\" src/\necho \"---\"\ngrep -rn \"getCharacterAbility\\|case '\\|return new\\|Ability(\" src/abilities/index.ts 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== abilities 디렉터리 ===\"; ls src/abilities/\necho \"\"\necho \"=== 능력 팩토리(getCharacterAbility) 위치/내용 ===\"\ngrep -rln \"getCharacterAbility\" src/\necho \"---\"\ngrep -rn \"getCharacterAbility\\|case '\\|return new\\|Ability(\" src/abilities/index.ts 2>/dev/null | head -40",
   "description": "능력 팩토리와 등록 방식 확인"
 }
 ```
@@ -1389,7 +1389,7 @@ tool_use Read
 id: toolu_014mC4aouvbh5LKnsjHWdDny
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/BaseAbility.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/BaseAbility.ts"
 }
 ```
 
@@ -1479,7 +1479,7 @@ tool_use Read
 id: toolu_014FjK4SFk6ExLGDqpzUTJKA
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/types.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/types.ts"
 }
 ```
 
@@ -1543,7 +1543,7 @@ tool_use Read
 id: toolu_011tU3nUzX4f5TbEweXu6Xgv
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts",
   "offset": 1,
   "limit": 75
 }
@@ -1593,7 +1593,7 @@ tool_use Bash
 id: toolu_01PhsgdoXe4Bkao4mjDRXm6o
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== onScoreMilestone 호출부 (checkMissedSpawnPoints) ===\"\nsed -n '875,970p' src/scenes/GameScene.ts",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== onScoreMilestone 호출부 (checkMissedSpawnPoints) ===\"\nsed -n '875,970p' src/scenes/GameScene.ts",
   "description": "onScoreMilestone 호출 로직 확인"
 }
 ```
@@ -1677,7 +1677,7 @@ tool_use Bash
 id: toolu_01MRYLnozuZbLVPGYvrSd1ng
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== MugiAbility 번개/투사체/제거 관련 라인 ===\"\ngrep -n \"번개\\|lightning\\|Graphics\\|graphics\\|lineBetween\\|strokeLineShape\\|removePoop\\|destroy\\|경로\\|beam\\|tween\\|angle\\|rotation\" src/abilities/MugiAbility.ts | head -40\necho \"\"\necho \"=== 똥 제거 유틸(경로상 제거) 있는지 ===\"\ngrep -rn \"removePoopsInPath\\|clearAllPoops\\|destroyPoop\\|poop.destroy\\|getChildren\" src/abilities/MugiAbility.ts src/abilities/HackerAbility.ts | head -20",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== MugiAbility 번개/투사체/제거 관련 라인 ===\"\ngrep -n \"번개\\|lightning\\|Graphics\\|graphics\\|lineBetween\\|strokeLineShape\\|removePoop\\|destroy\\|경로\\|beam\\|tween\\|angle\\|rotation\" src/abilities/MugiAbility.ts | head -40\necho \"\"\necho \"=== 똥 제거 유틸(경로상 제거) 있는지 ===\"\ngrep -rn \"removePoopsInPath\\|clearAllPoops\\|destroyPoop\\|poop.destroy\\|getChildren\" src/abilities/MugiAbility.ts src/abilities/HackerAbility.ts | head -20",
   "description": "mugi/hacker 투사체·똥 제거 패턴 확인"
 }
 ```
@@ -1730,7 +1730,7 @@ tool_use Read
 id: toolu_01AnvwRBbk2etvzmkYL6x3uR
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/MugiAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/MugiAbility.ts",
   "offset": 440,
   "limit": 110
 }
@@ -1796,7 +1796,7 @@ tool_use Bash
 id: toolu_01CahBL5V7zokVKrq9iUpg9q
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== MugiAbility import 구문 (PoolablePoopBase 등) ===\"\nsed -n '1,20p' src/abilities/MugiAbility.ts\necho \"\"\necho \"=== recycle 정의 위치 ===\"\ngrep -rn \"recycle\" src/objects/*.ts | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== MugiAbility import 구문 (PoolablePoopBase 등) ===\"\nsed -n '1,20p' src/abilities/MugiAbility.ts\necho \"\"\necho \"=== recycle 정의 위치 ===\"\ngrep -rn \"recycle\" src/objects/*.ts | head",
   "description": "PoolablePoopBase/recycle import 경로 확인"
 }
 ```
@@ -1851,7 +1851,7 @@ tool_use Write
 id: toolu_01328STPXEt3HknWBv5KzhN4
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "content": "import Phaser from 'phaser';\nimport { BaseAbility } from './BaseAbility';\nimport type { GameSceneAPI } from './types';\nimport type PoolablePoopBase from '../objects/PoolablePoopBase';\n\n// ── K (아빠) 능력 ────────────────────────────────────────────────────────\n// 300점마다 ktei_ss_gmhm(각성 발사 포즈) 컷인이 뜨고, 손끝에서 위 대각선으로\n// 에너지파를 발사한다. 화면 중앙 기준 플레이어가 왼쪽이면 오른쪽 위, 오른쪽이면\n// 왼쪽 위로 발사되며 빔 경로상의 일반 똥을 제거한다.\n//\n// 아들 동반자(ktei)·사망 승계(ktei_ss)는 별도 구현 예정.\n\nconst GMHM_INTERVAL       = 300;   // 발동 점수 간격\nconst GMHM_DISPLAY_W      = 120;   // 컷인 이미지 표시 폭 (원본 768×1344 = 4:7)\nconst GMHM_DISPLAY_H      = 210;   // 표시 높이 (비율 유지)\nconst GMHM_PEAK_ALPHA     = 0.92;  // 컷인 최대 불투명도 (플레이어 시야 확보)\n// 손끝 오프셋: 컷인 이미지 중심(플레이어) 기준. dirX 방향으로 뻗은 손 위치 근사치\nconst HAND_OFFSET_X_RATIO = 0.34;  // 표시 폭 대비 손끝 x\nconst HAND_OFFSET_Y_RATIO = 0.24;  // 표시 높이 대비 손끝 y (위쪽이라 음수 적용)\nconst BEAM_LENGTH         = 780;   // 빔 길이 (화면 대각선보다 김 → 화면 밖까지)\nconst BEAM_HALF_WIDTH     = 34;    // 빔 반경 (경로상 똥 제거 판정)\nconst BEAM_POINTS_PER_POOP = 5;    // 제거 똥당 보너스 점수\n\nexport class KAbility extends BaseAbility {\n  // score가 한 번에 여러 점 뛰어도 같은 마일스톤에서 두 번 발동하지 않도록 가드\n  private lastGmhmScore = 0;\n\n  onScoreMilestone(score: number, api: GameSceneAPI): void {\n    if (score % GMHM_INTERVAL !== […]
 
 > TOOL
@@ -1859,7 +1859,7 @@ id: toolu_01328STPXEt3HknWBv5KzhN4
 tool_result
 id: toolu_01328STPXEt3HknWBv5KzhN4
 ```
-File created successfully at: /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1872,7 +1872,7 @@ tool_use Read
 id: toolu_01JNAwjbefpKj7HaiCzBZXuX
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/index.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/index.ts"
 }
 ```
 
@@ -1919,7 +1919,7 @@ id: toolu_01SBLM3RMU4wgN9dkCLwVcca
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/index.ts",
   "old_string": "import { GumiAbility } from './GumiAbility';\nimport { MugiAbility } from './MugiAbility';",
   "new_string": "import { GumiAbility } from './GumiAbility';\nimport { MugiAbility } from './MugiAbility';\nimport { KAbility } from './KAbility';"
 }
@@ -1930,7 +1930,7 @@ id: toolu_01SBLM3RMU4wgN9dkCLwVcca
 tool_result
 id: toolu_01SBLM3RMU4wgN9dkCLwVcca
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1940,7 +1940,7 @@ id: toolu_01ERjjEKdCuNu5osGYSC6NP8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/index.ts",
   "old_string": "    case 'mugi':     return new MugiAbility(awakeningLevel);\n    default:         return new BaseAbility(); // chibi 및 미등록 캐릭터",
   "new_string": "    case 'mugi':     return new MugiAbility(awakeningLevel);\n    case 'k':        return new KAbility(awakeningLevel);\n    default:         return new BaseAbility(); // chibi 및 미등록 캐릭터"
 }
@@ -1951,7 +1951,7 @@ id: toolu_01ERjjEKdCuNu5osGYSC6NP8
 tool_result
 id: toolu_01ERjjEKdCuNu5osGYSC6NP8
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1964,7 +1964,7 @@ tool_use Read
 id: toolu_01Dop2fwwP7AgAMHp6wuyzFu
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 94,
   "limit": 1
 }
@@ -1984,7 +1984,7 @@ tool_use Read
 id: toolu_01LbBkHb4ZNnAF59LAQvwKZy
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 205,
   "limit": 22
 }
@@ -2026,7 +2026,7 @@ id: toolu_011mKdUapUsoS2CRs4xvTUFe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "  private static readonly CHARS_WITH_SPRITES = ['miner', 'maehwa', 'hacker', 'archieve', 'glitch', 'noise', 'sentinel', 'legacy', 'log', 'swap', 'sum', 'fork', 'seed', 'session', 'branch', 'hook', 'socket', 'index', 'knight', 'gumi', 'mugi'];",
   "new_string": "  private static readonly CHARS_WITH_SPRITES = ['miner', 'maehwa', 'hacker', 'archieve', 'glitch', 'noise', 'sentinel', 'legacy', 'log', 'swap', 'sum', 'fork', 'seed', 'session', 'branch', 'hook', 'socket', 'index', 'knight', 'gumi', 'mugi', 'k'];"
 }
@@ -2037,7 +2037,7 @@ id: toolu_011mKdUapUsoS2CRs4xvTUFe
 tool_result
 id: toolu_011mKdUapUsoS2CRs4xvTUFe
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2047,7 +2047,7 @@ id: toolu_016VvwQM1nW1CdVjxQcTcLnP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "      if (this.selectedCharId === 'mugi') {\n        if (!this.textures.exists('gold_mugi_front')) this.load.image('gold_mugi_front', 'assets/players/gold_mugi_front.webp');\n        if (!this.textures.exists('gold_mugi_left'))  this.load.image('gold_mugi_left',  'assets/players/gold_mugi_left.webp');\n        if (!this.textures.exists('gold_mugi_right')) this.load.image('gold_mugi_right', 'assets/players/gold_mugi_right.webp');\n      }",
   "new_string": "      if (this.selectedCharId === 'mugi') {\n        if (!this.textures.exists('gold_mugi_front')) this.load.image('gold_mugi_front', 'assets/players/gold_mugi_front.webp');\n        if (!this.textures.exists('gold_mugi_left'))  this.load.image('gold_mugi_left',  'assets/players/gold_mugi_left.webp');\n        if (!this.textures.exists('gold_mugi_right')) this.load.image('gold_mugi_right', 'assets/players/gold_mugi_right.webp');\n      }\n      if (this.selectedCharId === 'k') {\n        // 300점마다 발사되는 각성 포즈 컷인 (좌/우 방향별). _left 는 _right 의 미러본\n        if (!this.textures.exists('ktei_ss_gmhm_right')) this.load.image('ktei_ss_gmhm_right', 'assets/players/ktei_ss_gmhm_right.webp');\n        if (!this.textures.exists('ktei_ss_gmhm_left'))  this.load.image('ktei_ss_gmhm_left',  'assets/players/ktei_ss_gmhm_left.webp');\n      }"
 }
@@ -2058,7 +2058,7 @@ id: toolu_016VvwQM1nW1CdVjxQcTcLnP
 tool_result
 id: toolu_016VvwQM1nW1CdVjxQcTcLnP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2071,7 +2071,7 @@ tool_use Read
 id: toolu_013C1KH1cUufPxopwgoKyxtV
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts",
   "offset": 75,
   "limit": 18
 }
@@ -2109,7 +2109,7 @@ id: toolu_012nssQG1YSgdPZpZTQ4iK3y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts",
   "old_string": "    basicEffect: GUMI_DESC.basicEffect,\n    specialAbility: GUMI_DESC.specialAbility,\n    playerDisplaySize: [44, 70],\n    cardDisplaySize: [51, 74],\n  },\n  {\n    id: 'sentinel',",
   "new_string": "    basicEffect: GUMI_DESC.basicEffect,\n    specialAbility: GUMI_DESC.specialAbility,\n    playerDisplaySize: [44, 70],\n    cardDisplaySize: [51, 74],\n  },\n  {\n    id: 'k',\n    name: 'K',\n    grade: 'UR',\n    gradeColor: '#ffaa00',\n    // 전용 일러스트 에셋 준비 전까지 플레이어 정면 스프라이트를 카드/일러스트로 재사용\n    imageKey: 'k_front',\n    imagePath: 'assets/players/k_front.webp',\n    illustKey: 'k_front',\n    illustPath: 'assets/players/k_front.webp',\n    basicEffect: '300점마다 각성 에너지파 발사 — 화면 중앙 반대쪽 위 대각선으로 손끝에서 발사하여 빔 경로상의 똥 제거 (+5점/개)',\n    specialAbility: '없음',\n    playerDisplaySize: [46, 80],\n    cardDisplaySize: [48, 84],\n  },\n  {\n    id: 'sentinel',"
 }
@@ -2120,7 +2120,7 @@ id: toolu_012nssQG1YSgdPZpZTQ4iK3y
 tool_result
 id: toolu_012nssQG1YSgdPZpZTQ4iK3y
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2156,7 +2156,7 @@ tool_use Bash
 id: toolu_018XfPSNibpUugreKRCzWLyB
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== CharacterSelectScene의 imageKey/illustKey/illustPath 로드 방식 ===\"\ngrep -n \"imageKey\\|illustKey\\|illustPath\\|imagePath\\|load.image\\|textures.exists\\|forEach\\|CHARACTERS\" src/scenes/CharacterSelectScene.ts | head -30",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== CharacterSelectScene의 imageKey/illustKey/illustPath 로드 방식 ===\"\ngrep -n \"imageKey\\|illustKey\\|illustPath\\|imagePath\\|load.image\\|textures.exists\\|forEach\\|CHARACTERS\" src/scenes/CharacterSelectScene.ts | head -30",
   "description": "CharacterSelectScene 이미지/일러스트 로드 방식 확인"
 }
 ```
@@ -2257,7 +2257,7 @@ tool_use Write
 id: toolu_01ExAmvhmaCszQipFBuQu7uL
 ```json
 {
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "content": "---\nname: project-k-character-system\ndescription: K(아빠) 캐릭터 + ktei(아들)/ktei_ss(각성)/gmhm(에너지파) 시스템 — 2026-07-02 착수, 일부 미완료\nmetadata:\n  type: project\n---\n\n\"K 가족\" 캐릭터 시스템 (2026-07-02 착수). id `k` = 아빠(메인 플레이어), UR 등급.\n\n## 에셋 (public/assets/players/, 모두 768×1344 투명 webp)\n- `k_front/left/right` — 아빠 (검은머리 소년, 초록 체크셔츠). left는 right의 미러\n- `ktei_front/left/right` — 아들 (공룡잠옷 chibi). k 뒤를 0.5배로 따라다닐 동반자\n- `ktei_ss_front/left/right` — 아들 초사이언 각성형. k 사망 시 승계될 비행 본체\n- `ktei_ss_gmhm_right/left` — 각성 발사 포즈 컷인 (left는 right 미러, front 불필요)\n- 원본 PNG 백업은 session scratchpad/png_backup (휘발성)\n\n## 구현 완료 (2026-07-02)\n- **gmhm 에너지파** — `src/abilities/KAbility.ts` (`KAbility.onScoreMilestone`)\n  - **300점마다** 발동. 화면 중앙(x=200) 기준 플레이어가 왼쪽 → 오른쪽 위 대각선(45°),\n    오른쪽 → 왼쪽 위 대각선으로 손끝에서 빔 발사. 방향별 gmhm 스프라이트 사용\n  - 빔 경로상 일반 똥(api.poops) 제거 +5점/개. 튜닝 상수는 KAbility.ts 상단\n  - 컷인 이미지는 플레이어 위치에 팝인 후 페이드 (~800ms, peak alpha 0.92)\n- 등록: `abilities/index.ts` case 'k' → KAbility · `GameScene.CHARS_WITH_SPRITES`에 'k'\n  추가 · GameScene preload에 gmhm 이미지 특수 로드(mugi→gold_mugi 패턴 옆) ·\n  `character.ts` CHARACTERS에 k 엔트리 (illust는 k_front 재사용 — 전용 일러스트 미준비)\n- DB: `user_characters`에 `character_id='k'` INSERT로 수동 부여 (RLS INSERT 정책 없어 SQL Editor 필요)\n\n## 미완료 — 설계 미확정 (사용자 답변 대기)\n- **아들 동반자(ktei)**: k 뒤 0.5배 […]
 
 > TOOL
@@ -2265,7 +2265,7 @@ id: toolu_01ExAmvhmaCszQipFBuQu7uL
 tool_result
 id: toolu_01ExAmvhmaCszQipFBuQu7uL
 ```
-File created successfully at: /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2278,7 +2278,7 @@ tool_use Read
 id: toolu_018xQwqZDt4QN2m4N96UGZSC
 ```json
 {
-  "file_path": "/Users/johyunduk/.REDACTED.md",
+  "file_path": "/home/<USER>/.REDACTED.md",
   "offset": 190,
   "limit": 40
 }
@@ -2298,7 +2298,7 @@ tool_use Read
 id: toolu_01TRc21e7926XKBnPLdPrfMt
 ```json
 {
-  "file_path": "/Users/johyunduk/.REDACTED.md",
+  "file_path": "/home/<USER>/.REDACTED.md",
   "offset": 160,
   "limit": 13
 }
@@ -2332,9 +2332,9 @@ id: toolu_01Hudd1xhwVPLCspfYZKA91T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.REDACTED.md",
+  "file_path": "/home/<USER>/.REDACTED.md",
   "old_string": "- `src/data/storyLogs.ts` — 기록 로그 데이터 (8개, Season 1~2)\n- `src/scenes/StoryLogScene.ts` — 기록 로그 목록 + 인라인 뷰어",
-  "new_string": "- `src/data/storyLogs.ts` — 기록 로그 데이터 (8개, Season 1~2)\n- `src/scenes/StoryLogScene.ts` — 기록 로그 목록 + 인라인 뷰어\n\n## K 가족 캐릭터 시스템 (2026-07-02 착수, 일부 미완료)\n- id `k`(아빠, UR) + ktei(아들 동반자)/ktei_ss(각성 비행 본체)/gmhm(에너지파 컷인)\n- 완료: gmhm 에너지파 300점마다 발사 (`src/abilities/KAbility.ts`)\n- 미완료: 아들 0.5x 동반자, 사망 승계(부활-계속 vs 연출 미확정)\n- 상세: `/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md`"
+  "new_string": "- `src/data/storyLogs.ts` — 기록 로그 데이터 (8개, Season 1~2)\n- `src/scenes/StoryLogScene.ts` — 기록 로그 목록 + 인라인 뷰어\n\n## K 가족 캐릭터 시스템 (2026-07-02 착수, 일부 미완료)\n- id `k`(아빠, UR) + ktei(아들 동반자)/ktei_ss(각성 비행 본체)/gmhm(에너지파 컷인)\n- 완료: gmhm 에너지파 300점마다 발사 (`src/abilities/KAbility.ts`)\n- 미완료: 아들 0.5x 동반자, 사망 승계(부활-계속 vs 연출 미확정)\n- 상세: `/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md`"
 }
 ```
 
@@ -2343,7 +2343,7 @@ id: toolu_01Hudd1xhwVPLCspfYZKA91T
 tool_result
 id: toolu_01Hudd1xhwVPLCspfYZKA91T
 ```
-The file /Users/johyunduk/.REDACTED.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.REDACTED.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2390,7 +2390,7 @@ tool_use Bash
 id: toolu_01UoAc6idTc4QneKBbYsva4B
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"########## HOW_TO_ADD_CHARACTER.md ##########\"\ncat docs/HOW_TO_ADD_CHARACTER.md 2>/dev/null || echo \"(문서 없음)\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"########## HOW_TO_ADD_CHARACTER.md ##########\"\ncat docs/HOW_TO_ADD_CHARACTER.md 2>/dev/null || echo \"(문서 없음)\"",
   "description": "캐릭터 추가 체크리스트 문서 읽기"
 }
 ```
@@ -2456,7 +2456,7 @@ tool_use Bash
 id: toolu_01C4ZspbXcbyVCS2ZL7Lfqgi
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"########## 'mugi' 참조 전 지점 (src + supabase) ##########\"\ngrep -rn \"'mugi'\\|\\\"mugi\\\"\\|mugi:\" src/ supabase/ 2>/dev/null | grep -v \"node_modules\" | grep -iv \"gold_mugi\\|mugi_front\\|mugi_left\\|mugi_right\\|MUGI_\\|MugiAbility\\|illust_mugi\\|vid_mugi\\|assets/\" \necho \"\"\necho \"########## 'knight'(SR 예시) 참조 전 지점 ##########\"\ngrep -rn \"'knight'\\|\\\"knight\\\"\\|knight:\" src/ supabase/ 2>/dev/null | grep -v \"node_modules\" | grep -iv \"knight_front\\|knight_left\\|knight_right\\|KNIGHT_\\|KnightAbility\\|illust_knight\\|vid_knight\\|assets/\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"########## 'mugi' 참조 전 지점 (src + supabase) ##########\"\ngrep -rn \"'mugi'\\|\\\"mugi\\\"\\|mugi:\" src/ supabase/ 2>/dev/null | grep -v \"node_modules\" | grep -iv \"gold_mugi\\|mugi_front\\|mugi_left\\|mugi_right\\|MUGI_\\|MugiAbility\\|illust_mugi\\|vid_mugi\\|assets/\" \necho \"\"\necho \"########## 'knight'(SR 예시) 참조 전 지점 ##########\"\ngrep -rn \"'knight'\\|\\\"knight\\\"\\|knight:\" src/ supabase/ 2>/dev/null | grep -v \"node_modules\" | grep -iv \"knight_front\\|knight_left\\|knight_right\\|KNIGHT_\\|KnightAbility\\|illust_knight\\|vid_knight\\|assets/\"",
   "description": "기존 캐릭터 id 참조 지점 전수 검색"
 }
 ```
@@ -2495,7 +2495,7 @@ tool_use Read
 id: toolu_01F7xTUr6Pv9Xo2AKi3d6mRn
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GachaScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GachaScene.ts",
   "offset": 1,
   "limit": 45
 }
@@ -2555,7 +2555,7 @@ tool_use Read
 id: toolu_01XnNGwQAcxfkfYcHTQp7kih
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts",
   "offset": 30,
   "limit": 75
 }
@@ -2600,7 +2600,7 @@ tool_use Read
 id: toolu_0166gjb7xnbZVMVbUynJqzZu
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts",
   "offset": 18,
   "limit": 13
 }
@@ -2632,7 +2632,7 @@ tool_use Read
 id: toolu_013wvpdHqajqsuVg5ki6xvJz
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts",
   "offset": 210,
   "limit": 25
 }
@@ -2680,7 +2680,7 @@ tool_use Bash
 id: toolu_016LbwFp1VdVEk1Yga69u49k
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== 'gumi' 전 참조 (touchpoint 완전성 확인) ===\"\ngrep -rn \"gumi\" src/ supabase/ 2>/dev/null | grep -v \"node_modules\" | grep -iv \"gumi_front\\|gumi_left\\|gumi_right\\|GumiAbility\\|GUMI_\\|illust_gumi\\|vid_gumi\\|assets/\\|import\" | sort -u",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== 'gumi' 전 참조 (touchpoint 완전성 확인) ===\"\ngrep -rn \"gumi\" src/ supabase/ 2>/dev/null | grep -v \"node_modules\" | grep -iv \"gumi_front\\|gumi_left\\|gumi_right\\|GumiAbility\\|GUMI_\\|illust_gumi\\|vid_gumi\\|assets/\\|import\" | sort -u",
   "description": "gumi 전 참조로 touchpoint 완전성 확인"
 }
 ```
@@ -2709,7 +2709,7 @@ tool_use Read
 id: toolu_017EZX254LrjaWJAD1poqWe1
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts",
   "offset": 79,
   "limit": 62
 }
@@ -2790,7 +2790,7 @@ tool_use Read
 id: toolu_018jYYkcbqZvuV6N2TmEbVDg
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/config/abilityParams.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/config/abilityParams.ts",
   "offset": 144,
   "limit": 20
 }
@@ -2825,7 +2825,7 @@ id: toolu_01QYvzG99yUtAvy9zTToCevC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/config/abilityParams.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/config/abilityParams.ts",
   "old_string": "export const MUGI_DESC = {\n  basicEffect:    `${MUGI_PARAMS.yeoijuInterval}점마다 검붉은 여의주 낙하 — 매 수집마다 검붉은 번개 (경로 위 똥 제거 +10점) · ${MUGI_PARAMS.goldThreshold}개 달성 시 황금 변신 (이후 여의주마다 황금 번개, 전체 삭제 +20점)`,\n  specialAbility: `부활 최대 1회 보유 / 총 3회 사용 · 게임 시작 시 1회 충전 · 여의주 ${MUGI_PARAMS.revivalRechargeCount}개로 재충전 · 피격 시 연꽃 발현 후 소생 (변신 중이면 변신 해제)`,\n} as const;",
   "new_string": "export const MUGI_DESC = {\n  basicEffect:    `${MUGI_PARAMS.yeoijuInterval}점마다 검붉은 여의주 낙하 — 매 수집마다 검붉은 번개 (경로 위 똥 제거 +10점) · ${MUGI_PARAMS.goldThreshold}개 달성 시 황금 변신 (이후 여의주마다 황금 번개, 전체 삭제 +20점)`,\n  specialAbility: `부활 최대 1회 보유 / 총 3회 사용 · 게임 시작 시 1회 충전 · 여의주 ${MUGI_PARAMS.revivalRechargeCount}개로 재충전 · 피격 시 연꽃 발현 후 소생 (변신 중이면 변신 해제)`,\n} as const;\n\n// ── K (아빠 / SR) — 각성 에너지파 ──────────────────────────────────────\nexport const K_PARAMS = {\n  gmhmInterval:      300, // 에너지파 발동 점수 간격\n  beamPointsPerPoop: 5,   // 빔 경로상 제거 똥당 보너스 점수\n} as const;\n\nexport const K_DESC = {\n  basicEffect:    `${K_PARAMS.gmhmInterval}점마다 각성 에너지파 발사 — 화면 중앙 반대쪽 위 대각선으로 손끝에서 발사, 빔 경로상 똥 제거 (+${K_PARAMS.beamPointsPerPoop}점/개)`,\n  specialAbility: '없음',\n} as const;"
 } […]
@@ -2835,7 +2835,7 @@ id: toolu_01QYvzG99yUtAvy9zTToCevC
 tool_result
 id: toolu_01QYvzG99yUtAvy9zTToCevC
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/config/abilityParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/config/abilityParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2849,7 +2849,7 @@ id: toolu_01XeXkynNNPLyUQHRJyPgQUX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "import Phaser from 'phaser';\nimport { BaseAbility } from './BaseAbility';\nimport type { GameSceneAPI } from './types';\nimport type PoolablePoopBase from '../objects/PoolablePoopBase';",
   "new_string": "import Phaser from 'phaser';\nimport { BaseAbility } from './BaseAbility';\nimport type { GameSceneAPI } from './types';\nimport type PoolablePoopBase from '../objects/PoolablePoopBase';\nimport { K_PARAMS } from '../config/abilityParams';"
 }
@@ -2860,7 +2860,7 @@ id: toolu_01XeXkynNNPLyUQHRJyPgQUX
 tool_result
 id: toolu_01XeXkynNNPLyUQHRJyPgQUX
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2870,7 +2870,7 @@ id: toolu_011sFUKqsgJSw5xkfzgzkLPQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "const GMHM_INTERVAL       = 300;   // 발동 점수 간격\nconst GMHM_DISPLAY_W      = 120;   // 컷인 이미지 표시 폭 (원본 768×1344 = 4:7)",
   "new_string": "const GMHM_DISPLAY_W      = 120;   // 컷인 이미지 표시 폭 (원본 768×1344 = 4:7)"
 }
@@ -2881,7 +2881,7 @@ id: toolu_011sFUKqsgJSw5xkfzgzkLPQ
 tool_result
 id: toolu_011sFUKqsgJSw5xkfzgzkLPQ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2891,7 +2891,7 @@ id: toolu_01B65xPWRqMyZBkpww7uVAXd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "const BEAM_HALF_WIDTH     = 34;    // 빔 반경 (경로상 똥 제거 판정)\nconst BEAM_POINTS_PER_POOP = 5;    // 제거 똥당 보너스 점수",
   "new_string": "const BEAM_HALF_WIDTH     = 34;    // 빔 반경 (경로상 똥 제거 판정)"
 }
@@ -2902,7 +2902,7 @@ id: toolu_01B65xPWRqMyZBkpww7uVAXd
 tool_result
 id: toolu_01B65xPWRqMyZBkpww7uVAXd
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2912,7 +2912,7 @@ id: toolu_016gp4cWQhHBhgn8RDRXQuzv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    if (score % GMHM_INTERVAL !== 0) return;",
   "new_string": "    if (score % K_PARAMS.gmhmInterval !== 0) return;"
 }
@@ -2923,7 +2923,7 @@ id: toolu_016gp4cWQhHBhgn8RDRXQuzv
 tool_result
 id: toolu_016gp4cWQhHBhgn8RDRXQuzv
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2933,7 +2933,7 @@ id: toolu_01HJa8Buyh2dog1mexgcfr8k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    positions.forEach(({ x, y }) => this._spawnBurst(scene, x, y, 12));\n    api.addAbilityBonus(positions.length * BEAM_POINTS_PER_POOP);",
   "new_string": "    positions.forEach(({ x, y }) => this._spawnBurst(scene, x, y, 12));\n    api.addAbilityBonus(positions.length * K_PARAMS.beamPointsPerPoop);"
 }
@@ -2944,7 +2944,7 @@ id: toolu_01HJa8Buyh2dog1mexgcfr8k
 tool_result
 id: toolu_01HJa8Buyh2dog1mexgcfr8k
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2958,7 +2958,7 @@ id: toolu_01JBnyBSBctLSovLvoEBJNGU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts",
   "old_string": "  {\n    id: 'k',\n    name: 'K',\n    grade: 'UR',\n    gradeColor: '#ffaa00',\n    // 전용 일러스트 에셋 준비 전까지 플레이어 정면 스프라이트를 카드/일러스트로 재사용\n    imageKey: 'k_front',\n    imagePath: 'assets/players/k_front.webp',\n    illustKey: 'k_front',\n    illustPath: 'assets/players/k_front.webp',\n    basicEffect: '300점마다 각성 에너지파 발사 — 화면 중앙 반대쪽 위 대각선으로 손끝에서 발사하여 빔 경로상의 똥 제거 (+5점/개)',\n    specialAbility: '없음',\n    playerDisplaySize: [46, 80],\n    cardDisplaySize: [48, 84],\n  },\n  {\n    id: 'sentinel',",
   "new_string": "  {\n    id: 'sentinel',"
 }
@@ -2969,7 +2969,7 @@ id: toolu_01JBnyBSBctLSovLvoEBJNGU
 tool_result
 id: toolu_01JBnyBSBctLSovLvoEBJNGU
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2979,7 +2979,7 @@ id: toolu_019yEzfs8D6jwDZNfijfsycp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts",
   "old_string": "  // ── SR등급 ─────────────────────────────────────────────────────────────\n  {\n    id: 'knight',",
   "new_string": "  // ── SR등급 ─────────────────────────────────────────────────────────────\n  {\n    id: 'k',\n    name: 'K',\n    grade: 'SR',\n    gradeColor: '#4488ff',\n    // 전용 일러스트 에셋 준비 전까지 플레이어 정면 스프라이트를 카드/일러스트로 재사용\n    imageKey: 'k_front',\n    imagePath: 'assets/players/k_front.webp',\n    illustKey: 'k_front',\n    illustPath: 'assets/players/k_front.webp',\n    basicEffect: K_DESC.basicEffect,\n    specialAbility: K_DESC.specialAbility,\n    playerDisplaySize: [46, 80],\n    cardDisplaySize: [48, 84],\n  },\n  {\n    id: 'knight',"
 }
@@ -2990,7 +2990,7 @@ id: toolu_019yEzfs8D6jwDZNfijfsycp
 tool_result
 id: toolu_019yEzfs8D6jwDZNfijfsycp
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3000,7 +3000,7 @@ id: toolu_01UCS7wEqZXB2n2xxGKHsQXz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts",
   "old_string": "  SENTINEL_DESC, LEGACY_DESC, KNIGHT_DESC,\n  GUMI_DESC, MUGI_DESC,\n} from '../config/abilityParams';",
   "new_string": "  SENTINEL_DESC, LEGACY_DESC, KNIGHT_DESC,\n  GUMI_DESC, MUGI_DESC, K_DESC,\n} from '../config/abilityParams';"
 }
@@ -3011,7 +3011,7 @@ id: toolu_01UCS7wEqZXB2n2xxGKHsQXz
 tool_result
 id: toolu_01UCS7wEqZXB2n2xxGKHsQXz
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3025,7 +3025,7 @@ id: toolu_015XczwqcVop9XcmBRN88oCQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts",
   "old_string": "// R 80% (10종 균등 배분), SR 19.3% (7종 균등 배분), UR 종당 ≈0.233% (4종 → 총 ≈0.93%)\nconst SR_W  = 19.3 / 7;         // ≈ 2.757%",
   "new_string": "// R 80% (10종 균등 배분), SR 19.3% (8종 균등 배분), UR 종당 ≈0.233% (4종 → 총 ≈0.93%)\nconst SR_W  = 19.3 / 8;         // ≈ 2.413%"
 }
@@ -3036,7 +3036,7 @@ id: toolu_015XczwqcVop9XcmBRN88oCQ
 tool_result
 id: toolu_015XczwqcVop9XcmBRN88oCQ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3046,7 +3046,7 @@ id: toolu_01QFm5vLdw6LXira5SPmaRoG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts",
   "old_string": "  { id: 'noise',    grade: 'SR', weight: SR_W },\n  { id: 'knight',   grade: 'SR', weight: SR_W },\n  // ── UR등급 ──",
   "new_string": "  { id: 'noise',    grade: 'SR', weight: SR_W },\n  { id: 'knight',   grade: 'SR', weight: SR_W },\n  { id: 'k',        grade: 'SR', weight: SR_W },\n  // ── UR등급 ──"
 }
@@ -3057,7 +3057,7 @@ id: toolu_01QFm5vLdw6LXira5SPmaRoG
 tool_result
 id: toolu_01QFm5vLdw6LXira5SPmaRoG
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/gacha-pull/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3071,7 +3071,7 @@ id: toolu_01Uk9hMY6yAjqY1Nu8i8YUZP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts",
   "old_string": "      'chibi', 'mugi', 'gumi', 'knight',",
   "new_string": "      'chibi', 'mugi', 'gumi', 'knight', 'k',"
 }
@@ -3082,7 +3082,7 @@ id: toolu_01Uk9hMY6yAjqY1Nu8i8YUZP
 tool_result
 id: toolu_01Uk9hMY6yAjqY1Nu8i8YUZP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3095,7 +3095,7 @@ tool_use Bash
 id: toolu_01A8CYEs2JqaTijEytbaJ8vA
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit 2>&1 | head -20; echo \"=== tsc exit: ${PIPESTATUS[0]} ===\"\necho \"\"\necho \"=== character.ts 내 'k' 등장 확인 (SR 섹션 1곳이어야) ===\"\ngrep -n \"id: 'k'\" src/utils/character.ts\necho \"\"\necho \"=== gacha-pull POOL 내 SR 개수 재확인 ===\"\ngrep -c \"grade: 'SR'\" supabase/functions/gacha-pull/index.ts",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit 2>&1 | head -20; echo \"=== tsc exit: ${PIPESTATUS[0]} ===\"\necho \"\"\necho \"=== character.ts 내 'k' 등장 확인 (SR 섹션 1곳이어야) ===\"\ngrep -n \"id: 'k'\" src/utils/character.ts\necho \"\"\necho \"=== gacha-pull POOL 내 SR 개수 재확인 ===\"\ngrep -c \"grade: 'SR'\" supabase/functions/gacha-pull/index.ts",
   "description": "타입 검사 + k 등록 위치/SR 개수 확인"
 }
 ```
@@ -3120,7 +3120,7 @@ tool_use Bash
 id: toolu_01Hd3TM1w67HzLAna7ZSccjC
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
   "description": "타입 검사 최종 확정"
 }
 ```
@@ -3144,7 +3144,7 @@ id: toolu_01MMDFvfSwPxWo4ufMzw4Rnt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "\"K 가족\" 캐릭터 시스템 (2026-07-02 착수). id `k` = 아빠(메인 플레이어), UR 등급.",
   "new_string": "\"K 가족\" 캐릭터 시스템 (2026-07-02 착수). id `k` = 아빠(메인 플레이어), **SR 등급**(gradeColor #4488ff)."
 }
@@ -3155,7 +3155,7 @@ id: toolu_01MMDFvfSwPxWo4ufMzw4Rnt
 tool_result
 id: toolu_01MMDFvfSwPxWo4ufMzw4Rnt
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3165,7 +3165,7 @@ id: toolu_01U1G5uhZrwr2dUYUxGTbyeQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- 등록: `abilities/index.ts` case 'k' → KAbility · `GameScene.CHARS_WITH_SPRITES`에 'k'\n  추가 · GameScene preload에 gmhm 이미지 특수 로드(mugi→gold_mugi 패턴 옆) ·\n  `character.ts` CHARACTERS에 k 엔트리 (illust는 k_front 재사용 — 전용 일러스트 미준비)\n- DB: `user_characters`에 `character_id='k'` INSERT로 수동 부여 (RLS INSERT 정책 없어 SQL Editor 필요)",
   "new_string": "- 수치/설명: `abilityParams.ts` `K_PARAMS`(gmhmInterval 300, beamPointsPerPoop 5) + `K_DESC`\n- 전체 등록 완료 (신규 캐릭터 touchpoint 전수):\n  - `abilities/index.ts` case 'k' → KAbility\n  - `GameScene.CHARS_WITH_SPRITES`에 'k' + preload gmhm 이미지 특수 로드(mugi→gold_mugi 패턴 옆)\n  - `character.ts` CHARACTERS SR 섹션 (illust는 k_front 재사용 — 전용 일러스트 미준비)\n  - `gacha-pull/index.ts` POOL에 SR 추가 + `SR_W = 19.3/8` 재계산(7→8종, 기존 SR 확률 2.757%→2.413%로 희석) ⚠️ **배포 필요**\n  - `leaderboard-submit/index.ts` validCharacterTypes에 'k' ⚠️ **배포 필요**\n  - 제외 정답: `GachaScene.CHARS_WITH_VIDS`(영상 없음)\n  - 미적용(선택): `GachaScene.SLIDESHOW_IDS`, `CURRENT_BANNER` — 전용 일러스트 준비 후 결정\n- 배포 명령: `supabase functions deploy gacha-pull --no-verify-jwt` / `... leaderboard-submit --no-verify-jwt`\n- DB 수동 부여: `user_characters`에 `character_id='k'` INSERT (RLS INSERT 정책 없어 SQL Editor 필요)"
 }
@@ -3176,7 +3176,7 @@ id: toolu_01U1G5uhZrwr2dUYUxGTbyeQ
 tool_result
 id: toolu_01U1G5uhZrwr2dUYUxGTbyeQ
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3217,7 +3217,7 @@ tool_use Bash
 id: toolu_01MkRD6z9xF4oFpAACrUUfKG
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== ability.onCreate / onUpdate 호출부 ===\"\ngrep -n \"ability.onCreate\\|ability.onUpdate\\|\\.onCreate(\\|\\.onUpdate(\" src/scenes/GameScene.ts\necho \"\"\necho \"=== 플레이어 생성부 주변 depth 설정 (320~330 부근) ===\"\nsed -n '326,345p' src/scenes/GameScene.ts\necho \"\"\necho \"=== update()에서 player.update / onUpdate 호출 맥락 (530~545) ===\"\nsed -n '530,545p' src/scenes/GameScene.ts",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== ability.onCreate / onUpdate 호출부 ===\"\ngrep -n \"ability.onCreate\\|ability.onUpdate\\|\\.onCreate(\\|\\.onUpdate(\" src/scenes/GameScene.ts\necho \"\"\necho \"=== 플레이어 생성부 주변 depth 설정 (320~330 부근) ===\"\nsed -n '326,345p' src/scenes/GameScene.ts\necho \"\"\necho \"=== update()에서 player.update / onUpdate 호출 맥락 (530~545) ===\"\nsed -n '530,545p' src/scenes/GameScene.ts",
   "description": "onCreate/onUpdate 호출부 및 player depth 확인"
 }
 ```
@@ -3281,7 +3281,7 @@ tool_use Read
 id: toolu_01AN17Juc44awGpcUacZu3Lv
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 570,
   "limit": 18
 }
@@ -3322,7 +3322,7 @@ tool_use Bash
 id: toolu_01KpXLieim4gRqYE8EhKXFo3
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== GameScene depth 설정 전반 ===\"\ngrep -n \"setDepth\\|\\.depth =\" src/scenes/GameScene.ts | head -40\necho \"\"\necho \"=== 배경(background) 생성부 ===\"\ngrep -n \"background\\|bgKey\\|getDefaultBackgroundKey\\|this.add.image.*H / 2\\|add.image(cx\" src/scenes/GameScene.ts | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== GameScene depth 설정 전반 ===\"\ngrep -n \"setDepth\\|\\.depth =\" src/scenes/GameScene.ts | head -40\necho \"\"\necho \"=== 배경(background) 생성부 ===\"\ngrep -n \"background\\|bgKey\\|getDefaultBackgroundKey\\|this.add.image.*H / 2\\|add.image(cx\" src/scenes/GameScene.ts | head",
   "description": "GameScene depth 및 배경 생성 확인"
 }
 ```
@@ -3393,7 +3393,7 @@ tool_use Bash
 id: toolu_0129KWYzHquuNEaAHQmGqB7d
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== 배경 이미지 add + depth, 플레이어 depth 관련 ===\"\ngrep -n \"bgKey\\|getDefaultBackgroundKey\\|backgroundKey\\|this.bg\\b\\|player.setDepth\\|this.player.setDepth\" src/scenes/GameScene.ts\necho \"--- create 내 배경 배치부 (280~312) ---\"\nsed -n '282,312p' src/scenes/GameScene.ts",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== 배경 이미지 add + depth, 플레이어 depth 관련 ===\"\ngrep -n \"bgKey\\|getDefaultBackgroundKey\\|backgroundKey\\|this.bg\\b\\|player.setDepth\\|this.player.setDepth\" src/scenes/GameScene.ts\necho \"--- create 내 배경 배치부 (280~312) ---\"\nsed -n '282,312p' src/scenes/GameScene.ts",
   "description": "배경 배치 depth와 플레이어 depth 확인"
 }
 ```
@@ -3455,7 +3455,7 @@ tool_use Bash
 id: toolu_01XbG34QuDU6rdxgC6otqRjh
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== Phaser moveBelow 시그니처 ===\"\ngrep -rn \"moveBelow\" node_modules/phaser/types/phaser.d.ts | head\necho \"\"\necho \"=== 주변 설명 (moveBelow / moveDown) ===\"\ngrep -n -A3 \"moveBelow(child\" node_modules/phaser/types/phaser.d.ts | head -20\necho \"\"\necho \"=== 똥(Poop) depth 설정 여부 ===\"\ngrep -rn \"setDepth\\|depth\" src/objects/Poop.ts src/objects/PoolablePoopBase.ts src/objects/GoldPoop.ts | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== Phaser moveBelow 시그니처 ===\"\ngrep -rn \"moveBelow\" node_modules/phaser/types/phaser.d.ts | head\necho \"\"\necho \"=== 주변 설명 (moveBelow / moveDown) ===\"\ngrep -n -A3 \"moveBelow(child\" node_modules/phaser/types/phaser.d.ts | head -20\necho \"\"\necho \"=== 똥(Poop) depth 설정 여부 ===\"\ngrep -rn \"setDepth\\|depth\" src/objects/Poop.ts src/objects/PoolablePoopBase.ts src/objects/GoldPoop.ts | head",
   "description": "moveBelow 시그니처 및 똥 depth 확인"
 }
 ```
@@ -3492,7 +3492,7 @@ tool_use Bash
 id: toolu_017GPnnkzbuD1fqGkU9Zthcf
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nsed -n '17105,17122p' node_modules/phaser/types/phaser.d.ts",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nsed -n '17105,17122p' node_modules/phaser/types/phaser.d.ts",
   "description": "DisplayList.moveBelow 문서 주석 확인"
 }
 ```
@@ -3532,7 +3532,7 @@ tool_use Read
 id: toolu_01YN6TFPwAfs5JabxaLQUtD1
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 1,
   "limit": 40
 }
@@ -3579,7 +3579,7 @@ id: toolu_01PGSCVfUXgunMuk2ehAaEyy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "//\n// 아들 동반자(ktei)·사망 승계(ktei_ss)는 별도 구현 예정.",
   "new_string": "//\n// 아들 동반자(ktei)는 항상 k 뒤를 반 사이즈로 따라다닌다 (비주얼 전용, 충돌 없음).\n// 사망 승계(ktei_ss)는 별도 구현 예정."
 }
@@ -3590,7 +3590,7 @@ id: toolu_01PGSCVfUXgunMuk2ehAaEyy
 tool_result
 id: toolu_01PGSCVfUXgunMuk2ehAaEyy
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3600,7 +3600,7 @@ id: toolu_01NJ5NLKFuy3NqRcViwLzu9R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "const BEAM_HALF_WIDTH     = 34;    // 빔 반경 (경로상 똥 제거 판정)\n\nexport class KAbility extends BaseAbility {\n  // score가 한 번에 여러 점 뛰어도 같은 마일스톤에서 두 번 발동하지 않도록 가드\n  private lastGmhmScore = 0;",
   "new_string": "const BEAM_HALF_WIDTH     = 34;    // 빔 반경 (경로상 똥 제거 판정)\n\n// 아들(ktei) 동반자\nconst SON_SCALE    = 0.5;    // 플레이어 대비 크기 (반 사이즈)\nconst SON_FOLLOW   = 0.14;   // x 추적 lerp 계수 (작을수록 더 느리게 뒤따름)\nconst SON_Y_OFFSET = -8;     // 플레이어보다 살짝 위 (뒤에 있는 느낌)\nconst SON_FACE_EPS = 1.2;    // 좌우 방향 전환 최소 이동량 (px/frame)\nconst SON_BOB_AMP  = 2;      // 상하 바운스 진폭\n\nexport class KAbility extends BaseAbility {\n  // score가 한 번에 여러 점 뛰어도 같은 마일스톤에서 두 번 발동하지 않도록 가드\n  private lastGmhmScore = 0;\n\n  // 아들(ktei) 동반자 — onCreate에서 생성, onUpdate에서 추적, onDestroy에서 정리\n  private son?: Phaser.GameObjects.Image;\n  private sonDir: string = 'front';\n\n  // ── 아들 동반자: 생성 + 추적 ───────────────────────────────────────────\n  onCreate(api: GameSceneAPI): void {\n    const { scene, player } = api;\n    this.son = scene.add.image(player.x, player.y + SON_Y_OFFSET, 'ktei_front')\n      .setDisplaySize(player.displayWidth * SON_SCALE, player.displayHeight * SON_SCALE);\n    // 배경 위 · 플레이어 뒤로 배치 (배경·플레이어·아들 모두 depth 0 → 표시 순서로 제어)\n    scene.children.moveBelow(this.son, player);\n  }\n\n  onUpdate(api: GameSceneAPI): […]
 
@@ -3609,7 +3609,7 @@ id: toolu_01NJ5NLKFuy3NqRcViwLzu9R
 tool_result
 id: toolu_01NJ5NLKFuy3NqRcViwLzu9R
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3623,7 +3623,7 @@ id: toolu_01V1s2GwTWNxAgFvm4qjZ1xh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "      if (this.selectedCharId === 'k') {\n        // 300점마다 발사되는 각성 포즈 컷인 (좌/우 방향별). _left 는 _right 의 미러본\n        if (!this.textures.exists('ktei_ss_gmhm_right')) this.load.image('ktei_ss_gmhm_right', 'assets/players/ktei_ss_gmhm_right.webp');\n        if (!this.textures.exists('ktei_ss_gmhm_left'))  this.load.image('ktei_ss_gmhm_left',  'assets/players/ktei_ss_gmhm_left.webp');\n      }",
   "new_string": "      if (this.selectedCharId === 'k') {\n        // 아들(ktei) 동반자 — 항상 k 뒤를 따라다님\n        if (!this.textures.exists('ktei_front')) this.load.image('ktei_front', 'assets/players/ktei_front.webp');\n        if (!this.textures.exists('ktei_left'))  this.load.image('ktei_left',  'assets/players/ktei_left.webp');\n        if (!this.textures.exists('ktei_right')) this.load.image('ktei_right', 'assets/players/ktei_right.webp');\n        // 300점마다 발사되는 각성 포즈 컷인 (좌/우 방향별). _left 는 _right 의 미러본\n        if (!this.textures.exists('ktei_ss_gmhm_right')) this.load.image('ktei_ss_gmhm_right', 'assets/players/ktei_ss_gmhm_right.webp');\n        if (!this.textures.exists('ktei_ss_gmhm_left'))  this.load.image('ktei_ss_gmhm_left',  'assets/players/ktei_ss_gmhm_left.webp');\n      }"
 }
@@ -3634,7 +3634,7 @@ id: toolu_01V1s2GwTWNxAgFvm4qjZ1xh
 tool_result
 id: toolu_01V1s2GwTWNxAgFvm4qjZ1xh
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3643,7 +3643,7 @@ tool_use Bash
 id: toolu_01FYyqgwauRCa5yQGVdaAtiu
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
   "description": "아들 동반자 추가 후 타입 검사"
 }
 ```
@@ -3666,7 +3666,7 @@ tool_use Bash
 id: toolu_01GJ4pvgPNZeyhHgsjqxoGS8
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== ktei 아들 에셋 존재 확인 ===\"\nls -1 public/assets/players/ktei_front.webp public/assets/players/ktei_left.webp public/assets/players/ktei_right.webp 2>&1\necho \"\"\necho \"=== 빌드 ===\"\nnpm run build 2>&1 | grep -E \"built in|Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== ktei 아들 에셋 존재 확인 ===\"\nls -1 public/assets/players/ktei_front.webp public/assets/players/ktei_left.webp public/assets/players/ktei_right.webp 2>&1\necho \"\"\necho \"=== 빌드 ===\"\nnpm run build 2>&1 | grep -E \"built in|Build completed|error|Error\" | head",
   "description": "아들 에셋 확인 + 프로덕션 빌드"
 }
 ```
@@ -3698,7 +3698,7 @@ id: toolu_01Nxw8DUjeRHaa844brvbHR2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "## 구현 완료 (2026-07-02)\n- **gmhm 에너지파** — `src/abilities/KAbility.ts` (`KAbility.onScoreMilestone`)",
   "new_string": "## 구현 완료 (2026-07-02)\n- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. k 뒤를 반 사이즈(0.5)로\n  lerp 추적, 이동 방향따라 ktei_left/right/front 전환, 상하 바운스. 비주얼 전용(충돌 없음).\n  z-order: `scene.children.moveBelow(son, player)`로 배경 위·플레이어 뒤 배치(둘 다 depth 0).\n  GameScene preload k 특수 블록에 ktei_front/left/right 로드 추가\n- **gmhm 에너지파** — `src/abilities/KAbility.ts` (`KAbility.onScoreMilestone`)"
 }
@@ -3709,7 +3709,7 @@ id: toolu_01Nxw8DUjeRHaa844brvbHR2
 tool_result
 id: toolu_01Nxw8DUjeRHaa844brvbHR2
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3719,7 +3719,7 @@ id: toolu_01QbmENc1FWsKBFszjgkJY81
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "## 미완료 — 설계 미확정 (사용자 답변 대기)\n- **아들 동반자(ktei)**: k 뒤 0.5배 트레일링. 제안=비주얼 전용(충돌 없음), k 방향 미러\n- **사망 승계(ktei_ss)**: k 죽으면 ktei_ss가 본체로 하늘을 날아다님.",
   "new_string": "## 미완료 — 설계 미확정 (사용자 답변 대기)\n- **사망 승계(ktei_ss)**: k 죽으면 ktei_ss가 본체로 하늘을 날아다님."
 }
@@ -3730,7 +3730,7 @@ id: toolu_01QbmENc1FWsKBFszjgkJY81
 tool_result
 id: toolu_01QbmENc1FWsKBFszjgkJY81
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3776,7 +3776,7 @@ tool_use Bash
 id: toolu_01Jkk5MYHbeNRfTA1NBmvV2X
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== onHitPoop 호출부 (게임오버 방지 경로) ===\"\ngrep -n \"onHitPoop\" src/scenes/GameScene.ts\necho \"\"\necho \"=== hitPoop 본문 (1438~1475) ===\"\nsed -n '1438,1475p' src/scenes/GameScene.ts",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== onHitPoop 호출부 (게임오버 방지 경로) ===\"\ngrep -n \"onHitPoop\" src/scenes/GameScene.ts\necho \"\"\necho \"=== hitPoop 본문 (1438~1475) ===\"\nsed -n '1438,1475p' src/scenes/GameScene.ts",
   "description": "onHitPoop 호출 위치와 hitPoop 본문 확인"
 }
 ```
@@ -3840,7 +3840,7 @@ tool_use Read
 id: toolu_019YMo1Sfypjr2DZ2opeTziX
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 644,
   "limit": 45
 }
@@ -3905,7 +3905,7 @@ id: toolu_011V6Qyjksi2UeHiaThmG8C4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "      if (this.selectedCharId === 'k') {\n        // 아들(ktei) 동반자 — 항상 k 뒤를 따라다님\n        if (!this.textures.exists('ktei_front')) this.load.image('ktei_front', 'assets/players/ktei_front.webp');\n        if (!this.textures.exists('ktei_left'))  this.load.image('ktei_left',  'assets/players/ktei_left.webp');\n        if (!this.textures.exists('ktei_right')) this.load.image('ktei_right', 'assets/players/ktei_right.webp');",
   "new_string": "      if (this.selectedCharId === 'k') {\n        // 아들(ktei) 동반자 — 항상 k 뒤를 따라다님\n        if (!this.textures.exists('ktei_front')) this.load.image('ktei_front', 'assets/players/ktei_front.webp');\n        if (!this.textures.exists('ktei_left'))  this.load.image('ktei_left',  'assets/players/ktei_left.webp');\n        if (!this.textures.exists('ktei_right')) this.load.image('ktei_right', 'assets/players/ktei_right.webp');\n        // ktei_ss(각성 본체) — k 사망 시 승계되는 스프라이트\n        if (!this.textures.exists('ktei_ss_front')) this.load.image('ktei_ss_front', 'assets/players/ktei_ss_front.webp');\n        if (!this.textures.exists('ktei_ss_left'))  this.load.image('ktei_ss_left',  'assets/players/ktei_ss_left.webp');\n        if (!this.textures.exists('ktei_ss_right')) this.load.image('ktei_ss_right', 'assets/players/ktei_ss_right.webp');"
 }
@@ -3916,7 +3916,7 @@ id: toolu_011V6Qyjksi2UeHiaThmG8C4
 tool_result
 id: toolu_011V6Qyjksi2UeHiaThmG8C4
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3930,7 +3930,7 @@ id: toolu_01NCePvmb4AmVvzZj684Kx23
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 아들 동반자(ktei)는 항상 k 뒤를 반 사이즈로 따라다닌다 (비주얼 전용, 충돌 없음).\n// 사망 승계(ktei_ss)는 별도 구현 예정.",
   "new_string": "// 아들 동반자(ktei)는 항상 k 뒤를 반 사이즈로 따라다닌다 (비주얼 전용, 충돌 없음).\n// k가 죽으면(첫 피격) 게임오버 대신 아들이 각성해 ktei_ss 본체로 승계된다 — 1회 한정.\n// 승계 후 본체는 다른 캐릭터보다 살짝 공중에 뜨지만 조작은 좌우만(기존과 동일)."
 }
@@ -3941,7 +3941,7 @@ id: toolu_01NCePvmb4AmVvzZj684Kx23
 tool_result
 id: toolu_01NCePvmb4AmVvzZj684Kx23
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3951,7 +3951,7 @@ id: toolu_01JAnXjtDoxYeYPUR9NbSvN6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "const SON_FACE_EPS = 1.2;    // 좌우 방향 전환 최소 이동량 (px/frame)\nconst SON_BOB_AMP  = 2;      // 상하 바운스 진폭",
   "new_string": "const SON_FACE_EPS = 1.2;    // 좌우 방향 전환 최소 이동량 (px/frame)\nconst SON_BOB_AMP  = 2;      // 상하 바운스 진폭\n\n// 사망 승계 (ktei_ss)\nconst SUCCESSION_LIFT          = 64;   // 승계 후 본체를 공중으로 띄우는 높이 (px)\nconst SUCCESSION_INVINCIBLE_MS = 1500; // 승계 순간 무적 (즉사 방지)"
 }
@@ -3962,7 +3962,7 @@ id: toolu_01JAnXjtDoxYeYPUR9NbSvN6
 tool_result
 id: toolu_01JAnXjtDoxYeYPUR9NbSvN6
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3972,7 +3972,7 @@ id: toolu_017gXDsC4hCLxStDncYRYkbw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // 아들(ktei) 동반자 — onCreate에서 생성, onUpdate에서 추적, onDestroy에서 정리\n  private son?: Phaser.GameObjects.Image;\n  private sonDir: string = 'front';",
   "new_string": "  // 아들(ktei) 동반자 — onCreate에서 생성, onUpdate에서 추적, onDestroy에서 정리\n  private son?: Phaser.GameObjects.Image;\n  private sonDir: string = 'front';\n\n  // 사망 승계 여부 (1회만 승계 → 이후 정상 게임오버)\n  private transformed = false;"
 }
@@ -3983,7 +3983,7 @@ id: toolu_017gXDsC4hCLxStDncYRYkbw
 tool_result
 id: toolu_017gXDsC4hCLxStDncYRYkbw
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3997,7 +3997,7 @@ id: toolu_01GmvP8qpK9dJJdG2JCRW7nf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  onDestroy(_api: GameSceneAPI): void {\n    this.son?.destroy();\n    this.son = undefined;\n  }",
   "new_string": "  onDestroy(_api: GameSceneAPI): void {\n    this.son?.destroy();\n    this.son = undefined;\n  }\n\n  // ── 사망 승계: k 죽으면 아들이 각성해 본체가 됨 (1회) ────────────────────\n  // true 반환 시 GameScene이 게임오버를 취소하고 피격 똥을 회수한다.\n  onHitPoop(api: GameSceneAPI): boolean {\n    if (this.transformed) return false; // 이미 승계됨 → 정상 게임오버\n    this.transformed = true;\n    this._succeedToKteiSs(api);\n    return true;\n  }\n\n  private _succeedToKteiSs(api: GameSceneAPI): void {\n    const { scene, player } = api;\n\n    // 아들이 본체로 승계 → 작은 동반자 제거\n    this.son?.destroy();\n    this.son = undefined;\n\n    // 각성형 스프라이트로 교체 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    player.setTexturePrefix('ktei_ss_');\n    player.setY(player.y - SUCCESSION_LIFT);\n\n    // 승계 순간 보호 + 화면 정리 (승계 직후 즉사·불공정 방지)\n    player.setInvincibleBriefly(SUCCESSION_INVINCIBLE_MS);\n    this._clearAllPoops(api);\n\n    // 각성 연출: 금빛 섬광 + 확장 링 + 버스트\n    this._succeedEffect(scene, player.x, player.y);\n  }\n\n  private _clearAllPoops(api: GameSceneAPI): void {\n    const { poops, scene } = api;\n    const targets = (poops.getChildren() as Phaser.Physics.Arcade.Sprite[]).filter(p => p.active);\n    const positions = targets.map(p => ({ x: p.x, y: p.y }));\n    targets.forEach(p => (p as unknown as PoolablePoopBase).recycle());\n    positions.forEach(({ x, y }) => this._spawnBurst(scene, x, y, 12));\n  }\n\n  private _succeedEffect(scene: Phaser.Scene, x: number, y: number): void {\n    // 전체 […]
 
@@ -4006,7 +4006,7 @@ id: toolu_01GmvP8qpK9dJJdG2JCRW7nf
 tool_result
 id: toolu_01GmvP8qpK9dJJdG2JCRW7nf
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4015,7 +4015,7 @@ tool_use Bash
 id: toolu_015aPLSJKvuKqvmXKWFwELp7
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
   "description": "사망 승계 추가 후 타입 검사"
 }
 ```
@@ -4038,7 +4038,7 @@ tool_use Bash
 id: toolu_01ATsKRU5KB4EqBefa6CLaiM
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== ktei_ss 본체 에셋 확인 ===\"\nls -1 public/assets/players/ktei_ss_front.webp public/assets/players/ktei_ss_left.webp public/assets/players/ktei_ss_right.webp 2>&1\necho \"\"\necho \"=== 빌드 ===\"\nnpm run build 2>&1 | grep -E \"built in|Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== ktei_ss 본체 에셋 확인 ===\"\nls -1 public/assets/players/ktei_ss_front.webp public/assets/players/ktei_ss_left.webp public/assets/players/ktei_ss_right.webp 2>&1\necho \"\"\necho \"=== 빌드 ===\"\nnpm run build 2>&1 | grep -E \"built in|Build completed|error|Error\" | head",
   "description": "ktei_ss 에셋 확인 + 빌드"
 }
 ```
@@ -4070,7 +4070,7 @@ id: toolu_01CygmrtLYVgRSXcNW9o5Yyz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "## 구현 완료 (2026-07-02)\n- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. k 뒤를 반 사이즈(0.5)로",
   "new_string": "## 구현 완료 (2026-07-02) — K 가족 시스템 전체 완성\n- **사망 승계(ktei_ss)** — `KAbility.onHitPoop`. k 첫 피격 시 게임오버 대신 `true` 반환(→\n  GameScene이 게임오버 취소+피격 똥 회수). `player.setTexturePrefix('ktei_ss_')`로 각성 본체\n  교체 + `setY(-64)`로 살짝 공중 + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출.\n  **1회 한정**(`transformed` 플래그) → 본체가 또 죽으면 정상 게임오버. 조작은 좌우만(기존 동일,\n  세로 이동 없음 — 위치만 높음). GameScene preload에 ktei_ss_front/left/right 로드 추가.\n  사망 경로는 `GameScene.hitPoop` 하나로 통합(안티치트 수동경로도 위임)이라 훅 1곳으로 충분.\n- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. k 뒤를 반 사이즈(0.5)로"
 }
@@ -4081,7 +4081,7 @@ id: toolu_01CygmrtLYVgRSXcNW9o5Yyz
 tool_result
 id: toolu_01CygmrtLYVgRSXcNW9o5Yyz
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4095,7 +4095,7 @@ id: toolu_01KPSLA6EqNjenkXitpnfpzm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "## 미완료 — 설계 미확정 (사용자 답변 대기)\n- **사망 승계(ktei_ss)**: k 죽으면 ktei_ss가 본체로 하늘을 날아다님. `Player.setTexturePrefix('ktei_ss_')`\n  로 스프라이트 교체(mugi 부활+변신 패턴 재사용 예정). 미확정: 부활-계속 vs 연출-후-게임오버,\n  비행=상하 이동 추가 여부, 부활 횟수\n- 관련 선례: `MugiAbility`(부활+황금변신), `Player.setTexturePrefix`(Player.ts:170)",
   "new_string": "## 남은 폴리시/운영 항목 (기능 구현은 끝)\n- **Supabase 배포 필요**: `gacha-pull`, `leaderboard-submit` (POOL/유효캐릭터 변경 반영). 미배포 시 가챠 0%\n- 전용 일러스트 미준비 → `assets/illustrations/k.webp` 추가 후 character.ts illustKey 교체 +\n  `GachaScene.SLIDESHOW_IDS`/`CURRENT_BANNER` 편입 고려 (지금은 k_front 임시 재사용)\n- 관련 선례: `MugiAbility`(부활+황금변신), `Player.setTexturePrefix`(Player.ts:170)"
 }
@@ -4106,7 +4106,7 @@ id: toolu_01KPSLA6EqNjenkXitpnfpzm
 tool_result
 id: toolu_01KPSLA6EqNjenkXitpnfpzm
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4156,7 +4156,7 @@ tool_use Read
 id: toolu_01Qd9u9H7i476S4yWk9f9VSC
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "offset": 385,
   "limit": 45
 }
@@ -4224,7 +4224,7 @@ tool_use Bash
 id: toolu_012z7Z1Xfz3AJnkJ4BcgSHcf
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== collectGoldPoop 본문 (중복 수집 가드 확인) ===\"\ngrep -n \"collectGoldPoop\\|collectDiamondPoop\\|collectTopazPoop\\|collectRainbowPoop\" src/scenes/GameScene.ts | head\necho \"--- 본문 ---\"\nsed -n '/protected collectGoldPoop/,/^  }/p' src/scenes/GameScene.ts | head -30",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== collectGoldPoop 본문 (중복 수집 가드 확인) ===\"\ngrep -n \"collectGoldPoop\\|collectDiamondPoop\\|collectTopazPoop\\|collectRainbowPoop\" src/scenes/GameScene.ts | head\necho \"--- 본문 ---\"\nsed -n '/protected collectGoldPoop/,/^  }/p' src/scenes/GameScene.ts | head -30",
   "description": "collect 함수 중복 수집 가드 확인"
 }
 ```
@@ -4254,7 +4254,7 @@ tool_use Bash
 id: toolu_01DmydrUxUQnNVDYwWgDWWhs
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== collectGoldPoop / handleGoldCollected 정의 및 가드 ===\"\nsed -n '/private collectGoldPoop\\|protected collectGoldPoop\\|collectGoldPoop(/,/^  }/p' src/scenes/GameScene.ts | head -20\necho \"=== handleGoldCollected (active 가드?) ===\"\nsed -n '/handleGoldCollected/,/^  }/p' src/scenes/GameScene.ts | head -25",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== collectGoldPoop / handleGoldCollected 정의 및 가드 ===\"\nsed -n '/private collectGoldPoop\\|protected collectGoldPoop\\|collectGoldPoop(/,/^  }/p' src/scenes/GameScene.ts | head -20\necho \"=== handleGoldCollected (active 가드?) ===\"\nsed -n '/handleGoldCollected/,/^  }/p' src/scenes/GameScene.ts | head -25",
   "description": "collectGoldPoop/handleGoldCollected 가드 확인"
 }
 ```
@@ -4289,7 +4289,7 @@ tool_use Bash
 id: toolu_01FiT2yXb38V8mtBMDVP8NEg
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nsed -n '/private handleSpecialCollected/,/^  }/p' src/scenes/GameScene.ts | head -40",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nsed -n '/private handleSpecialCollected/,/^  }/p' src/scenes/GameScene.ts | head -40",
   "description": "handleSpecialCollected 본문/가드 확인"
 }
 ```
@@ -4308,7 +4308,7 @@ tool_use Bash
 id: toolu_01LkFdgGZSjXkW3JniJQXYnJ
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== handleSpecialCollected 위치 ===\"\ngrep -n \"handleSpecialCollected\" src/scenes/GameScene.ts\necho \"--- 본문 ---\"\nsed -n '/handleSpecialCollected(/,/setActive(false)\\|recycle()\\|^  }$/p' src/scenes/GameScene.ts | head -30",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== handleSpecialCollected 위치 ===\"\ngrep -n \"handleSpecialCollected\" src/scenes/GameScene.ts\necho \"--- 본문 ---\"\nsed -n '/handleSpecialCollected(/,/setActive(false)\\|recycle()\\|^  }$/p' src/scenes/GameScene.ts | head -30",
   "description": "handleSpecialCollected 본문 확인"
 }
 ```
@@ -4366,7 +4366,7 @@ tool_use Bash
 id: toolu_015cK8gyMaQEawjYzxGbWuAa
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== GlitchAbility 분신 위치/거리/오프셋 ===\"\ngrep -n \"offset\\|distance\\|clone\\|분신\\|\\.x\\|lerp\\|Linear\\|follow\\|gap\\|- 60\\|+ 60\\|player.x\" src/abilities/GlitchAbility.ts | head -30",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== GlitchAbility 분신 위치/거리/오프셋 ===\"\ngrep -n \"offset\\|distance\\|clone\\|분신\\|\\.x\\|lerp\\|Linear\\|follow\\|gap\\|- 60\\|+ 60\\|player.x\" src/abilities/GlitchAbility.ts | head -30",
   "description": "글리치 분신 추적 거리 확인"
 }
 ```
@@ -4397,7 +4397,7 @@ tool_use Read
 id: toolu_01YUmcvpv4mmVY7cpVRvfRwZ
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/GlitchAbility.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/GlitchAbility.ts"
 }
 ```
 
@@ -4459,7 +4459,7 @@ id: toolu_01D4SdNTdvyeyBrtkZKqR2nZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 아들 동반자(ktei)는 항상 k 뒤를 반 사이즈로 따라다닌다 (비주얼 전용, 충돌 없음).\n// k가 죽으면(첫 피격) 게임오버 대신 아들이 각성해 ktei_ss 본체로 승계된다 — 1회 한정.",
   "new_string": "// 아들 동반자(ktei)는 항상 k와 같은 크기로 땅에서 뒤를 따라다니며(간격 유지, 겹침 없음)\n// 특수똥을 수집한다 (일반 똥은 통과 — 아들은 게임오버 유발 안 함).\n// k가 죽으면(첫 피격) 게임오버 대신 아들이 각성해 ktei_ss 본체로 승계된다 — 1회 한정."
 }
@@ -4470,7 +4470,7 @@ id: toolu_01D4SdNTdvyeyBrtkZKqR2nZ
 tool_result
 id: toolu_01D4SdNTdvyeyBrtkZKqR2nZ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4480,7 +4480,7 @@ id: toolu_01DSNjDbuPr4rRfEfCck6un1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 아들(ktei) 동반자\nconst SON_SCALE    = 0.5;    // 플레이어 대비 크기 (반 사이즈)\nconst SON_FOLLOW   = 0.14;   // x 추적 lerp 계수 (작을수록 더 느리게 뒤따름)\nconst SON_Y_OFFSET = -8;     // 플레이어보다 살짝 위 (뒤에 있는 느낌)\nconst SON_FACE_EPS = 1.2;    // 좌우 방향 전환 최소 이동량 (px/frame)\nconst SON_BOB_AMP  = 2;      // 상하 바운스 진폭\n\n// 사망 승계 (ktei_ss)\nconst SUCCESSION_LIFT          = 64;   // 승계 후 본체를 공중으로 띄우는 높이 (px)\nconst SUCCESSION_INVINCIBLE_MS = 1500; // 승계 순간 무적 (즉사 방지)",
   "new_string": "// 아들(ktei) 동반자 — 플레이어와 같은 크기, 땅에서 뒤를 따라다니며 특수똥 수집\nconst SON_FOLLOW   = 0.16;   // x 추적 lerp 계수\nconst SON_GAP      = 44;     // k와 유지하는 간격 (겹침 방지, 글리치 분신보다 가깝게)\nconst SON_FACE_EPS = 1.2;    // 좌우 방향 전환 최소 이동량 (px/frame)\n\n// 사망 승계 (ktei_ss)\nconst SUCCESSION_LIFT          = 21;   // 승계 후 본체를 살짝 띄우는 높이 (px) — 이전 64의 1/3\nconst SUCCESSION_INVINCIBLE_MS = 1500; // 승계 순간 무적 (즉사 방지)"
 }
@@ -4491,7 +4491,7 @@ id: toolu_01DSNjDbuPr4rRfEfCck6un1
 tool_result
 id: toolu_01DSNjDbuPr4rRfEfCck6un1
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4501,7 +4501,7 @@ id: toolu_01GRvsukmzZ3HTRHCF3QKLTk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // 아들(ktei) 동반자 — onCreate에서 생성, onUpdate에서 추적, onDestroy에서 정리\n  private son?: Phaser.GameObjects.Image;\n  private sonDir: string = 'front';",
   "new_string": "  // 아들(ktei) 동반자 — onCreate에서 생성, onUpdate에서 추적, onDestroy에서 정리\n  private son?: Phaser.Physics.Arcade.Sprite;\n  private sonDir: string = 'front';\n  private sonSide = -1; // k 기준 아들이 있는 쪽 (-1 왼쪽 / +1 오른쪽) = k 이동 방향의 반대"
 }
@@ -4512,7 +4512,7 @@ id: toolu_01GRvsukmzZ3HTRHCF3QKLTk
 tool_result
 id: toolu_01GRvsukmzZ3HTRHCF3QKLTk
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4522,7 +4522,7 @@ id: toolu_01TQBYpuC7DcRYq4xFrgtf3D
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // ── 아들 동반자: 생성 + 추적 ───────────────────────────────────────────\n  onCreate(api: GameSceneAPI): void {\n    const { scene, player } = api;\n    this.son = scene.add.image(player.x, player.y + SON_Y_OFFSET, 'ktei_front')\n      .setDisplaySize(player.displayWidth * SON_SCALE, player.displayHeight * SON_SCALE);\n    // 배경 위 · 플레이어 뒤로 배치 (배경·플레이어·아들 모두 depth 0 → 표시 순서로 제어)\n    scene.children.moveBelow(this.son, player);\n  }\n\n  onUpdate(api: GameSceneAPI): void {\n    const son = this.son;\n    if (!son || !son.active) return;\n    const { scene, player } = api;\n\n    // 플레이어 x를 부드럽게 뒤따름 (이동 시 자연스럽게 뒤처지고, 멈추면 따라붙음)\n    const prevX = son.x;\n    son.x = Phaser.Math.Linear(son.x, player.x, SON_FOLLOW);\n    // 살짝 위 + 미세한 상하 바운스\n    const bob = Math.sin(scene.time.now / 220) * SON_BOB_AMP;\n    son.y = Phaser.Math.Linear(son.y, player.y + SON_Y_OFFSET + bob, 0.2);\n\n    // 이동 방향으로 좌우 스프라이트 전환 (거의 멈추면 정면)\n    const dx = son.x - prevX;\n    const dir = dx > SON_FACE_EPS ? 'right' : dx < -SON_FACE_EPS ? 'left' : 'front';\n    if (dir !== this.sonDir) {\n      son.setTexture(`ktei_${dir}`);\n      this.sonDir = dir;\n    }\n  }",
   "new_string": "  // ── 아들 동반자: 생성 + 추적 + 특수똥 수집 ─────────────────────────────\n  onCreate(api: GameSceneAPI): void {\n    const { scene, player } = api;\n\n    // 플레이어와 같은 크기, 땅(같은 y)에서 뒤(간격 SON_GAP)에 […]
 
@@ -4531,7 +4531,7 @@ id: toolu_01TQBYpuC7DcRYq4xFrgtf3D
 tool_result
 id: toolu_01TQBYpuC7DcRYq4xFrgtf3D
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4540,7 +4540,7 @@ tool_use Bash
 id: toolu_01K6wTpV3M9ARYo7MV3RGb2t
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
   "description": "아들 재작성 후 타입 검사"
 }
 ```
@@ -4563,7 +4563,7 @@ tool_use Bash
 id: toolu_012RFTaHrtN2m8hVZvDHZYt3
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpm run build 2>&1 | grep -E \"built in|Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpm run build 2>&1 | grep -E \"built in|Build completed|error|Error\" | head",
   "description": "프로덕션 빌드 검증"
 }
 ```
@@ -4589,7 +4589,7 @@ id: toolu_01VL1SXQF3A5MVi1smx5B7rd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. k 뒤를 반 사이즈(0.5)로\n  lerp 추적, 이동 방향따라 ktei_left/right/front 전환, 상하 바운스. 비주얼 전용(충돌 없음).\n  z-order: `scene.children.moveBelow(son, player)`로 배경 위·플레이어 뒤 배치(둘 다 depth 0).\n  GameScene preload k 특수 블록에 ktei_front/left/right 로드 추가",
   "new_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **플레이어와 같은 크기**,\n  **땅(같은 y, 공중 X)**에서 뒤를 따라다님. 물리 스프라이트(중력off)로 **특수똥(gold/diamond/\n  topaz/rainbow) overlap 수집** — 일반 똥은 미등록(통과, 게임오버 유발 안 함). 글리치 분신 패턴 참고.\n  k 이동 방향 반대쪽 `SON_GAP=44`px 리시(leash) 유지 → **k와 절대 겹치지 않음**(글리치보다 가깝게).\n  z-order: `moveBelow(son, player)`. GameScene preload k 블록에 ktei_front/left/right 로드"
 }
@@ -4600,7 +4600,7 @@ id: toolu_01VL1SXQF3A5MVi1smx5B7rd
 tool_result
 id: toolu_01VL1SXQF3A5MVi1smx5B7rd
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4610,7 +4610,7 @@ id: toolu_01Kbo7KwHKeG9VAHcQhjcLKb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "  교체 + `setY(-64)`로 살짝 공중 + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출.",
   "new_string": "  교체 + `setY(-21)`로 살짝 공중(SUCCESSION_LIFT=21) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출."
 }
@@ -4621,7 +4621,7 @@ id: toolu_01Kbo7KwHKeG9VAHcQhjcLKb
 tool_result
 id: toolu_01Kbo7KwHKeG9VAHcQhjcLKb
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4657,7 +4657,7 @@ tool_use Bash
 id: toolu_011fmycFNV6mJRKxaTN5U3UE
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== k_ill.jpg 존재/정보 ===\"\nls -la public/assets/illustrations/k_ill.jpg 2>&1\nfile public/assets/illustrations/k_ill.jpg 2>&1\necho \"\"\necho \"=== 스프라이트 프레임 안 캐릭터 실제 차지 영역 (trim) ===\"\nfor f in k_front ktei_front ktei_ss_front; do\n  tr=$(magick public/assets/players/$f.webp -trim info: 2>/dev/null)\n  echo \"$f: $tr\"\ndone",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== k_ill.jpg 존재/정보 ===\"\nls -la public/assets/illustrations/k_ill.jpg 2>&1\nfile public/assets/illustrations/k_ill.jpg 2>&1\necho \"\"\necho \"=== 스프라이트 프레임 안 캐릭터 실제 차지 영역 (trim) ===\"\nfor f in k_front ktei_front ktei_ss_front; do\n  tr=$(magick public/assets/players/$f.webp -trim info: 2>/dev/null)\n  echo \"$f: $tr\"\ndone",
   "description": "일러스트 확인 + 스프라이트 트림 박스 측정"
 }
 ```
@@ -4697,7 +4697,7 @@ tool_use Read
 id: toolu_01GB3wtmu5zR6Pm3DsF24EF9
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 1,
   "limit": 85
 }
@@ -4737,7 +4737,7 @@ tool_use Read
 id: toolu_01AxriFHBMjNdMUdCEwvhamc
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 96,
   "limit": 70
 }
@@ -4795,7 +4795,7 @@ tool_use Read
 id: toolu_015zoczfBxw9oj1xRTnFU6Mw
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 162,
   "limit": 45
 }
@@ -4856,7 +4856,7 @@ tool_use Bash
 id: toolu_01P35eunosTYBMqT8JdpYthZ
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== 기존 일러스트 규격 참고 ===\"\nfor f in mugi gumi knight; do\n  echo \"$f: $(sips -g pixelWidth -g pixelHeight public/assets/illustrations/$f.webp 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')  ($(du -h public/assets/illustrations/$f.webp | awk '{print $1}'))\"\ndone\necho \"\"\necho \"=== k_ill.jpg → k.webp 변환 (q85) ===\"\ncwebp -quiet -q 85 public/assets/illustrations/k_ill.jpg -o public/assets/illustrations/k.webp\necho \"k.webp: $(sips -g pixelWidth -g pixelHeight public/assets/illustrations/k.webp 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')  ($(du -h public/assets/illustrations/k.webp | awk '{print $1}'))\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== 기존 일러스트 규격 참고 ===\"\nfor f in mugi gumi knight; do\n  echo \"$f: $(sips -g pixelWidth -g pixelHeight public/assets/illustrations/$f.webp 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')  ($(du -h public/assets/illustrations/$f.webp | awk '{print $1}'))\"\ndone\necho \"\"\necho \"=== k_ill.jpg → k.webp 변환 (q85) ===\"\ncwebp -quiet -q 85 public/assets/illustrations/k_ill.jpg -o public/assets/illustrations/k.webp\necho \"k.webp: $(sips -g pixelWidth -g pixelHeight public/assets/illustrations/k.webp 2>/dev/null | grep pixel | awk '{print $2}' | tr '\\n' 'x' | sed 's/x$//')  ($(du -h public/assets/illustrations/k.webp | awk '{print $1}'))\"",
   "description": "기존 일러스트 규격 확인 + k_ill.jpg webp 변환"
 }
 ```
@@ -4885,7 +4885,7 @@ tool_use Read
 id: toolu_011DbXMP9GgJBh6rmTFpeLh1
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/illustrations/k.webp"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/illustrations/k.webp"
 }
 ```
 
@@ -4917,7 +4917,7 @@ id: toolu_0193Gw5pLCpvGrCvXzufDJMi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts",
   "old_string": "  // 텍스처 프리픽스 변경 (골드 스프라이트 전환 등)\n  setTexturePrefix(prefix: string): void {\n    this.texturePrefix = prefix;\n    this.setTexture(`${prefix}${this.currentDir}`);\n  }",
   "new_string": "  // 텍스처 프리픽스 변경 (골드 스프라이트 전환 등)\n  setTexturePrefix(prefix: string): void {\n    this.texturePrefix = prefix;\n    this.setTexture(`${prefix}${this.currentDir}`);\n  }\n\n  // 표시 크기 + 히트박스 재설정 (승계 시 태이 크기로 변경 등)\n  // 생성자와 동일하게 world 16×40 히트박스를 유지한다.\n  resize(displayW: number, displayH: number): void {\n    this.setDisplaySize(displayW, displayH);\n    const sx = this.scaleX;\n    const sy = this.scaleY;\n    this.setSize(16 / sx, 40 / sy);\n    this.setOffset((displayW - 16) / 2 / sx, (displayH - 40) / 2 / sy);\n  }"
 }
@@ -4928,7 +4928,7 @@ id: toolu_0193Gw5pLCpvGrCvXzufDJMi
 tool_result
 id: toolu_0193Gw5pLCpvGrCvXzufDJMi
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4942,7 +4942,7 @@ id: toolu_01GdVsaYWKKubVEQ6qu6KYaC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// ── K (아빠) 능력 ────────────────────────────────────────────────────────\n// 300점마다 ktei_ss_gmhm(각성 발사 포즈) 컷인이 뜨고, 손끝에서 위 대각선으로\n// 에너지파를 발사한다. 화면 중앙 기준 플레이어가 왼쪽이면 오른쪽 위, 오른쪽이면\n// 왼쪽 위로 발사되며 빔 경로상의 일반 똥을 제거한다.\n//\n// 아들 동반자(ktei)는 항상 k와 같은 크기로 땅에서 뒤를 따라다니며(간격 유지, 겹침 없음)\n// 특수똥을 수집한다 (일반 똥은 통과 — 아들은 게임오버 유발 안 함).\n// k가 죽으면(첫 피격) 게임오버 대신 아들이 각성해 ktei_ss 본체로 승계된다 — 1회 한정.\n// 승계 후 본체는 다른 캐릭터보다 살짝 공중에 뜨지만 조작은 좌우만(기존과 동일).\n\nconst GMHM_DISPLAY_W      = 120;   // 컷인 이미지 표시 폭 (원본 768×1344 = 4:7)\nconst GMHM_DISPLAY_H      = 210;   // 표시 높이 (비율 유지)\nconst GMHM_PEAK_ALPHA     = 0.92;  // 컷인 최대 불투명도 (플레이어 시야 확보)\n// 손끝 오프셋: 컷인 이미지 중심(플레이어) 기준. dirX 방향으로 뻗은 손 위치 근사치\nconst HAND_OFFSET_X_RATIO = 0.34;  // 표시 폭 대비 손끝 x\nconst HAND_OFFSET_Y_RATIO = 0.24;  // 표시 높이 대비 손끝 y (위쪽이라 음수 적용)\nconst BEAM_LENGTH         = 780;   // 빔 길이 (화면 대각선보다 김 → 화면 밖까지)\nconst BEAM_HALF_WIDTH     = 34;    // 빔 반경 (경로상 똥 제거 판정)\n\n// 아들(ktei) 동반자 — 플레이어와 같은 크기, 땅에서 뒤를 따라다니며 특수똥 수집\nconst SON_FOLLOW   = 0.16;   // x 추적 lerp 계수\nconst SON_GAP      = 44;     // k와 […]
 
 > TOOL
@@ -4950,7 +4950,7 @@ id: toolu_01GdVsaYWKKubVEQ6qu6KYaC
 tool_result
 id: toolu_01GdVsaYWKKubVEQ6qu6KYaC
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4964,7 +4964,7 @@ id: toolu_0122K4yZfmDrXjBhX1XtFKZi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // 플레이어와 같은 크기, 땅(같은 y)에서 뒤(간격 SON_GAP)에 배치\n    const son = scene.physics.add.sprite(player.x + this.sonSide * SON_GAP, player.y, 'ktei_front');\n    son.setDisplaySize(player.displayWidth, player.displayHeight);",
   "new_string": "    // '태이' 크기로, 땅(같은 y)에서 뒤(간격 SON_GAP)에 배치\n    const son = scene.physics.add.sprite(player.x + this.sonSide * SON_GAP, player.y, 'ktei_front');\n    son.setDisplaySize(KTEI_W, KTEI_H);"
 }
@@ -4975,7 +4975,7 @@ id: toolu_0122K4yZfmDrXjBhX1XtFKZi
 tool_result
 id: toolu_0122K4yZfmDrXjBhX1XtFKZi
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4985,7 +4985,7 @@ id: toolu_01T99VJ3jjHR8meo1CEZhCrF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // 각성형 스프라이트로 교체 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    player.setTexturePrefix('ktei_ss_');\n    player.setY(player.y - SUCCESSION_LIFT);",
   "new_string": "    // 각성형 스프라이트로 교체 + '태이' 크기로 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    player.setTexturePrefix('ktei_ss_');\n    player.resize(KTEI_W, KTEI_H);\n    player.setY(player.y - SUCCESSION_LIFT);"
 }
@@ -4996,7 +4996,7 @@ id: toolu_01T99VJ3jjHR8meo1CEZhCrF
 tool_result
 id: toolu_01T99VJ3jjHR8meo1CEZhCrF
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5010,7 +5010,7 @@ id: toolu_019D1yP89fb5KhHxvwX4bhcg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // ── 에너지파 발사 ──────────────────────────────────────────────────────\n  private _fireGmhm(api: GameSceneAPI): void {\n    const { scene, player } = api;\n    const cx = scene.scale.width / 2;\n\n    // 중앙 기준 왼쪽 → 오른쪽 위 대각선(+1), 오른쪽 → 왼쪽 위 대각선(-1)\n    const onLeft = player.x < cx;\n    const dirX   = onLeft ? 1 : -1;\n    // 방향에 맞는 손 뻗은 스프라이트 (left는 right의 좌우 미러본)\n    const texKey = onLeft ? 'ktei_ss_gmhm_right' : 'ktei_ss_gmhm_left';\n\n    const px = player.x;\n    const py = player.y;\n\n    // 컷인 이미지 — 팝인 후 짧게 유지하고 페이드아웃\n    const img = scene.add.image(px, py, texKey)\n      .setDisplaySize(GMHM_DISPLAY_W, GMHM_DISPLAY_H)\n      .setDepth(320)\n      .setAlpha(0);\n    scene.tweens.add({ targets: img, alpha: GMHM_PEAK_ALPHA, duration: 110, ease: 'Quad.easeOut' });\n    scene.tweens.add({\n      targets: img, alpha: 0, delay: 560, duration: 240, ease: 'Quad.easeIn',\n      onComplete: () => { if (img.active) img.destroy(); },\n    });\n\n    // 손 끝 좌표 (위 대각선으로 뻗은 손)\n    const handX = px + dirX * GMHM_DISPLAY_W * HAND_OFFSET_X_RATIO;\n    const handY = py - GMHM_DISPLAY_H * HAND_OFFSET_Y_RATIO;\n\n    // 45° 위 대각선 단위 벡터\n    const inv = 1 / Math.SQRT2;\n    const ux = dirX * inv;\n    const uy = -inv;\n\n    this._fireBeam(scene, handX, handY, ux, uy);\n    this._clearPoopsAlongBeam(api, handX, handY, ux, uy);\n  }",
   "new_string": "  // ── […]
 
@@ -5019,7 +5019,7 @@ id: toolu_019D1yP89fb5KhHxvwX4bhcg
 tool_result
 id: toolu_019D1yP89fb5KhHxvwX4bhcg
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5033,7 +5033,7 @@ id: toolu_01TLX1KfKzghwAdb6JdYiPrt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts",
   "old_string": "        // ktei_ss(각성 본체) — k 사망 시 승계되는 스프라이트\n        if (!this.textures.exists('ktei_ss_front')) this.load.image('ktei_ss_front', 'assets/players/ktei_ss_front.webp');\n        if (!this.textures.exists('ktei_ss_left'))  this.load.image('ktei_ss_left',  'assets/players/ktei_ss_left.webp');\n        if (!this.textures.exists('ktei_ss_right')) this.load.image('ktei_ss_right', 'assets/players/ktei_ss_right.webp');\n        // 300점마다 발사되는 각성 포즈 컷인 (좌/우 방향별). _left 는 _right 의 미러본\n        if (!this.textures.exists('ktei_ss_gmhm_right')) this.load.image('ktei_ss_gmhm_right', 'assets/players/ktei_ss_gmhm_right.webp');\n        if (!this.textures.exists('ktei_ss_gmhm_left'))  this.load.image('ktei_ss_gmhm_left',  'assets/players/ktei_ss_gmhm_left.webp');\n      }",
   "new_string": "        // ktei_ss(각성 본체) — k 사망 시 승계되는 스프라이트\n        if (!this.textures.exists('ktei_ss_front')) this.load.image('ktei_ss_front', 'assets/players/ktei_ss_front.webp');\n        if (!this.textures.exists('ktei_ss_left'))  this.load.image('ktei_ss_left',  'assets/players/ktei_ss_left.webp');\n        if (!this.textures.exists('ktei_ss_right')) this.load.image('ktei_ss_right', 'assets/players/ktei_ss_right.webp');\n      }"
 }
@@ -5044,7 +5044,7 @@ id: toolu_01TLX1KfKzghwAdb6JdYiPrt
 tool_result
 id: toolu_01TLX1KfKzghwAdb6JdYiPrt
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/GameScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5058,7 +5058,7 @@ id: toolu_011XAdp7XQjsR3YJ2ewD5gK7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts",
   "old_string": "    gradeColor: '#4488ff',\n    // 전용 일러스트 에셋 준비 전까지 플레이어 정면 스프라이트를 카드/일러스트로 재사용\n    imageKey: 'k_front',\n    imagePath: 'assets/players/k_front.webp',\n    illustKey: 'k_front',\n    illustPath: 'assets/players/k_front.webp',",
   "new_string": "    gradeColor: '#4488ff',\n    imageKey: 'k_front',\n    imagePath: 'assets/players/k_front.webp',\n    illustKey: 'illust_k',\n    illustPath: 'assets/illustrations/k.webp',"
 }
@@ -5069,7 +5069,7 @@ id: toolu_011XAdp7XQjsR3YJ2ewD5gK7
 tool_result
 id: toolu_011XAdp7XQjsR3YJ2ewD5gK7
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5078,7 +5078,7 @@ tool_use Bash
 id: toolu_01Cr2nKVfA6m7HLb94SNLbSk
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"=== tsc exit: $? ===\"",
   "description": "3가지 수정 후 타입 검사"
 }
 ```
@@ -5101,7 +5101,7 @@ tool_use Bash
 id: toolu_01EeF8teM6DR879cffyMSmQ4
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== KAbility 내 gmhm 이미지/제거된 상수 잔여 참조 (없어야 정상) ===\"\ngrep -n \"gmhm\\|GMHM_DISPLAY\\|GMHM_PEAK\\|HAND_OFFSET\" src/abilities/KAbility.ts || echo \"잔여 없음 ✓\"\necho \"\"\necho \"=== ktei_ss_gmhm 텍스처 참조 (프로젝트 전체, 이제 미사용이어야) ===\"\ngrep -rn \"ktei_ss_gmhm\" src/ || echo \"코드 참조 없음 ✓ (webp 파일만 존재, 미사용)\"\necho \"\"\necho \"=== 빌드 ===\"\nnpm run build 2>&1 | grep -E \"built in|Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== KAbility 내 gmhm 이미지/제거된 상수 잔여 참조 (없어야 정상) ===\"\ngrep -n \"gmhm\\|GMHM_DISPLAY\\|GMHM_PEAK\\|HAND_OFFSET\" src/abilities/KAbility.ts || echo \"잔여 없음 ✓\"\necho \"\"\necho \"=== ktei_ss_gmhm 텍스처 참조 (프로젝트 전체, 이제 미사용이어야) ===\"\ngrep -rn \"ktei_ss_gmhm\" src/ || echo \"코드 참조 없음 ✓ (webp 파일만 존재, 미사용)\"\necho \"\"\necho \"=== 빌드 ===\"\nnpm run build 2>&1 | grep -E \"built in|Build completed|error|Error\" | head",
   "description": "잔여 참조 검사 + 빌드"
 }
 ```
@@ -5134,7 +5134,7 @@ tool_use Read
 id: toolu_016qnXjTRbM8ctUrvUhRP9px
 ```json
 {
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md"
 }
 ```
 
@@ -5176,7 +5176,7 @@ id: toolu_01Kqy8PUqSYEpkM13xmPYaVv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- `ktei_front/left/right` — 아들 (공룡잠옷 chibi). k 뒤를 0.5배로 따라다닐 동반자",
   "new_string": "- `ktei_front/left/right` — 아들 (공룡잠옷 chibi). k 뒤를 '태이 크기'로 따라다니는 동반자\n- `illustrations/k.webp` — K 카드 일러스트 (아빠가 공룡잠옷 아들 안은 그림, k_ill.jpg 변환)"
 }
@@ -5187,7 +5187,7 @@ id: toolu_01Kqy8PUqSYEpkM13xmPYaVv
 tool_result
 id: toolu_01Kqy8PUqSYEpkM13xmPYaVv
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5197,7 +5197,7 @@ id: toolu_01UncDVk76jHSR8X9auzYUZJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "  교체 + `setY(-21)`로 살짝 공중(SUCCESSION_LIFT=21) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출.",
   "new_string": "  교체 + `player.resize(60,105)`(태이 크기) + `setY(-21)`(SUCCESSION_LIFT) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출."
 }
@@ -5208,7 +5208,7 @@ id: toolu_01UncDVk76jHSR8X9auzYUZJ
 tool_result
 id: toolu_01UncDVk76jHSR8X9auzYUZJ
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5218,7 +5218,7 @@ id: toolu_01Lt6caZZxEewmS5zpz9MUWK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **플레이어와 같은 크기**,\n  **땅(같은 y, 공중 X)**에서 뒤를 따라다님. 물리 스프라이트(중력off)로 **특수똥(gold/diamond/\n  topaz/rainbow) overlap 수집** — 일반 똥은 미등록(통과, 게임오버 유발 안 함). 글리치 분신 패턴 참고.\n  k 이동 방향 반대쪽 `SON_GAP=44`px 리시(leash) 유지 → **k와 절대 겹치지 않음**(글리치보다 가깝게).\n  z-order: `moveBelow(son, player)`. GameScene preload k 블록에 ktei_front/left/right 로드\n- **gmhm 에너지파** — `src/abilities/KAbility.ts` (`KAbility.onScoreMilestone`)\n  - **300점마다** 발동. 화면 중앙(x=200) 기준 플레이어가 왼쪽 → 오른쪽 위 대각선(45°),\n    오른쪽 → 왼쪽 위 대각선으로 손끝에서 빔 발사. 방향별 gmhm 스프라이트 사용\n  - 빔 경로상 일반 똥(api.poops) 제거 +5점/개. 튜닝 상수는 KAbility.ts 상단\n  - 컷인 이미지는 플레이어 위치에 팝인 후 페이드 (~800ms, peak alpha 0.92)",
   "new_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **태이 크기(KTEI 60×105, k[46,80]와 별개)**,\n  **땅(같은 y, 공중 X)**에서 뒤를 따라다님. 물리 스프라이트(중력off)로 **특수똥(gold/diamond/\n  topaz/rainbow) overlap 수집** — 일반 똥은 미등록(통과, 게임오버 유발 안 함). 글리치 분신 패턴 참고.\n  k 이동 방향 반대쪽 `SON_GAP=48`px 리시(leash) 유지 → **k와 절대 겹치지 않음**(글리치보다 가깝게).\n  z-order: `moveBelow(son, player)`. GameScene preload k 블록에 ktei_front/left/right 로드\n- **에너지파 (300점마다)** — `KAbility.onScoreMilestone`. **컷인·포즈 교체 없음**(2026-07-03 변경) —\n  현재 캐릭터가 그대로 손끝에서 발사. 화면 중앙 기준 왼쪽 → 오른쪽 위 45°, 오른쪽 → 왼쪽 위.\n […]
 
@@ -5227,7 +5227,7 @@ id: toolu_01Lt6caZZxEewmS5zpz9MUWK
 tool_result
 id: toolu_01Lt6caZZxEewmS5zpz9MUWK
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5237,7 +5237,7 @@ id: toolu_01Je8Vq7zHnu37kUAMtK146s
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "  - `GameScene.CHARS_WITH_SPRITES`에 'k' + preload gmhm 이미지 특수 로드(mugi→gold_mugi 패턴 옆)\n  - `character.ts` CHARACTERS SR 섹션 (illust는 k_front 재사용 — 전용 일러스트 미준비)",
   "new_string": "  - `GameScene.CHARS_WITH_SPRITES`에 'k' + preload k 블록에 ktei_/ktei_ss_ 스프라이트 로드\n  - `character.ts` CHARACTERS SR 섹션. illust=`assets/illustrations/k.webp`(illustKey `illust_k`)"
 }
@@ -5248,7 +5248,7 @@ id: toolu_01Je8Vq7zHnu37kUAMtK146s
 tool_result
 id: toolu_01Je8Vq7zHnu37kUAMtK146s
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5258,7 +5258,7 @@ id: toolu_01ExPeXYTyxoru6ZaYbVYb3F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- 전용 일러스트 미준비 → `assets/illustrations/k.webp` 추가 후 character.ts illustKey 교체 +\n  `GachaScene.SLIDESHOW_IDS`/`CURRENT_BANNER` 편입 고려 (지금은 k_front 임시 재사용)\n- 관련 선례: `MugiAbility`(부활+황금변신), `Player.setTexturePrefix`(Player.ts:170)",
   "new_string": "- 전용 일러스트 완료(k.webp). `GachaScene.SLIDESHOW_IDS`/`CURRENT_BANNER` 편입은 선택\n- `ktei_ss_gmhm_*` webp 미사용(삭제/재활용 가능). `Player.resize()` 추가됨(Player.ts)\n- 관련 선례: `MugiAbility`(부활+황금변신), `Player.setTexturePrefix`(Player.ts:170)"
 }
@@ -5269,7 +5269,7 @@ id: toolu_01ExPeXYTyxoru6ZaYbVYb3F
 tool_result
 id: toolu_01ExPeXYTyxoru6ZaYbVYb3F
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5316,7 +5316,7 @@ id: toolu_01FY8gcLuyWou856oh1Z9TAp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 태이(ktei) 크기 — 아들 동반자 + 초사이언 본체 공용 (k와 별개). k는 [46,80]\nconst KTEI_W = 60;\nconst KTEI_H = 105;\n\n// 아들(ktei) 동반자\nconst SON_FOLLOW   = 0.16;   // x 추적 lerp 계수\nconst SON_GAP      = 48;     // k와 유지하는 간격 (겹침 방지, 글리치 분신보다 가깝게)\nconst SON_FACE_EPS = 1.2;    // 좌우 방향 전환 최소 이동량 (px/frame)",
   "new_string": "// 태이(ktei) 크기 — 아들 동반자 + 초사이언 본체 공용. 아빠(k)의 60% 크기\nconst KTEI_SCALE = 0.6;\n\n// 아들(ktei) 동반자\nconst SON_FOLLOW   = 0.16;   // x 추적 lerp 계수\nconst SON_GAP      = 36;     // k와 유지하는 간격 (겹침 방지, 글리치 분신보다 가깝게)\nconst SON_FACE_EPS = 1.2;    // 좌우 방향 전환 최소 이동량 (px/frame)"
 }
@@ -5327,7 +5327,7 @@ id: toolu_01FY8gcLuyWou856oh1Z9TAp
 tool_result
 id: toolu_01FY8gcLuyWou856oh1Z9TAp
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5337,7 +5337,7 @@ id: toolu_01SJoxh1AozasKjgiE873byP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 아들 동반자(ktei)는 항상 '태이' 크기(KTEI_W/H — k와 별개)로 땅에서 뒤를 따라다니며\n// (간격 유지, 겹침 없음) 특수똥을 수집한다 (일반 똥은 통과 — 게임오버 유발 안 함).\n// k가 죽으면(첫 피격) 게임오버 대신 아들이 각성해 ktei_ss 본체로 승계된다 — 1회 한정.\n// 승계 후 본체도 같은 '태이' 크기, 살짝 공중에 뜨지만 조작은 좌우만(기존과 동일).",
   "new_string": "// 아들 동반자(ktei)는 항상 '태이' 크기(아빠 k의 60%)로 땅에서 뒤를 따라다니며\n// (간격 유지, 겹침 없음) 특수똥을 수집한다 (일반 똥은 통과 — 게임오버 유발 안 함).\n// k가 죽으면(첫 피격) 게임오버 대신 아들이 각성해 ktei_ss 본체로 승계된다 — 1회 한정.\n// 승계 후 본체도 같은 '태이' 크기(k의 60%), 살짝 공중에 뜨지만 조작은 좌우만(기존과 동일)."
 }
@@ -5348,7 +5348,7 @@ id: toolu_01SJoxh1AozasKjgiE873byP
 tool_result
 id: toolu_01SJoxh1AozasKjgiE873byP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5358,7 +5358,7 @@ id: toolu_01CHC5J8igYzrL8X82vxL1rg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // '태이' 크기로, 땅(같은 y)에서 뒤(간격 SON_GAP)에 배치\n    const son = scene.physics.add.sprite(player.x + this.sonSide * SON_GAP, player.y, 'ktei_front');\n    son.setDisplaySize(KTEI_W, KTEI_H);",
   "new_string": "    // '태이' 크기(아빠의 60%)로, 땅(같은 y)에서 뒤(간격 SON_GAP)에 배치\n    const son = scene.physics.add.sprite(player.x + this.sonSide * SON_GAP, player.y, 'ktei_front');\n    son.setDisplaySize(player.displayWidth * KTEI_SCALE, player.displayHeight * KTEI_SCALE);"
 }
@@ -5369,7 +5369,7 @@ id: toolu_01CHC5J8igYzrL8X82vxL1rg
 tool_result
 id: toolu_01CHC5J8igYzrL8X82vxL1rg
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5379,7 +5379,7 @@ id: toolu_01TKxSHX2a7hVLhgJVerUY71
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // 각성형 스프라이트로 교체 + '태이' 크기로 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    player.setTexturePrefix('ktei_ss_');\n    player.resize(KTEI_W, KTEI_H);\n    player.setY(player.y - SUCCESSION_LIFT);",
   "new_string": "    // 각성형 스프라이트로 교체 + '태이' 크기(k의 60%)로 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    player.setTexturePrefix('ktei_ss_');\n    player.resize(player.displayWidth * KTEI_SCALE, player.displayHeight * KTEI_SCALE);\n    player.setY(player.y - SUCCESSION_LIFT);"
 }
@@ -5390,7 +5390,7 @@ id: toolu_01TKxSHX2a7hVLhgJVerUY71
 tool_result
 id: toolu_01TKxSHX2a7hVLhgJVerUY71
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5399,7 +5399,7 @@ tool_use Bash
 id: toolu_01Ng52edApmDtvxrTnFjygeF
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
   "description": "태이 크기 60% 수정 후 타입검사+빌드"
 }
 ```
@@ -5425,7 +5425,7 @@ id: toolu_01KyEMBNPJtxZan4KVMJdwN6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **태이 크기(KTEI 60×105, k[46,80]와 별개)**,\n  **땅(같은 y, 공중 X)**에서 뒤를 따라다님. 물리 스프라이트(중력off)로 **특수똥(gold/diamond/\n  topaz/rainbow) overlap 수집** — 일반 똥은 미등록(통과, 게임오버 유발 안 함). 글리치 분신 패턴 참고.\n  k 이동 방향 반대쪽 `SON_GAP=48`px 리시(leash) 유지 → **k와 절대 겹치지 않음**(글리치보다 가깝게).",
   "new_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **태이 크기 = 아빠 k의 60%**\n  (`KTEI_SCALE=0.6`, k[46,80] → ~[28,48]. son+ss본체 공용). **땅(같은 y, 공중 X)**에서 뒤를 따라다님.\n  물리 스프라이트(중력off)로 **특수똥(gold/diamond/topaz/rainbow) overlap 수집** — 일반 똥은\n  미등록(통과, 게임오버 유발 안 함). 글리치 분신 패턴 참고.\n  k 이동 방향 반대쪽 `SON_GAP=36`px 리시(leash) 유지 → **k와 절대 겹치지 않음**(글리치보다 가깝게)."
 }
@@ -5436,7 +5436,7 @@ id: toolu_01KyEMBNPJtxZan4KVMJdwN6
 tool_result
 id: toolu_01KyEMBNPJtxZan4KVMJdwN6
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5446,7 +5446,7 @@ id: toolu_01DvrtY21usCpwjD2hNuXiR9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "  교체 + `player.resize(60,105)`(태이 크기) + `setY(-21)`(SUCCESSION_LIFT) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출.",
   "new_string": "  교체 + `player.resize(k의 60%)`(태이 크기) + `setY(-21)`(SUCCESSION_LIFT) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출."
 }
@@ -5457,7 +5457,7 @@ id: toolu_01DvrtY21usCpwjD2hNuXiR9
 tool_result
 id: toolu_01DvrtY21usCpwjD2hNuXiR9
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5498,7 +5498,7 @@ id: toolu_01TDXgtia9exVn9egGrHzob4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 태이(ktei) 크기 — 아들 동반자 + 초사이언 본체 공용. 아빠(k)의 60% 크기\nconst KTEI_SCALE = 0.6;",
   "new_string": "// 태이(ktei) 크기 — 아들 동반자 + 초사이언 본체 공용. 아빠(k)의 80% 크기\nconst KTEI_SCALE = 0.8;"
 }
@@ -5509,7 +5509,7 @@ id: toolu_01TDXgtia9exVn9egGrHzob4
 tool_result
 id: toolu_01TDXgtia9exVn9egGrHzob4
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5523,7 +5523,7 @@ id: toolu_01HHiAfcyDBVjSXSXgRYcGJJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 아들 동반자(ktei)는 항상 '태이' 크기(아빠 k의 60%)로 땅에서 뒤를 따라다니며\n// (간격 유지, 겹침 없음) 특수똥을 수집한다 (일반 똥은 통과 — 게임오버 유발 안 함).\n// k가 죽으면(첫 피격) 게임오버 대신 아들이 각성해 ktei_ss 본체로 승계된다 — 1회 한정.\n// 승계 후 본체도 같은 '태이' 크기(k의 60%), 살짝 공중에 뜨지만 조작은 좌우만(기존과 동일).",
   "new_string": "// 아들 동반자(ktei)는 항상 '태이' 크기(아빠 k의 80%)로 땅에서 뒤를 따라다니며\n// (간격 유지, 겹침 없음) 특수똥을 수집한다 (일반 똥은 통과 — 게임오버 유발 안 함).\n// k가 죽으면(첫 피격) 게임오버 대신 아들이 각성해 ktei_ss 본체로 승계된다 — 1회 한정.\n// 승계 후 본체도 같은 '태이' 크기(k의 80%), 살짝 공중에 뜨지만 조작은 좌우만(기존과 동일)."
 }
@@ -5534,7 +5534,7 @@ id: toolu_01HHiAfcyDBVjSXSXgRYcGJJ
 tool_result
 id: toolu_01HHiAfcyDBVjSXSXgRYcGJJ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5544,7 +5544,7 @@ id: toolu_01FDwtHh9LUzQX1pN7AD8zjc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // '태이' 크기(아빠의 60%)로, 땅(같은 y)에서 뒤(간격 SON_GAP)에 배치\n    const son = scene.physics.add.sprite(player.x + this.sonSide * SON_GAP, player.y, 'ktei_front');\n    son.setDisplaySize(player.displayWidth * KTEI_SCALE, player.displayHeight * KTEI_SCALE);\n    (son.body as Phaser.Physics.Arcade.Body).setAllowGravity(false);",
   "new_string": "    // '태이' 크기(아빠의 80%)로, 땅(발 라인 정렬)에서 뒤(간격 SON_GAP)에 배치\n    const son = scene.physics.add.sprite(player.x + this.sonSide * SON_GAP, player.y, 'ktei_front');\n    son.setDisplaySize(player.displayWidth * KTEI_SCALE, player.displayHeight * KTEI_SCALE);\n    // 작아진 만큼 아래로 내려 발을 아빠와 같은 바닥 라인에 맞춤 (센터 원점 보정)\n    son.setY(player.y + (player.displayHeight - son.displayHeight) / 2);\n    (son.body as Phaser.Physics.Arcade.Body).setAllowGravity(false);"
 }
@@ -5555,7 +5555,7 @@ id: toolu_01FDwtHh9LUzQX1pN7AD8zjc
 tool_result
 id: toolu_01FDwtHh9LUzQX1pN7AD8zjc
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5565,7 +5565,7 @@ id: toolu_01KB4YVokhE88j9JbUfCBLSJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    son.x = Phaser.Math.Linear(son.x, targetX, SON_FOLLOW);\n    son.y = player.y;",
   "new_string": "    son.x = Phaser.Math.Linear(son.x, targetX, SON_FOLLOW);\n    son.y = player.y + (player.displayHeight - son.displayHeight) / 2; // 발을 아빠 바닥 라인에 고정"
 }
@@ -5576,7 +5576,7 @@ id: toolu_01KB4YVokhE88j9JbUfCBLSJ
 tool_result
 id: toolu_01KB4YVokhE88j9JbUfCBLSJ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5585,7 +5585,7 @@ tool_use Bash
 id: toolu_01DSbTKizBE2fNBpUAnQVrRD
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
   "description": "80% + 바닥 정렬 수정 후 타입검사+빌드"
 }
 ```
@@ -5611,7 +5611,7 @@ id: toolu_0144ZRNz2CqSesUpRzQYYxhN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **태이 크기 = 아빠 k의 60%**\n  (`KTEI_SCALE=0.6`, k[46,80] → ~[28,48]. son+ss본체 공용). **땅(같은 y, 공중 X)**에서 뒤를 따라다님.",
   "new_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **태이 크기 = 아빠 k의 80%**\n  (`KTEI_SCALE=0.8`, k[46,80] → ~[37,64]. son+ss본체 공용). **땅에 발 정렬**(공중 X):\n  센터 원점이라 `son.y = player.y + (player.displayHeight − son.displayHeight)/2`로 발을 아빠 바닥 라인에 맞춤."
 }
@@ -5622,7 +5622,7 @@ id: toolu_0144ZRNz2CqSesUpRzQYYxhN
 tool_result
 id: toolu_0144ZRNz2CqSesUpRzQYYxhN
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5632,7 +5632,7 @@ id: toolu_01717bN45kXQSib5R9TWtgnp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "  교체 + `player.resize(k의 60%)`(태이 크기) + `setY(-21)`(SUCCESSION_LIFT) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출.",
   "new_string": "  교체 + `player.resize(k의 80%)`(태이 크기) + `setY(-21)`(SUCCESSION_LIFT) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출."
 }
@@ -5643,7 +5643,7 @@ id: toolu_01717bN45kXQSib5R9TWtgnp
 tool_result
 id: toolu_01717bN45kXQSib5R9TWtgnp
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5709,7 +5709,7 @@ id: toolu_01Vy69y6Xx3DcrUPaBGadtKe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 태이(ktei) 크기 — 아들 동반자 + 초사이언 본체 공용. 아빠(k)의 80% 크기\nconst KTEI_SCALE = 0.8;",
   "new_string": "// 태이(ktei) 크기 — 아들 동반자 + 초사이언 본체 공용. 아빠(k)의 80% 크기\nconst KTEI_SCALE = 0.8;\n// 초사이언(ktei_ss)은 프레임 세로 채움이 아들(ktei)보다 작아(1110px vs 1166px) 같은 박스면\n// 캐릭터가 작아 보임 → 트림 높이 비율만큼 본체를 균일 확대해 시각적 크기를 아들과 일치.\nconst SS_HEIGHT_COMP = 1166 / 1110; // ≈ 1.05"
 }
@@ -5720,7 +5720,7 @@ id: toolu_01Vy69y6Xx3DcrUPaBGadtKe
 tool_result
 id: toolu_01Vy69y6Xx3DcrUPaBGadtKe
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5730,7 +5730,7 @@ id: toolu_014we7m1naXcfW9ujdSd9xQS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // 각성형 스프라이트로 교체 + '태이' 크기(k의 80%)로 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    player.setTexturePrefix('ktei_ss_');\n    player.resize(player.displayWidth * KTEI_SCALE, player.displayHeight * KTEI_SCALE);\n    player.setY(player.y - SUCCESSION_LIFT);",
   "new_string": "    // 각성형 스프라이트로 교체 + '태이' 크기(k의 80%)로 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    // SS_HEIGHT_COMP로 균일 확대 → 초사이언 캐릭터 겉보기 크기를 변경 전 아들과 일치\n    player.setTexturePrefix('ktei_ss_');\n    const kteiScale = KTEI_SCALE * SS_HEIGHT_COMP;\n    player.resize(player.displayWidth * kteiScale, player.displayHeight * kteiScale);\n    player.setY(player.y - SUCCESSION_LIFT);"
 }
@@ -5755,7 +5755,7 @@ tool_use Read
 id: toolu_01QSaD6oyBrwpZSHFz2DHG63
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 115,
   "limit": 16
 }
@@ -5791,7 +5791,7 @@ id: toolu_01XEjtmfzHgKQqW1EyWvZXiT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // 각성형 스프라이트로 교체 + '태이' 크기(k의 60%)로 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    player.setTexturePrefix('ktei_ss_');\n    player.resize(player.displayWidth * KTEI_SCALE, player.displayHeight * KTEI_SCALE);\n    player.setY(player.y - SUCCESSION_LIFT);",
   "new_string": "    // 각성형 스프라이트로 교체 + '태이' 크기(k의 80%)로 + 살짝 공중으로 (조작은 기존 좌우 그대로)\n    // SS_HEIGHT_COMP로 균일 확대 → 초사이언 캐릭터 겉보기 크기를 변경 전 아들과 일치\n    player.setTexturePrefix('ktei_ss_');\n    const kteiScale = KTEI_SCALE * SS_HEIGHT_COMP;\n    player.resize(player.displayWidth * kteiScale, player.displayHeight * kteiScale);\n    player.setY(player.y - SUCCESSION_LIFT);"
 }
@@ -5802,7 +5802,7 @@ id: toolu_01XEjtmfzHgKQqW1EyWvZXiT
 tool_result
 id: toolu_01XEjtmfzHgKQqW1EyWvZXiT
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5811,7 +5811,7 @@ tool_use Bash
 id: toolu_01Ldo42YhB37tUfjiSRogThH
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
   "description": "초사이언 크기 보정 후 타입검사+빌드"
 }
 ```
@@ -5844,7 +5844,7 @@ id: toolu_018cjhUBTPx9gscBYgLR78a4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "  교체 + `player.resize(k의 80%)`(태이 크기) + `setY(-21)`(SUCCESSION_LIFT) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출.",
   "new_string": "  교체 + `player.resize(k의 80% × SS_HEIGHT_COMP)` — 초사이언 그림이 프레임을 덜 채워(세로 1110 vs\n  아들 1166px) 겉보기 크기를 아들과 일치시키려 ×(1166/1110≈1.05) 균일 확대(아트 왜곡 없음) —\n  + `setY(-21)`(SUCCESSION_LIFT) + `setInvincibleBriefly(1500)` + 전체 똥 제거 + 금빛 연출."
 }
@@ -5855,7 +5855,7 @@ id: toolu_018cjhUBTPx9gscBYgLR78a4
 tool_result
 id: toolu_018cjhUBTPx9gscBYgLR78a4
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5909,7 +5909,7 @@ tool_use Read
 id: toolu_019k3wBoGRQBeJs9aSsUfGz4
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 160,
   "limit": 130
 }
@@ -5974,7 +5974,7 @@ id: toolu_01UbcX5xesMgwY5Nfv4LJUhj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts",
   "old_string": "  // 효과 타이머\n  private invincibleTimer?: Phaser.Time.TimerEvent;\n  private speedBoostTimer?: Phaser.Time.TimerEvent;\n  private rainbowTimer?: Phaser.Time.TimerEvent;",
   "new_string": "  // 효과 타이머\n  private invincibleTimer?: Phaser.Time.TimerEvent;\n  private speedBoostTimer?: Phaser.Time.TimerEvent;\n  private rainbowTimer?: Phaser.Time.TimerEvent;\n\n  // 일시 정지 (초사이언 에너지파 발사 순간 등)\n  private frozen: boolean = false;\n  private freezeTimer?: Phaser.Time.TimerEvent;"
 }
@@ -5985,7 +5985,7 @@ id: toolu_01UbcX5xesMgwY5Nfv4LJUhj
 tool_result
 id: toolu_01UbcX5xesMgwY5Nfv4LJUhj
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5995,7 +5995,7 @@ id: toolu_01RdgNafRZ4FSu8tAX7sUHss
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts",
   "old_string": "  update() {\n    let isMoving = false;\n    let nextDir: string = this.currentDir;",
   "new_string": "  update() {\n    // 정지 상태: 입력 무시하고 제자리 (현재 방향 스프라이트 유지)\n    if (this.frozen) {\n      this.setVelocityX(0);\n      return;\n    }\n\n    let isMoving = false;\n    let nextDir: string = this.currentDir;"
 }
@@ -6006,7 +6006,7 @@ id: toolu_01RdgNafRZ4FSu8tAX7sUHss
 tool_result
 id: toolu_01RdgNafRZ4FSu8tAX7sUHss
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6020,7 +6020,7 @@ id: toolu_01663a65rz87Y7UUv1sVVSnN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts",
   "old_string": "  // 표시 크기 + 히트박스 재설정 (승계 시 태이 크기로 변경 등)",
   "new_string": "  // 일정 시간 이동 정지 (초사이언 에너지파 발사 순간 등). 무적과 무관.\n  freeze(duration: number): void {\n    this.frozen = true;\n    this.setVelocityX(0);\n    if (this.freezeTimer) this.freezeTimer.remove();\n    this.freezeTimer = this.scene.time.addEvent({\n      delay: duration,\n      callback: () => { this.frozen = false; },\n      callbackScope: this,\n    });\n  }\n\n  // 표시 크기 + 히트박스 재설정 (승계 시 태이 크기로 변경 등)"
 }
@@ -6031,7 +6031,7 @@ id: toolu_01663a65rz87Y7UUv1sVVSnN
 tool_result
 id: toolu_01663a65rz87Y7UUv1sVVSnN
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6041,7 +6041,7 @@ id: toolu_012PnA9rjoym6cvfaJVfm5KP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts",
   "old_string": "    if (this.rainbowTimer) {\n      this.rainbowTimer.remove();\n    }\n  }\n}",
   "new_string": "    if (this.rainbowTimer) {\n      this.rainbowTimer.remove();\n    }\n    if (this.freezeTimer) {\n      this.freezeTimer.remove();\n    }\n  }\n}"
 }
@@ -6052,7 +6052,7 @@ id: toolu_012PnA9rjoym6cvfaJVfm5KP
 tool_result
 id: toolu_012PnA9rjoym6cvfaJVfm5KP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/objects/Player.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6065,7 +6065,7 @@ tool_use Read
 id: toolu_01CriZDqCuq4GnWmXVSvQxuX
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 17,
   "limit": 18
 }
@@ -6103,7 +6103,7 @@ id: toolu_01JLpjaQ6iABmHQC9k8rdo3B
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 에너지파 (gmhm)\nconst BEAM_LENGTH     = 780;   // 빔 길이 (화면 대각선보다 김 → 화면 밖까지)\nconst BEAM_HALF_WIDTH = 34;    // 빔 반경 (경로상 똥 제거 판정)\nconst HAND_X_RATIO    = 0.22;  // 플레이어 폭 대비 손끝 x 오프셋 (발사 방향쪽)\nconst HAND_Y_RATIO    = 0.34;  // 플레이어 높이 대비 손끝 y 오프셋 (위쪽)",
   "new_string": "// 에너지파 (gmhm)\nconst BEAM_LENGTH     = 780;   // 빔 길이 (화면 대각선보다 김 → 화면 밖까지)\nconst BEAM_HALF_WIDTH = 34;    // 빔 반경 (경로상 똥 제거 판정) — 초사이언 전\nconst HAND_X_RATIO    = 0.22;  // 플레이어 폭 대비 손끝 x 오프셋 (발사 방향쪽)\nconst HAND_Y_RATIO    = 0.34;  // 플레이어 높이 대비 손끝 y 오프셋 (위쪽)\n// 빔이 살아있는 동안 반복 판정하여 라인을 통과하는 똥까지 확실히 제거 (순간 1회 판정 시 대부분 놓침)\nconst BEAM_SWEEP_COUNT    = 5;   // 총 판정 횟수\nconst BEAM_SWEEP_INTERVAL = 90;  // 판정 간격 (ms) → 5회 × 90ms ≈ 빔 지속시간 커버\n\n// 초사이언(ktei_ss) 강화 에너지파 — 멈춰서 더 굵게 + 주변 범위까지 제거\nconst SS_BEAM_WIDTH_MUL = 1.8;  // 빔 두께 배율 (더 굵게)\nconst SS_BEAM_HALF_WIDTH = 60;  // 굵어진 빔의 똥 제거 반경\nconst SS_AURA_RADIUS     = 100; // 멈춰서 쏘는 동안 캐릭터 주변 원형 제거 반경\nconst SS_FREEZE_MS       = 420; // 발사 순간 이동 정지 시간"
 } […]
@@ -6113,7 +6113,7 @@ id: toolu_01JLpjaQ6iABmHQC9k8rdo3B
 tool_result
 id: toolu_01JLpjaQ6iABmHQC9k8rdo3B
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6127,7 +6127,7 @@ id: toolu_011tFH8WzLuGuzKwHhBnN36Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // ── 에너지파 발사 (컷인 없이 현재 캐릭터가 그대로 발사) ──────────────────\n  private _fireGmhm(api: GameSceneAPI): void {\n    const { scene, player } = api;\n\n    // 중앙 기준 왼쪽 → 오른쪽 위 대각선(+1), 오른쪽 → 왼쪽 위 대각선(-1)\n    const dirX = player.x < scene.scale.width / 2 ? 1 : -1;\n\n    // 손 끝 좌표 — 현재 캐릭터의 상체(발사 방향쪽)에서 시작\n    const handX = player.x + dirX * player.displayWidth * HAND_X_RATIO;\n    const handY = player.y - player.displayHeight * HAND_Y_RATIO;\n\n    // 45° 위 대각선 단위 벡터\n    const inv = 1 / Math.SQRT2;\n    const ux = dirX * inv;\n    const uy = -inv;\n\n    this._fireBeam(scene, handX, handY, ux, uy);\n    this._clearPoopsAlongBeam(api, handX, handY, ux, uy);\n  }\n\n  // ── 빔 비주얼 (손끝에서 뻗어나가는 3중 글로우 라인) ───────────────────────\n  private _fireBeam(\n    scene: Phaser.Scene,\n    ox: number, oy: number, ux: number, uy: number,\n  ): void {\n    const g = scene.add.graphics().setDepth(315);\n    const state = { t: 0, fade: 1 };\n\n    const redraw = () => {\n      if (!g.active) return;\n      g.clear();\n      const ex = ox + ux * BEAM_LENGTH * state.t;\n      const ey = oy + uy * BEAM_LENGTH * state.t;\n      const a = state.fade;\n      g.lineStyle(24, 0x3aa0ff, 0.22 * a); g.lineBetween(ox, oy, […]
 
 > TOOL
@@ -6135,7 +6135,7 @@ id: toolu_011tFH8WzLuGuzKwHhBnN36Q
 tool_result
 id: toolu_011tFH8WzLuGuzKwHhBnN36Q
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6144,7 +6144,7 @@ tool_use Bash
 id: toolu_01E3RcRKFMnSyE7d4dBaoEwf
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
   "description": "초사이언 에너지파 강화 후 타입검사+빌드"
 }
 ```
@@ -6170,7 +6170,7 @@ id: toolu_01GqHyZ88dzqByZUoh2kRzF2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- **에너지파 (300점마다)** — `KAbility.onScoreMilestone`. **컷인·포즈 교체 없음**(2026-07-03 변경) —\n  현재 캐릭터가 그대로 손끝에서 발사. 화면 중앙 기준 왼쪽 → 오른쪽 위 45°, 오른쪽 → 왼쪽 위.\n  빔 경로상 일반 똥 제거 +5점/개. 손끝 오프셋 HAND_X/Y_RATIO(플레이어 크기 비례).\n  → `ktei_ss_gmhm_*` 에셋은 **더 이상 사용 안 함**(파일만 존재)",
   "new_string": "- **에너지파 (300점마다)** — `KAbility.onScoreMilestone`. **컷인·포즈 교체 없음** —\n  현재 캐릭터가 그대로 손끝에서 발사. 화면 중앙 기준 왼쪽 → 오른쪽 위 45°, 오른쪽 → 왼쪽 위.\n  빔 경로상 일반 똥 제거 +5점/개. 손끝 오프셋 HAND_X/Y_RATIO(플레이어 크기 비례).\n  → `ktei_ss_gmhm_*` 에셋은 **더 이상 사용 안 함**(파일만 존재)\n  - **똥 제거 버그 수정(2026-07-03)**: 발사 순간 1회 판정 → 라인 위 똥 거의 못 맞힘.\n    `_sweepBeam`으로 빔 지속 동안 `BEAM_SWEEP_COUNT=5`회 × 90ms 반복 판정(recycle된 똥은 active=false로 중복 제외).\n  - **초사이언(transformed) 강화 빔(2026-07-03)**: 발사 순간 `player.freeze(420ms)`로 멈춰서 쏨 +\n    빔 굵기 ×1.8(SS_BEAM_WIDTH_MUL) + 제거 반경 60px + **캐릭터 주변 원형 범위**(SS_AURA_RADIUS=100)\n    똥도 제거(`_clearPoopsAround` + 오라 링 연출). 초사이언 전은 기존 대각선 빔 그대로.\n  - `Player.freeze(duration)` 추가 — update() 초반 frozen이면 velocity 0 + return(입력 무시). cleanup에 타이머 정리."
 }
@@ -6181,7 +6181,7 @@ id: toolu_01GqHyZ88dzqByZUoh2kRzF2
 tool_result
 id: toolu_01GqHyZ88dzqByZUoh2kRzF2
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6225,7 +6225,7 @@ tool_use Bash
 id: toolu_01H3JemsfPbYoi3BsSmPCbeZ
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== SentinelAbility 번개/파지직 관련 ===\"\ngrep -n \"spark\\|lightning\\|bolt\\|파지직\\|번개\\|zap\\|arc\\|jagged\\|lineStyle\\|lineBetween\\|moveTo\\|lineTo\\|strokePath\\|Between\" src/abilities/SentinelAbility.ts | head -40",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== SentinelAbility 번개/파지직 관련 ===\"\ngrep -n \"spark\\|lightning\\|bolt\\|파지직\\|번개\\|zap\\|arc\\|jagged\\|lineStyle\\|lineBetween\\|moveTo\\|lineTo\\|strokePath\\|Between\" src/abilities/SentinelAbility.ts | head -40",
   "description": "센티넬 파지직 이펙트 검색"
 }
 ```
@@ -6281,7 +6281,7 @@ tool_use Read
 id: toolu_01JQDtRQU6x7LPzFhZ7QSpAS
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/SentinelAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/SentinelAbility.ts",
   "offset": 103,
   "limit": 50
 }
@@ -6344,7 +6344,7 @@ id: toolu_01EyxWXmar4t9SJYWaCqL1Bg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 초사이언(ktei_ss) 강화 에너지파 — 멈춰서 더 굵게 + 주변 범위까지 제거\nconst SS_BEAM_WIDTH_MUL = 1.8;  // 빔 두께 배율 (더 굵게)\nconst SS_BEAM_HALF_WIDTH = 60;  // 굵어진 빔의 똥 제거 반경\nconst SS_AURA_RADIUS     = 100; // 멈춰서 쏘는 동안 캐릭터 주변 원형 제거 반경\nconst SS_FREEZE_MS       = 420; // 발사 순간 이동 정지 시간",
   "new_string": "// 초사이언(ktei_ss) 강화 에너지파 — 멈춰서 더 굵게 + 주변 범위까지 제거\nconst SS_BEAM_WIDTH_MUL = 2.7;  // 빔 두께 배율 (더 굵게)\nconst SS_BEAM_HALF_WIDTH = 72;  // 굵어진 빔의 똥 제거 반경\nconst SS_AURA_RADIUS     = 100; // 멈춰서 쏘는 동안 캐릭터 주변 원형 제거 반경\nconst SS_FREEZE_MS       = 420; // 발사 순간 이동 정지 시간\n\n// 파지직 번개 (센티넬 drawSparkLine 참고)\nconst SPARK_YELLOW  = 0xffee44; // 노란 파지직 (빔 주변 + 캐릭터 주변)\nconst SPARK_BLUE    = 0x59b8ff; // 파란 파지직 (캐릭터 주변)\nconst CRACKLE_MS    = 480;      // 파지직 지속 시간 (초사이언 발사 연출)\nconst CRACKLE_STEP  = 55;       // 파지직 리드로 간격 (ms)"
 }
@@ -6355,7 +6355,7 @@ id: toolu_01EyxWXmar4t9SJYWaCqL1Bg
 tool_result
 id: toolu_01EyxWXmar4t9SJYWaCqL1Bg
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6369,7 +6369,7 @@ id: toolu_01WHv5iAFoGuWKZX1jftgCLJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    this._fireBeam(scene, handX, handY, ux, uy, widthMul);\n    this._sweepBeam(api, handX, handY, ux, uy, halfWidth);\n\n    // 초사이언: 멈춰서 쏘므로 캐릭터 주변 원형 범위의 똥도 제거\n    if (isSs) {\n      this._auraEffect(scene, player.x, player.y, SS_AURA_RADIUS);\n      this._clearPoopsAround(api, player.x, player.y, SS_AURA_RADIUS);\n    }\n  }",
   "new_string": "    this._fireBeam(scene, handX, handY, ux, uy, widthMul);\n    this._sweepBeam(api, handX, handY, ux, uy, halfWidth);\n\n    // 초사이언: 멈춰서 쏘므로 캐릭터 주변 원형 범위의 똥도 제거 + 파지직 번개 연출\n    if (isSs) {\n      this._auraEffect(scene, player.x, player.y, SS_AURA_RADIUS);\n      this._clearPoopsAround(api, player.x, player.y, SS_AURA_RADIUS);\n      // 빔 주변 노란 파지직 (빔 라인을 따라)\n      this._crackleAlongBeam(scene, handX, handY, ux, uy, BEAM_LENGTH);\n      // 캐릭터 주변 파란·노란 파지직 (멈춰 있는 동안)\n      this._crackleAround(scene, () => player.x, () => player.y, SS_AURA_RADIUS * 0.7);\n    }\n  }"
 }
@@ -6380,7 +6380,7 @@ id: toolu_01WHv5iAFoGuWKZX1jftgCLJ
 tool_result
 id: toolu_01WHv5iAFoGuWKZX1jftgCLJ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6394,7 +6394,7 @@ id: toolu_01VnHZZd7T74aLsSgCcUGM8L
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // ── 초사이언 오라 링 (주변 범위 제거 시각화) ─────────────────────────────\n  private _auraEffect(scene: Phaser.Scene, x: number, y: number, radius: number): void {\n    const ring = scene.add.graphics({ x, y }).setDepth(314);\n    ring.fillStyle(0x8fd4ff, 0.28); ring.fillCircle(0, 0, radius);\n    ring.lineStyle(4, 0xffffff, 0.9); ring.strokeCircle(0, 0, radius);\n    scene.tweens.add({\n      targets: ring, scaleX: 1.25, scaleY: 1.25, alpha: 0, duration: 340, ease: 'Quad.easeOut',\n      onComplete: () => { if (ring.active) ring.destroy(); },\n    });\n  }",
   "new_string": "  // ── 초사이언 오라 링 (주변 범위 제거 시각화) ─────────────────────────────\n  private _auraEffect(scene: Phaser.Scene, x: number, y: number, radius: number): void {\n    const ring = scene.add.graphics({ x, y }).setDepth(314);\n    ring.fillStyle(0x8fd4ff, 0.28); ring.fillCircle(0, 0, radius);\n    ring.lineStyle(4, 0xffffff, 0.9); ring.strokeCircle(0, 0, radius);\n    scene.tweens.add({\n      targets: ring, scaleX: 1.25, scaleY: 1.25, alpha: 0, duration: 340, ease: 'Quad.easeOut',\n      onComplete: () => { if (ring.active) ring.destroy(); },\n    });\n  }\n\n  // ── 파지직 번개 (센티넬 drawSparkLine 참고) ──────────────────────────────\n  // 시작점에서 랜덤 지그재그 세그먼트를 이어 그린 전기 스파크\n  private _drawSpark(\n    g: Phaser.GameObjects.Graphics, ox: number, oy: number,\n    thickness: number, segLen: number, color: number,\n  ): void {\n    g.lineStyle(thickness, color, 1);\n    g.beginPath();\n    let px = ox + Phaser.Math.Between(-5, 5);\n    let py = oy + Phaser.Math.Between(-5, 5);\n    g.moveTo(px, py);\n    const segs = Phaser.Math.Between(2, 4);\n    for (let j […]
 
@@ -6403,7 +6403,7 @@ id: toolu_01VnHZZd7T74aLsSgCcUGM8L
 tool_result
 id: toolu_01VnHZZd7T74aLsSgCcUGM8L
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6412,7 +6412,7 @@ tool_use Bash
 id: toolu_01EbcvtJP7F1bAVkcoehjjEg
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
   "description": "파지직 번개 추가 후 타입검사+빌드"
 }
 ```
@@ -6438,7 +6438,7 @@ id: toolu_0174yB78AtpS7r9XE2v1VnrX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "  - **초사이언(transformed) 강화 빔(2026-07-03)**: 발사 순간 `player.freeze(420ms)`로 멈춰서 쏨 +\n    빔 굵기 ×1.8(SS_BEAM_WIDTH_MUL) + 제거 반경 60px + **캐릭터 주변 원형 범위**(SS_AURA_RADIUS=100)\n    똥도 제거(`_clearPoopsAround` + 오라 링 연출). 초사이언 전은 기존 대각선 빔 그대로.",
   "new_string": "  - **초사이언(transformed) 강화 빔(2026-07-03)**: 발사 순간 `player.freeze(420ms)`로 멈춰서 쏨 +\n    빔 굵기 ×2.7(SS_BEAM_WIDTH_MUL) + 제거 반경 72px + **캐릭터 주변 원형 범위**(SS_AURA_RADIUS=100)\n    똥도 제거(`_clearPoopsAround` + 오라 링 연출). 초사이언 전은 기존 대각선 빔 그대로.\n  - **파지직 번개(2026-07-03)**: 센티넬 `drawSparkLine` 지그재그 패턴 이식(`_drawSpark`). 초사이언 발사 시\n    `_crackleAlongBeam`(빔 라인 따라 노란 파지직) + `_crackleAround`(캐릭터 주변 파란/노란 파지직).\n    `_runCrackle`이 CRACKLE_STEP(55ms)마다 리드로, CRACKLE_MS(480ms) 후 정리. 색: SPARK_YELLOW/BLUE."
 }
@@ -6449,7 +6449,7 @@ id: toolu_0174yB78AtpS7r9XE2v1VnrX
 tool_result
 id: toolu_0174yB78AtpS7r9XE2v1VnrX
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6494,7 +6494,7 @@ tool_use Read
 id: toolu_01JCtRCC6RXmB5XaKohomTa2
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 195,
   "limit": 30
 }
@@ -6555,7 +6555,7 @@ id: toolu_01JMDE7h8sjctUyxjBsijkeK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "      // 캐릭터 주변 파란·노란 파지직 (멈춰 있는 동안)\n      this._crackleAround(scene, () => player.x, () => player.y, SS_AURA_RADIUS * 0.7);",
   "new_string": "      // 캐릭터 주변 파란·노란 파지직 (멈춰 있는 동안)\n      this._crackleAround(scene, () => player.x, () => player.y, player.displayHeight * 0.55);"
 }
@@ -6566,7 +6566,7 @@ id: toolu_01JMDE7h8sjctUyxjBsijkeK
 tool_result
 id: toolu_01JMDE7h8sjctUyxjBsijkeK
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6576,7 +6576,7 @@ id: toolu_01JEqLmF5wm2NeuhvaKfq8eQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // 캐릭터 주변 파란·노란 파지직 (좌표는 매 프레임 갱신 — 멈춰 있어도 안전)\n  private _crackleAround(\n    scene: Phaser.Scene, getX: () => number, getY: () => number, radius: number,\n  ): void {\n    this._runCrackle(scene, 317, g => {\n      const cx = getX(), cy = getY();\n      const bolts = 7;\n      for (let i = 0; i < bolts; i++) {\n        const a = Phaser.Math.FloatBetween(0, Math.PI * 2);\n        const r = Phaser.Math.FloatBetween(radius * 0.35, radius);\n        const sx = cx + Math.cos(a) * r;\n        const sy = cy + Math.sin(a) * r * 0.85;\n        const color = Math.random() < 0.5 ? SPARK_BLUE : SPARK_YELLOW;\n        this._drawSpark(g, sx, sy, Phaser.Math.FloatBetween(1.5, 2.8), 11, color);\n      }\n    });\n  }",
   "new_string": "  // 캐릭터 주변 파란·노란 파지직 (좌표는 매 프레임 갱신 — 멈춰 있어도 안전)\n  // 몸통 바깥 링에서 방출되게 그려 캐릭터 그림에 묻히지 않도록 함\n  private _crackleAround(\n    scene: Phaser.Scene, getX: () => number, getY: () => number, radius: number,\n  ): void {\n    this._runCrackle(scene, 318, g => {\n      const cx = getX(), cy = getY();\n      const bolts = 12;\n      for (let i = 0; i < bolts; i++) {\n        // 링 둘레에 고르게 분포 + 약간 흔들기 → 몸통을 감싸는 […]
 
@@ -6585,7 +6585,7 @@ id: toolu_01JEqLmF5wm2NeuhvaKfq8eQ
 tool_result
 id: toolu_01JEqLmF5wm2NeuhvaKfq8eQ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6594,7 +6594,7 @@ tool_use Bash
 id: toolu_01GDKtxBi7e7A5kRxtK2UiVF
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit && echo \"tsc OK\" && npm run build 2>&1 | grep -E \"Build completed|error|Error\" | head",
   "description": "캐릭터 주변 파지직 강화 후 타입검사+빌드"
 }
 ```
@@ -6655,7 +6655,7 @@ tool_use Read
 id: toolu_01PdMErfZpLEdHDDmrZXmNST
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 40,
   "limit": 120
 }
@@ -6703,7 +6703,7 @@ tool_use Read
 id: toolu_016NV2mF1JDoBZ1KESuCC2Mp
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/config/abilityParams.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/config/abilityParams.ts",
   "offset": 159,
   "limit": 14
 }
@@ -6734,7 +6734,7 @@ id: toolu_01FQbm6sE7aBEMJJ2gNwHmxQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/config/abilityParams.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/config/abilityParams.ts",
   "old_string": "// ── K (아빠 / SR) — 각성 에너지파 ──────────────────────────────────────\nexport const K_PARAMS = {\n  gmhmInterval:      300, // 에너지파 발동 점수 간격\n  beamPointsPerPoop: 5,   // 빔 경로상 제거 똥당 보너스 점수\n} as const;\n\nexport const K_DESC = {\n  basicEffect:    `${K_PARAMS.gmhmInterval}점마다 각성 에너지파 발사 — 화면 중앙 반대쪽 위 대각선으로 손끝에서 발사, 빔 경로상 똥 제거 (+${K_PARAMS.beamPointsPerPoop}점/개)`,\n  specialAbility: '없음',\n} as const;",
   "new_string": "// ── K (아빠 / SR) — 각성 에너지파 ──────────────────────────────────────\nexport const K_PARAMS = {\n  gmhmInterval:      300, // 에너지파 발동 점수 간격 (초사이언 전)\n  gmhmIntervalSs:    200, // 에너지파 발동 점수 간격 (초사이언 후 — 더 자주)\n  beamPointsPerPoop: 5,   // 빔 경로상 제거 똥당 보너스 점수\n} as const;\n\nexport const K_DESC = {\n  basicEffect:    `${K_PARAMS.gmhmInterval}점마다 각성 에너지파 발사 — 화면 중앙 반대쪽 위 대각선으로 손끝에서 발사, 빔 경로상 똥 제거 (+${K_PARAMS.beamPointsPerPoop}점/개)`,\n  specialAbility: `피격 시 아들이 각성해 본체로 부활 (1회) — 이후 ${K_PARAMS.gmhmIntervalSs}점마다 멈춰서 강화 에너지파`,\n} as const;"
 }
@@ -6745,7 +6745,7 @@ id: toolu_01FQbm6sE7aBEMJJ2gNwHmxQ
 tool_result
 id: toolu_01FQbm6sE7aBEMJJ2gNwHmxQ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/config/abilityParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/config/abilityParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6759,7 +6759,7 @@ id: toolu_01WsGpgSepxNFQzXRFiDxQbd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  onScoreMilestone(score: number, api: GameSceneAPI): void {\n    if (score % K_PARAMS.gmhmInterval !== 0) return;\n    if (score <= this.lastGmhmScore) return;\n    this.lastGmhmScore = score;\n    this._fireGmhm(api);\n  }",
   "new_string": "  onScoreMilestone(score: number, api: GameSceneAPI): void {\n    // 초사이언 후엔 더 자주(200점), 전엔 300점마다\n    const interval = this.transformed ? K_PARAMS.gmhmIntervalSs : K_PARAMS.gmhmInterval;\n    if (score % interval !== 0) return;\n    if (score <= this.lastGmhmScore) return;\n    this.lastGmhmScore = score;\n    this._fireGmhm(api);\n  }"
 }
@@ -6770,7 +6770,7 @@ id: toolu_01WsGpgSepxNFQzXRFiDxQbd
 tool_result
 id: toolu_01WsGpgSepxNFQzXRFiDxQbd
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6784,7 +6784,7 @@ id: toolu_013B1AaLhiYB6U77MRXZB8vP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 아들(ktei) 동반자\nconst SON_FOLLOW   = 0.16;   // x 추적 lerp 계수\nconst SON_GAP      = 36;     // k와 유지하는 간격 (겹침 방지, 글리치 분신보다 가깝게)\nconst SON_FACE_EPS = 1.2;    // 좌우 방향 전환 최소 이동량 (px/frame)",
   "new_string": "// 아들(ktei) 동반자 — 아빠와 무관하게 혼자 좌우로 왔다갔다 (경계에서 방향 반전)\nconst SON_WANDER_SPEED  = 130;  // 배회 속도 (px/s)\nconst SON_WANDER_MARGIN = 40;   // 좌우 반전 여백 (화면 가장자리에서)"
 }
@@ -6795,7 +6795,7 @@ id: toolu_013B1AaLhiYB6U77MRXZB8vP
 tool_result
 id: toolu_013B1AaLhiYB6U77MRXZB8vP
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6805,7 +6805,7 @@ id: toolu_012MB5tzmq84Ab5va2k6Zz3W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // 아들(ktei) 동반자 — onCreate에서 생성, onUpdate에서 추적, onDestroy에서 정리\n  private son?: Phaser.Physics.Arcade.Sprite;\n  private sonDir: string = 'front';\n  private sonSide = -1; // k 기준 아들이 있는 쪽 (-1 왼쪽 / +1 오른쪽) = k 이동 방향의 반대",
   "new_string": "  // 아들(ktei) 동반자 — onCreate에서 생성, onUpdate에서 배회, onDestroy에서 정리\n  private son?: Phaser.Physics.Arcade.Sprite;\n  private sonDir: string = 'front';\n  private sonWanderDir = -1; // 배회 방향 (-1 왼쪽 / +1 오른쪽)\n  private sonFootOffset = 0; // 발을 바닥 라인에 맞추기 위한 y 오프셋 (센터 원점 보정)"
 }
@@ -6816,7 +6816,7 @@ id: toolu_012MB5tzmq84Ab5va2k6Zz3W
 tool_result
 id: toolu_012MB5tzmq84Ab5va2k6Zz3W
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6830,7 +6830,7 @@ id: toolu_01QzwYKnhvTABmePtq8Q7NdZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // '태이' 크기(아빠의 80%)로, 땅(발 라인 정렬)에서 뒤(간격 SON_GAP)에 배치\n    const son = scene.physics.add.sprite(player.x + this.sonSide * SON_GAP, player.y, 'ktei_front');\n    son.setDisplaySize(player.displayWidth * KTEI_SCALE, player.displayHeight * KTEI_SCALE);\n    // 작아진 만큼 아래로 내려 발을 아빠와 같은 바닥 라인에 맞춤 (센터 원점 보정)\n    son.setY(player.y + (player.displayHeight - son.displayHeight) / 2);\n    (son.body as Phaser.Physics.Arcade.Body).setAllowGravity(false);\n    // 배경 위 · 플레이어 뒤로 배치 (표시 순서로 제어)\n    scene.children.moveBelow(son, player);",
   "new_string": "    // '태이' 크기(아빠의 80%)로, 땅(발 라인 정렬)에서 배회\n    const son = scene.physics.add.sprite(scene.scale.width / 2, player.y, 'ktei_front');\n    son.setDisplaySize(player.displayWidth * KTEI_SCALE, player.displayHeight * KTEI_SCALE);\n    // 작아진 만큼 아래로 내려 발을 아빠와 같은 바닥 라인에 맞춤 (센터 원점 보정)\n    this.sonFootOffset = (player.displayHeight - son.displayHeight) / 2;\n    son.setY(player.y + this.sonFootOffset);\n    const body = son.body as Phaser.Physics.Arcade.Body;\n    body.setAllowGravity(false);\n    son.setVelocityX(SON_WANDER_SPEED * this.sonWanderDir); // 혼자 좌우 왕복 시작\n    // 배경 위 · 플레이어 뒤로 배치 (표시 순서로 제어)\n    scene.children.moveBelow(son, player);"
 }
@@ -6841,7 +6841,7 @@ id: toolu_01QzwYKnhvTABmePtq8Q7NdZ
 tool_result
 id: toolu_01QzwYKnhvTABmePtq8Q7NdZ
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6855,7 +6855,7 @@ id: toolu_01E2Vf4swPZjENsXv5zVJi3w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  onUpdate(api: GameSceneAPI): void {\n    const son = this.son;\n    if (!son || !son.active) return;\n    const { player } = api;\n\n    // k의 이동 방향 → 아들은 반대쪽(뒤)에 위치 (겹침 방지)\n    const vx = (player.body as Phaser.Physics.Arcade.Body).velocity.x;\n    if (vx > 1) this.sonSide = -1;      // k 오른쪽 이동 → 아들은 왼쪽(뒤)\n    else if (vx < -1) this.sonSide = 1; // k 왼쪽 이동 → 아들은 오른쪽(뒤)\n\n    // k로부터 SON_GAP 떨어진 뒤쪽으로 부드럽게 이동, 땅에 붙어서(공중 X)\n    const prevX = son.x;\n    const targetX = player.x + this.sonSide * SON_GAP;\n    son.x = Phaser.Math.Linear(son.x, targetX, SON_FOLLOW);\n    son.y = player.y + (player.displayHeight - son.displayHeight) / 2; // 발을 아빠 바닥 라인에 고정\n\n    // 이동 방향으로 좌우 스프라이트 전환 (거의 멈추면 정면)\n    const dx = son.x - prevX;\n    const dir = dx > SON_FACE_EPS ? 'right' : dx < -SON_FACE_EPS ? 'left' : 'front';\n    if (dir !== this.sonDir) {\n      son.setTexture(`ktei_${dir}`);\n      this.sonDir = dir;\n    }\n  }",
   "new_string": "  onUpdate(api: GameSceneAPI): void {\n    const son = this.son;\n    if (!son || !son.active) return;\n    const { scene, player } = api;\n\n    // 혼자 좌우 왕복 — 화면 가장자리(여백 안쪽)에 닿으면 방향 반전\n    const half = son.displayWidth / 2;\n    const […]
 
@@ -6864,7 +6864,7 @@ id: toolu_01E2Vf4swPZjENsXv5zVJi3w
 tool_result
 id: toolu_01E2Vf4swPZjENsXv5zVJi3w
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6873,7 +6873,7 @@ tool_use Bash
 id: toolu_01BFNFn1PyTkdn2dtetWfFHT
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit 2>&1 | head -20; echo \"=== tsc exit: ${PIPESTATUS[0]} ===\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit 2>&1 | head -20; echo \"=== tsc exit: ${PIPESTATUS[0]} ===\"",
   "description": "아들 배회 + 초사이언 200점 후 타입검사"
 }
 ```
@@ -6892,7 +6892,7 @@ tool_use Bash
 id: toolu_01K4WxmFV569UpJHSep1qeQy
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS|Error\" | head",
   "description": "타입검사 확정 + 빌드"
 }
 ```
@@ -6918,7 +6918,7 @@ id: toolu_013rXD5tznZj3mbM2vVpn6Ar
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **태이 크기 = 아빠 k의 80%**\n  (`KTEI_SCALE=0.8`, k[46,80] → ~[37,64]. son+ss본체 공용). **땅에 발 정렬**(공중 X):\n  센터 원점이라 `son.y = player.y + (player.displayHeight − son.displayHeight)/2`로 발을 아빠 바닥 라인에 맞춤.\n  물리 스프라이트(중력off)로 **특수똥(gold/diamond/topaz/rainbow) overlap 수집** — 일반 똥은\n  미등록(통과, 게임오버 유발 안 함). 글리치 분신 패턴 참고.\n  k 이동 방향 반대쪽 `SON_GAP=36`px 리시(leash) 유지 → **k와 절대 겹치지 않음**(글리치보다 가깝게).\n  z-order: `moveBelow(son, player)`. GameScene preload k 블록에 ktei_front/left/right 로드",
   "new_string": "- **아들 동반자(ktei)** — `KAbility.onCreate/onUpdate/onDestroy`. **태이 크기 = 아빠 k의 80%**\n  (`KTEI_SCALE=0.8`, k[46,80] → ~[37,64]. son+ss본체 공용). **땅에 발 정렬**(공중 X):\n  센터 원점이라 `sonFootOffset = (player.displayHeight − son.displayHeight)/2`, `son.y = player.y + sonFootOffset`.\n  물리 스프라이트(중력off)로 **특수똥(gold/diamond/topaz/rainbow) overlap 수집** — 일반 똥은\n  미등록(통과, 게임오버 유발 안 함). 글리치 분신 패턴 참고.\n  **이동(2026-07-03 변경): 아빠 추적 X → 혼자 좌우 왕복.** `setVelocityX(SON_WANDER_SPEED=130 × dir)`,\n  onUpdate에서 화면 가장자리(SON_WANDER_MARGIN=40 여백) 닿으면 방향 반전. 아빠와 겹침 허용(충돌 판정 없음).\n  z-order: `moveBelow(son, player)`. GameScene preload k 블록에 ktei_front/left/right 로드"
 }
@@ -6929,7 +6929,7 @@ id: toolu_013rXD5tznZj3mbM2vVpn6Ar
 tool_result
 id: toolu_013rXD5tznZj3mbM2vVpn6Ar
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6939,7 +6939,7 @@ id: toolu_0139iC4bJQ19qHu6QWsS5Yf1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- **에너지파 (300점마다)** — `KAbility.onScoreMilestone`. **컷인·포즈 교체 없음** —\n  현재 캐릭터가 그대로 손끝에서 발사. 화면 중앙 기준 왼쪽 → 오른쪽 위 45°, 오른쪽 → 왼쪽 위.",
   "new_string": "- **에너지파** — `KAbility.onScoreMilestone`. **초사이언 전 300점 / 후 200점마다**(2026-07-03,\n  `K_PARAMS.gmhmInterval`/`gmhmIntervalSs`, transformed로 분기). **컷인·포즈 교체 없음** —\n  현재 캐릭터가 그대로 손끝에서 발사. 화면 중앙 기준 왼쪽 → 오른쪽 위 45°, 오른쪽 → 왼쪽 위."
 }
@@ -6950,7 +6950,7 @@ id: toolu_0139iC4bJQ19qHu6QWsS5Yf1
 tool_result
 id: toolu_0139iC4bJQ19qHu6QWsS5Yf1
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7000,7 +7000,7 @@ id: toolu_01H4K7CuRyFd5sEY9rKGJ5Es
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // ── 에너지파 발사 (컷인 없이 현재 캐릭터가 그대로 발사) ──────────────────\n  private _fireGmhm(api: GameSceneAPI): void {\n    const { scene, player } = api;\n    const isSs = this.transformed; // 초사이언 승계 후 여부\n\n    // 중앙 기준 왼쪽 → 오른쪽 위 대각선(+1), 오른쪽 → 왼쪽 위 대각선(-1)\n    const dirX = player.x < scene.scale.width / 2 ? 1 : -1;\n\n    // 초사이언: 발사 순간 잠깐 멈춰서 쏨\n    if (isSs) player.freeze(SS_FREEZE_MS);\n\n    // 손 끝 좌표 — 현재 캐릭터의 상체(발사 방향쪽)에서 시작\n    const handX = player.x + dirX * player.displayWidth * HAND_X_RATIO;\n    const handY = player.y - player.displayHeight * HAND_Y_RATIO;\n\n    // 45° 위 대각선 단위 벡터\n    const inv = 1 / Math.SQRT2;\n    const ux = dirX * inv;\n    const uy = -inv;\n\n    const widthMul  = isSs ? SS_BEAM_WIDTH_MUL : 1;\n    const halfWidth = isSs ? SS_BEAM_HALF_WIDTH : BEAM_HALF_WIDTH;\n\n    this._fireBeam(scene, handX, handY, ux, uy, widthMul);\n    this._sweepBeam(api, handX, handY, ux, uy, halfWidth);\n\n    // 초사이언: 멈춰서 쏘므로 캐릭터 주변 원형 범위의 똥도 제거 + 파지직 번개 연출\n    if (isSs) {\n      this._auraEffect(scene, player.x, player.y, SS_AURA_RADIUS);\n      this._clearPoopsAround(api, player.x, player.y, SS_AURA_RADIUS);\n      // 빔 주변 노란 파지직 (빔 라인을 따라)\n      this._crackleAlongBeam(scene, handX, handY, ux, uy, BEAM_LENGTH);\n      // 캐릭터 주변 파란·노란 […]
 
 > TOOL
@@ -7008,7 +7008,7 @@ id: toolu_01H4K7CuRyFd5sEY9rKGJ5Es
 tool_result
 id: toolu_01H4K7CuRyFd5sEY9rKGJ5Es
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7017,7 +7017,7 @@ tool_use Bash
 id: toolu_01UgDxvh9jMRuo3GYbzkBJ8a
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS|Error\" | head",
   "description": "발사 주체 분기 후 타입검사+빌드"
 }
 ```
@@ -7043,7 +7043,7 @@ id: toolu_018cjYqFQQr8dyv72qqo2iiJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "- **에너지파** — `KAbility.onScoreMilestone`. **초사이언 전 300점 / 후 200점마다**(2026-07-03,\n  `K_PARAMS.gmhmInterval`/`gmhmIntervalSs`, transformed로 분기). **컷인·포즈 교체 없음** —\n  현재 캐릭터가 그대로 손끝에서 발사. 화면 중앙 기준 왼쪽 → 오른쪽 위 45°, 오른쪽 → 왼쪽 위.",
   "new_string": "- **에너지파** — `KAbility.onScoreMilestone`. **초사이언 전 300점 / 후 200점마다**(2026-07-03,\n  `K_PARAMS.gmhmInterval`/`gmhmIntervalSs`, transformed로 분기). **컷인·포즈 교체 없음**.\n  **발사 주체(shooter): 초사이언 전 = 아들 `this.son`(ktei), 후 = 본체 `player`(ktei_ss)** — 손끝\n  좌표·방향·연출 모두 shooter 기준. 화면 중앙 기준 왼쪽 → 오른쪽 위 45°, 오른쪽 → 왼쪽 위."
 }
@@ -7054,7 +7054,7 @@ id: toolu_018cjYqFQQr8dyv72qqo2iiJ
 tool_result
 id: toolu_018cjYqFQQr8dyv72qqo2iiJ
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7101,7 +7101,7 @@ tool_use Read
 id: toolu_01UnZ7KcApQc2XWkZ39ZkLQA
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 53,
   "limit": 14
 }
@@ -7141,7 +7141,7 @@ id: toolu_01FfBcRtfUC4RY1HPA9Hau7u
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // 사망 승계 여부 (1회만 승계 → 이후 정상 게임오버)\n  private transformed = false;",
   "new_string": "  // 사망 승계 여부 (1회만 승계 → 이후 정상 게임오버)\n  private transformed = false;\n\n  // 초사이언 상시 오라 파지직 (재사용 Graphics + 주기적 리드로)\n  private ssAura?: Phaser.GameObjects.Graphics;\n  private ssAuraNext = 0;"
 }
@@ -7152,7 +7152,7 @@ id: toolu_01FfBcRtfUC4RY1HPA9Hau7u
 tool_result
 id: toolu_01FfBcRtfUC4RY1HPA9Hau7u
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7162,7 +7162,7 @@ id: toolu_01CSKt61JdupDhNDiY23K9Hm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "// 파지직 번개 (센티넬 drawSparkLine 참고)\nconst SPARK_YELLOW  = 0xffee44; // 노란 파지직 (빔 주변 + 캐릭터 주변)\nconst SPARK_BLUE    = 0x59b8ff; // 파란 파지직 (캐릭터 주변)\nconst CRACKLE_MS    = 480;      // 파지직 지속 시간 (초사이언 발사 연출)\nconst CRACKLE_STEP  = 55;       // 파지직 리드로 간격 (ms)",
   "new_string": "// 파지직 번개 (센티넬 drawSparkLine 참고)\nconst SPARK_YELLOW  = 0xffee44; // 노란 파지직 (빔 주변 + 캐릭터 주변)\nconst SPARK_BLUE    = 0x59b8ff; // 파란 파지직 (캐릭터 주변)\nconst CRACKLE_MS    = 480;      // 빔 주변 파지직 지속 시간 (발사 연출, 일회성)\nconst CRACKLE_STEP  = 55;       // 빔 주변 파지직 리드로 간격 (ms)\nconst SS_AURA_STEP  = 80;       // 초사이언 상시 오라 파지직 리드로 간격 (ms)"
 }
@@ -7173,7 +7173,7 @@ id: toolu_01CSKt61JdupDhNDiY23K9Hm
 tool_result
 id: toolu_01CSKt61JdupDhNDiY23K9Hm
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7187,7 +7187,7 @@ id: toolu_01QF7PGsTN1iMf7FQbcmgtVC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // 승계 순간 보호 + 화면 정리 (승계 직후 즉사·불공정 방지)\n    player.setInvincibleBriefly(SUCCESSION_INVINCIBLE_MS);\n    this._clearAllPoops(api);\n\n    // 각성 연출: 금빛 섬광 + 확장 링 + 버스트\n    this._succeedEffect(scene, player.x, player.y);",
   "new_string": "    // 승계 순간 보호 + 화면 정리 (승계 직후 즉사·불공정 방지)\n    player.setInvincibleBriefly(SUCCESSION_INVINCIBLE_MS);\n    this._clearAllPoops(api);\n\n    // 초사이언 상시 오라 파지직 (onUpdate에서 주기적 리드로)\n    this.ssAura = scene.add.graphics().setDepth(318);\n\n    // 각성 연출: 금빛 섬광 + 확장 링 + 버스트\n    this._succeedEffect(scene, player.x, player.y);"
 }
@@ -7198,7 +7198,7 @@ id: toolu_01QF7PGsTN1iMf7FQbcmgtVC
 tool_result
 id: toolu_01QF7PGsTN1iMf7FQbcmgtVC
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7212,7 +7212,7 @@ id: toolu_01JjwmEyY4fnRjt5CrzGQUL1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  onUpdate(api: GameSceneAPI): void {\n    const son = this.son;\n    if (!son || !son.active) return;\n    const { scene, player } = api;",
   "new_string": "  onUpdate(api: GameSceneAPI): void {\n    // 초사이언 후: 아들 없음 → 캐릭터 주변 상시 오라 파지직만 갱신\n    if (this.transformed) {\n      this._updateSsAura(api);\n      return;\n    }\n\n    const son = this.son;\n    if (!son || !son.active) return;\n    const { scene, player } = api;"
 }
@@ -7223,7 +7223,7 @@ id: toolu_01JjwmEyY4fnRjt5CrzGQUL1
 tool_result
 id: toolu_01JjwmEyY4fnRjt5CrzGQUL1
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7236,7 +7236,7 @@ tool_use Read
 id: toolu_01CY1k6GzXJDesEKdgLHGbPy
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 122,
   "limit": 8
 }
@@ -7263,7 +7263,7 @@ tool_use Read
 id: toolu_01V6AnU36vnDB6M4bmKykvJb
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 130,
   "limit": 15
 }
@@ -7298,7 +7298,7 @@ id: toolu_01G29zBqhfghZizGzVZrKDjz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  onDestroy(_api: GameSceneAPI): void {\n    this.son?.destroy();\n    this.son = undefined;\n  }",
   "new_string": "  onDestroy(_api: GameSceneAPI): void {\n    this.son?.destroy();\n    this.son = undefined;\n    this.ssAura?.destroy();\n    this.ssAura = undefined;\n  }\n\n  // ── 초사이언 상시 오라 파지직: 주기적으로 clear+리드로 (재사용 Graphics) ───\n  private _updateSsAura(api: GameSceneAPI): void {\n    const g = this.ssAura;\n    if (!g?.active) return;\n    const { scene, player } = api;\n    if (scene.time.now < this.ssAuraNext) return;\n    this.ssAuraNext = scene.time.now + SS_AURA_STEP;\n    g.clear();\n    this._drawAuraSparks(g, player.x, player.y, player.displayHeight * 0.55);\n  }\n\n  // 캐릭터를 감싸는 파란·노란 파지직 (몸통 바깥 링에서 방출)\n  private _drawAuraSparks(g: Phaser.GameObjects.Graphics, cx: number, cy: number, radius: number): void {\n    const bolts = 12;\n    for (let i = 0; i < bolts; i++) {\n      const a = (i / bolts) * Math.PI * 2 + Phaser.Math.FloatBetween(-0.25, 0.25);\n      const r = Phaser.Math.FloatBetween(radius * 0.85, radius * 1.3);\n      const sx = cx + Math.cos(a) * r;\n      const sy = cy + Math.sin(a) * r * 0.95;\n      const color = i % 2 === 0 ? SPARK_BLUE : SPARK_YELLOW;\n      this._drawSpark(g, sx, sy, Phaser.Math.FloatBetween(2.2, 3.6), 16, color);\n      this._drawSpark(g, sx, sy, 1, 12, 0xffffff); // 밝은 코어로 선명하게\n    }\n  }"
 }
@@ -7309,7 +7309,7 @@ id: toolu_01G29zBqhfghZizGzVZrKDjz
 tool_result
 id: toolu_01G29zBqhfghZizGzVZrKDjz
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7323,7 +7323,7 @@ id: toolu_01566gW31PQeqxuAG8c9VxSk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "      // 빔 주변 노란 파지직 (빔 라인을 따라)\n      this._crackleAlongBeam(scene, handX, handY, ux, uy, BEAM_LENGTH);\n      // 캐릭터 주변 파란·노란 파지직 (멈춰 있는 동안)\n      this._crackleAround(scene, () => shooter.x, () => shooter.y, shooter.displayHeight * 0.55);\n    }",
   "new_string": "      // 빔 주변 노란 파지직 (빔 라인을 따라) — 캐릭터 오라는 onUpdate에서 상시 처리\n      this._crackleAlongBeam(scene, handX, handY, ux, uy, BEAM_LENGTH);\n    }"
 }
@@ -7334,7 +7334,7 @@ id: toolu_01566gW31PQeqxuAG8c9VxSk
 tool_result
 id: toolu_01566gW31PQeqxuAG8c9VxSk
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7348,7 +7348,7 @@ id: toolu_01DHrWQh6QttSo88US8UnM8Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "  // 캐릭터 주변 파란·노란 파지직 (좌표는 매 프레임 갱신 — 멈춰 있어도 안전)\n  // 몸통 바깥 링에서 방출되게 그려 캐릭터 그림에 묻히지 않도록 함\n  private _crackleAround(\n    scene: Phaser.Scene, getX: () => number, getY: () => number, radius: number,\n  ): void {\n    this._runCrackle(scene, 318, g => {\n      const cx = getX(), cy = getY();\n      const bolts = 12;\n      for (let i = 0; i < bolts; i++) {\n        // 링 둘레에 고르게 분포 + 약간 흔들기 → 몸통을 감싸는 전기\n        const a = (i / bolts) * Math.PI * 2 + Phaser.Math.FloatBetween(-0.25, 0.25);\n        const r = Phaser.Math.FloatBetween(radius * 0.85, radius * 1.3);\n        const sx = cx + Math.cos(a) * r;\n        const sy = cy + Math.sin(a) * r * 0.95;\n        const color = i % 2 === 0 ? SPARK_BLUE : SPARK_YELLOW;\n        this._drawSpark(g, sx, sy, Phaser.Math.FloatBetween(2.2, 3.6), 16, color);\n        this._drawSpark(g, sx, sy, 1, 12, 0xffffff); // 밝은 코어로 선명하게\n      }\n    });\n  }",
   "new_string": ""
 }
@@ -7359,7 +7359,7 @@ id: toolu_01DHrWQh6QttSo88US8UnM8Q
 tool_result
 id: toolu_01DHrWQh6QttSo88US8UnM8Q
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7368,7 +7368,7 @@ tool_use Bash
 id: toolu_01DoHWLgfMcFCfD1FwWpvnJy
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS|Error\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS|Error\" | head",
   "description": "상시 오라 파지직 후 타입검사+빌드"
 }
 ```
@@ -7394,7 +7394,7 @@ id: toolu_01B1dXXgu2TFjZkP7yeZHjUP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md",
   "old_string": "  - **파지직 번개(2026-07-03)**: 센티넬 `drawSparkLine` 지그재그 패턴 이식(`_drawSpark`). 초사이언 발사 시\n    `_crackleAlongBeam`(빔 라인 따라 노란 파지직) + `_crackleAround`(캐릭터 주변 파란/노란 파지직).\n    `_runCrackle`이 CRACKLE_STEP(55ms)마다 리드로, CRACKLE_MS(480ms) 후 정리. 색: SPARK_YELLOW/BLUE.",
   "new_string": "  - **파지직 번개(2026-07-03)**: 센티넬 `drawSparkLine` 지그재그 패턴 이식(`_drawSpark`). 색: SPARK_YELLOW/BLUE.\n    - **빔 주변 노란 파지직** = 발사 순간 일회성. `_crackleAlongBeam` + `_runCrackle`(CRACKLE_STEP 55ms 리드로, CRACKLE_MS 480ms 후 자동 정리).\n    - **캐릭터 주변 파란/노란 오라** = **초사이언 상시 효과**(발사와 무관). 승계 시 재사용 Graphics `ssAura` 생성,\n      `onUpdate`가 초사이언이면 `_updateSsAura`로 SS_AURA_STEP(80ms)마다 clear+`_drawAuraSparks` 리드로(몸통 바깥 링 12개\n      + 흰 코어). onDestroy에서 정리. 센티넬 sparkGfx 방식."
 }
@@ -7405,7 +7405,7 @@ id: toolu_01B1dXXgu2TFjZkP7yeZHjUP
 tool_result
 id: toolu_01B1dXXgu2TFjZkP7yeZHjUP
 ```
-The file /Users/johyunduk/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-johyunduk-Projects-ddong-avoid-game/memory/project_k_character_system.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7453,7 +7453,7 @@ id: toolu_018bu2ynaMk6X3WpWdyct2SY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    this.ssAuraNext = scene.time.now + SS_AURA_STEP;\n    g.clear();\n    this._drawAuraSparks(g, player.x, player.y, player.displayHeight * 0.55);\n  }\n\n  // 캐릭터를 감싸는 파란·노란 파지직 (몸통 바깥 링에서 방출)\n  private _drawAuraSparks(g: Phaser.GameObjects.Graphics, cx: number, cy: number, radius: number): void {\n    const bolts = 12;\n    for (let i = 0; i < bolts; i++) {\n      const a = (i / bolts) * Math.PI * 2 + Phaser.Math.FloatBetween(-0.25, 0.25);\n      const r = Phaser.Math.FloatBetween(radius * 0.85, radius * 1.3);\n      const sx = cx + Math.cos(a) * r;\n      const sy = cy + Math.sin(a) * r * 0.95;\n      const color = i % 2 === 0 ? SPARK_BLUE : SPARK_YELLOW;\n      this._drawSpark(g, sx, sy, Phaser.Math.FloatBetween(2.2, 3.6), 16, color);\n      this._drawSpark(g, sx, sy, 1, 12, 0xffffff); // 밝은 코어로 선명하게\n    }\n  }",
   "new_string": "    this.ssAuraNext = scene.time.now + SS_AURA_STEP;\n    g.clear();\n    this._drawAuraSparks(g, player.x, player.y, player.displayHeight * 0.38);\n  }\n\n  // 캐릭터를 감싸는 파란·노란 파지직 (몸통에 바짝 붙는 링에서 방출)\n  private _drawAuraSparks(g: Phaser.GameObjects.Graphics, cx: number, cy: number, radius: number): void {\n    const bolts = 12;\n    for (let i = 0; i < bolts; i++) {\n      const a = (i / bolts) * Math.PI * 2 + Phaser.Math.FloatBetween(-0.25, 0.25);\n      const r = Phaser.Math.FloatBetween(radius * 0.9, radius […]
 
@@ -7462,7 +7462,7 @@ id: toolu_018bu2ynaMk6X3WpWdyct2SY
 tool_result
 id: toolu_018bu2ynaMk6X3WpWdyct2SY
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7471,7 +7471,7 @@ tool_use Bash
 id: toolu_018fZcEh2PWz6FgaLfpbehvW
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS\" | head",
   "description": "파지직 범위 축소 후 타입검사+빌드"
 }
 ```
@@ -7522,7 +7522,7 @@ tool_use Read
 id: toolu_01H8mQ7iY2d5ofQLxWf4GFsc
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/public/assets/illustrations/ted_ill.png"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/public/assets/illustrations/ted_ill.png"
 }
 ```
 
@@ -7551,7 +7551,7 @@ tool_use Bash
 id: toolu_01K8KPwtizgyBCAmwo4Laajd
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== 기존 캐릭터 능력 설명(DESC) 전체 ===\"\ngrep -n \"basicEffect:\\|specialAbility:\" src/config/abilityParams.ts | head -60",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== 기존 캐릭터 능력 설명(DESC) 전체 ===\"\ngrep -n \"basicEffect:\\|specialAbility:\" src/config/abilityParams.ts | head -60",
   "description": "기존 능력 설명 전수 확인"
 }
 ```
@@ -7855,7 +7855,7 @@ tool_use Bash
 id: toolu_016Db52WNWC7MXKegE8xM4Rs
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\necho \"=== PoolablePoopBase — 똥이 바닥에서 recycle되는 지점 ===\"\ncat src/objects/PoolablePoopBase.ts",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\necho \"=== PoolablePoopBase — 똥이 바닥에서 recycle되는 지점 ===\"\ncat src/objects/PoolablePoopBase.ts",
   "description": "똥 바닥 통과/recycle 로직 확인"
 }
 ```
@@ -7957,7 +7957,7 @@ tool_use Read
 id: toolu_01LGK2qvXGtbzPB3eXfGVM1u
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 185,
   "limit": 18
 }
@@ -7994,7 +7994,7 @@ tool_use Read
 id: toolu_01CJ7qVGrRLEu2iQPQFdsX5h
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 220,
   "limit": 18
 }
@@ -8036,7 +8036,7 @@ id: toolu_01TG1CqFozyNE2iRiB2Ygmzn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // 초사이언: 발사 순간 잠깐 멈춰서 쏨\n    if (isSs) player.freeze(SS_FREEZE_MS);",
   "new_string": "    // 초사이언: 발사 순간 잠깐 멈춰서 쏨 — 정지 동안 무적으로 회피 손해 방지\n    if (isSs) {\n      player.freeze(SS_FREEZE_MS);\n      player.setInvincibleBriefly(SS_FREEZE_MS);\n    }"
 }
@@ -8047,7 +8047,7 @@ id: toolu_01TG1CqFozyNE2iRiB2Ygmzn
 tool_result
 id: toolu_01TG1CqFozyNE2iRiB2Ygmzn
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8056,7 +8056,7 @@ tool_use Bash
 id: toolu_01TvEwt1GxDLqMrrJJNp4Qjf
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS\" | head",
   "description": "정지+무적 적용 후 타입검사+빌드"
 }
 ```
@@ -8092,7 +8092,7 @@ id: toolu_011qF2twbbsK6RBPsLSvuGVy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "    // 초사이언: 발사 순간 잠깐 멈춰서 쏨 — 정지 동안 무적으로 회피 손해 방지\n    if (isSs) {\n      player.freeze(SS_FREEZE_MS);\n      player.setInvincibleBriefly(SS_FREEZE_MS);\n    }",
   "new_string": "    // (초사이언 발사 시 정지 없음 — 움직이면서 발사)"
 }
@@ -8103,7 +8103,7 @@ id: toolu_011qF2twbbsK6RBPsLSvuGVy
 tool_result
 id: toolu_011qF2twbbsK6RBPsLSvuGVy
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8116,7 +8116,7 @@ tool_use Bash
 id: toolu_01DuY9rv7qb2P15jwtsPusAL
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit 2>&1 | head; echo \"tsc=${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit 2>&1 | head; echo \"tsc=${PIPESTATUS[0]}\"",
   "description": "정지 제거 후 타입검사 (미사용 상수 경고 확인)"
 }
 ```
@@ -8140,7 +8140,7 @@ tool_use Read
 id: toolu_01TdnPe6QuGxpbB3wavgGVTV
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "offset": 27,
   "limit": 8
 }
@@ -8168,7 +8168,7 @@ id: toolu_0142qU4eoKnGQZQ3rBjofEW1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts",
   "old_string": "const SS_BEAM_WIDTH_MUL = 2.7;  // 빔 두께 배율 (더 굵게)\nconst SS_BEAM_HALF_WIDTH = 72;  // 굵어진 빔의 똥 제거 반경\nconst SS_AURA_RADIUS     = 100; // 멈춰서 쏘는 동안 캐릭터 주변 원형 제거 반경\nconst SS_FREEZE_MS       = 420; // 발사 순간 이동 정지 시간",
   "new_string": "const SS_BEAM_WIDTH_MUL = 2.7;  // 빔 두께 배율 (더 굵게)\nconst SS_BEAM_HALF_WIDTH = 72;  // 굵어진 빔의 똥 제거 반경\nconst SS_AURA_RADIUS     = 100; // 발사 시 캐릭터 주변 원형 제거 반경"
 }
@@ -8179,7 +8179,7 @@ id: toolu_0142qU4eoKnGQZQ3rBjofEW1
 tool_result
 id: toolu_0142qU4eoKnGQZQ3rBjofEW1
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/abilities/KAbility.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8188,7 +8188,7 @@ tool_use Bash
 id: toolu_01FoCMoZQgd16WXXqeU3fraM
 ```json
 {
-  "command": "cd /Users/johyunduk/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS\" | head",
+  "command": "cd /home/<USER>/Projects/ddong-avoid-game\nnpx tsc --noEmit; echo \"tsc=$?\"; npm run build 2>&1 | grep -E \"Build completed|error TS\" | head",
   "description": "정지 제거 완료 후 타입검사+빌드"
 }
 ```

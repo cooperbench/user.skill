@@ -90,7 +90,9 @@ tool_result ERROR
 id: toolu_01HQDLCehg2RoniMfS2ThNNN
 ```
 Exit code 1
-Rebasing (1/10)Rebasing (2/10)Auto-merging deviceflow/deviceflow.go
+Rebasing (1/10)
+Rebasing (2/10)
+Auto-merging deviceflow/deviceflow.go
 Auto-merging sts/sts.go
 Auto-merging sts/sts_test.go
 Auto-merging tokenmanager/tokenmanager.go
@@ -181,7 +183,7 @@ tool_use Read
 id: toolu_01E7zJgZd8fTFMciYA7T98YS
 ```json
 {
-  "file_path": "/Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go",
+  "file_path": "/home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go",
   "offset": 540,
   "limit": 70
 }
@@ -268,7 +270,7 @@ fdc9fe5 auth: route STS to provider.stsPath; make STSPath optional in tokenmanag
 3b3084c auth: split-host config + RFC 8693 token exchange (auth/tokenmanager)
 ---
 commit 27a33e9000237678540472aec9667a3790085a74
-Author: Stefan Haubold <stefan@entire.io>
+Author: Stefan Haubold <<REDACTED_EMAIL>>
 Date:   Wed May 20 12:23:17 2026 +0200
 
     Harden OAuth response and resource handling
@@ -297,7 +299,7 @@ tool_result
 id: toolu_019wdcmcvPdVzzzgURw1QSCi
 ```
 commit 27a33e9000237678540472aec9667a3790085a74
-Author: Stefan Haubold <stefan@entire.io>
+Author: Stefan Haubold <<REDACTED_EMAIL>>
 Date:   Wed May 20 12:23:17 2026 +0200
 
     Harden OAuth response and resource handling
@@ -373,7 +375,7 @@ tool_use Read
 id: toolu_01RCV5Uc5iijCwprPsXEKJJB
 ```json
 {
-  "file_path": "/Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go",
+  "file_path": "/home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go",
   "offset": 78,
   "limit": 15
 }
@@ -412,7 +414,7 @@ id: toolu_01Q33r29vmKMKVGWPzpY4ppq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go",
+  "file_path": "/home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go",
   "old_string": "\t// SubjectTokenType is the RFC 8693 subject_token_type sent on\n\t// exchanges. Empty → sts.SubjectTokenTypeAccessToken, because the\n\t// stored core token is an OAuth access token even when its wire format\n\t// happens to be JWT.\n\tSubjectTokenType string",
   "new_string": "\t// SubjectTokenType is the RFC 8693 subject_token_type sent on\n\t// exchanges. Empty → sts.SubjectTokenTypeAccessToken.\n\t//\n\t// :access_token is the RFC 8693 §3 URI for \"OAuth 2.0 access token\n\t// issued by the given authorization server\" — exactly what the\n\t// device-code grant returns into Store. The distinction from :jwt\n\t// matters at the server: zitadel-oidc's STS validator (pkg/op/\n\t// token_exchange.go's GetTokenIDAndSubjectFromToken) only switches on\n\t// :access_token / :refresh_token / :id_token; :jwt passes the\n\t// IsSupported() check upstream but silently falls through to the\n\t// not-handled branch and surfaces as the (uninformative)\n\t// \"subject_token is invalid\" error_description. Other servers\n\t// generally treat :jwt and :access_token interchangeably for OAuth\n\t// access tokens, so :access_token is the safer default. A caller who\n\t// genuinely needs :jwt semantics (RFC 7519 JWT-as-credential rather\n\t// than OAuth-issued bearer) can set this field explicitly, or bypass\n\t// tokenmanager and call sts.Client.Exchange directly.\n\tSubjectTokenType string"
 }
@@ -423,7 +425,7 @@ id: toolu_01Q33r29vmKMKVGWPzpY4ppq
 tool_result
 id: toolu_01Q33r29vmKMKVGWPzpY4ppq
 ```
-The file /Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -432,7 +434,7 @@ tool_use Read
 id: toolu_01DSy8KHBDZdMbNG3ixMiJU9
 ```json
 {
-  "file_path": "/Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go",
+  "file_path": "/home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go",
   "offset": 575,
   "limit": 25
 }
@@ -477,7 +479,7 @@ id: toolu_01A1Ds6WfN7Qz48Ea3jTMdWg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go",
+  "file_path": "/home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go",
   "old_string": "\tstsReq := sts.ExchangeRequest{\n<<<<<<< HEAD\n\t\tSubjectToken: coreToken,\n\t\t// :access_token is the RFC 8693 §3 URI for \"OAuth 2.0 access\n\t\t// token issued by the given authorization server\" — exactly\n\t\t// what the device-code grant returns into m.cfg.Store. The\n\t\t// distinction from :jwt matters at the server: zitadel-oidc's\n\t\t// STS validator (pkg/op/token_exchange.go's\n\t\t// GetTokenIDAndSubjectFromToken) only switches on\n\t\t// :access_token / :refresh_token / :id_token; :jwt passes the\n\t\t// IsSupported() check upstream but silently falls through to\n\t\t// the not-handled branch and surfaces as the (uninformative)\n\t\t// \"subject_token is invalid\" error_description. Other servers\n\t\t// generally treat :jwt and :access_token interchangeably for\n\t\t// OAuth access tokens, so this URI is the safer default. A\n\t\t// caller who genuinely needs :jwt semantics (RFC 7519 JWT-as-\n\t\t// credential rather than OAuth-issued bearer) can bypass\n\t\t// tokenmanager and call sts.Client.Exchange directly.\n\t\tSubjectTokenType:   sts.SubjectTokenTypeAccessToken,\n=======\n\t\tSubjectToken:       coreToken,\n\t\tSubjectTokenType:   m.cfg.SubjectTokenType,\n>>>>>>> 27a33e9 (Harden OAuth response and resource handling)",
   "new_string": "\tstsReq := sts.ExchangeRequest{\n\t\tSubjectToken:       coreToken,\n\t\tSubjectTokenType:   m.cfg.SubjectTokenType,"
 }
@@ -488,7 +490,7 @@ id: toolu_01A1Ds6WfN7Qz48Ea3jTMdWg
 tool_result
 id: toolu_01A1Ds6WfN7Qz48Ea3jTMdWg
 ```
-The file /Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -551,9 +553,14 @@ id: toolu_0175V7oW1UYNGybbBC8FgmyQ
 ```
 Exit code 1
 [detached HEAD e3f9b24] Harden OAuth response and resource handling
- Author: Stefan Haubold <stefan@entire.io>
+ Author: Stefan Haubold <<REDACTED_EMAIL>>
  9 files changed, 153 insertions(+), 29 deletions(-)
-Rebasing (3/10)Rebasing (4/10)Rebasing (5/10)Rebasing (6/10)Rebasing (7/10)Auto-merging tokenmanager/tokenmanager.go
+Rebasing (3/10)
+Rebasing (4/10)
+Rebasing (5/10)
+Rebasing (6/10)
+Rebasing (7/10)
+Auto-merging tokenmanager/tokenmanager.go
 CONFLICT (content): Merge conflict in tokenmanager/tokenmanager.go
 Auto-merging tokenmanager/tokenmanager_test.go
 error: could not apply a82e07c... Address review feedback
@@ -594,7 +601,7 @@ tool_use Read
 id: toolu_01Q6NLj1nvnwDzEHB4dZcJgM
 ```json
 {
-  "file_path": "/Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go",
+  "file_path": "/home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go",
   "offset": 315,
   "limit": 50
 }
@@ -662,7 +669,7 @@ tool_use Read
 id: toolu_01KKaXkXYLpWyQYzyxqfrLEc
 ```json
 {
-  "file_path": "/Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go",
+  "file_path": "/home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go",
   "offset": 369,
   "limit": 25
 }
@@ -705,7 +712,7 @@ id: toolu_01LRaFxGWzHr75mWmiH3DBxW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go",
+  "file_path": "/home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go",
   "old_string": "\tresolved := m.resolve(req)\n<<<<<<< HEAD\n\t// Default Audience to the normalized resource URI. RFC 8693 §2.1\n\t// treats audience and resource as overlapping ways to identify the\n\t// target service, but some AS implementations (notably zitadel-OIDC-\n\t// backed servers — entire-core as of 2026-05) require audience to\n\t// be populated and reject the request with\n\t// \"invalid_target: audience is required\" when only resource is\n\t// present. Applying the default here, AFTER the same-host and\n\t// JWT-aud shortcuts above, means single-host deployments still\n\t// return the core token unchanged without setting audience — only\n\t// requests that actually go to the STS endpoint get the populated\n\t// audience. Callers that explicitly set Audience to something\n\t// different are preserved verbatim.\n\tif resolved.Audience == \"\" {\n\t\tresolved.Audience = normResource\n\t}\n=======\n\tresolved.Resource = normResource\n>>>>>>> a82e07c (Address review feedback)",
   "new_string": "\tresolved := m.resolve(req)\n\tresolved.Resource = normResource\n\t// Default Audience to the normalized resource URI. RFC 8693 §2.1\n\t// treats audience and resource as overlapping ways to identify the\n\t// target service, but some AS implementations (notably zitadel-OIDC-\n\t// backed servers — entire-core as of 2026-05) require audience to\n\t// be populated and reject the request with\n\t// \"invalid_target: audience is required\" when only resource is\n\t// present. Applying the default here, AFTER the same-host and\n\t// JWT-aud shortcuts above, […]
 
@@ -714,7 +721,7 @@ id: toolu_01LRaFxGWzHr75mWmiH3DBxW
 tool_result
 id: toolu_01LRaFxGWzHr75mWmiH3DBxW
 ```
-The file /Users/alex/workspace/auth-go/tokenmanager/tokenmanager.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/auth-go/tokenmanager/tokenmanager.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -875,10 +882,13 @@ tool_result
 id: toolu_0183M1MDLQi2mYJD8eggBVsb
 ```
 [detached HEAD 86885b6] Address review feedback
- Author: Stefan Haubold <stefan@entire.io>
+ Author: Stefan Haubold <<REDACTED_EMAIL>>
  6 files changed, 34 insertions(+), 9 deletions(-)
  create mode 100644 CHANGELOG.md
-Rebasing (8/10)Rebasing (9/10)Rebasing (10/10)Successfully rebased and updated refs/heads/soph/more-improvements-fixes.
+Rebasing (8/10)
+Rebasing (9/10)
+Rebasing (10/10)
+Successfully rebased and updated refs/heads/soph/more-improvements-fixes.
 ```
 
 > AGENT
@@ -966,9 +976,9 @@ id: toolu_01STtpM8dfBJXGJV5mUHW6Mm
 [lint:govulncheck] 
 [lint:govulncheck] There are errors with the provided package patterns:
 [lint:govulncheck] 
-[lint:govulncheck] /Users/alex/workspace/auth-go/doc.go:18:1: package requires newer Go version go1.26 (application built with go1.25)
+[lint:govulncheck] /home/<USER>/workspace/auth-go/doc.go:18:1: package requires newer Go version go1.26 (application built with go1.25)
 [lint:govulncheck] -: This application uses version go1.25 of the source-processing packages but runs version go1.26 of 'go list'. It may fail to process source files that rely on newer language features. If so, rebuild the application using a newer version of Go.
-[lint:govulncheck] /Users/alex/.local/share/mise/installs/go/1.26.3/src/vendor/golang.org/x/crypto/chacha20poly1305/fips140only_go1.26.go:7:9: file requires newer Go version go1.26 (application built with go1.25)
+[lint:govulncheck] /home/<USER>/.local/share/mise/installs/go/1.26.3/src/vendor/golang.org/x/crypto/chacha20poly1305/fips140only_go1.26.go:7:9: file requires newer Go version go1.26 (application built with go1.25)
 [lint:govulncheck] -: This application uses version go1.25 of the source-processing packages but runs version go1.26 of 'go list'. It may fail to process source files that rely on newer language features. If so, rebuild the application using […]
 
 > TOOL
@@ -1006,9 +1016,9 @@ id: toolu_01PziZVqQmz8VC5tcBoWTmnW
 [lint:govulncheck] 
 [lint:govulncheck] There are errors with the provided package patterns:
 [lint:govulncheck] 
-[lint:govulncheck] /Users/alex/workspace/auth-go/doc.go:18:1: package requires newer Go version go1.26 (application built with go1.25)
+[lint:govulncheck] /home/<USER>/workspace/auth-go/doc.go:18:1: package requires newer Go version go1.26 (application built with go1.25)
 [lint:govulncheck] -: This application uses version go1.25 of the source-processing packages but runs version go1.26 of 'go list'. It may fail to process source files that rely on newer language features. If so, rebuild the application using a newer version of Go.
-[lint:govulncheck] /Users/alex/.local/share/mise/installs/go/1.26.3/src/vendor/golang.org/x/crypto/chacha20poly1305/fips140only_go1.26.go:7:9: file requires newer Go version go1.26 (application built with go1.25)
+[lint:govulncheck] /home/<USER>/.local/share/mise/installs/go/1.26.3/src/vendor/golang.org/x/crypto/chacha20poly1305/fips140only_go1.26.go:7:9: file requires newer Go version go1.26 (application built with go1.25)
 [lint:govulncheck] -: This application uses version go1.25 of the source-processing packages but runs version go1.26 of 'go list'. It may fail to process source files that rely on newer […]
 
 > AGENT
@@ -1087,7 +1097,7 @@ set -eu
 
 govulncheck ./...
 ---
-/Users/alex/.local/share/mise/installs/go-golang-org-x-vuln-cmd-govulncheck/latest/bin/govulncheck
+/home/<USER>/.local/share/mise/installs/go-golang-org-x-vuln-cmd-govulncheck/latest/bin/govulncheck
 Go: go1.26.3
 Scanner: govulncheck@v1.1.4
 DB: https://vuln.go.dev
@@ -1357,7 +1367,7 @@ id: toolu_01BF3cAtfvbbUejRjzdFAobw
 {
   "description": "General code review",
   "subagent_type": "pr-review-toolkit:code-reviewer",
-  "prompt": "Review the Go code on the current branch `soph/more-improvements-fixes` against `origin/main` for PR #5 (\"Harden OAuth client security checks\"). Repo: `/Users/alex/workspace/auth-go` (an OAuth 2.0 device-flow client library for Go).\n\n**Scope:** Diff vs `origin/main`. Get it with `git diff origin/main..HEAD` and `git log origin/main..HEAD --oneline`. ~600 net LOC across 10 commits.\n\n**Context the agent should know:**\n- The branch was just rebased onto `origin/main` to integrate two upstream commits: one that hard-coded `SubjectTokenType` to `:access_token` and one that defaulted `Audience` to `Resource`. I resolved both conflicts in `tokenmanager/tokenmanager.go` — see commits in `git log origin/main..HEAD`. Verify the conflict resolution merged both intents correctly (the branch's configurable `Config.SubjectTokenType` with default `:access_token`, plus main's `if resolved.Audience == \"\" { resolved.Audience = normResource }` audience defaulting).\n- Key new module: `internal/oauthhttp/` (origin.go, error.go, jsonresp.go, url.go) centralizes OAuth HTTP helpers.\n- Key changes: `tokenmanager.go` added `validateResourceOriginURL` then later moved that to `oauthhttp.ValidateOriginURL`; `sts/sts.go` and `deviceflow/deviceflow.go` migrated to the new helpers.\n\n**What to focus on:**\n- Bugs and correctness — especially in the post-rebase tokenmanager.go (lines 80–115, 290–360, 580–610). Make sure the new flow `resolve(req)` → set Resource → default Audience → cache key still produces correct cache key behavior.\n- […]
+  "prompt": "Review the Go code on the current branch `soph/more-improvements-fixes` against `origin/main` for PR #5 (\"Harden OAuth client security checks\"). Repo: `/home/<USER>/workspace/auth-go` (an OAuth 2.0 device-flow client library for Go).\n\n**Scope:** Diff vs `origin/main`. Get it with `git diff origin/main..HEAD` and `git log origin/main..HEAD --oneline`. ~600 net LOC across 10 commits.\n\n**Context the agent should know:**\n- The branch was just rebased onto `origin/main` to integrate two upstream commits: one that hard-coded `SubjectTokenType` to `:access_token` and one that defaulted `Audience` to `Resource`. I resolved both conflicts in `tokenmanager/tokenmanager.go` — see commits in `git log origin/main..HEAD`. Verify the conflict resolution merged both intents correctly (the branch's configurable `Config.SubjectTokenType` with default `:access_token`, plus main's `if resolved.Audience == \"\" { resolved.Audience = normResource }` audience defaulting).\n- Key new module: `internal/oauthhttp/` (origin.go, error.go, jsonresp.go, url.go) centralizes OAuth HTTP helpers.\n- Key changes: `tokenmanager.go` added `validateResourceOriginURL` then later moved that to `oauthhttp.ValidateOriginURL`; `sts/sts.go` and `deviceflow/deviceflow.go` migrated to the new helpers.\n\n**What to focus on:**\n- Bugs and correctness — especially in the post-rebase tokenmanager.go (lines 80–115, 290–360, 580–610). Make sure the new flow `resolve(req)` → set Resource → default Audience → cache key still produces correct cache key behavior.\n- […]
 
 > TOOL
 
@@ -1380,7 +1390,7 @@ id: toolu_01G9ZtjBFjy2m4sQjn1pJdMz
 {
   "description": "Test coverage analysis",
   "subagent_type": "pr-review-toolkit:pr-test-analyzer",
-  "prompt": "Analyze test coverage for the current branch `soph/more-improvements-fixes` against `origin/main` for PR #5. Repo: `/Users/alex/workspace/auth-go`.\n\n**Scope:** Test files changed in `git diff --name-only origin/main..HEAD`:\n- `internal/oauthhttp/error_test.go` (new)\n- `internal/oauthhttp/jsonresp_test.go`\n- `internal/oauthhttp/origin_test.go` (new)\n- `internal/oauthhttp/url_test.go`\n- `sts/sts_test.go`\n- `tokenmanager/tokenmanager_test.go`\n\nProduction code in matching packages also changed — analyze whether the tests cover the new behavior. Coverage numbers from `mise run test:ci`: deviceflow 92.9%, oauthhttp 83.3%, sts 95.0%, tokenmanager 95.4%, tokens 89.7%, tokenstore 88.6%.\n\n**What to look for:**\n- New functions in `internal/oauthhttp/origin.go` (`NormalizeOriginURL`, `ValidateOriginURL`) — are edge cases (userinfo, schemes, paths, fragments, multi-slash) tested? `da94c52 Reject multi-slash resource paths` was an explicit follow-up — confirm test exists for it.\n- The newly merged `Audience` defaulting in `tokenmanager.go` — is there a test that the same-host shortcut still returns the core token unchanged WITHOUT setting audience, AND a test that STS-bound requests get audience populated?\n- The new `Config.SubjectTokenType` field — is the default path tested? Is overriding tested?\n- Error-handling paths in `internal/oauthhttp/error.go` and `jsonresp.go`.\n- Tests that look like coverage theater (mock-heavy, no real behavior assertion).\n\nReport critical gaps, important gaps, suggestions, and call out tests that are particularly strong. Use `file:line` references.",
+  "prompt": "Analyze test coverage for the current branch `soph/more-improvements-fixes` against `origin/main` for PR #5. Repo: `/home/<USER>/workspace/auth-go`.\n\n**Scope:** Test files changed in `git diff --name-only origin/main..HEAD`:\n- `internal/oauthhttp/error_test.go` (new)\n- `internal/oauthhttp/jsonresp_test.go`\n- `internal/oauthhttp/origin_test.go` (new)\n- `internal/oauthhttp/url_test.go`\n- `sts/sts_test.go`\n- `tokenmanager/tokenmanager_test.go`\n\nProduction code in matching packages also changed — analyze whether the tests cover the new behavior. Coverage numbers from `mise run test:ci`: deviceflow 92.9%, oauthhttp 83.3%, sts 95.0%, tokenmanager 95.4%, tokens 89.7%, tokenstore 88.6%.\n\n**What to look for:**\n- New functions in `internal/oauthhttp/origin.go` (`NormalizeOriginURL`, `ValidateOriginURL`) — are edge cases (userinfo, schemes, paths, fragments, multi-slash) tested? `da94c52 Reject multi-slash resource paths` was an explicit follow-up — confirm test exists for it.\n- The newly merged `Audience` defaulting in `tokenmanager.go` — is there a test that the same-host shortcut still returns the core token unchanged WITHOUT setting audience, AND a test that STS-bound requests get audience populated?\n- The new `Config.SubjectTokenType` field — is the default path tested? Is overriding tested?\n- Error-handling paths in `internal/oauthhttp/error.go` and `jsonresp.go`.\n- Tests that look like coverage theater (mock-heavy, no real behavior assertion).\n\nReport critical gaps, important gaps, suggestions, and call out tests that are particularly strong. Use `file:line` references.",
   "run_in_background": true
 }
 ```
@@ -1406,7 +1416,7 @@ id: toolu_01ECkh53UiH1pvrLxvxuLeTe
 {
   "description": "Silent failure hunt",
   "subagent_type": "pr-review-toolkit:silent-failure-hunter",
-  "prompt": "Hunt for silent failures and inadequate error handling on branch `soph/more-improvements-fixes` vs `origin/main`. Repo: `/Users/alex/workspace/auth-go`. PR #5 \"Harden OAuth client security checks\".\n\n**Files to focus on:**\n- `internal/oauthhttp/error.go` (new) — OAuth error parsing\n- `internal/oauthhttp/jsonresp.go` — JSON response decoding\n- `internal/oauthhttp/origin.go` (new) — URL validation\n- `internal/oauthhttp/url.go` — URL helpers\n- `tokenmanager/tokenmanager.go` — token exchange orchestration, esp. lines 290–360 (Token method)\n- `sts/sts.go` — RFC 8693 token exchange\n- `deviceflow/deviceflow.go` — device-code grant\n\n**Concerns specific to this codebase:**\n- OAuth error responses must propagate AS-provided `error` / `error_description` correctly. Silent fallbacks to generic errors hide useful diagnostics from CLI users.\n- URL validation rejects unsupported schemes / userinfo / paths — make sure errors are reported, not silently sanitized away.\n- One commit was titled \"Clarify OAuth error fallback handling\" (`f26cf33`) — verify the fallback logic doesn't mask underlying transport / decode errors.\n- Be alert to: errors discarded into `_`, `if err != nil { return nil }` patterns, defaults silently substituted on invalid input, JSON decoders ignoring trailing data or type mismatches.\n\nReport findings with `file:line` references, classify as critical / important / nit. Include a quick line on each: what's silent, why it matters, what to do.",
+  "prompt": "Hunt for silent failures and inadequate error handling on branch `soph/more-improvements-fixes` vs `origin/main`. Repo: `/home/<USER>/workspace/auth-go`. PR #5 \"Harden OAuth client security checks\".\n\n**Files to focus on:**\n- `internal/oauthhttp/error.go` (new) — OAuth error parsing\n- `internal/oauthhttp/jsonresp.go` — JSON response decoding\n- `internal/oauthhttp/origin.go` (new) — URL validation\n- `internal/oauthhttp/url.go` — URL helpers\n- `tokenmanager/tokenmanager.go` — token exchange orchestration, esp. lines 290–360 (Token method)\n- `sts/sts.go` — RFC 8693 token exchange\n- `deviceflow/deviceflow.go` — device-code grant\n\n**Concerns specific to this codebase:**\n- OAuth error responses must propagate AS-provided `error` / `error_description` correctly. Silent fallbacks to generic errors hide useful diagnostics from CLI users.\n- URL validation rejects unsupported schemes / userinfo / paths — make sure errors are reported, not silently sanitized away.\n- One commit was titled \"Clarify OAuth error fallback handling\" (`f26cf33`) — verify the fallback logic doesn't mask underlying transport / decode errors.\n- Be alert to: errors discarded into `_`, `if err != nil { return nil }` patterns, defaults silently substituted on invalid input, JSON decoders ignoring trailing data or type mismatches.\n\nReport findings with `file:line` references, classify as critical / important / nit. Include a quick line on each: what's silent, why it matters, what to do.",
   "run_in_background": […]
 
 > TOOL
@@ -1430,7 +1440,7 @@ id: toolu_01B4t5yUn8qQZm3DYJcEK9V5
 {
   "description": "Comment accuracy review",
   "subagent_type": "pr-review-toolkit:comment-analyzer",
-  "prompt": "Review code comments added/modified on branch `soph/more-improvements-fixes` vs `origin/main`. Repo: `/Users/alex/workspace/auth-go`. PR #5.\n\n**Scope:** Diff `git diff origin/main..HEAD` — focus on Go files with substantial doc-comment changes:\n- `tokenmanager/tokenmanager.go` — heavy comment additions, including a large doc-block on `Config.SubjectTokenType` (lines 84–102) that I just rewrote during conflict resolution. Verify it accurately describes the code: the field defaults to `sts.SubjectTokenTypeAccessToken` in `New()` (around line 177), and the value is passed through at line ~590 in `runExchange`.\n- `tokenmanager/tokenmanager.go` lines 336–352 — Audience defaulting comment. Verify the comment's claim that \"single-host deployments still return the core token unchanged without setting audience\" matches the actual control flow (same-host shortcut at ~328 returns before the audience default; aud-includes shortcut at ~331 also returns; ONLY STS-bound requests reach the audience default at ~349).\n- New files: `internal/oauthhttp/origin.go`, `error.go`, `jsonresp.go`, `url.go` — verify package-doc and function-doc comments match behavior.\n- `sts/sts.go`, `deviceflow/deviceflow.go` — comments around the new helper usage.\n\n**This repo's standard (from user's CLAUDE.md):** Only comments where the WHY isn't obvious from code. No \"// removed X\" stubs. No what-the-code-does narration. Comments that name specific server bugs/RFC sections are valuable. Verify accuracy — outdated references (e.g., a comment […]
+  "prompt": "Review code comments added/modified on branch `soph/more-improvements-fixes` vs `origin/main`. Repo: `/home/<USER>/workspace/auth-go`. PR #5.\n\n**Scope:** Diff `git diff origin/main..HEAD` — focus on Go files with substantial doc-comment changes:\n- `tokenmanager/tokenmanager.go` — heavy comment additions, including a large doc-block on `Config.SubjectTokenType` (lines 84–102) that I just rewrote during conflict resolution. Verify it accurately describes the code: the field defaults to `sts.SubjectTokenTypeAccessToken` in `New()` (around line 177), and the value is passed through at line ~590 in `runExchange`.\n- `tokenmanager/tokenmanager.go` lines 336–352 — Audience defaulting comment. Verify the comment's claim that \"single-host deployments still return the core token unchanged without setting audience\" matches the actual control flow (same-host shortcut at ~328 returns before the audience default; aud-includes shortcut at ~331 also returns; ONLY STS-bound requests reach the audience default at ~349).\n- New files: `internal/oauthhttp/origin.go`, `error.go`, `jsonresp.go`, `url.go` — verify package-doc and function-doc comments match behavior.\n- `sts/sts.go`, `deviceflow/deviceflow.go` — comments around the new helper usage.\n\n**This repo's standard (from user's CLAUDE.md):** Only comments where the WHY isn't obvious from code. No \"// removed X\" stubs. No what-the-code-does narration. Comments that name specific server bugs/RFC sections are valuable. Verify accuracy — outdated references (e.g., a comment […]
 
 > TOOL
 
@@ -1453,7 +1463,7 @@ id: toolu_01NghBrmLUEnahQpCKaeZ9Ew
 {
   "description": "Type design review",
   "subagent_type": "pr-review-toolkit:type-design-analyzer",
-  "prompt": "Analyze type design on branch `soph/more-improvements-fixes` vs `origin/main`. Repo: `/Users/alex/workspace/auth-go`. PR #5 \"Harden OAuth client security checks\".\n\n**New / modified types to review:**\n- `internal/oauthhttp/` package — entirely new. Inspect any new exported types in `origin.go`, `error.go`, `jsonresp.go`, `url.go`. The package centralizes OAuth HTTP helpers used by `sts`, `tokenmanager`, and `deviceflow`.\n- `tokenmanager.Config` — gained a `SubjectTokenType string` field (lines 84–102 of tokenmanager/tokenmanager.go). Evaluate whether a string is the right shape vs an enum/typed alias, given that `sts.SubjectTokenTypeAccessToken` is a constant.\n- `tokenmanager.TokenRequest` — flow changed: `Resource` is now normalized into a separate value (`normResource`) then re-assigned into `resolved.Resource` (~line 339). Consider whether the type expresses its invariants well, or whether the same Resource field doing double duty (raw input + normalized output) is confusing.\n- Any new types in `internal/oauthhttp/error.go` — OAuth error encoding (e.g., an `Error` struct with `Code`, `Description`, etc.).\n\n**Evaluate (per the agent's standard rubric):** encapsulation, invariant expression, usefulness, enforcement. Quantitative ratings welcome.\n\n**Go-specific:**\n- Are exported fields safe to mutate post-construction?\n- Are zero values meaningful, or do you have to call a constructor?\n- Are typed string constants (`type FooType string`) used where a stringly-typed config field could accept any value?\n\nReport […]
+  "prompt": "Analyze type design on branch `soph/more-improvements-fixes` vs `origin/main`. Repo: `/home/<USER>/workspace/auth-go`. PR #5 \"Harden OAuth client security checks\".\n\n**New / modified types to review:**\n- `internal/oauthhttp/` package — entirely new. Inspect any new exported types in `origin.go`, `error.go`, `jsonresp.go`, `url.go`. The package centralizes OAuth HTTP helpers used by `sts`, `tokenmanager`, and `deviceflow`.\n- `tokenmanager.Config` — gained a `SubjectTokenType string` field (lines 84–102 of tokenmanager/tokenmanager.go). Evaluate whether a string is the right shape vs an enum/typed alias, given that `sts.SubjectTokenTypeAccessToken` is a constant.\n- `tokenmanager.TokenRequest` — flow changed: `Resource` is now normalized into a separate value (`normResource`) then re-assigned into `resolved.Resource` (~line 339). Consider whether the type expresses its invariants well, or whether the same Resource field doing double duty (raw input + normalized output) is confusing.\n- Any new types in `internal/oauthhttp/error.go` — OAuth error encoding (e.g., an `Error` struct with `Code`, `Description`, etc.).\n\n**Evaluate (per the agent's standard rubric):** encapsulation, invariant expression, usefulness, enforcement. Quantitative ratings welcome.\n\n**Go-specific:**\n- Are exported fields safe to mutate post-construction?\n- Are zero values meaningful, or do you have to call a constructor?\n- Are typed string constants (`type FooType string`) used where a stringly-typed config field could accept any value?\n\nReport […]
 
 > TOOL
 

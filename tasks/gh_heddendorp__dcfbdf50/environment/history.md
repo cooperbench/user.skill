@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/hedde/.codex/worktrees/85ef/evorto
+# AGENTS.md instructions for /home/<USER>/.codex/worktrees/85ef/evorto
 
 <INSTRUCTIONS>
 # Repository Guidelines
@@ -50,7 +50,7 @@ More specific guidance may exist deeper in […]
 /goal Use your @Browser to debug the tests locally and make sure they pass locally before pushing
 
 Referenced pasted text files:
-- pasted text file: /Users/hedde/.codex/attachments/0db12642-9635-44d5-a788-2157ceceb2a6/pasted-text-1.txt. Read this file before continuing.
+- pasted text file: /home/<USER>/.codex/attachments/0db12642-9635-44d5-a788-2157ceceb2a6/pasted-text-1.txt. Read this file before continuing.
 
 > AGENT
 
@@ -80,8 +80,8 @@ tool_use exec_command
 id: call_mTrEMrbNJJQbZUpctwkGYUgj
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/hedde/.codex/attachments/0db12642-9635-44d5-a788-2157ceceb2a6/pasted-text-1.txt",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/attachments/0db12642-9635-44d5-a788-2157ceceb2a6/pasted-text-1.txt",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -93,8 +93,8 @@ tool_use exec_command
 id: call_5MORvWkfQfmhAUdPXPdsNC8M
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/hedde/.codex/plugins/cache/openai-bundled/browser/26.623.81905/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.623.81905/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -106,8 +106,8 @@ tool_use exec_command
 id: call_WCKnXDf5abCQd2QVzpc3XdUn
 ```json
 {
-  "cmd": "rg -n \"evorto|Browser|test:e2e|Playwright|stacked|CI-only|local Docker\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "rg -n \"evorto|Browser|test:e2e|Playwright|stacked|CI-only|local Docker\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -196,11 +196,11 @@ Output:
 64:- something is off now, refresh_token invalid, stale 3d ago, live app state, Browser, sleeping Railway app, 4h history empty, longer timeout, production verification
 103:# Task Group: evorto / dependency refresh and stacked PR workflow
 105:scope: Refresh dependencies on top of the PR62 browser-transport stack, research migration/toolchain impacts, and switch to CI-only validation when local Docker is off-limits; use for `evorto-app/app` stacked dependency refreshes, not for generic package bump work outside this repo.
-106:applies_to: cwd=/Users/hedde/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked dependency-refresh workflows across similar worktrees, but treat exact package versions, CI run ids, branch names, and PR numbers as time-specific evidence.
+106:applies_to: cwd=/home/<USER>/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked dependency-refresh workflows across similar worktrees, but treat exact package versions, CI run ids, branch names, and PR numbers as time-specific evidence.
 108:## Task 1: Refresh dependencies, research migrations, and open the stacked PR, success
-112:- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/Users/hedde/.codex/worktrees/5671/evorto, rollout_path=/Users/hedde/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, Angular 22/TypeScript 6 forced a toolchain decision and the stacked PR landed as draft PR 76)
+112:- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/home/<USER>/.codex/worktrees/5671/evorto, rollout_path=/home/<USER>/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, Angular 22/TypeScript 6 forced a toolchain decision and the stacked PR landed as draft PR 76)
 118:## Task 2: Validate via CI only after the user took local Docker control, success
-122:- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/Users/hedde/.codex/worktrees/5671/evorto, rollout_path=/Users/hedde/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, remote Actions status replaced local Docker/test execution once the user asked for CI-only control)
+122:- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/home/<USER>/.codex/worktrees/5671/evorto, rollout_path=/home/<USER>/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, remote Actions status replaced local Docker/test execution once the user asked for CI-only control)
 126:- run the tests only in ci, I need […]
 
 > TOOL
@@ -208,7 +208,7 @@ Output:
 tool_result
 id: call_zlL6RfKByB4r6wh9VbVcoocx
 ```
-{"goal":{"threadId":"019f1e1f-cead-7703-8716-984c05bcb15a","objective":"Use your @Browser to debug the tests locally and make sure they pass locally before pushing\n\nReferenced pasted text files:\n- pasted text file: /Users/hedde/.codex/attachments/0db12642-9635-44d5-a788-2157ceceb2a6/pasted-text-1.txt. Read this file before continuing.","status":"active","tokensUsed":39796,"timeUsedSeconds":20,"createdAt":1782916829,"updatedAt":1782916849},"remainingTokens":null,"completionBudgetReport":null}
+{"goal":{"threadId":"019f1e1f-cead-7703-8716-984c05bcb15a","objective":"Use your @Browser to debug the tests locally and make sure they pass locally before pushing\n\nReferenced pasted text files:\n- pasted text file: /home/<USER>/.codex/attachments/0db12642-9635-44d5-a788-2157ceceb2a6/pasted-text-1.txt. Read this file before continuing.","status":"active","tokensUsed":39796,"timeUsedSeconds":20,"createdAt":1782916829,"updatedAt":1782916849},"remainingTokens":null,"completionBudgetReport":null}
 ```
 
 > AGENT
@@ -265,7 +265,7 @@ id: call_zp5uRnkjDRQQB36koWDFpqGk
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -278,7 +278,7 @@ id: call_pBuCh3Pz5cFzlEQm4wR2xq0w
 ```json
 {
   "cmd": "sed -n '1,240p' QUALITY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -291,7 +291,7 @@ id: call_XuCIUU0tsiR8tXcXKX0U9YOT
 ```json
 {
   "cmd": "sed -n '1,260p' tests/AGENTS.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -304,7 +304,7 @@ id: call_S681bQuw0DOAVQeEJFeWM6sI
 ```json
 {
   "cmd": "sed -n '1,260p' tests/README.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -317,7 +317,7 @@ id: call_9qFF7EVZYEblWt6AStklV4tx
 ```json
 {
   "cmd": "rg -n \"test\\.(skip|fixme)|\\.skip\\(|fixme\\(|skip\\(\" tests src --glob '*.{ts,tsx,js,mjs}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -492,7 +492,7 @@ id: call_0zdG7e4k19D1uBG9N77cE8dd
 ```json
 {
   "cmd": "git log --oneline --decorate -8",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -505,7 +505,7 @@ id: call_9cgh1CUO3kE82efEay1W1Gih
 ```json
 {
   "cmd": "git branch --contains HEAD --all --verbose --no-abbrev",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -518,7 +518,7 @@ id: call_KD7hrTy7hgjWN1cudUFGvBeb
 ```json
 {
   "cmd": "sed -n '1,260p' package.json",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -531,7 +531,7 @@ id: call_lCQViPq8BpYUddmpU4dl2a5k
 ```json
 {
   "cmd": "sed -n '1,260p' playwright.config.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -544,7 +544,7 @@ id: call_KdBVw8xZ5zi3hbfzoQT9Xxru
 ```json
 {
   "cmd": "find . -name AGENTS.md -print",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -616,7 +616,7 @@ Output:
     "test:e2e:integration": "bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-integration --project=docs-integration",
     "test:e2e:live-esncard": "bun run env:runtime && dotenv -c dev -- playwright test tests/specs/profile/user-profile-live-esncard.spec.ts --project=local-chrome-integration --grep '@needs-live-esncard'",
     "test:e2e:docs": "bun run env:runtime && dotenv -c dev -- playwright test --project=docs-baseline",
-    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/Users/hedde/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
+    "test:e2e:docs:publish": "bun run env:runtime && DOCS_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/src/app/docs DOCS_IMG_OUT_DIR=/home/<USER>/code/evorto-pages/apps/documentation/public/docs dotenv -c dev -- playwright test --project=docs-baseline",
     "test:e2e:install": "playwright install",
     "test:e2e:report": "playwright show-report",
     "db:push": "bun run env:runtime && dotenv -c dev -- drizzle-kit push --force",
@@ -740,7 +740,7 @@ id: call_gGrgaiNDXCobN6bR0Ix0OxqC
 ```json
 {
   "cmd": "git switch main && git town hack codex/launch-critical-test-coverage",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -756,7 +756,7 @@ Wall time: 0.0000 seconds
 Process exited with code 128
 Original token count: 18
 Output:
-fatal: 'main' is already used by worktree at '/Users/hedde/code/evorto'
+fatal: 'main' is already used by worktree at '/home/<USER>/code/evorto'
 
 ```
 
@@ -771,7 +771,7 @@ id: call_wsTg9UmezLyZSi8YwpLewyFE
 ```json
 {
   "cmd": "git town hack codex/launch-critical-test-coverage",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -819,7 +819,7 @@ id: call_LrYACsCfqORtl9Ra4NUGN6FS
 ```json
 {
   "cmd": "sed -n '1,260p' tests/specs/events/events.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -832,7 +832,7 @@ id: call_hvfcB00zTZY9wQura9LK8T5a
 ```json
 {
   "cmd": "sed -n '1,320p' tests/specs/finance/receipts-flows.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 40000
 }
@@ -845,7 +845,7 @@ id: call_qcvDdKSzqPA9Cyw3JCSiQRPn
 ```json
 {
   "cmd": "sed -n '1,220p' tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -858,7 +858,7 @@ id: call_ww4ymn9HDc20ZKqzpZshSasa
 ```json
 {
   "cmd": "sed -n '1,260p' tests/specs/permissions/matrix.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 32000
 }
@@ -871,7 +871,7 @@ id: call_p0M2zyGPCC2ayh3Tr5Cqzqiq
 ```json
 {
   "cmd": "sed -n '1,260p' tests/specs/scanning/scanner.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 32000
 }
@@ -1235,7 +1235,7 @@ id: call_3Udd6rZpbvrQqDmAfCeJ5Iml
 ```json
 {
   "cmd": "sed -n '1,180p' tests/docs/finance/receipt-review-reimbursement.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1248,7 +1248,7 @@ id: call_U2tGhN1IWLNu6ZUzRD4sjW7K
 ```json
 {
   "cmd": "sed -n '1,160p' tests/docs/users/create-account.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1261,7 +1261,7 @@ id: call_7N3b4i99H6v42UXJP77iNh7E
 ```json
 {
   "cmd": "sed -n '1,140p' tests/specs/profile/create-account.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1274,7 +1274,7 @@ id: call_hxd09BCrE48kDmpbd5p6zUeS
 ```json
 {
   "cmd": "sed -n '1,220p' tests/specs/finance/stripe-webhook-replay.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -1287,7 +1287,7 @@ id: call_e0WZdQPm00c36fhEu2J4wTLH
 ```json
 {
   "cmd": "sed -n '1,120p' tests/specs/profile/user-profile-live-esncard.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -1300,7 +1300,7 @@ id: call_jXpyyFDUXk4d2YEMcSzOdzRQ
 ```json
 {
   "cmd": "bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-baseline --list tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1372,25 +1372,25 @@ test('Understand tenant account creation', async ({}, testInfo) => {
     createAccountModelFromAuthData(
       { communicationEmail: '', firstName: '', lastName: '' },
       {
-        email: ' new-user@example.org ',
+        email: ' <REDACTED_EMAIL> ',
         email_verified: true,
         family_name: ' User ',
         given_name: ' New ',
       },
     ),
   ).toEqual({
-    communicationEmail: 'new-user@example.org',
+    communicationEmail: '<REDACTED_EMAIL>',
     firstName: 'New',
     lastName: 'User',
   });
   expect(
     createAccountPayloadFromModel({
-      communicationEmail: ' notify@example.org ',
+      communicationEmail: ' <REDACTED_EMAIL> ',
       firstName: ' New ',
       lastName: ' User ',
     }),
   ).toEqual({
-    communicationEmail: 'notify@example.org',
+    communicationEmail: '<REDACTED_EMAIL>',
     firstName: 'New',
     lastName: 'User',
   });
@@ -1670,7 +1670,7 @@ Process exited with code 2
 Original token count: 57
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:41:36.170] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:41:36.170] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 Usage: dotenv [OPTIONS] COMMAND [ARGS]...
 Try 'dotenv --help' for help.
 
@@ -1689,7 +1689,7 @@ id: call_VLSBQXrAyCt43PML4NosYzMw
 ```json
 {
   "cmd": "bun run test:e2e -- --list tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1702,7 +1702,7 @@ id: call_fN7sxxlO31b9rHzP7xIsaJc1
 ```json
 {
   "cmd": "sed -n '220,520p' tests/specs/finance/stripe-webhook-replay.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -1715,7 +1715,7 @@ id: call_ABRttEBYzepIIJSUeNeNLRjo
 ```json
 {
   "cmd": "sed -n '160,340p' tests/docs/users/create-account.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -1728,7 +1728,7 @@ id: call_oLW6qN0pTO4pCWT0KBcH9P3A
 ```json
 {
   "cmd": "sed -n '1,260p' tests/support/permissions/matrix.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -1741,7 +1741,7 @@ id: call_FLXL40J03zFYiu63AzC71rbx
 ```json
 {
   "cmd": "sed -n '1,260p' tests/support/fixtures/permissions-test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -1759,15 +1759,15 @@ Original token count: 1544
 Output:
 $ bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-baseline --list tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts
 $ bun helpers/testing/runtime-environment.ts
-[16:41:48.971] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:41:48.971] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 Listing tests:
   [database-setup] › setup/database.setup.ts:11:6 › Setup database
-  [setup] › setup/authentication.setup.ts:42:8 › authenticate testuser1@evorto.app
-  [setup] › setup/authentication.setup.ts:42:8 › authenticate admin@evorto.app
-  [setup] › setup/authentication.setup.ts:42:8 › authenticate global-admin@evorto.app
-  [setup] › setup/authentication.setup.ts:42:8 › authenticate user@evorto.app
-  [setup] › setup/authentication.setup.ts:42:8 › authenticate organizer@evorto.app
-  [setup] › setup/authentication.setup.ts:42:8 › authenticate testuser2@evorto.app
+  [setup] › setup/authentication.setup.ts:42:8 › authenticate <REDACTED_EMAIL>
+  [setup] › setup/authentication.setup.ts:42:8 › authenticate <REDACTED_EMAIL>
+  [setup] › setup/authentication.setup.ts:42:8 › authenticate <REDACTED_EMAIL>
+  [setup] › setup/authentication.setup.ts:42:8 › authenticate <REDACTED_EMAIL>
+  [setup] › setup/authentication.setup.ts:42:8 › authenticate <REDACTED_EMAIL>
+  [setup] › setup/authentication.setup.ts:42:8 › authenticate <REDACTED_EMAIL>
   [local-chrome-baseline] › specs/events/events.test.ts:9:6 › create event form template
   [local-chrome-baseline] › specs/events/events.test.ts:70:5 › event edit form hides selected roles in autocomplete
   [local-chrome-baseline] › specs/finance/receipts-flows.spec.ts:101:6 › submit receipt from event organize page
@@ -2088,7 +2088,7 @@ id: call_3D9r7OVip0G8mTtrDaAXozHf
 ```json
 {
   "cmd": "bun run docker:check",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2106,7 +2106,7 @@ Original token count: 415
 Output:
 $ bun run env:runtime && dotenv -c dev -- bun helpers/testing/runtime-preflight.ts docker
 $ bun helpers/testing/runtime-environment.ts
-[16:42:10.208] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:42:10.208] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 Runtime preflight for docker:
 [fail] Required docker runtime variables
   - NEON_API_KEY: Neon Local branch creation
@@ -2122,7 +2122,7 @@ Runtime preflight for docker:
 [ok] Optional docker live-provider variables
   - missing E2E_LIVE_ESN_CARD_IDENTIFIER: Live esncard.org add, refresh, and remove Playwright coverage
 [ok] Generated worktree runtime env file
-  - /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+  - /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 [ok] Bun runtime
   - 1.3.14
 [ok] Docker Compose
@@ -2147,7 +2147,7 @@ id: call_qbCt4PGcjpO5bMdXyfQIHwXM
 ```json
 {
   "cmd": "ls -la .env .env.dev .env.dev.local .env.example 2>/dev/null",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2159,8 +2159,8 @@ tool_use exec_command
 id: call_QPj5jsPmhf2gfHRZBK7U0VWc
 ```json
 {
-  "cmd": "test -f /Users/hedde/code/evorto/.env && printf 'primary-env-present\\n' || printf 'primary-env-missing\\n'; test -f /Users/hedde/code/evorto/.env.dev && printf 'primary-env-dev-present\\n' || printf 'primary-env-dev-missing\\n'; test -f /Users/hedde/code/evorto/.env.dev.local && printf 'primary-env-dev-local-present\\n' || printf 'primary-env-dev-local-missing\\n'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "test -f /home/<USER>/code/evorto/.env && printf 'primary-env-present\\n' || printf 'primary-env-missing\\n'; test -f /home/<USER>/code/evorto/.env.dev && printf 'primary-env-dev-present\\n' || printf 'primary-env-dev-missing\\n'; test -f /home/<USER>/code/evorto/.env.dev.local && printf 'primary-env-dev-local-present\\n' || printf 'primary-env-dev-local-missing\\n'",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2173,7 +2173,7 @@ id: call_8G1u1eBSSknkFz0wgLMxxfKF
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2227,7 +2227,7 @@ Output:
 
 > AGENT
 
-The primary `/Users/hedde/code/evorto` checkout has local env files, while this worktree lacks `.env`. I’m going to inspect only key names and endpoint targets with redaction, then copy local secrets if they point at the expected local/dev services.
+The primary `/home/<USER>/code/evorto` checkout has local env files, while this worktree lacks `.env`. I’m going to inspect only key names and endpoint targets with redaction, then copy local secrets if they point at the expected local/dev services.
 
 > TOOL
 
@@ -2235,8 +2235,8 @@ tool_use exec_command
 id: call_0f6yM4C1zR0gaycU5AOHg9t2
 ```json
 {
-  "cmd": "node - <<'NODE'\nconst fs = require('fs');\nfor (const file of ['.env.dev.local', '.env.dev', '/Users/hedde/code/evorto/.env', '/Users/hedde/code/evorto/.env.dev', '/Users/hedde/code/evorto/.env.dev.local']) {\n  if (!fs.existsSync(file)) continue;\n  console.log(`FILE ${file}`);\n  const text = fs.readFileSync(file, 'utf8');\n  for (const raw of text.split(/\\r?\\n/)) {\n    const line = raw.trim();\n    if (!line || line.startsWith('#') || !line.includes('=')) continue;\n    const [key, ...rest] = line.split('=');\n    const value = rest.join('=').replace(/^['\"]|['\"]$/g, '');\n    let target = '';\n    if (/URL|URI|ORIGIN|ENDPOINT|BASE|ISSUER|DATABASE|HOST|PORT|PROJECT/i.test(key)) {\n      try {\n        const u = new URL(value);\n        target = ` target=${u.protocol}//${u.host}${u.pathname && u.pathname !== '/' ? u.pathname.replace(/[^/]+$/,'...') : ''}`;\n      } catch {\n        target = value && !/(SECRET|KEY|TOKEN|PASSWORD|CLIENT_SECRET)/i.test(key) ? ` target=${value.replace(/[A-Za-z0-9_-]{12,}/g,'...')}` : '';\n      }\n    }\n    console.log(`  ${key}${target}`);\n  }\n}\nNODE",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "node - <<'NODE'\nconst fs = require('fs');\nfor (const file of ['.env.dev.local', '.env.dev', '/home/<USER>/code/evorto/.env', '/home/<USER>/code/evorto/.env.dev', '/home/<USER>/code/evorto/.env.dev.local']) {\n  if (!fs.existsSync(file)) continue;\n  console.log(`FILE ${file}`);\n  const text = fs.readFileSync(file, 'utf8');\n  for (const raw of text.split(/\\r?\\n/)) {\n    const line = raw.trim();\n    if (!line || line.startsWith('#') || !line.includes('=')) continue;\n    const [key, ...rest] = line.split('=');\n    const value = rest.join('=').replace(/^['\"]|['\"]$/g, '');\n    let target = '';\n    if (/URL|URI|ORIGIN|ENDPOINT|BASE|ISSUER|DATABASE|HOST|PORT|PROJECT/i.test(key)) {\n      try {\n        const u = new URL(value);\n        target = ` target=${u.protocol}//${u.host}${u.pathname && u.pathname !== '/' ? u.pathname.replace(/[^/]+$/,'...') : ''}`;\n      } catch {\n        target = value && !/(SECRET|KEY|TOKEN|PASSWORD|CLIENT_SECRET)/i.test(key) ? ` target=${value.replace(/[A-Za-z0-9_-]{12,}/g,'...')}` : '';\n      }\n    }\n    console.log(`  ${key}${target}`);\n  }\n}\nNODE",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -2279,7 +2279,7 @@ FILE .env.dev
   NEON_LOCAL_BRANCH_TTL_HOURS
   NEON_LOCAL_HOST_PORT target=55534
   NEON_LOCAL_PROXY
-FILE /Users/hedde/code/evorto/.env
+FILE /home/<USER>/code/evorto/.env
   CLIENT_SECRET
   CLIENT_ID
   DATABASE_URL target=postgresql://ep-plain-morning-a9adbqul.gwc.azure.neon.tech/...
@@ -2296,7 +2296,7 @@ FILE /Users/hedde/code/evorto/.env
   NEON_API_KEY
   DOCS_IMG_OUT_DIR
   DOCS_OUT_DIR
-FILE /Users/hedde/code/evorto/.env.dev
+FILE /home/<USER>/code/evorto/.env.dev
   APP_HOST_PORT target=4433
   BASE_URL target=http://localhost:4433
   COMPOSE_PROJECT_NAME target=...
@@ -2308,7 +2308,7 @@ FILE /Users/hedde/code/evorto/.env.dev
   NEON_LOCAL_BRANCH_TTL_HOURS
   NEON_LOCAL_HOST_PORT target=55732
   NEON_LOCAL_PROXY
-FILE /Users/hedde/code/evorto/.env.dev.local
+FILE /home/<USER>/code/evorto/.env.dev.local
   SECRET
   ISSUER_BASE_URL target=https://tumi-dev.eu.auth0.com
   CLIENT_ID
@@ -2336,8 +2336,8 @@ tool_use exec_command
 id: call_CoJC3nyHbHvg3ADBDmnGzZw3
 ```json
 {
-  "cmd": "umask 077; awk -F= 'BEGIN { allow[\"NEON_API_KEY\"]; allow[\"CLIENT_SECRET\"]; allow[\"STRIPE_API_KEY\"]; allow[\"STRIPE_WEBHOOK_SECRET\"]; allow[\"AUTH0_MANAGEMENT_CLIENT_ID\"]; allow[\"AUTH0_MANAGEMENT_CLIENT_SECRET\"]; allow[\"CLOUDFLARE_IMAGES_API_TOKEN\"]; allow[\"CLOUDFLARE_IMAGES_KEY\"]; allow[\"FONT_AWESOME_TOKEN\"]; allow[\"GOOGLE_MAPS_API_KEY\"]; allow[\"CLOUDFLARE_R2_S3_KEY_ID\"]; allow[\"CLOUDFLARE_R2_S3_KEY\"]; } /^[[:space:]]*#/ || /^[[:space:]]*$/ { next } { key=$1; gsub(/^[[:space:]]+|[[:space:]]+$/, \"\", key); if (key in allow) print $0 }' /Users/hedde/code/evorto/.env > .env && chmod 600 .env && printf 'wrote worktree secret key file with %s keys\\n' \"$(grep -c '^[^#[:space:]].*=' .env)\"",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "umask 077; awk -F= 'BEGIN { allow[\"NEON_API_KEY\"]; allow[\"CLIENT_SECRET\"]; allow[\"STRIPE_API_KEY\"]; allow[\"STRIPE_WEBHOOK_SECRET\"]; allow[\"AUTH0_MANAGEMENT_CLIENT_ID\"]; allow[\"AUTH0_MANAGEMENT_CLIENT_SECRET\"]; allow[\"CLOUDFLARE_IMAGES_API_TOKEN\"]; allow[\"CLOUDFLARE_IMAGES_KEY\"]; allow[\"FONT_AWESOME_TOKEN\"]; allow[\"GOOGLE_MAPS_API_KEY\"]; allow[\"CLOUDFLARE_R2_S3_KEY_ID\"]; allow[\"CLOUDFLARE_R2_S3_KEY\"]; } /^[[:space:]]*#/ || /^[[:space:]]*$/ { next } { key=$1; gsub(/^[[:space:]]+|[[:space:]]+$/, \"\", key); if (key in allow) print $0 }' /home/<USER>/code/evorto/.env > .env && chmod 600 .env && printf 'wrote worktree secret key file with %s keys\\n' \"$(grep -c '^[^#[:space:]].*=' .env)\"",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2368,7 +2368,7 @@ id: call_bvaD9YsHCY5JGXIiYo0vZ72U
 ```json
 {
   "cmd": "bun run docker:check",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2386,7 +2386,7 @@ Original token count: 359
 Output:
 $ bun run env:runtime && dotenv -c dev -- bun helpers/testing/runtime-preflight.ts docker
 $ bun helpers/testing/runtime-environment.ts
-[16:42:50.878] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:42:50.878] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 Runtime preflight for docker:
 [ok] Required docker runtime variables
   - All required variables are present.
@@ -2403,7 +2403,7 @@ Runtime preflight for docker:
 [ok] Optional docker live-provider variables
   - missing E2E_LIVE_ESN_CARD_IDENTIFIER: Live esncard.org add, refresh, and remove Playwright coverage
 [ok] Generated worktree runtime env file
-  - /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+  - /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 [ok] Bun runtime
   - 1.3.14
 [ok] Docker Compose
@@ -2429,7 +2429,7 @@ id: call_sBcT98A5rXIyrurDa7OyHDxU
 ```json
 {
   "cmd": "bun run docker:start",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2448,7 +2448,7 @@ Output:
 $ bun run docker:check && dotenv -c dev -- docker compose down && dotenv -c dev -- docker compose up --build -d
 $ bun run env:runtime && dotenv -c dev -- bun helpers/testing/runtime-preflight.ts docker
 $ bun helpers/testing/runtime-environment.ts
-[16:42:54.582] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:42:54.582] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 Runtime preflight for docker:
 [ok] Required docker runtime variables
   - All required variables are present.
@@ -2465,7 +2465,7 @@ Runtime preflight for docker:
 [ok] Optional docker live-provider variables
   - missing E2E_LIVE_ESN_CARD_IDENTIFIER: Live esncard.org add, refresh, and remove Playwright coverage
 [ok] Generated worktree runtime env file
-  - /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+  - /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 [ok] Bun runtime
   - 1.3.14
 [ok] Docker Compose
@@ -2665,7 +2665,7 @@ tool_use js
 id: call_rEKRvEippiQu1i7nW02EBez7
 ```json
 {
-  "code": "if (globalThis.agent?.browsers == null) {\n  const { setupBrowserRuntime } = await import('/Users/hedde/.codex/plugins/cache/openai-bundled/browser/26.623.81905/scripts/browser-client.mjs');\n  await setupBrowserRuntime({ globals: globalThis });\n}\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
+  "code": "if (globalThis.agent?.browsers == null) {\n  const { setupBrowserRuntime } = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.623.81905/scripts/browser-client.mjs');\n  await setupBrowserRuntime({ globals: globalThis });\n}\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000,
   "title": "Connect Browser"
 }
@@ -2691,7 +2691,7 @@ id: call_Z1SS33z1E6FcOEU2MdNdarkP
 ```json
 {
   "cmd": "bun run test:e2e -- tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -2709,10 +2709,10 @@ Original token count: 645
 Output:
 $ bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-baseline tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts
 $ bun helpers/testing/runtime-environment.ts
-[16:44:56.033] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:44:56.033] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 38 tests using 7 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:73066) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -2795,7 +2795,7 @@ Original token count: 263
 Output:
 T°°°°°
 
-  1) [setup] › tests/setup/authentication.setup.ts:42:8 › authenticate testuser1@evorto.app ────────
+  1) [setup] › tests/setup/authentication.setup.ts:42:8 › authenticate <REDACTED_EMAIL> ────────
 
     Test timeout of 60000ms exceeded.
 
@@ -2811,12 +2811,12 @@ T°°°°°
       61 |     await page
       62 |       .locator('input[name="password"], input[type="password"]')
       63 |       .fill(userData.password);
-        at /Users/hedde/.codex/worktrees/85ef/evorto/tests/setup/authentication.setup.ts:60:8
+        at /home/<USER>/.codex/worktrees/85ef/evorto/tests/setup/authentication.setup.ts:60:8
 
     Error Context: test-results/authentication.setup.ts-authenticate-testuser1-evorto-app-setup/error-context.md
 
   1 failed
-    [setup] › tests/setup/authentication.setup.ts:42:8 › authenticate testuser1@evorto.app ─────────
+    [setup] › tests/setup/authentication.setup.ts:42:8 › authenticate <REDACTED_EMAIL> ─────────
   36 did not run
   1 passed (1.2m)
 error: script "test:e2e" exited with code 1
@@ -2834,7 +2834,7 @@ id: call_zjewhkEWpVErTqQED3UVyD0n
 ```json
 {
   "cmd": "sed -n '1,140p' tests/setup/authentication.setup.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -2847,7 +2847,7 @@ id: call_4MlfmTA8ehGUjh1MzgiMoJy3
 ```json
 {
   "cmd": "sed -n '1,220p' test-results/authentication.setup.ts-authenticate-testuser1-evorto-app-setup/error-context.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -2860,7 +2860,7 @@ id: call_XqV1fLIMqBvJGiMDPcs6dAgq
 ```json
 {
   "cmd": "bun run docker:ps",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2873,7 +2873,7 @@ id: call_btdm9HHLwd50ih4QjtEbd85q
 ```json
 {
   "cmd": "node - <<'NODE'\nconst fs = require('fs');\nconst text = fs.readFileSync('.env.dev','utf8');\nfor (const key of ['BASE_URL','APP_HOST_PORT','COMPOSE_PROJECT_NAME']) {\n  const match = text.match(new RegExp(`^${key}=(.*)$`,'m'));\n  console.log(`${key}=${match ? match[1] : '<missing>'}`);\n}\nNODE",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2972,7 +2972,7 @@ Output:
 
 # Test info
 
-- Name: setup/authentication.setup.ts >> authenticate testuser1@evorto.app
+- Name: setup/authentication.setup.ts >> authenticate <REDACTED_EMAIL>
 - Location: tests/setup/authentication.setup.ts:42:8
 
 # Error details
@@ -3023,7 +3023,7 @@ Original token count: 276
 Output:
 $ bun run env:runtime && dotenv -c dev -- docker compose ps
 $ bun helpers/testing/runtime-environment.ts
-[16:46:13.626] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:46:13.626] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 NAME                       IMAGE                          COMMAND                  SERVICE   CREATED              STATUS                        PORTS
 evorto-cf2af2cb-db-1       neondatabase/neon_local:v1.5   "/usr/local/bin/star…"   db        About a minute ago   Up About a minute (healthy)   0.0.0.0:55534->5432/tcp, [::]:55534->5432/tcp
 evorto-cf2af2cb-evorto-1   evorto-cf2af2cb-evorto         "/usr/local/bin/dock…"   evorto    About a minute ago   Up About a minute             0.0.0.0:4579->4200/tcp, [::]:4579->4200/tcp
@@ -3085,7 +3085,7 @@ id: call_ok0l6hZlyx5GpECuMxsIcy3j
 ```json
 {
   "cmd": "lsof -nP -iTCP:4200 -sTCP:LISTEN || true",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3111,7 +3111,7 @@ id: call_N3s92u4sMKWgNE6oSM1O0rog
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run docker:start",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -3130,7 +3130,7 @@ Output:
 $ bun run docker:check && dotenv -c dev -- docker compose down && dotenv -c dev -- docker compose up --build -d
 $ bun run env:runtime && dotenv -c dev -- bun helpers/testing/runtime-preflight.ts docker
 $ bun helpers/testing/runtime-environment.ts
-[16:46:33.033] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:46:33.033] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 Runtime preflight for docker:
 [ok] Required docker runtime variables
   - All required variables are present.
@@ -3147,7 +3147,7 @@ Runtime preflight for docker:
 [ok] Optional docker live-provider variables
   - missing E2E_LIVE_ESN_CARD_IDENTIFIER: Live esncard.org add, refresh, and remove Playwright coverage
 [ok] Generated worktree runtime env file
-  - /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+  - /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 [ok] Bun runtime
   - 1.3.14
 [ok] Docker Compose
@@ -3222,7 +3222,7 @@ id: call_JZA6jQjxAWNnQnk2MYtWBmcz
 ```json
 {
   "cmd": "node - <<'NODE'\nconst fs = require('fs');\nconst text = fs.readFileSync('.env.dev','utf8');\nfor (const key of ['BASE_URL','APP_HOST_PORT','DATABASE_URL']) {\n  const match = text.match(new RegExp(`^${key}=(.*)$`,'m'));\n  if (!match) console.log(`${key}=<missing>`);\n  else if (key === 'DATABASE_URL') console.log(`${key}=${match[1].replace(/postgresql:\\/\\/[^@]*@?/, 'postgresql://').replace(/\\/[^/?]+/, '/...')}`);\n  else console.log(`${key}=${match[1]}`);\n}\nNODE",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3235,7 +3235,7 @@ id: call_mwBQV3nzQAcwUNrRKupVHf5D
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run test:e2e -- --project=setup",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -3269,10 +3269,10 @@ Original token count: 3483
 Output:
 $ bun run env:runtime && dotenv -c dev -- playwright test --project=local-chrome-baseline "--project=setup"
 $ bun helpers/testing/runtime-environment.ts
-[16:47:37.366] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:47:37.366] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 104 tests using 7 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:76105) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -3464,7 +3464,7 @@ id: call_zVAmIfoJvwqSjFJ98SHAQwyJ
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -3477,7 +3477,7 @@ id: call_PT28RsT0sKXhjS43rAYLuCyy
 ```json
 {
   "cmd": "rg -n \"test\\.(skip|fixme)|describe\\.skip|\\.skip\\(\" tests src --glob '*.{ts,tsx,js,mjs}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -3549,7 +3549,7 @@ id: call_dLrp4jg0OvOls7vSHAi3uqiA
 ```json
 {
   "cmd": "bun run lint",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -3562,7 +3562,7 @@ id: call_2b9iSP2mQQIVSIv9IET5FJsI
 ```json
 {
   "cmd": "sed -n '1,240p' tests/docs/finance/finance-overview.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -3575,7 +3575,7 @@ id: call_c6P4buJXlEodLhwreX54ggDz
 ```json
 {
   "cmd": "sed -n '1,260p' tests/docs/finance/inclusive-tax-rates.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -3588,7 +3588,7 @@ id: call_GQv43Bhrz5JlKxazi4G85VV5
 ```json
 {
   "cmd": "sed -n '1,220p' tests/support/reporters/documentation-reporter.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -3855,13 +3855,13 @@ Workspace dependencies are available for this local desktop thread.
 ### Workspace Dependencies
 Use these bundled paths for sheets, slides, documents, PDFs, images, or browser automation:
 - Bundle version: `26.630.12135`
-- Git executable: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/git`
-- Node.js executable: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node`
-- Node.js packages: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules`
-- pnpm executable: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/pnpm`
-- Python executable: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`
-- Python packages: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/python`
-- Native binaries: `/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin`
+- Git executable: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/git`
+- Node.js executable: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node`
+- Node.js packages: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules`
+- pnpm executable: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/pnpm`
+- Python executable: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`
+- Python packages: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python`
+- Native binaries: `/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin`
 ```
 
 > AGENT
@@ -3874,8 +3874,8 @@ tool_use exec_command
 id: call_TuCSWQUeTgtQUC3bkkLAiE46
 ```json
 {
-  "cmd": "PATH=/Users/hedde/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:$PATH bun run lint",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "PATH=/home/<USER>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:$PATH bun run lint",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -3912,7 +3912,7 @@ id: call_i3ORkUU9IEDPVn4Xa7Ckjq8T
 ```json
 {
   "cmd": "bunx node@24.15.0 --version && bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -3949,7 +3949,7 @@ id: call_vPH3uTCc1LerSHbbGzm74uHl
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -3962,7 +3962,7 @@ id: call_bZyzUOBKygqosfTgYcnDpI03
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -3975,7 +3975,7 @@ id: call_tztEIFBSjKWrOqObW5pLPViF
 ```json
 {
   "cmd": "git diff -- tests/docs/finance/receipt-review-reimbursement.doc.ts tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts tests/specs/profile/create-account.spec.ts tests/docs/users/create-account.doc.ts tests/specs/finance/stripe-webhook-replay.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -4098,7 +4098,7 @@ id: call_HJI2fX57IIY50DzFX7wNS28u
 ```json
 {
   "cmd": "git diff -- src/server/config/test-runtime-config.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4111,7 +4111,7 @@ id: call_Jq7QOCI4W1eDxydZ1uIG2sxy
 ```json
 {
   "cmd": "git diff -- src/server/effect/rpc/handlers/admin.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4186,7 +4186,7 @@ id: call_0trG8T98Zd62ruddjHhiqDZs
 ```json
 {
   "cmd": "rg -n \"financeReceipts|refundTransactionId\" src/db/schema.ts src/db -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4199,7 +4199,7 @@ id: call_aFizEr1a66WGAUj1lPDyB7xT
 ```json
 {
   "cmd": "sed -n '1,220p' tests/docs/finance/receipt-review-reimbursement.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4212,7 +4212,7 @@ id: call_qa8rbKRhI5c7u1OwQepWfsfy
 ```json
 {
   "cmd": "rg -n \"Record reimbursement|receipt-refund|financeReceipts|receipt approval\" src/app src/server tests -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -4341,7 +4341,7 @@ id: call_EprGJFcU4lTqIeyrObNsaURx
 ```json
 {
   "cmd": "sed -n '1,120p' src/db/schema/finance-receipts.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4354,7 +4354,7 @@ id: call_xu3KulH1EwaReIW3yTv0sdU2
 ```json
 {
   "cmd": "sed -n '210,285p' src/server/effect/rpc/handlers/finance/finance-receipts.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -4367,7 +4367,7 @@ id: call_xhlra0xtVpvFDtdNBzATkEc0
 ```json
 {
   "cmd": "sed -n '40,90p' tests/docs/profile/user-profile.doc.ts && sed -n '430,485p' tests/docs/profile/user-profile.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 18000
 }
@@ -4380,7 +4380,7 @@ id: call_3b0Sn57xW3bECevsCQCINz3B
 ```json
 {
   "cmd": "sed -n '1,150p' src/app/finance/receipt-refund-list/receipt-refund-list.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -4393,7 +4393,7 @@ id: call_d1zOJCLBj3vKkOq7vCc4vrV3
 ```json
 {
   "cmd": "sed -n '1,180p' src/app/finance/receipt-approval-list/receipt-approval-list.component.html 2>/dev/null || rg -n \"receipt-approval\" src/app/finance -g '*.html'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -4781,7 +4781,7 @@ id: call_RbTuLyx9lNBBFI5obvm2TdQZ
 ```json
 {
   "cmd": "sed -n '150,320p' src/app/finance/receipt-refund-list/receipt-refund-list.component.html && sed -n '1,220p' src/app/finance/receipt-approval-detail/receipt-approval-detail.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -4886,7 +4886,7 @@ id: call_AGQ3pMKj0SXBeT0nB7J9XPPC
 ```json
 {
   "cmd": "sed -n '1,220p' helpers/user-data.ts && rg -n \"iban|paypalEmail\" helpers src/db tests -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -4927,7 +4927,7 @@ export const usersToAuthenticate = [
     addToDb: true,
     addToTenant: true,
     authId: 'auth0|6775a3a47369b902878fdc74',
-    email: 'testuser1@evorto.app',
+    email: '<REDACTED_EMAIL>',
     id: 'e24014d5fac33d92e11b',
     password: 'testpassword1!',
     roles: 'all' as const,
@@ -4937,7 +4937,7 @@ export const usersToAuthenticate = [
     addToDb: true,
     addToTenant: true,
     authId: 'auth0|67af71761ad244799704e26f',
-    email: 'admin@evorto.app',
+    email: '<REDACTED_EMAIL>',
     id: '76574ab75657293de6d3',
     password: 'adminpassword1!',
     roles: 'admin' as const,
@@ -4947,7 +4947,7 @@ export const usersToAuthenticate = [
     addToDb: true,
     addToTenant: true,
     authId: 'auth0|67bb679215c6fbc625ca098f',
-    email: 'global-admin@evorto.app',
+    email: '<REDACTED_EMAIL>',
     id: 'e1ba85116cb02927cc5e',
     password: 'gapassword1!',
     roles: 'none' as const,
@@ -4968,7 +4968,7 @@ id: call_VCGs8DWiPXNwueyc71ACNBbI
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -4981,7 +4981,7 @@ id: call_bJ30GA2cwoykCwpDyBfwhRtK
 ```json
 {
   "cmd": "rg -n \"test\\.(skip|fixme)|describe\\.skip|\\.skip\\(\" tests src --glob '*.{ts,tsx,js,mjs}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5048,7 +5048,7 @@ id: call_4PJ92jhEuqIScKbhOJ8IGus5
 ```json
 {
   "cmd": "bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -5083,7 +5083,7 @@ id: call_DxD8fbv4H6kqerACLt9Z5nJB
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- playwright test --project=docs-baseline tests/docs/finance/receipt-review-reimbursement.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -5100,7 +5100,7 @@ Process exited with code 1
 Original token count: 231
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:51:37.258] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:51:37.258] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 node:events:485
       throw er; // Unhandled 'error' event
       ^
@@ -5139,7 +5139,7 @@ id: call_24wfx9UBY6N9XIleQUBat2G6
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=docs-baseline tests/docs/finance/receipt-review-reimbursement.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -5156,10 +5156,10 @@ Process running with session ID 23725
 Original token count: 1131
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:51:41.401] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:51:41.401] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:92592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -5234,7 +5234,7 @@ F
       157 |
       158 |     const refundedReceipt = await database.query.financeReceipts.findFirst({
       159 |       where: { id: receiptId, tenantId: tenant.id },
-        at /Users/hedde/.codex/worktrees/85ef/evorto/tests/docs/finance/receipt-review-reimbursement.doc.ts:156:7
+        at /home/<USER>/.codex/worktrees/85ef/evorto/tests/docs/finance/receipt-review-reimbursement.doc.ts:156:7
 
     attachment #1: markdown (text/plain) ───────────────────────────────────────────────────────────
     
@@ -5273,7 +5273,7 @@ id: call_dpSjFfDGYngxQNh4Ira4dgJK
 ```json
 {
   "cmd": "sed -n '1,220p' test-results/docs-finance-receipt-revie-b6658--reimburse-receipts-finance-docs-baseline/error-context.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5286,7 +5286,7 @@ id: call_ck5m3ReSuQWMRIolfHzdSvdm
 ```json
 {
   "cmd": "rg -n \"refundRecipient|receiptReimbursement|Record reimbursement|No approved\" src/app/finance/receipt-refund-list -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5299,7 +5299,7 @@ id: call_SU8RdywvpEOb562qRQMxIkyi
 ```json
 {
   "cmd": "sed -n '1,240p' src/app/finance/receipt-refund-list/receipt-refund-list.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 26000
 }
@@ -5357,7 +5357,7 @@ Call log:
 - heading "Receipt reimbursements" [level=1]
 - paragraph: Recording a reimbursement creates the Evorto finance transaction only. Transfer the money manually through the selected payout method.
 - heading "Qing Meng" [level=2]
-- paragraph: ryan.sanz@mac.info
+- paragraph: <REDACTED_EMAIL>
 - paragraph: "Selected total: 0.00 €"
 - text: Payout method
 - combobox "Payout method": IBAN
@@ -5492,7 +5492,7 @@ id: call_6AsulXHtijKiH3L6W5A90t1O
 ```json
 {
   "cmd": "sed -n '220,340p' src/app/finance/receipt-refund-list/receipt-refund-list.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -5613,7 +5613,7 @@ id: call_Eyv0WUHVtcuU4LDjrkR7nfkN
 ```json
 {
   "cmd": "bun run format:write && bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -5670,7 +5670,7 @@ id: call_PSprN7wuoSZBv52yjAm1Zm7J
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=docs-baseline tests/docs/finance/receipt-review-reimbursement.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -5687,10 +5687,10 @@ Process running with session ID 49439
 Original token count: 1131
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:53:08.252] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:53:08.252] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:97552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -5758,7 +5758,7 @@ id: call_YQI4UOMOGbJiDg3Ta8LZkhvb
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-baseline tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -5775,10 +5775,10 @@ Process running with session ID 73328
 Original token count: 3129
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:53:46.869] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:53:46.869] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 38 tests using 7 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:99080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -5911,8 +5911,8 @@ Output:
       52 |
       53 |   await receiptDialog.getByLabel('Total amount (EUR)').fill('14.50');
       54 |   await receiptDialog.getByLabel('Alcohol amount (EUR)').fill('1.50');
-        at submitReceiptFromFirstEvent (/Users/hedde/.codex/worktrees/85ef/evorto/tests/specs/finance/receipts-flows.spec.ts:51:66)
-        at /Users/hedde/.codex/worktrees/85ef/evorto/tests/specs/finance/receipts-flows.spec.ts:127:5
+        at submitReceiptFromFirstEvent (/home/<USER>/.codex/worktrees/85ef/evorto/tests/specs/finance/receipts-flows.spec.ts:51:66)
+        at /home/<USER>/.codex/worktrees/85ef/evorto/tests/specs/finance/receipts-flows.spec.ts:127:5
 
     Error Context: test-results/specs-finance-receipts-flo-c6f7a-pt-from-event-organize-page-local-chrome-baseline/error-context.md
 
@@ -5951,7 +5951,7 @@ id: call_tsP0nTj4E16nOVJcB3OPOLNZ
 ```json
 {
   "cmd": "sed -n '1,220p' test-results/specs-finance-receipts-flo-c6f7a-pt-from-event-organize-page-local-chrome-baseline/error-context.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5964,7 +5964,7 @@ id: call_Z8GyIbgozFqBeP5VCKqyA3dB
 ```json
 {
   "cmd": "sed -n '1,220p' test-results/specs-finance-receipts-flo-4674a-t-reimbursements-in-finance-local-chrome-baseline/error-context.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5977,7 +5977,7 @@ id: call_BW5DSTInZy53vjjHLKitrqLK
 ```json
 {
   "cmd": "sed -n '1,220p' test-results/specs-scanning-scanner-sca-c78f2-gistration-records-check-in-local-chrome-baseline/error-context.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -5990,7 +5990,7 @@ id: call_SlUuLJynfrm9reScdJwh5WG4
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/finance/receipt-submit-dialog/receipt-submit-dialog.component.html && sed -n '1,220p' src/app/scanning/registration-scan/registration-scan.component.html 2>/dev/null || rg -n \"Registration scanned|Confirm\" src/app -g '*.html'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 24000
 }
@@ -6198,7 +6198,7 @@ id: call_hgwqAnyQUqxa3OoOlkMDOIRa
 ```json
 {
   "cmd": "rg -n \"Alcohol purchased|Alcohol amount|Deposit involved\" src/app -g '*.html' -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -6211,7 +6211,7 @@ id: call_abt5eO2xhhkehRnBZ9TdA6GZ
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/scanning/handle-registration/handle-registration.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6224,7 +6224,7 @@ id: call_xeTFp3HQuLBnlSEeWe9XP6lC
 ```json
 {
   "cmd": "sed -n '1,260p' src/app/scanning/handle-registration/handle-registration.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -6391,7 +6391,7 @@ id: call_WxkTEXHKIxWnxbuipO0eD1BP
 ```json
 {
   "cmd": "sed -n '1,140p' src/app/finance/shared/receipt-form/receipt-form-fields.component.html && sed -n '1,220p' src/app/finance/shared/receipt-form/receipt-form-fields.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 1000,
   "max_output_tokens": 22000
 }
@@ -6519,7 +6519,7 @@ id: call_xwAYoo1FbydAIZQLtxw1Q8kE
 ```json
 {
   "cmd": "bun run format:write && bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6576,7 +6576,7 @@ id: call_aPtwAT5fJE3m5LhPf2mm3cwt
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-baseline tests/specs/finance/receipts-flows.spec.ts tests/specs/scanning/scanner.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6593,10 +6593,10 @@ Process running with session ID 63386
 Original token count: 3370
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:56:04.556] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:56:04.556] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 12 tests using 5 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:5742) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -6664,7 +6664,7 @@ id: call_KD0iATK1YSnn7ZMTKsLgTvQ3
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-baseline tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6681,10 +6681,10 @@ Process running with session ID 37522
 Original token count: 5750
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:56:48.729] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:56:48.729] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 38 tests using 7 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:7971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -6777,7 +6777,7 @@ id: call_b1NAcx6RxKynJagNA4T6zpPc
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-baseline tests/specs/finance/stripe-webhook-replay.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -6790,7 +6790,7 @@ id: call_NhlF0E373chTeM8GnkxoUlBJ
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-integration tests/specs/profile/create-account.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -6807,10 +6807,10 @@ Process exited with code 1
 Original token count: 780
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:58:19.897] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:58:19.897] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 13 tests using 6 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:14219) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -6830,9 +6830,9 @@ F
       22 |     .insert(tenants)
       23 |     .values({
       24 |       ...tenantData,
-        at /Users/hedde/.codex/worktrees/85ef/evorto/node_modules/src/pg-core/async/session.ts:71:11
-        at createTenant (/Users/hedde/.codex/worktrees/85ef/evorto/helpers/create-tenant.ts:21:18)
-        at seedTenant (/Users/hedde/.codex/worktrees/85ef/evorto/helpers/seed-tenant.ts:188:18)
+        at /home/<USER>/.codex/worktrees/85ef/evorto/node_modules/src/pg-core/async/session.ts:71:11
+        at createTenant (/home/<USER>/.codex/worktrees/85ef/evorto/helpers/create-tenant.ts:21:18)
+        at seedTenant (/home/<USER>/.codex/worktrees/85ef/evorto/helpers/seed-tenant.ts:188:18)
         at […]
 
 > TOOL
@@ -6846,10 +6846,10 @@ Process running with session ID 62743
 Original token count: 1131
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:58:19.897] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:58:19.897] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:14218) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -6906,7 +6906,7 @@ F
   1) [local-chrome-integration] › tests/specs/profile/create-account.spec.ts:17:5 › creates tenant account for a new Auth0 user @needs-auth0-management 
 
     DrizzleQueryError: Failed query: delete from "users" where (("users"."id" = $1) and ("users"."email" = $2))
-    params: kyn4sqe55rpfmt8wbuiu,test-c3au@evorto.app
+    params: kyn4sqe55rpfmt8wbuiu,<REDACTED_EMAIL>
 
       130 |     }
       131 |     if (createdUserId) {
@@ -6915,11 +6915,11 @@ F
       133 |         .delete(schema.users)
       134 |         .where(
       135 |           and(
-        at /Users/hedde/.codex/worktrees/85ef/evorto/node_modules/src/pg-core/async/session.ts:71:11
-        at /Users/hedde/.codex/worktrees/85ef/evorto/tests/specs/profile/create-account.spec.ts:132:7
+        at /home/<USER>/.codex/worktrees/85ef/evorto/node_modules/src/pg-core/async/session.ts:71:11
+        at /home/<USER>/.codex/worktrees/85ef/evorto/tests/specs/profile/create-account.spec.ts:132:7
     [cause]: error: update or delete on table "users" violates foreign key constraint "users_to_tenants_userId_users_id_fkey" on table "users_to_tenants"
-        at /Users/hedde/.codex/worktrees/85ef/evorto/node_modules/pg/node_modules/pg-pool/index.js:45:11
-        at /Users/hedde/.codex/worktrees/85ef/evorto/tests/specs/profile/create-account.spec.ts:132:7
+        at /home/<USER>/.codex/worktrees/85ef/evorto/node_modules/pg/node_modules/pg-pool/index.js:45:11
+        at /home/<USER>/.codex/worktrees/85ef/evorto/tests/specs/profile/create-account.spec.ts:132:7
 
     Error Context: test-results/specs-profile-create-accou-b1617-user-needs-auth0-management-local-chrome-integration/error-context.md
 
@@ -6940,7 +6940,7 @@ id: call_FYBY0ZtdIG4WNvgiuxAB2vtZ
 ```json
 {
   "cmd": "sed -n '1,220p' tests/specs/profile/create-account.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6953,7 +6953,7 @@ id: call_t5h66IaxOFsfkV1uA8lst0lb
 ```json
 {
   "cmd": "sed -n '1,240p' tests/docs/users/create-account.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6966,7 +6966,7 @@ id: call_cAMF6jKL2o0ueYvDreH18xvp
 ```json
 {
   "cmd": "rg -n \"usersToTenants|users_to_tenants|delete\\(schema\\.users\\)|createdUserId\" tests helpers src/db src/server",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -7087,25 +7087,25 @@ test('Understand tenant account creation', async ({}, testInfo) => {
     createAccountModelFromAuthData(
       { communicationEmail: '', firstName: '', lastName: '' },
       {
-        email: ' new-user@example.org ',
+        email: ' <REDACTED_EMAIL> ',
         email_verified: true,
         family_name: ' User ',
         given_name: ' New ',
       },
     ),
   ).toEqual({
-    communicationEmail: 'new-user@example.org',
+    communicationEmail: '<REDACTED_EMAIL>',
     firstName: 'New',
     lastName: 'User',
   });
   expect(
     createAccountPayloadFromModel({
-      communicationEmail: ' notify@example.org ',
+      communicationEmail: ' <REDACTED_EMAIL> ',
       firstName: ' New ',
       lastName: ' User ',
     }),
   ).toEqual({
-    communicationEmail: 'notify@example.org',
+    communicationEmail: '<REDACTED_EMAIL>',
     firstName: 'New',
     lastName: 'User',
   });
@@ -7207,7 +7207,7 @@ id: call_Swsj7efdXRPOCAkq9PXAbEFg
 ```json
 {
   "cmd": "sed -n '220,280p' tests/docs/users/create-account.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -7271,7 +7271,7 @@ id: call_52s0dtuybmCFe5ZykM8U5qmu
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -7284,7 +7284,7 @@ id: call_CP3DlctI18Mnvldi2kZsYp5g
 ```json
 {
   "cmd": "bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -7355,7 +7355,7 @@ id: call_xzhoO6C9jf2LmOJrmUhXVXeS
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-integration tests/specs/profile/create-account.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -7372,10 +7372,10 @@ Process running with session ID 84848
 Original token count: 1120
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[16:59:36.807] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[16:59:36.807] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:15627) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -7437,7 +7437,7 @@ F
       115 |     }
       116 |     createdTenantUserId = tenantUser.id;
       117 |
-        at /Users/hedde/.codex/worktrees/85ef/evorto/tests/specs/profile/create-account.spec.ts:114:13
+        at /home/<USER>/.codex/worktrees/85ef/evorto/tests/specs/profile/create-account.spec.ts:114:13
 
     Error Context: test-results/specs-profile-create-accou-b1617-user-needs-auth0-management-local-chrome-integration/error-context.md
 
@@ -7458,7 +7458,7 @@ id: call_VJlGq5fMzZHBmye74GsWC5t8
 ```json
 {
   "cmd": "sed -n '1,240p' tests/support/fixtures/parallel-test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -7471,7 +7471,7 @@ id: call_IYa7RxiYkxvMnuhuwOSkF82F
 ```json
 {
   "cmd": "rg -n \"tenantDomain|domain: 'localhost'|tenant.*localhost|query\\.tenants|BASE_URL|newUser\" tests/support tests/setup helpers tests/specs/profile -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -7484,7 +7484,7 @@ id: call_gEmkK4KXY6DEJKg2a9zuJtIs
 ```json
 {
   "cmd": "sed -n '1,180p' tests/setup/database.setup.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -7686,7 +7686,7 @@ id: call_CFTwjAqjGKcmPzY9XD6kbm1e
 ```json
 {
   "cmd": "sed -n '1,230p' tests/support/fixtures/base-test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -7777,7 +7777,7 @@ id: call_TNk0D4udTS82BnB2kGCeLwfc
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -7790,7 +7790,7 @@ id: call_L8gwN97cc8NalBrnNA91aRKZ
 ```json
 {
   "cmd": "bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -7865,7 +7865,7 @@ id: call_J6O4qyxr3yWU10jo3PFn47gp
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-integration tests/specs/profile/create-account.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -7882,10 +7882,10 @@ Process running with session ID 62049
 Original token count: 612
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:00:51.134] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:00:51.134] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:17250) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -7949,7 +7949,7 @@ id: call_6iid6GcJufwas0qPB1BBIPPB
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=docs-integration tests/docs/users/create-account.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -7966,10 +7966,10 @@ Process running with session ID 47188
 Original token count: 612
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:01:27.565] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:01:27.565] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:18043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -8033,7 +8033,7 @@ id: call_4By8DoWQmXYeOOkefihmgdBs
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-baseline tests/specs/finance/stripe-webhook-replay.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -8050,10 +8050,10 @@ Process running with session ID 64607
 Original token count: 3735
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:02:10.470] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:02:10.470] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 13 tests using 6 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:18878) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -8134,7 +8134,7 @@ id: call_PR1QF40oHjtW50LSzxw1vBgW
 ```json
 {
   "cmd": "rg -n \"test\\.(skip|fixme)|describe\\.skip|\\.skip\\(\" tests src --glob '*.{ts,tsx,js,mjs}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -8147,7 +8147,7 @@ id: call_gnadnL4s1o7uQ2r44cIiYXo4
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -8160,7 +8160,7 @@ id: call_3LjTI3OCRFoM7RK1NKoK0hkT
 ```json
 {
   "cmd": "rg -n \"template|Create event|event.*template|Use template|from template\" tests/docs/templates/templates.doc.ts tests/specs/events/events.test.ts tests/specs/templates/templates.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -8252,7 +8252,7 @@ id: call_dCoOBx4pTpwgWug4wbkPArsa
 ```json
 {
   "cmd": "sed -n '1,380p' tests/docs/templates/templates.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -8316,7 +8316,7 @@ id: call_vW7N3fMbNMPgnp0YI0Zzm2po
 ```json
 {
   "cmd": "sed -n '1,120p' tests/specs/events/events.test.ts && rg -n \"delete\\(schema\\.events\\)|eventRegistrationOptions|createdEvent\" tests/specs/events tests/docs -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -8392,7 +8392,7 @@ id: call_KAsx6XtCvzrDVFN7Bcu84HjY
 ```json
 {
   "cmd": "rg -n \"export const events|pgTable\\('events'|eventAddons|registrationQuestions|addonsTo|eventRegistration\" src/db/schema -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -8405,7 +8405,7 @@ id: call_PS0FhkHB0PbWR28MF5PYaC3J
 ```json
 {
   "cmd": "rg -n \"delete\\(schema\\.[a-zA-Z]*Events|delete\\(schema\\.events|eventAddons|eventRegistrationQuestions|addonToEvent\" tests src helpers -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -8418,7 +8418,7 @@ id: call_jbpija9MdLBFJ01OI0qiUscL
 ```json
 {
   "cmd": "sed -n '1,140p' src/db/schema/events.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -8563,7 +8563,7 @@ id: call_nk34u5wIviPW9wnaXIQbyhuE
 ```json
 {
   "cmd": "rg --files src/db/schema | sort | sed -n '1,120p' && rg -n \"export const events\" src/db/schema src/db -g '*.ts'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -8621,7 +8621,7 @@ id: call_o2JvgULwKKyk94C1ZqQ9lt3l
 ```json
 {
   "cmd": "sed -n '1,180p' src/db/schema/event-instances.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -8634,7 +8634,7 @@ id: call_ndBeXZPgO7k15fTYg11gvNvU
 ```json
 {
   "cmd": "sed -n '1,140p' src/db/schema/event-registration-options.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -8647,7 +8647,7 @@ id: call_Hr5pXFRXKSOOJgyBBFBzwys4
 ```json
 {
   "cmd": "sed -n '1,100p' src/db/schema/event-addons.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -8660,7 +8660,7 @@ id: call_WY81n02C8i7qv3WEGKFrleGh
 ```json
 {
   "cmd": "sed -n '1,80p' src/db/schema/event-registration-questions.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -8932,7 +8932,7 @@ id: call_2ceZuckCZJGelD92jtorZvO5
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -8945,7 +8945,7 @@ id: call_AwrZ5LxOHnnbV0vnG6DSHN2R
 ```json
 {
   "cmd": "bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -9016,7 +9016,7 @@ id: call_LpZIqyaV9EvZiG7L57mlVgSe
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=docs-baseline tests/docs/templates/templates.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -9033,10 +9033,10 @@ Process running with session ID 61024
 Original token count: 1132
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:03:44.390] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:03:44.390] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:22448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -9112,7 +9112,7 @@ F
       351 |
       352 |   const createdEvent = await database.query.eventInstances.findFirst({
       353 |     where: {
-        at /Users/hedde/.codex/worktrees/85ef/evorto/tests/docs/templates/templates.doc.ts:350:65
+        at /home/<USER>/.codex/worktrees/85ef/evorto/tests/docs/templates/templates.doc.ts:350:65
 
     attachment #1: markdown (text/plain) ───────────────────────────────────────────────────────────
     
@@ -9136,7 +9136,7 @@ id: call_fE1N6gcWLkgGlIUadF9b9Uqq
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -9149,7 +9149,7 @@ id: call_pUF1aO97jp9JZnh0PsNbgRc4
 ```json
 {
   "cmd": "bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -9220,7 +9220,7 @@ id: call_uuSDQsF88kVYutwOlRCVTcm5
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=docs-baseline tests/docs/templates/templates.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -9237,10 +9237,10 @@ Process running with session ID 25895
 Original token count: 1131
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:04:41.874] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:04:41.874] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:23894) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -9316,7 +9316,7 @@ F
       372 |   await expect(page.getByText(questionTitle)).toBeVisible();
       373 |
       374 |   await database
-        at /Users/hedde/.codex/worktrees/85ef/evorto/tests/docs/templates/templates.doc.ts:371:44
+        at /home/<USER>/.codex/worktrees/85ef/evorto/tests/docs/templates/templates.doc.ts:371:44
 
     attachment #1: markdown (text/plain) ───────────────────────────────────────────────────────────
     
@@ -9347,7 +9347,7 @@ id: call_noaAJAGIelh93IUeRMU3prjm
 ```json
 {
   "cmd": "bun run format:write",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 10000
 }
@@ -9360,7 +9360,7 @@ id: call_vhpj2eKRxr8UZ1CGcp8eHf8Q
 ```json
 {
   "cmd": "bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -9435,7 +9435,7 @@ id: call_I8YGC4PH7CdbbCcYpoWgv1Qs
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=docs-baseline tests/docs/templates/templates.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -9452,10 +9452,10 @@ Process running with session ID 65245
 Original token count: 1057
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:05:44.069] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:05:44.069] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:25888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -9531,7 +9531,7 @@ id: call_29dnBKxdGnxlnd6jVBH7DooR
 ```json
 {
   "cmd": "rg -n \"test\\.(skip|fixme)|describe\\.skip|\\.skip\\(\" tests src --glob '*.{ts,tsx,js,mjs}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -9544,7 +9544,7 @@ id: call_ONEojLarTMxhQxZu0Kob5ILH
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -9557,7 +9557,7 @@ id: call_CPOH6gzbwUQvI0cLkyo391un
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -9570,7 +9570,7 @@ id: call_zRtRpUhoVEY0ww4V4udyho6L
 ```json
 {
   "cmd": "git diff -- src/server/config/test-runtime-config.ts src/server/effect/rpc/handlers/admin.handlers.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -9703,7 +9703,7 @@ id: call_MN7Ye94B0cUfqGDhkV7brelt
 ```json
 {
   "cmd": "git diff --check",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -9716,7 +9716,7 @@ id: call_rOtmMtbeebUpTlmHP5m7E1HV
 ```json
 {
   "cmd": "git branch --show-current",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -9729,7 +9729,7 @@ id: call_v2IEAWJKxq54EycNzkta4UFW
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -9788,7 +9788,7 @@ id: call_GfSUEthihTTW6Ntm1Afo7so2
 ```json
 {
   "cmd": "git add src/server/config/test-runtime-config.ts src/server/effect/rpc/handlers/admin.handlers.ts tests/docs/finance/receipt-review-reimbursement.doc.ts tests/docs/templates/templates.doc.ts tests/docs/users/create-account.doc.ts tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/stripe-webhook-replay.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/profile/create-account.spec.ts tests/specs/scanning/scanner.test.ts && git status --short",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -9830,7 +9830,7 @@ id: call_II3fH8JVd7Jzcc4RDplZXV4p
 ```json
 {
   "cmd": "git commit -m \"Harden launch-critical Playwright coverage\"",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -9862,7 +9862,7 @@ id: call_OY1zUoY5slbJylId76V0asMh
 ```json
 {
   "cmd": "git push -u origin codex/launch-critical-test-coverage",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -9903,7 +9903,7 @@ id: call_HsYTfpaMrUBSiOGbY2C8ezOc
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -9915,8 +9915,8 @@ tool_use exec_command
 id: call_1G9u610JY6lT9532eylAAZt2
 ```json
 {
-  "cmd": "nl -ba /Users/hedde/.codex/memories/MEMORY.md | sed -n '60,66p;103,183p'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '60,66p;103,183p'",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -9946,7 +9946,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2741
 Output:
-    60	- rollout_summaries/REDACTED.md (cwd=/Users/hedde/Documents/Window watcher, rollout_path=/Users/hedde/.codex/sessions/2026/06/08/rollout-2026-06-08T08-55-32-019ea603-e0ca-74e2-9a58-5b1b3728ad48.jsonl, updated_at=2026-06-29T19:55:15+00:00, thread_id=019ea603-e0ca-74e2-9a58-5b1b3728ad48, local auth drift was separated from real production chart behavior)
+    60	- rollout_summaries/REDACTED.md (cwd=/home/<USER>/Documents/Window watcher, rollout_path=/home/<USER>/.codex/sessions/2026/06/08/rollout-2026-06-08T08-55-32-019ea603-e0ca-74e2-9a58-5b1b3728ad48.jsonl, updated_at=2026-06-29T19:55:15+00:00, thread_id=019ea603-e0ca-74e2-9a58-5b1b3728ad48, local auth drift was separated from real production chart behavior)
     61	
     62	### keywords
     63	
@@ -9956,13 +9956,13 @@ Output:
    103	# Task Group: evorto / dependency refresh and stacked PR workflow
    104	
    105	scope: Refresh dependencies on top of the PR62 browser-transport stack, research migration/toolchain impacts, and switch to CI-only validation when local Docker is off-limits; use for `evorto-app/app` stacked dependency refreshes, not for generic package bump work outside this repo.
-   106	applies_to: cwd=/Users/hedde/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked dependency-refresh workflows across similar worktrees, but treat exact package versions, CI run ids, branch names, and PR numbers as time-specific evidence.
+   106	applies_to: cwd=/home/<USER>/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked dependency-refresh workflows across similar worktrees, but treat exact package versions, CI run ids, branch names, and PR numbers as time-specific evidence.
    107	
    108	## Task 1: Refresh dependencies, research migrations, and open the stacked PR, success
    109	
    110	### rollout_summary_files
    111	
-   112	- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/Users/hedde/.codex/worktrees/5671/evorto, rollout_path=/Users/hedde/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, Angular 22/TypeScript 6 forced a toolchain decision and the stacked PR landed as draft PR 76)
+   112	- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/home/<USER>/.codex/worktrees/5671/evorto, rollout_path=/home/<USER>/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, Angular 22/TypeScript 6 forced a toolchain decision and the stacked PR landed as draft PR 76)
    113	
    114	### […]
 
@@ -9981,7 +9981,7 @@ id: call_ggaxaxldDTvF9Zw8XvVSGuGG
 tool_result
 id: call_ggaxaxldDTvF9Zw8XvVSGuGG
 ```
-{"goal":{"threadId":"019f1e1f-cead-7703-8716-984c05bcb15a","objective":"Use your @Browser to debug the tests locally and make sure they pass locally before pushing\n\nReferenced pasted text files:\n- pasted text file: /Users/hedde/.codex/attachments/0db12642-9635-44d5-a788-2157ceceb2a6/pasted-text-1.txt. Read this file before continuing.","status":"complete","tokensUsed":710205,"timeUsedSeconds":1597,"createdAt":1782916829,"updatedAt":1782918426},"remainingTokens":null,"completionBudgetReport":"Goal achieved. Report final usage from this tool result's structured goal fields. If `goal.tokenBudget` is present, include token usage from `goal.tokensUsed` and `goal.tokenBudget`. If `goal.timeUsedSeconds` is greater than 0, summarize elapsed time in a concise, human-friendly form appropriate to the response language."}
+{"goal":{"threadId":"019f1e1f-cead-7703-8716-984c05bcb15a","objective":"Use your @Browser to debug the tests locally and make sure they pass locally before pushing\n\nReferenced pasted text files:\n- pasted text file: /home/<USER>/.codex/attachments/0db12642-9635-44d5-a788-2157ceceb2a6/pasted-text-1.txt. Read this file before continuing.","status":"complete","tokensUsed":710205,"timeUsedSeconds":1597,"createdAt":1782916829,"updatedAt":1782918426},"remainingTokens":null,"completionBudgetReport":"Goal achieved. Report final usage from this tool result's structured goal fields. If `goal.tokenBudget` is present, include token usage from `goal.tokensUsed` and `goal.tokenBudget`. If `goal.timeUsedSeconds` is greater than 0, summarize elapsed time in a concise, human-friendly form appropriate to the response language."}
 ```
 
 > AGENT
@@ -10010,10 +10010,10 @@ Pushed commit: `2180f239105 Harden launch-critical Playwright coverage`.
 
 Goal usage: `710205` tokens, about 26m 37s elapsed.
 
-::git-create-branch{cwd="/Users/hedde/.codex/worktrees/85ef/evorto" branch="codex/launch-critical-test-coverage"}
-::git-stage{cwd="/Users/hedde/.codex/worktrees/85ef/evorto"}
-::git-commit{cwd="/Users/hedde/.codex/worktrees/85ef/evorto"}
-::git-push{cwd="/Users/hedde/.codex/worktrees/85ef/evorto" branch="codex/launch-critical-test-coverage"}
+::git-create-branch{cwd="/home/<USER>/.codex/worktrees/85ef/evorto" branch="codex/launch-critical-test-coverage"}
+::git-stage{cwd="/home/<USER>/.codex/worktrees/85ef/evorto"}
+::git-commit{cwd="/home/<USER>/.codex/worktrees/85ef/evorto"}
+::git-push{cwd="/home/<USER>/.codex/worktrees/85ef/evorto" branch="codex/launch-critical-test-coverage"}
 
 <oai-mem-citation>
 <citation_entries>
@@ -10040,8 +10040,8 @@ tool_use exec_command
 id: call_0Qjx06PGjUBr7N3jQqg5tRPm
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/hedde/.codex/plugins/cache/openai-curated/github/3fdeeb49/skills/github/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/openai-curated/github/3fdeeb49/skills/github/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -10053,8 +10053,8 @@ tool_use exec_command
 id: call_t7ZzNPmaFM9lkomCAsITBSWi
 ```json
 {
-  "cmd": "sed -n '1,240p' /Users/hedde/.codex/plugins/cache/openai-curated/github/3fdeeb49/skills/yeet/SKILL.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/plugins/cache/openai-curated/github/3fdeeb49/skills/yeet/SKILL.md",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -10066,8 +10066,8 @@ tool_use exec_command
 id: call_NM2yc9KQycD6PhQgT7BZa9YF
 ```json
 {
-  "cmd": "rg -n \"PR body|Triple check|validation|local validation|evorto\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "rg -n \"PR body|Triple check|validation|local validation|evorto\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -10147,9 +10147,9 @@ Output:
 94:- Symptom: full end-to-end app validation looks blocked early. Cause: tado login approval was still pending. Fix: validate auth/error paths separately first and avoid claiming real indoor-reading verification before the login is completed. [Task 1]
 103:# Task Group: evorto / dependency refresh and stacked PR workflow
 105:scope: Refresh dependencies on top of the PR62 browser-transport stack, research migration/toolchain impacts, and switch to CI-only validation when local Docker is off-limits; use for `evorto-app/app` stacked dependency refreshes, not for generic package bump work outside this repo.
-106:applies_to: cwd=/Users/hedde/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked dependency-refresh workflows across similar worktrees, but treat exact package versions, CI run ids, branch names, and PR numbers as time-specific evidence.
-112:- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/Users/hedde/.codex/worktrees/5671/evorto, rollout_path=/Users/hedde/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, Angular 22/TypeScript 6 forced a toolchain decision and the stacked PR landed as draft PR 76)
-122:- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/Users/hedde/.codex/worktrees/5671/evorto, rollout_path=/Users/hedde/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, remote Actions status replaced local Docker/test execution once the user asked for CI-only control)
+106:applies_to: cwd=/home/<USER>/.codex/worktrees/*/evorto; reuse_rule=safe for `evorto-app/app` stacked dependency-refresh workflows across similar worktrees, but treat exact package versions, CI run ids, branch names, and PR numbers as time-specific evidence.
+112:- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/home/<USER>/.codex/worktrees/5671/evorto, rollout_path=/home/<USER>/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, Angular 22/TypeScript 6 forced a toolchain decision and the stacked PR landed as draft PR 76)
+122:- rollout_summaries/2026-06-29T20-29-56-EOS2-evorto_pr62_dependency_refresh_ci_only.md (cwd=/home/<USER>/.codex/worktrees/5671/evorto, rollout_path=/home/<USER>/.codex/sessions/2026/06/29/rollout-2026-06-29T22-29-56-019f1513-0676-73b2-ad56-c9a4e4b0eace.jsonl, updated_at=2026-06-29T21:38:53+00:00, thread_id=019f1513-0676-73b2-ad56-c9a4e4b0eace, remote Actions status replaced local Docker/test execution once the user asked for CI-only control)
 126:- run the tests only in ci, I need control over local docker atm, gh run view, gh api repos/evorto-app/app/actions/jobs, Playwright E2E (functional + docs), in_progress, […]
 
 > AGENT
@@ -10163,7 +10163,7 @@ id: call_AoALHOqcexVAmg11QutZVTC7
 ```json
 {
   "cmd": "git status -sb && git log --oneline -1 && gh --version && gh auth status",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -10176,7 +10176,7 @@ id: call_lbSn178mtpRgccTPDoA1zHov
 ```json
 {
   "cmd": "git town propose --help",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -10259,7 +10259,7 @@ id: call_VMyNzz2bO4pu9ium9JJIH0QU
 ```json
 {
   "cmd": "bun run format:write && bunx node@24.15.0 ./node_modules/@angular/cli/bin/ng.js lint --fix && rg -n \"test\\.(skip|fixme)|describe\\.skip|\\.skip\\(\" tests src --glob '*.{ts,tsx,js,mjs}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -10316,7 +10316,7 @@ id: call_dApnnFT7CPNTK8xCzhTXyj8O
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-baseline tests/specs/events/events.test.ts tests/specs/finance/receipts-flows.spec.ts tests/specs/finance/tax-rates/admin-import-tax-rates.spec.ts tests/specs/permissions/matrix.spec.ts tests/specs/scanning/scanner.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -10333,10 +10333,10 @@ Process running with session ID 42484
 Original token count: 4492
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:15:09.031] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:15:09.031] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 38 tests using 7 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:41756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -10427,7 +10427,7 @@ id: call_5dmFaglB8vmd4aGdCyAA5Aaz
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=docs-baseline tests/docs/finance/receipt-review-reimbursement.doc.ts tests/docs/templates/templates.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -10444,10 +10444,10 @@ Process running with session ID 31248
 Original token count: 1692
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:16:01.817] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:16:01.817] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 9 tests using 2 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:42555) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -10515,7 +10515,7 @@ id: call_gS2rr5Orw5HAQMB9JoyF1Y2O
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-integration tests/specs/profile/create-account.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -10532,10 +10532,10 @@ Process exited with code 0
 Original token count: 618
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:16:41.137] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:16:41.137] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:43165) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -10571,7 +10571,7 @@ id: call_QNpEYLsPBfPXuhkM0unuR6eR
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=docs-integration tests/docs/users/create-account.doc.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -10588,10 +10588,10 @@ Process exited with code 0
 Original token count: 618
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:17:13.648] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:17:13.648] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 8 tests using 1 worker
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:44285) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -10627,7 +10627,7 @@ id: call_zODTIAHxNakJ2rZ6GRFYrFVO
 ```json
 {
   "cmd": "APP_HOST_PORT=4200 bun run env:runtime && node_modules/.bin/dotenv -c dev -- node_modules/.bin/playwright test --project=local-chrome-baseline tests/specs/finance/stripe-webhook-replay.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -10644,10 +10644,10 @@ Process exited with code 0
 Original token count: 3942
 Output:
 $ bun helpers/testing/runtime-environment.ts
-[17:17:48.037] INFO (#1): Wrote /Users/hedde/.codex/worktrees/85ef/evorto/.env.dev
+[17:17:48.037] INFO (#1): Wrote /home/<USER>/.codex/worktrees/85ef/evorto/.env.dev
 
 Running 13 tests using 6 workers
-[docs-reporter] docsRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/Users/hedde/.codex/worktrees/85ef/evorto/test-results/docs/images
+[docs-reporter] docsRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs imagesRoot=/home/<USER>/.codex/worktrees/85ef/evorto/test-results/docs/images
 (node:45894) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ Seeded 6 base users (skipping existing)
@@ -10683,7 +10683,7 @@ id: call_T40UfMdhhTkceeQRh1fU4Z6C
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10696,7 +10696,7 @@ id: call_eNDHhJi5OsmjxprC14YiRsOd
 ```json
 {
   "cmd": "gh pr list --head codex/launch-critical-test-coverage --json number,url,title,state,isDraft",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10709,7 +10709,7 @@ id: call_Dgeu8ya0DNOXXyIWh22pFtin
 ```json
 {
   "cmd": "gh repo view --json defaultBranchRef,nameWithOwner",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10794,7 +10794,7 @@ id: call_SJvcQe3NhV7bVvKe9kXpW0jY
 ```json
 {
   "cmd": "gh pr view 82 --json number,url,title,isDraft,baseRefName,headRefName,commits,mergeStateStatus,statusCheckRollup",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -10807,7 +10807,7 @@ id: call_tSkPEGvTrTkvoLeBZctOmqXZ
 ```json
 {
   "cmd": "git status -sb",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10823,7 +10823,7 @@ Wall time: 0.6070 seconds
 Process exited with code 0
 Original token count: 372
 Output:
-{"baseRefName":"main","commits":[{"authoredDate":"2026-07-01T15:06:48Z","authors":[{"email":"lu.heddendorp@gmail.com","id":"MDQ6VXNlcjM2MTI3NDg=","login":"heddendorp","name":"Lukas heddendorp"}],"committedDate":"2026-07-01T15:06:48Z","messageBody":"Entire-Checkpoint: 7276d50e89ff","messageHeadline":"Harden launch-critical Playwright coverage","oid":"2180f239105b5b280e35089c316b2460201df9bf"}],"headRefName":"codex/launch-critical-test-coverage","isDraft":true,"mergeStateStatus":"UNSTABLE","number":82,"statusCheckRollup":[{"__typename":"CheckRun","completedAt":"0001-01-01T00:00:00Z","conclusion":"","detailsUrl":"https://github.com/evorto-app/app/actions/runs/28528179558/job/84570255200","name":"Analyze (actions)","startedAt":"2026-07-01T15:18:45Z","status":"QUEUED","workflowName":"CodeQL"},{"__typename":"CheckRun","completedAt":"0001-01-01T00:00:00Z","conclusion":"","detailsUrl":"https://github.com/evorto-app/app/actions/runs/28528182801/job/84570261150","name":"Playwright E2E (functional + docs)","startedAt":"2026-07-01T15:18:47Z","status":"QUEUED","workflowName":"E2E Baseline"},{"__typename":"CheckRun","completedAt":"0001-01-01T00:00:00Z","conclusion":"","detailsUrl":"https://github.com/evorto-app/app/actions/runs/28528183203/job/84570262046","name":"Display the branch stack","startedAt":"2026-07-01T15:18:47Z","status":"QUEUED","workflowName":"Git Town"}],"title":"test: harden launch-critical Playwright coverage","url":"https://github.com/evorto-app/app/pull/82"}
+{"baseRefName":"main","commits":[{"authoredDate":"2026-07-01T15:06:48Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjM2MTI3NDg=","login":"heddendorp","name":"Lukas heddendorp"}],"committedDate":"2026-07-01T15:06:48Z","messageBody":"Entire-Checkpoint: 7276d50e89ff","messageHeadline":"Harden launch-critical Playwright coverage","oid":"2180f239105b5b280e35089c316b2460201df9bf"}],"headRefName":"codex/launch-critical-test-coverage","isDraft":true,"mergeStateStatus":"UNSTABLE","number":82,"statusCheckRollup":[{"__typename":"CheckRun","completedAt":"0001-01-01T00:00:00Z","conclusion":"","detailsUrl":"https://github.com/evorto-app/app/actions/runs/28528179558/job/84570255200","name":"Analyze (actions)","startedAt":"2026-07-01T15:18:45Z","status":"QUEUED","workflowName":"CodeQL"},{"__typename":"CheckRun","completedAt":"0001-01-01T00:00:00Z","conclusion":"","detailsUrl":"https://github.com/evorto-app/app/actions/runs/28528182801/job/84570261150","name":"Playwright E2E (functional + docs)","startedAt":"2026-07-01T15:18:47Z","status":"QUEUED","workflowName":"E2E Baseline"},{"__typename":"CheckRun","completedAt":"0001-01-01T00:00:00Z","conclusion":"","detailsUrl":"https://github.com/evorto-app/app/actions/runs/28528183203/job/84570262046","name":"Display the branch stack","startedAt":"2026-07-01T15:18:47Z","status":"QUEUED","workflowName":"Git Town"}],"title":"test: harden launch-critical Playwright coverage","url":"https://github.com/evorto-app/app/pull/82"}
 
 ```
 
@@ -10858,7 +10858,7 @@ I also reran the coverage/readiness checks fresh before creating it:
 
 PR CI has started and was queued when checked: CodeQL, Playwright E2E, and Git Town branch stack. Worktree is clean.
 
-::git-create-pr{cwd="/Users/hedde/.codex/worktrees/85ef/evorto" branch="codex/launch-critical-test-coverage" url="https://github.com/evorto-app/app/pull/82" isDraft=true}
+::git-create-pr{cwd="/home/<USER>/.codex/worktrees/85ef/evorto" branch="codex/launch-critical-test-coverage" url="https://github.com/evorto-app/app/pull/82" isDraft=true}
 
 <oai-mem-citation>
 <citation_entries>
@@ -10886,7 +10886,7 @@ id: call_UvaGDxorrYFSZQJbRnGLzG7J
 ```json
 {
   "cmd": "rg -n \"test\\.(skip|fixme)|describe\\.skip|\\.skip\\(\" tests src --glob '*.{ts,tsx,js,mjs}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10928,8 +10928,8 @@ tool_use exec_command
 id: call_JtDRBLfHAvrrIG9AMjgIJzc1
 ```json
 {
-  "cmd": "rg -n \"coverage|test inventory|uncovered|skip|Playwright|docs-baseline\" /Users/hedde/.codex/memories/MEMORY.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "cmd": "rg -n \"coverage|test inventory|uncovered|skip|Playwright|docs-baseline\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -10942,7 +10942,7 @@ id: call_HdbDckCzIRfZxsI0JqxWI7f3
 ```json
 {
   "cmd": "sed -n '1,260p' tests/test-inventory.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -10955,7 +10955,7 @@ id: call_LExhwmS1niNBHWdRargTEGkx
 ```json
 {
   "cmd": "find tests/specs tests/docs -maxdepth 3 -type f -name '*.ts' | sort",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -10968,7 +10968,7 @@ id: call_TOKKRZitiW6EFU75l0x2hv97
 ```json
 {
   "cmd": "find src/app -maxdepth 3 -type f \\( -name '*.routes.ts' -o -name '*routing*.ts' -o -name '*.component.ts' \\) | sort | sed -n '1,240p'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -10986,7 +10986,7 @@ Original token count: 966
 Output:
 126:- run the tests only in ci, I need control over local docker atm, gh run view, gh api repos/evorto-app/app/actions/jobs, Playwright E2E (functional + docs), in_progress, Docker build, remote-only validation
 141:- The validated end state for PR 76 was green CI on `Display the branch stack`, both `copilot-setup-steps` runs, `CodeRabbit`, and `Playwright E2E (functional + docs)` without any local Docker runs after the user’s instruction. [Task 2]
-159:- rollout_summaries/2026-06-22T06-28-26-6Mwf-evorto_pr62_split_stack_reverify_and_pr_body_update.md (cwd=/Users/hedde/.codex/worktrees/d0b2/evorto, rollout_path=/Users/hedde/.codex/sessions/2026/06/22/rollout-2026-06-22T08-28-26-019eee04-186b-7b81-9d8d-04cc08e75aff.jsonl, updated_at=2026-06-22T23:49:25+00:00, thread_id=019eee04-186b-7b81-9d8d-04cc08e75aff, stack was rechecked end-to-end but PR63 still ended on docs-baseline failures)
+159:- rollout_summaries/2026-06-22T06-28-26-6Mwf-evorto_pr62_split_stack_reverify_and_pr_body_update.md (cwd=/home/<USER>/.codex/worktrees/d0b2/evorto, rollout_path=/home/<USER>/.codex/sessions/2026/06/22/rollout-2026-06-22T08-28-26-019eee04-186b-7b81-9d8d-04cc08e75aff.jsonl, updated_at=2026-06-22T23:49:25+00:00, thread_id=019eee04-186b-7b81-9d8d-04cc08e75aff, stack was rechecked end-to-end but PR63 still ended on docs-baseline failures)
 163:- github-pr, gh pr view, reviewThreads, gh run watch, PR62, PR63, docs-baseline, templates.test.ts, EventConflictError, current state, STABILIZATION.md, file cap, local validation instructions
 178:- The validated stack state at the end of this rollout was PR63 files=150, PR64 files=149, PR65 files=148, PR66 files=147, with PR63 still blocked by docs-baseline rather than by the stale-review conflict fix. [Task 1]
 182:- Symptom: a template/autocomplete Playwright fix keeps failing even after the first assertion rewrite. Cause: the selected chip text loads asynchronously and the autocomplete can legitimately have zero remaining options. Fix: wait for the known seeded label `Section […]
@@ -11188,7 +11188,7 @@ id: call_mLoertuKMFkP2XGNt73OHQ5o
 ```json
 {
   "cmd": "sed -n '260,520p' tests/test-inventory.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -11201,7 +11201,7 @@ id: call_Yr8txMmDx9uUEf5Zv7TKihKi
 ```json
 {
   "cmd": "rg -n \"fixme|TODO|not covered|future|deferred|manual|watchlist|live|no mobile|skip|gap|placeholder\" tests/test-inventory.md tests src/app --glob '*.{md,ts}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -11214,7 +11214,7 @@ id: call_eon8rqdgH7VJ9iuYsvlPZiIG
 ```json
 {
   "cmd": "find src/app -name '*.spec.ts' -o -name '*.test.ts' | sort",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -11227,7 +11227,7 @@ id: call_gd63B3jC9Y79SQz6SVUj3fm2
 ```json
 {
   "cmd": "find src/server -name '*.spec.ts' -o -name '*.test.ts' | sort | sed -n '1,220p'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -11411,7 +11411,7 @@ id: call_t1oWxvtHg15cGDH2g74EG5bG
 ```json
 {
   "cmd": "sed -n '520,590p' tests/test-inventory.md",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -11464,7 +11464,7 @@ id: call_2Wfsq3jwvHj8bM6Et2nkTPaf
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/internal-pages/members-hub/internal.routes.ts && sed -n '1,220p' src/app/internal-pages/members-hub/members-hub.component.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -11477,7 +11477,7 @@ id: call_qkBUJ2y2xWpJQJPxKENnoJzf
 ```json
 {
   "cmd": "rg -n \"members-hub|internal-pages|internal\" tests src/app src/server --glob '*.{ts,md}'",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -11490,7 +11490,7 @@ id: call_cNWckTlIp51dB6ps1ZgPEnWM
 ```json
 {
   "cmd": "rg -n \"path:|redirectTo|loadComponent|loadChildren|canActivate\" src/app/app.routes.ts src/app/**/**.routes.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -11638,7 +11638,7 @@ id: call_wKxY12mWXC1FKVHyGZi6i4pg
 ```json
 {
   "cmd": "sed -n '1,120p' tests/specs/permissions/override.test.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -11651,7 +11651,7 @@ id: call_9L8Fdt5C9TSypwOmi5FioFfZ
 ```json
 {
   "cmd": "sed -n '1,160p' src/app/app.routes.spec.ts",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -11664,7 +11664,7 @@ id: call_BNW9E3qFECPzUuhGPlaRwnev
 ```json
 {
   "cmd": "sed -n '1,220p' src/app/internal-pages/members-hub/members-hub.component.html",
-  "workdir": "/Users/hedde/.codex/worktrees/85ef/evorto",
+  "workdir": "/home/<USER>/.codex/worktrees/85ef/evorto",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }

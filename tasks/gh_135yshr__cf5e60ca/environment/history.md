@@ -153,7 +153,7 @@ tool_use Bash
 id: toolu_01C3SarF2yLbCnxni61x1wjf
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\n✨ feat: add full-Japanese PRD example\n\nAdd examples/06-japanese-document showcasing a complete Japanese product\nrequirements document, covering Mermaid flowchart and gantt diagrams,\nmultiple GFM tables, JSON code blocks, and quotes — to validate Noto Sans\nCJK JP rendering on a non-engineering business document.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\n✨ feat: add full-Japanese PRD example\n\nAdd examples/06-japanese-document showcasing a complete Japanese product\nrequirements document, covering Mermaid flowchart and gantt diagrams,\nmultiple GFM tables, JSON code blocks, and quotes — to validate Noto Sans\nCJK JP rendering on a non-engineering business document.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Commit staged changes"
 }
 ```

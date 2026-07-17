@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01PPEv4zwH4hnNaraQTaWNFb
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/",
+  "command": "ls /home/<USER>/fediverse/",
   "description": "List fediverse directory"
 }
 ```
@@ -51,7 +51,7 @@ id: toolu_01BfWrNxE4BNt3sEoYdQ5Vqq
 tool_result
 id: toolu_01BfWrNxE4BNt3sEoYdQ5Vqq
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc
 app
 docs
 fastlane
@@ -75,7 +75,7 @@ id: toolu_01KssUGJjXW4orQPT46wx2bq
 {
   "description": "Explore TOC in hackerspub articledetail",
   "subagent_type": "Explore",
-  "prompt": "I need to understand how the hackerspub (web) implementation renders a Table of Contents (TOC) for article detail pages, so I can mirror it in the Android client.\n\nStart at /Users/kodingwarrior/fediverse/hackerspub. This is the web/server implementation.\n\nPlease investigate:\n1. The GraphQL schema / query for article detail — what does it return related to TOC? (look for \"articleDetail\", \"toc\", \"tableOfContents\", \"headings\", etc. in the GraphQL SDL or resolver code)\n2. How is the TOC structure represented? (flat list with heading level + text + id? nested tree? anchor ids?)\n3. How is the TOC rendered in the frontend for article detail pages? (what component, what markup/styling, does it scroll to anchors?)\n4. How do the article body headings get anchor ids that match the TOC entries?\n\nReport concrete findings with file paths and line numbers. Include representative code snippets of:\n- the GraphQL type definitions for the TOC field\n- the resolver that builds the TOC\n- the frontend component that renders it\n\nKeep the report focused and under ~400 words. I'll use it to design the Android rendering."
+  "prompt": "I need to understand how the hackerspub (web) implementation renders a Table of Contents (TOC) for article detail pages, so I can mirror it in the Android client.\n\nStart at /home/<USER>/fediverse/hackerspub. This is the web/server implementation.\n\nPlease investigate:\n1. The GraphQL schema / query for article detail — what does it return related to TOC? (look for \"articleDetail\", \"toc\", \"tableOfContents\", \"headings\", etc. in the GraphQL SDL or resolver code)\n2. How is the TOC structure represented? (flat list with heading level + text + id? nested tree? anchor ids?)\n3. How is the TOC rendered in the frontend for article detail pages? (what component, what markup/styling, does it scroll to anchors?)\n4. How do the article body headings get anchor ids that match the TOC entries?\n\nReport concrete findings with file paths and line numbers. Include representative code snippets of:\n- the GraphQL type definitions for the TOC field\n- the resolver that builds the TOC\n- the frontend component that renders it\n\nKeep the report focused and under ~400 words. I'll use it to design the Android rendering."
 }
 ```
 
@@ -92,7 +92,7 @@ I've thoroughly investigated the hackerspub web implementation's Table of Conten
 
 ### 1. GraphQL Schema and Type Definition
 
-**File:** `/Users/kodingwarrior/fediverse/hackerspub/graphql/post.ts` (lines 388-399)
+**File:** `/home/<USER>/fediverse/hackerspub/graphql/post.ts` (lines 388-399)
 
 The `ArticleContent` type exposes `toc` as a JSON field:
 ```typescript
@@ -113,7 +113,7 @@ toc: t.field({
 
 ### 2. TOC Data Structure
 
-**File:** `/Users/kodingwarrior/fediverse/hackerspub/models/markup.ts` (lines 258-263)
+**File:** `/home/<USER>/fediverse/hackerspub/models/markup.ts` (lines 258-263)
 
 ```typescript
 export interface Toc {
@@ -128,7 +128,7 @@ export interface Toc {
 
 ### 3. Anchor ID Generation
 
-**File:** `/Users/kodingwarrior/fediverse/hackerspub/models/markup.ts` (lines 247-250, 265-271)
+**File:** `/home/<USER>/fediverse/hackerspub/models/markup.ts` (lines 247-250, 265-271)
 
 Anchor IDs are generated using:
 - Heading text slugified with `@std/text/unstable-slugify` + `ASCII_DIACRITICS` stripping
@@ -143,7 +143,7 @@ id: toolu_01F4NRB4L8WK2qBbWyuBmmUB
 {
   "description": "Explore Android article detail",
   "subagent_type": "Explore",
-  "prompt": "Explore the Android app at /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc to find:\n\n1. The article detail screen/feature — where is it? (Jetpack Compose). Look for \"ArticleDetail\" or similar.\n2. The GraphQL query for article detail — what fields does it currently request?\n3. How is the article body (markdown/HTML) rendered? What library is used? (e.g., WebView, HtmlText, compose-markdown, Markwon-equivalent, etc.)\n4. Is there any existing TOC handling?\n\nAlso important:\n- What's the .graphql file location where the articleDetail query is defined?\n- How is HTML rendered — do headings get scrollable anchor ids in the current renderer?\n- Is there a scroll state / LazyColumn used for the article body that we could use to scroll to a heading?\n\nReport with file paths + line numbers and representative code snippets. Keep under 400 words. This is for designing a TOC feature that mirrors the web implementation (which has a toc: JSON field returning a nested tree of {id, level, title, children})."
+  "prompt": "Explore the Android app at /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc to find:\n\n1. The article detail screen/feature — where is it? (Jetpack Compose). Look for \"ArticleDetail\" or similar.\n2. The GraphQL query for article detail — what fields does it currently request?\n3. How is the article body (markdown/HTML) rendered? What library is used? (e.g., WebView, HtmlText, compose-markdown, Markwon-equivalent, etc.)\n4. Is there any existing TOC handling?\n\nAlso important:\n- What's the .graphql file location where the articleDetail query is defined?\n- How is HTML rendered — do headings get scrollable anchor ids in the current renderer?\n- Is there a scroll state / LazyColumn used for the article body that we could use to scroll to a heading?\n\nReport with file paths + line numbers and representative code snippets. Keep under 400 words. This is for designing a TOC feature that mirrors the web implementation (which has a toc: JSON field returning a nested tree of {id, level, title, children})."
 }
 ```
 
@@ -159,7 +159,7 @@ Perfect. Now let me summarize the findings in a comprehensive report:
 I've thoroughly explored the Android app and found the key information for your TOC feature design:
 
 ### 1. Article Detail Screen Location
-**File:** `/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt`
+**File:** `/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt`
 - Built with **Jetpack Compose**
 - Uses `LazyColumn` (lines 485-894) with `contentPadding` for scrollable article content
 - Articles detected via `post.typename == "Article"` (line 562)
@@ -167,12 +167,12 @@ I've thoroughly explored the Android app and found the key information for your 
 - Uses `HtmlContent` component for body rendering (lines 587-593)
 
 ### 2. GraphQL Query (PostDetail)
-**File:** `/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql` (lines 377-436)
+**File:** `/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql` (lines 377-436)
 
 Currently requests **no TOC field**. The `PostFields` fragment includes: `id`, `name`, `content`, `summary`, `excerpt`, `url`, `published`, `actor`, `media`, `link`, `engagementStats`, `mentions`, `reactionGroups`, etc. — but **no `toc` field exists yet**.
 
 ### 3. HTML/Markdown Rendering
-**File:** `/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt`
+**File:** `/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt`
 
 Uses **custom HTML parser** (not WebView):
 - Parses HTML to `AnnotatedString` (lines 117-196)
@@ -274,7 +274,7 @@ tool_use Read
 id: toolu_01DwtgActi2kLzzVZxuiYuFj
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "offset": 370,
   "limit": 80
 }
@@ -287,7 +287,7 @@ id: toolu_01EWryhTEGQQVxcBJxvn61db
 ```json
 {
   "pattern": "articleContent|ArticleContent|article\\s*:\\s*|toc\" ",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql",
   "output_mode": "content",
   "-n": true
 }
@@ -309,7 +309,7 @@ tool_use Read
 id: toolu_01AQabbP9yyCKRQ5nvvH1qCN
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls",
   "offset": 485,
   "limit": 70
 }
@@ -398,7 +398,7 @@ tool_use Bash
 id: toolu_01Jf7Jz2DDUqC7uCpPqWeb3i
 ```json
 {
-  "command": "grep -n \"type Article \\|type Article$\\|type Article \" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls | head -20",
+  "command": "grep -n \"type Article \\|type Article$\\|type Article \" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls | head -20",
   "description": "Find Article type"
 }
 ```
@@ -417,7 +417,7 @@ tool_use Read
 id: toolu_01PfjgHMw5TjERToUkBtb6Xu
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls",
   "offset": 424,
   "limit": 65
 }
@@ -527,7 +527,7 @@ tool_use Bash
 id: toolu_01CVhTof6ka67t558ZooQi9m
 ```json
 {
-  "command": "wc -l /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "command": "wc -l /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "description": "Line counts"
 }
 ```
@@ -537,8 +537,8 @@ id: toolu_01CVhTof6ka67t558ZooQi9m
 tool_result
 id: toolu_01CVhTof6ka67t558ZooQi9m
 ```
-    1419 /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt
-    1118 /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt
+    1419 /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt
+    1118 /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt
     2537 total
 ```
 
@@ -548,7 +548,7 @@ tool_use Read
 id: toolu_01Q2Yi6NNxPJ8NHMbjPWdjPj
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 460,
   "limit": 150
 }
@@ -613,7 +613,7 @@ tool_use Read
 id: toolu_01QbmZ9rxZRVai4dTpTzgYjH
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 1,
   "limit": 120
 }
@@ -689,7 +689,7 @@ tool_use Read
 id: toolu_01DUKZSKcrrKg8Ej8Kv2VFHa
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 120,
   "limit": 320
 }
@@ -749,7 +749,7 @@ id: toolu_01DhrfcEe6trmMpmXenBiCdk
 ```json
 {
   "pattern": "h1|h2|h3|h4|h5|h6|heading|Heading",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "output_mode": "content",
   "-n": true
 }
@@ -777,7 +777,7 @@ tool_use Read
 id: toolu_019QSfUWjZbHD9ftg5HYyMLv
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 480,
   "limit": 280
 }
@@ -837,7 +837,7 @@ tool_use Bash
 id: toolu_01Bfd61c6x4HtKS3QpA3aYxB
 ```json
 {
-  "command": "grep -rn \"JSON\\b\\|scalar JSON\\|JSONObject\\|\\\"JSON\\\"\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build.gradle.kts /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls 2>/dev/null | head -20",
+  "command": "grep -rn \"JSON\\b\\|scalar JSON\\|JSONObject\\|\\\"JSON\\\"\" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build.gradle.kts /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls 2>/dev/null | head -20",
   "description": "Find JSON scalar mapping"
 }
 ```
@@ -847,15 +847,15 @@ id: toolu_01Bfd61c6x4HtKS3QpA3aYxB
 tool_result
 id: toolu_01Bfd61c6x4HtKS3QpA3aYxB
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:514:  toc: JSON!
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:667:  toc: JSON!
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:840:The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:842:scalar JSON
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:907:  getPasskeyAuthenticationOptions("Temporary session ID for passkey authentication." sessionId: UUID!): JSON!
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:909:  getPasskeyRegistrationOptions(accountId: ID!): JSON!
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:915:  loginByPasskey("WebAuthn authentication response from the client." authenticationResponse: JSON!, platform: String = "web", "Temporary session ID used for authentication options." sessionId: UUID!): Session
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:952:  verifyPasskeyRegistration(accountId: ID!, name: String!, platform: String = "web", registrationResponse: JSON!): PasskeyRegistrationResult!
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:2008:  emojis: JSON
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:514:  toc: JSON!
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:667:  toc: JSON!
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:840:The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:842:scalar JSON
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:907:  getPasskeyAuthenticationOptions("Temporary session ID for passkey authentication." sessionId: UUID!): JSON!
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:909:  getPasskeyRegistrationOptions(accountId: ID!): JSON!
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:915:  loginByPasskey("WebAuthn authentication response from the client." authenticationResponse: JSON!, platform: String = "web", "Temporary session ID used for authentication options." sessionId: UUID!): Session
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:952:  verifyPasskeyRegistration(accountId: ID!, name: String!, platform: String = "web", registrationResponse: JSON!): PasskeyRegistrationResult!
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/schema.graphqls:2008:  emojis: JSON
 ```
 
 > TOOL
@@ -864,7 +864,7 @@ tool_use Read
 id: toolu_01Che4Qor4q4CKP2SAE9XYcW
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build.gradle.kts"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build.gradle.kts"
 }
 ```
 
@@ -949,7 +949,7 @@ tool_use Bash
 id: toolu_016G78CroKVfj1UdetTyusnd
 ```json
 {
-  "command": "grep -rn \"JSON\\|Any?\\|Any \" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql | head -10",
+  "command": "grep -rn \"JSON\\|Any?\\|Any \" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql | head -10",
   "description": "Check JSON usage"
 }
 ```
@@ -959,8 +959,8 @@ id: toolu_016G78CroKVfj1UdetTyusnd
 tool_result
 id: toolu_016G78CroKVfj1UdetTyusnd
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql:488:mutation LoginByPasskey($sessionId: UUID!, $authenticationResponse: JSON!, $platform: String = "android") {
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql:505:mutation VerifyPasskeyRegistration($accountId: ID!, $name: String!, $registrationResponse: JSON!, $platform: String = "android") {
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql:488:mutation LoginByPasskey($sessionId: UUID!, $authenticationResponse: JSON!, $platform: String = "android") {
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql:505:mutation VerifyPasskeyRegistration($accountId: ID!, $name: String!, $registrationResponse: JSON!, $platform: String = "android") {
 ```
 
 > TOOL
@@ -1087,7 +1087,7 @@ tool_use Bash
 id: toolu_014xZoRRinGkWQDESpYZB6J4
 ```json
 {
-  "command": "find /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build -path '*generated*' -name '*.kt' 2>/dev/null | head -5",
+  "command": "find /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build -path '*generated*' -name '*.kt' 2>/dev/null | head -5",
   "description": "Find generated Apollo files"
 }
 ```
@@ -1106,7 +1106,7 @@ tool_use Bash
 id: toolu_01HhvwnsmZKsRJSVaCqtgKK1
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build 2>/dev/null | head",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build 2>/dev/null | head",
   "description": "Check build dir"
 }
 ```
@@ -1125,7 +1125,7 @@ tool_use Bash
 id: toolu_019jXHMjgbY3A6uJrG8Snzks
 ```json
 {
-  "command": "grep -rn \"LoginByPasskey\\|authenticationResponse\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java 2>/dev/null | head -10",
+  "command": "grep -rn \"LoginByPasskey\\|authenticationResponse\" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java 2>/dev/null | head -10",
   "description": "Find login usage"
 }
 ```
@@ -1135,11 +1135,11 @@ id: toolu_019jXHMjgbY3A6uJrG8Snzks
 tool_result
 id: toolu_019jXHMjgbY3A6uJrG8Snzks
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt:27:import pub.hackers.android.graphql.LoginByPasskeyMutation
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt:649:    suspend fun loginByPasskey(sessionId: String, authenticationResponse: Any): Result<Session> {
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt:652:                LoginByPasskeyMutation(
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt:654:                    authenticationResponse = authenticationResponse,
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/auth/PasskeyManager.kt:46:            return credential.authenticationResponseJson
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt:27:import pub.hackers.android.graphql.LoginByPasskeyMutation
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt:649:    suspend fun loginByPasskey(sessionId: String, authenticationResponse: Any): Result<Session> {
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt:652:                LoginByPasskeyMutation(
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt:654:                    authenticationResponse = authenticationResponse,
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/auth/PasskeyManager.kt:46:            return credential.authenticationResponseJson
 ```
 
 > TOOL
@@ -1172,7 +1172,7 @@ id: toolu_01TzWMnZXzvfug6jr98vwRim
 ```json
 {
   "pattern": "PostDetailQuery|postDetail|PostDetailContent",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1194,7 +1194,7 @@ id: toolu_01BkX5kv8i77orpvVXbreXJv
 ```json
 {
   "pattern": "PostDetailQuery|postDetail",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java",
   "output_mode": "content",
   "-n": true
 }
@@ -1215,7 +1215,7 @@ tool_use Read
 id: toolu_01R6NRe9c7F7254muM2mDCo6
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 195,
   "limit": 70
 }
@@ -1286,7 +1286,7 @@ tool_use Read
 id: toolu_01LbrsBawDghmuYU9z5xPGvw
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 260,
   "limit": 40
 }
@@ -1346,7 +1346,7 @@ id: toolu_01GxoG6oZUnpmLyFxFbbJoEh
 ```json
 {
   "pattern": "PostDetailResult|data class PostDetailResult",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java",
   "output_mode": "content",
   "-n": true,
   "head_limit": 10
@@ -1369,7 +1369,7 @@ tool_use Read
 id: toolu_013mp1HLoLp1UvUXzUaasXBA
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/Models.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/Models.kt",
   "offset": 235,
   "limit": 25
 }
@@ -1414,7 +1414,7 @@ id: toolu_01HcTMgdKFSxXVMkt4UJPUpp
 ```json
 {
   "pattern": "PostDetailContent|getPostDetail|PostDetailResult",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail",
   "output_mode": "content",
   "-n": true
 }
@@ -1437,7 +1437,7 @@ tool_use Read
 id: toolu_013QJqpcJXKVbGHurksQFoeH
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt"
 }
 ```
 
@@ -1563,7 +1563,7 @@ tool_use Read
 id: toolu_01Mjv4w3LZXKDpjMyhq3UMpJ
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 340,
   "limit": 130
 }
@@ -1575,7 +1575,7 @@ tool_use Read
 id: toolu_01X2j7XAb425BSBiBvnn5Uy6
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 415,
   "limit": 80
 }
@@ -1648,7 +1648,7 @@ id: toolu_01QdHZq85P6NLoot43ZBcWDK
 ```json
 {
   "pattern": "splitTextAndListBlocks|blockSpacing|normalizeHtmlForRendering",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "output_mode": "content",
   "-n": true
 }
@@ -1677,7 +1677,7 @@ tool_use Read
 id: toolu_0114LScn9NMcEzHYCQSPtUMr
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 979,
   "limit": 140
 }
@@ -1776,7 +1776,7 @@ id: toolu_011mq7wq3S54LPmusLa2Q9gq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "old_string": "query PostDetail($id: ID!, $repliesAfter: String) {\n    node(id: $id) {\n        ... on Post {\n            ...PostFields\n            visibility\n            replyTarget {\n                ...PostFields\n            }\n            sharedPost {\n                ...SharedPostFields\n            }",
   "new_string": "query PostDetail($id: ID!, $repliesAfter: String) {\n    node(id: $id) {\n        ... on Post {\n            ...PostFields\n            visibility\n            replyTarget {\n                ...PostFields\n            }\n            sharedPost {\n                ...SharedPostFields\n            }\n        }\n        ... on Article {\n            contents {\n                language\n                toc\n            }\n        }\n        ... on Post {"
 }
@@ -1787,7 +1787,7 @@ id: toolu_011mq7wq3S54LPmusLa2Q9gq
 tool_result
 id: toolu_011mq7wq3S54LPmusLa2Q9gq
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
 ```
 
 > TOOL
@@ -1796,7 +1796,7 @@ tool_use Read
 id: toolu_014LoiD37dBWXwTZW82CEYXE
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "offset": 377,
   "limit": 60
 }
@@ -1880,7 +1880,7 @@ id: toolu_015bLpTFzrX9xtVWJm4ErgEi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "old_string": "query PostDetail($id: ID!, $repliesAfter: String) {\n    node(id: $id) {\n        ... on Post {\n            ...PostFields\n            visibility\n            replyTarget {\n                ...PostFields\n            }\n            sharedPost {\n                ...SharedPostFields\n            }\n        }\n        ... on Article {\n            contents {\n                language\n                toc\n            }\n        }\n        ... on Post {\n            reactionGroups {",
   "new_string": "query PostDetail($id: ID!, $repliesAfter: String) {\n    node(id: $id) {\n        ... on Post {\n            ...PostFields\n            visibility\n            replyTarget {\n                ...PostFields\n            }\n            sharedPost {\n                ...SharedPostFields\n            }\n            reactionGroups {"
 }
@@ -1891,7 +1891,7 @@ id: toolu_015bLpTFzrX9xtVWJm4ErgEi
 tool_result
 id: toolu_015bLpTFzrX9xtVWJm4ErgEi
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
 ```
 
 > TOOL
@@ -1900,7 +1900,7 @@ tool_use Read
 id: toolu_01StSsmk4rC52ajae45JaxUL
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "offset": 420,
   "limit": 25
 }
@@ -1945,7 +1945,7 @@ id: toolu_018tXvXV8iVCvgUWu5jL7Gmj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "old_string": "                pageInfo {\n                    hasNextPage\n                    endCursor\n                }\n            }\n        }\n    }\n}\n\nquery PostReplies($id: ID!, $after: String) {",
   "new_string": "                pageInfo {\n                    hasNextPage\n                    endCursor\n                }\n            }\n        }\n        ... on Article {\n            contents {\n                language\n                toc\n            }\n        }\n    }\n}\n\nquery PostReplies($id: ID!, $after: String) {"
 }
@@ -1956,7 +1956,7 @@ id: toolu_018tXvXV8iVCvgUWu5jL7Gmj
 tool_result
 id: toolu_018tXvXV8iVCvgUWu5jL7Gmj
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
 ```
 
 > AGENT
@@ -1997,7 +1997,7 @@ tool_use Bash
 id: toolu_01G1RZAvGDxoKxjYYi5vr5za
 ```json
 {
-  "command": "find /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build -name \"PostDetailQuery.kt\" 2>/dev/null",
+  "command": "find /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build -name \"PostDetailQuery.kt\" 2>/dev/null",
   "description": "Find generated PostDetailQuery"
 }
 ```
@@ -2007,7 +2007,7 @@ id: toolu_01G1RZAvGDxoKxjYYi5vr5za
 tool_result
 id: toolu_01G1RZAvGDxoKxjYYi5vr5za
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build/generated/source/apollo/hackerspub/pub/hackers/android/graphql/PostDetailQuery.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build/generated/source/apollo/hackerspub/pub/hackers/android/graphql/PostDetailQuery.kt
 ```
 
 > TOOL
@@ -2017,7 +2017,7 @@ id: toolu_01DQ5E6VhCTQaRsHQQqVgCEe
 ```json
 {
   "pattern": "class Node|OnArticle|onArticle|contents|toc",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build/generated/source/apollo/hackerspub/pub/hackers/android/graphql/PostDetailQuery.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build/generated/source/apollo/hackerspub/pub/hackers/android/graphql/PostDetailQuery.kt",
   "output_mode": "content",
   "-n": true,
   "head_limit": 60
@@ -2091,7 +2091,7 @@ tool_use Read
 id: toolu_01HQSxT7CDRXcEpiie5yb8Jw
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build/generated/source/apollo/hackerspub/pub/hackers/android/graphql/PostDetailQuery.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/build/generated/source/apollo/hackerspub/pub/hackers/android/graphql/PostDetailQuery.kt",
   "offset": 60,
   "limit": 220
 }
@@ -2164,7 +2164,7 @@ tool_use Bash
 id: toolu_011heR8LSWvydYo16enn4w6M
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/",
   "description": "List domain model files"
 }
 ```
@@ -2183,7 +2183,7 @@ tool_use Read
 id: toolu_01CAGXCRufQAxUkqqUge26Mo
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/Models.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/Models.kt",
   "offset": 1,
   "limit": 40
 }
@@ -2243,7 +2243,7 @@ id: toolu_01BNLGydnb2SGX1aHxRazdpc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/Models.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/Models.kt",
   "old_string": "@Immutable\ndata class PostDetailResult(\n    val post: Post,\n    val reactionGroups: List<ReactionGroup>,\n    val replies: List<Post>,\n    val hasMoreReplies: Boolean,\n    val repliesEndCursor: String?\n)",
   "new_string": "@Immutable\ndata class PostDetailResult(\n    val post: Post,\n    val reactionGroups: List<ReactionGroup>,\n    val replies: List<Post>,\n    val hasMoreReplies: Boolean,\n    val repliesEndCursor: String?,\n    val toc: List<TocItem> = emptyList(),\n)\n\n@Immutable\ndata class TocItem(\n    val id: String,\n    val level: Int,\n    val title: String,\n    val children: List<TocItem>,\n)"
 }
@@ -2254,7 +2254,7 @@ id: toolu_01BNLGydnb2SGX1aHxRazdpc
 tool_result
 id: toolu_01BNLGydnb2SGX1aHxRazdpc
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/Models.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/Models.kt has been updated successfully.
 ```
 
 > AGENT
@@ -2268,7 +2268,7 @@ id: toolu_018VqwXT9RBswwkp45xdUXBN
 ```json
 {
   "pattern": "fun.*toPost|fun.*toActor|fun.*toPostVisibility",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "output_mode": "content",
   "-n": true,
   "head_limit": 5
@@ -2292,7 +2292,7 @@ tool_use Read
 id: toolu_01VbgaNfiK5P4ErsF4V8b9pW
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": "1, 55",
   "limit": 55
 }
@@ -2313,7 +2313,7 @@ tool_use Read
 id: toolu_014yDy4V3sRekTtaWTQT49KP
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 1,
   "limit": 70
 }
@@ -2401,7 +2401,7 @@ tool_use Read
 id: toolu_01Bz2RKdhK75ES8LxrKbqckf
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 210,
   "limit": 80
 }
@@ -2475,7 +2475,7 @@ id: toolu_01LJfXEuqeFr9cPvWmpTej8P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "old_string": "            if (response.hasErrors()) {\n                Result.failure(Exception(response.errors?.firstOrNull()?.message ?: \"Unknown error\"))\n            } else {\n                withContext(Dispatchers.Default) {\n                    val node = response.data?.node?.onPost\n                        ?: return@withContext Result.failure(Exception(\"Post not found\"))\n\n                    val post = node.postFields.toPost(\n                        sharedPost = node.sharedPost?.sharedPostFields?.toPost(),\n                        replyTarget = node.replyTarget?.postFields?.toPost(),\n                        visibility = node.visibility.toPostVisibility()\n                    )",
   "new_string": "            if (response.hasErrors()) {\n                Result.failure(Exception(response.errors?.firstOrNull()?.message ?: \"Unknown error\"))\n            } else {\n                withContext(Dispatchers.Default) {\n                    val node = response.data?.node?.onPost\n                        ?: return@withContext Result.failure(Exception(\"Post not found\"))\n\n                    val post = node.postFields.toPost(\n                        sharedPost = node.sharedPost?.sharedPostFields?.toPost(),\n                        replyTarget = node.replyTarget?.postFields?.toPost(),\n                        visibility = node.visibility.toPostVisibility()\n                    )\n\n                    val toc = response.data?.node?.onArticle?.contents\n                        ?.firstOrNull()\n                        ?.toc\n                        ?.let { parseTocJson(it) }\n                        ?: emptyList()"
 }
@@ -2486,7 +2486,7 @@ id: toolu_01LJfXEuqeFr9cPvWmpTej8P
 tool_result
 id: toolu_01LJfXEuqeFr9cPvWmpTej8P
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2496,7 +2496,7 @@ id: toolu_016y85dWkqmnk1m9K459wo82
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "old_string": "                    Result.success(\n                        PostDetailResult(\n                            post = post,\n                            reactionGroups = reactionGroups,\n                            replies = replies,\n                            hasMoreReplies = node.replies.pageInfo.hasNextPage,\n                            repliesEndCursor = node.replies.pageInfo.endCursor\n                        )\n                    )",
   "new_string": "                    Result.success(\n                        PostDetailResult(\n                            post = post,\n                            reactionGroups = reactionGroups,\n                            replies = replies,\n                            hasMoreReplies = node.replies.pageInfo.hasNextPage,\n                            repliesEndCursor = node.replies.pageInfo.endCursor,\n                            toc = toc,\n                        )\n                    )"
 }
@@ -2507,7 +2507,7 @@ id: toolu_016y85dWkqmnk1m9K459wo82
 tool_result
 id: toolu_016y85dWkqmnk1m9K459wo82
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
 ```
 
 > AGENT
@@ -2520,7 +2520,7 @@ tool_use Bash
 id: toolu_01VxEs2D7mwx4vGod2g59tfA
 ```json
 {
-  "command": "tail -20 /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "command": "tail -20 /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "description": "Check end of repo file"
 }
 ```
@@ -2558,7 +2558,7 @@ tool_use Read
 id: toolu_016sriCBeyt7jtXUHYsMSySv
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 1560,
   "limit": 50
 }
@@ -2628,7 +2628,7 @@ id: toolu_014Tvrge7hRKm39SA7dTLZNJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "old_string": "    private fun toJsonValue(value: Any?): Any? {\n        return when (value) {\n            null -> org.json.JSONObject.NULL\n            is Map<*, *> -> {\n                val jsonObj = org.json.JSONObject()\n                value.forEach { (k, v) -> jsonObj.put(k.toString(), toJsonValue(v)) }\n                jsonObj\n            }\n            is List<*> -> {\n                val jsonArr = org.json.JSONArray()\n                value.forEach { jsonArr.put(toJsonValue(it)) }\n                jsonArr\n            }\n            else -> value\n        }\n    }\n}",
   "new_string": "    private fun toJsonValue(value: Any?): Any? {\n        return when (value) {\n            null -> org.json.JSONObject.NULL\n            is Map<*, *> -> {\n                val jsonObj = org.json.JSONObject()\n                value.forEach { (k, v) -> jsonObj.put(k.toString(), toJsonValue(v)) }\n                jsonObj\n            }\n            is List<*> -> {\n                val jsonArr = org.json.JSONArray()\n                value.forEach { jsonArr.put(toJsonValue(it)) }\n                jsonArr\n            }\n            else -> value\n        }\n    }\n\n    private fun parseTocJson(value: Any?): List<TocItem> {\n        val list = value as? List<*> ?: return emptyList()\n        return list.mapNotNull { parseTocItem(it) }\n    }\n\n    private fun parseTocItem(value: Any?): TocItem? {\n        val map = value as? Map<*, *> ?: return null\n        val id = map[\"id\"] as? String ?: return null\n        val title = map[\"title\"] as? String ?: return null\n        val level = (map[\"level\"] as? Number)?.toInt() ?: return null\n        val children = parseTocJson(map[\"children\"])\n        return TocItem(id = id, level = level, title = title, children = children)\n    }\n}"
 }
@@ -2639,7 +2639,7 @@ id: toolu_014Tvrge7hRKm39SA7dTLZNJ
 tool_result
 id: toolu_014Tvrge7hRKm39SA7dTLZNJ
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2672,7 +2672,7 @@ id: toolu_01EWVkdgMoyuZwdYMuxKeS9F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt",
   "old_string": "import pub.hackers.android.domain.model.Post\nimport pub.hackers.android.domain.model.ReactionGroup",
   "new_string": "import pub.hackers.android.domain.model.Post\nimport pub.hackers.android.domain.model.ReactionGroup\nimport pub.hackers.android.domain.model.TocItem"
 }
@@ -2683,7 +2683,7 @@ id: toolu_01EWVkdgMoyuZwdYMuxKeS9F
 tool_result
 id: toolu_01EWVkdgMoyuZwdYMuxKeS9F
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2693,7 +2693,7 @@ id: toolu_01Lq4HPtCnwF7A64J9ku3AfX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt",
   "old_string": "data class PostDetailUiState(\n    val post: Post? = null,\n    val reactionGroups: List<ReactionGroup> = emptyList(),\n    val isLoading: Boolean = false,\n    val isRefreshing: Boolean = false,\n    val error: String? = null,\n    val canDelete: Boolean = false,\n    val isDeleting: Boolean = false,\n    val deleteError: String? = null,\n    val isDeleted: Boolean = false,\n    val isReacting: Boolean = false,\n    val showReactionPicker: Boolean = false,\n    val showSharesSheet: Boolean = false,\n    val shareActors: List<Actor> = emptyList(),\n    val isLoadingShares: Boolean = false,\n    val showQuotesSheet: Boolean = false,\n    val quotePosts: List<Post> = emptyList(),\n    val isLoadingQuotes: Boolean = false,\n    val showReactorsSheet: Boolean = false,\n    val selectedReactionGroup: ReactionGroup? = null,\n)",
   "new_string": "data class PostDetailUiState(\n    val post: Post? = null,\n    val reactionGroups: List<ReactionGroup> = emptyList(),\n    val toc: List<TocItem> = emptyList(),\n    val isLoading: Boolean = false,\n    val isRefreshing: Boolean = false,\n    val error: String? = null,\n    val canDelete: Boolean = false,\n    val isDeleting: Boolean = false,\n    val deleteError: String? = null,\n    val isDeleted: Boolean = false,\n    val isReacting: Boolean = false,\n    val showReactionPicker: Boolean = false,\n    val showSharesSheet: Boolean = false,\n    val shareActors: List<Actor> = emptyList(),\n    val isLoadingShares: Boolean = false,\n    val showQuotesSheet: Boolean = false,\n    val quotePosts: List<Post> = emptyList(),\n    val isLoadingQuotes: […]
 
@@ -2702,7 +2702,7 @@ id: toolu_01Lq4HPtCnwF7A64J9ku3AfX
 tool_result
 id: toolu_01Lq4HPtCnwF7A64J9ku3AfX
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2712,7 +2712,7 @@ id: toolu_01KPxLU9cmmjqe1FTeRLKT26
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt",
   "old_string": "                    _uiState.update {\n                        it.copy(\n                            post = result.post,\n                            reactionGroups = result.reactionGroups,\n                            isLoading = false,\n                            canDelete = canDelete\n                        )\n                    }\n                }\n                .onFailure { error ->\n                    _uiState.update {\n                        it.copy(\n                            error = error.message,\n                            isLoading = false\n                        )\n                    }\n                }\n        }\n    }\n\n    fun refresh() {",
   "new_string": "                    _uiState.update {\n                        it.copy(\n                            post = result.post,\n                            reactionGroups = result.reactionGroups,\n                            toc = result.toc,\n                            isLoading = false,\n                            canDelete = canDelete\n                        )\n                    }\n                }\n                .onFailure { error ->\n                    _uiState.update {\n                        it.copy(\n                            error = error.message,\n                            isLoading = false\n                        )\n                    }\n                }\n        }\n    }\n\n    fun refresh() {"
 }
@@ -2723,7 +2723,7 @@ id: toolu_01KPxLU9cmmjqe1FTeRLKT26
 tool_result
 id: toolu_01KPxLU9cmmjqe1FTeRLKT26
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2733,7 +2733,7 @@ id: toolu_01RFDhcmjvV61nTzz9uct5Tk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt",
   "old_string": "                    _uiState.update {\n                        it.copy(\n                            post = result.post,\n                            reactionGroups = result.reactionGroups,\n                            isRefreshing = false,\n                            canDelete = canDelete\n                        )\n                    }",
   "new_string": "                    _uiState.update {\n                        it.copy(\n                            post = result.post,\n                            reactionGroups = result.reactionGroups,\n                            toc = result.toc,\n                            isRefreshing = false,\n                            canDelete = canDelete\n                        )\n                    }"
 }
@@ -2744,7 +2744,7 @@ id: toolu_01RFDhcmjvV61nTzz9uct5Tk
 tool_result
 id: toolu_01RFDhcmjvV61nTzz9uct5Tk
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt has been updated successfully.
 ```
 
 > AGENT
@@ -2776,7 +2776,7 @@ tool_use Read
 id: toolu_01RJGdphHSJKZx4unduU7HhF
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 920,
   "limit": 60
 }
@@ -2846,7 +2846,7 @@ tool_use Read
 id: toolu_01HghpfjFj1dPqHJM9GJjZUY
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 40,
   "limit": 100
 }
@@ -2922,7 +2922,7 @@ id: toolu_01RQWo73tvJYYbXBzPEdxU36
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "internal sealed class ContentBlock {\n    data class Text(val html: String) : ContentBlock()\n    data class Code(val codeHtml: String) : ContentBlock()\n    data class List(val html: String) : ContentBlock()\n}",
   "new_string": "internal sealed class ContentBlock {\n    data class Text(val html: String) : ContentBlock()\n    data class Code(val codeHtml: String) : ContentBlock()\n    data class List(val html: String) : ContentBlock()\n    data class Heading(val level: Int, val anchorId: String?, val innerHtml: String) : ContentBlock()\n}"
 }
@@ -2933,7 +2933,7 @@ id: toolu_01RQWo73tvJYYbXBzPEdxU36
 tool_result
 id: toolu_01RQWo73tvJYYbXBzPEdxU36
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -2945,7 +2945,7 @@ Now add the heading-splitting regex and a function that takes a Text block and s
 tool_result
 id: toolu_01FqkUUPv7xJaA3YzS2XpNFS
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2955,7 +2955,7 @@ id: toolu_01FqkUUPv7xJaA3YzS2XpNFS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "private val PRE_CODE_REGEX = Regex(\n    \"\"\"<pre[^>]*>\\s*<code[^>]*>([\\s\\S]*?)</code>\\s*</pre>\"\"\",\n    RegexOption.IGNORE_CASE\n)",
   "new_string": "private val PRE_CODE_REGEX = Regex(\n    \"\"\"<pre[^>]*>\\s*<code[^>]*>([\\s\\S]*?)</code>\\s*</pre>\"\"\",\n    RegexOption.IGNORE_CASE\n)\nprivate val HEADING_REGEX = Regex(\n    \"\"\"<h([1-6])([^>]*)>([\\s\\S]*?)</h\\1>\"\"\",\n    RegexOption.IGNORE_CASE\n)\nprivate val ID_ATTR_REGEX = Regex(\"\"\"\\bid\\s*=\\s*[\"']([^\"']+)[\"']\"\"\", RegexOption.IGNORE_CASE)"
 }
@@ -2972,7 +2972,7 @@ id: toolu_011kJoP3ofqXk38A7EXobMSr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "@VisibleForTesting\ninternal fun splitIntoBlocks(html: String): List<ContentBlock> {\n    val blocks = mutableListOf<ContentBlock>()\n    var lastEnd = 0\n    val source = html.trim()\n\n    for (match in PRE_CODE_REGEX.findAll(source)) {\n        val before = source.substring(lastEnd, match.range.first)\n        if (before.isNotBlank()) {\n            blocks.addAll(splitTextAndListBlocks(before))\n        }\n\n        val codeHtml = match.groupValues[1]\n        blocks.add(ContentBlock.Code(codeHtml))\n\n        lastEnd = match.range.last + 1\n    }\n\n    val after = source.substring(lastEnd)\n    if (after.isNotBlank()) {\n        blocks.addAll(splitTextAndListBlocks(after))\n    }\n\n    // If no code blocks found, return the whole thing as text\n    if (blocks.isEmpty()) {\n        blocks.addAll(splitTextAndListBlocks(source))\n    }\n\n    return blocks\n}",
   "new_string": "@VisibleForTesting\ninternal fun splitIntoBlocks(html: String): List<ContentBlock> {\n    val blocks = mutableListOf<ContentBlock>()\n    var lastEnd = 0\n    val source = html.trim()\n\n    for (match in PRE_CODE_REGEX.findAll(source)) {\n        val before = source.substring(lastEnd, match.range.first)\n        if (before.isNotBlank()) {\n            blocks.addAll(splitTextAndListBlocks(before))\n        }\n\n        val codeHtml = match.groupValues[1]\n        blocks.add(ContentBlock.Code(codeHtml))\n\n        lastEnd = match.range.last + 1\n    }\n\n    val after = source.substring(lastEnd)\n    if (after.isNotBlank()) {\n        blocks.addAll(splitTextAndListBlocks(after))\n    }\n\n    // If no code blocks found, return the whole thing as text\n    if (blocks.isEmpty()) {\n        blocks.addAll(splitTextAndListBlocks(source))\n    }\n\n    return blocks.flatMap { block ->\n        if (block is ContentBlock.Text) extractHeadingBlocks(block.html) else listOf(block)\n    }\n}\n\nprivate fun extractHeadingBlocks(html: String): List<ContentBlock> {\n    val out = mutableListOf<ContentBlock>()\n    var cursor = 0\n    for (match in HEADING_REGEX.findAll(html)) {\n        if (match.range.first > cursor) {\n            val before = html.substring(cursor, match.range.first)\n            if (before.isNotBlank()) out.add(ContentBlock.Text(before))\n        }\n        val […]
 
@@ -2981,7 +2981,7 @@ id: toolu_011kJoP3ofqXk38A7EXobMSr
 tool_result
 id: toolu_011kJoP3ofqXk38A7EXobMSr
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -2994,7 +2994,7 @@ tool_use Read
 id: toolu_01SAWM5EcAMc9BtwjMLpmHgS
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 198,
   "limit": 120
 }
@@ -3058,7 +3058,7 @@ id: toolu_01JcuE6Zdc8CmXwL4v8GHJzG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "import androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.width\nimport androidx.compose.foundation.text.ClickableText\nimport androidx.compose.material3.Text",
   "new_string": "import androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.width\nimport androidx.compose.foundation.relocation.BringIntoViewRequester\nimport androidx.compose.foundation.relocation.bringIntoViewRequester\nimport androidx.compose.foundation.text.ClickableText\nimport androidx.compose.material3.Text"
 }
@@ -3069,7 +3069,7 @@ id: toolu_01JcuE6Zdc8CmXwL4v8GHJzG
 tool_result
 id: toolu_01JcuE6Zdc8CmXwL4v8GHJzG
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -3079,7 +3079,7 @@ id: toolu_01XyHTqRx4ZQ5vy89JMmauhZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "@Composable\nfun HtmlContent(\n    html: String,\n    modifier: Modifier = Modifier,\n    maxLines: Int = Int.MAX_VALUE,\n    fontScale: Float = 1f,\n    contentStyle: HtmlContentStyle = HtmlContentStyle.Compact,\n    onMentionClick: ((handle: String) -> Unit)? = null,\n    onLinkClick: ((url: String) -> Unit)? = null,\n    onTextClick: (() -> Unit)? = null\n) {",
   "new_string": "@Composable\nfun HtmlContent(\n    html: String,\n    modifier: Modifier = Modifier,\n    maxLines: Int = Int.MAX_VALUE,\n    fontScale: Float = 1f,\n    contentStyle: HtmlContentStyle = HtmlContentStyle.Compact,\n    onMentionClick: ((handle: String) -> Unit)? = null,\n    onLinkClick: ((url: String) -> Unit)? = null,\n    onTextClick: (() -> Unit)? = null,\n    headingAnchor: ((id: String) -> BringIntoViewRequester?)? = null,\n) {"
 }
@@ -3090,7 +3090,7 @@ id: toolu_01XyHTqRx4ZQ5vy89JMmauhZ
 tool_result
 id: toolu_01XyHTqRx4ZQ5vy89JMmauhZ
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -3104,7 +3104,7 @@ id: toolu_01C9wkbm1chLfYm5gg9jzvV3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "                    is ContentBlock.Code -> {\n                        CodeBlockView(\n                            codeHtml = block.codeHtml\n                        )\n                    }\n                }\n            }\n        }\n    }\n}",
   "new_string": "                    is ContentBlock.Code -> {\n                        CodeBlockView(\n                            codeHtml = block.codeHtml\n                        )\n                    }\n                    is ContentBlock.Heading -> {\n                        val headingAnnotated = rememberParsedHtml(\n                            block.innerHtml,\n                            linkColor,\n                            hashtagColor,\n                            mentionBg,\n                            codeBg,\n                            contentStyle,\n                        )\n                        val headingStyle = bodyStyle.copy(\n                            fontSize = bodyStyle.fontSize * when (block.level) {\n                                1 -> 1.5f\n                                2 -> 1.3f\n                                3 -> 1.15f\n                                else -> 1.0f\n                            },\n                            fontWeight = FontWeight.Bold,\n                        )\n                        val requester = block.anchorId?.let { id -> headingAnchor?.invoke(id) }\n                        val headingModifier = if (requester != null) {\n                            Modifier.bringIntoViewRequester(requester)\n                        } else {\n                            Modifier\n                        }\n                        if (headingAnnotated.isNotEmpty()) {\n                            ClickableText(\n                                text = headingAnnotated,\n                                style = headingStyle,\n                                modifier = headingModifier,\n                                onClick = { offset ->\n                                    handleClick(headingAnnotated, offset, uriHandler, onMentionClick, onLinkClick, onTextClick)\n                                }\n                            )\n                        } else {\n                            Text(\n                                text = \"\",\n                                modifier = headingModifier,\n                            )\n                        }\n                    }\n                }\n            }\n        }\n    }\n}"
 }
@@ -3115,7 +3115,7 @@ id: toolu_01C9wkbm1chLfYm5gg9jzvV3
 tool_result
 id: toolu_01C9wkbm1chLfYm5gg9jzvV3
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -3127,7 +3127,7 @@ Now update `blockSpacing` to give headings top spacing.
 tool_result
 id: toolu_01MhBjvNG9xvufFWeFbg23hH
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -3137,7 +3137,7 @@ id: toolu_01MhBjvNG9xvufFWeFbg23hH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "private fun blockSpacing(previous: ContentBlock, current: ContentBlock) = when {\n    previous is ContentBlock.Code || current is ContentBlock.Code -> 8.dp\n    previous is ContentBlock.List && current is ContentBlock.List -> 4.dp\n    previous is ContentBlock.List || current is ContentBlock.List -> 16.dp\n    else -> 0.dp\n}",
   "new_string": "private fun blockSpacing(previous: ContentBlock, current: ContentBlock) = when {\n    previous is ContentBlock.Code || current is ContentBlock.Code -> 8.dp\n    previous is ContentBlock.List && current is ContentBlock.List -> 4.dp\n    previous is ContentBlock.List || current is ContentBlock.List -> 16.dp\n    current is ContentBlock.Heading -> 16.dp\n    previous is ContentBlock.Heading -> 8.dp\n    else -> 0.dp\n}"
 }
@@ -3191,7 +3191,7 @@ tool_use Bash
 id: toolu_01EhLCNdAJMjKX5Gsna2AV3W
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/",
   "description": "List components"
 }
 ```
@@ -3225,7 +3225,7 @@ id: toolu_019PiW5fNbVDVgwv3Yv7oeV2
 ```json
 {
   "pattern": "string name=\"toc\\|table_of_contents\\|toc_",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res",
   "output_mode": "content"
 }
 ```
@@ -3244,7 +3244,7 @@ tool_use Bash
 id: toolu_01Jf1KkoexUYfLZahQF1jzry
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values*/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values*/",
   "description": "List value dirs"
 }
 ```
@@ -3265,7 +3265,7 @@ tool_use Bash
 id: toolu_01Qh3abouUtxTu6zVKFR3CjK
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/ | head",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/ | head",
   "description": "List res"
 }
 ```
@@ -3292,7 +3292,7 @@ tool_use Bash
 id: toolu_01Waiy31oWAA6rMFQwWhJjLw
 ```json
 {
-  "command": "grep -l \"translating\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml",
+  "command": "grep -l \"translating\" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml",
   "description": "Find strings"
 }
 ```
@@ -3302,7 +3302,7 @@ id: toolu_01Waiy31oWAA6rMFQwWhJjLw
 tool_result
 id: toolu_01Waiy31oWAA6rMFQwWhJjLw
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml
 ```
 
 > TOOL
@@ -3312,7 +3312,7 @@ id: toolu_01BMkEJNBLqt8Xn5xxr6pKZY
 ```json
 {
   "pattern": "translating|replying_to",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml",
   "output_mode": "content",
   "-n": true
 }
@@ -3333,7 +3333,7 @@ tool_use Read
 id: toolu_01EKqw1iypHizBrrZz4ZbT8y
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml",
   "offset": 118,
   "limit": 20
 }
@@ -3373,7 +3373,7 @@ id: toolu_01NmcjUYCSzBL5pcXPGvAFs5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml",
   "old_string": "    <string name=\"translating\">Translating...</string>\n    <string name=\"translation_failed\">Translation failed</string>",
   "new_string": "    <string name=\"translating\">Translating...</string>\n    <string name=\"translation_failed\">Translation failed</string>\n    <string name=\"table_of_contents\">Table of contents</string>"
 }
@@ -3384,7 +3384,7 @@ id: toolu_01NmcjUYCSzBL5pcXPGvAFs5
 tool_result
 id: toolu_01NmcjUYCSzBL5pcXPGvAFs5
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values/strings.xml has been updated successfully.
 ```
 
 > TOOL
@@ -3393,7 +3393,7 @@ tool_use Bash
 id: toolu_01BKqrb4krni9V3smRrKcY3M
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values-*/strings.xml 2>/dev/null",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values-*/strings.xml 2>/dev/null",
   "description": "Find localized strings"
 }
 ```
@@ -3404,7 +3404,7 @@ tool_result ERROR
 id: toolu_01BKqrb4krni9V3smRrKcY3M
 ```
 Exit code 1
-(eval):1: no matches found: /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values-*/strings.xml
+(eval):1: no matches found: /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/res/values-*/strings.xml
 ```
 
 > AGENT
@@ -3417,7 +3417,7 @@ tool_use Read
 id: toolu_01V7ZttLxc5yVGJAf6T15iaE
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/LinkPreviewCard.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/LinkPreviewCard.kt",
   "offset": 1,
   "limit": 40
 }
@@ -3476,7 +3476,7 @@ tool_use Write
 id: toolu_01EwWboGmd48yWJHANQBsqUU
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt",
   "content": "package pub.hackers.android.ui.components\n\nimport androidx.compose.animation.AnimatedVisibility\nimport androidx.compose.foundation.border\nimport androidx.compose.foundation.clickable\nimport androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.padding\nimport androidx.compose.foundation.layout.size\nimport androidx.compose.foundation.relocation.BringIntoViewRequester\nimport androidx.compose.foundation.shape.RoundedCornerShape\nimport androidx.compose.material.icons.Icons\nimport androidx.compose.material.icons.filled.ExpandLess\nimport androidx.compose.material.icons.filled.ExpandMore\nimport androidx.compose.material3.Icon\nimport androidx.compose.material3.Text\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.remember\nimport androidx.compose.runtime.rememberCoroutineScope\nimport androidx.compose.runtime.setValue\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.res.stringResource\nimport androidx.compose.ui.text.font.FontWeight\nimport androidx.compose.ui.unit.dp\nimport kotlinx.coroutines.launch\nimport pub.hackers.android.R\nimport pub.hackers.android.domain.model.TocItem\nimport pub.hackers.android.ui.theme.LocalAppColors\nimport pub.hackers.android.ui.theme.LocalAppTypography\n\n@Composable\nfun TocPanel(\n    items: List<TocItem>,\n    anchorRequester: (String) -> BringIntoViewRequester,\n    modifier: Modifier = Modifier,\n) {\n    if (items.isEmpty()) return\n\n    val colors = LocalAppColors.current\n    val typography = LocalAppTypography.current\n    val scope = rememberCoroutineScope()\n\n    var expanded by remember { mutableStateOf(false) }\n\n    Column(\n        modifier = modifier\n            .fillMaxWidth()\n            .border(\n                width = 1.dp,\n                color = colors.divider,\n                shape = RoundedCornerShape(8.dp),\n            )\n    ) {\n        Row(\n            verticalAlignment = Alignment.CenterVertically,\n            modifier = Modifier\n                .fillMaxWidth()\n                .clickable { expanded = !expanded }\n                .padding(horizontal = 12.dp, vertical = 10.dp)\n        ) {\n            Text(\n                text = stringResource(R.string.table_of_contents),\n                style = typography.bodyLargeSemiBold,\n                color = colors.textPrimary,\n                modifier = Modifier.weight(1f),\n            )\n            Icon(\n                imageVector = if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,\n                contentDescription = null,\n                tint = colors.textSecondary,\n                modifier = Modifier.size(20.dp),\n            )\n        }\n\n        AnimatedVisibility(visible = expanded) {\n            Column(\n                modifier = Modifier\n                    .fillMaxWidth()\n                    .padding(horizontal = 12.dp, vertical = 4.dp)\n            ) {\n                val baseLevel = items.minOf { it.level }\n                items.forEach { item ->\n                    TocEntry(\n                        item = item,\n                        baseLevel = baseLevel,\n                        onClick = { id ->\n                            scope.launch {\n                                anchorRequester(id).bringIntoView()\n                            }\n                        }\n                    )\n                }\n                Spacer(modifier = […]
 
 > TOOL
@@ -3484,7 +3484,7 @@ id: toolu_01EwWboGmd48yWJHANQBsqUU
 tool_result
 id: toolu_01EwWboGmd48yWJHANQBsqUU
 ```
-File created successfully at: /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt
+File created successfully at: /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt
 ```
 
 > TOOL
@@ -3494,7 +3494,7 @@ id: toolu_011zbHJngNoe2dBdwamee4GE
 ```json
 {
   "pattern": "bodyLargeSemiBold|bodyMedium\\b",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/theme",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/theme",
   "output_mode": "content",
   "-n": true,
   "head_limit": 10
@@ -3594,7 +3594,7 @@ tool_use Read
 id: toolu_01VypRWrLLF58FFJNeA9wWdg
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 1,
   "limit": 80
 }
@@ -3606,7 +3606,7 @@ tool_use Read
 id: toolu_01Dckzwdg4gTQiVR6LG4EfoR
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 80,
   "limit": 50
 }
@@ -3676,7 +3676,7 @@ id: toolu_01UPsoE5aCiQyUSpSRUc6PWQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "import pub.hackers.android.R\nimport pub.hackers.android.domain.model.Post\nimport pub.hackers.android.domain.model.ReactionGroup\nimport pub.hackers.android.ui.components.ErrorMessage\nimport pub.hackers.android.ui.components.FullScreenLoading\nimport pub.hackers.android.ui.components.HtmlContent\nimport pub.hackers.android.ui.components.HtmlContentStyle\nimport pub.hackers.android.ui.components.LargeTitleHeader\nimport pub.hackers.android.ui.components.LinkPreviewCard\nimport pub.hackers.android.ui.components.LoadingItem\nimport pub.hackers.android.ui.components.MediaImage\nimport pub.hackers.android.ui.components.PostCard\nimport pub.hackers.android.ui.components.QuotedPostPreview\nimport pub.hackers.android.ui.components.ReactionPicker",
   "new_string": "import pub.hackers.android.R\nimport pub.hackers.android.domain.model.Post\nimport pub.hackers.android.domain.model.ReactionGroup\nimport pub.hackers.android.domain.model.TocItem\nimport pub.hackers.android.ui.components.ErrorMessage\nimport pub.hackers.android.ui.components.FullScreenLoading\nimport pub.hackers.android.ui.components.HtmlContent\nimport pub.hackers.android.ui.components.HtmlContentStyle\nimport pub.hackers.android.ui.components.LargeTitleHeader\nimport pub.hackers.android.ui.components.LinkPreviewCard\nimport pub.hackers.android.ui.components.LoadingItem\nimport pub.hackers.android.ui.components.MediaImage\nimport pub.hackers.android.ui.components.PostCard\nimport pub.hackers.android.ui.components.QuotedPostPreview\nimport pub.hackers.android.ui.components.ReactionPicker\nimport pub.hackers.android.ui.components.TocPanel\nimport androidx.compose.foundation.relocation.BringIntoViewRequester"
 }
@@ -3687,7 +3687,7 @@ id: toolu_01UPsoE5aCiQyUSpSRUc6PWQ
 tool_result
 id: toolu_01UPsoE5aCiQyUSpSRUc6PWQ
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -3701,7 +3701,7 @@ id: toolu_01BPbK2ka8cnXuXvfPzv5dH3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "                    PostDetailContent(\n                        post = resolvedPost,\n                        reactionGroups = uiState.reactionGroups,\n                        replies = replies,",
   "new_string": "                    PostDetailContent(\n                        post = resolvedPost,\n                        reactionGroups = uiState.reactionGroups,\n                        toc = uiState.toc,\n                        replies = replies,"
 }
@@ -3712,7 +3712,7 @@ id: toolu_01BPbK2ka8cnXuXvfPzv5dH3
 tool_result
 id: toolu_01BPbK2ka8cnXuXvfPzv5dH3
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -3722,7 +3722,7 @@ id: toolu_01Gy36tuUzuwu7rwUjGETWU8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "internal fun PostDetailContent(\n    post: Post,\n    reactionGroups: List<ReactionGroup>,\n    replies: LazyPagingItems<Post>,",
   "new_string": "internal fun PostDetailContent(\n    post: Post,\n    reactionGroups: List<ReactionGroup>,\n    toc: List<TocItem>,\n    replies: LazyPagingItems<Post>,"
 }
@@ -3733,7 +3733,7 @@ id: toolu_01Gy36tuUzuwu7rwUjGETWU8
 tool_result
 id: toolu_01Gy36tuUzuwu7rwUjGETWU8
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -3747,7 +3747,7 @@ id: toolu_01UXpf2Vgxzu5t1nhMDWDAqC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "                val isArticle = post.typename == \"Article\"\n\n                post.name?.let { title ->\n                    Text(\n                        text = title,\n                        style = if (isArticle) typography.titleLarge else typography.titleMedium,\n                        fontWeight = FontWeight.Bold,\n                        color = colors.textPrimary\n                    )\n                    Spacer(modifier = Modifier.height(if (isArticle) 12.dp else 8.dp))\n                    if (isArticle) {\n                        HorizontalDivider(color = colors.divider)\n                        Spacer(modifier = Modifier.height(12.dp))\n                    }\n                }\n\n                val translatedText = translatedContent\n                if (showTranslated && translatedText != null) {\n                    Text(\n                        text = translatedText,\n                        style = typography.bodyLarge,\n                        color = colors.textBody,\n                        modifier = Modifier.fillMaxWidth()\n                    )\n                } else {\n                    HtmlContent(\n                        html = post.content,\n                        modifier = Modifier.fillMaxWidth(),\n                        contentStyle = HtmlContentStyle.Prose,\n                        onMentionClick = onProfileClick\n                    )\n                }",
   "new_string": "                val isArticle = post.typename == \"Article\"\n\n                post.name?.let { title ->\n                    Text(\n                        text = title,\n                        style = if (isArticle) typography.titleLarge else typography.titleMedium,\n                        fontWeight = FontWeight.Bold,\n                        color = colors.textPrimary\n                    )\n                    Spacer(modifier = Modifier.height(if (isArticle) 12.dp else 8.dp))\n                    if (isArticle) {\n                        HorizontalDivider(color = colors.divider)\n                        Spacer(modifier = Modifier.height(12.dp))\n                    }\n                }\n\n                val headingAnchors = remember(post.id) { mutableMapOf<String, BringIntoViewRequester>() }\n                val anchorRequester: (String) -> BringIntoViewRequester = { id ->\n                    headingAnchors.getOrPut(id) { BringIntoViewRequester() }\n                }\n\n                if (isArticle && toc.isNotEmpty() && !showTranslated) {\n                    TocPanel(\n                        items = toc,\n                        anchorRequester = anchorRequester,\n                    )\n                    Spacer(modifier = Modifier.height(12.dp))\n                }\n\n                val translatedText = translatedContent\n                if (showTranslated && translatedText != null) […]
 
@@ -3756,7 +3756,7 @@ id: toolu_01UXpf2Vgxzu5t1nhMDWDAqC
 tool_result
 id: toolu_01UXpf2Vgxzu5t1nhMDWDAqC
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -3827,7 +3827,7 @@ id: toolu_012SPawsqUMoJNMirHUMcJnE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "@VisibleForTesting\ninternal fun splitIntoBlocks(html: String): List<ContentBlock> {\n    val blocks = mutableListOf<ContentBlock>()\n    var lastEnd = 0\n    val source = html.trim()\n\n    for (match in PRE_CODE_REGEX.findAll(source)) {\n        val before = source.substring(lastEnd, match.range.first)\n        if (before.isNotBlank()) {\n            blocks.addAll(splitTextAndListBlocks(before))\n        }\n\n        val codeHtml = match.groupValues[1]\n        blocks.add(ContentBlock.Code(codeHtml))\n\n        lastEnd = match.range.last + 1\n    }\n\n    val after = source.substring(lastEnd)\n    if (after.isNotBlank()) {\n        blocks.addAll(splitTextAndListBlocks(after))\n    }\n\n    // If no code blocks found, return the whole thing as text\n    if (blocks.isEmpty()) {\n        blocks.addAll(splitTextAndListBlocks(source))\n    }\n\n    return blocks.flatMap { block ->\n        if (block is ContentBlock.Text) extractHeadingBlocks(block.html) else listOf(block)\n    }\n}",
   "new_string": "@VisibleForTesting\ninternal fun splitIntoBlocks(html: String, splitHeadings: Boolean = false): List<ContentBlock> {\n    val blocks = mutableListOf<ContentBlock>()\n    var lastEnd = 0\n    val source = html.trim()\n\n    for (match in PRE_CODE_REGEX.findAll(source)) {\n        val before = source.substring(lastEnd, match.range.first)\n        if (before.isNotBlank()) {\n            blocks.addAll(splitTextAndListBlocks(before))\n        }\n\n        val codeHtml = match.groupValues[1]\n        blocks.add(ContentBlock.Code(codeHtml))\n\n        lastEnd = match.range.last + 1\n    }\n\n    val after = source.substring(lastEnd)\n    if (after.isNotBlank()) {\n        blocks.addAll(splitTextAndListBlocks(after))\n    }\n\n    // If no code blocks found, return the whole thing as text\n    if (blocks.isEmpty()) {\n        blocks.addAll(splitTextAndListBlocks(source))\n    }\n\n    if (!splitHeadings) return blocks\n\n    return blocks.flatMap { block ->\n        if (block is ContentBlock.Text) extractHeadingBlocks(block.html) else listOf(block)\n    }\n}"
 }
@@ -3838,7 +3838,7 @@ id: toolu_012SPawsqUMoJNMirHUMcJnE
 tool_result
 id: toolu_012SPawsqUMoJNMirHUMcJnE
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -3848,7 +3848,7 @@ id: toolu_018CfFZVyaS8Eprp2kzp6F8F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "    } else {\n        // Full mode: block-based rendering with syntax-highlighted code blocks\n        val blocks = remember(normalizedHtml) { splitIntoBlocks(normalizedHtml) }",
   "new_string": "    } else {\n        // Full mode: block-based rendering with syntax-highlighted code blocks\n        val splitHeadings = headingAnchor != null\n        val blocks = remember(normalizedHtml, splitHeadings) {\n            splitIntoBlocks(normalizedHtml, splitHeadings = splitHeadings)\n        }"
 }
@@ -3859,7 +3859,7 @@ id: toolu_018CfFZVyaS8Eprp2kzp6F8F
 tool_result
 id: toolu_018CfFZVyaS8Eprp2kzp6F8F
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -3903,20 +3903,20 @@ tool_result
 id: toolu_018CDTEDHLqe8mHbtbzQdPCM
 ```
 > Task :app:compileDebugKotlin
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/auth/PasskeyManager.kt:30:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/auth/PasskeyManager.kt:30:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
 - To opt in to applying to both value parameter and field, add '-Xannotation-default-target=param-property' to your compiler arguments.
 - To keep applying to the value parameter only, use the '@param:' annotation target.
 
 See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/local/PreferencesManager.kt:22:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/local/PreferencesManager.kt:22:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
 - To opt in to applying to both value parameter and field, add '-Xannotation-default-target=param-property' to your compiler arguments.
 - To keep applying to the value parameter only, use the '@param:' annotation target.
 
 See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt:161:31 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/ArticleCard.kt:82:33 Condition is always 'true'.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/ArticleCard.kt:83:49 Unnecessary non-null assertion (!!) on a non-null receiver of type 'Actor'.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:246:9 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: […]
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt:161:31 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/ArticleCard.kt:82:33 Condition is always 'true'.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/ArticleCard.kt:83:49 Unnecessary non-null assertion (!!) on a non-null receiver of type 'Actor'.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:246:9 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: […]
 
 > AGENT
 
@@ -3928,7 +3928,7 @@ tool_use Bash
 id: toolu_01UYRC2vWwAic4abFFArU4dx
 ```json
 {
-  "command": "find /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test -name \"*.kt\" | head",
+  "command": "find /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test -name \"*.kt\" | head",
   "description": "List test files"
 }
 ```
@@ -3938,16 +3938,16 @@ id: toolu_01UYRC2vWwAic4abFFArU4dx
 tool_result
 id: toolu_01UYRC2vWwAic4abFFArU4dx
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/editprofile/EditProfileViewModelTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/settings/SettingsScreenTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/auth/SignInViewModelTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModelTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/compose/ComposeViewModelTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/compose/ComposeScreenTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/explore/ExploreViewModelTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/profile/ProfileScreenTest.kt
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/profile/ProfileViewModelTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/editprofile/EditProfileViewModelTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/settings/SettingsScreenTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/auth/SignInViewModelTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModelTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/compose/ComposeViewModelTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/compose/ComposeScreenTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/explore/ExploreViewModelTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/profile/ProfileScreenTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/profile/ProfileViewModelTest.kt
 ```
 
 > TOOL
@@ -3956,7 +3956,7 @@ tool_use Bash
 id: toolu_01Ya91nvsgHeuc86WjiZe5zV
 ```json
 {
-  "command": "find /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test -name \"HtmlContent*\" -o -name \"*Html*\"",
+  "command": "find /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test -name \"HtmlContent*\" -o -name \"*Html*\"",
   "description": "Find HtmlContent tests"
 }
 ```
@@ -3966,7 +3966,7 @@ id: toolu_01Ya91nvsgHeuc86WjiZe5zV
 tool_result
 id: toolu_01Ya91nvsgHeuc86WjiZe5zV
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt
 ```
 
 > TOOL
@@ -3975,7 +3975,7 @@ tool_use Read
 id: toolu_01VKBjv6FRijMo26NgM3sxv8
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
   "offset": 1,
   "limit": 100
 }
@@ -4052,7 +4052,7 @@ tool_use Bash
 id: toolu_01M3dJcFwoS1oLuidGxDgoHR
 ```json
 {
-  "command": "wc -l /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
+  "command": "wc -l /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
   "description": "Line count"
 }
 ```
@@ -4062,7 +4062,7 @@ id: toolu_01M3dJcFwoS1oLuidGxDgoHR
 tool_result
 id: toolu_01M3dJcFwoS1oLuidGxDgoHR
 ```
-     388 /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt
+     388 /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt
 ```
 
 > TOOL
@@ -4072,7 +4072,7 @@ id: toolu_01MsbF9u261Zp9sgaPW8gJg6
 ```json
 {
   "pattern": "splitIntoBlocks|splitTextAndListBlocks",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
   "output_mode": "content",
   "-n": true
 }
@@ -4104,7 +4104,7 @@ tool_use Read
 id: toolu_018P63hRbv5F5F5rynim9oty
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
   "offset": 108,
   "limit": 80
 }
@@ -4178,7 +4178,7 @@ id: toolu_01BKAu4Cn52SgeMpXsLn5z6e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt",
   "old_string": "    @Test\n    fun `splitIntoBlocks keeps nested list inside one list block`() {\n        val html = \"<ul><li>parent<ul><li>child</li></ul></li></ul>\"\n        val blocks = splitIntoBlocks(html)\n        assertEquals(1, blocks.size)\n        assertTrue(blocks[0] is ContentBlock.List)\n    }\n\n    // endregion",
   "new_string": "    @Test\n    fun `splitIntoBlocks keeps nested list inside one list block`() {\n        val html = \"<ul><li>parent<ul><li>child</li></ul></li></ul>\"\n        val blocks = splitIntoBlocks(html)\n        assertEquals(1, blocks.size)\n        assertTrue(blocks[0] is ContentBlock.List)\n    }\n\n    @Test\n    fun `splitIntoBlocks does not extract headings by default`() {\n        val html = \"<p>intro</p><h2 id=\\\"sec\\\">Section</h2><p>body</p>\"\n        val blocks = splitIntoBlocks(html)\n        assertEquals(1, blocks.size)\n        assertTrue(blocks[0] is ContentBlock.Text)\n    }\n\n    @Test\n    fun `splitIntoBlocks extracts headings when splitHeadings is true`() {\n        val html = \"<p>intro</p><h2 id=\\\"sec\\\">Section</h2><p>body</p>\"\n        val blocks = splitIntoBlocks(html, splitHeadings = true)\n        assertEquals(3, blocks.size)\n        assertTrue(blocks[0] is ContentBlock.Text)\n        assertTrue(blocks[1] is ContentBlock.Heading)\n        assertTrue(blocks[2] is ContentBlock.Text)\n\n        val heading = blocks[1] as ContentBlock.Heading\n        assertEquals(2, heading.level)\n        assertEquals(\"sec\", heading.anchorId)\n        assertEquals(\"Section\", heading.innerHtml)\n    }\n\n    @Test\n    fun `splitIntoBlocks heading without id leaves anchorId null`() {\n        val html = \"<h3>No anchor</h3>\"\n        val blocks = splitIntoBlocks(html, splitHeadings = true)\n        assertEquals(1, blocks.size)\n        val heading = blocks[0] as ContentBlock.Heading\n        assertEquals(3, heading.level)\n        assertNull(heading.anchorId)\n        assertEquals(\"No anchor\", heading.innerHtml)\n    }\n\n    @Test\n    fun `splitIntoBlocks splits multiple headings`() {\n        val html = \"<h1 id=\\\"a\\\">A</h1><p>x</p><h2 id=\\\"b\\\">B</h2><p>y</p>\"\n        val blocks = splitIntoBlocks(html, splitHeadings = true)\n        assertEquals(4, blocks.size)\n        val h1 = blocks[0] […]
 
@@ -4187,7 +4187,7 @@ id: toolu_01BKAu4Cn52SgeMpXsLn5z6e
 tool_result
 id: toolu_01BKAu4Cn52SgeMpXsLn5z6e
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/components/HtmlContentKtTest.kt has been updated successfully.
 ```
 
 > TOOL
@@ -4219,7 +4219,7 @@ tool_use Write
 id: toolu_016Fee8MFcpt2jPzXC8nAvFc
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt",
   "content": "package pub.hackers.android.domain.model\n\nfun parseTocJson(value: Any?): List<TocItem> {\n    val list = value as? List<*> ?: return emptyList()\n    return list.mapNotNull { parseTocItem(it) }\n}\n\nprivate fun parseTocItem(value: Any?): TocItem? {\n    val map = value as? Map<*, *> ?: return null\n    val id = map[\"id\"] as? String ?: return null\n    val title = map[\"title\"] as? String ?: return null\n    val level = (map[\"level\"] as? Number)?.toInt() ?: return null\n    val children = parseTocJson(map[\"children\"])\n    return TocItem(id = id, level = level, title = title, children = children)\n}\n"
 }
 ```
@@ -4229,7 +4229,7 @@ id: toolu_016Fee8MFcpt2jPzXC8nAvFc
 tool_result
 id: toolu_016Fee8MFcpt2jPzXC8nAvFc
 ```
-File created successfully at: /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt
+File created successfully at: /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt
 ```
 
 > AGENT
@@ -4243,7 +4243,7 @@ id: toolu_011MsmeLfRMPPEdBJVtVPQ9R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "old_string": "    private fun parseTocJson(value: Any?): List<TocItem> {\n        val list = value as? List<*> ?: return emptyList()\n        return list.mapNotNull { parseTocItem(it) }\n    }\n\n    private fun parseTocItem(value: Any?): TocItem? {\n        val map = value as? Map<*, *> ?: return null\n        val id = map[\"id\"] as? String ?: return null\n        val title = map[\"title\"] as? String ?: return null\n        val level = (map[\"level\"] as? Number)?.toInt() ?: return null\n        val children = parseTocJson(map[\"children\"])\n        return TocItem(id = id, level = level, title = title, children = children)\n    }\n}",
   "new_string": "}"
 }
@@ -4254,7 +4254,7 @@ id: toolu_011MsmeLfRMPPEdBJVtVPQ9R
 tool_result
 id: toolu_011MsmeLfRMPPEdBJVtVPQ9R
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
 ```
 
 > TOOL
@@ -4263,7 +4263,7 @@ tool_use Write
 id: toolu_01RScKnzJ2xuQehRTk1kx4CS
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/domain/model/TocParserTest.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/domain/model/TocParserTest.kt",
   "content": "package pub.hackers.android.domain.model\n\nimport org.junit.Assert.assertEquals\nimport org.junit.Assert.assertTrue\nimport org.junit.Test\n\nclass TocParserTest {\n\n    @Test\n    fun `parseTocJson returns empty list for null`() {\n        assertTrue(parseTocJson(null).isEmpty())\n    }\n\n    @Test\n    fun `parseTocJson returns empty list for non-list input`() {\n        assertTrue(parseTocJson(\"not a list\").isEmpty())\n        assertTrue(parseTocJson(42).isEmpty())\n        assertTrue(parseTocJson(mapOf(\"x\" to 1)).isEmpty())\n    }\n\n    @Test\n    fun `parseTocJson returns empty for empty list`() {\n        assertTrue(parseTocJson(emptyList<Any>()).isEmpty())\n    }\n\n    @Test\n    fun `parseTocJson parses flat entries`() {\n        val input = listOf(\n            mapOf(\"id\" to \"intro\", \"level\" to 1, \"title\" to \"Intro\", \"children\" to emptyList<Any>()),\n            mapOf(\"id\" to \"body\", \"level\" to 2, \"title\" to \"Body\", \"children\" to emptyList<Any>()),\n        )\n        val items = parseTocJson(input)\n        assertEquals(2, items.size)\n        assertEquals(TocItem(id = \"intro\", level = 1, title = \"Intro\", children = emptyList()), items[0])\n        assertEquals(TocItem(id = \"body\", level = 2, title = \"Body\", children = emptyList()), items[1])\n    }\n\n    @Test\n    fun `parseTocJson parses nested children recursively`() {\n        val input = listOf(\n            mapOf(\n                \"id\" to \"root\",\n                \"level\" to 1,\n                \"title\" to \"Root\",\n                \"children\" to listOf(\n                    mapOf(\n                        \"id\" to \"child-a\",\n                        \"level\" to 2,\n                        \"title\" to \"Child A\",\n                        \"children\" to listOf(\n                            mapOf(\"id\" to \"leaf\", \"level\" to 3, \"title\" to \"Leaf\", \"children\" to emptyList<Any>())\n                        )\n                    ),\n                    mapOf(\"id\" to \"child-b\", \"level\" to 2, \"title\" to \"Child B\", \"children\" to emptyList<Any>())\n                )\n            )\n        )\n\n        val items = parseTocJson(input)\n        assertEquals(1, items.size)\n […]
 
 > TOOL
@@ -4271,7 +4271,7 @@ id: toolu_01RScKnzJ2xuQehRTk1kx4CS
 tool_result
 id: toolu_01RScKnzJ2xuQehRTk1kx4CS
 ```
-File created successfully at: /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/domain/model/TocParserTest.kt
+File created successfully at: /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/domain/model/TocParserTest.kt
 ```
 
 > TOOL
@@ -4304,7 +4304,7 @@ id: toolu_013JoNFEhrkFF5Qcs4uXer42
 ```json
 {
   "pattern": "PostDetailContent\\(",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt",
   "output_mode": "content",
   "-n": true
 }
@@ -4324,7 +4324,7 @@ tool_use Read
 id: toolu_01H9xEo2S1okyXhHH8sFWecs
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt",
   "offset": 145,
   "limit": 25
 }
@@ -4369,7 +4369,7 @@ id: toolu_01HHWGdY2oga3393CjvS4c75
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt",
   "old_string": "                PostDetailContent(\n                    post = post,\n                    reactionGroups = emptyList(),\n                    replies = replies,",
   "new_string": "                PostDetailContent(\n                    post = post,\n                    reactionGroups = emptyList(),\n                    toc = emptyList(),\n                    replies = replies,"
 }
@@ -4380,7 +4380,7 @@ id: toolu_01HHWGdY2oga3393CjvS4c75
 tool_result
 id: toolu_01HHWGdY2oga3393CjvS4c75
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/ui/screens/postdetail/PostDetailContentTest.kt has been updated successfully.
 ```
 
 > AGENT
@@ -4435,7 +4435,7 @@ id: toolu_01QbBjPxX7rUUuuqaPovuKf9
 > Task :app:packageDebugUnitTestForUnitTest
 
 > Task :app:processDebugUnitTestManifest
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/AndroidManifest.xml:62:9-65:35 Warning:
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/AndroidManifest.xml:62:9-65:35 Warning:
 	provider#androidx.startup.InitializationProvider was tagged at AndroidManifest.xml:62 to remove other declarations but no other declaration present
 
 > Task :app:generateDebugUnitTestConfig
@@ -4736,7 +4736,7 @@ tool_use Bash
 id: toolu_019GuPVn5xTsgmPQLvcVCXoi
 ```json
 {
-  "command": "cat /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/domain/model/TocParserTest.kt",
+  "command": "cat /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/test/java/pub/hackers/android/domain/model/TocParserTest.kt",
   "description": "Show new files"
 }
 ```
@@ -4829,7 +4829,7 @@ id: toolu_01D4aaFPfVDCauPCfPabaeaj
 {
   "description": "Code reuse review",
   "subagent_type": "Explore",
-  "prompt": "Review a set of changes for **code reuse** opportunities in an Android/Jetpack Compose codebase at /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc.\n\nThe changes add a Table of Contents feature for article detail pages. New/changed code:\n\n1. `app/src/main/java/pub/hackers/android/domain/model/TocParser.kt` — new: parses an Apollo JSON scalar (Map/List of Any) into a tree of TocItem(id, level, title, children).\n2. `app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt` — new: Compose composable showing a collapsible TOC panel with recursive indented entries; clicking an entry calls BringIntoViewRequester.bringIntoView().\n3. `app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt` — adds ContentBlock.Heading, a HEADING_REGEX and ID_ATTR_REGEX, an `extractHeadingBlocks(html: String)` function, a `splitHeadings` flag on `splitIntoBlocks`, and a new Heading rendering branch in the HtmlContent composable.\n4. `app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt` — calls parseTocJson from the shared file.\n5. `app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt` — imports TocPanel, passes toc to PostDetailContent, creates a mutableMapOf<String, BringIntoViewRequester> and a supplier lambda; renders TocPanel when `isArticle && toc.isNotEmpty()`.\n\nFor each piece, check if the codebase already has an equivalent helper. Important places to search:\n- `app/src/main/java/pub/hackers/android/ui/components/` — any shared UI containers (collapsible cards, disclosure/expandable panels, indented list renderers) that TocPanel could reuse\n- `app/src/main/java/pub/hackers/android/ui/theme/` — typography/colors\n- `app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt` itself — existing attribute parsers (there is an `ATTR_REGEX` already) that might replace the new `ID_ATTR_REGEX`\n- `app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt` — existing JSON helpers (there are `toJsonString` / `toJsonValue` there); […]
+  "prompt": "Review a set of changes for **code reuse** opportunities in an Android/Jetpack Compose codebase at /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc.\n\nThe changes add a Table of Contents feature for article detail pages. New/changed code:\n\n1. `app/src/main/java/pub/hackers/android/domain/model/TocParser.kt` — new: parses an Apollo JSON scalar (Map/List of Any) into a tree of TocItem(id, level, title, children).\n2. `app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt` — new: Compose composable showing a collapsible TOC panel with recursive indented entries; clicking an entry calls BringIntoViewRequester.bringIntoView().\n3. `app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt` — adds ContentBlock.Heading, a HEADING_REGEX and ID_ATTR_REGEX, an `extractHeadingBlocks(html: String)` function, a `splitHeadings` flag on `splitIntoBlocks`, and a new Heading rendering branch in the HtmlContent composable.\n4. `app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt` — calls parseTocJson from the shared file.\n5. `app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt` — imports TocPanel, passes toc to PostDetailContent, creates a mutableMapOf<String, BringIntoViewRequester> and a supplier lambda; renders TocPanel when `isArticle && toc.isNotEmpty()`.\n\nFor each piece, check if the codebase already has an equivalent helper. Important places to search:\n- `app/src/main/java/pub/hackers/android/ui/components/` — any shared UI containers (collapsible cards, disclosure/expandable panels, indented list renderers) that TocPanel could reuse\n- `app/src/main/java/pub/hackers/android/ui/theme/` — typography/colors\n- `app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt` itself — existing attribute parsers (there is an `ATTR_REGEX` already) that might replace the new `ID_ATTR_REGEX`\n- `app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt` — existing JSON helpers (there are `toJsonString` / `toJsonValue` there); […]
 
 > TOOL
 
@@ -4839,7 +4839,7 @@ id: toolu_01B6ooBZRYwp2fMYeuK6p6w7
 {
   "description": "Code quality review",
   "subagent_type": "Explore",
-  "prompt": "Review the following changes at /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc for code-quality issues. The feature adds a Table of Contents for article detail pages (Jetpack Compose + Apollo Android).\n\nChanged files (see `git diff HEAD`):\n- `app/src/main/java/pub/hackers/android/domain/model/Models.kt` — added TocItem data class, `toc` field on PostDetailResult\n- `app/src/main/java/pub/hackers/android/domain/model/TocParser.kt` — new parser\n- `app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt` — new composable\n- `app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt` — added ContentBlock.Heading, HEADING_REGEX, ID_ATTR_REGEX, `extractHeadingBlocks`, `splitHeadings: Boolean` parameter on splitIntoBlocks, heading rendering branch, `headingAnchor: ((id) -> BringIntoViewRequester?)?` param\n- `app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt` — passes toc, creates `mutableMapOf<String, BringIntoViewRequester>` via `remember(post.id) { ... }` and a supplier lambda, renders TocPanel\n- `app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt` — added `toc` to PostDetailUiState\n\nCheck for:\n\n1. **Redundant state / parameter sprawl**\n   - Is `toc` duplicated on both `PostDetailResult` and `PostDetailUiState`? Should it be derived from the post instead?\n   - The `headingAnchor` lambda parameter on HtmlContent — could this be a narrower Modifier-returning callback, or should the heading anchor registration live inside HtmlContent itself with a map exposed upward?\n   - `mutableMapOf<String, BringIntoViewRequester>` inside `remember` — the map mutates, but Compose can't observe it. Is this a latent bug (new entries don't trigger recomposition) or safe because requesters just need to exist?\n\n2. **Copy-paste with variation**\n   - Heading rendering branch (HtmlContent.kt:~314-350) duplicates the […]
+  "prompt": "Review the following changes at /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc for code-quality issues. The feature adds a Table of Contents for article detail pages (Jetpack Compose + Apollo Android).\n\nChanged files (see `git diff HEAD`):\n- `app/src/main/java/pub/hackers/android/domain/model/Models.kt` — added TocItem data class, `toc` field on PostDetailResult\n- `app/src/main/java/pub/hackers/android/domain/model/TocParser.kt` — new parser\n- `app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt` — new composable\n- `app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt` — added ContentBlock.Heading, HEADING_REGEX, ID_ATTR_REGEX, `extractHeadingBlocks`, `splitHeadings: Boolean` parameter on splitIntoBlocks, heading rendering branch, `headingAnchor: ((id) -> BringIntoViewRequester?)?` param\n- `app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt` — passes toc, creates `mutableMapOf<String, BringIntoViewRequester>` via `remember(post.id) { ... }` and a supplier lambda, renders TocPanel\n- `app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt` — added `toc` to PostDetailUiState\n\nCheck for:\n\n1. **Redundant state / parameter sprawl**\n   - Is `toc` duplicated on both `PostDetailResult` and `PostDetailUiState`? Should it be derived from the post instead?\n   - The `headingAnchor` lambda parameter on HtmlContent — could this be a narrower Modifier-returning callback, or should the heading anchor registration live inside HtmlContent itself with a map exposed upward?\n   - `mutableMapOf<String, BringIntoViewRequester>` inside `remember` — the map mutates, but Compose can't observe it. Is this a latent bug (new entries don't trigger recomposition) or safe because requesters just need to exist?\n\n2. **Copy-paste with variation**\n   - Heading rendering branch (HtmlContent.kt:~314-350) duplicates the […]
 
 > TOOL
 
@@ -4849,7 +4849,7 @@ id: toolu_01D3xD3KKwaudX4VQpc1s5tc
 {
   "description": "Efficiency review",
   "subagent_type": "Explore",
-  "prompt": "Review these changes at /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc for efficiency issues. The feature adds Table of Contents support for articles (Jetpack Compose + Apollo Android).\n\nChanged files (see `git diff HEAD`):\n- `app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt` — calls parseTocJson on network response\n- `app/src/main/java/pub/hackers/android/domain/model/TocParser.kt` — parses nested JSON into TocItem tree\n- `app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt` — splits HTML into blocks; adds a second regex pass over text blocks to split out headings; heading rendering branch calls rememberParsedHtml and builds a new TextStyle.copy(...) object on every recomposition\n- `app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt` — composable; calls `items.minOf { it.level }` inside the Column composable; recurses through TOC entries\n- `app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt` — `val headingAnchors = remember(post.id) { mutableMapOf<String, BringIntoViewRequester>() }` and `val anchorRequester: (String) -> BringIntoViewRequester = { id -> headingAnchors.getOrPut(id) { BringIntoViewRequester() } }` — the lambda is recreated every recomposition; passed down to HtmlContent via `headingAnchor = { id -> anchorRequester(id) }` (another lambda).\n\nSpecifically check:\n\n1. **Hot-path work on every recomposition**\n   - Heading rendering in HtmlContent.kt: `bodyStyle.copy(fontSize = bodyStyle.fontSize * ..., fontWeight = FontWeight.Bold)` — computed per recomposition. Should be wrapped in `remember(bodyStyle, block.level) { ... }`?\n   - TocPanel.kt: `items.minOf { it.level }` recomputed each recomposition. Should use `remember(items)`.\n   - `val anchorRequester: (String) -> BringIntoViewRequester = { […]
+  "prompt": "Review these changes at /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc for efficiency issues. The feature adds Table of Contents support for articles (Jetpack Compose + Apollo Android).\n\nChanged files (see `git diff HEAD`):\n- `app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt` — calls parseTocJson on network response\n- `app/src/main/java/pub/hackers/android/domain/model/TocParser.kt` — parses nested JSON into TocItem tree\n- `app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt` — splits HTML into blocks; adds a second regex pass over text blocks to split out headings; heading rendering branch calls rememberParsedHtml and builds a new TextStyle.copy(...) object on every recomposition\n- `app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt` — composable; calls `items.minOf { it.level }` inside the Column composable; recurses through TOC entries\n- `app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt` — `val headingAnchors = remember(post.id) { mutableMapOf<String, BringIntoViewRequester>() }` and `val anchorRequester: (String) -> BringIntoViewRequester = { id -> headingAnchors.getOrPut(id) { BringIntoViewRequester() } }` — the lambda is recreated every recomposition; passed down to HtmlContent via `headingAnchor = { id -> anchorRequester(id) }` (another lambda).\n\nSpecifically check:\n\n1. **Hot-path work on every recomposition**\n   - Heading rendering in HtmlContent.kt: `bodyStyle.copy(fontSize = bodyStyle.fontSize * ..., fontWeight = FontWeight.Bold)` — computed per recomposition. Should be wrapped in `remember(bodyStyle, block.level) { ... }`?\n   - TocPanel.kt: `items.minOf { it.level }` recomputed each recomposition. Should use `remember(items)`.\n   - `val anchorRequester: (String) -> BringIntoViewRequester = { […]
 
 > TOOL
 
@@ -4863,7 +4863,7 @@ Perfect! Now I have all the information I need. Let me create a comprehensive an
 I've reviewed the TOC implementation and identified three concrete opportunities to improve code reuse:
 
 ### 1. **ID_ATTR_REGEX is Redundant**
-**File:** `/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt`
+**File:** `/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt`
 
 **Issue:** Line 86 defines a new `ID_ATTR_REGEX`, but the existing `ATTR_REGEX` (line 77) already captures all attributes generically.
 
@@ -4880,7 +4880,7 @@ Reuse the existing `parseAttributes` function (line 986) which already uses `ATT
 ---
 
 ### 2. **TocEntry Duplicates Recursive Indentation Pattern from RenderListBlock**
-**File:** `/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt` (lines 105–130)
+**File:** `/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt` (lines 105–130)
 
 **Issue:** `TocEntry` hand-implements recursive indentation (lines 113, 122–124) and recursive rendering (lines 127–129), but `RenderListBlock` in HtmlContent.kt already provides a battle-tested recursive indentation pattern with:
 - Depth-based indentation via `Spacer(modifier = Modifier.width((level * 8).dp))` (line 382)
@@ -4986,7 +4986,7 @@ id: toolu_017qrXQNXYnsrPM6HwA7vu6U
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "private val HEADING_REGEX = Regex(\n    \"\"\"<h([1-6])([^>]*)>([\\s\\S]*?)</h\\1>\"\"\",\n    RegexOption.IGNORE_CASE\n)\nprivate val ID_ATTR_REGEX = Regex(\"\"\"\\bid\\s*=\\s*[\"']([^\"']+)[\"']\"\"\", RegexOption.IGNORE_CASE)",
   "new_string": "private val HEADING_REGEX = Regex(\n    \"\"\"<h([1-6])([^>]*)>([\\s\\S]*?)</h\\1>\"\"\",\n    RegexOption.IGNORE_CASE\n)"
 }
@@ -4997,7 +4997,7 @@ id: toolu_017qrXQNXYnsrPM6HwA7vu6U
 tool_result
 id: toolu_017qrXQNXYnsrPM6HwA7vu6U
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5007,7 +5007,7 @@ id: toolu_015A5FA38MAK8WjqWTHpcrP8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "        val level = match.groupValues[1].toInt()\n        val attrs = match.groupValues[2]\n        val inner = match.groupValues[3]\n        val anchorId = ID_ATTR_REGEX.find(attrs)?.groupValues?.get(1)\n        out.add(ContentBlock.Heading(level = level, anchorId = anchorId, innerHtml = inner))",
   "new_string": "        val level = match.groupValues[1].toInt()\n        val attrs = match.groupValues[2]\n        val inner = match.groupValues[3]\n        val anchorId = parseAttributes(attrs)[\"id\"]\n        out.add(ContentBlock.Heading(level = level, anchorId = anchorId, innerHtml = inner))"
 }
@@ -5018,7 +5018,7 @@ id: toolu_015A5FA38MAK8WjqWTHpcrP8
 tool_result
 id: toolu_015A5FA38MAK8WjqWTHpcrP8
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -5032,7 +5032,7 @@ id: toolu_01YXYeVBsrcbedrCBzTwss7p
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "                    is ContentBlock.Heading -> {\n                        val headingAnnotated = rememberParsedHtml(\n                            block.innerHtml,\n                            linkColor,\n                            hashtagColor,\n                            mentionBg,\n                            codeBg,\n                            contentStyle,\n                        )\n                        val headingStyle = bodyStyle.copy(\n                            fontSize = bodyStyle.fontSize * when (block.level) {\n                                1 -> 1.5f\n                                2 -> 1.3f\n                                3 -> 1.15f\n                                else -> 1.0f\n                            },\n                            fontWeight = FontWeight.Bold,\n                        )\n                        val requester = block.anchorId?.let { id -> headingAnchor?.invoke(id) }\n                        val headingModifier = if (requester != null) {\n                            Modifier.bringIntoViewRequester(requester)\n                        } else {\n                            Modifier\n                        }\n                        if (headingAnnotated.isNotEmpty()) {\n                            ClickableText(\n                                text = headingAnnotated,\n                                style = headingStyle,\n                                modifier = headingModifier,\n                                onClick = { offset ->\n                                    handleClick(headingAnnotated, offset, uriHandler, onMentionClick, onLinkClick, onTextClick)\n                                }\n                            )\n                        } else {\n                            Text(\n                                text = \"\",\n                                modifier = headingModifier,\n                            )\n                        }\n                    }",
   "new_string": "                    is ContentBlock.Heading -> {\n                        val headingAnnotated = rememberParsedHtml(\n                            block.innerHtml,\n                            linkColor,\n                            hashtagColor,\n                            mentionBg,\n                            codeBg,\n                            contentStyle,\n                        )\n                        val headingStyle = remember(bodyStyle, block.level) {\n                            bodyStyle.copy(\n                                fontSize = bodyStyle.fontSize * when (block.level) {\n                                    1 -> 1.5f\n                                    2 -> 1.3f\n                                    3 -> 1.15f\n                                    else -> 1.0f\n                                },\n                                fontWeight = FontWeight.Bold,\n                            )\n                        }\n                        val requester = block.anchorId?.let { id -> headingAnchor?.invoke(id) }\n                        val headingModifier = if (requester != null) {\n                            Modifier.bringIntoViewRequester(requester)\n                        } else {\n                            Modifier\n                        }\n                        if (headingAnnotated.isNotEmpty()) {\n                            ClickableText(\n                                text = headingAnnotated,\n                                style = headingStyle,\n                                modifier […]
 
@@ -5041,7 +5041,7 @@ id: toolu_01YXYeVBsrcbedrCBzTwss7p
 tool_result
 id: toolu_01YXYeVBsrcbedrCBzTwss7p
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -5053,7 +5053,7 @@ The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-art
 tool_result
 id: toolu_01DX6TTNjhHE5Sqv2BKivbxw
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
 ```
 
 > TOOL
@@ -5063,7 +5063,7 @@ id: toolu_01DX6TTNjhHE5Sqv2BKivbxw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "old_string": "        ... on Article {\n            contents {\n                language\n                toc\n            }\n        }",
   "new_string": "        ... on Article {\n            contents {\n                toc\n            }\n        }"
 }
@@ -5080,7 +5080,7 @@ id: toolu_01XzTxiBW6HwfuSrVDN61Tia
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt",
   "old_string": "    var expanded by remember { mutableStateOf(false) }\n\n    Column(",
   "new_string": "    var expanded by remember { mutableStateOf(false) }\n    val baseLevel = remember(items) { items.minOf { it.level } }\n\n    Column("
 }
@@ -5091,7 +5091,7 @@ id: toolu_01XzTxiBW6HwfuSrVDN61Tia
 tool_result
 id: toolu_01XzTxiBW6HwfuSrVDN61Tia
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5101,7 +5101,7 @@ id: toolu_016Yjnw7mfUPSSiaNCxSRGwZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt",
   "old_string": "        AnimatedVisibility(visible = expanded) {\n            Column(\n                modifier = Modifier\n                    .fillMaxWidth()\n                    .padding(horizontal = 12.dp, vertical = 4.dp)\n            ) {\n                val baseLevel = items.minOf { it.level }\n                items.forEach { item ->",
   "new_string": "        AnimatedVisibility(visible = expanded) {\n            Column(\n                modifier = Modifier\n                    .fillMaxWidth()\n                    .padding(horizontal = 12.dp, vertical = 4.dp)\n            ) {\n                items.forEach { item ->"
 }
@@ -5112,7 +5112,7 @@ id: toolu_016Yjnw7mfUPSSiaNCxSRGwZ
 tool_result
 id: toolu_016Yjnw7mfUPSSiaNCxSRGwZ
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt has been updated successfully.
 ```
 
 > AGENT
@@ -5124,7 +5124,7 @@ The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-art
 tool_result
 id: toolu_016ETjJt6HeMkYWb9QniCsC4
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5134,7 +5134,7 @@ id: toolu_016ETjJt6HeMkYWb9QniCsC4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "                val headingAnchors = remember(post.id) { mutableMapOf<String, BringIntoViewRequester>() }\n                val anchorRequester: (String) -> BringIntoViewRequester = { id ->\n                    headingAnchors.getOrPut(id) { BringIntoViewRequester() }\n                }\n\n                if (isArticle && toc.isNotEmpty() && !showTranslated) {\n                    TocPanel(\n                        items = toc,\n                        anchorRequester = anchorRequester,\n                    )\n                    Spacer(modifier = Modifier.height(12.dp))\n                }",
   "new_string": "                val anchorRequester = remember(post.id) {\n                    val anchors = mutableMapOf<String, BringIntoViewRequester>()\n                    val get: (String) -> BringIntoViewRequester = { id ->\n                        anchors.getOrPut(id) { BringIntoViewRequester() }\n                    }\n                    get\n                }\n\n                if (isArticle && toc.isNotEmpty() && !showTranslated) {\n                    TocPanel(\n                        items = toc,\n                        anchorRequester = anchorRequester,\n                    )\n                    Spacer(modifier = Modifier.height(12.dp))\n                }"
 }
@@ -5147,7 +5147,7 @@ id: toolu_01KWYngXpwGxJoJoSR37GE3n
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "                    HtmlContent(\n                        html = post.content,\n                        modifier = Modifier.fillMaxWidth(),\n                        contentStyle = HtmlContentStyle.Prose,\n                        onMentionClick = onProfileClick,\n                        headingAnchor = if (isArticle) {\n                            { id -> anchorRequester(id) }\n                        } else null,\n                    )",
   "new_string": "                    HtmlContent(\n                        html = post.content,\n                        modifier = Modifier.fillMaxWidth(),\n                        contentStyle = HtmlContentStyle.Prose,\n                        onMentionClick = onProfileClick,\n                        headingAnchor = if (isArticle) anchorRequester else null,\n                    )"
 }
@@ -5158,7 +5158,7 @@ id: toolu_01KWYngXpwGxJoJoSR37GE3n
 tool_result
 id: toolu_01KWYngXpwGxJoJoSR37GE3n
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -5172,7 +5172,7 @@ id: toolu_01KhCNF4Z3rRUg28EfUEgj7J
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt",
   "old_string": "package pub.hackers.android.domain.model\n\nfun parseTocJson(value: Any?): List<TocItem> {\n    val list = value as? List<*> ?: return emptyList()\n    return list.mapNotNull { parseTocItem(it) }\n}\n\nprivate fun parseTocItem(value: Any?): TocItem? {\n    val map = value as? Map<*, *> ?: return null\n    val id = map[\"id\"] as? String ?: return null\n    val title = map[\"title\"] as? String ?: return null\n    val level = (map[\"level\"] as? Number)?.toInt() ?: return null\n    val children = parseTocJson(map[\"children\"])\n    return TocItem(id = id, level = level, title = title, children = children)\n}",
   "new_string": "package pub.hackers.android.domain.model\n\nprivate const val MAX_TOC_DEPTH = 16\n\nfun parseTocJson(value: Any?): List<TocItem> = parseTocJson(value, depth = 0)\n\nprivate fun parseTocJson(value: Any?, depth: Int): List<TocItem> {\n    if (depth >= MAX_TOC_DEPTH) return emptyList()\n    val list = value as? List<*> ?: return emptyList()\n    return list.mapNotNull { parseTocItem(it, depth) }\n}\n\nprivate fun parseTocItem(value: Any?, depth: Int): TocItem? {\n    val map = value as? Map<*, *> ?: return null\n    val id = map[\"id\"] as? String ?: return null\n    val title = map[\"title\"] as? String ?: return null\n    val level = (map[\"level\"] as? Number)?.toInt() ?: return null\n    val children = parseTocJson(map[\"children\"], depth + 1)\n    return TocItem(id = id, level = level, title = title, children = children)\n}"
 }
@@ -5183,7 +5183,7 @@ id: toolu_01KhCNF4Z3rRUg28EfUEgj7J
 tool_result
 id: toolu_01KhCNF4Z3rRUg28EfUEgj7J
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/domain/model/TocParser.kt has been updated successfully.
 ```
 
 > AGENT
@@ -5302,7 +5302,7 @@ Mirrors the PostCard behavior by rendering LinkPreviewCard when the
 post has no media, no quoted post, and a resolved link attachment,
 so url thumbnails appear on the detail screen too.
 
-Co-authored-by: Claude Code <noreply@anthropic.com>
+Co-authored-by: Claude Code <<REDACTED_EMAIL>>
 Assisted-By: Claude Code(claude-opus-4-7)
 Entire-Checkpoint: 4a4e5587e283
 
@@ -5312,7 +5312,7 @@ The last reply was being obscured by the floating action button
 and the system navigation bar since the LazyColumn had no bottom
 content padding and the Scaffold disables default window insets.
 
-Co-authored-by: Claude Code <noreply@anthropic.com>
+Co-authored-by: Claude Code <<REDACTED_EMAIL>>
 Assisted-By: Claude Code(claude-opus-4-7)
 Entire-Checkpoint: af70249a44f1
 
@@ -5359,7 +5359,7 @@ tool_use Bash
 id: toolu_01HKAgX4ZGaN9wLhUR5Djzo8
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nAdd TocItem model and JSON parser\n\nIntroduces a TocItem tree data class and a recursive parser that\nconverts the Apollo JSON scalar (Map/List of Any) emitted by\nArticleContent.toc into a typed list. Depth-guarded and covered\nby unit tests.\n\nCo-authored-by: Claude Code <noreply@anthropic.com>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nAdd TocItem model and JSON parser\n\nIntroduces a TocItem tree data class and a recursive parser that\nconverts the Apollo JSON scalar (Map/List of Any) emitted by\nArticleContent.toc into a typed list. Depth-guarded and covered\nby unit tests.\n\nCo-authored-by: Claude Code <<REDACTED_EMAIL>>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\"",
   "description": "Commit 1"
 }
 ```
@@ -5407,7 +5407,7 @@ tool_use Bash
 id: toolu_01UeSngKQUsWYp5d4UvR3xAy
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nFetch article TOC via PostDetail query\n\nExtends the PostDetail query with an Article inline fragment that\npulls contents.toc, parses it in the repository, and surfaces the\nresult on PostDetailUiState. The new field is not consumed by the\nUI yet; headings still render inline as before.\n\nCo-authored-by: Claude Code <noreply@anthropic.com>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nFetch article TOC via PostDetail query\n\nExtends the PostDetail query with an Article inline fragment that\npulls contents.toc, parses it in the repository, and surfaces the\nresult on PostDetailUiState. The new field is not consumed by the\nUI yet; headings still render inline as before.\n\nCo-authored-by: Claude Code <<REDACTED_EMAIL>>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\"",
   "description": "Commit 2"
 }
 ```
@@ -5452,7 +5452,7 @@ tool_use Bash
 id: toolu_01NxsApfSfyqLoB8M487j8PQ
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nSplit heading blocks with anchors in HtmlContent\n\nAdds ContentBlock.Heading and an extractHeadingBlocks pass gated by\na splitHeadings flag on splitIntoBlocks (default off). When a\nheadingAnchor supplier is provided, each heading is rendered as its\nown composable and attached to a BringIntoViewRequester via the\nheading's id attribute, enabling scroll-to-anchor.\n\nCo-authored-by: Claude Code <noreply@anthropic.com>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nSplit heading blocks with anchors in HtmlContent\n\nAdds ContentBlock.Heading and an extractHeadingBlocks pass gated by\na splitHeadings flag on splitIntoBlocks (default off). When a\nheadingAnchor supplier is provided, each heading is rendered as its\nown composable and attached to a BringIntoViewRequester via the\nheading's id attribute, enabling scroll-to-anchor.\n\nCo-authored-by: Claude Code <<REDACTED_EMAIL>>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\"",
   "description": "Commit 3"
 }
 ```
@@ -5499,7 +5499,7 @@ tool_use Bash
 id: toolu_01P5hc7zxooqKy4US2otHSZy
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nRender TOC panel on article detail\n\nAdds a collapsible TocPanel composable that renders the nested TOC\nabove the article body and scrolls to headings via BringIntoView.\nOnly shown for Article posts with a non-empty TOC; notes and other\npost types are unaffected.\n\nCo-authored-by: Claude Code <noreply@anthropic.com>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nRender TOC panel on article detail\n\nAdds a collapsible TocPanel composable that renders the nested TOC\nabove the article body and scrolls to headings via BringIntoView.\nOnly shown for Article posts with a non-empty TOC; notes and other\npost types are unaffected.\n\nCo-authored-by: Claude Code <<REDACTED_EMAIL>>\nAssisted-By: Claude Code(claude-opus-4-7)\nEOF\n)\"",
   "description": "Commit 4"
 }
 ```
@@ -5566,7 +5566,7 @@ tool_use Bash
 id: toolu_01DBkuora9wdeAuw39bE2dQ1
 ```json
 {
-  "command": "grep -rn \"compose.foundation\\|composeBom\\|compose-bom\\|foundation.*version\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/gradle/libs.versions.toml 2>/dev/null | head -20",
+  "command": "grep -rn \"compose.foundation\\|composeBom\\|compose-bom\\|foundation.*version\" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/gradle/libs.versions.toml 2>/dev/null | head -20",
   "description": "Check Compose version"
 }
 ```
@@ -5576,8 +5576,8 @@ id: toolu_01DBkuora9wdeAuw39bE2dQ1
 tool_result
 id: toolu_01DBkuora9wdeAuw39bE2dQ1
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/gradle/libs.versions.toml:9:composeBom = "2026.03.01"
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/gradle/libs.versions.toml:39:androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/gradle/libs.versions.toml:9:composeBom = "2026.03.01"
+/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/gradle/libs.versions.toml:39:androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 ```
 
 > AGENT
@@ -5590,7 +5590,7 @@ tool_use Read
 id: toolu_01EzujiMNkdvxYq7TsLd3LYW
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": "470, 500",
   "limit": 30
 }
@@ -5611,7 +5611,7 @@ tool_use Read
 id: toolu_01XVwjr1QhR54ody1dmcoP53
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 480,
   "limit": 35
 }
@@ -5668,7 +5668,7 @@ Now refactor. First, change `HtmlContent` to use `onHeadingPositioned` instead o
 tool_result
 id: toolu_01N8AdZULiZupFgvqBJTwVeP
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5678,7 +5678,7 @@ id: toolu_01N8AdZULiZupFgvqBJTwVeP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "import androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.width\nimport androidx.compose.foundation.relocation.BringIntoViewRequester\nimport androidx.compose.foundation.relocation.bringIntoViewRequester\nimport androidx.compose.foundation.text.ClickableText\nimport androidx.compose.material3.Text",
   "new_string": "import androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.width\nimport androidx.compose.foundation.text.ClickableText\nimport androidx.compose.material3.Text\nimport androidx.compose.ui.layout.LayoutCoordinates\nimport androidx.compose.ui.layout.onGloballyPositioned"
 }
@@ -5691,7 +5691,7 @@ id: toolu_01Mmsd8ywecDqXiXKkn8dHNz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "    onTextClick: (() -> Unit)? = null,\n    headingAnchor: ((id: String) -> BringIntoViewRequester?)? = null,\n) {",
   "new_string": "    onTextClick: (() -> Unit)? = null,\n    onHeadingPositioned: ((id: String, coordinates: LayoutCoordinates) -> Unit)? = null,\n) {"
 }
@@ -5702,7 +5702,7 @@ id: toolu_01Mmsd8ywecDqXiXKkn8dHNz
 tool_result
 id: toolu_01Mmsd8ywecDqXiXKkn8dHNz
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5712,7 +5712,7 @@ id: toolu_01F3GXPwYrHHTjCX12in6ZaC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "        // Full mode: block-based rendering with syntax-highlighted code blocks\n        val splitHeadings = headingAnchor != null\n        val blocks = remember(normalizedHtml, splitHeadings) {\n            splitIntoBlocks(normalizedHtml, splitHeadings = splitHeadings)\n        }",
   "new_string": "        // Full mode: block-based rendering with syntax-highlighted code blocks\n        val splitHeadings = onHeadingPositioned != null\n        val blocks = remember(normalizedHtml, splitHeadings) {\n            splitIntoBlocks(normalizedHtml, splitHeadings = splitHeadings)\n        }"
 }
@@ -5723,7 +5723,7 @@ id: toolu_01F3GXPwYrHHTjCX12in6ZaC
 tool_result
 id: toolu_01F3GXPwYrHHTjCX12in6ZaC
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5733,7 +5733,7 @@ id: toolu_01UdTvKxuNPQHaZupQsm21VY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "                        val requester = block.anchorId?.let { id -> headingAnchor?.invoke(id) }\n                        val headingModifier = if (requester != null) {\n                            Modifier.bringIntoViewRequester(requester)\n                        } else {\n                            Modifier\n                        }\n                        if (headingAnnotated.isNotEmpty()) {\n                            ClickableText(\n                                text = headingAnnotated,\n                                style = headingStyle,\n                                modifier = headingModifier,\n                                onClick = { offset ->\n                                    handleClick(headingAnnotated, offset, uriHandler, onMentionClick, onLinkClick, onTextClick)\n                                }\n                            )\n                        }",
   "new_string": "                        val anchorId = block.anchorId\n                        val headingModifier = if (anchorId != null && onHeadingPositioned != null) {\n                            Modifier.onGloballyPositioned { coords ->\n                                onHeadingPositioned(anchorId, coords)\n                            }\n                        } else {\n                            Modifier\n                        }\n                        if (headingAnnotated.isNotEmpty()) {\n                            ClickableText(\n                                text = headingAnnotated,\n                                style = headingStyle,\n                                modifier = headingModifier,\n                                onClick = { offset ->\n                                    handleClick(headingAnnotated, offset, uriHandler, onMentionClick, onLinkClick, onTextClick)\n                                }\n                            )\n                        }"
 }
@@ -5744,7 +5744,7 @@ id: toolu_01UdTvKxuNPQHaZupQsm21VY
 tool_result
 id: toolu_01UdTvKxuNPQHaZupQsm21VY
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -5757,7 +5757,7 @@ tool_use Write
 id: toolu_01DGoNyqweD8uoWHFnGQsdqg
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt",
   "content": "package pub.hackers.android.ui.components\n\nimport androidx.compose.animation.AnimatedVisibility\nimport androidx.compose.foundation.border\nimport androidx.compose.foundation.clickable\nimport androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.padding\nimport androidx.compose.foundation.layout.size\nimport androidx.compose.foundation.shape.RoundedCornerShape\nimport androidx.compose.material.icons.Icons\nimport androidx.compose.material.icons.filled.ExpandLess\nimport androidx.compose.material.icons.filled.ExpandMore\nimport androidx.compose.material3.Icon\nimport androidx.compose.material3.Text\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.mutableStateOf\nimport androidx.compose.runtime.remember\nimport androidx.compose.runtime.setValue\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.res.stringResource\nimport androidx.compose.ui.text.font.FontWeight\nimport androidx.compose.ui.unit.dp\nimport pub.hackers.android.R\nimport pub.hackers.android.domain.model.TocItem\nimport pub.hackers.android.ui.theme.LocalAppColors\nimport pub.hackers.android.ui.theme.LocalAppTypography\n\n@Composable\nfun TocPanel(\n    items: List<TocItem>,\n    onAnchorClick: (String) -> Unit,\n    modifier: Modifier = Modifier,\n) {\n    if (items.isEmpty()) return\n\n    val colors = LocalAppColors.current\n    val typography = LocalAppTypography.current\n\n    var expanded by remember { mutableStateOf(false) }\n    val baseLevel = remember(items) { items.minOf { it.level } }\n\n    Column(\n        modifier = modifier\n            .fillMaxWidth()\n            .border(\n                width = 1.dp,\n                color = colors.divider,\n                shape = RoundedCornerShape(8.dp),\n            )\n    ) {\n        Row(\n            verticalAlignment = Alignment.CenterVertically,\n            modifier = Modifier\n                .fillMaxWidth()\n                .clickable { expanded = !expanded }\n                .padding(horizontal = 12.dp, vertical = 10.dp)\n        ) {\n            Text(\n                text = stringResource(R.string.table_of_contents),\n                style = typography.bodyLargeSemiBold,\n                color = colors.textPrimary,\n                modifier = Modifier.weight(1f),\n            )\n            Icon(\n                imageVector = if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,\n                contentDescription = null,\n                tint = colors.textSecondary,\n                modifier = Modifier.size(20.dp),\n            )\n        }\n\n        AnimatedVisibility(visible = expanded) {\n            Column(\n                modifier = Modifier\n                    .fillMaxWidth()\n                    .padding(horizontal = 12.dp, vertical = 4.dp)\n            ) {\n                items.forEach { item ->\n                    TocEntry(item = item, baseLevel = baseLevel, onClick = onAnchorClick)\n                }\n                Spacer(modifier = Modifier.height(4.dp))\n            }\n        }\n    }\n}\n\n@Composable\nprivate fun TocEntry(\n    item: TocItem,\n    baseLevel: Int,\n    onClick: (String) -> […]
 
 > TOOL
@@ -5765,7 +5765,7 @@ id: toolu_01DGoNyqweD8uoWHFnGQsdqg
 tool_result
 id: toolu_01DGoNyqweD8uoWHFnGQsdqg
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/TocPanel.kt has been updated successfully.
 ```
 
 > AGENT
@@ -5777,7 +5777,7 @@ Now refactor PostDetailScreen to hoist `LazyListState`, track heading coords, an
 tool_result
 id: toolu_016yvRdJuPmWBUoXJSmUVUxe
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5787,7 +5787,7 @@ id: toolu_016yvRdJuPmWBUoXJSmUVUxe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "import pub.hackers.android.ui.components.TocPanel\nimport androidx.compose.foundation.relocation.BringIntoViewRequester",
   "new_string": "import pub.hackers.android.ui.components.TocPanel\nimport androidx.compose.foundation.gestures.animateScrollBy\nimport androidx.compose.foundation.lazy.rememberLazyListState\nimport androidx.compose.ui.layout.LayoutCoordinates\nimport androidx.compose.ui.layout.onGloballyPositioned"
 }
@@ -5800,7 +5800,7 @@ id: toolu_01HTgBCmd5ypCbK7SqFmECpL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "    val navBarBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()\n\n    LazyColumn(\n        contentPadding = PaddingValues(bottom = navBarBottom + 96.dp)\n    ) {",
   "new_string": "    val navBarBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()\n\n    val lazyListState = rememberLazyListState()\n    val headingCoords = remember(post.id) { mutableMapOf<String, LayoutCoordinates>() }\n    var lazyColumnCoords by remember { mutableStateOf<LayoutCoordinates?>(null) }\n    val onAnchorClick: (String) -> Unit = remember(post.id) {\n        { id ->\n            val hc = headingCoords[id]\n            val lc = lazyColumnCoords\n            if (hc != null && hc.isAttached && lc != null && lc.isAttached) {\n                val delta = hc.positionInWindow().y - lc.positionInWindow().y\n                scope.launch { lazyListState.animateScrollBy(delta) }\n            }\n        }\n    }\n\n    LazyColumn(\n        state = lazyListState,\n        contentPadding = PaddingValues(bottom = navBarBottom + 96.dp),\n        modifier = Modifier.onGloballyPositioned { lazyColumnCoords = it },\n    ) {"
 }
@@ -5811,7 +5811,7 @@ id: toolu_01HTgBCmd5ypCbK7SqFmECpL
 tool_result
 id: toolu_01HTgBCmd5ypCbK7SqFmECpL
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5821,7 +5821,7 @@ id: toolu_01BC8634ByGc56nEpphkUQZU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "                val anchorRequester = remember(post.id) {\n                    val anchors = mutableMapOf<String, BringIntoViewRequester>()\n                    val get: (String) -> BringIntoViewRequester = { id ->\n                        anchors.getOrPut(id) { BringIntoViewRequester() }\n                    }\n                    get\n                }\n\n                if (isArticle && toc.isNotEmpty() && !showTranslated) {\n                    TocPanel(\n                        items = toc,\n                        anchorRequester = anchorRequester,\n                    )\n                    Spacer(modifier = Modifier.height(12.dp))\n                }",
   "new_string": "                val onHeadingPositioned: (String, LayoutCoordinates) -> Unit =\n                    remember(post.id) {\n                        { id, coords -> headingCoords[id] = coords }\n                    }\n\n                if (isArticle && toc.isNotEmpty() && !showTranslated) {\n                    TocPanel(\n                        items = toc,\n                        onAnchorClick = onAnchorClick,\n                    )\n                    Spacer(modifier = Modifier.height(12.dp))\n                }"
 }
@@ -5832,7 +5832,7 @@ id: toolu_01BC8634ByGc56nEpphkUQZU
 tool_result
 id: toolu_01BC8634ByGc56nEpphkUQZU
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5842,7 +5842,7 @@ id: toolu_018buaQL69aq9iS763kswd1Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "                    HtmlContent(\n                        html = post.content,\n                        modifier = Modifier.fillMaxWidth(),\n                        contentStyle = HtmlContentStyle.Prose,\n                        onMentionClick = onProfileClick,\n                        headingAnchor = if (isArticle) anchorRequester else null,\n                    )",
   "new_string": "                    HtmlContent(\n                        html = post.content,\n                        modifier = Modifier.fillMaxWidth(),\n                        contentStyle = HtmlContentStyle.Prose,\n                        onMentionClick = onProfileClick,\n                        onHeadingPositioned = if (isArticle) onHeadingPositioned else null,\n                    )"
 }
@@ -5853,7 +5853,7 @@ id: toolu_018buaQL69aq9iS763kswd1Z
 tool_result
 id: toolu_018buaQL69aq9iS763kswd1Z
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -5862,7 +5862,7 @@ tool_use Bash
 id: toolu_01MK2kL5M8PRGAYe8XkAwQgf
 ```json
 {
-  "command": "grep -n \"^import\\|positionInWindow\\|kotlinx.coroutines.launch\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt | head -30",
+  "command": "grep -n \"^import\\|positionInWindow\\|kotlinx.coroutines.launch\" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt | head -30",
   "description": "Check imports"
 }
 ```
@@ -5910,7 +5910,7 @@ tool_use Bash
 id: toolu_014ULnVJsf5DVvuFS2RCmigT
 ```json
 {
-  "command": "grep -n \"launch\\|positionInWindow\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt | head -10",
+  "command": "grep -n \"launch\\|positionInWindow\" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt | head -10",
   "description": "Check for launch and positionInWindow usage"
 }
 ```
@@ -5933,7 +5933,7 @@ id: toolu_01QiyuJ8L5TFkJCBHQpCHq4E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "import androidx.compose.ui.layout.LayoutCoordinates\nimport androidx.compose.ui.layout.onGloballyPositioned",
   "new_string": "import androidx.compose.ui.layout.LayoutCoordinates\nimport androidx.compose.ui.layout.onGloballyPositioned\nimport androidx.compose.ui.layout.positionInWindow"
 }
@@ -5944,7 +5944,7 @@ id: toolu_01QiyuJ8L5TFkJCBHQpCHq4E
 tool_result
 id: toolu_01QiyuJ8L5TFkJCBHQpCHq4E
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -5968,10 +5968,10 @@ id: toolu_011ddoasDaSyMLZ9gDj354f9
 tool_result
 id: toolu_011ddoasDaSyMLZ9gDj354f9
 ```
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:245:9 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: (Int) -> Unit): Unit' is deprecated. Use Text or BasicText and pass an AnnotatedString that contains a LinkAnnotation. Check LinkAnnotation's documentation for more details and samples.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:279:33 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: (Int) -> Unit): Unit' is deprecated. Use Text or BasicText and pass an AnnotatedString that contains a LinkAnnotation. Check LinkAnnotation's documentation for more details and samples.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:342:29 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: (Int) -> Unit): Unit' is deprecated. Use Text or BasicText and pass an AnnotatedString that contains a LinkAnnotation. Check LinkAnnotation's documentation for more details and samples.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:398:29 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: […]
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:245:9 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: (Int) -> Unit): Unit' is deprecated. Use Text or BasicText and pass an AnnotatedString that contains a LinkAnnotation. Check LinkAnnotation's documentation for more details and samples.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:279:33 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: (Int) -> Unit): Unit' is deprecated. Use Text or BasicText and pass an AnnotatedString that contains a LinkAnnotation. Check LinkAnnotation's documentation for more details and samples.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:342:29 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: (Int) -> Unit): Unit' is deprecated. Use Text or BasicText and pass an AnnotatedString that contains a LinkAnnotation. Check LinkAnnotation's documentation for more details and samples.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt:398:29 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: […]
 
 > TOOL
 
@@ -6162,7 +6162,7 @@ tool_use Bash
 id: toolu_01Py1zpNBHV7dx2tLsrUypwE
 ```json
 {
-  "command": "bash /Users/kodingwarrior/.claude/plugins/marketplaces/zipsa/minimalism-workflow/skills/save-plan/scripts/save-plan.sh \"codeblock-font-cache\" \"Override CodeBlockView font everywhere it renders and route through a font-rendering cache\" /tmp/codeblock-font-cache.md",
+  "command": "bash /home/<USER>/.claude/plugins/marketplaces/zipsa/minimalism-workflow/skills/save-plan/scripts/save-plan.sh \"codeblock-font-cache\" \"Override CodeBlockView font everywhere it renders and route through a font-rendering cache\" /tmp/codeblock-font-cache.md",
   "description": "Save the plan"
 }
 ```
@@ -6172,7 +6172,7 @@ id: toolu_01Py1zpNBHV7dx2tLsrUypwE
 tool_result
 id: toolu_01Py1zpNBHV7dx2tLsrUypwE
 ```
-Saved plan 'codeblock-font-cache' at /Users/kodingwarrior/.planvault/plans/codeblock-font-cache/plan.md
+Saved plan 'codeblock-font-cache' at /home/<USER>/.planvault/plans/codeblock-font-cache/plan.md
 Load with: /load-plan codeblock-font-cache
 ```
 
@@ -6250,7 +6250,7 @@ tool_use Read
 id: toolu_015JmHNRxeAnr8hN1GhyQnEg
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 488,
   "limit": 30
 }
@@ -6262,7 +6262,7 @@ tool_use Read
 id: toolu_019GDxMMnG95k5uFuzsZcjRP
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 580,
   "limit": 40
 }
@@ -6321,7 +6321,7 @@ tool_use Read
 id: toolu_01FeVi79GScjS4UQE6Neb96A
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "offset": 315,
   "limit": 55
 }
@@ -6536,11 +6536,11 @@ id: toolu_01CHJbiFkLM4fphZ2G4Ykpos
 tool_result
 id: toolu_01CHJbiFkLM4fphZ2G4Ykpos
 ```
-href="/@nixCraft@mastodon.social/019da08c-4704-78db-8e4c-2207aa1f09d3"
-href="/@nixCraft@mastodon.social/019da08c-4704-78db-8e4c-2207aa1f09d3/quotes"
-href="/@ponsqy@misskey.io/019da08b-3e02-7879-a4c1-44be18a16bf5"
-href="/@ponsqy@misskey.io/019da08b-3e02-7879-a4c1-44be18a16bf5/quotes"
-href="/@ponsqy@misskey.io/019da08b-8661-70f2-9f67-1d4407b69f92"
+href="/@<REDACTED_EMAIL>/019da08c-4704-78db-8e4c-2207aa1f09d3"
+href="/@<REDACTED_EMAIL>/019da08c-4704-78db-8e4c-2207aa1f09d3/quotes"
+href="/@<REDACTED_EMAIL>/019da08b-3e02-7879-a4c1-44be18a16bf5"
+href="/@<REDACTED_EMAIL>/019da08b-3e02-7879-a4c1-44be18a16bf5/quotes"
+href="/@<REDACTED_EMAIL>/019da08b-8661-70f2-9f67-1d4407b69f92"
 ```
 
 > TOOL
@@ -6614,7 +6614,7 @@ tool_use Bash
 id: toolu_01C7UV8w4rSNiSc2dZzmpqDG
 ```json
 {
-  "command": "grep -n \"ActorArticlesQuery\\|actorByHandle\\|query.*Articles\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql | head -5",
+  "command": "grep -n \"ActorArticlesQuery\\|actorByHandle\\|query.*Articles\" /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql | head -5",
   "description": "Find articles query shape"
 }
 ```
@@ -6637,7 +6637,7 @@ tool_use Read
 id: toolu_01UMpf2ZHY9hXfmgPvFSUGUH
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "offset": 335,
   "limit": 25
 }
@@ -6772,7 +6772,7 @@ id: toolu_01PojJEoAn8U13VvpnPVxxpp
 ```json
 {
   "pattern": "typename\\s*=|typename:",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android",
   "output_mode": "content",
   "-n": true,
   "head_limit": 10
@@ -6800,7 +6800,7 @@ app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt:
 tool_result
 id: toolu_01AFAF1z1tPDMHHBLABW6Fm6
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > AGENT
@@ -6814,7 +6814,7 @@ id: toolu_01AFAF1z1tPDMHHBLABW6Fm6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "import androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.width\nimport androidx.compose.foundation.text.ClickableText",
   "new_string": "import androidx.compose.foundation.layout.Box\nimport androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.height\nimport androidx.compose.foundation.layout.width\nimport androidx.compose.foundation.text.ClickableText"
 }
@@ -6827,7 +6827,7 @@ id: toolu_01CbNFp3RMaDEBNxXg4Kdpgc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt",
   "old_string": "                        val anchorId = block.anchorId\n                        val headingModifier = if (anchorId != null && onHeadingPositioned != null) {\n                            Modifier.onGloballyPositioned { coords ->\n                                onHeadingPositioned(anchorId, coords)\n                            }\n                        } else {\n                            Modifier\n                        }\n                        if (headingAnnotated.isNotEmpty()) {\n                            ClickableText(\n                                text = headingAnnotated,\n                                style = headingStyle,\n                                modifier = headingModifier,\n                                onClick = { offset ->\n                                    handleClick(headingAnnotated, offset, uriHandler, onMentionClick, onLinkClick, onTextClick)\n                                }\n                            )\n                        }",
   "new_string": "                        val anchorId = block.anchorId\n                        val wrapperModifier = Modifier\n                            .fillMaxWidth()\n                            .let { base ->\n                                if (anchorId != null && onHeadingPositioned != null) {\n                                    base.onGloballyPositioned { coords ->\n                                        onHeadingPositioned(anchorId, coords)\n                                    }\n                                } else base\n                            }\n                        Box(modifier = wrapperModifier) {\n                            if (headingAnnotated.isNotEmpty()) {\n                                ClickableText(\n                                    text = headingAnnotated,\n                                    style = headingStyle,\n                                    onClick = { offset ->\n                                        handleClick(headingAnnotated, offset, uriHandler, onMentionClick, onLinkClick, onTextClick)\n                                    }\n                                )\n                            }\n                        }"
 }
@@ -6838,7 +6838,7 @@ id: toolu_01CbNFp3RMaDEBNxXg4Kdpgc
 tool_result
 id: toolu_01CbNFp3RMaDEBNxXg4Kdpgc
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/components/HtmlContent.kt has been updated successfully.
 ```
 
 > TOOL
@@ -6846,7 +6846,7 @@ The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-art
 tool_result
 id: toolu_013tfVrUxAYjAckgDkSqjqAV
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -6860,7 +6860,7 @@ id: toolu_013tfVrUxAYjAckgDkSqjqAV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/feature-article-detail-toc/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "old_string": "    val lazyListState = rememberLazyListState()\n    val headingCoords = remember(post.id) { mutableMapOf<String, LayoutCoordinates>() }\n    var lazyColumnCoords by remember { mutableStateOf<LayoutCoordinates?>(null) }\n    val onAnchorClick: (String) -> Unit = remember(post.id) {\n        { id ->\n            val hc = headingCoords[id]\n            val lc = lazyColumnCoords\n            if (hc != null && hc.isAttached && lc != null && lc.isAttached) {\n                val delta = hc.positionInWindow().y - lc.positionInWindow().y\n                scope.launch { lazyListState.animateScrollBy(delta) }\n            }\n        }\n    }",
   "new_string": "    val lazyListState = rememberLazyListState()\n    val headingCoords = remember(post.id) { mutableMapOf<String, LayoutCoordinates>() }\n    var lazyColumnCoords by remember { mutableStateOf<LayoutCoordinates?>(null) }\n    val onAnchorClick: (String) -> Unit = remember(post.id) {\n        { id ->\n            val hc = headingCoords[id]\n            val lc = lazyColumnCoords\n            android.util.Log.d(\n                \"TocScroll\",\n                \"click id=$id hc=${hc != null} hcAttached=${hc?.isAttached} lc=${lc != null} lcAttached=${lc?.isAttached} knownIds=${headingCoords.keys}\"\n            )\n            if (hc != null && hc.isAttached && lc != null && lc.isAttached) {\n                val delta = hc.positionInWindow().y - lc.positionInWindow().y\n                android.util.Log.d(\"TocScroll\", \"delta=$delta hcY=${hc.positionInWindow().y} lcY=${lc.positionInWindow().y}\")\n                scope.launch { lazyListState.animateScrollBy(delta) }\n            }\n        }\n    }"
 }

@@ -23,7 +23,7 @@ tool_use Read
 id: toolu_01Rv2YvYSjBsorhJRrJkDkTv
 ```json
 {
-  "file_path": "/home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/project_trello_todo_batch_0708.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/project_trello_todo_batch_0708.md"
 }
 ```
 
@@ -94,7 +94,7 @@ tool_use Read
 id: toolu_01SARNgmALRCMGp7JaBFPyzS
 ```json
 {
-  "file_path": "/home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/project_per_harvest_delivery.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/project_per_harvest_delivery.md"
 }
 ```
 
@@ -132,7 +132,7 @@ tool_use Bash
 id: toolu_0112ddFruUGmUGzAAm4ztpYL
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\necho \"=== consumer orders route (card: farmer price total / fulfillment date) ===\"\ngit diff src/app/api/consumer/orders/route.ts src/components/consumer/OrderCard.tsx src/app/consumer/orders/[id]/page.tsx src/app/farmer/dashboard/orders/[id]/page.tsx\necho \"=== harvest.ts (card 6) ===\"\ngit diff src/lib/harvest.ts",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\necho \"=== consumer orders route (card: farmer price total / fulfillment date) ===\"\ngit diff src/app/api/consumer/orders/route.ts src/components/consumer/OrderCard.tsx src/app/consumer/orders/[id]/page.tsx src/app/farmer/dashboard/orders/[id]/page.tsx\necho \"=== harvest.ts (card 6) ===\"\ngit diff src/lib/harvest.ts",
   "description": "Diff small files to confirm cards"
 }
 ```
@@ -183,7 +183,7 @@ tool_use Bash
 id: toolu_01FMJ7iwgBZ2FZ8errGGVY4i
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\necho \"=== Card 9: Shipped date/time after Mark Shipped (farmer order view) ===\"\ngrep -rn \"On the way\\|Shipped\" src/app/farmer/dashboard/orders/[id]/page.tsx | head -20\necho\necho \"=== shipped_at usage in farmer order detail ===\"\ngrep -n \"shipped_at\" src/app/farmer/dashboard/orders/[id]/page.tsx\necho\necho \"=== Card 8: overall rating above Farmer Dashboard title ===\"\ngrep -rn \"overall rating\\|overallRating\\|averageRating\\|avg_rating\\|Dashboard\" src/app/farmer/dashboard/page.tsx | head -20",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\necho \"=== Card 9: Shipped date/time after Mark Shipped (farmer order view) ===\"\ngrep -rn \"On the way\\|Shipped\" src/app/farmer/dashboard/orders/[id]/page.tsx | head -20\necho\necho \"=== shipped_at usage in farmer order detail ===\"\ngrep -n \"shipped_at\" src/app/farmer/dashboard/orders/[id]/page.tsx\necho\necho \"=== Card 8: overall rating above Farmer Dashboard title ===\"\ngrep -rn \"overall rating\\|overallRating\\|averageRating\\|avg_rating\\|Dashboard\" src/app/farmer/dashboard/page.tsx | head -20",
   "description": "Check cards 8, 9 implementation"
 }
 ```
@@ -221,7 +221,7 @@ tool_use Bash
 id: toolu_01Mek8NUPVSPA3QPPi85LFMa
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\necho \"=== Farmer dashboard title area (lines 380-410) ===\"\nsed -n '380,410p' src/app/farmer/dashboard/page.tsx\necho\necho \"=== Does the stepper render the 'at' date? (order detail lines 195-260) ===\"\nsed -n '195,265p' src/app/farmer/dashboard/orders/[id]/page.tsx\necho\necho \"=== rating fields anywhere in dashboard ===\"\ngrep -rn \"rating\\|Rating\\|⭐\\|review\" src/app/farmer/dashboard/page.tsx",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\necho \"=== Farmer dashboard title area (lines 380-410) ===\"\nsed -n '380,410p' src/app/farmer/dashboard/page.tsx\necho\necho \"=== Does the stepper render the 'at' date? (order detail lines 195-260) ===\"\nsed -n '195,265p' src/app/farmer/dashboard/orders/[id]/page.tsx\necho\necho \"=== rating fields anywhere in dashboard ===\"\ngrep -rn \"rating\\|Rating\\|⭐\\|review\" src/app/farmer/dashboard/page.tsx",
   "description": "Inspect dashboard title and stepper rendering"
 }
 ```
@@ -301,7 +301,7 @@ tool_use Bash
 id: toolu_014aFvB4ESsNQwFT8ojmfwb8
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\necho \"=== stepper render (search .map over steps/timeline) ===\"\ngrep -n \"\\.map\\|steps\\|timeline\\|\\.at\\b\\|formatDateTime\\|toLocaleString\" src/app/farmer/dashboard/orders/[id]/page.tsx | head -30",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\necho \"=== stepper render (search .map over steps/timeline) ===\"\ngrep -n \"\\.map\\|steps\\|timeline\\|\\.at\\b\\|formatDateTime\\|toLocaleString\" src/app/farmer/dashboard/orders/[id]/page.tsx | head -30",
   "description": "Find stepper rendering"
 }
 ```
@@ -324,7 +324,7 @@ tool_use Bash
 id: toolu_01ABzW1tt1S5ABiGCBjVieWZ
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\necho \"=== 'On the way' text location ===\"\ngrep -rn \"On the way\\|Shipped -\\|Shipped—\\|Shipped ·\" src/ | head\necho\necho \"=== statusText for shipped in farmer order detail ===\"\nsed -n '95,145p' src/app/farmer/dashboard/orders/[id]/page.tsx",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\necho \"=== 'On the way' text location ===\"\ngrep -rn \"On the way\\|Shipped -\\|Shipped—\\|Shipped ·\" src/ | head\necho\necho \"=== statusText for shipped in farmer order detail ===\"\nsed -n '95,145p' src/app/farmer/dashboard/orders/[id]/page.tsx",
   "description": "Find On the way text and shipped status"
 }
 ```
@@ -382,7 +382,7 @@ tool_use Bash
 id: toolu_01FX9d91UT5jcfNeWvnGD2dQ
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\necho \"=== Card 10: combined multi-farmer razorpay ===\"\ngit diff src/components/consumer/Cart.tsx | grep -n \"handleRazorpayOrderAll\\|Order & Pay\\|combined\\|multi-farmer\\|multiFarmer\" | head\necho\necho \"=== Card 13: notifications on farmer dashboard ===\"\ngrep -rln \"Notification\\|notification\\|web-push\\|onesignal\\|firebase\\|FCM\\|push\" src/app/farmer/ 2>/dev/null | head\necho \"--- any notifications table/lib ---\"\ngrep -rln \"notification\" src/lib src/app/api 2>/dev/null | head",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\necho \"=== Card 10: combined multi-farmer razorpay ===\"\ngit diff src/components/consumer/Cart.tsx | grep -n \"handleRazorpayOrderAll\\|Order & Pay\\|combined\\|multi-farmer\\|multiFarmer\" | head\necho\necho \"=== Card 13: notifications on farmer dashboard ===\"\ngrep -rln \"Notification\\|notification\\|web-push\\|onesignal\\|firebase\\|FCM\\|push\" src/app/farmer/ 2>/dev/null | head\necho \"--- any notifications table/lib ---\"\ngrep -rln \"notification\" src/lib src/app/api 2>/dev/null | head",
   "description": "Verify card 10 and check notifications"
 }
 ```
@@ -414,7 +414,7 @@ tool_use Bash
 id: toolu_01UANS2RBmRTPUGkTzqTNpUB
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\ngrep -n \"otification\" src/app/farmer/dashboard/orders/page.tsx src/app/farmer/dashboard/page.tsx",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\ngrep -n \"otification\" src/app/farmer/dashboard/orders/page.tsx src/app/farmer/dashboard/page.tsx",
   "description": "Check what notification refs exist"
 }
 ```
@@ -458,7 +458,7 @@ tool_use Bash
 id: toolu_01BBvo8GVvSaegwnZ3gpM1dW
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer\ngrep -n \"shipped\\|Shipped\\|On the way\\|fulfillment_date\\|toLocaleString\\|statusText\" src/app/farmer/dashboard/orders/page.tsx | head -30",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer\ngrep -n \"shipped\\|Shipped\\|On the way\\|fulfillment_date\\|toLocaleString\\|statusText\" src/app/farmer/dashboard/orders/page.tsx | head -30",
   "description": "Check farmer order list for shipped date"
 }
 ```

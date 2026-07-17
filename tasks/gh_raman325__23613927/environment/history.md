@@ -296,7 +296,7 @@ id: toolu_01QnZuxHPvygwiwPdZHBTTLp
 {
   "description": "Finder A: line-by-line diff scan",
   "subagent_type": "general-purpose",
-  "prompt": "You are a code-review finder. Review the diff of PR 1279 on the branch `origin/feat/credential-length-capabilities` (base `main`) in repo /Users/raman/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files at the PR ref with: `git show origin/feat/credential-length-capabilities:<path>`\n\nChanged source files:\n- custom_components/lock_code_manager/domain/credentials.py (new length_bounds method, aggregate_length_bounds function)\n- custom_components/lock_code_manager/domain/slot_coordinator.py (new _validate_credential_length, raises ServiceValidationError)\n- custom_components/lock_code_manager/providers/_base.py (new cached_capabilities property)\n- custom_components/lock_code_manager/text.py (native_min/native_max now properties, _bounds, _handle_add/remove_lock hooks)\n\nANGLE A — line-by-line diff scan. Read every changed hunk line by line, then Read the enclosing function for each hunk (bugs in unchanged lines of a touched function are in scope). For every line ask: what input, state, timing, or platform makes this line wrong? Look for inverted/wrong conditions, off-by-one, None/0 confusion, falsy-zero checks (e.g. `cap.max_length > 0`, `if value:`, `if hi is not None`), missing await, wrong-variable copy-paste, swallowed errors, recursion between properties (native_min/native_max/native_value/_bounds), unsatisfiable-range handling.\n\nSurface UP TO 6 candidate findings. For each give: file, line, one-line summary, and a concrete failure_scenario (specific inputs/state -> wrong output/crash). Pass through every candidate with a nameable failure scenario; do not silently drop half-believed ones.\n\nReturn ONLY a JSON array of objects with keys: file, line, summary, failure_scenario."
+  "prompt": "You are a code-review finder. Review the diff of PR 1279 on the branch `origin/feat/credential-length-capabilities` (base `main`) in repo /home/<USER>/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files at the PR ref with: `git show origin/feat/credential-length-capabilities:<path>`\n\nChanged source files:\n- custom_components/lock_code_manager/domain/credentials.py (new length_bounds method, aggregate_length_bounds function)\n- custom_components/lock_code_manager/domain/slot_coordinator.py (new _validate_credential_length, raises ServiceValidationError)\n- custom_components/lock_code_manager/providers/_base.py (new cached_capabilities property)\n- custom_components/lock_code_manager/text.py (native_min/native_max now properties, _bounds, _handle_add/remove_lock hooks)\n\nANGLE A — line-by-line diff scan. Read every changed hunk line by line, then Read the enclosing function for each hunk (bugs in unchanged lines of a touched function are in scope). For every line ask: what input, state, timing, or platform makes this line wrong? Look for inverted/wrong conditions, off-by-one, None/0 confusion, falsy-zero checks (e.g. `cap.max_length > 0`, `if value:`, `if hi is not None`), missing await, wrong-variable copy-paste, swallowed errors, recursion between properties (native_min/native_max/native_value/_bounds), unsatisfiable-range handling.\n\nSurface UP TO 6 candidate findings. For each give: file, line, one-line summary, and a concrete failure_scenario (specific inputs/state -> wrong output/crash). Pass through every candidate with a nameable failure scenario; do not silently drop half-believed ones.\n\nReturn ONLY a JSON array of objects with keys: file, line, summary, failure_scenario."
 }
 ```
 
@@ -308,7 +308,7 @@ id: toolu_01XPi6VdATGCqnSx3xdodHUj
 {
   "description": "Finder B: removed-behavior auditor",
   "subagent_type": "general-purpose",
-  "prompt": "You are a code-review finder. Review the diff of PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /Users/raman/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files at a ref with: `git show <ref>:<path>` (refs: `main` and `origin/feat/credential-length-capabilities`)\n\nANGLE B — removed-behavior auditor. For every line the diff DELETES or replaces, name the invariant or behavior it enforced, then search the new code for where that invariant is re-established. If you cannot find it, that's a candidate: a removed guard, dropped error path, narrowed validation, deleted test covering a real case, or a stripped decorator.\n\nKNOWN LEAD (verify and include if real): on `main`, `_get_cached_capabilities` in providers/_base.py was decorated `@final`. Check whether on the PR branch `_get_cached_capabilities` still has `@final`, or whether inserting the new `cached_capabilities` property above it caused `_get_cached_capabilities` to lose its `@final`.\n\nAlso check: the old `_attr_native_min = 0` / `_attr_native_max = 9999` class attributes in text.py were removed and replaced by properties + `_DEFAULT_MIN`/`_DEFAULT_MAX`. Does anything still read `_attr_native_min`/`_attr_native_max`? Does HA's TextEntity base rely on those attrs anywhere the override doesn't cover?\n\nSurface UP TO 6 candidates. For each: file, line, one-line summary, concrete failure_scenario. Return ONLY a […]
+  "prompt": "You are a code-review finder. Review the diff of PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /home/<USER>/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files at a ref with: `git show <ref>:<path>` (refs: `main` and `origin/feat/credential-length-capabilities`)\n\nANGLE B — removed-behavior auditor. For every line the diff DELETES or replaces, name the invariant or behavior it enforced, then search the new code for where that invariant is re-established. If you cannot find it, that's a candidate: a removed guard, dropped error path, narrowed validation, deleted test covering a real case, or a stripped decorator.\n\nKNOWN LEAD (verify and include if real): on `main`, `_get_cached_capabilities` in providers/_base.py was decorated `@final`. Check whether on the PR branch `_get_cached_capabilities` still has `@final`, or whether inserting the new `cached_capabilities` property above it caused `_get_cached_capabilities` to lose its `@final`.\n\nAlso check: the old `_attr_native_min = 0` / `_attr_native_max = 9999` class attributes in text.py were removed and replaced by properties + `_DEFAULT_MIN`/`_DEFAULT_MAX`. Does anything still read `_attr_native_min`/`_attr_native_max`? Does HA's TextEntity base rely on those attrs anywhere the override doesn't cover?\n\nSurface UP TO 6 candidates. For each: file, line, one-line summary, concrete failure_scenario. Return ONLY a […]
 
 > TOOL
 
@@ -318,7 +318,7 @@ id: toolu_01DC8HrVHopzx5jCsBuTKf7B
 {
   "description": "Finder C: cross-file tracer",
   "subagent_type": "general-purpose",
-  "prompt": "You are a code-review finder. Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /Users/raman/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files at the PR ref: `git show origin/feat/credential-length-capabilities:<path>`. Use grep to find callers.\n\nANGLE C — cross-file tracer. For each changed/new function, find its callers and callees and check whether the change breaks any call site (new precondition, changed return shape, new exception, timing/ordering dependency).\n\nSpecific things to trace:\n1. `_validate_credential_length` raises `ServiceValidationError` inside the slot coordinator's PIN-update method. Trace who calls that method (text entity async_set_value? a HA service?). Does raising propagate correctly to the user, or is it swallowed / does it leave partial state? Is ServiceValidationError the right exception type and is it imported correctly?\n2. `cached_capabilities` new property reads `self._capabilities_cache`. Confirm that attribute exists and is initialized on BaseLock before any caller (text entity `_bounds`) can read it — including during entity setup/early render before capabilities are probed.\n3. text.py `_handle_add_locks(self, locks)` / `_handle_remove_lock(self, lock_entity_id)` override base hooks in entity.py. Confirm signatures match the base exactly and that super() is invoked, and that these hooks are actually registered/called for text entities.\n4. The text entity sizes bounds […]
+  "prompt": "You are a code-review finder. Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /home/<USER>/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files at the PR ref: `git show origin/feat/credential-length-capabilities:<path>`. Use grep to find callers.\n\nANGLE C — cross-file tracer. For each changed/new function, find its callers and callees and check whether the change breaks any call site (new precondition, changed return shape, new exception, timing/ordering dependency).\n\nSpecific things to trace:\n1. `_validate_credential_length` raises `ServiceValidationError` inside the slot coordinator's PIN-update method. Trace who calls that method (text entity async_set_value? a HA service?). Does raising propagate correctly to the user, or is it swallowed / does it leave partial state? Is ServiceValidationError the right exception type and is it imported correctly?\n2. `cached_capabilities` new property reads `self._capabilities_cache`. Confirm that attribute exists and is initialized on BaseLock before any caller (text entity `_bounds`) can read it — including during entity setup/early render before capabilities are probed.\n3. text.py `_handle_add_locks(self, locks)` / `_handle_remove_lock(self, lock_entity_id)` override base hooks in entity.py. Confirm signatures match the base exactly and that super() is invoked, and that these hooks are actually registered/called for text entities.\n4. The text entity sizes bounds […]
 
 > TOOL
 
@@ -328,7 +328,7 @@ id: toolu_011C1KMvkhmZgDSNnfmb28dv
 {
   "description": "Finder D: cleanup (reuse/simplify/efficiency)",
   "subagent_type": "general-purpose",
-  "prompt": "You are a code-review finder focused on CLEANUP. Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /Users/raman/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files: `git show origin/feat/credential-length-capabilities:<path>`\n\nThree lenses, UP TO 6 candidates total:\n- REUSE: new code re-implementing something the codebase already has. Grep domain/credentials.py, providers/_base.py, and adjacent files for existing length/bounds/aggregation helpers. Name the existing helper to call instead.\n- SIMPLIFICATION: redundant or derivable state, copy-paste with slight variation, deep nesting, dead code. e.g. is `_validate_credential_length`'s per-lock loop duplicating logic in `length_bounds`/`aggregate_length_bounds`? Could the text entity's `_bounds` clamp logic be simpler? Name the simpler form.\n- EFFICIENCY: redundant computation or repeated work. `_bounds()` is called by BOTH `native_min` and `native_max` properties, and possibly on every state read — is it recomputing the aggregate twice per render? Does `native_value` get called inside `_bounds` while `_bounds` is reached from a state render that also reads native_value? Name the cheaper alternative.\n\nFor each candidate state the concrete cost (what is duplicated/wasted/harder to maintain) in failure_scenario. Return ONLY a JSON array with keys: file, line, summary, failure_scenario."
+  "prompt": "You are a code-review finder focused on CLEANUP. Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /home/<USER>/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files: `git show origin/feat/credential-length-capabilities:<path>`\n\nThree lenses, UP TO 6 candidates total:\n- REUSE: new code re-implementing something the codebase already has. Grep domain/credentials.py, providers/_base.py, and adjacent files for existing length/bounds/aggregation helpers. Name the existing helper to call instead.\n- SIMPLIFICATION: redundant or derivable state, copy-paste with slight variation, deep nesting, dead code. e.g. is `_validate_credential_length`'s per-lock loop duplicating logic in `length_bounds`/`aggregate_length_bounds`? Could the text entity's `_bounds` clamp logic be simpler? Name the simpler form.\n- EFFICIENCY: redundant computation or repeated work. `_bounds()` is called by BOTH `native_min` and `native_max` properties, and possibly on every state read — is it recomputing the aggregate twice per render? Does `native_value` get called inside `_bounds` while `_bounds` is reached from a state render that also reads native_value? Name the cheaper alternative.\n\nFor each candidate state the concrete cost (what is duplicated/wasted/harder to maintain) in failure_scenario. Return ONLY a JSON array with keys: file, line, summary, failure_scenario."
 }
 ```
 
@@ -340,7 +340,7 @@ id: toolu_01LkHUTU528McVhPShyJmSqp
 {
   "description": "Finder E: altitude/design depth",
   "subagent_type": "general-purpose",
-  "prompt": "You are a code-review finder focused on ALTITUDE (design depth). Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /Users/raman/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files: `git show origin/feat/credential-length-capabilities:<path>`\n\nANGLE — altitude. Check that each change is implemented at the right depth, not a fragile bandaid. Special cases layered on shared infrastructure signal the fix isn't deep enough.\n\nConsider:\n- `CREDENTIAL_TYPE_BY_CONF_KEY = {CONF_PIN: CredentialType.PIN}` in text.py is a single-entry map gating which keys get length bounds. Is hardcoding the credential-type-to-key mapping in the entity the right altitude, or should it live with the entity/credential-type definitions?\n- The text entity widens `lo`/`hi` to admit the current `native_value` to dodge HA render-time validation. Is that working around a deeper issue (storing values that violate bounds), or is it the correct seam?\n- `cached_capabilities` adds a synchronous cache-peek alongside the async `_get_cached_capabilities`. Two parallel accessors for one cache — right abstraction or duplication risk?\n- The validation gate lives in the coordinator while the display hints live in the entity, deliberately split. Is the boundary clean, or does it risk the two diverging (e.g. coordinator uses all locks, entity uses bound locks)?\n\nSurface UP TO […]
+  "prompt": "You are a code-review finder focused on ALTITUDE (design depth). Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /home/<USER>/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files: `git show origin/feat/credential-length-capabilities:<path>`\n\nANGLE — altitude. Check that each change is implemented at the right depth, not a fragile bandaid. Special cases layered on shared infrastructure signal the fix isn't deep enough.\n\nConsider:\n- `CREDENTIAL_TYPE_BY_CONF_KEY = {CONF_PIN: CredentialType.PIN}` in text.py is a single-entry map gating which keys get length bounds. Is hardcoding the credential-type-to-key mapping in the entity the right altitude, or should it live with the entity/credential-type definitions?\n- The text entity widens `lo`/`hi` to admit the current `native_value` to dodge HA render-time validation. Is that working around a deeper issue (storing values that violate bounds), or is it the correct seam?\n- `cached_capabilities` adds a synchronous cache-peek alongside the async `_get_cached_capabilities`. Two parallel accessors for one cache — right abstraction or duplication risk?\n- The validation gate lives in the coordinator while the display hints live in the entity, deliberately split. Is the boundary clean, or does it risk the two diverging (e.g. coordinator uses all locks, entity uses bound locks)?\n\nSurface UP TO […]
 
 > TOOL
 
@@ -350,7 +350,7 @@ id: toolu_01MrDpmETdUvXH5jqBDoXAkm
 {
   "description": "Finder F: test coverage gaps",
   "subagent_type": "general-purpose",
-  "prompt": "You are a code-review finder focused on TEST CORRECTNESS and coverage gaps. Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /Users/raman/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files: `git show origin/feat/credential-length-capabilities:<path>`\n\nThe PR adds tests in tests/providers/test_base.py, tests/test_credentials.py, tests/test_slot_coordinator.py, tests/test_text.py.\n\nLook for:\n- Tests that assert the WRONG thing or would pass even if the code were buggy (tautological/over-mocked).\n- Important untested branches in the new source logic: unsatisfiable intersection (min>max) fallback, empty-PIN exemption from validation, the `max_length == 0` -> unbounded normalization, the current-value widening in `_bounds`, ServiceValidationError message containing each offending lock, locks with `cached_capabilities is None` being skipped.\n- Tests doing manual hass.data manipulation instead of proper setup/teardown (this project requires proper setup).\n- Off-by-one boundary tests missing (length exactly == lo, exactly == hi).\n\nSurface UP TO 6 candidates (real gaps or wrong assertions only). For each: file, line, one-line summary, concrete failure_scenario (what bug would slip through). Return ONLY a JSON array with keys: file, line, summary, failure_scenario."
+  "prompt": "You are a code-review finder focused on TEST CORRECTNESS and coverage gaps. Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /home/<USER>/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files: `git show origin/feat/credential-length-capabilities:<path>`\n\nThe PR adds tests in tests/providers/test_base.py, tests/test_credentials.py, tests/test_slot_coordinator.py, tests/test_text.py.\n\nLook for:\n- Tests that assert the WRONG thing or would pass even if the code were buggy (tautological/over-mocked).\n- Important untested branches in the new source logic: unsatisfiable intersection (min>max) fallback, empty-PIN exemption from validation, the `max_length == 0` -> unbounded normalization, the current-value widening in `_bounds`, ServiceValidationError message containing each offending lock, locks with `cached_capabilities is None` being skipped.\n- Tests doing manual hass.data manipulation instead of proper setup/teardown (this project requires proper setup).\n- Off-by-one boundary tests missing (length exactly == lo, exactly == hi).\n\nSurface UP TO 6 candidates (real gaps or wrong assertions only). For each: file, line, one-line summary, concrete failure_scenario (what bug would slip through). Return ONLY a JSON array with keys: file, line, summary, failure_scenario."
 }
 ```
 
@@ -362,7 +362,7 @@ id: toolu_017RzT55jrPFEch1fKhYM5h7
 {
   "description": "Finder G: HA lifecycle/state correctness",
   "subagent_type": "general-purpose",
-  "prompt": "You are a code-review finder focused on Home Assistant entity lifecycle and state correctness. Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /Users/raman/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files: `git show origin/feat/credential-length-capabilities:<path>`. The key file is custom_components/lock_code_manager/text.py and base entity.py.\n\nBackground: HA's TextEntity computes `state` and validates the stored value against `native_min`/`native_max` AT RENDER TIME, raising ValueError if the value is outside. The PR converts these to dynamic properties and widens bounds to admit the current value.\n\nLook for:\n1. Render-time ValueError still reachable: any path where `native_value` length falls outside `[native_min, native_max]` despite the widening. Consider `native_value` returning None vs empty string, and whether `_bounds` reads a DIFFERENT `native_value` than HA validates against.\n2. `_write_bounds_update` guards on `self.hass is not None and self.entity_id` then calls `async_write_ha_state`. Is calling `async_write_ha_state` from the add/remove-lock hook safe at that point in lifecycle? Could it fire before entity is added, or after removal?\n3. When a lock is added/removed changing bounds, but the stored PIN now violates the NEW tighter bounds — does the next render raise, or does widening save it? Trace carefully.\n4. Frontend: text entity min/max are sent as […]
+  "prompt": "You are a code-review finder focused on Home Assistant entity lifecycle and state correctness. Review PR 1279 on branch `origin/feat/credential-length-capabilities` (base `main`) in repo /home/<USER>/projects/lock_code_manager.\n\nGet the diff: `git diff main...origin/feat/credential-length-capabilities`\nRead files: `git show origin/feat/credential-length-capabilities:<path>`. The key file is custom_components/lock_code_manager/text.py and base entity.py.\n\nBackground: HA's TextEntity computes `state` and validates the stored value against `native_min`/`native_max` AT RENDER TIME, raising ValueError if the value is outside. The PR converts these to dynamic properties and widens bounds to admit the current value.\n\nLook for:\n1. Render-time ValueError still reachable: any path where `native_value` length falls outside `[native_min, native_max]` despite the widening. Consider `native_value` returning None vs empty string, and whether `_bounds` reads a DIFFERENT `native_value` than HA validates against.\n2. `_write_bounds_update` guards on `self.hass is not None and self.entity_id` then calls `async_write_ha_state`. Is calling `async_write_ha_state` from the add/remove-lock hook safe at that point in lifecycle? Could it fire before entity is added, or after removal?\n3. When a lock is added/removed changing bounds, but the stored PIN now violates the NEW tighter bounds — does the next render raise, or does widening save it? Trace carefully.\n4. Frontend: text entity min/max are sent as […]
 
 > TOOL
 
@@ -527,7 +527,7 @@ tool_use Bash
 id: toolu_01EeBMUfMSvyHH8j9NasVC6U
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; python -c \"import homeassistant.components.text as t; print(t.__file__)\" 2>&1; HAFILE=$(python -c \"import homeassistant.components.text as t; print(t.__file__)\" 2>/dev/null); echo \"=== service validation region ===\"; grep -n \"async_set_value\\|len(value)\\|min\\|max\\|ServiceValidationError\\|ValueError\\|raise\" \"$HAFILE\" | head -50",
+  "command": "cd /home/<USER>/projects/lock_code_manager; python -c \"import homeassistant.components.text as t; print(t.__file__)\" 2>&1; HAFILE=$(python -c \"import homeassistant.components.text as t; print(t.__file__)\" 2>/dev/null); echo \"=== service validation region ===\"; grep -n \"async_set_value\\|len(value)\\|min\\|max\\|ServiceValidationError\\|ValueError\\|raise\" \"$HAFILE\" | head -50",
   "description": "Inspect HA text component validation order"
 }
 ```
@@ -548,7 +548,7 @@ tool_use Bash
 id: toolu_01E5JUNk3btDg7Lcr58S3MHg
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; HAFILE=$(uv run python -c \"import homeassistant.components.text as t; print(t.__file__)\" 2>/dev/null); echo \"FILE=$HAFILE\"; echo \"=== async_set_value entity method + service handler ===\"; grep -n \"async def async_set_value\\|def set_value\\|len(value)\\|self.min\\|self.max\\|def min\\|def max\\|ServiceValidationError\\|raise ValueError\\|MAX_LENGTH_STATE_STATE\\|def state\" \"$HAFILE\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager; HAFILE=$(uv run python -c \"import homeassistant.components.text as t; print(t.__file__)\" 2>/dev/null); echo \"FILE=$HAFILE\"; echo \"=== async_set_value entity method + service handler ===\"; grep -n \"async def async_set_value\\|def set_value\\|len(value)\\|self.min\\|self.max\\|def min\\|def max\\|ServiceValidationError\\|raise ValueError\\|MAX_LENGTH_STATE_STATE\\|def state\" \"$HAFILE\"",
   "description": "Inspect HA text component via uv run"
 }
 ```
@@ -558,7 +558,7 @@ id: toolu_01E5JUNk3btDg7Lcr58S3MHg
 tool_result
 id: toolu_01E5JUNk3btDg7Lcr58S3MHg
 ```
-FILE=/Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/text/__init__.py
+FILE=/home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/text/__init__.py
 === async_set_value entity method + service handler ===
 14:from homeassistant.const import ATTR_MODE, MAX_LENGTH_STATE_STATE
 65:    if len(value) < entity.min:
@@ -591,7 +591,7 @@ tool_use Bash
 id: toolu_011SgQMsU16CNJa3TMyiCf9L
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager; HAFILE=.venv/lib/python3.14/site-packages/homeassistant/components/text/__init__.py; sed -n '55,80p;145,210p' \"$HAFILE\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager; HAFILE=.venv/lib/python3.14/site-packages/homeassistant/components/text/__init__.py; sed -n '55,80p;145,210p' \"$HAFILE\"",
   "description": "Read HA text service handler and min/max/state"
 }
 ```
@@ -678,7 +678,7 @@ tool_use Bash
 id: toolu_017qthBsGDeewzcncsnhVzaW
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit switch main 2>&1\necho \"=== ff main ===\"\ngit merge --ff-only origin/main 2>&1\necho \"=== delete gone branch ===\"\ngit branch -D fix/zwave-drop-hourly-drift-refresh 2>&1\necho \"=== remaining branches ===\"\ngit branch -vv",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit switch main 2>&1\necho \"=== ff main ===\"\ngit merge --ff-only origin/main 2>&1\necho \"=== delete gone branch ===\"\ngit branch -D fix/zwave-drop-hourly-drift-refresh 2>&1\necho \"=== remaining branches ===\"\ngit branch -vv",
   "description": "Switch to main, fast-forward, delete gone branch"
 }
 ```
@@ -744,7 +744,7 @@ tool_use Bash
 id: toolu_01JvrnV62crP2LBkCbKBgoey
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit switch feat/credential-length-capabilities 2>&1\ngit log --oneline -1 2>&1",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit switch feat/credential-length-capabilities 2>&1\ngit log --oneline -1 2>&1",
   "description": "Switch to PR 1279 branch"
 }
 ```
@@ -794,7 +794,7 @@ tool_use Read
 id: toolu_01AQ7qrjNFfHfAb51oBEYjCT
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py"
 }
 ```
 
@@ -852,7 +852,7 @@ tool_use Read
 id: toolu_01YNosA78J7kBpALbTLjuK2a
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
   "offset": 230,
   "limit": 120
 }
@@ -913,7 +913,7 @@ tool_use Bash
 id: toolu_01RLSuNZkuipvDhUUmxNEKPN
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== CredentialTypeCapability construction sites ===\"\ngrep -rn \"CredentialTypeCapability(\" custom_components/ | grep -v test\necho \"=== min_length / max_length assignments in providers ===\"\ngrep -rn \"min_length\\|max_length\\|min_pin\\|max_pin\\|minLength\\|maxLength\" custom_components/lock_code_manager/providers/ | grep -v \"max_user_name\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== CredentialTypeCapability construction sites ===\"\ngrep -rn \"CredentialTypeCapability(\" custom_components/ | grep -v test\necho \"=== min_length / max_length assignments in providers ===\"\ngrep -rn \"min_length\\|max_length\\|min_pin\\|max_pin\\|minLength\\|maxLength\" custom_components/lock_code_manager/providers/ | grep -v \"max_user_name\"",
   "description": "Find capability construction in providers"
 }
 ```
@@ -943,7 +943,7 @@ tool_use Bash
 id: toolu_01C3Bsp59Qb5GJGgRJtrAr2D
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== zwave_js.py pin min/max source ===\"; sed -n '270,300p' custom_components/lock_code_manager/providers/zwave_js.py\necho \"=== matter.py around 480-495 ===\"; sed -n '478,496p' custom_components/lock_code_manager/providers/matter.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== zwave_js.py pin min/max source ===\"; sed -n '270,300p' custom_components/lock_code_manager/providers/zwave_js.py\necho \"=== matter.py around 480-495 ===\"; sed -n '478,496p' custom_components/lock_code_manager/providers/matter.py",
   "description": "Inspect zwave_js and matter capability population"
 }
 ```
@@ -1005,7 +1005,7 @@ tool_use Read
 id: toolu_01TAnTPhH2QddPwHp6Zcboja
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "offset": 200,
   "limit": 80
 }
@@ -1060,7 +1060,7 @@ tool_use Read
 id: toolu_016oADa6mJRdTcjAAeo59rV1
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "offset": 1,
   "limit": 160
 }
@@ -1128,7 +1128,7 @@ tool_use Bash
 id: toolu_0146aaHcv1PFpC2MxZRcoUXS
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== SlotSyncManager lock attribute ===\"\ngrep -n \"self.lock\\|self._lock\\|def lock\\|lock:\\|\\.lock\\b\" custom_components/lock_code_manager/domain/sync.py | head -20\necho \"=== how _sync_managers populated ===\"\ngrep -n \"_sync_managers\\|register_sync_manager\\|add.*sync_manager\\|sync_manager\" custom_components/lock_code_manager/domain/slot_coordinator.py\necho \"=== BaseLock.display_name and lock.entity_id ===\"\ngrep -n \"def display_name\\|self.lock\\b\\|def lock\\b\" custom_components/lock_code_manager/providers/_base.py | head",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== SlotSyncManager lock attribute ===\"\ngrep -n \"self.lock\\|self._lock\\|def lock\\|lock:\\|\\.lock\\b\" custom_components/lock_code_manager/domain/sync.py | head -20\necho \"=== how _sync_managers populated ===\"\ngrep -n \"_sync_managers\\|register_sync_manager\\|add.*sync_manager\\|sync_manager\" custom_components/lock_code_manager/domain/slot_coordinator.py\necho \"=== BaseLock.display_name and lock.entity_id ===\"\ngrep -n \"def display_name\\|self.lock\\b\\|def lock\\b\" custom_components/lock_code_manager/providers/_base.py | head",
   "description": "Inspect SlotSyncManager lock and sync manager registration"
 }
 ```
@@ -1190,7 +1190,7 @@ tool_use Bash
 id: toolu_01GmHjoTqXE7f2TR2iKTC8WB
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== entity.py init + config_entry storage ===\"\nsed -n '40,70p' custom_components/lock_code_manager/entity.py\necho \"=== entity.py _handle_add_locks / _handle_remove_lock base ===\"\nsed -n '120,150p' custom_components/lock_code_manager/entity.py\necho \"=== _base.py capability public API (async_get_capabilities etc) ===\"\ngrep -n \"def async_get_capabilities\\|def _get_cached_capabilities\\|_capabilities_cache\\|def cached_capabilities\\|async def _ensure\" custom_components/lock_code_manager/providers/_base.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== entity.py init + config_entry storage ===\"\nsed -n '40,70p' custom_components/lock_code_manager/entity.py\necho \"=== entity.py _handle_add_locks / _handle_remove_lock base ===\"\nsed -n '120,150p' custom_components/lock_code_manager/entity.py\necho \"=== _base.py capability public API (async_get_capabilities etc) ===\"\ngrep -n \"def async_get_capabilities\\|def _get_cached_capabilities\\|_capabilities_cache\\|def cached_capabilities\\|async def _ensure\" custom_components/lock_code_manager/providers/_base.py",
   "description": "Inspect entity base and capability API"
 }
 ```
@@ -1279,7 +1279,7 @@ tool_use Bash
 id: toolu_015fK5FnKrtiA7LzcyMqeXyt
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== capability probe exceptions ===\"\ngrep -rn \"class LockDisconnected\\|class LockOperationFailed\\|class LockConnectionFailed\" custom_components/lock_code_manager/\necho \"=== where text.py would import them from ===\"\ngrep -rn \"LockDisconnected\\|LockOperationFailed\" custom_components/lock_code_manager/providers/__init__.py\necho \"=== ruff SLF / private-member config ===\"\ngrep -n \"SLF\\|flake8-self\\|select\\|ignore\" pyproject.toml | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== capability probe exceptions ===\"\ngrep -rn \"class LockDisconnected\\|class LockOperationFailed\\|class LockConnectionFailed\" custom_components/lock_code_manager/\necho \"=== where text.py would import them from ===\"\ngrep -rn \"LockDisconnected\\|LockOperationFailed\" custom_components/lock_code_manager/providers/__init__.py\necho \"=== ruff SLF / private-member config ===\"\ngrep -n \"SLF\\|flake8-self\\|select\\|ignore\" pyproject.toml | head -40",
   "description": "Check exception locations and ruff config"
 }
 ```
@@ -1311,7 +1311,7 @@ tool_use Bash
 id: toolu_01CucfQknHeta8NhjNMbPvcS
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nsed -n '8,80p' pyproject.toml",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nsed -n '8,80p' pyproject.toml",
   "description": "Read ruff lint select/ignore config"
 }
 ```
@@ -1398,7 +1398,7 @@ tool_use Read
 id: toolu_01TYha3thzbfJ6TLCnVepkU8
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py"
 }
 ```
 
@@ -1481,7 +1481,7 @@ tool_use Bash
 id: toolu_019ZiPBXAMzoknpcwRLicLVS
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== register_lock_added_handler usage ===\"\ngrep -rn \"register_lock_added_handler\\|_get_cached_capabilities\\|async_get_capabilities\\|_capabilities_cache\" custom_components/lock_code_manager/ | grep -v \"def _get_cached\\|def async_get_cap\\|def cached_cap\\|_capabilities_cache: LockCap\\|_capabilities_cache =\\|self._capabilities_cache\"\necho \"=== who calls _get_cached_capabilities ===\"\ngrep -rn \"_get_cached_capabilities()\" custom_components/lock_code_manager/",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== register_lock_added_handler usage ===\"\ngrep -rn \"register_lock_added_handler\\|_get_cached_capabilities\\|async_get_capabilities\\|_capabilities_cache\" custom_components/lock_code_manager/ | grep -v \"def _get_cached\\|def async_get_cap\\|def cached_cap\\|_capabilities_cache: LockCap\\|_capabilities_cache =\\|self._capabilities_cache\"\necho \"=== who calls _get_cached_capabilities ===\"\ngrep -rn \"_get_cached_capabilities()\" custom_components/lock_code_manager/",
   "description": "Trace capability probe call sites and lock-add handlers"
 }
 ```
@@ -1529,7 +1529,7 @@ id: toolu_01Ma8pB1KkW1oR8raN7rHPeM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "old_string": "        return self._capabilities_cache\n\n    async def _get_cached_capabilities(self) -> LockCapabilities:",
   "new_string": "        return self._capabilities_cache\n\n    @final\n    async def _get_cached_capabilities(self) -> LockCapabilities:"
 }
@@ -1553,7 +1553,7 @@ tool_use Read
 id: toolu_01Y5cBt3fhirmSCZiH9HJgdo
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 1160,
   "limit": 25
 }
@@ -1598,7 +1598,7 @@ id: toolu_01Wjf6hnsTmxgmj636k3qB55
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "old_string": "        return self._capabilities_cache\n\n    async def _get_cached_capabilities(self) -> LockCapabilities:\n        \"\"\"\n        Return the lock's capabilities, populating the cache on first call.",
   "new_string": "        return self._capabilities_cache\n\n    @final\n    async def _get_cached_capabilities(self) -> LockCapabilities:\n        \"\"\"\n        Return the lock's capabilities, populating the cache on first call."
 }
@@ -1609,7 +1609,7 @@ id: toolu_01Wjf6hnsTmxgmj636k3qB55
 tool_result
 id: toolu_01Wjf6hnsTmxgmj636k3qB55
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1629,7 +1629,7 @@ id: toolu_018DbV7rm6feBCWLQoN8Nzao
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
   "old_string": "    ``num_slots`` is the number of slots the lock exposes for this credential\n    type, ``min_length`` / ``max_length`` bound an acceptable value, and\n    ``supports_learn`` is True when the lock can enroll the credential at the\n    device (for example a fingerprint learn flow) rather than being told the\n    value.\n    \"\"\"",
   "new_string": "    ``num_slots`` is the number of slots the lock exposes for this credential\n    type, ``min_length`` / ``max_length`` bound an acceptable value, and\n    ``supports_learn`` is True when the lock can enroll the credential at the\n    device (for example a fingerprint learn flow) rather than being told the\n    value.\n\n    Length convention shared by every provider: a non-positive ``max_length``\n    means \"no advertised maximum / unknown\" -- never a literal zero-length\n    limit, which would be meaningless -- so providers map an absent or\n    unreadable maximum to ``0`` (Matter's ``max_pin_length or 0`` idiom). A\n    non-positive ``min_length`` means \"no minimum\". ``length_bounds`` applies\n    this normalization; do not emit a literal ``0`` to express a real limit.\n    \"\"\""
 }
@@ -1640,7 +1640,7 @@ id: toolu_018DbV7rm6feBCWLQoN8Nzao
 tool_result
 id: toolu_018DbV7rm6feBCWLQoN8Nzao
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1656,7 +1656,7 @@ id: toolu_01NdWgZBpMHSJSeH7RnMh4NB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
   "old_string": "    @property\n    def native_min(self) -> int:\n        \"\"\"Return the minimum value length advertised by the bound locks.\"\"\"\n        return self._bounds()[0]\n\n    @property\n    def native_max(self) -> int:\n        \"\"\"Return the maximum value length advertised by the bound locks.\"\"\"\n        return self._bounds()[1]\n\n    def _bounds(self) -> tuple[int, int]:\n        \"\"\"\n        Compute the live tightest-common length range across the bound locks.\n\n        Reads each lock's synchronously cached capabilities (uncached or\n        disconnected locks contribute nothing). Non-credential keys and an\n        unsatisfiable intersection both fall back to the default range so the\n        control is never rendered inverted; the coordinator gate reports the\n        real per-lock conflict when a PIN is actually set.\n        \"\"\"\n        credential_type = CREDENTIAL_TYPE_BY_CONF_KEY.get(self.key)\n        if credential_type is None:\n            return (self._DEFAULT_MIN, self._DEFAULT_MAX)\n        lo, hi = aggregate_length_bounds(\n            (lock.cached_capabilities for lock in self.locks), credential_type\n        )\n        lo = self._DEFAULT_MIN if lo is None else lo\n        hi = self._DEFAULT_MAX if hi is None else hi\n        if lo > hi:\n            lo, hi = self._DEFAULT_MIN, self._DEFAULT_MAX\n        # Home Assistant validates the stored value against these bounds when\n        # it renders state and raises if the value falls outside, so the\n        # advertised range must always admit the current value: the empty\n        # string after a clear (length 0, which […]
 
 > TOOL
@@ -1664,7 +1664,7 @@ id: toolu_01NdWgZBpMHSJSeH7RnMh4NB
 tool_result
 id: toolu_01NdWgZBpMHSJSeH7RnMh4NB
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1678,7 +1678,7 @@ id: toolu_01CcGiELW4dzKQkWPjxFbcSV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
   "old_string": "from .domain.credentials import CredentialType, aggregate_length_bounds\nfrom .domain.models import LockCodeManagerConfigEntry",
   "new_string": "from .domain.credentials import CredentialType, aggregate_length_bounds\nfrom .domain.exceptions import LockDisconnected, LockOperationFailed\nfrom .domain.models import LockCodeManagerConfigEntry"
 }
@@ -1689,7 +1689,7 @@ id: toolu_01CcGiELW4dzKQkWPjxFbcSV
 tool_result
 id: toolu_01CcGiELW4dzKQkWPjxFbcSV
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1703,7 +1703,7 @@ id: toolu_01KpjdifWUYTecB9eb3dmjgp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "old_string": "        Normalizing whitespace and the empty-PIN side effect (disabling\n        the slot on an active slot whose PIN was cleared) live here so\n        entities do not have to coordinate sibling state themselves.\n\n        A non-empty PIN is validated against every bound lock's advertised\n        length range before it is written; an empty PIN clears the slot and\n        is exempt. The check is the authoritative gate -- the text entity's\n        length hints are best-effort and do not block input.\n        \"\"\"",
   "new_string": "        Normalizing whitespace and the empty-PIN side effect (disabling\n        the slot on an active slot whose PIN was cleared) live here so\n        entities do not have to coordinate sibling state themselves.\n\n        A non-empty PIN is validated against every bound lock's advertised\n        length range before it is written; an empty PIN clears the slot and\n        is exempt. This is the authoritative *minimum* gate: the text entity\n        keeps ``native_min`` permissive so Home Assistant's ``text.set_value``\n        service neither rejects the empty clear nor pre-empts the per-lock\n        error built here. The maximum is additionally surfaced as the entity's\n        ``native_max`` ceiling, which Home Assistant does enforce.\n        \"\"\""
 }
@@ -1714,7 +1714,7 @@ id: toolu_01KpjdifWUYTecB9eb3dmjgp
 tool_result
 id: toolu_01KpjdifWUYTecB9eb3dmjgp
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1728,7 +1728,7 @@ id: toolu_01MRisFkjU8WUDA6966mHG2k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "old_string": "        Authoritative gate for credential length. Iterates every bound lock so\n        the error names each offending lock with its required range. Locks\n        whose capabilities are not cached (disconnected or not yet probed) and\n        locks that do not advertise ``credential_type`` are skipped -- the\n        write proceeds rather than blocking on unknown limits, and the sync\n        layer surfaces any later device rejection.\n        \"\"\"",
   "new_string": "        Authoritative gate for credential length. Iterates every bound lock so\n        the error names each offending lock with its required range. The lock\n        set is the entry-wide ``runtime_data.locks`` -- the same set the text\n        entity mirrors in ``self.locks`` to size its surfaced bounds, since LCM\n        binds every lock to every slot; a future per-slot binding must update\n        both sites together. Locks whose capabilities are not cached\n        (disconnected or not yet probed) and locks that do not advertise\n        ``credential_type`` are skipped -- the write proceeds rather than\n        blocking on unknown limits, and the sync layer surfaces any later\n        device rejection.\n        \"\"\""
 }
@@ -1739,7 +1739,7 @@ id: toolu_01MRisFkjU8WUDA6966mHG2k
 tool_result
 id: toolu_01MRisFkjU8WUDA6966mHG2k
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1752,7 +1752,7 @@ tool_use Read
 id: toolu_01UadXnt3Ax5YdKWd6eCZHQ2
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
   "offset": 83,
   "limit": 100
 }
@@ -1807,7 +1807,7 @@ tool_use Read
 id: toolu_013ZZ4Y9fM1cbwdFAqd6exKp
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_slot_coordinator.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_slot_coordinator.py"
 }
 ```
 
@@ -1896,7 +1896,7 @@ id: toolu_01DCprCFHSQZ89gpFZktQ6dW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py",
   "old_string": "def _fake_lock(entity_id: str, caps: LockCapabilities | None):\n    \"\"\"A stand-in lock exposing only what the text entity reads.\"\"\"\n    return SimpleNamespace(\n        cached_capabilities=caps, lock=SimpleNamespace(entity_id=entity_id)\n    )",
   "new_string": "def _fake_lock(entity_id: str, caps: LockCapabilities | None):\n    \"\"\"A stand-in lock exposing only what the text entity reads.\"\"\"\n\n    async def _get_cached_capabilities() -> LockCapabilities | None:\n        \"\"\"Stand in for the async probe the add hook runs in the background.\"\"\"\n        return caps\n\n    return SimpleNamespace(\n        cached_capabilities=caps,\n        lock=SimpleNamespace(entity_id=entity_id),\n        _get_cached_capabilities=_get_cached_capabilities,\n    )"
 }
@@ -1907,7 +1907,7 @@ id: toolu_01DCprCFHSQZ89gpFZktQ6dW
 tool_result
 id: toolu_01DCprCFHSQZ89gpFZktQ6dW
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1921,7 +1921,7 @@ id: toolu_01NyXmM55jApwfQm49FTJ75t
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py",
   "old_string": "def test_pin_bounds_reflect_single_lock(hass: HomeAssistant) -> None:\n    \"\"\"A lock advertising 4-8 sizes the PIN entity to 4-8.\"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [_fake_lock(\"lock.a\", _pin_caps(4, 8))])\n    assert (entity.native_min, entity.native_max) == (4, 8)\n\n\ndef test_pin_bounds_take_tightest_common(hass: HomeAssistant) -> None:\n    \"\"\"Two locks collapse to the largest min and smallest max.\"\"\"\n    entity = _make_text_entity(\n        hass,\n        CONF_PIN,\n        [_fake_lock(\"lock.a\", _pin_caps(4, 8)), _fake_lock(\"lock.b\", _pin_caps(6, 10))],\n    )\n    assert (entity.native_min, entity.native_max) == (6, 8)\n\n\ndef test_pin_bounds_fall_back_on_empty_intersection(hass: HomeAssistant) -> None:\n    \"\"\"Unsatisfiable across locks -> default range, not an inverted slider.\"\"\"\n    entity = _make_text_entity(\n        hass,\n        CONF_PIN,\n        [_fake_lock(\"lock.a\", _pin_caps(6, 6)), _fake_lock(\"lock.b\", _pin_caps(4, 4))],\n    )\n    assert (entity.native_min, entity.native_max) == (0, 9999)\n\n\ndef test_pin_bounds_admit_empty_value_under_minimum(\n    hass: HomeAssistant, monkeypatch\n) -> None:\n    \"\"\"An empty PIN must always render even when the lock requires a minimum.\n\n    HA raises at state-render time if the value is shorter than the min, so a\n    cleared PIN (\"\") forces the advertised minimum down to 0.\n    \"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [_fake_lock(\"lock.a\", _pin_caps(6, 8))])\n    monkeypatch.setattr(LockCodeManagerText, \"native_value\", property(lambda self: \"\"))\n    assert entity.native_min == 0\n    assert entity.native_max == 8\n\n\ndef test_pin_bounds_admit_out_of_range_current_value(\n    hass: HomeAssistant, monkeypatch\n) -> None:\n    \"\"\"A stored PIN outside the advertised range still renders (bounds widen).\"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [_fake_lock(\"lock.a\", _pin_caps(6, 8))])\n    monkeypatch.setattr(\n        LockCodeManagerText, \"native_value\", property(lambda self: \"1234\")\n    )\n    assert […]
 
 > TOOL
@@ -1929,7 +1929,7 @@ id: toolu_01NyXmM55jApwfQm49FTJ75t
 tool_result
 id: toolu_01NyXmM55jApwfQm49FTJ75t
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1943,7 +1943,7 @@ id: toolu_01VqgzXNJg27FkVaGMmewUm2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py",
   "old_string": "def test_lock_add_remove_rewrites_state(hass: HomeAssistant, monkeypatch) -> None:\n    \"\"\"Lock set changes re-push state so the frontend re-reads bounds.\"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [])\n    entity.hass = hass\n    entity.entity_id = \"text.test\"\n    writes: list[int] = []\n    monkeypatch.setattr(entity, \"async_write_ha_state\", lambda: writes.append(1))\n\n    added = _fake_lock(\"lock.a\", _pin_caps(4, 8))\n    entity._handle_add_locks([added])\n    assert added in entity.locks\n    assert (entity.native_min, entity.native_max) == (4, 8)\n    assert len(writes) == 1\n\n    entity._handle_remove_lock(\"lock.a\")\n    assert entity.locks == []\n    assert len(writes) == 2",
   "new_string": "async def test_lock_add_remove_rewrites_state(\n    hass: HomeAssistant, monkeypatch\n) -> None:\n    \"\"\"Lock set changes re-push state so the frontend re-reads bounds.\"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [])\n    entity.hass = hass\n    entity.entity_id = \"text.test\"\n    writes: list[int] = []\n    monkeypatch.setattr(entity, \"async_write_ha_state\", lambda: writes.append(1))\n\n    added = _fake_lock(\"lock.a\", _pin_caps(4, 8))\n    entity._handle_add_locks([added])\n    await hass.async_block_till_done()\n    assert added in entity.locks\n    # The added lock's max is surfaced; the min stays permissive.\n    assert (entity.native_min, entity.native_max) == (0, 8)\n    assert writes  # immediate re-push, plus one after the background probe\n    writes.clear()\n\n    entity._handle_remove_lock(\"lock.a\")\n    await hass.async_block_till_done()\n    assert entity.locks == []\n    # Removing the only lock reverts the surfaced ceiling to the default.\n    assert (entity.native_min, entity.native_max) == (0, 9999)\n    assert writes  # the removal re-pushed state"
 }
@@ -1954,7 +1954,7 @@ id: toolu_01VqgzXNJg27FkVaGMmewUm2
 tool_result
 id: toolu_01VqgzXNJg27FkVaGMmewUm2
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1964,7 +1964,7 @@ id: toolu_01BBbsRD5pwQk2zSgkW1Q9zE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py",
   "old_string": "    state = hass.states.get(SLOT_2_PIN_ENTITY)\n    assert state\n    assert state.attributes[ATTR_MIN] == 4\n    assert state.attributes[ATTR_MAX] == 8",
   "new_string": "    state = hass.states.get(SLOT_2_PIN_ENTITY)\n    assert state\n    # The minimum is owned by the coordinator, not surfaced as a hard floor.\n    assert state.attributes[ATTR_MIN] == 0\n    assert state.attributes[ATTR_MAX] == 8"
 }
@@ -1975,7 +1975,7 @@ id: toolu_01BBbsRD5pwQk2zSgkW1Q9zE
 tool_result
 id: toolu_01BBbsRD5pwQk2zSgkW1Q9zE
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1989,7 +1989,7 @@ id: toolu_011YhiQfWMiurZpiix2iw1oK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py",
   "old_string": "    state = hass.states.get(SLOT_2_PIN_ENTITY)\n    assert state\n    # The minimum is owned by the coordinator, not surfaced as a hard floor.\n    assert state.attributes[ATTR_MIN] == 0\n    assert state.attributes[ATTR_MAX] == 8\n\n\nasync def test_text_entities(",
   "new_string": "    state = hass.states.get(SLOT_2_PIN_ENTITY)\n    assert state\n    # The minimum is owned by the coordinator, not surfaced as a hard floor.\n    assert state.attributes[ATTR_MIN] == 0\n    assert state.attributes[ATTR_MAX] == 8\n\n\nasync def test_pin_clear_through_service_with_minimum_advertised(\n    hass: HomeAssistant,\n    mock_lock_config_entry,\n    lock_code_manager_config_entry,\n):\n    \"\"\"Clearing a PIN via text.set_value works even when locks advertise a minimum.\n\n    Regression: surfacing the advertised minimum as ``native_min`` made HA's\n    text service reject the empty string (``len 0 < min``) before the\n    coordinator's empty-PIN exemption ran, so a slot could not be cleared.\n    \"\"\"\n    for lock in lock_code_manager_config_entry.runtime_data.locks.values():\n        lock._capabilities_cache = _pin_caps(6, 8)\n\n    # An in-range PIN goes through the service normally.\n    await hass.services.async_call(\n        TEXT_DOMAIN,\n        SERVICE_SET_VALUE,\n        service_data={ATTR_VALUE: \"654321\"},\n        target={ATTR_ENTITY_ID: SLOT_2_PIN_ENTITY},\n        blocking=True,\n    )\n    state = hass.states.get(SLOT_2_PIN_ENTITY)\n    assert state\n    assert state.state == \"654321\"\n\n    # Clearing must reach the coordinator (empty is exempt) rather than being\n    # rejected by HA's service-level minimum check.\n    await hass.services.async_call(\n        TEXT_DOMAIN,\n        SERVICE_SET_VALUE,\n        service_data={ATTR_VALUE: \"\"},\n        target={ATTR_ENTITY_ID: SLOT_2_PIN_ENTITY},\n        blocking=True,\n    )\n    state = hass.states.get(SLOT_2_PIN_ENTITY)\n    assert state\n    assert state.state == \"\"\n    state = hass.states.get(SLOT_2_ENABLED_ENTITY)\n    assert state\n […]
 
@@ -1998,7 +1998,7 @@ id: toolu_011YhiQfWMiurZpiix2iw1oK
 tool_result
 id: toolu_011YhiQfWMiurZpiix2iw1oK
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2012,7 +2012,7 @@ id: toolu_01LtRxhDWBmGkFd8XsoQgyEJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_slot_coordinator.py",
   "old_string": "    message = str(exc.value)\n    assert runtime_data.locks[LOCK_1_ENTITY_ID].display_name in message\n    assert runtime_data.locks[LOCK_2_ENTITY_ID].display_name in message\n\n\nasync def test_coordinator_registered_for_each_slot(",
   "new_string": "    message = str(exc.value)\n    assert runtime_data.locks[LOCK_1_ENTITY_ID].display_name in message\n    assert runtime_data.locks[LOCK_2_ENTITY_ID].display_name in message\n\n\nasync def test_request_pin_update_accepts_boundary_lengths(\n    hass: HomeAssistant,\n    mock_lock_config_entry,\n    lock_code_manager_config_entry,\n):\n    \"\"\"A PIN exactly at the min or max is accepted; one past either end is rejected.\"\"\"\n    runtime_data = lock_code_manager_config_entry.runtime_data\n    for lock in runtime_data.locks.values():\n        lock._capabilities_cache = _pin_caps(4, 8)\n    coordinator = runtime_data.slot_coordinators[1]\n\n    for ok in (\"1234\", \"12345678\"):  # exactly the min (4) and the max (8)\n        await coordinator.async_request_pin_update(ok)\n        await hass.async_block_till_done()\n        assert (\n            get_entry_config(lock_code_manager_config_entry).slot(1).get(CONF_PIN) == ok\n        )\n\n    for bad in (\"123\", \"123456789\"):  # one under the min and one over the max\n        with pytest.raises(ServiceValidationError):\n            await coordinator.async_request_pin_update(bad)\n\n\nasync def test_validation_message_unbounded_max_says_at_least(\n    hass: HomeAssistant,\n    mock_lock_config_entry,\n    lock_code_manager_config_entry,\n):\n    \"\"\"A lock advertising a minimum but no maximum yields an 'at least N' message.\"\"\"\n    runtime_data = lock_code_manager_config_entry.runtime_data\n    for lock in runtime_data.locks.values():\n        lock._capabilities_cache = _pin_caps(6, 0)  # max 0 == unbounded\n    coordinator = runtime_data.slot_coordinators[1]\n\n    with pytest.raises(ServiceValidationError) as exc:\n        await coordinator.async_request_pin_update(\"12\")\n\n    assert \"at least 6 characters\" in str(exc.value)\n\n\nasync def test_coordinator_registered_for_each_slot("
 }
@@ -2023,7 +2023,7 @@ id: toolu_01LtRxhDWBmGkFd8XsoQgyEJ
 tool_result
 id: toolu_01LtRxhDWBmGkFd8XsoQgyEJ
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_slot_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_slot_coordinator.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2036,7 +2036,7 @@ tool_use Bash
 id: toolu_016w9ej6xoWKfgpPy8L69wt3
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nuv run pytest tests/test_text.py tests/test_slot_coordinator.py tests/test_credentials.py tests/providers/test_base.py -q 2>&1 | tail -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nuv run pytest tests/test_text.py tests/test_slot_coordinator.py tests/test_credentials.py tests/providers/test_base.py -q 2>&1 | tail -40",
   "description": "Run affected test files"
 }
 ```
@@ -2061,7 +2061,7 @@ tool_use Bash
 id: toolu_017Hfyt6dpna8KAknteKfHwm
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nuv run pytest tests/ -q 2>&1 | tail -25",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nuv run pytest tests/ -q 2>&1 | tail -25",
   "description": "Run full test suite"
 }
 ```
@@ -2073,7 +2073,7 @@ id: toolu_017Hfyt6dpna8KAknteKfHwm
 ```
     )
     ^
-  File "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py", line 368, in _raise_not_implemented
+  File "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py", line 368, in _raise_not_implemented
     raise ProviderNotImplementedError(self, method_name, guidance)
 custom_components.lock_code_manager.domain.exceptions.ProviderNotImplementedError: MockLCMLock does not implement async_get_capabilities(). Override to report the lock's user/credential capabilities.
 ERROR    homeassistant.components.binary_sensor:entity_platform.py:923 Platform lock_code_manager does not generate unique IDs. ID 01KVPGM0N8YVMXTWDG3VEA7AQH|1|active already exists - ignoring binary_sensor.mock_title_code_slot_1_active
@@ -2099,7 +2099,7 @@ tool_use Read
 id: toolu_01D1NooUPtWrpZ1BBPVKkiH5
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/exceptions.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/exceptions.py"
 }
 ```
 
@@ -2165,7 +2165,7 @@ id: toolu_01224NEJMNvAEYpzHoezKF1K
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
   "old_string": "from .domain.exceptions import LockDisconnected, LockOperationFailed",
   "new_string": "from .domain.exceptions import LockCodeManagerProviderError"
 }
@@ -2176,7 +2176,7 @@ id: toolu_01224NEJMNvAEYpzHoezKF1K
 tool_result
 id: toolu_01224NEJMNvAEYpzHoezKF1K
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2186,7 +2186,7 @@ id: toolu_01AfzAXRkrzHiCxva6YALsmk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py",
   "old_string": "        for lock in locks:\n            try:\n                await lock._get_cached_capabilities()\n            except (LockDisconnected, LockOperationFailed):\n                # An unreachable lock advertises no ceiling; bounds stay at the\n                # default until it reconnects and a later write re-reads them.\n                continue\n        self._write_bounds_update()",
   "new_string": "        for lock in locks:\n            try:\n                await lock._get_cached_capabilities()\n            except LockCodeManagerProviderError:\n                # A lock that cannot be probed (disconnected, operation failed,\n                # or no capability support) advertises no ceiling; bounds stay\n                # at the default until a later write re-reads a warmed cache.\n                continue\n        self._write_bounds_update()"
 }
@@ -2197,7 +2197,7 @@ id: toolu_01AfzAXRkrzHiCxva6YALsmk
 tool_result
 id: toolu_01AfzAXRkrzHiCxva6YALsmk
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2210,7 +2210,7 @@ tool_use Bash
 id: toolu_01GMKzGs2KrvDkacyia1R1FJ
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nuv run pytest \"tests/test_init.py::test_setup_entry_after_start_does_not_stack_update_listeners\" tests/test_text.py tests/test_slot_coordinator.py -q 2>&1 | tail -15",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nuv run pytest \"tests/test_init.py::test_setup_entry_after_start_does_not_stack_update_listeners\" tests/test_text.py tests/test_slot_coordinator.py -q 2>&1 | tail -15",
   "description": "Re-run previously failing test and affected files"
 }
 ```
@@ -2234,7 +2234,7 @@ tool_use Bash
 id: toolu_01YKf7u4t71f3B4mwzJLqA7x
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nuv run pytest tests/ -q 2>&1 | tail -6",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nuv run pytest tests/ -q 2>&1 | tail -6",
   "description": "Full test suite re-run"
 }
 ```
@@ -2245,7 +2245,7 @@ tool_result
 id: toolu_01YKf7u4t71f3B4mwzJLqA7x
 ```
 tests/providers/zha/test_provider.py: 172 warnings
-  /Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
+  /home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
     description=port.description,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -2262,7 +2262,7 @@ tool_use Bash
 id: toolu_01CuQfvoX4rQ7emUbE4ctMRa
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nprek run --files \\\n  custom_components/lock_code_manager/text.py \\\n  custom_components/lock_code_manager/domain/slot_coordinator.py \\\n  custom_components/lock_code_manager/domain/credentials.py \\\n  custom_components/lock_code_manager/providers/_base.py \\\n  tests/test_text.py tests/test_slot_coordinator.py 2>&1 | tail -30",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nprek run --files \\\n  custom_components/lock_code_manager/text.py \\\n  custom_components/lock_code_manager/domain/slot_coordinator.py \\\n  custom_components/lock_code_manager/domain/credentials.py \\\n  custom_components/lock_code_manager/providers/_base.py \\\n  tests/test_text.py tests/test_slot_coordinator.py 2>&1 | tail -30",
   "description": "Run prek on changed files"
 }
 ```
@@ -2310,7 +2310,7 @@ tool_use Bash
 id: toolu_01L2LFgYitVg5CSKbPQtPBxf
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nprek run --files \\\n  custom_components/lock_code_manager/text.py \\\n  custom_components/lock_code_manager/domain/slot_coordinator.py \\\n  custom_components/lock_code_manager/domain/credentials.py \\\n  custom_components/lock_code_manager/providers/_base.py \\\n  tests/test_text.py tests/test_slot_coordinator.py 2>&1 | grep -E \"Passed|Failed|Error\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nprek run --files \\\n  custom_components/lock_code_manager/text.py \\\n  custom_components/lock_code_manager/domain/slot_coordinator.py \\\n  custom_components/lock_code_manager/domain/credentials.py \\\n  custom_components/lock_code_manager/providers/_base.py \\\n  tests/test_text.py tests/test_slot_coordinator.py 2>&1 | grep -E \"Passed|Failed|Error\"",
   "description": "Re-run prek to confirm clean"
 }
 ```
@@ -2345,7 +2345,7 @@ tool_use Bash
 id: toolu_01Fs8CKUYqPaLuqWupYxR5rd
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== monkeypatch occurrences by file ===\"\ngrep -rln \"monkeypatch\" tests/ 2>/dev/null\necho \"\"\necho \"=== count ===\"\ngrep -rn \"monkeypatch\" tests/ 2>/dev/null | wc -l\necho \"\"\necho \"=== the actual usages ===\"\ngrep -rn \"monkeypatch\\.\" tests/ 2>/dev/null",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== monkeypatch occurrences by file ===\"\ngrep -rln \"monkeypatch\" tests/ 2>/dev/null\necho \"\"\necho \"=== count ===\"\ngrep -rn \"monkeypatch\" tests/ 2>/dev/null | wc -l\necho \"\"\necho \"=== the actual usages ===\"\ngrep -rn \"monkeypatch\\.\" tests/ 2>/dev/null",
   "description": "Find all monkeypatch usage in tests"
 }
 ```
@@ -2386,7 +2386,7 @@ id: toolu_011oKr3EJpqq9umpbykmN5JK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py",
   "old_string": "import logging\nfrom types import SimpleNamespace\n\nfrom pytest_homeassistant_custom_component.common import MockConfigEntry",
   "new_string": "import logging\nfrom types import SimpleNamespace\nfrom unittest.mock import PropertyMock, patch\n\nfrom pytest_homeassistant_custom_component.common import MockConfigEntry"
 }
@@ -2397,7 +2397,7 @@ id: toolu_011oKr3EJpqq9umpbykmN5JK
 tool_result
 id: toolu_011oKr3EJpqq9umpbykmN5JK
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2407,7 +2407,7 @@ id: toolu_01YT8hVDViBVAxgpK3pKHUEG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py",
   "old_string": "def test_native_max_widens_to_admit_longer_stored_value(\n    hass: HomeAssistant, monkeypatch\n) -> None:\n    \"\"\"A stored PIN longer than the advertised max still renders (ceiling widens).\n\n    HA raises at state-render time if the value exceeds native_max, so a PIN\n    written before a (now tighter) lock advertised its limit forces the ceiling\n    up to admit it.\n    \"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [_fake_lock(\"lock.a\", _pin_caps(4, 8))])\n    monkeypatch.setattr(\n        LockCodeManagerText, \"native_value\", property(lambda self: \"1234567890\")\n    )\n    assert entity.native_min == 0\n    assert entity.native_max == 10  # widened up to admit the length-10 value",
   "new_string": "def test_native_max_widens_to_admit_longer_stored_value(hass: HomeAssistant) -> None:\n    \"\"\"A stored PIN longer than the advertised max still renders (ceiling widens).\n\n    HA raises at state-render time if the value exceeds native_max, so a PIN\n    written before a (now tighter) lock advertised its limit forces the ceiling\n    up to admit it.\n    \"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [_fake_lock(\"lock.a\", _pin_caps(4, 8))])\n    with patch.object(\n        LockCodeManagerText,\n        \"native_value\",\n        new_callable=PropertyMock,\n        return_value=\"1234567890\",\n    ):\n        assert entity.native_min == 0\n        assert entity.native_max == 10  # widened up to admit the length-10 value"
 }
@@ -2418,7 +2418,7 @@ id: toolu_01YT8hVDViBVAxgpK3pKHUEG
 tool_result
 id: toolu_01YT8hVDViBVAxgpK3pKHUEG
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2428,7 +2428,7 @@ id: toolu_011b8G3d7v7RM16oCGb1DLAi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/test_text.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/test_text.py",
   "old_string": "async def test_lock_add_remove_rewrites_state(hass: HomeAssistant, monkeypatch) -> None:\n    \"\"\"Lock set changes re-push state so the frontend re-reads bounds.\"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [])\n    entity.hass = hass\n    entity.entity_id = \"text.test\"\n    writes: list[int] = []\n    monkeypatch.setattr(entity, \"async_write_ha_state\", lambda: writes.append(1))\n\n    added = _fake_lock(\"lock.a\", _pin_caps(4, 8))\n    entity._handle_add_locks([added])\n    await hass.async_block_till_done()\n    assert added in entity.locks\n    # The added lock's max is surfaced; the min stays permissive.\n    assert (entity.native_min, entity.native_max) == (0, 8)\n    assert writes  # immediate re-push, plus one after the background probe\n    writes.clear()\n\n    entity._handle_remove_lock(\"lock.a\")\n    await hass.async_block_till_done()\n    assert entity.locks == []\n    # Removing the only lock reverts the surfaced ceiling to the default.\n    assert (entity.native_min, entity.native_max) == (0, 9999)\n    assert writes  # the removal re-pushed state",
   "new_string": "async def test_lock_add_remove_rewrites_state(hass: HomeAssistant) -> None:\n    \"\"\"Lock set changes re-push state so the frontend re-reads bounds.\"\"\"\n    entity = _make_text_entity(hass, CONF_PIN, [])\n    entity.hass = hass\n    entity.entity_id = \"text.test\"\n\n    with patch.object(entity, \"async_write_ha_state\") as mock_write:\n        added = _fake_lock(\"lock.a\", _pin_caps(4, 8))\n        entity._handle_add_locks([added])\n        await hass.async_block_till_done()\n        assert added in entity.locks\n        # The added lock's max is surfaced; the min stays permissive.\n        assert (entity.native_min, entity.native_max) == (0, 8)\n        assert mock_write.called  # immediate re-push, plus one after the probe\n        mock_write.reset_mock()\n\n        entity._handle_remove_lock(\"lock.a\")\n        await hass.async_block_till_done()\n        assert entity.locks == []\n […]
 
@@ -2437,7 +2437,7 @@ id: toolu_011b8G3d7v7RM16oCGb1DLAi
 tool_result
 id: toolu_011b8G3d7v7RM16oCGb1DLAi
 ```
-The file /Users/raman/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/test_text.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2446,7 +2446,7 @@ tool_use Bash
 id: toolu_011RudzUkuRJrVx6hbNjcgyh
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nuv run pytest tests/test_text.py -q 2>&1 | tail -8\necho \"=== confirm no monkeypatch left in test_text.py ===\"\ngrep -c \"monkeypatch\" tests/test_text.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nuv run pytest tests/test_text.py -q 2>&1 | tail -8\necho \"=== confirm no monkeypatch left in test_text.py ===\"\ngrep -c \"monkeypatch\" tests/test_text.py",
   "description": "Run test_text.py and confirm monkeypatch removed"
 }
 ```
@@ -2472,7 +2472,7 @@ tool_use Bash
 id: toolu_01RaFFETcC5fbSBYXMzUdtxV
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nprek run --files tests/test_text.py 2>&1 | grep -E \"Passed|Failed\"\necho \"=== full suite ===\"\nuv run pytest tests/ -q 2>&1 | tail -3",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nprek run --files tests/test_text.py 2>&1 | grep -E \"Passed|Failed\"\necho \"=== full suite ===\"\nuv run pytest tests/ -q 2>&1 | tail -3",
   "description": "prek on test_text.py and full suite"
 }
 ```
@@ -2510,7 +2510,7 @@ tool_use Bash
 id: toolu_01FyFsoQeQPdhaTrj1yGvLfK
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit --no-pager diff --stat 2>&1",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit --no-pager diff --stat 2>&1",
   "description": "Show working-tree diff stat"
 }
 ```
@@ -2555,7 +2555,7 @@ tool_use Read
 id: toolu_01U9mecRBjUZgyaxJaZNb6Vp
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "offset": 1295,
   "limit": 75
 }
@@ -2632,7 +2632,7 @@ tool_use Bash
 id: toolu_01CzEzLf1L5H6dB35MUKqDFT
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit branch --show-current\ngit --no-pager status --short",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit branch --show-current\ngit --no-pager status --short",
   "description": "Confirm branch and working-tree status"
 }
 ```
@@ -2661,7 +2661,7 @@ tool_use Bash
 id: toolu_01HMF2pDPNSHw3MaQTu2DEwq
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit add custom_components/lock_code_manager/domain/credentials.py \\\n        custom_components/lock_code_manager/domain/slot_coordinator.py \\\n        custom_components/lock_code_manager/providers/_base.py \\\n        custom_components/lock_code_manager/text.py \\\n        tests/test_slot_coordinator.py tests/test_text.py\ngit commit -F - <<'EOF'\nfix(credentials): keep PIN clearable and harden length-bounds surfacing\n\nAddress code-review findings on the length-bounds feature:\n\n- Stop surfacing the advertised minimum as native_min. Home Assistant's\n  text.set_value validates len(value) < min before the coordinator, which\n  blocked the empty string that clears a slot and pre-empted the per-lock\n  error. native_min stays permissive; the coordinator is the authoritative\n  minimum gate. The maximum is still surfaced as a hard ceiling.\n- Probe newly added locks in the background and re-push state so native_max\n  reflects them instead of waiting for an unrelated write.\n- Restore @final on _get_cached_capabilities (lost when cached_capabilities\n  was inserted above it).\n- Compute the bound once per render now that native_min is constant.\n- Document the shared entry-wide lock set used by the gate and the entity.\n- Make the \"0 means unbounded/unknown\" length convention explicit on\n  CredentialTypeCapability.\n\nTests: boundary lengths, the unbounded-max message branch, removal reverting\nbounds, and a service-level regression proving a PIN clears when a lock\nadvertises a positive minimum.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\ngit push 2>&1 | tail -5",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit add custom_components/lock_code_manager/domain/credentials.py \\\n        custom_components/lock_code_manager/domain/slot_coordinator.py \\\n        custom_components/lock_code_manager/providers/_base.py \\\n        custom_components/lock_code_manager/text.py \\\n        tests/test_slot_coordinator.py tests/test_text.py\ngit commit -F - <<'EOF'\nfix(credentials): keep PIN clearable and harden length-bounds surfacing\n\nAddress code-review findings on the length-bounds feature:\n\n- Stop surfacing the advertised minimum as native_min. Home Assistant's\n  text.set_value validates len(value) < min before the coordinator, which\n  blocked the empty string that clears a slot and pre-empted the per-lock\n  error. native_min stays permissive; the coordinator is the authoritative\n  minimum gate. The maximum is still surfaced as a hard ceiling.\n- Probe newly added locks in the background and re-push state so native_max\n  reflects them instead of waiting for an unrelated write.\n- Restore @final on _get_cached_capabilities (lost when cached_capabilities\n  was inserted above it).\n- Compute the bound once per render now that native_min is constant.\n- Document the shared entry-wide lock set used by the gate and the entity.\n- Make the \"0 means unbounded/unknown\" length convention explicit on\n  CredentialTypeCapability.\n\nTests: boundary lengths, the unbounded-max message branch, removal reverting\nbounds, and a service-level regression proving a PIN clears when a lock\nadvertises a positive minimum.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\ngit push 2>&1 | tail -5",
   "description": "Commit and push PR 1279 changes"
 }
 ```
@@ -2710,7 +2710,7 @@ tool_use Bash
 id: toolu_01VWabuFMDn6hZ7YoBx8AgYY
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit fetch origin --quiet 2>&1\ngit worktree add -b test/zwave-monkeypatch-to-patch ../lcm-zwave-monkeypatch origin/main 2>&1 | tail -5",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit fetch origin --quiet 2>&1\ngit worktree add -b test/zwave-monkeypatch-to-patch ../lcm-zwave-monkeypatch origin/main 2>&1 | tail -5",
   "description": "Create worktree off origin/main"
 }
 ```
@@ -2735,7 +2735,7 @@ tool_use Bash
 id: toolu_018Q1z5SUzfp5K26Vne3sRfK
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\necho \"=== mock imports ===\"; grep -n \"from unittest.mock\\|import patch\\|MonkeyPatch\\|monkeypatch\" tests/providers/zwave_js/test_provider.py | head\necho \"=== confirm same 3 line numbers ===\"; grep -n \"monkeypatch\" tests/providers/zwave_js/test_provider.py",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\necho \"=== mock imports ===\"; grep -n \"from unittest.mock\\|import patch\\|MonkeyPatch\\|monkeypatch\" tests/providers/zwave_js/test_provider.py | head\necho \"=== confirm same 3 line numbers ===\"; grep -n \"monkeypatch\" tests/providers/zwave_js/test_provider.py",
   "description": "Check imports and monkeypatch usages in worktree"
 }
 ```
@@ -2760,7 +2760,7 @@ id: toolu_018Q1z5SUzfp5K26Vne3sRfK
 1331:    monkeypatch.setattr(zwave_js_lock.lock_config_entry, "runtime_data", runtime_data)
 1341:    monkeypatch: pytest.MonkeyPatch,
 1346:    monkeypatch.setattr(zwave_js_lock.lock_config_entry, "runtime_data", runtime_data)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -2773,7 +2773,7 @@ tool_use Read
 id: toolu_01HciuGJffQ2rrngGowUjcLA
 ```json
 {
-  "file_path": "/Users/raman/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py",
   "offset": 1310,
   "limit": 43
 }
@@ -2840,7 +2840,7 @@ id: toolu_01Sk8DGaGBcyWGpXefce1cDR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py",
   "old_string": "    zwave_js_lock: ZWaveJSLock,\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"A loaded entry with no client reports not-ready.\"\"\"\n    runtime_data = MagicMock()\n    runtime_data.client = None\n    monkeypatch.setattr(zwave_js_lock.lock_config_entry, \"runtime_data\", runtime_data)\n\n    ready, reason = zwave_js_lock._get_client_state()\n\n    assert ready is False\n    assert \"not ready\" in reason",
   "new_string": "    zwave_js_lock: ZWaveJSLock,\n) -> None:\n    \"\"\"A loaded entry with no client reports not-ready.\"\"\"\n    runtime_data = MagicMock()\n    runtime_data.client = None\n    with patch.object(\n        zwave_js_lock.lock_config_entry, \"runtime_data\", runtime_data\n    ):\n        ready, reason = zwave_js_lock._get_client_state()\n\n    assert ready is False\n    assert \"not ready\" in reason"
 }
@@ -2851,7 +2851,7 @@ id: toolu_01Sk8DGaGBcyWGpXefce1cDR
 tool_result
 id: toolu_01Sk8DGaGBcyWGpXefce1cDR
 ```
-The file /Users/raman/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2861,7 +2861,7 @@ id: toolu_01RfA2QC81oSAQjLCAUzcriU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py",
   "old_string": "    zwave_js_lock: ZWaveJSLock,\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"A client that is present but disconnected reports not-ready.\"\"\"\n    runtime_data = MagicMock()\n    runtime_data.client = MagicMock(connected=False)\n    monkeypatch.setattr(zwave_js_lock.lock_config_entry, \"runtime_data\", runtime_data)\n\n    ready, reason = zwave_js_lock._get_client_state()\n\n    assert ready is False\n    assert \"not connected\" in reason",
   "new_string": "    zwave_js_lock: ZWaveJSLock,\n) -> None:\n    \"\"\"A client that is present but disconnected reports not-ready.\"\"\"\n    runtime_data = MagicMock()\n    runtime_data.client = MagicMock(connected=False)\n    with patch.object(\n        zwave_js_lock.lock_config_entry, \"runtime_data\", runtime_data\n    ):\n        ready, reason = zwave_js_lock._get_client_state()\n\n    assert ready is False\n    assert \"not connected\" in reason"
 }
@@ -2872,7 +2872,7 @@ id: toolu_01RfA2QC81oSAQjLCAUzcriU
 tool_result
 id: toolu_01RfA2QC81oSAQjLCAUzcriU
 ```
-The file /Users/raman/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2882,7 +2882,7 @@ id: toolu_01U9rQuYcSKwgVmeuscUBxd6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py",
   "old_string": "    zwave_js_lock: ZWaveJSLock,\n    monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    \"\"\"A connected client with no driver reports not-ready.\"\"\"\n    runtime_data = MagicMock()\n    runtime_data.client = MagicMock(connected=True, driver=None)\n    monkeypatch.setattr(zwave_js_lock.lock_config_entry, \"runtime_data\", runtime_data)\n\n    ready, reason = zwave_js_lock._get_client_state()\n\n    assert ready is False\n    assert \"driver not ready\" in reason",
   "new_string": "    zwave_js_lock: ZWaveJSLock,\n) -> None:\n    \"\"\"A connected client with no driver reports not-ready.\"\"\"\n    runtime_data = MagicMock()\n    runtime_data.client = MagicMock(connected=True, driver=None)\n    with patch.object(\n        zwave_js_lock.lock_config_entry, \"runtime_data\", runtime_data\n    ):\n        ready, reason = zwave_js_lock._get_client_state()\n\n    assert ready is False\n    assert \"driver not ready\" in reason"
 }
@@ -2893,7 +2893,7 @@ id: toolu_01U9rQuYcSKwgVmeuscUBxd6
 tool_result
 id: toolu_01U9rQuYcSKwgVmeuscUBxd6
 ```
-The file /Users/raman/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lcm-zwave-monkeypatch/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2906,7 +2906,7 @@ tool_use Bash
 id: toolu_01T9VTBh247iYA1JhM6teBxm
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\necho \"=== monkeypatch remaining? ===\"; grep -c \"monkeypatch\" tests/providers/zwave_js/test_provider.py\nuv run pytest tests/providers/zwave_js/test_provider.py -q -k \"get_client_state\" 2>&1 | tail -8\nprek run --files tests/providers/zwave_js/test_provider.py 2>&1 | grep -E \"ruff|format|Passed|Failed|flake8|mypy\"",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\necho \"=== monkeypatch remaining? ===\"; grep -c \"monkeypatch\" tests/providers/zwave_js/test_provider.py\nuv run pytest tests/providers/zwave_js/test_provider.py -q -k \"get_client_state\" 2>&1 | tail -8\nprek run --files tests/providers/zwave_js/test_provider.py 2>&1 | grep -E \"ruff|format|Passed|Failed|flake8|mypy\"",
   "description": "Run converted tests and prek in worktree"
 }
 ```
@@ -2937,7 +2937,7 @@ mixed line ending........................................................Passed
 don't commit to branch...................................................Passed
 flake8...................................................................Passed
 mypy.................................................(no files to check)Skipped
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -2950,7 +2950,7 @@ tool_use Bash
 id: toolu_01113N6ZFSJAKBVRvSjLDCui
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\nuv sync --quiet 2>&1 | tail -3\nuv run pytest tests/providers/zwave_js/test_provider.py -q -k \"get_client_state\" 2>&1 | tail -6",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\nuv sync --quiet 2>&1 | tail -3\nuv run pytest tests/providers/zwave_js/test_provider.py -q -k \"get_client_state\" 2>&1 | tail -6",
   "description": "Sync worktree venv and run converted tests"
 }
 ```
@@ -2962,7 +2962,7 @@ id: toolu_01113N6ZFSJAKBVRvSjLDCui
 ```
 error: Failed to spawn: `pytest`
   Caused by: No such file or directory (os error 2)
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -2975,7 +2975,7 @@ tool_use Bash
 id: toolu_019GLc7PXcSDPh55btJKUYRu
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== dependency-groups / dev deps in pyproject ===\"; grep -n \"dependency-groups\\|dev\\b\\|pytest\\|\\[tool.pytest\\|testpaths\\|pythonpath\\|\\[project.optional\" pyproject.toml | head -30\necho \"=== editable install of our package in main venv? ===\"; ls .venv/lib/python3.14/site-packages/ | grep -i \"lock_code\\|__editable__\\|custom_components\" | head\necho \"=== conftest pythonpath bits ===\"; grep -rn \"sys.path\\|rootdir\\|pythonpath\" conftest.py tests/conftest.py 2>/dev/null | head",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== dependency-groups / dev deps in pyproject ===\"; grep -n \"dependency-groups\\|dev\\b\\|pytest\\|\\[tool.pytest\\|testpaths\\|pythonpath\\|\\[project.optional\" pyproject.toml | head -30\necho \"=== editable install of our package in main venv? ===\"; ls .venv/lib/python3.14/site-packages/ | grep -i \"lock_code\\|__editable__\\|custom_components\" | head\necho \"=== conftest pythonpath bits ===\"; grep -rn \"sys.path\\|rootdir\\|pythonpath\" conftest.py tests/conftest.py 2>/dev/null | head",
   "description": "Inspect test deps and package resolution"
 }
 ```
@@ -2998,7 +2998,7 @@ tool_use Bash
 id: toolu_01R6QJP5uXRmGK2mbw1pGHQs
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== requirements files ===\"; ls requirements*.txt 2>/dev/null; ls *.txt 2>/dev/null\necho \"=== how main venv got pytest (uv.lock groups / requirements) ===\"; grep -rn \"pytest\" requirements*.txt 2>/dev/null | head\necho \"=== pyproject test deps section names ===\"; grep -n \"^\\[\" pyproject.toml | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== requirements files ===\"; ls requirements*.txt 2>/dev/null; ls *.txt 2>/dev/null\necho \"=== how main venv got pytest (uv.lock groups / requirements) ===\"; grep -rn \"pytest\" requirements*.txt 2>/dev/null | head\necho \"=== pyproject test deps section names ===\"; grep -n \"^\\[\" pyproject.toml | head -40",
   "description": "Find requirements/test dep declarations"
 }
 ```
@@ -3045,7 +3045,7 @@ tool_use Bash
 id: toolu_01WHmNktpf2pRX99C6pfpkTj
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\nuv pip install -r requirements_test.txt --quiet 2>&1 | tail -3\nuv run pytest tests/providers/zwave_js/test_provider.py -q -k \"get_client_state\" 2>&1 | tail -6",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\nuv pip install -r requirements_test.txt --quiet 2>&1 | tail -3\nuv run pytest tests/providers/zwave_js/test_provider.py -q -k \"get_client_state\" 2>&1 | tail -6",
   "description": "Install test deps in worktree and run converted tests"
 }
 ```
@@ -3061,7 +3061,7 @@ custom_components/lock_code_manager/providers/__init__.py:7: in <module>
 custom_components/lock_code_manager/providers/matter.py:17: in <module>
     from matter_server.client.exceptions import MatterClientException
 E   ModuleNotFoundError: No module named 'matter_server'
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3074,7 +3074,7 @@ tool_use Bash
 id: toolu_01Hd5QeYgpoxrDEToSXc84Wq
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\nPYTHONPATH=/Users/raman/projects/lcm-zwave-monkeypatch \\\n/Users/raman/projects/lock_code_manager/.venv/bin/python -m pytest \\\n  tests/providers/zwave_js/test_provider.py -q -k \"get_client_state\" 2>&1 | tail -8",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\nPYTHONPATH=/home/<USER>/projects/lcm-zwave-monkeypatch \\\n/home/<USER>/projects/lock_code_manager/.venv/bin/python -m pytest \\\n  tests/providers/zwave_js/test_provider.py -q -k \"get_client_state\" 2>&1 | tail -8",
   "description": "Run converted tests using main venv against worktree"
 }
 ```
@@ -3086,7 +3086,7 @@ id: toolu_01Hd5QeYgpoxrDEToSXc84Wq
 ```
 ...                                                                      [100%]
 3 passed, 56 deselected in 0.43s
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3099,7 +3099,7 @@ tool_use Bash
 id: toolu_013iVzJZaUsoNBsJBb3W8GCt
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\nPYTHONPATH=/Users/raman/projects/lcm-zwave-monkeypatch \\\n/Users/raman/projects/lock_code_manager/.venv/bin/python -m pytest \\\n  tests/providers/zwave_js/test_provider.py -q 2>&1 | tail -4\necho \"=== prek ===\"\nprek run --files tests/providers/zwave_js/test_provider.py 2>&1 | grep -E \"ruff|flake8|mypy|pydoc\"",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\nPYTHONPATH=/home/<USER>/projects/lcm-zwave-monkeypatch \\\n/home/<USER>/projects/lock_code_manager/.venv/bin/python -m pytest \\\n  tests/providers/zwave_js/test_provider.py -q 2>&1 | tail -4\necho \"=== prek ===\"\nprek run --files tests/providers/zwave_js/test_provider.py 2>&1 | grep -E \"ruff|flake8|mypy|pydoc\"",
   "description": "Run full provider test file and prek"
 }
 ```
@@ -3117,7 +3117,7 @@ ruff format..............................................................Passed
 pydocstyle...............................................................Passed
 flake8...................................................................Passed
 mypy.................................................(no files to check)Skipped
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3130,7 +3130,7 @@ tool_use Bash
 id: toolu_017NBPxXjsk5YnAVEDSnAKas
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\ngit --no-pager diff 2>&1\necho \"=== PR template exists? ===\"\nls .github/PULL_REQUEST_TEMPLATE.md 2>&1",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\ngit --no-pager diff 2>&1\necho \"=== PR template exists? ===\"\nls .github/PULL_REQUEST_TEMPLATE.md 2>&1",
   "description": "Show worktree diff and check PR template"
 }
 ```
@@ -3206,7 +3206,7 @@ tool_use Read
 id: toolu_012FND8x3RdW7FemBkQ1oGu6
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/.github/PULL_REQUEST_TEMPLATE.md"
+  "file_path": "/home/<USER>/projects/lock_code_manager/.github/PULL_REQUEST_TEMPLATE.md"
 }
 ```
 
@@ -3255,7 +3255,7 @@ tool_use Bash
 id: toolu_015PB3LoKo7ovKRzDe4cRZai
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\ngit add tests/providers/zwave_js/test_provider.py\ngit commit -F - <<'EOF'\ntest(zwave_js): use patch.object instead of monkeypatch for runtime_data\n\nConvert the three _get_client_state readiness tests off the pytest\nmonkeypatch fixture to unittest.mock.patch.object, matching the patching\nstyle used elsewhere in the suite. Behaviorally identical -- both set and\nrestore runtime_data on the lock's config entry -- and scopes the patch to\nthe call under test.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\ngit push -u origin test/zwave-monkeypatch-to-patch 2>&1 | tail -4",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\ngit add tests/providers/zwave_js/test_provider.py\ngit commit -F - <<'EOF'\ntest(zwave_js): use patch.object instead of monkeypatch for runtime_data\n\nConvert the three _get_client_state readiness tests off the pytest\nmonkeypatch fixture to unittest.mock.patch.object, matching the patching\nstyle used elsewhere in the suite. Behaviorally identical -- both set and\nrestore runtime_data on the lock's config entry -- and scopes the patch to\nthe call under test.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\ngit push -u origin test/zwave-monkeypatch-to-patch 2>&1 | tail -4",
   "description": "Commit and push zwave test branch"
 }
 ```
@@ -3293,7 +3293,7 @@ remote:
 To https://github.com/raman325/lock_code_manager.git
  * [new branch]        test/zwave-monkeypatch-to-patch -> test/zwave-monkeypatch-to-patch
 branch 'test/zwave-monkeypatch-to-patch' set up to track 'origin/test/zwave-monkeypatch-to-patch'.
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > TOOL
@@ -3302,7 +3302,7 @@ tool_use Bash
 id: toolu_015tsDBEP7i4F8drBysChMQp
 ```json
 {
-  "command": "cd /Users/raman/projects/lcm-zwave-monkeypatch\ngh pr create --base main --head test/zwave-monkeypatch-to-patch \\\n  --title \"test(zwave_js): use patch.object instead of monkeypatch for runtime_data\" \\\n  --body \"## Proposed change\n\nConvert the three \\`_get_client_state\\` readiness tests in \\`tests/providers/zwave_js/test_provider.py\\` off the pytest \\`monkeypatch\\` fixture to \\`unittest.mock.patch.object\\`, matching the patching style used elsewhere in the suite.\n\nThe change is behaviorally identical -- both set and then restore \\`runtime_data\\` on the lock's config entry -- and scopes the patch to the call under test via a \\`with\\` block. Split out of the #1279 review follow-up to keep that PR focused.\n\n## Type of change\n\n- [ ] Dependency upgrade\n- [ ] Bugfix (non-breaking change which fixes an issue)\n- [ ] New feature (which adds functionality)\n- [ ] Breaking change (fix/feature causing existing functionality to break)\n- [x] Code quality improvements to existing code or addition of tests\n\n## Additional information\n\n- This PR fixes or closes issue: fixes #\n- This PR is related to issue:\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\" 2>&1 | tail -3",
+  "command": "cd /home/<USER>/projects/lcm-zwave-monkeypatch\ngh pr create --base main --head test/zwave-monkeypatch-to-patch \\\n  --title \"test(zwave_js): use patch.object instead of monkeypatch for runtime_data\" \\\n  --body \"## Proposed change\n\nConvert the three \\`_get_client_state\\` readiness tests in \\`tests/providers/zwave_js/test_provider.py\\` off the pytest \\`monkeypatch\\` fixture to \\`unittest.mock.patch.object\\`, matching the patching style used elsewhere in the suite.\n\nThe change is behaviorally identical -- both set and then restore \\`runtime_data\\` on the lock's config entry -- and scopes the patch to the call under test via a \\`with\\` block. Split out of the #1279 review follow-up to keep that PR focused.\n\n## Type of change\n\n- [ ] Dependency upgrade\n- [ ] Bugfix (non-breaking change which fixes an issue)\n- [ ] New feature (which adds functionality)\n- [ ] Breaking change (fix/feature causing existing functionality to break)\n- [x] Code quality improvements to existing code or addition of tests\n\n## Additional information\n\n- This PR fixes or closes issue: fixes #\n- This PR is related to issue:\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\" 2>&1 | tail -3",
   "description": "Create PR for zwave test branch"
 }
 ```
@@ -3313,7 +3313,7 @@ tool_result
 id: toolu_015tsDBEP7i4F8drBysChMQp
 ```
 https://github.com/raman325/lock_code_manager/pull/1281
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -3326,7 +3326,7 @@ tool_use Bash
 id: toolu_01SHt1DWXNKXsME7YTLezbrr
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit worktree remove ../lcm-zwave-monkeypatch --force 2>&1\ngit worktree list 2>&1\necho \"=== current branch ===\"; git branch --show-current",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit worktree remove ../lcm-zwave-monkeypatch --force 2>&1\ngit worktree list 2>&1\necho \"=== current branch ===\"; git branch --show-current",
   "description": "Remove worktree and confirm state"
 }
 ```
@@ -3336,7 +3336,7 @@ id: toolu_01SHt1DWXNKXsME7YTLezbrr
 tool_result
 id: toolu_01SHt1DWXNKXsME7YTLezbrr
 ```
-/Users/raman/projects/lock_code_manager a2ab72ff [feat/credential-length-capabilities]
+/home/<USER>/projects/lock_code_manager a2ab72ff [feat/credential-length-capabilities]
 === current branch ===
 feat/credential-length-capabilities
 ```

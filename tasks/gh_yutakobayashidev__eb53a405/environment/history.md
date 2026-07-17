@@ -61,8 +61,8 @@ id: toolu_01EFmeM9o2wNpLiihrwx5aZb
 tool_result
 id: toolu_01HZbtrMUh4kVAtADFCqsVpY
 ```
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.local.json
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.json
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.local.json
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.json
 ```
 
 > TOOL
@@ -79,7 +79,7 @@ tool_use Read
 id: toolu_01Ksa6nwxcn2KVd3fYAeC9hV
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.json"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.json"
 }
 ```
 
@@ -194,7 +194,7 @@ tool_use Read
 id: toolu_01CCUmw6abPcyciq5MkqYWVp
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/programs/claude-code.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>/claude-code.nix"
 }
 ```
 
@@ -293,7 +293,7 @@ id: toolu_01AHZaWCC5AZViKfLMCsfCEn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/programs/claude-code.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>/claude-code.nix",
   "old_string": "      enableAllProjectMcpServers = true;",
   "new_string": "      enableAllProjectMcpServers = true;\n      plansDirectory = \"./plans\";"
 }
@@ -304,7 +304,7 @@ id: toolu_01AHZaWCC5AZViKfLMCsfCEn
 tool_result
 id: toolu_01AHZaWCC5AZViKfLMCsfCEn
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/programs/claude-code.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>/claude-code.nix has been updated successfully.
 ```
 
 > AGENT

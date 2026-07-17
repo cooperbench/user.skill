@@ -9,7 +9,7 @@ tool_use Bash
 id: toolu_01M3NfM9vYETjFrDFazcKk7j
 ```json
 {
-  "command": "ls /Users/135yshr/projects/135yshr/documents/articles/",
+  "command": "ls /home/<USER>/projects/135yshr/documents/articles/",
   "description": "List articles directory"
 }
 ```
@@ -85,7 +85,7 @@ tool_use Read
 id: toolu_019N4utgRuEXGDs14h8fZTek
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/24d20a2df05e30.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/24d20a2df05e30.md"
 }
 ```
 
@@ -110,7 +110,7 @@ tool_use Read
 id: toolu_01C1FgBhd13xkQi8SZaZhX8X
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md"
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md"
 }
 ```
 
@@ -132,7 +132,7 @@ tool_use Write
 id: toolu_01YUC13iBjKdSYw5XBE4jWrR
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/24d20a2df05e30.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/24d20a2df05e30.md",
   "content": "---\ntitle: \"MarkdownをPDFに変換するCLIツール md2pdf を作った\"\nemoji: \"📄\"\ntype: \"tech\"\ntopics: [\"Go\", \"Markdown\", \"PDF\", \"Mermaid\", \"CLI\"]\npublished: false\n---\n\n## はじめに\n\n技術ドキュメントや設計書をMarkdownで書いている方は多いと思います。しかし、クライアントへの納品やレビュー会議では「PDF で欲しい」と言われることも少なくありません。\n\n既存のツールではMermaidダイアグラムが崩れたり、日本語フォントが化けたり、見た目がイマイチだったりと、なかなか「これ」という変換ツールがありませんでした。\n\nそこで、以下を満たすCLIツール **md2pdf** を作りました。\n\n- GitHub風のスタイリングでPDFを生成\n- **Mermaidダイアグラム**をインラインSVGとしてレンダリング\n- **日本語フォント（Noto Sans CJK JP）**に対応\n- ページサイズやマージンをカスタマイズ可能\n\nhttps://github.com/135yshr/md2pdf\n\n## インストール\n\n### Homebrew（推奨）\n\n```sh\nbrew install 135yshr/tap/md2pdf\n```\n\n### Go install\n\n```sh\ngo install github.com/135yshr/md2pdf/cmd/md2pdf@latest\n```\n\n### ランタイム依存のインストール\n\nmd2pdf は内部で外部ツールを使っています。本体とは別にインストールが必要です。\n\n```sh\n# Mermaid CLI（ダイアグラムの SVG 変換に使用）\nnpm install -g @mermaid-js/mermaid-cli\n\n# Playwright + Chromium（HTML → PDF の変換に使用）\npip install playwright\nplaywright install chromium\n```\n\n### 日本語フォント（オプション）\n\n日本語テキストを含むドキュメントを変換する場合は、Noto Sans CJK JP フォントをインストールしてください。\n\n**macOS**\n\n```sh\nbrew install font-noto-sans-cjk\n```\n\n**Ubuntu / Debian**\n\n```sh\nsudo apt install fonts-noto-cjk\n```\n\n## 基本的な使い方\n\n```sh\nmd2pdf document.md\n```\n\nこれだけで `document.pdf` が同じディレクトリに生成されます。\n\n### 出力先を指定する\n\n```sh\nmd2pdf -o output/report.pdf document.md\n```\n\n### 詳細ログを表示する\n\n```sh\nmd2pdf -v document.md\n```\n\n`-v` をつけると、各ステップの進行状況が表示されます。変換がうまくいかないときのデバッグに便利です。\n\n## 実用例\n\n### 設計書をPDFで納品する\n\n```sh\nmd2pdf -page-size A4 -margin-top 20mm -margin-bottom 20mm spec.md\n```\n\n### レターサイズで英語ドキュメントを変換\n\n```sh\nmd2pdf -page-size Letter -margin-left 25mm -margin-right 25mm design.md\n```\n\n### フォントを明示的に指定する\n\nフォントの自動検出がうまくいかない場合は、直接パスを指定できます。\n\n```sh\nmd2pdf -font /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc document.md\n```\n\n## Mermaidダイアグラムの活用\n\nmd2pdf の大きな特徴は、MermaidダイアグラムをそのままPDFに埋め込めることです。Markdown内に記述した Mermaid コードブロックが、自動的にSVGとしてレンダリングされます。\n\n### フローチャートの例\n\nMarkdown内に以下のように書くだけです。\n\n````markdown\n```mermaid\nflowchart TD\n    A[要件定義] --> B[設計]\n    B --> C[実装]\n    C --> D[テスト]\n    D --> E[リリース]\n    E -->|フィードバック| A\n```\n````\n\nこれがPDF上ではきれいなフローチャートとして描画されます。\n\n### シーケンス図の例\n\n````markdown\n```mermaid\nsequenceDiagram\n    participant C as Client\n    participant S as Server\n    participant DB as Database\n    C->>S: POST /api/users\n    S->>DB: INSERT INTO users\n    DB-->>S: OK\n    S-->>C: 201 Created\n```\n````\n\nAPIの設計書にシーケンス図を含めてPDFとして納品する、といった使い方が可能です。\n\n## 仕組み\n\nmd2pdf の変換パイプラインは4つのステップで構成されています。\n\n```mermaid\nflowchart TD\n    A[\"Markdown (.md)\"] --> B[goldmark parser]\n    B --> C[HTML builder]\n    B -->|Mermaidブロックを抽出| D[mmdc CLI]\n    D -->|SVG| C\n    C -->|\"GitHub CSS + フォント + SVG を合成\"| E[\"Playwright / Chromium\"]\n    E --> F[\"PDF output\"]\n```\n\n1. **Parse** — goldmark が Markdown を HTML に変換。Mermaidコードブロックはプレースホルダーに置換\n2. **Render diagrams** — 抽出した Mermaid ブロックを mmdc CLI […]
 
 > TOOL
@@ -140,7 +140,7 @@ id: toolu_01YUC13iBjKdSYw5XBE4jWrR
 tool_result
 id: toolu_01YUC13iBjKdSYw5XBE4jWrR
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/24d20a2df05e30.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/24d20a2df05e30.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -149,7 +149,7 @@ tool_use Bash
 id: toolu_01NHn85QqBszKqC3Y5yEWm5G
 ```json
 {
-  "command": "rm /Users/135yshr/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md",
+  "command": "rm /home/<USER>/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md",
   "description": "Remove old article file"
 }
 ```
@@ -159,7 +159,7 @@ id: toolu_01NHn85QqBszKqC3Y5yEWm5G
 tool_result
 id: toolu_01NHn85QqBszKqC3Y5yEWm5G
 ```
-remove /Users/135yshr/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md?
+remove /home/<USER>/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md?
 ```
 
 > TOOL
@@ -168,7 +168,7 @@ tool_use Bash
 id: toolu_012LgAFDhDNyErfD7err5cGH
 ```json
 {
-  "command": "echo \"y\" | rm /Users/135yshr/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md",
+  "command": "echo \"y\" | rm /home/<USER>/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md",
   "description": "Confirm remove old article file"
 }
 ```
@@ -178,7 +178,7 @@ id: toolu_012LgAFDhDNyErfD7err5cGH
 tool_result
 id: toolu_012LgAFDhDNyErfD7err5cGH
 ```
-remove /Users/135yshr/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md?
+remove /home/<USER>/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md?
 ```
 
 > TOOL
@@ -187,7 +187,7 @@ tool_use Bash
 id: toolu_01PgLgAyS86XwsQHCGj7JLey
 ```json
 {
-  "command": "rm -f /Users/135yshr/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md",
+  "command": "rm -f /home/<USER>/projects/135yshr/documents/articles/md2pdf-markdown-to-pdf-guide.md",
   "description": "Force remove old article file"
 }
 ```

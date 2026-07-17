@@ -21,7 +21,7 @@ tool_use Bash
 id: toolu_016ZbQ3goU28XefSthzeq3mY
 ```json
 {
-  "command": "find /home/rob/Documents/Safecast/bGeigieZen -type f \\( -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.ino\" \\) | xargs grep -l -i \"settings\\|menu\" 2>/dev/null | head -30",
+  "command": "find /home/<USER>/Documents/Safecast/bGeigieZen -type f \\( -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.ino\" \\) | xargs grep -l -i \"settings\\|menu\" 2>/dev/null | head -30",
   "description": "Find settings/menu files"
 }
 ```
@@ -31,36 +31,36 @@ id: toolu_016ZbQ3goU28XefSthzeq3mY
 tool_result
 id: toolu_016ZbQ3goU28XefSthzeq3mY
 ```
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/gfx_screen.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/controller.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/main.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/controller.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/gfx_screen.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/user_config.h
-/home/rob/Documents/Safecast/bGeigieZen/archive/src/Raku_code.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/bluetooth_settings.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/power_manager.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/error_beep.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/http_pages.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/http_pages.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/sd_wrapper.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/power_manager.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/sd_wrapper.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/handlers/bluetooth_reporter.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/handlers/sd_logger.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/local_storage.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/sound_manager.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/gm_sensor.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/configuration_server.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/log_aggregator.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/local_storage.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/configuration_server.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/log_aggregator.h
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/sd_wipe.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/satellite_view.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/zen_info.cpp
-/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/flight_mode.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/gfx_screen.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/controller.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/main.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/controller.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/gfx_screen.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/user_config.h
+/home/<USER>/Documents/Safecast/bGeigieZen/archive/src/Raku_code.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/bluetooth_settings.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/power_manager.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/error_beep.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/http_pages.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/http_pages.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/sd_wrapper.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/power_manager.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/utils/sd_wrapper.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/handlers/bluetooth_reporter.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/handlers/sd_logger.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/local_storage.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/sound_manager.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/gm_sensor.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/configuration_server.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/log_aggregator.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/local_storage.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/configuration_server.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/workers/log_aggregator.h
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/sd_wipe.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/satellite_view.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/zen_info.cpp
+/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/flight_mode.cpp
 ```
 
 > TOOL
@@ -69,7 +69,7 @@ tool_use Bash
 id: toolu_01PQd9udHKvCU9YonAzGE8Ja
 ```json
 {
-  "command": "ls /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/",
+  "command": "ls /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/",
   "description": "List screens directory"
 }
 ```
@@ -124,7 +124,7 @@ tool_use Bash
 id: toolu_0153D3Bf817BVAG332FN89Nv
 ```json
 {
-  "command": "wc -l /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.cpp /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.h /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.cpp /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.h",
+  "command": "wc -l /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.cpp /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.h /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.cpp /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.h",
   "description": "Check size of menu/config files"
 }
 ```
@@ -134,10 +134,10 @@ id: toolu_0153D3Bf817BVAG332FN89Nv
 tool_result
 id: toolu_0153D3Bf817BVAG332FN89Nv
 ```
-   64 /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.cpp
-   30 /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.h
-  637 /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.cpp
-   68 /home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.h
+   64 /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.cpp
+   30 /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.h
+  637 /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.cpp
+   68 /home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.h
   799 total
 ```
 
@@ -147,7 +147,7 @@ tool_use Read
 id: toolu_01SWddvjePWFFktv5NzNMGFd
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.h"
+  "file_path": "/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.h"
 }
 ```
 
@@ -222,7 +222,7 @@ tool_use Read
 id: toolu_01STYQQNPXYdf45vxFwNh8V1
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.cpp"
+  "file_path": "/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/config_mode.cpp"
 }
 ```
 
@@ -266,7 +266,7 @@ tool_use Read
 id: toolu_01MQ6XFn1JAnigyg9uKBcwbK
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.cpp"
+  "file_path": "/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.cpp"
 }
 ```
 
@@ -321,7 +321,7 @@ tool_use Read
 id: toolu_011zMUk9t2h8qUPzpPdPAR12
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.h"
+  "file_path": "/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/menu_window.h"
 }
 ```
 
@@ -369,7 +369,7 @@ tool_use Read
 id: toolu_01UZfjhLTL36ZcxavvLkzWCJ
 ```json
 {
-  "file_path": "/home/rob/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/base_screen.h"
+  "file_path": "/home/<USER>/Documents/Safecast/bGeigieZen/bgeigiezen_firmware/screens/base_screen.h"
 }
 ```
 

@@ -79,7 +79,7 @@ tool_use Bash
 id: toolu_01Rkv7MjjysJbGDkeQ4cLQg3
 ```json
 {
-  "command": "ls -la /Users/135yshr/go/src/github.com/135yshr/meow/",
+  "command": "ls -la /home/<USER>/go/src/github.com/135yshr/meow/",
   "description": "List repository root"
 }
 ```
@@ -119,7 +119,7 @@ tool_use Bash
 id: toolu_01H8XFaaUBbXv6sUUFxc9JnG
 ```json
 {
-  "command": "ls -la /Users/135yshr/go/src/github.com/135yshr/meow/website/",
+  "command": "ls -la /home/<USER>/go/src/github.com/135yshr/meow/website/",
   "description": "List website directory"
 }
 ```
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_012HFBzYATxygURXh5fD281S
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/hugo.toml"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/hugo.toml"
 }
 ```
 
@@ -218,7 +218,7 @@ tool_use Bash
 id: toolu_01MEoKkmQsniQhA234EQ2dCx
 ```json
 {
-  "command": "ls -la /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/ /Users/135yshr/go/src/github.com/135yshr/meow/website/content/",
+  "command": "ls -la /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/ /home/<USER>/go/src/github.com/135yshr/meow/website/content/",
   "description": "List layouts and content"
 }
 ```
@@ -228,7 +228,7 @@ id: toolu_01MEoKkmQsniQhA234EQ2dCx
 tool_result
 id: toolu_01MEoKkmQsniQhA234EQ2dCx
 ```
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/:
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/:
 total 8
 -rw-r--r--@  1 135yshr  staff  312  6月  1 18:26 _index.md
 drwxr-xr-x@  8 135yshr  staff  256  6月  1 18:26 .
@@ -239,7 +239,7 @@ drwxr-xr-x@  3 135yshr  staff   96  6月  1 18:26 cookbook
 drwxr-xr-x@  7 135yshr  staff  224  6月  1 18:26 doc
 drwxr-xr-x@  6 135yshr  staff  192  6月  1 18:26 learn
 
-/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/:
+/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/:
 total 40
 drwxr-xr-x@  6 135yshr  staff    192  6月  1 18:26 _default
 drwxr-xr-x@  7 135yshr  staff    224  6月  1 18:26 .
@@ -256,7 +256,7 @@ tool_use Bash
 id: toolu_01H6Fggc9qRpYLpyaYjwafZ3
 ```json
 {
-  "command": "ls -la /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/ /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/",
+  "command": "ls -la /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/ /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/",
   "description": "List layout subdirs"
 }
 ```
@@ -266,7 +266,7 @@ id: toolu_01H6Fggc9qRpYLpyaYjwafZ3
 tool_result
 id: toolu_01H6Fggc9qRpYLpyaYjwafZ3
 ```
-/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/:
+/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/:
 total 32
 drwxr-xr-x@ 6 135yshr  staff   192  6月  1 18:26 .
 drwxr-xr-x@ 7 135yshr  staff   224  6月  1 18:26 ..
@@ -275,7 +275,7 @@ drwxr-xr-x@ 7 135yshr  staff   224  6月  1 18:26 ..
 -rw-r--r--@ 1 135yshr  staff   433  3月  3 16:19 single.html
 -rw-r--r--@ 1 135yshr  staff   738  4月 18 11:28 sitemap.xml
 
-/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/:
+/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/:
 total 56
 drwxr-xr-x@ 9 135yshr  staff   288  6月  1 18:26 .
 drwxr-xr-x@ 7 135yshr  staff   224  6月  1 18:26 ..
@@ -294,7 +294,7 @@ tool_use Read
 id: toolu_01YDZuqVJMkVPNKLgwg9zXyB
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/baseof.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/baseof.html"
 }
 ```
 
@@ -343,7 +343,7 @@ tool_use Read
 id: toolu_014KdQwXu1iiMMbe3QuLdPFL
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/index.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/index.html"
 }
 ```
 
@@ -405,7 +405,7 @@ tool_use Read
 id: toolu_011MSfWaGBNxX24eX2C8kmeJ
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/_index.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/_index.md"
 }
 ```
 
@@ -427,7 +427,7 @@ tool_use Read
 id: toolu_01Fyi9M7KEL47i2RZ9X8SbGo
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/ogp.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/ogp.html"
 }
 ```
 
@@ -481,7 +481,7 @@ tool_use Read
 id: toolu_01HxKBTjTwtR1i1oJcyvNWPc
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/jsonld.html"
 }
 ```
 
@@ -543,7 +543,7 @@ tool_use Read
 id: toolu_015JuAcuYPk6w42nhpUba2fH
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html"
 }
 ```
 
@@ -585,7 +585,7 @@ tool_use Read
 id: toolu_018rZmUaeCzPSNhu6zyLy6i3
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/footer.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/footer.html"
 }
 ```
 
@@ -646,7 +646,7 @@ tool_use Read
 id: toolu_011W6W7hzknsrkTHqiHz1mff
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/sitemap.xml"
 }
 ```
 
@@ -681,7 +681,7 @@ tool_use Read
 id: toolu_01DXndw6pt9aG8SsyPMVQXUL
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/robots.txt"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/robots.txt"
 }
 ```
 
@@ -703,7 +703,7 @@ tool_use Read
 id: toolu_01CUgo9GznubtoiCMVpY7Bw2
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/list.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/list.html"
 }
 ```
 
@@ -742,7 +742,7 @@ tool_use Read
 id: toolu_01NPTfu9oy6Q6TeUjGJrjXdb
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/_default/single.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/_default/single.html"
 }
 ```
 
@@ -783,7 +783,7 @@ tool_use Bash
 id: toolu_01DabbWYHpUrLnVscrZoXc9G
 ```json
 {
-  "command": "find /Users/135yshr/go/src/github.com/135yshr/meow/website/content -type f -name \"*.md\" | head -40 && echo \"---\" && find /Users/135yshr/go/src/github.com/135yshr/meow/website/content -type d",
+  "command": "find /home/<USER>/go/src/github.com/135yshr/meow/website/content -type f -name \"*.md\" | head -40 && echo \"---\" && find /home/<USER>/go/src/github.com/135yshr/meow/website/content -type d",
   "description": "List content files and dirs"
 }
 ```
@@ -793,28 +793,28 @@ id: toolu_01DabbWYHpUrLnVscrZoXc9G
 tool_result
 id: toolu_01DabbWYHpUrLnVscrZoXc9G
 ```
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/_index.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/go-comparison.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/tutorial.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/effective-meow.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/_index.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog/release-notes.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog/_index.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/reference.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/stdlib.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/internals.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/spec.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/_index.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/community/contributing.md
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/community/_index.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/_index.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/go-comparison.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/tutorial.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/effective-meow.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/_index.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/blog/release-notes.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/blog/_index.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/reference.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/stdlib.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/internals.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/spec.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/_index.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/community/contributing.md
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/community/_index.md
 ---
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/cookbook
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc
-/Users/135yshr/go/src/github.com/135yshr/meow/website/content/community
+/home/<USER>/go/src/github.com/135yshr/meow/website/content
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/learn
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/cookbook
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/blog
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/doc
+/home/<USER>/go/src/github.com/135yshr/meow/website/content/community
 ```
 
 > TOOL
@@ -823,7 +823,7 @@ tool_use Bash
 id: toolu_01RkukBhsiNCghRRUA5mn8Cb
 ```json
 {
-  "command": "for f in /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/tutorial.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/effective-meow.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/go-comparison.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/_index.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/_index.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/spec.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/stdlib.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/reference.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/doc/internals.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog/_index.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/blog/release-notes.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/community/_index.md /Users/135yshr/go/src/github.com/135yshr/meow/website/content/community/contributing.md; do\n  echo \"===== $f =====\"\n  head -10 \"$f\"\ndone",
+  "command": "for f in /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/tutorial.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/effective-meow.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/go-comparison.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/_index.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/cookbook/_index.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/_index.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/spec.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/stdlib.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/reference.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/doc/internals.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/blog/_index.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/blog/release-notes.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/community/_index.md /home/<USER>/go/src/github.com/135yshr/meow/website/content/community/contributing.md; do\n  echo \"===== $f =====\"\n  head -10 \"$f\"\ndone",
   "description": "Show front matter of content files"
 }
 ```
@@ -833,7 +833,7 @@ id: toolu_01RkukBhsiNCghRRUA5mn8Cb
 tool_result
 id: toolu_01RkukBhsiNCghRRUA5mn8Cb
 ```
-===== /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/tutorial.md =====
+===== /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/tutorial.md =====
 ---
 title: "Meow Programming Language Tutorial: Learn .nyan Syntax from Hello World"
 description: "Learn the Meow Programming Language step by step — variables, functions, pattern matching, pipes, and error handling with runnable .nyan examples."
@@ -844,7 +844,7 @@ A step-by-step guide to learning the Meow Programming Language. Each section bui
 
 ## Prerequisites
 
-===== /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/effective-meow.md =====
+===== /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/effective-meow.md =====
 ---
 title: "Effective Meow Programming Language: Idiomatic Patterns and Conventions"
 description: "Idiomatic patterns and conventions for writing clean, consistent Meow Programming Language code — naming, placeholders, and .nyan style."
@@ -855,7 +855,7 @@ Idiomatic patterns and conventions for writing clean, consistent code in the Meo
 
 ## Placeholder Names
 
-===== /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/go-comparison.md =====
+===== /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/go-comparison.md =====
 ---
 title: "Meow Programming Language vs Go: Side-by-Side Reference"
 description: "A side-by-side reference for Go developers learning the Meow Programming Language — syntax, types, control flow, and the transpile-to-Go pipeline."
@@ -866,7 +866,7 @@ A side-by-side reference for Go developers learning the Meow Programming Languag
 
 ## Syntax Comparison
 
-===== /Users/135yshr/go/src/github.com/135yshr/meow/website/content/learn/_index.md =====
+===== /home/<USER>/go/src/github.com/135yshr/meow/website/content/learn/_index.md =====
 ---
 title: "Learn Meow Programming Language"
 description: "Learn the Meow Programming Language — tutorials, idiomatic patterns, and a side-by-side […]
@@ -881,7 +881,7 @@ tool_use Read
 id: toolu_017FUPTqZkrkXgTYjuDRHpsQ
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/README.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/README.md"
 }
 ```
 
@@ -940,7 +940,7 @@ tool_use Bash
 id: toolu_01L8eQjGKSFbQkws2DEobxTj
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow log --oneline -10 && echo \"---\" && git -C /Users/135yshr/go/src/github.com/135yshr/meow show --stat 0f7afd1",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow log --oneline -10 && echo \"---\" && git -C /home/<USER>/go/src/github.com/135yshr/meow show --stat 0f7afd1",
   "description": "Check recent commits and PR #84 changes"
 }
 ```
@@ -962,7 +962,7 @@ e435dc1 :arrow_up: ci: Bump goreleaser/goreleaser-action from 7.1.0 to 7.2.2 (#8
 f90c35f :bookmark: release: v0.5.9
 ---
 commit 0f7afd1dfa967d3135efb3c6202e357dc7f18858
-Author: 135yshr <isago@oreha.dev>
+Author: 135yshr <<REDACTED_EMAIL>>
 Date:   Mon Jun 1 18:25:20 2026 +0900
 
     ✨ feat: Canonicalize "Meow Programming Language" name across site (#84)
@@ -998,7 +998,7 @@ tool_use Bash
 id: toolu_01AqowifxDcnvmmhXJnAaDXY
 ```json
 {
-  "command": "cd /Users/135yshr/go/src/github.com/135yshr/meow/website && hugo --gc --minify --cleanDestinationDir 2>&1 | tail -40",
+  "command": "cd /home/<USER>/go/src/github.com/135yshr/meow/website && hugo --gc --minify --cleanDestinationDir 2>&1 | tail -40",
   "description": "Run Hugo build to verify current state"
 }
 ```
@@ -1035,7 +1035,7 @@ tool_use Bash
 id: toolu_01BSJauvZ6S4zbPLNZHft1m2
 ```json
 {
-  "command": "grep -oE '<title>[^<]*</title>|<meta name=\"description\"[^>]*>|<h1>[^<]*</h1>' /Users/135yshr/go/src/github.com/135yshr/meow/website/public/index.html | head -5",
+  "command": "grep -oE '<title>[^<]*</title>|<meta name=\"description\"[^>]*>|<h1>[^<]*</h1>' /home/<USER>/go/src/github.com/135yshr/meow/website/public/index.html | head -5",
   "description": "Inspect generated title/desc/h1"
 }
 ```
@@ -1056,7 +1056,7 @@ tool_use Bash
 id: toolu_019aXcUNDY7JN1LQ211SKChP
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/meow/website/public/ && echo \"---\" && head -5 /Users/135yshr/go/src/github.com/135yshr/meow/website/public/robots.txt && echo \"---\" && head -15 /Users/135yshr/go/src/github.com/135yshr/meow/website/public/sitemap.xml",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/meow/website/public/ && echo \"---\" && head -5 /home/<USER>/go/src/github.com/135yshr/meow/website/public/robots.txt && echo \"---\" && head -15 /home/<USER>/go/src/github.com/135yshr/meow/website/public/sitemap.xml",
   "description": "Check generated sitemap and robots"
 }
 ```
@@ -1098,7 +1098,7 @@ tool_use Bash
 id: toolu_01RRkJUHDrKfXunckJftKvca
 ```json
 {
-  "command": "cat /Users/135yshr/go/src/github.com/135yshr/meow/website/.gitignore",
+  "command": "cat /home/<USER>/go/src/github.com/135yshr/meow/website/.gitignore",
   "description": "Verify public is gitignored"
 }
 ```
@@ -1129,7 +1129,7 @@ id: toolu_01WAfwBCdxFHpTF5YNyapnkd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html",
   "old_string": "    <a href=\"{{ \"\" | relURL }}\" class=\"nav-logo\">\n      <svg class=\"nav-logo-icon\" viewBox=\"0 0 32 32\" width=\"28\" height=\"28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        {{ partial \"cat-logo.html\" . }}\n      </svg>\n      <span>Meow</span>\n    </a>",
   "new_string": "    <a href=\"{{ \"\" | relURL }}\" class=\"nav-logo\" aria-label=\"Meow Programming Language home\" title=\"Meow Programming Language\">\n      <svg class=\"nav-logo-icon\" viewBox=\"0 0 32 32\" width=\"28\" height=\"28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">\n        {{ partial \"cat-logo.html\" . }}\n      </svg>\n      <span>Meow</span>\n    </a>"
 }
@@ -1140,7 +1140,7 @@ id: toolu_01WAfwBCdxFHpTF5YNyapnkd
 tool_result
 id: toolu_01WAfwBCdxFHpTF5YNyapnkd
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1150,7 +1150,7 @@ id: toolu_01WQ5zuSG3MDKgVskNXCA49E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html",
   "old_string": "      <a href=\"https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-share\" aria-label=\"Share on X\">",
   "new_string": "      <a href=\"https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"nav-share\" aria-label=\"Share Meow Programming Language on X\" title=\"Share on X\">"
 }
@@ -1161,7 +1161,7 @@ id: toolu_01WQ5zuSG3MDKgVskNXCA49E
 tool_result
 id: toolu_01WQ5zuSG3MDKgVskNXCA49E
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1171,7 +1171,7 @@ id: toolu_01GXu1dbDZR5R5fATXH9ahXK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html",
   "old_string": "      <a href=\"{{ .Site.Params.githubRepo }}\" class=\"nav-github\" aria-label=\"GitHub\">",
   "new_string": "      <a href=\"{{ .Site.Params.githubRepo }}\" class=\"nav-github\" aria-label=\"Meow Programming Language on GitHub\" title=\"Meow Programming Language on GitHub\">"
 }
@@ -1182,7 +1182,7 @@ id: toolu_01GXu1dbDZR5R5fATXH9ahXK
 tool_result
 id: toolu_01GXu1dbDZR5R5fATXH9ahXK
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1195,7 +1195,7 @@ tool_use Write
 id: toolu_01QQHy5Ww1kwSP5xCdCNQSR1
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/meow-programming-language-vs-meowlang.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/meow-programming-language-vs-meowlang.md",
   "content": "---\ntitle: \"Meow Programming Language vs MeowLang and Other Cat-themed Languages\"\ndescription: \"How the Meow Programming Language differs from MeowLang and other cat-themed languages. Meow transpiles .nyan files to Go source code and compiles to native binaries.\"\nsitemap:\n  changefreq: monthly\n  priority: 0.6\n---\n\nIf you searched for \"Meow language\" or \"MeowLang\" and landed here, this page\nexplains what the **Meow Programming Language** is, and how it relates to\nother projects that share a similar cat-themed name.\n\n## What is the Meow Programming Language?\n\nThe Meow Programming Language is a cat-themed **functional** programming\nlanguage that transpiles `.nyan` source files into Go source code, which is\nthen compiled to a native binary using the standard Go toolchain.\n\nHighlights:\n\n- File extension: `.nyan`\n- Pipeline: `.nyan` → Lexer → Parser → Checker → Codegen → Go source → `go build` → native binary\n- Cat-themed keywords such as `nyan` (var), `meow` (function), `purr` (loop), `peek` (pattern match), `hiss` (raise), and `gag` (catch)\n- First-class functions, pattern matching, and a pipe operator (`|=|`)\n- Zero external runtime dependencies — the runtime is written in plain Go\n\nIn short:\n\n> The Meow Programming Language lets you write programs in playful, cat-themed\n> syntax while keeping the performance and tooling of native Go binaries.\n\nLearn more in the […]
 
 > TOOL
@@ -1203,7 +1203,7 @@ id: toolu_01QQHy5Ww1kwSP5xCdCNQSR1
 tool_result
 id: toolu_01QQHy5Ww1kwSP5xCdCNQSR1
 ```
-File created successfully at: /Users/135yshr/go/src/github.com/135yshr/meow/website/content/meow-programming-language-vs-meowlang.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/go/src/github.com/135yshr/meow/website/content/meow-programming-language-vs-meowlang.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1217,7 +1217,7 @@ id: toolu_01Amq8UGLyYMLMUEHiwnQwwB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/README.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/README.md",
   "old_string": "- Official website: <https://135yshr.github.io/meow/>\n- Documentation: <https://135yshr.github.io/meow/doc/>\n- Tutorial: <https://135yshr.github.io/meow/learn/tutorial/>",
   "new_string": "- Official website: <https://135yshr.github.io/meow/>\n- Documentation: <https://135yshr.github.io/meow/doc/>\n- Tutorial: <https://135yshr.github.io/meow/learn/tutorial/>\n- Cookbook: <https://135yshr.github.io/meow/cookbook/>\n- Language Specification: <https://135yshr.github.io/meow/doc/spec/>"
 }
@@ -1228,7 +1228,7 @@ id: toolu_01Amq8UGLyYMLMUEHiwnQwwB
 tool_result
 id: toolu_01Amq8UGLyYMLMUEHiwnQwwB
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/meow/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/go/src/github.com/135yshr/meow/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1274,7 +1274,7 @@ tool_use Bash
 id: toolu_0164BgLcv8W6E2vPwvhYUB7q
 ```json
 {
-  "command": "pwd && grep -oE '<title>[^<]*</title>|<meta name=\"description\"[^>]*>|<link rel=\"canonical\"[^>]*>' /Users/135yshr/go/src/github.com/135yshr/meow/website/public/meow-programming-language-vs-meowlang/index.html | head -5",
+  "command": "pwd && grep -oE '<title>[^<]*</title>|<meta name=\"description\"[^>]*>|<link rel=\"canonical\"[^>]*>' /home/<USER>/go/src/github.com/135yshr/meow/website/public/meow-programming-language-vs-meowlang/index.html | head -5",
   "description": "Verify the new comparison page generation"
 }
 ```
@@ -1284,7 +1284,7 @@ id: toolu_0164BgLcv8W6E2vPwvhYUB7q
 tool_result
 id: toolu_0164BgLcv8W6E2vPwvhYUB7q
 ```
-/Users/135yshr/go/src/github.com/135yshr/meow/website
+/home/<USER>/go/src/github.com/135yshr/meow/website
 <title>Meow Programming Language vs MeowLang and Other Cat-themed Languages</title>
 <meta name="description" content="How the Meow Programming Language differs from MeowLang and other cat-themed languages. Meow transpiles .nyan files to Go source code and compiles to native binaries.">
 <link rel="canonical" href="https://135yshr.github.io/meow/meow-programming-language-vs-meowlang/">
@@ -1296,7 +1296,7 @@ tool_use Bash
 id: toolu_01L5cnuQ9RRZXcbegy58FN4J
 ```json
 {
-  "command": "grep -c \"meow-programming-language-vs-meowlang\" /Users/135yshr/go/src/github.com/135yshr/meow/website/public/sitemap.xml && echo \"---\" && grep -oE '<a href=\"[^\"]*\"[^>]*class=\"nav-logo\"[^>]*>' /Users/135yshr/go/src/github.com/135yshr/meow/website/public/index.html && grep -oE '<a [^>]*class=\"nav-github\"[^>]*>' /Users/135yshr/go/src/github.com/135yshr/meow/website/public/index.html && grep -oE '<a [^>]*class=\"nav-share\"[^>]*>' /Users/135yshr/go/src/github.com/135yshr/meow/website/public/index.html",
+  "command": "grep -c \"meow-programming-language-vs-meowlang\" /home/<USER>/go/src/github.com/135yshr/meow/website/public/sitemap.xml && echo \"---\" && grep -oE '<a href=\"[^\"]*\"[^>]*class=\"nav-logo\"[^>]*>' /home/<USER>/go/src/github.com/135yshr/meow/website/public/index.html && grep -oE '<a [^>]*class=\"nav-github\"[^>]*>' /home/<USER>/go/src/github.com/135yshr/meow/website/public/index.html && grep -oE '<a [^>]*class=\"nav-share\"[^>]*>' /home/<USER>/go/src/github.com/135yshr/meow/website/public/index.html",
   "description": "Verify sitemap inclusion and aria-labels"
 }
 ```
@@ -1323,7 +1323,7 @@ tool_use Bash
 id: toolu_01SFAk1sQUScfeKYXFNKnZ6d
 ```json
 {
-  "command": "cd /Users/135yshr/go/src/github.com/135yshr/meow && go vet ./... 2>&1 | tail -10",
+  "command": "cd /home/<USER>/go/src/github.com/135yshr/meow && go vet ./... 2>&1 | tail -10",
   "description": "Run go vet for safety"
 }
 ```
@@ -1333,7 +1333,7 @@ id: toolu_01SFAk1sQUScfeKYXFNKnZ6d
 tool_result
 id: toolu_01SFAk1sQUScfeKYXFNKnZ6d
 ```
-pattern ./...: open /Users/135yshr/Library/Caches/go-build/c2/c2f2912b2ed69ea711c9317e344f952ef7b9eb4e7f61359b58d6afb2dca95630-d: operation not permitted
+pattern ./...: open /home/<USER>/Library/Caches/go-build/c2/c2f2912b2ed69ea711c9317e344f952ef7b9eb4e7f61359b58d6afb2dca95630-d: operation not permitted
 ```
 
 > TOOL
@@ -1362,7 +1362,7 @@ tool_use Bash
 id: toolu_012uGCaDoSwXx64q9R4DM4BG
 ```json
 {
-  "command": "git -C /Users/135yshr/go/src/github.com/135yshr/meow status",
+  "command": "git -C /home/<USER>/go/src/github.com/135yshr/meow status",
   "description": "Check git status of all changes"
 }
 ```

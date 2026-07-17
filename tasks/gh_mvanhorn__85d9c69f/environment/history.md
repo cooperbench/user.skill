@@ -39,7 +39,7 @@ tool_use Read
 id: toolu_01QRrGVXLWUMGxUMicMe23wP
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go"
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go"
 }
 ```
 
@@ -138,7 +138,7 @@ tool_use Read
 id: toolu_019SVCrt4PGp4ehQBfSrWBKc
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck_test.go",
   "limit": 57
 }
 ```
@@ -224,7 +224,7 @@ tool_use Read
 id: toolu_01WzETk5zC4AYCVX6A7M7C1d
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go"
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go"
 }
 ```
 
@@ -375,7 +375,7 @@ id: toolu_0122Ve7vtjM6qikzx4V7GGE4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go",
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go",
   "old_string": "\t// Skip notification for prerelease versions (development builds).\n\t// We don't publish prerelease versions, so these are development builds and shouldn't trigger update notifications.\n\tif semver.Prerelease(current) != \"\" {\n\t\treturn false\n\t}\n\n\t// semver.Compare returns -1 if current < latest\n\treturn semver.Compare(current, latest) < 0",
   "new_string": "\t// Skip notification for dev builds (e.g., \"1.0.0-dev-xxx\").\n\t// These are local development builds and shouldn't trigger update notifications.\n\t// Normal prereleases (e.g., \"1.0.0-rc1\") should still be compared normally.\n\tif strings.Contains(semver.Prerelease(current), \"dev\") {\n\t\treturn false\n\t}\n\n\t// semver.Compare returns -1 if current < latest\n\treturn semver.Compare(current, latest) < 0"
 }
@@ -386,7 +386,7 @@ id: toolu_0122Ve7vtjM6qikzx4V7GGE4
 tool_result
 id: toolu_0122Ve7vtjM6qikzx4V7GGE4
 ```
-The file /Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go has been updated successfully.
+The file /home/<USER>/wks/cli/old-prs/cmd/entire/cli/versioncheck/versioncheck.go has been updated successfully.
 ```
 
 > TOOL
@@ -630,7 +630,7 @@ tool_use Bash
 id: toolu_015sZq22JNgPvGoSJdKNTQwa
 ```json
 {
-  "command": "git add cmd/entire/cli/versioncheck/versioncheck.go cmd/entire/cli/versioncheck/versioncheck_test.go && git commit -m \"$(cat <<'EOF'\nonly skip version check for dev builds, not all prereleases\n\nPreviously all prerelease versions (including rc) were skipped.\nNow only versions with \"-dev\" suffix skip the check, so rc\nprereleases are correctly flagged as outdated.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add cmd/entire/cli/versioncheck/versioncheck.go cmd/entire/cli/versioncheck/versioncheck_test.go && git commit -m \"$(cat <<'EOF'\nonly skip version check for dev builds, not all prereleases\n\nPreviously all prerelease versions (including rc) were skipped.\nNow only versions with \"-dev\" suffix skip the check, so rc\nprereleases are correctly flagged as outdated.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit version check fix"
 }
 ```
@@ -846,7 +846,7 @@ tool_use Read
 id: toolu_01544WwWpR99NK7QfKahcVNJ
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/cmd/entire/cli/buildinfo/buildinfo.go"
+  "file_path": "/home/<USER>/wks/cli/old-prs/cmd/entire/cli/buildinfo/buildinfo.go"
 }
 ```
 
@@ -871,7 +871,7 @@ tool_use Read
 id: toolu_01HnApqTcGjEPQpBETZG5E7q
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/mise.toml"
+  "file_path": "/home/<USER>/wks/cli/old-prs/mise.toml"
 }
 ```
 
@@ -937,7 +937,7 @@ tool_use Read
 id: toolu_01TGJ5r3FMkWsSRtCY95MBru
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/.goreleaser.yaml"
+  "file_path": "/home/<USER>/wks/cli/old-prs/.goreleaser.yaml"
 }
 ```
 
@@ -1026,7 +1026,7 @@ id: toolu_01NiW1x8H5WeUH7JYQjnEsjY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/mise.toml",
+  "file_path": "/home/<USER>/wks/cli/old-prs/mise.toml",
   "old_string": "run = \"\"\"\nVERSION=$(git describe --tags --always --dirty 2>/dev/null || echo \"dev\")\nCOMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo \"unknown\")\ngo build -ldflags \"-X github.com/entireio/cli/cmd/entire/cli/buildinfo.Version=${VERSION} -X github.com/entireio/cli/cmd/entire/cli/buildinfo.Commit=${COMMIT}\" -o entire ./cmd/entire\n\"\"\"",
   "new_string": "run = \"\"\"\nTAG=$(git describe --tags --abbrev=0 2>/dev/null || echo \"\")\nCOMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo \"unknown\")\nif [ -n \"$TAG\" ] && [ \"$(git describe --tags --exact-match 2>/dev/null)\" = \"$TAG\" ]; then\n  VERSION=\"$TAG\"\nelse\n  VERSION=\"${TAG:-0.0.0}-dev-${COMMIT}\"\nfi\ngo build -ldflags \"-X github.com/entireio/cli/cmd/entire/cli/buildinfo.Version=${VERSION} -X github.com/entireio/cli/cmd/entire/cli/buildinfo.Commit=${COMMIT}\" -o entire ./cmd/entire\n\"\"\""
 }
@@ -1052,7 +1052,7 @@ id: toolu_01KfCPmw7XrEAZTyiDr7h1D1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/mise.toml",
+  "file_path": "/home/<USER>/wks/cli/old-prs/mise.toml",
   "old_string": "VERSION=$(git describe --tags --always --dirty 2>/dev/null || echo \"dev\")",
   "new_string": "TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo \"0.0.0\")\nCOMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo \"unknown\")\nVERSION=$(git describe --tags --exact-match 2>/dev/null || echo \"${TAG}-dev-${COMMIT}\")"
 }
@@ -1078,7 +1078,7 @@ id: toolu_015cWCFe2oxo9dJ3z8GKbQgn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/mise.toml",
+  "file_path": "/home/<USER>/wks/cli/old-prs/mise.toml",
   "old_string": "VERSION=$(git describe --tags --always --dirty 2>/dev/null || echo \"dev\")\nCOMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo \"unknown\")",
   "new_string": "COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo \"unknown\")\nVERSION=$(git describe --tags --exact-match 2>/dev/null || echo \"$(git describe --tags --abbrev=0 2>/dev/null || echo 0.0.0)-dev-$COMMIT\")"
 }
@@ -1099,7 +1099,7 @@ tool_use Read
 id: toolu_01SQ7DecyeKLWtcZEiYQBax4
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/mise.toml",
+  "file_path": "/home/<USER>/wks/cli/old-prs/mise.toml",
   "offset": 23,
   "limit": 10
 }
@@ -1133,7 +1133,7 @@ id: toolu_012smZQGqNXd69jXkcsdKGYk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/mise.toml",
+  "file_path": "/home/<USER>/wks/cli/old-prs/mise.toml",
   "old_string": "VERSION=$(git describe --tags --always --dirty 2>/dev/null || echo \"dev\")",
   "new_string": "VERSION=$(git describe --tags --exact-match 2>/dev/null || echo \"${TAG}-dev-${COMMIT}\")"
 }
@@ -1155,7 +1155,7 @@ id: toolu_01TS87brUFoGA65KRH5Uzy5z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/old-prs/mise.toml",
+  "file_path": "/home/<USER>/wks/cli/old-prs/mise.toml",
   "old_string": "VERSION=$(git describe --tags --always --dirty 2>/dev/null || echo \"dev\")",
   "new_string": "VERSION=\"${TAG}-dev-${COMMIT}\""
 }
@@ -1166,7 +1166,7 @@ id: toolu_01TS87brUFoGA65KRH5Uzy5z
 tool_result
 id: toolu_01TS87brUFoGA65KRH5Uzy5z
 ```
-The file /Users/gtrrz-victor/wks/cli/old-prs/mise.toml has been updated successfully.
+The file /home/<USER>/wks/cli/old-prs/mise.toml has been updated successfully.
 ```
 
 > AGENT

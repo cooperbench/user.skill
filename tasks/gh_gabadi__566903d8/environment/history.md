@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01PEWPi1RqczZt8LR7GfVSKm
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/backlog.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/backlog.md"
 }
 ```
 
@@ -39,7 +39,7 @@ tool_use Read
 id: toolu_01HhrGj4CdoYqKpyiAihHhnk
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/ledger-project.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/ledger-project.md"
 }
 ```
 
@@ -72,7 +72,7 @@ tool_use Read
 id: toolu_01DgMrDkUMKne8SCncUNDAHw
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/ledger-swarmforge.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/ledger-swarmforge.md"
 }
 ```
 
@@ -110,7 +110,7 @@ tool_use Bash
 id: toolu_01MgYNLGrZthoc53HhGDhwiL
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi/crap4py/.agents/skills -type f | sort",
+  "command": "find /home/<USER>/workspace/addi/crap4py/.agents/skills -type f | sort",
   "description": "List all files in .agents/skills"
 }
 ```
@@ -120,8 +120,8 @@ id: toolu_01MgYNLGrZthoc53HhGDhwiL
 tool_result
 id: toolu_01MgYNLGrZthoc53HhGDhwiL
 ```
-/Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback/SKILL.md
-/Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback/SKILL.md
+/home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback/SKILL.md
 ```
 
 > TOOL
@@ -130,7 +130,7 @@ tool_use Read
 id: toolu_01QqzyjhCtpYUiR8WD8eXHwK
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback/SKILL.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-arc-fallback/SKILL.md"
 }
 ```
 
@@ -180,7 +180,7 @@ tool_use Read
 id: toolu_0161FC1gy5KqgnCV1Jc2d8xN
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback/SKILL.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.agents/skills/agent-retro-worktree-fallback/SKILL.md"
 }
 ```
 

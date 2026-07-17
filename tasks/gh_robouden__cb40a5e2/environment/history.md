@@ -59,7 +59,7 @@ tool_use Bash
 id: toolu_01VCTXJi8NxXpFQ8KSejTxLn
 ```json
 {
-  "command": "grep -A 20 '\"gitnexus\"' /home/rob/.claude.json | head -40",
+  "command": "grep -A 20 '\"gitnexus\"' /home/<USER>/.claude.json | head -40",
   "description": "Show gitnexus MCP config entry"
 }
 ```
@@ -76,13 +76,13 @@ id: toolu_01VCTXJi8NxXpFQ8KSejTxLn
   },
   "githubRepoPaths": {
     "safecast/bgeigiezen": [
-      "/home/rob/Documents/Safecast/bGeigieZen"
+      "/home/<USER>/Documents/Safecast/bGeigieZen"
     ]
   },
   "hasAvailableSubscription": false,
   "oauthAccount": {
     "accountUuid": "b316ae8d-725b-4fb4-a9af-354dd05db055",
-    "emailAddress": "oudendijk.biz@gmail.com",
+    "emailAddress": "<REDACTED_EMAIL>",
     "organizationUuid": "3d51b986-f06c-4f9c-b378-d892ec525ae1",
     "hasExtraUsageEnabled": true,
     "billingType": "stripe_subscription",
@@ -142,7 +142,7 @@ tool_result
 id: toolu_0147Fb7r29TpG2mNgXneSuNz
 ```
 ---
-167036 /bin/bash -c source /home/rob/.claude/shell-snapshots/snapshot-bash-1777211591035-m9etki.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'ss -tlnp 2>/dev/null | grep -E '"'"'4747|gitnexus'"'"' ; echo '"'"'---'"'"' ; pgrep -af gitnexus | head -5' < /dev/null && pwd -P >| /tmp/claude-cb3e-cwd
+167036 /bin/bash -c source /home/<USER>/.claude/shell-snapshots/snapshot-bash-1777211591035-m9etki.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'ss -tlnp 2>/dev/null | grep -E '"'"'4747|gitnexus'"'"' ; echo '"'"'---'"'"' ; pgrep -af gitnexus | head -5' < /dev/null && pwd -P >| /tmp/claude-cb3e-cwd
 ```
 
 > AGENT

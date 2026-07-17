@@ -12,8 +12,8 @@ tool_use exec_command
 id: call_ug3RGoxpb9NoiKHhGXeocHmp
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/goose-guest/.codex/skills/using-entire/SKILL.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/skills/using-entire/SKILL.md",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -71,7 +71,7 @@ id: call_bFjHlf6eQiqOvvuD1vZbcU5h
 ```json
 {
   "cmd": "entire status --json --no-pager",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -84,7 +84,7 @@ id: call_WQBmRUStkr3Fwl4q5iayCpyq
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -97,7 +97,7 @@ id: call_VfJo8idBfzVdVL9W50EZa80J
 ```json
 {
   "cmd": "ls -la",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -110,7 +110,7 @@ id: call_tQGy7wmw0qXUHRXfbszYkA94
 ```json
 {
   "cmd": "rg --files -g '!*node_modules*' -g '!*.png' -g '!*.jpg' -g '!*.jpeg' -g '!*.gif' -g '!*.svg'",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -259,7 +259,7 @@ id: call_LOxvpoGaExYCAu7o5Xc7gAtU
 ```json
 {
   "cmd": "entire status",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -272,7 +272,7 @@ id: call_KsLZb147CnMMPo9wExRt4Koy
 ```json
 {
   "cmd": "sed -n '1,220p' README.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -285,7 +285,7 @@ id: call_t6Ik56hIBoP1HNAXDjhqkml7
 ```json
 {
   "cmd": "sed -n '1,220p' package.json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -298,7 +298,7 @@ id: call_ePzQ8oiI1RFvf0T5gueHPApK
 ```json
 {
   "cmd": "sed -n '1,160p' .gitignore",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -311,7 +311,7 @@ id: call_FXoBsOofy9dLm4qZpFhCPSul
 ```json
 {
   "cmd": "sed -n '1,220p' PLAN.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -515,7 +515,7 @@ id: call_hHMhl3NgqJ6os2xFQqSICKtg
 ```json
 {
   "cmd": "sed -n '221,520p' PLAN.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -528,7 +528,7 @@ id: call_b434L7y642j4iCtBiLICryi0
 ```json
 {
   "cmd": "git log --oneline -8",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -541,7 +541,7 @@ id: call_zKRz9Yb1PUiA5vkRalusmylM
 ```json
 {
   "cmd": "rg -n \"TODO|FIXME|eslint|prettier|test|lint|format|Playwright|Vitest|Jest|contribut|PR|pull request|commit|Entire|leaderboard|DATABASE_URL|POSTGRES_URL\" README.md PLAN.md package.json src api index.html vite.config.js .github 2>/dev/null",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -554,7 +554,7 @@ id: call_yiUbXKyWyW1AyFxjzXxWmR7a
 ```json
 {
   "cmd": "find .github -maxdepth 3 -type f -print 2>/dev/null",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -670,7 +670,7 @@ id: call_4cN0Avhp5QifdptNvz8vp7Gb
 ```json
 {
   "cmd": "git log --format='%H %s%n%b' -5 -- README.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -683,7 +683,7 @@ id: call_Tz8hmyANWZF2OKsB4pnOImiK
 ```json
 {
   "cmd": "git log --format='%H %s%n%b' -5 -- PLAN.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -696,7 +696,7 @@ id: call_o4vcRScUzBOFJ8P5svtUITsG
 ```json
 {
   "cmd": "git log --format='%H %s%n%b' -5 -- package.json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -709,7 +709,7 @@ id: call_m59pmbxv7H1G9G0uWXlNMTbY
 ```json
 {
   "cmd": "sed -n '1,140p' src/main.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -722,7 +722,7 @@ id: call_cJTBmCOSpvIqUvwjm2xaOSTg
 ```json
 {
   "cmd": "sed -n '1,140p' vite.config.js",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -756,7 +756,7 @@ language) over the planet before dropping into orbit. Adds Options > Display
 > TV EFFECT — scanlines + vignette overlay, on by default, remembered in
 localStorage.
 
-Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>
 Entire-Checkpoint: e3c8f30e3a18
 
 
@@ -787,7 +787,7 @@ rebellion transmission, mission-records framing, and updated story rules
 (speaker is the rebellion; no subagents/gameplay named; rebellion is a cause
 not a war).
 
-Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>
 Entire-Checkpoint: 47c7e9ab56d1
 
 6812e83c578486e8f0f389eb8fa4d3e193ab22a0 Add story intro + TV look to the title screen
@@ -796,7 +796,7 @@ language) over the planet before dropping into orbit. Adds Options > Display
 > TV EFFECT — scanlines + vignette overlay, on by default, remembered in
 localStorage.
 
-Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>
 Entire-Checkpoint: e3c8f30e3a18
 
 
@@ -912,7 +912,7 @@ id: call_TXb6tHN1hl0DDo6tAt41hK9j
 ```json
 {
   "cmd": "entire checkpoint explain 4bff610626fc --json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -925,7 +925,7 @@ id: call_sMZ2RJl1kNuN81bCPrZv2oQG
 ```json
 {
   "cmd": "entire checkpoint explain b0012a08f295 --json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -938,7 +938,7 @@ id: call_iMqMqWXyI0anjZI3ZjPOjCOF
 ```json
 {
   "cmd": "entire checkpoint explain 9142362bcd10 --json",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -1341,7 +1341,7 @@ id: call_MbrXc8rULKXAZaYPqJgfYIE0
 ```json
 {
   "cmd": "sed -n '1,260p' CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1354,7 +1354,7 @@ id: call_9AhXFASSJWwexBjo9y6WEK9i
 ```json
 {
   "cmd": "git diff -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1367,7 +1367,7 @@ id: call_lqI33F8VhAffblH1YyYdUQO4
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1472,7 +1472,7 @@ id: call_4ijp3Wl5VBo58eHxk8awhh1J
 ```json
 {
   "cmd": "npm run build",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -1520,7 +1520,7 @@ id: call_LdaW0nSx1yRClWzYxL2W8Bly
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1543,7 +1543,7 @@ Output:
 
 > AGENT
 
-Created [CONTRIBUTING.md](/Users/goose-guest/Documents/work/planetfall-seed-signalkit/CONTRIBUTING.md) with repo-specific guidelines for setup, project structure, coding style, game/story guardrails, verification, commit/PR workflow, leaderboard env notes, Entire checkpoint expectations, and GPL-3.0-only licensing.
+Created [CONTRIBUTING.md](/home/<USER>/Documents/work/planetfall-seed-signalkit/CONTRIBUTING.md) with repo-specific guidelines for setup, project structure, coding style, game/story guardrails, verification, commit/PR workflow, leaderboard env notes, Entire checkpoint expectations, and GPL-3.0-only licensing.
 
 Verification: `npm run build` passes. Vite still reports the existing large bundle warning, but there are no build errors.
 
@@ -1572,7 +1572,7 @@ id: call_LlHvCOLTfOLZUu9MKNiDdxU6
 ```json
 {
   "cmd": "git remote -v",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1585,7 +1585,7 @@ id: call_OCH8IrZnxQ3nBeJy3Dl8Ro45
 ```json
 {
   "cmd": "sed -n '1,240p' CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1685,7 +1685,7 @@ id: call_4EiDx2i9O2XkpIfqNTzC6dy4
 ```json
 {
   "cmd": "sed -n '1,240p' CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1698,7 +1698,7 @@ id: call_Cj5AvtoVW8jjFkpH70PPivrv
 ```json
 {
   "cmd": "git diff -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -1711,7 +1711,7 @@ id: call_7g1nrwzB4J6umaI6ugEynYKP
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1801,7 +1801,7 @@ Output:
 
 > AGENT
 
-Yep, tightened it up. [CONTRIBUTING.md](/Users/goose-guest/Documents/work/planetfall-seed-signalkit/CONTRIBUTING.md) now focuses on:
+Yep, tightened it up. [CONTRIBUTING.md](/home/<USER>/Documents/work/planetfall-seed-signalkit/CONTRIBUTING.md) now focuses on:
 
 - Whether contributors need to fork, plus the actual clone/branch/commit/push flow
 - How to run the game locally
@@ -1825,7 +1825,7 @@ id: call_FLzs1bmhO96f4nv6uTn9Gn4K
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1838,7 +1838,7 @@ id: call_rKZRais4VE93RvjT45CUDDRT
 ```json
 {
   "cmd": "git diff -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1884,7 +1884,7 @@ id: call_uLSxDmXCP1ApjXNcR44wDHlw
 ```json
 {
   "cmd": "git add CONTRIBUTING.md && git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1917,7 +1917,7 @@ id: call_oa7d6CSyJR3gdBDpzUuUFpIN
 ```json
 {
   "cmd": "git commit -m \"Add contributor guidelines\"",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2007,7 +2007,7 @@ id: call_YFtfw6IrNiVYtB7I6k0iTXfE
 ```json
 {
   "cmd": "ps -o pid,ppid,stat,command -ax | rg 'git|entire|commit|hook|2499'",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2044,7 +2044,7 @@ id: call_AbewD9GK6SLL4vjGJvV5NX3X
 ```json
 {
   "cmd": "ps -o pid,ppid,etime,stat,command -p 2902,2921,2922,30864",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2079,7 +2079,7 @@ id: call_XsO2eNmaVGnid6sk7lEJt3my
 ```json
 {
   "cmd": "git log -1 --oneline --decorate",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2092,7 +2092,7 @@ id: call_kTgm3CelG50gITdqMQ4YLhPX
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2105,7 +2105,7 @@ id: call_aNzZc8ILiDRTz3nfaiUm6xAD
 ```json
 {
   "cmd": "git diff --cached --stat",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2194,7 +2194,7 @@ id: call_d885TWTI2pPTGnT5ypd0ESHH
 ```json
 {
   "cmd": "git push origin preview",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2227,7 +2227,7 @@ id: call_pxyOw7duKTzNquReIZADpaJL
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2256,9 +2256,9 @@ Commit: `8a59c6c Add contributor guidelines`
 
 One note: the local post-commit Entire hook hung after the commit was created, so I interrupted that hook session. The later `git push` completed successfully and pushed `entire/checkpoints/v1` too. Working tree is clean except for the pre-existing untracked `.codex/`.
 
-::git-stage{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit"}
-::git-commit{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit"}
-::git-push{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit" branch="preview"}
+::git-stage{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit"}
+::git-commit{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit"}
+::git-push{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit" branch="preview"}
 
 > DEVELOPER
 
@@ -2279,7 +2279,7 @@ id: call_lcqGkfyV1tFYRdEzdtomPwkG
 ```json
 {
   "cmd": "git diff -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2292,7 +2292,7 @@ id: call_zFF3Pz3gbsggawGTARv11tWf
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2353,7 +2353,7 @@ id: call_WNKF61VBsSmjDVjAWDOatvF3
 ```json
 {
   "cmd": "sed -n '1,120p' .git/hooks/post-commit",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2366,7 +2366,7 @@ id: call_Cqgwr91v4TFksfSocCY6AeZK
 ```json
 {
   "cmd": "entire status",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2439,7 +2439,7 @@ id: call_n6IJdqLUMrwWVafWEkrExVr3
 ```json
 {
   "cmd": "which git",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2452,7 +2452,7 @@ id: call_rSsDVovtdXAwK3KoB0LtEVlG
 ```json
 {
   "cmd": "which entire",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2497,7 +2497,7 @@ id: call_U3ZUGlIXKlOrXmfnICOK2oOB
 ```json
 {
   "cmd": "git add CONTRIBUTING.md && PATH=/usr/bin:/bin:/usr/sbin:/sbin git commit -m \"Mention Entire sessions in contributor guide\"",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2530,7 +2530,7 @@ id: call_MY0ezOmuJtkwqRr7ZsYTxPPL
 ```json
 {
   "cmd": "git push origin preview",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2562,7 +2562,7 @@ id: call_6vpqIWgEBfyJXJLSdxaddjtX
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2585,7 +2585,7 @@ Output:
 
 > AGENT
 
-Added the Entire-enabled repo note to [CONTRIBUTING.md](/Users/goose-guest/Documents/work/planetfall-seed-signalkit/CONTRIBUTING.md), including the sessions link: [entire.io/gh/blackgirlbytes/planetfall-seed-signalkit/sessions](https://entire.io/gh/blackgirlbytes/planetfall-seed-signalkit/sessions).
+Added the Entire-enabled repo note to [CONTRIBUTING.md](/home/<USER>/Documents/work/planetfall-seed-signalkit/CONTRIBUTING.md), including the sessions link: [entire.io/gh/blackgirlbytes/planetfall-seed-signalkit/sessions](https://entire.io/gh/blackgirlbytes/planetfall-seed-signalkit/sessions).
 
 Committed and pushed to `origin/preview`.
 
@@ -2593,9 +2593,9 @@ Commit: `39480a3 Mention Entire sessions in contributor guide`
 
 Local tree is clean except for the existing untracked `.codex/`.
 
-::git-stage{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit"}
-::git-commit{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit"}
-::git-push{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit" branch="preview"}
+::git-stage{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit"}
+::git-commit{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit"}
+::git-push{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit" branch="preview"}
 
 > DEVELOPER
 
@@ -2612,7 +2612,7 @@ id: call_QOYUo8KwTsgMO4Y27Ky4meiW
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2625,7 +2625,7 @@ id: call_TIHru8ZwFvyL8TbKIv9QDiDI
 ```json
 {
   "cmd": "git log --oneline --decorate -5",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2638,7 +2638,7 @@ id: call_VqJ6piGswrlXJEC334T09YAq
 ```json
 {
   "cmd": "git fetch origin",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2701,7 +2701,7 @@ id: call_kUHbkl7tZ561ycqxyzJ6sAvS
 ```json
 {
   "cmd": "git switch main && git pull --ff-only origin main && PATH=/usr/bin:/bin:/usr/sbin:/sbin git cherry-pick 8a59c6c 39480a3",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2743,7 +2743,7 @@ id: call_mM7wIHEnAKsLxkYwgNTpttW6
 ```json
 {
   "cmd": "git push origin main",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2775,7 +2775,7 @@ id: call_tuslvqj5XhhnJk7auUznwip6
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2788,7 +2788,7 @@ id: call_J5v8wv9DvYDDaz3V3OVYcPu2
 ```json
 {
   "cmd": "git log --oneline --decorate -5 --all --simplify-by-decoration",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2801,7 +2801,7 @@ id: call_kFy73AkKnqOhULMrne3KW9JS
 ```json
 {
   "cmd": "git log --oneline -3 -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2865,8 +2865,8 @@ New `main` commits:
 
 I left `preview` unchanged since it was already pushed; it still has the earlier copies of those commits. Local branch is now `main`, clean except for the existing untracked `.codex/`.
 
-::git-commit{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit"}
-::git-push{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit" branch="main"}
+::git-commit{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit"}
+::git-push{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit" branch="main"}
 
 > DEVELOPER
 
@@ -2883,7 +2883,7 @@ id: call_gZjVU4ceDS7vXYbIDF217x6o
 ```json
 {
   "cmd": "git ls-remote --heads origin main preview",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -2896,7 +2896,7 @@ id: call_qri6EOX4e67VfFP2GIo9gRWy
 ```json
 {
   "cmd": "git ls-tree --name-only origin/main CONTRIBUTING.md && git ls-tree --name-only origin/preview CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2909,7 +2909,7 @@ id: call_LwKnWfjdQQstQvinZh4YImwK
 ```json
 {
   "cmd": "git remote show origin",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 16000
 }
@@ -2984,7 +2984,7 @@ id: call_AZwIVPrYooXVkNMxzDAuVX2M
 ```json
 {
   "cmd": "git fetch origin",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2997,7 +2997,7 @@ id: call_yioGXcwxWf1HPhQminjNorhu
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3010,7 +3010,7 @@ id: call_UKjbaDXFjzTLS09RWVLxCvpM
 ```json
 {
   "cmd": "git log --oneline --decorate --graph --all -20",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -3088,7 +3088,7 @@ id: call_AIQQv49Q0ADkFeS7kE4aPvNf
 ```json
 {
   "cmd": "git branch -avv",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -3101,7 +3101,7 @@ id: call_VVdFjXtuwmstLt8GjYvRVwhS
 ```json
 {
   "cmd": "git log --oneline --decorate -8 origin/main",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3114,7 +3114,7 @@ id: call_36n3GzmlPb67Al9XK1j0mCvv
 ```json
 {
   "cmd": "git log --oneline --decorate -8 origin/preview",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3127,7 +3127,7 @@ id: call_WblWNMdo0S55WI02A3owMRxS
 ```json
 {
   "cmd": "git ls-tree -r --name-only origin/main | rg '^CONTRIBUTING\\.md$|contributing'",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3140,7 +3140,7 @@ id: call_nXn4hla3R1ojIs6xBjmVji4a
 ```json
 {
   "cmd": "git show --stat --oneline --decorate origin/main --",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3153,7 +3153,7 @@ id: call_heXoMMg82HJCMwwuXYcc6RCL
 ```json
 {
   "cmd": "git show --stat --oneline --decorate origin/preview --",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3280,7 +3280,7 @@ id: call_aTUNbKHwJjQQ5BJtoDpNkFaq
 ```json
 {
   "cmd": "git show --format=fuller --stat --patch --find-renames e614c7b -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -3293,7 +3293,7 @@ id: call_atB6cNNbjxGZSgtgIbMPN9ai
 ```json
 {
   "cmd": "git show --format=fuller --stat --patch --find-renames 3bc0a7c -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -3310,9 +3310,9 @@ Process exited with code 0
 Original token count: 1228
 Output:
 commit e614c7b061aa47ac9e9aae49491912780d52087b
-Author:     blackgirlbytes <rizel@entire.io>
+Author:     blackgirlbytes <<REDACTED_EMAIL>>
 AuthorDate: Thu Jun 18 11:45:50 2026 -0400
-Commit:     blackgirlbytes <rizel@entire.io>
+Commit:     blackgirlbytes <<REDACTED_EMAIL>>
 CommitDate: Thu Jun 18 11:45:50 2026 -0400
 
     Remove contributor guide
@@ -3393,7 +3393,7 @@ id: call_KFNrxwxH2lRWY028YJqAqURR
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3406,7 +3406,7 @@ id: call_fmhMdeatnd0pJ7V2FFYePsvX
 ```json
 {
   "cmd": "git log --oneline --decorate -8 main",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3419,7 +3419,7 @@ id: call_lCtTpGZE9Dl7bjEC496mPHBa
 ```json
 {
   "cmd": "git show --name-status --oneline 56c0e9a -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3487,7 +3487,7 @@ id: call_WyTwmOZVfuEE9sD3ADxoWZiM
 ```json
 {
   "cmd": "git switch main && git pull --ff-only origin main && git restore --source=56c0e9a -- CONTRIBUTING.md && git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -3529,7 +3529,7 @@ id: call_EAWoBBSylW32CV9JlGRnaPu9
 ```json
 {
   "cmd": "sed -n '1,220p' CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -3542,7 +3542,7 @@ id: call_vkZfCrFhtKa51NfHf4iltjSn
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3555,7 +3555,7 @@ id: call_zm18h0fws1xVFzHc4WogYYMK
 ```json
 {
   "cmd": "git diff --stat -- CONTRIBUTING.md",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3655,7 +3655,7 @@ id: call_79ZDlPL1XrQBqApuCwIwFTVQ
 ```json
 {
   "cmd": "git add CONTRIBUTING.md && PATH=/usr/bin:/bin:/usr/sbin:/sbin git commit -m \"Restore contributor guidelines\"",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -3689,7 +3689,7 @@ id: call_jBU7xicIURGw431Hiv7wVChG
 ```json
 {
   "cmd": "git push origin main",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -3722,7 +3722,7 @@ id: call_mLSEIt8Hr7dWbTLB33oK7L2Y
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3735,7 +3735,7 @@ id: call_eJoO4zeuCwbnQJcHhuE5abHC
 ```json
 {
   "cmd": "git ls-remote --heads origin main && git ls-tree --name-only origin/main CONTRIBUTING.md && git log --oneline -3 origin/main",
-  "workdir": "/Users/goose-guest/Documents/work/planetfall-seed-signalkit",
+  "workdir": "/home/<USER>/Documents/work/planetfall-seed-signalkit",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -3782,6 +3782,6 @@ Commit: `c23db79 Restore contributor guidelines`
 
 I also verified `origin/main` now contains `CONTRIBUTING.md`. Local tree is clean except for the existing untracked `.codex/`.
 
-::git-stage{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit"}
-::git-commit{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit"}
-::git-push{cwd="/Users/goose-guest/Documents/work/planetfall-seed-signalkit" branch="main"}
+::git-stage{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit"}
+::git-commit{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit"}
+::git-push{cwd="/home/<USER>/Documents/work/planetfall-seed-signalkit" branch="main"}

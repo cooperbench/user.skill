@@ -73,7 +73,7 @@ tool_use Read
 id: toolu_01UbWozH8eZiXVsTZKfnehdm
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py"
 }
 ```
 
@@ -128,7 +128,7 @@ id: toolu_01D1VMKVRcF9ZHeWgKP4XpVG
 {
   "description": "Map shape-detect pipeline & signals",
   "subagent_type": "Explore",
-  "prompt": "I'm working on issue #427 in the bmad-module-skill-forge repo (at /home/armel/Projects/OSS/bmad-module-skill-forge). The issue: the `language-reference` shape in `src/shared/scripts/skf-shape-detect.py` never fires for repos that ARE a language/language-tooling (rust-lang/rust, pest-parser/pest), because it only fires on parser-generator *dependencies* — detecting consumers of parser tooling, not producers.\n\nI need to understand the full pipeline around shape detection so a design discussion is grounded. Please investigate (medium-thorough) and report:\n\n1. How `skf-shape-detect.py` is invoked — who calls it, with what inputs. Search the skills/workflows for `skf-shape-detect` references. What manifest paths get passed in? Is there any upstream step that clones the repo or has access to the full file tree, repo metadata (name, topics, description), or grammar files (.pest/.lalrpop/.y/.l)?\n\n2. Where the `language-reference` shape is consumed downstream — what does analyze-source (AN auto-scope), brief-skill (BS), and test-skill (TS) do differently when shape==language-reference? Look in src/ for these skills/workflows.\n\n3. The test file for shape-detect — find the test (likely test/test-skf-shape-detect.py or similar), and report how rust-lang/rust and pest are currently exercised (the issue mentions a \"deterministic-layer test\").\n\n4. Any concept of \"multi-corpus\" or combining a code repo with external doc corpora in the codebase — […]
+  "prompt": "I'm working on issue #427 in the bmad-module-skill-forge repo (at /home/<USER>/Projects/OSS/bmad-module-skill-forge). The issue: the `language-reference` shape in `src/shared/scripts/skf-shape-detect.py` never fires for repos that ARE a language/language-tooling (rust-lang/rust, pest-parser/pest), because it only fires on parser-generator *dependencies* — detecting consumers of parser tooling, not producers.\n\nI need to understand the full pipeline around shape detection so a design discussion is grounded. Please investigate (medium-thorough) and report:\n\n1. How `skf-shape-detect.py` is invoked — who calls it, with what inputs. Search the skills/workflows for `skf-shape-detect` references. What manifest paths get passed in? Is there any upstream step that clones the repo or has access to the full file tree, repo metadata (name, topics, description), or grammar files (.pest/.lalrpop/.y/.l)?\n\n2. Where the `language-reference` shape is consumed downstream — what does analyze-source (AN auto-scope), brief-skill (BS), and test-skill (TS) do differently when shape==language-reference? Look in src/ for these skills/workflows.\n\n3. The test file for shape-detect — find the test (likely test/test-skf-shape-detect.py or similar), and report how rust-lang/rust and pest are currently exercised (the issue mentions a \"deterministic-layer test\").\n\n4. Any concept of \"multi-corpus\" or combining a code repo with external doc corpora in the codebase — […]
 
 > TOOL
 
@@ -141,7 +141,7 @@ Perfect! Now I have enough information. Let me compile my complete findings:
 
 ### 1. How `skf-shape-detect.py` is Invoked
 
-**Invocation Point:** `/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md` (§3: "Invoke Shape Detection")
+**Invocation Point:** `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md` (§3: "Invoke Shape Detection")
 
 **Command:**
 ```bash
@@ -258,7 +258,7 @@ tool_use Bash
 id: toolu_016YWed1XLdjq1Dhst1HsMkw
 ```json
 {
-  "command": "python3 /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/armel/Projects/OSS/bmad-module-skill-forge --key agents 2>/dev/null; echo \"---USER---\"; python3 /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/armel/Projects/OSS/bmad-module-skill-forge --key user_name 2>/dev/null",
+  "command": "python3 /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/<USER>/Projects/OSS/bmad-module-skill-forge --key agents 2>/dev/null; echo \"---USER---\"; python3 /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/<USER>/Projects/OSS/bmad-module-skill-forge --key user_name 2>/dev/null",
   "description": "Resolve agent roster and user name"
 }
 ```
@@ -605,7 +605,7 @@ id: toolu_01BrCHzXwMUwhhnZHPKoE8rp
 {
   "description": "Investigate doc_urls/multi-corpus flow",
   "subagent_type": "Explore",
-  "prompt": "In the bmad-module-skill-forge repo (/home/armel/Projects/OSS/bmad-module-skill-forge), I'm designing a \"multi-corpus\" capability for issue #427: combining a CODE repo (e.g. rust-lang/rust) with external DOC corpora (the Rust Book, std-lib docs) into ONE generated skill. Today SKF has `doc_urls` and a `docs-only` scope.type, but supposedly no way to combine a code repo + multiple external doc corpora in one skill. I need to map the lightest integration path that AVOIDS a new scope.type (adding a scope.type value is a ~25-file lockstep change).\n\nInvestigate thoroughly and report with exact file paths + line numbers + quoted snippets:\n\n1. **doc_urls flow end-to-end.** Where is `doc_urls` (or doc_url, documentation URLs, external docs) defined, captured, validated, and consumed? Trace it through: the analyze-source/scope step, the brief envelope schema (src/shared/scripts/schemas/*.json), the brief result, and into skf-brief-skill / assembly. Search src/ for `doc_url`, `doc_urls`, `docs-only`, `external_docs`, `corpus`, `corpora`. What shape does it take — single URL? list? per-source metadata?\n\n2. **docs-only scope.type.** How is `docs-only` handled differently downstream from a code shape? What does the assembly/brief do with a docs-only skill vs a code skill (full-library)? Can a single skill currently carry BOTH a code source AND doc_urls, or […]
+  "prompt": "In the bmad-module-skill-forge repo (/home/<USER>/Projects/OSS/bmad-module-skill-forge), I'm designing a \"multi-corpus\" capability for issue #427: combining a CODE repo (e.g. rust-lang/rust) with external DOC corpora (the Rust Book, std-lib docs) into ONE generated skill. Today SKF has `doc_urls` and a `docs-only` scope.type, but supposedly no way to combine a code repo + multiple external doc corpora in one skill. I need to map the lightest integration path that AVOIDS a new scope.type (adding a scope.type value is a ~25-file lockstep change).\n\nInvestigate thoroughly and report with exact file paths + line numbers + quoted snippets:\n\n1. **doc_urls flow end-to-end.** Where is `doc_urls` (or doc_url, documentation URLs, external docs) defined, captured, validated, and consumed? Trace it through: the analyze-source/scope step, the brief envelope schema (src/shared/scripts/schemas/*.json), the brief result, and into skf-brief-skill / assembly. Search src/ for `doc_url`, `doc_urls`, `docs-only`, `external_docs`, `corpus`, `corpora`. What shape does it take — single URL? list? per-source metadata?\n\n2. **docs-only scope.type.** How is `docs-only` handled differently downstream from a code shape? What does the assembly/brief do with a docs-only skill vs a code skill (full-library)? Can a single skill currently carry BOTH a code source AND doc_urls, or […]
 
 > TOOL
 
@@ -624,15 +624,15 @@ Based on my thorough tracing of the SKF codebase, here is the exact mapping of h
 
 #### A. **Capture & Validation** (Analyze-Source → Brief)
 
-**File: `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py`** (lines 158, 273)
+**File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py`** (lines 158, 273)
 - `_is_doc_url()` function detects documentation URLs from README and linked content
 - URLs are extracted as candidates during repo scanning
 
-**File: `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-validate-brief-inputs.py`** (lines 43, 81)
+**File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-validate-brief-inputs.py`** (lines 43, 81)
 - `doc_urls` is a recognized optional input field
 - Flagged as "required when source_type == 'docs-only'"
 
-**File: `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-write-skill-brief.py`** (lines 54, 98, 222-242, 435-440)
+**File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-write-skill-brief.py`** (lines 54, 98, 222-242, 435-440)
 - **Input shape (lines 54, 98):** `"doc_urls": [{"url": "...", "label": "..."}]`
 - **Validation (lines 230-242):** When `source_type == "docs-only"`, enforces `doc_urls` ≥ 1 entry
 - **Per-entry validation (lines 237-242):** Each entry is a dict with required `url` (string), optional `label` (string)
@@ -645,7 +645,7 @@ Based on my thorough tracing of the SKF codebase, here is the exact mapping of h
 
 #### B. **Schema Definition** (Brief Envelope)
 
-**File: `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/schemas/skill-brief.v1.json`** (lines 47-59)
+**File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/schemas/skill-brief.v1.json`** (lines 47-59)
 ```json
 "doc_urls": {
   "type": "array",
@@ -672,7 +672,7 @@ tool_use Read
 id: toolu_01PHztC75qoFJDR6vwuBWeQY
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py"
 }
 ```
 
@@ -754,7 +754,7 @@ id: toolu_012bDszDLm9hyp9mr4eEbWwq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "    def test_parser_dep_beats_framework_dep(self, tmp_path):\n        \"\"\"language-reference fires before reference-app in the ladder.\"\"\"\n        path = write_package_json(tmp_path, {\n            \"name\": \"compiler-app\",\n            \"dependencies\": {\"tree-sitter\": \"0.20.0\", \"express\": \"4.18.0\"},\n        })\n        result = mod.detect(REPO_URL, [path])\n        assert result[\"shape\"] == \"language-reference\"",
   "new_string": "    def test_parser_dep_beats_framework_dep(self, tmp_path):\n        \"\"\"language-reference fires before reference-app in the ladder.\"\"\"\n        path = write_package_json(tmp_path, {\n            \"name\": \"compiler-app\",\n            \"dependencies\": {\"tree-sitter\": \"0.20.0\", \"express\": \"4.18.0\"},\n        })\n        result = mod.detect(REPO_URL, [path])\n        assert result[\"shape\"] == \"language-reference\"\n\n\n# --------------------------------------------------------------------------\n# Shape: language-reference — PRODUCERS (issue #427)\n#\n# The pre-#427 heuristic only fired on parser-generator *dependencies*, i.e.\n# *consumers* of parser tooling. A language tool's OWN repo doesn't depend on\n# a parser generator — it IS one (pest's Cargo.toml has no `pest` dep; it\n# declares `[package] name = \"pest\"`). Tier 1 fix: a repo whose own package\n# name is itself a known parser/grammar tool is a producer and classifies as\n# language-reference. The consumer path is kept (a DSL built on lalrpop is\n# still a language project).\n# --------------------------------------------------------------------------\n\n\nclass TestLanguageReferenceProducers:\n    def test_rust_pest_own_repo_is_producer(self, tmp_path):\n        \"\"\"pest-parser/pest: own name in parser-gen set, no pest dep.\"\"\"\n        path = write_cargo_toml(tmp_path, \"\"\"\n[package]\nname = \"pest\"\nversion = \"2.7.0\"\n\n[lib]\nname = \"pest\"\n\n[dependencies]\nucd-trie = \"0.1\"\n\"\"\")\n        result = mod.detect(REPO_URL, [path])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"language-reference\"\n        assert any(\"parser_producer\" in s for s in […]
 
@@ -763,7 +763,7 @@ id: toolu_012bDszDLm9hyp9mr4eEbWwq
 tool_result
 id: toolu_012bDszDLm9hyp9mr4eEbWwq
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -824,7 +824,7 @@ id: toolu_01AGtUbNXXNLFmVef8hGiB2H
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    # Collect dep-category matches\n    parser_deps = sorted(d for d in all_deps if d.lower() in _ALL_PARSER_DEPS)\n\n    for d in parser_deps:\n        signals.append(f\"parser_dep:{d}\")",
   "new_string": "    # Collect parser/grammar signals — both directions of the relationship.\n    #\n    # PRODUCER (issue #427): a repo whose own published package name is itself a\n    # known parser/grammar tool IS language tooling — pest, lalrpop, lark, peggy\n    # name *themselves*. A language tool's repo does not depend on a parser\n    # generator; it is one, so the old dependency-only check never fired for it.\n    # This keys on own-name ∈ parser-gen-set ONLY — never on substring tokens\n    # like \"parser\"/\"compiler\"/\"lang\", which are false-positive farms (a CSS\n    # parser, compiler-builtins, an arg parser are ordinary libraries).\n    #\n    # CONSUMER: a project that depends on a parser generator (a DSL built on\n    # lalrpop) is also a language project. Exclude the repo's own producer name\n    # from the consumer list so a self-reference isn't double-counted as \"uses\".\n    own_names = {\n        (m.get(\"name\") or \"\").strip().lower() for m in parsed if m.get(\"name\")\n    }\n    parser_producers = sorted(n for n in own_names if n in _ALL_PARSER_DEPS)\n    parser_deps = sorted(\n        d for d in […]
 
@@ -833,7 +833,7 @@ id: toolu_01AGtUbNXXNLFmVef8hGiB2H
 tool_result
 id: toolu_01AGtUbNXXNLFmVef8hGiB2H
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -847,7 +847,7 @@ id: toolu_013v5e35zTEweQ7JaVtbNmuj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    # 1. language-reference\n    if parser_deps:\n        confidence = _clamp(0.75 + len(parser_deps) * 0.05, 0.75, 0.85)\n        return {\"shape\": \"language-reference\", \"signals\": signals,\n                \"confidence\": round(confidence, 2), **result_base}",
   "new_string": "    # 1. language-reference — a parser/grammar producer (own name) or a project\n    # built on a parser generator (consumer dep).\n    if parser_producers or parser_deps:\n        # A producer (named itself a grammar tool) is a stronger signal than a\n        # consumer (merely depends on one).\n        base = 0.80 if parser_producers else 0.75\n        n_sig = len(parser_producers) + len(parser_deps)\n        confidence = _clamp(base + n_sig * 0.05, base, 0.90)\n        return {\"shape\": \"language-reference\", \"signals\": signals,\n                \"confidence\": round(confidence, 2), **result_base}"
 }
@@ -858,7 +858,7 @@ id: toolu_013v5e35zTEweQ7JaVtbNmuj
 tool_result
 id: toolu_013v5e35zTEweQ7JaVtbNmuj
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -891,7 +891,7 @@ tool_use Bash
 id: toolu_01L1WT5NseBSyMWPXTggb1iY
 ```json
 {
-  "command": "git add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfix(shape-detect): classify parser/grammar tools by their own name\n\nThe language-reference heuristic only fired on parser-generator\n*dependencies* — detecting consumers of parser tooling, never the tools\nthemselves. A grammar tool's own repo does not depend on a parser\ngenerator; it IS one (pest's manifest has no `pest` dep, it declares\n`name = \"pest\"`). Add producer detection keyed on the repo's own\npublished package name being a known parser/grammar tool, across npm,\nPyPI, and crates. Keep the consumer path (a DSL built on lalrpop is\nstill a language project) and exclude a producer's self-reference from\nthe consumer list.\n\nDetection keys on own-name membership in the parser-gen set ONLY, never\non substring tokens like \"parser\"/\"compiler\"/\"lang\" — those are\nfalse-positive farms (a CSS parser, compiler-builtins, an arg parser are\nordinary libraries). Negative-control tests lock that boundary in.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "git add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfix(shape-detect): classify parser/grammar tools by their own name\n\nThe language-reference heuristic only fired on parser-generator\n*dependencies* — detecting consumers of parser tooling, never the tools\nthemselves. A grammar tool's own repo does not depend on a parser\ngenerator; it IS one (pest's manifest has no `pest` dep, it declares\n`name = \"pest\"`). Add producer detection keyed on the repo's own\npublished package name being a known parser/grammar tool, across npm,\nPyPI, and crates. Keep the consumer path (a DSL built on lalrpop is\nstill a language project) and exclude a producer's self-reference from\nthe consumer list.\n\nDetection keys on own-name membership in the parser-gen set ONLY, never\non substring tokens like \"parser\"/\"compiler\"/\"lang\" — those are\nfalse-positive farms (a CSS parser, compiler-builtins, an arg parser are\nordinary libraries). Negative-control tests lock that boundary in.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit Tier-1 producer classification"
 }
 ```
@@ -974,7 +974,7 @@ id: toolu_01Mzfb9P74ePMh3AokposWzp
 {
   "description": "Map manifest scanner & clone architecture",
   "subagent_type": "Explore",
-  "prompt": "In bmad-module-skill-forge (/home/armel/Projects/OSS/bmad-module-skill-forge), I'm designing an \"ecosystem expansion\" for shape detection (issue #427): today the pipeline only scans repos that have package.json / Cargo.toml / pyproject.toml. I want to reach whole-language repos that DON'T have those — Go (go.mod), CPython (C, grammar file Grammar/python.gram), Ruby (C, parse.y) — and also add a directory-structure / grammar-file signal for the 3 existing ecosystems (e.g. rust-lang/rust's compiler/rustc_*, TypeScript's src/compiler/{scanner,parser,checker}).\n\nI need an EXACT map of the current scan + clone + signal-acquisition architecture so I can design the lightest expansion. Report concrete file paths + line numbers + quoted code:\n\n1. **The manifest scanner.** Find `skf-scan-manifests.py` (src/shared/scripts/). What ecosystems/manifest filenames does it recognize? How does it discover manifests — walk the tree, or a fixed glob list? What does it OUTPUT (the JSON shape consumed downstream)? Quote the recognized-manifest list and the output schema. How hard is it to add a new manifest type (e.g. go.mod)?\n\n2. **The clone / sparse-checkout logic.** In src/skf-analyze-source/references/step-auto-scope.md (around the §2 Manifest Scan, the git clone --filter=blob:none --sparse-checkout). Quote the exact sparse-checkout path patterns. This is where I'd add grammar-file globs / directory globs. […]
+  "prompt": "In bmad-module-skill-forge (/home/<USER>/Projects/OSS/bmad-module-skill-forge), I'm designing an \"ecosystem expansion\" for shape detection (issue #427): today the pipeline only scans repos that have package.json / Cargo.toml / pyproject.toml. I want to reach whole-language repos that DON'T have those — Go (go.mod), CPython (C, grammar file Grammar/python.gram), Ruby (C, parse.y) — and also add a directory-structure / grammar-file signal for the 3 existing ecosystems (e.g. rust-lang/rust's compiler/rustc_*, TypeScript's src/compiler/{scanner,parser,checker}).\n\nI need an EXACT map of the current scan + clone + signal-acquisition architecture so I can design the lightest expansion. Report concrete file paths + line numbers + quoted code:\n\n1. **The manifest scanner.** Find `skf-scan-manifests.py` (src/shared/scripts/). What ecosystems/manifest filenames does it recognize? How does it discover manifests — walk the tree, or a fixed glob list? What does it OUTPUT (the JSON shape consumed downstream)? Quote the recognized-manifest list and the output schema. How hard is it to add a new manifest type (e.g. go.mod)?\n\n2. **The clone / sparse-checkout logic.** In src/skf-analyze-source/references/step-auto-scope.md (around the §2 Manifest Scan, the git clone --filter=blob:none --sparse-checkout). Quote the exact sparse-checkout path patterns. This is where I'd add grammar-file globs / directory globs. […]
 
 > TOOL
 
@@ -1000,7 +1000,7 @@ tool_use Workflow
 id: toolu_012xYz8NQYNea7Ax6BtQMv1L
 ```json
 {
-  "script": "export const meta = {\n  name: 'issue-427-phaseB-design',\n  description: 'Design & harden Phase B (Tier-2 whole-language detection) + ecosystem expansion for SKF shape-detect',\n  phases: [\n    { title: 'Map', detail: 'parallel readers map the real scanner/clone/dataflow architecture' },\n    { title: 'Validate', detail: 'ground signal robustness against real language repos via deepwiki' },\n    { title: 'Design', detail: 'competing architecture proposals for expansion + conjunction rule' },\n    { title: 'Score', detail: 'judge panel scores the proposals' },\n    { title: 'RedTeam', detail: 'adversarially attack the conjunction rule with false-positive candidates' },\n    { title: 'Synthesize', detail: 'merge winner + graft best ideas + red-team fixes into one blueprint' },\n  ],\n}\n\nconst ROOT = '/home/armel/Projects/OSS/bmad-module-skill-forge'\n\nconst MAP_SCHEMA = {\n  type: 'object',\n  required: ['area', 'facts', 'seams', 'how_to_extend'],\n  properties: {\n    area: { type: 'string' },\n    facts: {\n      type: 'array',\n      items: {\n        type: 'object',\n        required: ['claim', 'file', 'evidence'],\n        properties: {\n          claim: { type: 'string' },\n          file: { type: 'string' },\n          lines: { type: 'string' },\n          evidence: { type: 'string', description: 'quoted code or exact value' },\n        },\n      },\n    },\n    seams: { type: 'array', items: { type: 'string' }, description: 'exact insertion points for expansion' },\n    how_to_extend: { type: 'string' },\n  },\n}\n\nconst VALIDATE_SCHEMA = {\n  type: […]
+  "script": "export const meta = {\n  name: 'issue-427-phaseB-design',\n  description: 'Design & harden Phase B (Tier-2 whole-language detection) + ecosystem expansion for SKF shape-detect',\n  phases: [\n    { title: 'Map', detail: 'parallel readers map the real scanner/clone/dataflow architecture' },\n    { title: 'Validate', detail: 'ground signal robustness against real language repos via deepwiki' },\n    { title: 'Design', detail: 'competing architecture proposals for expansion + conjunction rule' },\n    { title: 'Score', detail: 'judge panel scores the proposals' },\n    { title: 'RedTeam', detail: 'adversarially attack the conjunction rule with false-positive candidates' },\n    { title: 'Synthesize', detail: 'merge winner + graft best ideas + red-team fixes into one blueprint' },\n  ],\n}\n\nconst ROOT = '/home/<USER>/Projects/OSS/bmad-module-skill-forge'\n\nconst MAP_SCHEMA = {\n  type: 'object',\n  required: ['area', 'facts', 'seams', 'how_to_extend'],\n  properties: {\n    area: { type: 'string' },\n    facts: {\n      type: 'array',\n      items: {\n        type: 'object',\n        required: ['claim', 'file', 'evidence'],\n        properties: {\n          claim: { type: 'string' },\n          file: { type: 'string' },\n          lines: { type: 'string' },\n          evidence: { type: 'string', description: 'quoted code or exact value' },\n        },\n      },\n    },\n    seams: { type: 'array', items: { type: 'string' }, description: 'exact insertion points for expansion' },\n    how_to_extend: { type: 'string' },\n  },\n}\n\nconst VALIDATE_SCHEMA = {\n  type: […]
 
 > TOOL
 
@@ -1009,11 +1009,11 @@ id: toolu_012xYz8NQYNea7Ax6BtQMv1L
 ```
 Workflow launched in background. Task ID: w7233sazf
 Summary: Design & harden Phase B (Tier-2 whole-language detection) + ecosystem expansion for SKF shape-detect
-Transcript dir: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/subagents/workflows/wf_c0762d76-062
-Script file: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phaseb-design-wf_c0762d76-062.js
-(Edit this file with Write/Edit and re-invoke Workflow with {scriptPath: "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phaseb-design-wf_c0762d76-062.js"} to iterate without resending the script.)
+Transcript dir: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/subagents/workflows/wf_c0762d76-062
+Script file: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phaseb-design-wf_c0762d76-062.js
+(Edit this file with Write/Edit and re-invoke Workflow with {scriptPath: "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phaseb-design-wf_c0762d76-062.js"} to iterate without resending the script.)
 Run ID: wf_c0762d76-062
-To resume after editing the script: Workflow({scriptPath: "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phaseb-design-wf_c0762d76-062.js", resumeFromRunId: "wf_c0762d76-062"}) — completed agents return cached results.
+To resume after editing the script: Workflow({scriptPath: "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phaseb-design-wf_c0762d76-062.js", resumeFromRunId: "wf_c0762d76-062"}) — completed agents return cached results.
 
 You will be notified when it completes. Use /workflows to watch live progress.
 ```
@@ -1030,7 +1030,7 @@ tool_use Read
 id: toolu_01Rh1qG6fYeTU7NfGgLdezPM
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "offset": 320,
   "limit": 90
 }
@@ -1064,7 +1064,7 @@ tool_use Read
 id: toolu_016EhrFPWucZeeV8vHiV3F3g
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-validate-brief-schema.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-validate-brief-schema.py",
   "offset": 180,
   "limit": 50
 }
@@ -1200,7 +1200,7 @@ tool_use Bash
 id: toolu_016ZrB1Y7M4oqiMvfppDStxK
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== scanner: go/ecosystem support ===\"\ngrep -n \"go.mod\\|parse_go_mod\\|MANIFEST_ECOSYSTEMS\\|go\\b\" src/shared/scripts/skf-scan-manifests.py | head -30\necho \"=== shape-detect: _PARSERS + guards + lang-ref rung (current line numbers) ===\"\ngrep -n \"_PARSERS\\s*=\\|MISSING_MANIFESTS\\|parser_producers or parser_deps\\|def detect\\|def main\\|add_argument\" src/shared/scripts/skf-shape-detect.py",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== scanner: go/ecosystem support ===\"\ngrep -n \"go.mod\\|parse_go_mod\\|MANIFEST_ECOSYSTEMS\\|go\\b\" src/shared/scripts/skf-scan-manifests.py | head -30\necho \"=== shape-detect: _PARSERS + guards + lang-ref rung (current line numbers) ===\"\ngrep -n \"_PARSERS\\s*=\\|MISSING_MANIFESTS\\|parser_producers or parser_deps\\|def detect\\|def main\\|add_argument\" src/shared/scripts/skf-shape-detect.py",
   "description": "Verify scanner go support and shape-detect anchors"
 }
 ```
@@ -1255,7 +1255,7 @@ tool_use Read
 id: toolu_01MyerYXt2a4o9J2H7F5ASGJ
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "offset": 480,
   "limit": 22
 }
@@ -1296,7 +1296,7 @@ tool_use Read
 id: toolu_0185eQyHVqroWBdCHDEr2Rqa
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "offset": 670,
   "limit": 28
 }
@@ -1344,7 +1344,7 @@ tool_use Read
 id: toolu_01XGKb6gLmKkdBcC2ennSQCe
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "offset": 509,
   "limit": 26
 }
@@ -1394,7 +1394,7 @@ id: toolu_01Y2VTvurAQ2D9cCRPPYE8fg
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "# --------------------------------------------------------------------------\n# Shape: stack-compose\n# --------------------------------------------------------------------------",
   "new_string": "# --------------------------------------------------------------------------\n# Phase B plumbing (issue #427): optional --grammar-files / --tree-paths args\n# and the relaxed MISSING_MANIFESTS guard. These inputs do not yet change\n# classification (the grammar/tree rungs land in later commits) — this commit\n# only proves the interface is wired and behaviour-neutral on the existing\n# manifest path.\n# --------------------------------------------------------------------------\n\n\nclass TestPhaseBPlumbing:\n    def test_existing_two_arg_call_unchanged(self, tmp_path):\n        \"\"\"The 2-arg detect() signature still works (regression).\"\"\"\n        path = write_package_json(tmp_path, {\"name\": \"lib\", \"main\": \"index.js\"})\n        result = mod.detect(REPO_URL, [path])\n        assert result[\"shape\"] == \"library-API\"\n\n    def test_all_inputs_empty_still_errors(self):\n        \"\"\"The load-bearing pin: every input empty → exit 2, unchanged.\"\"\"\n        with pytest.raises(SystemExit) as exc_info:\n            mod.detect(REPO_URL, [], [], [])\n        assert exc_info.value.code == 2\n\n    def test_grammar_only_no_longer_errors(self):\n        \"\"\"Empty manifests but a grammar file present → no longer exit 2.\n\n        Classification is still unknown until the grammar rung lands; the point\n        here is that the manifest-less path stops hard-erroring.\n        \"\"\"\n        result = mod.detect(REPO_URL, [], [\"Grammar/python.gram\"], [])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"unknown\"\n\n    def test_tree_only_no_longer_errors(self):\n        result = mod.detect(REPO_URL, [], [], [\"compiler/\"])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"unknown\"\n\n    def test_cli_all_empty_exit_2(self):\n        proc = subprocess.run(\n            [sys.executable, str(SCRIPT_PATH), \"--repo-url\", REPO_URL,\n             \"--manifests\", \"\", \"--grammar-files\", \"\", \"--tree-paths\", \"\"],\n            capture_output=True, text=True, timeout=15,\n        )\n        assert proc.returncode == 2\n\n    def test_cli_grammar_only_not_exit_2(self):\n        proc = […]
 
@@ -1403,7 +1403,7 @@ id: toolu_01Y2VTvurAQ2D9cCRPPYE8fg
 tool_result
 id: toolu_01Y2VTvurAQ2D9cCRPPYE8fg
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1417,7 +1417,7 @@ id: toolu_01Lfogp3T715jtfdYMCxhpCW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "def detect(repo_url: str, manifest_paths: list[str]) -> dict[str, Any]:\n    \"\"\"Classify a repo into a skill shape from its manifest files.\"\"\"\n    if not manifest_paths:\n        _die(\"--manifests requires at least one path\", \"MISSING_MANIFESTS\")",
   "new_string": "def detect(\n    repo_url: str,\n    manifest_paths: list[str],\n    grammar_files: list[str] | None = None,\n    tree_paths: list[str] | None = None,\n) -> dict[str, Any]:\n    \"\"\"Classify a repo into a skill shape from its manifest files.\n\n    `grammar_files` (grammar files like Grammar/python.gram, *.y, *.g4) and\n    `tree_paths` (repo-relative directory/structural signals) are optional\n    tree-level signals harvested from the clone; they let whole-language repos\n    that carry no parser-generator dependency — and even manifest-less ones —\n    be classified. When all three inputs are empty there is nothing to\n    classify and we error, exactly as before.\n    \"\"\"\n    grammar_files = grammar_files or []\n    tree_paths = tree_paths or []\n    if not manifest_paths and not grammar_files and not tree_paths:\n        _die(\"--manifests requires at least one path\", \"MISSING_MANIFESTS\")"
 }
@@ -1428,7 +1428,7 @@ id: toolu_01Lfogp3T715jtfdYMCxhpCW
 tool_result
 id: toolu_01Lfogp3T715jtfdYMCxhpCW
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1438,7 +1438,7 @@ id: toolu_01Q6wgaAUEptWZo5E4orkAib
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    depths = [len(Path(m[\"_path\"]).parts) for m in parsed]\n    min_depth = min(depths)\n    root_coord_idx = -1",
   "new_string": "    depths = [len(Path(m[\"_path\"]).parts) for m in parsed]\n    min_depth = min(depths) if depths else -1\n    root_coord_idx = -1"
 }
@@ -1449,7 +1449,7 @@ id: toolu_01Q6wgaAUEptWZo5E4orkAib
 tool_result
 id: toolu_01Q6wgaAUEptWZo5E4orkAib
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1463,7 +1463,7 @@ id: toolu_01B6MsnpoPXHLatJSpHefVN1
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    parser.add_argument(\n        \"--manifests\", required=True,\n        help=\"Comma-separated local file paths to manifest files\",\n    )\n    args = parser.parse_args(argv)\n\n    manifest_paths = [p.strip() for p in args.manifests.split(\",\") if p.strip()]\n    if not manifest_paths:\n        _die(\"--manifests requires at least one path\", \"MISSING_MANIFESTS\")\n\n    result = detect(args.repo_url, manifest_paths)",
   "new_string": "    parser.add_argument(\n        \"--manifests\", required=True,\n        help=\"Comma-separated local file paths to manifest files (may be empty \"\n             \"when --grammar-files or --tree-paths carry the signal)\",\n    )\n    parser.add_argument(\n        \"--grammar-files\", default=\"\",\n        help=\"Comma-separated repo-relative grammar file paths (*.y, *.g4, \"\n             \"*.pest, Grammar/python.gram, ...)\",\n    )\n    parser.add_argument(\n        \"--tree-paths\", default=\"\",\n        help=\"Comma-separated repo-relative directory (trailing /) and \"\n             \"structural file signals harvested from the clone\",\n    )\n    args = parser.parse_args(argv)\n\n    manifest_paths = [p.strip() for p in args.manifests.split(\",\") if p.strip()]\n    grammar_files = [p.strip() for p in args.grammar_files.split(\",\") if p.strip()]\n    tree_paths = [p.strip() for p in args.tree_paths.split(\",\") if p.strip()]\n    if not manifest_paths and not grammar_files and not tree_paths:\n        _die(\"--manifests requires at least one path\", \"MISSING_MANIFESTS\")\n\n    result = detect(args.repo_url, manifest_paths, grammar_files, tree_paths)"
 }
@@ -1474,7 +1474,7 @@ id: toolu_01B6MsnpoPXHLatJSpHefVN1
 tool_result
 id: toolu_01B6MsnpoPXHLatJSpHefVN1
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1488,7 +1488,7 @@ id: toolu_01BRhDPXAGgJdhiPdSFmtRPm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "Input:\n  --repo-url   repository URL (required; context only, no cloning)\n  --manifests  comma-separated local file paths to manifest files (required)",
   "new_string": "Input:\n  --repo-url      repository URL (required; context only, no cloning)\n  --manifests     comma-separated local file paths to manifest files (may be\n                  empty when a tree-level signal is supplied instead)\n  --grammar-files comma-separated repo-relative grammar files (*.y, *.g4,\n                  *.pest, Grammar/python.gram, ...); a whole-language signal\n  --tree-paths    comma-separated repo-relative directory/structural signals\n                  harvested from the clone (compiler/ dir, lexer/parser/ast)"
 }
@@ -1499,7 +1499,7 @@ id: toolu_01BRhDPXAGgJdhiPdSFmtRPm
 tool_result
 id: toolu_01BRhDPXAGgJdhiPdSFmtRPm
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1532,7 +1532,7 @@ tool_use Bash
 id: toolu_01A9UVjbLDt72KZ4ku1ovZC4
 ```json
 {
-  "command": "git add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shape-detect): accept optional grammar-file and tree-path signals\n\nAdd two optional inputs, --grammar-files and --tree-paths, that carry\ntree-level evidence harvested from the clone (grammar files such as\nGrammar/python.gram or *.y/*.g4, and directory/structural signals like a\ncompiler/ dir with a lexer+parser+ast triad). They let whole-language\nrepos that declare no parser-generator dependency — and even\nmanifest-less ones — reach the classifier.\n\nThis commit is pure plumbing: the new inputs do not yet change any\nclassification. The only behavioural change is that the\n\"no inputs at all\" guard now fires when manifests AND grammar files AND\ntree paths are all empty, instead of on empty manifests alone — so a\nmanifest-less repo carrying a grammar file no longer hard-errors. The\nexisting two-argument call path is byte-identical.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -3",
+  "command": "git add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shape-detect): accept optional grammar-file and tree-path signals\n\nAdd two optional inputs, --grammar-files and --tree-paths, that carry\ntree-level evidence harvested from the clone (grammar files such as\nGrammar/python.gram or *.y/*.g4, and directory/structural signals like a\ncompiler/ dir with a lexer+parser+ast triad). They let whole-language\nrepos that declare no parser-generator dependency — and even\nmanifest-less ones — reach the classifier.\n\nThis commit is pure plumbing: the new inputs do not yet change any\nclassification. The only behavioural change is that the\n\"no inputs at all\" guard now fires when manifests AND grammar files AND\ntree paths are all empty, instead of on empty manifests alone — so a\nmanifest-less repo carrying a grammar file no longer hard-errors. The\nexisting two-argument call path is byte-identical.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -3",
   "description": "Commit 1 — Phase B plumbing"
 }
 ```
@@ -1557,7 +1557,7 @@ tool_use Bash
 id: toolu_01QxLosjbJrcmWHWPS62ZdAK
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -n \"own_names\\|parser_producers =\\|parser_deps =\\|_ALL_PARSER_DEPS =\\|# --- Heuristic ladder\\|# 1. language-reference\\|if parser_producers or parser_deps\\|# 2. stack-compose\" src/shared/scripts/skf-shape-detect.py",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -n \"own_names\\|parser_producers =\\|parser_deps =\\|_ALL_PARSER_DEPS =\\|# --- Heuristic ladder\\|# 1. language-reference\\|if parser_producers or parser_deps\\|# 2. stack-compose\" src/shared/scripts/skf-shape-detect.py",
   "description": "Locate ladder and signal-collection anchors"
 }
 ```
@@ -1583,7 +1583,7 @@ tool_use Read
 id: toolu_018HudpKjQwDndGjbmq53MdN
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "offset": 600,
   "limit": 48
 }
@@ -1643,7 +1643,7 @@ tool_use Read
 id: toolu_011JQqn98uZEq7wgisU8TN1o
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "offset": 81,
   "limit": 23
 }
@@ -1686,7 +1686,7 @@ id: toolu_01D1rweGJHqFt5kWA5U27CE3
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "_ALL_PARSER_DEPS = _PARSER_DEPS_NPM | _PARSER_DEPS_PYTHON | _PARSER_DEPS_RUST\n\n# ---------------------------------------------------------------------------\n# Framework deps that signal reference-app shape\n# ---------------------------------------------------------------------------",
   "new_string": "_ALL_PARSER_DEPS = _PARSER_DEPS_NPM | _PARSER_DEPS_PYTHON | _PARSER_DEPS_RUST\n\n# ---------------------------------------------------------------------------\n# Tree-level whole-language signals (issue #427)\n#\n# A hand-written compiler (rustc, TypeScript, Go) declares no parser-generator\n# dependency, and a language's own repo may carry no supported manifest at all\n# (CPython, Ruby). These sets drive the grammar-file and compiler-directory\n# rungs that classify such repos from tree evidence rather than manifests.\n# ---------------------------------------------------------------------------\n\n# Declared grammars — the strongest, most intentional whole-language signal.\n# Matched on extension or whole basename, NEVER on substring.\n_GRAMMAR_EXTS = frozenset({\n    \".g4\", \".pest\", \".lalrpop\", \".y\", \".gram\", \".lark\", \".ebnf\", \".peg\",\n    \".ungram\",\n})\n_GRAMMAR_BASENAMES = frozenset({\"grammar.js\", \"grammar.json\", \"python.gram\"})\n\n# Concrete parsers a repo CONSUMES. If a repo's own runtime deps contain one of\n# these it delegates parsing — a formatter/linter/bundler, never a\n# whole-language reference (prettier→@babel/parser, eslint→espree).\n_CONSUMED_PARSERS = frozenset({\n    \"espree\", \"acorn\", \"@babel/parser\", \"babel-parser\", \"flow-parser\",\n    \"swc_ecma_parser\", \"deno_ast\", \"graphql\", \"remark-parse\", \"yaml\",\n    \"esquery\", \"estree\", \"@types/estree\", \"@webassemblyjs/ast\", \"smol-toml\",\n})\n\n# Tools that own a parser-ish module but consume an external parser and are NOT\n# whole-language references — bundlers, formatters, linters, markup/CSS libs.\n_DELEGATING_TOOL_NAMES = frozenset({\n    \"prettier\", \"eslint\", \"stylelint\", \"biome\", \"rome\",\n    \"webpack\", \"rollup\", \"esbuild\", \"vite\", \"parcel\", \"terser\",\n    \"marked\", \"remark\", \"remark-parse\", \"markdown-it\", \"micromark\", […]
 
@@ -1695,7 +1695,7 @@ id: toolu_01D1rweGJHqFt5kWA5U27CE3
 tool_result
 id: toolu_01D1rweGJHqFt5kWA5U27CE3
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1708,7 +1708,7 @@ tool_use Bash
 id: toolu_01ArEHN312fK42QqjNTQEMaW
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -n \"def _clamp\\|def _die\\|def is_core_manifest\" src/shared/scripts/skf-shape-detect.py",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -n \"def _clamp\\|def _die\\|def is_core_manifest\" src/shared/scripts/skf-shape-detect.py",
   "description": "Find helper anchors"
 }
 ```
@@ -1729,7 +1729,7 @@ tool_use Read
 id: toolu_01BrNjGYB6prH18ZBZhZdFQB
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "offset": 199,
   "limit": 4
 }
@@ -1753,7 +1753,7 @@ id: toolu_0195hhbKBdHXYDUhRgYjKmii
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "def _clamp(value: float, lo: float, hi: float) -> float:\n    return max(lo, min(hi, value))",
   "new_string": "def _clamp(value: float, lo: float, hi: float) -> float:\n    return max(lo, min(hi, value))\n\n\ndef _is_grammar_file(path: str) -> bool:\n    \"\"\"Whether a repo-relative path is a declared grammar file.\n\n    Matched on whole basename (tree-sitter `grammar.js`, CPython\n    `python.gram`) or extension (`.y`, `.g4`, `.pest`, ...) — never substring,\n    so a file merely named `grammar_test_data.txt` does not match.\n    \"\"\"\n    name = Path(path).name.lower()\n    if name in _GRAMMAR_BASENAMES:\n        return True\n    return Path(name).suffix in _GRAMMAR_EXTS"
 }
@@ -1764,7 +1764,7 @@ id: toolu_0195hhbKBdHXYDUhRgYjKmii
 tool_result
 id: toolu_0195hhbKBdHXYDUhRgYjKmii
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1778,7 +1778,7 @@ id: toolu_01KaV2YFnXcQTLshZPCHn9ez
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    for d in parser_producers:\n        signals.append(f\"parser_producer:{d}\")\n    for d in parser_deps:\n        signals.append(f\"parser_dep:{d}\")\n    for d in framework_deps:",
   "new_string": "    for d in parser_producers:\n        signals.append(f\"parser_producer:{d}\")\n    for d in parser_deps:\n        signals.append(f\"parser_dep:{d}\")\n\n    # Tree-level whole-language signals (issue #427). A grammar file is the\n    # strongest, most intentional signal; the compiler-directory triad (a later\n    # rung) catches hand-written compilers. Two guard gates keep formatters,\n    # linters, bundlers, and markup/DSL parsers out.\n    grammar_matches = sorted(\n        {Path(g).name for g in grammar_files if _is_grammar_file(g)}\n    )\n    for g in grammar_matches:\n        signals.append(f\"grammar_file:{g}\")\n\n    # Gate G — delegating-consumer exclusion. A repo that depends on a concrete\n    # parser (prettier→@babel/parser, eslint→espree) or whose own name is a\n    # known formatter/linter/bundler delegates parsing; never a whole-language\n    # reference, even if it ships a parser-ish module of its own.\n    runtime_deps_lc = {d.lower() for d in all_runtime_deps}\n    delegating_consumer = bool(runtime_deps_lc & _CONSUMED_PARSERS) or bool(\n        own_names & _DELEGATING_TOOL_NAMES\n    )\n    if delegating_consumer:\n        signals.append(\"delegating_consumer\")\n    # Gate L — language identity. A markup/DSL/format parser (postcss, marked,\n    # graphql-js) has a real lexer+parser+AST but is not a general-purpose\n    # programming-language reference.\n    markup_identity = bool(\n        own_names & (_MARKUP_DSL_NAMES | _DELEGATING_TOOL_NAMES)\n    )\n\n    for d in framework_deps:"
 }
@@ -1789,7 +1789,7 @@ id: toolu_01KaV2YFnXcQTLshZPCHn9ez
 tool_result
 id: toolu_01KaV2YFnXcQTLshZPCHn9ez
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1803,7 +1803,7 @@ id: toolu_01WUSCTr2BH1mGTKMXNe5F3s
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    # --- Heuristic ladder (first match wins) ---\n\n    # 1. language-reference — a parser/grammar producer (own name) or a project\n    # built on a parser generator (consumer dep).\n    if parser_producers or parser_deps:",
   "new_string": "    # --- Heuristic ladder (first match wins) ---\n\n    # 1a. language-reference — a declared grammar file (issue #427). A repo that\n    # ships a grammar (Grammar/python.gram, parse.y, a *.g4) authors a language.\n    # This is the strongest signal and ranks above the dependency-based rung so\n    # a real grammar outranks an incidental parser dep from a sub-tool. Gate G\n    # excludes delegating consumers; gate L excludes markup/DSL parsers.\n    if grammar_matches and not delegating_consumer and not markup_identity:\n        confidence = _clamp(0.85 + len(grammar_matches) * 0.02, 0.85, 0.90)\n        return {\"shape\": \"language-reference\", \"signals\": signals,\n                \"confidence\": round(confidence, 2), **result_base}\n\n    # 1b. language-reference — a parser/grammar producer (own name) or a project\n    # built on a parser generator (consumer dep).\n    if parser_producers or parser_deps:"
 }
@@ -1814,7 +1814,7 @@ id: toolu_01WUSCTr2BH1mGTKMXNe5F3s
 tool_result
 id: toolu_01WUSCTr2BH1mGTKMXNe5F3s
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1828,7 +1828,7 @@ id: toolu_01Gj9PNvysdLeuWMC4NGbKKV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "    def test_trap_token_compiler_substring_is_not_language_reference(self, tmp_path):\n        \"\"\"compiler-builtins / rustc-demangle: 'compiler'/'rustc' substring,\n        but ordinary libraries. Guards against naive name-token matching.\"\"\"\n        path = write_cargo_toml(tmp_path, \"\"\"\n[package]\nname = \"compiler-builtins\"\nversion = \"0.1.0\"\n\n[lib]\nname = \"compiler_builtins\"\n\"\"\")\n        result = mod.detect(REPO_URL, [path])\n        assert result[\"shape\"] != \"language-reference\"",
   "new_string": "    def test_trap_token_compiler_substring_is_not_language_reference(self, tmp_path):\n        \"\"\"compiler-builtins / rustc-demangle: 'compiler'/'rustc' substring,\n        but ordinary libraries. Guards against naive name-token matching.\"\"\"\n        path = write_cargo_toml(tmp_path, \"\"\"\n[package]\nname = \"compiler-builtins\"\nversion = \"0.1.0\"\n\n[lib]\nname = \"compiler_builtins\"\n\"\"\")\n        result = mod.detect(REPO_URL, [path])\n        assert result[\"shape\"] != \"language-reference\"\n\n\n# --------------------------------------------------------------------------\n# language-reference — GRAMMAR-FILE rung (Rung A, issue #427)\n#\n# A repo that ships a declared grammar authors a language — even when it has no\n# parser-generator dependency and even when it has NO supported manifest at all\n# (CPython, Ruby). Two guard gates suppress delegating consumers and markup/DSL\n# parsers that merely carry a grammar-ish file.\n# --------------------------------------------------------------------------\n\n\nclass TestLanguageReferenceGrammarRung:\n    def test_cpython_grammar_file_no_manifest(self):\n        \"\"\"python/cpython: PEG grammar at Grammar/python.gram, no manifest.\"\"\"\n        result = mod.detect(REPO_URL, [], [\"Grammar/python.gram\"], [])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"language-reference\"\n        assert \"grammar_file:python.gram\" in result[\"signals\"]\n        assert result[\"confidence\"] >= 0.85\n\n    def test_ruby_root_grammar_outranks_jit_cargo(self, tmp_path):\n        \"\"\"ruby/ruby: root parse.y outranks the Rust JIT Cargo.toml library.\"\"\"\n        jit = write_cargo_toml(tmp_path, \"\"\"\n[package]\nname = \"yjit\"\nversion = \"0.1.0\"\n\n[lib]\nname = \"yjit\"\ncrate-type = [\"staticlib\"]\n\"\"\")\n        result = mod.detect(REPO_URL, [jit], [\"parse.y\"], [])\n        assert_result_shape(result)\n        assert result[\"shape\"] == […]
 
@@ -1837,7 +1837,7 @@ id: toolu_01Gj9PNvysdLeuWMC4NGbKKV
 tool_result
 id: toolu_01Gj9PNvysdLeuWMC4NGbKKV
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1881,7 +1881,7 @@ id: toolu_01TH3rEHxiHvoJxbARLy1rox
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "    def test_grammar_only_no_longer_errors(self):\n        \"\"\"Empty manifests but a grammar file present → no longer exit 2.\n\n        Classification is still unknown until the grammar rung lands; the point\n        here is that the manifest-less path stops hard-erroring.\n        \"\"\"\n        result = mod.detect(REPO_URL, [], [\"Grammar/python.gram\"], [])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"unknown\"\n\n    def test_tree_only_no_longer_errors(self):\n        result = mod.detect(REPO_URL, [], [], [\"compiler/\"])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"unknown\"",
   "new_string": "    def test_grammar_only_no_longer_errors(self):\n        \"\"\"Empty manifests but a grammar file present → no longer exit 2.\n\n        With the grammar rung in place a manifest-less grammar repo classifies\n        as language-reference rather than hard-erroring.\n        \"\"\"\n        result = mod.detect(REPO_URL, [], [\"Grammar/python.gram\"], [])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"language-reference\"\n\n    def test_tree_only_inert_until_triad_rung(self):\n        \"\"\"A lone directory signal does not yet classify (the compiler-triad\n        rung lands in a later commit); the point here is it no longer exit-2s.\"\"\"\n        result = mod.detect(REPO_URL, [], [], [\"some/dir/\"])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"unknown\""
 }
@@ -1892,7 +1892,7 @@ id: toolu_01TH3rEHxiHvoJxbARLy1rox
 tool_result
 id: toolu_01TH3rEHxiHvoJxbARLy1rox
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1925,7 +1925,7 @@ tool_use Bash
 id: toolu_01GaEg5MBPKPWA6UTd4aqAD5
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== cpython (grammar-only, no manifest) ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/python/cpython --manifests \"\" --grammar-files \"Grammar/python.gram\"; echo \"exit=$?\"\necho \"=== prettier (delegating consumer + stray grammar) — must NOT be language-reference ===\"\nprintf '{\"name\":\"prettier\",\"bin\":{\"prettier\":\"./b.js\"},\"dependencies\":{\"@babel/parser\":\"7\"}}' > /tmp/pkg-prettier.json\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/prettier/prettier --manifests \"/tmp/pkg-prettier.json\" --grammar-files \"test/x.g4\"; echo \"exit=$?\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== cpython (grammar-only, no manifest) ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/python/cpython --manifests \"\" --grammar-files \"Grammar/python.gram\"; echo \"exit=$?\"\necho \"=== prettier (delegating consumer + stray grammar) — must NOT be language-reference ===\"\nprintf '{\"name\":\"prettier\",\"bin\":{\"prettier\":\"./b.js\"},\"dependencies\":{\"@babel/parser\":\"7\"}}' > /tmp/pkg-prettier.json\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/prettier/prettier --manifests \"/tmp/pkg-prettier.json\" --grammar-files \"test/x.g4\"; echo \"exit=$?\"",
   "description": "CLI smoke test: cpython positive + prettier negative"
 }
 ```
@@ -1953,7 +1953,7 @@ tool_use Bash
 id: toolu_01YKMKXY9MjNDi4KP7VzWLZF
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nmkdir -p /tmp/skf-prettier && printf '{\"name\":\"prettier\",\"bin\":{\"prettier\":\"./b.js\"},\"dependencies\":{\"@babel/parser\":\"7\"}}' > /tmp/skf-prettier/package.json\necho \"=== prettier (delegating consumer + stray grammar) — must NOT be language-reference ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/prettier/prettier --manifests \"/tmp/skf-prettier/package.json\" --grammar-files \"test/x.g4\"; echo \"exit=$?\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nmkdir -p /tmp/skf-prettier && printf '{\"name\":\"prettier\",\"bin\":{\"prettier\":\"./b.js\"},\"dependencies\":{\"@babel/parser\":\"7\"}}' > /tmp/skf-prettier/package.json\necho \"=== prettier (delegating consumer + stray grammar) — must NOT be language-reference ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/prettier/prettier --manifests \"/tmp/skf-prettier/package.json\" --grammar-files \"test/x.g4\"; echo \"exit=$?\"",
   "description": "CLI smoke: prettier negative with correct manifest name"
 }
 ```
@@ -1978,7 +1978,7 @@ tool_use Bash
 id: toolu_01ArdfNetP4EaGMi7a9EDz6q
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shape-detect): classify whole-language repos by their grammar file\n\nA repo that ships a declared grammar (Grammar/python.gram, a root\nparse.y, a *.g4) authors a language — the strongest, most intentional\nwhole-language signal. Add a grammar-file rung that fires\nlanguage-reference from the --grammar-files input, ranked above the\ndependency-based rung so a real grammar outranks an incidental parser\ndependency leaking from a bundled sub-tool. This reaches repos that\ndeclare no parser-generator dependency and carry no supported manifest\nat all (CPython's PEG grammar, Ruby's yacc grammar at root).\n\nTwo guard gates keep the rung tight:\n- delegating-consumer (G): a repo that depends on a concrete parser\n  (prettier on @babel/parser, eslint on espree) or is itself a known\n  formatter/linter/bundler delegates parsing and never qualifies.\n- markup/DSL identity (L): a CSS/markdown/GraphQL parser has a real\n  lexer+parser+AST but is not a general-purpose-language reference.\n\nGrammar matching keys on whole basename or extension, never substring.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shape-detect): classify whole-language repos by their grammar file\n\nA repo that ships a declared grammar (Grammar/python.gram, a root\nparse.y, a *.g4) authors a language — the strongest, most intentional\nwhole-language signal. Add a grammar-file rung that fires\nlanguage-reference from the --grammar-files input, ranked above the\ndependency-based rung so a real grammar outranks an incidental parser\ndependency leaking from a bundled sub-tool. This reaches repos that\ndeclare no parser-generator dependency and carry no supported manifest\nat all (CPython's PEG grammar, Ruby's yacc grammar at root).\n\nTwo guard gates keep the rung tight:\n- delegating-consumer (G): a repo that depends on a concrete parser\n  (prettier on @babel/parser, eslint on espree) or is itself a known\n  formatter/linter/bundler delegates parsing and never qualifies.\n- markup/DSL identity (L): a CSS/markdown/GraphQL parser has a real\n  lexer+parser+AST but is not a general-purpose-language reference.\n\nGrammar matching keys on whole basename or extension, never substring.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 2 — grammar-file rung + gates G/L"
 }
 ```
@@ -2002,7 +2002,7 @@ id: toolu_01AHBG1s18tjZQicDvXFKs8k
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "_MARKUP_DSL_NAMES = frozenset({\n    \"css\", \"less\", \"scss\", \"sass\", \"html\", \"markdown\", \"graphql\",\n    \"graphql-schema\", \"json\", \"yaml\", \"toml\", \"xml\",\n})",
   "new_string": "_MARKUP_DSL_NAMES = frozenset({\n    \"css\", \"less\", \"scss\", \"sass\", \"html\", \"markdown\", \"graphql\",\n    \"graphql-schema\", \"json\", \"yaml\", \"toml\", \"xml\",\n})\n\n# Dedicated compiler directories — the primary gate for the tree-triad rung\n# (Rung B). Matched on a real DIRECTORY by exact path-tail, never a file and\n# never a bare src/lib/language/parser dir. 'Parser' is case-sensitive\n# (CPython's Parser/) so it does not match a lib/parser/ dir.\n_COMPILER_DIRS = frozenset({\n    \"compiler\", \"src/compiler\", \"cmd/compile\", \"internal/syntax\",\n})\n_COMPILER_DIRS_CASE = frozenset({\"Parser\"})\n\n# Triad member name stems. A hand-written compiler spreads a lexer, a parser,\n# and an AST across these conventional file/dir names.\n_LEXER_STEMS = frozenset({\"scanner\", \"lexer\", \"tokenizer\"})\n_PARSER_STEMS = frozenset({\"parser\", \"parse\"})\n_AST_STEMS = frozenset({\"ast\"})\n\n# Corroborating whole-language member (gate W). A markdown/CSS parser ships a\n# lexer+parser+AST but no code generator, VM, or type checker — so requiring one\n# of these excludes a markup library that merely sits under a compiler/ dir.\n_CODEGEN_STEMS = frozenset({\"codegen\", \"compile\", \"ssagen\"})\n_VM_STEMS = frozenset({\"interpreter\", \"vm\", \"eval\", \"ceval\"})\n_CHECK_STEMS = frozenset({\"checker\", \"check\", \"binder\", \"typeck\", \"typecheck\"})"
 }
@@ -2013,7 +2013,7 @@ id: toolu_01AHBG1s18tjZQicDvXFKs8k
 tool_result
 id: toolu_01AHBG1s18tjZQicDvXFKs8k
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2023,7 +2023,7 @@ id: toolu_01QdHfYwYTcpsdfoHX7rqBvv
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    name = Path(path).name.lower()\n    if name in _GRAMMAR_BASENAMES:\n        return True\n    return Path(name).suffix in _GRAMMAR_EXTS",
   "new_string": "    name = Path(path).name.lower()\n    if name in _GRAMMAR_BASENAMES:\n        return True\n    return Path(name).suffix in _GRAMMAR_EXTS\n\n\ndef _whole_language_tree(tree_paths: list[str]) -> tuple[str, str] | None:\n    \"\"\"Detect a hand-written compiler from directory/structural signals.\n\n    Returns ``(compiler_dir, member_summary)`` when ``tree_paths`` satisfies all\n    three structural gates from issue #427, else ``None``:\n\n      (C) a DEDICATED compiler directory — a real directory (trailing ``/``)\n          whose path-tail is in ``_COMPILER_DIRS`` (case-insensitive) or\n          ``_COMPILER_DIRS_CASE`` (case-sensitive ``Parser``). A file named\n          ``Parser.js`` or ``compiler.dart`` never satisfies this; a bare\n          ``src/`` / ``lib/`` / ``src/language/`` directory never does either.\n      (D) a lexer+parser+AST triad, parser MANDATORY, at least 2 of 3 present.\n      (W) a corroborating codegen / VM / type-checker member, so a markdown or\n          CSS library (lexer+parser+AST only) does not qualify.\n\n    Gates G (delegating consumer) and L (markup identity) depend on manifest\n    data and are applied by the caller.\n    \"\"\"\n    if not tree_paths:\n        return None\n\n    compiler_dirs: list[str] = []\n    stems: set[str] = set()\n    basenames: set[str] = set()\n    for tp in tree_paths:\n        norm = tp.rstrip(\"/\")\n        if not norm:\n            continue\n        base = norm.rsplit(\"/\", 1)[-1]\n        basenames.add(base)\n        stems.add(base.rsplit(\".\", 1)[0].lower() if \".\" in base […]
 
@@ -2032,7 +2032,7 @@ id: toolu_01QdHfYwYTcpsdfoHX7rqBvv
 tool_result
 id: toolu_01QdHfYwYTcpsdfoHX7rqBvv
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2046,7 +2046,7 @@ id: toolu_01ULpgJ5xL3SEZ8t9ygD2E54
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    # --- Heuristic ladder (first match wins) ---\n\n    # 1a. language-reference — a declared grammar file (issue #427). A repo that",
   "new_string": "    # --- Heuristic ladder (first match wins) ---\n\n    # 1a-pre. language-reference — a hand-written compiler detected from tree\n    # structure (issue #427): a dedicated compiler/ directory holding a\n    # lexer+parser+AST triad plus a codegen/VM/type-checker member. This catches\n    # rustc, TypeScript, and the Go toolchain, which declare no parser-generator\n    # dependency and carry no grammar file. Ranked first so it outranks the\n    # bin→reference-app rung (TypeScript ships `tsc`). Gates G and L still apply.\n    tree_triad = _whole_language_tree(tree_paths)\n    if tree_triad and not delegating_consumer and not markup_identity:\n        compiler_dir, members = tree_triad\n        signals.append(f\"tree_triad:{compiler_dir}:{members}\")\n        return {\"shape\": \"language-reference\", \"signals\": signals,\n                \"confidence\": 0.85, **result_base}\n\n    # 1a. language-reference — a declared grammar file (issue #427). A repo that"
 }
@@ -2057,7 +2057,7 @@ id: toolu_01ULpgJ5xL3SEZ8t9ygD2E54
 tool_result
 id: toolu_01ULpgJ5xL3SEZ8t9ygD2E54
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2071,7 +2071,7 @@ id: toolu_01DT6uymxtLz6647vaBQJZqG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "    def test_markup_identity_with_grammar_is_suppressed(self, tmp_path):\n        \"\"\"A repo whose identity is a markup/DSL parser is not a whole-language\n        reference even with a grammar file (gate L).\"\"\"\n        pkg = write_package_json(tmp_path, {\n            \"name\": \"graphql\",\n            \"main\": \"index.js\",\n        })\n        result = mod.detect(REPO_URL, [pkg], [\"src/schema.g4\"], [])\n        assert result[\"shape\"] != \"language-reference\"",
   "new_string": "    def test_markup_identity_with_grammar_is_suppressed(self, tmp_path):\n        \"\"\"A repo whose identity is a markup/DSL parser is not a whole-language\n        reference even with a grammar file (gate L).\"\"\"\n        pkg = write_package_json(tmp_path, {\n            \"name\": \"graphql\",\n            \"main\": \"index.js\",\n        })\n        result = mod.detect(REPO_URL, [pkg], [\"src/schema.g4\"], [])\n        assert result[\"shape\"] != \"language-reference\"\n\n\n# --------------------------------------------------------------------------\n# language-reference — TREE-TRIAD rung (Rung B, issue #427)\n#\n# Hand-written compilers (rustc, TypeScript, Go) declare no parser-generator\n# dependency and ship no grammar file. They are caught by a dedicated compiler/\n# directory holding a lexer+parser+AST triad plus a codegen/VM/type-checker\n# member. The six false-positive controls (webpack, postcss, prettier,\n# graphql-js, dart-sass, marked) each have a near-miss shape and must stay out.\n# --------------------------------------------------------------------------\n\n# Faithful reconstructions of each repo's real compiler tree.\nRUST_TREE = [\n    \"compiler/\", \"compiler/rustc_lexer/\", \"compiler/rustc_parse/\",\n    \"compiler/rustc_ast/\", \"compiler/rustc_codegen_llvm/\",\n]\nTS_TREE = [\n    \"src/compiler/\", \"src/compiler/scanner.ts\", \"src/compiler/parser.ts\",\n    \"src/compiler/binder.ts\", \"src/compiler/checker.ts\",\n]\nGO_TREE = [\n    \"cmd/compile/\", \"cmd/compile/internal/syntax/\",\n    \"cmd/compile/internal/syntax/scanner.go\",\n    \"cmd/compile/internal/syntax/parser.go\",\n    \"go/ast/\", \"go/ast/ast.go\", \"go/types/\", \"go/types/check.go\",\n]\n\n\nclass TestLanguageReferenceTreeTriadRung:\n    def test_rust_compiler_triad(self):\n        result = mod.detect(REPO_URL, [], [], RUST_TREE)\n        assert_result_shape(result)\n        assert […]
 
@@ -2080,7 +2080,7 @@ id: toolu_01DT6uymxtLz6647vaBQJZqG
 tool_result
 id: toolu_01DT6uymxtLz6647vaBQJZqG
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2114,7 +2114,7 @@ tool_use Bash
 id: toolu_01MyrUASdTpkj9rXSXJqG7ut
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== rust-lang/rust (tree only) ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/rust-lang/rust --manifests \"\" --tree-paths \"compiler/,compiler/rustc_lexer/,compiler/rustc_parse/,compiler/rustc_ast/,compiler/rustc_codegen_llvm/\"\necho \"=== golang/go (tree only) ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/golang/go --manifests \"\" --tree-paths \"cmd/compile/,cmd/compile/internal/syntax/,cmd/compile/internal/syntax/scanner.go,cmd/compile/internal/syntax/parser.go,go/ast/,go/ast/ast.go,go/types/,go/types/check.go\"\necho \"=== dart-sass (compiler.dart is a FILE) — must NOT fire ===\"\nmkdir -p /tmp/skf-sass && printf '{\"name\":\"sass\",\"main\":\"sass.js\"}' > /tmp/skf-sass/package.json\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/sass/dart-sass --manifests \"/tmp/skf-sass/package.json\" --tree-paths \"lib/src/,lib/src/compiler.dart,lib/src/syntax.dart\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== rust-lang/rust (tree only) ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/rust-lang/rust --manifests \"\" --tree-paths \"compiler/,compiler/rustc_lexer/,compiler/rustc_parse/,compiler/rustc_ast/,compiler/rustc_codegen_llvm/\"\necho \"=== golang/go (tree only) ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/golang/go --manifests \"\" --tree-paths \"cmd/compile/,cmd/compile/internal/syntax/,cmd/compile/internal/syntax/scanner.go,cmd/compile/internal/syntax/parser.go,go/ast/,go/ast/ast.go,go/types/,go/types/check.go\"\necho \"=== dart-sass (compiler.dart is a FILE) — must NOT fire ===\"\nmkdir -p /tmp/skf-sass && printf '{\"name\":\"sass\",\"main\":\"sass.js\"}' > /tmp/skf-sass/package.json\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/sass/dart-sass --manifests \"/tmp/skf-sass/package.json\" --tree-paths \"lib/src/,lib/src/compiler.dart,lib/src/syntax.dart\"",
   "description": "CLI smoke: rust/go positives + dart-sass negative"
 }
 ```
@@ -2142,7 +2142,7 @@ tool_use Bash
 id: toolu_018fvjv1TH34LJxQ9szfbyja
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shape-detect): detect hand-written compilers from tree structure\n\nWhole-language toolchains like rustc, TypeScript, and the Go compiler\ndeclare no parser-generator dependency and ship no grammar file, so\nneither the dependency rung nor the grammar rung reaches them. Add a\ntree-triad rung that fires language-reference from directory/structural\nsignals, ranked first so it outranks the bin->reference-app rung (a\nlanguage ships a compiler binary).\n\nThe rung requires three structural gates together, so an ordinary\nlibrary that merely contains a src/parser/ directory cannot trip it:\n- a DEDICATED compiler directory (compiler/, src/compiler/, cmd/compile/,\n  internal/syntax/, or a case-sensitive Parser/) matched as a real\n  directory by path-tail — a Parser.js or compiler.dart FILE never counts;\n- a lexer+parser+AST triad with the parser mandatory;\n- a corroborating codegen / VM / type-checker member, so a markdown or\n  CSS parser (lexer+parser+AST only) is excluded.\n\nCombined with the delegating-consumer and markup-identity gates, the six\nnear-miss controls (webpack, postcss, prettier, graphql-js, dart-sass,\nmarked) each stay out via at least two independent gates, while\nrust-lang/rust, microsoft/TypeScript, and golang/go classify on their\nintentional compiler structure rather than an incidental dependency.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shape-detect): detect hand-written compilers from tree structure\n\nWhole-language toolchains like rustc, TypeScript, and the Go compiler\ndeclare no parser-generator dependency and ship no grammar file, so\nneither the dependency rung nor the grammar rung reaches them. Add a\ntree-triad rung that fires language-reference from directory/structural\nsignals, ranked first so it outranks the bin->reference-app rung (a\nlanguage ships a compiler binary).\n\nThe rung requires three structural gates together, so an ordinary\nlibrary that merely contains a src/parser/ directory cannot trip it:\n- a DEDICATED compiler directory (compiler/, src/compiler/, cmd/compile/,\n  internal/syntax/, or a case-sensitive Parser/) matched as a real\n  directory by path-tail — a Parser.js or compiler.dart FILE never counts;\n- a lexer+parser+AST triad with the parser mandatory;\n- a corroborating codegen / VM / type-checker member, so a markdown or\n  CSS parser (lexer+parser+AST only) is excluded.\n\nCombined with the delegating-consumer and markup-identity gates, the six\nnear-miss controls (webpack, postcss, prettier, graphql-js, dart-sass,\nmarked) each stay out via at least two independent gates, while\nrust-lang/rust, microsoft/TypeScript, and golang/go classify on their\nintentional compiler structure rather than an incidental dependency.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 3 — tree-triad rung"
 }
 ```
@@ -2165,7 +2165,7 @@ tool_use Read
 id: toolu_018x89Qkn8sL5agGxeuWAsgM
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-scan-manifests.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-scan-manifests.py",
   "offset": 412,
   "limit": 55
 }
@@ -2227,7 +2227,7 @@ tool_use Read
 id: toolu_01E2kXxiiB83AXrLBdefgyGf
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "offset": 510,
   "limit": 30
 }
@@ -2276,7 +2276,7 @@ tool_use Read
 id: toolu_01QAyVyr9h62TnouNDhsnRwj
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "offset": 600,
   "limit": 30
 }
@@ -2326,7 +2326,7 @@ id: toolu_01Md3tG1CYgnFnrvMJiveZ1A
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "_PARSERS = {\n    \"package.json\": _parse_package_json,\n    \"pyproject.toml\": _parse_pyproject_toml,\n    \"Cargo.toml\": _parse_cargo_toml,\n}",
   "new_string": "def _parse_go_mod(path: Path) -> dict[str, Any]:\n    \"\"\"Parse a go.mod: the module path (name) and required modules (deps).\n\n    go.mod is line-oriented — `module <path>`, single-line `require <mod> <ver>`,\n    and a `require ( ... )` block. The scanner already recognises go.mod; this\n    mirror lets shape-detect classify Go repos (most resolve to library-API;\n    the Go toolchain itself is caught by the tree-triad rung).\n    \"\"\"\n    try:\n        content = path.read_text(encoding=\"utf-8\")\n    except OSError as exc:\n        _die(f\"Cannot read {path.as_posix()}: {exc}\", \"MANIFEST_READ_ERROR\")\n        return {}  # unreachable\n\n    module = \"\"\n    deps: set[str] = set()\n    in_require_block = False\n    for line in content.splitlines():\n        stripped = line.strip()\n        if not stripped or stripped.startswith(\"//\"):\n            continue\n        if in_require_block:\n            if stripped.startswith(\")\"):\n                in_require_block = False\n                continue\n            deps.add(stripped.split()[0].lower())\n            continue\n        if stripped.startswith(\"module \"):\n            module = stripped[len(\"module \"):].strip()\n        elif stripped.startswith(\"require (\"):\n            in_require_block = True\n        elif stripped.startswith(\"require \"):\n            parts = stripped[len(\"require \"):].split()\n            if parts:\n                deps.add(parts[0].lower())\n\n    return {\n        \"ecosystem\": \"go\",\n        \"name\": module,\n        \"deps\": deps,\n        \"runtime_deps\": set(deps),\n        # A go.mod under a cmd/ path marks a command (binary) member.\n        \"has_bin\": \"cmd\" in Path(path).parts,\n        \"has_library_structure\": bool(module),\n        \"export_count\": 0,\n    }\n\n\n_PARSERS = {\n    \"package.json\": _parse_package_json,\n    \"pyproject.toml\": _parse_pyproject_toml,\n    \"Cargo.toml\": _parse_cargo_toml,\n    \"go.mod\": _parse_go_mod,\n}"
 }
@@ -2337,7 +2337,7 @@ id: toolu_01Md3tG1CYgnFnrvMJiveZ1A
 tool_result
 id: toolu_01Md3tG1CYgnFnrvMJiveZ1A
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2350,7 +2350,7 @@ tool_use Bash
 id: toolu_01Fm48DtLo5cbaG24FWQ6g8o
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -n \"def path_to_manifest_name\" -A3 src/shared/scripts/skf-shape-detect.py",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -n \"def path_to_manifest_name\" -A3 src/shared/scripts/skf-shape-detect.py",
   "description": "Find path_to_manifest_name"
 }
 ```
@@ -2373,7 +2373,7 @@ id: toolu_013gcXU8hJtLpaJGV99CpH6X
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    return {\"npm\": \"package_json\", \"python\": \"pyproject_toml\",\n            \"rust\": \"cargo_toml\"}.get(ecosystem, ecosystem)",
   "new_string": "    return {\"npm\": \"package_json\", \"python\": \"pyproject_toml\",\n            \"rust\": \"cargo_toml\", \"go\": \"go_mod\"}.get(ecosystem, ecosystem)"
 }
@@ -2384,7 +2384,7 @@ id: toolu_013gcXU8hJtLpaJGV99CpH6X
 tool_result
 id: toolu_013gcXU8hJtLpaJGV99CpH6X
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2397,7 +2397,7 @@ tool_use Read
 id: toolu_01WaUBW8AoCQgFkvoP2FG1E9
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "offset": 258,
   "limit": 42
 }
@@ -2438,7 +2438,7 @@ tool_use Read
 id: toolu_01GNvMFSXg86mVKU817qoLNd
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md"
 }
 ```
 
@@ -2498,7 +2498,7 @@ id: toolu_01Cigb62sgGJZpNsXMr8232k
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "def write_cargo_toml(tmp_path: Path, content: str) -> str:\n    p = tmp_path / \"Cargo.toml\"\n    p.write_text(content, encoding=\"utf-8\")\n    return str(p)",
   "new_string": "def write_cargo_toml(tmp_path: Path, content: str) -> str:\n    p = tmp_path / \"Cargo.toml\"\n    p.write_text(content, encoding=\"utf-8\")\n    return str(p)\n\n\ndef write_go_mod(tmp_path: Path, content: str, subdir: str = \"\") -> str:\n    base = tmp_path / subdir if subdir else tmp_path\n    base.mkdir(parents=True, exist_ok=True)\n    p = base / \"go.mod\"\n    p.write_text(content, encoding=\"utf-8\")\n    return str(p)"
 }
@@ -2509,7 +2509,7 @@ id: toolu_01Cigb62sgGJZpNsXMr8232k
 tool_result
 id: toolu_01Cigb62sgGJZpNsXMr8232k
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2519,7 +2519,7 @@ id: toolu_01RgaLzod2NWJBP4bG2HSVGd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "# --------------------------------------------------------------------------\n# Shape: stack-compose\n# --------------------------------------------------------------------------",
   "new_string": "# --------------------------------------------------------------------------\n# Ecosystem: Go (go.mod) — issue #427 ecosystem expansion\n#\n# The scanner already recognises go.mod; shape-detect now parses it too, so a\n# Go repo reaches classification instead of hard-halting. Most Go libraries\n# resolve to library-API; the Go toolchain itself is caught by the tree-triad\n# rung (golang/go).\n# --------------------------------------------------------------------------\n\n\nclass TestGoMod:\n    def test_go_library_is_library_api(self, tmp_path):\n        path = write_go_mod(tmp_path, \"\"\"\nmodule github.com/spf13/cobra\n\ngo 1.21\n\nrequire (\n\\tgithub.com/inconshreveable/mousetrap v1.1.0\n\\tgithub.com/spf13/pflag v1.0.5\n)\n\"\"\")\n        result = mod.detect(REPO_URL, [path])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"library-API\"\n        assert \"has_go_mod\" in result[\"signals\"]\n\n    def test_go_mod_does_not_hard_halt(self, tmp_path):\n        \"\"\"A go.mod handed directly parses cleanly (no UNSUPPORTED_MANIFEST).\"\"\"\n        path = write_go_mod(tmp_path, \"module example.com/x\\n\\ngo 1.21\\n\")\n        result = mod.detect(REPO_URL, [path])\n        assert_result_shape(result)\n        assert result[\"shape\"] in {\"library-API\", \"unknown\"}\n\n    def test_go_single_line_require(self, tmp_path):\n        path = write_go_mod(tmp_path, \"\"\"\nmodule example.com/tool\n\ngo 1.21\n\nrequire github.com/spf13/pflag v1.0.5\n\"\"\")\n        result = mod.detect(REPO_URL, [path])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"library-API\"\n\n    def test_go_cmd_member_has_bin(self, tmp_path):\n        \"\"\"A go.mod under cmd/ marks a command (binary) member.\"\"\"\n        path = write_go_mod(tmp_path, \"module example.com/x/cmd/tool\\n\\ngo 1.21\\n\",\n                            subdir=\"cmd/tool\")\n        result = mod.detect(REPO_URL, [path])\n        assert \"has_bin_field\" in result[\"signals\"]\n\n    def test_cli_go_mod_exit_0(self, tmp_path):\n        path = write_go_mod(tmp_path, \"module example.com/x\\n\\ngo 1.21\\n\")\n        proc = subprocess.run(\n            [sys.executable, str(SCRIPT_PATH),\n             \"--repo-url\", REPO_URL, \"--manifests\", path],\n            capture_output=True, text=True, timeout=15,\n        )\n        assert proc.returncode == 0, proc.stderr\n        out = json.loads(proc.stdout)\n        assert out[\"shape\"] == \"library-API\"\n\n\n# --------------------------------------------------------------------------\n# Shape: […]
 
@@ -2528,7 +2528,7 @@ id: toolu_01RgaLzod2NWJBP4bG2HSVGd
 tool_result
 id: toolu_01RgaLzod2NWJBP4bG2HSVGd
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2572,7 +2572,7 @@ id: toolu_019hneQEYNmxQ2apJBDdff7x
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "    def test_go_cmd_member_has_bin(self, tmp_path):\n        \"\"\"A go.mod under cmd/ marks a command (binary) member.\"\"\"\n        path = write_go_mod(tmp_path, \"module example.com/x/cmd/tool\\n\\ngo 1.21\\n\",\n                            subdir=\"cmd/tool\")\n        result = mod.detect(REPO_URL, [path])\n        assert \"has_bin_field\" in result[\"signals\"]",
   "new_string": "    def test_go_cmd_member_has_bin(self, tmp_path):\n        \"\"\"A go.mod under cmd/ marks a command (binary) member.\"\"\"\n        path = write_go_mod(tmp_path, \"module acme.dev/app/cmd/tool\\n\\ngo 1.21\\n\",\n                            subdir=\"cmd/tool\")\n        result = mod.detect(REPO_URL, [path])\n        assert \"has_bin_field\" in result[\"signals\"]\n        assert result[\"shape\"] == \"reference-app\""
 }
@@ -2583,7 +2583,7 @@ id: toolu_019hneQEYNmxQ2apJBDdff7x
 tool_result
 id: toolu_019hneQEYNmxQ2apJBDdff7x
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2618,7 +2618,7 @@ id: toolu_012LyqwsakUFmcYpC1GYTJLE
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "  git -C \"$tmp\" sparse-checkout set --no-cone '**/package.json' '**/Cargo.toml' '**/pyproject.toml' 'pnpm-workspace.yaml' '**/pnpm-workspace.yaml'",
   "new_string": "  git -C \"$tmp\" sparse-checkout set --no-cone '**/package.json' '**/Cargo.toml' '**/pyproject.toml' '**/go.mod' 'pnpm-workspace.yaml' '**/pnpm-workspace.yaml'"
 }
@@ -2629,7 +2629,7 @@ id: toolu_012LyqwsakUFmcYpC1GYTJLE
 tool_result
 id: toolu_012LyqwsakUFmcYpC1GYTJLE
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2639,7 +2639,7 @@ id: toolu_01W1NRLaFdR9n3qjb3gZe3FH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "1. **Supported manifest paths** — filter `manifests[].path` to the types `skf-shape-detect.py` accepts (`package.json`, `pyproject.toml`, `Cargo.toml`). Each `manifests[].path` is **relative to the scan root**, so resolve them against that root (`{path}` for a local scan, `\"$tmp\"` for a remote fetch) before use. This filtered, comma-joined list of resolved paths is fed to shape detection in §3. For a monorepo, it includes each workspace member's manifest, so the package surface is classified accurately rather than from a bare (and often export-less) repo root. The scanner also discovers ecosystems shape detection does not yet classify (e.g. Go `go.mod`, Maven, Gradle); those are excluded here, so a repo with no supported manifest falls back to interactive at the next check rather than auto-scoping.",
   "new_string": "1. **Supported manifest paths** — filter `manifests[].path` to the types `skf-shape-detect.py` accepts (`package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`). Each `manifests[].path` is **relative to the scan root**, so resolve them against that root (`{path}` for a local scan, `\"$tmp\"` for a remote fetch) before use. This filtered, comma-joined list of resolved paths is fed to shape detection in §3. For a monorepo, it includes each workspace member's manifest, so the package surface […]
 
@@ -2648,7 +2648,7 @@ id: toolu_01W1NRLaFdR9n3qjb3gZe3FH
 tool_result
 id: toolu_01W1NRLaFdR9n3qjb3gZe3FH
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2661,7 +2661,7 @@ tool_use Read
 id: toolu_01Uw5ijPpxuXXEpsss1MG7ky
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "offset": 355,
   "limit": 35
 }
@@ -2708,7 +2708,7 @@ id: toolu_018YPFLwMsF2SDrpX4Y6xyhE
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "**Detect primary language** from manifest type (the same set shape detection classifies):\n- `package.json` → TypeScript/JavaScript\n- `pyproject.toml` → Python\n- `Cargo.toml` → Rust\n\n**Default patterns (adjust based on actual project structure):**\n\n| Language | Default include | Default exclude |\n|----------|-----------------|-----------------|\n| TypeScript/JavaScript | `['src/**/*.ts', 'src/**/*.tsx']` | `['**/*.test.ts', '**/*.spec.ts', '**/node_modules/**']` |\n| Python | `['src/**/*.py']` or `['{package_name}/**/*.py']` | `['**/*_test.py', '**/test_*.py', '**/tests/**']` |\n| Rust | `['src/**/*.rs']` | `['**/tests/**', '**/benches/**']` |",
   "new_string": "**Detect primary language** from manifest type (the same set shape detection classifies):\n- `package.json` → TypeScript/JavaScript\n- `pyproject.toml` → Python\n- `Cargo.toml` → Rust\n- `go.mod` → Go\n\n**Default patterns (adjust based on actual project structure):**\n\n| Language | Default include | Default exclude |\n|----------|-----------------|-----------------|\n| TypeScript/JavaScript | `['src/**/*.ts', 'src/**/*.tsx']` | `['**/*.test.ts', '**/*.spec.ts', '**/node_modules/**']` |\n| Python | `['src/**/*.py']` or `['{package_name}/**/*.py']` | `['**/*_test.py', '**/test_*.py', '**/tests/**']` |\n| Rust | `['src/**/*.rs']` | `['**/tests/**', '**/benches/**']` |\n| Go | `['**/*.go']` | `['**/*_test.go', '**/vendor/**']` |"
 }
@@ -2719,7 +2719,7 @@ id: toolu_018YPFLwMsF2SDrpX4Y6xyhE
 tool_result
 id: toolu_018YPFLwMsF2SDrpX4Y6xyhE
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2729,7 +2729,7 @@ id: toolu_017ukn42JJCBPbUkC83CwK61
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "Detect the primary language from the manifest ecosystem:\n- `npm` → `typescript` (or `javascript` if no `.ts` files in includes)\n- `python` → `python`\n- `rust` → `rust`",
   "new_string": "Detect the primary language from the manifest ecosystem:\n- `npm` → `typescript` (or `javascript` if no `.ts` files in includes)\n- `python` → `python`\n- `rust` → `rust`\n- `go` → `go`"
 }
@@ -2740,7 +2740,7 @@ id: toolu_017ukn42JJCBPbUkC83CwK61
 tool_result
 id: toolu_017ukn42JJCBPbUkC83CwK61
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2754,7 +2754,7 @@ id: toolu_01UbThb2DfBtsVwmDNJbto7D
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md",
   "old_string": "**Supported manifests:** `package.json`, `pyproject.toml`, `Cargo.toml`",
   "new_string": "**Supported manifests:** `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`"
 }
@@ -2765,7 +2765,7 @@ id: toolu_01UbThb2DfBtsVwmDNJbto7D
 tool_result
 id: toolu_01UbThb2DfBtsVwmDNJbto7D
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2778,7 +2778,7 @@ tool_use Bash
 id: toolu_01AhY9a9HRdP7r5JjS6L3qxM
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nmkdir -p /tmp/skf-go && printf 'module github.com/gin-gonic/gin\\n\\ngo 1.21\\n\\nrequire (\\n\\tgithub.com/bytedance/sonic v1.10.0\\n)\\n' > /tmp/skf-go/go.mod\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/gin-gonic/gin --manifests \"/tmp/skf-go/go.mod\"; echo \"exit=$?\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nmkdir -p /tmp/skf-go && printf 'module github.com/gin-gonic/gin\\n\\ngo 1.21\\n\\nrequire (\\n\\tgithub.com/bytedance/sonic v1.10.0\\n)\\n' > /tmp/skf-go/go.mod\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/gin-gonic/gin --manifests \"/tmp/skf-go/go.mod\"; echo \"exit=$?\"",
   "description": "CLI smoke: go.mod library classifies cleanly"
 }
 ```
@@ -2802,7 +2802,7 @@ tool_use Bash
 id: toolu_01WGZeJWkRjsbtELYr5Aoxev
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-shape-detect.py src/skf-analyze-source/references/step-auto-scope.md src/skf-analyze-source/references/step-shape-detect.md test/test-skf-shape-detect.py\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shape-detect): classify Go repositories from go.mod\n\nThe manifest scanner already recognises go.mod, but shape detection did\nnot parse it and auto-scope filtered it out — so a Go repo fell back to\ninteractive instead of classifying. Add a go.mod parser (module path as\nthe name, required modules as deps, a cmd/ path marking a binary member)\nand admit go.mod through the auto-scope manifest filter and\nsparse-checkout, with Go include/exclude defaults.\n\nThe parser registration and the filter widening ship together: admitting\ngo.mod through the filter without a parser would turn today's graceful\ninteractive fallback into a hard halt. Most Go libraries now resolve to\nlibrary-API; the Go toolchain itself is caught by the tree-triad rung.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-shape-detect.py src/skf-analyze-source/references/step-auto-scope.md src/skf-analyze-source/references/step-shape-detect.md test/test-skf-shape-detect.py\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shape-detect): classify Go repositories from go.mod\n\nThe manifest scanner already recognises go.mod, but shape detection did\nnot parse it and auto-scope filtered it out — so a Go repo fell back to\ninteractive instead of classifying. Add a go.mod parser (module path as\nthe name, required modules as deps, a cmd/ path marking a binary member)\nand admit go.mod through the auto-scope manifest filter and\nsparse-checkout, with Go include/exclude defaults.\n\nThe parser registration and the filter widening ship together: admitting\ngo.mod through the filter without a parser would turn today's graceful\ninteractive fallback into a hard halt. Most Go libraries now resolve to\nlibrary-API; the Go toolchain itself is caught by the tree-triad rung.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 4 — go.mod ecosystem"
 }
 ```
@@ -2825,7 +2825,7 @@ tool_use Read
 id: toolu_01DrxXbZnvvMG59R6Vbzpxws
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "offset": 261,
   "limit": 32
 }
@@ -2865,7 +2865,7 @@ id: toolu_01FXgbaAU4sDuvhqKr2KiEkY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "2. **`monorepo` flag** and the count of discovered supported packages — carried forward as a signal for the decomposition decision in §3a.\n\n**IF no supported manifests are found** (the filtered list is empty):\n- Emit fallback message: \"**Auto-scope could not find any supported package manifests — switching to interactive mode.**\"\n- Load, read fully, then execute `references/scan-project.md`. **STOP HERE.**",
   "new_string": "2. **`monorepo` flag** and the count of discovered supported packages — carried forward as a signal for the decomposition decision in §3a.\n\n**Harvest tree-level language signals.** A whole-language repo may declare no parser-generator dependency (a hand-written compiler such as rustc, TypeScript, or the Go toolchain) or carry no supported manifest at all (CPython, Ruby). From the **same** fetched tree — no second clone and no blobs, since tree objects are already present in the blobless clone — collect two signals for shape detection. These are pure path listings (`git ls-tree` reads tree objects; no checkout, no blob download):\n\n- **Remote fetch** (`\"$tmp\"`), or a **local path** that is a git repo (`git -C {path}`):\n  ```bash\n  files=\"$(git -C \"$tmp\" ls-tree -r    --name-only HEAD)\"   # every file path\n  dirs=\"$( git -C \"$tmp\" ls-tree -r -d --name-only […]
 
@@ -2874,7 +2874,7 @@ id: toolu_01FXgbaAU4sDuvhqKr2KiEkY
 tool_result
 id: toolu_01FXgbaAU4sDuvhqKr2KiEkY
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2888,7 +2888,7 @@ id: toolu_011m7Fad7imE8CgXfRnbVtai
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "Invoke the shape detection script with discovered manifests:\n\n```\nuv run {shapeDetectScript} --repo-url <project_path_or_url> --manifests <comma_separated_manifest_paths>\n```\n\nParse the JSON output: `{shape, signals, confidence, export_count, package_count}`",
   "new_string": "Invoke the shape detection script with the discovered manifests and the harvested tree-level signals:\n\n```\nuv run {shapeDetectScript} --repo-url <project_path_or_url> \\\n  --manifests <comma_separated_manifest_paths> \\\n  --grammar-files <grammar_matches> --tree-paths <tree_paths>\n```\n\n`<comma_separated_manifest_paths>` may be empty for a manifest-less language repo, provided `<grammar_matches>` or `<tree_paths>` carries the signal. Parse the JSON output: `{shape, signals, confidence, export_count, package_count}`"
 }
@@ -2899,7 +2899,7 @@ id: toolu_011m7Fad7imE8CgXfRnbVtai
 tool_result
 id: toolu_011m7Fad7imE8CgXfRnbVtai
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2913,7 +2913,7 @@ id: toolu_01GVHxoELaiL7YMymsfiuM4w
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md",
   "old_string": "**Command:**\n```\nuv run src/shared/scripts/skf-shape-detect.py --repo-url <url> --manifests <path1,path2,...>\n```\n\n**Arguments:**\n\n| Arg | Required | Description |\n|-----|----------|-------------|\n| `--repo-url` | Yes | Repository URL (context only — no cloning performed) |\n| `--manifests` | Yes | Comma-separated local file paths to manifest files |\n\n**Supported manifests:** `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`",
   "new_string": "**Command:**\n```\nuv run src/shared/scripts/skf-shape-detect.py --repo-url <url> \\\n  --manifests <path1,path2,...> \\\n  --grammar-files <g1,g2,...> --tree-paths <d1/,d2/,file,...>\n```\n\n**Arguments:**\n\n| Arg | Required | Description |\n|-----|----------|-------------|\n| `--repo-url` | Yes | Repository URL (context only — no cloning performed) |\n| `--manifests` | Yes | Comma-separated local file paths to manifest files (may be empty when a tree-level signal carries the classification) |\n| `--grammar-files` | No | Comma-separated repo-relative grammar files (`*.y`, `*.g4`, `*.pest`, `Grammar/python.gram`, ...) — a whole-language signal |\n| `--tree-paths` | No | Comma-separated repo-relative directory (trailing `/`) and structural file signals harvested from the clone (a `compiler/` dir, a lexer+parser+ast triad) |\n\n**Supported manifests:** `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`"
 }
@@ -2924,7 +2924,7 @@ id: toolu_01GVHxoELaiL7YMymsfiuM4w
 tool_result
 id: toolu_01GVHxoELaiL7YMymsfiuM4w
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2934,7 +2934,7 @@ id: toolu_01XwCr4wGQs4sND6gU1F5xcT
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md",
   "old_string": "The five-shape heuristic ladder applies in order (first match wins):\n\n1. **language-reference** — parser/grammar/language-toolchain project. Signals: parser-related deps (pest, antlr4, tree-sitter, lark, etc.)\n2. **stack-compose** — multi-ecosystem composite project. Signals: manifests from 2+ distinct ecosystems",
   "new_string": "The five-shape heuristic ladder applies in order (first match wins):\n\n1. **language-reference** — parser/grammar/language-toolchain project. Signals, strongest first: a hand-written-compiler tree structure (a dedicated `compiler/` directory with a lexer+parser+ast triad plus a codegen/VM/type-checker member — catches rustc, TypeScript, Go); a declared grammar file (`Grammar/python.gram`, a root `parse.y`, a `*.g4` — catches CPython, Ruby); the repo's own name being a known parser/grammar tool (pest, lalrpop, lark — the producer); or a parser-generator dependency (a DSL built on antlr4/lalrpop — the consumer). Delegating consumers (formatters, linters, bundlers that depend on a parser) and markup/DSL parsers (CSS, markdown, GraphQL) are excluded.\n2. **stack-compose** — multi-ecosystem composite project. Signals: manifests from 2+ distinct ecosystems"
 }
@@ -2945,7 +2945,7 @@ id: toolu_01XwCr4wGQs4sND6gU1F5xcT
 tool_result
 id: toolu_01XwCr4wGQs4sND6gU1F5xcT
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2958,7 +2958,7 @@ tool_use Bash
 id: toolu_01CndriErZeuC7SndPoXS552
 ```json
 {
-  "command": "cd /tmp && rm -rf skf-harvest && mkdir skf-harvest && cd skf-harvest\ngit init -q\nmkdir -p src/compiler\ntouch src/compiler/scanner.ts src/compiler/parser.ts src/compiler/binder.ts src/compiler/checker.ts\nprintf '{\"name\":\"typescript\",\"bin\":{\"tsc\":\"./bin/tsc\"}}' > package.json\ngit add -A && git -c user.email=t@t.co -c user.name=t commit -qm init\n\n# --- exact harvest commands from the doc ---\nfiles=\"$(git ls-tree -r    --name-only HEAD)\"\ndirs=\"$( git ls-tree -r -d --name-only HEAD)\"\ngrammar_matches=\"$(printf '%s\\n' \"$files\" \\\n  | grep -Ei '\\.(g4|pest|lalrpop|y|gram|lark|ebnf|peg|ungram)$|/grammar\\.(js|json)$' \\\n  | awk -F/ 'NF<=4' | paste -sd, -)\"\ntree_paths=\"$({ printf '%s\\n' \"$dirs\" | sed 's#$#/#'; \\\n                printf '%s\\n' \"$files\" | awk -F/ 'NF<=5'; } | paste -sd, -)\"\necho \"grammar_matches=[$grammar_matches]\"\necho \"tree_paths=[$tree_paths]\"\necho \"--- shape-detect ---\"\ncd /home/armel/Projects/OSS/bmad-module-skill-forge\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/microsoft/TypeScript \\\n  --manifests \"/tmp/skf-harvest/package.json\" --grammar-files \"$grammar_matches\" --tree-paths \"$tree_paths\"",
+  "command": "cd /tmp && rm -rf skf-harvest && mkdir skf-harvest && cd skf-harvest\ngit init -q\nmkdir -p src/compiler\ntouch src/compiler/scanner.ts src/compiler/parser.ts src/compiler/binder.ts src/compiler/checker.ts\nprintf '{\"name\":\"typescript\",\"bin\":{\"tsc\":\"./bin/tsc\"}}' > package.json\ngit add -A && git -c user.email=<REDACTED_EMAIL> -c user.name=t commit -qm init\n\n# --- exact harvest commands from the doc ---\nfiles=\"$(git ls-tree -r    --name-only HEAD)\"\ndirs=\"$( git ls-tree -r -d --name-only HEAD)\"\ngrammar_matches=\"$(printf '%s\\n' \"$files\" \\\n  | grep -Ei '\\.(g4|pest|lalrpop|y|gram|lark|ebnf|peg|ungram)$|/grammar\\.(js|json)$' \\\n  | awk -F/ 'NF<=4' | paste -sd, -)\"\ntree_paths=\"$({ printf '%s\\n' \"$dirs\" | sed 's#$#/#'; \\\n                printf '%s\\n' \"$files\" | awk -F/ 'NF<=5'; } | paste -sd, -)\"\necho \"grammar_matches=[$grammar_matches]\"\necho \"tree_paths=[$tree_paths]\"\necho \"--- shape-detect ---\"\ncd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/microsoft/TypeScript \\\n  --manifests \"/tmp/skf-harvest/package.json\" --grammar-files \"$grammar_matches\" --tree-paths \"$tree_paths\"",
   "description": "Validate harvest bash pipeline end-to-end on fabricated TS tree"
 }
 ```
@@ -3010,7 +3010,7 @@ derive/examples/help-menu.pest
 derive/examples/help-menu.rs
 --- grammar_matches from harvest ---
 derive/examples/base.pest,derive/examples/calc.pest,derive/examples/help-menu.pest,derive/tests/grammar.pest,derive/tests/implicit.pest,derive/tests/lists.pest,derive/tests/oneormore.pest,derive/tests/opt.pest,derive/tests/reporting.pest,derive/tests/surround.pest,generator/tests/base.pest,generator/tests/test.pest,grammars/src/grammars/http.pest,grammars/src/grammars/json.pest,grammars/src/grammars/sql.pest,grammars/src/grammars/toml.pest,meta/src/grammar.pest,vm/tests/grammar.pest,vm/tests/lists.pest,vm/tests/reporting.pest,vm/tests/surround.pest
-Shell cwd was reset to /home/armel/Projects/OSS/bmad-module-skill-forge
+Shell cwd was reset to /home/<USER>/Projects/OSS/bmad-module-skill-forge
 ```
 
 > AGENT
@@ -3024,7 +3024,7 @@ id: toolu_01EJacX88A2UoSRJL6k1Edav
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "  files=\"$(git -C \"$tmp\" ls-tree -r    --name-only HEAD)\"   # every file path\n  dirs=\"$( git -C \"$tmp\" ls-tree -r -d --name-only HEAD)\"   # every directory\n  # Grammar files (depth-capped to skip deep vendored test fixtures):\n  grammar_matches=\"$(printf '%s\\n' \"$files\" \\\n    | grep -Ei '\\.(g4|pest|lalrpop|y|gram|lark|ebnf|peg|ungram)$|/grammar\\.(js|json)$' \\\n    | awk -F/ 'NF<=4' | paste -sd, -)\"\n  # Directory signals (trailing /) + depth-capped file basenames for the triad:\n  tree_paths=\"$({ printf '%s\\n' \"$dirs\" | sed 's#$#/#'; \\\n                  printf '%s\\n' \"$files\" | awk -F/ 'NF<=5'; } | paste -sd, -)\"",
   "new_string": "  files=\"$(git -C \"$tmp\" ls-tree -r    --name-only HEAD)\"   # every file path\n  dirs=\"$( git -C \"$tmp\" ls-tree -r -d --name-only HEAD)\"   # every directory\n  # Grammar files (depth-capped to skip deep vendored fixtures, hard-capped):\n  grammar_matches=\"$(printf '%s\\n' \"$files\" \\\n    | grep -Ei '\\.(g4|pest|lalrpop|y|gram|lark|ebnf|peg|ungram)$|/grammar\\.(js|json)$' \\\n    | awk -F/ 'NF<=4' | head -n 50 | paste -sd, -)\"\n  # Directory signals (trailing /) + depth-capped file basenames, narrowed to\n  # compiler-relevant paths so the argument stays bounded on huge repos. The\n  # filter is a loose superset of shape detection's gates — the script does the\n  # precise matching; this only keeps the list small.\n  tree_paths=\"$({ printf '%s\\n' […]
 
@@ -3033,7 +3033,7 @@ id: toolu_01EJacX88A2UoSRJL6k1Edav
 tool_result
 id: toolu_01EJacX88A2UoSRJL6k1Edav
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3046,7 +3046,7 @@ tool_use Bash
 id: toolu_01LpQEbiqwLmzAoBTiTqf2TK
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ntmp=/tmp/skf-blobless\necho \"=== pest: grammar_matches (capped 50) ===\"\ngit -C \"$tmp\" ls-tree -r --name-only HEAD \\\n  | grep -Ei '\\.(g4|pest|lalrpop|y|gram|lark|ebnf|peg|ungram)$|/grammar\\.(js|json)$' \\\n  | awk -F/ 'NF<=4' | head -n 50 | paste -sd, - | head -c 200; echo \"...\"\necho \"=== pest: tree_paths (relevance-filtered + capped) — count ===\"\ndirs=\"$(git -C \"$tmp\" ls-tree -r -d --name-only HEAD)\"; files=\"$(git -C \"$tmp\" ls-tree -r --name-only HEAD)\"\ntp=\"$({ printf '%s\\n' \"$dirs\" | sed 's#$#/#'; printf '%s\\n' \"$files\" | awk -F/ 'NF<=5'; } | grep -Ei '(^|/)(compiler|compile|syntax|scanner|lexer|tokeniz|parser|parse|ast|binder|checker|codegen|ssagen|interpreter|vm|eval|rustc_[a-z]+)' | head -n 400)\"\necho \"$tp\" | wc -l; echo \"$tp\" | grep -E '(parser|pest)' | head -5\necho \"=== fabricated TS tree still fires after relevance filter ===\"\ncd /tmp/skf-harvest\ndirs=\"$(git ls-tree -r -d --name-only HEAD)\"; files=\"$(git ls-tree -r --name-only HEAD)\"\ntp=\"$({ printf '%s\\n' \"$dirs\" | sed 's#$#/#'; printf '%s\\n' \"$files\" | awk -F/ 'NF<=5'; } | grep -Ei '(^|/)(compiler|compile|syntax|scanner|lexer|tokeniz|parser|parse|ast|binder|checker|codegen|ssagen|interpreter|vm|eval|rustc_[a-z]+)' | head -n 400 | paste -sd, -)\"\ncd /home/armel/Projects/OSS/bmad-module-skill-forge\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/microsoft/TypeScript --manifests \"/tmp/skf-harvest/package.json\" --tree-paths \"$tp\" | python3 -c \"import sys,json; d=json.load(sys.stdin); print(d['shape'], [s for s in d['signals'] if 'triad' in s])\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ntmp=/tmp/skf-blobless\necho \"=== pest: grammar_matches (capped 50) ===\"\ngit -C \"$tmp\" ls-tree -r --name-only HEAD \\\n  | grep -Ei '\\.(g4|pest|lalrpop|y|gram|lark|ebnf|peg|ungram)$|/grammar\\.(js|json)$' \\\n  | awk -F/ 'NF<=4' | head -n 50 | paste -sd, - | head -c 200; echo \"...\"\necho \"=== pest: tree_paths (relevance-filtered + capped) — count ===\"\ndirs=\"$(git -C \"$tmp\" ls-tree -r -d --name-only HEAD)\"; files=\"$(git -C \"$tmp\" ls-tree -r --name-only HEAD)\"\ntp=\"$({ printf '%s\\n' \"$dirs\" | sed 's#$#/#'; printf '%s\\n' \"$files\" | awk -F/ 'NF<=5'; } | grep -Ei '(^|/)(compiler|compile|syntax|scanner|lexer|tokeniz|parser|parse|ast|binder|checker|codegen|ssagen|interpreter|vm|eval|rustc_[a-z]+)' | head -n 400)\"\necho \"$tp\" | wc -l; echo \"$tp\" | grep -E '(parser|pest)' | head -5\necho \"=== fabricated TS tree still fires after relevance filter ===\"\ncd /tmp/skf-harvest\ndirs=\"$(git ls-tree -r -d --name-only HEAD)\"; files=\"$(git ls-tree -r --name-only HEAD)\"\ntp=\"$({ printf '%s\\n' \"$dirs\" | sed 's#$#/#'; printf '%s\\n' \"$files\" | awk -F/ 'NF<=5'; } | grep -Ei '(^|/)(compiler|compile|syntax|scanner|lexer|tokeniz|parser|parse|ast|binder|checker|codegen|ssagen|interpreter|vm|eval|rustc_[a-z]+)' | head -n 400 | paste -sd, -)\"\ncd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nuv run src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/microsoft/TypeScript --manifests \"/tmp/skf-harvest/package.json\" --tree-paths \"$tp\" | python3 -c \"import sys,json; d=json.load(sys.stdin); print(d['shape'], [s for s in d['signals'] if 'triad' in s])\"",
   "description": "Re-validate hardened harvest on pest + fabricated TS"
 }
 ```
@@ -3079,7 +3079,7 @@ tool_use Bash
 id: toolu_01JTL5UWNitffmg9nMmh5KUH
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nrm -rf /tmp/skf-blobless /tmp/skf-harvest /tmp/skf-go /tmp/skf-sass /tmp/skf-prettier 2>/dev/null\ngit add src/skf-analyze-source/references/step-auto-scope.md src/skf-analyze-source/references/step-shape-detect.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(analyze-source): harvest grammar and compiler-tree signals for scoping\n\nWire the auto-scope manifest scan to also harvest the tree-level\nlanguage signals shape detection now accepts. From the same blobless\nclone — no second fetch and no source blobs, since git ls-tree reads the\ntree objects already present — collect grammar files and\ncompiler-directory/triad structure, then pass them to shape detection\nalongside the manifests.\n\nThis lets a manifest-less language toolchain reach classification: the\n\"no supported manifests\" fallback now routes to interactive only when no\ngrammar file and no compiler directory are present, so CPython and Ruby\nclassify instead of dead-ending. The harvest is depth-capped, narrowed\nto compiler-relevant paths, and hard-capped so the argument stays\nbounded on very large repositories.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -6",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nrm -rf /tmp/skf-blobless /tmp/skf-harvest /tmp/skf-go /tmp/skf-sass /tmp/skf-prettier 2>/dev/null\ngit add src/skf-analyze-source/references/step-auto-scope.md src/skf-analyze-source/references/step-shape-detect.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(analyze-source): harvest grammar and compiler-tree signals for scoping\n\nWire the auto-scope manifest scan to also harvest the tree-level\nlanguage signals shape detection now accepts. From the same blobless\nclone — no second fetch and no source blobs, since git ls-tree reads the\ntree objects already present — collect grammar files and\ncompiler-directory/triad structure, then pass them to shape detection\nalongside the manifests.\n\nThis lets a manifest-less language toolchain reach classification: the\n\"no supported manifests\" fallback now routes to interactive only when no\ngrammar file and no compiler directory are present, so CPython and Ruby\nclassify instead of dead-ending. The harvest is depth-capped, narrowed\nto compiler-relevant paths, and hard-capped so the argument stays\nbounded on very large repositories.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -6",
   "description": "Commit 5 — acquisition/harvest/routing wiring"
 }
 ```
@@ -3111,7 +3111,7 @@ id: toolu_01PsCUu1kDhP7uSLdTiummFb
 {
   "description": "Map doc-detection & scope-notes seams",
   "subagent_type": "Explore",
-  "prompt": "In bmad-module-skill-forge (/home/armel/Projects/OSS/bmad-module-skill-forge), I'm designing \"multi-corpus\" for issue #427: a language-reference repo (rust-lang/rust) should become a useful skill by combining its CODE with external DOC corpora (the Rust Book, std docs). Two precise things I need mapped, with exact file paths + line numbers + quoted code:\n\n1. **skf-detect-docs.py output + invocation.** Read src/shared/scripts/skf-detect-docs.py fully. What is its CLI contract (args) and its JSON OUTPUT schema (the exact keys)? What does `_is_doc_url` consider a doc URL? Does it extract doc URLs from a README, and in what shape ([{url,label}]?)? Then GREP the repo for who invokes skf-detect-docs (which skills/steps call it, and when in the pipeline) — is it called during auto-scope (step-auto-scope.md) at all, or only elsewhere? Quote the invocation.\n\n2. **How a brief gets doc_urls in the AUTO path, and scope.notes/rationale.** In step-auto-scope.md §6 (Build Scope) and the brief-writing flow (skf-write-skill-brief.py / step-auto-brief.md), trace: when auto-scope classifies a repo, how is the brief's `doc_urls` populated (if at all)? Is there any path where auto-scope adds doc_urls for a code repo, or is doc_urls only set by the §0a docs-only short-circuit? Quote the scope object construction […]
+  "prompt": "In bmad-module-skill-forge (/home/<USER>/Projects/OSS/bmad-module-skill-forge), I'm designing \"multi-corpus\" for issue #427: a language-reference repo (rust-lang/rust) should become a useful skill by combining its CODE with external DOC corpora (the Rust Book, std docs). Two precise things I need mapped, with exact file paths + line numbers + quoted code:\n\n1. **skf-detect-docs.py output + invocation.** Read src/shared/scripts/skf-detect-docs.py fully. What is its CLI contract (args) and its JSON OUTPUT schema (the exact keys)? What does `_is_doc_url` consider a doc URL? Does it extract doc URLs from a README, and in what shape ([{url,label}]?)? Then GREP the repo for who invokes skf-detect-docs (which skills/steps call it, and when in the pipeline) — is it called during auto-scope (step-auto-scope.md) at all, or only elsewhere? Quote the invocation.\n\n2. **How a brief gets doc_urls in the AUTO path, and scope.notes/rationale.** In step-auto-scope.md §6 (Build Scope) and the brief-writing flow (skf-write-skill-brief.py / step-auto-brief.md), trace: when auto-scope classifies a repo, how is the brief's `doc_urls` populated (if at all)? Is there any path where auto-scope adds doc_urls for a code repo, or is doc_urls only set by the §0a docs-only short-circuit? Quote the scope object construction […]
 
 > TOOL
 
@@ -3128,7 +3128,7 @@ Based on my thorough read of the codebase, here are your three requested points 
 
 ### 1. **skf-detect-docs.py: CLI Contract & JSON Output Schema**
 
-**File:** `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py`
+**File:** `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py`
 
 **CLI Contract (lines 18–25):**
 ```
@@ -3193,11 +3193,11 @@ id: toolu_016tEaPdD8WtB64Bpry2Ns2v
 ```
 Workflow launched in background. Task ID: wf1onj4h2
 Summary: Design honest-degradation (A3) + multi-corpus corpus-sourcing (C2) for language-reference skills
-Transcript dir: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/subagents/workflows/wf_8d71f243-449
-Script file: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phasec-design-wf_8d71f243-449.js
-(Edit this file with Write/Edit and re-invoke Workflow with {scriptPath: "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phasec-design-wf_8d71f243-449.js"} to iterate without resending the script.)
+Transcript dir: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/subagents/workflows/wf_8d71f243-449
+Script file: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phasec-design-wf_8d71f243-449.js
+(Edit this file with Write/Edit and re-invoke Workflow with {scriptPath: "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phasec-design-wf_8d71f243-449.js"} to iterate without resending the script.)
 Run ID: wf_8d71f243-449
-To resume after editing the script: Workflow({scriptPath: "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phasec-design-wf_8d71f243-449.js", resumeFromRunId: "wf_8d71f243-449"}) — completed agents return cached results.
+To resume after editing the script: Workflow({scriptPath: "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/35600871-ad6f-4c41-8071-82c59eec462f/workflows/scripts/issue-427-phasec-design-wf_8d71f243-449.js", resumeFromRunId: "wf_8d71f243-449"}) — completed agents return cached results.
 
 You will be notified when it completes. Use /workflows to watch live progress.
 ```
@@ -3212,7 +3212,7 @@ tool_use Bash
 id: toolu_01NGLDtoJ2TokUHeY3nBureZ
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nnode -e \"const t=require('./package.json').scripts['test:python']; console.log(t)\" 2>/dev/null | tr ' ' '\\n' | grep -E \"test-skf|\\.py\" | head -40",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nnode -e \"const t=require('./package.json').scripts['test:python']; console.log(t)\" 2>/dev/null | tr ' ' '\\n' | grep -E \"test-skf|\\.py\" | head -40",
   "description": "Inspect test:python enumerated paths"
 }
 ```
@@ -3412,7 +3412,7 @@ tool_use Read
 id: toolu_014UFQ9kfgxQAKbiBEDxrdPe
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py",
   "offset": 82,
   "limit": 30
 }
@@ -3465,7 +3465,7 @@ tool_use Bash
 id: toolu_017bqyPDFtvKWg7jnzE93hqc
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -n \"_is_doc_url\\|def test_\\|class Test\\|_DOC_DOMAIN\\|_DOC_PATH\" test/test-skf-detect-docs.py | head -40",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -n \"_is_doc_url\\|def test_\\|class Test\\|_DOC_DOMAIN\\|_DOC_PATH\" test/test-skf-detect-docs.py | head -40",
   "description": "Inspect detect-docs test structure"
 }
 ```
@@ -3523,7 +3523,7 @@ tool_use Read
 id: toolu_01ByArMNCqPKXSbJSSubNzDk
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-detect-docs.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-detect-docs.py",
   "offset": 142,
   "limit": 75
 }
@@ -3596,7 +3596,7 @@ id: toolu_016DGAnauUq9YuTE8otJHHBR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py",
   "old_string": "_DOC_DOMAIN_RE = re.compile(\n    r\"(?:docs\\.|\\.readthedocs\\.|wiki\\.|documentation\\.)\",\n    re.IGNORECASE,\n)\n\n_DOC_PATH_RE = re.compile(\n    r\"(?:/docs/|/documentation/|/api/|/reference/|/guide/|/wiki/)\",\n    re.IGNORECASE,\n)",
   "new_string": "# `docs?\\.` (not `docs\\.`) so a `doc.` subdomain matches too — language doc\n# sites use the singular form (doc.rust-lang.org, doc.qt.io).\n_DOC_DOMAIN_RE = re.compile(\n    r\"(?:docs?\\.|\\.readthedocs\\.|wiki\\.|documentation\\.)\",\n    re.IGNORECASE,\n)\n\n# Language reference/guide path segments (a Book, a std/library API, a tutorial)\n# are doc URLs even on a bare domain (doc.rust-lang.org/book/, .../std/).\n_DOC_PATH_RE = re.compile(\n    r\"(?:/docs/|/documentation/|/api/|/reference/|/guide/|/wiki/\"\n    r\"|/book/|/std/|/library/|/tutorial/)\",\n    re.IGNORECASE,\n)"
 }
@@ -3607,7 +3607,7 @@ id: toolu_016DGAnauUq9YuTE8otJHHBR
 tool_result
 id: toolu_016DGAnauUq9YuTE8otJHHBR
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3620,7 +3620,7 @@ tool_use Read
 id: toolu_0182yQjWksoFR7imMquBNS82
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-detect-docs.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-detect-docs.py",
   "offset": 293,
   "limit": 40
 }
@@ -3680,7 +3680,7 @@ id: toolu_01VX5L9dWzi785vxtkJJcxkh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-detect-docs.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-detect-docs.py",
   "old_string": "class TestExclusionFilter:\n    def test_changelog_excluded(self):",
   "new_string": "class TestLanguageDocRecall:\n    \"\"\"Widened recall (issue #427): a `doc.` subdomain and language\n    reference/guide path segments are doc URLs, so a language repo's canonical\n    corpora (the Book, std/library docs) are detected from its README.\"\"\"\n\n    def test_doc_subdomain_accepted(self):\n        # `doc.rust-lang.org` (singular) was missed by the old `docs\\.` rule.\n        assert mod._is_doc_url(\"https://doc.rust-lang.org/book/\")\n        assert mod._is_doc_url(\"https://doc.rust-lang.org/std/\")\n        assert mod._is_doc_url(\"https://doc.rust-lang.org/reference/\")\n\n    def test_language_path_segments_accepted(self):\n        assert mod._is_doc_url(\"https://docs.python.org/3/tutorial/\")\n        assert mod._is_doc_url(\"https://docs.python.org/3/library/\")\n        assert mod._is_doc_url(\"https://example.org/book/\")\n\n    def test_near_miss_still_rejected(self):\n        # Widening must not start accepting arbitrary product/marketing URLs.\n        assert not mod._is_doc_url(\"https://rust-lang.org/\")\n        assert not mod._is_doc_url(\"https://example.com/blog/2026/new-release\")\n        assert not mod._is_doc_url(\"https://github.com/rust-lang/rust\")\n\n    def test_widening_does_not_break_rejects(self):\n        # A badge/CI URL that happens to contain a doc-ish word stays rejected.\n        assert not mod._is_doc_url(\"https://img.shields.io/badge/docs-passing.svg\")\n\n\nclass TestExclusionFilter:\n    def test_changelog_excluded(self):"
 }
@@ -3691,7 +3691,7 @@ id: toolu_01VX5L9dWzi785vxtkJJcxkh
 tool_result
 id: toolu_01VX5L9dWzi785vxtkJJcxkh
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-detect-docs.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-detect-docs.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3700,7 +3700,7 @@ tool_use Bash
 id: toolu_017FebS5NKt5KxmWxQYMyUcv
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nuv run pytest test/test-skf-detect-docs.py -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nuv run pytest test/test-skf-detect-docs.py -q 2>&1 | tail -8",
   "description": "Run detect-docs tests after regex widening"
 }
 ```
@@ -3724,7 +3724,7 @@ tool_use Bash
 id: toolu_01J4cYT8jg3gNnU392gcbTuv
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-detect-docs.py test/test-skf-detect-docs.py\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfix(detect-docs): widen doc-URL recall to doc. subdomains and language paths\n\nDocumentation detection keyed on a `docs.` subdomain and a fixed set of\npath segments, so a language's canonical corpora were missed: the Rust\nBook and std docs live at doc.rust-lang.org (singular), and Book/std/\ntutorial pages sit on bare domains. Match a `doc.` subdomain too and add\nthe /book/, /std/, /library/, and /tutorial/ path segments, so a language\nrepo's companion prose is detected from its README. The reject filter and\nexclusion list are unchanged, so badges, CI, and changelog/migration\npages stay out.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-detect-docs.py test/test-skf-detect-docs.py\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfix(detect-docs): widen doc-URL recall to doc. subdomains and language paths\n\nDocumentation detection keyed on a `docs.` subdomain and a fixed set of\npath segments, so a language's canonical corpora were missed: the Rust\nBook and std docs live at doc.rust-lang.org (singular), and Book/std/\ntutorial pages sit on bare domains. Match a `doc.` subdomain too and add\nthe /book/, /std/, /library/, and /tutorial/ path segments, so a language\nrepo's companion prose is detected from its README. The reject filter and\nexclusion list are unchanged, so badges, CI, and changelog/migration\npages stay out.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 1 (Phase C) — doc-URL recall widening"
 }
 ```
@@ -3747,7 +3747,7 @@ tool_use Bash
 id: toolu_01RHGeEtE4fB3uMZJDF9TYa5
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nfor u in \\\n  \"https://doc.rust-lang.org/book/\" \"https://doc.rust-lang.org/std/\" \"https://doc.rust-lang.org/reference/\" \\\n  \"https://docs.python.org/3/tutorial/\" \"https://docs.python.org/3/library/\" \"https://docs.python.org/3/reference/\" \"https://docs.python.org/3/howto/\" \\\n  \"https://go.dev/tour/\" \"https://go.dev/doc/effective_go\" \"https://go.dev/ref/spec\" \"https://pkg.go.dev/std\" \\\n  \"https://www.typescriptlang.org/docs/handbook/intro.html\" \"https://www.typescriptlang.org/docs/\" \\\n  \"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide\" \"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference\" \\\n  \"https://www.ruby-lang.org/en/documentation/quickstart/\" \"https://docs.ruby-lang.org/en/master/\" ; do\n  code=$(curl -s -o /dev/null -w \"%{http_code}\" -L --max-time 12 \"$u\"); echo \"$code  $u\"\ndone",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nfor u in \\\n  \"https://doc.rust-lang.org/book/\" \"https://doc.rust-lang.org/std/\" \"https://doc.rust-lang.org/reference/\" \\\n  \"https://docs.python.org/3/tutorial/\" \"https://docs.python.org/3/library/\" \"https://docs.python.org/3/reference/\" \"https://docs.python.org/3/howto/\" \\\n  \"https://go.dev/tour/\" \"https://go.dev/doc/effective_go\" \"https://go.dev/ref/spec\" \"https://pkg.go.dev/std\" \\\n  \"https://www.typescriptlang.org/docs/handbook/intro.html\" \"https://www.typescriptlang.org/docs/\" \\\n  \"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide\" \"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference\" \\\n  \"https://www.ruby-lang.org/en/documentation/quickstart/\" \"https://docs.ruby-lang.org/en/master/\" ; do\n  code=$(curl -s -o /dev/null -w \"%{http_code}\" -L --max-time 12 \"$u\"); echo \"$code  $u\"\ndone",
   "description": "Verify all registry corpus URLs are live"
 }
 ```
@@ -3786,7 +3786,7 @@ tool_use Write
 id: toolu_017TSwN6QCFS1GaLVjiBAjN6
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/data/language-corpora.json",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/data/language-corpora.json",
   "content": "{\n  \"_comment\": \"Canonical companion prose corpora for whole-language skills (issue #427). A language-reference repo (a compiler/interpreter such as rust-lang/rust) carries the language's CODE; its value as a skill comes from the language's PROSE — the guide/Book, the standard/library API docs, and idioms. README detection (skf-detect-docs.py) is the primary source; this registry guarantees the canonical corpora for well-known languages even when the repo's README does not link them. Keyed by lowercase language id (as emitted by skf-detect-language.py / step-auto-scope.md). URLs are version-agnostic, point at maintained latest-stable aliases, and were verified live. Consumed by skf-language-corpora.py, which emits the brief doc_urls contract {url, label}.\",\n  \"rust\": [\n    { \"url\": \"https://doc.rust-lang.org/book/\", \"label\": \"The Rust Programming Language (Book)\" },\n    { \"url\": \"https://doc.rust-lang.org/std/\", \"label\": \"Rust Standard Library\" },\n    { \"url\": \"https://doc.rust-lang.org/reference/\", \"label\": \"The Rust Reference\" }\n  ],\n  \"python\": [\n    { \"url\": \"https://docs.python.org/3/tutorial/\", \"label\": \"The Python Tutorial\" },\n    { \"url\": \"https://docs.python.org/3/library/\", \"label\": \"Python Standard Library\" },\n    { \"url\": \"https://docs.python.org/3/reference/\", \"label\": \"Python Language Reference\" },\n    { \"url\": \"https://docs.python.org/3/howto/\", \"label\": \"Python HOWTOs (idioms)\" }\n  ],\n  \"go\": [\n    { \"url\": \"https://go.dev/tour/\", \"label\": \"A Tour of Go\" },\n    { \"url\": \"https://go.dev/doc/effective_go\", \"label\": \"Effective Go\" },\n    { \"url\": \"https://go.dev/ref/spec\", \"label\": \"The Go Language Specification\" […]
 
 > TOOL
@@ -3794,7 +3794,7 @@ id: toolu_017TSwN6QCFS1GaLVjiBAjN6
 tool_result
 id: toolu_017TSwN6QCFS1GaLVjiBAjN6
 ```
-File created successfully at: /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/data/language-corpora.json (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/data/language-corpora.json (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3807,7 +3807,7 @@ tool_use Write
 id: toolu_013JzhoyHtqGsiDDT2XJZSsj
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-language-corpora.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-language-corpora.py",
   "content": "# /// script\n# requires-python = \">=3.9\"\n# dependencies = []\n# ///\n\"\"\"SKF Language Corpora — canonical companion prose corpora for a language.\n\nA whole-language skill (issue #427) is forged from a language-reference repo\n(a compiler/interpreter such as rust-lang/rust). That repo carries the\nlanguage's CODE, but a skill's value comes from the language's PROSE — the\nguide/Book, the standard/library API docs, idioms. README detection\n(skf-detect-docs.py) is the primary source for those; this lookup guarantees\nthe canonical corpora for well-known languages even when the repo's README\ndoes not link them.\n\nPure static lookup over src/shared/data/language-corpora.json — no network,\nno git, no `gh`. Output is the brief `doc_urls` contract (`{url, label}`), so\nthe result can be seeded directly into a skill brief.\n\nCLI:\n  uv run src/shared/scripts/skf-language-corpora.py --language <id>\n\nOutput (JSON array on stdout): [{\"url\": \"...\", \"label\": \"...\"}, ...]\n\nExit codes:\n  0  registry hit — one or more corpora emitted\n  1  no entry for this language (long-tail / unknown) — emits []\n  2  error (bad args, missing/unreadable/invalid data file)\n\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport json\nimport sys\nfrom pathlib import Path\n\n_DATA_FILE = Path(__file__).resolve().parent.parent / \"data\" / \"language-corpora.json\"\n\n\ndef _die(message: str, code: str = \"INTERNAL_ERROR\") -> None:\n    json.dump({\"error\": message, \"code\": code}, sys.stderr, ensure_ascii=False)\n    sys.stderr.write(\"\\n\")\n    sys.exit(2)\n\n\ndef _load_registry() -> dict:\n    try:\n        data = json.loads(_DATA_FILE.read_text(encoding=\"utf-8\"))\n    except OSError as […]
 
 > TOOL
@@ -3815,7 +3815,7 @@ id: toolu_013JzhoyHtqGsiDDT2XJZSsj
 tool_result
 id: toolu_013JzhoyHtqGsiDDT2XJZSsj
 ```
-File created successfully at: /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-language-corpora.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-language-corpora.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3828,7 +3828,7 @@ tool_use Write
 id: toolu_01GumqE2Wcasz8TeUjFXAuAm
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-language-corpora.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-language-corpora.py",
   "content": "#!/usr/bin/env python3\n\"\"\"Tests for skf-language-corpora.py — the canonical language→corpora registry.\n\nPure-function tests over corpora_for(), plus subprocess tests for the CLI\ncontract (exit 0 hit / 1 miss / 2 error) and the brief doc_urls output shape.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport importlib.util\nimport json\nimport subprocess\nimport sys\nfrom pathlib import Path\n\nimport pytest\n\nROOT = Path(__file__).parent.parent\nSCRIPT_PATH = ROOT / \"src\" / \"shared\" / \"scripts\" / \"skf-language-corpora.py\"\nDATA_PATH = ROOT / \"src\" / \"shared\" / \"data\" / \"language-corpora.json\"\n\nspec = importlib.util.spec_from_file_location(\"skf_language_corpora\", SCRIPT_PATH)\nmod = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(mod)\n\nSEEDED = [\"rust\", \"python\", \"go\", \"typescript\", \"javascript\", \"ruby\"]\n\n\nclass TestCorporaLookup:\n    @pytest.mark.parametrize(\"lang\", SEEDED)\n    def test_seeded_language_has_corpora(self, lang):\n        result = mod.corpora_for(lang)\n        assert len(result) >= 1, f\"{lang} should have ≥1 corpus\"\n\n    def test_case_insensitive(self):\n        assert mod.corpora_for(\"Rust\") == mod.corpora_for(\"rust\")\n        assert mod.corpora_for(\"  PYTHON  \") == mod.corpora_for(\"python\")\n\n    def test_unknown_language_is_empty(self):\n        assert mod.corpora_for(\"cobol\") == []\n        assert mod.corpora_for(\"\") == []\n\n    def test_output_is_brief_contract_shape_only(self):\n        \"\"\"Each entry is exactly {url, label} — NOT the detect-docs shape with\n        content_type/detected_via, which the brief writer would discard.\"\"\"\n        for lang in SEEDED:\n            for entry in mod.corpora_for(lang):\n                assert set(entry.keys()) == {\"url\", \"label\"}, entry\n                assert entry[\"url\"].startswith(\"http\")\n                assert entry[\"label\"]\n\n    def test_rust_includes_book_and_std(self):\n        urls = [e[\"url\"] for e in mod.corpora_for(\"rust\")]\n        assert any(\"/book/\" in u for u in urls)\n        assert any(\"/std/\" in u for u in urls)\n\n\nclass TestRegistryData:\n    def test_all_keys_lowercase_and_known(self):\n        data = json.loads(DATA_PATH.read_text(encoding=\"utf-8\"))\n        keys = [k […]
 
 > TOOL
@@ -3836,7 +3836,7 @@ id: toolu_01GumqE2Wcasz8TeUjFXAuAm
 tool_result
 id: toolu_01GumqE2Wcasz8TeUjFXAuAm
 ```
-File created successfully at: /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-language-corpora.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-language-corpora.py (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3845,7 +3845,7 @@ tool_use Bash
 id: toolu_01EYFvFpW6W51Ct8WR5LPFS3
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nuv run pytest test/test-skf-language-corpora.py -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nuv run pytest test/test-skf-language-corpora.py -q 2>&1 | tail -8",
   "description": "Run new registry helper tests"
 }
 ```
@@ -3869,7 +3869,7 @@ tool_use Bash
 id: toolu_015VEKrdp1XvrHgyARCW55gE
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -n \"test-skf-language-detect\\|test-skf-detect-language\\|test-skf-detect-docs\" package.json | head",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -n \"test-skf-language-detect\\|test-skf-detect-language\\|test-skf-detect-docs\" package.json | head",
   "description": "Find a nearby test path in test:python for insertion anchor"
 }
 ```
@@ -3897,7 +3897,7 @@ id: toolu_015Uzr9GBqUrNJhaoUR5C4z3
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/package.json",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/package.json",
   "old_string": "test/test-skf-detect-language.py test/test-skf-description-guard.py",
   "new_string": "test/test-skf-detect-language.py test/test-skf-language-corpora.py test/test-skf-description-guard.py"
 }
@@ -3909,7 +3909,7 @@ tool_use Read
 id: toolu_012hJs8PT1bsAPFfK2ZD3m6b
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/package.json",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/package.json",
   "offset": 56,
   "limit": 1
 }
@@ -3930,7 +3930,7 @@ id: toolu_01PFT1276qjHWVpAfkrBhEBY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/package.json",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/package.json",
   "old_string": "test/test-skf-detect-language.py test/test-skf-description-guard.py",
   "new_string": "test/test-skf-detect-language.py test/test-skf-language-corpora.py test/test-skf-description-guard.py"
 }
@@ -3941,7 +3941,7 @@ id: toolu_01PFT1276qjHWVpAfkrBhEBY
 tool_result
 id: toolu_01PFT1276qjHWVpAfkrBhEBY
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3954,7 +3954,7 @@ tool_use Bash
 id: toolu_01RVno1rWeYF9B33giD5d3WL
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"rust:\"; uv run src/shared/scripts/skf-language-corpora.py --language rust; echo \"exit=$?\"\necho \"cobol (miss):\"; uv run src/shared/scripts/skf-language-corpora.py --language cobol; echo \"exit=$?\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"rust:\"; uv run src/shared/scripts/skf-language-corpora.py --language rust; echo \"exit=$?\"\necho \"cobol (miss):\"; uv run src/shared/scripts/skf-language-corpora.py --language cobol; echo \"exit=$?\"",
   "description": "CLI smoke for registry helper"
 }
 ```
@@ -3978,7 +3978,7 @@ tool_use Bash
 id: toolu_01EAr6hhNyLJoj7gwoCNKdDw
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-language-corpora.py src/shared/data/language-corpora.json test/test-skf-language-corpora.py package.json\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shared): add curated language-to-corpora registry\n\nA whole-language skill is forged from a language's compiler/interpreter\nrepo, but its value comes from the language's PROSE — the guide/Book,\nthe standard/library API docs, idioms — not the compiler internals.\nREADME detection finds those when the repo links them; this registry\nguarantees the canonical corpora for well-known languages (Rust, Python,\nGo, TypeScript, JavaScript, Ruby) even when the README does not.\n\nAdd skf-language-corpora.py, a pure static lookup (no network) over a new\ndata/language-corpora.json, emitting the brief doc_urls contract\n{url, label} so the result can be seeded directly into a skill brief.\nAll registry URLs are version-agnostic latest-stable aliases, verified\nlive. Enumerate the new test in test:python.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/shared/scripts/skf-language-corpora.py src/shared/data/language-corpora.json test/test-skf-language-corpora.py package.json\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(shared): add curated language-to-corpora registry\n\nA whole-language skill is forged from a language's compiler/interpreter\nrepo, but its value comes from the language's PROSE — the guide/Book,\nthe standard/library API docs, idioms — not the compiler internals.\nREADME detection finds those when the repo links them; this registry\nguarantees the canonical corpora for well-known languages (Rust, Python,\nGo, TypeScript, JavaScript, Ruby) even when the README does not.\n\nAdd skf-language-corpora.py, a pure static lookup (no network) over a new\ndata/language-corpora.json, emitting the brief doc_urls contract\n{url, label} so the result can be seeded directly into a skill brief.\nAll registry URLs are version-agnostic latest-stable aliases, verified\nlive. Enumerate the new test in test:python.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 2 (Phase C) — language corpora registry"
 }
 ```
@@ -4001,7 +4001,7 @@ tool_use Bash
 id: toolu_01Kcbp2CukqGijAJxumUnkQ2
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -n \"^scanManifestsHelper\\|^shapeDetectScript\\|^scanManifestsProbeOrder\\|Auto-scoped from shape detection\\|### 6\\.\\|### 6a\\|### 7\\.\\|### 8\\.\\|## Auto-Scope Analysis\\|Resolved Scope Type\\|name:\" src/skf-analyze-source/references/step-auto-scope.md | head -40",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -n \"^scanManifestsHelper\\|^shapeDetectScript\\|^scanManifestsProbeOrder\\|Auto-scoped from shape detection\\|### 6\\.\\|### 6a\\|### 7\\.\\|### 8\\.\\|## Auto-Scope Analysis\\|Resolved Scope Type\\|name:\" src/skf-analyze-source/references/step-auto-scope.md | head -40",
   "description": "Locate Phase C anchors in step-auto-scope.md"
 }
 ```
@@ -4038,7 +4038,7 @@ tool_use Read
 id: toolu_01RA2CSejkTYrFBQorXAGmhy
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "offset": 1,
   "limit": 12
 }
@@ -4069,7 +4069,7 @@ tool_use Read
 id: toolu_01HHjLMYiqakSKiG8sJ62y1o
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "offset": 402,
   "limit": 66
 }
@@ -4117,7 +4117,7 @@ tool_use Bash
 id: toolu_01RefeDmpV5hiMHwiHXQ1Bdo
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -rln \"step-auto-scope\\|analyze-source\" test/ 2>/dev/null\necho \"--- any numbering/structure test referencing auto-scope sections? ---\"\ngrep -rln \"section_numbering\\|contiguous\\|### 6a\\|Build Multi-Scope\" test/ 2>/dev/null",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -rln \"step-auto-scope\\|analyze-source\" test/ 2>/dev/null\necho \"--- any numbering/structure test referencing auto-scope sections? ---\"\ngrep -rln \"section_numbering\\|contiguous\\|### 6a\\|Build Multi-Scope\" test/ 2>/dev/null",
   "description": "Check for tests enforcing step-auto-scope structure"
 }
 ```
@@ -4142,7 +4142,7 @@ tool_use Bash
 id: toolu_01NDimgue52QgyXpY7kQaKu1
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -rn \"detect-language\\|detectLanguage\\|languageDetect\" src/ | grep -iv \"test\" | head -10",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -rn \"detect-language\\|detectLanguage\\|languageDetect\" src/ | grep -iv \"test\" | head -10",
   "description": "Find existing detect-language references/convention"
 }
 ```
@@ -4173,7 +4173,7 @@ tool_use Read
 id: toolu_01URVYLE8r38MD9X2Hdz7EMt
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "offset": 528,
   "limit": 35
 }
@@ -4232,7 +4232,7 @@ id: toolu_01WwKS9Gp9thhVBnR4Kew4v5
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "shapeDetectScript: 'src/shared/scripts/skf-shape-detect.py'\nscanManifestsProbeOrder:\n  - '{project-root}/_bmad/skf/shared/scripts/skf-scan-manifests.py'\n  - '{project-root}/src/shared/scripts/skf-scan-manifests.py'\n---",
   "new_string": "shapeDetectScript: 'src/shared/scripts/skf-shape-detect.py'\nscanManifestsProbeOrder:\n  - '{project-root}/_bmad/skf/shared/scripts/skf-scan-manifests.py'\n  - '{project-root}/src/shared/scripts/skf-scan-manifests.py'\ndetectLanguageProbeOrder:\n  - '{project-root}/_bmad/skf/shared/scripts/skf-detect-language.py'\n  - '{project-root}/src/shared/scripts/skf-detect-language.py'\nlanguageCorporaProbeOrder:\n  - '{project-root}/_bmad/skf/shared/scripts/skf-language-corpora.py'\n  - '{project-root}/src/shared/scripts/skf-language-corpora.py'\n---"
 }
@@ -4243,7 +4243,7 @@ id: toolu_01WwKS9Gp9thhVBnR4Kew4v5
 tool_result
 id: toolu_01WwKS9Gp9thhVBnR4Kew4v5
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4257,7 +4257,7 @@ id: toolu_01Sqx7bCSz5uXDfvxdFKspTg
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "Detect the primary language from the manifest ecosystem:\n- `npm` → `typescript` (or `javascript` if no `.ts` files in includes)\n- `python` → `python`\n- `rust` → `rust`\n- `go` → `go`\n\n### 4a. Multi-Scope Decomposition",
   "new_string": "Detect the primary language from the manifest ecosystem:\n- `npm` → `typescript` (or `javascript` if no `.ts` files in includes)\n- `python` → `python`\n- `rust` → `rust`\n- `go` → `go`\n\n### 6b. Seed Companion Corpora (whole-language references only)\n\nRuns only when §3 classified the repo as `language-reference` **via a whole-language signal** — the `signals` array contains a `grammar_file:` or `tree_triad:` entry (a compiler / interpreter / grammar repo such as rust-lang/rust, TypeScript, CPython). **Skip** when `language-reference` fired only from `parser_producer:` / `parser_dep:` signals (a parser *library* such as pest or lalrpop): there the code **is** the product, so no companion prose is needed and the §6/§7 caveat below does not apply.\n\nA whole-language skill's value is in the language's **prose** — the guide/Book, the standard/library API docs, idioms — not the compiler internals. Seed those canonical corpora so the forged skill teaches the language rather than its implementation.\n\n**Resolve `{detectLanguageHelper}`** from `{detectLanguageProbeOrder}` and **`{languageCorporaHelper}`** from `{languageCorporaProbeOrder}` (first existing path wins).\n\n1. **Derive the corpus […]
 
@@ -4266,7 +4266,7 @@ id: toolu_01Sqx7bCSz5uXDfvxdFKspTg
 tool_result
 id: toolu_01Sqx7bCSz5uXDfvxdFKspTg
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4280,7 +4280,7 @@ id: toolu_016s3WtciaxvqB7tpD7nw1cY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "  notes: 'Auto-scoped from shape detection (shape: {shape}, confidence: {confidence})'\ndescription: '{1-3 sentence description based on shape, language, and manifest name}'\nforge_tier: '{forge_tier}'\ncreated: '{current_date}'\ncreated_by: '{user_name}'\n```",
   "new_string": "  notes: 'Auto-scoped from shape detection (shape: {shape}, confidence: {confidence})'\ndescription: '{1-3 sentence description based on shape, language, and manifest name}'\nforge_tier: '{forge_tier}'\ncreated: '{current_date}'\ncreated_by: '{user_name}'\n```\n\n**Companion corpora (whole-language references).** When §6b produced `{corpus_seeds}` (`{N}` ≥ 1), add them as the brief's `doc_urls` so the language's prose is fetched and assembled alongside the code:\n\n```yaml\ndoc_urls:\n  - { url: '{seed.url}', label: '{seed.label}' }   # one entry per §6b seed\n```\n\nThese are the brief's *existing* `doc_urls`; brief-skill's README detection then merges additional discovered docs on top (existing entries win). **When `{N}` is 0, omit the `doc_urls` key entirely** — the schema requires at least one entry when the key is present."
 }
@@ -4291,7 +4291,7 @@ id: toolu_016s3WtciaxvqB7tpD7nw1cY
 tool_result
 id: toolu_016s3WtciaxvqB7tpD7nw1cY
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4304,7 +4304,7 @@ tool_use Bash
 id: toolu_01MSLv2o3oAarmP1yiUCjMMa
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-analyze-source/references/step-auto-scope.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(analyze-source): seed whole-language skills with companion prose corpora\n\nA language-reference skill forged from a compiler/interpreter repo is\nlow-value as code-only — its worth is the language's prose (guide/Book,\nstd/library docs, idioms). When auto-scope classifies a repo as a\nwhole-language reference (via a grammar-file or compiler-tree signal, not\na mere parser library), resolve the language — from the manifest, or for\na manifest-less toolchain from the harvested tree via the language\ndetector — and seed its canonical corpora into the brief's doc_urls. The\nbrief's README detection then merges any further discovered docs on top.\n\nParser libraries (pest, lalrpop) are explicitly skipped: their code is\nthe product. The doc_urls key is omitted when no corpora are found, as\nthe schema requires at least one entry when present.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-analyze-source/references/step-auto-scope.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(analyze-source): seed whole-language skills with companion prose corpora\n\nA language-reference skill forged from a compiler/interpreter repo is\nlow-value as code-only — its worth is the language's prose (guide/Book,\nstd/library docs, idioms). When auto-scope classifies a repo as a\nwhole-language reference (via a grammar-file or compiler-tree signal, not\na mere parser library), resolve the language — from the manifest, or for\na manifest-less toolchain from the harvested tree via the language\ndetector — and seed its canonical corpora into the brief's doc_urls. The\nbrief's README detection then merges any further discovered docs on top.\n\nParser libraries (pest, lalrpop) are explicitly skipped: their code is\nthe product. The doc_urls key is omitted when no corpora are found, as\nthe schema requires at least one entry when present.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 3 (Phase C) — corpora seeding"
 }
 ```
@@ -4328,7 +4328,7 @@ id: toolu_01DLnMGBVEnPjivGykhZCGt4
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "3. Record `{N}` = number of seeds and `{corpus_labels}` = comma-joined labels, carried into the brief `doc_urls` (§8) and the honest caveat (§6/§7).\n\n### 4a. Multi-Scope Decomposition",
   "new_string": "3. Record `{N}` = number of seeds and `{corpus_labels}` = comma-joined labels, carried into the brief `doc_urls` (§8) and the honest caveat (§6/§7).\n4. Build `{corpus_caveat}` (appended to `scope.notes` in §6/§8 and surfaced in §7) so the operator knows a code-only whole-language skill is low-value:\n   - `{N}` ≥ 1: `\" LANGUAGE-REFERENCE CAVEAT: this skill's value is the {corpus_language} prose (guide/Book + std/library docs), not compiler internals. Seeded {N} corpus URL(s): {corpus_labels}. Assembly ranks code (T1) above docs (T3) — review the forged skill if compiler-internal signatures dominate the prose.\"`\n   - `{N}` == 0: `\" LANGUAGE-REFERENCE CAVEAT: no canonical corpora were found for {corpus_language} (README detection and the registry both came up empty). This skill is LOW-VALUE as code-only — attach the {corpus_language} guide + std/library docs manually (re-run with a doc URL, or enrich via US) before forging.\"`\n\n   For a parser-library `language-reference` (skipped above) and every other shape, `{corpus_caveat}` is empty.\n\n### 4a. Multi-Scope Decomposition"
 }
@@ -4339,7 +4339,7 @@ id: toolu_01DLnMGBVEnPjivGykhZCGt4
 tool_result
 id: toolu_01DLnMGBVEnPjivGykhZCGt4
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4353,7 +4353,7 @@ id: toolu_01CGPc2WBud9Vfss4cFm7V9c
 ```json
 {
   "replace_all": true,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "  notes: 'Auto-scoped from shape detection (shape: {shape}, confidence: {confidence})'",
   "new_string": "  notes: 'Auto-scoped from shape detection (shape: {shape}, confidence: {confidence}).{corpus_caveat}'"
 }
@@ -4364,7 +4364,7 @@ id: toolu_01CGPc2WBud9Vfss4cFm7V9c
 tool_result
 id: toolu_01CGPc2WBud9Vfss4cFm7V9c
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4377,7 +4377,7 @@ tool_use Read
 id: toolu_012RZbsrn2YaQhfF1fnYZMWt
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "offset": 505,
   "limit": 36
 }
@@ -4433,7 +4433,7 @@ id: toolu_011gegsKCoCfmAcnVKi7rrRg
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md",
   "old_string": "For single-scope (unchanged):\n```markdown\n## Auto-Scope Analysis\n\n**Mode:** auto\n**Shape:** {shape} (confidence: {confidence})\n**Signals:** {signals list}\n**Export Count:** {export_count}\n**Package Count:** {package_count}\n**Resolved Scope Type:** {scope_type}\n**Include Patterns:** {include patterns}\n**Exclude Patterns:** {exclude patterns}\n```",
   "new_string": "For single-scope (unchanged):\n```markdown\n## Auto-Scope Analysis\n\n**Mode:** auto\n**Shape:** {shape} (confidence: {confidence})\n**Signals:** {signals list}\n**Export Count:** {export_count}\n**Package Count:** {package_count}\n**Resolved Scope Type:** {scope_type}\n**Include Patterns:** {include patterns}\n**Exclude Patterns:** {exclude patterns}\n```\n\n**When the shape is a whole-language `language-reference`** (§6b ran — a `grammar_file:`/`tree_triad:` signal), append a Companion Corpora subsection so the operator sees whether the skill has the prose that makes it useful. The status is computed from the **final** brief `doc_urls` (the entries that will actually be fetched), not the seed count alone:\n\n```markdown\n## Companion Corpora (language-reference)\n\n**Why:** A whole-language skill's value is its prose (guide/Book, std/library docs, idioms), not compiler internals.\n**Corpora in brief doc_urls:** {final_doc_urls_count}\n  - {label}: {url}   # one line per doc_urls entry\n**Status:** {ATTACHED — canonical corpora present | DEGRADED — code-only, no canonical corpora; attach the {corpus_language} guide + std/library docs before forging}\n```"
 }
@@ -4444,7 +4444,7 @@ id: toolu_011gegsKCoCfmAcnVKi7rrRg
 tool_result
 id: toolu_011gegsKCoCfmAcnVKi7rrRg
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4457,7 +4457,7 @@ tool_use Bash
 id: toolu_017fC9rYeqH7xGRGFighNMbT
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-analyze-source/references/step-auto-scope.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(analyze-source): record honest caveat for whole-language skills\n\nA whole-language reference skill is only as useful as the prose corpora\nattached to it. Append a caveat to scope.notes and a Companion Corpora\nsection to the analysis report that states plainly whether canonical\ncorpora were attached (and that assembly ranks code above docs, so the\nresult needs a look) or whether the skill is low-value as code-only and\nneeds its guide and std/library docs attached before forging. The report\nstatus is computed from the brief's final doc_urls, so it never claims\ncorpora that were not actually attached.\n\nThe caveat is scoped to whole-language references (grammar-file or\ncompiler-tree signal); parser libraries and every other shape keep the\nplain auto-scope note.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-analyze-source/references/step-auto-scope.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfeat(analyze-source): record honest caveat for whole-language skills\n\nA whole-language reference skill is only as useful as the prose corpora\nattached to it. Append a caveat to scope.notes and a Companion Corpora\nsection to the analysis report that states plainly whether canonical\ncorpora were attached (and that assembly ranks code above docs, so the\nresult needs a look) or whether the skill is low-value as code-only and\nneeds its guide and std/library docs attached before forging. The report\nstatus is computed from the brief's final doc_urls, so it never claims\ncorpora that were not actually attached.\n\nThe caveat is scoped to whole-language references (grammar-file or\ncompiler-tree signal); parser libraries and every other shape keep the\nplain auto-scope note.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 4 (Phase C) — honest caveat"
 }
 ```
@@ -4480,7 +4480,7 @@ tool_use Bash
 id: toolu_01NZhCa7eZRhJSJSScC3diWa
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngrep -n \"deduplicate\\|dedup\\|existing entries\\|take precedence\\|merge\" src/skf-brief-skill/references/step-auto-brief.md | head",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngrep -n \"deduplicate\\|dedup\\|existing entries\\|take precedence\\|merge\" src/skf-brief-skill/references/step-auto-brief.md | head",
   "description": "Find the dedup line in step-auto-brief.md"
 }
 ```
@@ -4499,7 +4499,7 @@ tool_use Read
 id: toolu_017giARa384Nd923mbmcoeFf
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-brief-skill/references/step-auto-brief.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-brief-skill/references/step-auto-brief.md",
   "offset": 95,
   "limit": 10
 }
@@ -4529,7 +4529,7 @@ id: toolu_01TLVihKUEiuiLUpZRC2TmFN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-brief-skill/references/step-auto-brief.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-brief-skill/references/step-auto-brief.md",
   "old_string": "If the upstream brief already has `doc_urls`, merge the detected docs with the existing entries (deduplicate by URL — existing entries take precedence).",
   "new_string": "If the upstream brief already has `doc_urls`, merge the detected docs with the existing entries. Deduplicate by **normalized** URL — lowercase the host and strip a trailing `/index.html` and any trailing `/` before comparing — so a seeded `…/book/` and a README's `…/book/index.html` collapse to one entry rather than being fetched twice. Existing (upstream / corpora-seeded) entries take precedence."
 }
@@ -4540,7 +4540,7 @@ id: toolu_01TLVihKUEiuiLUpZRC2TmFN
 tool_result
 id: toolu_01TLVihKUEiuiLUpZRC2TmFN
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-brief-skill/references/step-auto-brief.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-brief-skill/references/step-auto-brief.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4553,7 +4553,7 @@ tool_use Bash
 id: toolu_01Y9teSTXoAHe8iQsdunMA6M
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-brief-skill/references/step-auto-brief.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfix(brief): normalize URLs when merging detected and seeded doc corpora\n\nDoc-corpus merging deduplicated by exact URL string, so a corpora-seeded\n\".../book/\" and a README's \".../book/index.html\" were treated as\ndistinct and both fetched. Deduplicate by normalized URL — lowercase\nhost, strip a trailing /index.html and any trailing slash — so the same\ndocument collapses to one entry, with seeded/upstream entries taking\nprecedence.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-brief-skill/references/step-auto-brief.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\nfix(brief): normalize URLs when merging detected and seeded doc corpora\n\nDoc-corpus merging deduplicated by exact URL string, so a corpora-seeded\n\".../book/\" and a README's \".../book/index.html\" were treated as\ndistinct and both fetched. Deduplicate by normalized URL — lowercase\nhost, strip a trailing /index.html and any trailing slash — so the same\ndocument collapses to one entry, with seeded/upstream entries taking\nprecedence.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 5 (Phase C) — URL-normalized dedup"
 }
 ```
@@ -4577,7 +4577,7 @@ id: toolu_01UNVeT2nhMEThqUDazTz43L
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md",
   "old_string": "| `language-reference` | `full-library` | Language tools/parsers are library-shaped from a skill perspective |",
   "new_string": "| `language-reference` | `full-library` | Language tools/parsers are library-shaped from a skill perspective. **Corpora-dependent** for a *whole-language* reference (a `grammar_file:`/`tree_triad:` signal — a compiler/interpreter): its value is the language's prose (guide/Book + std/library docs), not compiler internals, so step-auto-scope.md §6b seeds companion corpora and §6/§7 record an honest DEGRADED caveat when none are found (mirrors the §3b facet-coverage guard). A parser *library* (`parser_producer:`/`parser_dep:`) is exempt — its code is the product. |"
 }
@@ -4588,7 +4588,7 @@ id: toolu_01UNVeT2nhMEThqUDazTz43L
 tool_result
 id: toolu_01UNVeT2nhMEThqUDazTz43L
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-shape-detect.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4597,7 +4597,7 @@ tool_use Bash
 id: toolu_01QxR7b5yJZJeg1mSp582YT7
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-analyze-source/references/step-shape-detect.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\ndocs(shape-detect): note whole-language value is corpora-dependent\n\nAnnotate the language-reference scope mapping so it is clear the shape's\nvalue depends on companion prose corpora for a whole-language reference\n(compiler/interpreter), while a parser library is exempt because its code\nis the product. Cross-references the corpora seeding and honest caveat in\nstep-auto-scope.md.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-analyze-source/references/step-shape-detect.md\ngit commit --no-verify -q -m \"$(cat <<'EOF'\ndocs(shape-detect): note whole-language value is corpora-dependent\n\nAnnotate the language-reference scope mapping so it is clear the shape's\nvalue depends on companion prose corpora for a whole-language reference\n(compiler/interpreter), while a parser library is exempt because its code\nis the product. Cross-references the corpora seeding and honest caveat in\nstep-auto-scope.md.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit 6 (Phase C) — mapping annotation"
 }
 ```
@@ -4622,7 +4622,7 @@ id: toolu_014YWC6JdfGerw68nUaLXUuE
 {
   "description": "Find install manifest for shared scripts",
   "subagent_type": "Explore",
-  "prompt": "In bmad-module-skill-forge (/home/armel/Projects/OSS/bmad-module-skill-forge), I just added two new files:\n- src/shared/scripts/skf-language-corpora.py\n- src/shared/data/language-corpora.json\n\nI need to know if there is an INSTALLATION MANIFEST or build/packaging config that enumerates which src/shared/ files get copied/installed into the runtime location (e.g. _bmad/skf/shared/scripts/). If such a manifest exists and lists scripts explicitly, my two new files must be added to it or they won't be installed (and a probe path like {project-root}/_bmad/skf/shared/scripts/skf-language-corpora.py would fail).\n\nInvestigate and report with exact file paths + line numbers + quoted snippets:\n1. Search for any installation/packaging manifest: look for files like installer config, manifest.yaml/json, a build script, an `install.js`/`build.js`, package.json \"files\" field, or a config that lists `src/shared/scripts/*` or `skf-*.py` paths. Check test/test-installation-components.js — what does it validate? Does it enumerate shared scripts that must exist or be installed?\n2. How do OTHER shared scripts (e.g. src/shared/scripts/skf-detect-language.py, skf-scan-manifests.py, skf-shape-detect.py) get registered for installation? Is there a glob (so *.py is auto-included) or an explicit list? If explicit, WHERE is the list and what's the exact format of an entry?\n3. Is there any manifest that enumerates src/shared/data/ files, or is that directory new (I created src/shared/data/)? If data files […]
+  "prompt": "In bmad-module-skill-forge (/home/<USER>/Projects/OSS/bmad-module-skill-forge), I just added two new files:\n- src/shared/scripts/skf-language-corpora.py\n- src/shared/data/language-corpora.json\n\nI need to know if there is an INSTALLATION MANIFEST or build/packaging config that enumerates which src/shared/ files get copied/installed into the runtime location (e.g. _bmad/skf/shared/scripts/). If such a manifest exists and lists scripts explicitly, my two new files must be added to it or they won't be installed (and a probe path like {project-root}/_bmad/skf/shared/scripts/skf-language-corpora.py would fail).\n\nInvestigate and report with exact file paths + line numbers + quoted snippets:\n1. Search for any installation/packaging manifest: look for files like installer config, manifest.yaml/json, a build script, an `install.js`/`build.js`, package.json \"files\" field, or a config that lists `src/shared/scripts/*` or `skf-*.py` paths. Check test/test-installation-components.js — what does it validate? Does it enumerate shared scripts that must exist or be installed?\n2. How do OTHER shared scripts (e.g. src/shared/scripts/skf-detect-language.py, skf-scan-manifests.py, skf-shape-detect.py) get registered for installation? Is there a glob (so *.py is auto-included) or an explicit list? If explicit, WHERE is the list and what's the exact format of an entry?\n3. Is there any manifest that enumerates src/shared/data/ files, or is that directory new (I created src/shared/data/)? If data files […]
 
 > TOOL
 
@@ -4637,9 +4637,9 @@ Based on my investigation, **your new files do NOT need explicit registration in
 
 ### 1. Installation Mechanism (fs-extra recursive copy)
 
-The installer at `/home/armel/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js` uses a **glob-based recursive copy** for the `src/shared/` directory:
+The installer at `/home/<USER>/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js` uses a **glob-based recursive copy** for the `src/shared/` directory:
 
-**File:** `/home/armel/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js`  
+**File:** `/home/<USER>/Projects/OSS/bmad-module-skill-forge/tools/cli/lib/installer.js`  
 **Lines 163-170:**
 ```javascript
 // Copy module-level resources
@@ -4672,7 +4672,7 @@ tool_use Bash
 id: toolu_01HPeMCTxRusYUBevAnEHGsA
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nnpm test 2>&1 | tail -30",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nnpm test 2>&1 | tail -30",
   "description": "Run full test suite (npm test) in background",
   "run_in_background": true
 }
@@ -4696,7 +4696,7 @@ tool_use Bash
 id: toolu_013z683s3xWBff9kw8Vzqo9J
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== §6b chain for manifest-less ruby/ruby: detect-language → corpora ===\"\nlang=$(echo '{\"tree\": [\"parse.y\",\"lex.c\",\"vm.c\",\"string.rb\",\"array.rb\",\"lib/set.rb\",\"test/test_foo.rb\"]}' | uv run src/shared/scripts/skf-detect-language.py | python3 -c \"import sys,json; print(json.load(sys.stdin)['language'])\")\necho \"detected language: $lang\"\necho \"corpora:\"\nuv run src/shared/scripts/skf-language-corpora.py --language \"$lang\"; echo \"exit=$?\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== §6b chain for manifest-less ruby/ruby: detect-language → corpora ===\"\nlang=$(echo '{\"tree\": [\"parse.y\",\"lex.c\",\"vm.c\",\"string.rb\",\"array.rb\",\"lib/set.rb\",\"test/test_foo.rb\"]}' | uv run src/shared/scripts/skf-detect-language.py | python3 -c \"import sys,json; print(json.load(sys.stdin)['language'])\")\necho \"detected language: $lang\"\necho \"corpora:\"\nuv run src/shared/scripts/skf-language-corpora.py --language \"$lang\"; echo \"exit=$?\"",
   "description": "Validate §6b detect-language→corpora chain for ruby"
 }
 ```
@@ -4795,7 +4795,7 @@ tool_use Bash
 id: toolu_01PeaS8HijqECub5kALcF2oo
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== commits on branch (vs main) ===\"\ngit log --oneline main..HEAD\necho \"\"\necho \"=== diffstat ===\"\ngit diff --stat main..HEAD | tail -20",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== commits on branch (vs main) ===\"\ngit log --oneline main..HEAD\necho \"\"\necho \"=== diffstat ===\"\ngit diff --stat main..HEAD | tail -20",
   "description": "Final branch commit list and diffstat"
 }
 ```
@@ -4844,7 +4844,7 @@ tool_use Write
 id: toolu_01VahPgFogoaEyzVjwH8TZpo
 ```json
 {
-  "file_path": "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md",
   "content": "---\nname: project_issue_427_language_reference\ndescription: Issue #427 language-reference detection — what shipped on branch issue-427-language-reference-shape and the deferred follow-ups\nmetadata:\n  type: project\n---\n\nIssue #427 (`language-reference` never fired for real language repos) was implemented on branch `issue-427-language-reference-shape` (12 commits, off main, not yet pushed/PR'd as of 2026-06-03). Design driven by party-mode + two design workflows.\n\n**What shipped** — a 4-rung language-reference ladder in `skf-shape-detect.py`, plus ecosystem expansion and multi-corpus:\n- Producer-by-name (pest/lalrpop/lark name themselves); grammar-file rung (cpython `python.gram`, ruby `parse.y`); tree-triad rung for hand-written compilers (rust/TypeScript/go: a dedicated `compiler/` dir + lexer+parser+ast + a codegen/VM/typecheck member). Three guard gates keep formatters/linters/bundlers (gate G = delegating consumer), markup/DSL parsers (gate L), and lexer+parser+ast-only markdown libs (gate W) out. Negative controls: webpack/postcss/prettier/graphql-js/dart-sass/marked.\n- Signal acquisition: `step-auto-scope.md` harvests grammar files + compiler-dir/triad paths from the blobless clone via `git ls-tree` (no blobs, no extra sparse-checkout), relevance-filtered + capped for ARG_MAX. New optional `--grammar-files`/`--tree-paths` args.\n- go.mod ecosystem (scanner already supported it; added the shape-detect parser + auto-scope filter/glob).\n- Multi-corpus (mostly pre-existing: `skf-detect-docs` already runs in brief-skill, doc_urls already supplemental-for-source, fetch-docs multi-URL, assembly T1>T3). Added: widened doc-URL recall (`doc.` subdomain, `/book//std//library//tutorial/`); curated `src/shared/data/language-corpora.json` + `skf-language-corpora.py` (rust/python/go/typescript/javascript/ruby, URLs verified live 200); AN §6b seeds corpora into […]
 
 > TOOL
@@ -4852,7 +4852,7 @@ id: toolu_01VahPgFogoaEyzVjwH8TZpo
 tool_result
 id: toolu_01VahPgFogoaEyzVjwH8TZpo
 ```
-File created successfully at: /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4861,7 +4861,7 @@ tool_use Read
 id: toolu_0198BCUjAaEonicaLT8YUj3j
 ```json
 {
-  "file_path": "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/MEMORY.md",
   "offset": 1,
   "limit": 3
 }
@@ -4885,7 +4885,7 @@ id: toolu_01QDwK11LfTR8K2NiHsJhv4W
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/MEMORY.md",
   "old_string": "- [Commit convention: no internal refs](feedback_commit_convention_no_internal_refs.md) — Automated commits must use feature-focused language, never internal bmad keywords (story IDs, epic numbers, retro, etc.)",
   "new_string": "- [Commit convention: no internal refs](feedback_commit_convention_no_internal_refs.md) — Automated commits must use feature-focused language, never internal bmad keywords (story IDs, epic numbers, retro, etc.)\n- [Issue #427 language-reference detection](project_issue_427_language_reference.md) — 4-rung language-ref ladder + go.mod + multi-corpus on branch issue-427-language-reference-shape (12 commits, unpushed); deferred: T3>T1 assembly reorder, doc_urls noise-suppression, provenance"
 }
@@ -4896,7 +4896,7 @@ id: toolu_01QDwK11LfTR8K2NiHsJhv4W
 tool_result
 id: toolu_01QDwK11LfTR8K2NiHsJhv4W
 ```
-The file /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4937,7 +4937,7 @@ tool_use Bash
 id: toolu_011huQzUXHRxVkAnxQHMEsvL
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== remotes ===\"; git remote -v\necho \"=== gh auth ===\"; gh auth status 2>&1 | head -5\necho \"=== current branch / ahead ===\"; git status -sb | head -3",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== remotes ===\"; git remote -v\necho \"=== gh auth ===\"; gh auth status 2>&1 | head -5\necho \"=== current branch / ahead ===\"; git status -sb | head -3",
   "description": "Check remote, gh auth, branch state"
 }
 ```
@@ -4970,7 +4970,7 @@ tool_use Bash
 id: toolu_01PS3nZpD6KUqJa7KB8v9Gdd
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit push -u origin issue-427-language-reference-shape 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit push -u origin issue-427-language-reference-shape 2>&1 | tail -8",
   "description": "Push branch to origin"
 }
 ```
@@ -5000,7 +5000,7 @@ tool_use Bash
 id: toolu_01QSw2UwnYARnjevSbs5kQFE
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngh pr create --base main --head issue-427-language-reference-shape \\\n  --title \"Detect whole-language repos and seed their companion corpora\" \\\n  --body \"$(cat <<'EOF'\n## Summary\n\n`language-reference` — the shape meant to anchor whole-language skills — only ever fired on parser-generator *dependencies*, i.e. *consumers* of parser tooling. The repos that actually are language tooling (`rust-lang/rust`, `pest`, `microsoft/TypeScript`) never matched: a language's own repo does not depend on a parser generator — it *is* one. This reworks the heuristic to detect *producers*, reaches manifest-less language repos, and seeds the companion prose that makes a whole-language skill useful.\n\n`Fixes #427`\n\n## What changed\n\n**A four-rung `language-reference` ladder** (`skf-shape-detect.py`), in confidence order:\n- **Producer by name** — a repo whose own package name is a known parser/grammar tool (`pest`, `lalrpop`, `lark`, `peggy`), across npm/PyPI/crates.\n- **Grammar file** — a declared grammar (`Grammar/python.gram`, a root `parse.y`, a `*.g4`) — reaches repos with no parser-gen dependency and no supported manifest (CPython, Ruby).\n- **Tree-triad** — a hand-written compiler: a dedicated `compiler/` directory holding a lexer+parser+ast triad plus a codegen/VM/type-checker member (rustc, TypeScript, the Go toolchain), ranked above the bin→reference-app rung.\n- **Consumer dependency** — the original signal, kept (a DSL built on `lalrpop` is still a language project).\n\n**Three guard […]
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngh pr create --base main --head issue-427-language-reference-shape \\\n  --title \"Detect whole-language repos and seed their companion corpora\" \\\n  --body \"$(cat <<'EOF'\n## Summary\n\n`language-reference` — the shape meant to anchor whole-language skills — only ever fired on parser-generator *dependencies*, i.e. *consumers* of parser tooling. The repos that actually are language tooling (`rust-lang/rust`, `pest`, `microsoft/TypeScript`) never matched: a language's own repo does not depend on a parser generator — it *is* one. This reworks the heuristic to detect *producers*, reaches manifest-less language repos, and seeds the companion prose that makes a whole-language skill useful.\n\n`Fixes #427`\n\n## What changed\n\n**A four-rung `language-reference` ladder** (`skf-shape-detect.py`), in confidence order:\n- **Producer by name** — a repo whose own package name is a known parser/grammar tool (`pest`, `lalrpop`, `lark`, `peggy`), across npm/PyPI/crates.\n- **Grammar file** — a declared grammar (`Grammar/python.gram`, a root `parse.y`, a `*.g4`) — reaches repos with no parser-gen dependency and no supported manifest (CPython, Ruby).\n- **Tree-triad** — a hand-written compiler: a dedicated `compiler/` directory holding a lexer+parser+ast triad plus a codegen/VM/type-checker member (rustc, TypeScript, the Go toolchain), ranked above the bin→reference-app rung.\n- **Consumer dependency** — the original signal, kept (a DSL built on `lalrpop` is still a language project).\n\n**Three guard […]
 
 > TOOL
 
@@ -5020,7 +5020,7 @@ tool_use Bash
 id: toolu_01TEYKeQvRawQQgp13Kq95X6
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nREPO=armelhbobdad/bmad-module-skill-forge\n\ngh issue create --repo \"$REPO\" \\\n  --title \"Rank prose above code in assembly for whole-language reference skills\" \\\n  --body \"$(cat <<'EOF'\nFollow-up from #427 (PR #429).\n\nFor a whole-language `language-reference` skill (a compiler/interpreter repo enriched with the language's Book and std/library docs), the skill's value is the **prose**, not the compiler internals. Assembly currently ranks code (T1) above docs (T3) for every shape, so a skill forged from `rust-lang/rust` + the Rust Book can be dominated by compiler-internal signatures.\n\n#429 attaches the right corpora and records a caveat in `scope.notes` / the analysis report flagging this for human review, but does not change the tier order.\n\n**Proposed:** when the shape is a whole-language reference (a `grammar_file:`/`tree_triad:` signal), have assembly prioritise the prose corpora (T3) over the extracted code surface (T1), or otherwise weight the language-usage prose ahead of implementation internals. Needs work in the create-skill assembly/enrich step and validation against a real rust/TypeScript/cpython forge.\n\nThis is the deepest half of the \"genuinely useful whole-language skill\" goal noted in #427.\nEOF\n)\"\n\ngh issue create --repo \"$REPO\" \\\n  --title \"Suppress non-corpus README noise in language-reference doc_urls\" \\\n  --body \"$(cat <<'EOF'\nFollow-up from #427 (PR #429).\n\nWhen a whole-language reference seeds canonical corpora and […]
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nREPO=armelhbobdad/bmad-module-skill-forge\n\ngh issue create --repo \"$REPO\" \\\n  --title \"Rank prose above code in assembly for whole-language reference skills\" \\\n  --body \"$(cat <<'EOF'\nFollow-up from #427 (PR #429).\n\nFor a whole-language `language-reference` skill (a compiler/interpreter repo enriched with the language's Book and std/library docs), the skill's value is the **prose**, not the compiler internals. Assembly currently ranks code (T1) above docs (T3) for every shape, so a skill forged from `rust-lang/rust` + the Rust Book can be dominated by compiler-internal signatures.\n\n#429 attaches the right corpora and records a caveat in `scope.notes` / the analysis report flagging this for human review, but does not change the tier order.\n\n**Proposed:** when the shape is a whole-language reference (a `grammar_file:`/`tree_triad:` signal), have assembly prioritise the prose corpora (T3) over the extracted code surface (T1), or otherwise weight the language-usage prose ahead of implementation internals. Needs work in the create-skill assembly/enrich step and validation against a real rust/TypeScript/cpython forge.\n\nThis is the deepest half of the \"genuinely useful whole-language skill\" goal noted in #427.\nEOF\n)\"\n\ngh issue create --repo \"$REPO\" \\\n  --title \"Suppress non-corpus README noise in language-reference doc_urls\" \\\n  --body \"$(cat <<'EOF'\nFollow-up from #427 (PR #429).\n\nWhen a whole-language reference seeds canonical corpora and […]
 
 > TOOL
 
@@ -5049,7 +5049,7 @@ id: toolu_01NgCMmD7pXUKdsJnbTKnp6Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md",
   "old_string": "Issue #427 (`language-reference` never fired for real language repos) was implemented on branch `issue-427-language-reference-shape` (12 commits, off main, not yet pushed/PR'd as of 2026-06-03). Design driven by party-mode + two design workflows.",
   "new_string": "Issue #427 (`language-reference` never fired for real language repos) was implemented on branch `issue-427-language-reference-shape` (12 commits) → **PR #429** (`Fixes #427`), pushed 2026-06-03. Design driven by party-mode + two design workflows."
 }
@@ -5060,7 +5060,7 @@ id: toolu_01NgCMmD7pXUKdsJnbTKnp6Q
 tool_result
 id: toolu_01NgCMmD7pXUKdsJnbTKnp6Q
 ```
-The file /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5070,7 +5070,7 @@ id: toolu_01WW6tJdmLXqz71jVaxC2oXL
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md",
   "old_string": "**Deferred follow-ups (NOT done — no GitHub issues filed yet):**\n1. **Assembly tier re-ordering T3>T1 for language-reference** — the deepest fix; prose should outrank compiler source for a whole-language skill. Today assembly still ranks code (T1) above docs (T3); the scope.notes caveat only flags it for human review. Needs assembly-side work in create-skill.\n2. **doc_urls noise-suppression for language-reference** — drop same-host non-corpus README paths (`/whatsnew/`, `/contribute`, `/wiki/Questions`) and non-primary-locale dupes (`/ja/master/`) so they don't dilute the prose tier.\n3. **Per-corpus provenance in brief** — `doc_urls` is `{url,label}` only; threading `detected_via` (registry vs README) needs a schema + writer change.\n4. **Residual grammar-arm false-positive** — a repo that *vendors* a grammar (ANTLR `grammars-v4`) under a non-delegating name can fire Rung A. Bounded (closed ext set, depth cap, G/L gates), accepted; add a `_GRAMMAR_COLLECTION_NAMES` denylist only if a real FP surfaces.\n5. **Manifest-less ecosystem reach beyond grammar/tree** — Go/CPython/Ruby reachable now; Maven/Gradle/Swift/etc. still fall to interactive (scanner discovers but shape-detect doesn't classify).",
   "new_string": "**Deferred follow-ups (filed as GitHub issues 2026-06-03):**\n1. **#430** Assembly tier re-ordering T3>T1 for language-reference — the deepest fix; prose should outrank compiler source. Today assembly still ranks code (T1) above docs (T3); the […]
 
@@ -5079,7 +5079,7 @@ id: toolu_01WW6tJdmLXqz71jVaxC2oXL
 tool_result
 id: toolu_01WW6tJdmLXqz71jVaxC2oXL
 ```
-The file /home/armel/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-armel-Projects-OSS-bmad-module-skill-forge/memory/project_issue_427_language_reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

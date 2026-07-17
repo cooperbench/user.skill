@@ -6,7 +6,7 @@ id: toolu_01Uumx9a1WajoG7icWtzrWuw
 {
   "description": "Root cause analysis for osabio init OAuth error",
   "subagent_type": "nw-troubleshooter",
-  "prompt": "Execute investigate-root-cause for the following defect:\n\n**Bug**: `osabio init` fails with \"Token exchange failed: 400 {\"error_description\":\"requested resource invalid\",\"error\":\"invalid_request\"}\"\n\n**Observed behavior**:\n```\nREDACTED osabio init\nOsabio Init\n───────────\n\nOpening browser for authentication...\nIf the browser doesn't open, visit: http://localhost:3000/api/auth/oauth2/authorize?REDACTED&redirect_uri=http%3A%2F%2F127.0.0.1%3A52730%2Fcallback&response_type=code&scope=graph%3Aread+graph%3Areason+decision%3Awrite+task%3Awrite+observation%3Awrite+question%3Awrite+session%3Awrite+offline_access&REDACTED&code_challenge_method=S256&state=xb80rAy4epxblzIKMZuI6w&resource=http%3A%2F%2Flocalhost%3A3000\n\nToken exchange failed: 400 {\"error_description\":\"requested resource invalid\",\"error\":\"invalid_request\"}\n```\n\n**Context**:\n- Project: /Users/marcus/Git/brain (TypeScript, Bun backend)\n- This is an OAuth 2.1 / PKCE flow with RAR (Rich Authorization Requests, RFC 9396)\n- The `resource` parameter in the auth URL is `http://localhost:3000`\n- The error `\"requested resource invalid\"` maps to an OAuth `invalid_request` error\n- The CLI is the `osabio` binary (built from `cli/` directory)\n- The OAuth server is implemented with Better Auth\n\nConfiguration:\n- investigation_depth: 5\n- multi_causal: true\n- evidence_required: true\n\nProduce:\n1. Root cause chain (5 Whys with evidence at each level)\n2. Contributing factors\n3. Proposed fix with specific code changes\n4. Files affected\n5. Risk assessment of the fix\n"
+  "prompt": "Execute investigate-root-cause for the following defect:\n\n**Bug**: `osabio init` fails with \"Token exchange failed: 400 {\"error_description\":\"requested resource invalid\",\"error\":\"invalid_request\"}\"\n\n**Observed behavior**:\n```\nREDACTED osabio init\nOsabio Init\n───────────\n\nOpening browser for authentication...\nIf the browser doesn't open, visit: http://localhost:3000/api/auth/oauth2/authorize?REDACTED&redirect_uri=http%3A%2F%2F127.0.0.1%3A52730%2Fcallback&response_type=code&scope=graph%3Aread+graph%3Areason+decision%3Awrite+task%3Awrite+observation%3Awrite+question%3Awrite+session%3Awrite+offline_access&REDACTED&code_challenge_method=S256&state=xb80rAy4epxblzIKMZuI6w&resource=http%3A%2F%2Flocalhost%3A3000\n\nToken exchange failed: 400 {\"error_description\":\"requested resource invalid\",\"error\":\"invalid_request\"}\n```\n\n**Context**:\n- Project: /home/<USER>/Git/brain (TypeScript, Bun backend)\n- This is an OAuth 2.1 / PKCE flow with RAR (Rich Authorization Requests, RFC 9396)\n- The `resource` parameter in the auth URL is `http://localhost:3000`\n- The error `\"requested resource invalid\"` maps to an OAuth `invalid_request` error\n- The CLI is the `osabio` binary (built from `cli/` directory)\n- The OAuth server is implemented with Better Auth\n\nConfiguration:\n- investigation_depth: 5\n- multi_causal: true\n- evidence_required: true\n\nProduce:\n1. Root cause chain (5 Whys with evidence at each level)\n2. Contributing factors\n3. Proposed fix with specific code changes\n4. Files affected\n5. Risk assessment of the fix\n"
 }
 ```
 
@@ -78,7 +78,7 @@ This path is taken exactly when the `resource` parameter sent by the CLI is not 
 
 **WHY 2 (Context): The `resource` parameter sent by the CLI is not in `validAudiences`**
 
-Evidence: Verified by simulation. The CLI sends `resource=http://localhost:3000` (line 223 of `/Users/marcus/Git/brain/cli/commands/init.ts`):
+Evidence: Verified by simulation. The CLI sends `resource=http://localhost:3000` (line 223 of `/home/<USER>/Git/brain/cli/commands/init.ts`):
 
 ```typescript
 const oauthResource = […]
@@ -154,7 +154,7 @@ id: toolu_01UGNq12XZvjen4gApo7Njog
 tool_result
 id: toolu_01UGNq12XZvjen4gApo7Njog
 ```
-/Users/marcus/Git/brain/.env.example
+/home/<USER>/Git/brain/.env.example
 ```
 
 > TOOL
@@ -171,7 +171,7 @@ tool_use Read
 id: toolu_01ApbXfJLdb5YG33MGNsftCN
 ```json
 {
-  "file_path": "/Users/marcus/Git/brain/app/src/server/auth/config.ts",
+  "file_path": "/home/<USER>/Git/brain/app/src/server/auth/config.ts",
   "offset": 125,
   "limit": 10
 }
@@ -183,7 +183,7 @@ tool_use Read
 id: toolu_0197sgfw2Yjo29aQNmpJEf1Q
 ```json
 {
-  "file_path": "/Users/marcus/Git/brain/.env.example",
+  "file_path": "/home/<USER>/Git/brain/.env.example",
   "limit": 30
 }
 ```
@@ -258,7 +258,7 @@ tool_use Read
 id: toolu_013TCm28pGxxUK5dN7vWCv6c
 ```json
 {
-  "file_path": "/Users/marcus/Git/brain/.env.example",
+  "file_path": "/home/<USER>/Git/brain/.env.example",
   "offset": 30,
   "limit": 20
 }
@@ -310,14 +310,14 @@ id: toolu_01DLNh2iZgnt11kSvpfU7UHc
 tool_result
 id: toolu_01DLNh2iZgnt11kSvpfU7UHc
 ```
-/Users/marcus/Git/brain/tests/unit/tool-registry/oauth-redirect.test.ts
-/Users/marcus/Git/brain/tests/unit/tool-registry/resolve-server-auth.test.ts
-/Users/marcus/Git/brain/tests/unit/intent/authorizer.test.ts
-/Users/marcus/Git/brain/tests/unit/oauth/mcp-dpop-auth.test.ts
-/Users/marcus/Git/brain/tests/unit/proxy-auth.test.ts
-/Users/marcus/Git/brain/tests/unit/proxy-handler-auth.test.ts
-/Users/marcus/Git/brain/tests/unit/proxy/proxy-auth.test.ts
-/Users/marcus/Git/brain/tests/unit/tool-registry/oauth-flow.test.ts
+/home/<USER>/Git/brain/tests/unit/tool-registry/oauth-redirect.test.ts
+/home/<USER>/Git/brain/tests/unit/tool-registry/resolve-server-auth.test.ts
+/home/<USER>/Git/brain/tests/unit/intent/authorizer.test.ts
+/home/<USER>/Git/brain/tests/unit/oauth/mcp-dpop-auth.test.ts
+/home/<USER>/Git/brain/tests/unit/proxy-auth.test.ts
+/home/<USER>/Git/brain/tests/unit/proxy-handler-auth.test.ts
+/home/<USER>/Git/brain/tests/unit/proxy/proxy-auth.test.ts
+/home/<USER>/Git/brain/tests/unit/tool-registry/oauth-flow.test.ts
 ```
 
 > TOOL
@@ -327,7 +327,7 @@ id: toolu_01NTor2YwF26s8WkKdqQWSy9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/Git/brain/app/src/server/auth/config.ts",
+  "file_path": "/home/<USER>/Git/brain/app/src/server/auth/config.ts",
   "old_string": "        validAudiences: [config.betterAuthUrl],",
   "new_string": "        validAudiences: [new URL(config.betterAuthUrl).origin],"
 }
@@ -338,7 +338,7 @@ id: toolu_01NTor2YwF26s8WkKdqQWSy9
 tool_result
 id: toolu_01NTor2YwF26s8WkKdqQWSy9
 ```
-The file /Users/marcus/Git/brain/app/src/server/auth/config.ts has been updated successfully.
+The file /home/<USER>/Git/brain/app/src/server/auth/config.ts has been updated successfully.
 ```
 
 > TOOL
@@ -347,7 +347,7 @@ tool_use Read
 id: toolu_01CJkRuLFCKUtFM3SguPA8hN
 ```json
 {
-  "file_path": "/Users/marcus/Git/brain/tests/unit/oauth/mcp-dpop-auth.test.ts",
+  "file_path": "/home/<USER>/Git/brain/tests/unit/oauth/mcp-dpop-auth.test.ts",
   "limit": 20
 }
 ```
@@ -451,7 +451,7 @@ tool_use Bash
 id: toolu_01F5Bsmc4oK7dbKBTEg8sWFj
 ```json
 {
-  "command": "mkdir -p /Users/marcus/Git/brain/tests/unit/auth",
+  "command": "mkdir -p /home/<USER>/Git/brain/tests/unit/auth",
   "description": "Create auth unit test directory"
 }
 ```
@@ -470,7 +470,7 @@ tool_use Write
 id: toolu_01EQ7PkxrWbmsWM9i3tWG3mP
 ```json
 {
-  "file_path": "/Users/marcus/Git/brain/tests/unit/auth/oauth-valid-audiences.test.ts",
+  "file_path": "/home/<USER>/Git/brain/tests/unit/auth/oauth-valid-audiences.test.ts",
   "content": "/**\n * Regression test: osabio init fails with \"requested resource invalid\" when\n * BETTER_AUTH_URL includes an /api/auth path suffix.\n *\n * Root cause: validAudiences in auth/config.ts was set to [config.betterAuthUrl]\n * (e.g. \"http://localhost:3000/api/auth\") instead of [new URL(config.betterAuthUrl).origin]\n * (e.g. \"http://localhost:3000\"). The CLI sends resource=<origin>, so the exact-string\n * set-membership check in @better-auth/oauth-provider rejected the token exchange.\n */\nimport { describe, expect, it } from \"bun:test\";\n\n/**\n * Mirrors the validAudiences expression in app/src/server/auth/config.ts.\n * Any change to that expression must be reflected here to keep the test meaningful.\n */\nfunction buildValidAudiences(betterAuthUrl: string): string[] {\n  return [new URL(betterAuthUrl).origin];\n}\n\n/**\n * Mirrors how the CLI derives the resource parameter in cli/commands/init.ts.\n */\nfunction cliResourceFromServerUrl(serverUrl: string): string {\n  return serverUrl.replace(/\\/$/, \"\");\n}\n\ndescribe(\"oauth validAudiences configuration\", () => {\n  it(\"accepts CLI resource when BETTER_AUTH_URL has /api/auth suffix\", () => {\n    // Typical deployment config — BETTER_AUTH_URL includes the Better Auth path prefix\n    const betterAuthUrl = \"http://localhost:3000/api/auth\";\n    const serverUrl = \"http://localhost:3000\";\n\n    const audiences = buildValidAudiences(betterAuthUrl);\n    const cliResource = cliResourceFromServerUrl(serverUrl);\n\n    // Before fix: audiences = [\"http://localhost:3000/api/auth\"], cliResource = \"http://localhost:3000\"\n    // → set membership fails → 400 \"requested resource invalid\"\n    //\n    // After fix: audiences = [\"http://localhost:3000\"], cliResource = \"http://localhost:3000\"\n    // → set membership passes […]
 
 > TOOL
@@ -478,7 +478,7 @@ id: toolu_01EQ7PkxrWbmsWM9i3tWG3mP
 tool_result
 id: toolu_01EQ7PkxrWbmsWM9i3tWG3mP
 ```
-File created successfully at: /Users/marcus/Git/brain/tests/unit/auth/oauth-valid-audiences.test.ts
+File created successfully at: /home/<USER>/Git/brain/tests/unit/auth/oauth-valid-audiences.test.ts
 ```
 
 > TOOL
@@ -516,7 +516,7 @@ id: toolu_01GZHqRGNuxAv443E92P5cRB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/Git/brain/.env.example",
+  "file_path": "/home/<USER>/Git/brain/.env.example",
   "old_string": "# ── Server ───────────────────────────────────────────────────\nPORT=3000",
   "new_string": "# ── Server ───────────────────────────────────────────────────\nPORT=3000\n# Auth base URL — origin only, without /api/auth suffix.\n# The OAuth provider derives valid token audiences from this value.\nBETTER_AUTH_URL=http://localhost:3000"
 }
@@ -527,7 +527,7 @@ id: toolu_01GZHqRGNuxAv443E92P5cRB
 tool_result
 id: toolu_01GZHqRGNuxAv443E92P5cRB
 ```
-The file /Users/marcus/Git/brain/.env.example has been updated successfully.
+The file /home/<USER>/Git/brain/.env.example has been updated successfully.
 ```
 
 > AGENT

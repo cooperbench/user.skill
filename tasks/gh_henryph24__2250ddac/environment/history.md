@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01BEToM4fUF1WVdRmzCoHNGe
 ```json
 {
-  "command": "wc -l /Users/hungpq2412/neuralips26/main.tex",
+  "command": "wc -l /home/<USER>/neuralips26/main.tex",
   "description": "Count lines in main.tex"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_01BEToM4fUF1WVdRmzCoHNGe
 tool_result
 id: toolu_01BEToM4fUF1WVdRmzCoHNGe
 ```
-    2862 /Users/hungpq2412/neuralips26/main.tex
+    2862 /home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_01JoLq6mpPzZJmEg6SZWXM7W
 ```json
 {
-  "command": "grep -n -E \"^\\\\\\\\(section|subsection|subsubsection|begin\\\\{abstract\\\\}|end\\\\{abstract\\\\})\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n -E \"^\\\\\\\\(section|subsection|subsubsection|begin\\\\{abstract\\\\}|end\\\\{abstract\\\\})\" /home/<USER>/neuralips26/main.tex",
   "description": "Find all section structure in main.tex"
 }
 ```
@@ -92,7 +92,7 @@ tool_use Read
 id: toolu_019xD1TuFLU8D26MwktmbfhP
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 57,
   "limit": 230
 }
@@ -116,7 +116,7 @@ tool_use Read
 id: toolu_01GihAQ9n3ymagMWMtgVicQd
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 380,
   "limit": 170
 }
@@ -145,7 +145,7 @@ tool_use Read
 id: toolu_01R872eKiVjWPuoT6gcBWyD1
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 285,
   "limit": 110
 }
@@ -196,7 +196,7 @@ tool_use Read
 id: toolu_014YKmUdtJjXxXyDmxbzEZLb
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 549,
   "limit": 200
 }
@@ -235,7 +235,7 @@ tool_use Bash
 id: toolu_01Q6hhVWAPwYXPhZzXukaqQY
 ```json
 {
-  "command": "grep -n -E \"^(\\\\\\\\appendix|\\\\\\\\section|\\\\\\\\subsection)\" /Users/hungpq2412/neuralips26/main.tex | head -80",
+  "command": "grep -n -E \"^(\\\\\\\\appendix|\\\\\\\\section|\\\\\\\\subsection)\" /home/<USER>/neuralips26/main.tex | head -80",
   "description": "Find appendix marker and section structure"
 }
 ```
@@ -505,7 +505,7 @@ tool_use Read
 id: toolu_01WZeCqQn1jGY6DjhB9XK8As
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 1025,
   "limit": 100
 }
@@ -768,7 +768,7 @@ tool_use Read
 id: toolu_01BMyszLetiD1zs8HZr3s7gU
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 228,
   "limit": 3
 }
@@ -794,7 +794,7 @@ id: toolu_01FdAXCAYgVxgqj5mg3h8t2w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\section{Related Work}\n\n\\textbf{TSFM Adaptation.} For broader context we refer to the survey by~\\citet{wen2023tssurvey}.",
   "new_string": "\\section{Related Work}\n\nWe position RR-MoA against four threads: TSFM adaptation, MoE in foundation models, MoE routing collapse and rescue, and time-series normalization.\n\n\\textbf{TSFM Adaptation.} For broader context we refer to the survey by~\\citet{wen2023tssurvey}."
 }
@@ -805,7 +805,7 @@ id: toolu_01FdAXCAYgVxgqj5mg3h8t2w
 tool_result
 id: toolu_01FdAXCAYgVxgqj5mg3h8t2w
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -819,7 +819,7 @@ id: toolu_012wiA3N8GUKf3q7W6jqRj9Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "RR-MoA's case rests on three claims: fixed-topology adapters are suboptimal, the natural MoE remedy collapses on instance-normalized backbones, and standard rescue mechanisms cannot recover it. We establish each before comparing against the seven-baseline suite (fixed adapters, LoRA, TRACE, independent ensembles, AdaMix, full fine-tuning, DLinear).",
   "new_string": "RR-MoA's case rests on three claims and the mechanism that explains them: fixed-topology adapters are suboptimal, the natural MoE remedy collapses on instance-normalized backbones, and standard rescue mechanisms cannot recover it. We establish each in turn before comparing against the seven-baseline suite (fixed adapters, LoRA, TRACE, independent ensembles, AdaMix, full fine-tuning, DLinear)."
 }
@@ -830,7 +830,7 @@ id: toolu_012wiA3N8GUKf3q7W6jqRj9Q
 tool_result
 id: toolu_012wiA3N8GUKf3q7W6jqRj9Q
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -844,7 +844,7 @@ id: toolu_01MNFNdJPqftWu9oe6xXhTH8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\subsubsection*{Mechanism: instance normalization strips the routing signal}\n\\label{sec:diagnosis}\n\n\\textbf{Why RevIN destroys routing.} Each window decomposes into mean $M_i$, scale $\\Sigma_i$, shape $\\mathbf{S}_i = (\\mathbf{x}_i - M_i)/\\Sigma_i$; RevIN keeps $\\mathbf{S}_i$ and discards $(M_i,\\Sigma_i)$. The chain rule quantifies the routing signal in the discarded part.",
   "new_string": "\\subsubsection*{Mechanism: instance normalization strips the routing signal}\n\\label{sec:diagnosis}\n\nHaving established the empirical pattern (RR-MoA wins, AdaMix collapses, frozen $\\succeq$ unfrozen), we now formalize \\emph{why} routing on RevIN-normalized hidden states fails.\n\n\\textbf{Why RevIN destroys routing.} Each window decomposes into mean $M_i$, scale $\\Sigma_i$, shape $\\mathbf{S}_i = (\\mathbf{x}_i - M_i)/\\Sigma_i$; RevIN keeps $\\mathbf{S}_i$ and discards $(M_i,\\Sigma_i)$. The chain rule quantifies the routing signal in the discarded part."
 }
@@ -855,7 +855,7 @@ id: toolu_01MNFNdJPqftWu9oe6xXhTH8
 tool_result
 id: toolu_01MNFNdJPqftWu9oe6xXhTH8
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -869,7 +869,7 @@ id: toolu_014T9yk4UuRBwfMKnKE4gG6J
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\textbf{Rescue-baseline sweep.} To rule out under-tuning, we sweep five standard MoE rescue families (Switch load-balance~\\citep{fedus2022switch}, ST-MoE z-loss~\\citep{zoph2022stmoe}, entropy regularization, ReMoE ReLU routing~\\citep{wang2025remoe}, expert-choice routing~\\citep{zhou2022expertchoice}) over $12$ configurations $\\times$ 6 datasets $\\times$ 2 freeze levels $\\times$ 5 seeds $= 720$ run-cells (Table~\\ref{tab:rescue}, Appendix~\\ref{app:rescue_details}).",
   "new_string": "\\textbf{Rescue-baseline sweep.} The mechanism predicts that interventions targeting optimization will fail because the router's input distribution is the bottleneck, not its objective. We test this directly by sweeping five standard MoE rescue families (Switch load-balance~\\citep{fedus2022switch}, ST-MoE z-loss~\\citep{zoph2022stmoe}, entropy regularization, ReMoE ReLU routing~\\citep{wang2025remoe}, expert-choice routing~\\citep{zhou2022expertchoice}) over $12$ configurations $\\times$ 6 datasets $\\times$ 2 freeze levels $\\times$ 5 seeds $= 720$ run-cells (Table~\\ref{tab:rescue}, Appendix~\\ref{app:rescue_details})."
 }
@@ -880,7 +880,7 @@ id: toolu_014T9yk4UuRBwfMKnKE4gG6J
 tool_result
 id: toolu_014T9yk4UuRBwfMKnKE4gG6J
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -982,22 +982,22 @@ tool_result
 id: toolu_01PdHcnsfTExxj9afESTdLiq
 ```
 EXIT=0
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/h
-ungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/hungpq
-2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/hungpq2412/L
-ibrary/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/hungpq2412/Library
-/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/hungpq2412/Library/texmf
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/hungpq2412/Library/texmf/fonts
-/type1/public/amsfonts/cm/cmr9.pfb></Users/hungpq2412/Library/texmf/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></Users/hungpq2412/Library/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmsy5.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
-9.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></Users/h
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/<USER>
+ungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/<USER>
+2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/<USER>/L
+ibrary/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/<USER>/Library
+/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/<USER>/Library/texmf
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/<USER>/Library/texmf/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></home/<USER>/Library/texmf/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></home/<USER>/Library/texmf/fonts/type1/pub
+lic/amsfonts/cm/cmsy5.pfb></home/<USER>/Library/texmf/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></home/<USER>
 ungpq2412/Library/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr
 /local/texlive/2026basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/l
@@ -1125,7 +1125,7 @@ tool_use Read
 id: toolu_017n7AihRP64w5UFmi6cjpjy
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 395,
   "limit": 20
 }
@@ -1153,7 +1153,7 @@ tool_use Read
 id: toolu_014LDs5gc95UgsBkPRpgxK8z
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 486,
   "limit": 75
 }
@@ -1193,7 +1193,7 @@ id: toolu_01VRJVEThdJEgJBtZhd7D42H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 Two gains feed the headline: residual shape heterogeneity rewards diverse experts on RevIN-normalized hidden states (Q1; $26$--$79\\%$ over the best fixed adapter, Table~\\ref{tab:rrmoa}); the signal-ratio $\\rho{=}{-}0.88$ localizes \\emph{dispatch} information in the stripped statistics (Q2; explains both raw-routing benefit and Traffic's null). The Pure Raw-MLP MoE ablation (Appendix~\\ref{app:raw_mlp_moe}) separates ``MoE with raw router'' from ``ensemble with raw input''.}",
   "new_string": "{\\looseness=-1 Two complementary gains feed the headline. First, residual shape heterogeneity rewards diverse experts on RevIN-normalized hidden states ($26$--$79\\%$ over the best fixed adapter, Table~\\ref{tab:rrmoa}). Second, the signal-ratio $\\rho{=}{-}0.88$ localizes \\emph{dispatch} information in the stripped statistics, explaining both raw-routing benefit and Traffic's null. The Pure Raw-MLP MoE ablation (Appendix~\\ref{app:raw_mlp_moe}) separates ``MoE with raw router'' from ``ensemble with raw input''.}"
 }
@@ -1204,7 +1204,7 @@ id: toolu_01VRJVEThdJEgJBtZhd7D42H
 tool_result
 id: toolu_01VRJVEThdJEgJBtZhd7D42H
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -1218,7 +1218,7 @@ id: toolu_01ViEra1b2zcA3zBVNj68cVh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "RR-MoA's case rests on three claims and the mechanism that explains them: fixed-topology adapters are suboptimal, the natural MoE remedy collapses on instance-normalized backbones, and standard rescue mechanisms cannot recover it. We establish each in turn before comparing against the seven-baseline suite (fixed adapters, LoRA, TRACE, independent ensembles, AdaMix, full fine-tuning, DLinear).",
   "new_string": "With this setup fixed, we now turn to the empirical case for RR-MoA, which rests on three claims and the mechanism that explains them: fixed-topology adapters are suboptimal, the natural MoE remedy collapses on instance-normalized backbones, and standard rescue mechanisms cannot recover it. We establish each in turn before comparing against the seven-baseline suite (fixed adapters, LoRA, TRACE, independent ensembles, AdaMix, full fine-tuning, DLinear)."
 }
@@ -1229,7 +1229,7 @@ id: toolu_01ViEra1b2zcA3zBVNj68cVh
 tool_result
 id: toolu_01ViEra1b2zcA3zBVNj68cVh
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -1243,7 +1243,7 @@ id: toolu_01QhdaHstTP6xQAns5xYcHpN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 \\textit{Remark.} Proposition~\\ref{prop:frozen} covers linear $A\\mathbf{x}$; Figure~\\ref{fig:trajectory}b confirms it in the full 8-block Transformer within ${\\sim}50$ steps. Independent ensembles are $37$--$46\\%$ worse (Table~\\ref{tab:baselines}): learned routing, not mere diversity, drives gains.}",
   "new_string": "{\\looseness=-1 \\textit{Remark.} Proposition~\\ref{prop:frozen} covers linear $A\\mathbf{x}$; Figure~\\ref{fig:trajectory}b confirms it in the full 8-block Transformer within ${\\sim}50$ steps. Independent ensembles are $37$--$46\\%$ worse (Table~\\ref{tab:baselines}), so learned routing -- not mere diversity -- drives the gains, which raises the question of \\emph{what} the router needs to read.}"
 }
@@ -1254,7 +1254,7 @@ id: toolu_01QhdaHstTP6xQAns5xYcHpN
 tool_result
 id: toolu_01QhdaHstTP6xQAns5xYcHpN
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -1307,7 +1307,7 @@ id: toolu_01Y2TYwfTQdkJzy7BYBspcBB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 \\textbf{When RR-MoA does not help.} The diagnostic predicts a low-$R$ regime where raw routing should not win, and the results respect it: on Traffic ($R{=}0.14$, lowest in the LTSF suite) RR-MoA is statistically indistinguishable from the best fixed adapter and DLinear; Solar ($R{=}0.06$) is the one outlier where R(D) under-predicts a modest gain (App.~\\ref{app:diagnostic}).",
   "new_string": "{\\looseness=-1 \\textbf{When RR-MoA does not help.} The diagnostic should also predict where the method fails, and the results respect that boundary: on Traffic ($R{=}0.14$, lowest in the LTSF suite) RR-MoA is statistically indistinguishable from the best fixed adapter and DLinear; Solar ($R{=}0.06$) is the one outlier where $R(\\mathcal{D})$ under-predicts a modest gain (App.~\\ref{app:diagnostic})."
 }
@@ -1318,7 +1318,7 @@ id: toolu_01Y2TYwfTQdkJzy7BYBspcBB
 tool_result
 id: toolu_01Y2TYwfTQdkJzy7BYBspcBB
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -1417,7 +1417,7 @@ tool_use Read
 id: toolu_01SQnNjDbTdymmHMxLMSAayK
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 61,
   "limit": 15
 }
@@ -1442,7 +1442,7 @@ id: toolu_01MaWtq5esh6yBhKF2yiMDd6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "Time series foundation models (TSFMs) such as MOMENT~\\citep{goswami2024moment}, TimesFM~\\citep{das2024timesfm}, Chronos~\\citep{ansari2024chronos}, Timer-XL~\\citep{liu2025timerxl,liu2024timer}, and Moirai~\\citep{woo2024moirai} now provide pretrained representations for time series, alongside further pretrained variants~\\citep{lee2024units, rasul2024lagllama, ekambaram2024ttm}, observability-domain deployments~\\citep{cohen2025toto}, tokenization-free flow-matching forecasters~\\citep{liu2025sundial}, and a parallel route that reprograms pretrained LLMs as forecasters via patch-to-token reprogramming~\\citep{jin2024timellm}, layer-norm-only tuning~\\citep{zhou2023onefitsall}, autoregressive next-token forecasting~\\citep{liu2024autotimes}, semantic prompts~\\citep{pan2024s2ipllm}, and language-instructed cross-domain unification~\\citep{liu2024unitime}, with recent designs pushing to billion-parameter scales~\\citep{shi2024timemoe, liu2026timers1}. Using one of these backbones on a downstream task still requires attaching a lightweight adapter head that maps hidden states to predictions; this paper studies the adapter, holding the backbone fixed.\n\nStandard TSFM adapters apply a lightweight regression head on encoder outputs through the same head for every window (Figure~\\ref{fig:problem_overview}a): flatten-then-project for MOMENT~\\citep{goswami2024moment} and PatchTST~\\citep{nie2023patchtst}, an autoregressive residual block for TimesFM~\\citep{das2024timesfm}. Real time series mix heterogeneous regimes, and instance normalization handles only scale-and-offset; residual \\emph{shape} heterogeneity (periodicity, trends, level shifts, change points) lives in the hidden states across layers, as recent probing analyses report~\\citep{wilinski2025tsfm_representations, pandey2025tsfm_semantics}. This motivates a per-window mixture of topologically distinct expert heads with a learned router. Keeping the backbone frozen while training only the adapter is also what makes deployment practical: a shared TSFM […]
 
 > TOOL
@@ -1450,7 +1450,7 @@ id: toolu_01MaWtq5esh6yBhKF2yiMDd6
 tool_result
 id: toolu_01MaWtq5esh6yBhKF2yiMDd6
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -1463,7 +1463,7 @@ tool_use Read
 id: toolu_018hkQFHEnXiszWkAM4qAZHs
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 370,
   "limit": 25
 }
@@ -1499,7 +1499,7 @@ id: toolu_013bAincwC2hh5w63roiLCiu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\textbf{RR-MoA architecture.} Per-window routing should send a quiet baseline and a volatile spike to different expert topologies, but as shown in the introduction this fails when the router reads normalized hidden states because RevIN removes the per-window statistics that distinguish regimes. \\textbf{RR-MoA} splits the information into two streams: the frozen TSFM produces embeddings $\\mathbf{H}{=}f_\\theta(\\mathbf{x})$ for the experts, while a lightweight gate reads the \\textit{raw, pre-normalization} input $\\mathbf{X}_\\text{raw}$ to select which experts to activate:",
   "new_string": "\\textbf{Architecture.} Per-window routing should dispatch a quiet baseline and a volatile spike to different expert topologies, but doing so requires the router to see the per-window statistics that distinguish regimes -- exactly what RevIN strips. RR-MoA splits the two needs into two streams: the frozen TSFM produces embeddings $\\mathbf{H}{=}f_\\theta(\\mathbf{x})$ for the experts, while a lightweight gate reads the \\textit{raw, pre-normalization} input $\\mathbf{X}_\\text{raw}$ to select which experts to activate:"
 }
@@ -1510,7 +1510,7 @@ id: toolu_013bAincwC2hh5w63roiLCiu
 tool_result
 id: toolu_013bAincwC2hh5w63roiLCiu
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -1520,7 +1520,7 @@ id: toolu_01PfAFFxPQ37cTHBPovh27A7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "where $G_\\psi: \\mathbb{R}^{T} \\to \\mathbb{R}^K$ is a small Conv1d\\,+\\,pooling\\,+\\,linear gate ($853$ params) operating directly on the raw time series, $\\mathcal{T} \\subset \\{1,\\ldots,K\\}$ is the set of Top-$k$ indices, and each $\\mathrm{Expert}_j$ is a canonical adapter head. By construction $\\sum_j \\widetilde{w}_j = 1$ with support only on $\\mathcal{T}$, so only $k$ of $K$ experts execute per sample. With $K{=}5$, $k{=}2$ we obtain $40\\%$ of the dense expert FLOPs while retaining $63\\%$ of the dense MSE improvement over the best fixed adapter (\\S\\ref{sec:topk}). Routing on raw input preserves the temporal statistics (trend, amplitude, volatility) that RevIN strips away.\n\n\\textbf{Inference cost and deployment.} The router is a Conv1d gate of $853$ parameters ($0.4\\%$ of one expert head, ${<}10^{-3}$ of the frozen backbone). With $k{=}2$ of $K{=}5$ experts active per window, RR-MoA adds two adapter forward passes plus the gate to one frozen TSFM forward; the unselected $K{-}k$ experts do not execute. Because the backbone is strictly frozen, a single TSFM held in GPU memory can be shared across many tenants while per-task adapter pools (${\\sim}500$K params each) are hot-swapped from host RAM, an arrangement DLinear and per-dataset-from-scratch baselines cannot match (Appendix~\\ref{app:benchmark}).\n\n\\textbf{Routing dynamics.} In […]
 
 > TOOL
@@ -1528,7 +1528,7 @@ id: toolu_01PfAFFxPQ37cTHBPovh27A7
 tool_result
 id: toolu_01PfAFFxPQ37cTHBPovh27A7
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT

@@ -4,7 +4,7 @@ tool_use Read
 id: toolu_01DZ9szHH1oFdcFBK4jVH5c7
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/client.ts"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/db/app/src/client.ts"
 }
 ```
 
@@ -62,7 +62,7 @@ tool_use Read
 id: toolu_01BjkYB7rE8KpEyvwXNmAXKZ
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/package.json"
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/db/app/package.json"
 }
 ```
 
@@ -136,7 +136,7 @@ tool_use Bash
 id: toolu_01J6QPsGnzWWWR34dmDX1rsB
 ```json
 {
-  "command": "ls /Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/",
+  "command": "ls /home/<USER>/Code/@lightfastai/lightfast/db/app/src/",
   "description": "List db/app/src directory"
 }
 ```
@@ -264,7 +264,7 @@ tool_use Write
 id: toolu_01W4sj7eSvF5gNbJrKSQmror
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/drivers/neon-http.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/db/app/src/drivers/neon-http.ts",
   "content": "import { neon, neonConfig } from \"@neondatabase/serverless\";\nimport { drizzle } from \"drizzle-orm/neon-http\";\nimport * as schema from \"../schema\";\n\nexport type NeonHttpDatabase = ReturnType<typeof createNeonHttpClient>;\n\n/**\n * Drizzle client over the Neon HTTP driver, pointed at PlanetScale's\n * HTTP SQL endpoint. Edge-compatible (uses fetch, not TCP). Exposes\n * `.batch([...])` natively for atomic multi-statement execution.\n */\nexport function createNeonHttpClient(databaseUrl: string) {\n  // Required: point Neon driver at PlanetScale's HTTP SQL endpoint.\n  // Idempotent assignment — safe to run on every call.\n  neonConfig.fetchEndpoint = (host) => `https://${host}/sql`;\n  const sql = neon(databaseUrl);\n  return drizzle({ client: sql, schema });\n}\n"
 }
 ```
@@ -274,7 +274,7 @@ id: toolu_01W4sj7eSvF5gNbJrKSQmror
 tool_result
 id: toolu_01W4sj7eSvF5gNbJrKSQmror
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/drivers/neon-http.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/db/app/src/drivers/neon-http.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -283,7 +283,7 @@ tool_use Write
 id: toolu_01ETsdxMyKdY7EcaMUvYGbfw
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/drivers/postgres.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/db/app/src/drivers/postgres.ts",
   "content": "import { drizzle } from \"drizzle-orm/postgres-js\";\nimport postgres from \"postgres\";\nimport * as schema from \"../schema\";\n\nexport type PostgresJsDatabase = ReturnType<typeof createPostgresClient>;\n\n/**\n * Drizzle client over postgres-js, used for local development against\n * the dev-services Docker Postgres (TCP). Does NOT expose `.batch()` —\n * apply `withBatchPolyfill` in `client.ts` to bridge the surface.\n */\nexport function createPostgresClient(databaseUrl: string) {\n  const sql = postgres(databaseUrl, { max: 10 });\n  return drizzle(sql, { schema });\n}\n"
 }
 ```
@@ -293,7 +293,7 @@ id: toolu_01ETsdxMyKdY7EcaMUvYGbfw
 tool_result
 id: toolu_01ETsdxMyKdY7EcaMUvYGbfw
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/drivers/postgres.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/db/app/src/drivers/postgres.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -302,7 +302,7 @@ tool_use Write
 id: toolu_013CB7tw5JqP287SACZtmyci
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/polyfills/batch.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/db/app/src/polyfills/batch.ts",
   "content": "/**\n * `.batch([...])` polyfill for drivers that don't expose it natively.\n *\n * neon-http exposes `db.batch([...])` which runs queries in a single\n * atomic HTTP round-trip — Neon's substitute for transactions over HTTP.\n * drizzle-orm/postgres-js does not expose `.batch()` at all.\n *\n * This polyfill gives the local postgres-js driver a `.batch()` shim so\n * call sites that use `db.batch([...])` (today: only\n * api/app/src/router/org/org-api-keys.ts key rotation) still work in\n * local dev without branching on driver.\n *\n * IMPORTANT: this is `Promise.all`, NOT a real transaction. If revoke\n * succeeds and insert fails, you get a partial state. Acceptable for the\n * current consumer (key rotation is recoverable). If a future consumer\n * needs real atomicity in local dev, upgrade this to wrap\n * `database.transaction(async () => Promise.all(queries))` — postgres-js\n * supports real transactions.\n */\nexport function withBatchPolyfill<T extends object>(database: T) {\n  return Object.assign(database, {\n    batch: async (queries: readonly PromiseLike<unknown>[]) =>\n      Promise.all(queries),\n  });\n}\n"
 }
 ```
@@ -312,7 +312,7 @@ id: toolu_013CB7tw5JqP287SACZtmyci
 tool_result
 id: toolu_013CB7tw5JqP287SACZtmyci
 ```
-File created successfully at: /Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/polyfills/batch.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/@lightfastai/lightfast/db/app/src/polyfills/batch.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -351,7 +351,7 @@ tool_use Write
 id: toolu_013APmrQ5XMVzKP2gnymiQek
 ```json
 {
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/client.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/db/app/src/client.ts",
   "content": "import {\n  createNeonHttpClient,\n  type NeonHttpDatabase,\n} from \"./drivers/neon-http\";\nimport { createPostgresClient } from \"./drivers/postgres\";\nimport { env } from \"./env\";\nimport { withBatchPolyfill } from \"./polyfills/batch\";\n\n// Canonical DB surface. Both drivers must satisfy this type — neon-http\n// does so natively; postgres-js + withBatchPolyfill is bridged by an\n// `as unknown as AppDatabase` cast in the local branch below.\ntype AppDatabase = NeonHttpDatabase;\n\n/**\n * Create a new database client.\n *\n * Routing:\n *   - Local dev (DATABASE_HOST is localhost / 127.0.0.1 / ::1)\n *       → postgres-js over TCP against the dev-services Docker Postgres,\n *         wrapped with `withBatchPolyfill` so `.batch()` call sites work.\n *   - Everything else\n *       → neon-http against PlanetScale's HTTP SQL endpoint.\n */\nexport function createClient(): AppDatabase {\n  const databaseUrl = resolveDatabaseUrl({\n    ssl: !isLocalDatabaseHost(env.DATABASE_HOST),\n  });\n\n  if (isLocalDatabaseHost(env.DATABASE_HOST)) {\n    return withBatchPolyfill(\n      createPostgresClient(databaseUrl),\n    ) as unknown as AppDatabase;\n  }\n\n  return createNeonHttpClient(databaseUrl);\n}\n\n/**\n * Default database client instance.\n */\nexport const db = createClient();\n\n// URL construction lives here (not in drivers/) because both drivers\n// take a connection URL and the build logic — including ssl=require for\n// remote hosts — is shared. Using URL/URL avoids string-interpolation\n// bugs with special characters in passwords.\nfunction resolveDatabaseUrl({ ssl }: { ssl: boolean }) {\n  const url = […]
 
 > TOOL
@@ -359,7 +359,7 @@ id: toolu_013APmrQ5XMVzKP2gnymiQek
 tool_result
 id: toolu_013APmrQ5XMVzKP2gnymiQek
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/@lightfastai/lightfast/db/app/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -382,7 +382,7 @@ id: toolu_0149s7BeEQR2oUN9GG88u2oE
 tool_result
 id: toolu_0149s7BeEQR2oUN9GG88u2oE
 ```
-> @db/app@0.1.0 typecheck /Users/jeevanpillay/Code/@lightfastai/lightfast/db/app
+> @db/app@0.1.0 typecheck /home/<USER>/Code/@lightfastai/lightfast/db/app
 > tsc --noEmit
 ```
 
@@ -402,7 +402,7 @@ id: toolu_015nU1N5gTyF7UbpVMnXdvKh
 tool_result
 id: toolu_015nU1N5gTyF7UbpVMnXdvKh
 ```
-> @api/app@0.1.0 typecheck /Users/jeevanpillay/Code/@lightfastai/lightfast/api/app
+> @api/app@0.1.0 typecheck /home/<USER>/Code/@lightfastai/lightfast/api/app
 > tsc --noEmit
 ```
 
@@ -422,7 +422,7 @@ id: toolu_01QXkzRBDMzMtKnfmpjfKycy
 tool_result
 id: toolu_01QXkzRBDMzMtKnfmpjfKycy
 ```
-> @api/platform@0.1.0 typecheck /Users/jeevanpillay/Code/@lightfastai/lightfast/api/platform
+> @api/platform@0.1.0 typecheck /home/<USER>/Code/@lightfastai/lightfast/api/platform
 > tsc --noEmit
 ```
 
@@ -442,7 +442,7 @@ id: toolu_01GgMBuYK78QdpA5rvbNYHnr
 tool_result
 id: toolu_01GgMBuYK78QdpA5rvbNYHnr
 ```
-> lightfast@ check /Users/jeevanpillay/Code/@lightfastai/lightfast
+> lightfast@ check /home/<USER>/Code/@lightfastai/lightfast
 > npx ultracite@latest check
 
 db/app/src/client.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -469,7 +469,7 @@ id: toolu_014rMPPdeyjNbMqmUKVqbmEg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/client.ts",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/db/app/src/client.ts",
   "old_string": "    return withBatchPolyfill(\n      createPostgresClient(databaseUrl),\n    ) as unknown as AppDatabase;",
   "new_string": "    return withBatchPolyfill(\n      createPostgresClient(databaseUrl)\n    ) as unknown as AppDatabase;"
 }
@@ -480,7 +480,7 @@ id: toolu_014rMPPdeyjNbMqmUKVqbmEg
 tool_result
 id: toolu_014rMPPdeyjNbMqmUKVqbmEg
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/db/app/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/@lightfastai/lightfast/db/app/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -499,7 +499,7 @@ id: toolu_01Uz9NpGFEQM1i588GbgqJPd
 tool_result
 id: toolu_01Uz9NpGFEQM1i588GbgqJPd
 ```
-> lightfast@ check /Users/jeevanpillay/Code/@lightfastai/lightfast
+> lightfast@ check /home/<USER>/Code/@lightfastai/lightfast
 > npx ultracite@latest check
 
 Checked 1117 files in 568ms. No fixes applied.
@@ -578,7 +578,7 @@ id: toolu_01R1F3MCJN8evdHEMgrEjAu4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-05-db-app-driver-polyfill-restructure.md",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-05-db-app-driver-polyfill-restructure.md",
   "old_string": "#### Automated Verification\n\n- [ ] `pnpm --filter @db/app typecheck` passes\n- [ ] `pnpm --filter @api/app typecheck` passes (largest consumer of `@db/app/client`)\n- [ ] `pnpm --filter @api/platform typecheck` passes (second-largest consumer)\n- [ ] `pnpm check` passes (Biome lint/format repo-wide)\n- [ ] `git grep -n \"withLocalBatch\\|createNeonDatabase\"` returns no results (old symbols fully retired)\n- [ ] `git grep -n \"from \\\"@db/app/client\\\"\"` count is unchanged from before refactor (no consumer was accidentally broken or moved)\n- [ ] New files exist: `db/app/src/drivers/neon-http.ts`, `db/app/src/drivers/postgres.ts`, `db/app/src/polyfills/batch.ts`",
   "new_string": "#### Automated Verification\n\n- [x] `pnpm --filter @db/app typecheck` passes\n- [x] `pnpm --filter @api/app typecheck` passes (largest consumer of `@db/app/client`)\n- [x] `pnpm --filter @api/platform typecheck` passes (second-largest consumer)\n- [x] `pnpm check` passes (Biome lint/format repo-wide)\n- [x] `git grep -n \"withLocalBatch\\|createNeonDatabase\"` returns no results (old symbols fully retired)\n- [x] `git grep -n \"from \\\"@db/app/client\\\"\"` count is unchanged from before refactor (no consumer was accidentally broken or moved) — 39 files, matches pre-refactor\n- [x] New files exist: `db/app/src/drivers/neon-http.ts`, `db/app/src/drivers/postgres.ts`, `db/app/src/polyfills/batch.ts`"
 }
@@ -589,7 +589,7 @@ id: toolu_01R1F3MCJN8evdHEMgrEjAu4
 tool_result
 id: toolu_01R1F3MCJN8evdHEMgrEjAu4
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-05-db-app-driver-polyfill-restructure.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-05-db-app-driver-polyfill-restructure.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -629,7 +629,7 @@ id: toolu_01VJmFv33u4yrKqwe4etERBw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-05-db-app-driver-polyfill-restructure.md",
+  "file_path": "/home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-05-db-app-driver-polyfill-restructure.md",
   "old_string": "#### Human Review\n\n- [ ] Start `pnpm dev:app` against local Docker Postgres → app boots without DB connection errors → confirms local postgres-js path still works\n- [ ] In a signed-in browser session, trigger an org API key rotation (which calls `db.batch` at `api/app/src/router/org/org-api-keys.ts:231`) → response returns a new key and the old key is marked inactive in the DB → confirms the polyfill still bridges the surface in local dev — TODO: automate via lightfast-clerk skill driving the rotation endpoint\n- [ ] Skim the four files for the explicit comments the user requested → each helper's location is justified inline (driver-routing in `client.ts`, polyfill `why` in `polyfills/batch.ts`, side-effect note in `drivers/neon-http.ts`)",
   "new_string": "#### Human Review\n\n- [x] Start `pnpm dev:app` against local Docker Postgres → app boots without DB connection errors → confirms local postgres-js path still works\n- [x] In a signed-in browser session, trigger an org API key rotation (which calls `db.batch` at `api/app/src/router/org/org-api-keys.ts:231`) → response returns a new key and the old key is marked inactive in the DB → confirms the polyfill still bridges the surface in local dev — TODO: automate via lightfast-clerk skill driving […]
 
@@ -638,7 +638,7 @@ id: toolu_01VJmFv33u4yrKqwe4etERBw
 tool_result
 id: toolu_01VJmFv33u4yrKqwe4etERBw
 ```
-The file /Users/jeevanpillay/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-05-db-app-driver-polyfill-restructure.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/@lightfastai/lightfast/thoughts/shared/plans/2026-05-05-db-app-driver-polyfill-restructure.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

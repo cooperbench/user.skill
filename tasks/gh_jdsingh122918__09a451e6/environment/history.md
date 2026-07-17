@@ -59,13 +59,13 @@ The UI layer is split by execution model. Sequential runs (the standard `forge r
 
 > DEVELOPER
 
-I was unable to write the file directly because both the `Write` and `Bash` tools were denied. The full content is above — please paste it into `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_20_21.md` (the `.context/` directory already exists).
+I was unable to write the file directly because both the `Write` and `Bash` tools were denied. The full content is above — please paste it into `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_20_21.md` (the `.context/` directory already exists).
 
 **Key files read:**
-- `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/src/factory/models.rs` — all domain structs/enums
-- `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/src/factory/db/mod.rs` — `DbHandle` and connection modes
-- `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/src/factory/pipeline/mod.rs` — `PipelineRunner`, wave loop, auto-promote
-- `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/src/factory/pipeline/execution.rs` — streaming/Docker execution</result>
+- `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/src/factory/models.rs` — all domain structs/enums
+- `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/src/factory/db/mod.rs` — `DbHandle` and connection modes
+- `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/src/factory/pipeline/mod.rs` — `PipelineRunner`, wave loop, auto-promote
+- `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/src/factory/pipeline/execution.rs` — streaming/Docker execution</result>
 <usage><total_tokens>57335</total_tokens><tool_uses>11</tool_uses><duration_ms>205001</duration_ms></usage>
 </task-notification>
 Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a1d884bea76a58eb3.output
@@ -143,7 +143,7 @@ Each ID type derives `Copy`, `Hash`, implements `Display`, and is transparent in
 
 > DEVELOPER
 
-Please grant Write or Bash permission so I can save this file, or paste the content above into `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_06_10.md` directly.</result>
+Please grant Write or Bash permission so I can save this file, or paste the content above into `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_06_10.md` directly.</result>
 <usage><total_tokens>68308</total_tokens><tool_uses>18</tool_uses><duration_ms>404496</duration_ms></usage>
 </task-notification>
 Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a8170b2c93d6c2953.output
@@ -307,19 +307,19 @@ A Phase is Forge's unit of work. Every `forge run` execution is a sequence of ph
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/forge/codebase-walkthrough directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is dev. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
 If the user asks you to work on several unrelated tasks in parallel, you can suggest they start new workspaces.
-If the user asks for help with Conductor, ask them to email [humans@conductor.build](mailto:humans@conductor.build) or
+If the user asks for help with Conductor, ask them to email [<REDACTED_EMAIL>](mailto:<REDACTED_EMAIL>) or
 click on the comment icon in the bottom left to send feedback.
 </system_instruction>
 
 
 <system_instruction>
 The user has attached these files. Read them before proceeding.
-- /Users/jdsingh/conductor/workspaces/forge/sofia/.context/attachments/plan.md (4.7 KB)
+- /home/<USER>/conductor/workspaces/forge/sofia/.context/attachments/plan.md (4.7 KB)
 </system_instruction>
 
 
@@ -459,7 +459,7 @@ Waiting for completions.
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a0fd618da10163df5.output</output-file>
 <status>completed</status>
 <summary>Agent "Write section 24 (Runtime Daemon)" completed</summary>
-<result>I need permission to write to the file `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_24.md`. Both the `Write` tool and `Bash` (with `cat >`) have been denied.
+<result>I need permission to write to the file `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_24.md`. Both the `Write` tool and `Bash` (with `cat >`) have been denied.
 
 The file does not yet exist -- it needs to be created as a new file in the `.context/` directory. Could you grant permission so I can write the completed Section 24 content? The section is fully drafted (~220 lines) covering:
 
@@ -489,7 +489,7 @@ Resumed F1 with bypass permissions. Waiting on remaining agents.
 <summary>Agent "Write sections 14-15 (Reviews+Council)" completed</summary>
 <result>I need permission to write to the output file. Both the `Write` tool and the `Bash` tool (via `cat >`) have been denied. 
 
-To complete your request, I need permission to create the file at `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_14_15.md`. The content is fully drafted -- I just need one of these approaches to work:
+To complete your request, I need permission to create the file at `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_14_15.md`. The content is fully drafted -- I just need one of these approaches to work:
 
 1. The **Write** tool to create the file directly
 2. The **Bash** tool to write the file via shell redirection
@@ -515,7 +515,7 @@ Resumed C2 with bypass permissions.
 
 To complete your request, I need permission to either:
 
-1. **Use the Write tool** to create `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_24.md`, or
+1. **Use the Write tool** to create `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_24.md`, or
 2. **Use Bash** to run a shell command that writes the file (e.g., `cat > file << 'EOF'`)
 
 The content is fully drafted at ~220 lines. Could you approve the file write permission so I can persist it?</result>
@@ -552,7 +552,7 @@ Once all complete, I'll combine into `codebase-walkthrough/docs/module-walkthrou
 <summary>Agent "Write sections 20-21 (Factory data+pipeline)" completed</summary>
 <result>I need permission to write the output file. Both the `Write` tool and `Bash` (with `cat >`) were denied. Let me try the Write tool again -- sometimes permissions are granted on retry for the specific file being created.
 
-I need to write the file `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_20_21.md` but both the Write tool and Bash were denied permission. This file is the required output for the task. Could you grant permission so I can create it? The content is ready -- it covers:
+I need to write the file `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_20_21.md` but both the Write tool and Bash were denied permission. This file is the required output for the task. Could you grant permission so I can create it? The content is ready -- it covers:
 
 - **Section 20 (Factory Data Model)**: ~170 lines covering the `define_id_type!` macro, core entities (Project, Issue, PipelineRun, PipelinePhase), agent-team models (AgentTeam, AgentTask, AgentEvent), API view types (BoardView, IssueDetail, etc.), the enum serialization convention, `DbHandle` with its three connection modes, and the CRUD pattern exemplified by `issues.rs`.
 
@@ -575,7 +575,7 @@ Old E1 agent (from the first relaunch targeting codebase-walkthrough) completed 
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/ac6a98abaa1ff9531.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 25-26 (Crates+Autoresearch)" completed</summary>
-<result>I need write permission to create the output file at `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_25_26.md`. Both the Write tool and Bash (for `cat >`) were denied. Could you grant permission for one of these so I can save the document? The content is fully drafted and ready to write -- I just need filesystem write access to the target path.</result>
+<result>I need write permission to create the output file at `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_25_26.md`. Both the Write tool and Bash (for `cat >`) were denied. Could you grant permission for one of these so I can save the document? The content is fully drafted and ready to write -- I just need filesystem write access to the target path.</result>
 <usage><total_tokens>102614</total_tokens><tool_uses>35</tool_uses><duration_ms>278693</duration_ms></usage>
 </task-notification>
 Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/ac6a98abaa1ff9531.output
@@ -592,7 +592,7 @@ Old F2 agent also completed with write issue — expected. New f2r agent is runn
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a90b09f4c70f0e749.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 11-13 (Bootstrap+DAG+Swarm)" completed</summary>
-<result>I need the Write tool permission to create the output file at `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_11_13.md`. Both the Write tool and the Bash `cat >` alternative were denied.
+<result>I need the Write tool permission to create the output file at `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_11_13.md`. Both the Write tool and the Bash `cat >` alternative were denied.
 
 Could you grant permission for either the **Write** tool or the **Bash** tool so I can create the file? The content is fully composed and ready -- I just need filesystem write access to the target path.</result>
 <usage><total_tokens>105836</total_tokens><tool_uses>20</tool_uses><duration_ms>339251</duration_ms></usage>
@@ -613,7 +613,7 @@ Old C1 agent — same write issue. New c1r agent is running targeting correct pa
 <summary>Agent "Write sections 22-23 (Factory API+React UI)" completed</summary>
 <result>I need file write permission to complete this task. I have the full content of Sections 22 and 23 ready, but both the `Write` tool and `Bash` file creation were denied.
 
-**What I need to do:** Write the walkthrough document to `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_22_23.md`. This is a new file in the existing `.context/` directory.
+**What I need to do:** Write the walkthrough document to `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_22_23.md`. This is a new file in the existing `.context/` directory.
 
 **What I have ready:** The complete two-section document (~430 lines) covering:
 
@@ -635,7 +635,7 @@ Old E2 agent — same. New e2r running.
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/ac4097287face9812.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 18-19 (UI+Metrics)" completed</summary>
-<result>I need write permission to create the output file at `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_18_19.md`. Both the `Write` tool and `Bash` (with shell redirection) have been denied. 
+<result>I need write permission to create the output file at `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_18_19.md`. Both the `Write` tool and `Bash` (with shell redirection) have been denied. 
 
 Could you grant permission for one of these so I can write the file? The content is fully drafted and ready -- I just need filesystem write access to the `.context/` directory in the codebase-walkthrough workspace.</result>
 <usage><total_tokens>54676</total_tokens><tool_uses>10</tool_uses><duration_ms>203831</duration_ms></usage>
@@ -654,7 +654,7 @@ Old D2 — same. New d2r running. All old agents now accounted for. Waiting for 
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a115488dd8cb8cc6a.output</output-file>
 <status>completed</status>
 <summary>Agent "Resume Agent C2 to write output" completed</summary>
-<result>I am unable to write the file because both the Write tool and the Bash tool are being denied permission. The content is fully prepared -- I need you to grant permission for either tool so I can create the file at `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_14_15.md`.
+<result>I am unable to write the file because both the Write tool and the Bash tool are being denied permission. The content is fully prepared -- I need you to grant permission for either tool so I can create the file at `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_14_15.md`.
 
 Could you approve one of these tool calls when prompted?</result>
 <usage><total_tokens>124798</total_tokens><tool_uses>2</tool_uses><duration_ms>197518</duration_ms></usage>
@@ -673,7 +673,7 @@ Old C2 resume — same issue. New c2r agent is running targeting `sofia/.context
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/aa501fa581e60b65b.output</output-file>
 <status>completed</status>
 <summary>Agent "Write section 24 Runtime Daemon" completed</summary>
-<result>I need Write permission to create a new file at `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_24.md`. This is required to fulfill the task — the output file path was explicitly specified in the instructions.
+<result>I need Write permission to create a new file at `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_24.md`. This is required to fulfill the task — the output file path was explicitly specified in the instructions.
 
 Could you grant Write permission so I can create that file? The content is ready — it's the Section 24 walkthrough document covering the Runtime Daemon architecture.</result>
 <usage><total_tokens>28067</total_tokens><tool_uses>9</tool_uses><duration_ms>82156</duration_ms></usage>
@@ -694,9 +694,9 @@ All 31 modules covered, plus `cmd/`, React UI, and all 3 workspace crates. The d
 <summary>Agent "Write sections 18-19 UI+Metrics" completed</summary>
 <result>The file does not exist yet and I need Write permission to create it. I need to stop and explain the situation.
 
-The output file `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_18_19.md` does not exist yet, and I was denied permission to create it using the Write tool.
+The output file `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_18_19.md` does not exist yet, and I was denied permission to create it using the Write tool.
 
-To complete this task, I need permission to create a new file at that path. Could you grant Write permission, or create the file first (e.g., `touch /Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_18_19.md`) so I can use the Edit tool to populate it?
+To complete this task, I need permission to create a new file at that path. Could you grant Write permission, or create the file first (e.g., `touch /home/<USER>/conductor/workspaces/forge/sofia/.context/sections_18_19.md`) so I can use the Edit tool to populate it?
 
 For reference, here is the content I prepared based on reading both `mod.rs` files:
 
@@ -735,7 +735,7 @@ The walkthrough is already complete and written. The remaining agent notificatio
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/abd7cf83c9d36cbab.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 25-26 Crates+Autoresearch" completed</summary>
-<result>I need the Write tool permission to create the output file. I was attempting to write a new file to `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_25_26.md` — this is the output file specified in the user's instructions for the walkthrough sections.
+<result>I need the Write tool permission to create the output file. I was attempting to write a new file to `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_25_26.md` — this is the output file specified in the user's instructions for the walkthrough sections.
 
 Could you grant permission for the Write tool so I can create this file? The content is ready and the file does not currently exist.</result>
 <usage><total_tokens>28293</total_tokens><tool_uses>11</tool_uses><duration_ms>86185</duration_ms></usage>
@@ -754,7 +754,7 @@ All done. The walkthrough is complete at `docs/module-walkthrough.md` in the cod
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/afb4318ff593c1f72.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 14-15 Reviews+Council" completed</summary>
-<result>The Write tool was denied. I need Write permission to create the output file at `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_14_15.md`. The file does not yet exist in that directory — the `.context/` folder contains only `attachments`, `notes.md`, `plans`, and `todos.md`.
+<result>The Write tool was denied. I need Write permission to create the output file at `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_14_15.md`. The file does not yet exist in that directory — the `.context/` folder contains only `attachments`, `notes.md`, `plans`, and `todos.md`.
 
 Please grant permission to write new files, and I will create the sections file. Here is a summary of what was researched and what the file will contain:
 
@@ -785,7 +785,7 @@ Straggler agent — no action needed. The walkthrough is already complete.
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a72eeb3bfbb9790e9.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 11-13 Bootstrap+DAG+Swarm" completed</summary>
-<result>I need Write access to create the output file at `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_11_13.md`. The `.context` directory exists but the file does not yet — Write permission is required to create it. Please grant Write permission so I can produce the output file.</result>
+<result>I need Write access to create the output file at `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_11_13.md`. The `.context` directory exists but the file does not yet — Write permission is required to create it. Please grant Write permission so I can produce the output file.</result>
 <usage><total_tokens>57593</total_tokens><tool_uses>10</tool_uses><duration_ms>124735</duration_ms></usage>
 </task-notification>
 Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a72eeb3bfbb9790e9.output
@@ -804,11 +804,11 @@ Straggler — walkthrough already complete.
 <summary>Agent "Write sections 16-17 Adaptive+Hooks" completed</summary>
 <result>The file doesn't exist and Write permission has been denied. I need Write permission to create this new file. Here is what I was trying to do:
 
-I read all six required `mod.rs` files and drafted the complete content for `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_16_17.md`. The Write tool was denied permission to create this new file.
+I read all six required `mod.rs` files and drafted the complete content for `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_16_17.md`. The Write tool was denied permission to create this new file.
 
 To proceed, you can either:
 1. **Grant Write permission** so I can create the file, or
-2. **Create the file manually** first (e.g., `touch /Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_16_17.md`), and then I can use the Edit tool to populate it.
+2. **Create the file manually** first (e.g., `touch /home/<USER>/conductor/workspaces/forge/sofia/.context/sections_16_17.md`), and then I can use the Edit tool to populate it.
 
 Here is a summary of what the file would contain, so nothing is lost:
 
@@ -829,7 +829,7 @@ Straggler — already done.
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/aaf3f24d9455f12cb.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 16-17 (Adaptive+Hooks)" completed</summary>
-<result>I am unable to write the file because both the `Write` tool and `Bash` tool (which I would use with `cat >`) have been denied permission. The task requires creating a new file at `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_16_17.md`.
+<result>I am unable to write the file because both the `Write` tool and `Bash` tool (which I would use with `cat >`) have been denied permission. The task requires creating a new file at `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_16_17.md`.
 
 I have the complete content ready -- approximately 340 lines covering both sections. To proceed, I need permission to either:
 
@@ -853,7 +853,7 @@ All agents have now completed. The walkthrough document is finished at `codebase
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/afab0531a66db4c75.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 1-5 Foundation" completed</summary>
-<result>I need Write permission to create the output file at `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_01_05.md`. This is a new file (it doesn't exist yet), so I cannot use Edit. The Write tool is the only way to create it.
+<result>I need Write permission to create the output file at `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_01_05.md`. This is a new file (it doesn't exist yet), so I cannot use Edit. The Write tool is the only way to create it.
 
 Could you grant permission to use the Write tool so I can create the output file? The content is fully prepared — it's the five walkthrough sections covering Overview, CLI Entry Point, Error Hierarchy, Configuration, and Telemetry/Utilities, each with 100–250 lines of explanatory prose, type tables, and code references.</result>
 <usage><total_tokens>51947</total_tokens><tool_uses>18</tool_uses><duration_ms>173583</duration_ms></usage>
@@ -872,7 +872,7 @@ Last straggler. Everything is done.
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/ac87fba9fcc20f306.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 22-23 Factory API+React" completed</summary>
-<result>I need the Write tool to create the new file at `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_22_23.md`. The `.context/` directory already exists and I'm trying to create a new file there. Could you grant permission for the Write tool so I can write `sections_22_23.md`?
+<result>I need the Write tool to create the new file at `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_22_23.md`. The `.context/` directory already exists and I'm trying to create a new file there. Could you grant permission for the Write tool so I can write `sections_22_23.md`?
 
 Here is a summary of what I've researched and am ready to write:
 
@@ -901,9 +901,9 @@ All agents finished. The walkthrough is complete at `docs/module-walkthrough.md`
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a1d884bea76a58eb3.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 20-21 Factory data+pipeline" completed</summary>
-<result>I need Write or Bash permission to create the output file. The file at `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_20_21.md` doesn't exist yet, so I can't use Edit on it. I'll present the full content here for the user to create manually, or they can grant the Write/Bash permission.
+<result>I need Write or Bash permission to create the output file. The file at `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_20_21.md` doesn't exist yet, so I can't use Edit on it. I'll present the full content here for the user to create manually, or they can grant the Write/Bash permission.
 
-Here is the complete content for `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_20_21.md`:
+Here is the complete content for `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_20_21.md`:
 
 ---
 
@@ -947,14 +947,14 @@ Last agent finished. The walkthrough document is complete at `codebase-walkthrou
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a3196b000173d6654.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 6-10 (Domain+Core)" completed</summary>
-<result>I need permission to write files in order to complete this task. The task requires me to write the walkthrough sections to `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_06_10.md`, but both the Write tool and Bash tool (for file creation) are being denied.
+<result>I need permission to write files in order to complete this task. The task requires me to write the walkthrough sections to `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_06_10.md`, but both the Write tool and Bash tool (for file creation) are being denied.
 
 I have already:
 1. Read all the source files needed for sections 6-10 (phase.rs, signals/, stream/, orchestrator/, gates/, tracker/, audit/)
 2. Composed the full document content covering all five sections
 
 Could you grant permission for me to write this file? The target path is:
-`/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_06_10.md`
+`/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_06_10.md`
 
 This is a new documentation file in the `.context/` directory of the codebase-walkthrough workspace, which already contains `notes.md` and `todos.md` placeholder files, so it is clearly intended for this kind of output.</result>
 <usage><total_tokens>128384</total_tokens><tool_uses>52</tool_uses><duration_ms>1037593</duration_ms></usage>
@@ -973,7 +973,7 @@ All agents done. The walkthrough is complete.
 <output-file>/private/tmp/claude-501/-Users-jdsingh-conductor-workspaces-forge-sofia/101e9dde-2e17-49a6-81ea-1128a2fe2569/tasks/a8170b2c93d6c2953.output</output-file>
 <status>completed</status>
 <summary>Agent "Write sections 6-10 Domain+Core" completed</summary>
-<result>Both Write and Bash permissions have been denied for this operation. I cannot create the output file at `/Users/jdsingh/conductor/workspaces/forge/sofia/.context/sections_06_10.md` without one of these tools.
+<result>Both Write and Bash permissions have been denied for this operation. I cannot create the output file at `/home/<USER>/conductor/workspaces/forge/sofia/.context/sections_06_10.md` without one of these tools.
 
 Here is the complete content I would have written, so it is not lost. You can create the file manually or re-approve Write/Bash access:
 
@@ -1015,7 +1015,7 @@ All agents complete. The walkthrough is done at `codebase-walkthrough/docs/modul
 <summary>Agent "Write sections 1-5 (Foundation)" completed</summary>
 <result>I have completed all the research and analysis for sections 1-5, but I am unable to write the output file. Here is the situation:
 
-**What I need to do:** Create the file `/Users/jdsingh/conductor/workspaces/forge/codebase-walkthrough/.context/sections_01_05.md` containing the ~1000-line walkthrough document.
+**What I need to do:** Create the file `/home/<USER>/conductor/workspaces/forge/codebase-walkthrough/.context/sections_01_05.md` containing the ~1000-line walkthrough document.
 
 **What is blocked:** The Write tool, Bash tool, and AskUserQuestion tool are all denied. I need at least one of Write or Bash to create the output file and its parent `.context/` directory.
 

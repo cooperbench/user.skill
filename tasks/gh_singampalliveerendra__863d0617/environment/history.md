@@ -82,7 +82,7 @@ tool_use Read
 id: toolu_012bpTTN6ko1agvGPKWpnjcT
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/consumer/cart/page.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/consumer/cart/page.tsx"
 }
 ```
 
@@ -120,7 +120,7 @@ tool_use Read
 id: toolu_014UgY2DMB4VtiyPgpPDyUVx
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx"
 }
 ```
 
@@ -168,7 +168,7 @@ tool_use Read
 id: toolu_01DuLT1Kik9oXdzG1g98dPVu
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "offset": 1203,
   "limit": 652
 }
@@ -230,7 +230,7 @@ tool_use Read
 id: toolu_01MoycBhjGY94hSrMjo2fi5q
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts"
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts"
 }
 ```
 
@@ -422,7 +422,7 @@ tool_use Write
 id: toolu_0149SKr8uw7ZGEaDfmxBjsz2
 ```json
 {
-  "file_path": "/home/veerendra/.claude/plans/composed-zooming-dove.md",
+  "file_path": "/home/<USER>/.claude/plans/composed-zooming-dove.md",
   "content": "# Per-harvest delivery choice at checkout\n\n## Context\nTrello card \"Handling 2 harvests within same checkout\": today the cart has **one**\nglobal Pickup-vs-Delivery toggle for the whole checkout. If a buyer has two\nharvests with different fulfillment rules (one pickup-only, one delivery-only)\nthe cart shows a hard \"conflict\" error and refuses the order. The card wants the\nchoice made **per harvest** instead:\n\n- Remove the single Pickup/Delivery toggle at the top.\n- Put a Pickup / Delivery selector on **each harvest line**; for a harvest that\n  doesn't offer home delivery (or is delivery-only), show both buttons but\n  **disable** the one that isn't available.\n- Move the address / pickup-location entry to **one block at the very end**,\n  after the amounts (confirmed layout choice).\n\n**Good news:** `delivery_type` (and the address + `pickup_location` columns) are\nalready stored **per order row** — each cart line is its own row, and rider\nassignment, tracking, and the farmer/consumer order views already read\n`delivery_type` per row. So a single farmer order can already hold a mix of\npickup and delivery rows. **No DB/schema change is needed** — the work is the\ncart UI and the place-order API payload.\n\n## Files to change\n\n### 1. `src/components/consumer/Cart.tsx` (main work)\nReplace the single `deliveryType` state with a per-item […]
 
 > TOOL
@@ -430,7 +430,7 @@ id: toolu_0149SKr8uw7ZGEaDfmxBjsz2
 tool_result
 id: toolu_0149SKr8uw7ZGEaDfmxBjsz2
 ```
-File created successfully at: /home/veerendra/.claude/plans/composed-zooming-dove.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/composed-zooming-dove.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -448,7 +448,7 @@ id: toolu_01DqS7bSgfpJvrufYSAoZFEC
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/veerendra/.claude/plans/composed-zooming-dove.md
+Your plan has been saved to: /home/<USER>/.claude/plans/composed-zooming-dove.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -596,7 +596,7 @@ id: toolu_01DTHr5KsPF3crgioKQFaWd9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
   "old_string": "// harvestId is present when the buyer ordered a specific harvest (the\n// harvest-as-product path). Legacy produce-card orders omit it and draw from\n// the listing's own stock.\ntype IncomingItem = { listingId: string; harvestId?: string; qty: number }",
   "new_string": "// harvestId is present when the buyer ordered a specific harvest (the\n// harvest-as-product path). Legacy produce-card orders omit it and draw from\n// the listing's own stock.\n// deliveryType is now chosen PER item at checkout (each harvest picks its own\n// pickup vs delivery), so a single farmer order can mix both. Absent → falls\n// back to the request-level deliveryType, then self_pickup.\ntype IncomingItem = {\n  listingId: string\n  harvestId?: string\n  qty: number\n  deliveryType?: 'self_pickup' | 'home_delivery'\n}"
 }
@@ -607,7 +607,7 @@ id: toolu_01DTHr5KsPF3crgioKQFaWd9
 tool_result
 id: toolu_01DTHr5KsPF3crgioKQFaWd9
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -621,7 +621,7 @@ id: toolu_01RaAzjDVgSqbf4jQHBbMt2u
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
   "old_string": "  // self_pickup → buyer collects from the farm; home_delivery → our rider\n  // brings it; courier → the farmer ships it themselves. Both delivery kinds\n  // need a destination address.\n  const deliveryType =\n    body.deliveryType === 'home_delivery' ? 'home_delivery'\n    : body.deliveryType === 'courier' ? 'courier'\n    : 'self_pickup'\n  const needsAddress = deliveryType === 'home_delivery' || deliveryType === 'courier'\n  let deliveryAddress: string | null = null",
   "new_string": "  // self_pickup → buyer collects from the farm; home_delivery → our rider\n  // brings it; courier → the farmer ships it themselves. Both delivery kinds\n  // need a destination address.\n  //\n  // Delivery type is chosen PER item now (each harvest picks pickup vs\n  // delivery), so one farmer order can mix both. `bodyDeliveryType` is the\n  // request-level fallback for legacy/absent per-item values; per-item only\n  // carries self_pickup/home_delivery, courier stays a request-level fallback.\n  const bodyDeliveryType =\n    body.deliveryType === 'home_delivery' ? 'home_delivery'\n    : body.deliveryType === 'courier' ? 'courier'\n    : 'self_pickup'\n  const rowDeliveryTypeOf = (it: IncomingItem): 'self_pickup' | 'home_delivery' | 'courier' =>\n    it.deliveryType === 'home_delivery' ? 'home_delivery'\n    : it.deliveryType === 'self_pickup' ? 'self_pickup'\n    : bodyDeliveryType\n  // The address form is required as soon as ANY […]
 
@@ -630,7 +630,7 @@ id: toolu_01RaAzjDVgSqbf4jQHBbMt2u
 tool_result
 id: toolu_01RaAzjDVgSqbf4jQHBbMt2u
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -644,7 +644,7 @@ id: toolu_0193NYgx8ZAzsPkfqxCf9zMb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
   "old_string": "  const sharedHandoverOtp = generateHandoverOtp()\n  const deliveryFee = deliveryType === 'home_delivery' ? DELIVERY_FEE_RUPEES : 0",
   "new_string": "  const sharedHandoverOtp = generateHandoverOtp()\n  // One delivery fee per cart, charged when at least one item is home delivery\n  // (our rider). Stamped on the first home-delivery row below.\n  const anyHomeDelivery = items.some((it) => rowDeliveryTypeOf(it) === 'home_delivery')\n  const deliveryFee = anyHomeDelivery ? DELIVERY_FEE_RUPEES : 0"
 }
@@ -655,7 +655,7 @@ id: toolu_0193NYgx8ZAzsPkfqxCf9zMb
 tool_result
 id: toolu_0193NYgx8ZAzsPkfqxCf9zMb
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -669,7 +669,7 @@ id: toolu_01PEXiRGUY3ZyPYGdBWXMaKE
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
   "old_string": "    const linePrice = unitPrice != null ? Math.round(unitPrice * item.qty) : null\n    if (linePrice == null || linePrice <= 0) {\n      return bad(`Price not set for ${listing.name}. Please ask the farmer.`)\n    }\n    total += linePrice\n\n    rows.push({\n      farmer_id: farmerId,\n      produce_listing_id: listing.id,\n      produce_name: listing.name,\n      quantity: item.qty,\n      unit: listing.unit || 'kg',\n      total_price: linePrice,\n      buyer_name: buyerName,\n      buyer_phone: buyerPhone,\n      buyer_email: buyerEmail,\n      consumer_id: buyerId,\n      idempotency_key: idempotencyKey,\n      pickup_location: typeof pickupLocation === 'string' ? pickupLocation.slice(0, 200) : null,\n      status: 'pending',\n      payment_method: paymentMethod,\n      payment_status: 'pending',\n      delivery_type: deliveryType,\n      delivery_status: deliveryType === 'home_delivery' ? 'unassigned' : null,\n      delivery_address: deliveryAddress,\n      delivery_city: deliveryCity,\n      delivery_landmark: deliveryLandmark,\n      delivery_pincode: deliveryPincode,\n      delivery_alt_phone: deliveryAltPhone,\n      handover_otp: sharedHandoverOtp,",
   "new_string": "    const linePrice = unitPrice != null ? Math.round(unitPrice * item.qty) : null\n    if (linePrice == null || linePrice <= 0) {\n      return bad(`Price not set for ${listing.name}. Please ask the farmer.`)\n    }\n    total += linePrice\n\n    // Each item carries its own fulfillment. Address fields live only on rows\n    // that ship (home delivery / courier); the pickup point lives only on\n    // pickup rows. Guests always keep their address on every row as the\n    // farmer's contact record, even for pickup.\n    const rowDeliveryType = rowDeliveryTypeOf(item)\n    const rowShips = […]
 
@@ -678,7 +678,7 @@ id: toolu_01PEXiRGUY3ZyPYGdBWXMaKE
 tool_result
 id: toolu_01PEXiRGUY3ZyPYGdBWXMaKE
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -692,7 +692,7 @@ id: toolu_01Pa5HG2StBQPuzp6fouJtfp
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts",
   "old_string": "  if (rows.length > 0 && deliveryFee > 0) {\n    rows[0].delivery_fee = deliveryFee\n    rows[0].rider_payout = deliveryFee\n  }",
   "new_string": "  if (deliveryFee > 0) {\n    // Stamp the single per-cart fee on the first home-delivery row (rows[0] may\n    // be a pickup row now that types are mixed per item).\n    const feeRow = rows.find((r) => r.delivery_type === 'home_delivery')\n    if (feeRow) {\n      feeRow.delivery_fee = deliveryFee\n      feeRow.rider_payout = deliveryFee\n    }\n  }"
 }
@@ -703,7 +703,7 @@ id: toolu_01Pa5HG2StBQPuzp6fouJtfp
 tool_result
 id: toolu_01Pa5HG2StBQPuzp6fouJtfp
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/app/api/orders/place/route.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -798,7 +798,7 @@ id: toolu_016zyzx6Uw9wWr7YFEpMnhbh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "  // Delivery preference (per checkout). For home_delivery, a flat\n  // DELIVERY_FEE_RUPEES is charged once per cart (per farmer group at checkout)\n  // and collected by the rider in cash on delivery, regardless of payment method.\n  const [deliveryType, setDeliveryType] = useState<'self_pickup' | 'home_delivery'>('self_pickup')\n  // Per-produce fulfillment the farmer allowed ('pickup' | 'courier' | 'both'),\n  // keyed by listingId and fetched fresh at checkout. Constrains which delivery\n  // options the consumer may pick, so a \"Pickup only\" produce can't be ordered\n  // for home delivery and vice-versa. Missing/legacy rows fall back to 'both'.\n  const [deliveryModes, setDeliveryModes] = useState<Record<string, string>>({})\n  // Home delivery (the farmer ships it to the buyer) needs a destination\n  // address; self-pickup does not.\n  const needsAddress = deliveryType === 'home_delivery'\n  const [deliveryAddress, setDeliveryAddress] = useState('')",
   "new_string": "  // Delivery preference is now chosen PER harvest line (keyed by cartKeyOf), so\n  // one checkout can mix pickup and delivery items. For home_delivery, a flat\n  // DELIVERY_FEE_RUPEES is charged once per farmer group and collected by the\n  // rider in cash on delivery, regardless of payment method.\n  const [deliveryByItem, setDeliveryByItem] = useState<Record<string, 'self_pickup' | 'home_delivery'>>({})\n  // Per-produce fulfillment the […]
 
@@ -807,7 +807,7 @@ id: toolu_016zyzx6Uw9wWr7YFEpMnhbh
 tool_result
 id: toolu_016zyzx6Uw9wWr7YFEpMnhbh
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -821,7 +821,7 @@ id: toolu_012YRMPvviigvZoV9m5u3GWD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "  // Which delivery options the whole cart permits, from each produce's\n  // farmer-set delivery_mode. Self-pickup needs EVERY item to allow pickup\n  // ('pickup' or 'both'); home delivery needs EVERY item to allow courier\n  // ('courier' or 'both'). A cart mixing a pickup-only and a courier-only\n  // produce permits neither — that's flagged as a conflict below.\n  const modeOf = (it: CartItem) => deliveryModes[it.listingId] ?? 'both'\n  const canSelfPickup = items.length > 0 && items.every((it) => modeOf(it) !== 'courier')\n  const canHomeDelivery = items.length > 0 && items.every((it) => modeOf(it) !== 'pickup')\n  const deliveryConflict = items.length > 0 && !canSelfPickup && !canHomeDelivery\n\n  // Keep the selected delivery type within what the cart permits: if the\n  // current pick isn't allowed but the other one is, switch to it.\n  useEffect(() => {\n    if (deliveryConflict) return\n    if (deliveryType === 'self_pickup' && !canSelfPickup && canHomeDelivery) {\n      setDeliveryType('home_delivery')\n    } else if (deliveryType === 'home_delivery' && !canHomeDelivery && canSelfPickup) {\n      setDeliveryType('self_pickup')\n    }\n  }, [deliveryType, canSelfPickup, canHomeDelivery, deliveryConflict])\n\n  const baseDetailsMissing = !name.trim() || phone.replace(/\\D/g, '').length < 10\n  const deliveryDetailsMissing = needsAddress\n    && (deliveryAddress.trim().length < 10 || !deliveryCity.trim() || !/^\\d{6}$/.test(deliveryPincode.trim()))\n  const detailsMissing = baseDetailsMissing || deliveryDetailsMissing || deliveryConflict", […]
 
 > TOOL
@@ -829,7 +829,7 @@ id: toolu_012YRMPvviigvZoV9m5u3GWD
 tool_result
 id: toolu_012YRMPvviigvZoV9m5u3GWD
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -843,7 +843,7 @@ id: toolu_013cdqeyaPVzPsQRtmNinaKF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "    const f = group[0]\n    const r = await fetch('/api/orders/place', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      credentials: 'same-origin',\n      body: JSON.stringify({\n        farmerId: f.farmerId,\n        paymentMethod,\n        pickupLocation: deliveryType === 'self_pickup' ? (pickupByFarmer[f.farmerId] || null) : null,\n        items: group.map((it) => ({ listingId: it.listingId, harvestId: it.harvestId, qty: it.qty })),\n        deliveryType,\n        deliveryAddress: needsAddress ? deliveryAddress.trim() : null,\n        deliveryCity: needsAddress ? deliveryCity.trim() : null,\n        deliveryLandmark: needsAddress ? deliveryLandmark.trim() : null,\n        deliveryPincode: needsAddress ? deliveryPincode.trim() : null,\n        deliveryAltPhone: needsAddress ? deliveryAltPhone.replace(/\\D/g, '').slice(-10) : null,\n        idempotencyKey: getIdempotencyKey(f.farmerId),\n      }),\n    }).catch(() => null)",
   "new_string": "    const f = group[0]\n    // Whether this farmer's order has any home-delivery line — decides if we\n    // send the address. Pickup location is always sent; the API stamps it on\n    // pickup rows only.\n    const groupHasDelivery = group.some((it) => deliveryOf(it) === 'home_delivery')\n    const r = await fetch('/api/orders/place', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      credentials: 'same-origin',\n      body: JSON.stringify({\n        farmerId: f.farmerId,\n        paymentMethod,\n        pickupLocation: pickupByFarmer[f.farmerId] || null,\n        items: group.map((it) => ({\n          listingId: it.listingId,\n          harvestId: it.harvestId,\n          qty: it.qty,\n          deliveryType: deliveryOf(it),\n        })),\n        deliveryAddress: groupHasDelivery ? deliveryAddress.trim() : null,\n        deliveryCity: groupHasDelivery ? deliveryCity.trim() : null,\n        deliveryLandmark: groupHasDelivery ? deliveryLandmark.trim() : null,\n        deliveryPincode: groupHasDelivery ? deliveryPincode.trim() : […]
 
@@ -852,7 +852,7 @@ id: toolu_013cdqeyaPVzPsQRtmNinaKF
 tool_result
 id: toolu_013cdqeyaPVzPsQRtmNinaKF
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -866,7 +866,7 @@ id: toolu_01VMTaDXapEyv2qkvLNetxQh
 ```json
 {
   "replace_all": true,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "      pickupLocation: deliveryType === 'self_pickup' ? (pickupByFarmer[f.farmerId] || undefined) : undefined,",
   "new_string": "      pickupLocation: group.some((it) => deliveryOf(it) === 'self_pickup') ? (pickupByFarmer[f.farmerId] || undefined) : undefined,"
 }
@@ -877,7 +877,7 @@ id: toolu_01VMTaDXapEyv2qkvLNetxQh
 tool_result
 id: toolu_01VMTaDXapEyv2qkvLNetxQh
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -890,7 +890,7 @@ tool_use Read
 id: toolu_019iaW5YdjSCn7Gabo1pCZ7T
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "offset": 1216,
   "limit": 160
 }
@@ -957,7 +957,7 @@ id: toolu_019e3fgbqj36YvA4rn526Rnd
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "            <h2 className=\"font-extrabold text-gray-900 text-lg\">{L('Your cart', 'మీ బుట్ట')}</h2>\n            <p className=\"text-xs text-gray-500\">\n              {deliveryType === 'home_delivery'\n                ? L('Home delivery', 'ఇంటికి డెలివరీ')\n                : L('Self pickup from farm', 'పొలం నుండి స్వీయ పికప్')}\n            </p>",
   "new_string": "            <h2 className=\"font-extrabold text-gray-900 text-lg\">{L('Your cart', 'మీ బుట్ట')}</h2>\n            <p className=\"text-xs text-gray-500\">\n              {L('Choose pickup or delivery per item', 'ప్రతి వస్తువుకు పికప్ లేదా డెలివరీ')}\n            </p>"
 }
@@ -968,7 +968,7 @@ id: toolu_019e3fgbqj36YvA4rn526Rnd
 tool_result
 id: toolu_019e3fgbqj36YvA4rn526Rnd
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -982,7 +982,7 @@ id: toolu_01UwxACeqHp6vSWUMr59LXGj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "              {/* Delivery choice — pickup-self (free) or home delivery. The\n                  delivery charge is collected by the owner manually for now,\n                  so we don't add a fee here. */}\n              <div className=\"bg-gray-50 rounded-2xl p-4 space-y-2\">\n                <p className=\"text-xs font-bold text-gray-700 uppercase tracking-wide\">\n                  {L('How will you receive your order?', 'ఎలా అందుకుంటారు?')}\n                </p>\n                {deliveryConflict ? (\n                  <p className=\"text-[11px] text-red-700 bg-red-50 rounded-xl px-3 py-2 leading-snug\">\n                    {L(\n                      'Some items are pickup-only and others are delivery-only, so they can\\'t go in one order. Please order them separately.',\n                      'కొన్ని వస్తువులు పికప్ మాత్రమే, మరికొన్ని డెలివరీ మాత్రమే — ఒకే ఆర్డర్‌లో కుదరదు. వేర్వేరుగా ఆర్డర్ చేయండి.',\n                    )}\n                  </p>\n                ) : (\n                  <>\n                    {canSelfPickup && (\n                      <button\n                        type=\"button\"\n                        onClick={() => setDeliveryType('self_pickup')}\n                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border-2 text-sm font-bold transition-colors ${\n                          deliveryType === 'self_pickup'\n                            ? 'border-green-600 bg-green-50 text-green-900'\n                            : 'border-gray-200 bg-white text-gray-700'\n                        }`}\n                      >\n                        <span className=\"flex items-center gap-2\">\n                          <span className=\"text-base\">🚶</span>\n                          {L('I will pick up', 'నేను తీసుకుంటాను')}\n                        </span>\n                        {deliveryType === 'self_pickup' && <span className=\"text-green-600 text-base\">✓</span>}\n                      </button>\n                    )}\n                    {canHomeDelivery && (\n                      <button\n                        type=\"button\"\n                        onClick={() => setDeliveryType('home_delivery')}\n                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border-2 text-sm font-bold transition-colors ${\n                          deliveryType === 'home_delivery'\n                            ? 'border-blue-600 bg-blue-50 text-blue-900'\n                            : 'border-gray-200 bg-white text-gray-700'\n                        }`}\n                      >\n                        <span […]
 
 > TOOL
@@ -990,7 +990,7 @@ id: toolu_01UwxACeqHp6vSWUMr59LXGj
 tool_result
 id: toolu_01UwxACeqHp6vSWUMr59LXGj
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1003,7 +1003,7 @@ tool_use Read
 id: toolu_01VJLAKCo81tkQVk8xUsrsob
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "offset": 1300,
   "limit": 130
 }
@@ -1069,7 +1069,7 @@ tool_use Read
 id: toolu_019ojhK7RHRgNfGfGYWH3wRr
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "offset": 1429,
   "limit": 380
 }
@@ -1133,7 +1133,7 @@ id: toolu_012C25zPH3C1Tvu3a8hfpGgG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "              {/* Address form — needed for home delivery and farmer courier */}\n              {needsAddress && (\n                <div className=\"bg-gray-50 rounded-2xl p-4 space-y-3\">\n                  <p className=\"text-xs font-bold text-gray-700 uppercase tracking-wide\">\n                    {L('Delivery address', 'డెలివరీ చిరునామా')}\n                  </p>\n                  <div>\n                    <label className=\"text-[11px] font-bold text-gray-600 uppercase tracking-wide block mb-1\">\n                      Full address (door no, street, area)\n                    </label>\n                    <textarea\n                      value={deliveryAddress}\n                      onChange={(e) => setDeliveryAddress(e.target.value.slice(0, 400))}\n                      rows={3}\n                      placeholder=\"H.No 12-3, Main Road, Anand Nagar\"\n                      className=\"w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white focus:border-green-500 focus:outline-none resize-none\"\n                    />\n                  </div>\n                  <div>\n                    <label className=\"text-[11px] font-bold text-gray-600 uppercase tracking-wide block mb-1\">\n                      {L('City / Town', 'నగరం / పట్టణం')}\n                    </label>\n                    <input\n                      type=\"text\"\n                      value={deliveryCity}\n                      onChange={(e) => setDeliveryCity(e.target.value.slice(0, 100))}\n                      placeholder={L('e.g. Guntur', 'ఉదా. గుంటూరు')}\n                      className=\"w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white focus:border-green-500 focus:outline-none\"\n                    />\n                  </div>\n                  <div>\n                    <label className=\"text-[11px] font-bold text-gray-600 uppercase tracking-wide block mb-1\">\n                      {L('Landmark (optional)', 'గుర్తు')}\n                    </label>\n                    <input\n                      type=\"text\"\n                      value={deliveryLandmark}\n                      onChange={(e) => setDeliveryLandmark(e.target.value.slice(0, 200))}\n                      placeholder=\"Near the temple\"\n                      className=\"w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white focus:border-green-500 focus:outline-none\"\n                    />\n                  </div>\n                  <div>\n                    <label className=\"text-[11px] font-bold text-gray-600 uppercase tracking-wide block mb-1\">\n                      {L('PIN code', 'పిన్ కోడ్')}\n                    </label>\n                    <input\n                      type=\"tel\"\n                      inputMode=\"numeric\"\n                      value={deliveryPincode}\n                      onChange={(e) => setDeliveryPincode(e.target.value.replace(/\\D/g, '').slice(0, 6))}\n                      maxLength={6}\n                      placeholder=\"522001\"\n                      className=\"w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white focus:border-green-500 focus:outline-none\"\n                    />\n                  </div>\n                  <div>\n                    <label className=\"text-[11px] font-bold […]
 
 > TOOL
@@ -1141,7 +1141,7 @@ id: toolu_012C25zPH3C1Tvu3a8hfpGgG
 tool_result
 id: toolu_012C25zPH3C1Tvu3a8hfpGgG
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1155,7 +1155,7 @@ id: toolu_018o6FCkP69wnyuUtDtHKYSK
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "              {/* Payment method selection — COD only shown if at least one farmer accepts it */}\n              {(() => {\n                const anyFarmerAcceptsCod = farmerGroups.some((g) => liveCodEnabled[g[0].farmerId])\n                if (!anyFarmerAcceptsCod && paymentMethod === 'cod') {\n                  // Defensive: ensure UPI is selected when no farmer in cart accepts COD\n                  setTimeout(() => setPaymentMethod('upi'), 0)\n                }\n                return (\n                  <div className=\"bg-gray-50 rounded-2xl p-4 space-y-2\">\n                    <p className=\"text-xs font-bold text-gray-700 uppercase tracking-wide\">\n                      {L('Payment method', 'చెల్లింపు విధానం')}\n                    </p>\n                    <button\n                      onClick={() => setPaymentMethod('upi')}\n                      className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border-2 text-sm font-bold transition-colors ${\n                        paymentMethod === 'upi'\n                          ? 'border-blue-600 bg-blue-50 text-blue-900'\n                          : 'border-gray-200 bg-white text-gray-700'\n                      }`}\n                    >\n                      <span className=\"flex items-center gap-2\">\n                        <span className=\"text-base\">💳</span>\n                        {L('Pay Online (UPI / Card)', 'ఆన్‌లైన్ చెల్లింపు (UPI / కార్డ్)')}\n                      </span>\n                      {paymentMethod === 'upi' && (\n                        <span className=\"text-blue-600 text-base\">✓</span>\n                      )}\n                    </button>\n                    {anyFarmerAcceptsCod && (\n                      showMorePayment ? (\n                        <button\n                          onClick={() => setPaymentMethod('cod')}\n                          className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border-2 text-sm font-bold transition-colors ${\n                            paymentMethod === 'cod'\n                              ? 'border-green-600 bg-green-50 text-green-900'\n                              : 'border-gray-200 bg-white text-gray-700'\n                          }`}\n                        >\n                          <span className=\"flex items-center gap-2\">\n                            <span className=\"text-base\">💵</span>\n                            {L('Cash on Delivery', 'నగదు చెల్లింపు')}\n                          </span>\n                          {paymentMethod === 'cod' && (\n                            <span className=\"text-green-600 text-base\">✓</span>\n                          )}\n                        </button>\n                      ) : (\n                        <button\n                          onClick={() => setShowMorePayment(true)}\n […]
 
 > TOOL
@@ -1163,7 +1163,7 @@ id: toolu_018o6FCkP69wnyuUtDtHKYSK
 tool_result
 id: toolu_018o6FCkP69wnyuUtDtHKYSK
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1177,7 +1177,7 @@ id: toolu_01SyzFWMSDHDQ81tZxGYTNZP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "                const sent = sentFarmers[f.farmerId]\n                // For self-pickup, a pickup point is mandatory when the farmer\n                // offers them. It's irrelevant (and disabled) for delivery/courier.\n                const pickupRequired =\n                  deliveryType === 'self_pickup' && (f.farmerPickupLocations?.length ?? 0) > 0\n                const pickupMissing = pickupRequired && !pickupByFarmer[f.farmerId]\n                const groupDetailsMissing = detailsMissing || pickupMissing\n                return (",
   "new_string": "                const groupHasDelivery = group.some((it) => deliveryOf(it) === 'home_delivery')\n                const groupHasPickup = group.some((it) => deliveryOf(it) === 'self_pickup')\n                return ("
 }
@@ -1188,7 +1188,7 @@ id: toolu_01SyzFWMSDHDQ81tZxGYTNZP
 tool_result
 id: toolu_01SyzFWMSDHDQ81tZxGYTNZP
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1198,7 +1198,7 @@ id: toolu_015tFcoKJpMMx8FT1n1LdxuD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "                      <span className={`text-[10px] font-bold text-white px-2 py-1 rounded-full whitespace-nowrap ${deliveryType === 'home_delivery' ? 'bg-blue-600' : 'bg-green-700'}`}>\n                        {deliveryType === 'home_delivery' ? '🛵 Delivery' : 'Pickup'}\n                      </span>",
   "new_string": "                      <span className={`text-[10px] font-bold text-white px-2 py-1 rounded-full whitespace-nowrap ${groupHasDelivery ? 'bg-blue-600' : 'bg-green-700'}`}>\n                        {groupHasDelivery && groupHasPickup ? '🛵 Pickup + Delivery' : groupHasDelivery ? '🛵 Delivery' : 'Pickup'}\n                      </span>"
 }
@@ -1209,7 +1209,7 @@ id: toolu_015tFcoKJpMMx8FT1n1LdxuD
 tool_result
 id: toolu_015tFcoKJpMMx8FT1n1LdxuD
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1223,7 +1223,7 @@ id: toolu_01LZwFqpWPvZFMMDrVmSXEa6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "                      {group.map((it) => (\n                        <div key={cartKeyOf(it)} className=\"flex items-center gap-3\">\n                          <div className=\"w-11 h-11 rounded-xl bg-gray-50 flex items-center justify-center text-xl flex-shrink-0\">\n                            {it.emoji ?? '🌿'}\n                          </div>",
   "new_string": "                      {group.map((it) => {\n                        const key = cartKeyOf(it)\n                        const choice = deliveryOf(it)\n                        const pickupOk = canPickupItem(it)\n                        const deliverOk = canDeliverItem(it)\n                        return (\n                        <div key={key} className=\"space-y-1.5\">\n                          <div className=\"flex items-center gap-3\">\n                          <div className=\"w-11 h-11 rounded-xl bg-gray-50 flex items-center justify-center text-xl flex-shrink-0\">\n                            {it.emoji ?? '🌿'}\n                          </div>"
 }
@@ -1234,7 +1234,7 @@ id: toolu_01LZwFqpWPvZFMMDrVmSXEa6
 tool_result
 id: toolu_01LZwFqpWPvZFMMDrVmSXEa6
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1248,7 +1248,7 @@ id: toolu_01AkWrypTMcWAAycoSJcNk4f
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "                          <button\n                            onClick={() => removeItem(cartKeyOf(it))}\n                            className=\"text-gray-300 text-xl px-1\"\n                            aria-label=\"Remove\"\n                          >\n                            ×\n                          </button>\n                        </div>\n                      ))}",
   "new_string": "                          <button\n                            onClick={() => removeItem(key)}\n                            className=\"text-gray-300 text-xl px-1\"\n                            aria-label=\"Remove\"\n                          >\n                            ×\n                          </button>\n                          </div>\n                          {/* Per-harvest pickup / delivery choice. Both shown\n                              always; the option the farmer doesn't offer for this\n                              produce is disabled. */}\n                          <div className=\"flex gap-1.5 pl-14\">\n                            <button\n                              type=\"button\"\n                              disabled={!pickupOk}\n                              onClick={() => setDeliveryByItem((p) => ({ ...p, [key]: 'self_pickup' }))}\n                              className={`flex-1 flex items-center justify-center gap-1 px-3 py-2 rounded-lg border text-xs font-bold ${\n                                !pickupOk\n                                  ? 'border-gray-100 bg-gray-50 text-gray-300 cursor-not-allowed'\n                                  : choice === 'self_pickup'\n                                    ? 'border-green-600 bg-green-50 text-green-800'\n                                    : 'border-gray-200 bg-white text-gray-600'\n                              }`}\n                            >\n                              🚶 {L('Pickup', 'పికప్')}\n                            </button>\n                            <button\n                              type=\"button\"\n                              disabled={!deliverOk}\n                              onClick={() => setDeliveryByItem((p) => ({ ...p, [key]: 'home_delivery' }))}\n                              className={`flex-1 flex items-center justify-center gap-1 px-3 py-2 rounded-lg border text-xs font-bold ${\n                                !deliverOk\n                                  ? 'border-gray-100 bg-gray-50 text-gray-300 cursor-not-allowed'\n                                  : choice === 'home_delivery'\n                                    ? 'border-blue-600 bg-blue-50 text-blue-800'\n                                    : 'border-gray-200 bg-white text-gray-600'\n                              }`}\n                            >\n                              🛵 {L('Delivery', 'డెలివరీ')}\n                            </button>\n                          </div>\n                        </div>\n                        )\n                      })}"
 }
@@ -1259,7 +1259,7 @@ id: toolu_01AkWrypTMcWAAycoSJcNk4f
 tool_result
 id: toolu_01AkWrypTMcWAAycoSJcNk4f
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1273,7 +1273,7 @@ id: toolu_01HSfCkVcu8tkKqLGgv2hXZA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "                      {total > 0 && (() => {\n                        const dFee = deliveryType === 'home_delivery' ? DELIVERY_FEE_RUPEES : 0",
   "new_string": "                      {total > 0 && (() => {\n                        const dFee = groupHasDelivery ? DELIVERY_FEE_RUPEES : 0"
 }
@@ -1284,7 +1284,7 @@ id: toolu_01HSfCkVcu8tkKqLGgv2hXZA
 tool_result
 id: toolu_01HSfCkVcu8tkKqLGgv2hXZA
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1298,7 +1298,7 @@ id: toolu_015xNvacgnLcsSYSs9Y9kKQB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "                      {f.farmerPickupLocations && f.farmerPickupLocations.length > 0 && (\n                        <div className=\"pt-2\">\n                          <label className=\"text-[11px] font-bold text-gray-600 uppercase tracking-wide block mb-1\">\n                            {L('Pickup location', 'పికప్ స్థలం')}\n                            {deliveryType === 'self_pickup' && <span className=\"text-red-500\"> *</span>}\n                          </label>\n                          <select\n                            value={pickupByFarmer[f.farmerId] ?? ''}\n                            disabled={deliveryType !== 'self_pickup'}\n                            onChange={(e) =>\n                              setPickupByFarmer((prev) => ({\n                                ...prev,\n                                [f.farmerId]: e.target.value,\n                              }))\n                            }\n                            className={`w-full border rounded-xl px-3 py-2.5 text-sm focus:outline-none ${\n                              deliveryType !== 'self_pickup'\n                                ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'\n                                : pickupMissing\n                                  ? 'border-red-300 bg-white focus:border-red-500'\n                                  : 'border-gray-200 bg-white focus:border-green-500'\n                            }`}\n                          >\n                            <option value=\"\">{L('Select a pickup point', 'స్థలం ఎంచుకోండి')}</option>\n                            {f.farmerPickupLocations.map((loc) => (\n                              <option key={loc} value={loc}>{loc}</option>\n                            ))}\n                          </select>\n                          {deliveryType !== 'self_pickup' ? (\n                            <p className=\"text-[11px] text-gray-400 mt-1\">\n                              {L('Not needed for delivery', 'డెలివరీకి అవసరం లేదు')}\n                            </p>\n                          ) : pickupMissing ? (\n                            <p className=\"text-[11px] text-red-600 mt-1\">\n                              {L('Please choose a pickup point', 'పికప్ స్థలం ఎంచుకోండి')}\n                            </p>\n                          ) : null}\n\n                          {/* Timings for the chosen pickup point, if the farmer set any. */}\n                          {deliveryType === 'self_pickup' && pickupByFarmer[f.farmerId] && (() => {\n                            const lines = formatPickupSlots(f.farmerPickupSlots?.[pickupByFarmer[f.farmerId]])\n                            if (lines.length === 0) return null\n                            return (\n                              <div className=\"mt-2 bg-green-50 border border-green-100 rounded-xl px-3 py-2\">\n                                <p className=\"text-[10px] font-bold text-green-700 uppercase tracking-wide mb-1\">\n                                  🕒 {L('Pickup timings', 'పికప్ సమయాలు')}\n                                </p>\n                                <ul className=\"space-y-0.5\">\n                                  {lines.map((line, i) => (\n […]
 
 > TOOL
@@ -1306,7 +1306,7 @@ id: toolu_015xNvacgnLcsSYSs9Y9kKQB
 tool_result
 id: toolu_015xNvacgnLcsSYSs9Y9kKQB
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1319,7 +1319,7 @@ tool_use Read
 id: toolu_014TRACSypY1B4VarYvNxywt
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "offset": 1490,
   "limit": 45
 }
@@ -1383,7 +1383,7 @@ tool_use Read
 id: toolu_01V2jTZ7RYtF8TaouND4rKbF
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "offset": 1455,
   "limit": 35
 }
@@ -1442,7 +1442,7 @@ id: toolu_01UB8eKNUeZTKBRxTXmZ7u1k
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "old_string": "              })}\n\n              {farmerGroups.length > 1 && (\n                <p className=\"text-xs text-gray-500 text-center px-4 leading-snug\">\n                  {L('Each farmer is notified separately, since each farm handles its own pickup.', 'ప్రతి రైతుకు విడివిడిగా తెలియజేస్తాము.')}\n                </p>\n              )}",
   "new_string": "              })}\n\n              {/* ── Delivery & pickup details — shown at the end, after the\n                    amounts, once the buyer has chosen pickup/delivery per item ── */}\n              <div className=\"bg-gray-50 rounded-2xl p-4 space-y-4\">\n                <p className=\"text-xs font-bold text-gray-700 uppercase tracking-wide\">\n                  {L('Delivery & pickup details', 'డెలివరీ & పికప్ వివరాలు')}\n                </p>\n\n                {/* Address — only when at least one item is home delivery */}\n                {anyDelivery && (\n                  <div className=\"space-y-3\">\n                    <p className=\"text-[11px] font-extrabold text-blue-700 uppercase tracking-wide\">\n                      🛵 {L('Delivery address', 'డెలివరీ చిరునామా')}\n                    </p>\n                    <div>\n                      <label className=\"text-[11px] font-bold text-gray-600 uppercase tracking-wide block mb-1\">\n                        Full address (door no, street, area)\n                      </label>\n                      <textarea\n                        value={deliveryAddress}\n                        onChange={(e) => setDeliveryAddress(e.target.value.slice(0, 400))}\n                        rows={3}\n                        placeholder=\"H.No 12-3, Main Road, Anand Nagar\"\n                        className=\"w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white focus:border-green-500 focus:outline-none resize-none\"\n                      />\n                    </div>\n                    <div>\n                      <label className=\"text-[11px] font-bold text-gray-600 uppercase tracking-wide block mb-1\">\n                        {L('City / Town', 'నగరం / పట్టణం')}\n                      </label>\n                      <input\n                        type=\"text\"\n                        value={deliveryCity}\n                        onChange={(e) => setDeliveryCity(e.target.value.slice(0, 100))}\n                        placeholder={L('e.g. Guntur', 'ఉదా. గుంటూరు')}\n                        className=\"w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white focus:border-green-500 focus:outline-none\"\n                      />\n                    </div>\n […]
 
@@ -1451,7 +1451,7 @@ id: toolu_01UB8eKNUeZTKBRxTXmZ7u1k
 tool_result
 id: toolu_01UB8eKNUeZTKBRxTXmZ7u1k
 ```
-The file /home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1659,7 +1659,7 @@ tool_use Bash
 id: toolu_01BgN14ZfkZ9rnYVuzcnBBXL
 ```json
 {
-  "command": "cd /home/veerendra/farmer/yourfamilyfarmer; for i in $(seq 1 30); do code=$(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/consumer/cart 2>/dev/null); if [ \"$code\" = \"200\" ]; then echo \"READY http=$code\"; break; fi; sleep 2; done; echo \"final=$code\"",
+  "command": "cd /home/<USER>/farmer/yourfamilyfarmer; for i in $(seq 1 30); do code=$(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/consumer/cart 2>/dev/null); if [ \"$code\" = \"200\" ]; then echo \"READY http=$code\"; break; fi; sleep 2; done; echo \"final=$code\"",
   "description": "Poll cart route until ready",
   "timeout": 90000
 }
@@ -1861,7 +1861,7 @@ tool_use Read
 id: toolu_016xrxo7AJM47UmG3KdLMcjV
 ```json
 {
-  "file_path": "/home/veerendra/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
+  "file_path": "/home/<USER>/farmer/yourfamilyfarmer/src/components/consumer/Cart.tsx",
   "offset": 1358,
   "limit": 45
 }
@@ -1948,7 +1948,7 @@ tool_use Write
 id: toolu_01Er22uGAV9GSGayVxhhzAgC
 ```json
 {
-  "file_path": "/home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/project_per_harvest_delivery.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/project_per_harvest_delivery.md",
   "content": "---\nname: project_per_harvest_delivery\ndescription: Trello \"Handling 2 harvests within same checkout\" — per-harvest pickup/delivery choice at checkout\nmetadata:\n  type: project\n---\n\nTrello card \"Handling 2 harvests within same checkout\" — BUILT 2026-07-07, not yet committed/pushed.\n\nEach cart line now picks its own Pickup/Delivery (both buttons always shown; the option a produce doesn't offer is disabled). Removed the single global top-of-cart toggle and the old cart-wide \"delivery conflict\" error. Address + pickup-location entry moved to one consolidated \"Delivery & pickup details\" block at the very END (after amounts), with payment method + per-farmer place buttons below it (approved layout choice).\n\nKey: `delivery_type` was already stored PER order row, so mixed pickup+delivery within one farmer order needed NO schema change — only the cart UI and the place-order API payload.\n\nFiles:\n- `src/components/consumer/Cart.tsx`: `deliveryByItem` map keyed by `cartKeyOf`, `deliveryOf/canPickupItem/canDeliverItem` helpers, seed effect. Place buttons + pickup selectors relocated to bottom.\n- `src/app/api/orders/place/route.ts`: `IncomingItem.deliveryType`, `rowDeliveryTypeOf`, per-row `delivery_type`; address only on delivery rows, `pickup_location` only on pickup rows; delivery fee stamped on first home_delivery row (not rows[0]).\n\n`npm run build` passes; cart route renders 200. NOT interactively drive-tested with two differing-delivery_mode harvests — user should verify per Supabase data. Consumer-only change; farmer/moderator order views already render […]
 
 > TOOL
@@ -1956,7 +1956,7 @@ id: toolu_01Er22uGAV9GSGayVxhhzAgC
 tool_result
 id: toolu_01Er22uGAV9GSGayVxhhzAgC
 ```
-File created successfully at: /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/project_per_harvest_delivery.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/project_per_harvest_delivery.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1965,7 +1965,7 @@ tool_use Read
 id: toolu_01WXzQxDJ1bDdwnZeZ2pi37c
 ```json
 {
-  "file_path": "/home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/MEMORY.md",
   "offset": 1,
   "limit": 4
 }
@@ -1990,7 +1990,7 @@ id: toolu_01UTNjutb1kLgWxCawBVQePH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/MEMORY.md",
   "old_string": "# Memory Index\n",
   "new_string": "# Memory Index\n\n- [Per-harvest delivery](project_per_harvest_delivery.md) — checkout: pickup/delivery chosen per cart line, address moved to end; built 2026-07-07, not pushed\n"
 }
@@ -2001,7 +2001,7 @@ id: toolu_01UTNjutb1kLgWxCawBVQePH
 tool_result
 id: toolu_01UTNjutb1kLgWxCawBVQePH
 ```
-The file /home/veerendra/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-home-veerendra-farmer-yourfamilyfarmer/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/entity/projects/EntityProcess/agentv
+# AGENTS.md instructions for /home/<USER>/projects/EntityProcess/agentv
 
 <INSTRUCTIONS>
 # AgentV Agent Guide
@@ -31,8 +31,8 @@ tool_use exec_command
 id: call_2n6XC2qDFNqUrQFuCXuu4vwN
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -43,8 +43,8 @@ tool_use exec_command
 id: call_0LslzAB7b0QlzvMR4SIGiHpV
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.agents/skills/workmux/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.agents/skills/workmux/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -55,8 +55,8 @@ tool_use exec_command
 id: call_LYBzPSke8YcM6jvfsklBtXjN
 ```json
 {
-  "cmd": "sed -n '1,240p' /home/entity/.codex/plugins/cache/agentv/agentv-dev/1.0.0/skills/agentv-dev/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/plugins/cache/agentv/agentv-dev/1.0.0/skills/agentv-dev/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -67,8 +67,8 @@ tool_use exec_command
 id: call_4KK6HdpM4wiBLjCZyAwwnkkm
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/.codex/plugins/cache/allagents/deepwiki/1.0.0/skills/deepwiki/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/allagents/deepwiki/1.0.0/skills/deepwiki/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -83,7 +83,7 @@ Wall time: 0.0001 seconds
 Process exited with code 2
 Original token count: 34
 Output:
-sed: can't read /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md: No such file or directory
+sed: can't read /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0-rc.2/skills/beads/SKILL.md: No such file or directory
 
 ```
 
@@ -207,8 +207,8 @@ tool_use exec_command
 id: call_DFHvdY1zRBsnVGegaDn2cios
 ```json
 {
-  "cmd": "rg --files /home/entity/.codex /home/entity/.agents | rg '/beads/.*/SKILL.md$|/skills/beads/SKILL.md$'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg --files /home/<USER>/.codex /home/<USER>/.agents | rg '/beads/.*/SKILL.md$|/skills/beads/SKILL.md$'",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -220,7 +220,7 @@ id: call_h7uqRgCFwXDt05biBnmXx7yW
 ```json
 {
   "cmd": "git fetch origin",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -233,7 +233,7 @@ id: call_vhlXYzcSUEmRZ95TsTApkiC4
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -245,7 +245,7 @@ id: call_4cQkOdbx6iOhrsHcqWbyMVOk
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -257,7 +257,7 @@ id: call_fhmYiROIDCe3L865G0ZW561Y
 ```json
 {
   "cmd": "sed -n '1,260p' STRATEGY.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -269,7 +269,7 @@ id: call_a7h1RPL7sXAeLMQ13RDCbVHy
 ```json
 {
   "cmd": "sed -n '1,260p' ROADMAP.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -284,7 +284,7 @@ Wall time: 0.0761 seconds
 Process exited with code 0
 Original token count: 22
 Output:
-/home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md
+/home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md
 
 ```
 
@@ -405,8 +405,8 @@ tool_use exec_command
 id: call_jpvZJLm8BIFQPakXlDGVPoyF
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -417,8 +417,8 @@ tool_use exec_command
 id: call_FApBBc9hdUANqQW1aNpX6Sv4
 ```json
 {
-  "cmd": "sed -n '261,620p' /home/entity/.agents/skills/workmux/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '261,620p' /home/<USER>/.agents/skills/workmux/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -430,7 +430,7 @@ id: call_IMFHj0wOyEusFiUFDWBuw5gt
 ```json
 {
   "cmd": "sed -n '1,320p' .agents/product-boundary.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 40000
 }
 ```
@@ -442,7 +442,7 @@ id: call_tLFFtQBPGjE9wjNN3JQ9Cewr
 ```json
 {
   "cmd": "bd where && bd status --short || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -454,7 +454,7 @@ id: call_4pJilZpENi4eF23J9aXktYZs
 ```json
 {
   "cmd": "bd ready --limit 10 || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -479,7 +479,7 @@ description: >
   whenever managing multi-session work, tracking dependencies, or recovering context.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.60.0"
-author: "Steve Yegge <steve.yegge@gmail.com>"
+author: "Steve Yegge <<REDACTED_EMAIL>>"
 license: "MIT"
 compatible-with: [claude-code, codex]
 tags: [issue-tracking, task-management, multi-session, dependencies]
@@ -590,9 +590,9 @@ Wall time: 2.5659 seconds
 Process exited with code 0
 Original token count: 420
 Output:
-/home/entity/projects/EntityProcess/agentv/.beads
+/home/<USER>/projects/EntityProcess/agentv/.beads
   prefix: av
-  database: /home/entity/projects/EntityProcess/agentv/.beads/embeddeddolt
+  database: /home/<USER>/projects/EntityProcess/agentv/.beads/embeddeddolt
 Error: unknown flag: --short
 Usage:
   bd status [flags]
@@ -651,7 +651,7 @@ Status: ○ open  ◐ […]
 
 > AGENT
 
-Beads is available at `/home/entity/projects/EntityProcess/agentv/.beads`. I’m going to create a research Bead for this investigation and claim it so the spawned worker has a durable scope and does not collide with any existing active owner.
+Beads is available at `/home/<USER>/projects/EntityProcess/agentv/.beads`. I’m going to create a research Bead for this investigation and claim it so the spawned worker has a durable scope and does not collide with any existing active owner.
 
 > TOOL
 
@@ -660,7 +660,7 @@ id: call_6zIQJZUZyNLrEcAeyfytW2oF
 ```json
 {
   "cmd": "bd update --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -672,7 +672,7 @@ id: call_Fw5IChZ3NqReitGoCyJPlfGH
 ```json
 {
   "cmd": "workmux --version && workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -684,7 +684,7 @@ id: call_sGnEjmm6QbqsarsAHE4kKL6z
 ```json
 {
   "cmd": "test -f .workmux.yaml && sed -n '1,160p' .workmux.yaml || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -695,8 +695,8 @@ tool_use exec_command
 id: call_oR5bcV4n1RyZ0NZHs8vN6EoY
 ```json
 {
-  "cmd": "git rev-parse HEAD && git -C /home/entity/projects/promptfoo/promptfoo rev-parse HEAD && git -C /home/entity/projects/promptfoo/promptfoo status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git rev-parse HEAD && git -C /home/<USER>/projects/promptfoo/promptfoo rev-parse HEAD && git -C /home/<USER>/projects/promptfoo/promptfoo status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -707,8 +707,8 @@ tool_use exec_command
 id: call_NfHjbQfDdYxLTf0yf35szZ55
 ```json
 {
-  "cmd": "test -d /home/entity/projects/vercel-labs/agent-evals && git -C /home/entity/projects/vercel-labs/agent-evals rev-parse HEAD && git -C /home/entity/projects/vercel-labs/agent-evals status --short --branch || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "test -d /home/<USER>/projects/vercel-labs/agent-evals && git -C /home/<USER>/projects/vercel-labs/agent-evals rev-parse HEAD && git -C /home/<USER>/projects/vercel-labs/agent-evals status --short --branch || true",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -858,7 +858,7 @@ id: call_P5UzRmO1a1xIUCDxd44V9ZmN
 ```json
 {
   "cmd": "bd create --title=\"research: compare agent grader patterns across Promptfoo and Vercel agent-evals\" --description=\"Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.\" --type=task --priority=2 --acceptance=\"Research cites local clone commits or official source URLs; conclusions distinguish Promptfoo behavior from Vercel agent-evals behavior; any actionable AgentV follow-ups are created as Beads with self-contained scope and acceptance criteria.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -870,8 +870,8 @@ tool_use exec_command
 id: call_FnDo40eG0GcwgEYlFe6Yf1TO
 ```json
 {
-  "cmd": "rg --files /home/entity/projects/promptfoo/promptfoo | rg 'grader|assert|provider|redteam|agent|eval|llm' | head -200",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg --files /home/<USER>/projects/promptfoo/promptfoo | rg 'grader|assert|provider|redteam|agent|eval|llm' | head -200",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -882,8 +882,8 @@ tool_use exec_command
 id: call_OUzOkiUyWXrtUpSw22kc4Zhr
 ```json
 {
-  "cmd": "rg -n \"agentic|agent grader|grader|llm-rubric|rubric|assertion|provider|agent\" /home/entity/projects/promptfoo/promptfoo/src /home/entity/projects/promptfoo/promptfoo/site /home/entity/projects/promptfoo/promptfoo/docs 2>/dev/null | head -240",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"agentic|agent grader|grader|llm-rubric|rubric|assertion|provider|agent\" /home/<USER>/projects/promptfoo/promptfoo/src /home/<USER>/projects/promptfoo/promptfoo/site /home/<USER>/projects/promptfoo/promptfoo/docs 2>/dev/null | head -240",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -905,7 +905,7 @@ Output:
   "description": "Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.",
   "id": "av-l4pl",
   "issue_type": "task",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 2,
   "schema_version": 1,
   "status": "open",
@@ -925,185 +925,185 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 4128
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts
-/home/entity/projects/promptfoo/promptfoo/src/evaluate.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluatorHelpers.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/providers.slack.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/integration/function-provider-grading.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluate.jsonl.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/agentSkills/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/test/agentSkills/promptfooPlugin.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator.integration.transforms.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/architecture/evaluatorStoreBoundary.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/architecture/providerRedteamBoundary.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/output-and-assertions.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/not-script-assertions.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/eval.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/configs-and-providers.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/dynamic-value.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/check-length.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/check_keywords.py
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/dynamic-value.py
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/go-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/exec-provider-stdin.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/file-ref-assertion-value.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/assert-dynamic-var.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/llm-rubric-stateful-grader-assert-set-order.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/python-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/latency-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/multi-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-label.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/weighted-assertions.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/multi-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-ts.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/function-provider-defaulttest.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/ends-with-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/function-providers-9383.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/not-contains-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/python-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/inline-js-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-python-named.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-cjs.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-json-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-ts-transitive.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/providers-with-config.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/redteam-class-provider-7353.yaml
-/home/entity/projects/promptfoo/promptfoo/src/validators/redteam.ts
-/home/entity/projects/promptfoo/promptfoo/src/validators/providers.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/icontains-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/json-schema-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-esm.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/class-provider-7353.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/not-script-assertions.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/skill-used-provider-esm.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/failing-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/levenshtein-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/dynamic-var-assertion-7334.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/starts-with-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-any-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/file-provider-env-7079.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/exec-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/js-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/ruby-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/llm-rubric-stateful-grader-order.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars-tests.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/cost-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars-default.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/assertions.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-with-config.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-all-assertion.yaml
-/home/entity/projects/promptfoo/promptfoo/docs/agents/coding-agent-provider-taxonomy.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/python.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/database-security.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/pr-conventions.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/git-workflow.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/codex-app-server-provider-notes.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/dependency-management.md
-/home/entity/projects/promptfoo/promptfoo/docs/agents/logging.md
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo_provider.py
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/go.mod
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts-transitive.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/skill-metadata-esm.mjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/redteam-class-provider-7353.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/defaulttest-llm-rubric-grader.cjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/stateful-ollama-grader.cjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-cjs.cjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ruby.rb
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-go.go
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo_provider_named.py
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/grader-function.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-esm.mjs
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts-transitive-helper.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/exec-provider-reads-stdin.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/circular-ref-provider.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/cjs-module-exports.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/file-provider-env-7079.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/cjs-with-require.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/class-provider-prototype-id.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/subdir/config-relative-provider.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/subdir/local-provider.js
-/home/entity/projects/promptfoo/promptfoo/src/providers/novita.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/sagemaker.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/cerebras.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/http.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/aimlapi.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/packageParser.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/litellm.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/watsonx.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/src/providers/constants.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/provider.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/promptfooconfig.yaml
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/src/utils.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/tsconfig.json
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/agent.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/chat.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/tools.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/responses.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/device-auth.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/openclaw/embedding.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/cohere.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/data/file-provider-env-7079.env
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/assistant.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/chat.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/video.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/defaults.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/moderation.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/warnings.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/responses.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/util.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/foundry-agent.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/embedding.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/errors.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/completion.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/image.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/azure/generic.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/simulatedUser.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/a2a/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/a2a/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/a2a/transforms.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/jfrog.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/truefoundry.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/alibaba.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/llamaApi.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/registry.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/modelslab.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/transformUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/llama.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/webhook.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/evalTableUtils.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterPrompts.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/redteamWarning.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterTests.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterProviders.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/summary.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterTestsUtil.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/eval/filterFailingBug.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/smoke/fixtures/scripts/capture-conversation-relevance-grader.js
-/home/entity/projects/promptfoo/promptfoo/test/smoke/features-and-assertions.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/util/provider.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/redteam/setup.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/redteam/init.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/redteam/report.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/eval.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/evalSetup.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/transforms.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/setup.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/assertions.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/trace-integration.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/tokenUsage.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/lifecycle.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/defaultTest.test.ts
-/home/entity/projects/promptfoo/promptfoo/test/evaluator/inMemoryStore.test.ts […]
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluate.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluatorHelpers.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/providers.slack.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/integration/function-provider-grading.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluate.jsonl.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/agentSkills/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/test/agentSkills/promptfooPlugin.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator.integration.transforms.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/architecture/evaluatorStoreBoundary.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/architecture/providerRedteamBoundary.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/output-and-assertions.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/not-script-assertions.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/eval.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/configs-and-providers.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/dynamic-value.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/check-length.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/check_keywords.py
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/assertions/dynamic-value.py
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/go-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/exec-provider-stdin.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/file-ref-assertion-value.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/assert-dynamic-var.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/llm-rubric-stateful-grader-assert-set-order.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/python-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/latency-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/multi-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-label.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/weighted-assertions.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/multi-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-ts.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/function-provider-defaulttest.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/ends-with-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/function-providers-9383.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/not-contains-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/python-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/inline-js-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-python-named.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-cjs.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-json-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-ts-transitive.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/providers-with-config.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/redteam-class-provider-7353.yaml
+/home/<USER>/projects/promptfoo/promptfoo/src/validators/redteam.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/validators/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/icontains-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/json-schema-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-esm.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/class-provider-7353.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/not-script-assertions.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/skill-used-provider-esm.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/failing-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/levenshtein-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/dynamic-var-assertion-7334.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/starts-with-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-any-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/file-provider-env-7079.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/exec-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/js-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/ruby-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/llm-rubric-stateful-grader-order.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars-tests.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/cost-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/defaulttest-llm-rubric-vars-default.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/assertions.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/provider-with-config.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/configs/contains-all-assertion.yaml
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/coding-agent-provider-taxonomy.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/python.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/database-security.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/pr-conventions.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/git-workflow.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/codex-app-server-provider-notes.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/dependency-management.md
+/home/<USER>/projects/promptfoo/promptfoo/docs/agents/logging.md
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo_provider.py
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/go.mod
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts-transitive.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/skill-metadata-esm.mjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/redteam-class-provider-7353.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/defaulttest-llm-rubric-grader.cjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/stateful-ollama-grader.cjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-cjs.cjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ruby.rb
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-go.go
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo_provider_named.py
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/grader-function.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-esm.mjs
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/echo-ts-transitive-helper.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/exec-provider-reads-stdin.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/circular-ref-provider.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/cjs-module-exports.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/file-provider-env-7079.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/cjs-with-require.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/providers/class-provider-prototype-id.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/subdir/config-relative-provider.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/subdir/local-provider.js
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/novita.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/sagemaker.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/cerebras.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/http.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/aimlapi.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/packageParser.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/litellm.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/watsonx.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/constants.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/provider.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/promptfooconfig.yaml
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/src/utils.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/frontend-ts-provider/tsconfig.json
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/agent.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/chat.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/tools.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/responses.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/device-auth.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/openclaw/embedding.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/cohere.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/data/file-provider-env-7079.env
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/assistant.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/chat.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/video.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/defaults.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/moderation.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/warnings.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/responses.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/util.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/foundry-agent.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/embedding.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/errors.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/completion.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/image.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/azure/generic.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/simulatedUser.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/a2a/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/a2a/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/a2a/transforms.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/jfrog.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/truefoundry.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/alibaba.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/llamaApi.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/registry.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/modelslab.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/transformUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/llama.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/webhook.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/evalTableUtils.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterPrompts.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/redteamWarning.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterTests.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterProviders.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/summary.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterTestsUtil.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/eval/filterFailingBug.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/fixtures/scripts/capture-conversation-relevance-grader.js
+/home/<USER>/projects/promptfoo/promptfoo/test/smoke/features-and-assertions.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/util/provider.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/redteam/setup.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/redteam/init.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/redteam/report.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/eval.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/evalSetup.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/transforms.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/setup.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/assertions.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/trace-integration.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/tokenUsage.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/lifecycle.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/defaultTest.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluator/inMemoryStore.test.ts […]
 
 > TOOL
 
@@ -1115,32 +1115,32 @@ Wall time: 0.0041 seconds
 Process exited with code 0
 Original token count: 9151
 Output:
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:15:   server/UI hosting, redteam, and provider families.
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:23:path to provider packs and future products without forcing a flag day.
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:36:- many provider SDKs
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:44:  imported migrations, models, sharing, provider loading, and redteam APIs.
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:51:- Provider loading is centralized enough that optional/provider dependencies are
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:62:- Do not turn providers into runtime-installed plugins as a prerequisite for the
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:72:   Lightweight consumers should not pay for servers, databases, CLIs, or provider
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:99:  providers["@promptfoo/provider-*"]
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:107:  core --> providers
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:111:  providers --> facade
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:133:- `fs`, `@libsql/client`, Express, provider SDKs, CLI libraries, server code
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:145:- Test planning, prompt expansion, assertions, scoring, result aggregation
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:146:- Provider/assertion interfaces
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:147:- No direct filesystem, DB, HTTP-server, or provider-SDK assumptions
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:159:- concrete provider SDK packages
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:164:- It should be possible to run it with fake providers and in-memory adapters.
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:194:- redteam generation, strategies, graders, plugins, reporting
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:245:### `@promptfoo/provider-*`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:251:  - `@promptfoo/provider-openai`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:252:  - `@promptfoo/provider-anthropic`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:253:  - `@promptfoo/provider-aws`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:254:  - `@promptfoo/provider-google`
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:255:  - eventually a small `@promptfoo/providers-core` for zero-extra-dependency or
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:256:    very common providers
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:261:- provider SDKs owned by that package
-/home/entity/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:266:- It also makes provider ownership and release notes much […]
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:15:   server/UI hosting, redteam, and provider families.
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:23:path to provider packs and future products without forcing a flag day.
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:36:- many provider SDKs
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:44:  imported migrations, models, sharing, provider loading, and redteam APIs.
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:51:- Provider loading is centralized enough that optional/provider dependencies are
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:62:- Do not turn providers into runtime-installed plugins as a prerequisite for the
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:72:   Lightweight consumers should not pay for servers, databases, CLIs, or provider
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:99:  providers["@promptfoo/provider-*"]
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:107:  core --> providers
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:111:  providers --> facade
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:133:- `fs`, `@libsql/client`, Express, provider SDKs, CLI libraries, server code
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:145:- Test planning, prompt expansion, assertions, scoring, result aggregation
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:146:- Provider/assertion interfaces
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:147:- No direct filesystem, DB, HTTP-server, or provider-SDK assumptions
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:159:- concrete provider SDK packages
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:164:- It should be possible to run it with fake providers and in-memory adapters.
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:194:- redteam generation, strategies, graders, plugins, reporting
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:245:### `@promptfoo/provider-*`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:251:  - `@promptfoo/provider-openai`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:252:  - `@promptfoo/provider-anthropic`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:253:  - `@promptfoo/provider-aws`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:254:  - `@promptfoo/provider-google`
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:255:  - eventually a small `@promptfoo/providers-core` for zero-extra-dependency or
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:256:    very common providers
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:261:- provider SDKs owned by that package
+/home/<USER>/projects/promptfoo/promptfoo/docs/plans/2026-05-02-multi-package-system-proposal.md:266:- It also makes provider ownership and release notes much […]
 
 > AGENT
 
@@ -1152,8 +1152,8 @@ tool_use exec_command
 id: call_VWbuwUXlZvrA7etw94NixrzC
 ```json
 {
-  "cmd": "bd update av-l4pl --claim --set-metadata machine=$(hostname) --set-metadata worker=codex-main --set-metadata branch=main --set-metadata worktree=/home/entity/projects/EntityProcess/agentv --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-l4pl --claim --set-metadata machine=$(hostname) --set-metadata worker=codex-main --set-metadata branch=main --set-metadata worktree=/home/<USER>/projects/EntityProcess/agentv --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1165,8 +1165,8 @@ tool_use exec_command
 id: call_40HgT1JS9ckGWNuklpMqQ2Ec
 ```json
 {
-  "cmd": "rg -n \"runAssertion|matchesLlmRubric|llm-rubric|GradingResult|ProviderResponse|rubric|assertion\" /home/entity/projects/promptfoo/promptfoo/src/assertions /home/entity/projects/promptfoo/promptfoo/src/providers /home/entity/projects/promptfoo/promptfoo/src/types.ts /home/entity/projects/promptfoo/promptfoo/src/evaluator.ts /home/entity/projects/promptfoo/promptfoo/src/util 2>/dev/null | head -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"runAssertion|matchesLlmRubric|llm-rubric|GradingResult|ProviderResponse|rubric|assertion\" /home/<USER>/projects/promptfoo/promptfoo/src/assertions /home/<USER>/projects/promptfoo/promptfoo/src/providers /home/<USER>/projects/promptfoo/promptfoo/src/types.ts /home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts /home/<USER>/projects/promptfoo/promptfoo/src/util 2>/dev/null | head -260",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -1177,8 +1177,8 @@ tool_use exec_command
 id: call_OSxgNCZItSHpkATybYIYpZuD
 ```json
 {
-  "cmd": "rg --files /home/entity/projects/promptfoo/promptfoo/src | rg 'assert|grade|rubric|evaluator|provider|types'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg --files /home/<USER>/projects/promptfoo/promptfoo/src | rg 'assert|grade|rubric|evaluator|provider|types'",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -1203,7 +1203,7 @@ Output:
     "priority": 2,
     "issue_type": "task",
     "assignee": "Christopher Tso",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T12:24:42Z",
     "created_by": "Christopher Tso",
     "updated_at": "2026-07-06T12:24:54Z",
@@ -1212,7 +1212,7 @@ Output:
       "branch": "main",
       "worker": "codex-main",
       "machine": "entity-vps",
-      "worktree": "/home/entity/projects/EntityProcess/agentv"
+      "worktree": "/home/<USER>/projects/EntityProcess/agentv"
     }
   }
 ]
@@ -1229,38 +1229,38 @@ Wall time: 0.0002 seconds
 Process exited with code 0
 Original token count: 8083
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:4:import type { AssertionParams, GradingResult } from '../types/index';
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:7:  assertion,
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:11:}: AssertionParams): Promise<GradingResult> => {
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:12:  invariant(typeof renderedValue === 'string', '"pi" assertion type must have a string value');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:13:  invariant(typeof prompt === 'string', '"pi" assertion must have a prompt that is a string');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts:14:  return matchesPiScore(renderedValue, prompt, outputString, assertion);
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:3:import type { AssertionParams, GradingResult } from '../types/index';
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:6:  assertion,
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:10:}: AssertionParams): GradingResult {
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:11:  const value = renderedValue ?? assertion.value;
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:12:  invariant(typeof value === 'string', '"finish-reason" assertion type must have a string value');
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:20:      assertion,
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:35:    assertion,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:13:  runAssertions,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:15:} from './assertions/index';
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:62:  type GradingResult,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:65:  type ProviderResponse,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:367: * Update token usage metrics with assertion token usage
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:371:  assertionTokens: Partial<TokenUsage>,
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:373:  if (metrics.tokenUsage && assertionTokens) {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:374:    if (!metrics.tokenUsage.assertions) {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:375:      metrics.tokenUsage.assertions = createEmptyAssertions();
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:378:    // Accumulate assertion tokens using the specialized assertion function
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:379:    accumulateAssertionTokenUsage(metrics.tokenUsage.assertions, assertionTokens);
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:403:function isGeneratedRedteamAssertion(assertion: { type?: string }): boolean {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:404:  return typeof assertion.type === 'string' && assertion.type.startsWith('promptfoo:redteam:');
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:412:function hasNestedRedteamAssertion(assertion: NestedAssertion): boolean {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:413:  if (isGeneratedRedteamAssertion(assertion)) {
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:418:    assertion.type === 'assert-set' &&
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:419:    Array.isArray(assertion.assert) &&
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:420:    assertion.assert.some(hasNestedRedteamAssertion)
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts:451:  // but they still carry […]
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:4:import type { AssertionParams, GradingResult } from '../types/index';
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:7:  assertion,
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:11:}: AssertionParams): Promise<GradingResult> => {
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:12:  invariant(typeof renderedValue === 'string', '"pi" assertion type must have a string value');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:13:  invariant(typeof prompt === 'string', '"pi" assertion must have a prompt that is a string');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts:14:  return matchesPiScore(renderedValue, prompt, outputString, assertion);
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:3:import type { AssertionParams, GradingResult } from '../types/index';
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:6:  assertion,
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:10:}: AssertionParams): GradingResult {
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:11:  const value = renderedValue ?? assertion.value;
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:12:  invariant(typeof value === 'string', '"finish-reason" assertion type must have a string value');
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:20:      assertion,
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts:35:    assertion,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:13:  runAssertions,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:15:} from './assertions/index';
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:62:  type GradingResult,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:65:  type ProviderResponse,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:367: * Update token usage metrics with assertion token usage
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:371:  assertionTokens: Partial<TokenUsage>,
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:373:  if (metrics.tokenUsage && assertionTokens) {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:374:    if (!metrics.tokenUsage.assertions) {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:375:      metrics.tokenUsage.assertions = createEmptyAssertions();
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:378:    // Accumulate assertion tokens using the specialized assertion function
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:379:    accumulateAssertionTokenUsage(metrics.tokenUsage.assertions, assertionTokens);
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:403:function isGeneratedRedteamAssertion(assertion: { type?: string }): boolean {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:404:  return typeof assertion.type === 'string' && assertion.type.startsWith('promptfoo:redteam:');
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:412:function hasNestedRedteamAssertion(assertion: NestedAssertion): boolean {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:413:  if (isGeneratedRedteamAssertion(assertion)) {
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:418:    assertion.type === 'assert-set' &&
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:419:    Array.isArray(assertion.assert) &&
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:420:    assertion.assert.some(hasNestedRedteamAssertion)
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts:451:  // but they still carry […]
 
 > TOOL
 
@@ -1272,185 +1272,185 @@ Wall time: 0.0119 seconds
 Process exited with code 0
 Original token count: 7373
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/blobs/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/validators/providers.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/generate/assertions.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/mcp/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/commands/mcp/lib/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/types/webPage.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/grading/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/graders.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/iterativeImage.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/constants.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/indirectWebPwn.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/agentic/memoryPoisoning.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/registry.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/iterativeMeta.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/voiceCrescendo/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/iterative.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/traceFormatting.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/prompts.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/tracingOptions.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/goat.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/iterativeTree.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/mischievousUser.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/bestOfN.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/README.md
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/hydra/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/prompts.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/LICENSE
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/authoritativeMarkupInjection.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/providers/custom/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/plugins/harmful/graders.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/plugins/teenSafety/graderExamples.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/plugins/codingAgent/graders.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/redteam/strategies/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/pi.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/finishReason.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/ngrams.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/src/assertions/gleu.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/toolCallF1.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/bleu.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/sql.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/webhook.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/trajectory.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/traceErrorSpans.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contextFaithfulness.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/perplexity.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/validateAssertions.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/guardrails.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/openai.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/factuality.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/xml.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/redteam.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/rouge.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contains.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/moderation.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contextUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/searchRubric.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/cost.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/json.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/geval.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contextRelevance.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/synthesis.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/regex.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/ruby.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/classifier.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/agentRubric.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/javascript.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/traceSpanDuration.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/scriptResultNormalization.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/contextRecall.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/answerRelevance.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/meteor.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/latency.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/skill.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/refusal.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/html.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/llmRubric.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/traceUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/trajectoryUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/wordCount.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/functionToolCall.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/python.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/modelGradedClosedQa.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/levenshtein.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/traceSpanCount.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/utils.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/equals.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/startsWith.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/assertionsResult.ts
-/home/entity/projects/promptfoo/promptfoo/src/assertions/similar.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/agent.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/AGENTS.md
-/home/entity/projects/promptfoo/promptfoo/src/types/codeScan.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/transform.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/prompts.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/build.d.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/internal.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/optional-deps.d.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/eventSource.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/targetLink.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/tracing.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/traces.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/media.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/user.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/eval.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/server.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/redteam.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/providers.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/configs.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/blobs.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/common.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/version.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/api/modelAudit.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/env.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/cache.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/modelAudit.ts
-/home/entity/projects/promptfoo/promptfoo/src/types/email.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/utils/providerResponse.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/utils/providerResponse.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/ResultsTable.providerExtraction.test.tsx
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/providerConfig.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/providerConfig.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionValueValidation.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionPrerequisites.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionValueValidation.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionPrerequisites.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/Targets/providerDocumentationMap.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/Targets/providerDocumentationMap.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/strategies/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/media/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/pages/model-audit/ModelAudit.types.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/store/providersStore.test.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/store/providersStore.ts
-/home/entity/projects/promptfoo/promptfoo/src/server/routes/providers.ts
-/home/entity/projects/promptfoo/promptfoo/src/app/src/components/data-table/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/evaluatorHelpers.ts
-/home/entity/projects/promptfoo/promptfoo/src/storage/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/util/provider.ts
-/home/entity/projects/promptfoo/promptfoo/src/util/providerRef.ts
-/home/entity/projects/promptfoo/promptfoo/src/util/providerResponse.ts
-/home/entity/projects/promptfoo/promptfoo/src/util/fetch/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/evaluator.ts
-/home/entity/projects/promptfoo/promptfoo/src/node/evaluatorRuntime.ts
-/home/entity/projects/promptfoo/promptfoo/src/external/assertions/deepeval.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/atlascloud.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/fireworks/shared.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/fireworks/chat.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/fireworks/embedding.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/voyage.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mistral.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/echo.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/transform.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/authProvider.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/client.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/auth.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/util.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/mcp/transforms.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/webSearchUtils.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/rubyCompletion.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/opencode-sdk.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/promptfooModel.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/nscale/image.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/responses/types.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/responses/index.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/responses/processor.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/providerRegistry.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/claude-agent-sdk.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/httpMultipart.ts
-/home/entity/projects/promptfoo/promptfoo/src/providers/pythonCompletion.ts […]
+/home/<USER>/projects/promptfoo/promptfoo/src/blobs/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/validators/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/generate/assertions.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/mcp/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/commands/mcp/lib/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/types/webPage.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/grading/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/graders.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/iterativeImage.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/constants.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/indirectWebPwn.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/agentic/memoryPoisoning.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/registry.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/iterativeMeta.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/voiceCrescendo/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/iterative.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/traceFormatting.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/prompts.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/tracingOptions.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/goat.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/iterativeTree.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/mischievousUser.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/bestOfN.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/README.md
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/hydra/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/prompts.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/crescendo/LICENSE
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/authoritativeMarkupInjection.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/providers/custom/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/plugins/harmful/graders.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/plugins/teenSafety/graderExamples.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/plugins/codingAgent/graders.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/redteam/strategies/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/pi.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/finishReason.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/ngrams.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/gleu.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/toolCallF1.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/bleu.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/sql.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/webhook.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/trajectory.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/traceErrorSpans.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contextFaithfulness.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/perplexity.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/validateAssertions.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/guardrails.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/openai.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/factuality.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/xml.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/redteam.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/rouge.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contains.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/moderation.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contextUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/searchRubric.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/cost.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/json.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/geval.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contextRelevance.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/synthesis.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/regex.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/ruby.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/classifier.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/agentRubric.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/javascript.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/traceSpanDuration.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/scriptResultNormalization.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/contextRecall.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/answerRelevance.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/meteor.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/latency.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/skill.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/refusal.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/html.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/llmRubric.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/traceUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/trajectoryUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/wordCount.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/functionToolCall.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/python.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/modelGradedClosedQa.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/levenshtein.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/traceSpanCount.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/utils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/equals.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/startsWith.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/assertionsResult.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/assertions/similar.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/agent.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/AGENTS.md
+/home/<USER>/projects/promptfoo/promptfoo/src/types/codeScan.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/transform.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/prompts.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/build.d.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/internal.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/optional-deps.d.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/eventSource.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/targetLink.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/tracing.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/traces.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/media.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/user.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/eval.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/server.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/redteam.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/configs.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/blobs.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/common.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/version.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/api/modelAudit.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/env.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/cache.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/modelAudit.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/types/email.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/utils/providerResponse.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/utils/providerResponse.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/ResultsTable.providerExtraction.test.tsx
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/providerConfig.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval/components/providerConfig.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionValueValidation.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionPrerequisites.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionValueValidation.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/eval-creator/components/assertionPrerequisites.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/Targets/providerDocumentationMap.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/Targets/providerDocumentationMap.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/redteam/setup/components/strategies/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/media/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/pages/model-audit/ModelAudit.types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/store/providersStore.test.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/store/providersStore.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/server/routes/providers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/app/src/components/data-table/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluatorHelpers.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/storage/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/util/provider.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/util/providerRef.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/util/providerResponse.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/util/fetch/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/evaluator.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/node/evaluatorRuntime.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/external/assertions/deepeval.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/atlascloud.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/fireworks/shared.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/fireworks/chat.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/fireworks/embedding.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/voyage.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mistral.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/echo.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/transform.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/authProvider.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/client.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/auth.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/util.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/mcp/transforms.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/webSearchUtils.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/rubyCompletion.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/opencode-sdk.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/promptfooModel.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/nscale/image.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/responses/types.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/responses/index.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/responses/processor.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/providerRegistry.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/claude-agent-sdk.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/httpMultipart.ts
+/home/<USER>/projects/promptfoo/promptfoo/src/providers/pythonCompletion.ts […]
 
 > AGENT
 
@@ -1463,7 +1463,7 @@ id: call_npXgR1RmYgkR44tWziAqWU46
 ```json
 {
   "cmd": "mkdir -p .workmux/prompts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1497,7 +1497,7 @@ id: call_Xx6BUdaviRJgoYR0F41HZGGl
 ```json
 {
   "cmd": "workmux add grader-research -b research/agent-grader-patterns -P .workmux/prompts/agent-grader-research.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1532,7 +1532,7 @@ id: call_2FcDDbJWR4wPmaaSErrn3ESb
 ```json
 {
   "cmd": "workmux add --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -1588,7 +1588,7 @@ id: call_8Crjp1xeC7mY1X9z6lR43nb3
 ```json
 {
   "cmd": "workmux add research/agent-grader-patterns --base origin/main --name grader-research -b -P .workmux/prompts/agent-grader-research.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1606,13 +1606,13 @@ Original token count: 48
 Output:
 ✓ Successfully created worktree and tmux window for 'research/agent-grader-patterns'
   Base: origin/main
-  Worktree: /home/entity/projects/EntityProcess/agentv__worktrees/grader-research
+  Worktree: /home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research
 
 ```
 
 > AGENT
 
-The worker worktree was created at `/home/entity/projects/EntityProcess/agentv__worktrees/grader-research` from `origin/main`. I’m checking its pane now to confirm Codex accepted the prompt rather than sitting idle.
+The worker worktree was created at `/home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research` from `origin/main`. I’m checking its pane now to confirm Codex accepted the prompt rather than sitting idle.
 
 > TOOL
 
@@ -1621,7 +1621,7 @@ id: call_uFv8IU1SCu5OlEP6bSFao5Ue
 ```json
 {
   "cmd": "workmux status grader-research",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1633,7 +1633,7 @@ id: call_cr0I7Sj5hQbUQY4eh0ZS8BIp
 ```json
 {
   "cmd": "workmux capture grader-research",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1645,8 +1645,8 @@ tool_use exec_command
 id: call_9XqncHi1ibTiM7Cri4q0ShtS
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/grader-research status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1704,7 +1704,7 @@ id: call_C9K5HMTOXxOM9wVaHHpEmTnp
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -1716,7 +1716,7 @@ id: call_eorzTVU7xJaMbGlhDEJ5kji5
 ```json
 {
   "cmd": "find . -path '*dispatch-codex-prompt.sh' -o -path '*/scripts/dispatch-codex-prompt.sh'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1728,7 +1728,7 @@ id: call_aXLsR7V9Cc1gOtIDBD3MZ7ek
 ```json
 {
   "cmd": "tmux list-windows -a -F '#{session_name}:#{window_index}:#{window_name}:#{pane_current_path}:#{pane_current_command}' | rg 'grader-research|agent-grader|research/agent-grader' || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1773,7 +1773,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 27
 Output:
-agentv:3: grader-research:/home/entity/projects/EntityProcess/agentv__worktrees/grader-research:codex
+agentv:3: grader-research:/home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research:codex
 
 ```
 
@@ -1801,7 +1801,7 @@ id: call_asNLD9QkWgqrvUNoVAk368XY
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:3 -p -S -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -1813,7 +1813,7 @@ id: call_GhPJU8J9mPDN8Zulf0n8jOIr
 ```json
 {
   "cmd": "ls scripts | rg 'dispatch-.*prompt' || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -1856,7 +1856,7 @@ Output:
 • You have 3 usage limit resets available. Run /usage to use one.
 
 
-› You are a research-only worker in /home/entity/projects/EntityProcess/agentv.
+› You are a research-only worker in /home/<USER>/projects/EntityProcess/agentv.
 
   Goal: research agent grader patterns for AgentV. Do not edit tracked files. Do not run bun install, builds, tests, or evals. Inspect source, docs, and git metadata only.
 
@@ -1866,7 +1866,7 @@ Output:
   - If you identify concrete AgentV follow-up work, report it to the coordinator; do not create Beads yourself unless explicitly instructed later.
 
   Research questions:
-  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/entity/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
+  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/<USER>/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
 
 > TOOL
 
@@ -1892,7 +1892,7 @@ id: call_cOR7kFDThHE7Lf3MPiqc39GN
 ```json
 {
   "cmd": "rm -rf /tmp/agent-evals && git clone --depth=1 https://github.com/vercel-labs/agent-evals.git /tmp/agent-evals && git -C /tmp/agent-evals rev-parse HEAD && git -C /tmp/agent-evals status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -1904,8 +1904,8 @@ tool_use exec_command
 id: call_AaJvb8huNJuddKyBa9Syuc63
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/projects/promptfoo/promptfoo/src/assertions/agentRubric.ts && sed -n '1,260p' /home/entity/projects/promptfoo/promptfoo/src/assertions/llmRubric.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/projects/promptfoo/promptfoo/src/assertions/agentRubric.ts && sed -n '1,260p' /home/<USER>/projects/promptfoo/promptfoo/src/assertions/llmRubric.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -1916,8 +1916,8 @@ tool_use exec_command
 id: call_11Qe5UMvQJHUoPZS4YXUfqRw
 ```json
 {
-  "cmd": "rg -n \"agent-rubric|llm-rubric|MODEL_GRADED_ASSERTION_TYPES|matchesLlmRubric|matchesAgentRubric|agentRubric|rubricPrompt\" /home/entity/projects/promptfoo/promptfoo/src /home/entity/projects/promptfoo/promptfoo/test /home/entity/projects/promptfoo/promptfoo/site/docs 2>/dev/null | head -280",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"agent-rubric|llm-rubric|MODEL_GRADED_ASSERTION_TYPES|matchesLlmRubric|matchesAgentRubric|agentRubric|rubricPrompt\" /home/<USER>/projects/promptfoo/promptfoo/src /home/<USER>/projects/promptfoo/promptfoo/test /home/<USER>/projects/promptfoo/promptfoo/site/docs 2>/dev/null | head -280",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -1928,8 +1928,8 @@ tool_use exec_command
 id: call_G74ahiWmqXcPqtAmB7Cql9Mw
 ```json
 {
-  "cmd": "rg -n \"interface GradingResult|type GradingResult|ProviderResponse|ApiProvider|AssertionParams|agent-rubric|llm-rubric\" /home/entity/projects/promptfoo/promptfoo/src/types/index.ts /home/entity/projects/promptfoo/promptfoo/src/types/providers.ts /home/entity/projects/promptfoo/promptfoo/src/types/shared.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"interface GradingResult|type GradingResult|ProviderResponse|ApiProvider|AssertionParams|agent-rubric|llm-rubric\" /home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts /home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts /home/<USER>/projects/promptfoo/promptfoo/src/types/shared.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2036,39 +2036,39 @@ Wall time: 0.2750 seconds
 Process exited with code 0
 Original token count: 9441
 Output:
-/home/entity/projects/promptfoo/promptfoo/test/evaluate.jsonl.test.ts:299:              type: 'llm-rubric',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:7:import { matchesLlmRubric } from '../../src/matchers/llmGrading';
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:62:describe('matchesLlmRubric', () => {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:92:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:101:    await expect(matchesLlmRubric(expected, output, options)).resolves.toEqual(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:122:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:131:    await expect(matchesLlmRubric(expected, output, options)).resolves.toEqual(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:159:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:160:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:178:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:179:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:200:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:201:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:221:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:222:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:244:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:245:      rubricPrompt: 'Grading prompt',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:270:    const result = await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:274:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:305:          label: 'llm-rubric',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:325:    const result = await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:329:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:361:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:365:        rubricPrompt: JSON.stringify([
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:405:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:409:        rubricPrompt: [
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:452:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:456:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:494:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:498:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:533:    await matchesLlmRubric(
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:537:        rubricPrompt: 'Grade this output: {{ output }}',
-/home/entity/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:574:    await […]
+/home/<USER>/projects/promptfoo/promptfoo/test/evaluate.jsonl.test.ts:299:              type: 'llm-rubric',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:7:import { matchesLlmRubric } from '../../src/matchers/llmGrading';
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:62:describe('matchesLlmRubric', () => {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:92:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:101:    await expect(matchesLlmRubric(expected, output, options)).resolves.toEqual(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:122:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:131:    await expect(matchesLlmRubric(expected, output, options)).resolves.toEqual(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:159:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:160:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:178:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:179:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:200:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:201:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:221:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:222:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:244:    const result = await matchesLlmRubric('Expected output', 'Sample output', {
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:245:      rubricPrompt: 'Grading prompt',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:270:    const result = await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:274:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:305:          label: 'llm-rubric',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:325:    const result = await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:329:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:361:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:365:        rubricPrompt: JSON.stringify([
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:405:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:409:        rubricPrompt: [
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:452:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:456:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:494:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:498:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:533:    await matchesLlmRubric(
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:537:        rubricPrompt: 'Grade this output: {{ output }}',
+/home/<USER>/projects/promptfoo/promptfoo/test/matchers/llm-rubric.test.ts:574:    await […]
 
 > TOOL
 
@@ -2080,48 +2080,48 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1303
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:3:import type { MinimalApiProvider } from '../contracts/prompts';
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:8:  ProviderResponse,
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:24:  ProviderResponse,
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:30:export type ProviderFunction = ApiProvider['callApi'];
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:35:  | ApiProvider
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:38:export type ProvidersConfig = ProviderId | ProviderFunction | ApiProvider | ProviderConfig[];
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:50:export type ProviderTypeMap = Partial<Record<ProviderType, string | ProviderOptions | ApiProvider>>;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:56:  providerResponse?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:79:  originalProvider?: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:116:export interface ApiProvider extends MinimalApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:135:export interface ApiEmbeddingProvider extends ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:139:export interface ApiSimilarityProvider extends ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:143:export interface ApiClassificationProvider extends ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:147:export interface ApiModerationProvider extends ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:158:  ): Promise<ProviderResponse>;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:162:export function isApiProvider(provider: any): provider is ApiProvider {
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:190:  providerResponse: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:191:  unalignedProviderResult?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:192:  redteamProviderResult?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:200:  embeddingProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:201:  gradingJsonProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:202:  gradingProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:203:  llmRubricProvider?: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:204:  moderationProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:205:  suggestionsProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:206:  synthesizeProvider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/providers.ts:207:  webSearchProvider?: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:8:import { ApiProviderSchema, ProviderOptionsSchema, ProvidersSchema } from '../validators/providers';
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:32:  ApiProvider,
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:36:  ProviderResponse,
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:47:    provider: ApiProvider,
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:210:  provider: ApiProvider;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:389:  response?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:421:  response?: ProviderResponse;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:515:export interface GradingResult {
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:590:  'agent-rubric',
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:626:  'llm-rubric',
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:720:  // Some assertions (similarity, llm-rubric, agent-rubric) require a grading provider
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:751:  provider: ApiProvider | undefined;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:752:  providerResponse: ProviderResponse | undefined;
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:755:  metadata?: ProviderResponse['metadata'];
-/home/entity/projects/promptfoo/promptfoo/src/types/index.ts:767:export interface AssertionParams […]
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:3:import type { MinimalApiProvider } from '../contracts/prompts';
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:8:  ProviderResponse,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:24:  ProviderResponse,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:30:export type ProviderFunction = ApiProvider['callApi'];
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:35:  | ApiProvider
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:38:export type ProvidersConfig = ProviderId | ProviderFunction | ApiProvider | ProviderConfig[];
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:50:export type ProviderTypeMap = Partial<Record<ProviderType, string | ProviderOptions | ApiProvider>>;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:56:  providerResponse?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:79:  originalProvider?: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:116:export interface ApiProvider extends MinimalApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:135:export interface ApiEmbeddingProvider extends ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:139:export interface ApiSimilarityProvider extends ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:143:export interface ApiClassificationProvider extends ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:147:export interface ApiModerationProvider extends ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:158:  ): Promise<ProviderResponse>;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:162:export function isApiProvider(provider: any): provider is ApiProvider {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:190:  providerResponse: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:191:  unalignedProviderResult?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:192:  redteamProviderResult?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:200:  embeddingProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:201:  gradingJsonProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:202:  gradingProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:203:  llmRubricProvider?: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:204:  moderationProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:205:  suggestionsProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:206:  synthesizeProvider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/providers.ts:207:  webSearchProvider?: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:8:import { ApiProviderSchema, ProviderOptionsSchema, ProvidersSchema } from '../validators/providers';
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:32:  ApiProvider,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:36:  ProviderResponse,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:47:    provider: ApiProvider,
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:210:  provider: ApiProvider;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:389:  response?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:421:  response?: ProviderResponse;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:515:export interface GradingResult {
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:590:  'agent-rubric',
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:626:  'llm-rubric',
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:720:  // Some assertions (similarity, llm-rubric, agent-rubric) require a grading provider
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:751:  provider: ApiProvider | undefined;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:752:  providerResponse: ProviderResponse | undefined;
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:755:  metadata?: ProviderResponse['metadata'];
+/home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts:767:export interface AssertionParams […]
 
 > AGENT
 
@@ -2134,7 +2134,7 @@ id: call_SnRkVtOQ9I1Smct0feuOo9uv
 ```json
 {
   "cmd": "rm -rf /tmp/agent-eval && git clone --depth=1 https://github.com/vercel-labs/agent-eval.git /tmp/agent-eval && git -C /tmp/agent-eval rev-parse HEAD && git -C /tmp/agent-eval status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2146,8 +2146,8 @@ tool_use exec_command
 id: call_v3P8RioCdSBCmfmvpLf1A5Jg
 ```json
 {
-  "cmd": "sed -n '500,660p' /home/entity/projects/promptfoo/promptfoo/src/types/index.ts && sed -n '700,810p' /home/entity/projects/promptfoo/promptfoo/src/types/index.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '500,660p' /home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts && sed -n '700,810p' /home/<USER>/projects/promptfoo/promptfoo/src/types/index.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2158,8 +2158,8 @@ tool_use exec_command
 id: call_vWNQRO4isEXXuwJN72hKtl5P
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/projects/promptfoo/promptfoo/src/matchers/agent.ts && sed -n '1,360p' /home/entity/projects/promptfoo/promptfoo/src/matchers/llmGrading.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/agent.ts && sed -n '1,360p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/llmGrading.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 40000
 }
 ```
@@ -2170,8 +2170,8 @@ tool_use exec_command
 id: call_jyZsmSJXDftGWemBKANe1NmL
 ```json
 {
-  "cmd": "sed -n '1,180p' /home/entity/projects/promptfoo/promptfoo/test/matchers/agent-rubric.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,180p' /home/<USER>/projects/promptfoo/promptfoo/test/matchers/agent-rubric.test.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 22000
 }
 ```
@@ -2413,8 +2413,8 @@ tool_use exec_command
 id: call_IZQOsd1MuKVdKePK5dyuEw1q
 ```json
 {
-  "cmd": "rg -n \"function runJsonGradingPrompt|export async function runJsonGradingPrompt|parse|threshold|graderFail|metadata|callProviderWithContext\" /home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts /home/entity/projects/promptfoo/promptfoo/src/matchers/shared.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "rg -n \"function runJsonGradingPrompt|export async function runJsonGradingPrompt|parse|threshold|graderFail|metadata|callProviderWithContext\" /home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts /home/<USER>/projects/promptfoo/promptfoo/src/matchers/shared.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 24000
 }
 ```
@@ -2425,8 +2425,8 @@ tool_use exec_command
 id: call_jEiQtbzM4MszaW4xn7CEJjJP
 ```json
 {
-  "cmd": "sed -n '1,340p' /home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts && sed -n '1,180p' /home/entity/projects/promptfoo/promptfoo/src/matchers/shared.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,340p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts && sed -n '1,180p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/shared.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 40000
 }
 ```
@@ -2437,8 +2437,8 @@ tool_use exec_command
 id: call_RGSb1o2rVwevA2RtDLqVtULb
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/entity/projects/promptfoo/promptfoo/src/providers/agentic-utils.ts && rg -n \"isAgenticProvider|agentic|codex-sdk|claude-agent-sdk|opencode\" /home/entity/projects/promptfoo/promptfoo/src/providers -g'*.ts' | head -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,220p' /home/<USER>/projects/promptfoo/promptfoo/src/providers/agentic-utils.ts && rg -n \"isAgenticProvider|agentic|codex-sdk|claude-agent-sdk|opencode\" /home/<USER>/projects/promptfoo/promptfoo/src/providers -g'*.ts' | head -120",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 24000
 }
 ```
@@ -2450,7 +2450,7 @@ id: call_IcHSC4y2oSmrFQfcLutdpuzR
 ```json
 {
   "cmd": "rg -n \"agentic|grader|judge|llm|eval|score|verify|structured|json|generateObject|zod|schema|pass|reason|rubric\" /tmp/agent-eval | head -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2465,32 +2465,32 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1445
 Output:
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:12:import { parseFileUrl } from '../util/functions/loadFunction';
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:16:import { callProviderWithContext, getAndCheckProvider } from './providers';
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:17:import { graderFail, normalizeMatcherTokenUsage } from './shared';
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:80:    const { filePath, functionName } = parseFileUrl(renderedFilePath);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:89:      // would fail to parse before rendering.
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:146:    const parsed = JSON.parse(rubricPrompt, (_k, v) =>
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:149:    return JSON.stringify(parsed);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:220:    const [metadata, rawPayload] = trimmed.split(',', 2);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:221:    if (!rawPayload || !metadata.toLowerCase().includes(';base64')) {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:226:    if (!metadata.toLowerCase().startsWith('data:image/')) {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:230:    normalizedMimeType = metadata.slice('data:'.length).split(';', 1)[0].trim();
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:667:  let parsed: ChatMessageLike[] | undefined;
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:671:      parsed = yaml.load(renderedPrompt) as ChatMessageLike[] | undefined;
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:679:      parsed = JSON.parse(renderedPrompt);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:684:  if (isChatMessageArray(parsed)) {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:685:    const messages = parsed.map((message) => ({ ...message }));
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:737:function parseJsonGradingResponse(
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:740:): { parsed?: Partial<GradingResult>; failure?: Omit<GradingResult, 'assertion'> } {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:741:  const failWithTokens = (reason: string) => graderFail(reason, resp.tokenUsage);
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:769:  const parsed = jsonObjects[0];
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:770:  if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:773:        `${label} produced malformed response. We were not able to parse the response as JSON. Output: ${JSON.stringify(resp.output)}`,
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:778:  return { parsed: parsed as Partial<GradingResult> };
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:781:export async function runJsonGradingPrompt({
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:819:  const resp = await callProviderWithContext(
-/home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts:830:    return graderFail(resp.error || 'No output', […]
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:12:import { parseFileUrl } from '../util/functions/loadFunction';
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:16:import { callProviderWithContext, getAndCheckProvider } from './providers';
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:17:import { graderFail, normalizeMatcherTokenUsage } from './shared';
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:80:    const { filePath, functionName } = parseFileUrl(renderedFilePath);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:89:      // would fail to parse before rendering.
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:146:    const parsed = JSON.parse(rubricPrompt, (_k, v) =>
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:149:    return JSON.stringify(parsed);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:220:    const [metadata, rawPayload] = trimmed.split(',', 2);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:221:    if (!rawPayload || !metadata.toLowerCase().includes(';base64')) {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:226:    if (!metadata.toLowerCase().startsWith('data:image/')) {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:230:    normalizedMimeType = metadata.slice('data:'.length).split(';', 1)[0].trim();
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:667:  let parsed: ChatMessageLike[] | undefined;
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:671:      parsed = yaml.load(renderedPrompt) as ChatMessageLike[] | undefined;
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:679:      parsed = JSON.parse(renderedPrompt);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:684:  if (isChatMessageArray(parsed)) {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:685:    const messages = parsed.map((message) => ({ ...message }));
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:737:function parseJsonGradingResponse(
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:740:): { parsed?: Partial<GradingResult>; failure?: Omit<GradingResult, 'assertion'> } {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:741:  const failWithTokens = (reason: string) => graderFail(reason, resp.tokenUsage);
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:769:  const parsed = jsonObjects[0];
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:770:  if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:773:        `${label} produced malformed response. We were not able to parse the response as JSON. Output: ${JSON.stringify(resp.output)}`,
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:778:  return { parsed: parsed as Partial<GradingResult> };
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:781:export async function runJsonGradingPrompt({
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:819:  const resp = await callProviderWithContext(
+/home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts:830:    return graderFail(resp.error || 'No output', […]
 
 > TOOL
 
@@ -2681,7 +2681,7 @@ id: call_YJG9NTZgCNHeIpbbPs8sN88U
 ```json
 {
   "cmd": "rg --files /tmp/agent-eval/packages/agent-eval/src | rg 'judge|eval|matcher|validation|vitest|agent|sandbox|transcript|criterion|score'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -2693,7 +2693,7 @@ id: call_ZUd6aJ9RXbW1dhOlBrwgMlMQ
 ```json
 {
   "cmd": "rg -n \"judge|toSatisfyCriterion|toScoreAtLeast|environment|transcript|criterion|score|same agent|validation\" /tmp/agent-eval/packages/agent-eval/src /tmp/agent-eval/packages/agent-eval/test /tmp/agent-eval/README.md | head -300",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2705,7 +2705,7 @@ id: call_w3PbGG9DtNRwOsZMjz41TzU3
 ```json
 {
   "cmd": "sed -n '160,225p' /tmp/agent-eval/README.md && sed -n '288,304p' /tmp/agent-eval/README.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 16000
 }
 ```
@@ -2717,7 +2717,7 @@ id: call_lsDv2mwneRQHUdANN8frGprM
 ```json
 {
   "cmd": "find /tmp/agent-eval/packages/agent-eval/src -maxdepth 4 -type f | sort | sed -n '1,220p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -2935,7 +2935,7 @@ id: call_lq17v0mBSVBTh45HrLIULEkE
 ```json
 {
   "cmd": "sed -n '1,260p' /tmp/agent-eval/packages/agent-eval/src/lib/agents/eval-helper.mjs",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -2947,7 +2947,7 @@ id: call_GiBu9c9dakU946GdvmymdHp9
 ```json
 {
   "cmd": "sed -n '1,320p' /tmp/agent-eval/packages/agent-eval/src/lib/agents/shared.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -2959,7 +2959,7 @@ id: call_qvL7YioDOsS063rcbrOFGRRf
 ```json
 {
   "cmd": "sed -n '80,180p' /tmp/agent-eval/packages/agent-eval/src/lib/types.ts && sed -n '40,100p' /tmp/agent-eval/packages/agent-eval/src/lib/config.ts && sed -n '180,250p' /tmp/agent-eval/packages/agent-eval/src/lib/fingerprint.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 26000
 }
 ```
@@ -2971,7 +2971,7 @@ id: call_0LuOKIDNiOwUDedYQqpDQdRp
 ```json
 {
   "cmd": "sed -n '300,425p' /tmp/agent-eval/packages/agent-eval/src/integration.test.ts && sed -n '1,260p' /tmp/agent-eval/packages/agent-eval/src/lib/agents/eval-helper.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -3167,8 +3167,8 @@ tool_use exec_command
 id: call_6wEMCitJ7miqJV6F7jHb49s3
 ```json
 {
-  "cmd": "sed -n '720,890p' /home/entity/projects/promptfoo/promptfoo/src/matchers/rubric.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '720,890p' /home/<USER>/projects/promptfoo/promptfoo/src/matchers/rubric.ts",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 22000
 }
 ```
@@ -3248,7 +3248,7 @@ id: call_8VLqO5lhiG0dRCoxIERFkQAu
 ```json
 {
   "cmd": "rg -n \"llm-rubric|g-eval|grader|GradingResult|defineScriptGrader|script grader|structured|json|assertion\" packages apps plugins examples docs CONCEPTS.md | head -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -3260,7 +3260,7 @@ id: call_FSHH8jEnaDzazbrtfZfeQHSg
 ```json
 {
   "cmd": "rg --files packages apps plugins examples docs | rg 'grader|assert|eval|schema|types|config|yaml' | head -220",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -3272,7 +3272,7 @@ id: call_RVH8Agn8CP7wM699QxELiPzO
 ```json
 {
   "cmd": "bd show av-l4pl --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -3284,7 +3284,7 @@ id: call_qyDri3whfEpKvhX5ivcBsCFw
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:3 -p -S -180",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -3521,7 +3521,7 @@ METADATA
   branch: main
   machine: entity-vps
   worker: codex-main
-  worktree: /home/entity/projects/EntityProcess/agentv
+  worktree: /home/<USER>/projects/EntityProcess/agentv
 
 
 ```
@@ -3551,7 +3551,7 @@ Output:
 • You have 3 usage limit resets available. Run /usage to use one.
 
 
-› You are a research-only worker in /home/entity/projects/EntityProcess/agentv.
+› You are a research-only worker in /home/<USER>/projects/EntityProcess/agentv.
 
   Goal: research agent grader patterns for AgentV. Do not edit tracked files. Do not run bun install, builds, tests, or evals. Inspect source, docs, and git metadata only.
 
@@ -3561,7 +3561,7 @@ Output:
   - If you identify concrete AgentV follow-up work, report it to the coordinator; do not create Beads yourself unless explicitly instructed later.
 
   Research questions:
-  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/entity/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
+  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/<USER>/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
 
 > AGENT
 
@@ -3574,7 +3574,7 @@ id: call_xJeXHdzosbO8hMrd4oM62baE
 ```json
 {
   "cmd": "rg -n \"type: llm-rubric|llm-rubric|g-eval|script|code-grader|defineScriptGrader|GraderResult|assertions\" packages/core/src packages/sdk/src apps/cli/src apps/web/src/content/docs/docs/v4.42.4/graders plugins/agentv-dev 2>/dev/null | head -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -3586,7 +3586,7 @@ id: call_zpzTrRztMjQ31lFSXrOmeUNZ
 ```json
 {
   "cmd": "rg --files packages/core/src packages/sdk/src apps/cli/src | rg 'grader|grading|assert|yaml|parser|types'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 22000
 }
 ```
@@ -3598,7 +3598,7 @@ id: call_u146uAGpQrLTXbE30FsWdHds
 ```json
 {
   "cmd": "sed -n '1,240p' packages/core/src/evaluation/graders/types.ts && sed -n '1,260p' packages/core/src/evaluation/graders/llm-grader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -3610,7 +3610,7 @@ id: call_XGjAHcMy9efqbE5HEB79rJpG
 ```json
 {
   "cmd": "sed -n '1,260p' packages/core/src/evaluation/loaders/grader-parser.ts && sed -n '1,220p' packages/core/src/evaluation/graders/code-grader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -3846,7 +3846,7 @@ id: call_ZIFhi5mOF01T041JaxR8RHDu
 ```json
 {
   "cmd": "rg -n \"DEFAULT_MAX_STEPS|agent|filesystem|tool|readFile|search|steps|agent mode|maxSteps|isAgentProvider|isAgent\" packages/core/src/evaluation/graders/llm-grader.ts | head -220",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 24000
 }
 ```
@@ -3858,7 +3858,7 @@ id: call_qj0QCrivyFhijQQqrbg4hVu8
 ```json
 {
   "cmd": "sed -n '240,620p' packages/core/src/evaluation/graders/llm-grader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 42000
 }
 ```
@@ -3870,7 +3870,7 @@ id: call_RZjQYqdEI6BuzdQ5VnP2Gme5
 ```json
 {
   "cmd": "sed -n '620,1040p' packages/core/src/evaluation/graders/llm-grader.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 42000
 }
 ```
@@ -3882,7 +3882,7 @@ id: call_XThgzkaCEHaZyefrYvopG6xs
 ```json
 {
   "cmd": "rg -n \"agent-rubric|llm-rubric|unsupported|future scope|agent grader|maxSteps|max_steps|grader_target|graderTarget|llm-grader\" packages/core/test packages/core/src apps/web/src/content/docs/docs/v4.42.4 examples plugins/agentv-dev 2>/dev/null | head -300",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 36000
 }
 ```
@@ -4079,7 +4079,7 @@ id: call_RSTpwzEWiaieGsmbg7vpTx0o
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:3 -p -S -240",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -4110,7 +4110,7 @@ Output:
 • You have 3 usage limit resets available. Run /usage to use one.
 
 
-› You are a research-only worker in /home/entity/projects/EntityProcess/agentv.
+› You are a research-only worker in /home/<USER>/projects/EntityProcess/agentv.
 
   Goal: research agent grader patterns for AgentV. Do not edit tracked files. Do not run bun install, builds, tests, or evals. Inspect source, docs, and git metadata only.
 
@@ -4120,7 +4120,7 @@ Output:
   - If you identify concrete AgentV follow-up work, report it to the coordinator; do not create Beads yourself unless explicitly instructed later.
 
   Research questions:
-  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/entity/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
+  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/<USER>/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. […]
 
 > AGENT
 
@@ -4137,7 +4137,7 @@ id: call_oKWhvUrdckcwddO3YQIF60W3
 ```json
 {
   "cmd": "tmux send-keys -t agentv:3 -l \"Repo name correction: GitHub search and direct clone show the public repo is vercel-labs/agent-eval (singular), not vercel-labs/agent-evals. Continue with https://github.com/vercel-labs/agent-eval and cite the checked commit/source paths. Keep report concise.\" && tmux send-keys -t agentv:3 Enter",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4166,8 +4166,8 @@ tool_use exec_command
 id: call_EM5fcMgSB2oLHVtabliHUpqv
 ```json
 {
-  "cmd": "bd update av-l4pl --append-notes \"Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript sentinels and Vitest matchers, builds a skeptical judge prompt, spawns the agent runner in the same sandbox, prefers verdict JSON file then runner output/stdout, and returns pass/score/reason; README documents pinned judge config. AgentV already has agent-backed llm-grader/llm-rubric paths in packages/core/src/evaluation/graders/llm-grader.ts (built-in agent mode for agentv provider, delegated agent provider mode, grader target mode), but parser/validator currently reject promptfoo agent-rubric as future scope. Pattern to copy: agent execution may inspect workspace/transcript, but final grader contract should remain structured JSON/EvaluationScore.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-l4pl --append-notes \"Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript sentinels and Vitest matchers, builds a skeptical judge prompt, spawns the agent runner in the same sandbox, prefers verdict JSON file then runner output/stdout, and returns pass/score/reason; README documents pinned judge config. AgentV already has agent-backed llm-grader/llm-rubric paths in packages/core/src/evaluation/graders/llm-grader.ts (built-in agent mode for agentv provider, delegated agent provider mode, grader target mode), but parser/validator currently reject promptfoo agent-rubric as future scope. Pattern to copy: agent execution may inspect workspace/transcript, but final grader contract should remain structured JSON/EvaluationScore.\" --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4180,7 +4180,7 @@ id: call_XtyvFp7WD5mzl8ZnmoqJzaTA
 ```json
 {
   "cmd": "bd create --title=\"docs: document agent-backed grader pattern\" --description=\"AgentV already supports agent-backed grading through the existing llm-grader/llm-rubric contract when the grader provider or explicit grader target resolves to an agent provider. Research against Promptfoo agent-rubric and Vercel agent-eval shows agent graders still finish by returning structured pass/score/reason-style JSON; the distinction is that the grader is allowed to inspect workspace/transcript evidence before producing the same structured result. Update public docs and AI-facing eval-authoring guidance so users understand how to configure this in AgentV without expecting a separate unstructured agent-grader result contract.\" --type=task --priority=2 --acceptance=\"Docs show an AgentV YAML example for an agent-backed llm-grader or llm-rubric using an explicit grader target/provider; docs state that agent graders must return the normal structured EvaluationScore JSON; docs explain workspace/transcript evidence and step-budget behavior; docs cite or paraphrase the Promptfoo/Vercel pattern without making their schemas authoritative; AI-facing guidance for eval authoring is updated if it currently implies only plain LLM graders exist.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4193,7 +4193,7 @@ id: call_rrCsoXIp6dYmGug2OIIGmOiU
 ```json
 {
   "cmd": "bd create --title=\"decision: handle Promptfoo agent-rubric compatibility\" --description=\"AgentV currently rejects Promptfoo assertion type agent-rubric as future scope in packages/core/src/evaluation/loaders/grader-parser.ts and validation paths. Promptfoo now has a concrete agent-rubric assertion that requires an agentic grading provider but reuses the same structured JSON grading result. Decide whether AgentV should accept agent-rubric as a compatibility alias/composition over existing llm-rubric/llm-grader agent-backed modes, or keep rejecting it and document the intentional divergence. Keep the decision aligned with AgentV's product boundary: peer frameworks are evidence, not schema authority, and existing primitives should be preferred when composition is enough.\" --type=decision --priority=2 --acceptance=\"Decision records whether agent-rubric should be supported as an alias/composition or remain unsupported; rationale references Promptfoo local commit 6bfc5a0/origin 85aaf62 and Vercel agent-eval commit 1d1f4f60; if accepted, follow-up implementation scope covers parser, validator, docs, examples, focused tests, and live dogfood; if rejected, error/help docs explain the supported AgentV pattern using llm-rubric/llm-grader with an agent grader target.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4215,7 +4215,7 @@ Output:
     "title": "research: compare agent grader patterns across Promptfoo and Vercel agent-evals",
     "description": "Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.",
     "acceptance_criteria": "Research cites local clone commits or official source URLs; conclusions distinguish Promptfoo behavior from Vercel agent-evals behavior; any actionable AgentV follow-ups are created as Beads with self-contained scope and acceptance criteria.",
-    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
+    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
 
 > TOOL
 
@@ -4234,7 +4234,7 @@ Output:
   "description": "AgentV already supports agent-backed grading through the existing llm-grader/llm-rubric contract when the grader provider or explicit grader target resolves to an agent provider. Research against Promptfoo agent-rubric and Vercel agent-eval shows agent graders still finish by returning structured pass/score/reason-style JSON; the distinction is that the grader is allowed to inspect workspace/transcript evidence before producing the same structured result. Update public docs and AI-facing eval-authoring guidance so users understand how to configure this in AgentV without expecting a separate unstructured agent-grader result contract.",
   "id": "av-jbi9",
   "issue_type": "task",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 2,
   "schema_version": 1,
   "status": "open",
@@ -4261,7 +4261,7 @@ Output:
   "description": "AgentV currently rejects Promptfoo assertion type agent-rubric as future scope in packages/core/src/evaluation/loaders/grader-parser.ts and validation paths. Promptfoo now has a concrete agent-rubric assertion that requires an agentic grading provider but reuses the same structured JSON grading result. Decide whether AgentV should accept agent-rubric as a compatibility alias/composition over existing llm-rubric/llm-grader agent-backed modes, or keep rejecting it and document the intentional divergence. Keep the decision aligned with AgentV's product boundary: peer frameworks are evidence, not schema authority, and existing primitives should be preferred when composition is enough.",
   "id": "av-aw6m",
   "issue_type": "decision",
-  "owner": "christso@gmail.com",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 2,
   "schema_version": 1,
   "status": "open",
@@ -4282,7 +4282,7 @@ id: call_dBMtxP2TMgfBLxqhyVRpwrsV
 ```json
 {
   "cmd": "tmux capture-pane -t agentv:3 -p -S -260",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -4306,7 +4306,7 @@ Output:
   - If you identify concrete AgentV follow-up work, report it to the coordinator; do not create Beads yourself unless explicitly instructed later.
 
   Research questions:
-  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/entity/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. Explain how agent-rubric differs from llm-
+  1. Promptfoo: Does Promptfoo have "agent graders" or equivalent? Verify in the local clone at /home/<USER>/projects/promptfoo/promptfoo. Check exact source files, tests, docs, and the local clone commit. Explain how agent-rubric differs from llm-
   rubric and how it returns structured grading results.
   2. Vercel Labs agent-evals: Inspect the public vercel-labs/agent-evals repo. If no local clone exists, use GitHub/source download or DeepWiki, then verify exact code/source URLs. Find the "agentic LLM grader" implementation and explain how it works,
   what it returns, and how structured output is enforced or normalized.
@@ -4323,7 +4323,7 @@ id: call_hr10kOIUFcvp5zMkxtl0pbl8
 ```json
 {
   "cmd": "sleep 20; tmux capture-pane -t agentv:3 -p -S -220",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4371,7 +4371,7 @@ id: call_wor5UgzVdF32GV3TL6hQSL8L
 ```json
 {
   "cmd": "sleep 30; tmux capture-pane -t agentv:3 -p -S -240",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4422,7 +4422,7 @@ id: call_XOvBWEXRVLuBYOn7mLbZ9Erx
 ```json
 {
   "cmd": "tmux send-keys -t agentv:3 C-c && sleep 1 && tmux send-keys -t agentv:3 -l \"Stop further source inspection and produce the concise final research report now from the evidence already gathered. Include Promptfoo yes/no, Vercel singular repo correction, structured JSON return mechanics, AgentV implications, and proposed Beads av-jbi9 and av-aw6m already created by coordinator.\" && tmux send-keys -t agentv:3 Enter",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -4448,7 +4448,7 @@ id: call_yDFK4uBOEUzQnXxyaT4jCok7
 ```json
 {
   "cmd": "sleep 10; tmux capture-pane -t agentv:3 -p -S -160",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4507,7 +4507,7 @@ id: call_Do3Qnu5AzTwKQNgfv4RnAIKG
 ```json
 {
   "cmd": "tmux send-keys -t agentv:3 Escape && sleep 2 && tmux capture-pane -t agentv:3 -p -S -80",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -4564,7 +4564,7 @@ id: call_6MYCc6q1zx3B1vxW9wEjtoh8
 ```json
 {
   "cmd": "tmux send-keys -t agentv:3 Enter && sleep 20 && tmux capture-pane -t agentv:3 -p -S -180",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4621,7 +4621,7 @@ id: call_0sBmDoHu7c2bgx3ZBdUbQz9b
 ```json
 {
   "cmd": "sleep 12; tmux capture-pane -t agentv:3 -p -S -120",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -4681,7 +4681,7 @@ id: call_YpKgZSXg0O43ZmdIuhubZfpR
 ```json
 {
   "cmd": "bd close av-l4pl --reason=\"Research complete. Promptfoo agent-rubric and Vercel agent-eval agentic judge patterns were inspected with source commits recorded; follow-up Beads av-jbi9 and av-aw6m were created for docs and compatibility decision work.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4694,7 +4694,7 @@ id: call_OKEQucdVpOB04JBz5pJSsh0T
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4706,7 +4706,7 @@ id: call_nk1qG2uYqMuVboZXFfuiAtE0
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4717,8 +4717,8 @@ tool_use exec_command
 id: call_xWDlZ4s0dSEzp4k7cw9BJ11L
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/grader-research status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/grader-research status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4730,7 +4730,7 @@ id: call_Tv9IX3wfTav1QqnUs4oZpIaX
 ```json
 {
   "cmd": "bd show av-jbi9 --long && bd show av-aw6m --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -4751,7 +4751,7 @@ Output:
     "title": "research: compare agent grader patterns across Promptfoo and Vercel agent-evals",
     "description": "Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.",
     "acceptance_criteria": "Research cites local clone commits or official source URLs; conclusions distinguish Promptfoo behavior from Vercel agent-evals behavior; any actionable AgentV follow-ups are created as Beads with self-contained scope and acceptance criteria.",
-    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
+    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
 
 > TOOL
 
@@ -4833,7 +4833,7 @@ id: call_TTcqZR6p4b5yDQsiRks80PGj
 ```json
 {
   "cmd": "workmux remove --help || workmux rm --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -4875,7 +4875,7 @@ id: call_D4J0ugSEf6mFfMMWnMhFKGRw
 ```json
 {
   "cmd": "workmux remove grader-research -f",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -4906,7 +4906,7 @@ id: call_gIJCsIK7aE2D2RALjkpRQdsr
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4918,7 +4918,7 @@ id: call_0uOnRMvolIrOUh8FUSLl9wCC
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 12000
 }
 ```
@@ -4930,7 +4930,7 @@ id: call_kD71QWSrJ0jnMp4iZ7fENY1y
 ```json
 {
   "cmd": "bd list --status=in_progress --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 20000
 }
 ```
@@ -4942,7 +4942,7 @@ id: call_ua4EZjTJBUwAjCp2H2kHouJN
 ```json
 {
   "cmd": "bd show av-l4pl --long && bd show av-jbi9 --long && bd show av-aw6m --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "max_output_tokens": 30000
 }
 ```
@@ -4998,7 +4998,7 @@ Total output lines: 353
     "title": "Make Dashboard test rows open full-page case detail and debug WTG quality failure",
     "description": "User found the WTG dogfood case-detail screenshot worse than desired because clicking a test row leaves a row-detail style view instead of making the test case the full page. Also investigate why the WTG AI prompts experiment dogfood dropped to 0% quality after updating to latest AgentV, distinguishing UI/AgentV regressions from WTG eval or target changes.",
     "acceptance_criteria": "Clicking a test row in Dashboard automatically navigates into a full-page test case detail view instead of leaving the case as a secondary row-detail panel. The WTG quality failure is investigated from the run artifacts/transcripts with a clear root-cause summary and any necessary fixes scoped to the correct repo. Focused Dashboard validation and browser UAT are completed, with screenshot evidence published privately if screenshots are captured.",
-    "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.\nImplemented Dashboard result-row […]
+    "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.\nImplemented Dashboard result-row […]
 
 > TOOL
 
@@ -5019,7 +5019,7 @@ DESCRIPTION
 Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.
 
 NOTES
-Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text […]
+Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text […]
 
 > AGENT
 
@@ -5032,7 +5032,7 @@ id: call_5xCJQ32EIAzpTeQdZjTveLHK
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 2000
 }
@@ -5045,7 +5045,7 @@ id: call_3kLIT4nHlhyzXdXzA7wKOhiE
 ```json
 {
   "cmd": "workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 3000
 }
@@ -5058,7 +5058,7 @@ id: call_d0MCKeFb9k0YMklOtcJ5jMwT
 ```json
 {
   "cmd": "bd show av-l4pl --json && bd show av-jbi9 --json && bd show av-aw6m --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -5112,7 +5112,7 @@ Output:
     "title": "research: compare agent grader patterns across Promptfoo and Vercel agent-evals",
     "description": "Research whether Promptfoo supports agent graders and how structured results are returned, then inspect Vercel Labs agent-evals agentic LLM grader patterns. Summarize patterns AgentV can copy without expanding core beyond repo-native grader primitives. Create follow-up Beads only for actionable implementation or documentation work identified by the research.",
     "acceptance_criteria": "Research cites local clone commits or official source URLs; conclusions distinguish Promptfoo behavior from Vercel agent-evals behavior; any actionable AgentV follow-ups are created as Beads with self-contained scope and acceptance criteria.",
-    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/entity/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
+    "notes": "Research interim conclusion: Promptfoo does have agent graders via the agent-rubric assertion. Verified local clone /home/<USER>/projects/promptfoo/promptfoo at 6bfc5a0c7f16f9c4717ac731d276b578e63d0769; fetched origin/main 85aaf62c7c59c735961ac928c43490a83583a3de and key agent-rubric matcher/docs paths were unchanged except shared rubric/types files. Key paths: src/assertions/agentRubric.ts calls matchesAgentRubric; src/matchers/agent.ts requires an agentic provider and delegates to runJsonGradingPrompt; src/matchers/rubric.ts parses JSON into pass/score/reason/tokens/metadata; test/matchers/agent-rubric.test.ts covers Codex default, explicit Claude Agent SDK, rejection of plain text graders, and threshold behavior. Vercel repo is singular vercel-labs/agent-eval, not agent-evals; cloned /tmp/agent-eval at 1d1f4f60b290d1ca3fac00afe07f3db231f00afd. Key paths: packages/agent-eval/src/lib/agents/eval-helper.mjs implements environment/transcript […]
 
 > AGENT
 

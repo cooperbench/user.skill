@@ -1199,7 +1199,7 @@ SANDCASTLE_GID=${gid}
 # ─── Network & TLS ──────────────────────────────────────────────────────────
 SANDCASTLE_HOST=${host}
 SANDCASTLE_TLS_MODE=${tls_mode}
-#ACME_EMAIL=admin@example.com
+#ACME_EMAIL=<REDACTED_EMAIL>
 SANDCASTLE_HTTP_PORT=${http_port}
 SANDCASTLE_HTTPS_PORT=${https_port}
 

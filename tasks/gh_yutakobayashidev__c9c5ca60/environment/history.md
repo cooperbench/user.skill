@@ -34,7 +34,7 @@ tool_use Read
 id: toolu_01VBPTUn9qkLACJmSV5d2rfs
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
 }
 ```
 
@@ -156,7 +156,7 @@ id: toolu_017XroZZLXgi6THCDsgkSm8P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "    taps = [\n      \"manaflow-ai/cmux\"\n      \"trasta298/tap\"\n    ];",
   "new_string": "    taps = [\n      \"blacktop/tap\"\n      \"manaflow-ai/cmux\"\n      \"trasta298/tap\"\n    ];"
 }
@@ -167,7 +167,7 @@ id: toolu_017XroZZLXgi6THCDsgkSm8P
 tool_result
 id: toolu_017XroZZLXgi6THCDsgkSm8P
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > TOOL
@@ -177,7 +177,7 @@ id: toolu_01TCwUpKA3khaeSRLJGA1qUc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix",
   "old_string": "    brews = [\n      \"mas\"\n      \"trasta298/tap/keifu\"",
   "new_string": "    brews = [\n      \"blacktop/tap/ipsw\"\n      \"mas\"\n      \"trasta298/tap/keifu\""
 }
@@ -188,7 +188,7 @@ id: toolu_01TCwUpKA3khaeSRLJGA1qUc
 tool_result
 id: toolu_01TCwUpKA3khaeSRLJGA1qUc
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix has been updated successfully.
 ```
 
 > AGENT

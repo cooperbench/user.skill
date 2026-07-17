@@ -251,7 +251,7 @@ tool_use Read
 id: toolu_01EDPF3baQHgyv1mQfVWpnKv
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/epic-3-retro-2026-05-27.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/epic-3-retro-2026-05-27.md"
 }
 ```
 
@@ -377,7 +377,7 @@ tool_use Read
 id: toolu_01PcK2YopTMhKbKWL7zQTYAM
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/planning-artifacts/epics.md",
   "offset": 898,
   "limit": 120
 }
@@ -790,7 +790,7 @@ tool_use Bash
 id: toolu_012psG7Tg4YXQzZmEoppquvg
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"===== 1. Campaign state schema: additionalProperties + top-level keys =====\"\npython3 -c \"\nimport json\ns=json.load(open('src/skf-campaign/assets/campaign-state-schema.json'))\ndef walk(node,path='root'):\n    if isinstance(node,dict):\n        if 'additionalProperties' in node:\n            print(f'{path}: additionalProperties={node[\\\"additionalProperties\\\"]}')\n        if 'properties' in node:\n            print(f'{path} props: {list(node[\\\"properties\\\"].keys())}')\n        for k,v in node.get('properties',{}).items():\n            walk(v,path+'.'+k)\n        if 'items' in node: walk(node['items'],path+'[]')\nwalk(s)\n\" 2>&1 | head -40\necho \"\"\necho \"===== 2. PENDING VALIDATION markers still in tree =====\"\ngrep -rl \"PENDING VALIDATION\" src/ 2>/dev/null | head; echo \"count: $(grep -rc 'PENDING VALIDATION' src/ 2>/dev/null | grep -v ':0' | wc -l) files\"\necho \"\"\necho \"===== 3. docs/workflows.md quality-gate / hard-gate mentions =====\"\ngrep -ic \"hard gate\\|hard-gate\\|quality gate\\|evidence report\" docs/workflows.md 2>/dev/null\necho \"===== 3b. docs/skill-model.md doc_sources =====\"\ngrep -ic \"doc_sources\" docs/skill-model.md 2>/dev/null; ls docs/skill-model.md 2>/dev/null || echo \"(no skill-model.md)\"\necho \"\"\necho \"===== 4. step-auto-scope.md size =====\"\nwc -l src/*/references/step-auto-scope.md 2>/dev/null\necho \"\"\necho \"===== 5. Python version (fallback TOML relevance) =====\"\npython3 --version; python3 -c \"import sys; print('tomllib available:', sys.version_info >= (3,11))\"\necho \"\"\necho \"===== 6. campaign-directive-spec.md cross-references from other campaign docs =====\"\ngrep -rl \"campaign-directive-spec\" src/skf-campaign/ docs/ 2>/dev/null\necho \"\"\necho \"===== 7. brief template: architecture + depends_on placeholder =====\"\ngrep -n \"architecture\\|depends_on\\|<\\|placeholder\\|REPLACE\\|TODO\" src/skf-campaign/templates/campaign-brief-template.yaml 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"===== 1. Campaign state schema: additionalProperties + top-level keys =====\"\npython3 -c \"\nimport json\ns=json.load(open('src/skf-campaign/assets/campaign-state-schema.json'))\ndef walk(node,path='root'):\n    if isinstance(node,dict):\n        if 'additionalProperties' in node:\n            print(f'{path}: additionalProperties={node[\\\"additionalProperties\\\"]}')\n        if 'properties' in node:\n            print(f'{path} props: {list(node[\\\"properties\\\"].keys())}')\n        for k,v in node.get('properties',{}).items():\n            walk(v,path+'.'+k)\n        if 'items' in node: walk(node['items'],path+'[]')\nwalk(s)\n\" 2>&1 | head -40\necho \"\"\necho \"===== 2. PENDING VALIDATION markers still in tree =====\"\ngrep -rl \"PENDING VALIDATION\" src/ 2>/dev/null | head; echo \"count: $(grep -rc 'PENDING VALIDATION' src/ 2>/dev/null | grep -v ':0' | wc -l) files\"\necho \"\"\necho \"===== 3. docs/workflows.md quality-gate / hard-gate mentions =====\"\ngrep -ic \"hard gate\\|hard-gate\\|quality gate\\|evidence report\" docs/workflows.md 2>/dev/null\necho \"===== 3b. docs/skill-model.md doc_sources =====\"\ngrep -ic \"doc_sources\" docs/skill-model.md 2>/dev/null; ls docs/skill-model.md 2>/dev/null || echo \"(no skill-model.md)\"\necho \"\"\necho \"===== 4. step-auto-scope.md size =====\"\nwc -l src/*/references/step-auto-scope.md 2>/dev/null\necho \"\"\necho \"===== 5. Python version (fallback TOML relevance) =====\"\npython3 --version; python3 -c \"import sys; print('tomllib available:', sys.version_info >= (3,11))\"\necho \"\"\necho \"===== 6. campaign-directive-spec.md cross-references from other campaign docs =====\"\ngrep -rl \"campaign-directive-spec\" src/skf-campaign/ docs/ 2>/dev/null\necho \"\"\necho \"===== 7. brief template: architecture + depends_on placeholder =====\"\ngrep -n \"architecture\\|depends_on\\|<\\|placeholder\\|REPLACE\\|TODO\" src/skf-campaign/templates/campaign-brief-template.yaml 2>/dev/null | head -20",
   "description": "Re-validate all debt items against current tree"
 }
 ```
@@ -868,7 +868,7 @@ tool_use Read
 id: toolu_01LNocY5CJrn1CUp9fL9TeNM
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/assets/campaign-state-schema.json"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/assets/campaign-state-schema.json"
 }
 ```
 
@@ -952,7 +952,7 @@ id: toolu_01QjXYTVQhMcdTGS8aP3xKoW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/assets/campaign-state-schema.json",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/assets/campaign-state-schema.json",
   "old_string": "        \"health_findings_queue\": {\n          \"type\": \"string\",\n          \"enum\": [\"local\", \"improvement\"]\n        }\n      }\n    },",
   "new_string": "        \"health_findings_queue\": {\n          \"type\": \"string\",\n          \"enum\": [\"local\", \"improvement\"]\n        },\n        \"architecture_doc_path\": {\n          \"type\": [\"string\", \"null\"],\n          \"description\": \"Path to the architecture document consumed by the verify (Stage 7) and refine (Stage 8) stages. Sourced at setup; null when the campaign runs no verification.\"\n        },\n        \"capstone\": {\n          \"type\": [\"object\", \"null\"],\n          \"additionalProperties\": false,\n          \"description\": \"Tier-B capstone (stack) outcome. Campaign-level summary; the composed skill itself lives at skill_path.\",\n          \"properties\": {\n            \"skill_path\": {\n              \"type\": [\"string\", \"null\"]\n            },\n            \"quality_score\": {\n              \"type\": [\"number\", \"null\"]\n            },\n            \"verified\": {\n              \"type\": [\"boolean\", \"null\"]\n            },\n            \"completed_at\": {\n              \"type\": [\"string\", \"null\"],\n              \"format\": \"date-time\"\n            }\n          }\n        },\n        \"verification\": {\n          \"type\": [\"object\", \"null\"],\n          \"additionalProperties\": false,\n          \"description\": \"Stage 7 verify-stack summary. Detailed findings live in the external report at report_path.\",\n          \"properties\": {\n            \"report_path\": {\n              \"type\": [\"string\", \"null\"]\n            },\n            \"overall_verdict\": {\n              \"type\": [\"string\", \"null\"],\n              \"enum\": [\"Verified\", \"Plausible\", \"Risky\", \"Blocked\", null]\n            },\n            \"coverage_percentage\": {\n              \"type\": [\"number\", \"null\"]\n            },\n            \"recommendation_count\": {\n              \"type\": [\"integer\", \"null\"]\n            }\n          }\n        },\n        \"refinement\": {\n          \"type\": [\"object\", \"null\"],\n          \"additionalProperties\": false,\n          \"description\": \"Stage 8 refine-architecture summary. The refined document lives at refined_path.\",\n          \"properties\": {\n            \"refined_path\": {\n              \"type\": [\"string\", \"null\"]\n            },\n            \"gap_count\": {\n              \"type\": […]
 
@@ -961,7 +961,7 @@ id: toolu_01QjXYTVQhMcdTGS8aP3xKoW
 tool_result
 id: toolu_01QjXYTVQhMcdTGS8aP3xKoW
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/assets/campaign-state-schema.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/assets/campaign-state-schema.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -996,7 +996,7 @@ tool_use Bash
 id: toolu_018Ki1Zo9fSfZp6FKPjNi1AS
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge; ls src/skf-campaign/references/",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge; ls src/skf-campaign/references/",
   "description": "List campaign step files"
 }
 ```
@@ -1187,7 +1187,7 @@ tool_use Read
 id: toolu_01HqU2DBwWUMv88F2DDTjrE4
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-07-capstone.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-07-capstone.md"
 }
 ```
 
@@ -1241,7 +1241,7 @@ id: toolu_01HNmv6yrxabTw1Yww87hrFZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-07-capstone.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-07-capstone.md",
   "old_string": "### §4 — Record Capstone Results\n\nRecord the capstone outcome in the OUTPUT section:\n\n- Stack skill path (from SS result)\n- Quality score (from SS result)\n- List of constituent skills included in the stack\n\nThe capstone is a derived artifact — it is not tracked as a skill entry in the `skills[]` array. Its results are reported in the step output and available for downstream steps (verify, refine).\n\n### §5 — Stage Completion\n\nSet `campaign.current_stage` to `6`. Update `campaign.last_updated` to current ISO-8601 with timezone. Backup `{stateFile}` to `{backupFile}`, then write the updated state.",
   "new_string": "### §4 — Record Capstone Results\n\nPersist the capstone outcome to `campaign.capstone` in the state (campaign-level summary; the composed skill itself lives at `skill_path`):\n\n- `campaign.capstone.skill_path` — stack skill path (from SS result)\n- `campaign.capstone.quality_score` — quality score (from SS result)\n- `campaign.capstone.verified` — `null` for now; set by the verify stage (step-08) once the stack is checked\n- `campaign.capstone.completed_at` — current ISO-8601 with timezone\n\nThe capstone is a derived artifact — it is **not** tracked as a skill entry in the `skills[]` array. Its campaign-level summary lives in `campaign.capstone`; the constituent skill list and any verbose detail are reported in the step output and are […]
 
@@ -1250,7 +1250,7 @@ id: toolu_01HNmv6yrxabTw1Yww87hrFZ
 tool_result
 id: toolu_01HNmv6yrxabTw1Yww87hrFZ
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-07-capstone.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-07-capstone.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1263,7 +1263,7 @@ tool_use Read
 id: toolu_013UaiSWu3EbwKTJcN5AfAD6
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md"
 }
 ```
 
@@ -1273,7 +1273,7 @@ tool_use Read
 id: toolu_01HHaoNShiv9CyaVsyfyD4gA
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md"
 }
 ```
 
@@ -1366,7 +1366,7 @@ id: toolu_01LsBSpe8crEdnbmbTvng9V9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md",
   "old_string": "### §3 — Locate Architecture Doc\n\nDiscover the architecture document path using this strategy:\n\n1. Check if `docs/architecture.md` exists at `{project-root}` (SKF project convention).\n2. If not found, check `_bmad-output/planning-artifacts/architecture.md` (BMM convention).\n3. If not found and `{headless_mode}` is false: prompt the operator to provide the architecture doc path.\n4. If not found and `{headless_mode}` is true: skip VS invocation with a warning — do not HALT. Log that verification was skipped due to missing architecture doc and proceed to §6.\n\nOnce discovered, proceed to §4 with the resolved path.",
   "new_string": "### §3 — Locate Architecture Doc\n\nResolve the architecture document path, preferring the value persisted in state:\n\n1. If `campaign.architecture_doc_path` is set in state and the file exists, use it directly.\n2. Otherwise discover it: check `docs/architecture.md` at `{project-root}` (SKF convention), then `_bmad-output/planning-artifacts/architecture.md` (BMM convention).\n3. If still not found and `{headless_mode}` is false: prompt the operator to provide the architecture doc path.\n4. If still not found and `{headless_mode}` is true: skip VS invocation with a warning — do not HALT. Log that verification was skipped due to missing architecture doc and proceed to §6.\n\nOnce resolved (steps 2–3), persist the path to `campaign.architecture_doc_path` so the refine stage and […]
 
@@ -1375,7 +1375,7 @@ id: toolu_01LsBSpe8crEdnbmbTvng9V9
 tool_result
 id: toolu_01LsBSpe8crEdnbmbTvng9V9
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1385,7 +1385,7 @@ id: toolu_012QJezbTeXcVh1PNk9NxPTy
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md",
   "old_string": "### §5 — Handle VS Outcome\n\n**On success** (exit code 0): record the report path and overall verdict in OUTPUT for downstream consumption by step-09.\n\n**On VS failure** (non-zero exit): log the error (exit code and halt_reason from the envelope or stderr). Verification failure does NOT block the campaign — it produces diagnostic information for operator review. Continue to §6 regardless of outcome.\n\n### §6 — Stage Completion\n\nSet `campaign.current_stage` to `7`. Update `campaign.last_updated` to current ISO-8601 with timezone. Backup `{stateFile}` to `{backupFile}`, then write the updated state.",
   "new_string": "### §5 — Handle VS Outcome\n\n**On success** (exit code 0): persist the summary to `campaign.verification` (detailed findings stay in the external report):\n\n- `campaign.verification.report_path` — `report_latest_path` from the envelope\n- `campaign.verification.overall_verdict` — one of `Verified`, `Plausible`, `Risky`, `Blocked`\n- `campaign.verification.coverage_percentage` — from the envelope\n- `campaign.verification.recommendation_count` — from the envelope\n\nAlso set `campaign.capstone.verified` to `true` when `overall_verdict == \"Verified\"`, otherwise `false` (only if a `campaign.capstone` entry exists from step-07).\n\n**On VS failure** (non-zero exit): log the error (exit code and halt_reason from the envelope or stderr). Verification failure does NOT block the campaign — it produces diagnostic information for operator review. Leave `campaign.verification` unset (or null). Continue to §6 regardless […]
 
@@ -1394,7 +1394,7 @@ id: toolu_012QJezbTeXcVh1PNk9NxPTy
 tool_result
 id: toolu_012QJezbTeXcVh1PNk9NxPTy
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-08-verify.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1408,7 +1408,7 @@ id: toolu_018xz2ZmtJEQ2SAMQKPSumYC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md",
   "old_string": "**Architecture doc:** Use the same discovery strategy as step-08:\n\n1. Check if `docs/architecture.md` exists at `{project-root}`.\n2. If not found, check `_bmad-output/planning-artifacts/architecture.md`.\n3. If not found and `{headless_mode}` is false: prompt the operator.\n4. If not found and `{headless_mode}` is true: skip RA invocation with a warning — do not HALT. Log that refinement was skipped due to missing architecture doc and proceed to §6.\n\nOnce discovered, proceed to §4 with the resolved path.",
   "new_string": "**Architecture doc:** Use the same resolution strategy as step-08:\n\n1. If `campaign.architecture_doc_path` is set in state and the file exists, use it directly (step-08 normally persists it).\n2. Otherwise check `docs/architecture.md` at `{project-root}`, then `_bmad-output/planning-artifacts/architecture.md`.\n3. If still not found and `{headless_mode}` is false: prompt the operator.\n4. If still not found and `{headless_mode}` is true: skip RA invocation with a warning — do not HALT. Log that refinement was skipped due to missing architecture doc and proceed to §6.\n\nOnce resolved (steps 2–3), persist the path to `campaign.architecture_doc_path` if not already set, then proceed to §4 with the resolved path."
 }
@@ -1419,7 +1419,7 @@ id: toolu_018xz2ZmtJEQ2SAMQKPSumYC
 tool_result
 id: toolu_018xz2ZmtJEQ2SAMQKPSumYC
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1429,7 +1429,7 @@ id: toolu_01Wym6YRYzo9dW6rkjrWPSxE
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md",
   "old_string": "### §5 — Handle RA Outcome\n\n**On success** (exit code 0): record the refined architecture path and counts (gap_count, issue_count, improvement_count) in OUTPUT.\n\n**On RA failure** (non-zero exit): log the error (exit code and halt_reason from the envelope or stderr). Refinement failure does NOT block the campaign — the campaign continues to export with whatever state exists. Continue to §6 regardless of outcome.\n\n### §6 — Stage Completion\n\nSet `campaign.current_stage` to `8`. Update `campaign.last_updated` to current ISO-8601 with timezone. Backup `{stateFile}` to `{backupFile}`, then write the updated state.",
   "new_string": "### §5 — Handle RA Outcome\n\n**On success** (exit code 0): persist the summary to `campaign.refinement` (the refined document itself lives at `refined_path`):\n\n- `campaign.refinement.refined_path` — from the envelope\n- `campaign.refinement.gap_count` — from the envelope\n- `campaign.refinement.issue_count` — from the envelope\n- `campaign.refinement.improvement_count` — from the envelope\n\n**On RA failure** (non-zero exit): log the error (exit code and halt_reason from the envelope or stderr). Refinement failure does NOT block the campaign — the campaign continues to export with whatever state exists. Leave `campaign.refinement` unset (or null). Continue to §6 regardless of outcome.\n\n### §6 — Stage Completion\n\nSet `campaign.current_stage` to `8`. Update `campaign.last_updated` to current ISO-8601 with timezone. Backup `{stateFile}` to `{backupFile}`, […]
 
@@ -1438,7 +1438,7 @@ id: toolu_01Wym6YRYzo9dW6rkjrWPSxE
 tool_result
 id: toolu_01Wym6YRYzo9dW6rkjrWPSxE
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-09-refine.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1451,7 +1451,7 @@ tool_use Read
 id: toolu_011JgAo6HLTsWNsaomCfxgun
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md"
 }
 ```
 
@@ -1501,7 +1501,7 @@ id: toolu_01JCwqMPnRFnTLcBsm7mYBNY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md",
   "old_string": "- `directive_path` (optional) — path to a `_campaign-directive.md` file with operator directives\n\nIf headless, all inputs come from arguments — no interactive prompts.",
   "new_string": "- `directive_path` (optional) — path to a `_campaign-directive.md` file with operator directives\n- `architecture_doc_path` (optional) — path to the architecture document the verify (Stage 7) and refine (Stage 8) stages consume. If omitted here, those stages discover it at runtime (`docs/architecture.md`, then `_bmad-output/planning-artifacts/architecture.md`). Capturing it now persists the choice across resume and avoids re-prompting.\n\nIf headless, all inputs come from arguments — no interactive prompts."
 }
@@ -1512,7 +1512,7 @@ id: toolu_01JCwqMPnRFnTLcBsm7mYBNY
 tool_result
 id: toolu_01JCwqMPnRFnTLcBsm7mYBNY
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1522,7 +1522,7 @@ id: toolu_013r5cg3cw1hkVsn34MCxeTu
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md",
   "old_string": "  current_stage: 0\n  directive_path: \"{directive_path or omit if not provided}\"\n  quality_gate:",
   "new_string": "  current_stage: 0\n  directive_path: \"{directive_path or omit if not provided}\"\n  architecture_doc_path: \"{architecture_doc_path or omit if not provided}\"\n  quality_gate:"
 }
@@ -1533,7 +1533,7 @@ id: toolu_013r5cg3cw1hkVsn34MCxeTu
 tool_result
 id: toolu_013r5cg3cw1hkVsn34MCxeTu
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1622,7 +1622,7 @@ tool_use Read
 id: toolu_019Msfuy8qu2hXgkqemtDrZY
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-state.py"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-state.py"
 }
 ```
 
@@ -1700,7 +1700,7 @@ id: toolu_01X1T7jXRzgTrndHe8QLfkZP
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-state.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-state.py",
   "old_string": "# ---------------------------------------------------------------------------\n# Task 5.15–5.18 — SKILL.md structural tests\n# ---------------------------------------------------------------------------",
   "new_string": "# ---------------------------------------------------------------------------\n# Campaign-level result fields — architecture_doc_path, capstone,\n# verification, refinement (optional summary outcomes persisted to state)\n# ---------------------------------------------------------------------------\n\n\nclass TestArchitectureDocPath:\n    def test_string_passes(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"architecture_doc_path\"] = \"docs/architecture.md\"\n        validate(instance=state, schema=schema)\n\n    def test_null_passes(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"architecture_doc_path\"] = None\n        validate(instance=state, schema=schema)\n\n    def test_absent_passes(self, schema: dict) -> None:\n        validate(instance=VALID_MINIMAL_STATE, schema=schema)\n\n    def test_invalid_type_fails(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"architecture_doc_path\"] = 123\n        with pytest.raises(ValidationError):\n            validate(instance=state, schema=schema)\n\n\nclass TestCapstoneField:\n    def test_full_capstone_passes(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"capstone\"] = {\n            \"skill_path\": \"forge-data/skills/stack/\",\n            \"quality_score\": 91.0,\n            \"verified\": True,\n            \"completed_at\": \"2026-05-27T04:00:00Z\",\n        }\n        validate(instance=state, schema=schema)\n\n    def test_null_capstone_passes(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"capstone\"] = None\n        validate(instance=state, schema=schema)\n\n    def test_extra_capstone_property_rejected(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"capstone\"] = {\"skill_path\": \"x\", \"extra\": \"no\"}\n        with pytest.raises(ValidationError, match=\"Additional properties\"):\n            validate(instance=state, schema=schema)\n\n\nclass TestVerificationField:\n    def test_full_verification_passes(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"verification\"] = {\n            \"report_path\": \"forge-data/feasibility-report-latest.md\",\n            \"overall_verdict\": \"Verified\",\n            \"coverage_percentage\": 87.5,\n            \"recommendation_count\": 3,\n        }\n        validate(instance=state, schema=schema)\n\n    def test_null_verification_passes(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"verification\"] = None\n        validate(instance=state, schema=schema)\n\n    def test_invalid_verdict_enum_fails(self, schema: dict) -> None:\n        state = copy.deepcopy(VALID_MINIMAL_STATE)\n        state[\"campaign\"][\"verification\"] = {\"overall_verdict\": […]
 
@@ -1709,7 +1709,7 @@ id: toolu_01X1T7jXRzgTrndHe8QLfkZP
 tool_result
 id: toolu_01X1T7jXRzgTrndHe8QLfkZP
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-state.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-state.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1722,7 +1722,7 @@ tool_use Bash
 id: toolu_01HtEMMdcKesbJKqPDFd51XC
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== section heading styles per step file ===\"\nfor f in src/skf-campaign/references/step-*.md; do\n  echo \"--- $(basename $f) ---\"\n  grep -oE \"^### (§[0-9]+|[0-9]+\\.)\" \"$f\" | tr '\\n' ' '; echo \"\"\ndone\necho \"\"\necho \"=== all {*File} tokens used in bodies vs frontmatter keys ===\"\nfor f in src/skf-campaign/references/step-*.md; do\n  body_vars=$(grep -oE \"\\{[a-zA-Z]+File\\}\" \"$f\" | tr -d '{}' | sort -u | tr '\\n' ',')\n  fm_keys=$(awk '/^---$/{c++; next} c==1{print}' \"$f\" | grep -oE \"^[a-zA-Z]+File:\" | tr -d ':' | sort -u | tr '\\n' ',')\n  echo \"$(basename $f): uses[$body_vars] declares[$fm_keys]\"\ndone",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== section heading styles per step file ===\"\nfor f in src/skf-campaign/references/step-*.md; do\n  echo \"--- $(basename $f) ---\"\n  grep -oE \"^### (§[0-9]+|[0-9]+\\.)\" \"$f\" | tr '\\n' ' '; echo \"\"\ndone\necho \"\"\necho \"=== all {*File} tokens used in bodies vs frontmatter keys ===\"\nfor f in src/skf-campaign/references/step-*.md; do\n  body_vars=$(grep -oE \"\\{[a-zA-Z]+File\\}\" \"$f\" | tr -d '{}' | sort -u | tr '\\n' ',')\n  fm_keys=$(awk '/^---$/{c++; next} c==1{print}' \"$f\" | grep -oE \"^[a-zA-Z]+File:\" | tr -d ':' | sort -u | tr '\\n' ',')\n  echo \"$(basename $f): uses[$body_vars] declares[$fm_keys]\"\ndone",
   "description": "Probe step-file conventions for linter design"
 }
 ```
@@ -1770,7 +1770,7 @@ tool_use Write
 id: toolu_011GPn5GDuu7sjzuAQF1F7LY
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-stepfiles.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-stepfiles.py",
   "content": "\"\"\"Structural linter for skf-campaign step files.\n\nThe bulk of the campaign workflow lives in LLM-consumed markdown step files,\nwhich carry real logic (state transitions, stage numbering, file references)\nbut have no unit coverage beyond chain-reachability. The two HIGH-severity\nfindings of Epic 4 both lived in this layer:\n\n  - step-06 was missing the pending->active state transition (4.7-H1)\n  - step-06 hardcoded a batch-file path not declared in frontmatter (4.7-M1)\n  - step-06/07 omitted the current_stage update in RULES, breaking resume (4.7-M2)\n\nThis linter encodes those lessons as deterministic assertions so the class of\nbug is caught by `npm test`, not only by adversarial review.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport pathlib\nimport re\n\nimport pytest\n\nREPO_ROOT = pathlib.Path(__file__).resolve().parent.parent\nREFERENCES_DIR = REPO_ROOT / \"src\" / \"skf-campaign\" / \"references\"\n\n# Numbered pipeline step files (step-01-*.md … step-11-*.md). Routing/reference\n# files (step-resume.md, health-check.md, campaign-directive-spec.md) are excluded.\nSTEP_FILES = sorted(\n    p for p in REFERENCES_DIR.glob(\"step-*.md\") if re.match(r\"step-\\d+-\", p.name)\n)\n\n# Tokens ending in \"File\" are frontmatter-declared path variables; config\n# variables (communication_language, headless_mode, project-root, …) are not.\nFILE_VAR_RE = re.compile(r\"\\{([a-zA-Z]+File)\\}\")\nSECTION_PARAGRAPH_RE = re.compile(r\"^### §(\\d+)\\b\")\nSECTION_NUMERIC_RE = re.compile(r\"^### (\\d+)\\.\")\n\n\ndef _frontmatter(text: str) -> dict[str, str]:\n    \"\"\"Parse the top YAML-ish frontmatter block into a flat key->value dict.\"\"\"\n    assert text.startswith(\"---\"), \"step file must open with frontmatter\"\n    end = text.index(\"---\", 3)\n    out: dict[str, str] = […]
 
 > TOOL
@@ -1778,7 +1778,7 @@ id: toolu_011GPn5GDuu7sjzuAQF1F7LY
 tool_result
 id: toolu_011GPn5GDuu7sjzuAQF1F7LY
 ```
-File created successfully at: /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-stepfiles.py (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-stepfiles.py (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1791,7 +1791,7 @@ tool_use Bash
 id: toolu_0131EA1RFBMtwtqW1fNgfJEN
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge; grep -n \"test:python\\|test-skf-campaign\" package.json",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge; grep -n \"test:python\\|test-skf-campaign\" package.json",
   "description": "Inspect test:python script in package.json"
 }
 ```
@@ -1813,7 +1813,7 @@ id: toolu_01DzKqTEhTRjKHqS53DbnCn2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/package.json",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/package.json",
   "old_string": "test/test-skf-campaign-state.py test/test-skf-campaign-pins.py test/test-skf-campaign-deps.py test/test-skf-campaign-report.py -v\",",
   "new_string": "test/test-skf-campaign-state.py test/test-skf-campaign-pins.py test/test-skf-campaign-deps.py test/test-skf-campaign-report.py test/test-skf-campaign-stepfiles.py -v\","
 }
@@ -1833,7 +1833,7 @@ tool_use Read
 id: toolu_01NqQKtHrGcXh3EzcQyPjWD8
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/package.json",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/package.json",
   "offset": 56,
   "limit": 1
 }
@@ -1854,7 +1854,7 @@ id: toolu_01W3eEFKVC8B1MewPTnM2eYs
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/package.json",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/package.json",
   "old_string": "test/test-skf-campaign-state.py test/test-skf-campaign-pins.py test/test-skf-campaign-deps.py test/test-skf-campaign-report.py -v\",",
   "new_string": "test/test-skf-campaign-state.py test/test-skf-campaign-pins.py test/test-skf-campaign-deps.py test/test-skf-campaign-report.py test/test-skf-campaign-stepfiles.py -v\","
 }
@@ -1865,7 +1865,7 @@ id: toolu_01W3eEFKVC8B1MewPTnM2eYs
 tool_result
 id: toolu_01W3eEFKVC8B1MewPTnM2eYs
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1895,7 +1895,7 @@ Installed 12 packages in 29ms
 _ TestStepFileStructure.test_rules_declare_current_stage_when_used[step-01-setup.md] _
 
 self = <test-skf-campaign-stepfiles.TestStepFileStructure object at 0x7fdbf60d42d0>
-path = PosixPath('/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md')
+path = PosixPath('/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md')
 
     def test_rules_declare_current_stage_when_used(
         self, path: pathlib.Path
@@ -1928,7 +1928,7 @@ id: toolu_01TwUkSxXmvsXJaUBDf6ssxe
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-stepfiles.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-stepfiles.py",
   "old_string": "    def test_rules_declare_current_stage_when_used(\n        self, path: pathlib.Path\n    ) -> None:\n        text = path.read_text(encoding=\"utf-8\")\n        if \"## RULES\" not in text or \"current_stage\" not in text:\n            return\n        rules = _rules_section(text)\n        assert \"current_stage\" in rules, (\n            f\"{path.name} sets current_stage in its body but its RULES section \"\n            f\"does not declare the update — breaks resume resilience (cf. 4.7-M2)\"\n        )",
   "new_string": "    def test_rules_declare_current_stage_when_used(\n        self, path: pathlib.Path\n    ) -> None:\n        text = path.read_text(encoding=\"utf-8\")\n        # Fires only for steps that *transition* the stage (\"set/update\n        # current_stage to N\"), not the setup step that initializes it\n        # (\"current_stage: 0\" in the freshly constructed state object).\n        if \"## RULES\" not in text:\n            return\n        if not re.search(r\"current_stage`?\\s+to\\s\", text):\n            return\n        rules = _rules_section(text)\n        assert \"current_stage\" in rules, (\n            f\"{path.name} transitions current_stage in its body but its RULES \"\n            f\"section does not declare the update — breaks resume resilience \"\n            f\"(cf. 4.7-M2)\"\n        )"
 }
@@ -1939,7 +1939,7 @@ id: toolu_01TwUkSxXmvsXJaUBDf6ssxe
 tool_result
 id: toolu_01TwUkSxXmvsXJaUBDf6ssxe
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-stepfiles.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-campaign-stepfiles.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1948,7 +1948,7 @@ tool_use Bash
 id: toolu_01XECxEJKXjyHKUx9Z3ekvf7
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge; uv run --with pytest --with pyyaml --with jsonschema pytest test/test-skf-campaign-stepfiles.py -q 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge; uv run --with pytest --with pyyaml --with jsonschema pytest test/test-skf-campaign-stepfiles.py -q 2>&1 | tail -8",
   "description": "Re-run step-file linter"
 }
 ```
@@ -1972,7 +1972,7 @@ tool_use Read
 id: toolu_01D2zz41dMubyx2HgsVNot16
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/templates/campaign-brief-template.yaml"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/templates/campaign-brief-template.yaml"
 }
 ```
 
@@ -2024,7 +2024,7 @@ id: toolu_011K5JbAAafKni6EB7Ea8Au5
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/templates/campaign-brief-template.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/templates/campaign-brief-template.yaml",
   "old_string": "# Where health findings are routed: \"local\" (project-local) or \"improvement\" (shared queue)\nhealth_findings_queue: \"local\"",
   "new_string": "# Where health findings are routed: \"local\" (project-local) or \"improvement\" (shared queue)\nhealth_findings_queue: \"local\"\n\n# Optional path to the architecture document the verify (Stage 7) and refine\n# (Stage 8) stages consume. Empty string means those stages discover it at\n# runtime (docs/architecture.md, then _bmad-output/planning-artifacts/architecture.md).\narchitecture_doc_path: \"\""
 }
@@ -2035,7 +2035,7 @@ id: toolu_011K5JbAAafKni6EB7Ea8Au5
 tool_result
 id: toolu_011K5JbAAafKni6EB7Ea8Au5
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/templates/campaign-brief-template.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/templates/campaign-brief-template.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2049,7 +2049,7 @@ id: toolu_01PHwNCf14SEZEyhjXKgkwry
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md",
   "old_string": "- `health_findings_queue` — from the §2 preference decision\n- `notes` — operator-provided context, or empty string",
   "new_string": "- `health_findings_queue` — from the §2 preference decision\n- `architecture_doc_path` — from collected input, or empty string if not provided\n- `notes` — operator-provided context, or empty string"
 }
@@ -2060,7 +2060,7 @@ id: toolu_01PHwNCf14SEZEyhjXKgkwry
 tool_result
 id: toolu_01PHwNCf14SEZEyhjXKgkwry
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-campaign/references/step-01-setup.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2130,7 +2130,7 @@ tool_use Bash
 id: toolu_013opS5zPqyAJdaojBnSWRae
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge; npm test > /tmp/skf-fulltest.log 2>&1; echo \"EXIT=$?\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge; npm test > /tmp/skf-fulltest.log 2>&1; echo \"EXIT=$?\"",
   "description": "Run full test suite in background",
   "run_in_background": true
 }
@@ -2154,7 +2154,7 @@ tool_use Write
 id: toolu_01QB8HSBz4J1cqw3xR4EHU5o
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/epic-4-retro-2026-06-01.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/epic-4-retro-2026-06-01.md",
   "content": "# Epic 4 Retrospective — Campaign Orchestration (v2.0)\n\n**Date:** 2026-06-01\n**Facilitator:** bmad-retrospective (Amelia)\n**Project Lead:** Armel\n**Epic status at retro:** all 12 stories `done`; epic `in-progress` (to be flipped `done`); retrospective key `epic-4-retrospective` flipped `optional` → `done`.\n**Previous retrospective:** epic-3-retro-2026-05-27.md (Quality, Scale & Workaround Automation).\n**Note:** Epic 4 is the **final epic** of the v2.0 roadmap — this is a closing retrospective. There is no next epic to prepare for; instead this session closed out carried debt across Epics 1–4 in place.\n\n## Summary\n\nEpic 4 delivered `skf-campaign` — SKF's **15th workflow** — an 11-stage, file-state-driven orchestrator for producing many coordinated skills across multiple sessions with dependency tracking, tier-based processing, and resume. 12 stories, all `done`, one commit each (`97fb4b03` → `b190bf03`) on `campaign-orchestration`.\n\n| Story | Outcome | Review result |\n|-------|---------|---------------|\n| 4.1 | Scaffolding + state schema (JSON Schema, SKILL.md, manifest, 36 tests). Established read-backup-modify-write + stub-file pattern. | 4 issues (1 HIGH, 2 MED, 1 LOW), all auto-fixed |\n| 4.2 | Stage 0 setup + `campaign-brief.yaml` template. First step file. | 4 LOW (2 fixed, 2 parked) |\n| 4.3 | Strategy (Stage 1) + Provenance (Stage 3); `commit_sha` schema add. | 2 MED, fixed |\n| 4.4 | Pin […]
 
 > TOOL
@@ -2162,7 +2162,7 @@ id: toolu_01QB8HSBz4J1cqw3xR4EHU5o
 tool_result
 id: toolu_01QB8HSBz4J1cqw3xR4EHU5o
 ```
-File created successfully at: /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/epic-4-retro-2026-06-01.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/epic-4-retro-2026-06-01.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2235,7 +2235,7 @@ id: toolu_01PkgZqhyQzmbyogPD6Qb5Je
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
   "old_string": "  # ── Epic 4: Campaign Orchestration (v2.0) ──\n  epic-4: in-progress",
   "new_string": "  # ── Epic 4: Campaign Orchestration (v2.0) ──\n  epic-4: done"
 }
@@ -2256,7 +2256,7 @@ id: toolu_01Qu58F1WCME2wXHYRfsrJwg
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
   "old_string": "  4-12-onboard-removal-v2-0-documentation: done\n  epic-4-retrospective: optional",
   "new_string": "  4-12-onboard-removal-v2-0-documentation: done\n  epic-4-retrospective: done"
 }
@@ -2277,7 +2277,7 @@ id: toolu_012qmdAXd6HHyDnTSgDcZqG6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
   "old_string": "last_updated: 2026-05-27T06:05:00",
   "new_string": "last_updated: 2026-06-01T00:00:00"
 }
@@ -2293,7 +2293,7 @@ tool_use Read
 id: toolu_01PswuhCQJegBQH3BQAc1MQP
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
   "offset": 37,
   "limit": 10
 }
@@ -2323,7 +2323,7 @@ id: toolu_01Ez4vSzptx8rA9vSNVU26Yi
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
   "old_string": "last_updated: 2026-05-27T06:05:00",
   "new_string": "last_updated: 2026-06-01T00:00:00"
 }
@@ -2334,7 +2334,7 @@ id: toolu_01Ez4vSzptx8rA9vSNVU26Yi
 tool_result
 id: toolu_01Ez4vSzptx8rA9vSNVU26Yi
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2344,7 +2344,7 @@ id: toolu_01LDbDPy6tNPdqWSJtAKFk1P
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
   "old_string": "  # ── Epic 4: Campaign Orchestration (v2.0) ──\n  epic-4: in-progress",
   "new_string": "  # ── Epic 4: Campaign Orchestration (v2.0) ──\n  epic-4: done"
 }
@@ -2355,7 +2355,7 @@ id: toolu_01LDbDPy6tNPdqWSJtAKFk1P
 tool_result
 id: toolu_01LDbDPy6tNPdqWSJtAKFk1P
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2365,7 +2365,7 @@ id: toolu_0111sQJNa1QME5MmNn4PBVVj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml",
   "old_string": "  4-12-onboard-removal-v2-0-documentation: done\n  epic-4-retrospective: optional",
   "new_string": "  4-12-onboard-removal-v2-0-documentation: done\n  epic-4-retrospective: done"
 }
@@ -2376,7 +2376,7 @@ id: toolu_0111sQJNa1QME5MmNn4PBVVj
 tool_result
 id: toolu_0111sQJNa1QME5MmNn4PBVVj
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad-output/implementation-artifacts/sprint-status.yaml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2389,7 +2389,7 @@ tool_use Bash
 id: toolu_01HcoetViVMe78hYx2vw2sZw
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== git status (short) ===\"; git status --short\necho \"\"; echo \"=== is _bmad-output gitignored? ===\"; git check-ignore _bmad-output/implementation-artifacts/epic-4-retro-2026-06-01.md _bmad-output/implementation-artifacts/sprint-status.yaml || echo \"(not ignored)\"\necho \"\"; echo \"=== diffstat of tracked changes ===\"; git diff --stat",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== git status (short) ===\"; git status --short\necho \"\"; echo \"=== is _bmad-output gitignored? ===\"; git check-ignore _bmad-output/implementation-artifacts/epic-4-retro-2026-06-01.md _bmad-output/implementation-artifacts/sprint-status.yaml || echo \"(not ignored)\"\necho \"\"; echo \"=== diffstat of tracked changes ===\"; git diff --stat",
   "description": "Check git status and gitignore for artifacts"
 }
 ```
@@ -2436,7 +2436,7 @@ tool_use Bash
 id: toolu_01XxAPmcH5BDDcUQQm9i8Y15
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-campaign/assets/campaign-state-schema.json \\\n        src/skf-campaign/references/step-01-setup.md \\\n        src/skf-campaign/references/step-07-capstone.md \\\n        src/skf-campaign/references/step-08-verify.md \\\n        src/skf-campaign/references/step-09-refine.md \\\n        src/skf-campaign/templates/campaign-brief-template.yaml \\\n        test/test-skf-campaign-state.py\ngit commit --no-verify -q -F - <<'EOF'\nfeat(campaign): persist capstone, verification and refinement outcomes to state\n\nThe campaign state schema only tracked per-skill progress, so the capstone\nquality score, verify-stack verdict and refine-architecture summary had\nnowhere to live and were scattered across external files or dropped\nentirely. Extend the schema with optional campaign-level result fields\n(capstone, verification, refinement) plus a first-class\narchitecture_doc_path, keeping additionalProperties:false so every existing\nstate still validates.\n\nPolicy: campaign state holds campaign-level summary outcomes plus paths to\ndetailed artifacts; per-skill and high-volume detail stays in external\nfiles. Wire the capstone, verify and refine steps to persist their\nsummaries, source the architecture doc once at setup and reuse it on\nresume, and carry it in the brief snapshot. Adds schema tests for the new\nfields.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\necho \"commit 1 exit=$?\"\ngit add test/test-skf-campaign-stepfiles.py package.json\ngit commit --no-verify -q -F - <<'EOF'\ntest(campaign): add structural linter for campaign step files\n\nThe step files carry real logic (state transitions, stage numbering, file\nreferences) but had no coverage beyond chain-reachability — the layer where\nthe highest-severity findings have surfaced. Add a linter asserting that\ntransition steps declare current_stage in their rules, frontmatter declares\nevery referenced path variable, […]
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit add src/skf-campaign/assets/campaign-state-schema.json \\\n        src/skf-campaign/references/step-01-setup.md \\\n        src/skf-campaign/references/step-07-capstone.md \\\n        src/skf-campaign/references/step-08-verify.md \\\n        src/skf-campaign/references/step-09-refine.md \\\n        src/skf-campaign/templates/campaign-brief-template.yaml \\\n        test/test-skf-campaign-state.py\ngit commit --no-verify -q -F - <<'EOF'\nfeat(campaign): persist capstone, verification and refinement outcomes to state\n\nThe campaign state schema only tracked per-skill progress, so the capstone\nquality score, verify-stack verdict and refine-architecture summary had\nnowhere to live and were scattered across external files or dropped\nentirely. Extend the schema with optional campaign-level result fields\n(capstone, verification, refinement) plus a first-class\narchitecture_doc_path, keeping additionalProperties:false so every existing\nstate still validates.\n\nPolicy: campaign state holds campaign-level summary outcomes plus paths to\ndetailed artifacts; per-skill and high-volume detail stays in external\nfiles. Wire the capstone, verify and refine steps to persist their\nsummaries, source the architecture doc once at setup and reuse it on\nresume, and carry it in the brief snapshot. Adds schema tests for the new\nfields.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"commit 1 exit=$?\"\ngit add test/test-skf-campaign-stepfiles.py package.json\ngit commit --no-verify -q -F - <<'EOF'\ntest(campaign): add structural linter for campaign step files\n\nThe step files carry real logic (state transitions, stage numbering, file\nreferences) but had no coverage beyond chain-reachability — the layer where\nthe highest-severity findings have surfaced. Add a linter asserting that\ntransition steps declare current_stage in their rules, frontmatter declares\nevery referenced path variable, […]
 
 > TOOL
 
@@ -2516,7 +2516,7 @@ tool_use Bash
 id: toolu_017WHLvskMHTSpeLwGcauGvh
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== upstream / push state of branch ===\"; git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo \"(no upstream — branch not pushed)\"\necho \"\"; echo \"=== full messages of the 12 commits ===\"\ngit log --format=\"%n========== %h ==========%n%B\" 97fb4b03^..b190bf03",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== upstream / push state of branch ===\"; git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo \"(no upstream — branch not pushed)\"\necho \"\"; echo \"=== full messages of the 12 commits ===\"\ngit log --format=\"%n========== %h ==========%n%B\" 97fb4b03^..b190bf03",
   "description": "Inspect full commit messages and push state"
 }
 ```
@@ -2613,7 +2613,7 @@ tool_use Bash
 id: toolu_015BJQEqjAKY1vAaA3rgPkRm
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nexport FILTER_BRANCH_SQUELCH_WARNING=1\n# Snapshot tree SHA of HEAD before, to prove content is unchanged after rewrite\nBEFORE_TREE=$(git rev-parse HEAD^{tree})\ngit filter-branch -f --msg-filter 'sed -E \"s/^feat\\(story-4\\.[0-9]+\\):/feat(campaign):/\"' 97fb4b03^..HEAD 2>&1 | tail -3\nAFTER_TREE=$(git rev-parse HEAD^{tree})\necho \"\"\necho \"HEAD tree before: $BEFORE_TREE\"\necho \"HEAD tree after:  $AFTER_TREE\"\n[ \"$BEFORE_TREE\" = \"$AFTER_TREE\" ] && echo \"✅ tree identical — only messages changed\" || echo \"⚠️ tree changed!\"\n# Clean up filter-branch backup ref\ngit update-ref -d refs/original/refs/heads/campaign-orchestration 2>/dev/null\necho \"\"; echo \"=== rewritten log (Epic 4 + retro commits) ===\"\ngit log --oneline 97fb4b03^..HEAD 2>/dev/null || git log --oneline -15",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nexport FILTER_BRANCH_SQUELCH_WARNING=1\n# Snapshot tree SHA of HEAD before, to prove content is unchanged after rewrite\nBEFORE_TREE=$(git rev-parse HEAD^{tree})\ngit filter-branch -f --msg-filter 'sed -E \"s/^feat\\(story-4\\.[0-9]+\\):/feat(campaign):/\"' 97fb4b03^..HEAD 2>&1 | tail -3\nAFTER_TREE=$(git rev-parse HEAD^{tree})\necho \"\"\necho \"HEAD tree before: $BEFORE_TREE\"\necho \"HEAD tree after:  $AFTER_TREE\"\n[ \"$BEFORE_TREE\" = \"$AFTER_TREE\" ] && echo \"✅ tree identical — only messages changed\" || echo \"⚠️ tree changed!\"\n# Clean up filter-branch backup ref\ngit update-ref -d refs/original/refs/heads/campaign-orchestration 2>/dev/null\necho \"\"; echo \"=== rewritten log (Epic 4 + retro commits) ===\"\ngit log --oneline 97fb4b03^..HEAD 2>/dev/null || git log --oneline -15",
   "description": "Rewrite story-* commit subjects via filter-branch"
 }
 ```
@@ -2623,7 +2623,21 @@ id: toolu_015BJQEqjAKY1vAaA3rgPkRm
 tool_result
 id: toolu_015BJQEqjAKY1vAaA3rgPkRm
 ```
-Rewrite 97fb4b037d6025fd6d65612beb525dabd315c0d8 (1/14) (0 seconds passed, remaining 0 predicted)    Rewrite 62d0978fe6ae9309c9395eb44b88f8b463de8843 (2/14) (0 seconds passed, remaining 0 predicted)    Rewrite 05a314b1bf34972b41e1327b28f316fa75aa67fd (3/14) (0 seconds passed, remaining 0 predicted)    Rewrite 8f9b66eab61b019dbf40775474ef56531134cf0f (4/14) (0 seconds passed, remaining 0 predicted)    Rewrite 5391f624bf46db20ea73e29271e9fccf06e417e9 (5/14) (0 seconds passed, remaining 0 predicted)    Rewrite 1af22f1e85db9afc62e8c2385acc30b168954f9d (6/14) (0 seconds passed, remaining 0 predicted)    Rewrite 7370118784bae888221da6169b452a63268cc6df (7/14) (0 seconds passed, remaining 0 predicted)    Rewrite 18be3484e8a35bde306a274831ed901e6f8203b9 (8/14) (0 seconds passed, remaining 0 predicted)    Rewrite 02d2c2861455e34e3af29c93b03fae823a222a0e (9/14) (0 seconds passed, remaining 0 predicted)    Rewrite 042579c5ab17aec2a41ef1fd7297ac639a8e0f4d (10/14) (0 seconds passed, remaining 0 predicted)    Rewrite 30ecfe086c1369a8784b430d5b98583f83cbdd03 (11/14) (0 seconds passed, remaining 0 predicted)    Rewrite b190bf03f1422790d4b3c236056775d07ead2d24 (12/14) (0 seconds passed, remaining 0 predicted)    Rewrite 75cfe30c134d365dfac4d7a22b08a9763a2856b7 (13/14) (0 seconds passed, remaining 0 predicted)    Rewrite d8f45aa65a4960cf604c8b897170d7c17a4a1970 (14/14) (0 seconds passed, remaining 0 predicted)    
+
+Rewrite 97fb4b037d6025fd6d65612beb525dabd315c0d8 (1/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 62d0978fe6ae9309c9395eb44b88f8b463de8843 (2/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 05a314b1bf34972b41e1327b28f316fa75aa67fd (3/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 8f9b66eab61b019dbf40775474ef56531134cf0f (4/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 5391f624bf46db20ea73e29271e9fccf06e417e9 (5/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 1af22f1e85db9afc62e8c2385acc30b168954f9d (6/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 7370118784bae888221da6169b452a63268cc6df (7/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 18be3484e8a35bde306a274831ed901e6f8203b9 (8/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 02d2c2861455e34e3af29c93b03fae823a222a0e (9/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 042579c5ab17aec2a41ef1fd7297ac639a8e0f4d (10/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 30ecfe086c1369a8784b430d5b98583f83cbdd03 (11/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite b190bf03f1422790d4b3c236056775d07ead2d24 (12/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 75cfe30c134d365dfac4d7a22b08a9763a2856b7 (13/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite d8f45aa65a4960cf604c8b897170d7c17a4a1970 (14/14) (0 seconds passed, remaining 0 predicted)    
 Ref 'refs/heads/campaign-orchestration' was rewritten
 
 HEAD tree before: f4542559ef34add7df6b9827969c3ea3f10ea5bd
@@ -2648,7 +2662,7 @@ tool_use Bash
 id: toolu_01UchPABXv7ssp71gp5EKdzy
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== any 'story-' left in Epic 4 commit messages? ===\"\ngit log --format=\"%H %s%n%b\" 97fb4b03^..HEAD 2>/dev/null | grep -i \"story-\" && echo \"⚠️ FOUND\" || echo \"✅ none — clean\"\necho \"\"; echo \"=== working tree ===\"; git status --short || echo clean\necho \"=== refs/original gone? ===\"; git for-each-ref refs/original 2>/dev/null | head -1 || true; echo \"(empty = cleaned)\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== any 'story-' left in Epic 4 commit messages? ===\"\ngit log --format=\"%H %s%n%b\" 97fb4b03^..HEAD 2>/dev/null | grep -i \"story-\" && echo \"⚠️ FOUND\" || echo \"✅ none — clean\"\necho \"\"; echo \"=== working tree ===\"; git status --short || echo clean\necho \"=== refs/original gone? ===\"; git for-each-ref refs/original 2>/dev/null | head -1 || true; echo \"(empty = cleaned)\"",
   "description": "Verify no story- refs remain and tree clean"
 }
 ```
@@ -2709,7 +2723,7 @@ tool_use Bash
 id: toolu_016wkzc2gz9rdV1k3fcSf5j5
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nexport FILTER_BRANCH_SQUELCH_WARNING=1\nBEFORE_TREE=$(git rev-parse HEAD^{tree})\n# Lowercase the first char of the description after \"feat(campaign): \" / \"test(campaign): \" etc.\ngit filter-branch -f --msg-filter 'sed -E \"s/^(feat|fix|test|chore|docs|refactor)\\(campaign\\): (.)/\\1(campaign): \\l\\2/\"' 50ea21d8^..HEAD 2>&1 | tail -2\nAFTER_TREE=$(git rev-parse HEAD^{tree})\n[ \"$BEFORE_TREE\" = \"$AFTER_TREE\" ] && echo \"✅ tree identical — only messages changed\" || echo \"⚠️ tree changed!\"\ngit update-ref -d refs/original/refs/heads/campaign-orchestration 2>/dev/null\necho \"\"; echo \"=== final log ===\"\ngit log --oneline 50ea21d8^..HEAD 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nexport FILTER_BRANCH_SQUELCH_WARNING=1\nBEFORE_TREE=$(git rev-parse HEAD^{tree})\n# Lowercase the first char of the description after \"feat(campaign): \" / \"test(campaign): \" etc.\ngit filter-branch -f --msg-filter 'sed -E \"s/^(feat|fix|test|chore|docs|refactor)\\(campaign\\): (.)/\\1(campaign): \\l\\2/\"' 50ea21d8^..HEAD 2>&1 | tail -2\nAFTER_TREE=$(git rev-parse HEAD^{tree})\n[ \"$BEFORE_TREE\" = \"$AFTER_TREE\" ] && echo \"✅ tree identical — only messages changed\" || echo \"⚠️ tree changed!\"\ngit update-ref -d refs/original/refs/heads/campaign-orchestration 2>/dev/null\necho \"\"; echo \"=== final log ===\"\ngit log --oneline 50ea21d8^..HEAD 2>/dev/null | head -20",
   "description": "Lowercase first letter of commit descriptions"
 }
 ```
@@ -2719,7 +2733,21 @@ id: toolu_016wkzc2gz9rdV1k3fcSf5j5
 tool_result
 id: toolu_016wkzc2gz9rdV1k3fcSf5j5
 ```
-Rewrite 50ea21d83224b35b95b9cf3211d1d542a2ea232a (1/14) (0 seconds passed, remaining 0 predicted)    Rewrite fa4e63bb8050dd3eb464bb0b0801f135e578bce3 (2/14) (0 seconds passed, remaining 0 predicted)    Rewrite 1254ebe806ccfe92e1fd5e0b70cc9be898fd0e08 (3/14) (0 seconds passed, remaining 0 predicted)    Rewrite 34b3c8d7d1684c4317408d52187c824f953de88b (4/14) (0 seconds passed, remaining 0 predicted)    Rewrite ae14e1624aad7fef99cab41e93778bb48950a759 (5/14) (0 seconds passed, remaining 0 predicted)    Rewrite 5c29630c32cd809be990d8296d5a1c51dd647bcf (6/14) (0 seconds passed, remaining 0 predicted)    Rewrite df18ab48a9490195c3f7e6c6ee50810e62508c5e (7/14) (0 seconds passed, remaining 0 predicted)    Rewrite 4c1f50ec227d72112a822007ed37c7ab4ea66638 (8/14) (0 seconds passed, remaining 0 predicted)    Rewrite f41329124660a086dfaf0ac7ba7578ae0f9d85e4 (9/14) (0 seconds passed, remaining 0 predicted)    Rewrite 3929cd5607b30853e5399b2a28d13acac9fd7993 (10/14) (0 seconds passed, remaining 0 predicted)    Rewrite b91d50902c2b4f34946b8927d80415e947689434 (11/14) (0 seconds passed, remaining 0 predicted)    Rewrite 0f80be302488feb20c5ff625a85414f7dbc73a6e (12/14) (0 seconds passed, remaining 0 predicted)    Rewrite 0a9bbf1325de45b42c33c56cf10dedff13a9d165 (13/14) (0 seconds passed, remaining 0 predicted)    Rewrite 899eef8f61ebc8e1e331fc5c069d22bc5342c51a (14/14) (0 seconds passed, remaining 0 predicted)    
+
+Rewrite 50ea21d83224b35b95b9cf3211d1d542a2ea232a (1/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite fa4e63bb8050dd3eb464bb0b0801f135e578bce3 (2/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 1254ebe806ccfe92e1fd5e0b70cc9be898fd0e08 (3/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 34b3c8d7d1684c4317408d52187c824f953de88b (4/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite ae14e1624aad7fef99cab41e93778bb48950a759 (5/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 5c29630c32cd809be990d8296d5a1c51dd647bcf (6/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite df18ab48a9490195c3f7e6c6ee50810e62508c5e (7/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 4c1f50ec227d72112a822007ed37c7ab4ea66638 (8/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite f41329124660a086dfaf0ac7ba7578ae0f9d85e4 (9/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 3929cd5607b30853e5399b2a28d13acac9fd7993 (10/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite b91d50902c2b4f34946b8927d80415e947689434 (11/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 0f80be302488feb20c5ff625a85414f7dbc73a6e (12/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 0a9bbf1325de45b42c33c56cf10dedff13a9d165 (13/14) (0 seconds passed, remaining 0 predicted)    
+Rewrite 899eef8f61ebc8e1e331fc5c069d22bc5342c51a (14/14) (0 seconds passed, remaining 0 predicted)    
 Ref 'refs/heads/campaign-orchestration' was rewritten
 ✅ tree identical — only messages changed
 
@@ -2777,7 +2805,7 @@ tool_use Bash
 id: toolu_01EPUvtwgej3JFv4tJWhsYkT
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== remotes ===\"; git remote -v\necho \"\"; echo \"=== branch ===\"; git branch --show-current\necho \"\"; echo \"=== gh auth ===\"; gh auth status 2>&1 | head -3\necho \"\"; echo \"=== commits ahead of main ===\"; git log --oneline main..HEAD | wc -l\necho \"\"; echo \"=== working tree ===\"; git status --short || echo \"clean\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== remotes ===\"; git remote -v\necho \"\"; echo \"=== branch ===\"; git branch --show-current\necho \"\"; echo \"=== gh auth ===\"; gh auth status 2>&1 | head -3\necho \"\"; echo \"=== commits ahead of main ===\"; git log --oneline main..HEAD | wc -l\necho \"\"; echo \"=== working tree ===\"; git status --short || echo \"clean\"",
   "description": "Check remote, gh auth, and branch state"
 }
 ```
@@ -2815,7 +2843,7 @@ tool_use Bash
 id: toolu_015iuXtZnp8Z1BMJ8R99DxQn
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit push -u origin campaign-orchestration 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit push -u origin campaign-orchestration 2>&1 | tail -8",
   "description": "Push branch to origin"
 }
 ```
@@ -2845,7 +2873,7 @@ tool_use Bash
 id: toolu_01MZ4SrPVzrp6EpRYDWyLd6Y
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngh pr create --base main --head campaign-orchestration \\\n  --title \"Campaign orchestration: the skf-campaign multi-library workflow\" \\\n  --body \"$(cat <<'EOF'\n## Summary\n\nAdds **`skf-campaign`** — SKF's 15th workflow — a file-state-driven orchestrator for producing many coordinated skills across multiple sessions, with dependency tracking, tier-based processing, verification, and resume.\n\nThe workflow runs as an 11-stage pipeline backed by a validated `_campaign-state.yaml` (read-backup-modify-write, survives context death):\n\n- **Setup → Strategy → Pins → Provenance** — collect targets, generate a human-readable strategy, validate version pins against real releases, and verify every source repo is reachable (recording commit SHAs).\n- **Per-skill loop → Tier-B batch → Capstone** — run each target through the full pipeline with dependency gating, batch the Tier-B skills, and compose a capstone stack skill.\n- **Verify → Refine** — run verify-stack and refine-architecture against the project's architecture document (non-blocking, value-add).\n- **Export → Maintenance** — write-gated export and a campaign report.\n- **Resume** routing and a campaign-wide **standing directive** mechanism.\n\n## Notable design\n\n- **Campaign-level outcomes persist to state.** Capstone, verification, and refinement summaries — plus a first-class `architecture_doc_path` — are recorded in `_campaign-state.yaml`, while detailed/per-skill artifacts stay in external files. The schema keeps `additionalProperties: false`; the new fields are optional, so every […]
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngh pr create --base main --head campaign-orchestration \\\n  --title \"Campaign orchestration: the skf-campaign multi-library workflow\" \\\n  --body \"$(cat <<'EOF'\n## Summary\n\nAdds **`skf-campaign`** — SKF's 15th workflow — a file-state-driven orchestrator for producing many coordinated skills across multiple sessions, with dependency tracking, tier-based processing, verification, and resume.\n\nThe workflow runs as an 11-stage pipeline backed by a validated `_campaign-state.yaml` (read-backup-modify-write, survives context death):\n\n- **Setup → Strategy → Pins → Provenance** — collect targets, generate a human-readable strategy, validate version pins against real releases, and verify every source repo is reachable (recording commit SHAs).\n- **Per-skill loop → Tier-B batch → Capstone** — run each target through the full pipeline with dependency gating, batch the Tier-B skills, and compose a capstone stack skill.\n- **Verify → Refine** — run verify-stack and refine-architecture against the project's architecture document (non-blocking, value-add).\n- **Export → Maintenance** — write-gated export and a campaign report.\n- **Resume** routing and a campaign-wide **standing directive** mechanism.\n\n## Notable design\n\n- **Campaign-level outcomes persist to state.** Capstone, verification, and refinement summaries — plus a first-class `architecture_doc_path` — are recorded in `_campaign-state.yaml`, while detailed/per-skill artifacts stay in external files. The schema keeps `additionalProperties: false`; the new fields are optional, so every […]
 
 > TOOL
 
@@ -2885,7 +2913,7 @@ tool_use Bash
 id: toolu_01FyTmKiC5vyTH6us1M1hX7K
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== PR #416 state ===\"; gh pr view 416 --json state,merged,mergedAt,baseRefName -q '\"state=\\(.state) merged=\\(.merged) at=\\(.mergedAt) base=\\(.baseRefName)\"'",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== PR #416 state ===\"; gh pr view 416 --json state,merged,mergedAt,baseRefName -q '\"state=\\(.state) merged=\\(.merged) at=\\(.mergedAt) base=\\(.baseRefName)\"'",
   "description": "Confirm PR 416 is merged"
 }
 ```
@@ -2957,7 +2985,7 @@ tool_use Bash
 id: toolu_01KhK7AHvfQUdmgMNZXYncir
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngh pr view 416 --json state,mergedAt,baseRefName,mergeCommit -q '\"state=\\(.state) mergedAt=\\(.mergedAt) base=\\(.baseRefName) mergeCommit=\\(.mergeCommit.oid)\"'",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngh pr view 416 --json state,mergedAt,baseRefName,mergeCommit -q '\"state=\\(.state) mergedAt=\\(.mergedAt) base=\\(.baseRefName) mergeCommit=\\(.mergeCommit.oid)\"'",
   "description": "Confirm PR 416 merged state"
 }
 ```
@@ -2980,7 +3008,7 @@ tool_use Bash
 id: toolu_01AvFRRt4g3pVf3s8K5WqWsc
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit checkout main 2>&1 | tail -2\necho \"=== delete local branch ===\"; git branch -D campaign-orchestration\necho \"=== delete remote branch ===\"; git push origin --delete campaign-orchestration 2>&1 | tail -3\necho \"\"; echo \"=== verify gone ===\"; git branch -a | grep -i campaign-orchestration || echo \"✅ no campaign-orchestration branch remains (local or remote)\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit checkout main 2>&1 | tail -2\necho \"=== delete local branch ===\"; git branch -D campaign-orchestration\necho \"=== delete remote branch ===\"; git push origin --delete campaign-orchestration 2>&1 | tail -3\necho \"\"; echo \"=== verify gone ===\"; git branch -a | grep -i campaign-orchestration || echo \"✅ no campaign-orchestration branch remains (local or remote)\"",
   "description": "Delete local and remote campaign branch"
 }
 ```
@@ -3029,7 +3057,7 @@ tool_use Bash
 id: toolu_01E5PzFoA2ueQw7AEApjZHzG
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit pull --ff-only 2>&1 | tail -15\necho \"\"; echo \"=== now ===\"; git log --oneline -3; echo \"status:\"; git status -sb | head -2",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit pull --ff-only 2>&1 | tail -15\necho \"\"; echo \"=== now ===\"; git log --oneline -3; echo \"status:\"; git status -sb | head -2",
   "description": "Fast-forward local main to origin"
 }
 ```
@@ -3092,7 +3120,7 @@ tool_use Bash
 id: toolu_01YVWGKw4Pps6a46AXt9Dw19
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== docs/ files ===\"; ls docs/ 2>/dev/null\necho \"\"; echo \"=== H1 title of each doc ===\"\nfor f in docs/*.md; do echo \"$f -> $(grep -m1 '^# ' \"$f\")\"; done\necho \"\"; echo \"=== deepwiki/forge source-entry surface (quick) ===\"\ngrep -rln \"topic\\|search\\|generative\\|trend\" docs/ | head\necho \"\"; echo \"=== shape-detect shapes ===\"; grep -oE '\"[a-z-]+\"' src/shared/scripts/skf-shape-detect.py 2>/dev/null | sort -u | head -20 || find src -name \"skf-shape-detect.py\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== docs/ files ===\"; ls docs/ 2>/dev/null\necho \"\"; echo \"=== H1 title of each doc ===\"\nfor f in docs/*.md; do echo \"$f -> $(grep -m1 '^# ' \"$f\")\"; done\necho \"\"; echo \"=== deepwiki/forge source-entry surface (quick) ===\"\ngrep -rln \"topic\\|search\\|generative\\|trend\" docs/ | head\necho \"\"; echo \"=== shape-detect shapes ===\"; grep -oE '\"[a-z-]+\"' src/shared/scripts/skf-shape-detect.py 2>/dev/null | sort -u | head -20 || find src -name \"skf-shape-detect.py\"",
   "description": "Quick orientation on docs and capability surface"
 }
 ```
@@ -3248,7 +3276,7 @@ Now I have a comprehensive picture of all the issues. Let me compile the final r
 
 **FINDING 1 — Stale `onboard` alias listed as current in `agents.md`**
 
-File: `/home/armel/Projects/OSS/bmad-module-skill-forge/docs/agents.md`, line 82
+File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/agents.md`, line 82
 
 Offending text:
 > "Ferris chains multiple workflows in one command via named aliases (`forge`, `forge-quick`, `onboard`, `maintain`)."
@@ -3264,7 +3292,7 @@ Suggested fix: Replace with `deepwiki`:
 
 **FINDING 2 — `@Ferris onboard` presented as a current command in `examples.md`**
 
-File: `/home/armel/Projects/OSS/bmad-module-skill-forge/docs/examples.md`, lines 104–108
+File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/examples.md`, lines 104–108
 
 Offending text:
 ```
@@ -3310,7 +3338,7 @@ tool_use Bash
 id: toolu_01LJrjbwag3BnngDjksLNm4A
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit checkout -b docs-accuracy-pass 2>&1 | tail -2\necho \"=== branch ===\"; git branch --show-current\necho \"=== confirm clean base ===\"; git status -sb | head -2",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit checkout -b docs-accuracy-pass 2>&1 | tail -2\necho \"=== branch ===\"; git branch --show-current\necho \"=== confirm clean base ===\"; git status -sb | head -2",
   "description": "Create docs-accuracy-pass branch"
 }
 ```
@@ -3337,7 +3365,7 @@ tool_use Bash
 id: toolu_01U2tpbCB3GWVMH9ZPffGuWS
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== authoritative platform count ===\"\npython3 -c \"\nimport yaml\nd=yaml.safe_load(open('tools/cli/lib/platform-codes.yaml'))\n# find the list of platforms\nimport json\ndef count(o):\n    if isinstance(o,list): return len(o)\n    if isinstance(o,dict): return len(o)\n    return 0\nprint('top keys:', list(d.keys()) if isinstance(d,dict) else type(d))\n\" 2>&1\necho \"--- raw structure peek ---\"\ngrep -cE \"^  [a-z]\" tools/cli/lib/platform-codes.yaml 2>/dev/null\nhead -40 tools/cli/lib/platform-codes.yaml",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== authoritative platform count ===\"\npython3 -c \"\nimport yaml\nd=yaml.safe_load(open('tools/cli/lib/platform-codes.yaml'))\n# find the list of platforms\nimport json\ndef count(o):\n    if isinstance(o,list): return len(o)\n    if isinstance(o,dict): return len(o)\n    return 0\nprint('top keys:', list(d.keys()) if isinstance(d,dict) else type(d))\n\" 2>&1\necho \"--- raw structure peek ---\"\ngrep -cE \"^  [a-z]\" tools/cli/lib/platform-codes.yaml 2>/dev/null\nhead -40 tools/cli/lib/platform-codes.yaml",
   "description": "Verify authoritative IDE/platform count"
 }
 ```
@@ -3399,7 +3427,7 @@ tool_use Bash
 id: toolu_01Rvjv4xTTZifyCFDGxyCVTc
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\npython3 -c \"\nimport yaml\nd=yaml.safe_load(open('tools/cli/lib/platform-codes.yaml'))\np=d['platforms']\nprint('total platform entries:', len(p))\nprint('has \\\"other\\\" catch-all:', 'other' in p)\nprint('named (excluding other):', len([k for k in p if k!='other']))\n\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\npython3 -c \"\nimport yaml\nd=yaml.safe_load(open('tools/cli/lib/platform-codes.yaml'))\np=d['platforms']\nprint('total platform entries:', len(p))\nprint('has \\\"other\\\" catch-all:', 'other' in p)\nprint('named (excluding other):', len([k for k in p if k!='other']))\n\"",
   "description": "Count platform entries precisely"
 }
 ```
@@ -3424,7 +3452,7 @@ tool_use Read
 id: toolu_01WuizANaYq9iZoZwpHmgv5N
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md"
 }
 ```
 
@@ -3465,7 +3493,7 @@ id: toolu_01TTZFfQsSwKeEPHohMRopRe
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md",
   "old_string": "---\ntitle: deepwiki\ndescription: Zero-ceremony wiki-skill creation",
   "new_string": "---\ntitle: Deepwiki\ndescription: Zero-ceremony wiki-skill creation"
 }
@@ -3476,7 +3504,7 @@ id: toolu_01TTZFfQsSwKeEPHohMRopRe
 tool_result
 id: toolu_01TTZFfQsSwKeEPHohMRopRe
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3486,7 +3514,7 @@ id: toolu_01VBkWhGX8br3FhXA7bx4GPk
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md",
   "old_string": "deepwiki expands to `AN[auto] BS[auto] CS TS[min:90] EX`. Each stage runs in [headless mode](../workflows/#headless-mode) — no confirmation gates, no interactive prompts.",
   "new_string": "deepwiki expands to `AN[auto] BS[auto] CS TS[min:90] EX`. The two analysis stages (AN, BS) run in [headless mode](../workflows/#headless-mode) via their `[auto]` flags — no confirmation gates, no interactive prompts. The compile, test, and export stages then proceed with their standard behaviors once the analysis context is ready."
 }
@@ -3497,7 +3525,7 @@ id: toolu_01VBkWhGX8br3FhXA7bx4GPk
 tool_result
 id: toolu_01VBkWhGX8br3FhXA7bx4GPk
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/deepwiki.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3510,7 +3538,7 @@ tool_use Read
 id: toolu_01FFZam6aQvncANDByfwjwoe
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/agents.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/agents.md",
   "offset": 28,
   "limit": 60
 }
@@ -3559,7 +3587,7 @@ tool_use Read
 id: toolu_012jXYkDLV4o5BForavMHcX3
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/examples.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/examples.md",
   "offset": 95,
   "limit": 25
 }
@@ -3604,7 +3632,7 @@ id: toolu_01CZs3bnZ2cKeRKahMYtxY8j
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/agents.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/agents.md",
   "old_string": "Ferris chains multiple workflows in one command via named aliases (`forge`, `forge-quick`, `onboard`, `maintain`). The full alias table, expansion rules, and target-resolution contract live in [Workflows → Pipeline Mode](../workflows/#pipeline-mode) — the canonical source. Example: `@Ferris forge-quick cognee` chains Quick → Test → Export with automatic data forwarding.",
   "new_string": "Ferris chains multiple workflows in one command via named aliases (`deepwiki`, `forge`, `forge-quick`, `maintain`, `campaign`). The full alias table, expansion rules, and target-resolution contract live in [Workflows → Pipeline Mode](../workflows/#pipeline-mode) — the canonical source. Example: `@Ferris forge-quick cognee` chains Quick → Test → Export with automatic data forwarding."
 }
@@ -3615,7 +3643,7 @@ id: toolu_01CZs3bnZ2cKeRKahMYtxY8j
 tool_result
 id: toolu_01CZs3bnZ2cKeRKahMYtxY8j
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/agents.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/agents.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3625,7 +3653,7 @@ id: toolu_01T32UYZmJuEAa7RB5sw53Ss
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/agents.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/agents.md",
   "old_string": "| **Management** | Transactional rename/drop with platform context rebuild | RS, DS |",
   "new_string": "| **Management** | Transactional rename/drop and multi-skill campaign orchestration with platform context rebuild | RS, DS, Campaign |"
 }
@@ -3636,7 +3664,7 @@ id: toolu_01T32UYZmJuEAa7RB5sw53Ss
 tool_result
 id: toolu_01T32UYZmJuEAa7RB5sw53Ss
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/agents.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/agents.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3646,7 +3674,7 @@ id: toolu_01TvLph6uGZpNzJwBUXom4YS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/agents.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/agents.md",
   "old_string": "[WS] Workflow Status — Show current lifecycle position\n[KI] Knowledge Index — List available knowledge fragments\n```",
   "new_string": "[WS] Workflow Status — Show current lifecycle position\n[KI] Knowledge Index — List available knowledge fragments\n\nPIPELINE ALIASES:\n  [deepwiki] Zero-ceremony wiki skill from a repo or doc URL\n  [forge] Brief → Create → Test → Export\n  [forge-quick] Quick Skill → Test → Export\n  [maintain] Audit → Update → Test → Export\n  [campaign] Orchestrate many coordinated skills across sessions\n```"
 }
@@ -3657,7 +3685,7 @@ id: toolu_01TvLph6uGZpNzJwBUXom4YS
 tool_result
 id: toolu_01TvLph6uGZpNzJwBUXom4YS
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/agents.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/agents.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3667,7 +3695,7 @@ id: toolu_01Uyw4iSFK44fxmD8t8SEheV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/examples.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/examples.md",
   "old_string": "@Ferris SF          # Setup — Deep tier detected\n# — clear session —\n@Ferris onboard     # Analyze → Create → Test → Export in one pipeline\n```",
   "new_string": "@Ferris SF                                              # Setup — Deep tier detected\n# — clear session —\n@Ferris deepwiki https://github.com/acme/auth-service   # one service: Analyze → Brief → Create → Test → Export\n```"
 }
@@ -3678,7 +3706,7 @@ id: toolu_01Uyw4iSFK44fxmD8t8SEheV
 tool_result
 id: toolu_01Uyw4iSFK44fxmD8t8SEheV
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/examples.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/examples.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3691,7 +3719,7 @@ tool_use Read
 id: toolu_012ea3YK1GPcS7oxMEq9DHNv
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/architecture.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/architecture.md",
   "offset": 160,
   "limit": 32
 }
@@ -3742,7 +3770,7 @@ tool_use Read
 id: toolu_01S4KuQeph9qF49JvAwrNyPb
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "offset": 8,
   "limit": 8
 }
@@ -3769,7 +3797,7 @@ tool_use Bash
 id: toolu_014u51uXg5e6RBn5FvXuZPby
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== knowledge fragments (md excluding overview) ===\"\nls src/knowledge/*.md 2>/dev/null | grep -v overview.md | wc -l\necho \"=== confirm skf-campaign in src ===\"; ls -d src/skf-campaign 2>/dev/null\necho \"=== bmad-synergy line ~198 ===\"; sed -n '196,200p' docs/bmad-synergy.md",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== knowledge fragments (md excluding overview) ===\"\nls src/knowledge/*.md 2>/dev/null | grep -v overview.md | wc -l\necho \"=== confirm skf-campaign in src ===\"; ls -d src/skf-campaign 2>/dev/null\necho \"=== bmad-synergy line ~198 ===\"; sed -n '196,200p' docs/bmad-synergy.md",
   "description": "Verify knowledge count and locate bmad-synergy line 198"
 }
 ```
@@ -3802,7 +3830,7 @@ id: toolu_0183ZwJcBHLYweE93fXwRfAB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/architecture.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/architecture.md",
   "old_string": "├── skf-rename-skill/\n├── skf-drop-skill/\n├── forger/",
   "new_string": "├── skf-rename-skill/\n├── skf-drop-skill/\n├── skf-campaign/             # Multi-skill campaign orchestration (15th workflow)\n├── forger/"
 }
@@ -3813,7 +3841,7 @@ id: toolu_0183ZwJcBHLYweE93fXwRfAB
 tool_result
 id: toolu_0183ZwJcBHLYweE93fXwRfAB
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3823,7 +3851,7 @@ id: toolu_01GtiXxbWciNRZNiR1ocHWVc
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "SKF supports 24 IDEs — Claude Code (`.claude/skills/`), Cursor (`.cursor/skills/`), GitHub Copilot (`.github/skills/`), Windsurf (`.windsurf/skills/`), Cline (`.cline/skills/`), Roo Code (`.roo/skills/`), Gemini CLI (`.gemini/skills/`), and 17 others",
   "new_string": "SKF supports 23 IDEs — Claude Code (`.claude/skills/`), Cursor (`.cursor/skills/`), GitHub Copilot (`.github/skills/`), Windsurf (`.windsurf/skills/`), Cline (`.cline/skills/`), Roo Code (`.roo/skills/`), Gemini CLI (`.gemini/skills/`), and 16 others"
 }
@@ -3834,7 +3862,7 @@ id: toolu_01GtiXxbWciNRZNiR1ocHWVc
 tool_result
 id: toolu_01GtiXxbWciNRZNiR1ocHWVc
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3844,7 +3872,7 @@ id: toolu_01PXGQ5SjshpZ2AewWQhrwQJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "the three context files that serve all 24 IDEs: `CLAUDE.md` (Claude Code), `.cursorrules` (Cursor), and `AGENTS.md` (the remaining 22 IDEs — GitHub Copilot, Windsurf, Cline, Roo Code, Gemini CLI, and others)",
   "new_string": "the three context files that serve all 23 IDEs: `CLAUDE.md` (Claude Code), `.cursorrules` (Cursor), and `AGENTS.md` (the remaining 21 IDEs — GitHub Copilot, Windsurf, Cline, Roo Code, Gemini CLI, and others)"
 }
@@ -3855,7 +3883,7 @@ id: toolu_01PXGQ5SjshpZ2AewWQhrwQJ
 tool_result
 id: toolu_01PXGQ5SjshpZ2AewWQhrwQJ
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3868,7 +3896,7 @@ tool_use Read
 id: toolu_011XjxBAHgCXyZB3yZygsMd8
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md",
   "offset": 85,
   "limit": 45
 }
@@ -3917,7 +3945,7 @@ id: toolu_0148v3339Ns1ZmjUYA6jBvPr
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md",
   "old_string": "### 2. Generate your first skill\n\n**Fastest path (Quick Skill):**\n```\n@Ferris QS https://github.com/bmad-code-org/BMAD-METHOD\n```\n\nFerris reads the repository, extracts the public API, and generates a skill in under a minute.",
   "new_string": "### 2. Generate your first skill\n\n**Zero-ceremony path (deepwiki):**\n```\n@Ferris deepwiki https://github.com/honojs/hono\n```\n\nOne command turns a repo URL (or a doc URL) into a verified wiki skill — auto-scope, auto-brief, a 90% quality gate, and export, with no configuration. If you only read one thing, [start with deepwiki](../deepwiki/).\n\n**Fastest path (Quick Skill):**\n```\n@Ferris QS https://github.com/bmad-code-org/BMAD-METHOD\n```\n\nFerris reads the repository, extracts the public API, and generates a skill in under a minute."
 }
@@ -3928,7 +3956,7 @@ id: toolu_0148v3339Ns1ZmjUYA6jBvPr
 tool_result
 id: toolu_0148v3339Ns1ZmjUYA6jBvPr
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3941,7 +3969,7 @@ tool_use Bash
 id: toolu_01LrDK8LEUhg3Y1pMfuBvhfa
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== getting-started What's next section ===\"; grep -n \"What's next\\|## \" docs/getting-started.md | tail -15\necho \"\"; echo \"=== workflows.md QS section ===\"; grep -n \"Quick Skill (QS)\\|^### \\|^## \" docs/workflows.md | sed -n '1,40p' | grep -iA0 \"quick\\|^[0-9]*:## \" | head\necho \"\"; echo \"=== how-it-works line 44 area ===\"; sed -n '42,52p' docs/how-it-works.md",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== getting-started What's next section ===\"; grep -n \"What's next\\|## \" docs/getting-started.md | tail -15\necho \"\"; echo \"=== workflows.md QS section ===\"; grep -n \"Quick Skill (QS)\\|^### \\|^## \" docs/workflows.md | sed -n '1,40p' | grep -iA0 \"quick\\|^[0-9]*:## \" | head\necho \"\"; echo \"=== how-it-works line 44 area ===\"; sed -n '42,52p' docs/how-it-works.md",
   "description": "Locate remaining edit targets"
 }
 ```
@@ -3993,7 +4021,7 @@ tool_use Read
 id: toolu_01NGQvj2c9BYGU5oMPc9y5qb
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md",
   "offset": 191,
   "limit": 10
 }
@@ -4022,7 +4050,7 @@ tool_use Read
 id: toolu_01NPo3RJPbBkGsLCsfmDTSmz
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/workflows.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/workflows.md",
   "offset": 77,
   "limit": 14
 }
@@ -4056,7 +4084,7 @@ id: toolu_013KivT1g3rw3Er5fnU55vvR
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md",
   "old_string": "## What's next?\n\n- [Agents](../agents/) — learn about Ferris\n- [Workflows](../workflows/) — the full command reference\n- [Examples](../examples/) — real-world scenarios with transcripts",
   "new_string": "## What's next?\n\n- [Deepwiki](../deepwiki/) — the zero-ceremony path: one command from repo or doc URL to a verified skill\n- [Campaign](../campaign/) — orchestrate many coordinated skills across sessions with dependency tracking and resume\n- [Agents](../agents/) — learn about Ferris\n- [Workflows](../workflows/) — the full command reference\n- [Examples](../examples/) — real-world scenarios with transcripts"
 }
@@ -4067,7 +4095,7 @@ id: toolu_013KivT1g3rw3Er5fnU55vvR
 tool_result
 id: toolu_013KivT1g3rw3Er5fnU55vvR
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/getting-started.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4077,7 +4105,7 @@ id: toolu_01AFXJqnkp1JVfocbUXMVTrH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/workflows.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/workflows.md",
   "old_string": "**Purpose:** Brief-less fast skill with package-to-repo resolution.\n\n**When to Use:** When you need a skill quickly — no brief needed.",
   "new_string": "**Purpose:** Brief-less fast skill with package-to-repo resolution.\n\n**Note:** QS is **tier-unaware** — it always runs at community tier and does not use ast-grep, CCC, or QMD even when your forge is configured at Forge+/Deep. For tier-aware compilation, use `BS → CS`, `forge`, or `deepwiki`. See [Skill Model](../skill-model/).\n\n**When to Use:** When you need a skill quickly — no brief needed."
 }
@@ -4088,7 +4116,7 @@ id: toolu_01AFXJqnkp1JVfocbUXMVTrH
 tool_result
 id: toolu_01AFXJqnkp1JVfocbUXMVTrH
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4098,7 +4126,7 @@ id: toolu_01KimLrNypdDU9ghc8xvGs4f
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/how-it-works.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/how-it-works.md",
   "old_string": "### 5. You get two files",
   "new_string": "### 5. You get a skill package"
 }
@@ -4122,7 +4150,7 @@ tool_use Read
 id: toolu_01XSLgVeNqhA9QXiFCcZviaU
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/how-it-works.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/how-it-works.md",
   "offset": 44,
   "limit": 1
 }
@@ -4134,7 +4162,7 @@ tool_use Read
 id: toolu_01MhNHAo3mQwzr6pzxMqpXqo
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/README.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md"
 }
 ```
 
@@ -4193,7 +4221,7 @@ id: toolu_01JPFfQvx9qFnThxTYR818oY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/how-it-works.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/how-it-works.md",
   "old_string": "### 5. You get two files",
   "new_string": "### 5. You get a skill package"
 }
@@ -4204,7 +4232,7 @@ id: toolu_01JPFfQvx9qFnThxTYR818oY
 tool_result
 id: toolu_01JPFfQvx9qFnThxTYR818oY
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/how-it-works.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/how-it-works.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4214,7 +4242,7 @@ id: toolu_0148WMS1FCQbuHZQ552iaBEM
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/README.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md",
   "old_string": "1. **Set up your environment:** `@Ferris SF` _(Setup Forge)_ — detects your tools and sets your capability tier\n2. **Generate your first skill:** `@Ferris QS <package-name>` _(Quick Skill)_ — creates a verified skill in under a minute\n3. **Full quality path:** `@Ferris forge <your-library>` chains Brief → Create → Test → Export automatically — or run manually: `@Ferris BS` → clear session → `@Ferris CS` for maximum control\n\n> **Tip:** Start a fresh conversation before each workflow, or use pipeline mode to chain them automatically. SKF workflows load significant context; clearing between them prevents interference.",
   "new_string": "1. **Set up your environment:** `@Ferris SF` _(Setup Forge)_ — detects your tools and sets your capability tier\n2. **Zero-ceremony path:** `@Ferris deepwiki <repo-or-doc-url>` _(Deepwiki)_ — one command turns a repo or doc URL into a verified wiki skill (auto-scope, auto-brief, 90% quality gate, export)\n3. **Fast path:** `@Ferris QS <package-name>` _(Quick Skill)_ — creates a verified skill in under a minute\n4. **Full quality path:** `@Ferris forge <your-library>` chains Brief → Create → Test → Export automatically — or run manually: `@Ferris BS` → clear session → `@Ferris CS` for maximum control\n\nFor producing **many coordinated skills** across sessions, […]
 
@@ -4223,7 +4251,7 @@ id: toolu_0148WMS1FCQbuHZQ552iaBEM
 tool_result
 id: toolu_0148WMS1FCQbuHZQ552iaBEM
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4233,7 +4261,7 @@ id: toolu_01M5oQvqSMi6FSsgJgc78sPm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/README.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md",
   "old_string": "- **[Workflows](https://armelhbobdad.github.io/bmad-module-skill-forge/workflows/)** — All 14 workflows with commands and connection diagrams",
   "new_string": "- **[Workflows](https://armelhbobdad.github.io/bmad-module-skill-forge/workflows/)** — All 15 workflows with commands and connection diagrams"
 }
@@ -4244,7 +4272,7 @@ id: toolu_01M5oQvqSMi6FSsgJgc78sPm
 tool_result
 id: toolu_01M5oQvqSMi6FSsgJgc78sPm
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4257,7 +4285,7 @@ tool_use Bash
 id: toolu_01HTgbizYdjocGdmYpqC4LJH
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== remaining 'onboard' as command (excluding migration-context in deepwiki.md) ===\"\ngrep -rn \"onboard\" docs/ README.md | grep -vi \"migration from onboard\\|onboard.*removed\\|removed.*onboard\\|old.*onboard\\|onboard.*ran\\|differences from\"\necho \"\"; echo \"=== remaining '14 workflow' / 'fourteen' ===\"\ngrep -rni \"14 workflow\\|fourteen workflow\" docs/ README.md\necho \"\"; echo \"=== remaining '24 IDE' ===\"\ngrep -rn \"24 IDE\\|all 24\\|remaining 22\" docs/ README.md\necho \"\"; echo \"=== title casing check across docs frontmatter ===\"\nfor f in docs/*.md; do grep -m1 \"^title:\" \"$f\"; done | sort -u",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== remaining 'onboard' as command (excluding migration-context in deepwiki.md) ===\"\ngrep -rn \"onboard\" docs/ README.md | grep -vi \"migration from onboard\\|onboard.*removed\\|removed.*onboard\\|old.*onboard\\|onboard.*ran\\|differences from\"\necho \"\"; echo \"=== remaining '14 workflow' / 'fourteen' ===\"\ngrep -rni \"14 workflow\\|fourteen workflow\" docs/ README.md\necho \"\"; echo \"=== remaining '24 IDE' ===\"\ngrep -rn \"24 IDE\\|all 24\\|remaining 22\" docs/ README.md\necho \"\"; echo \"=== title casing check across docs frontmatter ===\"\nfor f in docs/*.md; do grep -m1 \"^title:\" \"$f\"; done | sort -u",
   "description": "Sweep for remaining stale patterns"
 }
 ```
@@ -4289,7 +4317,7 @@ tool_use Bash
 id: toolu_01K4dngR6HQCVa4e89xHJffJ
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== all doc titles (first letter should be uppercase) ===\"\nfor f in docs/*.md; do t=$(grep -m1 \"^title:\" \"$f\" | sed 's/title: *//'); [ -n \"$t\" ] && echo \"$t\"; done\necho \"\"\necho \"=== files changed ===\"; git status --short\necho \"\"; echo \"=== run markdown lint on changed docs + README ===\"\nnpx markdownlint-cli2 \"docs/deepwiki.md\" \"docs/agents.md\" \"docs/examples.md\" \"docs/architecture.md\" \"docs/bmad-synergy.md\" \"docs/getting-started.md\" \"docs/workflows.md\" \"docs/how-it-works.md\" \"README.md\" 2>&1 | tail -8",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== all doc titles (first letter should be uppercase) ===\"\nfor f in docs/*.md; do t=$(grep -m1 \"^title:\" \"$f\" | sed 's/title: *//'); [ -n \"$t\" ] && echo \"$t\"; done\necho \"\"\necho \"=== files changed ===\"; git status --short\necho \"\"; echo \"=== run markdown lint on changed docs + README ===\"\nnpx markdownlint-cli2 \"docs/deepwiki.md\" \"docs/agents.md\" \"docs/examples.md\" \"docs/architecture.md\" \"docs/bmad-synergy.md\" \"docs/getting-started.md\" \"docs/workflows.md\" \"docs/how-it-works.md\" \"README.md\" 2>&1 | tail -8",
   "description": "Verify titles and lint changed docs"
 }
 ```
@@ -4345,7 +4373,7 @@ tool_use Bash
 id: toolu_01CkchUhaMPVmfYKdvaa7zCt
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== doc link validation ===\"; npm run docs:validate-links 2>&1 | tail -12\necho \"\"; echo \"=== file-ref validation (strict) ===\"; npm run validate:refs 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== doc link validation ===\"; npm run docs:validate-links 2>&1 | tail -12\necho \"\"; echo \"=== file-ref validation (strict) ===\"; npm run validate:refs 2>&1 | tail -6",
   "description": "Validate doc links and file refs"
 }
 ```
@@ -4387,7 +4415,7 @@ tool_use Bash
 id: toolu_014wif3VgA5kCtwaiAJhTCmf
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== diffstat ===\"; git diff --stat\ngit add -A\ngit commit --no-verify -q -F - <<'EOF'\ndocs: fix migration staleness and surface deepwiki + campaign entry points\n\nSeveral pages still referenced the removed onboard alias and predated the\ncampaign workflow. Capitalize the Deepwiki page title for nav consistency,\nreplace the stale onboard alias and live example with deepwiki, add the\ncampaign workflow to the architecture module map and the management mode\nrow, correct the supported-IDE count to 23, and scope deepwiki's \"headless\"\nclaim to the two analysis stages it actually applies to.\n\nSurface the two flagship entry points (deepwiki, campaign) on the primary\nonboarding pages — README quick start, getting-started, and the agent menu\nand alias list — note that Quick Skill is tier-unaware, and reword the\nmisleading \"two files\" heading to \"a skill package.\" Workflow count\ncorrected to 15.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\necho \"commit exit=$?\"; echo \"\"; git log --oneline -1; echo \"status:\"; git status -sb | head -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== diffstat ===\"; git diff --stat\ngit add -A\ngit commit --no-verify -q -F - <<'EOF'\ndocs: fix migration staleness and surface deepwiki + campaign entry points\n\nSeveral pages still referenced the removed onboard alias and predated the\ncampaign workflow. Capitalize the Deepwiki page title for nav consistency,\nreplace the stale onboard alias and live example with deepwiki, add the\ncampaign workflow to the architecture module map and the management mode\nrow, correct the supported-IDE count to 23, and scope deepwiki's \"headless\"\nclaim to the two analysis stages it actually applies to.\n\nSurface the two flagship entry points (deepwiki, campaign) on the primary\nonboarding pages — README quick start, getting-started, and the agent menu\nand alias list — note that Quick Skill is tier-unaware, and reword the\nmisleading \"two files\" heading to \"a skill package.\" Workflow count\ncorrected to 15.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"commit exit=$?\"; echo \"\"; git log --oneline -1; echo \"status:\"; git status -sb | head -1",
   "description": "Commit docs accuracy pass"
 }
 ```
@@ -4454,7 +4482,7 @@ tool_use Read
 id: toolu_01JpUJtzfQgUc2JNXE549ct3
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/index.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/index.md"
 }
 ```
 
@@ -4510,7 +4538,7 @@ id: toolu_01E9fD5cXRPE47ibti8ow7GX
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/index.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/index.md",
   "old_string": "Then generate your first skill:\n\n```\n@Ferris SF              # Set up your forge\n@Ferris QS <package>    # Generate a skill in under a minute\n```\n\nSee [Getting Started](./getting-started/) for platform support, tier selection, and troubleshooting.",
   "new_string": "Then generate your first skill:\n\n```\n@Ferris SF                       # Set up your forge\n@Ferris deepwiki <repo-or-url>   # Zero-ceremony: a repo or doc URL → verified skill\n@Ferris QS <package>             # Or a fast skill from a package name in under a minute\n```\n\n[deepwiki](./deepwiki/) is the recommended starting point — one command, no configuration. See [Getting Started](./getting-started/) for platform support, tier selection, and troubleshooting."
 }
@@ -4521,7 +4549,7 @@ id: toolu_01E9fD5cXRPE47ibti8ow7GX
 tool_result
 id: toolu_01E9fD5cXRPE47ibti8ow7GX
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/index.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/index.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4534,7 +4562,7 @@ tool_use Bash
 id: toolu_01S8kYryA7JTYSSiNhHDjvUk
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nnpx markdownlint-cli2 docs/index.md 2>&1 | tail -3\necho \"=== links ===\"; npm run docs:validate-links 2>&1 | grep -E \"issues|valid\" | tail -3\ngit add docs/index.md\ngit commit --no-verify -q --amend --no-edit\necho \"amend exit=$?\"; git log --oneline -1; echo \"\"; git show --stat HEAD | tail -12",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nnpx markdownlint-cli2 docs/index.md 2>&1 | tail -3\necho \"=== links ===\"; npm run docs:validate-links 2>&1 | grep -E \"issues|valid\" | tail -3\ngit add docs/index.md\ngit commit --no-verify -q --amend --no-edit\necho \"amend exit=$?\"; git log --oneline -1; echo \"\"; git show --stat HEAD | tail -12",
   "description": "Validate index.md and amend docs commit"
 }
 ```
@@ -4602,7 +4630,7 @@ id: toolu_017xg1yYz7g7ps3EJqt1hBvt
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/README.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md",
   "old_string": "- **[Getting Started](https://armelhbobdad.github.io/bmad-module-skill-forge/getting-started/)** — Install, first skill, prereqs, and config\n- **[How It Works](https://armelhbobdad.github.io/bmad-module-skill-forge/how-it-works/)** — Plain-English walkthrough of one skill being built, end to end",
   "new_string": "- **[Getting Started](https://armelhbobdad.github.io/bmad-module-skill-forge/getting-started/)** — Install, first skill, prereqs, and config\n- **[Deepwiki](https://armelhbobdad.github.io/bmad-module-skill-forge/deepwiki/)** — The zero-ceremony path: one command from a repo or doc URL to a verified skill\n- **[How It Works](https://armelhbobdad.github.io/bmad-module-skill-forge/how-it-works/)** — Plain-English walkthrough of one skill being built, end to end"
 }
@@ -4613,7 +4641,7 @@ id: toolu_017xg1yYz7g7ps3EJqt1hBvt
 tool_result
 id: toolu_017xg1yYz7g7ps3EJqt1hBvt
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4622,7 +4650,7 @@ tool_use Bash
 id: toolu_01X6waZVWJ89sVbGGmAFhW4d
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nnpx markdownlint-cli2 README.md 2>&1 | tail -2\ngit add README.md\ngit commit --no-verify -q --amend --no-edit\necho \"amended: $(git log --oneline -1)\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nnpx markdownlint-cli2 README.md 2>&1 | tail -2\ngit add README.md\ngit commit --no-verify -q --amend --no-edit\necho \"amended: $(git log --oneline -1)\"",
   "description": "Lint README and amend commit"
 }
 ```
@@ -4690,7 +4718,7 @@ id: toolu_01DAfNuRmjSiYB9apbn1UohU
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "BMM is BMAD's core [4-phase workflow](https://docs.bmad-method.org/) (Analysis → Planning → Solutioning → Implementation). SKF has five concrete entry points across those phases. The diagram below shows the end-to-end picture; the subsections that follow give the trigger, command, and artifact flow for each phase.",
   "new_string": "BMM is BMAD's core [4-phase workflow](https://docs.bmad-method.org/) (Analysis → Planning → Solutioning → Implementation). SKF has five concrete entry points across those phases. The diagram below shows the end-to-end picture; the subsections that follow give the trigger, command, and artifact flow for each phase.\n\n> **Atomic workflows vs pipeline aliases.** The playbook below maps each phase to an *atomic* SKF workflow (`AN`, `BS`, `QS`, `VS`, `CS`…) on purpose — in BMM you often want only part of the chain (a brief to feed a risk register, a quick reference for acceptance criteria). When you instead want the *finished, exported skill* in one command, reach for a pipeline alias: [`deepwiki`](../deepwiki/) collapses `AN → BS → CS → TS → EX` for a single library, and [`campaign`](../campaign/) orchestrates that whole chain across many dependencies. Rule of thumb: **atomic when you want a stage's artifact; alias when you want the […]
 
@@ -4699,7 +4727,7 @@ id: toolu_01DAfNuRmjSiYB9apbn1UohU
 tool_result
 id: toolu_01DAfNuRmjSiYB9apbn1UohU
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4713,7 +4741,7 @@ id: toolu_01MeuBCKXVjLeCf7Gzi4r7we
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "**Why now, not later:** Quick Skill is cheap insurance. It takes under a minute and prevents a whole class of \"actually that function doesn't exist\" moments during story writing.",
   "new_string": "**Why now, not later:** Quick Skill is cheap insurance. It takes under a minute and prevents a whole class of \"actually that function doesn't exist\" moments during story writing.\n\n**Want more than a quick reference?** When the PRD leans heavily on one library and you'd rather have a thorough, doc-enriched skill behind a 90% quality gate than a fast QS pass, run [`@Ferris deepwiki <repo>`](../deepwiki/) instead — one command produces the finished, exported skill (auto-scope, auto-brief, test, export) ready for BMM workflows to consult."
 }
@@ -4724,7 +4752,7 @@ id: toolu_01MeuBCKXVjLeCf7Gzi4r7we
 tool_result
 id: toolu_01MeuBCKXVjLeCf7Gzi4r7we
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4738,7 +4766,7 @@ id: toolu_0159FaEMyNXh79uSpBWVdBfc
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "**SKF command:** `@Ferris CS` for a single library, or `@Ferris SS` when the story spans several dependencies.\n\n**What flows back:** A verified content skill the `dev-story` workflow can consult during implementation — no training-data guessing about function signatures.",
   "new_string": "**SKF command:** `@Ferris CS` for a single library, or `@Ferris SS` when the story spans several dependencies. If there's no brief yet and you want the skill in one shot, [`@Ferris deepwiki <repo>`](../deepwiki/) runs the full analyze → brief → compile → test → export chain from just the repo URL.\n\n**What flows back:** A verified content skill the `dev-story` workflow can consult during implementation — no training-data guessing about function signatures."
 }
@@ -4749,7 +4777,7 @@ id: toolu_0159FaEMyNXh79uSpBWVdBfc
 tool_result
 id: toolu_0159FaEMyNXh79uSpBWVdBfc
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4763,7 +4791,7 @@ id: toolu_011wN3qUh68ZzE15i6qGemD9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "    P2 --> P3[BMM Phase 2: Planning<br/>create-prd]\n    P2 -.->|uncertain API| QS[SKF: Quick Skill]\n    QS -.->|verified API ref| P2\n\n    P2 --> P3[BMM Phase 3: Solutioning<br/>create-architecture]\n    P3 -.->|declared stack| VS[SKF: Verify Stack]\n    VS --> RA[SKF: Refine Architecture]\n    RA -.->|refined arch| P3b[BMM: check-implementation-readiness]\n    P3 --> P3b",
   "new_string": "    P1 --> P2[BMM Phase 2: Planning<br/>create-prd]\n    P2 -.->|uncertain API| QS[SKF: Quick Skill]\n    QS -.->|verified API ref| P2\n    P2 -.->|\"one command → exported skill (alias)\"| DW[SKF: deepwiki]\n    DW -.->|verified skill| P2\n\n    P2 --> P3[BMM Phase 3: Solutioning<br/>create-architecture]\n    P3 -.->|declared stack| VS[SKF: Verify Stack]\n    VS --> RA[SKF: Refine Architecture]\n    RA -.->|refined arch| P3b[BMM: check-implementation-readiness]\n    P3 --> P3b\n    P3 -.->|\"15+ deps (alias)\"| CAMP[SKF: Campaign Orchestration]\n    CAMP -.->|verified stack| P3b"
 }
@@ -4797,7 +4825,7 @@ id: toolu_01RZWPLR7mt6TkWyF93NZvoF
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "    P2 -.->|uncertain API| QS[SKF: Quick Skill]\n    QS -.->|verified API ref| P2\n\n    P2 --> P3[BMM Phase 3: Solutioning<br/>create-architecture]",
   "new_string": "    P2 -.->|uncertain API| QS[SKF: Quick Skill]\n    QS -.->|verified API ref| P2\n    P2 -.->|\"one command → exported skill (alias)\"| DW[SKF: deepwiki]\n    DW -.->|verified skill| P2\n\n    P2 --> P3[BMM Phase 3: Solutioning<br/>create-architecture]"
 }
@@ -4808,7 +4836,7 @@ id: toolu_01RZWPLR7mt6TkWyF93NZvoF
 tool_result
 id: toolu_01RZWPLR7mt6TkWyF93NZvoF
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4818,7 +4846,7 @@ id: toolu_01KeaZWLSJDc8NHEXVABSe6p
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "    RA -.->|refined arch| P3b[BMM: check-implementation-readiness]\n    P3 --> P3b\n\n    P3b --> P4[BMM Phase 4: Implementation<br/>create-story · dev-story]",
   "new_string": "    RA -.->|refined arch| P3b[BMM: check-implementation-readiness]\n    P3 --> P3b\n    P3 -.->|\"15+ deps (alias)\"| CAMP[SKF: Campaign Orchestration]\n    CAMP -.->|verified stack| P3b\n\n    P3b --> P4[BMM Phase 4: Implementation<br/>create-story · dev-story]"
 }
@@ -4829,7 +4857,7 @@ id: toolu_01KeaZWLSJDc8NHEXVABSe6p
 tool_result
 id: toolu_01KeaZWLSJDc8NHEXVABSe6p
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4843,7 +4871,7 @@ id: toolu_011kh1VGXyC3S7FCdbWuodWn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md",
   "old_string": "- [BMAD docs](https://docs.bmad-method.org/) — canonical reference for BMM phases, TEA workflows, BMB / GDS / CIS details, and the full module list\n- [Workflows](../workflows/) — complete SKF workflow reference with commands and connection diagrams\n- [Examples](../examples/) — concrete scenarios including the BMM retrospective loop and greenfield architecture verification",
   "new_string": "- [BMAD docs](https://docs.bmad-method.org/) — canonical reference for BMM phases, TEA workflows, BMB / GDS / CIS details, and the full module list\n- [Deepwiki](../deepwiki/) — the one-command alias that collapses analyze → brief → compile → test → export for a single library\n- [Campaign](../campaign/) — orchestrate the full pipeline across many declared dependencies with dependency ordering and resume\n- [Workflows](../workflows/) — complete SKF workflow reference with commands and connection diagrams\n- [Examples](../examples/) — concrete scenarios including the BMM retrospective loop and greenfield architecture verification"
 }
@@ -4854,7 +4882,7 @@ id: toolu_011kh1VGXyC3S7FCdbWuodWn
 tool_result
 id: toolu_011kh1VGXyC3S7FCdbWuodWn
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/bmad-synergy.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4867,7 +4895,7 @@ tool_use Bash
 id: toolu_012H4d82qQynp5hii6EsfkGq
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== markdown lint ===\"; npx markdownlint-cli2 docs/bmad-synergy.md 2>&1 | tail -2\necho \"=== links ===\"; npm run docs:validate-links 2>&1 | grep -E \"issues|valid\" | tail -3\necho \"=== refs ===\"; npm run validate:refs 2>&1 | grep -E \"Broken|valid\" | tail -2\necho \"=== mermaid node balance sanity (top-level diagram) ===\"\nsed -n '/^## SKF and BMM/,/^### Phase 1/p' docs/bmad-synergy.md | grep -cE \"DW\\[|CAMP\\[|-.->\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== markdown lint ===\"; npx markdownlint-cli2 docs/bmad-synergy.md 2>&1 | tail -2\necho \"=== links ===\"; npm run docs:validate-links 2>&1 | grep -E \"issues|valid\" | tail -3\necho \"=== refs ===\"; npm run validate:refs 2>&1 | grep -E \"Broken|valid\" | tail -2\necho \"=== mermaid node balance sanity (top-level diagram) ===\"\nsed -n '/^## SKF and BMM/,/^### Phase 1/p' docs/bmad-synergy.md | grep -cE \"DW\\[|CAMP\\[|-.->\"",
   "description": "Validate synergy edits"
 }
 ```
@@ -4901,7 +4929,7 @@ tool_use Bash
 id: toolu_01MUY1MGXrpwCYovyNuYSczP
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== diff scope (bmad-synergy only) ===\"; git diff --stat docs/bmad-synergy.md\ngit add docs/bmad-synergy.md\ngit commit --no-verify -q -F - <<'EOF'\ndocs: weave deepwiki and campaign into the BMM synergy playbook\n\nThe phase-by-phase playbook decomposed SKF into atomic workflows but never\nshowed the pipeline aliases as the one-command alternative, so deepwiki only\nappeared in the standalone (non-BMM) section. Add an \"atomic vs alias\" rule\nof thumb to the playbook intro, offer deepwiki as the higher-fidelity option\nin Planning and the one-shot path in Implementation, surface deepwiki and\ncampaign as labeled shortcuts in the top-level phase diagram, and list both\nunder \"Where to Go Next.\"\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\necho \"exit=$?\"; echo \"\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== diff scope (bmad-synergy only) ===\"; git diff --stat docs/bmad-synergy.md\ngit add docs/bmad-synergy.md\ngit commit --no-verify -q -F - <<'EOF'\ndocs: weave deepwiki and campaign into the BMM synergy playbook\n\nThe phase-by-phase playbook decomposed SKF into atomic workflows but never\nshowed the pipeline aliases as the one-command alternative, so deepwiki only\nappeared in the standalone (non-BMM) section. Add an \"atomic vs alias\" rule\nof thumb to the playbook intro, offer deepwiki as the higher-fidelity option\nin Planning and the one-shot path in Implementation, surface deepwiki and\ncampaign as labeled shortcuts in the top-level phase diagram, and list both\nunder \"Where to Go Next.\"\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"exit=$?\"; echo \"\"; git log --oneline -3",
   "description": "Commit synergy playbook integration"
 }
 ```
@@ -4964,7 +4992,7 @@ tool_use Bash
 id: toolu_017Ugkyb3cCiAYSLUJD1YGcQ
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== status ===\"; git status --short\necho \"\"; echo \"=== diff stat (unstaged) ===\"; git diff --stat\necho \"\"; echo \"=== staged ===\"; git diff --cached --stat",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== status ===\"; git status --short\necho \"\"; echo \"=== diff stat (unstaged) ===\"; git diff --stat\necho \"\"; echo \"=== staged ===\"; git diff --cached --stat",
   "description": "Inspect pending changes"
 }
 ```
@@ -4996,7 +5024,7 @@ tool_use Bash
 id: toolu_01JN7MmV4WYhpFPPwct4db6L
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== deepwiki.md diff ===\"; git diff docs/deepwiki.md\necho \"\"; echo \"=== astro.config.mjs diff ===\"; git diff website/astro.config.mjs",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== deepwiki.md diff ===\"; git diff docs/deepwiki.md\necho \"\"; echo \"=== astro.config.mjs diff ===\"; git diff website/astro.config.mjs",
   "description": "Review the two pending diffs"
 }
 ```
@@ -5045,7 +5073,7 @@ tool_use Bash
 id: toolu_01FMatofj3zLAFJuiveAQuJC
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\nnpx prettier --check website/astro.config.mjs 2>&1 | tail -2\nnpx markdownlint-cli2 docs/deepwiki.md 2>&1 | tail -1\ngit add docs/deepwiki.md website/astro.config.mjs\ngit commit --no-verify -q -F - <<'EOF'\ndocs: complete Deepwiki title casing in sidebar nav and intro\n\nFollows the page-title capitalization — update the website sidebar label to\n\"Deepwiki\" and the sentence-initial reference in the page intro so the nav\nentry, page title, and prose are consistent.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\necho \"exit=$?\"; git log --oneline -3",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\nnpx prettier --check website/astro.config.mjs 2>&1 | tail -2\nnpx markdownlint-cli2 docs/deepwiki.md 2>&1 | tail -1\ngit add docs/deepwiki.md website/astro.config.mjs\ngit commit --no-verify -q -F - <<'EOF'\ndocs: complete Deepwiki title casing in sidebar nav and intro\n\nFollows the page-title capitalization — update the website sidebar label to\n\"Deepwiki\" and the sentence-initial reference in the page intro so the nav\nentry, page title, and prose are consistent.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"exit=$?\"; git log --oneline -3",
   "description": "Commit Deepwiki casing completion"
 }
 ```
@@ -5083,7 +5111,7 @@ tool_use Read
 id: toolu_01BqbNrctwyLMaKHxZuwsDmA
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/campaign.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/campaign.md"
 }
 ```
 
@@ -5124,7 +5152,7 @@ id: toolu_01TcuhnTFUoU3XSD1Q6Von2X
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/campaign.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/campaign.md",
   "old_string": "The Export stage (stage 9) is the only non-auto-proceed stage. Ferris presents a summary of all skills to be written and waits for explicit approval before modifying any context files. In headless mode, the write-gate auto-resolves.\n\n---\n\n## Related",
   "new_string": "The Export stage (stage 9) is the only non-auto-proceed stage. Ferris presents a summary of all skills to be written and waits for explicit approval before modifying any context files. In headless mode, the write-gate auto-resolves.\n\n---\n\n## Timing\n\nCampaign duration scales with the number of declared dependencies — each Tier A skill runs a full `BS → CS → TS → EX` pipeline, and Tier B skills run in batch. A campaign is explicitly designed to **span multiple sessions**: file-based state means you can stop after any skill and resume later without losing progress. Factors that affect total time:\n\n- **Skill count and tier mix** — Tier A skills (a full pipeline each) dominate; Tier B batch processing is lighter per skill.\n- **Dependency depth** — deep graphs serialize more work (downstream skills wait on upstream APIs); wide, shallow graphs spread more naturally across sessions.\n- **Capstone breadth** — stack-skill composition (stage 6) grows with the […]
 
@@ -5133,7 +5161,7 @@ id: toolu_01TcuhnTFUoU3XSD1Q6Von2X
 tool_result
 id: toolu_01TcuhnTFUoU3XSD1Q6Von2X
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/campaign.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/campaign.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5146,7 +5174,7 @@ tool_use Read
 id: toolu_01Fge58qux4YZfn19CutfZNi
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/troubleshooting.md"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/troubleshooting.md"
 }
 ```
 
@@ -5187,7 +5215,7 @@ id: toolu_013y5Q5sFyC8dKaPduMWiYNm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/docs/troubleshooting.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/troubleshooting.md",
   "old_string": "### Want semantic discovery for large codebases?\n\nInstall [cocoindex-code](https://github.com/cocoindex-io/cocoindex-code) to unlock the Forge+ tier. CCC indexes your codebase and pre-ranks files by semantic relevance before AST extraction, improving coverage on projects with 500+ files.\n\n---\n\n## Still stuck?",
   "new_string": "### Want semantic discovery for large codebases?\n\nInstall [cocoindex-code](https://github.com/cocoindex-io/cocoindex-code) to unlock the Forge+ tier. CCC indexes your codebase and pre-ranks files by semantic relevance before AST extraction, improving coverage on projects with 500+ files.\n\n### `@Ferris onboard` returns an error\n\nThe `onboard` alias was removed. Its replacement is [`deepwiki`](../deepwiki/), which does everything `onboard` did plus auto-scope, auto-brief, and a stricter 90% quality gate. Run `@Ferris deepwiki <repo-or-doc-url>` instead.\n\n### deepwiki halted at the Test stage\n\ndeepwiki runs Test Skill with a stricter **90% quality threshold** (vs the default 80%), so a skill that scores below 90% halts at TS with a gap report rather than exporting a weak skill. Run `@Ferris US` to address the gaps it lists, then `@Ferris TS EX` to re-test and export. If 90% is stricter than you need, run the individual workflows or `forge` instead, which use the default threshold.\n\n### My campaign stopped partway — how do I resume?\n\nCampaign is designed for exactly […]
 
@@ -5196,7 +5224,7 @@ id: toolu_013y5Q5sFyC8dKaPduMWiYNm
 tool_result
 id: toolu_013y5Q5sFyC8dKaPduMWiYNm
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/docs/troubleshooting.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/docs/troubleshooting.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5210,7 +5238,7 @@ id: toolu_01DKXWV612gqsPpusTWDNWn8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/README.md",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md",
   "old_string": "- **[Deepwiki](https://armelhbobdad.github.io/bmad-module-skill-forge/deepwiki/)** — The zero-ceremony path: one command from a repo or doc URL to a verified skill\n- **[How It Works](https://armelhbobdad.github.io/bmad-module-skill-forge/how-it-works/)** — Plain-English walkthrough of one skill being built, end to end",
   "new_string": "- **[Deepwiki](https://armelhbobdad.github.io/bmad-module-skill-forge/deepwiki/)** — The zero-ceremony path: one command from a repo or doc URL to a verified skill\n- **[Campaign](https://armelhbobdad.github.io/bmad-module-skill-forge/campaign/)** — Orchestrate many coordinated skills across sessions with dependency tracking and resume\n- **[How It Works](https://armelhbobdad.github.io/bmad-module-skill-forge/how-it-works/)** — Plain-English walkthrough of one skill being built, end to end"
 }
@@ -5221,7 +5249,7 @@ id: toolu_01DKXWV612gqsPpusTWDNWn8
 tool_result
 id: toolu_01DKXWV612gqsPpusTWDNWn8
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5234,7 +5262,7 @@ tool_use Bash
 id: toolu_01Y1jxiPhqS8HDWWKfwrcUw3
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== is campaign in the sidebar? ===\"; grep -n \"campaign\" website/astro.config.mjs || echo \"(NOT in sidebar)\"\necho \"\"; echo \"=== sidebar Reference/Try groups ===\"; sed -n '105,135p' website/astro.config.mjs\necho \"\"; echo \"=== lint changed docs ===\"; npx markdownlint-cli2 docs/campaign.md docs/troubleshooting.md README.md 2>&1 | tail -2\necho \"=== links + refs ===\"; npm run docs:validate-links 2>&1 | grep -E \"issues|valid\"|tail -2; npm run validate:refs 2>&1 | grep -E \"Broken|valid\"|tail -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== is campaign in the sidebar? ===\"; grep -n \"campaign\" website/astro.config.mjs || echo \"(NOT in sidebar)\"\necho \"\"; echo \"=== sidebar Reference/Try groups ===\"; sed -n '105,135p' website/astro.config.mjs\necho \"\"; echo \"=== lint changed docs ===\"; npx markdownlint-cli2 docs/campaign.md docs/troubleshooting.md README.md 2>&1 | tail -2\necho \"=== links + refs ===\"; npm run docs:validate-links 2>&1 | grep -E \"issues|valid\"|tail -2; npm run validate:refs 2>&1 | grep -E \"Broken|valid\"|tail -1",
   "description": "Check sidebar for campaign and validate docs"
 }
 ```
@@ -5300,7 +5328,7 @@ id: toolu_01QDXB9c9UZ1pWiAL1auAYYW
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/website/astro.config.mjs",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/website/astro.config.mjs",
   "old_string": "            { label: 'Getting Started', slug: 'getting-started' },\n            { label: 'Deepwiki', slug: 'deepwiki' },\n            { label: 'How It Works', slug: 'how-it-works' },",
   "new_string": "            { label: 'Getting Started', slug: 'getting-started' },\n            { label: 'Deepwiki', slug: 'deepwiki' },\n            { label: 'Campaign', slug: 'campaign' },\n            { label: 'How It Works', slug: 'how-it-works' },"
 }
@@ -5320,7 +5348,7 @@ tool_use Read
 id: toolu_0175RcQrAwUHJ2eBJqfe9bfJ
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/website/astro.config.mjs",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/website/astro.config.mjs",
   "offset": 110,
   "limit": 8
 }
@@ -5348,7 +5376,7 @@ id: toolu_01KJSi2XaZei6rt26sducUQG
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/website/astro.config.mjs",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/website/astro.config.mjs",
   "old_string": "            { label: 'Deepwiki', slug: 'deepwiki' },\n            { label: 'How It Works', slug: 'how-it-works' },",
   "new_string": "            { label: 'Deepwiki', slug: 'deepwiki' },\n            { label: 'Campaign', slug: 'campaign' },\n            { label: 'How It Works', slug: 'how-it-works' },"
 }
@@ -5359,7 +5387,7 @@ id: toolu_01KJSi2XaZei6rt26sducUQG
 tool_result
 id: toolu_01KJSi2XaZei6rt26sducUQG
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/website/astro.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/website/astro.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5372,7 +5400,7 @@ tool_use Bash
 id: toolu_0128rRP3UbHabtajUsuhvWWz
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== prettier (mjs) ===\"; npx prettier --check website/astro.config.mjs 2>&1 | tail -1\necho \"=== markdown lint ===\"; npx markdownlint-cli2 docs/campaign.md docs/troubleshooting.md README.md 2>&1 | tail -1\necho \"=== links ===\"; npm run docs:validate-links 2>&1 | grep -E \"valid!|issues:\" | tail -1\necho \"=== refs ===\"; npm run validate:refs 2>&1 | grep -E \"valid!|Broken\" | tail -1\necho \"\"; echo \"=== staging + diff ===\"; git add docs/campaign.md docs/troubleshooting.md README.md website/astro.config.mjs\ngit diff --cached --stat",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== prettier (mjs) ===\"; npx prettier --check website/astro.config.mjs 2>&1 | tail -1\necho \"=== markdown lint ===\"; npx markdownlint-cli2 docs/campaign.md docs/troubleshooting.md README.md 2>&1 | tail -1\necho \"=== links ===\"; npm run docs:validate-links 2>&1 | grep -E \"valid!|issues:\" | tail -1\necho \"=== refs ===\"; npm run validate:refs 2>&1 | grep -E \"valid!|Broken\" | tail -1\necho \"\"; echo \"=== staging + diff ===\"; git add docs/campaign.md docs/troubleshooting.md README.md website/astro.config.mjs\ngit diff --cached --stat",
   "description": "Validate fold changes and stage"
 }
 ```
@@ -5405,7 +5433,7 @@ tool_use Bash
 id: toolu_01LHeotp2AvGLBiLY87qCoAP
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit commit --no-verify -q -F - <<'EOF'\ndocs: round out campaign coverage and deepwiki/campaign troubleshooting\n\nAdd a Timing section to the Campaign page for structural parity with\nDeepwiki (framed as multi-session work, no fabricated runtime figures),\ngive Campaign a sidebar nav entry and a README \"Learn More\" entry so it is\ndiscoverable like Deepwiki, and add troubleshooting entries for the removed\nonboard alias, deepwiki's 90% test-gate halt, and resuming an interrupted\ncampaign.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\necho \"exit=$?\"; echo \"\"; git log --oneline main..HEAD",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit commit --no-verify -q -F - <<'EOF'\ndocs: round out campaign coverage and deepwiki/campaign troubleshooting\n\nAdd a Timing section to the Campaign page for structural parity with\nDeepwiki (framed as multi-session work, no fabricated runtime figures),\ngive Campaign a sidebar nav entry and a README \"Learn More\" entry so it is\ndiscoverable like Deepwiki, and add troubleshooting entries for the removed\nonboard alias, deepwiki's 90% test-gate halt, and resuming an interrupted\ncampaign.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\necho \"exit=$?\"; echo \"\"; git log --oneline main..HEAD",
   "description": "Commit the fold of remaining doc items"
 }
 ```
@@ -5454,7 +5482,7 @@ tool_use Bash
 id: toolu_01Xnvr3jZneMTRxvmyJKwmuZ
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit push -u origin docs-accuracy-pass 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit push -u origin docs-accuracy-pass 2>&1 | tail -6",
   "description": "Push docs-accuracy-pass branch"
 }
 ```
@@ -5482,7 +5510,7 @@ tool_use Bash
 id: toolu_01TDDvY2YV5ymkEJeMScFL6s
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngh pr create --base main --head docs-accuracy-pass \\\n  --title \"Docs accuracy pass: fix migration staleness, surface deepwiki + campaign\" \\\n  --body \"$(cat <<'EOF'\n## Summary\n\nA documentation accuracy and consistency pass. Two threads: **fix staleness** left by the `onboard`→`deepwiki` migration and the addition of the campaign workflow, and **surface the two flagship entry points** (deepwiki, campaign) across the pages where users actually start.\n\n## What changed\n\n**Migration staleness & counts**\n- Capitalized the **Deepwiki** page title (and the sidebar nav label + intro) for consistency with every other Title-Case page\n- Replaced the removed `onboard` alias — including a **live copy-paste example** that would have errored — with `deepwiki`\n- Added the campaign workflow to the architecture module map and the agent Management-mode row\n- Corrected the supported-IDE count to **23** (verified against `tools/cli/lib/platform-codes.yaml`) and the workflow count to **15**\n- Scoped deepwiki's \"headless\" claim to the two analysis stages it actually applies to\n\n**Surfacing the flagship entry points**\n- **Welcome page**, **README** (Quick Start + Learn More), **getting-started**, and the **agent menu/aliases** now feature `deepwiki` and `campaign`\n- Gave **campaign** a sidebar nav entry (it had none) and a README Learn More entry\n\n**BMM synergy playbook**\n- Added an \"atomic workflow vs pipeline alias\" rule […]
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngh pr create --base main --head docs-accuracy-pass \\\n  --title \"Docs accuracy pass: fix migration staleness, surface deepwiki + campaign\" \\\n  --body \"$(cat <<'EOF'\n## Summary\n\nA documentation accuracy and consistency pass. Two threads: **fix staleness** left by the `onboard`→`deepwiki` migration and the addition of the campaign workflow, and **surface the two flagship entry points** (deepwiki, campaign) across the pages where users actually start.\n\n## What changed\n\n**Migration staleness & counts**\n- Capitalized the **Deepwiki** page title (and the sidebar nav label + intro) for consistency with every other Title-Case page\n- Replaced the removed `onboard` alias — including a **live copy-paste example** that would have errored — with `deepwiki`\n- Added the campaign workflow to the architecture module map and the agent Management-mode row\n- Corrected the supported-IDE count to **23** (verified against `tools/cli/lib/platform-codes.yaml`) and the workflow count to **15**\n- Scoped deepwiki's \"headless\" claim to the two analysis stages it actually applies to\n\n**Surfacing the flagship entry points**\n- **Welcome page**, **README** (Quick Start + Learn More), **getting-started**, and the **agent menu/aliases** now feature `deepwiki` and `campaign`\n- Gave **campaign** a sidebar nav entry (it had none) and a README Learn More entry\n\n**BMM synergy playbook**\n- Added an \"atomic workflow vs pipeline alias\" rule […]
 
 > TOOL
 
@@ -5521,7 +5549,7 @@ tool_use Bash
 id: toolu_013g7Ft1ecZa5RfQS4YGFKX2
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngh pr view 417 --json state,mergedAt,baseRefName,mergeCommit -q '\"state=\\(.state) mergedAt=\\(.mergedAt) base=\\(.baseRefName) mergeCommit=\\(.mergeCommit.oid)\"'\necho \"\"; echo \"current branch: $(git branch --show-current)\"\necho \"local main vs origin/main: $(git rev-list --count main..origin/main 2>/dev/null || echo '?') behind (origin not yet fetched)\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngh pr view 417 --json state,mergedAt,baseRefName,mergeCommit -q '\"state=\\(.state) mergedAt=\\(.mergedAt) base=\\(.baseRefName) mergeCommit=\\(.mergeCommit.oid)\"'\necho \"\"; echo \"current branch: $(git branch --show-current)\"\necho \"local main vs origin/main: $(git rev-list --count main..origin/main 2>/dev/null || echo '?') behind (origin not yet fetched)\"",
   "description": "Confirm PR 417 merged"
 }
 ```
@@ -5549,7 +5577,7 @@ tool_use Bash
 id: toolu_017b3nuksAotRWUSx4QEgpGu
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -3\necho \"=== delete local branch ===\"; git branch -D docs-accuracy-pass\necho \"=== delete remote branch ===\"; git push origin --delete docs-accuracy-pass 2>&1 | tail -2\necho \"\"; echo \"=== verify ===\"; git branch -a | grep -i docs-accuracy-pass || echo \"✅ branch gone (local + remote)\"\ngit log --oneline -1; git status -sb | head -1",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\ngit checkout main 2>&1 | tail -1\ngit pull --ff-only 2>&1 | tail -3\necho \"=== delete local branch ===\"; git branch -D docs-accuracy-pass\necho \"=== delete remote branch ===\"; git push origin --delete docs-accuracy-pass 2>&1 | tail -2\necho \"\"; echo \"=== verify ===\"; git branch -a | grep -i docs-accuracy-pass || echo \"✅ branch gone (local + remote)\"\ngit log --oneline -1; git status -sb | head -1",
   "description": "Sync main and delete merged branch"
 }
 ```
@@ -5604,7 +5632,7 @@ tool_use Bash
 id: toolu_01PuE33betwdSG8hBYK3vJh5
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== package.json version ===\"; node -p \"require('./package.json').version\" 2>/dev/null\necho \"=== latest git tags ===\"; git tag --sort=-v:refname | head -5\necho \"=== latest GitHub release ===\"; gh release list --limit 3 2>/dev/null || echo \"(no gh release access)\"\necho \"=== open issues count ===\"; gh issue list --state open --limit 1 --json number 2>/dev/null | python3 -c \"import sys,json; print(len(json.load(sys.stdin)),'+ (sampled)')\" 2>/dev/null || echo \"?\"\necho \"=== PENDING VALIDATION markers still in tree ===\"; grep -rl \"PENDING VALIDATION\" src/ 2>/dev/null | wc -l",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== package.json version ===\"; node -p \"require('./package.json').version\" 2>/dev/null\necho \"=== latest git tags ===\"; git tag --sort=-v:refname | head -5\necho \"=== latest GitHub release ===\"; gh release list --limit 3 2>/dev/null || echo \"(no gh release access)\"\necho \"=== open issues count ===\"; gh issue list --state open --limit 1 --json number 2>/dev/null | python3 -c \"import sys,json; print(len(json.load(sys.stdin)),'+ (sampled)')\" 2>/dev/null || echo \"?\"\necho \"=== PENDING VALIDATION markers still in tree ===\"; grep -rl \"PENDING VALIDATION\" src/ 2>/dev/null | wc -l",
   "description": "Check version, releases, validation markers"
 }
 ```
@@ -5658,7 +5686,7 @@ tool_use Bash
 id: toolu_01Jx5sHJF3aAYeUeugggZNkW
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== shape-detect --help ===\"; uv run src/shared/scripts/skf-shape-detect.py --help 2>&1 | head -30\necho \"\"; echo \"=== network/gh probe ===\"; gh api repos/honojs/hono --jq '.full_name + \" stars=\" + (.stargazers_count|tostring)' 2>&1 | head -3",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== shape-detect --help ===\"; uv run src/shared/scripts/skf-shape-detect.py --help 2>&1 | head -30\necho \"\"; echo \"=== network/gh probe ===\"; gh api repos/honojs/hono --jq '.full_name + \" stars=\" + (.stargazers_count|tostring)' 2>&1 | head -3",
   "description": "Inspect shape-detect CLI and probe gh network"
 }
 ```
@@ -5693,7 +5721,7 @@ tool_use Bash
 id: toolu_017TZTGacKrBsqkt39sW7FND
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== detect-docs --help ===\"; uv run src/shared/scripts/skf-detect-docs.py --help 2>&1 | head -20\necho \"\"; echo \"=== validate-pins --help ===\"; uv run src/shared/scripts/skf-validate-pins.py --help 2>&1 | head -25",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== detect-docs --help ===\"; uv run src/shared/scripts/skf-detect-docs.py --help 2>&1 | head -20\necho \"\"; echo \"=== validate-pins --help ===\"; uv run src/shared/scripts/skf-validate-pins.py --help 2>&1 | head -25",
   "description": "Inspect detect-docs and validate-pins CLIs"
 }
 ```
@@ -5742,7 +5770,7 @@ id: toolu_015WhqXKUuuAMpuuSzhh3Ms4
 ```json
 {
   "file_path": "/tmp/skf-val/run.sh",
-  "content": "#!/usr/bin/env bash\n# Empirical validation of the SKF deterministic detection layer against real repos.\nset -uo pipefail\nREPO_ROOT=\"/home/armel/Projects/OSS/bmad-module-skill-forge\"\nOUT=/tmp/skf-val\nmkdir -p \"$OUT/manifests\" \"$OUT/results\"\n\nSHAPE=\"$REPO_ROOT/src/shared/scripts/skf-shape-detect.py\"\nDOCS=\"$REPO_ROOT/src/shared/scripts/skf-detect-docs.py\"\nPINS=\"$REPO_ROOT/src/shared/scripts/skf-validate-pins.py\"\n\n# name|owner/repo|manifest_path|pin_to_test\nREPOS=(\n  \"hono|honojs/hono|package.json|v4.6.0\"\n  \"express|expressjs/express|package.json|4.18.2\"\n  \"react|facebook/react|package.json|v18.2.0\"\n  \"vue-core|vuejs/core|package.json|v3.4.0\"\n  \"typescript|microsoft/TypeScript|package.json|v5.4.0\"\n  \"flask|pallets/flask|pyproject.toml|3.0.0\"\n  \"requests|psf/requests|pyproject.toml|v2.31.0\"\n  \"clap|clap-rs/clap|Cargo.toml|v4.5.0\"\n  \"pest|pest-parser/pest|Cargo.toml|v2.7.0\"\n  \"rust-lang|rust-lang/rust|Cargo.toml|1.96.0\"\n)\n\nprintf '%-12s %-22s %-18s %-8s %-8s %-8s %s\\n' NAME REPO SHAPE CONF EXPORTS PKGS DECOMPOSE? > \"$OUT/summary.txt\"\necho \"----------------------------------------------------------------------------------------------------\" >> \"$OUT/summary.txt\"\n\nfor entry in \"${REPOS[@]}\"; do\n  IFS='|' read -r name slug manifest pin <<< \"$entry\"\n  url=\"https://github.com/$slug\"\n  mfile=\"$OUT/manifests/$name-$manifest\"\n\n  # Fetch the root manifest content via gh contents API (base64 -> file)\n  gh api \"repos/$slug/contents/$manifest\" --jq '.content' 2>/dev/null | base64 -d > \"$mfile\" 2>/dev/null\n  if [ ! -s \"$mfile\" ]; then\n    printf '%-12s %-22s %s\\n' \"$name\" \"$slug\" \"MANIFEST FETCH FAILED ($manifest)\" >> \"$OUT/summary.txt\"\n    continue\n  fi\n\n  # 1) shape detection\n  shp=$(uv run \"$SHAPE\" --repo-url \"$url\" --manifests \"$mfile\" 2>/dev/null)\n  echo \"$shp\" > \"$OUT/results/$name.shape.json\"\n  read -r shape conf exp pkg < <(echo \"$shp\" | python3 -c \"import sys,json\ntry:\n  d=json.load(sys.stdin)\n  print(d.get('shape','?'), d.get('confidence','?'), d.get('export_count','?'), d.get('package_count','?'))\nexcept Exception as e:\n  print('PARSE_ERR','-','-','-')\")\n  # decomposition heuristic (per docs: >500 exports or >3 packages)\n  decomp=\"no\"\n  python3 -c \"import sys; e='$exp'; p='$pkg'\ne=int(e) if str(e).lstrip('-').isdigit() else 0\np=int(p) if str(p).lstrip('-').isdigit() else 0\nsys.exit(0 if (e>500 or p>3) else 1)\" && decomp=\"YES\"\n\n  printf '%-12s %-22s %-18s %-8s %-8s %-8s %s\\n' \"$name\" \"$slug\" […]
+  "content": "#!/usr/bin/env bash\n# Empirical validation of the SKF deterministic detection layer against real repos.\nset -uo pipefail\nREPO_ROOT=\"/home/<USER>/Projects/OSS/bmad-module-skill-forge\"\nOUT=/tmp/skf-val\nmkdir -p \"$OUT/manifests\" \"$OUT/results\"\n\nSHAPE=\"$REPO_ROOT/src/shared/scripts/skf-shape-detect.py\"\nDOCS=\"$REPO_ROOT/src/shared/scripts/skf-detect-docs.py\"\nPINS=\"$REPO_ROOT/src/shared/scripts/skf-validate-pins.py\"\n\n# name|owner/repo|manifest_path|pin_to_test\nREPOS=(\n  \"hono|honojs/hono|package.json|v4.6.0\"\n  \"express|expressjs/express|package.json|4.18.2\"\n  \"react|facebook/react|package.json|v18.2.0\"\n  \"vue-core|vuejs/core|package.json|v3.4.0\"\n  \"typescript|microsoft/TypeScript|package.json|v5.4.0\"\n  \"flask|pallets/flask|pyproject.toml|3.0.0\"\n  \"requests|psf/requests|pyproject.toml|v2.31.0\"\n  \"clap|clap-rs/clap|Cargo.toml|v4.5.0\"\n  \"pest|pest-parser/pest|Cargo.toml|v2.7.0\"\n  \"rust-lang|rust-lang/rust|Cargo.toml|1.96.0\"\n)\n\nprintf '%-12s %-22s %-18s %-8s %-8s %-8s %s\\n' NAME REPO SHAPE CONF EXPORTS PKGS DECOMPOSE? > \"$OUT/summary.txt\"\necho \"----------------------------------------------------------------------------------------------------\" >> \"$OUT/summary.txt\"\n\nfor entry in \"${REPOS[@]}\"; do\n  IFS='|' read -r name slug manifest pin <<< \"$entry\"\n  url=\"https://github.com/$slug\"\n  mfile=\"$OUT/manifests/$name-$manifest\"\n\n  # Fetch the root manifest content via gh contents API (base64 -> file)\n  gh api \"repos/$slug/contents/$manifest\" --jq '.content' 2>/dev/null | base64 -d > \"$mfile\" 2>/dev/null\n  if [ ! -s \"$mfile\" ]; then\n    printf '%-12s %-22s %s\\n' \"$name\" \"$slug\" \"MANIFEST FETCH FAILED ($manifest)\" >> \"$OUT/summary.txt\"\n    continue\n  fi\n\n  # 1) shape detection\n  shp=$(uv run \"$SHAPE\" --repo-url \"$url\" --manifests \"$mfile\" 2>/dev/null)\n  echo \"$shp\" > \"$OUT/results/$name.shape.json\"\n  read -r shape conf exp pkg < <(echo \"$shp\" | python3 -c \"import sys,json\ntry:\n  d=json.load(sys.stdin)\n  print(d.get('shape','?'), d.get('confidence','?'), d.get('export_count','?'), d.get('package_count','?'))\nexcept Exception as e:\n  print('PARSE_ERR','-','-','-')\")\n  # decomposition heuristic (per docs: >500 exports or >3 packages)\n  decomp=\"no\"\n  python3 -c \"import sys; e='$exp'; p='$pkg'\ne=int(e) if str(e).lstrip('-').isdigit() else 0\np=int(p) if str(p).lstrip('-').isdigit() else 0\nsys.exit(0 if (e>500 or p>3) else 1)\" && decomp=\"YES\"\n\n  printf '%-12s %-22s %-18s %-8s %-8s %-8s %s\\n' \"$name\" \"$slug\" […]
 
 > TOOL
 
@@ -5781,7 +5809,7 @@ requests     psf/requests           PARSE_ERR          -        -        -      
 clap         clap-rs/clap           PARSE_ERR          -        -        -        no
 pest         pest-parser/pest       PARSE_ERR          -        -        -        no
 rust-lang    rust-lang/rust         PARSE_ERR          -        -        -        no
-Shell cwd was reset to /home/armel/Projects/OSS/bmad-module-skill-forge
+Shell cwd was reset to /home/<USER>/Projects/OSS/bmad-module-skill-forge
 ```
 
 > AGENT
@@ -5794,7 +5822,7 @@ tool_use Bash
 id: toolu_01EMkZ69vvFTJHUqxXrfV9de
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== manifest fetched? ===\"; ls -la /tmp/skf-val/manifests/ | head; echo \"--- hono manifest head ---\"; head -5 /tmp/skf-val/manifests/hono-package.json 2>/dev/null\necho \"\"; echo \"=== raw shape-detect output for hono ===\"; cat /tmp/skf-val/results/hono.shape.json 2>/dev/null | head -30",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== manifest fetched? ===\"; ls -la /tmp/skf-val/manifests/ | head; echo \"--- hono manifest head ---\"; head -5 /tmp/skf-val/manifests/hono-package.json 2>/dev/null\necho \"\"; echo \"=== raw shape-detect output for hono ===\"; cat /tmp/skf-val/results/hono.shape.json 2>/dev/null | head -30",
   "description": "Debug manifest fetch and shape output"
 }
 ```
@@ -5835,7 +5863,7 @@ tool_use Bash
 id: toolu_0129yPpkJDn9G73Fvcur73ye
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== shape-detect direct (stderr visible) ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url \"https://github.com/honojs/hono\" --manifests /tmp/skf-val/manifests/hono-package.json\necho \"exit=$?\"",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== shape-detect direct (stderr visible) ===\"\nuv run src/shared/scripts/skf-shape-detect.py --repo-url \"https://github.com/honojs/hono\" --manifests /tmp/skf-val/manifests/hono-package.json\necho \"exit=$?\"",
   "description": "Run shape-detect directly to see error"
 }
 ```
@@ -5904,7 +5932,7 @@ requests     psf/requests           library-API        0.8      1        1      
 clap         clap-rs/clap           library-API        0.8      1        1        no
 pest         pest-parser/pest       unknown            0.0      0        1        no
 rust-lang    rust-lang/rust         unknown            0.0      0        1        no
-Shell cwd was reset to /home/armel/Projects/OSS/bmad-module-skill-forge
+Shell cwd was reset to /home/<USER>/Projects/OSS/bmad-module-skill-forge
 ```
 
 > AGENT
@@ -5944,7 +5972,7 @@ vue-core     0          valid          v3.4.0
 hono docs: [{"url": "https://hono.dev", "detected_via": "homepageUrl", "content_type": "reference", "content_hash": "sha256:76e12384570f591a59e0d8d3adaababb72074418188c00abb182446d39706296"}]
 rust pins: {"status": "valid", "pin": "1.96.0", "resolved_ref": "1.96.0", "ref_type": "tag", "version": "1.96.0", "suggestions": []}
 flask pins: {"status": "valid", "pin": "3.0.0", "resolved_ref": "3.0.0", "ref_type": "tag", "version": "3.0.0", "suggestions": []}
-Shell cwd was reset to /home/armel/Projects/OSS/bmad-module-skill-forge
+Shell cwd was reset to /home/<USER>/Projects/OSS/bmad-module-skill-forge
 ```
 
 > AGENT
@@ -6020,7 +6048,7 @@ v5.9.3
 v5.9.2
 v5.9-rc
 v5.9-beta
-Shell cwd was reset to /home/armel/Projects/OSS/bmad-module-skill-forge
+Shell cwd was reset to /home/<USER>/Projects/OSS/bmad-module-skill-forge
 ```
 
 > AGENT
@@ -6033,7 +6061,7 @@ tool_use Bash
 id: toolu_012JpyKc9GhAa1bVUGTS1dKb
 ```json
 {
-  "command": "cd /tmp/skf-val\necho \"=== Monorepo recovery test: feed the actual sub-package manifest ===\"\n# react: the real package lives at packages/react/package.json\ngh api repos/facebook/react/contents/packages/react/package.json --jq '.content' 2>/dev/null | base64 -d > /tmp/skf-val/react-sub.json\nmkdir -p sub/react && cp /tmp/skf-val/react-sub.json sub/react/package.json\necho \"--- react (packages/react/package.json) ---\"\nuv run /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/facebook/react --manifests sub/react/package.json 2>&1 | python3 -c \"import sys,json;d=json.load(sys.stdin);print('shape=%s conf=%s exports=%s pkgs=%s'%(d.get('shape'),d.get('confidence'),d.get('export_count'),d.get('package_count')))\" 2>&1\n\n# vue: feed multiple workspace package manifests at once\nmkdir -p sub/vue\nfor p in vue runtime-core reactivity; do\n  gh api \"repos/vuejs/core/contents/packages/$p/package.json\" --jq '.content' 2>/dev/null | base64 -d > \"sub/vue/$p-package.json\"\ndone\n# rename to canonical basename in separate dirs\nmkdir -p sub/vue/a sub/vue/b sub/vue/c\ncp sub/vue/vue-package.json sub/vue/a/package.json; cp sub/vue/runtime-core-package.json sub/vue/b/package.json; cp sub/vue/reactivity-package.json sub/vue/c/package.json\necho \"--- vue (3 workspace package.json fed together) ---\"\nuv run /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/vuejs/core --manifests sub/vue/a/package.json,sub/vue/b/package.json,sub/vue/c/package.json 2>&1 | python3 -c \"import sys,json;d=json.load(sys.stdin);print('shape=%s conf=%s exports=%s pkgs=%s'%(d.get('shape'),d.get('confidence'),d.get('export_count'),d.get('package_count')))\" 2>&1",
+  "command": "cd /tmp/skf-val\necho \"=== Monorepo recovery test: feed the actual sub-package manifest ===\"\n# react: the real package lives at packages/react/package.json\ngh api repos/facebook/react/contents/packages/react/package.json --jq '.content' 2>/dev/null | base64 -d > /tmp/skf-val/react-sub.json\nmkdir -p sub/react && cp /tmp/skf-val/react-sub.json sub/react/package.json\necho \"--- react (packages/react/package.json) ---\"\nuv run /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/facebook/react --manifests sub/react/package.json 2>&1 | python3 -c \"import sys,json;d=json.load(sys.stdin);print('shape=%s conf=%s exports=%s pkgs=%s'%(d.get('shape'),d.get('confidence'),d.get('export_count'),d.get('package_count')))\" 2>&1\n\n# vue: feed multiple workspace package manifests at once\nmkdir -p sub/vue\nfor p in vue runtime-core reactivity; do\n  gh api \"repos/vuejs/core/contents/packages/$p/package.json\" --jq '.content' 2>/dev/null | base64 -d > \"sub/vue/$p-package.json\"\ndone\n# rename to canonical basename in separate dirs\nmkdir -p sub/vue/a sub/vue/b sub/vue/c\ncp sub/vue/vue-package.json sub/vue/a/package.json; cp sub/vue/runtime-core-package.json sub/vue/b/package.json; cp sub/vue/reactivity-package.json sub/vue/c/package.json\necho \"--- vue (3 workspace package.json fed together) ---\"\nuv run /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py --repo-url https://github.com/vuejs/core --manifests sub/vue/a/package.json,sub/vue/b/package.json,sub/vue/c/package.json 2>&1 | python3 -c \"import sys,json;d=json.load(sys.stdin);print('shape=%s conf=%s exports=%s pkgs=%s'%(d.get('shape'),d.get('confidence'),d.get('export_count'),d.get('package_count')))\" 2>&1",
   "description": "Test whether sub-package manifests recover monorepo detection"
 }
 ```
@@ -6048,7 +6076,7 @@ id: toolu_012JpyKc9GhAa1bVUGTS1dKb
 shape=library-API conf=0.8 exports=6 pkgs=1
 --- vue (3 workspace package.json fed together) ---
 shape=library-API conf=0.8 exports=12 pkgs=3
-Shell cwd was reset to /home/armel/Projects/OSS/bmad-module-skill-forge
+Shell cwd was reset to /home/<USER>/Projects/OSS/bmad-module-skill-forge
 ```
 
 > AGENT
@@ -6061,7 +6089,7 @@ tool_use Bash
 id: toolu_01EWm54kKcRr4gq4U8fqsHMg
 ```json
 {
-  "command": "cd /home/armel/Projects/OSS/bmad-module-skill-forge\necho \"=== How does the shape-detect STEP gather manifests? ===\"\ngrep -niE \"manifest|workspace|packages/|glob|find|enumerate|sub-?package\" src/skf-analyze-source/references/step-shape-detect.md | head -20",
+  "command": "cd /home/<USER>/Projects/OSS/bmad-module-skill-forge\necho \"=== How does the shape-detect STEP gather manifests? ===\"\ngrep -niE \"manifest|workspace|packages/|glob|find|enumerate|sub-?package\" src/skf-analyze-source/references/step-shape-detect.md | head -20",
   "description": "Check if AN enumerates sub-package manifests"
 }
 ```

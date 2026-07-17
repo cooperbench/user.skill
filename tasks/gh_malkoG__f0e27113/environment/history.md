@@ -18,7 +18,7 @@ id: toolu_01DAX4VHLpvR9X48QENKov4d
 tool_result
 id: toolu_01DAX4VHLpvR9X48QENKov4d
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality
 app
 docs
 fastlane
@@ -98,7 +98,7 @@ Based on my analysis of the Android app codebase, here are the findings:
 ### 1. **Article Detail Screen**
 Articles are shown via the **PostDetailScreen** (not a separate ArticleDetailScreen). The screen detects articles by checking `post.typename == "Article"` (line 562, PostDetailScreen.kt).
 
-**File**: `/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt`
+**File**: `/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt`
 
 **Line numbers**:
 - Lines 299-300: Title displays "Article" vs "Post"
@@ -108,7 +108,7 @@ Articles are shown via the **PostDetailScreen** (not a separate ArticleDetailScr
 ### 2. **Ownership Determination (canDelete Pattern)**
 Ownership is determined by comparing the viewer's handle with the post actor's handle:
 
-**File**: `/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt`
+**File**: `/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt`
 
 **Lines 82-85** (and 114-116 on refresh):
 ```kotlin
@@ -123,7 +123,7 @@ The deletion is hidden in a **MoreVert menu** (lines 309-323, PostDetailScreen.k
 ### 3. **EditArticleScreen Status**
 **No ArticleEditScreen exists yet**. Only `EditProfileScreen` exists. The ComposeArticleScreen is used for creating new articles and loading drafts via `draftId` parameter, but there's no dedicated edit-article screen for editing published articles.
 
-**File**: `/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleScreen.kt` (lines 64-69 show draft loading but no published article […]
+**File**: `/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleScreen.kt` (lines 64-69 show draft loading but no published article […]
 
 > TOOL
 
@@ -155,7 +155,7 @@ tool_use Read
 id: toolu_01A3vs1BswpBR7ULWJY7QUQ9
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 280,
   "limit": 350
 }
@@ -230,7 +230,7 @@ tool_use Read
 id: toolu_01YFSuNhT3EBrfJ51rkbxfP8
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailScreen.kt",
   "offset": 1,
   "limit": 280
 }
@@ -314,7 +314,7 @@ tool_use Read
 id: toolu_01DVkAugVepsxuXyBgsxCTdb
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/postdetail/PostDetailViewModel.kt"
 }
 ```
 
@@ -379,7 +379,7 @@ tool_use Bash
 id: toolu_01TqyRbBJE94uFGjcWV7o8Nx
 ```json
 {
-  "command": "grep -n \"Article\\|compose\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/HackersPubApp.kt | head -80",
+  "command": "grep -n \"Article\\|compose\" /home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/HackersPubApp.kt | head -80",
   "description": "Find article routes in app nav"
 }
 ```
@@ -389,7 +389,7 @@ id: toolu_01TqyRbBJE94uFGjcWV7o8Nx
 tool_result
 id: toolu_01TqyRbBJE94uFGjcWV7o8Nx
 ```
-grep: /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/HackersPubApp.kt: No such file or directory
+grep: /home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/HackersPubApp.kt: No such file or directory
 ```
 
 > TOOL
@@ -417,7 +417,7 @@ id: toolu_013US9Wv5QtUQaHuR4LdnRNT
 ```json
 {
   "pattern": "Article|ComposeArticle|EditArticle|edit-article|compose-article|DetailScreen\\.\" ",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
   "output_mode": "content",
   "-n": true
 }
@@ -445,7 +445,7 @@ tool_use Read
 id: toolu_01RgP5RA2ycwWUP4g82PyjcS
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
   "offset": 130,
   "limit": 60
 }
@@ -504,7 +504,7 @@ tool_use Read
 id: toolu_01F1Kt6uUPagq33JW67QL4sy
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
   "offset": 600,
   "limit": 80
 }
@@ -592,7 +592,7 @@ id: toolu_01Phu2J86qhfzSaWBFawbybw
 ```json
 {
   "pattern": "PostDetail|PostDetailScreen\" ",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
   "output_mode": "content",
   "-n": true
 }
@@ -623,7 +623,7 @@ tool_use Read
 id: toolu_0168uxT4neV7GRUnEwBDQ7uB
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/HackersPubApp.kt",
   "offset": 510,
   "limit": 70
 }
@@ -696,7 +696,7 @@ id: toolu_01Awsnstey8LUUQyLuktgpMg
 ```json
 {
   "pattern": "editArticle|updateArticle|editPost|updatePost|UpdateArticle|UpdatePost",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app",
   "output_mode": "files_with_matches"
 }
 ```
@@ -715,7 +715,7 @@ tool_use Read
 id: toolu_01MfzHbLZ8bMcCpMjhxGnZdd
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleScreen.kt",
   "offset": 1,
   "limit": 120
 }
@@ -799,7 +799,7 @@ tool_use Read
 id: toolu_01X4b4fMFS6BtbrPfTvhnGra
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleViewModel.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-article-edit-functionality/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleViewModel.kt"
 }
 ```
 

@@ -21,7 +21,7 @@ id: toolu_01WGkd2eYJrtgZRE6DgjnDD2
 tool_result
 id: toolu_01WGkd2eYJrtgZRE6DgjnDD2
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux
 On branch fix/search-ux
 nothing to commit, working tree clean
 6c6bb34 Merge pull request #124 from dalinaum/feat/settings-back-and-theme-picker
@@ -74,7 +74,7 @@ tool_use Read
 id: toolu_01EgZLEGhcMXtd8XgpMAUkDP
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt"
 }
 ```
 
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_01LerVkgqiKsMsQwTsKtLxH3
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt"
 }
 ```
 
@@ -233,7 +233,7 @@ tool_use Bash
 id: toolu_01EinSHMMKXZ2Ep1Zdn6Biq6
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/components/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/components/",
   "description": "List UI components"
 }
 ```
@@ -266,7 +266,7 @@ tool_use Bash
 id: toolu_01DPeue8XLM7HcVqFrpUPWmH
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/",
   "description": "List string resources"
 }
 ```
@@ -288,7 +288,7 @@ id: toolu_0145KnRBnhMkk3g3MPgxMisg
 ```json
 {
   "pattern": "searchPosts|searchActors|searchObject|hashtag|tag",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "output_mode": "content"
 }
 ```
@@ -316,7 +316,7 @@ tool_use Read
 id: toolu_01Y89X7KUMSKMvsHX3kWiPKA
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 170,
   "limit": 50
 }
@@ -385,7 +385,7 @@ tool_use Read
 id: toolu_01YC7h44BAMuwH8MS4tfAVJm
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 840,
   "limit": 40
 }
@@ -444,7 +444,7 @@ tool_use Read
 id: toolu_011gvy2isVnGSRXDi43PfJFb
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 995,
   "limit": 30
 }
@@ -560,7 +560,7 @@ id: toolu_01Nzor3mqDDxB7zq16wXVScZ
 ```json
 {
   "pattern": "hashtag|Hashtag|searchHashtag|tagTimeline|tag_timeline",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "output_mode": "content",
   "-n": true
 }
@@ -580,7 +580,7 @@ tool_use Bash
 id: toolu_01EnPLtJs8SKCrKqXQ8GVzai
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql/",
   "description": "List GraphQL schema dir"
 }
 ```
@@ -599,7 +599,7 @@ tool_use Bash
 id: toolu_014qLg1Qory5hKwRZkdpinst
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql/pub/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql/pub/",
   "description": "List GraphQL files"
 }
 ```
@@ -619,7 +619,7 @@ id: toolu_01V9zZXZwf7pfPn197YJjQQx
 ```json
 {
   "pattern": "Search",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql",
   "output_mode": "files_with_matches"
 }
 ```
@@ -641,7 +641,7 @@ id: toolu_01VBd8CmViF8bw4wk6Khfv35
 ```json
 {
   "pattern": "search|Search",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "output_mode": "content",
   "-n": true
 }
@@ -669,7 +669,7 @@ id: toolu_01XbfcMqVsR9jRHcyR6h2udr
 ```json
 {
   "pattern": "[Tt]ag|hashtag|[Hh]ashtag",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "output_mode": "content",
   "-n": true,
   "head_limit": 30
@@ -694,7 +694,7 @@ tool_use Read
 id: toolu_01DbuaYMm6W2vmcdUrUhcrF1
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/components/RichDisplayName.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/components/RichDisplayName.kt"
 }
 ```
 
@@ -757,7 +757,7 @@ tool_use Read
 id: toolu_01XkbLCaQnjTnM2CbMYVWx5n
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml"
 }
 ```
 
@@ -819,7 +819,7 @@ tool_use Bash
 id: toolu_01MHq8DZ1x2rYc5seYGfpvHz
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/theme/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/theme/",
   "description": "List theme files"
 }
 ```
@@ -844,7 +844,7 @@ id: toolu_01WrpKzSXH9RYqTYY9wcNSqQ
 ```json
 {
   "pattern": "LargeTitleHeader",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/components/LargeTitleHeader.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/components/LargeTitleHeader.kt",
   "output_mode": "content",
   "-n": true,
   "-A": 30
@@ -954,7 +954,7 @@ tool_use Read
 id: toolu_01Dz5CicTy8ito8g4cDjtquj
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/theme/Colors.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/theme/Colors.kt"
 }
 ```
 
@@ -1024,7 +1024,7 @@ tool_use Read
 id: toolu_011F3HjhJQAzQ1Zy6343KQ81
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/theme/AppShapes.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/theme/AppShapes.kt"
 }
 ```
 
@@ -1035,7 +1035,7 @@ id: toolu_01HNuGbV1pv3eCvSCKRw427c
 ```json
 {
   "pattern": "fun.*Actor.*\\(|AsyncImage.*avatar|RichDisplayName.*name",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1058,7 +1058,7 @@ id: toolu_01BdBYN9XAim47QGBRcikJhd
 ```json
 {
   "pattern": "RecommendedActor|recommendedActor|ActorRow|ActorCard|ActorItem",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1082,7 +1082,7 @@ tool_use Read
 id: toolu_01BDPJAsEQSRTE2p1Eaifdug
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/recommendedactors/RecommendedActorsScreen.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/recommendedactors/RecommendedActorsScreen.kt"
 }
 ```
 
@@ -1161,7 +1161,7 @@ tool_use Bash
 id: toolu_016sYhAUTTCAEpbCRbNTrywn
 ```json
 {
-  "command": "find /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/domain/model -type f",
+  "command": "find /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/domain/model -type f",
   "description": "Locate domain model files"
 }
 ```
@@ -1171,7 +1171,7 @@ id: toolu_016sYhAUTTCAEpbCRbNTrywn
 tool_result
 id: toolu_016sYhAUTTCAEpbCRbNTrywn
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/domain/model/Models.kt
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/domain/model/Models.kt
 ```
 
 > TOOL
@@ -1181,7 +1181,7 @@ id: toolu_01LocLSNmQfKrZ9rHZhLCVem
 ```json
 {
   "pattern": "data class Actor",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/domain/model/Models.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/domain/model/Models.kt",
   "output_mode": "content",
   "-n": true,
   "-A": 12
@@ -1228,7 +1228,7 @@ id: toolu_01WPhTX1ePa8dmqKMAJ9jrsg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "old_string": "import androidx.compose.foundation.layout.fillMaxSize\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.padding",
   "new_string": "import androidx.compose.foundation.layout.fillMaxSize\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.padding\nimport androidx.compose.foundation.layout.size"
 }
@@ -1239,7 +1239,7 @@ id: toolu_01WPhTX1ePa8dmqKMAJ9jrsg
 tool_result
 id: toolu_01WPhTX1ePa8dmqKMAJ9jrsg
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -1249,7 +1249,7 @@ id: toolu_01Aq4f9W2sBE85xDkYMCdjvV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "old_string": "                        if (uiState.query.isNotEmpty()) {\n                            IconButton(onClick = { viewModel.clearSearch() }) {\n                                Icon(\n                                    imageVector = Icons.Default.Clear,\n                                    contentDescription = stringResource(R.string.cancel),\n                                    tint = colors.textSecondary\n                                )\n                            }\n                        }",
   "new_string": "                        Box(\n                            modifier = Modifier.size(48.dp),\n                            contentAlignment = Alignment.Center\n                        ) {\n                            if (uiState.query.isNotEmpty()) {\n                                IconButton(onClick = { viewModel.clearSearch() }) {\n                                    Icon(\n                                        imageVector = Icons.Default.Clear,\n                                        contentDescription = stringResource(R.string.cancel),\n                                        tint = colors.textSecondary\n                                    )\n                                }\n                            }\n                        }"
 }
@@ -1260,7 +1260,7 @@ id: toolu_01Aq4f9W2sBE85xDkYMCdjvV
 tool_result
 id: toolu_01Aq4f9W2sBE85xDkYMCdjvV
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -1273,7 +1273,7 @@ tool_use Read
 id: toolu_01SHRVGLJfnXULCVpBM4zEJu
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "offset": 115,
   "limit": 30
 }
@@ -1467,7 +1467,7 @@ tool_use Write
 id: toolu_018YMSRxfkFsoMrSgAuYPnx5
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt",
   "content": "package pub.hackers.android.ui.screens.search\n\nimport androidx.lifecycle.ViewModel\nimport androidx.lifecycle.viewModelScope\nimport dagger.hilt.android.lifecycle.HiltViewModel\nimport kotlinx.coroutines.flow.MutableStateFlow\nimport kotlinx.coroutines.flow.StateFlow\nimport kotlinx.coroutines.flow.asStateFlow\nimport kotlinx.coroutines.flow.update\nimport kotlinx.coroutines.launch\nimport pub.hackers.android.data.local.PreferencesManager\nimport pub.hackers.android.data.repository.HackersPubRepository\nimport pub.hackers.android.domain.model.Actor\nimport pub.hackers.android.domain.model.Post\nimport javax.inject.Inject\n\nenum class SearchMode { PEOPLE, POSTS, TAGS }\n\ndata class SearchUiState(\n    val query: String = \"\",\n    val mode: SearchMode = SearchMode.POSTS,\n    val actors: List<Actor> = emptyList(),\n    val posts: List<Post> = emptyList(),\n    val isLoading: Boolean = false,\n    val hasSearched: Boolean = false,\n    val error: String? = null,\n    val resolvedObjectUrl: String? = null,\n    val recentSearches: List<String> = emptyList()\n)\n\n@HiltViewModel\nclass SearchViewModel @Inject constructor(\n    private val repository: HackersPubRepository,\n    private val preferencesManager: PreferencesManager\n) : ViewModel() {\n\n    private val _uiState = MutableStateFlow(SearchUiState())\n    val uiState: StateFlow<SearchUiState> = _uiState.asStateFlow()\n\n    init {\n        viewModelScope.launch {\n            preferencesManager.recentSearches.collect { searches ->\n                _uiState.update { it.copy(recentSearches = searches) }\n            }\n        }\n    }\n\n    fun updateQuery(query: String) {\n        _uiState.update { it.copy(query = query) }\n    }\n\n    fun setMode(mode: SearchMode) {\n        if (_uiState.value.mode == mode) return\n        _uiState.update { it.copy(mode = mode) }\n        if (_uiState.value.hasSearched && _uiState.value.query.isNotBlank()) {\n            search()\n        }\n    }\n\n    fun search() {\n        val rawQuery = _uiState.value.query.trim()\n        if (rawQuery.isEmpty()) return\n        val mode = _uiState.value.mode\n\n        viewModelScope.launch {\n            _uiState.update {\n                it.copy(\n                    isLoading = true,\n                    error = null,\n                    hasSearched = true,\n                    resolvedObjectUrl = null,\n                    actors = emptyList(),\n                    posts = emptyList()\n                )\n            }\n\n            preferencesManager.addRecentSearch(rawQuery)\n\n            repository.searchObject(rawQuery)\n                .onSuccess { url ->\n                    if (url […]
 
 > TOOL
@@ -1475,7 +1475,7 @@ id: toolu_018YMSRxfkFsoMrSgAuYPnx5
 tool_result
 id: toolu_018YMSRxfkFsoMrSgAuYPnx5
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt has been updated successfully.
 ```
 
 > AGENT
@@ -1489,7 +1489,7 @@ id: toolu_015VVu1VZKGiYNjYyg7RYHNZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml",
   "old_string": "    <string name=\"search_posts\">Posts</string>\n    <string name=\"search_users\">Users</string>\n    <string name=\"search_accounts\">Accounts</string>",
   "new_string": "    <string name=\"search_posts\">Posts</string>\n    <string name=\"search_users\">Users</string>\n    <string name=\"search_people\">People</string>\n    <string name=\"search_tags\">Tags</string>\n    <string name=\"search_accounts\">Accounts</string>"
 }
@@ -1500,7 +1500,7 @@ id: toolu_015VVu1VZKGiYNjYyg7RYHNZ
 tool_result
 id: toolu_015VVu1VZKGiYNjYyg7RYHNZ
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml has been updated successfully.
 ```
 
 > TOOL
@@ -1509,7 +1509,7 @@ tool_use Bash
 id: toolu_016GSQ4c9iySd7CteTT9bJ4A
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/ | grep values",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/ | grep values",
   "description": "List locale resource folders"
 }
 ```
@@ -1594,7 +1594,7 @@ tool_use Read
 id: toolu_01GTyi5KUo3LeAJCetexGZ41
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt"
 }
 ```
 
@@ -1605,7 +1605,7 @@ id: toolu_01CnCGfp3b764AfhNKSbyNk7
 ```json
 {
   "pattern": "FilterChip|material3.*Chip",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1624,7 +1624,7 @@ tool_use Bash
 id: toolu_015B8evoCs3kezx4mo2dazws
 ```json
 {
-  "command": "grep -E \"material3|composeBom\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/build.gradle.kts /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/gradle/libs.versions.toml 2>/dev/null | head -20",
+  "command": "grep -E \"material3|composeBom\" /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/build.gradle.kts /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/gradle/libs.versions.toml 2>/dev/null | head -20",
   "description": "Check Material3 version"
 }
 ```
@@ -1634,10 +1634,10 @@ id: toolu_015B8evoCs3kezx4mo2dazws
 tool_result
 id: toolu_015B8evoCs3kezx4mo2dazws
 ```
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/build.gradle.kts:    implementation(libs.androidx.material3)
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/gradle/libs.versions.toml:composeBom = "2026.03.01"
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/gradle/libs.versions.toml:androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/gradle/libs.versions.toml:androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/build.gradle.kts:    implementation(libs.androidx.material3)
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/gradle/libs.versions.toml:composeBom = "2026.03.01"
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/gradle/libs.versions.toml:androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/gradle/libs.versions.toml:androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 ```
 
 > TOOL
@@ -1646,7 +1646,7 @@ tool_use Write
 id: toolu_01MT9ctpEWcsxGDtufXEhzDv
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "content": "package pub.hackers.android.ui.screens.search\n\nimport androidx.compose.foundation.background\nimport androidx.compose.foundation.clickable\nimport androidx.compose.foundation.layout.Arrangement\nimport androidx.compose.foundation.layout.Box\nimport androidx.compose.foundation.layout.Column\nimport androidx.compose.foundation.layout.Row\nimport androidx.compose.foundation.layout.Spacer\nimport androidx.compose.foundation.layout.WindowInsets\nimport androidx.compose.foundation.layout.fillMaxSize\nimport androidx.compose.foundation.layout.fillMaxWidth\nimport androidx.compose.foundation.layout.padding\nimport androidx.compose.foundation.layout.size\nimport androidx.compose.foundation.layout.width\nimport androidx.compose.foundation.lazy.LazyColumn\nimport androidx.compose.foundation.lazy.items\nimport androidx.compose.foundation.shape.CircleShape\nimport androidx.compose.foundation.shape.RoundedCornerShape\nimport androidx.compose.foundation.text.BasicTextField\nimport androidx.compose.foundation.text.KeyboardActions\nimport androidx.compose.foundation.text.KeyboardOptions\nimport androidx.compose.material.icons.Icons\nimport androidx.compose.material.icons.filled.Clear\nimport androidx.compose.material.icons.filled.Search\nimport androidx.compose.material3.FilterChip\nimport androidx.compose.material3.FilterChipDefaults\nimport androidx.compose.material3.HorizontalDivider\nimport androidx.compose.material3.Icon\nimport androidx.compose.material3.IconButton\nimport androidx.compose.material3.Scaffold\nimport androidx.compose.material3.Text\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.LaunchedEffect\nimport androidx.compose.runtime.collectAsState\nimport androidx.compose.runtime.getValue\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.draw.clip\nimport androidx.compose.ui.platform.LocalContext\nimport androidx.compose.ui.platform.LocalSoftwareKeyboardController\nimport androidx.compose.ui.res.stringResource\nimport androidx.compose.ui.text.input.ImeAction\nimport androidx.compose.ui.unit.dp\nimport androidx.hilt.navigation.compose.hiltViewModel\nimport android.content.Intent\nimport coil3.compose.AsyncImage\nimport pub.hackers.android.R\nimport pub.hackers.android.domain.model.Actor\nimport pub.hackers.android.ui.components.ErrorMessage\nimport pub.hackers.android.ui.components.FullScreenLoading\nimport pub.hackers.android.ui.components.LargeTitleHeader\nimport pub.hackers.android.ui.components.PostCard\nimport pub.hackers.android.ui.components.RichDisplayName\nimport pub.hackers.android.ui.theme.AppShapes\nimport pub.hackers.android.ui.theme.LocalAppColors\nimport pub.hackers.android.ui.theme.LocalAppTypography\n\n@Composable\nfun SearchScreen(\n    onPostClick: (String) -> Unit,\n    onProfileClick: (String) -> Unit,\n    onReplyClick: (String) -> Unit = {},\n    onQuoteClick: (String) -> Unit = {},\n    initialQuery: String? = null,\n    viewModel: SearchViewModel = hiltViewModel()\n) {\n    val uiState by viewModel.uiState.collectAsState()\n    val keyboardController = LocalSoftwareKeyboardController.current\n    val context = LocalContext.current\n    val colors = LocalAppColors.current\n    val typography = LocalAppTypography.current\n\n    LaunchedEffect(initialQuery) {\n        if (initialQuery != null && !uiState.hasSearched) {\n            viewModel.updateQuery(initialQuery)\n            viewModel.search()\n        }\n    }\n\n    Scaffold(\n        contentWindowInsets = WindowInsets(0),\n        topBar = {\n            LargeTitleHeader(title = stringResource(R.string.nav_search))\n        }\n    ) { paddingValues ->\n        Column(\n            modifier = Modifier\n                .fillMaxSize()\n                .padding(paddingValues)\n        ) {\n            // Custom styled search bar\n            BasicTextField(\n                value = uiState.query,\n                onValueChange = { viewModel.updateQuery(it) },\n                singleLine = true,\n                textStyle = typography.bodyLarge.copy(color = colors.textBody),\n                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),\n                keyboardActions = KeyboardActions(\n                    onSearch = {\n                        viewModel.search()\n                        keyboardController?.hide()\n                    }\n                ),\n                decorationBox = { innerTextField ->\n                    Row(\n                        modifier = Modifier\n                            .fillMaxWidth()\n                            .padding(horizontal […]
 
 > TOOL
@@ -1654,7 +1654,7 @@ id: toolu_01MT9ctpEWcsxGDtufXEhzDv
 tool_result
 id: toolu_01MT9ctpEWcsxGDtufXEhzDv
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -1692,7 +1692,7 @@ Starting a Gradle Daemon, 2 busy and 7 stopped Daemons could not be reused, use 
 > Task :app:kspDebugKotlin
 
 > Task :app:compileDebugKotlin
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt:66:34 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt:66:34 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
 
 BUILD SUCCESSFUL in 19s
 13 actionable tasks: 7 executed, 6 up-to-date
@@ -1862,7 +1862,7 @@ id: toolu_018xfBWsA7n3qEQruEXHfMbS
 tool_result
 id: toolu_01K2PCZLUWh1K5NC3Tuvx8p1
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -1880,7 +1880,7 @@ id: toolu_013gEn8bTQqD5mtzR7HgBtvB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "old_string": "                            .background(\n                                color = colors.surface,\n                                shape = RoundedCornerShape(AppShapes.searchBarRadius)\n                            )\n                            .padding(horizontal = 12.dp, vertical = 12.dp),",
   "new_string": "                            .background(\n                                color = colors.surface,\n                                shape = RoundedCornerShape(AppShapes.searchBarRadius)\n                            )\n                            .padding(horizontal = 12.dp, vertical = 4.dp),"
 }
@@ -1891,7 +1891,7 @@ id: toolu_013gEn8bTQqD5mtzR7HgBtvB
 tool_result
 id: toolu_013gEn8bTQqD5mtzR7HgBtvB
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
 ```
 
 > TOOL
@@ -1901,7 +1901,7 @@ id: toolu_01K2PCZLUWh1K5NC3Tuvx8p1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "old_string": "            SearchModeChips(\n                selected = uiState.mode,\n                onSelect = { viewModel.setMode(it) },\n                modifier = Modifier\n                    .fillMaxWidth()\n                    .padding(horizontal = 16.dp, vertical = 8.dp)\n            )",
   "new_string": "            SearchModeChips(\n                selected = uiState.mode,\n                onSelect = { viewModel.setMode(it) },\n                modifier = Modifier\n                    .fillMaxWidth()\n                    .padding(horizontal = 16.dp, vertical = 4.dp)\n            )"
 }
@@ -2073,7 +2073,7 @@ tool_use Read
 id: toolu_016HwXrU22fgX1fqKM7JCtWB
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/theme/AppTypography.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/theme/AppTypography.kt"
 }
 ```
 
@@ -2082,7 +2082,7 @@ id: toolu_016HwXrU22fgX1fqKM7JCtWB
 tool_result
 id: toolu_0161ad6WdgJCU9fFnDvGpnwf
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml has been updated successfully.
 ```
 
 > TOOL
@@ -2092,7 +2092,7 @@ id: toolu_0161ad6WdgJCU9fFnDvGpnwf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml",
   "old_string": "    <string name=\"search_posts\">Posts</string>\n    <string name=\"search_users\">Users</string>\n    <string name=\"search_people\">People</string>\n    <string name=\"search_tags\">Tags</string>\n    <string name=\"search_accounts\">Accounts</string>",
   "new_string": "    <string name=\"search_posts\">Posts</string>\n    <string name=\"search_users\">Users</string>\n    <string name=\"search_people\">Actors</string>\n    <string name=\"search_tags\">Tags</string>\n    <string name=\"search_all\">All</string>\n    <string name=\"search_accounts\">Accounts</string>"
 }
@@ -2109,7 +2109,7 @@ id: toolu_01FqRLkPmgy6GwhRvEqPNFTv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt",
   "old_string": "enum class SearchMode { PEOPLE, POSTS, TAGS }\n\ndata class SearchUiState(\n    val query: String = \"\",\n    val mode: SearchMode = SearchMode.POSTS,",
   "new_string": "enum class SearchMode { ALL, PEOPLE, POSTS, TAGS }\n\ndata class SearchUiState(\n    val query: String = \"\",\n    val mode: SearchMode = SearchMode.ALL,"
 }
@@ -2120,7 +2120,7 @@ id: toolu_01FqRLkPmgy6GwhRvEqPNFTv
 tool_result
 id: toolu_01FqRLkPmgy6GwhRvEqPNFTv
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2130,7 +2130,7 @@ id: toolu_01MTFH2uMW8ShsQH8qkKo8Kd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt",
   "old_string": "            when (mode) {\n                SearchMode.PEOPLE -> {\n                    val handleQuery = rawQuery.removePrefix(\"@\")\n                    repository.searchActorsByHandle(handleQuery, limit = 30)\n                        .onSuccess { actors ->\n                            _uiState.update { it.copy(actors = actors, isLoading = false) }\n                        }\n                        .onFailure { error ->\n                            _uiState.update { it.copy(error = error.message, isLoading = false) }\n                        }\n                }\n                SearchMode.POSTS, SearchMode.TAGS -> {\n                    val postQuery = if (mode == SearchMode.TAGS && !rawQuery.startsWith(\"#\")) {\n                        \"#$rawQuery\"\n                    } else {\n                        rawQuery\n                    }\n                    repository.searchPosts(postQuery)\n                        .onSuccess { posts ->\n                            _uiState.update { it.copy(posts = posts, isLoading = false) }\n                        }\n                        .onFailure { error ->\n                            _uiState.update { it.copy(error = error.message, isLoading = false) }\n                        }\n                }\n            }",
   "new_string": "            when (mode) {\n                SearchMode.ALL -> {\n                    val handleQuery = rawQuery.removePrefix(\"@\")\n                    repository.searchActorsByHandle(handleQuery, limit = 5)\n                        .onSuccess { actors ->\n                            _uiState.update { it.copy(actors = actors) }\n                        }\n                    repository.searchPosts(rawQuery)\n                        .onSuccess { posts ->\n                            _uiState.update { it.copy(posts = posts, isLoading = false) }\n                        }\n                        .onFailure { error ->\n                            _uiState.update { it.copy(error = error.message, isLoading = false) }\n                        }\n                }\n                SearchMode.PEOPLE -> {\n                    val handleQuery = rawQuery.removePrefix(\"@\")\n                    repository.searchActorsByHandle(handleQuery, limit = 30)\n                        .onSuccess { actors ->\n                            _uiState.update { it.copy(actors = actors, isLoading = false) }\n                        }\n                        .onFailure { error ->\n                            _uiState.update { it.copy(error = error.message, isLoading = false) […]
 
@@ -2139,7 +2139,7 @@ id: toolu_01MTFH2uMW8ShsQH8qkKo8Kd
 tool_result
 id: toolu_01MTFH2uMW8ShsQH8qkKo8Kd
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchViewModel.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2147,7 +2147,7 @@ The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-
 tool_result
 id: toolu_01HoLxx8doVQCfFsaKbzUNj6
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -2161,7 +2161,7 @@ id: toolu_01HoLxx8doVQCfFsaKbzUNj6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "old_string": "    Row(\n        modifier = modifier,\n        horizontalArrangement = Arrangement.spacedBy(8.dp)\n    ) {\n        ModeChip(\n            label = stringResource(R.string.search_people),\n            isSelected = selected == SearchMode.PEOPLE,\n            onClick = { onSelect(SearchMode.PEOPLE) }\n        )\n        ModeChip(\n            label = stringResource(R.string.search_posts),\n            isSelected = selected == SearchMode.POSTS,\n            onClick = { onSelect(SearchMode.POSTS) }\n        )\n        ModeChip(\n            label = stringResource(R.string.search_tags),\n            isSelected = selected == SearchMode.TAGS,\n            onClick = { onSelect(SearchMode.TAGS) }\n        )\n    }",
   "new_string": "    Row(\n        modifier = modifier,\n        horizontalArrangement = Arrangement.spacedBy(8.dp)\n    ) {\n        ModeChip(\n            label = stringResource(R.string.search_all),\n            isSelected = selected == SearchMode.ALL,\n            onClick = { onSelect(SearchMode.ALL) }\n        )\n        ModeChip(\n            label = stringResource(R.string.search_people),\n            isSelected = selected == SearchMode.PEOPLE,\n            onClick = { onSelect(SearchMode.PEOPLE) }\n        )\n        ModeChip(\n            label = stringResource(R.string.search_posts),\n            isSelected = selected == SearchMode.POSTS,\n            onClick = { onSelect(SearchMode.POSTS) }\n        )\n        ModeChip(\n            label = stringResource(R.string.search_tags),\n            isSelected = selected == SearchMode.TAGS,\n            onClick = { onSelect(SearchMode.TAGS) }\n        )\n    }"
 }
@@ -2173,7 +2173,7 @@ tool_use Read
 id: toolu_01Rx2hRfQJGprmxAc29RTso8
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "offset": 160,
   "limit": 100
 }
@@ -2251,7 +2251,7 @@ id: toolu_01Q6T3METiwWBKuATDswtYgM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "old_string": "                    uiState.mode == SearchMode.PEOPLE -> {\n                        when {\n                            uiState.hasSearched && uiState.actors.isEmpty() -> {\n                                ErrorMessage(message = stringResource(R.string.no_results))\n                            }\n                            uiState.actors.isNotEmpty() -> {\n                                LazyColumn {\n                                    items(\n                                        items = uiState.actors,\n                                        key = { it.id }\n                                    ) { actor ->\n                                        SearchActorRow(\n                                            actor = actor,\n                                            onClick = { onProfileClick(actor.handle) }\n                                        )\n                                        HorizontalDivider(\n                                            color = colors.divider,\n                                            thickness = 1.dp,\n                                            modifier = Modifier.padding(horizontal = 16.dp)\n                                        )\n                                    }\n                                }\n                            }\n                            else -> SearchHint()\n                        }\n                    }\n                    else -> {\n                        when {\n                            uiState.hasSearched && uiState.posts.isEmpty() -> {\n                                ErrorMessage(message = stringResource(R.string.no_results))\n                            }\n                            uiState.posts.isNotEmpty() -> {\n                                LazyColumn {\n                                    items(\n                                        items = uiState.posts,\n                                        key = { it.id }\n                                    ) { post ->\n                                        PostCard(\n                                            post = post,\n                                            onClick = { onPostClick(post.sharedPost?.id ?: post.id) },\n                                            onProfileClick = onProfileClick,\n                                            onReplyClick = { onReplyClick(post.sharedPost?.id ?: post.id) },\n                                            onQuoteClick = { onQuoteClick(post.sharedPost?.id ?: post.id) },\n                                            onReactionClick = null,\n                                            onExternalShareClick = {\n                                                val displayPost = post.sharedPost ?: post\n                                                val shareUrl = displayPost.url ?: displayPost.iri\n                                                if (shareUrl != null) {\n                                                    val sendIntent = Intent().apply {\n                                                        action = Intent.ACTION_SEND\n                                                        putExtra(Intent.EXTRA_TEXT, shareUrl)\n                                                        type = \"text/plain\"\n                                                    }\n                                                    context.startActivity(Intent.createChooser(sendIntent, null))\n                                                }\n                                            },\n                                            onQuotedPostClick = onPostClick\n                                        )\n                                        HorizontalDivider(\n                                            color = colors.divider,\n                                            thickness = 1.dp,\n                                            modifier = Modifier.padding(horizontal = 16.dp)\n                                        )\n                                    }\n                                }\n                            }\n                            else -> […]
 
 > TOOL
@@ -2259,7 +2259,7 @@ id: toolu_01Q6T3METiwWBKuATDswtYgM
 tool_result
 id: toolu_01Q6T3METiwWBKuATDswtYgM
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -2272,7 +2272,7 @@ tool_use Read
 id: toolu_01RYkQ2s2y7h6hVGvSmPNRix
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "offset": 320,
   "limit": 100
 }
@@ -2348,7 +2348,7 @@ id: toolu_01W2gqyxtHMbzfHSf54WE7ik
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt",
   "old_string": "@Composable\nprivate fun SearchHint() {\n    val colors = LocalAppColors.current\n    val typography = LocalAppTypography.current\n    Box(\n        modifier = Modifier\n            .fillMaxSize()\n            .padding(32.dp)\n    ) {\n        Text(\n            text = stringResource(R.string.search_hint),\n            style = typography.bodyLarge,\n            color = colors.textSecondary\n        )\n    }\n}",
   "new_string": "@Composable\nprivate fun SearchHint() {\n    val colors = LocalAppColors.current\n    val typography = LocalAppTypography.current\n    Box(\n        modifier = Modifier\n            .fillMaxSize()\n            .padding(32.dp)\n    ) {\n        Text(\n            text = stringResource(R.string.search_hint),\n            style = typography.bodyLarge,\n            color = colors.textSecondary\n        )\n    }\n}\n\n@Composable\nprivate fun SearchSectionHeader(title: String) {\n    val colors = LocalAppColors.current\n    val typography = LocalAppTypography.current\n    Column(modifier = Modifier.fillMaxWidth()) {\n        Text(\n            text = title,\n            style = typography.labelMedium,\n            color = colors.textSecondary,\n            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)\n        )\n        HorizontalDivider(\n            color = colors.divider,\n            thickness = 1.dp,\n            modifier = Modifier.padding(horizontal = 16.dp)\n        )\n    }\n}\n\n@Composable\nprivate fun SearchPostItem(\n    post: pub.hackers.android.domain.model.Post,\n    onPostClick: (String) -> Unit,\n    onProfileClick: (String) -> Unit,\n    onReplyClick: (String) -> Unit,\n    onQuoteClick: (String) -> Unit,\n    onExternalShare: (String) -> Unit\n) {\n    PostCard(\n        post = post,\n        onClick = { onPostClick(post.sharedPost?.id ?: post.id) },\n        onProfileClick = onProfileClick,\n        onReplyClick = { onReplyClick(post.sharedPost?.id ?: post.id) },\n        onQuoteClick = { onQuoteClick(post.sharedPost?.id ?: post.id) },\n        onReactionClick = null,\n        onExternalShareClick = {\n            val displayPost = post.sharedPost ?: post\n            val shareUrl = displayPost.url ?: displayPost.iri\n            if (shareUrl != null) […]
 
@@ -2357,7 +2357,7 @@ id: toolu_01W2gqyxtHMbzfHSf54WE7ik
 tool_result
 id: toolu_01W2gqyxtHMbzfHSf54WE7ik
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt has been updated successfully.
 ```
 
 > AGENT
@@ -2371,7 +2371,7 @@ id: toolu_01EF5vk2jSxnNGYPVKf9tzMo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml",
   "old_string": "    <string name=\"search_people\">Actors</string>",
   "new_string": "    <string name=\"search_people\">People</string>"
 }
@@ -2382,7 +2382,7 @@ id: toolu_01EF5vk2jSxnNGYPVKf9tzMo
 tool_result
 id: toolu_01EF5vk2jSxnNGYPVKf9tzMo
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/res/values/strings.xml has been updated successfully.
 ```
 
 > TOOL
@@ -2419,7 +2419,7 @@ id: toolu_01ByvEqUTv275mr5o73RUkZW
 > Task :app:kspDebugKotlin
 
 > Task :app:compileDebugKotlin
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt:66:34 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-search-ux/app/src/main/java/pub/hackers/android/ui/screens/search/SearchScreen.kt:66:34 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
 
 BUILD SUCCESSFUL in 3s
 13 actionable tasks: 7 executed, 6 up-to-date

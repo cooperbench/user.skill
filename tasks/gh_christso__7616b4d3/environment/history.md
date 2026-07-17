@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/entity/projects/EntityProcess/agentv
+# AGENTS.md instructions for /home/<USER>/projects/EntityProcess/agentv
 
 <INSTRUCTIONS>
 # AgentV Agent Guide
@@ -34,7 +34,7 @@ id: call_pDb1Lo4zKc4lnTwNuMieWEI7
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -65,7 +65,7 @@ id: call_km4o9R0wz2aX1zOBy1uxP4yd
 ```json
 {
   "cmd": "cat .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -78,7 +78,7 @@ id: call_2S8nPfhTfWxrSuukhkQL8H1P
 ```json
 {
   "cmd": "cat .agents/verification.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -90,8 +90,8 @@ tool_use exec_command
 id: call_KwMqwAdYaTHpG03JUcsMMIYO
 ```json
 {
-  "cmd": "cat /home/entity/.agents/skills/merge/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.agents/skills/merge/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -104,7 +104,7 @@ id: call_BCUXRlLqSLGa5eiZNMnquMer
 ```json
 {
   "cmd": "bd create --title=\"Publish issue 14 dogfood evidence branch\" --description=\"Why this issue exists: User asked to create an orphan dogfood branch in agentv-private with screenshots from EntityProcess/agentv-private issue 14, update index.md for recent orphan branches not listed, and merge index.md changes to remote main. What needs to be done: inspect private repo and issue attachments, create/push orphan evidence branch with screenshots, update index.md on private main for missing recent orphan branches, run relevant checks/status, and report branch/commit details.\" --acceptance=\"Orphan dogfood branch is pushed to agentv-private with issue 14 screenshots. index.md on agentv-private remote main includes recent orphan branches that were missing. Worktree status and relevant verification are reported.\" --type=task --priority=2",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -244,8 +244,8 @@ tool_use exec_command
 id: call_sWvgWxvNkByg77cc6VaApZv1
 ```json
 {
-  "cmd": "cat /home/entity/.codex/plugins/cache/openai-curated/github/d6169bef/skills/github/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.codex/plugins/cache/openai-curated/github/d6169bef/skills/github/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -258,7 +258,7 @@ id: call_VqrgPVq0CJjo8VYvWtvLs70V
 ```json
 {
   "cmd": "bd update av-l5qi --claim --notes=\"Started in primary AgentV checkout only for tracker context. Public checkout has unrelated untracked replay-contract/ and main is behind origin/main; evidence and index work will be done in agentv-private checkout/remote.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -317,8 +317,8 @@ tool_use exec_command
 id: call_Ml5DD7em0y5YRBD0Nad7W8Am
 ```json
 {
-  "cmd": "cat /home/entity/.codex/plugins/cache/openai-curated/github/d6169bef/skills/yeet/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.codex/plugins/cache/openai-curated/github/d6169bef/skills/yeet/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -330,8 +330,8 @@ tool_use exec_command
 id: call_IzU7pvElQODBrqw0iEXtqsjw
 ```json
 {
-  "cmd": "find /home/entity/projects -maxdepth 4 -type d -name agentv-private -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/projects -maxdepth 4 -type d -name agentv-private -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -344,7 +344,7 @@ id: call_T5GtRr4o6tBf88vHMZ7tat2i
 ```json
 {
   "cmd": "gh auth status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -392,7 +392,7 @@ Wall time: 4.5327 seconds
 Process exited with code 0
 Original token count: 13
 Output:
-/home/entity/projects/EntityProcess/agentv-private
+/home/<USER>/projects/EntityProcess/agentv-private
 
 ```
 
@@ -407,13 +407,13 @@ Process exited with code 0
 Original token count: 133
 Output:
 github.com
-  ✓ Logged in to github.com account christso (/home/entity/.config/gh/hosts.yml)
+  ✓ Logged in to github.com account christso (/home/<USER>/.config/gh/hosts.yml)
   - Active account: true
   - Git operations protocol: https
   - Token: gho_************************************
   - Token scopes: 'gist', 'project', 'read:org', 'repo', 'workflow'
 
-  ✓ Logged in to github.com account tsoyangbot (/home/entity/.config/gh/hosts.yml)
+  ✓ Logged in to github.com account tsoyangbot (/home/<USER>/.config/gh/hosts.yml)
   - Active account: false
   - Git operations protocol: https
   - Token: gho_************************************
@@ -423,7 +423,7 @@ github.com
 
 > AGENT
 
-The private repo is present at `/home/entity/projects/EntityProcess/agentv-private`, and `gh` is authenticated with repo access. I’m fetching that repo now and reading the current index format plus issue 14 attachment metadata so the evidence branch matches the existing convention.
+The private repo is present at `/home/<USER>/projects/EntityProcess/agentv-private`, and `gh` is authenticated with repo access. I’m fetching that repo now and reading the current index format plus issue 14 attachment metadata so the evidence branch matches the existing convention.
 
 > TOOL
 
@@ -432,7 +432,7 @@ id: call_eSFQ9Klok6mRqZoqTPsG0VFE
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -468,7 +468,7 @@ id: call_UajfaeQ9qDObMTjp0wsgwxQu
 ```json
 {
   "cmd": "git branch -a --format='%(refname:short) %(objectname:short) %(committerdate:short)'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -481,7 +481,7 @@ id: call_f2Xkyw55NZiMfRoygZ6sUqiT
 ```json
 {
   "cmd": "gh issue view 14 --repo EntityProcess/agentv-private --json number,title,body,comments,url,createdAt,updatedAt",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -494,7 +494,7 @@ id: call_UphTVZAVQZQ1ma93bBmrOaen
 ```json
 {
   "cmd": "git worktree list --porcelain",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -507,7 +507,7 @@ id: call_NNGzmtMCuQcOL7ONvvo2Pe0o
 ```json
 {
   "cmd": "gh repo view EntityProcess/agentv-private --json defaultBranchRef,nameWithOwner,url",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -608,123 +608,123 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 2913
 Output:
-worktree /home/entity/projects/EntityProcess/agentv-private
+worktree /home/<USER>/projects/EntityProcess/agentv-private
 HEAD e04a7b7779b8288a098a25060968b9e8888df423
 branch refs/heads/av-cuf-dogfood-orphan-2026-06-26
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/agentv-wtg-dogfood-parity-2026-06-17
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/agentv-wtg-dogfood-parity-2026-06-17
 HEAD 0c35fbf89ad97a42011c43d31e6b7dcddc2ec231
 branch refs/heads/evidence/agentv-wtg-dogfood-parity-2026-06-17
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-2il-5-remove-phoenix-readthrough-ui
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-2il-5-remove-phoenix-readthrough-ui
 HEAD fe3506c31e7a6930fe1074f8e1dfb7dd84eba977
 branch refs/heads/evidence/av-2il-5-remove-phoenix-readthrough-ui
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-9ly-remove-public-trace-artifact
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-9ly-remove-public-trace-artifact
 HEAD 01dca48045c8076eacb0398d06685335a363eee6
 branch refs/heads/evidence/av-9ly-remove-public-trace-artifact
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-9vi-result-row-sidecars-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-9vi-result-row-sidecars-evidence
 HEAD 0b585d25ae5bc206abc2294b8109f5d7476109f3
 branch refs/heads/evidence/av-9vi-result-row-sidecars
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-i0l2-strict-layout-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-i0l2-strict-layout-evidence
 HEAD f3d4d2227c7f0732107f35d7c1fd5bcae68c55ca
 branch refs/heads/evidence/av-i0l2-strict-layout-dashboard-dogfood
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-kfik-16-final-docs-dogfood-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-kfik-16-final-docs-dogfood-evidence
 HEAD 7b22a4490cb2ef64ffa837760f3f2ed338eef7cf
 branch refs/heads/evidence/av-kfik-16-final-docs-dogfood-2026-07-06
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-kfik-6-openai-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-kfik-6-openai-evidence
 HEAD 928d122ec7afb5192c0ff805590ad7c01b171d6b
 branch refs/heads/evidence/av-kfik-6-targets-openai
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-kfik8-transcripts-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-kfik8-transcripts-evidence
 HEAD 6c17be564a4cf5c1e7fa3dfac54e59225777911a
 branch refs/heads/evidence/av-kfik8-transcripts-2026-07-02
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-kve-7-phoenix-readthrough-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-kve-7-phoenix-readthrough-evidence
 HEAD b8642d83e31720adda55fe674273ef5bc9aace06
 branch refs/heads/evidence/av-kve-7-phoenix-readthrough
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-noh3-2-4-docker-environment-runtime-evidence
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-noh3-2-4-docker-environment-runtime-evidence
 HEAD bd0f659ccc59728697530020f43b39a6aab51385
 branch refs/heads/evidence/av-noh3-2-4-docker-environment-runtime
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-noh3-2-5-environment-provenance
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-noh3-2-5-environment-provenance
 HEAD 2ca401724c73c78a707fd0c1153ef58e66f164d6
 branch refs/heads/evidence/av-noh3-2-5-environment-provenance
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-xz5i-result-artifact-contract-2026-07-04
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-xz5i-result-artifact-contract-2026-07-04
 HEAD 862965c0e90e5613319fdf97cf71fe1e9c8aa29a
 branch refs/heads/evidence/av-xz5i-result-artifact-contract-2026-07-04
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-z27-self-pr-workflow-eval
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-z27-self-pr-workflow-eval
 HEAD be95a8849ee9c3f4c00041a8ef50c2a202654f3a
 branch refs/heads/av-z27-self-pr-workflow-eval
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/av-zyfl-artifact-layout-v2-results-root
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/av-zyfl-artifact-layout-v2-results-root
 HEAD 0bb738dd108bd9f3177014f6f272d2b913a02204
 branch refs/heads/evidence/av-zyfl-artifact-layout-v2-results-root
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/braintrust-wtg-evals-2026-06-15
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/braintrust-wtg-evals-2026-06-15
 HEAD 57cb2048a51ee428c125fcc353af5eaf4ead7892
 branch refs/heads/evidence/braintrust-wtg-evals-2026-06-15
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/dashboard-eval-suite-labels-2026-06-17
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/dashboard-eval-suite-labels-2026-06-17
 HEAD bc21e2ce0aca2081b93a81afc8ffb330ff90e3c3
 branch refs/heads/evidence/dashboard-eval-suite-labels-2026-06-17
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/deepeval-wtg-evals-2026-06-16
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/deepeval-wtg-evals-2026-06-16
 HEAD 498fb705fa668a580baf5d368e5954a352289a25
 branch refs/heads/evidence/deepeval-wtg-evals-2026-06-16
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-2s7-16-3-4-project-config-dashboard
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-2s7-16-3-4-project-config-dashboard
 HEAD 628cffed8b68b8086bfe9bdcc16634ee81c3e736
 branch refs/heads/evidence/av-2s7-16-3-4-project-config-dashboard
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-504-2-result-dir
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-504-2-result-dir
 HEAD 866c7cb3808c319e3af31bb9e3982ee1f73de575
 branch refs/heads/evidence/av-504-2-result-dir
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-5045-import-defaults
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-5045-import-defaults
 HEAD 3d6a55dc5d078dd0b80f877cb815d9b180648aa4
 branch refs/heads/evidence/av-5045-import-defaults
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-dkn5-eval-restructure
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-dkn5-eval-restructure
 HEAD ceed547cad5d17700eeb7528ddbe892fd3a0747f
 branch refs/heads/evidence/av-dkn5-eval-restructure-dogfood-2026-07-03
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-27-input-hard-deprecation-20260704
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-27-input-hard-deprecation-20260704
 HEAD 4f476f04163fc2896e3988611aa36dc20f60e151
 branch refs/heads/evidence/av-kfik-27-input-hard-deprecation-20260704
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-28-3
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-28-3
 HEAD f961c63a5245a92e051697ce8bc24c9418d0e4ee
 branch refs/heads/evidence/av-kfik-28-3-llm-rubric-parsing
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-28-6
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-28-6
 HEAD 471617d85faf1d616a1dfd318001f5be22a2dcd8
 branch refs/heads/evidence/av-kfik-28-6-component-results-artifacts
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-34-1
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-34-1
 HEAD cef5663c8ba8de3aac04ff0b1cad3b2789a7777f
 branch refs/heads/evidence/av-kfik-34-1-transform-runtime
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-34-2-transform-docs-xlsx
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-34-2-transform-docs-xlsx
 HEAD 37eede4944ebfcc6b3888b6b0dafb28dc37ffc68
 branch refs/heads/evidence/av-kfik-34-2-transform-docs-xlsx
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-45-3-skill-used
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-45-3-skill-used
 HEAD b1424188720818d29668c9f68b8bec1ea1fdf2d8
 branch refs/heads/evidence/av-kfik.45.3-skill-used
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-46-1
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-46-1
 HEAD 9755da2432b9dd040a74e727ecfc62935fe1aa0b
 branch refs/heads/evidence/av-kfik-46-1-artifact-metrics-flatten
 
-worktree /home/entity/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-47-eval-config-ts
+worktree /home/<USER>/projects/EntityProcess/agentv-private__worktrees/evidence-av-kfik-47-eval-config-ts
 HEAD 525dc45d979e6f8a5e29808edf2964f4fd29cede
 branch […]
 
@@ -753,7 +753,7 @@ id: call_trIFtZfzzKqlLgvSN1cZsZEA
 ```json
 {
   "cmd": "rm -rf /tmp/agentv-private-main-index && git worktree add /tmp/agentv-private-main-index origin/main && git -C /tmp/agentv-private-main-index status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -898,7 +898,7 @@ id: call_RYKdzmsGJNv34E4ApyZ0w2kO
 ```json
 {
   "cmd": "rm -rf /tmp/agentv-private-issue-14-evidence && git clone https://github.com/EntityProcess/agentv-private.git /tmp/agentv-private-issue-14-evidence && git -C /tmp/agentv-private-issue-14-evidence switch --orphan evidence/issue-14-phoenix-transcript-traces-2026-07-06 && git -C /tmp/agentv-private-issue-14-evidence rm -rf .",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -911,7 +911,7 @@ id: call_nYlhLkTHsR5p69dhCWnkuWzX
 ```json
 {
   "cmd": "gh issue view 14 --repo EntityProcess/agentv-private --json body --jq '.body'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1368,7 +1368,7 @@ id: call_zcnlhUn8bteAIVOgM3xsvtV6
 ```json
 {
   "cmd": "bd close av-l5qi --reason=\"Pushed orphan evidence branch evidence/issue-14-phoenix-transcript-traces-2026-07-06 with issue 14 screenshots, refreshed index.md for missing recent remote evidence branches, and pushed index refresh f8fe3f9 to agentv-private main.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1381,7 +1381,7 @@ id: call_NsfHyPCd71lrkEk2wmed73PY
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1394,7 +1394,7 @@ id: call_iQyurmSA7BJDVW55uCBZ6nei
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv-private",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv-private",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1485,8 +1485,8 @@ tool_use exec_command
 id: call_CNstTH5WvvAFNQ2OQGQmjjCe
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv-private worktree remove /tmp/agentv-private-main-index && rm -rf /tmp/agentv-private-issue-14-evidence && git -C /home/entity/projects/EntityProcess/agentv-private worktree prune && git -C /home/entity/projects/EntityProcess/agentv-private status --short --branch && git -C /home/entity/projects/EntityProcess/agentv status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv-private worktree remove /tmp/agentv-private-main-index && rm -rf /tmp/agentv-private-issue-14-evidence && git -C /home/<USER>/projects/EntityProcess/agentv-private worktree prune && git -C /home/<USER>/projects/EntityProcess/agentv-private status --short --branch && git -C /home/<USER>/projects/EntityProcess/agentv status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1554,8 +1554,8 @@ tool_use exec_command
 id: call_nXV1ak5w4KEbyPfTkQn569Sl
 ```json
 {
-  "cmd": "cat /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1581,7 +1581,7 @@ description: >
   whenever managing multi-session work, tracking dependencies, or recovering context.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.60.0"
-author: "Steve Yegge <steve.yegge@gmail.com>"
+author: "Steve Yegge <<REDACTED_EMAIL>>"
 license: "MIT"
 compatible-with: [claude-code, codex]
 tags: [issue-tracking, task-management, multi-session, dependencies]
@@ -1665,8 +1665,8 @@ tool_use exec_command
 id: call_54qVt7mDc8R6A7kqxPob8ljY
 ```json
 {
-  "cmd": "cat /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md && bd show av-u240 --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md && bd show av-u240 --long",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1692,7 +1692,7 @@ description: >
   whenever managing multi-session work, tracking dependencies, or recovering context.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.60.0"
-author: "Steve Yegge <steve.yegge@gmail.com>"
+author: "Steve Yegge <<REDACTED_EMAIL>>"
 license: "MIT"
 compatible-with: [claude-code, codex]
 tags: [issue-tracking, task-management, multi-session, dependencies]
@@ -1733,7 +1733,7 @@ id: call_lyVgA9dhy0IYshiYtAkx6IzS
 ```json
 {
   "cmd": "bd update av-u240 --acceptance=\"Dashboard trace/transcript view lets users expand a trace or relevant row to inspect individual tool calls. Each tool call shows arguments and output when available. Conversation messages support collapsed preview and expanded full content. User messages are visually distinct with a grey border treatment. Assistant messages are visually distinct with blue border and blue-tinted background treatment. UI works with AgentV-owned artifact data and does not require Phoenix runtime access. Docs or private evidence reference the issue 14 screenshots/branch as inspiration.\" --notes=\"Source context from user on 2026-07-06: key behavior to notice is trace expansion into tool calls with arguments/output, plus per-message expand/collapse for full message bodies. Additional visual note from user: user messages have a grey border; assistant messages use a blue border and blue background, making the speaker role immediately scannable. Private evidence branch: EntityProcess/agentv-private evidence/issue-14-phoenix-transcript-traces-2026-07-06.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1787,7 +1787,7 @@ id: call_O0yUGXJpRHoj58gVJbdf2MNd
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1800,7 +1800,7 @@ id: call_NGfMc5pKg8WjuqH0NVnjPFyF
 ```json
 {
   "cmd": "rg -n \"transcript|message|assistant|user|tool call|tool_call|trace\" apps packages -g '*.{ts,tsx,css,scss,md}'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -1813,7 +1813,7 @@ id: call_RZPlOQkvwQyASPuwumSsmVnX
 ```json
 {
   "cmd": "rg --files apps/dashboard apps/web packages | rg '(dashboard|transcript|trace|message|style|css|tsx)$'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1952,7 +1952,7 @@ id: call_xvodugpqBdAgi4Pdd93gOUTd
 ```json
 {
   "cmd": "sed -n '70,120p' apps/dashboard/src/components/TranscriptTimeline.tsx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1965,7 +1965,7 @@ id: call_QqcVWQkRGeyCJ6FGlG7NlWJZ
 ```json
 {
   "cmd": "sed -n '560,735p' apps/dashboard/src/components/TranscriptTimeline.tsx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1978,7 +1978,7 @@ id: call_Sz42DjWHTI8PNnVSRLXa0xZe
 ```json
 {
   "cmd": "sed -n '835,1025p' apps/dashboard/src/components/TranscriptTimeline.tsx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -1991,7 +1991,7 @@ id: call_2j5dRElsMXcGrKo4xHvaZGLk
 ```json
 {
   "cmd": "sed -n '1,220p' apps/dashboard/src/styles/globals.css",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2265,7 +2265,7 @@ id: call_mJDdia22ptgOLtrLuyBvme7e
 ```json
 {
   "cmd": "sed -n '1,260p' apps/dashboard/src/components/transcript-timeline.test.tsx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2278,7 +2278,7 @@ id: call_Rncl4H6caEBEHCqqhhezSkaX
 ```json
 {
   "cmd": "rg -n \"ROLE_STYLES|TranscriptMessageCard|ToolCallDetails|defaultExpandedMessageIds|Expand all tool calls|message-row|border-cyan|bg-cyan\" apps/dashboard/src/components/TranscriptTimeline.tsx apps/dashboard/src/components/transcript-timeline.test.tsx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2291,7 +2291,7 @@ id: call_NjutFLMQvkT6v6K8EbJMBsDe
 ```json
 {
   "cmd": "rg -n \"cyan|emerald|amber|gray|blue\" apps/dashboard/src/components apps/dashboard/src/routes apps/dashboard/src/styles -g '*.{tsx,css}'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2471,7 +2471,7 @@ id: call_rPJcDHpTvBiyv01YgPp7zR4I
 ```json
 {
   "cmd": "nl -ba apps/dashboard/src/components/TranscriptTimeline.tsx | sed -n '68,95p;463,470p;574,635p;645,735p;835,1015p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2484,7 +2484,7 @@ id: call_ngir48WeOaVkqAYOwt9wI8vV
 ```json
 {
   "cmd": "bd update av-u240 --notes=\"Source context from user on 2026-07-06: key behavior to notice is trace expansion into tool calls with arguments/output, plus per-message expand/collapse for full message bodies. Additional visual note from user: Phoenix screenshot uses grey border for user messages and blue border/background for assistant messages, making speaker role immediately scannable. Follow-up investigation: AgentV Dashboard currently uses a dark gray/cyan/amber palette in TranscriptTimeline: user messages are cyan-tinted, assistant messages are neutral gray, tool calls/results are amber, and messages/tool calls already use expandable details controls. Implementation should evaluate whether to keep AgentV's existing role semantics or adjust them, rather than blindly copying Phoenix colors. Private evidence branch: EntityProcess/agentv-private evidence/issue-14-phoenix-transcript-traces-2026-07-06.\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2571,7 +2571,7 @@ Existing AgentV Dashboard style is already different from the Phoenix screenshot
 - Tool calls/results are amber-accented.
 - System messages are also neutral gray, slightly dimmer.
 
-Code reference: [TranscriptTimeline.tsx](/home/entity/projects/EntityProcess/agentv/apps/dashboard/src/components/TranscriptTimeline.tsx:68)
+Code reference: [TranscriptTimeline.tsx](/home/<USER>/projects/EntityProcess/agentv/apps/dashboard/src/components/TranscriptTimeline.tsx:68)
 
 The existing interaction model is also already close to what you described:
 - Each conversation message is a collapsible `<details>` card.
@@ -2580,7 +2580,7 @@ The existing interaction model is also already close to what you described:
 - Tool calls already show `Arguments`, `Result`, `Error`, and `Metadata`.
 - There are global “Expand all tool calls” / “Collapse all tool calls” controls.
 
-Relevant code: [TranscriptTimeline.tsx](/home/entity/projects/EntityProcess/agentv/apps/dashboard/src/components/TranscriptTimeline.tsx:574) and [TranscriptTimeline.tsx](/home/entity/projects/EntityProcess/agentv/apps/dashboard/src/components/TranscriptTimeline.tsx:645)
+Relevant code: [TranscriptTimeline.tsx](/home/<USER>/projects/EntityProcess/agentv/apps/dashboard/src/components/TranscriptTimeline.tsx:574) and [TranscriptTimeline.tsx](/home/<USER>/projects/EntityProcess/agentv/apps/dashboard/src/components/TranscriptTimeline.tsx:645)
 
 My read: don’t blindly copy Phoenix’s grey-user / blue-assistant styling. AgentV’s current palette uses cyan for interactive/input-ish emphasis and amber for tools, which is consistent across the Dashboard. The useful adoption is probably the inspection behavior and scannability; the color treatment should either keep AgentV’s existing semantics or make a small role-contrast improvement within the current palette.
 
@@ -2601,7 +2601,7 @@ id: call_jYw8yVvt2rcNmpkthpLOLePz
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -2613,8 +2613,8 @@ tool_use exec_command
 id: call_KKjqYvm9DI53zbnbMWhXiV51
 ```json
 {
-  "cmd": "cat /home/entity/.agents/skills/worktree/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.agents/skills/worktree/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2626,8 +2626,8 @@ tool_use exec_command
 id: call_sj3cW2mbk0PxfV8bSCoPu2fk
 ```json
 {
-  "cmd": "cat /home/entity/.agents/skills/workmux/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.agents/skills/workmux/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2639,8 +2639,8 @@ tool_use exec_command
 id: call_lfGzb1iQ3mo3C73rF2Yh29b1
 ```json
 {
-  "cmd": "cat /home/entity/.codex/plugins/cache/agentv/agentv-dev/1.0.0/skills/agentv-dev/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "cat /home/<USER>/.codex/plugins/cache/agentv/agentv-dev/1.0.0/skills/agentv-dev/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -2784,7 +2784,7 @@ id: call_vpnuoiSlxNLhmVHWZHLtXCWA
 ```json
 {
   "cmd": "cat .agents/workflow.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2797,7 +2797,7 @@ id: call_CXdoFdnFLM5BUD3EOEKwcxKi
 ```json
 {
   "cmd": "cat .agents/verification.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2810,7 +2810,7 @@ id: call_XS2vya2glGAWP7gjXuFYxzjk
 ```json
 {
   "cmd": "cat .agents/conventions.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2823,7 +2823,7 @@ id: call_THr1e7IvTd5rk7juMkTssGBM
 ```json
 {
   "cmd": "bun apps/cli/src/cli.ts skills get agentv-bench",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2976,7 +2976,7 @@ id: call_ZxQsNHU608D0fNyOXgKFxSMS
 ```json
 {
   "cmd": "git pull --ff-only origin main && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -3051,7 +3051,7 @@ id: call_h4eAoCvjrYAaeL9k2leA4bDw
 ```json
 {
   "cmd": "bd create --title=\"Dogfood wta-ai-prompts experiment on latest main\" --description=\"Why this issue exists: User asked to pull latest main, spawn a worker to run wta-ai-prompts-experiment, fix anything needed for compatibility with latest AgentV, run dogfood on the transcript, and save screenshots to agentv-private on an orphan branch for human review. What needs to be done: run the experiment from latest main in an isolated worktree, copy .env from primary checkout before live provider/grader work, investigate and fix any breakage caused by latest AgentV changes, run appropriate verification/dogfood for transcript output, capture Dashboard/browser screenshots of the transcript for review, publish evidence to an orphan agentv-private branch with README/manifest, and report branch/commit/results.\" --acceptance=\"Worker ran wta-ai-prompts-experiment on a worktree based on latest origin/main. Any necessary AgentV compatibility fixes are implemented and verified. Transcript dogfood result path is recorded. Browser/screenshots of transcript review are published to an orphan branch in EntityProcess/agentv-private with a README/manifest. Public repo changes, if any, are summarized with tests and branch details.\" --type=task --priority=2",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3064,7 +3064,7 @@ id: call_G16bGpzHuHr4cH020lD7ZmOM
 ```json
 {
   "cmd": "test -f .env && echo HAS_ENV || echo NO_ENV",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3077,7 +3077,7 @@ id: call_bsZla3Vj1mz2YJP52DPE2K3X
 ```json
 {
   "cmd": "test -f .workmux.yaml && cat .workmux.yaml || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3090,7 +3090,7 @@ id: call_H0eccUPTJumiI8NhZA5keD0s
 ```json
 {
   "cmd": "workmux --version && workmux status",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -3205,7 +3205,7 @@ id: call_x67ntKNpxSE0xR89g91Lsp7d
 ```json
 {
   "cmd": "bd update --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -3218,7 +3218,7 @@ id: call_bZzhnOQkwFB49mUFFR4xL51H
 ```json
 {
   "cmd": "hostname",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3231,7 +3231,7 @@ id: call_WQLsYOS0uRmc2jjB1EOiE7im
 ```json
 {
   "cmd": "git rev-parse HEAD && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3244,7 +3244,7 @@ id: call_tjvUS3KHV7b5XnIYVZJgziAW
 ```json
 {
   "cmd": "bd where && bd worktree info",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3326,9 +3326,9 @@ Wall time: 2.8097 seconds
 Process exited with code 0
 Original token count: 48
 Output:
-/home/entity/projects/EntityProcess/agentv/.beads
+/home/<USER>/projects/EntityProcess/agentv/.beads
   prefix: av
-  database: /home/entity/projects/EntityProcess/agentv/.beads/embeddeddolt
+  database: /home/<USER>/projects/EntityProcess/agentv/.beads/embeddeddolt
 Not in a git worktree (this is the main repository)
 
 
@@ -3341,7 +3341,7 @@ id: call_sH9vaqQ7F6JxrrXBoo6xgAxR
 ```json
 {
   "cmd": "rg -n \"wta-ai-prompts|wta|ai-prompts\" . -g '*.{yaml,yml,ts,tsx,md,json,jsonl}'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -3354,7 +3354,7 @@ id: call_a5fUoUWktWTecf5CyiyLE96k
 ```json
 {
   "cmd": "rg --files | rg 'wta|ai-prompts|experiment'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -3423,8 +3423,8 @@ tool_use exec_command
 id: call_VpCVx9FwzDEOCqmaBiz77AXD
 ```json
 {
-  "cmd": "find /home/entity/projects -maxdepth 4 -type d \\( -name 'wtg-ai-prompts-experiment' -o -name 'wta-ai-prompts-experiment' \\) -print",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "find /home/<USER>/projects -maxdepth 4 -type d \\( -name 'wtg-ai-prompts-experiment' -o -name 'wta-ai-prompts-experiment' \\) -print",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3437,7 +3437,7 @@ id: call_pzh0unz0jA6xLfu9Alb7kUAz
 ```json
 {
   "cmd": "gh repo view EntityProcess/wtg-ai-prompts-experiment --json nameWithOwner,defaultBranchRef,url,isPrivate 2>/dev/null || true; gh repo view EntityProcess/wta-ai-prompts-experiment --json nameWithOwner,defaultBranchRef,url,isPrivate 2>/dev/null || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3453,7 +3453,7 @@ Wall time: 0.5835 seconds
 Process exited with code 0
 Original token count: 16
 Output:
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment
 
 ```
 
@@ -3473,7 +3473,7 @@ Output:
 
 > AGENT
 
-The experiment repo exists locally at `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment` and the GitHub repo is private. I’m checking its instructions and status before deciding whether the worker should branch there, in AgentV, or both.
+The experiment repo exists locally at `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment` and the GitHub repo is private. I’m checking its instructions and status before deciding whether the worker should branch there, in AgentV, or both.
 
 > TOOL
 
@@ -3482,7 +3482,7 @@ id: call_vLlgwpQaDQFXYpJMkXT4RVnA
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -3495,7 +3495,7 @@ id: call_eTAstQqdUa2sQNrU5X4jeuV4
 ```json
 {
   "cmd": "find .. -name AGENTS.md -print",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3508,7 +3508,7 @@ id: call_HdvLt1utZm65k88jHyO81zck
 ```json
 {
   "cmd": "rg --files | head -200",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3953,7 +3953,7 @@ id: call_XEYgXQx478WB5BsdiiMPQ9sn
 ```json
 {
   "cmd": "test -f AGENTS.md && cat AGENTS.md || true",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -3966,7 +3966,7 @@ id: call_71ZSk5iZd9Fv0V5LViugf69J
 ```json
 {
   "cmd": "test -f README.md && sed -n '1,220p' README.md || true",
-  "workdir": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment",
+  "workdir": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -4058,7 +4058,7 @@ id: call_x0qiAgLTM6VALWmuSaIFclv0
 ```json
 {
   "cmd": "mkdir -p .workmux/prompts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4092,7 +4092,7 @@ id: call_IxWY3nZSY8OprDKvOmMmvzna
 ```json
 {
   "cmd": "bd update av-x0ym --claim --set-metadata machine=entity-vps --set-metadata worker=wtg-prompts-dogfood --set-metadata branch=wtg-prompts-dogfood --set-metadata worktree=pending-workmux-create --append-notes \"Coordinator pulled AgentV main to 45f7ed1506c54b5e2a6ad6cbcf6ffbedf6ea05c7. Dispatching Workmux worker wtg-prompts-dogfood to run the private WTG AI prompts experiment, fix latest-AgentV compatibility if needed, dogfood transcript in Dashboard, and publish screenshots to agentv-private orphan evidence branch.\" && workmux add wtg-prompts-dogfood -b -P .workmux/prompts/wtg-prompts-dogfood.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4111,13 +4111,13 @@ Output:
 ✓ Updated issue: av-x0ym — Dogfood wta-ai-prompts experiment on latest main
 ✓ Successfully created worktree and tmux window for 'wtg-prompts-dogfood'
   Base: main
-  Worktree: /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood
+  Worktree: /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood
 
 ```
 
 > AGENT
 
-Worker `wtg-prompts-dogfood` is created at `/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood`. I’m checking the pane and updating the Bead with the real worktree path.
+Worker `wtg-prompts-dogfood` is created at `/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood`. I’m checking the pane and updating the Bead with the real worktree path.
 
 > TOOL
 
@@ -4125,8 +4125,8 @@ tool_use exec_command
 id: call_X8K5kYmEmP0mcSJLsV7kdXw6
 ```json
 {
-  "cmd": "bd update av-x0ym --set-metadata worktree=/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-x0ym --set-metadata worktree=/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4139,7 +4139,7 @@ id: call_wCWAND1McNwbpWOWOidjB6Q9
 ```json
 {
   "cmd": "workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -4151,8 +4151,8 @@ tool_use exec_command
 id: call_sYAkuL03NtCEbz0xkjt5k8o7
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood status --short --branch && git -C /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood rev-parse HEAD",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood status --short --branch && git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood rev-parse HEAD",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4195,8 +4195,8 @@ wtg-prompts-dogfood  working  4s       ⠇ wtg-prompts-dogfood
   - Bead: `av-x0ym` (`Dogfood wta-ai-prompts experiment on latest main`).
   - The user wrote `wta-ai-prompts-experiment`, but the local and GitHub private repo appears to be `EntityProcess/wtg-ai-prompts-experiment`.
   - AgentV main was fast-forwarded before dispatch to `45f7ed1506c54b5e2a6ad6cbcf6ffbedf6ea05c7`.
-  - Private experiment checkout: `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment`.
-  - Private evidence repo checkout: `/home/entity/projects/EntityProcess/agentv-private`.
+  - Private experiment checkout: `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment`.
+  - Private evidence repo checkout: `/home/<USER>/projects/EntityProcess/agentv-private`.
   - Desired evidence branch: `evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06`.
 
   Required repo rules:
@@ -4233,7 +4233,7 @@ id: call_xTFXGWvqz89ip811qpRhNCVh
 ```json
 {
   "cmd": "workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4260,8 +4260,8 @@ Output:
   - Bead: `av-x0ym` (`Dogfood wta-ai-prompts experiment on latest main`).
   - The user wrote `wta-ai-prompts-experiment`, but the local and GitHub private repo appears to be `EntityProcess/wtg-ai-prompts-experiment`.
   - AgentV main was fast-forwarded before dispatch to `45f7ed1506c54b5e2a6ad6cbcf6ffbedf6ea05c7`.
-  - Private experiment checkout: `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment`.
-  - Private evidence repo checkout: `/home/entity/projects/EntityProcess/agentv-private`.
+  - Private experiment checkout: `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment`.
+  - Private evidence repo checkout: `/home/<USER>/projects/EntityProcess/agentv-private`.
   - Desired evidence branch: `evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06`.
 
   Required repo rules:
@@ -4284,7 +4284,7 @@ id: call_TGiMtn5N0E7BnnTp3ttZ03x3
 ```json
 {
   "cmd": "sleep 35; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 45000,
   "max_output_tokens": 24000
 }
@@ -4364,7 +4364,7 @@ id: call_GiSzKm3k6t9fk7DmiywOeoLB
 ```json
 {
   "cmd": "sleep 60; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 70000,
   "max_output_tokens": 30000
 }
@@ -4442,7 +4442,7 @@ id: call_1XLzELcUSmHO3wcPUbrxFkoy
 ```json
 {
   "cmd": "sleep 60; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 70000,
   "max_output_tokens": 30000
 }
@@ -4526,7 +4526,7 @@ id: call_ta9AbQrO4BNaOJ9BBQO5axT9
 ```json
 {
   "cmd": "sleep 90; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 100000,
   "max_output_tokens": 32000
 }
@@ -4597,7 +4597,7 @@ wtg-prompts-dogfood  working  10m      ⠧ wtg-prompts-dogfood
 • Ran bd update av-x0ym --claim
   └ ✓ Updated issue: av-x0ym — Dogfood wta-ai-prompts experiment on latest main
 
-• Ran bd update av-x0ym --notes "Worker wtg-prompts-dogfood started on entity-vps in /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood at AgentV […]
+• Ran bd update av-x0ym --notes "Worker wtg-prompts-dogfood started on entity-vps in /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood at AgentV […]
 
 > AGENT
 
@@ -4610,7 +4610,7 @@ id: call_bnIdqedVYcUzaXLQFEhR4cl1
 ```json
 {
   "cmd": "sleep 90; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 100000,
   "max_output_tokens": 32000
 }
@@ -4695,7 +4695,7 @@ id: call_L3Pxw8uxrAXlbztijzVbB28b
 ```json
 {
   "cmd": "sleep 90; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 100000,
   "max_output_tokens": 32000
 }
@@ -4765,7 +4765,7 @@ wtg-prompts-dogfood  working  1m       ⠏ wtg-prompts-dogfood
      .../data-transformation-pr50857-e2e.eval.yaml      |  75 ++++++------
      2 files changed, 52 insertions(+), 155 deletions(-)
 
-• Ran env $(grep -v '^#' /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment/.env | xargs) bun apps/cli/src/cli.ts validate /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/
+• Ran env $(grep -v '^#' /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment/.env | xargs) bun apps/cli/src/cli.ts validate /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/
   │ agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml
   └
     Validation Summary
@@ -4773,7 +4773,7 @@ wtg-prompts-dogfood  working  1m       ⠏ wtg-prompts-dogfood
     Invalid: 0
 
 
-• Ran env $(grep -v '^#' /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment/.env | xargs) bun apps/cli/src/cli.ts validate /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/
+• Ran env $(grep -v '^#' /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment/.env | xargs) bun apps/cli/src/cli.ts validate /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/
   │ agentv/.agentv/targets.yaml
   └
     Validation Summary
@@ -4796,7 +4796,7 @@ id: call_QSnLgFxNwF5cR3JChrVqtxyw
 ```json
 {
   "cmd": "sleep 90; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 100000,
   "max_output_tokens": 36000
 }
@@ -4891,7 +4891,7 @@ id: call_W8n1FSIY0y2UZoxHeZH45ab5
 ```json
 {
   "cmd": "sleep 90; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 100000,
   "max_output_tokens": 40000
 }
@@ -4985,7 +4985,7 @@ id: call_xpqhhbDrXReQ1YiwTGuEQ8E6
 ```json
 {
   "cmd": "sleep 60; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 70000,
   "max_output_tokens": 42000
 }
@@ -5077,7 +5077,7 @@ id: call_stXd5HEkv0ZEiN3TyDl2JBVI
 ```json
 {
   "cmd": "sleep 60; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 70000,
   "max_output_tokens": 42000
 }
@@ -5136,12 +5136,12 @@ wtg-prompts-dogfood  working  6m       ⠏ wtg-prompts-dogfood
      4 +
      5 +## Source State
      6 +
-     7 +- AgentV worktree: `/home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood`
+     7 +- AgentV worktree: `/home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood`
      8 +- AgentV branch: `wtg-prompts-dogfood`
      9 +- AgentV commit: `45f7ed1506c54b5e2a6ad6cbcf6ffbedf6ea05c7`
-    10 +- WTG source repo: `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment`
+    10 +- WTG source repo: `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment`
     11 +- WTG source branch/commit: `main` at `cfd208f09493861afb29fc7b234083216d31464c`
-    12 +- WTG compatibility worktree: `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest`
+    12 +- WTG compatibility worktree: `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest`
     13 +- WTG compatibility branch: `av-x0ym-agentv-latest`
     14 +
     15 +The user prompt referred to `wta-ai-prompts-experiment`; that checkout does not exist locally. The available private repo is `wtg-ai-prompts-experiment`, so this dogfood proceeded with WTG.
@@ -5165,7 +5165,7 @@ id: call_s3mAYuySYGpSvV4MKIHPydQD
 ```json
 {
   "cmd": "sleep 45; workmux status wtg-prompts-dogfood && workmux capture wtg-prompts-dogfood",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 60000,
   "max_output_tokens": 42000
 }
@@ -5264,7 +5264,7 @@ id: call_rSRZS9p4mQKnbVGZknKyOF3Q
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5276,8 +5276,8 @@ tool_use exec_command
 id: call_U1lzj5R7LXZtUm64KaMQHqVV
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5289,8 +5289,8 @@ tool_use exec_command
 id: call_RM4zIOu2LSXtdDbkhwMClKfO
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment status --short --branch && git -C /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment status --short --branch && git -C /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5302,8 +5302,8 @@ tool_use exec_command
 id: call_D6OlPxpyILj7vmf00i5ZmTLe
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv-private ls-remote --heads origin evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06 && git -C /home/entity/projects/EntityProcess/agentv-private worktree list --porcelain | rg -n 'agentv-private-av-x0ym|evidence/av-x0ym' -C 2 || true",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv-private ls-remote --heads origin evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06 && git -C /home/<USER>/projects/EntityProcess/agentv-private worktree list --porcelain | rg -n 'agentv-private-av-x0ym|evidence/av-x0ym' -C 2 || true",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5316,7 +5316,7 @@ id: call_tov3JayMPFtOPTN0e3YDSWDi
 ```json
 {
   "cmd": "workmux status wtg-prompts-dogfood && bd show av-x0ym --long",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -5422,8 +5422,8 @@ tool_use exec_command
 id: call_Fo0LS1AoJHx8vG4TrpE16t7e
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/agentv-private worktree remove /tmp/agentv-private-av-x0ym && rm -f .workmux/prompts/wtg-prompts-dogfood.md && git -C /home/entity/projects/EntityProcess/agentv-private worktree prune && git status --short --branch && git -C /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/agentv-private worktree remove /tmp/agentv-private-av-x0ym && rm -f .workmux/prompts/wtg-prompts-dogfood.md && git -C /home/<USER>/projects/EntityProcess/agentv-private worktree prune && git status --short --branch && git -C /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -5463,12 +5463,12 @@ Evidence commit:
 
 Run summary:
 - WTG live run: `2026-07-06T10-29-36-153Z`
-- Run dir: `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z`
+- Run dir: `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z`
 - Result: `0/2` passed, `0` execution errors. This is a quality failure, not infrastructure failure.
 - Transcript rendered in Dashboard; screenshots include transcript timeline, expanded tool calls with args/results, scrolled tool details, and mobile views.
 
 Compatibility fixes were needed in the WTG repo, not AgentV:
-- `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest`
+- `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest`
 - Modified:
   - `framework-parity/agentv/.agentv/targets.yaml`
   - `framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml`
@@ -5485,7 +5485,7 @@ AgentV public repo has no source changes. Primary checkout remains clean apart f
 
 > SYSTEM
 
-# AGENTS.md instructions for /home/entity/projects/EntityProcess/agentv
+# AGENTS.md instructions for /home/<USER>/projects/EntityProcess/agentv
 
 <INSTRUCTIONS>
 # AgentV Agent Guide
@@ -5517,7 +5517,7 @@ id: call_d9sz8ROxotZFSGqI9u4Ij0rc
 ```json
 {
   "cmd": "git fetch origin && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5529,8 +5529,8 @@ tool_use exec_command
 id: call_pBl1Ers9eynre0ayZQ0CvZwG
 ```json
 {
-  "cmd": "sed -n '1,240p' /home/entity/.codex/plugins/cache/agentv/agentv-dev/1.0.0/skills/agentv-dev/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,240p' /home/<USER>/.codex/plugins/cache/agentv/agentv-dev/1.0.0/skills/agentv-dev/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5542,8 +5542,8 @@ tool_use exec_command
 id: call_dpWdbNbb1SOu0xpRPZd8cDMN
 ```json
 {
-  "cmd": "sed -n '1,260p' /home/entity/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "sed -n '1,260p' /home/<USER>/.codex/plugins/cache/beads-marketplace/beads/1.1.0/skills/beads/SKILL.md",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5556,7 +5556,7 @@ id: call_dBrp0ctT2yXsorD5L6vgFCBQ
 ```json
 {
   "cmd": "sed -n '1,260p' .agents/workflow.md && sed -n '1,260p' .agents/verification.md && sed -n '1,220p' .agents/conventions.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -5638,7 +5638,7 @@ description: >
   whenever managing multi-session work, tracking dependencies, or recovering context.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.60.0"
-author: "Steve Yegge <steve.yegge@gmail.com>"
+author: "Steve Yegge <<REDACTED_EMAIL>>"
 license: "MIT"
 compatible-with: [claude-code, codex]
 tags: [issue-tracking, task-management, multi-session, dependencies]
@@ -5700,7 +5700,7 @@ id: call_LUIfC7dPB2tVV7lnfsM5oPQ5
 ```json
 {
   "cmd": "git pull --ff-only origin main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5713,7 +5713,7 @@ id: call_pZQznhx18gbTyruGfIFw44xq
 ```json
 {
   "cmd": "sed -n '1,240p' STRATEGY.md && sed -n '1,260p' ROADMAP.md && sed -n '1,260p' .agents/product-boundary.md",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -5726,7 +5726,7 @@ id: call_Fe9BUa303Q7j8wOBCiTomzJ3
 ```json
 {
   "cmd": "bun apps/cli/src/cli.ts skills get agentv-trace-analyst && bun apps/cli/src/cli.ts skills get agentv-eval-review",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -5738,8 +5738,8 @@ tool_use exec_command
 id: call_sBerfHG8t1gnAXiSl76uF60h
 ```json
 {
-  "cmd": "bd create --title=\"Make Dashboard test rows open full-page case detail and debug WTG quality failure\" --description=\"User found the WTG dogfood case-detail screenshot worse than desired because clicking a test row leaves a row-detail style view instead of making the test case the full page. Also investigate why the WTG AI prompts experiment dogfood dropped to 0% quality after updating to latest AgentV, distinguishing UI/AgentV regressions from WTG eval or target changes.\" --type=bug --priority=1 --acceptance=\"Clicking a test row in Dashboard automatically navigates into a full-page test case detail view instead of leaving the case as a secondary row-detail panel. The WTG quality failure is investigated from the run artifacts/transcripts with a clear root-cause summary and any necessary fixes scoped to the correct repo. Focused Dashboard validation and browser UAT are completed, with screenshot evidence published privately if screenshots are captured.\" --notes=\"Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.\" --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd create --title=\"Make Dashboard test rows open full-page case detail and debug WTG quality failure\" --description=\"User found the WTG dogfood case-detail screenshot worse than desired because clicking a test row leaves a row-detail style view instead of making the test case the full page. Also investigate why the WTG AI prompts experiment dogfood dropped to 0% quality after updating to latest AgentV, distinguishing UI/AgentV regressions from WTG eval or target changes.\" --type=bug --priority=1 --acceptance=\"Clicking a test row in Dashboard automatically navigates into a full-page test case detail view instead of leaving the case as a secondary row-detail panel. The WTG quality failure is investigated from the run artifacts/transcripts with a clear root-cause summary and any necessary fixes scoped to the correct repo. Focused Dashboard validation and browser UAT are completed, with screenshot evidence published privately if screenshots are captured.\" --notes=\"Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.\" --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5807,7 +5807,7 @@ Output:
 1 | })
 2 | {
     ^
-SyntaxError: Export named 'isTypeScriptEvalConfigFileName' not found in module '/home/entity/projects/EntityProcess/agentv/packages/core/dist/index.js'.
+SyntaxError: Export named 'isTypeScriptEvalConfigFileName' not found in module '/home/<USER>/projects/EntityProcess/agentv/packages/core/dist/index.js'.
       at loadAndEvaluateModule (2:1)
 
 Bun v1.3.13 (Linux x64)
@@ -5831,8 +5831,8 @@ Output:
   "description": "User found the WTG dogfood case-detail screenshot worse than desired because clicking a test row leaves a row-detail style view instead of making the test case the full page. Also investigate why the WTG AI prompts experiment dogfood dropped to 0% quality after updating to latest AgentV, distinguishing UI/AgentV regressions from WTG eval or target changes.",
   "id": "av-wkwg",
   "issue_type": "bug",
-  "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.",
-  "owner": "christso@gmail.com",
+  "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.",
+  "owner": "<REDACTED_EMAIL>",
   "priority": 1,
   "schema_version": 1,
   "status": "open",
@@ -5849,7 +5849,7 @@ id: call_xgBfYmuWqDM8g8yoAkspRQOD
 ```json
 {
   "cmd": "bd update av-wkwg --claim --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5862,7 +5862,7 @@ id: call_qVeY99Q7OQjxdjN1xDT616Cs
 ```json
 {
   "cmd": "bd update --help",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5875,7 +5875,7 @@ id: call_Si4B6OJSX6zdjfcU07t1lAD0
 ```json
 {
   "cmd": "git worktree list --porcelain",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5897,12 +5897,12 @@ Output:
     "title": "Make Dashboard test rows open full-page case detail and debug WTG quality failure",
     "description": "User found the WTG dogfood case-detail screenshot worse than desired because clicking a test row leaves a row-detail style view instead of making the test case the full page. Also investigate why the WTG AI prompts experiment dogfood dropped to 0% quality after updating to latest AgentV, distinguishing UI/AgentV regressions from WTG eval or target changes.",
     "acceptance_criteria": "Clicking a test row in Dashboard automatically navigates into a full-page test case detail view instead of leaving the case as a secondary row-detail panel. The WTG quality failure is investigated from the run artifacts/transcripts with a clear root-cause summary and any necessary fixes scoped to the correct repo. Focused Dashboard validation and browser UAT are completed, with screenshot evidence published privately if screenshots are captured.",
-    "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.",
+    "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.",
     "status": "in_progress",
     "priority": 1,
     "issue_type": "bug",
     "assignee": "Christopher Tso",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T11:44:16Z", […]
 
 > TOOL
@@ -5951,107 +5951,107 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1138
 Output:
-worktree /home/entity/projects/EntityProcess/agentv
+worktree /home/<USER>/projects/EntityProcess/agentv
 HEAD c0e6d50b4eab07bd4db1dddcac4d6f6a90fed767
 branch refs/heads/main
 
-worktree /home/entity/projects/EntityProcess/agentv.worktrees/christso-sdk-experiment-canonical
+worktree /home/<USER>/projects/EntityProcess/agentv.worktrees/christso-sdk-experiment-canonical
 HEAD ac0ef566893a0ba67160872fcf3cd2478b8af12f
 branch refs/heads/christso/sdk-experiment-canonical
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-ii3p-integration
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-ii3p-integration
 HEAD c1adf790ecc9429ae1a222d34e0f5c2c45b5dcae
 branch refs/heads/integration/av-ii3p-run-policy
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-2-codex
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-2-codex
 HEAD 0ebcc152b4e6e0cd38eb9066f0e2a1b1e0bd24f8
 branch refs/heads/av-y7eq-2-codex
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-6-results
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-6-results
 HEAD 8b8b2420541d38e7983d71a74a7090fc1e756147
 branch refs/heads/av-y7eq-6-results
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/av-y7eq-8-docs
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/av-y7eq-8-docs
 HEAD ab250f7a374d6de6c247028e8faa5036c2540f64
 branch refs/heads/av-y7eq-8-docs
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/case-contract-impl
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/case-contract-impl
 HEAD bed2cdbc2c1d04aecfad95d29bbb7b2a64ff34dc
 branch refs/heads/case-contract-impl
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/create-agentv-beads-copyfiles
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/create-agentv-beads-copyfiles
 HEAD 8868c11ddc96927f3a6ac97cb7dd68fb39f7f2ae
 branch refs/heads/create-agentv-beads-copyfiles
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/dashboard-remote-ux-audit
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/dashboard-remote-ux-audit
 HEAD ad6df05e92828edc1a086b2104a7387f21951c04
 branch refs/heads/dashboard-remote-ux-audit
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/exploitbench-workspace-research
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/exploitbench-workspace-research
 HEAD bed2cdbc2c1d04aecfad95d29bbb7b2a64ff34dc
 branch refs/heads/exploitbench-workspace-research
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/kfik14-extensions
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/kfik14-extensions
 HEAD ca0019330e76101e94ea422d4a5fcca2a32f64e8
 branch refs/heads/feat/av-kfik-14-extensions
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/kfik7-graders
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/kfik7-graders
 HEAD 5d727840d5be91380a97287d88d5613912b57be7
 branch refs/heads/feat/av-kfik-7-graders
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/local-openai-dogfood
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/local-openai-dogfood
 HEAD 7741f9d976491acb064549803dc99a5d93050edd
 detached
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/local-openai-proxy-env
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/local-openai-proxy-env
 HEAD 6a330652ff1075d373a1c13f4234c7b95723e5b5
 branch refs/heads/fix/local-openai-proxy-env
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/nawg-metrics-contract
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/nawg-metrics-contract
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/research/av-nawg-metrics-contract
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/pi-extension-research
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/pi-extension-research
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/research/pi-extension-patterns
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/pr1594-final-beads-audit
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/pr1594-final-beads-audit
 HEAD 64b0471257df368190caf6cd403152986ff130bb
 branch refs/heads/audit/pr1594-final-beads
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik10
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik10
 HEAD 0b707fdf04dec1c31e4d8e84a7412665f72bd745
 branch refs/heads/review/av-kfik-10-pr1604
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik11
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik11
 HEAD 2c76b5575fdf303f984ee4705f397ff46c4b987f
 branch refs/heads/review/av-kfik-11-pr1603
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik14
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik14
 HEAD 73ac81a2d1089b1fac4e2dfc5e14dc88d8ae0409
 branch refs/heads/review/av-kfik-14-pr1605
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-kfik7-pr1599
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-kfik7-pr1599
 HEAD eb6073aa0c2268e9d75438916fbd4f936311b9b7
 branch refs/heads/review/av-kfik-7-pr1599
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1603
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1603
 HEAD 916eccdc4d5ff988735a14aa6efd4b83f1bceffc
 branch refs/heads/review-pr1603
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1608
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1608
 HEAD 24c93648b4f2352ac5e5979b5dfec4d9d8cbb8c1
 branch refs/heads/review-pr1608
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/review-pr1609
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/review-pr1609
 HEAD 916eccdc4d5ff988735a14aa6efd4b83f1bceffc
 branch refs/heads/review-pr1609
 
-worktree /home/entity/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood
+worktree /home/<USER>/projects/EntityProcess/agentv__worktrees/wtg-prompts-dogfood
 HEAD 45f7ed1506c54b5e2a6ad6cbcf6ffbedf6ea05c7
 branch refs/heads/wtg-prompts-dogfood
 
-worktree /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-agentv-pr679-environment/tmp/agentv-origin-main
+worktree /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/wtg-agentv-pr679-environment/tmp/agentv-origin-main
 HEAD 935cdc260a4f4b8efb992ac0ff9cf6f39e6cafbb
 detached
 
@@ -6073,7 +6073,7 @@ id: call_ps6jvvh482FMc5al6xenL1Ib
 ```json
 {
   "cmd": "git worktree add ../agentv.worktrees/av-wkwg-dashboard-case-detail -b fix/av-wkwg-dashboard-case-detail origin/main",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6085,8 +6085,8 @@ tool_use exec_command
 id: call_oWGcpF7nwYqREQalc7Hjc4Ok
 ```json
 {
-  "cmd": "bd update av-wkwg --set-metadata machine=$(hostname) --set-metadata worker=codex-primary --set-metadata branch=fix/av-wkwg-dashboard-case-detail --set-metadata worktree=/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail --json",
-  "workdir": "/home/entity/projects/EntityProcess/agentv",
+  "cmd": "bd update av-wkwg --set-metadata machine=$(hostname) --set-metadata worker=codex-primary --set-metadata branch=fix/av-wkwg-dashboard-case-detail --set-metadata worktree=/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail --json",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6124,17 +6124,17 @@ Output:
     "title": "Make Dashboard test rows open full-page case detail and debug WTG quality failure",
     "description": "User found the WTG dogfood case-detail screenshot worse than desired because clicking a test row leaves a row-detail style view instead of making the test case the full page. Also investigate why the WTG AI prompts experiment dogfood dropped to 0% quality after updating to latest AgentV, distinguishing UI/AgentV regressions from WTG eval or target changes.",
     "acceptance_criteria": "Clicking a test row in Dashboard automatically navigates into a full-page test case detail view instead of leaving the case as a secondary row-detail panel. The WTG quality failure is investigated from the run artifacts/transcripts with a clear root-cause summary and any necessary fixes scoped to the correct repo. Focused Dashboard validation and browser UAT are completed, with screenshot evidence published privately if screenshots are captured.",
-    "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.",
+    "notes": "Context: prior evidence branch https://github.com/EntityProcess/agentv-private/tree/evidence/av-x0ym-wtg-ai-prompts-transcript-dogfood-2026-07-06, especially screenshot 03-case-detail-online.png. Prior WTG compatibility worktree: /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest. Successful infrastructure run: framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z, 0/2 passed quality, 0 execution errors.",
     "status": "in_progress",
     "priority": 1,
     "issue_type": "bug",
     "assignee": "Christopher Tso",
-    "owner": "christso@gmail.com",
+    "owner": "<REDACTED_EMAIL>",
     "created_at": "2026-07-06T11:44:16Z", […]
 
 > AGENT
 
-The worktree is at `/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail`, based on the current `origin/main` commit `c0e6d50b`. I’m setting it up now, then I’ll inspect the Dashboard routing/detail components and the WTG result artifacts.
+The worktree is at `/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail`, based on the current `origin/main` commit `c0e6d50b`. I’m setting it up now, then I’ll inspect the Dashboard routing/detail components and the WTG result artifacts.
 
 > TOOL
 
@@ -6143,7 +6143,7 @@ id: call_6j7nMoQH0h9dHqvHRp3Lk2qa
 ```json
 {
   "cmd": "bun install",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -6155,8 +6155,8 @@ tool_use exec_command
 id: call_VWRUjay4yZ7IqAUHtoZKlwx1
 ```json
 {
-  "cmd": "if [ -f /home/entity/projects/EntityProcess/agentv/.env ]; then cp /home/entity/projects/EntityProcess/agentv/.env .env; else echo 'NO_PRIMARY_ENV'; fi && git status --short --branch",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "cmd": "if [ -f /home/<USER>/projects/EntityProcess/agentv/.env ]; then cp /home/<USER>/projects/EntityProcess/agentv/.env .env; else echo 'NO_PRIMARY_ENV'; fi && git status --short --branch",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6169,7 +6169,7 @@ id: call_P1uEiaedu1nkJZw5apDvVBGc
 ```json
 {
   "cmd": "rg -n \"CaseDetail|case detail|test case|selected|RunDetail|details|result\" apps/dashboard/src -S",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -6181,8 +6181,8 @@ tool_use exec_command
 id: call_xHhsQx8vrobtUZ4CO1f38FYj
 ```json
 {
-  "cmd": "find /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z -maxdepth 4 -type f | sort | sed -n '1,200p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "cmd": "find /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z -maxdepth 4 -type f | sort | sed -n '1,200p'",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6282,26 +6282,26 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 1124
 Output:
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/.internal/index.jsonl
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/grading.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/metrics.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/outputs/answer.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/result.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/transcript-raw.jsonl
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/transcript.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/summary.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/test/EVAL.yaml
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/test/targets.yaml
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/grading.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/metrics.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/outputs/answer.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/result.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript-raw.jsonl
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/summary.json
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/test/EVAL.yaml
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/test/targets.yaml
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/summary.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/.internal/index.jsonl
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/grading.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/metrics.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/outputs/answer.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/result.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/transcript-raw.jsonl
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/transcript.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/summary.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/test/EVAL.yaml
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-offline-implementation-review--e5ccac5866f4/test/targets.yaml
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/grading.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/metrics.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/outputs/answer.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/result.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript-raw.jsonl
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/summary.json
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/test/EVAL.yaml
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/test/targets.yaml
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/summary.json
 
 ```
 
@@ -6316,7 +6316,7 @@ id: call_KmORaMvQqYxr4P7TeenJz06L
 ```json
 {
   "cmd": "sed -n '1,260p' apps/dashboard/src/components/ResultTable.tsx && sed -n '260,620p' apps/dashboard/src/components/ResultTable.tsx && sed -n '960,1120p' apps/dashboard/src/components/ResultTable.tsx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -6329,7 +6329,7 @@ id: call_kKco2GWjSKltNAXomybvJM7e
 ```json
 {
   "cmd": "sed -n '1,180p' apps/dashboard/src/routes/evals/$runId.$evalId.tsx && sed -n '1,190p' apps/dashboard/src/routes/projects/$projectId_/evals/$runId.$evalId.tsx && sed -n '1,140p' apps/dashboard/src/routes/projects/$projectId_/runs/$runId.tsx",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -6342,7 +6342,7 @@ id: call_z6oajiD7oJAkrowz2Wnw8zC6
 ```json
 {
   "cmd": "sed -n '1,170p' apps/dashboard/src/lib/navigation.ts && sed -n '1,180p' apps/dashboard/src/lib/navigation.test.ts",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -6354,8 +6354,8 @@ tool_use exec_command
 id: call_btpzyVh5kLyDQb5N5qAYGdUQ
 ```json
 {
-  "cmd": "ROOT=/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z; jq . \"$ROOT/summary.json\"; printf '\\n-- index --\\n'; sed -n '1,20p' \"$ROOT/.internal/index.jsonl\"; printf '\\n-- grading online --\\n'; jq . \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/sample-1/grading.json\"; printf '\\n-- grading offline --\\n'; jq . \"$ROOT/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/grading.json\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "cmd": "ROOT=/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z; jq . \"$ROOT/summary.json\"; printf '\\n-- index --\\n'; sed -n '1,20p' \"$ROOT/.internal/index.jsonl\"; printf '\\n-- grading online --\\n'; jq . \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/sample-1/grading.json\"; printf '\\n-- grading offline --\\n'; jq . \"$ROOT/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/grading.json\"",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -6622,7 +6622,7 @@ Output:
     }
   ],
   "metadata": {
-    "eval_file": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml",
+    "eval_file": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml",
     "timestamp": "2026-07-06T10:29:49.847Z",
     "targets": [
       "agent"
@@ -6640,7 +6640,7 @@ id: call_uPngrpAQ2hYyaK5gtdatYbLZ
 ```json
 {
   "cmd": "sed -n '1,180p' 'apps/dashboard/src/routes/evals/$runId.$evalId.tsx'; sed -n '1,220p' 'apps/dashboard/src/routes/projects/$projectId_/evals/$runId.$evalId.tsx'; sed -n '1,160p' 'apps/dashboard/src/routes/projects/$projectId_/runs/$runId.tsx'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 35000
 }
@@ -6653,7 +6653,7 @@ id: call_IdgGSY3i9QNkVF2b3C4OptdJ
 ```json
 {
   "cmd": "nl -ba apps/dashboard/src/components/ResultTable.tsx | sed -n '180,620p'; nl -ba apps/dashboard/src/components/ResultTable.tsx | sed -n '620,1180p'",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 60000
 }
@@ -6665,8 +6665,8 @@ tool_use exec_command
 id: call_icG6asW89ZJQKKtp2MslERbn
 ```json
 {
-  "cmd": "ROOT=/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z; printf -- '-- output online --\\n'; sed -n '1,220p' \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/sample-1/outputs/answer.md\"; printf '\\n-- output offline --\\n'; sed -n '1,220p' \"$ROOT/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/outputs/answer.md\"; printf '\\n-- eval yaml --\\n'; sed -n '1,260p' \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/test/EVAL.yaml\"; printf '\\n-- targets --\\n'; sed -n '1,220p' \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/test/targets.yaml\"",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "cmd": "ROOT=/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z; printf -- '-- output online --\\n'; sed -n '1,220p' \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/sample-1/outputs/answer.md\"; printf '\\n-- output offline --\\n'; sed -n '1,220p' \"$ROOT/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/outputs/answer.md\"; printf '\\n-- eval yaml --\\n'; sed -n '1,260p' \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/test/EVAL.yaml\"; printf '\\n-- targets --\\n'; sed -n '1,220p' \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/test/targets.yaml\"",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 60000
 }
@@ -6679,7 +6679,7 @@ id: call_MnwVD5hvgO0wfMQ9skgCzh4p
 ```json
 {
   "cmd": "rg -n \"skills|getRequired|skill-used|actual skills|required skills|skills\" packages apps -S",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -6804,7 +6804,7 @@ Process exited with code 0
 Original token count: 1435
 Output:
 -- output online --
-Reviewed: `/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs`
+Reviewed: `/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs`
 
 ### Findings
 
@@ -6898,7 +6898,7 @@ id: call_wY1wkd1sWkHAcxg7iDrfDJlL
 ```json
 {
   "cmd": "bun run build && bun apps/cli/src/cli.ts skills get agentv-trace-analyst && bun apps/cli/src/cli.ts skills get agentv-eval-review",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 30000,
   "max_output_tokens": 50000
 }
@@ -6910,8 +6910,8 @@ tool_use exec_command
 id: call_Wl4KFw7Q03dFwntY2tyedjIT
 ```json
 {
-  "cmd": "git -C /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest status --short --branch && git -C /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest diff -- framework-parity/agentv/.agentv/targets.yaml framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "cmd": "git -C /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest status --short --branch && git -C /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest diff -- framework-parity/agentv/.agentv/targets.yaml framework-parity/agentv/evals/cargowise/database/data-transformation-pr50857-e2e.eval.yaml",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -6923,8 +6923,8 @@ tool_use exec_command
 id: call_3mCyfZ1dVPjIACtvfAyiuT64
 ```json
 {
-  "cmd": "find /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest -iname '*cw*sql*' -o -iname '*schema*migration*' -o -path '*/skills/*' | sort | sed -n '1,240p'; printf '\\n-- rg skill name --\\n'; rg -n \"cw-sql-schema-migration|sql-transformations-online|GuidChunkingOperation|JobConsolTransport\" /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest -S",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "cmd": "find /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest -iname '*cw*sql*' -o -iname '*schema*migration*' -o -path '*/skills/*' | sort | sed -n '1,240p'; printf '\\n-- rg skill name --\\n'; rg -n \"cw-sql-schema-migration|sql-transformations-online|GuidChunkingOperation|JobConsolTransport\" /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest -S",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -6936,8 +6936,8 @@ tool_use exec_command
 id: call_94bpBbvJhiMrHRvZk9C7sxIu
 ```json
 {
-  "cmd": "ROOT=/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z; printf -- '-- online raw tool lines --\\n'; rg -n \"SKILL|cw-sql|schema|read|file_read|bash|clear-job|JobConsol|GuidChunk|JW_PK|JW_ParentGuid|TransportMode\" \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript-raw.jsonl\" \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json\" -S; printf '\\n-- offline raw tool lines --\\n'; rg -n \"SKILL|cw-sql|schema|read|file_read|bash|clear-job|JobConsol|GuidChunk|JW_PK|JW_ParentGuid|TransportMode\" \"$ROOT/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/transcript-raw.jsonl\" \"$ROOT/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/transcript.json\" -S",
-  "workdir": "/home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
+  "cmd": "ROOT=/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z; printf -- '-- online raw tool lines --\\n'; rg -n \"SKILL|cw-sql|schema|read|file_read|bash|clear-job|JobConsol|GuidChunk|JW_PK|JW_ParentGuid|TransportMode\" \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript-raw.jsonl\" \"$ROOT/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json\" -S; printf '\\n-- offline raw tool lines --\\n'; rg -n \"SKILL|cw-sql|schema|read|file_read|bash|clear-job|JobConsol|GuidChunk|JW_PK|JW_ParentGuid|TransportMode\" \"$ROOT/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/transcript-raw.jsonl\" \"$ROOT/pr50857-offline-implementation-review--e5ccac5866f4/sample-1/transcript.json\" -S",
+  "workdir": "/home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail",
   "yield_time_ms": 10000,
   "max_output_tokens": 50000
 }
@@ -6957,7 +6957,7 @@ $ bun --filter @agentv/core build && bun --filter @agentv/sdk build && bun --fil
 @agentv/core build: CLI Building entry: src/index.ts, src/evaluation/providers/sdk-child-runner.ts, src/evaluation/validation/index.ts
 @agentv/core build: CLI Using tsconfig: tsconfig.build.json
 @agentv/core build: CLI tsup v8.3.5
-@agentv/core build: CLI Using tsup config: /home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail/packages/core/tsup.config.ts
+@agentv/core build: CLI Using tsup config: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail/packages/core/tsup.config.ts
 @agentv/core build: CLI Target: node20
 @agentv/core build: CLI Cleaning output folder
 @agentv/core build: ESM Build start
@@ -7037,119 +7037,119 @@ Output:
 Warning: truncated output (original token count: 42682)
 Total output lines: 685
 
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/cw-sql-schema-migration-trigger.eval.yaml
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-core-module-structure
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-core-module-structure/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-aspect-review
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-aspect-review/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-business-object-patterns
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-business-object-patterns/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-data
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-data/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-review
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-review/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-review/references
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-review/references/base-class-contract.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-context
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-context/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-country-specific-patterns
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-country-specific-patterns/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cross-repo-integration
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cross-repo-integration/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cspell
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cspell/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cspell/scripts
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cspell/scripts/Invoke-CSpellChangedFiles.ps1
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/references
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/references/codebase-research.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/references/dbd-template.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/references/design-checklist.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-docsite-content-validation
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-docsite-content-validation/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-domain-terminology
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-domain-terminology/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/references
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/references/hld-review-criteria.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/references/hld-template.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/references/repo-navigation.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-inco-term-charge-factory
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-inco-term-charge-factory/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-investigation
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-investigation/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/1-usercontrol-patterns.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/2-layoutbuilder-methods.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/3-layoutbuilder-positioning.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/4-layoutprovider-special.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/5-unit-testing.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/6-query-patterns.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/7-grid-column-layouts.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/__init__.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/find_missing_layout_tests.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_control_bags.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_generated_code.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_grid_column_layouts.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_layout_controls.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_layout_relationships.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_layouts_by_scope.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/layout_utils.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/test_layout_compliance.py
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/GridColumnBag.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/GridColumnBagTest.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/GridColumnLayout.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/GridColumnLayoutTest.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/Layout.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/LayoutBuilder.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/LayoutBuilderTest.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/LayoutTest.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/UserControl.Designer.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/UserControl.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/UserControlTest.cs.template
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/core-classes-and-locations.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/countries-apac.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/countries-eu-family.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/countries-other.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/end-to-end-implementation.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/gui-entry-points.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/merge-key-design.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/merge-manager-api.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/pitfalls.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/source-verification.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/testing.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-contracts
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-contracts/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/references
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/references/create-mapper.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/references/migrate-auto-messagebuilder.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/references/migrate-manual-messagebuilder.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapping-spec-initializer
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapping-spec-initializer/SKILL.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapping-spec-initializer/templates
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapping-spec-initializer/templates/message-mapping-spec-template.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/age…32682 tokens truncated…references/sql-transformations.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1313:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1353:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1388:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1440:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1473:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:5:  criteria: Recognizes GuidChunkingOperation usage and applies standards as Advisory level only, not High or Critical
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:33:                        new GuidChunkingOperation(manager, 10000, rowCount, ProcessChunk, LastProcessedGuid, token).DoChunking();
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:63:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations-online.md
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:67:      **Analysis: GuidChunkingOperation usage detected - applying Advisory-level standards only.**
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:69:      **GuidChunkingOperation detected — all online transformation standards apply at Advisory […]
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/cw-sql-schema-migration-trigger.eval.yaml
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-core-module-structure
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-core-module-structure/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-aspect-review
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-aspect-review/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-business-object-patterns
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-business-object-patterns/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-data
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-data/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-review
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-review/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-review/references
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-code-review/references/base-class-contract.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-context
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-context/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-country-specific-patterns
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-country-specific-patterns/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cross-repo-integration
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cross-repo-integration/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cspell
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cspell/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cspell/scripts
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-cspell/scripts/Invoke-CSpellChangedFiles.ps1
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/references
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/references/codebase-research.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/references/dbd-template.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-dbd-agent/references/design-checklist.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-docsite-content-validation
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-docsite-content-validation/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-domain-terminology
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-domain-terminology/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/references
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/references/hld-review-criteria.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/references/hld-template.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-hld-agent/references/repo-navigation.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-inco-term-charge-factory
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-inco-term-charge-factory/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-investigation
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-investigation/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/1-usercontrol-patterns.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/2-layoutbuilder-methods.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/3-layoutbuilder-positioning.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/4-layoutprovider-special.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/5-unit-testing.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/6-query-patterns.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/references/7-grid-column-layouts.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/__init__.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/find_missing_layout_tests.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_control_bags.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_generated_code.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_grid_column_layouts.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_layout_controls.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_layout_relationships.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/get_layouts_by_scope.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/layout_utils.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/scripts/test_layout_compliance.py
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/GridColumnBag.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/GridColumnBagTest.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/GridColumnLayout.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/GridColumnLayoutTest.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/Layout.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/LayoutBuilder.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/LayoutBuilderTest.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/LayoutTest.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/UserControl.Designer.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/UserControl.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-layout-engine/templates/UserControlTest.cs.template
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/core-classes-and-locations.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/countries-apac.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/countries-eu-family.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/countries-other.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/end-to-end-implementation.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/gui-entry-points.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/merge-key-design.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/merge-manager-api.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/pitfalls.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/source-verification.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-merge-entries/references/testing.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-contracts
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-contracts/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/references
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/references/create-mapper.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/references/migrate-auto-messagebuilder.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapper/references/migrate-manual-messagebuilder.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapping-spec-initializer
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapping-spec-initializer/SKILL.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapping-spec-initializer/templates
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/plugins/cargowise-customs/skills/cus-gen-message-mapping-spec-initializer/templates/message-mapping-spec-template.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/age…32682 tokens truncated…references/sql-transformations.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1313:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1353:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1388:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1440:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations.eval.yaml:1473:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:5:  criteria: Recognizes GuidChunkingOperation usage and applies standards as Advisory level only, not High or Critical
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:33:                        new GuidChunkingOperation(manager, 10000, rowCount, ProcessChunk, LastProcessedGuid, token).DoChunking();
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:63:      value: /plugins/cargowise/skills/cw-sql-schema-migration/references/sql-transformations-online.md
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:67:      **Analysis: GuidChunkingOperation usage detected - applying Advisory-level standards only.**
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/sql-transformations-online.eval.yaml:69:      **GuidChunkingOperation detected — all online transformation standards apply at Advisory […]
 
 > TOOL
 
@@ -7165,18 +7165,18 @@ Warning: truncated output (original token count: 17507)
 Total output lines: 50
 
 -- online raw tool lines --
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:2:  "schema_version": "agentv.normalized_transcript.v1",
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:8:      "file_read": 2,
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:20:    "files_read": [
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:21:      "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs",
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:22:      "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-offline.cs"
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:26:      "ls -la /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets && rg -n \"ClearJobConsolTransportVessel\" -n /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets",
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:27:      "rg -n \"GuidChunkingOperation\\(|ISNULL\\(JW_TransportMode|JW_TransportMode NOT IN|ClearJobConsolTransportVessel\" /home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database -g\"*.cs\""
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:42:          "text": "@[System]:\nThis eval materializes the code under review as files in the workspace via type:file inputs. When exercising content-based skill detection, search those files; do not rely on grepping the user prompt text itself.\n\n@[User]:\nPlease review this database transformation.\n<file: path=\"/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs\">\n\nFiles:\n@/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs"
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:57:          "tool_name": "file_read",
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:58:          "name": "read",
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:60:            "path": "/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs"
-/home/entity/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:68:                  "text": "// Database/Odyssey/Transformations/Transformations/Transforms/Freight/Forwarding/ClearJobConsolTransportVesselFKWhenNotSeaOrIwt.cs\nusing System;\nusing System.Data;\nusing System.Threading;\nusing CargoWise.Data;\nusing Enterprise.DbUpgrader.Transformation.Common.HelperClasses;\nusing Enterprise.DbUpgrader.Transformation.DataModification;\nusing Enterprise.ZArchitecture.Schema;\n\nnamespace Enterprise.DbUpgrader.Transformations.Transforms.Freight.Forwarding\n{\n    public class ClearJobConsolTransportVesselFKWhenNotSeaOrIwt : DataTransformation\n    {\n        public override string UserDescription => \"Clear JW_RV_Vessel in JobConsolTransport where JW_TransportMode is not Sea or Inland Waterway.\";\n\n        const int BatchSize = 1000;\n        const string LastProcessedChunkPKName = \"ClearJobConsolTransportVesselFKWhenNotSeaOrIwt.LastProcessedChunkPK\";\n\n        protected override void OnlinePostUpgradeTransform(CancellationToken token)\n        {\n            token.ThrowIfCancellationRequested();\n            var rowCount = DataUtils.GetApproximateRowCountForTable(Db.Connection, JobConsolTransportSchema.Constants.TableName);\n            new GuidChunkingOperation(manager, BatchSize, rowCount, ProcessChunk, LastProcessedChunkPKName, token).DoChunking();\n        }\n\n        static void ProcessChunk(Guid lowerBound, Guid upperBound)\n        {\n            var sql = @\"\nUPDATE dbo.JobConsolTransport\nSET\n    JW_RV_Vessel = NULL,\n    JW_SystemLastEditTimeUtc = […]
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:2:  "schema_version": "agentv.normalized_transcript.v1",
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:8:      "file_read": 2,
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:20:    "files_read": [
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:21:      "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs",
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:22:      "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-offline.cs"
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:26:      "ls -la /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets && rg -n \"ClearJobConsolTransportVessel\" -n /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets",
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:27:      "rg -n \"GuidChunkingOperation\\(|ISNULL\\(JW_TransportMode|JW_TransportMode NOT IN|ClearJobConsolTransportVessel\" /home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database -g\"*.cs\""
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:42:          "text": "@[System]:\nThis eval materializes the code under review as files in the workspace via type:file inputs. When exercising content-based skill detection, search those files; do not rely on grepping the user prompt text itself.\n\n@[User]:\nPlease review this database transformation.\n<file: path=\"/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs\">\n\nFiles:\n@/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs"
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:57:          "tool_name": "file_read",
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:58:          "name": "read",
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:60:            "path": "/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/evals/cargowise/database/snippets/clear-job-consol-transport-vessel-fk-online.cs"
+/home/<USER>/projects/EntityProcess/wtg-ai-prompts-experiment__worktrees/av-x0ym-agentv-latest/framework-parity/agentv/.agentv/results/2026-07-06T10-29-36-153Z/pr50857-online-chunking-review--36c7a66c6432/sample-1/transcript.json:68:                  "text": "// Database/Odyssey/Transformations/Transformations/Transforms/Freight/Forwarding/ClearJobConsolTransportVesselFKWhenNotSeaOrIwt.cs\nusing System;\nusing System.Data;\nusing System.Threading;\nusing CargoWise.Data;\nusing Enterprise.DbUpgrader.Transformation.Common.HelperClasses;\nusing Enterprise.DbUpgrader.Transformation.DataModification;\nusing Enterprise.ZArchitecture.Schema;\n\nnamespace Enterprise.DbUpgrader.Transformations.Transforms.Freight.Forwarding\n{\n    public class ClearJobConsolTransportVesselFKWhenNotSeaOrIwt : DataTransformation\n    {\n        public override string UserDescription => \"Clear JW_RV_Vessel in JobConsolTransport where JW_TransportMode is not Sea or Inland Waterway.\";\n\n        const int BatchSize = 1000;\n        const string LastProcessedChunkPKName = \"ClearJobConsolTransportVesselFKWhenNotSeaOrIwt.LastProcessedChunkPK\";\n\n        protected override void OnlinePostUpgradeTransform(CancellationToken token)\n        {\n            token.ThrowIfCancellationRequested();\n            var rowCount = DataUtils.GetApproximateRowCountForTable(Db.Connection, JobConsolTransportSchema.Constants.TableName);\n            new GuidChunkingOperation(manager, BatchSize, rowCount, ProcessChunk, LastProcessedChunkPKName, token).DoChunking();\n        }\n\n        static void ProcessChunk(Guid lowerBound, Guid upperBound)\n        {\n            var sql = @\"\nUPDATE dbo.JobConsolTransport\nSET\n    JW_RV_Vessel = NULL,\n    JW_SystemLastEditTimeUtc = […]
 
 > AGENT
 
@@ -7219,7 +7219,7 @@ Output:
 @agentv/sdk build: @agentv/core build: CLI Building entry: src/index.ts, src/evaluation/providers/sdk-child-runner.ts, src/evaluation/validation/index.ts
 @agentv/sdk build: @agentv/core build: CLI Using tsconfig: tsconfig.build.json
 @agentv/sdk build: @agentv/core build: CLI tsup v8.3.5
-@agentv/sdk build: @agentv/core build: CLI Using tsup config: /home/entity/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail/packages/core/tsup.config.ts
+@agentv/sdk build: @agentv/core build: CLI Using tsup config: /home/<USER>/projects/EntityProcess/agentv.worktrees/av-wkwg-dashboard-case-detail/packages/core/tsup.config.ts
 @agentv/sdk build: @agentv/core build: CLI Target: node20
 @agentv/sdk build: @agentv/core build: CLI Cleaning output folder
 @agentv/sdk build: @agentv/core build: ESM Build start

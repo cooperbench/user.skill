@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -74,7 +74,7 @@ id: call_drYYJYVLCGcipZ2Igl8bm7Tu
 ```json
 {
   "cmd": "rg -n \"town stew|town_stew|stew|satiated|Satiated|VIS|vis|active effect|effect stack|status\" src tests docs --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -87,7 +87,7 @@ id: call_y5pwTJjO0nkBmhjQFnA9V4Mi
 ```json
 {
   "cmd": "rg -n \"defineItem|consume|edible|food|hunger|nutrition|glyph|visual|status\" src/content src/rules src/bridge src/display tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -100,7 +100,7 @@ id: call_ZNFcak5InDAZBTX22KGHnnab
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -202,8 +202,8 @@ tool_use exec_command
 id: call_iR0IwFkxCDXYQ18JGk8KHy4X
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -216,7 +216,7 @@ id: call_j4ox0HCFVdmtRktCFW7eB9wp
 ```json
 {
   "cmd": "rg -n \"food_stew|Town Stew|stew\" src/content src/rules src/display src/bridge tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -229,7 +229,7 @@ id: call_ZjbfZJ0QwprAtitgDGW437Wn
 ```json
 {
   "cmd": "rg -n \"ActiveEffects|activeEffects|effects\\]|pushEffect|project.*effect|statusMap|effectSystem|VIS|vis\" src/rules src/bridge src/display tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -353,7 +353,7 @@ id: call_W7jBuWfOLv86nWHp4IQbVIw0
 ```json
 {
   "cmd": "entire status",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -366,7 +366,7 @@ id: call_4A86GmcPNfe9LEWsXyDiBZTx
 ```json
 {
   "cmd": "sed -n '120,170p' src/content/items/economy.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -379,7 +379,7 @@ id: call_dhQjbpOr9qHueI1JCX81wGYr
 ```json
 {
   "cmd": "sed -n '1740,1895p' src/display/ui/hud.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -392,7 +392,7 @@ id: call_Vfaj5JZOseYufOGI2IuElD2P
 ```json
 {
   "cmd": "sed -n '1,240p' src/rules/utils/effects.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -576,7 +576,7 @@ id: call_w54Us2cn41tk2b7HOj8ECmF8
 ```json
 {
   "cmd": "sed -n '1,130p' src/content/items/economy.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -589,7 +589,7 @@ id: call_Cd8ihQZTjhy3oOr66n6PBB0c
 ```json
 {
   "cmd": "sed -n '1,260p' src/content/items/foodHooks.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -602,7 +602,7 @@ id: call_VVSS4uW2dhfRDIXiCF2LRT2l
 ```json
 {
   "cmd": "rg -n \"activeEffects|effectsStack|statusSnapshot|snapshotStatus|player.*effects|character\" src/main src/bridge src/display src/rules tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -615,7 +615,7 @@ id: call_Q13WmgyaQdKkB4L4IzAwBa6M
 ```json
 {
   "cmd": "git log --format='%H %s' -5 -- src/content/items/economy.js src/display/ui/hud.js src/rules/utils/effects.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -746,7 +746,7 @@ id: call_LRmgYt79rKMHKbKlbqdBwDX9
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/data/itemCatalogHooks.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -759,7 +759,7 @@ id: call_aG2pjPydSs1XbiFIWjxNyjGq
 ```json
 {
   "cmd": "sed -n '480,620p' src/main/ui/inventoryDataProvider.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -772,7 +772,7 @@ id: call_CzYQpnNUK2z1FbmVztP8WYB7
 ```json
 {
   "cmd": "sed -n '260,330p' tests/inventoryDataProvider.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -785,7 +785,7 @@ id: call_lbKxPV0OD7lj9nNtm8h4Fmeb
 ```json
 {
   "cmd": "git log --format='%H %b' -5 -- src/rules/data/itemCatalogHooks.js src/main/ui/inventoryDataProvider.js src/display/ui/hud.js | rg -B1 \"Entire-Checkpoint\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -986,7 +986,7 @@ id: call_e7La481MQYtbLyutzg16ybmi
 ```json
 {
   "cmd": "entire explain --checkpoint 17891c91e921 --json --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -999,7 +999,7 @@ id: call_0SrlgTGboknODcfYzJDpRzlp
 ```json
 {
   "cmd": "entire explain --checkpoint 92530ea5cdc2 --json --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1012,7 +1012,7 @@ id: call_qrM582o5VUyO5zBzu58v0jud
 ```json
 {
   "cmd": "rg -n \"function buildStatusRows|const buildStatusRows|buildStatusRows\" src/main/ui/inventoryDataProvider.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1025,7 +1025,7 @@ id: call_eYgnT94dqTv7y9i5tCOpeJFo
 ```json
 {
   "cmd": "sed -n '160,260p' src/main/ui/inventoryDataProvider.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1235,7 +1235,7 @@ id: call_YgRbeUamJEcvacew7wrGxS2n
 ```json
 {
   "cmd": "sed -n '260,345p' src/main/ui/inventoryDataProvider.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1248,7 +1248,7 @@ id: call_IwVJUfuHofPL41MFfolfK1et
 ```json
 {
   "cmd": "sed -n '740,790p' src/main/ui/inventoryDataProvider.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1261,7 +1261,7 @@ id: call_a06shnmN2f7O02klIYxe9tzy
 ```json
 {
   "cmd": "rg -n \"pushEffect\\(|mutate\\.pushEffect|createEatOnUseHook|pushEffect\" src/rules src/content tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1274,7 +1274,7 @@ id: call_TpdQFtNyzMxlA6e8wH3s4t1E
 ```json
 {
   "cmd": "rg -n \"cooking:buff-food|buff-food|buff food|cooked_food\" src/display src/rules tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1419,7 +1419,7 @@ id: call_L0tZsseSuQkBUc1iloTTCLFu
 ```json
 {
   "cmd": "sed -n '1,120p' src/rules/content/items/useNativeHooks.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -1432,7 +1432,7 @@ id: call_oEzmEf54GnDwfzKYF6GEvegS
 ```json
 {
   "cmd": "sed -n '160,215p' src/rules/interaction/mutations.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1445,7 +1445,7 @@ id: call_XVU7ikbk5r7WTPNAiUKibNLo
 ```json
 {
   "cmd": "sed -n '296,430p' src/rules/systems/effectSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1458,7 +1458,7 @@ id: call_eSsNn7H1TY4saRHbTTfKDaxa
 ```json
 {
   "cmd": "sed -n '430,610p' src/rules/systems/effectSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1691,7 +1691,7 @@ id: call_GJyDZxSb7sWQZ40GKNSjMdJe
 ```json
 {
   "cmd": "sed -n '1,180p' src/rules/systems/effectSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1704,7 +1704,7 @@ id: call_MMGJwC84Qw8M18AOikBKENY8
 ```json
 {
   "cmd": "rg -n \"EFFECTS_BY_KEY|const EFFECT|statusAliases|canonicalStatusKey|poisoned|resist_\" src/rules src/main src/shared tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -1717,7 +1717,7 @@ id: call_Ng8ckR7xmKhdRb1eCX8QI2Jp
 ```json
 {
   "cmd": "sed -n '1,180p' src/rules/utils/statusKeys.js 2>/dev/null || true",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1730,7 +1730,7 @@ id: call_0u4Rou9ZIlinq1HO7DjdHWzC
 ```json
 {
   "cmd": "sed -n '1,160p' src/rules/utils/effectSemantics.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1886,7 +1886,7 @@ id: call_X7zNPuSkgIiSiKjR9u2bpgJa
 ```json
 {
   "cmd": "sed -n '1,340p' src/rules/data/effectDefs.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 26000
 }
@@ -1899,7 +1899,7 @@ id: call_w0ry2MHcdrmRGlX83ksUiP61
 ```json
 {
   "cmd": "sed -n '160,260p' src/rules/utils/effectSemantics.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1912,7 +1912,7 @@ id: call_mKcQhOk3rZPn0mAXdX7MRHTx
 ```json
 {
   "cmd": "sed -n '1,120p' tests/effects.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1925,7 +1925,7 @@ id: call_ba5jrlfOUh1gwUXTWQt1mXBp
 ```json
 {
   "cmd": "sed -n '1600,1630p' tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }

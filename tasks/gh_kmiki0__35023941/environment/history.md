@@ -182,7 +182,7 @@ tool_use Bash
 id: toolu_01EPLjrytFQ1xeVhvo5znBwG
 ```json
 {
-  "command": "git add src/features/node-editor/components/CardNode.tsx src/features/node-editor/components/NodeEditorCanvas.tsx src/features/node-editor/components/NodeEditorLayout.tsx src/features/node-editor/components/PortRow.tsx test-data/ && git commit -m \"$(cat <<'EOF'\nfeat: Nodemaidテーブルノードの読み取り専用化 + 選択フォーカス減光\n\n- テーブルノードのポート行をモーダル編集専用の読み取り専用表示に変更（PK/FK/NN/UQバッジを固定幅カラムで整列表示）\n- テーブルノードのホバー時ポート追加ボタンを非表示化\n- ノード選択時に関連ノード/エッジ以外を減光表示（フォーカスディミング）\n- インポート失敗時のエラーをconsoleに出力\n- ERテスト用データを追加\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git status -sb",
+  "command": "git add src/features/node-editor/components/CardNode.tsx src/features/node-editor/components/NodeEditorCanvas.tsx src/features/node-editor/components/NodeEditorLayout.tsx src/features/node-editor/components/PortRow.tsx test-data/ && git commit -m \"$(cat <<'EOF'\nfeat: Nodemaidテーブルノードの読み取り専用化 + 選択フォーカス減光\n\n- テーブルノードのポート行をモーダル編集専用の読み取り専用表示に変更（PK/FK/NN/UQバッジを固定幅カラムで整列表示）\n- テーブルノードのホバー時ポート追加ボタンを非表示化\n- ノード選択時に関連ノード/エッジ以外を減光表示（フォーカスディミング）\n- インポート失敗時のエラーをconsoleに出力\n- ERテスト用データを追加\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git status -sb",
   "description": "Stage and commit node editor changes"
 }
 ```

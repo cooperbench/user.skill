@@ -2,7 +2,7 @@
 
 working on the e2e tests...
 
-the last run had failures but we don't have the report? /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36
+the last run had failures but we don't have the report? /home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36
 
 > AGENT
 
@@ -14,7 +14,7 @@ tool_use Bash
 id: toolu_018act5pnJ1YV82bQ2dbvTEG
 ```json
 {
-  "command": "ls /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/",
+  "command": "ls /home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/",
   "description": "List test artifacts directory"
 }
 ```
@@ -170,7 +170,7 @@ id: toolu_017vtnzyRcj9FKt6bbXuzkYH
 ```json
 {
   "skill": "debug-e2e",
-  "args": "/Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36"
+  "args": "/home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36"
 }
 ```
 
@@ -192,7 +192,7 @@ tool_use Bash
 id: toolu_015Ng75LUFxA5ZfUDkLDnSuE
 ```json
 {
-  "command": "ls /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/report.nocolor.txt /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/test-events.json 2>&1",
+  "command": "ls /home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/report.nocolor.txt /home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/test-events.json 2>&1",
   "description": "Check if report files exist"
 }
 ```
@@ -203,11 +203,11 @@ tool_result ERROR
 id: toolu_015Ng75LUFxA5ZfUDkLDnSuE
 ```
 Exit code 1
-ls: /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/report.nocolor.txt: No such file or directory
-ls: /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/test-events.json: No such file or directory
+ls: /home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/report.nocolor.txt: No such file or directory
+ls: /home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/test-events.json: No such file or directory
 
-ls: /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/report.nocolor.txt: No such file or directory
-ls: /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/test-events.json: No such file or directory
+ls: /home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/report.nocolor.txt: No such file or directory
+ls: /home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/test-events.json: No such file or directory
 ```
 
 > AGENT
@@ -228,7 +228,7 @@ tool_use Read
 id: toolu_01RLK6vCHEeTS2df2sZ8AzV5
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/TestSingleSessionManualCommit-opencode/console.log"
+  "file_path": "/home/<USER>/workspace/cli/e2e/artifacts/2026-02-25T12-52-36/TestSingleSessionManualCommit-opencode/console.log"
 }
 ```
 
@@ -256,7 +256,7 @@ tool_use Read
 id: toolu_014spKbpU51yDMvCjJBo6vxX
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/e2e/tests/single_session_test.go"
+  "file_path": "/home/<USER>/workspace/cli/e2e/tests/single_session_test.go"
 }
 ```
 
@@ -350,7 +350,7 @@ Perfect. Now I have everything I need. Let me compile my findings:
 Based on my analysis of the e2e test framework, here's what I found about error handling:
 
 ### 1. `RunPrompt` Signature and Return Values
-Located in `/Users/alex/workspace/cli/e2e/agents/opencode.go` (lines 82-135):
+Located in `/home/<USER>/workspace/cli/e2e/agents/opencode.go` (lines 82-135):
 
 ```go
 func (a *openCodeAgent) RunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error)
@@ -390,7 +390,7 @@ id: toolu_01NEvCQLTzRmM2vtaoBoUn3y
 ```json
 {
   "pattern": "report\\.nocolor",
-  "path": "/Users/alex/workspace/cli/e2e",
+  "path": "/home/<USER>/workspace/cli/e2e",
   "output_mode": "files_with_matches"
 }
 ```
@@ -410,7 +410,7 @@ id: toolu_01T6CymWw6cMmqWFTaiyeR5H
 ```json
 {
   "pattern": "report",
-  "path": "/Users/alex/workspace/cli/e2e",
+  "path": "/home/<USER>/workspace/cli/e2e",
   "glob": "\"*.go\"",
   "output_mode": "content"
 }
@@ -435,7 +435,7 @@ id: toolu_01BnsWEYq54LiGey4iFUkswZ
 ```json
 {
   "pattern": "report",
-  "path": "/Users/alex/workspace/cli",
+  "path": "/home/<USER>/workspace/cli",
   "glob": "\"mise*.toml\"",
   "output_mode": "content"
 }
@@ -456,7 +456,7 @@ id: toolu_012K6aw7HR1aUGRwn8CPnXhP
 ```json
 {
   "pattern": "test:e2e\"",
-  "path": "/Users/alex/workspace/cli",
+  "path": "/home/<USER>/workspace/cli",
   "glob": "\"mise*.toml\"",
   "output_mode": "content",
   "-A": 10
@@ -478,7 +478,7 @@ id: toolu_01PaScxBpjUDecR5CnFS9NWA
 ```json
 {
   "pattern": "mise*.toml",
-  "path": "/Users/alex/workspace/cli"
+  "path": "/home/<USER>/workspace/cli"
 }
 ```
 
@@ -487,11 +487,11 @@ id: toolu_01PaScxBpjUDecR5CnFS9NWA
 tool_result
 id: toolu_01PaScxBpjUDecR5CnFS9NWA
 ```
-/Users/alex/workspace/cli/.worktrees/2/mise.toml
-/Users/alex/workspace/cli/.worktrees/1/mise.toml
-/Users/alex/workspace/cli/.worktrees/4/mise.toml
-/Users/alex/workspace/cli/mise.toml
-/Users/alex/workspace/cli/.worktrees/3/mise.toml
+/home/<USER>/workspace/cli/.worktrees/2/mise.toml
+/home/<USER>/workspace/cli/.worktrees/1/mise.toml
+/home/<USER>/workspace/cli/.worktrees/4/mise.toml
+/home/<USER>/workspace/cli/mise.toml
+/home/<USER>/workspace/cli/.worktrees/3/mise.toml
 ```
 
 > TOOL
@@ -501,7 +501,7 @@ id: toolu_01FxqVrQZRXM2myzH9nTgTrx
 ```json
 {
   "pattern": "test:e2e|report\"",
-  "path": "/Users/alex/workspace/cli/mise.toml",
+  "path": "/home/<USER>/workspace/cli/mise.toml",
   "output_mode": "content",
   "-A": 15
 }
@@ -556,7 +556,7 @@ id: toolu_014YaB5DzkZzZpTYFn8Xh1bU
 ```json
 {
   "pattern": "report\\.nocolor|test-events|gotestfmt|tparse",
-  "path": "/Users/alex/workspace/cli/.github",
+  "path": "/home/<USER>/workspace/cli/.github",
   "output_mode": "content",
   "-C": 3
 }
@@ -577,7 +577,7 @@ id: toolu_019BxbS4RHoTqtVeG1xm9yP3
 ```json
 {
   "pattern": ".github/workflows/*.yml",
-  "path": "/Users/alex/workspace/cli"
+  "path": "/home/<USER>/workspace/cli"
 }
 ```
 
@@ -586,12 +586,12 @@ id: toolu_019BxbS4RHoTqtVeG1xm9yP3
 tool_result
 id: toolu_019BxbS4RHoTqtVeG1xm9yP3
 ```
-/Users/alex/workspace/cli/.github/workflows/ci.yml
-/Users/alex/workspace/cli/.github/workflows/license-check.yml
-/Users/alex/workspace/cli/.github/workflows/lint.yml
-/Users/alex/workspace/cli/.github/workflows/release.yml
-/Users/alex/workspace/cli/.github/workflows/e2e-isolated.yml
-/Users/alex/workspace/cli/.github/workflows/e2e.yml
+/home/<USER>/workspace/cli/.github/workflows/ci.yml
+/home/<USER>/workspace/cli/.github/workflows/license-check.yml
+/home/<USER>/workspace/cli/.github/workflows/lint.yml
+/home/<USER>/workspace/cli/.github/workflows/release.yml
+/home/<USER>/workspace/cli/.github/workflows/e2e-isolated.yml
+/home/<USER>/workspace/cli/.github/workflows/e2e.yml
 ```
 
 > TOOL
@@ -601,7 +601,7 @@ id: toolu_016P1pNfBzfV7WHL9CgCH2o6
 ```json
 {
   "pattern": "report|test-events|artifacts",
-  "path": "/Users/alex/workspace/cli/.github/workflows/e2e.yml",
+  "path": "/home/<USER>/workspace/cli/.github/workflows/e2e.yml",
   "output_mode": "content",
   "-C": 3
 }

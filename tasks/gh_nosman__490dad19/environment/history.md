@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01SGVB8AdAKAE2kUL36mfyCU
 ```json
 {
-  "command": "find /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src -name \"*.rs\" | xargs grep -l \"session\" | head -20",
+  "command": "find /home/<USER>/p/gossamer-gossamer-cleanup/src -name \"*.rs\" | xargs grep -l \"session\" | head -20",
   "description": "Find Rust files mentioning sessions"
 }
 ```
@@ -22,26 +22,26 @@ id: toolu_01SGVB8AdAKAE2kUL36mfyCU
 tool_result
 id: toolu_01SGVB8AdAKAE2kUL36mfyCU
 ```
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/parsers/codex.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/parsers/claude_code.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/parsers/mod.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/entity/session.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/entity/mod.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ingest/claude_code.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ingest/mod.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/purge.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/attach.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/discover.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/resume.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/clean.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/index.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/mod.rs
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/parsers/codex.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/parsers/claude_code.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/parsers/mod.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/entity/session.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/entity/mod.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/ingest/claude_code.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/ingest/mod.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/purge.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/attach.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/discover.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/resume.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/clean.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/index.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/mod.rs
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs
 ```
 
 > TOOL
@@ -50,7 +50,7 @@ tool_use Bash
 id: toolu_01XKBrFbpaDinBJC5EfV8vwK
 ```json
 {
-  "command": "ls /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/",
+  "command": "ls /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/",
   "description": "List command files"
 }
 ```
@@ -86,7 +86,7 @@ tool_use Read
 id: toolu_011W3ryA1KvvZH41Y8cfr76E
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs"
 }
 ```
 
@@ -134,7 +134,7 @@ tool_use Read
 id: toolu_01G6edp7fCm2hh8TBjaGwaoB
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/entity/session.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/entity/session.rs"
 }
 ```
 
@@ -164,7 +164,7 @@ tool_use Read
 id: toolu_01RYNbYssKCFMWpGByWeKKCH
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs"
 }
 ```
 
@@ -216,7 +216,7 @@ tool_use Read
 id: toolu_01LdGLXx7ZTBpL2xkT8eDHFL
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs"
 }
 ```
 
@@ -281,7 +281,7 @@ tool_use Bash
 id: toolu_01MfGrx1xcpDzF46n3jD4NzJ
 ```json
 {
-  "command": "grep -n \"tokens_used\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs | head -30",
+  "command": "grep -n \"tokens_used\" /home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs | head -30",
   "description": "Find tokens_used in db.rs"
 }
 ```
@@ -300,7 +300,7 @@ tool_use Bash
 id: toolu_01RyuhDxpFdyEQngjwiGX3Ga
 ```json
 {
-  "command": "grep -rn \"tokens_used\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ | head -30",
+  "command": "grep -rn \"tokens_used\" /home/<USER>/p/gossamer-gossamer-cleanup/src/ | head -30",
   "description": "Find all tokens_used references"
 }
 ```
@@ -310,8 +310,8 @@ id: toolu_01RyuhDxpFdyEQngjwiGX3Ga
 tool_result
 id: toolu_01RyuhDxpFdyEQngjwiGX3Ga
 ```
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs:50:            tokens_used  INTEGER NOT NULL DEFAULT 0
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/entity/session.rs:11:    pub tokens_used: i64,
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs:50:            tokens_used  INTEGER NOT NULL DEFAULT 0
+/home/<USER>/p/gossamer-gossamer-cleanup/src/entity/session.rs:11:    pub tokens_used: i64,
 ```
 
 > AGENT
@@ -324,7 +324,7 @@ tool_use Bash
 id: toolu_01MeiTKcFBypRyYq8bxeZw4S
 ```json
 {
-  "command": "grep -n \"tokens\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ingest/claude_code.rs | head -20",
+  "command": "grep -n \"tokens\" /home/<USER>/p/gossamer-gossamer-cleanup/src/ingest/claude_code.rs | head -20",
   "description": "Find token handling in claude_code ingest"
 }
 ```
@@ -343,7 +343,7 @@ tool_use Bash
 id: toolu_01Q8BzD63DMkC2VHR6DXQg6L
 ```json
 {
-  "command": "grep -n \"tokens\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ingest/mod.rs | head -20",
+  "command": "grep -n \"tokens\" /home/<USER>/p/gossamer-gossamer-cleanup/src/ingest/mod.rs | head -20",
   "description": "Find token handling in ingest mod"
 }
 ```
@@ -362,7 +362,7 @@ tool_use Bash
 id: toolu_01CHamoMqvPvJrF7PqXFjwHr
 ```json
 {
-  "command": "grep -rn \"tokens\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ | grep -v \"target\"",
+  "command": "grep -rn \"tokens\" /home/<USER>/p/gossamer-gossamer-cleanup/src/ | grep -v \"target\"",
   "description": "All token references in src"
 }
 ```
@@ -372,8 +372,8 @@ id: toolu_01CHamoMqvPvJrF7PqXFjwHr
 tool_result
 id: toolu_01CHamoMqvPvJrF7PqXFjwHr
 ```
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs:50:            tokens_used  INTEGER NOT NULL DEFAULT 0
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/entity/session.rs:11:    pub tokens_used: i64,
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs:50:            tokens_used  INTEGER NOT NULL DEFAULT 0
+/home/<USER>/p/gossamer-gossamer-cleanup/src/entity/session.rs:11:    pub tokens_used: i64,
 ```
 
 > TOOL
@@ -382,7 +382,7 @@ tool_use Bash
 id: toolu_01Q8s24wKb73VxwyYRqHoG1u
 ```json
 {
-  "command": "grep -n \"usage\\|token\\|inputTokens\\|outputTokens\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/parsers/claude_code.rs | head -20",
+  "command": "grep -n \"usage\\|token\\|inputTokens\\|outputTokens\" /home/<USER>/p/gossamer-gossamer-cleanup/src/parsers/claude_code.rs | head -20",
   "description": "Check parsers for token usage fields"
 }
 ```
@@ -401,7 +401,7 @@ tool_use Read
 id: toolu_019wekRcEnADxPTpm2tTbwSC
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/parsers/claude_code.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/parsers/claude_code.rs"
 }
 ```
 
@@ -470,7 +470,7 @@ tool_use Read
 id: toolu_01EDHPnyibpomNhdpTk6etLd
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ingest/mod.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/ingest/mod.rs"
 }
 ```
 
@@ -529,7 +529,7 @@ tool_use Bash
 id: toolu_011zJX5sEyh9ivuM74CGqZ8u
 ```json
 {
-  "command": "grep -n \"tokens_used\\|INSERT.*sessions\\|upsert\\|tokens\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/index.rs | head -30",
+  "command": "grep -n \"tokens_used\\|INSERT.*sessions\\|upsert\\|tokens\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/index.rs | head -30",
   "description": "Check how sessions are inserted in index.rs"
 }
 ```
@@ -557,7 +557,7 @@ tool_use Read
 id: toolu_014QxyXZYTtW8g9VzWiFLMW7
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/index.rs",
   "offset": 717,
   "limit": 60
 }
@@ -612,7 +612,7 @@ id: toolu_01FUhJkgZA3WoQedNroZFfsG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
   "old_string": "pub struct DisplaySession {\n    pub session_id: String,\n    pub session_name: String,\n    pub cwd: String,\n    pub branch: String,\n    pub updated_at: DateTime<Utc>,\n    pub agent_name: String,\n    pub backed_up: bool,\n    /// Display name of whoever initiated the session — taken from the author\n    /// of the first checkpoint (lowest checkpoint_number). Empty for sessions\n    /// that have never been checkpointed (live JSONL only) or whose author\n    /// couldn't be resolved.\n    pub author: String,\n    /// True when session_name came from an explicit `/rename` (custom-title\n    /// entry in the JSONL); false when it's the derived first-prompt fallback.\n    /// Drives the italic/plain distinction in the list renderers.\n    pub name_is_explicit: bool,\n}",
   "new_string": "pub struct DisplaySession {\n    pub session_id: String,\n    pub session_name: String,\n    pub cwd: String,\n    pub branch: String,\n    pub updated_at: DateTime<Utc>,\n    pub agent_name: String,\n    pub backed_up: bool,\n    /// Display name of whoever initiated the session — taken from the author\n    /// of the first checkpoint (lowest checkpoint_number). Empty for sessions\n    /// that have never been checkpointed (live JSONL only) or whose author\n    /// couldn't be resolved.\n    pub author: String,\n    /// True when session_name came from an explicit `/rename` (custom-title\n    /// entry in the JSONL); false when it's the derived […]
 
@@ -621,7 +621,7 @@ id: toolu_01FUhJkgZA3WoQedNroZFfsG
 tool_result
 id: toolu_01FUhJkgZA3WoQedNroZFfsG
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -635,7 +635,7 @@ id: toolu_01RrdUfBmk3yqnQEhivihwnN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
   "old_string": "    let map = |row: &rusqlite::Row<'_>| -> rusqlite::Result<DisplaySession> {\n        let ts: String = row.get(4)?;\n        let author_name: String = row.get(6)?;\n        let author_email: String = row.get(7)?;\n        let os_user: String = row.get(8)?;\n        let raw_name: String = row.get(1)?;\n        let name_is_explicit: i64 = row.get(9)?;\n        Ok(DisplaySession {\n            session_id: row.get(0)?,\n            session_name: sanitize_one_line(&raw_name),\n            cwd: row.get(2)?,\n            branch: row.get(3)?,\n            updated_at: DateTime::parse_from_rfc3339(&ts)\n                .map(|dt| dt.with_timezone(&Utc))\n                .unwrap_or_else(|_| Utc::now()),\n            agent_name: row.get(5)?,\n            backed_up: true,\n            author: resolve_author_label(&author_name, &author_email, &os_user),\n            name_is_explicit: name_is_explicit != 0,\n        })\n    };",
   "new_string": "    let map = |row: &rusqlite::Row<'_>| -> rusqlite::Result<DisplaySession> {\n        let ts: String = row.get(4)?;\n        let author_name: String = row.get(6)?;\n        let author_email: String = row.get(7)?;\n        let os_user: String = row.get(8)?;\n        let raw_name: String = row.get(1)?;\n        let name_is_explicit: i64 = row.get(9)?;\n        let tokens_used: i64 = row.get(10)?;\n        Ok(DisplaySession {\n            session_id: row.get(0)?,\n            session_name: sanitize_one_line(&raw_name),\n            cwd: row.get(2)?,\n            branch: row.get(3)?,\n            updated_at: DateTime::parse_from_rfc3339(&ts)\n                .map(|dt| dt.with_timezone(&Utc))\n                .unwrap_or_else(|_| Utc::now()),\n            agent_name: row.get(5)?,\n            backed_up: true,\n            author: resolve_author_label(&author_name, &author_email, &os_user),\n            name_is_explicit: name_is_explicit != 0,\n            tokens_used,\n        })\n    };"
 }
@@ -646,7 +646,7 @@ id: toolu_01RrdUfBmk3yqnQEhivihwnN
 tool_result
 id: toolu_01RrdUfBmk3yqnQEhivihwnN
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -660,7 +660,7 @@ id: toolu_01XXnF3SvmYDwtBUA85K1ThS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
   "old_string": "    let cols = \"\n        s.session_id, s.session_name, s.cwd, COALESCE(s.branch,''),\n        s.updated_at, s.agent_name,\n        COALESCE(c.author_name, ''), COALESCE(c.author_email, ''), COALESCE(c.os_user, ''),\n        s.name_is_explicit\n    \";",
   "new_string": "    let cols = \"\n        s.session_id, s.session_name, s.cwd, COALESCE(s.branch,''),\n        s.updated_at, s.agent_name,\n        COALESCE(c.author_name, ''), COALESCE(c.author_email, ''), COALESCE(c.os_user, ''),\n        s.name_is_explicit, COALESCE(s.tokens_used, 0)\n    \";"
 }
@@ -671,7 +671,7 @@ id: toolu_01XXnF3SvmYDwtBUA85K1ThS
 tool_result
 id: toolu_01XXnF3SvmYDwtBUA85K1ThS
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -685,7 +685,7 @@ id: toolu_01BJU1i3qv6wwZHKahCTcbU6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
   "old_string": "struct ParsedJsonl {\n    session_name: String,\n    cwd: String,\n    branch: String,\n    name_is_explicit: bool,\n}\n\nfn parse_jsonl(path: &Path) -> ParsedJsonl {\n    let mut out = ParsedJsonl {\n        session_name: String::new(),\n        cwd: String::new(),\n        branch: String::new(),\n        name_is_explicit: false,\n    };\n    let Ok(file) = std::fs::File::open(path) else { return out; };\n    let reader = std::io::BufReader::new(file);\n    let mut last_prompt = String::new();\n    let mut custom_title = String::new();\n\n    for line in reader.lines().flatten() {\n        let Ok(v) = serde_json::from_str::<serde_json::Value>(&line) else { continue };\n        match v[\"type\"].as_str() {\n            Some(\"custom-title\") => {\n                if let Some(t) = v[\"customTitle\"].as_str() {\n                    if !t.trim().is_empty() { custom_title = t.to_string(); }\n                }\n            }\n            Some(\"user\") | Some(\"system\") => {\n                if out.cwd.is_empty() {\n                    if let Some(c) = v[\"cwd\"].as_str() { out.cwd = c.to_string(); }\n                }\n            }\n            _ => {}\n        }\n        if v[\"type\"].as_str() == Some(\"user\") {\n            if let Some(t) = user_text(&v[\"message\"][\"content\"]) {\n                last_prompt = t;\n            }\n        }\n        if let Some(b) = v[\"gitBranch\"].as_str() {\n            if !b.is_empty() { out.branch = b.to_string(); }\n        }\n    }\n    if !custom_title.is_empty() {\n        out.session_name = custom_title;\n        out.name_is_explicit = true;\n    } else {\n        out.session_name = last_prompt;\n    }\n    out.session_name = sanitize_one_line(&out.session_name);\n    out\n}",
   "new_string": "struct ParsedJsonl {\n    session_name: String,\n    cwd: String,\n    branch: String,\n    name_is_explicit: bool,\n    tokens_used: i64,\n}\n\nfn parse_jsonl(path: &Path) -> ParsedJsonl {\n    let mut out = ParsedJsonl {\n        session_name: […]
 
@@ -694,7 +694,7 @@ id: toolu_01BJU1i3qv6wwZHKahCTcbU6
 tool_result
 id: toolu_01BJU1i3qv6wwZHKahCTcbU6
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -708,7 +708,7 @@ id: toolu_01AQPcZ9U5bCCrKgLnL4G1WW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
   "old_string": "            if let Some(existing) = sessions.iter_mut().find(|s| s.session_id == session_id) {\n                if !parsed.session_name.is_empty() { existing.session_name = parsed.session_name; }\n                if file_mtime > existing.updated_at { existing.updated_at = file_mtime; }\n                if !parsed.branch.is_empty() { existing.branch = parsed.branch; }\n                // A custom-title in the JSONL outranks the DB flag. Without\n                // this, /rename'd sessions stay tagged as \"derived\" until the\n                // next index run, so they render gray in the lists.\n                if parsed.name_is_explicit { existing.name_is_explicit = true; }\n                // Sessions inserted by the SessionStart hook but never indexed\n                // from a checkpoint branch have no `checkpoints` row, so the\n                // author column came back empty. Fall back to the cwd's\n                // os-user — same fallback used for brand-new untracked rows.\n                if existing.author.is_empty() {\n                    let cwd = if !existing.cwd.is_empty() { existing.cwd.as_str() } else { parsed.cwd.as_str() };\n                    existing.author = cwd_os_user(cwd).unwrap_or_default();\n                }\n                continue;\n            }",
   "new_string": "            if let Some(existing) = sessions.iter_mut().find(|s| s.session_id == session_id) {\n                if !parsed.session_name.is_empty() { existing.session_name = parsed.session_name; }\n                if file_mtime > existing.updated_at { existing.updated_at = file_mtime; }\n                if !parsed.branch.is_empty() { existing.branch = parsed.branch; }\n                // A custom-title in the JSONL outranks the DB flag. Without\n                // this, /rename'd sessions stay tagged as \"derived\" until […]
 
@@ -717,7 +717,7 @@ id: toolu_01AQPcZ9U5bCCrKgLnL4G1WW
 tool_result
 id: toolu_01AQPcZ9U5bCCrKgLnL4G1WW
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -731,7 +731,7 @@ id: toolu_01Y96anzcvUTBSkP49Bjo1UA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs",
   "old_string": "            let author = cwd_os_user(&parsed.cwd).unwrap_or_default();\n            sessions.push(DisplaySession {\n                session_id,\n                session_name: parsed.session_name,\n                cwd: parsed.cwd,\n                branch: parsed.branch,\n                updated_at: file_mtime,\n                agent_name: \"Claude Code\".to_string(),\n                backed_up: false,\n                author,\n                name_is_explicit: parsed.name_is_explicit,\n            });",
   "new_string": "            let author = cwd_os_user(&parsed.cwd).unwrap_or_default();\n            sessions.push(DisplaySession {\n                session_id,\n                session_name: parsed.session_name,\n                cwd: parsed.cwd,\n                branch: parsed.branch,\n                updated_at: file_mtime,\n                agent_name: \"Claude Code\".to_string(),\n                backed_up: false,\n                author,\n                name_is_explicit: parsed.name_is_explicit,\n                tokens_used: parsed.tokens_used,\n            });"
 }
@@ -742,7 +742,7 @@ id: toolu_01Y96anzcvUTBSkP49Bjo1UA
 tool_result
 id: toolu_01Y96anzcvUTBSkP49Bjo1UA
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -756,7 +756,7 @@ id: toolu_015EtB1R24LUdJyDhGhLrVRD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
   "old_string": "    // Pre-compute column widths\n    let name_w = sessions.iter().map(|s| s.session_name.trim().chars().count()).max().unwrap_or(0).min(40);\n    let cwd_w  = sessions.iter().map(|s| short_cwd(&s.cwd).chars().count()).max().unwrap_or(0);\n    let branch_w = sessions.iter().map(|s| s.branch.chars().count()).max().unwrap_or(0);\n    let author_w = sessions.iter().map(|s| s.author.chars().count()).max().unwrap_or(0);\n    let agent_w  = sessions.iter().map(|s| s.agent_name.chars().count()).max().unwrap_or(0);",
   "new_string": "    // Pre-compute column widths\n    let name_w = sessions.iter().map(|s| s.session_name.trim().chars().count()).max().unwrap_or(0).min(40);\n    let cwd_w  = sessions.iter().map(|s| short_cwd(&s.cwd).chars().count()).max().unwrap_or(0);\n    let branch_w = sessions.iter().map(|s| s.branch.chars().count()).max().unwrap_or(0);\n    let author_w = sessions.iter().map(|s| s.author.chars().count()).max().unwrap_or(0);\n    let agent_w  = sessions.iter().map(|s| s.agent_name.chars().count()).max().unwrap_or(0);\n    let tokens_w = sessions.iter().map(|s| session_list::fmt_tokens(s.tokens_used).chars().count()).max().unwrap_or(0);"
 }
@@ -767,7 +767,7 @@ id: toolu_015EtB1R24LUdJyDhGhLrVRD
 tool_result
 id: toolu_015EtB1R24LUdJyDhGhLrVRD
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -781,7 +781,7 @@ id: toolu_01VmVFLpf8UJxynAqKeD46TW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
   "old_string": "        if agent_w > 0 {\n            let a: String = s.agent_name.chars().take(agent_w).collect();\n            let pad = \" \".repeat(agent_w - a.chars().count());\n            if s.backed_up {\n                let col = agent_color(&s.agent_name);\n                line.push_str(&format!(\"  \\x1b[38;5;{col}m{a}{pad}\\x1b[0m\"));\n            } else {\n                line.push_str(&format!(\"  \\x1b[{st}m{a}{pad}\\x1b[0m\", st = t.stale));\n            }\n        }\n\n        line.push_str(&format!(\"  \\x1b[{meta_col}m{id_short}  {ts}\\x1b[0m\"));",
   "new_string": "        if agent_w > 0 {\n            let a: String = s.agent_name.chars().take(agent_w).collect();\n            let pad = \" \".repeat(agent_w - a.chars().count());\n            if s.backed_up {\n                let col = agent_color(&s.agent_name);\n                line.push_str(&format!(\"  \\x1b[38;5;{col}m{a}{pad}\\x1b[0m\"));\n            } else {\n                line.push_str(&format!(\"  \\x1b[{st}m{a}{pad}\\x1b[0m\", st = t.stale));\n            }\n        }\n\n        if tokens_w > 0 {\n            let tok = session_list::fmt_tokens(s.tokens_used);\n            let pad = \" \".repeat(tokens_w - tok.chars().count());\n            line.push_str(&format!(\"  \\x1b[{dm}m{pad}{tok}\\x1b[0m\", dm = t.text_dim));\n        }\n\n        line.push_str(&format!(\"  \\x1b[{meta_col}m{id_short}  {ts}\\x1b[0m\"));"
 }
@@ -792,7 +792,7 @@ id: toolu_01VmVFLpf8UJxynAqKeD46TW
 tool_result
 id: toolu_01VmVFLpf8UJxynAqKeD46TW
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -806,7 +806,7 @@ id: toolu_01M9sVNx1N1Yrx52StVikJsx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "old_string": "        let name_w   = sessions.iter().map(|s| s.session_name.trim().chars().count()).max().unwrap_or(0).min(40);\n        let branch_w = sessions.iter().map(|s| s.branch.chars().count()).max().unwrap_or(0);\n        let author_w = sessions.iter().map(|s| s.author.chars().count()).max().unwrap_or(0);\n        let agent_w  = sessions.iter().map(|s| s.agent_name.chars().count()).max().unwrap_or(0);",
   "new_string": "        let name_w   = sessions.iter().map(|s| s.session_name.trim().chars().count()).max().unwrap_or(0).min(40);\n        let branch_w = sessions.iter().map(|s| s.branch.chars().count()).max().unwrap_or(0);\n        let author_w = sessions.iter().map(|s| s.author.chars().count()).max().unwrap_or(0);\n        let agent_w  = sessions.iter().map(|s| s.agent_name.chars().count()).max().unwrap_or(0);\n        let tokens_w = sessions.iter().map(|s| session_list::fmt_tokens(s.tokens_used).chars().count()).max().unwrap_or(0);"
 }
@@ -817,7 +817,7 @@ id: toolu_01M9sVNx1N1Yrx52StVikJsx
 tool_result
 id: toolu_01M9sVNx1N1Yrx52StVikJsx
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -827,7 +827,7 @@ id: toolu_01AggaueSzwgWkiRGD34NTKJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "old_string": "            if agent_w > 0 {\n                let a: String = s.agent_name.chars().take(agent_w).collect();\n                let pad = \" \".repeat(agent_w - a.chars().count());\n                if s.backed_up {\n                    let col = agent_color(&s.agent_name);\n                    line.push_str(&format!(\"  \\x1b[38;5;{col}m{a}{pad}\\x1b[0m\"));\n                } else {\n                    line.push_str(&format!(\"  \\x1b[{st}m{a}{pad}\\x1b[0m\", st = t.stale));\n                }\n            }\n\n            line.push_str(&format!(\"  \\x1b[{meta_col}m{id_short}  {ts}\\x1b[0m\"));",
   "new_string": "            if agent_w > 0 {\n                let a: String = s.agent_name.chars().take(agent_w).collect();\n                let pad = \" \".repeat(agent_w - a.chars().count());\n                if s.backed_up {\n                    let col = agent_color(&s.agent_name);\n                    line.push_str(&format!(\"  \\x1b[38;5;{col}m{a}{pad}\\x1b[0m\"));\n                } else {\n                    line.push_str(&format!(\"  \\x1b[{st}m{a}{pad}\\x1b[0m\", st = t.stale));\n                }\n            }\n\n            if tokens_w > 0 {\n                let tok = session_list::fmt_tokens(s.tokens_used);\n                let pad = \" \".repeat(tokens_w - tok.chars().count());\n                line.push_str(&format!(\"  \\x1b[{dm}m{pad}{tok}\\x1b[0m\", dm = t.text_dim));\n            }\n\n            line.push_str(&format!(\"  \\x1b[{meta_col}m{id_short}  {ts}\\x1b[0m\"));"
 }
@@ -838,7 +838,7 @@ id: toolu_01AggaueSzwgWkiRGD34NTKJ
 tool_result
 id: toolu_01AggaueSzwgWkiRGD34NTKJ
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -862,7 +862,7 @@ id: toolu_013eZJNDg7NdnkXD1ZKdxqpN
 tool_result
 id: toolu_013eZJNDg7NdnkXD1ZKdxqpN
 ```
-   Compiling gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)
+   Compiling gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)
 warning: unused import: `std::collections::HashSet`
  --> src/ingest/claude_code.rs:4:5
   |
@@ -940,8 +940,8 @@ tool_result
 id: toolu_01Dx2dfQwjmNpY3rVARDK1UN
 ```
     Finished `release` profile [optimized] target(s) in 6.15s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT

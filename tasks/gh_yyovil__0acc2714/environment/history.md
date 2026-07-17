@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-08</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -58,8 +58,8 @@ tool_use exec_command
 id: call_1risWRiR3oJbrKUQDvBoXgn3
 ```json
 {
-  "cmd": "rg -n \"file-preview|Open file|yyork-file-preview|Files tree|canvas-panel|CodeView\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"file-preview|Open file|yyork-file-preview|Files tree|canvas-panel|CodeView\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -71,8 +71,8 @@ tool_use exec_command
 id: call_fiDOsEiXsdfFTfuNaIVifgxu
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.agents/skills/react-doctor/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/react-doctor/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -84,8 +84,8 @@ tool_use exec_command
 id: call_5J4TKmnAHksnLJpoKpy4mEnw
 ```json
 {
-  "cmd": "sed -n '1,200p' /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.40724/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,200p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.40724/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -101,7 +101,7 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 488
 Output:
-10:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
+10:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, Files tab CodeView rendering, symlinked-directory handling, and scroll verification) [chronicle memory]
 19:- canvas-panel.tsx, app.css, CodeView, session-files, Files tab, file tree, right-sidebar show/hide, react-resizable-panels, @pierre/trees, git -C <worktree> ls-files --cached --others --exclude-standard, .gitignore /yyork, .entire/, .antigravitycli/, .playwright-cli/, .crush/, crush.local.json, hasYyork false, ygkp7s, v042rv, yyork stop, merge before wipe, worktree lifecycle [chronicle memory]
 62:## Task 5: File-browser rendering through `CodeView`, symlinked-directory handling, and scroll verification [chronicle memory]
 70:- CodeView, session-files.unit.spec.ts, internal/server/files.go, internal/server/files_test.go, internal/server/server.go, symlinked-directory handling, pnpm-lock.yaml, wheel scroll, scrollTop 900, direnv exec . go test ./internal/server, git diff --check [chronicle memory]
@@ -118,7 +118,7 @@ Wall time: 0.0000 seconds
 Process exited with code 1
 Original token count: 24
 Output:
-sed: /Users/tanishqpalandurkar/.agents/skills/react-doctor/SKILL.md: No such file or directory
+sed: /home/<USER>/.agents/skills/react-doctor/SKILL.md: No such file or directory
 
 ```
 
@@ -156,8 +156,8 @@ tool_use exec_command
 id: call_3dTBPRMzoFTiWiHRKP9SxTJa
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/Projects/yyork/.agents/skills/react-doctor/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -170,7 +170,7 @@ id: call_1ufQiXqOu9dXOtzfuouMynYr
 ```json
 {
   "cmd": "rg -n \"yyork-file-preview|file-preview|Open file|preview-header|file-tree|CodeView\" web src internal .",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -183,7 +183,7 @@ id: call_aUcQ54Bq7soxeqYvoxdrOG2F
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -240,28 +240,28 @@ Process exited with code 2
 Original token count: 1632
 Output:
 rg: src: No such file or directory (os error 2)
-./prds/canvas/PRD.md:361:web/src/features/home/components/organisms/canvas-file-tree.tsx
-web/src/features/home/components/organisms/canvas-panel.tsx:1:import { CodeView, type CodeViewItem, type CodeViewProps } from "@pierre/diffs/react";
-web/src/features/home/components/organisms/canvas-panel.tsx:41:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>["options"]>;
-web/src/features/home/components/organisms/canvas-panel.tsx:43:const fileCodeViewOptions: FileCodeViewOptions = {
-web/src/features/home/components/organisms/canvas-panel.tsx:58:const FILE_PREVIEW_PANEL_ID = "file-preview";
-web/src/features/home/components/organisms/canvas-panel.tsx:59:const FILE_TREE_PANEL_ID = "file-tree";
-web/src/features/home/components/organisms/canvas-panel.tsx:319:      <ResizableHandle className="yyork-file-tree-resize-handle" withHandle />
-web/src/features/home/components/organisms/canvas-panel.tsx:321:        className="yyork-file-tree-resizable-panel"
-web/src/features/home/components/organisms/canvas-panel.tsx:329:          className="yyork-file-tree-shell yyork-file-tree-pane flex min-h-0 max-w-full flex-col"
-web/src/features/home/components/organisms/canvas-panel.tsx:331:          <div className="yyork-file-tree-toolbar">
-web/src/features/home/components/organisms/canvas-panel.tsx:344:            className="yyork-file-tree min-h-0 flex-1"
-web/src/features/home/components/organisms/canvas-panel.tsx:376:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
-web/src/features/home/components/organisms/canvas-panel.tsx:378:      <div className="yyork-file-preview-header">
-web/src/features/home/components/organisms/canvas-panel.tsx:379:        <span className="min-w-0 flex-1 truncate">{props.selectedPath ?? "Open file"}</span>
-web/src/features/home/components/organisms/canvas-panel.tsx:387:      <div className="yyork-file-preview-body">
-web/src/features/home/components/organisms/canvas-panel.tsx:389:          <CanvasPlaceholder title="Open file" detail="Select a file from the workspace tree." />
-web/src/features/home/components/organisms/canvas-panel.tsx:413:              onWheel={handleFileCodeViewWheel}
-web/src/features/home/components/organisms/canvas-panel.tsx:415:              <CodeView
-web/src/features/home/components/organisms/canvas-panel.tsx:417:                items={getCodeViewItemsForFile(fileData)}
-web/src/features/home/components/organisms/canvas-panel.tsx:418:                options={fileCodeViewOptions}
-web/src/features/home/components/organisms/canvas-panel.tsx:521:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
-web/src/features/home/components/organisms/canvas-panel.tsx:554:function getCodeViewItemsForFile(file: SessionFileContent): CodeViewItem<undefined>[] {
+./prds/canvas/PRD.md:361:web/src/features/home/<USER>/organisms/canvas-file-tree.tsx
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:1:import { CodeView, type CodeViewItem, type CodeViewProps } from "@pierre/diffs/react";
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:41:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>["options"]>;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:43:const fileCodeViewOptions: FileCodeViewOptions = {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:58:const FILE_PREVIEW_PANEL_ID = "file-preview";
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:59:const FILE_TREE_PANEL_ID = "file-tree";
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:319:      <ResizableHandle className="yyork-file-tree-resize-handle" withHandle />
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:321:        className="yyork-file-tree-resizable-panel"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:329:          className="yyork-file-tree-shell yyork-file-tree-pane flex min-h-0 max-w-full flex-col"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:331:          <div className="yyork-file-tree-toolbar">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:344:            className="yyork-file-tree min-h-0 flex-1"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:376:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:378:      <div className="yyork-file-preview-header">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:379:        <span className="min-w-0 flex-1 truncate">{props.selectedPath ?? "Open file"}</span>
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:387:      <div className="yyork-file-preview-body">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:389:          <CanvasPlaceholder title="Open file" detail="Select a file from the workspace tree." />
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:413:              onWheel={handleFileCodeViewWheel}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:415:              <CodeView
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:417:                items={getCodeViewItemsForFile(fileData)}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:418:                options={fileCodeViewOptions}
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:521:function handleFileCodeViewWheel(event: ReactWheelEvent<HTMLDivElement>) {
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:554:function getCodeViewItemsForFile(file: SessionFileContent): CodeViewItem<undefined>[] {
 ./web/src/styles/app.css:317:.yyork-file-preview-pane {
 ./web/src/styles/app.css:324:.yyork-file-preview-header {
 ./web/src/styles/app.css:338:.yyork-file-preview-body {
@@ -271,17 +271,17 @@ web/src/features/home/components/organisms/canvas-panel.tsx:554:function getCode
 ./web/src/styles/app.css:382:.yyork-file-tree-resize-handle {
 ./web/src/styles/app.css:386:.yyork-file-tree-toolbar {
 ./web/src/styles/app.css:396:.yyork-file-tree {
-./web/src/features/home/components/organisms/canvas-panel.tsx:1:import { CodeView, type CodeViewItem, type CodeViewProps } from "@pierre/diffs/react";
-./web/src/features/home/components/organisms/canvas-panel.tsx:41:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>["options"]>;
-./web/src/features/home/components/organisms/canvas-panel.tsx:43:const fileCodeViewOptions: FileCodeViewOptions = {
-./web/src/features/home/components/organisms/canvas-panel.tsx:58:const FILE_PREVIEW_PANEL_ID = "file-preview";
-./web/src/features/home/components/organisms/canvas-panel.tsx:59:const FILE_TREE_PANEL_ID = "file-tree";
-./web/src/features/home/components/organisms/canvas-panel.tsx:319:      <ResizableHandle className="yyork-file-tree-resize-handle" withHandle />
-./web/src/features/home/components/organisms/canvas-panel.tsx:321:        className="yyork-file-tree-resizable-panel"
-./web/src/features/home/components/organisms/canvas-panel.tsx:329:          className="yyork-file-tree-shell yyork-file-tree-pane flex min-h-0 max-w-full flex-col"
-./web/src/features/home/components/organisms/canvas-panel.tsx:331:          <div className="yyork-file-tree-toolbar">
-./web/src/features/home/components/organisms/canvas-panel.tsx:344:            className="yyork-file-tree min-h-0 flex-1"
-./web/src/features/home/components/organisms/canvas-panel.tsx:376:      className="yyork-file-preview-pane flex min-h-0 min-w-0 […]
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:1:import { CodeView, type CodeViewItem, type CodeViewProps } from "@pierre/diffs/react";
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:41:type FileCodeViewOptions = NonNullable<CodeViewProps<undefined>["options"]>;
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:43:const fileCodeViewOptions: FileCodeViewOptions = {
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:58:const FILE_PREVIEW_PANEL_ID = "file-preview";
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:59:const FILE_TREE_PANEL_ID = "file-tree";
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:319:      <ResizableHandle className="yyork-file-tree-resize-handle" withHandle />
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:321:        className="yyork-file-tree-resizable-panel"
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:329:          className="yyork-file-tree-shell yyork-file-tree-pane flex min-h-0 max-w-full flex-col"
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:331:          <div className="yyork-file-tree-toolbar">
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:344:            className="yyork-file-tree min-h-0 flex-1"
+./web/src/features/home/<USER>/organisms/canvas-panel.tsx:376:      className="yyork-file-preview-pane flex min-h-0 min-w-0 […]
 
 > TOOL
 
@@ -395,7 +395,7 @@ id: call_I6GJ9QcHrk7T5l6oeyDaaAE7
 ```json
 {
   "cmd": "sed -n '300,355p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -407,8 +407,8 @@ tool_use exec_command
 id: call_xPOvEImacYc1ygU4hkdRB3YC
 ```json
 {
-  "cmd": "sed -n '360,395p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '360,395p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -421,7 +421,7 @@ id: call_IPC1h9sYGpzTEhyEqZKYFHdC
 ```json
 {
   "cmd": "sed -n '1,220p' web/package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -434,7 +434,7 @@ id: call_6lr1aYzQZtye8z0rMwVvsqDx
 ```json
 {
   "cmd": "sed -n '1,180p' package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -580,7 +580,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -640,7 +640,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -696,7 +696,7 @@ id: call_oJi2Wuhnl9BGbnj1fL2ldS5E
 ```json
 {
   "cmd": "sed -n '1,120p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -709,7 +709,7 @@ id: call_BPpSWtrqJMLN9pFYIMSGlWXj
 ```json
 {
   "cmd": "rg -n \"box-sizing|@import|tailwind\" web/src/styles web/src -g '*.css'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -722,7 +722,7 @@ id: call_ML1bBeXxPzFmqhYYXvqjAxeU
 ```json
 {
   "cmd": "rg -n \"yyork-file-preview-header|yyork-file-preview-pane|Open file\" web/src -g '*.tsx' -g '*.css'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -823,10 +823,10 @@ Original token count: 170
 Output:
 web/src/styles/app.css:317:.yyork-file-preview-pane {
 web/src/styles/app.css:324:.yyork-file-preview-header {
-web/src/features/home/components/organisms/canvas-panel.tsx:376:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
-web/src/features/home/components/organisms/canvas-panel.tsx:378:      <div className="yyork-file-preview-header">
-web/src/features/home/components/organisms/canvas-panel.tsx:379:        <span className="min-w-0 flex-1 truncate">{props.selectedPath ?? "Open file"}</span>
-web/src/features/home/components/organisms/canvas-panel.tsx:389:          <CanvasPlaceholder title="Open file" detail="Select a file from the workspace tree." />
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:376:      className="yyork-file-preview-pane flex min-h-0 min-w-0 flex-col"
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:378:      <div className="yyork-file-preview-header">
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:379:        <span className="min-w-0 flex-1 truncate">{props.selectedPath ?? "Open file"}</span>
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:389:          <CanvasPlaceholder title="Open file" detail="Select a file from the workspace tree." />
 
 ```
 
@@ -837,7 +837,7 @@ id: call_zLKHkgWuJFHtSKMkA5MV5kqR
 ```json
 {
   "cmd": "sed -n '268,292p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -850,7 +850,7 @@ id: call_MBjjoqwlE3wAWnPelX3RzE4U
 ```json
 {
   "cmd": "sed -n '360,440p' web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1003,7 +1003,7 @@ id: call_y206TGFIVO0XKZKc4eSUvvfG
 ```json
 {
   "cmd": "git diff -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1016,7 +1016,7 @@ id: call_VkgFOVY5oDSN8ka4FR1hYp24
 ```json
 {
   "cmd": "pnpm --filter @yyork/web build",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1096,7 +1096,7 @@ Original token count: 9313
 Output:
 [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
 
-> @yyork/web@0.0.1 build /Users/tanishqpalandurkar/Projects/yyork/web
+> @yyork/web@0.0.1 build /home/<USER>/Projects/yyork/web
 > vite build
 
 vite v7.3.2 building client environment for production...
@@ -1139,7 +1139,7 @@ id: call_7md5UQffOTzUfRPdVp6SHggo
 ```json
 {
   "cmd": "git status --short web/src/styles/app.css cmd/yyork/dashboard/app",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1152,7 +1152,7 @@ id: call_yP0fD2Glv3SE4etlyWbRkZNm
 ```json
 {
   "cmd": "git diff --stat -- web/src/styles/app.css cmd/yyork/dashboard/app",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1198,7 +1198,7 @@ id: call_PFk7Lvq6B5xW15f4NQxlzBpp
 ```json
 {
   "cmd": "npx react-doctor@latest --verbose --diff",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 12000
 }
@@ -1249,7 +1249,7 @@ id: call_lEXwGgCkF2dJgImsVuj8brNS
 ```json
 {
   "title": "Connect browser runtime",
-  "code": "const { setupBrowserRuntime } = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.40724/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
+  "code": "const { setupBrowserRuntime } = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.40724/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000
 }
 ```
@@ -1403,7 +1403,7 @@ id: call_EhSUUiI5YQicbhdN2cRhytFn
 ```json
 {
   "cmd": "rg -n \"yyork-file-preview-header\" cmd/yyork/dashboard/app web/dist web/.output web/output",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1416,7 +1416,7 @@ id: call_ISzbIKlbn9MEBGZpbrJMjD6F
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app -maxdepth 2 -type f -name '*.css' -print",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1464,7 +1464,7 @@ id: call_s4fzqcWAcJCCKL4G3jpbpkJF
 ```json
 {
   "cmd": "rg -o \"\\.yyork-file-preview-header\\{[^}]+\\}\" cmd/yyork/dashboard/app/assets/index-OcPopgf1.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1495,7 +1495,7 @@ id: call_zoEN1z4QUPp1wSWuOvvyxFVA
 ```json
 {
   "cmd": "rg -n \"Canvas|FilePreview|Files|canvas-panel|yyork-file-preview\" web/src -g '*.stories.tsx' -g '*.spec.tsx' -g '*.tsx'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1508,7 +1508,7 @@ id: call_aNM7fvUscNGeCNaQEF3JNOjw
 ```json
 {
   "cmd": "rg -n \"createRoot|storybook|CanvasPanel|TerminalLayout|WorkspaceLayout\" web/src web/.storybook web -g '*.tsx' -g '*.ts' -g '*.js'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -1524,52 +1524,52 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 3880
 Output:
-web/src/features/home/pages/workspace-layout.tsx:30:  CanvasTab,
-web/src/features/home/pages/workspace-layout.tsx:31:  CanvasTargetSummary,
-web/src/features/home/pages/workspace-layout.tsx:32:} from '@/features/home/components/organisms/canvas-panel';
-web/src/features/home/pages/workspace-layout.tsx:45:  getCanvasPreviewTargetKey,
-web/src/features/home/pages/workspace-layout.tsx:46:  getCanvasPreviewUrlForTarget,
-web/src/features/home/pages/workspace-layout.tsx:47:  getCanvasPreviewUrlPreferenceUpdate,
-web/src/features/home/pages/workspace-layout.tsx:48:  type HomeWorkspaceCanvasLayout,
-web/src/features/home/pages/workspace-layout.tsx:49:  type HomeWorkspaceCanvasReviewPreferences,
-web/src/features/home/pages/workspace-layout.tsx:78:  canvasTab: CanvasTab;
-web/src/features/home/pages/workspace-layout.tsx:92:  | { canvasTab: CanvasTab; type: 'canvas-tab' };
-web/src/features/home/pages/workspace-layout.tsx:248:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
-web/src/features/home/pages/workspace-layout.tsx:258:  const canvasPreviewTargetKey = getCanvasPreviewTargetKey(canvasTarget);
-web/src/features/home/pages/workspace-layout.tsx:259:  const canvasPreviewUrl = getCanvasPreviewUrlForTarget(
-web/src/features/home/pages/workspace-layout.tsx:321:  const handleCanvasOpenChange = (open: boolean) => {
-web/src/features/home/pages/workspace-layout.tsx:325:  const handleCanvasLayoutChange = (layout: HomeWorkspaceCanvasLayout) => {
-web/src/features/home/pages/workspace-layout.tsx:329:  const handleCanvasTabChange = (tab: CanvasTab) => {
-web/src/features/home/pages/workspace-layout.tsx:334:  const handleCanvasPreviewUrlChange = (url: string) => {
-web/src/features/home/pages/workspace-layout.tsx:336:      getCanvasPreviewUrlPreferenceUpdate(
-web/src/features/home/pages/workspace-layout.tsx:344:  const handleCanvasReviewPreferencesChange = (
-web/src/features/home/pages/workspace-layout.tsx:345:    preferences: HomeWorkspaceCanvasReviewPreferences
-web/src/features/home/pages/workspace-layout.tsx:626:    onCanvasLayoutChange: handleCanvasLayoutChange,
-web/src/features/home/pages/workspace-layout.tsx:627:    onCanvasOpenChange: handleCanvasOpenChange,
-web/src/features/home/pages/workspace-layout.tsx:628:    onCanvasPreviewUrlChange: handleCanvasPreviewUrlChange,
-web/src/features/home/pages/workspace-layout.tsx:629:    onCanvasReviewPreferencesChange: handleCanvasReviewPreferencesChange,
-web/src/features/home/pages/workspace-layout.tsx:630:    onCanvasResizingChange: (canvasResizing) =>
-web/src/features/home/pages/workspace-layout.tsx:632:    onCanvasTabChange: handleCanvasTabChange,
-web/src/features/home/pages/workspace-layout.tsx:649:    handleCanvasOpenChange,
-web/src/features/home/pages/workspace-layout.tsx:808:                  props.handleCanvasOpenChange(!props.canvasOpen);
-web/src/features/home/pages/workspace-layout.tsx:815:                    ? 'Close Canvas panel'
-web/src/features/home/pages/workspace-layout.tsx:816:                    : 'Open Canvas panel'}
-web/src/features/home/pages/terminal-layout.tsx:5:import { CanvasPanel } from '@/features/home/components/organisms/canvas-panel';
-web/src/features/home/pages/terminal-layout.tsx:19:  const setCanvasResizing = context.onCanvasResizingChange;
-web/src/features/home/pages/terminal-layout.tsx:58:    context.onCanvasLayoutChange({
-web/src/features/home/pages/terminal-layout.tsx:73:        <CanvasResizeRail
-web/src/features/home/pages/terminal-layout.tsx:75:          onResizeStart={() => setCanvasResizing(true)}
-web/src/features/home/pages/terminal-layout.tsx:76:          onResizeEnd={() => setCanvasResizing(false)}
-web/src/features/home/pages/terminal-layout.tsx:102:          <CanvasPanel
-web/src/features/home/pages/terminal-layout.tsx:106:            onPreviewUrlChange={context.onCanvasPreviewUrlChange}
-web/src/features/home/pages/terminal-layout.tsx:107:            onReviewPreferencesChange={context.onCanvasReviewPreferencesChange}
-web/src/features/home/pages/terminal-layout.tsx:108:            onTabChange={context.onCanvasTabChange}
-web/src/features/home/pages/terminal-layout.tsx:117:function CanvasResizeRail(props: {
-web/src/features/home/pages/terminal-layout.tsx:126:      aria-label="Resize Canvas pane"
-web/src/features/home/pages/terminal-layout.tsx:128:      title="Drag to resize Canvas panel"
-web/src/features/home/components/molecules/canvas-web-preview.tsx:87:export function CanvasWebPreview(props: {
-web/src/features/home/components/molecules/canvas-web-preview.tsx:813:      'WebPreview components must be used within CanvasWebPreview'
-web/src/features/home/components/organisms/xterm-terminal.tsx:1:import { […]
+web/src/features/home/<USER>/workspace-layout.tsx:30:  CanvasTab,
+web/src/features/home/<USER>/workspace-layout.tsx:31:  CanvasTargetSummary,
+web/src/features/home/<USER>/workspace-layout.tsx:32:} from '@/features/home/<USER>/organisms/canvas-panel';
+web/src/features/home/<USER>/workspace-layout.tsx:45:  getCanvasPreviewTargetKey,
+web/src/features/home/<USER>/workspace-layout.tsx:46:  getCanvasPreviewUrlForTarget,
+web/src/features/home/<USER>/workspace-layout.tsx:47:  getCanvasPreviewUrlPreferenceUpdate,
+web/src/features/home/<USER>/workspace-layout.tsx:48:  type HomeWorkspaceCanvasLayout,
+web/src/features/home/<USER>/workspace-layout.tsx:49:  type HomeWorkspaceCanvasReviewPreferences,
+web/src/features/home/<USER>/workspace-layout.tsx:78:  canvasTab: CanvasTab;
+web/src/features/home/<USER>/workspace-layout.tsx:92:  | { canvasTab: CanvasTab; type: 'canvas-tab' };
+web/src/features/home/<USER>/workspace-layout.tsx:248:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
+web/src/features/home/<USER>/workspace-layout.tsx:258:  const canvasPreviewTargetKey = getCanvasPreviewTargetKey(canvasTarget);
+web/src/features/home/<USER>/workspace-layout.tsx:259:  const canvasPreviewUrl = getCanvasPreviewUrlForTarget(
+web/src/features/home/<USER>/workspace-layout.tsx:321:  const handleCanvasOpenChange = (open: boolean) => {
+web/src/features/home/<USER>/workspace-layout.tsx:325:  const handleCanvasLayoutChange = (layout: HomeWorkspaceCanvasLayout) => {
+web/src/features/home/<USER>/workspace-layout.tsx:329:  const handleCanvasTabChange = (tab: CanvasTab) => {
+web/src/features/home/<USER>/workspace-layout.tsx:334:  const handleCanvasPreviewUrlChange = (url: string) => {
+web/src/features/home/<USER>/workspace-layout.tsx:336:      getCanvasPreviewUrlPreferenceUpdate(
+web/src/features/home/<USER>/workspace-layout.tsx:344:  const handleCanvasReviewPreferencesChange = (
+web/src/features/home/<USER>/workspace-layout.tsx:345:    preferences: HomeWorkspaceCanvasReviewPreferences
+web/src/features/home/<USER>/workspace-layout.tsx:626:    onCanvasLayoutChange: handleCanvasLayoutChange,
+web/src/features/home/<USER>/workspace-layout.tsx:627:    onCanvasOpenChange: handleCanvasOpenChange,
+web/src/features/home/<USER>/workspace-layout.tsx:628:    onCanvasPreviewUrlChange: handleCanvasPreviewUrlChange,
+web/src/features/home/<USER>/workspace-layout.tsx:629:    onCanvasReviewPreferencesChange: handleCanvasReviewPreferencesChange,
+web/src/features/home/<USER>/workspace-layout.tsx:630:    onCanvasResizingChange: (canvasResizing) =>
+web/src/features/home/<USER>/workspace-layout.tsx:632:    onCanvasTabChange: handleCanvasTabChange,
+web/src/features/home/<USER>/workspace-layout.tsx:649:    handleCanvasOpenChange,
+web/src/features/home/<USER>/workspace-layout.tsx:808:                  props.handleCanvasOpenChange(!props.canvasOpen);
+web/src/features/home/<USER>/workspace-layout.tsx:815:                    ? 'Close Canvas panel'
+web/src/features/home/<USER>/workspace-layout.tsx:816:                    : 'Open Canvas panel'}
+web/src/features/home/<USER>/terminal-layout.tsx:5:import { CanvasPanel } from '@/features/home/<USER>/organisms/canvas-panel';
+web/src/features/home/<USER>/terminal-layout.tsx:19:  const setCanvasResizing = context.onCanvasResizingChange;
+web/src/features/home/<USER>/terminal-layout.tsx:58:    context.onCanvasLayoutChange({
+web/src/features/home/<USER>/terminal-layout.tsx:73:        <CanvasResizeRail
+web/src/features/home/<USER>/terminal-layout.tsx:75:          onResizeStart={() => setCanvasResizing(true)}
+web/src/features/home/<USER>/terminal-layout.tsx:76:          onResizeEnd={() => setCanvasResizing(false)}
+web/src/features/home/<USER>/terminal-layout.tsx:102:          <CanvasPanel
+web/src/features/home/<USER>/terminal-layout.tsx:106:            onPreviewUrlChange={context.onCanvasPreviewUrlChange}
+web/src/features/home/<USER>/terminal-layout.tsx:107:            onReviewPreferencesChange={context.onCanvasReviewPreferencesChange}
+web/src/features/home/<USER>/terminal-layout.tsx:108:            onTabChange={context.onCanvasTabChange}
+web/src/features/home/<USER>/terminal-layout.tsx:117:function CanvasResizeRail(props: {
+web/src/features/home/<USER>/terminal-layout.tsx:126:      aria-label="Resize Canvas pane"
+web/src/features/home/<USER>/terminal-layout.tsx:128:      title="Drag to resize Canvas panel"
+web/src/features/home/<USER>/molecules/canvas-web-preview.tsx:87:export function CanvasWebPreview(props: {
+web/src/features/home/<USER>/molecules/canvas-web-preview.tsx:813:      'WebPreview components must be used within CanvasWebPreview'
+web/src/features/home/<USER>/organisms/xterm-terminal.tsx:1:import { […]
 
 > TOOL
 
@@ -1581,9 +1581,9 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 4783
 Output:
-web/src/routes/_app.tsx:3:import { WorkspaceLayout } from '@/features/home/pages/workspace-layout';
+web/src/routes/_app.tsx:3:import { WorkspaceLayout } from '@/features/home/<USER>/workspace-layout';
 web/src/routes/_app.tsx:6:  component: WorkspaceLayout,
-web/src/routes/_app.tsx:3:import { WorkspaceLayout } from '@/features/home/pages/workspace-layout';
+web/src/routes/_app.tsx:3:import { WorkspaceLayout } from '@/features/home/<USER>/workspace-layout';
 web/src/routes/_app.tsx:6:  component: WorkspaceLayout,
 web/.storybook/preview.tsx:1:import type { Preview } from '@storybook/tanstack-react';
 web/.storybook/preview.tsx:2:import { useDarkMode } from '@vueless/storybook-dark-mode';
@@ -1606,21 +1606,21 @@ web/src/components/brand/logo.stories.tsx:1:import { Meta } from '@storybook/tan
 web/src/components/errors/page-error.stories.tsx:1:import { Meta } from '@storybook/tanstack-react';
 web/src/components/errors/error-boundary.stories.tsx:1:import { Meta } from '@storybook/tanstack-react';
 web/src/components/form/field-checkbox/docs.stories.tsx:2:import { Meta } from '@storybook/tanstack-react';
-web/src/features/home/pages/workspace-layout.tsx:76:interface WorkspaceLayoutState {
-web/src/features/home/pages/workspace-layout.tsx:84:type WorkspaceLayoutAction =
-web/src/features/home/pages/workspace-layout.tsx:94:function createWorkspaceLayoutState(): WorkspaceLayoutState {
-web/src/features/home/pages/workspace-layout.tsx:107:  state: WorkspaceLayoutState,
-web/src/features/home/pages/workspace-layout.tsx:108:  action: WorkspaceLayoutAction
-web/src/features/home/pages/workspace-layout.tsx:109:): WorkspaceLayoutState {
-web/src/features/home/pages/workspace-layout.tsx:142:export function WorkspaceLayout() {
-web/src/features/home/pages/workspace-layout.tsx:143:  const workspaceLayout = useWorkspaceLayout();
-web/src/features/home/pages/workspace-layout.tsx:145:  return <WorkspaceLayoutView {...workspaceLayout} />;
-web/src/features/home/pages/workspace-layout.tsx:148:function useWorkspaceLayout() {
-web/src/features/home/pages/workspace-layout.tsx:160:    createWorkspaceLayoutState
-web/src/features/home/pages/workspace-layout.tsx:687:function WorkspaceLayoutView(props: ReturnType<typeof useWorkspaceLayout>) {
+web/src/features/home/<USER>/workspace-layout.tsx:76:interface WorkspaceLayoutState {
+web/src/features/home/<USER>/workspace-layout.tsx:84:type WorkspaceLayoutAction =
+web/src/features/home/<USER>/workspace-layout.tsx:94:function createWorkspaceLayoutState(): WorkspaceLayoutState {
+web/src/features/home/<USER>/workspace-layout.tsx:107:  state: WorkspaceLayoutState,
+web/src/features/home/<USER>/workspace-layout.tsx:108:  action: WorkspaceLayoutAction
+web/src/features/home/<USER>/workspace-layout.tsx:109:): WorkspaceLayoutState {
+web/src/features/home/<USER>/workspace-layout.tsx:142:export function WorkspaceLayout() {
+web/src/features/home/<USER>/workspace-layout.tsx:143:  const workspaceLayout = useWorkspaceLayout();
+web/src/features/home/<USER>/workspace-layout.tsx:145:  return <WorkspaceLayoutView {...workspaceLayout} />;
+web/src/features/home/<USER>/workspace-layout.tsx:148:function useWorkspaceLayout() {
+web/src/features/home/<USER>/workspace-layout.tsx:160:    createWorkspaceLayoutState
+web/src/features/home/<USER>/workspace-layout.tsx:687:function WorkspaceLayoutView(props: ReturnType<typeof useWorkspaceLayout>) {
 web/src/components/brand/logo.stories.tsx:1:import { Meta } from '@storybook/tanstack-react';
-web/src/features/home/components/organisms/kanban-board.stories.tsx:1:import type { Meta, StoryObj } from '@storybook/tanstack-react';
-web/src/features/home/components/organisms/kanban-board.stories.tsx:2:import […]
+web/src/features/home/<USER>/organisms/kanban-board.stories.tsx:1:import type { Meta, StoryObj } from '@storybook/tanstack-react';
+web/src/features/home/<USER>/organisms/kanban-board.stories.tsx:2:import […]
 
 > AGENT
 
@@ -1637,7 +1637,7 @@ id: call_NJDhq7oiqeN8bYeyhYn18U65
 ```json
 {
   "cmd": "git diff --check -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1650,7 +1650,7 @@ id: call_Zp1cJOr2pVa3akKTa1idsFO3
 ```json
 {
   "cmd": "git diff --unified=3 -- web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -1663,7 +1663,7 @@ id: call_xEdKUZyoapkBF7EhqIPbYBNV
 ```json
 {
   "cmd": "nl -ba web/src/styles/app.css | sed -n '320,336p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1785,7 +1785,7 @@ id: call_riXKBf3DFfLMuLZoY5g1DTpT
 ```json
 {
   "cmd": "git status --short web/src/styles/app.css",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1807,7 +1807,7 @@ Output:
 
 > AGENT
 
-Changed [web/src/styles/app.css](/Users/tanishqpalandurkar/Projects/yyork/web/src/styles/app.css:331): `.yyork-file-preview-header` now uses `padding: 0.75rem`, so the “Open file” header gets 12px padding on all sides.
+Changed [web/src/styles/app.css](/home/<USER>/Projects/yyork/web/src/styles/app.css:331): `.yyork-file-preview-header` now uses `padding: 0.75rem`, so the “Open file” header gets 12px padding on all sides.
 
 Verified:
 - `pnpm --filter @yyork/web build` passed.

@@ -82,7 +82,7 @@ tool_use Read
 id: toolu_01DLVWh1oeFTnaF1JjLJbk1B
 ```json
 {
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go"
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go"
 }
 ```
 
@@ -147,7 +147,7 @@ tool_use Read
 id: toolu_01SNrmFY6ho4Pgeb9LroJQdK
 ```json
 {
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/agent.go"
+  "file_path": "/home/<USER>/src/cli/e2e/agents/agent.go"
 }
 ```
 
@@ -234,7 +234,7 @@ id: toolu_01GG7J5EGSEBRH6GybSZz2dV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go",
   "old_string": "func (c *Claude) RunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error) {\n\tcfg := &runConfig{Model: \"haiku\"}\n\tfor _, o := range opts {\n\t\to(cfg)\n\t}\n\n\tconfigDir, err := isolatedConfigDir()\n\tif err != nil {\n\t\treturn Output{}, fmt.Errorf(\"create isolated config dir: %w\", err)\n\t}\n\tdefer os.RemoveAll(configDir)\n\n\targs := []string{\"-p\", prompt, \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tdisplayArgs := []string{\"-p\", fmt.Sprintf(\"%q\", prompt), \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tcmd := exec.CommandContext(ctx, \"claude\", args...)\n\tcmd.Dir = dir\n\tcmd.Stdin = nil\n\tcmd.Env = append(cleanEnv(), \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", \"CLAUDE_CONFIG_DIR=\"+configDir)",
   "new_string": "func (c *Claude) RunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error) {\n\tcfg := &runConfig{Model: \"haiku\"}\n\tfor _, o := range opts {\n\t\to(cfg)\n\t}\n\n\tenv := append(cleanEnv(), \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\")\n\n\t// On CI (no macOS Keychain), use an isolated config dir so Claude Code\n\t// picks up ANTHROPIC_API_KEY from the environment instead of trying OAuth.\n\t// Locally, we skip CLAUDE_CONFIG_DIR so the Keychain-based auth works.\n\tif os.Getenv(\"CI\") != \"\" {\n\t\tconfigDir, err := isolatedConfigDir()\n\t\tif err != nil {\n\t\t\treturn Output{}, fmt.Errorf(\"create isolated config dir: %w\", err)\n\t\t}\n\t\tdefer os.RemoveAll(configDir)\n\t\tenv = append(env, \"CLAUDE_CONFIG_DIR=\"+configDir)\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude: using isolated config dir %s\\n\", configDir)\n\t} else {\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude: using default auth (no CLAUDE_CONFIG_DIR override)\\n\")\n\t}\n\n\targs := []string{\"-p\", prompt, \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tdisplayArgs := []string{\"-p\", fmt.Sprintf(\"%q\", prompt), \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tcmd := exec.CommandContext(ctx, \"claude\", args...)\n\tcmd.Dir = dir\n\tcmd.Stdin = nil\n\tcmd.Env = env"
 }
@@ -265,7 +265,7 @@ id: toolu_01KdxTDEUYpqjK8TkmdfVDJc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go",
   "old_string": "func (c *Claude) RunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error) {\n\tcfg := &runConfig{Model: \"haiku\"}\n\tfor _, o := range opts {\n\t\to(cfg)\n\t}\n\n\tconfigDir, err := isolatedConfigDir()\n\tif err != nil {\n\t\treturn Output{}, fmt.Errorf(\"create isolated config dir: %w\", err)\n\t}\n\tdefer os.RemoveAll(configDir)\n\n\targs := []string{\"-p\", prompt, \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tdisplayArgs := []string{\"-p\", fmt.Sprintf(\"%q\", prompt), \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tcmd := exec.CommandContext(ctx, \"claude\", args...)\n\tcmd.Dir = dir\n\tcmd.Stdin = nil\n\tcmd.Env = append(cleanEnv(), \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\", \"CLAUDE_CONFIG_DIR=\"+configDir)",
   "new_string": "func (c *Claude) RunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error) {\n\tcfg := &runConfig{Model: \"haiku\"}\n\tfor _, o := range opts {\n\t\to(cfg)\n\t}\n\n\tenv := append(cleanEnv(), \"ACCESSIBLE=1\", \"ENTIRE_TEST_TTY=0\")\n\n\t// On CI (no macOS Keychain), use an isolated config dir so Claude Code\n\t// picks up ANTHROPIC_API_KEY from the environment instead of trying OAuth.\n\t// Locally, we skip CLAUDE_CONFIG_DIR so the Keychain-based auth works.\n\tif os.Getenv(\"CI\") != \"\" {\n\t\tconfigDir, err := isolatedConfigDir()\n\t\tif err != nil {\n\t\t\treturn Output{}, fmt.Errorf(\"create isolated config dir: %w\", err)\n\t\t}\n\t\tdefer os.RemoveAll(configDir)\n\t\tenv = append(env, \"CLAUDE_CONFIG_DIR=\"+configDir)\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude RunPrompt: CI mode, using isolated config dir %s\\n\", configDir)\n\t} else {\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude RunPrompt: local mode, using default Keychain auth (no CLAUDE_CONFIG_DIR)\\n\")\n\t}\n\n\targs := []string{\"-p\", prompt, \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tdisplayArgs := []string{\"-p\", fmt.Sprintf(\"%q\", prompt), \"--model\", cfg.Model, \"--dangerously-skip-permissions\"}\n\tcmd := exec.CommandContext(ctx, \"claude\", args...)\n\tcmd.Dir = dir\n\tcmd.Stdin […]
 
@@ -274,7 +274,7 @@ id: toolu_01KdxTDEUYpqjK8TkmdfVDJc
 tool_result
 id: toolu_01KdxTDEUYpqjK8TkmdfVDJc
 ```
-The file /Users/dvydra/src/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/src/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > AGENT
@@ -287,7 +287,7 @@ tool_use Read
 id: toolu_01A8pXmgC6Zjj3GkptATgvgh
 ```json
 {
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go"
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go"
 }
 ```
 
@@ -357,7 +357,7 @@ id: toolu_01U1w9mhkVdNw2D56KMG8qyA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go",
   "old_string": "\terr = cmd.Run()\n\texitCode := 0\n\texitErr := &exec.ExitError{}",
   "new_string": "\terr := cmd.Run()\n\texitCode := 0\n\texitErr := &exec.ExitError{}"
 }
@@ -368,7 +368,7 @@ id: toolu_01U1w9mhkVdNw2D56KMG8qyA
 tool_result
 id: toolu_01U1w9mhkVdNw2D56KMG8qyA
 ```
-The file /Users/dvydra/src/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/src/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > AGENT
@@ -382,7 +382,7 @@ id: toolu_015PAsj82yHS9NBxGHwiKwci
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go",
   "old_string": "\t// On CI (no macOS Keychain), use an isolated config dir so Claude Code\n\t// picks up ANTHROPIC_API_KEY from the environment instead of trying OAuth.\n\t// Locally, we skip CLAUDE_CONFIG_DIR so the Keychain-based auth works.\n\tif os.Getenv(\"CI\") != \"\" {\n\t\tconfigDir, err := isolatedConfigDir()\n\t\tif err == nil {\n\t\t\tenvArgs = append(envArgs, \"CLAUDE_CONFIG_DIR=\"+configDir)\n\t\t}\n\t}",
   "new_string": "\t// On CI (no macOS Keychain), use an isolated config dir so Claude Code\n\t// picks up ANTHROPIC_API_KEY from the environment instead of trying OAuth.\n\t// Locally, we skip CLAUDE_CONFIG_DIR so the Keychain-based auth works.\n\tif os.Getenv(\"CI\") != \"\" {\n\t\tconfigDir, err := isolatedConfigDir()\n\t\tif err == nil {\n\t\t\tenvArgs = append(envArgs, \"CLAUDE_CONFIG_DIR=\"+configDir)\n\t\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude StartSession: CI mode, using isolated config dir %s\\n\", configDir)\n\t\t}\n\t} else {\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude StartSession: local mode, using default Keychain auth (no CLAUDE_CONFIG_DIR)\\n\")\n\t}"
 }
@@ -393,7 +393,7 @@ id: toolu_015PAsj82yHS9NBxGHwiKwci
 tool_result
 id: toolu_015PAsj82yHS9NBxGHwiKwci
 ```
-The file /Users/dvydra/src/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/src/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > TOOL
@@ -403,7 +403,7 @@ id: toolu_01GBeepqrMo6FnASJu2RKWXP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go",
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go",
   "old_string": "func (c *Claude) Bootstrap() error {\n\t// On CI, write a config file so Claude Code uses the API key from the\n\t// environment instead of trying OAuth/Keychain.\n\tif os.Getenv(\"CI\") == \"\" {\n\t\treturn nil\n\t}\n\tapiKey := os.Getenv(\"ANTHROPIC_API_KEY\")\n\tif apiKey == \"\" {\n\t\treturn nil\n\t}",
   "new_string": "func (c *Claude) Bootstrap() error {\n\t// On CI, write a config file so Claude Code uses the API key from the\n\t// environment instead of trying OAuth/Keychain.\n\tif os.Getenv(\"CI\") == \"\" {\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude Bootstrap: local mode, skipping (using Keychain auth)\\n\")\n\t\treturn nil\n\t}\n\tapiKey := os.Getenv(\"ANTHROPIC_API_KEY\")\n\tif apiKey == \"\" {\n\t\tfmt.Fprintf(os.Stderr, \"[e2e] claude Bootstrap: CI mode but ANTHROPIC_API_KEY not set, skipping\\n\")\n\t\treturn nil\n\t}\n\tfmt.Fprintf(os.Stderr, \"[e2e] claude Bootstrap: CI mode, writing API key to ~/.claude/.claude.json\\n\")"
 }
@@ -414,7 +414,7 @@ id: toolu_01GBeepqrMo6FnASJu2RKWXP
 tool_result
 id: toolu_01GBeepqrMo6FnASJu2RKWXP
 ```
-The file /Users/dvydra/src/cli/e2e/agents/claude.go has been updated successfully.
+The file /home/<USER>/src/cli/e2e/agents/claude.go has been updated successfully.
 ```
 
 > AGENT
@@ -427,7 +427,7 @@ tool_use Read
 id: toolu_01N9Pwd9njMjAFR1ui4QwJcz
 ```json
 {
-  "file_path": "/Users/dvydra/src/cli/e2e/agents/claude.go"
+  "file_path": "/home/<USER>/src/cli/e2e/agents/claude.go"
 }
 ```
 
@@ -621,7 +621,7 @@ tool_use Bash
 id: toolu_01PokmLYoACQcNppZyTExTug
 ```json
 {
-  "command": "git -C /Users/dvydra/src/cli status",
+  "command": "git -C /home/<USER>/src/cli status",
   "description": "Show working tree status"
 }
 ```
@@ -632,7 +632,7 @@ tool_use Bash
 id: toolu_01RhzX9r4Q8fcqvDo9CKZMUH
 ```json
 {
-  "command": "git -C /Users/dvydra/src/cli diff",
+  "command": "git -C /home/<USER>/src/cli diff",
   "description": "Show staged and unstaged changes"
 }
 ```
@@ -643,7 +643,7 @@ tool_use Bash
 id: toolu_017Zm1SRdzkHNK8PPZ4eLd3P
 ```json
 {
-  "command": "git -C /Users/dvydra/src/cli log --oneline -10",
+  "command": "git -C /home/<USER>/src/cli log --oneline -10",
   "description": "Show recent commit messages for style"
 }
 ```
@@ -730,7 +730,7 @@ tool_use Bash
 id: toolu_01GySNN9jiYJAis3sjFh3yzx
 ```json
 {
-  "command": "git -C /Users/dvydra/src/cli add e2e/agents/claude.go && git -C /Users/dvydra/src/cli commit -m \"$(cat <<'EOF'\nfix: don't override CLAUDE_CONFIG_DIR locally in E2E RunPrompt\n\nRunPrompt unconditionally set CLAUDE_CONFIG_DIR to an isolated temp\ndirectory, causing Claude Code to skip macOS Keychain/OAuth auth and\nreport \"Not logged in\" for team plan users without ANTHROPIC_API_KEY.\nStartSession already gated this behind CI—make RunPrompt consistent.\n\nAlso add [e2e] stderr logging to Bootstrap, RunPrompt, and StartSession\nso auth mode is immediately visible when debugging.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/src/cli add e2e/agents/claude.go && git -C /home/<USER>/src/cli commit -m \"$(cat <<'EOF'\nfix: don't override CLAUDE_CONFIG_DIR locally in E2E RunPrompt\n\nRunPrompt unconditionally set CLAUDE_CONFIG_DIR to an isolated temp\ndirectory, causing Claude Code to skip macOS Keychain/OAuth auth and\nreport \"Not logged in\" for team plan users without ANTHROPIC_API_KEY.\nStartSession already gated this behind CI—make RunPrompt consistent.\n\nAlso add [e2e] stderr logging to Bootstrap, RunPrompt, and StartSession\nso auth mode is immediately visible when debugging.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the fix"
 }
 ```
@@ -750,7 +750,7 @@ tool_use Bash
 id: toolu_01WM8dabqAPGCVaCz6hS7k7u
 ```json
 {
-  "command": "git -C /Users/dvydra/src/cli status",
+  "command": "git -C /home/<USER>/src/cli status",
   "description": "Verify clean state after commit"
 }
 ```
@@ -781,7 +781,7 @@ tool_use Bash
 id: toolu_01RsZctogZvDk8bCntJ9JeVi
 ```json
 {
-  "command": "git -C /Users/dvydra/src/cli push",
+  "command": "git -C /home/<USER>/src/cli push",
   "description": "Push to remote"
 }
 ```

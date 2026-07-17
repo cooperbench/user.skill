@@ -218,7 +218,7 @@ tool_use Read
 id: toolu_01GdC9LGgkwmNc6JRFzvDdWp
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/snowflake.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/snowflake.py"
 }
 ```
 
@@ -266,7 +266,7 @@ tool_use Read
 id: toolu_01BcWLDnX9MjD2v4UX5DCsf2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/unity_catalog.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/unity_catalog.py"
 }
 ```
 
@@ -367,7 +367,7 @@ tool_use Read
 id: toolu_014fMtn1Mk6LGvuLqy6vmgv2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/flatfile.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/flatfile.py"
 }
 ```
 
@@ -436,7 +436,7 @@ tool_use Read
 id: toolu_017jjaN1TVc3pip8wg8m4pz9
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/registry.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/registry.py"
 }
 ```
 
@@ -488,7 +488,7 @@ tool_use Read
 id: toolu_013XLqttm2ZZUQ7upCb8degA
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/base.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/base.py"
 }
 ```
 
@@ -637,7 +637,7 @@ tool_use Read
 id: toolu_01PCQaYSv1EvieNrAswqQ2Fh
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0029-dbt-orchestration-provider.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0029-dbt-orchestration-provider.md"
 }
 ```
 
@@ -723,7 +723,7 @@ tool_use Write
 id: toolu_01UJWYv7BttUu3MUP5F9Bgav
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md",
   "content": "# ADR 0030 — Apache Iceberg support: native `pyiceberg` read (v2) behind a self-contained `iceberg` datasource\n\n- **Status:** Accepted (spike decision, 2026-07-07; native impl deferred — see Consequences)\n- **Date:** 2026-07-07\n- **Deciders:** solo-dev\n- **Related:** [0003](0003-gx-only-for-v1.md) (GX-only; DQX swap seam), [0011](0011-extensibility-seams-for-deferred-integrations.md) (second-impl-deferred seams — `CheckRunner`/`ConnectionAdapter`), [0012](0012-monitor-kind-seam.md) (freshness/schema-drift monitor kinds this feeds), [0010](0010-provider-agnostic-infrastructure-seams.md)/[0013](0013-marketplace-distribution-and-anti-lock-in.md) (anti-lock-in), [0015](README.md) (pending two-connection model — the Option B evolution). Issue [#286](https://github.com/TheurgicDuke771/DataQ/issues/286).\n\n## Context\n\nApache Iceberg is increasingly the default open table format on Databricks (Unity Catalog managed tables), Snowflake, and object storage (S3 Tables / ADLS + Polaris). #286 asks whether DataQ should read Iceberg tables natively. The spike (this session) answered two prior questions first, because they collapse most of the scope:\n\n1. **Does reading Iceberg through a query engine need new DataQ code?** No. `SnowflakeCheckRunner` (`add_table_asset` → SQL pushdown, `backend/app/datasources/snowflake.py`) and `UnityCatalogCheckRunner` (`pd.read_sql_table` over the SQL Warehouse, `backend/app/datasources/unity_catalog.py`) talk **SQL to the engine, never to the file format**. Whether an identifier resolves to a native FDN/Delta table or an Iceberg table (`CREATE ICEBERG TABLE … CATALOG_SOURCE=OBJECT_STORE`, or a Databricks foreign/UniForm table) is transparent to the connector, GX, and DataQ. A user can point a suite at an engine-registered Iceberg table **today, with […]
 
 > TOOL
@@ -731,7 +731,7 @@ id: toolu_01UJWYv7BttUu3MUP5F9Bgav
 tool_result
 id: toolu_01UJWYv7BttUu3MUP5F9Bgav
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/docs/adr/0030-iceberg-native-read-path.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -745,7 +745,7 @@ id: toolu_01Tvw7pQheTe2Dhva6Shjsij
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |\n\n## Pending (to be written in their respective weeks)",
   "new_string": "| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |\n| [0030](0030-iceberg-native-read-path.md) | Apache Iceberg — engine-level read (Snowflake/UC iceberg tables) is free, zero-code; the only new build is a **native `pyiceberg` read** (v2 baseline, v3 deferred) behind a thin `IcebergCheckRunner` (scan → DataFrame → `gx_runner`); new **self-contained** `iceberg` connection type (Option A: own catalog + storage credential — independent lifecycle, cascade-safe), Option B two-connection ref deferred to 0015; native impl deferred (#286) | Accepted (spike; native impl deferred) |\n\n## Pending (to be written in their respective weeks)"
 }
@@ -765,7 +765,7 @@ tool_use Read
 id: toolu_013J19WeFS4Q8bT6cFHp6CTh
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "offset": 40
 }
 ```
@@ -797,7 +797,7 @@ id: toolu_011Yv3gBdQX5YJC1v6eg3C6M
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |\n\n## Pending (to be written in their respective weeks)",
   "new_string": "| [0029](0029-dbt-orchestration-provider.md) | dbt as a **third** `OrchestrationProvider` (mirrors the Airflow callback model 0007) — HMAC webhook + artifacts poll of `run_results.json` (adls/s3/file); binds to dbt's universal surface (no host API); job-level grain; migration widens the connection-type/provider/dedup value-sets (#611) | Accepted |\n| [0030](0030-iceberg-native-read-path.md) | Apache Iceberg — engine-level read (Snowflake/UC iceberg tables) is free & zero-code; the only new build is a **native `pyiceberg` read** (v2 baseline, v3 deferred) behind a thin `IcebergCheckRunner` (scan → DataFrame → `gx_runner`); new **self-contained** `iceberg` connection type (Option A: own catalog + storage credential — independent lifecycle, cascade-safe), Option B two-connection ref deferred to 0015; reads Delta UniForm too; native impl deferred (#286) | Accepted (spike; native impl deferred) |\n\n## Pending (to be written in their respective weeks)"
 }
@@ -808,7 +808,7 @@ id: toolu_011Yv3gBdQX5YJC1v6eg3C6M
 tool_result
 id: toolu_011Yv3gBdQX5YJC1v6eg3C6M
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

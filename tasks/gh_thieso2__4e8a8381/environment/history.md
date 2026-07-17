@@ -2,7 +2,16 @@
 
 my local resolver does has some issues:
 
-~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman.                                                       [codex/fix-caddy-ca-eperm]PING tubu.sc.sandman (10.206.10.3): 56 data bytes64 bytes from 10.206.10.3: icmp_seq=0 ttl=63 time=22.932 ms--- tubu.sc.sandman ping statistics ---1 packets transmitted, 1 packets received, 0.0% packet lossround-trip min/avg/max/stddev = 22.932/22.932/22.932/0.000 ms~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman                                                        [codex/fix-caddy-ca-eperm]ping: cannot resolve tubu.sc.sandman: Unknown host~/Projects/GitHub/Sandcastle %                                                                                  [codex/fix-caddy-ca-eperm]
+~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman.                                                       [codex/fix-caddy-ca-eperm]
+PING tubu.sc.sandman (10.206.10.3): 56 data bytes
+64 bytes from 10.206.10.3: icmp_seq=0 ttl=63 time=22.932 ms
+
+--- tubu.sc.sandman ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 22.932/22.932/22.932/0.000 ms
+~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman                                                        [codex/fix-caddy-ca-eperm]
+ping: cannot resolve tubu.sc.sandman: Unknown host
+~/Projects/GitHub/Sandcastle %                                                                                  [codex/fix-caddy-ca-eperm]
 
 > AGENT
 
@@ -427,7 +436,7 @@ tool_use Read
 id: toolu_01MvUsRkojyvnzCMrq8xxFb6
 ```json
 {
-  "file_path": "/Users/thies/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
+  "file_path": "/home/<USER>/Projects/GitHub/Sandcastle/vendor/sandcastle-cli/cmd/dns.go",
   "offset": 280,
   "limit": 80
 }

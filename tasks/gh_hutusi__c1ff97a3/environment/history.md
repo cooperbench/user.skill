@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_011yXQk5EC3vpLn9ReamUfR7
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/roadmap-candidates.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/roadmap-candidates.md"
 }
 ```
 
@@ -43,7 +43,7 @@ id: toolu_01LiXtGYQJ3TZTw8j56tCBAF
   "description": "Explore engine/world core",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "Explore the voxel game codebase at /Users/hutusi/workspace/ai/david/monecraft (Next.js + Three.js + TypeScript, Bun). Search breadth: very thorough.\n\nGoal: understand everything the ENGINE/WORLD CORE side that a \"second dimension\" (Nether-like) feature would touch. I need concrete facts with file paths and line numbers.\n\nReport on:\n1. `GameState` shape (lib/game/engine/... state.ts or similar): where the VoxelWorld lives, how many worlds, what fields reference the world (light cache, seed, worldType). Where mobs, containers/chests, vehicles, primedTnt, dungeon/village/wreck site sets live and whether they're world-scoped or global.\n2. `VoxelWorld` class (lib/world/...): dimensions (X/Y/Z size), flat Uint8Array, light cache, how meshing consumes it (chunk mesher), how the renderer holds meshes (GameRenderer), remeshing on edit via blockChanges chokepoint.\n3. `generateWorld` / generation.ts: how worldgen is parameterized (terrainConfigFor, worldType), the pass ordering, PRNG conventions (per-pass xor constants), WORLDGEN_VERSION current value and where it's declared.\n4. GameEngine boot/step order: how the engine constructs the world at load (generate + apply saved `changes` diff?), the main tick loop order (docs/architecture.md has a step order — read it), where day/night cycle and sky rendering live (fog, sky color, sun/moon, stars), ambient lighting per time-of-day. What would need to vary per-dimension (sky, fog, […]
+  "prompt": "Explore the voxel game codebase at /home/<USER>/workspace/ai/david/monecraft (Next.js + Three.js + TypeScript, Bun). Search breadth: very thorough.\n\nGoal: understand everything the ENGINE/WORLD CORE side that a \"second dimension\" (Nether-like) feature would touch. I need concrete facts with file paths and line numbers.\n\nReport on:\n1. `GameState` shape (lib/game/engine/... state.ts or similar): where the VoxelWorld lives, how many worlds, what fields reference the world (light cache, seed, worldType). Where mobs, containers/chests, vehicles, primedTnt, dungeon/village/wreck site sets live and whether they're world-scoped or global.\n2. `VoxelWorld` class (lib/world/...): dimensions (X/Y/Z size), flat Uint8Array, light cache, how meshing consumes it (chunk mesher), how the renderer holds meshes (GameRenderer), remeshing on edit via blockChanges chokepoint.\n3. `generateWorld` / generation.ts: how worldgen is parameterized (terrainConfigFor, worldType), the pass ordering, PRNG conventions (per-pass xor constants), WORLDGEN_VERSION current value and where it's declared.\n4. GameEngine boot/step order: how the engine constructs the world at load (generate + apply saved `changes` diff?), the main tick loop order (docs/architecture.md has a step order — read it), where day/night cycle and sky rendering live (fog, sky color, sun/moon, stars), ambient lighting per time-of-day. What would need to vary per-dimension (sky, fog, […]
 
 > TOOL
 
@@ -54,7 +54,7 @@ id: toolu_015xqqiXosxZfvgKh63vLNe6
   "description": "Explore save + multiplayer",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "Explore the voxel game codebase at /Users/hutusi/workspace/ai/david/monecraft (Next.js + Three.js + TypeScript, Bun). Search breadth: very thorough.\n\nGoal: understand the SAVE FORMAT and MULTIPLAYER/PROTOCOL sides that a \"second dimension\" (Nether-like) feature would touch. Concrete facts with file paths and line numbers.\n\nReport on:\n1. Save schema (lib/game/save.ts or similar): current version number, the SaveData shape — especially how the world is persisted (seed + sparse `changes` block diff?), mobs (SavedMob), containers/chests, vehicles, lootedChests / dungeon-village-wreck site data, player position, spawn point. How migrations chain (migrateSaveVNtoVN+1). Read docs/save-format.md fully and summarize its compatibility rules.\n2. Whether saves go to localStorage or IndexedDB — check if PR #56 (feature/idb-saves branch) is merged into main or still open (git log / branch check), and what the current main uses.\n3. WORLDGEN_VERSION and how per-world staleness is handled (WorldMeta.worldgenVersion discard rule).\n4. Multiplayer architecture: the game server (Fly.io ws server — where is its code? server/ dir?), protocol version (v3), the wire protocol (docs/protocol.md — read fully): framing, handshake, what a tick contains (player positions, block edits, mob sync?), close codes, trust model. How rooms/sessions map to worlds. What state the server holds vs […]
+  "prompt": "Explore the voxel game codebase at /home/<USER>/workspace/ai/david/monecraft (Next.js + Three.js + TypeScript, Bun). Search breadth: very thorough.\n\nGoal: understand the SAVE FORMAT and MULTIPLAYER/PROTOCOL sides that a \"second dimension\" (Nether-like) feature would touch. Concrete facts with file paths and line numbers.\n\nReport on:\n1. Save schema (lib/game/save.ts or similar): current version number, the SaveData shape — especially how the world is persisted (seed + sparse `changes` block diff?), mobs (SavedMob), containers/chests, vehicles, lootedChests / dungeon-village-wreck site data, player position, spawn point. How migrations chain (migrateSaveVNtoVN+1). Read docs/save-format.md fully and summarize its compatibility rules.\n2. Whether saves go to localStorage or IndexedDB — check if PR #56 (feature/idb-saves branch) is merged into main or still open (git log / branch check), and what the current main uses.\n3. WORLDGEN_VERSION and how per-world staleness is handled (WorldMeta.worldgenVersion discard rule).\n4. Multiplayer architecture: the game server (Fly.io ws server — where is its code? server/ dir?), protocol version (v3), the wire protocol (docs/protocol.md — read fully): framing, handshake, what a tick contains (player positions, block edits, mob sync?), close codes, trust model. How rooms/sessions map to worlds. What state the server holds vs […]
 
 > TOOL
 
@@ -65,7 +65,7 @@ id: toolu_011ZNnxn3hc8PB1j7VQgpmss
   "description": "Explore content systems",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "Explore the voxel game codebase at /Users/hutusi/workspace/ai/david/monecraft (Next.js + Three.js + TypeScript, Bun). Search breadth: very thorough.\n\nGoal: understand the CONTENT SYSTEMS a \"Nether-like dimension\" feature would build on: blocks, items, recipes, textures, mobs, spawning, fluids/buckets. Concrete facts with file paths and line numbers.\n\nReport on:\n1. BlockId enum (lib/world/blocks.ts?): current highest id (memory says 70–89 used by rails/slabs/stairs PR #58; next free 90+), block property tables (solidity, hardness, texture mapping, light emission — how torch=14/lava=15 emission is declared), how a new block gets a procedural texture (texture atlas generation from pixel code — which file, what the pattern is).\n2. Item system (lib/game/items.ts): ItemId pattern, how items map to blocks vs pure items, tool tiers, food, potion items. How a new item gets a procedural sprite (spritePixels.ts pattern).\n3. Recipes (lib/game/recipes.ts): Recipe shape, station union (crafting/furnace/brewing/anvil/villager...), how smelting works, fuel table.\n4. Mob system (lib/game/mobs.ts + engine/systems/mobAI.ts + spawnDirector.ts): MobKind union and the exhaustive Record<MobKind> tables (how many, which), MOB_TEMPLATES shape (hp, speed, hostile, aquatic flag, faction), mob model creation (createMobModel variants — legless \"fish\" etc.), spawn director structure (passive/hostile/aquatic caps and timers, spawnInitialMobs groups), how hostile-only-at-night works, HOSTILE_MOB_KINDS. How […]
+  "prompt": "Explore the voxel game codebase at /home/<USER>/workspace/ai/david/monecraft (Next.js + Three.js + TypeScript, Bun). Search breadth: very thorough.\n\nGoal: understand the CONTENT SYSTEMS a \"Nether-like dimension\" feature would build on: blocks, items, recipes, textures, mobs, spawning, fluids/buckets. Concrete facts with file paths and line numbers.\n\nReport on:\n1. BlockId enum (lib/world/blocks.ts?): current highest id (memory says 70–89 used by rails/slabs/stairs PR #58; next free 90+), block property tables (solidity, hardness, texture mapping, light emission — how torch=14/lava=15 emission is declared), how a new block gets a procedural texture (texture atlas generation from pixel code — which file, what the pattern is).\n2. Item system (lib/game/items.ts): ItemId pattern, how items map to blocks vs pure items, tool tiers, food, potion items. How a new item gets a procedural sprite (spritePixels.ts pattern).\n3. Recipes (lib/game/recipes.ts): Recipe shape, station union (crafting/furnace/brewing/anvil/villager...), how smelting works, fuel table.\n4. Mob system (lib/game/mobs.ts + engine/systems/mobAI.ts + spawnDirector.ts): MobKind union and the exhaustive Record<MobKind> tables (how many, which), MOB_TEMPLATES shape (hp, speed, hostile, aquatic flag, faction), mob model creation (createMobModel variants — legless \"fish\" etc.), spawn director structure (passive/hostile/aquatic caps and timers, spawnInitialMobs groups), how hostile-only-at-night works, HOSTILE_MOB_KINDS. How […]
 
 > TOOL
 
@@ -80,7 +80,7 @@ I have gathered comprehensive facts across the engine and world core. Here is th
 
 All paths absolute. This game has **exactly one world volume today** — there is no dimension/portal/nether concept anywhere (`grep` for `dimension|nether|portal|overworld` finds only React `createPortal`, a test-only "world dimensions" size override, and prose). Everything below is what a second volume would touch.
 
-## 1. `GameState` shape — `/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts`
+## 1. `GameState` shape — `/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts`
 
 `GameState` is defined at **state.ts:283-395**. It holds **one** `VoxelWorld`:
 
@@ -107,7 +107,7 @@ I have gathered comprehensive information across all systems. Here is the struct
 
 # Content Systems Report — Nether-like Dimension Prerequisites
 
-Repo: `/Users/hutusi/workspace/ai/david/monecraft`. HEAD is PR #58 (rails/slabs/stairs) merged. All references are `file:line`.
+Repo: `/home/<USER>/workspace/ai/david/monecraft`. HEAD is PR #58 (rails/slabs/stairs) merged. All references are `file:line`.
 
 ## 1. Blocks (`lib/world/blocks.ts`)
 
@@ -133,14 +133,14 @@ Scope: what a "second dimension" (Nether-like) feature would touch on the persis
 
 ## 1. Save schema
 
-**Current version: 17.** Defined in `/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts:390-409` (`SaveData`). Written by `GameEngine.serialize()` at `/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:1188-1205`.
+**Current version: 17.** Defined in `/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts:390-409` (`SaveData`). Written by `GameEngine.serialize()` at `/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts:1188-1205`.
 
 **World-level (top-level) fields** — the "world half" a second dimension would most directly touch (`serialize()` GameEngine.ts:1190-1204):
 - `version: 17`
 - `seed` (number) — fixed for the world's life; world always regenerates from it.
 - `worldType` (optional `"default"|"flat"|"amplified"|"islands"`) — types.ts:192-194.
 - `difficulty`, `hardcore` — world-level.
-- `changes: Array<[blockIndex, blockId]>` — the sparse block diff vs generated terrain (types.ts:148, doc `/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md:18`). Voxel index formula `x + z*sizeX + y*sizeX*sizeZ` (save-format.md:103). Reverted-to-baseline edits are pruned. Applied at boot unconditionally by `blockChanges.applySavedChanges(save.changes)` (GameEngine.ts:287).
+- `changes: Array<[blockIndex, blockId]>` — the sparse block diff vs generated terrain (types.ts:148, doc `/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md:18`). Voxel index formula `x + z*sizeX + y*sizeX*sizeZ` (save-format.md:103). Reverted-to-baseline edits are pruned. Applied at boot unconditionally by `blockChanges.applySavedChanges(save.changes)` (GameEngine.ts:287).
 - `blockEntities?: SavedContainer[]` — chest contents `{ index, slots }`, keyed by voxel index; only non-empty chests stored. Type types.ts:142; serialize/read `serializeContainers`/`readContainers` at save.ts:459-466 / 614-623.
 - `lootedChests?: number[]` — voxel indices of opened/broken **worldgen** loot chests (dungeon/shipwreck/buried treasure). Worldgen chest contents are NOT in `changes`/`blockEntities`; filled lazily (`seed ^ index`) and the index recorded here to […]
 
@@ -196,7 +196,7 @@ id: toolu_01UdYCm3HEjVEiZBbfPZpzxh
   "description": "Design Nether epic plan",
   "subagent_type": "Plan",
   "run_in_background": false,
-  "prompt": "Design a detailed implementation plan for a \"Nether-like dimension\" epic in the voxel game at /Users/hutusi/workspace/ai/david/monecraft (Next.js 16 + React 19 + Three.js + TypeScript strict + Bun; single-player browser game with optional multiplayer via a Bun ws server; zero binary assets — all textures/sprites/sounds procedural).\n\n## User decisions (fixed, do not revisit)\n- ONE epic branch `feat/nether` off main, focused conventional commits per stage, one PR at the end. Lint green at each commit (bisectable).\n- Three stages in order: (1) buckets & fluids precursor, (2) multi-dimension core + portal, (3) Nether content (standard scope).\n- Dimension switch = SWAP-ON-TRAVEL: one live dimension at a time; portal travel autosaves the current dimension and rebuilds engine+renderer into the target via the existing shell remount path. No dual-live-worlds refactor.\n- Single-player first: portal ignition in online worlds is refused with a toast; protocol stays v3; server must round-trip new save fields untouched.\n- Standard content scope: netherrack, glowstone (+dust/lamp), lava-sea/cavern worldgen, a post-diamond ore tier (netherite-style), 2 new mobs (melee brute + ranged fire-shooter), nether advancements.\n\n## Verified codebase facts (from exploration; trust these, spot-check as needed)\n\n### Engine core\n- `GameState` at lib/game/engine/state.ts:283-395 […]
+  "prompt": "Design a detailed implementation plan for a \"Nether-like dimension\" epic in the voxel game at /home/<USER>/workspace/ai/david/monecraft (Next.js 16 + React 19 + Three.js + TypeScript strict + Bun; single-player browser game with optional multiplayer via a Bun ws server; zero binary assets — all textures/sprites/sounds procedural).\n\n## User decisions (fixed, do not revisit)\n- ONE epic branch `feat/nether` off main, focused conventional commits per stage, one PR at the end. Lint green at each commit (bisectable).\n- Three stages in order: (1) buckets & fluids precursor, (2) multi-dimension core + portal, (3) Nether content (standard scope).\n- Dimension switch = SWAP-ON-TRAVEL: one live dimension at a time; portal travel autosaves the current dimension and rebuilds engine+renderer into the target via the existing shell remount path. No dual-live-worlds refactor.\n- Single-player first: portal ignition in online worlds is refused with a toast; protocol stays v3; server must round-trip new save fields untouched.\n- Standard content scope: netherrack, glowstone (+dust/lamp), lava-sea/cavern worldgen, a post-diamond ore tier (netherite-style), 2 new mobs (melee brute + ranged fire-shooter), nether advancements.\n\n## Verified codebase facts (from exploration; trust these, spot-check as needed)\n\n### Engine core\n- `GameState` at lib/game/engine/state.ts:283-395 […]
 
 > TOOL
 
@@ -211,7 +211,7 @@ Branch `feat/nether` off main. One PR. Every commit passes `bun run lint && bun 
 
 ## Validation results that shape the plan (deltas from your leanings)
 
-1. **Travel flow is feasible exactly as sketched, with one ordering trap.** `useMinecraftGame.ts` (`/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts`) drains engine events in the rAF clock (line 451+); `loadNow` (671) is the template: set `skipUnmountSaveRef` → write → `onReloadWorld()`. **Trap:** the 15s autosave and the unmount save both call `persistGame(engine…)` with the *pre-travel* state; the save store is queued latest-wins, so the travel handler must set `skipUnmountSaveRef.current = true` **before** enqueuing the travel save (the flag gates both autosave at line 410 and flush at 426). The remount's `WorldSaveGate` read is ordered after the write by the store (read-your-writes, documented at GameShell.tsx:114-121).
+1. **Travel flow is feasible exactly as sketched, with one ordering trap.** `useMinecraftGame.ts` (`/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts`) drains engine events in the rAF clock (line 451+); `loadNow` (671) is the template: set `skipUnmountSaveRef` → write → `onReloadWorld()`. **Trap:** the 15s autosave and the unmount save both call `persistGame(engine…)` with the *pre-travel* state; the save store is queued latest-wins, so the travel handler must set `skipUnmountSaveRef.current = true` **before** enqueuing the travel save (the flag gates both autosave at line 410 and flush at 426). The remount's `WorldSaveGate` read is ordered after the write by the store (read-your-writes, documented at GameShell.tsx:114-121).
 2. **The engine can learn its dimension from the save alone** — no GameShell/WorldMeta plumbing needed. Boot resolves `save.players[local].dimension ?? "overworld"`; fresh […]
 
 > TOOL
@@ -220,7 +220,7 @@ tool_use Read
 id: toolu_01ARFZE9epYTUU6fbS6XUfBz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "offset": 395,
   "limit": 115
 }
@@ -262,7 +262,7 @@ tool_use Read
 id: toolu_019H7tMBCcfDZoQP2MZbah1J
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "offset": 640,
   "limit": 70
 }
@@ -313,7 +313,7 @@ tool_use Write
 id: toolu_01CQHDh6rTGA5hMJMxGZXsSx
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/now-let-s-think-of-sunny-rocket.md",
+  "file_path": "/home/<USER>/.claude/plans/now-let-s-think-of-sunny-rocket.md",
   "content": "# Nether Dimension Epic — `feat/nether`\n\n## Context\n\nThe Nether-like dimension is the picked next epic (2026-07-06). The game today is strictly single-world: `GameState` holds one `VoxelWorld` (state.ts:284), all voxel-index-keyed state (containers, TNT, redstone, worldgen sites) shares one coordinate namespace, sky/fog/day-night are hard-coded renderer state, and there is no fluid machinery (no buckets, no obsidian, no flint & steel, no teleport primitive). This epic adds a second dimension reachable by portal, plus the fluid precursor that makes obsidian obtainable, plus Nether content — giving post-diamond progression a home.\n\n**User decisions (fixed):**\n- **One epic branch** `feat/nether` off main, focused conventional commits per stage, one PR. Lint green per commit (bisectable). Format+lint locally per commit; CI verify covers the rest ([[local-verify-format-lint-only]]).\n- **Swap-on-travel**: one live dimension at a time. Portal travel = autosave → shell remount → engine boots into the target dimension. No dual-live-worlds refactor.\n- **Single-player first**: portal ignition refused in online worlds (toast). Protocol stays v3. Server round-trips new save fields untouched.\n- **Standard content**: netherrack, glowstone(+dust), lava-sea worldgen, post-diamond \"blazite\" tier (pickaxe/sword/axe, no armor), 2 mobs (imp melee, scorcher ranged-fireball), advancements.\n\n**Versions**: save v17→**v18**; WORLDGEN_VERSION stays **11** (overworld bytes untouched — baselines prove it); protocol stays […]
 
 > TOOL
@@ -321,7 +321,7 @@ id: toolu_01CQHDh6rTGA5hMJMxGZXsSx
 tool_result
 id: toolu_01CQHDh6rTGA5hMJMxGZXsSx
 ```
-File created successfully at: /Users/hutusi/.claude/plans/now-let-s-think-of-sunny-rocket.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/now-let-s-think-of-sunny-rocket.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -375,7 +375,7 @@ id: toolu_016ET3KqiVbMgcH4jeMbzXz3
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/now-let-s-think-of-sunny-rocket.md
+Your plan has been saved to: /home/<USER>/.claude/plans/now-let-s-think-of-sunny-rocket.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -813,7 +813,7 @@ tool_use Read
 id: toolu_01V35WkANcdzSBSYmZSP8rwD
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts"
 }
 ```
 
@@ -872,7 +872,7 @@ tool_use Read
 id: toolu_01SMCHzrzvVQJQ7EmqVnLs9x
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "offset": 40,
   "limit": 140
 }
@@ -947,7 +947,7 @@ tool_use Read
 id: toolu_01RztHxapGGVBTQMaLdpL9Ru
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "offset": 35,
   "limit": 30
 }
@@ -996,7 +996,7 @@ tool_use Read
 id: toolu_01Xwvp2x3NXJwEfXMQDNUAW8
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "offset": 330,
   "limit": 210
 }
@@ -1038,7 +1038,7 @@ tool_use Read
 id: toolu_019VJcEhcR1N3uR7e6CsYTJc
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "offset": 100,
   "limit": 80
 }
@@ -1068,7 +1068,7 @@ tool_use Bash
 id: toolu_01YBCzsXivxrM15VKHZXiViD
 ```json
 {
-  "command": "grep -n \"Rail\\|Slab\\|Stairs\\|MaterialGroup\\|Record<BlockId\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts | head -30",
+  "command": "grep -n \"Rail\\|Slab\\|Stairs\\|MaterialGroup\\|Record<BlockId\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts | head -30",
   "description": "Find sound-family table shape in materials.ts"
 }
 ```
@@ -1112,7 +1112,7 @@ tool_use Bash
 id: toolu_013BEzeEnD7MtseN5LAu2XLX
 ```json
 {
-  "command": "grep -n \"Obsidian\\|BLOCK_COLORS\\|BREAK_HARDNESS\\|BLOCK_TO_SLOT\\|HELD_BLOCK\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.test.ts | head -30",
+  "command": "grep -n \"Obsidian\\|BLOCK_COLORS\\|BREAK_HARDNESS\\|BLOCK_TO_SLOT\\|HELD_BLOCK\" /home/<USER>/workspace/ai/david/monecraft/lib/game/config.test.ts | head -30",
   "description": "Find block integrity test patterns in config.test.ts"
 }
 ```
@@ -1135,7 +1135,7 @@ tool_use Read
 id: toolu_015xikUwCEging1hwkKPLyLs
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.test.ts",
   "offset": 70,
   "limit": 60
 }
@@ -1196,7 +1196,7 @@ id: toolu_01UkJMVvkUP953Ayz2adD9yR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  CobbleStairsNorth = 86,\n  CobbleStairsEast = 87,\n  CobbleStairsSouth = 88,\n  CobbleStairsWest = 89\n}",
   "new_string": "  CobbleStairsNorth = 86,\n  CobbleStairsEast = 87,\n  CobbleStairsSouth = 88,\n  CobbleStairsWest = 89,\n  // Volcanic glass, created by quenching lava with a water bucket (interact.ts).\n  // The hardest mineable block — diamond-pickaxe-gated (mining.ts) — and the\n  // only material a nether portal frame can be built from (portal.ts).\n  Obsidian = 90\n}"
 }
@@ -1207,7 +1207,7 @@ id: toolu_01UkJMVvkUP953Ayz2adD9yR
 tool_result
 id: toolu_01UkJMVvkUP953Ayz2adD9yR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1217,7 +1217,7 @@ id: toolu_01VR5DpP47biQq57Rr6LtYBw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  [BlockId.PlankStairsNorth]: 0xbe965d,\n  [BlockId.StoneStairsNorth]: 0x8f9296,\n  [BlockId.CobbleStairsNorth]: 0x787c82\n};",
   "new_string": "  [BlockId.PlankStairsNorth]: 0xbe965d,\n  [BlockId.StoneStairsNorth]: 0x8f9296,\n  [BlockId.CobbleStairsNorth]: 0x787c82,\n  [BlockId.Obsidian]: 0x241c38\n};"
 }
@@ -1228,7 +1228,7 @@ id: toolu_01VR5DpP47biQq57Rr6LtYBw
 tool_result
 id: toolu_01VR5DpP47biQq57Rr6LtYBw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1238,7 +1238,7 @@ id: toolu_01VETThNn8GCGEAMjCANZhwi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  [BlockId.CobbleStairsNorth]: [0.42, 0.43, 0.45],\n  [BlockId.CobbleStairsEast]: [0.42, 0.43, 0.45],\n  [BlockId.CobbleStairsSouth]: [0.42, 0.43, 0.45],\n  [BlockId.CobbleStairsWest]: [0.42, 0.43, 0.45]\n};",
   "new_string": "  [BlockId.CobbleStairsNorth]: [0.42, 0.43, 0.45],\n  [BlockId.CobbleStairsEast]: [0.42, 0.43, 0.45],\n  [BlockId.CobbleStairsSouth]: [0.42, 0.43, 0.45],\n  [BlockId.CobbleStairsWest]: [0.42, 0.43, 0.45],\n  // Near-black volcanic glass with violet flecks (painted in atlas.ts).\n  [BlockId.Obsidian]: [0.09, 0.07, 0.14]\n};"
 }
@@ -1249,7 +1249,7 @@ id: toolu_01VETThNn8GCGEAMjCANZhwi
 tool_result
 id: toolu_01VETThNn8GCGEAMjCANZhwi
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1259,7 +1259,7 @@ id: toolu_01X5iZyWsCUNDaoQPsdZioSr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  [BlockId.CobbleStairsNorth]: 4,\n  [BlockId.CobbleStairsEast]: 4,\n  [BlockId.CobbleStairsSouth]: 4,\n  [BlockId.CobbleStairsWest]: 4\n};",
   "new_string": "  [BlockId.CobbleStairsNorth]: 4,\n  [BlockId.CobbleStairsEast]: 4,\n  [BlockId.CobbleStairsSouth]: 4,\n  [BlockId.CobbleStairsWest]: 4,\n  // The hardest mineable block — a long grind even for the diamond pickaxe\n  // that its tier gate requires (see canMineBlock in mining.ts).\n  [BlockId.Obsidian]: 40\n};"
 }
@@ -1270,7 +1270,7 @@ id: toolu_01X5iZyWsCUNDaoQPsdZioSr
 tool_result
 id: toolu_01X5iZyWsCUNDaoQPsdZioSr
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1280,7 +1280,7 @@ id: toolu_012wjXLbb8z8VoNgUUXn5xTR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"plank_stairs\", label: \"Plank Stairs\", kind: \"block\", blockId: BlockId.PlankStairsNorth },\n  { id: \"stone_stairs\", label: \"Stone Stairs\", kind: \"block\", blockId: BlockId.StoneStairsNorth },\n  { id: \"cobble_stairs\", label: \"Cobble Stairs\", kind: \"block\", blockId: BlockId.CobbleStairsNorth },",
   "new_string": "  { id: \"plank_stairs\", label: \"Plank Stairs\", kind: \"block\", blockId: BlockId.PlankStairsNorth },\n  { id: \"stone_stairs\", label: \"Stone Stairs\", kind: \"block\", blockId: BlockId.StoneStairsNorth },\n  { id: \"cobble_stairs\", label: \"Cobble Stairs\", kind: \"block\", blockId: BlockId.CobbleStairsNorth },\n  // Created by quenching lava with a water bucket; the portal-frame material.\n  { id: \"obsidian\", label: \"Obsidian\", kind: \"block\", blockId: BlockId.Obsidian },"
 }
@@ -1291,7 +1291,7 @@ id: toolu_012wjXLbb8z8VoNgUUXn5xTR
 tool_result
 id: toolu_012wjXLbb8z8VoNgUUXn5xTR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1301,7 +1301,7 @@ id: toolu_01P7J94yMRT6J1BNUki8QXBc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  [BlockId.CobbleStairsNorth]: \"cobble_stairs\",\n  [BlockId.CobbleStairsEast]: \"cobble_stairs\",\n  [BlockId.CobbleStairsSouth]: \"cobble_stairs\",\n  [BlockId.CobbleStairsWest]: \"cobble_stairs\",",
   "new_string": "  [BlockId.CobbleStairsNorth]: \"cobble_stairs\",\n  [BlockId.CobbleStairsEast]: \"cobble_stairs\",\n  [BlockId.CobbleStairsSouth]: \"cobble_stairs\",\n  [BlockId.CobbleStairsWest]: \"cobble_stairs\",\n  [BlockId.Obsidian]: \"obsidian\","
 }
@@ -1312,7 +1312,7 @@ id: toolu_01P7J94yMRT6J1BNUki8QXBc
 tool_result
 id: toolu_01P7J94yMRT6J1BNUki8QXBc
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1322,7 +1322,7 @@ id: toolu_01Ni9ADrgaUrmg4KEQL1VMMa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "old_string": "  if (block === BlockId.SapphireOre) return toolTier >= 4;\n  if (block === BlockId.DiamondOre) return toolTier >= 4;\n  return true;\n}",
   "new_string": "  if (block === BlockId.SapphireOre) return toolTier >= 4;\n  if (block === BlockId.DiamondOre) return toolTier >= 4;\n  // Obsidian yields only to the top pickaxe tier (diamond, mineTier 7).\n  if (block === BlockId.Obsidian) return toolTier >= 7;\n  return true;\n}"
 }
@@ -1333,7 +1333,7 @@ id: toolu_01Ni9ADrgaUrmg4KEQL1VMMa
 tool_result
 id: toolu_01Ni9ADrgaUrmg4KEQL1VMMa
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1343,7 +1343,7 @@ id: toolu_01DecY8ZrHcw2YHmSYztLCKj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "old_string": "        if (block === BlockId.Tnt) {",
   "new_string": "        if (block === BlockId.Obsidian) {\n          // Volcanic glass: a near-black bed with faint violet sheen bands and\n          // the occasional bright fleck where the surface catches light.\n          const sheen = (x + y * 2) % 7 === 0;\n          c = sheen ? tone([0.24, 0.16, 0.4], 0.9 + n * 0.3) : tone([0.08, 0.06, 0.13], 0.85 + n * 0.35);\n          if (n > 0.94) c = tone([0.55, 0.42, 0.78], 1); // light-catching fleck\n        }\n        if (block === BlockId.Tnt) {"
 }
@@ -1354,7 +1354,7 @@ id: toolu_01DecY8ZrHcw2YHmSYztLCKj
 tool_result
 id: toolu_01DecY8ZrHcw2YHmSYztLCKj
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1363,7 +1363,7 @@ tool_use Read
 id: toolu_019iEbY2yxHKafcui5Lf4jne
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
   "offset": 76,
   "limit": 35
 }
@@ -1415,7 +1415,7 @@ id: toolu_01BM615DEweEq4nWVfaWsvdz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
   "old_string": "  [BlockId.CobbleStairsNorth]: \"stone\",\n  [BlockId.CobbleStairsEast]: \"stone\",\n  [BlockId.CobbleStairsSouth]: \"stone\",\n  [BlockId.CobbleStairsWest]: \"stone\"\n};",
   "new_string": "  [BlockId.CobbleStairsNorth]: \"stone\",\n  [BlockId.CobbleStairsEast]: \"stone\",\n  [BlockId.CobbleStairsSouth]: \"stone\",\n  [BlockId.CobbleStairsWest]: \"stone\",\n  [BlockId.Obsidian]: \"stone\"\n};"
 }
@@ -1426,7 +1426,7 @@ id: toolu_01BM615DEweEq4nWVfaWsvdz
 tool_result
 id: toolu_01BM615DEweEq4nWVfaWsvdz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1439,7 +1439,7 @@ tool_use Bash
 id: toolu_01SfvoN3o2p62XiwgPa6NweY
 ```json
 {
-  "command": "grep -n \"canMineBlock\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts | head",
+  "command": "grep -n \"canMineBlock\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts | head",
   "description": "Find canMineBlock tests in mining.test.ts"
 }
 ```
@@ -1467,7 +1467,7 @@ tool_use Read
 id: toolu_017Uqpd48iGEPRHzjSQCLEpz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts",
   "offset": 10,
   "limit": 25
 }
@@ -1512,7 +1512,7 @@ id: toolu_019GEfPQaSBybQSBAf9zjjyn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts",
   "old_string": "  test(\"soft blocks break with bare hands\", () => {\n    expect(canMineBlock(BlockId.Dirt, 0)).toBe(true);\n    expect(canMineBlock(BlockId.Grass, 0)).toBe(true);\n    expect(canMineBlock(BlockId.Wood, 0)).toBe(true);\n  });\n});",
   "new_string": "  test(\"soft blocks break with bare hands\", () => {\n    expect(canMineBlock(BlockId.Dirt, 0)).toBe(true);\n    expect(canMineBlock(BlockId.Grass, 0)).toBe(true);\n    expect(canMineBlock(BlockId.Wood, 0)).toBe(true);\n  });\n\n  test(\"obsidian yields only to the diamond pickaxe (tier 7)\", () => {\n    expect(canMineBlock(BlockId.Obsidian, 6)).toBe(false); // gold pickaxe can't\n    expect(canMineBlock(BlockId.Obsidian, 7)).toBe(true);\n  });\n});"
 }
@@ -1523,7 +1523,7 @@ id: toolu_019GEfPQaSBybQSBAf9zjjyn
 tool_result
 id: toolu_019GEfPQaSBybQSBAf9zjjyn
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1599,7 +1599,7 @@ id: toolu_01Th4HiwNkKHXfouS53AZkMF
 tool_result
 id: toolu_01Th4HiwNkKHXfouS53AZkMF
 ```
-/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx
+/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx
   166:28  warning  Do not call the 'set' function 'setAuthProbed' of 'useState' synchronously in an effect. This can lead to unnecessary re-renders and performance issues  @eslint-react/set-state-in-effect
   172:39  warning  Do not call the 'set' function 'setAuthProbed' of 'useState' synchronously in an effect. This can lead to unnecessary re-renders and performance issues  @eslint-react/set-state-in-effect
 
@@ -1676,7 +1676,7 @@ tool_use Read
 id: toolu_019faVSHz6ESto3EeL3goZYx
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "offset": 290,
   "limit": 90
 }
@@ -1722,7 +1722,7 @@ tool_use Read
 id: toolu_017W9qx11ZWLrzG24AnY7VZp
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts",
   "offset": 6,
   "limit": 60
 }
@@ -1766,7 +1766,7 @@ tool_use Bash
 id: toolu_012TysmVA1MBB3X2G1XY76hE
 ```json
 {
-  "command": "grep -n \"export function\\|export const\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/inventory.ts",
+  "command": "grep -n \"export function\\|export const\" /home/<USER>/workspace/ai/david/monecraft/lib/game/inventory.ts",
   "description": "List inventory module exports"
 }
 ```
@@ -1799,7 +1799,7 @@ tool_use Read
 id: toolu_01KVGrf6zuVg31jhkBVr3CQZ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/inventory.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/inventory.ts",
   "offset": 31,
   "limit": 55
 }
@@ -1849,7 +1849,7 @@ tool_use Read
 id: toolu_01KmMyVZRhcxwDsQwnYkj1n1
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "offset": 232,
   "limit": 85
 }
@@ -1898,7 +1898,7 @@ tool_use Bash
 id: toolu_01NsJhRvoR6G6xsajgpZdR3t
 ```json
 {
-  "command": "grep -n \"tilledSoil\\|plantedSapling\\|usedBoneMeal\\|lavaSolidified\\|type: \\\"blockPlaced\\\"\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts | head; grep -n \"case \\\"placeBlock\\\"\" -A 30 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -40",
+  "command": "grep -n \"tilledSoil\\|plantedSapling\\|usedBoneMeal\\|lavaSolidified\\|type: \\\"blockPlaced\\\"\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts | head; grep -n \"case \\\"placeBlock\\\"\" -A 30 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -40",
   "description": "Find GameEvent union entries and placeBlock dispatch chain"
 }
 ```
@@ -1940,7 +1940,7 @@ tool_use Bash
 id: toolu_01JgcaLUCRk2m3ZMAkQuxsCD
 ```json
 {
-  "command": "grep -n \"treasure_map\\|shipwreck\\|priority\\|hunt\\|function\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts | head -25",
+  "command": "grep -n \"treasure_map\\|shipwreck\\|priority\\|hunt\\|function\" /home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts | head -25",
   "description": "Inspect itemSources hint derivation"
 }
 ```
@@ -1963,7 +1963,7 @@ tool_use Bash
 id: toolu_011Y3Vg9PjKKp5XvR54aZkpU
 ```json
 {
-  "command": "grep -rn \"fishingCaught\\|tilledSoil\\|usedBoneMeal\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/*.ts | head -10",
+  "command": "grep -rn \"fishingCaught\\|tilledSoil\\|usedBoneMeal\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/*.ts | head -10",
   "description": "Find audio director event handling pattern"
 }
 ```
@@ -1973,9 +1973,9 @@ id: toolu_011Y3Vg9PjKKp5XvR54aZkpU
 tool_result
 id: toolu_011Y3Vg9PjKKp5XvR54aZkpU
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts:306:        case "tilledSoil":
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts:313:        case "usedBoneMeal":
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts:322:        case "fishingCaught":
+/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts:306:        case "tilledSoil":
+/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts:313:        case "usedBoneMeal":
+/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts:322:        case "fishingCaught":
 ```
 
 > TOOL
@@ -1984,7 +1984,7 @@ tool_use Read
 id: toolu_01N3MqSH4FbGJDvUwPhmk4XJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts",
   "offset": 60,
   "limit": 65
 }
@@ -2021,7 +2021,7 @@ tool_use Read
 id: toolu_01CB4VzPwxPoKJfQaeH7SKPG
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "offset": 295,
   "limit": 45
 }
@@ -2085,7 +2085,7 @@ tool_use Read
 id: toolu_0158yTof4YMUY6Rw1WcxzVc2
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts",
   "offset": 1,
   "limit": 59
 }
@@ -2130,7 +2130,7 @@ tool_use Bash
 id: toolu_01DcM5bE9VFFZRrU1xBqojpj
 ```json
 {
-  "command": "grep -n \"SPLASH\\|BUBBLE\\|SIZZLE\\|FISHING_CAST_SOUND\\|TILL_SOUND\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts | head",
+  "command": "grep -n \"SPLASH\\|BUBBLE\\|SIZZLE\\|FISHING_CAST_SOUND\\|TILL_SOUND\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts | head",
   "description": "Find existing splashy/sizzle sound params"
 }
 ```
@@ -2150,7 +2150,7 @@ tool_use Read
 id: toolu_01M2GGMxLBxeToPPjybeCbfA
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "offset": 1300,
   "limit": 60
 }
@@ -2227,7 +2227,7 @@ tool_use Read
 id: toolu_01CZBfzJqnCVtky2QNG4bJfA
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "offset": 820,
   "limit": 110
 }
@@ -2282,7 +2282,7 @@ id: toolu_01UsCPCq7KdTyaY11Js3gGjU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts",
   "old_string": "  /** Hunger points restored when eaten (food items only). */\n  hunger?: number;\n  /** The status effect this potion applies when drunk (potion items only). */\n  effect?: ItemEffect;\n};",
   "new_string": "  /** Hunger points restored when eaten (food items only). */\n  hunger?: number;\n  /** The status effect this potion applies when drunk (potion items only). */\n  effect?: ItemEffect;\n  /** Per-item stack cap; defaults to MAX_STACK_SIZE (durable gear always stacks to 1). */\n  stackSize?: number;\n};"
 }
@@ -2293,7 +2293,7 @@ id: toolu_01UsCPCq7KdTyaY11Js3gGjU
 tool_result
 id: toolu_01UsCPCq7KdTyaY11Js3gGjU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2303,7 +2303,7 @@ id: toolu_01UHmoRL98sishLAbYgdsXja
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "export function maxStackSizeForItem(itemId: string): number {\n  return ITEM_DEF_BY_ID[itemId]?.maxDurability ? 1 : MAX_STACK_SIZE;\n}",
   "new_string": "export function maxStackSizeForItem(itemId: string): number {\n  const def = ITEM_DEF_BY_ID[itemId];\n  if (def?.maxDurability) return 1;\n  return def?.stackSize ?? MAX_STACK_SIZE;\n}"
 }
@@ -2314,7 +2314,7 @@ id: toolu_01UHmoRL98sishLAbYgdsXja
 tool_result
 id: toolu_01UHmoRL98sishLAbYgdsXja
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2324,7 +2324,7 @@ id: toolu_01GcnYsSsUif3RrhRL79ZUqn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"fishing_rod\", label: \"Fishing Rod\", kind: \"tool\", minePower: 0, mineTier: 0, maxDurability: FISHING_ROD_DURABILITY },\n  { id: \"food\", label: \"Food\", kind: \"food\", hunger: 7 },",
   "new_string": "  { id: \"fishing_rod\", label: \"Fishing Rod\", kind: \"tool\", minePower: 0, mineTier: 0, maxDurability: FISHING_ROD_DURABILITY },\n  // Buckets carry one fluid block (right-click use — see interact.ts). Empties\n  // stack in bundles; a filled bucket is a single sloshing payload.\n  { id: \"bucket\", label: \"Bucket\", kind: \"material\", stackSize: 16 },\n  { id: \"water_bucket\", label: \"Water Bucket\", kind: \"material\", stackSize: 1 },\n  { id: \"lava_bucket\", label: \"Lava Bucket\", kind: \"material\", stackSize: 1 },\n  { id: \"food\", label: \"Food\", kind: \"food\", hunger: 7 },"
 }
@@ -2335,7 +2335,7 @@ id: toolu_01GcnYsSsUif3RrhRL79ZUqn
 tool_result
 id: toolu_01GcnYsSsUif3RrhRL79ZUqn
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2344,7 +2344,7 @@ tool_use Read
 id: toolu_012S4JwyostGeCBUrmnx1kS9
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "offset": 575,
   "limit": 20
 }
@@ -2384,7 +2384,7 @@ id: toolu_01GbTqZ2WAs2e8rSyK9ZH931
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  | { type: \"tilledSoil\" }\n  | { type: \"plantedSeed\" }\n  | { type: \"plantedSapling\" }\n  | { type: \"usedBoneMeal\" }",
   "new_string": "  | { type: \"tilledSoil\" }\n  | { type: \"plantedSeed\" }\n  | { type: \"plantedSapling\" }\n  | { type: \"usedBoneMeal\" }\n  | { type: \"bucketFilled\"; fluid: \"water\" | \"lava\" }\n  | { type: \"bucketEmptied\"; fluid: \"water\" | \"lava\" }"
 }
@@ -2395,7 +2395,7 @@ id: toolu_01GbTqZ2WAs2e8rSyK9ZH931
 tool_result
 id: toolu_01GbTqZ2WAs2e8rSyK9ZH931
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2408,7 +2408,7 @@ tool_use Read
 id: toolu_01J8GD92vqSQeDteSNCSCXVq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "offset": 1,
   "limit": 32
 }
@@ -2460,7 +2460,7 @@ id: toolu_01BfYxSptWRe1nJdiRAfYXYP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "import { adjustSlotCount, consumeToolDurability } from \"@/lib/game/inventory\";\nimport { createEmptySlot } from \"@/lib/game/items\";",
   "new_string": "import { adjustSlotCount, consumeToolDurability, countsById } from \"@/lib/game/inventory\";\nimport { createEmptySlot, createSlot } from \"@/lib/game/items\";"
 }
@@ -2471,7 +2471,7 @@ id: toolu_01BfYxSptWRe1nJdiRAfYXYP
 tool_result
 id: toolu_01BfYxSptWRe1nJdiRAfYXYP
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2481,7 +2481,7 @@ id: toolu_01XqiswY4NHrMK92SPVBR8PG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "/**\n * Right-click \"use\" of the held item on the aimed block: a hoe tills grass/dirt\n * into farmland, seeds plant wheat on farmland. Returns true when an action\n * happened (consumes the click), false to fall through to block placement.\n */\nexport function tryUseHeldItem(state: GameState, player: PlayerState, emit: EmitGameEvent, rng: () => number): boolean {\n  const slot = player.inventory[player.selectedSlot];\n  if (!slot?.id || slot.count <= 0) return false;\n  const isHoe = slot.id.endsWith(\"_hoe\");\n  const isSeeds = slot.id === \"seeds\";\n  const isTorch = slot.id === \"torch\";\n  const isSapling = slot.id === \"sapling\";\n  const isBoneMeal = slot.id === \"bone_meal\";\n  if (!isHoe && !isSeeds && !isTorch && !isSapling && !isBoneMeal) return false;",
   "new_string": "/**\n * Swaps one unit of the held item for `resultId` (the bucket fill/empty trade).\n * When the hand empties, the result lands right back in it; otherwise it joins\n * the inventory wherever it fits. Returns false — no change — when it can't fit.\n */\nfunction swapHeldForItem(player: PlayerState, resultId: string): boolean {\n  const slot = player.inventory[player.selectedSlot];\n  if (!slot?.id) return false;\n  const removed = adjustSlotCount(player.inventory, slot.id, -1, player.selectedSlot);\n  if (!removed) return false;\n  const hand = removed[player.selectedSlot];\n  if (hand.id === null) {\n […]
 
@@ -2490,7 +2490,7 @@ id: toolu_01XqiswY4NHrMK92SPVBR8PG
 tool_result
 id: toolu_01XqiswY4NHrMK92SPVBR8PG
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2499,7 +2499,7 @@ tool_use Bash
 id: toolu_01CxBt3S4pvhXJPn5EjQgCQQ
 ```json
 {
-  "command": "grep -n \"collidesAt\\|PLAYER_HALF_WIDTH\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts | head -4",
+  "command": "grep -n \"collidesAt\\|PLAYER_HALF_WIDTH\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts | head -4",
   "description": "Find collidesAt import source"
 }
 ```
@@ -2520,7 +2520,7 @@ tool_use Bash
 id: toolu_017fHULmcHXgzepzpxt8M2fE
 ```json
 {
-  "command": "sed -n 1,20p /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "command": "sed -n 1,20p /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "description": "See collidesAt import module in mining.ts"
 }
 ```
@@ -2559,7 +2559,7 @@ id: toolu_01XKjbZsUsiC6qV97YfKa6vF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "import { BlockId, doorBlock, doorState, voxelRaycast } from \"@/lib/world\";",
   "new_string": "import { BlockId, collidesAt, doorBlock, doorState, voxelRaycast } from \"@/lib/world\";"
 }
@@ -2570,7 +2570,7 @@ id: toolu_01XKjbZsUsiC6qV97YfKa6vF
 tool_result
 id: toolu_01XKjbZsUsiC6qV97YfKa6vF
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2580,7 +2580,7 @@ id: toolu_01SPToggndXBfRxtPu29QYW8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "  MINE_REACH,\n  PET_FIGHT_RANGE,\n  PET_TAMED_HP,",
   "new_string": "  MINE_REACH,\n  PET_FIGHT_RANGE,\n  PET_TAMED_HP,\n  PLAYER_HALF_WIDTH,\n  PLAYER_HEIGHT,"
 }
@@ -2591,7 +2591,7 @@ id: toolu_01SPToggndXBfRxtPu29QYW8
 tool_result
 id: toolu_01SPToggndXBfRxtPu29QYW8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2601,7 +2601,7 @@ id: toolu_014b9tgqPRbhNAVeje8FJfZu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "  // Light TNT with a torch (the torch is not consumed). Only consumes the click\n  // when actually aimed at TNT, so a torch otherwise still places normally.\n  if (isTorch) {\n    if (block !== BlockId.Tnt) return false;\n    primeTnt(state, x, y, z, emit);\n    return true;\n  }",
   "new_string": "  // Light TNT with a torch (the torch is not consumed). Only consumes the click\n  // when actually aimed at TNT, so a torch otherwise still places normally.\n  if (isTorch) {\n    if (block !== BlockId.Tnt) return false;\n    primeTnt(state, x, y, z, emit);\n    return true;\n  }\n\n  // Empty bucket: scoop the aimed fluid up — its cell becomes air. There is no\n  // flow simulation, so the scooped hole simply remains (even mid-ocean).\n  if (isBucket) {\n    if (block !== BlockId.Water && block !== BlockId.Lava) return false;\n    if (!swapHeldForItem(player, block === BlockId.Water ? \"water_bucket\" : \"lava_bucket\")) return false;\n    state.blockChanges.set(x, y, z, BlockId.Air);\n    state.worldMeshDirty = true;\n    emit({ type: \"bucketFilled\", fluid: block === BlockId.Water ? \"water\" : \"lava\" });\n    return true;\n  }\n\n  // Filled bucket: pour into the empty cell in front of the aimed face. Lava is\n  // a solid block, so a pour […]
 
@@ -2610,7 +2610,7 @@ id: toolu_014b9tgqPRbhNAVeje8FJfZu
 tool_result
 id: toolu_014b9tgqPRbhNAVeje8FJfZu
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2624,7 +2624,7 @@ id: toolu_01BvxKzhQwSz1mQrkR1L3j9w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "const POTION_GLASS: PixelPalette = { o: [40, 40, 52], C: [120, 80, 46], g: [176, 210, 224] };",
   "new_string": "// A metal pail: handle arc (o), bright rim (r), body (m), and an `L`/`h`\n// fill surface recolored per fluid. The empty bucket shows its dark interior.\nconst BUCKET_GRID = [\n  \"................\",\n  \".....oooooo.....\",\n  \"....oo....oo....\",\n  \"....o......o....\",\n  \"...ro......or...\",\n  \"...rrrrrrrrrr...\",\n  \"...rLLLLLLLLr...\",\n  \"...rLLhLLLLLr...\",\n  \"....mmmmmmmm....\",\n  \"....mmmmmmmm....\",\n  \"....mmmmmmmm....\",\n  \".....mmmmmm.....\",\n  \".....mmmmmm.....\",\n  \".....mmmmmm.....\",\n  \"......mmmm......\",\n  \"................\"\n];\nconst BUCKET_METAL: PixelPalette = { o: [70, 74, 84], r: [180, 184, 192], m: [140, 144, 152] };\nconst BUCKET_EMPTY_PALETTE: PixelPalette = { ...BUCKET_METAL, L: [96, 100, 110], h: [120, 124, 134] };\nconst BUCKET_WATER_PALETTE: PixelPalette = { ...BUCKET_METAL, L: [58, 110, 200], h: [140, 190, 240] };\nconst BUCKET_LAVA_PALETTE: PixelPalette = { ...BUCKET_METAL, L: [235, 110, 30], h: [255, 200, 80] };\n\nconst POTION_GLASS: PixelPalette = { o: [40, 40, 52], C: [120, 80, 46], g: [176, 210, 224] };"
 }
@@ -2635,7 +2635,7 @@ id: toolu_01BvxKzhQwSz1mQrkR1L3j9w
 tool_result
 id: toolu_01BvxKzhQwSz1mQrkR1L3j9w
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2645,7 +2645,7 @@ id: toolu_01X9kqnXDukSnece9iApJM8J
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "  empty_bottle: { grid: BOTTLE_GRID, palette: EMPTY_BOTTLE_PALETTE },",
   "new_string": "  bucket: { grid: BUCKET_GRID, palette: BUCKET_EMPTY_PALETTE },\n  water_bucket: { grid: BUCKET_GRID, palette: BUCKET_WATER_PALETTE },\n  lava_bucket: { grid: BUCKET_GRID, palette: BUCKET_LAVA_PALETTE },\n  empty_bottle: { grid: BOTTLE_GRID, palette: EMPTY_BOTTLE_PALETTE },"
 }
@@ -2656,7 +2656,7 @@ id: toolu_01X9kqnXDukSnece9iApJM8J
 tool_result
 id: toolu_01X9kqnXDukSnece9iApJM8J
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2666,7 +2666,7 @@ id: toolu_01TWU759DjkPeZcx8s1ZVB5a
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts",
   "old_string": "  // 2. Craft (incl. smelt/trade/brew). The first recipe producing the item wins.\n  for (const recipe of RECIPES) set(recipe.result.slotId, CRAFT_VERB[recipe.station ?? \"none\"]);",
   "new_string": "  // 2. Craft (incl. smelt/trade/brew). The first recipe producing the item wins.\n  for (const recipe of RECIPES) set(recipe.result.slotId, CRAFT_VERB[recipe.station ?? \"none\"]);\n  // 2b. Fluids: filled buckets come from using an empty bucket on the world.\n  set(\"water_bucket\", \"Scoop up water with a bucket\");\n  set(\"lava_bucket\", \"Scoop up lava with a bucket\");"
 }
@@ -2677,7 +2677,7 @@ id: toolu_01TWU759DjkPeZcx8s1ZVB5a
 tool_result
 id: toolu_01TWU759DjkPeZcx8s1ZVB5a
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/itemSources.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/itemSources.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2686,7 +2686,7 @@ tool_use Bash
 id: toolu_019N66QrrEqUqkug7Z5aoX5z
 ```json
 {
-  "command": "grep -n \"\\\"torch\\\"\\|fishing_rod\\|id: \\\"tnt\\\"\\|id: \\\"bed\\\"\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts | head",
+  "command": "grep -n \"\\\"torch\\\"\\|fishing_rod\\|id: \\\"tnt\\\"\\|id: \\\"bed\\\"\" /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts | head",
   "description": "Find utility recipes area in recipes.ts"
 }
 ```
@@ -2711,7 +2711,7 @@ tool_use Read
 id: toolu_01Ei9tA3wba6DsVtYQCAdx3Z
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "offset": 600,
   "limit": 30
 }
@@ -2761,7 +2761,7 @@ id: toolu_01H6d3Bu5PoPcipsKiZtggof
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "old_string": "  {\n    id: \"fishing_rod\",\n    label: \"3 Wood + 2 String -> Fishing Rod\",\n    cost: [\n      { slotId: \"wood\", count: 3 },\n      { slotId: \"string\", count: 2 }\n    ],\n    result: { slotId: \"fishing_rod\", count: 1 }\n  },",
   "new_string": "  {\n    id: \"fishing_rod\",\n    label: \"3 Wood + 2 String -> Fishing Rod\",\n    cost: [\n      { slotId: \"wood\", count: 3 },\n      { slotId: \"string\", count: 2 }\n    ],\n    result: { slotId: \"fishing_rod\", count: 1 }\n  },\n  {\n    id: \"bucket\",\n    label: \"3 Sliver Ore -> Bucket\",\n    cost: [{ slotId: \"sliver_ore\", count: 3 }],\n    result: { slotId: \"bucket\", count: 1 }\n  },"
 }
@@ -2772,7 +2772,7 @@ id: toolu_01H6d3Bu5PoPcipsKiZtggof
 tool_result
 id: toolu_01H6d3Bu5PoPcipsKiZtggof
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2786,7 +2786,7 @@ id: toolu_01TkdYwe6jPry9LG67nqDch4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "old_string": "/** A whoosh into a soft plop as the bobber lands on the water. */\nexport const FISHING_CAST_SOUND: SoundDef = {",
   "new_string": "/** A deep wet gulp as a bucket scoops a fluid block up. */\nexport const BUCKET_FILL_SOUND: SoundDef = {\n  params: zz({\n    volume: 0.5,\n    randomness: 0.25,\n    frequency: 240,\n    sustain: 0.03,\n    release: 0.14,\n    shape: 0,\n    slide: 2,\n    noise: 0.5,\n    pitchJump: -120,\n    pitchJumpTime: 0.05,\n    sustainVolume: 0.5,\n    decay: 0.04,\n    filter: -260\n  }),\n  minRetriggerMs: 120\n};\n\n/** A sloshing splash as a bucket pours its fluid out. */\nexport const BUCKET_POUR_SOUND: SoundDef = {\n  params: zz({\n    volume: 0.5,\n    randomness: 0.3,\n    frequency: 320,\n    sustain: 0.04,\n    release: 0.18,\n    shape: 0,\n    slide: -2,\n    noise: 0.7,\n    sustainVolume: 0.55,\n    decay: 0.05,\n    filter: -220\n  }),\n  minRetriggerMs: 120\n};\n\n/** A whoosh into a soft plop as the bobber lands on the water. */\nexport const FISHING_CAST_SOUND: SoundDef = {"
 }
@@ -2797,7 +2797,7 @@ id: toolu_01TkdYwe6jPry9LG67nqDch4
 tool_result
 id: toolu_01TkdYwe6jPry9LG67nqDch4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2806,7 +2806,7 @@ tool_use Bash
 id: toolu_01S8ttbCQiNjaBKCJ1aDrUwg
 ```json
 {
-  "command": "grep -n \"FISHING_CAST_SOUND\\|TILL_SOUND\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -4",
+  "command": "grep -n \"FISHING_CAST_SOUND\\|TILL_SOUND\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -4",
   "description": "Find sound import block in audioDirector"
 }
 ```
@@ -2828,7 +2828,7 @@ tool_use Read
 id: toolu_018aMq7nksv5dRR94pkDa1d4
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "offset": 8,
   "limit": 12
 }
@@ -2860,7 +2860,7 @@ id: toolu_01UEQXRHxAZpr2R34HXhJKPy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "old_string": "  BONE_MEAL_SOUND,\n  BOSS_ROAR_SOUND,\n  BOW_FIRE_SOUND,\n  BREAK_SOUNDS,",
   "new_string": "  BONE_MEAL_SOUND,\n  BOSS_ROAR_SOUND,\n  BOW_FIRE_SOUND,\n  BREAK_SOUNDS,\n  BUCKET_FILL_SOUND,\n  BUCKET_POUR_SOUND,"
 }
@@ -2871,7 +2871,7 @@ id: toolu_01UEQXRHxAZpr2R34HXhJKPy
 tool_result
 id: toolu_01UEQXRHxAZpr2R34HXhJKPy
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2881,7 +2881,7 @@ id: toolu_01HojfGGQwt9zPA6nGEvSiLK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "old_string": "        case \"usedBoneMeal\":\n          backend.play(BONE_MEAL_SOUND);\n          break;",
   "new_string": "        case \"usedBoneMeal\":\n          backend.play(BONE_MEAL_SOUND);\n          break;\n        case \"bucketFilled\":\n          backend.play(BUCKET_FILL_SOUND);\n          break;\n        case \"bucketEmptied\":\n          backend.play(BUCKET_POUR_SOUND);\n          break;"
 }
@@ -2892,7 +2892,7 @@ id: toolu_01HojfGGQwt9zPA6nGEvSiLK
 tool_result
 id: toolu_01HojfGGQwt9zPA6nGEvSiLK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2905,7 +2905,7 @@ tool_use Bash
 id: toolu_01FytCGnthJzwf74Mczfn75L
 ```json
 {
-  "command": "grep -n \"tryUseHeldItem\\|function makeState\\|function createState\\|describe\\|const state\\b\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts | head -25",
+  "command": "grep -n \"tryUseHeldItem\\|function makeState\\|function createState\\|describe\\|const state\\b\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts | head -25",
   "description": "Survey interact.test.ts structure"
 }
 ```
@@ -2933,7 +2933,7 @@ tool_use Read
 id: toolu_01CD3SfKNCJLh88TSU1SvDSK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts",
   "offset": 1,
   "limit": 50
 }
@@ -2984,7 +2984,7 @@ tool_use Read
 id: toolu_01T1sdYXipdyyaeUEe6uTfJC
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts",
   "offset": 32,
   "limit": 75
 }
@@ -3030,7 +3030,7 @@ tool_use Bash
 id: toolu_01SUjF1rSTRXwpekbNpXj8jF
 ```json
 {
-  "command": "grep -n \"voxelRaycast\" -A 40 /Users/hutusi/workspace/ai/david/monecraft/lib/world/queries.ts | head -60",
+  "command": "grep -n \"voxelRaycast\" -A 40 /home/<USER>/workspace/ai/david/monecraft/lib/world/queries.ts | head -60",
   "description": "Read voxelRaycast implementation"
 }
 ```
@@ -3072,7 +3072,7 @@ tool_use Read
 id: toolu_01MdchtotxJ4DHNPuNLMQTWW
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/queries.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/queries.ts",
   "offset": 70,
   "limit": 70
 }
@@ -3117,7 +3117,7 @@ id: toolu_012LDqhp9ap2s2ksdNkB72zL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "import { BlockId, collidesAt, doorBlock, doorState, voxelRaycast } from \"@/lib/world\";",
   "new_string": "import { BlockId, collidesAt, doorBlock, doorState, voxelRaycast, waterSurfaceRaycast } from \"@/lib/world\";"
 }
@@ -3128,7 +3128,7 @@ id: toolu_012LDqhp9ap2s2ksdNkB72zL
 tool_result
 id: toolu_012LDqhp9ap2s2ksdNkB72zL
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3138,7 +3138,7 @@ id: toolu_014aaZayo1WGh5VpgUtDKuoH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "  const { world } = state;\n  scratchEye.set(player.position.x, player.position.y + EYE_HEIGHT, player.position.z);\n  lookDirection(player.yaw, player.pitch, scratchDir);\n  const result = voxelRaycast(world, scratchEye, scratchDir, MINE_REACH);\n  if (!result) return false;\n  const { x, y, z } = result.hit;\n  const block = world.get(x, y, z) as BlockId;\n\n  // Light TNT with a torch (the torch is not consumed). Only consumes the click\n  // when actually aimed at TNT, so a torch otherwise still places normally.\n  if (isTorch) {\n    if (block !== BlockId.Tnt) return false;\n    primeTnt(state, x, y, z, emit);\n    return true;\n  }\n\n  // Empty bucket: scoop the aimed fluid up — its cell becomes air. There is no\n  // flow simulation, so the scooped hole simply remains (even mid-ocean).\n  if (isBucket) {\n    if (block !== BlockId.Water && block !== BlockId.Lava) return false;\n    if (!swapHeldForItem(player, block === BlockId.Water ? \"water_bucket\" : \"lava_bucket\")) return false;\n    state.blockChanges.set(x, y, z, BlockId.Air);\n    state.worldMeshDirty = true;\n    emit({ type: \"bucketFilled\", fluid: block === BlockId.Water ? \"water\" : \"lava\" });\n    return true;\n  }",
   "new_string": "  const { world } = state;\n  scratchEye.set(player.position.x, player.position.y + EYE_HEIGHT, player.position.z);\n  lookDirection(player.yaw, player.pitch, scratchDir);\n  const result = voxelRaycast(world, scratchEye, scratchDir, MINE_REACH);\n\n  // Empty bucket: scoop the aimed […]
 
@@ -3147,7 +3147,7 @@ id: toolu_014aaZayo1WGh5VpgUtDKuoH
 tool_result
 id: toolu_014aaZayo1WGh5VpgUtDKuoH
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3160,7 +3160,7 @@ tool_use Read
 id: toolu_012y3CcE4cwJzVoFgz6VxzHA
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "offset": 323,
   "limit": 105
 }
@@ -3207,7 +3207,7 @@ tool_use Bash
 id: toolu_01Qr4GzUyBaQY6Kf8JUeupuR
 ```json
 {
-  "command": "sed -n 1,10p /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts",
+  "command": "sed -n 1,10p /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.test.ts",
   "description": "See mining.test.ts imports"
 }
 ```
@@ -3236,7 +3236,7 @@ id: toolu_01RyyREFUAgCsrnAFmLDD5Qn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts",
   "old_string": "import { describe, expect, test } from \"bun:test\";\nimport * as THREE from \"three\";\nimport { EYE_HEIGHT, PET_FIGHT_RANGE, PET_TAMED_HP } from \"@/lib/game/config\";\nimport { createEmptySlot, createSlot } from \"@/lib/game/items\";\nimport { countsById } from \"@/lib/game/inventory\";\nimport type { GameEvent, GameState, MobState, PlayerState } from \"@/lib/game/engine/state\";\nimport { tryTameAimedMob, tryToggleSitPet } from \"@/lib/game/engine/systems/interact\";\nimport type { InventorySlot, MobKind } from \"@/lib/game/types\";",
   "new_string": "import { describe, expect, test } from \"bun:test\";\nimport * as THREE from \"three\";\nimport { BlockId, VoxelWorld } from \"@/lib/world\";\nimport { EYE_HEIGHT, PET_FIGHT_RANGE, PET_TAMED_HP } from \"@/lib/game/config\";\nimport { createEmptySlot, createSlot } from \"@/lib/game/items\";\nimport { countsById } from \"@/lib/game/inventory\";\nimport { createBlockChangeTracker } from \"@/lib/game/engine/blockChanges\";\nimport type { GameEvent, GameState, MobState, PlayerState } from \"@/lib/game/engine/state\";\nimport { tryTameAimedMob, tryToggleSitPet, tryUseHeldItem } from \"@/lib/game/engine/systems/interact\";\nimport type { InventorySlot, MobKind } from \"@/lib/game/types\";"
 }
@@ -3247,7 +3247,7 @@ id: toolu_01RyyREFUAgCsrnAFmLDD5Qn
 tool_result
 id: toolu_01RyyREFUAgCsrnAFmLDD5Qn
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3256,7 +3256,7 @@ tool_use Bash
 id: toolu_01Pt2VPFTqGjtcMiXexZxKvv
 ```json
 {
-  "command": "tail -20 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts; wc -l /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts",
+  "command": "tail -20 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts; wc -l /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts",
   "description": "See end of interact.test.ts"
 }
 ```
@@ -3286,7 +3286,7 @@ id: toolu_01Pt2VPFTqGjtcMiXexZxKvv
     expect(pet.sitting).toBeUndefined();
   });
 });
-     142 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts
+     142 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts
 ```
 
 > TOOL
@@ -3295,7 +3295,7 @@ tool_use Bash
 id: toolu_01Rge7MGCrkEVAHJvai8gzUz
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts << 'EOF'\n\ndescribe(\"tryUseHeldItem — buckets\", () => {\n  const FLOOR_Y = 10;\n  const CELL = { x: 7, y: FLOOR_Y + 1, z: 5 } as const;\n\n  /**\n   * A stone floor with the player floating above the target column, aiming\n   * straight down. The fluid under test sits on the floor at CELL; the player\n   * hovers high enough that a poured lava block can't entomb them.\n   */\n  function makeFluidFixture(slots: InventorySlot[], fluid: BlockId | null): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = new VoxelWorld(24, 24, 24, 1);\n    for (let x = 0; x < world.sizeX; x += 1) {\n      for (let z = 0; z < world.sizeZ; z += 1) world.set(x, FLOOR_Y, z, BlockId.Stone);\n    }\n    if (fluid !== null) world.set(CELL.x, CELL.y, CELL.z, fluid);\n    const player = {\n      id: \"local\",\n      position: new THREE.Vector3(CELL.x + 0.5, CELL.y + 3, CELL.z + 0.5),\n      velocity: new THREE.Vector3(),\n      yaw: 0,\n      pitch: -Math.PI / 2, // straight down\n      onGround: false,\n      gameMode: \"survival\",\n      selectedSlot: 0,\n      inventory: slots\n    } as unknown as PlayerState;\n    const events: GameEvent[] = [];\n    const state = {\n      world,\n      blockChanges: createBlockChangeTracker(world),\n      players: new Map([[\"local\", player]]),\n      worldMeshDirty: false\n    } as […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts << 'EOF'\n\ndescribe(\"tryUseHeldItem — buckets\", () => {\n  const FLOOR_Y = 10;\n  const CELL = { x: 7, y: FLOOR_Y + 1, z: 5 } as const;\n\n  /**\n   * A stone floor with the player floating above the target column, aiming\n   * straight down. The fluid under test sits on the floor at CELL; the player\n   * hovers high enough that a poured lava block can't entomb them.\n   */\n  function makeFluidFixture(slots: InventorySlot[], fluid: BlockId | null): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = new VoxelWorld(24, 24, 24, 1);\n    for (let x = 0; x < world.sizeX; x += 1) {\n      for (let z = 0; z < world.sizeZ; z += 1) world.set(x, FLOOR_Y, z, BlockId.Stone);\n    }\n    if (fluid !== null) world.set(CELL.x, CELL.y, CELL.z, fluid);\n    const player = {\n      id: \"local\",\n      position: new THREE.Vector3(CELL.x + 0.5, CELL.y + 3, CELL.z + 0.5),\n      velocity: new THREE.Vector3(),\n      yaw: 0,\n      pitch: -Math.PI / 2, // straight down\n      onGround: false,\n      gameMode: \"survival\",\n      selectedSlot: 0,\n      inventory: slots\n    } as unknown as PlayerState;\n    const events: GameEvent[] = [];\n    const state = {\n      world,\n      blockChanges: createBlockChangeTracker(world),\n      players: new Map([[\"local\", player]]),\n      worldMeshDirty: false\n    } as […]
 
 > TOOL
 
@@ -3316,7 +3316,7 @@ tool_use Bash
 id: toolu_014F65eCtN9ALcrfodyaKLoZ
 ```json
 {
-  "command": "grep -n \"describe\\|maxStackSize\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.test.ts | head",
+  "command": "grep -n \"describe\\|maxStackSize\" /home/<USER>/workspace/ai/david/monecraft/lib/game/items.test.ts | head",
   "description": "Survey items.test.ts structure"
 }
 ```
@@ -3336,7 +3336,7 @@ tool_use Bash
 id: toolu_01SQJtM8fYbZjMGiTc5GT5HE
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.test.ts << 'EOF'\n\ndescribe(\"maxStackSizeForItem\", () => {\n  test(\"honors a per-item stackSize: empty buckets bundle, filled buckets don't\", () => {\n    expect(maxStackSizeForItem(\"bucket\")).toBe(16);\n    expect(maxStackSizeForItem(\"water_bucket\")).toBe(1);\n    expect(maxStackSizeForItem(\"lava_bucket\")).toBe(1);\n  });\n\n  test(\"durable gear still stacks to 1 and plain items to the global cap\", () => {\n    expect(maxStackSizeForItem(\"diamond_pickaxe\")).toBe(1);\n    expect(maxStackSizeForItem(\"stone\")).toBe(MAX_STACK_SIZE);\n  });\n});\nEOF\ngrep -n \"^import\\|from \\\"@/lib\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.test.ts | head -5",
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/items.test.ts << 'EOF'\n\ndescribe(\"maxStackSizeForItem\", () => {\n  test(\"honors a per-item stackSize: empty buckets bundle, filled buckets don't\", () => {\n    expect(maxStackSizeForItem(\"bucket\")).toBe(16);\n    expect(maxStackSizeForItem(\"water_bucket\")).toBe(1);\n    expect(maxStackSizeForItem(\"lava_bucket\")).toBe(1);\n  });\n\n  test(\"durable gear still stacks to 1 and plain items to the global cap\", () => {\n    expect(maxStackSizeForItem(\"diamond_pickaxe\")).toBe(1);\n    expect(maxStackSizeForItem(\"stone\")).toBe(MAX_STACK_SIZE);\n  });\n});\nEOF\ngrep -n \"^import\\|from \\\"@/lib\" /home/<USER>/workspace/ai/david/monecraft/lib/game/items.test.ts | head -5",
   "description": "Append stackSize tests and check imports"
 }
 ```
@@ -3358,7 +3358,7 @@ tool_use Bash
 id: toolu_014PyAkFbajjhoCEeDAxsH5Y
 ```json
 {
-  "command": "grep -n \"MAX_STACK_SIZE\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts | head -2",
+  "command": "grep -n \"MAX_STACK_SIZE\" /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts | head -2",
   "description": "Confirm MAX_STACK_SIZE lives in config"
 }
 ```
@@ -3378,7 +3378,7 @@ id: toolu_01M3Shk2SiNTefeTqzt7mkpQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.test.ts",
   "old_string": "import { FORTUNE_BONUS_PER_LEVEL } from \"@/lib/game/config\";\nimport { rollBlockDrops } from \"@/lib/game/items\";",
   "new_string": "import { FORTUNE_BONUS_PER_LEVEL, MAX_STACK_SIZE } from \"@/lib/game/config\";\nimport { maxStackSizeForItem, rollBlockDrops } from \"@/lib/game/items\";"
 }
@@ -3398,7 +3398,7 @@ tool_use Read
 id: toolu_017ac6SNkUm8kRQPAE8iPH9c
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.test.ts",
   "offset": 1,
   "limit": 12
 }
@@ -3430,7 +3430,7 @@ id: toolu_019wMZdRnxeVN4byjCeLJk3Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.test.ts",
   "old_string": "import { FORTUNE_BONUS_PER_LEVEL } from \"@/lib/game/config\";\nimport { rollBlockDrops } from \"@/lib/game/items\";",
   "new_string": "import { FORTUNE_BONUS_PER_LEVEL, MAX_STACK_SIZE } from \"@/lib/game/config\";\nimport { maxStackSizeForItem, rollBlockDrops } from \"@/lib/game/items\";"
 }
@@ -3441,7 +3441,7 @@ id: toolu_019wMZdRnxeVN4byjCeLJk3Y
 tool_result
 id: toolu_019wMZdRnxeVN4byjCeLJk3Y
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3536,7 +3536,7 @@ id: toolu_01XbLuCMqfbn8h86p9JNtEHo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "  // Filled bucket: pour into the empty cell in front of the aimed face. Lava is\n  // a solid block, so a pour that would entomb the player rolls back (the\n  // placeSelectedBlock rule); the click is still consumed.\n  if (isWaterBucket || isLavaBucket) {\n    const px = result.previous.x;",
   "new_string": "  // Water poured ON a lava block quenches it into obsidian — the game's only\n  // obsidian source. The cell keeps its place in the world; only the block\n  // (and its max-light emission, via applyEdit) changes.\n  if (isWaterBucket && block === BlockId.Lava) {\n    if (!swapHeldForItem(player, \"bucket\")) return false;\n    state.blockChanges.set(x, y, z, BlockId.Obsidian);\n    state.worldMeshDirty = true;\n    emit({ type: \"lavaSolidified\" });\n    return true;\n  }\n\n  // Filled bucket: pour into the empty cell in front of the aimed face. Lava is\n  // a solid block, so a pour that would entomb the player rolls back (the\n  // placeSelectedBlock rule); the click is still consumed.\n  if (isWaterBucket || isLavaBucket) {\n    const px = result.previous.x;"
 }
@@ -3547,7 +3547,7 @@ id: toolu_01XbLuCMqfbn8h86p9JNtEHo
 tool_result
 id: toolu_01XbLuCMqfbn8h86p9JNtEHo
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3557,7 +3557,7 @@ id: toolu_01KuiyR6jUx82os8tG6Mutfn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  | { type: \"bucketFilled\"; fluid: \"water\" | \"lava\" }\n  | { type: \"bucketEmptied\"; fluid: \"water\" | \"lava\" }",
   "new_string": "  | { type: \"bucketFilled\"; fluid: \"water\" | \"lava\" }\n  | { type: \"bucketEmptied\"; fluid: \"water\" | \"lava\" }\n  | { type: \"lavaSolidified\" }"
 }
@@ -3568,7 +3568,7 @@ id: toolu_01KuiyR6jUx82os8tG6Mutfn
 tool_result
 id: toolu_01KuiyR6jUx82os8tG6Mutfn
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3578,7 +3578,7 @@ id: toolu_01RUrARzZAjykKv8Z8uF3vmh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "old_string": "/** A whoosh into a soft plop as the bobber lands on the water. */\nexport const FISHING_CAST_SOUND: SoundDef = {",
   "new_string": "/** A sharp steam hiss as water quenches lava into obsidian. */\nexport const LAVA_QUENCH_SOUND: SoundDef = {\n  params: zz({\n    volume: 0.55,\n    randomness: 0.2,\n    frequency: 900,\n    sustain: 0.08,\n    release: 0.3,\n    shape: 0,\n    slide: -6,\n    noise: 1,\n    sustainVolume: 0.6,\n    decay: 0.06,\n    filter: 800\n  }),\n  minRetriggerMs: 150\n};\n\n/** A whoosh into a soft plop as the bobber lands on the water. */\nexport const FISHING_CAST_SOUND: SoundDef = {"
 }
@@ -3589,7 +3589,7 @@ id: toolu_01RUrARzZAjykKv8Z8uF3vmh
 tool_result
 id: toolu_01RUrARzZAjykKv8Z8uF3vmh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3599,7 +3599,7 @@ id: toolu_01B53WJGKXZuWju14Ywi6c1P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "old_string": "        case \"bucketEmptied\":\n          backend.play(BUCKET_POUR_SOUND);\n          break;",
   "new_string": "        case \"bucketEmptied\":\n          backend.play(BUCKET_POUR_SOUND);\n          break;\n        case \"lavaSolidified\":\n          backend.play(LAVA_QUENCH_SOUND);\n          break;"
 }
@@ -3610,7 +3610,7 @@ id: toolu_01B53WJGKXZuWju14Ywi6c1P
 tool_result
 id: toolu_01B53WJGKXZuWju14Ywi6c1P
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3619,7 +3619,7 @@ tool_use Bash
 id: toolu_01QJXUEoVZpqQ4ZDek4LhWhA
 ```json
 {
-  "command": "grep -n \"BUCKET_POUR_SOUND,\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -2",
+  "command": "grep -n \"BUCKET_POUR_SOUND,\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -2",
   "description": "Check import list position for LAVA_QUENCH_SOUND"
 }
 ```
@@ -3638,7 +3638,7 @@ tool_use Bash
 id: toolu_0145xnrQtjfLC8TkiEDFZq6K
 ```json
 {
-  "command": "grep -n \"  XP_SOUND\\|  DEATH_SOUND\\|  DRINK_SOUND\\|LAVA\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -8",
+  "command": "grep -n \"  XP_SOUND\\|  DEATH_SOUND\\|  DRINK_SOUND\\|LAVA\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -8",
   "description": "Find alphabetical slot for the quench import"
 }
 ```
@@ -3661,7 +3661,7 @@ id: toolu_01TGCn4GYSWxT4iBxribyM8x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "old_string": "  DEATH_SOUND,\n  DRINK_SOUND,",
   "new_string": "  DEATH_SOUND,\n  DRINK_SOUND,\n  LAVA_QUENCH_SOUND,"
 }
@@ -3672,7 +3672,7 @@ id: toolu_01TGCn4GYSWxT4iBxribyM8x
 tool_result
 id: toolu_01TGCn4GYSWxT4iBxribyM8x
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3681,7 +3681,7 @@ tool_use Bash
 id: toolu_01Kz55o2AHY5mUAFmQjZo6ap
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts << 'EOF'\n\ndescribe(\"tryUseHeldItem — quenching lava\", () => {\n  const FLOOR_Y = 10;\n  const CELL = { x: 7, y: FLOOR_Y + 1, z: 5 } as const;\n\n  function makeQuenchFixture(slots: InventorySlot[]): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = new VoxelWorld(24, 24, 24, 1);\n    for (let x = 0; x < world.sizeX; x += 1) {\n      for (let z = 0; z < world.sizeZ; z += 1) world.set(x, FLOOR_Y, z, BlockId.Stone);\n    }\n    const player = {\n      id: \"local\",\n      position: new THREE.Vector3(CELL.x + 0.5, CELL.y + 3, CELL.z + 0.5),\n      velocity: new THREE.Vector3(),\n      yaw: 0,\n      pitch: -Math.PI / 2,\n      onGround: false,\n      gameMode: \"survival\",\n      selectedSlot: 0,\n      inventory: slots\n    } as unknown as PlayerState;\n    const events: GameEvent[] = [];\n    const state = {\n      world,\n      blockChanges: createBlockChangeTracker(world),\n      players: new Map([[\"local\", player]]),\n      worldMeshDirty: false\n    } as unknown as GameState;\n    // Lava arrives via the tracker so its emission is lit (the applyEdit path),\n    // letting the quench assert the light actually goes out.\n    state.blockChanges.set(CELL.x, CELL.y, CELL.z, BlockId.Lava);\n    return { state, player, events };\n  }\n\n  test(\"water poured on lava quenches it to obsidian and puts the light out\", () => {\n    const { […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.test.ts << 'EOF'\n\ndescribe(\"tryUseHeldItem — quenching lava\", () => {\n  const FLOOR_Y = 10;\n  const CELL = { x: 7, y: FLOOR_Y + 1, z: 5 } as const;\n\n  function makeQuenchFixture(slots: InventorySlot[]): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = new VoxelWorld(24, 24, 24, 1);\n    for (let x = 0; x < world.sizeX; x += 1) {\n      for (let z = 0; z < world.sizeZ; z += 1) world.set(x, FLOOR_Y, z, BlockId.Stone);\n    }\n    const player = {\n      id: \"local\",\n      position: new THREE.Vector3(CELL.x + 0.5, CELL.y + 3, CELL.z + 0.5),\n      velocity: new THREE.Vector3(),\n      yaw: 0,\n      pitch: -Math.PI / 2,\n      onGround: false,\n      gameMode: \"survival\",\n      selectedSlot: 0,\n      inventory: slots\n    } as unknown as PlayerState;\n    const events: GameEvent[] = [];\n    const state = {\n      world,\n      blockChanges: createBlockChangeTracker(world),\n      players: new Map([[\"local\", player]]),\n      worldMeshDirty: false\n    } as unknown as GameState;\n    // Lava arrives via the tracker so its emission is lit (the applyEdit path),\n    // letting the quench assert the light actually goes out.\n    state.blockChanges.set(CELL.x, CELL.y, CELL.z, BlockId.Lava);\n    return { state, player, events };\n  }\n\n  test(\"water poured on lava quenches it to obsidian and puts the light out\", () => {\n    const { […]
 
 > TOOL
 
@@ -3767,7 +3767,7 @@ tool_use Bash
 id: toolu_01FYvVVxNf4YbEXGMgQD5Vej
 ```json
 {
-  "command": "grep -n \"^#\\|^##\\|^###\" /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md | head -40",
+  "command": "grep -n \"^#\\|^##\\|^###\" /home/<USER>/workspace/ai/david/monecraft/docs/manual.md | head -40",
   "description": "Survey manual.md sections"
 }
 ```
@@ -3825,7 +3825,7 @@ tool_use Bash
 id: toolu_01D7Tovds7EYgHdxC6pzjhaM
 ```json
 {
-  "command": "grep -n \"^#\\|^##\\|^###\" /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md | head -30",
+  "command": "grep -n \"^#\\|^##\\|^###\" /home/<USER>/workspace/ai/david/monecraft/docs/reference.md | head -30",
   "description": "Survey reference.md sections"
 }
 ```
@@ -3873,7 +3873,7 @@ tool_use Read
 id: toolu_01AFFri6Ju2DprcBpXZBPWPS
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/manual.md",
   "offset": 178,
   "limit": 30
 }
@@ -3910,7 +3910,7 @@ tool_use Read
 id: toolu_01SnL77BM99GNScSEjQaKKoB
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "offset": 74,
   "limit": 55
 }
@@ -3950,7 +3950,7 @@ tool_use Read
 id: toolu_01EG4d31zDywV7dnyJkGiLav
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "offset": 258,
   "limit": 65
 }
@@ -3986,7 +3986,7 @@ tool_use Bash
 id: toolu_01NLaYDjnDxhzxLHGTYk38J9
 ```json
 {
-  "command": "grep -n \"interact.test\\|items.test\" /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md; sed -n 1,30p /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "command": "grep -n \"interact.test\\|items.test\" /home/<USER>/workspace/ai/david/monecraft/docs/testing.md; sed -n 1,30p /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "description": "Check testing map entries and CHANGELOG head"
 }
 ```
@@ -4013,7 +4013,7 @@ tool_use Bash
 id: toolu_01EdtzdYE77734K4Fs978FUp
 ```json
 {
-  "command": "grep -n \"interact\\|items\\.\\|mining\" /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md | head",
+  "command": "grep -n \"interact\\|items\\.\\|mining\" /home/<USER>/workspace/ai/david/monecraft/docs/testing.md | head",
   "description": "Find coverage map rows for interact/items/mining tests"
 }
 ```
@@ -4033,7 +4033,7 @@ tool_use Read
 id: toolu_01Mx5h2B6c3R5es7QMerB7N4
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "offset": 492,
   "limit": 30
 }
@@ -4072,7 +4072,7 @@ tool_use Read
 id: toolu_01VARZfPmCW4NeFx2LGFzrzh
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/adding-content.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/adding-content.md",
   "offset": 76,
   "limit": 30
 }
@@ -4099,7 +4099,7 @@ id: toolu_017MPKrd6LQFVyt6knHxHJav
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/manual.md",
   "old_string": "**Lava** pools in the deepest caves and glows in the dark. It is a death trap:\ntouching it burns you **immediately** for 3 hearts every half-second — no grace\nperiod — and you keep burning for a few seconds even after you scramble off. Armor\ndoesn't help. Bridge over it carefully.\n\n### Rafts and ships",
   "new_string": "**Lava** pools in the deepest caves and glows in the dark. It is a death trap:\ntouching it burns you **immediately** for 3 hearts every half-second — no grace\nperiod — and you keep burning for a few seconds even after you scramble off. Armor\ndoesn't help. Bridge over it carefully.\n\n### Buckets, lava, and obsidian\n\nCraft a **bucket** (3 sliver ore) to carry fluids. Right-click a **water surface**\nto scoop a block of water, or aim at a **lava** block to scoop lava (careful with\nthe approach — the burn rules above still apply). Right-click a solid face with a\nfilled bucket to pour the fluid back out into the empty cell in front of it.\nFluids are **still**: there is no flowing or spreading, so scooping a block out\nof the ocean leaves a neat one-block hole, and a poured block stays exactly where\nyou put […]
 
@@ -4108,7 +4108,7 @@ id: toolu_017MPKrd6LQFVyt6knHxHJav
 tool_result
 id: toolu_017MPKrd6LQFVyt6knHxHJav
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4118,7 +4118,7 @@ id: toolu_018XXbeHnPyBha3pfgdJYX2w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "old_string": "| Result           | Ingredients             |\n| ---------------- | ----------------------- |\n| Wood Hoe         | 2 Planks + 1 Wood       |\n| Fishing Rod      | 3 Wood + 2 String       |",
   "new_string": "| Result           | Ingredients             |\n| ---------------- | ----------------------- |\n| Wood Hoe         | 2 Planks + 1 Wood       |\n| Fishing Rod      | 3 Wood + 2 String       |\n| Bucket           | 3 Sliver Ore            |"
 }
@@ -4129,7 +4129,7 @@ id: toolu_018XXbeHnPyBha3pfgdJYX2w
 tool_result
 id: toolu_018XXbeHnPyBha3pfgdJYX2w
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4139,7 +4139,7 @@ id: toolu_01Mfyhc32bnVvA59CotaUgP8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "old_string": "**55 block types** (plus air). Hardness is relative break time — higher is slower.\n\"Mine with\" is the minimum tool needed; blocks with no requirement break with bare\nhands or any tool. Bedrock, water, and lava cannot be broken.",
   "new_string": "**56 block types** (plus air). Hardness is relative break time — higher is slower.\n\"Mine with\" is the minimum tool needed; blocks with no requirement break with bare\nhands or any tool. Bedrock, water, and lava cannot be broken (though water and\nlava can be **scooped with a bucket**)."
 }
@@ -4150,7 +4150,7 @@ id: toolu_01Mfyhc32bnVvA59CotaUgP8
 tool_result
 id: toolu_01Mfyhc32bnVvA59CotaUgP8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4160,7 +4160,7 @@ id: toolu_01Mx8aNczpjFucGuoQsiCjw7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "old_string": "| Lava                      | —        | (unbreakable)   | Glows in the deepest caves; **burns on contact** (3 hearts / 0.5 s, armor-bypassing). Worldgen-only, no item                                                                                     |",
   "new_string": "| Lava                      | —        | (unbreakable)   | Glows in the deepest caves; **burns on contact** (3 hearts / 0.5 s, armor-bypassing). No item, but a **bucket** scoops and re-places it; **water poured onto it quenches it into obsidian**      |"
 }
@@ -4171,7 +4171,7 @@ id: toolu_01Mx8aNczpjFucGuoQsiCjw7
 tool_result
 id: toolu_01Mx8aNczpjFucGuoQsiCjw7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4181,7 +4181,7 @@ id: toolu_014Uo3NpJSvnxzNEqebbcbMs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "old_string": "| Plank/Stone/Cobble Stairs | 2–4      | any             | Slab plus a raised back facing away from the placer (turned by look direction); climbed without jumping. Every facing drops the one item                                                         |\n| Bedrock                   | —        | unbreakable     | World floor and border                                                                                                                                                                           |\n| Water                     | —        | —               | Liquid; place blocks into it to replace cells; 60 s continuous immersion starts 1.5-heart damage each second                                                                                     |",
   "new_string": "| Plank/Stone/Cobble Stairs | 2–4      | any             | Slab plus a raised back facing away from the placer (turned by look direction); climbed without jumping. Every facing drops the one item                                                         |\n| Obsidian                  | 40       | Diamond Pickaxe | The hardest mineable block. Created only by **pouring water onto lava**; drops itself                                                                                                            |\n| Bedrock                   | —        | unbreakable     | World floor and border                                                                                                                                                                           |\n| Water                     | —        | —               | Liquid; place blocks into it to replace cells; a **bucket** scoops and re-places it; 60 s continuous immersion starts 1.5-heart damage each second                                               |"
 }
@@ -4192,7 +4192,7 @@ id: toolu_014Uo3NpJSvnxzNEqebbcbMs
 tool_result
 id: toolu_014Uo3NpJSvnxzNEqebbcbMs
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4202,7 +4202,7 @@ id: toolu_01RUxqeUZLSxHNi9o75KXU5d
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/reference.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/reference.md",
   "old_string": "Ranged/endgame materials: **Arrow** (bow ammo),\n**Cursed Totem** (right-click to summon the boss), and **Dragon Heart** (the\nboss drop that crafts the Dragon Sword).",
   "new_string": "The **Bucket** (3 sliver ore; stacks\nto 16 empty) scoops a water or lava block on right-click and pours it back out\non a solid face — a filled **Water/Lava Bucket** carries one block and never\nstacks; water poured on lava quenches it into [obsidian](#blocks).\nRanged/endgame materials: **Arrow** (bow ammo),\n**Cursed Totem** (right-click to summon the boss), and **Dragon Heart** (the\nboss drop that crafts the Dragon Sword)."
 }
@@ -4213,7 +4213,7 @@ id: toolu_01RUxqeUZLSxHNi9o75KXU5d
 tool_result
 id: toolu_01RUxqeUZLSxHNi9o75KXU5d
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/reference.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4227,7 +4227,7 @@ id: toolu_013V7U3k5V1f21Ma3UBqnrTU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/adding-content.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/adding-content.md",
   "old_string": "## A container block (block-entity storage)",
   "new_string": "## A held-item world action (buckets, ignition, …)\n\n- An item **used on the world** (rather than placed) gets a gated branch in `tryUseHeldItem` (`lib/game/engine/systems/interact.ts`), which runs in the `placeBlock` precedence just before placement. Check the held id, act on the raycast target, mutate through `state.blockChanges.set` (lighting + minimap + remesh ride along), emit a one-shot event for the audio director, and return `true` to consume the click — return `false` to fall through (so a torch still places when not aimed at TNT).\n- Reference implementations: **torch → TNT** ignition (acts without consuming the item), **bone meal** (consumes one per use), and the **buckets** (swap the held item for its counterpart via `swapHeldForItem`, which refuses — no change — when the result can't fit; fluid placement mirrors `placeSelectedBlock`'s self-entombment rollback because lava is a solid block).\n- Note the raycast trap the buckets hit: `voxelRaycast` stops at **solid** cells only, so it passes through water. An action that targets water needs `waterSurfaceRaycast` (the fishing-bobber path); lava is solid and needs no special casing.\n- Per-item stack behavior lives on the item def: `stackSize` caps a […]
 
@@ -4236,7 +4236,7 @@ id: toolu_013V7U3k5V1f21Ma3UBqnrTU
 tool_result
 id: toolu_013V7U3k5V1f21Ma3UBqnrTU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/adding-content.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/adding-content.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4245,7 +4245,7 @@ tool_use Read
 id: toolu_017LSgackTuC5gZ2amHRUsmw
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "offset": 33,
   "limit": 6
 }
@@ -4268,7 +4268,7 @@ id: toolu_01Hk7rWg2ZQzgLU5SvPjrkDN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Block placement               | `lib/game/engine/systems/mining.test.ts`                                                                                                                                                                                                                      | A placed stair faces the placer's yaw (all four), a slab places plain; rails and doors refuse slab/stair support and refund the item                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |",
   "new_string": "| Block placement               | `lib/game/engine/systems/mining.test.ts`                                                                                                                                                                                                                      | A placed stair faces the placer's yaw (all four), a slab places plain; rails and doors refuse slab/stair support and refund the item; obsidian's diamond-pickaxe tier gate                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |\n| Buckets & fluids              | `lib/game/engine/systems/interact.test.ts`, `lib/game/items.test.ts`                                                                                                                                                                                          | Scooping water (via the water-surface raycast) and lava (a solid, via the normal raycast) empties the cell and lands the filled bucket in hand; pouring places the fluid against the aimed face and returns the empty; a poured lava cell casts block light through the ordinary relight; filling refuses (nothing lost or scooped) when the filled bucket can't fit; pouring refuses an occupied cell; water on lava quenches to obsidian and the glow goes out (not a pour — no `bucketEmptied`); a lava bucket never quenches; `maxStackSizeForItem` honors per-item `stackSize` (bucket 16, filled 1) with durable gear still 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |"
 }
@@ -4279,7 +4279,7 @@ id: toolu_01Hk7rWg2ZQzgLU5SvPjrkDN
 tool_result
 id: toolu_01Hk7rWg2ZQzgLU5SvPjrkDN
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4289,7 +4289,7 @@ id: toolu_01KWRnSciA17DzTcbsKf7hmA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **Buckets, movable fluids & obsidian — the nether epic's opening act**: craft a **bucket** (3 sliver ore; empties stack to 16, a filled bucket rides alone) and right-click to **scoop** the aimed water or lava block and **pour** it back out against a solid face — the game's first fluid pickup/placement (lava was worldgen-only and untouchable). Fluids are **still**: no flow simulation, so a scooped ocean cell leaves a neat one-block hole and a poured block stays put; a poured lava block glows (max light) and burns exactly like the native floods, and a pour that would entomb you rolls back like ordinary placement. Pour **water directly onto lava** and it hisses into **obsidian** (BlockId 90, appended) — the game's only obsidian source and its hardest mineable block: **diamond-pickaxe-gated**, hardness 40, deliberately a grind because it is the portal-frame material of the dimension work that follows. Under the hood: a new `ItemDef.stackSize` caps per-item stacks, the water scoop reuses the fishing-bobber `waterSurfaceRaycast` (the solid raycast passes through water), and every mutation rides the ordinary `blockChanges.set` chokepoint — **no save-format, worldgen, or protocol […]
 
@@ -4307,7 +4307,7 @@ tool_use Read
 id: toolu_012X7L1KiCRsfFMn7gcnW3Xo
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "offset": 1,
   "limit": 10
 }
@@ -4336,7 +4336,7 @@ id: toolu_012ysQDfqp6gRtkPFognCzh7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added\n\n- **Slabs & stairs — half-blocks for real architecture**:",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **Buckets, movable fluids & obsidian — the nether epic's opening act**: craft a **bucket** (3 sliver ore; empties stack to 16, a filled bucket rides alone) and right-click to **scoop** the aimed water or lava block and **pour** it back out against a solid face — the game's first fluid pickup/placement (lava was worldgen-only and untouchable). Fluids are **still**: no flow simulation, so a scooped ocean cell leaves a neat one-block hole and a poured block stays put; a poured lava block glows (max light) and burns exactly like the native floods, and a pour that would entomb you rolls back like ordinary placement. Pour **water directly onto lava** and it hisses into **obsidian** (BlockId 90, appended) — the game's only obsidian source and its hardest mineable block: **diamond-pickaxe-gated**, hardness 40, deliberately a grind because it is the portal-frame material of the dimension work that follows. Under the hood: a new `ItemDef.stackSize` caps per-item stacks, the water scoop reuses the fishing-bobber `waterSurfaceRaycast` (the solid raycast passes through water), and every mutation rides the ordinary […]
 
@@ -4345,7 +4345,7 @@ id: toolu_012ysQDfqp6gRtkPFognCzh7
 tool_result
 id: toolu_012ysQDfqp6gRtkPFognCzh7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4425,7 +4425,7 @@ tool_use Read
 id: toolu_01DiQHJ8ThuuHywBzAYCUmpB
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts",
   "offset": 280,
   "limit": 135
 }
@@ -4468,7 +4468,7 @@ tool_use Read
 id: toolu_01DXFw4sQRM6nVjexrjhDcBs
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts"
 }
 ```
 
@@ -4537,7 +4537,7 @@ tool_use Read
 id: toolu_014gKbpzzFFJnLYquT8xBYG3
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 160,
   "limit": 300
 }
@@ -4577,7 +4577,7 @@ tool_use Read
 id: toolu_01HVZcUvHmAdEcThtU5KjCjP
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 1140,
   "limit": 100
 }
@@ -4634,7 +4634,7 @@ id: toolu_019wnd7LpJExCDtUfKbpCs9r
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts",
   "old_string": "/**\n * One persisted player (v17). Exactly the per-player slice that sat flat on\n * ≤v16 saves, under the same field names (so the field validators are shared);\n * `position` is the one rename (v16 called it `player`). Single-player worlds\n * hold one entry with id \"local\"; a multiplayer server holds one per account.\n */\nexport type SavedPlayer = {\n  id: string;\n  position?: { x: number; y: number; z: number };\n  inventorySlots?: SavedSlot[];\n  equippedArmor?: SavedEquippedArmor;\n  selectedSlot?: number;\n  gameMode?: string;\n  gameOver?: boolean;\n  hearts?: number;\n  hunger?: number;\n  effects?: SavedEffect[];\n  xp?: number;\n  stats?: SavedStat[];\n  advancements?: string[];\n  spawnPoint?: { x: number; y: number; z: number } | null;\n};\n\n/**\n * Current save shape (v17): the players map. Every per-player field moves off\n * the top level into `players[]` (world-level fields — seed, changes,\n * difficulty, hardcore, blockEntities, mobs, vehicles, dayClock — stay put).\n * migrateSaveV16toV17 wraps a flat single-player save as [{ id: \"local\", … }]\n * and rewrites pet owners from the legacy literal \"player\" to \"local\".\n */\nexport type SaveData = Omit<\n  SaveDataV16,\n  | \"version\"\n  | \"gameMode\"\n  | \"gameOver\"\n  | \"inventorySlots\"\n  | \"equippedArmor\"\n  | \"selectedSlot\"\n  | \"player\"\n  | \"hearts\"\n  | \"hunger\"\n  | \"spawnPoint\"\n  | […]
 
 > TOOL
@@ -4642,7 +4642,7 @@ id: toolu_019wnd7LpJExCDtUfKbpCs9r
 tool_result
 id: toolu_019wnd7LpJExCDtUfKbpCs9r
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4656,7 +4656,7 @@ id: toolu_01Yc8vexFBuPQ8Z2DNu1P7tk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "import { CHEST_SLOTS, CUSTOM_NAME_MAX_LEN, HOTBAR_SLOTS, INVENTORY_SLOTS, MAX_HEARTS, MAX_HUNGER, MAX_STACK_SIZE } from \"@/lib/game/config\";",
   "new_string": "import { CHEST_SLOTS, CUSTOM_NAME_MAX_LEN, HOTBAR_SLOTS, INVENTORY_SLOTS, MAX_HEARTS, MAX_HUNGER, MAX_STACK_SIZE, WORLDGEN_VERSION } from \"@/lib/game/config\";"
 }
@@ -4667,7 +4667,7 @@ id: toolu_01Yc8vexFBuPQ8Z2DNu1P7tk
 tool_result
 id: toolu_01Yc8vexFBuPQ8Z2DNu1P7tk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4677,7 +4677,7 @@ id: toolu_01WhW3qR2eCmMBA9fAeCny4m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "import type {\n  EffectId,\n  Enchantment,\n  EnchantmentId,\n  EquippedArmor,\n  SaveData,\n  SaveDataV1,",
   "new_string": "import type {\n  DimensionId,\n  DimensionSection,\n  EffectId,\n  Enchantment,\n  EnchantmentId,\n  EquippedArmor,\n  SaveData,\n  SaveDataV1,"
 }
@@ -4688,7 +4688,7 @@ id: toolu_01WhW3qR2eCmMBA9fAeCny4m
 tool_result
 id: toolu_01WhW3qR2eCmMBA9fAeCny4m
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4698,7 +4698,7 @@ id: toolu_01Xyav4Ygatajq8A5jyxX6YB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "  SaveDataV15,\n  SaveDataV16,\n  SavedPlayer,",
   "new_string": "  SaveDataV15,\n  SaveDataV16,\n  SaveDataV17,\n  SavedPlayer,"
 }
@@ -4709,7 +4709,7 @@ id: toolu_01Xyav4Ygatajq8A5jyxX6YB
 tool_result
 id: toolu_01Xyav4Ygatajq8A5jyxX6YB
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4719,7 +4719,7 @@ id: toolu_011ZFkdWNymz8M1PQdteaA4f
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "export function migrateSaveV16toV17(save: SaveDataV16): SaveData {",
   "new_string": "export function migrateSaveV16toV17(save: SaveDataV16): SaveDataV17 {"
 }
@@ -4730,7 +4730,7 @@ id: toolu_011ZFkdWNymz8M1PQdteaA4f
 tool_result
 id: toolu_011ZFkdWNymz8M1PQdteaA4f
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4740,7 +4740,7 @@ id: toolu_01QaVpZwAuWTiB73r1JYxcMB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "      {\n        id: \"local\",\n        position: player,\n        inventorySlots,\n        equippedArmor,\n        selectedSlot,\n        gameMode,\n        gameOver,\n        hearts,\n        hunger,\n        effects,\n        xp,\n        stats,\n        advancements,\n        spawnPoint\n      }\n    ]\n  };\n}",
   "new_string": "      {\n        id: \"local\",\n        position: player,\n        inventorySlots,\n        equippedArmor,\n        selectedSlot,\n        gameMode,\n        gameOver,\n        hearts,\n        hunger,\n        effects,\n        xp,\n        stats,\n        advancements,\n        spawnPoint\n      }\n    ]\n  };\n}\n\n/**\n * Migrates a v17 save to v18 — a pure version bump. The new fields are all\n * additive: `dimensions` absent means the world has never had a nether visit,\n * `SavedPlayer.dimension` absent means overworld, and `worldgenVersion` absent\n * marks a pre-v18 save the worldgen guard must GRANDFATHER (see\n * applyWorldgenGuard — discarding those diffs blind would wipe every migrated\n * world's builds).\n */\nexport function migrateSaveV17toV18(save: SaveDataV17): SaveData {\n  return { ...save, version: 18 };\n}\n\n/**\n * The documented worldgen staleness rule, enforced: a save stamped by a\n * DIFFERENT worldgen version has every dimension's world half discarded —\n * block diffs, chest contents, looted-chest memory, persistent mobs, vehicles,\n * and the villages-seeded flag (so villages repopulate) — and the world reboots\n * from its seed. Players are kept: the boot unstuck check and the bed-block\n * respawn re-check already absorb stale positions/spawn points. A save with […]
 
@@ -4749,7 +4749,7 @@ id: toolu_01QaVpZwAuWTiB73r1JYxcMB
 tool_result
 id: toolu_01QaVpZwAuWTiB73r1JYxcMB
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4763,7 +4763,7 @@ id: toolu_018RgvHZd1EfiWwu4XvPEWqc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "    const parsed = value as\n      | SaveData\n      | SaveDataV16\n      | SaveDataV15",
   "new_string": "    const parsed = value as\n      | SaveData\n      | SaveDataV17\n      | SaveDataV16\n      | SaveDataV15"
 }
@@ -4774,7 +4774,7 @@ id: toolu_018RgvHZd1EfiWwu4XvPEWqc
 tool_result
 id: toolu_018RgvHZd1EfiWwu4XvPEWqc
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4784,7 +4784,7 @@ id: toolu_01CoEksJCJaoxoPJbQdfVay7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "      | SaveDataV14\n      | SaveDataV15\n      | SaveDataV16\n      | SaveData = parsed.version === 1 ? migrateSaveV1toV2(parsed) : parsed;",
   "new_string": "      | SaveDataV14\n      | SaveDataV15\n      | SaveDataV16\n      | SaveDataV17\n      | SaveData = parsed.version === 1 ? migrateSaveV1toV2(parsed) : parsed;"
 }
@@ -4795,7 +4795,7 @@ id: toolu_01CoEksJCJaoxoPJbQdfVay7
 tool_result
 id: toolu_01CoEksJCJaoxoPJbQdfVay7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4805,7 +4805,7 @@ id: toolu_01EbbuotDmKQUyW4nCgL4BoG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "    if (migrated.version === 16) migrated = migrateSaveV16toV17(migrated);\n    if (migrated.version !== 17) return null;\n    if (!Array.isArray(migrated.players)) return null;\n    return migrated;",
   "new_string": "    if (migrated.version === 16) migrated = migrateSaveV16toV17(migrated);\n    if (migrated.version === 17) migrated = migrateSaveV17toV18(migrated);\n    if (migrated.version !== 18) return null;\n    if (!Array.isArray(migrated.players)) return null;\n    return migrated;"
 }
@@ -4816,7 +4816,7 @@ id: toolu_01EbbuotDmKQUyW4nCgL4BoG
 tool_result
 id: toolu_01EbbuotDmKQUyW4nCgL4BoG
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4830,7 +4830,7 @@ id: toolu_016NEW6QsD9SYPbdmmKJBsJ1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  constructor(options: GameEngineOptions = {}) {\n    const save = options.save ?? null;\n    this.rng = options.rng ?? Math.random;",
   "new_string": "  constructor(options: GameEngineOptions = {}) {\n    // The worldgen staleness guard runs before anything reads the save: a save\n    // stamped by a different generator version keeps its players but reboots\n    // the world from the seed (one seam covers SP, cloud, and the server room).\n    const save = options.save ? applyWorldgenGuard(options.save) : null;\n    this.rng = options.rng ?? Math.random;"
 }
@@ -4841,7 +4841,7 @@ id: toolu_016NEW6QsD9SYPbdmmKJBsJ1
 tool_result
 id: toolu_016NEW6QsD9SYPbdmmKJBsJ1
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4851,7 +4851,7 @@ id: toolu_015RvhsaKU8Yw2187nM71rwX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  private readonly headless: boolean;\n  private readonly rng: () => number;\n  private readonly worldType: WorldType;",
   "new_string": "  private readonly headless: boolean;\n  private readonly rng: () => number;\n  private readonly worldType: WorldType;\n  /**\n   * Dimension sections this engine does NOT simulate, re-emitted verbatim by\n   * serialize() so they survive a full save round-trip untouched. An overworld\n   * engine (every engine today, including the server room) carries the save's\n   * `dimensions` block here.\n   */\n  private readonly foreignDimensions: SaveData[\"dimensions\"];"
 }
@@ -4862,7 +4862,7 @@ id: toolu_015RvhsaKU8Yw2187nM71rwX
 tool_result
 id: toolu_015RvhsaKU8Yw2187nM71rwX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4872,7 +4872,7 @@ id: toolu_01UiLbhSRdjfBEbetHMrUwAm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    const seed = save?.seed ?? options.seed ?? Math.floor(Math.random() * 2147483647);\n    // A restored save's own type wins (the block-diffs were recorded against it);\n    // a fresh world takes the requested type, defaulting to \"default\".\n    this.worldType = save?.worldType ?? options.worldType ?? \"default\";",
   "new_string": "    const seed = save?.seed ?? options.seed ?? Math.floor(Math.random() * 2147483647);\n    // A restored save's own type wins (the block-diffs were recorded against it);\n    // a fresh world takes the requested type, defaulting to \"default\".\n    this.worldType = save?.worldType ?? options.worldType ?? \"default\";\n    this.foreignDimensions = save?.dimensions;"
 }
@@ -4883,7 +4883,7 @@ id: toolu_01UiLbhSRdjfBEbetHMrUwAm
 tool_result
 id: toolu_01UiLbhSRdjfBEbetHMrUwAm
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4893,7 +4893,7 @@ id: toolu_019GNsWBTgZ9182MSuzXWkqi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  serialize(): SaveData {\n    const state = this.state;\n    return {\n      version: 17,\n      seed: state.world.seed,\n      worldType: this.worldType,\n      difficulty: state.difficulty,\n      hardcore: state.hardcore,\n      changes: state.blockChanges.changes(),\n      players: [...state.players.values()].map((player) => this.serializePlayer(player)),\n      dayClock: state.dayClock,\n      blockEntities: serializeContainers(state.containers),\n      lootedChests: serializeLootedChests(state.lootedWorldgenChests),\n      mobs: serializeMobs(state.mobs),\n      vehicles: serializeVehicles(state.vehicles),\n      villagesSeeded: true // this world's villages are populated — don't re-seed on reload\n    };\n  }",
   "new_string": "  serialize(): SaveData {\n    const state = this.state;\n    const save: SaveData = {\n      version: 18,\n      // Stamps which generator produced these diffs; on mismatch a future boot\n      // discards the world half and reboots from the seed (applyWorldgenGuard).\n      worldgenVersion: WORLDGEN_VERSION,\n      seed: state.world.seed,\n      worldType: this.worldType,\n      difficulty: state.difficulty,\n      hardcore: state.hardcore,\n      changes: state.blockChanges.changes(),\n      players: [...state.players.values()].map((player) => this.serializePlayer(player)),\n      dayClock: state.dayClock,\n      blockEntities: serializeContainers(state.containers),\n      lootedChests: serializeLootedChests(state.lootedWorldgenChests),\n      mobs: serializeMobs(state.mobs),\n      vehicles: serializeVehicles(state.vehicles),\n      villagesSeeded: true // this world's villages are populated — don't re-seed on reload\n    };\n    // Dimensions this engine doesn't simulate ride through verbatim, so e.g.\n    // the server room (overworld) can never lose a world's nether builds.\n    if (this.foreignDimensions) save.dimensions = this.foreignDimensions;\n    return save;\n  }"
 }
@@ -4904,7 +4904,7 @@ id: toolu_019GNsWBTgZ9182MSuzXWkqi
 tool_result
 id: toolu_019GNsWBTgZ9182MSuzXWkqi
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4913,7 +4913,7 @@ tool_use Bash
 id: toolu_01BaqTfLGE2uJG1XfL32Se7N
 ```json
 {
-  "command": "grep -n \"from \\\"@/lib/game/save\\\"\\|from \\\"@/lib/game/config\\\"\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts; grep -n \"restoreDayClock\\|readLootedChests\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -3; sed -n '/^import {$/,/} from \"@\\/lib\\/game\\/save\";/p' /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -40",
+  "command": "grep -n \"from \\\"@/lib/game/save\\\"\\|from \\\"@/lib/game/config\\\"\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts; grep -n \"restoreDayClock\\|readLootedChests\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -3; sed -n '/^import {$/,/} from \"@\\/lib\\/game\\/save\";/p' /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts | head -40",
   "description": "Find GameEngine save/config import blocks"
 }
 ```
@@ -4976,7 +4976,7 @@ tool_use Read
 id: toolu_013k2aYTT6x4BXKao9PHWLf1
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 40,
   "limit": 60
 }
@@ -5056,7 +5056,7 @@ id: toolu_01EqUhk84793JXbvWjtL4cNv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  SLEEP_FADE_SECONDS,\n  SPRINT_SPEED,\n  STUCK_RESET_SECONDS,\n  WAKE_DAY_PHASE\n} from \"@/lib/game/config\";",
   "new_string": "  SLEEP_FADE_SECONDS,\n  SPRINT_SPEED,\n  STUCK_RESET_SECONDS,\n  WAKE_DAY_PHASE,\n  WORLDGEN_VERSION\n} from \"@/lib/game/config\";"
 }
@@ -5067,7 +5067,7 @@ id: toolu_01EqUhk84793JXbvWjtL4cNv
 tool_result
 id: toolu_01EqUhk84793JXbvWjtL4cNv
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5077,7 +5077,7 @@ id: toolu_01VW3xbb51Hc8tTuT2do2fGs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import {\n  inventorySlotsSnapshot,\n  serializeEquippedArmor,\n  readContainers,",
   "new_string": "import {\n  applyWorldgenGuard,\n  inventorySlotsSnapshot,\n  serializeEquippedArmor,\n  readContainers,"
 }
@@ -5088,7 +5088,7 @@ id: toolu_01VW3xbb51Hc8tTuT2do2fGs
 tool_result
 id: toolu_01VW3xbb51Hc8tTuT2do2fGs
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5101,7 +5101,7 @@ tool_use Bash
 id: toolu_01MejbHxS6XxbzvyfDr8nwcR
 ```json
 {
-  "command": "grep -rn \"toBe(17)\\|version: 17\\|version).toBe(17\\|=== 17\" --include=\"*.ts\" --include=\"*.tsx\" /Users/hutusi/workspace/ai/david/monecraft/lib /Users/hutusi/workspace/ai/david/monecraft/e2e /Users/hutusi/workspace/ai/david/monecraft/server /Users/hutusi/workspace/ai/david/monecraft/components /Users/hutusi/workspace/ai/david/monecraft/tests 2>/dev/null | grep -v node_modules",
+  "command": "grep -rn \"toBe(17)\\|version: 17\\|version).toBe(17\\|=== 17\" --include=\"*.ts\" --include=\"*.tsx\" /home/<USER>/workspace/ai/david/monecraft/lib /home/<USER>/workspace/ai/david/monecraft/e2e /home/<USER>/workspace/ai/david/monecraft/server /home/<USER>/workspace/ai/david/monecraft/components /home/<USER>/workspace/ai/david/monecraft/tests 2>/dev/null | grep -v node_modules",
   "description": "Find all v17 version references"
 }
 ```
@@ -5111,35 +5111,35 @@ id: toolu_01MejbHxS6XxbzvyfDr8nwcR
 tool_result
 id: toolu_01MejbHxS6XxbzvyfDr8nwcR
 ```
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/idbKv.test.ts:13:      version: 17,
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/cloudSaves.test.ts:24:      version: 17,
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/cloudSaves.test.ts:47:  const save = { version: 17, seed: 1, changes: [] } as unknown as SaveData;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/cloudSaves.test.ts:66:    if (decision.adopt) expect(decision.save.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts:417:  version: 17;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/saveStore.test.ts:23:  return { version: 17, seed, changes: [], players: [] } as unknown as SaveData;
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:153:    version: 17,
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:196:    expect(parsed!.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:218:    expect(parsed!.version).toBe(17); // chained v1 -> v2 -> … -> v16 -> v17
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:311:    expect(parsed!.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:348:    expect(parsed.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:423:    expect(parsed.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:468:    expect(parsed.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:490:    expect(parsed.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:517:    expect(parsed.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:545:    expect(parsed.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:777:    expect(parsed.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:995:    expect(parsed.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:1165:    expect(migrated.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:1229:    expect(parsed!.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts:257:    version: 17,
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts:405:    if (migrated.version === 17) migrated = migrateSaveV17toV18(migrated);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/hardcore.test.ts:135:    expect(save.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts:1691:    expect(save.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts:107:    expect(save.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts:264:    expect(villager.hp).toBe(17); // raw attackDamage 3, NOT ×1.5 for Hard
-/Users/hutusi/workspace/ai/david/monecraft/e2e/smoke.e2e.ts:294:  expect(saved!.version).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/lib/online/worldsService.test.ts:155:      expect(fetched.saveVersion).toBe(17);
-/Users/hutusi/workspace/ai/david/monecraft/server/room.test.ts:310:    expect(save?.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/idbKv.test.ts:13:      version: 17,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/cloudSaves.test.ts:24:      version: 17,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/cloudSaves.test.ts:47:  const save = { version: 17, seed: 1, changes: [] } as unknown as SaveData;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/cloudSaves.test.ts:66:    if (decision.adopt) expect(decision.save.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts:417:  version: 17;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/saveStore.test.ts:23:  return { version: 17, seed, changes: [], players: [] } as unknown as SaveData;
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:153:    version: 17,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:196:    expect(parsed!.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:218:    expect(parsed!.version).toBe(17); // chained v1 -> v2 -> … -> v16 -> v17
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:311:    expect(parsed!.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:348:    expect(parsed.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:423:    expect(parsed.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:468:    expect(parsed.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:490:    expect(parsed.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:517:    expect(parsed.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:545:    expect(parsed.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:777:    expect(parsed.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:995:    expect(parsed.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:1165:    expect(migrated.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:1229:    expect(parsed!.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts:257:    version: 17,
+/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts:405:    if (migrated.version === 17) migrated = migrateSaveV17toV18(migrated);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/hardcore.test.ts:135:    expect(save.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts:1691:    expect(save.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.multiplayer.test.ts:107:    expect(save.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts:264:    expect(villager.hp).toBe(17); // raw attackDamage 3, NOT ×1.5 for Hard
+/home/<USER>/workspace/ai/david/monecraft/e2e/smoke.e2e.ts:294:  expect(saved!.version).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/lib/online/worldsService.test.ts:155:      expect(fetched.saveVersion).toBe(17);
+/home/<USER>/workspace/ai/david/monecraft/server/room.test.ts:310:    expect(save?.version).toBe(17);
 ```
 
 > AGENT
@@ -5152,7 +5152,7 @@ tool_use Bash
 id: toolu_018S9WwHndoVjF7p3kaG5PEx
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n '8,20p' lib/game/idbKv.test.ts\necho ---\nsed -n '20,70p' lib/game/cloudSaves.test.ts\necho ---\nsed -n '18,28p' lib/game/saveStore.test.ts\necho ---\nsed -n '1160,1170p' lib/game/save.test.ts\necho ---\nsed -n '148,160p' lib/online/worldsService.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n '8,20p' lib/game/idbKv.test.ts\necho ---\nsed -n '20,70p' lib/game/cloudSaves.test.ts\necho ---\nsed -n '18,28p' lib/game/saveStore.test.ts\necho ---\nsed -n '1160,1170p' lib/game/save.test.ts\necho ---\nsed -n '148,160p' lib/online/worldsService.test.ts",
   "description": "Inspect version-17 test contexts"
 }
 ```
@@ -5217,7 +5217,7 @@ tool_use Bash
 id: toolu_01XrQU7RCKXyPCK8fV8Bcst6
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\n# parseSave / serialize outputs → 18 (save.test.ts, except the direct v16→v17 migration assert at line 1165)\nperl -i -pe 's/expect\\(parsed!?\\.version\\)\\.toBe\\(17\\)/expect(parsed.version).toBe(18)/ if !/migrated/' lib/game/save.test.ts\nperl -i -pe 's/expect\\(parsed\\.version\\)\\.toBe\\(18\\)/expect(parsed.version).toBe(18)/' lib/game/save.test.ts\ngrep -n \"toBe(17)\\|toBe(18)\" lib/game/save.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\n# parseSave / serialize outputs → 18 (save.test.ts, except the direct v16→v17 migration assert at line 1165)\nperl -i -pe 's/expect\\(parsed!?\\.version\\)\\.toBe\\(17\\)/expect(parsed.version).toBe(18)/ if !/migrated/' lib/game/save.test.ts\nperl -i -pe 's/expect\\(parsed\\.version\\)\\.toBe\\(18\\)/expect(parsed.version).toBe(18)/' lib/game/save.test.ts\ngrep -n \"toBe(17)\\|toBe(18)\" lib/game/save.test.ts",
   "description": "Bump save.test.ts parse asserts to 18"
 }
 ```
@@ -5252,7 +5252,7 @@ tool_use Bash
 id: toolu_018x4Taxq5wCwSr8AT6omp1p
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n '193,198p;216,220p;1227,1231p' lib/game/save.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n '193,198p;216,220p;1227,1231p' lib/game/save.test.ts",
   "description": "Check nullable parsed contexts"
 }
 ```
@@ -5286,7 +5286,7 @@ tool_use Bash
 id: toolu_018W5yPPjsViHzBVsqeJweZc
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -i -pe 's/expect\\(parsed\\.version\\)\\.toBe\\(18\\); \\/\\/ chained v1 -> v2 -> … -> v16 -> v17/expect(parsed!.version).toBe(18); \\/\\/ chained v1 -> v2 -> … -> v17 -> v18/' lib/game/save.test.ts\n# restore the ! on the three readSave (nullable) sites; parseSave sites use a non-null local\nperl -0pi -e 's/expect\\(parsed\\)\\.not\\.toBeNull\\(\\);\\n    expect\\(parsed\\.version\\)\\.toBe\\(18\\);/expect(parsed).not.toBeNull();\\n    expect(parsed!.version).toBe(18);/g' lib/game/save.test.ts\ngrep -n \"parsed.version\\|parsed!.version\" lib/game/save.test.ts | head -15",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -i -pe 's/expect\\(parsed\\.version\\)\\.toBe\\(18\\); \\/\\/ chained v1 -> v2 -> … -> v16 -> v17/expect(parsed!.version).toBe(18); \\/\\/ chained v1 -> v2 -> … -> v17 -> v18/' lib/game/save.test.ts\n# restore the ! on the three readSave (nullable) sites; parseSave sites use a non-null local\nperl -0pi -e 's/expect\\(parsed\\)\\.not\\.toBeNull\\(\\);\\n    expect\\(parsed\\.version\\)\\.toBe\\(18\\);/expect(parsed).not.toBeNull();\\n    expect(parsed!.version).toBe(18);/g' lib/game/save.test.ts\ngrep -n \"parsed.version\\|parsed!.version\" lib/game/save.test.ts | head -15",
   "description": "Restore non-null asserts where parsed is nullable"
 }
 ```
@@ -5316,7 +5316,7 @@ tool_use Bash
 id: toolu_01BAUgSjtDt1wF31XfT15cjs
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"parseSave\" lib/game/saveStore.ts lib/game/cloudSaves.ts | head -6\nperl -i -pe 's/expect\\(save\\.version\\)\\.toBe\\(17\\)/expect(save.version).toBe(18)/' lib/game/engine/hardcore.test.ts lib/game/engine/GameEngine.test.ts lib/game/engine/GameEngine.multiplayer.test.ts\nperl -i -pe 's/expect\\(save\\?\\.version\\)\\.toBe\\(17\\)/expect(save?.version).toBe(18)/' server/room.test.ts\nperl -i -pe 's/expect\\(saved!\\.version\\)\\.toBe\\(17\\)/expect(saved!.version).toBe(18)/' e2e/smoke.e2e.ts\ngrep -rn \"toBe(18)\" lib/game/engine/hardcore.test.ts lib/game/engine/GameEngine.test.ts lib/game/engine/GameEngine.multiplayer.test.ts server/room.test.ts e2e/smoke.e2e.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"parseSave\" lib/game/saveStore.ts lib/game/cloudSaves.ts | head -6\nperl -i -pe 's/expect\\(save\\.version\\)\\.toBe\\(17\\)/expect(save.version).toBe(18)/' lib/game/engine/hardcore.test.ts lib/game/engine/GameEngine.test.ts lib/game/engine/GameEngine.multiplayer.test.ts\nperl -i -pe 's/expect\\(save\\?\\.version\\)\\.toBe\\(17\\)/expect(save?.version).toBe(18)/' server/room.test.ts\nperl -i -pe 's/expect\\(saved!\\.version\\)\\.toBe\\(17\\)/expect(saved!.version).toBe(18)/' e2e/smoke.e2e.ts\ngrep -rn \"toBe(18)\" lib/game/engine/hardcore.test.ts lib/game/engine/GameEngine.test.ts lib/game/engine/GameEngine.multiplayer.test.ts server/room.test.ts e2e/smoke.e2e.ts",
   "description": "Bump serialize-output asserts to 18"
 }
 ```
@@ -5341,7 +5341,7 @@ tool_use Bash
 id: toolu_01QcwDwT7JFffF6VtZ4EmcEA
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"toEqual(sampleSave\\|version\" lib/game/saveStore.test.ts | head -12",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"toEqual(sampleSave\\|version\" lib/game/saveStore.test.ts | head -12",
   "description": "Check saveStore round-trip equality asserts"
 }
 ```
@@ -5376,7 +5376,7 @@ id: toolu_01ULAKAXgBZakwcaELVxadkR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/saveStore.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/saveStore.test.ts",
   "old_string": "/** Minimal valid v17 blob; the seed makes instances distinguishable. */\nfunction sampleSave(seed: number): SaveData {\n  return { version: 17, seed, changes: [], players: [] } as unknown as SaveData;\n}",
   "new_string": "/** Minimal valid current-version blob (reads parse in place — a stale version would migrate and break the round-trip equality asserts); the seed makes instances distinguishable. */\nfunction sampleSave(seed: number): SaveData {\n  return { version: 18, seed, changes: [], players: [] } as unknown as SaveData;\n}"
 }
@@ -5396,7 +5396,7 @@ tool_use Bash
 id: toolu_01WLaBneDLRE566sr7Aeh8AC
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/\\/\\*\\* Minimal valid v17 blob; the seed makes instances distinguishable\\. \\*\\/\\nfunction sampleSave\\(seed: number\\): SaveData \\{\\n  return \\{ version: 17, seed, changes: \\[\\], players: \\[\\] \\} as unknown as SaveData;/\\/** Minimal valid current-version blob (reads parse in place - a stale version would migrate and break the round-trip equality asserts); the seed makes instances distinguishable. *\\/\\nfunction sampleSave(seed: number): SaveData {\\n  return { version: 18, seed, changes: [], players: [] } as unknown as SaveData;/' lib/game/saveStore.test.ts\nsed -n '22,25p' lib/game/saveStore.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/\\/\\*\\* Minimal valid v17 blob; the seed makes instances distinguishable\\. \\*\\/\\nfunction sampleSave\\(seed: number\\): SaveData \\{\\n  return \\{ version: 17, seed, changes: \\[\\], players: \\[\\] \\} as unknown as SaveData;/\\/** Minimal valid current-version blob (reads parse in place - a stale version would migrate and break the round-trip equality asserts); the seed makes instances distinguishable. *\\/\\nfunction sampleSave(seed: number): SaveData {\\n  return { version: 18, seed, changes: [], players: [] } as unknown as SaveData;/' lib/game/saveStore.test.ts\nsed -n '22,25p' lib/game/saveStore.test.ts",
   "description": "Bump saveStore fixture to v18"
 }
 ```
@@ -5421,7 +5421,7 @@ tool_use Read
 id: toolu_01TFQu3Pz19ygmxkrWGotQTH
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts",
   "offset": 1185,
   "limit": 70
 }
@@ -5474,7 +5474,7 @@ tool_use Bash
 id: toolu_01WqRDfQta8T6VC5SPivm1yF
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n '1,60p' lib/game/save.test.ts | grep -n \"import\\|from\\|sampleSave\" ; sed -n '145,175p' lib/game/save.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n '1,60p' lib/game/save.test.ts | grep -n \"import\\|from\\|sampleSave\" ; sed -n '145,175p' lib/game/save.test.ts",
   "description": "Check save.test.ts imports and sampleSave fixture"
 }
 ```
@@ -5535,7 +5535,7 @@ tool_use Bash
 id: toolu_01M7oDR6ihjR2cGANV3uZZ8R
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/\\/\\*\\* The current \\(v17\\) shape — exactly what sampleSaveV16 migrates to\\. \\*\\/\\nfunction sampleSave\\(\\): SaveData \\{\\n  return \\{\\n    version: 17,/\\/** The current (v18) shape - what sampleSaveV16 migrates to, one version stamp later. *\\/\\nfunction sampleSave(): SaveData {\\n  return {\\n    version: 18,/' lib/game/save.test.ts\nsed -n '150,154p' lib/game/save.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/\\/\\*\\* The current \\(v17\\) shape — exactly what sampleSaveV16 migrates to\\. \\*\\/\\nfunction sampleSave\\(\\): SaveData \\{\\n  return \\{\\n    version: 17,/\\/** The current (v18) shape - what sampleSaveV16 migrates to, one version stamp later. *\\/\\nfunction sampleSave(): SaveData {\\n  return {\\n    version: 18,/' lib/game/save.test.ts\nsed -n '150,154p' lib/game/save.test.ts",
   "description": "Bump sampleSave fixture to v18"
 }
 ```
@@ -5562,7 +5562,7 @@ tool_use Read
 id: toolu_012m7ZVMrFy3rwcmqSRLtZ3L
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts",
   "offset": 5,
   "limit": 50
 }
@@ -5632,7 +5632,7 @@ id: toolu_01BSYXPHLd6pUWNV2YUV4NH9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts",
   "old_string": "  migrateSaveV15toV16,\n  migrateSaveV16toV17,\n  isPersistentMob,\n  parseSave,",
   "new_string": "  migrateSaveV15toV16,\n  migrateSaveV16toV17,\n  migrateSaveV17toV18,\n  applyWorldgenGuard,\n  dimensionSectionOf,\n  restorePlayerDimension,\n  restorePortalArrival,\n  isPersistentMob,\n  parseSave,"
 }
@@ -5643,7 +5643,7 @@ id: toolu_01BSYXPHLd6pUWNV2YUV4NH9
 tool_result
 id: toolu_01BSYXPHLd6pUWNV2YUV4NH9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5652,7 +5652,7 @@ tool_use Bash
 id: toolu_01DFZQRnjSLkeUPAGTRqXJjn
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n '54,70p' lib/game/save.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n '54,70p' lib/game/save.test.ts",
   "description": "Check type imports in save.test.ts"
 }
 ```
@@ -5687,7 +5687,7 @@ tool_use Bash
 id: toolu_01WmfXT4qVbmVyH6PU7CCDgx
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/import type \\{\\n  InventorySlot,\\n  SaveData,/import type {\\n  DimensionSection,\\n  InventorySlot,\\n  SaveData,/' lib/game/save.test.ts\ngrep -n \"SaveDataV16\" lib/game/save.test.ts | head -3\ncat >> lib/game/save.test.ts << 'EOF'\n\ndescribe(\"save v18 — dimensions & the worldgen guard\", () => {\n  test(\"migrateSaveV17toV18 is a pure version bump: no stamp, no dimensions\", () => {\n    const v17 = { ...sampleSave(), version: 17 } as unknown as Parameters<typeof migrateSaveV17toV18>[0];\n    const migrated = migrateSaveV17toV18(v17);\n    expect(migrated.version).toBe(18);\n    expect(migrated.worldgenVersion).toBeUndefined(); // grandfathered — the guard stays inert\n    expect(migrated.dimensions).toBeUndefined();\n    expect(migrated.seed).toBe(1337);\n    expect(migrated.players).toEqual(v17.players);\n  });\n\n  test(\"applyWorldgenGuard is a no-op without a stamp and with a matching stamp\", () => {\n    const unstamped = sampleSave();\n    expect(applyWorldgenGuard(unstamped)).toBe(unstamped); // same reference — untouched\n\n    const stamped = { ...sampleSave(), worldgenVersion: WORLDGEN_VERSION };\n    expect(applyWorldgenGuard(stamped)).toBe(stamped);\n  });\n\n  test(\"applyWorldgenGuard on a mismatched stamp discards every dimension's world half but keeps the players\", () => {\n    const stale: SaveData = {\n      ...sampleSave(),\n      worldgenVersion: WORLDGEN_VERSION + 1,\n      blockEntities: [{ index: 42, slots: [{ id: \"dirt\", count: 3 }] }],\n      mobs: [{ kind: \"wolf\", x: 1, y: 2, z: 3, hp: 5, faction: \"ally\", owner: \"local\" }],\n      vehicles: [{ kind: \"raft\", x: 1, y: 2, z: 3, yaw: 0 }],\n      villagesSeeded: true,\n      dimensions: { nether: { changes: [[7, 90]] } }\n […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/import type \\{\\n  InventorySlot,\\n  SaveData,/import type {\\n  DimensionSection,\\n  InventorySlot,\\n  SaveData,/' lib/game/save.test.ts\ngrep -n \"SaveDataV16\" lib/game/save.test.ts | head -3\ncat >> lib/game/save.test.ts << 'EOF'\n\ndescribe(\"save v18 — dimensions & the worldgen guard\", () => {\n  test(\"migrateSaveV17toV18 is a pure version bump: no stamp, no dimensions\", () => {\n    const v17 = { ...sampleSave(), version: 17 } as unknown as Parameters<typeof migrateSaveV17toV18>[0];\n    const migrated = migrateSaveV17toV18(v17);\n    expect(migrated.version).toBe(18);\n    expect(migrated.worldgenVersion).toBeUndefined(); // grandfathered — the guard stays inert\n    expect(migrated.dimensions).toBeUndefined();\n    expect(migrated.seed).toBe(1337);\n    expect(migrated.players).toEqual(v17.players);\n  });\n\n  test(\"applyWorldgenGuard is a no-op without a stamp and with a matching stamp\", () => {\n    const unstamped = sampleSave();\n    expect(applyWorldgenGuard(unstamped)).toBe(unstamped); // same reference — untouched\n\n    const stamped = { ...sampleSave(), worldgenVersion: WORLDGEN_VERSION };\n    expect(applyWorldgenGuard(stamped)).toBe(stamped);\n  });\n\n  test(\"applyWorldgenGuard on a mismatched stamp discards every dimension's world half but keeps the players\", () => {\n    const stale: SaveData = {\n      ...sampleSave(),\n      worldgenVersion: WORLDGEN_VERSION + 1,\n      blockEntities: [{ index: 42, slots: [{ id: \"dirt\", count: 3 }] }],\n      mobs: [{ kind: \"wolf\", x: 1, y: 2, z: 3, hp: 5, faction: \"ally\", owner: \"local\" }],\n      vehicles: [{ kind: \"raft\", x: 1, y: 2, z: 3, yaw: 0 }],\n      villagesSeeded: true,\n      dimensions: { nether: { changes: [[7, 90]] } }\n […]
 
 > TOOL
 
@@ -5711,7 +5711,7 @@ id: toolu_01A3sP4DBM35LHNGX1yPeW4F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts",
   "old_string": "import { CUSTOM_NAME_MAX_LEN, ENCHANT_MAX_LEVEL, INVENTORY_SLOTS } from \"@/lib/game/config\";\nimport { MAX_HEARTS, MAX_HUNGER } from \"@/lib/game/config\";",
   "new_string": "import { CUSTOM_NAME_MAX_LEN, ENCHANT_MAX_LEVEL, INVENTORY_SLOTS, WORLDGEN_VERSION } from \"@/lib/game/config\";\nimport { MAX_HEARTS, MAX_HUNGER } from \"@/lib/game/config\";"
 }
@@ -5722,7 +5722,7 @@ id: toolu_01A3sP4DBM35LHNGX1yPeW4F
 tool_result
 id: toolu_01A3sP4DBM35LHNGX1yPeW4F
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5732,7 +5732,7 @@ id: toolu_01AmpdGZCd9wJ4ccHU1rG93F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts",
   "old_string": "  test(\"a stored flat v16 save reads back as the migrated v17 shape\", () => {",
   "new_string": "  test(\"a stored flat v16 save reads back as the migrated current shape\", () => {"
 }
@@ -5743,7 +5743,7 @@ id: toolu_01AmpdGZCd9wJ4ccHU1rG93F
 tool_result
 id: toolu_01AmpdGZCd9wJ4ccHU1rG93F
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5756,7 +5756,7 @@ tool_use Bash
 id: toolu_012KgkKLjkTvAND6WNAgNJwP
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n '1680,1700p' lib/game/engine/GameEngine.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n '1680,1700p' lib/game/engine/GameEngine.test.ts",
   "description": "See the serialize test context in GameEngine.test.ts"
 }
 ```
@@ -5795,7 +5795,7 @@ tool_use Bash
 id: toolu_01BpJ6Zx6hm5L7CZ4CK8Q8Sp
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"function makeEngine\" lib/game/engine/GameEngine.test.ts | head -2; sed -n \"$(grep -n 'function makeEngine' lib/game/engine/GameEngine.test.ts | head -1 | cut -d: -f1),+8p\" lib/game/engine/GameEngine.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"function makeEngine\" lib/game/engine/GameEngine.test.ts | head -2; sed -n \"$(grep -n 'function makeEngine' lib/game/engine/GameEngine.test.ts | head -1 | cut -d: -f1),+8p\" lib/game/engine/GameEngine.test.ts",
   "description": "See makeEngine helper"
 }
 ```
@@ -5824,7 +5824,7 @@ id: toolu_01GQEYXzrWMY8Cpdjrr5n51R
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "old_string": "  test(\"save format is current and carries clock, stats, spawn point, and game mode\", () => {",
   "new_string": "  test(\"serialize stamps the worldgen version, and a mismatched stamp reboots the world half but keeps the player\", () => {\n    const engine = makeEngine();\n    engine.state.blockChanges.set(10, 40, 10, BlockId.Brick);\n    engine.state.player.xp = 57;\n    const save = engine.serialize();\n    expect(save.worldgenVersion).toBeDefined();\n\n    // Same stamp: the edit survives the reload.\n    const same = makeEngine(save);\n    expect(same.state.world.get(10, 40, 10)).toBe(BlockId.Brick);\n    expect(same.state.player.xp).toBe(57);\n\n    // A stale stamp: the guard discards the diff, the player slice survives.\n    const stale = makeEngine({ ...save, worldgenVersion: save.worldgenVersion! + 1 });\n    expect(stale.state.world.get(10, 40, 10)).not.toBe(BlockId.Brick);\n    expect(stale.state.blockChanges.changes()).toEqual([]);\n    expect(stale.state.player.xp).toBe(57);\n  });\n\n  test(\"a foreign dimension section rides through serialize untouched (the server-room pass-through)\", () => {\n    const nether = { changes: [[7, 90]] as Array<[number, number]>, lootedChests: [9] };\n    const engine = makeEngine();\n    const withNether = { ...engine.serialize(), dimensions: { nether } };\n\n    // An (overworld) engine booted from that save — the server room's exact path —\n    // must re-emit the section byte-for-byte even after unrelated world edits.\n    const room = makeEngine(withNether);\n    room.state.blockChanges.set(10, 40, 10, BlockId.Brick);\n    const persisted = room.serialize();\n    expect(persisted.dimensions).toEqual({ nether });\n\n    // And a save with no dimensions […]
 
@@ -5842,7 +5842,7 @@ tool_use Read
 id: toolu_01WSQAarojpJanjR4mZL8Shn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "offset": 1684,
   "limit": 5
 }
@@ -5867,7 +5867,7 @@ id: toolu_01GoAY1MAAUdpYAaPvgqiZMa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts",
   "old_string": "  test(\"save format is current and carries clock, stats, spawn point, and game mode\", () => {",
   "new_string": "  test(\"serialize stamps the worldgen version, and a mismatched stamp reboots the world half but keeps the player\", () => {\n    const engine = makeEngine();\n    engine.state.blockChanges.set(10, 40, 10, BlockId.Brick);\n    engine.state.player.xp = 57;\n    const save = engine.serialize();\n    expect(save.worldgenVersion).toBeDefined();\n\n    // Same stamp: the edit survives the reload.\n    const same = makeEngine(save);\n    expect(same.state.world.get(10, 40, 10)).toBe(BlockId.Brick);\n    expect(same.state.player.xp).toBe(57);\n\n    // A stale stamp: the guard discards the diff, the player slice survives.\n    const stale = makeEngine({ ...save, worldgenVersion: save.worldgenVersion! + 1 });\n    expect(stale.state.world.get(10, 40, 10)).not.toBe(BlockId.Brick);\n    expect(stale.state.blockChanges.changes()).toEqual([]);\n    expect(stale.state.player.xp).toBe(57);\n  });\n\n  test(\"a foreign dimension section rides through serialize untouched (the server-room pass-through)\", () => {\n    const nether = { changes: [[7, 90]] as Array<[number, number]>, lootedChests: [9] };\n    const engine = makeEngine();\n    const withNether = { ...engine.serialize(), dimensions: { nether } };\n\n    // An (overworld) engine booted from that save — the server room's exact path —\n    // must re-emit the section byte-for-byte even after unrelated world edits.\n    const room = makeEngine(withNether);\n    room.state.blockChanges.set(10, 40, 10, BlockId.Brick);\n    const persisted = room.serialize();\n    expect(persisted.dimensions).toEqual({ nether });\n\n    // And a save with no dimensions […]
 
@@ -5876,7 +5876,7 @@ id: toolu_01GoAY1MAAUdpYAaPvgqiZMa
 tool_result
 id: toolu_01GoAY1MAAUdpYAaPvgqiZMa
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5912,7 +5912,7 @@ tool_use Bash
 id: toolu_012pW4y3UGtVRMCTNqX3Ha7p
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -i -pe 's/const save = \\{ version: 17, seed: 1, changes: \\[\\] \\} as unknown as SaveData;/const save = { version: 18, seed: 1, changes: [] } as unknown as SaveData;/' lib/game/cloudSaves.test.ts\nperl -i -pe 's/if \\(decision\\.adopt\\) expect\\(decision\\.save\\.version\\)\\.toBe\\(17\\);/if (decision.adopt) expect(decision.save.version).toBe(18);/' lib/game/cloudSaves.test.ts\nbun run typecheck 2>&1 | tail -3",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -i -pe 's/const save = \\{ version: 17, seed: 1, changes: \\[\\] \\} as unknown as SaveData;/const save = { version: 18, seed: 1, changes: [] } as unknown as SaveData;/' lib/game/cloudSaves.test.ts\nperl -i -pe 's/if \\(decision\\.adopt\\) expect\\(decision\\.save\\.version\\)\\.toBe\\(17\\);/if (decision.adopt) expect(decision.save.version).toBe(18);/' lib/game/cloudSaves.test.ts\nbun run typecheck 2>&1 | tail -3",
   "description": "Fix cloudSaves fixture and re-typecheck",
   "timeout": 180000
 }
@@ -5972,12 +5972,12 @@ id: toolu_01FUTUQdctAHaBn1g4qJ2K6F
 ```
 }
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:888:75)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:888:75)
 (fail) readSave rejects corrupt data > unknown future version [0.25ms]
 --
 }
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.test.ts:932:57)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/save.test.ts:932:57)
 (fail) parseSave on decoded objects > unknown future version yields null [0.11ms]
 ```
 
@@ -5991,7 +5991,7 @@ tool_use Bash
 id: toolu_01TbCS5oELK9K5YFZ2VeSqQo
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n '884,890p;929,934p' lib/game/save.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n '884,890p;929,934p' lib/game/save.test.ts",
   "description": "See the future-version fixtures"
 }
 ```
@@ -6022,7 +6022,7 @@ tool_use Bash
 id: toolu_015eGFPDbqjcMVotoDUhxj3g
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/test\\(\"unknown future version\", \\(\\) => \\{\\n    const save = \\{ \\.\\.\\.sampleSave\\(\\), version: 18 \\};/test(\"unknown future version\", () => {\\n    const save = { ...sampleSave(), version: 19 };/' lib/game/save.test.ts\nperl -0pi -e 's/test\\(\"unknown future version yields null\", \\(\\) => \\{\\n    expect\\(parseSave\\(\\{ \\.\\.\\.sampleSave\\(\\), version: 18 \\}\\)\\)\\.toBeNull\\(\\);/test(\"unknown future version yields null\", () => {\\n    expect(parseSave({ ...sampleSave(), version: 19 })).toBeNull();/' lib/game/save.test.ts\nbun test lib/game/save.test.ts lib/game/engine/GameEngine.test.ts lib/game/saveStore.test.ts lib/game/cloudSaves.test.ts 2>&1 | tail -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/test\\(\"unknown future version\", \\(\\) => \\{\\n    const save = \\{ \\.\\.\\.sampleSave\\(\\), version: 18 \\};/test(\"unknown future version\", () => {\\n    const save = { ...sampleSave(), version: 19 };/' lib/game/save.test.ts\nperl -0pi -e 's/test\\(\"unknown future version yields null\", \\(\\) => \\{\\n    expect\\(parseSave\\(\\{ \\.\\.\\.sampleSave\\(\\), version: 18 \\}\\)\\)\\.toBeNull\\(\\);/test(\"unknown future version yields null\", () => {\\n    expect(parseSave({ ...sampleSave(), version: 19 })).toBeNull();/' lib/game/save.test.ts\nbun test lib/game/save.test.ts lib/game/engine/GameEngine.test.ts lib/game/saveStore.test.ts lib/game/cloudSaves.test.ts 2>&1 | tail -4",
   "description": "Fix future-version fixtures, run save suites",
   "timeout": 180000
 }
@@ -6130,7 +6130,7 @@ tool_use Read
 id: toolu_018B5wL4PBGbNoMESDxgMYTz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/spawn.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/spawn.ts"
 }
 ```
 
@@ -6171,7 +6171,7 @@ tool_use Read
 id: toolu_0117KgrpqNRzbWgn6BNbsZ9K
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dayNight.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dayNight.ts"
 }
 ```
 
@@ -6217,7 +6217,7 @@ tool_use Bash
 id: toolu_01LHB3FrA4S8c1dWrTtsvRoY
 ```json
 {
-  "command": "sed -n 1,60p /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/weather.ts",
+  "command": "sed -n 1,60p /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/weather.ts",
   "description": "Read weather system head"
 }
 ```
@@ -6264,7 +6264,7 @@ tool_use Read
 id: toolu_017taLenMQY1MebUZi16WW3a
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "offset": 278,
   "limit": 22
 }
@@ -6305,7 +6305,7 @@ tool_use Read
 id: toolu_01HKwz6Ffnq4tbtU3KAP7Bzw
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "offset": 228,
   "limit": 14
 }
@@ -6339,7 +6339,7 @@ id: toolu_01RUc5rdZMMCQ6RLPt7gAThU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "export type GameState = {\n  world: VoxelWorld;\n  blockChanges: BlockChangeTracker;",
   "new_string": "export type GameState = {\n  world: VoxelWorld;\n  blockChanges: BlockChangeTracker;\n  /**\n   * Which dimension this engine simulates (swap-on-travel: one live dimension\n   * per engine — `world` and every voxel-indexed collection are in ITS space).\n   * Fixed for the engine's life; portal travel boots a fresh engine.\n   */\n  dimension: DimensionId;"
 }
@@ -6350,7 +6350,7 @@ id: toolu_01RUc5rdZMMCQ6RLPt7gAThU
 tool_result
 id: toolu_01RUc5rdZMMCQ6RLPt7gAThU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6360,7 +6360,7 @@ id: toolu_01V4Kykr3xbXZ3UnZ2YUBSZy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  | { type: \"sleepDenied\"; reason: \"daylight\" | \"hostiles\" }",
   "new_string": "  | { type: \"sleepDenied\"; reason: \"daylight\" | \"hostiles\" | \"dimension\" }"
 }
@@ -6371,7 +6371,7 @@ id: toolu_01V4Kykr3xbXZ3UnZ2YUBSZy
 tool_result
 id: toolu_01V4Kykr3xbXZ3UnZ2YUBSZy
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6381,7 +6381,7 @@ id: toolu_01SZHcRMvXKAnwmQ9BzsWRUk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "old_string": "// Day-night cycle (daylight ranges 0.04–1.0)\nexport const DAY_CYCLE_SECONDS = 240;\nexport const HOSTILE_SPAWN_BELOW_DAYLIGHT = 0.28;\nexport const SPIDER_AGGRO_BELOW_DAYLIGHT = 0.42;\nexport const HOSTILE_BURN_ABOVE_DAYLIGHT = 0.72;",
   "new_string": "// Day-night cycle (daylight ranges 0.04–1.0)\nexport const DAY_CYCLE_SECONDS = 240;\nexport const HOSTILE_SPAWN_BELOW_DAYLIGHT = 0.28;\nexport const SPIDER_AGGRO_BELOW_DAYLIGHT = 0.42;\nexport const HOSTILE_BURN_ABOVE_DAYLIGHT = 0.72;\n// The nether has no sky: daylight is pinned to this constant — below the\n// hostile-spawn threshold (spawns never stop) and the burn threshold (nothing\n// combusts), while the day clock itself keeps ticking (it is shared world time).\nexport const NETHER_DAYLIGHT = 0.22;"
 }
@@ -6392,7 +6392,7 @@ id: toolu_01SZHcRMvXKAnwmQ9BzsWRUk
 tool_result
 id: toolu_01SZHcRMvXKAnwmQ9BzsWRUk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6401,7 +6401,7 @@ tool_use Bash
 id: toolu_01J8A7rRWyLq2rgCtvyWh3Bg
 ```json
 {
-  "command": "sed -n 1,15p /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "command": "sed -n 1,15p /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "description": "Check state.ts imports"
 }
 ```
@@ -6435,7 +6435,7 @@ id: toolu_01Wz1FbpcQuE7QgcFMTj96Tk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "import type { EffectId, EnchantmentId, EquippedArmor, InventorySlot, MobFaction, MobKind, Profession, SaveData, VehicleKind } from \"@/lib/game/types\";",
   "new_string": "import type { DimensionId, EffectId, EnchantmentId, EquippedArmor, InventorySlot, MobFaction, MobKind, Profession, SaveData, VehicleKind } from \"@/lib/game/types\";"
 }
@@ -6446,7 +6446,7 @@ id: toolu_01Wz1FbpcQuE7QgcFMTj96Tk
 tool_result
 id: toolu_01Wz1FbpcQuE7QgcFMTj96Tk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6460,7 +6460,7 @@ id: toolu_01BMknQGfbaVR8Cc9VvUzhAb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dayNight.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dayNight.ts",
   "old_string": "import { DAY_CYCLE_SECONDS } from \"@/lib/game/config\";\nimport { portableSin } from \"@/lib/world/noise\";\nimport type { GameState } from \"../state\";\n\n/** Daylight level 0.04–1.0 for a given day clock. The single source of the formula. */\nexport function daylightAt(dayClock: number): number {\n  // portableSin: daylight gates hostile spawn/burn, so an authoritative server\n  // and its clients must agree on it bit-for-bit — see lib/world/noise.ts.\n  const phase = (dayClock % DAY_CYCLE_SECONDS) / DAY_CYCLE_SECONDS;\n  return Math.max(0.04, portableSin(phase * Math.PI * 2) * 0.95 + 0.05);\n}\n\n/** Sun angle in radians for a given day clock (renderer positions lights from it). */\nexport function sunAngleAt(dayClock: number): number {\n  return ((dayClock % DAY_CYCLE_SECONDS) / DAY_CYCLE_SECONDS) * Math.PI * 2;\n}\n\nexport function tickDayNight(state: GameState, dt: number): void {\n  state.dayClock += dt;\n  state.daylight = daylightAt(state.dayClock);",
   "new_string": "import { DAY_CYCLE_SECONDS, NETHER_DAYLIGHT } from \"@/lib/game/config\";\nimport { portableSin } from \"@/lib/world/noise\";\nimport type { DimensionId } from \"@/lib/game/types\";\nimport type { GameState } from \"../state\";\n\n/** Daylight level 0.04–1.0 for a given day clock. The single source of the formula. */\nexport function daylightAt(dayClock: number): number {\n  // portableSin: daylight gates hostile spawn/burn, so an authoritative server\n  // and its clients must agree on it bit-for-bit — see lib/world/noise.ts.\n  const […]
 
@@ -6469,7 +6469,7 @@ id: toolu_01BMknQGfbaVR8Cc9VvUzhAb
 tool_result
 id: toolu_01BMknQGfbaVR8Cc9VvUzhAb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/dayNight.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/dayNight.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6478,7 +6478,7 @@ tool_use Write
 id: toolu_019ncgkF7wKEbNKhh1JGcCQY
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.ts",
   "content": "import { BlockId } from \"./blocks\";\nimport type { VoxelWorld } from \"./voxelWorld\";\n\n/**\n * The nether generator — STUB. This shape (a bedrock-capped world with a flat\n * stone mass under one tall cavern) exists so the dimension-aware engine boot\n * lands as its own reviewable slice; the content stage replaces it wholesale\n * with the real cavern/lava-sea/glowstone passes and pins SHA-256 baselines.\n * Nothing shipped ever saves against this stub (the epic lands as one PR), so\n * the swap breaks no diff.\n *\n * Invariants the real generator must keep:\n * - Bedrock seals y=0 AND the top row: the ceiling cap is what zeroes baked\n *   skylight (lighting floods from the top row), giving the nether its dark.\n * - Deterministic per seed via lib/world/noise.ts portables only (the Bun\n *   server and every browser must agree byte-for-byte).\n * - Honors any world size (fast headless tests boot tiny worlds).\n */\nexport function generateNetherWorld(world: VoxelWorld): void {\n  const floorTop = Math.min(40, world.sizeY - 10);\n  for (let x = 0; x < world.sizeX; x += 1) {\n    for (let z = 0; z < world.sizeZ; z += 1) {\n      world.set(x, 0, z, […]
 
 > TOOL
@@ -6486,7 +6486,7 @@ id: toolu_019ncgkF7wKEbNKhh1JGcCQY
 tool_result
 id: toolu_019ncgkF7wKEbNKhh1JGcCQY
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6495,7 +6495,7 @@ tool_use Bash
 id: toolu_01YCxfxh8ttyGZePfDrT2Kc1
 ```json
 {
-  "command": "grep -n \"generateWorld\\|netherGeneration\\|export \\*\" /Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts | head",
+  "command": "grep -n \"generateWorld\\|netherGeneration\\|export \\*\" /home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts | head",
   "description": "Check lib/world index exports"
 }
 ```
@@ -6514,7 +6514,7 @@ tool_use Read
 id: toolu_01SiCbaMdevw5xbsawLa2W1v
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts"
 }
 ```
 
@@ -6580,7 +6580,7 @@ id: toolu_01Ksy5gvpCvWWcXBpTUcWo7t
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts",
   "old_string": "export { isWorldType, WORLD_TYPE_IDS, type WorldType } from \"./worldTypes\";",
   "new_string": "export { generateNetherWorld } from \"./netherGeneration\";\nexport { isWorldType, WORLD_TYPE_IDS, type WorldType } from \"./worldTypes\";"
 }
@@ -6591,7 +6591,7 @@ id: toolu_01Ksy5gvpCvWWcXBpTUcWo7t
 tool_result
 id: toolu_01Ksy5gvpCvWWcXBpTUcWo7t
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6605,7 +6605,7 @@ id: toolu_01FpWGwRn9Sx4C1odzyW4an3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/spawn.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/spawn.ts",
   "old_string": "/**\n * Deterministic spiral search for a safe spawn column: solid dry floor, two\n * air blocks for the body, gently sloped neighbors, preferring Plains. Falls\n * back to any biome, then to the search center.\n */",
   "new_string": "/**\n * The nether's surfaceYAt: the world is ROOFED (a bedrock ceiling cap), so\n * `highestSolidY` would put every consumer — unstuck, respawn, the spawn\n * directors — on top of the roof. Instead, walk each column down from beneath\n * the cap: skip any mass hanging from the ceiling, descend the open air, and\n * the first air-over-solid pocket is the cavern floor. A lava floor is not a\n * floor (return 1, which every consumer's `y > 2` guard rejects).\n */\nexport function createNetherFloorYAt(world: VoxelWorld): SurfaceYAtFn {\n  return (x: number, z: number) => {\n    const ix = Math.floor(x);\n    const iz = Math.floor(z);\n    if (ix < 0 || iz < 0 || ix >= world.sizeX || iz >= world.sizeZ) return 1;\n    let y = world.sizeY - 2;\n    while (y > 1 && world.isSolid(ix, y, iz)) y -= 1; // through the ceiling mass\n    while (y > 1 && !world.isSolid(ix, y - […]
 
@@ -6614,7 +6614,7 @@ id: toolu_01FpWGwRn9Sx4C1odzyW4an3
 tool_result
 id: toolu_01FpWGwRn9Sx4C1odzyW4an3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/spawn.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/spawn.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6628,7 +6628,7 @@ id: toolu_01Bu5Lij68KSQXLr5AkTKeA5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  /** Hardcore flag for a fresh world; the save's own wins when restoring. Forces Survival + Hard + permadeath. Defaults to false. */\n  hardcore?: boolean;",
   "new_string": "  /** Hardcore flag for a fresh world; the save's own wins when restoring. Forces Survival + Hard + permadeath. Defaults to false. */\n  hardcore?: boolean;\n  /**\n   * Dimension for a fresh world (a test override); the save's own — the local\n   * player's `dimension` — wins when restoring. Defaults to \"overworld\".\n   */\n  dimension?: DimensionId;"
 }
@@ -6639,7 +6639,7 @@ id: toolu_01Bu5Lij68KSQXLr5AkTKeA5
 tool_result
 id: toolu_01Bu5Lij68KSQXLr5AkTKeA5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6649,7 +6649,7 @@ id: toolu_016t9px9vnC61iYtR2Egdq7p
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  /**\n   * Dimension sections this engine does NOT simulate, re-emitted verbatim by\n   * serialize() so they survive a full save round-trip untouched. An overworld\n   * engine (every engine today, including the server room) carries the save's\n   * `dimensions` block here.\n   */\n  private readonly foreignDimensions: SaveData[\"dimensions\"];",
   "new_string": "  /**\n   * Dimension sections this engine does NOT simulate, re-emitted verbatim by\n   * serialize() so they survive a full save round-trip untouched. An overworld\n   * engine (including the server room) carries the save's `dimensions` block\n   * here; a nether engine instead carries the OVERWORLD's top-level world half\n   * in `foreignOverworld` (plus its villagesSeeded flag) and re-emits that at\n   * the top level.\n   */\n  private readonly foreignDimensions: SaveData[\"dimensions\"];\n  private readonly foreignOverworld: (DimensionSection & { villagesSeeded?: boolean }) | null;"
 }
@@ -6660,7 +6660,7 @@ id: toolu_016t9px9vnC61iYtR2Egdq7p
 tool_result
 id: toolu_016t9px9vnC61iYtR2Egdq7p
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6670,7 +6670,7 @@ id: toolu_011TpFYipwdA3htounyQ9YCN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    const seed = save?.seed ?? options.seed ?? Math.floor(Math.random() * 2147483647);\n    // A restored save's own type wins (the block-diffs were recorded against it);\n    // a fresh world takes the requested type, defaulting to \"default\".\n    this.worldType = save?.worldType ?? options.worldType ?? \"default\";\n    this.foreignDimensions = save?.dimensions;\n    const size = options.worldSize ?? { x: WORLD_SIZE_X, y: WORLD_SIZE_Y, z: WORLD_SIZE_Z };\n    const world = new VoxelWorld(size.x, size.y, size.z, seed);\n    generateWorld(world, this.worldType);\n    // Re-derive the dungeon chest/spawner positions from the seed (the world is\n    // regenerated deterministically each load, so these match generation).\n    const dungeonSites = collectDungeonSites(world, this.worldType);\n    // Likewise re-derive shipwreck and buried-treasure chests (they share the\n    // lazy loot fill; treasure also feeds the map compass) and village centers,\n    // so resident villagers can be seeded there.\n    const shipwreckSites = collectShipwreckSites(world, this.worldType);\n    const treasureSites = collectTreasureSites(world, this.worldType);\n    const villageSites = collectVillageSites(world, this.worldType);\n\n    const blockChanges = createBlockChangeTracker(world);\n    if (save) blockChanges.applySavedChanges(save.changes);\n\n    // Bake per-voxel light now the block grid is final (worldgen + saved edits).\n    // Derived cache, never serialized — see lighting.ts / docs/save-format.md.\n    world.light = computeFullLight(world);\n\n    this.surfaceYAt = createSurfaceYAt(world);\n\n    const firstSpawn = findSpawnOnLand(world, Math.floor(world.sizeX / 2), Math.floor(world.sizeZ / 2));\n    // The […]
 
 > TOOL
@@ -6678,7 +6678,7 @@ id: toolu_011TpFYipwdA3htounyQ9YCN
 tool_result
 id: toolu_011TpFYipwdA3htounyQ9YCN
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6688,7 +6688,7 @@ id: toolu_01WFMDv6HsXJXtX872yqsGEQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    this.state = installPlayerAliases({\n      world,\n      blockChanges,",
   "new_string": "    this.state = installPlayerAliases({\n      world,\n      blockChanges,\n      dimension,"
 }
@@ -6699,7 +6699,7 @@ id: toolu_01WFMDv6HsXJXtX872yqsGEQ
 tool_result
 id: toolu_01WFMDv6HsXJXtX872yqsGEQ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6709,7 +6709,7 @@ id: toolu_01W1SMQjLVuUnPsGtFupFfnV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "      dayClock: 0,\n      daylight: daylightAt(0),\n      daylightPercent: Math.round(daylightAt(0) * 100),",
   "new_string": "      dayClock: 0,\n      daylight: dimensionDaylightAt(dimension, 0),\n      daylightPercent: Math.round(dimensionDaylightAt(dimension, 0) * 100),"
 }
@@ -6720,7 +6720,7 @@ id: toolu_01W1SMQjLVuUnPsGtFupFfnV
 tool_result
 id: toolu_01W1SMQjLVuUnPsGtFupFfnV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6730,7 +6730,7 @@ id: toolu_0195RNcvAJnSiag3Dee2ZGqR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    if (save) {\n      if (bootPlayer && savedLocal) this.restorePlayerFields(localPlayer, savedLocal);\n      this.state.lootedWorldgenChests = new Set(readLootedChests(save));\n      // Restore persisted mobs (tamed pets) BEFORE spawnInitialMobs seeds the\n      // fungible population, so the world stays alive and pets simply pre-exist.\n      this.restorePersistedMobs(restoreMobs(save));\n      for (const vehicle of restoreVehicles(save)) {\n        restoreVehicle(this.state, vehicle.kind, vehicle.x, vehicle.y, vehicle.z, vehicle.yaw);\n      }\n\n      // Restore chest contents only for indices that still hold a Chest block.\n      for (const { index, slots } of readContainers(save)) {\n        if (index >= 0 && index < world.blocks.length && world.blocks[index] === BlockId.Chest) {\n          this.state.containers.set(index, slots);\n        }\n      }\n      const savedClock = restoreDayClock(save);\n      if (savedClock !== null) {\n        this.state.dayClock = savedClock;\n        this.state.daylight = daylightAt(savedClock);\n        this.state.daylightPercent = Math.round(this.state.daylight * 100);\n      }\n    }",
   "new_string": "    if (save && section) {\n      if (bootPlayer && savedLocal) this.restorePlayerFields(localPlayer, savedLocal);\n      // The world half restores from THIS dimension's section (the overworld's\n      // is the top level, another dimension's lives under `dimensions`).\n      this.state.lootedWorldgenChests = new Set(readLootedChests(section));\n      // Restore persisted mobs (tamed pets) BEFORE spawnInitialMobs seeds the\n      // fungible population, so the world stays alive and pets simply pre-exist.\n      this.restorePersistedMobs(restoreMobs(section));\n      for (const vehicle of restoreVehicles(section)) {\n        restoreVehicle(this.state, vehicle.kind, vehicle.x, vehicle.y, vehicle.z, vehicle.yaw);\n      }\n\n      // Restore chest contents […]
 
@@ -6739,7 +6739,7 @@ id: toolu_0195RNcvAJnSiag3Dee2ZGqR
 tool_result
 id: toolu_0195RNcvAJnSiag3Dee2ZGqR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6749,7 +6749,7 @@ id: toolu_013kyL11qoMkVUCjLtfQHsCz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    spawnInitialMobs(this.state, this.rng, this.surfaceYAt);\n    // Seed each village's residents — but only for a world that hasn't populated\n    // its villages yet: a fresh world (no save) or one upgraded from a pre-village\n    // save (no `villagesSeeded` flag). A genuine v15 save's villagers are\n    // authoritative — restored above — so we never re-seed (an emptied village\n    // stays empty, not repopulated on reload).\n    if (!save?.villagesSeeded && !this.state.mobs.some((mob) => mob.faction === \"villager\")) {",
   "new_string": "    spawnInitialMobs(this.state, this.rng, this.surfaceYAt);\n    // Seed each village's residents — but only for a world that hasn't populated\n    // its villages yet: a fresh world (no save) or one upgraded from a pre-village\n    // save (no `villagesSeeded` flag). A genuine v15 save's villagers are\n    // authoritative — restored above — so we never re-seed (an emptied village\n    // stays empty, not repopulated on reload). Villages are an overworld thing.\n    if (dimension !== \"nether\" && !save?.villagesSeeded && !this.state.mobs.some((mob) => mob.faction === \"villager\")) {"
 }
@@ -6760,7 +6760,7 @@ id: toolu_013kyL11qoMkVUCjLtfQHsCz
 tool_result
 id: toolu_013kyL11qoMkVUCjLtfQHsCz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6770,7 +6770,7 @@ id: toolu_01U3xQKfb8qwZHdtDVfDnaT4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "      stats: serializeStats(player.stats),\n      advancements: [...player.advancements],\n      spawnPoint: player.spawnPoint ? { ...player.spawnPoint } : null\n    };\n  }",
   "new_string": "      stats: serializeStats(player.stats),\n      advancements: [...player.advancements],\n      spawnPoint: player.spawnPoint ? { ...player.spawnPoint } : null,\n      // Where the player is — this engine's dimension (never portalArrival:\n      // that anchor is one-shot, written only by serializeForTravel).\n      dimension: this.state.dimension\n    };\n  }"
 }
@@ -6781,7 +6781,7 @@ id: toolu_01U3xQKfb8qwZHdtDVfDnaT4
 tool_result
 id: toolu_01U3xQKfb8qwZHdtDVfDnaT4
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6791,7 +6791,7 @@ id: toolu_01QPjZBoBvEwKLWbnL5VtC3H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  serialize(): SaveData {\n    const state = this.state;\n    const save: SaveData = {\n      version: 18,\n      // Stamps which generator produced these diffs; on mismatch a future boot\n      // discards the world half and reboots from the seed (applyWorldgenGuard).\n      worldgenVersion: WORLDGEN_VERSION,\n      seed: state.world.seed,\n      worldType: this.worldType,\n      difficulty: state.difficulty,\n      hardcore: state.hardcore,\n      changes: state.blockChanges.changes(),\n      players: [...state.players.values()].map((player) => this.serializePlayer(player)),\n      dayClock: state.dayClock,\n      blockEntities: serializeContainers(state.containers),\n      lootedChests: serializeLootedChests(state.lootedWorldgenChests),\n      mobs: serializeMobs(state.mobs),\n      vehicles: serializeVehicles(state.vehicles),\n      villagesSeeded: true // this world's villages are populated — don't re-seed on reload\n    };\n    // Dimensions this engine doesn't simulate ride through verbatim, so e.g.\n    // the server room (overworld) can never lose a world's nether builds.\n    if (this.foreignDimensions) save.dimensions = this.foreignDimensions;\n    return save;\n  }",
   "new_string": "  serialize(): SaveData {\n    const state = this.state;\n    // The live dimension's world half, straight from this engine's simulation.\n    const live: DimensionSection = {\n      changes: state.blockChanges.changes(),\n      blockEntities: serializeContainers(state.containers),\n      lootedChests: serializeLootedChests(state.lootedWorldgenChests),\n      mobs: serializeMobs(state.mobs),\n      vehicles: serializeVehicles(state.vehicles)\n    };\n    const base = {\n      version: 18 as const,\n      // Stamps which generator produced these diffs; on mismatch a future boot\n      // discards the world half and reboots from the seed (applyWorldgenGuard).\n      worldgenVersion: WORLDGEN_VERSION,\n      seed: state.world.seed,\n      worldType: this.worldType,\n      difficulty: state.difficulty,\n      hardcore: state.hardcore,\n      players: [...state.players.values()].map((player) => […]
 
@@ -6800,7 +6800,7 @@ id: toolu_01QPjZBoBvEwKLWbnL5VtC3H
 tool_result
 id: toolu_01QPjZBoBvEwKLWbnL5VtC3H
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6814,7 +6814,7 @@ id: toolu_015Pv3m4QU8Xpjnwz3tiFoie
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  collidesAt,\n  computeFullLight,\n  generateWorld,\n  voxelRaycast,",
   "new_string": "  collidesAt,\n  computeFullLight,\n  generateNetherWorld,\n  generateWorld,\n  voxelRaycast,"
 }
@@ -6825,7 +6825,7 @@ id: toolu_015Pv3m4QU8Xpjnwz3tiFoie
 tool_result
 id: toolu_015Pv3m4QU8Xpjnwz3tiFoie
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6835,7 +6835,7 @@ id: toolu_01T3YuGYyQ2CcYecSSL9ZCiD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import {\n  applyWorldgenGuard,\n  inventorySlotsSnapshot,\n  serializeEquippedArmor,\n  readContainers,",
   "new_string": "import {\n  applyWorldgenGuard,\n  dimensionSectionOf,\n  inventorySlotsSnapshot,\n  serializeEquippedArmor,\n  readContainers,"
 }
@@ -6846,7 +6846,7 @@ id: toolu_01T3YuGYyQ2CcYecSSL9ZCiD
 tool_result
 id: toolu_01T3YuGYyQ2CcYecSSL9ZCiD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6856,7 +6856,7 @@ id: toolu_01R7XVRQxESXXFihTU49bwJZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  restorePlayerPosition,\n  restoreGameMode,",
   "new_string": "  restorePlayerDimension,\n  restorePlayerPosition,\n  restoreGameMode,"
 }
@@ -6867,7 +6867,7 @@ id: toolu_01R7XVRQxESXXFihTU49bwJZ
 tool_result
 id: toolu_01R7XVRQxESXXFihTU49bwJZ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6877,7 +6877,7 @@ id: toolu_01CaQaxm6Vxmy9VC7nDyTLAh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import { createSurfaceYAt, findSpawnOnLand, randomLandPointNear, type SurfaceYAtFn } from \"@/lib/game/spawn\";",
   "new_string": "import { createNetherFloorYAt, createSurfaceYAt, findNetherSpawn, findSpawnOnLand, randomLandPointNear, type SurfaceYAtFn } from \"@/lib/game/spawn\";"
 }
@@ -6888,7 +6888,7 @@ id: toolu_01CaQaxm6Vxmy9VC7nDyTLAh
 tool_result
 id: toolu_01CaQaxm6Vxmy9VC7nDyTLAh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6897,7 +6897,7 @@ tool_use Bash
 id: toolu_01AV7UYeS7kqFFZu7K2Yd4ok
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"daylightAt\\|dimensionDaylightAt\\|type SaveData\\|DimensionId\\|DimensionSection\" lib/game/engine/GameEngine.ts | head -12",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"daylightAt\\|dimensionDaylightAt\\|type SaveData\\|DimensionId\\|DimensionSection\" lib/game/engine/GameEngine.ts | head -12",
   "description": "Check remaining GameEngine imports needed"
 }
 ```
@@ -6924,7 +6924,7 @@ tool_use Bash
 id: toolu_016Rqo3FLws3T357tHfGSJyb
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"from \\\"@/lib/game/types\\\"\" lib/game/engine/GameEngine.ts; sed -n 1720,1730p lib/game/engine/GameEngine.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"from \\\"@/lib/game/types\\\"\" lib/game/engine/GameEngine.ts; sed -n 1720,1730p lib/game/engine/GameEngine.ts",
   "description": "Find types import and the line-1724 daylight use"
 }
 ```
@@ -6955,7 +6955,7 @@ id: toolu_019AA4nxWWm3MDNrhhH53M75
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import type { InventorySlot, SaveData, SavedMob, SavedPlayer } from \"@/lib/game/types\";",
   "new_string": "import type { DimensionId, DimensionSection, InventorySlot, SaveData, SavedMob, SavedPlayer } from \"@/lib/game/types\";"
 }
@@ -6966,7 +6966,7 @@ id: toolu_019AA4nxWWm3MDNrhhH53M75
 tool_result
 id: toolu_019AA4nxWWm3MDNrhhH53M75
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6976,7 +6976,7 @@ id: toolu_014ZBfdopZB64qNbA5HoajAs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import { daylightAt, tickDayNight } from \"./systems/dayNight\";",
   "new_string": "import { daylightAt, dimensionDaylightAt, tickDayNight } from \"./systems/dayNight\";"
 }
@@ -6987,7 +6987,7 @@ id: toolu_014ZBfdopZB64qNbA5HoajAs
 tool_result
 id: toolu_014ZBfdopZB64qNbA5HoajAs
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7001,7 +7001,7 @@ id: toolu_0145AjxYADnxZf4FP562uhek
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "/** Reads the opened/broken dungeon chest indices from a save (finite numbers only). */\nexport function readLootedChests(save: SaveData): number[] {\n  if (!Array.isArray(save.lootedChests)) return [];\n  return save.lootedChests.filter((value) => Number.isFinite(value));\n}",
   "new_string": "/** Reads the opened/broken dungeon chest indices from a save's world half (finite numbers only). A full SaveData is a valid section (the overworld's half IS the top level). */\nexport function readLootedChests(section: DimensionSection): number[] {\n  if (!Array.isArray(section.lootedChests)) return [];\n  return section.lootedChests.filter((value) => Number.isFinite(value));\n}"
 }
@@ -7012,7 +7012,7 @@ id: toolu_0145AjxYADnxZf4FP562uhek
 tool_result
 id: toolu_0145AjxYADnxZf4FP562uhek
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7022,7 +7022,7 @@ id: toolu_012jnmyUMSSjaPe2fgQCVvzD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "export function restoreVehicles(save: SaveData): SavedVehicle[] {\n  if (!Array.isArray(save.vehicles)) return [];\n  const out: SavedVehicle[] = [];\n  for (const entry of save.vehicles) {",
   "new_string": "export function restoreVehicles(section: DimensionSection): SavedVehicle[] {\n  if (!Array.isArray(section.vehicles)) return [];\n  const out: SavedVehicle[] = [];\n  for (const entry of section.vehicles) {"
 }
@@ -7033,7 +7033,7 @@ id: toolu_012jnmyUMSSjaPe2fgQCVvzD
 tool_result
 id: toolu_012jnmyUMSSjaPe2fgQCVvzD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7043,7 +7043,7 @@ id: toolu_01GqF2fJoCcrT39FsHNBHyLC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "export function restoreMobs(save: SaveData): SavedMob[] {\n  if (!Array.isArray(save.mobs)) return [];\n  const out: SavedMob[] = [];\n  for (const entry of save.mobs) {",
   "new_string": "export function restoreMobs(section: DimensionSection): SavedMob[] {\n  if (!Array.isArray(section.mobs)) return [];\n  const out: SavedMob[] = [];\n  for (const entry of section.mobs) {"
 }
@@ -7054,7 +7054,7 @@ id: toolu_01GqF2fJoCcrT39FsHNBHyLC
 tool_result
 id: toolu_01GqF2fJoCcrT39FsHNBHyLC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7064,7 +7064,7 @@ id: toolu_017K7DnUqNhyTKF3r33fENiF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts",
   "old_string": "export function readContainers(save: SaveData): Array<{ index: number; slots: InventorySlot[] }> {\n  if (!Array.isArray(save.blockEntities)) return [];\n  const out: Array<{ index: number; slots: InventorySlot[] }> = [];\n  for (const entry of save.blockEntities) {",
   "new_string": "export function readContainers(section: DimensionSection): Array<{ index: number; slots: InventorySlot[] }> {\n  if (!Array.isArray(section.blockEntities)) return [];\n  const out: Array<{ index: number; slots: InventorySlot[] }> = [];\n  for (const entry of section.blockEntities) {"
 }
@@ -7075,7 +7075,7 @@ id: toolu_017K7DnUqNhyTKF3r33fENiF
 tool_result
 id: toolu_017K7DnUqNhyTKF3r33fENiF
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/save.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7088,7 +7088,7 @@ tool_use Read
 id: toolu_01S5U2cVBzESLXuwMgy9P8jh
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "offset": 117,
   "limit": 50
 }
@@ -7129,7 +7129,7 @@ id: toolu_0158DMJ6T5raSM7wDsmPDF6a
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "old_string": "export function spawnInitialMobs(state: GameState, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  // Day-one population centers on the booting player; a playerless world (a\n  // fresh server room before the first join) seeds around the map center.",
   "new_string": "export function spawnInitialMobs(state: GameState, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  // The nether has its own (hostile-only) population, seeded by the content\n  // stage's nether branch — none of the overworld groups belong there.\n  if (state.dimension === \"nether\") return;\n  // Day-one population centers on the booting player; a playerless world (a\n  // fresh server room before the first join) seeds around the map center."
 }
@@ -7140,7 +7140,7 @@ id: toolu_0158DMJ6T5raSM7wDsmPDF6a
 tool_result
 id: toolu_0158DMJ6T5raSM7wDsmPDF6a
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7149,7 +7149,7 @@ tool_use Read
 id: toolu_01LphQxjBp6K1bVZDboEhCdp
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "offset": 170,
   "limit": 130
 }
@@ -7195,7 +7195,7 @@ id: toolu_01W8h5bMsSBE8K1PJSDtcQTS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "old_string": "export function tickAquaticSpawnDirector(state: GameState, dt: number, rng: () => number): void {\n  state.timers.aquaticSpawnTimer += dt;",
   "new_string": "export function tickAquaticSpawnDirector(state: GameState, dt: number, rng: () => number): void {\n  if (state.dimension === \"nether\") return; // no water, no fish, no drowned\n  state.timers.aquaticSpawnTimer += dt;"
 }
@@ -7206,7 +7206,7 @@ id: toolu_01W8h5bMsSBE8K1PJSDtcQTS
 tool_result
 id: toolu_01W8h5bMsSBE8K1PJSDtcQTS
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7216,7 +7216,7 @@ id: toolu_01JAmt9CcvHdYzb1DNQd4P2Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "old_string": "/** Trickles hostile mobs in around the player at night, up to the cap. Difficulty scales the cadence and cap; Peaceful spawns none. */\nexport function tickHostileSpawnDirector(state: GameState, dt: number, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  if (!hostilesSpawn(state.difficulty)) return;",
   "new_string": "/** Trickles hostile mobs in around the player at night, up to the cap. Difficulty scales the cadence and cap; Peaceful spawns none. */\nexport function tickHostileSpawnDirector(state: GameState, dt: number, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  // The nether gets its own hostile kinds from the content stage; until then\n  // the overworld roster must not materialize there.\n  if (state.dimension === \"nether\") return;\n  if (!hostilesSpawn(state.difficulty)) return;"
 }
@@ -7227,7 +7227,7 @@ id: toolu_01JAmt9CcvHdYzb1DNQd4P2Z
 tool_result
 id: toolu_01JAmt9CcvHdYzb1DNQd4P2Z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7237,7 +7237,7 @@ id: toolu_01PYrQURbsjtr5ve2f9zE5ep
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/weather.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/weather.ts",
   "old_string": "export function tickWeather(state: GameState): void {\n  const { active, intensity } = weatherAt(state.dayClock, state.world.seed);",
   "new_string": "export function tickWeather(state: GameState): void {\n  // No sky, no weather: the nether stays clear (the renderer also disables\n  // its precipitation layer per the dimension profile).\n  if (state.dimension === \"nether\") {\n    state.weather.kind = \"clear\";\n    state.weather.intensity = 0;\n    return;\n  }\n  const { active, intensity } = weatherAt(state.dayClock, state.world.seed);"
 }
@@ -7248,7 +7248,7 @@ id: toolu_01PYrQURbsjtr5ve2f9zE5ep
 tool_result
 id: toolu_01PYrQURbsjtr5ve2f9zE5ep
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/weather.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/weather.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7261,7 +7261,7 @@ tool_use Read
 id: toolu_0149gP8P95ypwYHntohGcv4c
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "offset": 297,
   "limit": 28
 }
@@ -7306,7 +7306,7 @@ tool_use Bash
 id: toolu_01Fx6TbBvrCwZC3XrWmwDEj2
 ```json
 {
-  "command": "grep -n \"function interactBed\" -A 22 /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "command": "grep -n \"function interactBed\" -A 22 /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "description": "Read interactBed"
 }
 ```
@@ -7348,7 +7348,7 @@ id: toolu_01DikBACHq4mMpfXPPQZXrfx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts",
   "old_string": "function interactBed(state: GameState, player: PlayerState, emit: EmitGameEvent, x: number, y: number, z: number): boolean {\n  if (state.daylight >= SLEEP_ALLOWED_BELOW_DAYLIGHT) {",
   "new_string": "function interactBed(state: GameState, player: PlayerState, emit: EmitGameEvent, x: number, y: number, z: number): boolean {\n  // No sky, no morning: the nether's pinned daylight would otherwise slip\n  // under the sleep threshold and let a bed skip time that never dawns.\n  if (state.dimension === \"nether\") {\n    emit({ type: \"sleepDenied\", reason: \"dimension\" });\n    return true;\n  }\n  if (state.daylight >= SLEEP_ALLOWED_BELOW_DAYLIGHT) {"
 }
@@ -7359,7 +7359,7 @@ id: toolu_01DikBACHq4mMpfXPPQZXrfx
 tool_result
 id: toolu_01DikBACHq4mMpfXPPQZXrfx
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/interact.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7369,7 +7369,7 @@ id: toolu_01KdAnEWiAdKMjxGt7o2r15H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "old_string": "        if (event.type === \"sleepDenied\") {\n          flashMessage(event.reason === \"daylight\" ? \"You can only sleep at night\" : \"Monsters are nearby\");\n        }",
   "new_string": "        if (event.type === \"sleepDenied\") {\n          flashMessage(event.reason === \"daylight\" ? \"You can only sleep at night\" : event.reason === \"dimension\" ? \"You can't sleep here\" : \"Monsters are nearby\");\n        }"
 }
@@ -7380,7 +7380,7 @@ id: toolu_01KdAnEWiAdKMjxGt7o2r15H
 tool_result
 id: toolu_01KdAnEWiAdKMjxGt7o2r15H
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7415,7 +7415,7 @@ tool_use Bash
 id: toolu_01Hf3ky7MX5uLe1GqYkxFk1r
 ```json
 {
-  "command": "grep -n \"function makeState\\|function baseState\\|describe\\|tickHostileSpawnDirector\\|spawnInitialMobs\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts | head -20",
+  "command": "grep -n \"function makeState\\|function baseState\\|describe\\|tickHostileSpawnDirector\\|spawnInitialMobs\" /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts | head -20",
   "description": "Survey spawnDirector.test.ts"
 }
 ```
@@ -7446,7 +7446,7 @@ tool_use Read
 id: toolu_01BZSUk8ZB2YsYc6euh6Nj1q
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
   "offset": 90,
   "limit": 45
 }
@@ -7497,7 +7497,7 @@ tool_use Read
 id: toolu_01EeYFjb1C5kiAsHf8rhozXZ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
   "offset": 1,
   "limit": 56
 }
@@ -7549,7 +7549,7 @@ tool_use Bash
 id: toolu_01PrpFFxCruq4mzUvcaRF8JD
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts << 'EOF'\n\ndescribe(\"nether spawn gating\", () => {\n  function makeNetherEngine(): GameEngine {\n    return new GameEngine({ dimension: \"nether\", seed: 1337, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n  }\n\n  test(\"a nether boot seeds no overworld population at all\", () => {\n    const e = makeNetherEngine();\n    expect(e.state.mobs).toHaveLength(0); // no animals, no villagers, no night pack\n  });\n\n  test(\"the overworld hostile director stays silent in the nether (its roster doesn't belong there)\", () => {\n    const e = makeNetherEngine();\n    e.state.daylight = 0.1;\n    e.state.timers.hostileSpawnTimer = 1000;\n    tickHostileSpawnDirector(e.state, 0.1, mulberry32(3), createSurfaceYAt(e.state.world));\n    expect(hostileCount(e)).toBe(0);\n  });\n\n  test(\"the aquatic director stays silent in the nether\", () => {\n    const e = makeNetherEngine();\n    e.state.timers.aquaticSpawnTimer = 1000;\n    tickAquaticSpawnDirector(e.state, 0.1, mulberry32(3));\n    expect(e.state.mobs).toHaveLength(0);\n  });\n});\nEOF\nbun test lib/game/engine/systems/spawnDirector.test.ts 2>&1 | tail -4",
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts << 'EOF'\n\ndescribe(\"nether spawn gating\", () => {\n  function makeNetherEngine(): GameEngine {\n    return new GameEngine({ dimension: \"nether\", seed: 1337, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n  }\n\n  test(\"a nether boot seeds no overworld population at all\", () => {\n    const e = makeNetherEngine();\n    expect(e.state.mobs).toHaveLength(0); // no animals, no villagers, no night pack\n  });\n\n  test(\"the overworld hostile director stays silent in the nether (its roster doesn't belong there)\", () => {\n    const e = makeNetherEngine();\n    e.state.daylight = 0.1;\n    e.state.timers.hostileSpawnTimer = 1000;\n    tickHostileSpawnDirector(e.state, 0.1, mulberry32(3), createSurfaceYAt(e.state.world));\n    expect(hostileCount(e)).toBe(0);\n  });\n\n  test(\"the aquatic director stays silent in the nether\", () => {\n    const e = makeNetherEngine();\n    e.state.timers.aquaticSpawnTimer = 1000;\n    tickAquaticSpawnDirector(e.state, 0.1, mulberry32(3));\n    expect(e.state.mobs).toHaveLength(0);\n  });\n});\nEOF\nbun test lib/game/engine/systems/spawnDirector.test.ts 2>&1 | tail -4",
   "description": "Add nether spawn-gating tests and run"
 }
 ```
@@ -7571,7 +7571,7 @@ tool_use Bash
 id: toolu_012KuJNfg4hDfMwZREJdsiBg
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"from \\\"@/lib/game/config\\\"\" lib/game/engine/GameEngine.test.ts | head -2; tail -5 lib/game/engine/GameEngine.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"from \\\"@/lib/game/config\\\"\" lib/game/engine/GameEngine.test.ts | head -2; tail -5 lib/game/engine/GameEngine.test.ts",
   "description": "Check GameEngine.test.ts imports and tail"
 }
 ```
@@ -7596,7 +7596,7 @@ tool_use Bash
 id: toolu_0133x7HccCdDwFSrgXa8sfF6
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n 18,34p lib/game/engine/GameEngine.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n 18,34p lib/game/engine/GameEngine.test.ts",
   "description": "See config import lists"
 }
 ```
@@ -7631,7 +7631,7 @@ tool_use Bash
 id: toolu_015j4T46RuokUXpZPoHkqww4
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/  BOSS_HP,\\n  CHEST_SLOTS,\\n  GRINDSTONE_REFUND_XP_PER_LEVEL\\n\\} from \"\\@\\/lib\\/game\\/config\";/  BOSS_HP,\\n  CHEST_SLOTS,\\n  GRINDSTONE_REFUND_XP_PER_LEVEL,\\n  NETHER_DAYLIGHT\\n} from \"\\@\\/lib\\/game\\/config\";/' lib/game/engine/GameEngine.test.ts\ncat >> lib/game/engine/GameEngine.test.ts << 'EOF'\n\ndescribe(\"dimension-aware boot (the nether)\", () => {\n  function makeNetherEngine(save: ReturnType<GameEngine[\"serialize\"]> | null = null): GameEngine {\n    return new GameEngine({ save, dimension: \"nether\", seed: 1337, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n  }\n\n  test(\"a nether engine boots onto the cavern floor with daylight pinned, no sites, no weather\", () => {\n    const e = makeNetherEngine();\n    expect(e.state.dimension).toBe(\"nether\");\n    expect(e.state.daylight).toBe(NETHER_DAYLIGHT);\n    // The stub nether: bedrock caps + a stone mass — the spawn must sit on the\n    // floor pocket, not on the bedrock roof (the surfaceYAt ceiling landmine).\n    expect(e.state.player.position.y).toBeLessThan(e.state.world.sizeY - 5);\n    expect(e.state.player.position.y).toBeGreaterThan(2);\n    expect(e.state.dungeonChestIndices.size).toBe(0);\n    expect(e.state.villageSites).toHaveLength(0);\n    expect(e.state.weather.kind).toBe(\"clear\");\n  });\n\n  test(\"daylight stays pinned through the day cycle (hostile gates never open or close)\", () => {\n    const e = makeNetherEngine();\n    e.state.dayClock = 60; // overworld noon\n    run(e, 1);\n    expect(e.state.daylight).toBe(NETHER_DAYLIGHT);\n  });\n\n  test(\"a save round-trips overworld and nether world halves independently\", () => {\n    // An overworld world with an edit…\n    const over = makeEngine();\n    over.state.blockChanges.set(10, 40, 10, BlockId.Brick);\n    const overSave = over.serialize();\n    expect(overSave.villagesSeeded).toBe(true);\n\n    // …travels to the nether (what serializeForTravel will write): same save,\n    // local […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/  BOSS_HP,\\n  CHEST_SLOTS,\\n  GRINDSTONE_REFUND_XP_PER_LEVEL\\n\\} from \"\\@\\/lib\\/game\\/config\";/  BOSS_HP,\\n  CHEST_SLOTS,\\n  GRINDSTONE_REFUND_XP_PER_LEVEL,\\n  NETHER_DAYLIGHT\\n} from \"\\@\\/lib\\/game\\/config\";/' lib/game/engine/GameEngine.test.ts\ncat >> lib/game/engine/GameEngine.test.ts << 'EOF'\n\ndescribe(\"dimension-aware boot (the nether)\", () => {\n  function makeNetherEngine(save: ReturnType<GameEngine[\"serialize\"]> | null = null): GameEngine {\n    return new GameEngine({ save, dimension: \"nether\", seed: 1337, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n  }\n\n  test(\"a nether engine boots onto the cavern floor with daylight pinned, no sites, no weather\", () => {\n    const e = makeNetherEngine();\n    expect(e.state.dimension).toBe(\"nether\");\n    expect(e.state.daylight).toBe(NETHER_DAYLIGHT);\n    // The stub nether: bedrock caps + a stone mass — the spawn must sit on the\n    // floor pocket, not on the bedrock roof (the surfaceYAt ceiling landmine).\n    expect(e.state.player.position.y).toBeLessThan(e.state.world.sizeY - 5);\n    expect(e.state.player.position.y).toBeGreaterThan(2);\n    expect(e.state.dungeonChestIndices.size).toBe(0);\n    expect(e.state.villageSites).toHaveLength(0);\n    expect(e.state.weather.kind).toBe(\"clear\");\n  });\n\n  test(\"daylight stays pinned through the day cycle (hostile gates never open or close)\", () => {\n    const e = makeNetherEngine();\n    e.state.dayClock = 60; // overworld noon\n    run(e, 1);\n    expect(e.state.daylight).toBe(NETHER_DAYLIGHT);\n  });\n\n  test(\"a save round-trips overworld and nether world halves independently\", () => {\n    // An overworld world with an edit…\n    const over = makeEngine();\n    over.state.blockChanges.set(10, 40, 10, BlockId.Brick);\n    const overSave = over.serialize();\n    expect(overSave.villagesSeeded).toBe(true);\n\n    // …travels to the nether (what serializeForTravel will write): same save,\n    // local […]
 
 > TOOL
 
@@ -7654,7 +7654,7 @@ tool_use Bash
 id: toolu_01NokKB2yzYJZ1HdH272MCp5
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"tryInteractBlock\" lib/game/engine/systems/interact.ts | head -2\ncat >> lib/game/engine/systems/interact.test.ts << 'EOF'\n\ndescribe(\"interactBed — dimension refusal\", () => {\n  test(\"a bed in the nether refuses sleep with the dimension reason (spawn point untouched)\", () => {\n    const FLOOR_Y = 10;\n    const world = new VoxelWorld(24, 24, 24, 1);\n    for (let x = 0; x < world.sizeX; x += 1) {\n      for (let z = 0; z < world.sizeZ; z += 1) world.set(x, FLOOR_Y, z, BlockId.Stone);\n    }\n    world.set(7, FLOOR_Y + 1, 5, BlockId.Bed);\n    const player = {\n      id: \"local\",\n      position: new THREE.Vector3(7.5, FLOOR_Y + 4, 5.5),\n      velocity: new THREE.Vector3(),\n      yaw: 0,\n      pitch: -Math.PI / 2,\n      onGround: false,\n      gameMode: \"survival\",\n      selectedSlot: 0,\n      inventory: inventory([[\"stone\", 1]]),\n      spawnPoint: null,\n      sleeping: false\n    } as unknown as PlayerState;\n    const state = {\n      world,\n      dimension: \"nether\",\n      daylight: 0.22, // under the sleep threshold — only the dimension check refuses\n      blockChanges: createBlockChangeTracker(world),\n      players: new Map([[\"local\", player]]),\n      mobs: [],\n      sleepTimer: 0\n    } as unknown as GameState;\n    const events: GameEvent[] = [];\n\n    expect(tryInteractBlock(state, player, (e) => events.push(e))).toBe(true); // click consumed\n    expect(events).toContainEqual({ type: \"sleepDenied\", reason: \"dimension\" });\n    expect(player.sleeping).toBe(false);\n    expect(player.spawnPoint).toBeNull();\n  });\n});\nEOF\nperl -i -pe 's/import \\{ tryTameAimedMob, tryToggleSitPet, tryUseHeldItem \\} from \"\\@\\/lib\\/game\\/engine\\/systems\\/interact\";/import { tryInteractBlock, tryTameAimedMob, tryToggleSitPet, tryUseHeldItem […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"tryInteractBlock\" lib/game/engine/systems/interact.ts | head -2\ncat >> lib/game/engine/systems/interact.test.ts << 'EOF'\n\ndescribe(\"interactBed — dimension refusal\", () => {\n  test(\"a bed in the nether refuses sleep with the dimension reason (spawn point untouched)\", () => {\n    const FLOOR_Y = 10;\n    const world = new VoxelWorld(24, 24, 24, 1);\n    for (let x = 0; x < world.sizeX; x += 1) {\n      for (let z = 0; z < world.sizeZ; z += 1) world.set(x, FLOOR_Y, z, BlockId.Stone);\n    }\n    world.set(7, FLOOR_Y + 1, 5, BlockId.Bed);\n    const player = {\n      id: \"local\",\n      position: new THREE.Vector3(7.5, FLOOR_Y + 4, 5.5),\n      velocity: new THREE.Vector3(),\n      yaw: 0,\n      pitch: -Math.PI / 2,\n      onGround: false,\n      gameMode: \"survival\",\n      selectedSlot: 0,\n      inventory: inventory([[\"stone\", 1]]),\n      spawnPoint: null,\n      sleeping: false\n    } as unknown as PlayerState;\n    const state = {\n      world,\n      dimension: \"nether\",\n      daylight: 0.22, // under the sleep threshold — only the dimension check refuses\n      blockChanges: createBlockChangeTracker(world),\n      players: new Map([[\"local\", player]]),\n      mobs: [],\n      sleepTimer: 0\n    } as unknown as GameState;\n    const events: GameEvent[] = [];\n\n    expect(tryInteractBlock(state, player, (e) => events.push(e))).toBe(true); // click consumed\n    expect(events).toContainEqual({ type: \"sleepDenied\", reason: \"dimension\" });\n    expect(player.sleeping).toBe(false);\n    expect(player.spawnPoint).toBeNull();\n  });\n});\nEOF\nperl -i -pe 's/import \\{ tryTameAimedMob, tryToggleSitPet, tryUseHeldItem \\} from \"\\@\\/lib\\/game\\/engine\\/systems\\/interact\";/import { tryInteractBlock, tryTameAimedMob, tryToggleSitPet, tryUseHeldItem […]
 
 > TOOL
 
@@ -7761,7 +7761,7 @@ tool_use Read
 id: toolu_01GrWfA6yD7v8V5KDkSKzHBw
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/voxelWorld.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/voxelWorld.ts",
   "offset": 42,
   "limit": 35
 }
@@ -7809,7 +7809,7 @@ tool_use Read
 id: toolu_015jizqKv96hva7YtcF77ee9
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/meshing.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/meshing.ts",
   "offset": 295,
   "limit": 35
 }
@@ -7861,7 +7861,7 @@ tool_use Read
 id: toolu_01RntyPx22kvHnDKESz7nWB6
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "offset": 140,
   "limit": 80
 }
@@ -7914,7 +7914,7 @@ tool_use Bash
 id: toolu_017TAcEhUJvEzj7iwqmWSFs5
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"glass\\|Glass\\|layer\" lib/world/meshing.ts | head -20; grep -n \"isSolid\\|shapeBoxes\\|Water\" lib/world/queries.ts | sed -n 1,15p",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"glass\\|Glass\\|layer\" lib/world/meshing.ts | head -20; grep -n \"isSolid\\|shapeBoxes\\|Water\" lib/world/queries.ts | sed -n 1,15p",
   "description": "Check meshing layer split and collidesAt solidity"
 }
 ```
@@ -7952,7 +7952,7 @@ id: toolu_011bVfbqXqsfqYfqLZ7jV8su
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  // Volcanic glass, created by quenching lava with a water bucket (interact.ts).\n  // The hardest mineable block — diamond-pickaxe-gated (mining.ts) — and the\n  // only material a nether portal frame can be built from (portal.ts).\n  Obsidian = 90\n}",
   "new_string": "  // Volcanic glass, created by quenching lava with a water bucket (interact.ts).\n  // The hardest mineable block — diamond-pickaxe-gated (mining.ts) — and the\n  // only material a nether portal frame can be built from (portal.ts).\n  Obsidian = 90,\n  // The lit portal surface filling an obsidian frame (portal.ts). Non-solid\n  // (walked into, never collided with), unmineable (the solid raycast passes\n  // through it — break the frame instead), emits light, and has no item.\n  NetherPortal = 91\n}"
 }
@@ -7963,7 +7963,7 @@ id: toolu_011bVfbqXqsfqYfqLZ7jV8su
 tool_result
 id: toolu_011bVfbqXqsfqYfqLZ7jV8su
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7973,7 +7973,7 @@ id: toolu_01UerCZi64wVX2WYCjncjteh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  // Near-black volcanic glass with violet flecks (painted in atlas.ts).\n  [BlockId.Obsidian]: [0.09, 0.07, 0.14]\n};",
   "new_string": "  // Near-black volcanic glass with violet flecks (painted in atlas.ts).\n  [BlockId.Obsidian]: [0.09, 0.07, 0.14],\n  // A swirling violet portal surface (painted in atlas.ts; emits block light).\n  [BlockId.NetherPortal]: [0.45, 0.18, 0.68]\n};"
 }
@@ -7984,7 +7984,7 @@ id: toolu_01UerCZi64wVX2WYCjncjteh
 tool_result
 id: toolu_01UerCZi64wVX2WYCjncjteh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7994,7 +7994,7 @@ id: toolu_015K93VpLc3xxjhURfxT4mkT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/voxelWorld.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/voxelWorld.ts",
   "old_string": "  isSolid(x: number, y: number, z: number): boolean {\n    const block = this.get(x, y, z);\n    return block !== BlockId.Air && block !== BlockId.Water;\n  }",
   "new_string": "  isSolid(x: number, y: number, z: number): boolean {\n    const block = this.get(x, y, z);\n    // Water and the portal surface are walked into, never collided with (the\n    // portal also lets the solid raycast pass — you target the frame, not it).\n    return block !== BlockId.Air && block !== BlockId.Water && block !== BlockId.NetherPortal;\n  }"
 }
@@ -8005,7 +8005,7 @@ id: toolu_015K93VpLc3xxjhURfxT4mkT
 tool_result
 id: toolu_015K93VpLc3xxjhURfxT4mkT
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/voxelWorld.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/voxelWorld.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8015,7 +8015,7 @@ id: toolu_01Nep66H85sN4uY94HJJsKj6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/meshing.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/meshing.ts",
   "old_string": "          if (block === BlockId.Water || block === BlockId.Glass) {\n            if (neighbor === block) continue;\n          } else if (",
   "new_string": "          if (block === BlockId.Water || block === BlockId.Glass || block === BlockId.NetherPortal) {\n            if (neighbor === block) continue;\n          } else if ("
 }
@@ -8026,7 +8026,7 @@ id: toolu_01Nep66H85sN4uY94HJJsKj6
 tool_result
 id: toolu_01Nep66H85sN4uY94HJJsKj6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/meshing.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/meshing.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8035,7 +8035,7 @@ tool_use Read
 id: toolu_017ctKKKMjDwTNZxfbypXqNY
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts",
   "offset": 45,
   "limit": 55
 }
@@ -8086,7 +8086,7 @@ id: toolu_01QSf4JLY8ZZz85oB2jDUunA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts",
   "old_string": "  switch (block) {\n    case BlockId.Air:\n    case BlockId.Glass:\n      return 0;\n    case BlockId.Leaves:\n    case BlockId.Water:\n    case BlockId.Kelp:\n      return 1;\n    default:\n      return OPAQUE;\n  }\n}",
   "new_string": "  switch (block) {\n    case BlockId.Air:\n    case BlockId.Glass:\n    case BlockId.NetherPortal:\n      return 0;\n    case BlockId.Leaves:\n    case BlockId.Water:\n    case BlockId.Kelp:\n      return 1;\n    default:\n      return OPAQUE;\n  }\n}"
 }
@@ -8097,7 +8097,7 @@ id: toolu_01QSf4JLY8ZZz85oB2jDUunA
 tool_result
 id: toolu_01QSf4JLY8ZZz85oB2jDUunA
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8107,7 +8107,7 @@ id: toolu_01SEjjYoc1VcHvKQhEyPRJKt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts",
   "old_string": "    case BlockId.RedstoneTorch:\n      return 7;\n    case BlockId.RedstoneLampOn:\n      return MAX_LIGHT;\n    default:\n      return 0;\n  }\n}",
   "new_string": "    case BlockId.RedstoneTorch:\n      return 7;\n    case BlockId.RedstoneLampOn:\n      return MAX_LIGHT;\n    // The lit portal surface glows a shade under a torch — enough to read as\n    // active and to light its chamber, without washing out torch placement.\n    case BlockId.NetherPortal:\n      return 11;\n    default:\n      return 0;\n  }\n}"
 }
@@ -8118,7 +8118,7 @@ id: toolu_01SEjjYoc1VcHvKQhEyPRJKt
 tool_result
 id: toolu_01SEjjYoc1VcHvKQhEyPRJKt
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8128,7 +8128,7 @@ id: toolu_01Dy6uvs8wN8KvRvDqNBiD73
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "old_string": "        if (block === BlockId.Tnt) {",
   "new_string": "        if (block === BlockId.NetherPortal) {\n          // A swirling violet surface: concentric sine bands around the tile\n          // center over a deep purple bed, with bright sparks. Emits light 11,\n          // so it reads as an active gateway.\n          const cx = x - 7.5;\n          const cy = y - 7.5;\n          const ring = Math.sin(Math.sqrt(cx * cx + cy * cy) * 1.4 + n * 4);\n          c = ring > 0.35 ? tone([0.62, 0.3, 0.9], 0.85 + n * 0.3) : tone([0.28, 0.1, 0.45], 0.8 + n * 0.3);\n          if (n > 0.93) c = tone([0.9, 0.75, 1], 1); // spark\n        }\n        if (block === BlockId.Tnt) {"
 }
@@ -8139,7 +8139,7 @@ id: toolu_01Dy6uvs8wN8KvRvDqNBiD73
 tool_result
 id: toolu_01Dy6uvs8wN8KvRvDqNBiD73
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8149,7 +8149,7 @@ id: toolu_01WK2dn8Vh9N7GnQ9rC22hhR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
   "old_string": "  [BlockId.Obsidian]: \"stone\"\n};",
   "new_string": "  [BlockId.Obsidian]: \"stone\",\n  [BlockId.NetherPortal]: \"glass\"\n};"
 }
@@ -8160,7 +8160,7 @@ id: toolu_01WK2dn8Vh9N7GnQ9rC22hhR
 tool_result
 id: toolu_01WK2dn8Vh9N7GnQ9rC22hhR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8174,7 +8174,7 @@ id: toolu_014NgKsLWzjKdwDrsgz3bsHV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"fishing_rod\", label: \"Fishing Rod\", kind: \"tool\", minePower: 0, mineTier: 0, maxDurability: FISHING_ROD_DURABILITY },",
   "new_string": "  { id: \"fishing_rod\", label: \"Fishing Rod\", kind: \"tool\", minePower: 0, mineTier: 0, maxDurability: FISHING_ROD_DURABILITY },\n  // Strikes sparks — used (via the right-click held-item path) to light a\n  // nether portal's obsidian frame; each ignition wears it by one.\n  { id: \"flint_and_steel\", label: \"Flint & Steel\", kind: \"tool\", minePower: 0, mineTier: 0, maxDurability: 64 },"
 }
@@ -8185,7 +8185,7 @@ id: toolu_014NgKsLWzjKdwDrsgz3bsHV
 tool_result
 id: toolu_014NgKsLWzjKdwDrsgz3bsHV
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8195,7 +8195,7 @@ id: toolu_01Qf2EokCzrTjW64KjR26BD2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "old_string": "  {\n    id: \"bucket\",\n    label: \"3 Sliver Ore -> Bucket\",\n    cost: [{ slotId: \"sliver_ore\", count: 3 }],\n    result: { slotId: \"bucket\", count: 1 }\n  },",
   "new_string": "  {\n    id: \"bucket\",\n    label: \"3 Sliver Ore -> Bucket\",\n    cost: [{ slotId: \"sliver_ore\", count: 3 }],\n    result: { slotId: \"bucket\", count: 1 }\n  },\n  {\n    id: \"flint_and_steel\",\n    label: \"1 Sliver Ore + 1 Coal -> Flint & Steel\",\n    cost: [\n      { slotId: \"sliver_ore\", count: 1 },\n      { slotId: \"coal\", count: 1 }\n    ],\n    result: { slotId: \"flint_and_steel\", count: 1 }\n  },"
 }
@@ -8206,7 +8206,7 @@ id: toolu_01Qf2EokCzrTjW64KjR26BD2
 tool_result
 id: toolu_01Qf2EokCzrTjW64KjR26BD2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8216,7 +8216,7 @@ id: toolu_019bmMJxeaLLwbkJ3fRS5RhS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "const BUCKET_METAL: PixelPalette = { o: [70, 74, 84], r: [180, 184, 192], m: [140, 144, 152] };",
   "new_string": "// A steel striker arc (m/l) over a dark flint chunk (f), with a spark (s)\n// flying where they meet — reads as the classic fire-starter.\nconst FLINT_STEEL_GRID = [\n  \"................\",\n  \"..........s.....\",\n  \".........s.s....\",\n  \"......mm..s.....\",\n  \".....mllm.......\",\n  \"....ml..lm......\",\n  \"....ml...m......\",\n  \"....ml..........\",\n  \"....ml..........\",\n  \"....ml...m......\",\n  \".....mllm.......\",\n  \"..ff..mm........\",\n  \".ffff...........\",\n  \".fffff..........\",\n  \"..fff...........\",\n  \"................\"\n];\nconst FLINT_STEEL_PALETTE: PixelPalette = { m: [130, 134, 142], l: [190, 194, 202], f: [52, 50, 56], s: [255, 200, 90] };\n\nconst BUCKET_METAL: PixelPalette = { o: [70, 74, 84], r: [180, 184, 192], m: [140, 144, 152] };"
 }
@@ -8227,7 +8227,7 @@ id: toolu_019bmMJxeaLLwbkJ3fRS5RhS
 tool_result
 id: toolu_019bmMJxeaLLwbkJ3fRS5RhS
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8237,7 +8237,7 @@ id: toolu_01PnkPC6ci9xF2q3uuz2wL7v
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "  bucket: { grid: BUCKET_GRID, palette: BUCKET_EMPTY_PALETTE },",
   "new_string": "  flint_and_steel: { grid: FLINT_STEEL_GRID, palette: FLINT_STEEL_PALETTE },\n  bucket: { grid: BUCKET_GRID, palette: BUCKET_EMPTY_PALETTE },"
 }
@@ -8248,7 +8248,7 @@ id: toolu_01PnkPC6ci9xF2q3uuz2wL7v
 tool_result
 id: toolu_01PnkPC6ci9xF2q3uuz2wL7v
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8262,7 +8262,7 @@ id: toolu_013TcjpLwy4vg9iPw6JHDSPE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  | { type: \"bucketFilled\"; fluid: \"water\" | \"lava\" }\n  | { type: \"bucketEmptied\"; fluid: \"water\" | \"lava\" }\n  | { type: \"lavaSolidified\" }",
   "new_string": "  | { type: \"bucketFilled\"; fluid: \"water\" | \"lava\" }\n  | { type: \"bucketEmptied\"; fluid: \"water\" | \"lava\" }\n  | { type: \"lavaSolidified\" }\n  | { type: \"portalLit\" }\n  | { type: \"portalDenied\"; reason: \"online\" | \"invalidFrame\" }"
 }
@@ -8273,7 +8273,7 @@ id: toolu_013TcjpLwy4vg9iPw6JHDSPE
 tool_result
 id: toolu_013TcjpLwy4vg9iPw6JHDSPE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8283,7 +8283,7 @@ id: toolu_01NJ7D1g6D4JdXN71cWLBd65
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "old_string": "// The nether has no sky: daylight is pinned to this constant — below the\n// hostile-spawn threshold (spawns never stop) and the burn threshold (nothing\n// combusts), while the day clock itself keeps ticking (it is shared world time).\nexport const NETHER_DAYLIGHT = 0.22;",
   "new_string": "// The nether has no sky: daylight is pinned to this constant — below the\n// hostile-spawn threshold (spawns never stop) and the burn threshold (nothing\n// combusts), while the day clock itself keeps ticking (it is shared world time).\nexport const NETHER_DAYLIGHT = 0.22;\n\n// Nether portal frame limits (the INTERIOR the obsidian border encloses,\n// corners required) and travel pacing. See lib/game/engine/systems/portal.ts.\nexport const PORTAL_MIN_INTERIOR = { w: 2, h: 3 } as const;\nexport const PORTAL_MAX_INTERIOR = { w: 4, h: 4 } as const;\n// Seconds a player must stand in the portal surface before travel fires.\nexport const PORTAL_DWELL_SECONDS = 3;\n// How far around the mapped arrival point an existing portal is reused.\nexport const PORTAL_SEARCH_RADIUS = 24;"
 }
@@ -8294,7 +8294,7 @@ id: toolu_01NJ7D1g6D4JdXN71cWLBd65
 tool_result
 id: toolu_01NJ7D1g6D4JdXN71cWLBd65
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8307,7 +8307,7 @@ tool_use Write
 id: toolu_019NcpdgnEZy4mt1rPvyNWtm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts",
   "content": "import * as THREE from \"three\";\nimport { BlockId, voxelRaycast, type VoxelWorld } from \"@/lib/world\";\nimport { EYE_HEIGHT, MINE_REACH, PORTAL_MAX_INTERIOR, PORTAL_MIN_INTERIOR } from \"@/lib/game/config\";\nimport { consumeToolDurability } from \"@/lib/game/inventory\";\nimport type { EmitGameEvent, GameState, PlayerState } from \"../state\";\nimport { lookDirection } from \"./playerMotion\";\n\nconst scratchEye = new THREE.Vector3();\nconst scratchDir = new THREE.Vector3();\n\n/**\n * A validated portal frame: `axis` is the horizontal direction the interior\n * runs along, `base` its lowest interior cell nearest the axis origin, and\n * `w`×`h` the interior size. The obsidian border encloses it fully, corners\n * included (stricter than Minecraft's corner-optional rule — one simple shape).\n */\nexport type PortalFrame = { axis: \"x\" | \"z\"; base: { x: number; y: number; z: number }; w: number; h: number };\n\n/** A cell the portal surface may occupy: air before ignition, the surface itself after. */\nfunction isInteriorCell(block: number): boolean {\n  return block === BlockId.Air || block === BlockId.NetherPortal;\n}\n\n/**\n * Validates the portal frame around an interior candidate cell: slides down and\n * sideways to the interior's base corner, measures the rectangle, then requires\n * every interior cell open and a full obsidian border (corners included) on\n * both axes' candidate planes. Bounded by […]
 
 > TOOL
@@ -8315,7 +8315,7 @@ id: toolu_019NcpdgnEZy4mt1rPvyNWtm
 tool_result
 id: toolu_019NcpdgnEZy4mt1rPvyNWtm
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8325,7 +8325,7 @@ id: toolu_01SRWatoVkGsKye5TkfwpZyr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "        if (this.trySummonBoss(player)) break;\n        if (this.tryStartRaid(player)) break;\n        if (tryFish(state, player, this.emit, this.rng)) break;\n        if (tryPlaceVehicle(state, player, this.emit)) break;\n        if (tryUseHeldItem(state, player, this.emit, this.rng)) break;",
   "new_string": "        if (this.trySummonBoss(player)) break;\n        if (this.tryStartRaid(player)) break;\n        if (tryFish(state, player, this.emit, this.rng)) break;\n        if (tryPlaceVehicle(state, player, this.emit)) break;\n        // Portal ignition is single-player only for now: a replica routes this\n        // cmd to the server, whose engine (authority \"server\") denies with the\n        // \"online\" reason — the event replicates back and the shell explains.\n        if (tryIgnitePortal(state, player, this.emit, this.portalsEnabled, this.rng)) break;\n        if (tryUseHeldItem(state, player, this.emit, this.rng)) break;"
 }
@@ -8336,7 +8336,7 @@ id: toolu_01SRWatoVkGsKye5TkfwpZyr
 tool_result
 id: toolu_01SRWatoVkGsKye5TkfwpZyr
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8346,7 +8346,7 @@ id: toolu_01QcATWCGuE8W6rSSWxVBq9T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  /** Stores a player's latest continuous input (a server feeds each client's packet through here). */\n  setPlayerInput(playerId: PlayerId, input: FrameInput): void {",
   "new_string": "  /**\n   * Portals work in local single-player only (for now): the server engine and\n   * every replica refuse ignition, so an online world can never strand a\n   * player in a dimension the room doesn't simulate.\n   */\n  private get portalsEnabled(): boolean {\n    return this.authority === \"local\" && !this.replica;\n  }\n\n  /** Stores a player's latest continuous input (a server feeds each client's packet through here). */\n  setPlayerInput(playerId: PlayerId, input: FrameInput): void {"
 }
@@ -8357,7 +8357,7 @@ id: toolu_01QcATWCGuE8W6rSSWxVBq9T
 tool_result
 id: toolu_01QcATWCGuE8W6rSSWxVBq9T
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8366,7 +8366,7 @@ tool_use Bash
 id: toolu_01LyaExm7rXMUnKdMeoF1ms3
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"import { tryInteractBlock\\|from \\\"./systems/interact\\\"\\|from \\\"./systems/portal\\\"\" lib/game/engine/GameEngine.ts | head -3",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"import { tryInteractBlock\\|from \\\"./systems/interact\\\"\\|from \\\"./systems/portal\\\"\" lib/game/engine/GameEngine.ts | head -3",
   "description": "Find interact import line in GameEngine"
 }
 ```
@@ -8385,7 +8385,7 @@ tool_use Bash
 id: toolu_013SDCdGLi6wZU83M4odCJMk
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft; sed -n 130,150p lib/game/engine/GameEngine.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft; sed -n 130,150p lib/game/engine/GameEngine.ts",
   "description": "See the systems import block"
 }
 ```
@@ -8425,7 +8425,7 @@ id: toolu_01MzrC4QJr93cFJZG7udV4Le
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import { isBow, tryAttackMob, tryFireBow, weaponDamage, weaponReach, type MobPositionOf } from \"./systems/combat\";",
   "new_string": "import { tryIgnitePortal } from \"./systems/portal\";\nimport { isBow, tryAttackMob, tryFireBow, weaponDamage, weaponReach, type MobPositionOf } from \"./systems/combat\";"
 }
@@ -8436,7 +8436,7 @@ id: toolu_01MzrC4QJr93cFJZG7udV4Le
 tool_result
 id: toolu_01MzrC4QJr93cFJZG7udV4Le
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8450,7 +8450,7 @@ id: toolu_01UALcUBMydE1YobkpDqKv84
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "old_string": "  } else {\n    state.blockChanges.set(bx, by, bz, BlockId.Air);\n    // A redstone overlay (wire, lever, …) or rail standing on the broken block\n    // pops off with it and drops its item to the miner (the kelp-cascade rule).\n    const above = world.get(bx, by + 1, bz) as BlockId;\n    if (isRedstoneOverlay(above) || isRailBlock(above)) {\n      state.blockChanges.set(bx, by + 1, bz, BlockId.Air);\n      if (!creative && !predict) addBlockDrop(player, above, rng, tool);\n    }",
   "new_string": "  } else {\n    state.blockChanges.set(bx, by, bz, BlockId.Air);\n    // Breaking a frame block de-frames its portal: the attached surface\n    // flood-clears so a lit portal can never outlive its obsidian.\n    if (targetBlock === BlockId.Obsidian) clearAttachedPortal(state, bx, by, bz);\n    // A redstone overlay (wire, lever, …) or rail standing on the broken block\n    // pops off with it and drops its item to the miner (the kelp-cascade rule).\n    const above = world.get(bx, by + 1, bz) as BlockId;\n    if (isRedstoneOverlay(above) || isRailBlock(above)) {\n      state.blockChanges.set(bx, by + 1, bz, BlockId.Air);\n      if (!creative && !predict) addBlockDrop(player, above, rng, tool);\n    }"
 }
@@ -8461,7 +8461,7 @@ id: toolu_01UALcUBMydE1YobkpDqKv84
 tool_result
 id: toolu_01UALcUBMydE1YobkpDqKv84
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8470,7 +8470,7 @@ tool_use Bash
 id: toolu_01QpunmUcgNuVWJWc9FzuuyZ
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"from \\\"./dungeon\\\"\\|from \\\"./explosion\\\"\\|import\" lib/game/engine/systems/mining.ts | sed -n 1,12p",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"from \\\"./dungeon\\\"\\|from \\\"./explosion\\\"\\|import\" lib/game/engine/systems/mining.ts | sed -n 1,12p",
   "description": "Check mining.ts system imports"
 }
 ```
@@ -8501,7 +8501,7 @@ id: toolu_01FshGTR7GHK7jva51nHeaE5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "old_string": "import { fillWorldgenChestIfUnlooted } from \"./dungeon\";\nimport { lookDirection } from \"./playerMotion\";",
   "new_string": "import { fillWorldgenChestIfUnlooted } from \"./dungeon\";\nimport { clearAttachedPortal } from \"./portal\";\nimport { lookDirection } from \"./playerMotion\";"
 }
@@ -8512,7 +8512,7 @@ id: toolu_01FshGTR7GHK7jva51nHeaE5
 tool_result
 id: toolu_01FshGTR7GHK7jva51nHeaE5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8522,7 +8522,7 @@ id: toolu_016XvkcZVpufNpGxrgWBvDhj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "old_string": "/** A sharp steam hiss as water quenches lava into obsidian. */",
   "new_string": "/** A deep resonant whoosh as a portal frame ignites. */\nexport const PORTAL_LIT_SOUND: SoundDef = {\n  params: zz({\n    volume: 0.6,\n    randomness: 0.15,\n    frequency: 120,\n    sustain: 0.15,\n    release: 0.5,\n    shape: 0,\n    slide: 4,\n    noise: 0.8,\n    sustainVolume: 0.7,\n    decay: 0.1,\n    filter: -300\n  }),\n  minRetriggerMs: 300\n};\n\n/** A sharp steam hiss as water quenches lava into obsidian. */"
 }
@@ -8533,7 +8533,7 @@ id: toolu_016XvkcZVpufNpGxrgWBvDhj
 tool_result
 id: toolu_016XvkcZVpufNpGxrgWBvDhj
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8543,7 +8543,7 @@ id: toolu_01HLwTEbemsW7UCcVUwvArfa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "old_string": "        case \"lavaSolidified\":\n          backend.play(LAVA_QUENCH_SOUND);\n          break;",
   "new_string": "        case \"lavaSolidified\":\n          backend.play(LAVA_QUENCH_SOUND);\n          break;\n        case \"portalLit\":\n          backend.play(PORTAL_LIT_SOUND);\n          break;"
 }
@@ -8554,7 +8554,7 @@ id: toolu_01HLwTEbemsW7UCcVUwvArfa
 tool_result
 id: toolu_01HLwTEbemsW7UCcVUwvArfa
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8564,7 +8564,7 @@ id: toolu_01JRPBwNAawch5yHELrAoNuz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "old_string": "  DEATH_SOUND,\n  DRINK_SOUND,\n  LAVA_QUENCH_SOUND,",
   "new_string": "  DEATH_SOUND,\n  DRINK_SOUND,\n  LAVA_QUENCH_SOUND,\n  PORTAL_LIT_SOUND,"
 }
@@ -8575,7 +8575,7 @@ id: toolu_01JRPBwNAawch5yHELrAoNuz
 tool_result
 id: toolu_01JRPBwNAawch5yHELrAoNuz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8585,7 +8585,7 @@ id: toolu_018pEKwt6AEHy6LvxWfWPVJZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "old_string": "        if (event.type === \"sleepDenied\") {\n          flashMessage(event.reason === \"daylight\" ? \"You can only sleep at night\" : event.reason === \"dimension\" ? \"You can't sleep here\" : \"Monsters are nearby\");\n        }",
   "new_string": "        if (event.type === \"sleepDenied\") {\n          flashMessage(event.reason === \"daylight\" ? \"You can only sleep at night\" : event.reason === \"dimension\" ? \"You can't sleep here\" : \"Monsters are nearby\");\n        }\n        if (event.type === \"portalDenied\") {\n          flashMessage(event.reason === \"online\" ? \"Portals aren't available in online worlds yet\" : \"The frame is incomplete\");\n        }"
 }
@@ -8608,7 +8608,7 @@ tool_use Bash
 id: toolu_015rV95V3gfNPsVu6Cj4hnVw
 ```json
 {
-  "command": "grep -n \"sleepDenied\" -A 3 /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts | head -8",
+  "command": "grep -n \"sleepDenied\" -A 3 /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts | head -8",
   "description": "See formatted sleepDenied handler"
 }
 ```
@@ -8631,7 +8631,7 @@ id: toolu_01VcJV4EYtENQy1yK7SKnLJj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "old_string": "        if (event.type === \"sleepDenied\") {\n          flashMessage(\n            event.reason === \"daylight\" ? \"You can only sleep at night\" : event.reason === \"dimension\" ? \"You can't sleep here\" : \"Monsters are nearby\"\n          );\n        }",
   "new_string": "        if (event.type === \"sleepDenied\") {\n          flashMessage(\n            event.reason === \"daylight\" ? \"You can only sleep at night\" : event.reason === \"dimension\" ? \"You can't sleep here\" : \"Monsters are nearby\"\n          );\n        }\n        if (event.type === \"portalDenied\") {\n          flashMessage(event.reason === \"online\" ? \"Portals aren't available in online worlds yet\" : \"The frame is incomplete\");\n        }"
 }
@@ -8642,7 +8642,7 @@ id: toolu_01VcJV4EYtENQy1yK7SKnLJj
 tool_result
 id: toolu_01VcJV4EYtENQy1yK7SKnLJj
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8655,7 +8655,7 @@ tool_use Write
 id: toolu_011NFRCcp4qvPtqSR2N3eujw
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport * as THREE from \"three\";\nimport { BlockId, VoxelWorld } from \"@/lib/world\";\nimport { createBlockChangeTracker } from \"@/lib/game/engine/blockChanges\";\nimport type { GameEvent, GameState, PlayerState } from \"@/lib/game/engine/state\";\nimport { clearAttachedPortal, findPortalFrame, fillPortalFrame, tryIgnitePortal } from \"@/lib/game/engine/systems/portal\";\nimport { createSlot } from \"@/lib/game/items\";\nimport type { InventorySlot } from \"@/lib/game/types\";\n\nconst FLOOR_Y = 10;\n\n/**\n * Builds an obsidian frame standing on a stone floor with a `w`×`h` interior,\n * running along `axis`, its interior base corner at (bx, FLOOR_Y+1, bz).\n */\nfunction buildFrame(world: VoxelWorld, axis: \"x\" | \"z\", bx: number, bz: number, w: number, h: number): void {\n  const dx = axis === \"x\" ? 1 : 0;\n  const dz = axis === \"z\" ? 1 : 0;\n  const baseY = FLOOR_Y + 1;\n  for (let i = -1; i <= w; i += 1) {\n    world.set(bx + dx * i, baseY - 1, bz + dz * i, BlockId.Obsidian); // bottom incl corners\n    world.set(bx + dx * i, baseY + h, bz + dz * i, BlockId.Obsidian); // top incl corners\n  }\n  for (let j = 0; j < h; j += 1) {\n    world.set(bx - dx, baseY + j, bz […]
 
 > TOOL
@@ -8663,7 +8663,7 @@ id: toolu_011NFRCcp4qvPtqSR2N3eujw
 tool_result
 id: toolu_011NFRCcp4qvPtqSR2N3eujw
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8672,7 +8672,7 @@ tool_use Bash
 id: toolu_01MoPENobuDRrKHihrhx7U5b
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"export function lookDirection\" -A 8 lib/game/engine/systems/playerMotion.ts; grep -n \"EYE_HEIGHT =\" lib/game/config.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"export function lookDirection\" -A 8 lib/game/engine/systems/playerMotion.ts; grep -n \"EYE_HEIGHT =\" lib/game/config.ts",
   "description": "Verify lookDirection convention and EYE_HEIGHT"
 }
 ```
@@ -8705,7 +8705,7 @@ id: toolu_01Eeo6GQ24nQYHGxmCw4qC8Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "old_string": "  /** The player stands two blocks in front of the frame, aiming at its bottom bar so `previous` is the interior base cell. */\n  function igniteFixture(allowed = true): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = makeWorld();\n    buildFrame(world, \"x\", 8, 8, 2, 3);\n    // Aim from south of the frame at the interior base cell's supporting\n    // obsidian: eye ray passes through (8, baseY, 8) — the interior candidate —\n    // before striking the bottom bar obsidian below-behind it.\n    const fixture = makeState(world, [createSlot(\"flint_and_steel\", 1)], new THREE.Vector3(8.5, FLOOR_Y + 1, 12.5));\n    fixture.player.pitch = -Math.atan2(1, 4); // slight downward, hits the bottom bar through the interior cell\n    fixture.player.yaw = Math.PI; // face -z? (lookDirection convention) — corrected below if needed\n    return fixture;\n  }",
   "new_string": "  /** The player stands in front of the frame; each test aims the eye ray with aimAt. */\n  function igniteFixture(): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = makeWorld();\n    buildFrame(world, \"x\", 8, 8, 2, 3);\n    return makeState(world, [createSlot(\"flint_and_steel\", 1)], new THREE.Vector3(8.5, FLOOR_Y + 1, 12.5));\n  }"
 }
@@ -8716,7 +8716,7 @@ id: toolu_01Eeo6GQ24nQYHGxmCw4qC8Z
 tool_result
 id: toolu_01Eeo6GQ24nQYHGxmCw4qC8Z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8726,7 +8726,7 @@ id: toolu_01GpP9CVyAddhYcMy3TTgCap
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "old_string": "/** Points the player's eye ray at a world position (matches lookDirection's yaw/pitch convention via direct vector math). */\nfunction aimAt(player: PlayerState, tx: number, ty: number, tz: number): void {\n  const eye = new THREE.Vector3(player.position.x, player.position.y + 1.62, player.position.z);\n  const dir = new THREE.Vector3(tx, ty, tz).sub(eye).normalize();\n  player.pitch = Math.asin(dir.y);\n  // lookDirection: x = -sin(yaw)*cos(pitch), z = -cos(yaw)*cos(pitch) (Minecraft-style).\n  player.yaw = Math.atan2(-dir.x, -dir.z);\n}",
   "new_string": "/** Points the player's eye ray at a world position (matches lookDirection's yaw/pitch convention: x = -cp·sin(yaw), y = sin(pitch), z = -cp·cos(yaw)). */\nfunction aimAt(player: PlayerState, tx: number, ty: number, tz: number): void {\n  const eye = new THREE.Vector3(player.position.x, player.position.y + EYE_HEIGHT, player.position.z);\n  const dir = new THREE.Vector3(tx, ty, tz).sub(eye).normalize();\n  player.pitch = Math.asin(dir.y);\n  player.yaw = Math.atan2(-dir.x, -dir.z);\n}"
 }
@@ -8737,7 +8737,7 @@ id: toolu_01GpP9CVyAddhYcMy3TTgCap
 tool_result
 id: toolu_01GpP9CVyAddhYcMy3TTgCap
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8747,7 +8747,7 @@ id: toolu_01KdvUSf7gDWCoiPofHKYXAY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "old_string": "import { describe, expect, test } from \"bun:test\";\nimport * as THREE from \"three\";\nimport { BlockId, VoxelWorld } from \"@/lib/world\";",
   "new_string": "import { describe, expect, test } from \"bun:test\";\nimport * as THREE from \"three\";\nimport { EYE_HEIGHT } from \"@/lib/game/config\";\nimport { BlockId, VoxelWorld } from \"@/lib/world\";"
 }
@@ -8758,7 +8758,7 @@ id: toolu_01KdvUSf7gDWCoiPofHKYXAY
 tool_result
 id: toolu_01KdvUSf7gDWCoiPofHKYXAY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8782,7 +8782,7 @@ error: expect(received).toBe(expected)
 Expected: true
 Received: false
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts:165:84)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts:165:84)
 (fail) tryIgnitePortal > an incomplete frame denies with the invalidFrame reason [0.11ms]
 
  9 pass
@@ -8820,7 +8820,7 @@ id: toolu_01XzQJSo7GffrM7tXb4mRTwD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "old_string": "  test(\"a missing side block invalidates the frame\", () => {\n    const world = makeWorld();\n    buildFrame(world, \"x\", 8, 8, 2, 3);\n    world.set(11, FLOOR_Y + 2, 8, BlockId.Air); // a right-side block gone\n    expect(findPortalFrame(world, 8, FLOOR_Y + 1, 8)).toBeNull();\n  });",
   "new_string": "  test(\"a missing side block invalidates the frame\", () => {\n    const world = makeWorld();\n    buildFrame(world, \"x\", 8, 8, 2, 3);\n    world.set(10, FLOOR_Y + 2, 8, BlockId.Air); // a right-side block gone (border at bx + w = 10)\n    expect(findPortalFrame(world, 8, FLOOR_Y + 1, 8)).toBeNull();\n  });"
 }
@@ -8831,7 +8831,7 @@ id: toolu_01XzQJSo7GffrM7tXb4mRTwD
 tool_result
 id: toolu_01XzQJSo7GffrM7tXb4mRTwD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8841,7 +8841,7 @@ id: toolu_01CRYKeZZSSudfn4EvWEK7Dj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "old_string": "  /** The player stands in front of the frame; each test aims the eye ray with aimAt. */\n  function igniteFixture(): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = makeWorld();\n    buildFrame(world, \"x\", 8, 8, 2, 3);\n    return makeState(world, [createSlot(\"flint_and_steel\", 1)], new THREE.Vector3(8.5, FLOOR_Y + 1, 12.5));\n  }",
   "new_string": "  /**\n   * The player stands INSIDE the (unlit) frame — the Minecraft gesture is\n   * striking the bottom bar's inner face, so the raycast's `previous` cell is\n   * the interior base cell. Aiming straight down from inside guarantees it.\n   */\n  function igniteFixture(): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = makeWorld();\n    buildFrame(world, \"x\", 8, 8, 2, 3);\n    return makeState(world, [createSlot(\"flint_and_steel\", 1)], new THREE.Vector3(8.5, FLOOR_Y + 1, 8.5));\n  }"
 }
@@ -8852,7 +8852,7 @@ id: toolu_01CRYKeZZSSudfn4EvWEK7Dj
 tool_result
 id: toolu_01CRYKeZZSSudfn4EvWEK7Dj
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8862,7 +8862,7 @@ id: toolu_017c7Vq2J98r5sxMrfv9s1R2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "old_string": "  test(\"a valid frame lights: interior filled, striker worn, portalLit emitted\", () => {\n    const { state, player, events } = igniteFixture();\n    // Aim straight at the frame's bottom bar from the front.\n    aimAt(player, 8.5, FLOOR_Y + 0.5, 8.5);",
   "new_string": "  test(\"a valid frame lights: interior filled, striker worn, portalLit emitted\", () => {\n    const { state, player, events } = igniteFixture();\n    // Strike the bottom bar straight down through the interior cell.\n    aimAt(player, 8.5, FLOOR_Y + 0.5, 8.5);"
 }
@@ -8873,7 +8873,7 @@ id: toolu_017c7Vq2J98r5sxMrfv9s1R2
 tool_result
 id: toolu_017c7Vq2J98r5sxMrfv9s1R2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8883,7 +8883,7 @@ id: toolu_017FxhpX6NBUojBB52U9xth8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "old_string": "  test(\"aiming at plain stone with flint & steel does nothing (falls through)\", () => {\n    const { state, player, events } = igniteFixture();\n    aimAt(player, 2.5, FLOOR_Y + 0.5, 2.5); // bare floor\n    expect(tryIgnitePortal(state, player, (e) => events.push(e), true, () => 0.5)).toBe(false);\n    expect(events).toHaveLength(0);\n  });",
   "new_string": "  test(\"aiming at plain stone with flint & steel does nothing (falls through)\", () => {\n    const { state, player, events } = igniteFixture();\n    aimAt(player, 8.5, FLOOR_Y + 0.5, 10.5); // bare floor just outside the frame\n    expect(tryIgnitePortal(state, player, (e) => events.push(e), true, () => 0.5)).toBe(false);\n    expect(events).toHaveLength(0);\n  });"
 }
@@ -8894,7 +8894,7 @@ id: toolu_017FxhpX6NBUojBB52U9xth8
 tool_result
 id: toolu_017FxhpX6NBUojBB52U9xth8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8974,7 +8974,7 @@ error: expect(received).toBeDefined()
 
 Received: undefined
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.test.ts:64:55)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.test.ts:64:55)
 (fail) renderSpritePixels > every tool/weapon material prefix has a palette [0.18ms]
 ```
 
@@ -8984,7 +8984,7 @@ tool_use Read
 id: toolu_01MdJXfKT7u9ddJ7kYNCLE32
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.test.ts",
   "offset": 50,
   "limit": 25
 }
@@ -9033,7 +9033,7 @@ id: toolu_01XbeSXAByxaJHSGPuiaDBgU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.test.ts",
   "old_string": "    // The knife, bow, and fishing rod render from their own custom grids, not the\n    // shared tool/sword grid + material-prefix palette, so they are exempt.\n    const customGrid = new Set([\"knife\", \"bow\", \"fishing_rod\"]);",
   "new_string": "    // The knife, bow, fishing rod, and flint & steel render from their own custom\n    // grids, not the shared tool/sword grid + material-prefix palette — exempt.\n    const customGrid = new Set([\"knife\", \"bow\", \"fishing_rod\", \"flint_and_steel\"]);"
 }
@@ -9044,7 +9044,7 @@ id: toolu_01XbeSXAByxaJHSGPuiaDBgU
 tool_result
 id: toolu_01XbeSXAByxaJHSGPuiaDBgU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9117,7 +9117,7 @@ tool_use Bash
 id: toolu_01V7cXJYXPup4G6LVt5BvnwV
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"PlayerTimers\\|createPlayerTimers\" lib/game/engine/state.ts | head -4; grep -n \"export type PlayerTimers\" -A 20 lib/game/engine/state.ts | head -30",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"PlayerTimers\\|createPlayerTimers\" lib/game/engine/state.ts | head -4; grep -n \"export type PlayerTimers\" -A 20 lib/game/engine/state.ts | head -30",
   "description": "Find PlayerTimers shape"
 }
 ```
@@ -9160,7 +9160,7 @@ tool_use Read
 id: toolu_01LiEcyvgV9ELGmTdQS1KMCd
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "offset": 253,
   "limit": 45
 }
@@ -9211,7 +9211,7 @@ tool_use Bash
 id: toolu_01AU9NFuJRyMF9YWdgcDoFHf
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"export function createPlayerTimers\" -A 25 lib/game/engine/state.ts | head -32; grep -n \"tickLavaExposure(\\|tickOxygen(\" lib/game/engine/GameEngine.ts | head -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"export function createPlayerTimers\" -A 25 lib/game/engine/state.ts | head -32; grep -n \"tickLavaExposure(\\|tickOxygen(\" lib/game/engine/GameEngine.ts | head -4",
   "description": "See createPlayerTimers and stepPlayer exposure calls"
 }
 ```
@@ -9257,7 +9257,7 @@ tool_use Read
 id: toolu_015FZVfWX9NYZR4pywSQUJYm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 745,
   "limit": 60
 }
@@ -9311,7 +9311,7 @@ id: toolu_01PQBHgvbAkmxrycFVZkDZ4D
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  spearThrowCooldown: number;\n  /** Seconds until the bow can fire again (instant click-to-fire rate limit). */\n  bowCooldownTimer: number;\n};",
   "new_string": "  spearThrowCooldown: number;\n  /** Seconds until the bow can fire again (instant click-to-fire rate limit). */\n  bowCooldownTimer: number;\n  /** Seconds spent standing in a portal surface; travel fires at PORTAL_DWELL_SECONDS. */\n  portalDwellSeconds: number;\n  /** Travel fired (or the player arrived inside a portal) — no re-fire until they step out. */\n  portalLatched: boolean;\n};"
 }
@@ -9322,7 +9322,7 @@ id: toolu_01PQBHgvbAkmxrycFVZkDZ4D
 tool_result
 id: toolu_01PQBHgvbAkmxrycFVZkDZ4D
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9332,7 +9332,7 @@ id: toolu_01XVDHZf64a1aeXY8K52aUP8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "    stuckTimer: 0,\n    spearThrowCooldown: 0,\n    bowCooldownTimer: 0\n  };\n}",
   "new_string": "    stuckTimer: 0,\n    spearThrowCooldown: 0,\n    bowCooldownTimer: 0,\n    portalDwellSeconds: 0,\n    portalLatched: false\n  };\n}"
 }
@@ -9343,7 +9343,7 @@ id: toolu_01XVDHZf64a1aeXY8K52aUP8
 tool_result
 id: toolu_01XVDHZf64a1aeXY8K52aUP8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9353,7 +9353,7 @@ id: toolu_01SfYuAN62CFz7Ksg1MdRwiv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  | { type: \"portalLit\" }\n  | { type: \"portalDenied\"; reason: \"online\" | \"invalidFrame\" }",
   "new_string": "  | { type: \"portalLit\" }\n  | { type: \"portalDenied\"; reason: \"online\" | \"invalidFrame\" }\n  | { type: \"dimensionTravel\"; target: DimensionId; anchor: { x: number; y: number; z: number } }"
 }
@@ -9364,7 +9364,7 @@ id: toolu_01SfYuAN62CFz7Ksg1MdRwiv
 tool_result
 id: toolu_01SfYuAN62CFz7Ksg1MdRwiv
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9374,7 +9374,7 @@ id: toolu_01FFRYAA4Nhg9gCtTJ3TXzg8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts",
   "old_string": "import * as THREE from \"three\";\nimport { BlockId, voxelRaycast, type VoxelWorld } from \"@/lib/world\";\nimport { EYE_HEIGHT, MINE_REACH, PORTAL_MAX_INTERIOR, PORTAL_MIN_INTERIOR } from \"@/lib/game/config\";\nimport { consumeToolDurability } from \"@/lib/game/inventory\";\nimport type { EmitGameEvent, GameState, PlayerState } from \"../state\";\nimport { lookDirection } from \"./playerMotion\";",
   "new_string": "import * as THREE from \"three\";\nimport { BlockId, voxelRaycast, type VoxelWorld } from \"@/lib/world\";\nimport { EYE_HEIGHT, MINE_REACH, PORTAL_DWELL_SECONDS, PORTAL_MAX_INTERIOR, PORTAL_MIN_INTERIOR, PORTAL_SEARCH_RADIUS } from \"@/lib/game/config\";\nimport { consumeToolDurability } from \"@/lib/game/inventory\";\nimport type { SurfaceYAtFn } from \"@/lib/game/spawn\";\nimport type { BlockChangeTracker } from \"../blockChanges\";\nimport type { EmitGameEvent, GameState, PlayerState } from \"../state\";\nimport { lookDirection } from \"./playerMotion\";"
 }
@@ -9385,7 +9385,7 @@ id: toolu_01FFRYAA4Nhg9gCtTJ3TXzg8
 tool_result
 id: toolu_01FFRYAA4Nhg9gCtTJ3TXzg8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9395,7 +9395,7 @@ id: toolu_014CAc9zvDc6e6B4pqwPTitZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts",
   "old_string": "/**\n * Called when an obsidian block breaks: flood-clears any portal surface that\n * was attached to it, so a de-framed portal never lingers. Bounded (a surface\n * is at most MAX w×h, but the cap guards pathological hand-placed fields).\n * Travel-time revalidation (tickPortalDwell, next slice) is the backstop for\n * frames broken out of this hook's reach.\n */\nexport function clearAttachedPortal(state: GameState, x: number, y: number, z: number): void {\n  const stack: Array<[number, number, number]> = [];\n  for (const [ox, oy, oz] of [\n    [1, 0, 0],\n    [-1, 0, 0],\n    [0, 1, 0],\n    [0, -1, 0],\n    [0, 0, 1],\n    [0, 0, -1]\n  ] as const) {\n    if (state.world.get(x + ox, y + oy, z + oz) === BlockId.NetherPortal) stack.push([x + ox, y + oy, z + oz]);\n  }\n  if (stack.length === 0) return;",
   "new_string": "/**\n * Called when an obsidian block breaks: flood-clears any portal surface that\n * was attached to it, so a de-framed portal never lingers. Bounded (a surface\n * is at most MAX w×h, but the cap guards pathological hand-placed fields).\n * Travel-time revalidation (tickPortalDwell) is the backstop for frames broken\n * out of this hook's […]
 
@@ -9404,7 +9404,7 @@ id: toolu_014CAc9zvDc6e6B4pqwPTitZ
 tool_result
 id: toolu_014CAc9zvDc6e6B4pqwPTitZ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9413,7 +9413,7 @@ tool_use Bash
 id: toolu_01GLtqzhoaQ9Mxsj6oaiA8NN
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts << 'EOF'\n\n/**\n * Per-player portal dwell: standing in a portal surface for\n * PORTAL_DWELL_SECONDS fires ONE `dimensionTravel` event and latches until\n * the player steps out (arrival inside a portal boots latched, so nobody\n * ping-pongs). Travel time re-validates the frame — the lazy backstop for\n * frames broken out of the mining hook's reach (TNT, a de-framed reload):\n * a portal with no valid frame is cleared instead of traveling.\n */\nexport function tickPortalDwell(state: GameState, player: PlayerState, dt: number, emit: EmitGameEvent): void {\n  const { world } = state;\n  const fx = Math.floor(player.position.x);\n  const fy = Math.floor(player.position.y);\n  const fz = Math.floor(player.position.z);\n  const feetInPortal = world.get(fx, fy, fz) === BlockId.NetherPortal;\n  const bodyInPortal = world.get(fx, fy + 1, fz) === BlockId.NetherPortal;\n  if (!feetInPortal && !bodyInPortal) {\n    player.timers.portalDwellSeconds = 0;\n    player.timers.portalLatched = false;\n    return;\n  }\n  if (player.timers.portalLatched) return;\n  player.timers.portalDwellSeconds += dt;\n  if (player.timers.portalDwellSeconds < PORTAL_DWELL_SECONDS) return;\n  player.timers.portalLatched = true;\n  player.timers.portalDwellSeconds = 0;\n\n  const cell = feetInPortal ? { x: fx, y: fy, z: fz } : { x: fx, y: fy + 1, z: fz };\n  const frame = findPortalFrame(world, cell.x, cell.y, cell.z);\n  if (!frame) {\n    clearAttachedPortal(state, cell.x, cell.y, cell.z);\n    return;\n  }\n  emit({ […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.ts << 'EOF'\n\n/**\n * Per-player portal dwell: standing in a portal surface for\n * PORTAL_DWELL_SECONDS fires ONE `dimensionTravel` event and latches until\n * the player steps out (arrival inside a portal boots latched, so nobody\n * ping-pongs). Travel time re-validates the frame — the lazy backstop for\n * frames broken out of the mining hook's reach (TNT, a de-framed reload):\n * a portal with no valid frame is cleared instead of traveling.\n */\nexport function tickPortalDwell(state: GameState, player: PlayerState, dt: number, emit: EmitGameEvent): void {\n  const { world } = state;\n  const fx = Math.floor(player.position.x);\n  const fy = Math.floor(player.position.y);\n  const fz = Math.floor(player.position.z);\n  const feetInPortal = world.get(fx, fy, fz) === BlockId.NetherPortal;\n  const bodyInPortal = world.get(fx, fy + 1, fz) === BlockId.NetherPortal;\n  if (!feetInPortal && !bodyInPortal) {\n    player.timers.portalDwellSeconds = 0;\n    player.timers.portalLatched = false;\n    return;\n  }\n  if (player.timers.portalLatched) return;\n  player.timers.portalDwellSeconds += dt;\n  if (player.timers.portalDwellSeconds < PORTAL_DWELL_SECONDS) return;\n  player.timers.portalLatched = true;\n  player.timers.portalDwellSeconds = 0;\n\n  const cell = feetInPortal ? { x: fx, y: fy, z: fz } : { x: fx, y: fy + 1, z: fz };\n  const frame = findPortalFrame(world, cell.x, cell.y, cell.z);\n  if (!frame) {\n    clearAttachedPortal(state, cell.x, cell.y, cell.z);\n    return;\n  }\n  emit({ […]
 
 > TOOL
 
@@ -9430,7 +9430,7 @@ id: toolu_01LADW93ycwYKg7rqt8tQkAJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    const blockChanges = createBlockChangeTracker(world);\n    if (section) blockChanges.applySavedChanges(section.changes);\n\n    // Bake per-voxel light now the block grid is final (worldgen + saved edits).\n    // Derived cache, never serialized — see lighting.ts / docs/save-format.md.\n    world.light = computeFullLight(world);\n\n    // The nether is roofed: its \"surface\" is the highest cavern-floor pocket,\n    // not highestSolidY (which would be the bedrock ceiling). One seam fixes\n    // every consumer — unstuck, respawn, and the spawn directors.\n    this.surfaceYAt = dimension === \"nether\" ? createNetherFloorYAt(world) : createSurfaceYAt(world);",
   "new_string": "    const blockChanges = createBlockChangeTracker(world);\n    if (section) blockChanges.applySavedChanges(section.changes);\n\n    // The nether is roofed: its \"surface\" is the highest cavern-floor pocket,\n    // not highestSolidY (which would be the bedrock ceiling). One seam fixes\n    // every consumer — unstuck, respawn, and the spawn directors.\n    this.surfaceYAt = dimension === \"nether\" ? createNetherFloorYAt(world) : createSurfaceYAt(world);\n\n    const bootPlayer = options.bootPlayer ?? true;\n    // A portal travel wrote a one-shot arrival anchor: find (or build) the\n    // arrival portal now, BEFORE the light bake, so its blocks ride the one\n    // full bake and persist as ordinary diff. Idempotent — a crash before the\n    // next save just re-finds the same portal on the next boot.\n […]
 
@@ -9439,7 +9439,7 @@ id: toolu_01LADW93ycwYKg7rqt8tQkAJ
 tool_result
 id: toolu_01LADW93ycwYKg7rqt8tQkAJ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9448,7 +9448,7 @@ tool_use Bash
 id: toolu_018gLxfwwVLQDuB3dPDWPUYQ
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"const bootPlayer = options.bootPlayer ?? true;\" lib/game/engine/GameEngine.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"const bootPlayer = options.bootPlayer ?? true;\" lib/game/engine/GameEngine.ts",
   "description": "Find duplicate bootPlayer declaration"
 }
 ```
@@ -9468,7 +9468,7 @@ tool_use Read
 id: toolu_01KhGgRhNXoVkyeQziHhdTUC
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "offset": 360,
   "limit": 18
 }
@@ -9506,7 +9506,7 @@ id: toolu_01P528RMr77apmXcjaetByZi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    const gameMode = gameOver ? \"spectator\" : hardcore ? \"survival\" : savedLocal ? restoreGameMode(savedLocal) : (options.gameMode ?? \"survival\");\n    const bootPlayer = options.bootPlayer ?? true;\n    const localPlayer: PlayerState = {",
   "new_string": "    const gameMode = gameOver ? \"spectator\" : hardcore ? \"survival\" : savedLocal ? restoreGameMode(savedLocal) : (options.gameMode ?? \"survival\");\n    const localPlayer: PlayerState = {"
 }
@@ -9517,7 +9517,7 @@ id: toolu_01P528RMr77apmXcjaetByZi
 tool_result
 id: toolu_01P528RMr77apmXcjaetByZi
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9527,7 +9527,7 @@ id: toolu_01EhJuJ4TrGgqVECirP5tK6E
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    // Safety check: if stuck after load, relocate to a plain — but never for a\n    // Spectator, who legitimately loads inside terrain (or low) while noclipping.\n    if (\n      bootPlayer &&\n      !isNoclip(localPlayer.gameMode) &&\n      (collidesAt(world, localPlayer.position, PLAYER_HALF_WIDTH, PLAYER_HEIGHT) || localPlayer.position.y < 2)\n    ) {\n      this.forceUnstuck(localPlayer);\n    }",
   "new_string": "    // A travel boot lands the player inside the arrival portal — overriding the\n    // saved position — latched so the dwell can't re-fire until they step out.\n    if (bootPlayer && arrivalPos) {\n      localPlayer.position.set(arrivalPos.x + 0.5, arrivalPos.y, arrivalPos.z + 0.5);\n      localPlayer.velocity.set(0, 0, 0);\n      localPlayer.timers.portalLatched = true;\n    }\n\n    // Safety check: if stuck after load, relocate to a plain — but never for a\n    // Spectator, who legitimately loads inside terrain (or low) while noclipping.\n    if (\n      bootPlayer &&\n      !isNoclip(localPlayer.gameMode) &&\n      (collidesAt(world, localPlayer.position, PLAYER_HALF_WIDTH, PLAYER_HEIGHT) || localPlayer.position.y < 2)\n    ) {\n      this.forceUnstuck(localPlayer);\n    }"
 }
@@ -9538,7 +9538,7 @@ id: toolu_01EhJuJ4TrGgqVECirP5tK6E
 tool_result
 id: toolu_01EhJuJ4TrGgqVECirP5tK6E
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9548,7 +9548,7 @@ id: toolu_01Bsr4prJb8mFYPXdzA31eYJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "    tickWaterExposure(state, player, dt, damageEnv);\n    tickLavaExposure(state, player, dt, damageEnv, hasEffect(player, \"fire_resistance\"));\n    tickOxygen(state, player, dt, damageEnv, hasEffect(player, \"water_breathing\"));",
   "new_string": "    tickWaterExposure(state, player, dt, damageEnv);\n    tickLavaExposure(state, player, dt, damageEnv, hasEffect(player, \"fire_resistance\"));\n    tickOxygen(state, player, dt, damageEnv, hasEffect(player, \"water_breathing\"));\n    // Dimension travel is single-player only (like ignition): the shell hears\n    // the event and performs the save + remount swap.\n    if (this.portalsEnabled) tickPortalDwell(state, player, dt, this.emit);"
 }
@@ -9559,7 +9559,7 @@ id: toolu_01Bsr4prJb8mFYPXdzA31eYJ
 tool_result
 id: toolu_01Bsr4prJb8mFYPXdzA31eYJ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9569,7 +9569,7 @@ id: toolu_011g7YUzNqqwNPh6Fe4q9QAC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "import { tryIgnitePortal } from \"./systems/portal\";",
   "new_string": "import { ensureArrivalPortal, tickPortalDwell, tryIgnitePortal } from \"./systems/portal\";"
 }
@@ -9580,7 +9580,7 @@ id: toolu_011g7YUzNqqwNPh6Fe4q9QAC
 tool_result
 id: toolu_011g7YUzNqqwNPh6Fe4q9QAC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9590,7 +9590,7 @@ id: toolu_01HRPjNAUTqxR3AsXh2Q9Qrh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  /**\n   * Detailed progression read for the advancements overlay. Pulled on render via\n   * the snapshot's stable `api` handle (not projected per-frame into the snapshot),\n   * so play never churns the snapshot with stat values the HUD doesn't show.\n   */",
   "new_string": "  /**\n   * The travel save: an ordinary serialize with the local player rewritten to\n   * the target dimension at the portal anchor, plus the one-shot portalArrival\n   * the next boot consumes (finds or builds the arrival portal there). The\n   * shell writes this and remounts; no live state crosses the swap.\n   */\n  serializeForTravel(target: DimensionId, anchor: { x: number; y: number; z: number }): SaveData {\n    const save = this.serialize();\n    return {\n      ...save,\n      players: save.players.map((p) =>\n        p.id === this.state.primaryPlayerId ? { ...p, dimension: target, position: { ...anchor }, portalArrival: { ...anchor } } : p\n      )\n    };\n  }\n\n  /**\n   * Detailed progression read for the advancements overlay. Pulled on render via\n   * the snapshot's stable `api` handle (not projected per-frame into the snapshot),\n   * so play never churns the snapshot with stat values the HUD doesn't show.\n   */"
 }
@@ -9601,7 +9601,7 @@ id: toolu_01HRPjNAUTqxR3AsXh2Q9Qrh
 tool_result
 id: toolu_01HRPjNAUTqxR3AsXh2Q9Qrh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9614,7 +9614,7 @@ tool_use Bash
 id: toolu_01FGDJWnyFaYjx4wLDdqdGev
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"scheduleTimeout\\|const flashMessage\" lib/game/useMinecraftGame.ts | head -8",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"scheduleTimeout\\|const flashMessage\" lib/game/useMinecraftGame.ts | head -8",
   "description": "Locate scheduleTimeout/flashMessage definitions"
 }
 ```
@@ -9636,7 +9636,7 @@ tool_use Bash
 id: toolu_01LrwYJtuEU5sfpe8Kk5krcS
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n 560,600p lib/game/useMinecraftGame.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n 560,600p lib/game/useMinecraftGame.ts",
   "description": "See rAF effect tail and dep array"
 }
 ```
@@ -9695,7 +9695,7 @@ tool_use Bash
 id: toolu_01EQuSNoZAC1JJJXFmKUvA2z
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"onlineRef\" lib/game/useMinecraftGame.ts | head -6; sed -n 167,180p lib/game/useMinecraftGame.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"onlineRef\" lib/game/useMinecraftGame.ts | head -6; sed -n 167,180p lib/game/useMinecraftGame.ts",
   "description": "See onlineRef pattern"
 }
 ```
@@ -9733,7 +9733,7 @@ tool_use Read
 id: toolu_01D4uwB6Uvw5pPezKBgu13Mt
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "offset": 296,
   "limit": 16
 }
@@ -9769,7 +9769,7 @@ id: toolu_014JNi7irDnajLZozbXVZyry
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "old_string": "  // Set by Load/Reset before they force a remount: those want to re-read (or\n  // discard) the on-disk save, so the unmount must NOT persist the live state\n  // over it. Consumed once by the cleanup; every other unmount saves.\n  const skipUnmountSaveRef = useRef(false);",
   "new_string": "  // Set by Load/Reset before they force a remount: those want to re-read (or\n  // discard) the on-disk save, so the unmount must NOT persist the live state\n  // over it. Consumed once by the cleanup; every other unmount saves.\n  const skipUnmountSaveRef = useRef(false);\n  // The shell's remount trigger, fixed for the mount's life (like the world id);\n  // a ref so the rAF event drain can fire portal travel without an opts dep.\n  const onReloadWorldRef = useRef(opts.onReloadWorld);"
 }
@@ -9780,7 +9780,7 @@ id: toolu_014JNi7irDnajLZozbXVZyry
 tool_result
 id: toolu_014JNi7irDnajLZozbXVZyry
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9790,7 +9790,7 @@ id: toolu_01U2NmVNUb5mM7XygroZL6Fi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "old_string": "        // Hardcore permadeath is permanent — persist it now so closing the tab right\n        // after death still reloads the dead world spectating (not a fresh run).\n        if (event.type === \"gameOver\" && !online) {\n          persistGame(gameEngine, worldId, () => {});\n          syncCloudSave(gameEngine, false);\n        }",
   "new_string": "        // Hardcore permadeath is permanent — persist it now so closing the tab right\n        // after death still reloads the dead world spectating (not a fresh run).\n        if (event.type === \"gameOver\" && !online) {\n          persistGame(gameEngine, worldId, () => {});\n          syncCloudSave(gameEngine, false);\n        }\n        // Portal travel = swap-on-travel: write the travel save (the local player\n        // flipped into the target dimension with a one-shot arrival anchor), then\n        // remount so the engine reboots there. The skip flag MUST be armed before\n        // the write — it gates the autosave interval and the unload flush, either\n        // of which would otherwise overwrite the travel save with pre-travel state.\n        // Cloud sync is deliberately skipped here; the next autosave pushes both\n        // dimension sections together.\n        if (event.type === \"dimensionTravel\" && !online) {\n          skipUnmountSaveRef.current = true;\n          const data = gameEngine.serializeForTravel(event.target, event.anchor);\n          void worldSaves.write(worldId, data).then(\n            () => scheduleTimeout(() => […]
 
@@ -9799,7 +9799,7 @@ id: toolu_01U2NmVNUb5mM7XygroZL6Fi
 tool_result
 id: toolu_01U2NmVNUb5mM7XygroZL6Fi
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9809,7 +9809,7 @@ id: toolu_016XDWv18PuMFtccGxzk7n8Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "old_string": "  }, [ctx, flashMessage, syncCloudSave]);",
   "new_string": "  }, [ctx, flashMessage, scheduleTimeout, syncCloudSave]);"
 }
@@ -9820,7 +9820,7 @@ id: toolu_016XDWv18PuMFtccGxzk7n8Z
 tool_result
 id: toolu_016XDWv18PuMFtccGxzk7n8Z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9833,7 +9833,7 @@ tool_use Bash
 id: toolu_01Wkq91vij9j4mJhbCGNKzNg
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts << 'EOF'\n\ndescribe(\"tickPortalDwell\", () => {\n  function dwellFixture(): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = makeWorld();\n    buildFrame(world, \"x\", 8, 8, 2, 3);\n    const fixture = makeState(world, [], new THREE.Vector3(8.5, FLOOR_Y + 1, 8.5));\n    fixture.player.timers = createPlayerTimers();\n    fillPortalFrame(fixture.state, { axis: \"x\", base: { x: 8, y: FLOOR_Y + 1, z: 8 }, w: 2, h: 3 });\n    return fixture;\n  }\n\n  test(\"standing in the surface for the dwell time fires dimensionTravel exactly once, anchored at the frame base\", () => {\n    const { state, player, events } = dwellFixture();\n    const emit = (e: GameEvent) => events.push(e);\n    for (let t = 0; t < 5; t += 0.1) tickPortalDwell(state, player, 0.1, emit);\n    const travels = events.filter((e) => e.type === \"dimensionTravel\");\n    expect(travels).toHaveLength(1);\n    expect(travels[0]).toEqual({ type: \"dimensionTravel\", target: \"nether\", anchor: { x: 8, y: FLOOR_Y + 1, z: 8 } });\n  });\n\n  test(\"stepping out resets the latch so a re-entry can travel again\", () => {\n    const { state, player, events } = dwellFixture();\n    const emit = (e: GameEvent) => events.push(e);\n    for (let t = 0; t < 4; t += 0.1) tickPortalDwell(state, player, 0.1, emit);\n    player.position.set(2.5, FLOOR_Y + 1, 2.5); // […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts << 'EOF'\n\ndescribe(\"tickPortalDwell\", () => {\n  function dwellFixture(): { state: GameState; player: PlayerState; events: GameEvent[] } {\n    const world = makeWorld();\n    buildFrame(world, \"x\", 8, 8, 2, 3);\n    const fixture = makeState(world, [], new THREE.Vector3(8.5, FLOOR_Y + 1, 8.5));\n    fixture.player.timers = createPlayerTimers();\n    fillPortalFrame(fixture.state, { axis: \"x\", base: { x: 8, y: FLOOR_Y + 1, z: 8 }, w: 2, h: 3 });\n    return fixture;\n  }\n\n  test(\"standing in the surface for the dwell time fires dimensionTravel exactly once, anchored at the frame base\", () => {\n    const { state, player, events } = dwellFixture();\n    const emit = (e: GameEvent) => events.push(e);\n    for (let t = 0; t < 5; t += 0.1) tickPortalDwell(state, player, 0.1, emit);\n    const travels = events.filter((e) => e.type === \"dimensionTravel\");\n    expect(travels).toHaveLength(1);\n    expect(travels[0]).toEqual({ type: \"dimensionTravel\", target: \"nether\", anchor: { x: 8, y: FLOOR_Y + 1, z: 8 } });\n  });\n\n  test(\"stepping out resets the latch so a re-entry can travel again\", () => {\n    const { state, player, events } = dwellFixture();\n    const emit = (e: GameEvent) => events.push(e);\n    for (let t = 0; t < 4; t += 0.1) tickPortalDwell(state, player, 0.1, emit);\n    player.position.set(2.5, FLOOR_Y + 1, 2.5); // […]
 
 > TOOL
 
@@ -9893,7 +9893,7 @@ id: toolu_01Bq6SgCdrz9xESPWkVyLqCY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts",
   "old_string": "    const pos = ensureArrivalPortal(world, changes, () => FLOOR_Y + 1, { x: 14, y: 11, z: 10 });\n    expect(pos).toEqual({ x: 8, y: FLOOR_Y + 1, z: 8 }); // the existing portal's lowest cell (nearest column)\n    expect(changes.changes()).toHaveLength(0); // nothing built",
   "new_string": "    const pos = ensureArrivalPortal(world, changes, () => FLOOR_Y + 1, { x: 14, y: 11, z: 10 });\n    // Lands in the existing surface (its nearest column's lowest cell) …\n    expect(world.get(pos.x, pos.y, pos.z)).toBe(BlockId.NetherPortal);\n    expect(pos.y).toBe(FLOOR_Y + 1);\n    expect(changes.changes()).toHaveLength(0); // … and nothing was built"
 }
@@ -9913,7 +9913,7 @@ tool_use Bash
 id: toolu_01K1pWDtzH1RWFSZNj9bSLKa
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/    const pos = ensureArrivalPortal\\(world, changes, \\(\\) => FLOOR_Y \\+ 1, \\{ x: 14, y: 11, z: 10 \\}\\);\\n    expect\\(pos\\)\\.toEqual\\(\\{ x: 8, y: FLOOR_Y \\+ 1, z: 8 \\}\\); \\/\\/ the existing portal.s lowest cell \\(nearest column\\)\\n    expect\\(changes\\.changes\\(\\)\\)\\.toHaveLength\\(0\\); \\/\\/ nothing built/    const pos = ensureArrivalPortal(world, changes, () => FLOOR_Y + 1, { x: 14, y: 11, z: 10 });\\n    \\/\\/ Lands in the existing surface (its nearest column\\x27s lowest cell)\\x{2026}\\n    expect(world.get(pos.x, pos.y, pos.z)).toBe(BlockId.NetherPortal);\\n    expect(pos.y).toBe(FLOOR_Y + 1);\\n    expect(changes.changes()).toHaveLength(0); \\/\\/ \\x{2026}and nothing was built/' lib/game/engine/systems/portal.test.ts\nbun test lib/game/engine/systems/portal.test.ts 2>&1 | tail -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/    const pos = ensureArrivalPortal\\(world, changes, \\(\\) => FLOOR_Y \\+ 1, \\{ x: 14, y: 11, z: 10 \\}\\);\\n    expect\\(pos\\)\\.toEqual\\(\\{ x: 8, y: FLOOR_Y \\+ 1, z: 8 \\}\\); \\/\\/ the existing portal.s lowest cell \\(nearest column\\)\\n    expect\\(changes\\.changes\\(\\)\\)\\.toHaveLength\\(0\\); \\/\\/ nothing built/    const pos = ensureArrivalPortal(world, changes, () => FLOOR_Y + 1, { x: 14, y: 11, z: 10 });\\n    \\/\\/ Lands in the existing surface (its nearest column\\x27s lowest cell)\\x{2026}\\n    expect(world.get(pos.x, pos.y, pos.z)).toBe(BlockId.NetherPortal);\\n    expect(pos.y).toBe(FLOOR_Y + 1);\\n    expect(changes.changes()).toHaveLength(0); \\/\\/ \\x{2026}and nothing was built/' lib/game/engine/systems/portal.test.ts\nbun test lib/game/engine/systems/portal.test.ts 2>&1 | tail -4",
   "description": "Fix reuse assertion and rerun"
 }
 ```
@@ -9940,7 +9940,7 @@ tool_use Bash
 id: toolu_017ctdyR1NnEg2SZtWQingJ7
 ```json
 {
-  "command": "cat >> /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts << 'EOF'\n\ndescribe(\"portal travel (swap-on-travel)\", () => {\n  test(\"serializeForTravel rewrites only the local player: dimension, position, and the one-shot anchor\", () => {\n    const engine = makeEngine();\n    const anchor = { x: 30, y: 41, z: 30 };\n    const travel = engine.serializeForTravel(\"nether\", anchor);\n    expect(travel.players[0].dimension).toBe(\"nether\");\n    expect(travel.players[0].position).toEqual(anchor);\n    expect(travel.players[0].portalArrival).toEqual(anchor);\n    // The world half is an ordinary serialize.\n    expect(travel.seed).toBe(engine.serialize().seed);\n    // An ordinary serialize never writes the one-shot anchor.\n    expect(engine.serialize().players[0].portalArrival).toBeUndefined();\n  });\n\n  test(\"booting from a travel save builds the arrival portal, lands the player inside it, latched\", () => {\n    const over = makeEngine();\n    const travel = over.serializeForTravel(\"nether\", { x: 30, y: 41, z: 30 });\n    const nether = new GameEngine({ save: travel, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n\n    expect(nether.state.dimension).toBe(\"nether\");\n    const feet = nether.state.player.position;\n    const cell = nether.state.world.get(Math.floor(feet.x), Math.floor(feet.y), Math.floor(feet.z));\n    expect(cell).toBe(BlockId.NetherPortal); // landed inside the arrival portal\n    expect(nether.state.player.timers.portalLatched).toBe(true);\n\n    // Latched: standing put through several dwell windows never fires travel.\n    run(nether, 8);\n    expect(nether.consumeEvents().some((e) => e.type === \"dimensionTravel\")).toBe(false);\n\n    // The built portal persists as ordinary diff — a plain reload finds it again.\n    const reload = new GameEngine({ save: nether.serialize(), rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n    expect(reload.state.dimension).toBe(\"nether\");\n […]
+  "command": "cat >> /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.test.ts << 'EOF'\n\ndescribe(\"portal travel (swap-on-travel)\", () => {\n  test(\"serializeForTravel rewrites only the local player: dimension, position, and the one-shot anchor\", () => {\n    const engine = makeEngine();\n    const anchor = { x: 30, y: 41, z: 30 };\n    const travel = engine.serializeForTravel(\"nether\", anchor);\n    expect(travel.players[0].dimension).toBe(\"nether\");\n    expect(travel.players[0].position).toEqual(anchor);\n    expect(travel.players[0].portalArrival).toEqual(anchor);\n    // The world half is an ordinary serialize.\n    expect(travel.seed).toBe(engine.serialize().seed);\n    // An ordinary serialize never writes the one-shot anchor.\n    expect(engine.serialize().players[0].portalArrival).toBeUndefined();\n  });\n\n  test(\"booting from a travel save builds the arrival portal, lands the player inside it, latched\", () => {\n    const over = makeEngine();\n    const travel = over.serializeForTravel(\"nether\", { x: 30, y: 41, z: 30 });\n    const nether = new GameEngine({ save: travel, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n\n    expect(nether.state.dimension).toBe(\"nether\");\n    const feet = nether.state.player.position;\n    const cell = nether.state.world.get(Math.floor(feet.x), Math.floor(feet.y), Math.floor(feet.z));\n    expect(cell).toBe(BlockId.NetherPortal); // landed inside the arrival portal\n    expect(nether.state.player.timers.portalLatched).toBe(true);\n\n    // Latched: standing put through several dwell windows never fires travel.\n    run(nether, 8);\n    expect(nether.consumeEvents().some((e) => e.type === \"dimensionTravel\")).toBe(false);\n\n    // The built portal persists as ordinary diff — a plain reload finds it again.\n    const reload = new GameEngine({ save: nether.serialize(), rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n    expect(reload.state.dimension).toBe(\"nether\");\n […]
 
 > TOOL
 
@@ -9999,7 +9999,7 @@ id: toolu_0118x5ASRjb6itjVuFJK1Pw6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts",
   "old_string": "  restorePlayerDimension,\n  restorePlayerPosition,",
   "new_string": "  restorePlayerDimension,\n  restorePlayerPosition,\n  restorePortalArrival,"
 }
@@ -10010,7 +10010,7 @@ id: toolu_0118x5ASRjb6itjVuFJK1Pw6
 tool_result
 id: toolu_0118x5ASRjb6itjVuFJK1Pw6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/GameEngine.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10107,7 +10107,7 @@ id: toolu_01R5GK9gEQSYnCCdcMxtRJSG
   166:28  warning  Do not call the 'set' function 'setAuthProbed' of 'useState' synchronously in an effect. This can lead to unnecessary re-renders and performance issues  @eslint-react/set-state-in-effect
   172:39  warning  Do not call the 'set' function 'setAuthProbed' of 'useState' synchronously in an effect. This can lead to unnecessary re-renders and performance issues  @eslint-react/set-state-in-effect
 
-/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts
+/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/portal.test.ts
   300:23  error  'x' is defined but never used  @typescript-eslint/no-unused-vars
   300:34  error  'z' is defined but never used  @typescript-eslint/no-unused-vars
 ```
@@ -10118,7 +10118,7 @@ tool_use Bash
 id: toolu_01UzouEqkCcpfwjjQiy76ofp
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n 298,302p lib/game/engine/systems/portal.test.ts\nperl -i -pe 's/const floorYAt = \\(x: number, z: number\\) => FLOOR_Y \\+ 1;/const floorYAt = () => FLOOR_Y + 1;/' lib/game/engine/systems/portal.test.ts\nbun run lint 2>&1 | tail -2",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n 298,302p lib/game/engine/systems/portal.test.ts\nperl -i -pe 's/const floorYAt = \\(x: number, z: number\\) => FLOOR_Y \\+ 1;/const floorYAt = () => FLOOR_Y + 1;/' lib/game/engine/systems/portal.test.ts\nbun run lint 2>&1 | tail -2",
   "description": "Fix unused params, relint",
   "timeout": 120000
 }
@@ -10143,7 +10143,7 @@ tool_use Bash
 id: toolu_01XWF6VffFazaq3Jr2iXCqBC
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nbun test lib/game/engine/systems/portal.test.ts 2>&1 | tail -3 && git add -A && git commit -m \"feat(game): portal travel — swap-on-travel\n\nThe dimension switch itself, built on the machinery the prior slices laid\ndown. Standing in a portal surface for PORTAL_DWELL_SECONDS fires ONE\ndimensionTravel event (latched until the player steps out — and an\narrival boot starts latched, so nobody ping-pongs). Travel time re-runs\nthe frame validation as the lazy backstop: a portal de-framed behind the\nmining hook's back (TNT) clears instead of traveling.\n\nThe swap is save-shaped, not state-shaped: serializeForTravel writes an\nordinary save with the local player flipped into the target dimension at\nthe portal anchor (1:1 coordinates — an 8:1 ratio would shrink a 512²\nworld's usable nether to 64²) plus a one-shot portalArrival anchor. The\nshell hears the event, arms the unmount-save skip flag BEFORE enqueuing\nthe write — the flag gates the autosave interval and the unload flush,\neither of which would otherwise clobber the travel save with pre-travel\nstate — then remounts via the Load/Reset path. A failed write stays put\nand un-arms the flag rather than stranding the player.\n\nOn the target side, the boot consumes portalArrival before the light\nbake: it reuses the nearest portal surface within PORTAL_SEARCH_RADIUS\nor builds one (stone pad, […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nbun test lib/game/engine/systems/portal.test.ts 2>&1 | tail -3 && git add -A && git commit -m \"feat(game): portal travel — swap-on-travel\n\nThe dimension switch itself, built on the machinery the prior slices laid\ndown. Standing in a portal surface for PORTAL_DWELL_SECONDS fires ONE\ndimensionTravel event (latched until the player steps out — and an\narrival boot starts latched, so nobody ping-pongs). Travel time re-runs\nthe frame validation as the lazy backstop: a portal de-framed behind the\nmining hook's back (TNT) clears instead of traveling.\n\nThe swap is save-shaped, not state-shaped: serializeForTravel writes an\nordinary save with the local player flipped into the target dimension at\nthe portal anchor (1:1 coordinates — an 8:1 ratio would shrink a 512²\nworld's usable nether to 64²) plus a one-shot portalArrival anchor. The\nshell hears the event, arms the unmount-save skip flag BEFORE enqueuing\nthe write — the flag gates the autosave interval and the unload flush,\neither of which would otherwise clobber the travel save with pre-travel\nstate — then remounts via the Load/Reset path. A failed write stays put\nand un-arms the flag rather than stranding the player.\n\nOn the target side, the boot consumes portalArrival before the light\nbake: it reuses the nearest portal surface within PORTAL_SEARCH_RADIUS\nor builds one (stone pad, […]
 
 > TOOL
 
@@ -10206,7 +10206,7 @@ tool_use Read
 id: toolu_01HNybB22coRBFTLUXoky7PG
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "offset": 30,
   "limit": 150
 }
@@ -10245,7 +10245,7 @@ tool_use Read
 id: toolu_01VSkPXbMsc8wk8qGUyZFWaC
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "offset": 640,
   "limit": 70
 }
@@ -10280,7 +10280,7 @@ tool_use Read
 id: toolu_01V8aBrxCcoBTyi1eLFXaY8v
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "offset": 600,
   "limit": 42
 }
@@ -10341,7 +10341,7 @@ tool_use Bash
 id: toolu_01NSGAMLH37WPPZAHou6Dbkr
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"this.sky\\.\\|this.precip\\.\\|this.sky =\\|this.precip =\" lib/game/render/GameRenderer.ts; grep -rn \"GameRenderer.create\" lib components | grep -v test",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"this.sky\\.\\|this.precip\\.\\|this.sky =\\|this.precip =\" lib/game/render/GameRenderer.ts; grep -rn \"GameRenderer.create\" lib components | grep -v test",
   "description": "Find sky/precip usages and create call sites"
 }
 ```
@@ -10366,7 +10366,7 @@ tool_use Write
 id: toolu_01Qt2iiSbSxfUoa9hoCx6xDL
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/dimensionProfiles.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/dimensionProfiles.ts",
   "content": "import type { DimensionId } from \"@/lib/game/types\";\n\n/**\n * Per-dimension rendering environment. Swap-on-travel rebuilds the renderer\n * with the target dimension's profile, so these are construction-time\n * constants — no uniforms, no live switching (the shader bakes skyLightFloor\n * into its source string).\n */\nexport type DimensionProfile = {\n  /** Sky gradient endpoints; `daylight` lerps between them each frame. */\n  daySky: number;\n  nightSky: number;\n  /** Distance fog band (the overcast effect still pulls `far` in). */\n  fogNear: number;\n  fogFar: number;\n  /**\n   * The shader's minimum visibility for sky-gated terrain — the overworld's\n   * cave-darkness floor. The nether has no sky light at all (its bedrock\n   * ceiling zeroes the bake), so a raised floor IS its ambient glow.\n   */\n  skyLightFloor: number;\n  /** Sun/moon/stars/clouds — a sky view exists only where there is a sky. */\n  celestials: boolean;\n  /** The rain/snow layer (the engine also keeps nether weather clear). */\n  precipitation: boolean;\n};\n\nexport const DIMENSION_PROFILES: Record<DimensionId, DimensionProfile> = {\n  overworld: {\n    daySky: 0x8bc2ff,\n    nightSky: 0x06111f,\n    fogNear: 30,\n    fogFar: 200,\n    skyLightFloor: 0.05,\n    celestials: true,\n    precipitation: true\n  },\n  nether: {\n    // A dark ember haze: \"day\" and \"night\" barely differ (daylight is pinned\n    // anyway), the fog […]
 
 > TOOL
@@ -10374,7 +10374,7 @@ id: toolu_01Qt2iiSbSxfUoa9hoCx6xDL
 tool_result
 id: toolu_01Qt2iiSbSxfUoa9hoCx6xDL
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/dimensionProfiles.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/game/render/dimensionProfiles.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10384,7 +10384,7 @@ id: toolu_01JAdCWK3WatFBTmg26V2prc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "// Caves keep this faint floor of visibility instead of going pure black, and\n// block light is emitted with this warm tint.\nconst SKY_LIGHT_FLOOR = 0.05;\nconst TORCH_TINT = \"vec3(1.35, 1.06, 0.62)\";\n\n/**\n * Add per-voxel darkness to a lit world material via the baked aLight attribute\n * (skyExposure, blockLight). The scene's sun + hemisphere already scale with\n * daylight, so day/night needs no extra uniform and no re-mesh: this patch gates\n * the scene-lit color by sky exposure — caves go dark while the surface stays\n * lit and dims at night with the scene lights — then adds block light back as an\n * albedo-tinted glow that survives the gate, so a torch lights a pitch-black\n * cave. Anchored on stable ShaderChunk includes; the e2e triangle check guards\n * against a future Three.js bump breaking the string replace.\n */\nfunction patchVoxelLighting(material: THREE.MeshStandardMaterial): void {\n  material.onBeforeCompile = (shader) => {\n    shader.vertexShader = \"attribute vec2 aLight;\\nvarying vec2 vLight;\\n\" + shader.vertexShader.replace(\"void main() {\", \"void main() {\\n  vLight = aLight;\");\n    shader.fragmentShader =\n      \"varying vec2 vLight;\\n\" +\n      shader.fragmentShader\n        .replace(\"#include <color_fragment>\", \"#include <color_fragment>\\n  vec3 mcAlbedo = diffuseColor.rgb;\")\n        .replace(\n          \"#include <opaque_fragment>\",\n          `#include <opaque_fragment>\\n  gl_FragColor.rgb = gl_FragColor.rgb * max(vLight.x, […]
 
 > TOOL
@@ -10392,7 +10392,7 @@ id: toolu_01JAdCWK3WatFBTmg26V2prc
 tool_result
 id: toolu_01JAdCWK3WatFBTmg26V2prc
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10402,7 +10402,7 @@ id: toolu_01LehMCZPH3DzCegeYWkCdQR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "  private readonly sun: THREE.DirectionalLight;\n  private readonly hemiLight: THREE.HemisphereLight;\n  private readonly daySky = new THREE.Color(0x8bc2ff);\n  private readonly nightSky = new THREE.Color(0x06111f);\n  private readonly liveSky = new THREE.Color(0x8bc2ff);",
   "new_string": "  private readonly sun: THREE.DirectionalLight;\n  private readonly hemiLight: THREE.HemisphereLight;\n  private readonly profile: DimensionProfile;\n  private readonly daySky: THREE.Color;\n  private readonly nightSky: THREE.Color;\n  private readonly liveSky: THREE.Color;"
 }
@@ -10413,7 +10413,7 @@ id: toolu_01LehMCZPH3DzCegeYWkCdQR
 tool_result
 id: toolu_01LehMCZPH3DzCegeYWkCdQR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10423,7 +10423,7 @@ id: toolu_01Q99CzP6YSTKseVUoNBBvb7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "  private readonly particles: ParticleSystem;\n  private readonly sky: SkyView;\n  private readonly precip: PrecipitationView;",
   "new_string": "  private readonly particles: ParticleSystem;\n  /** Null in a skyless dimension (the profile's celestials/precipitation flags). */\n  private readonly sky: SkyView | null;\n  private readonly precip: PrecipitationView | null;"
 }
@@ -10434,7 +10434,7 @@ id: toolu_01Q99CzP6YSTKseVUoNBBvb7
 tool_result
 id: toolu_01Q99CzP6YSTKseVUoNBBvb7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10444,7 +10444,7 @@ id: toolu_01J9g39Bp1nNoQPdxCqsfMQ5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "  /** WebGL context creation can fail (blocked, unsupported) — surface it instead of throwing. */\n  static create(mount: HTMLElement): CreateRendererResult {\n    try {\n      return { ok: true, renderer: new GameRenderer(mount) };\n    } catch (error) {\n      return { ok: false, error: error instanceof Error ? error.message : \"Failed to initialize WebGL renderer\" };\n    }\n  }\n\n  private constructor(mount: HTMLElement) {\n    this.mount = mount;\n    this.scene = new THREE.Scene();\n    this.scene.background = this.liveSky;\n    this.scene.fog = new THREE.Fog(this.liveSky, 30, 200);",
   "new_string": "  /** WebGL context creation can fail (blocked, unsupported) — surface it instead of throwing. */\n  static create(mount: HTMLElement, profile: DimensionProfile = DIMENSION_PROFILES.overworld): CreateRendererResult {\n    try {\n      return { ok: true, renderer: new GameRenderer(mount, profile) };\n    } catch (error) {\n      return { ok: false, error: error instanceof Error ? error.message : \"Failed to initialize WebGL renderer\" };\n    }\n  }\n\n  private constructor(mount: HTMLElement, profile: DimensionProfile) {\n    this.mount = mount;\n    this.profile = profile;\n    this.daySky = new THREE.Color(profile.daySky);\n    this.nightSky = new THREE.Color(profile.nightSky);\n    this.liveSky = new THREE.Color(profile.daySky);\n    this.scene = new THREE.Scene();\n    this.scene.background = this.liveSky;\n    this.scene.fog = new THREE.Fog(this.liveSky, profile.fogNear, profile.fogFar);"
 }
@@ -10455,7 +10455,7 @@ id: toolu_01J9g39Bp1nNoQPdxCqsfMQ5
 tool_result
 id: toolu_01J9g39Bp1nNoQPdxCqsfMQ5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10465,7 +10465,7 @@ id: toolu_018mBLb1uz3PpL2v7kUiwqcg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "    // Per-voxel lighting: gate scene-lit terrain by baked sky exposure and add\n    // torch/lava block light back as a glow (see patchVoxelLighting).\n    patchVoxelLighting(this.worldMaterial);\n    patchVoxelLighting(this.glassMaterial);",
   "new_string": "    // Per-voxel lighting: gate scene-lit terrain by baked sky exposure and add\n    // torch/lava block light back as a glow (see patchVoxelLighting).\n    patchVoxelLighting(this.worldMaterial, profile.skyLightFloor);\n    patchVoxelLighting(this.glassMaterial, profile.skyLightFloor);"
 }
@@ -10476,7 +10476,7 @@ id: toolu_018mBLb1uz3PpL2v7kUiwqcg
 tool_result
 id: toolu_018mBLb1uz3PpL2v7kUiwqcg
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10486,7 +10486,7 @@ id: toolu_01GZXC8Hygp8cnJdok3U6jpX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "    this.sky = createSkyView(this.scene, this.camera);\n    this.precip = createPrecipitation(this.scene);",
   "new_string": "    this.sky = profile.celestials ? createSkyView(this.scene, this.camera) : null;\n    this.precip = profile.precipitation ? createPrecipitation(this.scene) : null;"
 }
@@ -10497,7 +10497,7 @@ id: toolu_01GZXC8Hygp8cnJdok3U6jpX
 tool_result
 id: toolu_01GZXC8Hygp8cnJdok3U6jpX
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10507,7 +10507,7 @@ id: toolu_01URmG6dgmoRZ2C9TEFTKSRt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "    if (!state.paused) this.precip.sync(state, dtMs, this.camera.position);",
   "new_string": "    if (!state.paused) this.precip?.sync(state, dtMs, this.camera.position);"
 }
@@ -10518,7 +10518,7 @@ id: toolu_01URmG6dgmoRZ2C9TEFTKSRt
 tool_result
 id: toolu_01URmG6dgmoRZ2C9TEFTKSRt
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10528,7 +10528,7 @@ id: toolu_01XF2eXtXARVWZoDKtmQ3CN3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "    this.sky.sync(state, timeMs);",
   "new_string": "    this.sky?.sync(state, timeMs);"
 }
@@ -10539,7 +10539,7 @@ id: toolu_01XF2eXtXARVWZoDKtmQ3CN3
 tool_result
 id: toolu_01XF2eXtXARVWZoDKtmQ3CN3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10549,7 +10549,7 @@ id: toolu_0183PSXnvhYbKCRA6XANJQ5W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "    this.precip.dispose();\n    this.sky.dispose();",
   "new_string": "    this.precip?.dispose();\n    this.sky?.dispose();"
 }
@@ -10560,7 +10560,7 @@ id: toolu_0183PSXnvhYbKCRA6XANJQ5W
 tool_result
 id: toolu_0183PSXnvhYbKCRA6XANJQ5W
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10570,7 +10570,7 @@ id: toolu_01QV5pwDQFoiqQHK4bGHvhWU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "    this.scene.fog?.color.copy(this.liveSky);\n    if (this.scene.fog instanceof THREE.Fog) this.scene.fog.far = 200 - overcast * 90;\n  }\n}",
   "new_string": "    this.scene.fog?.color.copy(this.liveSky);\n    if (this.scene.fog instanceof THREE.Fog) this.scene.fog.far = this.profile.fogFar - overcast * 90;\n  }\n}"
 }
@@ -10581,7 +10581,7 @@ id: toolu_01QV5pwDQFoiqQHK4bGHvhWU
 tool_result
 id: toolu_01QV5pwDQFoiqQHK4bGHvhWU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10590,7 +10590,7 @@ tool_use Bash
 id: toolu_01UQCkCQSMsLhz67eBKUFRDX
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"^import\" lib/game/render/GameRenderer.ts | head -8; sed -n 350,365p lib/game/useMinecraftGame.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"^import\" lib/game/render/GameRenderer.ts | head -8; sed -n 350,365p lib/game/useMinecraftGame.ts",
   "description": "Check imports and the renderer create call site"
 }
 ```
@@ -10633,7 +10633,7 @@ id: toolu_012LMUK2CPPcSzHTSBPu3akb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts",
   "old_string": "import { cameraOffsetDirection, computeCameraPose } from \"./cameraView\";",
   "new_string": "import { cameraOffsetDirection, computeCameraPose } from \"./cameraView\";\nimport { DIMENSION_PROFILES, type DimensionProfile } from \"./dimensionProfiles\";"
 }
@@ -10644,7 +10644,7 @@ id: toolu_012LMUK2CPPcSzHTSBPu3akb
 tool_result
 id: toolu_012LMUK2CPPcSzHTSBPu3akb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/GameRenderer.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10654,7 +10654,7 @@ id: toolu_01PQzxoWnDNnXSViyxxHczCM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "old_string": "  useEffect(() => {\n    if (!ctx) return;\n    const { engine: gameEngine, node } = ctx;\n\n    const created = GameRenderer.create(node);",
   "new_string": "  useEffect(() => {\n    if (!ctx) return;\n    const { engine: gameEngine, node } = ctx;\n\n    // The renderer is built for the engine's dimension (sky, fog, light floor);\n    // swap-on-travel remounts both together, so the pairing can never go stale.\n    const created = GameRenderer.create(node, DIMENSION_PROFILES[gameEngine.state.dimension]);"
 }
@@ -10665,7 +10665,7 @@ id: toolu_01PQzxoWnDNnXSViyxxHczCM
 tool_result
 id: toolu_01PQzxoWnDNnXSViyxxHczCM
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10674,7 +10674,7 @@ tool_use Bash
 id: toolu_01GUdtjMzTvPhGQhdjnw3FdN
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"DIMENSION_PROFILES\" lib/game/useMinecraftGame.ts | head -2 || true\ngrep -n \"from \\\"@/lib/game/render/GameRenderer\\\"\" lib/game/useMinecraftGame.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"DIMENSION_PROFILES\" lib/game/useMinecraftGame.ts | head -2 || true\ngrep -n \"from \\\"@/lib/game/render/GameRenderer\\\"\" lib/game/useMinecraftGame.ts",
   "description": "Check hook imports for profile"
 }
 ```
@@ -10695,7 +10695,7 @@ id: toolu_01GPVMEzxenhxByCgbcay5gz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts",
   "old_string": "import { GameRenderer } from \"@/lib/game/render/GameRenderer\";",
   "new_string": "import { DIMENSION_PROFILES } from \"@/lib/game/render/dimensionProfiles\";\nimport { GameRenderer } from \"@/lib/game/render/GameRenderer\";"
 }
@@ -10706,7 +10706,7 @@ id: toolu_01GPVMEzxenhxByCgbcay5gz
 tool_result
 id: toolu_01GPVMEzxenhxByCgbcay5gz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/useMinecraftGame.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10715,7 +10715,7 @@ tool_use Bash
 id: toolu_01M8DwNXhZSkaFvYSGHxvCZ4
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nls lib/game/render/*.test.ts 2>/dev/null; cat > lib/game/render/dimensionProfiles.test.ts << 'EOF'\nimport { describe, expect, test } from \"bun:test\";\nimport { DIMENSION_PROFILES } from \"@/lib/game/render/dimensionProfiles\";\n\ndescribe(\"dimension profiles\", () => {\n  test(\"every dimension has a coherent profile (the Record is compile-enforced; sanity-check the dials)\", () => {\n    for (const profile of Object.values(DIMENSION_PROFILES)) {\n      expect(profile.fogNear).toBeLessThan(profile.fogFar);\n      expect(profile.skyLightFloor).toBeGreaterThanOrEqual(0);\n      expect(profile.skyLightFloor).toBeLessThan(1);\n    }\n  });\n\n  test(\"the nether is skyless, rainless, closer-fogged, and brighter-floored than the overworld\", () => {\n    const over = DIMENSION_PROFILES.overworld;\n    const nether = DIMENSION_PROFILES.nether;\n    expect(over.celestials).toBe(true);\n    expect(nether.celestials).toBe(false);\n    expect(nether.precipitation).toBe(false);\n    expect(nether.fogFar).toBeLessThan(over.fogFar);\n    // No sky light ever reaches nether terrain — the raised floor IS its ambience.\n    expect(nether.skyLightFloor).toBeGreaterThan(over.skyLightFloor);\n  });\n});\nEOF\nbun test lib/game/render/dimensionProfiles.test.ts 2>&1 | tail -3 && bun run typecheck 2>&1 | tail -2",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nls lib/game/render/*.test.ts 2>/dev/null; cat > lib/game/render/dimensionProfiles.test.ts << 'EOF'\nimport { describe, expect, test } from \"bun:test\";\nimport { DIMENSION_PROFILES } from \"@/lib/game/render/dimensionProfiles\";\n\ndescribe(\"dimension profiles\", () => {\n  test(\"every dimension has a coherent profile (the Record is compile-enforced; sanity-check the dials)\", () => {\n    for (const profile of Object.values(DIMENSION_PROFILES)) {\n      expect(profile.fogNear).toBeLessThan(profile.fogFar);\n      expect(profile.skyLightFloor).toBeGreaterThanOrEqual(0);\n      expect(profile.skyLightFloor).toBeLessThan(1);\n    }\n  });\n\n  test(\"the nether is skyless, rainless, closer-fogged, and brighter-floored than the overworld\", () => {\n    const over = DIMENSION_PROFILES.overworld;\n    const nether = DIMENSION_PROFILES.nether;\n    expect(over.celestials).toBe(true);\n    expect(nether.celestials).toBe(false);\n    expect(nether.precipitation).toBe(false);\n    expect(nether.fogFar).toBeLessThan(over.fogFar);\n    // No sky light ever reaches nether terrain — the raised floor IS its ambience.\n    expect(nether.skyLightFloor).toBeGreaterThan(over.skyLightFloor);\n  });\n});\nEOF\nbun test lib/game/render/dimensionProfiles.test.ts 2>&1 | tail -3 && bun run typecheck 2>&1 | tail -2",
   "description": "Add profile tests, run, typecheck",
   "timeout": 180000
 }
@@ -10828,7 +10828,7 @@ tool_use Bash
 id: toolu_012pEB3RMRbj7tDj2t5AeC3u
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"__monecraft\" e2e/smoke.e2e.ts | head -10; sed -n 1,60p e2e/helpers.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"__monecraft\" e2e/smoke.e2e.ts | head -10; sed -n 1,60p e2e/helpers.ts",
   "description": "Survey e2e engine-handle usage and helpers"
 }
 ```
@@ -10872,7 +10872,7 @@ tool_use Bash
 id: toolu_015SNFiCuhXinV9cbitJ14iM
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"readWorldSave\" e2e/*.ts | head -5; grep -n \"export async function readWorldSave\" -A 15 e2e/helpers.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"readWorldSave\" e2e/*.ts | head -5; grep -n \"export async function readWorldSave\" -A 15 e2e/helpers.ts",
   "description": "Find readWorldSave helper"
 }
 ```
@@ -10909,7 +10909,7 @@ tool_use Write
 id: toolu_01UFm6Swsj9RV5YEomcBpW7f
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/portal.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/portal.e2e.ts",
   "content": "import { expect, test } from \"./helpers\";\n\n/**\n * Portal travel smoke: build a lit frame around the player programmatically\n * (ignition itself is unit-tested — this exercises what only a browser can:\n * the dwell → travel save → shell remount → nether boot chain, and that the\n * new renderer draws). Block ids are raw numbers because BlockId is a const\n * enum: 90 = Obsidian, 91 = NetherPortal.\n */\ntest(\"standing in a portal swaps the world into the nether and back out\", async ({ gamePage: page }) => {\n  test.setTimeout(120000);\n\n  // A lit 2×3 frame materializes around the player's feet, standing on its\n  // own obsidian bottom bar (so nothing falls), player centered inside.\n  await page.evaluate(() => {\n    const { engine } = window.__monecraft!;\n    const s = engine.state;\n    const px = Math.floor(s.player.position.x);\n    const py = Math.floor(s.player.position.y);\n    const pz = Math.floor(s.player.position.z);\n    const bc = s.blockChanges;\n    for (let i = -1; i <= 2; i += 1) {\n      bc.set(px + i, py - 1, pz, 90);\n      bc.set(px + i, py + 3, pz, 90);\n    }\n    for (let j = 0; j < 3; j += 1) {\n      bc.set(px - 1, py + […]
 
 > TOOL
@@ -10917,7 +10917,7 @@ id: toolu_01UFm6Swsj9RV5YEomcBpW7f
 tool_result
 id: toolu_01UFm6Swsj9RV5YEomcBpW7f
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/e2e/portal.e2e.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/e2e/portal.e2e.ts (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10930,7 +10930,7 @@ tool_use Bash
 id: toolu_01UeXfrRmb6SARHzq9iVaxgT
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nlsof -i :3000 2>/dev/null | head -3; grep -n \"webServer\" -A 6 playwright.config.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nlsof -i :3000 2>/dev/null | head -3; grep -n \"webServer\" -A 6 playwright.config.ts",
   "description": "Check port 3000 and playwright web server config"
 }
 ```
@@ -10990,7 +10990,7 @@ id: toolu_01FEy3rRRL4u8JjWa2PoDyvo
 tool_result
 id: toolu_01FEy3rRRL4u8JjWa2PoDyvo
 ```
-node    83521 hutusi  cwd       DIR               1,17       960           125942324 /Users/hutusi/workspace/ai/naive/astra
+node    83521 hutusi  cwd       DIR               1,17       960           125942324 /home/<USER>/workspace/ai/naive/astra
 ```
 
 > TOOL
@@ -10999,7 +10999,7 @@ tool_use Read
 id: toolu_0133iLCJkhCcCuki8n8KZtry
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md"
 }
 ```
 
@@ -11035,7 +11035,7 @@ id: toolu_01Mik4K2en4jEdfZevARuzbg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md",
   "old_string": "# Save format & compatibility\n\n## Schema\n\n`SaveData` (version 17) in `lib/game/types.ts`. Since v17 the per-player\nfields below (inventory, equipped armor, selected slot, position,\nhearts/hunger, effects, xp, stats, advancements, spawn point, game mode,\ngameOver) live inside `players: SavedPlayer[]` — a single `\"local\"` entry in\nsingle-player — while the world-level fields stay top-level (see the v17\nentry under Version history). The field-by-field contracts are unchanged:",
   "new_string": "# Save format & compatibility\n\n## Schema\n\n`SaveData` (version 18) in `lib/game/types.ts`. Since v17 the per-player\nfields below (inventory, equipped armor, selected slot, position,\nhearts/hunger, effects, xp, stats, advancements, spawn point, game mode,\ngameOver) live inside `players: SavedPlayer[]` — a single `\"local\"` entry in\nsingle-player — while the world-level fields stay top-level. Since v18 the\n**top-level world fields are specifically the OVERWORLD's**: other dimensions'\nworld halves live under `dimensions` (see the v18 entry under Version\nhistory). The field-by-field contracts are unchanged:"
 }
@@ -11046,7 +11046,7 @@ id: toolu_01Mik4K2en4jEdfZevARuzbg
 tool_result
 id: toolu_01Mik4K2en4jEdfZevARuzbg
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11056,7 +11056,7 @@ id: toolu_015sakayUVgNrwLoH82L5Wqc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md",
   "old_string": "- `vehicles` (optional) — placed water vehicles as `SavedVehicle[]` (`{ kind, x, y, z, yaw }`, where `kind` is `\"raft\"` or `\"ship\"`). The live rider link (`mountedVehicleId` / `VehicleState.rider`) is session-only and never serialized; reloads restore only the placed entities. `serializeVehicles`/`restoreVehicles` (`lib/game/save.ts`) round-trip and validate — dropping unknown kinds and non-finite poses — and the engine only keeps restored vehicles that still sit on valid water support",
   "new_string": "- `vehicles` (optional) — placed water vehicles as `SavedVehicle[]` (`{ kind, x, y, z, yaw }`, where `kind` is `\"raft\"` or `\"ship\"`). The live rider link (`mountedVehicleId` / `VehicleState.rider`) is session-only and never serialized; reloads restore only the placed entities. `serializeVehicles`/`restoreVehicles` (`lib/game/save.ts`) round-trip and validate — dropping unknown kinds and non-finite poses — and the engine only keeps restored vehicles that still sit on valid water support\n- `worldgenVersion` (optional) — the `WORLDGEN_VERSION` stamped by `serialize()`. `applyWorldgenGuard` (`lib/game/save.ts`), run first thing in the `GameEngine` constructor (one seam covering single-player, cloud saves, and the server room), enforces the staleness rule: a **mismatched** stamp discards every dimension's world half (changes, blockEntities, lootedChests, mobs, vehicles, dimensions, villagesSeeded) and the world reboots from its seed with […]
 
@@ -11065,7 +11065,7 @@ id: toolu_015sakayUVgNrwLoH82L5Wqc
 tool_result
 id: toolu_015sakayUVgNrwLoH82L5Wqc
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11075,7 +11075,7 @@ id: toolu_01EVUM7dQnPXQnL5S1kkKHG5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md",
   "old_string": "### Version history\n\n- **v17** (the players array — multiplayer groundwork)",
   "new_string": "### Version history\n\n- **v18** (dimensions — the nether) — adds optional top-level `worldgenVersion` and `dimensions`, and optional per-player `dimension`/`portalArrival` (all described above). `migrateSaveV17toV18` is a **pure version bump**: no data moves — the top-level world fields remain the overworld's, so every pre-v18 save loads as an overworld-only world with the guard grandfathered (no stamp ⇒ never fires). The nether's own generator (`lib/world/netherGeneration.ts`) is a separate byte contract with its own SHA-256 baselines; adding it changed **no overworld bytes**, so `WORLDGEN_VERSION` stays **11** — but from here on a bump discards **both** dimensions' diffs together (one stamp governs the whole save). The `NetherPortal` `BlockId` (91) is appended and has no item; `Obsidian` (90) and the new items (buckets, flint & steel) are additive string ids.\n- **v17** (the players array — multiplayer groundwork)"
 }
@@ -11086,7 +11086,7 @@ id: toolu_01EVUM7dQnPXQnL5S1kkKHG5
 tool_result
 id: toolu_01EVUM7dQnPXQnL5S1kkKHG5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11096,7 +11096,7 @@ id: toolu_01AMhiwwdyr7MdAhESYuyGGR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/save-format.md",
   "old_string": "`worldgenVersion` records the `WORLDGEN_VERSION` (`lib/game/config.ts`, currently 11) the world was generated under. This **replaces the old whole-store `SAVE_KEY` bump**: when the worldgen baseline changes, bump `WORLDGEN_VERSION`, and a world whose recorded version differs has its stale block-diffs discarded and reboots from its stored seed — per-world, with no key rename and without touching unaffected worlds.",
   "new_string": "`worldgenVersion` records the `WORLDGEN_VERSION` (`lib/game/config.ts`, currently 11) the world was generated under. This **replaces the old whole-store `SAVE_KEY` bump**: when the worldgen baseline changes, bump `WORLDGEN_VERSION`, and a world whose recorded version differs has its stale block-diffs discarded and reboots from its stored seed — per-world, with no key rename and without touching unaffected worlds. Since save v18 the stamp also lives **inside the `SaveData` blob** and the discard is actually **enforced** at engine boot (`applyWorldgenGuard` — it was documentation-only before); the `WorldMeta` copy remains for the world list."
 }
@@ -11107,7 +11107,7 @@ id: toolu_01AMhiwwdyr7MdAhESYuyGGR
 tool_result
 id: toolu_01AMhiwwdyr7MdAhESYuyGGR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/save-format.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11116,7 +11116,7 @@ tool_use Bash
 id: toolu_01AiJpdjn21kD4M5AFpdmH3b
 ```json
 {
-  "command": "grep -n \"^#\\|^##\\|^###\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "command": "grep -n \"^#\\|^##\\|^###\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "description": "Survey architecture.md sections"
 }
 ```
@@ -11146,7 +11146,7 @@ tool_use Read
 id: toolu_017whEBynV6Jau9ah5mG16NZ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "offset": 143,
   "limit": 35
 }
@@ -11174,7 +11174,7 @@ id: toolu_01LZsPZiZdFRUveV2ARJvcDo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "old_string": "## Offline / PWA (`app/manifest.ts`, `public/sw.js`)",
   "new_string": "## Dimensions (swap-on-travel)\n\nThe game has two world spaces — the overworld and the nether — but the engine only ever simulates **one at a time**: `GameState.dimension` is fixed for an engine's life, and portal travel boots a fresh engine (no dual-live-worlds state, no cross-dimension ticking). Everything voxel-indexed on `GameState` (containers, TNT, redstone, worldgen site sets) is therefore always in the live dimension's coordinate space.\n\nThe travel sequence (single-player only — the server engine and every replica refuse ignition, so an online world can never enter a dimension the room doesn't simulate):\n\n1. **Ignition** — flint & steel on an obsidian frame's inner face (`tryIgnitePortal`, in the `placeBlock` precedence). `findPortalFrame` (`systems/portal.ts`) validates a full obsidian border (corners required) around a 2×3..4×4 interior, then fills it with `NetherPortal` blocks — non-solid, unmineable (the solid raycast passes through; break the frame instead), light-emitting, riding the ordinary block diff.\n2. **Dwell** — standing in the surface for `PORTAL_DWELL_SECONDS` fires ONE `dimensionTravel` event, latched until the player steps out. Travel time **re-validates the frame** (the lazy backstop for frames broken behind the mining hook's flood-clear — e.g. TNT): a de-framed […]
 
@@ -11183,7 +11183,7 @@ id: toolu_01LZsPZiZdFRUveV2ARJvcDo
 tool_result
 id: toolu_01LZsPZiZdFRUveV2ARJvcDo
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11197,7 +11197,7 @@ id: toolu_01LnYBzAgrW1h1WNLJismYKd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/manual.md",
   "old_string": "Pour **water directly onto a lava block** and it hisses into **obsidian** — the\nhardest mineable block in the game. Only a **diamond pickaxe** can dig it out,\nand slowly at that. The deep lava floods (below Y≈9, under the cave layer) are\nthe natural quarry: bring water buckets down, quench, and mine. For now obsidian\nis a trophy building block — a very patient burglar's nightmare — but it is also\nthe raw material of things to come.\n\n### Rafts and ships",
   "new_string": "Pour **water directly onto a lava block** and it hisses into **obsidian** — the\nhardest mineable block in the game. Only a **diamond pickaxe** can dig it out,\nand slowly at that. The deep lava floods (below Y≈9, under the cave layer) are\nthe natural quarry: bring water buckets down, quench, and mine. Obsidian is the\nportal-frame material — see [The nether portal](#the-nether-portal).\n\n### The nether portal\n\nBuild a standing **obsidian rectangle** — corners included — around an open\ninterior between **2×3** and **4×4**, then strike an inner face with **flint &\nsteel** (1 sliver ore + 1 coal; 64 strikes). A valid frame fills with a glowing\nviolet surface; an incomplete one tells you so. Step in and hold […]
 
@@ -11206,7 +11206,7 @@ id: toolu_01LnYBzAgrW1h1WNLJismYKd
 tool_result
 id: toolu_01LnYBzAgrW1h1WNLJismYKd
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11284,7 +11284,7 @@ id: toolu_01FhQ8Uyw2YGUKskzdv94rmY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  // The lit portal surface filling an obsidian frame (portal.ts). Non-solid\n  // (walked into, never collided with), unmineable (the solid raycast passes\n  // through it — break the frame instead), emits light, and has no item.\n  NetherPortal = 91\n}",
   "new_string": "  // The lit portal surface filling an obsidian frame (portal.ts). Non-solid\n  // (walked into, never collided with), unmineable (the solid raycast passes\n  // through it — break the frame instead), emits light, and has no item.\n  NetherPortal = 91,\n  // The nether's landmass (netherGeneration.ts): a crimson rock, soft and\n  // fast to mine — the dimension's building staple.\n  Netherrack = 92,\n  // Hanging crystal clusters on nether cavern ceilings: a strong natural\n  // light source (see lighting.ts) that drops glowstone dust.\n  Glowstone = 93,\n  // The nether's deep ore, the post-diamond tier: diamond-pickaxe-gated,\n  // smelts into blazite ingots (see recipes.ts).\n  BlaziteOre = 94\n}"
 }
@@ -11295,7 +11295,7 @@ id: toolu_01FhQ8Uyw2YGUKskzdv94rmY
 tool_result
 id: toolu_01FhQ8Uyw2YGUKskzdv94rmY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11305,7 +11305,7 @@ id: toolu_0183SWNKwCwnMZ82Dixkxyha
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  [BlockId.PlankStairsNorth]: 0xbe965d,\n  [BlockId.StoneStairsNorth]: 0x8f9296,\n  [BlockId.CobbleStairsNorth]: 0x787c82,\n  [BlockId.Obsidian]: 0x241c38\n};",
   "new_string": "  [BlockId.PlankStairsNorth]: 0xbe965d,\n  [BlockId.StoneStairsNorth]: 0x8f9296,\n  [BlockId.CobbleStairsNorth]: 0x787c82,\n  [BlockId.Obsidian]: 0x241c38,\n  [BlockId.Netherrack]: 0x8a3d34,\n  [BlockId.Glowstone]: 0xf2c957\n};"
 }
@@ -11316,7 +11316,7 @@ id: toolu_0183SWNKwCwnMZ82Dixkxyha
 tool_result
 id: toolu_0183SWNKwCwnMZ82Dixkxyha
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11326,7 +11326,7 @@ id: toolu_01Y84AyNdEBPfxz7t4Ksf2qU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "old_string": "  // A swirling violet portal surface (painted in atlas.ts; emits block light).\n  [BlockId.NetherPortal]: [0.45, 0.18, 0.68]\n};",
   "new_string": "  // A swirling violet portal surface (painted in atlas.ts; emits block light).\n  [BlockId.NetherPortal]: [0.45, 0.18, 0.68],\n  // Crimson nether rock, pitted (painted in atlas.ts).\n  [BlockId.Netherrack]: [0.48, 0.2, 0.17],\n  // A glowing amber crystal cluster (painted in atlas.ts; emits block light).\n  [BlockId.Glowstone]: [0.9, 0.72, 0.32],\n  // Netherrack-toned rock with ember speckles (painted in atlas.ts).\n  [BlockId.BlaziteOre]: [0.48, 0.2, 0.17]\n};"
 }
@@ -11337,7 +11337,7 @@ id: toolu_01Y84AyNdEBPfxz7t4Ksf2qU
 tool_result
 id: toolu_01Y84AyNdEBPfxz7t4Ksf2qU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11347,7 +11347,7 @@ id: toolu_01YZ5DyMNwtBHugkBij6sr3B
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  // The hardest mineable block — a long grind even for the diamond pickaxe\n  // that its tier gate requires (see canMineBlock in mining.ts).\n  [BlockId.Obsidian]: 40\n};",
   "new_string": "  // The hardest mineable block — a long grind even for the diamond pickaxe\n  // that its tier gate requires (see canMineBlock in mining.ts).\n  [BlockId.Obsidian]: 40,\n  // Soft nether rock — faster than stone even though a pickaxe is required.\n  [BlockId.Netherrack]: 4,\n  [BlockId.Glowstone]: 2,\n  // Deeper than diamond in spirit: slower than diamond ore, far from obsidian.\n  [BlockId.BlaziteOre]: 16\n};"
 }
@@ -11358,7 +11358,7 @@ id: toolu_01YZ5DyMNwtBHugkBij6sr3B
 tool_result
 id: toolu_01YZ5DyMNwtBHugkBij6sr3B
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11368,7 +11368,7 @@ id: toolu_01D2bg1waeZu8k3pT36Di8uk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  // Created by quenching lava with a water bucket; the portal-frame material.\n  { id: \"obsidian\", label: \"Obsidian\", kind: \"block\", blockId: BlockId.Obsidian },",
   "new_string": "  // Created by quenching lava with a water bucket; the portal-frame material.\n  { id: \"obsidian\", label: \"Obsidian\", kind: \"block\", blockId: BlockId.Obsidian },\n  // Nether blocks: the landmass rock and the glowing ceiling crystal (placing\n  // glowstone back down makes it a portable light source).\n  { id: \"netherrack\", label: \"Netherrack\", kind: \"block\", blockId: BlockId.Netherrack },\n  { id: \"glowstone\", label: \"Glowstone\", kind: \"block\", blockId: BlockId.Glowstone },"
 }
@@ -11379,7 +11379,7 @@ id: toolu_01D2bg1waeZu8k3pT36Di8uk
 tool_result
 id: toolu_01D2bg1waeZu8k3pT36Di8uk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11389,7 +11389,7 @@ id: toolu_01VgCpttyVyQj3AVfDQvKJ5i
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  [BlockId.Obsidian]: \"obsidian\",",
   "new_string": "  [BlockId.Obsidian]: \"obsidian\",\n  [BlockId.Netherrack]: \"netherrack\",\n  // Glowstone drops 2-4 dust — handled in rollBlockDrops, not here.\n  // Blazite ore drops the smeltable material item (the coal-ore pattern).\n  [BlockId.BlaziteOre]: \"blazite_ore\","
 }
@@ -11400,7 +11400,7 @@ id: toolu_01VgCpttyVyQj3AVfDQvKJ5i
 tool_result
 id: toolu_01VgCpttyVyQj3AVfDQvKJ5i
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11410,7 +11410,7 @@ id: toolu_015QZogiX9o2abbSGraf4XnU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"bucket\", label: \"Bucket\", kind: \"material\", stackSize: 16 },\n  { id: \"water_bucket\", label: \"Water Bucket\", kind: \"material\", stackSize: 1 },\n  { id: \"lava_bucket\", label: \"Lava Bucket\", kind: \"material\", stackSize: 1 },",
   "new_string": "  { id: \"bucket\", label: \"Bucket\", kind: \"material\", stackSize: 16 },\n  { id: \"water_bucket\", label: \"Water Bucket\", kind: \"material\", stackSize: 1 },\n  { id: \"lava_bucket\", label: \"Lava Bucket\", kind: \"material\", stackSize: 1 },\n  // Nether materials: glowstone dust recombines into the block (4 → 1); raw\n  // blazite ore smelts into ingots for the post-diamond gear tier.\n  { id: \"glowstone_dust\", label: \"Glowstone Dust\", kind: \"material\" },\n  { id: \"blazite_ore\", label: \"Blazite Ore\", kind: \"material\" },"
 }
@@ -11421,7 +11421,7 @@ id: toolu_015QZogiX9o2abbSGraf4XnU
 tool_result
 id: toolu_015QZogiX9o2abbSGraf4XnU
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11431,7 +11431,7 @@ id: toolu_01W1tsQM75FcjakmgBtYkAJt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "/** Ores whose mined yield the Fortune enchantment multiplies (their `BLOCK_TO_SLOT` item is the drop). */\nconst FORTUNE_ORE_BLOCKS = new Set<BlockId>([BlockId.CoalOre, BlockId.SliverOre, BlockId.RubyOre, BlockId.GoldOre, BlockId.SapphireOre, BlockId.DiamondOre]);",
   "new_string": "/** Ores whose mined yield the Fortune enchantment multiplies (their `BLOCK_TO_SLOT` item is the drop). */\nconst FORTUNE_ORE_BLOCKS = new Set<BlockId>([\n  BlockId.CoalOre,\n  BlockId.SliverOre,\n  BlockId.RubyOre,\n  BlockId.GoldOre,\n  BlockId.SapphireOre,\n  BlockId.DiamondOre,\n  BlockId.BlaziteOre\n]);"
 }
@@ -11442,7 +11442,7 @@ id: toolu_01W1tsQM75FcjakmgBtYkAJt
 tool_result
 id: toolu_01W1tsQM75FcjakmgBtYkAJt
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11452,7 +11452,7 @@ id: toolu_017FR555LdgKAULkTFsvLHYZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  if (block === BlockId.Leaves && rng() < LEAVES_SAPLING_DROP_CHANCE) {\n    drops.push({ itemId: \"sapling\", count: 1 });\n  }",
   "new_string": "  if (block === BlockId.Leaves && rng() < LEAVES_SAPLING_DROP_CHANCE) {\n    drops.push({ itemId: \"sapling\", count: 1 });\n  }\n  // Glowstone shatters into 2-4 dust (its only yield — 4 dust recombine into\n  // the block); Fortune adds its level, capped at a full block's worth.\n  if (block === BlockId.Glowstone) {\n    drops.push({ itemId: \"glowstone_dust\", count: Math.min(4, 2 + Math.floor(rng() * 3) + fortuneLevel) });\n  }"
 }
@@ -11463,7 +11463,7 @@ id: toolu_017FR555LdgKAULkTFsvLHYZ
 tool_result
 id: toolu_017FR555LdgKAULkTFsvLHYZ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11473,7 +11473,7 @@ id: toolu_01Ak9UxkPu1R2mcnv9fDF8Hb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts",
   "old_string": "  // Obsidian yields only to the top pickaxe tier (diamond, mineTier 7).\n  if (block === BlockId.Obsidian) return toolTier >= 7;\n  return true;\n}",
   "new_string": "  // Obsidian yields only to the top pickaxe tier (diamond, mineTier 7).\n  if (block === BlockId.Obsidian) return toolTier >= 7;\n  // Nether rock needs any pickaxe; its deep ore is diamond-gated like obsidian.\n  if (block === BlockId.Netherrack) return toolTier >= 1;\n  if (block === BlockId.BlaziteOre) return toolTier >= 7;\n  return true;\n}"
 }
@@ -11484,7 +11484,7 @@ id: toolu_01Ak9UxkPu1R2mcnv9fDF8Hb
 tool_result
 id: toolu_01Ak9UxkPu1R2mcnv9fDF8Hb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mining.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11498,7 +11498,7 @@ id: toolu_0132oHcwfMod7c2kgRZvYSrx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts",
   "old_string": "    // The lit portal surface glows a shade under a torch — enough to read as\n    // active and to light its chamber, without washing out torch placement.\n    case BlockId.NetherPortal:\n      return 11;\n    default:\n      return 0;\n  }\n}",
   "new_string": "    // The lit portal surface glows a shade under a torch — enough to read as\n    // active and to light its chamber, without washing out torch placement.\n    case BlockId.NetherPortal:\n      return 11;\n    // Glowstone matches the torch: the nether's natural (and portable) light.\n    case BlockId.Glowstone:\n      return 14;\n    default:\n      return 0;\n  }\n}"
 }
@@ -11509,7 +11509,7 @@ id: toolu_0132oHcwfMod7c2kgRZvYSrx
 tool_result
 id: toolu_0132oHcwfMod7c2kgRZvYSrx
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/lighting.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/lighting.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11519,7 +11519,7 @@ id: toolu_01P5NFSa1cnu1UKuoZe1daMb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts",
   "old_string": "  [BlockId.Obsidian]: \"stone\",\n  [BlockId.NetherPortal]: \"glass\"\n};",
   "new_string": "  [BlockId.Obsidian]: \"stone\",\n  [BlockId.NetherPortal]: \"glass\",\n  [BlockId.Netherrack]: \"stone\",\n  [BlockId.Glowstone]: \"glass\",\n  [BlockId.BlaziteOre]: \"stone\"\n};"
 }
@@ -11530,7 +11530,7 @@ id: toolu_01P5NFSa1cnu1UKuoZe1daMb
 tool_result
 id: toolu_01P5NFSa1cnu1UKuoZe1daMb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/materials.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/materials.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11540,7 +11540,7 @@ id: toolu_013STn5dd97Q3seTyniiUMw2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "old_string": "        if (block === BlockId.Tnt) {",
   "new_string": "        if (block === BlockId.Netherrack) {\n          // Crimson pitted rock: darker pocks over the red base, a rare pale wart.\n          if (n < 0.24) c = tone([0.3, 0.1, 0.09], 0.85 + n * 0.4);\n          if (n > 0.92) c = tone([0.68, 0.4, 0.36], 1);\n        }\n        if (block === BlockId.Glowstone) {\n          // A crystalline cluster: bright amber facets over a honey base, with\n          // near-white glints along the facet joints (the block emits light 14).\n          const facet = (x * 3 + y * 5) % 11 < 4;\n          c = facet ? tone([1, 0.87, 0.5], 0.9 + n * 0.2) : tone([0.82, 0.6, 0.24], 0.85 + n * 0.3);\n          if (n > 0.9) c = tone([1, 0.97, 0.85], 1);\n        }\n        if (block === BlockId.BlaziteOre) {\n          // Netherrack base carrying ember-orange ore flecks that read as hot.\n          if (n < 0.22) c = tone([0.3, 0.1, 0.09], 0.85 + n * 0.4);\n          if (n > 0.8) c = tone([1, 0.55, 0.12], 0.9 + n * 0.25);\n        }\n        if (block === BlockId.Tnt) {"
 }
@@ -11551,7 +11551,7 @@ id: toolu_013STn5dd97Q3seTyniiUMw2
 tool_result
 id: toolu_013STn5dd97Q3seTyniiUMw2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11560,7 +11560,7 @@ tool_use Bash
 id: toolu_01LXzmLSPutmZyiQx6vTQa6f
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"GUNPOWDER_PALETTE\\|EMERALD_PALETTE\" lib/ui/spritePixels.ts | head -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"GUNPOWDER_PALETTE\\|EMERALD_PALETTE\" lib/ui/spritePixels.ts | head -4",
   "description": "Find the COAL palette variants to mirror"
 }
 ```
@@ -11582,7 +11582,7 @@ tool_use Bash
 id: toolu_01E7uC3fDd64tWQ2pPk5W6hz
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/const EMERALD_PALETTE: PixelPalette = \\{ c: \\[46, 184, 110\\], C: \\[24, 120, 70\\], h: \\[150, 240, 180\\] \\};/const EMERALD_PALETTE: PixelPalette = { c: [46, 184, 110], C: [24, 120, 70], h: [150, 240, 180] };\\nconst GLOWSTONE_DUST_PALETTE: PixelPalette = { c: [244, 205, 92], C: [190, 140, 40], h: [255, 244, 190] };\\nconst BLAZITE_ORE_PALETTE: PixelPalette = { c: [235, 120, 40], C: [140, 55, 25], h: [255, 200, 110] };/' lib/ui/spritePixels.ts\nperl -0pi -e 's/  emerald: \\{ grid: COAL_GRID, palette: EMERALD_PALETTE \\},/  emerald: { grid: COAL_GRID, palette: EMERALD_PALETTE },\\n  glowstone_dust: { grid: COAL_GRID, palette: GLOWSTONE_DUST_PALETTE },\\n  blazite_ore: { grid: COAL_GRID, palette: BLAZITE_ORE_PALETTE },/' lib/ui/spritePixels.ts\ngrep -n \"glowstone_dust\\|blazite_ore\" lib/ui/spritePixels.ts | head -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/const EMERALD_PALETTE: PixelPalette = \\{ c: \\[46, 184, 110\\], C: \\[24, 120, 70\\], h: \\[150, 240, 180\\] \\};/const EMERALD_PALETTE: PixelPalette = { c: [46, 184, 110], C: [24, 120, 70], h: [150, 240, 180] };\\nconst GLOWSTONE_DUST_PALETTE: PixelPalette = { c: [244, 205, 92], C: [190, 140, 40], h: [255, 244, 190] };\\nconst BLAZITE_ORE_PALETTE: PixelPalette = { c: [235, 120, 40], C: [140, 55, 25], h: [255, 200, 110] };/' lib/ui/spritePixels.ts\nperl -0pi -e 's/  emerald: \\{ grid: COAL_GRID, palette: EMERALD_PALETTE \\},/  emerald: { grid: COAL_GRID, palette: EMERALD_PALETTE },\\n  glowstone_dust: { grid: COAL_GRID, palette: GLOWSTONE_DUST_PALETTE },\\n  blazite_ore: { grid: COAL_GRID, palette: BLAZITE_ORE_PALETTE },/' lib/ui/spritePixels.ts\ngrep -n \"glowstone_dust\\|blazite_ore\" lib/ui/spritePixels.ts | head -4",
   "description": "Add dust/ore sprite palettes via COAL_GRID"
 }
 ```
@@ -11607,7 +11607,7 @@ id: toolu_0117weVQdRYaXeajt7FrkQQf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "old_string": "  {\n    id: \"flint_and_steel\",\n    label: \"1 Sliver Ore + 1 Coal -> Flint & Steel\",\n    cost: [\n      { slotId: \"sliver_ore\", count: 1 },\n      { slotId: \"coal\", count: 1 }\n    ],\n    result: { slotId: \"flint_and_steel\", count: 1 }\n  },",
   "new_string": "  {\n    id: \"flint_and_steel\",\n    label: \"1 Sliver Ore + 1 Coal -> Flint & Steel\",\n    cost: [\n      { slotId: \"sliver_ore\", count: 1 },\n      { slotId: \"coal\", count: 1 }\n    ],\n    result: { slotId: \"flint_and_steel\", count: 1 }\n  },\n  {\n    id: \"glowstone\",\n    label: \"4 Glowstone Dust -> Glowstone\",\n    cost: [{ slotId: \"glowstone_dust\", count: 4 }],\n    result: { slotId: \"glowstone\", count: 1 }\n  },"
 }
@@ -11618,7 +11618,7 @@ id: toolu_0117weVQdRYaXeajt7FrkQQf
 tool_result
 id: toolu_0117weVQdRYaXeajt7FrkQQf
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11627,7 +11627,7 @@ tool_use Bash
 id: toolu_01BXNXzLSKqrzLvRq8Ap8LCF
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ncat >> lib/game/config.test.ts << 'EOF'\n\ndescribe(\"nether block drops\", () => {\n  test(\"glowstone shatters into 2-4 dust, Fortune-boosted but capped at a block's worth\", () => {\n    expect(rollBlockDrops(BlockId.Glowstone, () => 0)).toEqual([{ itemId: \"glowstone_dust\", count: 2 }]);\n    expect(rollBlockDrops(BlockId.Glowstone, () => 0.99)).toEqual([{ itemId: \"glowstone_dust\", count: 4 }]);\n    expect(rollBlockDrops(BlockId.Glowstone, () => 0.99, 3)).toEqual([{ itemId: \"glowstone_dust\", count: 4 }]); // capped\n    expect(rollBlockDrops(BlockId.Glowstone, () => 0, 1)).toEqual([{ itemId: \"glowstone_dust\", count: 3 }]);\n  });\n\n  test(\"blazite ore drops the smeltable material and rides the Fortune ore multiplier\", () => {\n    expect(rollBlockDrops(BlockId.BlaziteOre, () => 0.5)).toEqual([{ itemId: \"blazite_ore\", count: 1 }]);\n    const lucky = rollBlockDrops(BlockId.BlaziteOre, () => 0.99, 3);\n    expect(lucky[0].itemId).toBe(\"blazite_ore\");\n    expect(lucky[0].count).toBeGreaterThan(1);\n  });\n});\nEOF\ncat >> lib/game/engine/systems/mining.test.ts << 'EOF'\n\ndescribe(\"nether block tool tiers\", () => {\n  test(\"netherrack needs any pickaxe; blazite ore is diamond-gated like obsidian\", () => {\n    expect(canMineBlock(BlockId.Netherrack, 0)).toBe(false);\n    expect(canMineBlock(BlockId.Netherrack, 1)).toBe(true);\n    expect(canMineBlock(BlockId.BlaziteOre, 6)).toBe(false);\n    expect(canMineBlock(BlockId.BlaziteOre, 7)).toBe(true);\n  });\n});\nEOF\nbun test lib/game/config.test.ts lib/game/engine/systems/mining.test.ts lib/ui lib/game/recipes.test.ts 2>&1 | tail -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ncat >> lib/game/config.test.ts << 'EOF'\n\ndescribe(\"nether block drops\", () => {\n  test(\"glowstone shatters into 2-4 dust, Fortune-boosted but capped at a block's worth\", () => {\n    expect(rollBlockDrops(BlockId.Glowstone, () => 0)).toEqual([{ itemId: \"glowstone_dust\", count: 2 }]);\n    expect(rollBlockDrops(BlockId.Glowstone, () => 0.99)).toEqual([{ itemId: \"glowstone_dust\", count: 4 }]);\n    expect(rollBlockDrops(BlockId.Glowstone, () => 0.99, 3)).toEqual([{ itemId: \"glowstone_dust\", count: 4 }]); // capped\n    expect(rollBlockDrops(BlockId.Glowstone, () => 0, 1)).toEqual([{ itemId: \"glowstone_dust\", count: 3 }]);\n  });\n\n  test(\"blazite ore drops the smeltable material and rides the Fortune ore multiplier\", () => {\n    expect(rollBlockDrops(BlockId.BlaziteOre, () => 0.5)).toEqual([{ itemId: \"blazite_ore\", count: 1 }]);\n    const lucky = rollBlockDrops(BlockId.BlaziteOre, () => 0.99, 3);\n    expect(lucky[0].itemId).toBe(\"blazite_ore\");\n    expect(lucky[0].count).toBeGreaterThan(1);\n  });\n});\nEOF\ncat >> lib/game/engine/systems/mining.test.ts << 'EOF'\n\ndescribe(\"nether block tool tiers\", () => {\n  test(\"netherrack needs any pickaxe; blazite ore is diamond-gated like obsidian\", () => {\n    expect(canMineBlock(BlockId.Netherrack, 0)).toBe(false);\n    expect(canMineBlock(BlockId.Netherrack, 1)).toBe(true);\n    expect(canMineBlock(BlockId.BlaziteOre, 6)).toBe(false);\n    expect(canMineBlock(BlockId.BlaziteOre, 7)).toBe(true);\n  });\n});\nEOF\nbun test lib/game/config.test.ts lib/game/engine/systems/mining.test.ts lib/ui lib/game/recipes.test.ts 2>&1 | tail -4",
   "description": "Add drop/tier tests and run"
 }
 ```
@@ -11719,7 +11719,7 @@ tool_use Bash
 id: toolu_013E9aU6hck9JD9Hoq9GhG4K
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"function carveCaves\" -A 40 lib/world/generation.ts | head -50; grep -n \"mulberry32\\|function rand\" lib/world/generation.ts | head -5",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"function carveCaves\" -A 40 lib/world/generation.ts | head -50; grep -n \"mulberry32\\|function rand\" lib/world/generation.ts | head -5",
   "description": "Read carveCaves implementation"
 }
 ```
@@ -11760,7 +11760,7 @@ tool_use Bash
 id: toolu_01SYPTvmGmt9koeQJEVRnYKu
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n 149,165p lib/world/generation.ts; sed -n 1,40p lib/world/generationBaselines.ts; grep -n \"digest\\|sha\\|hash\" lib/world/generation.test.ts | head -8",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n 149,165p lib/world/generation.ts; sed -n 1,40p lib/world/generationBaselines.ts; grep -n \"digest\\|sha\\|hash\" lib/world/generation.test.ts | head -8",
   "description": "See PRNG seeding, baselines file, hash test helper"
 }
 ```
@@ -11807,7 +11807,7 @@ tool_use Bash
 id: toolu_01ExA8MJM4ZdFaZx8Nh8LRb6
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"export function\" lib/world/noise.ts; grep -n \"caveCount\\|lavaLevel\" lib/world/generation.ts | head -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"export function\" lib/world/noise.ts; grep -n \"caveCount\\|lavaLevel\" lib/world/generation.ts | head -4",
   "description": "Check noise exports and GEN cave constants"
 }
 ```
@@ -11838,7 +11838,7 @@ tool_use Write
 id: toolu_01TbSq4non6chLph3qXkRie7
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.ts",
   "content": "import { BlockId } from \"./blocks\";\nimport { hash01, hash2D, portableCos, portableSin } from \"./noise\";\nimport type { VoxelWorld } from \"./voxelWorld\";\n\n/**\n * The nether generator: a solid netherrack mass sealed by bedrock at y=0 AND\n * the top row (the ceiling cap is what zeroes baked skylight, giving the\n * dimension its dark), hollowed by worm-carved tunnels and broad sea chambers,\n * flooded with lava up to `lavaSeaLevel`, hung with glowstone, and seeded with\n * deep blazite ore.\n *\n * Deterministic contracts (mirrors generation.ts):\n * - Byte-identical output per (seed, size) forever — pinned by SHA-256\n *   baselines in netherGeneration.test.ts. Fix code, never hashes; a\n *   deliberate change bumps WORLDGEN_VERSION (one stamp governs BOTH\n *   dimensions' diffs — see docs/save-format.md).\n * - All noise/trig from lib/world/noise.ts portables (Bun ≡ browser).\n * - Own mulberry32 streams xor'd with fresh constants (0x94d049bb caverns,\n *   0x3c6ef372 ore) so future passes can't shift each other. The overworld's\n *   constants (0x85ebca6b, 0x9e3779b9, 0xc2b2ae35, 0x27d4eb2f) are avoided on\n *   principle even though the streams never mix.\n * - Attempt counts scale by AREA (unlike GEN's fixed counts) because the\n *   engine's headless tests boot tiny nether worlds — […]
 
 > TOOL
@@ -11846,7 +11846,7 @@ id: toolu_01TbSq4non6chLph3qXkRie7
 tool_result
 id: toolu_01TbSq4non6chLph3qXkRie7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11859,7 +11859,7 @@ tool_use Bash
 id: toolu_01PAPX2S38ifA4if1CJJsPhH
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ncat > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts << 'EOF'\nimport { VoxelWorld } from \"@/lib/world/voxelWorld\";\nimport { generateNetherWorld } from \"@/lib/world/netherGeneration\";\n\nfunction hashBytes(bytes: Uint8Array): string {\n  return new Bun.CryptoHasher(\"sha256\").update(bytes).digest(\"hex\");\n}\n\nfor (const seed of [1337, 1, 999999937]) {\n  const w = new VoxelWorld(128, 150, 128, seed);\n  generateNetherWorld(w);\n  console.log(`small128 ${seed}: \"${hashBytes(w.blocks)}\"`);\n}\nconst full = new VoxelWorld(512, 150, 512, 1337);\ngenerateNetherWorld(full);\nconsole.log(`full512Seed1337: \"${hashBytes(full.blocks)}\"`);\nEOF\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ncat > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts << 'EOF'\nimport { VoxelWorld } from \"@/lib/world/voxelWorld\";\nimport { generateNetherWorld } from \"@/lib/world/netherGeneration\";\n\nfunction hashBytes(bytes: Uint8Array): string {\n  return new Bun.CryptoHasher(\"sha256\").update(bytes).digest(\"hex\");\n}\n\nfor (const seed of [1337, 1, 999999937]) {\n  const w = new VoxelWorld(128, 150, 128, seed);\n  generateNetherWorld(w);\n  console.log(`small128 ${seed}: \"${hashBytes(w.blocks)}\"`);\n}\nconst full = new VoxelWorld(512, 150, 512, 1337);\ngenerateNetherWorld(full);\nconsole.log(`full512Seed1337: \"${hashBytes(full.blocks)}\"`);\nEOF\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts",
   "description": "Compute nether worldgen SHA-256 baselines",
   "timeout": 180000
 }
@@ -11882,7 +11882,7 @@ tool_use Bash
 id: toolu_0185reNU7Nh2SVSWewjn7bSp
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ncat > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts << 'EOF'\nimport { VoxelWorld } from \"/Users/hutusi/workspace/ai/david/monecraft/lib/world/voxelWorld\";\nimport { generateNetherWorld } from \"/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration\";\n\nfunction hashBytes(bytes: Uint8Array): string {\n  return new Bun.CryptoHasher(\"sha256\").update(bytes).digest(\"hex\");\n}\n\nfor (const seed of [1337, 1, 999999937]) {\n  const w = new VoxelWorld(128, 150, 128, seed);\n  generateNetherWorld(w);\n  console.log(`small128 ${seed}: \"${hashBytes(w.blocks)}\"`);\n}\nconst full = new VoxelWorld(512, 150, 512, 1337);\ngenerateNetherWorld(full);\nconsole.log(`full512Seed1337: \"${hashBytes(full.blocks)}\"`);\nEOF\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ncat > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts << 'EOF'\nimport { VoxelWorld } from \"/home/<USER>/workspace/ai/david/monecraft/lib/world/voxelWorld\";\nimport { generateNetherWorld } from \"/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration\";\n\nfunction hashBytes(bytes: Uint8Array): string {\n  return new Bun.CryptoHasher(\"sha256\").update(bytes).digest(\"hex\");\n}\n\nfor (const seed of [1337, 1, 999999937]) {\n  const w = new VoxelWorld(128, 150, 128, seed);\n  generateNetherWorld(w);\n  console.log(`small128 ${seed}: \"${hashBytes(w.blocks)}\"`);\n}\nconst full = new VoxelWorld(512, 150, 512, 1337);\ngenerateNetherWorld(full);\nconsole.log(`full512Seed1337: \"${hashBytes(full.blocks)}\"`);\nEOF\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts",
   "description": "Compute nether baselines with absolute imports",
   "timeout": 180000
 }
@@ -11906,7 +11906,7 @@ id: toolu_01DNKYVd9C2ZadpjULoyyQ6m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generationBaselines.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generationBaselines.ts",
   "old_string": "  /** 128×150×128 non-default world types, seed 1337 — each type is its own contract. */\n  typed: {\n    flat: \"9e463186e6b5797c80a1d0b50b0f40e93c2ef2f353aadfab27e2171fc246d5d1\",\n    amplified: \"9361234c1907d43d1551f79e3c35a8c7942419f57b66038feec6e5b2772259d8\",\n    islands: \"ff1381ffa159aaf02491b55770e0ea513809e8c44b42f8505d5bd0cd7d6d4f1c\"\n  } satisfies Partial<Record<WorldType, string>>\n} as const;",
   "new_string": "  /** 128×150×128 non-default world types, seed 1337 — each type is its own contract. */\n  typed: {\n    flat: \"9e463186e6b5797c80a1d0b50b0f40e93c2ef2f353aadfab27e2171fc246d5d1\",\n    amplified: \"9361234c1907d43d1551f79e3c35a8c7942419f57b66038feec6e5b2772259d8\",\n    islands: \"ff1381ffa159aaf02491b55770e0ea513809e8c44b42f8505d5bd0cd7d6d4f1c\"\n  } satisfies Partial<Record<WorldType, string>>,\n  /**\n   * The nether (lib/world/netherGeneration.ts) — its own byte contract under\n   * the SAME WORLDGEN_VERSION stamp (a bump discards both dimensions' diffs).\n   * Note the generator scales carve/vein counts by area, so each size is its\n   * own surface. Baselined at introduction (worldgen v11 era).\n   */\n  nether: {\n    /** Full-size 512×150×512, seed 1337 — the real save-compat surface. */\n    full512Seed1337: \"c3072048d4201d456a7e2a55a1b9e19a5880f1560b1f4c713b11510cdb405cc4\",\n    /** 128×150×128 per seed. */\n    small128: {\n      1337: \"47677d6df47f92b3e7ec8ecf836387967fa6aae77a3f36a72cc39de00a82e3e0\",\n      1: \"29ee897a31f1e31b6e44e98f5acc21753f77a925798659631a2dba4b6e6a6e3e\",\n      999999937: \"87f80589a8509d06536446ae562f131b1b75b46d0ca978b23009f5197dd2ad7d\"\n    }\n  }\n} as const;"
 }
@@ -11926,7 +11926,7 @@ tool_use Read
 id: toolu_01Vzo1csWeP8PcDXun6mock6
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generationBaselines.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generationBaselines.ts"
 }
 ```
 
@@ -11971,7 +11971,7 @@ id: toolu_01UXou2WC7Syq2vyatpqWYmM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generationBaselines.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generationBaselines.ts",
   "old_string": "  /** 128×150×128 non-default world types, seed 1337 — each type is its own contract. */\n  typed: {\n    flat: \"9e463186e6b5797c80a1d0b50b0f40e93c2ef2f353aadfab27e2171fc246d5d1\",\n    amplified: \"9361234c1907d43d1551f79e3c35a8c7942419f57b66038feec6e5b2772259d8\",\n    islands: \"ff1381ffa159aaf02491b55770e0ea513809e8c44b42f8505d5bd0cd7d6d4f1c\"\n  } satisfies Partial<Record<WorldType, string>>\n} as const;",
   "new_string": "  /** 128×150×128 non-default world types, seed 1337 — each type is its own contract. */\n  typed: {\n    flat: \"9e463186e6b5797c80a1d0b50b0f40e93c2ef2f353aadfab27e2171fc246d5d1\",\n    amplified: \"9361234c1907d43d1551f79e3c35a8c7942419f57b66038feec6e5b2772259d8\",\n    islands: \"ff1381ffa159aaf02491b55770e0ea513809e8c44b42f8505d5bd0cd7d6d4f1c\"\n  } satisfies Partial<Record<WorldType, string>>,\n  /**\n   * The nether (lib/world/netherGeneration.ts) — its own byte contract under\n   * the SAME WORLDGEN_VERSION stamp (a bump discards both dimensions' diffs).\n   * The generator scales carve/vein counts by area, so each size is its own\n   * surface. Baselined at introduction (worldgen v11 era).\n   */\n  nether: {\n    /** Full-size 512×150×512, seed 1337 — the real save-compat surface. */\n    full512Seed1337: \"c3072048d4201d456a7e2a55a1b9e19a5880f1560b1f4c713b11510cdb405cc4\",\n    /** 128×150×128 per seed. */\n    small128: {\n      1337: \"47677d6df47f92b3e7ec8ecf836387967fa6aae77a3f36a72cc39de00a82e3e0\",\n      1: \"29ee897a31f1e31b6e44e98f5acc21753f77a925798659631a2dba4b6e6a6e3e\",\n      999999937: \"87f80589a8509d06536446ae562f131b1b75b46d0ca978b23009f5197dd2ad7d\"\n    }\n  }\n} as const;"
 }
@@ -11982,7 +11982,7 @@ id: toolu_01UXou2WC7Syq2vyatpqWYmM
 tool_result
 id: toolu_01UXou2WC7Syq2vyatpqWYmM
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generationBaselines.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generationBaselines.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11995,7 +11995,7 @@ tool_use Write
 id: toolu_019kCKNV1cv9SbakMXnm7muB
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport { BlockId } from \"@/lib/world\";\nimport { NETHER_GEN, generateNetherWorld } from \"@/lib/world/netherGeneration\";\nimport { VoxelWorld } from \"@/lib/world/voxelWorld\";\nimport { WORLDGEN_BASELINES } from \"@/lib/world/generationBaselines\";\nimport { createNetherFloorYAt } from \"@/lib/game/spawn\";\n\nfunction hashBytes(bytes: Uint8Array): string {\n  return new Bun.CryptoHasher(\"sha256\").update(bytes).digest(\"hex\");\n}\n\nfunction makeNether(sizeX: number, sizeY: number, sizeZ: number, seed: number): VoxelWorld {\n  const world = new VoxelWorld(sizeX, sizeY, sizeZ, seed);\n  generateNetherWorld(world);\n  return world;\n}\n\ndescribe(\"nether worldgen determinism\", () => {\n  // The same contract as the overworld's: byte-identical output per (seed,\n  // size) forever. A failure after a refactor means the refactor broke save\n  // compatibility — fix the code, never the hash (re-baselining requires a\n  // deliberate WORLDGEN_VERSION bump, which discards BOTH dimensions' diffs).\n  test.each(Object.entries(WORLDGEN_BASELINES.nether.small128))(\"128³ nether world for seed %s matches its baseline\", (seed, expected) => {\n    expect(hashBytes(makeNether(128, 150, 128, Number(seed)).blocks)).toBe(expected);\n  });\n\n  test(\"full-size 512×150×512 nether world (seed 1337) matches its baseline\", () => {\n    expect(hashBytes(makeNether(512, 150, 512, 1337).blocks)).toBe(WORLDGEN_BASELINES.nether.full512Seed1337);\n  });\n});\n\ndescribe(\"nether structural probes\", () => {\n  const world = makeNether(128, 150, 128, 1337);\n\n  test(\"bedrock seals the floor AND the ceiling (the cap zeroes baked skylight)\", () => {\n    for (let x = 0; x < world.sizeX; x += 8) {\n      for (let z = 0; […]
 
 > TOOL
@@ -12003,7 +12003,7 @@ id: toolu_019kCKNV1cv9SbakMXnm7muB
 tool_result
 id: toolu_019kCKNV1cv9SbakMXnm7muB
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12041,7 +12041,7 @@ tool_use Bash
 id: toolu_01BjarKJDJGkLvVcxNCGMkYQ
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ncat > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/debug-glow.ts << 'EOF'\nimport { VoxelWorld } from \"/Users/hutusi/workspace/ai/david/monecraft/lib/world/voxelWorld\";\nimport { generateNetherWorld } from \"/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration\";\n\nconst world = new VoxelWorld(128, 150, 128, 1337);\ngenerateNetherWorld(world);\nconst G = 93, N = 92;\nlet bad = 0;\nfor (let y = 1; y < world.sizeY - 1; y += 1)\n  for (let z = 0; z < world.sizeZ; z += 1)\n    for (let x = 0; x < world.sizeX; x += 1) {\n      if (world.get(x, y, z) !== G) continue;\n      const anchored = world.get(x, y+1, z) === N || world.get(x, y+1, z) === G || world.get(x-1, y, z) === G || world.get(x+1, y, z) === G;\n      if (!anchored && bad < 5) {\n        bad++;\n        console.log(`unanchored glowstone at ${x},${y},${z}: above=${world.get(x,y+1,z)} left=${world.get(x-1,y,z)} right=${world.get(x+1,y,z)} below=${world.get(x,y-1,z)}`);\n      }\n    }\nconsole.log(\"bad:\", bad);\nEOF\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/debug-glow.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ncat > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/debug-glow.ts << 'EOF'\nimport { VoxelWorld } from \"/home/<USER>/workspace/ai/david/monecraft/lib/world/voxelWorld\";\nimport { generateNetherWorld } from \"/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration\";\n\nconst world = new VoxelWorld(128, 150, 128, 1337);\ngenerateNetherWorld(world);\nconst G = 93, N = 92;\nlet bad = 0;\nfor (let y = 1; y < world.sizeY - 1; y += 1)\n  for (let z = 0; z < world.sizeZ; z += 1)\n    for (let x = 0; x < world.sizeX; x += 1) {\n      if (world.get(x, y, z) !== G) continue;\n      const anchored = world.get(x, y+1, z) === N || world.get(x, y+1, z) === G || world.get(x-1, y, z) === G || world.get(x+1, y, z) === G;\n      if (!anchored && bad < 5) {\n        bad++;\n        console.log(`unanchored glowstone at ${x},${y},${z}: above=${world.get(x,y+1,z)} left=${world.get(x-1,y,z)} right=${world.get(x+1,y,z)} below=${world.get(x,y-1,z)}`);\n      }\n    }\nconsole.log(\"bad:\", bad);\nEOF\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/debug-glow.ts",
   "description": "Find unanchored glowstone cells",
   "timeout": 120000
 }
@@ -12083,7 +12083,7 @@ error: expect(received).toBeGreaterThan(expected)
 Expected: > 10
 Received: 0
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.test.ts:75:22)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.test.ts:75:22)
 (fail) nether structural probes > glowstone hangs from netherrack ceilings with open air below [8.50ms]
 ```
 
@@ -12093,7 +12093,7 @@ tool_use Bash
 id: toolu_01EouB6fSJJkx42MaN6QwXZZ
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ncat > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/count-glow.ts << 'EOF'\nimport { VoxelWorld } from \"/Users/hutusi/workspace/ai/david/monecraft/lib/world/voxelWorld\";\nimport { generateNetherWorld } from \"/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration\";\nimport { hash01, hash2D } from \"/Users/hutusi/workspace/ai/david/monecraft/lib/world/noise\";\n\nconst world = new VoxelWorld(128, 150, 128, 1337);\ngenerateNetherWorld(world);\nconst counts = new Map<number, number>();\nfor (const b of world.blocks) counts.set(b, (counts.get(b) ?? 0) + 1);\nconsole.log(\"block counts:\", [...counts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,8));\n// Eligible ceiling cells + hash distribution:\nlet eligible = 0, hits = 0;\nfor (let x = 2; x < 126; x++) for (let z = 2; z < 126; z++)\n  for (let y = 146; y > 36; y--) {\n    if (world.get(x, y, z) !== 0 && world.get(x,y,z) !== 93) continue;\n    if (world.get(x, y + 1, z) !== 92) continue;\n    eligible++;\n    if (hash01(hash2D(x * 31 + y, z * 17 + y), world.seed ^ 0x51ed2701) < 0.045) hits++;\n  }\nconsole.log(\"eligible ceiling cells:\", eligible, \"hash hits:\", hits);\nconsole.log(\"sample hash01:\", hash01(hash2D(50*31+80, 50*17+80), 1337 ^ 0x51ed2701));\nEOF\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/count-glow.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ncat > /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/count-glow.ts << 'EOF'\nimport { VoxelWorld } from \"/home/<USER>/workspace/ai/david/monecraft/lib/world/voxelWorld\";\nimport { generateNetherWorld } from \"/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration\";\nimport { hash01, hash2D } from \"/home/<USER>/workspace/ai/david/monecraft/lib/world/noise\";\n\nconst world = new VoxelWorld(128, 150, 128, 1337);\ngenerateNetherWorld(world);\nconst counts = new Map<number, number>();\nfor (const b of world.blocks) counts.set(b, (counts.get(b) ?? 0) + 1);\nconsole.log(\"block counts:\", [...counts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,8));\n// Eligible ceiling cells + hash distribution:\nlet eligible = 0, hits = 0;\nfor (let x = 2; x < 126; x++) for (let z = 2; z < 126; z++)\n  for (let y = 146; y > 36; y--) {\n    if (world.get(x, y, z) !== 0 && world.get(x,y,z) !== 93) continue;\n    if (world.get(x, y + 1, z) !== 92) continue;\n    eligible++;\n    if (hash01(hash2D(x * 31 + y, z * 17 + y), world.seed ^ 0x51ed2701) < 0.045) hits++;\n  }\nconsole.log(\"eligible ceiling cells:\", eligible, \"hash hits:\", hits);\nconsole.log(\"sample hash01:\", hash01(hash2D(50*31+80, 50*17+80), 1337 ^ 0x51ed2701));\nEOF\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/count-glow.ts",
   "description": "Count block distribution and glowstone eligibility",
   "timeout": 120000
 }
@@ -12117,7 +12117,7 @@ tool_use Read
 id: toolu_017mCTGzgJFcuCaTKzBpU6MJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/noise.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/noise.ts",
   "offset": 45,
   "limit": 35
 }
@@ -12166,7 +12166,7 @@ id: toolu_016ivJ4Ust8p4vLNnJsYqdg5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.ts",
   "old_string": "import { BlockId } from \"./blocks\";\nimport { hash01, hash2D, portableCos, portableSin } from \"./noise\";\nimport type { VoxelWorld } from \"./voxelWorld\";",
   "new_string": "import { BlockId } from \"./blocks\";\nimport { hashU32, portableCos, portableSin } from \"./noise\";\nimport type { VoxelWorld } from \"./voxelWorld\";"
 }
@@ -12177,7 +12177,7 @@ id: toolu_016ivJ4Ust8p4vLNnJsYqdg5
 tool_result
 id: toolu_016ivJ4Ust8p4vLNnJsYqdg5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12187,7 +12187,7 @@ id: toolu_01NyAKsNWJJbjecVSUXK4bpz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.ts",
   "old_string": "/**\n * Hangs glowstone off cavern ceilings: an eligible cell has netherrack above\n * and open air for at least three cells below (so clusters read as hanging\n * lamps, not wall warts). Gated per cell by a seeded position hash — no shared\n * PRNG stream, so cluster placement can never shift the carving bytes.\n */\nfunction placeGlowstoneClusters(world: VoxelWorld): void {\n  for (let x = 2; x < world.sizeX - 2; x += 1) {\n    for (let z = 2; z < world.sizeZ - 2; z += 1) {\n      for (let y = world.sizeY - 4; y > NETHER_GEN.lavaSeaLevel + 4; y -= 1) {\n        if (world.get(x, y, z) !== BlockId.Air) continue;\n        if (world.get(x, y + 1, z) !== BlockId.Netherrack) continue;\n        if (world.get(x, y - 1, z) !== BlockId.Air || world.get(x, y - 2, z) !== BlockId.Air) continue;\n        if (hash01(hash2D(x * 31 + y, z * 17 + y), world.seed ^ 0x51ed2701) >= NETHER_GEN.glowstoneChance) continue;\n        // A small hanging blob: the anchor cell, a drip below, a side bud.\n        world.set(x, y, z, BlockId.Glowstone);\n        const roll = hash01(hash2D(z * 13 + y, x * 7 + y), world.seed ^ 0x2ab7de19);\n […]
 
 > TOOL
@@ -12195,7 +12195,7 @@ id: toolu_01NyAKsNWJJbjecVSUXK4bpz
 tool_result
 id: toolu_01NyAKsNWJJbjecVSUXK4bpz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/netherGeneration.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/netherGeneration.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12204,7 +12204,7 @@ tool_use Bash
 id: toolu_01XTdxTq9S3QfjAoQT7srpCo
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nbun run /private/tmp/claude-501/-Users-hutusi-workspace-ai-david-monecraft/87ffd6d2-0fbf-4ddd-8a68-b6d40a8216b6/scratchpad/nether-baselines.ts",
   "description": "Regenerate nether baselines after the fix",
   "timeout": 180000
 }
@@ -12228,7 +12228,7 @@ id: toolu_01W9gRZMg7CCSGEPZQ81jbWR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/generationBaselines.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/generationBaselines.ts",
   "old_string": "  nether: {\n    /** Full-size 512×150×512, seed 1337 — the real save-compat surface. */\n    full512Seed1337: \"c3072048d4201d456a7e2a55a1b9e19a5880f1560b1f4c713b11510cdb405cc4\",\n    /** 128×150×128 per seed. */\n    small128: {\n      1337: \"47677d6df47f92b3e7ec8ecf836387967fa6aae77a3f36a72cc39de00a82e3e0\",\n      1: \"29ee897a31f1e31b6e44e98f5acc21753f77a925798659631a2dba4b6e6a6e3e\",\n      999999937: \"87f80589a8509d06536446ae562f131b1b75b46d0ca978b23009f5197dd2ad7d\"\n    }\n  }\n} as const;",
   "new_string": "  nether: {\n    /** Full-size 512×150×512, seed 1337 — the real save-compat surface. */\n    full512Seed1337: \"3d5e084e0fae1d071c8728f6a49b72698184bd304c504141ab6302841b4bd8a4\",\n    /** 128×150×128 per seed. */\n    small128: {\n      1337: \"93ecfdda32cc1f6ec517bc7f887b6b8ebba3cb7e93058fbf79f34b5e2b11bd7d\",\n      1: \"87df8fafea2055299a7749484bee80186d05e7b778ad59a9d28db3e3db027e2f\",\n      999999937: \"1fb377479c14951aec785122b8fcaf64460abf783ec1ecb02089725390e24fdc\"\n    }\n  }\n} as const;"
 }
@@ -12239,7 +12239,7 @@ id: toolu_01W9gRZMg7CCSGEPZQ81jbWR
 tool_result
 id: toolu_01W9gRZMg7CCSGEPZQ81jbWR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/world/generationBaselines.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/world/generationBaselines.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12275,7 +12275,7 @@ tool_use Bash
 id: toolu_01J2DRiXFoH3XJ8dkoCv8ZVd
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"highestSolidY\\|topBlock\\|function\\|state.world\" lib/game/render/minimap.ts | head -20",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"highestSolidY\\|topBlock\\|function\\|state.world\" lib/game/render/minimap.ts | head -20",
   "description": "Survey minimap top-block scan"
 }
 ```
@@ -12295,7 +12295,7 @@ tool_use Read
 id: toolu_01K8Z49bbjFBxnrXCPsQgEx6
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts",
   "offset": 60,
   "limit": 70
 }
@@ -12345,7 +12345,7 @@ tool_use Read
 id: toolu_01Aki8QsHhDKYb28Sepn5NHJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts",
   "offset": 30,
   "limit": 32
 }
@@ -12393,7 +12393,7 @@ tool_use Bash
 id: toolu_015XV8h1ZaCVpyvGKo2ujXkq
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -rn \"columnColor\" lib/game/render/minimapColors.ts | head -3; grep -n \"export function columnColor\" -A 20 lib/game/render/minimapColors.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -rn \"columnColor\" lib/game/render/minimapColors.ts | head -3; grep -n \"export function columnColor\" -A 20 lib/game/render/minimapColors.ts",
   "description": "Read columnColor"
 }
 ```
@@ -12424,7 +12424,7 @@ tool_use Bash
 id: toolu_01U8K9JzPVEJsuEHdWdFWddM
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"function topBlockAt\" -B 5 -A 15 lib/game/render/minimapColors.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"function topBlockAt\" -B 5 -A 15 lib/game/render/minimapColors.ts",
   "description": "Read topBlockAt"
 }
 ```
@@ -12468,7 +12468,7 @@ id: toolu_018Lb9kxcRvNdR2oZGWhrENQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
   "old_string": "/** Topmost non-air block of a column (water included, unlike highestSolidY). */\nexport function topBlockAt(world: VoxelWorld, x: number, z: number): { block: BlockId; y: number } {\n  for (let y = world.sizeY - 1; y >= 0; y -= 1) {\n    const block = world.get(x, y, z);\n    if (block !== BlockId.Air) return { block: block as BlockId, y };\n  }\n  return { block: BlockId.Air, y: 0 };\n}",
   "new_string": "/**\n * Topmost non-air block of a column (water included, unlike highestSolidY).\n * In a `roofed` dimension (the nether — bedrock-capped) the scan first skips\n * the ceiling mass, so the map shows the cavern beneath, not a uniform roof;\n * a column solid to the floor reads as its (deep, dark-shaded) last block.\n */\nexport function topBlockAt(world: VoxelWorld, x: number, z: number, roofed = false): { block: BlockId; y: number } {\n  let y = world.sizeY - 1;\n  if (roofed) {\n    while (y > 0 && world.get(x, y, z) !== BlockId.Air) y -= 1;\n  }\n  for (; y >= 0; y -= 1) {\n    const block = world.get(x, y, z);\n    if (block !== BlockId.Air) return { block: block as BlockId, y };\n […]
 
@@ -12487,7 +12487,7 @@ id: toolu_01MuZ48oda8wxNx6BD6hKcpz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
   "old_string": "export function columnColor(world: VoxelWorld, x: number, z: number): [number, number, number] {\n  const { block, y } = topBlockAt(world, x, z);",
   "new_string": "export function columnColor(world: VoxelWorld, x: number, z: number, roofed = false): [number, number, number] {\n  const { block, y } = topBlockAt(world, x, z, roofed);"
 }
@@ -12508,7 +12508,7 @@ id: toolu_012qEUuTt5TzborUdWN7x12Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts",
   "old_string": "        const [r, g, b] = columnColor(world, wx, wz);",
   "new_string": "        const [r, g, b] = columnColor(world, wx, wz, state.dimension === \"nether\");"
 }
@@ -12519,7 +12519,7 @@ id: toolu_012qEUuTt5TzborUdWN7x12Y
 tool_result
 id: toolu_012qEUuTt5TzborUdWN7x12Y
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimap.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimap.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12528,7 +12528,7 @@ tool_use Read
 id: toolu_01WxZKAGTbKJxr3q2c5otm13
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
   "offset": 1,
   "limit": 36
 }
@@ -12573,7 +12573,7 @@ id: toolu_01TqGQqbVeKufG8WeEepv91N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
   "old_string": "/** Topmost non-air block of a column (water included, unlike highestSolidY). */\nexport function topBlockAt(world: VoxelWorld, x: number, z: number): { block: BlockId; y: number } {\n  for (let y = world.sizeY - 1; y >= 0; y -= 1) {\n    const block = world.get(x, y, z);\n    if (block !== BlockId.Air) return { block: block as BlockId, y };\n  }\n  return { block: BlockId.Air, y: 0 };\n}",
   "new_string": "/**\n * Topmost non-air block of a column (water included, unlike highestSolidY).\n * In a `roofed` dimension (the nether — bedrock-capped) the scan first skips\n * the ceiling mass, so the map shows the cavern beneath, not a uniform roof;\n * a column solid to the floor reads as its (deep, dark-shaded) last block.\n */\nexport function topBlockAt(world: VoxelWorld, x: number, z: number, roofed = false): { block: BlockId; y: number } {\n  let y = world.sizeY - 1;\n  if (roofed) {\n    while (y > 0 && world.get(x, y, z) !== BlockId.Air) y -= 1;\n  }\n  for (; y >= 0; y -= 1) {\n    const block = world.get(x, y, z);\n    if (block !== BlockId.Air) return { block: block as BlockId, y };\n […]
 
@@ -12582,7 +12582,7 @@ id: toolu_01TqGQqbVeKufG8WeEepv91N
 tool_result
 id: toolu_01TqGQqbVeKufG8WeEepv91N
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12592,7 +12592,7 @@ id: toolu_01N1rAZ19FTsJs3kH6UkEwYz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts",
   "old_string": "export function columnColor(world: VoxelWorld, x: number, z: number): [number, number, number] {\n  const { block, y } = topBlockAt(world, x, z);",
   "new_string": "export function columnColor(world: VoxelWorld, x: number, z: number, roofed = false): [number, number, number] {\n  const { block, y } = topBlockAt(world, x, z, roofed);"
 }
@@ -12603,7 +12603,7 @@ id: toolu_01N1rAZ19FTsJs3kH6UkEwYz
 tool_result
 id: toolu_01N1rAZ19FTsJs3kH6UkEwYz
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/minimapColors.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12612,7 +12612,7 @@ tool_use Bash
 id: toolu_01WQeCoFet7fTEgECpzYJvHJ
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ncat >> lib/game/render/minimapColors.test.ts << 'EOF'\n\ndescribe(\"roofed (nether) column sampling\", () => {\n  test(\"skips the ceiling mass and reports the cavern floor beneath\", () => {\n    const world = new VoxelWorld(8, 20, 8, 1);\n    // Column: bedrock cap, 3 of netherrack ceiling, open air, netherrack floor.\n    world.set(4, 19, 4, BlockId.Bedrock);\n    for (let y = 16; y <= 18; y += 1) world.set(4, y, 4, BlockId.Netherrack);\n    world.set(4, 6, 4, BlockId.Netherrack);\n    expect(topBlockAt(world, 4, 4, true)).toEqual({ block: BlockId.Netherrack, y: 6 });\n    // The unroofed scan would have reported the bedrock cap.\n    expect(topBlockAt(world, 4, 4)).toEqual({ block: BlockId.Bedrock, y: 19 });\n  });\n});\nEOF\ngrep -n \"^import\" lib/game/render/minimapColors.test.ts | head -3\nbun test lib/game/render/minimapColors.test.ts 2>&1 | tail -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ncat >> lib/game/render/minimapColors.test.ts << 'EOF'\n\ndescribe(\"roofed (nether) column sampling\", () => {\n  test(\"skips the ceiling mass and reports the cavern floor beneath\", () => {\n    const world = new VoxelWorld(8, 20, 8, 1);\n    // Column: bedrock cap, 3 of netherrack ceiling, open air, netherrack floor.\n    world.set(4, 19, 4, BlockId.Bedrock);\n    for (let y = 16; y <= 18; y += 1) world.set(4, y, 4, BlockId.Netherrack);\n    world.set(4, 6, 4, BlockId.Netherrack);\n    expect(topBlockAt(world, 4, 4, true)).toEqual({ block: BlockId.Netherrack, y: 6 });\n    // The unroofed scan would have reported the bedrock cap.\n    expect(topBlockAt(world, 4, 4)).toEqual({ block: BlockId.Bedrock, y: 19 });\n  });\n});\nEOF\ngrep -n \"^import\" lib/game/render/minimapColors.test.ts | head -3\nbun test lib/game/render/minimapColors.test.ts 2>&1 | tail -4",
   "description": "Add roofed minimap test and run"
 }
 ```
@@ -12726,7 +12726,7 @@ tool_use Bash
 id: toolu_01Q69aa6Un5YYyyPcauajkiZ
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"diamond_sword\\|diamond_spear\\|dragon_sword\" lib/game/items.ts | head -5; grep -n \"id: \\\"diamond_pickaxe\\\"\\|id: \\\"diamond_sword\\\"\\|id: \\\"diamond_spear\\\"\" -A 1 lib/game/items.ts | head -8; grep -n \"diamond_pickaxe\\|diamond_sword\\|diamond_spear\" lib/game/recipes.ts | head -6",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"diamond_sword\\|diamond_spear\\|dragon_sword\" lib/game/items.ts | head -5; grep -n \"id: \\\"diamond_pickaxe\\\"\\|id: \\\"diamond_sword\\\"\\|id: \\\"diamond_spear\\\"\" -A 1 lib/game/items.ts | head -8; grep -n \"diamond_pickaxe\\|diamond_sword\\|diamond_spear\" lib/game/recipes.ts | head -6",
   "description": "Find diamond tier stats and recipes"
 }
 ```
@@ -12763,7 +12763,7 @@ tool_use Bash
 id: toolu_01Jk3nF7shMLBgPLtffkY8Gn
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n 330,345p lib/game/items.ts; sed -n 452,462p lib/game/recipes.ts; sed -n 585,597p lib/game/recipes.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n 330,345p lib/game/items.ts; sed -n 452,462p lib/game/recipes.ts; sed -n 585,597p lib/game/recipes.ts",
   "description": "See diamond spear stats and recipe shapes"
 }
 ```
@@ -12822,7 +12822,7 @@ id: toolu_01FQt1Vg6r31vttBeHY5rASr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"diamond_pickaxe\", label: \"Diamond Pickaxe\", kind: \"tool\", minePower: 4.4, mineTier: 7, maxDurability: 700 },",
   "new_string": "  { id: \"diamond_pickaxe\", label: \"Diamond Pickaxe\", kind: \"tool\", minePower: 4.4, mineTier: 7, maxDurability: 700 },\n  // The post-diamond tier, forged from smelted nether blazite (tier 8 — above\n  // every gate in the game, so it also chews obsidian and blazite ore).\n  { id: \"blazite_pickaxe\", label: \"Blazite Pickaxe\", kind: \"tool\", minePower: 5.0, mineTier: 8, maxDurability: 900 },"
 }
@@ -12833,7 +12833,7 @@ id: toolu_01FQt1Vg6r31vttBeHY5rASr
 tool_result
 id: toolu_01FQt1Vg6r31vttBeHY5rASr
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12843,7 +12843,7 @@ id: toolu_01ELkdfUgsQTU7yDBZ171VqS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"diamond_sword\", label: \"Diamond Sword\", kind: \"weapon\", attack: 47, maxDurability: 720 },",
   "new_string": "  { id: \"diamond_sword\", label: \"Diamond Sword\", kind: \"weapon\", attack: 47, maxDurability: 720 },\n  // Post-diamond, still under the boss-trophy Dragon Sword (60/1200).\n  { id: \"blazite_sword\", label: \"Blazite Sword\", kind: \"weapon\", attack: 53, maxDurability: 950 },"
 }
@@ -12854,7 +12854,7 @@ id: toolu_01ELkdfUgsQTU7yDBZ171VqS
 tool_result
 id: toolu_01ELkdfUgsQTU7yDBZ171VqS
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12864,7 +12864,7 @@ id: toolu_01NA6FMw7HM3jsKZbH5s7Fmm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  // Bow fires arrows; it never melees (attack 0), so the attack input branches\n  // to firing when a bow is held. Arrows are the consumable ammo.",
   "new_string": "  {\n    id: \"blazite_spear\",\n    label: \"Blazite Spear\",\n    kind: \"weapon\",\n    attack: 50,\n    meleeReach: SPEAR_MELEE_REACH,\n    throwDamage: 62,\n    maxDurability: 880\n  },\n  // Bow fires arrows; it never melees (attack 0), so the attack input branches\n  // to firing when a bow is held. Arrows are the consumable ammo."
 }
@@ -12875,7 +12875,7 @@ id: toolu_01NA6FMw7HM3jsKZbH5s7Fmm
 tool_result
 id: toolu_01NA6FMw7HM3jsKZbH5s7Fmm
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12885,7 +12885,7 @@ id: toolu_01LpJxLaQ29KNo4iobDCJwL5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  { id: \"glowstone_dust\", label: \"Glowstone Dust\", kind: \"material\" },\n  { id: \"blazite_ore\", label: \"Blazite Ore\", kind: \"material\" },",
   "new_string": "  { id: \"glowstone_dust\", label: \"Glowstone Dust\", kind: \"material\" },\n  { id: \"blazite_ore\", label: \"Blazite Ore\", kind: \"material\" },\n  { id: \"blazite_ingot\", label: \"Blazite Ingot\", kind: \"material\" },"
 }
@@ -12896,7 +12896,7 @@ id: toolu_01LpJxLaQ29KNo4iobDCJwL5
 tool_result
 id: toolu_01LpJxLaQ29KNo4iobDCJwL5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12906,7 +12906,7 @@ id: toolu_01V5NiV1Pv68tHTssZKAdpwQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts",
   "old_string": "  diamond_pickaxe: \"diamond_ore\",\n  diamond_sword: \"diamond_ore\",\n  diamond_spear: \"diamond_ore\",\n  dragon_sword: \"diamond_ore\",",
   "new_string": "  diamond_pickaxe: \"diamond_ore\",\n  diamond_sword: \"diamond_ore\",\n  diamond_spear: \"diamond_ore\",\n  blazite_pickaxe: \"blazite_ingot\",\n  blazite_sword: \"blazite_ingot\",\n  blazite_spear: \"blazite_ingot\",\n  dragon_sword: \"diamond_ore\","
 }
@@ -12917,7 +12917,7 @@ id: toolu_01V5NiV1Pv68tHTssZKAdpwQ
 tool_result
 id: toolu_01V5NiV1Pv68tHTssZKAdpwQ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/items.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12930,7 +12930,7 @@ tool_use Bash
 id: toolu_01VobqEg1ShEQ7ePDbDkPVAR
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"id: \\\"charcoal\\\"\\|station: \\\"furnace\\\"\" lib/game/recipes.ts | head -4; sed -n \"$(grep -n 'id: \\\"charcoal\\\"' lib/game/recipes.ts | head -1 | cut -d: -f1),+10p\" lib/game/recipes.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"id: \\\"charcoal\\\"\\|station: \\\"furnace\\\"\" lib/game/recipes.ts | head -4; sed -n \"$(grep -n 'id: \\\"charcoal\\\"' lib/game/recipes.ts | head -1 | cut -d: -f1),+10p\" lib/game/recipes.ts",
   "description": "See furnace recipe shape"
 }
 ```
@@ -12964,7 +12964,7 @@ id: toolu_01Xz8uVTwFZnL8XwpQHjYR8K
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "old_string": "  { id: \"charcoal\", label: \"1 Wood -> 1 Charcoal\", cost: [{ slotId: \"wood\", count: 1 }], result: { slotId: \"charcoal\", count: 1 }, station: \"furnace\" },",
   "new_string": "  { id: \"charcoal\", label: \"1 Wood -> 1 Charcoal\", cost: [{ slotId: \"wood\", count: 1 }], result: { slotId: \"charcoal\", count: 1 }, station: \"furnace\" },\n  // Raw nether blazite smelts into the ingot the post-diamond gear is forged\n  // from (fuel is an ingredient, so the usual coal/charcoal variant pair).\n  {\n    id: \"smelt_blazite\",\n    label: \"2 Blazite Ore + Coal -> Blazite Ingot\",\n    cost: [\n      { slotId: \"blazite_ore\", count: 2 },\n      { slotId: \"coal\", count: 1 }\n    ],\n    result: { slotId: \"blazite_ingot\", count: 1 },\n    station: \"furnace\"\n  },\n  {\n    id: \"smelt_blazite_charcoal\",\n    label: \"2 Blazite Ore + Charcoal -> Blazite Ingot\",\n    cost: [\n      { slotId: \"blazite_ore\", count: 2 },\n      { slotId: \"charcoal\", count: 1 }\n    ],\n    result: { slotId: \"blazite_ingot\", count: 1 },\n    station: \"furnace\"\n  },"
 }
@@ -12975,7 +12975,7 @@ id: toolu_01Xz8uVTwFZnL8XwpQHjYR8K
 tool_result
 id: toolu_01Xz8uVTwFZnL8XwpQHjYR8K
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12985,7 +12985,7 @@ id: toolu_01CjB53rtB4riesB6htnRNoA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "old_string": "  {\n    id: \"diamond_pickaxe\",\n    label: \"2 Diamond Ore + 1 Wood -> Diamond Pickaxe\",\n    cost: [\n      { slotId: \"diamond_ore\", count: 2 },\n      { slotId: \"wood\", count: 1 }\n    ],\n    result: { slotId: \"diamond_pickaxe\", count: 1 }\n  },",
   "new_string": "  {\n    id: \"diamond_pickaxe\",\n    label: \"2 Diamond Ore + 1 Wood -> Diamond Pickaxe\",\n    cost: [\n      { slotId: \"diamond_ore\", count: 2 },\n      { slotId: \"wood\", count: 1 }\n    ],\n    result: { slotId: \"diamond_pickaxe\", count: 1 }\n  },\n  {\n    id: \"blazite_pickaxe\",\n    label: \"2 Blazite Ingot + 1 Wood -> Blazite Pickaxe\",\n    cost: [\n      { slotId: \"blazite_ingot\", count: 2 },\n      { slotId: \"wood\", count: 1 }\n    ],\n    result: { slotId: \"blazite_pickaxe\", count: 1 }\n  },"
 }
@@ -12996,7 +12996,7 @@ id: toolu_01CjB53rtB4riesB6htnRNoA
 tool_result
 id: toolu_01CjB53rtB4riesB6htnRNoA
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13006,7 +13006,7 @@ id: toolu_01GCfHVoTxXaLZUF1oKBpUgf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "old_string": "  {\n    id: \"diamond_spear\",\n    label: \"1 Diamond Ore + 2 Wood -> Diamond Spear\",\n    cost: [\n      { slotId: \"diamond_ore\", count: 1 },\n      { slotId: \"wood\", count: 2 }\n    ],\n    result: { slotId: \"diamond_spear\", count: 1 }\n  },",
   "new_string": "  {\n    id: \"diamond_spear\",\n    label: \"1 Diamond Ore + 2 Wood -> Diamond Spear\",\n    cost: [\n      { slotId: \"diamond_ore\", count: 1 },\n      { slotId: \"wood\", count: 2 }\n    ],\n    result: { slotId: \"diamond_spear\", count: 1 }\n  },\n  {\n    id: \"blazite_spear\",\n    label: \"1 Blazite Ingot + 2 Wood -> Blazite Spear\",\n    cost: [\n      { slotId: \"blazite_ingot\", count: 1 },\n      { slotId: \"wood\", count: 2 }\n    ],\n    result: { slotId: \"blazite_spear\", count: 1 }\n  },"
 }
@@ -13017,7 +13017,7 @@ id: toolu_01GCfHVoTxXaLZUF1oKBpUgf
 tool_result
 id: toolu_01GCfHVoTxXaLZUF1oKBpUgf
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13026,7 +13026,7 @@ tool_use Bash
 id: toolu_01JkMcj3VQwf14EkNNhqj14M
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n \"$(grep -n 'id: \\\"diamond_sword\\\"' lib/game/recipes.ts | head -1 | cut -d: -f1),+8p\" lib/game/recipes.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n \"$(grep -n 'id: \\\"diamond_sword\\\"' lib/game/recipes.ts | head -1 | cut -d: -f1),+8p\" lib/game/recipes.ts",
   "description": "See diamond sword recipe"
 }
 ```
@@ -13054,7 +13054,7 @@ id: toolu_017gC3mAW3EdenxBfiZTu5bQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts",
   "old_string": "    id: \"diamond_sword\",\n    label: \"2 Diamond Ore + 1 Wood -> Diamond Sword\",\n    cost: [\n      { slotId: \"diamond_ore\", count: 2 },\n      { slotId: \"wood\", count: 1 }\n    ],\n    result: { slotId: \"diamond_sword\", count: 1 }\n  },",
   "new_string": "    id: \"diamond_sword\",\n    label: \"2 Diamond Ore + 1 Wood -> Diamond Sword\",\n    cost: [\n      { slotId: \"diamond_ore\", count: 2 },\n      { slotId: \"wood\", count: 1 }\n    ],\n    result: { slotId: \"diamond_sword\", count: 1 }\n  },\n  {\n    id: \"blazite_sword\",\n    label: \"2 Blazite Ingot + 1 Wood -> Blazite Sword\",\n    cost: [\n      { slotId: \"blazite_ingot\", count: 2 },\n      { slotId: \"wood\", count: 1 }\n    ],\n    result: { slotId: \"blazite_sword\", count: 1 }\n  },"
 }
@@ -13065,7 +13065,7 @@ id: toolu_017gC3mAW3EdenxBfiZTu5bQ
 tool_result
 id: toolu_017gC3mAW3EdenxBfiZTu5bQ
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/recipes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13075,7 +13075,7 @@ id: toolu_01UWWsLyqMB4LAfuSzToc3AW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "  // Endgame Dragon gear: a smouldering violet/magenta ramp, unlike any tier.\n  dragon: { m: [168, 58, 196], M: [104, 30, 128], l: [226, 138, 244] }\n};",
   "new_string": "  // Endgame Dragon gear: a smouldering violet/magenta ramp, unlike any tier.\n  dragon: { m: [168, 58, 196], M: [104, 30, 128], l: [226, 138, 244] },\n  // The post-diamond nether tier: ember orange over charcoal.\n  blazite: { m: [232, 116, 40], M: [130, 52, 22], l: [255, 190, 110] }\n};"
 }
@@ -13086,7 +13086,7 @@ id: toolu_01UWWsLyqMB4LAfuSzToc3AW
 tool_result
 id: toolu_01UWWsLyqMB4LAfuSzToc3AW
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13096,7 +13096,7 @@ id: toolu_01SvLaJjouKBkyvMbV8gX2DY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "const GLOWSTONE_DUST_PALETTE: PixelPalette = { c: [244, 205, 92], C: [190, 140, 40], h: [255, 244, 190] };\nconst BLAZITE_ORE_PALETTE: PixelPalette = { c: [235, 120, 40], C: [140, 55, 25], h: [255, 200, 110] };",
   "new_string": "const GLOWSTONE_DUST_PALETTE: PixelPalette = { c: [244, 205, 92], C: [190, 140, 40], h: [255, 244, 190] };\nconst BLAZITE_ORE_PALETTE: PixelPalette = { c: [235, 120, 40], C: [140, 55, 25], h: [255, 200, 110] };\n\n// A cast metal bar in the blazite ramp: top face light, front face main, dark edge.\nconst INGOT_GRID = [\n  \"................\",\n  \"................\",\n  \"................\",\n  \"................\",\n  \"......llll......\",\n  \"....llmmmmll....\",\n  \"..llmmmmmmmmll..\",\n  \".cmmmmmmmmmmmmc.\",\n  \".cmmmmmmmmmmmmc.\",\n  \".ccmmmmmmmmmmcc.\",\n  \"..ccmmmmmmmmcc..\",\n  \"....ccmmmmcc....\",\n  \"......cccc......\",\n  \"................\",\n  \"................\",\n  \"................\"\n];\nconst BLAZITE_INGOT_PALETTE: PixelPalette = { m: [232, 116, 40], c: [130, 52, 22], l: [255, 190, 110] };"
 }
@@ -13107,7 +13107,7 @@ id: toolu_01SvLaJjouKBkyvMbV8gX2DY
 tool_result
 id: toolu_01SvLaJjouKBkyvMbV8gX2DY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13117,7 +13117,7 @@ id: toolu_01KJPoRUTvbXcqx2qzKkHm48
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "old_string": "  glowstone_dust: { grid: COAL_GRID, palette: GLOWSTONE_DUST_PALETTE },\n  blazite_ore: { grid: COAL_GRID, palette: BLAZITE_ORE_PALETTE },",
   "new_string": "  glowstone_dust: { grid: COAL_GRID, palette: GLOWSTONE_DUST_PALETTE },\n  blazite_ore: { grid: COAL_GRID, palette: BLAZITE_ORE_PALETTE },\n  blazite_ingot: { grid: INGOT_GRID, palette: BLAZITE_INGOT_PALETTE },"
 }
@@ -13128,7 +13128,7 @@ id: toolu_01KJPoRUTvbXcqx2qzKkHm48
 tool_result
 id: toolu_01KJPoRUTvbXcqx2qzKkHm48
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13137,7 +13137,7 @@ tool_use Bash
 id: toolu_01J6y5hkEyEbuuJvfuJ2YnKG
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ncat >> lib/game/items.test.ts << 'EOF'\n\ndescribe(\"blazite tier\", () => {\n  test(\"tier 8 sits strictly above diamond on every axis and clears every mining gate\", () => {\n    const diamond = ITEM_DEF_BY_ID.diamond_pickaxe;\n    const blazite = ITEM_DEF_BY_ID.blazite_pickaxe;\n    expect(blazite.mineTier!).toBeGreaterThan(diamond.mineTier!);\n    expect(blazite.minePower!).toBeGreaterThan(diamond.minePower!);\n    expect(blazite.maxDurability!).toBeGreaterThan(diamond.maxDurability!);\n    // The sword stays under the boss-trophy Dragon Sword.\n    expect(ITEM_DEF_BY_ID.blazite_sword.attack!).toBeGreaterThan(ITEM_DEF_BY_ID.diamond_sword.attack!);\n    expect(ITEM_DEF_BY_ID.blazite_sword.attack!).toBeLessThan(ITEM_DEF_BY_ID.dragon_sword.attack!);\n  });\n});\nEOF\ngrep -n \"ITEM_DEF_BY_ID\" lib/game/items.test.ts | head -2",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ncat >> lib/game/items.test.ts << 'EOF'\n\ndescribe(\"blazite tier\", () => {\n  test(\"tier 8 sits strictly above diamond on every axis and clears every mining gate\", () => {\n    const diamond = ITEM_DEF_BY_ID.diamond_pickaxe;\n    const blazite = ITEM_DEF_BY_ID.blazite_pickaxe;\n    expect(blazite.mineTier!).toBeGreaterThan(diamond.mineTier!);\n    expect(blazite.minePower!).toBeGreaterThan(diamond.minePower!);\n    expect(blazite.maxDurability!).toBeGreaterThan(diamond.maxDurability!);\n    // The sword stays under the boss-trophy Dragon Sword.\n    expect(ITEM_DEF_BY_ID.blazite_sword.attack!).toBeGreaterThan(ITEM_DEF_BY_ID.diamond_sword.attack!);\n    expect(ITEM_DEF_BY_ID.blazite_sword.attack!).toBeLessThan(ITEM_DEF_BY_ID.dragon_sword.attack!);\n  });\n});\nEOF\ngrep -n \"ITEM_DEF_BY_ID\" lib/game/items.test.ts | head -2",
   "description": "Add tier ordering test"
 }
 ```
@@ -13157,7 +13157,7 @@ tool_use Bash
 id: toolu_01EyheiB68khqeeuSzyJEErd
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -i -pe 's/import \\{ maxStackSizeForItem, rollBlockDrops \\} from \"\\@\\/lib\\/game\\/items\";/import { ITEM_DEF_BY_ID, maxStackSizeForItem, rollBlockDrops } from \"\\@\\/lib\\/game\\/items\";/' lib/game/items.test.ts\nbun test lib/game/items.test.ts lib/game/recipes.test.ts lib/game/config.test.ts lib/ui lib/game/itemSources.test.ts 2>&1 | tail -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -i -pe 's/import \\{ maxStackSizeForItem, rollBlockDrops \\} from \"\\@\\/lib\\/game\\/items\";/import { ITEM_DEF_BY_ID, maxStackSizeForItem, rollBlockDrops } from \"\\@\\/lib\\/game\\/items\";/' lib/game/items.test.ts\nbun test lib/game/items.test.ts lib/game/recipes.test.ts lib/game/config.test.ts lib/ui lib/game/itemSources.test.ts 2>&1 | tail -4",
   "description": "Fix import, run item/recipe tests"
 }
 ```
@@ -13198,7 +13198,7 @@ error: expect(received).toHaveLength(expected)
 Expected length: 7
 Received length: 8
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.test.ts:34:20)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/config.test.ts:34:20)
 (fail) item definitions > every spear has long melee reach and throw damage [0.19ms]
 ```
 
@@ -13208,7 +13208,7 @@ tool_use Bash
 id: toolu_01BuULyXqzbBcSuP8Fs5s5nA
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -i -pe 's/    expect\\(spears\\)\\.toHaveLength\\(7\\);/    expect(spears).toHaveLength(8); \\/\\/ seven ore tiers plus blazite/' lib/game/config.test.ts\nbun test lib/game/config.test.ts 2>&1 | tail -3",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -i -pe 's/    expect\\(spears\\)\\.toHaveLength\\(7\\);/    expect(spears).toHaveLength(8); \\/\\/ seven ore tiers plus blazite/' lib/game/config.test.ts\nbun test lib/game/config.test.ts 2>&1 | tail -3",
   "description": "Bump spear-count assert to 8"
 }
 ```
@@ -13299,7 +13299,7 @@ tool_use Read
 id: toolu_01HLqPVVhM1b2bXwAa2z62v2
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "offset": 1,
   "limit": 120
 }
@@ -13359,7 +13359,7 @@ tool_use Read
 id: toolu_01PfRJ7fzaXaWrF29xQopxJx
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "offset": 120,
   "limit": 130
 }
@@ -13414,7 +13414,7 @@ tool_use Bash
 id: toolu_016jpLktnEdx2awKYGuEWTRA
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"spawnArrow\" lib/game/engine/projectiles.ts lib/game/engine/systems/mobAI.ts lib/game/engine/systems/combat.ts | head; grep -n \"export function spawnArrow\" -A 25 lib/game/engine/projectiles.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"spawnArrow\" lib/game/engine/projectiles.ts lib/game/engine/systems/mobAI.ts lib/game/engine/systems/combat.ts | head; grep -n \"export function spawnArrow\" -A 25 lib/game/engine/projectiles.ts",
   "description": "Read spawnArrow and its callers"
 }
 ```
@@ -13461,7 +13461,7 @@ tool_use Read
 id: toolu_01T49jt6m6Ek5bnBUBn3WKw3
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
   "offset": 150,
   "limit": 78
 }
@@ -13508,7 +13508,7 @@ tool_use Bash
 id: toolu_01PDTWqYpNxnp12UqdH7TVpd
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"HOSTILE_MOB_HP =\" lib/game/config.ts\ngrep -n \"fireMobArrow\\|SKELETON_ARROW\" lib/game/engine/systems/mobAI.ts | head -6\ngrep -n \"MOB_DROPS\" -A 30 lib/game/mobLoot.ts | sed -n 1,12p\ngrep -n \"MOB_XP\" -A 22 lib/game/mobXp.ts | sed -n 1,8p\ngrep -n \"CALL_INTERVALS\" -A 22 lib/game/mobAmbience.ts | sed -n 1,8p\ngrep -n \"MOB_AMBIENT_SOUNDS\\|MOB_ATTACK_SOUNDS\" lib/game/audio/soundParams.ts | head -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"HOSTILE_MOB_HP =\" lib/game/config.ts\ngrep -n \"fireMobArrow\\|SKELETON_ARROW\" lib/game/engine/systems/mobAI.ts | head -6\ngrep -n \"MOB_DROPS\" -A 30 lib/game/mobLoot.ts | sed -n 1,12p\ngrep -n \"MOB_XP\" -A 22 lib/game/mobXp.ts | sed -n 1,8p\ngrep -n \"CALL_INTERVALS\" -A 22 lib/game/mobAmbience.ts | sed -n 1,8p\ngrep -n \"MOB_AMBIENT_SOUNDS\\|MOB_ATTACK_SOUNDS\" lib/game/audio/soundParams.ts | head -4",
   "description": "Survey the remaining exhaustive tables"
 }
 ```
@@ -13554,7 +13554,7 @@ tool_use Bash
 id: toolu_011V7SJh9xxoUkLsQzystco1
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -rn \"CALL_INTERVALS\" lib/game --include=\"*.ts\" -l | head -2; sed -n 490,510p lib/game/engine/systems/mobAI.ts; grep -n \"zombie:\" lib/game/audio/soundParams.ts | head -3",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -rn \"CALL_INTERVALS\" lib/game --include=\"*.ts\" -l | head -2; sed -n 490,510p lib/game/engine/systems/mobAI.ts; grep -n \"zombie:\" lib/game/audio/soundParams.ts | head -3",
   "description": "Find CALL_INTERVALS file and ranged branch"
 }
 ```
@@ -13596,7 +13596,7 @@ tool_use Bash
 id: toolu_01CZcsejDb4Vm6YrtWi2GZRL
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"SKELETON_ARROW_SPEED\\|SKELETON_ARROW_DAMAGE\" lib/game/config.ts; sed -n 1,40p lib/game/render/projectileVisuals.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"SKELETON_ARROW_SPEED\\|SKELETON_ARROW_DAMAGE\" lib/game/config.ts; sed -n 1,40p lib/game/render/projectileVisuals.ts",
   "description": "Check arrow constants and projectile visuals"
 }
 ```
@@ -13650,7 +13650,7 @@ tool_use Read
 id: toolu_01HjGVkYCKySMLj6ECfkBXW9
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts",
   "offset": 40,
   "limit": 40
 }
@@ -13698,7 +13698,7 @@ tool_use Bash
 id: toolu_01TvgoT54hDTq4RMSbbYXkrj
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"\\\"drowned\\\"\" lib/game/types.ts | head -2; sed -n \"$(grep -n 'export type MobKind' lib/game/types.ts | cut -d: -f1),+20p\" lib/game/types.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"\\\"drowned\\\"\" lib/game/types.ts | head -2; sed -n \"$(grep -n 'export type MobKind' lib/game/types.ts | cut -d: -f1),+20p\" lib/game/types.ts",
   "description": "See MobKind union"
 }
 ```
@@ -13739,7 +13739,7 @@ id: toolu_01726xi51xmkmiSdsfKc2qKv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts",
   "old_string": "  | \"raider\"\n  | \"villager\"\n  | \"boss\";",
   "new_string": "  | \"raider\"\n  | \"villager\"\n  | \"boss\"\n  | \"imp\"\n  | \"scorcher\";"
 }
@@ -13750,7 +13750,7 @@ id: toolu_01726xi51xmkmiSdsfKc2qKv
 tool_result
 id: toolu_01726xi51xmkmiSdsfKc2qKv
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/types.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/types.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13760,7 +13760,7 @@ id: toolu_0179voeiGYE6LUQdyJizDpk9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "  /** Fires arrows and kites instead of meleeing (skeletons, boss). */\n  ranged?: boolean;\n  /** Lives in water: swims in 3D via the aquatic branch in mobAI, suffocates on land. */\n  aquatic?: boolean;\n  modelArgs: Parameters<typeof createMobModel>;\n};",
   "new_string": "  /** Fires arrows and kites instead of meleeing (skeletons, boss). */\n  ranged?: boolean;\n  /** What a ranged kind shoots; absent = an ordinary arrow (the scorcher's fireball). */\n  projectileKind?: \"fireball\";\n  /** Lives in water: swims in 3D via the aquatic branch in mobAI, suffocates on land. */\n  aquatic?: boolean;\n  modelArgs: Parameters<typeof createMobModel>;\n};"
 }
@@ -13771,7 +13771,7 @@ id: toolu_0179voeiGYE6LUQdyJizDpk9
 tool_result
 id: toolu_0179voeiGYE6LUQdyJizDpk9
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13781,7 +13781,7 @@ id: toolu_01FQ9Rj3ueYeCrHVwdf6bykq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "  boss: {\n    speed: 1.1,\n    hp: BOSS_HP,\n    detectRange: 28,\n    attackDamage: 10,\n    attackCooldown: 1.5,\n    ranged: true,\n    // A towering dark figure with red eyes — body height drives a tall hitbox.\n    modelArgs: [0x3a1f4d, 0x2a1638, 0x1f1029, 0xff2a2a, 0x6a2fa0, [1.7, 2.6, 1.2], [1.0, 0.95, 0.95]]\n  }\n};",
   "new_string": "  boss: {\n    speed: 1.1,\n    hp: BOSS_HP,\n    detectRange: 28,\n    attackDamage: 10,\n    attackCooldown: 1.5,\n    ranged: true,\n    // A towering dark figure with red eyes — body height drives a tall hitbox.\n    modelArgs: [0x3a1f4d, 0x2a1638, 0x1f1029, 0xff2a2a, 0x6a2fa0, [1.7, 2.6, 1.2], [1.0, 0.95, 0.95]]\n  },\n  imp: {\n    // The nether's melee brute: faster and harder-hitting than a zombie, and\n    // half again as tough — the price of mining next to perpetual spawns.\n    speed: 1.25,\n    hp: 150,\n    detectRange: 12,\n    attackDamage: 5,\n    attackCooldown: 1.1,\n    // A stocky crimson figure with ember eyes and charcoal legs.\n    modelArgs: [0x8a3428, 0x9c4030, 0x3a201a, 0xffb03a, 0x571f18, [0.85, 1.05, 0.6], [0.55, 0.5, 0.55]]\n  },\n  scorcher: {\n    // The nether's ranged threat: hovers (a legless \"fish\" silhouette floated\n    // above the ground — see mobHalfHeight) and lobs fireballs, kiting like a\n    // skeleton on the ordinary land-AI path (NOT aquatic).\n    speed: 1.0,\n    hp: HOSTILE_MOB_HP,\n    detectRange: […]
 
@@ -13790,7 +13790,7 @@ id: toolu_01FQ9Rj3ueYeCrHVwdf6bykq
 tool_result
 id: toolu_01FQ9Rj3ueYeCrHVwdf6bykq
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13800,7 +13800,7 @@ id: toolu_018yaHt6Q3cv7LyHoL4vDJTK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "export const HOSTILE_MOB_KINDS: ReadonlySet<MobKind> = new Set<MobKind>([\"zombie\", \"skeleton\", \"spider\", \"creeper\", \"raider\", \"boss\", \"drowned\"]);",
   "new_string": "export const HOSTILE_MOB_KINDS: ReadonlySet<MobKind> = new Set<MobKind>([\"zombie\", \"skeleton\", \"spider\", \"creeper\", \"raider\", \"boss\", \"drowned\", \"imp\", \"scorcher\"]);"
 }
@@ -13811,7 +13811,7 @@ id: toolu_018yaHt6Q3cv7LyHoL4vDJTK
 tool_result
 id: toolu_018yaHt6Q3cv7LyHoL4vDJTK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13821,7 +13821,7 @@ id: toolu_01T2WdpWairbZgAZHA1D67g6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "  raider: \"raider\",\n  boss: \"hostile\"\n};",
   "new_string": "  raider: \"raider\",\n  boss: \"hostile\",\n  imp: \"hostile\",\n  scorcher: \"hostile\"\n};"
 }
@@ -13832,7 +13832,7 @@ id: toolu_01T2WdpWairbZgAZHA1D67g6
 tool_result
 id: toolu_01T2WdpWairbZgAZHA1D67g6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13842,7 +13842,7 @@ id: toolu_01WhYoHKstqctnKXPTLAi47y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts",
   "old_string": "export function mobHalfHeight(kind: MobKind): number {\n  const bodyHeight = MOB_TEMPLATES[kind].modelArgs[5][1];\n  // Fish have no legs — their model is centered on the body (createFishModel).\n  if (MOB_TEMPLATES[kind].aquatic) return bodyHeight * 0.5 + 0.05;\n  const legHeight = Math.max(0.3, bodyHeight * 0.56);\n  return Math.max(bodyHeight, legHeight) * 0.5 + 0.2;\n}",
   "new_string": "export function mobHalfHeight(kind: MobKind): number {\n  const template = MOB_TEMPLATES[kind];\n  const bodyHeight = template.modelArgs[5][1];\n  // The scorcher's legless body floats well off the ground — a hoverer, not a\n  // walker — so its ground clamp holds it airborne.\n  if (kind === \"scorcher\") return bodyHeight * 0.5 + 0.6;\n  // Legless \"fish\"-variant models are centered on the body (createFishModel).\n  if (template.modelArgs[7] === \"fish\") return bodyHeight * 0.5 + 0.05;\n  const legHeight = Math.max(0.3, bodyHeight * 0.56);\n  return Math.max(bodyHeight, legHeight) * 0.5 + 0.2;\n}"
 }
@@ -13853,7 +13853,7 @@ id: toolu_01WhYoHKstqctnKXPTLAi47y
 tool_result
 id: toolu_01WhYoHKstqctnKXPTLAi47y
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/mobs.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -13866,7 +13866,7 @@ tool_use Bash
 id: toolu_01RwCzttF79xDTS6JRHxB2UD
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"SpawnArrowOptions\" -A 10 lib/game/engine/projectiles.ts | head -14; grep -n \"kind?: \\\"arrow\\\"\\|ttl: number;\" lib/game/engine/state.ts | head -3; grep -n \"ttl: number\" -B 2 lib/game/engine/state.ts | head -8",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"SpawnArrowOptions\" -A 10 lib/game/engine/projectiles.ts | head -14; grep -n \"kind?: \\\"arrow\\\"\\|ttl: number;\" lib/game/engine/state.ts | head -3; grep -n \"ttl: number\" -B 2 lib/game/engine/state.ts | head -8",
   "description": "See SpawnArrowOptions and ProjectileState tail"
 }
 ```
@@ -13903,7 +13903,7 @@ id: toolu_01RoFDqi2MPgYKxpFXEs3Ayx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts",
   "old_string": "  owner?: PlayerId;\n  /** Seconds remaining before the arrow despawns mid-air. */\n  ttl: number;",
   "new_string": "  owner?: PlayerId;\n  /** Seconds remaining before the arrow despawns mid-air. */\n  ttl: number;\n  /**\n   * Visual/audio family; absent = an ordinary arrow. The scorcher's fireball\n   * flies and hits exactly like an arrow — only its look differs. SP-only\n   * today (nether mobs never exist in an online world), so it never crosses\n   * the wire.\n   */\n  kind?: \"arrow\" | \"fireball\";"
 }
@@ -13914,7 +13914,7 @@ id: toolu_01RoFDqi2MPgYKxpFXEs3Ayx
 tool_result
 id: toolu_01RoFDqi2MPgYKxpFXEs3Ayx
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/state.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13924,7 +13924,7 @@ id: toolu_01JCgiEyuVzXs7ZSDQsPqkkp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/projectiles.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/projectiles.ts",
   "old_string": "export type SpawnArrowOptions = {\n  speed: number;\n  damage: number;\n  knockback: number;\n  fromPlayer: boolean;\n  ttl: number;\n  /** The firing player (for kill credit); omit for mob arrows. */\n  owner?: PlayerId;\n};",
   "new_string": "export type SpawnArrowOptions = {\n  speed: number;\n  damage: number;\n  knockback: number;\n  fromPlayer: boolean;\n  ttl: number;\n  /** The firing player (for kill credit); omit for mob arrows. */\n  owner?: PlayerId;\n  /** Visual/audio family; absent = an ordinary arrow (see ProjectileState.kind). */\n  kind?: \"arrow\" | \"fireball\";\n};"
 }
@@ -13944,7 +13944,7 @@ tool_use Bash
 id: toolu_012usVXfPiK6gF7enCj23qjp
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/export type SpawnArrowOptions = \\{\\n  speed: number;\\n  damage: number;\\n  knockback: number;\\n  fromPlayer: boolean;\\n  ttl: number;\\n  \\/\\*\\* The firing player \\(for kill credit\\); omit for mob arrows\\. \\*\\/\\n  owner\\?: PlayerId;\\n\\};/export type SpawnArrowOptions = {\\n  speed: number;\\n  damage: number;\\n  knockback: number;\\n  fromPlayer: boolean;\\n  ttl: number;\\n  \\/** The firing player (for kill credit); omit for mob arrows. *\\/\\n  owner?: PlayerId;\\n  \\/** Visual\\/audio family; absent = an ordinary arrow (see ProjectileState.kind). *\\/\\n  kind?: \"arrow\" | \"fireball\";\\n};/' lib/game/engine/projectiles.ts\nperl -0pi -e 's/    fromPlayer: opts\\.fromPlayer,\\n    owner: opts\\.owner,\\n    ttl: opts\\.ttl\\n  \\};/    fromPlayer: opts.fromPlayer,\\n    owner: opts.owner,\\n    ttl: opts.ttl,\\n    kind: opts.kind\\n  };/' lib/game/engine/projectiles.ts\ngrep -n \"kind\" lib/game/engine/projectiles.ts | head -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/export type SpawnArrowOptions = \\{\\n  speed: number;\\n  damage: number;\\n  knockback: number;\\n  fromPlayer: boolean;\\n  ttl: number;\\n  \\/\\*\\* The firing player \\(for kill credit\\); omit for mob arrows\\. \\*\\/\\n  owner\\?: PlayerId;\\n\\};/export type SpawnArrowOptions = {\\n  speed: number;\\n  damage: number;\\n  knockback: number;\\n  fromPlayer: boolean;\\n  ttl: number;\\n  \\/** The firing player (for kill credit); omit for mob arrows. *\\/\\n  owner?: PlayerId;\\n  \\/** Visual\\/audio family; absent = an ordinary arrow (see ProjectileState.kind). *\\/\\n  kind?: \"arrow\" | \"fireball\";\\n};/' lib/game/engine/projectiles.ts\nperl -0pi -e 's/    fromPlayer: opts\\.fromPlayer,\\n    owner: opts\\.owner,\\n    ttl: opts\\.ttl\\n  \\};/    fromPlayer: opts.fromPlayer,\\n    owner: opts.owner,\\n    ttl: opts.ttl,\\n    kind: opts.kind\\n  };/' lib/game/engine/projectiles.ts\ngrep -n \"kind\" lib/game/engine/projectiles.ts | head -4",
   "description": "Add kind to SpawnArrowOptions and spawnArrow"
 }
 ```
@@ -13970,7 +13970,7 @@ id: toolu_01DXQvY7TNMMABZdZiVvq7hD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts",
   "old_string": "export const SKELETON_ARROW_DAMAGE = 4;\nexport const SKELETON_ARROW_SPEED = 27; // a touch slower than the player's bow (34)",
   "new_string": "export const SKELETON_ARROW_DAMAGE = 4;\nexport const SKELETON_ARROW_SPEED = 27; // a touch slower than the player's bow (34)\n// The scorcher's fireball: slower than an arrow (dodgeable by strafing) but\n// harder-hitting — the nether's ranged pressure. Flies/hits like an arrow.\nexport const FIREBALL_DAMAGE = 6;\nexport const FIREBALL_SPEED = 16;"
 }
@@ -13981,7 +13981,7 @@ id: toolu_01DXQvY7TNMMABZdZiVvq7hD
 tool_result
 id: toolu_01DXQvY7TNMMABZdZiVvq7hD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/config.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -13990,7 +13990,7 @@ tool_use Read
 id: toolu_016k9yYN5kWx3fcxesKYqFjj
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
   "offset": 20,
   "limit": 30
 }
@@ -14040,7 +14040,7 @@ id: toolu_01KFiYgRjteh24AeGm7jyu8N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
   "old_string": "  HOSTILE_BURN_ABOVE_DAYLIGHT,\n  HOSTILE_CAP,\n  MOB_ARROW_KNOCKBACK,",
   "new_string": "  FIREBALL_DAMAGE,\n  FIREBALL_SPEED,\n  HOSTILE_BURN_ABOVE_DAYLIGHT,\n  HOSTILE_CAP,\n  MOB_ARROW_KNOCKBACK,"
 }
@@ -14051,7 +14051,7 @@ id: toolu_01KFiYgRjteh24AeGm7jyu8N
 tool_result
 id: toolu_01KFiYgRjteh24AeGm7jyu8N
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14061,7 +14061,7 @@ id: toolu_015zNqLz2Siffqmft4W8QqSb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
   "old_string": "/**\n * A ranged mob looses an arrow from its eye toward the player's chest, leading a\n * moving target by a fraction of the arrow's travel time. The arrow is not\n * player-owned, so it only ever hits the player (never the firer or other mobs).\n */\nfunction fireMobArrow(state: GameState, player: PlayerState, mob: MobState, damage: number, speed: number, emit: EmitGameEvent): void {\n  const eyeY = mob.position.y + mob.halfHeight * 0.7;\n  const dist = Math.hypot(player.position.x - mob.position.x, player.position.z - mob.position.z);\n  const lead = (dist / speed) * SKELETON_LEAD_FACTOR;\n  scratchAim.set(\n    player.position.x + player.velocity.x * lead - mob.position.x,\n    player.position.y + 0.9 - eyeY,\n    player.position.z + player.velocity.z * lead - mob.position.z\n  );\n  spawnArrow(state, mob.position.x, eyeY, mob.position.z, scratchAim, {\n    speed,\n    damage,\n    knockback: MOB_ARROW_KNOCKBACK,\n    fromPlayer: false,\n    ttl: ARROW_TTL\n  });\n  emit({ type: \"mobAttacked\", kind: mob.kind });\n}",
   "new_string": "/**\n * A ranged mob looses an arrow (or the scorcher's fireball — same flight, its\n * own look) from its eye toward the player's chest, leading a moving target by\n * a fraction of the projectile's travel time. The projectile is not\n * player-owned, so it only ever hits the player (never the firer or other mobs).\n */\nfunction […]
 
@@ -14070,7 +14070,7 @@ id: toolu_015zNqLz2Siffqmft4W8QqSb
 tool_result
 id: toolu_015zNqLz2Siffqmft4W8QqSb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14080,7 +14080,7 @@ id: toolu_018gtyfG49Tjd284wDSrvQpS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts",
   "old_string": "      } else if (fireReady) {\n        if (isBoss) fireBossSpread(state, hunted, mob, dmgScale, deps.emit);\n        else fireMobArrow(state, hunted, mob, SKELETON_ARROW_DAMAGE * dmgScale, SKELETON_ARROW_SPEED, deps.emit);\n      }",
   "new_string": "      } else if (fireReady) {\n        if (isBoss) fireBossSpread(state, hunted, mob, dmgScale, deps.emit);\n        else if (MOB_TEMPLATES[mob.kind].projectileKind === \"fireball\") fireMobArrow(state, hunted, mob, FIREBALL_DAMAGE * dmgScale, FIREBALL_SPEED, deps.emit);\n        else fireMobArrow(state, hunted, mob, SKELETON_ARROW_DAMAGE * dmgScale, SKELETON_ARROW_SPEED, deps.emit);\n      }"
 }
@@ -14091,7 +14091,7 @@ id: toolu_018gtyfG49Tjd284wDSrvQpS
 tool_result
 id: toolu_018gtyfG49Tjd284wDSrvQpS
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14105,7 +14105,7 @@ id: toolu_01FTPRLRU74bZLReGswQdNcL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts",
   "old_string": "export function createProjectileVisuals(scene: THREE.Scene): ProjectileVisuals {\n  const geometry = buildExtrudedSpriteGeometry(renderSpritePixels(\"arrow\"));\n  const material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.6, metalness: 0.1 });\n  const meshes = new Map<number, THREE.Mesh>();\n  const seen = new Set<number>();",
   "new_string": "export function createProjectileVisuals(scene: THREE.Scene): ProjectileVisuals {\n  const geometry = buildExtrudedSpriteGeometry(renderSpritePixels(\"arrow\"));\n  const material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.6, metalness: 0.1 });\n  // The scorcher's fireball: a small self-lit ember cube (shared like the arrow pair).\n  const fireballGeometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);\n  const fireballMaterial = new THREE.MeshStandardMaterial({ color: 0xff8a2a, emissive: 0xff5a10, emissiveIntensity: 1.8, roughness: 0.4 });\n  const meshes = new Map<number, THREE.Mesh>();\n  const seen = new Set<number>();"
 }
@@ -14116,7 +14116,7 @@ id: toolu_01FTPRLRU74bZLReGswQdNcL
 tool_result
 id: toolu_01FTPRLRU74bZLReGswQdNcL
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14126,7 +14126,7 @@ id: toolu_01QBDBMFiHxu51u9mWwYqPjw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts",
   "old_string": "        let mesh = meshes.get(p.id);\n        if (!mesh) {\n          mesh = new THREE.Mesh(geometry, material);\n          meshes.set(p.id, mesh);\n          scene.add(mesh);\n        }",
   "new_string": "        let mesh = meshes.get(p.id);\n        if (!mesh) {\n          mesh = p.kind === \"fireball\" ? new THREE.Mesh(fireballGeometry, fireballMaterial) : new THREE.Mesh(geometry, material);\n          meshes.set(p.id, mesh);\n          scene.add(mesh);\n        }"
 }
@@ -14137,7 +14137,7 @@ id: toolu_01QBDBMFiHxu51u9mWwYqPjw
 tool_result
 id: toolu_01QBDBMFiHxu51u9mWwYqPjw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14147,7 +14147,7 @@ id: toolu_01VchECAmN6A2Xy3oGKDMSDY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts",
   "old_string": "    dispose() {\n      for (const id of [...meshes.keys()]) removeMesh(id);\n      geometry.dispose();\n      material.dispose();\n    }\n  };\n}",
   "new_string": "    dispose() {\n      for (const id of [...meshes.keys()]) removeMesh(id);\n      geometry.dispose();\n      material.dispose();\n      fireballGeometry.dispose();\n      fireballMaterial.dispose();\n    }\n  };\n}"
 }
@@ -14158,7 +14158,7 @@ id: toolu_01VchECAmN6A2Xy3oGKDMSDY
 tool_result
 id: toolu_01VchECAmN6A2Xy3oGKDMSDY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/render/projectileVisuals.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14172,7 +14172,7 @@ id: toolu_01AJdWEQD8DUAmFGTqn9o7f5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "old_string": "export function spawnInitialMobs(state: GameState, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  // The nether has its own (hostile-only) population, seeded by the content\n  // stage's nether branch — none of the overworld groups belong there.\n  if (state.dimension === \"nether\") return;\n  // Day-one population centers on the booting player; a playerless world (a\n  // fresh server room before the first join) seeds around the map center.",
   "new_string": "export function spawnInitialMobs(state: GameState, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  // The nether's population is hostile-only — no animals, no fish, no\n  // villagers — seeded around the arrival area at a respectful standoff.\n  if (state.dimension === \"nether\") {\n    if (!hostilesSpawn(state.difficulty)) return; // Peaceful nether: empty, still deadly terrain\n    const anchor = nearestPlayerTo(state, state.world.sizeX / 2, state.world.sizeZ / 2);\n    const cx = anchor ? anchor.position.x : state.world.sizeX / 2;\n    const cz = anchor ? anchor.position.z : state.world.sizeZ / 2;\n    const netherGroups: Array<[MobKind, number]> = [\n      [\"imp\", 6],\n      [\"scorcher\", 4]\n    ];\n    for (const [kind, count] of netherGroups) {\n      spawnMobGroup(state, { kind, hostile: true, count, centerX: cx, centerZ: cz, radius: RENDER_RADIUS * 0.8, minRadius: HOSTILE_SPAWN_MIN_RADIUS }, rng, surfaceYAt);\n    }\n    return;\n  }\n  // […]
 
@@ -14181,7 +14181,7 @@ id: toolu_01AJdWEQD8DUAmFGTqn9o7f5
 tool_result
 id: toolu_01AJdWEQD8DUAmFGTqn9o7f5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14191,7 +14191,7 @@ id: toolu_012fSria1xKhxChgnDDTTeXC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts",
   "old_string": "/** Trickles hostile mobs in around the player at night, up to the cap. Difficulty scales the cadence and cap; Peaceful spawns none. */\nexport function tickHostileSpawnDirector(state: GameState, dt: number, rng: () => number, surfaceYAt: SurfaceYAtFn): void {\n  // The nether gets its own hostile kinds from the content stage; until then\n  // the overworld roster must not materialize there.\n  if (state.dimension === \"nether\") return;\n  if (!hostilesSpawn(state.difficulty)) return;\n  state.timers.hostileSpawnTimer += dt;\n  const interval = HOSTILE_SPAWN_INTERVAL_SECONDS * hostileSpawnIntervalScale(state.difficulty);\n  if (state.daylight >= HOSTILE_SPAWN_BELOW_DAYLIGHT || state.timers.hostileSpawnTimer < interval) return;\n  state.timers.hostileSpawnTimer = 0;\n\n  const cap = Math.round(HOSTILE_CAP * hostileCapScale(state.difficulty)) * partyCapScale(state);\n  const livingHostiles = state.mobs.filter((mob) => mob.hostile).length;\n  if (livingHostiles >= cap) return;\n\n  const center = spawnCenterPlayer(state, rng);\n  if (!center) return;\n  const spawnKinds: Array<\"zombie\" | \"skeleton\" | \"spider\" | \"creeper\"> = [\"zombie\", \"skeleton\", \"spider\", \"creeper\"];\n  const kind = spawnKinds[Math.floor(rng() * spawnKinds.length)];",
   "new_string": "/**\n * Trickles hostile mobs in around the player at night, up to the cap.\n * Difficulty scales the cadence and cap; Peaceful spawns none. In the nether\n * the roster swaps to imps and scorchers — and the pinned daylight (under the\n * spawn threshold) makes the trickle perpetual: there is no […]
 
@@ -14200,7 +14200,7 @@ id: toolu_012fSria1xKhxChgnDDTTeXC
 tool_result
 id: toolu_012fSria1xKhxChgnDDTTeXC
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -14213,7 +14213,7 @@ tool_use Bash
 id: toolu_0195S3uBDfmQ5bEV8Vgxas5y
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"boss:\" lib/game/mobLoot.ts lib/game/mobXp.ts lib/game/audio/mobAmbience.ts | head -5; sed -n \"$(grep -n 'boss:' lib/game/mobLoot.ts | head -1 | cut -d: -f2 | cut -d- -f1),+8p\" lib/game/mobLoot.ts 2>/dev/null | head -10",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"boss:\" lib/game/mobLoot.ts lib/game/mobXp.ts lib/game/audio/mobAmbience.ts | head -5; sed -n \"$(grep -n 'boss:' lib/game/mobLoot.ts | head -1 | cut -d: -f2 | cut -d- -f1),+8p\" lib/game/mobLoot.ts 2>/dev/null | head -10",
   "description": "Find table tails for boss entries"
 }
 ```
@@ -14234,7 +14234,7 @@ tool_use Bash
 id: toolu_01Ey2tnjFHTPG7zLsjedxp44
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n 55,70p lib/game/mobLoot.ts; sed -n 22,30p lib/game/mobXp.ts; sed -n 20,30p lib/game/audio/mobAmbience.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n 55,70p lib/game/mobLoot.ts; sed -n 22,30p lib/game/mobXp.ts; sed -n 20,30p lib/game/audio/mobAmbience.ts",
   "description": "See exact table tails"
 }
 ```
@@ -14288,7 +14288,7 @@ tool_use Bash
 id: toolu_015tkVbadS9HBUDi5TuSHT72
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/  boss: \\[\\n    \\{ itemId: \"dragon_heart\", min: 1, max: 1 \\},\\n    \\{ itemId: \"diamond_ore\", min: 2, max: 4 \\}\\n  \\]\\n\\};/  boss: [\\n    { itemId: \"dragon_heart\", min: 1, max: 1 },\\n    { itemId: \"diamond_ore\", min: 2, max: 4 }\\n  ],\\n  \\/\\/ Nether hostiles pay out in glowstone dust — the dimension\\x27s farmable\\n  \\/\\/ export — with the imp\\x27s occasional gold nugget-in-spirit.\\n  imp: [\\n    { itemId: \"glowstone_dust\", min: 0, max: 1 },\\n    { itemId: \"gold_ore\", min: 1, max: 1, chance: 0.15 }\\n  ],\\n  scorcher: [{ itemId: \"glowstone_dust\", min: 0, max: 2 }]\\n};/' lib/game/mobLoot.ts\nperl -0pi -e 's/  raider: 6,\\n  boss: 200\\n\\};/  raider: 6,\\n  boss: 200,\\n  \\/\\/ The imp\\x27s toughness earns a premium; the scorcher matches the skeleton.\\n  imp: 8,\\n  scorcher: 5\\n};/' lib/game/mobXp.ts\nperl -0pi -e 's/  villager: \\[7, 15\\],\\n  boss: \\[6, 12\\]\\n\\};/  villager: [7, 15],\\n  boss: [6, 12],\\n  imp: [4, 9],\\n  scorcher: [5, 11]\\n};/' lib/game/audio/mobAmbience.ts\ngrep -n \"imp\\|scorcher\" lib/game/mobLoot.ts lib/game/mobXp.ts lib/game/audio/mobAmbience.ts | head -8",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/  boss: \\[\\n    \\{ itemId: \"dragon_heart\", min: 1, max: 1 \\},\\n    \\{ itemId: \"diamond_ore\", min: 2, max: 4 \\}\\n  \\]\\n\\};/  boss: [\\n    { itemId: \"dragon_heart\", min: 1, max: 1 },\\n    { itemId: \"diamond_ore\", min: 2, max: 4 }\\n  ],\\n  \\/\\/ Nether hostiles pay out in glowstone dust — the dimension\\x27s farmable\\n  \\/\\/ export — with the imp\\x27s occasional gold nugget-in-spirit.\\n  imp: [\\n    { itemId: \"glowstone_dust\", min: 0, max: 1 },\\n    { itemId: \"gold_ore\", min: 1, max: 1, chance: 0.15 }\\n  ],\\n  scorcher: [{ itemId: \"glowstone_dust\", min: 0, max: 2 }]\\n};/' lib/game/mobLoot.ts\nperl -0pi -e 's/  raider: 6,\\n  boss: 200\\n\\};/  raider: 6,\\n  boss: 200,\\n  \\/\\/ The imp\\x27s toughness earns a premium; the scorcher matches the skeleton.\\n  imp: 8,\\n  scorcher: 5\\n};/' lib/game/mobXp.ts\nperl -0pi -e 's/  villager: \\[7, 15\\],\\n  boss: \\[6, 12\\]\\n\\};/  villager: [7, 15],\\n  boss: [6, 12],\\n  imp: [4, 9],\\n  scorcher: [5, 11]\\n};/' lib/game/audio/mobAmbience.ts\ngrep -n \"imp\\|scorcher\" lib/game/mobLoot.ts lib/game/mobXp.ts lib/game/audio/mobAmbience.ts | head -8",
   "description": "Fill loot/XP/ambience tables"
 }
 ```
@@ -14314,7 +14314,7 @@ tool_use Bash
 id: toolu_01GahPnwpmrvgocVrctf4t6R
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"MOB_LABELS\" -A 20 lib/game/itemSources.ts | sed -n 1,22p; sed -n \"$(grep -n 'boss:' lib/game/audio/soundParams.ts | head -1 | cut -d: -f1),+15p\" lib/game/audio/soundParams.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"MOB_LABELS\" -A 20 lib/game/itemSources.ts | sed -n 1,22p; sed -n \"$(grep -n 'boss:' lib/game/audio/soundParams.ts | head -1 | cut -d: -f1),+15p\" lib/game/audio/soundParams.ts",
   "description": "See MOB_LABELS and boss sound entries"
 }
 ```
@@ -14370,7 +14370,7 @@ tool_use Bash
 id: toolu_015d29DDiPKzAekUmrtnuczq
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nperl -0pi -e 's/  raider: \"a raider\",\\n  villager: \"a villager\",\\n  boss: \"the boss\"\\n\\};/  raider: \"a raider\",\\n  villager: \"a villager\",\\n  boss: \"the boss\",\\n  imp: \"an imp\",\\n  scorcher: \"a scorcher\"\\n};/' lib/game/itemSources.ts\n# Find the closing of MOB_AMBIENT_SOUNDS and MOB_ATTACK_SOUNDS boss entries to append after\ngrep -n \"minRetriggerMs\" lib/game/audio/soundParams.ts | wc -l\nsed -n 441,445p lib/game/audio/soundParams.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nperl -0pi -e 's/  raider: \"a raider\",\\n  villager: \"a villager\",\\n  boss: \"the boss\"\\n\\};/  raider: \"a raider\",\\n  villager: \"a villager\",\\n  boss: \"the boss\",\\n  imp: \"an imp\",\\n  scorcher: \"a scorcher\"\\n};/' lib/game/itemSources.ts\n# Find the closing of MOB_AMBIENT_SOUNDS and MOB_ATTACK_SOUNDS boss entries to append after\ngrep -n \"minRetriggerMs\" lib/game/audio/soundParams.ts | wc -l\nsed -n 441,445p lib/game/audio/soundParams.ts",
   "description": "Add MOB_LABELS entries, survey sound table shape"
 }
 ```
@@ -14394,7 +14394,7 @@ tool_use Bash
 id: toolu_0171NN7C5NqiWn5qAzSnDmKM
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nawk 'NR>=441 && NR<=760 && /^  boss: \\{/{print NR}' lib/game/audio/soundParams.ts; sed -n 700,745p lib/game/audio/soundParams.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nawk 'NR>=441 && NR<=760 && /^  boss: \\{/{print NR}' lib/game/audio/soundParams.ts; sed -n 700,745p lib/game/audio/soundParams.ts",
   "description": "Locate ambient table tail"
 }
 ```
@@ -14460,7 +14460,7 @@ id: toolu_01RwdK9nSPK3geepfSQYvCRo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "old_string": "  raider: {\n    // A low, menacing grunt.\n    params: zz({\n      volume: 0.6,\n      randomness: 0.15,\n      frequency: 95,\n      attack: 0.02,\n      sustain: 0.1,\n      release: 0.18,\n      shape: 2,\n      shapeCurve: 1.3,\n      slide: -1,\n      noise: 0.3,\n      sustainVolume: 0.8,\n      decay: 0.12,\n      filter: -260\n    })\n  }\n};\n\n/** Played when a mob lands a hit on the player. */\nexport const MOB_ATTACK_SOUNDS: Record<MobKind, SoundDef> = {",
   "new_string": "  raider: {\n    // A low, menacing grunt.\n    params: zz({\n      volume: 0.6,\n      randomness: 0.15,\n      frequency: 95,\n      attack: 0.02,\n      sustain: 0.1,\n      release: 0.18,\n      shape: 2,\n      shapeCurve: 1.3,\n      slide: -1,\n      noise: 0.3,\n      sustainVolume: 0.8,\n      decay: 0.12,\n      filter: -260\n    })\n  },\n  imp: {\n    // A guttural crackling snarl — a zombie groan with fire in it.\n    params: zz({\n      volume: 0.55,\n      randomness: 0.2,\n      frequency: 110,\n      attack: 0.02,\n      sustain: 0.12,\n      release: 0.2,\n      shape: 2,\n      shapeCurve: 1.4,\n      slide: -1.2,\n      noise: 0.45,\n      sustainVolume: 0.75,\n      decay: 0.12,\n      tremolo: 0.25,\n      filter: -240\n    })\n  },\n  scorcher: {\n    // A breathy furnace-draft hiss, rising then sighing away.\n    params: zz({\n      volume: 0.5,\n      randomness: 0.2,\n      frequency: 320,\n      attack: 0.05,\n      sustain: 0.15,\n      release: 0.3,\n      shape: 0,\n      slide: 2,\n      noise: 0.9,\n      sustainVolume: 0.6,\n      decay: 0.1,\n      filter: 500\n    })\n  }\n};\n\n/** Played when a mob lands a hit on the […]
 
@@ -14469,7 +14469,7 @@ id: toolu_01RwdK9nSPK3geepfSQYvCRo
 tool_result
 id: toolu_01RwdK9nSPK3geepfSQYvCRo
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14478,7 +14478,7 @@ tool_use Bash
 id: toolu_01FTZXHa48PpnQ3jzhCfGr2A
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ntail -50 lib/game/audio/soundParams.ts | head -50",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ntail -50 lib/game/audio/soundParams.ts | head -50",
   "description": "See MOB_ATTACK_SOUNDS tail"
 }
 ```
@@ -14546,7 +14546,7 @@ tool_use Bash
 id: toolu_013AGCpwDb7xCk8kVgaSc3ym
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"^};\" lib/game/audio/soundParams.ts | awk -F: '$1 > 780 {print; exit}' ; sed -n \"$(grep -n 'MOB_ATTACK_SOUNDS' lib/game/audio/soundParams.ts | head -1 | cut -d: -f1),+3p\" lib/game/audio/soundParams.ts | head -4; awk \"/MOB_ATTACK_SOUNDS/,/^};/\" lib/game/audio/soundParams.ts | grep -n \"raider:\\|boss:\\|^};\" | tail -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"^};\" lib/game/audio/soundParams.ts | awk -F: '$1 > 780 {print; exit}' ; sed -n \"$(grep -n 'MOB_ATTACK_SOUNDS' lib/game/audio/soundParams.ts | head -1 | cut -d: -f1),+3p\" lib/game/audio/soundParams.ts | head -4; awk \"/MOB_ATTACK_SOUNDS/,/^};/\" lib/game/audio/soundParams.ts | grep -n \"raider:\\|boss:\\|^};\" | tail -4",
   "description": "Locate MOB_ATTACK_SOUNDS closing and last entries"
 }
 ```
@@ -14572,7 +14572,7 @@ tool_use Bash
 id: toolu_015Sx3EXHuf61YfvHHbPzcSf
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nATTACK_START=$(grep -n 'MOB_ATTACK_SOUNDS' lib/game/audio/soundParams.ts | head -1 | cut -d: -f1)\nsed -n \"$((ATTACK_START + 248)),$((ATTACK_START + 266))p\" lib/game/audio/soundParams.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nATTACK_START=$(grep -n 'MOB_ATTACK_SOUNDS' lib/game/audio/soundParams.ts | head -1 | cut -d: -f1)\nsed -n \"$((ATTACK_START + 248)),$((ATTACK_START + 266))p\" lib/game/audio/soundParams.ts",
   "description": "See the raider attack-sound entry (table tail)"
 }
 ```
@@ -14610,7 +14610,7 @@ id: toolu_015RcPMV2f9odupog3oJzMpb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts",
   "old_string": "  raider: {\n    // A brutish thwack.\n    params: zz({\n      volume: 0.75,\n      randomness: 0.1,\n      frequency: 120,\n      sustain: 0.03,\n      release: 0.12,\n      shape: 4,\n      shapeCurve: 1.2,\n      slide: -2,\n      noise: 0.5,\n      sustainVolume: 0.8,\n      decay: 0.05,\n      filter: -350\n    }),\n    minRetriggerMs: 110\n  }\n};",
   "new_string": "  raider: {\n    // A brutish thwack.\n    params: zz({\n      volume: 0.75,\n      randomness: 0.1,\n      frequency: 120,\n      sustain: 0.03,\n      release: 0.12,\n      shape: 4,\n      shapeCurve: 1.2,\n      slide: -2,\n      noise: 0.5,\n      sustainVolume: 0.8,\n      decay: 0.05,\n      filter: -350\n    }),\n    minRetriggerMs: 110\n  },\n  imp: {\n    // A clawed strike with a hot crackle under it.\n    params: zz({\n      volume: 0.7,\n      randomness: 0.15,\n      frequency: 140,\n      sustain: 0.03,\n      release: 0.12,\n      shape: 4,\n      shapeCurve: 1.3,\n      slide: -2,\n      noise: 0.7,\n      sustainVolume: 0.75,\n      decay: 0.05,\n      filter: -300\n    }),\n    minRetriggerMs: 110\n  },\n  scorcher: {\n    // The fireball leaving with a whoomph (the launch reads as the attack).\n    params: zz({\n      volume: 0.65,\n      randomness: 0.15,\n      frequency: 180,\n      attack: 0.01,\n      sustain: 0.06,\n      release: 0.22,\n      shape: 0,\n      slide: -3,\n      noise: 1.1,\n      sustainVolume: 0.7,\n      decay: 0.08,\n      filter: -200\n    }),\n    minRetriggerMs: 150\n  }\n};"
 }
@@ -14621,7 +14621,7 @@ id: toolu_015RcPMV2f9odupog3oJzMpb
 tool_result
 id: toolu_015RcPMV2f9odupog3oJzMpb
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/soundParams.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14657,7 +14657,7 @@ id: toolu_01FvHtyJJUiop3jmnswNEPPq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/spawnDirector.test.ts",
   "old_string": "describe(\"nether spawn gating\", () => {\n  function makeNetherEngine(): GameEngine {\n    return new GameEngine({ dimension: \"nether\", seed: 1337, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n  }\n\n  test(\"a nether boot seeds no overworld population at all\", () => {\n    const e = makeNetherEngine();\n    expect(e.state.mobs).toHaveLength(0); // no animals, no villagers, no night pack\n  });\n\n  test(\"the overworld hostile director stays silent in the nether (its roster doesn't belong there)\", () => {\n    const e = makeNetherEngine();\n    e.state.daylight = 0.1;\n    e.state.timers.hostileSpawnTimer = 1000;\n    tickHostileSpawnDirector(e.state, 0.1, mulberry32(3), createSurfaceYAt(e.state.world));\n    expect(hostileCount(e)).toBe(0);\n  });\n\n  test(\"the aquatic director stays silent in the nether\", () => {\n    const e = makeNetherEngine();\n    e.state.timers.aquaticSpawnTimer = 1000;\n    tickAquaticSpawnDirector(e.state, 0.1, mulberry32(3));\n    expect(e.state.mobs).toHaveLength(0);\n  });\n});",
   "new_string": "describe(\"nether spawning\", () => {\n  function makeNetherEngine(difficulty: Difficulty = \"normal\"): GameEngine {\n    return new GameEngine({ dimension: \"nether\", difficulty, seed: 1337, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n  }\n\n  test(\"a nether boot seeds imps and scorchers only — no animals, fish, or villagers\", () => {\n    const e = makeNetherEngine();\n    expect(e.state.mobs.length).toBeGreaterThan(0);\n    for (const mob of e.state.mobs) {\n      expect([\"imp\", \"scorcher\"]).toContain(mob.kind);\n      expect(mob.hostile).toBe(true);\n    }\n  });\n\n  test(\"Peaceful keeps the nether empty\", () => {\n    expect(makeNetherEngine(\"peaceful\").state.mobs).toHaveLength(0);\n  });\n\n […]
 
@@ -14675,7 +14675,7 @@ tool_use Bash
 id: toolu_016cqKwQDG5wBrLttyWF73vq
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ntail -30 lib/game/engine/systems/spawnDirector.test.ts",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ntail -30 lib/game/engine/systems/spawnDirector.test.ts",
   "description": "See current test tail after format"
 }
 ```
@@ -14723,7 +14723,7 @@ tool_use Bash
 id: toolu_01Hau1xcmqFmErgQHoz7JCom
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\npython3 - << 'EOF'\nimport re\npath = \"lib/game/engine/systems/spawnDirector.test.ts\"\nsrc = open(path).read()\nold = src[src.index('describe(\"nether spawn gating\"'):]\nnew = '''describe(\"nether spawning\", () => {\n  function makeNetherEngine(difficulty: Difficulty = \"normal\"): GameEngine {\n    return new GameEngine({ dimension: \"nether\", difficulty, seed: 1337, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n  }\n\n  test(\"a nether boot seeds imps and scorchers only — no animals, fish, or villagers\", () => {\n    const e = makeNetherEngine();\n    expect(e.state.mobs.length).toBeGreaterThan(0);\n    for (const mob of e.state.mobs) {\n      expect([\"imp\", \"scorcher\"]).toContain(mob.kind);\n      expect(mob.hostile).toBe(true);\n    }\n  });\n\n  test(\"Peaceful keeps the nether empty\", () => {\n    expect(makeNetherEngine(\"peaceful\").state.mobs).toHaveLength(0);\n  });\n\n  test(\"the hostile director trickles nether kinds — perpetually, since the pinned dusk never lifts\", () => {\n    const e = makeNetherEngine();\n    e.state.mobs = [];\n    e.state.timers.hostileSpawnTimer = 1000; // daylight is already pinned under the threshold\n    tickHostileSpawnDirector(e.state, 0.1, mulberry32(3), createNetherFloorYAt(e.state.world));\n    expect(hostileCount(e)).toBeGreaterThan(0);\n    for (const mob of e.state.mobs) expect([\"imp\", \"scorcher\"]).toContain(mob.kind);\n  });\n\n  test(\"the aquatic director stays silent in the nether\", () => {\n    const e = makeNetherEngine();\n    e.state.mobs = [];\n    e.state.timers.aquaticSpawnTimer = 1000;\n    tickAquaticSpawnDirector(e.state, 0.1, mulberry32(3));\n    expect(e.state.mobs).toHaveLength(0);\n  });\n});\n'''\nsrc = src.replace(old, new)\nsrc = src.replace('import { createSurfaceYAt } from \"@/lib/game/spawn\";', 'import { createNetherFloorYAt, createSurfaceYAt } from \"@/lib/game/spawn\";')\nopen(path, \"w\").write(src)\nEOF\nbun test lib/game/engine/systems/spawnDirector.test.ts 2>&1 | tail -4",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\npython3 - << 'EOF'\nimport re\npath = \"lib/game/engine/systems/spawnDirector.test.ts\"\nsrc = open(path).read()\nold = src[src.index('describe(\"nether spawn gating\"'):]\nnew = '''describe(\"nether spawning\", () => {\n  function makeNetherEngine(difficulty: Difficulty = \"normal\"): GameEngine {\n    return new GameEngine({ dimension: \"nether\", difficulty, seed: 1337, rng: mulberry32(42), worldSize: { x: 64, y: 150, z: 64 } });\n  }\n\n  test(\"a nether boot seeds imps and scorchers only — no animals, fish, or villagers\", () => {\n    const e = makeNetherEngine();\n    expect(e.state.mobs.length).toBeGreaterThan(0);\n    for (const mob of e.state.mobs) {\n      expect([\"imp\", \"scorcher\"]).toContain(mob.kind);\n      expect(mob.hostile).toBe(true);\n    }\n  });\n\n  test(\"Peaceful keeps the nether empty\", () => {\n    expect(makeNetherEngine(\"peaceful\").state.mobs).toHaveLength(0);\n  });\n\n  test(\"the hostile director trickles nether kinds — perpetually, since the pinned dusk never lifts\", () => {\n    const e = makeNetherEngine();\n    e.state.mobs = [];\n    e.state.timers.hostileSpawnTimer = 1000; // daylight is already pinned under the threshold\n    tickHostileSpawnDirector(e.state, 0.1, mulberry32(3), createNetherFloorYAt(e.state.world));\n    expect(hostileCount(e)).toBeGreaterThan(0);\n    for (const mob of e.state.mobs) expect([\"imp\", \"scorcher\"]).toContain(mob.kind);\n  });\n\n  test(\"the aquatic director stays silent in the nether\", () => {\n    const e = makeNetherEngine();\n    e.state.mobs = [];\n    e.state.timers.aquaticSpawnTimer = 1000;\n    tickAquaticSpawnDirector(e.state, 0.1, mulberry32(3));\n    expect(e.state.mobs).toHaveLength(0);\n  });\n});\n'''\nsrc = src.replace(old, new)\nsrc = src.replace('import { createSurfaceYAt } from \"@/lib/game/spawn\";', 'import { createNetherFloorYAt, createSurfaceYAt } from \"@/lib/game/spawn\";')\nopen(path, \"w\").write(src)\nEOF\nbun test lib/game/engine/systems/spawnDirector.test.ts 2>&1 | tail -4",
   "description": "Rewrite nether spawn […]
 
 > TOOL
@@ -14743,7 +14743,7 @@ tool_use Bash
 id: toolu_012RoFtM3NZKu5ALoGa25WEd
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"skeleton\" lib/game/engine/systems/mobAI.test.ts | head -8; grep -n \"kite + fire\\|fires an arrow\\|projectiles\" lib/game/engine/systems/mobAI.test.ts | head -6",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"skeleton\" lib/game/engine/systems/mobAI.test.ts | head -8; grep -n \"kite + fire\\|fires an arrow\\|projectiles\" lib/game/engine/systems/mobAI.test.ts | head -6",
   "description": "Find skeleton ranged test"
 }
 ```
@@ -14774,7 +14774,7 @@ tool_use Read
 id: toolu_018pGehirTWJpntpBGcEro8u
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts",
   "offset": 83,
   "limit": 20
 }
@@ -14814,7 +14814,7 @@ id: toolu_01Him4UpYsb3wgcbak3wj7j2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts",
   "old_string": "  test(\"a skeleton kites away when the player is too close\", () => {",
   "new_string": "  test(\"a scorcher fires a fireball-kind projectile (same flight machinery, its own look)\", () => {\n    const scorcher = makeMob(\"scorcher\", 24, 30, 17); // in the standoff band, like the skeleton\n    const state = makeState([scorcher]);\n    const { deps, events } = makeDeps();\n\n    tickMobs(state, 0.05, deps);\n\n    expect(state.projectiles).toHaveLength(1);\n    expect(state.projectiles[0].kind).toBe(\"fireball\");\n    expect(state.projectiles[0].fromPlayer).toBe(false);\n    expect(events.some((e) => e.type === \"mobAttacked\" && e.kind === \"scorcher\")).toBe(true);\n  });\n\n  test(\"a skeleton kites away when the player is too close\", () => {"
 }
@@ -14825,7 +14825,7 @@ id: toolu_01Him4UpYsb3wgcbak3wj7j2
 tool_result
 id: toolu_01Him4UpYsb3wgcbak3wj7j2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/mobAI.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -14947,7 +14947,7 @@ tool_use Read
 id: toolu_012GeYcDYo5KRdDWHq42YzGm
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "offset": 40,
   "limit": 110
 }
@@ -14999,7 +14999,7 @@ tool_use Read
 id: toolu_01AhG7YFyv1yo4RK87Kj89RY
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "offset": 240,
   "limit": 85
 }
@@ -15060,7 +15060,7 @@ id: toolu_01D7jWysSmfQ28kGhvPHyxTR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "old_string": "  { id: \"arrows_fired\", label: \"Arrows Fired\", format: \"count\" },\n  { id: \"villager_trades\", label: \"Villager Trades\", format: \"count\" },\n  { id: \"minecart_rides\", label: \"Minecart Rides\", format: \"count\" },\n  { id: \"jumps\", label: \"Jumps\", format: \"count\" },\n  { id: \"deaths\", label: \"Deaths\", format: \"count\" }\n];",
   "new_string": "  { id: \"arrows_fired\", label: \"Arrows Fired\", format: \"count\" },\n  { id: \"villager_trades\", label: \"Villager Trades\", format: \"count\" },\n  { id: \"minecart_rides\", label: \"Minecart Rides\", format: \"count\" },\n  { id: \"nether_entered\", label: \"Nether Trips\", format: \"count\" },\n  { id: \"jumps\", label: \"Jumps\", format: \"count\" },\n  { id: \"deaths\", label: \"Deaths\", format: \"count\" }\n];"
 }
@@ -15071,7 +15071,7 @@ id: toolu_01D7jWysSmfQ28kGhvPHyxTR
 tool_result
 id: toolu_01D7jWysSmfQ28kGhvPHyxTR
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15081,7 +15081,7 @@ id: toolu_01DdKVQwd1Mur9nU43CxBx7U
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "old_string": "  [BlockId.DiamondOre]: \"diamond_ore_mined\",\n  [BlockId.WheatStage3]: \"wheat_harvested\"\n};",
   "new_string": "  [BlockId.DiamondOre]: \"diamond_ore_mined\",\n  [BlockId.WheatStage3]: \"wheat_harvested\",\n  [BlockId.Glowstone]: \"glowstone_mined\",\n  [BlockId.BlaziteOre]: \"blazite_ore_mined\"\n};"
 }
@@ -15092,7 +15092,7 @@ id: toolu_01DdKVQwd1Mur9nU43CxBx7U
 tool_result
 id: toolu_01DdKVQwd1Mur9nU43CxBx7U
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15102,7 +15102,7 @@ id: toolu_01UsCEwxnrVAyXBMUDUim5oo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "old_string": "    case \"mobDied\":\n      if (HOSTILE_MOB_KINDS.has(event.kind)) bump(player, \"hostiles_killed\");\n      if (event.kind === \"drowned\") bump(player, \"drowned_killed\");\n      break;",
   "new_string": "    case \"mobDied\":\n      if (HOSTILE_MOB_KINDS.has(event.kind)) bump(player, \"hostiles_killed\");\n      if (event.kind === \"drowned\") bump(player, \"drowned_killed\");\n      if (event.kind === \"scorcher\") bump(player, \"scorcher_killed\");\n      break;\n    // Counted at emit time — before the shell writes the travel save — so the\n    // stat (and any unlock) rides the very save that performs the trip.\n    case \"dimensionTravel\":\n      if (event.target === \"nether\") bump(player, \"nether_entered\");\n      break;"
 }
@@ -15113,7 +15113,7 @@ id: toolu_01UsCEwxnrVAyXBMUDUim5oo
 tool_result
 id: toolu_01UsCEwxnrVAyXBMUDUim5oo
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15123,7 +15123,7 @@ id: toolu_01E635gsC6QPF6sGxvBYYnvh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "old_string": "      // \"Tool Up\" wants any pickaxe (7 tiers, 7 recipes), so aggregate them.\n      if (recipe.result.slotId.endsWith(\"_pickaxe\")) bump(player, \"pickaxes_crafted\");",
   "new_string": "      // \"Tool Up\" wants any pickaxe (7 tiers, 7 recipes), so aggregate them.\n      if (recipe.result.slotId.endsWith(\"_pickaxe\")) bump(player, \"pickaxes_crafted\");\n      // Any blazite gear counts for the post-diamond forging advancement.\n      if (recipe.result.slotId.startsWith(\"blazite_\") && recipe.result.slotId !== \"blazite_ingot\") bump(player, \"blazite_gear_crafted\");"
 }
@@ -15134,7 +15134,7 @@ id: toolu_01E635gsC6QPF6sGxvBYYnvh
 tool_result
 id: toolu_01E635gsC6QPF6sGxvBYYnvh
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15144,7 +15144,7 @@ id: toolu_01PDR1DeGv36gkLsvwVdj32B
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts",
   "old_string": "  {\n    id: \"ocean_purge\",\n    title: \"Revenge of the Tides\",\n    description: \"Slay a drowned.\",\n    icon: \"sliver_spear\",\n    category: \"Combat\",\n    stat: \"drowned_killed\",\n    threshold: 1\n  }\n];",
   "new_string": "  {\n    id: \"ocean_purge\",\n    title: \"Revenge of the Tides\",\n    description: \"Slay a drowned.\",\n    icon: \"sliver_spear\",\n    category: \"Combat\",\n    stat: \"drowned_killed\",\n    threshold: 1\n  },\n  {\n    id: \"hot_tourist\",\n    title: \"We Need to Go Deeper\",\n    description: \"Step through a nether portal.\",\n    icon: \"obsidian\",\n    category: \"Adventure\",\n    stat: \"nether_entered\",\n    threshold: 1\n  },\n  {\n    id: \"let_there_be_light\",\n    title: \"Let There Be Light\",\n    description: \"Mine a glowstone cluster.\",\n    icon: \"glowstone\",\n    category: \"Mining\",\n    stat: \"glowstone_mined\",\n    threshold: 1\n  },\n  {\n    id: \"fire_fighter\",\n    title: \"Fire Fighter\",\n    description: \"Slay a scorcher.\",\n    icon: \"glowstone_dust\",\n    category: \"Combat\",\n    stat: \"scorcher_killed\",\n    threshold: 1\n  },\n  {\n    id: \"blazing_edge\",\n    title: \"Blazing Edge\",\n    description: \"Forge any blazite gear.\",\n    icon: \"blazite_sword\",\n    category: \"Crafting\",\n    stat: \"blazite_gear_crafted\",\n    threshold: 1\n  }\n];"
 }
@@ -15155,7 +15155,7 @@ id: toolu_01PDR1DeGv36gkLsvwVdj32B
 tool_result
 id: toolu_01PDR1DeGv36gkLsvwVdj32B
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15164,7 +15164,7 @@ tool_use Bash
 id: toolu_01SQpxg95rX4tTuS5YYwXXru
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"describe\\|makePlayer\\|function\" lib/game/engine/systems/advancements.test.ts | head -12",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"describe\\|makePlayer\\|function\" lib/game/engine/systems/advancements.test.ts | head -12",
   "description": "See advancements test fixture"
 }
 ```
@@ -15193,7 +15193,7 @@ tool_use Bash
 id: toolu_01PeJRzECHFmTSmKDFUqb6Qp
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n 17,24p lib/game/engine/systems/advancements.test.ts\ncat >> lib/game/engine/systems/advancements.test.ts << 'EOF'\n\ndescribe(\"nether advancements\", () => {\n  test(\"travel to the nether bumps the trip stat and unlocks We Need to Go Deeper; the trip home doesn't\", () => {\n    const player = freshState();\n    record(player, { type: \"dimensionTravel\", target: \"nether\", anchor: { x: 1, y: 2, z: 3 } });\n    expect(player.stats.get(\"nether_entered\")).toBe(1);\n    expect(evaluateAdvancements(player)).toContain(\"hot_tourist\");\n    record(player, { type: \"dimensionTravel\", target: \"overworld\", anchor: { x: 1, y: 2, z: 3 } });\n    expect(player.stats.get(\"nether_entered\")).toBe(1); // coming home is not a trip in\n  });\n\n  test(\"mining glowstone and slaying a scorcher unlock their advancements\", () => {\n    const player = freshState();\n    record(player, { type: \"blockBroken\", blockId: BlockId.Glowstone, x: 0, y: 0, z: 0 });\n    record(player, { type: \"mobDied\", kind: \"scorcher\", x: 0, y: 0, z: 0 });\n    expect(player.stats.get(\"glowstone_mined\")).toBe(1);\n    expect(player.stats.get(\"scorcher_killed\")).toBe(1);\n    expect(player.stats.get(\"hostiles_killed\")).toBe(1); // a scorcher is a hostile too\n    const unlocked = evaluateAdvancements(player);\n    expect(unlocked).toContain(\"let_there_be_light\");\n    expect(unlocked).toContain(\"fire_fighter\");\n  });\n\n  test(\"forging blazite gear unlocks Blazing Edge (the ingot smelt alone doesn't)\", () => {\n    const player = freshState();\n    record(player, { type: \"crafted\", recipeId: \"smelt_blazite\" });\n    expect(player.stats.get(\"blazite_gear_crafted\")).toBeUndefined();\n    record(player, { type: \"crafted\", recipeId: \"blazite_sword\" });\n    expect(player.stats.get(\"blazite_gear_crafted\")).toBe(1);\n    expect(evaluateAdvancements(player)).toContain(\"blazing_edge\");\n    // The blazite pickaxe also counts toward the shared pickaxe aggregate.\n    record(player, { type: \"crafted\", recipeId: […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n 17,24p lib/game/engine/systems/advancements.test.ts\ncat >> lib/game/engine/systems/advancements.test.ts << 'EOF'\n\ndescribe(\"nether advancements\", () => {\n  test(\"travel to the nether bumps the trip stat and unlocks We Need to Go Deeper; the trip home doesn't\", () => {\n    const player = freshState();\n    record(player, { type: \"dimensionTravel\", target: \"nether\", anchor: { x: 1, y: 2, z: 3 } });\n    expect(player.stats.get(\"nether_entered\")).toBe(1);\n    expect(evaluateAdvancements(player)).toContain(\"hot_tourist\");\n    record(player, { type: \"dimensionTravel\", target: \"overworld\", anchor: { x: 1, y: 2, z: 3 } });\n    expect(player.stats.get(\"nether_entered\")).toBe(1); // coming home is not a trip in\n  });\n\n  test(\"mining glowstone and slaying a scorcher unlock their advancements\", () => {\n    const player = freshState();\n    record(player, { type: \"blockBroken\", blockId: BlockId.Glowstone, x: 0, y: 0, z: 0 });\n    record(player, { type: \"mobDied\", kind: \"scorcher\", x: 0, y: 0, z: 0 });\n    expect(player.stats.get(\"glowstone_mined\")).toBe(1);\n    expect(player.stats.get(\"scorcher_killed\")).toBe(1);\n    expect(player.stats.get(\"hostiles_killed\")).toBe(1); // a scorcher is a hostile too\n    const unlocked = evaluateAdvancements(player);\n    expect(unlocked).toContain(\"let_there_be_light\");\n    expect(unlocked).toContain(\"fire_fighter\");\n  });\n\n  test(\"forging blazite gear unlocks Blazing Edge (the ingot smelt alone doesn't)\", () => {\n    const player = freshState();\n    record(player, { type: \"crafted\", recipeId: \"smelt_blazite\" });\n    expect(player.stats.get(\"blazite_gear_crafted\")).toBeUndefined();\n    record(player, { type: \"crafted\", recipeId: \"blazite_sword\" });\n    expect(player.stats.get(\"blazite_gear_crafted\")).toBe(1);\n    expect(evaluateAdvancements(player)).toContain(\"blazing_edge\");\n    // The blazite pickaxe also counts toward the shared pickaxe aggregate.\n    record(player, { type: \"crafted\", recipeId: […]
 
 > TOOL
 
@@ -15239,7 +15239,7 @@ error: expect(received).toBe(expected)
 Expected: true
 Received: false
 
-      at <anonymous> (/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts:247:82)
+      at <anonymous> (/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts:247:82)
 (fail) evaluateAdvancements > every advancement is reachable by some tracked counter [0.27ms]
 ```
 
@@ -15249,7 +15249,7 @@ tool_use Read
 id: toolu_01Y4MBmuQj4ofjumZ9oUeRjn
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts",
   "offset": 215,
   "limit": 35
 }
@@ -15293,7 +15293,7 @@ id: toolu_01TDjarQKmN8juSQzFpQ3yn7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts",
   "old_string": "      { type: \"leverToggled\", on: true },\n      { type: \"vehicleBoarded\", kind: \"minecart\" },\n      { type: \"mobDied\", kind: \"drowned\", x: 0, y: 0, z: 0 }\n    );",
   "new_string": "      { type: \"leverToggled\", on: true },\n      { type: \"vehicleBoarded\", kind: \"minecart\" },\n      { type: \"mobDied\", kind: \"drowned\", x: 0, y: 0, z: 0 },\n      { type: \"dimensionTravel\", target: \"nether\", anchor: { x: 0, y: 0, z: 0 } },\n      { type: \"blockBroken\", blockId: BlockId.Glowstone, x: 0, y: 0, z: 0 },\n      { type: \"mobDied\", kind: \"scorcher\", x: 0, y: 0, z: 0 },\n      { type: \"crafted\", recipeId: \"blazite_sword\" }\n    );"
 }
@@ -15304,7 +15304,7 @@ id: toolu_01TDjarQKmN8juSQzFpQ3yn7
 tool_result
 id: toolu_01TDjarQKmN8juSQzFpQ3yn7
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/game/engine/systems/advancements.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15405,7 +15405,7 @@ tool_use Bash
 id: toolu_01BK8VTgSRUjGpP3Rdf2YTPQ
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"16 mob kinds\\|## Mobs\" docs/reference.md | head -3; sed -n \"$(grep -n '### Weapons' docs/reference.md | head -1 | cut -d: -f1),+18p\" docs/reference.md; grep -n \"Diamond Sword\\|Diamond Spear\" docs/reference.md | head -6",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"16 mob kinds\\|## Mobs\" docs/reference.md | head -3; sed -n \"$(grep -n '### Weapons' docs/reference.md | head -1 | cut -d: -f1),+18p\" docs/reference.md; grep -n \"Diamond Sword\\|Diamond Spear\" docs/reference.md | head -6",
   "description": "Survey reference weapon tables and mob count"
 }
 ```
@@ -15444,7 +15444,7 @@ tool_use Bash
 id: toolu_011CUqiEe1wrG6PeahMGfvmn
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\npython3 - << 'PYEOF'\nimport re\npath = \"docs/reference.md\"\nsrc = open(path).read()\n\n# Recipes: Building & materials — glowstone recombine\nsrc = src.replace(\n\"| 4 Cobble Stairs    | 6 Cobble                                  |\",\n\"| 4 Cobble Stairs    | 6 Cobble                                  |\\n| 1 Glowstone        | 4 Glowstone Dust                          |\")\n\n# Tools recipe table — blazite pickaxe after diamond\nsrc = src.replace(\n\"| Diamond Pickaxe  | 2 Diamond Ore + 1 Wood  |\",\n\"| Diamond Pickaxe  | 2 Diamond Ore + 1 Wood  |\\n| Blazite Pickaxe  | 2 Blazite Ingot + 1 Wood |\")\n\n# Weapons recipe table — blazite sword + spear\nsrc = src.replace(\n\"| Diamond Sword  | 2 Diamond Ore + 1 Wood         |\",\n\"| Diamond Sword  | 2 Diamond Ore + 1 Wood         |\\n| Blazite Sword  | 2 Blazite Ingot + 1 Wood       |\")\nsrc = src.replace(\n\"| Gold Spear     | 1 Gold Ore + 2 Wood            |\",\n\"| Gold Spear     | 1 Gold Ore + 2 Wood            |\")\n\nopen(path, \"w\").write(src)\nprint(\"done\")\nPYEOF\ngrep -n \"Diamond Spear  | 1 Diamond\" docs/reference.md; sed -n \"$(grep -n '### Food & smelting' docs/reference.md | head -1 | cut -d: -f1),+16p\" docs/reference.md",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\npython3 - << 'PYEOF'\nimport re\npath = \"docs/reference.md\"\nsrc = open(path).read()\n\n# Recipes: Building & materials — glowstone recombine\nsrc = src.replace(\n\"| 4 Cobble Stairs    | 6 Cobble                                  |\",\n\"| 4 Cobble Stairs    | 6 Cobble                                  |\\n| 1 Glowstone        | 4 Glowstone Dust                          |\")\n\n# Tools recipe table — blazite pickaxe after diamond\nsrc = src.replace(\n\"| Diamond Pickaxe  | 2 Diamond Ore + 1 Wood  |\",\n\"| Diamond Pickaxe  | 2 Diamond Ore + 1 Wood  |\\n| Blazite Pickaxe  | 2 Blazite Ingot + 1 Wood |\")\n\n# Weapons recipe table — blazite sword + spear\nsrc = src.replace(\n\"| Diamond Sword  | 2 Diamond Ore + 1 Wood         |\",\n\"| Diamond Sword  | 2 Diamond Ore + 1 Wood         |\\n| Blazite Sword  | 2 Blazite Ingot + 1 Wood       |\")\nsrc = src.replace(\n\"| Gold Spear     | 1 Gold Ore + 2 Wood            |\",\n\"| Gold Spear     | 1 Gold Ore + 2 Wood            |\")\n\nopen(path, \"w\").write(src)\nprint(\"done\")\nPYEOF\ngrep -n \"Diamond Spear  | 1 Diamond\" docs/reference.md; sed -n \"$(grep -n '### Food & smelting' docs/reference.md | head -1 | cut -d: -f1),+16p\" docs/reference.md",
   "description": "Insert recipe rows, view smelting table"
 }
 ```
@@ -15481,7 +15481,7 @@ tool_use Bash
 id: toolu_01FCLsdU7nWYogmBR677usgN
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\npython3 - << 'PYEOF'\npath = \"docs/reference.md\"\nsrc = open(path).read()\n\n# Recipe counts: +8 recipes (bucket, flint&steel, glowstone, 2 blazite smelts, 3 blazite gear); collapsed rows +7.\nsrc = src.replace(\"**92 crafting recipes**\", \"**100 crafting recipes**\")\nsrc = src.replace(\"The tables below show 85 rows:\", \"The tables below show 92 rows:\")\n\n# Tools recipe table: flint & steel row after Bucket.\nsrc = src.replace(\n\"| Bucket           | 3 Sliver Ore            |\",\n\"| Bucket           | 3 Sliver Ore            |\\n| Flint & Steel    | 1 Sliver Ore + 1 Coal   |\")\n\n# Weapons recipe table: blazite spear after Diamond Spear.\nsrc = src.replace(\n\"| Diamond Spear  | 1 Diamond Ore + 2 Wood         |\",\n\"| Diamond Spear  | 1 Diamond Ore + 2 Wood         |\\n| Blazite Spear  | 1 Blazite Ingot + 2 Wood       |\")\n\n# Smelting table: blazite ingot row.\nsrc = src.replace(\n\"| 3 Dried Kelp    | 3 Kelp + Fuel       | Furnace |\",\n\"| 3 Dried Kelp    | 3 Kelp + Fuel       | Furnace |\\n| Blazite Ingot   | 2 Blazite Ore + Fuel | Furnace |\")\n\n# Blocks: count and new rows after Obsidian.\nsrc = src.replace(\"**56 block types** (plus air).\", \"**59 block types** (plus air).\")\nsrc = src.replace(\n\"| Obsidian                  | 40       | Diamond Pickaxe | The hardest mineable block. Created only by […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\npython3 - << 'PYEOF'\npath = \"docs/reference.md\"\nsrc = open(path).read()\n\n# Recipe counts: +8 recipes (bucket, flint&steel, glowstone, 2 blazite smelts, 3 blazite gear); collapsed rows +7.\nsrc = src.replace(\"**92 crafting recipes**\", \"**100 crafting recipes**\")\nsrc = src.replace(\"The tables below show 85 rows:\", \"The tables below show 92 rows:\")\n\n# Tools recipe table: flint & steel row after Bucket.\nsrc = src.replace(\n\"| Bucket           | 3 Sliver Ore            |\",\n\"| Bucket           | 3 Sliver Ore            |\\n| Flint & Steel    | 1 Sliver Ore + 1 Coal   |\")\n\n# Weapons recipe table: blazite spear after Diamond Spear.\nsrc = src.replace(\n\"| Diamond Spear  | 1 Diamond Ore + 2 Wood         |\",\n\"| Diamond Spear  | 1 Diamond Ore + 2 Wood         |\\n| Blazite Spear  | 1 Blazite Ingot + 2 Wood       |\")\n\n# Smelting table: blazite ingot row.\nsrc = src.replace(\n\"| 3 Dried Kelp    | 3 Kelp + Fuel       | Furnace |\",\n\"| 3 Dried Kelp    | 3 Kelp + Fuel       | Furnace |\\n| Blazite Ingot   | 2 Blazite Ore + Fuel | Furnace |\")\n\n# Blocks: count and new rows after Obsidian.\nsrc = src.replace(\"**56 block types** (plus air).\", \"**59 block types** (plus air).\")\nsrc = src.replace(\n\"| Obsidian                  | 40       | Diamond Pickaxe | The hardest mineable block. Created only by […]
 
 > TOOL
 
@@ -15504,7 +15504,7 @@ tool_use Bash
 id: toolu_01NbQpD9BnSRUvz9YjEgJK9D
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nsed -n \"$(grep -n '\\*\\*18 mob kinds\\*\\*' docs/reference.md | cut -d: -f1),+15p\" docs/reference.md; sed -n \"$(grep -n '| Diamond Sword  | 47' docs/reference.md | cut -d: -f1),+12p\" docs/reference.md; sed -n \"$(grep -n '| Diamond Pickaxe' docs/reference.md | tail -1 | cut -d: -f1),+4p\" docs/reference.md",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nsed -n \"$(grep -n '\\*\\*18 mob kinds\\*\\*' docs/reference.md | cut -d: -f1),+15p\" docs/reference.md; sed -n \"$(grep -n '| Diamond Sword  | 47' docs/reference.md | cut -d: -f1),+12p\" docs/reference.md; sed -n \"$(grep -n '| Diamond Pickaxe' docs/reference.md | tail -1 | cut -d: -f1),+4p\" docs/reference.md",
   "description": "See mobs intro and item stat tables"
 }
 ```
@@ -15535,7 +15535,7 @@ tool_use Bash
 id: toolu_01B2rCRaAkcrJVRUYRfEY1GY
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\npython3 - << 'PYEOF'\npath = \"docs/reference.md\"\nsrc = open(path).read()\n\n# Mobs intro: nether hostiles blurb.\nsrc = src.replace(\n\"\"\"**raiders** storm a village in waves when a raid is triggered. Drop\ncounts are inclusive ranges rolled per kill.\"\"\",\n\"\"\"**raiders** storm a village in waves when a raid is triggered; the **imp** and\n**scorcher** are the nether's hostiles — spawning perpetually there (its pinned\ndusk never lifts) and nowhere else. Drop counts are inclusive ranges rolled per kill.\"\"\")\n\n# Mob table rows: find the drowned/boss rows and append imp + scorcher after the last mob row.\n# Insert after the row for Villager or Boss — locate the boss row.\nimport re\nm = re.search(r\"\\| Boss.*\\n\", src)\nif m:\n    src = src[:m.end()] + (\n\"| Imp      | hostile | 150          | 1.25  | 12           | 5 melee            | 1.1 s    | 0–1 Glowstone Dust, 15% 1 Gold Ore              |\\n\"\n\"| Scorcher | hostile | 100          | 1.0   | 14           | 6 fireball         | 2.2 s    | 0–2 Glowstone Dust                              |\\n\"\n    ) + src[m.end():]\n\n# Tools stats table: blazite pickaxe.\nsrc = src.replace(\n\"| Diamond Pickaxe  | 4.4        | 7    | 700        |\",\n\"| Diamond Pickaxe  | 4.4        | 7    | 700        |\\n| Blazite Pickaxe  | 5.0        | 8    | 900        |\")\n\n# Weapons stats: […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\npython3 - << 'PYEOF'\npath = \"docs/reference.md\"\nsrc = open(path).read()\n\n# Mobs intro: nether hostiles blurb.\nsrc = src.replace(\n\"\"\"**raiders** storm a village in waves when a raid is triggered. Drop\ncounts are inclusive ranges rolled per kill.\"\"\",\n\"\"\"**raiders** storm a village in waves when a raid is triggered; the **imp** and\n**scorcher** are the nether's hostiles — spawning perpetually there (its pinned\ndusk never lifts) and nowhere else. Drop counts are inclusive ranges rolled per kill.\"\"\")\n\n# Mob table rows: find the drowned/boss rows and append imp + scorcher after the last mob row.\n# Insert after the row for Villager or Boss — locate the boss row.\nimport re\nm = re.search(r\"\\| Boss.*\\n\", src)\nif m:\n    src = src[:m.end()] + (\n\"| Imp      | hostile | 150          | 1.25  | 12           | 5 melee            | 1.1 s    | 0–1 Glowstone Dust, 15% 1 Gold Ore              |\\n\"\n\"| Scorcher | hostile | 100          | 1.0   | 14           | 6 fireball         | 2.2 s    | 0–2 Glowstone Dust                              |\\n\"\n    ) + src[m.end():]\n\n# Tools stats table: blazite pickaxe.\nsrc = src.replace(\n\"| Diamond Pickaxe  | 4.4        | 7    | 700        |\",\n\"| Diamond Pickaxe  | 4.4        | 7    | 700        |\\n| Blazite Pickaxe  | 5.0        | 8    | 900        |\")\n\n# Weapons stats: […]
 
 > TOOL
 
@@ -15561,7 +15561,7 @@ id: toolu_01KXSkTETVrtTksaZd1hoNL2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/manual.md",
   "old_string": "Mind the frame: breaking any of its obsidian extinguishes the surface, and a\nportal that somehow lost its frame will refuse to carry you (it clears instead).\nBeds don't work in the Nether — there is no morning to skip to — and portals\nare **not yet available in online worlds** (the game will say so if you try to\nlight one there).\n\n### Rafts and ships",
   "new_string": "Mind the frame: breaking any of its obsidian extinguishes the surface, and a\nportal that somehow lost its frame will refuse to carry you (it clears instead).\nBeds don't work in the Nether — there is no morning to skip to — and portals\nare **not yet available in online worlds** (the game will say so if you try to\nlight one there).\n\n### Surviving the Nether\n\nThe other side is a sealed world of **netherrack** caverns under a bedrock sky,\nlit by hanging **glowstone** clusters and the glow of **lava seas** that fill\nthe deeps. There is no day, no weather, no water, and no mercy: **imps**\n(fast, vicious melee brutes) and **scorchers** (hovering fire-spirits that lob\nfireballs) spawn near you *constantly* — the darkness that summons monsters\nnever lifts here. Come armed, wall yourself in […]
 
@@ -15570,7 +15570,7 @@ id: toolu_01KXSkTETVrtTksaZd1hoNL2
 tool_result
 id: toolu_01KXSkTETVrtTksaZd1hoNL2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -15584,7 +15584,7 @@ id: toolu_01BC1vQydtVSRMAZtik1UKpA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/manual.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/manual.md",
   "old_string": "Your arrival portal is your lifeline home — its frame is ordinary obsidian, so\nkeep a spare flint & steel (and ideally frame material) on you. Dying in the\nNether respawns you back at your bed (or world spawn) in the overworld, but\nyour dropped-nothing inventory rules are unchanged — the run back is through\nthe portal you left behind.",
   "new_string": "Your arrival portal is your lifeline home — its frame is ordinary obsidian, so\nkeep a spare flint & steel (and ideally frame material) on you. And know this\nbefore you risk it: **dying in the Nether respawns you in the Nether**, at a\nrandom cavern floor — your bed is a world away and can't reach you here. The\nwalk back to your (still lit, still glowing) portal is part of the price."
 }
@@ -15595,7 +15595,7 @@ id: toolu_01BC1vQydtVSRMAZtik1UKpA
 tool_result
 id: toolu_01BC1vQydtVSRMAZtik1UKpA
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/manual.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15604,7 +15604,7 @@ tool_use Bash
 id: toolu_019MKiRpBu1ooFw839MuaNcQ
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"^##\" docs/tuning.md | head -20; tail -12 docs/tuning.md",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"^##\" docs/tuning.md | head -20; tail -12 docs/tuning.md",
   "description": "Survey tuning.md structure"
 }
 ```
@@ -15650,7 +15650,7 @@ tool_use Bash
 id: toolu_01E1JmcotDuEUCw2sBH4fvnb
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ncat >> docs/tuning.md << 'EOF'\n\n## The Nether & portals\n\n- **`PORTAL_DWELL_SECONDS`** (3) — how long a player stands in a portal surface\n  before travel fires. Shorter feels snappier but makes an accidental brush\n  through a portal a trip; longer makes escaping into a portal under fire a\n  real gamble. The dwell latches after firing — no re-fire until you step out.\n- **`PORTAL_MIN_INTERIOR` / `PORTAL_MAX_INTERIOR`** (2×3 / 4×4) — the interior\n  sizes `findPortalFrame` accepts (obsidian border, corners required). Raising\n  the max makes grand gates possible but costs more obsidian and widens the\n  frame-validation scan bounds.\n- **`PORTAL_SEARCH_RADIUS`** (24) — how far around the mapped 1:1 arrival point\n  an existing portal is reused instead of building a new one. Too small and\n  paired portals drift apart into portal farms; too large and a deliberately\n  separate second portal gets hijacked as an arrival.\n- **`NETHER_DAYLIGHT`** (0.22) — the nether's pinned daylight. It must sit\n  below `HOSTILE_SPAWN_BELOW_DAYLIGHT` (0.28, keeps spawns perpetual) and below\n  `HOSTILE_BURN_ABOVE_DAYLIGHT` (0.72, nothing combusts); it also sits below\n  the sleep threshold, which is why beds carry an explicit dimension refusal.\n  Nudging it changes nothing visually (the renderer's nether profile drives the\n  look) — it is purely […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ncat >> docs/tuning.md << 'EOF'\n\n## The Nether & portals\n\n- **`PORTAL_DWELL_SECONDS`** (3) — how long a player stands in a portal surface\n  before travel fires. Shorter feels snappier but makes an accidental brush\n  through a portal a trip; longer makes escaping into a portal under fire a\n  real gamble. The dwell latches after firing — no re-fire until you step out.\n- **`PORTAL_MIN_INTERIOR` / `PORTAL_MAX_INTERIOR`** (2×3 / 4×4) — the interior\n  sizes `findPortalFrame` accepts (obsidian border, corners required). Raising\n  the max makes grand gates possible but costs more obsidian and widens the\n  frame-validation scan bounds.\n- **`PORTAL_SEARCH_RADIUS`** (24) — how far around the mapped 1:1 arrival point\n  an existing portal is reused instead of building a new one. Too small and\n  paired portals drift apart into portal farms; too large and a deliberately\n  separate second portal gets hijacked as an arrival.\n- **`NETHER_DAYLIGHT`** (0.22) — the nether's pinned daylight. It must sit\n  below `HOSTILE_SPAWN_BELOW_DAYLIGHT` (0.28, keeps spawns perpetual) and below\n  `HOSTILE_BURN_ABOVE_DAYLIGHT` (0.72, nothing combusts); it also sits below\n  the sleep threshold, which is why beds carry an explicit dimension refusal.\n  Nudging it changes nothing visually (the renderer's nether profile drives the\n  look) — it is purely […]
 
 > TOOL
 
@@ -15667,7 +15667,7 @@ id: toolu_01JZU6tFVr4KigmBG2YRfj2N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/adding-content.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/adding-content.md",
   "old_string": "## A held-item world action (buckets, ignition, …)",
   "new_string": "## Dimension-dependent behavior (and what a new dimension needs)\n\n- The engine simulates ONE dimension per instance (`GameState.dimension`, fixed for its life — swap-on-travel remounts for the other side; see [architecture.md](architecture.md)). Behavior that differs by dimension forks at ONE seam each, always comparing `=== \"nether\"` so bare test fixtures keep overworld behavior: the generator + save section pick in the `GameEngine` constructor, `surfaceYAt` (roofed worlds need the cavern-floor walker, not `highestSolidY`), `dimensionDaylightAt`, `tickWeather`, the bed refusal in `interactBed`, the spawn rosters in `spawnDirector.ts`, the minimap's roofed column scan, and the renderer's `DIMENSION_PROFILES`.\n- A hypothetical third dimension would extend: `DimensionId` (types.ts — the compile-enforced `VALID_DIMENSIONS` and `DIMENSION_PROFILES` records then demand entries), `SaveData.dimensions`, `dimensionSectionOf`, its own generator module with pinned SHA-256 baselines (the `netherGeneration.ts` pattern: portable noise, fresh PRNG xor constants, area-scaled counts), and each seam above.\n- Nether-only mobs are ordinary `MobKind`s — the dimension-dependence lives entirely in `spawnDirector.ts`'s roster branches, not on the template.\n\n## A held-item world action (buckets, ignition, …)"
 }
@@ -15678,7 +15678,7 @@ id: toolu_01JZU6tFVr4KigmBG2YRfj2N
 tool_result
 id: toolu_01JZU6tFVr4KigmBG2YRfj2N
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/adding-content.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/adding-content.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15687,7 +15687,7 @@ tool_use Read
 id: toolu_011pP5EqGxmrBADEXk7QKGNq
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "offset": 10,
   "limit": 4
 }
@@ -15710,7 +15710,7 @@ id: toolu_01SSSu12mv12CEE4mdqcstUM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Portable noise                | `lib/world/noise.test.ts`, `e2e/determinism.e2e.ts`                                                                                                                                                                                                           | The cross-engine determinism contract behind the worldgen digests: `portableSin`/`portableCos` track the true sine within 1e-6 across many periods, the hashes are uniform/axis-sensitive, and exact golden doubles are pinned; the e2e recomputes the full-size seed-1337 world digest inside Chromium/V8 and asserts it equals the Bun baseline in `generationBaselines.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |",
   "new_string": "| Portable noise                | `lib/world/noise.test.ts`, `e2e/determinism.e2e.ts`                                                                                                                                                                                                           | The cross-engine determinism contract behind the worldgen digests: `portableSin`/`portableCos` track the true sine within 1e-6 across many periods, the hashes are uniform/axis-sensitive, and exact golden doubles are pinned; the e2e recomputes the full-size seed-1337 world digest inside Chromium/V8 and asserts it equals the Bun baseline in `generationBaselines.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |\n| Nether worldgen               | `lib/world/netherGeneration.test.ts`                                                                                                                                                                                                                          | The nether's own byte contract: SHA-256 baselines (full 512² + three 128² seeds, under `WORLDGEN_BASELINES.nether`) plus structural probes — bedrock seals floor AND ceiling (the skylight-zeroing cap), lava seas exist at the flood line with none floating above it, glowstone hangs anchored to netherrack ceilings, blazite ore stays in the deep band, and walkable lava-free floor pockets exist at both play size and the 64² engine-test size (the area-scaled carve counts' whole purpose) […]
 
@@ -15719,7 +15719,7 @@ id: toolu_01SSSu12mv12CEE4mdqcstUM
 tool_result
 id: toolu_01SSSu12mv12CEE4mdqcstUM
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15729,7 +15729,7 @@ id: toolu_01Rru4Mjk7qUkiWUURC8vEPE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added\n\n- **Buckets, movable fluids & obsidian — the nether epic's opening act**:",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **The Nether — a second dimension behind an obsidian portal (save v17→v18; worldgen 11 and protocol v3 unchanged)**: build a standing obsidian rectangle (2×3 up to 4×4 interior, corners required), strike an inner face with **flint & steel** (1 sliver ore + 1 coal), and step through into a sealed ember world — netherrack caverns under a bedrock sky, hanging **glowstone**, **lava seas**, and perpetual hostiles: the **imp** (a fast melee brute) and the **scorcher** (a hovering fire-spirit lobbing dodgeable-but-heavy fireballs). Down deep lies **blazite ore** (diamond-pickaxe-gated): smelt it into ingots and forge the **post-diamond gear tier** — pickaxe (chews obsidian), sword (under only the Dragon Sword), and spear. Glowstone shatters into dust; 4 dust recombine into a placeable torch-strength light. Portals come out at the same coordinates in the other world, reusing a nearby portal or building a fresh one on a safe pad; travel re-validates the frame (a de-framed surface clears instead of carrying you), breaking frame obsidian extinguishes the surface immediately, beds refuse (no morning to skip to), […]
 
@@ -15738,7 +15738,7 @@ id: toolu_01Rru4Mjk7qUkiWUURC8vEPE
 tool_result
 id: toolu_01Rru4Mjk7qUkiWUURC8vEPE
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15747,7 +15747,7 @@ tool_use Bash
 id: toolu_01W41DVkyzAb12C5LHeGNNLu
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\ngrep -n \"boss\\|dungeons\\|redstone\\|Features\\|rails\" README.md | head -10",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\ngrep -n \"boss\\|dungeons\\|redstone\\|Features\\|rails\" README.md | head -10",
   "description": "Check README feature blurb"
 }
 ```
@@ -15767,7 +15767,7 @@ id: toolu_01J6fyihTNuevmvzsUVfRt4s
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/README.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/README.md",
   "old_string": "A playable, Minecraft-inspired voxel game that runs entirely in your browser. Explore procedural terrain across five biomes, cross water by **raft** or **ship** — over living oceans with **fish**, **kelp**, sunken **shipwrecks** to dive, and **buried treasure** to hunt by map — and dig into **dark caves** — lit only by the torches you craft and place, where lava pools and mobs lurk. Mine ores, raid **underground dungeons** for loot, build and farm, breed animals, craft through seven gear tiers up to a **bow** and throwable **spears**, and take on an **endgame boss** for a true win condition — all across a day-night cycle with hunger, drowning, and lava hazards.",
   "new_string": "A playable, Minecraft-inspired voxel game that runs entirely in your browser. Explore procedural terrain across five biomes, cross water by **raft** or **ship** — over living oceans with **fish**, **kelp**, sunken **shipwrecks** to dive, and **buried treasure** to hunt by map — and dig into **dark caves** — lit only by the torches you craft and place, where lava pools and mobs lurk. Mine ores, raid **underground dungeons** for loot, build and farm, breed animals, craft through seven […]
 
@@ -15785,7 +15785,7 @@ tool_use Bash
 id: toolu_017QvjTQUxm5FgR2KFN2yUdf
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\npython3 - << 'PYEOF'\npath = \"README.md\"\nsrc = open(path).read()\nold = \"craft through seven gear tiers up to a **bow** and throwable **spears**, and take on an **endgame boss**\"\nnew = \"craft through seven gear tiers up to a **bow** and throwable **spears**, quench lava into obsidian and light a **portal to the Nether** — a sealed ember dimension of glowstone, lava seas, and the post-diamond **blazite** tier — and take on an **endgame boss**\"\nassert old in src\nopen(path, \"w\").write(src.replace(old, new))\nprint(\"ok\")\nPYEOF\nbun run format >/dev/null 2>&1 && bun run lint 2>&1 | tail -2 && git add -A && git commit -m \"docs: the nether epic\n\nThe epic's documentation sweep: the player manual gains a Surviving the\nNether guide (what's down there, the three exports, the honest warning\nthat dying in the Nether respawns you IN the Nether — the current\nin-dimension respawn rule, documented rather than hidden); the reference\ngains the three block rows, both mob rows, the blazite gear stats, and\nupdated counts (59 blocks, 18 mob kinds, 100 recipes); tuning.md gets a\nNether & portals dial section (incl. why NETHER_DAYLIGHT must sit under\nboth hostile thresholds); adding-content.md documents the one-seam\ndimension forks and what a third dimension would need; testing.md maps\nthe new nether-worldgen […]
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\npython3 - << 'PYEOF'\npath = \"README.md\"\nsrc = open(path).read()\nold = \"craft through seven gear tiers up to a **bow** and throwable **spears**, and take on an **endgame boss**\"\nnew = \"craft through seven gear tiers up to a **bow** and throwable **spears**, quench lava into obsidian and light a **portal to the Nether** — a sealed ember dimension of glowstone, lava seas, and the post-diamond **blazite** tier — and take on an **endgame boss**\"\nassert old in src\nopen(path, \"w\").write(src.replace(old, new))\nprint(\"ok\")\nPYEOF\nbun run format >/dev/null 2>&1 && bun run lint 2>&1 | tail -2 && git add -A && git commit -m \"docs: the nether epic\n\nThe epic's documentation sweep: the player manual gains a Surviving the\nNether guide (what's down there, the three exports, the honest warning\nthat dying in the Nether respawns you IN the Nether — the current\nin-dimension respawn rule, documented rather than hidden); the reference\ngains the three block rows, both mob rows, the blazite gear stats, and\nupdated counts (59 blocks, 18 mob kinds, 100 recipes); tuning.md gets a\nNether & portals dial section (incl. why NETHER_DAYLIGHT must sit under\nboth hostile thresholds); adding-content.md documents the one-seam\ndimension forks and what a third dimension would need; testing.md maps\nthe new nether-worldgen […]
 
 > TOOL
 
@@ -15849,7 +15849,7 @@ tool_use Bash
 id: toolu_01JzRcz18j8pvkdJ3Zs7v1qj
 ```json
 {
-  "command": "cd /Users/hutusi/workspace/ai/david/monecraft\nbun run typecheck 2>&1 | tail -2 && bun run format:check 2>&1 | tail -2 && bun run lint 2>&1 | tail -2",
+  "command": "cd /home/<USER>/workspace/ai/david/monecraft\nbun run typecheck 2>&1 | tail -2 && bun run format:check 2>&1 | tail -2 && bun run lint 2>&1 | tail -2",
   "description": "Gate: typecheck, format:check, lint",
   "timeout": 300000
 }
@@ -15975,15 +15975,15 @@ tool_use Write
 id: toolu_01Y1iFSSoWmxMFfDdvxSiesn
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/nether-epic-branch.md",
-  "content": "---\nname: nether-epic-branch\ndescription: \"Nether dimension epic — BUILT on feat/nether (16 commits, 2026-07-07), HELD for user review before push; e2e NOT run (port 3000 held by ~/workspace/ai/naive/astra server)\"\nmetadata:\n  type: project\n---\n\n**The Nether epic is BUILT on branch `feat/nether`** (16 commits off main `2fb631c`, finished 2026-07-07). Plan: `/Users/hutusi/.claude/plans/now-let-s-think-of-sunny-rocket.md`. **HELD locally per [[review-fixes-no-push]] — user reviews before push/PR.**\n\nShipped shape (user decisions: one epic branch, swap-on-travel, SP-first, standard content):\n- Stage 1: buckets/static fluids (ItemDef.stackSize; water scoop needs waterSurfaceRaycast — the solid raycast passes through water), water-on-lava→Obsidian(90).\n- Stage 2: **save v17→v18** (top-level world fields REMAIN overworld's; nether rides `dimensions.nether`; per-player `dimension`+one-shot `portalArrival`; engines re-emit foreign sections verbatim = server pass-through, protocol stays v3); **worldgen guard now ENFORCED** (applyWorldgenGuard in engine ctor; absent stamp = grandfathered); dimension-aware boot (createNetherFloorYAt fixes the roofed-world surfaceYAt landmine at one seam; NETHER_DAYLIGHT 0.22 pins spawns-on/burn-off/sleep-refused); NetherPortal(91) non-solid=unmineable-by-construction; portal.ts frame validation (2×3..4×4, corners REQUIRED — stricter than MC); swap-on-travel via serializeForTravel + skipUnmountSaveRef-BEFORE-write + reloadNonce remount; renderer DimensionProfile (skyLightFloor 0.18 IS the nether's ambient — ceiling zeroes skylight).\n- Stage 3: Netherrack/Glowstone/BlaziteOre (92-94), netherGeneration.ts (own SHA baselines under WORLDGEN_BASELINES.nether; **counts scale by AREA** so 64² engine-test worlds aren't hollowed; WORLDGEN_VERSION stays 11 — overworld […]
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/nether-epic-branch.md",
+  "content": "---\nname: nether-epic-branch\ndescription: \"Nether dimension epic — BUILT on feat/nether (16 commits, 2026-07-07), HELD for user review before push; e2e NOT run (port 3000 held by ~/workspace/ai/naive/astra server)\"\nmetadata:\n  type: project\n---\n\n**The Nether epic is BUILT on branch `feat/nether`** (16 commits off main `2fb631c`, finished 2026-07-07). Plan: `/home/<USER>/.claude/plans/now-let-s-think-of-sunny-rocket.md`. **HELD locally per [[review-fixes-no-push]] — user reviews before push/PR.**\n\nShipped shape (user decisions: one epic branch, swap-on-travel, SP-first, standard content):\n- Stage 1: buckets/static fluids (ItemDef.stackSize; water scoop needs waterSurfaceRaycast — the solid raycast passes through water), water-on-lava→Obsidian(90).\n- Stage 2: **save v17→v18** (top-level world fields REMAIN overworld's; nether rides `dimensions.nether`; per-player `dimension`+one-shot `portalArrival`; engines re-emit foreign sections verbatim = server pass-through, protocol stays v3); **worldgen guard now ENFORCED** (applyWorldgenGuard in engine ctor; absent stamp = grandfathered); dimension-aware boot (createNetherFloorYAt fixes the roofed-world surfaceYAt landmine at one seam; NETHER_DAYLIGHT 0.22 pins spawns-on/burn-off/sleep-refused); NetherPortal(91) non-solid=unmineable-by-construction; portal.ts frame validation (2×3..4×4, corners REQUIRED — stricter than MC); swap-on-travel via serializeForTravel + skipUnmountSaveRef-BEFORE-write + reloadNonce remount; renderer DimensionProfile (skyLightFloor 0.18 IS the nether's ambient — ceiling zeroes skylight).\n- Stage 3: Netherrack/Glowstone/BlaziteOre (92-94), netherGeneration.ts (own SHA baselines under WORLDGEN_BASELINES.nether; **counts scale by AREA** so 64² engine-test worlds aren't hollowed; WORLDGEN_VERSION stays 11 — overworld […]
 
 > TOOL
 
 tool_result
 id: toolu_01Y1iFSSoWmxMFfDdvxSiesn
 ```
-File created successfully at: /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/nether-epic-branch.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/nether-epic-branch.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -15992,7 +15992,7 @@ tool_use Read
 id: toolu_01QFAjCvM6UB4DTDW2Lcyfuj
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
 }
 ```
 
@@ -16017,7 +16017,7 @@ id: toolu_01X2vuyuR8uD1WU2k4y7aCGF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [Roadmap candidates](roadmap-candidates.md) — **NEXT EPIC: Nether-like dimension (picked 2026-07-06, plan in fresh session; stage buckets→multi-dimension core→content)**. Housekeeping first: cut v0.16.0, e2e-flakes session, upstream sync #14 still OPEN. PARKED: dev inventory-loss-on-reload",
   "new_string": "- [Roadmap candidates](roadmap-candidates.md) — Nether epic **BUILT** (see nether-epic-branch). Housekeeping still open: cut v0.16.0, e2e-flakes session, upstream sync #14 still OPEN. PARKED: dev inventory-loss-on-reload\n- [Nether epic branch](nether-epic-branch.md) — **✅ BUILT on `feat/nether` (16 commits, 2026-07-07), HELD for user review before push**; save v18, worldgen 11 + protocol v3 unchanged; gate green EXCEPT e2e (port 3000 held by astra project) + manual pass; nether death respawns in-nether (design point for review)"
 }
@@ -16028,7 +16028,7 @@ id: toolu_01X2vuyuR8uD1WU2k4y7aCGF
 tool_result
 id: toolu_01X2vuyuR8uD1WU2k4y7aCGF
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

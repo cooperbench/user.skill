@@ -5,10 +5,14 @@ sys.path.insert(0, "/data/claude-crawl")
 from cohort_policy import (
     canonical_session_id,
     command_expansion_payloads,
+    has_oversized_human_turn,
     injected_role,
     is_extreme_session_fragmentation,
     is_human_target,
     is_incomplete_dialogue,
+    is_oversized_human_turn,
+    is_predictable_human_turn,
+    max_human_target_tokens,
     reconstructed_session_evidence,
     scrub_text,
     trace_role,
@@ -26,7 +30,8 @@ class CohortPolicyTest(unittest.TestCase):
             "Base directory for this skill: /tmp/skill": "system",
             "This session is being continued from a summary": "system",
             "<system_instruction>do something</system_instruction>": "system",
-            "<subagent_notification>done</subagent_notification>": "tool",
+            "<subagent_notification>done</subagent_notification>": "metadata",
+            "<task-notification>done</task-notification>": "metadata",
             "<bash-stdout>ok</bash-stdout>": "tool",
             "## SKILL: SECURE CODING\nFollow these rules": "system",
             "<skill> <name>coordinator</name> body": "system",
@@ -40,6 +45,16 @@ class CohortPolicyTest(unittest.TestCase):
             self.assertFalse(is_human_target(text), text)
             self.assertEqual(injected_role(text), role)
         self.assertEqual(trace_role({"role": "user", "text": "turn 12"}), "metadata")
+        # Even if a source labeled the harness ping as tool, prefer metadata.
+        self.assertEqual(
+            trace_role(
+                {
+                    "role": "tool",
+                    "text": "<task-notification>done</task-notification>",
+                }
+            ),
+            "metadata",
+        )
 
     def test_cursor_user_query_unwrap(self):
         wrapped = (
@@ -103,17 +118,44 @@ class CohortPolicyTest(unittest.TestCase):
         self.assertTrue(is_incomplete_dialogue(assistant_only))
         self.assertFalse(is_incomplete_dialogue(short_dialogue))
 
-    def test_only_known_uuid_shapes_are_canonicalized(self):
+    def test_oversized_human_turns_skipped_as_prediction_targets(self):
+        short = [
+            {"role": "user", "text": "Fix the flaky test."},
+            {"role": "assistant", "text": "Done."},
+        ]
+        # " word" is one cl100k token; exactly 1000 tokens allowed, 1001 not.
+        at_cap = " word" * 1000
+        over_cap = " word" * 1001
+        ok = {"role": "user", "text": at_cap}
+        bad = {"role": "user", "text": over_cap}
+        # Long assistant turns must not trigger the filter.
+        long_assistant = [
+            {"role": "user", "text": "short ask"},
+            {"role": "assistant", "text": " x" * 5000},
+        ]
+        self.assertFalse(has_oversized_human_turn(short))
+        self.assertFalse(is_oversized_human_turn(ok))
+        self.assertTrue(is_predictable_human_turn(ok))
+        self.assertEqual(max_human_target_tokens([ok, {"role": "assistant", "text": "ok"}]), 1000)
+        self.assertTrue(is_oversized_human_turn(bad))
+        self.assertFalse(is_predictable_human_turn(bad))
+        self.assertTrue(has_oversized_human_turn([bad, {"role": "assistant", "text": "ok"}]))
+        self.assertEqual(max_human_target_tokens([bad, {"role": "assistant", "text": "ok"}]), 1001)
+        self.assertFalse(has_oversized_human_turn(long_assistant))
+        self.assertTrue(is_predictable_human_turn(long_assistant[0]))
+
+    def test_pipe_wrapped_uuids_are_canonicalized(self):
         uuid = "511c8d2a-1234-4abc-8def-1234567890ab"
         self.assertEqual(canonical_session_id(uuid), uuid)
         self.assertEqual(canonical_session_id(f"reparse|owner__repo|{uuid}"), uuid)
+        self.assertEqual(canonical_session_id(f"owner/repo|{uuid}"), uuid)
         self.assertEqual(
             canonical_session_id(f"2026-01-21-{uuid}"),
             uuid,
         )
         self.assertEqual(
             canonical_session_id(f"unknown|owner__repo|{uuid}"),
-            f"unknown|owner__repo|{uuid}",
+            uuid,
         )
 
     def test_secrets_are_scrubbed(self):
@@ -121,6 +163,17 @@ class CohortPolicyTest(unittest.TestCase):
         scrubbed = scrub_text(text)
         self.assertNotIn("abcdefghijklmnop", scrubbed)
         self.assertIn("[REDACTED", scrubbed)
+
+    def test_email_and_home_paths_are_scrubbed(self):
+        text = "contact jane.doe@acme.dev under /Users/jane/proj and /home/jane/x"
+        scrubbed = scrub_text(text)
+        self.assertNotIn("jane.doe@acme.dev", scrubbed)
+        self.assertNotIn("/Users/jane", scrubbed)
+        self.assertNotIn("/home/jane", scrubbed)
+        self.assertIn("<REDACTED_EMAIL>", scrubbed)
+        self.assertIn("/home/<USER>", scrubbed)
+        # Idempotent on placeholders.
+        self.assertEqual(scrub_text(scrubbed), scrubbed)
 
     def test_transcript_hash_is_order_and_role_sensitive(self):
         first = [{"role": "user", "text": "yes"}, {"role": "assistant", "text": "done"}]

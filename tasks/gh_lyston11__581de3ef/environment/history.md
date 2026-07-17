@@ -13,8 +13,8 @@ tool_use exec_command
 id: call_CYENzX4cBioIfE1sbh5HGc7U
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.agents/skills/agent-reach/SKILL.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/agent-reach/SKILL.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -93,8 +93,8 @@ tool_use exec_command
 id: call_gYdcKEDFNM9zzFqBIuIaRBvm
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.agents/skills/agent-reach/references/search.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/agent-reach/references/search.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -106,8 +106,8 @@ tool_use exec_command
 id: call_5n5nPviY3oZiQFCwJjRv92E2
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/lyston/.agents/skills/agent-reach/references/dev.md",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "cmd": "sed -n '1,220p' /home/<USER>/.agents/skills/agent-reach/references/dev.md",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -120,7 +120,7 @@ id: call_NXn8dcGhayx7Lpwwhr34zmtV
 ```json
 {
   "cmd": "command -v gh && gh --version",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -288,7 +288,7 @@ id: call_D9zKthOUDL2z7rAYxvY4kdIb
 ```json
 {
   "cmd": "gh search repos \"agent memory\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -301,7 +301,7 @@ id: call_ya9SNf27j87ee5At9fjBTh57
 ```json
 {
   "cmd": "gh search repos \"agentic rag\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -314,7 +314,7 @@ id: call_EYBH2N5DQzAaY8eaGM4Mct2c
 ```json
 {
   "cmd": "gh search repos \"knowledge graph rag\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -327,7 +327,7 @@ id: call_OsrBtHOxtazeLtN23FowLnHb
 ```json
 {
   "cmd": "gh search repos \"GraphRAG\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -400,7 +400,7 @@ id: call_ggWZnXzSOuZgMmcWjBlMDi0I
 ```json
 {
   "cmd": "gh search repos \"agent memory\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -420,7 +420,7 @@ id: call_L513LHUHloHuzT033STIHxpP
 ```json
 {
   "cmd": "gh search repos \"agentic rag\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -440,7 +440,7 @@ id: call_bartOVh7M6hU12u3UBl5r1bq
 ```json
 {
   "cmd": "gh search repos \"knowledge graph rag\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -460,7 +460,7 @@ id: call_x2RtK8zcqIho73t6a6it9oXh
 ```json
 {
   "cmd": "gh search repos \"GraphRAG\" --sort stars --limit 20 --json fullName,description,stargazersCount,updatedAt,url",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "sandbox_permissions": "require_escalated",
@@ -636,7 +636,7 @@ id: call_p4DDPBbTB2nqLTx2TlioWgAI
 ```json
 {
   "cmd": "gh repo view microsoft/graphrag --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -649,7 +649,7 @@ id: call_lHqs2PTAOp1Lqvgs6bKo6uBC
 ```json
 {
   "cmd": "gh repo view HKUDS/LightRAG --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -662,7 +662,7 @@ id: call_WpYDD1IqXIdXCbfxDyssi2gg
 ```json
 {
   "cmd": "gh repo view topoteretes/cognee --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -675,7 +675,7 @@ id: call_nq9LeAJ2kDluJ4E8vSsJ78fF
 ```json
 {
   "cmd": "gh repo view mem0ai/mem0 --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -748,7 +748,7 @@ id: call_z3XzOBtuex1AXbtlJ38uVkJJ
 ```json
 {
   "cmd": "gh repo view microsoft/graphrag --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -768,7 +768,7 @@ id: call_U8Fpnbf76RVbJKAucPaGKjoa
 ```json
 {
   "cmd": "gh repo view HKUDS/LightRAG --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -788,7 +788,7 @@ id: call_kh7CGNmqbeEjJEGcYn2DUxgM
 ```json
 {
   "cmd": "gh repo view topoteretes/cognee --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -808,7 +808,7 @@ id: call_vfOkhLIFP75WPz3PB8Wq5eyY
 ```json
 {
   "cmd": "gh repo view mem0ai/mem0 --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -936,7 +936,7 @@ id: call_cyS3BkojYNIM26UoKV6oe3m8
 ```json
 {
   "cmd": "gh repo view getzep/graphiti --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -949,7 +949,7 @@ id: call_NgGh9XgLJgKBa0QYcj1Mglm3
 ```json
 {
   "cmd": "gh repo view letta-ai/letta --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -962,7 +962,7 @@ id: call_5IeYAZUk8MxaEofjQ6DCI4Uv
 ```json
 {
   "cmd": "gh repo view vectorize-io/hindsight --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -975,7 +975,7 @@ id: call_gdrV4iWyE5OnwL2U6ozHayzc
 ```json
 {
   "cmd": "gh repo view deepset-ai/haystack --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1048,7 +1048,7 @@ id: call_eERIxGVn5gBwaBdklyhdYLcs
 ```json
 {
   "cmd": "gh repo view getzep/graphiti --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -1068,7 +1068,7 @@ id: call_GGSMrGkBehsuuLv4rXBei6pa
 ```json
 {
   "cmd": "gh repo view letta-ai/letta --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -1088,7 +1088,7 @@ id: call_x6OqZVFeK2NFAkPwTIKKjrv9
 ```json
 {
   "cmd": "gh repo view vectorize-io/hindsight --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",
@@ -1108,7 +1108,7 @@ id: call_ku3Rw8z3Eee8UDUjdEp9KySV
 ```json
 {
   "cmd": "gh repo view deepset-ai/haystack --json nameWithOwner,description,stargazerCount,updatedAt,url,homepageUrl,repositoryTopics,latestRelease,licenseInfo",
-  "workdir": "/Users/lyston/PycharmProjects",
+  "workdir": "/home/<USER>/PycharmProjects",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "sandbox_permissions": "require_escalated",

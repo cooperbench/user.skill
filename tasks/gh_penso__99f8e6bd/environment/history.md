@@ -105,14 +105,14 @@ id: toolu_01TMfNXh5dEKLP9gN3ZK9HQD
 tool_result
 id: toolu_01TMfNXh5dEKLP9gN3ZK9HQD
 ```
-/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs
-/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/detect.rs
-/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/error.rs
-/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/lib.rs
-/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/manager.rs
-/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/pool.rs
-/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/snapshot.rs
-/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/types.rs
+/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs
+/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/detect.rs
+/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/error.rs
+/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/lib.rs
+/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/manager.rs
+/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/pool.rs
+/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/snapshot.rs
+/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/types.rs
 ```
 
 > TOOL
@@ -121,7 +121,7 @@ tool_use Read
 id: toolu_016wKYBSjf8jBkdNreNCbxKJ
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs"
 }
 ```
 
@@ -198,7 +198,7 @@ tool_use Read
 id: toolu_01KBbRNi47Acf6GGJfpwUzw4
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/manager.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/manager.rs"
 }
 ```
 
@@ -208,7 +208,7 @@ tool_use Read
 id: toolu_01JDHZPcy5iRhDYGUW44qvuC
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/pool.rs"
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/pool.rs"
 }
 ```
 
@@ -349,7 +349,7 @@ id: toolu_01Uf3WK3V8mm62dgcQziNjoN
 ```json
 {
   "pattern": "container_host",
-  "path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser",
+  "path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser",
   "output_mode": "content"
 }
 ```
@@ -378,7 +378,7 @@ tool_use Read
 id: toolu_01CY7EQ7nG2CGnUB4gnxz5SU
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/types.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/types.rs",
   "offset": 440,
   "limit": 120
 }
@@ -450,7 +450,7 @@ id: toolu_01XcE1tUiXjszVtBYL1EMhJU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
   "old_string": "        info!(\n            image,\n            host_port,\n            backend = backend.cli(),\n            \"starting browser container\"\n        );",
   "new_string": "        info!(\n            image,\n            host_port,\n            backend = backend.cli(),\n            container_host,\n            \"starting browser container\"\n        );"
 }
@@ -461,7 +461,7 @@ id: toolu_01XcE1tUiXjszVtBYL1EMhJU
 tool_result
 id: toolu_01XcE1tUiXjszVtBYL1EMhJU
 ```
-The file /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
 ```
 
 > AGENT
@@ -475,7 +475,7 @@ id: toolu_01PoAQmyJzuiWEkA5usTCRPk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
   "old_string": "    let mut run_args = vec![\n        \"run\".to_string(),\n        \"-d\".to_string(),\n        \"--rm\".to_string(),\n        \"--name\".to_string(),\n        container_name.clone(),\n        \"-p\".to_string(),\n        format!(\"{}:3000\", host_port),\n        \"-e\".to_string(),\n        launch_args,\n        \"--shm-size=2gb\".to_string(),\n    ];\n\n    for env in browserless_env {\n        run_args.push(\"-e\".to_string());\n        run_args.push(env);\n    }\n\n    // Mount the profile directory if persistence is enabled\n    if let Some(host_path) = profile_dir {\n        run_args.push(\"-v\".to_string());\n        run_args.push(format!(\n            \"{}:{}:rw\",\n            host_path.display(),\n            CONTAINER_PROFILE_PATH\n        ));\n    }\n\n    run_args.push(image.to_string());\n\n    let output = Command::new(cli)\n        .args(&run_args)\n        .output()\n        .with_context(|| format!(\"failed to run {cli} command\"))?;",
   "new_string": "    let mut run_args = vec![\n        \"run\".to_string(),\n        \"-d\".to_string(),\n        \"--rm\".to_string(),\n        \"--name\".to_string(),\n        container_name.clone(),\n        \"-p\".to_string(),\n        format!(\"{}:3000\", host_port),\n        \"-e\".to_string(),\n        launch_args,\n        \"--shm-size=2gb\".to_string(),\n    ];\n\n    for env in browserless_env {\n        run_args.push(\"-e\".to_string());\n        run_args.push(env);\n    }\n\n    // Mount the profile directory if persistence is enabled\n    if let Some(host_path) = profile_dir {\n        run_args.push(\"-v\".to_string());\n        run_args.push(format!(\n            \"{}:{}:rw\",\n            host_path.display(),\n            CONTAINER_PROFILE_PATH\n        ));\n    }\n\n    run_args.push(image.to_string());\n\n    info!(\n        backend = cli,\n        args = %run_args.join(\" \"),\n        \"browser container run command\"\n    );\n\n    let output = Command::new(cli)\n        .args(&run_args)\n        .output()\n        .with_context(|| format!(\"failed to run {cli} command\"))?;"
 }
@@ -486,7 +486,7 @@ id: toolu_01PoAQmyJzuiWEkA5usTCRPk
 tool_result
 id: toolu_01PoAQmyJzuiWEkA5usTCRPk
 ```
-The file /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
 ```
 
 > AGENT
@@ -500,7 +500,7 @@ id: toolu_014KyhA7ZZJruJhEJrN1C6Yg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
   "old_string": "        // Wait for the container to be ready\n        if let Err(error) = wait_for_ready(container_host, host_port) {\n            warn!(\n                container_id,\n                host_port,\n                backend = backend.cli(),\n                error = %error,\n                \"browser container failed readiness check, cleaning up\"\n            );\n            stop_container_by_id(backend, &container_id);\n            return Err(error);\n        }",
   "new_string": "        // Wait for the container to be ready\n        if let Err(error) = wait_for_ready(container_host, host_port) {\n            // Fetch container logs before cleanup to help diagnose why Chrome\n            // didn't start (e.g. crash, missing libs, permission errors).\n            let container_logs = fetch_container_logs(backend, &container_id);\n            let container_status = inspect_container_status(backend, &container_id);\n\n            warn!(\n                container_id,\n                host_port,\n                container_host,\n                backend = backend.cli(),\n                error = %error,\n                \"browser container failed readiness check, cleaning up\"\n            );\n\n            if let Some(ref status) = container_status {\n                warn!(\n                    container_id,\n                    container_status = status,\n                    \"browser container status at time of failure\"\n                );\n            }\n\n            if let Some(ref logs) = container_logs {\n                // Truncate to last 50 lines to keep output manageable\n                let tail: String = logs\n                    .lines()\n                    .rev()\n                    .take(50)\n                    .collect::<Vec<_>>()\n                    .into_iter()\n                    .rev()\n                    .collect::<Vec<_>>()\n                    .join(\"\\n\");\n                warn!(\n                    container_id,\n                    logs = tail,\n                    \"browser container logs (last 50 lines)\"\n                );\n            } else {\n                warn!(container_id, \"no container logs available\");\n            }\n\n            if is_running_in_container() {\n                warn!(\n                    container_host,\n                    \"moltis appears to be running inside a container — […]
 
@@ -509,7 +509,7 @@ id: toolu_014KyhA7ZZJruJhEJrN1C6Yg
 tool_result
 id: toolu_014KyhA7ZZJruJhEJrN1C6Yg
 ```
-The file /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
 ```
 
 > AGENT
@@ -523,7 +523,7 @@ id: toolu_01PdypUZ4KnZsJPPAEfTouRT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
   "old_string": "/// Wait for the container to be ready by probing the Chrome DevTools endpoint.",
   "new_string": "/// Fetch the last logs from a container for diagnostic purposes.\nfn fetch_container_logs(backend: ContainerBackend, container_id: &str) -> Option<String> {\n    let cli = backend.cli();\n    let output = Command::new(cli)\n        .args([\"logs\", \"--tail\", \"50\", container_id])\n        .output()\n        .ok()?;\n\n    let stdout = String::from_utf8_lossy(&output.stdout);\n    let stderr = String::from_utf8_lossy(&output.stderr);\n\n    // Browserless/Chrome may log to either stdout or stderr\n    let combined = format!(\"{stdout}{stderr}\");\n    let trimmed = combined.trim().to_string();\n    if trimmed.is_empty() {\n        None\n    } else {\n        Some(trimmed)\n    }\n}\n\n/// Inspect a container's status (running, exited, etc.) for diagnostics.\nfn inspect_container_status(backend: ContainerBackend, container_id: &str) -> Option<String> {\n    let cli = backend.cli();\n\n    #[cfg(target_os = \"macos\")]\n    if backend == ContainerBackend::AppleContainer {\n        // Apple Container doesn't support `inspect --format`\n        return None;\n    }\n\n    let output = Command::new(cli)\n        .args([\n            \"inspect\",\n            \"--format\",\n            \"{{.State.Status}} (ExitCode={{.State.ExitCode}}, OOMKilled={{.State.OOMKilled}})\",\n            container_id,\n        ])\n        .output()\n        .ok()?;\n\n    if output.status.success() {\n        let status = String::from_utf8_lossy(&output.stdout).trim().to_string();\n        if status.is_empty() { None } else { Some(status) }\n    } else {\n        None\n    }\n}\n\n/// Detect whether we are running inside a container (Docker/Podman/etc.).\n///\n/// Checks for `/.dockerenv` (Docker) and cgroup markers (various runtimes).\nfn is_running_in_container() -> bool {\n    use std::path::Path;\n\n    // Docker creates this file inside its containers\n    if Path::new(\"/.dockerenv\").exists() {\n […]
 
@@ -532,7 +532,7 @@ id: toolu_01PdypUZ4KnZsJPPAEfTouRT
 tool_result
 id: toolu_01PdypUZ4KnZsJPPAEfTouRT
 ```
-The file /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
 ```
 
 > AGENT
@@ -546,7 +546,7 @@ id: toolu_01NhENV7piHuzPhoj1Csd2me
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/pool.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/pool.rs",
   "old_string": "        let container = tokio::task::spawn_blocking(move || {\n            // Check container runtime availability (Docker, Podman, or Apple Container)\n            if !container::is_container_available() {\n                return Err(Error::LaunchFailed(\n                    \"No container runtime available for sandboxed browser. \\\n                     Please install Docker, Podman, or Apple Container.\"\n                        .to_string(),\n                ));\n            }",
   "new_string": "        info!(\n            session_id,\n            image = %image,\n            container_host = %container_host,\n            profile_dir = ?profile_dir,\n            session_timeout_ms,\n            \"launching sandboxed browser container\"\n        );\n\n        let container = tokio::task::spawn_blocking(move || {\n            // Check container runtime availability (Docker, Podman, or Apple Container)\n            if !container::is_container_available() {\n                return Err(Error::LaunchFailed(\n                    \"No container runtime available for sandboxed browser. \\\n                     Please install Docker, Podman, or Apple Container.\"\n                        .to_string(),\n                ));\n            }"
 }
@@ -557,7 +557,7 @@ id: toolu_01NhENV7piHuzPhoj1Csd2me
 tool_result
 id: toolu_01NhENV7piHuzPhoj1Csd2me
 ```
-The file /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/pool.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/pool.rs has been updated successfully.
 ```
 
 > AGENT
@@ -753,7 +753,7 @@ id: toolu_01Nk5m6gsc6WG6EZ8Mu2J7Ej
 tool_result
 id: toolu_019M1djgkWXWWqeEhkSUqNJJ
 ```
-Diff in /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs:716:
+Diff in /home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs:716:
  
      if output.status.success() {
          let status = String::from_utf8_lossy(&output.stdout).trim().to_string();
@@ -766,7 +766,7 @@ Diff in /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/co
 (B[m     } else {
          None
      }
-Diff in /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs:740:
+Diff in /home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs:740:
  
      // Check cgroup for container markers
      if let Ok(cgroup) = std::fs::read_to_string("/proc/1/cgroup") {
@@ -826,12 +826,12 @@ id: toolu_01Q2dmU7tBCDt1qXBzHftYkZ
 Exit code 101
     Checking rustix v1.1.3
     Checking fastrand v2.3.0
-    Checking moltis-config v0.1.0 (/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/config)
-    Checking moltis-common v0.1.0 (/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/common)
+    Checking moltis-config v0.1.0 (/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/config)
+    Checking moltis-common v0.1.0 (/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/common)
     Checking which v8.0.0
     Checking tempfile v3.24.0
     Checking chromiumoxide v0.8.0
-    Checking moltis-browser v0.1.0 (/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser)
+    Checking moltis-browser v0.1.0 (/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser)
 error: this `if` statement can be collapsed
    --> crates/browser/src/container.rs:746:5
     |
@@ -867,7 +867,7 @@ id: toolu_01GGuUZjdCbpCP9ZmeyeXeey
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs",
   "old_string": "    // Check cgroup for container markers\n    if let Ok(cgroup) = std::fs::read_to_string(\"/proc/1/cgroup\") {\n        if cgroup.contains(\"docker\") || cgroup.contains(\"kubepods\") || cgroup.contains(\"containerd\")\n        {\n            return true;\n        }\n    }",
   "new_string": "    // Check cgroup for container markers\n    if let Ok(cgroup) = std::fs::read_to_string(\"/proc/1/cgroup\")\n        && (cgroup.contains(\"docker\")\n            || cgroup.contains(\"kubepods\")\n            || cgroup.contains(\"containerd\"))\n    {\n        return true;\n    }"
 }
@@ -878,7 +878,7 @@ id: toolu_01GGuUZjdCbpCP9ZmeyeXeey
 tool_result
 id: toolu_01GGuUZjdCbpCP9ZmeyeXeey
 ```
-The file /Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser/src/container.rs has been updated successfully.
 ```
 
 > TOOL
@@ -898,7 +898,7 @@ id: toolu_01M3qTdY63ruRk7eCEvDocRB
 tool_result
 id: toolu_01M3qTdY63ruRk7eCEvDocRB
 ```
-    Checking moltis-browser v0.1.0 (/Users/penso/.superset/worktrees/moltis/jet-gopher/crates/browser)
+    Checking moltis-browser v0.1.0 (/home/<USER>/.superset/worktrees/moltis/jet-gopher/crates/browser)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.87s
 ```
 

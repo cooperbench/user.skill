@@ -1,6 +1,6 @@
 > DEVELOPER
 
-this is dispatch by entire.io /Users/melagiri/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png What do you think of this? Will such feature help code-insights?
+this is dispatch by entire.io /home/<USER>/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png What do you think of this? Will such feature help code-insights?
 
 > AGENT
 
@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_01GMNf9aJQEevfP5HthQQKir
 ```json
 {
-  "file_path": "/Users/melagiri/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png"
+  "file_path": "/home/<USER>/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png"
 }
 ```
 
@@ -300,7 +300,7 @@ tool_use Bash
 id: toolu_01Am59qZSw2Tsruph3RXE3Ug
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/ && git -C /Users/melagiri/Workspace/codeInsights/code-insights status",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/ && git -C /home/<USER>/Workspace/codeInsights/code-insights status",
   "description": "List plans directory and check git status"
 }
 ```
@@ -331,7 +331,7 @@ tool_use Read
 id: toolu_01Bsdy7e3tprRqmgmdcMeaaC
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md",
   "limit": 30
 }
 ```
@@ -383,7 +383,7 @@ tool_use Write
 id: toolu_01PBop7jP8DrymZTf1t4BCPj
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
   "content": "# Session Writeup / Dispatch — Feature Ideation\n\n> **Status:** Ideation — Thoughts maturing, not ready for implementation\n> **Date:** 2026-05-09\n> **Triggered by:** Entire.io \"Dispatch\" feature observation\n> **Depends on:** `.code-insights.md` Phase 1 (`code-insights attach`) — must ship first\n\n---\n\n## The Spark\n\nEntire.io shipped a \"Dispatch\" feature: scope a repo + time window, choose a voice (Neutral / Marvin / Custom), get a newsletter-style narrative of what shipped that week — sourced from git commits.\n\nThe observation: Code Insights can tell a *richer* story. Entire.io reads commits → produces a **what**. Code Insights reads AI sessions → can produce a **why** — the decisions made, the friction encountered, the collaboration patterns. That's structurally better and only Code Insights can tell it.\n\n---\n\n## Founder's Vision (2026-05-09)\n\nA **\"Dispatch\" button on the session detail page** in the dashboard that generates an engineering blog post from that session's conversation and analysis data — ready to post on dev.to, Hashnode, or a personal engineering blog.\n\nKey intent:\n- Session-scoped (one session → one story)\n- Entry point: button on session detail in dashboard UI\n- Output: blog post, not a data dump\n- Released in phases\n\n---\n\n## Strategic Critique (devtools-cofounder)\n\n### The Granularity Problem\n\nSingle-session → publishable blog post has a […]
 
 > TOOL
@@ -391,7 +391,7 @@ id: toolu_01PBop7jP8DrymZTf1t4BCPj
 tool_result
 id: toolu_01PBop7jP8DrymZTf1t4BCPj
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -404,7 +404,7 @@ tool_use Bash
 id: toolu_01PcJkP9yy2P4cSt4wqdtpAW
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log --oneline -3",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log --oneline -3",
   "description": "Check recent commits for message style"
 }
 ```
@@ -425,7 +425,7 @@ tool_use Bash
 id: toolu_01UDknq64YfR81aV9NWvbP97
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add docs/plans/2026-05-09-session-writeup-dispatch-ideation.md && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add session writeup / dispatch feature ideation doc\n\nCaptures the full design discussion: Entire.io inspiration, founder's\nsession-scoped blog post vision, devtools-cofounder critique (granularity\nmismatch, quality risk, phased reframe), and LLM expert architecture\nguidance (two-step pipeline, quality gating, context selection strategy).\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add docs/plans/2026-05-09-session-writeup-dispatch-ideation.md && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add session writeup / dispatch feature ideation doc\n\nCaptures the full design discussion: Entire.io inspiration, founder's\nsession-scoped blog post vision, devtools-cofounder critique (granularity\nmismatch, quality risk, phased reframe), and LLM expert architecture\nguidance (two-step pipeline, quality gating, context selection strategy).\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the ideation doc"
 }
 ```
@@ -452,7 +452,7 @@ tool_use Bash
 id: toolu_01696yw3Vr5xcQqsY3jeURVd
 ```json
 {
-  "command": "grep -n \"plans\\|docs\" /Users/melagiri/Workspace/codeInsights/code-insights/.gitignore && git -C /Users/melagiri/Workspace/codeInsights/code-insights ls-files docs/",
+  "command": "grep -n \"plans\\|docs\" /home/<USER>/Workspace/codeInsights/code-insights/.gitignore && git -C /home/<USER>/Workspace/codeInsights/code-insights ls-files docs/",
   "description": "Check gitignore rules for docs and list tracked doc files"
 }
 ```
@@ -506,7 +506,7 @@ tool_use Bash
 id: toolu_01Hm4xc8feeaRgoTnk3zj7x1
 ```json
 {
-  "command": "mv /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md",
+  "command": "mv /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md",
   "description": "Move ideation doc to tracked specs directory"
 }
 ```
@@ -525,7 +525,7 @@ tool_use Bash
 id: toolu_01HzCuqLHkPmAaa8aG6dcXtU
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add session writeup / dispatch feature ideation doc\n\nCaptures the full design discussion: Entire.io inspiration, founder's\nsession-scoped blog post vision, devtools-cofounder critique (granularity\nmismatch, quality risk, phased reframe), and LLM expert architecture\nguidance (two-step pipeline, quality gating, context selection strategy).\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add session writeup / dispatch feature ideation doc\n\nCaptures the full design discussion: Entire.io inspiration, founder's\nsession-scoped blog post vision, devtools-cofounder critique (granularity\nmismatch, quality risk, phased reframe), and LLM expert architecture\nguidance (two-step pipeline, quality gating, context selection strategy).\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the ideation doc"
 }
 ```
@@ -550,7 +550,7 @@ tool_use Bash
 id: toolu_018R6VDoEf5nH75a5Q9qDjcM
 ```json
 {
-  "command": "find /Users/melagiri/Workspace/codeInsights/code-insights/docs -type f | sort && echo \"---GITIGNORE DOCS RULES---\" && grep -n \"docs\\|plans\\|superpowers\" /Users/melagiri/Workspace/codeInsights/code-insights/.gitignore",
+  "command": "find /home/<USER>/Workspace/codeInsights/code-insights/docs -type f | sort && echo \"---GITIGNORE DOCS RULES---\" && grep -n \"docs\\|plans\\|superpowers\" /home/<USER>/Workspace/codeInsights/code-insights/.gitignore",
   "description": "List all docs files on disk and relevant gitignore rules"
 }
 ```
@@ -560,41 +560,41 @@ id: toolu_018R6VDoEf5nH75a5Q9qDjcM
 tool_result
 id: toolu_018R6VDoEf5nH75a5Q9qDjcM
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/.DS_Store
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/AGENTS.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/logo-240x240.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/logo.svg
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/analytics-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/code-insights-ai-fluency-score.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/dashboard-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/insights-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-dark.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-rules-dark.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-rules-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/session-insight-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/stats.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/DEVELOPMENT.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/implementation/CURRENT_SPRINT.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/implementation/handover-llamacpp-provider.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/LANDSCAPE.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/.DS_Store
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-03-08-gamification-shareable-badges.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-03-09-effective-pattern-normalization.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/postmortems/2026-03-21-search-escape-bug.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/PRODUCT.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/QA.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/ROADMAP.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/source-tool-format-analysis.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/plans/2026-03-12-test-coverage-75-percent.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/ux/llm-cost-transparency.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/VISION.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/.DS_Store
+/home/<USER>/Workspace/codeInsights/code-insights/docs/AGENTS.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/logo-240x240.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/logo.svg
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/analytics-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/code-insights-ai-fluency-score.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/dashboard-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/insights-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-dark.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-rules-dark.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-rules-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/session-insight-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/stats.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/DEVELOPMENT.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/implementation/CURRENT_SPRINT.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/implementation/handover-llamacpp-provider.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/LANDSCAPE.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/.DS_Store
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-03-08-gamification-shareable-badges.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-03-09-effective-pattern-normalization.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/postmortems/2026-03-21-search-escape-bug.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/PRODUCT.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/QA.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/ROADMAP.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/source-tool-format-analysis.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/plans/2026-03-12-test-coverage-75-percent.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/ux/llm-cost-transparency.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/VISION.md
 ---GITIGNORE DOCS RULES---
 41:# Transient implementation plans
 42:docs/plans/
@@ -610,7 +610,7 @@ tool_use Bash
 id: toolu_01JWWZJmSXjS9kMryAHp8Tpr
 ```json
 {
-  "command": "head -10 /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md && echo \"===\" && head -10 /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md && echo \"===\" && head -10 /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/plans/2026-03-12-test-coverage-75-percent.md",
+  "command": "head -10 /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md && echo \"===\" && head -10 /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md && echo \"===\" && head -10 /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/plans/2026-03-12-test-coverage-75-percent.md",
   "description": "Check status headers of three untracked/superpowers plans"
 }
 ```
@@ -659,7 +659,7 @@ tool_use Bash
 id: toolu_01WhCK2jsEd4ut5Cyhv84JCZ
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/ | grep doctor && echo \"doctor exists\" || echo \"doctor not implemented\"",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/ | grep doctor && echo \"doctor exists\" || echo \"doctor not implemented\"",
   "description": "Check if doctor command is implemented"
 }
 ```
@@ -683,7 +683,7 @@ tool_use Bash
 id: toolu_01DiSDm7DYTem6GCmwH1qEfK
 ```json
 {
-  "command": "grep -rn \"superpowers\" /Users/melagiri/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md /Users/melagiri/Workspace/codeInsights/code-insights/docs/AGENTS.md /Users/melagiri/Workspace/codeInsights/code-insights/CLAUDE.md 2>/dev/null | grep -v \"Binary\"",
+  "command": "grep -rn \"superpowers\" /home/<USER>/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md /home/<USER>/Workspace/codeInsights/code-insights/docs/AGENTS.md /home/<USER>/Workspace/codeInsights/code-insights/CLAUDE.md 2>/dev/null | grep -v \"Binary\"",
   "description": "Check for superpowers references in key docs"
 }
 ```
@@ -724,7 +724,7 @@ tool_use Bash
 id: toolu_01V6hsLUznZ29QccaC3fwZjD
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout -b docs/reorganize-plans-folder",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout -b docs/reorganize-plans-folder",
   "description": "Create feature branch for docs reorganization"
 }
 ```
@@ -770,7 +770,7 @@ tool_use Read
 id: toolu_019pPRL5S9t4kQiQhDGAxoCD
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/.gitignore",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/.gitignore",
   "offset": 38,
   "limit": 8
 }
@@ -798,7 +798,7 @@ id: toolu_01GABKaDamRADbv7WTm8TA7a
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/.gitignore",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/.gitignore",
   "old_string": "# Transient implementation plans\ndocs/plans/\n\n",
   "new_string": "\n"
 }
@@ -809,7 +809,7 @@ id: toolu_01GABKaDamRADbv7WTm8TA7a
 tool_result
 id: toolu_01GABKaDamRADbv7WTm8TA7a
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -822,7 +822,7 @@ tool_use Bash
 id: toolu_01LPX9zf9fPCXpn2p7KVqnVB
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/ && echo \"---\" && git -C /Users/melagiri/Workspace/codeInsights/code-insights status",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/ && echo \"---\" && git -C /home/<USER>/Workspace/codeInsights/code-insights status",
   "description": "Verify docs/plans contents and git status"
 }
 ```
@@ -900,7 +900,7 @@ tool_use Bash
 id: toolu_0161Kb1Hk1HQVugFwLnnN694
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: reorganize plans — consolidate into docs/plans/, remove superpowers dir\n\n- Remove docs/plans/ from .gitignore (plans should be tracked, not transient)\n- Move docs/superpowers/specs/ and docs/superpowers/plans/ into docs/plans/\n- Delete docs/superpowers/ directory (was an AI tooling artifact, not a product folder)\n- Delete doctor-command-design.md (doctor command is implemented, plan is stale)\n- Delete codebase-knowledge-research.md (superseded by the full 2026-05-05 design spec)\n\nAll active plans now in one place: docs/plans/\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: reorganize plans — consolidate into docs/plans/, remove superpowers dir\n\n- Remove docs/plans/ from .gitignore (plans should be tracked, not transient)\n- Move docs/superpowers/specs/ and docs/superpowers/plans/ into docs/plans/\n- Delete docs/superpowers/ directory (was an AI tooling artifact, not a product folder)\n- Delete doctor-command-design.md (doctor command is implemented, plan is stale)\n- Delete codebase-knowledge-research.md (superseded by the full 2026-05-05 design spec)\n\nAll active plans now in one place: docs/plans/\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit docs reorganization"
 }
 ```
@@ -923,7 +923,7 @@ tool_use Bash
 id: toolu_01RWjTA3655xdvwp1LotvPbN
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push -u origin docs/reorganize-plans-folder",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push -u origin docs/reorganize-plans-folder",
   "description": "Push branch to remote"
 }
 ```
@@ -989,7 +989,7 @@ tool_use Bash
 id: toolu_019wFZXBygTPzEZkP9BbSpCG
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout master && git -C /Users/melagiri/Workspace/codeInsights/code-insights pull",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout master && git -C /home/<USER>/Workspace/codeInsights/code-insights pull",
   "description": "Switch back to master and pull merged changes"
 }
 ```
@@ -1023,7 +1023,7 @@ tool_use Bash
 id: toolu_015erdART8hsJrWYiw6im7my
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log --oneline origin/master..HEAD",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log --oneline origin/master..HEAD",
   "description": "Check what local commits are ahead of origin"
 }
 ```
@@ -1060,7 +1060,7 @@ tool_use Bash
 id: toolu_012dNn68JenxzRkJTkyZFppm
 ```json
 {
-  "command": "grep -n \"insight\\|learning\\|decision\\|technique\" /Users/melagiri/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md | head -40",
+  "command": "grep -n \"insight\\|learning\\|decision\\|technique\" /home/<USER>/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md | head -40",
   "description": "Check insights table structure in architecture docs"
 }
 ```
@@ -1071,7 +1071,7 @@ tool_use Read
 id: toolu_01XAPrkE9ahNGNPECZF3dTjv
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
   "limit": 60
 }
 ```
@@ -1210,7 +1210,7 @@ tool_use Bash
 id: toolu_012JFrbmRZ3ou6F1S7pta8RQ
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout -b docs/dispatch-learnings-curated-design",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout -b docs/dispatch-learnings-curated-design",
   "description": "Create feature branch for dispatch design doc"
 }
 ```
@@ -1237,7 +1237,7 @@ tool_use Write
 id: toolu_015eC4dPFN9viysTbg8bKjfT
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md",
   "content": "# Dispatch — Learnings-Curated Blog Post Generator\n\n> **Status:** Design — Ready for implementation planning\n> **Date:** 2026-05-10\n> **Supersedes:** `2026-05-09-session-writeup-dispatch-ideation.md` (session-scoped approach abandoned)\n> **Dependencies:** None — uses existing `insights` table and `/insights` dashboard page\n\n---\n\n## Problem\n\nDevelopers accumulate structured learnings, decisions, and techniques across AI coding sessions. These live in the `insights` table — processed, categorized, and evidenced. But they never escape the tool. There is no way to turn them into something shareable: a blog post, a team write-up, a personal changelog entry.\n\nThe insight already exists. The developer just needs a way to tell the story around it.\n\n---\n\n## What Changed From the Original Vision\n\nThe original idea was session-scoped: one session → one blog post. That was critiqued and abandoned for three reasons:\n\n1. **Granularity mismatch** — compelling engineering stories span multiple sessions; a single session produces a Stack Overflow answer, not a blog post\n2. **Quality risk** — session transcripts contain half-formed AI reasoning and wrong mid-session conclusions\n3. **Over-generation** — 1-click blog post generation without user intent produces low-quality, unauthentic output\n\n**The revised approach:** The user *curates* 5–8 learnings from their insight library, provides a 2–3 sentence context paragraph explaining the story, and the LLM structures it […]
 
 > TOOL
@@ -1245,7 +1245,7 @@ id: toolu_015eC4dPFN9viysTbg8bKjfT
 tool_result
 id: toolu_015eC4dPFN9viysTbg8bKjfT
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1259,7 +1259,7 @@ id: toolu_01LTZAZogsL5kFFbdxjCiAKg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
   "old_string": "> **Status:** Ideation — Thoughts maturing, not ready for implementation\n> **Date:** 2026-05-09\n> **Triggered by:** Entire.io \"Dispatch\" feature observation\n> **Depends on:** `.code-insights.md` Phase 1 (`code-insights attach`) — must ship first",
   "new_string": "> **Status:** Superseded — session-scoped approach abandoned\n> **Date:** 2026-05-09\n> **Superseded by:** `2026-05-10-dispatch-learnings-curated-design.md`\n> **Triggered by:** Entire.io \"Dispatch\" feature observation"
 }
@@ -1270,7 +1270,7 @@ id: toolu_01LTZAZogsL5kFFbdxjCiAKg
 tool_result
 id: toolu_01LTZAZogsL5kFFbdxjCiAKg
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1283,7 +1283,7 @@ tool_use Bash
 id: toolu_01Es5XcfLduatgSEacEWGgmz
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add docs/plans/2026-05-10-dispatch-learnings-curated-design.md docs/plans/2026-05-09-session-writeup-dispatch-ideation.md && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add dispatch learnings-curated design spec\n\nCaptures the revised Dispatch direction: user selects 5-8 learnings from\nthe insights library, provides a context paragraph, and generates a\npublishable blog post. Supersedes the session-scoped approach from the\n2026-05-09 ideation doc.\n\nIncludes LLM expert guidance: drop evidence field, single-call Sonnet at\n0.7 temp, user context before insights in prompt, hard cap of 8 selections.\nNo schema changes needed — builds on existing insights table (Schema V9).\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add docs/plans/2026-05-10-dispatch-learnings-curated-design.md docs/plans/2026-05-09-session-writeup-dispatch-ideation.md && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add dispatch learnings-curated design spec\n\nCaptures the revised Dispatch direction: user selects 5-8 learnings from\nthe insights library, provides a context paragraph, and generates a\npublishable blog post. Supersedes the session-scoped approach from the\n2026-05-09 ideation doc.\n\nIncludes LLM expert guidance: drop evidence field, single-call Sonnet at\n0.7 temp, user context before insights in prompt, hard cap of 8 selections.\nNo schema changes needed — builds on existing insights table (Schema V9).\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit dispatch design doc and supersede marker"
 }
 ```
@@ -1304,7 +1304,7 @@ tool_use Bash
 id: toolu_013tkMaCbEfwziPT2Q393rr1
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push -u origin docs/dispatch-learnings-curated-design",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push -u origin docs/dispatch-learnings-curated-design",
   "description": "Push branch to remote"
 }
 ```
@@ -1371,7 +1371,7 @@ tool_use Bash
 id: toolu_012MQcSsNHwT1HqhH1m7E5m3
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout master && git -C /Users/melagiri/Workspace/codeInsights/code-insights pull",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout master && git -C /home/<USER>/Workspace/codeInsights/code-insights pull",
   "description": "Switch to master and pull merged changes"
 }
 ```
@@ -1614,7 +1614,7 @@ tool_use Bash
 id: toolu_01DgJ8H96LVYa7faB4GhbYXE
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && pnpm install",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && pnpm install",
   "description": "Install dependencies in worktree"
 }
 ```
@@ -1641,15 +1641,15 @@ Packages: +514
 Progress: resolved 514, reused 514, downloaded 0, added 394
 Progress: resolved 514, reused 514, downloaded 0, added 508
 Progress: resolved 514, reused 514, downloaded 0, added 514, done
- WARN  Failed to create bin at /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js'
+ WARN  Failed to create bin at /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js'
 
 devDependencies:
 + @vitest/coverage-v8 4.0.18
 + vitest 4.0.18
 
- WARN  Failed to create bin at /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/@code-insights/cli/dist/index.js'
+ WARN  Failed to create bin at /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/@code-insights/cli/dist/index.js'
 Done in 2.9s
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -1710,7 +1710,7 @@ id: toolu_01CKi1YiPShtZQb3DtCADiBj
 tool_result
 id: toolu_01CKi1YiPShtZQb3DtCADiBj
 ```
-{"team_name":"feat-dispatch-learnings-curated","team_file_path":"/Users/melagiri/.claude/teams/feat-dispatch-learnings-curated/config.json","lead_agent_id":"team-lead@feat-dispatch-learnings-curated"}
+{"team_name":"feat-dispatch-learnings-curated","team_file_path":"/home/<USER>/.claude/teams/feat-dispatch-learnings-curated/config.json","lead_agent_id":"team-lead@feat-dispatch-learnings-curated"}
 ```
 
 > AGENT
@@ -1728,7 +1728,7 @@ id: toolu_01Hpoi4RA3G7Mu3cSMTwbEhA
   "name": "pm-agent",
   "mode": "bypassPermissions",
   "team_name": "feat-dispatch-learnings-curated",
-  "prompt": "You are the PM for feature team feat-dispatch-learnings-curated.\n\nFEATURE REQUEST: Dispatch — Learnings-Curated Blog Post Generator.\n\nFull design doc: docs/plans/2026-05-10-dispatch-learnings-curated-design.md\nWorktree: /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/\nBranch: feature/dispatch-learnings-curated-blog-post-generator\nTeam: feat-dispatch-learnings-curated\nRepo root (for reading docs): /Users/melagiri/Workspace/codeInsights/code-insights/\n\nKEY DECISIONS ALREADY MADE (do not re-litigate):\n- New endpoint: POST /api/dispatch/generate (JSON, not SSE, not reusing export pipeline)\n- New route file: server/src/routes/dispatch.ts\n- New LLM file: server/src/llm/dispatch-prompts.ts with buildDispatchContext(), buildDispatchSystemPrompt(), parseDispatchOutput()\n- Regex frontmatter parsing with single retry on parse failure\n- Sonnet at temp 0.7, single call, no prompt caching\n- No schema changes — Schema V9 insights table only\n- UI: FloatingActionBar + DispatchDrawer (shadcn Sheet) + PostPreview on InsightsPage\n- dnd-kit for reorder inside drawer\n- Drop InsightSelector.tsx (YAGNI — selection inline on InsightsPage)\n- Implementation sequence: types → prompts (TDD) → route → hooks → drawer UI → insights page integration\n\nHLD/LLD already produced — do NOT re-run TA or LLM Expert reviews. Both are done.\n\nYour responsibilities are scoping, GitHub Issues, task graph, and handoff preparation.\nIMPORTANT: You CANNOT spawn agents. Only the orchestrator can. When you need an agent spawned, message the orchestrator with the request.\n\nFollow this protocol:\n\n1. SCOPE: Read docs/plans/2026-05-10-dispatch-learnings-curated-design.md and CLAUDE.md in the repo […]
+  "prompt": "You are the PM for feature team feat-dispatch-learnings-curated.\n\nFEATURE REQUEST: Dispatch — Learnings-Curated Blog Post Generator.\n\nFull design doc: docs/plans/2026-05-10-dispatch-learnings-curated-design.md\nWorktree: /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/\nBranch: feature/dispatch-learnings-curated-blog-post-generator\nTeam: feat-dispatch-learnings-curated\nRepo root (for reading docs): /home/<USER>/Workspace/codeInsights/code-insights/\n\nKEY DECISIONS ALREADY MADE (do not re-litigate):\n- New endpoint: POST /api/dispatch/generate (JSON, not SSE, not reusing export pipeline)\n- New route file: server/src/routes/dispatch.ts\n- New LLM file: server/src/llm/dispatch-prompts.ts with buildDispatchContext(), buildDispatchSystemPrompt(), parseDispatchOutput()\n- Regex frontmatter parsing with single retry on parse failure\n- Sonnet at temp 0.7, single call, no prompt caching\n- No schema changes — Schema V9 insights table only\n- UI: FloatingActionBar + DispatchDrawer (shadcn Sheet) + PostPreview on InsightsPage\n- dnd-kit for reorder inside drawer\n- Drop InsightSelector.tsx (YAGNI — selection inline on InsightsPage)\n- Implementation sequence: types → prompts (TDD) → route → hooks → drawer UI → insights page integration\n\nHLD/LLD already produced — do NOT re-run TA or LLM Expert reviews. Both are done.\n\nYour responsibilities are scoping, GitHub Issues, task graph, and handoff preparation.\nIMPORTANT: You CANNOT spawn agents. Only the orchestrator can. When you need an agent spawned, message the orchestrator with the request.\n\nFollow this protocol:\n\n1. SCOPE: Read docs/plans/2026-05-10-dispatch-learnings-curated-design.md and CLAUDE.md in the repo […]
 
 > TOOL
 
@@ -1746,7 +1746,7 @@ The agent is now running and will receive instructions via mailbox.
 
 The ceremony is underway. Here's where things stand:
 
-**Worktree:** `/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/`
+**Worktree:** `/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/`
 **Branch:** `feature/dispatch-learnings-curated-blog-post-generator`
 **Team:** `feat-dispatch-learnings-curated`
 
@@ -1846,7 +1846,7 @@ id: toolu_01HwhQURehehs2EUrW8WK4EX
   "name": "dev-agent",
   "mode": "bypassPermissions",
   "team_name": "feat-dispatch-learnings-curated",
-  "prompt": "You are the Dev for feature team feat-dispatch-learnings-curated.\n\nFEATURE: Dispatch — Learnings-Curated Blog Post Generator\nGitHub Issue: #296 (https://github.com/melagiri/code-insights/issues/296)\nWorktree: /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/\nBranch: feature/dispatch-learnings-curated-blog-post-generator\nTeam: feat-dispatch-learnings-curated\n\nAll code work happens in the WORKTREE, not the main repo checkout.\n\n---\n\n## Full Design Spec\n\nRead the full design doc at:\n/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/docs/plans/2026-05-10-dispatch-learnings-curated-design.md\n\n---\n\n## Architecture Decisions (Final — do not re-litigate)\n\n**Endpoint:** New `POST /api/dispatch/generate` (JSON response, NOT SSE, NOT reusing export pipeline)\n- Request: `{ insightIds: string[], context: string, tone: 'technical'|'accessible'|'quick-tips' }`\n- Response: `{ markdown: string, frontmatter: { title, tags, tldr }, wordCount: number, model: string, tokensUsed: { input, output } }`\n- New route file: `server/src/routes/dispatch.ts`\n- Mount in `server/src/index.ts`\n\n**LLM Layer:** `server/src/llm/dispatch-prompts.ts`\n- `buildDispatchSystemPrompt(tone: DispatchTone): string` — tone injected via interpolation\n- `buildDispatchContext(input: DispatchInput): string` — user context BEFORE insights, plain structured text (not JSON)\n- `parseDispatchOutput(raw: string): DispatchParseResult` — regex frontmatter parsing, NOT js-yaml\n- Single retry on parse failure (not a full second LLM call — retry same messages)\n- Model: Sonnet (claude-sonnet-4-6), temperature 0.7\n- No prompt caching (system prompt ~320 tokens, below 1024 Anthropic minimum)\n\n**Insight serialization format** (exact format for buildDispatchContext):\n```\nContext from the author:\n{userContext}\n\n---\n\nINSIGHTS ({n} selected by author):\n\n[LEARNING 1]\nSummary: {summary}\n{content}\n\n[DECISION 2]\nSummary: {summary}\n{content}\n- {bullet1}\n- {bullet2}\n\n[TECHNIQUE 3]\nSummary: {summary}\n{content}\n```\n- […]
+  "prompt": "You are the Dev for feature team feat-dispatch-learnings-curated.\n\nFEATURE: Dispatch — Learnings-Curated Blog Post Generator\nGitHub Issue: #296 (https://github.com/melagiri/code-insights/issues/296)\nWorktree: /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/\nBranch: feature/dispatch-learnings-curated-blog-post-generator\nTeam: feat-dispatch-learnings-curated\n\nAll code work happens in the WORKTREE, not the main repo checkout.\n\n---\n\n## Full Design Spec\n\nRead the full design doc at:\n/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/docs/plans/2026-05-10-dispatch-learnings-curated-design.md\n\n---\n\n## Architecture Decisions (Final — do not re-litigate)\n\n**Endpoint:** New `POST /api/dispatch/generate` (JSON response, NOT SSE, NOT reusing export pipeline)\n- Request: `{ insightIds: string[], context: string, tone: 'technical'|'accessible'|'quick-tips' }`\n- Response: `{ markdown: string, frontmatter: { title, tags, tldr }, wordCount: number, model: string, tokensUsed: { input, output } }`\n- New route file: `server/src/routes/dispatch.ts`\n- Mount in `server/src/index.ts`\n\n**LLM Layer:** `server/src/llm/dispatch-prompts.ts`\n- `buildDispatchSystemPrompt(tone: DispatchTone): string` — tone injected via interpolation\n- `buildDispatchContext(input: DispatchInput): string` — user context BEFORE insights, plain structured text (not JSON)\n- `parseDispatchOutput(raw: string): DispatchParseResult` — regex frontmatter parsing, NOT js-yaml\n- Single retry on parse failure (not a full second LLM call — retry same messages)\n- Model: Sonnet (claude-sonnet-4-6), temperature 0.7\n- No prompt caching (system prompt ~320 tokens, below 1024 Anthropic minimum)\n\n**Insight serialization format** (exact format for buildDispatchContext):\n```\nContext from the author:\n{userContext}\n\n---\n\nINSIGHTS ({n} selected by author):\n\n[LEARNING 1]\nSummary: {summary}\n{content}\n\n[DECISION 2]\nSummary: {summary}\n{content}\n- {bullet1}\n- {bullet2}\n\n[TECHNIQUE 3]\nSummary: {summary}\n{content}\n```\n- […]
 
 > TOOL
 
@@ -2077,7 +2077,7 @@ tool_use Read
 id: toolu_01ELKfeZLhExW5onGtX7FVxg
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
 }
 ```
 
@@ -2707,7 +2707,7 @@ id: toolu_01TAPwTkkk8T4yvVEf2gE9jt
 tool_result
 id: toolu_01TAPwTkkk8T4yvVEf2gE9jt
 ```
-[{"authoredDate":"2026-05-13T01:59:00Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:00Z","messageBody":"…output parser with 24 tests\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"feat(server): add dispatch-prompts — system prompt, context builder, …","oid":"c1ec0faad601e0aeb033d0916ad607746d488472"},{"authoredDate":"2026-05-13T01:59:03Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:03Z","messageBody":"…nd retry logic\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"feat(server): add POST /api/dispatch/generate route with validation a…","oid":"1a5d7d2eb3b0cc6431642cb743ea1551a9599a74"},{"authoredDate":"2026-05-13T01:59:07Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:07Z","messageBody":"…nd-kit\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"feat(dashboard): add generateDispatch API client function + install d…","oid":"eeb9f9f2a4253c0a56a1b505f71390b680d1f3b4"},{"authoredDate":"2026-05-13T01:59:12Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:12Z","messageBody":"…ingActionBar, InsightsPage integration\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"feat(dashboard): add Dispatch UI — DispatchDrawer, PostPreview, Float…","oid":"1bd520bb52b130c3a77053b7d73a7588d8200fd2"},{"authoredDate":"2026-05-13T02:12:42Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T02:12:42Z","messageBody":"…route\n\nChatOptions lacked a temperature field — providers used hardcoded values\nand dispatch couldn't control generation temperature per the design spec.\n\n- Add `temperature?: number` to ChatOptions in llm/types.ts\n- Each provider falls back to its existing default when temperature is omitted\n  (openai/gemini/ollama: 0.7, llamacpp: 0.3 — backward compatible)\n- dispatch.ts: pass { temperature: 0.7 } on initial call and retry\n- Also fix: system prompt was built but not included in messages array\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"fix(server): add temperature to ChatOptions and pass 0.7 in dispatch …","oid":"8a2cc79efb75a87aec34177018634f0427f97a25"}]
+[{"authoredDate":"2026-05-13T01:59:00Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:00Z","messageBody":"…output parser with 24 tests\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"feat(server): add dispatch-prompts — system prompt, context builder, …","oid":"c1ec0faad601e0aeb033d0916ad607746d488472"},{"authoredDate":"2026-05-13T01:59:03Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:03Z","messageBody":"…nd retry logic\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"feat(server): add POST /api/dispatch/generate route with validation a…","oid":"1a5d7d2eb3b0cc6431642cb743ea1551a9599a74"},{"authoredDate":"2026-05-13T01:59:07Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:07Z","messageBody":"…nd-kit\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"feat(dashboard): add generateDispatch API client function + install d…","oid":"eeb9f9f2a4253c0a56a1b505f71390b680d1f3b4"},{"authoredDate":"2026-05-13T01:59:12Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:12Z","messageBody":"…ingActionBar, InsightsPage integration\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"feat(dashboard): add Dispatch UI — DispatchDrawer, PostPreview, Float…","oid":"1bd520bb52b130c3a77053b7d73a7588d8200fd2"},{"authoredDate":"2026-05-13T02:12:42Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T02:12:42Z","messageBody":"…route\n\nChatOptions lacked a temperature field — providers used hardcoded values\nand dispatch couldn't control generation temperature per the design spec.\n\n- Add `temperature?: number` to ChatOptions in llm/types.ts\n- Each provider falls back to its existing default when temperature is omitted\n  (openai/gemini/ollama: 0.7, llamacpp: 0.3 — backward compatible)\n- dispatch.ts: pass { temperature: 0.7 } on initial call and retry\n- Also fix: system prompt was built but not included in messages array\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"fix(server): add temperature to ChatOptions and pass 0.7 in dispatch …","oid":"8a2cc79efb75a87aec34177018634f0427f97a25"}]
 ```
 
 > TOOL
@@ -2780,7 +2780,7 @@ tool_use Bash
 id: toolu_012UsKYyU1cCbw4umTh2nNXj
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/routes/dispatch.ts | head -80",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/routes/dispatch.ts | head -80",
   "description": "Check latest dispatch.ts changes in worktree"
 }
 ```
@@ -2791,7 +2791,7 @@ tool_result
 id: toolu_012UsKYyU1cCbw4umTh2nNXj
 ```
 commit 8a2cc79efb75a87aec34177018634f0427f97a25
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Wed May 13 07:42:42 2026 +0530
 
     fix(server): add temperature to ChatOptions and pass 0.7 in dispatch route
@@ -2805,7 +2805,7 @@ Date:   Wed May 13 07:42:42 2026 +0530
     - dispatch.ts: pass { temperature: 0.7 } on initial call and retry
     - Also fix: system prompt was built but not included in messages array
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/server/src/routes/dispatch.ts b/server/src/routes/dispatch.ts
 index 35c2c52..48a2399 100644
@@ -2831,7 +2831,7 @@ tool_use Bash
 id: toolu_017xKEfRfJMFuGBJbXNSdiSw
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/providers/gemini.ts | head -60",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/providers/gemini.ts | head -60",
   "description": "Check gemini.ts changes in the fix commit"
 }
 ```
@@ -2842,7 +2842,7 @@ tool_result
 id: toolu_017xKEfRfJMFuGBJbXNSdiSw
 ```
 commit 8a2cc79efb75a87aec34177018634f0427f97a25
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Wed May 13 07:42:42 2026 +0530
 
     fix(server): add temperature to ChatOptions and pass 0.7 in dispatch route
@@ -2856,7 +2856,7 @@ Date:   Wed May 13 07:42:42 2026 +0530
     - dispatch.ts: pass { temperature: 0.7 } on initial call and retry
     - Also fix: system prompt was built but not included in messages array
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/server/src/llm/providers/gemini.ts b/server/src/llm/providers/gemini.ts
 index f253ed1..e8c4d4b 100644
@@ -2871,7 +2871,7 @@ index f253ed1..e8c4d4b 100644
            maxOutputTokens: 8192,
            // Force valid JSON output at the decoding level.
            // Without this, Gemini Flash often wraps JSON in markdown fences,
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -2931,7 +2931,7 @@ tool_use Bash
 id: toolu_01BknrkeHGCWT9poPNNzN95i
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD --stat",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD --stat",
   "description": "Check latest commit stat in worktree"
 }
 ```
@@ -2942,7 +2942,7 @@ tool_result
 id: toolu_01BknrkeHGCWT9poPNNzN95i
 ```
 commit 9ae92aaf4ca30a58e1e83b5edc0386c614ed23ed
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Wed May 13 07:49:43 2026 +0530
 
     fix(dispatch): address Round 1 review FIX NOW + ADOPT items
@@ -2962,7 +2962,7 @@ Date:   Wed May 13 07:49:43 2026 +0530
     ADOPT: prompt_quality type normalized to 'Observation' in context builder
     TEST:  add server/src/routes/dispatch.test.ts (12 tests)
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
  .../src/components/dispatch/DispatchDrawer.tsx     |  14 +-
  dashboard/src/components/dispatch/PostPreview.tsx  |   9 +-
@@ -2974,7 +2974,7 @@ Date:   Wed May 13 07:49:43 2026 +0530
  server/src/routes/dispatch.test.ts                 | 333 +++++++++++++++++++++
  server/src/routes/dispatch.ts                      |  28 +-
  9 files changed, 429 insertions(+), 32 deletions(-)
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights […]
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights […]
 
 > TOOL
 
@@ -2982,7 +2982,7 @@ tool_use Bash
 id: toolu_014zGRCZHSm2BfxP18RLAYUz
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/routes/dispatch.ts | grep -A 15 \"bullets\"",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/routes/dispatch.ts | grep -A 15 \"bullets\"",
   "description": "Verify FIX-B null bullets fix in dispatch.ts"
 }
 ```
@@ -3007,7 +3007,7 @@ id: toolu_014zGRCZHSm2BfxP18RLAYUz
     ADOPT: prompt_quality type normalized to 'Observation' in context builder
     TEST:  add server/src/routes/dispatch.test.ts (12 tests)
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 --
 -  bullets: string; // JSON-encoded string[]
 -}
@@ -3031,7 +3031,7 @@ tool_use Bash
 id: toolu_01YQng5a93VtsCnWgaAUS6Bj
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/dispatch-prompts.ts | grep -A 8 \"escTitle\\|escTldr\\|markdown\"",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/dispatch-prompts.ts | grep -A 8 \"escTitle\\|escTldr\\|markdown\"",
   "description": "Verify FIX-C YAML quoting fix in dispatch-prompts.ts"
 }
 ```
@@ -3082,7 +3082,7 @@ id: toolu_01YQng5a93VtsCnWgaAUS6Bj
      frontmatter: {
        title,
        tags: [],
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -3091,7 +3091,7 @@ tool_use Bash
 id: toolu_01XVSh6ZW5JEeR6hnuLHN2Zx
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/providers/gemini.ts | grep -A 5 \"responseFormat\\|responseMimeType\"",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/providers/gemini.ts | grep -A 5 \"responseFormat\\|responseMimeType\"",
   "description": "Verify FIX-D Gemini JSON mode guard"
 }
 ```
@@ -3124,7 +3124,7 @@ id: toolu_01XVSh6ZW5JEeR6hnuLHN2Zx
        };
  
        if (systemMessage) {
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -3187,7 +3187,7 @@ While they run — a note on where things stand with the VERIFY AT RUNTIME gate.
 
 ```bash
 # From the worktree:
-cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated
+cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated
 pnpm build && node cli/dist/index.js dashboard --no-sync &
 
 # Then in your configured browser, select 3-5 insights on /insights page
@@ -3570,7 +3570,7 @@ The review loop is now waiting on you for the 4 VERIFY AT RUNTIME items. Here's 
 
 ```bash
 # 1. Start the worktree server
-cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated
+cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated
 pnpm build && node cli/dist/index.js dashboard --no-sync &
 
 # 2. Get some insight IDs from your real DB
@@ -3611,7 +3611,7 @@ tool_use Read
 id: toolu_019X2vTe82LY4DsEb3csmXB4
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/dispatch-prompts.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/dispatch-prompts.ts"
 }
 ```
 
@@ -3761,7 +3761,7 @@ tool_use Bash
 id: toolu_01Khnxjou6B1qtyo7fDknB6v
 ```json
 {
-  "command": "grep -A 20 \"DispatchTone\\|DispatchInsight\\|DispatchRequest\\|DispatchResponse\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/src/types.ts",
+  "command": "grep -A 20 \"DispatchTone\\|DispatchInsight\\|DispatchRequest\\|DispatchResponse\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/src/types.ts",
   "description": "Read current Dispatch types in worktree"
 }
 ```
@@ -3880,7 +3880,7 @@ tool_use Bash
 id: toolu_01NhKNb93X7Bnqb3aaVXQ6Ts
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -5",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -5",
   "description": "Check latest commits in worktree"
 }
 ```
@@ -3895,7 +3895,7 @@ id: toolu_01NhKNb93X7Bnqb3aaVXQ6Ts
 1bd520b feat(dashboard): add Dispatch UI — DispatchDrawer, PostPreview, FloatingActionBar, InsightsPage integration
 eeb9f9f feat(dashboard): add generateDispatch API client function + install dnd-kit
 1a5d7d2 feat(server): add POST /api/dispatch/generate route with validation and retry logic
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -3908,7 +3908,7 @@ tool_use Bash
 id: toolu_01RdmPnTDjSMJJRLEebepmHF
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -5 && echo \"---\" && git show HEAD --stat",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -5 && echo \"---\" && git show HEAD --stat",
   "description": "Check latest commit in worktree"
 }
 ```
@@ -3925,7 +3925,7 @@ c2906fe test(dispatch): add LinkedIn format tests; add format field to existing 
 1bd520b feat(dashboard): add Dispatch UI — DispatchDrawer, PostPreview, FloatingActionBar, InsightsPage integration
 ---
 commit c2906feb59be19e397d23d859720b0f9509ded80
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Thu May 14 21:50:03 2026 +0530
 
     test(dispatch): add LinkedIn format tests; add format field to existing test fixtures
@@ -3937,12 +3937,12 @@ Date:   Thu May 14 21:50:03 2026 +0530
       add invalid-format 400 test; add LinkedIn happy path (hashtags in tags, tldr='',
       markdown===body), format-echoed, and blog-regression tests
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
  server/src/llm/dispatch-prompts.test.ts | 250 ++++++++++++++++++++++++--------
  server/src/routes/dispatch.test.ts      | 116 +++++++++++++++
  2 files changed, 305 insertions(+), 61 deletions(-)
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -3951,7 +3951,7 @@ tool_use Bash
 id: toolu_01Nz7qCAsJZMZveMQosY8JET
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD~1 --stat",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD~1 --stat",
   "description": "Check the implementation commit stat"
 }
 ```
@@ -3962,7 +3962,7 @@ tool_result
 id: toolu_01Nz7qCAsJZMZveMQosY8JET
 ```
 commit 688ad9c89871957204da5b7eed0b1950ca727cac
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Thu May 14 21:49:57 2026 +0530
 
     feat(dispatch): add LinkedIn format with format-aware prompts, parsing, and UI
@@ -3982,7 +3982,7 @@ Date:   Thu May 14 21:49:57 2026 +0530
     - PostPreview: format-aware rendering — LinkedIn uses plain-text pre block,
       character count, no Download .md, no TL;DR, copy targets body not markdown
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
  cli/src/types.ts                                   |   7 ++
  .../src/components/dispatch/DispatchDrawer.tsx     |  41 ++++++-
@@ -3991,7 +3991,7 @@ Date:   Thu May 14 21:49:57 2026 +0530
  server/src/llm/dispatch-prompts.ts                 | 120 +++++++++++++++++----
  server/src/routes/dispatch.ts                      |  24 +++--
  6 files changed, 209 insertions(+), 47 deletions(-)
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -4173,12 +4173,12 @@ Synthesis posted: https://github.com/melagiri/code-insights/pull/297#issuecommen
 - **2 DEFER suggestions**: LLM S-4 (await runtime evidence first), SP-3 (telemetry follow-up issue)
 
 **Key relevant files reviewed:**
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/DispatchDrawer.tsx`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/PostPreview.tsx`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/dispatch-prompts.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/dispatch.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/types.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/lib/api.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/DispatchDrawer.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/PostPreview.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/dispatch-prompts.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/dispatch.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/types.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/lib/api.ts`
 
 **Verdict:** Ready for dev agent to implement the 6 FIX NOW items. Mergeable once those land and the 4 VR items are confirmed with live LLM evidence.
 agentId: ac39d9fbdf5c5c478 (use SendMessage with to: 'ac39d9fbdf5c5c478' to continue this […]
@@ -4224,7 +4224,7 @@ tool_use Bash
 id: toolu_01LxN5JtLBkU5RcWWjqmCzSR
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -3 && echo \"---\" && git show HEAD --stat",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -3 && echo \"---\" && git show HEAD --stat",
   "description": "Verify Round 3 fix commit in worktree"
 }
 ```
@@ -4239,7 +4239,7 @@ c2906fe test(dispatch): add LinkedIn format tests; add format field to existing 
 688ad9c feat(dispatch): add LinkedIn format with format-aware prompts, parsing, and UI
 ---
 commit 3c83a8ad43edf2accc52b0240806266cd19058e7
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Thu May 14 22:00:58 2026 +0530
 
     fix(dispatch): address Round 3 review — a11y, form reset, prompt quality, per-format temp
@@ -4384,7 +4384,7 @@ tool_use Bash
 id: toolu_01TnETwkEL9TicVYiVYcg2eo
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -3 && echo \"---\" && git show HEAD --stat",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -3 && echo \"---\" && git show HEAD --stat",
   "description": "Verify fieldset fix commit"
 }
 ```
@@ -4399,7 +4399,7 @@ id: toolu_01TnETwkEL9TicVYiVYcg2eo
 c2906fe test(dispatch): add LinkedIn format tests; add format field to existing test fixtures
 ---
 commit 63989aa658a4a45a25b0b8aa0e6f51bccdff4220
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Thu May 14 22:04:25 2026 +0530
 
     fix(dispatch): add browser reset classes to fieldset elements
@@ -4408,11 +4408,11 @@ Date:   Thu May 14 22:04:25 2026 +0530
     that Tailwind preflight does not reset — adds border-0 p-0 m-0 min-w-0 to
     both Format and Tone fieldsets to prevent layout breakage across browsers.
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
  dashboard/src/components/dispatch/DispatchDrawer.tsx | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -4571,7 +4571,7 @@ tool_use Bash
 id: toolu_01QuqFfphWhujhpJHbkjaQPf
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -6 && echo \"---\" && git status --short",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -6 && echo \"---\" && git status --short",
   "description": "Check worktree commit history and status"
 }
 ```
@@ -4588,7 +4588,7 @@ c2906fe test(dispatch): add LinkedIn format tests; add format field to existing 
 9ae92aa fix(dispatch): address Round 1 review FIX NOW + ADOPT items
 8a2cc79 fix(server): add temperature to ChatOptions and pass 0.7 in dispatch route
 ---
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -4597,7 +4597,7 @@ tool_use Bash
 id: toolu_016vSTCHsCFMyeSxyLoNxiq1
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js 2>/dev/null && echo \"build exists\" || echo \"no build\"",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js 2>/dev/null && echo \"build exists\" || echo \"no build\"",
   "description": "Check if the worktree build exists"
 }
 ```
@@ -4607,7 +4607,7 @@ id: toolu_016vSTCHsCFMyeSxyLoNxiq1
 tool_result
 id: toolu_016vSTCHsCFMyeSxyLoNxiq1
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js
 build exists
 ```
 
@@ -4666,7 +4666,7 @@ tool_use Bash
 id: toolu_01CWut54Aj9x4RVUXc4t2S7u
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && node cli/dist/index.js config 2>&1 | grep -E '(provider|model|api_key|configured)' | head -20",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && node cli/dist/index.js config 2>&1 | grep -E '(provider|model|api_key|configured)' | head -20",
   "description": "Check configured LLM provider"
 }
 ```
@@ -4676,7 +4676,7 @@ id: toolu_01CWut54Aj9x4RVUXc4t2S7u
 tool_result
 id: toolu_01CWut54Aj9x4RVUXc4t2S7u
 ```
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -4685,7 +4685,7 @@ tool_use Bash
 id: toolu_017gyEU8ojuazBH4B6bT9fux
 ```json
 {
-  "command": "node /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js config 2>&1 | grep -v \"^$\" | head -30",
+  "command": "node /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js config 2>&1 | grep -v \"^$\" | head -30",
   "description": "Check LLM config in worktree"
 }
 ```
@@ -4819,14 +4819,14 @@ Your configured provider is `llamacpp` (which isn't running). You have `OPENAI_A
 
 ```bash
 # Switch to OpenAI for testing (then switch back after)
-node /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js config llm
+node /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js config llm
 # Select: openai → gpt-4o (or sonnet if you add ANTHROPIC_API_KEY)
 ```
 
 Then start the server from the worktree:
 
 ```bash
-cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated
+cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated
 node cli/dist/index.js dashboard --no-sync &
 SERVER_PID=$!
 ```
@@ -4863,7 +4863,7 @@ tool_use Bash
 id: toolu_01BD5EtXZNG5bH2GCuWw8mQA
 ```json
 {
-  "command": "find /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src -name \"*.tsx\" | xargs grep -l \"dispatch\\|Dispatch\\|FloatingActionBar\\|InsightCard\" 2>/dev/null",
+  "command": "find /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src -name \"*.tsx\" | xargs grep -l \"dispatch\\|Dispatch\\|FloatingActionBar\\|InsightCard\" 2>/dev/null",
   "description": "Find Dispatch-related dashboard files"
 }
 ```
@@ -4873,12 +4873,12 @@ id: toolu_01BD5EtXZNG5bH2GCuWw8mQA
 tool_result
 id: toolu_01BD5EtXZNG5bH2GCuWw8mQA
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/insights/InsightCard.tsx
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/FloatingActionBar.tsx
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/PostPreview.tsx
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/DispatchDrawer.tsx
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/skeletons/InsightCardSkeleton.tsx
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/insights/InsightCard.tsx
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/FloatingActionBar.tsx
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/PostPreview.tsx
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/DispatchDrawer.tsx
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/skeletons/InsightCardSkeleton.tsx
 ```
 
 > TOOL
@@ -4887,7 +4887,7 @@ tool_use Bash
 id: toolu_016uJEdfK8Qr6uk4ZYuBbPD2
 ```json
 {
-  "command": "grep -n \"checkbox\\|selected\\|hover\\|FloatingActionBar\\|DispatchDrawer\\|onSelect\\|handleSelect\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx | head -40",
+  "command": "grep -n \"checkbox\\|selected\\|hover\\|FloatingActionBar\\|DispatchDrawer\\|onSelect\\|handleSelect\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx | head -40",
   "description": "Find selection UX wiring in InsightsPage"
 }
 ```
@@ -4974,7 +4974,7 @@ tool_use Bash
 id: toolu_011fBjojq4mti27k8g4JtXEh
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && node cli/dist/index.js dashboard --no-sync > /tmp/dispatch-server.log 2>&1 &\necho \"PID: $!\"",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && node cli/dist/index.js dashboard --no-sync > /tmp/dispatch-server.log 2>&1 &\necho \"PID: $!\"",
   "description": "Start worktree server in background",
   "run_in_background": true
 }
@@ -5105,7 +5105,7 @@ id: toolu_019sfubvmN991hdiCN6S8pyz
 tool_result
 id: toolu_019sfubvmN991hdiCN6S8pyz
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights
+/home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -5183,7 +5183,7 @@ tool_use Bash
 id: toolu_017YCScC4roKuiGGU51a3fgv
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && node cli/dist/index.js dashboard --no-sync --no-open > /tmp/dispatch-server.log 2>&1 &\necho \"PID: $!\"\nsleep 3 && curl -s -o /dev/null -w '%{http_code}' http://localhost:7890/api/health",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && node cli/dist/index.js dashboard --no-sync --no-open > /tmp/dispatch-server.log 2>&1 &\necho \"PID: $!\"\nsleep 3 && curl -s -o /dev/null -w '%{http_code}' http://localhost:7890/api/health",
   "description": "Start worktree server (with dispatch feature) and wait for it to be ready"
 }
 ```
@@ -5195,7 +5195,7 @@ id: toolu_017YCScC4roKuiGGU51a3fgv
 ```
 PID: 26530
 200
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -5598,7 +5598,7 @@ tool_use Read
 id: toolu_01FneVnwgbpaGtSHSknXzPby
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/dispatch-prompts.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/dispatch-prompts.ts",
   "offset": 86,
   "limit": 15
 }
@@ -5703,7 +5703,7 @@ tool_use Bash
 id: toolu_01FhGYnKYm8TLVeKHu7SBEdV
 ```json
 {
-  "command": "grep -n \"selectedIds\\|setSelectedIds\\|handleSelect\\|handleCheck\\|onChange\\|onCheckedChange\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx | head -30",
+  "command": "grep -n \"selectedIds\\|setSelectedIds\\|handleSelect\\|handleCheck\\|onChange\\|onCheckedChange\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx | head -30",
   "description": "Find selection logic in InsightsPage"
 }
 ```
@@ -5731,7 +5731,7 @@ tool_use Read
 id: toolu_01GkcrmKmBWbbygrUuFDhSJn
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx",
   "offset": 78,
   "limit": 25
 }
@@ -5775,7 +5775,7 @@ tool_use Read
 id: toolu_01Mhvz3S8kS6F8RWDdvxtEJW
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/pages/InsightsPage.tsx",
   "offset": 370,
   "limit": 60
 }
@@ -6358,7 +6358,7 @@ id: toolu_01V5kbjbAQEPvB2BVtmbhfdb
 {
   "description": "Implement session background toggle for Dispatch feature",
   "subagent_type": "engineer",
-  "prompt": "You are implementing a feature addition to the Dispatch blog post generator in the Code Insights monorepo. All work happens in the worktree at `/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/` on branch `feature/dispatch-learnings-curated-blog-post-generator`.\n\n## Feature: \"Include session background\" optional toggle\n\nAdd an opt-in toggle to the Dispatch drawer that, when enabled, fetches the session summary for each unique session contributing selected insights and includes it in the LLM prompt as additional context.\n\n## Exact schema fields (verified against live DB):\n- `insights.session_id TEXT NOT NULL REFERENCES sessions(id)`\n- `sessions.summary TEXT` (nullable)\n- `sessions.session_character TEXT` (nullable) — values like `feature_build`, `bug_hunt`, `exploration`, `refactor`, `learning`, `quick_task`, `deep_focus`\n- `sessions.generated_title TEXT`, `sessions.custom_title TEXT` — use `COALESCE(custom_title, generated_title)` for display title\n\n## Files to modify (in implementation order):\n\n### 1. `cli/src/types.ts`\nAdd `includeSessionBackground?: boolean` to `DispatchRequest`:\n```ts\nexport interface DispatchRequest {\n  insightIds: string[];\n  context: string;\n  tone: DispatchTone;\n  format: DispatchFormat;\n  includeSessionBackground?: boolean;  // ADD THIS\n}\n```\n\n### 2. `server/src/llm/dispatch-prompts.ts`\n\nAdd `SessionBackground` interface and update `DispatchInput` and `buildDispatchContext()`:\n\n```ts\nexport interface SessionBackground {\n  title: string;\n  character: string;  // session_character value\n  summary: string;\n}\n\nexport interface DispatchInput {\n  userContext: string;\n  insights: DispatchInsight[];\n  sessionBackgrounds?: SessionBackground[];  // ADD THIS\n}\n```\n\nUpdate `buildDispatchContext()` to insert session backgrounds BETWEEN user context and insights (order: user context → session backgrounds → […]
+  "prompt": "You are implementing a feature addition to the Dispatch blog post generator in the Code Insights monorepo. All work happens in the worktree at `/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/` on branch `feature/dispatch-learnings-curated-blog-post-generator`.\n\n## Feature: \"Include session background\" optional toggle\n\nAdd an opt-in toggle to the Dispatch drawer that, when enabled, fetches the session summary for each unique session contributing selected insights and includes it in the LLM prompt as additional context.\n\n## Exact schema fields (verified against live DB):\n- `insights.session_id TEXT NOT NULL REFERENCES sessions(id)`\n- `sessions.summary TEXT` (nullable)\n- `sessions.session_character TEXT` (nullable) — values like `feature_build`, `bug_hunt`, `exploration`, `refactor`, `learning`, `quick_task`, `deep_focus`\n- `sessions.generated_title TEXT`, `sessions.custom_title TEXT` — use `COALESCE(custom_title, generated_title)` for display title\n\n## Files to modify (in implementation order):\n\n### 1. `cli/src/types.ts`\nAdd `includeSessionBackground?: boolean` to `DispatchRequest`:\n```ts\nexport interface DispatchRequest {\n  insightIds: string[];\n  context: string;\n  tone: DispatchTone;\n  format: DispatchFormat;\n  includeSessionBackground?: boolean;  // ADD THIS\n}\n```\n\n### 2. `server/src/llm/dispatch-prompts.ts`\n\nAdd `SessionBackground` interface and update `DispatchInput` and `buildDispatchContext()`:\n\n```ts\nexport interface SessionBackground {\n  title: string;\n  character: string;  // session_character value\n  summary: string;\n}\n\nexport interface DispatchInput {\n  userContext: string;\n  insights: DispatchInsight[];\n  sessionBackgrounds?: SessionBackground[];  // ADD THIS\n}\n```\n\nUpdate `buildDispatchContext()` to insert session backgrounds BETWEEN user context and insights (order: user context → session backgrounds → […]
 
 > TOOL
 
@@ -6501,7 +6501,7 @@ tool_use Bash
 id: toolu_01N2MN3TK8YxrvDwQuf4poUx
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -4",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -4",
   "description": "Verify commit 7f17e2a landed on the branch"
 }
 ```
@@ -6515,7 +6515,7 @@ id: toolu_01N2MN3TK8YxrvDwQuf4poUx
 63989aa fix(dispatch): add browser reset classes to fieldset elements
 3c83a8a fix(dispatch): address Round 3 review — a11y, form reset, prompt quality, per-format temp
 c2906fe test(dispatch): add LinkedIn format tests; add format field to existing test fixtures
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -7038,7 +7038,7 @@ tool_use Bash
 id: toolu_01MHA9mzBspib6RCiHXVtdMV
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -3",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git log --oneline -3",
   "description": "Confirm latest commit"
 }
 ```
@@ -7051,7 +7051,7 @@ id: toolu_01MHA9mzBspib6RCiHXVtdMV
 1ee51b2 fix(dispatch): address Round 5 review — cap-before-filter bug, duplicate Switch, type drift
 7f17e2a feat(dispatch): add includeSessionBackground opt-in toggle
 63989aa fix(dispatch): add browser reset classes to fieldset elements
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -7060,7 +7060,7 @@ tool_use Bash
 id: toolu_01SzJp3ChvYusxE5up1YTQAs
 ```json
 {
-  "command": "grep -n \"sessionId\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/src/types.ts | grep -A2 -B2 \"SessionBackground\" | head -10",
+  "command": "grep -n \"sessionId\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/src/types.ts | grep -A2 -B2 \"SessionBackground\" | head -10",
   "description": "Verify FIX-R5-3: sessionId on SessionBackground type"
 }
 ```
@@ -7079,7 +7079,7 @@ tool_use Bash
 id: toolu_01Y3UcsznWJHJfNmTWR9cfXJ
 ```json
 {
-  "command": "grep -n \"SessionBackground\\|sessionId\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/src/types.ts | head -10",
+  "command": "grep -n \"SessionBackground\\|sessionId\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/src/types.ts | head -10",
   "description": "Check SessionBackground interface in types.ts"
 }
 ```
@@ -7105,7 +7105,7 @@ tool_use Bash
 id: toolu_01T8yuK7XbfT8ZgLS1JmyJqt
 ```json
 {
-  "command": "grep -n \"session-background\\|htmlFor\\|aria-describedby\\|session-bg-desc\\|Include session\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/DispatchDrawer.tsx | head -20",
+  "command": "grep -n \"session-background\\|htmlFor\\|aria-describedby\\|session-bg-desc\\|Include session\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/DispatchDrawer.tsx | head -20",
   "description": "Verify FIX-R5-2: single Switch block with a11y"
 }
 ```
@@ -7129,7 +7129,7 @@ tool_use Bash
 id: toolu_01PyoHxdhPxvvPKSKrxXsAUQ
 ```json
 {
-  "command": "grep -c \"Include session background\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/DispatchDrawer.tsx",
+  "command": "grep -c \"Include session background\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard/src/components/dispatch/DispatchDrawer.tsx",
   "description": "Confirm only ONE Switch block remains"
 }
 ```
@@ -7148,7 +7148,7 @@ tool_use Bash
 id: toolu_015ikmbg6whpWuEiY6SsoMMy
 ```json
 {
-  "command": "grep -n \"summary IS NOT NULL\\|sessionCounts\\|slice(0, 4)\\|sort.*sessionCounts\\|allSessionIds\\|topSession\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/routes/dispatch.ts | head -20",
+  "command": "grep -n \"summary IS NOT NULL\\|sessionCounts\\|slice(0, 4)\\|sort.*sessionCounts\\|allSessionIds\\|topSession\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/routes/dispatch.ts | head -20",
   "description": "Verify FIX-R5-1: filter-then-cap order in dispatch route"
 }
 ```
@@ -7224,36 +7224,36 @@ id: toolu_01Gi94hXgdM6U8N19R8d74DG
 tool_result
 id: toolu_01Gi94hXgdM6U8N19R8d74DG
 ```
-    at async Object.chat (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:103:27)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
-    at async responseViaResponseObject (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
-    at async Server.<anonymous> (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
+    at async Object.chat (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:103:27)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
+    at async responseViaResponseObject (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
+    at async Server.<anonymous> (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
 Error: Cannot connect to llama-server at http://localhost:8080 — is it running? Start it with: llama-server -m <model.gguf>
-    at attempt (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:53:31)
+    at attempt (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:53:31)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-    at async Object.chat (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:103:27)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
-    at async responseViaResponseObject (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
-    at async Server.<anonymous> (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
+    at async Object.chat (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:103:27)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
+    at async responseViaResponseObject (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
+    at async Server.<anonymous> (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
 Error: Cannot connect to llama-server at http://localhost:8080 — is it running? Start it with: llama-server -m <model.gguf>
-    at attempt (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:53:31)
+    at attempt (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:53:31)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-    at async Object.chat (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:103:27)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
-    at async responseViaResponseObject (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
-    at async Server.<anonymous> (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
+    at async Object.chat (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:103:27)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
+    at async responseViaResponseObject (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
+    at async Server.<anonymous> (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
 ```
 
 > TOOL
@@ -7285,7 +7285,7 @@ You have two options:
 
 **Option 1 — Switch to OpenAI** (you have `OPENAI_API_KEY` in your environment, this is the fastest path):
 ```bash
-node /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js config llm
+node /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js config llm
 # Select: openai → gpt-4o-mini (cheap) or gpt-4o
 ```
 
@@ -7344,36 +7344,36 @@ id: toolu_01MpXzyHRZWvGmkmFCx396Fo
 tool_result
 id: toolu_01MpXzyHRZWvGmkmFCx396Fo
 ```
-    at async responseViaResponseObject (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
-    at async Server.<anonymous> (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
+    at async responseViaResponseObject (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
+    at async Server.<anonymous> (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
 Error: Cannot connect to llama-server at http://localhost:8080 — is it running? Start it with: llama-server -m <model.gguf>
-    at attempt (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:53:31)
-    at async Object.chat (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:103:27)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
-    at async responseViaResponseObject (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
-    at async Server.<anonymous> (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
+    at attempt (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:53:31)
+    at async Object.chat (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:103:27)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
+    at async responseViaResponseObject (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
+    at async Server.<anonymous> (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
 Error: llama-server returned invalid JSON on both attempts. Response preview: ---
-    at Object.chat (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:131:27)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
-    at async responseViaResponseObject (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
-    at async Server.<anonymous> (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
+    at Object.chat (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:131:27)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
+    at async responseViaResponseObject (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
+    at async Server.<anonymous> (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
 Error: llama-server returned invalid JSON on both attempts. Response preview: ---
-    at Object.chat (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:131:27)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
-    at async dispatch (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
-    at async file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
-    at async responseViaResponseObject (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
-    at async Server.<anonymous> (file:///Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
+    at Object.chat (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/llm/providers/llamacpp.js:131:27)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/dispatch.js:87:20
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/dist/routes/route-helpers.js:44:9
+    at async dispatch (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/compose.js:22:17)
+    at async file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/hono@4.12.3/node_modules/hono/dist/hono-base.js:301:25
+    at async responseViaResponseObject (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:402:13)
+    at async Server.<anonymous> (file:///home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/node_modules/.pnpm/@hono+node-server@1.19.9_hono@4.12.3/node_modules/@hono/node-server/dist/index.mjs:541:14)
 ```
 
 > AGENT
@@ -7390,7 +7390,7 @@ tool_use Bash
 id: toolu_01AiwB2bMCX2Q6Zax3inLovK
 ```json
 {
-  "command": "grep -n \"JSON\\|json\\|parse\\|responseFormat\\|response_format\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts | head -30",
+  "command": "grep -n \"JSON\\|json\\|parse\\|responseFormat\\|response_format\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts | head -30",
   "description": "Find JSON parsing logic in llamacpp provider"
 }
 ```
@@ -7431,7 +7431,7 @@ tool_use Read
 id: toolu_01PTd2kavZ2GeRFR22uxDm9f
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts"
 }
 ```
 
@@ -7483,7 +7483,7 @@ id: toolu_015k9XcFemcigETwwLv2x4SV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts",
   "old_string": "            body: JSON.stringify({\n              model,\n              // flattenContent converts ContentBlock[] to string; strings pass through unchanged.\n              messages: messages.map(m => ({ role: m.role, content: flattenContent(m.content) })),\n              temperature: options?.temperature ?? 0.3,\n              max_tokens: 4096,\n              // Grammar-constrained JSON output — llama-server honours OpenAI's response_format.\n              response_format: { type: 'json_object' },\n            }),",
   "new_string": "            body: JSON.stringify({\n              model,\n              // flattenContent converts ContentBlock[] to string; strings pass through unchanged.\n              messages: messages.map(m => ({ role: m.role, content: flattenContent(m.content) })),\n              temperature: options?.temperature ?? 0.3,\n              max_tokens: 4096,\n              // Grammar-constrained JSON output — only when caller expects JSON.\n              // Text-format callers (e.g. Dispatch) return markdown/YAML, not JSON.\n              ...(options?.responseFormat !== 'text' && { response_format: { type: 'json_object' } }),\n            }),"
 }
@@ -7494,7 +7494,7 @@ id: toolu_015k9XcFemcigETwwLv2x4SV
 tool_result
 id: toolu_015k9XcFemcigETwwLv2x4SV
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7508,7 +7508,7 @@ id: toolu_01YbEus6iRw4U4c6jjTTLcUt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts",
   "old_string": "      // Perform the chat call with a single retry on JSON parse failure.\n      // Small quantized models occasionally emit malformed JSON even with response_format: json_object.\n      // One retry is enough to recover from transient formatting errors without burning tokens on\n      // genuine capability failures (which would fail again anyway).\n      const first = await attempt();\n\n      // Strip <json>...</json> wrapper if present — some models follow the system prompt instruction\n      // to wrap output in <json> tags even when response_format: json_object is set.\n      const stripped = stripJsonTags(first.content);\n\n      // Validate JSON structure — if content is not parseable, try once more.\n      let jsonValid = false;\n      try {\n        JSON.parse(stripped);\n        jsonValid = true;\n      } catch {\n        // not valid JSON\n      }\n\n      if (!jsonValid) {\n        // Single retry on JSON parse failure (LLM Expert requirement).\n        // Validate the retry result too — if both attempts fail, surface the error\n        // instead of silently returning malformed content.\n        const retry = await attempt();\n        const retryStripped = stripJsonTags(retry.content);\n        let retryValid = false;\n        try {\n          JSON.parse(retryStripped);\n          retryValid = true;\n        } catch {\n          // still not valid JSON\n        }\n\n        if (!retryValid) {\n          throw new Error(\n            `llama-server returned invalid JSON […]
 
 > TOOL
@@ -7516,7 +7516,7 @@ id: toolu_01YbEus6iRw4U4c6jjTTLcUt
 tool_result
 id: toolu_01YbEus6iRw4U4c6jjTTLcUt
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/providers/llamacpp.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7529,7 +7529,7 @@ tool_use Bash
 id: toolu_01JEZv4jQnenAtMfuPZFnPG1
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && pnpm build 2>&1 | tail -20",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && pnpm build 2>&1 | tail -20",
   "description": "Build worktree after llamacpp fix",
   "timeout": 60000
 }
@@ -7543,7 +7543,7 @@ id: toolu_01JEZv4jQnenAtMfuPZFnPG1
 > tsc
 
 
-> @code-insights/dashboard@0.1.0 build /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard
+> @code-insights/dashboard@0.1.0 build /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/dashboard
 > vite build
 
 vite v6.4.1 building for production...
@@ -7560,7 +7560,7 @@ dist/assets/index-CrCkwDaM.js   2,268.80 kB │ gzip: 707.36 kB
 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
 ✓ built in 3.33s
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -7573,7 +7573,7 @@ tool_use Bash
 id: toolu_015nr24qR43Mrq5Ppyy1Diao
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git add server/src/llm/providers/llamacpp.ts && git diff --cached --stat",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git add server/src/llm/providers/llamacpp.ts && git diff --cached --stat",
   "description": "Stage llamacpp fix and show diff stat"
 }
 ```
@@ -7585,7 +7585,7 @@ id: toolu_015nr24qR43Mrq5Ppyy1Diao
 ```
  server/src/llm/providers/llamacpp.ts | 14 ++++++++++++--
  1 file changed, 12 insertions(+), 2 deletions(-)
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -7594,7 +7594,7 @@ tool_use Bash
 id: toolu_01KyWZp7s1niUmjwbw5frvYG
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git commit -m \"$(cat <<'EOF'\nfix(llamacpp): respect responseFormat='text' for Dispatch generation\n\nDispatch returns YAML frontmatter (markdown), not JSON. The llamacpp\nprovider was unconditionally sending response_format: json_object to\nllama-server and validating the response with JSON.parse, causing a 500\nerror on every Dispatch generation attempt.\n\nFix: guard both the request flag and the JSON validation block behind\noptions?.responseFormat !== 'text', mirroring the existing Gemini guard.\nText-format callers skip JSON mode entirely and return raw content.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git commit -m \"$(cat <<'EOF'\nfix(llamacpp): respect responseFormat='text' for Dispatch generation\n\nDispatch returns YAML frontmatter (markdown), not JSON. The llamacpp\nprovider was unconditionally sending response_format: json_object to\nllama-server and validating the response with JSON.parse, causing a 500\nerror on every Dispatch generation attempt.\n\nFix: guard both the request flag and the JSON validation block behind\noptions?.responseFormat !== 'text', mirroring the existing Gemini guard.\nText-format callers skip JSON mode entirely and return raw content.\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit llamacpp responseFormat fix"
 }
 ```
@@ -7606,7 +7606,7 @@ id: toolu_01KyWZp7s1niUmjwbw5frvYG
 ```
 [feature/dispatch-learnings-curated-blog-post-generator 4a37fd1] fix(llamacpp): respect responseFormat='text' for Dispatch generation
  1 file changed, 12 insertions(+), 2 deletions(-)
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -7615,7 +7615,7 @@ tool_use Bash
 id: toolu_01ArZjGhJejHVW28DDYD5bkH
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git push origin feature/dispatch-learnings-curated-blog-post-generator 2>&1",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git push origin feature/dispatch-learnings-curated-blog-post-generator 2>&1",
   "description": "Push fix commit to PR branch"
 }
 ```
@@ -7627,7 +7627,7 @@ id: toolu_01ArZjGhJejHVW28DDYD5bkH
 ```
 To github.com:melagiri/code-insights.git
    1ee51b2..4a37fd1  feature/dispatch-learnings-curated-blog-post-generator -> feature/dispatch-learnings-curated-blog-post-generator
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -7640,7 +7640,7 @@ The fix is pushed. Restart your worktree server to pick up the new build, then t
 
 ```bash
 # Kill any running worktree server, then:
-cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated
+cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated
 node cli/dist/index.js dashboard --no-sync --no-open
 ```
 
@@ -7730,7 +7730,7 @@ id: toolu_01JzVNgGeLVxk4wStBakS4mL
 tool_result
 id: toolu_01JzVNgGeLVxk4wStBakS4mL
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights 401bc48 [master]
+/home/<USER>/Workspace/codeInsights/code-insights 401bc48 [master]
 ```
 
 > AGENT
@@ -7765,8 +7765,8 @@ id: toolu_01TWup8rKmpGHeQdJoQfEfiv
 Strategic call captured. Memory updated.
 
 **Relevant file paths:**
-- `/Users/melagiri/Workspace/codeInsights/code-insights/.claude/agent-memory/devtools-cofounder/project_dispatch_enhancements.md` — full strategic record
-- `/Users/melagiri/Workspace/codeInsights/code-insights/.claude/agent-memory/devtools-cofounder/MEMORY.md` — index updated
+- `/home/<USER>/Workspace/codeInsights/code-insights/.claude/agent-memory/devtools-cofounder/project_dispatch_enhancements.md` — full strategic record
+- `/home/<USER>/Workspace/codeInsights/code-insights/.claude/agent-memory/devtools-cofounder/MEMORY.md` — index updated
 
 **Quick recap of recommendations:**
 
@@ -8010,9 +8010,9 @@ id: toolu_016JscXsdQtHmJ4J3SAYbQSb
 + @vitest/coverage-v8 4.0.18
 + vitest 4.0.18
 
- WARN  Failed to create bin at /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de/server/node_modules/@code-insights/cli/dist/index.js'
+ WARN  Failed to create bin at /home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de/server/node_modules/@code-insights/cli/dist/index.js'
 Done in 2.9s
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -8053,7 +8053,7 @@ id: toolu_01U9CKcpDcuuKAmm6KiraXdQ
 tool_result
 id: toolu_01U9CKcpDcuuKAmm6KiraXdQ
 ```
-{"team_name":"feat-dispatch-ui-full-screen-overlay-post-preview-on-de","team_file_path":"/Users/melagiri/.claude/teams/feat-dispatch-ui-full-screen-overlay-post-preview-on-de/config.json","lead_agent_id":"team-lead@feat-dispatch-ui-full-screen-overlay-post-preview-on-de"}
+{"team_name":"feat-dispatch-ui-full-screen-overlay-post-preview-on-de","team_file_path":"/home/<USER>/.claude/teams/feat-dispatch-ui-full-screen-overlay-post-preview-on-de/config.json","lead_agent_id":"team-lead@feat-dispatch-ui-full-screen-overlay-post-preview-on-de"}
 ```
 
 > TOOL
@@ -8133,7 +8133,7 @@ id: toolu_013g12GSCc1aptNFKMDnJwRB
   "team_name": "feat-dispatch-ui-full-screen-overlay-post-preview-on-de",
   "mode": "bypassPermissions",
   "run_in_background": true,
-  "prompt": "You are the Dev for feature team feat-dispatch-ui-full-screen-overlay-post-preview-on-de.\n\nFeature: Dispatch UI — Full-screen overlay post preview + on-demand cover image prompt generator.\nGitHub Issue: #298\nWorktree: /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de/\nBranch: feature/dispatch-ui-full-screen-overlay-post-preview-on-de\nTeam: feat-dispatch-ui-full-screen-overlay-post-preview-on-de\n\nAll code work happens in the worktree. Check TaskList for your assigned tasks. Use SendMessage to communicate with pm-agent. Mark tasks in_progress/completed.\n\nRead the GitHub Issue #298 for full acceptance criteria and context.\n\nLOCKED DESIGN — implement exactly as specified:\n\nENHANCEMENT 1 — Full-screen overlay (PostOverlay.tsx):\n- shadcn Dialog with full-screen override classes: max-w-none w-screen h-screen rounded-none p-0 sm:rounded-none, positioned at top-0 left-0\n- DialogTitle (can be sr-only) + DialogDescription for ARIA compliance (required by Radix UI)\n- Layout: vertical flex — header (post title + X close button) → PostPreview in scrollable flex-1 region → CoverImagePromptSection at bottom\n- Escape key + X both close (Dialog handles Escape natively)\n- Standard shadcn DialogOverlay backdrop\n- DispatchDrawer becomes config-only — no inline PostPreview rendering\n- After successful generation: overlay opens immediately (setOverlayOpen(true) in mutation onSuccess)\n- Drawer footer when result exists: \"View post\" button (reopens overlay) + \"Regenerate\" button (clears result, allows new generation)\n- handleClose must also close […]
+  "prompt": "You are the Dev for feature team feat-dispatch-ui-full-screen-overlay-post-preview-on-de.\n\nFeature: Dispatch UI — Full-screen overlay post preview + on-demand cover image prompt generator.\nGitHub Issue: #298\nWorktree: /home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de/\nBranch: feature/dispatch-ui-full-screen-overlay-post-preview-on-de\nTeam: feat-dispatch-ui-full-screen-overlay-post-preview-on-de\n\nAll code work happens in the worktree. Check TaskList for your assigned tasks. Use SendMessage to communicate with pm-agent. Mark tasks in_progress/completed.\n\nRead the GitHub Issue #298 for full acceptance criteria and context.\n\nLOCKED DESIGN — implement exactly as specified:\n\nENHANCEMENT 1 — Full-screen overlay (PostOverlay.tsx):\n- shadcn Dialog with full-screen override classes: max-w-none w-screen h-screen rounded-none p-0 sm:rounded-none, positioned at top-0 left-0\n- DialogTitle (can be sr-only) + DialogDescription for ARIA compliance (required by Radix UI)\n- Layout: vertical flex — header (post title + X close button) → PostPreview in scrollable flex-1 region → CoverImagePromptSection at bottom\n- Escape key + X both close (Dialog handles Escape natively)\n- Standard shadcn DialogOverlay backdrop\n- DispatchDrawer becomes config-only — no inline PostPreview rendering\n- After successful generation: overlay opens immediately (setOverlayOpen(true) in mutation onSuccess)\n- Drawer footer when result exists: \"View post\" button (reopens overlay) + \"Regenerate\" button (clears result, allows new generation)\n- handleClose must also close […]
 
 > TOOL
 
@@ -8439,17 +8439,17 @@ id: toolu_01YShYwumfK21jhHEo3WwTmh
 {
   "to": "dev-agent",
   "summary": "Gate B fail — screenshot required before review",
-  "message": "PR #299 is blocked on a pre-review gate. The PR is tagged VISUAL but the description has no screenshot of the full-screen PostOverlay.\n\nRequired before review can start:\n1. Start the worktree server: `cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n2. Open the dashboard in the browser, navigate to /insights, select some insights, click Generate to trigger a post, and screenshot the full-screen overlay that opens.\n3. Also re-run the curl happy path with a provider that IS configured (e.g. if Anthropic/OpenAI/Gemini is set up, use that server instead of llamacpp).\n4. Update the PR description with the screenshot and a successful curl response.\n\nOnce the PR description has both, let me know and I'll start the review.",
+  "message": "PR #299 is blocked on a pre-review gate. The PR is tagged VISUAL but the description has no screenshot of the full-screen PostOverlay.\n\nRequired before review can start:\n1. Start the worktree server: `cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n2. Open the dashboard in the browser, navigate to /insights, select some insights, click Generate to trigger a post, and screenshot the full-screen overlay that opens.\n3. Also re-run the curl happy path with a provider that IS configured (e.g. if Anthropic/OpenAI/Gemini is set up, use that server instead of llamacpp).\n4. Update the PR description with the screenshot and a successful curl response.\n\nOnce the PR description has both, let me know and I'll start the review.",
   "type": "message",
   "recipient": "dev-agent",
-  "content": "PR #299 is blocked on a pre-review gate. The PR is tagged VISUAL but the description has no screenshot of the full-screen PostOverlay.\n\nRequired before review can start:\n1. Start the worktree server: `cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n2. Open the dashboard in the browser, navigate to /insights, select some insights, click Generate to trigger a post, and screenshot the full-screen overlay […]
+  "content": "PR #299 is blocked on a pre-review gate. The PR is tagged VISUAL but the description has no screenshot of the full-screen PostOverlay.\n\nRequired before review can start:\n1. Start the worktree server: `cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n2. Open the dashboard in the browser, navigate to /insights, select some insights, click Generate to trigger a post, and screenshot the full-screen overlay […]
 
 > TOOL
 
 tool_result
 id: toolu_01YShYwumfK21jhHEo3WwTmh
 ```
-{"success":true,"message":"Message sent to dev-agent's inbox","routing":{"sender":"team-lead","target":"@dev-agent","targetColor":"green","summary":"Gate B fail — screenshot required before review","content":"PR #299 is blocked on a pre-review gate. The PR is tagged VISUAL but the description has no screenshot of the full-screen PostOverlay.\n\nRequired before review can start:\n1. Start the worktree server: `cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n2. Open the dashboard in the browser, navigate to /insights, select some insights, click Generate to trigger a post, and screenshot the full-screen overlay that opens.\n3. Also re-run the curl happy path with a provider that IS configured (e.g. if Anthropic/OpenAI/Gemini is set up, use that server instead of llamacpp).\n4. Update the PR description with the screenshot and a successful curl response.\n\nOnce the PR description has both, let me know and I'll start the review."}}
+{"success":true,"message":"Message sent to dev-agent's inbox","routing":{"sender":"team-lead","target":"@dev-agent","targetColor":"green","summary":"Gate B fail — screenshot required before review","content":"PR #299 is blocked on a pre-review gate. The PR is tagged VISUAL but the description has no screenshot of the full-screen PostOverlay.\n\nRequired before review can start:\n1. Start the worktree server: `cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n2. Open the dashboard in the browser, navigate to /insights, select some insights, click Generate to trigger a post, and screenshot the full-screen overlay that opens.\n3. Also re-run the curl happy path with a provider that IS configured (e.g. if Anthropic/OpenAI/Gemini is set up, use that server instead of llamacpp).\n4. Update the PR description with the screenshot and a successful curl response.\n\nOnce the PR description has both, let me know and I'll start the review."}}
 ```
 
 > AGENT
@@ -8513,7 +8513,7 @@ id: toolu_01Dr8R6MnUw52hMZ8AeDs6yK
 {
   "to": "dev-agent",
   "summary": "Screenshot still needed to unblock review",
-  "message": "Review is still blocked — the PR description needs a screenshot of the PostOverlay before the triple-layer review can start. Here's what's needed:\n\n1. Run pnpm build in the worktree (if not already done since last changes)\n2. Start the server: `cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n3. Use browser automation (mcp__claude-in-chrome tools) to navigate to http://localhost:7890, go to /insights, select 3+ insights, open the Dispatch drawer, fill in context, click Generate — screenshot the full-screen overlay that opens\n4. Edit the PR body to add the screenshot under a ## Verification (Visual) section\n5. For the curl happy path: if llamacpp is not running, skip it — the 10 unit tests with mocked LLM client are sufficient evidence for the API. Just note \"LLM happy path covered by unit tests\" in the PR.\n6. Kill the server when done\n7. Tell me when it's done so I can start the review",
+  "message": "Review is still blocked — the PR description needs a screenshot of the PostOverlay before the triple-layer review can start. Here's what's needed:\n\n1. Run pnpm build in the worktree (if not already done since last changes)\n2. Start the server: `cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n3. Use browser automation (mcp__claude-in-chrome tools) to navigate to http://localhost:7890, go to /insights, select 3+ insights, open the Dispatch drawer, fill in context, click Generate — screenshot the full-screen overlay that opens\n4. Edit the PR body to add the screenshot under a ## Verification (Visual) section\n5. For the curl happy path: if llamacpp is not running, skip it — the 10 unit tests with mocked LLM client are sufficient evidence for the API. Just note \"LLM happy path covered by unit tests\" in the PR.\n6. Kill the server when done\n7. Tell me when it's done so I can start the review",
   "type": "message",
   "recipient": "dev-agent",
   "content": "Review is still blocked — the PR description needs a screenshot of the PostOverlay before the triple-layer review can start. Here's what's needed:\n\n1. Run pnpm build in the worktree (if not […]
@@ -8523,7 +8523,7 @@ id: toolu_01Dr8R6MnUw52hMZ8AeDs6yK
 tool_result
 id: toolu_01Dr8R6MnUw52hMZ8AeDs6yK
 ```
-{"success":true,"message":"Message sent to dev-agent's inbox","routing":{"sender":"team-lead","target":"@dev-agent","targetColor":"green","summary":"Screenshot still needed to unblock review","content":"Review is still blocked — the PR description needs a screenshot of the PostOverlay before the triple-layer review can start. Here's what's needed:\n\n1. Run pnpm build in the worktree (if not already done since last changes)\n2. Start the server: `cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n3. Use browser automation (mcp__claude-in-chrome tools) to navigate to http://localhost:7890, go to /insights, select 3+ insights, open the Dispatch drawer, fill in context, click Generate — screenshot the full-screen overlay that opens\n4. Edit the PR body to add the screenshot under a ## Verification (Visual) section\n5. For the curl happy path: if llamacpp is not running, skip it — the 10 unit tests with mocked LLM client are sufficient evidence for the API. Just note \"LLM happy path covered by unit tests\" in the PR.\n6. Kill the server when done\n7. Tell me when it's done so I can start the review"}}
+{"success":true,"message":"Message sent to dev-agent's inbox","routing":{"sender":"team-lead","target":"@dev-agent","targetColor":"green","summary":"Screenshot still needed to unblock review","content":"Review is still blocked — the PR description needs a screenshot of the PostOverlay before the triple-layer review can start. Here's what's needed:\n\n1. Run pnpm build in the worktree (if not already done since last changes)\n2. Start the server: `cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de && node cli/dist/index.js dashboard --no-sync --no-open &`\n3. Use browser automation (mcp__claude-in-chrome tools) to navigate to http://localhost:7890, go to /insights, select 3+ insights, open the Dispatch drawer, fill in context, click Generate — screenshot the full-screen overlay that opens\n4. Edit the PR body to add the screenshot under a ## Verification (Visual) section\n5. For the curl happy path: if llamacpp is not running, skip it — the 10 unit tests with mocked LLM client are sufficient evidence for the API. Just note \"LLM happy path covered by unit tests\" in the PR.\n6. Kill the server when done\n7. Tell me when it's done so I can start the review"}}
 ```
 
 > AGENT
@@ -8540,7 +8540,7 @@ tool_use Bash
 id: toolu_01EXXGfLhCuHZqcxRSfzz8kH
 ```json
 {
-  "command": "cat /Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md 2>&1",
+  "command": "cat /home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md 2>&1",
   "description": "Read specialist registry for prompt templates"
 }
 ```
@@ -9068,7 +9068,7 @@ Round 2 Phase 1 INSIDER review complete and posted to PR #299.
 
 ### Fix Verification
 
-**FIX-1 (curly-apostrophe regex)**: RESOLVED. Byte-level `od -c` inspection of `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/dispatch-prompts.ts:265-270` confirms `['''’]` bracket class with U+2019 (`\xe2\x80\x99`) present in patterns 0, 3, 4. The new test at `dispatch-prompts.test.ts:549` asserts `expect(result2.prompt).toBe('A scene.')` — strict equality lock-in.
+**FIX-1 (curly-apostrophe regex)**: RESOLVED. Byte-level `od -c` inspection of `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/dispatch-prompts.ts:265-270` confirms `['''’]` bracket class with U+2019 (`\xe2\x80\x99`) present in patterns 0, 3, 4. The new test at `dispatch-prompts.test.ts:549` asserts `expect(result2.prompt).toBe('A scene.')` — strict equality lock-in.
 
 **FIX-2 (FORMAT_TONE_LABELS)**: RESOLVED. `blog: 'technical'`, `linkedin: 'accessible'` — both match the system prompt's tone keys. New test at line 525 asserts directly.
 
@@ -9174,15 +9174,15 @@ Phase 2 synthesis posted to PR #299: https://github.com/melagiri/code-insights/p
 - Two non-blocking suggestions logged: post-ship `[preamble-monitor]` logging for the curly-apostrophe path, and a `quick-tips` entry in `FORMAT_TONE_LABELS` if/when that format ships.
 
 **Relevant files reviewed:**
-- `/Users/melagiri/Workspace/codeInsights/code-insights/cli/src/types.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/lib/api.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/PostOverlay.tsx`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/CoverImagePromptSection.tsx`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/DispatchDrawer.tsx`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/dispatch-prompts.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/llm/dispatch-prompts.test.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/dispatch.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/server/src/routes/dispatch.test.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/cli/src/types.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/lib/api.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/PostOverlay.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/CoverImagePromptSection.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/DispatchDrawer.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/dispatch-prompts.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/llm/dispatch-prompts.test.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/dispatch.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/server/src/routes/dispatch.test.ts`
 agentId: a35f695c86d5a198f (use SendMessage with to: 'a35f695c86d5a198f' to continue this agent)
 <usage>total_tokens: 60076
 tool_uses: 3
@@ -9330,8 +9330,8 @@ id: toolu_01MnMbF68Jvh9EJzyhgunKNh
 tool_result
 id: toolu_01MnMbF68Jvh9EJzyhgunKNh
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights                                                    401bc48 [master]
-/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de 1b1fcff [feature/dispatch-ui-full-screen-overlay-post-preview-on-de]
+/home/<USER>/Workspace/codeInsights/code-insights                                                    401bc48 [master]
+/home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de 1b1fcff [feature/dispatch-ui-full-screen-overlay-post-preview-on-de]
 ```
 
 > TOOL
@@ -9340,7 +9340,7 @@ tool_use Bash
 id: toolu_01NmJx8FgCgMVvSo4ZcBcF4T
 ```json
 {
-  "command": "git worktree remove \"/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de\" && git branch -d \"feature/dispatch-ui-full-screen-overlay-post-preview-on-de\"",
+  "command": "git worktree remove \"/home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de\" && git branch -d \"feature/dispatch-ui-full-screen-overlay-post-preview-on-de\"",
   "description": "Remove feature worktree and delete local branch"
 }
 ```
@@ -9366,7 +9366,7 @@ tool_use Bash
 id: toolu_01GtDVDshRmiaEPoYMbBkqfK
 ```json
 {
-  "command": "git worktree remove \"/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de\" && git branch -D \"feature/dispatch-ui-full-screen-overlay-post-preview-on-de\" && git fetch origin && git merge --ff-only origin/master",
+  "command": "git worktree remove \"/home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de\" && git branch -D \"feature/dispatch-ui-full-screen-overlay-post-preview-on-de\" && git fetch origin && git merge --ff-only origin/master",
   "description": "Remove worktree, delete feature branch, fast-forward master to origin"
 }
 ```
@@ -9377,7 +9377,7 @@ tool_result ERROR
 id: toolu_01GtDVDshRmiaEPoYMbBkqfK
 ```
 Exit code 128
-fatal: '/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de' is not a working tree
+fatal: '/home/<USER>/Workspace/codeInsights/code-insights-dispatch-ui-full-screen-overlay-post-preview-on-de' is not a working tree
 ```
 
 > AGENT
@@ -9639,15 +9639,15 @@ Progress: resolved 518, reused 518, downloaded 0, added 512
    ╰──────────────────────────────────────────────────────────────────╯
 
 Progress: resolved 518, reused 518, downloaded 0, added 518, done
- WARN  Failed to create bin at /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/cli/dist/index.js'
+ WARN  Failed to create bin at /home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/cli/dist/index.js'
 
 devDependencies:
 + @vitest/coverage-v8 4.0.18
 + vitest 4.0.18
 
- WARN  Failed to create bin at /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/server/node_modules/@code-insights/cli/dist/index.js'
+ WARN  Failed to create bin at /home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/server/node_modules/@code-insights/cli/dist/index.js'
 Done in 3s
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -9837,7 +9837,7 @@ id: toolu_01UhCQuXc5UndeXfmwqSZHvm
 tool_result
 id: toolu_01UhCQuXc5UndeXfmwqSZHvm
 ```
-{"team_name":"feat-dispatch-discoverability-inline-write-about-this","team_file_path":"/Users/melagiri/.claude/teams/feat-dispatch-discoverability-inline-write-about-this/config.json","lead_agent_id":"team-lead@feat-dispatch-discoverability-inline-write-about-this"}
+{"team_name":"feat-dispatch-discoverability-inline-write-about-this","team_file_path":"/home/<USER>/.claude/teams/feat-dispatch-discoverability-inline-write-about-this/config.json","lead_agent_id":"team-lead@feat-dispatch-discoverability-inline-write-about-this"}
 ```
 
 > AGENT
@@ -9898,7 +9898,7 @@ id: toolu_014ozCT25k6kfj3sUxHBx2LR
   "name": "dev-agent",
   "team_name": "feat-dispatch-discoverability-inline-write-about-this",
   "mode": "bypassPermissions",
-  "prompt": "You are the Dev for feature team feat-dispatch-discoverability-inline-write-about-this.\n\nFEATURE: Dispatch discoverability — inline \"Write about this\" entry point on InsightsPage + dismissible discovery callout + pre-populated DispatchDrawer from session facets.\n\nRead the full spec in GitHub Issue #300: `gh issue view 300 --repo melagiri/code-insights`\n\nWORKTREE: /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/\nBRANCH: feature/dispatch-discoverability-inline-write-about-this\nAll code work happens in the worktree path above.\n\nCheck TaskList for your assigned tasks. Mark tasks in_progress when starting, completed when done.\n\nDESIGN DECISIONS LOCKED (implement exactly as specified):\n\nENHANCEMENT 1 — Inline entry button:\n- Component: DispatchEntryButton.tsx in dashboard/src/components/insights/\n- shadcn Button variant=\"outline\" size=\"sm\" with Lucide PenLine icon\n- Visible only for session types: feature_build, deep_focus, bug_hunt, refactor — hidden entirely (not disabled) for other types\n- Placed trailing edge of InsightsPage header action row alongside existing Rename/Open buttons\n- Hidden when facets are undefined (analysis not yet run)\n- On click: opens DispatchDrawer with prefill, sets localStorage ci.dispatch.opened = \"1\"\n\nENHANCEMENT 2 — Dismissible discovery callout:\n- Component: DispatchDiscoveryCallout.tsx in dashboard/src/components/insights/\n- Full-width strip below header, above tabs: rounded-lg border bg-muted/40 px-4 py-3 mb-4\n- Sparkles icon (text-primary) + \"Turn this session into a writeup\" heading + subtitle copy\n- Three actions: \"Try it\" (Button size=\"sm\" […]
+  "prompt": "You are the Dev for feature team feat-dispatch-discoverability-inline-write-about-this.\n\nFEATURE: Dispatch discoverability — inline \"Write about this\" entry point on InsightsPage + dismissible discovery callout + pre-populated DispatchDrawer from session facets.\n\nRead the full spec in GitHub Issue #300: `gh issue view 300 --repo melagiri/code-insights`\n\nWORKTREE: /home/<USER>/Workspace/codeInsights/code-insights-dispatch-discoverability-inline-write-about-this/\nBRANCH: feature/dispatch-discoverability-inline-write-about-this\nAll code work happens in the worktree path above.\n\nCheck TaskList for your assigned tasks. Mark tasks in_progress when starting, completed when done.\n\nDESIGN DECISIONS LOCKED (implement exactly as specified):\n\nENHANCEMENT 1 — Inline entry button:\n- Component: DispatchEntryButton.tsx in dashboard/src/components/insights/\n- shadcn Button variant=\"outline\" size=\"sm\" with Lucide PenLine icon\n- Visible only for session types: feature_build, deep_focus, bug_hunt, refactor — hidden entirely (not disabled) for other types\n- Placed trailing edge of InsightsPage header action row alongside existing Rename/Open buttons\n- Hidden when facets are undefined (analysis not yet run)\n- On click: opens DispatchDrawer with prefill, sets localStorage ci.dispatch.opened = \"1\"\n\nENHANCEMENT 2 — Dismissible discovery callout:\n- Component: DispatchDiscoveryCallout.tsx in dashboard/src/components/insights/\n- Full-width strip below header, above tabs: rounded-lg border bg-muted/40 px-4 py-3 mb-4\n- Sparkles icon (text-primary) + \"Turn this session into a writeup\" heading + subtitle copy\n- Three actions: \"Try it\" (Button size=\"sm\" […]
 
 > TOOL
 
@@ -10134,7 +10134,7 @@ tool_use Bash
 id: toolu_01146mLheCFZ4wUtAeSP6B7B
 ```json
 {
-  "command": "cat /Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md",
+  "command": "cat /home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md",
   "description": "Read specialist registry for reviewer prompt templates"
 }
 ```
@@ -10293,12 +10293,12 @@ Two functional regressions block merge:
 **One ESCALATE**: founder decision on whether editable Post title is a real feature (server contract work) or scaffolding (remove for this PR).
 
 Relevant files for the dev agent:
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/DispatchDrawer.tsx`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/insights/DispatchDiscoveryCallout.tsx`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/insights/DispatchEntryButton.tsx`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/hooks/useDispatchDiscovery.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/lib/buildDispatchPrefill.ts`
-- `/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/pages/InsightsPage.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/DispatchDrawer.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/insights/DispatchDiscoveryCallout.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/insights/DispatchEntryButton.tsx`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/hooks/useDispatchDiscovery.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/lib/buildDispatchPrefill.ts`
+- `/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/pages/InsightsPage.tsx`
 agentId: a2fe25e96f96dd304 (use SendMessage with to: 'a2fe25e96f96dd304' to continue this agent)
 <usage>total_tokens: 65843
 tool_uses: 4
@@ -10573,7 +10573,7 @@ tool_use Read
 id: toolu_01UPdRQEogDusjCGESy3P3E5
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
 }
 ```
 
@@ -10943,7 +10943,7 @@ tool_use Read
 id: toolu_019vZDqDsRPeHP97SiWgEQpx
 ```json
 {
-  "file_path": "/Users/melagiri/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/memory/MEMORY.md",
   "limit": 10,
   "offset": 193
 }
@@ -10973,7 +10973,7 @@ tool_use Read
 id: toolu_01S9Yq8vFbTLWcLAqVG67Nnw
 ```json
 {
-  "file_path": "/Users/melagiri/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/memory/MEMORY.md",
   "limit": 20,
   "offset": 200
 }
@@ -11003,7 +11003,7 @@ id: toolu_01N3j8ubYFonRaETCKyLMq4F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/memory/MEMORY.md",
   "old_string": "## LLM Infrastructure (PRs #180, #181, #249) ✅\n- Prompt caching (PR #180): `ContentBlock[]` with `cache_control`, `flattenContent()` for non-Anthropic, conversation-only in cached block\n- Cost tracking V7 (PR #181): `analysis_usage` table, ON CONFLICT DO UPDATE, `AnalysisCostLine` popover\n- DB helpers migration (PR #249): `analysis-db.ts` + `analysis-usage-db.ts` moved to `cli/src/analysis/`, server thin re-exports",
   "new_string": "## LLM Infrastructure (PRs #180, #181, #249) ✅\n- Prompt caching (#180), cost tracking V7 (#181, `analysis_usage` table), DB helpers migration (#249: `cli/src/analysis/`)\n\n## Dispatch Discoverability (PR #301) ✅ merged 2026-05-18\n- `DispatchEntryButton` + `DispatchDiscoveryCallout` on InsightsPage; `useDispatchDiscovery` (localStorage); `buildDispatchPrefill` (pure fn)\n- Qualifying filter requires ≥3 insights AND non-empty patterns/friction — gate enforces canGenerate invariant upstream\n- DispatchDrawer: `prefill` prop, auto-selects insights, \"Reset to defaults\", no title input (server has no title field)"
 }
@@ -11014,7 +11014,7 @@ id: toolu_01N3j8ubYFonRaETCKyLMq4F
 tool_result
 id: toolu_01N3j8ubYFonRaETCKyLMq4F
 ```
-The file /Users/melagiri/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11218,7 +11218,7 @@ tool_use Read
 id: toolu_01YLej3aW6XKhWn3D34g9VLx
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
   "limit": 60
 }
 ```
@@ -11341,7 +11341,7 @@ tool_use Read
 id: toolu_01NRgkKuZzBQCaXpTti56jEM
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/package.json",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/package.json",
   "limit": 5
 }
 ```
@@ -11364,7 +11364,7 @@ tool_use Read
 id: toolu_01HZtdUucMgHhhMCAFdfRx5e
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/PRODUCT.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/PRODUCT.md",
   "limit": 40
 }
 ```
@@ -11405,7 +11405,7 @@ tool_use Read
 id: toolu_01Jcx9iDi5QFJVMU3QkUqAeA
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/PRODUCT.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/PRODUCT.md",
   "limit": 80,
   "offset": 40
 }
@@ -11444,7 +11444,7 @@ tool_use Read
 id: toolu_01RhSRE7NPJ5D31zQfU7fC4Z
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/PRODUCT.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/PRODUCT.md",
   "limit": 40,
   "offset": 119
 }
@@ -11480,7 +11480,7 @@ tool_use Bash
 id: toolu_015S4Gf84yQ8VqVEgXCKFY4k
 ```json
 {
-  "command": "grep -n \"Dispatch\\|dispatch\\|4\\.11\\|post generator\\|blog\" /Users/melagiri/Workspace/codeInsights/code-insights/docs/ROADMAP.md | head -20",
+  "command": "grep -n \"Dispatch\\|dispatch\\|4\\.11\\|post generator\\|blog\" /home/<USER>/Workspace/codeInsights/code-insights/docs/ROADMAP.md | head -20",
   "description": "Check ROADMAP.md for Dispatch milestone"
 }
 ```
@@ -11499,7 +11499,7 @@ tool_use Read
 id: toolu_01FXUU52yifZGmhA8LSHiG3n
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/ROADMAP.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/ROADMAP.md"
 }
 ```
 
@@ -11541,7 +11541,7 @@ id: toolu_01V9VbMRhcLhrFUqXxkMmcvc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/package.json",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/package.json",
   "old_string": "  \"version\": \"4.10.4\",",
   "new_string": "  \"version\": \"4.11.0\","
 }
@@ -11552,7 +11552,7 @@ id: toolu_01V9VbMRhcLhrFUqXxkMmcvc
 tool_result
 id: toolu_01V9VbMRhcLhrFUqXxkMmcvc
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/cli/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/cli/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11562,7 +11562,7 @@ id: toolu_0172kyiAMNHWiBx9PLLLC4NQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/cli/CHANGELOG.md",
   "old_string": "## [4.10.4] - 2026-05-06",
   "new_string": "## [4.11.0] - 2026-05-19\n\n### Added\n\n- **Dispatch — LLM-powered post generator** — A new Dispatch panel on the\n  Insights page generates shareable blog posts and LinkedIn updates from your\n  session insights. Select insights, choose a format (Blog or LinkedIn), pick a\n  tone, and optionally include session background context. The generator uses\n  your configured LLM provider (Anthropic, OpenAI, Gemini, Ollama, llama.cpp)\n  and produces a formatted post you can preview, copy, or download as Markdown.\n\n- **AI Cover Image Prompts** — Inside the Dispatch post preview, generate a\n  Midjourney/DALL-E-ready image prompt for your post's cover image via the\n  `/api/dispatch/image-prompt` endpoint.\n\n- **\"Write about this\" discoverability** — Qualifying high-value sessions\n  (feature_build, deep_focus, bug_hunt, refactor) now surface a contextual\n  \"Write about this\" button on the Insights page. Clicking it opens Dispatch\n  pre-populated with the session title, format mapping, and a context block\n  derived from the top effective patterns and user-actionable friction points.\n  A dismissible discovery callout nudges first-time users toward the feature.\n\n## [4.10.4] - 2026-05-06"
 }
@@ -11573,7 +11573,7 @@ id: toolu_0172kyiAMNHWiBx9PLLLC4NQ
 tool_result
 id: toolu_0172kyiAMNHWiBx9PLLLC4NQ
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/cli/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/cli/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11587,7 +11587,7 @@ id: toolu_017mLqZUUs9JrFRZgYgXWRqc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/PRODUCT.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/PRODUCT.md",
   "old_string": "### Share Card (AI Fluency Score)",
   "new_string": "### Dispatch — LLM-Powered Post Generator\n\nTurn session insights into shareable content. Dispatch generates blog posts and LinkedIn updates from the insights you've extracted, using your configured LLM provider.\n\n**How it works:**\n1. Open Dispatch from the floating action bar on the Insights page, or click \"Write about this\" on any qualifying high-value session (feature_build, deep_focus, bug_hunt, refactor)\n2. Select the insights to include (minimum 3), choose a format and tone, and optionally add session background context\n3. Generate a formatted post — preview it, copy to clipboard, or download as Markdown\n\n**Formats and tones:**\n- **Blog** — Long-form technical post with narrative structure, code context, and lessons learned\n- **LinkedIn** — Concise professional update optimized for engagement (~250 words, 3-5 key points)\n- Tones: Technical, Storytelling, Educational, Reflective\n\n**AI Cover Image Prompts** — Inside the post preview, generate a Midjourney/DALL-E-ready prompt for your cover image via the `/api/dispatch/image-prompt` endpoint.\n\n**Discoverability:**\n- Qualifying sessions surface a contextual \"Write about this\" button on the Insights page\n- Clicking it opens Dispatch pre-populated with the session title, detected format, and a context block built from top effective patterns + user-actionable friction points\n- A dismissible discovery callout nudges […]
 
@@ -11596,7 +11596,7 @@ id: toolu_017mLqZUUs9JrFRZgYgXWRqc
 tool_result
 id: toolu_017mLqZUUs9JrFRZgYgXWRqc
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/PRODUCT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/PRODUCT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11606,7 +11606,7 @@ id: toolu_01TSsmFr8HFB6p1pdALrYJiF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/ROADMAP.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/ROADMAP.md",
   "old_string": "| 4.9.0 | — | llama.cpp provider + Gemma 4 model support, provider-aware token limits, JSON reliability | ✅ Done |",
   "new_string": "| 4.9.0 | — | llama.cpp provider + Gemma 4 model support, provider-aware token limits, JSON reliability | ✅ Done |\n| 4.10.x | — | Multi-source filter on dashboard, doctor command, reliability fixes, native analysis improvements | ✅ Done |\n| 4.11.0 | — | Dispatch — LLM-powered blog/LinkedIn post generator, AI cover image prompts, discoverability improvements | ✅ Done |"
 }
@@ -11617,7 +11617,7 @@ id: toolu_01TSsmFr8HFB6p1pdALrYJiF
 tool_result
 id: toolu_01TSsmFr8HFB6p1pdALrYJiF
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/ROADMAP.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/ROADMAP.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11643,21 +11643,21 @@ id: toolu_01L9fBZfnJnMrJmurEqQYu2Y
 ```
 ✗ Build failed in 441ms
 error during build:
-[vite]: Rollup failed to resolve import "@dnd-kit/core" from "/Users/melagiri/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/DispatchDrawer.tsx".
+[vite]: Rollup failed to resolve import "@dnd-kit/core" from "/home/<USER>/Workspace/codeInsights/code-insights/dashboard/src/components/dispatch/DispatchDrawer.tsx".
 This is most likely unintended because it can break your application at runtime.
 If you do want to externalize this module explicitly add it to
 `build.rollupOptions.external`
-    at viteLog (file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46374:15)
-    at file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46432:18
-    at onwarn (file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/@vitejs+plugin-react@4.7.0_vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1_/node_modules/@vitejs/plugin-react/dist/index.js:90:7)
-    at file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46430:7
-    at onRollupLog (file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46422:5)
-    at onLog (file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46072:7)
-    at file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:20981:32
-    at Object.logger [as onLog] (file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:22968:9)
-    at ModuleLoader.handleInvalidResolvedId (file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:21712:26)
-    at file:///Users/melagiri/Workspace/codeInsights/code-insights/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:21670:26
-/Users/melagiri/Workspace/codeInsights/code-insights/dashboard:
+    at viteLog (file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46374:15)
+    at file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46432:18
+    at onwarn (file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/@vitejs+plugin-react@4.7.0_vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1_/node_modules/@vitejs/plugin-react/dist/index.js:90:7)
+    at file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46430:7
+    at onRollupLog (file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46422:5)
+    at onLog (file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/vite@6.4.1_@types+node@22.19.13_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46072:7)
+    at file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:20981:32
+    at Object.logger [as onLog] (file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:22968:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:21712:26)
+    at file:///home/<USER>/Workspace/codeInsights/code-insights/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:21670:26
+/home/<USER>/Workspace/codeInsights/code-insights/dashboard:
  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @code-insights/dashboard@0.1.0 build: `vite build`
 Exit status 1
  ELIFECYCLE  Command failed with exit code 1.
@@ -11840,7 +11840,7 @@ tool_use Bash
 id: toolu_01X2XaPTdGL21k1bWjgfryYX
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights/cli diff && git -C /Users/melagiri/Workspace/codeInsights/code-insights diff -- docs/PRODUCT.md docs/ROADMAP.md",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights/cli diff && git -C /home/<USER>/Workspace/codeInsights/code-insights diff -- docs/PRODUCT.md docs/ROADMAP.md",
   "description": "Show diff of all release file changes"
 }
 ```
@@ -11905,7 +11905,7 @@ tool_use Bash
 id: toolu_01Bb3GsTSDR8WDihpJXoWHrf
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add cli/package.json cli/CHANGELOG.md docs/PRODUCT.md docs/ROADMAP.md && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nchore: bump version to v4.11.0\n\nDispatch — LLM-powered blog/LinkedIn post generator, AI cover image prompts, discoverability improvements\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add cli/package.json cli/CHANGELOG.md docs/PRODUCT.md docs/ROADMAP.md && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\nchore: bump version to v4.11.0\n\nDispatch — LLM-powered blog/LinkedIn post generator, AI cover image prompts, discoverability improvements\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit release files"
 }
 ```
@@ -11925,7 +11925,7 @@ tool_use Bash
 id: toolu_01ByEjezELKEWFGKZu28Pogt
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push origin master",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push origin master",
   "description": "Push to origin master"
 }
 ```
@@ -11958,7 +11958,7 @@ tool_result
 id: toolu_01VWjy7JpgiQsLngKSgRixA9
 ```
 <persisted-output>
-Output too large (31.6KB). Full output saved to: /Users/melagiri/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/9b89ed08-ae4e-4b35-b81b-545165e29e26/tool-results/bx73dfieh.txt
+Output too large (31.6KB). Full output saved to: /home/<USER>/.claude/projects/-Users-melagiri-Workspace-codeInsights-code-insights/9b89ed08-ae4e-4b35-b81b-545165e29e26/tool-results/bx73dfieh.txt
 
 Preview (first 2KB):
 > @code-insights/cli@4.11.0 prepublishOnly
@@ -12062,7 +12062,7 @@ tool_use Bash
 id: toolu_01F2BMGAAyVZZBq1aZdHw7H3
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/ | grep -i dispatch",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/ | grep -i dispatch",
   "description": "Find dispatch-related plan docs"
 }
 ```
@@ -12082,7 +12082,7 @@ tool_use Read
 id: toolu_01HdN3MannfoMudrHmCEjvtj
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md"
 }
 ```
 
@@ -12122,7 +12122,7 @@ tool_use Read
 id: toolu_01MuuGHc2frdbP1nixi6Qb1V
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md",
   "limit": 80
 }
 ```

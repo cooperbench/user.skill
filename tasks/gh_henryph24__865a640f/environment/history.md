@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01RQGi1tQAu2HPTc6mPeB4KN
 ```json
 {
-  "command": "grep -n \"related\" /Users/hungpq2412/neuralips26/main.tex | head -20",
+  "command": "grep -n \"related\" /home/<USER>/neuralips26/main.tex | head -20",
   "description": "Find related work section"
 }
 ```
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_019zdtEdmouAFKuKqTtk6Lcg
 ```json
 {
-  "command": "wc -l /Users/hungpq2412/neuralips26/main.tex",
+  "command": "wc -l /home/<USER>/neuralips26/main.tex",
   "description": "Get main.tex line count"
 }
 ```
@@ -37,7 +37,7 @@ id: toolu_019zdtEdmouAFKuKqTtk6Lcg
 tool_result
 id: toolu_019zdtEdmouAFKuKqTtk6Lcg
 ```
-    2870 /Users/hungpq2412/neuralips26/main.tex
+    2870 /home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -46,7 +46,7 @@ tool_use Bash
 id: toolu_01TcCdDkVT4wCjpRSQ2jTENq
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\subsection\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find sections in main.tex"
 }
 ```
@@ -94,7 +94,7 @@ tool_use Read
 id: toolu_01C5xfaej7oYucAmbcydnVHH
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 226,
   "limit": 10
 }
@@ -121,7 +121,7 @@ tool_use Bash
 id: toolu_01HA954nVzSY8vY5CxwacXHo
 ```json
 {
-  "command": "ls /Users/hungpq2412/neuralips26/main.pdf 2>/dev/null && stat -f \"%Sm\" /Users/hungpq2412/neuralips26/main.pdf 2>/dev/null",
+  "command": "ls /home/<USER>/neuralips26/main.pdf 2>/dev/null && stat -f \"%Sm\" /home/<USER>/neuralips26/main.pdf 2>/dev/null",
   "description": "Check if main.pdf exists"
 }
 ```
@@ -131,7 +131,7 @@ id: toolu_01HA954nVzSY8vY5CxwacXHo
 tool_result
 id: toolu_01HA954nVzSY8vY5CxwacXHo
 ```
-/Users/hungpq2412/neuralips26/main.pdf
+/home/<USER>/neuralips26/main.pdf
 May  6 16:02:52 2026
 ```
 
@@ -141,7 +141,7 @@ tool_use Bash
 id: toolu_01B6iopMpsUwJRk6fPbdEWpJ
 ```json
 {
-  "command": "wc -w <<< \"$(sed -n '229p' /Users/hungpq2412/neuralips26/main.tex)\"",
+  "command": "wc -w <<< \"$(sed -n '229p' /home/<USER>/neuralips26/main.tex)\"",
   "description": "Count words in related work paragraph"
 }
 ```
@@ -179,7 +179,7 @@ tool_use Bash
 id: toolu_01KEipdcugoS6ykfUW82Qo4q
 ```json
 {
-  "command": "pdftotext -layout /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '118,160p'",
+  "command": "pdftotext -layout /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '118,160p'",
   "description": "View related work in rendered PDF"
 }
 ```
@@ -264,7 +264,7 @@ tool_result
 id: toolu_01EJQq6P3MC141fEGQBpyYha
 ```
 commit e15f8fa15322349c4c993e689e51258e8e169b94
-Author: Hung Phan (Henry) <79650826+henryph24@users.noreply.github.com>
+Author: Hung Phan (Henry) <<REDACTED_EMAIL>>
 Date:   Wed May 6 15:54:07 2026 +0700
 
     docs(body): compress intro and related work, promote signal_ratio + causal_controls to main
@@ -311,7 +311,7 @@ tool_use Bash
 id: toolu_01Ns3sNUR8C2vijhFBVmdJSU
 ```json
 {
-  "command": "grep -n \"elated\\|positioning\" /Users/hungpq2412/neuralips26/main.tex | head -15",
+  "command": "grep -n \"elated\\|positioning\" /home/<USER>/neuralips26/main.tex | head -15",
   "description": "Search for related-work-like content"
 }
 ```
@@ -359,7 +359,7 @@ tool_use Bash
 id: toolu_017NCTuqziBZ9VYRwTpgmLYP
 ```json
 {
-  "command": "pdftotext -layout /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '115,125p'",
+  "command": "pdftotext -layout /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '115,125p'",
   "description": "Check related work region precisely"
 }
 ```
@@ -436,7 +436,7 @@ tool_use Read
 id: toolu_01GYKj8BCjLRsH1C9gGoKhwZ
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 80,
   "limit": 75
 }
@@ -543,7 +543,7 @@ tool_use Bash
 id: toolu_01BN7sCzWHegroFm4ZjEEpsC
 ```json
 {
-  "command": "pdftotext -layout /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '80,160p'",
+  "command": "pdftotext -layout /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '80,160p'",
   "description": "View lines 80-160 of rendered PDF"
 }
 ```
@@ -576,7 +576,7 @@ tool_use Bash
 id: toolu_01HPYD873NYgUTmyVLLzn6Ub
 ```json
 {
-  "command": "pdftotext -layout /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '83,160p'",
+  "command": "pdftotext -layout /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '83,160p'",
   "description": "Check PDF lines 83-160"
 }
 ```
@@ -608,7 +608,7 @@ tool_use Bash
 id: toolu_015iL4ncmatDa3CzzgbeNd27
 ```json
 {
-  "command": "ls -la /Users/hungpq2412/neuralips26/submission.zip.bak 2>&1 | head -3; ls /Users/hungpq2412/neuralips26/*.tex /Users/hungpq2412/neuralips26/*.pdf 2>&1",
+  "command": "ls -la /home/<USER>/neuralips26/submission.zip.bak 2>&1 | head -3; ls /home/<USER>/neuralips26/*.tex /home/<USER>/neuralips26/*.pdf 2>&1",
   "description": "List tex/pdf files in directory"
 }
 ```
@@ -618,10 +618,10 @@ id: toolu_015iL4ncmatDa3CzzgbeNd27
 tool_result
 id: toolu_015iL4ncmatDa3CzzgbeNd27
 ```
--rw-r--r--  1 hungpq2412  staff  22234849 May  6 14:33 /Users/hungpq2412/neuralips26/submission.zip.bak
-/Users/hungpq2412/neuralips26/checklist.tex
-/Users/hungpq2412/neuralips26/main.pdf
-/Users/hungpq2412/neuralips26/main.tex
+-rw-r--r--  1 hungpq2412  staff  22234849 May  6 14:33 /home/<USER>/neuralips26/submission.zip.bak
+/home/<USER>/neuralips26/checklist.tex
+/home/<USER>/neuralips26/main.pdf
+/home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -630,7 +630,7 @@ tool_use Bash
 id: toolu_01CN453iZzXHq2MP8rcfqxRL
 ```json
 {
-  "command": "pdftotext /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | grep -n \"Related Work\\|^[0-9] \" | head -10",
+  "command": "pdftotext /home/<USER>/neuralips26/main.pdf - 2>/dev/null | grep -n \"Related Work\\|^[0-9] \" | head -10",
   "description": "Find related work without layout"
 }
 ```
@@ -658,7 +658,7 @@ tool_use Bash
 id: toolu_01Thy8FDkrcavN26s4B2TEQQ
 ```json
 {
-  "command": "pdftotext /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '80,150p'",
+  "command": "pdftotext /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '80,150p'",
   "description": "View lines 80-150 without layout"
 }
 ```
@@ -747,7 +747,7 @@ tool_use Bash
 id: toolu_01Xw9VxrrETxyVtf8JJwwWER
 ```json
 {
-  "command": "grep -n \"lineno\\|nonatbib\\|usepackage{neurips\" /Users/hungpq2412/neuralips26/main.tex | head -5",
+  "command": "grep -n \"lineno\\|nonatbib\\|usepackage{neurips\" /home/<USER>/neuralips26/main.tex | head -5",
   "description": "Check for line numbering package"
 }
 ```
@@ -766,7 +766,7 @@ tool_use Bash
 id: toolu_01VMqkF1fGVdj5LxCWgYfsBy
 ```json
 {
-  "command": "head -20 /Users/hungpq2412/neuralips26/main.tex",
+  "command": "head -20 /home/<USER>/neuralips26/main.tex",
   "description": "Check preamble"
 }
 ```
@@ -804,7 +804,7 @@ tool_use Bash
 id: toolu_015xoAFRUCEorNAEeLEfs1bC
 ```json
 {
-  "command": "pdftotext -layout /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | awk '/^\\s*86\\s/,/^\\s*149\\s/' | head -80",
+  "command": "pdftotext -layout /home/<USER>/neuralips26/main.pdf - 2>/dev/null | awk '/^\\s*86\\s/,/^\\s*149\\s/' | head -80",
   "description": "Extract margin lines 86-149 from PDF"
 }
 ```
@@ -823,7 +823,7 @@ tool_use Bash
 id: toolu_01SrTWXAyuWXyCCVWRt67fMJ
 ```json
 {
-  "command": "pdftotext -layout /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | grep -nE \"^\\s*(86|87|88|140|145|148|149)\\s\" | head -20",
+  "command": "pdftotext -layout /home/<USER>/neuralips26/main.pdf - 2>/dev/null | grep -nE \"^\\s*(86|87|88|140|145|148|149)\\s\" | head -20",
   "description": "Find PDF lines containing margin numbers 86-149"
 }
 ```
@@ -871,7 +871,7 @@ tool_use Bash
 id: toolu_0195XUM7qQu6roK4eoMdr3S4
 ```json
 {
-  "command": "pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/pdflatex3.log 2>&1; tail -3 /tmp/pdflatex3.log; echo \"---\"; stat -f \"%Sm  %z bytes\" /Users/hungpq2412/neuralips26/main.pdf",
+  "command": "pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/pdflatex3.log 2>&1; tail -3 /tmp/pdflatex3.log; echo \"---\"; stat -f \"%Sm  %z bytes\" /home/<USER>/neuralips26/main.pdf",
   "description": "Final pdflatex pass and verify PDF"
 }
 ```

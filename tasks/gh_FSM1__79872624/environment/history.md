@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_01PXm4AceEz9cgQu9JCNtPh2
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md"
 }
 ```
 
@@ -33,11 +33,11 @@ id: toolu_01PXm4AceEz9cgQu9JCNtPh2
 12	<required_reading>
 13	Read all files referenced by the invoking prompt's execution_context before starting.
 14	
-15	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/ui-brand.md
-16	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/revision-loop.md
-17	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/gate-prompts.md
-18	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/agent-contracts.md
-19	@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/gates.md
+15	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/ui-brand.md
+16	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/revision-loop.md
+17	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/gate-prompts.md
+18	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/agent-contracts.md
+19	@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/gates.md
 20	</required_reading>
 21	
 22	<available_agent_types>
@@ -171,7 +171,7 @@ tool_use Read
 id: toolu_01MMRduvHPZeMW2K4wjJ4kw9
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/plan-phase.md",
   "offset": 915,
   "limit": 914
 }
@@ -202,7 +202,7 @@ tool_use Bash
 id: toolu_018rELFFxmxt2b6AUnyFo6u2
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\n_GSD_RUNTIME_ROOT=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"\nGSD_TOOLS=\"${_GSD_RUNTIME_ROOT}/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.plan-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['researcher_model','planner_model','checker_model','research_enabled','plan_checker_enabled','nyquist_validation_enabled','commit_docs','text_mode','phase_found','phase_dir','phase_number','phase_name','phase_slug','padded_phase','has_research','has_context','has_reviews','has_plans','plan_count','phase_status','planning_exists','roadmap_exists','phase_req_ids','response_language','granularity','state_path','roadmap_path','requirements_path','context_path','research_path','verification_path','uat_path','reviews_path','patterns_path']; for (const k of keys) console.log(k+': '+JSON.stringify(o[k]));\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\n_GSD_RUNTIME_ROOT=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"\nGSD_TOOLS=\"${_GSD_RUNTIME_ROOT}/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.plan-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['researcher_model','planner_model','checker_model','research_enabled','plan_checker_enabled','nyquist_validation_enabled','commit_docs','text_mode','phase_found','phase_dir','phase_number','phase_name','phase_slug','padded_phase','has_research','has_context','has_reviews','has_plans','plan_count','phase_status','planning_exists','roadmap_exists','phase_req_ids','response_language','granularity','state_path','roadmap_path','requirements_path','context_path','research_path','verification_path','uat_path','reviews_path','patterns_path']; for (const k of keys) console.log(k+': '+JSON.stringify(o[k]));\"",
   "description": "Run plan-phase init query for phase 68.2"
 }
 ```
@@ -255,7 +255,7 @@ tool_use Read
 id: toolu_018pFws7akR9dqVHyCgmBU35
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md"
 }
 ```
 
@@ -284,7 +284,7 @@ tool_use Read
 id: toolu_01NSBtJpV1wTe1R32dueADTA
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-DISCUSSION-LOG.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-DISCUSSION-LOG.md"
 }
 ```
 
@@ -328,7 +328,7 @@ tool_use Bash
 id: toolu_01D2H8Va7tyLEERo6as61G7v
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===ROADMAP PHASE 68.2 SECTION===\"\ngsd_run query roadmap.get-phase \"68.2\" --pick section 2>/dev/null || gsd_run query roadmap.get-phase \"68.2\"\necho \"\"\necho \"===MVP MODE===\"\ngsd_run query phase.mvp-mode \"68.2\" --pick active 2>/dev/null || echo \"n/a\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===ROADMAP PHASE 68.2 SECTION===\"\ngsd_run query roadmap.get-phase \"68.2\" --pick section 2>/dev/null || gsd_run query roadmap.get-phase \"68.2\"\necho \"\"\necho \"===MVP MODE===\"\ngsd_run query phase.mvp-mode \"68.2\" --pick active 2>/dev/null || echo \"n/a\"",
   "description": "Get ROADMAP phase 68.2 section and MVP mode"
 }
 ```
@@ -355,7 +355,7 @@ tool_use Bash
 id: toolu_01WcY7wT1QyStGWjPF7WJQqM
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===PLAN:PRE HOOKS===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||o.hooks||[];\nconsole.log('activeHooks count:', hooks.length);\nfor (const h of hooks) {\n  console.log('---');\n  console.log('kind:', h.kind, '| capId:', h.capId, '| into:', h.into||'', '| blocking:', h.blocking);\n  if (h.ref) console.log('ref:', JSON.stringify(h.ref));\n  if (h.check) console.log('check:', JSON.stringify(h.check));\n  if (h.configValues) console.log('configValues:', JSON.stringify(h.configValues));\n}\n\" 2>&1 | head -60\necho \"\"\necho \"===UI PLAN GATE===\"\ngsd_run check ui-plan-gate \"68.2\" --raw 2>/dev/null || echo \"gate check failed\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===PLAN:PRE HOOKS===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||o.hooks||[];\nconsole.log('activeHooks count:', hooks.length);\nfor (const h of hooks) {\n  console.log('---');\n  console.log('kind:', h.kind, '| capId:', h.capId, '| into:', h.into||'', '| blocking:', h.blocking);\n  if (h.ref) console.log('ref:', JSON.stringify(h.ref));\n  if (h.check) console.log('check:', JSON.stringify(h.check));\n  if (h.configValues) console.log('configValues:', JSON.stringify(h.configValues));\n}\n\" 2>&1 | head -60\necho \"\"\necho \"===UI PLAN GATE===\"\ngsd_run check ui-plan-gate \"68.2\" --raw 2>/dev/null || echo \"gate check failed\"",
   "description": "Resolve plan:pre hooks and UI gate"
 }
 ```
@@ -403,7 +403,7 @@ tool_use Bash
 id: toolu_015m2JattD9z1vEVyTyH4XhF
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===FULL RAW plan:pre JSON (top-level keys + any ui capId)===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconsole.log('top-level keys:', Object.keys(o).join(', '));\nconst hooks=o.activeHooks||o.hooks||[];\n// Show every hook fully\nconst uiHooks = hooks.filter(h => (h.capId||'').includes('ui') || JSON.stringify(h).includes('ui.plan-gate') || JSON.stringify(h).includes('ui-plan-gate'));\nconsole.log('UI-related hooks in activeHooks:', uiHooks.length);\nconsole.log(JSON.stringify(uiHooks, null, 2));\n// Also check if there is an inactiveHooks or allHooks\nif (o.inactiveHooks) console.log('inactiveHooks capIds:', o.inactiveHooks.map(h=>h.capId).join(', '));\n\"\necho \"\"\necho \"===Config UI keys===\"\ngsd_run query config-get workflow.ui_phase 2>/dev/null\ngsd_run query config-get workflow.ui_safety_gate 2>/dev/null\necho \"\"\necho \"===AUTO CHAIN===\"\ngsd_run query check auto-mode --pick auto_chain_active 2>/dev/null || echo \"false\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===FULL RAW plan:pre JSON (top-level keys + any ui capId)===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconsole.log('top-level keys:', Object.keys(o).join(', '));\nconst hooks=o.activeHooks||o.hooks||[];\n// Show every hook fully\nconst uiHooks = hooks.filter(h => (h.capId||'').includes('ui') || JSON.stringify(h).includes('ui.plan-gate') || JSON.stringify(h).includes('ui-plan-gate'));\nconsole.log('UI-related hooks in activeHooks:', uiHooks.length);\nconsole.log(JSON.stringify(uiHooks, null, 2));\n// Also check if there is an inactiveHooks or allHooks\nif (o.inactiveHooks) console.log('inactiveHooks capIds:', o.inactiveHooks.map(h=>h.capId).join(', '));\n\"\necho \"\"\necho \"===Config UI keys===\"\ngsd_run query config-get workflow.ui_phase 2>/dev/null\ngsd_run query config-get workflow.ui_safety_gate 2>/dev/null\necho \"\"\necho \"===AUTO CHAIN===\"\ngsd_run query check auto-mode --pick auto_chain_active 2>/dev/null || echo \"false\"",
   "description": "Inspect raw plan:pre JSON for UI hooks"
 }
 ```
@@ -474,7 +474,7 @@ tool_use Bash
 id: toolu_01QXQuGyVfDzxvfj42ews6uw
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===RESEARCH HOOK FRAGMENT===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst rh=hooks.find(h=>h.capId==='research');\nif (rh && rh.fragment && rh.fragment.inline) { console.log(rh.fragment.inline); }\nelse { console.log('NO_INLINE_FRAGMENT'); console.log(JSON.stringify(rh,null,2)); }\n\"\necho \"\"\necho \"======END FRAGMENT======\"\necho \"\"\necho \"===RESEARCHER AGENT SKILLS===\"\ngsd_run query agent-skills gsd-phase-researcher 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===RESEARCH HOOK FRAGMENT===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst rh=hooks.find(h=>h.capId==='research');\nif (rh && rh.fragment && rh.fragment.inline) { console.log(rh.fragment.inline); }\nelse { console.log('NO_INLINE_FRAGMENT'); console.log(JSON.stringify(rh,null,2)); }\n\"\necho \"\"\necho \"======END FRAGMENT======\"\necho \"\"\necho \"===RESEARCHER AGENT SKILLS===\"\ngsd_run query agent-skills gsd-phase-researcher 2>/dev/null | head -40",
   "description": "Extract research hook fragment and agent skills"
 }
 ```
@@ -564,7 +564,7 @@ tool_use Bash
 id: toolu_01JVQe6hSgm8Su1yqhRXqkC8
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===Validation Architecture heading present?===\"\ngrep -n \"## Validation Architecture\" \"${PHASE_DIR}\"/*-RESEARCH.md 2>/dev/null && echo \"FOUND\" || echo \"NOT FOUND\"\necho \"\"\necho \"===RESEARCH.md heading outline===\"\ngrep -nE \"^#{1,3} \" \"${PHASE_DIR}\"/*-RESEARCH.md 2>/dev/null\necho \"\"\necho \"===VALIDATION template exists?===\"\nls -la .claude/gsd-core/templates/VALIDATION.md 2>/dev/null && echo \"---TEMPLATE---\" && cat .claude/gsd-core/templates/VALIDATION.md 2>/dev/null | head -60",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===Validation Architecture heading present?===\"\ngrep -n \"## Validation Architecture\" \"${PHASE_DIR}\"/*-RESEARCH.md 2>/dev/null && echo \"FOUND\" || echo \"NOT FOUND\"\necho \"\"\necho \"===RESEARCH.md heading outline===\"\ngrep -nE \"^#{1,3} \" \"${PHASE_DIR}\"/*-RESEARCH.md 2>/dev/null\necho \"\"\necho \"===VALIDATION template exists?===\"\nls -la .claude/gsd-core/templates/VALIDATION.md 2>/dev/null && echo \"---TEMPLATE---\" && cat .claude/gsd-core/templates/VALIDATION.md 2>/dev/null | head -60",
   "description": "Check Validation Architecture section and template"
 }
 ```
@@ -614,7 +614,7 @@ tool_use Read
 id: toolu_01APqWcFVTy48bsGft7Xf45E
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-RESEARCH.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-RESEARCH.md",
   "offset": 326,
   "limit": 75
 }
@@ -643,7 +643,7 @@ tool_use Read
 id: toolu_01KLgo61kFEtCJmvik5TYYmi
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/VALIDATION.md",
   "offset": 60,
   "limit": 40
 }
@@ -684,7 +684,7 @@ tool_use Write
 id: toolu_01VCFtY4Q1rCPAQQsnnSntmB
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md",
   "content": "---\nphase: 68.2\nslug: sdk-owned-read-chain-and-resolved-folder-listings\nstatus: draft\nnyquist_compliant: false\nwave_0_complete: false\ncreated: 2026-07-06\n---\n\n# Phase 68.2 — Validation Strategy\n\n> Per-phase validation contract for feedback sampling during execution.\n> Derived from `68.2-RESEARCH.md` § Validation Architecture. Per-task IDs are\n> filled once PLAN.md task breakdown exists.\n\n---\n\n## Test Infrastructure\n\n| Property | Value |\n|----------|-------|\n| **Framework** | Vitest (`packages/sdk`, `packages/sdk-core`, `packages/core`); Playwright (`tests/web-e2e`) |\n| **Config file** | `packages/sdk/vitest.config.ts` (implicit via package.json); `tests/web-e2e/playwright.config.ts` |\n| **Quick run command** | `pnpm --filter @cipherbox/sdk test -- --run <pattern>` (targeted; e.g. `client-rotation`) |\n| **Full suite command** | `pnpm --filter @cipherbox/sdk test && pnpm --filter @cipherbox/sdk-core test && pnpm --filter @cipherbox/core test` (unit); `pnpm --filter @cipherbox/web-e2e test` (e2e) |\n| **Estimated runtime** | ~30s targeted unit; web-e2e up to 20-minute CI budget (`.github/workflows/web-e2e.yml`) |\n\n---\n\n## Sampling Rate\n\n- **After every task commit:** Run the targeted vitest pattern for the package touched (`pnpm --filter @cipherbox/sdk test -- --run <pattern>`), plus the D-07 grep-gate command as a fast static check.\n- **After every plan wave:** Full `packages/sdk` / `packages/sdk-core` / `packages/core` vitest suites, plus `pnpm --filter @cipherbox/web typecheck` (rebuild `sdk-core`/`sdk` dist first — cross-package dist staleness).\n- **Before `/gsd-verify-work` (phase gate):** Full `pnpm --filter @cipherbox/web-e2e test` green (SC#5), plus the D-07 grep gate returning zero violations — run […]
 
 > TOOL
@@ -692,7 +692,7 @@ id: toolu_01VCFtY4Q1rCPAQQsnnSntmB
 tool_result
 id: toolu_01VCFtY4Q1rCPAQQsnnSntmB
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -705,7 +705,7 @@ tool_use Bash
 id: toolu_01NRcgpKzE9FFpTKPCKfuw7Z
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT VALIDATION.md===\"\ngsd_run query commit \"docs(68.2): add validation strategy\" --files \"${PHASE_DIR}/68.2-VALIDATION.md\" 2>&1 | tail -5\necho \"\"\necho \"===DRIFT PRE-CHECK (non-blocking)===\"\ngsd_run verify codebase-drift 2>/dev/null | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry { const o=JSON.parse(raw); console.log('skipped:', o.skipped, '| action_required:', o.action_required); if(o.action_required && o.message) console.log('MESSAGE:', o.message); }\ncatch(e){ console.log('drift check output (non-JSON):', raw.slice(0,300)); }\n\" 2>&1 || echo \"drift skipped\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT VALIDATION.md===\"\ngsd_run query commit \"docs(68.2): add validation strategy\" --files \"${PHASE_DIR}/68.2-VALIDATION.md\" 2>&1 | tail -5\necho \"\"\necho \"===DRIFT PRE-CHECK (non-blocking)===\"\ngsd_run verify codebase-drift 2>/dev/null | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry { const o=JSON.parse(raw); console.log('skipped:', o.skipped, '| action_required:', o.action_required); if(o.action_required && o.message) console.log('MESSAGE:', o.message); }\ncatch(e){ console.log('drift check output (non-JSON):', raw.slice(0,300)); }\n\" 2>&1 || echo \"drift skipped\"",
   "description": "Commit VALIDATION.md and run drift pre-check"
 }
 ```
@@ -731,7 +731,7 @@ tool_use Bash
 id: toolu_01Q4iAhu66LHQ7iSaB4WPsYT
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===Recent commits===\"\ngit log --oneline -6\necho \"\"\necho \"===Is VALIDATION.md tracked/committed?===\"\ngit ls-files \".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md\"\necho \"\"\necho \"===Working tree status===\"\ngit status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===Recent commits===\"\ngit log --oneline -6\necho \"\"\necho \"===Is VALIDATION.md tracked/committed?===\"\ngit ls-files \".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md\"\necho \"\"\necho \"===Working tree status===\"\ngit status --short",
   "description": "Verify VALIDATION.md commit landed"
 }
 ```
@@ -810,7 +810,7 @@ id: toolu_017fYuh9xyQHvmgLHtPtbf8W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md",
   "old_string": "- **D-07 (boundary — read + write):** `apps/web/src` performs **no runtime calls into `@cipherbox/sdk-core` or `@cipherbox/core`, and no raw IPFS/IPNS access, on either the read or the write path** — everything is mediated by `@cipherbox/sdk` (`CipherBoxClient`). Acceptance is a `grep` gate. **Type-only imports** (`import type { ... }`) from `@cipherbox/core`/`@cipherbox/sdk-core` remain allowed (the SDK MAY re-export the needed types for convenience); the boundary is about runtime I/O and crypto, not type definitions. Forbidding type imports would be a ~54-file no-op churn and is explicitly NOT intended.",
   "new_string": "- **D-07 (boundary — read + write):** `apps/web/src` performs **no runtime calls into `@cipherbox/sdk-core` or `@cipherbox/core`, and no raw IPFS/IPNS access, on either the read or the write path** — everything is mediated by `@cipherbox/sdk` (`CipherBoxClient`). Acceptance is a `grep` gate. **Type-only imports** (`import type { ... }`) from `@cipherbox/core`/`@cipherbox/sdk-core` remain allowed (the SDK MAY re-export the needed types for convenience); the boundary is about runtime I/O and crypto, not type definitions. Forbidding type imports would be a ~54-file no-op churn and is explicitly NOT intended.\n  - **D-07 scope resolution (2026-07-06, plan-phase — resolves RESEARCH.md Open Question 3):** **Full boundary.** The grep […]
 
@@ -819,7 +819,7 @@ id: toolu_017fYuh9xyQHvmgLHtPtbf8W
 tool_result
 id: toolu_017fYuh9xyQHvmgLHtPtbf8W
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -832,7 +832,7 @@ tool_use Bash
 id: toolu_01Dci2tZ18nRtfPBG4k7df89
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT CONTEXT.md scope resolution===\"\ngsd_run query commit \"docs(68.2): lock D-07 full-boundary scope resolution\" --files \"${PHASE_DIR}/68.2-CONTEXT.md\" >/dev/null 2>&1\ngit log --oneline -1\necho \"\"\necho \"===INTEL API-SURFACE regenerate===\"\ngsd_run intel api-surface 2>&1 | tail -3\nls -la .planning/intel/API-SURFACE.md 2>/dev/null && echo \"API_SURFACE_PATH=.planning/intel/API-SURFACE.md\"\necho \"\"\necho \"===PATTERN-MAPPER HOOK FRAGMENT===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst pm=hooks.find(h=>h.capId==='pattern-mapper');\nif (pm && pm.fragment && pm.fragment.inline) { console.log(pm.fragment.inline); }\nelse { console.log('NO_INLINE_FRAGMENT — full hook:'); console.log(JSON.stringify(pm,null,2)); }\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT CONTEXT.md scope resolution===\"\ngsd_run query commit \"docs(68.2): lock D-07 full-boundary scope resolution\" --files \"${PHASE_DIR}/68.2-CONTEXT.md\" >/dev/null 2>&1\ngit log --oneline -1\necho \"\"\necho \"===INTEL API-SURFACE regenerate===\"\ngsd_run intel api-surface 2>&1 | tail -3\nls -la .planning/intel/API-SURFACE.md 2>/dev/null && echo \"API_SURFACE_PATH=.planning/intel/API-SURFACE.md\"\necho \"\"\necho \"===PATTERN-MAPPER HOOK FRAGMENT===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst pm=hooks.find(h=>h.capId==='pattern-mapper');\nif (pm && pm.fragment && pm.fragment.inline) { console.log(pm.fragment.inline); }\nelse { console.log('NO_INLINE_FRAGMENT — full hook:'); console.log(JSON.stringify(pm,null,2)); }\n\"",
   "description": "Commit CONTEXT, regen intel, get pattern-mapper fragment"
 }
 ```
@@ -925,7 +925,7 @@ tool_use Bash
 id: toolu_014THUiLunpX3kk9uo9hBhso
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT PATTERNS.md===\"\ngsd_run query commit \"docs(68.2): add pattern map\" --files \"${PHASE_DIR}/68.2-PATTERNS.md\" >/dev/null 2>&1\ngit ls-files \"${PHASE_DIR}/68.2-PATTERNS.md\" && git log --oneline -1\necho \"\"\necho \"===CONTEXT_WINDOW===\"\ngsd_run query config-get context_window 2>/dev/null || echo \"200000\"\necho \"\"\necho \"===PLANNER AGENT SKILLS (first 30 lines)===\"\ngsd_run query agent-skills gsd-planner 2>/dev/null | head -30\necho \"===END SKILLS===\"\necho \"\"\necho \"===PLANNER CONTRIBUTIONS (schema-gate + tdd)===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst contribs=hooks.filter(h=>h.kind==='contribution' && h.into==='planner');\nfor (const c of contribs) {\n  console.log('=====CONTRIB capId='+c.capId+'=====');\n  if (c.fragment && c.fragment.inline) console.log(c.fragment.inline);\n  else console.log('(no inline fragment)', JSON.stringify(c));\n  console.log('');\n}\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===COMMIT PATTERNS.md===\"\ngsd_run query commit \"docs(68.2): add pattern map\" --files \"${PHASE_DIR}/68.2-PATTERNS.md\" >/dev/null 2>&1\ngit ls-files \"${PHASE_DIR}/68.2-PATTERNS.md\" && git log --oneline -1\necho \"\"\necho \"===CONTEXT_WINDOW===\"\ngsd_run query config-get context_window 2>/dev/null || echo \"200000\"\necho \"\"\necho \"===PLANNER AGENT SKILLS (first 30 lines)===\"\ngsd_run query agent-skills gsd-planner 2>/dev/null | head -30\necho \"===END SKILLS===\"\necho \"\"\necho \"===PLANNER CONTRIBUTIONS (schema-gate + tdd)===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst contribs=hooks.filter(h=>h.kind==='contribution' && h.into==='planner');\nfor (const c of contribs) {\n  console.log('=====CONTRIB capId='+c.capId+'=====');\n  if (c.fragment && c.fragment.inline) console.log(c.fragment.inline);\n  else console.log('(no inline fragment)', JSON.stringify(c));\n  console.log('');\n}\n\"",
   "description": "Commit PATTERNS, get planner skills/contributions/context window"
 }
 ```
@@ -990,7 +990,7 @@ tool_use Bash
 id: toolu_01AfFzEUXEhNFhUg8qgsj2rg
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===SDK-READ already present?===\"\ngrep -n \"SDK-READ\" .planning/REQUIREMENTS.md || echo \"NOT PRESENT — needs registration\"\necho \"\"\necho \"===REQUIREMENTS.md structure (headings + last ~40 lines)===\"\ngrep -nE \"^#{1,4} |^\\| ?(REQ|[A-Z]+-[0-9])\" .planning/REQUIREMENTS.md | head -40\necho \"\"\necho \"===TAIL of REQUIREMENTS.md===\"\ntail -35 .planning/REQUIREMENTS.md\necho \"\"\necho \"===Sample of an existing requirement entry format (look for a recent phase block)===\"\ngrep -nE \"6[0-9]-|Phase 6[0-9]|WRITE-|ROT-|NODE-\" .planning/REQUIREMENTS.md | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===SDK-READ already present?===\"\ngrep -n \"SDK-READ\" .planning/REQUIREMENTS.md || echo \"NOT PRESENT — needs registration\"\necho \"\"\necho \"===REQUIREMENTS.md structure (headings + last ~40 lines)===\"\ngrep -nE \"^#{1,4} |^\\| ?(REQ|[A-Z]+-[0-9])\" .planning/REQUIREMENTS.md | head -40\necho \"\"\necho \"===TAIL of REQUIREMENTS.md===\"\ntail -35 .planning/REQUIREMENTS.md\necho \"\"\necho \"===Sample of an existing requirement entry format (look for a recent phase block)===\"\ngrep -nE \"6[0-9]-|Phase 6[0-9]|WRITE-|ROT-|NODE-\" .planning/REQUIREMENTS.md | head -20",
   "description": "Inspect REQUIREMENTS.md format and SDK-READ presence"
 }
 ```
@@ -1041,7 +1041,7 @@ tool_use Read
 id: toolu_01QEeyHFFFRvcbNpoSLNuyTd
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "offset": 75,
   "limit": 45
 }
@@ -1072,7 +1072,7 @@ id: toolu_015kLSMyPJzNukwgXVuKkiNw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "- [ ] **WEB-04**: The full `tests/web-e2e` Playwright suite passes end-to-end against the standard local/CI stack (login→browse→upload→download→share→delete→versions→rotation UX), validating Phases 62–68 at runtime; `apps/web/src` adds zero `*.spec.ts` files (SC#5 doctrine — logic in SDK, UI via web-e2e) — **NOT YET MET**: 68.1-13 fixed 5 real bugs (see 68.1-13-SUMMARY.md) but the full suite was not re-confirmed green; two new gaps (GAP-1 resolveFileMetadata AEAD failure, GAP-2 cold-reload IPNS DFS timeout) plus pre-existing known gaps (SHARE-WRITE-KEY, fetchShareKeys stub) remain. SC#1 (no reachable stub throw) and SC#5 (zero web unit specs) both hold.\n\n## Future Requirements (deferred)",
   "new_string": "- [ ] **WEB-04**: The full `tests/web-e2e` Playwright suite passes end-to-end against the standard local/CI stack (login→browse→upload→download→share→delete→versions→rotation UX), validating Phases 62–68 at runtime; `apps/web/src` adds zero `*.spec.ts` files (SC#5 doctrine — logic in SDK, UI via web-e2e) — **NOT YET MET**: 68.1-13 fixed 5 real bugs (see 68.1-13-SUMMARY.md) but the full suite was not re-confirmed green; two new gaps (GAP-1 resolveFileMetadata AEAD failure, GAP-2 cold-reload IPNS DFS timeout) plus pre-existing known gaps (SHARE-WRITE-KEY, fetchShareKeys stub) remain. SC#1 (no reachable stub throw) and SC#5 (zero web unit specs) both hold.\n\n### SDK-READ — SDK-owned read chain and resolved […]
 
@@ -1081,7 +1081,7 @@ id: toolu_015kLSMyPJzNukwgXVuKkiNw
 tool_result
 id: toolu_015kLSMyPJzNukwgXVuKkiNw
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1091,7 +1091,7 @@ id: toolu_01MPwieTcM95yxwinFkePb6m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "| WEB-04 | Phase 68.1 | Gaps remain — see 68.1-13-SUMMARY.md |\n| TEST-03 | Phase 69 | Pending |\n\n**Coverage:**\n\n- v1 requirements: 39 total (CRYPTO ×3, NODE ×6, READ ×5, ROT ×7, WRITE ×4, TEE ×7, DATA ×4, TEST ×3)\n- Mapped to phases: 39\n- Unmapped: 0 ✓\n\n---\n\n_Requirements defined: 2026-06-27_\n_Last updated: 2026-06-27 — traceability table populated, coverage 39/39_",
   "new_string": "| WEB-04 | Phase 68.1 | Gaps remain — see 68.1-13-SUMMARY.md |\n| SDK-READ-01 | Phase 68.2 | Pending |\n| SDK-READ-02 | Phase 68.2 | Pending |\n| SDK-READ-03 | Phase 68.2 | Pending |\n| SDK-READ-04 | Phase 68.2 | Pending |\n| TEST-03 | Phase 69 | Pending |\n\n**Coverage:**\n\n- v1 requirements: 47 total (CRYPTO ×3, NODE ×6, READ ×5, ROT ×7, WRITE ×4, TEE ×7, DATA ×4, TEST ×3, WEB ×4, SDK-READ ×4)\n- Mapped to phases: 47\n- Unmapped: 0 ✓\n\n---\n\n_Requirements defined: 2026-06-27_\n_Last updated: 2026-07-06 — registered SDK-READ-01..04 (Phase 68.2, D-07 full-boundary read+write); coverage 47/47_"
 }
@@ -1102,7 +1102,7 @@ id: toolu_01MPwieTcM95yxwinFkePb6m
 tool_result
 id: toolu_01MPwieTcM95yxwinFkePb6m
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1115,7 +1115,7 @@ tool_use Bash
 id: toolu_015pQtFaBTamRrQumh2R33oG
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): register SDK-READ-01..04 requirements\" --files \".planning/REQUIREMENTS.md\" >/dev/null 2>&1\ngit log --oneline -1\ngit status --short\necho \"---verify SDK-READ registered---\"\ngrep -c \"SDK-READ\" .planning/REQUIREMENTS.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): register SDK-READ-01..04 requirements\" --files \".planning/REQUIREMENTS.md\" >/dev/null 2>&1\ngit log --oneline -1\ngit status --short\necho \"---verify SDK-READ registered---\"\ngrep -c \"SDK-READ\" .planning/REQUIREMENTS.md",
   "description": "Commit REQUIREMENTS.md registration"
 }
 ```
@@ -1186,7 +1186,7 @@ tool_use Bash
 id: toolu_018W3mxVzvTgDW33qws7Zk3Z
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===PLANS ON DISK===\"\nls -1 \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | wc -l | tr -d ' ' | xargs echo \"plan count:\"\nls -1 \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | xargs -n1 basename\necho \"\"\necho \"===GIT STATE===\"\ngit log --oneline -1\ngit status --short | head\necho \"\"\necho \"===requirements coverage in plan frontmatter (quick check)===\"\ngrep -h \"requirements:\" \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | tr -d '[]' | tr ',' '\\n' | grep -oE \"SDK-READ-0[1-4]\" | sort -u\necho \"\"\necho \"===CHECKER AGENT SKILLS===\"\ngsd_run query agent-skills gsd-plan-checker 2>/dev/null | head -20\necho \"===END===\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"===PLANS ON DISK===\"\nls -1 \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | wc -l | tr -d ' ' | xargs echo \"plan count:\"\nls -1 \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | xargs -n1 basename\necho \"\"\necho \"===GIT STATE===\"\ngit log --oneline -1\ngit status --short | head\necho \"\"\necho \"===requirements coverage in plan frontmatter (quick check)===\"\ngrep -h \"requirements:\" \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | tr -d '[]' | tr ',' '\\n' | grep -oE \"SDK-READ-0[1-4]\" | sort -u\necho \"\"\necho \"===CHECKER AGENT SKILLS===\"\ngsd_run query agent-skills gsd-plan-checker 2>/dev/null | head -20\necho \"===END===\"",
   "description": "Verify plans on disk and get checker skills"
 }
 ```
@@ -1284,7 +1284,7 @@ tool_use Bash
 id: toolu_01MuZxtVNmYx6H4qrC4UwXgR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\nCONTEXT_PATH=\"${PHASE_DIR}/68.2-CONTEXT.md\"\n\necho \"===§13 REQUIREMENTS COVERAGE===\"\nPLAN_REQS=$(grep -h \"requirements:\" \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | tr -d '[]' | tr ',' '\\n' | sed 's/^[[:space:]]*//' | grep -oE \"SDK-READ-0[1-4]\" | sort -u)\nfor id in SDK-READ-01 SDK-READ-02 SDK-READ-03 SDK-READ-04; do\n  if echo \"$PLAN_REQS\" | grep -q \"$id\"; then echo \"  ✓ $id covered\"; else echo \"  ✗ $id UNCOVERED\"; fi\ndone\n\necho \"\"\necho \"===§13a DECISION COVERAGE GATE (blocking)===\"\nGATE_RESULT=$(gsd_run query check.decision-coverage-plan \"${PHASE_DIR}\" \"${CONTEXT_PATH}\" 2>/dev/null)\necho \"$GATE_RESULT\" | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry { const o=JSON.parse(raw); const d=o.data||o;\n  console.log('passed:', d.passed, '| skipped:', d.skipped, '| covered:', d.covered, '/', d.total);\n  if (d.uncovered && d.uncovered.length) { console.log('UNCOVERED:'); for (const u of d.uncovered) console.log('  -', u.id, '|', u.category, '|', (u.text||'').slice(0,80)); }\n  if (d.message && !(d.passed)) console.log('MESSAGE:', d.message);\n} catch(e){ console.log('raw:', raw.slice(0,500)); }\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\nCONTEXT_PATH=\"${PHASE_DIR}/68.2-CONTEXT.md\"\n\necho \"===§13 REQUIREMENTS COVERAGE===\"\nPLAN_REQS=$(grep -h \"requirements:\" \"${PHASE_DIR}\"/*-PLAN.md 2>/dev/null | tr -d '[]' | tr ',' '\\n' | sed 's/^[[:space:]]*//' | grep -oE \"SDK-READ-0[1-4]\" | sort -u)\nfor id in SDK-READ-01 SDK-READ-02 SDK-READ-03 SDK-READ-04; do\n  if echo \"$PLAN_REQS\" | grep -q \"$id\"; then echo \"  ✓ $id covered\"; else echo \"  ✗ $id UNCOVERED\"; fi\ndone\n\necho \"\"\necho \"===§13a DECISION COVERAGE GATE (blocking)===\"\nGATE_RESULT=$(gsd_run query check.decision-coverage-plan \"${PHASE_DIR}\" \"${CONTEXT_PATH}\" 2>/dev/null)\necho \"$GATE_RESULT\" | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry { const o=JSON.parse(raw); const d=o.data||o;\n  console.log('passed:', d.passed, '| skipped:', d.skipped, '| covered:', d.covered, '/', d.total);\n  if (d.uncovered && d.uncovered.length) { console.log('UNCOVERED:'); for (const u of d.uncovered) console.log('  -', u.id, '|', u.category, '|', (u.text||'').slice(0,80)); }\n  if (d.message && !(d.passed)) console.log('MESSAGE:', d.message);\n} catch(e){ console.log('raw:', raw.slice(0,500)); }\n\"",
   "description": "Run requirements + decision coverage gates"
 }
 ```
@@ -1314,7 +1314,7 @@ tool_use Bash
 id: toolu_0118bcm7VXYcB4bhuUupPYRi
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\necho \"===§13b RECORD PLANNING COMPLETION IN STATE.md===\"\ngsd_run query state.planned-phase --phase \"68.2\" --name \"sdk-owned-read-chain-and-resolved-folder-listings\" --plans \"12\" 2>&1 | tail -3\n\necho \"\"\necho \"===§13c ANNOTATE ROADMAP WAVE DEPENDENCIES===\"\ngsd_run query roadmap.annotate-dependencies \"68.2\" 2>&1 | tail -3\n\necho \"\"\necho \"===§13d COMMIT STATE.md + ROADMAP.md===\"\ngsd_run query commit \"docs(68.2): record planning completion and roadmap wave annotations\" --files \".planning/STATE.md\" \".planning/ROADMAP.md\" >/dev/null 2>&1\ngit log --oneline -1\necho \"--- tree status ---\"\ngit status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\necho \"===§13b RECORD PLANNING COMPLETION IN STATE.md===\"\ngsd_run query state.planned-phase --phase \"68.2\" --name \"sdk-owned-read-chain-and-resolved-folder-listings\" --plans \"12\" 2>&1 | tail -3\n\necho \"\"\necho \"===§13c ANNOTATE ROADMAP WAVE DEPENDENCIES===\"\ngsd_run query roadmap.annotate-dependencies \"68.2\" 2>&1 | tail -3\n\necho \"\"\necho \"===§13d COMMIT STATE.md + ROADMAP.md===\"\ngsd_run query commit \"docs(68.2): record planning completion and roadmap wave annotations\" --files \".planning/STATE.md\" \".planning/ROADMAP.md\" >/dev/null 2>&1\ngit log --oneline -1\necho \"--- tree status ---\"\ngit status --short",
   "description": "Record STATE, annotate ROADMAP, commit"
 }
 ```
@@ -1347,7 +1347,7 @@ tool_use Bash
 id: toolu_01BZC8Q18AN7d2GBVdmccMLm
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\necho \"===§13e POST-PLANNING GAP ANALYSIS (advisory)===\"\nPLAN_POST=$(gsd_run loop render-hooks plan:post --raw 2>/dev/null)\nGAP_HOOK=$(echo \"$PLAN_POST\" | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst g=hooks.find(h=>h.kind==='gate' && h.capId==='gap-analysis');\nif (g && g.check && g.check.query) console.log(g.check.query); else console.log('NONE');\n\")\necho \"gap-analysis gate query: $GAP_HOOK\"\nif [ \"$GAP_HOOK\" != \"NONE\" ]; then\n  gsd_run check ${GAP_HOOK} \"${PHASE_DIR}\" \"SDK-READ-01, SDK-READ-02, SDK-READ-03, SDK-READ-04\" --raw 2>/dev/null | node -e \"\n  const raw=require('fs').readFileSync(0,'utf8');\n  try { const o=JSON.parse(raw); const d=o.data||o;\n    console.log('block:', d.block);\n    if (d.summary) console.log('summary:', d.summary);\n    if (d.table) console.log('table:\\n'+d.table);\n    if (!d.table && !d.summary && !d.block) console.log('✓ No gaps — all REQ/decision IDs covered by plans');\n  } catch(e){ console.log('(gap check output):', raw.slice(0,400)); }\n  \"\nelse\n  echo \"gap-analysis capability inactive — skip\"\nfi\necho \"\"\necho \"===Final plan inventory===\"\nls -1 \"${PHASE_DIR}\"/*.md | xargs -n1 basename",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\necho \"===§13e POST-PLANNING GAP ANALYSIS (advisory)===\"\nPLAN_POST=$(gsd_run loop render-hooks plan:post --raw 2>/dev/null)\nGAP_HOOK=$(echo \"$PLAN_POST\" | node -e \"\nconst o=JSON.parse(require('fs').readFileSync(0,'utf8'));\nconst hooks=o.activeHooks||[];\nconst g=hooks.find(h=>h.kind==='gate' && h.capId==='gap-analysis');\nif (g && g.check && g.check.query) console.log(g.check.query); else console.log('NONE');\n\")\necho \"gap-analysis gate query: $GAP_HOOK\"\nif [ \"$GAP_HOOK\" != \"NONE\" ]; then\n  gsd_run check ${GAP_HOOK} \"${PHASE_DIR}\" \"SDK-READ-01, SDK-READ-02, SDK-READ-03, SDK-READ-04\" --raw 2>/dev/null | node -e \"\n  const raw=require('fs').readFileSync(0,'utf8');\n  try { const o=JSON.parse(raw); const d=o.data||o;\n    console.log('block:', d.block);\n    if (d.summary) console.log('summary:', d.summary);\n    if (d.table) console.log('table:\\n'+d.table);\n    if (!d.table && !d.summary && !d.block) console.log('✓ No gaps — all REQ/decision IDs covered by plans');\n  } catch(e){ console.log('(gap check output):', raw.slice(0,400)); }\n  \"\nelse\n  echo \"gap-analysis capability inactive — skip\"\nfi\necho \"\"\necho \"===Final plan inventory===\"\nls -1 \"${PHASE_DIR}\"/*.md | xargs -n1 basename",
   "description": "Run post-planning gap analysis"
 }
 ```
@@ -1406,7 +1406,7 @@ tool_use Bash
 id: toolu_0127ritZzJJm4pMuhW5GiGn4
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\ngsd_run check gap-analysis.plan-post \"${PHASE_DIR}\" \"SDK-READ-01, SDK-READ-02, SDK-READ-03, SDK-READ-04\" --raw 2>/dev/null > \"$CLAUDE_JOB_DIR/tmp/gap.json\"\nnode -e \"\nconst raw=require('fs').readFileSync(process.env.CLAUDE_JOB_DIR+'/tmp/gap.json','utf8');\ntry { const o=JSON.parse(raw); const d=o.data||o;\n  console.log('block:', d.block);\n  console.log('summary:', d.summary || '(none)');\n  if (d.table) console.log('table:\\n'+d.table); else console.log('table: (none — no gaps)');\n} catch(e){ console.log('parse err; raw head:', raw.slice(0,300)); }\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\n\ngsd_run check gap-analysis.plan-post \"${PHASE_DIR}\" \"SDK-READ-01, SDK-READ-02, SDK-READ-03, SDK-READ-04\" --raw 2>/dev/null > \"$CLAUDE_JOB_DIR/tmp/gap.json\"\nnode -e \"\nconst raw=require('fs').readFileSync(process.env.CLAUDE_JOB_DIR+'/tmp/gap.json','utf8');\ntry { const o=JSON.parse(raw); const d=o.data||o;\n  console.log('block:', d.block);\n  console.log('summary:', d.summary || '(none)');\n  if (d.table) console.log('table:\\n'+d.table); else console.log('table: (none — no gaps)');\n} catch(e){ console.log('parse err; raw head:', raw.slice(0,300)); }\n\"",
   "description": "Run gap-analysis.plan-post check directly"
 }
 ```
@@ -1450,7 +1450,7 @@ tool_use Bash
 id: toolu_01GgH6qStHwZ7r6HJ5eMQzHG
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\n# §15 step 3: manual invocation (no --auto/--chain) → clear ephemeral chain flag (does NOT touch persistent auto_advance)\ngsd_run query config-set workflow._auto_chain_active false >/dev/null 2>&1 && echo \"ephemeral chain flag cleared\"\necho \"\"\necho \"auto_advance (persistent config): $(gsd_run query config-get workflow.auto_advance 2>/dev/null)\"\necho \"mode: $(gsd_run query config-get mode 2>/dev/null)\"\necho \"\"\necho \"===Phase 68.2 planning artifacts committed===\"\ngit log --oneline -8 | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\n# §15 step 3: manual invocation (no --auto/--chain) → clear ephemeral chain flag (does NOT touch persistent auto_advance)\ngsd_run query config-set workflow._auto_chain_active false >/dev/null 2>&1 && echo \"ephemeral chain flag cleared\"\necho \"\"\necho \"auto_advance (persistent config): $(gsd_run query config-get workflow.auto_advance 2>/dev/null)\"\necho \"mode: $(gsd_run query config-get mode 2>/dev/null)\"\necho \"\"\necho \"===Phase 68.2 planning artifacts committed===\"\ngit log --oneline -8 | cat",
   "description": "Clear ephemeral chain flag, show config"
 }
 ```
@@ -1544,7 +1544,7 @@ tool_use Bash
 id: toolu_01KVvoy3tA2zfGKaPxHGLcx5
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===todos dir structure===\"\nls -la .planning/todos/ 2>/dev/null | head\necho \"\"\necho \"===example todo (the folded owner-stale one)===\"\nfind .planning/todos -name \"*owner-stale*\" -o -name \"*shared-nav-stack*\" 2>/dev/null | head -1 | xargs cat 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===todos dir structure===\"\nls -la .planning/todos/ 2>/dev/null | head\necho \"\"\necho \"===example todo (the folded owner-stale one)===\"\nfind .planning/todos -name \"*owner-stale*\" -o -name \"*shared-nav-stack*\" 2>/dev/null | head -1 | xargs cat 2>/dev/null | head -40",
   "description": "Inspect todo file convention"
 }
 ```
@@ -1599,7 +1599,7 @@ tool_use Write
 id: toolu_017oqMtrD1XhhSUJJtQwuKw1
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md",
   "content": "---\ncreated: 2026-07-06T00:00:00Z\ntitle: D-03 poll-invalidation freshness leg lacks dedicated automated coverage (Phase 68.2 Plan 09)\narea: web\nfiles:\n  - apps/web/src/hooks/useSyncPolling.ts\n  - apps/web/src/stores/folder.store.ts\n  - .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-09-PLAN.md\n  - .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-PLAN.md\nsource: Phase 68.2 plan-checker WARNING (non-blocking; checker recommended proceed + log follow-up)\ntype: research\nresolves_phase: null\n---\n\n## Problem\n\nD-03 (locked) requires **belt-and-suspenders** freshness: (1) re-resolve on every\nfolder open/navigation AND (2) poll-driven invalidation for the currently-open\nfolder. Leg (1) — the deterministic nav-resolve — is the primary SC#5 fix and is\ncovered behaviorally by the Plan 05 desync web-e2e (exercised as the Plan 12 phase\ngate). Leg (2) — the **poll-driven invalidation** — has no dedicated automated\nproof in the 12-plan set:\n\n- Plan 05's e2e explicitly drives \"the deterministic nav-triggered re-resolve …\n  not the 30s poll timing.\"\n- Plan 09 Task 2's acceptance for the poll leg is **grep-only**\n  (`grep -rn \"listFolder\" …useSyncPolling.ts`) — it asserts the call site exists,\n  not that invalidation actually fires on a poll tick when the open folder's IPNS\n  `sequenceNumber` bumps.\n\nThis matches the known project landmine \"grep-based ACs can force runtime-broken\nimpls\" — a poll leg that greps clean can still fail to invalidate at runtime.\n\n## Why it's non-blocking\n\nThe poll leg is a redundancy mechanism layered on top of the deterministic\nnav-resolve fix, which IS tested. […]
 
 > TOOL
@@ -1607,7 +1607,7 @@ id: toolu_017oqMtrD1XhhSUJJtQwuKw1
 tool_result
 id: toolu_017oqMtrD1XhhSUJJtQwuKw1
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1620,7 +1620,7 @@ tool_use Bash
 id: toolu_01N8vBktXWL3MR2f7fmjbr2f
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): log D-03 poll-invalidation coverage gap todo\" --files \".planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md\" >/dev/null 2>&1\ngit log --oneline -1\ngit status --short\necho \"--- confirm clean tree before execution ---\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): log D-03 poll-invalidation coverage gap todo\" --files \".planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md\" >/dev/null 2>&1\ngit log --oneline -1\ngit status --short\necho \"--- confirm clean tree before execution ---\"",
   "description": "Commit poll-coverage todo"
 }
 ```
@@ -1673,7 +1673,7 @@ tool_use Read
 id: toolu_014EX8XSyqeJ94B7mVKuSzMn
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md"
 }
 ```
 
@@ -1717,7 +1717,7 @@ tool_use Bash
 id: toolu_01BkmE9FTQnDKF4aQopA15fi
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.execute-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['executor_model','verifier_model','commit_docs','parallelization','branching_strategy','branch_name','phase_found','phase_dir','phase_number','phase_name','phase_slug','plan_count','incomplete_count','state_exists','roadmap_exists','phase_req_ids','response_language']; for (const k of keys) console.log(k+': '+JSON.stringify(o[k]));\"\necho \"\"\necho \"===runtime/worktree config===\"\necho \"runtime: $(gsd_run query config-get runtime --default claude --raw 2>/dev/null || echo claude)\"\necho \"use_worktrees: $(gsd_run query config-get workflow.use_worktrees --raw 2>/dev/null || echo true)\"\necho \"context_window: $(gsd_run query config-get context_window 2>/dev/null || echo 200000)\"\necho \"\"\necho \"===current branch + HEAD===\"\ngit rev-parse --abbrev-ref HEAD\ngit rev-parse --short HEAD",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.execute-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const keys=['executor_model','verifier_model','commit_docs','parallelization','branching_strategy','branch_name','phase_found','phase_dir','phase_number','phase_name','phase_slug','plan_count','incomplete_count','state_exists','roadmap_exists','phase_req_ids','response_language']; for (const k of keys) console.log(k+': '+JSON.stringify(o[k]));\"\necho \"\"\necho \"===runtime/worktree config===\"\necho \"runtime: $(gsd_run query config-get runtime --default claude --raw 2>/dev/null || echo claude)\"\necho \"use_worktrees: $(gsd_run query config-get workflow.use_worktrees --raw 2>/dev/null || echo true)\"\necho \"context_window: $(gsd_run query config-get context_window 2>/dev/null || echo 200000)\"\necho \"\"\necho \"===current branch + HEAD===\"\ngit rev-parse --abbrev-ref HEAD\ngit rev-parse --short HEAD",
   "description": "Initialize execute-phase for 68.2"
 }
 ```
@@ -1762,7 +1762,7 @@ tool_use Read
 id: toolu_01USsGdb6GHSFtJViZoJzGUY
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md",
   "offset": 614,
   "limit": 560
 }
@@ -1804,7 +1804,7 @@ tool_use Bash
 id: toolu_01QHJe7mPgNzXKwj6iRgatYs
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===WORKTREE BASE-CHECK (#683 auto-degrade decision)===\"\ngsd_run query worktree.base-check 2>/dev/null | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry{const o=JSON.parse(raw); const d=o.data||o;\n  console.log('shouldDegrade:', d.shouldDegrade);\n  console.log('message:', d.message||'(none)');\n  if(d.baseRef) console.log('baseRef:', d.baseRef);\n} catch(e){ console.log('raw:', raw.slice(0,400)); }\n\"\necho \"\"\necho \"===How far ahead of origin/main?===\"\ngit rev-list --count origin/main..HEAD 2>/dev/null || echo \"origin/main not available\"\necho \"\"\necho \"===reap orphaned worktrees (pre-dispatch hygiene)===\"\ngsd_run query worktree.reap-orphans 2>/dev/null | head -3 || echo \"(none)\"\necho \"\"\necho \"===existing worktrees===\"\ngit worktree list 2>/dev/null",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===WORKTREE BASE-CHECK (#683 auto-degrade decision)===\"\ngsd_run query worktree.base-check 2>/dev/null | node -e \"\nconst raw=require('fs').readFileSync(0,'utf8');\ntry{const o=JSON.parse(raw); const d=o.data||o;\n  console.log('shouldDegrade:', d.shouldDegrade);\n  console.log('message:', d.message||'(none)');\n  if(d.baseRef) console.log('baseRef:', d.baseRef);\n} catch(e){ console.log('raw:', raw.slice(0,400)); }\n\"\necho \"\"\necho \"===How far ahead of origin/main?===\"\ngit rev-list --count origin/main..HEAD 2>/dev/null || echo \"origin/main not available\"\necho \"\"\necho \"===reap orphaned worktrees (pre-dispatch hygiene)===\"\ngsd_run query worktree.reap-orphans 2>/dev/null | head -3 || echo \"(none)\"\necho \"\"\necho \"===existing worktrees===\"\ngit worktree list 2>/dev/null",
   "description": "Check worktree base-check degradation decision"
 }
 ```
@@ -1827,7 +1827,7 @@ message: (none)
   "reaped": 0,
 
 ===existing worktrees===
-/Users/myankelev/Code/random/cipher-box  dbf2a419b [feat/sdk-owned-read-chain-and-resolved-folder-listings]
+/home/<USER>/Code/random/cipher-box  dbf2a419b [feat/sdk-owned-read-chain-and-resolved-folder-listings]
 ```
 
 > TOOL
@@ -1836,7 +1836,7 @@ tool_use Read
 id: toolu_01WoE3r7BfKhmfQVzkJYSz6v
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-phase.md",
   "offset": 1174,
   "limit": 535
 }
@@ -1892,7 +1892,7 @@ tool_use Bash
 id: toolu_015wqn4BdB5F6vYF3YTpxPzZ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===worktree.baseRef in settings===\"\nfor f in .claude/settings.json .claude/settings.local.json; do\n  if [ -f \"$f\" ]; then\n    echo \"--- $f ---\"\n    node -e \"try{const o=require('./$f'); console.log('worktree:', JSON.stringify(o.worktree||'(unset)')); }catch(e){console.log('parse err', e.message)}\" 2>/dev/null\n  else\n    echo \"--- $f: does not exist ---\"\n  fi\ndone\necho \"\"\necho \"===GSD resolved baseRef (if queryable)===\"\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query worktree.base-check 2>/dev/null | node -e \"const r=require('fs').readFileSync(0,'utf8'); try{const o=JSON.parse(r); const d=o.data||o; console.log(JSON.stringify(d,null,2));}catch(e){console.log(r.slice(0,600))}\"\necho \"\"\necho \"===origin/main vs HEAD: are the 10 commits planning-only?===\"\ngit log --oneline origin/main..HEAD 2>/dev/null | cat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===worktree.baseRef in settings===\"\nfor f in .claude/settings.json .claude/settings.local.json; do\n  if [ -f \"$f\" ]; then\n    echo \"--- $f ---\"\n    node -e \"try{const o=require('./$f'); console.log('worktree:', JSON.stringify(o.worktree||'(unset)')); }catch(e){console.log('parse err', e.message)}\" 2>/dev/null\n  else\n    echo \"--- $f: does not exist ---\"\n  fi\ndone\necho \"\"\necho \"===GSD resolved baseRef (if queryable)===\"\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query worktree.base-check 2>/dev/null | node -e \"const r=require('fs').readFileSync(0,'utf8'); try{const o=JSON.parse(r); const d=o.data||o; console.log(JSON.stringify(d,null,2));}catch(e){console.log(r.slice(0,600))}\"\necho \"\"\necho \"===origin/main vs HEAD: are the 10 commits planning-only?===\"\ngit log --oneline origin/main..HEAD 2>/dev/null | cat",
   "description": "Verify worktree baseRef and the 10 HEAD commits"
 }
 ```
@@ -1943,7 +1943,7 @@ tool_use Bash
 id: toolu_01E7tH53SJ3T7FmtenQozkSa
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\n\necho \"===no submodules?===\"\n[ -f .gitmodules ] && echo \".gitmodules EXISTS\" || echo \"no .gitmodules ✓\"\necho \"\"\necho \"===STATE begin-phase===\"\ngsd_run query state.begin-phase --phase \"68.2\" --name \"sdk-owned-read-chain-and-resolved-folder-listings\" --plans \"12\" 2>&1 | tail -2\necho \"\"\necho \"===PLAN INDEX (wave grouping + deps)===\"\ngsd_run query phase-plan-index \"68.2\" 2>/dev/null > \"$CLAUDE_JOB_DIR/tmp/plan-index.json\"\nnode -e \"\nconst o=JSON.parse(require('fs').readFileSync(process.env.CLAUDE_JOB_DIR+'/tmp/plan-index.json','utf8'));\nconst d=o.data||o;\nconsole.log('phase:', d.phase, '| has_checkpoints:', d.has_checkpoints);\nconsole.log('waves:', JSON.stringify(d.waves));\nconsole.log('');\nconsole.log('PLANS (id | wave | autonomous | has_summary | tasks | files):');\nfor (const p of (d.plans||[])) {\n  console.log('  '+p.id+' | w'+p.wave+' | auto='+p.autonomous+' | summary='+p.has_summary+' | tasks='+p.task_count);\n  console.log('      files_modified:', JSON.stringify(p.files_modified||[]).slice(0,220));\n}\n\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\n\necho \"===no submodules?===\"\n[ -f .gitmodules ] && echo \".gitmodules EXISTS\" || echo \"no .gitmodules ✓\"\necho \"\"\necho \"===STATE begin-phase===\"\ngsd_run query state.begin-phase --phase \"68.2\" --name \"sdk-owned-read-chain-and-resolved-folder-listings\" --plans \"12\" 2>&1 | tail -2\necho \"\"\necho \"===PLAN INDEX (wave grouping + deps)===\"\ngsd_run query phase-plan-index \"68.2\" 2>/dev/null > \"$CLAUDE_JOB_DIR/tmp/plan-index.json\"\nnode -e \"\nconst o=JSON.parse(require('fs').readFileSync(process.env.CLAUDE_JOB_DIR+'/tmp/plan-index.json','utf8'));\nconst d=o.data||o;\nconsole.log('phase:', d.phase, '| has_checkpoints:', d.has_checkpoints);\nconsole.log('waves:', JSON.stringify(d.waves));\nconsole.log('');\nconsole.log('PLANS (id | wave | autonomous | has_summary | tasks | files):');\nfor (const p of (d.plans||[])) {\n  console.log('  '+p.id+' | w'+p.wave+' | auto='+p.autonomous+' | summary='+p.has_summary+' | tasks='+p.task_count);\n  console.log('      files_modified:', JSON.stringify(p.files_modified||[]).slice(0,220));\n}\n\"",
   "description": "STATE begin-phase, plan index, submodule check"
 }
 ```
@@ -2002,7 +2002,7 @@ tool_use Bash
 id: toolu_017pBLLexThm7kiTYMrkLyHn
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===EXECUTOR AGENT SKILLS (len)===\"\ngsd_run query agent-skills gsd-executor 2>/dev/null | wc -l\necho \"\"\necho \"===PROJECT.md exists?===\"\nls -la .planning/PROJECT.md 2>/dev/null | awk '{print $NF}'\necho \"\"\necho \"===AGENTS.md / CLAUDE.md for executor===\"\nls .claude/skills/ 2>/dev/null | head; echo \"(skills above)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===EXECUTOR AGENT SKILLS (len)===\"\ngsd_run query agent-skills gsd-executor 2>/dev/null | wc -l\necho \"\"\necho \"===PROJECT.md exists?===\"\nls -la .planning/PROJECT.md 2>/dev/null | awk '{print $NF}'\necho \"\"\necho \"===AGENTS.md / CLAUDE.md for executor===\"\nls .claude/skills/ 2>/dev/null | head; echo \"(skills above)\"",
   "description": "Get executor skills and confirm context files"
 }
 ```
@@ -2028,7 +2028,7 @@ tool_use Read
 id: toolu_01AtTexTdfyxqqyFeBR7EqDm
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-PLAN.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-PLAN.md"
 }
 ```
 
@@ -2090,7 +2090,7 @@ id: toolu_01NdJgBCfkKcV6cwbqQnxN82
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 01 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory here.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between the Write and the commit (truncation risk).\nThis is a TDD plan (type: tdd): land Task 1 as a RED commit (failing test) FIRST, then Task 2 as the GREEN commit. Do not collapse them into one commit.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nRead these at execution start. First: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-PLAN.md (THE PLAN — read fully; it carries its own <context> @-refs: PROJECT.md, RESEARCH.md, PATTERNS.md, ADR 0002)\n- ${PROJECT_ROOT}/.planning/PROJECT.md (Project context)\n- ${PROJECT_ROOT}/.planning/STATE.md (State)\n- ${PROJECT_ROOT}/.planning/config.json (Config)\n- ${PROJECT_ROOT}/CLAUDE.md (Project instructions — terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules; FOLLOW these)\n- ${PROJECT_ROOT}/.claude/skills/ (Project skills, if present — read SKILL.md files)\n</files_to_read>\n\n<critical_constraints>\n- **Security-critical plan (RESEARCH Pitfall 2):** you are ADDING the ROT-07 read-path gate to the SDK BEFORE any web service is deleted. Follow the plan's <action> precisely — especially: […]
+  "prompt": "<objective>\nExecute plan 01 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory here.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between the Write and the commit (truncation risk).\nThis is a TDD plan (type: tdd): land Task 1 as a RED commit (failing test) FIRST, then Task 2 as the GREEN commit. Do not collapse them into one commit.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nRead these at execution start. First: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-PLAN.md (THE PLAN — read fully; it carries its own <context> @-refs: PROJECT.md, RESEARCH.md, PATTERNS.md, ADR 0002)\n- ${PROJECT_ROOT}/.planning/PROJECT.md (Project context)\n- ${PROJECT_ROOT}/.planning/STATE.md (State)\n- ${PROJECT_ROOT}/.planning/config.json (Config)\n- ${PROJECT_ROOT}/CLAUDE.md (Project instructions — terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules; FOLLOW these)\n- ${PROJECT_ROOT}/.claude/skills/ (Project skills, if present — read SKILL.md files)\n</files_to_read>\n\n<critical_constraints>\n- **Security-critical plan (RESEARCH Pitfall 2):** you are ADDING the ROT-07 read-path gate to the SDK BEFORE any web service is deleted. Follow the plan's <action> precisely — especially: […]
 
 > TOOL
 
@@ -2135,7 +2135,7 @@ tool_use Bash
 id: toolu_013b4Jm5gQgRcwVZ9RyfZek2
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===fetch latest origin/main===\"\ngit fetch origin main 2>&1 | tail -3\necho \"\"\necho \"===origin/main HEAD===\"\ngit log --oneline -1 origin/main\necho \"\"\necho \"===Does origin/main have phase 69 in ROADMAP? What's its slug/name?===\"\ngit show origin/main:.planning/ROADMAP.md 2>/dev/null | grep -nE \"Phase 69|### Phase 69\" | head -5\necho \"\"\necho \"===phase 69 section (from origin/main ROADMAP)===\"\ngit show origin/main:.planning/ROADMAP.md 2>/dev/null | awk '/### Phase 69/{f=1} f{print} /^### Phase 7[0-9]/{if(f && !/Phase 69/)exit}' | head -25\necho \"\"\necho \"===is there already a phases/69* dir on origin/main?===\"\ngit show origin/main:.planning/phases 2>/dev/null | grep -i \"69\" || echo \"(no 69 phase dir on origin/main)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===fetch latest origin/main===\"\ngit fetch origin main 2>&1 | tail -3\necho \"\"\necho \"===origin/main HEAD===\"\ngit log --oneline -1 origin/main\necho \"\"\necho \"===Does origin/main have phase 69 in ROADMAP? What's its slug/name?===\"\ngit show origin/main:.planning/ROADMAP.md 2>/dev/null | grep -nE \"Phase 69|### Phase 69\" | head -5\necho \"\"\necho \"===phase 69 section (from origin/main ROADMAP)===\"\ngit show origin/main:.planning/ROADMAP.md 2>/dev/null | awk '/### Phase 69/{f=1} f{print} /^### Phase 7[0-9]/{if(f && !/Phase 69/)exit}' | head -25\necho \"\"\necho \"===is there already a phases/69* dir on origin/main?===\"\ngit show origin/main:.planning/phases 2>/dev/null | grep -i \"69\" || echo \"(no 69 phase dir on origin/main)\"",
   "description": "Fetch origin/main and inspect phase 69"
 }
 ```
@@ -2174,7 +2174,7 @@ tool_use Bash
 id: toolu_01WbbpC79LaontFBcYiQxnye
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===local origin/main ref===\"\ngit rev-parse --short origin/main\necho \"\"\necho \"===branch name collision check===\"\ngit show-ref --verify --quiet refs/heads/feat/phase-69-fuse-winfsp && echo \"EXISTS (will pick another)\" || echo \"free ✓\"\necho \"\"\necho \"===create worktree off origin/main (sibling dir, new branch)===\"\ngit worktree add -b feat/phase-69-fuse-winfsp ../cipher-box-phase69 origin/main 2>&1 | tail -6\necho \"\"\necho \"===verify worktree list===\"\ngit worktree list\necho \"\"\necho \"===confirm the new worktree is at origin/main HEAD on its own branch===\"\ngit -C ../cipher-box-phase69 log --oneline -1\ngit -C ../cipher-box-phase69 rev-parse --abbrev-ref HEAD\necho \"\"\necho \"===sanity: phase 69 present in that worktree's roadmap, no 68.2 planning docs===\"\ngit -C ../cipher-box-phase69 log --oneline -3 | cat\nls ../cipher-box-phase69/.planning/phases/ | grep -E \"68.2|69\" || echo \"(no 68.2/69 phase dirs — clean origin/main base as requested)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===local origin/main ref===\"\ngit rev-parse --short origin/main\necho \"\"\necho \"===branch name collision check===\"\ngit show-ref --verify --quiet refs/heads/feat/phase-69-fuse-winfsp && echo \"EXISTS (will pick another)\" || echo \"free ✓\"\necho \"\"\necho \"===create worktree off origin/main (sibling dir, new branch)===\"\ngit worktree add -b feat/phase-69-fuse-winfsp ../cipher-box-phase69 origin/main 2>&1 | tail -6\necho \"\"\necho \"===verify worktree list===\"\ngit worktree list\necho \"\"\necho \"===confirm the new worktree is at origin/main HEAD on its own branch===\"\ngit -C ../cipher-box-phase69 log --oneline -1\ngit -C ../cipher-box-phase69 rev-parse --abbrev-ref HEAD\necho \"\"\necho \"===sanity: phase 69 present in that worktree's roadmap, no 68.2 planning docs===\"\ngit -C ../cipher-box-phase69 log --oneline -3 | cat\nls ../cipher-box-phase69/.planning/phases/ | grep -E \"68.2|69\" || echo \"(no 68.2/69 phase dirs — clean origin/main base as requested)\"",
   "description": "Create phase-69 worktree off origin/main"
 }
 ```
@@ -2196,8 +2196,8 @@ branch 'feat/phase-69-fuse-winfsp' set up to track 'origin/main'.
 HEAD is now at 1fb8996a2 feat: integrate web client with node/v3 read and write runtime (#588)
 
 ===verify worktree list===
-/Users/myankelev/Code/random/cipher-box          9cb17ac4b [feat/sdk-owned-read-chain-and-resolved-folder-listings]
-/Users/myankelev/Code/random/cipher-box-phase69  1fb8996a2 [feat/phase-69-fuse-winfsp]
+/home/<USER>/Code/random/cipher-box          9cb17ac4b [feat/sdk-owned-read-chain-and-resolved-folder-listings]
+/home/<USER>/Code/random/cipher-box-phase69  1fb8996a2 [feat/phase-69-fuse-winfsp]
 
 ===confirm the new worktree is at origin/main HEAD on its own branch===
 1fb8996a2 feat: integrate web client with node/v3 read and write runtime (#588)
@@ -2212,7 +2212,7 @@ feat/phase-69-fuse-winfsp
 
 > AGENT
 
-Worktree created at `/Users/myankelev/Code/random/cipher-box-phase69` on branch `feat/phase-69-fuse-winfsp` (off `origin/main` @ `1fb8996a2`). One thing to verify — the `ls` showed a `68.2` dir in that worktree, which shouldn't exist on origin/main. Let me confirm the worktree is a faithful, uncontaminated origin/main checkout.
+Worktree created at `/home/<USER>/Code/random/cipher-box-phase69` on branch `feat/phase-69-fuse-winfsp` (off `origin/main` @ `1fb8996a2`). One thing to verify — the `ls` showed a `68.2` dir in that worktree, which shouldn't exist on origin/main. Let me confirm the worktree is a faithful, uncontaminated origin/main checkout.
 
 > TOOL
 
@@ -2220,7 +2220,7 @@ tool_use Bash
 id: toolu_01XNccca9h8RUGVcZwZb9eHV
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===what does the worktree ACTUALLY have in .planning/phases/68.2*? ===\"\nls -la ../cipher-box-phase69/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/ 2>/dev/null || echo \"(no such dir)\"\necho \"\"\necho \"===does origin/main track a 68.2 dir? (git ls-tree)===\"\ngit ls-tree -r origin/main --name-only | grep \"phases/68.2\" || echo \"origin/main tracks NO 68.2 files\"\necho \"\"\necho \"===is the worktree clean (no stray/uncommitted)?===\"\ngit -C ../cipher-box-phase69 status --short | head\ngit -C ../cipher-box-phase69 status --short | wc -l | xargs echo \"changed-file count:\"\necho \"\"\necho \"===phase 69 IS in the worktree roadmap?===\"\ngrep -c \"Phase 69\" ../cipher-box-phase69/.planning/ROADMAP.md\necho \"\"\necho \"===does the worktree share .git (so branches/refs are visible)?===\"\nhead -1 ../cipher-box-phase69/.git 2>/dev/null || echo \"(.git is a dir)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===what does the worktree ACTUALLY have in .planning/phases/68.2*? ===\"\nls -la ../cipher-box-phase69/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/ 2>/dev/null || echo \"(no such dir)\"\necho \"\"\necho \"===does origin/main track a 68.2 dir? (git ls-tree)===\"\ngit ls-tree -r origin/main --name-only | grep \"phases/68.2\" || echo \"origin/main tracks NO 68.2 files\"\necho \"\"\necho \"===is the worktree clean (no stray/uncommitted)?===\"\ngit -C ../cipher-box-phase69 status --short | head\ngit -C ../cipher-box-phase69 status --short | wc -l | xargs echo \"changed-file count:\"\necho \"\"\necho \"===phase 69 IS in the worktree roadmap?===\"\ngrep -c \"Phase 69\" ../cipher-box-phase69/.planning/ROADMAP.md\necho \"\"\necho \"===does the worktree share .git (so branches/refs are visible)?===\"\nhead -1 ../cipher-box-phase69/.git 2>/dev/null || echo \"(.git is a dir)\"",
   "description": "Verify worktree is clean origin/main checkout"
 }
 ```
@@ -2246,7 +2246,7 @@ changed-file count: 0
 2
 
 ===does the worktree share .git (so branches/refs are visible)?===
-gitdir: /Users/myankelev/Code/random/cipher-box/.git/worktrees/cipher-box-phase69
+gitdir: /home/<USER>/Code/random/cipher-box/.git/worktrees/cipher-box-phase69
 ```
 
 > AGENT
@@ -2257,14 +2257,14 @@ The worktree is a clean, faithful `origin/main` checkout — the `68.2` entry th
 
 | | |
 |---|---|
-| **Path** | `/Users/myankelev/Code/random/cipher-box-phase69` |
+| **Path** | `/home/<USER>/Code/random/cipher-box-phase69` |
 | **Branch** | `feat/phase-69-fuse-winfsp` (new, tracks `origin/main`) |
 | **Base** | `origin/main` @ `1fb8996a2` — no 68.2 planning docs, clean slate |
 | **Phase 69** | FUSE + WinFsp Rust integration, grant-root awareness, `Node` enum, Windows CI (TEST-03) |
 
 **To kick it off** — in a *new* Claude Code session/terminal (keep this one on 68.2):
 ```
-cd /Users/myankelev/Code/random/cipher-box-phase69
+cd /home/<USER>/Code/random/cipher-box-phase69
 /gsd-discuss-phase 69      # recommended first — the roadmap flags a required plan-time
                            # design pass (grant-root scope algo) + open Q3 (FUSE delete authority model)
 # then: /gsd-plan-phase 69  →  /gsd-execute-phase 69
@@ -2283,7 +2283,7 @@ tool_use Bash
 id: toolu_01JoXgzaibi2jNZ3tFZsgdQR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===commits present?===\"\ngit log --oneline --grep=\"68.2-01\" | cat\necho \"\"\necho \"===SUMMARY exists + no FAILED self-check?===\"\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-SUMMARY.md\"\ntest -f \"$SUMMARY\" && echo \"SUMMARY exists ✓\" || echo \"SUMMARY MISSING ✗\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ SELF-CHECK FAILED marker present\" || echo \"no FAILED marker ✓\"\necho \"\"\necho \"===key files present + modified?===\"\ntest -f packages/sdk/src/__tests__/folder-listing-gate.test.ts && echo \"gate test file ✓\" || echo \"gate test MISSING ✗\"\ngit log --oneline -1 -- packages/sdk/src/client.ts | cat\necho \"\"\necho \"===the actual gate wiring landed in client.ts? (enforceResolved on read path)===\"\ngrep -n \"enforceResolved\" packages/sdk/src/client.ts | head\necho \"\"\necho \"===tree clean + HEAD===\"\ngit status --short | head -3\ngit rev-parse --short HEAD",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===commits present?===\"\ngit log --oneline --grep=\"68.2-01\" | cat\necho \"\"\necho \"===SUMMARY exists + no FAILED self-check?===\"\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-01-SUMMARY.md\"\ntest -f \"$SUMMARY\" && echo \"SUMMARY exists ✓\" || echo \"SUMMARY MISSING ✗\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ SELF-CHECK FAILED marker present\" || echo \"no FAILED marker ✓\"\necho \"\"\necho \"===key files present + modified?===\"\ntest -f packages/sdk/src/__tests__/folder-listing-gate.test.ts && echo \"gate test file ✓\" || echo \"gate test MISSING ✗\"\ngit log --oneline -1 -- packages/sdk/src/client.ts | cat\necho \"\"\necho \"===the actual gate wiring landed in client.ts? (enforceResolved on read path)===\"\ngrep -n \"enforceResolved\" packages/sdk/src/client.ts | head\necho \"\"\necho \"===tree clean + HEAD===\"\ngit status --short | head -3\ngit rev-parse --short HEAD",
   "description": "Spot-check Wave 1 output (commits, summary, gate wiring)"
 }
 ```
@@ -2328,7 +2328,7 @@ tool_use Bash
 id: toolu_016ztu21RiVWmieYFDTJtgMY
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===independent re-run: folder-listing-gate (the new ROT-07 read gate)===\"\ntimeout 240 pnpm --filter @cipherbox/sdk test -- --run folder-listing-gate 2>&1 | tail -12\necho \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===independent re-run: folder-listing-gate (the new ROT-07 read gate)===\"\ntimeout 240 pnpm --filter @cipherbox/sdk test -- --run folder-listing-gate 2>&1 | tail -12\necho \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Independently re-run the gate acceptance test"
 }
 ```
@@ -2383,7 +2383,7 @@ id: toolu_016tooPBrd7Yrgt4FF94bMW4
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 02 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory here.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between the Write and the commit.\nThis is a TDD plan: land RED (failing test) commits before their GREEN implementation per the plan's task types. Do not collapse RED+GREEN into one commit.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-PLAN.md (THE PLAN — read fully; follow its <context> @-refs, tasks, acceptance criteria, and must_haves exactly)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md (terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules — FOLLOW)\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<wave1_dependency_context>\nWave 1 (plan 68.2-01, commit 9cb17ac4b) already landed the SDK-internal ROT-07 read gate: `resolvePublishedNode` now returns `signatureVerified`, and `RotationHighWater.enforceResolved` is called on the read path in `dfsFindFolder` (client.ts ~L913) and the root resolve (~L781). Your `listFolder`/`listSharedFolder` MUST route through this already-gated read path — do NOT bypass the gate or re-resolve raw. The gate is […]
+  "prompt": "<objective>\nExecute plan 02 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory here.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between the Write and the commit.\nThis is a TDD plan: land RED (failing test) commits before their GREEN implementation per the plan's task types. Do not collapse RED+GREEN into one commit.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-PLAN.md (THE PLAN — read fully; follow its <context> @-refs, tasks, acceptance criteria, and must_haves exactly)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md (terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules — FOLLOW)\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<wave1_dependency_context>\nWave 1 (plan 68.2-01, commit 9cb17ac4b) already landed the SDK-internal ROT-07 read gate: `resolvePublishedNode` now returns `signatureVerified`, and `RotationHighWater.enforceResolved` is called on the read path in `dfsFindFolder` (client.ts ~L913) and the root resolve (~L781). Your `listFolder`/`listSharedFolder` MUST route through this already-gated read path — do NOT bypass the gate or re-resolve raw. The gate is […]
 
 > TOOL
 
@@ -2396,7 +2396,7 @@ All green, working tree clean.
 
 **Plan:** 68.2-02
 **Tasks:** 3/3 (TDD RED/GREEN) + 1 follow-up
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-SUMMARY.md`
 
 **Test results:**
 - `pnpm --filter @cipherbox/sdk test -- --run folder-listing.test` — 4/4 pass
@@ -2415,11 +2415,11 @@ All green, working tree clean.
 - `1f6c675c5`: docs(68.2-02): complete SDK-owned resolved folder listings plan
 
 **Key files:**
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/folder-listing.ts` (new)
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/__tests__/folder-listing.test.ts` (new)
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts`
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/events.ts`
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/index.ts`
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/folder-listing.ts` (new)
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/__tests__/folder-listing.test.ts` (new)
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts`
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/events.ts`
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/index.ts`
 
 **Notable deviation (documented in SUMMARY):** `resolveChildren`'s per-child failure handling was widened mid-implementation from "skip only on absent record, throw on crypto failure" to "skip on any resolve/unseal failure" — retyping all […]
 
@@ -2435,7 +2435,7 @@ tool_use Bash
 id: toolu_01Gj4KDLTh9Avwy5gyRjqfvh
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===commits + SUMMARY + key files===\"\ngit log --oneline --grep=\"68.2-02\" | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED marker\" || echo \"no FAILED marker ✓\"\ntest -f packages/sdk/src/folder-listing.ts && echo \"folder-listing.ts ✓\"\necho \"\"\necho \"===CRITICAL: does per-child degradation swallow the gate's SequenceRegressionError?===\"\necho \"--- resolveChildren error handling (folder-listing.ts) ---\"\ngrep -nE \"catch|SequenceRegression|enforceResolved|continue|skip|try \\{|throw\" packages/sdk/src/folder-listing.ts | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===commits + SUMMARY + key files===\"\ngit log --oneline --grep=\"68.2-02\" | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-02-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED marker\" || echo \"no FAILED marker ✓\"\ntest -f packages/sdk/src/folder-listing.ts && echo \"folder-listing.ts ✓\"\necho \"\"\necho \"===CRITICAL: does per-child degradation swallow the gate's SequenceRegressionError?===\"\necho \"--- resolveChildren error handling (folder-listing.ts) ---\"\ngrep -nE \"catch|SequenceRegression|enforceResolved|continue|skip|try \\{|throw\" packages/sdk/src/folder-listing.ts | head -40",
   "description": "Spot-check Wave 2 + inspect resolveChildren error handling"
 }
 ```
@@ -2480,7 +2480,7 @@ tool_use Read
 id: toolu_01MJDfnV1zAvoSgW6fyWTAcM
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/packages/sdk/src/folder-listing.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/packages/sdk/src/folder-listing.ts",
   "offset": 40,
   "limit": 85
 }
@@ -2528,7 +2528,7 @@ tool_use Bash
 id: toolu_01L2BVQttSj8E7WHpxYSdcYC
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===re-run the security tests independently (gate + rotation)===\"\ntimeout 240 pnpm --filter @cipherbox/sdk test -- --run client-rotation folder-listing-gate 2>&1 | grep -E \"Test Files|Tests |FAIL|✗|failed\" | head\necho \"\"\necho \"===what did the 4 changed test assertions touch? (git diff on test files in the GREEN commits)===\"\ngit show 786aad0c5 --stat | grep -E \"test|spec\" | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===re-run the security tests independently (gate + rotation)===\"\ntimeout 240 pnpm --filter @cipherbox/sdk test -- --run client-rotation folder-listing-gate 2>&1 | grep -E \"Test Files|Tests |FAIL|✗|failed\" | head\necho \"\"\necho \"===what did the 4 changed test assertions touch? (git diff on test files in the GREEN commits)===\"\ngit show 786aad0c5 --stat | grep -E \"test|spec\" | head",
   "description": "Read resolveChildren + re-run security tests"
 }
 ```
@@ -2577,7 +2577,7 @@ id: toolu_01PRv1THP8zez87XNUzVnDuF
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 03 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between Write and commit.\nIf the plan marks tasks type=tdd, land RED before GREEN. If type=execute, commit per task.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-PLAN.md (THE PLAN — source of truth; follow its <context> @-refs, tasks, acceptance criteria, must_haves exactly)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md (terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules — FOLLOW)\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nWaves 1–2 already landed on this branch: (a) the SDK-internal ROT-07 read gate (`enforceResolved` on the read path in client.ts), and (b) `ResolvedChild` + `listFolder`/`listSharedFolder` + the `folder:updated` event (packages/sdk/src/folder-listing.ts, events.ts, index.ts). Build on these — do not re-implement or bypass them. The read path is the single gated entrypoint (D-05).\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 03 adds SDK facade methods for the WRITE path + IPFS transport so the web has a […]
+  "prompt": "<objective>\nExecute plan 03 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree — `.git` is a directory.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration. No prose between Write and commit.\nIf the plan marks tasks type=tdd, land RED before GREEN. If type=execute, commit per task.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-PLAN.md (THE PLAN — source of truth; follow its <context> @-refs, tasks, acceptance criteria, must_haves exactly)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md (terminology, string-literals-over-enums, Uint8Array, camelCase, crypto rules — FOLLOW)\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nWaves 1–2 already landed on this branch: (a) the SDK-internal ROT-07 read gate (`enforceResolved` on the read path in client.ts), and (b) `ResolvedChild` + `listFolder`/`listSharedFolder` + the `folder:updated` event (packages/sdk/src/folder-listing.ts, events.ts, index.ts). Build on these — do not re-implement or bypass them. The read path is the single gated entrypoint (D-05).\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 03 adds SDK facade methods for the WRITE path + IPFS transport so the web has a […]
 
 > TOOL
 
@@ -2590,7 +2590,7 @@ All green: 307/307 passing, 49 skipped (pre-existing quarantined tests).
 
 **Plan:** 68.2-03
 **Tasks:** 2/2
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-SUMMARY.md`
 
 **Commits:**
 - `090c8ebea`: feat(68.2-03): add IPFS-transport facade methods with progress callbacks (`uploadBytes`/`downloadBytes`/`unpin` on `CipherBoxClient`)
@@ -2620,7 +2620,7 @@ tool_use Bash
 id: toolu_01WZMwZYWmtoThgzLCgAuLqv
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 03 commits + summary===\"\ngit log --oneline --grep=\"68.2-03\" | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-SUMMARY.md\"\ntest -f \"$SUMMARY\" && grep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok, no FAILED ✓\"\necho \"\"\necho \"===verify SDK-READ-04 checkbox correctly still [ ] (not prematurely completed)===\"\ngrep -E \"SDK-READ-04\\*\\*|SDK-READ-0[1-4] \\|\" .planning/REQUIREMENTS.md | head\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md\necho \"\"\necho \"===tree clean + HEAD===\"\ngit status --short | head -3\ngit rev-parse --short HEAD",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 03 commits + summary===\"\ngit log --oneline --grep=\"68.2-03\" | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-03-SUMMARY.md\"\ntest -f \"$SUMMARY\" && grep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok, no FAILED ✓\"\necho \"\"\necho \"===verify SDK-READ-04 checkbox correctly still [ ] (not prematurely completed)===\"\ngrep -E \"SDK-READ-04\\*\\*|SDK-READ-0[1-4] \\|\" .planning/REQUIREMENTS.md | head\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md\necho \"\"\necho \"===tree clean + HEAD===\"\ngit status --short | head -3\ngit rev-parse --short HEAD",
   "description": "Spot-check plan 03 + verify REQUIREMENTS checkbox"
 }
 ```
@@ -2657,7 +2657,7 @@ id: toolu_01WWd4i5iGmW33hUgVVx9qhS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "- [x] **SDK-READ-01**: The gated read chain lives entirely in `packages/sdk`/`packages/sdk-core`",
   "new_string": "- [ ] **SDK-READ-01**: The gated read chain lives entirely in `packages/sdk`/`packages/sdk-core`"
 }
@@ -2677,7 +2677,7 @@ tool_use Bash
 id: toolu_016jx5rQNKfHVhErJe4kVQi9
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngrep -nE \"^\\- \\[[ x]\\] \\*\\*SDK-READ-0[12]\\*\\*\" .planning/REQUIREMENTS.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngrep -nE \"^\\- \\[[ x]\\] \\*\\*SDK-READ-0[12]\\*\\*\" .planning/REQUIREMENTS.md",
   "description": "Re-read current SDK-READ checkbox lines"
 }
 ```
@@ -2697,7 +2697,7 @@ tool_use Read
 id: toolu_01CLmsKh8b4DHwWeq3XQjTzo
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "offset": 88,
   "limit": 2
 }
@@ -2719,7 +2719,7 @@ id: toolu_011UWxYG4rN95LJT1wpVPnNL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "- [x] **SDK-READ-01**: The gated read chain lives entirely in `packages/sdk`/`packages/sdk-core` — IPNS resolve,",
   "new_string": "- [ ] **SDK-READ-01**: The gated read chain lives entirely in `packages/sdk`/`packages/sdk-core` — IPNS resolve,"
 }
@@ -2730,7 +2730,7 @@ id: toolu_011UWxYG4rN95LJT1wpVPnNL
 tool_result
 id: toolu_011UWxYG4rN95LJT1wpVPnNL
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2740,7 +2740,7 @@ id: toolu_014TFCwXFEXnAFLJPxkB7uQB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md",
   "old_string": "- [x] **SDK-READ-02**: The SDK exposes resolved folder listings — `listFolder(ipnsName)` / `listSharedFolder(...)` returning `ResolvedChild[]`",
   "new_string": "- [ ] **SDK-READ-02**: The SDK exposes resolved folder listings — `listFolder(ipnsName)` / `listSharedFolder(...)` returning `ResolvedChild[]`"
 }
@@ -2751,7 +2751,7 @@ id: toolu_014TFCwXFEXnAFLJPxkB7uQB
 tool_result
 id: toolu_014TFCwXFEXnAFLJPxkB7uQB
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/REQUIREMENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2764,7 +2764,7 @@ tool_use Bash
 id: toolu_01H1EjfWkXrqaQJqe7iofRbD
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): revert premature SDK-READ-01/02 completion (web deletions pending plan 11)\" --files \".planning/REQUIREMENTS.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngrep -nE \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md\ngit status --short | head -2",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(68.2): revert premature SDK-READ-01/02 completion (web deletions pending plan 11)\" --files \".planning/REQUIREMENTS.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngrep -nE \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md\ngit status --short | head -2",
   "description": "Commit REQUIREMENTS tracking correction"
 }
 ```
@@ -2800,7 +2800,7 @@ id: toolu_01QXDWZ3GfBeGTMxRUq1N4Am
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 05 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<critical_constraints>\n- Plan 05 AUTHORS the SC#5 regression e2e (`tests/web-e2e/tests/shared-folder-desync.spec.ts`): an owner (or second client) sees a grantee's upload into a shared folder WITHOUT the owner writing first, with size/modifiedAt rendered from the resolved listing. Model on `tests/web-e2e/utils/multi-account-wallet.ts` (used by `sharing-workflow.spec.ts`).\n- **This spec is EXPECTED to be RED right now** — the desync fix (folder.store projection + nav re-resolve) doesn't land until Wave 4 (plan 09), and the full web-e2e runs for real as plan 12's phase gate. Your job is to AUTHOR the spec correctly per the plan, NOT to make it pass. Do NOT stand up the full local web-e2e stack (API/Postgres/Redis/Kubo/vite) to run it — follow the plan's acceptance […]
+  "prompt": "<objective>\nExecute plan 05 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<critical_constraints>\n- Plan 05 AUTHORS the SC#5 regression e2e (`tests/web-e2e/tests/shared-folder-desync.spec.ts`): an owner (or second client) sees a grantee's upload into a shared folder WITHOUT the owner writing first, with size/modifiedAt rendered from the resolved listing. Model on `tests/web-e2e/utils/multi-account-wallet.ts` (used by `sharing-workflow.spec.ts`).\n- **This spec is EXPECTED to be RED right now** — the desync fix (folder.store projection + nav re-resolve) doesn't land until Wave 4 (plan 09), and the full web-e2e runs for real as plan 12's phase gate. Your job is to AUTHOR the spec correctly per the plan, NOT to make it pass. Do NOT stand up the full local web-e2e stack (API/Postgres/Redis/Kubo/vite) to run it — follow the plan's acceptance […]
 
 > TOOL
 
@@ -2813,7 +2813,7 @@ Both commits are in place and the working tree is clean.
 
 **Plan:** 68.2-05
 **Tasks:** 1/1
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-05-SUMMARY.md`
 
 **Commits:**
 - `e1c88628d`: test(68.2-05): add shared-folder desync regression spec (SC#5)
@@ -2826,7 +2826,7 @@ Both commits are in place and the working tree is clean.
 - `npx playwright test --list tests/shared-folder-desync.spec.ts` → 4 tests discovered, no `webServer` startup required for `--list`
 - No `test.skip`/`test.fixme` in the file — genuine permanent regression spec, expected-red until Plans 06-11 land, green is the Plan 12 phase gate
 
-**Key file:** `/Users/myankelev/Code/random/cipher-box/tests/web-e2e/tests/shared-folder-desync.spec.ts` — owner+grantee multi-account spec (modeled on `sharing-workflow.spec.ts`/`writable-shares.spec.ts` scaffolding); grantee write-shares upload without owner writing, owner navigates in via nav-triggered re-resolve (no poll wait), asserts `.file-list-item-size`/`.file-list-item-date` render real values (not `'—'` / not containing `'1970'`) rather than `FileListItem.tsx`'s current em-dash/epoch mirror-fallback.
+**Key file:** `/home/<USER>/Code/random/cipher-box/tests/web-e2e/tests/shared-folder-desync.spec.ts` — owner+grantee multi-account spec (modeled on `sharing-workflow.spec.ts`/`writable-shares.spec.ts` scaffolding); grantee write-shares upload without owner writing, owner navigates in via nav-triggered re-resolve (no poll wait), asserts `.file-list-item-size`/`.file-list-item-date` render real values (not `'—'` / not containing `'1970'`) rather than `FileListItem.tsx`'s current em-dash/epoch mirror-fallback.
 
 **Notable correction during execution:** `requirements.mark-complete SDK-READ-03` was initially run per the standard state-update step, but SDK-READ-03's full requirement text (thin `folder.store.ts` projection + belt-and-suspenders freshness) isn't satisfied until Plans 06-11 land — this plan […]
 
@@ -2845,7 +2845,7 @@ tool_use Bash
 id: toolu_011GqVq8r441hwSoXFhjKgjB
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===Wave 3 commits present + tree clean===\"\ngit log --oneline --grep=\"68.2-05\" | cat\ngit status --short | head -3\necho \"HEAD: $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===REQUIREMENTS SDK-READ all [ ] (net-zero from executors)?===\"\ngrep -cE \"^\\- \\[ \\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | xargs echo \"unchecked SDK-READ count (expect 4):\"\necho \"\"\necho \"===confirm current sdk dist has the new exports (listFolder / ResolvedChild)===\"\ngrep -rl \"ResolvedChild\\|listFolder\" packages/sdk/dist/ 2>/dev/null | head -2 || echo \"(dist not checked / will rebuild in web plans)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===Wave 3 commits present + tree clean===\"\ngit log --oneline --grep=\"68.2-05\" | cat\ngit status --short | head -3\necho \"HEAD: $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===REQUIREMENTS SDK-READ all [ ] (net-zero from executors)?===\"\ngrep -cE \"^\\- \\[ \\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | xargs echo \"unchecked SDK-READ count (expect 4):\"\necho \"\"\necho \"===confirm current sdk dist has the new exports (listFolder / ResolvedChild)===\"\ngrep -rl \"ResolvedChild\\|listFolder\" packages/sdk/dist/ 2>/dev/null | head -2 || echo \"(dist not checked / will rebuild in web plans)\"",
   "description": "Spot-check Wave 3 completion"
 }
 ```
@@ -2892,7 +2892,7 @@ id: toolu_01KTP97xN3eYmedy1w3Enr7X
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 04 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\nIf tasks are type=tdd, RED before GREEN; else commit per task.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-04-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nWaves 1–3 landed: SDK-internal ROT-07 read gate; `ResolvedChild`/`listFolder`/`listSharedFolder`/`folder:updated`; and the write-path + IPFS-transport facade (`uploadBytes`/`downloadBytes`/`unpin`, `getFolderMetadata`, pure-util re-exports). Build on these.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 04 adds the SDK facade for the off-path pockets (vault-bootstrap, device-registry, BYO-pinning) so the web plan 10 can route those runtime `@cipherbox/core`/sdk-core/raw-IPFS calls through `CipherBoxClient` (D-07 full boundary). SDK-side only in this plan.\n- After modifying `packages/sdk`, **rebuild the sdk dist** (`pnpm --filter @cipherbox/sdk build`) so downstream consumers typecheck against fresh output (cross-package dist-staleness landmine).\n- Run the plan's `<verify>` commands (behavioral/tsc), not grep. Do NOT regress prior waves: `pnpm --filter @cipherbox/sdk test` stays green.\n- Do NOT prematurely mark SDK-READ-04 complete […]
+  "prompt": "<objective>\nExecute plan 04 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\nIf tasks are type=tdd, RED before GREEN; else commit per task.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-04-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nWaves 1–3 landed: SDK-internal ROT-07 read gate; `ResolvedChild`/`listFolder`/`listSharedFolder`/`folder:updated`; and the write-path + IPFS-transport facade (`uploadBytes`/`downloadBytes`/`unpin`, `getFolderMetadata`, pure-util re-exports). Build on these.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 04 adds the SDK facade for the off-path pockets (vault-bootstrap, device-registry, BYO-pinning) so the web plan 10 can route those runtime `@cipherbox/core`/sdk-core/raw-IPFS calls through `CipherBoxClient` (D-07 full boundary). SDK-side only in this plan.\n- After modifying `packages/sdk`, **rebuild the sdk dist** (`pnpm --filter @cipherbox/sdk build`) so downstream consumers typecheck against fresh output (cross-package dist-staleness landmine).\n- Run the plan's `<verify>` commands (behavioral/tsc), not grep. Do NOT regress prior waves: `pnpm --filter @cipherbox/sdk test` stays green.\n- Do NOT prematurely mark SDK-READ-04 complete […]
 
 > TOOL
 
@@ -2961,7 +2961,7 @@ tool_use Bash
 id: toolu_01GunCHqJ9KGHYrag4pVUvax
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 04 verify===\"\ngit log --oneline --grep=\"68.2-04\" | head -3 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-04-SUMMARY.md\"\ntest -f \"$SUMMARY\" && grep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree status:\"; git status --short | head -3\necho \"HEAD: $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===SDK-READ checkboxes still all [ ]? (no premature marks)===\"\ngrep -cE \"^\\- \\[ \\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | xargs echo \"unchecked (expect 4):\"\necho \"\"\necho \"===current time + seconds to 4:10am===\"\ndate \"+%H:%M:%S %Z\"\nnode -e \"const n=new Date();const t=new Date(n);t.setHours(4,10,0,0);if(t<=n)t.setDate(t.getDate()+1);console.log(Math.round((t-n)/1000)+'s until '+t.toLocaleTimeString());\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 04 verify===\"\ngit log --oneline --grep=\"68.2-04\" | head -3 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-04-SUMMARY.md\"\ntest -f \"$SUMMARY\" && grep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree status:\"; git status --short | head -3\necho \"HEAD: $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===SDK-READ checkboxes still all [ ]? (no premature marks)===\"\ngrep -cE \"^\\- \\[ \\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | xargs echo \"unchecked (expect 4):\"\necho \"\"\necho \"===current time + seconds to 4:10am===\"\ndate \"+%H:%M:%S %Z\"\nnode -e \"const n=new Date();const t=new Date(n);t.setHours(4,10,0,0);if(t<=n)t.setDate(t.getDate()+1);console.log(Math.round((t-n)/1000)+'s until '+t.toLocaleTimeString());\"",
   "description": "Verify plan 04 and compute wake delay"
 }
 ```
@@ -3091,7 +3091,7 @@ tool_use Bash
 id: toolu_01GfuYiSd4tGbZGDDHcY6a7t
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"branch: $(git rev-parse --abbrev-ref HEAD) | HEAD: $(git rev-parse --short HEAD)\"\necho \"tree status ($(git status --porcelain | wc -l | tr -d ' ') changed):\"; git status --short | head\necho \"\"\necho \"plans with SUMMARY (done):\"; ls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md 2>/dev/null | xargs -n1 basename | sort\necho \"\"\necho \"sdk dist freshness (has vault/BYO facade from plan 04?):\"; grep -rl \"bootstrapVaultKeys\\|resolveConfigBlob\" packages/sdk/dist/ 2>/dev/null | head -1 || echo \"(will rebuild in plan 06)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"branch: $(git rev-parse --abbrev-ref HEAD) | HEAD: $(git rev-parse --short HEAD)\"\necho \"tree status ($(git status --porcelain | wc -l | tr -d ' ') changed):\"; git status --short | head\necho \"\"\necho \"plans with SUMMARY (done):\"; ls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md 2>/dev/null | xargs -n1 basename | sort\necho \"\"\necho \"sdk dist freshness (has vault/BYO facade from plan 04?):\"; grep -rl \"bootstrapVaultKeys\\|resolveConfigBlob\" packages/sdk/dist/ 2>/dev/null | head -1 || echo \"(will rebuild in plan 06)\"",
   "description": "Confirm clean state before resuming plan 06"
 }
 ```
@@ -3136,7 +3136,7 @@ id: toolu_01KX62a1UkhCiMS6PaLLB72t
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 06 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-06-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nSDK-side is complete (plans 01–04, committed): the ROT-07 gated read path, `listFolder`/`listSharedFolder` → `ResolvedChild[]` + `folder:updated` event, the write/IPFS-transport facade (`uploadBytes`/`downloadBytes`/`unpin`/`getFolderMetadata` + pure-util re-exports), and the vault/device/BYO facade. The sdk dist is built and current. Your web rewire consumes these facade methods.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 06 rewires the web owned-read path onto the `@cipherbox/sdk` (`CipherBoxClient`) facade and renders kind/size/modifiedAt from `ResolvedChild`. This is the first step of the D-07 web cutover.\n- **D-07 boundary (locked, full scope):** in the files you touch, `apps/web/src` must make NO runtime calls into `@cipherbox/sdk-core` or `@cipherbox/core` and NO raw IPFS/IPNS access — route everything through `@cipherbox/sdk`. Type-only `import type { ... }` from core/sdk-core is allowed. (The allowlist-free […]
+  "prompt": "<objective>\nExecute plan 06 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-06-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nSDK-side is complete (plans 01–04, committed): the ROT-07 gated read path, `listFolder`/`listSharedFolder` → `ResolvedChild[]` + `folder:updated` event, the write/IPFS-transport facade (`uploadBytes`/`downloadBytes`/`unpin`/`getFolderMetadata` + pure-util re-exports), and the vault/device/BYO facade. The sdk dist is built and current. Your web rewire consumes these facade methods.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 06 rewires the web owned-read path onto the `@cipherbox/sdk` (`CipherBoxClient`) facade and renders kind/size/modifiedAt from `ResolvedChild`. This is the first step of the D-07 web cutover.\n- **D-07 boundary (locked, full scope):** in the files you touch, `apps/web/src` must make NO runtime calls into `@cipherbox/sdk-core` or `@cipherbox/core` and NO raw IPFS/IPNS access — route everything through `@cipherbox/sdk`. Type-only `import type { ... }` from core/sdk-core is allowed. (The allowlist-free […]
 
 > TOOL
 
@@ -3149,7 +3149,7 @@ Working tree clean, typecheck identical to pre-plan baseline (zero new errors), 
 
 **Plan:** 68.2-06
 **Tasks:** 3/3
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-06-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-06-SUMMARY.md`
 
 **Commits:**
 - `beb62f471` — refactor(68.2-06): relocate pure version-transform helpers
@@ -3180,7 +3180,7 @@ tool_use Bash
 id: toolu_014e596hs8qNtMkXh28ZtS7Q
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 06 verify===\"\ngit log --oneline --grep=\"68.2-06\" | head -4 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-06-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===CARRY-FORWARD: who still imports the to-be-deleted modules (Plan 11 must migrate ALL before deleting)?===\"\necho \"--- kind-cache.ts importers ---\"\ngrep -rln \"lib/kind-cache\\|kind-cache'\" apps/web/src --include=*.ts --include=*.tsx | grep -v \"kind-cache.ts\" || echo \"  none\"\necho \"--- useFileSize importers ---\"\ngrep -rln \"useFileSize\" apps/web/src --include=*.ts --include=*.tsx | grep -v \"useFileSize.ts\" || echo \"  none\"\necho \"--- ipns.service importers ---\"\ngrep -rln \"services/ipns.service\\|ipns.service'\" apps/web/src --include=*.ts --include=*.tsx | grep -v \"ipns.service.ts\" || echo \"  none\"\necho \"--- file-metadata.service importers ---\"\ngrep -rln \"file-metadata.service\" apps/web/src --include=*.ts --include=*.tsx | grep -v \"file-metadata.service.ts\" || echo \"  none\"\necho \"\"\necho \"===STATE.md blocker entry from plan 06?===\"\ngrep -n -i \"unowned\\|FileBrowser\\|SelectionActionBar\\|blocker\" .planning/STATE.md | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 06 verify===\"\ngit log --oneline --grep=\"68.2-06\" | head -4 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-06-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===CARRY-FORWARD: who still imports the to-be-deleted modules (Plan 11 must migrate ALL before deleting)?===\"\necho \"--- kind-cache.ts importers ---\"\ngrep -rln \"lib/kind-cache\\|kind-cache'\" apps/web/src --include=*.ts --include=*.tsx | grep -v \"kind-cache.ts\" || echo \"  none\"\necho \"--- useFileSize importers ---\"\ngrep -rln \"useFileSize\" apps/web/src --include=*.ts --include=*.tsx | grep -v \"useFileSize.ts\" || echo \"  none\"\necho \"--- ipns.service importers ---\"\ngrep -rln \"services/ipns.service\\|ipns.service'\" apps/web/src --include=*.ts --include=*.tsx | grep -v \"ipns.service.ts\" || echo \"  none\"\necho \"--- file-metadata.service importers ---\"\ngrep -rln \"file-metadata.service\" apps/web/src --include=*.ts --include=*.tsx | grep -v \"file-metadata.service.ts\" || echo \"  none\"\necho \"\"\necho \"===STATE.md blocker entry from plan 06?===\"\ngrep -n -i \"unowned\\|FileBrowser\\|SelectionActionBar\\|blocker\" .planning/STATE.md | head",
   "description": "Spot-check plan 06 + map deletion-blocking importers"
 }
 ```
@@ -3229,7 +3229,7 @@ tool_use Bash
 id: toolu_01T6J5i1Qz34ZRvtR4epuHdM
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== who imports the modules Plan 11 will DELETE (must be migrated first) ===\"\nfor mod in kind-cache useFileSize \"services/ipns.service\" \"file-metadata.service\"; do\n  echo \"--- $mod importers ---\"\n  grep -rln \"$mod\" apps/web/src 2>/dev/null | grep -Ev \"kind-cache.ts|useFileSize.ts|ipns.service.ts|file-metadata.service.ts\" || echo \"  (none)\"\ndone\necho \"\"\necho \"=== do the 5 flagged unowned components import any of those / raw sdk-core-core-ipfs? ===\"\nfor f in FileBrowser SelectionActionBar ContextMenu SharedFileBrowser FileList; do\n  hit=$(grep -rln \"$f.tsx\" apps/web/src 2>/dev/null | head -1)\n  path=$(find apps/web/src -name \"$f.tsx\" 2>/dev/null | head -1)\n  echo \"--- $path ---\"\n  grep -nE \"kind-cache|useFileSize|@cipherbox/sdk-core|@cipherbox/core|lib/api/ipfs|fetchFromIpfs|addToIpfs|resolveIpnsRecord\" \"$path\" 2>/dev/null | grep -v \"import type\" | head -6 || echo \"  (no runtime violations / deleted-module imports)\"\ndone",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== who imports the modules Plan 11 will DELETE (must be migrated first) ===\"\nfor mod in kind-cache useFileSize \"services/ipns.service\" \"file-metadata.service\"; do\n  echo \"--- $mod importers ---\"\n  grep -rln \"$mod\" apps/web/src 2>/dev/null | grep -Ev \"kind-cache.ts|useFileSize.ts|ipns.service.ts|file-metadata.service.ts\" || echo \"  (none)\"\ndone\necho \"\"\necho \"=== do the 5 flagged unowned components import any of those / raw sdk-core-core-ipfs? ===\"\nfor f in FileBrowser SelectionActionBar ContextMenu SharedFileBrowser FileList; do\n  hit=$(grep -rln \"$f.tsx\" apps/web/src 2>/dev/null | head -1)\n  path=$(find apps/web/src -name \"$f.tsx\" 2>/dev/null | head -1)\n  echo \"--- $path ---\"\n  grep -nE \"kind-cache|useFileSize|@cipherbox/sdk-core|@cipherbox/core|lib/api/ipfs|fetchFromIpfs|addToIpfs|resolveIpnsRecord\" \"$path\" 2>/dev/null | grep -v \"import type\" | head -6 || echo \"  (no runtime violations / deleted-module imports)\"\ndone",
   "description": "Map deletion-blocking importers and unowned component violations"
 }
 ```
@@ -3316,7 +3316,7 @@ id: toolu_01DgidB8czFFzg2ZmDj4UrLW
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 07 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-07-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md (note the 68.2-06 blocker re: unowned components)\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nSDK facade is complete (plans 01–04): gated read path, `listFolder`/`listSharedFolder`/`ResolvedChild`/`folder:updated`, and the IPFS-transport facade `client.uploadBytes`/`downloadBytes`/`unpin` (progress-callback preserving) + `getFolderMetadata`. Plan 06 rewired the owned-read render path. Build on these.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 07 rewires the web owned file I/O (upload/download/delete services + related hooks/dialogs) off raw IPFS onto the `client.uploadBytes`/`downloadBytes`/`unpin` facade (D-07), preserving upload/download PROGRESS callbacks.\n- **D-07 boundary (full scope):** in the files you touch, `apps/web/src` makes NO runtime calls into `@cipherbox/sdk-core`/`@cipherbox/core` and NO raw IPFS/IPNS access — route through `@cipherbox/sdk`. Type-only `import type` allowed. Also migrate any `services/file-metadata.service` / raw `lib/api/ipfs` (`addToIpfs`/`fetchFromIpfs`) usage in your files onto the facade so Plan 11 can delete those […]
+  "prompt": "<objective>\nExecute plan 07 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-07-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md (note the 68.2-06 blocker re: unowned components)\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nSDK facade is complete (plans 01–04): gated read path, `listFolder`/`listSharedFolder`/`ResolvedChild`/`folder:updated`, and the IPFS-transport facade `client.uploadBytes`/`downloadBytes`/`unpin` (progress-callback preserving) + `getFolderMetadata`. Plan 06 rewired the owned-read render path. Build on these.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 07 rewires the web owned file I/O (upload/download/delete services + related hooks/dialogs) off raw IPFS onto the `client.uploadBytes`/`downloadBytes`/`unpin` facade (D-07), preserving upload/download PROGRESS callbacks.\n- **D-07 boundary (full scope):** in the files you touch, `apps/web/src` makes NO runtime calls into `@cipherbox/sdk-core`/`@cipherbox/core` and NO raw IPFS/IPNS access — route through `@cipherbox/sdk`. Type-only `import type` allowed. Also migrate any `services/file-metadata.service` / raw `lib/api/ipfs` (`addToIpfs`/`fetchFromIpfs`) usage in your files onto the facade so Plan 11 can delete those […]
 
 > TOOL
 
@@ -3356,7 +3356,7 @@ tool_use Bash
 id: toolu_012uotsQzuG3DvXd7hFtHy2j
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 07 verify===\"\ngit log --oneline --grep=\"68.2-07\" | head -3 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-07-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"SDK-READ unchecked (expect 4): $(grep -cE '^\\- \\[ \\] \\*\\*SDK-READ' .planning/REQUIREMENTS.md)\"\necho \"\"\necho \"===sanity: resolveChildIdentity added + in dist (for plan 08/09 typecheck)===\"\ngrep -c \"resolveChildIdentity\" packages/sdk/dist/index.d.ts 2>/dev/null | xargs echo \"in dist d.ts:\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 07 verify===\"\ngit log --oneline --grep=\"68.2-07\" | head -3 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-07-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"SDK-READ unchecked (expect 4): $(grep -cE '^\\- \\[ \\] \\*\\*SDK-READ' .planning/REQUIREMENTS.md)\"\necho \"\"\necho \"===sanity: resolveChildIdentity added + in dist (for plan 08/09 typecheck)===\"\ngrep -c \"resolveChildIdentity\" packages/sdk/dist/index.d.ts 2>/dev/null | xargs echo \"in dist d.ts:\"",
   "description": "Spot-check plan 07"
 }
 ```
@@ -3399,7 +3399,7 @@ id: toolu_016RkM64jhq3S8ZKaLUvqPch
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 08 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-08-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md (note the 68.2-06 blocker re: unowned components)\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nSDK facade is complete: `client.listSharedFolder(...)` returns `ResolvedChild[]` for shared folders (routes through the gated read path AND handles the intermediate-folder walk that `navigateReadChain` cannot — plans 02/03). The `folder:updated` event and shared-write facade methods exist. Plans 06/07 rewired owned read + file I/O.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 08 rewires the web shared-folder nav/write path (`useSharedNavigationActions.ts` ~900L, `useSharedNavigation.ts`, `useSharedWriteOps.ts`, `SharedFolderRow.tsx`) off the DUPLICATED web shared read chain — currently calls `navigateReadChain`/`resolveIpnsRecord` (`@cipherbox/sdk-core`) + `unsealNode`/`unsealChildReadKey` (`@cipherbox/core`) directly — onto `client.listSharedFolder` and the shared-write facade. This is the SC#5 desync bug's home.\n- **D-07 boundary (full scope):** in the files you touch, NO runtime `@cipherbox/sdk-core`/`@cipherbox/core` calls and NO raw IPFS/IPNS — […]
+  "prompt": "<objective>\nExecute plan 08 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-08-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md (note the 68.2-06 blocker re: unowned components)\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nSDK facade is complete: `client.listSharedFolder(...)` returns `ResolvedChild[]` for shared folders (routes through the gated read path AND handles the intermediate-folder walk that `navigateReadChain` cannot — plans 02/03). The `folder:updated` event and shared-write facade methods exist. Plans 06/07 rewired owned read + file I/O.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 08 rewires the web shared-folder nav/write path (`useSharedNavigationActions.ts` ~900L, `useSharedNavigation.ts`, `useSharedWriteOps.ts`, `SharedFolderRow.tsx`) off the DUPLICATED web shared read chain — currently calls `navigateReadChain`/`resolveIpnsRecord` (`@cipherbox/sdk-core`) + `unsealNode`/`unsealChildReadKey` (`@cipherbox/core`) directly — onto `client.listSharedFolder` and the shared-write facade. This is the SC#5 desync bug's home.\n- **D-07 boundary (full scope):** in the files you touch, NO runtime `@cipherbox/sdk-core`/`@cipherbox/core` calls and NO raw IPFS/IPNS — […]
 
 > TOOL
 
@@ -3412,7 +3412,7 @@ Working tree is clean. Plan 08 execution is complete.
 
 **Plan:** 68.2-08
 **Tasks:** 2/2 (plus 3 preparatory Rule-2 SDK facade commits required to complete them)
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-08-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-08-SUMMARY.md`
 
 **Commits:**
 - `b5c021267`: feat(68.2-08): add client.downloadSharedFile facade for shared read-chain download
@@ -3446,7 +3446,7 @@ tool_use Bash
 id: toolu_01J8VTpUC82nNoKHShf9Bdwm
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 08 verify===\"\ngit log --oneline --grep=\"68.2-08\" | head -1 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-08-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"SDK-READ unchecked (expect 4): $(grep -cE '^\\- \\[ \\] \\*\\*SDK-READ' .planning/REQUIREMENTS.md)\"\necho \"plans done: $(ls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md | wc -l | tr -d ' ')/12\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 08 verify===\"\ngit log --oneline --grep=\"68.2-08\" | head -1 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-08-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"SDK-READ unchecked (expect 4): $(grep -cE '^\\- \\[ \\] \\*\\*SDK-READ' .planning/REQUIREMENTS.md)\"\necho \"plans done: $(ls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md | wc -l | tr -d ' ')/12\"",
   "description": "Spot-check plan 08"
 }
 ```
@@ -3485,7 +3485,7 @@ id: toolu_01DvQkidLkKVSFai9Zv9jhSD
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 09 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-09-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md (note the 68.2-06 blocker re: unowned components)\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nThe SDK is the single folder-state owner (`folderTree`) and emits `folder:updated` with `ResolvedChild[]`. Plans 06/07/08 rewired owned read, file I/O, and shared nav onto the facade. The remaining ~18 web typecheck errors live in `folder.store.ts`/`shared-folder-projection.ts` — this plan owns and clears them.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 09 collapses `apps/web/src/stores/folder.store.ts` to a THIN projection subscribing to the SDK `folder:updated` event (single owner = SDK `folderTree`, SC#3) and implements D-03 belt-and-suspenders freshness: (a) re-resolve on every folder open/navigation (the deterministic SC#5 fix), AND (b) poll-driven invalidation for the currently-open folder (`useSyncPolling.ts`). Also migrate `kind-cache`/`useFileSize` usage out of `folder.store.ts`/`useFolderNavigation.ts`/`clear-user-stores.ts` (Plan 11 deletes those modules).\n- **D-07 boundary (full scope):** no runtime […]
+  "prompt": "<objective>\nExecute plan 09 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-09-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md (note the 68.2-06 blocker re: unowned components)\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nThe SDK is the single folder-state owner (`folderTree`) and emits `folder:updated` with `ResolvedChild[]`. Plans 06/07/08 rewired owned read, file I/O, and shared nav onto the facade. The remaining ~18 web typecheck errors live in `folder.store.ts`/`shared-folder-projection.ts` — this plan owns and clears them.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 09 collapses `apps/web/src/stores/folder.store.ts` to a THIN projection subscribing to the SDK `folder:updated` event (single owner = SDK `folderTree`, SC#3) and implements D-03 belt-and-suspenders freshness: (a) re-resolve on every folder open/navigation (the deterministic SC#5 fix), AND (b) poll-driven invalidation for the currently-open folder (`useSyncPolling.ts`). Also migrate `kind-cache`/`useFileSize` usage out of `folder.store.ts`/`useFolderNavigation.ts`/`clear-user-stores.ts` (Plan 11 deletes those modules).\n- **D-07 boundary (full scope):** no runtime […]
 
 > TOOL
 
@@ -3496,7 +3496,7 @@ id: toolu_01DvQkidLkKVSFai9Zv9jhSD
 
 **Plan:** 68.2-09
 **Tasks:** 2/2 (plus 1 addendum: poll-invalidation behavioral test)
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-09-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-09-SUMMARY.md`
 
 **Commits:**
 - `de80bca3a` — refactor(68.2-09): collapse folder.store to a pure ResolvedChild projection (Task 1, includes fallout fixes in 6 additional files forced by the retype: FileBrowser.tsx, useFileBrowserActions.ts, folder-helpers.ts, useFileOperations.ts, useFileVersions.ts, shared-folder-projection.ts, plus their tests)
@@ -3527,7 +3527,7 @@ tool_use Bash
 id: toolu_01EWTJieNzruy6HTe8pnWajp
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===plan 09 verify===\"\ngit log --oneline --grep=\"68.2-09\" | head -1 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-09-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===poll-invalidation test present? (retire the todo if so)===\"\ngit show 1cdc01c85 --stat | grep -E \"test|spec\" | head\nPOLL_TODO=\".planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md\"\ntest -f \"$POLL_TODO\" && echo \"todo still pending — will retire\" || echo \"todo already moved\"\necho \"\"\necho \"===Wave 4 integration confirmation: web typecheck===\"\ncd apps/web && timeout 180 npx tsc --noEmit -p tsconfig.json 2>&1 | tail -3; echo \"web tsc exit: ${PIPESTATUS[0]}\"; cd ../..",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\necho \"===plan 09 verify===\"\ngit log --oneline --grep=\"68.2-09\" | head -1 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-09-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"===poll-invalidation test present? (retire the todo if so)===\"\ngit show 1cdc01c85 --stat | grep -E \"test|spec\" | head\nPOLL_TODO=\".planning/todos/pending/2026-07-06-d03-poll-invalidation-lacks-automated-coverage.md\"\ntest -f \"$POLL_TODO\" && echo \"todo still pending — will retire\" || echo \"todo already moved\"\necho \"\"\necho \"===Wave 4 integration confirmation: web typecheck===\"\ncd apps/web && timeout 180 npx tsc --noEmit -p tsconfig.json 2>&1 | tail -3; echo \"web tsc exit: ${PIPESTATUS[0]}\"; cd ../..",
   "description": "Verify plan 09 + confirm web typecheck + check poll todo"
 }
 ```
@@ -3572,7 +3572,7 @@ id: toolu_015fQJYcCZ7ZGFcUN8ZsMbXJ
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 10 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-10-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nPlan 04 added the SDK facade for the off-path pockets: `bootstrapVaultKeys`/`serializeVault`/`deserializeVault`/`publishEmptyRootNode` (vault-bootstrap), `deriveRegistryIpnsKeypair`/`encryptRegistry`/`decryptRegistry` (device-registry), `testConnection`/`resolveConfigBlob`/`publishConfigBlob` (BYO-pinning). The web off-path files consume these. The web owned+shared paths (plans 06–09) are fully cut over; apps/web typecheck is at 0 errors.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 10 rewires the off-path web pockets — BYO-pinning settings (`ConnectionTest.tsx`, `StorageTab.tsx`) and auth-bootstrap/device-registry crypto (`useAuth.ts`, `device-registry.service.ts`, `vault-settings.store.ts` and similar) — off their runtime `@cipherbox/sdk-core`/`@cipherbox/core` + raw IPFS/IPNS calls onto the plan-04 `CipherBoxClient` facade methods. This is the D-07 FULL-boundary scope resolution (no allowlist).\n- **D-07 boundary:** the files you touch must have NO runtime `@cipherbox/sdk-core`/`@cipherbox/core` calls and NO raw IPFS/IPNS. Type-only `import type` allowed. Also migrate any `ipns.service`/`file-metadata.service` usage in your files onto […]
+  "prompt": "<objective>\nExecute plan 10 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-10-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nPlan 04 added the SDK facade for the off-path pockets: `bootstrapVaultKeys`/`serializeVault`/`deserializeVault`/`publishEmptyRootNode` (vault-bootstrap), `deriveRegistryIpnsKeypair`/`encryptRegistry`/`decryptRegistry` (device-registry), `testConnection`/`resolveConfigBlob`/`publishConfigBlob` (BYO-pinning). The web off-path files consume these. The web owned+shared paths (plans 06–09) are fully cut over; apps/web typecheck is at 0 errors.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 10 rewires the off-path web pockets — BYO-pinning settings (`ConnectionTest.tsx`, `StorageTab.tsx`) and auth-bootstrap/device-registry crypto (`useAuth.ts`, `device-registry.service.ts`, `vault-settings.store.ts` and similar) — off their runtime `@cipherbox/sdk-core`/`@cipherbox/core` + raw IPFS/IPNS calls onto the plan-04 `CipherBoxClient` facade methods. This is the D-07 FULL-boundary scope resolution (no allowlist).\n- **D-07 boundary:** the files you touch must have NO runtime `@cipherbox/sdk-core`/`@cipherbox/core` calls and NO raw IPFS/IPNS. Type-only `import type` allowed. Also migrate any `ipns.service`/`file-metadata.service` usage in your files onto […]
 
 > TOOL
 
@@ -3583,7 +3583,7 @@ id: toolu_015fQJYcCZ7ZGFcUN8ZsMbXJ
 
 **Plan:** 68.2-10
 **Tasks:** 2/2 complete
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-10-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-10-SUMMARY.md`
 
 **Commits:**
 - `044676acb` — refactor(68.2-10): route auth/vault/device-registry crypto through the SDK facade
@@ -3619,7 +3619,7 @@ tool_use Bash
 id: toolu_01K2R3YxkeJCJ3rjsKrSnRET
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 10 verify (tree clean, req net-zero)===\"\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"changed:\"\necho \"SDK-READ unchecked (expect 4): $(grep -cE '^\\- \\[ \\] \\*\\*SDK-READ' .planning/REQUIREMENTS.md)\"\necho \"\"\necho \"############ PRE-PLAN-11 RESIDUAL AUDIT ############\"\necho \"\"\necho \"=== [A] remaining importers of the 4 modules Plan 11 DELETES (must be 0 or migrated by plan 11) ===\"\nfor mod in \"lib/kind-cache\" \"hooks/useFileSize\" \"services/ipns.service\" \"services/file-metadata.service\"; do\n  echo \"--- $mod ---\"\n  grep -rln \"$mod\" apps/web/src 2>/dev/null | grep -Ev \"kind-cache.ts|useFileSize.ts|ipns.service.ts|file-metadata.service.ts\" || echo \"  (none — safe to delete)\"\ndone\necho \"\"\necho \"=== [B] runtime (non-type) @cipherbox/sdk-core imports across ALL apps/web/src ===\"\ngrep -rn \"from '@cipherbox/sdk-core'\" apps/web/src 2>/dev/null | grep -v \"import type\" || echo \"  (zero runtime sdk-core imports ✓)\"\necho \"\"\necho \"=== [C] runtime (non-type) @cipherbox/core imports across ALL apps/web/src ===\"\ngrep -rn \"from '@cipherbox/core'\" apps/web/src 2>/dev/null | grep -v \"import type\" || echo \"  (zero runtime core imports ✓)\"\necho \"\"\necho \"=== [D] raw IPFS/IPNS access across ALL apps/web/src ===\"\ngrep -rln \"lib/api/ipfs\\|fetchFromIpfs\\|addToIpfs\\|resolveIpnsRecord\\|createAndPublishIpnsRecord\" apps/web/src 2>/dev/null | grep -v \"node_modules\" || echo \"  (zero raw IPFS/IPNS ✓)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 10 verify (tree clean, req net-zero)===\"\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"changed:\"\necho \"SDK-READ unchecked (expect 4): $(grep -cE '^\\- \\[ \\] \\*\\*SDK-READ' .planning/REQUIREMENTS.md)\"\necho \"\"\necho \"############ PRE-PLAN-11 RESIDUAL AUDIT ############\"\necho \"\"\necho \"=== [A] remaining importers of the 4 modules Plan 11 DELETES (must be 0 or migrated by plan 11) ===\"\nfor mod in \"lib/kind-cache\" \"hooks/useFileSize\" \"services/ipns.service\" \"services/file-metadata.service\"; do\n  echo \"--- $mod ---\"\n  grep -rln \"$mod\" apps/web/src 2>/dev/null | grep -Ev \"kind-cache.ts|useFileSize.ts|ipns.service.ts|file-metadata.service.ts\" || echo \"  (none — safe to delete)\"\ndone\necho \"\"\necho \"=== [B] runtime (non-type) @cipherbox/sdk-core imports across ALL apps/web/src ===\"\ngrep -rn \"from '@cipherbox/sdk-core'\" apps/web/src 2>/dev/null | grep -v \"import type\" || echo \"  (zero runtime sdk-core imports ✓)\"\necho \"\"\necho \"=== [C] runtime (non-type) @cipherbox/core imports across ALL apps/web/src ===\"\ngrep -rn \"from '@cipherbox/core'\" apps/web/src 2>/dev/null | grep -v \"import type\" || echo \"  (zero runtime core imports ✓)\"\necho \"\"\necho \"=== [D] raw IPFS/IPNS access across ALL apps/web/src ===\"\ngrep -rln \"lib/api/ipfs\\|fetchFromIpfs\\|addToIpfs\\|resolveIpnsRecord\\|createAndPublishIpnsRecord\" apps/web/src 2>/dev/null | grep -v \"node_modules\" || echo \"  (zero raw IPFS/IPNS ✓)\"",
   "description": "Comprehensive pre-plan-11 residual audit"
 }
 ```
@@ -3691,7 +3691,7 @@ tool_use Bash
 id: toolu_01DT6ab5Ny1VUNxEhy6iKvkW
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== precise raw-IPFS/IPNS lines in NON-deleted web files (exclude the 4 doomed modules + their test + the lib/api/ipfs wrapper itself) ===\"\nfor f in components/file-browser/useFileBrowserActions.ts hooks/folder-helpers.ts components/file-browser/TextEditorDialog.tsx hooks/useFileVersions.ts hooks/useFileOperations.ts lib/errors.ts; do\n  echo \"--- apps/web/src/$f ---\"\n  grep -nE \"lib/api/ipfs|fetchFromIpfs|addToIpfs|resolveIpnsRecord|createAndPublishIpnsRecord\" \"apps/web/src/$f\" 2>/dev/null | head -6 || echo \"  (none)\"\ndone\necho \"\"\necho \"=== is lib/api/ipfs.ts still consumed by any non-doomed web file? (if not, it can be deleted too) ===\"\ngrep -rln \"lib/api/ipfs\" apps/web/src 2>/dev/null | grep -Ev \"kind-cache.ts|useFileSize.ts|ipns.service.ts|file-metadata.service.ts|ipns.service.test.ts|lib/api/ipfs.ts\"\necho \"\"\necho \"=== does plan 11's PLAN.md already anticipate migrating residual consumers, or only delete+gate? (task names) ===\"\ngrep -nE \"<name>|<files>|migrate|delete|grep\" .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-11-PLAN.md | head -30",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== precise raw-IPFS/IPNS lines in NON-deleted web files (exclude the 4 doomed modules + their test + the lib/api/ipfs wrapper itself) ===\"\nfor f in components/file-browser/useFileBrowserActions.ts hooks/folder-helpers.ts components/file-browser/TextEditorDialog.tsx hooks/useFileVersions.ts hooks/useFileOperations.ts lib/errors.ts; do\n  echo \"--- apps/web/src/$f ---\"\n  grep -nE \"lib/api/ipfs|fetchFromIpfs|addToIpfs|resolveIpnsRecord|createAndPublishIpnsRecord\" \"apps/web/src/$f\" 2>/dev/null | head -6 || echo \"  (none)\"\ndone\necho \"\"\necho \"=== is lib/api/ipfs.ts still consumed by any non-doomed web file? (if not, it can be deleted too) ===\"\ngrep -rln \"lib/api/ipfs\" apps/web/src 2>/dev/null | grep -Ev \"kind-cache.ts|useFileSize.ts|ipns.service.ts|file-metadata.service.ts|ipns.service.test.ts|lib/api/ipfs.ts\"\necho \"\"\necho \"=== does plan 11's PLAN.md already anticipate migrating residual consumers, or only delete+gate? (task names) ===\"\ngrep -nE \"<name>|<files>|migrate|delete|grep\" .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-11-PLAN.md | head -30",
   "description": "Precise raw-IPFS check + plan 11 scope inspection"
 }
 ```
@@ -3748,7 +3748,7 @@ id: toolu_01Vgdy5BekHYK64H3AVHwqZ1
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 11 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-11-PLAN.md (THE PLAN — source of truth; its Task 1 already scopes \"rewire any remaining importer before deleting\")\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-RESEARCH.md (Pitfall 5 — the verified two-step grep that excludes inline-type imports)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<precise_residual_audit>\nThe orchestrator ran the residual audit for you (post-plan-10). Task 1's \"straggler sweep\" is NOT trivial — it is these 8 files, which you MUST migrate onto the SDK facade BEFORE deleting anything:\n\n**Still import `lib/kind-cache` (migrate to `ResolvedChild.kind` / an SDK helper):**\n- apps/web/src/utils/fileTypes.ts\n- apps/web/src/components/file-browser/FileList.tsx  (already receives `resolved: ResolvedChild` via plan 06's dual-prop — use `resolved.kind`)\n\n**Still import `services/file-metadata.service` (migrate to an SDK facade — reuse `client.getFolderMetadata`/`resolveNodeIdentity`/`resolveChildIdentity`, or add a file-metadata facade method Rule-2 if none fits, gated like the others):**\n- apps/web/src/components/file-browser/TextEditorDialog.tsx\n- apps/web/src/components/file-browser/DetailsDialog.tsx\n- apps/web/src/hooks/useStreamingPreview.ts\n- apps/web/src/hooks/useFileVersions.ts\n- apps/web/src/lib/version-transforms.ts\n- apps/web/src/hooks/useFileOperations.ts\n\n**Real raw `lib/api/ipfs` runtime […]
+  "prompt": "<objective>\nExecute plan 11 of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-11-PLAN.md (THE PLAN — source of truth; its Task 1 already scopes \"rewire any remaining importer before deleting\")\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-RESEARCH.md (Pitfall 5 — the verified two-step grep that excludes inline-type imports)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<precise_residual_audit>\nThe orchestrator ran the residual audit for you (post-plan-10). Task 1's \"straggler sweep\" is NOT trivial — it is these 8 files, which you MUST migrate onto the SDK facade BEFORE deleting anything:\n\n**Still import `lib/kind-cache` (migrate to `ResolvedChild.kind` / an SDK helper):**\n- apps/web/src/utils/fileTypes.ts\n- apps/web/src/components/file-browser/FileList.tsx  (already receives `resolved: ResolvedChild` via plan 06's dual-prop — use `resolved.kind`)\n\n**Still import `services/file-metadata.service` (migrate to an SDK facade — reuse `client.getFolderMetadata`/`resolveNodeIdentity`/`resolveChildIdentity`, or add a file-metadata facade method Rule-2 if none fits, gated like the others):**\n- apps/web/src/components/file-browser/TextEditorDialog.tsx\n- apps/web/src/components/file-browser/DetailsDialog.tsx\n- apps/web/src/hooks/useStreamingPreview.ts\n- apps/web/src/hooks/useFileVersions.ts\n- apps/web/src/lib/version-transforms.ts\n- apps/web/src/hooks/useFileOperations.ts\n\n**Real raw `lib/api/ipfs` runtime […]
 
 > TOOL
 
@@ -3759,7 +3759,7 @@ id: toolu_01Vgdy5BekHYK64H3AVHwqZ1
 
 **Plan:** 68.2-11
 **Tasks:** 3/3 complete
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-11-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-11-SUMMARY.md`
 
 **Commits:**
 - `b46efb4c1`: refactor(68.2-11): rewire remaining web read-chain importers onto SDK facade
@@ -3794,7 +3794,7 @@ tool_use Bash
 id: toolu_013bGcg6u4eZEJZgsyYLC78q
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== [1] the 5 files are actually GONE? ===\"\nfor f in services/ipns.service.ts services/file-metadata.service.ts lib/kind-cache.ts hooks/useFileSize.ts lib/api/ipfs.ts; do\n  test -e \"apps/web/src/$f\" && echo \"  STILL EXISTS: $f ✗\" || echo \"  deleted ✓ $f\"\ndone\necho \"\"\necho \"=== [2] INDEPENDENT D-07 grep gate re-run (Pitfall-5 two-step, all apps/web/src, tests excluded) ===\"\nA=$(grep -rnE \"from .@cipherbox/(sdk-core|core).\" apps/web/src --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | grep -vE \"import type \\{\" | grep -vE \"import \\{( *type [A-Za-z0-9_]+,?)+ *\\}\" | grep -v \"__tests__\")\nB=$(grep -rln \"fetchFromIpfs\\|addToIpfs\\|unpinFromIpfs\\|lib/api/ipfs\" apps/web/src --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | grep -v \"__tests__\")\necho \"Gate A (sdk-core/core runtime) violations:\"; [ -z \"$A\" ] && echo \"  NONE ✓\" || echo \"$A\"\necho \"Gate B (raw IPFS) violations:\"; [ -z \"$B\" ] && echo \"  NONE ✓\" || echo \"$B\"\n[ -z \"$A\" ] && [ -z \"$B\" ] && echo \">>> GATE_CLEAN (independently confirmed) ✓\" || echo \">>> GATE HAS VIOLATIONS ✗\"\necho \"\"\necho \"=== [3] SDK-READ checkbox state (01/02/04 should now be [x], 03 still [ ]) ===\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/(\\*\\*SDK-READ-0[0-9]\\*\\*).*/\\1/'\necho \"\"\necho \"=== [4] tree clean + progress ===\"\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"changed:\"\necho \"plans done: $(ls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md […]
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== [1] the 5 files are actually GONE? ===\"\nfor f in services/ipns.service.ts services/file-metadata.service.ts lib/kind-cache.ts hooks/useFileSize.ts lib/api/ipfs.ts; do\n  test -e \"apps/web/src/$f\" && echo \"  STILL EXISTS: $f ✗\" || echo \"  deleted ✓ $f\"\ndone\necho \"\"\necho \"=== [2] INDEPENDENT D-07 grep gate re-run (Pitfall-5 two-step, all apps/web/src, tests excluded) ===\"\nA=$(grep -rnE \"from .@cipherbox/(sdk-core|core).\" apps/web/src --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | grep -vE \"import type \\{\" | grep -vE \"import \\{( *type [A-Za-z0-9_]+,?)+ *\\}\" | grep -v \"__tests__\")\nB=$(grep -rln \"fetchFromIpfs\\|addToIpfs\\|unpinFromIpfs\\|lib/api/ipfs\" apps/web/src --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | grep -v \"__tests__\")\necho \"Gate A (sdk-core/core runtime) violations:\"; [ -z \"$A\" ] && echo \"  NONE ✓\" || echo \"$A\"\necho \"Gate B (raw IPFS) violations:\"; [ -z \"$B\" ] && echo \"  NONE ✓\" || echo \"$B\"\n[ -z \"$A\" ] && [ -z \"$B\" ] && echo \">>> GATE_CLEAN (independently confirmed) ✓\" || echo \">>> GATE HAS VIOLATIONS ✗\"\necho \"\"\necho \"=== [3] SDK-READ checkbox state (01/02/04 should now be [x], 03 still [ ]) ===\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/(\\*\\*SDK-READ-0[0-9]\\*\\*).*/\\1/'\necho \"\"\necho \"=== [4] tree clean + progress ===\"\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"changed:\"\necho \"plans done: $(ls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md […]
 
 > TOOL
 
@@ -3847,7 +3847,7 @@ id: toolu_01Wz2ran2g4S6dVKFmY13SVN
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 12 (FINAL plan) of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-12-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-RESEARCH.md (§ Mirror Revert Footprint — the exact ba3e0229a files/hunks to revert)\n- ${PROJECT_ROOT}/docs/METADATA_SCHEMAS.md (the NODE-03 frozen five-field SealedChildRef set to restore)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nThe entire web read+write path is now SDK-mediated: the D-07 allowlist-free grep gate is GREEN (zero runtime sdk-core/core/raw-IPFS across apps/web/src), the 5 orphaned web modules are deleted, and all display (kind/size/modifiedAt) renders from `ResolvedChild` (plans 06/08/11 dual-prop migrations, web typecheck at 0). SDK-READ-01/02/04 are complete. This is the ONLY remaining plan.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 12 reverts commit `ba3e0229a` — the interim `SealedChildRef.size`/`modifiedAt` display mirror — as the FINAL cutover step (D-08 step 4), restoring `SealedChildRef` to its frozen NODE-03 FIVE-field set: `name`, `ipnsName`, `generation`, `versionFloor`, `readKeySealed`. Follow RESEARCH § Mirror […]
+  "prompt": "<objective>\nExecute plan 12 (FINAL plan) of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-12-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-RESEARCH.md (§ Mirror Revert Footprint — the exact ba3e0229a files/hunks to revert)\n- ${PROJECT_ROOT}/docs/METADATA_SCHEMAS.md (the NODE-03 frozen five-field SealedChildRef set to restore)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<prior_wave_context>\nThe entire web read+write path is now SDK-mediated: the D-07 allowlist-free grep gate is GREEN (zero runtime sdk-core/core/raw-IPFS across apps/web/src), the 5 orphaned web modules are deleted, and all display (kind/size/modifiedAt) renders from `ResolvedChild` (plans 06/08/11 dual-prop migrations, web typecheck at 0). SDK-READ-01/02/04 are complete. This is the ONLY remaining plan.\n</prior_wave_context>\n\n<critical_constraints>\n- Plan 12 reverts commit `ba3e0229a` — the interim `SealedChildRef.size`/`modifiedAt` display mirror — as the FINAL cutover step (D-08 step 4), restoring `SealedChildRef` to its frozen NODE-03 FIVE-field set: `name`, `ipnsName`, `generation`, `versionFloor`, `readKeySealed`. Follow RESEARCH § Mirror […]
 
 > TOOL
 
@@ -3858,7 +3858,7 @@ id: toolu_01Wz2ran2g4S6dVKFmY13SVN
 
 **Plan:** 68.2-12 (final plan of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings)
 **Tasks:** 3/3 executed + 1 deviation-driven fix commit
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-12-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-12-SUMMARY.md`
 
 **Commits:**
 - `138f5da06` — refactor(68.2-12): source search-index modifiedAt from ResolvedChild (Task 1, expanded to also repoint `FileList.tsx`/`DetailsDialog.tsx`)
@@ -3891,7 +3891,7 @@ tool_use Bash
 id: toolu_016dJHhs6X6HgZ2ncc6aZfZj
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== plan 12 code state ===\"\ngit log --oneline --grep=\"68.2-12\" | head -5 | cat\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"=== SealedChildRef back to NODE-03 five fields (no size/modifiedAt)? ===\"\ngrep -nE \"size\\??:|modifiedAt\\??:|name:|ipnsName:|generation:|versionFloor:|readKeySealed:\" packages/core/src/node/types.ts | grep -iE \"SealedChildRef\" -A0 2>/dev/null | head\necho \"--- SealedChildRef interface body ---\"\nawk '/interface SealedChildRef|type SealedChildRef/{f=1} f{print} f&&/\\}/{exit}' packages/core/src/node/types.ts | head -20\necho \"\"\necho \"=== requirement checkbox state (01/02/04 [x], 03 [ ] expected) ===\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/(\\*\\*SDK-READ-0[0-9]\\*\\*).*/\\1/'\necho \"\"\necho \"=== the ensureFolderLoaded short-circuit (client.ts ~1549) ===\"\nsed -n '1544,1556p' packages/sdk/src/client.ts 2>/dev/null | grep -nE \"isLoaded|return|folderTree|resolve\" | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== plan 12 code state ===\"\ngit log --oneline --grep=\"68.2-12\" | head -5 | cat\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"=== SealedChildRef back to NODE-03 five fields (no size/modifiedAt)? ===\"\ngrep -nE \"size\\??:|modifiedAt\\??:|name:|ipnsName:|generation:|versionFloor:|readKeySealed:\" packages/core/src/node/types.ts | grep -iE \"SealedChildRef\" -A0 2>/dev/null | head\necho \"--- SealedChildRef interface body ---\"\nawk '/interface SealedChildRef|type SealedChildRef/{f=1} f{print} f&&/\\}/{exit}' packages/core/src/node/types.ts | head -20\necho \"\"\necho \"=== requirement checkbox state (01/02/04 [x], 03 [ ] expected) ===\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/(\\*\\*SDK-READ-0[0-9]\\*\\*).*/\\1/'\necho \"\"\necho \"=== the ensureFolderLoaded short-circuit (client.ts ~1549) ===\"\nsed -n '1544,1556p' packages/sdk/src/client.ts 2>/dev/null | grep -nE \"isLoaded|return|folderTree|resolve\" | head",
   "description": "Verify plan 12 mirror revert + inspect ensureFolderLoaded gap"
 }
 ```
@@ -3972,7 +3972,7 @@ id: toolu_01QVGAzbWXga7wtsf9hGDQjW
 
 **Status:** gaps_found
 **Score:** 4/5 must-haves verified
-**Report:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md`
+**Report:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md`
 
 ### Gaps Found
 
@@ -3996,7 +3996,7 @@ tool_use Bash
 id: toolu_01WXrcUK1QA4bUz6hhjHmAvn
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"=== VERIFICATION.md status + committed? ===\"\nls -la \"$PHASE_DIR\"/68.2-VERIFICATION.md 2>/dev/null | awk '{print $5, $NF}'\ngit ls-files \"$PHASE_DIR/68.2-VERIFICATION.md\" | head -1 || echo \"(untracked)\"\ngrep -m1 \"^status:\" \"$PHASE_DIR/68.2-VERIFICATION.md\" 2>/dev/null\necho \"\"\necho \"=== commit VERIFICATION.md (phase stays PENDING — gaps_found, not marking complete) ===\"\ngit add \"$PHASE_DIR/68.2-VERIFICATION.md\" 2>/dev/null\ngsd_run query commit \"docs(68.2): verification — gaps_found (SC#5 desync unmet, 4/5 must-haves)\" --files \"$PHASE_DIR/68.2-VERIFICATION.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"tree changed:\"\necho \"\"\necho \"=== phase 68.2 final tally ===\"\necho \"plans executed: $(ls $PHASE_DIR/*-SUMMARY.md | wc -l | tr -d ' ')/12  |  commits on branch: $(git rev-list --count origin/main..HEAD)\"\necho \"requirements: 01=[x] 02=[x] 04=[x] 03=[ ] (SC#5)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\necho \"=== VERIFICATION.md status + committed? ===\"\nls -la \"$PHASE_DIR\"/68.2-VERIFICATION.md 2>/dev/null | awk '{print $5, $NF}'\ngit ls-files \"$PHASE_DIR/68.2-VERIFICATION.md\" | head -1 || echo \"(untracked)\"\ngrep -m1 \"^status:\" \"$PHASE_DIR/68.2-VERIFICATION.md\" 2>/dev/null\necho \"\"\necho \"=== commit VERIFICATION.md (phase stays PENDING — gaps_found, not marking complete) ===\"\ngit add \"$PHASE_DIR/68.2-VERIFICATION.md\" 2>/dev/null\ngsd_run query commit \"docs(68.2): verification — gaps_found (SC#5 desync unmet, 4/5 must-haves)\" --files \"$PHASE_DIR/68.2-VERIFICATION.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"tree changed:\"\necho \"\"\necho \"=== phase 68.2 final tally ===\"\necho \"plans executed: $(ls $PHASE_DIR/*-SUMMARY.md | wc -l | tr -d ' ')/12  |  commits on branch: $(git rev-list --count origin/main..HEAD)\"\necho \"requirements: 01=[x] 02=[x] 04=[x] 03=[ ] (SC#5)\"",
   "description": "Commit VERIFICATION.md and record gaps_found state"
 }
 ```
@@ -4115,7 +4115,7 @@ tool_use Bash
 id: toolu_01WPvmizCMdCfEGrzDcT9Yfx
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.plan-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); for (const k of ['phase_status','has_plans','plan_count','has_context','verification_path','uat_path','context_path','research_path','commit_docs','plan_checker_enabled','phase_req_ids']) console.log(k+': '+JSON.stringify(o[k]));\"\necho \"\"\necho \"=== planner contributions (tdd/schema-gate) still apply in --gaps ===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const h=(o.activeHooks||[]).filter(x=>x.kind==='contribution'&&x.into==='planner').map(x=>x.capId); console.log('planner contribs:', h.join(', ')||'(none)');\"\necho \"\"\necho \"=== VERIFICATION.md gap detail (what the gap planner consumes) ===\"\nsed -n '/[Gg]ap/,/Remediation\\|remediation/p' .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nINIT=$(gsd_run query init.plan-phase \"68.2\")\nif [[ \"$INIT\" == @file:* ]]; then INIT=$(cat \"${INIT#@file:}\"); fi\necho \"$INIT\" | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); for (const k of ['phase_status','has_plans','plan_count','has_context','verification_path','uat_path','context_path','research_path','commit_docs','plan_checker_enabled','phase_req_ids']) console.log(k+': '+JSON.stringify(o[k]));\"\necho \"\"\necho \"=== planner contributions (tdd/schema-gate) still apply in --gaps ===\"\ngsd_run loop render-hooks plan:pre --raw 2>/dev/null | node -e \"const o=JSON.parse(require('fs').readFileSync(0,'utf8')); const h=(o.activeHooks||[]).filter(x=>x.kind==='contribution'&&x.into==='planner').map(x=>x.capId); console.log('planner contribs:', h.join(', ')||'(none)');\"\necho \"\"\necho \"=== VERIFICATION.md gap detail (what the gap planner consumes) ===\"\nsed -n '/[Gg]ap/,/Remediation\\|remediation/p' .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md | head -40",
   "description": "Init gap-closure mode + read VERIFICATION gap"
 }
 ```
@@ -4263,7 +4263,7 @@ id: toolu_01MvMkXCSdUdVPDjgiChsrbU
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 13 (gap-closure) of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\nThis is a TDD plan: land the RED test commit FIRST, then the GREEN implementation. Do not collapse them.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-13-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md (the gap being closed — root cause)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<critical_constraints>\n- Plan 13 adds a `{ forceResolve: true }` live-resolve-on-navigation path to `CipherBoxClient.ensureFolderLoaded`/`listFolder` (packages/sdk/src/client.ts): for an ALREADY-LOADED `folderTree` entry, genuinely re-resolve the folder's own IPNS record from the network and update the `FolderState` in place (advancing `sequenceNumber`/`children`) so `resolveListingChildren`'s cache clock advances from network truth, not from itself.\n- **GATED re-resolve (do NOT weaken Plan 01):** the re-resolve MUST route through `RotationHighWater.enforceResolved`, mirroring the fail-closed sequence in `dfsFindFolder`/`gatedResolveChild` — `!signatureVerified` throws BEFORE any floor mutation; `Number.MAX_SAFE_INTEGER` overflow guard; generation sourced from the locally-trusted `existing.nodeGeneration` (never the […]
+  "prompt": "<objective>\nExecute plan 13 (gap-closure) of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\nThis is a TDD plan: land the RED test commit FIRST, then the GREEN implementation. Do not collapse them.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-13-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md (the gap being closed — root cause)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n</files_to_read>\n\n<critical_constraints>\n- Plan 13 adds a `{ forceResolve: true }` live-resolve-on-navigation path to `CipherBoxClient.ensureFolderLoaded`/`listFolder` (packages/sdk/src/client.ts): for an ALREADY-LOADED `folderTree` entry, genuinely re-resolve the folder's own IPNS record from the network and update the `FolderState` in place (advancing `sequenceNumber`/`children`) so `resolveListingChildren`'s cache clock advances from network truth, not from itself.\n- **GATED re-resolve (do NOT weaken Plan 01):** the re-resolve MUST route through `RotationHighWater.enforceResolved`, mirroring the fail-closed sequence in `dfsFindFolder`/`gatedResolveChild` — `!signatureVerified` throws BEFORE any floor mutation; `Number.MAX_SAFE_INTEGER` overflow guard; generation sourced from the locally-trusted `existing.nodeGeneration` (never the […]
 
 > TOOL
 
@@ -4274,7 +4274,7 @@ id: toolu_01MvMkXCSdUdVPDjgiChsrbU
 
 **Plan:** 68.2-13
 **Tasks:** 2/2
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-13-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-13-SUMMARY.md`
 
 **Commits:**
 - `69dac1a0b`: test(68.2-13): add failing test for gated live-resolve-on-navigation (RED)
@@ -4288,8 +4288,8 @@ id: toolu_01MvMkXCSdUdVPDjgiChsrbU
 - `tsc --noEmit`: 78 pre-existing errors in unrelated quarantined legacy test files, confirmed identical before/after this change (zero new errors introduced)
 
 **Key files:**
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts` — added `forceResolve` option on `ensureFolderLoaded`/`listFolder`; new private `reresolveFolderInPlace` (dedup wrapper, synchronous map registration) + `doReresolveFolderInPlace` (gated in-place re-resolve mirroring `dfsFindFolder`'s gate exactly); new `reresolveInFlight` field
-- `/Users/myankelev/Code/random/cipher-box/packages/sdk/src/__tests__/folder-reresolve.test.ts` — new unit test (4 cases: re-resolve+new-child, gate rejection, cached fast path preserved, dedup)
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts` — added `forceResolve` option on `ensureFolderLoaded`/`listFolder`; new private `reresolveFolderInPlace` (dedup wrapper, synchronous map registration) + `doReresolveFolderInPlace` (gated in-place re-resolve mirroring `dfsFindFolder`'s gate exactly); new `reresolveInFlight` field
+- `/home/<USER>/Code/random/cipher-box/packages/sdk/src/__tests__/folder-reresolve.test.ts` — new unit test (4 cases: re-resolve+new-child, gate rejection, cached fast path preserved, dedup)
 
 **Requirement status:** `SDK-READ-03` intentionally left `[ ]` in `.planning/REQUIREMENTS.md` — the SDK-side mechanism is proven, but Plan 14 must wire `apps/web`'s `useFolderNavigation.ts`/`useSyncPolling.ts` freshness call sites to pass `{ forceResolve: true }` and prove `tests/web-e2e/tests/shared-folder-desync.spec.ts` step 3.1 + the full web-e2e suite green before the requirement/phase can close.
 
@@ -4308,7 +4308,7 @@ tool_use Bash
 id: toolu_016K2baYxq6QoFU14uk61EwJ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 13 verify===\"\ngit log --oneline --grep=\"68.2-13\" | head -3 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-13-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"=== gate wiring present in the new re-resolve path (enforceResolved + signatureVerified fail-closed)? ===\"\ngrep -nE \"doReresolveFolderInPlace|reresolveFolderInPlace|enforceResolved|signatureVerified|reresolveInFlight\" packages/sdk/src/client.ts | head\necho \"\"\necho \"=== independent re-run: folder-reresolve (the core SC#5 SDK fix) ===\"\ntimeout 200 pnpm --filter @cipherbox/sdk test -- --run folder-reresolve 2>&1 | grep -E \"Test Files|Tests |FAIL|✓.*reresolve|passed|failed\" | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 13 verify===\"\ngit log --oneline --grep=\"68.2-13\" | head -3 | cat\nSUMMARY=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-13-SUMMARY.md\"\ngrep -q \"## Self-Check: FAILED\" \"$SUMMARY\" && echo \"⚠ FAILED\" || echo \"summary ok ✓\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"=== gate wiring present in the new re-resolve path (enforceResolved + signatureVerified fail-closed)? ===\"\ngrep -nE \"doReresolveFolderInPlace|reresolveFolderInPlace|enforceResolved|signatureVerified|reresolveInFlight\" packages/sdk/src/client.ts | head\necho \"\"\necho \"=== independent re-run: folder-reresolve (the core SC#5 SDK fix) ===\"\ntimeout 200 pnpm --filter @cipherbox/sdk test -- --run folder-reresolve 2>&1 | grep -E \"Test Files|Tests |FAIL|✓.*reresolve|passed|failed\" | head",
   "description": "Spot-check plan 13 + re-run folder-reresolve test"
 }
 ```
@@ -4367,7 +4367,7 @@ id: toolu_01G5M2ZHjPttrpio7wVCQyUA
   "subagent_type": "gsd-executor",
   "model": "sonnet",
   "run_in_background": false,
-  "prompt": "<objective>\nExecute plan 14 (gap-closure, FINAL) of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/Users/myankelev/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-14-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-13-SUMMARY.md (the SDK `forceResolve` mechanism you consume)\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md (the gap + the ~14 other e2e failures to re-triage)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n- ${PROJECT_ROOT}/docs/TESTING.md and .github/workflows/web-e2e.yml (the canonical web-e2e stack recipe, if you run the suite)\n</files_to_read>\n\n<critical_constraints>\n- Plan 14 threads `{ forceResolve: true }` into the three web freshness legs so they reach plan-13's gated live-resolve path: `apps/web/src/hooks/useFolderNavigation.ts` `refreshFolderListing` (~L68) AND the already-loaded `navigateTo` branch (~L224-230), and `apps/web/src/hooks/useSyncPolling.ts` `invalidateOpenFolder` (~L26). Internal write-mutation chokepoints keep the cached fast path (do NOT add forceResolve there).\n- **D-07 boundary stays green:** you only add a boolean option to existing `@cipherbox/sdk` facade calls — introduce NO runtime `@cipherbox/sdk-core`/`@cipherbox/core`/raw-IPFS imports. After changes, the allowlist-free two-step grep gate must still return zero.\n- […]
+  "prompt": "<objective>\nExecute plan 14 (gap-closure, FINAL) of phase 68.2-sdk-owned-read-chain-and-resolved-folder-listings.\nCommit each task atomically. Create SUMMARY.md.\n</objective>\n\n<sequential_execution>\nYou are running as a SEQUENTIAL executor agent on the main working tree (branch feat/sdk-owned-read-chain-and-resolved-folder-listings). NOT a worktree.\nUse normal git commits (hooks run by default). Do NOT pass --no-verify.\nREQUIRED ORDER at the end: Write SUMMARY.md → commit it → only then any narration.\n</sequential_execution>\n\n<execution_context>\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/workflows/execute-plan.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/templates/summary.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/checkpoints.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/tdd.md\n@/home/<USER>/Code/random/cipher-box/.claude/gsd-core/references/executor-examples.md\n</execution_context>\n\n<files_to_read>\nFirst: `PROJECT_ROOT=$(git rev-parse --show-toplevel)`\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-14-PLAN.md (THE PLAN — source of truth)\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-13-SUMMARY.md (the SDK `forceResolve` mechanism you consume)\n- ${PROJECT_ROOT}/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md (the gap + the ~14 other e2e failures to re-triage)\n- ${PROJECT_ROOT}/.planning/PROJECT.md\n- ${PROJECT_ROOT}/.planning/STATE.md\n- ${PROJECT_ROOT}/.planning/config.json\n- ${PROJECT_ROOT}/CLAUDE.md\n- ${PROJECT_ROOT}/.claude/skills/ (if present)\n- ${PROJECT_ROOT}/docs/TESTING.md and .github/workflows/web-e2e.yml (the canonical web-e2e stack recipe, if you run the suite)\n</files_to_read>\n\n<critical_constraints>\n- Plan 14 threads `{ forceResolve: true }` into the three web freshness legs so they reach plan-13's gated live-resolve path: `apps/web/src/hooks/useFolderNavigation.ts` `refreshFolderListing` (~L68) AND the already-loaded `navigateTo` branch (~L224-230), and `apps/web/src/hooks/useSyncPolling.ts` `invalidateOpenFolder` (~L26). Internal write-mutation chokepoints keep the cached fast path (do NOT add forceResolve there).\n- **D-07 boundary stays green:** you only add a boolean option to existing `@cipherbox/sdk` facade calls — introduce NO runtime `@cipherbox/sdk-core`/`@cipherbox/core`/raw-IPFS imports. After changes, the allowlist-free two-step grep gate must still return zero.\n- […]
 
 > TOOL
 
@@ -4380,7 +4380,7 @@ Clean working tree, all commits landed.
 
 **Plan:** 68.2-14
 **Tasks:** 2/2
-**SUMMARY:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-14-SUMMARY.md`
+**SUMMARY:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-14-SUMMARY.md`
 
 **Commits:**
 - `1da0aad28`: feat(68.2-14): thread forceResolve into web nav and poll freshness legs
@@ -4406,7 +4406,7 @@ tool_use Bash
 id: toolu_01RPW2jqHGQpyXiLL9bTQHy5
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===plan 14 verify===\"\ngit log --oneline --grep=\"68.2-14\" | head -2 | cat\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"=== forceResolve threaded into the 3 web freshness legs? ===\"\ngrep -rn \"forceResolve\" apps/web/src/hooks/useFolderNavigation.ts apps/web/src/hooks/useSyncPolling.ts 2>/dev/null | head\necho \"\"\necho \"=== SDK-READ-03 now [x]? (all 4 complete) ===\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/(\\*\\*SDK-READ-0[0-9]\\*\\*).*/\\1/'\necho \"\"\necho \"=== D-07 grep gate STILL clean after web wiring? (independent re-run) ===\"\nA=$(grep -rnE \"from .@cipherbox/(sdk-core|core).\" apps/web/src --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | grep -vE \"import type \\{\" | grep -vE \"import \\{( *type [A-Za-z0-9_]+,?)+ *\\}\" | grep -v \"__tests__\")\nB=$(grep -rln \"fetchFromIpfs\\|addToIpfs\\|unpinFromIpfs\\|lib/api/ipfs\" apps/web/src --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | grep -v \"__tests__\")\n[ -z \"$A\" ] && [ -z \"$B\" ] && echo \">>> GATE_CLEAN ✓\" || { echo \"A:$A\"; echo \"B:$B\"; }\necho \"\"\necho \"=== all 14 plans have SUMMARYs ===\"\nls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md | wc -l | tr -d ' ' | xargs echo \"SUMMARYs:\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===plan 14 verify===\"\ngit log --oneline --grep=\"68.2-14\" | head -2 | cat\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed), HEAD $(git rev-parse --short HEAD)\"\necho \"\"\necho \"=== forceResolve threaded into the 3 web freshness legs? ===\"\ngrep -rn \"forceResolve\" apps/web/src/hooks/useFolderNavigation.ts apps/web/src/hooks/useSyncPolling.ts 2>/dev/null | head\necho \"\"\necho \"=== SDK-READ-03 now [x]? (all 4 complete) ===\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/(\\*\\*SDK-READ-0[0-9]\\*\\*).*/\\1/'\necho \"\"\necho \"=== D-07 grep gate STILL clean after web wiring? (independent re-run) ===\"\nA=$(grep -rnE \"from .@cipherbox/(sdk-core|core).\" apps/web/src --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | grep -vE \"import type \\{\" | grep -vE \"import \\{( *type [A-Za-z0-9_]+,?)+ *\\}\" | grep -v \"__tests__\")\nB=$(grep -rln \"fetchFromIpfs\\|addToIpfs\\|unpinFromIpfs\\|lib/api/ipfs\" apps/web/src --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | grep -v \"__tests__\")\n[ -z \"$A\" ] && [ -z \"$B\" ] && echo \">>> GATE_CLEAN ✓\" || { echo \"A:$A\"; echo \"B:$B\"; }\necho \"\"\necho \"=== all 14 plans have SUMMARYs ===\"\nls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md | wc -l | tr -d ' ' | xargs echo \"SUMMARYs:\"",
   "description": "Verify plan 14 wiring + D-07 gate + requirement state"
 }
 ```
@@ -4474,7 +4474,7 @@ id: toolu_01C9kXn3TJikxMAg3au58qrE
 
 **Status:** human_needed
 **Score:** 4/5 must-haves verified (1 present, behavior-unverified)
-**Report:** `/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md`
+**Report:** `/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md`
 
 ### The prior BLOCKER is genuinely closed
 
@@ -4499,7 +4499,7 @@ tool_use Bash
 id: toolu_011VFWXT98nA3EGPaKjXAfBq
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ndate -u +\"%Y-%m-%dT%H:%M:%SZ\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ndate -u +\"%Y-%m-%dT%H:%M:%SZ\"",
   "description": "Get ISO timestamp for UAT"
 }
 ```
@@ -4518,7 +4518,7 @@ tool_use Write
 id: toolu_015n9iCBxwEjXT6xcXpvGufD
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md",
   "content": "---\nstatus: testing\nphase: 68.2-sdk-owned-read-chain-and-resolved-folder-listings\nsource: [68.2-VERIFICATION.md]\nstarted: 2026-07-06T09:58:45Z\nupdated: 2026-07-06T09:58:45Z\n---\n\n## Current Test\n\nnumber: 1\nname: Independent/CI web-e2e re-confirmation of the SC#5 desync fix + full-suite triage\nexpected: |\n  `pnpm --filter @cipherbox/web-e2e test -- shared-folder-desync` passes step 3.1\n  (owner/second client sees a grantee's upload into a shared folder WITHOUT the\n  owner writing first; size/modifiedAt render from the resolved listing — not em-dash / not 1970).\n  Ideally run on CI/fresh containers. Then a full `pnpm --filter @cipherbox/web-e2e test`\n  to confirm the 13 residual local first-failures (documented per-spec in 68.2-14-SUMMARY.md,\n  none matching the \"renders EMPTY DIRECTORY\" desync symptom) are pre-existing 68.1 debt\n  (GAP-1 resolveFileMetadata AEAD, GAP-2 cold-reload DFS timeout) + local long-uptime-stack\n  flake, NOT a 68.2 regression.\nawaiting: user response\n\n## Tests\n\n### 1. Independent/CI web-e2e re-confirmation of the SC#5 desync fix + full-suite triage\n\nexpected: shared-folder-desync.spec.ts step 3.1 passes on CI/fresh containers; the 13 residual full-suite failures confirmed pre-existing (not a 68.2 regression). Plan 14 already ran the desync spec 4/4 locally; this item is an independent/CI re-confirmation because the verifier could not re-run the torn-down stack in its pass.\nresult: [pending]\n\n## Summary\n\ntotal: 1\npassed: 0\nissues: 0\npending: 1\nskipped: 0\nblocked: 0\n\n## Gaps\n"
 }
 ```
@@ -4528,7 +4528,7 @@ id: toolu_015n9iCBxwEjXT6xcXpvGufD
 tool_result
 id: toolu_015n9iCBxwEjXT6xcXpvGufD
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4537,7 +4537,7 @@ tool_use Bash
 id: toolu_01H6TdzNfbBSfL9FcZyyzikS
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\ngit add \"$PHASE_DIR/68.2-UAT.md\" \"$PHASE_DIR/68.2-VERIFICATION.md\" 2>/dev/null\ngsd_run query commit \"test(68.2): persist human-verification UAT + re-verification (human_needed — CI web-e2e re-confirm)\" --files \"$PHASE_DIR/68.2-UAT.md\" \"$PHASE_DIR/68.2-VERIFICATION.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"tree changed:\"\necho \"\"\necho \"=== phase 68.2 final tally ===\"\necho \"plans: $(ls $PHASE_DIR/*-SUMMARY.md | wc -l | tr -d ' ')/14 executed | branch commits ahead of origin/main: $(git rev-list --count origin/main..HEAD)\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/(\\*\\*SDK-READ-0[0-9]\\*\\*).*/\\1/' | tr '\\n' ' '; echo \"\"\necho \"VERIFICATION status: $(grep -m1 '^status:' $PHASE_DIR/68.2-VERIFICATION.md)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\nPHASE_DIR=\".planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\"\ngit add \"$PHASE_DIR/68.2-UAT.md\" \"$PHASE_DIR/68.2-VERIFICATION.md\" 2>/dev/null\ngsd_run query commit \"test(68.2): persist human-verification UAT + re-verification (human_needed — CI web-e2e re-confirm)\" --files \"$PHASE_DIR/68.2-UAT.md\" \"$PHASE_DIR/68.2-VERIFICATION.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"tree changed:\"\necho \"\"\necho \"=== phase 68.2 final tally ===\"\necho \"plans: $(ls $PHASE_DIR/*-SUMMARY.md | wc -l | tr -d ' ')/14 executed | branch commits ahead of origin/main: $(git rev-list --count origin/main..HEAD)\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/(\\*\\*SDK-READ-0[0-9]\\*\\*).*/\\1/' | tr '\\n' ' '; echo \"\"\necho \"VERIFICATION status: $(grep -m1 '^status:' $PHASE_DIR/68.2-VERIFICATION.md)\"",
   "description": "Commit UAT + re-verification, show final tally"
 }
 ```
@@ -4616,7 +4616,7 @@ tool_use Bash
 id: toolu_01Sy1rcwhet8DWHPpQMca3kj
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== web-e2e test script(s) ===\"\nnode -e \"const p=require('./tests/web-e2e/package.json'); console.log(JSON.stringify(p.scripts,null,2));\" 2>/dev/null || echo \"(no tests/web-e2e/package.json)\"\necho \"\"\necho \"=== root web-e2e-related scripts ===\"\nnode -e \"const p=require('./package.json'); for(const [k,v] of Object.entries(p.scripts||{})) if(/e2e|web-e2e/i.test(k)) console.log(k+': '+v);\" 2>/dev/null\necho \"\"\necho \"=== playwright webServer / stack config (how the suite boots services) ===\"\nsed -n '1,60p' tests/web-e2e/playwright.config.ts 2>/dev/null | grep -nE \"webServer|command|url|baseURL|port|reuseExisting|timeout\" | head -20\necho \"\"\necho \"=== is a stack helper / docker compose referenced in the e2e CI? ===\"\ngrep -nE \"docker|compose|kubo|postgres|redis|TEST_LOGIN_SECRET|api dev|pnpm.*dev|reuseExistingServer\" .github/workflows/web-e2e.yml 2>/dev/null | head -25",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== web-e2e test script(s) ===\"\nnode -e \"const p=require('./tests/web-e2e/package.json'); console.log(JSON.stringify(p.scripts,null,2));\" 2>/dev/null || echo \"(no tests/web-e2e/package.json)\"\necho \"\"\necho \"=== root web-e2e-related scripts ===\"\nnode -e \"const p=require('./package.json'); for(const [k,v] of Object.entries(p.scripts||{})) if(/e2e|web-e2e/i.test(k)) console.log(k+': '+v);\" 2>/dev/null\necho \"\"\necho \"=== playwright webServer / stack config (how the suite boots services) ===\"\nsed -n '1,60p' tests/web-e2e/playwright.config.ts 2>/dev/null | grep -nE \"webServer|command|url|baseURL|port|reuseExisting|timeout\" | head -20\necho \"\"\necho \"=== is a stack helper / docker compose referenced in the e2e CI? ===\"\ngrep -nE \"docker|compose|kubo|postgres|redis|TEST_LOGIN_SECRET|api dev|pnpm.*dev|reuseExistingServer\" .github/workflows/web-e2e.yml 2>/dev/null | head -25",
   "description": "Inspect web-e2e stack recipe"
 }
 ```
@@ -4677,7 +4677,7 @@ id: toolu_01514U2UWMhjQV6YoKCg3P3e
   "description": "Run web-e2e stack + desync spec",
   "subagent_type": "general-purpose",
   "run_in_background": true,
-  "prompt": "Independently re-run the CipherBox web-e2e suite on branch `feat/sdk-owned-read-chain-and-resolved-folder-listings` to confirm the Phase 68.2 SC#5 desync fix, then triage the full suite. Work in /Users/myankelev/Code/random/cipher-box (the MAIN checkout — NOT the ../cipher-box-phase69 worktree).\n\n## Context\nPhase 68.2 just landed a fix for the \"owner doesn't see a grantee's shared-folder upload without writing first\" desync bug. The deterministic acceptance is `tests/web-e2e/tests/shared-folder-desync.spec.ts` step 3.1. A prior executor ran it 4/4 but tore down the stack; you are independently re-confirming.\n\n## Canonical recipe (from .github/workflows/web-e2e.yml + docs/TESTING.md — READ BOTH first for exact env)\nThe suite needs a full local stack:\n- **Docker services:** postgres:16-alpine (user/pass postgres/postgres), ipfs/kubo:v0.42.0 (must set CORS: `ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '[\"*\"]'` + Allow-Methods GET/POST/OPTIONS on both API + Gateway, then `docker restart` kubo and wait for `ipfs id`), redis:7-alpine.\n- **API from source** (`apps/api`): write `apps/api/.env` with DB_* (postgres/postgres/localhost), `TEST_LOGIN_SECRET=[REDACTED]` (MUST match what the e2e login uses — misalignment = auth failures across the whole suite), Redis URL, and run migrations then `pnpm --filter @cipherbox/api dev` (or start:prod from build) in the background. Confirm it's healthy (curl its health endpoint).\n- **someguy / delegated routing** at http://localhost:3001 […]
+  "prompt": "Independently re-run the CipherBox web-e2e suite on branch `feat/sdk-owned-read-chain-and-resolved-folder-listings` to confirm the Phase 68.2 SC#5 desync fix, then triage the full suite. Work in /home/<USER>/Code/random/cipher-box (the MAIN checkout — NOT the ../cipher-box-phase69 worktree).\n\n## Context\nPhase 68.2 just landed a fix for the \"owner doesn't see a grantee's shared-folder upload without writing first\" desync bug. The deterministic acceptance is `tests/web-e2e/tests/shared-folder-desync.spec.ts` step 3.1. A prior executor ran it 4/4 but tore down the stack; you are independently re-confirming.\n\n## Canonical recipe (from .github/workflows/web-e2e.yml + docs/TESTING.md — READ BOTH first for exact env)\nThe suite needs a full local stack:\n- **Docker services:** postgres:16-alpine (user/pass postgres/postgres), ipfs/kubo:v0.42.0 (must set CORS: `ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '[\"*\"]'` + Allow-Methods GET/POST/OPTIONS on both API + Gateway, then `docker restart` kubo and wait for `ipfs id`), redis:7-alpine.\n- **API from source** (`apps/api`): write `apps/api/.env` with DB_* (postgres/postgres/localhost), `TEST_LOGIN_SECRET=[REDACTED]` (MUST match what the e2e login uses — misalignment = auth failures across the whole suite), Redis URL, and run migrations then `pnpm --filter @cipherbox/api dev` (or start:prod from build) in the background. Confirm it's healthy (curl its health endpoint).\n- **someguy / delegated routing** at http://localhost:3001 […]
 
 > TOOL
 
@@ -4712,7 +4712,7 @@ tool_use Bash
 id: toolu_01FLK8BcdQ1vF5MDypXHRLon
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"branch: $(git rev-parse --abbrev-ref HEAD) | HEAD: $(git rev-parse --short HEAD)\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed)\"\necho \"plans with SUMMARY: $(ls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md 2>/dev/null | wc -l | tr -d ' ')/14\"\necho \"SDK-READ: $(grep -E '^\\- \\[[ x]\\] \\*\\*SDK-READ' .planning/REQUIREMENTS.md | sed -E 's/.*(SDK-READ-0[0-9]).*\\[([ x])\\].*/\\1/' 2>/dev/null | tr '\\n' ' ')\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/^\\- \\[([ x])\\] \\*\\*(SDK-READ-0[0-9])\\*\\*.*/\\2=[\\1]/' | tr '\\n' ' '; echo \"\"\necho \"VERIFICATION: $(grep -m1 '^status:' .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md)\"\necho \"last commit: $(git log --oneline -1 | cat)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"branch: $(git rev-parse --abbrev-ref HEAD) | HEAD: $(git rev-parse --short HEAD)\"\necho \"tree ($(git status --porcelain|wc -l|tr -d ' ') changed)\"\necho \"plans with SUMMARY: $(ls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/*-SUMMARY.md 2>/dev/null | wc -l | tr -d ' ')/14\"\necho \"SDK-READ: $(grep -E '^\\- \\[[ x]\\] \\*\\*SDK-READ' .planning/REQUIREMENTS.md | sed -E 's/.*(SDK-READ-0[0-9]).*\\[([ x])\\].*/\\1/' 2>/dev/null | tr '\\n' ' ')\"\ngrep -E \"^\\- \\[[ x]\\] \\*\\*SDK-READ\" .planning/REQUIREMENTS.md | sed -E 's/^\\- \\[([ x])\\] \\*\\*(SDK-READ-0[0-9])\\*\\*.*/\\2=[\\1]/' | tr '\\n' ' '; echo \"\"\necho \"VERIFICATION: $(grep -m1 '^status:' .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md)\"\necho \"last commit: $(git log --oneline -1 | cat)\"",
   "description": "Confirm state before ignoring stale wake"
 }
 ```
@@ -4867,7 +4867,7 @@ tool_use Bash
 id: toolu_01UgxA5D3PjsuaCCv5vcTPZK
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== docker services ===\"\ndocker ps --format '{{.Image}} -> {{.Ports}}' 2>/dev/null | grep -Ei \"postgres|kubo|redis|someguy\" || echo \"(no docker or none matching)\"\necho \"\"\necho \"=== listening ports of interest ===\"\nfor p in 5432 5001 8080 6379 3001 5173 3000 3010; do\n  if lsof -nP -iTCP:$p -sTCP:LISTEN >/dev/null 2>&1; then echo \"  :$p LISTENING\"; fi\ndone\necho \"\"\necho \"=== orphaned playwright / vite / api node procs ===\"\npgrep -fl \"playwright\" 2>/dev/null | head -3 || echo \"  no playwright\"\npgrep -fl \"vite\" 2>/dev/null | head -3 || echo \"  no vite\"\npgrep -fl \"apps/api\" 2>/dev/null | head -3 || echo \"  no api-from-source\"\necho \"\"\necho \"=== API health (try common ports) ===\"\nfor p in 3000 3010; do curl -s -m 2 \"http://localhost:$p/health\" 2>/dev/null | head -c 120 && echo \" <- :$p\" || true; done\necho \"\"\necho \"=== tree still clean (agent was verification-only)? ===\"\ngit status --porcelain | head; echo \"changed: $(git status --porcelain | wc -l | tr -d ' ')\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== docker services ===\"\ndocker ps --format '{{.Image}} -> {{.Ports}}' 2>/dev/null | grep -Ei \"postgres|kubo|redis|someguy\" || echo \"(no docker or none matching)\"\necho \"\"\necho \"=== listening ports of interest ===\"\nfor p in 5432 5001 8080 6379 3001 5173 3000 3010; do\n  if lsof -nP -iTCP:$p -sTCP:LISTEN >/dev/null 2>&1; then echo \"  :$p LISTENING\"; fi\ndone\necho \"\"\necho \"=== orphaned playwright / vite / api node procs ===\"\npgrep -fl \"playwright\" 2>/dev/null | head -3 || echo \"  no playwright\"\npgrep -fl \"vite\" 2>/dev/null | head -3 || echo \"  no vite\"\npgrep -fl \"apps/api\" 2>/dev/null | head -3 || echo \"  no api-from-source\"\necho \"\"\necho \"=== API health (try common ports) ===\"\nfor p in 3000 3010; do curl -s -m 2 \"http://localhost:$p/health\" 2>/dev/null | head -c 120 && echo \" <- :$p\" || true; done\necho \"\"\necho \"=== tree still clean (agent was verification-only)? ===\"\ngit status --porcelain | head; echo \"changed: $(git status --porcelain | wc -l | tr -d ' ')\"",
   "description": "Assess stack + orphaned processes after stopping agent"
 }
 ```
@@ -4895,11 +4895,11 @@ ipfs/kubo:v0.40.0 -> 0.0.0.0:4002->4001/tcp, 0.0.0.0:4002->4001/udp, [::]:4002->
   :3000 LISTENING
 
 === orphaned playwright / vite / api node procs ===
-69075 /Users/myankelev/.nvm/versions/node/v22.22.3/bin/node /Users/myankelev/Code/random/cipher-box/node_modules/.pnpm/playwright@1.57.0/node_modules/playwright/lib/common/process.js
-69076 /Users/myankelev/Library/Caches/ms-playwright/chromium_headless_shell-1200/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/4x/s86wzqx141j785tv6jw_mkxw0000gn/T/playwright_chromiumdev_profile-zc7Ogn --remote-debugging-pipe --no-startup-window
-69080 /Users/myankelev/Library/Caches/ms-playwright/chromium_headless_shell-1200/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --no-sandbox --disable-breakpad --headless --use-angle=swiftshader-webgl --enable-unsafe-swiftshader --gpu-preferences=SAAAAAAAAAAgAAAEAAAAAAAAAAAAAGAAAwAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --use-gl=angle --shared-files --field-trial-handle=1718379636,r,6481477795372549332,7778649673059424362,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AcceptCHFrame,AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,RenderDocument,ThirdPartyStoragePartitioning,Translate --variations-seed-version --trace-process-track-uuid=3190708988185955192
-66275 node /Users/myankelev/Code/random/cipher-box/apps/api/node_modules/.bin/../@nestjs/cli/bin/nest.js start --watch
-66300 node --enable-source-maps /Users/myankelev/Code/random/cipher-box/apps/api/dist/main
+69075 /home/<USER>/.nvm/versions/node/v22.22.3/bin/node /home/<USER>/Code/random/cipher-box/node_modules/.pnpm/playwright@1.57.0/node_modules/playwright/lib/common/process.js
+69076 /home/<USER>/Library/Caches/ms-playwright/chromium_headless_shell-1200/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/4x/s86wzqx141j785tv6jw_mkxw0000gn/T/playwright_chromiumdev_profile-zc7Ogn --remote-debugging-pipe --no-startup-window
+69080 /home/<USER>/Library/Caches/ms-playwright/chromium_headless_shell-1200/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --no-sandbox --disable-breakpad --headless --use-angle=swiftshader-webgl --enable-unsafe-swiftshader --gpu-preferences=SAAAAAAAAAAgAAAEAAAAAAAAAAAAAGAAAwAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --use-gl=angle --shared-files --field-trial-handle=1718379636,r,6481477795372549332,7778649673059424362,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AcceptCHFrame,AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,RenderDocument,ThirdPartyStoragePartitioning,Translate --variations-seed-version --trace-process-track-uuid=3190708988185955192
+66275 node /home/<USER>/Code/random/cipher-box/apps/api/node_modules/.bin/../@nestjs/cli/bin/nest.js start --watch
+66300 node --enable-source-maps /home/<USER>/Code/random/cipher-box/apps/api/dist/main
 
 === API health (try common ports) ===
 {"status":"ok","info":{"database":{"status":"up"}},"error":{},"details":{"database":{"status":"up"}},"version":"0.44.1"} <- :3000
@@ -4919,7 +4919,7 @@ tool_use Bash
 id: toolu_01UdCA7ejFQjU5yRhNzqfjT6
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== killing orphaned full-suite playwright + chromium ===\"\npkill -f \"playwright/lib/common/process\" 2>/dev/null && echo \"killed playwright runner\" || echo \"(no playwright runner)\"\npkill -f \"chrome-headless-shell\" 2>/dev/null && echo \"killed chromium\" || echo \"(no chromium)\"\nsleep 2\necho \"remaining playwright procs: $(pgrep -fl playwright 2>/dev/null | grep -v pgrep | wc -l | tr -d ' ')\"\necho \"\"\necho \"=== confirm API still healthy + which web server port is up ===\"\ncurl -s -m 2 http://localhost:3000/health | head -c 80; echo \"\"\nfor p in 5173 4173 3000; do lsof -nP -iTCP:$p -sTCP:LISTEN >/dev/null 2>&1 && echo \"  web/api :$p up\"; done\necho \"\"\necho \"=== how does playwright bring up the web server? (webServer block) ===\"\nsed -n '19,60p' tests/web-e2e/playwright.config.ts | grep -nA6 \"webServer\" | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== killing orphaned full-suite playwright + chromium ===\"\npkill -f \"playwright/lib/common/process\" 2>/dev/null && echo \"killed playwright runner\" || echo \"(no playwright runner)\"\npkill -f \"chrome-headless-shell\" 2>/dev/null && echo \"killed chromium\" || echo \"(no chromium)\"\nsleep 2\necho \"remaining playwright procs: $(pgrep -fl playwright 2>/dev/null | grep -v pgrep | wc -l | tr -d ' ')\"\necho \"\"\necho \"=== confirm API still healthy + which web server port is up ===\"\ncurl -s -m 2 http://localhost:3000/health | head -c 80; echo \"\"\nfor p in 5173 4173 3000; do lsof -nP -iTCP:$p -sTCP:LISTEN >/dev/null 2>&1 && echo \"  web/api :$p up\"; done\necho \"\"\necho \"=== how does playwright bring up the web server? (webServer block) ===\"\nsed -n '19,60p' tests/web-e2e/playwright.config.ts | grep -nA6 \"webServer\" | head -20",
   "description": "Kill orphan playwright, confirm stack, inspect webServer config"
 }
 ```
@@ -4951,7 +4951,7 @@ tool_use Bash
 id: toolu_014YroDwfH6VToPMtSGp6SRT
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== what are the 12 playwright procs? (first few cmdlines) ===\"\npgrep -fl playwright 2>/dev/null | grep -v pgrep | head -4\necho \"\"\necho \"=== kill lingering playwright/chromium/vite test procs (NOT the nest API, NOT docker) ===\"\npkill -9 -f \"node_modules/.pnpm/playwright\" 2>/dev/null; echo \"pw runner kill rc=$?\"\npkill -9 -f \"chrome-headless-shell\" 2>/dev/null; echo \"chromium kill rc=$?\"\npkill -9 -f \"web-e2e\" 2>/dev/null; echo \"web-e2e kill rc=$?\"\npkill -9 -f \"vite\" 2>/dev/null; echo \"vite kill rc=$?\"\nsleep 2\necho \"remaining playwright: $(pgrep -f 'node_modules/.pnpm/playwright' 2>/dev/null | wc -l | tr -d ' ')  chromium: $(pgrep -f chrome-headless-shell 2>/dev/null | wc -l | tr -d ' ')\"\necho \"\"\necho \"=== API + nest still alive (must NOT have killed it)? ===\"\npgrep -fl \"nest.js start\\|apps/api/dist/main\" 2>/dev/null | head -2\ncurl -s -m 3 http://localhost:3000/health | head -c 60; echo \"\"\necho \"=== someguy at :3001 (DELEGATED_ROUTING_URL target) up? ===\"\ncurl -s -m 3 http://localhost:3001/ >/dev/null 2>&1 && echo \":3001 responds\" || echo \":3001 no response (check)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== what are the 12 playwright procs? (first few cmdlines) ===\"\npgrep -fl playwright 2>/dev/null | grep -v pgrep | head -4\necho \"\"\necho \"=== kill lingering playwright/chromium/vite test procs (NOT the nest API, NOT docker) ===\"\npkill -9 -f \"node_modules/.pnpm/playwright\" 2>/dev/null; echo \"pw runner kill rc=$?\"\npkill -9 -f \"chrome-headless-shell\" 2>/dev/null; echo \"chromium kill rc=$?\"\npkill -9 -f \"web-e2e\" 2>/dev/null; echo \"web-e2e kill rc=$?\"\npkill -9 -f \"vite\" 2>/dev/null; echo \"vite kill rc=$?\"\nsleep 2\necho \"remaining playwright: $(pgrep -f 'node_modules/.pnpm/playwright' 2>/dev/null | wc -l | tr -d ' ')  chromium: $(pgrep -f chrome-headless-shell 2>/dev/null | wc -l | tr -d ' ')\"\necho \"\"\necho \"=== API + nest still alive (must NOT have killed it)? ===\"\npgrep -fl \"nest.js start\\|apps/api/dist/main\" 2>/dev/null | head -2\ncurl -s -m 3 http://localhost:3000/health | head -c 60; echo \"\"\necho \"=== someguy at :3001 (DELEGATED_ROUTING_URL target) up? ===\"\ncurl -s -m 3 http://localhost:3001/ >/dev/null 2>&1 && echo \":3001 responds\" || echo \":3001 no response (check)\"",
   "description": "Clear playwright orphans, confirm API + someguy survive"
 }
 ```
@@ -4962,7 +4962,7 @@ tool_result
 id: toolu_014YroDwfH6VToPMtSGp6SRT
 ```
 === what are the 12 playwright procs? (first few cmdlines) ===
-70667 /bin/zsh -c source /Users/myankelev/.claude/shell-snapshots/snapshot-zsh-1783011132429-nltelr.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'cd /Users/myankelev/Code/random/cipher-box
+70667 /bin/zsh -c source /home/<USER>/.claude/shell-snapshots/snapshot-zsh-1783011132429-nltelr.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && eval 'cd /home/<USER>/Code/random/cipher-box
 echo "=== what are the 12 playwright procs? (first few cmdlines) ==="
 echo ""
 echo "=== kill lingering playwright/chromium/vite test procs (NOT the nest API, NOT docker) ==="
@@ -4990,7 +4990,7 @@ tool_use Bash
 id: toolu_01SikpvTDSfy29MRqFU7NoXz
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== desync spec standalone (SC#5 acceptance) ===\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 600 pnpm --filter @cipherbox/web-e2e test -- shared-folder-desync 2>&1 | tail -40\necho \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== desync spec standalone (SC#5 acceptance) ===\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 600 pnpm --filter @cipherbox/web-e2e test -- shared-folder-desync 2>&1 | tail -40\necho \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Run shared-folder-desync spec standalone",
   "timeout": 620000
 }
@@ -5003,7 +5003,7 @@ id: toolu_01SikpvTDSfy29MRqFU7NoXz
 ```
 === desync spec standalone (SC#5 acceptance) ===
 
-> @cipherbox/web-e2e@0.35.0 test /Users/myankelev/Code/random/cipher-box/tests/web-e2e
+> @cipherbox/web-e2e@0.35.0 test /home/<USER>/Code/random/cipher-box/tests/web-e2e
 > playwright test -- shared-folder-desync
 
 
@@ -5030,7 +5030,7 @@ tool_use Bash
 id: toolu_01Vs6RK7bW4NdStqCrcvXnJW
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== batch-download standalone (investigate the 93ms SelectionActionBar fast-fail) ===\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 400 pnpm --filter @cipherbox/web-e2e test -- batch-download 2>&1 | grep -vE \"^\\s*$\" | tail -50\necho \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== batch-download standalone (investigate the 93ms SelectionActionBar fast-fail) ===\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 400 pnpm --filter @cipherbox/web-e2e test -- batch-download 2>&1 | grep -vE \"^\\s*$\" | tail -50\necho \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Run batch-download spec standalone to investigate SelectionActionBar",
   "timeout": 420000
 }
@@ -5042,7 +5042,7 @@ tool_result
 id: toolu_01Vs6RK7bW4NdStqCrcvXnJW
 ```
 === batch-download standalone (investigate the 93ms SelectionActionBar fast-fail) ===
-> @cipherbox/web-e2e@0.35.0 test /Users/myankelev/Code/random/cipher-box/tests/web-e2e
+> @cipherbox/web-e2e@0.35.0 test /home/<USER>/Code/random/cipher-box/tests/web-e2e
 > playwright test -- batch-download
 [2mRunning [22m5[2m tests using [22m1[2m worker[22m
   [32m✓[39m  [2m1 [22m[chromium] › tests/batch-download.spec.ts:67:3 › Batch Download › upload test files for batch operations[2m (837ms)[22m
@@ -5061,7 +5061,7 @@ id: toolu_01Vs6RK7bW4NdStqCrcvXnJW
      [90m 100 |[39m
      [90m 101 |[39m     [90m// Clear selection for next test[39m
      [90m 102 |[39m     [36mawait[39m selectionBar[33m.[39mclickClear()[33m;[39m[0m
-    [2m    at /Users/myankelev/Code/random/cipher-box/tests/web-e2e/tests/batch-download.spec.ts:99:52[22m
+    [2m    at /home/<USER>/Code/random/cipher-box/tests/web-e2e/tests/batch-download.spec.ts:99:52[22m
 [2m    attachment #1: [1mscreenshot[2m (image/png) [2m──────────────────────────────────────────────────────────[2m[22m
 [2m    test-results/batch-download-Batch-Downl-638f1--shows-selection-action-bar-chromium/test-failed-1.png[22m
 [2m    [2m────────────────────────────────────────────────────────────────────────────────────────────────[2m[22m
@@ -5081,7 +5081,7 @@ tool_use Bash
 id: toolu_016g59oAypaqi2EK8QcYQpdG
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== did 68.2 (origin/main..HEAD) modify SelectionActionBar or its data source? ===\"\ngit log --oneline origin/main..HEAD -- apps/web/src/components/file-browser/SelectionActionBar.tsx | cat\necho \"--- (if empty, SelectionActionBar.tsx itself untouched by 68.2) ---\"\necho \"\"\necho \"=== is this failure PRE-EXISTING? check the test against origin/main (does batch-download:85 pass there?) ===\"\necho \"SelectionActionBar last-changed commit:\"\ngit log --oneline -1 -- apps/web/src/components/file-browser/SelectionActionBar.tsx | cat\necho \"\"\necho \"=== isDownloadVisible page-object definition (what selector is it checking) ===\"\ngrep -rn \"isDownloadVisible\\|download\" tests/web-e2e/page-objects/file-browser/*.ts 2>/dev/null | grep -i \"download\" | head\necho \"\"\necho \"=== playwright error-context (page state at failure — is the bar there at all?) ===\"\nCTX=$(ls -t test-results/batch-download*/error-context.md 2>/dev/null | head -1)\necho \"ctx: $CTX\"\nsed -n '1,50p' \"$CTX\" 2>/dev/null | grep -iE \"selection|download|button|action|selected|toolbar\" | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== did 68.2 (origin/main..HEAD) modify SelectionActionBar or its data source? ===\"\ngit log --oneline origin/main..HEAD -- apps/web/src/components/file-browser/SelectionActionBar.tsx | cat\necho \"--- (if empty, SelectionActionBar.tsx itself untouched by 68.2) ---\"\necho \"\"\necho \"=== is this failure PRE-EXISTING? check the test against origin/main (does batch-download:85 pass there?) ===\"\necho \"SelectionActionBar last-changed commit:\"\ngit log --oneline -1 -- apps/web/src/components/file-browser/SelectionActionBar.tsx | cat\necho \"\"\necho \"=== isDownloadVisible page-object definition (what selector is it checking) ===\"\ngrep -rn \"isDownloadVisible\\|download\" tests/web-e2e/page-objects/file-browser/*.ts 2>/dev/null | grep -i \"download\" | head\necho \"\"\necho \"=== playwright error-context (page state at failure — is the bar there at all?) ===\"\nCTX=$(ls -t test-results/batch-download*/error-context.md 2>/dev/null | head -1)\necho \"ctx: $CTX\"\nsed -n '1,50p' \"$CTX\" 2>/dev/null | grep -iE \"selection|download|button|action|selected|toolbar\" | head -20",
   "description": "Determine if SelectionActionBar failure is a 68.2 regression"
 }
 ```
@@ -5125,7 +5125,7 @@ tool_use Bash
 id: toolu_01Viq27LzfhiFxZTca3oDR2B
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== SelectionActionBar download button render condition ===\"\ngrep -nE \"download|Download|kind|isFile|selected|size|canDownload\" apps/web/src/components/file-browser/SelectionActionBar.tsx | head -25\necho \"\"\necho \"=== what data/props does SelectionActionBar receive? (top of component) ===\"\nsed -n '1,45p' apps/web/src/components/file-browser/SelectionActionBar.tsx | grep -nE \"props|interface|type |=.*\\{|selected|items|children|kind\" | head -20\necho \"\"\necho \"=== error-context page snapshot (find it properly) ===\"\nCTX=$(find test-results -name error-context.md -path \"*batch-download*\" 2>/dev/null | head -1)\necho \"ctx: $CTX\"\n[ -n \"$CTX\" ] && grep -iE \"download|move|delete|selected|selection|button\" \"$CTX\" | head -15 || echo \"(no error-context found)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== SelectionActionBar download button render condition ===\"\ngrep -nE \"download|Download|kind|isFile|selected|size|canDownload\" apps/web/src/components/file-browser/SelectionActionBar.tsx | head -25\necho \"\"\necho \"=== what data/props does SelectionActionBar receive? (top of component) ===\"\nsed -n '1,45p' apps/web/src/components/file-browser/SelectionActionBar.tsx | grep -nE \"props|interface|type |=.*\\{|selected|items|children|kind\" | head -20\necho \"\"\necho \"=== error-context page snapshot (find it properly) ===\"\nCTX=$(find test-results -name error-context.md -path \"*batch-download*\" 2>/dev/null | head -1)\necho \"ctx: $CTX\"\n[ -n \"$CTX\" ] && grep -iE \"download|move|delete|selected|selection|button\" \"$CTX\" | head -15 || echo \"(no error-context found)\"",
   "description": "Read SelectionActionBar download logic + failure page state"
 }
 ```
@@ -5174,7 +5174,7 @@ tool_use Bash
 id: toolu_01Pb9mDqnxrpFcFcBMp2ZD2z
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== utils/fileTypes.ts isFileRef — how does it classify a (now kind-less) SealedChildRef? ===\"\ngrep -nE \"isFileRef|isFolderRef|kind|export|function|=>\" apps/web/src/utils/fileTypes.ts | head -30\necho \"\"\necho \"=== did 68.2 change utils/fileTypes.ts? ===\"\ngit log --oneline origin/main..HEAD -- apps/web/src/utils/fileTypes.ts | cat\necho \"\"\necho \"=== was the download button gated on kind BEFORE 68.2? (compare isFileRef at origin/main) ===\"\ngit show origin/main:apps/web/src/utils/fileTypes.ts 2>/dev/null | grep -nE \"isFileRef|kind|kindCache|=>\" | head -15",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== utils/fileTypes.ts isFileRef — how does it classify a (now kind-less) SealedChildRef? ===\"\ngrep -nE \"isFileRef|isFolderRef|kind|export|function|=>\" apps/web/src/utils/fileTypes.ts | head -30\necho \"\"\necho \"=== did 68.2 change utils/fileTypes.ts? ===\"\ngit log --oneline origin/main..HEAD -- apps/web/src/utils/fileTypes.ts | cat\necho \"\"\necho \"=== was the download button gated on kind BEFORE 68.2? (compare isFileRef at origin/main) ===\"\ngit show origin/main:apps/web/src/utils/fileTypes.ts 2>/dev/null | grep -nE \"isFileRef|kind|kindCache|=>\" | head -15",
   "description": "Inspect isFileRef classification pre/post 68.2"
 }
 ```
@@ -5220,7 +5220,7 @@ tool_use Bash
 id: toolu_01UVH52h4ViFmcP3KBAUKTFJ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== all isFileRef call sites (which pass a kind-less SealedChildRef vs a ResolvedChild?) ===\"\ngrep -rn \"isFileRef\\|isFolderRef\" apps/web/src --include=*.ts --include=*.tsx 2>/dev/null | grep -v \"utils/fileTypes.ts\" | head -20\necho \"\"\necho \"=== who renders SelectionActionBar + what do they pass as selectedItems? ===\"\ngrep -rn \"SelectionActionBar\\|selectedItems=\" apps/web/src --include=*.tsx 2>/dev/null | grep -v \"SelectionActionBar.tsx\" | head\necho \"\"\necho \"=== does ContextMenu (another unowned flagged component) also classify kind off SealedChildRef? ===\"\ngrep -nE \"isFileRef|kind|SealedChildRef|ResolvedChild|download\" apps/web/src/components/file-browser/ContextMenu.tsx 2>/dev/null | head -12",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== all isFileRef call sites (which pass a kind-less SealedChildRef vs a ResolvedChild?) ===\"\ngrep -rn \"isFileRef\\|isFolderRef\" apps/web/src --include=*.ts --include=*.tsx 2>/dev/null | grep -v \"utils/fileTypes.ts\" | head -20\necho \"\"\necho \"=== who renders SelectionActionBar + what do they pass as selectedItems? ===\"\ngrep -rn \"SelectionActionBar\\|selectedItems=\" apps/web/src --include=*.tsx 2>/dev/null | grep -v \"SelectionActionBar.tsx\" | head\necho \"\"\necho \"=== does ContextMenu (another unowned flagged component) also classify kind off SealedChildRef? ===\"\ngrep -nE \"isFileRef|kind|SealedChildRef|ResolvedChild|download\" apps/web/src/components/file-browser/ContextMenu.tsx 2>/dev/null | head -12",
   "description": "Scope the isFileRef-on-SealedChildRef regression blast radius"
 }
 ```
@@ -5305,7 +5305,7 @@ tool_use Bash
 id: toolu_012NmRLv1UbLj8mo4yYxTBve
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=\"$CLAUDE_JOB_DIR/tmp/web-e2e-full.log\"\necho \"log: $LOG\"\n# stamp start + run the full suite detached; playwright manages per-test timeouts, 60m outer backstop\necho \"=== FULL WEB-E2E RUN START $(date -u +%H:%M:%SZ) ===\" > \"$LOG\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 3600 pnpm --filter @cipherbox/web-e2e test >> \"$LOG\" 2>&1\necho \"=== FULL WEB-E2E RUN END $(date -u +%H:%M:%SZ) exit=$? ===\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=\"$CLAUDE_JOB_DIR/tmp/web-e2e-full.log\"\necho \"log: $LOG\"\n# stamp start + run the full suite detached; playwright manages per-test timeouts, 60m outer backstop\necho \"=== FULL WEB-E2E RUN START $(date -u +%H:%M:%SZ) ===\" > \"$LOG\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 3600 pnpm --filter @cipherbox/web-e2e test >> \"$LOG\" 2>&1\necho \"=== FULL WEB-E2E RUN END $(date -u +%H:%M:%SZ) exit=$? ===\" >> \"$LOG\"",
   "description": "Run full web-e2e suite in background, log to file",
   "run_in_background": true
 }
@@ -5338,7 +5338,7 @@ tool_use Bash
 id: toolu_01WRvMSj4nJCJxBZrufTJDdd
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=\"$CLAUDE_JOB_DIR/tmp/web-e2e-full.log\"\necho \"=== final tally ===\"\ngrep -iE \"^\\s*[0-9]+ (passed|failed|flaky|skipped)|did not run\" \"$LOG\" | tail -6\necho \"\"\necho \"=== all failing specs (✘) with timing ===\"\ngrep -E \"✘|✗\" \"$LOG\" | sed -E 's/\\x1b\\[[0-9;]*m//g' | head -40\necho \"\"\necho \"=== run window ===\"\ngrep -E \"RUN START|RUN END\" \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=\"$CLAUDE_JOB_DIR/tmp/web-e2e-full.log\"\necho \"=== final tally ===\"\ngrep -iE \"^\\s*[0-9]+ (passed|failed|flaky|skipped)|did not run\" \"$LOG\" | tail -6\necho \"\"\necho \"=== all failing specs (✘) with timing ===\"\ngrep -E \"✘|✗\" \"$LOG\" | sed -E 's/\\x1b\\[[0-9;]*m//g' | head -40\necho \"\"\necho \"=== run window ===\"\ngrep -E \"RUN START|RUN END\" \"$LOG\"",
   "description": "Parse full-suite failures and tally"
 }
 ```
@@ -5373,7 +5373,7 @@ tool_use Bash
 id: toolu_01PsW3zDzG1xxH9cHvbfnC6Y
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=\"$CLAUDE_JOB_DIR/tmp/web-e2e-full.log\"\necho \"=== pass/fail tally ===\"\ngrep -oE \"[0-9]+ (passed|failed)\" \"$LOG\" | tail -4\necho \"\"\necho \"=== re-run 2 'create folder' timeout specs IN ISOLATION (fresh stack state) — flake or real? ===\"\necho \"--- writable-shares (was 30s timeout on 'create folder with text file') ---\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 300 pnpm --filter @cipherbox/web-e2e test -- writable-shares 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|passed|failed|did not run\" | head -12\necho \"EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=\"$CLAUDE_JOB_DIR/tmp/web-e2e-full.log\"\necho \"=== pass/fail tally ===\"\ngrep -oE \"[0-9]+ (passed|failed)\" \"$LOG\" | tail -4\necho \"\"\necho \"=== re-run 2 'create folder' timeout specs IN ISOLATION (fresh stack state) — flake or real? ===\"\necho \"--- writable-shares (was 30s timeout on 'create folder with text file') ---\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 300 pnpm --filter @cipherbox/web-e2e test -- writable-shares 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|passed|failed|did not run\" | head -12\necho \"EXIT: ${PIPESTATUS[0]}\"",
   "description": "Get tally + re-run writable-shares in isolation",
   "timeout": 320000
 }
@@ -5410,7 +5410,7 @@ tool_use Bash
 id: toolu_01L1dcuy83oUkwpUc8FHiAu8
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== writable-shares:140 test body (what it does + waits for) ===\"\nsed -n '140,175p' tests/web-e2e/tests/writable-shares.spec.ts\necho \"\"\necho \"=== error-context page snapshot at the 30s timeout (what's on screen?) ===\"\nCTX=$(find test-results -name \"*.md\" -path \"*writable-shares*text-file*\" 2>/dev/null | head -1)\necho \"ctx: $CTX\"\n[ -n \"$CTX\" ] && sed -n '1,60p' \"$CTX\" | grep -ivE \"^\\s*$\" | head -40 || echo \"(no context md — check error-context)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== writable-shares:140 test body (what it does + waits for) ===\"\nsed -n '140,175p' tests/web-e2e/tests/writable-shares.spec.ts\necho \"\"\necho \"=== error-context page snapshot at the 30s timeout (what's on screen?) ===\"\nCTX=$(find test-results -name \"*.md\" -path \"*writable-shares*text-file*\" 2>/dev/null | head -1)\necho \"ctx: $CTX\"\n[ -n \"$CTX\" ] && sed -n '1,60p' \"$CTX\" | grep -ivE \"^\\s*$\" | head -40 || echo \"(no context md — check error-context)\"",
   "description": "Read writable-shares:140 test + failure page state"
 }
 ```
@@ -5473,7 +5473,7 @@ tool_use Bash
 id: toolu_01L1J96kuRggYTkegX35b4sy
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== writable-shares test-results artifacts ===\"\nls -dt test-results/*writable-shares*text-file* 2>/dev/null | head -2\nDIR=$(ls -dt test-results/*writable-shares*text-file* 2>/dev/null | head -1)\necho \"dir: $DIR\"\necho \"\"\necho \"=== error-context (page accessibility snapshot at timeout — what's on screen) ===\"\n[ -n \"$DIR\" ] && cat \"$DIR/error-context.md\" 2>/dev/null | grep -ivE \"^\\s*$\" | head -35 || echo \"(none)\"\necho \"\"\necho \"=== helper: what does aliceNavigateIntoFolder / aliceCreateFolder wait for? ===\"\ngrep -rn \"aliceNavigateIntoFolder\\|const aliceCreateFolder\\|aliceCreateFolder =\\|function aliceCreateFolder\\|navigateIntoFolder\" tests/web-e2e/tests/writable-shares.spec.ts | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== writable-shares test-results artifacts ===\"\nls -dt test-results/*writable-shares*text-file* 2>/dev/null | head -2\nDIR=$(ls -dt test-results/*writable-shares*text-file* 2>/dev/null | head -1)\necho \"dir: $DIR\"\necho \"\"\necho \"=== error-context (page accessibility snapshot at timeout — what's on screen) ===\"\n[ -n \"$DIR\" ] && cat \"$DIR/error-context.md\" 2>/dev/null | grep -ivE \"^\\s*$\" | head -35 || echo \"(none)\"\necho \"\"\necho \"=== helper: what does aliceNavigateIntoFolder / aliceCreateFolder wait for? ===\"\ngrep -rn \"aliceNavigateIntoFolder\\|const aliceCreateFolder\\|aliceCreateFolder =\\|function aliceCreateFolder\\|navigateIntoFolder\" tests/web-e2e/tests/writable-shares.spec.ts | head",
   "description": "Find writable-shares failure step + page state"
 }
 ```
@@ -5514,7 +5514,7 @@ tool_use Bash
 id: toolu_01AQqszE7UzzEsesz4AE2hTT
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== aliceCreateFolder + aliceNavigateIntoFolder helpers (what they wait for) ===\"\nsed -n '60,100p' tests/web-e2e/tests/writable-shares.spec.ts\necho \"\"\necho \"=== error-context at failure (exact dir from isolation run) ===\"\nD=\"test-results/writable-shares-Writable-S-d4eeb-s-a-folder-with-a-text-file-chromium\"\ncat \"$D/error-context.md\" 2>/dev/null | grep -ivE \"^\\s*$\" | head -30 || find test-results -type d -name \"*writable-shares*\" 2>/dev/null | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== aliceCreateFolder + aliceNavigateIntoFolder helpers (what they wait for) ===\"\nsed -n '60,100p' tests/web-e2e/tests/writable-shares.spec.ts\necho \"\"\necho \"=== error-context at failure (exact dir from isolation run) ===\"\nD=\"test-results/writable-shares-Writable-S-d4eeb-s-a-folder-with-a-text-file-chromium\"\ncat \"$D/error-context.md\" 2>/dev/null | grep -ivE \"^\\s*$\" | head -30 || find test-results -type d -name \"*writable-shares*\" 2>/dev/null | head",
   "description": "Read create/navigate helpers + failure page state"
 }
 ```
@@ -5580,7 +5580,7 @@ tool_use Bash
 id: toolu_01J33f5S4b7kuvymUoq59zkE
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== test-results dirs for writable-shares ===\"\nls test-results/ 2>/dev/null | grep -i writable | head\necho \"\"\nD=$(ls -d test-results/*writable* 2>/dev/null | head -1)\necho \"dir: $D\"\necho \"--- files in it ---\"\n[ -n \"$D\" ] && ls \"$D\" 2>/dev/null\necho \"\"\necho \"--- error-context.md content (page snapshot at timeout) ---\"\n[ -n \"$D\" ] && grep -ivE \"^\\s*$\" \"$D/error-context.md\" 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== test-results dirs for writable-shares ===\"\nls test-results/ 2>/dev/null | grep -i writable | head\necho \"\"\nD=$(ls -d test-results/*writable* 2>/dev/null | head -1)\necho \"dir: $D\"\necho \"--- files in it ---\"\n[ -n \"$D\" ] && ls \"$D\" 2>/dev/null\necho \"\"\necho \"--- error-context.md content (page snapshot at timeout) ---\"\n[ -n \"$D\" ] && grep -ivE \"^\\s*$\" \"$D/error-context.md\" 2>/dev/null | head -40",
   "description": "List writable-shares artifacts and read context"
 }
 ```
@@ -5610,7 +5610,7 @@ tool_use Bash
 id: toolu_012QTwvE4tc29NdD3BqLib8U
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== re-run writable-shares (regenerate failure screenshot) ===\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 200 pnpm --filter @cipherbox/web-e2e test -- writable-shares:140 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|passed|failed|Error:|alert|test-failed|error-context|>|expect\" | head -25\necho \"\"\necho \"=== locate the regenerated screenshot + error-context ===\"\nfind test-results -name \"test-failed-1.png\" -newermt \"2 minutes ago\" 2>/dev/null | head -2\nfind test-results -name \"error-context.md\" -newermt \"2 minutes ago\" 2>/dev/null | head -1 | xargs -I{} sh -c 'echo \"--- CONTEXT ---\"; grep -ivE \"^[[:space:]]*$\" \"{}\" | head -30' 2>/dev/null",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== re-run writable-shares (regenerate failure screenshot) ===\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 200 pnpm --filter @cipherbox/web-e2e test -- writable-shares:140 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|passed|failed|Error:|alert|test-failed|error-context|>|expect\" | head -25\necho \"\"\necho \"=== locate the regenerated screenshot + error-context ===\"\nfind test-results -name \"test-failed-1.png\" -newermt \"2 minutes ago\" 2>/dev/null | head -2\nfind test-results -name \"error-context.md\" -newermt \"2 minutes ago\" 2>/dev/null | head -1 | xargs -I{} sh -c 'echo \"--- CONTEXT ---\"; grep -ivE \"^[[:space:]]*$\" \"{}\" | head -30' 2>/dev/null",
   "description": "Re-run writable-shares:140 and locate screenshot/context",
   "timeout": 220000
 }
@@ -5622,7 +5622,7 @@ tool_result
 id: toolu_012QTwvE4tc29NdD3BqLib8U
 ```
 === re-run writable-shares (regenerate failure screenshot) ===
-> @cipherbox/web-e2e@0.35.0 test /Users/myankelev/Code/random/cipher-box/tests/web-e2e
+> @cipherbox/web-e2e@0.35.0 test /home/<USER>/Code/random/cipher-box/tests/web-e2e
 > playwright test -- writable-shares:140
   ✘  1 [chromium] › tests/writable-shares.spec.ts:140:3 › Writable Shares › 1.2 Alice creates a folder with a text file (1ms)
     TypeError: Cannot read properties of undefined (reading 'page')
@@ -5643,7 +5643,7 @@ tool_use Bash
 id: toolu_01DNXdnDGL74CHzqGss1wVMX
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== run full writable-shares spec, then capture the 1.2 failure screenshot ===\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 240 pnpm --filter @cipherbox/web-e2e test -- writable-shares 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|1 passed|1 failed|Error:|Timed out|waiting for|locator\" | head -15\necho \"\"\necho \"=== freshest screenshot + context for the text-file failure ===\"\nSHOT=$(find test-results -name \"test-failed-1.png\" 2>/dev/null | grep -i \"text-file\" | head -1)\necho \"SHOT=$SHOT\"\nCTX=$(find test-results -name \"error-context.md\" 2>/dev/null | grep -i \"text-file\" | head -1)\n[ -n \"$CTX\" ] && { echo \"--- page snapshot at timeout ---\"; grep -ivE \"^[[:space:]]*$\" \"$CTX\" | head -35; }",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== run full writable-shares spec, then capture the 1.2 failure screenshot ===\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 240 pnpm --filter @cipherbox/web-e2e test -- writable-shares 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|1 passed|1 failed|Error:|Timed out|waiting for|locator\" | head -15\necho \"\"\necho \"=== freshest screenshot + context for the text-file failure ===\"\nSHOT=$(find test-results -name \"test-failed-1.png\" 2>/dev/null | grep -i \"text-file\" | head -1)\necho \"SHOT=$SHOT\"\nCTX=$(find test-results -name \"error-context.md\" 2>/dev/null | grep -i \"text-file\" | head -1)\n[ -n \"$CTX\" ] && { echo \"--- page snapshot at timeout ---\"; grep -ivE \"^[[:space:]]*$\" \"$CTX\" | head -35; }",
   "description": "Run full writable-shares spec and capture failure artifacts",
   "timeout": 260000
 }
@@ -5722,7 +5722,7 @@ tool_use Bash
 id: toolu_01Y1uzdnLu7rbtVmxyDQmHXP
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== docker containers with NAMES + uptime (identify e2e stack vs unrelated) ===\"\ndocker ps --format '{{.Names}} | {{.Image}} | up {{.RunningFor}} | {{.Ports}}' 2>/dev/null | head -20\necho \"\"\necho \"=== is there a compose file for the e2e/dev stack? ===\"\nls docker-compose*.y*ml compose*.y*ml apps/api/docker-compose*.y*ml 2>/dev/null\nfind . -maxdepth 2 -name \"docker-compose*.y*ml\" -not -path \"*/node_modules/*\" 2>/dev/null | head\necho \"\"\necho \"=== API .env — which DB/redis/kubo does the running API point at? ===\"\ngrep -E \"DB_|REDIS|IPFS|KUBO|DATABASE|TEST_LOGIN|PORT\" apps/api/.env 2>/dev/null | sed -E 's/(SECRET|PASSWORD)=.*/\\1=***/' | head -20\necho \"\"\necho \"=== docs/TESTING.md local stack recipe (how to bring it up) ===\"\ngrep -nE \"docker|compose|kubo|ipfs|someguy|pnpm.*stack|test:web-e2e|dev:stack|docker run\" docs/TESTING.md 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== docker containers with NAMES + uptime (identify e2e stack vs unrelated) ===\"\ndocker ps --format '{{.Names}} | {{.Image}} | up {{.RunningFor}} | {{.Ports}}' 2>/dev/null | head -20\necho \"\"\necho \"=== is there a compose file for the e2e/dev stack? ===\"\nls docker-compose*.y*ml compose*.y*ml apps/api/docker-compose*.y*ml 2>/dev/null\nfind . -maxdepth 2 -name \"docker-compose*.y*ml\" -not -path \"*/node_modules/*\" 2>/dev/null | head\necho \"\"\necho \"=== API .env — which DB/redis/kubo does the running API point at? ===\"\ngrep -E \"DB_|REDIS|IPFS|KUBO|DATABASE|TEST_LOGIN|PORT\" apps/api/.env 2>/dev/null | sed -E 's/(SECRET|PASSWORD)=.*/\\1=***/' | head -20\necho \"\"\necho \"=== docs/TESTING.md local stack recipe (how to bring it up) ===\"\ngrep -nE \"docker|compose|kubo|ipfs|someguy|pnpm.*stack|test:web-e2e|dev:stack|docker run\" docs/TESTING.md 2>/dev/null | head -20",
   "description": "Identify e2e stack composition safely before recreating"
 }
 ```
@@ -5748,7 +5748,7 @@ tool_use Bash
 id: toolu_01GsdC5guFoaSu7Gp2Qnt6np
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== docker containers with NAMES + uptime ===\"\ndocker ps --format '{{.Names}} | {{.Image}} | up {{.RunningFor}} | {{.Ports}}' 2>/dev/null\necho \"\"\necho \"=== compose files for e2e/dev stack ===\"\nfind . -maxdepth 2 -name \"docker-compose*.y*ml\" -o -maxdepth 2 -name \"compose*.y*ml\" 2>/dev/null | grep -v node_modules | head\necho \"\"\necho \"=== docs/TESTING.md local stack recipe ===\"\ngrep -nE \"docker|compose|kubo|ipfs|someguy|dev:stack|docker run|start.*stack\" docs/TESTING.md 2>/dev/null | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== docker containers with NAMES + uptime ===\"\ndocker ps --format '{{.Names}} | {{.Image}} | up {{.RunningFor}} | {{.Ports}}' 2>/dev/null\necho \"\"\necho \"=== compose files for e2e/dev stack ===\"\nfind . -maxdepth 2 -name \"docker-compose*.y*ml\" -o -maxdepth 2 -name \"compose*.y*ml\" 2>/dev/null | grep -v node_modules | head\necho \"\"\necho \"=== docs/TESTING.md local stack recipe ===\"\ngrep -nE \"docker|compose|kubo|ipfs|someguy|dev:stack|docker run|start.*stack\" docs/TESTING.md 2>/dev/null | head -20",
   "description": "Identify e2e stack via docker names + compose (no .env)"
 }
 ```
@@ -5788,7 +5788,7 @@ tool_use Read
 id: toolu_01Fe3W5eApMnwfB1ybR6yMMz
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/docker/docker-compose.yml"
+  "file_path": "/home/<USER>/Code/random/cipher-box/docker/docker-compose.yml"
 }
 ```
 
@@ -5853,7 +5853,7 @@ tool_use Bash
 id: toolu_01CGdNgmjpU5UWs13X411zKK
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== every ipfs/kubo version pin in the repo (compose, CI, docs, scripts, Dockerfiles) ===\"\ngrep -rn \"ipfs/kubo\" . --include=*.yml --include=*.yaml --include=*.md --include=*.sh --include=*.ts --include=*.json --include=Dockerfile 2>/dev/null | grep -v node_modules | grep -iE \"kubo:v?[0-9]\" | sort\necho \"\"\necho \"=== also any bare 'kubo' version mentions (env, .env.example, config) ===\"\ngrep -rniE \"kubo.{0,3}v?0\\.[0-9]+\\.[0-9]+\" . --include=*.example --include=*.env* --include=*.cjs --include=*.mjs 2>/dev/null | grep -v node_modules | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== every ipfs/kubo version pin in the repo (compose, CI, docs, scripts, Dockerfiles) ===\"\ngrep -rn \"ipfs/kubo\" . --include=*.yml --include=*.yaml --include=*.md --include=*.sh --include=*.ts --include=*.json --include=Dockerfile 2>/dev/null | grep -v node_modules | grep -iE \"kubo:v?[0-9]\" | sort\necho \"\"\necho \"=== also any bare 'kubo' version mentions (env, .env.example, config) ===\"\ngrep -rniE \"kubo.{0,3}v?0\\.[0-9]+\\.[0-9]+\" . --include=*.example --include=*.env* --include=*.cjs --include=*.mjs 2>/dev/null | grep -v node_modules | head",
   "description": "Find all kubo version pins across the repo"
 }
 ```
@@ -5880,7 +5880,7 @@ tool_use Bash
 id: toolu_017p2HHpXctVDtitvQPKrYGN
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== all 'ipfs/kubo' references (tracked files) ===\"\ngit grep -n \"ipfs/kubo\" | grep -iE \"kubo:v?[0-9]\"\necho \"\"\necho \"=== distinct kubo versions referenced ===\"\ngit grep -hoE \"ipfs/kubo:v[0-9]+\\.[0-9]+\\.[0-9]+\" | sort | uniq -c\necho \"\"\necho \"=== is byo-ipfs-kubo (v0.40.0) from a tracked compose, or a standalone/untracked container? ===\"\ngit grep -ln \"byo-ipfs\\|v0.40\" | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== all 'ipfs/kubo' references (tracked files) ===\"\ngit grep -n \"ipfs/kubo\" | grep -iE \"kubo:v?[0-9]\"\necho \"\"\necho \"=== distinct kubo versions referenced ===\"\ngit grep -hoE \"ipfs/kubo:v[0-9]+\\.[0-9]+\\.[0-9]+\" | sort | uniq -c\necho \"\"\necho \"=== is byo-ipfs-kubo (v0.40.0) from a tracked compose, or a standalone/untracked container? ===\"\ngit grep -ln \"byo-ipfs\\|v0.40\" | head",
   "description": "Find kubo version references via git grep"
 }
 ```
@@ -5944,7 +5944,7 @@ tool_use Bash
 id: toolu_01Y7JnKfTiBPP6gte7jHSWCd
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== INTEGRATIONS.md stale kubo lines (context) ===\"\ngrep -n \"kubo:v0.40\" .planning/codebase/INTEGRATIONS.md\necho \"\"\necho \"=== confirm byo-ipfs-kubo is NOT a compose service anywhere (only standalone) ===\"\ngit grep -n \"byo-ipfs\\|container_name: .*byo\" -- '*.yml' '*.yaml' 2>/dev/null || echo \"  -> not in any tracked compose file (confirmed standalone) ✓\"\necho \"\"\necho \"=== can I verify the absolute-latest kubo release? (network check) ===\"\ncurl -s -m 5 https://api.github.com/repos/ipfs/kubo/releases/latest 2>/dev/null | grep -m1 tag_name || echo \"  -> no network (sandbox) — cannot confirm if a version newer than v0.42.0 exists\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== INTEGRATIONS.md stale kubo lines (context) ===\"\ngrep -n \"kubo:v0.40\" .planning/codebase/INTEGRATIONS.md\necho \"\"\necho \"=== confirm byo-ipfs-kubo is NOT a compose service anywhere (only standalone) ===\"\ngit grep -n \"byo-ipfs\\|container_name: .*byo\" -- '*.yml' '*.yaml' 2>/dev/null || echo \"  -> not in any tracked compose file (confirmed standalone) ✓\"\necho \"\"\necho \"=== can I verify the absolute-latest kubo release? (network check) ===\"\ncurl -s -m 5 https://api.github.com/repos/ipfs/kubo/releases/latest 2>/dev/null | grep -m1 tag_name || echo \"  -> no network (sandbox) — cannot confirm if a version newer than v0.42.0 exists\"",
   "description": "Check INTEGRATIONS.md lines + confirm byo standalone + try latest-version lookup"
 }
 ```
@@ -5977,7 +5977,7 @@ tool_use Read
 id: toolu_01TJCKgxGXR2m1RUeDqjCh6g
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/codebase/INTEGRATIONS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/codebase/INTEGRATIONS.md",
   "offset": 10,
   "limit": 7
 }
@@ -6004,7 +6004,7 @@ id: toolu_01SEZZNpxKNWzhwjW83mxY26
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/codebase/INTEGRATIONS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/codebase/INTEGRATIONS.md",
   "old_string": "  - CI: `ipfs/kubo:v0.40.0` service container",
   "new_string": "  - CI: `ipfs/kubo:v0.42.0` service container"
 }
@@ -6015,7 +6015,7 @@ id: toolu_01SEZZNpxKNWzhwjW83mxY26
 tool_result
 id: toolu_01SEZZNpxKNWzhwjW83mxY26
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/codebase/INTEGRATIONS.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/codebase/INTEGRATIONS.md has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -6028,7 +6028,7 @@ tool_use Bash
 id: toolu_01VMLtxerAjGFAK357chTZNX
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(intel): correct stale CI kubo version v0.40.0 -> v0.42.0 in INTEGRATIONS.md\" --files \".planning/codebase/INTEGRATIONS.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"tree changed:\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n_GSD_SHIM_NAME=\"gsd-tools.cjs\"\nGSD_TOOLS=\"$(git rev-parse --show-toplevel)/.claude/gsd-core/bin/${_GSD_SHIM_NAME}\"\ngsd_run() { node \"$GSD_TOOLS\" \"$@\"; }\ngsd_run query commit \"docs(intel): correct stale CI kubo version v0.40.0 -> v0.42.0 in INTEGRATIONS.md\" --files \".planning/codebase/INTEGRATIONS.md\" >/dev/null 2>&1\ngit log --oneline -1 | cat\ngit status --porcelain | wc -l | tr -d ' ' | xargs echo \"tree changed:\"",
   "description": "Commit INTEGRATIONS.md kubo version fix"
 }
 ```
@@ -6054,7 +6054,7 @@ tool_use Bash
 id: toolu_01MTwxpLQ9LDPgVum96Qu1xS
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== how is the current API running? (cmd of the nest process) ===\"\nps -o command= -p 66275 2>/dev/null | head -c 200; echo \"\"\necho \"\"\necho \"=== apps/api scripts (start / migration) ===\"\nnode -e \"const p=require('./apps/api/package.json'); for(const [k,v] of Object.entries(p.scripts||{})) if(/start|migrat|dev|typeorm/i.test(k)) console.log('  '+k+': '+v);\" 2>/dev/null\necho \"\"\necho \"=== does docs/DEVELOPMENT.md give the one-command stack+dev recipe? ===\"\ngrep -niE \"docker compose|pnpm.*dev|migration|db:migrate|start the stack|up -d\" docs/DEVELOPMENT.md 2>/dev/null | head -12",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== how is the current API running? (cmd of the nest process) ===\"\nps -o command= -p 66275 2>/dev/null | head -c 200; echo \"\"\necho \"\"\necho \"=== apps/api scripts (start / migration) ===\"\nnode -e \"const p=require('./apps/api/package.json'); for(const [k,v] of Object.entries(p.scripts||{})) if(/start|migrat|dev|typeorm/i.test(k)) console.log('  '+k+': '+v);\" 2>/dev/null\necho \"\"\necho \"=== does docs/DEVELOPMENT.md give the one-command stack+dev recipe? ===\"\ngrep -niE \"docker compose|pnpm.*dev|migration|db:migrate|start the stack|up -d\" docs/DEVELOPMENT.md 2>/dev/null | head -12",
   "description": "Gather API start + migration commands for the recreate"
 }
 ```
@@ -6065,7 +6065,7 @@ tool_result
 id: toolu_01MTwxpLQ9LDPgVum96Qu1xS
 ```
 === how is the current API running? (cmd of the nest process) ===
-node /Users/myankelev/Code/random/cipher-box/apps/api/node_modules/.bin/../@nestjs/cli/bin/nest.js start --watch
+node /home/<USER>/Code/random/cipher-box/apps/api/node_modules/.bin/../@nestjs/cli/bin/nest.js start --watch
 
 
 === apps/api scripts (start / migration) ===
@@ -6095,7 +6095,7 @@ tool_use Bash
 id: toolu_01DAwQwV2faB1iUSPpN8XaXt
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== 1. stop the current API (will restart against fresh DB) ===\"\nkill 66275 66300 2>/dev/null; pkill -f \"nest.js start\" 2>/dev/null; sleep 2\npgrep -f \"nest.js start\" >/dev/null && echo \"API still up?\" || echo \"API stopped ✓\"\necho \"\"\necho \"=== 2. down -v the cipherbox-infrastructure stack (scoped; wipes ITS volumes only) ===\"\ndocker compose -f docker/docker-compose.yml down -v --remove-orphans 2>&1 | tail -8\necho \"\"\necho \"=== 3. confirm byo + irl containers UNAFFECTED ===\"\ndocker ps --format '{{.Names}}' | grep -E \"byo-ipfs-kubo|irl-network\" || echo \"(byo/irl not listed?)\"\necho \"\"\necho \"=== 4. bring up fresh e2e services (skip tee-worker; not needed for web-e2e) ===\"\ndocker compose -f docker/docker-compose.yml up -d postgres ipfs redis someguy mock-ipns-routing 2>&1 | tail -10",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== 1. stop the current API (will restart against fresh DB) ===\"\nkill 66275 66300 2>/dev/null; pkill -f \"nest.js start\" 2>/dev/null; sleep 2\npgrep -f \"nest.js start\" >/dev/null && echo \"API still up?\" || echo \"API stopped ✓\"\necho \"\"\necho \"=== 2. down -v the cipherbox-infrastructure stack (scoped; wipes ITS volumes only) ===\"\ndocker compose -f docker/docker-compose.yml down -v --remove-orphans 2>&1 | tail -8\necho \"\"\necho \"=== 3. confirm byo + irl containers UNAFFECTED ===\"\ndocker ps --format '{{.Names}}' | grep -E \"byo-ipfs-kubo|irl-network\" || echo \"(byo/irl not listed?)\"\necho \"\"\necho \"=== 4. bring up fresh e2e services (skip tee-worker; not needed for web-e2e) ===\"\ndocker compose -f docker/docker-compose.yml up -d postgres ipfs redis someguy mock-ipns-routing 2>&1 | tail -10",
   "description": "Recreate cipherbox stack fresh (down -v + up)",
   "timeout": 180000
 }
@@ -6147,7 +6147,7 @@ tool_use Bash
 id: toolu_01N4xS3RnyoaumSYy7ZxhJnC
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== wait for postgres + kubo healthy ===\"\nfor i in $(seq 1 24); do\n  PG=$(docker inspect --format '{{.State.Health.Status}}' cipherbox-postgres 2>/dev/null)\n  KU=$(docker inspect --format '{{.State.Health.Status}}' cipherbox-ipfs 2>/dev/null)\n  echo \"  [$i] postgres=$PG kubo=$KU\"\n  [ \"$PG\" = \"healthy\" ] && [ \"$KU\" = \"healthy\" ] && break\n  sleep 5\ndone\necho \"\"\necho \"=== apply Kubo CORS (CI recipe) + restart + wait ready ===\"\ndocker exec cipherbox-ipfs ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '[\"*\"]' 2>&1 | tail -1\ndocker exec cipherbox-ipfs ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '[\"GET\",\"POST\",\"OPTIONS\"]' 2>&1 | tail -1\ndocker exec cipherbox-ipfs ipfs config --json Gateway.HTTPHeaders.Access-Control-Allow-Origin '[\"*\"]' 2>&1 | tail -1\ndocker restart cipherbox-ipfs >/dev/null 2>&1\nfor i in $(seq 1 12); do docker exec cipherbox-ipfs ipfs id >/dev/null 2>&1 && { echo \"kubo ready ✓\"; break; }; sleep 3; done\necho \"\"\necho \"=== start API fresh (auto-migrates fresh DB), background ===\"\necho \"(starting nest --watch in background; will poll health next)\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== wait for postgres + kubo healthy ===\"\nfor i in $(seq 1 24); do\n  PG=$(docker inspect --format '{{.State.Health.Status}}' cipherbox-postgres 2>/dev/null)\n  KU=$(docker inspect --format '{{.State.Health.Status}}' cipherbox-ipfs 2>/dev/null)\n  echo \"  [$i] postgres=$PG kubo=$KU\"\n  [ \"$PG\" = \"healthy\" ] && [ \"$KU\" = \"healthy\" ] && break\n  sleep 5\ndone\necho \"\"\necho \"=== apply Kubo CORS (CI recipe) + restart + wait ready ===\"\ndocker exec cipherbox-ipfs ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '[\"*\"]' 2>&1 | tail -1\ndocker exec cipherbox-ipfs ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '[\"GET\",\"POST\",\"OPTIONS\"]' 2>&1 | tail -1\ndocker exec cipherbox-ipfs ipfs config --json Gateway.HTTPHeaders.Access-Control-Allow-Origin '[\"*\"]' 2>&1 | tail -1\ndocker restart cipherbox-ipfs >/dev/null 2>&1\nfor i in $(seq 1 12); do docker exec cipherbox-ipfs ipfs id >/dev/null 2>&1 && { echo \"kubo ready ✓\"; break; }; sleep 3; done\necho \"\"\necho \"=== start API fresh (auto-migrates fresh DB), background ===\"\necho \"(starting nest --watch in background; will poll health next)\"",
   "description": "Wait for health, configure kubo CORS, prep API",
   "timeout": 240000
 }
@@ -6178,7 +6178,7 @@ tool_use Bash
 id: toolu_01Gb1qW9JTArvCcgVSdLZzrm
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\npnpm --filter @cipherbox/api dev > \"$CLAUDE_JOB_DIR/tmp/api-dev.log\" 2>&1",
+  "command": "cd /home/<USER>/Code/random/cipher-box\npnpm --filter @cipherbox/api dev > \"$CLAUDE_JOB_DIR/tmp/api-dev.log\" 2>&1",
   "description": "Start API dev server (background, fresh DB)",
   "run_in_background": true
 }
@@ -6202,7 +6202,7 @@ tool_use Bash
 id: toolu_0154BxFJfSu1zaTrZYiKfV9h
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== poll API health (fresh DB migration + nest compile can take ~30-60s) ===\"\nOK=\"\"\nfor i in $(seq 1 30); do\n  H=$(curl -s -m 3 http://localhost:3000/health 2>/dev/null)\n  if echo \"$H\" | grep -q '\"status\":\"ok\"'; then echo \"  [$i] API healthy ✓: $(echo \"$H\" | head -c 70)\"; OK=1; break; fi\n  echo \"  [$i] waiting... ($(echo \"$H\" | head -c 40))\"\n  sleep 5\ndone\n[ -z \"$OK\" ] && { echo \"API not healthy yet — last 15 log lines:\"; tail -15 \"$CLAUDE_JOB_DIR/tmp/api-dev.log\" 2>/dev/null | grep -vE \"^\\s*$\"; }",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== poll API health (fresh DB migration + nest compile can take ~30-60s) ===\"\nOK=\"\"\nfor i in $(seq 1 30); do\n  H=$(curl -s -m 3 http://localhost:3000/health 2>/dev/null)\n  if echo \"$H\" | grep -q '\"status\":\"ok\"'; then echo \"  [$i] API healthy ✓: $(echo \"$H\" | head -c 70)\"; OK=1; break; fi\n  echo \"  [$i] waiting... ($(echo \"$H\" | head -c 40))\"\n  sleep 5\ndone\n[ -z \"$OK\" ] && { echo \"API not healthy yet — last 15 log lines:\"; tail -15 \"$CLAUDE_JOB_DIR/tmp/api-dev.log\" 2>/dev/null | grep -vE \"^\\s*$\"; }",
   "description": "Poll API health on fresh DB",
   "timeout": 180000
 }
@@ -6228,7 +6228,7 @@ tool_use Bash
 id: toolu_015Kfv3bgpKHmRVzxLPeptMx
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== API log: did it compile + run migrations? ===\"\ngrep -iE \"migration|nest application|started|listening|compiled|error|table\" \"$CLAUDE_JOB_DIR/tmp/api-dev.log\" 2>/dev/null | grep -vE \"^\\s*$\" | tail -15\necho \"\"\necho \"=== does the fresh postgres have tables (migrations ran)? ===\"\ndocker exec cipherbox-postgres psql -U postgres -d cipherbox -tAc \"SELECT count(*) FROM information_schema.tables WHERE table_schema='public';\" 2>&1 | head -3\necho \"--- a few table names ---\"\ndocker exec cipherbox-postgres psql -U postgres -d cipherbox -tAc \"SELECT tablename FROM pg_tables WHERE schemaname='public' LIMIT 8;\" 2>&1 | head -10",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== API log: did it compile + run migrations? ===\"\ngrep -iE \"migration|nest application|started|listening|compiled|error|table\" \"$CLAUDE_JOB_DIR/tmp/api-dev.log\" 2>/dev/null | grep -vE \"^\\s*$\" | tail -15\necho \"\"\necho \"=== does the fresh postgres have tables (migrations ran)? ===\"\ndocker exec cipherbox-postgres psql -U postgres -d cipherbox -tAc \"SELECT count(*) FROM information_schema.tables WHERE table_schema='public';\" 2>&1 | head -3\necho \"--- a few table names ---\"\ndocker exec cipherbox-postgres psql -U postgres -d cipherbox -tAc \"SELECT tablename FROM pg_tables WHERE schemaname='public' LIMIT 8;\" 2>&1 | head -10",
   "description": "Verify migrations ran on fresh DB"
 }
 ```
@@ -6275,7 +6275,7 @@ tool_use Bash
 id: toolu_018fUPbAxjhnKdJgRcGLQzDa
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"############ FRESH STACK — batch-download (Class A validation) ############\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 300 pnpm --filter @cipherbox/web-e2e test -- batch-download 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|[0-9]+ passed|[0-9]+ failed|Error:|Timed out\" | head -12\necho \"\"\necho \"############ FRESH STACK — writable-shares (Class B classification) ############\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 400 pnpm --filter @cipherbox/web-e2e test -- writable-shares 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|[0-9]+ passed|[0-9]+ failed|Error:|Timed out|waiting for\" | head -18",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"############ FRESH STACK — batch-download (Class A validation) ############\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 300 pnpm --filter @cipherbox/web-e2e test -- batch-download 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|[0-9]+ passed|[0-9]+ failed|Error:|Timed out\" | head -12\necho \"\"\necho \"############ FRESH STACK — writable-shares (Class B classification) ############\"\nDELEGATED_ROUTING_URL=http://localhost:3001 timeout 400 pnpm --filter @cipherbox/web-e2e test -- writable-shares 2>&1 | sed -E 's/\\x1b\\[[0-9;]*m//g' | grep -E \"✓|✘|[0-9]+ passed|[0-9]+ failed|Error:|Timed out|waiting for\" | head -18",
   "description": "Run batch-download + writable-shares on fresh stack",
   "timeout": 720000
 }
@@ -6316,7 +6316,7 @@ tool_use Bash
 id: toolu_01UVcrbgsnYiabEEzg4Tyqop
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== how does an uploaded file transition from '.upload-inline-row' placeholder to a resolved list item? ===\"\ngit grep -n \"upload-inline-row\\|uploadInlineRow\\|inline-row\" -- 'apps/web/src/**/*.tsx' 'apps/web/src/**/*.ts' | head\necho \"\"\necho \"=== did 68.2 touch the upload→list refresh path? (post-upload folder refresh) ===\"\ngit grep -ln \"forceResolve\\|folder:updated\\|refreshFolderListing\\|listFolder\" -- 'apps/web/src/**/*.ts' 'apps/web/src/**/*.tsx' | head\necho \"\"\necho \"=== does the upload service / drop-upload refresh the current folder after upload (and does it forceResolve)? ===\"\ngit grep -n \"forceResolve\\|listFolder\\|refreshFolder\\|folder:updated\\|invalidate\" -- 'apps/web/src/services/upload.service.ts' 'apps/web/src/hooks/useDropUpload.ts' 'apps/web/src/components/file-browser/useFileBrowserActions.ts' 2>/dev/null | head -15",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== how does an uploaded file transition from '.upload-inline-row' placeholder to a resolved list item? ===\"\ngit grep -n \"upload-inline-row\\|uploadInlineRow\\|inline-row\" -- 'apps/web/src/**/*.tsx' 'apps/web/src/**/*.ts' | head\necho \"\"\necho \"=== did 68.2 touch the upload→list refresh path? (post-upload folder refresh) ===\"\ngit grep -ln \"forceResolve\\|folder:updated\\|refreshFolderListing\\|listFolder\" -- 'apps/web/src/**/*.ts' 'apps/web/src/**/*.tsx' | head\necho \"\"\necho \"=== does the upload service / drop-upload refresh the current folder after upload (and does it forceResolve)? ===\"\ngit grep -n \"forceResolve\\|listFolder\\|refreshFolder\\|folder:updated\\|invalidate\" -- 'apps/web/src/services/upload.service.ts' 'apps/web/src/hooks/useDropUpload.ts' 'apps/web/src/components/file-browser/useFileBrowserActions.ts' 2>/dev/null | head -15",
   "description": "Investigate Class B upload→list-item transition root cause"
 }
 ```
@@ -6499,7 +6499,7 @@ tool_result
 id: toolu_0174L1td1xbhKGyUWsPsPkL3
 ```
 <persisted-output>
-Output too large (484.8KB). Full output saved to: /Users/myankelev/.claude/projects/-Users-myankelev-Code-random-cipher-box/60afe4f5-90e8-4017-b046-ab86ca19c540/tool-results/bb2o0d4wi.txt
+Output too large (484.8KB). Full output saved to: /home/<USER>/.claude/projects/-Users-myankelev-Code-random-cipher-box/60afe4f5-90e8-4017-b046-ab86ca19c540/tool-results/bb2o0d4wi.txt
 
 Preview (first 2KB):
 {"parentUuid":null,"isSidechain":true,"promptId":"11b6942c-6f77-4471-b053-2dea93f56d40","agentId":"a294a79c7ff0565d8","type":"user","message":{"role":"user","content":"<planning_context>\n**Phase:** 68.2\n**Mode:** gap_closure (round 2 — two file-browser regressions found via a fresh-stack web-e2e run AFTER the desync fix landed)\n\n<files_to_read>\n- .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-CONTEXT.md (locked decisions — D-02 ResolvedChild carries kind/size; D-03 belt-and-suspenders freshness; D-07 boundary)\n- apps/web/src/utils/fileTypes.ts (isFileRef ~L150 — the kind classifier)\n- apps/web/src/components/file-browser/SelectionActionBar.tsx (selectedItems: SealedChildRef[]; isFileRef gating download button + count)\n- apps/web/src/components/file-browser/ContextMenu.tsx (item: SealedChildRef; isFileRef gating single-item download ~L88)\n- apps/web/src/components/file-browser/FileList.tsx + FileBrowser.tsx + SharedFileBrowser.tsx (plan 11 added a `resolvedByIpnsName` / `resolvedChildren` lookup here — the precedent to reuse; these render SelectionActionBar + ContextMenu)\n- apps/web/src/components/file-browser/useFileBrowserActions.ts (~L122 client.listFolder(rootIpnsName) WITHOUT forceResolve — the stale post-mutation refresh)\n- apps/web/src/hooks/useFolderNavigation.ts + useSyncPolling.ts (the nav+poll legs that DO pass {forceResolve:true} — the precedent for the fix)\n- packages/sdk/src/client.ts (listFolder/ensureFolderLoaded already support {forceResolve:true} from plan 13 — NO SDK change needed)\n- ./CLAUDE.md\n</files_to_read>\n\n**These are VERIFICATION-gap regressions found post-fix (not in VERIFICATION.md). SDK-READ-01..04 stay [x] — do NOT re-open them. These plans close two web-layer regressions the 68.2 migration introduced.**\n\n<the_two_regressions_to_fix>\n**Regression A — download affordances broken (isFileRef kind classification).**\n- Root cause: `apps/web/src/utils/fileTypes.ts` `isFileRef(item: SealedChild
@@ -6517,7 +6517,7 @@ tool_use Bash
 id: toolu_01KgoWU7iN76TMNCHBN8ViYp
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== fileTypes.ts isFileRef =====\"\nsed -n '130,175p' apps/web/src/utils/fileTypes.ts\necho \"\"\necho \"===== resolvedByIpnsName / resolvedChildren usage across file-browser =====\"\ngit grep -n \"resolvedByIpnsName\\|resolvedChildren\\|ResolvedChild\" -- apps/web/src/components/file-browser/ apps/web/src/hooks/ | head -50",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== fileTypes.ts isFileRef =====\"\nsed -n '130,175p' apps/web/src/utils/fileTypes.ts\necho \"\"\necho \"===== resolvedByIpnsName / resolvedChildren usage across file-browser =====\"\ngit grep -n \"resolvedByIpnsName\\|resolvedChildren\\|ResolvedChild\" -- apps/web/src/components/file-browser/ apps/web/src/hooks/ | head -50",
   "description": "Inspect isFileRef and resolved-child wiring"
 }
 ```
@@ -6568,7 +6568,7 @@ tool_use Bash
 id: toolu_01KCv9kg8vGEsapkiCtbVq1m
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== SelectionActionBar props + isFileRef usage =====\"\ngrep -n \"isFileRef\\|selectedItems\\|interface\\|export function\\|resolvedChildren\\|resolved\" apps/web/src/components/file-browser/SelectionActionBar.tsx\necho \"\"\necho \"===== ContextMenu props + isFileRef usage =====\"\ngrep -n \"isFileRef\\|item:\\|interface\\|export function\\|resolvedChildren\\|resolved\\|Props\" apps/web/src/components/file-browser/ContextMenu.tsx\necho \"\"\necho \"===== SelectionActionBar invocations =====\"\ngit grep -n \"SelectionActionBar\" -- apps/web/src/components/file-browser/*.tsx | grep -v \"SelectionActionBar.tsx\"\necho \"\"\necho \"===== ContextMenu invocations =====\"\ngit grep -n \"<ContextMenu\\|ContextMenu \" -- apps/web/src/components/file-browser/*.tsx | grep -v \"ContextMenu.tsx\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== SelectionActionBar props + isFileRef usage =====\"\ngrep -n \"isFileRef\\|selectedItems\\|interface\\|export function\\|resolvedChildren\\|resolved\" apps/web/src/components/file-browser/SelectionActionBar.tsx\necho \"\"\necho \"===== ContextMenu props + isFileRef usage =====\"\ngrep -n \"isFileRef\\|item:\\|interface\\|export function\\|resolvedChildren\\|resolved\\|Props\" apps/web/src/components/file-browser/ContextMenu.tsx\necho \"\"\necho \"===== SelectionActionBar invocations =====\"\ngit grep -n \"SelectionActionBar\" -- apps/web/src/components/file-browser/*.tsx | grep -v \"SelectionActionBar.tsx\"\necho \"\"\necho \"===== ContextMenu invocations =====\"\ngit grep -n \"<ContextMenu\\|ContextMenu \" -- apps/web/src/components/file-browser/*.tsx | grep -v \"ContextMenu.tsx\"",
   "description": "Inspect SelectionActionBar and ContextMenu props and call sites"
 }
 ```
@@ -6629,7 +6629,7 @@ tool_use Bash
 id: toolu_014U3HqJQ3R8VLPq1EdEAjtb
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== FileBrowser.tsx 180-300 =====\"\nsed -n '180,300p' apps/web/src/components/file-browser/FileBrowser.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== FileBrowser.tsx 180-300 =====\"\nsed -n '180,300p' apps/web/src/components/file-browser/FileBrowser.tsx",
   "description": "Read FileBrowser SelectionActionBar + ContextMenu call sites"
 }
 ```
@@ -6739,7 +6739,7 @@ tool_use Bash
 id: toolu_01AT9asJiNUkFfQu7xQNCwkn
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== useFileBrowserActions.ts 100-140 (post-mutation refresh) =====\"\nsed -n '100,140p' apps/web/src/components/file-browser/useFileBrowserActions.ts\necho \"\"\necho \"===== all listFolder calls in web (forceResolve audit) =====\"\ngit grep -n \"listFolder(\" -- apps/web/src",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== useFileBrowserActions.ts 100-140 (post-mutation refresh) =====\"\nsed -n '100,140p' apps/web/src/components/file-browser/useFileBrowserActions.ts\necho \"\"\necho \"===== all listFolder calls in web (forceResolve audit) =====\"\ngit grep -n \"listFolder(\" -- apps/web/src",
   "description": "Read post-mutation refresh and audit listFolder calls"
 }
 ```
@@ -6804,7 +6804,7 @@ tool_use Bash
 id: toolu_01Kcw5QtunNrifTNeusvVhX3
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== folder-helpers.ts full =====\"\ncat apps/web/src/hooks/folder-helpers.ts\necho \"\"\necho \"===== who calls refreshFolder / folder-helpers export =====\"\ngit grep -n \"refreshFolder\\|folder-helpers\\|refreshCurrentFolder\" -- apps/web/src | head -30",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== folder-helpers.ts full =====\"\ncat apps/web/src/hooks/folder-helpers.ts\necho \"\"\necho \"===== who calls refreshFolder / folder-helpers export =====\"\ngit grep -n \"refreshFolder\\|folder-helpers\\|refreshCurrentFolder\" -- apps/web/src | head -30",
   "description": "Inspect folder-helpers and its callers"
 }
 ```
@@ -6866,7 +6866,7 @@ tool_use Bash
 id: toolu_01K9PAns3rgkpyEMigATDLty
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== refreshFolder / onUploadComplete / handleRefresh definitions & wiring =====\"\ngit grep -n \"refreshFolder\\b\\|onUploadComplete\\|handleUploadComplete\\|const refresh\" -- apps/web/src | head -40\necho \"\"\necho \"===== useFolderNavigation refreshFolderListing 60-100 =====\"\nsed -n '60,100p' apps/web/src/hooks/useFolderNavigation.ts",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== refreshFolder / onUploadComplete / handleRefresh definitions & wiring =====\"\ngit grep -n \"refreshFolder\\b\\|onUploadComplete\\|handleUploadComplete\\|const refresh\" -- apps/web/src | head -40\necho \"\"\necho \"===== useFolderNavigation refreshFolderListing 60-100 =====\"\nsed -n '60,100p' apps/web/src/hooks/useFolderNavigation.ts",
   "description": "Trace post-upload refresh wiring"
 }
 ```
@@ -6930,7 +6930,7 @@ tool_use Bash
 id: toolu_01DFdV4YX8dswWhzUB8WXVJ2
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nsed -n '145,175p' apps/web/src/components/file-browser/FileBrowser.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nsed -n '145,175p' apps/web/src/components/file-browser/FileBrowser.tsx",
   "description": "Read FileBrowser onUploadComplete handler"
 }
 ```
@@ -6983,7 +6983,7 @@ tool_use Bash
 id: toolu_01NA54Yvj2Xe5RBN4NqxdxtV
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== SelectionActionBar.tsx (full) =====\"\ncat apps/web/src/components/file-browser/SelectionActionBar.tsx\necho \"\"\necho \"===== ContextMenu.tsx lines 1-100 =====\"\nsed -n '1,100p' apps/web/src/components/file-browser/ContextMenu.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== SelectionActionBar.tsx (full) =====\"\ncat apps/web/src/components/file-browser/SelectionActionBar.tsx\necho \"\"\necho \"===== ContextMenu.tsx lines 1-100 =====\"\nsed -n '1,100p' apps/web/src/components/file-browser/ContextMenu.tsx",
   "description": "Read SelectionActionBar and ContextMenu head"
 }
 ```
@@ -7043,7 +7043,7 @@ tool_use Bash
 id: toolu_015PoStjvdjvLDBHfPDdziiv
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== SharedFileBrowser resolvedChildren var + call sites 555-575, 660-680, 820-845 =====\"\nsed -n '70,82p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"--- ctx menu ~559 ---\"\nsed -n '555,600p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"--- selection bar ~663 ---\"\nsed -n '660,685p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"--- ctx menu ~827 ---\"\nsed -n '820,850p' apps/web/src/components/file-browser/SharedFileBrowser.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== SharedFileBrowser resolvedChildren var + call sites 555-575, 660-680, 820-845 =====\"\nsed -n '70,82p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"--- ctx menu ~559 ---\"\nsed -n '555,600p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"--- selection bar ~663 ---\"\nsed -n '660,685p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"--- ctx menu ~827 ---\"\nsed -n '820,850p' apps/web/src/components/file-browser/SharedFileBrowser.tsx",
   "description": "Read SharedFileBrowser call sites"
 }
 ```
@@ -7141,7 +7141,7 @@ tool_use Bash
 id: toolu_01WWmLmB5kn7hKUSfaCRkb4d
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== ALL isFileRef call sites =====\"\ngit grep -n \"isFileRef\" -- apps/web/src\necho \"\"\necho \"===== batch-download.spec.ts context (which browser?) 1-40, 75-105 =====\"\nsed -n '1,40p' tests/web-e2e/tests/batch-download.spec.ts\necho \"...\"\nsed -n '75,105p' tests/web-e2e/tests/batch-download.spec.ts",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== ALL isFileRef call sites =====\"\ngit grep -n \"isFileRef\" -- apps/web/src\necho \"\"\necho \"===== batch-download.spec.ts context (which browser?) 1-40, 75-105 =====\"\nsed -n '1,40p' tests/web-e2e/tests/batch-download.spec.ts\necho \"...\"\nsed -n '75,105p' tests/web-e2e/tests/batch-download.spec.ts",
   "description": "Full isFileRef inventory and batch-download test context"
 }
 ```
@@ -7189,7 +7189,7 @@ tool_use Bash
 id: toolu_016BUGCXqTVksoBAh7CfJHEm
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== useFileBrowserActions selectedItems origin + 375-390 + 440-455 =====\"\ngrep -n \"selectedItems\\|const children\\|resolvedByIpnsName\\|selectedIds\" apps/web/src/components/file-browser/useFileBrowserActions.ts | head\necho \"--- 375-390 ---\"\nsed -n '375,390p' apps/web/src/components/file-browser/useFileBrowserActions.ts\necho \"--- 440-455 ---\"\nsed -n '440,455p' apps/web/src/components/file-browser/useFileBrowserActions.ts\necho \"\"\necho \"===== SharedFileBrowser 768-782 =====\"\nsed -n '768,782p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"\"\necho \"===== SharedFolderRow 100-120 =====\"\nsed -n '100,120p' apps/web/src/components/file-browser/SharedFolderRow.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== useFileBrowserActions selectedItems origin + 375-390 + 440-455 =====\"\ngrep -n \"selectedItems\\|const children\\|resolvedByIpnsName\\|selectedIds\" apps/web/src/components/file-browser/useFileBrowserActions.ts | head\necho \"--- 375-390 ---\"\nsed -n '375,390p' apps/web/src/components/file-browser/useFileBrowserActions.ts\necho \"--- 440-455 ---\"\nsed -n '440,455p' apps/web/src/components/file-browser/useFileBrowserActions.ts\necho \"\"\necho \"===== SharedFileBrowser 768-782 =====\"\nsed -n '768,782p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"\"\necho \"===== SharedFolderRow 100-120 =====\"\nsed -n '100,120p' apps/web/src/components/file-browser/SharedFolderRow.tsx",
   "description": "Read remaining broken isFileRef sites"
 }
 ```
@@ -7262,7 +7262,7 @@ tool_use Bash
 id: toolu_01Rg91tPWCa8oX33zh7WsJQb
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== folder.store FolderNode.children type =====\"\ngrep -n \"children\\|ResolvedChild\\|rawChildren\\|SealedChildRef\" apps/web/src/stores/folder.store.ts | head -30\necho \"\"\necho \"===== FolderNode type def =====\"\nsed -n '/type FolderNode\\|interface FolderNode/,/^}/p' apps/web/src/stores/folder.store.ts | head -40\necho \"\"\necho \"===== useFileBrowserActions currentFolder type + rawChildren + handleContextMenu =====\"\ngrep -n \"currentFolder\\|rawChildren\\|handleContextMenu\\|contextMenu.item\\|useContextMenu\\|item: \\|FolderNode\\|ResolvedChild\\|SealedChildRef\" apps/web/src/components/file-browser/useFileBrowserActions.ts | head -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== folder.store FolderNode.children type =====\"\ngrep -n \"children\\|ResolvedChild\\|rawChildren\\|SealedChildRef\" apps/web/src/stores/folder.store.ts | head -30\necho \"\"\necho \"===== FolderNode type def =====\"\nsed -n '/type FolderNode\\|interface FolderNode/,/^}/p' apps/web/src/stores/folder.store.ts | head -40\necho \"\"\necho \"===== useFileBrowserActions currentFolder type + rawChildren + handleContextMenu =====\"\ngrep -n \"currentFolder\\|rawChildren\\|handleContextMenu\\|contextMenu.item\\|useContextMenu\\|item: \\|FolderNode\\|ResolvedChild\\|SealedChildRef\" apps/web/src/components/file-browser/useFileBrowserActions.ts | head -40",
   "description": "Verify actual types of children and context menu item"
 }
 ```
@@ -7310,7 +7310,7 @@ tool_use Bash
 id: toolu_01F6dvbigqGnLBBhPG8MKh6m
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== FileBrowser: useFileBrowserActions call + currentFolder/rawChildren assembly =====\"\ngrep -n \"useFileBrowserActions\\|rawChildren\\|currentFolder\\|const actions\\|children:\" apps/web/src/components/file-browser/FileBrowser.tsx | head -30\necho \"\"\necho \"--- the actual actions = useFileBrowserActions({...}) block ---\"\nsed -n '/useFileBrowserActions({/,/});/p' apps/web/src/components/file-browser/FileBrowser.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== FileBrowser: useFileBrowserActions call + currentFolder/rawChildren assembly =====\"\ngrep -n \"useFileBrowserActions\\|rawChildren\\|currentFolder\\|const actions\\|children:\" apps/web/src/components/file-browser/FileBrowser.tsx | head -30\necho \"\"\necho \"--- the actual actions = useFileBrowserActions({...}) block ---\"\nsed -n '/useFileBrowserActions({/,/});/p' apps/web/src/components/file-browser/FileBrowser.tsx",
   "description": "Find hook call site and currentFolder assembly"
 }
 ```
@@ -7370,7 +7370,7 @@ tool_use Bash
 id: toolu_01GUWyxuPGD1nzbcyQmmFJCX
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== SharedFolderRow props: selectedItems + resolved + item types =====\"\nsed -n '25,90p' apps/web/src/components/file-browser/SharedFolderRow.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== SharedFolderRow props: selectedItems + resolved + item types =====\"\nsed -n '25,90p' apps/web/src/components/file-browser/SharedFolderRow.tsx",
   "description": "Read SharedFolderRow prop types"
 }
 ```
@@ -7420,7 +7420,7 @@ tool_use Read
 id: toolu_01PnetKfH19SsYFW8kMARHKh
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/utils/fileTypes.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/utils/fileTypes.ts",
   "offset": 1,
   "limit": 30
 }
@@ -7473,7 +7473,7 @@ tool_use Read
 id: toolu_01FbktWZ7whcc4AU2HGUVR4r
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/utils/fileTypes.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/utils/fileTypes.ts",
   "offset": 148,
   "limit": 10
 }
@@ -7500,7 +7500,7 @@ id: toolu_01XEwXagQmRBCnEPgSHAbZPz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/utils/fileTypes.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/utils/fileTypes.ts",
   "old_string": "export function isFileRef(item: SealedChildRef | ResolvedChild): boolean {\n  if ('kind' in item) return item.kind === 'file';\n  return false;\n}",
   "new_string": "export function isFileRef(item: SealedChildRef | ResolvedChild): boolean {\n  if ('kind' in item) return item.kind === 'file';\n  return false;\n}\n\n/**\n * Kind classification for a ref against the SDK-resolved listing (68.2-15).\n *\n * A bare `SealedChildRef` carries no `.kind` (the per-ipnsName kind-cache was\n * removed in 68.2-11), so `isFileRef` alone always reports a bare ref as a\n * folder. Call sites that hold identity-only refs -- selection/context-menu/\n * download payloads keyed off `rawChildren` -- must classify against the\n * paired `ResolvedChild` (SDK-READ-02) instead, keyed by `ipnsName`. A\n * `ResolvedChild` passed directly is read inline; a bare `SealedChildRef` is\n * looked up in `resolvedByIpnsName` (a miss -- still-loading listing -- stays\n * folder-safe `false`, preserving the pre-regression default).\n */\nexport function isFileRefResolved(\n  ref: SealedChildRef | ResolvedChild,\n  resolvedByIpnsName: Map<string, ResolvedChild>\n): boolean {\n  if ('kind' in ref) return ref.kind === 'file';\n  return resolvedByIpnsName.get(ref.ipnsName)?.kind === 'file';\n}"
 }
@@ -7511,7 +7511,7 @@ id: toolu_01XEwXagQmRBCnEPgSHAbZPz
 tool_result
 id: toolu_01XEwXagQmRBCnEPgSHAbZPz
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/utils/fileTypes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/utils/fileTypes.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7524,7 +7524,7 @@ tool_use Read
 id: toolu_01PNpmopWbBctca3JFaEpews
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "offset": 18,
   "limit": 102
 }
@@ -7585,7 +7585,7 @@ id: toolu_014a4JJTGgBGtiinhCz9gUEm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "import type { SealedChildRef } from '@cipherbox/core';\nimport { useDialogState } from '../../hooks/useDialogState';\nimport { isImageFile, isPdfFile, isAudioFile, isVideoFile, isFileRef } from '../../utils/fileTypes';",
   "new_string": "import type { SealedChildRef } from '@cipherbox/core';\nimport type { ResolvedChild } from '@cipherbox/sdk';\nimport { useDialogState } from '../../hooks/useDialogState';\nimport {\n  isImageFile,\n  isPdfFile,\n  isAudioFile,\n  isVideoFile,\n  isFileRefResolved,\n} from '../../utils/fileTypes';"
 }
@@ -7596,7 +7596,7 @@ id: toolu_014a4JJTGgBGtiinhCz9gUEm
 tool_result
 id: toolu_014a4JJTGgBGtiinhCz9gUEm
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7606,7 +7606,7 @@ id: toolu_015xCdxbj1BA5Zf8XCUKZDw2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "  currentFolder: {\n    children: SealedChildRef[];\n    folderKey: Uint8Array;\n  } | null;",
   "new_string": "  currentFolder: {\n    children: SealedChildRef[];\n    folderKey: Uint8Array;\n  } | null;\n  /**\n   * SDK-resolved display listing for the current folder (68.2-15). Carries\n   * per-child `kind` keyed by `ipnsName`; the identity-only `currentFolder.\n   * children` (raw `SealedChildRef[]`) has no `.kind` after the 68.2-11\n   * kind-cache removal, so file-vs-folder classification (download gating,\n   * batch-download filtering) resolves against this instead.\n   */\n  resolvedChildren: ResolvedChild[];"
 }
@@ -7617,7 +7617,7 @@ id: toolu_015xCdxbj1BA5Zf8XCUKZDw2
 tool_result
 id: toolu_015xCdxbj1BA5Zf8XCUKZDw2
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7627,7 +7627,7 @@ id: toolu_01ERQ4dr8RhooFZuApu8EtsM
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "  const {\n    currentFolderId,\n    currentFolder,\n    navigateTo,\n    createFolder,\n    renameItem,\n    moveItem,\n    moveItems,\n    deleteItem,\n    deleteItems,\n    // downloadFromIpns: TODO(phase 65) - unused until file read-chain implemented\n    handleFileDrop,\n    contextMenu,\n    rootIpnsName,\n  } = params;\n\n  const children = currentFolder?.children ?? [];",
   "new_string": "  const {\n    currentFolderId,\n    currentFolder,\n    resolvedChildren,\n    navigateTo,\n    createFolder,\n    renameItem,\n    moveItem,\n    moveItems,\n    deleteItem,\n    deleteItems,\n    // downloadFromIpns: TODO(phase 65) - unused until file read-chain implemented\n    handleFileDrop,\n    contextMenu,\n    rootIpnsName,\n  } = params;\n\n  const children = currentFolder?.children ?? [];\n\n  // 68.2-15: kind lookup for identity-only refs (selection/context-menu items\n  // are raw `SealedChildRef`s with no `.kind`) -- classify against the\n  // SDK-resolved listing keyed by ipnsName (D-02, SDK-READ-02).\n  const resolvedByIpnsName = useMemo(\n    () => new Map(resolvedChildren.map((r) => [r.ipnsName, r])),\n    [resolvedChildren]\n  );"
 }
@@ -7638,7 +7638,7 @@ id: toolu_01ERQ4dr8RhooFZuApu8EtsM
 tool_result
 id: toolu_01ERQ4dr8RhooFZuApu8EtsM
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7652,7 +7652,7 @@ id: toolu_01CvjTeDqr2Q6Dc9HajHKC7T
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "    const item = contextMenu.item;\n    if (!item || !currentFolder) return;\n    if (!isFileRef(item)) return; // No folder-archive download feature.",
   "new_string": "    const item = contextMenu.item;\n    if (!item || !currentFolder) return;\n    if (!isFileRefResolved(item, resolvedByIpnsName)) return; // No folder-archive download feature."
 }
@@ -7663,7 +7663,7 @@ id: toolu_01CvjTeDqr2Q6Dc9HajHKC7T
 tool_result
 id: toolu_01CvjTeDqr2Q6Dc9HajHKC7T
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7673,7 +7673,7 @@ id: toolu_016XwLtGqPcBCNFdxY4f5gih
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "    if (!currentFolder || selectedItems.length === 0) return;\n    for (const item of selectedItems.filter(isFileRef)) {",
   "new_string": "    if (!currentFolder || selectedItems.length === 0) return;\n    for (const item of selectedItems.filter((it) => isFileRefResolved(it, resolvedByIpnsName))) {"
 }
@@ -7684,7 +7684,7 @@ id: toolu_016XwLtGqPcBCNFdxY4f5gih
 tool_result
 id: toolu_016XwLtGqPcBCNFdxY4f5gih
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7697,7 +7697,7 @@ tool_use Bash
 id: toolu_01HEEnSrEJJTYxUPscvhgP7h
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngrep -n \"resolvedByIpnsName\\|}, \\[contextMenu.item, currentFolder\\]\\|handleBatchDownload\" apps/web/src/components/file-browser/useFileBrowserActions.ts\necho \"--- handleBatchDownload deps ---\"\nsed -n '455,475p' apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngrep -n \"resolvedByIpnsName\\|}, \\[contextMenu.item, currentFolder\\]\\|handleBatchDownload\" apps/web/src/components/file-browser/useFileBrowserActions.ts\necho \"--- handleBatchDownload deps ---\"\nsed -n '455,475p' apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "description": "Locate download handler dependency arrays"
 }
 ```
@@ -7744,7 +7744,7 @@ id: toolu_016TBeXboXqA8nJD5FVVbcwW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "  }, [contextMenu.item, currentFolder]);",
   "new_string": "  }, [contextMenu.item, currentFolder, resolvedByIpnsName]);"
 }
@@ -7755,7 +7755,7 @@ id: toolu_016TBeXboXqA8nJD5FVVbcwW
 tool_result
 id: toolu_016TBeXboXqA8nJD5FVVbcwW
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7764,7 +7764,7 @@ tool_use Read
 id: toolu_015tBihu8t6ntY6kbzymYDvu
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "offset": 468,
   "limit": 30
 }
@@ -7814,7 +7814,7 @@ id: toolu_012wa9LknB4SHsv9uE9Bfoy7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "      }\n    }\n  }, [currentFolder, selectedItems]);\n\n  const handleBatchDeleteConfirm = useCallback(async () => {",
   "new_string": "      }\n    }\n  }, [currentFolder, selectedItems, resolvedByIpnsName]);\n\n  const handleBatchDeleteConfirm = useCallback(async () => {"
 }
@@ -7825,7 +7825,7 @@ id: toolu_012wa9LknB4SHsv9uE9Bfoy7
 tool_result
 id: toolu_012wa9LknB4SHsv9uE9Bfoy7
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7838,7 +7838,7 @@ tool_use Read
 id: toolu_01CHeDKV7nq3kWzMgANtKSJV
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "offset": 126,
   "limit": 22
 }
@@ -7880,7 +7880,7 @@ id: toolu_01P19bGKGe2GxyJcZ9KiJoSf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "      // failing silently, matching the prior web-side gate's behavior.\n      const client = getSdkClient();\n      const resolved = await runWithFailureUx(() => client.listFolder(rootIpnsName));\n      const state = await client.ensureFolderLoaded(rootIpnsName);",
   "new_string": "      // failing silently, matching the prior web-side gate's behavior.\n      //\n      // 68.2-16: `{ forceResolve: true }` on both legs -- this callback fires\n      // after a local write (post-upload refresh via UploadZone.onUploadComplete),\n      // where the freshly-published record may still be within the SDK cache's\n      // ipnsName+sequence window; without forcing, the refresh can return the\n      // pre-write listing and the just-uploaded child never appears (D-03\n      // deterministic freshness leg, mirroring refreshFolderListing/useSyncPolling).\n      const client = getSdkClient();\n      const resolved = await runWithFailureUx(() =>\n        client.listFolder(rootIpnsName, { forceResolve: true })\n      );\n      const state = await client.ensureFolderLoaded(rootIpnsName, { forceResolve: true });"
 }
@@ -7891,7 +7891,7 @@ id: toolu_01P19bGKGe2GxyJcZ9KiJoSf
 tool_result
 id: toolu_01P19bGKGe2GxyJcZ9KiJoSf
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7905,7 +7905,7 @@ id: toolu_01Q79Zi6H9hSPdqoSstDRUox
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts",
   "old_string": "  const client = getSdkClient();\n  const resolved = await client.listFolder(folderIpnsName);\n  const state = await client.ensureFolderLoaded(folderIpnsName);",
   "new_string": "  // 68.2-16: force a live resolve on both legs -- this runs after a local\n  // write lost a 409 CAS race, so the SDK cache may still hold the pre-write\n  // listing for this ipnsName+sequence; forcing guarantees the re-sync reflects\n  // the winning record (D-03 deterministic freshness leg).\n  const client = getSdkClient();\n  const resolved = await client.listFolder(folderIpnsName, { forceResolve: true });\n  const state = await client.ensureFolderLoaded(folderIpnsName, { forceResolve: true });"
 }
@@ -7916,7 +7916,7 @@ id: toolu_01Q79Zi6H9hSPdqoSstDRUox
 tool_result
 id: toolu_01Q79Zi6H9hSPdqoSstDRUox
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7930,7 +7930,7 @@ id: toolu_01E93yGdcDetyGgMGYaJLxbW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
   "old_string": "import type { SealedChildRef } from '@cipherbox/core';\nimport { isFileRef } from '../../utils/fileTypes';\n\ntype SelectionActionBarProps = {\n  /** Selected items */\n  selectedItems: SealedChildRef[];\n  /** Whether an operation is in progress */\n  isLoading: boolean;",
   "new_string": "import type { SealedChildRef } from '@cipherbox/core';\nimport type { ResolvedChild } from '@cipherbox/sdk';\nimport { isFileRefResolved } from '../../utils/fileTypes';\n\ntype SelectionActionBarProps = {\n  /** Selected items (identity-only raw refs -- no `.kind`) */\n  selectedItems: SealedChildRef[];\n  /**\n   * SDK-resolved listing for the current folder (68.2-15). Supplies the\n   * per-child `kind` (keyed by ipnsName) that the raw `selectedItems` lack\n   * after the 68.2-11 kind-cache removal -- drives the file/folder count copy\n   * and the download-button affordance.\n   */\n  resolvedChildren: ResolvedChild[];\n  /** Whether an operation is in progress */\n  isLoading: boolean;"
 }
@@ -7941,7 +7941,7 @@ id: toolu_01E93yGdcDetyGgMGYaJLxbW
 tool_result
 id: toolu_01E93yGdcDetyGgMGYaJLxbW
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7951,7 +7951,7 @@ id: toolu_015Dkzr6faqJrGCNtepnpWtr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
   "old_string": "export function SelectionActionBar({\n  selectedItems,\n  isLoading,\n  onClearSelection,\n  onDownload,\n  onMove,\n  onDelete,\n}: SelectionActionBarProps) {\n  // Kind-aware count copy (D-02 kind cache) — pre-v2.0 contract asserted by\n  // full-workflow.spec.ts 4.6: \"2 files selected\" / \"2 files, 1 folder selected\".\n  const fileCount = selectedItems.filter(isFileRef).length;",
   "new_string": "export function SelectionActionBar({\n  selectedItems,\n  resolvedChildren,\n  isLoading,\n  onClearSelection,\n  onDownload,\n  onMove,\n  onDelete,\n}: SelectionActionBarProps) {\n  // Kind-aware count copy (D-02) — pre-v2.0 contract asserted by\n  // full-workflow.spec.ts 4.6: \"2 files selected\" / \"2 files, 1 folder selected\".\n  // 68.2-15: raw `selectedItems` carry no `.kind`; classify against the\n  // SDK-resolved listing keyed by ipnsName.\n  const resolvedByIpnsName = new Map(resolvedChildren.map((r) => [r.ipnsName, r]));\n  const fileCount = selectedItems.filter((it) => isFileRefResolved(it, resolvedByIpnsName)).length;"
 }
@@ -7962,7 +7962,7 @@ id: toolu_015Dkzr6faqJrGCNtepnpWtr
 tool_result
 id: toolu_015Dkzr6faqJrGCNtepnpWtr
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7976,7 +7976,7 @@ id: toolu_01FjJvecRPyJFTtakFzaavuf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx",
   "old_string": "import type { SealedChildRef } from '@cipherbox/core';\nimport { Portal } from '../ui/Portal';\nimport { isFileRef } from '../../utils/fileTypes';\nimport '../../styles/context-menu.css';\n\ntype ContextMenuProps = {\n  /** X position (client coordinates) */\n  x: number;\n  /** Y position (client coordinates) */\n  y: number;\n  /** The file or folder item */\n  item: SealedChildRef;",
   "new_string": "import type { SealedChildRef } from '@cipherbox/core';\nimport type { ResolvedChild } from '@cipherbox/sdk';\nimport { Portal } from '../ui/Portal';\nimport { isFileRefResolved } from '../../utils/fileTypes';\nimport '../../styles/context-menu.css';\n\ntype ContextMenuProps = {\n  /** X position (client coordinates) */\n  x: number;\n  /** Y position (client coordinates) */\n  y: number;\n  /** The file or folder item (identity-only raw ref -- no `.kind`) */\n  item: SealedChildRef;\n  /**\n   * SDK-resolved listing for the current folder (68.2-15). Supplies `item`'s\n   * `kind` (keyed by ipnsName) that the raw `item` lacks after the 68.2-11\n   * kind-cache removal -- gates the file-only Download action. Omitted for\n   * bin/read-only contexts that never surface Download.\n   */\n  resolvedChildren?: ResolvedChild[];"
 }
@@ -7987,7 +7987,7 @@ id: toolu_01FjJvecRPyJFTtakFzaavuf
 tool_result
 id: toolu_01FjJvecRPyJFTtakFzaavuf
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7997,7 +7997,7 @@ id: toolu_01Tpa2WvRi5M1TbFCgrSkjsr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx",
   "old_string": "  x,\n  y,\n  item,\n  selectedCount,\n  onClose,",
   "new_string": "  x,\n  y,\n  item,\n  resolvedChildren,\n  selectedCount,\n  onClose,"
 }
@@ -8008,7 +8008,7 @@ id: toolu_01Tpa2WvRi5M1TbFCgrSkjsr
 tool_result
 id: toolu_01Tpa2WvRi5M1TbFCgrSkjsr
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8018,7 +8018,7 @@ id: toolu_014gJ8haeBvYqvPgAYoVtUKE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx",
   "old_string": "  const menuRef = useRef<HTMLDivElement | null>(null);\n  // D-02: kind cache read (synchronous, folder-safe default on cache miss).\n  const isFile = isFileRef(item);",
   "new_string": "  const menuRef = useRef<HTMLDivElement | null>(null);\n  // 68.2-15: `item` is an identity-only raw ref with no `.kind`; classify\n  // against the SDK-resolved listing keyed by ipnsName (folder-safe default\n  // on miss / when no listing supplied).\n  const resolvedByIpnsName = useMemo(\n    () => new Map((resolvedChildren ?? []).map((r) => [r.ipnsName, r])),\n    [resolvedChildren]\n  );\n  const isFile = isFileRefResolved(item, resolvedByIpnsName);"
 }
@@ -8029,7 +8029,7 @@ id: toolu_014gJ8haeBvYqvPgAYoVtUKE
 tool_result
 id: toolu_014gJ8haeBvYqvPgAYoVtUKE
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/ContextMenu.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8043,7 +8043,7 @@ id: toolu_01D4txWhhRGWEcaUqY1Vh2ja
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
   "old_string": "    currentFolder: currentFolder\n      ? { children: rawChildren, folderKey: currentFolder.folderKey }\n      : null,\n    breadcrumbs,",
   "new_string": "    currentFolder: currentFolder\n      ? { children: rawChildren, folderKey: currentFolder.folderKey }\n      : null,\n    resolvedChildren: currentFolder?.children ?? [],\n    breadcrumbs,"
 }
@@ -8054,7 +8054,7 @@ id: toolu_01D4txWhhRGWEcaUqY1Vh2ja
 tool_result
 id: toolu_01D4txWhhRGWEcaUqY1Vh2ja
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8064,7 +8064,7 @@ id: toolu_01N2LhB37x4Lv12zi5B5XSSj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
   "old_string": "        <SelectionActionBar\n          selectedItems={actions.selectedItems}\n          isLoading={isOperating || isDownloading}",
   "new_string": "        <SelectionActionBar\n          selectedItems={actions.selectedItems}\n          resolvedChildren={currentFolder?.children ?? []}\n          isLoading={isOperating || isDownloading}"
 }
@@ -8075,7 +8075,7 @@ id: toolu_01N2LhB37x4Lv12zi5B5XSSj
 tool_result
 id: toolu_01N2LhB37x4Lv12zi5B5XSSj
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8085,7 +8085,7 @@ id: toolu_01U14qRHdaYnhLPZ7Qhc5FwB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
   "old_string": "          x={contextMenu.x}\n          y={contextMenu.y}\n          item={contextMenu.item}\n          selectedCount={actions.selectedIds.size}",
   "new_string": "          x={contextMenu.x}\n          y={contextMenu.y}\n          item={contextMenu.item}\n          resolvedChildren={currentFolder?.children ?? []}\n          selectedCount={actions.selectedIds.size}"
 }
@@ -8096,7 +8096,7 @@ id: toolu_01U14qRHdaYnhLPZ7Qhc5FwB
 tool_result
 id: toolu_01U14qRHdaYnhLPZ7Qhc5FwB
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8109,7 +8109,7 @@ tool_use Bash
 id: toolu_01R6MiF5JmtAjZXjKVcmeNCr
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== ContextMenu isFile usage in render =====\"\ngrep -n \"isFile\\b\\|onDownload\\|Download\" apps/web/src/components/file-browser/ContextMenu.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== ContextMenu isFile usage in render =====\"\ngrep -n \"isFile\\b\\|onDownload\\|Download\" apps/web/src/components/file-browser/ContextMenu.tsx",
   "description": "Check how ContextMenu uses isFile in render"
 }
 ```
@@ -8154,7 +8154,7 @@ tool_use Read
 id: toolu_01F4uhCejWZWCkVSjirfvX6K
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
   "offset": 28,
   "limit": 10
 }
@@ -8184,7 +8184,7 @@ id: toolu_01CwpTGsRoAoTkRVign58gBz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
   "old_string": "  isPreviewableFile,\n  isFileRef,\n} from '../../utils/fileTypes';",
   "new_string": "  isPreviewableFile,\n  isFileRefResolved,\n} from '../../utils/fileTypes';"
 }
@@ -8195,7 +8195,7 @@ id: toolu_01CwpTGsRoAoTkRVign58gBz
 tool_result
 id: toolu_01CwpTGsRoAoTkRVign58gBz
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8205,7 +8205,7 @@ id: toolu_01NkApHUfRn3fGNNQ8NRSsh7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
   "old_string": "                  onDoubleClick={() => {\n                    // D-02: kind cache read -- files no-op on double-click (open is a\n                    // context-menu action: Preview/Edit/Download), mirroring FileListItem.tsx.\n                    if (!isFileRef(item)) {\n                      navigateToSubfolder(item.ipnsName, item.name);\n                    }\n                  }}",
   "new_string": "                  onDoubleClick={() => {\n                    // D-02: kind classification -- files no-op on double-click (open is a\n                    // context-menu action: Preview/Edit/Download), mirroring FileListItem.tsx.\n                    // 68.2-15: `item` is a raw ref; classify against the resolved listing.\n                    if (!isFileRefResolved(item, resolvedByIpnsName)) {\n                      navigateToSubfolder(item.ipnsName, item.name);\n                    }\n                  }}"
 }
@@ -8216,7 +8216,7 @@ id: toolu_01NkApHUfRn3fGNNQ8NRSsh7
 tool_result
 id: toolu_01NkApHUfRn3fGNNQ8NRSsh7
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8226,7 +8226,7 @@ id: toolu_01F25rrbUkmEHfDoPhaK3nKm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
   "old_string": "          // D-02: kind cache read -- Download is a file-only action, gated on isFileRef\n          // (ContextMenu itself also gates on isFile, this mirrors the working top-level\n          // list context menu's onDownload={handleDownload} — Analog A).\n          onDownload={isFileRef(contextMenu.item) ? handleDownload : undefined}",
   "new_string": "          // D-02: Download is a file-only action, gated on kind. 68.2-15: classify the\n          // raw `contextMenu.item` against the resolved listing (ContextMenu itself also\n          // gates on isFile via the resolvedChildren prop below — Analog A).\n          resolvedChildren={resolvedChildren}\n          onDownload={\n            isFileRefResolved(contextMenu.item, resolvedByIpnsName) ? handleDownload : undefined\n          }"
 }
@@ -8237,7 +8237,7 @@ id: toolu_01F25rrbUkmEHfDoPhaK3nKm
 tool_result
 id: toolu_01F25rrbUkmEHfDoPhaK3nKm
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8251,7 +8251,7 @@ id: toolu_01FxDMbSByBHidnHfSCwfaYz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
   "old_string": "        <SelectionActionBar\n          selectedItems={selectedItems}\n          isLoading={isLoading}\n          onClearSelection={clearSelection}\n          onMove={handleBatchMoveClick}\n        />",
   "new_string": "        <SelectionActionBar\n          selectedItems={selectedItems}\n          resolvedChildren={resolvedChildren}\n          isLoading={isLoading}\n          onClearSelection={clearSelection}\n          onMove={handleBatchMoveClick}\n        />"
 }
@@ -8262,7 +8262,7 @@ id: toolu_01FxDMbSByBHidnHfSCwfaYz
 tool_result
 id: toolu_01FxDMbSByBHidnHfSCwfaYz
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8272,7 +8272,7 @@ id: toolu_017jmfCAojj7KSvKhrwMpkhy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx",
   "old_string": "            x={contextMenu.x}\n            y={contextMenu.y}\n            item={contextMenu.item}\n            selectedCount={1}\n            onClose={contextMenu.hide}\n            // TODO(phase 63): SealedChildRef has no .type; download enabled by default for shared items\n            onDownload={handleDownload}",
   "new_string": "            x={contextMenu.x}\n            y={contextMenu.y}\n            item={contextMenu.item}\n            resolvedChildren={resolvedChildren}\n            selectedCount={1}\n            onClose={contextMenu.hide}\n            // TODO(phase 63): SealedChildRef has no .type; download enabled by default for shared items\n            onDownload={handleDownload}"
 }
@@ -8283,7 +8283,7 @@ id: toolu_017jmfCAojj7KSvKhrwMpkhy
 tool_result
 id: toolu_017jmfCAojj7KSvKhrwMpkhy
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SharedFileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8296,7 +8296,7 @@ tool_use Bash
 id: toolu_01P5faUNv8Z7H1vjDELrwhg3
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== resolvedByIpnsName definition line + the sites =====\"\ngrep -n \"resolvedByIpnsName\\|listFolder\\|ensureFolderLoaded\\|forceResolve\\|refreshShared\\|onUploadComplete\\|handleUpload\" apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"\"\necho \"===== SharedFileBrowser refresh hook (useSharedFolder?) =====\"\ngrep -rn \"listFolder\\|forceResolve\\|ensureFolderLoaded\" apps/web/src/hooks/useSharedFolder*.ts apps/web/src/hooks/useShared*.ts 2>/dev/null | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== resolvedByIpnsName definition line + the sites =====\"\ngrep -n \"resolvedByIpnsName\\|listFolder\\|ensureFolderLoaded\\|forceResolve\\|refreshShared\\|onUploadComplete\\|handleUpload\" apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"\"\necho \"===== SharedFileBrowser refresh hook (useSharedFolder?) =====\"\ngrep -rn \"listFolder\\|forceResolve\\|ensureFolderLoaded\" apps/web/src/hooks/useSharedFolder*.ts apps/web/src/hooks/useShared*.ts 2>/dev/null | head",
   "description": "Check scope + shared post-upload refresh paths"
 }
 ```
@@ -8328,7 +8328,7 @@ tool_use Bash
 id: toolu_01Rj1ULG7hGLReZ3jbMysdEm
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== confirm no other SelectionActionBar callers =====\"\ngit grep -n \"<SelectionActionBar\" -- apps/web/src\necho \"\"\necho \"===== web typecheck =====\"\npnpm --filter @cipherbox/web typecheck 2>&1 | tail -30",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== confirm no other SelectionActionBar callers =====\"\ngit grep -n \"<SelectionActionBar\" -- apps/web/src\necho \"\"\necho \"===== web typecheck =====\"\npnpm --filter @cipherbox/web typecheck 2>&1 | tail -30",
   "description": "Verify callers and run web typecheck"
 }
 ```
@@ -8360,7 +8360,7 @@ tool_use Bash
 id: toolu_018pE8d3ykC6LzhrxVxrMUA5
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== web package scripts =====\"\nnode -e \"const p=require('./apps/web/package.json'); console.log(Object.keys(p.scripts).join('\\n'))\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== web package scripts =====\"\nnode -e \"const p=require('./apps/web/package.json'); console.log(Object.keys(p.scripts).join('\\n'))\"",
   "description": "List web package scripts"
 }
 ```
@@ -8389,7 +8389,7 @@ tool_use Bash
 id: toolu_01SsCpu1XFgXidGYLARLKo9Z
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/apps/web\necho \"===== build script =====\"\nnode -e \"console.log(require('./package.json').scripts.build)\"\necho \"\"\necho \"===== tsc --noEmit =====\"\npnpm exec tsc --noEmit 2>&1 | tail -30\necho \"EXIT: $?\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box/apps/web\necho \"===== build script =====\"\nnode -e \"console.log(require('./package.json').scripts.build)\"\necho \"\"\necho \"===== tsc --noEmit =====\"\npnpm exec tsc --noEmit 2>&1 | tail -30\necho \"EXIT: $?\"",
   "description": "Typecheck web app via tsc noEmit"
 }
 ```
@@ -8416,7 +8416,7 @@ tool_use Bash
 id: toolu_01HmF65ewC3pS9QiR5YLLvnR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/apps/web\necho \"===== lint script =====\"\nnode -e \"console.log(require('./package.json').scripts.lint)\"\necho \"\"\necho \"===== lint (changed files scope) =====\"\npnpm exec tsc -b 2>&1 | tail -5; echo \"tsc -b EXIT: $?\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box/apps/web\necho \"===== lint script =====\"\nnode -e \"console.log(require('./package.json').scripts.lint)\"\necho \"\"\necho \"===== lint (changed files scope) =====\"\npnpm exec tsc -b 2>&1 | tail -5; echo \"tsc -b EXIT: $?\"",
   "description": "Check lint config and run tsc -b"
 }
 ```
@@ -8439,7 +8439,7 @@ tool_use Bash
 id: toolu_01Np6bWLvd1UrPBek9fRG5Ut
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/apps/web\necho \"===== eslint on changed files =====\"\npnpm exec eslint \\\n  src/utils/fileTypes.ts \\\n  src/components/file-browser/useFileBrowserActions.ts \\\n  src/components/file-browser/SelectionActionBar.tsx \\\n  src/components/file-browser/ContextMenu.tsx \\\n  src/components/file-browser/SharedFileBrowser.tsx \\\n  src/components/file-browser/FileBrowser.tsx \\\n  src/hooks/folder-helpers.ts 2>&1 | tail -40\necho \"ESLINT EXIT: $?\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box/apps/web\necho \"===== eslint on changed files =====\"\npnpm exec eslint \\\n  src/utils/fileTypes.ts \\\n  src/components/file-browser/useFileBrowserActions.ts \\\n  src/components/file-browser/SelectionActionBar.tsx \\\n  src/components/file-browser/ContextMenu.tsx \\\n  src/components/file-browser/SharedFileBrowser.tsx \\\n  src/components/file-browser/FileBrowser.tsx \\\n  src/hooks/folder-helpers.ts 2>&1 | tail -40\necho \"ESLINT EXIT: $?\"",
   "description": "Lint the changed files"
 }
 ```
@@ -8463,7 +8463,7 @@ tool_use Bash
 id: toolu_01GjnYgk8b2H52KFa43BsFbn
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== playwright webServer config =====\"\ngrep -n \"webServer\\|command\\|url\\|port\\|reuseExistingServer\\|baseURL\" tests/web-e2e/playwright.config.ts 2>/dev/null | head -30\necho \"\"\necho \"===== running vite / node / api / docker =====\"\nps aux | grep -iE \"vite|api-dev|nest|pnpm.*dev\" | grep -v grep | awk '{print $2, $11, $12, $13, $14}' | head\necho \"--- docker ---\"\ndocker ps --format '{{.Names}}\\t{{.Status}}\\t{{.Ports}}' 2>/dev/null | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== playwright webServer config =====\"\ngrep -n \"webServer\\|command\\|url\\|port\\|reuseExistingServer\\|baseURL\" tests/web-e2e/playwright.config.ts 2>/dev/null | head -30\necho \"\"\necho \"===== running vite / node / api / docker =====\"\nps aux | grep -iE \"vite|api-dev|nest|pnpm.*dev\" | grep -v grep | awk '{print $2, $11, $12, $13, $14}' | head\necho \"--- docker ---\"\ndocker ps --format '{{.Names}}\\t{{.Status}}\\t{{.Ports}}' 2>/dev/null | head",
   "description": "Inspect web-e2e server config and running processes"
 }
 ```
@@ -8498,9 +8498,9 @@ id: toolu_01GjnYgk8b2H52KFa43BsFbn
 ===== running vite / node / api / docker =====
 84195 /System/Library/PrivateFrameworks/AppleNeuralEngine.framework/XPCServices/ANEStorageMaintainer.xpc/Contents/MacOS/ANEStorageMaintainer   
 84194 /System/Library/PrivateFrameworks/AppleNeuralEngine.framework/XPCServices/ANEStorageMaintainer.xpc/Contents/MacOS/ANEStorageMaintainer   
-95217 node /Users/myankelev/Code/random/cipher-box/apps/api/node_modules/.bin/../@nestjs/cli/bin/nest.js start --watch
-95193 node /Users/myankelev/.local/bin/pnpm --filter @cipherbox/api
-95187 /bin/zsh -c source /Users/myankelev/.claude/shell-snapshots/snapshot-zsh-1783011132429-nltelr.sh
+95217 node /home/<USER>/Code/random/cipher-box/apps/api/node_modules/.bin/../@nestjs/cli/bin/nest.js start --watch
+95193 node /home/<USER>/.local/bin/pnpm --filter @cipherbox/api
+95187 /bin/zsh -c source /home/<USER>/.claude/shell-snapshots/snapshot-zsh-1783011132429-nltelr.sh
 --- docker ---
 cipherbox-ipfs	Up 49 minutes (healthy)	0.0.0.0:4001->4001/tcp, [::]:4001->4001/tcp, 0.0.0.0:5001->5001/tcp, [::]:5001->5001/tcp, 0.0.0.0:8080->8080/tcp, 0.0.0.0:4001->4001/udp, [::]:8080->8080/tcp, [::]:4001->4001/udp
 cipherbox-someguy	Up 49 minutes (healthy)	0.0.0.0:4004->4004/tcp, [::]:4004->4004/tcp, 0.0.0.0:8190->8190/tcp, 0.0.0.0:4004->4004/udp, [::]:8190->8190/tcp, [::]:4004->4004/udp
@@ -8519,7 +8519,7 @@ tool_use Bash
 id: toolu_018Yct7vEdkg6K1Z2FXX43no
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/gap2-specs.log\necho \"starting run at $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/web-e2e exec playwright test \\\n  batch-download writable-shares shared-folder-desync \\\n  --workers=1 >> \"$LOG\" 2>&1\necho \"EXIT: $?\" >> \"$LOG\"\necho \"done at $(date)\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/gap2-specs.log\necho \"starting run at $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/web-e2e exec playwright test \\\n  batch-download writable-shares shared-folder-desync \\\n  --workers=1 >> \"$LOG\" 2>&1\necho \"EXIT: $?\" >> \"$LOG\"\necho \"done at $(date)\" >> \"$LOG\"",
   "description": "Run the three specs on the fresh stack",
   "run_in_background": true
 }
@@ -8543,7 +8543,7 @@ tool_use Bash
 id: toolu_01PB8x5hurPp9grZrPny43Gf
 ```json
 {
-  "command": "sleep 25; tail -15 /Users/myankelev/.claude/jobs/064836b9/tmp/gap2-specs.log 2>/dev/null",
+  "command": "sleep 25; tail -15 /home/<USER>/.claude/jobs/064836b9/tmp/gap2-specs.log 2>/dev/null",
   "description": "Poll spec run progress"
 }
 ```
@@ -8553,7 +8553,7 @@ id: toolu_01PB8x5hurPp9grZrPny43Gf
 tool_result ERROR
 id: toolu_01PB8x5hurPp9grZrPny43Gf
 ```
-<tool_use_error>Blocked: sleep 25 followed by: tail -15 /Users/myankelev/.claude/jobs/064836b9/tmp/gap2-specs.log. To wait for a condition, use Monitor with an until-loop (e.g. `until <check>; do sleep 2; done`). To wait for a command you started, use run_in_background: true. Do not chain shorter sleeps to work around this block.</tool_use_error>
+<tool_use_error>Blocked: sleep 25 followed by: tail -15 /home/<USER>/.claude/jobs/064836b9/tmp/gap2-specs.log. To wait for a condition, use Monitor with an until-loop (e.g. `until <check>; do sleep 2; done`). To wait for a command you started, use run_in_background: true. Do not chain shorter sleeps to work around this block.</tool_use_error>
 ```
 
 > AGENT
@@ -8566,7 +8566,7 @@ tool_use Write
 id: toolu_01VF2d2BKzPAcpBk5RmndsKV
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-PLAN.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-PLAN.md",
   "content": "---\nphase: 68.2-sdk-owned-read-chain-and-resolved-folder-listings\nplan: 15\ntype: fix\nwave: 4\ngap_closure: true\ndepends_on: [11]\nfiles_modified:\n  - apps/web/src/utils/fileTypes.ts\n  - apps/web/src/components/file-browser/useFileBrowserActions.ts\n  - apps/web/src/components/file-browser/SelectionActionBar.tsx\n  - apps/web/src/components/file-browser/ContextMenu.tsx\n  - apps/web/src/components/file-browser/SharedFileBrowser.tsx\n  - apps/web/src/components/file-browser/FileBrowser.tsx\nautonomous: true\nrequirements: [SDK-READ-02]\nmust_haves:\n  truths:\n    - \"File-vs-folder classification of an identity-only SealedChildRef resolves against the SDK ResolvedChild listing (keyed by ipnsName), never off the bare ref's absent .kind.\"\n    - \"The batch/single download LOGIC (not only the affordance) classifies via the resolved listing -- a selection of files actually downloads.\"\n    - \"No SDK change: ResolvedChild + listFolder already carry kind (SDK-READ-02); this is a pure web-consumer wiring fix.\"\n  artifacts:\n    - \"isFileRefResolved(ref, resolvedByIpnsName) helper in fileTypes.ts; every download-gating isFileRef call on a bare ref replaced by it.\"\n  key_links:\n    - \"FileBrowser feeds useFileBrowserActions rawChildren (SealedChildRef[], no kind); the resolved listing (currentFolder.children: ResolvedChild[]) must be threaded alongside.\"\n    - \"ContextMenu gates Download/Edit/Preview on isFile; SelectionActionBar gates the download button + count copy on fileCount.\"\n---\n\n<objective>\nGap-closure (round 2, Regression A). The 68.2-11 removal of the per-ipnsName\nkind-cache left `isFileRef(bareSealedChildRef)` permanently returning `false`\n(folder-safe default). Every download-affordance AND download-logic site that\nclassifies an identity-only `SealedChildRef` (selection/context-menu/download\npayloads keyed off `rawChildren`) therefore treats files as folders: the\nselection-bar download button is hidden, the context-menu Download/Edit/Preview\nitems never render, and -- critically -- `handleDownload`/`handleBatchDownload`\nfilter every selected file out, so even […]
 
 > TOOL
@@ -8574,7 +8574,7 @@ id: toolu_01VF2d2BKzPAcpBk5RmndsKV
 tool_result
 id: toolu_01VF2d2BKzPAcpBk5RmndsKV
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-PLAN.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-PLAN.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -8583,7 +8583,7 @@ tool_use Write
 id: toolu_016PVWCjjK2AJRnmHFEKwbVw
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md",
   "content": "---\nphase: 68.2-sdk-owned-read-chain-and-resolved-folder-listings\nplan: 16\ntype: fix\nwave: 4\ngap_closure: true\ndepends_on: [13]\nfiles_modified:\n  - apps/web/src/components/file-browser/useFileBrowserActions.ts\n  - apps/web/src/hooks/folder-helpers.ts\nautonomous: true\nrequirements: [SDK-READ-03]\nmust_haves:\n  truths:\n    - \"Every POST-MUTATION folder refresh forces a live gated resolve ({ forceResolve: true }) on both listFolder and ensureFolderLoaded, so the just-written child is never masked by the SDK cache's ipnsName+sequence window.\"\n    - \"This matches the D-03 deterministic-freshness precedent already applied to the nav + poll legs (68.2-14: refreshFolderListing, useSyncPolling).\"\n    - \"No SDK change: forceResolve already exists on listFolder/ensureFolderLoaded (68.2-13).\"\n  artifacts:\n    - \"handleSync (post-upload refresh via UploadZone.onUploadComplete) forces both legs.\"\n    - \"resyncFolder (post-409 CAS re-sync) forces both legs.\"\n  key_links:\n    - \"UploadZone.onUploadComplete -> actions.handleSync -> client.listFolder(rootIpnsName) was un-forced -> stale post-upload listing -> the uploaded file never appears.\"\n---\n\n<objective>\nGap-closure (round 2, Regression B). After 68.2 moved the read chain into the\nSDK, the owned-vault post-upload refresh (`handleSync`, fired by\n`UploadZone.onUploadComplete`) called `client.listFolder(rootIpnsName)` /\n`ensureFolderLoaded(rootIpnsName)` WITHOUT `{ forceResolve: true }`. The\nfreshly-published record is still inside the SDK cache's ipnsName+sequence\nwindow, so the refresh returns the pre-upload listing and the just-uploaded file\nnever appears until an unrelated poll/nav forces a live resolve.\n\nFix: force a live gated resolve on both legs of every post-mutation refresh --\nmirroring the 68.2-14 D-03 deterministic-freshness precedent already applied to\nnavigation (`refreshFolderListing`) and polling […]
 
 > TOOL
@@ -8591,7 +8591,7 @@ id: toolu_016PVWCjjK2AJRnmHFEKwbVw
 tool_result
 id: toolu_016PVWCjjK2AJRnmHFEKwbVw
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8604,7 +8604,7 @@ tool_use Bash
 id: toolu_01XJULS4UbdGjNxtU417TBQS
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== D-07 gate: runtime forbidden imports in apps/web/src =====\"\necho \"--- @cipherbox/sdk-core runtime (should be none) ---\"\ngit grep -nE \"from '@cipherbox/(sdk-core|core)'\" -- apps/web/src | grep -v \"import type\" | grep -vE \"^\\s*//\" | grep -iE \"sdk-core\" || echo \"NONE (sdk-core)\"\necho \"--- my new @cipherbox/sdk imports (should be type-only) ---\"\ngit grep -n \"@cipherbox/sdk'\" -- apps/web/src/utils/fileTypes.ts apps/web/src/components/file-browser/useFileBrowserActions.ts apps/web/src/components/file-browser/SelectionActionBar.tsx apps/web/src/components/file-browser/ContextMenu.tsx\necho \"\"\necho \"===== spec log tail =====\"\ntail -20 /Users/myankelev/.claude/jobs/064836b9/tmp/gap2-specs.log 2>/dev/null",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== D-07 gate: runtime forbidden imports in apps/web/src =====\"\necho \"--- @cipherbox/sdk-core runtime (should be none) ---\"\ngit grep -nE \"from '@cipherbox/(sdk-core|core)'\" -- apps/web/src | grep -v \"import type\" | grep -vE \"^\\s*//\" | grep -iE \"sdk-core\" || echo \"NONE (sdk-core)\"\necho \"--- my new @cipherbox/sdk imports (should be type-only) ---\"\ngit grep -n \"@cipherbox/sdk'\" -- apps/web/src/utils/fileTypes.ts apps/web/src/components/file-browser/useFileBrowserActions.ts apps/web/src/components/file-browser/SelectionActionBar.tsx apps/web/src/components/file-browser/ContextMenu.tsx\necho \"\"\necho \"===== spec log tail =====\"\ntail -20 /home/<USER>/.claude/jobs/064836b9/tmp/gap2-specs.log 2>/dev/null",
   "description": "Check D-07 gate cleanliness and spec progress"
 }
 ```
@@ -8673,7 +8673,7 @@ tool_use Bash
 id: toolu_013sHD97Du9WLDebFL4qPbuc
 ```json
 {
-  "command": "tail -25 /Users/myankelev/.claude/jobs/064836b9/tmp/gap2-specs.log 2>/dev/null",
+  "command": "tail -25 /home/<USER>/.claude/jobs/064836b9/tmp/gap2-specs.log 2>/dev/null",
   "description": "Check current spec progress"
 }
 ```
@@ -8708,7 +8708,7 @@ tool_use Bash
 id: toolu_01SVpy9VXzvmATHhszx4qRDR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nuntil grep -q \"^EXIT:\" /Users/myankelev/.claude/jobs/064836b9/tmp/gap2-specs.log 2>/dev/null; do sleep 5; done\necho \"=== run complete ===\"\ngrep -E \"writable-shares|EXIT:|passed|failed|flaky|✘|✓.*1\\.2\" /Users/myankelev/.claude/jobs/064836b9/tmp/gap2-specs.log | tail -40",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nuntil grep -q \"^EXIT:\" /home/<USER>/.claude/jobs/064836b9/tmp/gap2-specs.log 2>/dev/null; do sleep 5; done\necho \"=== run complete ===\"\ngrep -E \"writable-shares|EXIT:|passed|failed|flaky|✘|✓.*1\\.2\" /home/<USER>/.claude/jobs/064836b9/tmp/gap2-specs.log | tail -40",
   "description": "Wait for spec run completion and show writable-shares results",
   "run_in_background": true
 }
@@ -8742,7 +8742,7 @@ tool_use Bash
 id: toolu_013Ap4VJFvv2Ld1xAqQJFcS8
 ```json
 {
-  "command": "grep -E \"writable-shares|passed|failed|flaky|✘|✓.*(1\\.2|1\\.1)|EXIT:\" /Users/myankelev/.claude/jobs/064836b9/tmp/gap2-specs.log | tail -50",
+  "command": "grep -E \"writable-shares|passed|failed|flaky|✘|✓.*(1\\.2|1\\.1)|EXIT:\" /home/<USER>/.claude/jobs/064836b9/tmp/gap2-specs.log | tail -50",
   "description": "Show writable-shares and final tally"
 }
 ```
@@ -8774,7 +8774,7 @@ tool_use Bash
 id: toolu_015qdQcnQtbCDhC5Q6obynaZ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== error-context.md =====\"\ncat \"test-results/writable-shares-Writable-S-d4eeb-s-a-folder-with-a-text-file-chromium/error-context.md\" 2>/dev/null | head -60\necho \"\"\necho \"===== aliceUploadFile helper + test 1.2 (lines 40-150) =====\"\nsed -n '40,150p' tests/web-e2e/tests/writable-shares.spec.ts",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== error-context.md =====\"\ncat \"test-results/writable-shares-Writable-S-d4eeb-s-a-folder-with-a-text-file-chromium/error-context.md\" 2>/dev/null | head -60\necho \"\"\necho \"===== aliceUploadFile helper + test 1.2 (lines 40-150) =====\"\nsed -n '40,150p' tests/web-e2e/tests/writable-shares.spec.ts",
   "description": "Read failure context and upload helper"
 }
 ```
@@ -8863,7 +8863,7 @@ tool_use Bash
 id: toolu_01Y3KdrteirSQC3dZ5YKPHwP
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== useFolderNavigation exports =====\"\ngrep -n \"export\\|refreshFolderListing\\|return {\" apps/web/src/hooks/useFolderNavigation.ts | head -40\necho \"\"\necho \"===== FileBrowser: what it destructures from navigation hook + currentFolder shape =====\"\nsed -n '40,102p' apps/web/src/components/file-browser/FileBrowser.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== useFolderNavigation exports =====\"\ngrep -n \"export\\|refreshFolderListing\\|return {\" apps/web/src/hooks/useFolderNavigation.ts | head -40\necho \"\"\necho \"===== FileBrowser: what it destructures from navigation hook + currentFolder shape =====\"\nsed -n '40,102p' apps/web/src/components/file-browser/FileBrowser.tsx",
   "description": "Find current-folder refresh capability"
 }
 ```
@@ -8936,7 +8936,7 @@ tool_use Bash
 id: toolu_01WYAaSbLcKesCcNwWoVGeqx
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== useSyncPolling.ts (full) =====\"\ncat apps/web/src/hooks/useSyncPolling.ts\necho \"\"\necho \"===== FolderNode ipnsName field =====\"\ngrep -n \"ipnsName\" apps/web/src/stores/folder.store.ts | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== useSyncPolling.ts (full) =====\"\ncat apps/web/src/hooks/useSyncPolling.ts\necho \"\"\necho \"===== FolderNode ipnsName field =====\"\ngrep -n \"ipnsName\" apps/web/src/stores/folder.store.ts | head",
   "description": "Read useSyncPolling and confirm ipnsName in store"
 }
 ```
@@ -8987,7 +8987,7 @@ tool_use Read
 id: toolu_017oEgQvzxCkAfgPmpDRJD3p
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
   "offset": 1,
   "limit": 38
 }
@@ -9034,7 +9034,7 @@ id: toolu_01DLf4Z9KvCrdnh5j15gXsU2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
   "old_string": "import { useSyncPolling } from '../../hooks/useSyncPolling';",
   "new_string": "import { useSyncPolling, invalidateOpenFolder } from '../../hooks/useSyncPolling';"
 }
@@ -9045,7 +9045,7 @@ id: toolu_01DLf4Z9KvCrdnh5j15gXsU2
 tool_result
 id: toolu_01DLf4Z9KvCrdnh5j15gXsU2
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9055,7 +9055,7 @@ id: toolu_01NMeFLmoQjCqyzT91e9PS4o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx",
   "old_string": "            <UploadZone\n              folderId={currentFolderId}\n              onUploadComplete={() => {\n                void actions.handleSync().catch(() => {});\n              }}\n            />",
   "new_string": "            <UploadZone\n              folderId={currentFolderId}\n              onUploadComplete={() => {\n                // 68.2-16: refresh the CURRENTLY OPEN folder immediately -- the\n                // upload targets `currentFolderId`, which may be a subfolder,\n                // but `handleSync` only ever resyncs root. Without this the\n                // just-uploaded child never appears in a subfolder view until\n                // the 30s poll's `invalidateOpenFolder` leg happens to fire.\n                // Then run the root/tree + search-index resync (best-effort).\n                void invalidateOpenFolder()\n                  .catch(() => {})\n                  .finally(() => {\n                    void actions.handleSync().catch(() => {});\n                  });\n              }}\n            />"
 }
@@ -9066,7 +9066,7 @@ id: toolu_01NMeFLmoQjCqyzT91e9PS4o
 tool_result
 id: toolu_01NMeFLmoQjCqyzT91e9PS4o
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/FileBrowser.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9079,7 +9079,7 @@ tool_use Bash
 id: toolu_01F3ZJ2ZUPo3DXGHk5iqH1VK
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== SharedFileBrowser upload-complete / refresh handler =====\"\ngrep -n \"onUploadComplete\\|onComplete\\|handleUpload\\|invalidateOpenFolder\\|refreshShared\\|listFolder\\|loadFolder\\|reloadFolder\\|forceResolve\" apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"\"\necho \"===== how shared folder view refreshes (the hook it uses) =====\"\ngrep -rln \"sharedFolder\\|useSharedBrowser\\|shared-browser\" apps/web/src/hooks/ 2>/dev/null\ngrep -n \"onUploadComplete\\|UploadZone\" apps/web/src/components/file-browser/SharedFileBrowser.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== SharedFileBrowser upload-complete / refresh handler =====\"\ngrep -n \"onUploadComplete\\|onComplete\\|handleUpload\\|invalidateOpenFolder\\|refreshShared\\|listFolder\\|loadFolder\\|reloadFolder\\|forceResolve\" apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"\"\necho \"===== how shared folder view refreshes (the hook it uses) =====\"\ngrep -rln \"sharedFolder\\|useSharedBrowser\\|shared-browser\" apps/web/src/hooks/ 2>/dev/null\ngrep -n \"onUploadComplete\\|UploadZone\" apps/web/src/components/file-browser/SharedFileBrowser.tsx",
   "description": "Check SharedFileBrowser upload refresh path"
 }
 ```
@@ -9111,7 +9111,7 @@ tool_use Bash
 id: toolu_014s1to4roicKq7TtESYEyDj
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/apps/web\npnpm exec tsc -b 2>&1 | tail -8; echo \"tsc EXIT: ${PIPESTATUS[0]}\"\npnpm exec eslint src/components/file-browser/FileBrowser.tsx src/hooks/useSyncPolling.ts 2>&1 | tail -10; echo \"eslint EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box/apps/web\npnpm exec tsc -b 2>&1 | tail -8; echo \"tsc EXIT: ${PIPESTATUS[0]}\"\npnpm exec eslint src/components/file-browser/FileBrowser.tsx src/hooks/useSyncPolling.ts 2>&1 | tail -10; echo \"eslint EXIT: ${PIPESTATUS[0]}\"",
   "description": "Typecheck and lint the FileBrowser change"
 }
 ```
@@ -9131,7 +9131,7 @@ tool_use Bash
 id: toolu_011oUS6awwqtQXyC7Q5Fjt77
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/apps/web\npnpm exec tsc -b >/tmp/tsc.out 2>&1; echo \"tsc EXIT: $?\"; tail -5 /tmp/tsc.out\npnpm exec eslint src/components/file-browser/FileBrowser.tsx src/hooks/useSyncPolling.ts >/tmp/lint.out 2>&1; echo \"eslint EXIT: $?\"; tail -5 /tmp/lint.out",
+  "command": "cd /home/<USER>/Code/random/cipher-box/apps/web\npnpm exec tsc -b >/tmp/tsc.out 2>&1; echo \"tsc EXIT: $?\"; tail -5 /tmp/tsc.out\npnpm exec eslint src/components/file-browser/FileBrowser.tsx src/hooks/useSyncPolling.ts >/tmp/lint.out 2>&1; echo \"eslint EXIT: $?\"; tail -5 /tmp/lint.out",
   "description": "Re-run typecheck/lint capturing exit codes"
 }
 ```
@@ -9155,7 +9155,7 @@ tool_use Bash
 id: toolu_01FM65cwcRqejsW4MuqrLYb4
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/writable-shares.log\necho \"start $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/web-e2e exec playwright test writable-shares --workers=1 >> \"$LOG\" 2>&1\necho \"EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/writable-shares.log\necho \"start $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/web-e2e exec playwright test writable-shares --workers=1 >> \"$LOG\" 2>&1\necho \"EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
   "description": "Run full writable-shares suite",
   "run_in_background": true
 }
@@ -9180,7 +9180,7 @@ id: toolu_01DPowijPUQ5SXiV7qEchz9Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md",
   "old_string": "files_modified:\n  - apps/web/src/components/file-browser/useFileBrowserActions.ts\n  - apps/web/src/hooks/folder-helpers.ts\nautonomous: true\nrequirements: [SDK-READ-03]\nmust_haves:\n  truths:\n    - \"Every POST-MUTATION folder refresh forces a live gated resolve ({ forceResolve: true }) on both listFolder and ensureFolderLoaded, so the just-written child is never masked by the SDK cache's ipnsName+sequence window.\"\n    - \"This matches the D-03 deterministic-freshness precedent already applied to the nav + poll legs (68.2-14: refreshFolderListing, useSyncPolling).\"\n    - \"No SDK change: forceResolve already exists on listFolder/ensureFolderLoaded (68.2-13).\"\n  artifacts:\n    - \"handleSync (post-upload refresh via UploadZone.onUploadComplete) forces both legs.\"\n    - \"resyncFolder (post-409 CAS re-sync) forces both legs.\"\n  key_links:\n    - \"UploadZone.onUploadComplete -> actions.handleSync -> client.listFolder(rootIpnsName) was un-forced -> stale post-upload listing -> the uploaded file never appears.\"\n---",
   "new_string": "files_modified:\n  - apps/web/src/components/file-browser/FileBrowser.tsx\n  - apps/web/src/components/file-browser/useFileBrowserActions.ts\n  - apps/web/src/hooks/folder-helpers.ts\nautonomous: true\nrequirements: [SDK-READ-03]\nmust_haves:\n  truths:\n    - \"The post-upload refresh targets the CURRENTLY OPEN folder (currentFolderId / its ipnsName), not root -- an upload into a subfolder becomes visible immediately, not only after the 30s poll.\"\n    - \"Post-mutation refreshes force a live gated resolve ({ forceResolve: true }) on both listFolder and ensureFolderLoaded, matching the D-03 nav+poll precedent (68.2-14: refreshFolderListing, useSyncPolling.invalidateOpenFolder).\"\n    - \"No SDK change: forceResolve + invalidateOpenFolder already exist (68.2-13/14).\"\n  artifacts:\n    - \"UploadZone.onUploadComplete calls invalidateOpenFolder() (current-folder refresh) before […]
 
@@ -9189,7 +9189,7 @@ id: toolu_01DPowijPUQ5SXiV7qEchz9Y
 tool_result
 id: toolu_01DPowijPUQ5SXiV7qEchz9Y
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9199,7 +9199,7 @@ id: toolu_013umazDETn4ACKuRwRNE5zb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md",
   "old_string": "<tasks>\n\n<task type=\"fix\">\n  <name>Task 1: force the post-upload refresh</name>\n  <files>apps/web/src/components/file-browser/useFileBrowserActions.ts</files>\n  <action>In `handleSync`, pass `{ forceResolve: true }` to both `client.listFolder(rootIpnsName, ...)` and `client.ensureFolderLoaded(rootIpnsName, ...)`.</action>\n  <done>Post-upload refresh reflects the just-written child.</done>\n</task>\n\n<task type=\"fix\">\n  <name>Task 2: force the post-409 re-sync</name>\n  <files>apps/web/src/hooks/folder-helpers.ts</files>\n  <action>In `resyncFolder`, pass `{ forceResolve: true }` to both `listFolder` and `ensureFolderLoaded`.</action>\n  <done>A 409-conflict re-sync reflects the winning record.</done>\n</task>\n\n</tasks>",
   "new_string": "<tasks>\n\n<task type=\"fix\">\n  <name>Task 1: refresh the current folder on upload complete</name>\n  <files>apps/web/src/components/file-browser/FileBrowser.tsx</files>\n  <action>Import the already-exported `invalidateOpenFolder` from `useSyncPolling`. In `UploadZone.onUploadComplete`, call `invalidateOpenFolder()` (immediate gated re-resolve of the currently-open folder) first, then run `actions.handleSync()` best-effort for the root tree + search index. This is the load-bearing fix: uploads target the open subfolder, but handleSync alone only resyncs root.</action>\n  <done>An upload into a subfolder appears immediately in that subfolder's view.</done>\n</task>\n\n<task type=\"fix\">\n  <name>Task 2: force the root/tree resync and post-409 re-sync</name>\n  <files>apps/web/src/components/file-browser/useFileBrowserActions.ts, apps/web/src/hooks/folder-helpers.ts</files>\n  <action>In `handleSync`, pass `{ forceResolve: true }` to both `client.listFolder(rootIpnsName, ...)` and `client.ensureFolderLoaded(rootIpnsName, ...)`. In `resyncFolder`, pass `{ forceResolve: true }` to both legs. Deterministic-freshness consistency with the nav/poll precedent.</action>\n  <done>The root resync and post-409 re-sync reflect the winning record.</done>\n</task>\n\n</tasks>"
 }
@@ -9210,7 +9210,7 @@ id: toolu_013umazDETn4ACKuRwRNE5zb
 tool_result
 id: toolu_013umazDETn4ACKuRwRNE5zb
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9223,7 +9223,7 @@ tool_use Bash
 id: toolu_01F3FLNgNU2uRxsi4Wop1fTn
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== useDropUpload: post-upload refresh? =====\"\ngrep -n \"onUploadComplete\\|invalidateOpenFolder\\|handleSync\\|listFolder\\|updateFolderChildren\\|refresh\\|complete\" apps/web/src/hooks/useDropUpload.ts | head -20\necho \"\"\necho \"===== does UploadZone's drop path also call onUploadComplete? =====\"\nsed -n '31,62p' apps/web/src/components/file-browser/UploadZone.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== useDropUpload: post-upload refresh? =====\"\ngrep -n \"onUploadComplete\\|invalidateOpenFolder\\|handleSync\\|listFolder\\|updateFolderChildren\\|refresh\\|complete\" apps/web/src/hooks/useDropUpload.ts | head -20\necho \"\"\necho \"===== does UploadZone's drop path also call onUploadComplete? =====\"\nsed -n '31,62p' apps/web/src/components/file-browser/UploadZone.tsx",
   "description": "Inspect drag-drop upload refresh"
 }
 ```
@@ -9283,7 +9283,7 @@ tool_use Bash
 id: toolu_01UACLv8rzatWYMKEpAiuSuE
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== useSharedWriteOps: upload + refresh path =====\"\ngrep -n \"upload\\|refresh\\|listFolder\\|invalidate\\|forceResolve\\|reload\\|updateFolder\\|onComplete\\|loadShared\\|navigate\" apps/web/src/hooks/useSharedWriteOps.ts | head -30\necho \"\"\necho \"===== useSharedNavigation refresh of open shared folder =====\"\ngrep -n \"forceResolve\\|listFolder\\|invalidate\\|refresh\\|reload\\|loadFolder\" apps/web/src/hooks/useSharedNavigation.ts apps/web/src/hooks/useSharedNavigationActions.ts apps/web/src/hooks/shared-folder-projection.ts | head -30",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== useSharedWriteOps: upload + refresh path =====\"\ngrep -n \"upload\\|refresh\\|listFolder\\|invalidate\\|forceResolve\\|reload\\|updateFolder\\|onComplete\\|loadShared\\|navigate\" apps/web/src/hooks/useSharedWriteOps.ts | head -30\necho \"\"\necho \"===== useSharedNavigation refresh of open shared folder =====\"\ngrep -n \"forceResolve\\|listFolder\\|invalidate\\|refresh\\|reload\\|loadFolder\" apps/web/src/hooks/useSharedNavigation.ts apps/web/src/hooks/useSharedNavigationActions.ts apps/web/src/hooks/shared-folder-projection.ts | head -30",
   "description": "Inspect shared-side upload refresh"
 }
 ```
@@ -9311,7 +9311,7 @@ tool_use Bash
 id: toolu_013fgUK4Moig5maXua8bmcCz
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== useSharedWriteOps uploadFileHandler 110-145 =====\"\nsed -n '110,145p' apps/web/src/hooks/useSharedWriteOps.ts\necho \"\"\necho \"===== how SharedFileBrowser refreshes after a shared write (uploadFile caller) =====\"\ngrep -n \"uploadFile\\|afterWrite\\|refreshShared\\|invalidate\\|reloadFolder\\|loadFolderChildren\\|navigateToSubfolder\\|refresh\" apps/web/src/components/file-browser/SharedFileBrowser.tsx | head -25",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== useSharedWriteOps uploadFileHandler 110-145 =====\"\nsed -n '110,145p' apps/web/src/hooks/useSharedWriteOps.ts\necho \"\"\necho \"===== how SharedFileBrowser refreshes after a shared write (uploadFile caller) =====\"\ngrep -n \"uploadFile\\|afterWrite\\|refreshShared\\|invalidate\\|reloadFolder\\|loadFolderChildren\\|navigateToSubfolder\\|refresh\" apps/web/src/components/file-browser/SharedFileBrowser.tsx | head -25",
   "description": "Read shared upload handler and refresh wiring"
 }
 ```
@@ -9375,7 +9375,7 @@ tool_use Bash
 id: toolu_01PmQPSSxjc4a9wqeuoLDpMg
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== SharedFileBrowser upload handlers 300-320 & 420-435 =====\"\nsed -n '300,320p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"---\"\nsed -n '420,435p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"\"\necho \"===== runWrite: does it refresh after write? =====\"\ngrep -n \"runWrite\\|refreshSharedFolder\\|afterWrite\\|reload\\|projection\\|refresh\" apps/web/src/hooks/useSharedWriteOps.ts | head\nsed -n '/const runWrite/,/\\], \\[/p' apps/web/src/hooks/useSharedWriteOps.ts | head -50",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== SharedFileBrowser upload handlers 300-320 & 420-435 =====\"\nsed -n '300,320p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"---\"\nsed -n '420,435p' apps/web/src/components/file-browser/SharedFileBrowser.tsx\necho \"\"\necho \"===== runWrite: does it refresh after write? =====\"\ngrep -n \"runWrite\\|refreshSharedFolder\\|afterWrite\\|reload\\|projection\\|refresh\" apps/web/src/hooks/useSharedWriteOps.ts | head\nsed -n '/const runWrite/,/\\], \\[/p' apps/web/src/hooks/useSharedWriteOps.ts | head -50",
   "description": "Check shared upload refresh after write"
 }
 ```
@@ -9449,7 +9449,7 @@ tool_use Bash
 id: toolu_01RhXBdoeyBjhs4BTQdzp8YR
 ```json
 {
-  "command": "grep -E \"passed|failed|flaky|✘|EXIT:|1\\.2 Alice\" /Users/myankelev/.claude/jobs/064836b9/tmp/writable-shares.log | tail -15",
+  "command": "grep -E \"passed|failed|flaky|✘|EXIT:|1\\.2 Alice\" /home/<USER>/.claude/jobs/064836b9/tmp/writable-shares.log | tail -15",
   "description": "Confirm writable-shares final tally"
 }
 ```
@@ -9470,7 +9470,7 @@ tool_use Bash
 id: toolu_018kkC6fUyH5ybuHKtaHj2My
 ```json
 {
-  "command": "grep -cE \"✓\" /Users/myankelev/.claude/jobs/064836b9/tmp/writable-shares.log\necho \"--- any skipped/failed markers ---\"\ngrep -E \"skipped|did not run|✘|✖|✗|failed|-  [0-9]\" /Users/myankelev/.claude/jobs/064836b9/tmp/writable-shares.log | tail -20\necho \"--- total test lines (numbered) ---\"\ngrep -cE \"writable-shares.spec.ts:[0-9]+:\" /Users/myankelev/.claude/jobs/064836b9/tmp/writable-shares.log",
+  "command": "grep -cE \"✓\" /home/<USER>/.claude/jobs/064836b9/tmp/writable-shares.log\necho \"--- any skipped/failed markers ---\"\ngrep -E \"skipped|did not run|✘|✖|✗|failed|-  [0-9]\" /home/<USER>/.claude/jobs/064836b9/tmp/writable-shares.log | tail -20\necho \"--- total test lines (numbered) ---\"\ngrep -cE \"writable-shares.spec.ts:[0-9]+:\" /home/<USER>/.claude/jobs/064836b9/tmp/writable-shares.log",
   "description": "Check for skipped tests in writable-shares"
 }
 ```
@@ -9501,7 +9501,7 @@ tool_use Bash
 id: toolu_01LgRFEqEb3XcpkYVVoZmYXm
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit status --short\necho \"--- diffstat ---\"\ngit diff --stat",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit status --short\necho \"--- diffstat ---\"\ngit diff --stat",
   "description": "Review working tree changes"
 }
 ```
@@ -9541,7 +9541,7 @@ tool_use Write
 id: toolu_01R78yUep4jWrcZi6m6a9Xac
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-SUMMARY.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-SUMMARY.md",
   "content": "---\nphase: 68.2-sdk-owned-read-chain-and-resolved-folder-listings\nplan: 15\nstatus: complete\ngap_closure: true\nrequirements: [SDK-READ-02]\nverified_by: batch-download.spec.ts (5/5)\n---\n\n## What shipped\n\nGap-closure round 2, **Regression A** — download affordances AND download\nlogic were broken because the 68.2-11 kind-cache removal left\n`isFileRef(bareSealedChildRef)` permanently returning `false` (folder-safe\ndefault). Every site that classifies an identity-only `SealedChildRef`\ntherefore treated files as folders.\n\nRoot cause was wider than the affordances: `FileBrowser` feeds\n`useFileBrowserActions` the raw, kind-less `rawChildren` mirror, so\n`handleDownload` (single) and `handleBatchDownload` (batch) filtered every\nselected file out — even a forced download was a no-op — on top of the hidden\nselection-bar button and context-menu items.\n\n### Fix\n\n- `apps/web/src/utils/fileTypes.ts` — added `isFileRefResolved(ref, resolvedByIpnsName)`: a `ResolvedChild` is read inline; a bare `SealedChildRef` is classified against the SDK-resolved listing keyed by ipnsName (miss stays folder-safe `false`). `isFileRef` kept for sites that already hold a `ResolvedChild`.\n- `useFileBrowserActions.ts` — new `resolvedChildren` input + `resolvedByIpnsName` map; both download handlers classify via `isFileRefResolved` (map added to their deps).\n- `FileBrowser.tsx` — passes `resolvedChildren={currentFolder?.children ?? []}` into the hook, `SelectionActionBar`, and `ContextMenu`.\n- `SelectionActionBar.tsx` — required `resolvedChildren` prop; `fileCount`/download-button gating classify via the map.\n- `ContextMenu.tsx` — optional `resolvedChildren` prop; `isFile` (which gates Download/Edit/Preview) classifies via the map (folder-safe when omitted, so Bin/read-only callers are unaffected).\n- `SharedFileBrowser.tsx` — swapped `isFileRef`→`isFileRefResolved`, reusing its existing `resolvedByIpnsName` map for […]
 
 > TOOL
@@ -9549,7 +9549,7 @@ id: toolu_01R78yUep4jWrcZi6m6a9Xac
 tool_result
 id: toolu_01R78yUep4jWrcZi6m6a9Xac
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-SUMMARY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-SUMMARY.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -9558,7 +9558,7 @@ tool_use Write
 id: toolu_0182nRQXSTw3FNcNjPqSd5LS
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-SUMMARY.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-SUMMARY.md",
   "content": "---\nphase: 68.2-sdk-owned-read-chain-and-resolved-folder-listings\nplan: 16\nstatus: complete\ngap_closure: true\nrequirements: [SDK-READ-03]\nverified_by: writable-shares.spec.ts (29/29), shared-folder-desync.spec.ts (4/4)\n---\n\n## What shipped\n\nGap-closure round 2, **Regression B** — an upload into a subfolder never\nappeared in that subfolder's view.\n\n### Root cause\n\n`UploadZone` targets `folderId={currentFolderId}` (which may be a subfolder),\nbut `onUploadComplete` only called `actions.handleSync`, which resyncs **root\nonly** (`rootIpnsName`, folder `'root'`). The currently-open subfolder was\nnever refreshed, so the just-uploaded child stayed invisible until the 30s\npoll's `invalidateOpenFolder` leg happened to fire — longer than the test's\n30s wait. The initial hypothesis (SDK cache staleness on root) was wrong: the\nrefresh was resolving the *wrong folder*.\n\n### Fix\n\n- `FileBrowser.tsx` — `onUploadComplete` now calls the already-exported `invalidateOpenFolder()` (immediate gated re-resolve of the currently-open folder, `{ forceResolve: true }` on both legs) first, then runs `handleSync()` best-effort for the root tree + search index. Covers both UploadZone paths (drop + file-input), which share this handler.\n- `useFileBrowserActions.ts` — `handleSync` now forces both `listFolder`/`ensureFolderLoaded` on root (deterministic-freshness consistency with the nav/poll precedent).\n- `folder-helpers.ts` — `resyncFolder` (post-409 CAS re-sync) forces both legs.\n\nNo SDK change — `forceResolve` (68.2-13) and `invalidateOpenFolder` (68.2-14)\nalready existed. The **shared** browser needed no change: Bob's uploads refresh\nthrough the live `folderChildren` projection (`useSharedWriteOps` /\n`shared-folder-projection`), confirmed by the full writable-shares pass.\n\n## Verification\n\n- `pnpm --filter @cipherbox/web […]
 
 > TOOL
@@ -9566,7 +9566,7 @@ id: toolu_0182nRQXSTw3FNcNjPqSd5LS
 tool_result
 id: toolu_0182nRQXSTw3FNcNjPqSd5LS
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-SUMMARY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-SUMMARY.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9579,7 +9579,7 @@ tool_use Read
 id: toolu_019qwBVvAWhJAfQsHSLr38S2
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md"
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md"
 }
 ```
 
@@ -9597,7 +9597,7 @@ tool_use Write
 id: toolu_01DMgGjArUYENNnXXnprjLE3
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md",
   "content": "---\nstatus: testing\nphase: 68.2-sdk-owned-read-chain-and-resolved-folder-listings\nsource: [68.2-VERIFICATION.md]\nstarted: 2026-07-06T09:58:45Z\nupdated: 2026-07-06T12:30:00Z\n---\n\n## Current Test\n\nnumber: 1\nname: Independent/CI web-e2e re-confirmation of the SC#5 desync fix + full-suite triage\nexpected: |\n  `pnpm --filter @cipherbox/web-e2e test -- shared-folder-desync` passes step 3.1\n  (owner/second client sees a grantee's upload into a shared folder WITHOUT the\n  owner writing first; size/modifiedAt render from the resolved listing — not em-dash / not 1970).\n  Ideally run on CI/fresh containers. Then a full `pnpm --filter @cipherbox/web-e2e test`\n  to confirm the residual local first-failures are pre-existing 68.1 debt, NOT a 68.2 regression.\nawaiting: standing CI re-confirm on push (local fresh-container run passed)\n\n## Tests\n\n### 1. Independent/CI web-e2e re-confirmation of the SC#5 desync fix + full-suite triage\n\nexpected: shared-folder-desync.spec.ts step 3.1 passes on CI/fresh containers; residual full-suite failures confirmed pre-existing (not a 68.2 regression).\nresult: [pass — local fresh-container]\nnotes: |\n  Fresh-container run (fresh Postgres + fresh CORS-configured Kubo v0.42.0 + someguy\n  + mock-ipns-routing) on 2026-07-06:\n  - shared-folder-desync.spec.ts — 4/4 PASS (step 3.1 green; SC#5 guard holds).\n  Full-suite triage surfaced TWO real 68.2 web-layer regressions (VERIFICATION gaps,\n  not in VERIFICATION.md; SDK-READ-01..04 unaffected), both closed in gap-closure round 2\n  (plans 68.2-15 / 68.2-16):\n  - Regression A (isFileRef kind classification after the 68.2-11 kind-cache removal) —\n    download affordances […]
 
 > TOOL
@@ -9605,7 +9605,7 @@ id: toolu_01DMgGjArUYENNnXXnprjLE3
 tool_result
 id: toolu_01DMgGjArUYENNnXXnprjLE3
 ```
-The file /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9618,7 +9618,7 @@ tool_use Bash
 id: toolu_01WLr92gHXnzFTvziCdLJdqf
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit add apps/web/src/utils/fileTypes.ts \\\n  apps/web/src/components/file-browser/useFileBrowserActions.ts \\\n  apps/web/src/components/file-browser/SelectionActionBar.tsx \\\n  apps/web/src/components/file-browser/ContextMenu.tsx \\\n  apps/web/src/components/file-browser/SharedFileBrowser.tsx \\\n  apps/web/src/components/file-browser/FileBrowser.tsx \\\n  apps/web/src/hooks/folder-helpers.ts\ngit status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit add apps/web/src/utils/fileTypes.ts \\\n  apps/web/src/components/file-browser/useFileBrowserActions.ts \\\n  apps/web/src/components/file-browser/SelectionActionBar.tsx \\\n  apps/web/src/components/file-browser/ContextMenu.tsx \\\n  apps/web/src/components/file-browser/SharedFileBrowser.tsx \\\n  apps/web/src/components/file-browser/FileBrowser.tsx \\\n  apps/web/src/hooks/folder-helpers.ts\ngit status --short",
   "description": "Stage code fix files"
 }
 ```
@@ -9648,7 +9648,7 @@ tool_use Bash
 id: toolu_01D7VsouXHXLZA7EGrBxf21j
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ntimeout 120 git commit -m \"$(cat <<'EOF'\nfix(68.2): close file-browser download and post-upload-refresh regressions\n\nGap-closure round 2 for two web-layer regressions the 68.2 read-chain migration\nintroduced (VERIFICATION gaps; SDK-READ-01..04 unaffected, no SDK change).\n\nRegression A - after the 68.2-11 kind-cache removal, isFileRef(bareSealedChildRef)\nalways returns false, so identity-only refs classified as folders. This hid the\nselection-bar download button and context-menu Download/Edit/Preview items AND\nbroke the download logic itself: handleDownload/handleBatchDownload filtered\nevery selected file out. Fixed by classifying against the SDK-resolved\nResolvedChild listing (new isFileRefResolved helper, keyed by ipnsName) at every\ndownload-gating site across the owned-vault and shared browsers.\n\nRegression B - an upload into a subfolder never appeared: UploadZone targets the\nopen folder (currentFolderId) but onUploadComplete only called handleSync, which\nresyncs root only. Fixed by refreshing the open folder immediately via the\nexisting invalidateOpenFolder(), then the best-effort root/tree resync. Also\nforce live resolves on the root resync and post-409 resyncFolder for\ndeterministic-freshness consistency with the nav/poll precedent.\n\nVerified on a fresh-container stack: batch-download 5/5, writable-shares 29/29,\nshared-folder-desync 4/4 (SC#5 guard holds). tsc + eslint clean; D-07 boundary\ngrep gate green (new imports are type-only from the @cipherbox/sdk facade).\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -20\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ntimeout 120 git commit -m \"$(cat <<'EOF'\nfix(68.2): close file-browser download and post-upload-refresh regressions\n\nGap-closure round 2 for two web-layer regressions the 68.2 read-chain migration\nintroduced (VERIFICATION gaps; SDK-READ-01..04 unaffected, no SDK change).\n\nRegression A - after the 68.2-11 kind-cache removal, isFileRef(bareSealedChildRef)\nalways returns false, so identity-only refs classified as folders. This hid the\nselection-bar download button and context-menu Download/Edit/Preview items AND\nbroke the download logic itself: handleDownload/handleBatchDownload filtered\nevery selected file out. Fixed by classifying against the SDK-resolved\nResolvedChild listing (new isFileRefResolved helper, keyed by ipnsName) at every\ndownload-gating site across the owned-vault and shared browsers.\n\nRegression B - an upload into a subfolder never appeared: UploadZone targets the\nopen folder (currentFolderId) but onUploadComplete only called handleSync, which\nresyncs root only. Fixed by refreshing the open folder immediately via the\nexisting invalidateOpenFolder(), then the best-effort root/tree resync. Also\nforce live resolves on the root resync and post-409 resyncFolder for\ndeterministic-freshness consistency with the nav/poll precedent.\n\nVerified on a fresh-container stack: batch-download 5/5, writable-shares 29/29,\nshared-folder-desync 4/4 (SC#5 guard holds). tsc + eslint clean; D-07 boundary\ngrep gate green (new imports are type-only from the @cipherbox/sdk facade).\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -20\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
   "description": "Commit the code fix",
   "run_in_background": true,
   "dangerouslyDisableSandbox": true
@@ -9673,7 +9673,7 @@ tool_use Bash
 id: toolu_01DF1w512iST6aY1BGjf29A4
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nuntil git log --oneline -1 2>/dev/null | grep -q \"close file-browser download\"; do sleep 3; done\necho \"=== code commit landed ===\"\ngit log --oneline -1",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nuntil git log --oneline -1 2>/dev/null | grep -q \"close file-browser download\"; do sleep 3; done\necho \"=== code commit landed ===\"\ngit log --oneline -1",
   "description": "Wait for code commit to land",
   "run_in_background": true
 }
@@ -9693,7 +9693,7 @@ tool_use Bash
 id: toolu_01Up2pePEEfgHkGTJWcjiJ7L
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit log --oneline -1\necho \"--- verify signature ---\"\ngit log --show-signature -1 2>&1 | grep -iE \"good signature|no signature\" | head -1\necho \"--- remaining unstaged ---\"\ngit status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit log --oneline -1\necho \"--- verify signature ---\"\ngit log --show-signature -1 2>&1 | grep -iE \"good signature|no signature\" | head -1\necho \"--- remaining unstaged ---\"\ngit status --short",
   "description": "Confirm code commit and signature"
 }
 ```
@@ -9723,7 +9723,7 @@ tool_use Bash
 id: toolu_01A55q5QV6u1wUpWGeJbGWuG
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit add .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-PLAN.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-SUMMARY.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-SUMMARY.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md\ntimeout 120 git commit -m \"$(cat <<'EOF'\ndocs(68.2): gap-closure plans and summaries 15-16 for file-browser regressions\n\nPlans + summaries for the two VERIFICATION-gap regressions closed in gap-closure\nround 2 (fix 0577a34b3): Regression A (isFileRef kind classification after the\nkind-cache removal, plan 15) and Regression B (post-upload refresh targeting root\ninstead of the open subfolder, plan 16). UAT records the fresh-container\nverification: batch-download 5/5, writable-shares 29/29, shared-folder-desync 4/4.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -12\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit add .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-PLAN.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-15-SUMMARY.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-PLAN.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-16-SUMMARY.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-UAT.md\ntimeout 120 git commit -m \"$(cat <<'EOF'\ndocs(68.2): gap-closure plans and summaries 15-16 for file-browser regressions\n\nPlans + summaries for the two VERIFICATION-gap regressions closed in gap-closure\nround 2 (fix 0577a34b3): Regression A (isFileRef kind classification after the\nkind-cache removal, plan 15) and Regression B (post-upload refresh targeting root\ninstead of the open subfolder, plan 16). UAT records the fresh-container\nverification: batch-download 5/5, writable-shares 29/29, shared-folder-desync 4/4.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -12\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
   "description": "Commit planning docs",
   "run_in_background": true,
   "dangerouslyDisableSandbox": true
@@ -9744,7 +9744,7 @@ tool_use Bash
 id: toolu_017rG6NJPsdFyGnmkyNHUigs
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nuntil git log --oneline -1 2>/dev/null | grep -q \"gap-closure plans and summaries 15-16\"; do sleep 3; done\necho \"=== docs commit landed ===\"\ngit log --oneline -3\necho \"--- tree clean? ---\"\ngit status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nuntil git log --oneline -1 2>/dev/null | grep -q \"gap-closure plans and summaries 15-16\"; do sleep 3; done\necho \"=== docs commit landed ===\"\ngit log --oneline -3\necho \"--- tree clean? ---\"\ngit status --short",
   "description": "Wait for docs commit and confirm clean tree",
   "run_in_background": true
 }
@@ -9795,7 +9795,7 @@ tool_use Write
 id: toolu_018bGBSP2uWu3Bba2apJ7d1z
 ```json
 {
-  "file_path": "/Users/myankelev/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/project-web-kind-and-post-upload-refresh-traps.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/project-web-kind-and-post-upload-refresh-traps.md",
   "content": "---\nname: project-web-kind-and-post-upload-refresh-traps\ndescription: Two web file-browser traps after the 68.2 SDK read-chain migration — bare-ref kind classification and post-upload refresh targeting root\nmetadata:\n  type: project\n---\n\nTwo 68.2 web-layer regression classes (fixed in gap-closure round 2, commit 0577a34b3):\n\n**Bare-ref kind is always folder.** After 68.2-11 removed the per-ipnsName kind-cache, `isFileRef(bareSealedChildRef)` in `apps/web/src/utils/fileTypes.ts` returns `false` for any ref without `.kind`. `SealedChildRef` (the crypto/identity carrier used for selection/context-menu/download payloads, sourced from `rawChildren`) has no `.kind`. So classify identity-only refs with `isFileRefResolved(ref, resolvedByIpnsName)` against the SDK `ResolvedChild` listing (keyed by ipnsName), NOT `isFileRef`. This broke not just affordances but `handleDownload`/`handleBatchDownload` (they filtered every file out → no-op download).\n\n**Post-upload refresh must hit the OPEN folder, not root.** `UploadZone` targets `folderId={currentFolderId}` (may be a subfolder), but `useFileBrowserActions.handleSync` resyncs ROOT only. `FileBrowser.onUploadComplete` must call `invalidateOpenFolder()` (exported from `useSyncPolling`, force-resolves the currently-open folder) for the upload to appear immediately — otherwise it only shows after the 30s poll. The **shared** browser is fine (live `folderChildren` projection via `useSharedWriteOps`/`shared-folder-projection`).\n\n**Why:** the fresh-stack triage's first hypothesis (SDK cache staleness on root) was wrong — the refresh was resolving the wrong folder. `{ forceResolve: true }` is necessary for freshness but insufficient if you force-resolve root while […]
 
 > TOOL
@@ -9803,7 +9803,7 @@ id: toolu_018bGBSP2uWu3Bba2apJ7d1z
 tool_result
 id: toolu_018bGBSP2uWu3Bba2apJ7d1z
 ```
-File created successfully at: /Users/myankelev/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/project-web-kind-and-post-upload-refresh-traps.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/project-web-kind-and-post-upload-refresh-traps.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9816,7 +9816,7 @@ tool_use Read
 id: toolu_01HhBxikyCrcGbjFhPo3gtEg
 ```json
 {
-  "file_path": "/Users/myankelev/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/MEMORY.md",
   "offset": 95,
   "limit": 15
 }
@@ -9841,7 +9841,7 @@ id: toolu_01QJoZdnB6RUovNdaPWUJZat
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/MEMORY.md",
   "old_string": "- [Phase 68 ROT-07 live-wiring gap](project-phase68-rot07-live-wiring-gap.md) — rotation pieces built but fail-closed gate unreachable from live UI (client.ts ensureFolderLoaded bypasses it); Phase 68 gap-closure target\n",
   "new_string": "- [Phase 68 ROT-07 live-wiring gap](project-phase68-rot07-live-wiring-gap.md) — rotation pieces built but fail-closed gate unreachable from live UI (client.ts ensureFolderLoaded bypasses it); Phase 68 gap-closure target\n- [Web kind + post-upload-refresh traps](project-web-kind-and-post-upload-refresh-traps.md) — isFileRef(bareSealedChildRef)=false since kind-cache removal (use isFileRefResolved vs ResolvedChild); post-upload refresh must hit the OPEN folder (invalidateOpenFolder), handleSync only resyncs root\n"
 }
@@ -9852,7 +9852,7 @@ id: toolu_01QJoZdnB6RUovNdaPWUJZat
 tool_result
 id: toolu_01QJoZdnB6RUovNdaPWUJZat
 ```
-The file /Users/myankelev/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-myankelev-Code-random-cipher-box/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -9890,7 +9890,7 @@ tool_use Bash
 id: toolu_01QtbU8UxkZiqwhshmdeB3YV
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== branch + position =====\"\ngit rev-parse --abbrev-ref HEAD\ngit log --oneline origin/main..HEAD | head -40\necho \"--- count ahead ---\"\ngit rev-list --count origin/main..HEAD\necho \"\"\necho \"===== existing PR for this branch? =====\"\nenv -u GITHUB_TOKEN gh pr list --head feat/sdk-owned-read-chain-and-resolved-folder-listings --state all --json number,title,state,url 2>&1 | head -20\necho \"\"\necho \"===== docker prereqs for SDK E2E =====\"\ndocker ps --format '{{.Names}}\\t{{.Status}}' 2>/dev/null | grep -E \"postgres|ipfs|redis|mock-ipns\" | head\necho \"\"\necho \"===== phase docs present =====\"\nls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/ | grep -iE \"VERIFICATION|SECURITY|VALIDATION|LEARNINGS\" ",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== branch + position =====\"\ngit rev-parse --abbrev-ref HEAD\ngit log --oneline origin/main..HEAD | head -40\necho \"--- count ahead ---\"\ngit rev-list --count origin/main..HEAD\necho \"\"\necho \"===== existing PR for this branch? =====\"\nenv -u GITHUB_TOKEN gh pr list --head feat/sdk-owned-read-chain-and-resolved-folder-listings --state all --json number,title,state,url 2>&1 | head -20\necho \"\"\necho \"===== docker prereqs for SDK E2E =====\"\ndocker ps --format '{{.Names}}\\t{{.Status}}' 2>/dev/null | grep -E \"postgres|ipfs|redis|mock-ipns\" | head\necho \"\"\necho \"===== phase docs present =====\"\nls .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/ | grep -iE \"VERIFICATION|SECURITY|VALIDATION|LEARNINGS\" ",
   "description": "Gather branch, PR, prereq state"
 }
 ```
@@ -9938,7 +9938,7 @@ tool_use Bash
 id: toolu_01SYU8j4yEUFqXmvga7MrGyQ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/sdk-chain-build.log\necho \"build start $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/crypto build \\\n  && pnpm --filter @cipherbox/core build \\\n  && pnpm --filter @cipherbox/api-client build \\\n  && pnpm --filter @cipherbox/sdk-core build \\\n  && pnpm --filter @cipherbox/sdk build \\\n  && pnpm --filter @cipherbox/api build >> \"$LOG\" 2>&1\necho \"BUILD EXIT: $?\" >> \"$LOG\"\necho \"build done $(date)\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/sdk-chain-build.log\necho \"build start $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/crypto build \\\n  && pnpm --filter @cipherbox/core build \\\n  && pnpm --filter @cipherbox/api-client build \\\n  && pnpm --filter @cipherbox/sdk-core build \\\n  && pnpm --filter @cipherbox/sdk build \\\n  && pnpm --filter @cipherbox/api build >> \"$LOG\" 2>&1\necho \"BUILD EXIT: $?\" >> \"$LOG\"\necho \"build done $(date)\" >> \"$LOG\"",
   "description": "Rebuild SDK client chain for E2E gate",
   "run_in_background": true
 }
@@ -9985,7 +9985,7 @@ tool_use Bash
 id: toolu_01111fENP1j1SHAPdnGLboNW
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nPHASE_DIR=.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\necho \"===== VERIFICATION.md frontmatter =====\"\nsed -n '1,30p' \"$PHASE_DIR/68.2-VERIFICATION.md\"\necho \"\"\necho \"===== gsd verification.status =====\"\nnode .claude/gsd-core/bin/gsd-tools.cjs query verification.status \"$PHASE_DIR\" 2>&1 | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nPHASE_DIR=.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings\necho \"===== VERIFICATION.md frontmatter =====\"\nsed -n '1,30p' \"$PHASE_DIR/68.2-VERIFICATION.md\"\necho \"\"\necho \"===== gsd verification.status =====\"\nnode .claude/gsd-core/bin/gsd-tools.cjs query verification.status \"$PHASE_DIR\" 2>&1 | head -20",
   "description": "Read canonical verification status"
 }
 ```
@@ -10105,7 +10105,7 @@ tool_use Bash
 id: toolu_01QvHsZys2D8a23VCRbxZciA
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== phase diffstat (summary) =====\"\ngit diff --stat origin/main...HEAD | tail -5\necho \"\"\necho \"===== is legacy isFileRef still used (post gap-closure)? =====\"\ngit grep -n \"\\bisFileRef\\b\" -- apps/web/src | grep -v \"isFileRefResolved\"\necho \"\"\necho \"===== any orphaned exports from the SDK read surface (ts-prune/knip available?) =====\"\nls node_modules/.bin/ | grep -iE \"knip|ts-prune\" || echo \"no knip/ts-prune\"\necho \"\"\necho \"===== leftover TODO/FIXME/dead markers introduced this phase (sdk read files) =====\"\ngit grep -nE \"TODO|FIXME|XXX|dead code|unused|@deprecated\" -- packages/sdk/src/folder-listing.ts packages/sdk/src/client.ts | head -10\necho \"\"\necho \"===== SharedFolderRow drag isFileRef sites I deferred — still bare refs? =====\"\nsed -n '108,118p' apps/web/src/components/file-browser/SharedFolderRow.tsx",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== phase diffstat (summary) =====\"\ngit diff --stat origin/main...HEAD | tail -5\necho \"\"\necho \"===== is legacy isFileRef still used (post gap-closure)? =====\"\ngit grep -n \"\\bisFileRef\\b\" -- apps/web/src | grep -v \"isFileRefResolved\"\necho \"\"\necho \"===== any orphaned exports from the SDK read surface (ts-prune/knip available?) =====\"\nls node_modules/.bin/ | grep -iE \"knip|ts-prune\" || echo \"no knip/ts-prune\"\necho \"\"\necho \"===== leftover TODO/FIXME/dead markers introduced this phase (sdk read files) =====\"\ngit grep -nE \"TODO|FIXME|XXX|dead code|unused|@deprecated\" -- packages/sdk/src/folder-listing.ts packages/sdk/src/client.ts | head -10\necho \"\"\necho \"===== SharedFolderRow drag isFileRef sites I deferred — still bare refs? =====\"\nsed -n '108,118p' apps/web/src/components/file-browser/SharedFolderRow.tsx",
   "description": "Simplify scan: dead code, leftover duplication"
 }
 ```
@@ -10153,7 +10153,7 @@ tool_use Bash
 id: toolu_01BCkXUmZEjWiVTGnrQhu11L
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== how DragItem.type is consumed (does it affect move correctness?) =====\"\ngit grep -n \"\\.type ===\\|item.type\\|draggedItems\\|DragItem\\|\\.type\\b\" -- apps/web/src/components/file-browser/SharedFileBrowser.tsx apps/web/src/hooks/useSharedWriteOps.ts apps/web/src/components/file-browser/useFileBrowserActions.ts | grep -iE \"type|dragged\" | head -20\necho \"\"\necho \"===== DragItem type definition + move routing =====\"\ngit grep -rn \"type DragItem\\|interface DragItem\\|draggedItems.map\\|draggedItems.filter\\|draggedItems.forEach\" -- apps/web/src | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== how DragItem.type is consumed (does it affect move correctness?) =====\"\ngit grep -n \"\\.type ===\\|item.type\\|draggedItems\\|DragItem\\|\\.type\\b\" -- apps/web/src/components/file-browser/SharedFileBrowser.tsx apps/web/src/hooks/useSharedWriteOps.ts apps/web/src/components/file-browser/useFileBrowserActions.ts | grep -iE \"type|dragged\" | head -20\necho \"\"\necho \"===== DragItem type definition + move routing =====\"\ngit grep -rn \"type DragItem\\|interface DragItem\\|draggedItems.map\\|draggedItems.filter\\|draggedItems.forEach\" -- apps/web/src | head",
   "description": "Check if DragItem.type affects move correctness"
 }
 ```
@@ -10193,7 +10193,7 @@ tool_use Bash
 id: toolu_016cyvUsVw8vMwM7MPHaW3f7
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== todos dir + a sample todo format =====\"\nls .planning/todos/ 2>/dev/null && ls .planning/todos/pending/ 2>/dev/null | head\necho \"--- sample ---\"\nSAMPLE=$(ls .planning/todos/pending/*.md 2>/dev/null | head -1)\necho \"sample file: $SAMPLE\"\n[ -n \"$SAMPLE\" ] && cat \"$SAMPLE\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== todos dir + a sample todo format =====\"\nls .planning/todos/ 2>/dev/null && ls .planning/todos/pending/ 2>/dev/null | head\necho \"--- sample ---\"\nSAMPLE=$(ls .planning/todos/pending/*.md 2>/dev/null | head -1)\necho \"sample file: $SAMPLE\"\n[ -n \"$SAMPLE\" ] && cat \"$SAMPLE\"",
   "description": "Inspect todo format"
 }
 ```
@@ -10250,7 +10250,7 @@ tool_use Write
 id: toolu_01RQwmDE6o7QipfdxgfCxJYa
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-sharedfolderrow-drag-kind-classification.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-sharedfolderrow-drag-kind-classification.md",
   "content": "---\ncreated: 2026-07-06\ntitle: Route SharedFolderRow drag-payload kind through the resolved listing\narea: web\nfiles:\n  - apps/web/src/components/file-browser/SharedFolderRow.tsx\nresolves_phase: null\n---\n\n## Problem\n\nAfter the 68.2-11 kind-cache removal, `isFileRef(bareSealedChildRef)` always\nreturns `false`. `SharedFolderRow.tsx:111` and `:116` still call `isFileRef` on\nbare `SealedChildRef`s (`selectedItems.map((i) => isFileRef(i))` and\n`isFileRef(item)`) when building the drag payload `DragItem.type`, so every\nshared drag item is typed `'folder'`.\n\n**Currently harmless** (why this was deferred out of the 68.2-15 gap-closure,\nnot fixed): the shared drop handler `SharedFileBrowser.tsx:786` consumes only\n`draggedItems.map((d) => d.id)` — it never reads `.type` — and shared moves\nroute by `ipnsName`, not kind. So the mis-typed value is produced but never\nconsumed. The owned-vault drag path (`FileListItem.tsx:95`) already classifies\ncorrectly via `isFileRef(resolved)` on a `ResolvedChild`.\n\n## Solution\n\nFor correctness/clarity (and to prevent a future consumer from trusting the\nwrong `type`), classify these two sites against the SDK-resolved listing:\n\n- Thread `SharedFileBrowser`'s existing `resolvedByIpnsName` map (or a\n  per-item resolved lookup) into `SharedFolderRow`, and replace the two\n  `isFileRef(bareRef)` calls with `isFileRefResolved(ref, resolvedByIpnsName)`\n  (the helper added in 68.2-15, `apps/web/src/utils/fileTypes.ts`).\n\nLow priority — no observable bug today; do it when SharedFolderRow next needs\ntouching or if a shared drag consumer starts reading `DragItem.type`.\n"
 }
 ```
@@ -10260,7 +10260,7 @@ id: toolu_01RQwmDE6o7QipfdxgfCxJYa
 tool_result
 id: toolu_01RQwmDE6o7QipfdxgfCxJYa
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-sharedfolderrow-drag-kind-classification.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-sharedfolderrow-drag-kind-classification.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10275,7 +10275,7 @@ tool_use Bash
 id: toolu_01BQfnminSVvLdpcWGK3rnZ2
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== can I read the sdk-e2e secrets from apps/api/.env? =====\"\nif [ -f apps/api/.env ]; then\n  T=$(grep -E '^TEST_LOGIN_SECRET=' apps/api/.env | cut -d= -f2- 2>/dev/null)\n  B=$(grep -E '^THROTTLE_BYPASS_SECRET=' apps/api/.env | cut -d= -f2- 2>/dev/null)\n  echo \"TEST_LOGIN_SECRET present: $([ -n \"$T\" ] && echo yes || echo NO)\"\n  echo \"THROTTLE_BYPASS_SECRET present: $([ -n \"$B\" ] && echo yes || echo NO)\"\nelse\n  echo \"apps/api/.env not found\"\nfi\necho \"\"\necho \"===== whats currently on :3000 =====\"\nlsof -nP -iTCP:3000 -sTCP:LISTEN 2>/dev/null | tail -3\necho \"\"\necho \"===== sdk-e2e package + how it reads secrets =====\"\ngrep -rnE \"SDK_E2E_SECRET|SDK_E2E_API_URL|TEST_LOGIN_SECRET|THROTTLE_BYPASS\" packages/sdk-e2e/ 2>/dev/null | head -10\nls packages/sdk-e2e/ 2>/dev/null || find . -maxdepth 3 -type d -name \"sdk-e2e\" 2>/dev/null | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== can I read the sdk-e2e secrets from apps/api/.env? =====\"\nif [ -f apps/api/.env ]; then\n  T=$(grep -E '^TEST_LOGIN_SECRET=' apps/api/.env | cut -d= -f2- 2>/dev/null)\n  B=$(grep -E '^THROTTLE_BYPASS_SECRET=' apps/api/.env | cut -d= -f2- 2>/dev/null)\n  echo \"TEST_LOGIN_SECRET present: $([ -n \"$T\" ] && echo yes || echo NO)\"\n  echo \"THROTTLE_BYPASS_SECRET present: $([ -n \"$B\" ] && echo yes || echo NO)\"\nelse\n  echo \"apps/api/.env not found\"\nfi\necho \"\"\necho \"===== whats currently on :3000 =====\"\nlsof -nP -iTCP:3000 -sTCP:LISTEN 2>/dev/null | tail -3\necho \"\"\necho \"===== sdk-e2e package + how it reads secrets =====\"\ngrep -rnE \"SDK_E2E_SECRET|SDK_E2E_API_URL|TEST_LOGIN_SECRET|THROTTLE_BYPASS\" packages/sdk-e2e/ 2>/dev/null | head -10\nls packages/sdk-e2e/ 2>/dev/null || find . -maxdepth 3 -type d -name \"sdk-e2e\" 2>/dev/null | head",
   "description": "Check secret readability and sdk-e2e setup"
 }
 ```
@@ -10307,7 +10307,7 @@ tool_use Bash
 id: toolu_01McRL5Ks37EuMLZoKVKsTUb
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== sdk-e2e: how it reads secrets/URL + throttle requirement =====\"\ngrep -rnE \"SDK_E2E_SECRET|SDK_E2E_API_URL|THROTTLE_BYPASS|TEST_LOGIN_SECRET|process.env\" tests/sdk-e2e/ 2>/dev/null | grep -iE \"env|secret|url|throttle\" | head -20\necho \"\"\necho \"===== sdk-e2e package.json test script =====\"\ncat tests/sdk-e2e/package.json 2>/dev/null | node -e \"let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{const p=JSON.parse(d);console.log('name:',p.name);console.log('scripts:',JSON.stringify(p.scripts,null,2))})\"\necho \"\"\necho \"===== REQUIREMENTS.md doc drift (L86-92 checklist vs L166-172 table) =====\"\nsed -n '86,92p' .planning/REQUIREMENTS.md\necho \"---\"\nsed -n '166,172p' .planning/REQUIREMENTS.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== sdk-e2e: how it reads secrets/URL + throttle requirement =====\"\ngrep -rnE \"SDK_E2E_SECRET|SDK_E2E_API_URL|THROTTLE_BYPASS|TEST_LOGIN_SECRET|process.env\" tests/sdk-e2e/ 2>/dev/null | grep -iE \"env|secret|url|throttle\" | head -20\necho \"\"\necho \"===== sdk-e2e package.json test script =====\"\ncat tests/sdk-e2e/package.json 2>/dev/null | node -e \"let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{const p=JSON.parse(d);console.log('name:',p.name);console.log('scripts:',JSON.stringify(p.scripts,null,2))})\"\necho \"\"\necho \"===== REQUIREMENTS.md doc drift (L86-92 checklist vs L166-172 table) =====\"\nsed -n '86,92p' .planning/REQUIREMENTS.md\necho \"---\"\nsed -n '166,172p' .planning/REQUIREMENTS.md",
   "description": "Check sdk-e2e secrets and REQUIREMENTS drift"
 }
 ```
@@ -10360,7 +10360,7 @@ tool_use Bash
 id: toolu_016S3T5su53V9MzQTyzstWZK
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n# Fix the traceability table: SDK-READ-01..04 Planned -> Complete (phase now verified passed)\nperl -0pi -e 's/\\| SDK-READ-0([1-4]) \\| Phase 68\\.2 \\| Planned \\|/| SDK-READ-0$1 | Phase 68.2 | Complete |/g' .planning/REQUIREMENTS.md\necho \"=== after ===\"\nsed -n '166,172p' .planning/REQUIREMENTS.md",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n# Fix the traceability table: SDK-READ-01..04 Planned -> Complete (phase now verified passed)\nperl -0pi -e 's/\\| SDK-READ-0([1-4]) \\| Phase 68\\.2 \\| Planned \\|/| SDK-READ-0$1 | Phase 68.2 | Complete |/g' .planning/REQUIREMENTS.md\necho \"=== after ===\"\nsed -n '166,172p' .planning/REQUIREMENTS.md",
   "description": "Fix REQUIREMENTS traceability drift"
 }
 ```
@@ -10392,7 +10392,7 @@ tool_use Bash
 id: toolu_01NNNSEjsr2ibpRLFnqtTFRP
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== kill existing :3000 ===\"\nlsof -nP -iTCP:3000 -sTCP:LISTEN -t | xargs -r kill -9 2>/dev/null\nsleep 1\nlsof -nP -iTCP:3000 -sTCP:LISTEN -t 2>/dev/null && echo \"STILL LISTENING\" || echo \":3000 free\"\necho \"=== dist present? ===\"\nls -la apps/api/dist/main.js 2>&1 | tail -1",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== kill existing :3000 ===\"\nlsof -nP -iTCP:3000 -sTCP:LISTEN -t | xargs -r kill -9 2>/dev/null\nsleep 1\nlsof -nP -iTCP:3000 -sTCP:LISTEN -t 2>/dev/null && echo \"STILL LISTENING\" || echo \":3000 free\"\necho \"=== dist present? ===\"\nls -la apps/api/dist/main.js 2>&1 | tail -1",
   "description": "Free port 3000 and confirm API dist"
 }
 ```
@@ -10414,7 +10414,7 @@ tool_use Bash
 id: toolu_016ESoLaSzc83Yijcj1W86sU
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/apps/api\nPORT=3000 node dist/main.js > /Users/myankelev/.claude/jobs/064836b9/tmp/ship-phase-api.log 2>&1",
+  "command": "cd /home/<USER>/Code/random/cipher-box/apps/api\nPORT=3000 node dist/main.js > /home/<USER>/.claude/jobs/064836b9/tmp/ship-phase-api.log 2>&1",
   "description": "Start API from dist on :3000",
   "run_in_background": true
 }
@@ -10434,7 +10434,7 @@ tool_use Bash
 id: toolu_01RDY69sRUaPzWu196pqxxWh
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n# wait for health (up to ~60s)\nfor i in $(seq 1 30); do\n  if curl -sf http://localhost:3000/health >/dev/null 2>&1; then echo \"API healthy after ${i} tries\"; break; fi\n  sleep 2\ndone\ncurl -s http://localhost:3000/health 2>&1 | head -c 300\necho \"\"\necho \"--- if not healthy, last API log lines ---\"\ncurl -sf http://localhost:3000/health >/dev/null 2>&1 || tail -20 /Users/myankelev/.claude/jobs/064836b9/tmp/ship-phase-api.log",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n# wait for health (up to ~60s)\nfor i in $(seq 1 30); do\n  if curl -sf http://localhost:3000/health >/dev/null 2>&1; then echo \"API healthy after ${i} tries\"; break; fi\n  sleep 2\ndone\ncurl -s http://localhost:3000/health 2>&1 | head -c 300\necho \"\"\necho \"--- if not healthy, last API log lines ---\"\ncurl -sf http://localhost:3000/health >/dev/null 2>&1 || tail -20 /home/<USER>/.claude/jobs/064836b9/tmp/ship-phase-api.log",
   "description": "Wait for API health"
 }
 ```
@@ -10459,7 +10459,7 @@ tool_use Bash
 id: toolu_012ppGDtJpxZUBHTqRqyuo5v
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/sdk-e2e.log\necho \"start $(date)\" > \"$LOG\"\nSDK_E2E_API_URL=http://localhost:3000 \\\n  SDK_E2E_SECRET=\"$(grep -E '^TEST_LOGIN_SECRET=' apps/api/.env | cut -d= -f2-)\" \\\n  THROTTLE_BYPASS_SECRET=\"$(grep -E '^THROTTLE_BYPASS_SECRET=' apps/api/.env | cut -d= -f2-)\" \\\n  pnpm --filter @cipherbox/sdk-e2e test >> \"$LOG\" 2>&1\necho \"SDK_E2E EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/sdk-e2e.log\necho \"start $(date)\" > \"$LOG\"\nSDK_E2E_API_URL=http://localhost:3000 \\\n  SDK_E2E_SECRET=\"$(grep -E '^TEST_LOGIN_SECRET=' apps/api/.env | cut -d= -f2-)\" \\\n  THROTTLE_BYPASS_SECRET=\"$(grep -E '^THROTTLE_BYPASS_SECRET=' apps/api/.env | cut -d= -f2-)\" \\\n  pnpm --filter @cipherbox/sdk-e2e test >> \"$LOG\" 2>&1\necho \"SDK_E2E EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
   "description": "Run SDK E2E gate suite",
   "run_in_background": true
 }
@@ -10483,7 +10483,7 @@ tool_use Write
 id: toolu_01SgdLFH67cS5PcBrLLVNbcc
 ```json
 {
-  "file_path": "/Users/myankelev/.claude/jobs/064836b9/tmp/pr-body.md",
+  "file_path": "/home/<USER>/.claude/jobs/064836b9/tmp/pr-body.md",
   "content": "## Phase 68.2 — SDK-Owned Read Chain and Resolved Folder Listings\n\nMoves the gated read chain and per-child metadata resolution entirely into `packages/sdk`, exposes resolved folder listings (`ResolvedChild`), collapses the web store to a thin projection, and closes the Web/SDK folder-state desync bug class (SC#5).\n\n### What changed\n\n- **SDK owns the gated read path (SDK-READ-01).** IPNS resolve → ROT-07 durable anti-rollback gate (`RotationHighWater.enforceResolved`, fail-closed on unverified signature, parent-mirror generation sourcing) → IPFS fetch → node unseal, all inside `packages/sdk`. Raw `resolveIpnsRecord` is SDK-internal only. The web's parallel read services (`ipns.service.ts`, `file-metadata.service.ts`, `kind-cache.ts`, `useFileSize.ts`) are deleted.\n- **Resolved folder listings (SDK-READ-02).** `listFolder` / `listSharedFolder` return `ResolvedChild[]` (`ipnsName, name, kind, size?, modifiedAt, sequence`), resolved once per folder load and cached in the SDK; the web file list, shared browser, and details dialogs render directly from it.\n- **Folder store is a projection (SDK-READ-03).** `folder.store.ts` is a thin `ResolvedChild[]` projection of SDK state; belt-and-suspenders freshness (re-resolve on navigation via `{ forceResolve: true }` + poll-driven `invalidateOpenFolder` for the open folder) closes the desync class. `SealedChildRef` is reverted to its frozen NODE-03 five-field set.\n- **Enforced web/SDK boundary (SDK-READ-04, D-07 full scope).** `apps/web/src` makes zero runtime calls into `@cipherbox/sdk-core` / […]
 
 > TOOL
@@ -10500,7 +10500,7 @@ tool_use Write
 id: toolu_017AbuRWF6sEWXTfupwodQmU
 ```json
 {
-  "file_path": "/Users/myankelev/.claude/jobs/064836b9/tmp/pr-body-68.2.md",
+  "file_path": "/home/<USER>/.claude/jobs/064836b9/tmp/pr-body-68.2.md",
   "content": "## Phase 68.2 — SDK-Owned Read Chain and Resolved Folder Listings\n\nMoves the gated read chain and per-child metadata resolution entirely into `packages/sdk`, exposes resolved folder listings (`ResolvedChild`), collapses the web store to a thin projection, and closes the Web/SDK folder-state desync bug class (SC#5).\n\n### What changed\n\n- **SDK owns the gated read path (SDK-READ-01).** IPNS resolve → ROT-07 durable anti-rollback gate (`RotationHighWater.enforceResolved`, fail-closed on unverified signature, parent-mirror generation sourcing) → IPFS fetch → node unseal, all inside `packages/sdk`. Raw `resolveIpnsRecord` is SDK-internal only. The web's parallel read services (`ipns.service.ts`, `file-metadata.service.ts`, `kind-cache.ts`, `useFileSize.ts`) are deleted.\n- **Resolved folder listings (SDK-READ-02).** `listFolder` / `listSharedFolder` return `ResolvedChild[]` (`ipnsName, name, kind, size?, modifiedAt, sequence`), resolved once per folder load and cached in the SDK; the web file list, shared browser, and details dialogs render directly from it.\n- **Folder store is a projection (SDK-READ-03).** `folder.store.ts` is a thin `ResolvedChild[]` projection of SDK state; belt-and-suspenders freshness (re-resolve on navigation via `{ forceResolve: true }` + poll-driven `invalidateOpenFolder` for the open folder) closes the desync class. `SealedChildRef` is reverted to its frozen NODE-03 five-field set.\n- **Enforced web/SDK boundary (SDK-READ-04, D-07 full scope).** `apps/web/src` makes zero runtime calls into `@cipherbox/sdk-core` / […]
 
 > TOOL
@@ -10508,7 +10508,7 @@ id: toolu_017AbuRWF6sEWXTfupwodQmU
 tool_result
 id: toolu_017AbuRWF6sEWXTfupwodQmU
 ```
-File created successfully at: /Users/myankelev/.claude/jobs/064836b9/tmp/pr-body-68.2.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/jobs/064836b9/tmp/pr-body-68.2.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -10521,7 +10521,7 @@ tool_use Bash
 id: toolu_01G3T33WkML1LkRxWiskLr7G
 ```json
 {
-  "command": "grep -E \"Test Files|Tests |passed|failed|SDK_E2E EXIT|✓|✗|FAIL\" /Users/myankelev/.claude/jobs/064836b9/tmp/sdk-e2e.log | tail -25",
+  "command": "grep -E \"Test Files|Tests |passed|failed|SDK_E2E EXIT|✓|✗|FAIL\" /home/<USER>/.claude/jobs/064836b9/tmp/sdk-e2e.log | tail -25",
   "description": "Confirm SDK E2E results"
 }
 ```
@@ -10559,7 +10559,7 @@ tool_use Bash
 id: toolu_01YAkoYfQqmpJ8wCFK5Wuo12
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== failure detail for tee-republish =====\"\ngrep -iE \"ECONNREFUSED|connect|3002|tee.worker|tee_key_state|AssertionError|expected|Error:|fetch failed|current_public_key|no.*worker|timeout\" /Users/myankelev/.claude/jobs/064836b9/tmp/sdk-e2e.log | head -25\necho \"\"\necho \"===== is a tee-worker running on :3002? =====\"\nlsof -nP -iTCP:3002 -sTCP:LISTEN 2>/dev/null | tail -2 || echo \"nothing on :3002\"\ndocker ps --format '{{.Names}}' | grep -i tee || echo \"no tee docker container\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== failure detail for tee-republish =====\"\ngrep -iE \"ECONNREFUSED|connect|3002|tee.worker|tee_key_state|AssertionError|expected|Error:|fetch failed|current_public_key|no.*worker|timeout\" /home/<USER>/.claude/jobs/064836b9/tmp/sdk-e2e.log | head -25\necho \"\"\necho \"===== is a tee-worker running on :3002? =====\"\nlsof -nP -iTCP:3002 -sTCP:LISTEN 2>/dev/null | tail -2 || echo \"nothing on :3002\"\ndocker ps --format '{{.Names}}' | grep -i tee || echo \"no tee docker container\"",
   "description": "Diagnose tee-republish failure cause"
 }
 ```
@@ -10591,7 +10591,7 @@ tool_use Bash
 id: toolu_017aHDiw79rM9yTvAoue6aK2
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== did phase 68.2 touch any TEE / republish / lease code? =====\"\ngit diff --stat origin/main...HEAD -- 'apps/tee-worker/**' 'apps/api/src/republish/**' 'packages/**/tee*' 'packages/**/republish*' 'packages/**/*lease*' | tail -10\necho \"(empty above = phase touched no TEE/republish code)\"\necho \"\"\necho \"===== confirm the 2 failing suites are ONLY tee-republish (phase-orthogonal) =====\"\ngrep -E \"FAIL|❯|failed\\)\" /Users/myankelev/.claude/jobs/064836b9/tmp/sdk-e2e.log | grep -iE \"FAIL|suites\" | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== did phase 68.2 touch any TEE / republish / lease code? =====\"\ngit diff --stat origin/main...HEAD -- 'apps/tee-worker/**' 'apps/api/src/republish/**' 'packages/**/tee*' 'packages/**/republish*' 'packages/**/*lease*' | tail -10\necho \"(empty above = phase touched no TEE/republish code)\"\necho \"\"\necho \"===== confirm the 2 failing suites are ONLY tee-republish (phase-orthogonal) =====\"\ngrep -E \"FAIL|❯|failed\\)\" /home/<USER>/.claude/jobs/064836b9/tmp/sdk-e2e.log | grep -iE \"FAIL|suites\" | head",
   "description": "Verify phase touched no TEE code"
 }
 ```
@@ -10629,7 +10629,7 @@ tool_use Bash
 id: toolu_01PQygj3t4PouNisWQx7Hpi3
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\n# Update PR body placeholders with gate results\npython3 - <<'PY'\nimport re\np=\"/Users/myankelev/.claude/jobs/064836b9/tmp/pr-body-68.2.md\"\ns=open(p).read()\ns=s.replace(\"<!-- SDK_E2E_RESULT -->\",\n  \"99/101 pass. The 2 failures are `tee-republish.test.ts` (`tee_key_state is empty` — no tee-worker in the local stack); this phase touches no TEE/republish code, so they are infra-gated and covered by CI, not a regression. All read-chain / write-chain / publish-gate / share / file-ops / vault suites pass.\")\ns=s.replace(\"<!-- SECURITY_RESULT -->\",\n  \"SECURED — 17/17 threat mitigations present in source, 0 open (`68.2-SECURITY.md`). ROT-07 read-path gate, fail-closed-on-unverified, parent-mirror generation, and D-07 boundary all verified in code.\")\nopen(p,\"w\").write(s)\nprint(\"PR body updated\")\nPY\necho \"\"\necho \"===== coderabbit CLI available? =====\"\nwhich coderabbit 2>/dev/null && coderabbit --version 2>&1 | head -1 || echo \"coderabbit NOT on PATH\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\n# Update PR body placeholders with gate results\npython3 - <<'PY'\nimport re\np=\"/home/<USER>/.claude/jobs/064836b9/tmp/pr-body-68.2.md\"\ns=open(p).read()\ns=s.replace(\"<!-- SDK_E2E_RESULT -->\",\n  \"99/101 pass. The 2 failures are `tee-republish.test.ts` (`tee_key_state is empty` — no tee-worker in the local stack); this phase touches no TEE/republish code, so they are infra-gated and covered by CI, not a regression. All read-chain / write-chain / publish-gate / share / file-ops / vault suites pass.\")\ns=s.replace(\"<!-- SECURITY_RESULT -->\",\n  \"SECURED — 17/17 threat mitigations present in source, 0 open (`68.2-SECURITY.md`). ROT-07 read-path gate, fail-closed-on-unverified, parent-mirror generation, and D-07 boundary all verified in code.\")\nopen(p,\"w\").write(s)\nprint(\"PR body updated\")\nPY\necho \"\"\necho \"===== coderabbit CLI available? =====\"\nwhich coderabbit 2>/dev/null && coderabbit --version 2>&1 | head -1 || echo \"coderabbit NOT on PATH\"",
   "description": "Update PR body and check CodeRabbit CLI"
 }
 ```
@@ -10642,7 +10642,7 @@ id: toolu_01PQygj3t4PouNisWQx7Hpi3
 PR body updated
 
 ===== coderabbit CLI available? =====
-/Users/myankelev/.local/bin/coderabbit
+/home/<USER>/.local/bin/coderabbit
 0.6.4
 ```
 
@@ -10656,7 +10656,7 @@ tool_use Write
 id: toolu_01XEgLru1pSAVRUhLDGZkJH4
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d07-boundary-eslint-rule.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d07-boundary-eslint-rule.md",
   "content": "---\ncreated: 2026-07-06\ntitle: Promote the D-07 web/SDK boundary from a grep gate to an ESLint/CI rule\narea: web\nfiles:\n  - apps/web/.eslintrc.cjs\n  - scripts/check-web-sdk-boundary.sh\nresolves_phase: null\n---\n\n## Problem\n\nPhase 68.2 (SDK-READ-04, D-07) enforces that `apps/web/src` makes zero runtime\nimports of `@cipherbox/sdk-core` / `@cipherbox/core` (type-only `import type`\nallowed) and no raw IPFS/IPNS access — everything routes through the\n`@cipherbox/sdk` facade. This is currently a **manual grep gate** (commit\n`19f40f040`). Zero violations at HEAD, so the mitigation is present, but nothing\npins it: a future web change could silently reintroduce a runtime\n`@cipherbox/sdk-core`/`@cipherbox/core` import and only a human re-running the\ngrep would catch it.\n\nFlagged as a non-blocking hardening advisory by the 68.2 security audit\n(`68.2-SECURITY.md`).\n\n## Solution\n\nPromote the boundary to an enforced rule so CI fails on reintroduction:\n\n- Add an ESLint `no-restricted-imports` (or `no-restricted-syntax` allowing\n  `import type`) rule scoped to `apps/web/src` banning runtime imports of\n  `@cipherbox/sdk-core` and `@cipherbox/core`, plus raw IPFS/IPNS client\n  entrypoints.\n- Alternatively/additionally, wire the existing grep gate into `ci.yml` so it\n  runs on every PR rather than only when someone remembers.\n\nKeep the `import type` allowance (type-only imports are erased and don't cross\nthe runtime boundary).\n"
 }
 ```
@@ -10666,7 +10666,7 @@ id: toolu_01XEgLru1pSAVRUhLDGZkJH4
 tool_result
 id: toolu_01XEgLru1pSAVRUhLDGZkJH4
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d07-boundary-eslint-rule.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-d07-boundary-eslint-rule.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -10675,7 +10675,7 @@ tool_use Bash
 id: toolu_014Xirz5U5xJxajF5wSd2WWq
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit.log\necho \"start $(date)\" > \"$LOG\"\nenv -u GITHUB_TOKEN coderabbit review --agent --base main --type committed >> \"$LOG\" 2>&1\necho \"CODERABBIT EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit.log\necho \"start $(date)\" > \"$LOG\"\nenv -u GITHUB_TOKEN coderabbit review --agent --base main --type committed >> \"$LOG\" 2>&1\necho \"CODERABBIT EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
   "description": "Run CodeRabbit CLI review vs main",
   "run_in_background": true
 }
@@ -10699,7 +10699,7 @@ tool_use Bash
 id: toolu_01PN83vRdzLBXyCwFKgjQaay
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit status --short",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit status --short",
   "description": "Check uncommitted bookkeeping"
 }
 ```
@@ -10723,7 +10723,7 @@ tool_use Bash
 id: toolu_015kRyi4BsYZVufugqtcJ698
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit add .planning/REQUIREMENTS.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-SECURITY.md \\\n  .planning/todos/pending/2026-07-06-d07-boundary-eslint-rule.md \\\n  .planning/todos/pending/2026-07-06-sharedfolderrow-drag-kind-classification.md\ntimeout 120 git commit -m \"$(cat <<'EOF'\ndocs(68.2): verification pass, security SECURED, validation compliant\n\nRe-verify after gap-closure round 2: VERIFICATION.md -> passed (5/5 must-haves;\nthe prior human_needed e2e item is now executed-green on fresh containers).\nVALIDATION.md -> compliant, 0 gaps. SECURITY.md -> SECURED, 17/17 threats closed.\nREQUIREMENTS traceability table marks SDK-READ-01..04 Complete.\n\nDefers two low-priority todos surfaced during ship: SharedFolderRow drag-payload\nkind classification (harmless — type unused by the shared drop handler) and\npromoting the D-07 web/SDK boundary grep gate to an ESLint/CI rule.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -8\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit add .planning/REQUIREMENTS.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VALIDATION.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-VERIFICATION.md \\\n  .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-SECURITY.md \\\n  .planning/todos/pending/2026-07-06-d07-boundary-eslint-rule.md \\\n  .planning/todos/pending/2026-07-06-sharedfolderrow-drag-kind-classification.md\ntimeout 120 git commit -m \"$(cat <<'EOF'\ndocs(68.2): verification pass, security SECURED, validation compliant\n\nRe-verify after gap-closure round 2: VERIFICATION.md -> passed (5/5 must-haves;\nthe prior human_needed e2e item is now executed-green on fresh containers).\nVALIDATION.md -> compliant, 0 gaps. SECURITY.md -> SECURED, 17/17 threats closed.\nREQUIREMENTS traceability table marks SDK-READ-01..04 Complete.\n\nDefers two low-priority todos surfaced during ship: SharedFolderRow drag-payload\nkind classification (harmless — type unused by the shared drop handler) and\npromoting the D-07 web/SDK boundary grep gate to an ESLint/CI rule.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -8\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
   "description": "Commit ship-phase bookkeeping",
   "run_in_background": true,
   "dangerouslyDisableSandbox": true
@@ -10760,7 +10760,7 @@ tool_use Bash
 id: toolu_01Y81V3tZ2iBAdTBrFCcPb5X
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit log --oneline -1\ngit status --short | head\necho \"--- coderabbit progress ---\"\ntail -5 /Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit.log 2>/dev/null",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit log --oneline -1\ngit status --short | head\necho \"--- coderabbit progress ---\"\ntail -5 /home/<USER>/.claude/jobs/064836b9/tmp/coderabbit.log 2>/dev/null",
   "description": "Confirm bookkeeping commit and check CodeRabbit progress"
 }
 ```
@@ -10773,7 +10773,7 @@ id: toolu_01Y81V3tZ2iBAdTBrFCcPb5X
 bba1289c9 docs(68.2): verification pass, security SECURED, validation compliant
 --- coderabbit progress ---
 start Mon Jul  6 15:08:16 CEST 2026
-{"type":"review_context","reviewType":"committed","currentBranch":"feat/sdk-owned-read-chain-and-resolved-folder-listings","baseBranch":"main","workingDirectory":"/Users/myankelev/Code/random/cipher-box"}
+{"type":"review_context","reviewType":"committed","currentBranch":"feat/sdk-owned-read-chain-and-resolved-folder-listings","baseBranch":"main","workingDirectory":"/home/<USER>/Code/random/cipher-box"}
 {"type":"status","phase":"connecting","status":"connecting_to_review_service"}
 {"type":"status","phase":"setup","status":"setting_up"}
 {"type":"status","phase":"analyzing","status":"summarizing"}
@@ -10789,7 +10789,7 @@ tool_use Bash
 id: toolu_01NDL1HSCfLvE9xdwE97UMMq
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit.log\necho \"=== exit + tail ===\"\ngrep \"CODERABBIT EXIT\" \"$LOG\"\necho \"=== finding count by type ===\"\ngrep -oE '\"type\":\"[a-z_]+\"' \"$LOG\" | sort | uniq -c\necho \"\"\necho \"=== comments/findings (file + line + title) ===\"\npython3 - <<'PY'\nimport json\np=\"/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit.log\"\nfound=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    t=o.get(\"type\",\"\")\n    if t in (\"comment\",\"finding\",\"review_comment\",\"issue\"):\n        found+=1\n        c=o.get(\"comment\",o)\n        print(f\"[{found}] file={c.get('file_path') or c.get('file')} line={c.get('line_start') or c.get('line')}\")\n        title=c.get('title') or (c.get('body','')[:120] if c.get('body') else '')\n        print(f\"     {title}\")\nif not found:\n    print(\"No comment/finding objects. Dumping non-status object types:\")\n    for line in open(p):\n        line=line.strip()\n        if not line.startswith(\"{\"): continue\n        try: o=json.loads(line)\n        except: continue\n        if o.get(\"type\") not in (\"status\",\"review_context\"):\n            print(json.dumps(o)[:400])\nPY",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit.log\necho \"=== exit + tail ===\"\ngrep \"CODERABBIT EXIT\" \"$LOG\"\necho \"=== finding count by type ===\"\ngrep -oE '\"type\":\"[a-z_]+\"' \"$LOG\" | sort | uniq -c\necho \"\"\necho \"=== comments/findings (file + line + title) ===\"\npython3 - <<'PY'\nimport json\np=\"/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit.log\"\nfound=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    t=o.get(\"type\",\"\")\n    if t in (\"comment\",\"finding\",\"review_comment\",\"issue\"):\n        found+=1\n        c=o.get(\"comment\",o)\n        print(f\"[{found}] file={c.get('file_path') or c.get('file')} line={c.get('line_start') or c.get('line')}\")\n        title=c.get('title') or (c.get('body','')[:120] if c.get('body') else '')\n        print(f\"     {title}\")\nif not found:\n    print(\"No comment/finding objects. Dumping non-status object types:\")\n    for line in open(p):\n        line=line.strip()\n        if not line.startswith(\"{\"): continue\n        try: o=json.loads(line)\n        except: continue\n        if o.get(\"type\") not in (\"status\",\"review_context\"):\n            print(json.dumps(o)[:400])\nPY",
   "description": "Parse CodeRabbit findings"
 }
 ```
@@ -10821,7 +10821,7 @@ tool_use Bash
 id: toolu_016xJqQuQMo6qL3xpobdDmGE
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ncoderabbit review --help 2>&1 | grep -iE \"\\-\\-dir|\\-\\-base|\\-\\-type|\\-\\-path|scope|\\-\\-cwd|only\" | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ncoderabbit review --help 2>&1 | grep -iE \"\\-\\-dir|\\-\\-base|\\-\\-type|\\-\\-path|scope|\\-\\-cwd|only\" | head -20",
   "description": "Check CodeRabbit scoping flags"
 }
 ```
@@ -10850,7 +10850,7 @@ tool_use Bash
 id: toolu_01AJAT2gLCdTpgSVGi4qWu2x
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit-web.log\necho \"start $(date)\" > \"$LOG\"\nenv -u GITHUB_TOKEN coderabbit review --agent --base main --type committed --dir apps/web/src >> \"$LOG\" 2>&1\necho \"CODERABBIT_WEB EXIT: $?\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit-web.log\necho \"start $(date)\" > \"$LOG\"\nenv -u GITHUB_TOKEN coderabbit review --agent --base main --type committed --dir apps/web/src >> \"$LOG\" 2>&1\necho \"CODERABBIT_WEB EXIT: $?\" >> \"$LOG\"",
   "description": "CodeRabbit scoped review: apps/web/src",
   "run_in_background": true
 }
@@ -10870,7 +10870,7 @@ tool_use Bash
 id: toolu_01Q87gQN8oBCQk1D96dyaeUx
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\necho \"start $(date)\" > \"$LOG\"\nenv -u GITHUB_TOKEN coderabbit review --agent --base main --type committed --dir packages/sdk/src >> \"$LOG\" 2>&1\necho \"CODERABBIT_SDK EXIT: $?\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\necho \"start $(date)\" > \"$LOG\"\nenv -u GITHUB_TOKEN coderabbit review --agent --base main --type committed --dir packages/sdk/src >> \"$LOG\" 2>&1\necho \"CODERABBIT_SDK EXIT: $?\" >> \"$LOG\"",
   "description": "CodeRabbit scoped review: packages/sdk/src",
   "run_in_background": true
 }
@@ -10894,7 +10894,7 @@ tool_use Bash
 id: toolu_01QAutCqhq3ZAQviyQZVDbdA
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\ngrep \"CODERABBIT_SDK EXIT\" \"$LOG\"\ngrep -oE '\"type\":\"[a-z_]+\"' \"$LOG\" | sort | uniq -c\necho \"=== findings ===\"\npython3 - <<'PY'\nimport json\np=\"/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\"\nn=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    t=o.get(\"type\",\"\")\n    if t==\"error\":\n        print(\"ERROR:\", json.dumps(o)[:300]); continue\n    if t in (\"comment\",\"finding\",\"review_comment\",\"issue\"):\n        n+=1\n        c=o.get(\"comment\",o)\n        print(f\"[{n}] {c.get('file_path') or c.get('file')}:{c.get('line_start') or c.get('line')}\")\n        print(\"   \", (c.get('title') or c.get('body','')[:200]).replace(\"\\n\",\" \"))\nprint(f\"total findings: {n}\")\nPY",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\ngrep \"CODERABBIT_SDK EXIT\" \"$LOG\"\ngrep -oE '\"type\":\"[a-z_]+\"' \"$LOG\" | sort | uniq -c\necho \"=== findings ===\"\npython3 - <<'PY'\nimport json\np=\"/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\"\nn=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    t=o.get(\"type\",\"\")\n    if t==\"error\":\n        print(\"ERROR:\", json.dumps(o)[:300]); continue\n    if t in (\"comment\",\"finding\",\"review_comment\",\"issue\"):\n        n+=1\n        c=o.get(\"comment\",o)\n        print(f\"[{n}] {c.get('file_path') or c.get('file')}:{c.get('line_start') or c.get('line')}\")\n        print(\"   \", (c.get('title') or c.get('body','')[:200]).replace(\"\\n\",\" \"))\nprint(f\"total findings: {n}\")\nPY",
   "description": "Parse SDK-scoped CodeRabbit findings"
 }
 ```
@@ -10946,7 +10946,7 @@ tool_use Bash
 id: toolu_017UxatM6N4ADgDfexr2yj3x
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\npython3 - <<'PY'\nimport json\np=\"/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\"\nn=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    if o.get(\"type\")==\"finding\":\n        n+=1\n        # print keys once\n        if n==1: print(\"KEYS:\", list(o.keys()))\n        f=o.get(\"finding\", o)\n        if n==1: print(\"FINDING KEYS:\", list(f.keys()) if isinstance(f,dict) else type(f))\n        print(f\"\\n[{n}]\", json.dumps(f)[:500] if isinstance(f,dict) else str(f)[:500])\nPY",
+  "command": "cd /home/<USER>/Code/random/cipher-box\npython3 - <<'PY'\nimport json\np=\"/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\"\nn=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    if o.get(\"type\")==\"finding\":\n        n+=1\n        # print keys once\n        if n==1: print(\"KEYS:\", list(o.keys()))\n        f=o.get(\"finding\", o)\n        if n==1: print(\"FINDING KEYS:\", list(f.keys()) if isinstance(f,dict) else type(f))\n        print(f\"\\n[{n}]\", json.dumps(f)[:500] if isinstance(f,dict) else str(f)[:500])\nPY",
   "description": "Dump raw CodeRabbit finding schema"
 }
 ```
@@ -10977,7 +10977,7 @@ tool_use Bash
 id: toolu_01Gu9mHx9GtVLnbuKzE6qQ4w
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\npython3 - <<'PY'\nimport json\np=\"/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\"\nn=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    if o.get(\"type\")==\"finding\":\n        n+=1\n        instr=o.get(\"codegenInstructions\",\"\")\n        # strip the boilerplate prefix\n        marker=\"keep changes minimal, and validate.\\n\\n\"\n        body=instr.split(marker,1)[-1]\n        print(f\"\\n===== [{n}] {o.get('severity','?').upper()} — {o.get('fileName')} =====\")\n        print(body[:700])\nPY",
+  "command": "cd /home/<USER>/Code/random/cipher-box\npython3 - <<'PY'\nimport json\np=\"/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit-sdk.log\"\nn=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    if o.get(\"type\")==\"finding\":\n        n+=1\n        instr=o.get(\"codegenInstructions\",\"\")\n        # strip the boilerplate prefix\n        marker=\"keep changes minimal, and validate.\\n\\n\"\n        body=instr.split(marker,1)[-1]\n        print(f\"\\n===== [{n}] {o.get('severity','?').upper()} — {o.get('fileName')} =====\")\n        print(body[:700])\nPY",
   "description": "Full text of SDK findings"
 }
 ```
@@ -11006,7 +11006,7 @@ tool_use Bash
 id: toolu_01TGP2npdMkBCajs2XDDFbWe
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"########## [7] resolveNodeIdentity ~1191 ##########\"\nsed -n '1170,1210p' packages/sdk/src/client.ts\necho \"\"\necho \"########## [11] child hop zeroization ~955-975 ##########\"\nsed -n '945,978p' packages/sdk/src/client.ts",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"########## [7] resolveNodeIdentity ~1191 ##########\"\nsed -n '1170,1210p' packages/sdk/src/client.ts\necho \"\"\necho \"########## [11] child hop zeroization ~955-975 ##########\"\nsed -n '945,978p' packages/sdk/src/client.ts",
   "description": "Read resolveNodeIdentity and child zeroization code"
 }
 ```
@@ -11068,7 +11068,7 @@ tool_use Bash
 id: toolu_01TuT9BtJTCJor2QeWbVvWB7
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"########## loop continuation after 978 (currentReadKey handling) ##########\"\nsed -n '978,1000p' packages/sdk/src/client.ts\necho \"\"\necho \"########## [8] destroy() + new cache fields ~185-215 ##########\"\nsed -n '185,215p' packages/sdk/src/client.ts\necho \"\"\necho \"########## destroy() method ##########\"\ngrep -n \"destroy\\s*(\\|listingCache\\|reresolveInFlight\" packages/sdk/src/client.ts | head -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"########## loop continuation after 978 (currentReadKey handling) ##########\"\nsed -n '978,1000p' packages/sdk/src/client.ts\necho \"\"\necho \"########## [8] destroy() + new cache fields ~185-215 ##########\"\nsed -n '185,215p' packages/sdk/src/client.ts\necho \"\"\necho \"########## destroy() method ##########\"\ngrep -n \"destroy\\s*(\\|listingCache\\|reresolveInFlight\" packages/sdk/src/client.ts | head -20",
   "description": "Read loop continuation, destroy, cache fields"
 }
 ```
@@ -11127,7 +11127,7 @@ tool_use Bash
 id: toolu_01PhYfp7ebPj2GeQDDppvNAA
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"########## destroy() 489-540 ##########\"\nsed -n '489,540p' packages/sdk/src/client.ts\necho \"\"\necho \"########## [9] resolveFileMetadata ~3890-3915 ##########\"\nsed -n '3888,3918p' packages/sdk/src/client.ts\necho \"\"\necho \"########## existing listingCache invalidation 5015-5030 ##########\"\nsed -n '5015,5032p' packages/sdk/src/client.ts",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"########## destroy() 489-540 ##########\"\nsed -n '489,540p' packages/sdk/src/client.ts\necho \"\"\necho \"########## [9] resolveFileMetadata ~3890-3915 ##########\"\nsed -n '3888,3918p' packages/sdk/src/client.ts\necho \"\"\necho \"########## existing listingCache invalidation 5015-5030 ##########\"\nsed -n '5015,5032p' packages/sdk/src/client.ts",
   "description": "Read destroy, resolveFileMetadata, existing invalidation"
 }
 ```
@@ -11207,7 +11207,7 @@ id: toolu_015S9RomYmsP1Qy9uDHgHpP2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts",
   "old_string": "    this.folderTree.clear();\n    this.sharedFolderTree.clear();\n    this.keyCache.clear();\n    this.emitter.removeAll();",
   "new_string": "    this.folderTree.clear();\n    this.sharedFolderTree.clear();\n    this.keyCache.clear();\n    // Drop the SDK-owned read caches so no resolved listing (private folder\n    // structure) or in-flight re-resolve closure survives after destroy().\n    this.listingCache.clear();\n    this.reresolveInFlight.clear();\n    this.emitter.removeAll();"
 }
@@ -11218,7 +11218,7 @@ id: toolu_015S9RomYmsP1Qy9uDHgHpP2
 tool_result
 id: toolu_015S9RomYmsP1Qy9uDHgHpP2
 ```
-The file /Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11232,7 +11232,7 @@ id: toolu_016q2LYxpk5yvrWPsGXVPAVG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts",
   "old_string": "          const childNode = await unsealNode(childResolved.published, childReadKey);\n\n          // This hop's key supersedes the previous hop's minted key -- zero it\n          // now (T-68.1-01-01 pattern); state.folderKey itself is never zeroed.\n          mintedReadKey?.fill(0);\n          mintedReadKey = childReadKey;\n\n          currentChildren = childNode.children ?? [];",
   "new_string": "          // Adopt this hop's key BEFORE unsealNode so the outer `finally`\n          // zeroes it even if unsealNode throws (leak-on-failure fix). This\n          // hop's key supersedes the previous hop's minted key -- zero that\n          // now (T-68.1-01-01 pattern); state.folderKey itself is never zeroed.\n          mintedReadKey?.fill(0);\n          mintedReadKey = childReadKey;\n\n          const childNode = await unsealNode(childResolved.published, childReadKey);\n\n          currentChildren = childNode.children ?? [];"
 }
@@ -11243,7 +11243,7 @@ id: toolu_016q2LYxpk5yvrWPsGXVPAVG
 tool_result
 id: toolu_016q2LYxpk5yvrWPsGXVPAVG
 ```
-The file /Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11252,7 +11252,7 @@ tool_use Bash
 id: toolu_01MMm3D8YGBy6Z5DLWfXkYQB
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== web-scoped CodeRabbit findings =====\"\npython3 - <<'PY'\nimport json\np=\"/Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit-web.log\"\nn=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    if o.get(\"type\")==\"error\": print(\"ERROR:\", json.dumps(o)[:200])\n    if o.get(\"type\")==\"finding\":\n        n+=1\n        instr=o.get(\"codegenInstructions\",\"\")\n        body=instr.split(\"keep changes minimal, and validate.\\n\\n\",1)[-1]\n        print(f\"\\n[{n}] {o.get('severity','?').upper()} — {o.get('fileName')}\")\n        print(\"   \", body[:450])\nprint(f\"\\ntotal web findings: {n}\")\n# also show completion/exit\nimport subprocess\nPY\ngrep -E \"CODERABBIT_WEB EXIT|type.:.complete\" /Users/myankelev/.claude/jobs/064836b9/tmp/coderabbit-web.log | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== web-scoped CodeRabbit findings =====\"\npython3 - <<'PY'\nimport json\np=\"/home/<USER>/.claude/jobs/064836b9/tmp/coderabbit-web.log\"\nn=0\nfor line in open(p):\n    line=line.strip()\n    if not line.startswith(\"{\"): continue\n    try: o=json.loads(line)\n    except: continue\n    if o.get(\"type\")==\"error\": print(\"ERROR:\", json.dumps(o)[:200])\n    if o.get(\"type\")==\"finding\":\n        n+=1\n        instr=o.get(\"codegenInstructions\",\"\")\n        body=instr.split(\"keep changes minimal, and validate.\\n\\n\",1)[-1]\n        print(f\"\\n[{n}] {o.get('severity','?').upper()} — {o.get('fileName')}\")\n        print(\"   \", body[:450])\nprint(f\"\\ntotal web findings: {n}\")\n# also show completion/exit\nimport subprocess\nPY\ngrep -E \"CODERABBIT_WEB EXIT|type.:.complete\" /home/<USER>/.claude/jobs/064836b9/tmp/coderabbit-web.log | head",
   "description": "Parse web-scoped CodeRabbit findings"
 }
 ```
@@ -11286,7 +11286,7 @@ tool_use Bash
 id: toolu_01VhVEnn9qmi2Ed6aZtqgVoK
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"########## [6] FileList.tsx toResolvedChildView 20-60 ##########\"\nsed -n '20,60p' apps/web/src/components/file-browser/FileList.tsx\necho \"\"\necho \"########## [7] search-index.service.ts 110-135 ##########\"\nsed -n '110,135p' apps/web/src/services/search-index.service.ts",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"########## [6] FileList.tsx toResolvedChildView 20-60 ##########\"\nsed -n '20,60p' apps/web/src/components/file-browser/FileList.tsx\necho \"\"\necho \"########## [7] search-index.service.ts 110-135 ##########\"\nsed -n '110,135p' apps/web/src/services/search-index.service.ts",
   "description": "Read toResolvedChildView and search-index code"
 }
 ```
@@ -11359,7 +11359,7 @@ tool_use Bash
 id: toolu_013Hi14snJgvUqKqQNcJu5dU
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== SearchDocument.type definition =====\"\ngrep -n \"type SearchDocument\\|interface SearchDocument\\|type:\\s*'file'\\|type:\\s*'folder'\\|type:.*'file'.*'folder'\" apps/web/src/services/search-index.service.ts | head\nsed -n \"/SearchDocument\\s*=\\s*{/,/};/p\" apps/web/src/services/search-index.service.ts | head -20\necho \"\"\necho \"===== how search results consume .type (is 'folder' handled?) =====\"\ngit grep -n \"\\.type === 'folder'\\|type === 'file'\\|result.type\\|doc.type\" -- apps/web/src | grep -i search | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== SearchDocument.type definition =====\"\ngrep -n \"type SearchDocument\\|interface SearchDocument\\|type:\\s*'file'\\|type:\\s*'folder'\\|type:.*'file'.*'folder'\" apps/web/src/services/search-index.service.ts | head\nsed -n \"/SearchDocument\\s*=\\s*{/,/};/p\" apps/web/src/services/search-index.service.ts | head -20\necho \"\"\necho \"===== how search results consume .type (is 'folder' handled?) =====\"\ngit grep -n \"\\.type === 'folder'\\|type === 'file'\\|result.type\\|doc.type\" -- apps/web/src | grep -i search | head",
   "description": "Verify SearchDocument.type supports folder"
 }
 ```
@@ -11393,7 +11393,7 @@ id: toolu_01RMWN6vxgKhQ8YVpr7W2eK2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/services/search-index.service.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/services/search-index.service.ts",
   "old_string": "      // Index each child (files and subfolders). `folder.children` is the\n      // SDK-resolved `ResolvedChild[]` projection (68.2-09) -- `modifiedAt`\n      // is sourced from the child's own resolved listing entry, not the\n      // (now-reverted) SealedChildRef display mirror (D-08/68.2-12).\n      // TODO(phase 63): use ResolvedChild.kind for type discrimination instead of hardcoding 'file'\n      for (const child of folder.children) {\n        documents.push({\n          id: `${folder.id}:${child.ipnsName}`,\n          name: child.name,\n          type: 'file', // phase 63: use ResolvedChild.kind ('folder'|'file')\n          parentPath,\n          parentFolderId: folder.id,\n          modifiedAt: child.modifiedAt,\n        });\n      }",
   "new_string": "      // Index each child (files and subfolders). `folder.children` is the\n      // SDK-resolved `ResolvedChild[]` projection (68.2-09) -- `modifiedAt`\n      // AND `kind` are sourced from the child's own resolved listing entry,\n      // not the (now-reverted) SealedChildRef display mirror (D-08/68.2-12).\n      for (const child of folder.children) {\n        documents.push({\n          id: `${folder.id}:${child.ipnsName}`,\n          name: child.name,\n          // Discriminate by the resolved kind so subfolders index as 'folder'\n          // (not silently as 'file'); a folder's own self-entry above wins\n          // dedup via its distinct id.\n          type: child.kind === 'file' ? 'file' : 'folder',\n          parentPath,\n          parentFolderId: folder.id,\n          modifiedAt: child.modifiedAt,\n        });\n      }"
 }
@@ -11404,7 +11404,7 @@ id: toolu_01RMWN6vxgKhQ8YVpr7W2eK2
 tool_result
 id: toolu_01RMWN6vxgKhQ8YVpr7W2eK2
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/services/search-index.service.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/services/search-index.service.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11417,7 +11417,7 @@ tool_use Read
 id: toolu_01VcM3LkpyZV1vEXQTWWthsM
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "offset": 150,
   "limit": 14
 }
@@ -11451,7 +11451,7 @@ id: toolu_014WF2D8rudtpPo2SGcg2Gw9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts",
   "old_string": "      const resolved = await runWithFailureUx(() =>\n        client.listFolder(rootIpnsName, { forceResolve: true })\n      );\n      const state = await client.ensureFolderLoaded(rootIpnsName, { forceResolve: true });",
   "new_string": "      const resolved = await runWithFailureUx(() =>\n        client.listFolder(rootIpnsName, { forceResolve: true })\n      );\n      // Route ensureFolderLoaded through the same D-05 classifier as listFolder\n      // so a forced-resolve gate rejection (SequenceRegressionError /\n      // GenerationRegressionError) surfaces the toast instead of only hitting\n      // the catch-and-rethrow below.\n      const state = await runWithFailureUx(() =>\n        client.ensureFolderLoaded(rootIpnsName, { forceResolve: true })\n      );"
 }
@@ -11462,7 +11462,7 @@ id: toolu_014WF2D8rudtpPo2SGcg2Gw9
 tool_result
 id: toolu_014WF2D8rudtpPo2SGcg2Gw9
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/useFileBrowserActions.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11475,7 +11475,7 @@ tool_use Read
 id: toolu_01ALFYeNd27CNfwimjDkvBcC
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts",
   "offset": 23,
   "limit": 22
 }
@@ -11517,7 +11517,7 @@ id: toolu_01LxzxMnqkPva4oTi9GwhCrZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts",
   "old_string": "  const client = getSdkClient();\n  const resolved = await client.listFolder(folderIpnsName, { forceResolve: true });\n  const state = await client.ensureFolderLoaded(folderIpnsName, { forceResolve: true });\n\n  store.updateFolderChildren(folderId, resolved);\n  if (state) {\n    store.updateFolderRawChildren(folderId, state.children);\n    store.updateFolderSequence(folderId, state.sequenceNumber);\n  }\n}",
   "new_string": "  const client = getSdkClient();\n  const resolved = await client.listFolder(folderIpnsName, { forceResolve: true });\n  const state = await client.ensureFolderLoaded(folderIpnsName, { forceResolve: true });\n\n  // Re-read the store after the awaits: the folder may have been navigated\n  // away from or removed while resolving (matches refreshFolderListing /\n  // invalidateOpenFolder). Skip the writeback if it's gone.\n  const freshStore = useFolderStore.getState();\n  if (!freshStore.folders[folderId]) return;\n  freshStore.updateFolderChildren(folderId, resolved);\n  if (state) {\n    freshStore.updateFolderRawChildren(folderId, state.children);\n    freshStore.updateFolderSequence(folderId, state.sequenceNumber);\n  }\n}"
 }
@@ -11528,7 +11528,7 @@ id: toolu_01LxzxMnqkPva4oTi9GwhCrZ
 tool_result
 id: toolu_01LxzxMnqkPva4oTi9GwhCrZ
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/hooks/folder-helpers.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11541,7 +11541,7 @@ tool_use Write
 id: toolu_01UyhsizY4LB9LyRbMxTNDCm
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-gate-non-listing-read-facades.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-gate-non-listing-read-facades.md",
   "content": "---\ncreated: 2026-07-06\ntitle: Gate the non-listing read facades (resolveNodeIdentity, resolveFileMetadata) with the ROT-07 floor\narea: sdk\nfiles:\n  - packages/sdk/src/client.ts\nresolves_phase: null\n---\n\n## Problem\n\nPhase 68.2 moved the LISTING/navigation read chain behind the ROT-07 gate\n(`RotationHighWater.enforceResolved`, fail-closed on unverified signature) —\nverified and SECURED. Two secondary read facades still call\n`resolvePublishedNode` directly, so they do NOT enforce the anti-rollback floor\n(flagged by CodeRabbit on the ship review):\n\n- `resolveNodeIdentity(ipnsName)` (~`client.ts:1191`) — returns plaintext\n  `id`/`kind` for `deleteFromSharedFolder`'s childNodeId resolution.\n- `resolveFileMetadata(fileRef, folderKey)` (~`client.ts:3897`) — resolves a\n  file's own IPNS record for the detail dialog.\n\n**Severity is low, not a hole:** content integrity is still protected by AEAD —\na tampered `published.id` derives the wrong child read key and `unsealNode` /\n`sdkCore.resolveFileMetadata` fail closed. The residual gap is *anti-rollback*:\nan attacker able to serve an old, validly-signed record could show stale file\nmetadata/identity. That is a staleness/availability issue, not a\nconfidentiality/integrity breach — which is why it was deferred rather than\nfixed late in ship.\n\n## Solution\n\n- `resolveFileMetadata` HAS a `SealedChildRef` (`fileRef`) — route it through\n  `gatedResolveChild(fileRef)` (enforces `signatureVerified` + `versionFloor` +\n  `rotationHighWater`) instead of `resolvePublishedNode`, then unseal as today.\n- `resolveNodeIdentity` takes only an `ipnsName` (no `SealedChildRef`, no\n  generation), so it cannot call `gatedResolveChild` as-is. Either thread a\n  `SealedChildRef` from the caller, or add […]
 
 > TOOL
@@ -11549,7 +11549,7 @@ id: toolu_01UyhsizY4LB9LyRbMxTNDCm
 tool_result
 id: toolu_01UyhsizY4LB9LyRbMxTNDCm
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-gate-non-listing-read-facades.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-gate-non-listing-read-facades.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -11558,7 +11558,7 @@ tool_use Write
 id: toolu_0133sg6tJ6nrcFVDuwfPDALj
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-68.2-coderabbit-hardening-backlog.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-68.2-coderabbit-hardening-backlog.md",
   "content": "---\ncreated: 2026-07-06\ntitle: Phase 68.2 CodeRabbit hardening backlog (cache/freshness/a11y/tests)\narea: sdk\nfiles:\n  - packages/sdk/src/client.ts\n  - packages/sdk/src/folder-listing.ts\n  - apps/web/src/hooks/useSyncPolling.ts\n  - apps/web/src/components/file-browser/FileList.tsx\n  - apps/web/src/components/file-browser/SharedFileBrowser.tsx\nresolves_phase: null\n---\n\n## Problem\n\nNon-blocking hardening findings from the Phase 68.2 ship-review (CodeRabbit).\nNone observed in the passing e2e/unit suites; deferred rather than changing\ncache/freshness semantics late in a verified-green phase. Grouped here:\n\n## Items\n\n1. **Owned `listingCache` invalidation on file-only mutations** (`client.ts`\n   ~`resolveListingChildren`/`3613`). The shared path already invalidates\n   `listingCache` on a file-only publish (`client.ts:5028`); the OWNED path\n   (`replaceFile` / `restoreFileVersion` / `deleteFileVersion`) does not, so a\n   cached `ResolvedChild[]` could serve stale size/modifiedAt/version. **Masked\n   today** because the web forces resolve after these mutations (68.2-14/16\n   `forceResolve` + `invalidateOpenFolder`), bypassing the cache — but the SDK\n   cache staying stale is latent for any non-forcing consumer. Mirror the\n   shared-path `listingCache.delete(ipnsName)`.\n\n2. **`toResolvedChildView` unresolved default** (`FileList.tsx:23-36`). Falls\n   back to `kind: 'folder'` when a raw child has no paired `ResolvedChild`\n   (matches the historical folder-safe default; e2e nav passes because the\n   store sets `children`/`rawChildren` atomically). Harden by threading an\n   explicit \"unresolved\" state and disabling double-click nav / drag until the\n   item resolves, instead of defaulting to a navigable folder.\n\n3. **`invalidateOpenFolder` monotonicity** (`useSyncPolling.ts:39-47`). The\n   poll-leg writeback re-checks folder identity but not sequence monotonicity —\n   a slow await […]
 
 > TOOL
@@ -11566,7 +11566,7 @@ id: toolu_0133sg6tJ6nrcFVDuwfPDALj
 tool_result
 id: toolu_0133sg6tJ6nrcFVDuwfPDALj
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/todos/pending/2026-07-06-68.2-coderabbit-hardening-backlog.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/todos/pending/2026-07-06-68.2-coderabbit-hardening-backlog.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -11579,7 +11579,7 @@ tool_use Bash
 id: toolu_01XaoaG4X23md4waCrdCaPVB
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/sdk-recheck.log\necho \"start $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/sdk build >> \"$LOG\" 2>&1 && echo \"BUILD OK\" >> \"$LOG\"\npnpm --filter @cipherbox/sdk test >> \"$LOG\" 2>&1\necho \"SDK_TEST EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/sdk-recheck.log\necho \"start $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/sdk build >> \"$LOG\" 2>&1 && echo \"BUILD OK\" >> \"$LOG\"\npnpm --filter @cipherbox/sdk test >> \"$LOG\" 2>&1\necho \"SDK_TEST EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
   "description": "Rebuild SDK and run its unit suite",
   "run_in_background": true
 }
@@ -11599,7 +11599,7 @@ tool_use Bash
 id: toolu_01SM5ygdSqfsVKMcLqDvQ5KM
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box/apps/web\npnpm exec tsc -b >/tmp/web-tsc.out 2>&1; echo \"web tsc EXIT: $?\"; tail -5 /tmp/web-tsc.out\npnpm exec eslint \\\n  src/components/file-browser/useFileBrowserActions.ts \\\n  src/hooks/folder-helpers.ts \\\n  src/services/search-index.service.ts >/tmp/web-lint.out 2>&1; echo \"web eslint EXIT: $?\"; tail -8 /tmp/web-lint.out",
+  "command": "cd /home/<USER>/Code/random/cipher-box/apps/web\npnpm exec tsc -b >/tmp/web-tsc.out 2>&1; echo \"web tsc EXIT: $?\"; tail -5 /tmp/web-tsc.out\npnpm exec eslint \\\n  src/components/file-browser/useFileBrowserActions.ts \\\n  src/hooks/folder-helpers.ts \\\n  src/services/search-index.service.ts >/tmp/web-lint.out 2>&1; echo \"web eslint EXIT: $?\"; tail -8 /tmp/web-lint.out",
   "description": "Typecheck and lint web changes"
 }
 ```
@@ -11623,7 +11623,7 @@ tool_use Bash
 id: toolu_01XRgcRvUZgrzX4w1WzcZe9w
 ```json
 {
-  "command": "grep -E \"BUILD OK|Test Files|Tests |SDK_TEST EXIT|FAIL\" /Users/myankelev/.claude/jobs/064836b9/tmp/sdk-recheck.log | tail -12",
+  "command": "grep -E \"BUILD OK|Test Files|Tests |SDK_TEST EXIT|FAIL\" /home/<USER>/.claude/jobs/064836b9/tmp/sdk-recheck.log | tail -12",
   "description": "Confirm SDK suite tally"
 }
 ```
@@ -11649,7 +11649,7 @@ tool_use Bash
 id: toolu_01S5N9U4yVCmGohWoPjZuQ7c
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== D-07 gate quick re-check (no new runtime sdk-core/core imports) ===\"\ngit diff origin/main...HEAD --name-only -- apps/web/src | head -1 >/dev/null\ngit grep -nE \"^import [^t].*from '@cipherbox/(sdk-core|core)'\" -- apps/web/src/services/search-index.service.ts apps/web/src/components/file-browser/useFileBrowserActions.ts apps/web/src/hooks/folder-helpers.ts || echo \"no runtime sdk-core/core imports in changed web files — gate clean\"\necho \"\"\necho \"=== git status (is dist tracked?) ===\"\ngit status --short | grep -v \"^??\" | head\necho \"--- untracked ---\"\ngit status --short | grep \"^??\" | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== D-07 gate quick re-check (no new runtime sdk-core/core imports) ===\"\ngit diff origin/main...HEAD --name-only -- apps/web/src | head -1 >/dev/null\ngit grep -nE \"^import [^t].*from '@cipherbox/(sdk-core|core)'\" -- apps/web/src/services/search-index.service.ts apps/web/src/components/file-browser/useFileBrowserActions.ts apps/web/src/hooks/folder-helpers.ts || echo \"no runtime sdk-core/core imports in changed web files — gate clean\"\necho \"\"\necho \"=== git status (is dist tracked?) ===\"\ngit status --short | grep -v \"^??\" | head\necho \"--- untracked ---\"\ngit status --short | grep \"^??\" | head",
   "description": "Verify D-07 gate and check tracked changes"
 }
 ```
@@ -11678,7 +11678,7 @@ tool_use Bash
 id: toolu_013wFXe6H6PbhS5pc9dPEuGJ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit add packages/sdk/src/client.ts \\\n  apps/web/src/components/file-browser/useFileBrowserActions.ts \\\n  apps/web/src/hooks/folder-helpers.ts \\\n  apps/web/src/services/search-index.service.ts \\\n  .planning/todos/pending/2026-07-06-68.2-coderabbit-hardening-backlog.md \\\n  .planning/todos/pending/2026-07-06-gate-non-listing-read-facades.md\ntimeout 120 git commit -m \"$(cat <<'EOF'\nfix(68.2): address CodeRabbit ship-review findings\n\nApplied the clear-cut, low-risk in-scope findings from the local CodeRabbit\nreview of the phase branch:\n\n- SDK: destroy() now clears the new listingCache + reresolveInFlight maps so no\n  resolved listing (private folder structure) or in-flight re-resolve closure\n  survives client teardown.\n- SDK: in the descendSharedChild hop loop, adopt the minted childReadKey into\n  mintedReadKey BEFORE unsealNode so the outer finally zeroes it even if\n  unsealNode throws (leak-on-failure fix; terminal-owner buffer, safe to zero).\n- web: route handleSync's forced ensureFolderLoaded through runWithFailureUx so\n  a gate rejection surfaces the D-05 toast, matching the listFolder leg.\n- web: resyncFolder re-reads the store after its awaits and skips the writeback\n  if the folder was navigated away/removed (matches refreshFolderListing).\n- web: search-index indexes children by their resolved ResolvedChild.kind\n  instead of hardcoding 'file', so subfolders no longer index as files.\n\nDeferred the risky/out-of-scope findings as todos (noted in the PR): gating the\nnon-listing read facades (resolveNodeIdentity/resolveFileMetadata) with the\nROT-07 floor, and a hardening backlog (owned listingCache invalidation,\ntoResolvedChildView unresolved state, invalidateOpenFolder monotonicity,\nrefreshSharedFolder write envelope, seq safe-integer, empty-state a11y, test\nhardening).\n\nSDK suite 338 passed/49 skipped; web tsc + eslint […]
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit add packages/sdk/src/client.ts \\\n  apps/web/src/components/file-browser/useFileBrowserActions.ts \\\n  apps/web/src/hooks/folder-helpers.ts \\\n  apps/web/src/services/search-index.service.ts \\\n  .planning/todos/pending/2026-07-06-68.2-coderabbit-hardening-backlog.md \\\n  .planning/todos/pending/2026-07-06-gate-non-listing-read-facades.md\ntimeout 120 git commit -m \"$(cat <<'EOF'\nfix(68.2): address CodeRabbit ship-review findings\n\nApplied the clear-cut, low-risk in-scope findings from the local CodeRabbit\nreview of the phase branch:\n\n- SDK: destroy() now clears the new listingCache + reresolveInFlight maps so no\n  resolved listing (private folder structure) or in-flight re-resolve closure\n  survives client teardown.\n- SDK: in the descendSharedChild hop loop, adopt the minted childReadKey into\n  mintedReadKey BEFORE unsealNode so the outer finally zeroes it even if\n  unsealNode throws (leak-on-failure fix; terminal-owner buffer, safe to zero).\n- web: route handleSync's forced ensureFolderLoaded through runWithFailureUx so\n  a gate rejection surfaces the D-05 toast, matching the listFolder leg.\n- web: resyncFolder re-reads the store after its awaits and skips the writeback\n  if the folder was navigated away/removed (matches refreshFolderListing).\n- web: search-index indexes children by their resolved ResolvedChild.kind\n  instead of hardcoding 'file', so subfolders no longer index as files.\n\nDeferred the risky/out-of-scope findings as todos (noted in the PR): gating the\nnon-listing read facades (resolveNodeIdentity/resolveFileMetadata) with the\nROT-07 floor, and a hardening backlog (owned listingCache invalidation,\ntoResolvedChildView unresolved state, invalidateOpenFolder monotonicity,\nrefreshSharedFolder write envelope, seq safe-integer, empty-state a11y, test\nhardening).\n\nSDK suite 338 passed/49 skipped; web tsc + eslint […]
 
 > TOOL
 
@@ -11698,7 +11698,7 @@ tool_use Bash
 id: toolu_01HGByG4zVdpqmAoYoxy3T4A
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nuntil git log --oneline -1 2>/dev/null | grep -q \"address CodeRabbit ship-review\"; do sleep 3; done\necho \"=== fix commit landed ===\"\ngit log --oneline -3\necho \"\"\necho \"=== ROADMAP 68.2 status ===\"\ngrep -nE \"68\\.2\" .planning/ROADMAP.md | head\necho \"\"\necho \"=== tree clean? ===\"\ngit status --short | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nuntil git log --oneline -1 2>/dev/null | grep -q \"address CodeRabbit ship-review\"; do sleep 3; done\necho \"=== fix commit landed ===\"\ngit log --oneline -3\necho \"\"\necho \"=== ROADMAP 68.2 status ===\"\ngrep -nE \"68\\.2\" .planning/ROADMAP.md | head\necho \"\"\necho \"=== tree clean? ===\"\ngit status --short | head",
   "description": "Confirm commit and check ROADMAP status",
   "run_in_background": true
 }
@@ -11754,7 +11754,7 @@ tool_use Bash
 id: toolu_014zuFWMYMtsxuTWt6Wp3gWL
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit fetch origin 2>&1 | tail -3\necho \"=== push ===\"\ngit push -u origin feat/sdk-owned-read-chain-and-resolved-folder-listings 2>&1 | tail -8\necho \"PUSH EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit fetch origin 2>&1 | tail -3\necho \"=== push ===\"\ngit push -u origin feat/sdk-owned-read-chain-and-resolved-folder-listings 2>&1 | tail -8\necho \"PUSH EXIT: ${PIPESTATUS[0]}\"",
   "description": "Fetch and push branch to origin",
   "dangerouslyDisableSandbox": true
 }
@@ -11783,7 +11783,7 @@ tool_use Bash
 id: toolu_01XacZp7Wyo8vuSsMY8HAdoJ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh pr create \\\n  --base main \\\n  --head feat/sdk-owned-read-chain-and-resolved-folder-listings \\\n  --title \"feat: SDK-owned read chain and resolved folder listings\" \\\n  --body-file /Users/myankelev/.claude/jobs/064836b9/tmp/pr-body-68.2.md 2>&1 | tail -6",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh pr create \\\n  --base main \\\n  --head feat/sdk-owned-read-chain-and-resolved-folder-listings \\\n  --title \"feat: SDK-owned read chain and resolved folder listings\" \\\n  --body-file /home/<USER>/.claude/jobs/064836b9/tmp/pr-body-68.2.md 2>&1 | tail -6",
   "description": "Create the PR",
   "dangerouslyDisableSandbox": true
 }
@@ -11807,7 +11807,7 @@ tool_use Bash
 id: toolu_01AmJcZ7ceQiLSPu2qYnWYYP
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"=== PR checks (initial) ===\"\nenv -u GITHUB_TOKEN gh pr checks 589 2>&1 | head -20\necho \"\"\necho \"=== is CodeRabbit assigned as reviewer? ===\"\nenv -u GITHUB_TOKEN gh pr view 589 --json reviewRequests,url --jq '.reviewRequests[].login, .url' 2>&1 | head",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"=== PR checks (initial) ===\"\nenv -u GITHUB_TOKEN gh pr checks 589 2>&1 | head -20\necho \"\"\necho \"=== is CodeRabbit assigned as reviewer? ===\"\nenv -u GITHUB_TOKEN gh pr view 589 --json reviewRequests,url --jq '.reviewRequests[].login, .url' 2>&1 | head",
   "description": "Check PR checks and reviewers"
 }
 ```
@@ -11843,7 +11843,7 @@ tool_use Bash
 id: toolu_01FEzykF6DibyjzyCe29GbFd
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/pr-checks-poll.log\necho \"poll start $(date)\" > \"$LOG\"\nfor i in $(seq 1 30); do\n  CHECKS=$(env -u GITHUB_TOKEN gh pr checks 589 2>/dev/null)\n  CR=$(echo \"$CHECKS\" | grep -iE \"^CodeRabbit\" | awk '{print $2}')\n  GR=$(echo \"$CHECKS\" | grep -iE \"Greptile\" | awk '{print $2}')\n  echo \"[$i $(date +%H:%M:%S)] CodeRabbit=$CR Greptile=$GR\" >> \"$LOG\"\n  # exit once both review bots are no longer pending\n  if [ \"$CR\" != \"pending\" ] && [ \"$GR\" != \"pending\" ]; then\n    echo \"REVIEW BOTS SETTLED\" >> \"$LOG\"\n    break\n  fi\n  sleep 60\ndone\necho \"poll done $(date)\" >> \"$LOG\"\nenv -u GITHUB_TOKEN gh pr checks 589 >> \"$LOG\" 2>&1",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/pr-checks-poll.log\necho \"poll start $(date)\" > \"$LOG\"\nfor i in $(seq 1 30); do\n  CHECKS=$(env -u GITHUB_TOKEN gh pr checks 589 2>/dev/null)\n  CR=$(echo \"$CHECKS\" | grep -iE \"^CodeRabbit\" | awk '{print $2}')\n  GR=$(echo \"$CHECKS\" | grep -iE \"Greptile\" | awk '{print $2}')\n  echo \"[$i $(date +%H:%M:%S)] CodeRabbit=$CR Greptile=$GR\" >> \"$LOG\"\n  # exit once both review bots are no longer pending\n  if [ \"$CR\" != \"pending\" ] && [ \"$GR\" != \"pending\" ]; then\n    echo \"REVIEW BOTS SETTLED\" >> \"$LOG\"\n    break\n  fi\n  sleep 60\ndone\necho \"poll done $(date)\" >> \"$LOG\"\nenv -u GITHUB_TOKEN gh pr checks 589 >> \"$LOG\" 2>&1",
   "description": "Poll until CodeRabbit + Greptile reviews settle",
   "run_in_background": true
 }
@@ -11884,7 +11884,7 @@ tool_use Bash
 id: toolu_01Kqc2RpKUfbme7USyRLzDHB
 ```json
 {
-  "command": "cat /Users/myankelev/.claude/jobs/064836b9/tmp/pr-checks-poll.log 2>/dev/null | tail -40",
+  "command": "cat /home/<USER>/.claude/jobs/064836b9/tmp/pr-checks-poll.log 2>/dev/null | tail -40",
   "description": "Read poll log"
 }
 ```
@@ -11931,7 +11931,7 @@ tool_use Bash
 id: toolu_01CzjrUjAgwBQTwmEDeQFcbx
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/pr-poll2.log\necho \"poll2 start $(date)\" > \"$LOG\"\nfor i in $(seq 1 30); do\n  CHECKS=$(env -u GITHUB_TOKEN gh pr checks 589 2>/dev/null)\n  CR_PENDING=$(echo \"$CHECKS\" | grep -iE \"^CodeRabbit[[:space:]]\" | grep -c \"pending\")\n  GR_PENDING=$(echo \"$CHECKS\" | grep -iE \"^Greptile Review\" | grep -c \"pending\")\n  echo \"[$i $(date +%H:%M:%S)] CodeRabbit_pending=$CR_PENDING Greptile_pending=$GR_PENDING\" >> \"$LOG\"\n  if [ \"$CR_PENDING\" = \"0\" ] && [ \"$GR_PENDING\" = \"0\" ]; then\n    echo \"REVIEW BOTS SETTLED\" >> \"$LOG\"\n    echo \"$CHECKS\" | grep -iE \"CodeRabbit|Greptile\" >> \"$LOG\"\n    exit 0\n  fi\n  sleep 60\ndone\necho \"poll2 TIMEOUT $(date)\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/pr-poll2.log\necho \"poll2 start $(date)\" > \"$LOG\"\nfor i in $(seq 1 30); do\n  CHECKS=$(env -u GITHUB_TOKEN gh pr checks 589 2>/dev/null)\n  CR_PENDING=$(echo \"$CHECKS\" | grep -iE \"^CodeRabbit[[:space:]]\" | grep -c \"pending\")\n  GR_PENDING=$(echo \"$CHECKS\" | grep -iE \"^Greptile Review\" | grep -c \"pending\")\n  echo \"[$i $(date +%H:%M:%S)] CodeRabbit_pending=$CR_PENDING Greptile_pending=$GR_PENDING\" >> \"$LOG\"\n  if [ \"$CR_PENDING\" = \"0\" ] && [ \"$GR_PENDING\" = \"0\" ]; then\n    echo \"REVIEW BOTS SETTLED\" >> \"$LOG\"\n    echo \"$CHECKS\" | grep -iE \"CodeRabbit|Greptile\" >> \"$LOG\"\n    exit 0\n  fi\n  sleep 60\ndone\necho \"poll2 TIMEOUT $(date)\" >> \"$LOG\"",
   "description": "Re-poll review bots with robust parsing",
   "run_in_background": true
 }
@@ -11955,7 +11955,7 @@ tool_use Bash
 id: toolu_01Ekmf2KPehQAGzBhfo5dCqw
 ```json
 {
-  "command": "tail -8 /Users/myankelev/.claude/jobs/064836b9/tmp/pr-poll2.log",
+  "command": "tail -8 /home/<USER>/.claude/jobs/064836b9/tmp/pr-poll2.log",
   "description": "Check poll result"
 }
 ```
@@ -11985,7 +11985,7 @@ tool_use Bash
 id: toolu_01PV9Z7PGyfJzZ8iZWyyyLsb
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== reviews (bodies) — author + state =====\"\nenv -u GITHUB_TOKEN gh api repos/FSM1/cipher-box/pulls/589/reviews --jq '.[] | \"\\(.user.login) [\\(.state)] \\(.submitted_at) bodylen=\\(.body|length)\"' 2>&1 | tail -20\necho \"\"\necho \"===== review THREADS (GraphQL): count + unresolved =====\"\nenv -u GITHUB_TOKEN gh api graphql -f query='\n{ repository(owner:\"FSM1\", name:\"cipher-box\") {\n    pullRequest(number:589) {\n      reviewThreads(first:100) {\n        totalCount\n        nodes { isResolved isOutdated path line comments(first:1){ nodes { author{login} } } }\n      }\n    }\n} }' --jq '.data.repository.pullRequest.reviewThreads | \"total=\\(.totalCount) unresolved=\\([.nodes[]|select(.isResolved==false)]|length)\"' 2>&1 | tail -5\necho \"\"\necho \"===== unresolved threads by author =====\"\nenv -u GITHUB_TOKEN gh api graphql -f query='\n{ repository(owner:\"FSM1\", name:\"cipher-box\") {\n    pullRequest(number:589) {\n      reviewThreads(first:100) {\n        nodes { isResolved path line comments(first:1){ nodes { author{login} } } }\n      }\n    }\n} }' --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==false) | \"\\(.comments.nodes[0].author.login) \\(.path):\\(.line)\"' 2>&1 | sort | uniq -c | tail -20",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== reviews (bodies) — author + state =====\"\nenv -u GITHUB_TOKEN gh api repos/FSM1/cipher-box/pulls/589/reviews --jq '.[] | \"\\(.user.login) [\\(.state)] \\(.submitted_at) bodylen=\\(.body|length)\"' 2>&1 | tail -20\necho \"\"\necho \"===== review THREADS (GraphQL): count + unresolved =====\"\nenv -u GITHUB_TOKEN gh api graphql -f query='\n{ repository(owner:\"FSM1\", name:\"cipher-box\") {\n    pullRequest(number:589) {\n      reviewThreads(first:100) {\n        totalCount\n        nodes { isResolved isOutdated path line comments(first:1){ nodes { author{login} } } }\n      }\n    }\n} }' --jq '.data.repository.pullRequest.reviewThreads | \"total=\\(.totalCount) unresolved=\\([.nodes[]|select(.isResolved==false)]|length)\"' 2>&1 | tail -5\necho \"\"\necho \"===== unresolved threads by author =====\"\nenv -u GITHUB_TOKEN gh api graphql -f query='\n{ repository(owner:\"FSM1\", name:\"cipher-box\") {\n    pullRequest(number:589) {\n      reviewThreads(first:100) {\n        nodes { isResolved path line comments(first:1){ nodes { author{login} } } }\n      }\n    }\n} }' --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==false) | \"\\(.comments.nodes[0].author.login) \\(.path):\\(.line)\"' 2>&1 | sort | uniq -c | tail -20",
   "description": "Fetch reviews and threads for PR 589"
 }
 ```
@@ -12016,7 +12016,7 @@ tool_use Bash
 id: toolu_01XCh1TeLzV5gmNVBpyc7pjy
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh api graphql -f query='\n{ repository(owner:\"FSM1\", name:\"cipher-box\") {\n    pullRequest(number:589) {\n      reviewThreads(first:100) {\n        nodes {\n          isResolved path line\n          id\n          comments(first:3){ nodes { author{login} body } }\n        }\n      }\n    }\n} }' --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==false) | \"\\n===== \\(.path):\\(.line) (threadId=\\(.id)) =====\\n\\(.comments.nodes[0].body)\"' 2>&1 | head -80",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nenv -u GITHUB_TOKEN gh api graphql -f query='\n{ repository(owner:\"FSM1\", name:\"cipher-box\") {\n    pullRequest(number:589) {\n      reviewThreads(first:100) {\n        nodes {\n          isResolved path line\n          id\n          comments(first:3){ nodes { author{login} body } }\n        }\n      }\n    }\n} }' --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==false) | \"\\n===== \\(.path):\\(.line) (threadId=\\(.id)) =====\\n\\(.comments.nodes[0].body)\"' 2>&1 | head -80",
   "description": "Read Greptile thread bodies"
 }
 ```
@@ -12049,7 +12049,7 @@ tool_use Bash
 id: toolu_01USSGG3WWsct3Z9SudWxh7z
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\necho \"===== listFolder cache read/write ~835-870 =====\"\nsed -n '835,875p' packages/sdk/src/client.ts\necho \"\"\necho \"===== resolveListingChildren ~995-1015 =====\"\nsed -n '995,1018p' packages/sdk/src/client.ts",
+  "command": "cd /home/<USER>/Code/random/cipher-box\necho \"===== listFolder cache read/write ~835-870 =====\"\nsed -n '835,875p' packages/sdk/src/client.ts\necho \"\"\necho \"===== resolveListingChildren ~995-1015 =====\"\nsed -n '995,1018p' packages/sdk/src/client.ts",
   "description": "Read cache and resolveListingChildren flow"
 }
 ```
@@ -12112,7 +12112,7 @@ id: toolu_01KS4AmsLBTNJVYMQvjgYdZf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts",
+  "file_path": "/home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts",
   "old_string": "    const resolved = await resolveChildren(children, parentReadKey, (childRef) =>\n      this.gatedResolveChild(childRef)\n    );\n    this.listingCache.set(ipnsName, { sequenceNumber, children: resolved });\n    return resolved;",
   "new_string": "    const resolved = await resolveChildren(children, parentReadKey, (childRef) =>\n      this.gatedResolveChild(childRef)\n    );\n    // Do NOT cache a PARTIAL listing. `resolveChildren` skips any child it\n    // can't currently resolve (transient network error, ROT-07 rejection, bad\n    // AEAD -- as well as a genuinely revoked/absent hop). Caching an incomplete\n    // result at this sequenceNumber would pin it until a remote write advances\n    // the sequence or the client reloads -- even the `forceResolve` poll/nav\n    // paths reuse a same-sequence entry (they refresh the folder's OWN sequence,\n    // not its children). Skipping the cache-set when a child was dropped lets a\n    // later resolve reattempt it and self-heal on network recovery.\n    if (resolved.length === children.length) {\n      this.listingCache.set(ipnsName, { sequenceNumber, children: resolved });\n    }\n    return resolved;"
 }
@@ -12123,7 +12123,7 @@ id: toolu_01KS4AmsLBTNJVYMQvjgYdZf
 tool_result
 id: toolu_01KS4AmsLBTNJVYMQvjgYdZf
 ```
-The file /Users/myankelev/Code/random/cipher-box/packages/sdk/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/packages/sdk/src/client.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12136,7 +12136,7 @@ tool_use Read
 id: toolu_01FJ28dEkyfQkNAM6XEqvyS8
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
   "offset": 1,
   "limit": 3
 }
@@ -12159,7 +12159,7 @@ id: toolu_01HBcaJ3h1ULBYMEa9U8mz6x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
   "old_string": "import type { SealedChildRef } from '@cipherbox/core';\nimport type { ResolvedChild } from '@cipherbox/sdk';\nimport { isFileRefResolved } from '../../utils/fileTypes';",
   "new_string": "import { useMemo } from 'react';\nimport type { SealedChildRef } from '@cipherbox/core';\nimport type { ResolvedChild } from '@cipherbox/sdk';\nimport { isFileRefResolved } from '../../utils/fileTypes';"
 }
@@ -12170,7 +12170,7 @@ id: toolu_01HBcaJ3h1ULBYMEa9U8mz6x
 tool_result
 id: toolu_01HBcaJ3h1ULBYMEa9U8mz6x
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -12180,7 +12180,7 @@ id: toolu_011Pmv9p2uW7bR3GPYNjPvh8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
+  "file_path": "/home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx",
   "old_string": "  const resolvedByIpnsName = new Map(resolvedChildren.map((r) => [r.ipnsName, r]));\n  const fileCount = selectedItems.filter((it) => isFileRefResolved(it, resolvedByIpnsName)).length;",
   "new_string": "  const resolvedByIpnsName = useMemo(\n    () => new Map(resolvedChildren.map((r) => [r.ipnsName, r])),\n    [resolvedChildren]\n  );\n  const fileCount = selectedItems.filter((it) => isFileRefResolved(it, resolvedByIpnsName)).length;"
 }
@@ -12191,7 +12191,7 @@ id: toolu_011Pmv9p2uW7bR3GPYNjPvh8
 tool_result
 id: toolu_011Pmv9p2uW7bR3GPYNjPvh8
 ```
-The file /Users/myankelev/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Code/random/cipher-box/apps/web/src/components/file-browser/SelectionActionBar.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12204,7 +12204,7 @@ tool_use Bash
 id: toolu_01DLvKHPbcXMErSSY4T7sGsy
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/greptile-recheck.log\necho \"start $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/sdk build >> \"$LOG\" 2>&1 && echo \"SDK BUILD OK\" >> \"$LOG\"\npnpm --filter @cipherbox/sdk test >> \"$LOG\" 2>&1\necho \"SDK_TEST EXIT: $?\" >> \"$LOG\"\ncd apps/web\npnpm exec tsc -b >> \"$LOG\" 2>&1; echo \"WEB_TSC EXIT: $?\" >> \"$LOG\"\npnpm exec eslint src/components/file-browser/SelectionActionBar.tsx >> \"$LOG\" 2>&1; echo \"WEB_ESLINT EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/greptile-recheck.log\necho \"start $(date)\" > \"$LOG\"\npnpm --filter @cipherbox/sdk build >> \"$LOG\" 2>&1 && echo \"SDK BUILD OK\" >> \"$LOG\"\npnpm --filter @cipherbox/sdk test >> \"$LOG\" 2>&1\necho \"SDK_TEST EXIT: $?\" >> \"$LOG\"\ncd apps/web\npnpm exec tsc -b >> \"$LOG\" 2>&1; echo \"WEB_TSC EXIT: $?\" >> \"$LOG\"\npnpm exec eslint src/components/file-browser/SelectionActionBar.tsx >> \"$LOG\" 2>&1; echo \"WEB_ESLINT EXIT: $?\" >> \"$LOG\"\necho \"done $(date)\" >> \"$LOG\"",
   "description": "Validate Greptile fixes",
   "run_in_background": true
 }
@@ -12228,7 +12228,7 @@ tool_use Bash
 id: toolu_01L69pVsmDkWq7yfXTofHaH9
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit fetch origin 2>&1 | tail -3\necho \"=== local vs remote branch ===\"\ngit log --oneline origin/feat/sdk-owned-read-chain-and-resolved-folder-listings -3\necho \"\"\necho \"=== CodeRabbit review posted yet? ===\"\nenv -u GITHUB_TOKEN gh api repos/FSM1/cipher-box/pulls/589/reviews --jq '.[] | \"\\(.user.login) [\\(.state)] bodylen=\\(.body|length)\"' 2>&1 | tail -5\necho \"=== CodeRabbit check status ===\"\nenv -u GITHUB_TOKEN gh pr checks 589 2>/dev/null | grep -iE \"CodeRabbit|Greptile\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit fetch origin 2>&1 | tail -3\necho \"=== local vs remote branch ===\"\ngit log --oneline origin/feat/sdk-owned-read-chain-and-resolved-folder-listings -3\necho \"\"\necho \"=== CodeRabbit review posted yet? ===\"\nenv -u GITHUB_TOKEN gh api repos/FSM1/cipher-box/pulls/589/reviews --jq '.[] | \"\\(.user.login) [\\(.state)] bodylen=\\(.body|length)\"' 2>&1 | tail -5\necho \"=== CodeRabbit check status ===\"\nenv -u GITHUB_TOKEN gh pr checks 589 2>/dev/null | grep -iE \"CodeRabbit|Greptile\"",
   "description": "Fetch bot commit and check CodeRabbit",
   "dangerouslyDisableSandbox": true
 }
@@ -12265,7 +12265,7 @@ tool_use Bash
 id: toolu_01Sk1JHuACRFDnMLGADmcuDm
 ```json
 {
-  "command": "grep -E \"SDK BUILD OK|Tests |SDK_TEST EXIT|WEB_TSC EXIT|WEB_ESLINT EXIT|FAIL\" /Users/myankelev/.claude/jobs/064836b9/tmp/greptile-recheck.log | tail -10",
+  "command": "grep -E \"SDK BUILD OK|Tests |SDK_TEST EXIT|WEB_TSC EXIT|WEB_ESLINT EXIT|FAIL\" /home/<USER>/.claude/jobs/064836b9/tmp/greptile-recheck.log | tail -10",
   "description": "Confirm Greptile-fix validation"
 }
 ```
@@ -12292,7 +12292,7 @@ tool_use Bash
 id: toolu_01VTWK8NGZYeGHqNUja7DgnR
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit add packages/sdk/src/client.ts apps/web/src/components/file-browser/SelectionActionBar.tsx\ntimeout 120 git commit -m \"$(cat <<'EOF'\nfix(68.2): address Greptile PR review findings\n\n- SDK (P1): do not cache a PARTIAL folder listing. resolveListingChildren cached\n  the result of resolveChildren even when a child was dropped (transient network\n  / ROT-07 / AEAD failure), pinning the incomplete listing at that sequenceNumber\n  until a remote write or reload -- even the forceResolve poll/nav paths reuse a\n  same-sequence entry. Skip the cache-set when resolved.length < children.length\n  so a later resolve reattempts the dropped child and self-heals.\n- web (P2): memoize SelectionActionBar's resolvedByIpnsName map so it is not\n  reallocated on every render (resolvedChildren is a fresh array reference each\n  parent render).\n\nSDK suite 338 passed/49 skipped; web tsc + eslint clean.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -5\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit add packages/sdk/src/client.ts apps/web/src/components/file-browser/SelectionActionBar.tsx\ntimeout 120 git commit -m \"$(cat <<'EOF'\nfix(68.2): address Greptile PR review findings\n\n- SDK (P1): do not cache a PARTIAL folder listing. resolveListingChildren cached\n  the result of resolveChildren even when a child was dropped (transient network\n  / ROT-07 / AEAD failure), pinning the incomplete listing at that sequenceNumber\n  until a remote write or reload -- even the forceResolve poll/nav paths reuse a\n  same-sequence entry. Skip the cache-set when resolved.length < children.length\n  so a later resolve reattempts the dropped child and self-heals.\n- web (P2): memoize SelectionActionBar's resolvedByIpnsName map so it is not\n  reallocated on every render (resolvedChildren is a fresh array reference each\n  parent render).\n\nSDK suite 338 passed/49 skipped; web tsc + eslint clean.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -5\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
   "description": "Commit Greptile fixes",
   "run_in_background": true,
   "dangerouslyDisableSandbox": true
@@ -12313,7 +12313,7 @@ tool_use Bash
 id: toolu_01HpuyKjVPrDMDdyALgyuKDQ
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nuntil git log --oneline -1 2>/dev/null | grep -q \"address Greptile PR review\"; do sleep 3; done\necho \"=== committed ===\"\ngit log --oneline -1\necho \"=== fetch + push (rebase if bot commit landed) ===\"\ngit fetch origin 2>&1 | tail -2\n# rebase onto remote branch tip in case the release bot pushed chore(release)\ngit rebase origin/feat/sdk-owned-read-chain-and-resolved-folder-listings 2>&1 | tail -4\ngit push origin feat/sdk-owned-read-chain-and-resolved-folder-listings 2>&1 | tail -5\necho \"PUSH EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nuntil git log --oneline -1 2>/dev/null | grep -q \"address Greptile PR review\"; do sleep 3; done\necho \"=== committed ===\"\ngit log --oneline -1\necho \"=== fetch + push (rebase if bot commit landed) ===\"\ngit fetch origin 2>&1 | tail -2\n# rebase onto remote branch tip in case the release bot pushed chore(release)\ngit rebase origin/feat/sdk-owned-read-chain-and-resolved-folder-listings 2>&1 | tail -4\ngit push origin feat/sdk-owned-read-chain-and-resolved-folder-listings 2>&1 | tail -5\necho \"PUSH EXIT: ${PIPESTATUS[0]}\"",
   "description": "Confirm commit, rebase, push",
   "run_in_background": true,
   "dangerouslyDisableSandbox": true
@@ -12364,7 +12364,7 @@ tool_use Bash
 id: toolu_0167NgJL6Lg1DTwtaCP4SN5Y
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nreply_and_resolve() {\n  local TID=\"$1\"; local BODY=\"$2\"\n  env -u GITHUB_TOKEN gh api graphql -f query='\n    mutation($tid:ID!, $body:String!) {\n      addPullRequestReviewThreadReply(input:{pullRequestReviewThreadId:$tid, body:$body}) {\n        comment { id }\n      }\n    }' -f tid=\"$TID\" -f body=\"$BODY\" >/dev/null 2>&1 && echo \"  replied\"\n  env -u GITHUB_TOKEN gh api graphql -f query='\n    mutation($tid:ID!) { resolveReviewThread(input:{threadId:$tid}) { thread { isResolved } } }' \\\n    -f tid=\"$TID\" --jq '.data.resolveReviewThread.thread.isResolved' 2>&1\n}\n\necho \"=== Thread 1: client.ts P1 partial cache ===\"\nreply_and_resolve \"PRRT_kwDOQ6DXvM6On61D\" \"Fixed in ec7e77f80: \\`resolveListingChildren\\` now skips the \\`listingCache.set\\` when \\`resolved.length < children.length\\`, so a partial listing (a child dropped on transient network / ROT-07 / AEAD failure) is never cached. A later resolve — including the forceResolve poll/nav paths — reattempts the dropped child and self-heals on recovery. Good catch.\"\n\necho \"=== Thread 2: SelectionActionBar P2 useMemo ===\"\nreply_and_resolve \"PRRT_kwDOQ6DXvM6On62A\" \"Fixed in ec7e77f80: wrapped \\`resolvedByIpnsName\\` in \\`useMemo\\` keyed on \\`resolvedChildren\\` so the map is no longer reallocated every render.\"\n\necho \"\"\necho \"=== verify: unresolved count ===\"\nenv -u GITHUB_TOKEN gh api graphql -f query='\n{ repository(owner:\"FSM1\", name:\"cipher-box\") { pullRequest(number:589) {\n  reviewThreads(first:100) { nodes { isResolved } } } } }' \\\n  --jq '[.data.repository.pullRequest.reviewThreads.nodes[]|select(.isResolved==false)]|length' 2>&1",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nreply_and_resolve() {\n  local TID=\"$1\"; local BODY=\"$2\"\n  env -u GITHUB_TOKEN gh api graphql -f query='\n    mutation($tid:ID!, $body:String!) {\n      addPullRequestReviewThreadReply(input:{pullRequestReviewThreadId:$tid, body:$body}) {\n        comment { id }\n      }\n    }' -f tid=\"$TID\" -f body=\"$BODY\" >/dev/null 2>&1 && echo \"  replied\"\n  env -u GITHUB_TOKEN gh api graphql -f query='\n    mutation($tid:ID!) { resolveReviewThread(input:{threadId:$tid}) { thread { isResolved } } }' \\\n    -f tid=\"$TID\" --jq '.data.resolveReviewThread.thread.isResolved' 2>&1\n}\n\necho \"=== Thread 1: client.ts P1 partial cache ===\"\nreply_and_resolve \"PRRT_kwDOQ6DXvM6On61D\" \"Fixed in ec7e77f80: \\`resolveListingChildren\\` now skips the \\`listingCache.set\\` when \\`resolved.length < children.length\\`, so a partial listing (a child dropped on transient network / ROT-07 / AEAD failure) is never cached. A later resolve — including the forceResolve poll/nav paths — reattempts the dropped child and self-heals on recovery. Good catch.\"\n\necho \"=== Thread 2: SelectionActionBar P2 useMemo ===\"\nreply_and_resolve \"PRRT_kwDOQ6DXvM6On62A\" \"Fixed in ec7e77f80: wrapped \\`resolvedByIpnsName\\` in \\`useMemo\\` keyed on \\`resolvedChildren\\` so the map is no longer reallocated every render.\"\n\necho \"\"\necho \"=== verify: unresolved count ===\"\nenv -u GITHUB_TOKEN gh api graphql -f query='\n{ repository(owner:\"FSM1\", name:\"cipher-box\") { pullRequest(number:589) {\n  reviewThreads(first:100) { nodes { isResolved } } } } }' \\\n  --jq '[.data.repository.pullRequest.reviewThreads.nodes[]|select(.isResolved==false)]|length' 2>&1",
   "description": "Reply and resolve both Greptile threads",
   "dangerouslyDisableSandbox": true
 }
@@ -12396,7 +12396,7 @@ tool_use Bash
 id: toolu_01HtF7WT24CGy5Pyc8Y18N5f
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\nLOG=/Users/myankelev/.claude/jobs/064836b9/tmp/final-ci-poll.log\necho \"final poll start $(date)\" > \"$LOG\"\nfor i in $(seq 1 35); do\n  CHECKS=$(env -u GITHUB_TOKEN gh pr checks 589 2>/dev/null)\n  PENDING=$(echo \"$CHECKS\" | grep -c \"pending\")\n  echo \"[$i $(date +%H:%M:%S)] pending_checks=$PENDING\" >> \"$LOG\"\n  if [ \"$PENDING\" = \"0\" ]; then\n    echo \"ALL CHECKS SETTLED\" >> \"$LOG\"\n    echo \"$CHECKS\" >> \"$LOG\"\n    exit 0\n  fi\n  sleep 60\ndone\necho \"final poll TIMEOUT $(date)\" >> \"$LOG\"\nenv -u GITHUB_TOKEN gh pr checks 589 >> \"$LOG\" 2>&1",
+  "command": "cd /home/<USER>/Code/random/cipher-box\nLOG=/home/<USER>/.claude/jobs/064836b9/tmp/final-ci-poll.log\necho \"final poll start $(date)\" > \"$LOG\"\nfor i in $(seq 1 35); do\n  CHECKS=$(env -u GITHUB_TOKEN gh pr checks 589 2>/dev/null)\n  PENDING=$(echo \"$CHECKS\" | grep -c \"pending\")\n  echo \"[$i $(date +%H:%M:%S)] pending_checks=$PENDING\" >> \"$LOG\"\n  if [ \"$PENDING\" = \"0\" ]; then\n    echo \"ALL CHECKS SETTLED\" >> \"$LOG\"\n    echo \"$CHECKS\" >> \"$LOG\"\n    exit 0\n  fi\n  sleep 60\ndone\necho \"final poll TIMEOUT $(date)\" >> \"$LOG\"\nenv -u GITHUB_TOKEN gh pr checks 589 >> \"$LOG\" 2>&1",
   "description": "Poll until all PR checks settle",
   "run_in_background": true
 }
@@ -12443,7 +12443,7 @@ tool_use Write
 id: toolu_01GQ26x2LeCntyJ8GWSnZiVv
 ```json
 {
-  "file_path": "/Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-LEARNINGS.md",
+  "file_path": "/home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-LEARNINGS.md",
   "content": "---\nphase: 68.2\nphase_name: \"SDK-Owned Read Chain and Resolved Folder Listings\"\nproject: \"CipherBox\"\ngenerated: \"2026-07-06\"\ncounts:\n  decisions: 5\n  lessons: 6\n  patterns: 5\n  surprises: 4\nmissing_artifacts: []\n---\n\n# Phase 68.2 Learnings: SDK-Owned Read Chain and Resolved Folder Listings\n\n## Decisions\n\n### D-05: single gated read entrypoint inside the SDK\nEvery read-path IPNS resolve (`resolvePublishedNode` / `dfsFindFolder` / `ensureFolderLoaded` / `listFolder` / `listSharedFolder`) enforces the ROT-07 durable anti-rollback floor via `RotationHighWater.enforceResolved`, fail-closed on `signatureVerified=false` before any floor mutation.\n\n**Rationale:** the working read-side gate previously lived only in the web (`ipns.service.ts`, deleted this phase); the SDK's internal navigate path was ungated. Centralizing it makes the SDK the sole in-process owner and removes the web parallel path.\n**Source:** 68.2-01-PLAN.md, 68.2-VERIFICATION.md, 68.2-SECURITY.md\n\n### D-07: allowlist-free web/SDK boundary (full scope)\n`apps/web/src` makes zero runtime imports of `@cipherbox/sdk-core`/`@cipherbox/core` and no raw IPFS/IPNS access (type-only `import type` allowed), enforced by a grep gate across ALL of `apps/web/src` with no allowlist — including BYO-pinning and auth-bootstrap/device-registry crypto.\n\n**Rationale:** a partial boundary invites drift; a full, allowlist-free gate is verifiable in one command.\n**Source:** 68.2-CONTEXT.md (D-07 resolution), 68.2-11 (grep gate commit)\n\n### D-02: ResolvedChild as the single per-child listing answer\n`listFolder`/`listSharedFolder` return `ResolvedChild[]` (`ipnsName, name, kind, size?, modifiedAt, sequence`), resolved once per folder load and cached in the SDK; […]
 
 > TOOL
@@ -12451,7 +12451,7 @@ id: toolu_01GQ26x2LeCntyJ8GWSnZiVv
 tool_result
 id: toolu_01GQ26x2LeCntyJ8GWSnZiVv
 ```
-File created successfully at: /Users/myankelev/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-LEARNINGS.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/random/cipher-box/.planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-LEARNINGS.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -12464,7 +12464,7 @@ tool_use Bash
 id: toolu_0153ypqJYFCXErtoJ62ywx76
 ```json
 {
-  "command": "cd /Users/myankelev/Code/random/cipher-box\ngit add .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-LEARNINGS.md\ntimeout 120 git commit -m \"$(cat <<'EOF'\ndocs(68.2): extract phase learnings\n\nDecisions (single gated read entrypoint, D-07 full boundary, ResolvedChild,\ngate-then-delete ordering, revert-mirror-last), lessons (post-mutation refresh\ntargets the open folder, isFileRef vs bare refs, don't cache partial listings,\ntee-republish infra gate, large-PR review skips, terminal-owner zeroization),\npatterns, and surprises from the phase.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -4\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
+  "command": "cd /home/<USER>/Code/random/cipher-box\ngit add .planning/phases/68.2-sdk-owned-read-chain-and-resolved-folder-listings/68.2-LEARNINGS.md\ntimeout 120 git commit -m \"$(cat <<'EOF'\ndocs(68.2): extract phase learnings\n\nDecisions (single gated read entrypoint, D-07 full boundary, ResolvedChild,\ngate-then-delete ordering, revert-mirror-last), lessons (post-mutation refresh\ntargets the open folder, isFileRef vs bare refs, don't cache partial listings,\ntee-republish infra gate, large-PR review skips, terminal-owner zeroization),\npatterns, and surprises from the phase.\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/REDACTED\nEOF\n)\" 2>&1 | tail -4\necho \"COMMIT EXIT: ${PIPESTATUS[0]}\"",
   "description": "Commit LEARNINGS.md",
   "run_in_background": true,
   "dangerouslyDisableSandbox": true

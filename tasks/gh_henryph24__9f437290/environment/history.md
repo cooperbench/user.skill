@@ -14,7 +14,7 @@ id: toolu_01AQRtpiebCD3coBqib21hwk
 {
   "description": "Audit information leakage",
   "subagent_type": "general-purpose",
-  "prompt": "You are auditing a NeurIPS 2026 submission code repository at /Users/hungpq2412/neuralips26 for **information leakage that would break double-blind review** or expose secrets. NeurIPS 2026 is double-blind: reviewers should not be able to identify authors, institutions, or infrastructure.\n\nFind and list every concrete instance (file_path:line_number when possible) of the following classes of leakage:\n\n1. **Author / personal identifying info** in source files (Python, shell, LaTeX, Markdown, JSON config), including:\n   - Personal names (\"Hung\", \"Henry\", \"Phan\", \"hungpq\", \"hpq2412\", any author name)\n   - Personal email addresses (gmail, outlook, etc.)\n   - Personal GitHub usernames or repo URLs\n   - Author affiliations (university name, lab name) — for example RMIT, the supervisor's name, team names\n\n2. **Institution / infrastructure identifiers** that would deanonymize:\n   - \"RMIT\", \"RACE\", \"race.rmit.edu.au\"\n   - AWS hostnames (`ec2-...amazonaws.com`)\n   - Internal IPs\n   - SSH key filenames (`hungphanphd.pem`)\n   - Internal URLs, Slack/Linear references\n\n3. **Credentials / secrets** even if benign-looking:\n   - API keys (OpenAI, Anthropic, HuggingFace, AWS, etc.)\n   - `.env` files with values\n   - Tokens in code\n   - Hardcoded passwords\n   - Any `.pem`, `.key`, `id_rsa` etc. checked into the repo\n\n4. **Hardcoded user paths** like `/Users/hungpq2412/` or `/home/ec2-user/` that scream a single author's machine. These don't strictly […]
+  "prompt": "You are auditing a NeurIPS 2026 submission code repository at /home/<USER>/neuralips26 for **information leakage that would break double-blind review** or expose secrets. NeurIPS 2026 is double-blind: reviewers should not be able to identify authors, institutions, or infrastructure.\n\nFind and list every concrete instance (file_path:line_number when possible) of the following classes of leakage:\n\n1. **Author / personal identifying info** in source files (Python, shell, LaTeX, Markdown, JSON config), including:\n   - Personal names (\"Hung\", \"Henry\", \"Phan\", \"hungpq\", \"hpq2412\", any author name)\n   - Personal email addresses (gmail, outlook, etc.)\n   - Personal GitHub usernames or repo URLs\n   - Author affiliations (university name, lab name) — for example RMIT, the supervisor's name, team names\n\n2. **Institution / infrastructure identifiers** that would deanonymize:\n   - \"RMIT\", \"RACE\", \"race.rmit.edu.au\"\n   - AWS hostnames (`ec2-...amazonaws.com`)\n   - Internal IPs\n   - SSH key filenames (`hungphanphd.pem`)\n   - Internal URLs, Slack/Linear references\n\n3. **Credentials / secrets** even if benign-looking:\n   - API keys (OpenAI, Anthropic, HuggingFace, AWS, etc.)\n   - `.env` files with values\n   - Tokens in code\n   - Hardcoded passwords\n   - Any `.pem`, `.key`, `id_rsa` etc. checked into the repo\n\n4. **Hardcoded user paths** like `/home/<USER>/` or `/home/<USER>/` that scream a single author's machine. These don't strictly […]
 
 > TOOL
 
@@ -24,7 +24,7 @@ id: toolu_011Z82qifSvuSCjqoQHBvxt6
 {
   "description": "Audit code submission structure",
   "subagent_type": "general-purpose",
-  "prompt": "You are auditing a NeurIPS 2026 submission code repository at /Users/hungpq2412/neuralips26 for **submission readiness in terms of structure, reproducibility, and code hygiene**. The paper is the \"RR-MoA\" (Raw-Routed Mixture of Adapters) paper, complete and ready for submission. The deadline is May 4-6, 2026 (today is May 5).\n\nBackground context (from the project's CLAUDE.md):\n- Active library: `feasibility/`\n- Experiment runners: `scripts/` (Python files like `run_rr_moa.py`, `run_adamix.py`, etc., plus shell orchestrators `run_*_race.sh`)\n- Legacy code archive: `scripts/legacy/` and a few legacy modules in `feasibility/` (`evolution.py`, `code_evolution.py`, `modal_app.py`, `proxy_gp.py`, `scores.py`, `features.py`, `viz.py`, `statistics.py`)\n- Verification: `evidence_vm/verify.py` — should exit 0 with \"PASS: 107 numeric claims\"\n- Paper: `main.tex`\n- Vendored legacy: `template_code/`\n- Datasets: `data/`, results: `results/`, figures: `figures/`\n\nYour task: produce a structured readiness assessment covering the items below. Be specific with file paths and line numbers.\n\n## 1. Repository structure & cleanliness\n- List the top-level directory tree (one level deep, plus a second level for `feasibility/` and `scripts/`). Use `ls -la` and `tree -L 2 -I '.git|__pycache__|.venv|venv|node_modules|data|results'`.\n- Is there a `README.md` at repo root? Does it explain what the code does, dependencies, how to reproduce key results, and how to run `verify.py`? If absent or thin, […]
+  "prompt": "You are auditing a NeurIPS 2026 submission code repository at /home/<USER>/neuralips26 for **submission readiness in terms of structure, reproducibility, and code hygiene**. The paper is the \"RR-MoA\" (Raw-Routed Mixture of Adapters) paper, complete and ready for submission. The deadline is May 4-6, 2026 (today is May 5).\n\nBackground context (from the project's CLAUDE.md):\n- Active library: `feasibility/`\n- Experiment runners: `scripts/` (Python files like `run_rr_moa.py`, `run_adamix.py`, etc., plus shell orchestrators `run_*_race.sh`)\n- Legacy code archive: `scripts/legacy/` and a few legacy modules in `feasibility/` (`evolution.py`, `code_evolution.py`, `modal_app.py`, `proxy_gp.py`, `scores.py`, `features.py`, `viz.py`, `statistics.py`)\n- Verification: `evidence_vm/verify.py` — should exit 0 with \"PASS: 107 numeric claims\"\n- Paper: `main.tex`\n- Vendored legacy: `template_code/`\n- Datasets: `data/`, results: `results/`, figures: `figures/`\n\nYour task: produce a structured readiness assessment covering the items below. Be specific with file paths and line numbers.\n\n## 1. Repository structure & cleanliness\n- List the top-level directory tree (one level deep, plus a second level for `feasibility/` and `scripts/`). Use `ls -la` and `tree -L 2 -I '.git|__pycache__|.venv|venv|node_modules|data|results'`.\n- Is there a `README.md` at repo root? Does it explain what the code does, dependencies, how to reproduce key results, and how to run `verify.py`? If absent or thin, […]
 
 > TOOL
 
@@ -37,13 +37,13 @@ I have enough to produce the final report.
 
 ## CRITICAL
 
-- **CRITICAL — `/Users/hungpq2412/neuralips26/.env`** — Contains live API keys: `REDACTED...` (real OpenAI project key) and `GEMINI_API_KEY=AIzaSyCAep...` (real Google Gemini key). Although `.env` is `.gitignore`'d (line 6 of `.gitignore`) and is NOT git-tracked, these are live secrets sitting on disk. **Fix:** rotate both keys immediately at OpenAI/Google consoles, regardless of whether the repo gets uploaded.
+- **CRITICAL — `/home/<USER>/neuralips26/.env`** — Contains live API keys: `REDACTED...` (real OpenAI project key) and `GEMINI_API_KEY=AIzaSyCAep...` (real Google Gemini key). Although `.env` is `.gitignore`'d (line 6 of `.gitignore`) and is NOT git-tracked, these are live secrets sitting on disk. **Fix:** rotate both keys immediately at OpenAI/Google consoles, regardless of whether the repo gets uploaded.
 
-- **CRITICAL — `/Users/hungpq2412/neuralips26/hungphanphd.pem`** — A 3294-byte SSH private key in the repo root, filename embeds the author's personal identifier. Not git-tracked (covered by `*.pem` rule in `.gitignore`), but: (a) the filename itself deanonymizes if the directory is ever zipped, and (b) the key's existence on the same machine is a security risk. **Fix:** move out of the repo to `~/.ssh/` and rename; rotate the key on the server.
+- **CRITICAL — `/home/<USER>/neuralips26/hungphanphd.pem`** — A 3294-byte SSH private key in the repo root, filename embeds the author's personal identifier. Not git-tracked (covered by `*.pem` rule in `.gitignore`), but: (a) the filename itself deanonymizes if the directory is ever zipped, and (b) the key's existence on the same machine is a security risk. **Fix:** move out of the repo to `~/.ssh/` and rename; rotate the key on the server.
 
 ## HIGH
 
-- **HIGH — `scripts/race_quick_connect.sh:6-7`** — Tracked file containing `KEY="hungphanphd.pem"` and `HOST="ec2-user@ec2-13-238-161-176.ap-southeast-2.compute.amazonaws.com"`. This single file leaks the author's name (`hungphanphd`), the institution (RMIT RACE — see HIGH below), the AWS region (`ap-southeast-2` = Sydney, narrows institution geography), and a public IP. **Fix:** `git rm scripts/race_quick_connect.sh` and add to `.gitignore`.
+- **HIGH — `scripts/race_quick_connect.sh:6-7`** — Tracked file containing `KEY="hungphanphd.pem"` and `HOST="<REDACTED_EMAIL>"`. This single file leaks the author's name (`hungphanphd`), the institution (RMIT RACE — see HIGH below), the AWS region (`ap-southeast-2` = Sydney, narrows institution geography), and a public IP. **Fix:** `git rm scripts/race_quick_connect.sh` and add to `.gitignore`.
 
 - **HIGH — `scripts/race_whitelist_ip.sh:1-58`** — […]
 
@@ -58,7 +58,7 @@ All evidence in. Generating the report now.
 
 # RR-MoA Submission Readiness Audit
 
-Repository at `/Users/hungpq2412/neuralips26`, audit date 2026-05-05 (T-1).
+Repository at `/home/<USER>/neuralips26`, audit date 2026-05-05 (T-1).
 
 **Important context for the verdicts below:** `.gitignore` is unusually aggressive — `*.md`, `*.pdf`, `*.log`, `*.pem`, `.env`, `data/`, `results/`, `*.pptx`, `*.docx`, `*.html`, `slide_images/`, `experiments/finetune_training_data.json`, `experiments/sft_dataset.jsonl`, and `evidence_vm_private/` are all excluded. The on-disk working tree contains many scratch artifacts but **only 675 files are git-tracked**. I distinguish "in working tree" vs "tracked" throughout, since only the latter ships if the user pushes/zips from `git ls-files`.
 
@@ -126,7 +126,7 @@ tool_use Read
 id: toolu_01TNjHsxwckHnVoX9CEF7qPW
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 35,
   "limit": 25
 }
@@ -144,15 +144,15 @@ id: toolu_01TNjHsxwckHnVoX9CEF7qPW
 39	\author{
 40	  Anonymous Author 1 \\
 41	  Anonymous Institution\\
-42	  \texttt{author1@example.com}
+42	  \texttt{<REDACTED_EMAIL>}
 43	  \And
 44	  Anonymous Author 2 \\
 45	  Anonymous Institution\\
-46	  \texttt{author2@example.com}
+46	  \texttt{<REDACTED_EMAIL>}
 47	  \And
 48	  Anonymous Author 3 \\
 49	  Anonymous Institution\\
-50	  \texttt{author3@example.com}
+50	  \texttt{<REDACTED_EMAIL>}
 51	}
 52	
 53	\begin{document}
@@ -173,7 +173,7 @@ id: toolu_01TNjHsxwckHnVoX9CEF7qPW
 - **DELETE: `scripts/race_quick_connect.sh`, `scripts/race_whitelist_ip.sh`** (both tracked) — contain `hungphanphd.pem`, `ec2-13-238-161-176.ap-southeast-2.compute.amazonaws.com`, your IP, and "the professor must also whitelist…". This is a single grep from full deanonymization.
 - **RENAME: 58 tracked `*_race.sh` filenames** → `*_vm.sh`. "RACE" is the public name of RMIT's HPC service (`race.rmit.edu.au`); reviewers running `git ls-files | grep race` recover the institution instantly.
 - **SED comments**: ~25 tracked scripts contain "RACE VM", "RMIT", or "the professor" in comments/docstrings/echoes (e.g. `run_freeze_ablation.py:8`, `finetune_qwen.py:3`, `run_local_evolution.py:3`, `legacy/compare_results.py:102`, `run_strengthening_race.sh:7-8,122-144`). Bulk-replace to neutral language ("GPU VM", "remote GPU").
-- **FIX path**: `scripts/build_bib_verification.py:135` — `out = "/Users/hungpq2412/neuralips26/bib_verification.xlsx"` → relative path.
+- **FIX path**: `scripts/build_bib_verification.py:135` — `out = "/home/<USER>/neuralips26/bib_verification.xlsx"` → relative path.
 
 ### Workspace landmines — gitignored but on disk
 
@@ -196,7 +196,7 @@ tool_use Bash
 id: toolu_019fwRGEqVBQadjbABFrovn3
 ```json
 {
-  "command": "ls -la _quarantine 2>/dev/null ; echo \"---existing tracked race scripts---\" ; git ls-files | grep -E '^scripts/(race_quick_connect|race_whitelist_ip)\\.sh$' ; echo \"---tracked _race.sh count---\" ; git ls-files 'scripts/*_race.sh' | wc -l ; echo \"---grep RACE/RMIT/professor in tracked files---\" ; git ls-files | xargs grep -lE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/Users/hungpq2412|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | sort -u",
+  "command": "ls -la _quarantine 2>/dev/null ; echo \"---existing tracked race scripts---\" ; git ls-files | grep -E '^scripts/(race_quick_connect|race_whitelist_ip)\\.sh$' ; echo \"---tracked _race.sh count---\" ; git ls-files 'scripts/*_race.sh' | wc -l ; echo \"---grep RACE/RMIT/professor in tracked files---\" ; git ls-files | xargs grep -lE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/home/<USER>|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | sort -u",
   "description": "Inventory all tracked files containing identifying strings"
 }
 ```
@@ -351,7 +351,7 @@ id: toolu_01TUfev3sHoZZSmSNe9Qvpep
 ```json
 {
   "subject": "Fix hardcoded user path in build_bib_verification.py",
-  "description": "Change scripts/build_bib_verification.py:135 from '/Users/hungpq2412/neuralips26/bib_verification.xlsx' to relative path.",
+  "description": "Change scripts/build_bib_verification.py:135 from '/home/<USER>/neuralips26/bib_verification.xlsx' to relative path.",
   "activeForm": "Fixing hardcoded user path"
 }
 ```
@@ -469,7 +469,7 @@ tool_use Bash
 id: toolu_01Cx5kuzfWBzyJHiPkegFQtv
 ```json
 {
-  "command": "mkdir -p /Users/hungpq2412/neuralips26/_quarantine/working_tree /Users/hungpq2412/neuralips26/_quarantine/scripts && ls -la /Users/hungpq2412/neuralips26/_quarantine/",
+  "command": "mkdir -p /home/<USER>/neuralips26/_quarantine/working_tree /home/<USER>/neuralips26/_quarantine/scripts && ls -la /home/<USER>/neuralips26/_quarantine/",
   "description": "Create quarantine directory structure"
 }
 ```
@@ -1031,7 +1031,7 @@ tool_use Bash
 id: toolu_011WJArhbxCYpiGyHdahtLMH
 ```json
 {
-  "command": "git ls-files | xargs grep -lE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/Users/hungpq2412|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | sort -u",
+  "command": "git ls-files | xargs grep -lE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/home/<USER>|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | sort -u",
   "description": "List all tracked files containing identifying strings"
 }
 ```
@@ -1108,7 +1108,7 @@ id: toolu_01P32VjFZQZAwnS3doKgYa1m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_vm_experiments.sh",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_vm_experiments.sh",
   "old_string": "# Usage: bash scripts/run_race_experiments.sh",
   "new_string": "# Usage: bash scripts/run_vm_experiments.sh"
 }
@@ -1151,7 +1151,7 @@ tool_use Bash
 id: toolu_01To6Tra59oMiyMYimp4TpVw
 ```json
 {
-  "command": "for f in scripts/build_bib_verification.py scripts/finetune_qwen.py scripts/legacy/compare_results.py scripts/modal_benchmark_inference.py scripts/run_8plus_experiments.sh scripts/run_all_benchmarks.sh scripts/run_all_improvements.sh scripts/run_freeze_ablation.py scripts/run_local_evolution.py scripts/run_new_datasets_vm.sh scripts/run_overnight_batch.sh scripts/run_self_routed_vm.sh scripts/run_strong_ft_vm.sh scripts/run_tier1_vm.sh scripts/run_tier2_vm.sh scripts/run_tier3_vm.sh scripts/run_vision_moe_vm.sh scripts/run_vm_experiments.sh ; do\n  echo \"=== $f ===\"\n  grep -nE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/Users/hungpq2412|ec2-13-238-161-176|ap-southeast-2' \"$f\"\ndone",
+  "command": "for f in scripts/build_bib_verification.py scripts/finetune_qwen.py scripts/legacy/compare_results.py scripts/modal_benchmark_inference.py scripts/run_8plus_experiments.sh scripts/run_all_benchmarks.sh scripts/run_all_improvements.sh scripts/run_freeze_ablation.py scripts/run_local_evolution.py scripts/run_new_datasets_vm.sh scripts/run_overnight_batch.sh scripts/run_self_routed_vm.sh scripts/run_strong_ft_vm.sh scripts/run_tier1_vm.sh scripts/run_tier2_vm.sh scripts/run_tier3_vm.sh scripts/run_vision_moe_vm.sh scripts/run_vm_experiments.sh ; do\n  echo \"=== $f ===\"\n  grep -nE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/home/<USER>|ec2-13-238-161-176|ap-southeast-2' \"$f\"\ndone",
   "description": "Show exact identifying-string occurrences in each file"
 }
 ```
@@ -1162,7 +1162,7 @@ tool_result
 id: toolu_01To6Tra59oMiyMYimp4TpVw
 ```
 === scripts/build_bib_verification.py ===
-135:    out = "/Users/hungpq2412/neuralips26/bib_verification.xlsx"
+135:    out = "/home/<USER>/neuralips26/bib_verification.xlsx"
 === scripts/finetune_qwen.py ===
 3:Runs on RACE VM (A10G, 23GB VRAM). Uses 4-bit quantization + LoRA
 === scripts/legacy/compare_results.py ===
@@ -1290,7 +1290,7 @@ tool_use Read
 id: toolu_01CGyagHgakdwyCCmfoAHxm4
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/build_bib_verification.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/build_bib_verification.py",
   "offset": 128,
   "limit": 15
 }
@@ -1308,7 +1308,7 @@ id: toolu_01CGyagHgakdwyCCmfoAHxm4
 132	    ws2.column_dimensions["A"].width = 70
 133	    ws2.column_dimensions["B"].width = 20
 134	
-135	    out = "/Users/hungpq2412/neuralips26/bib_verification.xlsx"
+135	    out = "/home/<USER>/neuralips26/bib_verification.xlsx"
 136	    wb.save(out)
 137	    print(f"Wrote {out}")
 138	    print(f"Rows in xlsx: {len(ROWS)}; expected from grep: {EXPECTED_COUNT}; match: {len(ROWS) == EXPECTED_COUNT}")
@@ -1325,8 +1325,8 @@ id: toolu_01JuVAf66hYSn3iDKLcB2eKc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/build_bib_verification.py",
-  "old_string": "    out = \"/Users/hungpq2412/neuralips26/bib_verification.xlsx\"",
+  "file_path": "/home/<USER>/neuralips26/scripts/build_bib_verification.py",
+  "old_string": "    out = \"/home/<USER>/neuralips26/bib_verification.xlsx\"",
   "new_string": "    out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), \"bib_verification.xlsx\")"
 }
 ```
@@ -1336,7 +1336,7 @@ id: toolu_01JuVAf66hYSn3iDKLcB2eKc
 tool_result
 id: toolu_01JuVAf66hYSn3iDKLcB2eKc
 ```
-The file /Users/hungpq2412/neuralips26/scripts/build_bib_verification.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/build_bib_verification.py has been updated successfully.
 ```
 
 > TOOL
@@ -1365,7 +1365,7 @@ tool_use Read
 id: toolu_01NSbiZph4TDshBLJVhvn28b
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/build_bib_verification.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/build_bib_verification.py",
   "offset": 1,
   "limit": 10
 }
@@ -1395,7 +1395,7 @@ id: toolu_011zfN2kBouRDhTWQ2arTcsh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/build_bib_verification.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/build_bib_verification.py",
   "old_string": "from openpyxl import Workbook\nfrom openpyxl.styles import Font, PatternFill, Alignment",
   "new_string": "import os\n\nfrom openpyxl import Workbook\nfrom openpyxl.styles import Font, PatternFill, Alignment"
 }
@@ -1406,7 +1406,7 @@ id: toolu_011zfN2kBouRDhTWQ2arTcsh
 tool_result
 id: toolu_011zfN2kBouRDhTWQ2arTcsh
 ```
-The file /Users/hungpq2412/neuralips26/scripts/build_bib_verification.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/build_bib_verification.py has been updated successfully.
 ```
 
 > TOOL
@@ -1415,7 +1415,7 @@ tool_use Bash
 id: toolu_01DMPyZuw9XMXHWdFF9SkRGV
 ```json
 {
-  "command": "python3 -c \"import ast,sys; ast.parse(open('scripts/build_bib_verification.py').read()); print('OK')\"\necho \"---no more hungpq2412 in tracked---\"\ngit ls-files | xargs grep -lE 'hungpq2412|hungphanphd|/Users/hungpq2412|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | grep -v '^_quarantine/'",
+  "command": "python3 -c \"import ast,sys; ast.parse(open('scripts/build_bib_verification.py').read()); print('OK')\"\necho \"---no more hungpq2412 in tracked---\"\ngit ls-files | xargs grep -lE 'hungpq2412|hungphanphd|/home/<USER>|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | grep -v '^_quarantine/'",
   "description": "Syntax-check fixed file and verify no residue in tracked"
 }
 ```
@@ -1473,7 +1473,7 @@ tool_use Read
 id: toolu_01BNG9QGtUG2XjLz8AazDgt7
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/.gitignore"
+  "file_path": "/home/<USER>/neuralips26/.gitignore"
 }
 ```
 
@@ -1553,7 +1553,7 @@ tool_use Write
 id: toolu_017FcGfrjuiegUPt22H3REU9
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/README.md",
+  "file_path": "/home/<USER>/neuralips26/README.md",
   "content": "# RR-MoA: Raw-Routed Mixture of Adapters\n\nReference implementation for the NeurIPS 2026 submission *Raw-Routed Mixture of Adapters: A Causal Intervention for Routing Collapse in Time Series Foundation Models*.\n\nThe paper diagnoses **normalization-induced routing collapse** in MoE adapters on Time Series Foundation Models (TSFMs), formalises the failure with a mutual-information decomposition and a tractable signal-ratio predictor R(D), and proposes three architecturally distinct fixes that all route on the raw, pre-normalisation input: **RR-MoA** (external raw router), **SR-MoA** (per-expert sigmoid gates, no router), and **Residual-IA⁺** (expert-level dual stream).\n\n## Repository layout\n\n```\nfeasibility/        Library: backbone loaders, fine-tuning loops, dataset helpers\nscripts/            Per-experiment runners (Python) + orchestrators (shell)\nscripts/legacy/     Pre-RR-MoA scripts retained for reference; not part of reproduction\nevidence_vm/        Curated JSON evidence + verify.py (re-derives every numeric claim)\nfigures/            Tracked figure PDFs and inline TikZ source\ndata/               Dataset CSVs (gitignored; download instructions below)\nresults/            Per-run JSON outputs (gitignored)\nmain.tex            Paper source\n```\n\n## Installation\n\n```bash\npip install -r requirements.txt\n# For non-MOMENT backbones (Moirai / Moirai-MoE / Chronos):\npip install uni2ts chronos-forecasting\n```\n\nTested on Python 3.10–3.12, CUDA 12.4, single A10G GPU (23 GB VRAM).\n\n## Datasets\n\nSix LTSF benchmarks are used in the main paper; expected layout under `data/`:\n\n- `ETTh1.csv`, `ETTh2.csv`, `ETTm1.csv`, `ETTm2.csv` — auto-downloaded on first run from the public ETDataset GitHub release.\n- `weather.csv`, `electricity.csv` […]
 
 > TOOL
@@ -1561,7 +1561,7 @@ id: toolu_017FcGfrjuiegUPt22H3REU9
 tool_result
 id: toolu_017FcGfrjuiegUPt22H3REU9
 ```
-File created successfully at: /Users/hungpq2412/neuralips26/README.md
+File created successfully at: /home/<USER>/neuralips26/README.md
 ```
 
 > TOOL
@@ -1608,7 +1608,7 @@ tool_use Write
 id: toolu_01Y24kMvcfJRgDf6n9YDw3RG
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/LICENSE",
+  "file_path": "/home/<USER>/neuralips26/LICENSE",
   "content": "MIT License\n\nCopyright (c) 2026 Anonymous Authors (NeurIPS 2026 submission)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
 }
 ```
@@ -1618,7 +1618,7 @@ id: toolu_01Y24kMvcfJRgDf6n9YDw3RG
 tool_result
 id: toolu_01Y24kMvcfJRgDf6n9YDw3RG
 ```
-File created successfully at: /Users/hungpq2412/neuralips26/LICENSE
+File created successfully at: /home/<USER>/neuralips26/LICENSE
 ```
 
 > TOOL
@@ -1665,7 +1665,7 @@ tool_use Read
 id: toolu_01TDwM5P5weg8GHzaV6dq169
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/requirements.txt"
+  "file_path": "/home/<USER>/neuralips26/requirements.txt"
 }
 ```
 
@@ -1696,7 +1696,7 @@ tool_use Write
 id: toolu_01JzyCQuY7qMpQf3HJygo7Hm
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/requirements.txt",
+  "file_path": "/home/<USER>/neuralips26/requirements.txt",
   "content": "# Core dependencies for RR-MoA reproduction\ntorch>=2.1.0\nmomentfm>=0.1.4\npeft>=0.7.0\nnumpy>=1.24,<2.0\nscipy>=1.10\nscikit-learn>=1.3\npandas>=2.0\nmatplotlib>=3.7\nseaborn>=0.12\n\n# UEA classification (B7 reviewer-response sweep)\naeon>=0.7\n\n# Verification\nopenpyxl>=3.1\n\n# --- Optional: install separately if you need non-MOMENT backbones ---\n#   pip install uni2ts                # Moirai / Moirai-MoE\n#   pip install chronos-forecasting   # Chronos\n\n# --- Optional / legacy: only used by scripts under scripts/legacy/ and feasibility/legacy modules ---\n#   modal       # Modal-era cloud orchestration (legacy; not required for reproduction)\n#   openai      # AAS appendix path (legacy)\n#   anthropic   # Earlier code-evolution experiments (legacy)\n"
 }
 ```
@@ -1706,7 +1706,7 @@ id: toolu_01JzyCQuY7qMpQf3HJygo7Hm
 tool_result
 id: toolu_01JzyCQuY7qMpQf3HJygo7Hm
 ```
-The file /Users/hungpq2412/neuralips26/requirements.txt has been updated successfully.
+The file /home/<USER>/neuralips26/requirements.txt has been updated successfully.
 ```
 
 > AGENT
@@ -1720,7 +1720,7 @@ id: toolu_01AqjFsov8Cvo5kgKuusz1uv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/.gitignore",
+  "file_path": "/home/<USER>/neuralips26/.gitignore",
   "old_string": "# --- Markdown is local-only by policy (no docs in remote repo) ---\n*.md",
   "new_string": "# --- Markdown is local-only by policy (no docs in remote repo) ---\n*.md\n!README.md"
 }
@@ -1731,7 +1731,7 @@ id: toolu_01AqjFsov8Cvo5kgKuusz1uv
 tool_result
 id: toolu_01AqjFsov8Cvo5kgKuusz1uv
 ```
-The file /Users/hungpq2412/neuralips26/.gitignore has been updated successfully.
+The file /home/<USER>/neuralips26/.gitignore has been updated successfully.
 ```
 
 > TOOL
@@ -1852,7 +1852,7 @@ tool_use Bash
 id: toolu_014AMVEnRfBkYMJ3JBHGnLnt
 ```json
 {
-  "command": "python3 -c \"import feasibility.model; import feasibility.finetune; import feasibility.data; import feasibility.config; import feasibility.rrmoa_macro_experts; print('all active modules import OK')\"\necho \"---final residue check across tracked files---\"\ngit ls-files | xargs grep -lE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/Users/hungpq2412|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | grep -v '^_quarantine/'",
+  "command": "python3 -c \"import feasibility.model; import feasibility.finetune; import feasibility.data; import feasibility.config; import feasibility.rrmoa_macro_experts; print('all active modules import OK')\"\necho \"---final residue check across tracked files---\"\ngit ls-files | xargs grep -lE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/home/<USER>|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | grep -v '^_quarantine/'",
   "description": "Smoke-import active modules and final tracked-files leak check"
 }
 ```
@@ -1943,12 +1943,12 @@ All 9 tasks complete. Summary of changes:
 
 **Sed'd in tracked tree** (~17 files): `RACE VM` → `GPU VM` in comments/docstrings/echoes.
 
-**Fixed**: hardcoded `/Users/hungpq2412/...` in `scripts/build_bib_verification.py:135` → portable path via `os.path.dirname(__file__)`.
+**Fixed**: hardcoded `/home/<USER>/...` in `scripts/build_bib_verification.py:135` → portable path via `os.path.dirname(__file__)`.
 
 **Added** at root: `README.md` (anonymous, with install + reproduction recipe + `verify.py` pointer), `LICENSE` (MIT, anonymous copyright), expanded `requirements.txt` (pinned momentfm/aeon, openpyxl added, uni2ts/chronos/modal/openai/anthropic noted as optional). `.gitignore` updated to allow `README.md` despite `*.md` rule, and to ignore `_quarantine/`.
 
 **Verified clean**:
-- `git ls-files | xargs grep -lE 'RACE VM|RMIT|race.rmit|the professor|hungphanphd|hungpq2412|/Users/hungpq2412|ec2-13-238-161-176|ap-southeast-2'` returns **zero** tracked files.
+- `git ls-files | xargs grep -lE 'RACE VM|RMIT|race.rmit|the professor|hungphanphd|hungpq2412|/home/<USER>|ec2-13-238-161-176|ap-southeast-2'` returns **zero** tracked files.
 - `evidence_vm/verify.py` → 107/107 PASS, exit 0.
 - `pdflatex main.tex` → 52 pages, exit 0.
 - Active modules (`feasibility.{model,finetune,data,config,rrmoa_macro_experts}`) import cleanly.
@@ -2108,7 +2108,7 @@ tool_use Read
 id: toolu_019eXbTsQAswWvvZ671LQEgZ
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/feasibility/code_evolution.py",
+  "file_path": "/home/<USER>/neuralips26/feasibility/code_evolution.py",
   "offset": 1,
   "limit": 200
 }
@@ -2440,7 +2440,7 @@ tool_use Write
 id: toolu_01CSAdjX7ZPxZ9vmrKX65EJh
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/feasibility/adapter_seeds.py",
+  "file_path": "/home/<USER>/neuralips26/feasibility/adapter_seeds.py",
   "content": "\"\"\"Canonical adapter pool and code-string validator.\n\nProvides the five hand-coded adapter architectures used as fixed baselines\nacross the experiment runners (linear / mlp2 / last-token-mlp / attention-pool\n/ conv1d), plus a small validator that exec's an adapter code string and\nchecks shape, parameter count, and that it subclasses ``nn.Module``.\n\nThe runners pass these adapter code strings to ``train_adapter_from_code``\ninside each script's training loop; the strings are exec'd into a sandboxed\nnamespace at call time so the same adapter pool can be shared without\nduplicating ``nn.Module`` class definitions across runners.\n\"\"\"\n\nimport torch\nimport torch.nn as nn\n\n\n# --- Seed adapters (5 hand-coded baseline architectures) ---\n\nSEED_ADAPTERS = [\n    # 1. MeanPool + Linear (simplest baseline)\n    \"\"\"class Adapter(nn.Module):\n    def __init__(self, d_model: int, output_dim: int):\n        super().__init__()\n        self.linear = nn.Linear(d_model, output_dim)\n\n    def forward(self, hidden_states: torch.Tensor) -> torch.Tensor:\n        pooled = hidden_states.mean(dim=1)\n        return self.linear(pooled)\"\"\",\n\n    # 2. MeanPool + MLP2\n    \"\"\"class Adapter(nn.Module):\n    def __init__(self, d_model: int, output_dim: int):\n        super().__init__()\n        mid = d_model // 2\n        self.net = nn.Sequential(\n            nn.Linear(d_model, mid),\n            nn.GELU(),\n            nn.Dropout(0.1),\n            nn.Linear(mid, mid // 2),\n            nn.GELU(),\n            nn.Dropout(0.1),\n            nn.Linear(mid // 2, output_dim),\n        )\n\n    def forward(self, hidden_states: torch.Tensor) -> torch.Tensor:\n        pooled = hidden_states.mean(dim=1)\n        return self.net(pooled)\"\"\",\n\n    # 3. LastToken + MLP\n    \"\"\"class Adapter(nn.Module):\n    def __init__(self, d_model: int, output_dim: int):\n        super().__init__()\n        mid = d_model […]
 
 > TOOL
@@ -2448,7 +2448,7 @@ id: toolu_01CSAdjX7ZPxZ9vmrKX65EJh
 tool_result
 id: toolu_01CSAdjX7ZPxZ9vmrKX65EJh
 ```
-File created successfully at: /Users/hungpq2412/neuralips26/feasibility/adapter_seeds.py
+File created successfully at: /home/<USER>/neuralips26/feasibility/adapter_seeds.py
 ```
 
 > TOOL
@@ -2562,7 +2562,7 @@ tool_use Read
 id: toolu_014sjfgQaNuRdD14kJhdpzrJ
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_standard_evolution.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_standard_evolution.py",
   "offset": 1,
   "limit": 170
 }
@@ -2629,7 +2629,7 @@ tool_use Write
 id: toolu_014LajELBjnHzSociRva1X32
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/feasibility/standard_data.py",
+  "file_path": "/home/<USER>/neuralips26/feasibility/standard_data.py",
   "content": "\"\"\"LTSF dataset loader and denormalization helpers (channel-wise StandardScaler).\n\nThis module is the single shared data-loading entry point used by every\nexperiment runner. It builds chronologically-split sliding windows of length\n``INPUT_LEN`` over six LTSF benchmarks (ETTh1/2, ETTm1/2, Weather,\nElectricity, plus optional Traffic / Exchange / Solar), fits a\n``StandardScaler`` on the train segment, and returns per-channel-indexed\nwindows so that downstream code can convert MSE back to the original unit\nspace via :func:`compute_denorm_mse`.\n\nSplits follow the standard LTSF convention used in Informer / PatchTST /\nDLinear (Zeng et al. 2023): ``8640/2880/2880`` for ETTh*, ``34560/11520/11520``\nfor ETTm*, and a 60/20/20 fallback for Weather / Electricity / Traffic /\nExchange / Solar.\n\"\"\"\n\nimport io\nimport os\nfrom urllib.request import urlopen\n\nimport numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\n\n\nETT_BASE = \"https://raw.githubusercontent.com/zhouhaoyi/ETDataset/main/ETT-small\"\nINPUT_LEN = 512\nSPLITS = {\n    \"ETTh1\": (8640, 2880, 2880),\n    \"ETTh2\": (8640, 2880, 2880),\n    \"ETTm1\": (34560, 11520, 11520),\n    \"ETTm2\": (34560, 11520, 11520),\n}\n\n\ndef load_standard_data(dataset_name, forecast_horizon=96, max_samples=5000):\n    \"\"\"Load with standard chronological splits.\n\n    Returns ``(splits, n_ch)`` where ``splits`` is a dict keyed by ``\"train\"``,\n    ``\"val\"``, ``\"test\"`` whose values are ``(X, Y)`` numpy arrays. The dict\n    also carries metadata used by denormalized-MSE reporting:\n\n    - ``splits[\"_scaler\"]`` : the fitted sklearn ``StandardScaler``\n    - ``splits[\"<name>_ch\"]`` : per-sample channel index array aligned with\n      ``splits[\"<name>\"]``. Since DataLoader iterates the […]
 
 > TOOL
@@ -2637,7 +2637,7 @@ id: toolu_014LajELBjnHzSociRva1X32
 tool_result
 id: toolu_014LajELBjnHzSociRva1X32
 ```
-File created successfully at: /Users/hungpq2412/neuralips26/feasibility/standard_data.py
+File created successfully at: /home/<USER>/neuralips26/feasibility/standard_data.py
 ```
 
 > TOOL
@@ -2874,7 +2874,7 @@ tool_use Read
 id: toolu_01EPTvX83ZdfuTiWGPyZ4z7V
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_standard_evolution.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_standard_evolution.py",
   "offset": 170,
   "limit": 70
 }
@@ -2936,7 +2936,7 @@ id: toolu_01H3ETQ4HwkquXNxyAe5HHpG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/feasibility/standard_data.py",
+  "file_path": "/home/<USER>/neuralips26/feasibility/standard_data.py",
   "old_string": "import io\nimport os\nfrom urllib.request import urlopen\n\nimport numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler",
   "new_string": "import io\nimport os\nfrom urllib.request import urlopen\n\nimport numpy as np\nimport pandas as pd\nimport torch\nimport torch.nn as nn\nfrom torch.utils.data import DataLoader, TensorDataset\nfrom sklearn.preprocessing import StandardScaler\n\nfrom feasibility.model import _get_hidden_dim\nfrom feasibility.finetune import _extract_features_batch"
 }
@@ -2947,7 +2947,7 @@ id: toolu_01H3ETQ4HwkquXNxyAe5HHpG
 tool_result
 id: toolu_01H3ETQ4HwkquXNxyAe5HHpG
 ```
-The file /Users/hungpq2412/neuralips26/feasibility/standard_data.py has been updated successfully.
+The file /home/<USER>/neuralips26/feasibility/standard_data.py has been updated successfully.
 ```
 
 > TOOL
@@ -2957,7 +2957,7 @@ id: toolu_014ANMw4yVCgjtv2R3SXX23J
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/feasibility/standard_data.py",
+  "file_path": "/home/<USER>/neuralips26/feasibility/standard_data.py",
   "old_string": "def _detect_backbone_type(backbone_name):\n    \"\"\"Detect backbone type from name string.\"\"\"\n    name = backbone_name.lower()\n    if \"chronos\" in name:\n        return \"chronos\"\n    if \"timer\" in name:\n        return \"timer\"\n    if \"moirai\" in name:\n        return \"moirai\"\n    return \"moment\"",
   "new_string": "def _detect_backbone_type(backbone_name):\n    \"\"\"Detect backbone type from name string.\"\"\"\n    name = backbone_name.lower()\n    if \"chronos\" in name:\n        return \"chronos\"\n    if \"timer\" in name:\n        return \"timer\"\n    if \"moirai\" in name:\n        return \"moirai\"\n    return \"moment\"\n\n\ndef train_adapter(code, model, blocks, X_train, Y_train, X_eval, Y_eval,\n                  device=\"cuda\", n_epochs=3, forecast_horizon=96, batch_size=128,\n                  backbone_type=\"moment\", eval_ch=None, scaler=None):\n    \"\"\"Train an adapter (defined as a code string) on the train set; evaluate on the eval set.\n\n    Uses bf16 mixed precision and a larger batch size for throughput on\n    modern GPUs. The ``code`` string must define a class named ``Adapter``\n    that subclasses ``nn.Module`` and takes ``(d_model, output_dim)`` in its\n    constructor (see :data:`feasibility.adapter_seeds.SEED_ADAPTERS`).\n    \"\"\"\n    hdim = _get_hidden_dim(model)\n    namespace = {\"torch\": torch, \"nn\": nn, \"F\": torch.nn.functional, \"math\": __import__(\"math\")}\n    exec(code, namespace)\n    adapter = namespace[\"Adapter\"](hdim, forecast_horizon).to(device)\n    param_count = sum(p.numel() for p in adapter.parameters())\n\n    trainable = list(adapter.parameters())\n    pids = {id(p) for p in trainable}\n    for p in model.parameters():\n        if p.requires_grad and id(p) not in pids:\n            trainable.append(p)\n            pids.add(id(p))\n\n    optimizer = torch.optim.Adam(trainable, lr=1e-3)\n    mse_fn = nn.MSELoss()\n    use_amp = device […]
 
@@ -2966,7 +2966,7 @@ id: toolu_014ANMw4yVCgjtv2R3SXX23J
 tool_result
 id: toolu_014ANMw4yVCgjtv2R3SXX23J
 ```
-The file /Users/hungpq2412/neuralips26/feasibility/standard_data.py has been updated successfully.
+The file /home/<USER>/neuralips26/feasibility/standard_data.py has been updated successfully.
 ```
 
 > TOOL
@@ -3409,7 +3409,7 @@ tool_use Read
 id: toolu_0126BXt1ffrioCrKx8BVKSBL
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/feasibility/rrmoa_macro_experts.py",
+  "file_path": "/home/<USER>/neuralips26/feasibility/rrmoa_macro_experts.py",
   "offset": 1,
   "limit": 50
 }
@@ -3452,7 +3452,7 @@ id: toolu_01XynLvYvueeRZenPDqtvtnm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/feasibility/rrmoa_macro_experts.py",
+  "file_path": "/home/<USER>/neuralips26/feasibility/rrmoa_macro_experts.py",
   "old_string": "\"\"\"T3.A — AAS macro-expert pool for RR-MoA.\n\nThe canonical RR-MoA experts (mean, last, max, attn, conv1d in\n``scripts/run_rr_moa.py``) are textbook pooling heads; they do not exercise\nany cross-domain motif that AAS discovered in Section 3. The reviewer flagged\nthis as a contribution-integration gap (W1): the paper claims AAS populates\nthe RR-MoA expert pool, but the pool actually used throughout Tables 3--7 is\nnot populated from AAS.\n\nThis module closes that gap by exposing the top-5 distinct macro\narchitectures discovered by AAS on ETTh1 seed 42 (gpt-4o model,\n``results/code_evolution/validated_ETTh1_42_gpt-4o.json``) as ``nn.Module``\nexpert classes that conform to RR-MoA's expert contract\n``__init__(d_model, output_dim, hidden=None) -> forward(hidden_states)``.\n\nThe code topology of each class is a faithful transcription of the\ncorresponding AAS-evolved adapter; the only differences are cosmetic: a\nshared two-arg constructor signature so that the RR-MoA factory can\ninstantiate them uniformly, and a ``hidden`` kwarg accepted (but ignored)\nso that substitution with canonical heads is signature-compatible.\n\nSource file: ``results/code_evolution/validated_ETTh1_42_gpt-4o.json``\nOriginal reasoning strings are preserved in module docstrings so that the\nprovenance is unambiguous to a reviewer.\n\"\"\"",
   "new_string": "\"\"\"Macro-expert pool for RR-MoA (auxiliary expert pool used by the macro-pool ablation).\n\nThe canonical RR-MoA experts (mean, last, max, attn, conv1d in\n``scripts/run_rr_moa.py``) are textbook pooling heads. This module exposes\nfive additional macro architectures used as the alternative […]
 
@@ -3461,7 +3461,7 @@ id: toolu_01XynLvYvueeRZenPDqtvtnm
 tool_result
 id: toolu_01XynLvYvueeRZenPDqtvtnm
 ```
-The file /Users/hungpq2412/neuralips26/feasibility/rrmoa_macro_experts.py has been updated successfully.
+The file /home/<USER>/neuralips26/feasibility/rrmoa_macro_experts.py has been updated successfully.
 ```
 
 > TOOL
@@ -3500,7 +3500,7 @@ id: toolu_01UkdLPC8SqrXeL4rnBjTuoC
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/hungpq2412/neuralips26/feasibility/rrmoa_macro_experts.py",
+  "file_path": "/home/<USER>/neuralips26/feasibility/rrmoa_macro_experts.py",
   "old_string": "    Reasoning (LLM): '",
   "new_string": "    Design rationale: '"
 }
@@ -3511,7 +3511,7 @@ id: toolu_01UkdLPC8SqrXeL4rnBjTuoC
 tool_result
 id: toolu_01UkdLPC8SqrXeL4rnBjTuoC
 ```
-The file /Users/hungpq2412/neuralips26/feasibility/rrmoa_macro_experts.py has been updated. All occurrences were successfully replaced.
+The file /home/<USER>/neuralips26/feasibility/rrmoa_macro_experts.py has been updated. All occurrences were successfully replaced.
 ```
 
 > TOOL
@@ -3616,7 +3616,7 @@ tool_use Read
 id: toolu_014hkZnky5QZJqaJmrQmAnoc
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_rr_moa.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_rr_moa.py",
   "offset": 85,
   "limit": 10
 }
@@ -3646,7 +3646,7 @@ id: toolu_01BUypp7G1ii2J4jPFJapmMn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_rr_moa.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_rr_moa.py",
   "old_string": "# T3.A: selectable expert pool. ``canonical`` = 5 simple pooling heads\n# (current RR-MoA default); ``macro`` = 5 AAS-discovered cross-domain\n# motifs from feasibility/rrmoa_macro_experts.py that unify the AAS and\n# RR-MoA contributions (W1).",
   "new_string": "# Selectable expert pool. ``canonical`` = 5 simple pooling heads (default);\n# ``macro`` = 5 cross-domain motifs from feasibility/rrmoa_macro_experts.py\n# (alternative pool used by the macro-pool ablation)."
 }
@@ -3657,7 +3657,7 @@ id: toolu_01BUypp7G1ii2J4jPFJapmMn
 tool_result
 id: toolu_01BUypp7G1ii2J4jPFJapmMn
 ```
-The file /Users/hungpq2412/neuralips26/scripts/run_rr_moa.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/run_rr_moa.py has been updated successfully.
 ```
 
 > TOOL
@@ -3666,7 +3666,7 @@ tool_use Read
 id: toolu_01QM9SFQSkWPL13cM8BYb5Ji
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_rr_moa.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_rr_moa.py",
   "offset": 528,
   "limit": 15
 }
@@ -3701,7 +3701,7 @@ id: toolu_017Q3KoVTZkem2sdHJrQxfsB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_rr_moa.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_rr_moa.py",
   "old_string": "                        help=\"Which expert pool to populate RR-MoA with. \"\n                             \"'canonical' = 5 simple pooling heads (mean/last/max/attn/conv1d, \"\n                             \"current default). 'macro' = 5 AAS-distilled cross-domain motifs \"\n                             \"from feasibility/rrmoa_macro_experts.py (BN+mean, multi-scale \"\n                             \"conv, Conv1d+BN+residual, depthwise separable, gated conv). \"\n                             \"The 'macro' option is the T3.A integration experiment that \"\n                             \"unifies the AAS and RR-MoA contributions (reviewer W1).\")",
   "new_string": "                        help=\"Which expert pool to populate RR-MoA with. \"\n                             \"'canonical' = 5 simple pooling heads (mean/last/max/attn/conv1d, \"\n                             \"default). 'macro' = 5 cross-domain motifs from \"\n                             \"feasibility/rrmoa_macro_experts.py (BN+mean, multi-scale conv, \"\n                             \"Conv1d+BN+residual, depthwise separable, gated conv).\")"
 }
@@ -3712,7 +3712,7 @@ id: toolu_017Q3KoVTZkem2sdHJrQxfsB
 tool_result
 id: toolu_017Q3KoVTZkem2sdHJrQxfsB
 ```
-The file /Users/hungpq2412/neuralips26/scripts/run_rr_moa.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/run_rr_moa.py has been updated successfully.
 ```
 
 > TOOL
@@ -3721,7 +3721,7 @@ tool_use Read
 id: toolu_015NK7uWpZPZ1r9tm8qBnX7T
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_freeze_ablation.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_freeze_ablation.py",
   "offset": 135,
   "limit": 15
 }
@@ -3756,7 +3756,7 @@ id: toolu_01DwGujgTFjrZ5yB55AHSmB2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_freeze_ablation.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_freeze_ablation.py",
   "old_string": "def run_macro_pool(device=\"cuda\", seed=DEFAULT_SEED, epochs=15, datasets=None):\n    \"\"\"T3.A: RR-MoA with the AAS-distilled macro expert pool, strictly\n    frozen backbone, Top-2 sparse. Deliverable is a head-to-head row against\n    the canonical-pool RR-MoA on the same 3 main datasets + extended set,\n    demonstrating that the AAS discoveries actually feed into the RR-MoA\n    experiments (closing reviewer W1).\n    \"\"\"",
   "new_string": "def run_macro_pool(device=\"cuda\", seed=DEFAULT_SEED, epochs=15, datasets=None):\n    \"\"\"RR-MoA with the macro expert pool, strictly frozen backbone, Top-2\n    sparse. Produces a head-to-head row against the canonical-pool RR-MoA on\n    the same datasets, showing that the alternative pool integrates into the\n    RR-MoA framework without changing the headline behaviour.\n    \"\"\""
 }
@@ -3767,7 +3767,7 @@ id: toolu_01DwGujgTFjrZ5yB55AHSmB2
 tool_result
 id: toolu_01DwGujgTFjrZ5yB55AHSmB2
 ```
-The file /Users/hungpq2412/neuralips26/scripts/run_freeze_ablation.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/run_freeze_ablation.py has been updated successfully.
 ```
 
 > TOOL
@@ -3796,7 +3796,7 @@ id: toolu_01UwE3357MfHVPzhn2wcZFSq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_freeze_ablation.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_freeze_ablation.py",
   "old_string": "        print(\"\\n### T3.A AAS MACRO-EXPERT POOL ###\")",
   "new_string": "        print(\"\\n### MACRO-EXPERT POOL ###\")"
 }
@@ -3807,7 +3807,7 @@ id: toolu_01UwE3357MfHVPzhn2wcZFSq
 tool_result
 id: toolu_01UwE3357MfHVPzhn2wcZFSq
 ```
-The file /Users/hungpq2412/neuralips26/scripts/run_freeze_ablation.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/run_freeze_ablation.py has been updated successfully.
 ```
 
 > TOOL
@@ -3816,7 +3816,7 @@ tool_use Read
 id: toolu_01DRgwRVnE5VocVAKQ2e7yXt
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_imputation.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_imputation.py",
   "offset": 1,
   "limit": 12
 }
@@ -3848,7 +3848,7 @@ id: toolu_01N3A1ywFKCM2rk9vwJPjX85
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_imputation.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_imputation.py",
   "old_string": "\"\"\"Imputation task: prove adapter architecture is task-dependent.\n\nMasks 20% of input timesteps, trains adapter to reconstruct them.\nIf AAS discovers a DIFFERENT architecture for imputation vs forecasting,\nthis proves adapters must be task-specific across the FM ecosystem.\n\nUsage:\n    python scripts/run_imputation.py --dataset ETTh1\n\"\"\"",
   "new_string": "\"\"\"Imputation task: 20% masked-timestep reconstruction with the same RR-MoA recipe.\n\nMasks 20% of input timesteps and trains the adapter to reconstruct them.\nUsed to test whether the routing-collapse diagnosis and RR-MoA fix transfer\nto a second task family (imputation) on the same backbones.\n\nUsage:\n    python scripts/run_imputation.py --dataset ETTh1\n\"\"\""
 }
@@ -3859,7 +3859,7 @@ id: toolu_01N3A1ywFKCM2rk9vwJPjX85
 tool_result
 id: toolu_01N3A1ywFKCM2rk9vwJPjX85
 ```
-The file /Users/hungpq2412/neuralips26/scripts/run_imputation.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/run_imputation.py has been updated successfully.
 ```
 
 > TOOL
@@ -3868,7 +3868,7 @@ tool_use Read
 id: toolu_01L6kfK5t92UcXhpRENpfsb3
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_trace_baseline.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_trace_baseline.py",
   "offset": 1,
   "limit": 10
 }
@@ -3898,7 +3898,7 @@ id: toolu_01DSKG8EmP2SFoKvo1tyUqJ3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_trace_baseline.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_trace_baseline.py",
   "old_string": "\"\"\"TRACE-style baseline for AAS comparison.\n\nImplements the two key ideas from TRACE (Li & Zhu, 2025):",
   "new_string": "\"\"\"TRACE-style baseline.\n\nImplements the two key ideas from TRACE (Li & Zhu, 2025):"
 }
@@ -3909,7 +3909,7 @@ id: toolu_01DSKG8EmP2SFoKvo1tyUqJ3
 tool_result
 id: toolu_01DSKG8EmP2SFoKvo1tyUqJ3
 ```
-The file /Users/hungpq2412/neuralips26/scripts/run_trace_baseline.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/run_trace_baseline.py has been updated successfully.
 ```
 
 > AGENT
@@ -3922,7 +3922,7 @@ tool_use Read
 id: toolu_01VgKVbb9JaQSx7ChpyMsMK1
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/denormalize_existing_results.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/denormalize_existing_results.py",
   "offset": 25,
   "limit": 10
 }
@@ -3952,7 +3952,7 @@ id: toolu_01XTNMQjHD8HMgYzmhSxWUk5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/denormalize_existing_results.py",
+  "file_path": "/home/<USER>/neuralips26/scripts/denormalize_existing_results.py",
   "old_string": "The approximation is an unbiased estimator of the true original-scale MSE\nunder the assumption that per-channel squared-errors are equal in normalized\nspace, which is approximately true because the model is trained to minimize\nnormalized MSE uniformly across samples. See T1.A in\n.claude/plans/cozy-puzzling-lampson.md for rationale.",
   "new_string": "The approximation is an unbiased estimator of the true original-scale MSE\nunder the assumption that per-channel squared-errors are equal in normalized\nspace, which is approximately true because the model is trained to minimize\nnormalized MSE uniformly across samples."
 }
@@ -3963,7 +3963,7 @@ id: toolu_01XTNMQjHD8HMgYzmhSxWUk5
 tool_result
 id: toolu_01XTNMQjHD8HMgYzmhSxWUk5
 ```
-The file /Users/hungpq2412/neuralips26/scripts/denormalize_existing_results.py has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/denormalize_existing_results.py has been updated successfully.
 ```
 
 > TOOL
@@ -3972,7 +3972,7 @@ tool_use Read
 id: toolu_01X9TqWPegBt9emvDHjyDz36
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_tier1_vm.sh",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_tier1_vm.sh",
   "offset": 1,
   "limit": 10
 }
@@ -4002,7 +4002,7 @@ id: toolu_0159gZynW4hQzANKCuooq6VT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_tier1_vm.sh",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_tier1_vm.sh",
   "old_string": "#!/usr/bin/env bash\n# Tier-1 + T2.A experiment batch for the GPU VM (A10G).\n#\n# Corresponds to the plan at .claude/plans/cozy-puzzling-lampson.md\n#\n#   T1.A : already complete offline via denormalize_existing_results.py;",
   "new_string": "#!/usr/bin/env bash\n# Tier-1 + T2.A experiment batch for the GPU VM (A10G).\n#\n#   T1.A : already complete offline via denormalize_existing_results.py;"
 }
@@ -4013,7 +4013,7 @@ id: toolu_0159gZynW4hQzANKCuooq6VT
 tool_result
 id: toolu_0159gZynW4hQzANKCuooq6VT
 ```
-The file /Users/hungpq2412/neuralips26/scripts/run_tier1_vm.sh has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/run_tier1_vm.sh has been updated successfully.
 ```
 
 > AGENT
@@ -4026,7 +4026,7 @@ tool_use Read
 id: toolu_01X73Gh6Cv6w9gi94X7YVNtR
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/requirements.txt"
+  "file_path": "/home/<USER>/neuralips26/requirements.txt"
 }
 ```
 
@@ -4069,7 +4069,7 @@ tool_use Write
 id: toolu_01SaJk92Zf9XRGs5JCevFh6X
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/requirements.txt",
+  "file_path": "/home/<USER>/neuralips26/requirements.txt",
   "content": "# Core dependencies for RR-MoA reproduction\ntorch>=2.1.0\nmomentfm>=0.1.4\npeft>=0.7.0\nnumpy>=1.24,<2.0\nscipy>=1.10\nscikit-learn>=1.3\npandas>=2.0\nmatplotlib>=3.7\nseaborn>=0.12\n\n# UEA classification (B7 reviewer-response sweep)\naeon>=0.7\n\n# Verification (xlsx output for bib_verification)\nopenpyxl>=3.1\n\n# --- Optional: install separately if you need non-MOMENT backbones ---\n#   pip install uni2ts                # Moirai / Moirai-MoE\n#   pip install chronos-forecasting   # Chronos\n"
 }
 ```
@@ -4079,7 +4079,7 @@ id: toolu_01SaJk92Zf9XRGs5JCevFh6X
 tool_result
 id: toolu_01SaJk92Zf9XRGs5JCevFh6X
 ```
-The file /Users/hungpq2412/neuralips26/requirements.txt has been updated successfully.
+The file /home/<USER>/neuralips26/requirements.txt has been updated successfully.
 ```
 
 > AGENT
@@ -4113,7 +4113,7 @@ id: toolu_016hUA2R8FJHgZ3e2KY53WhW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/scripts/run_tier1_vm.sh",
+  "file_path": "/home/<USER>/neuralips26/scripts/run_tier1_vm.sh",
   "old_string": "echo \"TIER 3.A: AAS macro-expert pool\"",
   "new_string": "echo \"TIER 3.A: macro-expert pool\""
 }
@@ -4124,7 +4124,7 @@ id: toolu_016hUA2R8FJHgZ3e2KY53WhW
 tool_result
 id: toolu_016hUA2R8FJHgZ3e2KY53WhW
 ```
-The file /Users/hungpq2412/neuralips26/scripts/run_tier1_vm.sh has been updated successfully.
+The file /home/<USER>/neuralips26/scripts/run_tier1_vm.sh has been updated successfully.
 ```
 
 > AGENT
@@ -4460,7 +4460,7 @@ id: toolu_01QejXJEY83Ejt5EPdMMbx5b
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/.gitignore",
+  "file_path": "/home/<USER>/neuralips26/.gitignore",
   "old_string": "# --- macOS / editor / tool junk ---\n.DS_Store\n~$*\n.claude/\n.firecrawl/",
   "new_string": "# --- macOS / editor / tool junk ---\n.DS_Store\n~$*"
 }
@@ -4471,7 +4471,7 @@ id: toolu_01QejXJEY83Ejt5EPdMMbx5b
 tool_result
 id: toolu_01QejXJEY83Ejt5EPdMMbx5b
 ```
-The file /Users/hungpq2412/neuralips26/.gitignore has been updated successfully.
+The file /home/<USER>/neuralips26/.gitignore has been updated successfully.
 ```
 
 > TOOL
@@ -4623,7 +4623,7 @@ tool_use Bash
 id: toolu_016vXh3rcDdykucZofhLcm7P
 ```json
 {
-  "command": "echo \"=== full final residue grep across all tracked files ===\"\ngit ls-files | xargs grep -nE '\\b(openai|anthropic|chatgpt|gpt-?4|gpt-?3|gpt-3\\.5|claude-[0-9]|claude opus|claude sonnet|gemini-[0-9]|gemini pro|gemini flash|nano[ -]?banana|cohere|mistralai|tiktoken|google\\.generativeai|google\\.genai|huggingface_hub|prompt[ -]?engineer|code[ -]?evolution)\\b' 2>/dev/null | grep -v '^_quarantine/' | grep -v '^main\\.tex' | grep -v '^checklist\\.tex' | grep -v '^bib_verification\\.xlsx'\necho\necho \"=== AAS / LLM standalone (active tracked) ===\"\ngit ls-files | xargs grep -nE '\\bAAS\\b|\\bLLM\\b|\\bllm\\b' 2>/dev/null | grep -v '^_quarantine/' | grep -v '^main\\.tex' | grep -v '^checklist\\.tex'\necho\necho \"=== .claude refs ===\"\ngit ls-files | xargs grep -nE '\\.claude' 2>/dev/null | grep -v '^_quarantine/'\necho\necho \"=== identifying-string final scan (tracked) ===\"\ngit ls-files | xargs grep -nE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/Users/hungpq2412|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | grep -v '^_quarantine/'",
+  "command": "echo \"=== full final residue grep across all tracked files ===\"\ngit ls-files | xargs grep -nE '\\b(openai|anthropic|chatgpt|gpt-?4|gpt-?3|gpt-3\\.5|claude-[0-9]|claude opus|claude sonnet|gemini-[0-9]|gemini pro|gemini flash|nano[ -]?banana|cohere|mistralai|tiktoken|google\\.generativeai|google\\.genai|huggingface_hub|prompt[ -]?engineer|code[ -]?evolution)\\b' 2>/dev/null | grep -v '^_quarantine/' | grep -v '^main\\.tex' | grep -v '^checklist\\.tex' | grep -v '^bib_verification\\.xlsx'\necho\necho \"=== AAS / LLM standalone (active tracked) ===\"\ngit ls-files | xargs grep -nE '\\bAAS\\b|\\bLLM\\b|\\bllm\\b' 2>/dev/null | grep -v '^_quarantine/' | grep -v '^main\\.tex' | grep -v '^checklist\\.tex'\necho\necho \"=== .claude refs ===\"\ngit ls-files | xargs grep -nE '\\.claude' 2>/dev/null | grep -v '^_quarantine/'\necho\necho \"=== identifying-string final scan (tracked) ===\"\ngit ls-files | xargs grep -nE 'RACE VM|RMIT|race\\.rmit|the professor|hungphanphd|hungpq2412|/home/<USER>|ec2-13-238-161-176|ap-southeast-2' 2>/dev/null | grep -v '^_quarantine/'",
   "description": "Final tracked-tree leak audit"
 }
 ```

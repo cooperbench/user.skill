@@ -302,13 +302,13 @@ Perfect! Now I have all the information I need. Let me compile a comprehensive r
 I've thoroughly researched the opensandbox-integration worktree and related code. Here are my findings:
 
 ### 1. Worktree Status
-- **Worktree Path**: `/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration`
+- **Worktree Path**: `/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration`
 - **Branch**: `worktree-opensandbox-integration`
 - **Latest Commit**: `095451b6` - "feat: add k8s local deploy targets, multi-LLM support, and fix memory limit"
 - **Exists**: Yes, fully functional worktree with extensive changes
 
 ### 2. Design Document
-**File**: `/Users/cyyeh/Desktop/duckdb-data-agent/docs/plans/2026-03-04-opensandbox-integration-design.md`
+**File**: `/home/<USER>/Desktop/duckdb-data-agent/docs/plans/2026-03-04-opensandbox-integration-design.md`
 
 **Goal**: Replace custom `ContainerManager` (Docker SDK) with OpenSandbox for container lifecycle management and add Kubernetes as a deployment target alongside Docker.
 
@@ -321,7 +321,7 @@ I've thoroughly researched the opensandbox-integration worktree and related code
 
 ### 3. Current Architecture (Main Branch)
 
-**File**: `/Users/cyyeh/Desktop/duckdb-data-agent/backend/app/container_manager.py` (364 lines)
+**File**: `/home/<USER>/Desktop/duckdb-data-agent/backend/app/container_manager.py` (364 lines)
 
 Uses Docker SDK directly with:
 - `ContainerConfig` dataclass with Docker-specific settings (runtime: "runsc", memory: "256m", network: "agent-sandbox")

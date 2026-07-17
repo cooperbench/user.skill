@@ -254,7 +254,7 @@ tool_use Read
 id: toolu_01Sf6xLgGASqNpeMnJAynDrT
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
 }
 ```
 
@@ -291,7 +291,7 @@ tool_use Read
 id: toolu_01HxcasVXZh7NJakQniEqqVE
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts"
 }
 ```
 
@@ -331,7 +331,7 @@ tool_use Read
 id: toolu_01Sxi9YL5wKMhxnWBhgWvWH1
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
 }
 ```
 
@@ -341,7 +341,7 @@ tool_use Read
 id: toolu_01XBs5PWVfPmU1QvyQP1sLRY
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
 }
 ```
 
@@ -434,7 +434,7 @@ tool_use Read
 id: toolu_01MoaHaxZZCVBfWQACkJ69Aq
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/appsscript.json"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/appsscript.json"
 }
 ```
 
@@ -498,7 +498,7 @@ tool_use Read
 id: toolu_01RfyM5Q5HuaXqKvJqBWYUhs
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js"
 }
 ```
 
@@ -543,7 +543,7 @@ tool_use Read
 id: toolu_01V8HcdDFdErb9qR4jVRd74B
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/auth.ts"
 }
 ```
 
@@ -589,7 +589,7 @@ tool_use Read
 id: toolu_01UmeY6oKwEd9qAVtgycyjLV
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts"
 }
 ```
 
@@ -639,7 +639,7 @@ tool_use Read
 id: toolu_011U12q4xnzNkV8Vdcvrui2G
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/types.ts"
 }
 ```
 
@@ -709,7 +709,7 @@ id: toolu_016wNUXftDjULsB5w6u3yaz4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "  organizer?: { email?: string };",
   "new_string": "  organizer?: { email?: string; self?: boolean };"
 }
@@ -722,7 +722,7 @@ id: toolu_01VibKi9hDqRn4vLVw8TzoSD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts",
   "old_string": "      'items(id,iCalUID,status,summary,location,recurringEventId,start,end,attendees(email,resource)),nextPageToken,nextSyncToken',",
   "new_string": "      'items(id,iCalUID,status,summary,location,recurringEventId,start,end,organizer(self,email),attendees(email,resource)),nextPageToken,nextSyncToken',"
 }
@@ -733,7 +733,7 @@ id: toolu_01VibKi9hDqRn4vLVw8TzoSD
 tool_result
 id: toolu_016wNUXftDjULsB5w6u3yaz4
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -741,7 +741,7 @@ The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/cal
 tool_result
 id: toolu_01VibKi9hDqRn4vLVw8TzoSD
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -755,7 +755,7 @@ id: toolu_01WmDejRApG6PmoUsgPARkFg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "/** Bump when the events.list query SHAPE changes (e.g. adding timeMax) so the next\n *  load does one clean full re-scan to rebuild the marked set under the new query.\n *  v2 = bounded forward window (timeMax). */\nconst SYNC_SCHEMA_VERSION = 2;",
   "new_string": "/** Bump when the events.list query SHAPE changes (e.g. adding timeMax) so the next\n *  load does one clean full re-scan to rebuild the marked set under the new query.\n *  v2 = bounded forward window (timeMax). v3 = organizer-only gate — forces a clean\n *  re-scan that drops events the user is merely a GUEST of, which earlier builds\n *  wrongly marked + nudged. */\nconst SYNC_SCHEMA_VERSION = 3;"
 }
@@ -766,7 +766,7 @@ id: toolu_01WmDejRApG6PmoUsgPARkFg
 tool_result
 id: toolu_01WmDejRApG6PmoUsgPARkFg
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -776,7 +776,7 @@ id: toolu_015iSTUFWV9d5QTbHVoMNPYE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts",
   "old_string": "    const cancelled = ev.status === 'cancelled';\n    const marked_ = isMarked(ev);\n    // DIAGNOSTIC: the magic address is somewhere in this event's payload, yet\n    // isMarked() didn't flag it — i.e. it's not a structured attendee email and\n    // not in `location` (e.g. it's only in the description, or events.list\n    // returned a trimmed attendee list). This is the signature of a primary-\n    // calendar miss; the warning shows exactly what we got back.\n    if (!marked_ && MAGIC_ADDRESS && JSON.stringify(ev).toLowerCase().includes(MAGIC_ADDRESS)) {\n      console.warn(\n        '[auxilio] sync MISS: magic address in payload but isMarked() is false',\n        { id: ev.id, summary: ev.summary, location: ev.location, attendees: ev.attendees, status: ev.status },\n      );\n    }\n    if (marked_ && !cancelled) {",
   "new_string": "    const cancelled = ev.status === 'cancelled';\n    const hasMagic = isMarked(ev);\n    // DIAGNOSTIC: the magic address is somewhere in this event's payload, yet\n    // isMarked() didn't flag it — i.e. it's not a structured attendee email and\n    // not in `location` (e.g. it's only in the description, or events.list\n    // returned a trimmed attendee list). This is the signature of a primary-\n    // calendar miss; the warning shows exactly what we got back.\n    if (!hasMagic && MAGIC_ADDRESS […]
 
@@ -785,7 +785,7 @@ id: toolu_015iSTUFWV9d5QTbHVoMNPYE
 tool_result
 id: toolu_015iSTUFWV9d5QTbHVoMNPYE
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -799,7 +799,7 @@ id: toolu_012AhKBdyikKUchx6koev5hY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
   "old_string": "  | { type: 'IS_EVENT_HANDLED'; eventId: string }\n  | { type: 'SYNC_NOW' }",
   "new_string": "  | { type: 'IS_EVENT_HANDLED'; eventId: string }\n  | { type: 'IS_NUDGE_WORTHY'; eid: string; eventId: string }\n  | { type: 'SYNC_NOW' }"
 }
@@ -810,7 +810,7 @@ id: toolu_012AhKBdyikKUchx6koev5hY
 tool_result
 id: toolu_012AhKBdyikKUchx6koev5hY
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -820,7 +820,7 @@ id: toolu_01BKNzTHvKCjGHuJVfaJQhgu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts",
   "old_string": "  IS_EVENT_HANDLED: { handled: boolean };\n  SYNC_NOW: { synced: boolean };",
   "new_string": "  IS_EVENT_HANDLED: { handled: boolean };\n  IS_NUDGE_WORTHY: { worthy: boolean };\n  SYNC_NOW: { synced: boolean };"
 }
@@ -831,7 +831,7 @@ id: toolu_01BKNzTHvKCjGHuJVfaJQhgu
 tool_result
 id: toolu_01BKNzTHvKCjGHuJVfaJQhgu
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/messaging.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -841,7 +841,7 @@ id: toolu_01SMnSQhXfb8HHmbDjCrwHjS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts",
   "old_string": "    case 'IS_EVENT_HANDLED':\n      // Lets the in-page optimistic nudge skip an event whose passes were already\n      // sent from this extension (the sync filters these, the optimistic path can't).\n      return ok({ handled: await isEventHandled(msg.eventId) });",
   "new_string": "    case 'IS_EVENT_HANDLED':\n      // Lets the in-page optimistic nudge skip an event whose passes were already\n      // sent from this extension (the sync filters these, the optimistic path can't).\n      return ok({ handled: await isEventHandled(msg.eventId) });\n\n    case 'IS_NUDGE_WORTHY':\n      // Gate the in-page OPTIMISTIC nudge (the instant, DOM-derived guess) on two\n      // things the cheap DOM snapshot can't know: the event isn't already handled,\n      // and the signed-in user is the event's ORGANIZER — not a mere guest who was\n      // invited to someone else's visitor event. On a just-created event (events.get\n      // still 404s) or any transient error we return worthy:true so the host's\n      // instant nudge for their own new event still fires; the organizer-gated\n      // background sync reconciles it moments later.\n      return withTokens(async (t) => {\n        if (await isEventHandled(msg.eventId)) return { worthy: false };\n        try {\n          const ev = await fetchActiveEvent(msg.eid, t.accessToken);\n          const me = (t.email ?? (await authStatus()).email ?? '').toLowerCase();\n          const […]
 
@@ -850,7 +850,7 @@ id: toolu_01SMnSQhXfb8HHmbDjCrwHjS
 tool_result
 id: toolu_01SMnSQhXfb8HHmbDjCrwHjS
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -860,7 +860,7 @@ id: toolu_01Qk2iT1Mpou7rvxTQpdnJj7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "old_string": "          // …but NOT for an event whose passes are already sent: viewing+closing it\n          // must not re-nudge (the sync set filters handled events; this optimistic\n          // path bypasses that, so check the background's handled overlay first).\n          safeSend<{ ok?: boolean; data?: { handled?: boolean } }>({\n            type: 'IS_EVENT_HANDLED',\n            eventId: pm.eventId,\n          }).then((res) => {\n            if (res?.ok && res.data?.handled) return; // already done → no nudge\n            nudge.addOptimistic({\n              eid: pm.eid,\n              eventId: pm.eventId,\n              iCalUid: '',\n              title: pm.title,\n              start: undefined,\n            });\n          });",
   "new_string": "          // …but NOT for an event whose passes are already sent, or one the user is\n          // only a GUEST of: viewing+closing it must not nudge. The sync set filters\n          // both, but this optimistic path bypasses it — so ask the background to\n          // confirm (not handled AND the user is the organizer) before showing the\n          // instant nudge.\n          safeSend<{ ok?: boolean; data?: { worthy?: boolean } }>({\n            type: 'IS_NUDGE_WORTHY',\n            eid: pm.eid,\n            eventId: pm.eventId,\n          }).then((res) => {\n            if (!res?.ok || !res.data?.worthy) return; // already done / not host → no nudge\n            nudge.addOptimistic({\n              eid: pm.eid,\n              eventId: pm.eventId,\n              iCalUid: '',\n              title: pm.title,\n              start: undefined,\n            });\n          });"
 }
@@ -871,7 +871,7 @@ id: toolu_01Qk2iT1Mpou7rvxTQpdnJj7
 tool_result
 id: toolu_01Qk2iT1Mpou7rvxTQpdnJj7
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -896,7 +896,7 @@ tool_use Read
 id: toolu_01HSBCmTz84ZEiVsRqRBscob
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "limit": 5
 }
 ```
@@ -908,7 +908,7 @@ id: toolu_01R1cQkBuDt95Rz4krmT8zqq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json",
   "old_string": "  \"version\": \"0.11.6\",",
   "new_string": "  \"version\": \"0.11.7\","
 }
@@ -919,7 +919,7 @@ id: toolu_01R1cQkBuDt95Rz4krmT8zqq
 tool_result
 id: toolu_01R1cQkBuDt95Rz4krmT8zqq
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/package.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -932,7 +932,7 @@ tool_use Bash
 id: toolu_01Xj4BZoZz6gzAyY3hsq8U5E
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -30",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && npm run compile 2>&1 | tail -30",
   "description": "Type-check the extension"
 }
 ```
@@ -957,7 +957,7 @@ id: toolu_019KJZDB9nbwsk83VWVx1qAf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js",
   "old_string": "function buildVisitorCard_(e) {\n  // Fast path: no external guests in the payload → render immediately without any\n  // network call. Keeps empty events snappy so the loader never lingers.\n  var cal = e.calendar || {};\n  if (mapAttendees_(cal.attendees).length === 0) {",
   "new_string": "function buildVisitorCard_(e) {\n  var cal = e.calendar || {};\n\n  // Only the event's HOST (organizer) registers visitors. A guest who was merely\n  // invited sees the magic address among the attendees on their copy too, but there\n  // is nothing for them to manage here — and running the engine flow for them is what\n  // surfaced the confusing \"Reconnect / grant permission\" wall (the engine call needs\n  // the external-request scope a guest may never have granted). Show a calm guest card\n  // instead so we never push a non-host into a flow that isn't theirs.\n  if (!isCurrentUserOrganizer_(e)) return buildGuestCard_(cal);\n\n  // Fast path: no external guests in the payload → render immediately without any\n  // network call. Keeps empty events snappy so the loader never lingers.\n  if (mapAttendees_(cal.attendees).length === 0) {"
 }
@@ -968,7 +968,7 @@ id: toolu_019KJZDB9nbwsk83VWVx1qAf
 tool_result
 id: toolu_019KJZDB9nbwsk83VWVx1qAf
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -982,7 +982,7 @@ id: toolu_01U8yCpJ41SCFoaNUBL1CrwU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js",
   "old_string": "function mapAttendees_(list) {\n  return (list || [])\n    .filter(function (a) { return a && a.email && !a.self && !a.organizer && !a.resource; })\n    .map(function (a) {\n      // Google often sets displayName = the email for non-contacts → treat as no name.\n      var nm = (a.displayName && a.displayName !== a.email) ? a.displayName : '';\n      return { email: a.email, name: nm };\n    });\n}",
   "new_string": "function mapAttendees_(list) {\n  return (list || [])\n    .filter(function (a) { return a && a.email && !a.self && !a.organizer && !a.resource; })\n    .map(function (a) {\n      // Google often sets displayName = the email for non-contacts → treat as no name.\n      var nm = (a.displayName && a.displayName !== a.email) ? a.displayName : '';\n      return { email: a.email, name: nm };\n    });\n}\n\n// ── Host vs guest gate ────────────────────────────────────\n// Is the signed-in user the organizer (host) of the open event? Only the host\n// registers visitors; a guest must not be pushed into the host flow.\nfunction isCurrentUserOrganizer_(e) {\n  var cal = e.calendar || {};\n  var atts = cal.attendees || [];\n  // Most reliable signal: the attendee flagged `self` carries `organizer:true` when\n  // this user owns the event. Google sets this on the host's copy.\n […]
 
@@ -991,7 +991,7 @@ id: toolu_01U8yCpJ41SCFoaNUBL1CrwU
 tool_result
 id: toolu_01U8yCpJ41SCFoaNUBL1CrwU
 ```
-The file /Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace/Code.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1004,7 +1004,7 @@ tool_use Bash
 id: toolu_01BPb2SBWU1ZYTuAnTRy6Tmz
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-workspace && node --check Code.js && echo \"Code.js: syntax OK\"",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-workspace && node --check Code.js && echo \"Code.js: syntax OK\"",
   "description": "Parse-check the add-on Code.js"
 }
 ```
@@ -1027,7 +1027,7 @@ tool_use Bash
 id: toolu_01UPovMAny4iK7qkvCRJTTPi
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && npm run build 2>&1 | tail -20",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && npm run build 2>&1 | tail -20",
   "description": "Production build of the extension"
 }
 ```
@@ -1069,7 +1069,7 @@ tool_use Write
 id: toolu_01D7ijdHp1zBcASWur9S4u33
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md",
   "content": "---\nname: project_calendar_host_only_gate\ndescription: Calendar visitor surfaces (extension + add-on) must engage only the event organizer, never a guest\nmetadata:\n  type: project\n---\n\nBoth calendar visitor surfaces must treat visitor events as **host-only**: only the event ORGANIZER registers/manages visitors, never a guest who was merely invited.\n\n**Why:** A guest's copy of a visitor event also carries the magic address among its attendees, so any \"magic address present\" check matches on the guest's calendar too. Reported bug (2026-06-27): a coworker created an event with the magic address and invited the user; the user got an extension nudge to \"manage\" it AND the add-on showed the \"Reconnect Auxilio / grant script.external_request\" wall (the engine call needs the external-request scope a guest never granted).\n\n**How to apply:**\n- Extension sync (`auxilio-extension/lib/calendar-sync.ts`): mark gate is `isMarked(ev) && ev.organizer?.self === true`. `isMarked` stays magic-only (drives the diagnostic). Needs `organizer(self,email)` in the `events.list` fields (`lib/calendar.ts`). Bumped `SYNC_SCHEMA_VERSION` to 3 to force a clean re-scan that drops already-mis-marked guest events.\n- Extension optimistic in-page nudge: gated via new `IS_NUDGE_WORTHY` RPC — background does `events.get` and returns worthy = not-handled AND organizerEmail === signed-in email. On 404 (just-created event) / error returns worthy:true so the host's instant nudge […]
 
 > TOOL
@@ -1077,7 +1077,7 @@ id: toolu_01D7ijdHp1zBcASWur9S4u33
 tool_result
 id: toolu_01D7ijdHp1zBcASWur9S4u33
 ```
-File created successfully at: /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/project_calendar_host_only_gate.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1086,7 +1086,7 @@ tool_use Read
 id: toolu_01XFGiKsPTnuAmLwD3Z5zaSd
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "offset": 38,
   "limit": 10
 }
@@ -1106,7 +1106,7 @@ tool_use Read
 id: toolu_01PY4PKimHtvi7n6QFi54Fnv
 ```json
 {
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "offset": 33,
   "limit": 6
 }
@@ -1132,7 +1132,7 @@ id: toolu_01Ws2D6KFPBAyNiN9nXueymT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md",
   "old_string": "- [Pass email embeds entry QR](project_pass_email_qr.md) — Offline fallback QR in the pass email via inline CID attachment (Gmail-safe, NOT data-URI); regenerated from qr_token to match the offline payload; signed QR + SOS block deferred.",
   "new_string": "- [Pass email embeds entry QR](project_pass_email_qr.md) — Offline fallback QR in the pass email via inline CID attachment (Gmail-safe, NOT data-URI); regenerated from qr_token to match the offline payload; signed QR + SOS block deferred.\n- [Calendar surfaces are host-only](project_calendar_host_only_gate.md) — Extension nudge + add-on card must engage only the event organizer, never a guest (guest's copy also carries the magic address). Sync gates on organizer.self; add-on shows guest card. Fixed 2026-06-27."
 }
@@ -1143,7 +1143,7 @@ id: toolu_01Ws2D6KFPBAyNiN9nXueymT
 tool_result
 id: toolu_01Ws2D6KFPBAyNiN9nXueymT
 ```
-The file /Users/appointy/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-appointy-work-OfficeOperationsUmbrella/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

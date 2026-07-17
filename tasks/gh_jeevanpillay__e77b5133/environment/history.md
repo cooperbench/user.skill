@@ -492,7 +492,7 @@ tool_result
 id: toolu_014x4jJyr1Yzf3c7w1QUqeGp
 ```
 <persisted-output>
-Output too large (65.6KB). Full output saved to: /Users/jeevanpillay/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/3d829aeb-a54b-4814-8988-0867aa386bd3/tool-results/bhredxao3.txt
+Output too large (65.6KB). Full output saved to: /home/<USER>/.claude/projects/-Users-jeevanpillay-Code--lightfastai-lightfast/3d829aeb-a54b-4814-8988-0867aa386bd3/tool-results/bhredxao3.txt
 
 Preview (first 2KB):
 diff --git a/apps/desktop/src/renderer/src/react/app-shell.tsx b/apps/desktop/src/renderer/src/react/app-shell.tsx

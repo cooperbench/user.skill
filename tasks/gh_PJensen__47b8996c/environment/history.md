@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -89,8 +89,8 @@ tool_use exec_command
 id: call_YV4HzofUHj1GTzyXYjkuulQt
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -102,8 +102,8 @@ tool_use exec_command
 id: call_RmCTt0aV2o8j7WjC1GGMCFfj
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/.codex/RTK.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/RTK.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -116,7 +116,7 @@ id: call_gxfof7ZcXTVfOZTGInj7C7AM
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -233,7 +233,7 @@ id: call_PNwZ9P8OL4nZsxveF8TpLcnu
 ```json
 {
   "cmd": "rtk entire status",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -246,7 +246,7 @@ id: call_gvb06nsnFwA8ZJIRm068FciW
 ```json
 {
   "cmd": "rtk rg -n \"TownState|foodStores|MillChest|Tavern|smith|lumber|firewood|worker|profession|economy|stew|flour|wheat|hatchet|pickaxe\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -259,7 +259,7 @@ id: call_WBVBxyMaQlvy4qAieBPosGVV
 ```json
 {
   "cmd": "rtk rg --files src tests | rtk rg \"town|economy|profession|worker|tavern|smith|food|inventory|stock|production\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -410,7 +410,7 @@ id: call_RkOc6IuguzGm5b4Q4N3ZWmLW
 ```json
 {
   "cmd": "rtk sed -n '1,280p' src/rules/systems/townSimulationSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -423,7 +423,7 @@ id: call_6kWwNDyEPuVodf02cKqbfguQ
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/rules/components/TownState.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -436,7 +436,7 @@ id: call_UivLxFosr87rFnNFcWm9P06i
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/rules/utils/townEconomy.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -449,7 +449,7 @@ id: call_MGxSiKFzuNfdXZwH9O3XneaQ
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/data/smithRecipes.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -462,7 +462,7 @@ id: call_VbVCOAdjI0N12mzBETjtQVJX
 ```json
 {
   "cmd": "rtk sed -n '1,260p' tests/townSimulationSystem.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -695,7 +695,7 @@ id: call_QQpzTXFVRou0uO2r8UejybpJ
 ```json
 {
   "cmd": "rtk sed -n '1,360p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -708,7 +708,7 @@ id: call_rrxdFSszkwpLyZG5lDBuzVif
 ```json
 {
   "cmd": "rtk sed -n '360,760p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -721,7 +721,7 @@ id: call_CbjL84qAJoJFz7Zj2DJZAqN1
 ```json
 {
   "cmd": "rtk sed -n '760,1320p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -734,7 +734,7 @@ id: call_ulHk3MVjHVVZmHrr2QnAhFFD
 ```json
 {
   "cmd": "rtk sed -n '1320,1760p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -959,7 +959,7 @@ id: call_2mBD8B6i1fh2zkTJNFrjBvHP
 ```json
 {
   "cmd": "rtk sed -n '1760,1960p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -972,7 +972,7 @@ id: call_ckSgfjilYw76yisuCAIyxrHY
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/components/ItemInfo.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -985,7 +985,7 @@ id: call_Zq1pDmc2WUB7XAlP6jcDn75k
 ```json
 {
   "cmd": "rtk rg -n \"durability|degrade|wear|usesLeft|condition|Tool|tool_\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -998,7 +998,7 @@ id: call_5TRgVaBhGZ3Txhfz6eJ8Ujk1
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/content/items/economy.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -1208,7 +1208,7 @@ id: call_6EJs3KwTC0YwXtz869h6YYd1
 ```json
 {
   "cmd": "rtk sed -n '210,260p' src/content/items/economy.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1221,7 +1221,7 @@ id: call_tRqZyAV7PgZhRg4HMknY5w9m
 ```json
 {
   "cmd": "rtk sed -n '70,115p' src/rules/archetypes/TownGoods.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1234,7 +1234,7 @@ id: call_dMGxMEVtlG5IsrXnSZiPHK00
 ```json
 {
   "cmd": "rtk sed -n '1,180p' src/rules/components/TownfolkJob.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -1247,7 +1247,7 @@ id: call_eoBv8JUdKUK6KyxbHF55nwas
 ```json
 {
   "cmd": "rtk sed -n '400,480p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -1260,7 +1260,7 @@ id: call_kQQ4fGedkDuArQ9SLnaYTbdI
 ```json
 {
   "cmd": "rtk sed -n '1160,1275p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1569,7 +1569,7 @@ id: call_MZ6B62gbj6gbkZtT2f3zYvya
 ```json
 {
   "cmd": "rtk rg -n \"function addTownfolk|const addTownfolk|addTownfolk\\(\" tests/aiTownfolk.test.mjs src/rules -g '*.js' -g '*.mjs'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1582,7 +1582,7 @@ id: call_gPru0UQt7OiUYfPFVMkGHFpD
 ```json
 {
   "cmd": "rtk sed -n '1,150p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -1595,7 +1595,7 @@ id: call_RM8qmT48m8YhTuBVM6pWoPIB
 ```json
 {
   "cmd": "rtk rg -n \"iron_pickaxe\" src/content src/rules/archetypes tests/helpers tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1694,7 +1694,7 @@ id: call_7TPvuZ2YUniCS5VSKQEGWdqh
 ```json
 {
   "cmd": "rtk sed -n '110,135p' src/content/items/weapons.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -1746,7 +1746,7 @@ id: call_Zo9QlfdF8SeIguxHR4yU4qtM
 ```json
 {
   "cmd": "rtk rg -n \"townSimulationSystem|aiTownfolkSystem\" src/main/scheduler.js src/main -g '*.js'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1784,7 +1784,7 @@ id: call_gAf6PMuj8gSdcR4Ih6LFgT3F
 ```json
 {
   "cmd": "rtk git log --format='%H %s' -5 -- src/rules/systems/townSimulationSystem.js src/rules/systems/aiTownfolkSystem.js src/rules/components/TownState.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -1797,7 +1797,7 @@ id: call_9Mc2uZ5OjraTY6Vl1lhH9JDd
 ```json
 {
   "cmd": "rtk git log --format='%H %b' -5 -- src/rules/systems/townSimulationSystem.js src/rules/systems/aiTownfolkSystem.js src/rules/components/TownState.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1857,7 +1857,7 @@ id: call_3Q0lRDI1ZKcf9nbyXYygzqeq
 ```json
 {
   "cmd": "rtk entire explain --checkpoint f348d89e1886 --json --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1918,7 +1918,7 @@ id: call_JgGMXkenQGwdvusMRTH9Fmvg
 ```json
 {
   "cmd": "rtk entire checkpoint explain f348d89e1886 --json --no-pager",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1986,7 +1986,7 @@ id: call_VMrt5CR6CITOIxDr31w5ZJNx
 ```json
 {
   "cmd": "rtk sed -n '140,250p' src/rules/systems/townSimulationSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2057,7 +2057,7 @@ id: call_WVwJ3tsvsHYjvO6QPr5PX1JN
 ```json
 {
   "cmd": "rtk sed -n '20,125p' src/rules/systems/aiTownfolkSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -2175,7 +2175,7 @@ id: call_GR35wXCgvcCnBvH44jFXbfHI
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/townSimulationSystem.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2188,7 +2188,7 @@ id: call_KeuihoCzgRKjUkk1VNmtiDXm
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2227,7 +2227,7 @@ error: AssertionError: Values are not equal: town should consume fallback flour 
   throw new AssertionError(message);
         ^
     at assertEquals (https://jsr.io/@std/assert/1.0.18/equals.ts:65:9)
-    at file:///home/pjensen/Repos/JSHack/tests/townSimulationSystem.test.mjs:86:3
+    at file:///home/<USER>/Repos/JSHack/tests/townSimulationSystem.test.mjs:86:3
 
 townSimulationSystem substitutes raw food when prepared meal reserve is protected => ./tests/townSimulationSystem.test.mjs:135:6
 error: AssertionError: Values are not equal.
@@ -2243,7 +2243,7 @@ error: AssertionError: Values are not equal.
   throw new AssertionError(message);
         ^
     at assertEquals (https://jsr.io/@std/assert/1.0.18/equals.ts:65:9)
-    at file:///home/pjensen/Repos/JSHack/tests/townSimulationSystem.test.mjs:166:3
+    at file:///home/<USER>/Repos/JSHack/tests/townSimulationSystem.test.mjs:166:3
 
  FAILURES 
 
@@ -2291,7 +2291,7 @@ id: call_IRKIHBPPDl84pQubGb4vv8Bw
 ```json
 {
   "cmd": "rtk sed -n '105,140p' src/rules/systems/townSimulationSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 6000
 }
@@ -2357,7 +2357,7 @@ id: call_TNkxM4I7QB0xZgv1t1l0q9JP
 ```json
 {
   "cmd": "rtk deno eval --allow-read \"import './tests/helpers/installContentCatalog.mjs'; import { World } from './src/lib/ecs-js/index.js'; import { TownState } from './src/rules/components/TownState.js'; import { getTownState } from './src/rules/utils/townStateAccess.js'; const w=new World({seed:1}); const id=w.create(); w.add(id,TownState,{foodQuality:'prepared', laborReadiness:100}); console.log(JSON.stringify(getTownState(w)));\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2389,7 +2389,7 @@ id: call_TUhUW7FlD3lz4K77pl6jRQKM
 ```json
 {
   "cmd": "rtk deno eval \"import './tests/helpers/installContentCatalog.mjs'; import { World } from './src/lib/ecs-js/index.js'; import { TownState } from './src/rules/components/TownState.js'; import { getTownState } from './src/rules/utils/townStateAccess.js'; const w=new World({seed:1}); const id=w.create(); w.add(id,TownState,{foodQuality:'prepared', laborReadiness:100}); console.log(JSON.stringify(getTownState(w)));\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2416,7 +2416,7 @@ id: call_BgB1YFfGLFTd5MFtQqzRtMpJ
 ```json
 {
   "cmd": "rtk deno eval \"import './tests/helpers/installContentCatalog.mjs'; import { World } from './src/lib/ecs-js/index.js'; import { createItemById } from './src/rules/utils/itemFactory.js'; import { ItemInfo } from './src/rules/components/ItemInfo.js'; import { NamedIdentity } from './src/rules/components/NamedIdentity.js'; const w=new World({seed:1}); const id=createItemById(w,'tool_hatchet'); console.log(w.get(id, NamedIdentity)); console.log(w.get(id, ItemInfo));\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -2474,7 +2474,7 @@ id: call_0GXWmOgZ7w2DSoP64yuPyUJM
 ```json
 {
   "cmd": "rtk deno eval \"import './tests/helpers/installContentCatalog.mjs'; import { World } from './src/lib/ecs-js/index.js'; import { Position } from './src/rules/components/Position.js'; import { Player } from './src/rules/components/Player.js'; import { NamedIdentity } from './src/rules/components/NamedIdentity.js'; import { Faction } from './src/rules/components/Faction.js'; import { Inventory } from './src/rules/components/Inventory.js'; import { Equipment } from './src/rules/components/Equipment.js'; import { Brain } from './src/rules/components/Brain.js'; import { TownfolkJob,TOWNFOLK_STATES } from './src/rules/components/TownfolkJob.js'; import { TownState } from './src/rules/components/TownState.js'; import { DungeonState } from './src/rules/components/DungeonState.js'; import { Collider } from './src/rules/components/Collider.js'; import { HarvestNode } from './src/rules/components/HarvestNode.js'; import { Material } from './src/rules/components/Material.js'; import { ItemInfo } from './src/rules/components/ItemInfo.js'; import { aiTownfolkSystem } from './src/rules/systems/aiTownfolkSystem.js'; import { clearAll, loadChunk } from './src/rules/environment/dungeon/tileMap.js'; import { CHUNK_SIZE,TILE_FLOOR } from './src/rules/environment/dungeon/constants.js'; import { createItemById } from './src/rules/utils/itemFactory.js'; import { addToInventory, inventoryItems } from './src/rules/utils/inventoryFacade.js'; clearAll(); const tiles=new Uint8Array(CHUNK_SIZE*CHUNK_SIZE); tiles.fill(TILE_FLOOR); loadChunk(0,0,tiles); const w=new World({seed:108}); const ds=w.create(); w.add(ds,DungeonState,{worldSeed:108,currentDepth:0,profileType:'overworld',floorEntityIds:[],downStairPositions:[]}); const p=w.create(); w.add(p,Player); w.add(p,Position,{x:5,y:5}); const town=w.create(); w.add(town,TownState,{foodQuality:'prepared',laborReadiness:100}); const tree=w.create(); w.add(tree,Position,{x:8,y:5}); w.add(tree,NamedIdentity,{name:'Tree',identity:'tree_harvest'}); w.add(tree,Material,{kind:'wood'}); w.add(tree,Collider,{solid:true,blocksSight:true}); w.add(tree,HarvestNode,{kind:'tree',ready:true,regrowTurns:350,regrowCountdown:0,yield:'material_lumber',yieldMin:1,yieldMax:1,requiresTool:'chop'}); const npc=w.create(); w.add(npc,Position,{x:7,y:5}); w.add(npc,NamedIdentity,{name:'woodcutter',identity:'townfolk_woodcutter'}); w.add(npc,Faction,{key:'townfolk'}); w.add(npc,Inventory,{capacity:6}); w.add(npc,Equipment,{}); w.add(npc,Brain,{intelligence:10,visionRange:8}); w.add(npc,TownfolkJob,{role:'woodcutter',state:TOWNFOLK_STATES.working,homeX:3,homeY:5,targetX:7,targetY:5,workTurns:0,workSiteKind:'chop'}); const h=createItemById(w,'tool_hatchet'); addToInventory(w,npc,h); w.set(npc,Equipment,{...w.get(npc,Equipment),weapon:h}); aiTownfolkSystem(w); const out=[]; for (const item of inventoryItems(w,npc)) out.push([w.get(item,NamedIdentity)?.identity,w.get(item,ItemInfo)?.count,w.get(item,ItemInfo)?.tags]); console.log(JSON.stringify(out));\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2509,7 +2509,7 @@ id: call_cu6kXx48Nc9596MByK4DHwHX
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/townSimulationSystem.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2522,7 +2522,7 @@ id: call_ulVIU2hmsllifOpPqAaqLvpT
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2584,7 +2584,7 @@ id: call_Zm2E3mb4EIfV4vLLABfcgdF2
 ```json
 {
   "cmd": "rtk sed -n '455,505p' tests/aiTownfolk.test.mjs && rtk sed -n '1239,1268p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -2655,7 +2655,7 @@ id: call_WSe3JNsQmCntD87S4ydUl4wq
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiTownfolk.test.mjs --filter \"town feedback\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2690,7 +2690,7 @@ error: AssertionError: Values are not equal: sharp hatchet should increase lumbe
   throw new AssertionError(message);
         ^
     at assertEquals (https://jsr.io/@std/assert/1.0.18/equals.ts:65:9)
-    at file:///home/pjensen/Repos/JSHack/tests/aiTownfolk.test.mjs:495:3
+    at file:///home/<USER>/Repos/JSHack/tests/aiTownfolk.test.mjs:495:3
 
 town feedback makes a sharp kitchen knife stretch tavern cooking before wearing => ./tests/aiTownfolk.test.mjs:1239:6
 error: AssertionError: Values are not equal: sharp knife should stretch one flour and firewood into extra servings
@@ -2705,7 +2705,7 @@ error: AssertionError: Values are not equal: sharp knife should stretch one flou
   throw new AssertionError(message);
         ^
     at assertEquals (https://jsr.io/@std/assert/1.0.18/equals.ts:65:9)
-    at file:///home/pjensen/Repos/JSHack/tests/aiTownfolk.test.mjs:1263:3
+    at file:///home/<USER>/Repos/JSHack/tests/aiTownfolk.test.mjs:1263:3
 
  FAILURES 
 
@@ -2729,7 +2729,7 @@ id: call_QvfLYt6QdxoInFx541TwsJ4K
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiTownfolk.test.mjs --filter \"town feedback\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2780,7 +2780,7 @@ error: AssertionError: Values are not equal: sharp hatchet should increase lumbe
   throw new AssertionError(message);
         ^
     at assertEquals (https://jsr.io/@std/assert/1.0.18/equals.ts:65:9)
-    at file:///home/pjensen/Repos/JSHack/tests/aiTownfolk.test.mjs:496:3
+    at file:///home/<USER>/Repos/JSHack/tests/aiTownfolk.test.mjs:496:3
 
 town feedback makes a sharp kitchen knife stretch tavern cooking before wearing => ./tests/aiTownfolk.test.mjs:1240:6
 error: AssertionError: […]
@@ -2796,7 +2796,7 @@ id: call_Xz7OyFs0XB2tsmnfORFGvtjL
 ```json
 {
   "cmd": "rtk sed -n '125,150p' tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 4000
 }
@@ -2848,7 +2848,7 @@ id: call_RAzFyIrrciqWMrdcSorDnmOD
 ```json
 {
   "cmd": "rtk rg -n \"function countInventory\" -A14 tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 5000
 }
@@ -2897,7 +2897,7 @@ id: call_PocJFBYmaGYpqu3FVsLrlYHA
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -2940,7 +2940,7 @@ id: call_1nvKcLFL17I9vp4h6XFbfeij
 ```json
 {
   "cmd": "rtk rg -n \"scheduled farmer can work|scheduled townfolk heads\" -A35 -B5 tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2999,7 +2999,7 @@ id: call_JeyMpqU359y75tAZrJgl47WZ
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -3042,7 +3042,7 @@ id: call_wvvF9jXNKnufzIS1z9n8Xru3
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/townSimulationSystem.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -3055,7 +3055,7 @@ id: call_s6j5f98M4xcGNX4GKw0BuFxM
 ```json
 {
   "cmd": "rtk deno task check",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -3133,7 +3133,7 @@ id: call_puboGsh1L2yysPwe15ijMRyV
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3146,7 +3146,7 @@ id: call_LrJmuIR9GRt82o6kECO0rs96
 ```json
 {
   "cmd": "rtk git diff -- src/rules/components/TownState.js src/rules/systems/townSimulationSystem.js src/rules/systems/aiTownfolkSystem.js tests/townSimulationSystem.test.mjs tests/aiTownfolk.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -3246,7 +3246,7 @@ id: call_WaFjYvFTbkhZ5t3FgtLZEbmi
 ```json
 {
   "cmd": "rtk rg -n \"fuelStores|laborReadiness|consumeTownMeal|laborDelayForTownState|wearActorTool|town feedback makes|low labor readiness\" src/rules/components/TownState.js src/rules/systems/townSimulationSystem.js src/rules/systems/aiTownfolkSystem.js tests/aiTownfolk.test.mjs tests/townSimulationSystem.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3259,7 +3259,7 @@ id: call_gdDGEEXO1UMHiu0vCRM5S4N1
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3325,11 +3325,11 @@ Output:
 Implemented the first deeper feedback pass for the town economy.
 
 Changed:
-- [TownState.js](/home/pjensen/Repos/JSHack/src/rules/components/TownState.js:5) now tracks derived `fuelStores`, `foodQuality`, `laborReadiness`, and `lowFuel`.
-- [townSimulationSystem.js](/home/pjensen/Repos/JSHack/src/rules/systems/townSimulationSystem.js:141) now feeds the town from actual inventories by preference: preserves the last prepared meal, then substitutes raw/fallback foods.
-- [townSimulationSystem.js](/home/pjensen/Repos/JSHack/src/rules/systems/townSimulationSystem.js:201) separates fuel from materials and derives labor readiness from food quality, morale, and fuel shortage.
-- [aiTownfolkSystem.js](/home/pjensen/Repos/JSHack/src/rules/systems/aiTownfolkSystem.js:176) adds physical tool wear for economy tools.
-- [aiTownfolkSystem.js](/home/pjensen/Repos/JSHack/src/rules/systems/aiTownfolkSystem.js:920) makes low labor readiness delay scheduled productive work.
+- [TownState.js](/home/<USER>/Repos/JSHack/src/rules/components/TownState.js:5) now tracks derived `fuelStores`, `foodQuality`, `laborReadiness`, and `lowFuel`.
+- [townSimulationSystem.js](/home/<USER>/Repos/JSHack/src/rules/systems/townSimulationSystem.js:141) now feeds the town from actual inventories by preference: preserves the last prepared meal, then substitutes raw/fallback foods.
+- [townSimulationSystem.js](/home/<USER>/Repos/JSHack/src/rules/systems/townSimulationSystem.js:201) separates fuel from materials and derives labor readiness from food quality, morale, and fuel shortage.
+- [aiTownfolkSystem.js](/home/<USER>/Repos/JSHack/src/rules/systems/aiTownfolkSystem.js:176) adds physical tool wear for economy tools.
+- [aiTownfolkSystem.js](/home/<USER>/Repos/JSHack/src/rules/systems/aiTownfolkSystem.js:920) makes low labor readiness delay scheduled productive work.
 - Woodcutters/miners can pull missing tools from smithy stock, so smith output now feeds back into production.
 - Sharp hatchets/pickaxes/kitchen knives boost production once, then become worn; worn tools break on later use.
 

@@ -43,7 +43,7 @@ id: toolu_01XHiEi99q86uxAtcFd2faWg
 ```json
 {
   "pattern": "pdfpc",
-  "path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix"
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix"
 }
 ```
 
@@ -53,7 +53,7 @@ tool_use Read
 id: toolu_01Xtr2xfuM8FmHqorjaXzmdh
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix"
 }
 ```
 
@@ -163,7 +163,7 @@ id: toolu_01N9iTsEPDc9MfmmQwop4UUC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix",
   "old_string": "    # Misc\n    cava",
   "new_string": "    # Presentation\n    pdfpc\n\n    # Misc\n    cava"
 }
@@ -174,7 +174,7 @@ id: toolu_01N9iTsEPDc9MfmmQwop4UUC
 tool_result
 id: toolu_01N9iTsEPDc9MfmmQwop4UUC
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/linux/home-packages.nix has been updated successfully.
 ```
 
 > AGENT

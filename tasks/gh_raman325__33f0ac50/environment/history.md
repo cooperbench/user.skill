@@ -102,7 +102,7 @@ tool_use Read
 id: toolu_0193fFPbwAAQh8UxGSBkgcFY
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 245,
   "limit": 120
 }
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_019ETrYjmjNiJnqMopXdjp7N
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 540,
   "limit": 180
 }
@@ -252,7 +252,7 @@ tool_use Read
 id: toolu_01TRGJpENKrAH6DFWZbu5gYL
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "offset": 130,
   "limit": 230
 }
@@ -400,7 +400,7 @@ tool_use Bash
 id: toolu_01B5Ky9Dy8yH2apvEWp4hGfW
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== Files referencing _zwave_js_uc / UC fallback ===\"\ngrep -rln \"_zwave_js_uc\\|_uc_fallback\\|UserCodeFallback\\|uc_fallback\\|_async_uc\\|_uc_slot\\|_uc_handle\\|_node_supports_user_code_cc\\|_async_refresh_usercode_cache\\|_uc_set_usercode\" custom_components/ tests/ 2>/dev/null\necho \"\"\necho \"=== _zwave_js_uc.py size ===\"\nwc -l custom_components/lock_code_manager/providers/_zwave_js_uc.py\necho \"\"\necho \"=== Version pins (manifest/hacs/requirements) ===\"\ngrep -rn \"2026\\.\\|home_assistant\\|homeassistant\" manifest.json hacs.json custom_components/lock_code_manager/manifest.json pyproject.toml requirements*.txt 2>/dev/null | grep -iv \"url\\|http\" | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== Files referencing _zwave_js_uc / UC fallback ===\"\ngrep -rln \"_zwave_js_uc\\|_uc_fallback\\|UserCodeFallback\\|uc_fallback\\|_async_uc\\|_uc_slot\\|_uc_handle\\|_node_supports_user_code_cc\\|_async_refresh_usercode_cache\\|_uc_set_usercode\" custom_components/ tests/ 2>/dev/null\necho \"\"\necho \"=== _zwave_js_uc.py size ===\"\nwc -l custom_components/lock_code_manager/providers/_zwave_js_uc.py\necho \"\"\necho \"=== Version pins (manifest/hacs/requirements) ===\"\ngrep -rn \"2026\\.\\|home_assistant\\|homeassistant\" manifest.json hacs.json custom_components/lock_code_manager/manifest.json pyproject.toml requirements*.txt 2>/dev/null | grep -iv \"url\\|http\" | head -40",
   "description": "Map UC fallback blast radius and version pins"
 }
 ```
@@ -434,7 +434,7 @@ tool_use Bash
 id: toolu_019K32DcbAxUZ5LgRadj63La
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== _zwave_js_uc.py: class/method structure ===\"\ngrep -n \"^class \\|^@\\|    def \\|    async def \\|class .*:\\| _uc_fallback\" custom_components/lock_code_manager/providers/_zwave_js_uc.py | head -60\necho \"\"\necho \"=== zwave_js.py: every _uc / fallback reference ===\"\ngrep -n \"_uc_fallback\\|_async_uc_fallback_active\\|_uc_fallback_capabilities\\|_zwave_js_uc\\|UserCode.*Fallback\\|_uc_\\|_on_uc_value\\|get_usercodes\\|async_get_usercodes\\|class ZWaveJSLock\" custom_components/lock_code_manager/providers/zwave_js.py",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== _zwave_js_uc.py: class/method structure ===\"\ngrep -n \"^class \\|^@\\|    def \\|    async def \\|class .*:\\| _uc_fallback\" custom_components/lock_code_manager/providers/_zwave_js_uc.py | head -60\necho \"\"\necho \"=== zwave_js.py: every _uc / fallback reference ===\"\ngrep -n \"_uc_fallback\\|_async_uc_fallback_active\\|_uc_fallback_capabilities\\|_zwave_js_uc\\|UserCode.*Fallback\\|_uc_\\|_on_uc_value\\|get_usercodes\\|async_get_usercodes\\|class ZWaveJSLock\" custom_components/lock_code_manager/providers/zwave_js.py",
   "description": "Inspect class structure and uc references"
 }
 ```
@@ -490,7 +490,7 @@ tool_use Read
 id: toolu_0141vLETi3iVtwNKFFadYjx6
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_zwave_js_uc.py",
   "offset": 1,
   "limit": 130
 }
@@ -539,7 +539,7 @@ tool_use Bash
 id: toolu_01JuGLsQddFR5e6NK182vQjT
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== test_uc_fallback.py size ===\"\nwc -l tests/providers/zwave_js/test_uc_fallback.py\necho \"\"\necho \"=== conftest fixtures to remove ===\"\ngrep -n \"uc_only_caps_response\\|uc_slot_walk\\|mock_uc_utils\\|uc_fallback_lock\\|def .*uc\" tests/providers/zwave_js/conftest.py\necho \"\"\necho \"=== test_provider.py UC references ===\"\ngrep -n \"uc_fallback\\|_uc_\\|uc_only\\|uc_slot\\|UserCodeFallback\\|fallback\" tests/providers/zwave_js/test_provider.py\necho \"\"\necho \"=== hacs.json full ===\"\ncat hacs.json\necho \"\"\necho \"=== manifest.json ===\"\ncat custom_components/lock_code_manager/manifest.json",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== test_uc_fallback.py size ===\"\nwc -l tests/providers/zwave_js/test_uc_fallback.py\necho \"\"\necho \"=== conftest fixtures to remove ===\"\ngrep -n \"uc_only_caps_response\\|uc_slot_walk\\|mock_uc_utils\\|uc_fallback_lock\\|def .*uc\" tests/providers/zwave_js/conftest.py\necho \"\"\necho \"=== test_provider.py UC references ===\"\ngrep -n \"uc_fallback\\|_uc_\\|uc_only\\|uc_slot\\|UserCodeFallback\\|fallback\" tests/providers/zwave_js/test_provider.py\necho \"\"\necho \"=== hacs.json full ===\"\ncat hacs.json\necho \"\"\necho \"=== manifest.json ===\"\ncat custom_components/lock_code_manager/manifest.json",
   "description": "Read test scope and version files"
 }
 ```
@@ -723,7 +723,7 @@ tool_use Bash
 id: toolu_01WAdmoYkBH7WZqWVV8KYvas
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== LCM issue #1251 status ===\"\ngh issue view 1251 --json state,title,closedAt,stateReason 2>/dev/null\necho \"\"\necho \"=== Recent merged PRs mentioning UC fallback removal or driver fix ===\"\ngh pr list --state merged --search \"User Code fallback OR 1251 OR capabilities\" --limit 10 --json number,title,mergedAt 2>/dev/null\necho \"\"\necho \"=== git log mentioning fallback / 1251 / 8873 ===\"\ngit log --oneline -20 --grep=\"fallback\\|1251\\|8873\\|user code\\|User Code\" -i",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== LCM issue #1251 status ===\"\ngh issue view 1251 --json state,title,closedAt,stateReason 2>/dev/null\necho \"\"\necho \"=== Recent merged PRs mentioning UC fallback removal or driver fix ===\"\ngh pr list --state merged --search \"User Code fallback OR 1251 OR capabilities\" --limit 10 --json number,title,mergedAt 2>/dev/null\necho \"\"\necho \"=== git log mentioning fallback / 1251 / 8873 ===\"\ngit log --oneline -20 --grep=\"fallback\\|1251\\|8873\\|user code\\|User Code\" -i",
   "description": "Check LCM 1251 status and related fixes"
 }
 ```
@@ -880,7 +880,7 @@ id: toolu_01D5cPx3gKm8hyW7S4SUzRNJ
   "zeroconf": ["_zwave-js-server._tcp.local."]
 
 === Minimum server schema enforced by HA core zwave_js (dev) ===
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -947,7 +947,7 @@ tool_use Read
 id: toolu_01GtrDAaD2N5Fpe6NgxrgTkk
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 180,
   "limit": 65
 }
@@ -993,7 +993,7 @@ tool_use Read
 id: toolu_01YGgh4CGhWn2mpWiaLNtaWc
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 440,
   "limit": 85
 }
@@ -1045,7 +1045,7 @@ tool_use Bash
 id: toolu_01PS1mrBTP7Pnqj61hGChaUb
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== async_get_usercodes / _get_cached_capabilities definitions ===\"\ngrep -rn \"def async_get_usercodes\\|def _get_cached_capabilities\\|def async_setup_internal\\|does not advertise PIN\\|LockCodeManagerProviderError\" custom_components/lock_code_manager/providers/_base.py | head\necho \"\"\necho \"=== zwave_js.py 700-725 ===\"\nsed -n '700,725p' custom_components/lock_code_manager/providers/zwave_js.py 2>/dev/null || true",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== async_get_usercodes / _get_cached_capabilities definitions ===\"\ngrep -rn \"def async_get_usercodes\\|def _get_cached_capabilities\\|def async_setup_internal\\|does not advertise PIN\\|LockCodeManagerProviderError\" custom_components/lock_code_manager/providers/_base.py | head\necho \"\"\necho \"=== zwave_js.py 700-725 ===\"\nsed -n '700,725p' custom_components/lock_code_manager/providers/zwave_js.py 2>/dev/null || true",
   "description": "Find base capability validation and remaining methods"
 }
 ```
@@ -1099,7 +1099,7 @@ tool_use Read
 id: toolu_01KTZtWE5Bc3B2PdrhBzJjcZ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 629,
   "limit": 40
 }
@@ -1153,7 +1153,7 @@ tool_use Bash
 id: toolu_0197a7CvSZfrkAG2n72CSxEV
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== Any other UC-layer symbol usage in zwave_js.py? ===\"\ngrep -n \"_set_in_progress_code_slot\\|_usercode_cc_version\\|_uc_slot_state\\|_uc_code_slot_in_use\\|get_usercode\\b\\|_confirm_slot\\|async_get_usercodes\" custom_components/lock_code_manager/providers/zwave_js.py\necho \"\"\necho \"=== _confirm_slot home (base vs uc) ===\"\ngrep -rn \"def _confirm_slot\" custom_components/lock_code_manager/providers/\necho \"\"\necho \"=== current branch & cleanliness ===\"\ngit branch --show-current\ngit status --porcelain | head",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== Any other UC-layer symbol usage in zwave_js.py? ===\"\ngrep -n \"_set_in_progress_code_slot\\|_usercode_cc_version\\|_uc_slot_state\\|_uc_code_slot_in_use\\|get_usercode\\b\\|_confirm_slot\\|async_get_usercodes\" custom_components/lock_code_manager/providers/zwave_js.py\necho \"\"\necho \"=== _confirm_slot home (base vs uc) ===\"\ngrep -rn \"def _confirm_slot\" custom_components/lock_code_manager/providers/\necho \"\"\necho \"=== current branch & cleanliness ===\"\ngit branch --show-current\ngit status --porcelain | head",
   "description": "Confirm no stray UC deps and check git state"
 }
 ```
@@ -1190,7 +1190,7 @@ tool_use Bash
 id: toolu_017VejFq4owQsMJSfFpRsknP
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit fetch origin main --quiet 2>&1 | tail -1\ngit checkout -b refactor/remove-uc-cc-fallback origin/main 2>&1 | tail -3\necho \"--- now on: $(git branch --show-current)\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit fetch origin main --quiet 2>&1 | tail -1\ngit checkout -b refactor/remove-uc-cc-fallback origin/main 2>&1 | tail -3\necho \"--- now on: $(git branch --show-current)\"",
   "description": "Create branch off main for fallback removal"
 }
 ```
@@ -1211,7 +1211,7 @@ tool_use Bash
 id: toolu_01NXiFhPvWYvCvw2SCHCSKcX
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== Baseline: run zwave_js provider tests (should be green before changes) ===\"\ntimeout 300 python -m pytest tests/providers/zwave_js/ -q 2>&1 | tail -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== Baseline: run zwave_js provider tests (should be green before changes) ===\"\ntimeout 300 python -m pytest tests/providers/zwave_js/ -q 2>&1 | tail -20",
   "description": "Run baseline zwave_js tests"
 }
 ```
@@ -1231,7 +1231,7 @@ tool_use Bash
 id: toolu_01C7ywokDaToqzfLkr6Txdsm
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\nls venv/bin/python .venv/bin/python 2>/dev/null; which python3; head -1 $(which prek 2>/dev/null) 2>/dev/null\necho \"--- pytest discovery ---\"\n( command -v uv >/dev/null && echo \"uv available\" )",
+  "command": "cd /home/<USER>/projects/lock_code_manager\nls venv/bin/python .venv/bin/python 2>/dev/null; which python3; head -1 $(which prek 2>/dev/null) 2>/dev/null\necho \"--- pytest discovery ---\"\n( command -v uv >/dev/null && echo \"uv available\" )",
   "description": "Locate python/test runner"
 }
 ```
@@ -1254,7 +1254,7 @@ tool_use Bash
 id: toolu_01Hwg2CrWd93oMY4Reg3NgAb
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== Baseline zwave_js provider tests ===\"\ntimeout 400 .venv/bin/python -m pytest tests/providers/zwave_js/ -q 2>&1 | tail -15",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== Baseline zwave_js provider tests ===\"\ntimeout 400 .venv/bin/python -m pytest tests/providers/zwave_js/ -q 2>&1 | tail -15",
   "description": "Run baseline zwave_js tests with venv"
 }
 ```
@@ -1281,7 +1281,7 @@ tool_use Bash
 id: toolu_01VCPcD81B9Laixt7Ad1dxcZ
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== capability-related tests in test_provider.py ===\"\ngrep -n \"def test.*cap\\|async_get_capabilities\\|num_slots\\|credential_capabilities\\|does not advertise\\|LockCodeManagerProviderError\\|def test_\" tests/providers/zwave_js/test_provider.py | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== capability-related tests in test_provider.py ===\"\ngrep -n \"def test.*cap\\|async_get_capabilities\\|num_slots\\|credential_capabilities\\|does not advertise\\|LockCodeManagerProviderError\\|def test_\" tests/providers/zwave_js/test_provider.py | head -40",
   "description": "Find capability tests"
 }
 ```
@@ -1340,7 +1340,7 @@ tool_use Read
 id: toolu_01LvhhsTWQtAfTvGkFs3fRVh
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "offset": 658,
   "limit": 50
 }
@@ -1413,7 +1413,7 @@ tool_use Read
 id: toolu_013XR6CfLwdmgoG6cb9Qmc9Q
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "offset": 1,
   "limit": 83
 }
@@ -1493,7 +1493,7 @@ id: toolu_01Lh6Ls3yiB1M5eqqnqK1kGd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "old_string": "from custom_components.lock_code_manager.domain.exceptions import (\n    CodeRejectedError,\n    DuplicateCodeError,\n    LockDisconnected,\n    LockOperationFailed,\n)",
   "new_string": "from custom_components.lock_code_manager.domain.exceptions import (\n    CodeRejectedError,\n    DuplicateCodeError,\n    LockCodeManagerProviderError,\n    LockDisconnected,\n    LockOperationFailed,\n)"
 }
@@ -1504,7 +1504,7 @@ id: toolu_01Lh6Ls3yiB1M5eqqnqK1kGd
 tool_result
 id: toolu_01Lh6Ls3yiB1M5eqqnqK1kGd
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1514,7 +1514,7 @@ id: toolu_01NTM6bKZor9UQ9wg5pW2QGH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "old_string": "        max_user_name_length=10,\n    )\n\n\n# Write primitive tests (Task 2)",
   "new_string": "        max_user_name_length=10,\n    )\n\n\nasync def test_async_get_capabilities_zero_slots_raises_actionable_error(\n    zwave_js_lock: ZWaveJSLock,\n    mock_access_control: MagicMock,\n    mock_lock_helpers: dict,\n) -> None:\n    \"\"\"\n    A degenerate ``num_slots == 0`` capability probe fails with an actionable error.\n\n    The unified API reports a PIN credential type but zero usable slots when the\n    node's interview is incomplete (values missing from the DB) or the connected\n    Z-Wave JS driver predates the spec-compliant capability fix (15.24.3). Rather\n    than the misleading \"does not advertise PIN credential support\", the provider\n    surfaces a structural ``LockCodeManagerProviderError`` that points at the\n    actual remedies: re-interview the lock and update Z-Wave JS (see issue #1298).\n    \"\"\"\n    pin_type_str = lock_helpers.CREDENTIAL_TYPE_MAP[UserCredentialType.PIN_CODE]\n    mock_lock_helpers[\"async_get_credential_capabilities\"].return_value = {\n        \"supports_user_management\": False,\n        \"max_users\": 0,\n        \"supported_user_types\": [],\n        \"max_user_name_length\": 0,\n        \"supported_credential_rules\": [],\n        \"supported_credential_types\": {\n            pin_type_str: {\n                \"num_slots\": 0,\n                \"min_length\": 4,\n                \"max_length\": 10,\n                \"supports_learn\": False,\n            }\n        },\n    }\n\n    with pytest.raises(LockCodeManagerProviderError, match=\"interview\"):\n        await zwave_js_lock.async_get_capabilities()\n\n\nasync def test_async_get_capabilities_no_pin_type_returns_empty(\n    zwave_js_lock: ZWaveJSLock,\n    mock_access_control: MagicMock,\n    mock_lock_helpers: dict,\n) -> None:\n    \"\"\"\n    A lock that advertises no PIN credential type at all yields empty capabilities.\n\n    This is the genuinely-unsupported case (distinct from zero slots): the base\n    ``async_setup_internal`` rejects it with the generic \"does not advertise PIN\n    credential support\", which is accurate […]
 
@@ -1523,7 +1523,7 @@ id: toolu_01NTM6bKZor9UQ9wg5pW2QGH
 tool_result
 id: toolu_01NTM6bKZor9UQ9wg5pW2QGH
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1536,7 +1536,7 @@ tool_use Bash
 id: toolu_01DqGeeVroLAqLRertub1kua
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\n.venv/bin/python -m pytest tests/providers/zwave_js/test_provider.py -q -k \"zero_slots or no_pin_type\" 2>&1 | tail -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager\n.venv/bin/python -m pytest tests/providers/zwave_js/test_provider.py -q -k \"zero_slots or no_pin_type\" 2>&1 | tail -20",
   "description": "Run new tests to confirm red"
 }
 ```
@@ -1574,7 +1574,7 @@ tool_use Bash
 id: toolu_01PD6w31E9yvVHRe7sEmjViM
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\n.venv/bin/python -m pytest tests/providers/zwave_js/test_provider.py -q -k \"zero_slots or no_pin_type\" --no-header -p no:cacheprovider 2>&1 | grep -A18 \"def test_async_get_capabilities_no_pin_type\\|Error\\|assert\\|Failed:\" | head -50",
+  "command": "cd /home/<USER>/projects/lock_code_manager\n.venv/bin/python -m pytest tests/providers/zwave_js/test_provider.py -q -k \"zero_slots or no_pin_type\" --no-header -p no:cacheprovider 2>&1 | grep -A18 \"def test_async_get_capabilities_no_pin_type\\|Error\\|assert\\|Failed:\" | head -50",
   "description": "Inspect failure reasons"
 }
 ```
@@ -1643,7 +1643,7 @@ tool_use Read
 id: toolu_0125Rg3qaV9o74WiRC1hMS61
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 55,
   "limit": 75
 }
@@ -1710,7 +1710,7 @@ id: toolu_01FYdpjkFXxrQGWem2DLLQEr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "from ..domain.exceptions import (\n    CodeRejectedError,\n    DuplicateCodeError,\n    LockDisconnected,\n    LockOperationFailed,\n)\nfrom ..domain.models import SlotCredential\nfrom ._util import parse_tag\nfrom ._zwave_js_uc import ZWaveJSUserCodeFallbackSupport",
   "new_string": "from ..domain.exceptions import (\n    CodeRejectedError,\n    DuplicateCodeError,\n    LockCodeManagerProviderError,\n    LockDisconnected,\n    LockOperationFailed,\n)\nfrom ..domain.models import SlotCredential\nfrom ._base import BaseLock\nfrom ._util import parse_tag"
 }
@@ -1721,7 +1721,7 @@ id: toolu_01FYdpjkFXxrQGWem2DLLQEr
 tool_result
 id: toolu_01FYdpjkFXxrQGWem2DLLQEr
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1731,7 +1731,7 @@ id: toolu_01NMS8KhttgEcbrHapTSV4vX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "class ZWaveJSLock(ZWaveJSUserCodeFallbackSupport):\n    \"\"\"\n    Class to represent ZWave JS lock.\n\n    Extends the temporary ``ZWaveJSUserCodeFallbackSupport`` layer (see\n    ``_zwave_js_uc.py`` for the removal recipe once the upstream driver\n    fix ships); this class holds only the unified-API implementation and\n    the fallback routing branch points.\n    \"\"\"",
   "new_string": "class ZWaveJSLock(BaseLock):\n    \"\"\"\n    Class to represent ZWave JS lock.\n\n    PIN management runs entirely through node-zwave-js's unified\n    ``access_control`` API, which dispatches to User Code CC or User\n    Credential CC internally. This relies on the driver fixes in\n    zwave-js 15.24.3 (spec-compliant interview that defers to User Code\n    CC when User Credential CC is inactive, and tolerant masked-code\n    write verification) -- guaranteed by the integration's minimum Home\n    Assistant version. The legacy User Code CC value-path fallback that\n    worked around the pre-15.24.3 capability bug (#1251) has been removed.\n    \"\"\""
 }
@@ -1742,7 +1742,7 @@ id: toolu_01NMS8KhttgEcbrHapTSV4vX
 tool_result
 id: toolu_01NMS8KhttgEcbrHapTSV4vX
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1755,7 +1755,7 @@ tool_use Read
 id: toolu_01DADVmSREvc5Tv23snn6Wq5
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 248,
   "limit": 72
 }
@@ -1799,7 +1799,7 @@ id: toolu_01XCk35kdnHd1KjGaZBitwRP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "    async def async_get_capabilities(self) -> LockCapabilities:\n        \"\"\"\n        Report the lock's user/credential capabilities.\n\n        Routes the lock based on whether the unified API can express its PIN\n        capabilities:\n\n        - **Usable PIN capabilities reported** (``num_slots > 0``) -> the\n          unified ``access_control`` API. This is the common path for both\n          U3C locks and healthy User Code CC-only locks. Masked-code locks\n          stay correct here via the universal read projection (``_pin_state``\n          maps a withheld code to ``unreadable``) and tolerant write handling\n          (a driver ``ERROR_UNKNOWN`` from the masked read-back verification\n          is treated as a completed set in ``async_set_credential``, not a\n          rejection) -- see issue #1251.\n        - **Degenerate capabilities** (PIN missing or ``num_slots == 0``) ->\n          the legacy User Code CC fallback (slot-only), which addresses slots\n          directly because the unified API can't even express them. Only the\n          zero-slot variant needs this; a node with no User Code CC at all has\n          no PIN support LCM can manage.\n\n        Note: this method does NOT route by command class -- a User Code\n        CC-only lock with healthy capabilities uses the unified path, relying\n        on the projection + tolerant-write handling above rather than the\n        legacy fallback. Only degenerate capabilities trigger the […]
 
 > TOOL
@@ -1807,7 +1807,7 @@ id: toolu_01XCk35kdnHd1KjGaZBitwRP
 tool_result
 id: toolu_01XCk35kdnHd1KjGaZBitwRP
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1821,7 +1821,7 @@ id: toolu_01GGaGwJSVDzij4jJi7UMDzo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        Uses the unified ``access_control`` API which dispatches to UC\n        or U3C internally per node-zwave-js v15.23.4+. When that API is\n        unusable for this lock (see ``async_get_capabilities``), users\n        are synthesized from the User Code CC value DB instead: one\n        implicit user per occupied slot with ``user_id == slot``,\n        matching the User Code CC model where the user IS the credential.\n        \"\"\"\n        if await self._async_uc_fallback_active():\n            return await self._async_uc_users_from_value_db()\n        try:\n            users = await self.node.access_control.get_users_cached()",
   "new_string": "        Uses the unified ``access_control`` API which dispatches to UC\n        or U3C internally per node-zwave-js v15.24.3+. A User Code CC\n        lock surfaces one user per occupied slot here too, because the\n        unified API models each User Code CC slot as an implicit user\n        carrying its single PIN credential.\n        \"\"\"\n        try:\n            users = await self.node.access_control.get_users_cached()"
 }
@@ -1832,7 +1832,7 @@ id: toolu_01GGaGwJSVDzij4jJi7UMDzo
 tool_result
 id: toolu_01GGaGwJSVDzij4jJi7UMDzo
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1846,7 +1846,7 @@ id: toolu_01KkhfGa4Z3zsn4GmgFNiED4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        Write the PIN credential under user_id; map device rejections.\n\n        In UC-fallback mode the write goes through the legacy User Code\n        CC utilities (``set_usercode``), which address the slot directly\n        and never consult the unified API's broken capability data.\n        Otherwise the write goes through HA's\n        ``lock_helpers.async_set_credential``, whose translation-key\n        errors are mapped to LCM's typed exceptions.",
   "new_string": "        Write the PIN credential under user_id; map device rejections.\n\n        The write goes through HA's ``lock_helpers.async_set_credential``,\n        whose translation-key errors are mapped to LCM's typed exceptions."
 }
@@ -1857,7 +1857,7 @@ id: toolu_01KkhfGa4Z3zsn4GmgFNiED4
 tool_result
 id: toolu_01KkhfGa4Z3zsn4GmgFNiED4
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1871,7 +1871,7 @@ id: toolu_01RribPMfhr5eCEm59Qy7U1r
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        Definitive rejections (duplicate, occupied, manufacturer rules,\n        validation) still surface as typed errors.\n        \"\"\"\n        if await self._async_uc_fallback_active():\n            return await self._async_uc_set_usercode(credential.slot, pin)\n        try:\n            await lock_helpers.async_set_credential(",
   "new_string": "        Definitive rejections (duplicate, occupied, manufacturer rules,\n        validation) still surface as typed errors.\n        \"\"\"\n        try:\n            await lock_helpers.async_set_credential("
 }
@@ -1882,7 +1882,7 @@ id: toolu_01RribPMfhr5eCEm59Qy7U1r
 tool_result
 id: toolu_01RribPMfhr5eCEm59Qy7U1r
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1896,7 +1896,7 @@ id: toolu_01S3qy4UpwFuohzqP2f6iTaa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        Delete the credential addressed by ref.\n\n        In UC-fallback mode the clear goes through the legacy User Code\n        CC utilities (``clear_usercode``); otherwise through HA's\n        ``lock_helpers.async_delete_credential``.\n        \"\"\"\n        if await self._async_uc_fallback_active():\n            return await self._async_uc_clear_usercode(ref.slot)\n        try:\n            await lock_helpers.async_delete_credential(",
   "new_string": "        Delete the credential addressed by ref.\n\n        The clear goes through HA's ``lock_helpers.async_delete_credential``.\n        \"\"\"\n        try:\n            await lock_helpers.async_delete_credential("
 }
@@ -1907,7 +1907,7 @@ id: toolu_01S3qy4UpwFuohzqP2f6iTaa
 tool_result
 id: toolu_01S3qy4UpwFuohzqP2f6iTaa
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1920,7 +1920,7 @@ tool_use Read
 id: toolu_011GDF9WKN52tMzwq2hrFNXh
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 528,
   "limit": 75
 }
@@ -1982,7 +1982,7 @@ id: toolu_01HuWWB3zm2rh5LX8CQ3mpR5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "    @callback\n    def setup_push_subscription(self) -> None:\n        \"\"\"\n        Subscribe to credential change events.\n\n        In unified mode the driver emits ``credential added/modified/\n        deleted`` node events. In UC-fallback mode those events never\n        fire (the driver only emits them from its own unified API\n        methods, which the fallback bypasses), so we subscribe to raw\n        ``value updated`` events for the User Code CC values instead.\n        When the mode is not yet known (capability probe hasn't run),\n        subscribe to both; the handlers are self-filtering and pushes\n        are idempotent.\n        \"\"\"\n        if self._push_unsubs:\n            return\n\n        ready, reason = self._get_client_state()\n        if not ready:\n            raise LockDisconnected(reason)\n\n        subscriptions: list[tuple[str, Callable[[dict[str, Any]], None]]] = []\n        if self._uc_fallback is not False:\n            subscriptions.append((\"value updated\", self._on_uc_value_updated))\n        if not self._uc_fallback:\n            subscriptions.extend(\n                (\n                    (\"credential added\", self._on_credential_changed),\n                    (\"credential modified\", self._on_credential_changed),\n                    (\"credential deleted\", self._on_credential_deleted),\n                )\n            )\n\n        try:\n            for name, handler in subscriptions:\n                self._register_push_unsub(self.node.on(name, handler))\n        except ValueError as err:\n            self._clear_push_unsubs()\n            raise LockDisconnected(f\"node not ready: {err}\") from err",
   "new_string": "    @callback\n    def setup_push_subscription(self) -> None:\n        \"\"\"\n        Subscribe to credential change events.\n\n        The driver emits ``credential added/modified/deleted`` node events\n        from its unified ``access_control`` API for both User Code CC and\n        User Credential CC locks. The handlers are self-filtering and\n        pushes are idempotent.\n […]
 
@@ -1991,7 +1991,7 @@ id: toolu_01HuWWB3zm2rh5LX8CQ3mpR5
 tool_result
 id: toolu_01HuWWB3zm2rh5LX8CQ3mpR5
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2004,7 +2004,7 @@ tool_use Read
 id: toolu_015guFKyhNo5KBeUDgfHEtdY
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 604,
   "limit": 40
 }
@@ -2064,7 +2064,7 @@ id: toolu_01Nc7utMLS1hR8axFnDdtCM8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        params = evt.data.get(ATTR_PARAMETERS) or {}\n        code_slot = params.get(\"userId\", 0)\n\n        if self._uc_handle_duplicate_notification(evt, code_slot):\n            return\n\n        self.async_fire_code_slot_event(",
   "new_string": "        params = evt.data.get(ATTR_PARAMETERS) or {}\n        code_slot = params.get(\"userId\", 0)\n\n        self.async_fire_code_slot_event("
 }
@@ -2075,7 +2075,7 @@ id: toolu_01Nc7utMLS1hR8axFnDdtCM8
 tool_result
 id: toolu_01Nc7utMLS1hR8axFnDdtCM8
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2088,7 +2088,7 @@ tool_use Read
 id: toolu_01XovxvbWCHYdEZemMKMXv68
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 682,
   "limit": 22
 }
@@ -2124,7 +2124,7 @@ id: toolu_01P8r71nFQr2QErhG9a4Nfcn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        \"\"\"Re-read users AND credentials fresh from the device, then project to slots.\"\"\"\n        if await self._async_uc_fallback_active():\n            await self._async_refresh_usercode_cache()\n            return await self.async_get_usercodes()\n        try:\n            await self.node.access_control.get_users()",
   "new_string": "        \"\"\"Re-read users AND credentials fresh from the device, then project to slots.\"\"\"\n        try:\n            await self.node.access_control.get_users()"
 }
@@ -2135,7 +2135,7 @@ id: toolu_01P8r71nFQr2QErhG9a4Nfcn
 tool_result
 id: toolu_01P8r71nFQr2QErhG9a4Nfcn
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2148,7 +2148,7 @@ tool_use Bash
 id: toolu_01NW97GWbx2u1NFWY9WQ8XXv
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== Remaining _uc / fallback refs in zwave_js.py (should be empty) ===\"\ngrep -n \"_uc_\\|_uc_fallback\\|_zwave_js_uc\\|_set_in_progress\\|_async_refresh_usercode\\|_async_uc\\|ZWaveJSUserCodeFallback\" custom_components/lock_code_manager/providers/zwave_js.py || echo \"  (none)\"\necho \"\"\ngit rm custom_components/lock_code_manager/providers/_zwave_js_uc.py tests/providers/zwave_js/test_uc_fallback.py 2>&1 | tail -3",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== Remaining _uc / fallback refs in zwave_js.py (should be empty) ===\"\ngrep -n \"_uc_\\|_uc_fallback\\|_zwave_js_uc\\|_set_in_progress\\|_async_refresh_usercode\\|_async_uc\\|ZWaveJSUserCodeFallback\" custom_components/lock_code_manager/providers/zwave_js.py || echo \"  (none)\"\necho \"\"\ngit rm custom_components/lock_code_manager/providers/_zwave_js_uc.py tests/providers/zwave_js/test_uc_fallback.py 2>&1 | tail -3",
   "description": "Verify clean and delete fallback files"
 }
 ```
@@ -2175,7 +2175,7 @@ tool_use Read
 id: toolu_01KXog8MqG9vDcxSXedXDKPM
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
   "offset": 470,
   "limit": 120
 }
@@ -2242,7 +2242,7 @@ tool_use Bash
 id: toolu_01WtfUQAu7NC3LKbm3ZxbgWN
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== total lines ===\"\nwc -l tests/providers/zwave_js/conftest.py\necho \"=== usages of NotFoundError / Generator / get_usercode imports outside the removed block ===\"\ngrep -n \"NotFoundError\\|Generator\\|get_usercode\\|import\" tests/providers/zwave_js/conftest.py | head -40",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== total lines ===\"\nwc -l tests/providers/zwave_js/conftest.py\necho \"=== usages of NotFoundError / Generator / get_usercode imports outside the removed block ===\"\ngrep -n \"NotFoundError\\|Generator\\|get_usercode\\|import\" tests/providers/zwave_js/conftest.py | head -40",
   "description": "Check conftest tail and imports"
 }
 ```
@@ -2300,15 +2300,15 @@ id: toolu_013X6AZoyw6ZnNTbH9UAsTNV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
-  "old_string": "    with patch.object(type(lock_schlage_be469), \"access_control\", ac):\n        yield ac\n\n\ndef uc_only_caps_response() -> dict:\n    \"\"\"Return a degenerate credential-capabilities response (issue #1251).\n\n    This is what ``lock_helpers.async_get_credential_capabilities`` returns\n    when the unified ``access_control`` API has no usable PIN data for the\n    lock: the helper hardcodes ``supports_user_management=True`` but the\n    PIN credential type is missing (or advertises ``num_slots=0``).\n    \"\"\"\n    return {\n        \"supports_user_management\": True,\n        \"max_users\": 0,\n        \"supported_user_types\": [],\n        \"max_user_name_length\": 0,\n        \"supported_credential_rules\": [],\n        \"supported_credential_types\": {},\n    }\n\n\ndef uc_slot_walk(\n    num_slots: int, occupied: dict[int, str | None] | None = None\n) -> list[dict]:\n    \"\"\"Build a fake ``get_usercodes`` value-DB walk.\n\n    ``occupied`` maps slot -> usercode (None for an occupied slot whose\n    code is not cached); all other slots are returned as not in use.\n    \"\"\"\n    occupied = occupied or {}\n    return [\n        {\n            \"code_slot\": slot,\n            \"name\": f\"Slot {slot}\",\n            \"in_use\": slot in occupied,\n            \"usercode\": occupied.get(slot),\n        }\n        for slot in range(1, num_slots + 1)\n    ]\n\n\n@pytest.fixture\ndef mock_uc_utils() -> Generator[dict]:\n    \"\"\"Patch the User Code CC utilities the UC-fallback path calls.\n\n    ``get_usercode`` defaults to raising ``NotFoundError`` (no cached\n    value), which the provider treats as \"proceed with the write\".\n    \"\"\"\n    mocks = {\n        \"get_usercodes\": MagicMock(return_value=[]),\n        \"get_usercode\": MagicMock(side_effect=NotFoundError(\"no cached value\")),\n        \"get_usercode_from_node\": AsyncMock(),\n        \"set_usercode\": AsyncMock(return_value=None),\n        \"clear_usercode\": AsyncMock(return_value=None),\n    }\n    with patch.multiple(\n        \"custom_components.lock_code_manager.providers._zwave_js_uc\", **mocks\n […]
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
+  "old_string": "    with patch.object(type(lock_schlage_be469), \"access_control\", ac):\n        yield ac\n\n\ndef uc_only_caps_response() -> dict:\n    \"\"\"Return a degenerate credential-capabilities response (issue #1251).\n\n    This is what ``lock_helpers.async_get_credential_capabilities`` returns\n    when the unified ``access_control`` API has no usable PIN data for the\n    lock: the helper hardcodes ``supports_user_management=True`` but the\n    PIN credential type is missing (or advertises ``num_slots=0``).\n    \"\"\"\n    return {\n        \"supports_user_management\": True,\n        \"max_users\": 0,\n        \"supported_user_types\": [],\n        \"max_user_name_length\": 0,\n        \"supported_credential_rules\": [],\n        \"supported_credential_types\": {},\n    }\n\n\ndef uc_slot_walk(\n    num_slots: int, occupied: dict[int, str | None] | None = None\n) -> list[dict]:\n    \"\"\"Build a fake ``get_usercodes`` value-DB walk.\n\n    ``occupied`` maps slot -> usercode (None for an occupied slot whose\n    code is not cached); all other slots are returned as not in use.\n    \"\"\"\n    occupied = occupied or {}\n    return [\n        {\n            \"code_slot\": slot,\n            \"name\": f\"Slot {slot}\",\n            \"in_use\": slot in occupied,\n            \"usercode\": occupied.get(slot),\n        }\n        for slot in range(1, num_slots + 1)\n    ]\n\n\<REDACTED_EMAIL>\ndef mock_uc_utils() -> Generator[dict]:\n    \"\"\"Patch the User Code CC utilities the UC-fallback path calls.\n\n    ``get_usercode`` defaults to raising ``NotFoundError`` (no cached\n    value), which the provider treats as \"proceed with the write\".\n    \"\"\"\n    mocks = {\n        \"get_usercodes\": MagicMock(return_value=[]),\n        \"get_usercode\": MagicMock(side_effect=NotFoundError(\"no cached value\")),\n        \"get_usercode_from_node\": AsyncMock(),\n        \"set_usercode\": AsyncMock(return_value=None),\n        \"clear_usercode\": AsyncMock(return_value=None),\n    }\n    with patch.multiple(\n        \"custom_components.lock_code_manager.providers._zwave_js_uc\", **mocks\n […]
 
 > TOOL
 
 tool_result
 id: toolu_013X6AZoyw6ZnNTbH9UAsTNV
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2322,7 +2322,7 @@ id: toolu_01JEx9mYqaygdAQLfvEUCdDS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
   "old_string": "from zwave_js_server.exceptions import NotFoundError\nfrom zwave_js_server.model.driver import Driver",
   "new_string": "from zwave_js_server.model.driver import Driver"
 }
@@ -2333,7 +2333,7 @@ id: toolu_01JEx9mYqaygdAQLfvEUCdDS
 tool_result
 id: toolu_01JEx9mYqaygdAQLfvEUCdDS
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2346,7 +2346,7 @@ tool_use Bash
 id: toolu_01WDja9TWJGcRuCdn3TcVj9L
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ntimeout 400 .venv/bin/python -m pytest tests/providers/zwave_js/ -q 2>&1 | tail -25",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ntimeout 400 .venv/bin/python -m pytest tests/providers/zwave_js/ -q 2>&1 | tail -25",
   "description": "Run zwave_js provider tests after removal"
 }
 ```
@@ -2371,7 +2371,7 @@ tool_use Bash
 id: toolu_01XoWtVQmruGcjCto4Sz2HNy
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== lingering references to removed symbols (code + tests + docs) ===\"\ngrep -rn \"_zwave_js_uc\\|ZWaveJSUserCodeFallback\\|uc_fallback\\|UC-fallback\\|UC fallback\\|_uc_slot_state\\|mock_uc_utils\\|uc_slot_walk\\|uc_only_caps\" \\\n  custom_components/ tests/ AGENTS.md CLAUDE.md README.md 2>/dev/null || echo \"  (none)\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== lingering references to removed symbols (code + tests + docs) ===\"\ngrep -rn \"_zwave_js_uc\\|ZWaveJSUserCodeFallback\\|uc_fallback\\|UC-fallback\\|UC fallback\\|_uc_slot_state\\|mock_uc_utils\\|uc_slot_walk\\|uc_only_caps\" \\\n  custom_components/ tests/ AGENTS.md CLAUDE.md README.md 2>/dev/null || echo \"  (none)\"",
   "description": "Sweep for lingering fallback references"
 }
 ```
@@ -2392,7 +2392,7 @@ tool_use Read
 id: toolu_01FX2aRmAH6MuUAXC9PKBnmN
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "offset": 492,
   "limit": 22
 }
@@ -2434,7 +2434,7 @@ id: toolu_015rAeXocYCjb38yhRnXdAur
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py",
   "old_string": "    \"\"\"The unified read projection maps masked/withheld codes to unreadable.\n\n    Mirrors the UC fallback's _uc_slot_state so a masked code read through\n    the unified access-control path is not mistaken for a readable PIN\n    (issue #1251 working-capability variant).\n    \"\"\"",
   "new_string": "    \"\"\"The unified read projection maps masked/withheld codes to unreadable.\n\n    A masked code read through the unified access-control path must not be\n    mistaken for a readable PIN (issue #1251 working-capability variant).\n    \"\"\""
 }
@@ -2445,7 +2445,7 @@ id: toolu_015rAeXocYCjb38yhRnXdAur
 tool_result
 id: toolu_015rAeXocYCjb38yhRnXdAur
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/test_provider.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2454,7 +2454,7 @@ tool_use Read
 id: toolu_01GRcXneJH2DZs7UmQkMceSV
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
   "offset": 455,
   "limit": 22
 }
@@ -2496,7 +2496,7 @@ id: toolu_01CTqNcmQ9E7C1eMN6p3PnvP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py",
   "old_string": "    The provider's unified-mode reads go through this object; its write\n    primitives are mocked too so UC-fallback tests can assert they are\n    NOT called (UC mode must route through the User Code CC utilities\n    instead -- see issue #1251).\n    \"\"\"",
   "new_string": "    The provider's reads and writes both go through this object, since\n    every lock routes through the unified access-control API.\n    \"\"\""
 }
@@ -2507,7 +2507,7 @@ id: toolu_01CTqNcmQ9E7C1eMN6p3PnvP
 tool_result
 id: toolu_01CTqNcmQ9E7C1eMN6p3PnvP
 ```
-The file /Users/raman/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/tests/providers/zwave_js/conftest.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2520,7 +2520,7 @@ tool_use Read
 id: toolu_01Th97aKna8rc961wzLFncyC
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/requirements_dev.txt"
+  "file_path": "/home/<USER>/projects/lock_code_manager/requirements_dev.txt"
 }
 ```
 
@@ -2558,7 +2558,7 @@ id: toolu_01WE5MkeqZ79ouiTZzvy68uP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/requirements_dev.txt",
+  "file_path": "/home/<USER>/projects/lock_code_manager/requirements_dev.txt",
   "old_string": "homeassistant>=2026.6.4",
   "new_string": "homeassistant>=2026.7.0b0"
 }
@@ -2569,7 +2569,7 @@ id: toolu_01WE5MkeqZ79ouiTZzvy68uP
 tool_result
 id: toolu_01WE5MkeqZ79ouiTZzvy68uP
 ```
-The file /Users/raman/projects/lock_code_manager/requirements_dev.txt has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/requirements_dev.txt has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2579,7 +2579,7 @@ id: toolu_01Bx2yVvg7iSDXrZ8rDLZk61
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/hacs.json",
+  "file_path": "/home/<USER>/projects/lock_code_manager/hacs.json",
   "old_string": "  \"homeassistant\": \"2026.6.0\",",
   "new_string": "  \"homeassistant\": \"2026.7.0b0\","
 }
@@ -2599,7 +2599,7 @@ tool_use Read
 id: toolu_01TYop3KDVxYWXDdc6ueALET
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/hacs.json"
+  "file_path": "/home/<USER>/projects/lock_code_manager/hacs.json"
 }
 ```
 
@@ -2625,7 +2625,7 @@ id: toolu_0111h6JsYmbFVVbsaDgHcqvm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/hacs.json",
+  "file_path": "/home/<USER>/projects/lock_code_manager/hacs.json",
   "old_string": "  \"homeassistant\": \"2026.6.0\",",
   "new_string": "  \"homeassistant\": \"2026.7.0b0\","
 }
@@ -2636,7 +2636,7 @@ id: toolu_0111h6JsYmbFVVbsaDgHcqvm
 tool_result
 id: toolu_0111h6JsYmbFVVbsaDgHcqvm
 ```
-The file /Users/raman/projects/lock_code_manager/hacs.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/hacs.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2649,7 +2649,7 @@ tool_use Bash
 id: toolu_015GsL33mtg3DAP7a3Ks9HK5
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== other 2026.6 references ===\"\ngrep -rn \"2026\\.6\\.\\|2026\\.6 \" README.md AGENTS.md .github/ docs/ 2>/dev/null | grep -iv changelog | head\necho \"\"\necho \"=== compile zwave_js.py & check unused imports via pyflakes ===\"\n.venv/bin/python -m pyflakes custom_components/lock_code_manager/providers/zwave_js.py tests/providers/zwave_js/conftest.py tests/providers/zwave_js/test_provider.py 2>&1 | head -20 || echo \"(pyflakes not available, trying py_compile)\"\n.venv/bin/python -c \"import ast,sys; [ast.parse(open(f).read(), f) for f in ['custom_components/lock_code_manager/providers/zwave_js.py']]; print('zwave_js.py parses OK')\"",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== other 2026.6 references ===\"\ngrep -rn \"2026\\.6\\.\\|2026\\.6 \" README.md AGENTS.md .github/ docs/ 2>/dev/null | grep -iv changelog | head\necho \"\"\necho \"=== compile zwave_js.py & check unused imports via pyflakes ===\"\n.venv/bin/python -m pyflakes custom_components/lock_code_manager/providers/zwave_js.py tests/providers/zwave_js/conftest.py tests/providers/zwave_js/test_provider.py 2>&1 | head -20 || echo \"(pyflakes not available, trying py_compile)\"\n.venv/bin/python -c \"import ast,sys; [ast.parse(open(f).read(), f) for f in ['custom_components/lock_code_manager/providers/zwave_js.py']]; print('zwave_js.py parses OK')\"",
   "description": "Check docs refs and unused imports"
 }
 ```
@@ -2663,7 +2663,7 @@ id: toolu_015GsL33mtg3DAP7a3Ks9HK5
 docs/issue-1251-fable-prompt.md:31:the new unified user/credential API HA added in 2026.6.x that exposes the
 
 === compile zwave_js.py & check unused imports via pyflakes ===
-/Users/raman/projects/lock_code_manager/.venv/bin/python: No module named pyflakes
+/home/<USER>/projects/lock_code_manager/.venv/bin/python: No module named pyflakes
 zwave_js.py parses OK
 ```
 
@@ -2677,7 +2677,7 @@ tool_use Bash
 id: toolu_014YfYNgxrBVk99Mk1xSdrH1
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit check-ignore docs/ >/dev/null && echo \"docs/ is gitignored (leave it)\"\necho \"=== ruff check on changed files ===\"\n.venv/bin/python -m ruff check custom_components/lock_code_manager/providers/zwave_js.py tests/providers/zwave_js/conftest.py tests/providers/zwave_js/test_provider.py 2>&1 | tail -30 || echo \"ruff not in venv; trying ruff on PATH\"; ruff check custom_components/lock_code_manager/providers/zwave_js.py 2>&1 | tail -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit check-ignore docs/ >/dev/null && echo \"docs/ is gitignored (leave it)\"\necho \"=== ruff check on changed files ===\"\n.venv/bin/python -m ruff check custom_components/lock_code_manager/providers/zwave_js.py tests/providers/zwave_js/conftest.py tests/providers/zwave_js/test_provider.py 2>&1 | tail -30 || echo \"ruff not in venv; trying ruff on PATH\"; ruff check custom_components/lock_code_manager/providers/zwave_js.py 2>&1 | tail -20",
   "description": "Run ruff on changed files"
 }
 ```
@@ -2703,7 +2703,7 @@ tool_use Bash
 id: toolu_01WWKUMAovgEiAPx8KdbBxfx
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ntimeout 500 .venv/bin/python -m pytest tests/ -q 2>&1 | tail -20",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ntimeout 500 .venv/bin/python -m pytest tests/ -q 2>&1 | tail -20",
   "description": "Run full test suite"
 }
 ```
@@ -2728,7 +2728,7 @@ id: toolu_01WWKUMAovgEiAPx8KdbBxfx
 .......                                                                  [100%]
 =============================== warnings summary ===============================
 tests/providers/zha/test_provider.py: 172 warnings
-  /Users/raman/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
+  /home/<USER>/projects/lock_code_manager/.venv/lib/python3.14/site-packages/homeassistant/components/usb/utils.py:39: DeprecationWarning: `description` is deprecated, use `product` instead
     description=port.description,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
@@ -2747,7 +2747,7 @@ tool_use Bash
 id: toolu_01T3ThhVd3izdgqV68YcW2YY
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== workaround / fixed-bug markers across zwave_js + base ===\"\ngrep -rn \"#1251\\|#1257\\|#8873\\|#8879\\|#8884\\|#8866\\|tolerate\\|workaround\\|ERROR_UNKNOWN\\|credential_rejected_unknown\\|OPTIMISTIC\\|non-fatal\\|transient\\|masked\\|withheld\\|obfuscat\" \\\n  custom_components/lock_code_manager/providers/zwave_js.py \\\n  custom_components/lock_code_manager/providers/_base.py 2>/dev/null",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== workaround / fixed-bug markers across zwave_js + base ===\"\ngrep -rn \"#1251\\|#1257\\|#8873\\|#8879\\|#8884\\|#8866\\|tolerate\\|workaround\\|ERROR_UNKNOWN\\|credential_rejected_unknown\\|OPTIMISTIC\\|non-fatal\\|transient\\|masked\\|withheld\\|obfuscat\" \\\n  custom_components/lock_code_manager/providers/zwave_js.py \\\n  custom_components/lock_code_manager/providers/_base.py 2>/dev/null",
   "description": "Inventory workaround markers"
 }
 ```
@@ -2789,7 +2789,7 @@ tool_use Bash
 id: toolu_01Qd6cYRhPVB2F7RmTRVy43T
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\necho \"=== broad workaround markers in zwave_js.py ===\"\ngrep -n \"FIXME\\|HACK\\|XXX\\|driver bug\\|upstream\\|until.*fix\\|once.*fix\\|pre-15\\|15\\.24\\|work around\\|defensive\" custom_components/lock_code_manager/providers/zwave_js.py\necho \"\"\necho \"=== PRs referencing #1251 (what workarounds were added) ===\"\ngh pr list --state merged --search \"1251 in:title\" --limit 20 --json number,title 2>/dev/null\necho \"\"\necho \"=== git log: commits touching zwave_js.py mentioning workaround/tolerate/#1251 ===\"\ngit log --oneline -15 -- custom_components/lock_code_manager/providers/zwave_js.py | head",
+  "command": "cd /home/<USER>/projects/lock_code_manager\necho \"=== broad workaround markers in zwave_js.py ===\"\ngrep -n \"FIXME\\|HACK\\|XXX\\|driver bug\\|upstream\\|until.*fix\\|once.*fix\\|pre-15\\|15\\.24\\|work around\\|defensive\" custom_components/lock_code_manager/providers/zwave_js.py\necho \"\"\necho \"=== PRs referencing #1251 (what workarounds were added) ===\"\ngh pr list --state merged --search \"1251 in:title\" --limit 20 --json number,title 2>/dev/null\necho \"\"\necho \"=== git log: commits touching zwave_js.py mentioning workaround/tolerate/#1251 ===\"\ngit log --oneline -15 -- custom_components/lock_code_manager/providers/zwave_js.py | head",
   "description": "Broad workaround sweep + PR history"
 }
 ```
@@ -2828,7 +2828,7 @@ tool_use Read
 id: toolu_01WywfsDqANBWvsiXvSsrPUR
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "offset": 437,
   "limit": 52
 }
@@ -2894,7 +2894,7 @@ id: toolu_01HV76nSTXnXp6xASEjKy8QX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "        A driver ``ERROR_UNKNOWN`` (HA key ``credential_rejected_unknown``)\n        is treated as a COMPLETED set rather than a rejection: the driver\n        returns it when its post-write verification can't confirm the\n        code, which notably happens for locks that report the user code\n        back masked/withheld -- there the write actually succeeded\n        (``userIdStatus`` -> Enabled). Reconciliation (the sync manager's\n        last-set tracking + the masked-as-unreadable read-back) verifies\n        it, instead of permanently disabling an accepted write (#1251).\n        Definitive rejections (duplicate, occupied, manufacturer rules,\n        validation) still surface as typed errors.",
   "new_string": "        A driver ``ERROR_UNKNOWN`` (HA key ``credential_rejected_unknown``)\n        is treated as a COMPLETED-but-unconfirmed set rather than a\n        rejection: the driver returns it when its post-write verification\n        can't confirm the code, which happens for genuinely write-only or\n        masked/withheld locks -- there the write actually succeeded\n        (``userIdStatus`` -> Enabled). The seam's verified-credential\n        lifecycle records it pending and reconciles it (last-set tracking\n        + the masked-as-unreadable read-back) rather than permanently\n        disabling an accepted write. (zwave-js 15.24.3 fixed the narrower\n        User Code CC v1 case where code obfuscation produced this error\n        falsely; this branch now guards the remaining unverifiable writes.)\n        Definitive rejections (duplicate, occupied, manufacturer rules,\n        validation) still surface as typed errors." […]
 
@@ -2903,7 +2903,7 @@ id: toolu_01HV76nSTXnXp6xASEjKy8QX
 tool_result
 id: toolu_01HV76nSTXnXp6xASEjKy8QX
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2913,7 +2913,7 @@ id: toolu_012x6GVqPZrHSQxp5ypybrFy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py",
   "old_string": "                _LOGGER.debug(\n                    \"Lock %s slot %s: driver returned ERROR_UNKNOWN; treating \"\n                    \"as an optimistic (unconfirmed) set -- the lock may report \"\n                    \"the code back masked (see issue #1251). The seam records it \"\n                    \"pending until a credential event or hard refresh confirms \"\n                    \"it; otherwise it re-syncs: %s\",",
   "new_string": "                _LOGGER.debug(\n                    \"Lock %s slot %s: driver returned ERROR_UNKNOWN; treating \"\n                    \"as an optimistic (unconfirmed) set -- the lock is \"\n                    \"write-only or reports the code back masked. The seam \"\n                    \"records it pending until a credential event or hard \"\n                    \"refresh confirms it; otherwise it re-syncs: %s\","
 }
@@ -2924,7 +2924,7 @@ id: toolu_012x6GVqPZrHSQxp5ypybrFy
 tool_result
 id: toolu_012x6GVqPZrHSQxp5ypybrFy
 ```
-The file /Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/zwave_js.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2937,7 +2937,7 @@ tool_use Bash
 id: toolu_01Xe21nFPx4TsTfieGFT1JnR
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\n.venv/bin/python -m ruff check custom_components/lock_code_manager/providers/zwave_js.py 2>&1 | tail -3\ntimeout 200 .venv/bin/python -m pytest tests/providers/zwave_js/ -q 2>&1 | tail -5",
+  "command": "cd /home/<USER>/projects/lock_code_manager\n.venv/bin/python -m ruff check custom_components/lock_code_manager/providers/zwave_js.py 2>&1 | tail -3\ntimeout 200 .venv/bin/python -m pytest tests/providers/zwave_js/ -q 2>&1 | tail -5",
   "description": "Verify ruff + zwave_js tests after comment edits"
 }
 ```
@@ -2963,7 +2963,7 @@ tool_use Bash
 id: toolu_01Fb8JqAKF2uvAuEhzRFzgkU
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit add -A\ngit diff --cached --stat",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit add -A\ngit diff --cached --stat",
   "description": "Show staged diffstat"
 }
 ```
@@ -2994,7 +2994,7 @@ tool_use Bash
 id: toolu_01PbpuKiQszL886iBKhesAjD
 ```json
 {
-  "command": "cd /Users/raman/projects/lock_code_manager\ngit reset -q .codex-security/\ngit diff --cached --stat",
+  "command": "cd /home/<USER>/projects/lock_code_manager\ngit reset -q .codex-security/\ngit diff --cached --stat",
   "description": "Unstage codex-security artifact"
 }
 ```

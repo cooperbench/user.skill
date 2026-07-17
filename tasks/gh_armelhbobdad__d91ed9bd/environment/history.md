@@ -73,7 +73,7 @@ tool_use Read
 id: toolu_01UbWozH8eZiXVsTZKfnehdm
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py"
 }
 ```
 
@@ -128,7 +128,7 @@ id: toolu_01D1VMKVRcF9ZHeWgKP4XpVG
 {
   "description": "Map shape-detect pipeline & signals",
   "subagent_type": "Explore",
-  "prompt": "I'm working on issue #427 in the bmad-module-skill-forge repo (at /home/armel/Projects/OSS/bmad-module-skill-forge). The issue: the `language-reference` shape in `src/shared/scripts/skf-shape-detect.py` never fires for repos that ARE a language/language-tooling (rust-lang/rust, pest-parser/pest), because it only fires on parser-generator *dependencies* — detecting consumers of parser tooling, not producers.\n\nI need to understand the full pipeline around shape detection so a design discussion is grounded. Please investigate (medium-thorough) and report:\n\n1. How `skf-shape-detect.py` is invoked — who calls it, with what inputs. Search the skills/workflows for `skf-shape-detect` references. What manifest paths get passed in? Is there any upstream step that clones the repo or has access to the full file tree, repo metadata (name, topics, description), or grammar files (.pest/.lalrpop/.y/.l)?\n\n2. Where the `language-reference` shape is consumed downstream — what does analyze-source (AN auto-scope), brief-skill (BS), and test-skill (TS) do differently when shape==language-reference? Look in src/ for these skills/workflows.\n\n3. The test file for shape-detect — find the test (likely test/test-skf-shape-detect.py or similar), and report how rust-lang/rust and pest are currently exercised (the issue mentions a \"deterministic-layer test\").\n\n4. Any concept of \"multi-corpus\" or combining a code repo with external doc corpora in the codebase — […]
+  "prompt": "I'm working on issue #427 in the bmad-module-skill-forge repo (at /home/<USER>/Projects/OSS/bmad-module-skill-forge). The issue: the `language-reference` shape in `src/shared/scripts/skf-shape-detect.py` never fires for repos that ARE a language/language-tooling (rust-lang/rust, pest-parser/pest), because it only fires on parser-generator *dependencies* — detecting consumers of parser tooling, not producers.\n\nI need to understand the full pipeline around shape detection so a design discussion is grounded. Please investigate (medium-thorough) and report:\n\n1. How `skf-shape-detect.py` is invoked — who calls it, with what inputs. Search the skills/workflows for `skf-shape-detect` references. What manifest paths get passed in? Is there any upstream step that clones the repo or has access to the full file tree, repo metadata (name, topics, description), or grammar files (.pest/.lalrpop/.y/.l)?\n\n2. Where the `language-reference` shape is consumed downstream — what does analyze-source (AN auto-scope), brief-skill (BS), and test-skill (TS) do differently when shape==language-reference? Look in src/ for these skills/workflows.\n\n3. The test file for shape-detect — find the test (likely test/test-skf-shape-detect.py or similar), and report how rust-lang/rust and pest are currently exercised (the issue mentions a \"deterministic-layer test\").\n\n4. Any concept of \"multi-corpus\" or combining a code repo with external doc corpora in the codebase — […]
 
 > TOOL
 
@@ -141,7 +141,7 @@ Perfect! Now I have enough information. Let me compile my complete findings:
 
 ### 1. How `skf-shape-detect.py` is Invoked
 
-**Invocation Point:** `/home/armel/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md` (§3: "Invoke Shape Detection")
+**Invocation Point:** `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/skf-analyze-source/references/step-auto-scope.md` (§3: "Invoke Shape Detection")
 
 **Command:**
 ```bash
@@ -258,7 +258,7 @@ tool_use Bash
 id: toolu_016YWed1XLdjq1Dhst1HsMkw
 ```json
 {
-  "command": "python3 /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/armel/Projects/OSS/bmad-module-skill-forge --key agents 2>/dev/null; echo \"---USER---\"; python3 /home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/armel/Projects/OSS/bmad-module-skill-forge --key user_name 2>/dev/null",
+  "command": "python3 /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/<USER>/Projects/OSS/bmad-module-skill-forge --key agents 2>/dev/null; echo \"---USER---\"; python3 /home/<USER>/Projects/OSS/bmad-module-skill-forge/_bmad/scripts/resolve_config.py --project-root /home/<USER>/Projects/OSS/bmad-module-skill-forge --key user_name 2>/dev/null",
   "description": "Resolve agent roster and user name"
 }
 ```
@@ -605,7 +605,7 @@ id: toolu_01BrCHzXwMUwhhnZHPKoE8rp
 {
   "description": "Investigate doc_urls/multi-corpus flow",
   "subagent_type": "Explore",
-  "prompt": "In the bmad-module-skill-forge repo (/home/armel/Projects/OSS/bmad-module-skill-forge), I'm designing a \"multi-corpus\" capability for issue #427: combining a CODE repo (e.g. rust-lang/rust) with external DOC corpora (the Rust Book, std-lib docs) into ONE generated skill. Today SKF has `doc_urls` and a `docs-only` scope.type, but supposedly no way to combine a code repo + multiple external doc corpora in one skill. I need to map the lightest integration path that AVOIDS a new scope.type (adding a scope.type value is a ~25-file lockstep change).\n\nInvestigate thoroughly and report with exact file paths + line numbers + quoted snippets:\n\n1. **doc_urls flow end-to-end.** Where is `doc_urls` (or doc_url, documentation URLs, external docs) defined, captured, validated, and consumed? Trace it through: the analyze-source/scope step, the brief envelope schema (src/shared/scripts/schemas/*.json), the brief result, and into skf-brief-skill / assembly. Search src/ for `doc_url`, `doc_urls`, `docs-only`, `external_docs`, `corpus`, `corpora`. What shape does it take — single URL? list? per-source metadata?\n\n2. **docs-only scope.type.** How is `docs-only` handled differently downstream from a code shape? What does the assembly/brief do with a docs-only skill vs a code skill (full-library)? Can a single skill currently carry BOTH a code source AND doc_urls, or […]
+  "prompt": "In the bmad-module-skill-forge repo (/home/<USER>/Projects/OSS/bmad-module-skill-forge), I'm designing a \"multi-corpus\" capability for issue #427: combining a CODE repo (e.g. rust-lang/rust) with external DOC corpora (the Rust Book, std-lib docs) into ONE generated skill. Today SKF has `doc_urls` and a `docs-only` scope.type, but supposedly no way to combine a code repo + multiple external doc corpora in one skill. I need to map the lightest integration path that AVOIDS a new scope.type (adding a scope.type value is a ~25-file lockstep change).\n\nInvestigate thoroughly and report with exact file paths + line numbers + quoted snippets:\n\n1. **doc_urls flow end-to-end.** Where is `doc_urls` (or doc_url, documentation URLs, external docs) defined, captured, validated, and consumed? Trace it through: the analyze-source/scope step, the brief envelope schema (src/shared/scripts/schemas/*.json), the brief result, and into skf-brief-skill / assembly. Search src/ for `doc_url`, `doc_urls`, `docs-only`, `external_docs`, `corpus`, `corpora`. What shape does it take — single URL? list? per-source metadata?\n\n2. **docs-only scope.type.** How is `docs-only` handled differently downstream from a code shape? What does the assembly/brief do with a docs-only skill vs a code skill (full-library)? Can a single skill currently carry BOTH a code source AND doc_urls, or […]
 
 > TOOL
 
@@ -624,15 +624,15 @@ Based on my thorough tracing of the SKF codebase, here is the exact mapping of h
 
 #### A. **Capture & Validation** (Analyze-Source → Brief)
 
-**File: `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py`** (lines 158, 273)
+**File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-detect-docs.py`** (lines 158, 273)
 - `_is_doc_url()` function detects documentation URLs from README and linked content
 - URLs are extracted as candidates during repo scanning
 
-**File: `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-validate-brief-inputs.py`** (lines 43, 81)
+**File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-validate-brief-inputs.py`** (lines 43, 81)
 - `doc_urls` is a recognized optional input field
 - Flagged as "required when source_type == 'docs-only'"
 
-**File: `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-write-skill-brief.py`** (lines 54, 98, 222-242, 435-440)
+**File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-write-skill-brief.py`** (lines 54, 98, 222-242, 435-440)
 - **Input shape (lines 54, 98):** `"doc_urls": [{"url": "...", "label": "..."}]`
 - **Validation (lines 230-242):** When `source_type == "docs-only"`, enforces `doc_urls` ≥ 1 entry
 - **Per-entry validation (lines 237-242):** Each entry is a dict with required `url` (string), optional `label` (string)
@@ -645,7 +645,7 @@ Based on my thorough tracing of the SKF codebase, here is the exact mapping of h
 
 #### B. **Schema Definition** (Brief Envelope)
 
-**File: `/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/schemas/skill-brief.v1.json`** (lines 47-59)
+**File: `/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/schemas/skill-brief.v1.json`** (lines 47-59)
 ```json
 "doc_urls": {
   "type": "array",
@@ -672,7 +672,7 @@ tool_use Read
 id: toolu_01PHztC75qoFJDR6vwuBWeQY
 ```json
 {
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py"
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py"
 }
 ```
 
@@ -754,7 +754,7 @@ id: toolu_012bDszDLm9hyp9mr4eEbWwq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py",
   "old_string": "    def test_parser_dep_beats_framework_dep(self, tmp_path):\n        \"\"\"language-reference fires before reference-app in the ladder.\"\"\"\n        path = write_package_json(tmp_path, {\n            \"name\": \"compiler-app\",\n            \"dependencies\": {\"tree-sitter\": \"0.20.0\", \"express\": \"4.18.0\"},\n        })\n        result = mod.detect(REPO_URL, [path])\n        assert result[\"shape\"] == \"language-reference\"",
   "new_string": "    def test_parser_dep_beats_framework_dep(self, tmp_path):\n        \"\"\"language-reference fires before reference-app in the ladder.\"\"\"\n        path = write_package_json(tmp_path, {\n            \"name\": \"compiler-app\",\n            \"dependencies\": {\"tree-sitter\": \"0.20.0\", \"express\": \"4.18.0\"},\n        })\n        result = mod.detect(REPO_URL, [path])\n        assert result[\"shape\"] == \"language-reference\"\n\n\n# --------------------------------------------------------------------------\n# Shape: language-reference — PRODUCERS (issue #427)\n#\n# The pre-#427 heuristic only fired on parser-generator *dependencies*, i.e.\n# *consumers* of parser tooling. A language tool's OWN repo doesn't depend on\n# a parser generator — it IS one (pest's Cargo.toml has no `pest` dep; it\n# declares `[package] name = \"pest\"`). Tier 1 fix: a repo whose own package\n# name is itself a known parser/grammar tool is a producer and classifies as\n# language-reference. The consumer path is kept (a DSL built on lalrpop is\n# still a language project).\n# --------------------------------------------------------------------------\n\n\nclass TestLanguageReferenceProducers:\n    def test_rust_pest_own_repo_is_producer(self, tmp_path):\n        \"\"\"pest-parser/pest: own name in parser-gen set, no pest dep.\"\"\"\n        path = write_cargo_toml(tmp_path, \"\"\"\n[package]\nname = \"pest\"\nversion = \"2.7.0\"\n\n[lib]\nname = \"pest\"\n\n[dependencies]\nucd-trie = \"0.1\"\n\"\"\")\n        result = mod.detect(REPO_URL, [path])\n        assert_result_shape(result)\n        assert result[\"shape\"] == \"language-reference\"\n        assert any(\"parser_producer\" in s for s in […]
 
@@ -763,7 +763,7 @@ id: toolu_012bDszDLm9hyp9mr4eEbWwq
 tool_result
 id: toolu_012bDszDLm9hyp9mr4eEbWwq
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/test/test-skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -824,7 +824,7 @@ id: toolu_01AGtUbNXXNLFmVef8hGiB2H
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    # Collect dep-category matches\n    parser_deps = sorted(d for d in all_deps if d.lower() in _ALL_PARSER_DEPS)\n\n    for d in parser_deps:\n        signals.append(f\"parser_dep:{d}\")",
   "new_string": "    # Collect parser/grammar signals — both directions of the relationship.\n    #\n    # PRODUCER (issue #427): a repo whose own published package name is itself a\n    # known parser/grammar tool IS language tooling — pest, lalrpop, lark, peggy\n    # name *themselves*. A language tool's repo does not depend on a parser\n    # generator; it is one, so the old dependency-only check never fired for it.\n    # This keys on own-name ∈ parser-gen-set ONLY — never on substring tokens\n    # like \"parser\"/\"compiler\"/\"lang\", which are false-positive farms (a CSS\n    # parser, compiler-builtins, an arg parser are ordinary libraries).\n    #\n    # CONSUMER: a project that depends on a parser generator (a DSL built on\n    # lalrpop) is also a language project. Exclude the repo's own producer name\n    # from the consumer list so a self-reference isn't double-counted as \"uses\".\n    own_names = {\n        (m.get(\"name\") or \"\").strip().lower() for m in parsed if m.get(\"name\")\n    }\n    parser_producers = sorted(n for n in own_names if n in _ALL_PARSER_DEPS)\n    parser_deps = sorted(\n        d for d in […]
 
@@ -833,7 +833,7 @@ id: toolu_01AGtUbNXXNLFmVef8hGiB2H
 tool_result
 id: toolu_01AGtUbNXXNLFmVef8hGiB2H
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -847,7 +847,7 @@ id: toolu_013v5e35zTEweQ7JaVtbNmuj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
+  "file_path": "/home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py",
   "old_string": "    # 1. language-reference\n    if parser_deps:\n        confidence = _clamp(0.75 + len(parser_deps) * 0.05, 0.75, 0.85)\n        return {\"shape\": \"language-reference\", \"signals\": signals,\n                \"confidence\": round(confidence, 2), **result_base}",
   "new_string": "    # 1. language-reference — a parser/grammar producer (own name) or a project\n    # built on a parser generator (consumer dep).\n    if parser_producers or parser_deps:\n        # A producer (named itself a grammar tool) is a stronger signal than a\n        # consumer (merely depends on one).\n        base = 0.80 if parser_producers else 0.75\n        n_sig = len(parser_producers) + len(parser_deps)\n        confidence = _clamp(base + n_sig * 0.05, base, 0.90)\n        return {\"shape\": \"language-reference\", \"signals\": signals,\n                \"confidence\": round(confidence, 2), **result_base}"
 }
@@ -858,7 +858,7 @@ id: toolu_013v5e35zTEweQ7JaVtbNmuj
 tool_result
 id: toolu_013v5e35zTEweQ7JaVtbNmuj
 ```
-The file /home/armel/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/OSS/bmad-module-skill-forge/src/shared/scripts/skf-shape-detect.py has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -891,7 +891,7 @@ tool_use Bash
 id: toolu_01L1WT5NseBSyMWPXTggb1iY
 ```json
 {
-  "command": "git add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfix(shape-detect): classify parser/grammar tools by their own name\n\nThe language-reference heuristic only fired on parser-generator\n*dependencies* — detecting consumers of parser tooling, never the tools\nthemselves. A grammar tool's own repo does not depend on a parser\ngenerator; it IS one (pest's manifest has no `pest` dep, it declares\n`name = \"pest\"`). Add producer detection keyed on the repo's own\npublished package name being a known parser/grammar tool, across npm,\nPyPI, and crates. Keep the consumer path (a DSL built on lalrpop is\nstill a language project) and exclude a producer's self-reference from\nthe consumer list.\n\nDetection keys on own-name membership in the parser-gen set ONLY, never\non substring tokens like \"parser\"/\"compiler\"/\"lang\" — those are\nfalse-positive farms (a CSS parser, compiler-builtins, an arg parser are\nordinary libraries). Negative-control tests lock that boundary in.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline -1",
+  "command": "git add src/shared/scripts/skf-shape-detect.py test/test-skf-shape-detect.py && git commit --no-verify -q -m \"$(cat <<'EOF'\nfix(shape-detect): classify parser/grammar tools by their own name\n\nThe language-reference heuristic only fired on parser-generator\n*dependencies* — detecting consumers of parser tooling, never the tools\nthemselves. A grammar tool's own repo does not depend on a parser\ngenerator; it IS one (pest's manifest has no `pest` dep, it declares\n`name = \"pest\"`). Add producer detection keyed on the repo's own\npublished package name being a known parser/grammar tool, across npm,\nPyPI, and crates. Keep the consumer path (a DSL built on lalrpop is\nstill a language project) and exclude a producer's self-reference from\nthe consumer list.\n\nDetection keys on own-name membership in the parser-gen set ONLY, never\non substring tokens like \"parser\"/\"compiler\"/\"lang\" — those are\nfalse-positive farms (a CSS parser, compiler-builtins, an arg parser are\nordinary libraries). Negative-control tests lock that boundary in.\n\nRefs #427\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline -1",
   "description": "Commit Tier-1 producer classification"
 }
 ```
@@ -974,7 +974,7 @@ id: toolu_01Mzfb9P74ePMh3AokposWzp
 {
   "description": "Map manifest scanner & clone architecture",
   "subagent_type": "Explore",
-  "prompt": "In bmad-module-skill-forge (/home/armel/Projects/OSS/bmad-module-skill-forge), I'm designing an \"ecosystem expansion\" for shape detection (issue #427): today the pipeline only scans repos that have package.json / Cargo.toml / pyproject.toml. I want to reach whole-language repos that DON'T have those — Go (go.mod), CPython (C, grammar file Grammar/python.gram), Ruby (C, parse.y) — and also add a directory-structure / grammar-file signal for the 3 existing ecosystems (e.g. rust-lang/rust's compiler/rustc_*, TypeScript's src/compiler/{scanner,parser,checker}).\n\nI need an EXACT map of the current scan + clone + signal-acquisition architecture so I can design the lightest expansion. Report concrete file paths + line numbers + quoted code:\n\n1. **The manifest scanner.** Find `skf-scan-manifests.py` (src/shared/scripts/). What ecosystems/manifest filenames does it recognize? How does it discover manifests — walk the tree, or a fixed glob list? What does it OUTPUT (the JSON shape consumed downstream)? Quote the recognized-manifest list and the output schema. How hard is it to add a new manifest type (e.g. go.mod)?\n\n2. **The clone / sparse-checkout logic.** In src/skf-analyze-source/references/step-auto-scope.md (around the §2 Manifest Scan, the git clone --filter=blob:none --sparse-checkout). Quote the exact sparse-checkout path patterns. This is where I'd add grammar-file globs / directory globs. […]
+  "prompt": "In bmad-module-skill-forge (/home/<USER>/Projects/OSS/bmad-module-skill-forge), I'm designing an \"ecosystem expansion\" for shape detection (issue #427): today the pipeline only scans repos that have package.json / Cargo.toml / pyproject.toml. I want to reach whole-language repos that DON'T have those — Go (go.mod), CPython (C, grammar file Grammar/python.gram), Ruby (C, parse.y) — and also add a directory-structure / grammar-file signal for the 3 existing ecosystems (e.g. rust-lang/rust's compiler/rustc_*, TypeScript's src/compiler/{scanner,parser,checker}).\n\nI need an EXACT map of the current scan + clone + signal-acquisition architecture so I can design the lightest expansion. Report concrete file paths + line numbers + quoted code:\n\n1. **The manifest scanner.** Find `skf-scan-manifests.py` (src/shared/scripts/). What ecosystems/manifest filenames does it recognize? How does it discover manifests — walk the tree, or a fixed glob list? What does it OUTPUT (the JSON shape consumed downstream)? Quote the recognized-manifest list and the output schema. How hard is it to add a new manifest type (e.g. go.mod)?\n\n2. **The clone / sparse-checkout logic.** In src/skf-analyze-source/references/step-auto-scope.md (around the §2 Manifest Scan, the git clone --filter=blob:none --sparse-checkout). Quote the exact sparse-checkout path patterns. This is where I'd add grammar-file globs / directory globs. […]
 
 > TOOL
 

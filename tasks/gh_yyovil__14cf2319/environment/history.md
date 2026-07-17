@@ -1,6 +1,6 @@
 > SYSTEM
 
-# AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork
+# AGENTS.md instructions for /home/<USER>/Projects/yyork
 
 <INSTRUCTIONS>
 General instructions: follow these all the time.
@@ -15,11 +15,11 @@ General instructions: follow these all the time.
 
 </INSTRUCTIONS>
 <environment_context>
-  <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd>
+  <cwd>/home/<USER>/Projects/yyork</cwd>
   <shell>zsh</shell>
   <current_date>2026-06-09</current_date>
   <timezone>Asia/Kolkata</timezone>
-  <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+  <filesystem><workspace_roots><root>/home/<USER>/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
 </environment_context>
 
 > DEVELOPER
@@ -36,8 +36,8 @@ tool_use exec_command
 id: call_rykt5cNXs9kZDWmhP6k163Ah
 ```json
 {
-  "cmd": "rg -n \"IAB|in-app browser|browser|annotation|annotations|user message|send.*agent|Browser\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"IAB|in-app browser|browser|annotation|annotations|user message|send.*agent|Browser\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -50,7 +50,7 @@ id: call_QQWFOBsZYo9lUgOhdVEksJHs
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -63,7 +63,7 @@ id: call_JPSpaEsfsSY5PlS4NCG5tyQl
 ```json
 {
   "cmd": "rg --files",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -81,11 +81,11 @@ Original token count: 3735
 Output:
 2:scope: Use for recent `yyork` dogfooding in the browser dashboard and local worktrees: Files/Review behavior, hook-review context, file-browser/layout changes, session-scoped diff rendering, Zellij layout/statusline validation, recap requests, merge-before-wipe semantics, and terminal gap measurement under disk pressure.
 5:## Task 1: Files tab cleanup, file-tree/sidebar layout changes, Git-filtered file-browser behavior, and merge-before-wipe semantics [chronicle memory]
-40:- extensions/chronicle/resources/2026-06-07T22-27-00-EIBj-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T22-27-00-EIBj-10min-memory-summary.md, updated_at=2026-06-07T22:27:00+00:00, thread_id=None, statusline-difference explanation tying browser attach behavior to managed Zellij config) [chronicle memory]
+40:- extensions/chronicle/resources/2026-06-07T22-27-00-EIBj-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T22-27-00-EIBj-10min-memory-summary.md, updated_at=2026-06-07T22:27:00+00:00, thread_id=None, statusline-difference explanation tying browser attach behavior to managed Zellij config) [chronicle memory]
 62:## Task 5: File-browser rendering through `CodeView`, symlinked-directory handling, and scroll verification [chronicle memory]
-66:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, file-browser rendering, symlinked-directory fix, and in-app wheel-scroll verification) [chronicle memory]
+66:- extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T21-57-00-xkzZ-10min-memory-summary.md, updated_at=2026-06-07T21:57:00+00:00, thread_id=None, file-browser rendering, symlinked-directory fix, and in-app wheel-scroll verification) [chronicle memory]
 83:## Task 7: Native Zellij statusline verification / stay idle so the browser terminal can show session chrome
-87:- rollout_summaries/2026-06-07T22-49-50-sYzr-native_zellij_statusline_verification_stay_idle.md (cwd=/Users/tanishqpalandurkar/.yyork/worktrees/1syxq3, rollout_path=/Users/tanishqpalandurkar/.codex/sessions/2026/06/08/rollout-2026-06-08T04-19-50-019ea447-340a-7781-a054-a28628ecf385.jsonl, updated_at=2026-06-07T22:50:05+00:00, thread_id=019ea447-340a-7781-a054-a28628ecf385, explicit idle posture during live browser-terminal verification)
+87:- rollout_summaries/2026-06-07T22-49-50-sYzr-native_zellij_statusline_verification_stay_idle.md (cwd=/home/<USER>/.yyork/worktrees/1syxq3, rollout_path=/home/<USER>/.codex/sessions/2026/06/08/rollout-2026-06-08T04-19-50-019ea447-340a-7781-a054-a28628ecf385.jsonl, updated_at=2026-06-07T22:50:05+00:00, thread_id=019ea447-340a-7781-a054-a28628ecf385, explicit idle posture during live browser-terminal verification)
 91:- 1syxq3, zellij, statusline, simplified_ui, browser terminal, session chrome, idle, "Stay idle so the browser terminal can show the session chrome"
 101:- when the user said “Stay idle so the browser terminal can show the session chrome” -> in live browser-terminal or statusline verification, avoid tool use, […]
 
@@ -373,7 +373,7 @@ web/src/locales/index.ts
 web/src/locales/react-day-picker.ts
 web/output/playwright/zellij-statusline-dark-after-color15.png
 web/output/playwright/zellij-statusline-dark-vite-after.png
-web/src/features/home/templates/orchestrator-workspace-template.tsx […]
+web/src/features/home/<USER>/orchestrator-workspace-template.tsx […]
 
 > AGENT
 
@@ -386,7 +386,7 @@ id: call_xzncNnDvrjVH57C7zhxb4cBZ
 ```json
 {
   "cmd": "sed -n '1,240p' prds/canvas/BROWSER_PLAN.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -399,7 +399,7 @@ id: call_RCpTgwK8WFbGWOtiX258PidS
 ```json
 {
   "cmd": "sed -n '1,260p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -412,7 +412,7 @@ id: call_6FVPqLbB3BbyHLBhgIemeopn
 ```json
 {
   "cmd": "sed -n '1,300p' internal/server/annotations.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -424,8 +424,8 @@ tool_use exec_command
 id: call_p4zTtUcUNWD68bpxYyySxReW
 ```json
 {
-  "cmd": "sed -n '1,260p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,260p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -702,7 +702,7 @@ import {
   type BrowserPreviewUrlResult,
   registerBrowserPreviewTarget,
   validatePreviewUrlInput,
-} from '@/features/home/data/browser-preview';
+} from '@/features/home/<USER>/browser-preview';
 
 interface WebPreviewContextValue {
   canGoBack: boolean;
@@ -745,7 +745,7 @@ id: call_SYAzljWEN25zQXvYjR5mrfnB
 ```json
 {
   "cmd": "sed -n '241,520p' prds/canvas/BROWSER_PLAN.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -758,7 +758,7 @@ id: call_5aRtG1vCCzGlO8OujkdKipFT
 ```json
 {
   "cmd": "sed -n '261,620p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -770,8 +770,8 @@ tool_use exec_command
 id: call_eeQwUDmWgz4ZeWrq0Z9U07xj
 ```json
 {
-  "cmd": "sed -n '261,620p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '261,620p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -783,8 +783,8 @@ tool_use exec_command
 id: call_h72QYsTs2nbz0FKZ4kFzfyB6
 ```json
 {
-  "cmd": "sed -n '1,280p' web/src/features/home/data/browser-preview.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,280p' web/src/features/home/<USER>/browser-preview.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -797,7 +797,7 @@ id: call_ORmNJiDi8ZFaJOC0qggBeEw0
 ```json
 {
   "cmd": "rg -n \"annotation|annotations|agentation|send.*agent|handleAnnotations|yyork:|dom-event|Browser\" internal web/src prds/canvas",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1137,7 +1137,7 @@ id: call_PCb8T9SzcGorAwlhDSYHQlMA
 ```json
 {
   "cmd": "sed -n '620,860p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1149,8 +1149,8 @@ tool_use exec_command
 id: call_qmsXcOwBBmvuvxUvQALau7x8
 ```json
 {
-  "cmd": "sed -n '600,980p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '600,980p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 28000
 }
@@ -1163,7 +1163,7 @@ id: call_wbpj4l22MBTTjvvFqYZT20us
 ```json
 {
   "cmd": "sed -n '1,180p' web/src/browser-preview-agentation.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -1176,7 +1176,7 @@ id: call_p5A2Z8LzW8JQSAt2BFsnLtjl
 ```json
 {
   "cmd": "rg -n \"/api/annotations|handleAnnotations|annotations-submitted|annotation-added|send.*annotation|BrowserPreviewAnnotation|BrowserPreviewAgentationMessage\" web/src internal/server",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1188,8 +1188,8 @@ tool_use exec_command
 id: call_Ml63WNRnemQPhvBVOAGVAdJz
 ```json
 {
-  "cmd": "sed -n '1,220p' web/src/features/home/components/organisms/canvas-panel.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' web/src/features/home/<USER>/organisms/canvas-panel.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1201,8 +1201,8 @@ tool_use exec_command
 id: call_tIiAbM2Cl9h8h5nztcQlJVUO
 ```json
 {
-  "cmd": "sed -n '1,260p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,260p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 24000
 }
@@ -1489,18 +1489,18 @@ internal/server/annotations_test.go:118:	req := httptest.NewRequest(http.MethodP
 internal/server/server.go:148:	mux.HandleFunc("POST /api/annotations/{sessionID}", s.handleAnnotations)
 web/src/browser-preview-agentation.ts:74:        post('yyork:annotation-added', {
 web/src/browser-preview-agentation.ts:95:        post('yyork:annotations-submitted', { annotations, output });
-web/src/features/home/data/browser-preview.ts:45:export type BrowserPreviewAnnotation = {
-web/src/features/home/data/browser-preview.ts:64:export type BrowserPreviewAgentationMessage = {
-web/src/features/home/data/browser-preview.ts:65:  annotation?: BrowserPreviewAnnotation;
-web/src/features/home/data/browser-preview.ts:66:  annotations?: BrowserPreviewAnnotation[];
-web/src/features/home/data/browser-preview.ts:73:    | 'yyork:annotation-added'
-web/src/features/home/data/browser-preview.ts:78:    | 'yyork:annotations-submitted';
-web/src/features/home/data/browser-preview.ts:84:  | BrowserPreviewAgentationMessage
-web/src/features/home/data/browser-preview.ts:183:export function isBrowserPreviewAgentationMessage(
-web/src/features/home/data/browser-preview.ts:185:): value is BrowserPreviewAgentationMessage {
-web/src/features/home/data/browser-preview.ts:203:    isBrowserPreviewAgentationMessage(value)
-web/src/features/home/components/molecules/canvas-web-preview.tsx:42:  type BrowserPreviewAgentationMessage,
-web/src/features/home/components/molecules/canvas-web-preview.tsx:854:  message: BrowserPreviewAgentationMessage
+web/src/features/home/<USER>/browser-preview.ts:45:export type BrowserPreviewAnnotation = {
+web/src/features/home/<USER>/browser-preview.ts:64:export type BrowserPreviewAgentationMessage = {
+web/src/features/home/<USER>/browser-preview.ts:65:  annotation?: BrowserPreviewAnnotation;
+web/src/features/home/<USER>/browser-preview.ts:66:  annotations?: BrowserPreviewAnnotation[];
+web/src/features/home/<USER>/browser-preview.ts:73:    | 'yyork:annotation-added'
+web/src/features/home/<USER>/browser-preview.ts:78:    | 'yyork:annotations-submitted';
+web/src/features/home/<USER>/browser-preview.ts:84:  | BrowserPreviewAgentationMessage
+web/src/features/home/<USER>/browser-preview.ts:183:export function isBrowserPreviewAgentationMessage(
+web/src/features/home/<USER>/browser-preview.ts:185:): value is BrowserPreviewAgentationMessage {
+web/src/features/home/<USER>/browser-preview.ts:203:    isBrowserPreviewAgentationMessage(value)
+web/src/features/home/<USER>/molecules/canvas-web-preview.tsx:42:  type BrowserPreviewAgentationMessage,
+web/src/features/home/<USER>/molecules/canvas-web-preview.tsx:854:  message: BrowserPreviewAgentationMessage
 
 ```
 
@@ -1552,20 +1552,20 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-import { CanvasWebPreview } from '@/features/home/components/molecules/canvas-web-preview';
-import { CanvasDiffView } from '@/features/home/components/organisms/canvas-diff-view';
+import { CanvasWebPreview } from '@/features/home/<USER>/molecules/canvas-web-preview';
+import { CanvasDiffView } from '@/features/home/<USER>/organisms/canvas-diff-view';
 import {
   type SessionFileContent,
   sessionFileContentQueryOptions,
   sessionFilesQueryOptions,
-} from '@/features/home/data/session-files';
-import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/session-files';
+import type { HomeWorkspaceCanvasReviewPreferences } from '@/features/home/<USER>/workspace-preferences';
 import {
   type CanvasTab,
   isCanvasTab,
-} from '@/features/home/domain/canvas-tabs';
+} from '@/features/home/<USER>/canvas-tabs';
 
-export type { CanvasTab } from '@/features/home/domain/canvas-tabs';
+export type { CanvasTab } from '@/features/home/<USER>/canvas-tabs';
 
 export interface CanvasTargetSummary {
   cwd?: string;
@@ -1630,22 +1630,22 @@ const isMacPlatform =
 const MOD_KEY = isMacPlatform ? '⌘' : 'Ctrl';
 const SHIFT_KEY = isMacPlatform ? '⇧' : 'Shift';
 
-import { StopSessionConfirmDialog } from '@/features/home/components/molecules/stop-session-confirm-dialog';
+import { StopSessionConfirmDialog } from '@/features/home/<USER>/molecules/stop-session-confirm-dialog';
 import type {
   CanvasTab,
   CanvasTargetSummary,
-} from '@/features/home/components/organisms/canvas-panel';
-import { MainTopbar } from '@/features/home/components/organisms/main-topbar';
-import { ProjectOrchestratorSidebar } from '@/features/home/components/organisms/project-orchestrator-sidebar';
-import type { WorkspacePanelState } from '@/features/home/components/organisms/workspace-status-view';
-import { openProjectIdeMutationOptions } from '@/features/home/data/project-ide';
+} from '@/features/home/<USER>/organisms/canvas-panel';
+import { MainTopbar } from '@/features/home/<USER>/organisms/main-topbar';
+import { ProjectOrchestratorSidebar } from '@/features/home/<USER>/organisms/project-orchestrator-sidebar';
+import type { WorkspacePanelState } from '@/features/home/<USER>/organisms/workspace-status-view';
+import { openProjectIdeMutationOptions } from '@/features/home/<USER>/project-ide';
 import {
   fallbackHomeWorkspace,
   homeWorkspaceQueryKey,
   homeWorkspaceQueryOptions,
   renameSessionMutationOptions,
   stopSessionMutationOptions,
-} from '@/features/home/data/workspace';
+} from '@/features/home/<USER>/workspace';
 import {
   getCanvasPreviewTargetKey,
   getCanvasPreviewUrlForTarget,
@@ -1655,7 +1655,7 @@ import {
   type HomeWorkspacePreferences,
   readHomeWorkspacePreferences,
   writeHomeWorkspacePreferences,
-} from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/workspace-preferences';
 import {
   getKanbanColumns,
   getSelectedWorkerSession,
@@ -1666,12 +1666,12 @@ import {
   withSelectedWorkerSession,
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 import {
   WorkspaceContext,
   type WorkspaceContextValue,
-} from '@/features/home/pages/workspace-context';
-import { OrchestratorWorkspaceTemplate } from '@/features/home/templates/orchestrator-workspace-template';
+} from '@/features/home/<USER>/workspace-context';
+import { OrchestratorWorkspaceTemplate } from '@/features/home/<USER>/orchestrator-workspace-template';
 
 interface PendingSessionStop {
   label: […]
@@ -1686,8 +1686,8 @@ tool_use exec_command
 id: call_JxxENqpagnZRavqbGERJztQj
 ```json
 {
-  "cmd": "sed -n '260,620p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '260,620p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -1700,7 +1700,7 @@ id: call_Ta0h5humeoy8Cr5WzSi70Gb5
 ```json
 {
   "cmd": "sed -n '1,180p' internal/server/annotations_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -1712,8 +1712,8 @@ tool_use exec_command
 id: call_CSYZ1yW1kjLn6aBHPL4xvCwE
 ```json
 {
-  "cmd": "sed -n '1,180p' web/src/features/home/data/browser-preview.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' web/src/features/home/<USER>/browser-preview.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1725,8 +1725,8 @@ tool_use exec_command
 id: call_7LTdk4gUwT8quRYG5mSufeA6
 ```json
 {
-  "cmd": "sed -n '1,180p' web/src/features/home/data/workspace-preferences.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' web/src/features/home/<USER>/workspace-preferences.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -1739,7 +1739,7 @@ id: call_vhdF6CFN5WT3MzW9Q9Di0AFc
 ```json
 {
   "cmd": "sed -n '140,170p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1752,7 +1752,7 @@ id: call_raxvjkL8vm2W6ZyTNbIHoQFF
 ```json
 {
   "cmd": "sed -n '350,375p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 8000
 }
@@ -1933,7 +1933,7 @@ import {
   normalizePreviewUrlInput,
   registerBrowserPreviewTarget,
   validatePreviewUrlInput,
-} from '@/features/home/data/browser-preview';
+} from '@/features/home/<USER>/browser-preview';
 
 describe('browser-preview data helpers', () => {
   afterEach(() => {
@@ -2027,12 +2027,12 @@ Wall time: 0.0001 seconds
 Process exited with code 0
 Original token count: 1249
 Output:
-import { validatePreviewUrlInput } from '@/features/home/data/browser-preview';
-import { type CanvasTab, isCanvasTab } from '@/features/home/domain/canvas-tabs';
+import { validatePreviewUrlInput } from '@/features/home/<USER>/browser-preview';
+import { type CanvasTab, isCanvasTab } from '@/features/home/<USER>/canvas-tabs';
 import {
   type WorkerSessionState,
   workerSessionStates,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 const homeWorkspacePreferencesStorageKey =
   'yyork.home.workspace-preferences';
@@ -2208,8 +2208,8 @@ tool_use exec_command
 id: call_M5U0ohfENnDTyzxOoRmpzXzY
 ```json
 {
-  "cmd": "sed -n '620,820p' web/src/features/home/pages/workspace-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '620,820p' web/src/features/home/<USER>/workspace-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2221,8 +2221,8 @@ tool_use exec_command
 id: call_q4Qum6XClROratEnYdgVyhZS
 ```json
 {
-  "cmd": "rg -n \"<CanvasPanel|canvasAvailable|canvasTarget|canvasPreviewUrl|onPreviewUrlChange\" web/src/features/home/pages web/src/features/home/templates web/src/features/home/components -g '*.tsx'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"<CanvasPanel|canvasAvailable|canvasTarget|canvasPreviewUrl|onPreviewUrlChange\" web/src/features/home/<USER> web/src/features/home/<USER> web/src/features/home/<USER> -g '*.tsx'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2234,8 +2234,8 @@ tool_use exec_command
 id: call_OdG6D0p8fxOAAju9c3FkQjqf
 ```json
 {
-  "cmd": "sed -n '1,220p' web/src/features/home/templates/orchestrator-workspace-template.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' web/src/features/home/<USER>/orchestrator-workspace-template.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 22000
 }
@@ -2247,8 +2247,8 @@ tool_use exec_command
 id: call_uvYoV0h9C23SGGxcjvAk2m7q
 ```json
 {
-  "cmd": "sed -n '180,280p' web/src/features/home/data/workspace-preferences.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '180,280p' web/src/features/home/<USER>/workspace-preferences.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -2261,7 +2261,7 @@ id: call_50q0b9STuORYaNkZne88ROTr
 ```json
 {
   "cmd": "sed -n '1,340p' internal/server/browser_preview_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -2411,22 +2411,22 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 391
 Output:
-web/src/features/home/pages/terminal-layout.tsx:102:          <CanvasPanel
-web/src/features/home/pages/terminal-layout.tsx:104:            previewUrl={context.canvasPreviewUrl}
-web/src/features/home/pages/terminal-layout.tsx:106:            onPreviewUrlChange={context.onCanvasPreviewUrlChange}
-web/src/features/home/pages/terminal-layout.tsx:109:            target={context.canvasTarget}
-web/src/features/home/pages/workspace-layout.tsx:248:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
-web/src/features/home/pages/workspace-layout.tsx:260:  const canvasPreviewTargetKey = getCanvasPreviewTargetKey(canvasTarget);
-web/src/features/home/pages/workspace-layout.tsx:261:  const canvasPreviewUrl = getCanvasPreviewUrlForTarget(
-web/src/features/home/pages/workspace-layout.tsx:619:    canvasAvailable: isTerminalRoute,
-web/src/features/home/pages/workspace-layout.tsx:622:    canvasPreviewUrl,
-web/src/features/home/pages/workspace-layout.tsx:626:    canvasTarget,
-web/src/features/home/components/organisms/main-topbar.tsx:26:    canvasAvailable,
-web/src/features/home/components/organisms/main-topbar.tsx:44:      if (!canvasAvailable) {
-web/src/features/home/components/organisms/main-topbar.tsx:62:  }, [canvasAvailable]);
-web/src/features/home/components/organisms/main-topbar.tsx:77:        {canvasAvailable ? (
-web/src/features/home/components/organisms/canvas-panel.tsx:167:  onPreviewUrlChange: (url: string) => void;
-web/src/features/home/components/organisms/canvas-panel.tsx:205:            onUrlChange={props.onPreviewUrlChange}
+web/src/features/home/<USER>/terminal-layout.tsx:102:          <CanvasPanel
+web/src/features/home/<USER>/terminal-layout.tsx:104:            previewUrl={context.canvasPreviewUrl}
+web/src/features/home/<USER>/terminal-layout.tsx:106:            onPreviewUrlChange={context.onCanvasPreviewUrlChange}
+web/src/features/home/<USER>/terminal-layout.tsx:109:            target={context.canvasTarget}
+web/src/features/home/<USER>/workspace-layout.tsx:248:  const canvasTarget: CanvasTargetSummary = selectedTerminalSession
+web/src/features/home/<USER>/workspace-layout.tsx:260:  const canvasPreviewTargetKey = getCanvasPreviewTargetKey(canvasTarget);
+web/src/features/home/<USER>/workspace-layout.tsx:261:  const canvasPreviewUrl = getCanvasPreviewUrlForTarget(
+web/src/features/home/<USER>/workspace-layout.tsx:619:    canvasAvailable: isTerminalRoute,
+web/src/features/home/<USER>/workspace-layout.tsx:622:    canvasPreviewUrl,
+web/src/features/home/<USER>/workspace-layout.tsx:626:    canvasTarget,
+web/src/features/home/<USER>/organisms/main-topbar.tsx:26:    canvasAvailable,
+web/src/features/home/<USER>/organisms/main-topbar.tsx:44:      if (!canvasAvailable) {
+web/src/features/home/<USER>/organisms/main-topbar.tsx:62:  }, [canvasAvailable]);
+web/src/features/home/<USER>/organisms/main-topbar.tsx:77:        {canvasAvailable ? (
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:167:  onPreviewUrlChange: (url: string) => void;
+web/src/features/home/<USER>/organisms/canvas-panel.tsx:205:            onUrlChange={props.onPreviewUrlChange}
 
 ```
 
@@ -2645,8 +2645,8 @@ tool_use exec_command
 id: call_lNqM4upgKRLMFkXQbc914XaC
 ```json
 {
-  "cmd": "sed -n '1,160p' web/src/features/home/pages/terminal-layout.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,160p' web/src/features/home/<USER>/terminal-layout.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -2666,8 +2666,8 @@ import { type ReactNode, type RefObject, useEffect, useRef } from 'react';
 
 import { cn } from '@/lib/tailwind/utils';
 
-import { CanvasPanel } from '@/features/home/components/organisms/canvas-panel';
-import { useWorkspaceContext } from '@/features/home/pages/workspace-context';
+import { CanvasPanel } from '@/features/home/<USER>/organisms/canvas-panel';
+import { useWorkspaceContext } from '@/features/home/<USER>/workspace-context';
 
 const CANVAS_PANE_WIDTH_VAR = '--canvas-pane-width';
 const CANVAS_MIN_PERCENT = 22;
@@ -2699,8 +2699,8 @@ tool_use exec_command
 id: call_wlGtULMBgi1A1if2AvEt796A
 ```json
 {
-  "cmd": "sed -n '1,180p' web/src/features/home/pages/workspace-context.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,180p' web/src/features/home/<USER>/workspace-context.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2721,16 +2721,16 @@ import { createContext, use } from 'react';
 import type {
   CanvasTab,
   CanvasTargetSummary,
-} from '@/features/home/components/organisms/canvas-panel';
-import type { WorkspacePanelState } from '@/features/home/components/organisms/workspace-status-view';
+} from '@/features/home/<USER>/organisms/canvas-panel';
+import type { WorkspacePanelState } from '@/features/home/<USER>/organisms/workspace-status-view';
 import type {
   HomeWorkspaceCanvasLayout,
   HomeWorkspaceCanvasReviewPreferences,
-} from '@/features/home/data/workspace-preferences';
+} from '@/features/home/<USER>/workspace-preferences';
 import type {
   KanbanColumnData,
   WorkerSession,
-} from '@/features/home/domain/session-workspace';
+} from '@/features/home/<USER>/session-workspace';
 
 export interface WorkspaceContextValue {
   canvasAvailable: boolean;
@@ -2786,7 +2786,7 @@ id: call_SFkQxYC6vg89JLxTBvvteSeL
 ```json
 {
   "cmd": "go test ./internal/server",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2799,7 +2799,7 @@ id: call_NMicKTbpw2xQTATfFjI28scK
 ```json
 {
   "cmd": "sed -n '1,220p' web/package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2812,7 +2812,7 @@ id: call_EIDoZdsQ0MsYMtgvpuWiOZN7
 ```json
 {
   "cmd": "sed -n '1,200p' package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -2854,7 +2854,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -2913,7 +2913,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -2973,7 +2973,7 @@ id: call_nSHE2N0CKQbHY9dPCD4hPE66
 ```json
 {
   "cmd": "direnv exec . go test ./internal/server",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2985,8 +2985,8 @@ tool_use exec_command
 id: call_VmOvbJ0xBR6RzavpiHRMDLRg
 ```json
 {
-  "cmd": "pnpm --filter @yyork/web exec vitest run src/features/home/data/browser-preview.unit.spec.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "pnpm --filter @yyork/web exec vitest run src/features/home/<USER>/browser-preview.unit.spec.ts",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -3018,9 +3018,9 @@ Original token count: 125
 Output:
 [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
 
- RUN  v4.0.18 /Users/tanishqpalandurkar/Projects/yyork/web
+ RUN  v4.0.18 /home/<USER>/Projects/yyork/web
 
- ✓ |unit| src/features/home/data/browser-preview.unit.spec.ts (6 tests) 13ms
+ ✓ |unit| src/features/home/<USER>/browser-preview.unit.spec.ts (6 tests) 13ms
 
  Test Files  1 passed (1)
       Tests  6 passed (6)
@@ -3041,7 +3041,7 @@ id: call_C4G11Dec5DF2DvrRHvh6h2jd
 ```json
 {
   "cmd": "nl -ba prds/canvas/BROWSER_PLAN.md | sed -n '60,340p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -3054,7 +3054,7 @@ id: call_NAU1ByzzWxnlYjMrozz8PRUT
 ```json
 {
   "cmd": "nl -ba internal/server/annotations.go | sed -n '1,130p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3067,7 +3067,7 @@ id: call_ekfT2gfBO0n1rDrGmLlMXetu
 ```json
 {
   "cmd": "nl -ba web/src/browser-preview-agentation.ts | sed -n '1,130p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -3079,8 +3079,8 @@ tool_use exec_command
 id: call_QY8efslJL25lnt1cijP7RZW5
 ```json
 {
-  "cmd": "nl -ba web/src/features/home/components/molecules/canvas-web-preview.tsx | sed -n '470,875p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba web/src/features/home/<USER>/molecules/canvas-web-preview.tsx | sed -n '470,875p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -3093,7 +3093,7 @@ id: call_ZJazkH4lYqbOYAppBeulHfJE
 ```json
 {
   "cmd": "nl -ba internal/server/browser_preview.go | sed -n '40,155p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -3105,8 +3105,8 @@ tool_use exec_command
 id: call_4WQe5yqsQhLLrFJn3ORgIc2a
 ```json
 {
-  "cmd": "nl -ba /Users/tanishqpalandurkar/.codex/memories/MEMORY.md | sed -n '162,190p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "nl -ba /home/<USER>/.codex/memories/MEMORY.md | sed -n '162,190p'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 10000
 }
@@ -3414,9 +3414,9 @@ Output:
    163	
    164	### rollout_summary_files
    165	
-   166	- extensions/chronicle/resources/2026-06-07T00-10-00-Cmka-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T00-10-00-Cmka-10min-memory-summary.md, updated_at=2026-06-07T00:10:00+00:00, thread_id=None, meaningful session labels, rename options, and browser-direction discussion) [chronicle memory]
-   167	- extensions/chronicle/resources/2026-06-07T00-00-00-UZuQ-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-07T00-00-00-UZuQ-10min-memory-summary.md, updated_at=2026-06-07T00:00:00+00:00, thread_id=None, in-app-browser CDP/iframe/native-webview tradeoff framing and local preview context) [chronicle memory]
-   168	- extensions/chronicle/resources/2026-06-06T23-50-00-tmYs-10min-memory-summary.md (cwd=/Users/tanishqpalandurkar/Projects/yyork, rollout_path=/Users/tanishqpalandurkar/.codex/memories/extensions/chronicle/resources/2026-06-06T23-50-00-tmYs-10min-memory-summary.md, updated_at=2026-06-06T23:50:00+00:00, thread_id=None, Codex-like sidebar polish, session path visibility, and browser-integration brainstorming context) [chronicle memory]
+   166	- extensions/chronicle/resources/2026-06-07T00-10-00-Cmka-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T00-10-00-Cmka-10min-memory-summary.md, updated_at=2026-06-07T00:10:00+00:00, thread_id=None, meaningful session labels, rename options, and browser-direction discussion) [chronicle memory]
+   167	- extensions/chronicle/resources/2026-06-07T00-00-00-UZuQ-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-07T00-00-00-UZuQ-10min-memory-summary.md, updated_at=2026-06-07T00:00:00+00:00, thread_id=None, in-app-browser CDP/iframe/native-webview tradeoff framing and local preview context) [chronicle memory]
+   168	- extensions/chronicle/resources/2026-06-06T23-50-00-tmYs-10min-memory-summary.md (cwd=/home/<USER>/Projects/yyork, rollout_path=/home/<USER>/.codex/memories/extensions/chronicle/resources/2026-06-06T23-50-00-tmYs-10min-memory-summary.md, updated_at=2026-06-06T23:50:00+00:00, thread_id=None, Codex-like sidebar polish, session path visibility, and browser-integration brainstorming context) [chronicle memory]
    169	
    170	### keywords
    171	
@@ -3431,13 +3431,13 @@ Output:
 
 The IAB is not ready to mark “annotation send to agent” as complete yet.
 
-Current status: Browser itself is mostly through the local-preview foundation. `B0-B4` are marked done in [BROWSER_PLAN.md](/Users/tanishqpalandurkar/Projects/yyork/prds/canvas/BROWSER_PLAN.md:61): live iframe preview, local-only URL validation, per-target URL persistence, proxy/injection, vendored preview bridge, and Agentation injection. The backend proxy registers local preview targets and injects bridge + Agentation scripts in [browser_preview.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/browser_preview.go:41).
+Current status: Browser itself is mostly through the local-preview foundation. `B0-B4` are marked done in [BROWSER_PLAN.md](/home/<USER>/Projects/yyork/prds/canvas/BROWSER_PLAN.md:61): live iframe preview, local-only URL validation, per-target URL persistence, proxy/injection, vendored preview bridge, and Agentation injection. The backend proxy registers local preview targets and injects bridge + Agentation scripts in [browser_preview.go](/home/<USER>/Projects/yyork/internal/server/browser_preview.go:41).
 
 Annotation pieces are partially wired:
 
-- Agentation is mounted inside proxied preview pages and posts `yyork:annotation-added`, `yyork:annotation-updated`, and `yyork:annotations-submitted` from [browser-preview-agentation.ts](/Users/tanishqpalandurkar/Projects/yyork/web/src/browser-preview-agentation.ts:71).
-- The Browser parent receives those messages, but currently just converts them into DOM-event tray rows in [canvas-web-preview.tsx](/Users/tanishqpalandurkar/Projects/yyork/web/src/features/home/components/molecules/canvas-web-preview.tsx:476).
-- The backend endpoint to send annotations to an agent already exists: `POST /api/annotations/{sessionID}` in [annotations.go](/Users/tanishqpalandurkar/Projects/yyork/internal/server/annotations.go:33). It resolves the session, formats markdown, and sends through the durability provider.
+- Agentation is mounted inside proxied preview pages and posts `yyork:annotation-added`, `yyork:annotation-updated`, and `yyork:annotations-submitted` from [browser-preview-agentation.ts](/home/<USER>/Projects/yyork/web/src/browser-preview-agentation.ts:71).
+- The Browser parent receives those messages, but currently just converts them into DOM-event tray rows in [canvas-web-preview.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/molecules/canvas-web-preview.tsx:476).
+- The backend endpoint to send annotations to an agent already exists: `POST /api/annotations/{sessionID}` in [annotations.go](/home/<USER>/Projects/yyork/internal/server/annotations.go:33). It resolves the session, formats markdown, and sends through the durability provider.
 
 What’s left for true end-to-end:
 
@@ -3471,8 +3471,8 @@ tool_use exec_command
 id: call_2pmlYeMiSDxYhHW5IsiWnkfy
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -3484,8 +3484,8 @@ tool_use exec_command
 id: call_yyiGiQaLzNTmyMbGaCMpWtL0
 ```json
 {
-  "cmd": "rg -n \"agentation|yyork-preview-agentation|__yyork_browser|preview.*port|Browser tab|IAB\" /Users/tanishqpalandurkar/.codex/memories/MEMORY.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "rg -n \"agentation|yyork-preview-agentation|__yyork_browser|preview.*port|Browser tab|IAB\" /home/<USER>/.codex/memories/MEMORY.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -3498,7 +3498,7 @@ id: call_3J2XNOsCFNG8Y3kjDjQCCngx
 ```json
 {
   "cmd": "rg -n \"agentation|__yyork_browser|browser-preview|previewName|CanvasWebPreview|canvasPreviewUrl|previewUrl\" web/src internal prds/canvas web/vite.preview.config.ts web/package.json package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -3555,8 +3555,8 @@ web/vite.preview.config.ts:12:      entry: resolve(configDir, 'src/browser-previ
 web/vite.preview.config.ts:13:      fileName: () => 'agentation.js',
 web/vite.preview.config.ts:17:    outDir: '../cmd/yyork/dashboard/app/__yyork_browser',
 web/package.json:70:    "agentation": "3.0.2",
-prds/canvas/BROWSER_PLAN.md:54:  - `web/src/features/home/data/browser-preview.ts`
-prds/canvas/BROWSER_PLAN.md:55:  - `web/src/features/home/data/browser-preview.unit.spec.ts`
+prds/canvas/BROWSER_PLAN.md:54:  - `web/src/features/home/<USER>/browser-preview.ts`
+prds/canvas/BROWSER_PLAN.md:55:  - `web/src/features/home/<USER>/browser-preview.unit.spec.ts`
 prds/canvas/BROWSER_PLAN.md:155:  `canvasPreviewUrls`, keyed by Canvas target:
 prds/canvas/BROWSER_PLAN.md:159:- The old `canvasPreviewUrl` field remains a read-only legacy fallback and is
 prds/canvas/BROWSER_PLAN.md:163:- `CanvasWebPreview` already seeds its local history from `defaultUrl`; target
@@ -3586,7 +3586,7 @@ web/src/browser-preview-agentation.ts:60:  if (document.getElementById('__yyork-
 web/src/browser-preview-agentation.ts:65:  rootElement.id = '__yyork-agentation-root';
 web/src/browser-preview-agentation.ts:66:  rootElement.setAttribute('data-yyork-browser-agentation', 'true');
 web/src/browser-preview-agentation.ts:99:  post('yyork:agentation-ready');
-web/src/features/home/pages/workspace-layout.tsx:261: […]
+web/src/features/home/<USER>/workspace-layout.tsx:261: […]
 
 > AGENT
 
@@ -3598,7 +3598,7 @@ tool_use js
 id: call_NlgC3RliDz2K3SAfDErvsFHP
 ```json
 {
-  "code": "const { setupBrowserRuntime } = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
+  "code": "const { setupBrowserRuntime } = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000,
   "title": "Connect to IAB"
 }
@@ -3701,7 +3701,7 @@ id: call_8mXjKIq8Gmm68HCypoAm0P5Y
 ```json
 {
   "cmd": "curl -sS -D - -o /tmp/yyork-preview-target.out -X POST http://localhost:4204/api/browser-preview/targets -H 'Content-Type: application/json' --data '{\"url\":\"http://yyork.localhost/\",\"previewName\":\"yyork\"}' && printf '\\n---BODY---\\n' && sed -n '1,120p' /tmp/yyork-preview-target.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3714,7 +3714,7 @@ id: call_YcklhmelZf0Ovhd0Or5G5nox
 ```json
 {
   "cmd": "curl -sS -D - -o /tmp/yyork-agentation-direct.out http://localhost:4204/__yyork_browser/agentation.js && printf '\\n---BODY HEAD---\\n' && sed -n '1,20p' /tmp/yyork-agentation-direct.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3727,7 +3727,7 @@ id: call_g6OrRWoJe2hP8gXo2rIolDFL
 ```json
 {
   "cmd": "lsof -nP -iTCP:4204 -sTCP:LISTEN",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3740,7 +3740,7 @@ id: call_M9QtNx6N1ETcMPdGXsz24g2S
 ```json
 {
   "cmd": "sed -n '1,80p' web/vite.preview.config.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -3753,7 +3753,7 @@ id: call_yAt3OtBggCde4YXO6mkT49be
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app -maxdepth 3 -type f | sort | sed -n '1,120p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4047,7 +4047,7 @@ id: call_rwjKbovJr9yTTXnLn295C0bQ
 ```json
 {
   "cmd": "ps -p 3920 -o pid=,ppid=,command=",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4060,7 +4060,7 @@ id: call_monaSOVuSi6w6uHfnBIlRRxW
 ```json
 {
   "cmd": "curl -sS -D - -o /tmp/yyork-preview-host-agentation.out http://localhost:4204/__yyork_browser/agentation.js -H 'Host: yyork-preview.yyork.localhost:4204' && printf '\\n---BODY HEAD---\\n' && sed -n '1,20p' /tmp/yyork-preview-host-agentation.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4073,7 +4073,7 @@ id: call_5TRjsv6Hue9zM2BDyFeIdTnT
 ```json
 {
   "cmd": "curl -sS -D - -o /tmp/yyork-api-workspace.out http://localhost:4204/api/workspace && printf '\\n---BODY HEAD---\\n' && sed -n '1,60p' /tmp/yyork-api-workspace.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4086,7 +4086,7 @@ id: call_B8FgCmQL9hBUrijwXtr8SVeb
 ```json
 {
   "cmd": "rg -n \"browser-preview/targets|__yyork_browser|yyork-preview|registerBrowserPreviewTarget\" cmd/yyork/dashboard/app/assets web/dist web/.output 2>/dev/null",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -4164,7 +4164,7 @@ Transfer-Encoding: chunked
 
 
 ---BODY HEAD---
-{"activeProjectId":"/Users/tanishqpalandurkar/Projects/yyork","projects":[{"cwd":"/Users/tanishqpalandurkar/Projects/yyork","id":"/Users/tanishqpalandurkar/Projects/yyork","name":"yyork"}],"sessions":[{"agent":"claude-code","agentPluginId":"claude-code","cwd":"/Users/tanishqpalandurkar/.yyork/worktrees/5pcyw3","description":"## How annotations reach an agent in yyork First, the key fact: **`agentation` isn't a yyork package** — it's an external in-app tool (the \"agentation v1.1\" shape) that runs *inside* the previewed app. yyork only consumes a subset of its `Annotation` shape and forwards it. So \"modes an agent could be fed annotations in\" really breaks into two layers: the **capture modes** agentation emits (which fields are populated), and the single **delivery channel** yyork uses to feed them in. The pipel...","id":"5pcyw3","issue":"","kind":"worker","metadata":"{\"agentSessionId\":\"6026eabb-c184-5fb7-8966-3d75dc074799\",\"prompt\":\"Explain different modes an agent could be fed annotations in using agentation pkg in yyork.\",\"recap\":\"## How annotations reach an agent in yyork First, the key fact: **`agentation` isn't a yyork package** — it's an external in-app tool (the \\\"agentation v1.1\\\" shape) that runs *inside* the previewed app. yyork only consumes a subset of its `Annotation` shape and forwards it. So \\\"modes an agent could be fed annotations in\\\" really breaks into two layers: the **capture modes** agentation emits (which fields are populated), and […]
+{"activeProjectId":"/home/<USER>/Projects/yyork","projects":[{"cwd":"/home/<USER>/Projects/yyork","id":"/home/<USER>/Projects/yyork","name":"yyork"}],"sessions":[{"agent":"claude-code","agentPluginId":"claude-code","cwd":"/home/<USER>/.yyork/worktrees/5pcyw3","description":"## How annotations reach an agent in yyork First, the key fact: **`agentation` isn't a yyork package** — it's an external in-app tool (the \"agentation v1.1\" shape) that runs *inside* the previewed app. yyork only consumes a subset of its `Annotation` shape and forwards it. So \"modes an agent could be fed annotations in\" really breaks into two layers: the **capture modes** agentation emits (which fields are populated), and the single **delivery channel** yyork uses to feed them in. The pipel...","id":"5pcyw3","issue":"","kind":"worker","metadata":"{\"agentSessionId\":\"6026eabb-c184-5fb7-8966-3d75dc074799\",\"prompt\":\"Explain different modes an agent could be fed annotations in using agentation pkg in yyork.\",\"recap\":\"## How annotations reach an agent in yyork First, the key fact: **`agentation` isn't a yyork package** — it's an external in-app tool (the \\\"agentation v1.1\\\" shape) that runs *inside* the previewed app. yyork only consumes a subset of its `Annotation` shape and forwards it. So \\\"modes an agent could be fed annotations in\\\" really breaks into two layers: the **capture modes** agentation emits (which fields are populated), and […]
 
 > TOOL
 
@@ -4191,7 +4191,7 @@ id: call_YDNpguoBw7aEh01RY2zhjrdm
 ```json
 {
   "cmd": "rg -o \"/api/browser-preview/targets|registerBrowserPreviewTarget|yyork-preview-agentation|__yyork_browser/agentation.js|yyork-preview\" cmd/yyork/dashboard/app/assets/browser-preview-CSuyikHO.js | sort | uniq -c",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4204,7 +4204,7 @@ id: call_Ux9OYixmYnv4VeKIB8dMOOHe
 ```json
 {
   "cmd": "strings ./yyork | rg -n \"browser-preview/targets|__yyork_browser|yyork-preview|preview target|Browser only supports\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4217,7 +4217,7 @@ id: call_rnsocUKpfcQ7qHyI75wl7iLR
 ```json
 {
   "cmd": "ls -l ./yyork dashboard.go main.go internal/server/browser_preview.go cmd/yyork/dashboard/app/__yyork_browser/agentation.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4230,7 +4230,7 @@ id: call_dk0TIh3bswPu1sHmebUZb3GC
 ```json
 {
   "cmd": "rg -n \"BrowserPreview|browser-preview|handleBrowserPreview|previewTargets|Annotations|browserPreview\" internal/server/server.go internal/server/browser_preview.go dashboard.go main.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -4264,7 +4264,7 @@ Original token count: 62516
 Output:
 Total output lines: 19
 
-184:%sNon-Authoritative InformationProxy Authentication RequiredUnavailable For Legal Reasonsdup idle pconn %p in freelistpreview target not registeredresolve %s workspace path: %wunknown transaction mode (%d)max expression depth exceededinvalid character class rangeunknown certificate authoritytls: too many ignored recordstls: invalid NextProtos valuetls: invalid server key sharemime: invalid media parameterbufio.Scanner: token too longaccess-control-expose-headersaccess-control-request-methodstart terminal command %q: %wFIPS 140-3 self-test failed: FIPS 140-3 self-test passed: diffie-hellman-group14-sha256diffie-hellman-group16-sha512chacha20-poly1305@openssh.comhmac-sha2-256-etm@openssh.comhmac-sha2-512-etm@openssh.com2006-01-02 15:04:05.000Z07:002006-01-02T15:04:05.000Z07:00sqlite3: authorization deniedsqlite3: notification messagex509: unsupported time formatx509: cannot parse URI %q: %sx509: malformed serial numberx509: cannot parse dnsName %qcrypto/aes: invalid key size crypto/des: invalid key size crypto/rc4: invalid key size unhandled sequence: DCS %q %qfailed to write fin frame: %wfailed to write frame payloadpoly1305: unexpected overflowinteger not minimally-encodedzero length OBJECT IDENTIFIER20060102150405.999999999Z0700julianday: value out of rangeinvalid P256 element encodingRead or write global AO configaccepts %d arg(s), received %dNo yyork %s hooks found in %s
+184:%sNon-Authoritative InformationProxy Authentication RequiredUnavailable For Legal Reasonsdup idle pconn %p in freelistpreview target not registeredresolve %s workspace path: %wunknown transaction mode (%d)max expression depth exceededinvalid character class rangeunknown certificate authoritytls: too many ignored recordstls: invalid NextProtos valuetls: invalid server key sharemime: invalid media parameterbufio.Scanner: token too longaccess-control-expose-headersaccess-control-request-methodstart terminal command %q: %wFIPS 140-3 self-test failed: FIPS 140-3 self-test passed: <REDACTED_EMAIL><REDACTED_EMAIL>-sha2-512-etm@openssh.com2006-01-02 15:04:05.000Z07:002006-01-02T15:04:05.000Z07:00sqlite3: authorization deniedsqlite3: notification messagex509: unsupported time formatx509: cannot parse URI %q: %sx509: malformed serial numberx509: cannot parse dnsName %qcrypto/aes: invalid key size crypto/des: invalid key size crypto/rc4: invalid key size unhandled sequence: DCS %q %qfailed to write fin frame: %wfailed to write frame payloadpoly1305: unexpected overflowinteger not minimally-encodedzero length OBJECT IDENTIFIER20060102150405.999999999Z0700julianday: value out of rangeinvalid P256 element encodingRead or write global AO configaccepts %d arg(s), received %dNo yyork %s hooks found in %s
 188:%spersistConn was already in LRUinvalid preview target payload/__yyork_browser/agentation.jstext/javascript; charset=utf-8failed to run go migration: %wtrailing garbage after addressunquoted key %q must be quotedsync: inconsistent mutex statesync: unlock of unlocked mutexunterminated raw quoted string{{continue}} outside {{range}}protocol version not supportedmissing validateFirstLine funcmime: duplicate parameter nameaccess-control-request-headerschunked […]
 
 > TOOL
@@ -4349,7 +4349,7 @@ id: call_TB6iD7riOSHKbA3xtltyXFAi
 ```json
 {
   "cmd": "ps -p 3920 -o pid=,lstart=,etime=,command=",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4362,7 +4362,7 @@ id: call_FthHvEOxVnkWE1kWlYul86Z6
 ```json
 {
   "cmd": "lsof -p 3920 | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4375,7 +4375,7 @@ id: call_fADr4ugs1IxE3s6sIKN6dQnD
 ```json
 {
   "cmd": "curl -sS -D - -o /tmp/yyork-preview-target-apihost.out -X POST http://localhost:4204/api/browser-preview/targets -H 'Host: api.yyork.localhost:4204' -H 'Content-Type: application/json' --data '{\"url\":\"http://yyork.localhost/\",\"previewName\":\"yyork\"}' && printf '\\n---BODY---\\n' && sed -n '1,80p' /tmp/yyork-preview-target-apihost.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4406,19 +4406,19 @@ Process exited with code 0
 Original token count: 899
 Output:
 COMMAND  PID               USER   FD     TYPE             DEVICE SIZE/OFF                NODE NAME
-yyork   3920 tanishqpalandurkar  cwd      DIR               1,15     1824            50785393 /Users/tanishqpalandurkar/Projects/yyork
-yyork   3920 tanishqpalandurkar  txt      REG               1,15 42626402            65765194 /Users/tanishqpalandurkar/Projects/yyork/yyork
+yyork   3920 tanishqpalandurkar  cwd      DIR               1,15     1824            50785393 /home/<USER>/Projects/yyork
+yyork   3920 tanishqpalandurkar  txt      REG               1,15 42626402            65765194 /home/<USER>/Projects/yyork/yyork
 yyork   3920 tanishqpalandurkar  txt      REG               1,15  2374000 1152921500312573277 /usr/lib/dyld
-yyork   3920 tanishqpalandurkar  txt      REG               1,15    32768            65765371 /Users/tanishqpalandurkar/.yyork/state.db-shm
+yyork   3920 tanishqpalandurkar  txt      REG               1,15    32768            65765371 /home/<USER>/.yyork/state.db-shm
 yyork   3920 tanishqpalandurkar    0r     CHR                3,2      0t0                 338 /dev/null
 yyork   3920 tanishqpalandurkar    1u     REG               1,15     2484            65668686 /private/tmp/yyork-4204.log
 yyork   3920 tanishqpalandurkar    2u     REG               1,15     2484            65668686 /private/tmp/yyork-4204.log
 yyork   3920 tanishqpalandurkar    3     PIPE 0xae206a80f14f88e4    16384                     ->0x56d77aaf67c6ee7d
 yyork   3920 tanishqpalandurkar    4     PIPE 0x56d77aaf67c6ee7d    16384                     ->0xae206a80f14f88e4
-yyork   3920 tanishqpalandurkar    5u     REG               1,15    28672            64400306 /Users/tanishqpalandurkar/.yyork/state.db
+yyork   3920 tanishqpalandurkar    5u     REG               1,15    28672            64400306 /home/<USER>/.yyork/state.db
 yyork   3920 tanishqpalandurkar    6u  KQUEUE                                                 count=0, state=0xa
-yyork   3920 tanishqpalandurkar    7u     REG               1,15    41232            65765370 /Users/tanishqpalandurkar/.yyork/state.db-wal
-yyork   3920 tanishqpalandurkar    8u     REG               1,15    32768            65765371 /Users/tanishqpalandurkar/.yyork/state.db-shm
+yyork   3920 tanishqpalandurkar    7u     REG               1,15    41232            65765370 /home/<USER>/.yyork/state.db-wal
+yyork   3920 tanishqpalandurkar    8u     REG               1,15    32768            65765371 /home/<USER>/.yyork/state.db-shm
 yyork   3920 tanishqpalandurkar    9u    IPv4 0x48b701ed5397ddea      0t0                 TCP localhost:4204 (LISTEN)
 yyork   3920 tanishqpalandurkar   11u    IPv4 0xc2ce5b125b3aa204      0t0                 TCP localhost:4204->localhost:65073 (ESTABLISHED)
 yyork   3920 tanishqpalandurkar   12u    IPv4  0x58f29c2dab89805      0t0                 TCP localhost:4204->localhost:65077 (ESTABLISHED)
@@ -4458,7 +4458,7 @@ id: call_szwly7k8Wjk6OhoHlxJaz5FI
 ```json
 {
   "cmd": "ls -li ./yyork",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4471,7 +4471,7 @@ id: call_JM3zL4uVrQJgLHrAxljSyc7r
 ```json
 {
   "cmd": "sed -n '1,120p' /private/tmp/yyork-4204.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4484,7 +4484,7 @@ id: call_UjXsrsAEyCS6LstNsz4ulfjX
 ```json
 {
   "cmd": "rg -n \"api\\.|isAPIHost|handleDashboard|handleBrowserPreview|ServeFile|WebFS|http.FileServer\" internal/server dashboard.go main.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -4578,7 +4578,7 @@ id: call_EetaMvW0JCiIrriHPjpkWaq0
 ```json
 {
   "cmd": "sed -n '1,80p' cmd/yyork/dashboard/app/index.html",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4591,7 +4591,7 @@ id: call_jM0diZC4LXTYeH2NWqz4mqo8
 ```json
 {
   "cmd": "find cmd/yyork/dashboard/app/assets -maxdepth 1 -type f \\( -name 'index-*.js' -o -name 'index-*.css' \\) -print | sort",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4604,7 +4604,7 @@ id: call_BpKKAKyRDWOGaXNirzJQsI31
 ```json
 {
   "cmd": "curl -sS -D - -o /tmp/live-index-js.out http://localhost:4204/assets/index-BVrlfvou.js && printf '\\n---HEAD---\\n' && head -c 300 /tmp/live-index-js.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4617,7 +4617,7 @@ id: call_184ONkCTxusWc3vmejI2kJKK
 ```json
 {
   "cmd": "rg -o \"/api/browser-preview/targets|yyork-preview-agentation|__yyork_browser/agentation.js|yyork-preview|http://yyork.localhost\" /tmp/live-index-js.out | sort | uniq -c",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4724,7 +4724,7 @@ id: call_mz7IuteagdhXUkeig9SQa6De
 ```json
 {
   "cmd": "curl -sS http://localhost:4204/assets/index-BVrlfvou.js | rg -o \"/api/browser-preview/targets|yyork-preview-agentation|__yyork_browser/agentation.js|yyork-preview|http://yyork.localhost|browser-preview-[A-Za-z0-9_-]+\\.js\" | sort | uniq -c",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4737,7 +4737,7 @@ id: call_pCccV9gEEeWIK34OwECtw4Bg
 ```json
 {
   "cmd": "curl -sS http://localhost:4204/assets/browser-preview-DgQ5ahCD.js | rg -o \"/api/browser-preview/targets|yyork-preview-agentation|__yyork_browser/agentation.js|yyork-preview|http://yyork.localhost|iframe|annotation\" | sort | uniq -c",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4750,7 +4750,7 @@ id: call_UPCok0soQrRYIn1vdwxOknKK
 ```json
 {
   "cmd": "rg -o \"/api/browser-preview/targets|yyork-preview-agentation|__yyork_browser/agentation.js|yyork-preview|http://yyork.localhost|iframe|annotation\" cmd/yyork/dashboard/app/assets/browser-preview-CSuyikHO.js | sort | uniq -c",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4844,7 +4844,7 @@ id: call_QiUntoKMwTo9aad8pkxKsocc
 ```json
 {
   "cmd": "ps -p 3920 -o pid=,command=",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4857,7 +4857,7 @@ id: call_4FaRqS2eTz6Qc0ZaUErwgYgg
 ```json
 {
   "cmd": "ls -li ./yyork cmd/yyork/dashboard/app/index.html cmd/yyork/dashboard/app/__yyork_browser/agentation.js",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4904,7 +4904,7 @@ id: call_NbVpVTMazTsJpyEyzKDST8Mj
 ```json
 {
   "cmd": "kill 3920\nfor i in {1..20}; do\n  if ! kill -0 3920 2>/dev/null; then\n    break\n  fi\n  sleep 0.25\ndone\nif kill -0 3920 2>/dev/null; then\n  kill -9 3920\nfi\nnohup ./yyork --addr 127.0.0.1:4204 --open=false > /private/tmp/yyork-4204.log 2>&1 &\nnewpid=$!\nsleep 1\nif kill -0 \"$newpid\" 2>/dev/null; then\n  printf '%s\\n' \"$newpid\"\nelse\n  printf 'failed\\n'\n  sed -n '1,120p' /private/tmp/yyork-4204.log\n  exit 1\nfi",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -4942,7 +4942,7 @@ id: call_wQMyamNFppUx5lbIWzoElfGk
 ```json
 {
   "cmd": "lsof -nP -iTCP:4204 -sTCP:LISTEN",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4955,7 +4955,7 @@ id: call_t1r28Q4YGao2qVO1alhMpmaR
 ```json
 {
   "cmd": "ps -p 3920 -o pid=,ppid=,stat=,command=",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -4968,7 +4968,7 @@ id: call_cgAyAdJAgN1YOBjlmjZb5hOE
 ```json
 {
   "cmd": "tail -n 40 /private/tmp/yyork-4204.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5033,7 +5033,7 @@ id: call_B0LZvtMGVYPqceMXeVs8iuj1
 ```json
 {
   "cmd": "ps -p 63250 -o pid=,lstart=,etime=,command=",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5046,7 +5046,7 @@ id: call_nhPCNeBWjYuBUaGjHAu6MAr4
 ```json
 {
   "cmd": "lsof -p 63250 | sed -n '1,30p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5059,7 +5059,7 @@ id: call_w5T9fGkoRFym1omvdMAnpObl
 ```json
 {
   "cmd": "curl -sS -D - -o /tmp/yyork-preview-target-new.out -X POST http://localhost:4204/api/browser-preview/targets -H 'Content-Type: application/json' --data '{\"url\":\"http://yyork.localhost/\",\"previewName\":\"yyork\"}' && printf '\\n---BODY---\\n' && sed -n '1,120p' /tmp/yyork-preview-target-new.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5072,7 +5072,7 @@ id: call_83IBTCqwdU3jH6gSHxWAGJ3r
 ```json
 {
   "cmd": "curl -sS http://localhost:4204/ | rg -n \"index-|browser-preview\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5103,19 +5103,19 @@ Process exited with code 0
 Original token count: 660
 Output:
 COMMAND   PID               USER   FD     TYPE             DEVICE SIZE/OFF                NODE NAME
-yyork   63250 tanishqpalandurkar  cwd      DIR               1,15     1824            50785393 /Users/tanishqpalandurkar/Projects/yyork
-yyork   63250 tanishqpalandurkar  txt      REG               1,15 42367938            65953390 /Users/tanishqpalandurkar/Projects/yyork/yyork
+yyork   63250 tanishqpalandurkar  cwd      DIR               1,15     1824            50785393 /home/<USER>/Projects/yyork
+yyork   63250 tanishqpalandurkar  txt      REG               1,15 42367938            65953390 /home/<USER>/Projects/yyork/yyork
 yyork   63250 tanishqpalandurkar  txt      REG               1,15  2374000 1152921500312573277 /usr/lib/dyld
-yyork   63250 tanishqpalandurkar  txt      REG               1,15    32768            66270040 /Users/tanishqpalandurkar/.yyork/state.db-shm
+yyork   63250 tanishqpalandurkar  txt      REG               1,15    32768            66270040 /home/<USER>/.yyork/state.db-shm
 yyork   63250 tanishqpalandurkar    0r     CHR                3,2      0t0                 338 /dev/null
 yyork   63250 tanishqpalandurkar    1u     REG               1,15      167            65668686 /private/tmp/yyork-4204.log
 yyork   63250 tanishqpalandurkar    2u     REG               1,15      167            65668686 /private/tmp/yyork-4204.log
 yyork   63250 tanishqpalandurkar    3     PIPE 0x5ba71727d421c108    16384                     ->0x72808bac5117ddf6
 yyork   63250 tanishqpalandurkar    4     PIPE 0x72808bac5117ddf6    16384                     ->0x5ba71727d421c108
-yyork   63250 tanishqpalandurkar    5u     REG               1,15    28672            64400306 /Users/tanishqpalandurkar/.yyork/state.db
+yyork   63250 tanishqpalandurkar    5u     REG               1,15    28672            64400306 /home/<USER>/.yyork/state.db
 yyork   63250 tanishqpalandurkar    6u  KQUEUE                                                 count=0, state=0xa
-yyork   63250 tanishqpalandurkar    7u     REG               1,15        0            66270039 /Users/tanishqpalandurkar/.yyork/state.db-wal
-yyork   63250 tanishqpalandurkar    8u     REG               1,15    32768            66270040 /Users/tanishqpalandurkar/.yyork/state.db-shm
+yyork   63250 tanishqpalandurkar    7u     REG               1,15        0            66270039 /home/<USER>/.yyork/state.db-wal
+yyork   63250 tanishqpalandurkar    8u     REG               1,15    32768            66270040 /home/<USER>/.yyork/state.db-shm
 yyork   63250 tanishqpalandurkar    9u    IPv4 0xff81c6881f5ee3a2      0t0                 TCP localhost:4204 (LISTEN)
 yyork   63250 tanishqpalandurkar   10u    IPv4 0x5e66dc05aaa6cbc6      0t0                 TCP localhost:4204->localhost:49249 (ESTABLISHED)
 yyork   63250 tanishqpalandurkar   11u     CHR               15,4  0t42216                 607 /dev/ptmx
@@ -5196,7 +5196,7 @@ id: call_Ns0dnwkekTVxu1kstv1WsPwQ
 ```json
 {
   "cmd": "curl -sS -H 'Host: yyork-preview.yyork.localhost:4204' http://127.0.0.1:4204/ | rg -n \"__yyork-preview-config|__yyork_browser/preview-bridge.js|__yyork_browser/agentation.js|__yyork-agentation-root\"",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5209,7 +5209,7 @@ id: call_BsURZE9rvKgpehDNh6OOzZLx
 ```json
 {
   "cmd": "curl -sS -D - -o /tmp/yyork-agentation-proxy.out -H 'Host: yyork-preview.yyork.localhost:4204' http://127.0.0.1:4204/__yyork_browser/agentation.js && printf '\\n---MATCHES---\\n' && rg -o \"yyork-preview-agentation|__yyork-agentation-root|Agentation\" /tmp/yyork-agentation-proxy.out | sort | uniq -c",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5439,13 +5439,13 @@ Verified:
 - Current URL: http://localhost:4204/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A5pcyw3
 
 ## My request for Codex:
-yo why its not running on yyork.localhost bro? then what's the point of using portless then? use the[$portless](/Users/tanishqpalandurkar/Projects/yyork/.agents/skills/portless/SKILL.md) skill and let that shit get into your artificial head.
+yo why its not running on yyork.localhost bro? then what's the point of using portless then? use the[$portless](/home/<USER>/Projects/yyork/.agents/skills/portless/SKILL.md) skill and let that shit get into your artificial head.
 
 > SYSTEM
 
 <skill>
 <name>portless</name>
-<path>/Users/tanishqpalandurkar/Projects/yyork/.agents/skills/portless/SKILL.md</path>
+<path>/home/<USER>/Projects/yyork/.agents/skills/portless/SKILL.md</path>
 ---
 name: portless
 description: Set up and use portless for named local dev server URLs (e.g. https://myapp.localhost instead of http://localhost:3000). Use when integrating portless into a project, configuring dev server names, setting up the local proxy, working with .localhost domains, or troubleshooting port/proxy issues.
@@ -5482,7 +5482,7 @@ id: call_aDJt1biKfE5S3bXaxBPsgLvQ
 ```json
 {
   "cmd": "portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -5495,7 +5495,7 @@ id: call_DtYshhbVuXfXMimtCj1Yveca
 ```json
 {
   "cmd": "portless proxy status",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -5508,7 +5508,7 @@ id: call_0rnWHazuz6dwQTMNVP3H71Kc
 ```json
 {
   "cmd": "sed -n '1,140p' package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -5521,7 +5521,7 @@ id: call_3GbtbVDoiS0OhKUJRyW2lh8T
 ```json
 {
   "cmd": "sed -n '1,180p' internal/cli/dev.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 18000
 }
@@ -5534,7 +5534,7 @@ id: call_gNuym9cn0H4WKyI57efnEhPJ
 ```json
 {
   "cmd": "lsof -nP -iTCP:4204 -sTCP:LISTEN",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -5590,7 +5590,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -5717,7 +5717,7 @@ id: call_RENowagLzQVY2Wlll1ykyLTh
 ```json
 {
   "cmd": "pnpm exec portless --help",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -5730,7 +5730,7 @@ id: call_aiJlM8JweIq8Z2EXncRVCUSX
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -5743,7 +5743,7 @@ id: call_MnF3ryi5sRBjKJTOKPdRu9XJ
 ```json
 {
   "cmd": "sed -n '1,220p' web/vite.config.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -5756,7 +5756,7 @@ id: call_rRCb20JvTASH7nQYFcrL94Py
 ```json
 {
   "cmd": "sed -n '180,320p' internal/cli/dev.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 14000
 }
@@ -5927,7 +5927,7 @@ id: call_Ujg15amWrOxCgY3LYcSb1KJS
 ```json
 {
   "cmd": "pnpm exec portless alias --remove yyork\nif lsof -nP -iTCP:4204 -sTCP:LISTEN >/tmp/yyork-4204-listener.txt 2>/dev/null; then\n  awk 'NR>1 {print $2}' /tmp/yyork-4204-listener.txt | sort -u | while read -r pid; do\n    [ -n \"$pid\" ] && kill \"$pid\" 2>/dev/null || true\n  done\nfi\nsleep 0.5\nif lsof -nP -iTCP:4204 -sTCP:LISTEN >/tmp/yyork-4204-listener-after.txt 2>/dev/null; then\n  awk 'NR>1 {print $2}' /tmp/yyork-4204-listener-after.txt | sort -u | while read -r pid; do\n    [ -n \"$pid\" ] && kill -9 \"$pid\" 2>/dev/null || true\n  done\nfi\nnohup pnpm dev > /private/tmp/yyork-portless-dev.log 2>&1 &\nprintf '%s\\n' $!",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -5960,7 +5960,7 @@ id: call_tsIB4QXZ6m07sQMKDb9sSl0G
 ```json
 {
   "cmd": "for i in {1..40}; do\n  if pnpm exec portless list > /tmp/yyork-portless-list.txt 2>&1 && rg -q \"https://yyork\\.localhost\" /tmp/yyork-portless-list.txt; then\n    break\n  fi\n  sleep 0.5\ndone\ncat /tmp/yyork-portless-list.txt\nprintf '\\n--- log ---\\n'\nsed -n '1,160p' /private/tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -6003,7 +6003,7 @@ id: call_hrwRU3VBLykdXVajEKxIgvBV
 ```json
 {
   "cmd": "sed -n '1,220p' /private/tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -6016,7 +6016,7 @@ id: call_jiGkH3AT3BjkyO9IRd51qlQQ
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6029,7 +6029,7 @@ id: call_R5dmteLw3Bzccj6U06lswZhC
 ```json
 {
   "cmd": "ps -p 84269 -o pid=,ppid=,stat=,command= && pgrep -fl 'go run|vite|portless|yyork'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6106,7 +6106,7 @@ id: call_9agLW9MAUI58Z4a0VySSr6IS
 ```json
 {
   "cmd": "pnpm dev",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -6124,7 +6124,7 @@ Original token count: 200
 Output:
 [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
 
-> @yyopc/yyork@0.0.1 dev /Users/tanishqpalandurkar/Projects/yyork
+> @yyopc/yyork@0.0.1 dev /home/<USER>/Projects/yyork
 > portless run
 
 
@@ -6137,10 +6137,10 @@ portless
 
   -> https://yyork.localhost
 
-Running: PORT=4784 HOST=127.0.0.1 PORTLESS_URL=https://yyork.localhost NODE_EXTRA_CA_CERTS="/Users/tanishqpalandurkar/.portless/ca.pem" pnpm run dev:app
+Running: PORT=4784 HOST=127.0.0.1 PORTLESS_URL=https://yyork.localhost NODE_EXTRA_CA_CERTS="/home/<USER>/.portless/ca.pem" pnpm run dev:app
 
 
-> @yyopc/yyork@0.0.1 dev:app /Users/tanishqpalandurkar/Projects/yyork
+> @yyopc/yyork@0.0.1 dev:app /home/<USER>/Projects/yyork
 > go run . dev
 
 sh: line 1: go: command not found
@@ -6160,7 +6160,7 @@ id: call_UaRdSBtIGaaht0MmgdaBuPAy
 ```json
 {
   "cmd": "nohup direnv exec . pnpm dev > /private/tmp/yyork-portless-dev.log 2>&1 &\nprintf '%s\\n' $!",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6191,7 +6191,7 @@ id: call_YzTMwgtP8oRXnpmUZ3Efu6sq
 ```json
 {
   "cmd": "for i in {1..60}; do\n  pnpm exec portless list > /tmp/yyork-portless-list.txt 2>&1 || true\n  if rg -q \"https://yyork\\.localhost\" /tmp/yyork-portless-list.txt; then\n    if curl -ksSf https://yyork.localhost/api/workspace >/tmp/yyork-workspace.json 2>/tmp/yyork-curl.err; then\n      break\n    fi\n  fi\n  sleep 0.5\ndone\ncat /tmp/yyork-portless-list.txt\nprintf '\\n--- api sample ---\\n'\nsed -n '1,2p' /tmp/yyork-workspace.json 2>/dev/null || true\nprintf '\\n--- curl err ---\\n'\nsed -n '1,80p' /tmp/yyork-curl.err 2>/dev/null || true\nprintf '\\n--- log ---\\n'\nsed -n '1,220p' /private/tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -6234,7 +6234,7 @@ id: call_6gY4VshKAj571WBN7tX8uQZ6
 ```json
 {
   "cmd": "sed -n '1,260p' /private/tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 40000
 }
@@ -6247,7 +6247,7 @@ id: call_AgmkCpvxJS6AZlkkVhsxwHw6
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6260,7 +6260,7 @@ id: call_8fU7chtwaGEujhOTDNHrTbm2
 ```json
 {
   "cmd": "ps -p 92097 -o pid=,ppid=,stat=,command=; pgrep -fl 'portless|go run|vite|yyork'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6273,7 +6273,7 @@ id: call_676HnoWHQSXXL5KxTvUU4AYU
 ```json
 {
   "cmd": "lsof -nP -iTCP -sTCP:LISTEN | rg ':(4[0-9]{3}|7331|4204|443) '",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6331,12 +6331,12 @@ Wall time: 0.0000 seconds
 Process exited with code 0
 Original token count: 4506
 Output:
-6629 Cursor Helper (Plugin): extension-host (user) yyork [1-5] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=user CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tanishqpalandurkar/.local/bin:/Users/tanishqpalandurkar/.npm-global/bin:/Users/tanishqpalandurkar/.pnpm-global/bin:/Users/tanishqpalandurkar/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
-6630 Cursor Helper (Plugin): extension-host (retrieval) yyork [1-6] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=retrieval CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tanishqpalandurkar/.local/bin:/Users/tanishqpalandurkar/.npm-global/bin:/Users/tanishqpalandurkar/.pnpm-global/bin:/Users/tanishqpalandurkar/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
-6631 Cursor Helper (Plugin): extension-host (always-local) yyork [1-7] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=always-local CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tanishqpalandurkar/.local/bin:/Users/tanishqpalandurkar/.npm-global/bin:/Users/tanishqpalandurkar/.pnpm-global/bin:/Users/tanishqpalandurkar/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
-6632 Cursor Helper (Plugin): extension-host (agent-exec) yyork [1-8] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=agent-exec CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tanishqpalandurkar/.local/bin:/Users/tanishqpalandurkar/.npm-global/bin:/Users/tanishqpalandurkar/.pnpm-global/bin:/Users/tanishqpalandurkar/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
-7129 tsserver[5.9.2]: syntax COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=user CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile
-7134 tsserver[5.9.2]: semantic COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=user CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba […]
+6629 Cursor Helper (Plugin): extension-host (user) yyork [1-5] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=user CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/home/<USER>/.npm-global/bin:/home/<USER>/.pnpm-global/bin:/home/<USER>/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
+6630 Cursor Helper (Plugin): extension-host (retrieval) yyork [1-6] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=retrieval CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/home/<USER>/.npm-global/bin:/home/<USER>/.pnpm-global/bin:/home/<USER>/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
+6631 Cursor Helper (Plugin): extension-host (always-local) yyork [1-7] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=always-local CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/home/<USER>/.npm-global/bin:/home/<USER>/.pnpm-global/bin:/home/<USER>/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
+6632 Cursor Helper (Plugin): extension-host (agent-exec) yyork [1-8] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=agent-exec CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/home/<USER>/.npm-global/bin:/home/<USER>/.pnpm-global/bin:/home/<USER>/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
+7129 tsserver[5.9.2]: syntax COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=user CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile
+7134 tsserver[5.9.2]: semantic COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=user CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba […]
 
 > TOOL
 
@@ -6363,7 +6363,7 @@ id: call_q7MhiQ7mIP794xsSJ19PJfMb
 ```json
 {
   "cmd": "ps -p 85027 -o pid=,ppid=,lstart=,etime=,command=",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6376,7 +6376,7 @@ id: call_DgZuW9CmRFQGt52DMGqvCooy
 ```json
 {
   "cmd": "lsof -p 85027 | sed -n '1,60p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 12000
 }
@@ -6389,7 +6389,7 @@ id: call_5N02pdqueginBoNyDY9VmsdN
 ```json
 {
   "cmd": "tail -n 100 /private/tmp/yyork-4204.log; printf '\\n--- portless dev log ---\\n'; tail -n 160 /private/tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6433,19 +6433,19 @@ Process exited with code 0
 Original token count: 537
 Output:
 COMMAND   PID               USER   FD     TYPE             DEVICE SIZE/OFF                NODE NAME
-yyork   85027 tanishqpalandurkar  cwd      DIR               1,15     1824            50785393 /Users/tanishqpalandurkar/Projects/yyork
-yyork   85027 tanishqpalandurkar  txt      REG               1,15 42367938            65953390 /Users/tanishqpalandurkar/Projects/yyork/yyork
+yyork   85027 tanishqpalandurkar  cwd      DIR               1,15     1824            50785393 /home/<USER>/Projects/yyork
+yyork   85027 tanishqpalandurkar  txt      REG               1,15 42367938            65953390 /home/<USER>/Projects/yyork/yyork
 yyork   85027 tanishqpalandurkar  txt      REG               1,15  2374000 1152921500312573277 /usr/lib/dyld
-yyork   85027 tanishqpalandurkar  txt      REG               1,15    32768            66272046 /Users/tanishqpalandurkar/.yyork/state.db-shm
+yyork   85027 tanishqpalandurkar  txt      REG               1,15    32768            66272046 /home/<USER>/.yyork/state.db-shm
 yyork   85027 tanishqpalandurkar    0r     CHR                3,2      0t0                 338 /dev/null
 yyork   85027 tanishqpalandurkar    1u     REG               1,15      501            65668686 /private/tmp/yyork-4204.log
 yyork   85027 tanishqpalandurkar    2u     REG               1,15      501            65668686 /private/tmp/yyork-4204.log
 yyork   85027 tanishqpalandurkar    3     PIPE 0x29b7f897a8a00db9    16384                     ->0x6023f74cc0a7b1fa
 yyork   85027 tanishqpalandurkar    4     PIPE 0x6023f74cc0a7b1fa    16384                     ->0x29b7f897a8a00db9
-yyork   85027 tanishqpalandurkar    5u     REG               1,15    28672            64400306 /Users/tanishqpalandurkar/.yyork/state.db
+yyork   85027 tanishqpalandurkar    5u     REG               1,15    28672            64400306 /home/<USER>/.yyork/state.db
 yyork   85027 tanishqpalandurkar    6u  KQUEUE                                                 count=0, state=0xa
-yyork   85027 tanishqpalandurkar    7u     REG               1,15        0            66272045 /Users/tanishqpalandurkar/.yyork/state.db-wal
-yyork   85027 tanishqpalandurkar    8u     REG               1,15    32768            66272046 /Users/tanishqpalandurkar/.yyork/state.db-shm
+yyork   85027 tanishqpalandurkar    7u     REG               1,15        0            66272045 /home/<USER>/.yyork/state.db-wal
+yyork   85027 tanishqpalandurkar    8u     REG               1,15    32768            66272046 /home/<USER>/.yyork/state.db-shm
 yyork   85027 tanishqpalandurkar    9u    IPv4 0xff81c6881f5ee3a2      0t0                 TCP localhost:4204 (LISTEN)
 yyork   85027 tanishqpalandurkar   10u    IPv4 0x48b701ed5397ddea      0t0                 TCP localhost:4204->localhost:49567 (ESTABLISHED)
 yyork   85027 tanishqpalandurkar   11u    IPv4 0xab1bfc088282fe28      0t0                 TCP localhost:4204->localhost:49568 (ESTABLISHED)
@@ -6473,13 +6473,13 @@ ork/state.db
 
    yyork 
   ➜  server  http://127.0.0.1:4204
-  ➜  store   /Users/tanishqpalandurkar/.yyork/state.db
+  ➜  store   /home/<USER>/.yyork/state.db
 
 08:52:53.115 INFO terminal attach strategy strategy=emulator
 
    yyork 
   ➜  server  http://127.0.0.1:4204
-  ➜  store   /Users/tanishqpalandurkar/.yyork/state.db
+  ➜  store   /home/<USER>/.yyork/state.db
 
 
 --- portless dev log ---
@@ -6510,7 +6510,7 @@ id: call_vzacvB5Y0mMGQxPoRYHGr5Sk
 ```json
 {
   "cmd": "kill 85027 2>/dev/null || true\nsleep 0.5\nif kill -0 85027 2>/dev/null; then kill -9 85027 2>/dev/null || true; fi\npnpm exec portless alias --remove yyork >/tmp/remove-yyork-alias.log 2>&1 || true\ndirenv exec . pnpm dev",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -6527,7 +6527,7 @@ Process running with session ID 83057
 Original token count: 220
 Output:
 
-> @yyopc/yyork@0.0.1 dev /Users/tanishqpalandurkar/Projects/yyork
+> @yyopc/yyork@0.0.1 dev /home/<USER>/Projects/yyork
 > portless run
 
 
@@ -6540,10 +6540,10 @@ portless
 
   -> https://yyork.localhost
 
-Running: PORT=4888 HOST=127.0.0.1 PORTLESS_URL=https://yyork.localhost NODE_EXTRA_CA_CERTS="/Users/tanishqpalandurkar/.portless/ca.pem" pnpm run dev:app
+Running: PORT=4888 HOST=127.0.0.1 PORTLESS_URL=https://yyork.localhost NODE_EXTRA_CA_CERTS="/home/<USER>/.portless/ca.pem" pnpm run dev:app
 
 
-> @yyopc/yyork@0.0.1 dev:app /Users/tanishqpalandurkar/Projects/yyork
+> @yyopc/yyork@0.0.1 dev:app /home/<USER>/Projects/yyork
 > go run . dev
 
 2026/06/09 08:55:40 INFO terminal attach strategy strategy=emulator
@@ -6552,7 +6552,7 @@ Running: PORT=4888 HOST=127.0.0.1 PORTLESS_URL=https://yyork.localhost NODE_EXTR
   yyork backend:  http://127.0.0.1:49906
 
 
-> @yyork/web@0.0.1 dev /Users/tanishqpalandurkar/Projects/yyork/web
+> @yyork/web@0.0.1 dev /home/<USER>/Projects/yyork/web
 > vite dev
 
 8:55:41 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
@@ -6574,7 +6574,7 @@ id: call_M3crtHZxlyDK2jjW50Yuen0M
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6587,7 +6587,7 @@ id: call_XSFuoVFzBzO1iZBrvfdcUYGw
 ```json
 {
   "cmd": "curl -ksS -D - -o /tmp/yyork-pl-workspace.out https://yyork.localhost/api/workspace && printf '\\n---BODY HEAD---\\n' && sed -n '1,2p' /tmp/yyork-pl-workspace.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -6600,7 +6600,7 @@ id: call_NGPEgP2qHRp3FtDCO4mwLZ1V
 ```json
 {
   "cmd": "curl -ksS -D - -o /tmp/yyork-pl-preview-target.out -X POST https://yyork.localhost/api/browser-preview/targets -H 'Content-Type: application/json' --data '{\"url\":\"https://yyork.localhost/\",\"previewName\":\"yyork\"}' && printf '\\n---BODY---\\n' && sed -n '1,80p' /tmp/yyork-pl-preview-target.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -6613,7 +6613,7 @@ id: call_Kbh1bQkDS9Dmhc1VGqjR28TU
 ```json
 {
   "cmd": "curl -ksS -D - -o /tmp/yyork-preview-host-pl.out https://yyork-preview.yyork.localhost/ && printf '\\n---BODY HEAD---\\n' && sed -n '1,40p' /tmp/yyork-preview-host-pl.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -6656,7 +6656,7 @@ date: Tue, 09 Jun 2026 03:26:41 GMT
 
 
 ---BODY HEAD---
-{"activeProjectId":"/Users/tanishqpalandurkar/Projects/yyork","projects":[{"cwd":"/Users/tanishqpalandurkar/Projects/yyork","id":"/Users/tanishqpalandurkar/Projects/yyork","name":"yyork"}],"sessions":[{"agent":"claude-code","agentPluginId":"claude-code","cwd":"/Users/tanishqpalandurkar/.yyork/worktrees/5pcyw3","description":"## How annotations reach an agent in yyork First, the key fact: **`agentation` isn't a yyork package** — it's an external in-app tool (the \"agentation v1.1\" shape) that runs *inside* the previewed app. yyork only consumes a subset of its `Annotation` shape and forwards it. So \"modes an agent could be fed annotations in\" really breaks into two layers: the **capture modes** agentation emits (which fields are populated), and the single **delivery channel** yyork uses to feed them in. The pipel...","id":"5pcyw3","issue":"","kind":"worker","metadata":"{\"agentSessionId\":\"6026eabb-c184-5fb7-8966-3d75dc074799\",\"prompt\":\"Explain different modes an agent could be fed annotations in using agentation pkg in yyork.\",\"recap\":\"## How annotations reach an agent in yyork First, the key fact: **`agentation` isn't a yyork package** — it's an external in-app tool (the \\\"agentation v1.1\\\" shape) that runs *inside* the previewed app. yyork only consumes a subset of its `Annotation` shape and forwards it. So \\\"modes an agent could be fed annotations in\\\" really breaks into two layers: the **capture modes** agentation emits (which fields are populated), […]
+{"activeProjectId":"/home/<USER>/Projects/yyork","projects":[{"cwd":"/home/<USER>/Projects/yyork","id":"/home/<USER>/Projects/yyork","name":"yyork"}],"sessions":[{"agent":"claude-code","agentPluginId":"claude-code","cwd":"/home/<USER>/.yyork/worktrees/5pcyw3","description":"## How annotations reach an agent in yyork First, the key fact: **`agentation` isn't a yyork package** — it's an external in-app tool (the \"agentation v1.1\" shape) that runs *inside* the previewed app. yyork only consumes a subset of its `Annotation` shape and forwards it. So \"modes an agent could be fed annotations in\" really breaks into two layers: the **capture modes** agentation emits (which fields are populated), and the single **delivery channel** yyork uses to feed them in. The pipel...","id":"5pcyw3","issue":"","kind":"worker","metadata":"{\"agentSessionId\":\"6026eabb-c184-5fb7-8966-3d75dc074799\",\"prompt\":\"Explain different modes an agent could be fed annotations in using agentation pkg in yyork.\",\"recap\":\"## How annotations reach an agent in yyork First, the key fact: **`agentation` isn't a yyork package** — it's an external in-app tool (the \\\"agentation v1.1\\\" shape) that runs *inside* the previewed app. yyork only consumes a subset of its `Annotation` shape and forwards it. So \\\"modes an agent could be fed annotations in\\\" really breaks into two layers: the **capture modes** agentation emits (which fields are populated), […]
 
 > TOOL
 
@@ -6749,7 +6749,7 @@ id: call_e7R4bLZtZFRUsQlidNn4TBzn
 ```json
 {
   "cmd": "backend_port=$(sed -n 's/.*yyork backend:  http:\\/\\/127\\.0\\.0\\.1:\\([0-9][0-9]*\\).*/\\1/p' /private/tmp/yyork-portless-dev.log | tail -n 1)\nif [ -z \"$backend_port\" ]; then\n  backend_port=$(ps -p 83057 >/dev/null 2>&1; sed -n 's/.*yyork backend:  http:\\/\\/127\\.0\\.0\\.1:\\([0-9][0-9]*\\).*/\\1/p' /tmp/nonexistent 2>/dev/null | tail -n 1)\nfi\nif [ -z \"$backend_port\" ]; then\n  backend_port=49906\nfi\npnpm exec portless alias yyork-preview.yyork \"$backend_port\" --force\npnpm exec portless list\ncurl -ksS -D - -o /tmp/yyork-preview-host-backend.out https://yyork-preview.yyork.localhost/ && printf '\\n---MATCHES---\\n' && rg -n \"__yyork-preview-config|__yyork_browser/preview-bridge.js|__yyork_browser/agentation.js|508|VITE\" /tmp/yyork-preview-host-backend.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -6799,7 +6799,7 @@ id: call_jYfKK7U4P3KhO4bMrP9LwJ1t
 ```json
 {
   "cmd": "nohup direnv exec . pnpm exec portless --force run > /private/tmp/yyork-portless-dev.log 2>&1 &\nprintf '%s\\n' $!",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -6839,7 +6839,7 @@ id: call_mUh7sQOXTuRGLXebCMp1JUmc
 ```json
 {
   "cmd": "for i in {1..60}; do\n  if rg -q \"yyork backend:\" /private/tmp/yyork-portless-dev.log; then break; fi\n  sleep 0.5\ndone\nsed -n '1,220p' /private/tmp/yyork-portless-dev.log\nprintf '\\n--- routes ---\\n'\npnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 30000,
   "max_output_tokens": 40000
 }
@@ -6895,7 +6895,7 @@ id: call_rAHb47qluFKjrCvbqtmSrHmI
 ```json
 {
   "cmd": "sed -n '1,260p' /private/tmp/yyork-portless-dev.log; printf '\\n--- ps ---\\n'; ps -p 10374 -o pid=,ppid=,stat=,command=; pgrep -fl 'portless|pnpm|vite|go run|yyork' | tail -n 40",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 30000
 }
@@ -6908,7 +6908,7 @@ id: call_Z32iXZw0tkzGp9ISyzzhjr3f
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 20000
 }
@@ -6950,18 +6950,18 @@ Output:
 --- ps ---
 819 /nix/store/REDACTED.14.1/bin/node /nix/store/anr7gdvmnws8yvbql8pm4bqpjpwz8ng1-pnpm-10.33.4/bin/pnpm dev
 821 ./yyork --addr 127.0.0.1:4204 --open=false
-1022 node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
-1057 node /Users/tanishqpalandurkar/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
-1230 node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm run dev:app
+1022 node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
+1057 node /home/<USER>/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
+1230 node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm run dev:app
 1266 go run . dev
 1478 /var/folders/3k/f45nj0jn3b11jfvyvt0nxj4w0000gn/T/go-build3161336308/b001/exe/yyork dev
-1534 node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm --dir web dev
-1598 node /Users/tanishqpalandurkar/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
-1604 /Users/tanishqpalandurkar/Projects/yyork/node_modules/.pnpm/@esbuild+darwin-arm64@0.27.7/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.27.7 --ping
-6629 Cursor Helper (Plugin): extension-host (user) yyork [1-5] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=user CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tanishqpalandurkar/.local/bin:/Users/tanishqpalandurkar/.npm-global/bin:/Users/tanishqpalandurkar/.pnpm-global/bin:/Users/tanishqpalandurkar/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
-6630 Cursor Helper (Plugin): extension-host (retrieval) yyork [1-6] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=retrieval CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tanishqpalandurkar/.local/bin:/Users/tanishqpalandurkar/.npm-global/bin:/Users/tanishqpalandurkar/.pnpm-global/bin:/Users/tanishqpalandurkar/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
-6631 Cursor Helper (Plugin): extension-host (always-local) yyork [1-7] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=always-local CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tanishqpalandurkar/.local/bin:/Users/tanishqpalandurkar/.npm-global/bin:/Users/tanishqpalandurkar/.pnpm-global/bin:/Users/tanishqpalandurkar/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
-6632 Cursor Helper (Plugin): extension-host (agent-exec) yyork [1-8] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=agent-exec CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/Users/tanishqpalandurkar HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/Users/tanishqpalandurkar/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /Users/tanishqpalandurkar/.nix-profile […]
+1534 node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm --dir web dev
+1598 node /home/<USER>/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
+1604 /home/<USER>/Projects/yyork/node_modules/.pnpm/@esbuild+darwin-arm64@0.27.7/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.27.7 --ping
+6629 Cursor Helper (Plugin): extension-host (user) yyork [1-5] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=user CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/home/<USER>/.npm-global/bin:/home/<USER>/.pnpm-global/bin:/home/<USER>/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
+6630 Cursor Helper (Plugin): extension-host (retrieval) yyork [1-6] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=retrieval CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/home/<USER>/.npm-global/bin:/home/<USER>/.pnpm-global/bin:/home/<USER>/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
+6631 Cursor Helper (Plugin): extension-host (always-local) yyork [1-7] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=always-local CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/tanishqpalandurkar OLDPWD=/ OSLogRateLimit=64 PAGER=less -R PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/home/<USER>/.npm-global/bin:/home/<USER>/.pnpm-global/bin:/home/<USER>/.nix-profile/bin:/etc/profiles/per-user/tanishqpalandurkar/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin PWD=/
+6632 Cursor Helper (Plugin): extension-host (agent-exec) yyork [1-8] COMMAND_MODE=unix2003 CURSOR_EXTENSION_HOST_ROLE=agent-exec CURSOR_LAYOUT=unifiedAgent CURSOR_WORKSPACE_LABEL=yyork EDITOR=code --wait HOME=/home/<USER> HOMEBREW_CELLAR=/opt/homebrew/Cellar HOMEBREW_PREFIX=/opt/homebrew HOMEBREW_REPOSITORY=/opt/homebrew/Library/.homebrew-is-managed-by-nix INFOPATH=/opt/homebrew/share/info: LOGNAME=tanishqpalandurkar MACH_PORT_RENDEZVOUS_PEER_VALDATION=0 MAMBA_ROOT_PREFIX=/home/<USER>/.local/share/micromamba MallocNanoZone=0 NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/tanishqpalandurkar /home/<USER>/.nix-profile […]
 
 > TOOL
 
@@ -6994,7 +6994,7 @@ id: call_WMHueb8faLfy6GXTjBOheCZE
 ```json
 {
   "cmd": "lsof -nP -iTCP -sTCP:LISTEN | rg 'yyork|vite|:(4204|4888|49906|443) '",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -7007,7 +7007,7 @@ id: call_GeOckkmn8Fg7Vih9dJaevPO0
 ```json
 {
   "cmd": "curl -ksS -D - -o /tmp/yyork-preview-portless-final.out https://yyork-preview.yyork.localhost/ && printf '\\n---MATCHES---\\n' && rg -n \"__yyork-preview-config|__yyork_browser/preview-bridge.js|__yyork_browser/agentation.js|508|VITE|@vite/client\" /tmp/yyork-preview-portless-final.out",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 10000,
   "max_output_tokens": 16000
 }
@@ -7063,8 +7063,8 @@ tool_use exec_command
 id: call_LwibGpDER45pv3qoE662z05e
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/Projects/yyork/.agents/skills/portless/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/Projects/yyork/.agents/skills/portless/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7076,8 +7076,8 @@ tool_use exec_command
 id: call_jIF7u4GktHLoiunXMAZYPRQC
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/skills/control-in-app-browser/SKILL.md",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7090,7 +7090,7 @@ id: call_jf54BYZ4cPJl22yh7SDx8SXN
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7103,7 +7103,7 @@ id: call_eOSxlTnEslI3i2oB9JyjX46y
 ```json
 {
   "cmd": "lsof -nP -iTCP -sTCP:LISTEN | rg '(:4204|:4888|:49906|yyork|node)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7241,7 +7241,7 @@ id: call_tBfGR18uw6jjhprndakNknvv
 ```json
 {
   "cmd": "kill 821",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7297,7 +7297,7 @@ id: call_WYnJiaBbOQbA4rAzzZ3ZS9ZN
 ```json
 {
   "cmd": "lsof -nP -iTCP -sTCP:LISTEN | rg '(:4204|:4888|:49906|yyork|node)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7310,7 +7310,7 @@ id: call_OHR73Qi83tvBQDaVMTpPzLH0
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7323,7 +7323,7 @@ id: call_C663emHCAFOyIqQvZmt8han8
 ```json
 {
   "cmd": "curl -ks https://yyork-preview.yyork.localhost/ | rg 'agentation|preview-bridge|__yyork-preview-config'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7386,7 +7386,7 @@ id: call_I4rDthHCzuglHweBTSKK9NcD
 ```json
 {
   "cmd": "ps -o pid,ppid,pgid,stat,lstart,command -p 21710,1478,1598",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7417,7 +7417,7 @@ Original token count: 144
 Output:
   PID  PPID  PGID STAT STARTED                      COMMAND
  1478  1266  1230 S    Tue Jun  9 08:55:39 2026     /var/folders/3k/f45nj0jn3b11jfvyvt0nxj4w0000gn/T/go-build3161336308/b001/exe/yyork dev
- 1598  1534  1534 S    Tue Jun  9 08:55:40 2026     node /Users/tanishqpalandurkar/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
+ 1598  1534  1534 S    Tue Jun  9 08:55:40 2026     node /home/<USER>/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
 21710     1 21710 S    Tue Jun  9 08:59:43 2026     ./yyork --addr 127.0.0.1:4204 --open=false
 
 ```
@@ -7452,7 +7452,7 @@ id: call_B8SEGK170euWESZkuzMojQyF
 ```json
 {
   "cmd": "kill 21710",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7482,7 +7482,7 @@ id: call_1OBsaB644zZab5qORlgYLd4m
 ```json
 {
   "cmd": "sleep 2 && lsof -nP -iTCP -sTCP:LISTEN | rg '(:4204|:4888|:49906|yyork|node)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 3000,
   "max_output_tokens": 12000
 }
@@ -7515,7 +7515,7 @@ id: call_J1lY1F3OleMJ2MW0o8ViAfPJ
 ```json
 {
   "cmd": "ps -o pid,ppid,pgid,sid,stat,lstart,command -p 25136",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7528,7 +7528,7 @@ id: call_2i4zphUvq0RlHhIVEbroGVhc
 ```json
 {
   "cmd": "pgrep -af 'yyork --addr|./yyork|pnpm dev|portless|go run . dev|yyork dev'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -7541,7 +7541,7 @@ id: call_a5Mva3ldmgehMFyP35pgurdU
 ```json
 {
   "cmd": "ps -axo pid,ppid,pgid,sid,stat,lstart,command | rg '(yyork --addr|./yyork|portless|pnpm dev|go run \\. dev|yyork dev)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7607,17 +7607,17 @@ Original token count: 772
 Output:
 ps: sid: keyword not found
   819 93334   819 Ss   Tue Jun  9 08:55:35 2026     /nix/store/REDACTED.14.1/bin/node /nix/store/anr7gdvmnws8yvbql8pm4bqpjpwz8ng1-pnpm-10.33.4/bin/pnpm dev
- 1022   819   819 S    Tue Jun  9 08:55:37 2026     node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
- 1057  1022   819 S    Tue Jun  9 08:55:37 2026     node /Users/tanishqpalandurkar/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
- 1230  1057  1230 Ss   Tue Jun  9 08:55:37 2026     node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm run dev:app
+ 1022   819   819 S    Tue Jun  9 08:55:37 2026     node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
+ 1057  1022   819 S    Tue Jun  9 08:55:37 2026     node /home/<USER>/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
+ 1230  1057  1230 Ss   Tue Jun  9 08:55:37 2026     node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm run dev:app
  1266  1230  1230 S    Tue Jun  9 08:55:37 2026     go run . dev
  1478  1266  1230 S    Tue Jun  9 08:55:39 2026     /var/folders/3k/f45nj0jn3b11jfvyvt0nxj4w0000gn/T/go-build3161336308/b001/exe/yyork dev
- 1534  1478  1534 S    Tue Jun  9 08:55:40 2026     node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm --dir web dev
- 1598  1534  1534 S    Tue Jun  9 08:55:40 2026     node /Users/tanishqpalandurkar/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
- 1604  1598  1534 S    Tue Jun  9 08:55:40 2026     /Users/tanishqpalandurkar/Projects/yyork/node_modules/.pnpm/@esbuild+darwin-arm64@0.27.7/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.27.7 --ping
- 7398  6629 80926 S    Mon Jun  8 10:02:44 2026     /Users/tanishqpalandurkar/Projects/yyork/.go/bin/gopls
- 7409  7398  7409 Ss   Mon Jun  8 10:02:44 2026     /Users/tanishqpalandurkar/Projects/yyork/.go/bin/gopls ** telemetry **
-14413     1 14412 SN   Sat Jun  6 10:24:44 2026     /Users/tanishqpalandurkar/.nix-profile/bin/zellij --server /tmp/ao-zellij-501/contract_version_1/yyork-1
+ 1534  1478  1534 S    Tue Jun  9 08:55:40 2026     node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm --dir web dev
+ 1598  1534  1534 S    Tue Jun  9 08:55:40 2026     node /home/<USER>/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
+ 1604  1598  1534 S    Tue Jun  9 08:55:40 2026     /home/<USER>/Projects/yyork/node_modules/.pnpm/@esbuild+darwin-arm64@0.27.7/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.27.7 --ping
+ 7398  6629 80926 S    Mon Jun  8 10:02:44 2026     /home/<USER>/Projects/yyork/.go/bin/gopls
+ 7409  7398  7409 Ss   Mon Jun  8 10:02:44 2026     /home/<USER>/Projects/yyork/.go/bin/gopls ** telemetry **
+14413     1 14412 SN   Sat Jun  6 10:24:44 2026     /home/<USER>/.nix-profile/bin/zellij --server /tmp/ao-zellij-501/contract_version_1/yyork-1
 25136     1 25136 S    Tue Jun  9 09:00:10 2026     ./yyork --addr 127.0.0.1:4204 --open=false
 26729 93334 26729 Ss   Tue Jun  9 09:00:27 2026     /bin/zsh -c ps -axo pid,ppid,pgid,sid,stat,lstart,command | […]
 
@@ -7632,7 +7632,7 @@ id: call_IlT3ZmRoocFmMhWg2Yl3x1t0
 ```json
 {
   "cmd": "launchctl procinfo 25136",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7645,7 +7645,7 @@ id: call_v5PWkwpr9RJUtupb0rQjetPB
 ```json
 {
   "cmd": "ps -axo pid,ppid,pgid,stat,lstart,command | rg '(4204|yyork --addr|nohup|daemon|supervise|watch|entr)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7658,7 +7658,7 @@ id: call_0sfw2Bthujq6RGfOE7hW2luD
 ```json
 {
   "cmd": "ls -la ~/.portless && rg -n '4204|yyork' ~/.portless",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -7696,9 +7696,9 @@ Output:
   418     1   418 Ss   Wed Jun  3 11:12:58 2026     /usr/sbin/cfprefsd daemon
  1422     1  1422 Ss   Wed Jun  3 12:33:45 2026     /usr/local/bin/determinate-nixd daemon
  1701  1422  1422 S    Wed Jun  3 12:33:49 2026     /nix/var/nix/profiles/default/bin/nix-daemon --option json-log-path /var/run/determinate-nixd-logger.socket
- 3850     1  3849 S    Tue Jun  9 06:55:42 2026     /Applications/Figma.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --database=/Users/tanishqpalandurkar/Library/Application Support/Figma/DesktopProfile/v39/Crashpad --url=https://o22594.ingest.sentry.io/api/5265832/minidump/?sentry_key=REDACTED --annotation=_productName=Figma --annotation=_version=126.3.12 --annotation=plat=OS X --annotation=prod=Electron --annotation=sentry[contexts][browser][name]=Electron --annotation=sentry[contexts][browser][version]=39.8.6 --annotation=sentry[environment]=stable --annotation=sentry[release]=126.3.12 --annotation=sentry[tags][initial_figma_id]=1560689871507846734 --annotation=sentry[user][id]=076ac71240364046ab15e7fe5e755506 --annotation=sentry[user][initial_figma_id]=1560689871507846734 --annotation=ver=39.8.6 --handshake-fd=20
-18115 93047 93047 S    Tue Jun  9 08:40:26 2026     /Applications/Codex.app/Contents/Frameworks/Codex Framework.framework/Versions/149.0.7827.54/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer) --type=renderer --user-data-dir=/Users/tanishqpalandurkar/Library/Application Support/Codex --standard-schemes=app --secure-schemes=app,sentry-ipc --bypasscsp-schemes=sentry-ipc --fetch-schemes=app,sentry-ipc --cors-schemes=sentry-ipc --streaming-schemes=app --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=10 --time-ticks-at-unix-epoch=-1780502123802163 --launch-time-ticks=471976420747 --shared-files --metrics-shmem-handle=1752395122,r,15439375367175417353,16371569566777467867,2097152 --field-trial-handle=1718379636,r,9477977677908064183,2941263890419643643,262144 --disable-features=DropInputEventsWhilePaintHolding --variations-seed-version --pseudonymization-salt-handle=1935764596,r,8904340490867670265,16969987720638900546,4 --trace-process-track-uuid=3190708995682289984 --seatbelt-client=182
-19700     1 19700 SNs  Mon Jun  8 22:42:16 2026     /Users/tanishqpalandurkar/.local/share/claude/versions/2.1.168 --bg-pty-host /tmp/cc-daemon-501/16e428cc/spare/d2cc8ca7.pty.sock 200 50 -- /Users/tanishqpalandurkar/.local/share/claude/versions/2.1.168 --bg-spare /tmp/cc-daemon-501/16e428cc/spare/d2cc8ca7.claim.sock
+ 3850     1  3849 S    Tue Jun  9 06:55:42 2026     /Applications/Figma.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --database=/home/<USER>/Library/Application Support/Figma/DesktopProfile/v39/Crashpad --url=https://o22594.ingest.sentry.io/api/5265832/minidump/?sentry_key=REDACTED --annotation=_productName=Figma --annotation=_version=126.3.12 --annotation=plat=OS X --annotation=prod=Electron --annotation=sentry[contexts][browser][name]=Electron --annotation=sentry[contexts][browser][version]=39.8.6 --annotation=sentry[environment]=stable --annotation=sentry[release]=126.3.12 --annotation=sentry[tags][initial_figma_id]=1560689871507846734 --annotation=sentry[user][id]=076ac71240364046ab15e7fe5e755506 --annotation=sentry[user][initial_figma_id]=1560689871507846734 --annotation=ver=39.8.6 --handshake-fd=20
+18115 93047 93047 S    Tue Jun  9 08:40:26 2026     /Applications/Codex.app/Contents/Frameworks/Codex Framework.framework/Versions/149.0.7827.54/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer) --type=renderer --user-data-dir=/home/<USER>/Library/Application Support/Codex --standard-schemes=app --secure-schemes=app,sentry-ipc --bypasscsp-schemes=sentry-ipc --fetch-schemes=app,sentry-ipc --cors-schemes=sentry-ipc --streaming-schemes=app --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=10 --time-ticks-at-unix-epoch=-1780502123802163 --launch-time-ticks=471976420747 --shared-files --metrics-shmem-handle=1752395122,r,15439375367175417353,16371569566777467867,2097152 --field-trial-handle=1718379636,r,9477977677908064183,2941263890419643643,262144 --disable-features=DropInputEventsWhilePaintHolding --variations-seed-version --pseudonymization-salt-handle=1935764596,r,8904340490867670265,16969987720638900546,4 --trace-process-track-uuid=3190708995682289984 --seatbelt-client=182
+19700     1 19700 SNs  Mon Jun  8 22:42:16 2026     /home/<USER>/.local/share/claude/versions/2.1.168 --bg-pty-host /tmp/cc-daemon-501/16e428cc/spare/d2cc8ca7.pty.sock 200 50 -- /home/<USER>/.local/share/claude/versions/2.1.168 --bg-spare /tmp/cc-daemon-501/16e428cc/spare/d2cc8ca7.claim.sock
 20186 19700 19700 SN   Mon Jun […]
 
 > TOOL
@@ -7728,14 +7728,14 @@ drwxr-xr-x@  10 tanishqpalandurkar  staff    320 Jun  8 22:17 host-certs
 -rw-------@   1 tanishqpalandurkar  staff    227 Jun  8 04:49 server-key.pem
 -rw-r--r--@   1 tanishqpalandurkar  staff    664 Jun  8 04:49 server.pem
 -rw-r--r--    1 tanishqpalandurkar  staff  31307 Jun  9 08:49 service.log
-rg: /Users/tanishqpalandurkar/.portless/host-certs/yyork-preview_yyork_localhost-key.pem: Permission denied (os error 13)
-/Users/tanishqpalandurkar/.portless/routes.json:3:    "hostname": "yyork.localhost",
-/Users/tanishqpalandurkar/.portless/routes.json:8:    "hostname": "yyork-preview.yyork.localhost",
-/Users/tanishqpalandurkar/.portless/proxy.log:11:Proxy error for yyork.localhost: connect ECONNREFUSED 127.0.0.1:4417
-/Users/tanishqpalandurkar/.portless/proxy.log:12:Proxy error for yyork.localhost: connect ECONNREFUSED 127.0.0.1:4417
-/Users/tanishqpalandurkar/.portless/proxy.log:13:Proxy error for yyork.localhost: connect ECONNREFUSED 127.0.0.1:4417
-/Users/tanishqpalandurkar/.portless/proxy.log:14:Proxy error for yyork.localhost: connect ECONNREFUSED 127.0.0.1:4417
-/Users/tanishqpalandurkar/.portless/proxy.log:15:Proxy error for yyork.localhost: connect ECONNREFUSED […]
+rg: /home/<USER>/.portless/host-certs/yyork-preview_yyork_localhost-key.pem: Permission denied (os error 13)
+/home/<USER>/.portless/routes.json:3:    "hostname": "yyork.localhost",
+/home/<USER>/.portless/routes.json:8:    "hostname": "yyork-preview.yyork.localhost",
+/home/<USER>/.portless/proxy.log:11:Proxy error for yyork.localhost: connect ECONNREFUSED 127.0.0.1:4417
+/home/<USER>/.portless/proxy.log:12:Proxy error for yyork.localhost: connect ECONNREFUSED 127.0.0.1:4417
+/home/<USER>/.portless/proxy.log:13:Proxy error for yyork.localhost: connect ECONNREFUSED 127.0.0.1:4417
+/home/<USER>/.portless/proxy.log:14:Proxy error for yyork.localhost: connect ECONNREFUSED 127.0.0.1:4417
+/home/<USER>/.portless/proxy.log:15:Proxy error for yyork.localhost: connect ECONNREFUSED […]
 
 > AGENT
 
@@ -7748,7 +7748,7 @@ id: call_mY37EvPJfuBbyMxv2PTDsyhC
 ```json
 {
   "title": "Connect to in-app browser",
-  "code": "const { setupBrowserRuntime } = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
+  "code": "const { setupBrowserRuntime } = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000
 }
 ```
@@ -7770,7 +7770,7 @@ id: call_yAlR8PG0wfZ8hopryvj82sNH
 ```json
 {
   "title": "Reconnect browser runtime",
-  "code": "var browserClientModule = await import('/Users/tanishqpalandurkar/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait browserClientModule.setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
+  "code": "var browserClientModule = await import('/home/<USER>/.codex/plugins/cache/openai-bundled/browser/26.602.71036/scripts/browser-client.mjs');\nawait browserClientModule.setupBrowserRuntime({ globals: globalThis });\nglobalThis.browser = await agent.browsers.get('iab');\nnodeRepl.write(await browser.documentation());",
   "timeout_ms": 30000
 }
 ```
@@ -7995,7 +7995,7 @@ id: call_ehiefofDZuU3ONv6A90JrScF
 ```json
 {
   "cmd": "curl -ks https://yyork.localhost/ | sed -n '1,40p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8008,7 +8008,7 @@ id: call_o6OVGgcamRj9h0n7EixXeDwh
 ```json
 {
   "cmd": "curl -ks https://yyork-preview.yyork.localhost/ | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8021,7 +8021,7 @@ id: call_rDa6FEzCHlisqkbTi4QxAmQ4
 ```json
 {
   "cmd": "curl -ks https://yyork-preview.yyork.localhost/__yyork_browser/agentation.js | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -8127,7 +8127,7 @@ id: call_JPpOZkPKYrbu7wstblTFSlaT
 ```json
 {
   "cmd": "rg -n \"Agentation|agentation|__yyork_browser|preview Agentation bundle|browser-preview\" .",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 30000
 }
@@ -8140,7 +8140,7 @@ id: call_O7C64UyqvzOK1RyQZUsmdCMA
 ```json
 {
   "cmd": "find . -maxdepth 4 -iname '*agentation*' -o -path '*__yyork_browser*'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8153,7 +8153,7 @@ id: call_7LQI0gNibltkksscBaVgqIK2
 ```json
 {
   "cmd": "pnpm -r --filter '*agentation*' --if-present run build",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -8191,8 +8191,8 @@ Output:
 ./pnpm-lock.yaml:4660:      '@vitest/browser-preview':
 ./pnpm-lock.yaml:6595:  agentation@3.0.2(react-dom@19.3.0-canary-d5736f09-20260507(react@19.3.0-canary-d5736f09-20260507))(react@19.3.0-canary-d5736f09-20260507):
 ./prds/canvas/BROWSER_PLAN.md:25:  preview apps must not install yyork, Agentation, or any annotation dependency.
-./prds/canvas/BROWSER_PLAN.md:54:  - `web/src/features/home/data/browser-preview.ts`
-./prds/canvas/BROWSER_PLAN.md:55:  - `web/src/features/home/data/browser-preview.unit.spec.ts`
+./prds/canvas/BROWSER_PLAN.md:54:  - `web/src/features/home/<USER>/browser-preview.ts`
+./prds/canvas/BROWSER_PLAN.md:55:  - `web/src/features/home/<USER>/browser-preview.unit.spec.ts`
 ./prds/canvas/BROWSER_PLAN.md:222:Agentation integration note:
 ./prds/canvas/BROWSER_PLAN.md:224:- `agentation@3.0.2` is installed as a yyork web dependency only. User preview
 ./prds/canvas/BROWSER_PLAN.md:225:  apps still must not install Agentation or add source imports.
@@ -8232,7 +8232,7 @@ Process exited with code 0
 Original token count: 68
 Output:
 [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
-No projects matched the filters in "/Users/tanishqpalandurkar/Projects/yyork"
+No projects matched the filters in "/home/<USER>/Projects/yyork"
 
 ```
 
@@ -8247,7 +8247,7 @@ id: call_muXI5UHOUFWkVtNS6s1lIo7I
 ```json
 {
   "cmd": "sed -n '1,130p' web/package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8260,7 +8260,7 @@ id: call_pMJ47czSgftRtgpOyyp8Mq6H
 ```json
 {
   "cmd": "sed -n '1,120p' package.json",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8273,7 +8273,7 @@ id: call_unscJhL7wyAYaQsrD6oHeqcA
 ```json
 {
   "cmd": "sed -n '1,120p' web/vite.preview.config.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8286,7 +8286,7 @@ id: call_gsghaSVkd80rCqH6j1Gasltd
 ```json
 {
   "cmd": "ls -la cmd/yyork/dashboard/app/__yyork_browser || true",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8314,7 +8314,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -8373,7 +8373,7 @@ Output:
   "license": "MIT",
   "author": {
     "name": "yyopc",
-    "email": "itsyyopc@gmail.com",
+    "email": "<REDACTED_EMAIL>",
     "url": "https://github.com/yyopc"
   },
   "repository": {
@@ -8501,7 +8501,7 @@ id: call_lNez4XrwfN5ZmpUKgJG26hRo
 ```json
 {
   "cmd": "sed -n '1,140p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8514,7 +8514,7 @@ id: call_ut7b1hBsCpSjSaGdPto02opy
 ```json
 {
   "cmd": "sed -n '480,535p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8527,7 +8527,7 @@ id: call_Q9H7c68Yiw5drb6eaJrwpUBW
 ```json
 {
   "cmd": "rg -n \"embed|dashboard|__yyork_browser|app/|dashboardFS|Dashboard\" dashboard.go cmd internal -g'*.go'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -8540,7 +8540,7 @@ id: call_7lB6d0za3H7iepwK8nf1Kds7
 ```json
 {
   "cmd": "git status --short cmd/yyork/dashboard/app/__yyork_browser/agentation.js dashboard.go internal/server/browser_preview.go web/vite.preview.config.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8768,7 +8768,7 @@ id: call_hMHsC8mNCVc3ELD6r6KXZxGG
 ```json
 {
   "cmd": "sed -n '80,135p' internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8781,7 +8781,7 @@ id: call_Pps7egpTYAqurODPm50U0ySX
 ```json
 {
   "cmd": "sed -n '1,260p' internal/cli/dev.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -8794,7 +8794,7 @@ id: call_LQ4lma23AImQ0RGdLkfNVxwe
 ```json
 {
   "cmd": "sed -n '363,420p' internal/server/server.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8807,7 +8807,7 @@ id: call_Qsb2CGRaoM3ReVfxtJSJgvAy
 ```json
 {
   "cmd": "sed -n '145,190p' internal/server/browser_preview.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9049,7 +9049,7 @@ id: call_jV7ITiu9DOBfwVClMQ6YQE1z
 ```json
 {
   "cmd": "sed -n '1,90p' internal/cli/commands.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9062,7 +9062,7 @@ id: call_kqKXgIOiXE4A3mGjZQtkocEp
 ```json
 {
   "cmd": "sed -n '1,55p' dashboard.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9075,7 +9075,7 @@ id: call_KhgWZLBa1tlOxpKll4NxfthM
 ```json
 {
   "cmd": "rg -n \"NewRoot|dashboardFS|runDev\\(|newDevCmd|WebFS|WebDir\" internal cmd main.go dashboard.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9088,7 +9088,7 @@ id: call_Ea0Hrf6hTIMx8o5XOy6AqzVa
 ```json
 {
   "cmd": "git diff -- internal/cli/dev.go internal/cli/commands.go dashboard.go internal/server/browser_preview.go web/vite.preview.config.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9271,7 +9271,7 @@ id: call_Lmwcfoeax2Nvq7lsYkog8oSk
 ```json
 {
   "cmd": "sed -n '1,150p' internal/cli/main_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -9346,7 +9346,7 @@ id: call_kwGnxsPORHxaFx7Fr8ofUKgr
 ```json
 {
   "cmd": "ls internal/cli && rg -n \"dev|runDev|YYORK_BACKEND|PORTLESS|VITE\" internal/cli/*_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9390,7 +9390,7 @@ id: call_l5x5XhYhArwFxKuKBJkBNYz7
 ```json
 {
   "cmd": "sed -n '1,220p' internal/cli/dev_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9471,7 +9471,7 @@ id: call_vM9HLLJSgsowi53Zj6R5kV7E
 ```json
 {
   "cmd": "gofmt -w internal/cli/commands.go internal/cli/dev.go internal/cli/dev_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9484,7 +9484,7 @@ id: call_ptYtRUNDBjEzrNuouw9q5pyK
 ```json
 {
   "cmd": "direnv exec . go test ./internal/cli",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9528,7 +9528,7 @@ id: call_kr38cDhznQpoMkVM3GSVe6Nt
 ```json
 {
   "cmd": "direnv exec . gofmt -w internal/cli/commands.go internal/cli/dev.go internal/cli/dev_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9585,7 +9585,7 @@ id: call_ixJG9URatiqRD0CGo6qn39Lg
 ```json
 {
   "cmd": "direnv exec . go test ./internal/cli",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9667,7 +9667,7 @@ id: call_FdCIbKjhF5HbZdnUjcKGzZg0
 ```json
 {
   "cmd": "ps -axo pid,ppid,pgid,stat,command | rg '(pnpm dev|portless.*run|go run \\. dev|/exe/yyork dev|vite.js dev|yyork --addr 127.0.0.1:4204)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9697,11 +9697,11 @@ Process exited with code 0
 Original token count: 293
 Output:
   819 93334   819 Ss   /nix/store/REDACTED.14.1/bin/node /nix/store/anr7gdvmnws8yvbql8pm4bqpjpwz8ng1-pnpm-10.33.4/bin/pnpm dev
- 1022   819   819 S    node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
- 1057  1022   819 S    node /Users/tanishqpalandurkar/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
+ 1022   819   819 S    node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
+ 1057  1022   819 S    node /home/<USER>/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
  1266  1230  1230 S    go run . dev
  1478  1266  1230 S    /var/folders/3k/f45nj0jn3b11jfvyvt0nxj4w0000gn/T/go-build3161336308/b001/exe/yyork dev
- 1598  1534  1534 S    node /Users/tanishqpalandurkar/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
+ 1598  1534  1534 S    node /home/<USER>/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
 25136     1 25136 S    ./yyork --addr 127.0.0.1:4204 --open=false
 56640 93334 56640 Ss   /bin/zsh -c ps -axo pid,ppid,pgid,stat,command | rg '(pnpm dev|portless.*run|go run \. dev|/exe/yyork dev|vite.js dev|yyork --addr 127.0.0.1:4204)'
 56642 56640 56640 U    rg (pnpm dev|portless.*run|go run \. dev|/exe/yyork dev|vite.js dev|yyork --addr 127.0.0.1:4204)
@@ -9732,7 +9732,7 @@ id: call_TsRKBzl65GuJ4C9EIL2UtMlj
 ```json
 {
   "cmd": "kill -TERM -819 -1230 -1534 -25136",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9762,7 +9762,7 @@ id: call_QVf9ahTUVlOWx76JJN0vOcl0
 ```json
 {
   "cmd": "sleep 1 && ps -axo pid,ppid,pgid,stat,command | rg '(pnpm dev|portless.*run|go run \\. dev|/exe/yyork dev|vite.js dev|yyork --addr 127.0.0.1:4204)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 3000,
   "max_output_tokens": 20000
 }
@@ -9823,7 +9823,7 @@ id: call_MozvLbBln7WxpJOc5ferntPu
 ```json
 {
   "cmd": "rm -f /tmp/yyork-portless-dev.log && nohup direnv exec . pnpm dev > /tmp/yyork-portless-dev.log 2>&1 &",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9853,7 +9853,7 @@ id: call_pMGKR9ekiAOXtFx9RhJiRQQN
 ```json
 {
   "cmd": "sleep 4 && sed -n '1,120p' /tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 5000,
   "max_output_tokens": 20000
 }
@@ -9866,7 +9866,7 @@ id: call_rqBN0J1QS2lfj8lGswsovAan
 ```json
 {
   "cmd": "sleep 4 && pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 5000,
   "max_output_tokens": 12000
 }
@@ -9879,7 +9879,7 @@ id: call_BjcP2fXcAtGLx9DgI5H4MGQd
 ```json
 {
   "cmd": "sleep 4 && lsof -nP -iTCP -sTCP:LISTEN | rg '(:4204|:4[0-9]{3}|yyork|node)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 5000,
   "max_output_tokens": 20000
 }
@@ -9953,7 +9953,7 @@ id: call_iCKXOtQw83d2x7epGKZrW5V2
 ```json
 {
   "cmd": "ps -axo pid,ppid,pgid,stat,lstart,command | rg '(pnpm dev|portless.*run|go run \\. dev|/exe/yyork dev|vite.js dev|yyork-portless-dev|direnv exec . pnpm dev)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -9966,7 +9966,7 @@ id: call_MLHKsrlICPNHfZxN9lfLch9T
 ```json
 {
   "cmd": "wc -c /tmp/yyork-portless-dev.log && ls -l /tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10031,7 +10031,7 @@ id: call_7idehoARUlpjArAgtPkkC3z9
 ```json
 {
   "cmd": "zsh -lc 'nohup direnv exec . pnpm dev >/tmp/yyork-portless-dev.log 2>&1 &!'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10061,7 +10061,7 @@ id: call_PfJW90mOUXPTFRLgDg3alsiV
 ```json
 {
   "cmd": "sleep 4 && sed -n '1,160p' /tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 5000,
   "max_output_tokens": 20000
 }
@@ -10074,7 +10074,7 @@ id: call_i5VpNAtEnUaUa2OVWKzcpNfc
 ```json
 {
   "cmd": "sleep 4 && ps -axo pid,ppid,pgid,stat,lstart,command | rg '(pnpm dev|portless.*run|go run \\. dev|/exe/yyork dev|vite.js dev)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 5000,
   "max_output_tokens": 20000
 }
@@ -10087,7 +10087,7 @@ id: call_N3Dc3ajoUFTud5xi1fvYNER2
 ```json
 {
   "cmd": "sleep 4 && pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 5000,
   "max_output_tokens": 12000
 }
@@ -10151,7 +10151,7 @@ id: call_MrWDKdRvPvFlhBs0y2WQ5gKx
 ```json
 {
   "cmd": "launchctl submit -h",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10178,7 +10178,7 @@ id: call_MOjnYUXKd6eLxqcUWIITCZQc
 ```json
 {
   "cmd": "launchctl remove com.yyopc.yyork.portless-dev 2>/dev/null || true",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10207,8 +10207,8 @@ tool_use exec_command
 id: call_X3AKvSi9Mjqh3WkxWTqXBuq6
 ```json
 {
-  "cmd": "launchctl submit -l com.yyopc.yyork.portless-dev -o /tmp/yyork-portless-dev.log -e /tmp/yyork-portless-dev.log -- /bin/zsh -lc 'cd /Users/tanishqpalandurkar/Projects/yyork && direnv exec . pnpm dev'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "launchctl submit -l com.yyopc.yyork.portless-dev -o /tmp/yyork-portless-dev.log -e /tmp/yyork-portless-dev.log -- /bin/zsh -lc 'cd /home/<USER>/Projects/yyork && direnv exec . pnpm dev'",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10238,7 +10238,7 @@ id: call_CVdCwT6WgpQIIAytm1GFyb6p
 ```json
 {
   "cmd": "sleep 5 && sed -n '1,200p' /tmp/yyork-portless-dev.log",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 7000,
   "max_output_tokens": 30000
 }
@@ -10251,7 +10251,7 @@ id: call_eQtgez88aPdyByoHD7nzXSEB
 ```json
 {
   "cmd": "sleep 5 && ps -axo pid,ppid,pgid,stat,lstart,command | rg '(pnpm dev|portless.*run|go run \\. dev|/exe/yyork dev|vite.js dev|com.yyopc.yyork.portless-dev)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 7000,
   "max_output_tokens": 20000
 }
@@ -10264,7 +10264,7 @@ id: call_vGbejBUm0557nnkO4LR65F1n
 ```json
 {
   "cmd": "sleep 5 && pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 7000,
   "max_output_tokens": 12000
 }
@@ -10281,7 +10281,7 @@ Process exited with code 0
 Original token count: 199
 Output:
 
-> @yyopc/yyork@0.0.1 dev /Users/tanishqpalandurkar/Projects/yyork
+> @yyopc/yyork@0.0.1 dev /home/<USER>/Projects/yyork
 > portless run
 
 
@@ -10294,10 +10294,10 @@ portless
 
   -> https://yyork.localhost
 
-Running: PORT=4060 HOST=127.0.0.1 PORTLESS_URL=https://yyork.localhost NODE_EXTRA_CA_CERTS="/Users/tanishqpalandurkar/.portless/ca.pem" pnpm run dev:app
+Running: PORT=4060 HOST=127.0.0.1 PORTLESS_URL=https://yyork.localhost NODE_EXTRA_CA_CERTS="/home/<USER>/.portless/ca.pem" pnpm run dev:app
 
 
-> @yyopc/yyork@0.0.1 dev:app /Users/tanishqpalandurkar/Projects/yyork
+> @yyopc/yyork@0.0.1 dev:app /home/<USER>/Projects/yyork
 > go run . dev
 
 2026/06/09 09:08:03 INFO terminal attach strategy strategy=emulator
@@ -10306,7 +10306,7 @@ Running: PORT=4060 HOST=127.0.0.1 PORTLESS_URL=https://yyork.localhost NODE_EXTR
   yyork backend:  http://127.0.0.1:50773
 
 
-> @yyork/web@0.0.1 dev /Users/tanishqpalandurkar/Projects/yyork/web
+> @yyork/web@0.0.1 dev /home/<USER>/Projects/yyork/web
 > vite dev
 
 
@@ -10327,11 +10327,11 @@ Process exited with code 0
 Original token count: 340
 Output:
 68329     1 68329 S    Tue Jun  9 09:07:54 2026     /nix/store/REDACTED.14.1/bin/node /nix/store/anr7gdvmnws8yvbql8pm4bqpjpwz8ng1-pnpm-10.33.4/bin/pnpm dev
-68557 68329 68329 S    Tue Jun  9 09:07:55 2026     node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
-68656 68557 68329 S    Tue Jun  9 09:07:55 2026     node /Users/tanishqpalandurkar/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
+68557 68329 68329 S    Tue Jun  9 09:07:55 2026     node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
+68656 68557 68329 S    Tue Jun  9 09:07:55 2026     node /home/<USER>/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
 68964 68867 68867 S    Tue Jun  9 09:07:56 2026     go run . dev
 69728 68964 68867 S    Tue Jun  9 09:08:03 2026     /var/folders/3k/f45nj0jn3b11jfvyvt0nxj4w0000gn/T/go-build3137221296/b001/exe/yyork dev
-69891 69852 69852 U    Tue Jun  9 09:08:03 2026     node /Users/tanishqpalandurkar/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
+69891 69852 69852 U    Tue Jun  9 09:08:03 2026     node /home/<USER>/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
 70034 93334 70034 Ss   Tue Jun  9 09:08:05 2026     /bin/zsh -c sleep 5 && ps -axo pid,ppid,pgid,stat,lstart,command | rg '(pnpm dev|portless.*run|go run \. dev|/exe/yyork dev|vite.js dev|com.yyopc.yyork.portless-dev)'
 70993 70034 70034 U    Tue Jun  9 09:08:10 2026     rg (pnpm dev|portless.*run|go run \. dev|/exe/yyork dev|vite.js dev|com.yyopc.yyork.portless-dev)
 
@@ -10368,7 +10368,7 @@ id: call_taiW75tAZxwKa4xUgo97OZpg
 ```json
 {
   "cmd": "pnpm exec portless alias yyork-preview.yyork 50773 --force",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10381,7 +10381,7 @@ id: call_aF8yHbBUAq7gPrz3oZmDMvKB
 ```json
 {
   "cmd": "lsof -nP -iTCP -sTCP:LISTEN | rg '(:4204|:4060|:50773|:49906|yyork|node)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -10442,7 +10442,7 @@ id: call_tlpWxHR9a1Q5R6ooUIOI7SvC
 ```json
 {
   "cmd": "curl -ks https://yyork-preview.yyork.localhost/__yyork_browser/agentation.js | head -c 120",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10455,7 +10455,7 @@ id: call_wXHLK9EQ4cYuPIjIztkmGmym
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10595,7 +10595,7 @@ id: call_wr93LFGypnou32cbSOjdO0tY
 ```json
 {
   "cmd": "curl -ks https://yyork-preview.yyork.localhost/ | rg '(__yyork-preview-config|preview-bridge|agentation|id=\"root\"|Build the web dashboard)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10608,7 +10608,7 @@ id: call_p7YjAncae1RWFBUrX1eSMZZs
 ```json
 {
   "cmd": "curl -ks https://yyork-preview.yyork.localhost/__yyork_browser/agentation.js | head -c 80",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10621,7 +10621,7 @@ id: call_g3KKqFE42JaHsrkHL1vY56I9
 ```json
 {
   "cmd": "curl -ks https://yyork.localhost/ | rg '(@vite/client|id=\"root\"|Build the web dashboard)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10683,7 +10683,7 @@ id: call_8gD3via29rriLlCOYP8jjO9Z
 ```json
 {
   "cmd": "sed -n '1,140p' web/src/browser-preview-agentation.ts",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 16000
 }
@@ -10792,8 +10792,8 @@ tool_use exec_command
 id: call_VuXrZzRxf3Rjz1vW2KKiFO5Y
 ```json
 {
-  "cmd": "sed -n '260,360p' internal/server/browser_preview.go && sed -n '480,535p' web/src/features/home/components/molecules/canvas-web-preview.tsx",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "cmd": "sed -n '260,360p' internal/server/browser_preview.go && sed -n '480,535p' web/src/features/home/<USER>/molecules/canvas-web-preview.tsx",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -11037,7 +11037,7 @@ id: call_y5tO7r4vOSHfABw2OLVz5UAs
 ```json
 {
   "cmd": "pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11050,7 +11050,7 @@ id: call_Vx19Wkt1wq5JgBO49yjIMls3
 ```json
 {
   "cmd": "curl -ks https://yyork-preview.yyork.localhost/ | rg '(__yyork-preview-config|preview-bridge|agentation|id=\"root\"|Build the web dashboard)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11063,7 +11063,7 @@ id: call_IHwndmjn0wYQnPOv7ojUEUg1
 ```json
 {
   "cmd": "direnv exec . go test ./internal/cli",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11076,7 +11076,7 @@ id: call_dc7X2tbwnzmBQxSm1BZb46dD
 ```json
 {
   "cmd": "ps -axo pid,ppid,pgid,stat,command | rg '(pnpm dev|portless.*run|go run \\. dev|/exe/yyork dev|vite.js dev|yyork --addr 127.0.0.1:4204)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -11139,11 +11139,11 @@ Original token count: 293
 Output:
 58055     1 58055 S    ./yyork --addr 127.0.0.1:4204 --open=false
 68329     1 68329 S    /nix/store/REDACTED.14.1/bin/node /nix/store/anr7gdvmnws8yvbql8pm4bqpjpwz8ng1-pnpm-10.33.4/bin/pnpm dev
-68557 68329 68329 S    node /Users/tanishqpalandurkar/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
-68656 68557 68329 S    node /Users/tanishqpalandurkar/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
+68557 68329 68329 S    node /home/<USER>/Projects/yyork/.pnpm/.tools/pnpm/10.28.0/bin/pnpm dev
+68656 68557 68329 S    node /home/<USER>/Projects/yyork/node_modules/.bin/../.pnpm/portless@0.14.0/node_modules/portless/dist/cli.js run
 68964 68867 68867 S    go run . dev
 69728 68964 68867 S    /var/folders/3k/f45nj0jn3b11jfvyvt0nxj4w0000gn/T/go-build3137221296/b001/exe/yyork dev
-69891 69852 69852 S    node /Users/tanishqpalandurkar/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
+69891 69852 69852 S    node /home/<USER>/Projects/yyork/web/node_modules/.bin/../../../node_modules/.pnpm/vite@7.3.2_@types+node@25.5.2_jiti@2.6.1_lightningcss@1.32.0_terser@5.46.1_tsx@4.21.0_yaml@2.8.3/node_modules/vite/bin/vite.js dev
 97687 93334 97687 Ss   /bin/zsh -c ps -axo pid,ppid,pgid,stat,command | rg '(pnpm dev|portless.*run|go run \. dev|/exe/yyork dev|vite.js dev|yyork --addr 127.0.0.1:4204)'
 97690 97687 97687 S    rg (pnpm dev|portless.*run|go run \. dev|/exe/yyork dev|vite.js dev|yyork --addr 127.0.0.1:4204)
 
@@ -11192,7 +11192,7 @@ id: call_Ghb5f2dVTWaPCCleUB7OcgKy
 ```json
 {
   "cmd": "launchctl list | rg -i 'yyork|4204|portless'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11205,7 +11205,7 @@ id: call_IarIOBtcQQD2kq8Vb8rCDtcT
 ```json
 {
   "cmd": "ps -o pid,ppid,pgid,stat,lstart,command -p 58055",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11218,7 +11218,7 @@ id: call_iXfGxR11LheQdXbdPBhJGv80
 ```json
 {
   "cmd": "lsof -nP -p 58055 | sed -n '1,80p'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -11265,19 +11265,19 @@ Process exited with code 0
 Original token count: 466
 Output:
 COMMAND   PID               USER   FD     TYPE             DEVICE SIZE/OFF                NODE NAME
-yyork   58055 tanishqpalandurkar  cwd      DIR               1,15     1792            50785393 /Users/tanishqpalandurkar/Projects/yyork
-yyork   58055 tanishqpalandurkar  txt      REG               1,15 42367938            65953390 /Users/tanishqpalandurkar/Projects/yyork/yyork
+yyork   58055 tanishqpalandurkar  cwd      DIR               1,15     1792            50785393 /home/<USER>/Projects/yyork
+yyork   58055 tanishqpalandurkar  txt      REG               1,15 42367938            65953390 /home/<USER>/Projects/yyork/yyork
 yyork   58055 tanishqpalandurkar  txt      REG               1,15  2374000 1152921500312573277 /usr/lib/dyld
-yyork   58055 tanishqpalandurkar  txt      REG               1,15    32768            66279855 /Users/tanishqpalandurkar/.yyork/state.db-shm
+yyork   58055 tanishqpalandurkar  txt      REG               1,15    32768            66279855 /home/<USER>/.yyork/state.db-shm
 yyork   58055 tanishqpalandurkar    0r     CHR                3,2      0t0                 338 /dev/null
 yyork   58055 tanishqpalandurkar    1u     REG               1,15     1169            65668686 /private/tmp/yyork-4204.log
 yyork   58055 tanishqpalandurkar    2u     REG               1,15     1169            65668686 /private/tmp/yyork-4204.log
 yyork   58055 tanishqpalandurkar    3     PIPE 0x5ea4716a7d333d08    16384                     ->0x92c578bb9b99ff07
 yyork   58055 tanishqpalandurkar    4     PIPE 0x92c578bb9b99ff07    16384                     ->0x5ea4716a7d333d08
-yyork   58055 tanishqpalandurkar    5u     REG               1,15    28672            64400306 /Users/tanishqpalandurkar/.yyork/state.db
+yyork   58055 tanishqpalandurkar    5u     REG               1,15    28672            64400306 /home/<USER>/.yyork/state.db
 yyork   58055 tanishqpalandurkar    6u  KQUEUE                                                 count=0, state=0xa
-yyork   58055 tanishqpalandurkar    7u     REG               1,15        0            66279854 /Users/tanishqpalandurkar/.yyork/state.db-wal
-yyork   58055 tanishqpalandurkar    8u     REG               1,15    32768            66279855 /Users/tanishqpalandurkar/.yyork/state.db-shm
+yyork   58055 tanishqpalandurkar    7u     REG               1,15        0            66279854 /home/<USER>/.yyork/state.db-wal
+yyork   58055 tanishqpalandurkar    8u     REG               1,15    32768            66279855 /home/<USER>/.yyork/state.db-shm
 yyork   58055 tanishqpalandurkar    9u    IPv4 0x602420f49dbbef82      0t0                 TCP 127.0.0.1:4204 (LISTEN)
 
 ```
@@ -11293,7 +11293,7 @@ id: call_8J6AxE7Z73FmuW33azpbR32u
 ```json
 {
   "cmd": "launchctl remove local.yyork.4204",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11323,7 +11323,7 @@ id: call_AwRp4QCzmMNQxHgp0jVAI6XB
 ```json
 {
   "cmd": "sleep 2 && launchctl list | rg -i 'yyork|4204|portless'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 3000,
   "max_output_tokens": 12000
 }
@@ -11336,7 +11336,7 @@ id: call_cUGTFVui3p48trt9iTjCOBh9
 ```json
 {
   "cmd": "sleep 2 && lsof -nP -iTCP -sTCP:LISTEN | rg '(:4204|:4060|:50773|yyork|node)'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 3000,
   "max_output_tokens": 20000
 }
@@ -11349,7 +11349,7 @@ id: call_nnoasCV4NGJOYI6xaN1vWb78
 ```json
 {
   "cmd": "sleep 2 && pnpm exec portless list",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 3000,
   "max_output_tokens": 12000
 }
@@ -11415,7 +11415,7 @@ id: call_8g7GeEgEohAPM9zUF2dFDuuG
 ```json
 {
   "cmd": "git diff -- internal/cli/commands.go internal/cli/dev.go internal/cli/dev_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000
 }
@@ -11428,7 +11428,7 @@ id: call_mnIXKPeUlWVQIXk0fJgydhv2
 ```json
 {
   "cmd": "git status --short internal/cli/commands.go internal/cli/dev.go internal/cli/dev_test.go",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11441,7 +11441,7 @@ id: call_Mc3lqWcvOqlnMwjnThEvlaRU
 ```json
 {
   "cmd": "curl -ks https://yyork-preview.yyork.localhost/__yyork_browser/agentation.js | head -c 40 && printf '\\n'",
-  "workdir": "/Users/tanishqpalandurkar/Projects/yyork",
+  "workdir": "/home/<USER>/Projects/yyork",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11539,9 +11539,9 @@ Why Agentation was missing:
 - I patched dev mode so it carries the embedded dashboard FS into the backend config.
 
 Changed:
-- [internal/cli/commands.go](/Users/tanishqpalandurkar/Projects/yyork/internal/cli/commands.go)
-- [internal/cli/dev.go](/Users/tanishqpalandurkar/Projects/yyork/internal/cli/dev.go)
-- [internal/cli/dev_test.go](/Users/tanishqpalandurkar/Projects/yyork/internal/cli/dev_test.go)
+- [internal/cli/commands.go](/home/<USER>/Projects/yyork/internal/cli/commands.go)
+- [internal/cli/dev.go](/home/<USER>/Projects/yyork/internal/cli/dev.go)
+- [internal/cli/dev_test.go](/home/<USER>/Projects/yyork/internal/cli/dev_test.go)
 
 Verified:
 - `direnv exec . go test ./internal/cli` passes.

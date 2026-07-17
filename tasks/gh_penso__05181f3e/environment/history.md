@@ -46,12 +46,12 @@ id: toolu_01FjsQHiG8RHLfbCAXWPictg
 tool_result
 id: toolu_01FjsQHiG8RHLfbCAXWPictg
 ```
-/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-125-        event,
-/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-126-        seq,
-/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-127-        clients = inner.clients.len(),
+/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-125-        event,
+/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-126-        seq,
+/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-127-        clients = inner.clients.len(),
 crates/gateway/src/broadcast.rs:128:        "broadcasting event"
-/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-129-    );
-/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-130-    for client in inner.clients.values() {
+/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-129-    );
+/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs-130-    for client in inner.clients.values() {
 crates/gateway/src/broadcast.rs-131-        / Check scope guard: if the event requires a scope, verify the client has it.
 ```
 
@@ -61,7 +61,7 @@ tool_use Read
 id: toolu_017g3pVoDYP8FoUEKW9Gn7hP
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
   "offset": 115,
   "limit": 30
 }
@@ -115,7 +115,7 @@ id: toolu_019uYDaLVhMU6Gja9yW4gERV
 ```json
 {
   "pattern": "debug!|trace!",
-  "path": "/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -142,7 +142,7 @@ id: toolu_012LD1hMme4hMBZtsY76qvYE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
   "old_string": "    debug!(\n        event,\n        seq,\n        clients = inner.clients.len(),\n        \"broadcasting event\"\n    );",
   "new_string": "    trace!(\n        event,\n        seq,\n        clients = inner.clients.len(),\n        \"broadcasting event\"\n    );"
 }
@@ -153,7 +153,7 @@ id: toolu_012LD1hMme4hMBZtsY76qvYE
 tool_result
 id: toolu_012LD1hMme4hMBZtsY76qvYE
 ```
-The file /Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs has been updated successfully.
 ```
 
 > AGENT
@@ -167,7 +167,7 @@ id: toolu_01PnGQqrUxLUD4SU1tQS7raS
 ```json
 {
   "pattern": "use tracing|tracing::",
-  "path": "/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -192,7 +192,7 @@ id: toolu_01TFAobxbSn1nqMSybzC9CeW
 ```json
 {
   "pattern": "\\bdebug\\b",
-  "path": "/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -217,7 +217,7 @@ id: toolu_01BgVjiedhjNq71Z3Z6URez5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs",
   "old_string": "    tracing::{debug, warn},",
   "new_string": "    tracing::{trace, warn},"
 }
@@ -228,7 +228,7 @@ id: toolu_01BgVjiedhjNq71Z3Z6URez5
 tool_result
 id: toolu_01BgVjiedhjNq71Z3Z6URez5
 ```
-The file /Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs has been updated successfully.
+The file /home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway/src/broadcast.rs has been updated successfully.
 ```
 
 > AGENT
@@ -306,24 +306,24 @@ id: toolu_01TT8EiqqUhRmoQzCmCXBydT
 
 <output>
     Checking matrix-sdk-sqlite v0.16.0
-    Checking moltis-slack v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/slack)
+    Checking moltis-slack v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/slack)
     Checking chromiumoxide v0.8.0
-    Checking moltis-browser v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/browser)
-    Checking moltis-discord v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/discord)
+    Checking moltis-browser v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/browser)
+    Checking moltis-discord v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/discord)
     Checking ece v2.3.1
     Checking webauthn-rs v0.5.4
     Checking web-push v0.11.0
     Checking llama-cpp-2 v0.1.133
-    Checking moltis-providers v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/providers)
-    Checking moltis-matrix v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/matrix)
-    Checking moltis-tools v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/tools)
-    Checking moltis-provider-setup v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/provider-setup)
-    Checking moltis-memory v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/memory)
-    Checking moltis-auth v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/auth)
-    Checking moltis-qmd v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/qmd)
-    Checking moltis-chat v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/chat)
-    Checking moltis-code-index v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/code-index)
-    Checking moltis-gateway v0.1.0 (/Users/penso/.superset/worktrees/moltis/groovy-willow/crates/gateway)
+    Checking moltis-providers v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/providers)
+    Checking moltis-matrix v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/matrix)
+    Checking moltis-tools v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/tools)
+    Checking moltis-provider-setup v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/provider-setup)
+    Checking moltis-memory v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/memory)
+    Checking moltis-auth v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/auth)
+    Checking moltis-qmd v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/qmd)
+    Checking moltis-chat v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/chat)
+    Checking moltis-code-index v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/code-index)
+    Checking moltis-gateway v0.1.0 (/home/<USER>/.superset/worktrees/moltis/groovy-willow/crates/gateway)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 2m 30s
 </output>
 ```

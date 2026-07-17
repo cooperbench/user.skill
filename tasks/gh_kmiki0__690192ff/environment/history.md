@@ -11589,7 +11589,7 @@ tool_use Bash
 id: toolu_016pxRmtjdn5G7aJyVxADqhE
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nfeat: UIリデザイン + ページ管理 + グローバル検索\n\n- Google Stitchスタイルのフローティングパネルレイアウトに移行\n  - ドックパネル廃止、NodePalette/MermaidPreview/FormatBarをフローティング化\n  - glass-panel + aurora-bg デザイン適用\n  - CollapsiblePanel/PanelRibbon削除\n- 複数ページ管理（Flowmaid本体 + Nodemaid共通）\n  - FlowPage型追加、composeFlowPagesでlive⇄ページ同期\n  - 左縦タブ⇔下部横タブ（Googleスプレッドシート風）切替\n  - PageTabsDockを共通コンポーネントとして切り出し\n  - コンポーネント編集モード中のページ操作ガード\n  - localStorage永続化、undo/redo対応\n- グローバル検索（Ctrl+F）\n  - ノードID/ラベル、エッジラベル/経路の部分一致検索\n  - スペース区切りAND検索、マッチ箇所ハイライト\n  - キーボードナビ（↑↓Enter/Esc）、next/prevボタン\n  - 選択+fitViewズームジャンプ\n- Nodemaidパレットをラベル付きカード化（Twilio Studioパターン）\n- テーマトグルのresolvedTheme修正（初回切替不具合）\n- MermaidPreviewのトグル式開閉（コードアイコン⇔フルパネル）\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nfeat: UIリデザイン + ページ管理 + グローバル検索\n\n- Google Stitchスタイルのフローティングパネルレイアウトに移行\n  - ドックパネル廃止、NodePalette/MermaidPreview/FormatBarをフローティング化\n  - glass-panel + aurora-bg デザイン適用\n  - CollapsiblePanel/PanelRibbon削除\n- 複数ページ管理（Flowmaid本体 + Nodemaid共通）\n  - FlowPage型追加、composeFlowPagesでlive⇄ページ同期\n  - 左縦タブ⇔下部横タブ（Googleスプレッドシート風）切替\n  - PageTabsDockを共通コンポーネントとして切り出し\n  - コンポーネント編集モード中のページ操作ガード\n  - localStorage永続化、undo/redo対応\n- グローバル検索（Ctrl+F）\n  - ノードID/ラベル、エッジラベル/経路の部分一致検索\n  - スペース区切りAND検索、マッチ箇所ハイライト\n  - キーボードナビ（↑↓Enter/Esc）、next/prevボタン\n  - 選択+fitViewズームジャンプ\n- Nodemaidパレットをラベル付きカード化（Twilio Studioパターン）\n- テーマトグルのresolvedTheme修正（初回切替不具合）\n- MermaidPreviewのトグル式開閉（コードアイコン⇔フルパネル）\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Create commit with all changes"
 }
 ```

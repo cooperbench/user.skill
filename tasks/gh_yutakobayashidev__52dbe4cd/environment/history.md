@@ -42,7 +42,7 @@ tool_use Read
 id: toolu_01JBKDpramaL7ZkE5MsvLCpv
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/homebrew.nix"
 }
 ```
 

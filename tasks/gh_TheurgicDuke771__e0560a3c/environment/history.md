@@ -218,7 +218,7 @@ tool_use Read
 id: toolu_01GdC9LGgkwmNc6JRFzvDdWp
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/snowflake.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/snowflake.py"
 }
 ```
 
@@ -266,7 +266,7 @@ tool_use Read
 id: toolu_01BcWLDnX9MjD2v4UX5DCsf2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/unity_catalog.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/unity_catalog.py"
 }
 ```
 
@@ -367,7 +367,7 @@ tool_use Read
 id: toolu_014fMtn1Mk6LGvuLqy6vmgv2
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/datasources/flatfile.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/datasources/flatfile.py"
 }
 ```
 

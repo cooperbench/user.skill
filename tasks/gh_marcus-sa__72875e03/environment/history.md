@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/los-angeles directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -44,7 +44,7 @@ tool_use Bash
 id: toolu_01Yb8LWmAhhJcC5dBQRCUUW3
 ```json
 {
-  "command": "cat /Users/marcus/conductor/workspaces/brain-v1/los-angeles/.nwave/des-config.json 2>/dev/null || echo \"NOT FOUND\"",
+  "command": "cat /home/<USER>/conductor/workspaces/brain-v1/los-angeles/.nwave/des-config.json 2>/dev/null || echo \"NOT FOUND\"",
   "description": "Check rigor profile"
 }
 ```
@@ -75,7 +75,7 @@ tool_use Bash
 id: toolu_01JE7EfmAW25goqMZkcoHLef
 ```json
 {
-  "command": "ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/ 2>/dev/null || echo \"NOT FOUND\"",
+  "command": "ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/ 2>/dev/null || echo \"NOT FOUND\"",
   "description": "Check for skills feature docs"
 }
 ```
@@ -119,12 +119,12 @@ id: toolu_0138XQGz4gnjHYKTvFPsJ9nx
 tool_result
 id: toolu_0138XQGz4gnjHYKTvFPsJ9nx
 ```
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-detail-page.test.tsx
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-detail-page.tsx
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agents-page.test.tsx
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agents-page.tsx
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-detail-page.test.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-detail-page.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agents-page.test.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agents-page.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.tsx
 ```
 
 > TOOL
@@ -132,9 +132,9 @@ id: toolu_0138XQGz4gnjHYKTvFPsJ9nx
 tool_result
 id: toolu_01EXxSP729nPVzoYiY5td9cd
 ```
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/skill-library-page.tsx
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/skill-create-page.tsx
-/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/skill-detail-page.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/skill-library-page.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/skill-create-page.tsx
+/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/skill-detail-page.tsx
 ```
 
 > TOOL
@@ -143,7 +143,7 @@ tool_use Read
 id: toolu_019VMrne2yk3GvxLMV49RaWy
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.tsx"
 }
 ```
 
@@ -153,7 +153,7 @@ tool_use Bash
 id: toolu_01M94ydskwRvV3EyMFtXPmUp
 ```json
 {
-  "command": "ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/ 2>/dev/null",
+  "command": "ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/deliver/ 2>/dev/null",
   "description": "Check deliver artifacts"
 }
 ```
@@ -223,7 +223,7 @@ tool_use Bash
 id: toolu_01RqEpvkJRx9tgXigDurQxNi
 ```json
 {
-  "command": "ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/ 2>/dev/null",
+  "command": "ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/design/ 2>/dev/null",
   "description": "Check design artifacts"
 }
 ```
@@ -234,7 +234,7 @@ tool_use Bash
 id: toolu_01MqF3mjkGsaTdbqEW3Zp4mX
 ```json
 {
-  "command": "ls /Users/marcus/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/ 2>/dev/null",
+  "command": "ls /home/<USER>/conductor/workspaces/brain-v1/los-angeles/docs/feature/skills/distill/ 2>/dev/null",
   "description": "Check distill artifacts"
 }
 ```
@@ -265,7 +265,7 @@ tool_use Read
 id: toolu_01Cqrfosrb3VWqhkDyeAeJwT
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-tools.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-tools.tsx"
 }
 ```
 
@@ -375,7 +375,7 @@ tool_use Read
 id: toolu_01MmpnEYUkNTfJaoxp7zD8MR
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/server/tool-registry/tool-routes.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/server/tool-registry/tool-routes.ts"
 }
 ```
 
@@ -472,7 +472,7 @@ tool_use Read
 id: toolu_0167DbNgHGs67jzqX8dG2mCG
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/hooks/use-tools.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/hooks/use-tools.ts"
 }
 ```
 
@@ -482,7 +482,7 @@ tool_use Read
 id: toolu_01Av2hP6KKftARMPHkHiHzDU
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/server/tool-registry/types.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/server/tool-registry/types.ts"
 }
 ```
 
@@ -615,7 +615,7 @@ tool_use Read
 id: toolu_018EdeV4ntmXE7rWeSrowhMc
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-skills.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-skills.tsx"
 }
 ```
 
@@ -625,7 +625,7 @@ tool_use Read
 id: toolu_01JPhMZiCXxA8LursmbTvR5E
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/hooks/use-skills.ts"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/hooks/use-skills.ts"
 }
 ```
 
@@ -768,7 +768,7 @@ tool_use Read
 id: toolu_01YPTbaMNAP3aqqFwNKDRALy
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-tools.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-tools.tsx"
 }
 ```
 
@@ -846,7 +846,7 @@ tool_use Write
 id: toolu_01LvAxMUwU4HWCELMgKctPj4
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-tools.tsx",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-tools.tsx",
   "content": "import { useState } from \"react\";\nimport type { SkillListItem } from \"../../hooks/use-skills\";\nimport { useTools, type ToolListItem } from \"../../hooks/use-tools\";\nimport { Badge } from \"../ui/badge\";\nimport { Button } from \"../ui/button\";\n\ntype SkillDerivedTool = {\n  id: string;\n  name: string;\n  sourceSkillNames: string[];\n};\n\ntype WizardStepToolsProps = {\n  selectedSkillIds: string[];\n  skills: SkillListItem[];\n  additionalToolIds: string[];\n  onChangeAdditionalToolIds: (ids: string[]) => void;\n  onBack: () => void;\n  onSubmit: () => void;\n  isSubmitting: boolean;\n  error?: string;\n};\n\n/**\n * Derive the deduplicated list of tools from selected skills.\n * Each tool appears once with all source skill names.\n */\nfunction deriveToolsFromSkills(\n  selectedSkillIds: string[],\n  skills: SkillListItem[],\n): SkillDerivedTool[] {\n  const toolMap = new Map<string, SkillDerivedTool>();\n\n  const selectedSkills = skills.filter((skill) => selectedSkillIds.includes(skill.id));\n\n  for (const skill of selectedSkills) {\n    for (const tool of skill.required_tools) {\n      const existing = toolMap.get(tool.id);\n      if (existing) {\n        existing.sourceSkillNames.push(skill.name);\n      } else {\n        toolMap.set(tool.id, {\n          id: tool.id,\n          name: tool.name,\n          sourceSkillNames: [skill.name],\n        });\n      }\n    }\n  }\n\n  return Array.from(toolMap.values());\n}\n\nfunction SkillDerivedToolsList({ tools }: { tools: SkillDerivedTool[] }) {\n  if (tools.length === 0) {\n    return (\n      <p className=\"text-xs text-muted-foreground\">\n        No tools required by selected skills.\n      </p>\n    );\n  }\n\n  return (\n    <div className=\"flex flex-col gap-1.5\">\n      {tools.map((tool) => (\n        <div\n          key={tool.id}\n          className=\"flex items-center justify-between rounded border border-border bg-muted/30 px-3 py-2\"\n        >\n          <span className=\"text-sm\">{tool.name}</span>\n […]
 
 > TOOL
@@ -854,7 +854,7 @@ id: toolu_01LvAxMUwU4HWCELMgKctPj4
 tool_result
 id: toolu_01LvAxMUwU4HWCELMgKctPj4
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-tools.tsx has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-tools.tsx has been updated successfully.
 ```
 
 > AGENT
@@ -909,7 +909,7 @@ tool_use Read
 id: toolu_01NcBBpNNd9v6YjpkdxHuzoL
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx"
 }
 ```
 
@@ -994,11 +994,11 @@ id: toolu_01WrZjh4JG8sW7uxTQk4rNeY
         [36m</div>[39m
         [36m<div[39m
           [33mclass[39m=[32m"fl...
-      at getElementError (/Users/marcus/conductor/workspaces/brain-v1/los-angeles/node_modules/@testing-library/dom/dist/config.js:37:23)
-      at <anonymous> (/Users/marcus/conductor/workspaces/brain-v1/los-angeles/node_modules/@testing-library/dom/dist/query-helpers.js:76:38)
-      at <anonymous> (/Users/marcus/conductor/workspaces/brain-v1/los-angeles/node_modules/@testing-library/dom/dist/query-helpers.js:52:17)
-      at <anonymous> (/Users/marcus/conductor/workspaces/brain-v1/los-angeles/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
-      at <anonymous> (/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx:298:34)
+      at getElementError (/home/<USER>/conductor/workspaces/brain-v1/los-angeles/node_modules/@testing-library/dom/dist/config.js:37:23)
+      at <anonymous> (/home/<USER>/conductor/workspaces/brain-v1/los-angeles/node_modules/@testing-library/dom/dist/query-helpers.js:76:38)
+      at <anonymous> (/home/<USER>/conductor/workspaces/brain-v1/los-angeles/node_modules/@testing-library/dom/dist/query-helpers.js:52:17)
+      at <anonymous> (/home/<USER>/conductor/workspaces/brain-v1/los-angeles/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at <anonymous> (/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx:298:34)
 (fail) AgentCreatePage > navigates directly to /agents when creation has no proxy_token (sandbox) [100.01ms]
 
  2 pass
@@ -1146,7 +1146,7 @@ tool_use Read
 id: toolu_01W5reULZw3jEpTxKp2sTuEd
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx"
 }
 ```
 
@@ -1156,7 +1156,7 @@ tool_use Read
 id: toolu_01RsMCHcbYfkJMjMk1a72Tyu
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-config.tsx"
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/components/agent/wizard-step-config.tsx"
 }
 ```
 
@@ -1280,7 +1280,7 @@ tool_use Write
 id: toolu_016coLN9HEMuHMLg2Ux3DeCh
 ```json
 {
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx",
   "content": "import { describe, it, expect, mock, beforeEach, afterEach } from \"bun:test\";\nimport { render, screen, waitFor, fireEvent } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\n\n// ---------------------------------------------------------------------------\n// Constants\n// ---------------------------------------------------------------------------\n\nconst WS = \"ws-create-test\";\n\n// ---------------------------------------------------------------------------\n// Module mocks — must be set before component import\n// ---------------------------------------------------------------------------\n\nconst mockNavigate = mock(() => {});\n\nmock.module(\"@tanstack/react-router\", () => ({\n  Link: ({ to, children, ...rest }: { to: string; children: React.ReactNode }) => (\n    <a href={to} {...rest}>{children}</a>\n  ),\n  useNavigate: () => mockNavigate,\n  useParams: () => ({}),\n  useSearch: () => ({}),\n  useMatchRoute: () => () => false,\n}));\n\nmock.module(\"../stores/workspace-state\", () => ({\n  useWorkspaceState: (selector: (state: { workspaceId?: string }) => unknown) =>\n    selector({ workspaceId: WS }),\n}));\n\n// ---------------------------------------------------------------------------\n// Fetch stub\n// ---------------------------------------------------------------------------\n\nconst originalFetch = globalThis.fetch;\nlet fetchCalls: Array<{ url: string; method: string; body?: unknown }> = [];\n\nconst EMPTY_SKILLS_RESPONSE = new Response(\n  JSON.stringify({ skills: [] }),\n  { status: 200, headers: { \"Content-Type\": \"application/json\" } },\n);\n\nconst EMPTY_TOOLS_RESPONSE = new Response(\n  JSON.stringify({ tools: [] }),\n  { status: 200, headers: { \"Content-Type\": \"application/json\" } },\n);\n\nfunction stubFetch(handlers: Record<string, (url: string, init?: RequestInit) => Response>) {\n  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {\n    const url = typeof input === \"string\" ? input : input instanceof URL ? input.href : (input as Request).url;\n […]
 
 > TOOL
@@ -1288,7 +1288,7 @@ id: toolu_016coLN9HEMuHMLg2Ux3DeCh
 tool_result
 id: toolu_016coLN9HEMuHMLg2Ux3DeCh
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx has been updated successfully.
 ```
 
 > TOOL
@@ -1355,7 +1355,7 @@ id: toolu_01HfrUvVBLegytpTnyjycZs7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx",
+  "file_path": "/home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx",
   "old_string": "    // All radio groups should have \"propose\" checked by default\n    const proposeRadios = screen.getAllByRole(\"radio\", { checked: true });\n    // Each action has one checked radio — there are 11 actions, so 11 checked radios\n    expect(proposeRadios.length).toBe(11);",
   "new_string": "    // All radio groups should have \"propose\" checked by default\n    const proposeRadios = screen.getAllByRole(\"radio\", { checked: true });\n    // 11 authority scope radios (propose) + 1 runtime radio (sandbox) = 12\n    expect(proposeRadios.length).toBe(12);"
 }
@@ -1366,7 +1366,7 @@ id: toolu_01HfrUvVBLegytpTnyjycZs7
 tool_result
 id: toolu_01HfrUvVBLegytpTnyjycZs7
 ```
-The file /Users/marcus/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx has been updated successfully.
+The file /home/<USER>/conductor/workspaces/brain-v1/los-angeles/app/src/client/routes/agent-create-page.test.tsx has been updated successfully.
 ```
 
 > TOOL

@@ -33,7 +33,7 @@ tool_use Bash
 id: toolu_01VHkKgT9LTRWSt8Ae5XwqR3
 ```json
 {
-  "command": "printf 'lcov.info\\n' >> .gitignore && git add .gitignore && git commit -m \"chore: gitignore lcov.info\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\" && git push",
+  "command": "printf 'lcov.info\\n' >> .gitignore && git add .gitignore && git commit -m \"chore: gitignore lcov.info\n\nCo-Authored-By: Claude Opus 4.8 <<REDACTED_EMAIL>>\" && git push",
   "description": "Add lcov.info to gitignore, commit, push"
 }
 ```
@@ -71,7 +71,7 @@ id: toolu_01JvrmMpR2kys3Q6BoYKoXRe
   "subagent_type": "fork",
   "name": "project-explorer",
   "description": "Explore project structure for CI/release proposal",
-  "prompt": "Survey the crap4py project at /Users/gabadi/workspace/addi/crap4py to build a complete picture for a CI + tag-based release proposal. Report:\n\n1. Project type and entry points (pyproject.toml, setup.py, setup.cfg — full contents)\n2. Current test setup (how tests run, what commands)\n3. Existing CI files (.github/workflows/)\n4. Package structure (src layout vs flat, main module name)\n5. Any existing release tooling (CHANGELOG, bumpversion, etc.)\n6. What the tool does (brief from README or CONTEXT.md)\n\nOutput raw findings — no prose padding. I need the actual file contents for pyproject.toml and any workflow files."
+  "prompt": "Survey the crap4py project at /home/<USER>/workspace/addi/crap4py to build a complete picture for a CI + tag-based release proposal. Report:\n\n1. Project type and entry points (pyproject.toml, setup.py, setup.cfg — full contents)\n2. Current test setup (how tests run, what commands)\n3. Existing CI files (.github/workflows/)\n4. Package structure (src layout vs flat, main module name)\n5. Any existing release tooling (CHANGELOG, bumpversion, etc.)\n6. What the tool does (brief from README or CONTEXT.md)\n\nOutput raw findings — no prose padding. I need the actual file contents for pyproject.toml and any workflow files."
 }
 ```
 
@@ -153,7 +153,7 @@ tool_use Bash
 id: toolu_01Ppgtvc634HUncuyunz6cWw
 ```json
 {
-  "command": "ls /Users/gabadi/workspace/addi/drywall/.github/workflows/ 2>/dev/null && echo \"---\" && find /Users/gabadi/workspace/addi/drywall/.github/workflows/ -name \"*.yml\" -exec echo \"=== {} ===\" \\; -exec cat {} \\;",
+  "command": "ls /home/<USER>/workspace/addi/drywall/.github/workflows/ 2>/dev/null && echo \"---\" && find /home/<USER>/workspace/addi/drywall/.github/workflows/ -name \"*.yml\" -exec echo \"=== {} ===\" \\; -exec cat {} \\;",
   "description": "Read drywall GitHub Actions workflows"
 }
 ```
@@ -166,7 +166,7 @@ id: toolu_01Ppgtvc634HUncuyunz6cWw
 ci.yml
 release.yml
 ---
-=== /Users/gabadi/workspace/addi/drywall/.github/workflows/release.yml ===
+=== /home/<USER>/workspace/addi/drywall/.github/workflows/release.yml ===
 name: Release
 
 on:
@@ -248,7 +248,7 @@ jobs:
             drywall-macos-aarch64
             drywall-macos-x86_64
           generate_release_notes: true
-=== /Users/gabadi/workspace/addi/drywall/.github/workflows/ci.yml ===
+=== /home/<USER>/workspace/addi/drywall/.github/workflows/ci.yml ===
 name: CI
 
 on:
@@ -270,8 +270,8 @@ id: toolu_017oJXyoSRTHQ5ZvvjMDaFrG
 tool_result
 id: toolu_017oJXyoSRTHQ5ZvvjMDaFrG
 ```
-/Users/gabadi/.local/bin/gherkin-parser
-/Users/gabadi/.local/bin/gherkin-mutator
+/home/<USER>/.local/bin/gherkin-parser
+/home/<USER>/.local/bin/gherkin-mutator
 ```
 
 > TOOL
@@ -280,7 +280,7 @@ tool_use Bash
 id: toolu_01CZ9zQSqvSx7PxFkauSRHs4
 ```json
 {
-  "command": "uv tool list 2>/dev/null; echo \"---\"; file /Users/gabadi/.local/bin/gherkin-parser; ls -la /Users/gabadi/.local/bin/gherkin-*",
+  "command": "uv tool list 2>/dev/null; echo \"---\"; file /home/<USER>/.local/bin/gherkin-parser; ls -la /home/<USER>/.local/bin/gherkin-*",
   "description": "Identify gherkin tool type and version"
 }
 ```
@@ -302,10 +302,10 @@ pre-commit v4.5.1
 x-cli v0.1.0
 - x-cli
 ---
-/Users/gabadi/.local/bin/gherkin-parser: Bourne-Again shell script text executable, ASCII text
--rwxr-xr-x@ 1 gabadi  staff  91 Jun 15 01:11 /Users/gabadi/.local/bin/gherkin-ir-dry-checker
--rwxr-xr-x@ 1 gabadi  staff  84 Jun 15 01:11 /Users/gabadi/.local/bin/gherkin-mutator
--rwxr-xr-x@ 1 gabadi  staff  83 Jun 15 01:11 /Users/gabadi/.local/bin/gherkin-parser
+/home/<USER>/.local/bin/gherkin-parser: Bourne-Again shell script text executable, ASCII text
+-rwxr-xr-x@ 1 gabadi  staff  91 Jun 15 01:11 /home/<USER>/.local/bin/gherkin-ir-dry-checker
+-rwxr-xr-x@ 1 gabadi  staff  84 Jun 15 01:11 /home/<USER>/.local/bin/gherkin-mutator
+-rwxr-xr-x@ 1 gabadi  staff  83 Jun 15 01:11 /home/<USER>/.local/bin/gherkin-parser
 ```
 
 > TOOL
@@ -314,7 +314,7 @@ tool_use Bash
 id: toolu_017jHNwAuQMZmt6rMup5Hmu5
 ```json
 {
-  "command": "cat /Users/gabadi/workspace/addi/crap4py/acceptance/run_acceptance.sh | head -30",
+  "command": "cat /home/<USER>/workspace/addi/crap4py/acceptance/run_acceptance.sh | head -30",
   "description": "Check acceptance script for tool invocation"
 }
 ```
@@ -362,7 +362,7 @@ tool_use Bash
 id: toolu_019yDECvc4ripXjn7Fdnjrhh
 ```json
 {
-  "command": "cat /Users/gabadi/.local/bin/gherkin-parser; echo \"---\"; cat /Users/gabadi/.local/bin/gherkin-mutator",
+  "command": "cat /home/<USER>/.local/bin/gherkin-parser; echo \"---\"; cat /home/<USER>/.local/bin/gherkin-mutator",
   "description": "Read gherkin tool scripts to find their origin"
 }
 ```
@@ -385,7 +385,7 @@ tool_use Bash
 id: toolu_01QPqtSdbr8TpNW57eF7fajs
 ```json
 {
-  "command": "ls /Users/gabadi/workspace/addi/drywall/src/ 2>/dev/null; cargo metadata --manifest-path /Users/gabadi/workspace/addi/drywall/Cargo.toml --no-deps 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); [print(p['name'], p['version']) for p in d['packages']]\" 2>/dev/null",
+  "command": "ls /home/<USER>/workspace/addi/drywall/src/ 2>/dev/null; cargo metadata --manifest-path /home/<USER>/workspace/addi/drywall/Cargo.toml --no-deps 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); [print(p['name'], p['version']) for p in d['packages']]\" 2>/dev/null",
   "description": "Check drywall package structure"
 }
 ```
@@ -409,7 +409,7 @@ tool_use Bash
 id: toolu_01QPA7WfGSSfUsMnevUpwHs4
 ```json
 {
-  "command": "ls /tmp/aps-build/ 2>/dev/null; find /Users/gabadi/workspace/addi -name \"bb.edn\" 2>/dev/null | head -5; find /Users/gabadi/workspace -name \"bb.edn\" 2>/dev/null | head -5",
+  "command": "ls /tmp/aps-build/ 2>/dev/null; find /home/<USER>/workspace/addi -name \"bb.edn\" 2>/dev/null | head -5; find /home/<USER>/workspace -name \"bb.edn\" 2>/dev/null | head -5",
   "description": "Find babashka config and APS build origin"
 }
 ```
@@ -420,7 +420,7 @@ tool_use Bash
 id: toolu_01EAuCAMLc6ShjP7xJU9S1Vu
 ```json
 {
-  "command": "cat /Users/gabadi/workspace/addi/crap4py/acceptance/run_acceptance.sh",
+  "command": "cat /home/<USER>/workspace/addi/crap4py/acceptance/run_acceptance.sh",
   "description": "Read full acceptance script"
 }
 ```
@@ -516,7 +516,7 @@ tool_use Bash
 id: toolu_016oaq9mz2UFaCwZNnPz8opQ
 ```json
 {
-  "command": "find /Users/gabadi/workspace/addi -name \"bb.edn\" 2>/dev/null | head -10; ls /Users/gabadi/workspace/addi/ 2>/dev/null",
+  "command": "find /home/<USER>/workspace/addi -name \"bb.edn\" 2>/dev/null | head -10; ls /home/<USER>/workspace/addi/ 2>/dev/null",
   "description": "Find bb.edn and list addi workspace"
 }
 ```
@@ -526,7 +526,7 @@ id: toolu_016oaq9mz2UFaCwZNnPz8opQ
 tool_result
 id: toolu_016oaq9mz2UFaCwZNnPz8opQ
 ```
-/Users/gabadi/workspace/addi/gabadi-swarm-forge/bb.edn
+/home/<USER>/workspace/addi/gabadi-swarm-forge/bb.edn
 Acceptance-Pipeline-Specification
 addi-skillshare
 agents
@@ -726,7 +726,7 @@ tool_use Bash
 id: toolu_01AM3NJbV53jH9PFwPTVKiFE
 ```json
 {
-  "command": "rtk /Users/gabadi/workspace/addi/drywall/target/release/drywall --help 2>/dev/null || rtk gh api repos/gabadi/drywall/readme 2>/dev/null | python3 -c \"import json,sys,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())\" 2>/dev/null | head -60",
+  "command": "rtk /home/<USER>/workspace/addi/drywall/target/release/drywall --help 2>/dev/null || rtk gh api repos/gabadi/drywall/readme 2>/dev/null | python3 -c \"import json,sys,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())\" 2>/dev/null | head -60",
   "description": "Check drywall help and README for threshold options"
 }
 ```
@@ -759,7 +759,7 @@ tool_use Bash
 id: toolu_01Lu87TBtQyjkHzNegQyhdxw
 ```json
 {
-  "command": "rtk /Users/gabadi/workspace/addi/drywall/target/release/drywall src/ ; echo \"exit: $?\"",
+  "command": "rtk /home/<USER>/workspace/addi/drywall/target/release/drywall src/ ; echo \"exit: $?\"",
   "description": "Run drywall on crap4py src to check exit code and output"
 }
 ```
@@ -826,7 +826,7 @@ tool_use Read
 id: toolu_01Tb49Jp4gJsGv9QqhEwFssp
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/pyproject.toml"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/pyproject.toml"
 }
 ```
 
@@ -980,7 +980,7 @@ tool_use Bash
 id: toolu_01Cjp8tG8J93oBNgRnbTafby
 ```json
 {
-  "command": "mkdir -p /Users/gabadi/workspace/addi/crap4py/.github/workflows",
+  "command": "mkdir -p /home/<USER>/workspace/addi/crap4py/.github/workflows",
   "description": "Create workflows directory"
 }
 ```
@@ -999,7 +999,7 @@ tool_use Write
 id: toolu_01CaAqjnj1XWumT6vaZnRE7V
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.github/workflows/ci.yml",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.github/workflows/ci.yml",
   "content": "name: CI\n\non:\n  push:\n    branches: [main]\n  pull_request:\n\npermissions:\n  pull-requests: write\n\njobs:\n  ci:\n    name: CI\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0\n        with:\n          enable-cache: true\n      - name: Lint\n        run: uv run ruff check src/ tests/\n      - name: Format check\n        run: uv run ruff format --check src/ tests/\n      - name: Tests\n        run: uv run pytest --cov --cov-report=lcov:lcov.info --cov-report=term-missing --cov-fail-under=90\n      - name: Coverage report\n        uses: zgosalvez/github-actions-report-lcov@84f16a83ae03e846a4c697bd75cae3f94fa9f426 # v7.0.12\n        if: always()\n        with:\n          coverage-files: lcov.info\n          github-token: ${{ secrets.GITHUB_TOKEN }}\n      - name: CRAP\n        run: uv run crap4py src/ --lcov lcov.info --max-crap 6\n      - name: Install drywall\n        run: |\n          gh release download --repo gabadi/drywall --pattern 'drywall-linux-x86_64' --output drywall\n          chmod +x drywall\n        env:\n          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n      - name: DRY\n        run: ./drywall src/\n"
 }
 ```
@@ -1009,7 +1009,7 @@ id: toolu_01CaAqjnj1XWumT6vaZnRE7V
 tool_result
 id: toolu_01CaAqjnj1XWumT6vaZnRE7V
 ```
-File created successfully at: /Users/gabadi/workspace/addi/crap4py/.github/workflows/ci.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/addi/crap4py/.github/workflows/ci.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1018,7 +1018,7 @@ tool_use Write
 id: toolu_01HJUexjPdeaxKMMbzFWyb7y
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/.github/workflows/release.yml",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/.github/workflows/release.yml",
   "content": "name: Release\n\non:\n  push:\n    tags:\n      - 'v*.*.*'\n\npermissions:\n  contents: write\n  id-token: write\n\njobs:\n  release:\n    name: Release\n    runs-on: ubuntu-latest\n    environment: pypi\n    steps:\n      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0\n        with:\n          enable-cache: true\n      - name: Build\n        run: uv build\n      - name: Publish to PyPI\n        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.14.0\n      - name: Create GitHub Release\n        uses: softprops/action-gh-release@2bb465e97f322d3cb2a965294d483e0d26a67aa9 # v3.0.1\n        with:\n          generate_release_notes: true\n"
 }
 ```
@@ -1028,7 +1028,7 @@ id: toolu_01HJUexjPdeaxKMMbzFWyb7y
 tool_result
 id: toolu_01HJUexjPdeaxKMMbzFWyb7y
 ```
-File created successfully at: /Users/gabadi/workspace/addi/crap4py/.github/workflows/release.yml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/addi/crap4py/.github/workflows/release.yml (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1038,7 +1038,7 @@ id: toolu_01XUtKMZtYiRVbrFZWRtinA2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/pyproject.toml",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/pyproject.toml",
   "old_string": "[dependency-groups]\ndev = [\n    \"hypothesis>=6.155.7\",\n    \"mutmut>=3.6.0\",\n    \"pytest>=9.1.1\",\n    \"pytest-cov>=7.1.0\",\n]",
   "new_string": "[dependency-groups]\ndev = [\n    \"bump-my-version>=0.32.0\",\n    \"hypothesis>=6.155.7\",\n    \"mutmut>=3.6.0\",\n    \"pytest>=9.1.1\",\n    \"pytest-cov>=7.1.0\",\n    \"ruff>=0.11.0\",\n]\n\n[tool.bumpversion]\ncurrent_version = \"0.1.0\"\ncommit = true\ntag = true\ntag_name = \"v{new_version}\"\n\n[[tool.bumpversion.files]]\nfilename = \"pyproject.toml\"\nsearch = 'version = \"{current_version}\"'\nreplace = 'version = \"{new_version}\"'\n\n[tool.ruff]\nline-length = 88\n\n[tool.ruff.lint]\nselect = [\"E\", \"F\", \"I\"]"
 }
@@ -1049,7 +1049,7 @@ id: toolu_01XUtKMZtYiRVbrFZWRtinA2
 tool_result
 id: toolu_01XUtKMZtYiRVbrFZWRtinA2
 ```
-The file /Users/gabadi/workspace/addi/crap4py/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1073,10 +1073,10 @@ tool_result ERROR
 id: toolu_01LGW8R2h25nA2Lqnto1TM4p
 ```
 Exit code 1
-   Building crap4py @ file:///Users/gabadi/workspace/addi/crap4py
+   Building crap4py @ file:///home/<USER>/workspace/addi/crap4py
 Downloading ruff (10.1MiB)
  Downloaded ruff
-      Built crap4py @ file:///Users/gabadi/workspace/addi/crap4py
+      Built crap4py @ file:///home/<USER>/workspace/addi/crap4py
 Uninstalled 1 package in 5ms
 Installed 22 packages in 75ms
 I001 [*] Import block is un-sorted or un-formatted
@@ -1201,7 +1201,7 @@ id: toolu_014cSFBEbDxnoHtsusFb2DrA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/pyproject.toml",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/pyproject.toml",
   "old_string": "[tool.ruff]\nline-length = 88",
   "new_string": "[tool.ruff]\nline-length = 120"
 }
@@ -1212,7 +1212,7 @@ id: toolu_014cSFBEbDxnoHtsusFb2DrA
 tool_result
 id: toolu_014cSFBEbDxnoHtsusFb2DrA
 ```
-The file /Users/gabadi/workspace/addi/crap4py/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1357,7 +1357,7 @@ tool_use Bash
 id: toolu_016suHJYH3HHySz7WsSEizuM
 ```json
 {
-  "command": "rtk git add uv.lock && rtk git commit -m \"$(cat <<'EOF'\nfeat(ci): add CI, release workflows, ruff, bump-my-version\n\n- .github/workflows/ci.yml: ruff lint/format, pytest+coverage gate (90%),\n  CRAP self-check (--max-crap 6), drywall DRY check, lcov PR comment\n- .github/workflows/release.yml: tag-triggered uv build + PyPI OIDC publish\n  + GitHub Release with auto-generated notes\n- pyproject.toml: add ruff and bump-my-version dev deps, bumpversion config,\n  ruff config (line-length=120, E/F/I rules)\n- Apply ruff auto-fixes across src/ and tests/ (import order, unused imports)\n\nAll actions pinned to commit hashes. Release via: bump-my-version bump patch/minor/major\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "rtk git add uv.lock && rtk git commit -m \"$(cat <<'EOF'\nfeat(ci): add CI, release workflows, ruff, bump-my-version\n\n- .github/workflows/ci.yml: ruff lint/format, pytest+coverage gate (90%),\n  CRAP self-check (--max-crap 6), drywall DRY check, lcov PR comment\n- .github/workflows/release.yml: tag-triggered uv build + PyPI OIDC publish\n  + GitHub Release with auto-generated notes\n- pyproject.toml: add ruff and bump-my-version dev deps, bumpversion config,\n  ruff config (line-length=120, E/F/I rules)\n- Apply ruff auto-fixes across src/ and tests/ (import order, unused imports)\n\nAll actions pinned to commit hashes. Release via: bump-my-version bump patch/minor/major\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit all CI and release infrastructure"
 }
 ```
@@ -1501,7 +1501,7 @@ tool_use Bash
 id: toolu_01YKQdkwrLo6tsRYQ6HVHugL
 ```json
 {
-  "command": "ls /Users/gabadi/workspace/addi/crap4py/README* 2>/dev/null; ls /Users/gabadi/workspace/addi/crap4py/CONTEXT.md 2>/dev/null",
+  "command": "ls /home/<USER>/workspace/addi/crap4py/README* 2>/dev/null; ls /home/<USER>/workspace/addi/crap4py/CONTEXT.md 2>/dev/null",
   "description": "Check for existing README or docs"
 }
 ```
@@ -1511,8 +1511,8 @@ id: toolu_01YKQdkwrLo6tsRYQ6HVHugL
 tool_result
 id: toolu_01YKQdkwrLo6tsRYQ6HVHugL
 ```
-(eval):1: no matches found: /Users/gabadi/workspace/addi/crap4py/README*
-/Users/gabadi/workspace/addi/crap4py/CONTEXT.md
+(eval):1: no matches found: /home/<USER>/workspace/addi/crap4py/README*
+/home/<USER>/workspace/addi/crap4py/CONTEXT.md
 ```
 
 > AGENT
@@ -1548,7 +1548,7 @@ tool_use Read
 id: toolu_01VH92mmPeokZPUQ94Yt4XkY
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/CONTEXT.md"
+  "file_path": "/home/<USER>/workspace/addi/crap4py/CONTEXT.md"
 }
 ```
 
@@ -1588,7 +1588,7 @@ tool_use Write
 id: toolu_013ePediALtsGG63g9MWMpTk
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/README.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/README.md",
   "content": "# crap4py\n\n[![CI](https://github.com/gabadi/crap4py/actions/workflows/ci.yml/badge.svg)](https://github.com/gabadi/crap4py/actions/workflows/ci.yml)\n[![PyPI](https://img.shields.io/pypi/v/crap4py)](https://pypi.org/project/crap4py/)\n\nCRAP score per function for Python source files.\n\n**CRAP** (Change Risk Anti-Pattern) = `CC² × (1 − coverage)³ + CC` — a per-function metric combining cyclomatic complexity and branch coverage. Higher means riskier to change. Conventional threshold: 30.\n\n## Install\n\n```sh\n# Run without installing\nuvx crap4py\n\n# Persistent install\nuv tool install crap4py\n```\n\n## Usage\n\n```sh\ncrap4py src/ --lcov lcov.info\n```\n\nGenerate `lcov.info` with [coverage.py](https://coverage.readthedocs.io/):\n\n```sh\npytest --cov --cov-branch --cov-report=lcov:lcov.info\n```\n\n### Output\n\n```\nCRAP Report\nFunction                    | Module                        | CC | Cov%  | CRAP\n----------------------------+-------------------------------+----+-------+-----\n_sort_key                   | src/crap4py/_crap.py          |  3 |  33.3 |  9.9\nmain                        | src/crap4py/__main__.py       |  2 | 100.0 |  2.0\n```\n\n### Options\n\n| Flag | Description |\n|------|-------------|\n| `--lcov PATH` | LCOV branch-coverage file (required) |\n| `--max-crap N` | Exit non-zero if any function exceeds N (CI gate) |\n| `--max-workers N` | Parallel workers for large codebases |\n| `--fragment TEXT` | Only analyse files whose path contains TEXT |\n\n### CI gate\n\n```sh\ncrap4py src/ --lcov lcov.info --max-crap 30\n```\n\nExits non-zero if any function's CRAP score exceeds the threshold. N/A functions (no coverage data) never trip the gate.\n\n## How it works\n\n- **Complexity** — cyclomatic complexity from Python's `ast` per `def`/`async def`\n- **Coverage** — branch coverage from LCOV `BRDA` records intersected with each function's line range\n- **Skips** — `.gitignore`-ignored paths and test files (`test_*.py`, `*_test.py`) […]
 
 > TOOL
@@ -1596,7 +1596,7 @@ id: toolu_013ePediALtsGG63g9MWMpTk
 tool_result
 id: toolu_013ePediALtsGG63g9MWMpTk
 ```
-File created successfully at: /Users/gabadi/workspace/addi/crap4py/README.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/addi/crap4py/README.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1610,7 +1610,7 @@ id: toolu_013u2s9oMuCSU7FJ83E1FXQR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/pyproject.toml",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/pyproject.toml",
   "old_string": "description = \"CRAP score per function for Python source files\"\nrequires-python = \">=3.10\"\ndependencies = []",
   "new_string": "description = \"CRAP score per function for Python source files\"\nreadme = \"README.md\"\nlicense = \"MIT\"\nkeywords = [\"crap\", \"complexity\", \"coverage\", \"metrics\", \"quality\"]\nclassifiers = [\n    \"Development Status :: 4 - Beta\",\n    \"Environment :: Console\",\n    \"Intended Audience :: Developers\",\n    \"Topic :: Software Development :: Quality Assurance\",\n    \"Programming Language :: Python :: 3\",\n]\nrequires-python = \">=3.10\"\ndependencies = []"
 }
@@ -1621,7 +1621,7 @@ id: toolu_013u2s9oMuCSU7FJ83E1FXQR
 tool_result
 id: toolu_013u2s9oMuCSU7FJ83E1FXQR
 ```
-The file /Users/gabadi/workspace/addi/crap4py/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/pyproject.toml has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1634,7 +1634,7 @@ tool_use Bash
 id: toolu_01ToxaqPNmkescjSrfa2zz44
 ```json
 {
-  "command": "ls /Users/gabadi/workspace/addi/crap4py/LICENSE* 2>/dev/null || echo \"missing\"",
+  "command": "ls /home/<USER>/workspace/addi/crap4py/LICENSE* 2>/dev/null || echo \"missing\"",
   "description": "Check for existing LICENSE file"
 }
 ```
@@ -1644,7 +1644,7 @@ id: toolu_01ToxaqPNmkescjSrfa2zz44
 tool_result
 id: toolu_01ToxaqPNmkescjSrfa2zz44
 ```
-(eval):1: no matches found: /Users/gabadi/workspace/addi/crap4py/LICENSE*
+(eval):1: no matches found: /home/<USER>/workspace/addi/crap4py/LICENSE*
 missing
 ```
 
@@ -1654,7 +1654,7 @@ tool_use Write
 id: toolu_014sKb3Vt9hKp2SuvateJqqg
 ```json
 {
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/LICENSE",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/LICENSE",
   "content": "MIT License\n\nCopyright (c) 2026 gabadi\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
 }
 ```
@@ -1664,7 +1664,7 @@ id: toolu_014sKb3Vt9hKp2SuvateJqqg
 tool_result
 id: toolu_014sKb3Vt9hKp2SuvateJqqg
 ```
-File created successfully at: /Users/gabadi/workspace/addi/crap4py/LICENSE (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/addi/crap4py/LICENSE (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1701,7 +1701,7 @@ id: toolu_01TXHku3QpRuYSTV91E2V2A1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/README.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/README.md",
   "old_string": "# crap4py\n\n[![CI](https://github.com/gabadi/crap4py/actions/workflows/ci.yml/badge.svg)](https://github.com/gabadi/crap4py/actions/workflows/ci.yml)\n[![PyPI](https://img.shields.io/pypi/v/crap4py)](https://pypi.org/project/crap4py/)\n\nCRAP score per function for Python source files.",
   "new_string": "# crap4py\n\n[![CI](https://github.com/gabadi/crap4py/actions/workflows/ci.yml/badge.svg)](https://github.com/gabadi/crap4py/actions/workflows/ci.yml)\n[![PyPI](https://img.shields.io/pypi/v/crap4py)](https://pypi.org/project/crap4py/)\n\nPython port of Uncle Bob's [crap4go](https://github.com/unclebob/crap4go) and [crap4clj](https://github.com/unclebob/crap4clj) — CRAP score per function for Python source files."
 }
@@ -1712,7 +1712,7 @@ id: toolu_01TXHku3QpRuYSTV91E2V2A1
 tool_result
 id: toolu_01TXHku3QpRuYSTV91E2V2A1
 ```
-The file /Users/gabadi/workspace/addi/crap4py/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1726,7 +1726,7 @@ id: toolu_01M1iFWorvCk85oLEeuCCrwg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gabadi/workspace/addi/crap4py/README.md",
+  "file_path": "/home/<USER>/workspace/addi/crap4py/README.md",
   "old_string": "Port of [crap4go](https://github.com/unclebob/crap4go) and [crap4clj](https://github.com/unclebob/crap4clj).",
   "new_string": "See also: [crap4go](https://github.com/unclebob/crap4go), [crap4clj](https://github.com/unclebob/crap4clj)."
 }
@@ -1737,7 +1737,7 @@ id: toolu_01M1iFWorvCk85oLEeuCCrwg
 tool_result
 id: toolu_01M1iFWorvCk85oLEeuCCrwg
 ```
-The file /Users/gabadi/workspace/addi/crap4py/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/addi/crap4py/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1750,7 +1750,7 @@ tool_use Bash
 id: toolu_01WGtqd3VxU3YbsTz4XFJMGp
 ```json
 {
-  "command": "rtk git add README.md LICENSE pyproject.toml && rtk git commit -m \"$(cat <<'EOF'\nchore: add README, LICENSE, PyPI metadata\n\n- README.md: install, usage, options, CI gate — credits Uncle Bob's\n  crap4go/crap4clj prominently in the opening line\n- LICENSE: MIT 2026\n- pyproject.toml: readme, license, keywords, classifiers\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\" && rtk git push",
+  "command": "rtk git add README.md LICENSE pyproject.toml && rtk git commit -m \"$(cat <<'EOF'\nchore: add README, LICENSE, PyPI metadata\n\n- README.md: install, usage, options, CI gate — credits Uncle Bob's\n  crap4go/crap4clj prominently in the opening line\n- LICENSE: MIT 2026\n- pyproject.toml: readme, license, keywords, classifiers\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && rtk git push",
   "description": "Commit README, LICENSE, pyproject metadata and push"
 }
 ```

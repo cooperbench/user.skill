@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01KHtm6V4UVjixrfqh9UkVfT
 ```json
 {
-  "command": "ls /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/",
+  "command": "ls /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/",
   "description": "List public directory contents"
 }
 ```
@@ -23,7 +23,7 @@ tool_use Bash
 id: toolu_0139d6ryybLq6sRE7jHoNTKU
 ```json
 {
-  "command": "grep -rn -i \"youtube\\|local explorer\\|local-explorer\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/ --include=\"*.md\" --include=\"*.vue\"",
+  "command": "grep -rn -i \"youtube\\|local explorer\\|local-explorer\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/ --include=\"*.md\" --include=\"*.vue\"",
   "description": "Find YouTube references and Local Explorer mentions"
 }
 ```
@@ -50,11 +50,11 @@ iceberg-snowflake.png
 tool_result
 id: toolu_0139d6ryybLq6sRE7jHoNTKU
 ```
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/draft.md:592:→ https://blog.cloudflare.com/cf-cli-local-explorer/
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/draft.md:599:- **Local Explorer**: `wrangler dev` 実行中にキー `e` を押すと起動。KV / R2 / D1 / Durable Objects / Workflows をローカルから検査できる
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:58:## Local Explorer
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:62:    src="https://www.youtube.com/embed/26NzILA4NIY?rel=0"
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:63:    title="Cloudflare Local Explorer"
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/draft.md:592:→ https://blog.cloudflare.com/cf-cli-local-explorer/
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/draft.md:599:- **Local Explorer**: `wrangler dev` 実行中にキー `e` を押すと起動。KV / R2 / D1 / Durable Objects / Workflows をローカルから検査できる
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:58:## Local Explorer
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:62:    src="https://www.youtube.com/embed/26NzILA4NIY?rel=0"
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:63:    title="Cloudflare Local Explorer"
 ```
 
 > AGENT
@@ -67,7 +67,7 @@ tool_use Read
 id: toolu_017yswPwpeVgVDFyMrCqRkwN
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "offset": 40,
   "limit": 40
 }
@@ -126,7 +126,7 @@ tool_use Bash
 id: toolu_0172w51Zar47Fy1bj83TiMzj
 ```json
 {
-  "command": "ls -lh /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4",
+  "command": "ls -lh /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4",
   "description": "Check the video file size"
 }
 ```
@@ -136,7 +136,7 @@ id: toolu_0172w51Zar47Fy1bj83TiMzj
 tool_result
 id: toolu_0172w51Zar47Fy1bj83TiMzj
 ```
--rw-r--r--@ 1 ta93abe  staff   929K May  6 23:38 /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4
+-rw-r--r--@ 1 ta93abe  staff   929K May  6 23:38 /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4
 ```
 
 > AGENT
@@ -156,7 +156,7 @@ id: toolu_017r9AZ5xkz9xDvkpfDjtBKx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "old_string": "<div class=\"flex justify-center mt-4\">\n  <iframe\n    src=\"https://www.youtube.com/embed/26NzILA4NIY?rel=0\"\n    title=\"Cloudflare Local Explorer\"\n    class=\"aspect-video w-[860px] max-w-full rounded border border-zinc-700/60 shadow-lg\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen\n  ></iframe>\n</div>",
   "new_string": "<div class=\"flex justify-center mt-4\">\n  <video\n    src=\"/cloudflare-local-explorer.mp4\"\n    class=\"aspect-video w-[860px] max-w-full rounded border border-zinc-700/60 shadow-lg\"\n    controls\n    muted\n    playsinline\n  ></video>\n</div>"
 }
@@ -167,7 +167,7 @@ id: toolu_017r9AZ5xkz9xDvkpfDjtBKx
 tool_result
 id: toolu_017r9AZ5xkz9xDvkpfDjtBKx
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -199,7 +199,7 @@ id: toolu_014FLGd6yoYgZJYupQgNVEdS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "old_string": "  <video\n    src=\"/cloudflare-local-explorer.mp4\"\n    class=\"aspect-video w-[860px] max-w-full rounded border border-zinc-700/60 shadow-lg\"\n    controls\n    muted\n    playsinline\n  ></video>",
   "new_string": "  <video\n    src=\"/cloudflare-local-explorer.mp4\"\n    class=\"aspect-video w-[860px] max-w-full rounded border border-zinc-700/60 shadow-lg\"\n    autoplay\n    loop\n    muted\n    playsinline\n  ></video>"
 }
@@ -210,7 +210,7 @@ id: toolu_014FLGd6yoYgZJYupQgNVEdS
 tool_result
 id: toolu_014FLGd6yoYgZJYupQgNVEdS
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -237,7 +237,7 @@ tool_use Read
 id: toolu_01XZsEVMALxjcMGwkMB8np1y
 ```json
 {
-  "file_path": "/Users/ta93abe/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-slides/memory/linear_cfdp_project.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-slides/memory/linear_cfdp_project.md"
 }
 ```
 
@@ -345,7 +345,7 @@ tool_use Bash
 id: toolu_01KSuamRPxjopqFsuVBpqaub
 ```json
 {
-  "command": "ls /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ | grep -i sprawl",
+  "command": "ls /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ | grep -i sprawl",
   "description": "Find ai-sprawl slide files"
 }
 ```
@@ -364,7 +364,7 @@ tool_use Read
 id: toolu_0162Nrda7qxv5LDMvgveQSaT
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md"
 }
 ```
 
@@ -538,7 +538,7 @@ tool_use Bash
 id: toolu_01V7muEQw6BENdZFwVKLH5YG
 ```json
 {
-  "command": "ls /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ | grep -i obser",
+  "command": "ls /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ | grep -i obser",
   "description": "Find observability slide files"
 }
 ```
@@ -557,7 +557,7 @@ tool_use Read
 id: toolu_017vN47Dw5qbajR6e6VHYYyT
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md"
 }
 ```
 
@@ -1705,7 +1705,7 @@ tool_use Bash
 id: toolu_01LwTkQhRen6N1MwQ6MN8rQ7
 ```json
 {
-  "command": "ls /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/",
+  "command": "ls /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/",
   "description": "List pages in cfdp deck"
 }
 ```
@@ -1733,7 +1733,7 @@ tool_use Read
 id: toolu_01Nucqd6WSFWigAeLjYxKKk5
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md",
   "limit": 50
 }
 ```
@@ -1801,7 +1801,7 @@ tool_use Bash
 id: toolu_01Up2gzPe7U5cA1AhqSZ63jR
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform && wc -l pages/*.md && echo \"---\" && grep -h -E \"(です|ます|だ。|である)\" pages/*.md | head -50",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform && wc -l pages/*.md && echo \"---\" && grep -h -E \"(です|ます|だ。|である)\" pages/*.md | head -50",
   "description": "Sample sentences and line counts"
 }
 ```
@@ -1931,7 +1931,7 @@ tool_use Read
 id: toolu_01TEmpEnMcVCjCDbuqenGXZn
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md"
 }
 ```
 
@@ -2001,7 +2001,7 @@ tool_use Read
 id: toolu_01DoLa8DDg7am7BnrmYUei7t
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md"
 }
 ```
 
@@ -2074,7 +2074,7 @@ tool_use Read
 id: toolu_01XUqJQpMzdKkusMKriEQAyf
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/dbt.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/dbt.md"
 }
 ```
 
@@ -2145,7 +2145,7 @@ tool_use Read
 id: toolu_01P3rcWnaxmRbTuRVpUWgnY7
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md"
 }
 ```
 
@@ -2216,7 +2216,7 @@ tool_use Read
 id: toolu_01AVGUZNSTntjsg2wVE9d7Du
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md"
 }
 ```
 
@@ -2255,7 +2255,7 @@ tool_use Read
 id: toolu_019v5iY4WrEKzMwUJ8AyieJo
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md"
 }
 ```
 
@@ -2312,7 +2312,7 @@ tool_use Read
 id: toolu_01Boqdc1QsR85vgPxERoQifT
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md"
 }
 ```
 
@@ -2379,7 +2379,7 @@ id: toolu_019Lmauya1oii8EXJ3EYcQad
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
   "old_string": "組織内で **AI モデル / エージェント / ツール / プロンプト** が無秩序に増殖し統制不能になる状態。",
   "new_string": "組織内で **AI モデル / エージェント / ツール / プロンプト** が無秩序に増殖し、統制不能になる状態です。"
 }
@@ -2390,7 +2390,7 @@ id: toolu_019Lmauya1oii8EXJ3EYcQad
 tool_result
 id: toolu_019Lmauya1oii8EXJ3EYcQad
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2400,7 +2400,7 @@ id: toolu_01DVJ6oEeGxZmBHZdNNAH58m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
   "old_string": "**Universal Endpoint** で全 LLM プロバイダーを 1 経路に集約。**Fallback / Retry** で信頼性を担保しつつ、以下 3 カテゴリ・11 機能で観測 / 制御 / 最適化を一括導入。",
   "new_string": "**Universal Endpoint** で全 LLM プロバイダーを 1 経路に集約します。**Fallback / Retry** で信頼性を担保しつつ、以下 3 カテゴリ・11 機能で観測 / 制御 / 最適化を一括導入できます。"
 }
@@ -2411,7 +2411,7 @@ id: toolu_01DVJ6oEeGxZmBHZdNNAH58m
 tool_result
 id: toolu_01DVJ6oEeGxZmBHZdNNAH58m
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2421,7 +2421,7 @@ id: toolu_01X2tzS92d8FhKLGRD8oQo9P
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
   "old_string": "→ 「LLM SDK を直接叩く」をやめて Gateway 経由を強制すれば、観測 / 統制 / コスト管理が後付け不要。",
   "new_string": "→ 「LLM SDK を直接叩く」をやめて Gateway 経由を強制すれば、観測 / 統制 / コスト管理を後付けで実装する必要がなくなります。"
 }
@@ -2432,7 +2432,7 @@ id: toolu_01X2tzS92d8FhKLGRD8oQo9P
 tool_result
 id: toolu_01X2tzS92d8FhKLGRD8oQo9P
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2442,7 +2442,7 @@ id: toolu_017BxYFg2VBzucYoQPC89rQ2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
   "old_string": "組織内で乱立する MCP server (= LLM が叩く外部ツール群) を **中央集約してアクセス制御** する portal。**Cloudflare Access** が認証 / 認可 / 監査を担当。",
   "new_string": "組織内で乱立する MCP server (= LLM が叩く外部ツール群) を **中央集約してアクセス制御** する portal です。**Cloudflare Access** が認証 / 認可 / 監査を担当します。"
 }
@@ -2453,7 +2453,7 @@ id: toolu_017BxYFg2VBzucYoQPC89rQ2
 tool_result
 id: toolu_017BxYFg2VBzucYoQPC89rQ2
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2463,7 +2463,7 @@ id: toolu_01Wy34Du5FS7bqDejGRCdSDy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
   "old_string": "→ \"**Shadow MCP**\" (社員が勝手にローカルで MCP server を立てて社内データに繋ぐ) を **構造で防ぐ**。観測対象を一元化することで、AI Gateway と合わせて 「LLM 層 + ツール層」の二重統制が成立する。",
   "new_string": "→ \"**Shadow MCP**\" (社員が勝手にローカルで MCP server を立てて社内データに繋ぐ) を **構造で防ぎます**。観測対象を一元化することで、AI Gateway と合わせて 「LLM 層 + ツール層」の二重統制が成立します。"
 }
@@ -2474,7 +2474,7 @@ id: toolu_01Wy34Du5FS7bqDejGRCdSDy
 tool_result
 id: toolu_01Wy34Du5FS7bqDejGRCdSDy
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2484,7 +2484,7 @@ id: toolu_01JsvPcAsyxgzVd7s7EvuYsR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md",
   "old_string": "ユーザーが叩くたびに動く **対話型 Agent** に対し、**Ambient Agent** はメール / Webhook / cron / ファイル変更などのイベントで **背景で常時稼働**する。",
   "new_string": "ユーザーが叩くたびに動く **対話型 Agent** に対し、**Ambient Agent** はメール / Webhook / cron / ファイル変更などのイベントで **背景で常時稼働**します。"
 }
@@ -2495,7 +2495,7 @@ id: toolu_01JsvPcAsyxgzVd7s7EvuYsR
 tool_result
 id: toolu_01JsvPcAsyxgzVd7s7EvuYsR
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2505,7 +2505,7 @@ id: toolu_011zwxRLikhFBuK2425spJ4b
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md",
   "old_string": "10,000 ユーザー × 常駐 Agent でも、**実際に動くのは 100 程度**。**待機コストを払わずに常駐**できなければ Ambient は商用に乗らない。\n\n→ Cloudflare は **Durable Objects + Alarms + WebSocket Hibernation + SQLite** で、この経済性を **プリミティブとして** 提供する。",
   "new_string": "10,000 ユーザー × 常駐 Agent でも、**実際に動くのは 100 程度**です。**待機コストを払わずに常駐**できなければ Ambient は商用に乗りません。\n\n→ Cloudflare は **Durable Objects + Alarms + WebSocket Hibernation + SQLite** で、この経済性を **プリミティブとして** 提供します。"
 }
@@ -2516,7 +2516,7 @@ id: toolu_011zwxRLikhFBuK2425spJ4b
 tool_result
 id: toolu_011zwxRLikhFBuK2425spJ4b
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2526,7 +2526,7 @@ id: toolu_01UEvnohRecjGYuwSSmUeBK3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md",
   "old_string": "前半で見せた Durable Objects の機能群が、`agents` パッケージの基底クラスに **一対一で対応**する。",
   "new_string": "前半で見せた Durable Objects の機能群が、`agents` パッケージの基底クラスに **一対一で対応**します。"
 }
@@ -2537,7 +2537,7 @@ id: toolu_01UEvnohRecjGYuwSSmUeBK3
 tool_result
 id: toolu_01UEvnohRecjGYuwSSmUeBK3
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ambient-agent.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2547,7 +2547,7 @@ id: toolu_012CJNtpMALqMo1Q82UnjJxk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "Cloudflare の **Cloudflare Data Platform** は、入れる/貯める/使うを 1 つのプラットフォームで提供する。<br>([Announcing the Cloudflare Data Platform: ingest, store, and query your data directly on Cloudflare](https://blog.cloudflare.com/cloudflare-data-platform/))",
   "new_string": "Cloudflare の **Cloudflare Data Platform** は、入れる/貯める/使うを 1 つのプラットフォームで提供します。<br>([Announcing the Cloudflare Data Platform: ingest, store, and query your data directly on Cloudflare](https://blog.cloudflare.com/cloudflare-data-platform/))"
 }
@@ -2558,7 +2558,7 @@ id: toolu_012CJNtpMALqMo1Q82UnjJxk
 tool_result
 id: toolu_012CJNtpMALqMo1Q82UnjJxk
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2568,7 +2568,7 @@ id: toolu_01FuQAuaU8uqrC95UoqNo8Pp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "- **Streams** で HTTP / Workers Binding / Logpush からデータを受ける。\n- **Pipelines** で SQL 変換を行える。（変更はできない）\n- **Sinks** で `--roll-size` or `--roll-interval` で設定した粒度で自動バッチ化して R2 / R2 Data Catalog に書き出せる。\n- 2025年4月に買収した [Arroyo](https://www.arroyo.dev/) をベースとしている。",
   "new_string": "- **Streams** で HTTP / Workers Binding / Logpush からデータを受けます。\n- **Pipelines** で SQL 変換を行えます。（変更はできません）\n- **Sinks** で `--roll-size` or `--roll-interval` で設定した粒度で自動バッチ化し、R2 / R2 Data Catalog に書き出せます。\n- 2025年4月に買収した [Arroyo](https://www.arroyo.dev/) をベースとしています。"
 }
@@ -2579,7 +2579,7 @@ id: toolu_01FuQAuaU8uqrC95UoqNo8Pp
 tool_result
 id: toolu_01FuQAuaU8uqrC95UoqNo8Pp
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2589,7 +2589,7 @@ id: toolu_01QKDH2M5AzGLKbUEXGFppMs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "データを **構造化する** レイヤー。R2 上の Apache Iceberg テーブルをマネージドで管理。",
   "new_string": "データを **構造化する** レイヤーです。R2 上の Apache Iceberg テーブルをマネージドで管理します。"
 }
@@ -2600,7 +2600,7 @@ id: toolu_01QKDH2M5AzGLKbUEXGFppMs
 tool_result
 id: toolu_01QKDH2M5AzGLKbUEXGFppMs
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2610,7 +2610,7 @@ id: toolu_01TzXS3mW6SP8Fd847f3JqtP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "R2 Data Catalog の Iceberg テーブルに標準 SQL を実行できる、Cloudflare ネイティブの分散クエリエンジン。\n\n現在は\n- Wrangler\n- HTTP API\n経由で実行できる。",
   "new_string": "R2 Data Catalog の Iceberg テーブルに標準 SQL を実行できる、Cloudflare ネイティブの分散クエリエンジンです。\n\n現在は\n- Wrangler\n- HTTP API\n経由で実行できます。"
 }
@@ -2621,7 +2621,7 @@ id: toolu_01TzXS3mW6SP8Fd847f3JqtP
 tool_result
 id: toolu_01TzXS3mW6SP8Fd847f3JqtP
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2631,7 +2631,7 @@ id: toolu_018kxB4HF85doACJNAM63CGj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "基本的な分析 SQL (フィルタ・集約・CTE) は対応済み。JOIN / WINDOW は今後対応予定。",
   "new_string": "基本的な分析 SQL (フィルタ・集約・CTE) は対応済みです。JOIN / WINDOW は今後対応予定です。"
 }
@@ -2642,7 +2642,7 @@ id: toolu_018kxB4HF85doACJNAM63CGj
 tool_result
 id: toolu_018kxB4HF85doACJNAM63CGj
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2652,7 +2652,7 @@ id: toolu_019FFRps53QiUZjvsoPN4ZZq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "データパイプラインは長時間実行される。その間に何が起きるか。",
   "new_string": "データパイプラインは長時間実行されます。その間に何が起きるでしょうか。"
 }
@@ -2663,7 +2663,7 @@ id: toolu_019FFRps53QiUZjvsoPN4ZZq
 tool_result
 id: toolu_019FFRps53QiUZjvsoPN4ZZq
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2673,7 +2673,7 @@ id: toolu_01XiDdmmaMPEu656noVVcPoZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "- **重複実行** — 同じ step が 2 回走ると副作用が重複する",
   "new_string": "- **重複実行** — 同じ step が 2 回走ると副作用が重複します"
 }
@@ -2684,7 +2684,7 @@ id: toolu_01XiDdmmaMPEu656noVVcPoZ
 tool_result
 id: toolu_01XiDdmmaMPEu656noVVcPoZ
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2694,7 +2694,7 @@ id: toolu_01B7jrr3D6QVPUn4V4pzLfjL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "- 各 step は **at-least-once** で実行される\n- 長期待機中は **計算リソースを使わない**",
   "new_string": "- 各 step は **at-least-once** で実行されます\n- 長期待機中は **計算リソースを使いません**"
 }
@@ -2705,7 +2705,7 @@ id: toolu_01B7jrr3D6QVPUn4V4pzLfjL
 tool_result
 id: toolu_01B7jrr3D6QVPUn4V4pzLfjL
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2715,7 +2715,7 @@ id: toolu_01AqgiXe1pPFwDjRs17wRp7Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "実質「分散システムの難問」の再発明になる。",
   "new_string": "実質「分散システムの難問」の再発明になります。"
 }
@@ -2726,7 +2726,7 @@ id: toolu_01AqgiXe1pPFwDjRs17wRp7Y
 tool_result
 id: toolu_01AqgiXe1pPFwDjRs17wRp7Y
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2736,7 +2736,7 @@ id: toolu_01PX3C3wNT82JtEnVdjjm9a7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "基本アイデア: **各 step の結果を自動永続化し、クラッシュ後はリプレイで state を復元する。**",
   "new_string": "基本アイデア: **各 step の結果を自動永続化し、クラッシュ後はリプレイで state を復元します。**"
 }
@@ -2747,7 +2747,7 @@ id: toolu_01PX3C3wNT82JtEnVdjjm9a7
 tool_result
 id: toolu_01PX3C3wNT82JtEnVdjjm9a7
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2757,7 +2757,7 @@ id: toolu_012gYdBNEqi48JzARsUB3cvQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "- **Hibernation** — `step.sleep()` / `step.waitForEvent()` 中はプロセス停止、**課金されない**(最大 365 日)",
   "new_string": "- **Hibernation** — `step.sleep()` / `step.waitForEvent()` 中はプロセス停止、**課金されません**(最大 365 日)"
 }
@@ -2780,7 +2780,7 @@ id: toolu_01H4FSq4fhcTR3GvHrzKnJcX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "先に見た DO の <strong>グローバル一意 ID + 永続ストレージ</strong> が、Workflows の実行モデルをそのまま支えている。",
   "new_string": "先に見た DO の <strong>グローバル一意 ID + 永続ストレージ</strong> が、Workflows の実行モデルをそのまま支えています。"
 }
@@ -2791,7 +2791,7 @@ id: toolu_01H4FSq4fhcTR3GvHrzKnJcX
 tool_result
 id: toolu_01H4FSq4fhcTR3GvHrzKnJcX
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2801,7 +2801,7 @@ id: toolu_01CtTQBwEK8rT65yFUHyVzX8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "- step 内の副作用は **冪等** に書く（at-least-once = 重複実行される可能性あり）\n- 非決定的な値は **必ず `step.do` 内に包む**（`Date.now()` / `crypto.randomUUID()` / 外部 API レスポンス）",
   "new_string": "- step 内の副作用は **冪等** に書きます（at-least-once = 重複実行される可能性あり）\n- 非決定的な値は **必ず `step.do` 内に包みます**（`Date.now()` / `crypto.randomUUID()` / 外部 API レスポンス）"
 }
@@ -2812,7 +2812,7 @@ id: toolu_01CtTQBwEK8rT65yFUHyVzX8
 tool_result
 id: toolu_01CtTQBwEK8rT65yFUHyVzX8
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2822,7 +2822,7 @@ id: toolu_019V2UfM951PnAbpSkYVbgYT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "Temporal / Step Functions に相当。TypeScript でコードとして定義。",
   "new_string": "Temporal / Step Functions に相当します。TypeScript でコードとして定義できます。"
 }
@@ -2833,7 +2833,7 @@ id: toolu_019V2UfM951PnAbpSkYVbgYT
 tool_result
 id: toolu_019V2UfM951PnAbpSkYVbgYT
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2843,7 +2843,7 @@ id: toolu_01FEswbmb2CAPM5tSL4wkrNP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "**vs Step Functions**: Step Functions は ASL（JSON）でフロー定義。Workflows は TypeScript でロジックとフローが一体。Step Functions の方がビジュアルエディタ・実行履歴UIが成熟。Workflows はコードファーストで軽量だが、GUI での可視化は弱い。",
   "new_string": "**vs Step Functions**: Step Functions は ASL（JSON）でフローを定義します。Workflows は TypeScript でロジックとフローが一体です。Step Functions の方がビジュアルエディタ・実行履歴UIが成熟しています。Workflows はコードファーストで軽量ですが、GUI での可視化は弱めです。"
 }
@@ -2854,7 +2854,7 @@ id: toolu_01FEswbmb2CAPM5tSL4wkrNP
 tool_result
 id: toolu_01FEswbmb2CAPM5tSL4wkrNP
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2864,7 +2864,7 @@ id: toolu_01Gt7oTXpBjt6rK7TDZVHZyK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "- **Hibernation** — `step.sleep()` / `step.waitForEvent()` 中はプロセス停止、**課金されない**（最大 365 日）",
   "new_string": "- **Hibernation** — `step.sleep()` / `step.waitForEvent()` 中はプロセス停止、**課金されません**（最大 365 日）"
 }
@@ -2875,7 +2875,7 @@ id: toolu_01Gt7oTXpBjt6rK7TDZVHZyK
 tool_result
 id: toolu_01Gt7oTXpBjt6rK7TDZVHZyK
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2885,7 +2885,7 @@ id: toolu_01NSRqgW2waTGSJZci12xfqm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "全ての操作に**自動でスパンが生成**(OpenTelemetry 互換)。",
   "new_string": "全ての操作に**自動でスパンが生成されます**(OpenTelemetry 互換)。"
 }
@@ -2896,7 +2896,7 @@ id: toolu_01NSRqgW2waTGSJZci12xfqm
 tool_result
 id: toolu_01NSRqgW2waTGSJZci12xfqm
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2906,7 +2906,7 @@ id: toolu_01R2msZ8wedzYRfeYh3WK1Km
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "Cloudflare 製品が生成する **HTTP リクエスト / WAF / Workers traces / DNS** などのログ。**外に push する (Logpush) / 中でクエリする (Log Explorer)** の 2 つの取り回しを選べる。共通 datasets。",
   "new_string": "Cloudflare 製品が生成する **HTTP リクエスト / WAF / Workers traces / DNS** などのログです。**外に push する (Logpush) / 中でクエリする (Log Explorer)** の 2 つの取り回しを選べます。datasets は両者で共通です。"
 }
@@ -2917,7 +2917,7 @@ id: toolu_01R2msZ8wedzYRfeYh3WK1Km
 tool_result
 id: toolu_01R2msZ8wedzYRfeYh3WK1Km
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2927,7 +2927,7 @@ id: toolu_01TpbZMsEHcLEb2BGh12hoCi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "Cloudflare ダッシュボード or **SQL API** で同じ datasets を直接クエリ。データは R2 上に per-customer 格納。",
   "new_string": "Cloudflare ダッシュボード or **SQL API** で同じ datasets を直接クエリできます。データは R2 上に per-customer で格納されます。"
 }
@@ -2938,7 +2938,7 @@ id: toolu_01TpbZMsEHcLEb2BGh12hoCi
 tool_result
 id: toolu_01TpbZMsEHcLEb2BGh12hoCi
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2948,7 +2948,7 @@ id: toolu_014nkH6KufuwUFaeFAhQp86D
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "AI Gateway 経由の **全 LLM 呼び出し**が **Gen AI セマンティック規約**準拠の span として OTLP エクスポート可能。Workers Observability と組み合わせると、Worker → Gateway → LLM が **1 つのトレース**に束ねられる。",
   "new_string": "AI Gateway 経由の **全 LLM 呼び出し**を **Gen AI セマンティック規約**準拠の span として OTLP エクスポートできます。Workers Observability と組み合わせると、Worker → Gateway → LLM が **1 つのトレース**に束ねられます。"
 }
@@ -2959,7 +2959,7 @@ id: toolu_014nkH6KufuwUFaeFAhQp86D
 tool_result
 id: toolu_014nkH6KufuwUFaeFAhQp86D
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2969,7 +2969,7 @@ id: toolu_013xT8DbBvEjmrHvcBkjaCRb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "Worker から `cf-aig-otel-trace-id` / `cf-aig-otel-parent-span-id` を渡せば、**Worker のトレースに LLM 呼び出しが直接ぶら下がる**",
   "new_string": "Worker から `cf-aig-otel-trace-id` / `cf-aig-otel-parent-span-id` を渡せば、**Worker のトレースに LLM 呼び出しが直接ぶら下がります**"
 }
@@ -2980,7 +2980,7 @@ id: toolu_013xT8DbBvEjmrHvcBkjaCRb
 tool_result
 id: toolu_013xT8DbBvEjmrHvcBkjaCRb
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2990,7 +2990,7 @@ id: toolu_01Kw4SNqC8jgYjjBS7JeYuFi
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "Worker から `env.X.writeDataPoint()` でカスタムイベントを時系列で記録。**user_id / tenant** などの高カーディナリティ属性を保持できる柱状型ストア。",
   "new_string": "Worker から `env.X.writeDataPoint()` でカスタムイベントを時系列で記録します。**user_id / tenant** などの高カーディナリティ属性を保持できる柱状型ストアです。"
 }
@@ -3001,7 +3001,7 @@ id: toolu_01Kw4SNqC8jgYjjBS7JeYuFi
 tool_result
 id: toolu_01Kw4SNqC8jgYjjBS7JeYuFi
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3011,7 +3011,7 @@ id: toolu_01PLULkeGXFoUUBQA92SBtF6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "- 非同期書き込み (`await` 不要、レイテンシに影響しない)",
   "new_string": "- 非同期書き込み (`await` 不要、レイテンシに影響しません)"
 }
@@ -3022,7 +3022,7 @@ id: toolu_01PLULkeGXFoUUBQA92SBtF6
 tool_result
 id: toolu_01PLULkeGXFoUUBQA92SBtF6
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3032,7 +3032,7 @@ id: toolu_01Vri7dVmKw6kk9wG2MQ5uZc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "Workers Observability / AI Gateway は **OTLP HTTP** で外部バックエンドにそのまま送れる。Logpush は HTTP destination で Honeycomb の Logpush integration に直送できる。",
   "new_string": "Workers Observability / AI Gateway は **OTLP HTTP** で外部バックエンドにそのまま送れます。Logpush は HTTP destination で Honeycomb の Logpush integration に直送できます。"
 }
@@ -3043,7 +3043,7 @@ id: toolu_01Vri7dVmKw6kk9wG2MQ5uZc
 tool_result
 id: toolu_01Vri7dVmKw6kk9wG2MQ5uZc
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3053,7 +3053,7 @@ id: toolu_01YAieMSmZzjvkWvzVdmFKJc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md",
   "old_string": "- こんな Cloudflare の始め方もあるよ。\n  - ドメインを購入する or 移管してくる\n  - 個人のサイト/ブログをホスティング (Astro というフレームワークを使えばフロントエンドも簡単に作れる。Markdown でコンテンツを書いて Content Collections でいい感じに表示する)\n  - 日常のちょっとしたことを Workers で実装してみる\n  - R2 Data Catalog は Iceberg を始めるには結構お手軽",
   "new_string": "- こんな Cloudflare の始め方もあります。\n  - ドメインを購入する or 移管してくる\n  - 個人のサイト/ブログをホスティング (Astro というフレームワークを使えばフロントエンドも簡単に作れます。Markdown でコンテンツを書いて Content Collections でいい感じに表示できます)\n  - 日常のちょっとしたことを Workers で実装してみる\n  - R2 Data Catalog は Iceberg を始めるには結構お手軽です"
 }
@@ -3064,7 +3064,7 @@ id: toolu_01YAieMSmZzjvkWvzVdmFKJc
 tool_result
 id: toolu_01YAieMSmZzjvkWvzVdmFKJc
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3074,7 +3074,7 @@ id: toolu_014yw86MvsyM7fp1H6RKfHr5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "old_string": "全世界 330+ 都市のエッジで動くサーバーレス実行基盤。",
   "new_string": "全世界 330+ 都市のエッジで動くサーバーレス実行基盤です。"
 }
@@ -3085,7 +3085,7 @@ id: toolu_014yw86MvsyM7fp1H6RKfHr5
 tool_result
 id: toolu_014yw86MvsyM7fp1H6RKfHr5
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3095,7 +3095,7 @@ id: toolu_01FRF4WVEBqyQutcJ7k9hmgS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "old_string": "`wrangler.jsonc` (設定ファイル) に宣言するだけで、Worker の `env` から Cloudflare サービスを JavaScript オブジェクトとして直接呼べる。SDK / 認証情報設定はいらない。",
   "new_string": "`wrangler.jsonc` (設定ファイル) に宣言するだけで、Worker の `env` から Cloudflare サービスを JavaScript オブジェクトとして直接呼べます。SDK / 認証情報設定はいりません。"
 }
@@ -3106,7 +3106,7 @@ id: toolu_01FRF4WVEBqyQutcJ7k9hmgS
 tool_result
 id: toolu_01FRF4WVEBqyQutcJ7k9hmgS
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3116,7 +3116,7 @@ id: toolu_012TZDGAzTe3bWAfdh9H9JMP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "old_string": "Cloudflare ドキュメントでは Capability-based という表現が使われている。",
   "new_string": "Cloudflare ドキュメントでは Capability-based という表現が使われています。"
 }
@@ -3127,7 +3127,7 @@ id: toolu_012TZDGAzTe3bWAfdh9H9JMP
 tool_result
 id: toolu_012TZDGAzTe3bWAfdh9H9JMP
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3137,7 +3137,7 @@ id: toolu_01XdEXA4sxQ8crSyL9TSSDrC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "old_string": "HTML / CSS / JavaScript / 画像などの静的アセットを Cloudflare Workers から配信できる。dbt docs のような静的サイトをそのままホストできる。",
   "new_string": "HTML / CSS / JavaScript / 画像などの静的アセットを Cloudflare Workers から配信できます。dbt docs のような静的サイトをそのままホストできます。"
 }
@@ -3148,7 +3148,7 @@ id: toolu_01XdEXA4sxQ8crSyL9TSSDrC
 tool_result
 id: toolu_01XdEXA4sxQ8crSyL9TSSDrC
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3158,7 +3158,7 @@ id: toolu_01JhXMqA9AtoPpWLqakNeWAp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "old_string": "Cloudflare Access を組み合わせれば認証付きの限定配信にもできる。",
   "new_string": "Cloudflare Access を組み合わせれば認証付きの限定配信にもできます。"
 }
@@ -3169,7 +3169,7 @@ id: toolu_01JhXMqA9AtoPpWLqakNeWAp
 tool_result
 id: toolu_01JhXMqA9AtoPpWLqakNeWAp
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3179,7 +3179,7 @@ id: toolu_016BX5zdsH98jdKT68AnQPcF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
   "old_string": "Cloudflare Workflows はステップを連鎖させ、失敗時に再試行し、長期間実行されるプロセス全体で状態を保持できる耐久性のある実行エンジン。Workers Bindings を step に組み込める。",
   "new_string": "Cloudflare Workflows はステップを連鎖させ、失敗時に再試行し、長期間実行されるプロセス全体で状態を保持できる耐久性のある実行エンジンです。Workers Bindings を step に組み込めます。"
 }
@@ -3190,7 +3190,7 @@ id: toolu_016BX5zdsH98jdKT68AnQPcF
 tool_result
 id: toolu_016BX5zdsH98jdKT68AnQPcF
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3200,7 +3200,7 @@ id: toolu_01PWRKP7fZqhvaVjenDiEuQZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
   "old_string": "Cloudflare ダッシュボードが Workflow コードを parse し、**step / 並列 / 条件分岐 / ループの DAG 図** を自動生成する。",
   "new_string": "Cloudflare ダッシュボードが Workflow コードを parse し、**step / 並列 / 条件分岐 / ループの DAG 図** を自動生成します。"
 }
@@ -3211,7 +3211,7 @@ id: toolu_01PWRKP7fZqhvaVjenDiEuQZ
 tool_result
 id: toolu_01PWRKP7fZqhvaVjenDiEuQZ
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3221,7 +3221,7 @@ id: toolu_01NpnRav3i89bVGfM9NShPWt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
   "old_string": "実例: 右図は **dbt build を Workflows で実行** した際のビジュアライザ。`loop` / `try-catch` / `retry-backoff` を含むパイプラインが一画面で構造把握できる。",
   "new_string": "実例: 右図は **dbt build を Workflows で実行** した際のビジュアライザです。`loop` / `try-catch` / `retry-backoff` を含むパイプラインを一画面で構造把握できます。"
 }
@@ -3232,7 +3232,7 @@ id: toolu_01NpnRav3i89bVGfM9NShPWt
 tool_result
 id: toolu_01NpnRav3i89bVGfM9NShPWt
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3242,7 +3242,7 @@ id: toolu_01NaXAJ66WRsSPuiFPkgdoje
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
   "old_string": "`WorkflowEntrypoint` を Python で継承。**関数パラメータ名で依存を暗黙解決** する DAG 表現が特徴。",
   "new_string": "`WorkflowEntrypoint` を Python で継承します。**関数パラメータ名で依存を暗黙解決** する DAG 表現が特徴です。"
 }
@@ -3253,7 +3253,7 @@ id: toolu_01NaXAJ66WRsSPuiFPkgdoje
 tool_result
 id: toolu_01NaXAJ66WRsSPuiFPkgdoje
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3263,7 +3263,7 @@ id: toolu_01PsgvmcgWRz4GindLapE95y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
   "old_string": "- 引数名による暗黙的依存解決で DAG が宣言的に書ける",
   "new_string": "- 引数名による暗黙的依存解決で DAG が宣言的に書けます"
 }
@@ -3274,7 +3274,7 @@ id: toolu_01PsgvmcgWRz4GindLapE95y
 tool_result
 id: toolu_01PsgvmcgWRz4GindLapE95y
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3354,7 +3354,7 @@ id: toolu_01Qb1KXH8XZ6avCUu2xHYYJs
 tool_result
 id: toolu_01Qb1KXH8XZ6avCUu2xHYYJs
 ```
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform
 ai-sprawl.md
 ambient-agent.md
 data-platform.md
@@ -3366,7 +3366,7 @@ tool_use Bash
 id: toolu_017PGaPNwGqoNJNpoBMJsYR6
 ```json
 {
-  "command": "python3 << 'EOF'\nimport re, pathlib\nhits = 0\nfor p in sorted(pathlib.Path('/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages').glob('*.md')):\n    text = p.read_text()\n    text_clean = re.sub(r'<!--.*?-->', '', text, flags=re.S)\n    text_clean = re.sub(r'```.*?```', '', text_clean, flags=re.S)\n    for i, line in enumerate(text_clean.splitlines(), 1):\n        # check for plain endings\n        m = re.search(r'(できる|である|となる|送れる|呼べる|書ける|配信できる|担当する|提供する|なる|する|防ぐ|稼働する|対応する|生成する|束ねられる|記録する|送れる|直送できる|含む|起きるか|ぶら下がる|使われている|支えている|書く|包む|相当|定義|一体|成熟|弱い|エンジン|レイヤー|管理|portal|datasets|状態|不要|ストア)。', line)\n        if m:\n            hits += 1\n            print(f'{p.name}:{i}: [{m.group(1)}] {line.strip()[:140]}')\nprint(f'--- total hits: {hits}')\nEOF\n",
+  "command": "python3 << 'EOF'\nimport re, pathlib\nhits = 0\nfor p in sorted(pathlib.Path('/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages').glob('*.md')):\n    text = p.read_text()\n    text_clean = re.sub(r'<!--.*?-->', '', text, flags=re.S)\n    text_clean = re.sub(r'```.*?```', '', text_clean, flags=re.S)\n    for i, line in enumerate(text_clean.splitlines(), 1):\n        # check for plain endings\n        m = re.search(r'(できる|である|となる|送れる|呼べる|書ける|配信できる|担当する|提供する|なる|する|防ぐ|稼働する|対応する|生成する|束ねられる|記録する|送れる|直送できる|含む|起きるか|ぶら下がる|使われている|支えている|書く|包む|相当|定義|一体|成熟|弱い|エンジン|レイヤー|管理|portal|datasets|状態|不要|ストア)。', line)\n        if m:\n            hits += 1\n            print(f'{p.name}:{i}: [{m.group(1)}] {line.strip()[:140]}')\nprint(f'--- total hits: {hits}')\nEOF\n",
   "description": "Check with absolute path and broader regex"
 }
 ```
@@ -3391,7 +3391,7 @@ id: toolu_019gV12Ut2UYwowPsAcHT1Pq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md",
   "old_string": "- **`step.do()`** — 処理ステップ定義。戻り値は自動永続化",
   "new_string": "- **`step.do()`** — 処理ステップ定義（戻り値は自動永続化）"
 }
@@ -3402,7 +3402,7 @@ id: toolu_019gV12Ut2UYwowPsAcHT1Pq
 tool_result
 id: toolu_019gV12Ut2UYwowPsAcHT1Pq
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/durability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3411,7 +3411,7 @@ tool_use Bash
 id: toolu_01Lr6dKdNdQpCfasvMVAZqCo
 ```json
 {
-  "command": "python3 << 'EOF'\nimport re, pathlib\nhits = 0\nfor p in sorted(pathlib.Path('/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages').glob('*.md')):\n    text = p.read_text()\n    text_clean = re.sub(r'<!--.*?-->', '', text, flags=re.S)\n    text_clean = re.sub(r'```.*?```', '', text_clean, flags=re.S)\n    for i, line in enumerate(text_clean.splitlines(), 1):\n        m = re.search(r'(できる|である|となる|送れる|呼べる|書ける|配信できる|担当する|提供する|なる|する|防ぐ|稼働する|対応する|生成する|束ねられる|記録する|直送できる|起きるか|ぶら下がる|使われている|支えている|書く|包む|相当|定義|一体|成熟|弱い)。', line)\n        if m:\n            hits += 1\n            print(f'{p.name}:{i}: [{m.group(1)}] {line.strip()[:140]}')\nprint(f'--- total hits: {hits}')\nEOF\n",
+  "command": "python3 << 'EOF'\nimport re, pathlib\nhits = 0\nfor p in sorted(pathlib.Path('/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages').glob('*.md')):\n    text = p.read_text()\n    text_clean = re.sub(r'<!--.*?-->', '', text, flags=re.S)\n    text_clean = re.sub(r'```.*?```', '', text_clean, flags=re.S)\n    for i, line in enumerate(text_clean.splitlines(), 1):\n        m = re.search(r'(できる|である|となる|送れる|呼べる|書ける|配信できる|担当する|提供する|なる|する|防ぐ|稼働する|対応する|生成する|束ねられる|記録する|直送できる|起きるか|ぶら下がる|使われている|支えている|書く|包む|相当|定義|一体|成熟|弱い)。', line)\n        if m:\n            hits += 1\n            print(f'{p.name}:{i}: [{m.group(1)}] {line.strip()[:140]}')\nprint(f'--- total hits: {hits}')\nEOF\n",
   "description": "Final recheck"
 }
 ```
@@ -3670,7 +3670,7 @@ id: toolu_01L191koJpUG29Wzw4H1ukwC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "- **Radically Reprogrammable**: Workers Binding 統合。\n- 「R」と「2」は「S」と「3」の一個前？ https://object-storage-name-generator.com/",
   "new_string": "- **Radically Reprogrammable**: Workers Binding 統合。"
 }
@@ -3681,7 +3681,7 @@ id: toolu_01L191koJpUG29Wzw4H1ukwC
 tool_result
 id: toolu_01L191koJpUG29Wzw4H1ukwC
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3690,7 +3690,7 @@ tool_use Bash
 id: toolu_014P6koay3xWkpiibxe9yFAD
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/slides && git add contents/cloudflare-data-platform/pages/ai-sprawl.md contents/cloudflare-data-platform/pages/ambient-agent.md contents/cloudflare-data-platform/pages/data-platform.md contents/cloudflare-data-platform/pages/durability.md contents/cloudflare-data-platform/pages/observability.md contents/cloudflare-data-platform/pages/summary.md contents/cloudflare-data-platform/pages/workers.md contents/cloudflare-data-platform/pages/workflows.md contents/cloudflare-data-platform/pages/wrangler.md contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4 && git status",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/slides && git add contents/cloudflare-data-platform/pages/ai-sprawl.md contents/cloudflare-data-platform/pages/ambient-agent.md contents/cloudflare-data-platform/pages/data-platform.md contents/cloudflare-data-platform/pages/durability.md contents/cloudflare-data-platform/pages/observability.md contents/cloudflare-data-platform/pages/summary.md contents/cloudflare-data-platform/pages/workers.md contents/cloudflare-data-platform/pages/workflows.md contents/cloudflare-data-platform/pages/wrangler.md contents/cloudflare-data-platform/public/cloudflare-local-explorer.mp4 && git status",
   "description": "Stage files from repo root"
 }
 ```
@@ -3723,7 +3723,7 @@ tool_use Bash
 id: toolu_01TX7EfAEKWW5tvvbBhbsfg5
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\ntweak(cfdp): スライド本文を ですます調 に統一 + Local Explorer を MP4 化\n\n- 全 9 ページの本文の文体を ですます調 に揃え（コード・スピーカーノート・名詞句箇条書きは対象外）\n- Local Explorer の YouTube iframe を `<video>` に置換し、autoplay/loop/muted で\n  ループ再生（動画ファイルは public/cloudflare-local-explorer.mp4）\n- data-platform.md の R2 命名ジョーク行を削除\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git commit -m \"$(cat <<'EOF'\ntweak(cfdp): スライド本文を ですます調 に統一 + Local Explorer を MP4 化\n\n- 全 9 ページの本文の文体を ですます調 に揃え（コード・スピーカーノート・名詞句箇条書きは対象外）\n- Local Explorer の YouTube iframe を `<video>` に置換し、autoplay/loop/muted で\n  ループ再生（動画ファイルは public/cloudflare-local-explorer.mp4）\n- data-platform.md の R2 命名ジョーク行を削除\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Create commit with HEREDOC message"
 }
 ```
@@ -3771,7 +3771,7 @@ tool_use Read
 id: toolu_01YWTFvR6U2eDWqC4TT5n9YD
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md"
 }
 ```
 
@@ -3861,7 +3861,7 @@ tool_use Bash
 id: toolu_011pFShvSnQTVcEE8mZHrdFs
 ```json
 {
-  "command": "grep -n \"できません\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "command": "grep -n \"できません\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "description": "Verify wrangler.md typo state"
 }
 ```
@@ -4026,7 +4026,7 @@ id: toolu_01936KEH2QEbr4zk3ZnVMpxJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
   "old_string": "Cloudflare Workflows はステップを連鎖させ、失敗時に再試行し、長期間実行されるプロセス全体で状態を保持できる耐久性のある実行エンジンです。Workers Bindings を step に組み込めます。",
   "new_string": "Cloudflare Workflows は耐久性のある実行エンジンです。ステップを連鎖させ、失敗時には自動で再試行し、長期間実行されるプロセス全体で状態を保持します。各 step には Workers Bindings を組み込めます。"
 }
@@ -4037,7 +4037,7 @@ id: toolu_01936KEH2QEbr4zk3ZnVMpxJ
 tool_result
 id: toolu_01936KEH2QEbr4zk3ZnVMpxJ
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4047,7 +4047,7 @@ id: toolu_01PioJAAdBnckyB1YbbwhcTR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "  - **Snapshot expiration**: `--older-than-days` と `--retain-last` で古くなったものの削除と最低残すスナップショットを指定",
   "new_string": "  - **Snapshot expiration**: `--older-than-days` で古いスナップショットを削除、`--retain-last` で最低限残す数を指定"
 }
@@ -4058,7 +4058,7 @@ id: toolu_01PioJAAdBnckyB1YbbwhcTR
 tool_result
 id: toolu_01PioJAAdBnckyB1YbbwhcTR
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4068,7 +4068,7 @@ id: toolu_019wyF6jenvBMKtr7E31Lgn5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/dbt.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/dbt.md",
   "old_string": "- **Workers Secrets** or **Secrets Store** が `wrangler.jsonc` に集約 ",
   "new_string": "- **Workers Secrets** または **Secrets Store** が `wrangler.jsonc` に集約"
 }
@@ -4079,7 +4079,7 @@ id: toolu_019wyF6jenvBMKtr7E31Lgn5
 tool_result
 id: toolu_019wyF6jenvBMKtr7E31Lgn5
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/dbt.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/dbt.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4132,7 +4132,7 @@ tool_use Bash
 id: toolu_011D3ev89aC5iPTzMyvKps1j
 ```json
 {
-  "command": "grep -n \"スダンプ\\|スナップ\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "command": "grep -n \"スダンプ\\|スナップ\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "description": "Check for typo"
 }
 ```
@@ -4200,7 +4200,7 @@ tool_use Bash
 id: toolu_01XosYiNzDUqQ7ssJpnBWkwd
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/pages/data-platform.md contents/cloudflare-data-platform/pages/dbt.md contents/cloudflare-data-platform/pages/workflows.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): 本文の文構造を整える (TA-567)\n\n- workflows.md L3: Workflows 概要文を 3 文に分割し、1 文 1 主張に\n- data-platform.md L132: Snapshot expiration の並列構造を 1:1 に整理\n- dbt.md L29: `or` を 「または」 に統一\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git add contents/cloudflare-data-platform/pages/data-platform.md contents/cloudflare-data-platform/pages/dbt.md contents/cloudflare-data-platform/pages/workflows.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): 本文の文構造を整える (TA-567)\n\n- workflows.md L3: Workflows 概要文を 3 文に分割し、1 文 1 主張に\n- data-platform.md L132: Snapshot expiration の並列構造を 1:1 に整理\n- dbt.md L29: `or` を 「または」 に統一\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Stage and commit polish changes"
 }
 ```
@@ -4373,7 +4373,7 @@ tool_use Bash
 id: toolu_01R93hmwv1kEmotr28eii7KD
 ```json
 {
-  "command": "ls /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/",
+  "command": "ls /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/",
   "description": "List actual files on disk"
 }
 ```
@@ -4406,7 +4406,7 @@ id: toolu_01VZhZpUD9pgnp7gqdR1738w
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md",
   "old_string": "---\nsrc: ./pages/dbt.md\n---",
   "new_string": "---\nsrc: ./pages/containers.md\n---"
 }
@@ -4417,7 +4417,7 @@ id: toolu_01VZhZpUD9pgnp7gqdR1738w
 tool_result
 id: toolu_01VZhZpUD9pgnp7gqdR1738w
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4529,7 +4529,7 @@ id: toolu_018kKgEB19f5MhvEeaJ9uTBg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md",
   "old_string": "---\nsrc: ./pages/containers.md\n---",
   "new_string": "---\nsrc: ./pages/containers-and-sandbox.md\n---"
 }
@@ -4540,7 +4540,7 @@ id: toolu_018kKgEB19f5MhvEeaJ9uTBg
 tool_result
 id: toolu_018kKgEB19f5MhvEeaJ9uTBg
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4607,7 +4607,7 @@ tool_use Bash
 id: toolu_01Qygbbitfr8FT9zVrh6Zr1f
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/slides.md contents/cloudflare-data-platform/pages/ai-sprawl.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): dbt 章を containers-and-sandbox に改題 + 不使用ページ削除\n\n- pages/dbt.md → pages/containers-and-sandbox.md にリネーム（章の射程を Containers + Sandbox に拡張）\n- slides.md の src 参照を新ファイル名に追従\n- 本登壇で扱わない pages/ambient-agent.md / pages/durability.md を削除\n- ai-sprawl.md の section subtitle を体言止めに、AI Gateway / MCP Server Portal の見出しを動詞型に調整\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git status",
+  "command": "git add contents/cloudflare-data-platform/slides.md contents/cloudflare-data-platform/pages/ai-sprawl.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): dbt 章を containers-and-sandbox に改題 + 不使用ページ削除\n\n- pages/dbt.md → pages/containers-and-sandbox.md にリネーム（章の射程を Containers + Sandbox に拡張）\n- slides.md の src 参照を新ファイル名に追従\n- 本登壇で扱わない pages/ambient-agent.md / pages/durability.md を削除\n- ai-sprawl.md の section subtitle を体言止めに、AI Gateway / MCP Server Portal の見出しを動詞型に調整\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git status",
   "description": "Stage remaining edits and commit everything"
 }
 ```
@@ -4648,7 +4648,7 @@ tool_result
 id: toolu_012ptPWmTLvrzXxoV3CC7Ghm
 ```
 commit 47d7d8d0351906f7bd005078cdbfca1df7ef921b
-Author: ta93abe <ta93abe@ta93abe.com>
+Author: ta93abe <<REDACTED_EMAIL>>
 Date:   Thu May 7 22:21:20 2026 +0900
 
     tweak(cfdp): dbt 章を containers-and-sandbox に改題 + 不使用ページ削除
@@ -4658,7 +4658,7 @@ Date:   Thu May 7 22:21:20 2026 +0900
     - 本登壇で扱わない pages/ambient-agent.md / pages/durability.md を削除
     - ai-sprawl.md の section subtitle を体言止めに、AI Gateway / MCP Server Portal の見出しを動詞型に調整
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: 81f23f63e6f4
 
  contents/cloudflare-data-platform/demo.md          | 797 ---------------------
@@ -4726,7 +4726,7 @@ tool_use Read
 id: toolu_01TDvG3FQ7xkg1gWFH8siv68
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers-and-sandbox.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers-and-sandbox.md"
 }
 ```
 
@@ -4905,7 +4905,7 @@ id: toolu_01WtH5MDT4bTvF7A7x1dSXWL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers-and-sandbox.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers-and-sandbox.md",
   "old_string": "---\n\n# Cloudflare Sandbox",
   "new_string": "---\nlayout: two-cols-header\n---\n\n# Cloudflare Sandbox\n\n::left::\n\nContainers と同じ microVM 基盤の上で動く、**ephemeral・per-request** な隔離実行環境です。\n\nContainers との対比:\n- Containers = **常駐サービス**（dbt / バッチ / 長時間処理）\n- Sandbox = **per-request の隔離環境**（LLM 生成コードの実行 / ユーザースクリプト）\n\n典型用途は **AI が書いたコードを安全に走らせる場**です。\n- LLM が出した Python / JS / Bash を一時環境で実行\n- ファイル書き込み / プロセス起動 / ネットワーク制御を SDK で操作\n- 実行が終われば破棄、state を持たない\n\n::right::\n\n```typescript\nimport { getSandbox } from \"@cloudflare/sandbox\";\n\nexport default {\n  async fetch(req, env) {\n    const { prompt } = await req.json();\n\n    // 1. LLM にコード生成を依頼\n    const { response: code } = await env.AI.run(\n      \"@cf/meta/llama-3.3-70b-instruct\",\n      { messages: [{ role: \"user\", content: prompt }] }\n    );\n\n    // 2. ephemeral Sandbox を取得\n    const sandbox = getSandbox(env.SANDBOX, crypto.randomUUID());\n\n    // 3. 生成コードを書き込んで実行\n    await sandbox.writeFile(\"/tmp/main.py\", code);\n    const { stdout } = await sandbox.exec(\"python /tmp/main.py\");\n\n    return Response.json({ stdout });\n  }\n};\n```\n\n<!--\nSandbox は Containers と同じ microVM 基盤を使うが、用途と寿命が異なる。\nContainers が長期サービス向け、Sandbox は短命・per-request の隔離実行向け。\n\nSDK の package 名 / API 名はバージョンで変わる可能性があるので、登壇前に\ndevelopers.cloudflare.com/sandbox/ で getSandbox / exec / writeFile の最新を確認。\n\n典型 use case:\n- AI Agent が生成したコードの実行 (code interpreter パターン)\n- ユーザーが投稿したスクリプトの安全な実行\n- ad-hoc なデータ加工 (DuckDB / pandas など)\n\nデータ基盤との接続: R2 SQL では JOIN / WINDOW が未対応なので、複雑なクエリを\nSandbox 上の DuckDB に逃がすハイブリッド構成も組める。\n-->"
 }
@@ -4948,7 +4948,7 @@ id: toolu_012CzJ8mjewD46xvp8yy5yMp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers-and-sandbox.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers-and-sandbox.md",
   "old_string": "---\n\n# Cloudflare Sandbox",
   "new_string": "---\nlayout: two-cols-header\n---\n\n# Cloudflare Sandbox\n\n::left::\n\nContainers と同じ microVM 基盤の上で動く、**ephemeral・per-request** な隔離実行環境です。\n\nContainers との対比:\n- Containers = **常駐サービス**（dbt / バッチ / 長時間処理）\n- Sandbox = **per-request の隔離環境**（LLM 生成コードの実行 / ユーザースクリプト）\n\n典型用途は **AI が書いたコードを安全に走らせる場**です。\n- LLM が出した Python / JS / Bash を一時環境で実行\n- ファイル書き込み / プロセス起動 / ネットワーク制御を SDK で操作\n- 実行が終われば破棄、state を持たない\n\n::right::\n\n```typescript\nimport { getSandbox } from \"@cloudflare/sandbox\";\n\nexport default {\n  async fetch(req, env) {\n    const { prompt } = await req.json();\n\n    // 1. LLM にコード生成を依頼\n    const { response: code } = await env.AI.run(\n      \"@cf/meta/llama-3.3-70b-instruct\",\n      { messages: [{ role: \"user\", content: prompt }] }\n    );\n\n    // 2. ephemeral Sandbox を取得\n    const sandbox = getSandbox(env.SANDBOX, crypto.randomUUID());\n\n    // 3. 生成コードを書き込んで隔離 microVM 内で実行\n    await sandbox.writeFile(\"/tmp/main.py\", code);\n    const { stdout } = await sandbox[\"exec\"](\"python /tmp/main.py\");\n\n    return Response.json({ stdout });\n  }\n};\n```\n\n<!--\nSandbox は Containers と同じ microVM 基盤を使うが、用途と寿命が異なる。\nContainers が長期サービス向け、Sandbox は短命・per-request の隔離実行向け。\n\nコード上の sandbox[\"exec\"] は Cloudflare Sandbox SDK のメソッド呼び出し\n(microVM 内で隔離実行)。Node の child_process.exec とは無関係。\n登壇前に developers.cloudflare.com/sandbox/ で\npackage 名 (@cloudflare/sandbox) / getSandbox / exec / writeFile の最新を確認。\n書き換え: 公開時は sandbox.exec(...) のドット記法に戻して可。\n\n典型 use case:\n- AI Agent が生成したコードの実行 (code interpreter パターン)\n- ユーザーが投稿したスクリプトの安全な実行\n- ad-hoc なデータ加工 (DuckDB / pandas など)\n\nデータ基盤との接続: R2 SQL では JOIN / WINDOW が未対応なので、複雑なクエリを\nSandbox 上の DuckDB に逃がすハイブリッド構成も組める。\n-->"
 }
@@ -4959,7 +4959,7 @@ id: toolu_012CzJ8mjewD46xvp8yy5yMp
 tool_result
 id: toolu_012CzJ8mjewD46xvp8yy5yMp
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers-and-sandbox.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers-and-sandbox.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -5179,7 +5179,7 @@ tool_use Bash
 id: toolu_01PuNRA8AYWqHdFrzyXgXeHe
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/pages/containers-and-sandbox.md contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\nfeat(cfdp): Sandbox スライド追加 + IaC スライドに Alchemy を追記\n\n- containers-and-sandbox.md: Cloudflare Sandbox を ephemeral・per-request の隔離実行環境として位置づけ、LLM 生成コードを実行する code interpreter パターンの TypeScript コード例を追加\n- wrangler.md: IaC スライドに Alchemy（TypeScript ネイティブ IaC）を Terraform と並べて追記\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add contents/cloudflare-data-platform/pages/containers-and-sandbox.md contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\nfeat(cfdp): Sandbox スライド追加 + IaC スライドに Alchemy を追記\n\n- containers-and-sandbox.md: Cloudflare Sandbox を ephemeral・per-request の隔離実行環境として位置づけ、LLM 生成コードを実行する code interpreter パターンの TypeScript コード例を追加\n- wrangler.md: IaC スライドに Alchemy（TypeScript ネイティブ IaC）を Terraform と並べて追記\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit pending Sandbox and IaC changes"
 }
 ```
@@ -5387,7 +5387,7 @@ tool_use Bash
 id: toolu_011jnjfpMsp1p83LuSanU3Ry
 ```json
 {
-  "command": "grep -rn \"MCPサーバー\\|MCP サーバー\\|MCP server\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ 2>&1 | head -20",
+  "command": "grep -rn \"MCPサーバー\\|MCP サーバー\\|MCP server\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ 2>&1 | head -20",
   "description": "Check MCP表記ゆれ"
 }
 ```
@@ -5397,16 +5397,16 @@ id: toolu_011jnjfpMsp1p83LuSanU3Ry
 tool_result
 id: toolu_011jnjfpMsp1p83LuSanU3Ry
 ```
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:75:**17 種類の公式 MCP サーバー**があります。（API + プロダクト特化）
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:108:# MCP Server Portal — MCPサーバーを統制する
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:110:組織内で乱立する MCP server (= LLM が叩く外部ツール群) を **中央集約してアクセス制御** する portal です。**Cloudflare Access** が認証 / 認可 / 監査を担当します。
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:118:- **1 つの portal URL に複数 MCP server を集約** (内部 + サードパーティ + SaaS 系)
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:138:→ "**Shadow MCP**" (社員が勝手にローカルで MCP server を立てて社内データに繋ぐ) を **構造で防ぎます**。観測対象を一元化することで、AI Gateway と合わせて 「LLM 層 + ツール層」の二重統制が成立します。
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:143:MCP server portal は Cloudflare Access の AI controls 配下に提供されている機能で、
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:144:組織内の MCP server を中央管理するための portal。Shadow MCP (社員が勝手にローカル
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:145:で MCP server を立てて社内 DB / Notion / GitHub 等に繋ぐ) を、Access 経由の
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:149:(OAuth 連携) の 3 種類の MCP server を 1 つの portal URL に束ねられる。MCP
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:160:(4) Code Mode: portal の機能で、複数 MCP server の全 tool 定義を 1 つの code tool に
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md:75:**17 種類の公式 MCP サーバー**があります。（API + プロダクト特化）
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:108:# MCP Server Portal — MCPサーバーを統制する
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:110:組織内で乱立する MCP server (= LLM が叩く外部ツール群) を **中央集約してアクセス制御** する portal です。**Cloudflare Access** が認証 / 認可 / 監査を担当します。
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:118:- **1 つの portal URL に複数 MCP server を集約** (内部 + サードパーティ + SaaS 系)
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:138:→ "**Shadow MCP**" (社員が勝手にローカルで MCP server を立てて社内データに繋ぐ) を **構造で防ぎます**。観測対象を一元化することで、AI Gateway と合わせて 「LLM 層 + ツール層」の二重統制が成立します。
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:143:MCP server portal は Cloudflare Access の AI controls 配下に提供されている機能で、
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:144:組織内の MCP server を中央管理するための portal。Shadow MCP (社員が勝手にローカル
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:145:で MCP server を立てて社内 DB / Notion / GitHub 等に繋ぐ) を、Access 経由の
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:149:(OAuth 連携) の 3 種類の MCP server を 1 つの portal URL に束ねられる。MCP
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md:160:(4) Code Mode: portal の機能で、複数 MCP server の全 tool 定義を 1 つの code tool に
 ```
 
 > AGENT
@@ -5428,7 +5428,7 @@ id: toolu_015mne1taosAaBVbx4zvSMo9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md",
   "old_string": "# MCP Server Portal — MCPサーバーを統制する",
   "new_string": "# MCP Server Portal — MCP サーバーを統制する"
 }
@@ -5439,7 +5439,7 @@ id: toolu_015mne1taosAaBVbx4zvSMo9
 tool_result
 id: toolu_015mne1taosAaBVbx4zvSMo9
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -5448,7 +5448,7 @@ tool_use Bash
 id: toolu_01PaHTJSAtHBoQdwE8NvTF6k
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/pages/ai-sprawl.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): MCP サーバー表記ゆれを統一 (#23 review)\n\nai-sprawl.md L108 の「MCPサーバー」を「MCP サーバー」に変更し、\nwrangler.md の表記と統一。\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git push",
+  "command": "git add contents/cloudflare-data-platform/pages/ai-sprawl.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): MCP サーバー表記ゆれを統一 (#23 review)\n\nai-sprawl.md L108 の「MCPサーバー」を「MCP サーバー」に変更し、\nwrangler.md の表記と統一。\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git push",
   "description": "Commit fix and push"
 }
 ```
@@ -5560,7 +5560,7 @@ tool_use Bash
 id: toolu_01C4JbWKNxMuuZAGDPNGaR2Z
 ```json
 {
-  "command": "gh pr comment 23 --body \"$(cat <<'EOF'\nレビューコメント対応まとめ:\n\n| # | 指摘 | 対応 |\n|---|---|---|\n| L108 MCP サーバー表記ゆれ | `MCPサーバー` → `MCP サーバー` に統一（commit 3ff186b） | ✅ 修正 |\n| L7 「状態」体言止め | section subtitle として意図的に体言止め | ⏸ 据え置き（Test plan 注記） |\n| L114 ノート手付かず記述 | Test plan が不正確だったため PR description を更新 | ✅ 文書化 |\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "gh pr comment 23 --body \"$(cat <<'EOF'\nレビューコメント対応まとめ:\n\n| # | 指摘 | 対応 |\n|---|---|---|\n| L108 MCP サーバー表記ゆれ | `MCPサーバー` → `MCP サーバー` に統一（commit 3ff186b） | ✅ 修正 |\n| L7 「状態」体言止め | section subtitle として意図的に体言止め | ⏸ 据え置き（Test plan 注記） |\n| L114 ノート手付かず記述 | Test plan が不正確だったため PR description を更新 | ✅ 文書化 |\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Add summary PR comment"
 }
 ```
@@ -5889,7 +5889,7 @@ tool_use Read
 id: toolu_016FCGgTJnsf7FXG49wzWoaG
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md"
 }
 ```
 
@@ -5953,7 +5953,7 @@ tool_use Read
 id: toolu_01C1pP6xR743K4kniDyZT8ag
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ai-sprawl.md"
 }
 ```
 
@@ -6035,7 +6035,7 @@ tool_use Write
 id: toolu_01KnHDZZYLfQEfUvS9Z3S3uA
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "content": "---\nlayout: section\n---\n\n# Observability と AI 統制\n\n<!--\nCloudflare で AI スタックを「見る + 統制する」 2 軸を 1 章で扱う。\n- 観測 (telemetry): Workers Obs / Logpush + Log Explorer / AI Gateway / Analytics Engine の 4 source\n- 統制 (governance): AI Gateway (LLM 層) + MCP Server Portal (ツール層) の 2 portal\n- 集約: OTel で外に出して Honeycomb に束ねる → 脱ベンダーロックイン\n\nLLM 呼び出しとツール呼び出しが社内に散らばる sprawl 問題に対し、Cloudflare は\nLLM 層を AI Gateway、ツール層を MCP Server Portal で集約・統制する 2 つの portal を\n提供する。観測と統制を同じ章で扱うことで「見るために統制する / 統制するために見る」\nの循環を 1 つのストーリーで通せる。\n-->\n\n---\n\n# Cloudflare の telemetry source\n\nCloudflare 製品から **4 つの源泉**が取れます。\n\n<div class=\"grid grid-cols-2 gap-3 mt-3 text-sm\">\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Workers Observability\nWorker 内の操作（R2 / D1 / fetch / Queue / AI）の **trace + log**。`observability.traces.enabled = true` の **1 行で有効化**。\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Logpush + Log Explorer\nCloudflare 製品ログ（HTTP / WAF / DNS / Workers traces 等）。**外に push** か **中で SQL クエリ** を選べます。\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### AI Gateway\nLLM 呼び出しの **span**（Gen AI セマンティック規約準拠）。次の 2 スライドで詳述。\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Analytics Engine\nWorker から `writeDataPoint` で書く **高カーディナリティ時系列**。OTel ではなく SQL API でクエリ。\n\n</div>\n\n</div>\n\n<div class=\"mt-3 text-sm op-80\">\n\n→ 最初の 3 つは **OTLP HTTP / JSON** で外部バックエンドにそのまま送れます。\n\n</div>\n\n<!--\n4 つの telemetry source の概要:\n\n(1) Workers Observability — Cloudflare 純正のテレメトリ基盤。R2 / D1 / fetch /\nQueue / Workers AI など Worker 内の主要操作が全部自動でスパン化される。SDK 不要、\nwrangler.jsonc に enabled: […]
 
 > TOOL
@@ -6043,7 +6043,7 @@ id: toolu_01KnHDZZYLfQEfUvS9Z3S3uA
 tool_result
 id: toolu_01KnHDZZYLfQEfUvS9Z3S3uA
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6072,7 +6072,7 @@ id: toolu_01QPZQQZ5TNBzjYTswiUv6QU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md",
   "old_string": "---\nsrc: ./pages/ai-sprawl.md\n---\n\n---\nsrc: ./pages/observability.md\n---",
   "new_string": "---\nsrc: ./pages/observability.md\n---"
 }
@@ -6083,7 +6083,7 @@ id: toolu_01QPZQQZ5TNBzjYTswiUv6QU
 tool_result
 id: toolu_01QPZQQZ5TNBzjYTswiUv6QU
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/slides.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6162,7 +6162,7 @@ tool_use Bash
 id: toolu_016FfuvXDwXDVGZ6r5dhnpv8
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/pages/observability.md contents/cloudflare-data-platform/slides.md && git commit -m \"$(cat <<'EOF'\nfeat(cfdp): ai-sprawl 章を observability に merge (Plan C)\n\n- ai-sprawl.md を削除し、observability.md に AI Gateway / MCP Server Portal を統合\n- 章タイトルを「Observability」→「Observability と AI 統制」に変更\n- Workers Observability / Logpush + Log Explorer / AI Gateway / Analytics Engine の 4 telemetry source を 1 枚の俯瞰スライドに圧縮\n- 構成: section + 5 content slides (telemetry source 俯瞰 / AI Gateway 11 機能 / AI Gateway も OTel / MCP Server Portal / OTLP で Honeycomb)\n- slides.md から ai-sprawl.md の src 参照を削除\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add contents/cloudflare-data-platform/pages/observability.md contents/cloudflare-data-platform/slides.md && git commit -m \"$(cat <<'EOF'\nfeat(cfdp): ai-sprawl 章を observability に merge (Plan C)\n\n- ai-sprawl.md を削除し、observability.md に AI Gateway / MCP Server Portal を統合\n- 章タイトルを「Observability」→「Observability と AI 統制」に変更\n- Workers Observability / Logpush + Log Explorer / AI Gateway / Analytics Engine の 4 telemetry source を 1 枚の俯瞰スライドに圧縮\n- 構成: section + 5 content slides (telemetry source 俯瞰 / AI Gateway 11 機能 / AI Gateway も OTel / MCP Server Portal / OTLP で Honeycomb)\n- slides.md から ai-sprawl.md の src 参照を削除\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit merge work"
 }
 ```
@@ -6173,7 +6173,7 @@ tool_use Bash
 id: toolu_012NoDRsXfNSCd8nDLJkKPKj
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): IaC スライドの Alchemy リンクに GitHub repo を追記\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git log --oneline origin/main..HEAD",
+  "command": "git add contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): IaC スライドの Alchemy リンクに GitHub repo を追記\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git log --oneline origin/main..HEAD",
   "description": "Commit wrangler tweak and show branch state"
 }
 ```
@@ -6352,7 +6352,7 @@ tool_use Bash
 id: toolu_01BTAGLwsd5nP7dhhNobaj2b
 ```json
 {
-  "command": "grep -rn \"ai-sprawl\\|前章\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ 2>&1 | head -20",
+  "command": "grep -rn \"ai-sprawl\\|前章\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/ 2>&1 | head -20",
   "description": "Find stale ai-sprawl references"
 }
 ```
@@ -6362,7 +6362,7 @@ id: toolu_01BTAGLwsd5nP7dhhNobaj2b
 tool_result
 id: toolu_01BTAGLwsd5nP7dhhNobaj2b
 ```
-/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md:72:経由するので、DLP / Cache / Fallback / Metadata が自動で効く (前章 ai-sprawl
+/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md:72:経由するので、DLP / Cache / Fallback / Metadata が自動で効く (前章 ai-sprawl
 ```
 
 > TOOL
@@ -6390,7 +6390,7 @@ tool_use Read
 id: toolu_019hyRaHFgs2yNkHnGjmX2HV
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
   "offset": 68,
   "limit": 10
 }
@@ -6419,7 +6419,7 @@ tool_use Read
 id: toolu_01E4DkvkM7pgSwAUsezbiXKa
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md"
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md"
 }
 ```
 
@@ -6458,7 +6458,7 @@ tool_use Read
 id: toolu_01TPjL2ZxWjgM5t1F9LGNDra
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "offset": 55,
   "limit": 10
 }
@@ -6488,7 +6488,7 @@ id: toolu_018CWczKv1pVNuyRFJ2WmyLr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "→ 最初の 3 つは **OTLP HTTP / JSON** で外部バックエンドにそのまま送れます。",
   "new_string": "→ Analytics Engine 以外は外部バックエンドに直送できます（Workers Obs / AI Gateway は **OTLP**、Logpush は **HTTP destination**）。"
 }
@@ -6499,7 +6499,7 @@ id: toolu_018CWczKv1pVNuyRFJ2WmyLr
 tool_result
 id: toolu_018CWczKv1pVNuyRFJ2WmyLr
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6509,7 +6509,7 @@ id: toolu_01KThhMTNJs4zm6y8hdjW3CK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md",
   "old_string": "LLM 呼び出しの第 3 引数 gateway: { id: \"image-agent\" } で AI Gateway を\n経由するので、DLP / Cache / Fallback / Metadata が自動で効く (前章 ai-sprawl\nの AI Gateway スライドと連動)。",
   "new_string": "LLM 呼び出しの第 3 引数 gateway: { id: \"image-agent\" } で AI Gateway を\n経由するので、DLP / Cache / Fallback / Metadata が自動で効く (後の observability\n章の AI Gateway スライドと連動)。"
 }
@@ -6520,7 +6520,7 @@ id: toolu_01KThhMTNJs4zm6y8hdjW3CK
 tool_result
 id: toolu_01KThhMTNJs4zm6y8hdjW3CK
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workflows.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6530,7 +6530,7 @@ id: toolu_01DbJfZjixuEhVbkP74fkkj9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md",
   "old_string": "ここまでで Cloudflare Data Platform の全体像 — 基礎 (Workers / DO / R2) → ツール (Wrangler / Honeycomb) → solution (dbt / Ambient Agent / Durability / AI sprawl) を流した。",
   "new_string": "ここまでで Cloudflare Data Platform の全体像 — 基礎 (Workers / Workflows) → 実行環境 (Containers / Sandbox) → 観測 + 統制 (Observability + AI Gateway / MCP Server Portal) → 開発者体験 (Wrangler / IaC) を流した。"
 }
@@ -6541,7 +6541,7 @@ id: toolu_01DbJfZjixuEhVbkP74fkkj9
 tool_result
 id: toolu_01DbJfZjixuEhVbkP74fkkj9
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/summary.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -6550,7 +6550,7 @@ tool_use Bash
 id: toolu_01Y9uwaBcdhxeK8Hx5XP5TnX
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/pages/observability.md contents/cloudflare-data-platform/pages/workflows.md contents/cloudflare-data-platform/pages/summary.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): merge 後の章参照と OTLP/Logpush 区別を整合 (#24 review)\n\n- observability.md L59: OTLP / HTTP destination の区別を明記（Logpush は OTLP ではない）\n- workflows.md L72: 「前章 ai-sprawl」→「後の observability 章」（章順序の整合）\n- summary.md L8: 章構成の解説を merge 後の narrative に更新\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git push",
+  "command": "git add contents/cloudflare-data-platform/pages/observability.md contents/cloudflare-data-platform/pages/workflows.md contents/cloudflare-data-platform/pages/summary.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): merge 後の章参照と OTLP/Logpush 区別を整合 (#24 review)\n\n- observability.md L59: OTLP / HTTP destination の区別を明記（Logpush は OTLP ではない）\n- workflows.md L72: 「前章 ai-sprawl」→「後の observability 章」（章順序の整合）\n- summary.md L8: 章構成の解説を merge 後の narrative に更新\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git push",
   "description": "Commit review fixes and push"
 }
 ```
@@ -6904,7 +6904,7 @@ tool_use Bash
 id: toolu_011sJ9kAygY26iS5ofuzHeUk
 ```json
 {
-  "command": "git switch -c cfdp/wrangler-alchemy-tidy && git add contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): IaC スライドの Alchemy 記述を整理\n\n- Alchemy のリンクを v2 docs 1 本に絞る（GitHub repo へのリンクを削除）\n- Alchemy の説明に「Bindingがすごく書きやすい」を追記して使用感を伝える\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git push -u origin cfdp/wrangler-alchemy-tidy 2>&1 | tail -5",
+  "command": "git switch -c cfdp/wrangler-alchemy-tidy && git add contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): IaC スライドの Alchemy 記述を整理\n\n- Alchemy のリンクを v2 docs 1 本に絞る（GitHub repo へのリンクを削除）\n- Alchemy の説明に「Bindingがすごく書きやすい」を追記して使用感を伝える\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git push -u origin cfdp/wrangler-alchemy-tidy 2>&1 | tail -5",
   "description": "Branch, commit, push"
 }
 ```
@@ -7022,7 +7022,7 @@ id: toolu_01FR4xngpeNuzpu37sMeTyuE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "old_string": "- **Alchemy** は TypeScript ネイティブな IaC で、Workers と同じ言語で完結します。Bindingがすごく書きやすい。",
   "new_string": "- **Alchemy** は TypeScript ネイティブな IaC で、Workers と同じ言語で完結します。Binding がすごく書きやすい。"
 }
@@ -7042,7 +7042,7 @@ tool_use Bash
 id: toolu_01Y2rq3vfvW1EB9KSz76SmWd
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): Binding と が の間にスペースを入れる (#25 review)\n\n英単語と日本語助詞の間のスペース挿入を本文の他箇所と統一。\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git push 2>&1 | tail -3",
+  "command": "git add contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): Binding と が の間にスペースを入れる (#25 review)\n\n英単語と日本語助詞の間のスペース挿入を本文の他箇所と統一。\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git push 2>&1 | tail -3",
   "description": "Commit fix and push"
 }
 ```
@@ -7065,7 +7065,7 @@ tool_use Bash
 id: toolu_01FLp5bfPnTTuSFY7T3e8Xw7
 ```json
 {
-  "command": "grep -n \"Binding\\|Alchemy\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "command": "grep -n \"Binding\\|Alchemy\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "description": "Check current Alchemy line state"
 }
 ```
@@ -7086,7 +7086,7 @@ tool_use Read
 id: toolu_014qBQupsLVXBGYoZtmBwGJ8
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "offset": 95,
   "limit": 20
 }
@@ -7126,7 +7126,7 @@ id: toolu_016YWZN3VrMEF6tukmfqdqNB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md",
   "old_string": "- **Alchemy** は TypeScript ネイティブな IaC で、Workers と同じ言語で完結します。Bindingがすごく書きやすい。",
   "new_string": "- **Alchemy** は TypeScript ネイティブな IaC で、Workers と同じ言語で完結します。Binding がすごく書きやすい。"
 }
@@ -7137,7 +7137,7 @@ id: toolu_016YWZN3VrMEF6tukmfqdqNB
 tool_result
 id: toolu_016YWZN3VrMEF6tukmfqdqNB
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/wrangler.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -7146,7 +7146,7 @@ tool_use Bash
 id: toolu_018ji7nQ6J9dbb3ZzmkqY43a
 ```json
 {
-  "command": "git add contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): Binding と が の間にスペースを入れる (#25 review)\n\n英単語と日本語助詞の間のスペース挿入を本文の他箇所と統一。\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" && git push 2>&1 | tail -3",
+  "command": "git add contents/cloudflare-data-platform/pages/wrangler.md && git commit -m \"$(cat <<'EOF'\ntweak(cfdp): Binding と が の間にスペースを入れる (#25 review)\n\n英単語と日本語助詞の間のスペース挿入を本文の他箇所と統一。\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" && git push 2>&1 | tail -3",
   "description": "Commit and push fix"
 }
 ```
@@ -7213,7 +7213,7 @@ tool_use Bash
 id: toolu_01TbfRHVrFVjDEv2K7n6a8wr
 ```json
 {
-  "command": "gh pr comment 25 --body \"$(cat <<'EOF'\nレビュー対応:\n\n- L104 `Binding` と `が` のスペース → `abcb01f` で修正（本文の他箇所「Binding を / Binding 経由」と同じスペース有スタイルに統一）\n- 引用符 `「」` 追加の提案 → 見送り（本文中の地の文として読ませたい）\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\" 2>&1 | tail -3",
+  "command": "gh pr comment 25 --body \"$(cat <<'EOF'\nレビュー対応:\n\n- L104 `Binding` と `が` のスペース → `abcb01f` で修正（本文の他箇所「Binding を / Binding 経由」と同じスペース有スタイルに統一）\n- 引用符 `「」` 追加の提案 → 見送り（本文中の地の文として読ませたい）\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\" 2>&1 | tail -3",
   "description": "Add summary comment"
 }
 ```
@@ -7365,7 +7365,7 @@ tool_use Bash
 id: toolu_01Uax8UMeeArSrzDGZuN1f9o
 ```json
 {
-  "command": "grep -n \"Static Assets\\|静的アセット\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "command": "grep -n \"Static Assets\\|静的アセット\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "description": "Find Static Assets section"
 }
 ```
@@ -7408,7 +7408,7 @@ tool_use Read
 id: toolu_01XM1ETrA77eXPc3TSrKSEsP
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "offset": 80,
   "limit": 35
 }
@@ -7462,7 +7462,7 @@ id: toolu_01GA4rKn9S59jbRTzTKNxTU3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "old_string": "Cloudflare Access (Zero Trust 製品) を前段に挟むと認証ゲートを掛けられ、社内\nドキュメントの限定配信に使える。Free プランは小規模 (現時点では 50 ユーザー\nまで無料) で個人 / チーム用途に向く。料金は変動するので Cloudflare の料金ページ\nを案内する。\n-->",
   "new_string": "Cloudflare Access (Zero Trust 製品) を前段に挟むと認証ゲートを掛けられ、社内\nドキュメントの限定配信に使える。Free プランは小規模 (現時点では 50 ユーザー\nまで無料) で個人 / チーム用途に向く。料金は変動するので Cloudflare の料金ページ\nを案内する。\n\nさらに Browser Rendering (BROWSER binding) を使えば、配信した静的サイトを Worker\nから逆に開ける。puppeteer 互換 API で headless Chromium にスクリーンショット /\nPDF / DOM 抽出を実行させられる。dbt docs を定期的にスクリーンショット差分で\n変更検知したり、LLM agent に最新の表構造を読ませて質問応答するなど、「配信 +\n読み取り」を同じ Cloudflare 内で閉じるパターンが組める。\n-->"
 }
@@ -7473,7 +7473,7 @@ id: toolu_01GA4rKn9S59jbRTzTKNxTU3
 tool_result
 id: toolu_01GA4rKn9S59jbRTzTKNxTU3
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7500,7 +7500,7 @@ id: toolu_01GyLby7WTqUHSGhVEfDoMad
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "---\n\n# R2 Data Catalog\n\nデータを **構造化する** レイヤーです。R2 上の Apache Iceberg テーブルをマネージドで管理します。\n\n```bash\nwrangler r2 bucket catalog enable < bucket-name >\n```\n\n<div class=\"grid grid-cols-[3fr_2fr] gap-6 mt-4\">\n<div>\n\n- 標準の **Iceberg REST Catalog API** を公開\n- **ACID トランザクション** / **スキーマ進化** / **タイムトラベル**\n- Trino / DuckDB / PyIceberg / Spark / StarRocks などのクライアントから直接クエリ可能\n- テーブルメンテナンス\n  - **Compaction**: `--target-size` で指定したサイズに合わせて Parquet ファイルを集約\n  - **Snapshot expiration**: `--older-than-days` で古いスナップショットを削除、`--retain-last` で最低限残す数を指定\n\n</div>\n\n<img src=\"/check-iceberg-version.png\" alt=\"iceberg_table_format_version=2\" class=\"w-full rounded border border-zinc-700/60 shadow-lg\" />\n\n</div>",
   "new_string": "---\nlayout: two-cols-header\n---\n\n# R2 Data Catalog\n\nデータを **構造化する** レイヤーです。R2 上の Apache Iceberg テーブルをマネージドで管理します。\n\n```bash\nwrangler r2 bucket catalog enable < bucket-name >\n```\n\n::left::\n\n- 標準の **Iceberg REST Catalog API** を公開\n- **ACID トランザクション** / **スキーマ進化** / **タイムトラベル**\n- Trino / DuckDB / PyIceberg / Spark / StarRocks などのクライアントから直接クエリ可能\n- テーブルメンテナンス\n  - **Compaction**: `--target-size` で指定したサイズに合わせて Parquet ファイルを集約\n  - **Snapshot expiration**: `--older-than-days` で古いスナップショットを削除、`--retain-last` で最低限残す数を指定\n\n::right::\n\n<img src=\"/check-iceberg-version.png\" alt=\"iceberg_table_format_version=2\" class=\"w-full rounded border border-zinc-700/60 shadow-lg\" />"
 }
@@ -7520,7 +7520,7 @@ tool_use Read
 id: toolu_012vr5yaf8xUcUDJSa1efnEE
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "offset": 110,
   "limit": 35
 }
@@ -7575,7 +7575,7 @@ id: toolu_01VV9mF8aa1FSjYGUkTpmQuR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "---\n\n# R2 Data Catalog\n\nデータを **構造化する** レイヤーです。R2 上の Apache Iceberg テーブルをマネージドで管理します。\n\n```bash\nwrangler r2 bucket catalog enable < bucket-name >\n```\n\n<div class=\"grid grid-cols-[3fr_2fr] gap-6 mt-4\">\n<div>\n\n- 標準の **Iceberg REST Catalog API** を公開\n- **ACID トランザクション** / **スキーマ進化** / **タイムトラベル**\n- Trino / DuckDB / PyIceberg / Spark / StarRocks などのクライアントから直接クエリ可能\n- テーブルメンテナンス\n  - **Compaction**: `--target-size` で指定したサイズに合わせて Parquet ファイルを集約\n  - **Snapshot expiration**: `--older-than-days` で古いスナップショットを削除、`--retain-last` で最低限残す数を指定\n\n</div>\n\n<img src=\"/check-iceberg-version.png\" alt=\"iceberg_table_format_version=2\" class=\"w-full rounded border border-zinc-700/60 shadow-lg\" />\n\n</div>",
   "new_string": "---\nlayout: two-cols-header\n---\n\n# R2 Data Catalog\n\nデータを **構造化する** レイヤーです。R2 上の Apache Iceberg テーブルをマネージドで管理します。\n\n```bash\nwrangler r2 bucket catalog enable < bucket-name >\n```\n\n::left::\n\n- 標準の **Iceberg REST Catalog API** を公開\n- **ACID トランザクション** / **スキーマ進化** / **タイムトラベル**\n- Trino / DuckDB / PyIceberg / Spark / StarRocks などのクライアントから直接クエリ可能\n- テーブルメンテナンス\n  - **Compaction**: `--target-size` で指定したサイズに合わせて Parquet ファイルを集約\n  - **Snapshot expiration**: `--older-than-days` で古いスナップショットを削除、`--retain-last` で最低限残す数を指定\n\n::right::\n\n<img src=\"/check-iceberg-version.png\" alt=\"iceberg_table_format_version=2\" class=\"w-full rounded border border-zinc-700/60 shadow-lg\" />"
 }
@@ -7586,7 +7586,7 @@ id: toolu_01VV9mF8aa1FSjYGUkTpmQuR
 tool_result
 id: toolu_01VV9mF8aa1FSjYGUkTpmQuR
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7680,7 +7680,7 @@ id: toolu_01AP1rNgFH34giGZKsyiWGb9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md",
   "old_string": "さらに Browser Rendering (BROWSER binding) を使えば、配信した静的サイトを Worker\nから逆に開ける。puppeteer 互換 API で headless Chromium にスクリーンショット /\nPDF / DOM 抽出を実行させられる。dbt docs を定期的にスクリーンショット差分で\n変更検知したり、LLM agent に最新の表構造を読ませて質問応答するなど、「配信 +\n読み取り」を同じ Cloudflare 内で閉じるパターンが組める。",
   "new_string": "さらに Browser Run (旧 Browser Rendering) を使えば、配信した静的サイトを Worker\nから逆に開ける。HTTP の Quick Actions で screenshot / PDF / Markdown / AI-powered\nJSON 抽出がワンショット、Browser Sessions で Puppeteer / Playwright / CDP による\n精密制御も可能。dbt docs を変更検知でスクリーンショット差分、Markdown や\nJSON 抽出で LLM agent に最新の表構造を読ませて質問応答、といった「配信 +\n読み取り」を同じ Cloudflare 内で閉じるパターンが組める。"
 }
@@ -7691,7 +7691,7 @@ id: toolu_01AP1rNgFH34giGZKsyiWGb9
 tool_result
 id: toolu_01AP1rNgFH34giGZKsyiWGb9
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/workers.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -7997,7 +7997,7 @@ tool_use Read
 id: toolu_012Uw3oYWwAWF2FVuw2n5CU8
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "offset": 75,
   "limit": 15
 }
@@ -8031,7 +8031,7 @@ tool_use Read
 id: toolu_01EVQ5X1qxZLwBicLGf45c5b
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "offset": 85,
   "limit": 15
 }
@@ -8070,7 +8070,7 @@ id: toolu_01XiSwUoiFNziBXg4RCXsDrA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "最初の 3 つは OTel で外部集約可能、Analytics Engine だけ Cloudflare 内完結。\n-->\n\n---\n\n# AI Gateway — LLM 呼び出しを統制する",
   "new_string": "最初の 3 つは OTel で外部集約可能、Analytics Engine だけ Cloudflare 内完結。\n-->\n\n---\n\n# Workers Logs — 4 つの経路\n\nWorker が出すログ (`workers_trace_events`) を、用途で 4 経路に振り分けます。\n\n<div class=\"grid grid-cols-2 gap-3 mt-3 text-sm\">\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Workers Logs\nダッシュボードに自動収集 / 保存 / 検索（**保持 7 日**）\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Real-time Logs\nnear real-time の live tail。`wrangler tail` or dashboard。**保存しない**\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Tail Workers (Beta)\n別 Worker でログを受けて **filtering / sampling / 変換 / export** を自前実装\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Workers Logpush\n**外部 destination** に数分バッチで push（R2 / Pipelines / 汎用 HTTP / SIEM）\n\n</div>\n\n</div>\n\n<div class=\"mt-3 text-sm op-80\">\n\n→ **Invocation logs / Custom logs / Errors / Uncaught exceptions** が共通の元データ。`console.log` を JSON object にすると自動でフィールド抽出。\n\n</div>\n\n<!--\n4 経路の選択指針:\n- ダッシュボードで普通に見たい → Workers Logs (GA、保持 7 日、JSON 自動抽出)\n- 今この瞬間を見たい → Real-time Logs (sampling mode に注意)\n- 自前ロジックで加工 / 別宛先に転送 → Tail Workers (Beta)\n- 既存 SIEM / DWH に長期 push → Workers Logpush (R2 / S3 / GCS / Datadog / Splunk / Pipelines / 汎用 HTTP)\n\n共通の元データは workers_trace_events (1 invocation あたり最大 256 KB)。\nconsole.log() / 例外 / リクエスト metadata / ヘッダ が自動キャプチャ。\nJSON object を渡すとフィールド自動抽出 + unlimited cardinality。\n-->\n\n---\n\n# Workers Metrics & Analytics\n\ndashboard と API で「何が / どれくらい […]
 
@@ -8079,7 +8079,7 @@ id: toolu_01XiSwUoiFNziBXg4RCXsDrA
 tool_result
 id: toolu_01XiSwUoiFNziBXg4RCXsDrA
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -8127,7 +8127,7 @@ tool_use Read
 id: toolu_01CQ9sBG33Y4P4C9XRge1TEy
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "offset": 15,
   "limit": 95
 }
@@ -8198,7 +8198,7 @@ id: toolu_01XmpAZ9C7AiqmXhD8MF6GFY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "old_string": "---\n\n# Cloudflare の telemetry source\n\nCloudflare 製品から **4 つの源泉**が取れます。\n\n<div class=\"grid grid-cols-2 gap-3 mt-3 text-sm\">\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Workers Observability\nWorker 内の操作（R2 / D1 / fetch / Queue / AI）の **trace + log**。`observability.traces.enabled = true` の **1 行で有効化**。\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Logpush + Log Explorer\nCloudflare 製品ログ(HTTP / WAF / DNS / Workers traces 等)。**外に push** か **中で SQL クエリ** を選べます。\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### AI Gateway\nLLM 呼び出しの **span**(Gen AI セマンティック規約準拠)。次の 2 スライドで詳述。\n\n</div>\n\n<div class=\"border border-orange-500/30 rounded p-3\">\n\n### Analytics Engine\nWorker から `writeDataPoint` で書く **高カーディナリティ時系列**。OTel ではなく SQL API でクエリ。\n\n</div>\n\n</div>\n\n<div class=\"mt-3 text-sm op-80\">\n\n→ Analytics Engine 以外は外部バックエンドに直送できます(Workers Obs / AI Gateway は **OTLP**、Logpush は **HTTP destination**)。\n\n</div>\n\n<!--\n4 つの telemetry source の概要:\n\n(1) Workers Observability — Cloudflare 純正のテレメトリ基盤。R2 / D1 / fetch /\nQueue / Workers AI など Worker 内の主要操作が全部自動でスパン化される。SDK 不要、\nwrangler.jsonc に enabled: true を書くだけ。本番では head_sampling_rate: 0.05 で\n5% に絞ってコストを抑えつつ代表的なトレースが取れる、という運用がベース。\n\n(2) Logpush + Log Explorer — 同じ source データに対して 2 つの取り回し。\nLogpush は数分間隔のバッチで R2 / S3 / GCS / Datadog / Splunk / Pipelines /\n汎用 HTTP に push。Log Explorer は SQL API で同じ datasets をその場でクエリ、\n契約で最大 2 年保持。datasets は両者共通: http_requests / firewall_events /\nworkers_trace_events / dns_logs / access_requests など。\n\n(3) AI Gateway — LLM 呼び出しの reverse proxy。Universal Endpoint で全プロバイダー\nを 1 URL に集約、Gen AI セマンティック規約準拠の span […]
 
 > TOOL
@@ -8269,7 +8269,7 @@ tool_use Bash
 id: toolu_019Jsm6C2wFdETpurBLqoSPU
 ```json
 {
-  "command": "awk 'NR==19,NR==91' /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md | head -3 && echo \"...\" && awk 'NR==19,NR==91' /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md | tail -3",
+  "command": "awk 'NR==19,NR==91' /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md | head -3 && echo \"...\" && awk 'NR==19,NR==91' /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md | tail -3",
   "description": "Check exact bookends for replacement"
 }
 ```
@@ -8294,7 +8294,7 @@ tool_use Bash
 id: toolu_01GfYKKXVL4vrTTDERRZ9MUC
 ```json
 {
-  "command": "sed -i '' '20,91d' /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md && head -25 /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
+  "command": "sed -i '' '20,91d' /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md && head -25 /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/observability.md",
   "description": "Delete the overview slide range and verify"
 }
 ```
@@ -8511,7 +8511,7 @@ id: toolu_01AkjkQ68sscHJe7ZiY5zSuC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "- 標準の **Iceberg REST Catalog API** を公開\n- **ACID トランザクション** / **スキーマ進化** / **タイムトラベル**\n- Trino / DuckDB / PyIceberg / Spark / StarRocks などのクライアントから直接クエリ可能",
   "new_string": "- 標準の **Iceberg REST Catalog API** を公開\n- **Iceberg V2 spec の機能**はそのまま使える（ACID / Schema evolution / Time travel 等）\n- Trino / DuckDB / PyIceberg / Spark / StarRocks などのクライアントから直接クエリ可能"
 }
@@ -8531,7 +8531,7 @@ tool_use Bash
 id: toolu_01LCMhHe8iVN3zu3rbrkUN3H
 ```json
 {
-  "command": "grep -n \"ACID\\|Iceberg V2\\|スキーマ進化\\|Schema evolution\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "command": "grep -n \"ACID\\|Iceberg V2\\|スキーマ進化\\|Schema evolution\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "description": "Find current state of the bullet"
 }
 ```
@@ -8550,7 +8550,7 @@ tool_use Read
 id: toolu_01N67d2NNwgcxZMDytmpkMhR
 ```json
 {
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "offset": 123,
   "limit": 15
 }
@@ -8585,7 +8585,7 @@ id: toolu_01Fa7yBFNMaNEgmfSd35rPim
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
+  "file_path": "/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md",
   "old_string": "- **ACID トランザクション** / **スキーマ進化** / **タイムトラベル**",
   "new_string": "- **Iceberg V2 spec の機能**はそのまま使える（ACID / Schema evolution / Time travel 等）"
 }
@@ -8596,7 +8596,7 @@ id: toolu_01Fa7yBFNMaNEgmfSd35rPim
 tool_result
 id: toolu_01Fa7yBFNMaNEgmfSd35rPim
 ```
-The file /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/data-platform.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

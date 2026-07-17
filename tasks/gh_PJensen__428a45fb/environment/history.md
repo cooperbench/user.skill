@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -73,7 +73,7 @@ id: call_Ix6i2J5b4S8uTIC0inXh6gvT
 ```json
 {
   "cmd": "rg -n \"class|fighter|mage|chicken|spirit guide|spirit_guide|spirit essence|spirit_essence|corpse|Draugr|draugr|luck|lineage|landmark|standing stone|grove|pond|old tree|ruined\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -85,7 +85,7 @@ id: call_gevVA2pbU3tH0Cn8e0HaMniM
 ```json
 {
   "cmd": "rg --files src/content src/rules tests | sort",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -97,7 +97,7 @@ id: call_hDsxmuutSvmsBrA63F5yBCYJ
 ```json
 {
   "cmd": "sed -n '1,240p' src/rules/data/monsters.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -109,7 +109,7 @@ id: call_n7eK7PyunUy9E9zAnGgdeEzk
 ```json
 {
   "cmd": "sed -n '1,240p' src/rules/data/classes.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -489,7 +489,7 @@ id: call_sxHauVJ0xg8z1JFF1zOIwq0p
 ```json
 {
   "cmd": "sed -n '240,520p' src/rules/data/classes.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -501,7 +501,7 @@ id: call_ZtoKPiovVzfqo0EkewLIUbzy
 ```json
 {
   "cmd": "sed -n '1,260p' src/content/monsters/animals.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -513,7 +513,7 @@ id: call_R0j9yH0esOVHgE64DiDjpvbl
 ```json
 {
   "cmd": "sed -n '1,260p' src/content/monsters/undead.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -525,7 +525,7 @@ id: call_OwYEjk1QkUaur75T77ppZp2E
 ```json
 {
   "cmd": "sed -n '1,220p' tests/chickenCatalog.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -537,7 +537,7 @@ id: call_EFM9MPLt7DF6UBTrh54YX66Q
 ```json
 {
   "cmd": "sed -n '1,220p' tests/spiritGuide.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -549,7 +549,7 @@ id: call_YOg39rw9Q6klTG9J5mxrqs4l
 ```json
 {
   "cmd": "sed -n '1,220p' tests/luck.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -961,7 +961,7 @@ id: call_ZM85iGgVBHrYDLPvjZU4VBLH
 ```json
 {
   "cmd": "sed -n '1,220p' src/content/monsters/index.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -973,7 +973,7 @@ id: call_UAJ9QNOixfuSKqO0l0eDjwsw
 ```json
 {
   "cmd": "sed -n '1,220p' src/content/define.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -985,7 +985,7 @@ id: call_O45Ux8xvlwQ4x58qFHQY5Ud7
 ```json
 {
   "cmd": "rg -n \"chicken_hen|chicken_rooster|chick|farmAnimal|neutral|aggro:\" src/content/monsters src/rules -g'*.js'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -997,7 +997,7 @@ id: call_mn5W7MZpQwr874ywfADNrSAd
 ```json
 {
   "cmd": "sed -n '1,220p' tests/classes.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1009,7 +1009,7 @@ id: call_Ultk9jEs3XL5nOq63SgcBbaZ
 ```json
 {
   "cmd": "sed -n '1,180p' tests/overworldCreatureContent.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1226,7 +1226,7 @@ id: call_z0XgNnUfWwAE2qla5m4JUKpD
 ```json
 {
   "cmd": "rg -n \"export function defineMonster|baseHp|_contentAiHints|glyph\" src/content/define.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1261,7 +1261,7 @@ id: call_wIpnp7FWSSOBewSFlBuSBX66
 ```json
 {
   "cmd": "sed -n '430,540p' src/content/define.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 14000
 }
 ```
@@ -1323,7 +1323,7 @@ id: call_QV3ikniiNZS0SqGBjiYbHoeE
 ```json
 {
   "cmd": "sed -n '630,790p' src/content/monsters/animals.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1408,7 +1408,7 @@ id: call_pGlGWQ8bhThgsrZNEQIpvfqw
 ```json
 {
   "cmd": "rg -n \"spear|axe_heavy|sword_plain|iron_mace|potion_holy_water|pendant_lucky\" src/content/items src/rules/data/itemCatalog*.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1447,7 +1447,7 @@ id: call_tuWSvfJLOyV27k7hPG7pD7o3
 ```json
 {
   "cmd": "sed -n '720,870p' src/content/items/weapons.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1459,7 +1459,7 @@ id: call_V2eSe9PMQTKVGjn8Bd6SinBg
 ```json
 {
   "cmd": "rg -n \"meta:|_contentMeta|contentMeta|lineage|class.*meta|land\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 14000
 }
 ```
@@ -1471,7 +1471,7 @@ id: call_e50XNu6fHp1sKGwuwuedutp2
 ```json
 {
   "cmd": "sed -n '1,220p' src/rules/data/buildings/strange_grove.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1483,7 +1483,7 @@ id: call_7LkVgj9LJJWvtOyPZjbabCQM
 ```json
 {
   "cmd": "sed -n '1,180p' src/rules/data/buildings/graveyard.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -1676,7 +1676,7 @@ id: call_TYtRa1TMGfHmycpUXJycbLJz
 ```json
 {
   "cmd": "rg -n \"defineItem\\('spear_plain'|spear_plain\" src/content src/rules tests",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 6000
 }
 ```
@@ -1722,7 +1722,7 @@ id: call_V8cJNss9j7mgt45XWzcmewYk
 ```json
 {
   "cmd": "deno test --allow-read tests/classes.test.mjs tests/norseContent.test.mjs tests/chickenCatalog.test.mjs tests/overworldCreatureContent.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1771,7 +1771,7 @@ id: call_2H3LFicn0kw3OkmvBQBXOTqY
 ```json
 {
   "cmd": "git diff -- src/rules/data/classes.js src/content/monsters/animals.js src/content/monsters/undead.js src/rules/data/norseFate.js tests/classes.test.mjs tests/norseContent.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 24000
 }
 ```
@@ -1783,7 +1783,7 @@ id: call_oW0QtP77Jef1rGzR5t1cBsuA
 ```json
 {
   "cmd": "deno test --allow-read tests/contentCatalogCanonical.test.mjs tests/displayGlyphCoverage.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -1879,7 +1879,7 @@ id: call_P7wjps1qPQyKOnBrKANvT1Ky
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1891,7 +1891,7 @@ id: call_FHdpRQHb0bAGEEZp7NUwD7QN
 ```json
 {
   "cmd": "rg -n \"valkyrie|Valkyrie|ratatoskr|Ratatoskr|draugr|Draugr|Landvaettir|landvaettir|Hamingja|hamingja\" src tests",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -1903,7 +1903,7 @@ id: call_YKkZZDJhLugN2cyCSZhWY2ev
 ```json
 {
   "cmd": "deno task check",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2012,7 +2012,7 @@ id: call_IuueXKsiKae6jhG7Cm8xzSKY
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -2040,11 +2040,11 @@ Output:
 Implemented the Norse content pass.
 
 Changed:
-- Added `valkyrie` class in [classes.js](/home/pjensen/Repos/JSHack/src/rules/data/classes.js) with fate/death-aware metadata.
-- Added `ratatoskr` in [animals.js](/home/pjensen/Repos/JSHack/src/content/monsters/animals.js) as a unique rare passive outdoor squirrel messenger using `🐿️`.
-- Added `draugr` in [undead.js](/home/pjensen/Repos/JSHack/src/content/monsters/undead.js) as a rare territorial undead guardian with bound-property anger metadata and `💀`.
-- Added [norseFate.js](/home/pjensen/Repos/JSHack/src/rules/data/norseFate.js) for Landvaettir site definitions and early Hamingja lineage-luck definition.
-- Added/updated focused tests in [classes.test.mjs](/home/pjensen/Repos/JSHack/tests/classes.test.mjs) and [norseContent.test.mjs](/home/pjensen/Repos/JSHack/tests/norseContent.test.mjs).
+- Added `valkyrie` class in [classes.js](/home/<USER>/Repos/JSHack/src/rules/data/classes.js) with fate/death-aware metadata.
+- Added `ratatoskr` in [animals.js](/home/<USER>/Repos/JSHack/src/content/monsters/animals.js) as a unique rare passive outdoor squirrel messenger using `🐿️`.
+- Added `draugr` in [undead.js](/home/<USER>/Repos/JSHack/src/content/monsters/undead.js) as a rare territorial undead guardian with bound-property anger metadata and `💀`.
+- Added [norseFate.js](/home/<USER>/Repos/JSHack/src/rules/data/norseFate.js) for Landvaettir site definitions and early Hamingja lineage-luck definition.
+- Added/updated focused tests in [classes.test.mjs](/home/<USER>/Repos/JSHack/tests/classes.test.mjs) and [norseContent.test.mjs](/home/<USER>/Repos/JSHack/tests/norseContent.test.mjs).
 
 Verification run:
 - `deno test --allow-read tests/classes.test.mjs tests/norseContent.test.mjs tests/chickenCatalog.test.mjs tests/overworldCreatureContent.test.mjs`

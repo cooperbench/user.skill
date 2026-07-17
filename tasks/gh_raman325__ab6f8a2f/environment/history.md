@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_01AgW44CcsabMCc9NjPi9U9M
 ```json
 {
-  "command": "grep -rl \"headroom\" ~/.claude.json ~/.claude/settings.json ~/.claude/settings.local.json ~/.config/claude/ /Users/raman/projects/lock_code_manager/.mcp.json /Users/raman/projects/lock_code_manager/.claude/ 2>/dev/null",
+  "command": "grep -rl \"headroom\" ~/.claude.json ~/.claude/settings.json ~/.claude/settings.local.json ~/.config/claude/ /home/<USER>/projects/lock_code_manager/.mcp.json /home/<USER>/projects/lock_code_manager/.claude/ 2>/dev/null",
   "description": "Search for headroom in MCP config files"
 }
 ```
@@ -23,7 +23,7 @@ tool_result ERROR
 id: toolu_01AgW44CcsabMCc9NjPi9U9M
 ```
 Exit code 2
-/Users/raman/.claude.json
+/home/<USER>/.claude.json
 ```
 
 > AGENT
@@ -36,7 +36,7 @@ tool_use Bash
 id: toolu_013cs8Ds6f5EwBLyaiG4hETT
 ```json
 {
-  "command": "cd /Users/raman && python3 -c \"\nimport json\nd=json.load(open('/Users/raman/.claude.json'))\n# top-level mcpServers\ntop=d.get('mcpServers',{})\nprint('TOP-LEVEL mcpServers:', [k for k in top])\nif 'headroom' in top:\n    print('headroom (top-level):', json.dumps(top['headroom']))\n# per-project mcpServers\nfor proj,cfg in d.get('projects',{}).items():\n    ms=cfg.get('mcpServers',{}) if isinstance(cfg,dict) else {}\n    if 'headroom' in ms:\n        print('headroom in project', proj, ':', json.dumps(ms['headroom']))\n\"",
+  "command": "cd /home/<USER> && python3 -c \"\nimport json\nd=json.load(open('/home/<USER>/.claude.json'))\n# top-level mcpServers\ntop=d.get('mcpServers',{})\nprint('TOP-LEVEL mcpServers:', [k for k in top])\nif 'headroom' in top:\n    print('headroom (top-level):', json.dumps(top['headroom']))\n# per-project mcpServers\nfor proj,cfg in d.get('projects',{}).items():\n    ms=cfg.get('mcpServers',{}) if isinstance(cfg,dict) else {}\n    if 'headroom' in ms:\n        print('headroom in project', proj, ':', json.dumps(ms['headroom']))\n\"",
   "description": "Inspect headroom MCP config location"
 }
 ```
@@ -48,7 +48,7 @@ id: toolu_013cs8Ds6f5EwBLyaiG4hETT
 ```
 TOP-LEVEL mcpServers: ['serena', 'headroom']
 headroom (top-level): {"type": "stdio", "command": "headroom", "args": ["mcp", "serve"], "env": {}}
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -67,7 +67,7 @@ tool_use Bash
 id: toolu_01A8sbEnk1N6hqzAe5NV5Rt9
 ```json
 {
-  "command": "cd /Users/raman && python3 -c \"\nimport json\np='/Users/raman/.claude.json'\nd=json.load(open(p))\nremoved=d.get('mcpServers',{}).pop('headroom',None)\njson.dump(d,open(p,'w'),indent=2)\nprint('Removed:', json.dumps(removed))\nprint('Remaining top-level mcpServers:', list(d.get('mcpServers',{}).keys()))\n\"",
+  "command": "cd /home/<USER> && python3 -c \"\nimport json\np='/home/<USER>/.claude.json'\nd=json.load(open(p))\nremoved=d.get('mcpServers',{}).pop('headroom',None)\njson.dump(d,open(p,'w'),indent=2)\nprint('Removed:', json.dumps(removed))\nprint('Remaining top-level mcpServers:', list(d.get('mcpServers',{}).keys()))\n\"",
   "description": "Remove headroom from top-level mcpServers"
 }
 ```
@@ -79,7 +79,7 @@ id: toolu_01A8sbEnk1N6hqzAe5NV5Rt9
 ```
 Removed: {"type": "stdio", "command": "headroom", "args": ["mcp", "serve"], "env": {}}
 Remaining top-level mcpServers: ['serena']
-Shell cwd was reset to /Users/raman/projects/lock_code_manager
+Shell cwd was reset to /home/<USER>/projects/lock_code_manager
 ```
 
 > AGENT
@@ -156,7 +156,7 @@ tool_use Read
 id: toolu_01YSVthTTGBnp2twC3VUdhJ8
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/text.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/text.py"
 }
 ```
 
@@ -286,7 +286,7 @@ tool_use Read
 id: toolu_01CBodbivUZjGoztKa3axESu
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/credentials.py",
   "offset": 225,
   "limit": 60
 }
@@ -375,7 +375,7 @@ tool_use Read
 id: toolu_011s6pCFGwNYszTRKTeL2dBy
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "offset": 205,
   "limit": 50
 }
@@ -637,7 +637,7 @@ tool_use Read
 id: toolu_01SjDYKuwpfVtqySvaBzVe5r
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "offset": 1,
   "limit": 205
 }
@@ -707,7 +707,7 @@ tool_use Read
 id: toolu_01Xj88zEusG32ZCCczNL44aJ
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/slot_coordinator.py",
   "offset": 254,
   "limit": 120
 }
@@ -843,7 +843,7 @@ tool_use Read
 id: toolu_01RrD2NC7Abtou3vmstHvnCn
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 1161,
   "limit": 130
 }
@@ -898,7 +898,7 @@ tool_use Read
 id: toolu_01HPTs9tb8ZSXfRmAZ5q1mXE
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/domain/models.py"
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/domain/models.py"
 }
 ```
 
@@ -1117,7 +1117,7 @@ tool_use Read
 id: toolu_01KurKfC5JEeFqLfBKHyNauN
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/entity.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/entity.py",
   "offset": 120,
   "limit": 90
 }
@@ -1225,7 +1225,7 @@ tool_use Read
 id: toolu_014k88xcLYX2fDTDL6XHE1sW
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/__init__.py",
   "offset": 830,
   "limit": 70
 }
@@ -1294,7 +1294,7 @@ tool_use Read
 id: toolu_015Mxkgxh7fRc9udwnw1MNtP
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/providers/_base.py",
   "offset": 620,
   "limit": 50
 }
@@ -1353,7 +1353,7 @@ tool_use Read
 id: toolu_01NRSK9mbeRzfM3TaRpWeCqV
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/custom_components/lock_code_manager/entity.py",
+  "file_path": "/home/<USER>/projects/lock_code_manager/custom_components/lock_code_manager/entity.py",
   "offset": 1,
   "limit": 120
 }
@@ -1718,7 +1718,7 @@ tool_use Write
 id: toolu_019fFoFVnL1FyGLTCJvjX9Vu
 ```json
 {
-  "file_path": "/Users/raman/projects/lock_code_manager/docs/superpowers/specs/2026-06-19-credential-length-capabilities-design.md",
+  "file_path": "/home/<USER>/projects/lock_code_manager/docs/superpowers/specs/2026-06-19-credential-length-capabilities-design.md",
   "content": "# Capability-aware credential length (entity bounds + coordinator gate)\n\nDate: 2026-06-19\nStatus: Approved design, pending implementation plan\n\n## Problem\n\nThe PIN text entity advertises a hardcoded length range\n(`_attr_native_min = 0`, `_attr_native_max = 9999` in `text.py`) shared by both\nthe name and PIN entities. Locks advertise real per-credential length limits\n(`CredentialTypeCapability.min_length` / `max_length`, populated by the\nzwave_js, zwave_js_uc, and matter providers), but those bounds are **never\nconsumed**: `LockCapabilities.capability_for()` is defined and never called, and\n`min_length` / `max_length` are only ever written. There is no length validation\nanywhere in the write path (`SlotEntityCoordinator.async_request_pin_update`\nonly normalizes whitespace and auto-disables on an empty PIN; the provider seam\nonly validates credential *type* via `_assert_credential_type_supported`).\n\nResult: a PIN that is too short or too long for the bound lock(s) is accepted in\nthe UI, persisted to config, and only fails (or is silently malformed) deep in\nthe provider/sync layer.\n\n## Goals\n\n1. The PIN text entity reflects the lock-advertised length range in the UI\n   (frontend `minlength` / `maxlength`).\n2. An out-of-range PIN is rejected before it is written, with an error message\n   the user sees.\n3. The machinery is **credential-type-agnostic** so password (and other future\n   credential types) reuse it by adding one mapping entry, not new logic.\n\n## Non-goals\n\n- No password text entity / config key (entity-type […]
 
 > TOOL
@@ -1726,7 +1726,7 @@ id: toolu_019fFoFVnL1FyGLTCJvjX9Vu
 tool_result
 id: toolu_019fFoFVnL1FyGLTCJvjX9Vu
 ```
-File created successfully at: /Users/raman/projects/lock_code_manager/docs/superpowers/specs/2026-06-19-credential-length-capabilities-design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/projects/lock_code_manager/docs/superpowers/specs/2026-06-19-credential-length-capabilities-design.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

@@ -15,7 +15,7 @@ id: toolu_01SqsqSV27sQQ72m3w7QBPH8
 {
   "description": "Backend architecture review sweep",
   "subagent_type": "Explore",
-  "prompt": "You are doing an architecture review sweep of the DataQ repo at /Users/arijit/Coding/Python/DataQ. Search breadth: very thorough. Focus ONLY on the backend + overall code architecture (another agent covers deploy/infra, a third covers marketplace/docs).\n\nAssess and report on:\n1. Layering: backend/app/{core,db,api,services,orchestration,datasources,mcp} — does the dependency direction hold (api → services → db; no service importing api)? Any layering violations (e.g. routers with business logic, services doing raw SQL bypassing models, circular imports)?\n2. The seams: ConnectionAdapter, CheckRunner, OrchestrationProvider, SecretStore, ResultPublisher, get_current_user. For each: where defined, how implementations register (registry pattern?), and whether any code bypasses the seam (e.g. isinstance checks on provider type, `if provider == 'adf'` branching in services, Azure-specific imports in business logic).\n3. Datasource layer: how the 5 datasources (snowflake, adls, s3, unity_catalog, iceberg) share gx_runner.py / flatfile.py; duplication or divergence between runners.\n4. check.kind monitor seam: how expectation vs freshness/volume kinds dispatch; is it extensible for schema_drift/anomaly.\n5. Config: Pydantic Settings usage, any hardcoded Azure endpoints/resource names in app code (grep for azure, vault.azure.net, applicationinsights, azurecontainerapps outside the intended adapter modules).\n6. DB models: table inventory, pipeline_runs vs runs separation, trigger_bindings shape, any FK/cascade smells.\n7. Error handling + logging: […]
+  "prompt": "You are doing an architecture review sweep of the DataQ repo at /home/<USER>/Coding/Python/DataQ. Search breadth: very thorough. Focus ONLY on the backend + overall code architecture (another agent covers deploy/infra, a third covers marketplace/docs).\n\nAssess and report on:\n1. Layering: backend/app/{core,db,api,services,orchestration,datasources,mcp} — does the dependency direction hold (api → services → db; no service importing api)? Any layering violations (e.g. routers with business logic, services doing raw SQL bypassing models, circular imports)?\n2. The seams: ConnectionAdapter, CheckRunner, OrchestrationProvider, SecretStore, ResultPublisher, get_current_user. For each: where defined, how implementations register (registry pattern?), and whether any code bypasses the seam (e.g. isinstance checks on provider type, `if provider == 'adf'` branching in services, Azure-specific imports in business logic).\n3. Datasource layer: how the 5 datasources (snowflake, adls, s3, unity_catalog, iceberg) share gx_runner.py / flatfile.py; duplication or divergence between runners.\n4. check.kind monitor seam: how expectation vs freshness/volume kinds dispatch; is it extensible for schema_drift/anomaly.\n5. Config: Pydantic Settings usage, any hardcoded Azure endpoints/resource names in app code (grep for azure, vault.azure.net, applicationinsights, azurecontainerapps outside the intended adapter modules).\n6. DB models: table inventory, pipeline_runs vs runs separation, trigger_bindings shape, any FK/cascade smells.\n7. Error handling + logging: […]
 
 > TOOL
 
@@ -38,7 +38,7 @@ id: toolu_01W8AyTcAYiv4M6khsiXqPis
 {
   "description": "Deploy/infra/security review sweep",
   "subagent_type": "Explore",
-  "prompt": "You are doing an architecture review sweep of the DataQ repo at /Users/arijit/Coding/Python/DataQ. Search breadth: very thorough. Focus ONLY on deployment, infrastructure, CI/CD, security posture, and operational architecture (another agent covers backend code architecture, a third covers marketplace/docs).\n\nAssess and report on:\n1. deploy/terraform/azure/ — module structure, what resources it stands up, how parameterized vs hardcoded (resource names, regions, the shared dataq-cae/dataq-pg assumptions), whether a second customer could `terraform apply` this cleanly into their own subscription. Note any harness/demo coupling baked into the IaC.\n2. Portability seams per ADR 0010/0013/0028: is Azure genuinely one impl behind seams? Check: SecretStore implementations (Key Vault + what else? env/file/local?), observability (OTel core vs Azure exporter — is there a non-Azure logging path?), auth (fastapi-azure-auth — is there a generic OIDC path or is backend token validation Azure-AD-only?), object storage.\n3. Docker/compose: docker-compose.yml for local dev, Dockerfiles (backend slim image ADR 0025, frontend nginx runtime-config image ADR 0028) — could a customer run this fully locally/on-prem (local-first posture #591)? What's missing for docker-compose-only production-ish deployment (e.g. secrets without Key Vault, auth without Azure AD)?\n4. CI/CD: .github/workflows inventory — quality gates, the Deploy workflow shape (GHCR, […]
+  "prompt": "You are doing an architecture review sweep of the DataQ repo at /home/<USER>/Coding/Python/DataQ. Search breadth: very thorough. Focus ONLY on deployment, infrastructure, CI/CD, security posture, and operational architecture (another agent covers backend code architecture, a third covers marketplace/docs).\n\nAssess and report on:\n1. deploy/terraform/azure/ — module structure, what resources it stands up, how parameterized vs hardcoded (resource names, regions, the shared dataq-cae/dataq-pg assumptions), whether a second customer could `terraform apply` this cleanly into their own subscription. Note any harness/demo coupling baked into the IaC.\n2. Portability seams per ADR 0010/0013/0028: is Azure genuinely one impl behind seams? Check: SecretStore implementations (Key Vault + what else? env/file/local?), observability (OTel core vs Azure exporter — is there a non-Azure logging path?), auth (fastapi-azure-auth — is there a generic OIDC path or is backend token validation Azure-AD-only?), object storage.\n3. Docker/compose: docker-compose.yml for local dev, Dockerfiles (backend slim image ADR 0025, frontend nginx runtime-config image ADR 0028) — could a customer run this fully locally/on-prem (local-first posture #591)? What's missing for docker-compose-only production-ish deployment (e.g. secrets without Key Vault, auth without Azure AD)?\n4. CI/CD: .github/workflows inventory — quality gates, the Deploy workflow shape (GHCR, […]
 
 > TOOL
 
@@ -61,7 +61,7 @@ id: toolu_01GffNLXdi2VCzESFwJrE6VU
 {
   "description": "Marketplace readiness evidence sweep",
   "subagent_type": "Explore",
-  "prompt": "You are gathering evidence for a marketplace-listing readiness assessment of the DataQ repo at /Users/arijit/Coding/Python/DataQ (a single-tenant data-quality platform the owner may want to list on a marketplace — e.g. Azure Marketplace / GitHub Marketplace / general commercial distribution). Search breadth: very thorough. Focus ONLY on marketplace/distribution/commercial readiness (other agents cover code architecture and infra).\n\nGather and report on:\n1. docs/adr/0013-marketplace-distribution-and-anti-lock-in.md — read fully; summarize what distribution model was decided (container images? Terraform? marketplace offer type?) and what it lists as prerequisites.\n2. Any other ADRs touching distribution/commercial use: ADR 0026 (PATs), 0027 (access tiers), 0028 (cloud-neutral), 0024/0025 (deploy/images), 0029, 0030 — one-line relevance each. Also read docs/adr/README.md index for anything else relevant.\n3. Gap register: search the repo (docs/, context/post-v1-roadmap.md, deploy/README.md, docs/progress.md) for gaps G-a through G-i, especially G-h (Databricks Free Edition — paid workspace before commercial use) and G-i (pre-marketplace harness teardown: strip Flows A/B/C, harness connections, demo users). Quote what each requires.\n4. Licensing: is there a LICENSE file? Any license headers? What do README/docs say about license/commercial terms? Check dependency licenses risk surface briefly (GX Core, FastMCP, Ant Design — any copyleft in requirements.txt worth flagging?).\n5. README.md […]
+  "prompt": "You are gathering evidence for a marketplace-listing readiness assessment of the DataQ repo at /home/<USER>/Coding/Python/DataQ (a single-tenant data-quality platform the owner may want to list on a marketplace — e.g. Azure Marketplace / GitHub Marketplace / general commercial distribution). Search breadth: very thorough. Focus ONLY on marketplace/distribution/commercial readiness (other agents cover code architecture and infra).\n\nGather and report on:\n1. docs/adr/0013-marketplace-distribution-and-anti-lock-in.md — read fully; summarize what distribution model was decided (container images? Terraform? marketplace offer type?) and what it lists as prerequisites.\n2. Any other ADRs touching distribution/commercial use: ADR 0026 (PATs), 0027 (access tiers), 0028 (cloud-neutral), 0024/0025 (deploy/images), 0029, 0030 — one-line relevance each. Also read docs/adr/README.md index for anything else relevant.\n3. Gap register: search the repo (docs/, context/post-v1-roadmap.md, deploy/README.md, docs/progress.md) for gaps G-a through G-i, especially G-h (Databricks Free Edition — paid workspace before commercial use) and G-i (pre-marketplace harness teardown: strip Flows A/B/C, harness connections, demo users). Quote what each requires.\n4. Licensing: is there a LICENSE file? Any license headers? What do README/docs say about license/commercial terms? Check dependency licenses risk surface briefly (GX Core, FastMCP, Ant Design — any copyleft in requirements.txt worth flagging?).\n5. README.md […]
 
 > TOOL
 
@@ -86,7 +86,7 @@ tool_use Read
 id: toolu_014xFWi2w29CZ8e1FY3meQou
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md"
 }
 ```
 
@@ -126,7 +126,7 @@ tool_use Read
 id: toolu_01DR7erHjaNSMDGfp9nLCLyP
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md"
 }
 ```
 
@@ -227,7 +227,7 @@ tool_use Bash
 id: toolu_01K6VmN2iF2UVXH2RreEqaQf
 ```json
 {
-  "command": "pnpm --dir /Users/arijit/Coding/Python/DataQ/frontend licenses list --prod 2>&1 | head -80",
+  "command": "pnpm --dir /home/<USER>/Coding/Python/DataQ/frontend licenses list --prod 2>&1 | head -80",
   "description": "List production dependency licenses for the frontend"
 }
 ```
@@ -305,7 +305,7 @@ tool_use Bash
 id: toolu_01G3a8qx2fRRkRnzsj3qJnGq
 ```json
 {
-  "command": "pnpm --dir /Users/arijit/Coding/Python/DataQ/frontend --pm-on-fail=ignore licenses list --prod 2>/dev/null | tail -60",
+  "command": "pnpm --dir /home/<USER>/Coding/Python/DataQ/frontend --pm-on-fail=ignore licenses list --prod 2>/dev/null | tail -60",
   "description": "List frontend production dependency licenses (bypass pnpm version check)"
 }
 ```
@@ -345,7 +345,7 @@ tool_use Bash
 id: toolu_011GsaavgAgCfkJjGQoyBnEM
 ```json
 {
-  "command": "ls /Users/arijit/Coding/Python/DataQ/frontend/node_modules >/dev/null 2>&1 && echo node_modules-present; grep -c '' /Users/arijit/Coding/Python/DataQ/frontend/pnpm-lock.yaml 2>/dev/null",
+  "command": "ls /home/<USER>/Coding/Python/DataQ/frontend/node_modules >/dev/null 2>&1 && echo node_modules-present; grep -c '' /home/<USER>/Coding/Python/DataQ/frontend/pnpm-lock.yaml 2>/dev/null",
   "description": "Check frontend node_modules and lockfile presence"
 }
 ```
@@ -383,7 +383,7 @@ id: toolu_017DHcebPkaxLXkXFuxFAH2R
 ```json
 {
   "file_path": "/private/tmp/claude-501/-Users-arijit-Coding-Python-DataQ/c0b670d5-58c4-41ee-bbcf-b0dd9018241d/scratchpad/fe_license_audit.py",
-  "content": "\"\"\"Walk frontend node_modules and classify every package's declared license.\"\"\"\n\nimport json\nimport os\nimport re\nfrom collections import Counter\n\nROOT = \"/Users/arijit/Coding/Python/DataQ/frontend/node_modules\"\n\nPERMISSIVE = re.compile(\n    r\"\\b(MIT|BSD|Apache|ISC|0BSD|Unlicense|Zlib|CC0|CC-BY|Python-2|BlueOak|WTFPL|Artistic)\\b\", re.I\n)\nWEAK = re.compile(r\"\\b(LGPL|MPL|EPL|CDDL)\\b\", re.I)\nSTRONG = re.compile(r\"\\b(AGPL|(?<!L)GPL|SSPL|BUSL|BSL-1\\.1|Elastic|Commons.Clause)\\b\", re.I)\n\ncounts = Counter()\nstrong, weak, unknown = [], [], []\nseen = set()\n\nfor dirpath, dirnames, filenames in os.walk(ROOT):\n    # only descend into package roots; skip nested node_modules beyond pnpm store layout\n    if \"package.json\" in filenames:\n        pj = os.path.join(dirpath, \"package.json\")\n        try:\n            with open(pj) as f:\n                data = json.load(f)\n        except Exception:\n            continue\n        name, ver = data.get(\"name\"), data.get(\"version\")\n        if not name or (name, ver) in seen:\n            continue\n        seen.add((name, ver))\n        lic = data.get(\"license\") or data.get(\"licenses\") or \"UNKNOWN\"\n        if isinstance(lic, list):\n            lic = \" OR \".join(\n                x.get(\"type\", \"?\") if isinstance(x, dict) else str(x) for x in lic\n            )\n        if isinstance(lic, dict):\n            lic = lic.get(\"type\", \"UNKNOWN\")\n        counts[lic] += 1\n        if STRONG.search(lic):\n            strong.append((name, ver, lic))\n        elif WEAK.search(lic):\n            weak.append((name, ver, lic))\n        elif not PERMISSIVE.search(lic):\n            unknown.append((name, ver, lic))\n\nprint(f\"unique name@version packages: {len(seen)}\")\nprint(\"\\n=== STRONG COPYLEFT / SOURCE-AVAILABLE ===\")\nfor r in sorted(set(strong)):\n    print(\"  %-50s %-12s %s\" % r)\nprint(\"\\n=== WEAK COPYLEFT (LGPL/MPL/EPL) ===\")\nfor r in sorted(set(weak)):\n    print(\"  %-50s %-12s %s\" % r)\nprint(\"\\n=== UNKNOWN / OTHER ===\")\nfor r in sorted(set(unknown)):\n    print(\"  %-50s %-12s %s\" % r)\nprint(\"\\n=== LICENSE HISTOGRAM (top 15) ===\")\nfor […]
+  "content": "\"\"\"Walk frontend node_modules and classify every package's declared license.\"\"\"\n\nimport json\nimport os\nimport re\nfrom collections import Counter\n\nROOT = \"/home/<USER>/Coding/Python/DataQ/frontend/node_modules\"\n\nPERMISSIVE = re.compile(\n    r\"\\b(MIT|BSD|Apache|ISC|0BSD|Unlicense|Zlib|CC0|CC-BY|Python-2|BlueOak|WTFPL|Artistic)\\b\", re.I\n)\nWEAK = re.compile(r\"\\b(LGPL|MPL|EPL|CDDL)\\b\", re.I)\nSTRONG = re.compile(r\"\\b(AGPL|(?<!L)GPL|SSPL|BUSL|BSL-1\\.1|Elastic|Commons.Clause)\\b\", re.I)\n\ncounts = Counter()\nstrong, weak, unknown = [], [], []\nseen = set()\n\nfor dirpath, dirnames, filenames in os.walk(ROOT):\n    # only descend into package roots; skip nested node_modules beyond pnpm store layout\n    if \"package.json\" in filenames:\n        pj = os.path.join(dirpath, \"package.json\")\n        try:\n            with open(pj) as f:\n                data = json.load(f)\n        except Exception:\n            continue\n        name, ver = data.get(\"name\"), data.get(\"version\")\n        if not name or (name, ver) in seen:\n            continue\n        seen.add((name, ver))\n        lic = data.get(\"license\") or data.get(\"licenses\") or \"UNKNOWN\"\n        if isinstance(lic, list):\n            lic = \" OR \".join(\n                x.get(\"type\", \"?\") if isinstance(x, dict) else str(x) for x in lic\n            )\n        if isinstance(lic, dict):\n            lic = lic.get(\"type\", \"UNKNOWN\")\n        counts[lic] += 1\n        if STRONG.search(lic):\n            strong.append((name, ver, lic))\n        elif WEAK.search(lic):\n            weak.append((name, ver, lic))\n        elif not PERMISSIVE.search(lic):\n            unknown.append((name, ver, lic))\n\nprint(f\"unique name@version packages: {len(seen)}\")\nprint(\"\\n=== STRONG COPYLEFT / SOURCE-AVAILABLE ===\")\nfor r in sorted(set(strong)):\n    print(\"  %-50s %-12s %s\" % r)\nprint(\"\\n=== WEAK COPYLEFT (LGPL/MPL/EPL) ===\")\nfor r in sorted(set(weak)):\n    print(\"  %-50s %-12s %s\" % r)\nprint(\"\\n=== UNKNOWN / OTHER ===\")\nfor r in sorted(set(unknown)):\n    print(\"  %-50s %-12s %s\" % r)\nprint(\"\\n=== LICENSE HISTOGRAM (top 15) ===\")\nfor […]
 
 > TOOL
 
@@ -456,7 +456,7 @@ tool_use Bash
 id: toolu_01HHc3zZCeNNNe4dShACgmZX
 ```json
 {
-  "command": "find /Users/arijit/Coding/Python/DataQ/frontend/node_modules -name package.json -path \"*monaco-loader*\" -not -path \"*/node_modules/*/node_modules/*\" 2>/dev/null | head -3; grep -rn \"monaco-loader\" /Users/arijit/Coding/Python/DataQ/frontend/package.json /Users/arijit/Coding/Python/DataQ/frontend/pnpm-lock.yaml 2>/dev/null | head -10",
+  "command": "find /home/<USER>/Coding/Python/DataQ/frontend/node_modules -name package.json -path \"*monaco-loader*\" -not -path \"*/node_modules/*/node_modules/*\" 2>/dev/null | head -3; grep -rn \"monaco-loader\" /home/<USER>/Coding/Python/DataQ/frontend/package.json /home/<USER>/Coding/Python/DataQ/frontend/pnpm-lock.yaml 2>/dev/null | head -10",
   "description": "Locate monaco-loader package and check if it's a declared dependency"
 }
 ```
@@ -543,7 +543,7 @@ tool_use Read
 id: toolu_015murg1h9rsCKVt1espZPAf
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "offset": 476,
   "limit": 45
 }
@@ -607,7 +607,7 @@ tool_use Read
 id: toolu_01SatLcrUWJjofMkZDmuDut1
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py",
   "offset": 505,
   "limit": 35
 }
@@ -643,7 +643,7 @@ tool_use Read
 id: toolu_01WSykFjPub65jMJ53RR8B3e
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/run_target.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/run_target.py",
   "offset": 85,
   "limit": 55
 }
@@ -693,7 +693,7 @@ tool_use Read
 id: toolu_01MoUZpNUvfnAFZiwnC9MYLJ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.github/SECURITY.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.github/SECURITY.md"
 }
 ```
 
@@ -739,7 +739,7 @@ tool_use Bash
 id: toolu_01YQwcaFi36eT3HZ9RfCRZ6H
 ```json
 {
-  "command": "grep -rn \"def delete\" /Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py | head; grep -n \"pipeline_run\" /Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py | head",
+  "command": "grep -rn \"def delete\" /home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py | head; grep -n \"pipeline_run\" /home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py | head",
   "description": "Check connection delete handling of pipeline_runs children"
 }
 ```
@@ -749,7 +749,7 @@ id: toolu_01YQwcaFi36eT3HZ9RfCRZ6H
 tool_result
 id: toolu_01YQwcaFi36eT3HZ9RfCRZ6H
 ```
-/Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py:339:def delete_connection(
+/home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py:339:def delete_connection(
 ```
 
 > TOOL
@@ -758,7 +758,7 @@ tool_use Bash
 id: toolu_01LM7ZvPS1divmNgh8jrrfDB
 ```json
 {
-  "command": "grep -n \"purplefield\" /Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py; grep -rln \"purplefield\" /Users/arijit/Coding/Python/DataQ --include=\"*.md\" --include=\"*.tf\" --include=\"*.py\" --include=\"*.yml\" --include=\"*.yaml\" --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null",
+  "command": "grep -n \"purplefield\" /home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py; grep -rln \"purplefield\" /home/<USER>/Coding/Python/DataQ --include=\"*.md\" --include=\"*.tf\" --include=\"*.py\" --include=\"*.yml\" --include=\"*.yaml\" --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null",
   "description": "Find all tracked files containing the prod FQDN"
 }
 ```
@@ -769,9 +769,9 @@ tool_result
 id: toolu_01LM7ZvPS1divmNgh8jrrfDB
 ```
 661:        "dataq-app-api.internal.purplefield-f7322a1b.westus2.azurecontainerapps.io", hosts
-/Users/arijit/Coding/Python/DataQ/CLAUDE.md
-/Users/arijit/Coding/Python/DataQ/deploy/README.md
-/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py
+/home/<USER>/Coding/Python/DataQ/CLAUDE.md
+/home/<USER>/Coding/Python/DataQ/deploy/README.md
+/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py
 ```
 
 > TOOL
@@ -780,7 +780,7 @@ tool_use Read
 id: toolu_01B6DfiVuhFTZhKts61178RC
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py",
   "offset": 339,
   "limit": 45
 }
@@ -844,7 +844,7 @@ tool_use Read
 id: toolu_01FT58We1Vwo7dr1eGS9o8E1
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/tests/mcp/test_mcp_tools.py",
   "offset": 645,
   "limit": 25
 }
@@ -884,7 +884,7 @@ tool_use Bash
 id: toolu_01HBRHYyZYCU8wU8uDrAujdk
 ```json
 {
-  "command": "grep -n \"class Connection\" -A 40 /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py | grep -n \"relationship\\|cascade\" ",
+  "command": "grep -n \"class Connection\" -A 40 /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py | grep -n \"relationship\\|cascade\" ",
   "description": "Check Connection model for ORM relationships/cascades"
 }
 ```
@@ -1172,7 +1172,7 @@ tool_use Bash
 id: toolu_012suZyCE2URhUzCJavHqWMX
 ```json
 {
-  "command": "git -C /Users/arijit/Coding/Python/DataQ status --short; git -C /Users/arijit/Coding/Python/DataQ pull --ff-only origin main 2>&1 | tail -1; git -C /Users/arijit/Coding/Python/DataQ checkout -b docs/adr-0031-oss-byol-licensing",
+  "command": "git -C /home/<USER>/Coding/Python/DataQ status --short; git -C /home/<USER>/Coding/Python/DataQ pull --ff-only origin main 2>&1 | tail -1; git -C /home/<USER>/Coding/Python/DataQ checkout -b docs/adr-0031-oss-byol-licensing",
   "description": "Sync main and create the ADR branch"
 }
 ```
@@ -1192,7 +1192,7 @@ tool_use Write
 id: toolu_01MpWdLgsaha3UAdurZzgMZe
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
   "content": "# ADR 0031 — Distribution licensing: free open-source (MIT) + customer-deployed BYOL\n\n- **Status:** Accepted\n- **Date:** 2026-07-09\n- **Deciders:** @TheurgicDuke771\n\n## Context\n\n[ADR 0013](0013-marketplace-distribution-and-anti-lock-in.md) chose **customer-deployed BYOL** as the marketplace distribution model and deferred the commercial/legal scope to the post-v1 initiative, listing \"licensing model + entitlement/license-key (we are not metering under BYOL)\" among the open items (§5). The 2026-07-09 marketplace-readiness review (issue #732) surfaced the tension that line carries: the repository is already published under the **MIT license**, which grants everyone the right to use, copy, modify, distribute, and *sell* the software — a paid-entitlement model layered on top would be incoherent (you cannot sell a key to rights the license already gives away), and retrofitting a restrictive license onto an already-public MIT repo only gets harder with time and adoption.\n\nThe same review ran a full dependency license audit against the actual installed trees (not declared metadata alone):\n\n- **Backend** — 239 packages in the conda env: **zero strong-copyleft or source-available licenses**. Core stack: Great Expectations, FastMCP, the Snowflake/Databricks connectors, pyiceberg, boto3, pyarrow, OpenTelemetry (Apache-2.0); FastAPI, SQLAlchemy, Pydantic, Alembic (MIT); Celery, uvicorn, pandas, numpy (BSD). Weak copyleft only: `psycopg2-binary` (LGPL-3.0, dynamically linked), `certifi`/`pathspec` (MPL-2.0, file-level).\n- **Frontend** […]
 
 > TOOL
@@ -1200,7 +1200,7 @@ id: toolu_01MpWdLgsaha3UAdurZzgMZe
 tool_result
 id: toolu_01MpWdLgsaha3UAdurZzgMZe
 ```
-File created successfully at: /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1214,7 +1214,7 @@ id: toolu_01V92km3JvkrTEYRdXxZQZ1o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0030](0030-iceberg-native-read-path.md) | Apache Iceberg — engine-level read (Snowflake/UC iceberg tables) is free & zero-code; the only new build is a **native `pyiceberg` read** (v2 baseline, v3 deferred) behind a thin `IcebergCheckRunner` (scan → DataFrame → `gx_runner`); new **self-contained** `iceberg` connection type (Option A: own catalog + storage credential — independent lifecycle, cascade-safe), Option B two-connection ref deferred to 0015; reads Delta UniForm too; native impl deferred (#286) | Accepted (spike; native impl deferred) |",
   "new_string": "| [0030](0030-iceberg-native-read-path.md) | Apache Iceberg — engine-level read (Snowflake/UC iceberg tables) is free & zero-code; the only new build is a **native `pyiceberg` read** (v2 baseline, v3 deferred) behind a thin `IcebergCheckRunner` (scan → DataFrame → `gx_runner`); new **self-contained** `iceberg` connection type (Option A: own catalog + storage credential — independent lifecycle, cascade-safe), Option B two-connection ref deferred to 0015; reads Delta UniForm too; native impl deferred (#286) | Accepted (spike; native impl deferred) |\n| [0031](0031-oss-byol-distribution-licensing.md) | Distribution licensing — **free open-source (MIT) + customer-deployed BYOL**; no entitlement/license-key (supersedes the 0013 §5 licensing-model line); marketplace listings are free offers of the OSS artifacts; THIRD-PARTY-NOTICES/SBOM in images + releases; standing no-strong-copyleft dependency guardrail | […]
 
@@ -1223,7 +1223,7 @@ id: toolu_01V92km3JvkrTEYRdXxZQZ1o
 tool_result
 id: toolu_01V92km3JvkrTEYRdXxZQZ1o
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1233,7 +1233,7 @@ id: toolu_01Ru4wVhRbyXdDkA9g2zMV7j
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md",
   "old_string": "- [ADR 0010](0010-provider-agnostic-infrastructure-seams.md) — provider-agnostic infra seams (the per-seam discipline this distribution decision depends on).\n- [ADR 0011](0011-extensibility-seams-for-deferred-integrations.md) — feature-side extensibility seams (connectors, `ResultPublisher`, dbt-as-provider).\n- CLAUDE.md §1 (single-tenant scope), §9 (decision table), §11 (anti-patterns — \"don't bypass the abstraction\").",
   "new_string": "- [ADR 0010](0010-provider-agnostic-infrastructure-seams.md) — provider-agnostic infra seams (the per-seam discipline this distribution decision depends on).\n- [ADR 0011](0011-extensibility-seams-for-deferred-integrations.md) — feature-side extensibility seams (connectors, `ResultPublisher`, dbt-as-provider).\n- [ADR 0031](0031-oss-byol-distribution-licensing.md) — **supersedes the §5 \"licensing model + entitlement/license-key\" line**: distribution licensing decided as free open-source (MIT) + BYOL, no entitlement machinery; the rest of this ADR stands.\n- CLAUDE.md §1 (single-tenant scope), §9 (decision table), §11 (anti-patterns — \"don't bypass the abstraction\")."
 }
@@ -1244,7 +1244,7 @@ id: toolu_01Ru4wVhRbyXdDkA9g2zMV7j
 tool_result
 id: toolu_01Ru4wVhRbyXdDkA9g2zMV7j
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1253,7 +1253,7 @@ tool_use Bash
 id: toolu_0124rxCH42t38fNPHkm1q3yT
 ```json
 {
-  "command": "cd /Users/arijit/Coding/Python/DataQ; and git add docs/adr/0031-oss-byol-distribution-licensing.md docs/adr/README.md docs/adr/0013-marketplace-distribution-and-anti-lock-in.md; and git commit -m 'docs: ADR 0031 — free OSS (MIT) + BYOL distribution licensing\n\nRecords the 2026-07-09 decision from the marketplace-readiness review (#732):\nDataQ stays free open-source under MIT with no entitlement/license-key\nmachinery, superseding the ADR 0013 §5 licensing-model line. Embeds the\nfull-tree dependency license audit (backend 239 pkgs / frontend 643 pkgs,\nzero strong copyleft) and adds the standing no-strong-copyleft dependency\nguardrail. Index row added; ADR 0013 Related section points forward.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>'",
+  "command": "cd /home/<USER>/Coding/Python/DataQ; and git add docs/adr/0031-oss-byol-distribution-licensing.md docs/adr/README.md docs/adr/0013-marketplace-distribution-and-anti-lock-in.md; and git commit -m 'docs: ADR 0031 — free OSS (MIT) + BYOL distribution licensing\n\nRecords the 2026-07-09 decision from the marketplace-readiness review (#732):\nDataQ stays free open-source under MIT with no entitlement/license-key\nmachinery, superseding the ADR 0013 §5 licensing-model line. Embeds the\nfull-tree dependency license audit (backend 239 pkgs / frontend 643 pkgs,\nzero strong copyleft) and adds the standing no-strong-copyleft dependency\nguardrail. Index row added; ADR 0013 Related section points forward.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>'",
   "description": "Commit the ADR, index row, and 0013 pointer"
 }
 ```
@@ -1274,7 +1274,7 @@ tool_use Bash
 id: toolu_017AjZWostvBHFKLiszLuko3
 ```json
 {
-  "command": "git -C /Users/arijit/Coding/Python/DataQ add docs/adr/0031-oss-byol-distribution-licensing.md docs/adr/README.md docs/adr/0013-marketplace-distribution-and-anti-lock-in.md && git -C /Users/arijit/Coding/Python/DataQ commit -m 'docs: ADR 0031 — free OSS (MIT) + BYOL distribution licensing\n\nRecords the 2026-07-09 decision from the marketplace-readiness review (#732):\nDataQ stays free open-source under MIT with no entitlement/license-key\nmachinery, superseding the ADR 0013 §5 licensing-model line. Embeds the\nfull-tree dependency license audit (backend 239 pkgs / frontend 643 pkgs,\nzero strong copyleft) and adds the standing no-strong-copyleft dependency\nguardrail. Index row added; ADR 0013 Related section points forward.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>'",
+  "command": "git -C /home/<USER>/Coding/Python/DataQ add docs/adr/0031-oss-byol-distribution-licensing.md docs/adr/README.md docs/adr/0013-marketplace-distribution-and-anti-lock-in.md && git -C /home/<USER>/Coding/Python/DataQ commit -m 'docs: ADR 0031 — free OSS (MIT) + BYOL distribution licensing\n\nRecords the 2026-07-09 decision from the marketplace-readiness review (#732):\nDataQ stays free open-source under MIT with no entitlement/license-key\nmachinery, superseding the ADR 0013 §5 licensing-model line. Embeds the\nfull-tree dependency license audit (backend 239 pkgs / frontend 643 pkgs,\nzero strong copyleft) and adds the standing no-strong-copyleft dependency\nguardrail. Index row added; ADR 0013 Related section points forward.\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>'",
   "description": "Commit the ADR, index row, and 0013 pointer"
 }
 ```
@@ -1295,7 +1295,7 @@ tool_use Bash
 id: toolu_014PjZ9gQAo63GQY8eAAzNEN
 ```json
 {
-  "command": "git -C /Users/arijit/Coding/Python/DataQ push -u origin docs/adr-0031-oss-byol-licensing",
+  "command": "git -C /home/<USER>/Coding/Python/DataQ push -u origin docs/adr-0031-oss-byol-licensing",
   "description": "Push the ADR branch"
 }
 ```
@@ -1306,7 +1306,7 @@ tool_use Read
 id: toolu_01QbXamGVx8FfFvFMECsD54E
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/.github/pull_request_template.md"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/.github/pull_request_template.md"
 }
 ```
 
@@ -1425,7 +1425,7 @@ tool_use Bash
 id: toolu_01Jf4gbFMvaUFNJQ82doH6Nm
 ```json
 {
-  "command": "git -C /Users/arijit/Coding/Python/DataQ diff main...HEAD --stat && git -C /Users/arijit/Coding/Python/DataQ status --short",
+  "command": "git -C /home/<USER>/Coding/Python/DataQ diff main...HEAD --stat && git -C /home/<USER>/Coding/Python/DataQ status --short",
   "description": "Show diff stat for the review scope"
 }
 ```
@@ -1449,7 +1449,7 @@ id: toolu_01QPhY7cHeviPTVyg64EySG6
 {
   "description": "Finder A: line-by-line scan",
   "subagent_type": "Explore",
-  "prompt": "Code-review finder, angle A (line-by-line). Repo: /Users/arijit/Coding/Python/DataQ. Run `git diff main...HEAD` — a docs-only PR adding docs/adr/0031-oss-byol-distribution-licensing.md, an index row in docs/adr/README.md, and a Related pointer in docs/adr/0013-marketplace-distribution-and-anti-lock-in.md.\n\nRead every added line. For a docs diff, \"bugs\" are: factually wrong claims, wrong file paths/links, wrong issue/ADR numbers, internal contradictions, misquotes of other documents. Verify specifically:\n- Every relative markdown link in the three changed files resolves to a real file in docs/adr/.\n- Claims about ADR 0013's content (quote of §5 \"licensing model + entitlement/license-key\") match the actual text of 0013.\n- Claims about ADR 0023 (GHCR public images) match that ADR.\n- \"CONTRIBUTING rule 39\" — open CONTRIBUTING.md and verify rule 39 exists and is about the quarterly supply-chain audit cadence; if the numbering or subject differs, that's a finding.\n- Dependency-license claims: psycopg2-binary \"LGPL-3.0\", certifi/pathspec \"MPL-2.0\", dompurify \"MPL-2.0 OR Apache-2.0\", lightningcss \"MPL-2.0 build-time only\", @fontsource OFL-1.1 — check backend/requirements.txt and frontend/package.json for whether these deps exist as claimed (you can't check registries; flag only inconsistencies with the repo).\n- Issue #732 is referenced as the marketplace checklist — you can check with `gh issue view 732 --repo TheurgicDuke771/DataQ` that it exists […]
+  "prompt": "Code-review finder, angle A (line-by-line). Repo: /home/<USER>/Coding/Python/DataQ. Run `git diff main...HEAD` — a docs-only PR adding docs/adr/0031-oss-byol-distribution-licensing.md, an index row in docs/adr/README.md, and a Related pointer in docs/adr/0013-marketplace-distribution-and-anti-lock-in.md.\n\nRead every added line. For a docs diff, \"bugs\" are: factually wrong claims, wrong file paths/links, wrong issue/ADR numbers, internal contradictions, misquotes of other documents. Verify specifically:\n- Every relative markdown link in the three changed files resolves to a real file in docs/adr/.\n- Claims about ADR 0013's content (quote of §5 \"licensing model + entitlement/license-key\") match the actual text of 0013.\n- Claims about ADR 0023 (GHCR public images) match that ADR.\n- \"CONTRIBUTING rule 39\" — open CONTRIBUTING.md and verify rule 39 exists and is about the quarterly supply-chain audit cadence; if the numbering or subject differs, that's a finding.\n- Dependency-license claims: psycopg2-binary \"LGPL-3.0\", certifi/pathspec \"MPL-2.0\", dompurify \"MPL-2.0 OR Apache-2.0\", lightningcss \"MPL-2.0 build-time only\", @fontsource OFL-1.1 — check backend/requirements.txt and frontend/package.json for whether these deps exist as claimed (you can't check registries; flag only inconsistencies with the repo).\n- Issue #732 is referenced as the marketplace checklist — you can check with `gh issue view 732 --repo TheurgicDuke771/DataQ` that it exists […]
 
 > TOOL
 
@@ -1472,7 +1472,7 @@ id: toolu_01HSFWG2dEszC2RNfjy1SJk1
 {
   "description": "Finder B: removed behavior",
   "subagent_type": "Explore",
-  "prompt": "Code-review finder, angle B (removed-behavior auditor). Repo: /Users/arijit/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR (ADR 0031 + index row + ADR 0013 Related pointer).\n\nFor every line the diff deletes or replaces, name what it asserted and check the new text re-establishes it. This diff is insertions-only per the stat, but verify that: also check whether the ADR 0031 \"supersedes the 0013 §5 line\" framing effectively *removes* a documented obligation without re-homing it — ADR 0013 §5 listed several commercial/legal items (seller registration, EULA/privacy/DPA, support SLA, security review, SOC 2). Does ADR 0031 or issue #732 (check `gh issue view 732 --repo TheurgicDuke771/DataQ`) still carry each of them, or does the supersession quietly drop obligations that should survive under a free-OSS model? Anything dropped without a stated home or an explicit \"no longer needed because X\" rationale is a candidate.\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}]. If nothing, return []."
+  "prompt": "Code-review finder, angle B (removed-behavior auditor). Repo: /home/<USER>/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR (ADR 0031 + index row + ADR 0013 Related pointer).\n\nFor every line the diff deletes or replaces, name what it asserted and check the new text re-establishes it. This diff is insertions-only per the stat, but verify that: also check whether the ADR 0031 \"supersedes the 0013 §5 line\" framing effectively *removes* a documented obligation without re-homing it — ADR 0013 §5 listed several commercial/legal items (seller registration, EULA/privacy/DPA, support SLA, security review, SOC 2). Does ADR 0031 or issue #732 (check `gh issue view 732 --repo TheurgicDuke771/DataQ`) still carry each of them, or does the supersession quietly drop obligations that should survive under a free-OSS model? Anything dropped without a stated home or an explicit \"no longer needed because X\" rationale is a candidate.\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}]. If nothing, return []."
 }
 ```
 
@@ -1497,7 +1497,7 @@ id: toolu_01M98fccJx7UahAAjxU75yCP
 {
   "description": "Finder C: cross-file tracer",
   "subagent_type": "Explore",
-  "prompt": "Code-review finder, angle C (cross-file tracer). Repo: /Users/arijit/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR (new ADR 0031, docs/adr/README.md index row, ADR 0013 Related pointer).\n\nTrace every document that references the changed content and check for contradictions the PR creates or fails to fix:\n- Grep the repo (CLAUDE.md, CONTRIBUTING.md, docs/, context/post-v1-roadmap.md, deploy/README.md, README.md) for mentions of \"license\", \"licensing\", \"BYOL\", \"entitlement\", \"marketplace\" — does any other doc still assert the OLD position (paid licensing/entitlement-key) in a way that now contradicts ADR 0031? E.g. context/post-v1-roadmap.md may restate ADR 0013 §5's licensing line verbatim.\n- Does docs/adr/README.md's supersession convention (\"supersede an old decision by adding a new ADR and marking the old one's status as `Superseded by ADR-NNNN`\") conflict with how this PR handles the PARTIAL supersession of 0013 (status left \"Accepted\", only a Related note added)? Check whether the index row for 0013 mentions the amendment — a reader scanning the index would not learn §5 changed.\n- Is 0015 still listed as the only \"Pending\" ADR — does the pending table need no change?\n- mkdocs.yml / docs site nav: are ADRs listed there, and does the new file need a […]
+  "prompt": "Code-review finder, angle C (cross-file tracer). Repo: /home/<USER>/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR (new ADR 0031, docs/adr/README.md index row, ADR 0013 Related pointer).\n\nTrace every document that references the changed content and check for contradictions the PR creates or fails to fix:\n- Grep the repo (CLAUDE.md, CONTRIBUTING.md, docs/, context/post-v1-roadmap.md, deploy/README.md, README.md) for mentions of \"license\", \"licensing\", \"BYOL\", \"entitlement\", \"marketplace\" — does any other doc still assert the OLD position (paid licensing/entitlement-key) in a way that now contradicts ADR 0031? E.g. context/post-v1-roadmap.md may restate ADR 0013 §5's licensing line verbatim.\n- Does docs/adr/README.md's supersession convention (\"supersede an old decision by adding a new ADR and marking the old one's status as `Superseded by ADR-NNNN`\") conflict with how this PR handles the PARTIAL supersession of 0013 (status left \"Accepted\", only a Related note added)? Check whether the index row for 0013 mentions the amendment — a reader scanning the index would not learn §5 changed.\n- Is 0015 still listed as the only \"Pending\" ADR — does the pending table need no change?\n- mkdocs.yml / docs site nav: are ADRs listed there, and does the new file need a […]
 
 > TOOL
 
@@ -1521,7 +1521,7 @@ id: toolu_01GjS1rEcVyQuJFejARZWMJ8
   "description": "Finder: reuse angle",
   "subagent_type": "Explore",
   "model": "haiku",
-  "prompt": "Code-review finder, Reuse angle. Repo: /Users/arijit/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR adding ADR 0031 (docs/adr/0031-oss-byol-distribution-licensing.md) plus index row and a pointer in ADR 0013.\n\nFlag content the new ADR re-states that already lives canonically elsewhere, where a link would serve better than duplication — e.g. does the full license-audit detail belong in the ADR when issue #732 already records it (check `gh issue view 732 --repo TheurgicDuke771/DataQ`)? ADRs are deliberately self-contained per docs/adr/README.md, so only flag duplication that will DRIFT (numbers/package versions that change over time, restated rules that another doc owns). Name the canonical home for each.\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}] where failure_scenario is the concrete drift/maintenance cost. If nothing, return []."
+  "prompt": "Code-review finder, Reuse angle. Repo: /home/<USER>/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR adding ADR 0031 (docs/adr/0031-oss-byol-distribution-licensing.md) plus index row and a pointer in ADR 0013.\n\nFlag content the new ADR re-states that already lives canonically elsewhere, where a link would serve better than duplication — e.g. does the full license-audit detail belong in the ADR when issue #732 already records it (check `gh issue view 732 --repo TheurgicDuke771/DataQ`)? ADRs are deliberately self-contained per docs/adr/README.md, so only flag duplication that will DRIFT (numbers/package versions that change over time, restated rules that another doc owns). Name the canonical home for each.\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}] where failure_scenario is the concrete drift/maintenance cost. If nothing, return []."
 }
 ```
 
@@ -1547,7 +1547,7 @@ id: toolu_01MKxaosAXbiMF6NfwsAFeoc
   "description": "Finder: simplification angle",
   "subagent_type": "Explore",
   "model": "haiku",
-  "prompt": "Code-review finder, Simplification angle. Repo: /Users/arijit/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR adding ADR 0031 plus an index row (docs/adr/README.md) and a Related pointer (ADR 0013).\n\ndocs/adr/README.md says \"Keep each ADR short — 1–2 pages. If it grows past that, the decision is probably two decisions.\" Check the new ADR against that and for: redundant restatements within the ADR, decision points that are really consequences, verbose passages a reader must wade through to find the actual decision. Only flag concrete, quotable redundancy — not style preferences.\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}] with the concrete cost. If nothing, return []."
+  "prompt": "Code-review finder, Simplification angle. Repo: /home/<USER>/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR adding ADR 0031 plus an index row (docs/adr/README.md) and a Related pointer (ADR 0013).\n\ndocs/adr/README.md says \"Keep each ADR short — 1–2 pages. If it grows past that, the decision is probably two decisions.\" Check the new ADR against that and for: redundant restatements within the ADR, decision points that are really consequences, verbose passages a reader must wade through to find the actual decision. Only flag concrete, quotable redundancy — not style preferences.\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}] with the concrete cost. If nothing, return []."
 }
 ```
 
@@ -1573,7 +1573,7 @@ id: toolu_01DeCJ5LH1SavcK4xCcVhST1
   "description": "Finder: efficiency angle",
   "subagent_type": "Explore",
   "model": "haiku",
-  "prompt": "Code-review finder, Efficiency angle. Repo: /Users/arijit/Coding/Python/DataQ. Run `git diff main...HEAD` — this PR is documentation-only (a new ADR + two one-line doc edits). Efficiency (runtime waste, I/O, hot paths) rarely applies to docs; check quickly whether the diff touches ANY executable or CI-consumed file (workflows, mkdocs config, scripts) — if it is purely markdown prose, return []. Only report a candidate if some tooling actually consumes these files in a way the change makes wasteful.\n\nReturn a JSON array [{file, line, summary, failure_scenario}] — expected: []."
+  "prompt": "Code-review finder, Efficiency angle. Repo: /home/<USER>/Coding/Python/DataQ. Run `git diff main...HEAD` — this PR is documentation-only (a new ADR + two one-line doc edits). Efficiency (runtime waste, I/O, hot paths) rarely applies to docs; check quickly whether the diff touches ANY executable or CI-consumed file (workflows, mkdocs config, scripts) — if it is purely markdown prose, return []. Only report a candidate if some tooling actually consumes these files in a way the change makes wasteful.\n\nReturn a JSON array [{file, line, summary, failure_scenario}] — expected: []."
 }
 ```
 
@@ -1598,7 +1598,7 @@ id: toolu_01QXkf2beuiV3Xd3ciZLub1c
 {
   "description": "Finder: altitude angle",
   "subagent_type": "Explore",
-  "prompt": "Code-review finder, Altitude angle. Repo: /Users/arijit/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR adding ADR 0031 (free OSS MIT + BYOL distribution licensing decision) plus index row and ADR 0013 pointer.\n\nCheck the change is at the right depth: (1) Is an ADR the right instrument for each thing 0031 decides, or does part of it belong in an enforced/canonical location instead — e.g. the \"no strong-copyleft dependencies\" guardrail is stated as review discipline; the repo's pattern for binding rules is CONTRIBUTING.md's numbered working agreements (read CONTRIBUTING.md's structure) — is a standing PR-binding rule stated ONLY in an ADR consistent with how other ADR-established rules (e.g. ADR 0013's guardrails, ADR 0002 conventional commits) were propagated into CONTRIBUTING/CLAUDE.md? (2) The partial supersession mechanism: docs/adr/README.md defines whole-ADR supersession only — is amending 0013 via a Related bullet a fragile special case where the format should instead be extended (an \"Amended by\" frontmatter field), per the repo's own append-only conventions? (3) Anything else where the PR patches a symptom in prose rather than the governing doc.\n\nOnly flag findings with a concrete, quotable basis in the repo's existing patterns. Return up to […]
+  "prompt": "Code-review finder, Altitude angle. Repo: /home/<USER>/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR adding ADR 0031 (free OSS MIT + BYOL distribution licensing decision) plus index row and ADR 0013 pointer.\n\nCheck the change is at the right depth: (1) Is an ADR the right instrument for each thing 0031 decides, or does part of it belong in an enforced/canonical location instead — e.g. the \"no strong-copyleft dependencies\" guardrail is stated as review discipline; the repo's pattern for binding rules is CONTRIBUTING.md's numbered working agreements (read CONTRIBUTING.md's structure) — is a standing PR-binding rule stated ONLY in an ADR consistent with how other ADR-established rules (e.g. ADR 0013's guardrails, ADR 0002 conventional commits) were propagated into CONTRIBUTING/CLAUDE.md? (2) The partial supersession mechanism: docs/adr/README.md defines whole-ADR supersession only — is amending 0013 via a Related bullet a fragile special case where the format should instead be extended (an \"Amended by\" frontmatter field), per the repo's own append-only conventions? (3) Anything else where the PR patches a symptom in prose rather than the governing doc.\n\nOnly flag findings with a concrete, quotable basis in the repo's existing patterns. Return up to […]
 
 > TOOL
 
@@ -1621,7 +1621,7 @@ id: toolu_01U6erXBrhP4GmspCJq2UbR1
 {
   "description": "Finder: conventions angle",
   "subagent_type": "Explore",
-  "prompt": "Code-review finder, Conventions angle. Repo: /Users/arijit/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR (new docs/adr/0031-oss-byol-distribution-licensing.md, index row in docs/adr/README.md, Related pointer in docs/adr/0013-...md).\n\nRead the governing convention docs and check the diff for clear violations, quoting the exact rule and the exact line that breaks it:\n1. /Users/arijit/Coding/Python/DataQ/CLAUDE.md — especially §Documentation (ADR conventions), §6 working agreements, and anything about the ADR index being single source of truth.\n2. /Users/arijit/Coding/Python/DataQ/docs/adr/README.md — the Format section: file-name pattern, frontmatter fields (Status/Date/Deciders + optional Consulted/Supersedes/Superseded-by, title-case status values), required sections (Context, Decision, Consequences, Alternatives considered, Related optional), 1–2 page length rule, append-only supersession convention. Check the new ADR 0031 complies field-by-field, and whether the PARTIAL supersession of 0013 handled via a Related bullet (0013 status unchanged) violates or stretches the stated convention (\"mark the old one's status as Superseded by ADR-NNNN\") — and whether 0031 should carry a \"Supersedes:\" frontmatter field given it supersedes only one line of 0013.\n3. ~/.claude/CLAUDE.md if it exists.\nNo style preferences — only quotable rule violations.\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}] naming the doc and rule in each. If nothing, return []."
+  "prompt": "Code-review finder, Conventions angle. Repo: /home/<USER>/Coding/Python/DataQ. Run `git diff main...HEAD` — docs-only PR (new docs/adr/0031-oss-byol-distribution-licensing.md, index row in docs/adr/README.md, Related pointer in docs/adr/0013-...md).\n\nRead the governing convention docs and check the diff for clear violations, quoting the exact rule and the exact line that breaks it:\n1. /home/<USER>/Coding/Python/DataQ/CLAUDE.md — especially §Documentation (ADR conventions), §6 working agreements, and anything about the ADR index being single source of truth.\n2. /home/<USER>/Coding/Python/DataQ/docs/adr/README.md — the Format section: file-name pattern, frontmatter fields (Status/Date/Deciders + optional Consulted/Supersedes/Superseded-by, title-case status values), required sections (Context, Decision, Consequences, Alternatives considered, Related optional), 1–2 page length rule, append-only supersession convention. Check the new ADR 0031 complies field-by-field, and whether the PARTIAL supersession of 0013 handled via a Related bullet (0013 status unchanged) violates or stretches the stated convention (\"mark the old one's status as Superseded by ADR-NNNN\") — and whether 0031 should carry a \"Supersedes:\" frontmatter field given it supersedes only one line of 0013.\n3. ~/.claude/CLAUDE.md if it exists.\nNo style preferences — only quotable rule violations.\n\nReturn up to 6 candidates as JSON [{file, line, summary, failure_scenario}] naming the doc and rule in each. If nothing, return []."
 }
 ```
 
@@ -1678,7 +1678,7 @@ id: toolu_01TDVMcPKHpSibQFBFPewe5e
 {
   "description": "Verify EULA/SOC2 checklist gap",
   "subagent_type": "Explore",
-  "prompt": "You are a code-review verifier. Repo: /Users/arijit/Coding/Python/DataQ. Candidate finding to verify — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED, with 2-3 sentences of justification.\n\nCandidate: \"ADR 0031 (docs/adr/0031-oss-byol-distribution-licensing.md, new in this PR) designates issue #732 as the tracking home for marketplace-readiness work, and its Consequences say the marketplace path 'reduces to packaging + certification'. But ADR 0013 §5 lists commercial/legal obligations that survive even under a free-OSS model — EULA/terms-of-use for the marketplace listing (Azure Partner Center requires attaching license terms even for free offers — standard contract or custom), DPA, SOC 2 + pen test for enterprise buyers, tax/banking — and issue #732 (check with `gh issue view 732 --repo TheurgicDuke771/DataQ`) omits EULA/DPA/SOC2/pen-test/tax-banking entirely. So the PR's framing invites de-scoping obligations that still exist.\"\n\nCheck: read ADR 0013 §5, ADR 0031, and issue #732. Judge: (a) do the omissions actually exist in #732; (b) is it true that a FREE marketplace offer still needs license terms attached (reason from what the repo documents + general Partner Center knowledge — if you're unsure about Partner Center specifics, that uncertainty supports PLAUSIBLE, not REFUTED); (c) does ADR […]
+  "prompt": "You are a code-review verifier. Repo: /home/<USER>/Coding/Python/DataQ. Candidate finding to verify — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED, with 2-3 sentences of justification.\n\nCandidate: \"ADR 0031 (docs/adr/0031-oss-byol-distribution-licensing.md, new in this PR) designates issue #732 as the tracking home for marketplace-readiness work, and its Consequences say the marketplace path 'reduces to packaging + certification'. But ADR 0013 §5 lists commercial/legal obligations that survive even under a free-OSS model — EULA/terms-of-use for the marketplace listing (Azure Partner Center requires attaching license terms even for free offers — standard contract or custom), DPA, SOC 2 + pen test for enterprise buyers, tax/banking — and issue #732 (check with `gh issue view 732 --repo TheurgicDuke771/DataQ`) omits EULA/DPA/SOC2/pen-test/tax-banking entirely. So the PR's framing invites de-scoping obligations that still exist.\"\n\nCheck: read ADR 0013 §5, ADR 0031, and issue #732. Judge: (a) do the omissions actually exist in #732; (b) is it true that a FREE marketplace offer still needs license terms attached (reason from what the repo documents + general Partner Center knowledge — if you're unsure about Partner Center specifics, that uncertainty supports PLAUSIBLE, not REFUTED); (c) does ADR […]
 
 > TOOL
 
@@ -1701,7 +1701,7 @@ id: toolu_01UgAZsV7grXxnbH76dQMM6X
 {
   "description": "Verify ADR 0023 scope claim",
   "subagent_type": "Explore",
-  "prompt": "You are a code-review verifier. Repo: /Users/arijit/Coding/Python/DataQ. Candidate finding — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED with 2-3 sentences.\n\nCandidate: \"docs/adr/0031-oss-byol-distribution-licensing.md (new in this PR) says marketplace listings are free offers of 'the public GHCR images — ADR 0023' (plural, in Decision #2 and Related). But ADR 0023 (docs/adr/0023-container-image-registry-ghcr.md) decides GHCR for the BACKEND image only; the frontend image's registry/publishing is established elsewhere (ADR 0028 / .github/workflows/publish-images.yml). So the cross-reference overstates 0023's scope.\"\n\nRead ADR 0023 fully, check whether it covers the frontend image or only the backend, and check .github/workflows/publish-images.yml + ADR 0028 for where frontend-image publishing is actually decided. If ADR 0023's decision text is registry-choice-general (GHCR as THE registry for DataQ images, not just backend), that would REFUTE. Quote the decisive lines.",
+  "prompt": "You are a code-review verifier. Repo: /home/<USER>/Coding/Python/DataQ. Candidate finding — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED with 2-3 sentences.\n\nCandidate: \"docs/adr/0031-oss-byol-distribution-licensing.md (new in this PR) says marketplace listings are free offers of 'the public GHCR images — ADR 0023' (plural, in Decision #2 and Related). But ADR 0023 (docs/adr/0023-container-image-registry-ghcr.md) decides GHCR for the BACKEND image only; the frontend image's registry/publishing is established elsewhere (ADR 0028 / .github/workflows/publish-images.yml). So the cross-reference overstates 0023's scope.\"\n\nRead ADR 0023 fully, check whether it covers the frontend image or only the backend, and check .github/workflows/publish-images.yml + ADR 0028 for where frontend-image publishing is actually decided. If ADR 0023's decision text is registry-choice-general (GHCR as THE registry for DataQ images, not just backend), that would REFUTE. Quote the decisive lines.",
   "model": "sonnet"
 }
 ```
@@ -1727,7 +1727,7 @@ id: toolu_0168LWMFzCWcvaXKvLDD1mJd
 {
   "description": "Verify G-h stale framing",
   "subagent_type": "Explore",
-  "prompt": "You are a code-review verifier. Repo: /Users/arijit/Coding/Python/DataQ. Candidate finding — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED with 2-3 sentences.\n\nCandidate: \"context/post-v1-roadmap.md gap G-h (~line 67) says 'ADR 0013's ambition is commercial BYOL' — after this PR's ADR 0031 (free OSS MIT + BYOL, no license revenue), that framing is stale/contradictory, and the PR adds no pointer from G-h to ADR 0031. A reader executing the readiness checklist may treat DataQ as a commercial-license product.\"\n\nRead context/post-v1-roadmap.md G-h and ADR 0031. Consider: G-h's SUBSTANCE is about the Databricks Free-Edition licence (paid workspace before commercial demo/use) — does that substance remain fully valid under free-OSS DataQ (commercial *use* of Databricks by a customer/vendor demo is orthogonal to DataQ's own license)? Is the only stale part the aside 'ADR 0013's ambition is commercial BYOL'? Also weigh that the file is NOT touched by this diff (scope = the PR fails-to-fix an adjacent doc). Judge severity honestly: is this a real reader-misleading defect the PR should fix, or marginal? REFUTED only if the claimed contradiction doesn't exist.",
+  "prompt": "You are a code-review verifier. Repo: /home/<USER>/Coding/Python/DataQ. Candidate finding — return exactly one verdict: CONFIRMED / PLAUSIBLE / REFUTED with 2-3 sentences.\n\nCandidate: \"context/post-v1-roadmap.md gap G-h (~line 67) says 'ADR 0013's ambition is commercial BYOL' — after this PR's ADR 0031 (free OSS MIT + BYOL, no license revenue), that framing is stale/contradictory, and the PR adds no pointer from G-h to ADR 0031. A reader executing the readiness checklist may treat DataQ as a commercial-license product.\"\n\nRead context/post-v1-roadmap.md G-h and ADR 0031. Consider: G-h's SUBSTANCE is about the Databricks Free-Edition licence (paid workspace before commercial demo/use) — does that substance remain fully valid under free-OSS DataQ (commercial *use* of Databricks by a customer/vendor demo is orthogonal to DataQ's own license)? Is the only stale part the aside 'ADR 0013's ambition is commercial BYOL'? Also weigh that the file is NOT touched by this diff (scope = the PR fails-to-fix an adjacent doc). Judge severity honestly: is this a real reader-misleading defect the PR should fix, or marginal? REFUTED only if the claimed contradiction doesn't exist.",
   "model": "sonnet"
 }
 ```
@@ -1755,7 +1755,7 @@ tool_use Bash
 id: toolu_01X4bDy1cW2mMfuUg8KNg3mj
 ```json
 {
-  "command": "grep -n \"quarterly supply-chain\\|public GHCR images\\|stands unchanged\\|reduces to packaging\\|superseded by this ADR\" /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md; echo ---; grep -n \"ADR 0031\" /Users/arijit/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md; echo ---; git -C /Users/arijit/Coding/Python/DataQ rev-parse HEAD",
+  "command": "grep -n \"quarterly supply-chain\\|public GHCR images\\|stands unchanged\\|reduces to packaging\\|superseded by this ADR\" /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md; echo ---; grep -n \"ADR 0031\" /home/<USER>/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md; echo ---; git -C /home/<USER>/Coding/Python/DataQ rev-parse HEAD",
   "description": "Get anchor line numbers and head SHA for inline comments"
 }
 ```
@@ -1932,7 +1932,7 @@ tool_use Bash
 id: toolu_017V8vpnWCkyubUUKVupCknm
 ```json
 {
-  "command": "sed -n '1,12p' /Users/arijit/Coding/Python/DataQ/docs/adr/0028-cloud-neutral-image-runtime-config-generic-oidc.md; echo ===; sed -n '1,14p' /Users/arijit/Coding/Python/DataQ/docs/adr/0012-monitor-kind-seam.md; echo ===; grep -n \"0028\\]\" /Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "command": "sed -n '1,12p' /home/<USER>/Coding/Python/DataQ/docs/adr/0028-cloud-neutral-image-runtime-config-generic-oidc.md; echo ===; sed -n '1,14p' /home/<USER>/Coding/Python/DataQ/docs/adr/0012-monitor-kind-seam.md; echo ===; grep -n \"0028\\]\" /home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "description": "Check Amends frontmatter and amendment blockquote precedents"
 }
 ```
@@ -1963,7 +1963,7 @@ tool_use Bash
 id: toolu_016eaLveKnw1Hdd9LxxyqCs9
 ```json
 {
-  "command": "grep -n \"39\\|38\\.\" /Users/arijit/Coding/Python/DataQ/CONTRIBUTING.md | head -20; echo ===; tail -30 /Users/arijit/Coding/Python/DataQ/CONTRIBUTING.md; echo ===; grep -n \"39 rules\\|39-rule\" /Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "command": "grep -n \"39\\|38\\.\" /home/<USER>/Coding/Python/DataQ/CONTRIBUTING.md | head -20; echo ===; tail -30 /home/<USER>/Coding/Python/DataQ/CONTRIBUTING.md; echo ===; grep -n \"39 rules\\|39-rule\" /home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "description": "Locate rule 39 text and rule-count mentions"
 }
 ```
@@ -1984,7 +1984,7 @@ tool_use Bash
 id: toolu_01VV8uXmWPsyzXoqpMwTb5LW
 ```json
 {
-  "command": "sed -n '1,12p' /Users/arijit/Coding/Python/DataQ/docs/adr/0012-monitor-kind-seam.md",
+  "command": "sed -n '1,12p' /home/<USER>/Coding/Python/DataQ/docs/adr/0012-monitor-kind-seam.md",
   "description": "See ADR 0012 amendment blockquote format"
 }
 ```
@@ -2014,7 +2014,7 @@ tool_use Bash
 id: toolu_01RrAVzLh7ewt8k9iVEWr9hD
 ```json
 {
-  "command": "sed -n '125,140p' /Users/arijit/Coding/Python/DataQ/CONTRIBUTING.md",
+  "command": "sed -n '125,140p' /home/<USER>/Coding/Python/DataQ/CONTRIBUTING.md",
   "description": "See end of CONTRIBUTING rules list"
 }
 ```
@@ -2048,7 +2048,7 @@ tool_use Bash
 id: toolu_01YbYfgYCeLMaQRKser7f8mQ
 ```json
 {
-  "command": "grep -n '39 rules\\|39-rule' /Users/arijit/Coding/Python/DataQ/CLAUDE.md /Users/arijit/Coding/Python/DataQ/CONTRIBUTING.md /Users/arijit/Coding/Python/DataQ/README.md 2>/dev/null",
+  "command": "grep -n '39 rules\\|39-rule' /home/<USER>/Coding/Python/DataQ/CLAUDE.md /home/<USER>/Coding/Python/DataQ/CONTRIBUTING.md /home/<USER>/Coding/Python/DataQ/README.md 2>/dev/null",
   "description": "Find rule-count mentions to update"
 }
 ```
@@ -2058,9 +2058,9 @@ id: toolu_01YbYfgYCeLMaQRKser7f8mQ
 tool_result
 id: toolu_01YbYfgYCeLMaQRKser7f8mQ
 ```
-/Users/arijit/Coding/Python/DataQ/CLAUDE.md:134:Full list (39 rules across 8 categories) lives in [CONTRIBUTING.md](CONTRIBUTING.md). Highlights:
-/Users/arijit/Coding/Python/DataQ/CLAUDE.md:189:1. [CONTRIBUTING.md](CONTRIBUTING.md) — full 39-rule working agreements + DoD + commit/branch conventions
-/Users/arijit/Coding/Python/DataQ/CLAUDE.md:256:| Working agreements (full 39-rule list) | [CONTRIBUTING.md](CONTRIBUTING.md) |
+/home/<USER>/Coding/Python/DataQ/CLAUDE.md:134:Full list (39 rules across 8 categories) lives in [CONTRIBUTING.md](CONTRIBUTING.md). Highlights:
+/home/<USER>/Coding/Python/DataQ/CLAUDE.md:189:1. [CONTRIBUTING.md](CONTRIBUTING.md) — full 39-rule working agreements + DoD + commit/branch conventions
+/home/<USER>/Coding/Python/DataQ/CLAUDE.md:256:| Working agreements (full 39-rule list) | [CONTRIBUTING.md](CONTRIBUTING.md) |
 ```
 
 > AGENT
@@ -2073,7 +2073,7 @@ tool_use Bash
 id: toolu_01DHSkXCJigxiBFhEPzzd6bV
 ```json
 {
-  "command": "sed -n '67p' /Users/arijit/Coding/Python/DataQ/context/post-v1-roadmap.md; sed -n '47,52p' /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md; sed -n '1,10p' /Users/arijit/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md",
+  "command": "sed -n '67p' /home/<USER>/Coding/Python/DataQ/context/post-v1-roadmap.md; sed -n '47,52p' /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md; sed -n '1,10p' /home/<USER>/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md",
   "description": "Read exact lines to edit (G-h, 0031 Related, 0013 head)"
 }
 ```
@@ -2107,7 +2107,7 @@ id: toolu_015CFXBxFTheqk6LB8h1GKSw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
   "old_string": "- **Status:** Accepted\n- **Date:** 2026-07-09\n- **Deciders:** @TheurgicDuke771\n\n## Context",
   "new_string": "- **Status:** Accepted\n- **Date:** 2026-07-09\n- **Deciders:** @TheurgicDuke771\n- **Amends:** ADR [0013](0013-marketplace-distribution-and-anti-lock-in.md) (the §5 \"licensing model + entitlement/license-key\" line and the licensed-revenue framing of BYOL)\n\n## Context"
 }
@@ -2118,7 +2118,7 @@ id: toolu_015CFXBxFTheqk6LB8h1GKSw
 tool_result
 id: toolu_015CFXBxFTheqk6LB8h1GKSw
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2128,7 +2128,7 @@ id: toolu_014n73w2WLxaDr8987xVaatH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
   "old_string": "1. **DataQ is and remains free open-source software under the MIT license.** There is no paid license, no entitlement check, and no license-key machinery — the \"licensing model + entitlement/license-key\" line of ADR 0013 §5 is **superseded by this ADR**. Everything else in ADR 0013 (customer-deployed BYOL distribution, the Azure→AWS/GCP phasing, the anti-lock-in guardrails) stands unchanged; under this decision \"BYOL\" reads as *bring your own (free, MIT) license* — the customer deploys the OSS into their own account, and no marketplace metering or entitlement integration is needed.",
   "new_string": "1. **DataQ is and remains free open-source software under the MIT license.** There is no paid license, no entitlement check, and no license-key machinery — this ADR supersedes the \"licensing model + entitlement/license-key\" line of ADR 0013 §5 **and ADR 0013's licensed-revenue framing of BYOL** (the comparison table's \"billed outside the meter\", the Consequences' \"revenue is licensed outside the meter\", the Alternatives' \"approximate with BYOL licensing\"): there is no license revenue at all. ADR 0013's distribution model (customer-deployed BYOL), the Azure→AWS/GCP phasing, and the anti-lock-in guardrails stand; under this decision \"BYOL\" reads as *bring your own (free, MIT) license* — the […]
 
@@ -2137,7 +2137,7 @@ id: toolu_014n73w2WLxaDr8987xVaatH
 tool_result
 id: toolu_014n73w2WLxaDr8987xVaatH
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2147,7 +2147,7 @@ id: toolu_01QYcre4AZDnJUFBCS64rwXG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
   "old_string": "2. **Marketplace listings are free/BYOL offers of the OSS artifacts** (the public GHCR images — ADR 0023 — plus the portable install artifact when it lands). Listings still require seller registration and per-marketplace certification, but not commerce integration.",
   "new_string": "2. **Marketplace listings are free/BYOL offers of the OSS artifacts** (the public GHCR images — ADR 0023 for the backend, ADR 0028 for the frontend — plus the portable install artifact when it lands). Listings still require seller registration, per-marketplace certification, and the listing's legal terms (e.g. Partner Center requires attached license terms even for free offers), but not commerce integration."
 }
@@ -2158,7 +2158,7 @@ id: toolu_01QYcre4AZDnJUFBCS64rwXG
 tool_result
 id: toolu_01QYcre4AZDnJUFBCS64rwXG
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2168,7 +2168,7 @@ id: toolu_01UHBjPquHXoEeK7x6wNMPiC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
   "old_string": "4. **Dependency license guardrail (standing, binding on future PRs):** the dependency tree stays free of strong-copyleft and source-available licenses (GPL, AGPL, SSPL, BUSL/Elastic, Commons-Clause). Weak copyleft (LGPL/MPL/EPL) is acceptable with notice. Adding a dependency that violates this needs an explicit ADR-level exception. The check joins the quarterly supply-chain audit cadence (CONTRIBUTING rule 39).",
   "new_string": "4. **Dependency license guardrail (standing, binding on future PRs):** the dependency tree stays free of strong-copyleft and source-available licenses (GPL, AGPL, SSPL, BUSL/Elastic, Commons-Clause). Weak copyleft (LGPL/MPL/EPL) is acceptable with notice. Adding a dependency that violates this needs an explicit ADR-level exception. Distilled into **CONTRIBUTING rule 40** (this PR), which schedules the license sweep alongside the rule-39 quarterly supply-chain audit and before any release/image publish."
 }
@@ -2179,7 +2179,7 @@ id: toolu_01UHBjPquHXoEeK7x6wNMPiC
 tool_result
 id: toolu_01UHBjPquHXoEeK7x6wNMPiC
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2189,7 +2189,7 @@ id: toolu_01QWn7P1LNr9ECC29apHRPXx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
   "old_string": "- No entitlement/license-server build — the last commercial-machinery item ADR 0013 carried disappears; the marketplace path reduces to packaging + certification.",
   "new_string": "- No entitlement/license-server build — the commercial *build* items ADR 0013 carried disappear; the marketplace path reduces to packaging + certification + the listing's legal terms. The rest of ADR 0013 §5's commercial/legal surface survives with per-item keep/defer/drop dispositions recorded in #732 (listing terms/EULA kept; DPA and tax/banking not needed while there is no hosted/paid tier — recorded, not dropped; SOC 2 / pen test remain an enterprise-buyer ask independent of price)."
 }
@@ -2200,7 +2200,7 @@ id: toolu_01QWn7P1LNr9ECC29apHRPXx
 tool_result
 id: toolu_01QWn7P1LNr9ECC29apHRPXx
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2210,7 +2210,7 @@ id: toolu_01CCYBWMU3YQpNBm2uFEAaWp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md",
   "old_string": "- [ADR 0013](0013-marketplace-distribution-and-anti-lock-in.md) — the BYOL distribution decision this ADR completes; its §5 licensing-model line is superseded here, the rest stands.\n- [ADR 0023](0023-container-image-registry-ghcr.md) — public GHCR images, the free distribution channel.",
   "new_string": "- [ADR 0013](0013-marketplace-distribution-and-anti-lock-in.md) — the BYOL distribution decision this ADR completes; its §5 licensing-model line and its licensed-revenue framing are superseded here (see the amendment note at its top), the distribution model/phasing/guardrails stand.\n- [ADR 0023](0023-container-image-registry-ghcr.md) / [ADR 0028](0028-cloud-neutral-image-runtime-config-generic-oidc.md) — the public GHCR backend and frontend images, the free distribution channel."
 }
@@ -2221,7 +2221,7 @@ id: toolu_01CCYBWMU3YQpNBm2uFEAaWp
 tool_result
 id: toolu_01CCYBWMU3YQpNBm2uFEAaWp
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0031-oss-byol-distribution-licensing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2231,7 +2231,7 @@ id: toolu_01AGGz3y2dvNxophaSvHF2s4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md",
   "old_string": "- **Status:** Accepted\n- **Date:** 2026-06-01\n- **Deciders:** @TheurgicDuke771\n\n## Context",
   "new_string": "- **Status:** Accepted\n- **Date:** 2026-06-01\n- **Deciders:** @TheurgicDuke771\n\n> **Amendment (2026-07-09, [ADR 0031](0031-oss-byol-distribution-licensing.md)):**\n> the licensing model is decided as **free open-source (MIT) — there is no license\n> revenue**. This supersedes §5's \"licensing model + entitlement/license-key\" open\n> item and this ADR's licensed-revenue framing of BYOL (the comparison table's\n> \"billed outside the meter\", the Consequences' \"revenue is licensed outside the\n> meter\", the Alternatives' \"approximate with BYOL licensing\"). The distribution\n> model (customer-deployed BYOL), the phasing, and the anti-lock-in guardrails\n> below are unchanged; §5's remaining commercial/legal items carry per-item\n> dispositions in issue #732.\n\n## Context"
 }
@@ -2242,7 +2242,7 @@ id: toolu_01AGGz3y2dvNxophaSvHF2s4
 tool_result
 id: toolu_01AGGz3y2dvNxophaSvHF2s4
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/0013-marketplace-distribution-and-anti-lock-in.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2252,7 +2252,7 @@ id: toolu_01UfAzaS7t2wzYV7PG3G3CEJ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0013](0013-marketplace-distribution-and-anti-lock-in.md) | Marketplace distribution (customer-deployed BYOL) and anti-vendor-lock-in guardrails | Accepted |",
   "new_string": "| [0013](0013-marketplace-distribution-and-anti-lock-in.md) | Marketplace distribution (customer-deployed BYOL) and anti-vendor-lock-in guardrails | Accepted (amended by 0031 — §5 licensing line + licensed-revenue framing) |"
 }
@@ -2263,7 +2263,7 @@ id: toolu_01UfAzaS7t2wzYV7PG3G3CEJ
 tool_result
 id: toolu_01UfAzaS7t2wzYV7PG3G3CEJ
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2273,7 +2273,7 @@ id: toolu_01KmJzPxSWAcwUhPVYwxZx3o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "| [0031](0031-oss-byol-distribution-licensing.md) | Distribution licensing — **free open-source (MIT) + customer-deployed BYOL**; no entitlement/license-key (supersedes the 0013 §5 licensing-model line); marketplace listings are free offers of the OSS artifacts; THIRD-PARTY-NOTICES/SBOM in images + releases; standing no-strong-copyleft dependency guardrail | Accepted |",
   "new_string": "| [0031](0031-oss-byol-distribution-licensing.md) | Distribution licensing — **free open-source (MIT) + customer-deployed BYOL**; no entitlement/license-key (amends 0013: supersedes its §5 licensing-model line + licensed-revenue framing); marketplace listings are free offers of the OSS artifacts; THIRD-PARTY-NOTICES/SBOM in images + releases; standing no-strong-copyleft dependency guardrail (CONTRIBUTING rule 40) | Accepted |"
 }
@@ -2284,7 +2284,7 @@ id: toolu_01KmJzPxSWAcwUhPVYwxZx3o
 tool_result
 id: toolu_01KmJzPxSWAcwUhPVYwxZx3o
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2294,7 +2294,7 @@ id: toolu_019szXGudd3biqmsJBbq2vhf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "  - **Supersedes** *(optional)* — `ADR-NNNN` this decision replaces. Omit when none.\n  - **Superseded by** *(optional)* — `ADR-NNNN` that later replaced this one. Add when the status flips to `Superseded by`.",
   "new_string": "  - **Supersedes** *(optional)* — `ADR-NNNN` this decision replaces. Omit when none.\n  - **Superseded by** *(optional)* — `ADR-NNNN` that later replaced this one. Add when the status flips to `Superseded by`.\n  - **Amends** *(optional)* — `ADR-NNNN` this decision partially overrides (whole-ADR replacement uses `Supersedes` instead). Pair it with an inline `> **Amendment (date, ADR-NNNN):** …` blockquote at the top of the amended ADR and an \"(amended by NNNN — …)\" note on its index Status, so the override is visible where readers actually look. Precedents: ADR 0028 (amends 0024), ADR 0012's amendment blockquote, ADR 0031 (amends 0013). |"
 }
@@ -2305,7 +2305,7 @@ id: toolu_019szXGudd3biqmsJBbq2vhf
 tool_result
 id: toolu_019szXGudd3biqmsJBbq2vhf
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2315,7 +2315,7 @@ id: toolu_01E3E32eWv6wLdjZgtP1Gin7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/docs/adr/README.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/docs/adr/README.md",
   "old_string": "Precedents: ADR 0028 (amends 0024), ADR 0012's amendment blockquote, ADR 0031 (amends 0013). |",
   "new_string": "Precedents: ADR 0028 (amends 0024), ADR 0012's amendment blockquote, ADR 0031 (amends 0013)."
 }
@@ -2326,7 +2326,7 @@ id: toolu_01E3E32eWv6wLdjZgtP1Gin7
 tool_result
 id: toolu_01E3E32eWv6wLdjZgtP1Gin7
 ```
-The file /Users/arijit/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/docs/adr/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2336,7 +2336,7 @@ id: toolu_01MDAbmCcx6exNDeiSJ1GwcH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CONTRIBUTING.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CONTRIBUTING.md",
   "old_string": "39. **Quarterly MCP supply-chain audit:** once a quarter, for each client-side MCP server pinned in `.mcp.json` (see CLAUDE.md Appendix), verify the package hasn't been deprecated, yanked, or transferred to a new publisher (e.g. `npm view <pkg> maintainers time`), and review the changelog before bumping the pinned major version. MCP servers run with local tool access — treat a publisher change like a compromised dependency until verified.",
   "new_string": "39. **Quarterly MCP supply-chain audit:** once a quarter, for each client-side MCP server pinned in `.mcp.json` (see CLAUDE.md Appendix), verify the package hasn't been deprecated, yanked, or transferred to a new publisher (e.g. `npm view <pkg> maintainers time`), and review the changelog before bumping the pinned major version. MCP servers run with local tool access — treat a publisher change like a compromised dependency until verified.\n40. **Dependency license guardrail ([ADR 0031](docs/adr/0031-oss-byol-distribution-licensing.md)):** DataQ ships MIT — the dependency tree stays free of strong-copyleft and source-available licenses (GPL, AGPL, SSPL, BUSL/Elastic, Commons-Clause). Weak copyleft (LGPL/MPL/EPL) is acceptable with notice preservation. Adding a dependency that violates this needs an explicit ADR-level exception. Run the license sweep (backend: installed-env metadata; frontend: lockfile/`node_modules` license fields) alongside the […]
 
@@ -2345,7 +2345,7 @@ id: toolu_01MDAbmCcx6exNDeiSJ1GwcH
 tool_result
 id: toolu_01MDAbmCcx6exNDeiSJ1GwcH
 ```
-The file /Users/arijit/Coding/Python/DataQ/CONTRIBUTING.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CONTRIBUTING.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2354,7 +2354,7 @@ tool_use Bash
 id: toolu_01XyeCydHdc31CMZLqMSi9Y3
 ```json
 {
-  "command": "grep -n \"39\\b\" /Users/arijit/Coding/Python/DataQ/CONTRIBUTING.md | grep -v \"^129\\|^130\\|^131\" | head",
+  "command": "grep -n \"39\\b\" /home/<USER>/Coding/Python/DataQ/CONTRIBUTING.md | grep -v \"^129\\|^130\\|^131\" | head",
   "description": "Check for other rule-count mentions in CONTRIBUTING"
 }
 ```
@@ -2374,7 +2374,7 @@ id: toolu_01G9YVZkomKkqe1JvoU5X4hg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "Full list (39 rules across 8 categories) lives in [CONTRIBUTING.md](CONTRIBUTING.md). Highlights:",
   "new_string": "Full list (40 rules across 8 categories) lives in [CONTRIBUTING.md](CONTRIBUTING.md). Highlights:"
 }
@@ -2395,7 +2395,7 @@ id: toolu_01GEekdpRHz9B6bpoMgRJygm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "1. [CONTRIBUTING.md](CONTRIBUTING.md) — full 39-rule working agreements + DoD + commit/branch conventions",
   "new_string": "1. [CONTRIBUTING.md](CONTRIBUTING.md) — full 40-rule working agreements + DoD + commit/branch conventions"
 }
@@ -2416,7 +2416,7 @@ id: toolu_01JcfkzGGNCwCYtYSdbAreP9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "| Working agreements (full 39-rule list) | [CONTRIBUTING.md](CONTRIBUTING.md) |",
   "new_string": "| Working agreements (full 40-rule list) | [CONTRIBUTING.md](CONTRIBUTING.md) |"
 }
@@ -2437,7 +2437,7 @@ id: toolu_01VJox99jgjYFp9e96Jm5hdA
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "- ❌ Don't track GX Core at \"latest.\" Pin the version in `environment.yml` — GX v1 API has drifted across point releases.",
   "new_string": "- ❌ Don't track GX Core at \"latest.\" Pin the version in `environment.yml` — GX v1 API has drifted across point releases.\n- ❌ Don't add a dependency under a strong-copyleft or source-available license (GPL, AGPL, SSPL, BUSL/Elastic, Commons-Clause) — DataQ ships MIT (ADR 0031, CONTRIBUTING rule 40); weak copyleft (LGPL/MPL) is OK with notices. Exceptions need an ADR."
 }
@@ -2458,7 +2458,7 @@ id: toolu_01QWs8FxYB9zbfMJVkCdLW4o
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/context/post-v1-roadmap.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/context/post-v1-roadmap.md",
   "old_string": "the UC demo leg cannot legally back a commercial demo, while ADR 0013's ambition is commercial BYOL.",
   "new_string": "the UC demo leg cannot legally back a commercial demo, while ADR 0013's ambition is commercial BYOL (since refined by ADR 0031 — free-OSS BYOL, no license revenue; this trigger is about *Databricks'* terms and stands unchanged for any commercial demo/use)."
 }
@@ -2469,7 +2469,7 @@ id: toolu_01QWs8FxYB9zbfMJVkCdLW4o
 tool_result
 id: toolu_01QWs8FxYB9zbfMJVkCdLW4o
 ```
-The file /Users/arijit/Coding/Python/DataQ/context/post-v1-roadmap.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/context/post-v1-roadmap.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2482,7 +2482,7 @@ tool_use Read
 id: toolu_017vffWWDePFf681XoTULdFU
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "offset": 130,
   "limit": 10
 }
@@ -2511,7 +2511,7 @@ tool_use Read
 id: toolu_019jvKeBkbU1pzhNznTzwFJQ
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "offset": 186,
   "limit": 8
 }
@@ -2538,7 +2538,7 @@ tool_use Read
 id: toolu_015n9g8YvyJFiPyD6A5nEBCa
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "offset": 228,
   "limit": 32
 }
@@ -2569,7 +2569,7 @@ id: toolu_01P24CWZpKRvTCPXTzYyAU11
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "Full list (39 rules across 8 categories) lives in [CONTRIBUTING.md](CONTRIBUTING.md). Highlights:",
   "new_string": "Full list (40 rules across 8 categories) lives in [CONTRIBUTING.md](CONTRIBUTING.md). Highlights:"
 }
@@ -2580,7 +2580,7 @@ id: toolu_01P24CWZpKRvTCPXTzYyAU11
 tool_result
 id: toolu_01P24CWZpKRvTCPXTzYyAU11
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2590,7 +2590,7 @@ id: toolu_01RmKJ9yWAfN5W6ExmEE8YBy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "1. [CONTRIBUTING.md](CONTRIBUTING.md) — full 39-rule working agreements + DoD + commit/branch conventions",
   "new_string": "1. [CONTRIBUTING.md](CONTRIBUTING.md) — full 40-rule working agreements + DoD + commit/branch conventions"
 }
@@ -2601,7 +2601,7 @@ id: toolu_01RmKJ9yWAfN5W6ExmEE8YBy
 tool_result
 id: toolu_01RmKJ9yWAfN5W6ExmEE8YBy
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2611,7 +2611,7 @@ id: toolu_015Y1CSYg9kkrhsPJvqnLndY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "| Working agreements (full 39-rule list) | [CONTRIBUTING.md](CONTRIBUTING.md) |",
   "new_string": "| Working agreements (full 40-rule list) | [CONTRIBUTING.md](CONTRIBUTING.md) |"
 }
@@ -2622,7 +2622,7 @@ id: toolu_015Y1CSYg9kkrhsPJvqnLndY
 tool_result
 id: toolu_015Y1CSYg9kkrhsPJvqnLndY
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2632,7 +2632,7 @@ id: toolu_01CBph7xzt6WfjZ9fxschzZs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/arijit/Coding/Python/DataQ/CLAUDE.md",
+  "file_path": "/home/<USER>/Coding/Python/DataQ/CLAUDE.md",
   "old_string": "- ❌ Don't track GX Core at \"latest.\" Pin the version in `environment.yml` — GX v1 API has drifted across point releases.",
   "new_string": "- ❌ Don't track GX Core at \"latest.\" Pin the version in `environment.yml` — GX v1 API has drifted across point releases.\n- ❌ Don't add a dependency under a strong-copyleft or source-available license (GPL, AGPL, SSPL, BUSL/Elastic, Commons-Clause) — DataQ ships MIT (ADR [0031](docs/adr/0031-oss-byol-distribution-licensing.md), CONTRIBUTING rule 40); weak copyleft (LGPL/MPL) is OK with notices. Exceptions need an ADR."
 }
@@ -2643,7 +2643,7 @@ id: toolu_01CBph7xzt6WfjZ9fxschzZs
 tool_result
 id: toolu_01CBph7xzt6WfjZ9fxschzZs
 ```
-The file /Users/arijit/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Coding/Python/DataQ/CLAUDE.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2682,7 +2682,7 @@ tool_use Bash
 id: toolu_01RdUCXeN8TPGrycwDueStpg
 ```json
 {
-  "command": "git -C /Users/arijit/Coding/Python/DataQ diff --stat",
+  "command": "git -C /home/<USER>/Coding/Python/DataQ diff --stat",
   "description": "Show working-tree change stat before commit"
 }
 ```
@@ -2719,7 +2719,7 @@ tool_use Bash
 id: toolu_011jPrfVFw52M2QfQQ4nb9Ws
 ```json
 {
-  "command": "git -C /Users/arijit/Coding/Python/DataQ add -A && git -C /Users/arijit/Coding/Python/DataQ commit -m 'fixup: address /code-review findings on ADR 0031\n\n- Scope the supersession honestly: 0013 licensed-revenue framing is also\n  amended (table/Consequences/Alternatives), not \"everything else stands\"\n- Amends: ADR-0013 frontmatter + amendment blockquote in 0013 + index-row\n  notes, per the ADR 0028/0012 precedent; Amends field documented in the\n  ADR README Format section\n- Distill the license guardrail: new CONTRIBUTING rule 40 + CLAUDE.md §11\n  bullet (rule counts 39→40); 0031 cites rule 40 instead of the MCP-scoped\n  rule 39\n- Cite ADR 0023 (backend) / 0028 (frontend) for the GHCR images\n- Soften \"reduces to packaging + certification\"; §5 survivors (EULA, DPA,\n  SOC 2/pen test, tax/banking) now carry per-item dispositions in #732\n- G-h roadmap aside points to ADR 0031 (Databricks trigger unchanged)\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>' && git -C /Users/arijit/Coding/Python/DataQ push",
+  "command": "git -C /home/<USER>/Coding/Python/DataQ add -A && git -C /home/<USER>/Coding/Python/DataQ commit -m 'fixup: address /code-review findings on ADR 0031\n\n- Scope the supersession honestly: 0013 licensed-revenue framing is also\n  amended (table/Consequences/Alternatives), not \"everything else stands\"\n- Amends: ADR-0013 frontmatter + amendment blockquote in 0013 + index-row\n  notes, per the ADR 0028/0012 precedent; Amends field documented in the\n  ADR README Format section\n- Distill the license guardrail: new CONTRIBUTING rule 40 + CLAUDE.md §11\n  bullet (rule counts 39→40); 0031 cites rule 40 instead of the MCP-scoped\n  rule 39\n- Cite ADR 0023 (backend) / 0028 (frontend) for the GHCR images\n- Soften \"reduces to packaging + certification\"; §5 survivors (EULA, DPA,\n  SOC 2/pen test, tax/banking) now carry per-item dispositions in #732\n- G-h roadmap aside points to ADR 0031 (Databricks trigger unchanged)\n\nCo-Authored-By: Claude Fable 5 <<REDACTED_EMAIL>>' && git -C /home/<USER>/Coding/Python/DataQ push",
   "description": "Commit review fixes and push to the PR branch"
 }
 ```
@@ -3002,7 +3002,7 @@ tool_use Bash
 id: toolu_01RbY9wDqJYxnrvcUTX6aVtw
 ```json
 {
-  "command": "git -C /Users/arijit/Coding/Python/DataQ checkout main && git -C /Users/arijit/Coding/Python/DataQ pull --ff-only && git -C /Users/arijit/Coding/Python/DataQ branch -D docs/adr-0031-oss-byol-licensing 2>/dev/null; true",
+  "command": "git -C /home/<USER>/Coding/Python/DataQ checkout main && git -C /home/<USER>/Coding/Python/DataQ pull --ff-only && git -C /home/<USER>/Coding/Python/DataQ branch -D docs/adr-0031-oss-byol-licensing 2>/dev/null; true",
   "description": "Switch to main, pull, delete local ADR branch"
 }
 ```
@@ -3013,7 +3013,7 @@ tool_use Read
 id: toolu_01Y6eefr4AfhH5AgB6Bkoj9H
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/core/auth.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/core/auth.py"
 }
 ```
 
@@ -3078,7 +3078,7 @@ tool_use Bash
 id: toolu_01PrzUHiaWQjwWveqdYEqBLE
 ```json
 {
-  "command": "grep -n \"class User\" -A 25 /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py | head -32",
+  "command": "grep -n \"class User\" -A 25 /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py | head -32",
   "description": "Inspect User model columns"
 }
 ```
@@ -3122,7 +3122,7 @@ tool_use Read
 id: toolu_01JSJTavBm48RRUfs1QqdkoK
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/alerting/email.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/alerting/email.py"
 }
 ```
 
@@ -3174,7 +3174,7 @@ tool_use Bash
 id: toolu_01D58QFpv9an13RmVYgW6T3g
 ```json
 {
-  "command": "grep -n \"email\\|smtp\" /Users/arijit/Coding/Python/DataQ/backend/app/core/config.py | head -25",
+  "command": "grep -n \"email\\|smtp\" /home/<USER>/Coding/Python/DataQ/backend/app/core/config.py | head -25",
   "description": "Find email/SMTP config fields"
 }
 ```
@@ -3212,7 +3212,7 @@ tool_use Bash
 id: toolu_01NpndKT6FwBw6ZpbEEf3MUC
 ```json
 {
-  "command": "grep -n -i \"basic\" /Users/arijit/Coding/Python/DataQ/docs/adr/0026-auth-api-keys-and-principal-seam.md | head; grep -rn \"DATAQ_AUTH_MODE\" /Users/arijit/Coding/Python/DataQ/frontend/src --include=\"*.ts\" --include=\"*.tsx\" -l 2>/dev/null | head -3; grep -rn \"mode\" /Users/arijit/Coding/Python/DataQ/frontend/src/auth/*.ts 2>/dev/null | grep -i \"bypass\\|oidc\" | head -5",
+  "command": "grep -n -i \"basic\" /home/<USER>/Coding/Python/DataQ/docs/adr/0026-auth-api-keys-and-principal-seam.md | head; grep -rn \"DATAQ_AUTH_MODE\" /home/<USER>/Coding/Python/DataQ/frontend/src --include=\"*.ts\" --include=\"*.tsx\" -l 2>/dev/null | head -3; grep -rn \"mode\" /home/<USER>/Coding/Python/DataQ/frontend/src/auth/*.ts 2>/dev/null | grep -i \"bypass\\|oidc\" | head -5",
   "description": "Check ADR 0026 Basic-auth rationale and frontend auth modes"
 }
 ```
@@ -3224,12 +3224,12 @@ id: toolu_01NpndKT6FwBw6ZpbEEf3MUC
 ```
 51:- **HTTP Basic auth — rejected.** DataQ has no password store (identity is delegated to OIDC);
 52:  Basic auth would make DataQ a password system (storage/hashing policy, lockout, reset flows,
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/AuthGate.tsx
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/authContext.ts:16:/** The current OIDC user (null when not signed in / not in real auth mode). */
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts:17: * - 'real'         — `mode:'oidc'` with authority + clientId present. The generic
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts:20: * - 'dev_bypass'   — ONLY when `mode:'bypass'` is explicitly set. Fail-closed:
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts:30:  mode?: 'bypass' | 'oidc';
-/Users/arijit/Coding/Python/DataQ/frontend/src/auth/config.ts:62:    mode: bypass ? 'bypass' : tenantId && clientId ? 'oidc' : undefined,
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/AuthGate.tsx
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/authContext.ts:16:/** The current OIDC user (null when not signed in / not in real auth mode). */
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts:17: * - 'real'         — `mode:'oidc'` with authority + clientId present. The generic
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts:20: * - 'dev_bypass'   — ONLY when `mode:'bypass'` is explicitly set. Fail-closed:
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts:30:  mode?: 'bypass' | 'oidc';
+/home/<USER>/Coding/Python/DataQ/frontend/src/auth/config.ts:62:    mode: bypass ? 'bypass' : tenantId && clientId ? 'oidc' : undefined,
 ```
 
 > AGENT
@@ -3263,7 +3263,7 @@ tool_use Bash
 id: toolu_019qpf91Md49VsF4MDvqYUCE
 ```json
 {
-  "command": "grep -n \"EMAIL\" /Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example /Users/arijit/Coding/Python/DataQ/.env.app.example 2>/dev/null; grep -rn \"EMAIL\" /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/*.tf | head -10",
+  "command": "grep -n \"EMAIL\" /home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example /home/<USER>/Coding/Python/DataQ/.env.app.example 2>/dev/null; grep -rn \"EMAIL\" /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/*.tf | head -10",
   "description": "Check email config in prod env template and Terraform"
 }
 ```
@@ -3273,27 +3273,27 @@ id: toolu_019qpf91Md49VsF4MDvqYUCE
 tool_result
 id: toolu_019qpf91Md49VsF4MDvqYUCE
 ```
-/Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example:49:WORKSPACE_ADMIN_EMAILS=
-/Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example:76:EMAIL_USERNAME=
-/Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example:77:EMAIL_FROM=
-/Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example:78:EMAIL_TO=
-/Users/arijit/Coding/Python/DataQ/deploy/.env.app.prod.example:79:EMAIL_PASSWORD_SECRET_NAME=
-/Users/arijit/Coding/Python/DataQ/.env.app.example:52:WORKSPACE_ADMIN_EMAILS=
-/Users/arijit/Coding/Python/DataQ/.env.app.example:101:# Email (SMTP) — active only when EMAIL_TO + EMAIL_USERNAME + EMAIL_PASSWORD_SECRET_NAME
-/Users/arijit/Coding/Python/DataQ/.env.app.example:103:EMAIL_SMTP_HOST=smtp.gmail.com
-/Users/arijit/Coding/Python/DataQ/.env.app.example:104:EMAIL_SMTP_PORT=587
-/Users/arijit/Coding/Python/DataQ/.env.app.example:105:EMAIL_USERNAME=
-/Users/arijit/Coding/Python/DataQ/.env.app.example:106:EMAIL_FROM=
-/Users/arijit/Coding/Python/DataQ/.env.app.example:107:EMAIL_TO=
-/Users/arijit/Coding/Python/DataQ/.env.app.example:108:EMAIL_PASSWORD_SECRET_NAME=
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:51:    { name = "WORKSPACE_ADMIN_EMAILS", value = var.workspace_admin_emails },
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:71:    { name = "EMAIL_SMTP_HOST", value = "smtp.gmail.com" },
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:72:    { name = "EMAIL_SMTP_PORT", value = "587" },
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:73:    { name = "EMAIL_PASSWORD_SECRET_NAME", value = "channel-email-password" },
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:74:    { name = "EMAIL_USERNAME", value = var.email_username },
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:75:    { name = "EMAIL_FROM", value = var.email_from },
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:76:    { name = "EMAIL_TO", value = var.email_to },
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/variables.tf:107:  description = "Comma-separated workspace-admin allowlist (WORKSPACE_ADMIN_EMAILS)."
+/home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example:49:WORKSPACE_ADMIN_EMAILS=
+/home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example:76:EMAIL_USERNAME=
+/home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example:77:EMAIL_FROM=
+/home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example:78:EMAIL_TO=
+/home/<USER>/Coding/Python/DataQ/deploy/.env.app.prod.example:79:EMAIL_PASSWORD_SECRET_NAME=
+/home/<USER>/Coding/Python/DataQ/.env.app.example:52:WORKSPACE_ADMIN_EMAILS=
+/home/<USER>/Coding/Python/DataQ/.env.app.example:101:# Email (SMTP) — active only when EMAIL_TO + EMAIL_USERNAME + EMAIL_PASSWORD_SECRET_NAME
+/home/<USER>/Coding/Python/DataQ/.env.app.example:103:EMAIL_SMTP_HOST=smtp.gmail.com
+/home/<USER>/Coding/Python/DataQ/.env.app.example:104:EMAIL_SMTP_PORT=587
+/home/<USER>/Coding/Python/DataQ/.env.app.example:105:EMAIL_USERNAME=
+/home/<USER>/Coding/Python/DataQ/.env.app.example:106:EMAIL_FROM=
+/home/<USER>/Coding/Python/DataQ/.env.app.example:107:EMAIL_TO=
+/home/<USER>/Coding/Python/DataQ/.env.app.example:108:EMAIL_PASSWORD_SECRET_NAME=
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:51:    { name = "WORKSPACE_ADMIN_EMAILS", value = var.workspace_admin_emails },
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:71:    { name = "EMAIL_SMTP_HOST", value = "smtp.gmail.com" },
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:72:    { name = "EMAIL_SMTP_PORT", value = "587" },
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:73:    { name = "EMAIL_PASSWORD_SECRET_NAME", value = "channel-email-password" },
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:74:    { name = "EMAIL_USERNAME", value = var.email_username },
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:75:    { name = "EMAIL_FROM", value = var.email_from },
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/containerapps.tf:76:    { name = "EMAIL_TO", value = var.email_to },
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/variables.tf:107:  description = "Comma-separated workspace-admin allowlist (WORKSPACE_ADMIN_EMAILS)."
 ```
 
 > TOOL
@@ -3302,7 +3302,7 @@ tool_use Bash
 id: toolu_01HWb7KMJtKfYcazNnC5as7z
 ```json
 {
-  "command": "grep -n \"EMAIL\\|email\" /Users/arijit/Coding/Python/DataQ/docker-compose.yml | head -5; grep -rn \"email\" /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars 2>/dev/null | sed 's/=.*/= <redacted-check>/' | head -5",
+  "command": "grep -n \"EMAIL\\|email\" /home/<USER>/Coding/Python/DataQ/docker-compose.yml | head -5; grep -rn \"email\" /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars 2>/dev/null | sed 's/=.*/= <redacted-check>/' | head -5",
   "description": "Check compose and tfvars for email settings (keys only)"
 }
 ```
@@ -3313,11 +3313,11 @@ tool_result
 id: toolu_01HWb7KMJtKfYcazNnC5as7z
 ```
 88:      # No-colon form: WORKSPACE_ADMIN_EMAILS="" in .env opts back OUT (to a
-90:      WORKSPACE_ADMIN_EMAILS: ${WORKSPACE_ADMIN_EMAILS-dev-bypass@dataq.local}
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars:11:workspace_admin_emails = <redacted-check>
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars:14:email_username = <redacted-check>
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars:15:email_from     = <redacted-check>
-/Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars:16:email_to       = <redacted-check>
+90:      WORKSPACE_ADMIN_EMAILS: ${<REDACTED_EMAIL>}
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars:11:workspace_admin_emails = <redacted-check>
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars:14:email_username = <redacted-check>
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars:15:email_from     = <redacted-check>
+/home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/terraform.tfvars:16:email_to       = <redacted-check>
 ```
 
 > AGENT
@@ -3330,7 +3330,7 @@ tool_use Bash
 id: toolu_01NEcRV3fARJEqB6EKt4Upcr
 ```json
 {
-  "command": "grep -n 'name' /Users/arijit/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf | head -5",
+  "command": "grep -n 'name' /home/<USER>/Coding/Python/DataQ/deploy/terraform/azure/keyvault.tf | head -5",
   "description": "Find Key Vault resource name"
 }
 ```
@@ -3461,7 +3461,7 @@ tool_use Read
 id: toolu_01F3LtPNUEW1adCtj1eZv7id
 ```json
 {
-  "file_path": "/Users/arijit/Coding/Python/DataQ/backend/app/services/suite_authz.py"
+  "file_path": "/home/<USER>/Coding/Python/DataQ/backend/app/services/suite_authz.py"
 }
 ```
 
@@ -3497,7 +3497,7 @@ tool_use Bash
 id: toolu_019eitRvoJThNYyditvAPjKL
 ```json
 {
-  "command": "grep -n \"class Share\" -A 20 /Users/arijit/Coding/Python/DataQ/backend/app/db/models.py",
+  "command": "grep -n \"class Share\" -A 20 /home/<USER>/Coding/Python/DataQ/backend/app/db/models.py",
   "description": "Inspect Share model"
 }
 ```
@@ -3540,7 +3540,7 @@ tool_use Bash
 id: toolu_01KReWC37Q1teF4TbA6Qgx1V
 ```json
 {
-  "command": "grep -n \"get_current_user\\|require_\\|created_by\\|owner\" /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/connections.py | head -15; grep -rn \"require_permission\\|require_workspace_admin\" /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/*.py /Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py 2>/dev/null | awk -F: '{print $1}' | sort | uniq -c",
+  "command": "grep -n \"get_current_user\\|require_\\|created_by\\|owner\" /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/connections.py | head -15; grep -rn \"require_permission\\|require_workspace_admin\" /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/*.py /home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py 2>/dev/null | awk -F: '{print $1}' | sort | uniq -c",
   "description": "Check connections authz and where permission gates are used"
 }
 ```
@@ -3562,12 +3562,12 @@ id: toolu_01KReWC37Q1teF4TbA6Qgx1V
 176:    current_user: Annotated[User, Depends(get_current_user)],
 193:    current_user: Annotated[User, Depends(get_current_user)],
 232:    current_user: Annotated[User, Depends(get_current_user)],
-   3 /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/admin.py
-  11 /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/checks.py
-   4 /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/notifications.py
-   7 /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/runs.py
-  11 /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/suites.py
-   6 /Users/arijit/Coding/Python/DataQ/backend/app/mcp/server.py
+   3 /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/admin.py
+  11 /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/checks.py
+   4 /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/notifications.py
+   7 /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/runs.py
+  11 /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/suites.py
+   6 /home/<USER>/Coding/Python/DataQ/backend/app/mcp/server.py
 ```
 
 > TOOL
@@ -3576,7 +3576,7 @@ tool_use Bash
 id: toolu_01TqNvVeWgmRLVqe2ZquyAFV
 ```json
 {
-  "command": "grep -n \"def list_connections\\|def get_connection\\b\" -A 8 /Users/arijit/Coding/Python/DataQ/backend/app/services/connection_service.py | head -20; grep -n \"workspace\\|any authenticated\\|created_by\" /Users/arijit/Coding/Python/DataQ/backend/app/api/v1/connections.py | head -8",
+  "command": "grep -n \"def list_connections\\|def get_connection\\b\" -A 8 /home/<USER>/Coding/Python/DataQ/backend/app/services/connection_service.py | head -20; grep -n \"workspace\\|any authenticated\\|created_by\" /home/<USER>/Coding/Python/DataQ/backend/app/api/v1/connections.py | head -8",
   "description": "Check whether connections are user-scoped or workspace-global"
 }
 ```

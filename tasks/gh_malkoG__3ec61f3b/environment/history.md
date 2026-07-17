@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01RSWeQAFt9jCmvKrzumKUYQ
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh",
   "description": "List project root"
 }
 ```
@@ -19,7 +19,7 @@ tool_use Bash
 id: toolu_01NCNRYtoApbV7BoWVYyUo8W
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/ 2>&1 | head -30",
+  "command": "ls /home/<USER>/fediverse/ 2>&1 | head -30",
   "description": "List sibling projects"
 }
 ```
@@ -74,7 +74,7 @@ id: toolu_01CC1eWCNyFAX8TZWj4NPZnu
 {
   "description": "Find markNotificationAsRead usage",
   "subagent_type": "Explore",
-  "prompt": "In the repository at /Users/kodingwarrior/fediverse/hackerspub, find how the `markNotificationAsRead` GraphQL mutation is defined and used. I need to know:\n\n1. The exact mutation name, its arguments, and return type (GraphQL schema definition location)\n2. Any example usage in the hackerspub codebase (e.g. when/where is it called - is it called per-notification with an ID, or globally to mark all as read?)\n3. Whether there's a separate \"mark all as read\" mutation vs. per-notification\n\nReport file paths and relevant code snippets so I can implement the same on the Android side. Under 300 words."
+  "prompt": "In the repository at /home/<USER>/fediverse/hackerspub, find how the `markNotificationAsRead` GraphQL mutation is defined and used. I need to know:\n\n1. The exact mutation name, its arguments, and return type (GraphQL schema definition location)\n2. Any example usage in the hackerspub codebase (e.g. when/where is it called - is it called per-notification with an ID, or globally to mark all as read?)\n3. Whether there's a separate \"mark all as read\" mutation vs. per-notification\n\nReport file paths and relevant code snippets so I can implement the same on the Android side. Under 300 words."
 }
 ```
 
@@ -86,7 +86,7 @@ id: toolu_012tdoaT1Vv6HS3Qu8tYhHPL
 {
   "description": "Find notification screen in Android",
   "subagent_type": "Explore",
-  "prompt": "In the Android repo at /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh, find the notification screen implementation. I need to know:\n\n1. Where is the notification screen / composable defined?\n2. Where is the notification ViewModel (or equivalent) defined?\n3. How does it currently fetch notifications (which GraphQL query/repository/use-case)?\n4. What's the entry-point lifecycle event I could hook — e.g. LaunchedEffect in the composable, ViewModel init, or a navigation event?\n5. How are GraphQL mutations typically invoked elsewhere in the repo (look for an existing `.mutation(...)` call for pattern reference)?\n6. Where are .graphql mutation files stored (directory path)?\n\nGive file paths and short code snippets. Under 400 words."
+  "prompt": "In the Android repo at /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh, find the notification screen implementation. I need to know:\n\n1. Where is the notification screen / composable defined?\n2. Where is the notification ViewModel (or equivalent) defined?\n3. How does it currently fetch notifications (which GraphQL query/repository/use-case)?\n4. What's the entry-point lifecycle event I could hook — e.g. LaunchedEffect in the composable, ViewModel init, or a navigation event?\n5. How are GraphQL mutations typically invoked elsewhere in the repo (look for an existing `.mutation(...)` call for pattern reference)?\n6. Where are .graphql mutation files stored (directory path)?\n\nGive file paths and short code snippets. Under 400 words."
 }
 ```
 
@@ -100,10 +100,10 @@ Perfect. Now I have all the information. Let me create a concise summary:
 ## Summary
 
 **1. Notification Screen Location:**
-`/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsScreen.kt`
+`/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsScreen.kt`
 
 **2. Notification ViewModel Location:**
-`/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsViewModel.kt`
+`/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsViewModel.kt`
 
 **3. GraphQL Query for Fetching:**
 Uses `NotificationsQuery` via `repository.getNotifications(after)` (line 158 of HackersPubRepository). Query fetches paginated notifications from `viewer.notifications` with cursor-based pagination.
@@ -126,7 +126,7 @@ val response = apolloClient.mutation(SharePostMutation(postId)).execute()
 Found in HackersPubRepository (e.g., sharePost function). Pattern: `apolloClient.mutation(MutationClass(args)).execute()` followed by error/success checks on `response.hasErrors()`.
 
 **6. GraphQL Mutation Files Directory:**
-`/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/`
+`/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/`
 
 Single file: `operations.graphql` (20 KB) — contains all queries and mutations. Apollo codegen compiles these into Kotlin classes like `SharePostMutation`, `NotificationsQuery`, etc.
 ```
@@ -142,7 +142,7 @@ Perfect! I have all the information. Let me compile my findings:
 
 **1. Mutation Definition & Location:**
 
-File: `/Users/kodingwarrior/fediverse/hackerspub/graphql/notification.ts` (lines 143-159)
+File: `/home/<USER>/fediverse/hackerspub/graphql/notification.ts` (lines 143-159)
 
 ```typescript
 builder.mutationField("markNotificationsAsRead", (t) =>
@@ -162,7 +162,7 @@ builder.mutationField("markNotificationsAsRead", (t) =>
   }));
 ```
 
-**GraphQL Schema Definition:** `/Users/kodingwarrior/fediverse/hackerspub/graphql/schema.graphql` (line 695)
+**GraphQL Schema Definition:** `/home/<USER>/fediverse/hackerspub/graphql/schema.graphql` (line 695)
 ```graphql
 """
 Marks all notifications as read up to the current time. Returns the timestamp.
@@ -172,7 +172,7 @@ markNotificationsAsRead: DateTime!
 
 **2. Usage Pattern:**
 
-The hackerspub backend marks **all notifications as read globally** when the user visits the notifications page. See `/Users/kodingwarrior/fediverse/hackerspub/web/routes/notifications.tsx` where it updates `accountTable.notificationRead` to current timestamp.
+The hackerspub backend marks **all notifications as read globally** when the user visits the notifications page. See `/home/<USER>/fediverse/hackerspub/web/routes/notifications.tsx` where it updates `accountTable.notificationRead` to current timestamp.
 
 No per-notification mutation exists—there's only one mutation that marks all notifications up to the current time as read.
 
@@ -189,7 +189,7 @@ tool_use Read
 id: toolu_01XjMz1DXxCHsqAyGFvnEusa
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsViewModel.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsViewModel.kt"
 }
 ```
 
@@ -238,7 +238,7 @@ tool_use Read
 id: toolu_01AQ7h2d1ewJzP3cjSAtWruR
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsScreen.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsScreen.kt"
 }
 ```
 
@@ -319,7 +319,7 @@ tool_use Read
 id: toolu_012rvzdG42G8XJBJGh5U2zrf
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/local/NotificationStateManager.kt"
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/local/NotificationStateManager.kt"
 }
 ```
 
@@ -390,7 +390,7 @@ tool_use Bash
 id: toolu_01BVQaXAfi8GCrpMpUY8CauB
 ```json
 {
-  "command": "ls /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/",
+  "command": "ls /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/",
   "description": "List graphql dir"
 }
 ```
@@ -410,7 +410,7 @@ tool_use Bash
 id: toolu_01LZd5QEGqm4YZecHJnuSdk6
 ```json
 {
-  "command": "wc -l /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "command": "wc -l /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "description": "Count operations.graphql lines"
 }
 ```
@@ -420,7 +420,7 @@ id: toolu_01LZd5QEGqm4YZecHJnuSdk6
 tool_result
 id: toolu_01LZd5QEGqm4YZecHJnuSdk6
 ```
-     925 /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql
+     925 /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql
 ```
 
 > TOOL
@@ -430,7 +430,7 @@ id: toolu_013omAot5a3JVaMVQKfDJXtP
 ```json
 {
   "pattern": "mutation|markNotification",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "output_mode": "content",
   "-n": true
 }
@@ -473,7 +473,7 @@ id: toolu_01UDWEa2GJTfvs7zCwvnoTFk
 ```json
 {
   "pattern": "markNotification",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
   "output_mode": "content",
   "-n": true,
   "-C": 3
@@ -495,7 +495,7 @@ id: toolu_01JCWVwgyscdAQqpZ9eJTxdM
 ```json
 {
   "pattern": "markNotification|notificationRead",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
   "output_mode": "content",
   "-n": true,
   "-C": 2
@@ -517,7 +517,7 @@ id: toolu_014bWsEwZZMwXcFvoAhME4TW
 ```json
 {
   "pattern": "sharePost|SharePost",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "output_mode": "content",
   "-n": true,
   "-C": 10
@@ -602,7 +602,7 @@ tool_use Bash
 id: toolu_01XXQRKJqJdQoNQhNsbxpSC2
 ```json
 {
-  "command": "cat /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/build.gradle.kts | head -80",
+  "command": "cat /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/build.gradle.kts | head -80",
   "description": "Inspect app build.gradle"
 }
 ```
@@ -701,7 +701,7 @@ id: toolu_01DxHMsfuqCW7wbdZgJzXWxC
 ```json
 {
   "pattern": "apollo|graphql|schema",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/build.gradle.kts",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/build.gradle.kts",
   "output_mode": "content",
   "-n": true,
   "-C": 2
@@ -746,7 +746,7 @@ tool_use Bash
 id: toolu_01Pbms3zGpn9ztvTMy1hFoA5
 ```json
 {
-  "command": "grep -c \"markNotification\\|notificationRead\" /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
+  "command": "grep -c \"markNotification\\|notificationRead\" /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
   "description": "Check schema has mutation"
 }
 ```
@@ -765,7 +765,7 @@ tool_use Read
 id: toolu_01T7yEL2KoxTeHUmexMBTfcx
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "offset": 912
 }
 ```
@@ -829,7 +829,7 @@ id: toolu_018fFAitT6Fsb7sZ8z8PLSff
 ```json
 {
   "pattern": "markNotification",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
   "output_mode": "content",
   "-n": true,
   "-C": 3
@@ -851,7 +851,7 @@ id: toolu_01VzBqwoFi2VvytZTGdpVDjC
 ```json
 {
   "pattern": "^type Mutation",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
   "output_mode": "content",
   "-n": true,
   "-A": 80
@@ -907,7 +907,7 @@ tool_use Bash
 id: toolu_01JXTT3Sv8GAbZgX1895cyjz
 ```json
 {
-  "command": "grep -n \"markNotificationsAsRead\" /Users/kodingwarrior/fediverse/hackerspub/graphql/schema.graphql",
+  "command": "grep -n \"markNotificationsAsRead\" /home/<USER>/fediverse/hackerspub/graphql/schema.graphql",
   "description": "Confirm server schema"
 }
 ```
@@ -926,7 +926,7 @@ tool_use Bash
 id: toolu_01QeMhQqsb28M4Ap9L5aKs29
 ```json
 {
-  "command": "cd /Users/kodingwarrior/fediverse/hackerspub && git log --oneline -5 graphql/notification.ts graphql/schema.graphql 2>&1 | head -10",
+  "command": "cd /home/<USER>/fediverse/hackerspub && git log --oneline -5 graphql/notification.ts graphql/schema.graphql 2>&1 | head -10",
   "description": "Check server mutation deploy status"
 }
 ```
@@ -941,7 +941,7 @@ id: toolu_01QeMhQqsb28M4Ap9L5aKs29
 25c4549 Merge pull request #223 from malkoG/feature/article-edit-web-next
 b029ca8 Regenerate schema with updateArticle mutation and rawContent field
 3257122 Guard markNotificationsAsRead against stale overwrites
-Shell cwd was reset to /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh
+Shell cwd was reset to /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh
 ```
 
 > AGENT
@@ -1174,7 +1174,7 @@ id: toolu_01JZUKqk2GxGNRMwsmM8jP71
 ```json
 {
   "pattern": "markNotification",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/schema.graphqls",
   "output_mode": "content",
   "-n": true,
   "-C": 3
@@ -1225,7 +1225,7 @@ tool_use Read
 id: toolu_0177KqLyKLmMa1GXRUtjcENZ
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub/graphql/notification.ts"
+  "file_path": "/home/<USER>/fediverse/hackerspub/graphql/notification.ts"
 }
 ```
 
@@ -1553,7 +1553,7 @@ tool_use Write
 id: toolu_01UjTf7tDdEJMw5UL7MsyDGK
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/extensions.graphqls",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/extensions.graphqls",
   "content": "extend type Mutation {\n    \"\"\"\n    Marks all notifications as read up to the current time. Returns the timestamp.\n    \"\"\"\n    markNotificationsAsRead: DateTime!\n}\n"
 }
 ```
@@ -1563,7 +1563,7 @@ id: toolu_01UjTf7tDdEJMw5UL7MsyDGK
 tool_result
 id: toolu_01UjTf7tDdEJMw5UL7MsyDGK
 ```
-File created successfully at: /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/extensions.graphqls
+File created successfully at: /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/extensions.graphqls
 ```
 
 > TOOL
@@ -1611,7 +1611,7 @@ id: toolu_015X65p6gJFfxwsj8fMVqS84
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "old_string": "mutation UpdateAccount($input: UpdateAccountInput!) {\n    updateAccount(input: $input) {\n        account {\n            id\n            name\n            bio\n            avatarUrl\n            links {\n                name\n                url\n            }\n        }\n    }\n}",
   "new_string": "mutation UpdateAccount($input: UpdateAccountInput!) {\n    updateAccount(input: $input) {\n        account {\n            id\n            name\n            bio\n            avatarUrl\n            links {\n                name\n                url\n            }\n        }\n    }\n}\n\nmutation MarkNotificationsAsRead {\n    markNotificationsAsRead\n}"
 }
@@ -1631,7 +1631,7 @@ tool_use Read
 id: toolu_01QKcfepYfrxC3wXpska4rxM
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "offset": 910
 }
 ```
@@ -1672,7 +1672,7 @@ id: toolu_011Sj96tWy9wJhRN7cTRsbv5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql",
   "old_string": "mutation UpdateAccount($input: UpdateAccountInput!) {\n    updateAccount(input: $input) {\n        account {\n            id\n            name\n            bio\n            avatarUrl\n            links {\n                name\n                url\n            }\n        }\n    }\n}\n",
   "new_string": "mutation UpdateAccount($input: UpdateAccountInput!) {\n    updateAccount(input: $input) {\n        account {\n            id\n            name\n            bio\n            avatarUrl\n            links {\n                name\n                url\n            }\n        }\n    }\n}\n\nmutation MarkNotificationsAsRead {\n    markNotificationsAsRead\n}\n"
 }
@@ -1683,7 +1683,7 @@ id: toolu_011Sj96tWy9wJhRN7cTRsbv5
 tool_result
 id: toolu_011Sj96tWy9wJhRN7cTRsbv5
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/graphql/pub/hackers/android/operations.graphql has been updated successfully.
 ```
 
 > TOOL
@@ -1730,7 +1730,7 @@ tool_use Read
 id: toolu_01FwHApD2ckD9EHi5aNmuQmH
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 1,
   "limit": 80
 }
@@ -1815,7 +1815,7 @@ id: toolu_01G4ddw8mZYWEJLhGwwdw3T5
 ```json
 {
   "pattern": "getNotifications|notificationsPage",
-  "path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "output_mode": "content",
   "-n": true,
   "-C": 3
@@ -1842,7 +1842,7 @@ tool_use Bash
 id: toolu_01BjQBw531xySHyjzR1EvRqn
 ```json
 {
-  "command": "wc -l /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "command": "wc -l /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "description": "Count repo lines"
 }
 ```
@@ -1852,7 +1852,7 @@ id: toolu_01BjQBw531xySHyjzR1EvRqn
 tool_result
 id: toolu_01BjQBw531xySHyjzR1EvRqn
 ```
-    1609 /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt
+    1609 /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt
 ```
 
 > TOOL
@@ -1861,7 +1861,7 @@ tool_use Read
 id: toolu_013YUMvfsfAUUxoLcx9B953D
 ```json
 {
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "offset": 155,
   "limit": 70
 }
@@ -1936,7 +1936,7 @@ id: toolu_01A6Dsys5zk3je4V2ruwy84Y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "old_string": "import pub.hackers.android.graphql.LoginByUsernameMutation\nimport pub.hackers.android.graphql.NotificationsQuery",
   "new_string": "import pub.hackers.android.graphql.LoginByUsernameMutation\nimport pub.hackers.android.graphql.MarkNotificationsAsReadMutation\nimport pub.hackers.android.graphql.NotificationsQuery"
 }
@@ -1949,7 +1949,7 @@ id: toolu_019h9rnjSkJr42jVwq5uniux
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt",
   "old_string": "                }\n            }\n        } catch (e: Exception) {\n            Result.failure(e)\n        }\n    }\n\n    suspend fun searchPosts(",
   "new_string": "                }\n            }\n        } catch (e: Exception) {\n            Result.failure(e)\n        }\n    }\n\n    suspend fun markNotificationsAsRead(): Result<Unit> {\n        return try {\n            val response = apolloClient.mutation(MarkNotificationsAsReadMutation()).execute()\n            if (response.hasErrors()) {\n                Result.failure(Exception(response.errors?.firstOrNull()?.message ?: \"Unknown error\"))\n            } else {\n                Result.success(Unit)\n            }\n        } catch (e: Exception) {\n            Result.failure(e)\n        }\n    }\n\n    suspend fun searchPosts("
 }
@@ -1960,7 +1960,7 @@ id: toolu_019h9rnjSkJr42jVwq5uniux
 tool_result
 id: toolu_01A6Dsys5zk3je4V2ruwy84Y
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
 ```
 
 > TOOL
@@ -1968,7 +1968,7 @@ The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notific
 tool_result
 id: toolu_019h9rnjSkJr42jVwq5uniux
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/data/repository/HackersPubRepository.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2016,7 +2016,7 @@ id: toolu_01Rj4ypxcChqjXnQNzBxyD1c
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsViewModel.kt",
+  "file_path": "/home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsViewModel.kt",
   "old_string": "@HiltViewModel\nclass NotificationsViewModel @Inject constructor(\n    private val repository: HackersPubRepository,\n    private val notificationStateManager: NotificationStateManager,\n) : ViewModel() {\n\n    val notifications: Flow<PagingData<Notification>> =\n        cursorPager { after -> repository.notificationsPage(after) }\n            .flow\n            .cachedIn(viewModelScope)\n\n    fun markAsSeen() {\n        viewModelScope.launch { notificationStateManager.markAsSeen() }\n    }\n}",
   "new_string": "@HiltViewModel\nclass NotificationsViewModel @Inject constructor(\n    private val repository: HackersPubRepository,\n    private val notificationStateManager: NotificationStateManager,\n) : ViewModel() {\n\n    val notifications: Flow<PagingData<Notification>> =\n        cursorPager { after -> repository.notificationsPage(after) }\n            .flow\n            .cachedIn(viewModelScope)\n\n    init {\n        viewModelScope.launch { repository.markNotificationsAsRead() }\n    }\n\n    fun markAsSeen() {\n        viewModelScope.launch { notificationStateManager.markAsSeen() }\n    }\n}"
 }
@@ -2027,7 +2027,7 @@ id: toolu_01Rj4ypxcChqjXnQNzBxyD1c
 tool_result
 id: toolu_01Rj4ypxcChqjXnQNzBxyD1c
 ```
-The file /Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsViewModel.kt has been updated successfully.
+The file /home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/notifications/NotificationsViewModel.kt has been updated successfully.
 ```
 
 > TOOL
@@ -2089,14 +2089,14 @@ id: toolu_01MHuUxx3mDDo5p645Eobset
 - To keep applying to the value parameter only, use the '@param:' annotation target.
 
 See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleScreen.kt:69:42 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleViewModel.kt:40:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleScreen.kt:69:42 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeArticleViewModel.kt:40:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
 - To opt in to applying to both value parameter and field, add '-Xannotation-default-target=param-property' to your compiler arguments.
 - To keep applying to the value parameter only, use the '@param:' annotation target.
 
 See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeScreen.kt:93:35 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
-w: file:///Users/kodingwarrior/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeViewModel.kt:53:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeScreen.kt:93:35 'fun <reified VM : ViewModel> hiltViewModel(viewModelStoreOwner: ViewModelStoreOwner = ..., key: String? = ...): VM' is deprecated. Moved to package: androidx.hilt.lifecycle.viewmodel.compose.
+w: file:///home/<USER>/fediverse/hackerspub-android-worktrees/fix-notification-refresh/app/src/main/java/pub/hackers/android/ui/screens/compose/ComposeViewModel.kt:53:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
 - To opt in to applying to both value parameter and field, add '-Xannotation-default-target=param-property' to your compiler arguments.
 - To keep applying to the value parameter only, use the '@param:' annotation target. […]
 

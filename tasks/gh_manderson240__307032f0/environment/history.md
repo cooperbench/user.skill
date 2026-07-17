@@ -18,7 +18,7 @@ id: toolu_01EbwCpESxX1Bh71cFRQq71g
 {
   "description": "Explore release notes and config",
   "subagent_type": "Explore",
-  "prompt": "I need to find three things in this codebase and local environment:\n\n1. **Release notes**: Check if there's a `/release-notes` skill, file, or command available. Search for:\n   - Skills matching \"release-notes\" in the skills list\n   - Files named release-notes anywhere in the project or ~/.claude/\n   - Any references to release notes in CLAUDE.md or settings\n\n2. **Current Claude Code configuration**: Read and summarize the current state of:\n   - ~/.claude/settings.json (the main config)\n   - ~/.claude/settings.local.json (if exists)\n   - Any .claude/settings.json in the project directory /home/mike-anderson/dev/cohezion/.claude/\n   - ~/.claude.json (legacy config if exists)\n\n3. **Current hooks and agents**: List what's currently configured:\n   - All files in ~/.claude/agents/\n   - All hook configurations in settings\n   - Any MCP server configurations\n\nBe thorough — read file contents, not just list paths. Report exact contents of config files."
+  "prompt": "I need to find three things in this codebase and local environment:\n\n1. **Release notes**: Check if there's a `/release-notes` skill, file, or command available. Search for:\n   - Skills matching \"release-notes\" in the skills list\n   - Files named release-notes anywhere in the project or ~/.claude/\n   - Any references to release notes in CLAUDE.md or settings\n\n2. **Current Claude Code configuration**: Read and summarize the current state of:\n   - ~/.claude/settings.json (the main config)\n   - ~/.claude/settings.local.json (if exists)\n   - Any .claude/settings.json in the project directory /home/<USER>/dev/cohezion/.claude/\n   - ~/.claude.json (legacy config if exists)\n\n3. **Current hooks and agents**: List what's currently configured:\n   - All files in ~/.claude/agents/\n   - All hook configurations in settings\n   - Any MCP server configurations\n\nBe thorough — read file contents, not just list paths. Report exact contents of config files."
 }
 ```
 
@@ -100,7 +100,7 @@ I've completed a thorough search of the Claude Code configuration and found deta
 **Status: Not found**
 
 There is NO `/release-notes` skill, command, or dedicated release notes file in:
-- Skills list (despite extensive skill marketplace in `/home/mike-anderson/.claude/skills/`)
+- Skills list (despite extensive skill marketplace in `/home/<USER>/.claude/skills/`)
 - Files named "release*" anywhere in `~/.claude/` or the project directories
 - CLAUDE.md or settings references
 
@@ -110,7 +110,7 @@ The closest reference is in `~/.claude.json` (legacy config): `"lastReleaseNotes
 
 ### 2. Current Claude Code Configuration
 
-**Global Configuration: `/home/mike-anderson/.claude/settings.json`**
+**Global Configuration: `/home/<USER>/.claude/settings.json`**
 
 Key settings (247 lines):
 - **Environment Variables**: Task tracking enabled, experimental agent teams enabled, LSP enabled, MCP timeout 30s
@@ -129,7 +129,7 @@ tool_use Read
 id: toolu_019TUbYnSgTfFydQYZqshEbX
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/settings.json"
+  "file_path": "/home/<USER>/.claude/settings.json"
 }
 ```
 
@@ -139,7 +139,7 @@ tool_use Read
 id: toolu_01H9ZXq5rz1ZVcWsZdNPNz5o
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/settings.json"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/settings.json"
 }
 ```
 
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_01UGcFtYSVFoEeyFfZW6HBjA
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.claude/settings.local.json"
+  "file_path": "/home/<USER>/dev/cohezion/.claude/settings.local.json"
 }
 ```
 
@@ -369,7 +369,7 @@ tool_use Bash
 id: toolu_0177ajGPHXNKt2hTZPzhpo4W
 ```json
 {
-  "command": "cat /home/mike-anderson/.claude.json | python3 -c \"import sys,json; d=json.load(sys.stdin); print('lastReleaseNotesSeen:', d.get('lastReleaseNotesSeen','unknown')); print('autoUpdaterStatus:', d.get('autoUpdaterStatus','unknown')); print('startupCount:', d.get('startupCount','unknown'))\" 2>/dev/null",
+  "command": "cat /home/<USER>/.claude.json | python3 -c \"import sys,json; d=json.load(sys.stdin); print('lastReleaseNotesSeen:', d.get('lastReleaseNotesSeen','unknown')); print('autoUpdaterStatus:', d.get('autoUpdaterStatus','unknown')); print('startupCount:', d.get('startupCount','unknown'))\" 2>/dev/null",
   "description": "Check last seen release notes and auto-update status"
 }
 ```
@@ -380,7 +380,7 @@ tool_use Bash
 id: toolu_01Hani1nUzRjHLU2YVYErfqh
 ```json
 {
-  "command": "ls -la /home/mike-anderson/.claude/hooks/ 2>/dev/null",
+  "command": "ls -la /home/<USER>/.claude/hooks/ 2>/dev/null",
   "description": "List global hook scripts"
 }
 ```
@@ -443,7 +443,7 @@ tool_use Read
 id: toolu_01AHFjtP4ntXKBgaqDS6i51b
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/post-compact-context.sh"
+  "file_path": "/home/<USER>/.claude/hooks/post-compact-context.sh"
 }
 ```
 
@@ -453,7 +453,7 @@ tool_use Read
 id: toolu_016zXxpRv4WG59fcSU7SKfgv
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/check-settings-size.sh"
+  "file_path": "/home/<USER>/.claude/hooks/check-settings-size.sh"
 }
 ```
 
@@ -562,7 +562,7 @@ tool_use Write
 id: toolu_01B5v2DKNeW8wEzhteL3wjBZ
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "content": "# Plan: Autonomous Config Optimization System\n\n## Context\n\n**Problem:** Claude Code ships ~8 releases per 9 days (April 2026 cadence). New features, settings, env vars, hooks, and security hardening arrive faster than any human can track. Currently, your only signal is the built-in `/release-notes` picker — reactive, manual, and easy to skip.\n\n**Current State:** Version 2.1.100 (latest). 23 plugins, 9 global hooks, 22 project hooks, comprehensive permissions. Well-tuned but with several recent features unadopted.\n\n**Goal:** Build a self-maintaining system that (1) applies immediate optimizations from the current gap analysis, (2) automatically surfaces and recommends new features on every version bump, and (3) provides a one-command audit to diff your config against known best practices.\n\n**Outcome:** You always know what's new, config stays optimized, and no feature falls through the cracks.\n\n---\n\n## Phase 1: Immediate Config Optimizations (settings.json edits)\n\nThese are features from recent releases (v2.1.94–2.1.100) that your config doesn't yet leverage.\n\n### Task 1.1: Add new env vars for rendering and sandboxing\n\n**File:** `~/.claude/settings.json` → `env` block\n\nAdd:\n```json\n\"CLAUDE_CODE_NO_FLICKER\": \"1\",\n\"CLAUDE_CODE_SUBPROCESS_ENV_SCRUB\": \"1\"\n```\n\n- `NO_FLICKER` enables alt-screen rendering with virtualized scrollback — eliminates terminal flicker during tool calls. Unlocks the Focus View toggle (`Ctrl+O`).\n- `SUBPROCESS_ENV_SCRUB` enables PID namespace isolation for subprocesses — security hardening that […]
 
 > TOOL
@@ -570,7 +570,7 @@ id: toolu_01B5v2DKNeW8wEzhteL3wjBZ
 tool_result
 id: toolu_01B5v2DKNeW8wEzhteL3wjBZ
 ```
-File created successfully at: /home/mike-anderson/.claude/plans/elegant-singing-tome.md
+File created successfully at: /home/<USER>/.claude/plans/elegant-singing-tome.md
 ```
 
 > AGENT
@@ -658,7 +658,7 @@ id: toolu_01VeLSR87KeonRauc3L5UyXe
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "- Log the denied tool + reason to `~/.claude/logs/denied-tools.log`\n- Track denial patterns (frequent false-positive denials → candidate for permission allow-list)\n- Return `{\"retry\": true}` for known-safe patterns (configurable allowlist)",
   "new_string": "- Log the denied tool + reason to `~/.claude/logs/denied-tools.log`\n- Track denial patterns (frequent false-positive denials → candidate for permission allow-list)\n- Return `{\"retry\": true}` for known-safe read-only patterns (configurable allowlist in `~/.claude/hooks/safe-retry-patterns.txt`)\n- **Decision: Log + auto-retry safe patterns** (user confirmed)"
 }
@@ -669,7 +669,7 @@ id: toolu_01VeLSR87KeonRauc3L5UyXe
 tool_result
 id: toolu_01VeLSR87KeonRauc3L5UyXe
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > TOOL
@@ -679,7 +679,7 @@ id: toolu_018tVZLiy1EJ1NtWoAiT1adN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "| `hookify` | **Consider enabling** | Auto-generates hooks from natural language — could simplify Phase 2 |\n| `agent-sdk-dev` | **Consider enabling** | Managed Agents just hit public beta — relevant for compound loop |\n\nDecision: Present to user for selection.",
   "new_string": "| `hookify` | **Enable** | Auto-generates hooks from natural language — simplifies hook creation |\n| `agent-sdk-dev` | **Enable** | Managed Agents just hit public beta — relevant for compound loop |\n\n**Decision: Enable both** (user confirmed)"
 }
@@ -704,7 +704,7 @@ id: toolu_01WT3URvrUhcvxKLjjbVkwjr
 ```json
 {
   "pattern": "hookify.*Consider",
-  "path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "output_mode": "content"
 }
 ```
@@ -723,7 +723,7 @@ tool_use Read
 id: toolu_01TpJRHSjL77ZvA5p8xsCt4h
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "offset": 155,
   "limit": 15
 }
@@ -758,7 +758,7 @@ id: toolu_013xpi9wmb59GVirKcpDwbCm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "| `hookify` | **Consider enabling** | Auto-generates hooks from natural language — could simplify Phase 2 |\n| `agent-sdk-dev` | **Consider enabling** | Managed Agents just hit public beta — relevant for compound loop |\n| `claude-code-setup` | Skip | One-time setup, you're already configured |\n| `document-skills` | Skip | Anthropic agent skills for doc generation — low relevance |\n| `frontend-design` | Skip | Not relevant to Cohezion's Python backend |\n\nDecision: Present to user for selection.",
   "new_string": "| `hookify` | **Enable** | Auto-generates hooks from natural language — simplifies hook creation |\n| `agent-sdk-dev` | **Enable** | Managed Agents hit public beta — relevant for compound loop |\n| `claude-code-setup` | Skip | One-time setup, already configured |\n| `document-skills` | Skip | Low relevance |\n| `frontend-design` | Skip | Not relevant to Python backend |\n\n**Decision: Enable hookify + agent-sdk-dev** (user confirmed)"
 }
@@ -769,7 +769,7 @@ id: toolu_013xpi9wmb59GVirKcpDwbCm
 tool_result
 id: toolu_013xpi9wmb59GVirKcpDwbCm
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1070,7 +1070,7 @@ tool_use Read
 id: toolu_01ST1VLzXgzusj6csYnSbCNf
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md"
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md"
 }
 ```
 
@@ -1115,7 +1115,7 @@ tool_use Write
 id: toolu_01LJP9S5kxYRdEEMBydAL3py
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "content": "# Plan: Full-Spectrum Anthropic Intelligence Feed + Config Optimization\n\n## Context\n\n**Problem:** Anthropic ships across 11+ channels — CLI releases (~3/week), API platform changes (~4/month), model launches, deprecation deadlines, research papers, alignment findings, blog posts, system cards, and more. Currently your only signal is the built-in `/release-notes` picker — reactive, manual, CLI-only, and blind to the API/research/blog surface.\n\n**Current State:** Claude Code v2.1.100 (latest). 23 plugins, 9 global hooks, 22 project hooks, comprehensive permissions. Well-tuned but with gaps from recent releases and zero coverage of the broader Anthropic ecosystem.\n\n**Urgent deadlines discovered:**\n- **April 19, 2026:** Claude Haiku 3 (`claude-3-haiku-20240307`) retires — any code referencing this model ID will break\n- **April 30, 2026:** 1M context beta header (`context-1m-2025-08-07`) stops working for Sonnet 4.5/4 — must migrate to Sonnet 4.6 or Opus 4.6\n\n**Goal:** Build an autonomous system that (1) applies immediate optimizations from today's gap analysis, (2) monitors all 11 Anthropic sources for changes, (3) routes findings to the right action (config edit, code change, vault knowledge, or strategy), and (4) provides a one-command audit to check your config against all known features.\n\n---\n\n## Phase 1: Immediate Config Optimizations\n\nFeatures from v2.1.89–2.1.100 that your config doesn't leverage yet.\n\n### Task […]
 
 > TOOL
@@ -1123,7 +1123,7 @@ id: toolu_01LJP9S5kxYRdEEMBydAL3py
 tool_result
 id: toolu_01LJP9S5kxYRdEEMBydAL3py
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1258,7 +1258,7 @@ tool_use Read
 id: toolu_01QPzHLsxYsjxmyxfCLrZW1t
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "offset": 92,
   "limit": 50
 }
@@ -1311,7 +1311,7 @@ id: toolu_01ByC4p5GcpqVoLdaQbgHKqq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.2: Create version-watch SessionStart hook\n\n**New file:** `~/.claude/hooks/version-watch.sh`\n\nLogic:\n1. Read `~/.claude/anthropic-intel/.last-known-version` (seed with `2.1.100`)\n2. Compare against `claude --version`\n3. If changed → emit: `\"[version-watch] Claude Code updated: {old} → {new}. Run /release-notes or /anthropic-scan to review.\"`\n4. If unchanged → silent\n\n**Wire into:** `~/.claude/settings.json` → `hooks.SessionStart`\n\n### Task 3.3: Create `/anthropic-scan` slash command\n\n**New file:** `~/.claude/commands/anthropic-scan.md`\n\nThe comprehensive \"pull\" command. When invoked:",
   "new_string": "### Task 3.2: Create version-watch + scan-trigger SessionStart hook\n\n**New file:** `~/.claude/hooks/version-watch.sh`\n\nLogic:\n1. Read `~/.claude/anthropic-intel/.last-known-version` (seed with `2.1.100`)\n2. Compare against `claude --version`\n3. If changed → emit version bump notice\n4. **Always** emit: `\"[anthropic-intel] Run /anthropic-scan for full Anthropic ecosystem check.\"`\n\nThis ensures every session starts with a proactive scan directive.\n\n**Wire into:** `~/.claude/settings.json` → `hooks.SessionStart`\n\n### Task 3.3: Create proactive scan rule\n\n**New file:** `~/.claude/rules/anthropic-intel-scan.md`\n\nA rule that instructs Claude to:\n- When the `[anthropic-intel]` directive appears in SessionStart hook output, **proactively run `/anthropic-scan`** at the start of the session before responding to the user's first message\n- Present the scan results as a brief summary (URGENT items highlighted, rest collapsed)\n- Offer to apply recommended config changes or route findings to vault\n\nThis is what makes it truly proactive — the hook triggers the directive, the rule ensures Claude acts on it.\n\n### Task […]
 
@@ -1320,7 +1320,7 @@ id: toolu_01ByC4p5GcpqVoLdaQbgHKqq
 tool_result
 id: toolu_01ByC4p5GcpqVoLdaQbgHKqq
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1334,7 +1334,7 @@ id: toolu_01XMANzHs6JN71WYNVYo6zL5
 ```json
 {
   "replace_all": true,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.4: Create known-features manifest",
   "new_string": "### Task 3.5: Create known-features manifest"
 }
@@ -1356,7 +1356,7 @@ id: toolu_01WnY2XHf8rWP2bsCYmbKD9n
 ```json
 {
   "pattern": "### Task 3\\.",
-  "path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "output_mode": "content"
 }
 ```
@@ -1380,7 +1380,7 @@ tool_use Read
 id: toolu_015QTsZr8hV11JixE7FRcdSy
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "offset": 283,
   "limit": 25
 }
@@ -1425,7 +1425,7 @@ id: toolu_019sGQsx3F8BGMPuC8eDUWJZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.4: Create features manifest\n\n**New file:** `~/.claude/anthropic-intel/features-manifest.json`",
   "new_string": "### Task 3.5: Create features manifest\n\n**New file:** `~/.claude/anthropic-intel/features-manifest.json`"
 }
@@ -1436,7 +1436,7 @@ id: toolu_019sGQsx3F8BGMPuC8eDUWJZ
 tool_result
 id: toolu_019sGQsx3F8BGMPuC8eDUWJZ
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > TOOL
@@ -1446,7 +1446,7 @@ id: toolu_01AsHnEUfGUZ8cHmegocExUn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.5: Create API features manifest",
   "new_string": "### Task 3.6: Create API features manifest"
 }
@@ -1457,7 +1457,7 @@ id: toolu_01AsHnEUfGUZ8cHmegocExUn
 tool_result
 id: toolu_01AsHnEUfGUZ8cHmegocExUn
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1471,7 +1471,7 @@ id: toolu_019w7qPmenkukGPwk3BpHA3z
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "| `~/.claude/commands/anthropic-scan.md` | Create: full-spectrum audit slash command |",
   "new_string": "| `~/.claude/rules/anthropic-intel-scan.md` | Create: proactive scan rule (triggers scan every session) |\n| `~/.claude/commands/anthropic-scan.md` | Create: full-spectrum audit slash command |"
 }
@@ -1482,7 +1482,7 @@ id: toolu_019w7qPmenkukGPwk3BpHA3z
 tool_result
 id: toolu_019w7qPmenkukGPwk3BpHA3z
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1559,7 +1559,7 @@ id: toolu_01ScCrkgWyobp2WNDMsW721L
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "### Task 3.2: Create version-watch + scan-trigger SessionStart hook\n\n**New file:** `~/.claude/hooks/version-watch.sh`\n\nLogic:\n1. Read `~/.claude/anthropic-intel/.last-known-version` (seed with `2.1.100`)\n2. Compare against `claude --version`\n3. If changed → emit version bump notice\n4. **Always** emit: `\"[anthropic-intel] Run /anthropic-scan for full Anthropic ecosystem check.\"`\n\nThis ensures every session starts with a proactive scan directive.\n\n**Wire into:** `~/.claude/settings.json` → `hooks.SessionStart`\n\n### Task 3.3: Create proactive scan rule\n\n**New file:** `~/.claude/rules/anthropic-intel-scan.md`\n\nA rule that instructs Claude to:\n- When the `[anthropic-intel]` directive appears in SessionStart hook output, **proactively run `/anthropic-scan`** at the start of the session before responding to the user's first message\n- Present the scan results as a brief summary (URGENT items highlighted, rest collapsed)\n- Offer to apply recommended config changes or route findings to vault\n\nThis is what makes it truly proactive — the hook triggers the directive, the rule ensures Claude acts on it.\n\n### Task 3.4: Create `/anthropic-scan` slash command",
   "new_string": "### Task 3.2: Create version-watch + staleness-check SessionStart hook\n\n**New file:** `~/.claude/hooks/version-watch.sh`\n\nLogic (all instant, local filesystem only — zero network calls):\n1. Read `~/.claude/anthropic-intel/.last-known-version` (seed with `2.1.100`)\n2. Compare against `claude --version`\n3. If version changed → emit: `\"[version-watch] Claude Code updated: {old} → {new}. Run /release-notes to review CLI changes, or /anthropic-scan for full […]
 
@@ -1568,7 +1568,7 @@ id: toolu_01ScCrkgWyobp2WNDMsW721L
 tool_result
 id: toolu_01ScCrkgWyobp2WNDMsW721L
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1582,7 +1582,7 @@ id: toolu_01STG8CZAVBd8Vxmztt336n9
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "| `~/.claude/rules/anthropic-intel-scan.md` | Create: proactive scan rule (triggers scan every session) |",
   "new_string": "| `~/.claude/rules/anthropic-intel-scan.md` | Create: tiered proactivity rule (staleness nudge + scan behavior) |"
 }
@@ -1593,7 +1593,7 @@ id: toolu_01STG8CZAVBd8Vxmztt336n9
 tool_result
 id: toolu_01STG8CZAVBd8Vxmztt336n9
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1674,7 +1674,7 @@ Perfect. Now I have comprehensive information. Let me create a detailed audit re
 
 ## EXHAUSTIVE AUDIT: Claude Code Features NOT Being Used in Cohezion
 
-Based on thorough analysis of `/home/mike-anderson/.claude/settings.json` and the Cohezion codebase (`src/cohezion/`), here's what's available but NOT being leveraged:
+Based on thorough analysis of `/home/<USER>/.claude/settings.json` and the Cohezion codebase (`src/cohezion/`), here's what's available but NOT being leveraged:
 
 ---
 
@@ -1730,7 +1730,7 @@ tool_use Read
 id: toolu_01X1zMd4Vy7jhf1KbVtAasyh
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md"
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md"
 }
 ```
 
@@ -1763,7 +1763,7 @@ tool_use Write
 id: toolu_01VALb1Yiu7b6RKxCwsod8bC
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "content": "# Plan: Full-Spectrum Anthropic Intelligence Feed + Config Optimization\n\n## Context\n\n**Problem:** Anthropic ships across 11+ channels — CLI releases (~3/week), API platform changes (~4/month), model launches, deprecation deadlines, research papers, alignment findings, blog posts, system cards, and more. Currently your only signal is the built-in `/release-notes` picker — reactive, manual, CLI-only, and blind to the API/research/blog surface. Additionally, a deep audit reveals significant untapped capabilities in both Claude Code settings and the Anthropic API that Cohezion's codebase doesn't leverage.\n\n**Current State:** Claude Code v2.1.100 (latest). 23 plugins, 9 global hooks, 22 project hooks. Well-tuned but with:\n- 11+ unused env vars from recent releases\n- 9+ unused hook types\n- 7 Claude API features not leveraged in the codebase\n- Hardcoded model IDs/costs in `cost_aware_router.py` instead of Models API\n- No Anthropic prompt caching in CompoundExecutor\n- No compaction API usage\n\n**Urgent deadlines discovered:**\n- **April 19, 2026:** Claude Haiku 3 (`claude-3-haiku-20240307`) retires — any code referencing this model ID will break\n- **April 30, 2026:** 1M context beta header (`context-1m-2025-08-07`) stops working for Sonnet 4.5/4\n\n**Goal:** Build an autonomous system that:\n1. Applies immediate optimizations from the gap analysis\n2. Monitors all 11 Anthropic sources for changes\n3. **Agentically runs a full scan** when staleness […]
 
 > TOOL
@@ -1771,7 +1771,7 @@ id: toolu_01VALb1Yiu7b6RKxCwsod8bC
 tool_result
 id: toolu_01VALb1Yiu7b6RKxCwsod8bC
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -1840,7 +1840,7 @@ id: toolu_01TX8QLAakhtLoWi48gu3wRq
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/mike-anderson/.claude/plans/elegant-singing-tome.md
+Your plan has been saved to: /home/<USER>/.claude/plans/elegant-singing-tome.md
 You can refer back to it if needed during implementation.
 
 If this plan can be broken down into multiple independent tasks, consider using the TeamCreate tool to create a team and parallelize the work.
@@ -2024,7 +2024,7 @@ tool_use Bash
 id: toolu_01KvzC6ptdjLMzjgLQ6owUH1
 ```json
 {
-  "command": "mkdir -p /home/mike-anderson/.claude/anthropic-intel /home/mike-anderson/.claude/logs",
+  "command": "mkdir -p /home/<USER>/.claude/anthropic-intel /home/<USER>/.claude/logs",
   "description": "Create directories for anthropic-intel and logs"
 }
 ```
@@ -2073,7 +2073,7 @@ id: toolu_01SJa2CnnQjaV831QXqHeGfu
 ```json
 {
   "pattern": "claude-3-opus-20240229|claude-3-7-sonnet-20250219|claude-3-5-haiku-20241022|claude-3-5-sonnet-2024",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "output_mode": "content",
   "-C": 3
 }
@@ -2085,7 +2085,7 @@ tool_use Read
 id: toolu_01GAru1fqRPSSNSsvpG4cEmB
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "offset": 1,
   "limit": 20
 }
@@ -2164,7 +2164,7 @@ id: toolu_013q7Pn3YJofQV8NqBXMz3J6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "        \"anthropic\": {\n            \"claude-3-5-sonnet-20241022\": {\"input\": 3.00, \"output\": 15.00},\n            \"claude-3-opus-20240229\": {\"input\": 15.00, \"output\": 75.00},\n        },",
   "new_string": "        \"anthropic\": {\n            \"claude-sonnet-4-6\": {\"input\": 3.00, \"output\": 15.00},\n            \"claude-opus-4-6\": {\"input\": 15.00, \"output\": 75.00},\n        },"
 }
@@ -2177,7 +2177,7 @@ id: toolu_011dwvs1sKB8SrMbMWV5dCGS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "                self.model = \"claude-3-5-sonnet-20241022\"",
   "new_string": "                self.model = \"claude-sonnet-4-6\""
 }
@@ -2190,7 +2190,7 @@ id: toolu_0136zzpCHREAZGf2GYrq6EWo
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "        model: Model name (e.g., \"gpt-4o-mini\", \"claude-3-5-sonnet-20241022\")",
   "new_string": "        model: Model name (e.g., \"gpt-4o-mini\", \"claude-sonnet-4-6\")"
 }
@@ -2226,7 +2226,7 @@ tool_use Read
 id: toolu_01KftkxoqkX24DNhXzh1TKJH
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py"
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py"
 }
 ```
 
@@ -2301,7 +2301,7 @@ id: toolu_011ZJLJuFDLMrF2Tttpfkk8n
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "    - anthropic: Claude 3.5 Sonnet, Claude 3 Opus\n\n    Args:\n        provider: \"openai\" or \"anthropic\"\n        model: Model name (e.g., \"gpt-4o-mini\", \"claude-3-5-sonnet-20241022\")",
   "new_string": "    - anthropic: Claude Sonnet 4.6, Claude Opus 4.6\n\n    Args:\n        provider: \"openai\" or \"anthropic\"\n        model: Model name (e.g., \"gpt-4o-mini\", \"claude-sonnet-4-6\")"
 }
@@ -2314,7 +2314,7 @@ id: toolu_01Wzr1DrsdksMAMRB2HZohE6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "        \"anthropic\": {\n            \"claude-3-5-sonnet-20241022\": {\"input\": 3.00, \"output\": 15.00},\n            \"claude-3-opus-20240229\": {\"input\": 15.00, \"output\": 75.00},\n        },",
   "new_string": "        \"anthropic\": {\n            \"claude-sonnet-4-6\": {\"input\": 3.00, \"output\": 15.00},\n            \"claude-opus-4-6\": {\"input\": 15.00, \"output\": 75.00},\n        },"
 }
@@ -2327,7 +2327,7 @@ id: toolu_01JxUmQMbhhcYCLjYauazh2Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "                self.model = \"claude-3-5-sonnet-20241022\"",
   "new_string": "                self.model = \"claude-sonnet-4-6\""
 }
@@ -2338,7 +2338,7 @@ id: toolu_01JxUmQMbhhcYCLjYauazh2Q
 tool_result
 id: toolu_011ZJLJuFDLMrF2Tttpfkk8n
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
 ```
 
 > TOOL
@@ -2346,7 +2346,7 @@ The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/a
 tool_result
 id: toolu_01Wzr1DrsdksMAMRB2HZohE6
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
 ```
 
 > TOOL
@@ -2354,7 +2354,7 @@ The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/a
 tool_result
 id: toolu_01JxUmQMbhhcYCLjYauazh2Q
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
 ```
 
 > AGENT
@@ -2379,7 +2379,7 @@ id: toolu_01LXisrCiWGEcsPsV8xkQCSt
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "    \"CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS\": \"5000\"\n  },",
   "new_string": "    \"CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS\": \"5000\",\n    \"CLAUDE_CODE_NO_FLICKER\": \"1\",\n    \"CLAUDE_CODE_SUBPROCESS_ENV_SCRUB\": \"1\",\n    \"CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE\": \"true\"\n  },"
 }
@@ -2398,7 +2398,7 @@ Updated task #4 status
 tool_result
 id: toolu_01LXisrCiWGEcsPsV8xkQCSt
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > AGENT
@@ -2412,9 +2412,9 @@ id: toolu_01JZvF5Aod1hPEX5vwgkvpiA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
-  "old_string": "      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/post-bash-cleanup.sh\"\n          }\n        ]\n      }\n    ]\n  },",
-  "new_string": "      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/post-bash-cleanup.sh\"\n          }\n        ]\n      }\n    ],\n    \"PermissionDenied\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/on-permission-denied.sh\"\n          }\n        ]\n      }\n    ]\n  },"
+  "file_path": "/home/<USER>/.claude/settings.json",
+  "old_string": "      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/post-bash-cleanup.sh\"\n          }\n        ]\n      }\n    ]\n  },",
+  "new_string": "      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/post-bash-cleanup.sh\"\n          }\n        ]\n      }\n    ],\n    \"PermissionDenied\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/on-permission-denied.sh\"\n          }\n        ]\n      }\n    ]\n  },"
 }
 ```
 
@@ -2423,7 +2423,7 @@ id: toolu_01JZvF5Aod1hPEX5vwgkvpiA
 tool_result
 id: toolu_01JZvF5Aod1hPEX5vwgkvpiA
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > AGENT
@@ -2437,9 +2437,9 @@ id: toolu_01V9KgR9AYT1tD6WLcabDv86
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
-  "old_string": "    \"SessionStart\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/check-settings-size.sh\"\n          }\n        ]\n      }\n    ],",
-  "new_string": "    \"SessionStart\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/check-settings-size.sh\"\n          }\n        ]\n      },\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/mike-anderson/.claude/hooks/version-watch.sh\"\n          }\n        ]\n      }\n    ],"
+  "file_path": "/home/<USER>/.claude/settings.json",
+  "old_string": "    \"SessionStart\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/check-settings-size.sh\"\n          }\n        ]\n      }\n    ],",
+  "new_string": "    \"SessionStart\": [\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/check-settings-size.sh\"\n          }\n        ]\n      },\n      {\n        \"matcher\": \"all\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"/home/<USER>/.claude/hooks/version-watch.sh\"\n          }\n        ]\n      }\n    ],"
 }
 ```
 
@@ -2448,7 +2448,7 @@ id: toolu_01V9KgR9AYT1tD6WLcabDv86
 tool_result
 id: toolu_01V9KgR9AYT1tD6WLcabDv86
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > AGENT
@@ -2462,7 +2462,7 @@ id: toolu_01SgHjy6o3uroUwfFxFxuzpH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "      \"Bash(pre-commit:*)\",",
   "new_string": "      \"Bash(pre-commit:*)\",\n      \"Bash(tput:*)\",\n      \"Bash(stat:*)\",\n      \"Bash(ant:*)\",\n      \"Bash(cat:*)\",\n      \"Bash(diff:*)\",\n      \"Bash(which:*)\",\n      \"Bash(file:*)\",\n      \"Bash(readlink:*)\",\n      \"Bash(realpath:*)\","
 }
@@ -2473,7 +2473,7 @@ id: toolu_01SgHjy6o3uroUwfFxFxuzpH
 tool_result
 id: toolu_01SgHjy6o3uroUwfFxFxuzpH
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > TOOL
@@ -2483,7 +2483,7 @@ id: toolu_016eZapYPSDuPZZ54oEpRAYZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "    \"hookify@claude-plugins-official\": false,",
   "new_string": "    \"hookify@claude-plugins-official\": true,"
 }
@@ -2496,7 +2496,7 @@ id: toolu_01HHapzgwryQUrLtGPmUCmHH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "    \"agent-sdk-dev@claude-plugins-official\": false,",
   "new_string": "    \"agent-sdk-dev@claude-plugins-official\": true,"
 }
@@ -2509,7 +2509,7 @@ id: toolu_01HBGCFtRn3R4NbV8X63qB58
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"autoCompactPrompt\": \"Preserve: active plan file paths, task IDs, file paths being edited, test results, error messages, and architectural decisions. Summarize exploration and research. Drop verbose tool outputs and intermediate search results.\",",
   "new_string": "  \"autoCompactPrompt\": \"Preserve: active plan file paths, task IDs, file paths being edited, test results, error messages, architectural decisions, anthropic-scan findings, version-watch alerts, deprecation deadlines, and model ID references. Summarize exploration and research. Drop verbose tool outputs and intermediate search results.\","
 }
@@ -2522,7 +2522,7 @@ id: toolu_018WgHaCKe3VmusDG1GWDWPD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"spinnerTipsEnabled\": false,",
   "new_string": "  \"statusLine\": {\n    \"refreshInterval\": 30\n  },\n  \"spinnerTipsEnabled\": false,"
 }
@@ -2533,7 +2533,7 @@ id: toolu_018WgHaCKe3VmusDG1GWDWPD
 tool_result
 id: toolu_016eZapYPSDuPZZ54oEpRAYZ
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > TOOL
@@ -2541,7 +2541,7 @@ The file /home/mike-anderson/.claude/settings.json has been updated successfully
 tool_result
 id: toolu_01HHapzgwryQUrLtGPmUCmHH
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > TOOL
@@ -2549,7 +2549,7 @@ The file /home/mike-anderson/.claude/settings.json has been updated successfully
 tool_result
 id: toolu_01HBGCFtRn3R4NbV8X63qB58
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > TOOL
@@ -2557,7 +2557,7 @@ The file /home/mike-anderson/.claude/settings.json has been updated successfully
 tool_result
 id: toolu_018WgHaCKe3VmusDG1GWDWPD
 ```
-The file /home/mike-anderson/.claude/settings.json has been updated successfully.
+The file /home/<USER>/.claude/settings.json has been updated successfully.
 ```
 
 > AGENT
@@ -2612,7 +2612,7 @@ tool_use Write
 id: toolu_01DQfJx6HzW6sUNMjVJpuNCc
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/version-watch.sh",
+  "file_path": "/home/<USER>/.claude/hooks/version-watch.sh",
   "content": "#!/usr/bin/env bash\n# SessionStart hook: version-watch + staleness-check\n# Detects CLI version bumps and stale anthropic-intel scans.\n# Zero network calls — all local filesystem checks.\n\nINTEL_DIR=\"$HOME/.claude/anthropic-intel\"\nVERSION_FILE=\"$INTEL_DIR/.last-known-version\"\nSCAN_DATE_FILE=\"$INTEL_DIR/.last-scan-date\"\nSTALENESS_THRESHOLD_HOURS=24\n\n# Ensure intel directory exists\nmkdir -p \"$INTEL_DIR\"\n\n# --- Version check ---\nCURRENT_VERSION=$(claude --version 2>/dev/null | head -1 | grep -oP '[\\d.]+' | head -1)\n\nif [ -z \"$CURRENT_VERSION\" ]; then\n    exit 0  # Can't determine version, skip silently\nfi\n\nif [ -f \"$VERSION_FILE\" ]; then\n    LAST_VERSION=$(cat \"$VERSION_FILE\" 2>/dev/null)\n    if [ \"$CURRENT_VERSION\" != \"$LAST_VERSION\" ]; then\n        echo \"[version-watch] Claude Code updated: $LAST_VERSION -> $CURRENT_VERSION. Run /release-notes to review CLI changes.\"\n        echo \"$CURRENT_VERSION\" > \"$VERSION_FILE\"\n    fi\nelse\n    # First run — seed the version file\n    echo \"$CURRENT_VERSION\" > \"$VERSION_FILE\"\nfi\n\n# --- Staleness check ---\nif [ -f \"$SCAN_DATE_FILE\" ]; then\n    LAST_SCAN=$(cat \"$SCAN_DATE_FILE\" 2>/dev/null)\n    LAST_SCAN_EPOCH=$(date -d \"$LAST_SCAN\" +%s 2>/dev/null || echo \"0\")\n    NOW_EPOCH=$(date +%s)\n    DIFF_HOURS=$(( (NOW_EPOCH - LAST_SCAN_EPOCH) / 3600 ))\n\n    if [ \"$DIFF_HOURS\" -ge \"$STALENESS_THRESHOLD_HOURS\" ]; then\n        echo \"[anthropic-intel:stale] Last full scan was ${DIFF_HOURS}h ago (threshold: ${STALENESS_THRESHOLD_HOURS}h). Triggering background scan.\"\n    fi\nelse\n    # No scan ever run\n    echo \"[anthropic-intel:stale] No previous scan found. Triggering background scan.\"\nfi\n\nexit 0\n"
 }
 ```
@@ -2623,7 +2623,7 @@ tool_use Write
 id: toolu_018XBNyVpufMzeUwvVTLqahH
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/on-permission-denied.sh",
+  "file_path": "/home/<USER>/.claude/hooks/on-permission-denied.sh",
   "content": "#!/usr/bin/env bash\n# PermissionDenied hook: log denials + auto-retry safe patterns\n# Reads tool_name and reason from CLAUDE_HOOK_TOOL_NAME / CLAUDE_HOOK_DENIED_REASON env vars.\n\nLOG_DIR=\"$HOME/.claude/logs\"\nLOG_FILE=\"$LOG_DIR/denied-tools.log\"\nSAFE_PATTERNS_FILE=\"$HOME/.claude/hooks/safe-retry-patterns.txt\"\n\nmkdir -p \"$LOG_DIR\"\n\n# Extract tool info from hook context (passed via stdin as JSON)\nHOOK_INPUT=$(cat)\nTOOL_NAME=$(echo \"$HOOK_INPUT\" | python3 -c \"import sys,json; d=json.load(sys.stdin); print(d.get('tool_name', d.get('toolName', 'unknown')))\" 2>/dev/null || echo \"unknown\")\n\n# Log the denial\necho \"$(date -Iseconds) DENIED: $TOOL_NAME\" >> \"$LOG_FILE\"\n\n# Check if tool matches safe-retry patterns\nif [ -f \"$SAFE_PATTERNS_FILE\" ]; then\n    while IFS= read -r pattern; do\n        # Skip comments and empty lines\n        [[ \"$pattern\" =~ ^#.*$ || -z \"$pattern\" ]] && continue\n        if echo \"$TOOL_NAME\" | grep -qE \"$pattern\"; then\n            echo '{\"retry\": true}'\n            exit 0\n        fi\n    done < \"$SAFE_PATTERNS_FILE\"\nfi\n\n# Default: don't retry\nexit 0\n"
 }
 ```
@@ -2634,7 +2634,7 @@ tool_use Write
 id: toolu_011AtW2GAwcSTAHNWbZJAEVT
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/hooks/safe-retry-patterns.txt",
+  "file_path": "/home/<USER>/.claude/hooks/safe-retry-patterns.txt",
   "content": "# Patterns for safe auto-retry on PermissionDenied\n# One regex pattern per line. Lines starting with # are comments.\n# Matches against the tool name (e.g., \"Bash(ls:*)\", \"Read(/path)\")\n\n^Bash\\(ls:\n^Bash\\(stat:\n^Bash\\(cat:\n^Bash\\(which:\n^Bash\\(file:\n^Bash\\(readlink:\n^Bash\\(realpath:\n^Bash\\(tput:\n^Bash\\(wc:\n^Bash\\(diff:\n^Read\\(\n^Glob\\(\n^Grep\\(\n"
 }
 ```
@@ -2645,7 +2645,7 @@ tool_use Write
 id: toolu_011xbx33g8NeTXTvkh2cdjUR
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/rules/anthropic-intel-scan.md",
+  "file_path": "/home/<USER>/.claude/rules/anthropic-intel-scan.md",
   "content": "# Anthropic Intelligence Feed — Agentic Scan Rule\n\n## Trigger: `[anthropic-intel:stale]`\n\nWhen the SessionStart hook emits `[anthropic-intel:stale]`, **automatically spawn a background agent** to run `/anthropic-scan`:\n\n```\nAgent({\n  description: \"Anthropic ecosystem scan\",\n  prompt: \"Run /anthropic-scan to check all 11 Anthropic content sources for updates. Write findings to ~/.claude/anthropic-intel/latest-digest.md and update ~/.claude/anthropic-intel/.last-scan-date to today's ISO date. Focus on: deprecation deadlines, new CLI features, API changes, and research papers.\",\n  run_in_background: true\n})\n```\n\nThe main session continues unblocked. When the agent completes:\n\n1. Read `~/.claude/anthropic-intel/latest-digest.md`\n2. Surface a **brief summary** (3-5 lines max)\n3. Highlight any **URGENT** items (deprecation deadlines within 30 days, breaking changes)\n4. Offer to auto-apply **AUTO-APPLY** items (low-risk config changes)\n5. List **REVIEW** items for user decision\n\n## Trigger: `[version-watch]`\n\nWhen the hook detects a version bump, suggest running `/release-notes` for CLI-specific details.\n\n## Auto-Integration Behavior\n\nAfter any `/anthropic-scan` run, classify findings by risk tier:\n\n| Risk | Action |\n|------|--------|\n| **Low** (env vars, permissions, plugin enables) | Batch and present: \"Found N improvements. Apply all? [Y/n]\" |\n| **Medium** (hooks, structural settings, beta headers) | Present each individually with description + risk |\n| **High** (code changes, API migrations, architectural) | Report only with documentation links |\n\nAll applied changes are logged to `~/.claude/anthropic-intel/change-log.md`.\n\n## Do NOT\n\n- Run the scan if […]
 
 > TOOL
@@ -2653,7 +2653,7 @@ id: toolu_011xbx33g8NeTXTvkh2cdjUR
 tool_result
 id: toolu_01DQfJx6HzW6sUNMjVJpuNCc
 ```
-File created successfully at: /home/mike-anderson/.claude/hooks/version-watch.sh
+File created successfully at: /home/<USER>/.claude/hooks/version-watch.sh
 ```
 
 > TOOL
@@ -2661,7 +2661,7 @@ File created successfully at: /home/mike-anderson/.claude/hooks/version-watch.sh
 tool_result
 id: toolu_018XBNyVpufMzeUwvVTLqahH
 ```
-File created successfully at: /home/mike-anderson/.claude/hooks/on-permission-denied.sh
+File created successfully at: /home/<USER>/.claude/hooks/on-permission-denied.sh
 ```
 
 > TOOL
@@ -2669,7 +2669,7 @@ File created successfully at: /home/mike-anderson/.claude/hooks/on-permission-de
 tool_result
 id: toolu_011AtW2GAwcSTAHNWbZJAEVT
 ```
-File created successfully at: /home/mike-anderson/.claude/hooks/safe-retry-patterns.txt
+File created successfully at: /home/<USER>/.claude/hooks/safe-retry-patterns.txt
 ```
 
 > TOOL
@@ -2677,7 +2677,7 @@ File created successfully at: /home/mike-anderson/.claude/hooks/safe-retry-patte
 tool_result
 id: toolu_011xbx33g8NeTXTvkh2cdjUR
 ```
-File created successfully at: /home/mike-anderson/.claude/rules/anthropic-intel-scan.md
+File created successfully at: /home/<USER>/.claude/rules/anthropic-intel-scan.md
 ```
 
 > AGENT
@@ -2690,7 +2690,7 @@ tool_use Bash
 id: toolu_012LwJV6akx79Q6LG1VCijLB
 ```json
 {
-  "command": "chmod +x /home/mike-anderson/.claude/hooks/version-watch.sh /home/mike-anderson/.claude/hooks/on-permission-denied.sh",
+  "command": "chmod +x /home/<USER>/.claude/hooks/version-watch.sh /home/<USER>/.claude/hooks/on-permission-denied.sh",
   "description": "Make hook scripts executable"
 }
 ```
@@ -2701,7 +2701,7 @@ tool_use Write
 id: toolu_01FCg4xmVfdg5xjyidfPy8bu
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/commands/anthropic-scan.md",
+  "file_path": "/home/<USER>/.claude/commands/anthropic-scan.md",
   "content": "---\nname: anthropic-scan\ndescription: Full-spectrum scan of all 11 Anthropic content sources with auto-integration\n---\n\n# Anthropic Ecosystem Scan\n\nYou are running a full scan of the Anthropic ecosystem. Check all sources, classify findings by risk, and write a structured digest.\n\n## Step 1: CLI Feature Audit\n\nRead `~/.claude/settings.json` and compare against `~/.claude/anthropic-intel/features-manifest.json`:\n- Which features are adopted?\n- Which are available but not enabled?\n- Which are deprecated or superseded?\n\n## Step 2: API Platform Scan\n\nWebFetch `https://platform.claude.com/docs/en/release-notes/api` and extract:\n- New entries since last scan (check `~/.claude/anthropic-intel/.last-scan-date`)\n- **Deprecation deadlines** within 30 days → mark as URGENT\n- Beta headers that went GA → mark as AUTO-APPLY (remove beta header)\n- New tools and features → mark as REVIEW\n\n## Step 3: Model Deprecation Check\n\nWebFetch `https://platform.claude.com/docs/en/about-claude/model-deprecations` and cross-reference against:\n- Model IDs in `src/cohezion/swarm/cost_aware_router.py`\n- Model IDs in `src/cohezion/integrations/agentverse/api_llm_executor.py`\n- Any model IDs in test fixtures\n\nFlag any matches as URGENT.\n\n## Step 4: Research & Blog Scan\n\nWebFetch `https://www.anthropic.com/research` — list new papers since last scan.\nWebFetch `https://www.anthropic.com/news` — list new announcements.\n\nFor each item, classify relevance to Cohezion:\n- **High relevance**: alignment, agents, safety, interpretability, economic index\n- **Medium relevance**: model capabilities, API features, partnerships\n- **Low relevance**: consumer features, hiring, general AI policy\n\n## Step 5: Write Digest\n\nWrite findings to `~/.claude/anthropic-intel/latest-digest.md` with these sections:\n\n```markdown\n---\nscan_date: <ISO […]
 
 > TOOL
@@ -2710,7 +2710,7 @@ tool_use Write
 id: toolu_01LdYhvVms7v6C1WxdJSWqhZ
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/sources.json",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/sources.json",
   "content": "{\n  \"sources\": [\n    {\n      \"id\": \"claude-code-cli\",\n      \"name\": \"Claude Code CLI Releases\",\n      \"url\": \"https://github.com/anthropics/claude-code/releases\",\n      \"rss\": \"https://github.com/anthropics/claude-code/releases.atom\",\n      \"cadence\": \"3-4/week\",\n      \"action_type\": \"config\",\n      \"check_method\": \"version_compare\"\n    },\n    {\n      \"id\": \"claude-api-platform\",\n      \"name\": \"Claude API Platform Release Notes\",\n      \"url\": \"https://platform.claude.com/docs/en/release-notes/api\",\n      \"cadence\": \"2-4/month\",\n      \"action_type\": \"code_change\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"claude-code-docs\",\n      \"name\": \"Claude Code Documentation\",\n      \"url\": \"https://code.claude.com/docs/en/changelog\",\n      \"cadence\": \"3-4/week\",\n      \"action_type\": \"config\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"anthropic-blog\",\n      \"name\": \"Anthropic Blog / News\",\n      \"url\": \"https://www.anthropic.com/news\",\n      \"cadence\": \"4-6/month\",\n      \"action_type\": \"strategy\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"anthropic-research\",\n      \"name\": \"Anthropic Research\",\n      \"url\": \"https://www.anthropic.com/research\",\n      \"cadence\": \"2-4/month\",\n      \"action_type\": \"vault_knowledge\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"alignment-science\",\n      \"name\": \"Alignment Science Blog\",\n      \"url\": \"https://alignment.anthropic.com\",\n      \"cadence\": \"1-2/month\",\n      \"action_type\": \"vault_knowledge\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"system-cards\",\n      \"name\": \"Model System Cards\",\n      \"url\": \"https://www.anthropic.com/system-cards\",\n      \"cadence\": \"per_model_release\",\n      \"action_type\": \"vault_knowledge\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"model-deprecations\",\n      \"name\": \"Model Deprecation Schedule\",\n      \"url\": \"https://platform.claude.com/docs/en/about-claude/model-deprecations\",\n      \"cadence\": \"per_deprecation\",\n      \"action_type\": \"urgent_code_change\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"claude-help-center\",\n      \"name\": \"Claude Help Center Release Notes\",\n      \"url\": \"https://support.claude.com/en/articles/12138966-release-notes\",\n      \"cadence\": \"weekly\",\n      \"action_type\": \"awareness\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"project-glasswing\",\n      \"name\": \"Project Glasswing / Red Team\",\n      \"url\": \"https://red.anthropic.com\",\n      \"cadence\": \"per_release\",\n      \"action_type\": \"security_knowledge\",\n      \"check_method\": \"web_fetch_diff\"\n    },\n    {\n      \"id\": \"economic-index\",\n      \"name\": \"Anthropic Economic Index\",\n      \"url\": \"https://www.anthropic.com/research\",\n      \"cadence\": \"monthly\",\n      \"action_type\": \"strategy\",\n      \"check_method\": \"web_fetch_diff\"\n    }\n  ]\n}\n"
 }
 ```
@@ -2728,7 +2728,7 @@ id: toolu_012LwJV6akx79Q6LG1VCijLB
 tool_result
 id: toolu_01FCg4xmVfdg5xjyidfPy8bu
 ```
-File created successfully at: /home/mike-anderson/.claude/commands/anthropic-scan.md
+File created successfully at: /home/<USER>/.claude/commands/anthropic-scan.md
 ```
 
 > TOOL
@@ -2736,7 +2736,7 @@ File created successfully at: /home/mike-anderson/.claude/commands/anthropic-sca
 tool_result
 id: toolu_01LdYhvVms7v6C1WxdJSWqhZ
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/sources.json
+File created successfully at: /home/<USER>/.claude/anthropic-intel/sources.json
 ```
 
 > AGENT
@@ -2749,7 +2749,7 @@ tool_use Write
 id: toolu_01CXKke2CgLjGucJNiAsQLPP
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/features-manifest.json",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/features-manifest.json",
   "content": "{\n  \"manifest_version\": \"1.0.0\",\n  \"last_updated\": \"2026-04-10\",\n  \"features\": [\n    {\n      \"id\": \"no_flicker\",\n      \"name\": \"Flicker-free alt-screen rendering\",\n      \"version_added\": \"2.1.90\",\n      \"type\": \"env_var\",\n      \"key\": \"CLAUDE_CODE_NO_FLICKER\",\n      \"value\": \"1\",\n      \"risk\": \"low\",\n      \"category\": \"rendering\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"subprocess_env_scrub\",\n      \"name\": \"PID namespace isolation for subprocesses\",\n      \"version_added\": \"2.1.98\",\n      \"type\": \"env_var\",\n      \"key\": \"CLAUDE_CODE_SUBPROCESS_ENV_SCRUB\",\n      \"value\": \"1\",\n      \"risk\": \"low\",\n      \"category\": \"security\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"plugin_keep_marketplace\",\n      \"name\": \"Keep plugin marketplace cache on git pull failure\",\n      \"version_added\": \"2.1.90\",\n      \"type\": \"env_var\",\n      \"key\": \"CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE\",\n      \"value\": \"true\",\n      \"risk\": \"low\",\n      \"category\": \"resilience\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"permission_denied_hook\",\n      \"name\": \"PermissionDenied hook for auto-mode denials\",\n      \"version_added\": \"2.1.90\",\n      \"type\": \"hook_type\",\n      \"key\": \"PermissionDenied\",\n      \"risk\": \"medium\",\n      \"category\": \"hooks\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"status_line_refresh\",\n      \"name\": \"Status line refreshInterval setting\",\n      \"version_added\": \"2.1.97\",\n      \"type\": \"setting\",\n      \"key\": \"statusLine.refreshInterval\",\n      \"risk\": \"low\",\n      \"category\": \"ui\",\n      \"adopted\": true\n    },\n    {\n      \"id\": \"focus_view_toggle\",\n      \"name\": \"Focus view toggle (Ctrl+O) in NO_FLICKER mode\",\n      \"version_added\": \"2.1.97\",\n      \"type\": \"tool\",\n      \"key\": \"Ctrl+O\",\n      \"risk\": \"low\",\n      \"category\": \"ui\",\n      \"adopted\": true,\n      \"note\": \"Available via NO_FLICKER env var\"\n    },\n    {\n      \"id\": \"perforce_mode\",\n      \"name\": \"Perforce read-only file handling\",\n      \"version_added\": \"2.1.98\",\n      \"type\": \"env_var\",\n      \"key\": \"CLAUDE_CODE_PERFORCE_MODE\",\n      \"value\": \"1\",\n      \"risk\": \"low\",\n      \"category\": \"vcs\",\n      \"adopted\": false,\n      \"note\": \"Only relevant for Perforce users\"\n    },\n    {\n      \"id\": \"monitor_tool\",\n      \"name\": \"Monitor tool for streaming background […]
 
 > TOOL
@@ -2758,7 +2758,7 @@ tool_use Write
 id: toolu_01NUBT5ZiDs9VSsqqYuBZUgM
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/api-manifest.json",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/api-manifest.json",
   "content": "{\n  \"manifest_version\": \"1.0.0\",\n  \"last_updated\": \"2026-04-10\",\n  \"models\": {\n    \"current\": [\n      {\"id\": \"claude-opus-4-6\", \"alias\": \"claude-opus-4-6\", \"released\": \"2026-02-05\", \"context\": \"1M\", \"max_output\": \"128K\"},\n      {\"id\": \"claude-sonnet-4-6\", \"alias\": \"claude-sonnet-4-6\", \"released\": \"2026-02-17\", \"context\": \"1M\", \"max_output\": \"64K\"},\n      {\"id\": \"claude-haiku-4-5-20251001\", \"alias\": \"claude-haiku-4-5\", \"released\": \"2025-10-15\", \"context\": \"200K\", \"max_output\": \"8K\"},\n      {\"id\": \"claude-opus-4-5\", \"alias\": \"claude-opus-4-5\", \"released\": \"2025-11-24\", \"context\": \"200K\", \"max_output\": \"16K\"},\n      {\"id\": \"claude-sonnet-4-5-20250929\", \"alias\": \"claude-sonnet-4-5\", \"released\": \"2025-09-29\", \"context\": \"1M (beta)\", \"max_output\": \"16K\"}\n    ],\n    \"deprecated\": [\n      {\"id\": \"claude-3-haiku-20240307\", \"retirement_date\": \"2026-04-19\", \"replacement\": \"claude-haiku-4-5\"},\n      {\"id\": \"claude-3-5-sonnet-20241022\", \"retirement_date\": \"2025-10-28\", \"replacement\": \"claude-sonnet-4-5\"},\n      {\"id\": \"claude-3-5-sonnet-20240620\", \"retirement_date\": \"2025-10-28\", \"replacement\": \"claude-sonnet-4-5\"},\n      {\"id\": \"claude-3-5-haiku-20241022\", \"retirement_date\": \"2026-02-19\", \"replacement\": \"claude-haiku-4-5\"},\n      {\"id\": \"claude-3-7-sonnet-20250219\", \"retirement_date\": \"2026-02-19\", \"replacement\": \"claude-sonnet-4-6\"},\n      {\"id\": \"claude-3-opus-20240229\", \"retirement_date\": \"2026-01-05\", \"replacement\": \"claude-opus-4-5\"}\n    ]\n  },\n  \"beta_headers\": {\n    \"active\": [\n      {\"header\": \"managed-agents-2026-04-01\", \"feature\": \"Claude Managed Agents\", \"since\": \"2026-04-08\"},\n      {\"header\": \"advisor-tool-2026-03-01\", \"feature\": \"Advisor tool (executor + advisor pairing)\", \"since\": \"2026-04-09\"},\n      {\"header\": \"output-300k-2026-03-24\", \"feature\": \"300K output tokens on Batches API\", \"since\": \"2026-03-30\"}\n    ],\n    \"retired\": [\n      {\"header\": \"context-1m-2025-08-07\", \"feature\": \"1M context for Sonnet 4.5/4\", \"retirement_date\": \"2026-04-30\", \"note\": \"Opus 4.6 and Sonnet 4.6 have native 1M support\"},\n      {\"header\": \"structured-outputs-2025-11-13\", \"feature\": \"Structured outputs\", \"retirement_date\": \"2026-01-29\", \"note\": \"Now GA\"},\n      {\"header\": \"fine-grained-tool-streaming-2025-05-14\", \"feature\": \"Fine-grained tool streaming\", \"retirement_date\": \"2026-02-05\", \"note\": \"Now GA\"},\n      {\"header\": \"search-results-2025-06-09\", \"feature\": \"Search results content blocks\", \"retirement_date\": \"2025-08-08\", \"note\": \"Now GA\"}\n […]
 
 > TOOL
@@ -2767,7 +2767,7 @@ tool_use Write
 id: toolu_019he9RKohTqp6i2wEZRkVuk
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/change-log.md",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/change-log.md",
   "content": "---\npurpose: Append-only log of all config changes applied by /anthropic-scan\nlast_updated: \"2026-04-10\"\n---\n\n# Anthropic Intel Change Log\n\n## 2026-04-10 (Initial Setup)\n\n- [AUTO] Added env var CLAUDE_CODE_NO_FLICKER=1 (v2.1.90, low risk)\n- [AUTO] Added env var CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1 (v2.1.98, low risk)\n- [AUTO] Added env var CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=true (v2.1.90, low risk)\n- [AUTO] Added PermissionDenied hook with auto-retry (v2.1.90, medium risk)\n- [AUTO] Added version-watch SessionStart hook (custom)\n- [AUTO] Added statusLine.refreshInterval=30 (v2.1.97, low risk)\n- [AUTO] Added 9 Bash permissions (tput, stat, ant, cat, diff, which, file, readlink, realpath)\n- [MANUAL] Enabled hookify plugin (user confirmed)\n- [MANUAL] Enabled agent-sdk-dev plugin (user confirmed)\n- [AUTO] Updated autocompact prompt to preserve anthropic-intel context\n- [FIX] Updated deprecated model IDs in api_llm_executor.py (claude-3-5-sonnet → claude-sonnet-4-6, claude-3-opus → claude-opus-4-6)\n"
 }
 ```
@@ -2778,7 +2778,7 @@ tool_use Bash
 id: toolu_01JStkLGhasdif9YULXS1q5D
 ```json
 {
-  "command": "echo \"2026-04-10T$(date +%H:%M:%S)\" > /home/mike-anderson/.claude/anthropic-intel/.last-scan-date && echo \"2.1.100\" > /home/mike-anderson/.claude/anthropic-intel/.last-known-version",
+  "command": "echo \"2026-04-10T$(date +%H:%M:%S)\" > /home/<USER>/.claude/anthropic-intel/.last-scan-date && echo \"2.1.100\" > /home/<USER>/.claude/anthropic-intel/.last-known-version",
   "description": "Create tracking files with current values"
 }
 ```
@@ -2788,7 +2788,7 @@ id: toolu_01JStkLGhasdif9YULXS1q5D
 tool_result
 id: toolu_01CXKke2CgLjGucJNiAsQLPP
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/features-manifest.json
+File created successfully at: /home/<USER>/.claude/anthropic-intel/features-manifest.json
 ```
 
 > TOOL
@@ -2796,7 +2796,7 @@ File created successfully at: /home/mike-anderson/.claude/anthropic-intel/featur
 tool_result
 id: toolu_01NUBT5ZiDs9VSsqqYuBZUgM
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/api-manifest.json
+File created successfully at: /home/<USER>/.claude/anthropic-intel/api-manifest.json
 ```
 
 > TOOL
@@ -2804,7 +2804,7 @@ File created successfully at: /home/mike-anderson/.claude/anthropic-intel/api-ma
 tool_result
 id: toolu_019he9RKohTqp6i2wEZRkVuk
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/change-log.md
+File created successfully at: /home/<USER>/.claude/anthropic-intel/change-log.md
 ```
 
 > TOOL
@@ -2867,7 +2867,7 @@ tool_use Bash
 id: toolu_015Nd8MhNtPR2YBNh4kNU7Gs
 ```json
 {
-  "command": "python3 -c \"import json; json.load(open('/home/mike-anderson/.claude/settings.json')); print('settings.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/mike-anderson/.claude/anthropic-intel/sources.json')); print('sources.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/mike-anderson/.claude/anthropic-intel/features-manifest.json')); print('features-manifest.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/mike-anderson/.claude/anthropic-intel/api-manifest.json')); print('api-manifest.json: valid JSON')\"",
+  "command": "python3 -c \"import json; json.load(open('/home/<USER>/.claude/settings.json')); print('settings.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/<USER>/.claude/anthropic-intel/sources.json')); print('sources.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/<USER>/.claude/anthropic-intel/features-manifest.json')); print('features-manifest.json: valid JSON')\" && python3 -c \"import json; json.load(open('/home/<USER>/.claude/anthropic-intel/api-manifest.json')); print('api-manifest.json: valid JSON')\"",
   "description": "Validate all JSON files are well-formed"
 }
 ```
@@ -2878,7 +2878,7 @@ tool_use Bash
 id: toolu_01HpPpW5dPrSB23dxixYDFgQ
 ```json
 {
-  "command": "ls -la /home/mike-anderson/.claude/anthropic-intel/ && echo \"---\" && ls -la /home/mike-anderson/.claude/hooks/version-watch.sh /home/mike-anderson/.claude/hooks/on-permission-denied.sh && echo \"---\" && ls -la /home/mike-anderson/.claude/rules/anthropic-intel-scan.md /home/mike-anderson/.claude/commands/anthropic-scan.md",
+  "command": "ls -la /home/<USER>/.claude/anthropic-intel/ && echo \"---\" && ls -la /home/<USER>/.claude/hooks/version-watch.sh /home/<USER>/.claude/hooks/on-permission-denied.sh && echo \"---\" && ls -la /home/<USER>/.claude/rules/anthropic-intel-scan.md /home/<USER>/.claude/commands/anthropic-scan.md",
   "description": "Verify all created files exist"
 }
 ```
@@ -2909,11 +2909,11 @@ drwxrwxr-x 30 mike-anderson mike-anderson   43 Apr 10 14:32 ..
 -rw-rw-r--  1 mike-anderson mike-anderson   20 Apr 10 15:02 .last-scan-date
 -rw-rw-r--  1 mike-anderson mike-anderson 2884 Apr 10 14:34 sources.json
 ---
--rwxrwxr-x 1 mike-anderson mike-anderson 1076 Apr 10 14:33 /home/mike-anderson/.claude/hooks/on-permission-denied.sh
--rwxrwxr-x 1 mike-anderson mike-anderson 1648 Apr 10 14:33 /home/mike-anderson/.claude/hooks/version-watch.sh
+-rwxrwxr-x 1 mike-anderson mike-anderson 1076 Apr 10 14:33 /home/<USER>/.claude/hooks/on-permission-denied.sh
+-rwxrwxr-x 1 mike-anderson mike-anderson 1648 Apr 10 14:33 /home/<USER>/.claude/hooks/version-watch.sh
 ---
--rw-rw-r-- 1 mike-anderson mike-anderson 2875 Apr 10 14:34 /home/mike-anderson/.claude/commands/anthropic-scan.md
--rw-rw-r-- 1 mike-anderson mike-anderson 1892 Apr 10 14:33 /home/mike-anderson/.claude/rules/anthropic-intel-scan.md
+-rw-rw-r-- 1 mike-anderson mike-anderson 2875 Apr 10 14:34 /home/<USER>/.claude/commands/anthropic-scan.md
+-rw-rw-r-- 1 mike-anderson mike-anderson 1892 Apr 10 14:33 /home/<USER>/.claude/rules/anthropic-intel-scan.md
 ```
 
 > AGENT
@@ -2926,7 +2926,7 @@ tool_use Write
 id: toolu_016GHuZ1bLEUGivDQJ2nctHn
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/anthropic-intel/latest-digest.md",
+  "file_path": "/home/<USER>/.claude/anthropic-intel/latest-digest.md",
   "content": "---\nscan_date: \"2026-04-10\"\nsources_checked: 11\nfindings: 14\n---\n\n# Anthropic Intelligence Digest — 2026-04-10\n\n## URGENT\n\n- **Haiku 3 retirement (April 19, 2026):** `claude-3-haiku-20240307` will stop accepting requests. Fixed: updated `api_llm_executor.py` to use `claude-sonnet-4-6`.\n- **1M context beta retirement (April 30, 2026):** `context-1m-2025-08-07` header stops working for Sonnet 4.5/4. No references found in codebase — safe.\n\n## AUTO-APPLY (Applied)\n\n- Added `CLAUDE_CODE_NO_FLICKER=1` (alt-screen rendering, Focus View via Ctrl+O)\n- Added `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1` (PID namespace isolation)\n- Added `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=true` (offline resilience)\n- Added `PermissionDenied` hook with auto-retry for safe patterns\n- Added `statusLine.refreshInterval=30`\n- Added 9 Bash permissions (tput, stat, ant, cat, diff, which, file, readlink, realpath)\n- Enabled `hookify` and `agent-sdk-dev` plugins\n\n## REVIEW\n\n- **Advisor tool** (beta `advisor-tool-2026-03-01`): Pair fast executor with intelligent advisor. High relevance for Cohezion's compound loop. Evaluate for ExecutionOrchestrator.\n- **Managed Agents** (beta `managed-agents-2026-04-01`): Fully managed agent harness. Medium relevance — evaluate vs self-hosted swarm.\n- **Models API capabilities**: `GET /v1/models` now returns `max_input_tokens`, `max_tokens`, `capabilities`. High relevance — could replace hardcoded dicts in `cost_aware_router.py`.\n- **Automatic caching**: Single `cache_control` field enables automatic prompt caching. High relevance for CompoundExecutor token savings.\n- **MCP result size override** (`_meta[\"anthropic/maxResultSizeChars\"]` up to 500K): Useful for large SurrealDB query results.\n\n## API\n\n- **New GA features**: Web search, code execution, memory tool, structured outputs, effort […]
 
 > TOOL
@@ -2934,7 +2934,7 @@ id: toolu_016GHuZ1bLEUGivDQJ2nctHn
 tool_result
 id: toolu_016GHuZ1bLEUGivDQJ2nctHn
 ```
-File created successfully at: /home/mike-anderson/.claude/anthropic-intel/latest-digest.md
+File created successfully at: /home/<USER>/.claude/anthropic-intel/latest-digest.md
 ```
 
 > AGENT
@@ -3131,7 +3131,7 @@ tool_use Read
 id: toolu_01JfgCbGGopeK5aQaQ9yF4cm
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
   "offset": 270,
   "limit": 20
 }
@@ -3143,7 +3143,7 @@ tool_use Read
 id: toolu_01MHmshUvBfMVHwjZ7zpMzyr
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
   "offset": 110,
   "limit": 20
 }
@@ -3155,7 +3155,7 @@ tool_use Read
 id: toolu_017Sf3E2NYhpttgW6PBe8Vac
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md"
+  "file_path": "/home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md"
 }
 ```
 
@@ -3207,22 +3207,22 @@ id: toolu_017Sf3E2NYhpttgW6PBe8Vac
 6	
 7	## 1. PROPRIOCEPTION (Ouroboros Service)
 8	*The Nervous System: Health, Hygiene, and Self-Correction.*
-9	- **Reflex**: [SELF_HEALING_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/SELF_HEALING_PRIME.md) (ReflexAgent).
-10	- **Pruning**: [REPO_HYGIENE_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/REPO_HYGIENE_PRIME.md) (PrunerAgent).
-11	- **Rescue**: [KNOWLEDGE_HARVESTING_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/KNOWLEDGE_HARVESTING_PRIME.md) (Ghost Harvest).
-12	- **Telemetry**: [SYSTEM_MONITORING_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/SYSTEM_MONITORING_PRIME.md).
+9	- **Reflex**: [SELF_HEALING_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/SELF_HEALING_PRIME.md) (ReflexAgent).
+10	- **Pruning**: [REPO_HYGIENE_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/REPO_HYGIENE_PRIME.md) (PrunerAgent).
+11	- **Rescue**: [KNOWLEDGE_HARVESTING_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/KNOWLEDGE_HARVESTING_PRIME.md) (Ghost Harvest).
+12	- **Telemetry**: [SYSTEM_MONITORING_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/SYSTEM_MONITORING_PRIME.md).
 13	- **Maintenance MCP**: `cohezion-maintenance-mcp/` — 6 tools: graph_health, graph_prune_orphans, graph_compact, verify_graph_schema, vault_audit, surreal_table_stats.
 14	- **Graph HIHO**: Weighted metric (connectivity 0.3, reciprocity 0.2, freshness 0.2, 1-orphan_ratio 0.3). Target: 0.5 +/- 0.15.
 15	
 16	## 2. COGNITION (FLUME Service)
 17	*The Mind: Latent Navigation & Logic.*
-18	- **Manifold**: [FLUME_METHODOLOGY_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/FLUME_METHODOLOGY_PRIME.md).
-19	- **Reasoning**: [SEQUENTIAL_THINKING_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/sequential_thinking_prime.md) (MCP).
-20	- **Compression**: [REDUCER_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/REDUCER_PRIME.md).
+18	- **Manifold**: [FLUME_METHODOLOGY_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/FLUME_METHODOLOGY_PRIME.md).
+19	- **Reasoning**: [SEQUENTIAL_THINKING_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/sequential_thinking_prime.md) (MCP).
+20	- **Compression**: [REDUCER_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/REDUCER_PRIME.md).
 21	
 22	## 3. GOVERNANCE (Quadrature Nexus)
 23	*The Will: Intent & Orchestration.*
-24	- **Orchestration**: [SWARM_ORCHESTRATION_PRIME](file:///home/mike-anderson/dev/cohezion/src/cohezion/skills/SWARM_ORCHESTRATION_PRIME.md).
+24	- **Orchestration**: [SWARM_ORCHESTRATION_PRIME](file:///home/<USER>/dev/cohezion/src/cohezion/skills/SWARM_ORCHESTRATION_PRIME.md).
 25	- **Ethics**: […]
 
 > AGENT
@@ -3236,7 +3236,7 @@ id: toolu_01LYAGjbaRsgxnyFiLbZq48h
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
   "old_string": "### Learning 296: Aspirational Test Specs Must Target Existing APIs\n`TestExecuteGraphWiring` tested `ExecutionOrchestrator.execute_graph()` which was never implemented. Tests failed with `AttributeError` for months as a pre-existing failure. Fix: rewrite to use `GraphEngine.execute()` which actually exists and provides the same FLUX integration. Pattern: forward-looking test specs are fine, but they must be marked `@pytest.mark.skip(reason=\"API not yet implemented\")` or target the existing API that provides equivalent functionality.",
   "new_string": "### Learning 296: Aspirational Test Specs Must Target Existing APIs\n`TestExecuteGraphWiring` tested `ExecutionOrchestrator.execute_graph()` which was never implemented. Tests failed with `AttributeError` for months as a pre-existing failure. Fix: rewrite to use `GraphEngine.execute()` which actually exists and provides the same FLUX integration. Pattern: forward-looking test specs are fine, but they must be marked `@pytest.mark.skip(reason=\"API not yet implemented\")` or target the existing API that provides equivalent functionality.\n\n### Learning 297: Tiered Proactivity for Autonomous Monitoring (Session 96b)\nBuilt Anthropic Intelligence Feed: 11-source registry, version-watch SessionStart hook, `/anthropic-scan` command, risk-tiered auto-integration. Key architecture insight: **three feedback loops** — Push (version-watch hook, instant local check every session), Pull (`/anthropic-scan` on-demand deep scan), Persist (vault routing for research/decisions). Staleness check (>24h) triggers background agent scan automatically. Different sources need different action types: […]
 
@@ -3245,7 +3245,7 @@ id: toolu_01LYAGjbaRsgxnyFiLbZq48h
 tool_result
 id: toolu_01LYAGjbaRsgxnyFiLbZq48h
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md has been updated successfully.
 ```
 
 > AGENT
@@ -3258,7 +3258,7 @@ tool_use Read
 id: toolu_013JDttYA8SrveNDb6rsgkte
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
   "limit": 15
 }
 ```
@@ -3287,7 +3287,7 @@ id: toolu_01XonmaSde4JkhKWNz9vWPBc
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
   "old_string": "### [2026-04-10] SESSION 96: DYNAMIC CONTEXT POLICY — ADAPTIVE BREADTH/DEPTH",
   "new_string": "### [2026-04-10] SESSION 96b: ANTHROPIC INTELLIGENCE FEED — AUTONOMOUS CONFIG OPTIMIZATION\n- **Anthropic Intel system**: Built full-spectrum monitoring across 11 Anthropic content sources (CLI releases, API platform, blog, research, alignment science, system cards, deprecations, help center, Glasswing, economic index). Version-watch SessionStart hook (instant local check), `/anthropic-scan` command (11-source deep scan), agentic background scan on staleness (>24h).\n- **Auto-integration engine**: Risk-tiered auto-apply — low risk (env vars, permissions) auto-apply with batch confirm, medium (hooks, settings) per-item confirm, high (code changes) report only. All changes logged to `~/.claude/anthropic-intel/change-log.md`.\n- **Config optimizations applied**: `CLAUDE_CODE_NO_FLICKER`, `SUBPROCESS_ENV_SCRUB`, `PLUGIN_KEEP_MARKETPLACE_ON_FAILURE`, `PermissionDenied` hook with auto-retry, `statusLine.refreshInterval=30`, 9 new Bash permissions, enabled `hookify` + `agent-sdk-dev` plugins, updated autocompact prompt.\n- **Deprecation fix**: Updated 3 retired model IDs in `api_llm_executor.py` (`claude-3-5-sonnet-20241022` → `claude-sonnet-4-6`, `claude-3-opus-20240229` → `claude-opus-4-6`). 16/16 agentverse tests pass.\n- **Feature manifests**: `features-manifest.json` (24 CLI features tracked), `api-manifest.json` (models, beta headers, GA features, new tools), `sources.json` (11-source registry). Initial digest written.\n- **Files created**: 13 new files in `~/.claude/anthropic-intel/`, `~/.claude/hooks/`, `~/.claude/rules/`, `~/.claude/commands/`. 1 settings.json (6 edits). 1 source fix.\n- **Learnings**: L297-L299.\n\n### [2026-04-10] SESSION 96: DYNAMIC CONTEXT POLICY — ADAPTIVE BREADTH/DEPTH"
 }
@@ -3298,7 +3298,7 @@ id: toolu_01XonmaSde4JkhKWNz9vWPBc
 tool_result
 id: toolu_01XonmaSde4JkhKWNz9vWPBc
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md has been updated successfully.
 ```
 
 > AGENT
@@ -3312,7 +3312,7 @@ id: toolu_01VCJNkwYETgNDB1VqqjJc9B
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
+  "file_path": "/home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
   "old_string": "**Last updated**: 2026-04-10 (Session 95 retrospective). **6,162 tests collected (full suite runs to completion), 35 genesis physics+world_model+env modules, 11 frontend tsx components. 348 genesis tests passing (0 failing). 1,839 prompt_artifacts + 1,822 universe_snapshots in SurrealDB (port 8001, consolidated). 206 skill definitions (151 PRIME). Autoresearch (UCB1 K-Search + Step 5.91) wired. A2A GET /agents returns 7 specialist agents.**",
   "new_string": "**Last updated**: 2026-04-10 (Session 96b retrospective). **6,184 tests collected (full suite runs to completion), 35 genesis physics+world_model+env modules, 11 frontend tsx components. 348 genesis tests passing (0 failing). 1,839 prompt_artifacts + 1,822 universe_snapshots in SurrealDB (port 8001, consolidated). 206 skill definitions (151 PRIME). Autoresearch (UCB1 K-Search + Step 5.91) wired. A2A GET /agents returns 7 specialist agents. Anthropic Intelligence Feed: 11-source monitoring + auto-integration.**"
 }
@@ -3323,7 +3323,7 @@ id: toolu_01VCJNkwYETgNDB1VqqjJc9B
 tool_result
 id: toolu_01VCJNkwYETgNDB1VqqjJc9B
 ```
-The file /home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md has been updated successfully.
 ```
 
 > TOOL
@@ -3333,7 +3333,7 @@ id: toolu_01CbTzZfPv4EpmaRKAwVVsEY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
+  "file_path": "/home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
   "old_string": "- **A2A Discovery**: `GET /agents` returns all registered specialist agents via `CapabilityRegistry._scan_claude_agents()` (scans `.claude/agents/*.md` YAML frontmatter).\n\n## 6. INFRASTRUCTURE (VLIW Service)",
   "new_string": "- **A2A Discovery**: `GET /agents` returns all registered specialist agents via `CapabilityRegistry._scan_claude_agents()` (scans `.claude/agents/*.md` YAML frontmatter).\n- **Anthropic Intelligence Feed**: Autonomous monitoring of 11 Anthropic sources (CLI releases, API platform, research, alignment, system cards, deprecations, blog, help center, Glasswing, economic index). Components: `version-watch.sh` (SessionStart hook), `/anthropic-scan` (11-source scan command), `anthropic-intel-scan.md` (agentic background scan rule), risk-tiered auto-integration, `features-manifest.json` + `api-manifest.json` (feature registries), `change-log.md` (audit trail). Located at `~/.claude/anthropic-intel/`.\n- **ContextPolicy**: Adaptive context breadth/depth control (`compound/context_policy.py`). ROUTINE/FOCUSED/EXPLORATORY profiles, hybrid reactive adjustment, YAML frontmatter persistence.\n\n## 6. INFRASTRUCTURE (VLIW Service)"
 }
@@ -3344,7 +3344,7 @@ id: toolu_01CbTzZfPv4EpmaRKAwVVsEY
 tool_result
 id: toolu_01CbTzZfPv4EpmaRKAwVVsEY
 ```
-The file /home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md has been updated successfully.
 ```
 
 > AGENT
@@ -3357,7 +3357,7 @@ tool_use Read
 id: toolu_019VD9EhDiFSn4mEkXVTiSm2
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "offset": 90,
   "limit": 20
 }
@@ -3394,7 +3394,7 @@ tool_use Read
 id: toolu_011Kk76EqsB9xBtEMxtUdrfN
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "offset": 109,
   "limit": 15
 }
@@ -3429,7 +3429,7 @@ id: toolu_013pqcHWjruipnzSE8CUoYnb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "old_string": "| **Knowledge** | Vault-First (decisions/patterns/experiments), auto-compiled MEMORY.md | `vault_find_relevant_context` |",
   "new_string": "| **Knowledge** | Vault-First (decisions/patterns/experiments), auto-compiled MEMORY.md | `vault_find_relevant_context` |\n| **Anthropic Intel** | 11-source monitor, version-watch hook, `/anthropic-scan`, risk-tiered auto-integration | `/anthropic-scan` |"
 }
@@ -3440,7 +3440,7 @@ id: toolu_013pqcHWjruipnzSE8CUoYnb
 tool_result
 id: toolu_013pqcHWjruipnzSE8CUoYnb
 ```
-The file /home/mike-anderson/dev/cohezion/CLAUDE.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/CLAUDE.md has been updated successfully.
 ```
 
 > AGENT
@@ -3454,7 +3454,7 @@ id: toolu_01VRobXMYAUbe3CUesy3xCs7
 ```json
 {
   "pattern": "Tests.*6,184|6,162",
-  "path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "output_mode": "content"
 }
 ```
@@ -3478,7 +3478,7 @@ id: toolu_01LdKsZXuQBjTErZvEKZSkYs
 ```json
 {
   "pattern": "Local Models.*Ollama",
-  "path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "output_mode": "content"
 }
 ```
@@ -3497,7 +3497,7 @@ tool_use Read
 id: toolu_01MmPiZrs56PFGfT5vEKR2ge
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "offset": 238,
   "limit": 1
 }
@@ -3518,7 +3518,7 @@ id: toolu_0135j9MgtZu4zHbXxApei3tu
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "old_string": "- **Local Models**: Ollama (deepseek-r1:70b, qwen3-coder:30b, phi3:mini). **Global limit = 4 concurrent**",
   "new_string": "- **Local Models**: Ollama (deepseek-r1:70b, qwen3-coder:30b, phi3:mini, internlm/intern-s1-mini). **Global limit = 4 concurrent**"
 }
@@ -3529,7 +3529,7 @@ id: toolu_0135j9MgtZu4zHbXxApei3tu
 tool_result
 id: toolu_0135j9MgtZu4zHbXxApei3tu
 ```
-The file /home/mike-anderson/dev/cohezion/CLAUDE.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/CLAUDE.md has been updated successfully.
 ```
 
 > AGENT
@@ -3543,7 +3543,7 @@ id: toolu_019nZz5s7CMjoYrmoKt7PqZx
 ```json
 {
   "pattern": "Check alignment",
-  "path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "output_mode": "content"
 }
 ```
@@ -3563,7 +3563,7 @@ id: toolu_01V4W3H5HqdsjGJNbvE2pWXZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/CLAUDE.md",
+  "file_path": "/home/<USER>/dev/cohezion/CLAUDE.md",
   "old_string": "| Check alignment | `RequestAlignmentAnalyzer.analyze(...)` | `src/cohezion/compound/request_alignment_analyzer.py` |",
   "new_string": "| Check alignment | `RequestAlignmentAnalyzer.analyze(...)` | `src/cohezion/compound/request_alignment_analyzer.py` |\n| Anthropic scan | `/anthropic-scan` | `~/.claude/commands/anthropic-scan.md` |\n| Config audit | Read `~/.claude/anthropic-intel/latest-digest.md` | `~/.claude/anthropic-intel/` |"
 }
@@ -3574,7 +3574,7 @@ id: toolu_01V4W3H5HqdsjGJNbvE2pWXZ
 tool_result
 id: toolu_01V4W3H5HqdsjGJNbvE2pWXZ
 ```
-The file /home/mike-anderson/dev/cohezion/CLAUDE.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/CLAUDE.md has been updated successfully.
 ```
 
 > AGENT
@@ -3600,7 +3600,7 @@ tool_use Bash
 id: toolu_01VchJkBdQoB22cs7cq5n1VT
 ```json
 {
-  "command": "wc -l /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md /home/mike-anderson/dev/cohezion/memory/MEMORY.md /home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
+  "command": "wc -l /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md /home/<USER>/dev/cohezion/memory/MEMORY.md /home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md",
   "description": "Check line counts of updated files"
 }
 ```
@@ -3622,10 +3622,10 @@ Found 1 error.
 tool_result
 id: toolu_01VchJkBdQoB22cs7cq5n1VT
 ```
-  289 /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md
-  133 /home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md
-  160 /home/mike-anderson/dev/cohezion/memory/MEMORY.md
-   75 /home/mike-anderson/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md
+  289 /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md
+  133 /home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md
+  160 /home/<USER>/dev/cohezion/memory/MEMORY.md
+   75 /home/<USER>/dev/cohezion/.agent/CAPABILITY_MAP_REDUX.md
   657 total
 ```
 
@@ -3716,7 +3716,7 @@ Based on my thorough examination of the Cohezion codebase and documentation, her
 
 ### 1. CONSTITUTION.md - Section 8 Analysis
 
-**File:** `/home/mike-anderson/dev/cohezion/.agent/CONSTITUTION.md`
+**File:** `/home/<USER>/dev/cohezion/.agent/CONSTITUTION.md`
 
 **Status:** NOT TRUNCATED - Actually complete
 
@@ -3755,7 +3755,7 @@ tool_use Read
 id: toolu_013BJsLK3nNuBHVmMjk2eWak
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/COHEZION_CHARTER.md"
+  "file_path": "/home/<USER>/dev/cohezion/.agent/COHEZION_CHARTER.md"
 }
 ```
 
@@ -3765,7 +3765,7 @@ tool_use Read
 id: toolu_01Dc6fG1C4zoYegXKZcy8PoF
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/swarm/cost_aware_router.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/swarm/cost_aware_router.py",
   "offset": 270,
   "limit": 80
 }
@@ -3778,7 +3778,7 @@ id: toolu_013BJsLK3nNuBHVmMjk2eWak
 ```
 1	# The Cohezion Charter
 2	
-3	This document defines the specialized behavioral, simulation, and orchestration frameworks unique to the **Cohezion** platform. It serves as an expansion of the core [CONSTITUTION.md](file:///home/mike-anderson/dev/cohezion/.agent/CONSTITUTION.md), enabling expert universe simulation and multi-domain problem solving.
+3	This document defines the specialized behavioral, simulation, and orchestration frameworks unique to the **Cohezion** platform. It serves as an expansion of the core [CONSTITUTION.md](file:///home/<USER>/dev/cohezion/.agent/CONSTITUTION.md), enabling expert universe simulation and multi-domain problem solving.
 4	
 5	## 1. The 0.5 Coherence Rule (HIHO Stability)
 6	This is the foundational principle of reality precipitation within the Cohezion universe.
@@ -3877,7 +3877,7 @@ tool_use Read
 id: toolu_01HgGonkVsvC5HhYDSz2NGqu
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py",
+  "file_path": "/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py",
   "limit": 80
 }
 ```
@@ -3930,7 +3930,7 @@ id: toolu_01TKUn1xeDmJFvavpPAKCgFj
 ```json
 {
   "pattern": "def graph_health|async def graph_health|compute_graph_hiho",
-  "path": "/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp",
+  "path": "/home/<USER>/dev/cohezion/cohezion-maintenance-mcp",
   "output_mode": "content",
   "-C": 2
 }
@@ -3941,29 +3941,29 @@ id: toolu_01TKUn1xeDmJFvavpPAKCgFj
 tool_result
 id: toolu_01TKUn1xeDmJFvavpPAKCgFj
 ```
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py-2-
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py-3-
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py-2-
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py-3-
 cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py:4:def compute_graph_hiho(metrics: dict) -> float:
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py-5-    """Weighted average graph health score.
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py-6-
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py-5-    """Weighted average graph health score.
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/graph_health.py-6-
 --
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-10-from mcp.server.fastmcp import FastMCP
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-11-
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-10-from mcp.server.fastmcp import FastMCP
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-11-
 cohezion-maintenance-mcp/src/maintenance_mcp/server.py:12:from .graph_health import classify_health, compute_graph_hiho
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-13-
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-14-
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-13-
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-14-
 --
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-72-
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-73-@mcp.tool()
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-72-
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/<REDACTED_EMAIL>()
 cohezion-maintenance-mcp/src/maintenance_mcp/server.py:74:async def graph_health() -> str:
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-75-    """Return graph health metrics including HIHO score."""
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-76-    total_res = await _surreal_query("SELECT count() AS c FROM neurons GROUP ALL")
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-75-    """Return graph health metrics including HIHO score."""
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-76-    total_res = await _surreal_query("SELECT count() AS c FROM neurons GROUP ALL")
 --
 cohezion-maintenance-mcp/src/maintenance_mcp/server.py-117-        "reciprocity": round(reciprocity, 4),
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-118-    }
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-118-    }
 cohezion-maintenance-mcp/src/maintenance_mcp/server.py:119:    hiho = compute_graph_hiho(metrics)
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-120-    metrics["graph_hiho"] = round(hiho, 4)
-/home/mike-anderson/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-121-    metrics["health_status"] = classify_health(hiho)
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-120-    metrics["graph_hiho"] = round(hiho, 4)
+/home/<USER>/dev/cohezion/cohezion-maintenance-mcp/src/maintenance_mcp/server.py-121-    metrics["health_status"] = classify_health(hiho)
 ```
 
 > AGENT
@@ -3977,7 +3977,7 @@ id: toolu_0153vdaei1ymnvq2UyYEtNuU
 ```json
 {
   "pattern": "anthropic\\.|from anthropic|import anthropic|client\\.messages\\.create",
-  "path": "/home/mike-anderson/dev/cohezion/src",
+  "path": "/home/<USER>/dev/cohezion/src",
   "output_mode": "files_with_matches"
 }
 ```
@@ -4002,7 +4002,7 @@ id: toolu_01VG3ARLJpp7SgJbPVQyd5zD
 ```json
 {
   "pattern": "compound_client|get_compound_client|_call_anthropic|_call_ollama|_call_gemini",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion",
   "output_mode": "files_with_matches"
 }
 ```
@@ -4043,7 +4043,7 @@ tool_use Read
 id: toolu_01VFwShUgjeHuGjbwMe9ELqT
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/swarm/compound_client.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/swarm/compound_client.py",
   "limit": 60
 }
 ```
@@ -4124,7 +4124,7 @@ tool_use Write
 id: toolu_01VeB9N3ez5VvHoBVsvm61Yb
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "content": "# Plan: Complete Backlog Items from Retrospective\n\n## Context\n\n**Problem:** The Session 96b retrospective identified 4 remaining items that need attention. After deep investigation, one item (CONSTITUTION.md Section 8) was confirmed complete — reducing the backlog to 3 real items plus a recalculation.\n\n**Corrected scope after investigation:**\n- CONSTITUTION.md Section 8 is **NOT truncated** — confirmed complete at 75 lines with 10 compound engineering principles. Removed from backlog.\n- COHEZION_CHARTER.md Section 8 (EDL) is genuinely incomplete — 7 lines covering 4 concepts but missing failure modes, consensus mechanics, and recovery patterns.\n- `cost_aware_router.py` hardcoded dicts are **Ollama + Gemini only** (no Anthropic models). Dynamic model discovery needs the Ollama API and Gemini API, not the Anthropic Models API.\n- Prompt caching applies only to `api_llm_executor.py` (the Anthropic fallback path), not the main compound loop (which goes through Ollama).\n- Graph HIHO is calculated via `cohezion-maintenance-mcp/graph_health.py:compute_graph_hiho()` — can be triggered via the MCP `graph_health` tool.\n\n---\n\n## Phase 1: Complete COHEZION_CHARTER.md Section 8 (EDL)\n\n### Task 1.1: Expand EDL failure modes and consensus mechanics\n\n**File:** `.agent/COHEZION_CHARTER.md` (currently 49 lines)\n\nThe current Section 8 defines 4 concepts (Expert Streams, Consensus Stabilization, Quadrature Nexus, Triune Consensus) in 7 lines but lacks operational specifics. Add:\n\n**Failure Modes** (new subsection […]
 
 > TOOL
@@ -4132,7 +4132,7 @@ id: toolu_01VeB9N3ez5VvHoBVsvm61Yb
 tool_result
 id: toolu_01VeB9N3ez5VvHoBVsvm61Yb
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -4231,7 +4231,7 @@ id: toolu_017pwftG3Wnc6zYXWxrvz3sS
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/mike-anderson/.claude/plans/elegant-singing-tome.md
+Your plan has been saved to: /home/<USER>/.claude/plans/elegant-singing-tome.md
 You can refer back to it if needed during implementation.
 
 If this plan can be broken down into multiple independent tasks, consider using the TeamCreate tool to create a team and parallelize the work.
@@ -4405,7 +4405,7 @@ id: toolu_01RiHQVUMSdQbxgHXhwtjxRY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/COHEZION_CHARTER.md",
+  "file_path": "/home/<USER>/dev/cohezion/.agent/COHEZION_CHARTER.md",
   "old_string": "- **Implementation**: `platform/edl_router.py` (5-stream routing), `swarm/quadrature_nexus.py` (4-voice governance), `swarm/triune_consensus.py` (geometric equilibrium).",
   "new_string": "- **Implementation**: `platform/edl_router.py` (5-stream routing), `swarm/quadrature_nexus.py` (4-voice governance), `swarm/triune_consensus.py` (geometric equilibrium).\n- **Consensus Mechanics**: Voting is weighted by domain relevance — Architect weighs more on design decisions, Engineer on physics, Biologist on adaptive systems. Tiebreaker defaults to Engineer stream (physics grounding principle), unless Ethicist exercises hard veto (constitutional constraint violation). The Resource stream evaluates compute budget, token cost, and latency SLA — it can veto expensive proposals that exceed the session's cost envelope.\n- **12D Projection**: Each stream's 512D recommendation is projected to 12D state space via the Fisher information metric (Section 3). Proposals are \"in consensus\" when pairwise KL divergence < 0.1 nats in the 12D projection. The 12D representation aligns with the FLUME manifold dimensions, ensuring consensus geometry matches the agent's trajectory space.\n- **Failure Modes**:\n  - *Stream Disagreement*: When 2+ streams produce conflicting recommendations (confidence divergence > 0.3), escalate to Quadrature Nexus for weighted arbitration. If arbitration alignment remains below 0.85, defer to the highest-confidence stream with a logged degradation event.\n  - *Consensus Timeout*: If alignment doesn't reach 0.85 within the task's token budget, fall back to […]
 
@@ -4416,7 +4416,7 @@ id: toolu_013tX4hjUm3EpXqitCJcrxCB
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "            \"anthropic-version\": \"2023-06-01\",",
   "new_string": "            \"anthropic-version\": \"2024-01-01\","
 }
@@ -4429,7 +4429,7 @@ id: toolu_015zi2cTYGbqXJ8f2tVFEQCb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py",
   "old_string": "        if system:\n            payload[\"system\"] = system",
   "new_string": "        if system:\n            payload[\"system\"] = [\n                {\"type\": \"text\", \"text\": system, \"cache_control\": {\"type\": \"ephemeral\"}}\n            ]"
 }
@@ -4452,7 +4452,7 @@ id: toolu_0184DZqwYW13neYaCT1aU5x6
 tool_result
 id: toolu_01RiHQVUMSdQbxgHXhwtjxRY
 ```
-The file /home/mike-anderson/dev/cohezion/.agent/COHEZION_CHARTER.md has been updated successfully.
+The file /home/<USER>/dev/cohezion/.agent/COHEZION_CHARTER.md has been updated successfully.
 ```
 
 > TOOL
@@ -4460,7 +4460,7 @@ The file /home/mike-anderson/dev/cohezion/.agent/COHEZION_CHARTER.md has been up
 tool_result
 id: toolu_013tX4hjUm3EpXqitCJcrxCB
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
 ```
 
 > TOOL
@@ -4468,7 +4468,7 @@ The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/a
 tool_result
 id: toolu_015zi2cTYGbqXJ8f2tVFEQCb
 ```
-The file /home/mike-anderson/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
+The file /home/<USER>/dev/cohezion/src/cohezion/integrations/agentverse/api_llm_executor.py has been updated successfully.
 ```
 
 > TOOL
@@ -4814,7 +4814,7 @@ id: toolu_01RQooUAHbdCSLprhssCGRLS
 ```json
 {
   "pattern": "def _discover_models|async def _discover|api/tags|api/show",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion/swarm/dynamic_model_router.py",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion/swarm/dynamic_model_router.py",
   "output_mode": "content",
   "context": 5
 }
@@ -4843,7 +4843,7 @@ id: toolu_01DtBfi3dKJtynFmKQmq2G7m
 ```json
 {
   "pattern": "api/tags|ollama.*list|discover.*model",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion/swarm",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion/swarm",
   "output_mode": "content",
   "context": 3
 }
@@ -4855,52 +4855,52 @@ tool_result
 id: toolu_01DtBfi3dKJtynFmKQmq2G7m
 ```
 src/cohezion/swarm/model_manager.py-117-    async def list_models(self) -> list[dict[str, Any]]:
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_manager.py-118-        """List installed Ollama models."""
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_manager.py-118-        """List installed Ollama models."""
 src/cohezion/swarm/model_manager.py-119-        try:
 src/cohezion/swarm/model_manager.py:120:            resp = await self.http_client.get(f"{self.ollama_host}/api/tags")
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_manager.py-121-            resp.raise_for_status()
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_manager.py-122-            data = resp.json()
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_manager.py-123-            return data.get("models", [])
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_manager.py-121-            resp.raise_for_status()
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_manager.py-122-            data = resp.json()
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_manager.py-123-            return data.get("models", [])
 --
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-71-            self._pool[name] = PooledModel(name=name, tier=ModelTierPolicy.COLD, size_gb=0.0)
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-72-
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-71-            self._pool[name] = PooledModel(name=name, tier=ModelTierPolicy.COLD, size_gb=0.0)
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-72-
 src/cohezion/swarm/model_pool_manager.py-73-    async def initialize(self) -> None:
 src/cohezion/swarm/model_pool_manager.py:74:        """Query Ollama /api/tags, reconcile with tier config.
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-75-
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-76-        Marks models as loaded/healthy if Ollama reports them.
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-77-        Updates size_gb from Ollama metadata.
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-75-
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-76-        Marks models as loaded/healthy if Ollama reports them.
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-77-        Updates size_gb from Ollama metadata.
 --
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-397-
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-398-    # --- Private helpers ---
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-399-
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-397-
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-398-    # --- Private helpers ---
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-399-
 src/cohezion/swarm/model_pool_manager.py:400:    async def _list_ollama_models(self) -> list[dict[str, Any]]:
 src/cohezion/swarm/model_pool_manager.py:401:        """Query Ollama /api/tags for installed models."""
 src/cohezion/swarm/model_pool_manager.py-402-        try:
 src/cohezion/swarm/model_pool_manager.py-403-            async with httpx.AsyncClient(timeout=10.0) as client:
 src/cohezion/swarm/model_pool_manager.py:404:                resp = await client.get(f"{self._ollama_host}/api/tags")
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-405-                resp.raise_for_status()
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-406-                return resp.json().get("models", [])
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-405-                resp.raise_for_status()
+/home/<USER>/dev/cohezion/src/cohezion/swarm/model_pool_manager.py-406-                return resp.json().get("models", [])
 src/cohezion/swarm/model_pool_manager.py-407-        except Exception as exc:
 --
 src/cohezion/swarm/smart_router.py-290-    async def refresh_models(self):
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/smart_router.py-291-        """Check which models are available."""
+/home/<USER>/dev/cohezion/src/cohezion/swarm/smart_router.py-291-        """Check which models are available."""
 src/cohezion/swarm/smart_router.py-292-        try:
 src/cohezion/swarm/smart_router.py:293:            resp = await self.client.get(f"{self.ollama_host}/api/tags")
 src/cohezion/swarm/smart_router.py-294-            if resp.status_code == 200:
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/smart_router.py-295-                models = resp.json().get("models", [])
+/home/<USER>/dev/cohezion/src/cohezion/swarm/smart_router.py-295-                models = resp.json().get("models", [])
 src/cohezion/swarm/smart_router.py-296-                for m in models:
 --
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-376-            return "researcher"
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-377-        return "implementer"
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-378-
+/home/<USER>/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-376-            return "researcher"
+/home/<USER>/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-377-        return "implementer"
+/home/<USER>/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-378-
 src/cohezion/swarm/team_orchestrator.py:379:    def _select_ollama_model(self, tags: list[str]) -> str | None:
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-380-        """Select an Ollama model based on tags."""
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-381-        tags_str = " ".join(tags).lower()
+/home/<USER>/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-380-        """Select an Ollama model based on tags."""
+/home/<USER>/dev/cohezion/src/cohezion/swarm/team_orchestrator.py-381-        tags_str = " ".join(tags).lower()
 src/cohezion/swarm/team_orchestrator.py-382-        if any(kw in tags_str for kw in ["code", "implement", "engineer"]):
 --
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/providers/ollama_provider.py-143-
+/home/<USER>/dev/cohezion/src/cohezion/swarm/providers/ollama_provider.py-143-
 src/cohezion/swarm/providers/ollama_provider.py-144-        try:
-/home/mike-anderson/dev/cohezion/src/cohezion/swarm/providers/ollama_provider.py-145-            async with session.get( […]
+/home/<USER>/dev/cohezion/src/cohezion/swarm/providers/ollama_provider.py-145-            async with session.get( […]
 
 > AGENT
 
@@ -5015,14 +5015,14 @@ tool_result
 id: toolu_015n2SQ7s4jooRtPUQU4YARf
 ```
 ● surrealdb.service - SurrealDB Server (Cohezion Vault)
-     Loaded: loaded (/home/mike-anderson/.config/systemd/user/surrealdb.service; enabled; preset: enabled)
+     Loaded: loaded (/home/<USER>/.config/systemd/user/surrealdb.service; enabled; preset: enabled)
      Active: active (running) since Fri 2026-04-10 12:44:35 EDT; 9h ago
    Main PID: 3714 (surreal)
       Tasks: 133 (limit: 153314)
      Memory: 118.2M (peak: 145.5M)
         CPU: 30.320s
-     CGroup: /user.slice/user-1000.slice/user@1000.service/app.slice/surrealdb.service
-             └─3714 /home/mike-anderson/.surrealdb/surreal start --username root --password root --bind 0.0.0.0:8001 --no-banner rocksdb:///home/mike-anderson/dev/cohezion/data/surrealdb
+     CGroup: /user.slice/user-1000.slice/<REDACTED_EMAIL>/app.slice/surrealdb.service
+             └─3714 /home/<USER>/.surrealdb/surreal start --username root --password root --bind 0.0.0.0:8001 --no-banner rocksdb:///home/<USER>/dev/cohezion/data/surrealdb
 
 Apr 10 12:44:36 FrameworkDesktop surreal[3714]: 2026-04-10T16:44:36.266605Z  INFO surreal::dbs: Operation succeeded operation="check_version" attempts=1
 Apr 10 12:44:36 FrameworkDesktop surreal[3714]: 2026-04-10T16:44:36.266889Z  INFO surreal::dbs: Initialising credentials user=root
@@ -5040,15 +5040,15 @@ Apr 10 12:44:36 FrameworkDesktop surreal[3714]: 2026-04-10T16:44:36.331915Z  INF
 tool_result
 id: toolu_01AzEXUckkz5Abd8cia8hwzQ
 ```
-mike-an+    3714  0.0  0.0 10219792 102608 ?     Ssl  12:44   0:30 /home/mike-anderson/.surrealdb/surreal start --username root --password root --bind 0.0.0.0:8001 --no-banner rocksdb:///home/mike-anderson/dev/cohezion/data/surrealdb
-mike-an+   39601  0.0  0.0 1616240 104236 pts/8  Sl+  13:30   0:01 /home/mike-anderson/dev/cohezion/.venv/bin/python -m cohezion.mcp.surreal_server_mcp
-mike-an+   46520  0.0  0.0 1616248 104176 pts/9  Sl+  13:36   0:01 /home/mike-anderson/dev/cohezion/.venv/bin/python -m cohezion.mcp.surreal_server_mcp
+mike-an+    3714  0.0  0.0 10219792 102608 ?     Ssl  12:44   0:30 /home/<USER>/.surrealdb/surreal start --username root --password root --bind 0.0.0.0:8001 --no-banner rocksdb:///home/<USER>/dev/cohezion/data/surrealdb
+mike-an+   39601  0.0  0.0 1616240 104236 pts/8  Sl+  13:30   0:01 /home/<USER>/dev/cohezion/.venv/bin/python -m cohezion.mcp.surreal_server_mcp
+mike-an+   46520  0.0  0.0 1616248 104176 pts/9  Sl+  13:36   0:01 /home/<USER>/dev/cohezion/.venv/bin/python -m cohezion.mcp.surreal_server_mcp
 ```
 
 > AGENT
 
 `★ Insight ─────────────────────────────────────`
-**Root cause identified:** SurrealDB is running with `rocksdb:///home/mike-anderson/dev/cohezion/data/surrealdb` as the storage backend. The "Couldn't write to a read only transaction" error in RocksDB typically means either:
+**Root cause identified:** SurrealDB is running with `rocksdb:///home/<USER>/dev/cohezion/data/surrealdb` as the storage backend. The "Couldn't write to a read only transaction" error in RocksDB typically means either:
 1. **Disk space exhaustion** — RocksDB can't write to WAL/SST files
 2. **Lock contention** — Two SurrealDB processes (or the MCP server) holding conflicting locks
 3. **Corrupted WAL** — Write-ahead log corruption forcing read-only mode
@@ -5062,7 +5062,7 @@ tool_use Bash
 id: toolu_01Q6t1w1kkotuKvjmta1QFb8
 ```json
 {
-  "command": "df -h /home/mike-anderson/dev/cohezion/data/surrealdb 2>/dev/null && echo \"---\" && du -sh /home/mike-anderson/dev/cohezion/data/surrealdb 2>/dev/null && echo \"---\" && ls -la /home/mike-anderson/dev/cohezion/data/surrealdb/ 2>/dev/null | head -20",
+  "command": "df -h /home/<USER>/dev/cohezion/data/surrealdb 2>/dev/null && echo \"---\" && du -sh /home/<USER>/dev/cohezion/data/surrealdb 2>/dev/null && echo \"---\" && ls -la /home/<USER>/dev/cohezion/data/surrealdb/ 2>/dev/null | head -20",
   "description": "Check disk space and SurrealDB data directory"
 }
 ```
@@ -5086,7 +5086,7 @@ id: toolu_01Q6t1w1kkotuKvjmta1QFb8
 Filesystem                  Size  Used Avail Use% Mounted on
 rpool/USERDATA/home_7r4ayl  1.4T  850G  486G  64% /home
 ---
-5.8M	/home/mike-anderson/dev/cohezion/data/surrealdb
+5.8M	/home/<USER>/dev/cohezion/data/surrealdb
 ---
 total 5951
 drwxrwxr-x  2 mike-anderson mike-anderson      23 Apr 10 12:44 .
@@ -5160,7 +5160,7 @@ tool_use Bash
 id: toolu_01YY85TdKsUgpUYHjdUBciLr
 ```json
 {
-  "command": "/home/mike-anderson/.surrealdb/surreal version 2>&1",
+  "command": "/home/<USER>/.surrealdb/surreal version 2>&1",
   "description": "Check SurrealDB version"
 }
 ```
@@ -5171,7 +5171,7 @@ tool_use Bash
 id: toolu_01C6MG78vtuzfgVEUHEAfHws
 ```json
 {
-  "command": "# Check if the RocksDB LOCK file is held\nfuser /home/mike-anderson/dev/cohezion/data/surrealdb/LOCK 2>&1; echo \"---\"; lsof /home/mike-anderson/dev/cohezion/data/surrealdb/LOCK 2>&1 | head -10",
+  "command": "# Check if the RocksDB LOCK file is held\nfuser /home/<USER>/dev/cohezion/data/surrealdb/LOCK 2>&1; echo \"---\"; lsof /home/<USER>/dev/cohezion/data/surrealdb/LOCK 2>&1 | head -10",
   "description": "Check RocksDB lock file holders"
 }
 ```
@@ -5189,10 +5189,10 @@ id: toolu_01YY85TdKsUgpUYHjdUBciLr
 tool_result
 id: toolu_01C6MG78vtuzfgVEUHEAfHws
 ```
-/home/mike-anderson/dev/cohezion/data/surrealdb/LOCK:  3714
+/home/<USER>/dev/cohezion/data/surrealdb/LOCK:  3714
 ---
 COMMAND  PID          USER   FD   TYPE DEVICE SIZE/OFF    NODE NAME
-surreal 3714 mike-anderson   11uW  REG   0,52        0 3957584 /home/mike-anderson/dev/cohezion/data/surrealdb/LOCK
+surreal 3714 mike-anderson   11uW  REG   0,52        0 3957584 /home/<USER>/dev/cohezion/data/surrealdb/LOCK
 ```
 
 > AGENT
@@ -5301,7 +5301,7 @@ tool_use Bash
 id: toolu_01LYWwuDBoEq9eC6HhcByCLt
 ```json
 {
-  "command": "cat /home/mike-anderson/.config/systemd/user/surrealdb.service",
+  "command": "cat /home/<USER>/.config/systemd/user/surrealdb.service",
   "description": "Read SurrealDB systemd service config"
 }
 ```
@@ -5339,12 +5339,12 @@ StartLimitIntervalSec=60
 
 [Service]
 Type=simple
-ExecStart=/home/mike-anderson/.surrealdb/surreal start \
+ExecStart=/home/<USER>/.surrealdb/surreal start \
     --username root \
     --password root \
     --bind 0.0.0.0:8001 \
     --no-banner \
-    rocksdb:///home/mike-anderson/dev/cohezion/data/surrealdb
+    rocksdb:///home/<USER>/dev/cohezion/data/surrealdb
 Restart=on-failure
 RestartSec=5
 StandardOutput=journal
@@ -5362,7 +5362,7 @@ id: toolu_016uDwc7gh8CHexws5gbmGDv
 ```json
 {
   "pattern": "surreal|surrealdb",
-  "path": "/home/mike-anderson/dev/cohezion/scripts/dba",
+  "path": "/home/<USER>/dev/cohezion/scripts/dba",
   "output_mode": "files_with_matches"
 }
 ```
@@ -5373,7 +5373,7 @@ tool_use Bash
 id: toolu_01SPgTBFaGJk78YH9VQb8tJK
 ```json
 {
-  "command": "/home/mike-anderson/.surrealdb/surreal version 2>&1 && echo \"---\" && /home/mike-anderson/.surrealdb/surreal start --help 2>&1 | grep -E \"log-level|strict|query-timeout|transaction-timeout|capabilities|temporary-directory|rocksdb\" | head -20",
+  "command": "/home/<USER>/.surrealdb/surreal version 2>&1 && echo \"---\" && /home/<USER>/.surrealdb/surreal start --help 2>&1 | grep -E \"log-level|strict|query-timeout|transaction-timeout|capabilities|temporary-directory|rocksdb\" | head -20",
   "description": "Check SurrealDB available configuration options"
 }
 ```
@@ -5406,7 +5406,7 @@ tool_use Bash
 id: toolu_01FcWzdLBMceNNybwbjXJapi
 ```json
 {
-  "command": "/home/mike-anderson/.surrealdb/surreal start --help 2>&1 | grep -E \"^\\s+--\" | head -40",
+  "command": "/home/<USER>/.surrealdb/surreal start --help 2>&1 | grep -E \"^\\s+--\" | head -40",
   "description": "List all SurrealDB start flags"
 }
 ```
@@ -5491,7 +5491,7 @@ tool_use Bash
 id: toolu_01KyfQSEa55RCk3FQrFzw1KP
 ```json
 {
-  "command": "/home/mike-anderson/.surrealdb/surreal start --help 2>&1 | grep -A 5 \"POSITIONAL\\|surrealkv\\|rocksdb\\|tikv\\|memory\\|file://\" | head -30",
+  "command": "/home/<USER>/.surrealdb/surreal start --help 2>&1 | grep -A 5 \"POSITIONAL\\|surrealkv\\|rocksdb\\|tikv\\|memory\\|file://\" | head -30",
   "description": "Check SurrealDB supported storage backends"
 }
 ```
@@ -5807,7 +5807,7 @@ tool_use Bash
 id: toolu_01S3nNwzodmqdS8T3Gm8rucm
 ```json
 {
-  "command": "# First: export data from the current (degraded) RocksDB instance\n# The export endpoint may work even in read-only state since it only reads\ncurl -s -X GET \"http://localhost:8001/export\" \\\n  -H \"Accept: application/octet-stream\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: main\" \\\n  --user REDACTED \\\n  -o /home/mike-anderson/dev/cohezion/data/surrealdb-export-$(date +%Y%m%d).surql \\\n  -w \"HTTP %{http_code}, Size: %{size_download} bytes\\n\" 2>&1",
+  "command": "# First: export data from the current (degraded) RocksDB instance\n# The export endpoint may work even in read-only state since it only reads\ncurl -s -X GET \"http://localhost:8001/export\" \\\n  -H \"Accept: application/octet-stream\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: main\" \\\n  --user REDACTED \\\n  -o /home/<USER>/dev/cohezion/data/surrealdb-export-$(date +%Y%m%d).surql \\\n  -w \"HTTP %{http_code}, Size: %{size_download} bytes\\n\" 2>&1",
   "description": "Export SurrealDB data before migration",
   "timeout": 30000
 }
@@ -5831,7 +5831,7 @@ tool_use Bash
 id: toolu_01Y8gsmLMYiqDwTgAkh8ZRNq
 ```json
 {
-  "command": "# Backup the raw RocksDB data files\ncp -r /home/mike-anderson/dev/cohezion/data/surrealdb /home/mike-anderson/dev/cohezion/data/surrealdb-backup-$(date +%Y%m%d) && echo \"Backup created: $(du -sh /home/mike-anderson/dev/cohezion/data/surrealdb-backup-$(date +%Y%m%d))\"",
+  "command": "# Backup the raw RocksDB data files\ncp -r /home/<USER>/dev/cohezion/data/surrealdb /home/<USER>/dev/cohezion/data/surrealdb-backup-$(date +%Y%m%d) && echo \"Backup created: $(du -sh /home/<USER>/dev/cohezion/data/surrealdb-backup-$(date +%Y%m%d))\"",
   "description": "Create backup of RocksDB data files"
 }
 ```
@@ -5841,7 +5841,7 @@ id: toolu_01Y8gsmLMYiqDwTgAkh8ZRNq
 tool_result
 id: toolu_01Y8gsmLMYiqDwTgAkh8ZRNq
 ```
-Backup created: 3.4M	/home/mike-anderson/dev/cohezion/data/surrealdb-backup-20260410
+Backup created: 3.4M	/home/<USER>/dev/cohezion/data/surrealdb-backup-20260410
 ```
 
 > AGENT
@@ -5926,7 +5926,7 @@ tool_use Bash
 id: toolu_01LMvBmin9qxTQTdo4ELSmiC
 ```json
 {
-  "command": "# Check if there's any useful diagnostic in the RocksDB LOG after restart\ncat /home/mike-anderson/dev/cohezion/data/surrealdb/LOG 2>/dev/null | head -20; echo \"---LOG SIZE:\"; wc -c /home/mike-anderson/dev/cohezion/data/surrealdb/LOG 2>/dev/null",
+  "command": "# Check if there's any useful diagnostic in the RocksDB LOG after restart\ncat /home/<USER>/dev/cohezion/data/surrealdb/LOG 2>/dev/null | head -20; echo \"---LOG SIZE:\"; wc -c /home/<USER>/dev/cohezion/data/surrealdb/LOG 2>/dev/null",
   "description": "Check RocksDB LOG for diagnostics"
 }
 ```
@@ -5948,7 +5948,7 @@ tool_result
 id: toolu_01LMvBmin9qxTQTdo4ELSmiC
 ```
 ---LOG SIZE:
-0 /home/mike-anderson/dev/cohezion/data/surrealdb/LOG
+0 /home/<USER>/dev/cohezion/data/surrealdb/LOG
 ```
 
 > TOOL
@@ -6030,7 +6030,7 @@ tool_use Bash
 id: toolu_01XQUoqexJerz9LL9MWZt8Q8
 ```json
 {
-  "command": "# Try starting a TEMPORARY second instance on the backup for export\n# Use a different port to avoid conflicts\n/home/mike-anderson/.surrealdb/surreal start \\\n  --bind 127.0.0.1:8099 \\\n  --username root --password root \\\n  --no-banner \\\n  \"rocksdb:///home/mike-anderson/dev/cohezion/data/surrealdb-backup-20260410\" &\nTEMP_PID=$!\nsleep 3\n\n# Try export from the backup\ncurl -s -X GET \"http://127.0.0.1:8099/export\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: main\" \\\n  --user REDACTED \\\n  -o /tmp/surreal-backup-export.surql \\\n  -w \"HTTP %{http_code}, Size: %{size_download} bytes\\n\" 2>&1\n\n# Clean up temp instance\nkill $TEMP_PID 2>/dev/null\nwait $TEMP_PID 2>/dev/null\n\n# Check export\nif [ -s /tmp/surreal-backup-export.surql ]; then\n  echo \"Export successful!\"\n  wc -l /tmp/surreal-backup-export.surql\n  head -10 /tmp/surreal-backup-export.surql\nelse\n  echo \"Export empty — same bug affects backup copy\"\nfi",
+  "command": "# Try starting a TEMPORARY second instance on the backup for export\n# Use a different port to avoid conflicts\n/home/<USER>/.surrealdb/surreal start \\\n  --bind 127.0.0.1:8099 \\\n  --username root --password root \\\n  --no-banner \\\n  \"rocksdb:///home/<USER>/dev/cohezion/data/surrealdb-backup-20260410\" &\nTEMP_PID=$!\nsleep 3\n\n# Try export from the backup\ncurl -s -X GET \"http://127.0.0.1:8099/export\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: main\" \\\n  --user REDACTED \\\n  -o /tmp/surreal-backup-export.surql \\\n  -w \"HTTP %{http_code}, Size: %{size_download} bytes\\n\" 2>&1\n\n# Clean up temp instance\nkill $TEMP_PID 2>/dev/null\nwait $TEMP_PID 2>/dev/null\n\n# Check export\nif [ -s /tmp/surreal-backup-export.surql ]; then\n  echo \"Export successful!\"\n  wc -l /tmp/surreal-backup-export.surql\n  head -10 /tmp/surreal-backup-export.surql\nelse\n  echo \"Export empty — same bug affects backup copy\"\nfi",
   "description": "Try export from backup copy on temp instance",
   "timeout": 20000
 }
@@ -6042,7 +6042,7 @@ tool_result
 id: toolu_01XQUoqexJerz9LL9MWZt8Q8
 ```
 [2m2026-04-11T03:02:05.985337Z[0m [32m INFO[0m [2msurrealdb_server::env[0m[2m:[0m Running 3.0.0 for linux on x86_64
-[2m2026-04-11T03:02:05.985375Z[0m [32m INFO[0m [2msurrealdb::core::kvs::ds[0m[2m:[0m Starting kvs store at absolute path rocksdb:/home/mike-anderson/dev/cohezion/data/surrealdb-backup-20260410
+[2m2026-04-11T03:02:05.985375Z[0m [32m INFO[0m [2msurrealdb::core::kvs::ds[0m[2m:[0m Starting kvs store at absolute path rocksdb:/home/<USER>/dev/cohezion/data/surrealdb-backup-20260410
 [2m2026-04-11T03:02:05.987741Z[0m [32m INFO[0m [2msurrealdb::core::kvs::rocksdb[0m[2m:[0m Background thread count: 32
 [2m2026-04-11T03:02:05.989057Z[0m [32m INFO[0m [2msurrealdb::core::kvs::rocksdb[0m[2m:[0m Maximum background jobs count: 64
 [2m2026-04-11T03:02:05.989063Z[0m [32m INFO[0m [2msurrealdb::core::kvs::rocksdb[0m[2m:[0m Maximum number of open files: 1024
@@ -6109,7 +6109,7 @@ tool_use Bash
 id: toolu_01BjPxG15kCMPF7hjsU65Pbr
 ```json
 {
-  "command": "# Create new SurrealKV data directory\nmkdir -p /home/mike-anderson/dev/cohezion/data/surrealkv && mkdir -p /tmp/surrealdb && echo \"Directories created\"",
+  "command": "# Create new SurrealKV data directory\nmkdir -p /home/<USER>/dev/cohezion/data/surrealkv && mkdir -p /tmp/surrealdb && echo \"Directories created\"",
   "description": "Create SurrealKV data and temp directories"
 }
 ```
@@ -6132,7 +6132,7 @@ tool_use Read
 id: toolu_01CR6RUQCXniEJ8daRzHU7VS
 ```json
 {
-  "file_path": "/home/mike-anderson/.config/systemd/user/surrealdb.service"
+  "file_path": "/home/<USER>/.config/systemd/user/surrealdb.service"
 }
 ```
 
@@ -6149,12 +6149,12 @@ id: toolu_01CR6RUQCXniEJ8daRzHU7VS
 6	
 7	[Service]
 8	Type=simple
-9	ExecStart=/home/mike-anderson/.surrealdb/surreal start \
+9	ExecStart=/home/<USER>/.surrealdb/surreal start \
 10	    --username root \
 11	    --password root \
 12	    --bind 0.0.0.0:8001 \
 13	    --no-banner \
-14	    rocksdb:///home/mike-anderson/dev/cohezion/data/surrealdb
+14	    rocksdb:///home/<USER>/dev/cohezion/data/surrealdb
 15	Restart=on-failure
 16	RestartSec=5
 17	StandardOutput=journal
@@ -6172,8 +6172,8 @@ tool_use Write
 id: toolu_01311No9pTtFWHTeJB1ey34Z
 ```json
 {
-  "file_path": "/home/mike-anderson/.config/systemd/user/surrealdb.service",
-  "content": "[Unit]\nDescription=SurrealDB Server (Cohezion Vault) — SurrealKV Backend\nAfter=network.target\nStartLimitBurst=5\nStartLimitIntervalSec=60\n\n[Service]\nType=simple\nExecStart=/home/mike-anderson/.surrealdb/surreal start \\\n    --username root \\\n    --password root \\\n    --bind 127.0.0.1:8001 \\\n    --no-banner \\\n    --query-timeout 30s \\\n    --transaction-timeout 60s \\\n    --temporary-directory /tmp/surrealdb \\\n    --allow-scripting \\\n    --default-namespace cohezion \\\n    --default-database main \\\n    surrealkv:///home/mike-anderson/dev/cohezion/data/surrealkv\nRestart=on-failure\nRestartSec=5\nStandardOutput=journal\nStandardError=journal\nEnvironment=PYTHONUNBUFFERED=1\n\n[Install]\nWantedBy=default.target\n"
+  "file_path": "/home/<USER>/.config/systemd/user/surrealdb.service",
+  "content": "[Unit]\nDescription=SurrealDB Server (Cohezion Vault) — SurrealKV Backend\nAfter=network.target\nStartLimitBurst=5\nStartLimitIntervalSec=60\n\n[Service]\nType=simple\nExecStart=/home/<USER>/.surrealdb/surreal start \\\n    --username root \\\n    --password root \\\n    --bind 127.0.0.1:8001 \\\n    --no-banner \\\n    --query-timeout 30s \\\n    --transaction-timeout 60s \\\n    --temporary-directory /tmp/surrealdb \\\n    --allow-scripting \\\n    --default-namespace cohezion \\\n    --default-database main \\\n    surrealkv:///home/<USER>/dev/cohezion/data/surrealkv\nRestart=on-failure\nRestartSec=5\nStandardOutput=journal\nStandardError=journal\nEnvironment=PYTHONUNBUFFERED=1\n\n[Install]\nWantedBy=default.target\n"
 }
 ```
 
@@ -6182,7 +6182,7 @@ id: toolu_01311No9pTtFWHTeJB1ey34Z
 tool_result
 id: toolu_01311No9pTtFWHTeJB1ey34Z
 ```
-The file /home/mike-anderson/.config/systemd/user/surrealdb.service has been updated successfully.
+The file /home/<USER>/.config/systemd/user/surrealdb.service has been updated successfully.
 ```
 
 > TOOL
@@ -6298,7 +6298,7 @@ id: toolu_01WpCnUx77UFhU3J4M2sskxV
 tool_result
 id: toolu_01WpCnUx77UFhU3J4M2sskxV
 ```
-ExecStart={ path=/home/mike-anderson/.surrealdb/surreal ; argv[]=/home/mike-anderson/.surrealdb/surreal start --username root --password root --bind 127.0.0.1:8001 --no-banner --query-timeout 30s --transaction-timeout 60s --temporary-directory /tmp/surrealdb --allow-scripting --default-namespace cohezion --default-database main surrealkv:///home/mike-anderson/dev/cohezion/data/surrealkv ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+ExecStart={ path=/home/<USER>/.surrealdb/surreal ; argv[]=/home/<USER>/.surrealdb/surreal start --username root --password root --bind 127.0.0.1:8001 --no-banner --query-timeout 30s --transaction-timeout 60s --temporary-directory /tmp/surrealdb --allow-scripting --default-namespace cohezion --default-database main surrealkv:///home/<USER>/dev/cohezion/data/surrealkv ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
 ```
 
 > AGENT
@@ -6342,10 +6342,10 @@ id: toolu_01MyWaq1v3Yi4KaB4u3ysJfv
 tool_result
 id: toolu_01MyWaq1v3Yi4KaB4u3ysJfv
 ```
-39601 /home/mike-anderson/dev/cohezion/.venv/bin/python -m cohezion.mcp.surreal_server_mcp
-46520 /home/mike-anderson/dev/cohezion/.venv/bin/python -m cohezion.mcp.surreal_server_mcp
-841272 /home/mike-anderson/.surrealdb/surreal start --username root --password root --bind 127.0.0.1:8001 --no-banner --query-timeout 30s --transaction-timeout 60s --temporary-directory /tmp/surrealdb --allow-scripting --default-namespace cohezion --default-database main surrealkv:///home/mike-anderson/dev/cohezion/data/surrealkv
-842094 /bin/bash -c source /home/mike-anderson/.claude/shell-snapshots/snapshot-bash-1775843606090-m00u2e.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval '# Check if anything survived pgrep -af "surreal" 2>/dev/null; echo "---"; systemctl --user is-active surrealdb.service 2>/dev/null' < /dev/null && pwd -P >| /tmp/claude-8f3f-cwd
+39601 /home/<USER>/dev/cohezion/.venv/bin/python -m cohezion.mcp.surreal_server_mcp
+46520 /home/<USER>/dev/cohezion/.venv/bin/python -m cohezion.mcp.surreal_server_mcp
+841272 /home/<USER>/.surrealdb/surreal start --username root --password root --bind 127.0.0.1:8001 --no-banner --query-timeout 30s --transaction-timeout 60s --temporary-directory /tmp/surrealdb --allow-scripting --default-namespace cohezion --default-database main surrealkv:///home/<USER>/dev/cohezion/data/surrealkv
+842094 /bin/bash -c source /home/<USER>/.claude/shell-snapshots/snapshot-bash-1775843606090-m00u2e.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval '# Check if anything survived pgrep -af "surreal" 2>/dev/null; echo "---"; systemctl --user is-active surrealdb.service 2>/dev/null' < /dev/null && pwd -P >| /tmp/claude-8f3f-cwd
 ---
 active
 ```
@@ -6440,7 +6440,7 @@ tool_use Read
 id: toolu_01EcvZme4qCUX8vp2wxYQ1wW
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/knowledge_graph_schema.surql"
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/knowledge_graph_schema.surql"
 }
 ```
 
@@ -6483,7 +6483,7 @@ tool_use Bash
 id: toolu_01JosyHYLk3ZYe8H5oQT6GqF
 ```json
 {
-  "command": "# Apply the knowledge graph schema to the new SurrealKV instance\n# Note: schema is for cohezion:vault (not cohezion:main)\ncurl -s -X POST http://localhost:8001/sql \\\n  -H \"Content-Type: text/plain\" \\\n  -H \"Accept: application/json\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: vault\" \\\n  --user REDACTED \\\n  --data-binary @/home/mike-anderson/dev/cohezion/scripts/dba/knowledge_graph_schema.surql \\\n  2>&1 | python3 -c \"\nimport sys, json\ndata = json.load(sys.stdin)\nok = sum(1 for r in data if r.get('status') == 'OK')\nerr = sum(1 for r in data if r.get('status') != 'OK')\nprint(f'Schema applied: {ok} OK, {err} errors')\nif err > 0:\n    for r in data:\n        if r.get('status') != 'OK':\n            print(f'  ERR: {r.get(\\\"result\\\", \\\"\\\")[:100]}')\n\"",
+  "command": "# Apply the knowledge graph schema to the new SurrealKV instance\n# Note: schema is for cohezion:vault (not cohezion:main)\ncurl -s -X POST http://localhost:8001/sql \\\n  -H \"Content-Type: text/plain\" \\\n  -H \"Accept: application/json\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: vault\" \\\n  --user REDACTED \\\n  --data-binary @/home/<USER>/dev/cohezion/scripts/dba/knowledge_graph_schema.surql \\\n  2>&1 | python3 -c \"\nimport sys, json\ndata = json.load(sys.stdin)\nok = sum(1 for r in data if r.get('status') == 'OK')\nerr = sum(1 for r in data if r.get('status') != 'OK')\nprint(f'Schema applied: {ok} OK, {err} errors')\nif err > 0:\n    for r in data:\n        if r.get('status') != 'OK':\n            print(f'  ERR: {r.get(\\\"result\\\", \\\"\\\")[:100]}')\n\"",
   "description": "Apply knowledge graph schema to SurrealKV",
   "timeout": 10000
 }
@@ -6969,7 +6969,7 @@ id: toolu_01VUw8k84YWFUA9hmi79KFHx
 ```json
 {
   "pattern": "geometric.*correspond|correspondence|rosetta.*stone|fisher.*metric.*equivalen|gauge.*correspond",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion/physics",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion/physics",
   "output_mode": "files_with_matches"
 }
 ```
@@ -6981,7 +6981,7 @@ id: toolu_0125MxES29SkNqYwVLdQD4SM
 ```json
 {
   "pattern": "geometric.*correspond|correspondence|rosetta|six.*perspectives|mathematical.*grounding",
-  "path": "/home/mike-anderson/dev/cohezion/.agent",
+  "path": "/home/<USER>/dev/cohezion/.agent",
   "output_mode": "content",
   "context": 2
 }
@@ -6994,7 +6994,7 @@ id: toolu_01Lhca2kfoVVQeUcxKEcU1t6
 ```json
 {
   "pattern": "Rosetta|Fisher.*information|Brahmagupta|free.energy.*minimum|gauge.*connection|Bloch.*equator",
-  "path": "/home/mike-anderson/dev/cohezion/docs",
+  "path": "/home/<USER>/dev/cohezion/docs",
   "output_mode": "files_with_matches"
 }
 ```
@@ -7050,7 +7050,7 @@ id: toolu_01DDs8Fkb5GzS5e3HtWJyQFW
 ```json
 {
   "pattern": "Rosetta|six.*perspectives|correspondence|equivalen",
-  "path": "/home/mike-anderson/dev/cohezion/docs/genesis-engine-research.md",
+  "path": "/home/<USER>/dev/cohezion/docs/genesis-engine-research.md",
   "output_mode": "content",
   "context": 3
 }
@@ -7062,7 +7062,7 @@ tool_use Read
 id: toolu_0187TdDQwDHqwERsGQLrX7o1
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/physics/information_geometry.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/physics/information_geometry.py",
   "limit": 60
 }
 ```
@@ -7148,7 +7148,7 @@ tool_use Read
 id: toolu_01DnXzNo2PGS7TLYAAxxr4mK
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/docs/genesis-engine-research.md",
+  "file_path": "/home/<USER>/dev/cohezion/docs/genesis-engine-research.md",
   "offset": 735,
   "limit": 30
 }
@@ -7161,7 +7161,7 @@ id: toolu_019FWJD63LVjdp1LuDr5znHK
 ```json
 {
   "pattern": "mereon|Mereon|sacred.geometry|platonic|icosahedr|truncat",
-  "path": "/home/mike-anderson/dev/cohezion/src/cohezion/physics",
+  "path": "/home/<USER>/dev/cohezion/src/cohezion/physics",
   "output_mode": "files_with_matches"
 }
 ```
@@ -7215,7 +7215,7 @@ tool_use Read
 id: toolu_01Gv8U2BLpxDyKX4wvNxPYbg
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/physics/mereon_projector.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/physics/mereon_projector.py",
   "limit": 60
 }
 ```
@@ -7265,7 +7265,7 @@ tool_use Read
 id: toolu_01WdGdre5RJhhPT2aX1Awmo1
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/physics/mhd_mereon.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/physics/mhd_mereon.py",
   "limit": 50
 }
 ```
@@ -7379,7 +7379,7 @@ tool_use Read
 id: toolu_01BVWS5Zuhf3nUoG3Q13ZfLA
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "limit": 10
 }
 ```
@@ -7411,7 +7411,7 @@ tool_use Write
 id: toolu_017VTx7nGxsgHdVkiv9jYcEd
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "content": "# Plan: Bleeding-Edge Architecture Upgrade — Temporal KG + LeWM + V-Model + Agent Mesh\n\n## Context\n\n**Problem:** Cohezion has a mature 12D agentic universe with compound engineering, but a comprehensive research sweep across 6 streams (internal codebase, arXiv, HuggingFace, GitHub, industry, latent space literature) reveals the architecture is 6-12 months behind the 2026 state-of-the-art in key areas. The fresh SurrealKV migration creates a clean-slate opportunity to build the temporal and graph infrastructure right.\n\n**Target alignment:** Anthropic \"Research Engineer, Universes\" — building next-gen agentic environments with rigorous evaluations, RL training, and production ML infrastructure.\n\n**Key research findings driving this plan:**\n- **Graphiti** (Zep AI): Bi-temporal knowledge graphs with `t_valid`/`t_invalid` windows on edges\n- **MAGMA** (Jan 2026): 4-graph agent memory decomposition (semantic/temporal/causal/entity)\n- **LeWM** (LeCun et al.): Stable JEPA with 2-loss framework (prediction + Gaussian regularizer)\n- **SurrealDB 3.0**: Native `VERSION` clause, bidirectional `REFERENCE`, Spectron extraction pipeline\n- **VP-Model**: Hash-locked verification gates with SHA-256 test immutability\n- **DPAM** (CACM): Data Product Agent Mesh — per-product agent governance\n- **SP-RaNN**: Structure-preserving MHD via linear least-squares (no nonconvex opt)\n- **RLSTG**: Riemannian liquid spatio-temporal graph dynamics on curved manifolds\n\n**Current state:** SurrealKV just migrated (fresh, empty, healthy). Schema needs to be rebuilt from scratch — this is […]
 
 > TOOL
@@ -7419,7 +7419,7 @@ id: toolu_017VTx7nGxsgHdVkiv9jYcEd
 tool_result
 id: toolu_017VTx7nGxsgHdVkiv9jYcEd
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -7474,7 +7474,7 @@ id: toolu_01DrsyerU4oFUx4syrDgQX75
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/mike-anderson/.claude/plans/elegant-singing-tome.md
+Your plan has been saved to: /home/<USER>/.claude/plans/elegant-singing-tome.md
 You can refer back to it if needed during implementation.
 
 If this plan can be broken down into multiple independent tasks, consider using the TeamCreate tool to create a team and parallelize the work.
@@ -7526,7 +7526,7 @@ tool_use Read
 id: toolu_01RmrvLqrSVLQiehg7rtw4bP
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/knowledge_graph_schema.surql"
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/knowledge_graph_schema.surql"
 }
 ```
 
@@ -7536,7 +7536,7 @@ tool_use Read
 id: toolu_017vy535zK1ZF3ttB6SZabRw
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/journey_schema.surql",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/journey_schema.surql",
   "limit": 60
 }
 ```
@@ -7547,7 +7547,7 @@ tool_use Read
 id: toolu_01PXyn6j5QzctZ5wbTXrrKJM
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/universe_schema.surql",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/universe_schema.surql",
   "limit": 60
 }
 ```
@@ -7640,7 +7640,7 @@ id: toolu_015aqA8fUMigU3SNoATurysD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/knowledge_graph_schema.surql",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/knowledge_graph_schema.surql",
   "old_string": "-- Traces: [KG-1]\n-- SurrealDB 3.0 Schema: Knowledge Graph — Neurons & Synapses\n--\n-- Neurons: knowledge nodes sourced from Obsidian vault markdown files\n-- Synapses: directed edges between neurons (latent, dream, or direct link types)\n--\n-- Database: cohezion:vault  (NOT cohezion:genesis — separate persistence graph)\n-- Populated by: tools/vault-keeper-cycle.py via SurrealDBSync.bulk_import_concepts()\n-- Graph HIHO target: 0.5 ± 0.15 (see cohezion-maintenance-mcp graph_health tool)\n\n-- ─────────────────────────────────────────────────────────────────\n-- NEURONS (knowledge nodes)\n-- ─────────────────────────────────────────────────────────────────\nDEFINE TABLE neurons SCHEMAFULL;\nDEFINE FIELD title      ON neurons TYPE string;\nDEFINE FIELD path       ON neurons TYPE string;\nDEFINE FIELD tags       ON neurons TYPE array<string>;\nDEFINE FIELD tags[*]    ON neurons TYPE string;\nDEFINE FIELD content    ON neurons TYPE string DEFAULT '';\nDEFINE FIELD cluster_id ON neurons TYPE string DEFAULT '';\nDEFINE FIELD activation ON neurons TYPE float DEFAULT 0.0;\nDEFINE FIELD stage      ON neurons TYPE string DEFAULT 'active';\nDEFINE FIELD created_at ON neurons TYPE datetime DEFAULT time::now();\nDEFINE FIELD updated_at ON neurons TYPE option<datetime>;\n\nDEFINE INDEX neurons_path    ON neurons FIELDS path UNIQUE;\nDEFINE INDEX neurons_cluster ON neurons FIELDS cluster_id;\n\n-- ─────────────────────────────────────────────────────────────────\n-- SYNAPSES (directed edges between knowledge nodes)\n-- ─────────────────────────────────────────────────────────────────\nDEFINE TABLE synapses SCHEMAFULL;\nDEFINE FIELD source        ON synapses TYPE string;\nDEFINE FIELD target        ON synapses TYPE string;\nDEFINE FIELD link_type     ON synapses TYPE string;  -- latent | dream | direct\nDEFINE FIELD reason        ON synapses TYPE string DEFAULT '';\nDEFINE […]
 
 > TOOL
@@ -7648,7 +7648,7 @@ id: toolu_015aqA8fUMigU3SNoATurysD
 tool_result
 id: toolu_015aqA8fUMigU3SNoATurysD
 ```
-The file /home/mike-anderson/dev/cohezion/scripts/dba/knowledge_graph_schema.surql has been updated successfully.
+The file /home/<USER>/dev/cohezion/scripts/dba/knowledge_graph_schema.surql has been updated successfully.
 ```
 
 > AGENT
@@ -7662,7 +7662,7 @@ id: toolu_01Rj1HbDfrq7X8qS4tr8U8NA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/journey_schema.surql",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/journey_schema.surql",
   "old_string": "-- Indexes for common queries\nDEFINE INDEX idx_journey_journey_id ON TABLE agent_journey COLUMNS journey_id;\nDEFINE INDEX idx_journey_agent_id ON TABLE agent_journey COLUMNS agent_id;\nDEFINE INDEX idx_journey_status ON TABLE agent_journey COLUMNS status;\nDEFINE INDEX idx_journey_started_at ON TABLE agent_journey COLUMNS started_at;",
   "new_string": "-- Bi-temporal: valid-time (when this journey state held in the simulation)\nDEFINE FIELD valid_from ON TABLE agent_journey TYPE datetime DEFAULT time::now();\nDEFINE FIELD valid_to   ON TABLE agent_journey TYPE option<datetime>;\n\n-- Indexes for common queries\nDEFINE INDEX idx_journey_journey_id ON TABLE agent_journey COLUMNS journey_id;\nDEFINE INDEX idx_journey_agent_id ON TABLE agent_journey COLUMNS agent_id;\nDEFINE INDEX idx_journey_status ON TABLE agent_journey COLUMNS status;\nDEFINE INDEX idx_journey_started_at ON TABLE agent_journey COLUMNS started_at;\nDEFINE INDEX idx_journey_temporal ON TABLE agent_journey COLUMNS valid_from, valid_to;"
 }
@@ -7675,7 +7675,7 @@ id: toolu_0142pZC44v5KQmCSqTUeBEeh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/journey_schema.surql",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/journey_schema.surql",
   "old_string": "-- SurrealDB 3.0 Schema: Agentic Journey Tracking\n-- Tracks agent actions through the 12D coherence universe",
   "new_string": "-- SurrealDB 3.0 Schema: Agentic Journey Tracking (Bi-Temporal)\n-- Tracks agent actions through the 12D coherence universe\n-- Bi-temporal: valid_from/valid_to (domain time) + VERSION clause (system time)"
 }
@@ -7686,7 +7686,7 @@ id: toolu_0142pZC44v5KQmCSqTUeBEeh
 tool_result
 id: toolu_01Rj1HbDfrq7X8qS4tr8U8NA
 ```
-The file /home/mike-anderson/dev/cohezion/scripts/dba/journey_schema.surql has been updated successfully.
+The file /home/<USER>/dev/cohezion/scripts/dba/journey_schema.surql has been updated successfully.
 ```
 
 > TOOL
@@ -7694,7 +7694,7 @@ The file /home/mike-anderson/dev/cohezion/scripts/dba/journey_schema.surql has b
 tool_result
 id: toolu_0142pZC44v5KQmCSqTUeBEeh
 ```
-The file /home/mike-anderson/dev/cohezion/scripts/dba/journey_schema.surql has been updated successfully.
+The file /home/<USER>/dev/cohezion/scripts/dba/journey_schema.surql has been updated successfully.
 ```
 
 > TOOL
@@ -7704,7 +7704,7 @@ id: toolu_01RtW76AoqhhGSgD1L5mT6ZT
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/universe_schema.surql",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/universe_schema.surql",
   "old_string": "-- SurrealDB 3.0 Schema: Universe State Space\n-- 12D coherence universe for tracking agent state trajectories",
   "new_string": "-- SurrealDB 3.0 Schema: Universe State Space (Bi-Temporal)\n-- 12D coherence universe for tracking agent state trajectories\n-- Bi-temporal: valid_from/valid_to (simulation time) + VERSION clause (system time)"
 }
@@ -7717,7 +7717,7 @@ id: toolu_01XkqNgqUxZAsiFp4BXzbSdq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/dev/cohezion/scripts/dba/universe_schema.surql",
+  "file_path": "/home/<USER>/dev/cohezion/scripts/dba/universe_schema.surql",
   "old_string": "-- Flexible metadata\nDEFINE FIELD metadata ON TABLE universe_node TYPE object;\n\n-- Indexes\nDEFINE INDEX idx_unode_type ON TABLE universe_node COLUMNS node_type;",
   "new_string": "-- Bi-temporal: valid-time (when this state held in the simulated universe)\nDEFINE FIELD valid_from ON TABLE universe_node TYPE datetime DEFAULT time::now();\nDEFINE FIELD valid_to   ON TABLE universe_node TYPE option<datetime>;\n\n-- Flexible metadata\nDEFINE FIELD metadata ON TABLE universe_node TYPE object;\n\n-- Indexes\nDEFINE INDEX idx_unode_type ON TABLE universe_node COLUMNS node_type;\nDEFINE INDEX idx_unode_temporal ON TABLE universe_node COLUMNS valid_from, valid_to;"
 }
@@ -7728,7 +7728,7 @@ id: toolu_01XkqNgqUxZAsiFp4BXzbSdq
 tool_result
 id: toolu_01RtW76AoqhhGSgD1L5mT6ZT
 ```
-The file /home/mike-anderson/dev/cohezion/scripts/dba/universe_schema.surql has been updated successfully.
+The file /home/<USER>/dev/cohezion/scripts/dba/universe_schema.surql has been updated successfully.
 ```
 
 > TOOL
@@ -7736,7 +7736,7 @@ The file /home/mike-anderson/dev/cohezion/scripts/dba/universe_schema.surql has 
 tool_result
 id: toolu_01XkqNgqUxZAsiFp4BXzbSdq
 ```
-The file /home/mike-anderson/dev/cohezion/scripts/dba/universe_schema.surql has been updated successfully.
+The file /home/<USER>/dev/cohezion/scripts/dba/universe_schema.surql has been updated successfully.
 ```
 
 > AGENT
@@ -7749,7 +7749,7 @@ tool_use Bash
 id: toolu_01Law9yjkDxJZw3XKnJuypME
 ```json
 {
-  "command": "# Apply knowledge graph schema to vault DB\ncurl -s -X POST http://localhost:8001/sql \\\n  -H \"Content-Type: text/plain\" \\\n  -H \"Accept: application/json\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: vault\" \\\n  --user REDACTED \\\n  --data-binary @/home/mike-anderson/dev/cohezion/scripts/dba/knowledge_graph_schema.surql \\\n  2>&1 | python3 -c \"\nimport sys, json\ndata = json.load(sys.stdin)\nok = sum(1 for r in data if r.get('status') == 'OK')\nerr = [r for r in data if r.get('status') != 'OK']\nprint(f'KG schema (vault): {ok} OK, {len(err)} errors')\nfor e in err[:5]:\n    print(f'  ERR: {e.get(\\\"result\\\", \\\"\\\")[:120]}')\n\"",
+  "command": "# Apply knowledge graph schema to vault DB\ncurl -s -X POST http://localhost:8001/sql \\\n  -H \"Content-Type: text/plain\" \\\n  -H \"Accept: application/json\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: vault\" \\\n  --user REDACTED \\\n  --data-binary @/home/<USER>/dev/cohezion/scripts/dba/knowledge_graph_schema.surql \\\n  2>&1 | python3 -c \"\nimport sys, json\ndata = json.load(sys.stdin)\nok = sum(1 for r in data if r.get('status') == 'OK')\nerr = [r for r in data if r.get('status') != 'OK']\nprint(f'KG schema (vault): {ok} OK, {len(err)} errors')\nfor e in err[:5]:\n    print(f'  ERR: {e.get(\\\"result\\\", \\\"\\\")[:120]}')\n\"",
   "description": "Apply bi-temporal knowledge graph schema to vault DB",
   "timeout": 15000
 }
@@ -7761,7 +7761,7 @@ tool_use Bash
 id: toolu_01X8CLaYC8zbiw1thq9L1Ucp
 ```json
 {
-  "command": "# Apply journey + universe schemas to genesis DB\ncurl -s -X POST http://localhost:8001/sql \\\n  -H \"Content-Type: text/plain\" \\\n  -H \"Accept: application/json\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: genesis\" \\\n  --user REDACTED \\\n  --data-binary @/home/mike-anderson/dev/cohezion/scripts/dba/journey_schema.surql \\\n  2>&1 | python3 -c \"\nimport sys, json\ndata = json.load(sys.stdin)\nok = sum(1 for r in data if r.get('status') == 'OK')\nerr = [r for r in data if r.get('status') != 'OK']\nprint(f'Journey schema (genesis): {ok} OK, {len(err)} errors')\nfor e in err[:3]:\n    print(f'  ERR: {e.get(\\\"result\\\", \\\"\\\")[:120]}')\n\" && \\\ncurl -s -X POST http://localhost:8001/sql \\\n  -H \"Content-Type: text/plain\" \\\n  -H \"Accept: application/json\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: genesis\" \\\n  --user REDACTED \\\n  --data-binary @/home/mike-anderson/dev/cohezion/scripts/dba/universe_schema.surql \\\n  2>&1 | python3 -c \"\nimport sys, json\ndata = json.load(sys.stdin)\nok = sum(1 for r in data if r.get('status') == 'OK')\nerr = [r for r in data if r.get('status') != 'OK']\nprint(f'Universe schema (genesis): {ok} OK, {len(err)} errors')\nfor e in err[:3]:\n    print(f'  ERR: {e.get(\\\"result\\\", \\\"\\\")[:120]}')\n\"",
+  "command": "# Apply journey + universe schemas to genesis DB\ncurl -s -X POST http://localhost:8001/sql \\\n  -H \"Content-Type: text/plain\" \\\n  -H \"Accept: application/json\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: genesis\" \\\n  --user REDACTED \\\n  --data-binary @/home/<USER>/dev/cohezion/scripts/dba/journey_schema.surql \\\n  2>&1 | python3 -c \"\nimport sys, json\ndata = json.load(sys.stdin)\nok = sum(1 for r in data if r.get('status') == 'OK')\nerr = [r for r in data if r.get('status') != 'OK']\nprint(f'Journey schema (genesis): {ok} OK, {len(err)} errors')\nfor e in err[:3]:\n    print(f'  ERR: {e.get(\\\"result\\\", \\\"\\\")[:120]}')\n\" && \\\ncurl -s -X POST http://localhost:8001/sql \\\n  -H \"Content-Type: text/plain\" \\\n  -H \"Accept: application/json\" \\\n  -H \"surreal-ns: cohezion\" \\\n  -H \"surreal-db: genesis\" \\\n  --user REDACTED \\\n  --data-binary @/home/<USER>/dev/cohezion/scripts/dba/universe_schema.surql \\\n  2>&1 | python3 -c \"\nimport sys, json\ndata = json.load(sys.stdin)\nok = sum(1 for r in data if r.get('status') == 'OK')\nerr = [r for r in data if r.get('status') != 'OK']\nprint(f'Universe schema (genesis): {ok} OK, {len(err)} errors')\nfor e in err[:3]:\n    print(f'  ERR: {e.get(\\\"result\\\", \\\"\\\")[:120]}')\n\"",
   "description": "Apply journey + universe schemas to genesis DB",
   "timeout": 15000
 }
@@ -7888,7 +7888,7 @@ tool_use Bash
 id: toolu_01LY8WcP8QVHZsy49k4iyJWw
 ```json
 {
-  "command": "/home/mike-anderson/.surrealdb/surreal start --help 2>&1 | grep -i \"version\\|temporal\\|history\" | head -10",
+  "command": "/home/<USER>/.surrealdb/surreal start --help 2>&1 | grep -i \"version\\|temporal\\|history\" | head -10",
   "description": "Check SurrealDB flags for enabling versioned queries"
 }
 ```
@@ -7946,7 +7946,7 @@ tool_use Read
 id: toolu_01RM1aDosGHGpxHxWoSwC3Ry
 ```json
 {
-  "file_path": "/home/mike-anderson/.config/systemd/user/surrealdb.service"
+  "file_path": "/home/<USER>/.config/systemd/user/surrealdb.service"
 }
 ```
 
@@ -7963,7 +7963,7 @@ id: toolu_01RM1aDosGHGpxHxWoSwC3Ry
 6	
 7	[Service]
 8	Type=simple
-9	ExecStart=/home/mike-anderson/.surrealdb/surreal start \
+9	ExecStart=/home/<USER>/.surrealdb/surreal start \
 10	    --username root \
 11	    --password root \
 12	    --bind 127.0.0.1:8001 \
@@ -7974,7 +7974,7 @@ id: toolu_01RM1aDosGHGpxHxWoSwC3Ry
 17	    --allow-scripting \
 18	    --default-namespace cohezion \
 19	    --default-database main \
-20	    surrealkv:///home/mike-anderson/dev/cohezion/data/surrealkv
+20	    surrealkv:///home/<USER>/dev/cohezion/data/surrealkv
 21	Restart=on-failure
 22	RestartSec=5
 23	StandardOutput=journal
@@ -7993,9 +7993,9 @@ id: toolu_014JG5jEYxVVWvGdJX5cbutV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.config/systemd/user/surrealdb.service",
-  "old_string": "    surrealkv:///home/mike-anderson/dev/cohezion/data/surrealkv",
-  "new_string": "    \"surrealkv:///home/mike-anderson/dev/cohezion/data/surrealkv?versioned=true\""
+  "file_path": "/home/<USER>/.config/systemd/user/surrealdb.service",
+  "old_string": "    surrealkv:///home/<USER>/dev/cohezion/data/surrealkv",
+  "new_string": "    \"surrealkv:///home/<USER>/dev/cohezion/data/surrealkv?versioned=true\""
 }
 ```
 
@@ -8004,7 +8004,7 @@ id: toolu_014JG5jEYxVVWvGdJX5cbutV
 tool_result
 id: toolu_014JG5jEYxVVWvGdJX5cbutV
 ```
-The file /home/mike-anderson/.config/systemd/user/surrealdb.service has been updated successfully.
+The file /home/<USER>/.config/systemd/user/surrealdb.service has been updated successfully.
 ```
 
 > TOOL
@@ -8230,7 +8230,7 @@ tool_use Read
 id: toolu_01Ta7Q5KV74dQzRTWVeqqo8z
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/swarm/lemonade_manager.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/swarm/lemonade_manager.py",
   "limit": 50
 }
 ```
@@ -8298,7 +8298,7 @@ tool_use Read
 id: toolu_01SaEjSjLMFRtcSLJdDz86b5
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/swarm/lemonade_config.yaml"
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/swarm/lemonade_config.yaml"
 }
 ```
 
@@ -8308,7 +8308,7 @@ tool_use Read
 id: toolu_01FqA6LG1FoEkmBxUaFBAorA
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/swarm/providers/lemonade_provider.py",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/swarm/providers/lemonade_provider.py",
   "limit": 50
 }
 ```
@@ -8416,7 +8416,7 @@ tool_use Read
 id: toolu_01GeK3MHt35d5yus6M3kjcJs
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/skills/LEMONADE_EMBEDDABLE_INTEGRATION_PRIME.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/skills/LEMONADE_EMBEDDABLE_INTEGRATION_PRIME.md",
   "limit": 40
 }
 ```
@@ -8427,7 +8427,7 @@ tool_use Bash
 id: toolu_01RsMp5eGiHqhykpJBpPXNe8
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/cohezion/vendor/lemonade/ 2>/dev/null | head -15",
+  "command": "ls -la /home/<USER>/dev/cohezion/vendor/lemonade/ 2>/dev/null | head -15",
   "description": "Check Lemonade vendor directory"
 }
 ```
@@ -8510,7 +8510,7 @@ tool_use Read
 id: toolu_019WsKshbQH2HEasKzUGT1cU
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "offset": 68,
   "limit": 25
 }
@@ -8555,7 +8555,7 @@ id: toolu_01RtjWauDRLKX7sEN2QjXqvc
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "## Phase 2: Dynamic Model Discovery (THIS SESSION — carry-over)\n\n### Task 2.1: Create model profiles config\n\n**New file:** `config/model_profiles.yaml`\n\nYAML with empirically-measured quality/speed/latency scores for Ollama and Gemini models. These can't be auto-discovered — they require benchmarking.\n\n### Task 2.2: Replace hardcoded dicts in CostAwareRouter\n\n**File:** `src/cohezion/swarm/cost_aware_router.py`\n\nReplace `MODEL_COSTS`, `MODEL_QUALITY`, `MODEL_TPS`, `MODEL_LATENCY`, `MODEL_CONTEXT_LIMITS` with:\n1. Load static profiles from `config/model_profiles.yaml`\n2. Merge with dynamic Ollama discovery via `/api/tags` (reuse `model_manager.list_models()` pattern from `src/cohezion/swarm/model_manager.py:120`)\n3. Cache merged result with 5-min TTL\n4. Fall back to YAML defaults if Ollama API unreachable",
   "new_string": "## Phase 2: Dynamic Model Discovery (THIS SESSION — carry-over)\n\n### Task 2.1: Create model profiles config (3-provider)\n\n**New file:** `config/model_profiles.yaml`\n\nYAML with empirically-measured quality/speed/latency scores for ALL three inference backends:\n\n```yaml\nollama:        # Local CPU/GPU inference\n  phi3:mini:   { quality: 0.6, tps: 15.0, latency_ms: 50, cost_per_1k: 0.0, context: 4096 }\n  qwen3-coder:32b: { quality: 0.85, tps: 8.0, latency_ms: 100, cost_per_1k: 0.0, context: 32768 }\n  # ... etc\n\nlemonade:      # Private embeddable server (gfx1151 hardware acceleration)\n  gemma4:2b:   { quality: 0.65, tps: 40.0, latency_ms: 30, cost_per_1k: 0.0, context: 8192, hw: npu }\n  gemma4:4b:   { quality: 0.72, tps: 30.0, latency_ms: 40, cost_per_1k: 0.0, context: 8192, hw: npu }\n  gemma4:26b-moe: { quality: 0.90, tps: 12.0, latency_ms: 80, cost_per_1k: […]
 
@@ -8564,7 +8564,7 @@ id: toolu_01RtjWauDRLKX7sEN2QjXqvc
 tool_result
 id: toolu_01RtjWauDRLKX7sEN2QjXqvc
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -8608,7 +8608,7 @@ tool_use Bash
 id: toolu_01ABMg8ZkdLL5teV1QNDzyaC
 ```json
 {
-  "command": "ls -la /home/mike-anderson/dev/cohezion/.claude/agents/ 2>/dev/null | head -20; echo \"---\"; ls -la /home/mike-anderson/.claude/agents/ 2>/dev/null | head -20",
+  "command": "ls -la /home/<USER>/dev/cohezion/.claude/agents/ 2>/dev/null | head -20; echo \"---\"; ls -la /home/<USER>/.claude/agents/ 2>/dev/null | head -20",
   "description": "Check for Pi agent definitions"
 }
 ```
@@ -8620,7 +8620,7 @@ id: toolu_01CxZ7rwzhfyva6BqM4LAdCw
 ```json
 {
   "pattern": "lemonade|Lemonade|lemond|13307",
-  "path": "/home/mike-anderson/dev/cohezion/cloud-vault-mcp/vault/cortex",
+  "path": "/home/<USER>/dev/cohezion/cloud-vault-mcp/vault/cortex",
   "output_mode": "files_with_matches"
 }
 ```
@@ -8877,7 +8877,7 @@ tool_use Read
 id: toolu_01SGnAbhRMm9RedhXHgF7KFA
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.pi/extensions/cohezion-bridge-v3.ts",
+  "file_path": "/home/<USER>/dev/cohezion/.pi/extensions/cohezion-bridge-v3.ts",
   "limit": 40
 }
 ```
@@ -8888,7 +8888,7 @@ tool_use Read
 id: toolu_014JXk8pxXLwueV3AzQxJgMk
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.context/skills/manifold-physics-optimization/pi-abilities.md"
+  "file_path": "/home/<USER>/dev/cohezion/.context/skills/manifold-physics-optimization/pi-abilities.md"
 }
 ```
 
@@ -8898,7 +8898,7 @@ tool_use Read
 id: toolu_01PYJxXofzMVi67WkkwsibSw
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/skills/PI_INTEGRATION_PRIME.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/skills/PI_INTEGRATION_PRIME.md",
   "limit": 40
 }
 ```
@@ -9087,7 +9087,7 @@ id: toolu_01VjBGLphrSFSwNhRAt5jHYH
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "YAML with empirically-measured quality/speed/latency scores for ALL three inference backends:\n\n```yaml\nollama:        # Local CPU/GPU inference\n  phi3:mini:   { quality: 0.6, tps: 15.0, latency_ms: 50, cost_per_1k: 0.0, context: 4096 }\n  qwen3-coder:32b: { quality: 0.85, tps: 8.0, latency_ms: 100, cost_per_1k: 0.0, context: 32768 }\n  # ... etc\n\nlemonade:      # Private embeddable server (gfx1151 hardware acceleration)\n  gemma4:2b:   { quality: 0.65, tps: 40.0, latency_ms: 30, cost_per_1k: 0.0, context: 8192, hw: npu }\n  gemma4:4b:   { quality: 0.72, tps: 30.0, latency_ms: 40, cost_per_1k: 0.0, context: 8192, hw: npu }\n  gemma4:26b-moe: { quality: 0.90, tps: 12.0, latency_ms: 80, cost_per_1k: 0.0, context: 32768, hw: gpu }\n\ngemini:        # Google Cloud inference\n  gemini-2.0-flash-lite: { quality: 0.70, tps: 50.0, latency_ms: 200, cost_per_1k: 0.000075, context: 1000000 }\n  gemini-2.5-flash: { quality: 0.88, tps: 40.0, latency_ms: 300, cost_per_1k: 0.0003, context: 1000000 }\n  gemini-2.5-pro: { quality: 0.97, tps: 20.0, latency_ms: 500, cost_per_1k: 0.002, context: 2000000 }\n```\n\n**Reuses:** `src/cohezion/swarm/lemonade_config.yaml` for hardware affinity mapping (NPU/GPU/Cloud tiers).",
   "new_string": "YAML with empirically-measured quality/speed/latency scores for the **4-tier compute fabric**:\n\n```yaml\n# Tier 1: NPU — Private Lemonade embeddable server (gfx1151 hardware acceleration)\nlemonade:\n  gemma4:2b:       { quality: 0.65, tps: 40.0, latency_ms: 30, cost_per_1k: 0.0, context: 8192, hw: npu }\n  gemma4:4b:       { quality: 0.72, tps: 30.0, latency_ms: […]
 
@@ -9096,7 +9096,7 @@ id: toolu_01VjBGLphrSFSwNhRAt5jHYH
 tool_result
 id: toolu_01VjBGLphrSFSwNhRAt5jHYH
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9118,7 +9118,7 @@ id: toolu_01MyNdzgD1PpZqtjNRzucu8K
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "# Tier 2: Local — Ollama CPU/iGPU inference (128GB UMA)\nollama_local:\n  phi3:mini:       { quality: 0.6, tps: 15.0, latency_ms: 50, cost_per_1k: 0.0, context: 4096 }\n  qwen3-coder:32b: { quality: 0.85, tps: 8.0, latency_ms: 100, cost_per_1k: 0.0, context: 32768 }\n  deepseek-r1:8b:  { quality: 0.95, tps: 2.0, latency_ms: 300, cost_per_1k: 0.0, context: 64000 }\n\n# Tier 3: Ollama Cloud — Same API, :cloud suffix, non-zero cost",
   "new_string": "# NOTE: Ollama LOCAL models are NOT used — unoptimized for AMD gfx1151 hardware.\n# Lemonade handles ALL local inference with hardware-specific optimizations.\n\n# Tier 2: Ollama Cloud — Same API as local, :cloud suffix, non-zero cost"
 }
@@ -9129,7 +9129,7 @@ id: toolu_01MyNdzgD1PpZqtjNRzucu8K
 tool_result
 id: toolu_01MyNdzgD1PpZqtjNRzucu8K
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9151,7 +9151,7 @@ id: toolu_01AAHsovmgju5p5R4S8CnWKb
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "# Tier 4: Gemini — Google Cloud inference (highest context, highest cost)\ngemini:\n  gemini-2.0-flash-lite: { quality: 0.70, tps: 50.0, latency_ms: 200, cost_per_1k: 0.000075, context: 1000000 }\n  gemini-2.5-flash:      { quality: 0.88, tps: 40.0, latency_ms: 300, cost_per_1k: 0.0003, context: 1000000 }\n  gemini-2.5-pro:        { quality: 0.97, tps: 20.0, latency_ms: 500, cost_per_1k: 0.002, context: 2000000 }\n```\n\n**Key design:** Ollama Cloud models use the same API as local Ollama — the `:cloud` suffix is the signal. Router detects `:cloud` → assigns cloud tier cost. No new provider code needed.",
   "new_string": "# NOTE: Gemini API and Claude API are NOT used — zero external API costs policy.\n# All inference is either free local (Lemonade) or Ollama Cloud free tier.\n```\n\n**Key design decisions:**\n- **Zero external API costs** — No Gemini API, no Claude API, no per-token charges\n- Lemonade handles ALL local inference with gfx1151-specific hardware optimization\n- Ollama Cloud (`:cloud` suffix) for models exceeding local capacity, using free tier\n- Ollama Cloud uses same API as local Ollama — `:cloud` suffix is the signal\n- CostAwareRouter drops Gemini models, keeps only Lemonade + Ollama Cloud"
 }
@@ -9162,7 +9162,7 @@ id: toolu_01AAHsovmgju5p5R4S8CnWKb
 tool_result
 id: toolu_01AAHsovmgju5p5R4S8CnWKb
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9235,7 +9235,7 @@ id: toolu_01Lz2TupJtuV39EFuo8AxEV4
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "# Tier 2: Ollama Cloud — Same API as local, :cloud suffix, non-zero cost\nollama_cloud:\n  qwen3.5:cloud:   { quality: 0.92, tps: 50.0, latency_ms: 200, cost_per_1k: 0.001, context: 131072 }\n  glm-5:cloud:     { quality: 0.88, tps: 40.0, latency_ms: 250, cost_per_1k: 0.001, context: 131072 }\n\n# NOTE: Gemini API and Claude API are NOT used — zero external API costs policy.\n# All inference is either free local (Lemonade) or Ollama Cloud free tier.\n```\n\n**Key design decisions:**\n- **Zero external API costs** — No Gemini API, no Claude API, no per-token charges\n- Lemonade handles ALL local inference with gfx1151-specific hardware optimization\n- Ollama Cloud (`:cloud` suffix) for models exceeding local capacity, using free tier\n- Ollama Cloud uses same API as local Ollama — `:cloud` suffix is the signal\n- CostAwareRouter drops Gemini models, keeps only Lemonade + Ollama Cloud",
   "new_string": "# Tier 2: Ollama Pro Cloud — $20/mo flat, GPU-time billing, same API\nollama_cloud:\n  qwen3:235b-a22b:cloud: { quality: 0.95, tps: 50.0, latency_ms: 200, cost_per_1k: 0.0, context: 131072 }\n  qwen3.5:cloud:          { quality: 0.92, tps: 50.0, latency_ms: 200, cost_per_1k: 0.0, context: 131072 }\n  glm-5:cloud:            { quality: 0.88, tps: 40.0, latency_ms: 250, cost_per_1k: 0.0, context: 131072 }\n  deepseek-r1:cloud:      { quality: 0.97, tps: 30.0, latency_ms: 300, […]
 
@@ -9244,7 +9244,7 @@ id: toolu_01Lz2TupJtuV39EFuo8AxEV4
 tool_result
 id: toolu_01Lz2TupJtuV39EFuo8AxEV4
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9258,7 +9258,7 @@ id: toolu_01W2Gb9ZHR29x2xDpgn9mPuD
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "- Cost tracking: Lemonade requests = $0.00, Ollama Cloud = amortized $20/mo across usage\n- `OLLAMA_API_KEY` env var for cloud auth (set in service/session config)",
   "new_string": "- Cost tracking: Lemonade requests = $0.00, Ollama Cloud = amortized $20/mo across usage\n- `OLLAMA_API_KEY` env var for cloud auth (set in service/session config)\n- **Concurrency budget: 3 slots total (Ollama Pro), 1 reserved for Pi agent = 2 for Cohezion**\n- CostAwareRouter must enforce max 2 concurrent Ollama Cloud requests (queue overflow)\n- Pi agent gets dedicated slot for CPI (Claude on Pi) Lemonade + cloud fallback"
 }
@@ -9269,7 +9269,7 @@ id: toolu_01W2Gb9ZHR29x2xDpgn9mPuD
 tool_result
 id: toolu_01W2Gb9ZHR29x2xDpgn9mPuD
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9321,7 +9321,7 @@ id: toolu_01EeqB6B7f84DWJGm8758P2H
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "**Key design decisions:**\n- **Two providers, one API format, predictable costs:**\n  - Lemonade ($0): gfx1151-optimized local inference (NPU + iGPU), all small/medium models\n  - Ollama Pro ($20/mo flat): Cloud GPU inference for large models, premium access, burst demand\n- **No Gemini API, no Claude API, no per-token charges** — subscription-only cloud costs\n- Ollama Cloud uses same API as local Ollama — `:cloud` suffix is the routing signal\n- CostAwareRouter drops Gemini models, replaces with Ollama Cloud models\n- Cost tracking: Lemonade requests = $0.00, Ollama Cloud = amortized $20/mo across usage\n- `OLLAMA_API_KEY` env var for cloud auth (set in service/session config)\n- **Concurrency budget: 3 slots total (Ollama Pro), 1 reserved for Pi agent = 2 for Cohezion**\n- CostAwareRouter must enforce max 2 concurrent Ollama Cloud requests (queue overflow)\n- Pi agent gets dedicated slot for CPI (Claude on Pi) Lemonade + cloud fallback",
   "new_string": "**4-Layer Compute Fabric:**\n\n```\n┌─────────────────────────────────────────────────────────┐\n│  ORCHESTRATION LAYER (subscriptions, CLI access)        │\n│  ├─ Claude Code: Opus 4.6 / Sonnet 4.6 / Haiku 4.5    │\n│  │   (planning, coding, subagents, review)              │\n│  └─ Gemini Pro CLI: gemini-2.5-pro                      │\n│      (parallel research, code gen, long-context tasks)  │\n├─────────────────────────────────────────────────────────┤\n│  INFERENCE LAYER (APIs called BY Cohezion's code)       │\n│  ├─ Lemonade […]
 
@@ -9330,7 +9330,7 @@ id: toolu_01EeqB6B7f84DWJGm8758P2H
 tool_result
 id: toolu_01EeqB6B7f84DWJGm8758P2H
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9344,7 +9344,7 @@ id: toolu_01XFNw7gkJvidjU98ZjdbPtQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "│  ├─ Claude Code: Opus 4.6 / Sonnet 4.6 / Haiku 4.5    │\n│  │   (planning, coding, subagents, review)              │",
   "new_string": "│  ├─ Claude Code Max 20x: Opus 4.6 / Sonnet 4.6 / Haiku │\n│  │   (planning, coding, subagents, review, teams)       │\n│  │   20x usage vs Pro — heavy agent team workloads      │"
 }
@@ -9355,7 +9355,7 @@ id: toolu_01XFNw7gkJvidjU98ZjdbPtQ
 tool_result
 id: toolu_01XFNw7gkJvidjU98ZjdbPtQ
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9388,7 +9388,7 @@ tool_use Read
 id: toolu_012cnHEfpaem3ojVBbEHv8CQ
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/vendor/lemonade/resources/server_models.json"
+  "file_path": "/home/<USER>/dev/cohezion/vendor/lemonade/resources/server_models.json"
 }
 ```
 
@@ -9398,7 +9398,7 @@ tool_use Read
 id: toolu_01TubHJZu3xTAiTmTHCCeVtX
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/vendor/lemonade/config.json"
+  "file_path": "/home/<USER>/dev/cohezion/vendor/lemonade/config.json"
 }
 ```
 
@@ -9569,7 +9569,7 @@ id: toolu_01LAYHYqBr27c3tYyDuzi6Vj
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "# Tier 1: NPU — Private Lemonade embeddable server (gfx1151 hardware acceleration)\nlemonade:\n  gemma4:2b:       { quality: 0.65, tps: 40.0, latency_ms: 30, cost_per_1k: 0.0, context: 8192, hw: npu }\n  gemma4:4b:       { quality: 0.72, tps: 30.0, latency_ms: 40, cost_per_1k: 0.0, context: 8192, hw: npu }\n  gemma4:26b-moe:  { quality: 0.90, tps: 12.0, latency_ms: 80, cost_per_1k: 0.0, context: 32768, hw: gpu }",
   "new_string": "# Tier 1: Lemonade Private Server — 105+ models, 3 internal backends\n# Port 13307, OpenAI-compatible API, vendor/lemonade/\n#\n# Sub-tier A: CPU (ONNX int4 — background tasks, no GPU/NPU contention)\n#   DeepSeek-R1-8B-CPU, Phi-3-Mini-CPU, Qwen-7B-CPU\n#\n# Sub-tier B: Hybrid NPU+CPU (RyzenAI 1.7 — fast, low power)\n#   Qwen3-14B-Hybrid, Phi-4-mini-reasoning-Hybrid, DeepSeek-R1-8B-Hybrid,\n#   CodeLlama-7b-Hybrid, Qwen2.5-Coder-7B-Hybrid (35+ models)\n#\n# Sub-tier C: ROCm GPU (llamacpp — large models, 96GB UMA)\n#   Qwen3.5-122B-A10B (68.4GB!), gpt-oss-120b-mxfp (63.3GB),\n#   Qwen3-Coder-Next (43.7GB), Gemma-4-31B-it (18.3GB), Devstral-Small (14.3GB)\n#\n# Sub-tier D: Multimodal (vision, image gen, audio, embeddings, reranking, TTS)\n#   Vision: Gemma-4-31B-it, Qwen3-VL-8B, Qwen2.5-VL-7B\n#   Image: FLUX.2-Klein-9B, SDXL-Turbo, Z-Image-Turbo, Qwen-Image\n#   Audio: Whisper-Large-v3-Turbo (NPU accelerated!)\n#   Embeddings: nomic-embed-text-v2, Qwen3-Embedding-8B (LOCAL GraphRAG!)\n#   TTS: Kokoro-v1\n#   Reranking: bge-reranker-v2-m3\n#\n# Composite experiences: Lemonade Ultra/Medium/Lite (multi-model bundles)\nlemonade:\n  # Representative profiles for CostAwareRouter (full list in server_models.json)\n  Qwen3-14B-Hybrid:     { quality: 0.90, tps: 12.0, latency_ms: 80, cost: 0.0, context: 32768, hw: hybrid, labels: [reasoning] […]
 
@@ -9578,7 +9578,7 @@ id: toolu_01LAYHYqBr27c3tYyDuzi6Vj
 tool_result
 id: toolu_01LAYHYqBr27c3tYyDuzi6Vj
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9592,7 +9592,7 @@ id: toolu_018uz2QuQ2y8TZeFMgvDPs2X
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "  nomic-embed-text-v2:   { quality: 0.85, tps: 100.0, latency_ms: 10, cost: 0.0, hw: gpu, labels: [embeddings] }\n  Qwen3-Embedding-8B:   { quality: 0.92, tps: 50.0, latency_ms: 20, cost: 0.0, hw: gpu, labels: [embeddings] }",
   "new_string": "  Gemma-4-31B-it:       { quality: 0.93, tps: 6.0, latency_ms: 150, cost: 0.0, context: 32768, hw: gpu, labels: [vision, tool-calling, hot] }\n  Gemma-4-26B-A4B-it:   { quality: 0.91, tps: 8.0, latency_ms: 120, cost: 0.0, context: 32768, hw: gpu, labels: [vision, tool-calling, hot] }\n  Gemma-4-E4B-it:       { quality: 0.75, tps: 25.0, latency_ms: 40, cost: 0.0, context: 8192, hw: gpu, labels: [vision, tool-calling] }\n  Gemma-4-E2B-it:       { quality: 0.65, tps: 35.0, latency_ms: 30, cost: 0.0, context: 8192, hw: gpu, labels: [vision, tool-calling] }\n  nomic-embed-text-v2:   { quality: 0.85, tps: 100.0, latency_ms: 10, cost: 0.0, hw: gpu, labels: [embeddings] }\n  Qwen3-Embedding-8B:   { quality: 0.92, tps: 50.0, latency_ms: 20, cost: 0.0, hw: gpu, labels: [embeddings] }"
 }
@@ -9603,7 +9603,7 @@ id: toolu_018uz2QuQ2y8TZeFMgvDPs2X
 tool_result
 id: toolu_018uz2QuQ2y8TZeFMgvDPs2X
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9689,7 +9689,7 @@ id: toolu_01VgDPwoaykroiHEqzuU7YkY
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "# Tier 2: Ollama Pro Cloud — $20/mo flat, GPU-time billing, same API\nollama_cloud:\n  qwen3:235b-a22b:cloud: { quality: 0.95, tps: 50.0, latency_ms: 200, cost_per_1k: 0.0, context: 131072 }\n  qwen3.5:cloud:          { quality: 0.92, tps: 50.0, latency_ms: 200, cost_per_1k: 0.0, context: 131072 }\n  glm-5:cloud:            { quality: 0.88, tps: 40.0, latency_ms: 250, cost_per_1k: 0.0, context: 131072 }\n  deepseek-r1:cloud:      { quality: 0.97, tps: 30.0, latency_ms: 300, cost_per_1k: 0.0, context: 131072 }",
   "new_string": "# Tier 2: Ollama Pro Cloud — $20/mo flat, GPU-time billing, same API, 20+ frontier models\n# These are models TOO LARGE or NOT YET AVAILABLE locally — cloud-only access\nollama_cloud:\n  # Reasoning/General (frontier scale)\n  cogito-2.1:cloud:         { quality: 0.98, params: \"671B\", labels: [reasoning] }\n  glm-5:cloud:              { quality: 0.96, params: \"744B/40B active\", labels: [reasoning, agentic, tools] }\n  deepseek-v3.2:cloud:      { quality: 0.97, labels: [reasoning, agentic, tools] }\n  devstral-2:cloud:         { quality: 0.96, params: \"123B\", labels: [coding, tools] }\n  nemotron-3-super:cloud:   { quality: 0.94, params: \"120B/12B active\", labels: [agentic, tools] }\n  qwen3.5:cloud:            { quality: 0.95, params: \"0.8B-122B\", labels: [vision, tools, multimodal] }\n  kimi-k2.5:cloud:          { quality: 0.93, labels: [multimodal, vision, agentic] }\n  # Coding\n  qwen3-coder-next:cloud:   { quality: 0.95, labels: [coding, tools] }\n  devstral-small-2:cloud:   { quality: 0.90, params: \"24B\", labels: [coding, vision, […]
 
@@ -9698,7 +9698,7 @@ id: toolu_01VgDPwoaykroiHEqzuU7YkY
 tool_result
 id: toolu_01VgDPwoaykroiHEqzuU7YkY
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT
@@ -9712,7 +9712,7 @@ id: toolu_01XHiT8iSwyzJrzuXrp78FHK
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/mike-anderson/.claude/plans/elegant-singing-tome.md",
+  "file_path": "/home/<USER>/.claude/plans/elegant-singing-tome.md",
   "old_string": "- `gemini` CLI available for orchestration-layer tasks dispatched by Claude Code",
   "new_string": "- `gemini` CLI available for orchestration-layer tasks dispatched by Claude Code\n\n**Hotswapping:**\n- CostAwareRouter must support live model hotswapping — swap active model without restarting service\n- Lemonade: `max_loaded_models: 1` currently — swap via unload/load API calls\n- Ollama Cloud: instant swap (stateless, no loading required)\n- Router should maintain a \"warm set\" (preferred models for current task type) and swap on task-type transitions\n- Implement: `ModelPoolManager.hotswap(old_model, new_model)` → unload old, load new, update routing table\n- Key insight: with 96GB UMA, Lemonade `max_loaded_models` could be raised to 2-3 for concurrent models\n\n**Daily Tip-of-the-Spear Model Integration:**\n- Every day, check for new open-weight models released on HuggingFace/Ollama\n- Evaluate: does the new model beat current best in any category (coding, reasoning, vision, embedding)?\n- If yes: download GGUF, add to Lemonade `server_models.json`, run quick benchmark, update profiles\n- Track experiments in SurrealDB `model_artifacts` table with lineage + metrics\n- Integrate with `/anthropic-scan` — extend to scan HuggingFace trending + Ollama library updates\n- Goal: always running the best available open-weight model for each capability tier\n- Reuse: `scout` skill already does Daily Model Research for Cohezion — extend to trigger Lemonade integration" […]
 
@@ -9721,7 +9721,7 @@ id: toolu_01XHiT8iSwyzJrzuXrp78FHK
 tool_result
 id: toolu_01XHiT8iSwyzJrzuXrp78FHK
 ```
-The file /home/mike-anderson/.claude/plans/elegant-singing-tome.md has been updated successfully.
+The file /home/<USER>/.claude/plans/elegant-singing-tome.md has been updated successfully.
 ```
 
 > AGENT

@@ -305,7 +305,7 @@ tool_use Bash
 id: toolu_01TKzRvL8arZ3CGmc6LvLM7m
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/ /Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/ /home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/",
   "description": "List converter and cmd directories"
 }
 ```
@@ -315,11 +315,11 @@ id: toolu_01TKzRvL8arZ3CGmc6LvLM7m
 tool_result
 id: toolu_01TKzRvL8arZ3CGmc6LvLM7m
 ```
-/Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/:
+/home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/:
 flags.go
 main.go
 
-/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/:
+/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/:
 converter_integration_test.go
 converter.go
 html_test.go
@@ -336,7 +336,7 @@ tool_use Read
 id: toolu_011VWGhxwfRzrwLDo3X4oXrw
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go"
 }
 ```
 
@@ -408,7 +408,7 @@ tool_use Read
 id: toolu_016NGZwKdCUf8KE9Znm2ZdMR
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go"
 }
 ```
 
@@ -449,7 +449,7 @@ id: toolu_016NGZwKdCUf8KE9Znm2ZdMR
 30		"/usr/local/bin/mmdc",
 31		"/usr/bin/mmdc",
 32		// npm global installs (Linux/macOS)
-33		"/home/claude/.npm-global/bin/mmdc",
+33		"/home/<USER>/.npm-global/bin/mmdc",
 34		"/usr/local/lib/node_modules/.bin/mmdc",
 35		"/opt/homebrew/bin/mmdc",
 36	}
@@ -470,7 +470,7 @@ tool_use Read
 id: toolu_01CqDa9FpqWoR3e21sn3bRiR
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/converter.go"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/converter.go"
 }
 ```
 
@@ -620,10 +620,10 @@ id: toolu_01BmJn6qTXotRFRXJg3QbDmG
 Exit code 1
 === which python3/python ===
 /opt/homebrew/bin/python3
-/Users/135yshr/.anyenv/envs/pyenv/shims/python3
+/home/<USER>/.anyenv/envs/pyenv/shims/python3
 /usr/bin/python3
 ---
-/Users/135yshr/.anyenv/envs/pyenv/shims/python
+/home/<USER>/.anyenv/envs/pyenv/shims/python
 === /usr/bin/python3 ===
 Python 3.9.6
 ---
@@ -669,7 +669,7 @@ tool_use Bash
 id: toolu_01XgCpGAEomSg2ECpMcJWRxS
 ```json
 {
-  "command": "echo \"=== PATH ===\"; echo \"$PATH\"; echo \"=== /opt/homebrew/bin/python3 ===\"; /opt/homebrew/bin/python3 --version 2>&1; /opt/homebrew/bin/python3 -c \"import playwright; print(playwright.__file__)\" 2>&1; echo \"=== pyenv shim ===\"; /Users/135yshr/.anyenv/envs/pyenv/shims/python3 --version 2>&1; /Users/135yshr/.anyenv/envs/pyenv/shims/python3 -c \"import playwright; print(playwright.__file__)\" 2>&1",
+  "command": "echo \"=== PATH ===\"; echo \"$PATH\"; echo \"=== /opt/homebrew/bin/python3 ===\"; /opt/homebrew/bin/python3 --version 2>&1; /opt/homebrew/bin/python3 -c \"import playwright; print(playwright.__file__)\" 2>&1; echo \"=== pyenv shim ===\"; /home/<USER>/.anyenv/envs/pyenv/shims/python3 --version 2>&1; /home/<USER>/.anyenv/envs/pyenv/shims/python3 -c \"import playwright; print(playwright.__file__)\" 2>&1",
   "description": "Check whether playwright is installed in the other python interpreters"
 }
 ```
@@ -691,7 +691,7 @@ tool_result
 id: toolu_01XgCpGAEomSg2ECpMcJWRxS
 ```
 === PATH ===
-/Users/135yshr/.bun/bin:/Users/135yshr/.proto/shims:/Users/135yshr/.proto/bin:/Users/135yshr/.amplify/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/135yshr/.local/bin:/opt/homebrew/opt/libpq/bin:/usr/local/opt/mysql-client/bin:/Users/135yshr/.anyenv/envs/pyenv/shims:/Users/135yshr/.anyenv/envs/pyenv/bin:/Users/135yshr/.anyenv/envs/nodenv/shims:/Users/135yshr/.anyenv/envs/nodenv/bin:/Users/135yshr/.anyenv/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/TeX/texbin:/Users/135yshr/.bun/bin:/Users/135yshr/.proto/shims:/Users/135yshr/.proto/bin:/Users/135yshr/.amplify/bin:/Users/135yshr/.cargo/bin:/Applications/iTerm.app/Contents/Resources/utilities:/Users/135yshr/Library/Android/sdk/platform-tools:/Users/135yshr/Library/Android/sdk/emulator:/Users/135yshr/development/flutter/bin:/Users/135yshr/development/flutter/.pub-cache/bin:/Users/135yshr/.pub-cache/bin:/Users/135yshr/fvm/default/bin:/Users/135yshr/bin:/Users/135yshr/go/bin:/Users/135yshr/sdk/go1.24.11/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/135yshr/go/bin:/Users/135yshr/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.26.2.darwin-arm64/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/code-review/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/context7/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/serena/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/gopls-lsp/1.0.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/coderabbit/1.1.1/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/chrome-devtools-mcp/0.22.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/github/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/deploy-on-aws/1.2.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/terraform/unknown/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/slack/1.0.0/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/vercel/0.42.1/bin:/Users/135yshr/.claude/plugins/cache/claude-plugins-official/commit-commands/unknown/bin:/Users/135yshr/.claude/plugins/cache/openai-codex/codex/1.0.2/bin
+/home/<USER>/.bun/bin:/home/<USER>/.proto/shims:/home/<USER>/.proto/bin:/home/<USER>/.amplify/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/home/<USER>/.local/bin:/opt/homebrew/opt/libpq/bin:/usr/local/opt/mysql-client/bin:/home/<USER>/.anyenv/envs/pyenv/shims:/home/<USER>/.anyenv/envs/pyenv/bin:/home/<USER>/.anyenv/envs/nodenv/shims:/home/<USER>/.anyenv/envs/nodenv/bin:/home/<USER>/.anyenv/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/TeX/texbin:/home/<USER>/.bun/bin:/home/<USER>/.proto/shims:/home/<USER>/.proto/bin:/home/<USER>/.amplify/bin:/home/<USER>/.cargo/bin:/Applications/iTerm.app/Contents/Resources/utilities:/home/<USER>/Library/Android/sdk/platform-tools:/home/<USER>/Library/Android/sdk/emulator:/home/<USER>/development/flutter/bin:/home/<USER>/development/flutter/.pub-cache/bin:/home/<USER>/.pub-cache/bin:/home/<USER>/fvm/default/bin:/home/<USER>/bin:/home/<USER>/go/bin:/home/<USER>/sdk/go1.24.11/bin:/usr/local/opt/coreutils/libexec/gnubin:/home/<USER>/go/bin:/home/<USER>/go/pkg/mod/golang.org/<REDACTED_EMAIL>-arm64/bin:/usr/local/opt/coreutils/libexec/gnubin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/code-review/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/context7/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/serena/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/gopls-lsp/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/coderabbit/1.1.1/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/chrome-devtools-mcp/0.22.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/github/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/deploy-on-aws/1.2.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/terraform/unknown/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/slack/1.0.0/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/vercel/0.42.1/bin:/home/<USER>/.claude/plugins/cache/claude-plugins-official/commit-commands/unknown/bin:/home/<USER>/.claude/plugins/cache/openai-codex/codex/1.0.2/bin
 === /opt/homebrew/bin/python3 ===
 Python 3.14.3
 /opt/homebrew/lib/python3.14/site-packages/playwright/__init__.py
@@ -988,7 +988,7 @@ tool_use Bash
 id: toolu_017XC8EHYnbrTVPXnoDnjnBo
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/md2pdf/ | head -50; echo \"---\"; cat /Users/135yshr/go/src/github.com/135yshr/md2pdf/.golangci.yml 2>/dev/null | head -60",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/md2pdf/ | head -50; echo \"---\"; cat /home/<USER>/go/src/github.com/135yshr/md2pdf/.golangci.yml 2>/dev/null | head -60",
   "description": "List repo root and inspect golangci config"
 }
 ```
@@ -1079,7 +1079,7 @@ tool_use Read
 id: toolu_01GghwtMsmcM6ZyYS6H97hLK
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/README.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/README.md"
 }
 ```
 
@@ -1129,7 +1129,7 @@ tool_use Read
 id: toolu_018MMshHaHKobFQJfoDfMTBs
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/parser_test.go"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/parser_test.go"
 }
 ```
 
@@ -1187,7 +1187,7 @@ tool_use Read
 id: toolu_01FxGnTeU4Sf3j7WgWAqyPaq
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/converter_integration_test.go"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/converter_integration_test.go"
 }
 ```
 
@@ -1252,7 +1252,7 @@ tool_use Bash
 id: toolu_014dz17CC5TqQhG2D36GPgWr
 ```json
 {
-  "command": "head -40 /Users/135yshr/go/src/github.com/135yshr/md2pdf/CHANGELOG.md 2>/dev/null",
+  "command": "head -40 /home/<USER>/go/src/github.com/135yshr/md2pdf/CHANGELOG.md 2>/dev/null",
   "description": "Check CHANGELOG format"
 }
 ```
@@ -1334,7 +1334,7 @@ id: toolu_01DtMu3Y3WAWvYYd8WhFQ6a8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/converter.go",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/converter.go",
   "old_string": "\t// MmdcPath is the path to the mmdc (Mermaid CLI) binary.\n\tMmdcPath string",
   "new_string": "\t// MmdcPath is the path to the mmdc (Mermaid CLI) binary.\n\tMmdcPath string\n\t// PythonPath is the path to the Python 3 interpreter used to drive Playwright.\n\t// When empty, md2pdf auto-detects an interpreter on PATH that can import the\n\t// playwright package.\n\tPythonPath string"
 }
@@ -1345,7 +1345,7 @@ id: toolu_01DtMu3Y3WAWvYYd8WhFQ6a8
 tool_result
 id: toolu_01DtMu3Y3WAWvYYd8WhFQ6a8
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/converter.go has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/converter.go has been updated successfully.
 ```
 
 > TOOL
@@ -1397,7 +1397,7 @@ id: toolu_01MD9RN4kmasrf1jrtMAU4xT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go",
   "old_string": "import (\n\t\"fmt\"\n\t\"os\"\n\t\"os/exec\"\n\t\"path/filepath\"\n\t\"text/template\"\n\t\"strings\"\n)",
   "new_string": "import (\n\t\"errors\"\n\t\"fmt\"\n\t\"os\"\n\t\"os/exec\"\n\t\"path/filepath\"\n\t\"strings\"\n\t\"text/template\"\n)"
 }
@@ -1408,7 +1408,7 @@ id: toolu_01MD9RN4kmasrf1jrtMAU4xT
 tool_result
 id: toolu_01MD9RN4kmasrf1jrtMAU4xT
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go has been updated successfully.
 ```
 
 > TOOL
@@ -1418,7 +1418,7 @@ id: toolu_01MGdsnxgsY25SoxjbZzQxNj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go",
   "old_string": "\t// Execute the script.\n\tpython, err := findPython()\n\tif err != nil {\n\t\treturn err\n\t}",
   "new_string": "\t// Execute the script.\n\tpython, err := c.findPython()\n\tif err != nil {\n\t\treturn err\n\t}"
 }
@@ -1429,7 +1429,7 @@ id: toolu_01MGdsnxgsY25SoxjbZzQxNj
 tool_result
 id: toolu_01MGdsnxgsY25SoxjbZzQxNj
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go has been updated successfully.
 ```
 
 > TOOL
@@ -1439,7 +1439,7 @@ id: toolu_019dTBNP8vdbJGFf7jB7SPpL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go",
   "old_string": "// findPython returns the path to the Python 3 interpreter.\nfunc findPython() (string, error) {\n\tfor _, name := range []string{\"python3\", \"python\"} {\n\t\tif p, err := exec.LookPath(name); err == nil {\n\t\t\treturn p, nil\n\t\t}\n\t}\n\treturn \"\", fmt.Errorf(\"python3 not found in PATH; install Python 3 with the playwright package\")\n}",
   "new_string": "// findPython returns a Python 3 interpreter that can import the playwright\n// package. When c.cfg.PythonPath is set (via the -python flag or the\n// MD2PDF_PYTHON env var), it is used directly after a precheck. Otherwise\n// \"python3\" and \"python\" are probed on PATH and the first interpreter that\n// passes `python -c \"import playwright\"` is selected. Returning an error\n// before invoking the print script lets the caller surface which interpreter\n// failed, instead of a generic ModuleNotFoundError from deep inside the\n// Playwright script.\nfunc (c *Converter) findPython() (string, error) {\n\tif explicit := c.cfg.PythonPath; explicit != \"\" {\n\t\tif err := canImportPlaywright(explicit); err != nil {\n\t\t\treturn \"\", fmt.Errorf(\"python at %q cannot import playwright: %w\", explicit, err)\n\t\t}\n\t\tc.logf(\"  python: %s (user-specified)\", explicit)\n\t\treturn explicit, nil\n\t}\n\n\tvar failures []string\n\tfor _, name := range []string{\"python3\", \"python\"} {\n\t\tp, err := exec.LookPath(name)\n\t\tif err != nil {\n\t\t\tcontinue\n\t\t}\n\t\tif perr := canImportPlaywright(p); perr != nil {\n\t\t\tfailures = append(failures, fmt.Sprintf(\"%s (%v)\", p, perr))\n\t\t\tcontinue\n\t\t}\n\t\tc.logf(\" […]
 
@@ -1448,7 +1448,7 @@ id: toolu_019dTBNP8vdbJGFf7jB7SPpL
 tool_result
 id: toolu_019dTBNP8vdbJGFf7jB7SPpL
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf.go has been updated successfully.
 ```
 
 > TOOL
@@ -1500,7 +1500,7 @@ id: toolu_01Fo49G7GsRHn1GxmMVSNFbX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go",
   "old_string": "\tmmdcPath := fs.String(\"mmdc\", \"\", \"Path to mmdc binary (Mermaid CLI)\")",
   "new_string": "\tmmdcPath := fs.String(\"mmdc\", \"\", \"Path to mmdc binary (Mermaid CLI)\")\n\tpythonPath := fs.String(\"python\", \"\", \"Path to Python 3 interpreter with the playwright package (overrides MD2PDF_PYTHON)\")"
 }
@@ -1511,7 +1511,7 @@ id: toolu_01Fo49G7GsRHn1GxmMVSNFbX
 tool_result
 id: toolu_01Fo49G7GsRHn1GxmMVSNFbX
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go has been updated successfully.
 ```
 
 > TOOL
@@ -1521,7 +1521,7 @@ id: toolu_01NFjY3x9ycpiXTMPweTeWkB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go",
   "old_string": "\t// Resolve mmdc path.\n\tmmdc := *mmdcPath\n\tif mmdc == \"\" {\n\t\tmmdc = findFirst(mmdcDefaultPaths)\n\t}\n\n\treturn &converter.Config{\n\t\tInputFile:      input,\n\t\tOutputFile:     out,\n\t\tFontRegular:    regular,\n\t\tFontBold:       bold,\n\t\tFontMedium:     medium,\n\t\tMmdcPath:       mmdc,\n\t\tPuppeteerConfig: *puppeteerCfg,\n\t\tPageSize:       *pageSize,\n\t\tMarginTop:      *marginTop,\n\t\tMarginBottom:   *marginBottom,\n\t\tMarginLeft:     *marginLeft,\n\t\tMarginRight:    *marginRight,\n\t\tVerbose:        *verbose,\n\t}, nil\n}",
   "new_string": "\t// Resolve mmdc path.\n\tmmdc := *mmdcPath\n\tif mmdc == \"\" {\n\t\tmmdc = findFirst(mmdcDefaultPaths)\n\t}\n\n\t// Resolve Python interpreter. The flag wins; otherwise MD2PDF_PYTHON.\n\t// An empty result triggers auto-detection inside the converter.\n\tpython := *pythonPath\n\tif python == \"\" {\n\t\tpython = os.Getenv(\"MD2PDF_PYTHON\")\n\t}\n\n\treturn &converter.Config{\n\t\tInputFile:      input,\n\t\tOutputFile:     out,\n\t\tFontRegular:    regular,\n\t\tFontBold:       bold,\n\t\tFontMedium:     medium,\n\t\tMmdcPath:       mmdc,\n\t\tPythonPath:     python,\n\t\tPuppeteerConfig: *puppeteerCfg,\n\t\tPageSize:       *pageSize,\n\t\tMarginTop:      *marginTop,\n\t\tMarginBottom:   *marginBottom,\n\t\tMarginLeft:     *marginLeft,\n\t\tMarginRight:    *marginRight,\n\t\tVerbose:        *verbose,\n\t}, nil\n}"
 }
@@ -1532,7 +1532,7 @@ id: toolu_01NFjY3x9ycpiXTMPweTeWkB
 tool_result
 id: toolu_01NFjY3x9ycpiXTMPweTeWkB
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go has been updated successfully.
 ```
 
 > TOOL
@@ -1542,7 +1542,7 @@ id: toolu_0119dkZCrT98Yo3FD7NQq7ew
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go",
   "old_string": "  -mmdc <path>            Path to mmdc (Mermaid CLI) binary\n  -puppeteer-config <f>   Path to Puppeteer JSON config for mmdc",
   "new_string": "  -mmdc <path>            Path to mmdc (Mermaid CLI) binary\n  -python <path>          Path to Python 3 interpreter with the playwright\n                          package (env: MD2PDF_PYTHON)\n  -puppeteer-config <f>   Path to Puppeteer JSON config for mmdc"
 }
@@ -1553,7 +1553,7 @@ id: toolu_0119dkZCrT98Yo3FD7NQq7ew
 tool_result
 id: toolu_0119dkZCrT98Yo3FD7NQq7ew
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/cmd/md2pdf/flags.go has been updated successfully.
 ```
 
 > TOOL
@@ -1605,7 +1605,7 @@ id: toolu_01VbpoaNfUQrH8U3HSeWuhod
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/README.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/README.md",
   "old_string": "| `-mmdc <path>` | auto-detected | Path to `mmdc` binary |\n| `-puppeteer-config <f>` | auto-generated | Puppeteer JSON config for mmdc |",
   "new_string": "| `-mmdc <path>` | auto-detected | Path to `mmdc` binary |\n| `-python <path>` | auto-detected | Python 3 interpreter with `playwright` installed (env: `MD2PDF_PYTHON`) |\n| `-puppeteer-config <f>` | auto-generated | Puppeteer JSON config for mmdc |"
 }
@@ -1616,7 +1616,7 @@ id: toolu_01VbpoaNfUQrH8U3HSeWuhod
 tool_result
 id: toolu_01VbpoaNfUQrH8U3HSeWuhod
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/README.md has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/README.md has been updated successfully.
 ```
 
 > TOOL
@@ -1626,7 +1626,7 @@ id: toolu_01YFDFwEHinWYvGMWRC5nxFu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/README.md",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/README.md",
   "old_string": "## Running Tests",
   "new_string": "## Troubleshooting\n\n### `ModuleNotFoundError: No module named 'playwright'`\n\nIf md2pdf fails with this error even though `pip install playwright` succeeded,\nthe Python interpreter md2pdf picked up does not match the one where\n`playwright` is installed. This is common on macOS when multiple Pythons\ncoexist (system `/usr/bin/python3`, Homebrew, pyenv, venv).\n\nFix it by pointing md2pdf at the correct interpreter:\n\n```sh\n# One-off\nmd2pdf -python \"$(which python3)\" document.md\n\n# Persistent\nexport MD2PDF_PYTHON=\"$(which python3)\"\nmd2pdf document.md\n```\n\nUse `-v` to confirm which interpreter md2pdf is using.\n\n## Running Tests"
 }
@@ -1637,7 +1637,7 @@ id: toolu_01YFDFwEHinWYvGMWRC5nxFu
 tool_result
 id: toolu_01YFDFwEHinWYvGMWRC5nxFu
 ```
-The file /Users/135yshr/go/src/github.com/135yshr/md2pdf/README.md has been updated successfully.
+The file /home/<USER>/go/src/github.com/135yshr/md2pdf/README.md has been updated successfully.
 ```
 
 > TOOL
@@ -1688,7 +1688,7 @@ tool_use Write
 id: toolu_01QSwzP2mdsezXy9VurnT8Dg
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf_test.go",
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf_test.go",
   "content": "package converter\n\nimport (\n\t\"fmt\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"runtime\"\n\t\"strings\"\n\t\"testing\"\n)\n\nfunc TestFindPython_ExplicitPathSucceeds(t *testing.T) {\n\tskipOnWindows(t)\n\tpy := makeFakePython(t, \"python-ok\", 0, \"\")\n\tc := &Converter{cfg: &Config{PythonPath: py}}\n\n\tgot, err := c.findPython()\n\tif err != nil {\n\t\tt.Fatalf(\"findPython: %v\", err)\n\t}\n\tif got != py {\n\t\tt.Errorf(\"findPython() = %q, want %q\", got, py)\n\t}\n}\n\nfunc TestFindPython_ExplicitPathFailsPrecheck(t *testing.T) {\n\tskipOnWindows(t)\n\tpy := makeFakePython(t, \"python-no-playwright\", 1,\n\t\t\"ModuleNotFoundError: No module named 'playwright'\")\n\tc := &Converter{cfg: &Config{PythonPath: py}}\n\n\t_, err := c.findPython()\n\tif err == nil {\n\t\tt.Fatal(\"expected error from explicit path that cannot import playwright\")\n\t}\n\tmsg := err.Error()\n\tif !strings.Contains(msg, py) {\n\t\tt.Errorf(\"error should reference interpreter path %q, got: %v\", py, err)\n\t}\n\tif !strings.Contains(msg, \"playwright\") {\n\t\tt.Errorf(\"error should mention playwright, got: %v\", err)\n\t}\n}\n\nfunc TestFindPython_ExplicitPathNonexistent(t *testing.T) {\n\tc := &Converter{cfg: &Config{PythonPath: \"/no/such/python-binary\"}}\n\n\tif _, err := c.findPython(); err == nil {\n\t\tt.Fatal(\"expected error for nonexistent explicit python path\")\n\t}\n}\n\nfunc TestFindPython_AutoDetectSkipsInterpreterMissingPlaywright(t *testing.T) {\n\tskipOnWindows(t)\n\tdir := t.TempDir()\n\twriteShellScript(t, filepath.Join(dir, \"python3\"), 1,\n\t\t\"ModuleNotFoundError: No module named 'playwright'\")\n\tt.Setenv(\"PATH\", dir)\n\n\tc := &Converter{cfg: &Config{}}\n\t_, err := c.findPython()\n\tif err == nil {\n\t\tt.Fatal(\"expected error when only interpreter on PATH lacks playwright\")\n\t}\n\tmsg := err.Error()\n\tif !strings.Contains(msg, \"playwright\") {\n\t\tt.Errorf(\"error should mention playwright, got: %v\", err)\n\t}\n\tif !strings.Contains(msg, \"MD2PDF_PYTHON\") {\n\t\tt.Errorf(\"error should suggest -python / MD2PDF_PYTHON remediation, got: %v\", err)\n\t}\n}\n\nfunc TestLastNonEmptyLine(t *testing.T) {\n\ttests := []struct {\n\t\tname string\n\t\tin   string\n\t\twant string\n\t}{\n\t\t{\"single line\", \"hello\", \"hello\"},\n\t\t{\"trailing newline\", \"hello\\n\", \"hello\"},\n\t\t{\"multi-line uses last\", \"first\\nsecond\\nthird\", \"third\"},\n\t\t{\"trailing blanks ignored\", \"real\\n\\n  \\n\", \"real\"},\n\t\t{\"only blanks\", \"\\n  \\n\", \"\"},\n\t\t{\"empty\", \"\", […]
 
 > TOOL
@@ -1696,7 +1696,7 @@ id: toolu_01QSwzP2mdsezXy9VurnT8Dg
 tool_result
 id: toolu_01QSwzP2mdsezXy9VurnT8Dg
 ```
-File created successfully at: /Users/135yshr/go/src/github.com/135yshr/md2pdf/internal/converter/pdf_test.go
+File created successfully at: /home/<USER>/go/src/github.com/135yshr/md2pdf/internal/converter/pdf_test.go
 ```
 
 > TOOL
@@ -2261,7 +2261,7 @@ tool_use Bash
 id: toolu_016uyGMgPZPuPoruv2ZpKtxc
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\n🐛 fix: detect Python with playwright installed (#29)\n\nmd2pdf was passing the first python3 found via exec.LookPath directly\nto exec.Command, which on macOS frequently resolved to /usr/bin/python3\n(Apple CLT) where `pip install playwright` had no effect. The user only\nsaw a ModuleNotFoundError from inside the Playwright print script, with\nno hint that the wrong interpreter had been picked.\n\nfindPython now runs `python -c \"import playwright\"` against each\ncandidate and selects the first interpreter that passes. Failures\ninclude the interpreter path and a remediation hint pointing at the\nnew `-python` flag and `MD2PDF_PYTHON` env var. Users can also pin the\ninterpreter explicitly via either of those.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\n🐛 fix: detect Python with playwright installed (#29)\n\nmd2pdf was passing the first python3 found via exec.LookPath directly\nto exec.Command, which on macOS frequently resolved to /usr/bin/python3\n(Apple CLT) where `pip install playwright` had no effect. The user only\nsaw a ModuleNotFoundError from inside the Playwright print script, with\nno hint that the wrong interpreter had been picked.\n\nfindPython now runs `python -c \"import playwright\"` against each\ncandidate and selects the first interpreter that passes. Failures\ninclude the interpreter path and a remediation hint pointing at the\nnew `-python` flag and `MD2PDF_PYTHON` env var. Users can also pin the\ninterpreter explicitly via either of those.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Create commit for issue #29 fix"
 }
 ```

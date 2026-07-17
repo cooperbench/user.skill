@@ -16,7 +16,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -35,7 +35,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid --help",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -54,7 +54,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "ls",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -72,8 +72,8 @@ null
 tool_use exec_command
 ```json
 {
-  "cmd": "sed -n '1,220p' /Users/user_c042661f/.codex/skills/artagents/SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/skills/artagents/SKILL.md",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -96,7 +96,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid executors inspect builtin.generate_image --json",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -115,7 +115,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid executors inspect builtin.reigh_data --json",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -134,7 +134,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "find docs/templates/executor -maxdepth 2 -type f -print",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -153,7 +153,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "rg \"requests|urllib|httpx|huggingface|Hugging Face|hf_\" astrid tests -n",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -172,7 +172,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid status",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -191,7 +191,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,220p' docs/templates/executor/run.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -210,7 +210,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,220p' docs/templates/executor/executor.yaml",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -229,7 +229,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,220p' docs/templates/executor/STAGE.md",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -252,7 +252,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid attach autouse-session-demo && python3 -m astrid status",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -271,7 +271,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "find astrid/packs/builtin -maxdepth 2 -name executor.yaml -print | head -20",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -290,7 +290,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,220p' astrid/packs/builtin/asset_cache/executor.yaml",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -309,7 +309,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,260p' astrid/packs/builtin/reigh_data/run.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -328,7 +328,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,220p' astrid/packs/builtin/reigh_data/executor.yaml",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -347,7 +347,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,260p' tests/test_canonical_cli.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -366,7 +366,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,220p' tests/test_doctor_setup.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -385,7 +385,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "find astrid/packs/builtin/reigh_data -maxdepth 1 -type f -print",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -404,7 +404,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,220p' astrid/packs/builtin/generate_image/executor.yaml",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -427,7 +427,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 - <<'PY'\nimport json, urllib.parse, urllib.request\nparams = urllib.parse.urlencode({'search':'lora','filter':'diffusers','sort':'downloads','direction':'-1','limit':'3','full':'true','config':'true'})\nurl = 'https://huggingface.co/api/models?' + params\nwith urllib.request.urlopen(url, timeout=20) as r:\n    data = json.loads(r.read().decode())\nprint(url)\nprint(json.dumps(data[:1], indent=2)[:4000])\nPY",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -446,7 +446,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 - <<'PY'\nimport json, urllib.parse, urllib.request\nparams = urllib.parse.urlencode([('filter','base_model:stabilityai/stable-diffusion-xl-base-1.0'),('filter','lora'),('sort','downloads'),('direction','-1'),('limit','3'),('full','true'),('config','true')])\nurl = 'https://huggingface.co/api/models?' + params\nwith urllib.request.urlopen(url, timeout=20) as r:\n    data = json.loads(r.read().decode())\nprint(url)\nprint(len(data))\nprint(json.dumps(data[:2], indent=2)[:4000])\nPY",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -465,7 +465,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "find astrid/packs/builtin -maxdepth 2 -name STAGE.md -print | head -5 | xargs -I{} sh -c 'printf \"%s\\n\" \"$1\"; sed -n \"1,120p\" \"$1\"' sh {}",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -484,7 +484,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,260p' astrid/core/executor/cli.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -503,7 +503,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,260p' astrid/core/executor/schema.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -522,7 +522,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '1,260p' astrid/core/executor/registry.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -541,7 +541,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '260,620p' astrid/core/executor/cli.py && sed -n '1,280p' astrid/core/executor/runner.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -560,7 +560,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "sed -n '280,620p' astrid/core/executor/runner.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -579,7 +579,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "rg '\"default\"' astrid/packs -g executor.yaml",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -602,7 +602,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "mkdir -p astrid/packs/builtin/search_loras tests/packs/builtin",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -639,7 +639,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 scripts/gen_capability_index.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -658,7 +658,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "pytest tests/packs/builtin/test_search_loras.py -q",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -677,7 +677,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid executors validate builtin.search_loras",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -700,7 +700,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid.core.executor.cli validate builtin.search_loras",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -719,7 +719,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid.core.executor.cli run builtin.search_loras --input base_model=stabilityai/stable-diffusion-xl-base-1.0 --out runs/search-loras-smoke --dry-run",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -738,7 +738,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "pytest tests/test_canonical_cli.py tests/packs/builtin/test_search_loras.py -q",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -756,10 +756,10 @@ null
 Implemented `builtin.search_loras` for Hugging Face LoRA discovery.
 
 Added:
-- [executor.yaml](/Users/user_c042661f/Documents/reigh-workspace/Astrid/astrid/packs/builtin/search_loras/executor.yaml): registers `builtin.search_loras`
-- [run.py](/Users/user_c042661f/Documents/reigh-workspace/Astrid/astrid/packs/builtin/search_loras/run.py): calls `https://huggingface.co/api/models` with `filter=lora` and `filter=base_model:<model>`
-- [STAGE.md](/Users/user_c042661f/Documents/reigh-workspace/Astrid/astrid/packs/builtin/search_loras/STAGE.md): usage docs
-- [test_search_loras.py](/Users/user_c042661f/Documents/reigh-workspace/Astrid/tests/packs/builtin/test_search_loras.py): mocked API tests
+- [executor.yaml](/home/<USER>/Documents/reigh-workspace/Astrid/astrid/packs/builtin/search_loras/executor.yaml): registers `builtin.search_loras`
+- [run.py](/home/<USER>/Documents/reigh-workspace/Astrid/astrid/packs/builtin/search_loras/run.py): calls `https://huggingface.co/api/models` with `filter=lora` and `filter=base_model:<model>`
+- [STAGE.md](/home/<USER>/Documents/reigh-workspace/Astrid/astrid/packs/builtin/search_loras/STAGE.md): usage docs
+- [test_search_loras.py](/home/<USER>/Documents/reigh-workspace/Astrid/tests/packs/builtin/test_search_loras.py): mocked API tests
 
 Usage:
 
@@ -787,7 +787,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid.packs.builtin.search_loras.run --base-model stabilityai/stable-diffusion-xl-base-1.0 --limit 2 --out runs/search-loras-smoke/search-loras.json",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -806,7 +806,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 - <<'PY'\nimport json\nfrom pathlib import Path\np=Path('runs/search-loras-smoke/search-loras.json')\ndata=json.loads(p.read_text())\nprint(data['count'])\nfor item in data['results']:\n    print(item['id'], item['downloads'], item['safetensors_files'][:2])\nPY",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -825,7 +825,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -844,7 +844,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff -- astrid/packs/builtin/search_loras tests/packs/builtin/test_search_loras.py SKILL.md | sed -n '1,260p'",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -863,7 +863,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff -- SKILL.md | sed -n '1,220p'",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -882,7 +882,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff -- AGENTS.md | sed -n '1,220p'",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -901,7 +901,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git ls-files tests/packs/builtin",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -920,7 +920,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "find tests/packs -maxdepth 2 -type f -print | sort | head -50",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -939,7 +939,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "find tests/packs/builtin -maxdepth 3 -print",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -958,7 +958,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "find astrid/packs/builtin/search_loras -maxdepth 2 -print",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -977,7 +977,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "rg \"search_loras|Search LoRAs|search-loras\" -n SKILL.md AGENTS.md astrid/packs/builtin/search_loras tests/packs/builtin/test_search_loras.py",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -996,7 +996,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git ls-files AGENTS.md SKILL.md",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1015,7 +1015,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1034,7 +1034,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --name-only",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1053,7 +1053,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "rm -rf astrid/packs/builtin/search_loras/__pycache__ tests/packs/builtin/__pycache__",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1072,7 +1072,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git status --short",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1091,7 +1091,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "python3 -m astrid.core.executor.cli list --json | python3 -c 'import json,sys; d=json.load(sys.stdin); print(any(e[\"id\"]==\"builtin.search_loras\" for e in d[\"executors\"])); print(next(e[\"short_description\"] for e in d[\"executors\"] if e[\"id\"]==\"builtin.search_loras\"))'",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -1110,7 +1110,7 @@ tool_use exec_command
 ```json
 {
   "cmd": "git diff --no-index -- /dev/null astrid/packs/builtin/search_loras/run.py | sed -n '1,240p'",
-  "workdir": "/Users/user_c042661f/Documents/reigh-workspace/Astrid",
+  "workdir": "/home/<USER>/Documents/reigh-workspace/Astrid",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }

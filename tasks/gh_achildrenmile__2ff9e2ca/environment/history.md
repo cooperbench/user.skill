@@ -48,7 +48,7 @@ tool_use Read
 id: toolu_01SDVJ7p1o4GDNvfKrACvj64
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk"
 }
 ```
 
@@ -97,7 +97,7 @@ tool_use Read
 id: toolu_01HfUui7fRu1oyq6UT339Tab
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/css/base.css"
+  "file_path": "/home/<USER>/bosarsa/src/css/base.css"
 }
 ```
 
@@ -151,7 +151,7 @@ tool_use Read
 id: toolu_01WCdY5yEuszmiuL9UotbZsk
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/base.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/base.njk"
 }
 ```
 
@@ -207,7 +207,7 @@ tool_use Read
 id: toolu_011ugKYXWz17uv1tHXsMMAvJ
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk"
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk"
 }
 ```
 
@@ -287,8 +287,8 @@ id: toolu_013UZ3oeEn5nkFGRGVen7rnA
 tool_result
 id: toolu_013UZ3oeEn5nkFGRGVen7rnA
 ```
-/home/achildrenmile/bosarsa/src/aktuelles/index.njk
-/home/achildrenmile/bosarsa/src/aktuelles/artikel.njk
+/home/<USER>/bosarsa/src/aktuelles/index.njk
+/home/<USER>/bosarsa/src/aktuelles/artikel.njk
 ```
 
 > AGENT
@@ -420,7 +420,7 @@ tool_use Write
 id: toolu_01CbGwnjSbAi8RmhWJMTwXim
 ```json
 {
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/nav.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/nav.njk",
   "content": "<nav class=\"nav\" id=\"nav\" role=\"navigation\" aria-label=\"Hauptnavigation\">\n  <div class=\"container nav__inner\">\n    <a href=\"/\" class=\"nav__brand\" aria-label=\"BOS-ARSA Startseite\">\n      <img src=\"/logo.webp?v=2\" alt=\"BOS-ARSA Logo\" class=\"nav__brand-logo\" width=\"176\" height=\"70\">\n      <span class=\"nav__brand-text\">\n        <span class=\"nav__brand-name\">BOS-ARSA</span>\n        <span class=\"nav__brand-sub\">Amateur-Radio-Society-Austria</span>\n      </span>\n    </a>\n    <button class=\"nav__hamburger\" id=\"navToggle\" aria-label=\"Menü öffnen\" aria-expanded=\"false\" aria-controls=\"navLinks\">\n      <span></span><span></span><span></span>\n    </button>\n    <ul class=\"nav__links\" id=\"navLinks\">\n      {% set prefix = \"#\" if activeNav == \"home\" else \"/#\" %}\n\n      <li class=\"nav__dropdown\">\n        <button class=\"nav__dropdown-toggle\" aria-expanded=\"false\">Verein <span class=\"nav__chevron\">&#9662;</span></button>\n        <ul class=\"nav__dropdown-menu\">\n          <li><a href=\"{{ prefix }}ueber-uns\">Über uns</a></li>\n          <li><a href=\"{{ prefix }}video\">Videos</a></li>\n          <li><a href=\"{{ prefix }}vorstand\">Vorstand</a></li>\n          <li><a href=\"{{ prefix }}ziele\">Ziele</a></li>\n          <li><a href=\"{{ prefix }}mitglied\">Mitglied werden</a></li>\n        </ul>\n      </li>\n\n      <li class=\"nav__dropdown\">\n        <button class=\"nav__dropdown-toggle\" aria-expanded=\"false\">Funk <span class=\"nav__chevron\">&#9662;</span></button>\n        <ul class=\"nav__dropdown-menu\">\n          <li><a href=\"{{ prefix }}funkbetrieb\">Funkbetrieb</a></li>\n          <li><a href=\"/krisenkommunikation/\"{% if activeNav == \"krisenkommunikation\" %} class=\"active\"{% endif %}>Krisenkommunikation</a></li>\n        </ul>\n      </li>\n\n      <li><a href=\"/aktuelles/\"{% if activeNav == \"aktuelles\" %} class=\"active\"{% endif %}>Aktuelles</a></li>\n      <li><a href=\"/termine/\"{% if activeNav == \"termine\" %} class=\"active\"{% endif %}>Termine</a></li>\n      <li><a href=\"/presse/\"{% if activeNav == \"presse\" %} class=\"active\"{% endif %}>Presse</a></li>\n      <li><a href=\"{{ prefix }}kontakt\">Kontakt</a></li>\n    </ul>\n  </div>\n</nav>\n"
 }
 ```
@@ -430,7 +430,7 @@ id: toolu_01CbGwnjSbAi8RmhWJMTwXim
 tool_result
 id: toolu_01CbGwnjSbAi8RmhWJMTwXim
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/nav.njk has been overwritten successfully.
+The file /home/<USER>/bosarsa/src/_includes/nav.njk has been overwritten successfully.
 ```
 
 > TOOL
@@ -482,7 +482,7 @@ id: toolu_01WKWeTeijC1BmArrH6t83Qa
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/base.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/base.css",
   "old_string": ".nav__links a.active { color: var(--bos-gold); }\n\n.nav__hamburger {",
   "new_string": ".nav__links a.active { color: var(--bos-gold); }\n\n/* Dropdown */\n.nav__dropdown { position: relative; }\n.nav__dropdown-toggle {\n  display: flex; align-items: center; gap: 4px;\n  padding: 8px 12px;\n  color: var(--gray-300); font-family: var(--font-main);\n  font-size: .82rem; font-weight: 500; letter-spacing: .2px;\n  background: none; border: none; cursor: pointer;\n  border-radius: var(--radius);\n  transition: color .2s, background .2s;\n}\n.nav__dropdown-toggle:hover { color: var(--white); background: rgba(255,255,255,.06); }\n.nav__chevron { font-size: .6em; transition: transform .2s; }\n.nav__dropdown.open .nav__chevron { transform: rotate(180deg); }\n\n.nav__dropdown-menu {\n  display: none; position: absolute; top: 100%; left: 0;\n  list-style: none; min-width: 200px; padding: 6px 0;\n  background: var(--polizei-navy); border: 1px solid rgba(255,255,255,.08);\n  border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0,0,0,.35);\n  z-index: 1001;\n}\n.nav__dropdown:hover .nav__dropdown-menu,\n.nav__dropdown.open .nav__dropdown-menu { display: block; }\n.nav__dropdown-menu a {\n  display: block; padding: 10px 20px;\n  color: var(--gray-300); font-size: .82rem; font-weight: 500;\n  white-space: nowrap; transition: color .2s, background .2s;\n  text-decoration: none;\n}\n.nav__dropdown-menu a:hover { color: var(--white); background: rgba(255,255,255,.06); }\n.nav__dropdown-menu a.active { color: var(--bos-gold); }\n\n.nav__hamburger {"
 }
@@ -493,7 +493,7 @@ id: toolu_01WKWeTeijC1BmArrH6t83Qa
 tool_result
 id: toolu_01WKWeTeijC1BmArrH6t83Qa
 ```
-The file /home/achildrenmile/bosarsa/src/css/base.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/base.css has been updated successfully.
 ```
 
 > AGENT
@@ -507,7 +507,7 @@ id: toolu_01S34VXu2vNPSf6a2vRBCVw2
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/css/base.css",
+  "file_path": "/home/<USER>/bosarsa/src/css/base.css",
   "old_string": "  .nav__links a { font-size: 1rem; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.04); }\n  .nav__hamburger { display: flex; }\n  .footer__bottom { flex-direction: column; gap: 6px; text-align: center; }\n  .nav__brand-sub { display: none; }",
   "new_string": "  .nav__links a { font-size: 1rem; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.04); }\n  .nav__hamburger { display: flex; }\n  .nav__dropdown-toggle {\n    font-size: 1rem; padding: 14px 16px; width: 100%;\n    border-bottom: 1px solid rgba(255,255,255,.04);\n    color: var(--bos-gold); font-weight: 600; letter-spacing: .3px;\n  }\n  .nav__dropdown-menu {\n    display: block; position: static;\n    background: none; border: none; box-shadow: none;\n    padding: 0 0 0 16px; min-width: 0;\n  }\n  .nav__dropdown:hover .nav__dropdown-menu { display: block; }\n  .nav__dropdown-menu a { padding: 12px 16px; font-size: .95rem; }\n  .nav__chevron { display: none; }\n  .footer__bottom { flex-direction: column; gap: 6px; text-align: center; }\n  .nav__brand-sub { display: none; }"
 }
@@ -518,7 +518,7 @@ id: toolu_01S34VXu2vNPSf6a2vRBCVw2
 tool_result
 id: toolu_01S34VXu2vNPSf6a2vRBCVw2
 ```
-The file /home/achildrenmile/bosarsa/src/css/base.css has been updated successfully.
+The file /home/<USER>/bosarsa/src/css/base.css has been updated successfully.
 ```
 
 > TOOL
@@ -570,7 +570,7 @@ id: toolu_014YkdV6aA18fvsSp6XF55F5
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/base.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/base.njk",
   "old_string": "    navLinks.querySelectorAll('a').forEach(link => {\n      link.addEventListener('click', () => {\n        navLinks.classList.remove('open');\n        navToggle.classList.remove('active');\n        navToggle.setAttribute('aria-expanded', 'false');\n        document.body.style.overflow = '';\n      });\n    });\n\n    // Scroll reveal",
   "new_string": "    navLinks.querySelectorAll('a').forEach(link => {\n      link.addEventListener('click', () => {\n        navLinks.classList.remove('open');\n        navToggle.classList.remove('active');\n        navToggle.setAttribute('aria-expanded', 'false');\n        document.body.style.overflow = '';\n      });\n    });\n\n    // Dropdown toggles (touch + keyboard)\n    document.querySelectorAll('.nav__dropdown-toggle').forEach(btn => {\n      btn.addEventListener('click', () => {\n        const dd = btn.parentElement;\n        const isOpen = dd.classList.toggle('open');\n        btn.setAttribute('aria-expanded', isOpen);\n        // close other dropdowns\n        document.querySelectorAll('.nav__dropdown').forEach(other => {\n          if (other !== dd) {\n            other.classList.remove('open');\n            other.querySelector('.nav__dropdown-toggle').setAttribute('aria-expanded', 'false');\n          }\n        });\n      });\n    });\n    // Close dropdowns on outside click\n    document.addEventListener('click', e => {\n      if (!e.target.closest('.nav__dropdown')) {\n        document.querySelectorAll('.nav__dropdown').forEach(dd => {\n          dd.classList.remove('open');\n          dd.querySelector('.nav__dropdown-toggle').setAttribute('aria-expanded', 'false');\n        });\n      }\n    });\n\n    // Scroll reveal"
 }
@@ -581,7 +581,7 @@ id: toolu_014YkdV6aA18fvsSp6XF55F5
 tool_result
 id: toolu_014YkdV6aA18fvsSp6XF55F5
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/base.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/base.njk has been updated successfully.
 ```
 
 > TOOL
@@ -633,7 +633,7 @@ id: toolu_01KLeXnzmoiwXiSNCcdGf7FS
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/achildrenmile/bosarsa/src/_includes/footer.njk",
+  "file_path": "/home/<USER>/bosarsa/src/_includes/footer.njk",
   "old_string": "          <li><a href=\"/termine/\">Termine</a></li>\n          <li><a href=\"/presse/\">Presse</a></li>",
   "new_string": "          <li><a href=\"/aktuelles/\">Aktuelles</a></li>\n          <li><a href=\"/termine/\">Termine</a></li>\n          <li><a href=\"/presse/\">Presse</a></li>"
 }
@@ -644,7 +644,7 @@ id: toolu_01KLeXnzmoiwXiSNCcdGf7FS
 tool_result
 id: toolu_01KLeXnzmoiwXiSNCcdGf7FS
 ```
-The file /home/achildrenmile/bosarsa/src/_includes/footer.njk has been updated successfully.
+The file /home/<USER>/bosarsa/src/_includes/footer.njk has been updated successfully.
 ```
 
 > TOOL
@@ -754,7 +754,7 @@ id: toolu_01G2xEzsEDim54VBmdNvun33
 ```json
 {
   "pattern": "Aktuelles",
-  "path": "/home/achildrenmile/bosarsa/_site/index.html",
+  "path": "/home/<USER>/bosarsa/_site/index.html",
   "output_mode": "content"
 }
 ```

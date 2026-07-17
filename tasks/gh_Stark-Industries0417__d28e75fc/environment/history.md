@@ -146,7 +146,7 @@ index 22d427f9..520be321 100644
 +			APICallCount: 5,
 +		},
 +		AuthorName:  "Test Author",
-+		AuthorEmail: "test@example.com",
++		AuthorEmail: "<REDACTED_EMAIL>",
 +	})
 +	if err != nil {
 +		t.Fatalf("WriteCommitted() session X v1 error = %v", err)
@@ -170,7 +170,7 @@ tool_use Read
 id: toolu_01N278TFvEbFXfb3FCbwnZi9
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/committed.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/committed.go"
 }
 ```
 
@@ -444,7 +444,7 @@ tool_use Read
 id: toolu_01C1sJW9EBTy2BUqNhFhCbR2
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
   "offset": 2298,
   "limit": 100
 }
@@ -485,7 +485,7 @@ id: toolu_01C1sJW9EBTy2BUqNhFhCbR2
   2325→			APICallCount: 5,
   2326→		},
   2327→		AuthorName:  "Test Author",
-  2328→		AuthorEmail: "test@example.com",
+  2328→		AuthorEmail: "<REDACTED_EMAIL>",
   2329→	})
   2330→	if err != nil {
   2331→		t.Fatalf("WriteCommitted() session X v1 error = %v", err)
@@ -511,7 +511,7 @@ id: toolu_01U1cdqRvWRJ6a8XHTd5jSTH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
   "old_string": "func TestWriteCommitted_DuplicateSessionIDUpdatesInPlace(t *testing.T) {\n\trepo, _ := setupBranchTestRepo(t)",
   "new_string": "func TestWriteCommitted_DuplicateSessionIDUpdatesInPlace(t *testing.T) {\n\tt.Parallel()\n\trepo, _ := setupBranchTestRepo(t)"
 }
@@ -524,7 +524,7 @@ id: toolu_018ct4qTVmEKNCouUsPjKNug
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
   "old_string": "func TestWriteCommitted_DuplicateSessionIDSingleSession(t *testing.T) {\n\trepo, _ := setupBranchTestRepo(t)",
   "new_string": "func TestWriteCommitted_DuplicateSessionIDSingleSession(t *testing.T) {\n\tt.Parallel()\n\trepo, _ := setupBranchTestRepo(t)"
 }
@@ -537,7 +537,7 @@ id: toolu_016ZGsmdKSEaj6y4PpJoLzFu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
   "old_string": "func TestWriteCommitted_DuplicateSessionIDReusesIndex(t *testing.T) {\n\trepo, _ := setupBranchTestRepo(t)",
   "new_string": "func TestWriteCommitted_DuplicateSessionIDReusesIndex(t *testing.T) {\n\tt.Parallel()\n\trepo, _ := setupBranchTestRepo(t)"
 }
@@ -550,7 +550,7 @@ id: toolu_01VfSE33rGM2g6BmTomGs9Rk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go",
   "old_string": "func TestWriteCommitted_DuplicateSessionIDClearsStaleFiles(t *testing.T) {\n\trepo, _ := setupBranchTestRepo(t)",
   "new_string": "func TestWriteCommitted_DuplicateSessionIDClearsStaleFiles(t *testing.T) {\n\tt.Parallel()\n\trepo, _ := setupBranchTestRepo(t)"
 }
@@ -561,7 +561,7 @@ id: toolu_01VfSE33rGM2g6BmTomGs9Rk
 tool_result
 id: toolu_01U1cdqRvWRJ6a8XHTd5jSTH
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -569,7 +569,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkp
 tool_result
 id: toolu_018ct4qTVmEKNCouUsPjKNug
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -577,7 +577,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkp
 tool_result
 id: toolu_016ZGsmdKSEaj6y4PpJoLzFu
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -585,7 +585,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkp
 tool_result
 id: toolu_01VfSE33rGM2g6BmTomGs9Rk
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/checkpoint/checkpoint_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -744,7 +744,7 @@ tool_use Bash
 id: toolu_01DztxstogR4Yga5H7rXCLPQ
 ```json
 {
-  "command": "git add cmd/entire/cli/checkpoint/checkpoint_test.go && git commit -m \"$(cat <<'EOF'\nAdd t.Parallel() to duplicate session ID tests\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\" && git push",
+  "command": "git add cmd/entire/cli/checkpoint/checkpoint_test.go && git commit -m \"$(cat <<'EOF'\nAdd t.Parallel() to duplicate session ID tests\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\" && git push",
   "description": "Stage, commit, and push"
 }
 ```

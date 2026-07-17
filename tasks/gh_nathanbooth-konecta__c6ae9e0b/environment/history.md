@@ -88,7 +88,7 @@ tool_result
 id: toolu_01V7KoEgNdn2cXCRZJNcKiPP
 ```
 commit 59c77f6ebb05a49abdfd59934dd580ec383df7a0
-Author: Nathan Booth <nathan_booth@konecta.com>
+Author: Nathan Booth <<REDACTED_EMAIL>>
 Date:   Mon Feb 23 13:19:49 2026 +0000
 
     updated to reflect env platform
@@ -590,7 +590,7 @@ id: toolu_01YQF1yLKjk8L1p5yEZLspcA
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
   "old_string": "\"provider\": \"local\",",
   "new_string": "\"provider\": \"workos\","
 }
@@ -610,7 +610,7 @@ tool_use Read
 id: toolu_011BAG52GvRBJnj4EaWVHCKd
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
   "offset": 94,
   "limit": 10
 }
@@ -640,7 +640,7 @@ id: toolu_01BE2aY2buQJREZaAdT7thrN
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
   "old_string": "\"provider\": \"local\",",
   "new_string": "\"provider\": \"workos\","
 }
@@ -651,7 +651,7 @@ id: toolu_01BE2aY2buQJREZaAdT7thrN
 tool_result
 id: toolu_01BE2aY2buQJREZaAdT7thrN
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json has been updated successfully.
 ```
 
 > AGENT
@@ -674,8 +674,8 @@ id: toolu_01QWs952sDYqRKQaAVDxk7nt
 tool_result
 id: toolu_01QWs952sDYqRKQaAVDxk7nt
 ```
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml
 ```
 
 > TOOL
@@ -694,8 +694,8 @@ id: toolu_01ESnW6U5DU5DkZefYKBuA3E
 tool_result
 id: toolu_01ESnW6U5DU5DkZefYKBuA3E
 ```
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml matches config.json
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml matches config.json
 ```
 
 > AGENT
@@ -756,7 +756,7 @@ tool_use Bash
 id: toolu_01HgbvRR9k6we8mxdqi9nXhh
 ```json
 {
-  "command": "git add environments/dev/config.json environments/dev/helm/values-upstream.yaml && git commit -m \"$(cat <<'EOF'\nfeat: switch dev auth provider from local to workos\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add environments/dev/config.json environments/dev/helm/values-upstream.yaml && git commit -m \"$(cat <<'EOF'\nfeat: switch dev auth provider from local to workos\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the auth provider change"
 }
 ```
@@ -921,7 +921,7 @@ Now I have a complete picture of the full auth pipeline. Here is a thorough brea
 
 ### 1. `config.json` - The Auth Section (Source of Truth)
 
-File: `/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json`
+File: `/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json`
 
 The auth section (lines 96-108) is structured as:
 
@@ -956,7 +956,7 @@ The secrets section also has a dedicated WorkOS secret entry:
 
 ### 2. `generate-helm-values.sh` - Auth Variable Templating
 
-File: `/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh`
+File: `/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh`
 
 **Variables extracted from config.json (lines 114-117):**
 ```bash
@@ -986,7 +986,7 @@ id: toolu_01PTkvUhTX3vozzsTMDGwZZj
 ```json
 {
   "pattern": "\"auth\"",
-  "path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/config.json",
+  "path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/config.json",
   "output_mode": "content",
   "-C": 15
 }
@@ -999,7 +999,7 @@ id: toolu_01RmEWD9K31pTNE1a7Wqx6Bh
 ```json
 {
   "pattern": "\"auth\"",
-  "path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/config.json",
+  "path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/config.json",
   "output_mode": "content",
   "-C": 15
 }
@@ -1091,7 +1091,7 @@ tool_use Write
 id: toolu_01SnV9RRhT5aNRXLT97bz6DJ
 ```json
 {
-  "file_path": "/home/nathan_booth/.claude/plans/merry-sniffing-journal.md",
+  "file_path": "/home/<USER>/.claude/plans/merry-sniffing-journal.md",
   "content": "# Plan: Keycloak SSO Integration for CrewAI Platform\n\n## Context\n\nThe platform currently uses WorkOS as the SSO provider. We need to add Keycloak as an alternative auth provider supporting both web login (OIDC Standard Flow) and CLI authentication (Device Authorization Grant). This plan covers:\n1. **Work instruction** for the Keycloak team to configure the realm/clients\n2. **Code changes** in this repo to support `AUTH_PROVIDER=keycloak`\n\nThe work will be done on a new feature branch from `develop`.\n\n---\n\n## Part 1: Keycloak Team Work Instruction\n\nA markdown work instruction document will be created at `docs/keycloak-setup-instructions.md` covering:\n\n### Keycloak Server Requirements\n- Keycloak 26.4.2+ instance\n- Accessible from GKE clusters (network path from `crewai-platform` namespace)\n\n### Realm & Client Configuration\n\n**Web Client (`crewai-factory`):**\n- Protocol: OpenID Connect\n- Client authentication: ON (confidential)\n- Auth flow: Standard Flow + Service Account Roles\n- Root/Home URL: `https://crewai.{env}.ix.konecta-digital.com`\n- Valid redirect URI: `https://crewai.{env}.ix.konecta-digital.com/auth/keycloak/callback`\n- Valid post-logout redirect: `https://crewai.{env}.ix.konecta-digital.com`\n- Web origins: `https://crewai.{env}.ix.konecta-digital.com`\n\n**CLI Client (`crewai-factory-cli`):**\n- Protocol: OpenID Connect\n- Client authentication: OFF (public client)\n- Auth flow: Device Authorization Grant ONLY\n- Root/Home URL: same as web client\n\n### Deliverables from Keycloak Team\nPer environment (dev/qa/prod), provide:\n- Keycloak server URL (e.g. `https://keycloak.{env}.ix.konecta-digital.com`)\n- Realm name\n- Web client ID + client secret\n- CLI client ID (for device auth)\n- Audience value (default: `account`)\n- Base […]
 
 > TOOL
@@ -1099,7 +1099,7 @@ id: toolu_01SnV9RRhT5aNRXLT97bz6DJ
 tool_result
 id: toolu_01SnV9RRhT5aNRXLT97bz6DJ
 ```
-File created successfully at: /home/nathan_booth/.claude/plans/merry-sniffing-journal.md
+File created successfully at: /home/<USER>/.claude/plans/merry-sniffing-journal.md
 ```
 
 > AGENT
@@ -1129,7 +1129,7 @@ id: toolu_0186QQaa2NdiKAP2GEFdwpB8
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /home/nathan_booth/.claude/plans/merry-sniffing-journal.md
+Your plan has been saved to: /home/<USER>/.claude/plans/merry-sniffing-journal.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
@@ -1320,7 +1320,7 @@ tool_use Read
 id: toolu_019jTEGmrqcHewiTykf4MF1S
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json"
 }
 ```
 
@@ -1330,7 +1330,7 @@ tool_use Read
 id: toolu_01Co5wFjsEv8dRUfe4P3HtbK
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh"
 }
 ```
 
@@ -1340,7 +1340,7 @@ tool_use Read
 id: toolu_01VB46rrLZmWjFZnqiK9P45H
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values.yaml"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values.yaml"
 }
 ```
 
@@ -1350,7 +1350,7 @@ tool_use Read
 id: toolu_01DznmJD2rMaTRPfzSWHRJpc
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/templates/externalsecret.yaml"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/templates/externalsecret.yaml"
 }
 ```
 
@@ -1360,7 +1360,7 @@ tool_use Read
 id: toolu_01C63pkoHapskdQxnjgHjRhg
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/main.tf"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/main.tf"
 }
 ```
 
@@ -1413,7 +1413,7 @@ id: toolu_019jTEGmrqcHewiTykf4MF1S
     42→    },
     43→    "gcp_service_account": {
     44→      "name": "crewai-platform",
-    45→      "email": "crewai-platform@kd-ix-eur-dev-gke.iam.gserviceaccount.com"
+    45→      "email": "<REDACTED_EMAIL>"
     46→    },
     47→    "k8s_service_account": "crewai-sa",
     48→    "hostname": "crewai.dev.ix.konecta-digital.com",
@@ -1428,7 +1428,7 @@ id: toolu_019jTEGmrqcHewiTykf4MF1S
     57→        "oauth": "crewai_plus_oauth_db"
     58→      },
     59→      "auth_type": "iam",
-    60→      "iam_user": "crewai-platform@kd-ix-eur-dev-gke.iam",
+    60→      "iam_user": "<REDACTED_EMAIL>",
     61→      "proxy_mode": "standalone"
     62→    },
     63→    "storage": {
@@ -1720,7 +1720,7 @@ tool_use Read
 id: toolu_017CPTtjgrrPS2JJPE68uBaG
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/variables.tf"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/variables.tf"
 }
 ```
 
@@ -1793,7 +1793,7 @@ tool_use Bash
 id: toolu_01UHQPqSBLPRMYsWRKX1GGfY
 ```json
 {
-  "command": "ls /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/docs/ 2>/dev/null || echo \"docs directory does not exist\"",
+  "command": "ls /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/docs/ 2>/dev/null || echo \"docs directory does not exist\"",
   "description": "Check if docs directory exists"
 }
 ```
@@ -1812,7 +1812,7 @@ tool_use Bash
 id: toolu_016NcsX3Z75sGovJm6wuGwcn
 ```json
 {
-  "command": "mkdir -p /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/docs",
+  "command": "mkdir -p /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/docs",
   "description": "Create docs directory"
 }
 ```
@@ -1831,7 +1831,7 @@ tool_use Write
 id: toolu_0147pcDEEC8EnW7SKXMXUCwr
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/docs/keycloak-setup-instructions.md",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/docs/keycloak-setup-instructions.md",
   "content": "# Keycloak SSO Configuration for CrewAI Platform\n\nWork instruction for the Keycloak team to configure SSO integration with CrewAI Enterprise.\n\nReference: https://enterprise-docs.crewai.com/features/keycloak-sso\n\n---\n\n## Prerequisites\n\n- Keycloak 26.4.2+ instance\n- Administrative access to the target realm\n- Network connectivity from GKE clusters (`crewai-platform` namespace) to Keycloak endpoint\n- CrewAI CLI version 1.9.0+ (for CLI/device auth flow)\n\n---\n\n## Per-Environment URLs\n\n| Environment | CrewAI Factory URL | Callback URI |\n|------------|-------------------|--------------|\n| dev | `https://crewai.dev.ix.konecta-digital.com` | `https://crewai.dev.ix.konecta-digital.com/auth/keycloak/callback` |\n| qa | `https://crewai.qa.ix.konecta-digital.com` | `https://crewai.qa.ix.konecta-digital.com/auth/keycloak/callback` |\n| prod | `https://crewai.prod.ix.konecta-digital.com` | `https://crewai.prod.ix.konecta-digital.com/auth/keycloak/callback` |\n\n---\n\n## Client Configuration\n\n### Client 1: Web Application (AMP)\n\nCreate one client per environment (e.g., `crewai-factory-dev`, `crewai-factory-qa`, `crewai-factory-prod`).\n\n| Setting | Value |\n|---------|-------|\n| Client type | OpenID Connect |\n| Client ID | `crewai-factory-{env}` (suggested) |\n| Client authentication | **ON** (confidential client) |\n| Authorization | OFF (unless fine-grained access control is required) |\n| Authentication flows | **Standard flow** + **Service accounts roles** |\n\n#### Login Settings (per environment)\n\n| Setting | Value |\n|---------|-------|\n| Root URL | `https://crewai.{env}.ix.konecta-digital.com` |\n| Home URL | `https://crewai.{env}.ix.konecta-digital.com` |\n| Valid redirect URIs | `https://crewai.{env}.ix.konecta-digital.com/auth/keycloak/callback` |\n| Valid post logout redirect URIs | `https://crewai.{env}.ix.konecta-digital.com` |\n| Web origins | `https://crewai.{env}.ix.konecta-digital.com` |\n\n### Client 2: CLI (Device Authorization Grant)\n\nCreate one CLI client per environment (e.g., `crewai-factory-cli-dev`, etc.).\n\n| Setting | Value |\n|---------|-------|\n| Client […]
 
 > TOOL
@@ -1839,7 +1839,7 @@ id: toolu_0147pcDEEC8EnW7SKXMXUCwr
 tool_result
 id: toolu_0147pcDEEC8EnW7SKXMXUCwr
 ```
-File created successfully at: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/docs/keycloak-setup-instructions.md
+File created successfully at: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/docs/keycloak-setup-instructions.md
 ```
 
 > TOOL
@@ -1912,7 +1912,7 @@ id: toolu_01HJupioAry2aT3zqpejrXX8
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
   "old_string": "    \"auth\": {\n      \"provider\": \"local\",\n      \"workos\": {\n        \"client_id\": \"client_01KCK4VFR0M8190ASEATDR8BQF\",\n        \"authkit_domain\": \"undisputed-tip-18-staging.authkit.app\",\n        \"api_key\": \"sk_test_a2V5XzAxS0NLNFZGN1ZZU1hNMzNIR0VXME43QldaLDQxc0YzSFFBVDVEZUJYd0JJSHQ2T0JkWjU\",\n        \"cookie_password\": \"n1roTsnzXxQ78tG00fQN53entmaDeP8d\"\n      },\n      \"github\": {\n        \"client_id\": \"Iv23liOX8MzQ4WERs6LQ\",\n        \"app_id\": \"109670995\",\n        \"app_url\": \"https://github.com/apps/crewai-git-dev/installations/new\"\n      }\n    },",
   "new_string": "    \"auth\": {\n      \"provider\": \"keycloak\",\n      \"keycloak\": {\n        \"client_id\": \"\",\n        \"client_secret\": \"\",\n        \"site\": \"\",\n        \"base_url\": \"\",\n        \"realm\": \"\",\n        \"audience\": \"account\",\n        \"device_authorization_client_id\": \"\"\n      },\n      \"workos\": {\n        \"client_id\": \"client_01KCK4VFR0M8190ASEATDR8BQF\",\n        \"authkit_domain\": \"undisputed-tip-18-staging.authkit.app\",\n        \"api_key\": \"sk_test_a2V5XzAxS0NLNFZGN1ZZU1hNMzNIR0VXME43QldaLDQxc0YzSFFBVDVEZUJYd0JJSHQ2T0JkWjU\",\n        \"cookie_password\": \"n1roTsnzXxQ78tG00fQN53entmaDeP8d\"\n      },\n      \"github\": {\n        \"client_id\": \"Iv23liOX8MzQ4WERs6LQ\",\n        \"app_id\": \"109670995\",\n        \"app_url\": \"https://github.com/apps/crewai-git-dev/installations/new\"\n      }\n    },"
 }
@@ -1923,7 +1923,7 @@ id: toolu_01HJupioAry2aT3zqpejrXX8
 tool_result
 id: toolu_01HJupioAry2aT3zqpejrXX8
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json has been updated successfully.
 ```
 
 > AGENT
@@ -1937,7 +1937,7 @@ id: toolu_01MRGDNsBm5bW6yaFqXyhmbm
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json",
   "old_string": "      \"workos_credentials\": \"crewai-workos-credentials-dev\",",
   "new_string": "      \"workos_credentials\": \"crewai-workos-credentials-dev\",\n      \"keycloak_credentials\": \"crewai-keycloak-credentials-dev\","
 }
@@ -1948,7 +1948,7 @@ id: toolu_01MRGDNsBm5bW6yaFqXyhmbm
 tool_result
 id: toolu_01MRGDNsBm5bW6yaFqXyhmbm
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/config.json has been updated successfully.
 ```
 
 > TOOL
@@ -2021,7 +2021,7 @@ id: toolu_01V6svSP3Goh17aLagJyXPuh
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
   "old_string": "  # WorkOS env vars block (only for dev where credentials are in config)\n  local WORKOS_BLOCK=\"\"\n  local workos_client_id workos_authkit_domain workos_api_key workos_cookie_password\n  workos_client_id=$(jq -r '.service.auth.workos.client_id // empty' \"$config\")\n  if [[ -n \"$workos_client_id\" ]]; then\n    workos_authkit_domain=$(jq -r '.service.auth.workos.authkit_domain' \"$config\")\n    workos_api_key=$(jq -r '.service.auth.workos.api_key' \"$config\")\n    workos_cookie_password=$(jq -r '.service.auth.workos.cookie_password' \"$config\")\n    WORKOS_BLOCK=\"  WORKOS_CLIENT_ID: \\\"${workos_client_id}\\\"\n  WORKOS_AUTHKIT_DOMAIN: \\\"${workos_authkit_domain}\\\"\n  WORKOS_API_KEY: \\\"${workos_api_key}\\\"\n  WORKOS_COOKIE_PASSWORD: \\\"${workos_cookie_password}\\\"\"\n  fi",
   "new_string": "  # WorkOS env vars block (only for dev where credentials are in config)\n  local WORKOS_BLOCK=\"\"\n  local workos_client_id workos_authkit_domain workos_api_key workos_cookie_password\n  workos_client_id=$(jq -r '.service.auth.workos.client_id // empty' \"$config\")\n  if [[ -n \"$workos_client_id\" ]]; then\n    workos_authkit_domain=$(jq -r '.service.auth.workos.authkit_domain' \"$config\")\n    workos_api_key=$(jq -r '.service.auth.workos.api_key' \"$config\")\n    workos_cookie_password=$(jq -r '.service.auth.workos.cookie_password' \"$config\")\n    WORKOS_BLOCK=\"  WORKOS_CLIENT_ID: \\\"${workos_client_id}\\\"\n  WORKOS_AUTHKIT_DOMAIN: \\\"${workos_authkit_domain}\\\"\n  WORKOS_API_KEY: \\\"${workos_api_key}\\\"\n  WORKOS_COOKIE_PASSWORD: \\\"${workos_cookie_password}\\\"\"\n  fi\n\n  # Keycloak env vars block (only for dev where credentials are in config)\n  local KEYCLOAK_BLOCK=\"\"\n  local keycloak_client_id keycloak_client_secret keycloak_site keycloak_base_url\n  local keycloak_realm keycloak_audience keycloak_device_client_id\n  keycloak_client_id=$(jq -r '.service.auth.keycloak.client_id // empty' \"$config\")\n  if [[ -n \"$keycloak_client_id\" ]]; then\n    keycloak_client_secret=$(jq -r '.service.auth.keycloak.client_secret' \"$config\")\n    keycloak_site=$(jq -r '.service.auth.keycloak.site' \"$config\")\n    keycloak_base_url=$(jq -r '.service.auth.keycloak.base_url' \"$config\")\n    keycloak_realm=$(jq -r '.service.auth.keycloak.realm' \"$config\")\n    keycloak_audience=$(jq -r '.service.auth.keycloak.audience' \"$config\")\n    keycloak_device_client_id=$(jq -r '.service.auth.keycloak.device_authorization_client_id' \"$config\")\n    KEYCLOAK_BLOCK=\"  KEYCLOAK_CLIENT_ID: \\\"${keycloak_client_id}\\\"\n  KEYCLOAK_CLIENT_SECRET: \\\"${keycloak_client_secret}\\\"\n  KEYCLOAK_SITE: \\\"${keycloak_site}\\\"\n  KEYCLOAK_BASE_URL: \\\"${keycloak_base_url}\\\"\n  KEYCLOAK_REALM: \\\"${keycloak_realm}\\\"\n  KEYCLOAK_AUDIENCE: \\\"${keycloak_audience}\\\"\n  KEYCLOAK_DEVICE_AUTHORIZATION_CLIENT_ID: \\\"${keycloak_device_client_id}\\\"\"\n  fi"
 }
@@ -2032,7 +2032,7 @@ id: toolu_01V6svSP3Goh17aLagJyXPuh
 tool_result
 id: toolu_01V6svSP3Goh17aLagJyXPuh
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
 ```
 
 > AGENT
@@ -2046,7 +2046,7 @@ id: toolu_01PL9TQcUXXLm2Jnxo89ksgp
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
   "old_string": "  WORKOS_REDIRECT_URI: \"https://${hostname}/auth/workos/callback\"\n$(if [[ -n \"$WORKOS_BLOCK\" ]]; then echo \"$WORKOS_BLOCK\"; fi)",
   "new_string": "  WORKOS_REDIRECT_URI: \"https://${hostname}/auth/workos/callback\"\n$(if [[ -n \"$WORKOS_BLOCK\" ]]; then echo \"$WORKOS_BLOCK\"; fi)\n  KEYCLOAK_REDIRECT_URI: \"https://${hostname}/auth/keycloak/callback\"\n$(if [[ -n \"$KEYCLOAK_BLOCK\" ]]; then echo \"$KEYCLOAK_BLOCK\"; fi)"
 }
@@ -2057,7 +2057,7 @@ id: toolu_01PL9TQcUXXLm2Jnxo89ksgp
 tool_result
 id: toolu_01PL9TQcUXXLm2Jnxo89ksgp
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
 ```
 
 > AGENT
@@ -2071,7 +2071,7 @@ id: toolu_01NCNyycdq5DBj59Pyqi4ga7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
   "old_string": "  local eso_gcp_project eso_cluster_location eso_cluster_name eso_cluster_project\n  local sa_name gcs_secret_name rails_secret_name eso_secret_name\n  local workos_secret_name github_secret_name replicated_secret_name",
   "new_string": "  local eso_gcp_project eso_cluster_location eso_cluster_name eso_cluster_project\n  local sa_name gcs_secret_name rails_secret_name eso_secret_name\n  local workos_secret_name keycloak_secret_name github_secret_name replicated_secret_name"
 }
@@ -2082,7 +2082,7 @@ id: toolu_01NCNyycdq5DBj59Pyqi4ga7
 tool_result
 id: toolu_01NCNyycdq5DBj59Pyqi4ga7
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
 ```
 
 > TOOL
@@ -2092,7 +2092,7 @@ id: toolu_01RCYrKWunrAThLuJcjfvWzn
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
   "old_string": "  workos_secret_name=$(jq -r '.service.secrets.workos_credentials' \"$config\")\n  github_secret_name=$(jq -r '.service.secrets.github_credentials' \"$config\")",
   "new_string": "  workos_secret_name=$(jq -r '.service.secrets.workos_credentials' \"$config\")\n  keycloak_secret_name=$(jq -r '.service.secrets.keycloak_credentials // empty' \"$config\")\n  github_secret_name=$(jq -r '.service.secrets.github_credentials' \"$config\")"
 }
@@ -2103,7 +2103,7 @@ id: toolu_01RCYrKWunrAThLuJcjfvWzn
 tool_result
 id: toolu_01RCYrKWunrAThLuJcjfvWzn
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
 ```
 
 > AGENT
@@ -2117,7 +2117,7 @@ id: toolu_01VLjeZtztUycKj9EYBAmeUC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh",
   "old_string": "    workosCredentials:\n      secretName: \"${workos_secret_name}\"\n    githubCredentials:",
   "new_string": "    workosCredentials:\n      secretName: \"${workos_secret_name}\"\n    keycloakCredentials:\n      secretName: \"${keycloak_secret_name}\"\n    githubCredentials:"
 }
@@ -2128,7 +2128,7 @@ id: toolu_01VLjeZtztUycKj9EYBAmeUC
 tool_result
 id: toolu_01VLjeZtztUycKj9EYBAmeUC
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/scripts/generate-helm-values.sh has been updated successfully.
 ```
 
 > TOOL
@@ -2201,7 +2201,7 @@ id: toolu_01YFdx3sPRLkpYXc2Tn6GPY7
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values.yaml",
   "old_string": "    workosCredentials:\n      secretName: \"\"\n    githubCredentials:",
   "new_string": "    workosCredentials:\n      secretName: \"\"\n    keycloakCredentials:\n      secretName: \"\"\n    githubCredentials:"
 }
@@ -2212,7 +2212,7 @@ id: toolu_01YFdx3sPRLkpYXc2Tn6GPY7
 tool_result
 id: toolu_01YFdx3sPRLkpYXc2Tn6GPY7
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values.yaml has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values.yaml has been updated successfully.
 ```
 
 > TOOL
@@ -2285,7 +2285,7 @@ id: toolu_01TD8yxnYKzP61X1EkMSTrex
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/templates/externalsecret.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/templates/externalsecret.yaml",
   "old_string": "    # GitHub App credentials\n    - secretKey: GITHUB_CLIENT_SECRET",
   "new_string": "    # Keycloak OAuth credentials\n    {{- if .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n    - secretKey: KEYCLOAK_CLIENT_ID\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: client_id\n\n    - secretKey: KEYCLOAK_CLIENT_SECRET\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: client_secret\n\n    - secretKey: KEYCLOAK_SITE\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: site\n\n    - secretKey: KEYCLOAK_REALM\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: realm\n\n    - secretKey: KEYCLOAK_AUDIENCE\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: audience\n\n    - secretKey: KEYCLOAK_DEVICE_AUTHORIZATION_CLIENT_ID\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: device_authorization_client_id\n    {{- end }}\n\n    # GitHub App credentials\n    - secretKey: GITHUB_CLIENT_SECRET"
 }
@@ -2296,7 +2296,7 @@ id: toolu_01TD8yxnYKzP61X1EkMSTrex
 tool_result
 id: toolu_01TD8yxnYKzP61X1EkMSTrex
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/templates/externalsecret.yaml has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/templates/externalsecret.yaml has been updated successfully.
 ```
 
 > TOOL
@@ -2369,7 +2369,7 @@ id: toolu_015R1M3GYC6AuekRTDfGXCwq
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/main.tf",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/main.tf",
   "old_string": "# --- Secret Manager: GitHub App Credentials ---",
   "new_string": "# --- Secret Manager: Keycloak SSO Credentials ---\n# Keycloak authentication credentials for SSO integration.\n# Values injected via TF_VAR_KEYCLOAK_* from GitHub Secrets.\n\nresource \"google_secret_manager_secret\" \"keycloak_credentials\" {\n  project   = local.global.project_ids.security\n  secret_id = local.service.secrets.keycloak_credentials\n\n  replication {\n    user_managed {\n      replicas {\n        location = \"europe-west1\"\n      }\n      replicas {\n        location = \"europe-west4\"\n      }\n    }\n  }\n\n  labels = {\n    app         = \"crewai\"\n    environment = local.global.environment\n    managed-by  = \"terraform\"\n    platform    = \"kix\"\n  }\n}\n\nresource \"google_secret_manager_secret_version\" \"keycloak_credentials\" {\n  secret=[REDACTED].keycloak_credentials.id\n  secret_data = jsonencode({\n    client_id                        = var.keycloak_client_id\n    client_secret                    = var.keycloak_client_secret\n    site                             = var.keycloak_site\n    realm                            = var.keycloak_realm\n    audience                         = var.keycloak_audience\n    base_url                         = var.keycloak_base_url\n    device_authorization_client_id   = var.keycloak_device_authorization_client_id\n  })\n}\n\nresource \"google_secret_manager_secret_iam_member\" \"keycloak_credentials_accessor\" {\n  secret_id = google_secret_manager_secret.keycloak_credentials.id\n  role      = \"roles/secretmanager.secretAccessor\"\n  member    = \"serviceAccount:${google_service_account.crewai_platform.email}\"\n}\n\n# --- Secret Manager: GitHub App Credentials ---"
 }
@@ -2380,7 +2380,7 @@ id: toolu_015R1M3GYC6AuekRTDfGXCwq
 tool_result
 id: toolu_015R1M3GYC6AuekRTDfGXCwq
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/main.tf has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/main.tf has been updated successfully.
 ```
 
 > AGENT
@@ -2394,7 +2394,7 @@ id: toolu_01QzZ2XVAmiFTyZgyST641hV
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/variables.tf",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/variables.tf",
   "old_string": "variable \"github_client_secret\" {",
   "new_string": "variable \"keycloak_client_id\" {\n  description = \"Keycloak web client ID\"\n  type        = string\n  default     = \"\"\n  sensitive   = true\n}\n\nvariable \"keycloak_client_secret\" {\n  description = \"Keycloak web client secret\"\n  type        = string\n  default     = \"\"\n  sensitive   = true\n}\n\nvariable \"keycloak_site\" {\n  description = \"Keycloak server URL\"\n  type        = string\n  default     = \"\"\n  sensitive   = true\n}\n\nvariable \"keycloak_realm\" {\n  description = \"Keycloak realm name\"\n  type        = string\n  default     = \"\"\n}\n\nvariable \"keycloak_audience\" {\n  description = \"Keycloak token audience\"\n  type        = string\n  default     = \"account\"\n}\n\nvariable \"keycloak_base_url\" {\n  description = \"Keycloak base URL path (e.g. /auth for legacy installations)\"\n  type        = string\n  default     = \"\"\n}\n\nvariable \"keycloak_device_authorization_client_id\" {\n  description = \"Keycloak CLI client ID for device authorization grant\"\n  type        = string\n  default     = \"\"\n}\n\nvariable \"github_client_secret\" {"
 }
@@ -2405,7 +2405,7 @@ id: toolu_01QzZ2XVAmiFTyZgyST641hV
 tool_result
 id: toolu_01QzZ2XVAmiFTyZgyST641hV
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/variables.tf has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform/variables.tf has been updated successfully.
 ```
 
 > TOOL
@@ -2487,8 +2487,8 @@ id: toolu_01SwVhwbgmQdaRNV6Cvi9Ast
 tool_result
 id: toolu_01SwVhwbgmQdaRNV6Cvi9Ast
 ```
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml
 ```
 
 > TOOL
@@ -2507,8 +2507,8 @@ id: toolu_01A1Vun3C3bzf23TvUTbEXQq
 tool_result
 id: toolu_01A1Vun3C3bzf23TvUTbEXQq
 ```
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml matches config.json
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml matches config.json
 ```
 
 > AGENT
@@ -2522,7 +2522,7 @@ id: toolu_014FKEecDR7xNxRuQ3Nx4Yip
 ```json
 {
   "pattern": "KEYCLOAK",
-  "path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml",
+  "path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml",
   "output_mode": "content"
 }
 ```
@@ -2534,7 +2534,7 @@ id: toolu_01TDd1S42qj63vAsceKPKNaj
 ```json
 {
   "pattern": "keycloak",
-  "path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml",
+  "path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml",
   "output_mode": "content"
 }
 ```
@@ -2545,7 +2545,7 @@ tool_use Bash
 id: toolu_01S35ZYabLH19vafPK6hBxFv
 ```json
 {
-  "command": "cd /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform && terraform init -backend=false 2>&1 | tail -5 && terraform validate",
+  "command": "cd /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/terraform && terraform init -backend=false 2>&1 | tail -5 && terraform validate",
   "description": "Init and validate terraform",
   "timeout": 60000
 }
@@ -2592,7 +2592,7 @@ tool_use Bash
 id: toolu_01UUmyywDURmzzDVJY46PEjc
 ```json
 {
-  "command": "helm template crewai /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway -f /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values.yaml -f /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml 2>&1 | grep -A 5 -i keycloak",
+  "command": "helm template crewai /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway -f /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values.yaml -f /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml 2>&1 | grep -A 5 -i keycloak",
   "description": "Helm template dry-run to verify Keycloak ESO entries render"
 }
 ```
@@ -2648,7 +2648,7 @@ tool_use Read
 id: toolu_01LnPr81yRHtGzo1Hok5tFF3
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values.yaml",
   "offset": 109,
   "limit": 15
 }
@@ -2660,7 +2660,7 @@ tool_use Read
 id: toolu_01P389LL5WpRHoTFpRnTxMSA
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values.yaml",
   "offset": 109,
   "limit": 15
 }
@@ -2672,7 +2672,7 @@ tool_use Read
 id: toolu_01T31sWUN9LUyowmj5Ha5uqe
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/templates/externalsecret.yaml"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/templates/externalsecret.yaml"
 }
 ```
 
@@ -2682,7 +2682,7 @@ tool_use Read
 id: toolu_01Nvu2NVgfsfB3WYtQqEdcJB
 ```json
 {
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/templates/externalsecret.yaml"
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/templates/externalsecret.yaml"
 }
 ```
 
@@ -2865,7 +2865,7 @@ id: toolu_01FUqqs8cpZMcz14nrpqcxeC
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values.yaml",
   "old_string": "    workosCredentials:\n      secretName: \"\"\n    githubCredentials:",
   "new_string": "    workosCredentials:\n      secretName: \"\"\n    keycloakCredentials:\n      secretName: \"\"\n    githubCredentials:"
 }
@@ -2878,7 +2878,7 @@ id: toolu_01AeoXtfGpysV29kq3p5rPH6
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values.yaml",
   "old_string": "    workosCredentials:\n      secretName: \"\"\n    githubCredentials:",
   "new_string": "    workosCredentials:\n      secretName: \"\"\n    keycloakCredentials:\n      secretName: \"\"\n    githubCredentials:"
 }
@@ -2889,7 +2889,7 @@ id: toolu_01AeoXtfGpysV29kq3p5rPH6
 tool_result
 id: toolu_01FUqqs8cpZMcz14nrpqcxeC
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values.yaml has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values.yaml has been updated successfully.
 ```
 
 > TOOL
@@ -2897,7 +2897,7 @@ The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environ
 tool_result
 id: toolu_01AeoXtfGpysV29kq3p5rPH6
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values.yaml has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values.yaml has been updated successfully.
 ```
 
 > AGENT
@@ -2911,7 +2911,7 @@ id: toolu_012nUSsS8crzfXVohj8Lxf8u
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/templates/externalsecret.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/templates/externalsecret.yaml",
   "old_string": "    # GitHub App credentials\n    - secretKey: GITHUB_CLIENT_SECRET",
   "new_string": "    # Keycloak OAuth credentials\n    {{- if .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n    - secretKey: KEYCLOAK_CLIENT_ID\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: client_id\n\n    - secretKey: KEYCLOAK_CLIENT_SECRET\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: client_secret\n\n    - secretKey: KEYCLOAK_SITE\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: site\n\n    - secretKey: KEYCLOAK_REALM\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: realm\n\n    - secretKey: KEYCLOAK_AUDIENCE\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: audience\n\n    - secretKey: KEYCLOAK_DEVICE_AUTHORIZATION_CLIENT_ID\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: device_authorization_client_id\n    {{- end }}\n\n    # GitHub App credentials\n    - secretKey: GITHUB_CLIENT_SECRET"
 }
@@ -2924,7 +2924,7 @@ id: toolu_012jcFGmgdJm72WuDb7peknf
 ```json
 {
   "replace_all": false,
-  "file_path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/templates/externalsecret.yaml",
+  "file_path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/templates/externalsecret.yaml",
   "old_string": "    # GitHub App credentials\n    - secretKey: GITHUB_CLIENT_SECRET",
   "new_string": "    # Keycloak OAuth credentials\n    {{- if .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n    - secretKey: KEYCLOAK_CLIENT_ID\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: client_id\n\n    - secretKey: KEYCLOAK_CLIENT_SECRET\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: client_secret\n\n    - secretKey: KEYCLOAK_SITE\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: site\n\n    - secretKey: KEYCLOAK_REALM\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: realm\n\n    - secretKey: KEYCLOAK_AUDIENCE\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: audience\n\n    - secretKey: KEYCLOAK_DEVICE_AUTHORIZATION_CLIENT_ID\n      remoteRef:\n        key: {{ .Values.externalSecrets.secrets.keycloakCredentials.secretName }}\n        property: device_authorization_client_id\n    {{- end }}\n\n    # GitHub App credentials\n    - secretKey: GITHUB_CLIENT_SECRET"
 }
@@ -2935,7 +2935,7 @@ id: toolu_012jcFGmgdJm72WuDb7peknf
 tool_result
 id: toolu_012nUSsS8crzfXVohj8Lxf8u
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/templates/externalsecret.yaml has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/templates/externalsecret.yaml has been updated successfully.
 ```
 
 > TOOL
@@ -2943,7 +2943,7 @@ The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environ
 tool_result
 id: toolu_012jcFGmgdJm72WuDb7peknf
 ```
-The file /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/templates/externalsecret.yaml has been updated successfully.
+The file /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/templates/externalsecret.yaml has been updated successfully.
 ```
 
 > AGENT
@@ -2978,7 +2978,7 @@ tool_use Bash
 id: toolu_01RhVEZhkM3BqPNLH1PZxTqL
 ```json
 {
-  "command": "cd /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai && ./scripts/generate-helm-values.sh qa && ./scripts/generate-helm-values.sh prod",
+  "command": "cd /home/<USER>/code/konecta/konecta-tic/kix-services-crewai && ./scripts/generate-helm-values.sh qa && ./scripts/generate-helm-values.sh prod",
   "description": "Regenerate QA and prod helm values"
 }
 ```
@@ -2988,10 +2988,10 @@ id: toolu_01RhVEZhkM3BqPNLH1PZxTqL
 tool_result
 id: toolu_01RhVEZhkM3BqPNLH1PZxTqL
 ```
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/values-upstream.yaml
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/values-upstream.yaml
-Generated: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values-prod.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/values-upstream.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/values-upstream.yaml
+Generated: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values-prod.yaml
 ```
 
 > TOOL
@@ -3010,12 +3010,12 @@ id: toolu_01SuuymRj79VMeEjnS6xKxcr
 tool_result
 id: toolu_01SuuymRj79VMeEjnS6xKxcr
 ```
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml matches config.json
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml matches config.json
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/values-upstream.yaml matches config.json
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml matches config.json
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/values-upstream.yaml matches config.json
-OK: /home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values-prod.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/values-upstream.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/dev/helm/crewai-gateway/values-dev.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/values-upstream.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/values-upstream.yaml matches config.json
+OK: /home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/prod/helm/crewai-gateway/values-prod.yaml matches config.json
 ```
 
 > AGENT
@@ -3029,7 +3029,7 @@ id: toolu_01TgiD5y121LYST2xgW97kxd
 ```json
 {
   "pattern": "KEYCLOAK",
-  "path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/values-upstream.yaml",
+  "path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/values-upstream.yaml",
   "output_mode": "content"
 }
 ```
@@ -3041,7 +3041,7 @@ id: toolu_01LPfDY7U4vBNrB3pucT2b4v
 ```json
 {
   "pattern": "keycloak",
-  "path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml",
+  "path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml",
   "output_mode": "content"
 }
 ```
@@ -3073,7 +3073,7 @@ id: toolu_015KQt7nELToz9KmFUJr7uQd
 ```json
 {
   "pattern": "keycloakCredentials\" -A 1",
-  "path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml",
+  "path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml",
   "output_mode": "content",
   "-A": 1
 }
@@ -3094,7 +3094,7 @@ id: toolu_01Qj9FzbCQ8hqWAUp4nr8G9h
 ```json
 {
   "pattern": "keycloak",
-  "path": "/home/nathan_booth/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml",
+  "path": "/home/<USER>/code/konecta/konecta-tic/kix-services-crewai/environments/qa/helm/crewai-gateway/values-qa.yaml",
   "output_mode": "content",
   "-A": 1
 }

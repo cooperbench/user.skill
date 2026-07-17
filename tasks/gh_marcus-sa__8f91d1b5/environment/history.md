@@ -2,7 +2,7 @@
 
 <system_instruction>
 You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
-Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
+Your work should take place in the /home/<USER>/conductor/workspaces/brain-v1/munich-v2 directory (unless otherwise directed), which has been set up for you to work in.
 Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
 The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise.
 
@@ -17,7 +17,7 @@ If the user asks for help with Conductor, you can ask them to go to "Help -> Sen
 
 > SYSTEM
 
-Base directory for this skill: /Users/marcus/.claude/skills/nw-bugfix
+Base directory for this skill: /home/<USER>/.claude/skills/nw-bugfix
 
 # NW-BUGFIX: Defect Resolution Workflow
 
@@ -273,7 +273,7 @@ use /nw-bugfix skill to remove agent_type as is no longer supported
 
 > SYSTEM
 
-Base directory for this skill: /Users/marcus/.claude/skills/nw-bugfix
+Base directory for this skill: /home/<USER>/.claude/skills/nw-bugfix
 
 # NW-BUGFIX: Defect Resolution Workflow
 

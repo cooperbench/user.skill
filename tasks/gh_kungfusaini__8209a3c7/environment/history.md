@@ -315,7 +315,7 @@ tool_result
 id: toolu_01U5S8geMwk3NGwZMwV87jvw
 ```
 ---
-/Users/sumeet/.claude/settings.json
+/home/<USER>/.claude/settings.json
 settings.json exists
 ```
 
@@ -395,9 +395,9 @@ tool_result
 id: toolu_011DJ83iYsWzUQY7p3m87cdK
 ```
 ---
-/Users/sumeet/Documents/work/IBM/rapid/cio-dashboard/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
-/Users/sumeet/Documents/arc/compsci/kings/aiSoc/ai-soc-welcome/app/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
-/Users/sumeet/matrix/arc/ai/aiSocWelcome/app/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
+/home/<USER>/Documents/work/IBM/rapid/cio-dashboard/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
+/home/<USER>/Documents/arc/compsci/kings/aiSoc/ai-soc-welcome/app/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
+/home/<USER>/matrix/arc/ai/aiSocWelcome/app/node_modules/node-notifier/vendor/terminal-notifier-LICENSE
 ```
 
 > TOOL
@@ -684,12 +684,12 @@ id: toolu_01UY1BogX8Ce4RXq5Xf39L4R
 tool_result
 id: toolu_01UY1BogX8Ce4RXq5Xf39L4R
 ```
-PATH: /Users/sumeet/.local/share/../bin:/Users/sumeet/.config/zsh/conf/scripts:/usr/local/bin:/usr/local/sbin:/Users/sumeet/.config/zsh/conf/scripts:/Users/sumeet/.local/share/pyenv/shims:/Users/sumeet/.local/share/pyenv/bin:/Users/sumeet/.nix-profile/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/bin:/bin:/usr/sbin:/sbin:/nix/store/07cs2lpb75vdw7zmk0wdgpqbandp0h6c-kitty-0.44.0/bin:/nix/store/q783f0iksvpkyc99a4gmnyf6bbzhds7y-imagemagick-7.1.2-19/bin:/nix/store/a2vlbg69j8r5wapjyndbprxrrf26sp9g-ncurses-6.5-dev/bin
+PATH: /home/<USER>/.local/share/../bin:/home/<USER>/.config/zsh/conf/scripts:/usr/local/bin:/usr/local/sbin:/home/<USER>/.config/zsh/conf/scripts:/home/<USER>/.local/share/pyenv/shims:/home/<USER>/.local/share/pyenv/bin:/home/<USER>/.nix-profile/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/bin:/bin:/usr/sbin:/sbin:/nix/store/07cs2lpb75vdw7zmk0wdgpqbandp0h6c-kitty-0.44.0/bin:/nix/store/q783f0iksvpkyc99a4gmnyf6bbzhds7y-imagemagick-7.1.2-19/bin:/nix/store/a2vlbg69j8r5wapjyndbprxrrf26sp9g-ncurses-6.5-dev/bin
 ---
 notifyutil
 notifyd
 ---GLOBAL_NPM---
-/Users/sumeet/.local/share/npm/lib/node_modules
+/home/<USER>/.local/share/npm/lib/node_modules
 ---BUN_GLOBAL---
 ```
 
@@ -705,7 +705,7 @@ tool_use Write
 id: toolu_01YCeTUVxwtKPppY1NUGxczq
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\ninput=$(cat)\ncwd=$(printf '%s' \"$input\" | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\" | jq -r '.message // \"Done\"')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n\n# Stop hook has no .message; show a fixed body\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\n# Escape double quotes for AppleScript\nesc() { printf '%s' \"$1\" | sed 's/\\\\/\\\\\\\\/g; s/\"/\\\\\"/g'; }\n\nosascript -e \"display notification \\\"$(esc \"$msg\")\\\" with title \\\"$(esc \"$title\")\\\"\"\n"
 }
 ```
@@ -715,7 +715,7 @@ id: toolu_01YCeTUVxwtKPppY1NUGxczq
 tool_result
 id: toolu_01YCeTUVxwtKPppY1NUGxczq
 ```
-File created successfully at: /Users/sumeet/.claude/bin/notify.sh (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/bin/notify.sh (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -724,7 +724,7 @@ tool_use Bash
 id: toolu_011gGNAEqj21ruMNAjauKWps
 ```json
 {
-  "command": "chmod +x ~/.claude/bin/notify.sh && echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"Test from setup\",\"hook_event_name\":\"Notification\",\"session_id\":\"abc\"}' | ~/.claude/bin/notify.sh && echo \"OK\"",
+  "command": "chmod +x ~/.claude/bin/notify.sh && echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"Test from setup\",\"hook_event_name\":\"Notification\",\"session_id\":\"abc\"}' | ~/.claude/bin/notify.sh && echo \"OK\"",
   "description": "Make script executable and test it"
 }
 ```
@@ -793,7 +793,7 @@ tool_use Write
 id: toolu_01Gi9UQSVcTC28RV9zxx7NGt
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\ninput=$(cat)\ncwd=$(printf '%s' \"$input\" | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\" | jq -r '.message // empty')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\nsession=$(printf '%s' \"$input\" | jq -r '.session_id // \"claude\"')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n[ -z \"$msg\" ] && msg=\"Done\"\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\n# Per-session identifier so a new notif replaces the previous one for the same window\nkitten notify --identifier \"claude-${session}\" \"$title\" \"$msg\"\n"
 }
 ```
@@ -803,7 +803,7 @@ id: toolu_01Gi9UQSVcTC28RV9zxx7NGt
 tool_result
 id: toolu_01Gi9UQSVcTC28RV9zxx7NGt
 ```
-The file /Users/sumeet/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -817,7 +817,7 @@ id: toolu_01E1DhBi4gxWkgg1RoENeExX
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"hooks\": {\n    \"Notification\": [\n      {\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"printf '\\\\a'\"\n          }\n        ]\n      }\n    ]\n  },",
   "new_string": "  \"hooks\": {\n    \"Notification\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"$HOME/.claude/bin/notify.sh\"\n          }\n        ]\n      }\n    ],\n    \"Stop\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"$HOME/.claude/bin/notify.sh\"\n          }\n        ]\n      }\n    ]\n  },"
 }
@@ -837,7 +837,7 @@ tool_use Read
 id: toolu_01SWTRUA4b7bXn7GTtX5YafB
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/settings.json"
+  "file_path": "/home/<USER>/.claude/settings.json"
 }
 ```
 
@@ -874,7 +874,7 @@ id: toolu_01Q8upHqUhSDDexWSEZyHJGF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"hooks\": {\n    \"Notification\": [\n      {\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"printf '\\\\a'\"\n          }\n        ]\n      }\n    ]\n  },",
   "new_string": "  \"hooks\": {\n    \"Notification\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"$HOME/.claude/bin/notify.sh\"\n          }\n        ]\n      }\n    ],\n    \"Stop\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"$HOME/.claude/bin/notify.sh\"\n          }\n        ]\n      }\n    ]\n  },"
 }
@@ -943,7 +943,7 @@ id: toolu_01PhDCFGGLCp7aWSrz3P85ZR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"hooks\": {\n    \"Notification\": [\n      {\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"printf '\\\\a'\"\n          }\n        ]\n      }\n    ]\n  },",
   "new_string": "  \"hooks\": {\n    \"Notification\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"$HOME/.claude/bin/notify.sh\"\n          }\n        ]\n      }\n    ],\n    \"Stop\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"$HOME/.claude/bin/notify.sh\"\n          }\n        ]\n      }\n    ]\n  },"
 }
@@ -1006,7 +1006,7 @@ Once saved, restart Claude Code (or run `/hooks` to verify both are registered).
 
 ### Test it
 ```bash
-echo '{"cwd":"/Users/sumeet/.dotfiles/dot-config","message":"Test","hook_event_name":"Notification","session_id":"test1"}' | ~/.claude/bin/notify.sh
+echo '{"cwd":"/home/<USER>/.dotfiles/dot-config","message":"Test","hook_event_name":"Notification","session_id":"test1"}' | ~/.claude/bin/notify.sh
 ```
 
 You should see a kitty-attributed notification titled `Claude: dot-config` with body `Test`. Let me know once it's wired up and I'll verify it's all good.
@@ -1022,7 +1022,7 @@ id: toolu_015T2zMAe3dNicXkWBa8sXEp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/.claude/settings.json",
+  "file_path": "/home/<USER>/.claude/settings.json",
   "old_string": "  \"hooks\": {\n    \"Notification\": [\n      {\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"printf '\\\\a'\"\n          }\n        ]\n      }\n    ]\n  },",
   "new_string": "  \"hooks\": {\n    \"Notification\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"$HOME/.claude/bin/notify.sh\"\n          }\n        ]\n      }\n    ],\n    \"Stop\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"$HOME/.claude/bin/notify.sh\"\n          }\n        ]\n      }\n    ]\n  },"
 }
@@ -1033,7 +1033,7 @@ id: toolu_015T2zMAe3dNicXkWBa8sXEp
 tool_result
 id: toolu_015T2zMAe3dNicXkWBa8sXEp
 ```
-The file /Users/sumeet/.claude/settings.json has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/settings.json has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1046,7 +1046,7 @@ tool_use Bash
 id: toolu_01BCqCRTUmB8UhcWRq4mKHRr
 ```json
 {
-  "command": "echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"Test from setup — should show as Claude: dot-config\",\"hook_event_name\":\"Notification\",\"session_id\":\"test1\"}' | ~/.claude/bin/notify.sh && echo \"sent\"",
+  "command": "echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"Test from setup — should show as Claude: dot-config\",\"hook_event_name\":\"Notification\",\"session_id\":\"test1\"}' | ~/.claude/bin/notify.sh && echo \"sent\"",
   "description": "Fire test notification through kitten notify"
 }
 ```
@@ -1070,7 +1070,7 @@ tool_use Write
 id: toolu_01RrpQpbL5YRgAVcqTam2AzW
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\ninput=$(cat)\ncwd=$(printf '%s' \"$input\" | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\" | jq -r '.message // empty')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\nsession=$(printf '%s' \"$input\" | jq -r '.session_id // \"claude\"')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n[ -z \"$msg\" ] && msg=\"Done\"\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\n# Walk up the process tree to find a real tty (hooks run with no controlling\n# terminal, but a parent process is attached to one).\nfind_tty() {\n  local pid=$1\n  while [ -n \"$pid\" ] && [ \"$pid\" != \"0\" ] && [ \"$pid\" != \"1\" ]; do\n    local t\n    t=$(ps -o tty= -p \"$pid\" 2>/dev/null | tr -d ' ')\n    if [ -n \"$t\" ] && [ \"$t\" != \"??\" ]; then\n      echo \"/dev/$t\"\n      return\n    fi\n    pid=$(ps -o ppid= -p \"$pid\" 2>/dev/null | tr -d ' ')\n  done\n}\n\ntty=$(find_tty \"$PPID\")\n\nif [ -n \"${tty:-}\" ] && [ -w \"$tty\" ]; then\n  kitten notify --identifier \"claude-${session}\" \"$title\" \"$msg\" <\"$tty\" >\"$tty\" 2>/dev/null \\\n    || osascript -e \"display notification \\\"${msg//\\\"/\\\\\\\"}\\\" with title \\\"${title//\\\"/\\\\\\\"}\\\"\"\nelse\n  osascript -e \"display notification \\\"${msg//\\\"/\\\\\\\"}\\\" with title \\\"${title//\\\"/\\\\\\\"}\\\"\"\nfi\n"
 }
 ```
@@ -1080,7 +1080,7 @@ id: toolu_01RrpQpbL5YRgAVcqTam2AzW
 tool_result
 id: toolu_01RrpQpbL5YRgAVcqTam2AzW
 ```
-The file /Users/sumeet/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1089,7 +1089,7 @@ tool_use Bash
 id: toolu_01VTwGCmJJqQ52AKWw28fjAY
 ```json
 {
-  "command": "echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"Hook test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test1\"}' | ~/.claude/bin/notify.sh && echo \"exit=$?\"",
+  "command": "echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"Hook test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test1\"}' | ~/.claude/bin/notify.sh && echo \"exit=$?\"",
   "description": "Test notify script with mock hook payload"
 }
 ```
@@ -1122,7 +1122,7 @@ tool_use Write
 id: toolu_01XR3BbevmLt9ZKa8J9SAnzh
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\nLOG=/tmp/claude-notify.log\nexec 2>>\"$LOG\"\necho \"=== $(date) PPID=$PPID PID=$$ ===\" >&2\n\ninput=$(cat)\necho \"INPUT: $input\" >&2\n\ncwd=$(printf '%s' \"$input\" | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\" | jq -r '.message // empty')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\nsession=$(printf '%s' \"$input\" | jq -r '.session_id // \"claude\"')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n[ -z \"$msg\" ] && msg=\"Done\"\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\nfind_tty() {\n  local pid=$1\n  while [ -n \"$pid\" ] && [ \"$pid\" != \"0\" ] && [ \"$pid\" != \"1\" ]; do\n    local t\n    t=$(ps -o tty= -p \"$pid\" 2>/dev/null | tr -d ' ')\n    echo \"  pid=$pid tty=$t\" >&2\n    if [ -n \"$t\" ] && [ \"$t\" != \"??\" ]; then\n      echo \"/dev/$t\"\n      return\n    fi\n    pid=$(ps -o ppid= -p \"$pid\" 2>/dev/null | tr -d ' ')\n  done\n}\n\necho \"Walking process tree from PPID=$PPID:\" >&2\ntty=$(find_tty \"$PPID\")\necho \"resolved tty: '${tty:-}'\" >&2\n\nif [ -n \"${tty:-}\" ] && [ -w \"$tty\" ]; then\n  echo \"trying kitten notify via $tty\" >&2\n  kitten notify --identifier \"claude-${session}\" \"$title\" \"$msg\" <\"$tty\" >\"$tty\" 2>>\"$LOG\"\n  rc=$?\n  echo \"kitten rc=$rc\" >&2\n  if [ \"$rc\" != \"0\" ]; then\n    echo \"falling back to osascript\" >&2\n    osascript -e \"display notification \\\"${msg//\\\"/\\\\\\\"}\\\" with title \\\"${title//\\\"/\\\\\\\"}\\\"\" 2>>\"$LOG\"\n    echo \"osascript […]
 
 > TOOL
@@ -1130,7 +1130,7 @@ id: toolu_01XR3BbevmLt9ZKa8J9SAnzh
 tool_result
 id: toolu_01XR3BbevmLt9ZKa8J9SAnzh
 ```
-The file /Users/sumeet/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1143,7 +1143,7 @@ tool_use Bash
 id: toolu_01DhmZdTgBsTStH5yFZaryrD
 ```json
 {
-  "command": "rm -f /tmp/claude-notify.log; echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"Hook test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test1\"}' | ~/.claude/bin/notify.sh; echo \"---LOG---\"; cat /tmp/claude-notify.log",
+  "command": "rm -f /tmp/claude-notify.log; echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"Hook test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test1\"}' | ~/.claude/bin/notify.sh; echo \"---LOG---\"; cat /tmp/claude-notify.log",
   "description": "Run notify and dump debug log"
 }
 ```
@@ -1155,7 +1155,7 @@ id: toolu_01DhmZdTgBsTStH5yFZaryrD
 ```
 ---LOG---
 === Fri  5 Jun 2026 15:04:44 BST PPID=93595 PID=93604 ===
-INPUT: {"cwd":"/Users/sumeet/.dotfiles/dot-config","message":"Hook test","hook_event_name":"Notification","session_id":"test1"}
+INPUT: {"cwd":"/home/<USER>/.dotfiles/dot-config","message":"Hook test","hook_event_name":"Notification","session_id":"test1"}
 Walking process tree from PPID=93595:
   pid=93595 tty=??
   pid=83881 tty=ttys000
@@ -1181,7 +1181,7 @@ tool_use Write
 id: toolu_01AKvXi4WdeGsysSfefdXjFW
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\nLOG=/tmp/claude-notify.log\nexec 2>>\"$LOG\"\necho \"=== $(date) PPID=$PPID ===\" >&2\n\ninput=$(cat)\ncwd=$(printf '%s' \"$input\" | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\" | jq -r '.message // empty')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\nsession=$(printf '%s' \"$input\" | jq -r '.session_id // \"claude\"')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n[ -z \"$msg\" ] && msg=\"Done\"\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\n# Walk up the process tree to find a real tty (the kitty pty)\nfind_tty() {\n  local pid=$1\n  while [ -n \"$pid\" ] && [ \"$pid\" != \"0\" ] && [ \"$pid\" != \"1\" ]; do\n    local t\n    t=$(ps -o tty= -p \"$pid\" 2>/dev/null | tr -d ' ')\n    if [ -n \"$t\" ] && [ \"$t\" != \"??\" ]; then\n      echo \"/dev/$t\"\n      return\n    fi\n    pid=$(ps -o ppid= -p \"$pid\" 2>/dev/null | tr -d ' ')\n  done\n}\n\ntty=$(find_tty \"$PPID\")\necho \"tty=$tty\" >&2\n\nif [ -z \"${tty:-}\" ] || [ ! -w \"$tty\" ]; then\n  echo \"no writable tty, aborting\" >&2\n  exit 1\nfi\n\n# Send OSC 99 desktop notification directly to the kitty pty.\n# Format: ESC ] 99 ; metadata ; payload ST\n# Multipart with title + body, base64-encoded to handle any characters.\nid=\"claude-${session}\"\nt64=$(printf '%s' \"$title\" | base64 | tr -d '\\n')\nb64=$(printf '%s' \"$msg\"   | […]
 
 > TOOL
@@ -1189,7 +1189,7 @@ id: toolu_01AKvXi4WdeGsysSfefdXjFW
 tool_result
 id: toolu_01AKvXi4WdeGsysSfefdXjFW
 ```
-The file /Users/sumeet/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1198,7 +1198,7 @@ tool_use Bash
 id: toolu_018dfYBJ5GtKrSU55QSF4dMD
 ```json
 {
-  "command": "rm -f /tmp/claude-notify.log; echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"OSC99 test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test2\"}' | ~/.claude/bin/notify.sh; echo \"---LOG---\"; cat /tmp/claude-notify.log",
+  "command": "rm -f /tmp/claude-notify.log; echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"OSC99 test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test2\"}' | ~/.claude/bin/notify.sh; echo \"---LOG---\"; cat /tmp/claude-notify.log",
   "description": "Test direct OSC 99 notification"
 }
 ```
@@ -1244,7 +1244,7 @@ id: toolu_018RfNhBy511wQTZi4x2booE
   PID COMMAND
 83578 -zsh
   PID COMMAND
- 1973 tmux new-session -s home -c /Users/sumeet
+ 1973 tmux new-session -s home -c /home/<USER>
   PID COMMAND
     1 /sbin/launchd
 ---TERM---
@@ -1275,8 +1275,8 @@ Exit code 2
 allow-passthrough on
 on
 ---
-/Users/sumeet/.config/tmux/tmux.conf:set -g allow-passthrough on
-/Users/sumeet/.config/tmux/tmux.conf:set -gq allow-passthrough on
+/home/<USER>/.config/tmux/tmux.conf:set -g allow-passthrough on
+/home/<USER>/.config/tmux/tmux.conf:set -gq allow-passthrough on
 ```
 
 > AGENT
@@ -1289,7 +1289,7 @@ tool_use Write
 id: toolu_01S1fWNYXiBpQgRvdcnZUTxd
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\nLOG=/tmp/claude-notify.log\nexec 2>>\"$LOG\"\necho \"=== $(date) PPID=$PPID ===\" >&2\n\ninput=$(cat)\ncwd=$(printf '%s' \"$input\" | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\" | jq -r '.message // empty')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\nsession=$(printf '%s' \"$input\" | jq -r '.session_id // \"claude\"')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n[ -z \"$msg\" ] && msg=\"Done\"\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\n# Walk up the process tree: find a real tty AND detect tmux.\ntty=\"\"\nin_tmux=0\npid=$PPID\nwhile [ -n \"$pid\" ] && [ \"$pid\" != \"0\" ] && [ \"$pid\" != \"1\" ]; do\n  t=$(ps -o tty= -p \"$pid\" 2>/dev/null | tr -d ' ')\n  comm=$(ps -o comm= -p \"$pid\" 2>/dev/null | tr -d ' ' | xargs basename 2>/dev/null)\n  case \"$comm\" in *tmux*) in_tmux=1 ;; esac\n  if [ -z \"$tty\" ] && [ -n \"$t\" ] && [ \"$t\" != \"??\" ]; then\n    tty=\"/dev/$t\"\n  fi\n  pid=$(ps -o ppid= -p \"$pid\" 2>/dev/null | tr -d ' ')\ndone\n\necho \"tty=$tty in_tmux=$in_tmux\" >&2\n\nif [ -z \"$tty\" ] || [ ! -w \"$tty\" ]; then\n  echo \"no writable tty, aborting\" >&2\n  exit 1\nfi\n\nid=\"claude-${session}\"\nt64=$(printf '%s' \"$title\" | base64 | tr -d '\\n')\nb64=$(printf '%s' \"$msg\"   | base64 | tr -d '\\n')\n\nif [ \"$in_tmux\" = 1 ]; then\n  # […]
 
 > TOOL
@@ -1297,7 +1297,7 @@ id: toolu_01S1fWNYXiBpQgRvdcnZUTxd
 tool_result
 id: toolu_01S1fWNYXiBpQgRvdcnZUTxd
 ```
-The file /Users/sumeet/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1306,7 +1306,7 @@ tool_use Bash
 id: toolu_01HwxyLL7MCpmfheCT6smoYC
 ```json
 {
-  "command": "rm -f /tmp/claude-notify.log; echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"tmux passthrough test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test3\"}' | ~/.claude/bin/notify.sh; echo \"---LOG---\"; cat /tmp/claude-notify.log",
+  "command": "rm -f /tmp/claude-notify.log; echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"tmux passthrough test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test3\"}' | ~/.claude/bin/notify.sh; echo \"---LOG---\"; cat /tmp/claude-notify.log",
   "description": "Test tmux-wrapped OSC 99 notification"
 }
 ```
@@ -1384,7 +1384,7 @@ tool_use Write
 id: toolu_018Mba55GUreA6N8ByRDAfuQ
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\nLOG=/tmp/claude-notify.log\nexec 2>>\"$LOG\"\necho \"=== $(date) ===\" >&2\n\ninput=$(cat)\ncwd=$(printf '%s' \"$input\" | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\" | jq -r '.message // empty')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\nsession=$(printf '%s' \"$input\" | jq -r '.session_id // \"claude\"')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n[ -z \"$msg\" ] && msg=\"Done\"\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\nid=\"claude-${session}\"\nt64=$(printf '%s' \"$title\" | base64 | tr -d '\\n')\nb64=$(printf '%s' \"$msg\"   | base64 | tr -d '\\n')\n\n# Prefer writing directly to a kitty client tty (bypasses tmux entirely).\ntargets=$(tmux list-clients -F '#{client_tty}' 2>/dev/null | head -1)\n\n# Fallback: walk up the process tree from our parent for any tty.\nif [ -z \"$targets\" ]; then\n  pid=$PPID\n  while [ -n \"$pid\" ] && [ \"$pid\" != \"0\" ] && [ \"$pid\" != \"1\" ]; do\n    t=$(ps -o tty= -p \"$pid\" 2>/dev/null | tr -d ' ')\n    if [ -n \"$t\" ] && [ \"$t\" != \"??\" ]; then\n      targets=\"/dev/$t\"\n      break\n    fi\n    pid=$(ps -o ppid= -p \"$pid\" 2>/dev/null | tr -d ' ')\n  done\nfi\n\necho \"targets=$targets\" >&2\n\nif [ -z \"$targets\" ]; then\n  echo \"no tty to write to\" >&2\n  exit 1\nfi\n\nfor t in $targets; do\n  if [ -w \"$t\" ]; then\n    {\n      printf '\\033]99;i=%s:e=1:p=title;%s\\033\\\\' \"$id\" […]
 
 > TOOL
@@ -1392,7 +1392,7 @@ id: toolu_018Mba55GUreA6N8ByRDAfuQ
 tool_result
 id: toolu_018Mba55GUreA6N8ByRDAfuQ
 ```
-The file /Users/sumeet/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1401,7 +1401,7 @@ tool_use Bash
 id: toolu_01EXF4AsuYGRrE74BvD8Czcq
 ```json
 {
-  "command": "rm -f /tmp/claude-notify.log; echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"direct-to-kitty test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test4\"}' | ~/.claude/bin/notify.sh; echo \"---LOG---\"; cat /tmp/claude-notify.log",
+  "command": "rm -f /tmp/claude-notify.log; echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"direct-to-kitty test\",\"hook_event_name\":\"Notification\",\"session_id\":\"test4\"}' | ~/.claude/bin/notify.sh; echo \"---LOG---\"; cat /tmp/claude-notify.log",
   "description": "Test direct-to-kitty-client OSC 99"
 }
 ```
@@ -1454,7 +1454,7 @@ tool_use Bash
 id: toolu_01WQoMma9tAtxVBPXWrLSy58
 ```json
 {
-  "command": "git -C /Users/sumeet/.dotfiles log --all --oneline -- 'opencode/plugin/notify.ts' 'opencode/.opencode/plugin/notify.ts' 2>/dev/null | head -5",
+  "command": "git -C /home/<USER>/.dotfiles log --all --oneline -- 'opencode/plugin/notify.ts' 'opencode/.opencode/plugin/notify.ts' 2>/dev/null | head -5",
   "description": "Find commits touching opencode notify plugin"
 }
 ```
@@ -1473,7 +1473,7 @@ tool_use Bash
 id: toolu_01RSauxiw9mU3mttJVpFQuUw
 ```json
 {
-  "command": "cd /Users/sumeet/.dotfiles && git log --all --oneline --diff-filter=D -- '*notify*' 2>&1 | head -10; echo \"---\"; cd /Users/sumeet/.dotfiles && git log --all --oneline -- '*opencode*notify*' '*notify.ts' 2>&1 | head -10",
+  "command": "cd /home/<USER>/.dotfiles && git log --all --oneline --diff-filter=D -- '*notify*' 2>&1 | head -10; echo \"---\"; cd /home/<USER>/.dotfiles && git log --all --oneline -- '*opencode*notify*' '*notify.ts' 2>&1 | head -10",
   "description": "Find deleted notify plugin in git history"
 }
 ```
@@ -1486,7 +1486,7 @@ id: toolu_01RSauxiw9mU3mttJVpFQuUw
 ---
 13c7d35 removes ocx
 0ed3bef ocx setup
-Shell cwd was reset to /Users/sumeet/.dotfiles/dot-config
+Shell cwd was reset to /home/<USER>/.dotfiles/dot-config
 ```
 
 > TOOL
@@ -1495,7 +1495,7 @@ tool_use Bash
 id: toolu_01GzpQqbEkk4GePGcoiFYRzA
 ```json
 {
-  "command": "cd /Users/sumeet/.dotfiles && git show 13c7d35^:dot-config/opencode/plugin/notify.ts 2>/dev/null | head -80",
+  "command": "cd /home/<USER>/.dotfiles && git show 13c7d35^:dot-config/opencode/plugin/notify.ts 2>/dev/null | head -80",
   "description": "Show deleted opencode notify plugin"
 }
 ```
@@ -1505,7 +1505,7 @@ id: toolu_01GzpQqbEkk4GePGcoiFYRzA
 tool_result
 id: toolu_01GzpQqbEkk4GePGcoiFYRzA
 ```
-Shell cwd was reset to /Users/sumeet/.dotfiles/dot-config
+Shell cwd was reset to /home/<USER>/.dotfiles/dot-config
 ```
 
 > TOOL
@@ -1514,7 +1514,7 @@ tool_use Bash
 id: toolu_01JVhHwvAG9XkDAWcTSMmKLe
 ```json
 {
-  "command": "git -C /Users/sumeet/.dotfiles show 13c7d35^:dot-config/opencode/plugin/notify.ts 2>&1 | head -120",
+  "command": "git -C /home/<USER>/.dotfiles show 13c7d35^:dot-config/opencode/plugin/notify.ts 2>&1 | head -120",
   "description": "Show deleted opencode notify plugin file"
 }
 ```
@@ -1533,7 +1533,7 @@ tool_use Bash
 id: toolu_01Aggm4qr65bkQPoDXQfXpvA
 ```json
 {
-  "command": "git -C /Users/sumeet/.dotfiles show 13c7d35 --stat 2>&1 | head -40; echo \"---\"; git -C /Users/sumeet/.dotfiles log --all --oneline -- '**/notify.ts' 2>&1 | head",
+  "command": "git -C /home/<USER>/.dotfiles show 13c7d35 --stat 2>&1 | head -40; echo \"---\"; git -C /home/<USER>/.dotfiles log --all --oneline -- '**/notify.ts' 2>&1 | head",
   "description": "Find notify.ts in any commit"
 }
 ```
@@ -1544,7 +1544,7 @@ tool_result
 id: toolu_01Aggm4qr65bkQPoDXQfXpvA
 ```
 commit 13c7d357131e03cd8c823ff1f357badd958babff
-Author: sumeet <sumeetsaini621@gmail.com>
+Author: sumeet <<REDACTED_EMAIL>>
 Date:   Tue Feb 3 14:56:12 2026 +0000
 
     removes ocx
@@ -1576,7 +1576,7 @@ tool_use Bash
 id: toolu_01Efs4r6sYw3VghtefABj1Ur
 ```json
 {
-  "command": "git -C /Users/sumeet/.dotfiles show 13c7d35:dot-config/opencode/plugin/notify.ts 2>&1 | head -150",
+  "command": "git -C /home/<USER>/.dotfiles show 13c7d35:dot-config/opencode/plugin/notify.ts 2>&1 | head -150",
   "description": "Read deleted opencode notify.ts"
 }
 ```
@@ -1640,7 +1640,7 @@ tool_use Bash
 id: toolu_01JwkewU7x3srHhbzhbatTXn
 ```json
 {
-  "command": "find /Users/sumeet -path '*/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier' 2>/dev/null | head -3; echo \"---alt---\"; find /Users/sumeet -name terminal-notifier -type f -perm +111 2>/dev/null | head -5",
+  "command": "find /home/<USER> -path '*/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier' 2>/dev/null | head -3; echo \"---alt---\"; find /home/<USER> -name terminal-notifier -type f -perm +111 2>/dev/null | head -5",
   "description": "Locate a bundled terminal-notifier binary"
 }
 ```
@@ -1650,15 +1650,15 @@ id: toolu_01JwkewU7x3srHhbzhbatTXn
 tool_result
 id: toolu_01JwkewU7x3srHhbzhbatTXn
 ```
-/Users/sumeet/matrix/arc/ai/aiSocWelcome/app/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
-/Users/sumeet/.cache/opencode/packages/@mohak34/opencode-notifier@0.2.5/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
-/Users/sumeet/Documents/work/IBM/rapid/cio-dashboard/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
+/home/<USER>/matrix/arc/ai/aiSocWelcome/app/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
+/home/<USER>/.cache/opencode/packages/@mohak34/opencode-notifier@0.2.5/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
+/home/<USER>/Documents/work/IBM/rapid/cio-dashboard/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
 ---alt---
-/Users/sumeet/.cache/.bun/install/cache/node-notifier@10.0.1@@@1/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
-/Users/sumeet/.cache/opencode/packages/@mohak34/opencode-notifier@0.2.5/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
-/Users/sumeet/matrix/arc/ai/aiSocWelcome/app/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
-/Users/sumeet/Documents/work/IBM/rapid/cio-dashboard/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
-/Users/sumeet/Documents/arc/compsci/kings/aiSoc/ai-soc-welcome/app/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
+/home/<USER>/.cache/.bun/install/cache/node-notifier@10.0.1@@@1/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
+/home/<USER>/.cache/opencode/packages/@mohak34/opencode-notifier@0.2.5/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
+/home/<USER>/matrix/arc/ai/aiSocWelcome/app/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
+/home/<USER>/Documents/work/IBM/rapid/cio-dashboard/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
+/home/<USER>/Documents/arc/compsci/kings/aiSoc/ai-soc-welcome/app/node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier
 ```
 
 > TOOL
@@ -1667,7 +1667,7 @@ tool_use Bash
 id: toolu_019nCFvz16ui1mTLTxEGZoxL
 ```json
 {
-  "command": "plutil -extract CFBundleIdentifier raw /Users/sumeet/.cache/.bun/install/cache/node-notifier@10.0.1@@@1/vendor/mac.noindex/terminal-notifier.app/Contents/Info.plist 2>/dev/null; echo; /Users/sumeet/.cache/.bun/install/cache/node-notifier@10.0.1@@@1/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier -title 'Claude Test' -message 'Direct binary test — did this show up?' -sound default -group claude-test && echo \"OK exit=$?\"",
+  "command": "plutil -extract CFBundleIdentifier raw /home/<USER>/.cache/.bun/install/cache/node-notifier@10.0.1@@@1/vendor/mac.noindex/terminal-notifier.app/Contents/Info.plist 2>/dev/null; echo; /home/<USER>/.cache/.bun/install/cache/node-notifier@10.0.1@@@1/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier -title 'Claude Test' -message 'Direct binary test — did this show up?' -sound default -group claude-test && echo \"OK exit=$?\"",
   "description": "Test the bundled terminal-notifier binary directly"
 }
 ```
@@ -1692,7 +1692,7 @@ tool_use Bash
 id: toolu_01N7r2jjYVCPCJiDgS8BkHum
 ```json
 {
-  "command": "cp -R /Users/sumeet/.cache/.bun/install/cache/node-notifier@10.0.1@@@1/vendor/mac.noindex/terminal-notifier.app ~/.claude/bin/ && ls -la ~/.claude/bin/terminal-notifier.app/Contents/MacOS/terminal-notifier && ~/.claude/bin/terminal-notifier.app/Contents/MacOS/terminal-notifier -title 'Claude' -message 'stable-path test' -group claude-test && echo OK",
+  "command": "cp -R /home/<USER>/.cache/.bun/install/cache/node-notifier@10.0.1@@@1/vendor/mac.noindex/terminal-notifier.app ~/.claude/bin/ && ls -la ~/.claude/bin/terminal-notifier.app/Contents/MacOS/terminal-notifier && ~/.claude/bin/terminal-notifier.app/Contents/MacOS/terminal-notifier -title 'Claude' -message 'stable-path test' -group claude-test && echo OK",
   "description": "Copy terminal-notifier.app to stable path and test"
 }
 ```
@@ -1702,7 +1702,7 @@ id: toolu_01N7r2jjYVCPCJiDgS8BkHum
 tool_result
 id: toolu_01N7r2jjYVCPCJiDgS8BkHum
 ```
--rwxr-xr-x  1 sumeet  staff  87688  5 Jun 15:13 /Users/sumeet/.claude/bin/terminal-notifier.app/Contents/MacOS/terminal-notifier
+-rwxr-xr-x  1 sumeet  staff  87688  5 Jun 15:13 /home/<USER>/.claude/bin/terminal-notifier.app/Contents/MacOS/terminal-notifier
 OK
 ```
 
@@ -1716,7 +1716,7 @@ tool_use Write
 id: toolu_013pGVQeSTZWH47tPxbNYf1o
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "content": "#!/usr/bin/env bash\nset -u\n\nNOTIFIER=\"$HOME/.claude/bin/terminal-notifier.app/Contents/MacOS/terminal-notifier\"\n\ninput=$(cat)\ncwd=$(printf '%s' \"$input\"   | jq -r '.cwd // empty')\nmsg=$(printf '%s' \"$input\"   | jq -r '.message // empty')\nevent=$(printf '%s' \"$input\" | jq -r '.hook_event_name // empty')\nsession=$(printf '%s' \"$input\" | jq -r '.session_id // \"claude\"')\n\nproject=$(basename \"${cwd:-Claude}\")\ntitle=\"Claude: ${project}\"\n[ -z \"$msg\" ] && msg=\"Done\"\n[ \"$event\" = \"Stop\" ] && msg=\"Done\"\n\n# Per-session group so a new notif replaces the previous one for the same session.\n\"$NOTIFIER\" -title \"$title\" -message \"$msg\" -sound default -group \"claude-${session}\"\n"
 }
 ```
@@ -1726,7 +1726,7 @@ id: toolu_013pGVQeSTZWH47tPxbNYf1o
 tool_result
 id: toolu_013pGVQeSTZWH47tPxbNYf1o
 ```
-The file /Users/sumeet/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1735,7 +1735,7 @@ tool_use Bash
 id: toolu_01BVDGYVKwHVR2nGKwnbyMfE
 ```json
 {
-  "command": "echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"Hook is wired up — Notification event\",\"hook_event_name\":\"Notification\",\"session_id\":\"final\"}' | ~/.claude/bin/notify.sh && echo \"Notification sent\"; echo '{\"cwd\":\"/Users/sumeet/.dotfiles/dot-config\",\"message\":\"\",\"hook_event_name\":\"Stop\",\"session_id\":\"final\"}' | ~/.claude/bin/notify.sh && echo \"Stop sent\"",
+  "command": "echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"Hook is wired up — Notification event\",\"hook_event_name\":\"Notification\",\"session_id\":\"final\"}' | ~/.claude/bin/notify.sh && echo \"Notification sent\"; echo '{\"cwd\":\"/home/<USER>/.dotfiles/dot-config\",\"message\":\"\",\"hook_event_name\":\"Stop\",\"session_id\":\"final\"}' | ~/.claude/bin/notify.sh && echo \"Stop sent\"",
   "description": "Verify final notify.sh fires for both Notification and Stop payloads"
 }
 ```
@@ -1780,7 +1780,7 @@ tool_use Bash
 id: toolu_01AP5Jq9XprqFTzdE4Xziukd
 ```json
 {
-  "command": "ls /Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/ 2>/dev/null",
+  "command": "ls /home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/ 2>/dev/null",
   "description": "List existing memory files"
 }
 ```
@@ -1800,7 +1800,7 @@ id: toolu_01DZSP44z2xwufD34CJJzHcW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/sumeet/.claude/bin/notify.sh",
+  "file_path": "/home/<USER>/.claude/bin/notify.sh",
   "old_string": "\"$NOTIFIER\" -title \"$title\" -message \"$msg\" -sound default -group \"claude-${session}\"",
   "new_string": "\"$NOTIFIER\" -title \"$title\" -message \"$msg\" -group \"claude-${session}\""
 }
@@ -1811,7 +1811,7 @@ id: toolu_01DZSP44z2xwufD34CJJzHcW
 tool_result
 id: toolu_01DZSP44z2xwufD34CJJzHcW
 ```
-The file /Users/sumeet/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/bin/notify.sh has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1824,7 +1824,7 @@ tool_use Write
 id: toolu_015GBy2dG7crFt7EeHCMgPJQ
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/macos-desktop-notifications.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/macos-desktop-notifications.md",
   "content": "---\nname: macos-desktop-notifications\ndescription: How to send macOS desktop notifications from Claude Code hooks on sumeet's machine — the working path is the node-notifier-bundled terminal-notifier.app, not osascript or kitty OSC 99\nmetadata:\n  type: project\n---\n\nDesktop notifications from Claude Code hooks on this machine work via a copy of `terminal-notifier.app` at `~/.claude/bin/terminal-notifier.app`. Bundle ID `nl.superalloy.oss.terminal-notifier` — this is the app registered in macOS Notification Settings, so it has the permission grant.\n\n**Why:** Tried several approaches before landing on this one — only this works on sumeet's setup:\n- `osascript -e 'display notification'` returns exit 0 but nothing shows; Script Editor never registered itself in macOS Notification Settings (the typical \"fire-it-once-then-it-appears\" workaround didn't trigger here).\n- `kitten notify` fails inside hooks: `Failed to open controlling terminal: open /dev/tty: device not configured`. Hooks run without a controlling tty and `kitten notify` opens `/dev/tty` itself, not stdin.\n- Direct OSC 99 escape sequence to the kitty pty: tried both the tmux pane pty (with DCS `tmux;` passthrough wrapper — `allow-passthrough on` is set in `~/.config/tmux/tmux.conf`) and the kitty client ttys (`tmux list-clients -F '#{client_tty}'` gave `ttys012/014/015`). Neither produced a notification — kitty isn't registered for notifications on this machine.\n- opencode's notifications work because […]
 
 > TOOL
@@ -1832,7 +1832,7 @@ id: toolu_015GBy2dG7crFt7EeHCMgPJQ
 tool_result
 id: toolu_015GBy2dG7crFt7EeHCMgPJQ
 ```
-File created successfully at: /Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/macos-desktop-notifications.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/macos-desktop-notifications.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1841,7 +1841,7 @@ tool_use Write
 id: toolu_01294RsEmE3DQirXzNPEs8YR
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/claude-code-notification-hooks.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/claude-code-notification-hooks.md",
   "content": "---\nname: claude-code-notification-hooks\ndescription: Claude Code notification setup — script at ~/.claude/bin/notify.sh fires terminal-notifier with title \"Claude: <project>\" and body = Claude's message, on both Notification and Stop hooks\nmetadata:\n  type: project\n---\n\nNotification + Stop hooks in `~/.claude/settings.json` both call `~/.claude/bin/notify.sh`. The script parses Claude's stdin JSON (`cwd`, `message`, `hook_event_name`, `session_id`), then fires `~/.claude/bin/terminal-notifier.app/Contents/MacOS/terminal-notifier` with:\n- `-title \"Claude: $(basename cwd)\"`\n- `-message <Claude's message, or \"Done\" for Stop events>`\n- `-group \"claude-${session_id}\"` so each session's notifications replace their own (no stacking)\n- **No `-sound`** — silent banner. See [[notification-sound-preference]].\n\n**Why:** Title needs the project name so sumeet can tell which Claude window the notification is from when multiple are running. Per-session grouping prevents notification spam.\n\n**How to apply:** If touching notifications behaviour, edit `~/.claude/bin/notify.sh` not the settings.json hook command (the hook is just the script path). Auto mode hard-blocks edits to `~/.claude/settings.json` — that file change has to come from the user or with auto mode off. The `terminal-notifier.app` binary path is fragile if relying on the bun/npm cache; the local copy in `~/.claude/bin/` is the stable one. See [[macos-desktop-notifications]] for why this path was chosen over osascript/kitten/OSC.\n"
 }
 ```
@@ -1851,7 +1851,7 @@ id: toolu_01294RsEmE3DQirXzNPEs8YR
 tool_result
 id: toolu_01294RsEmE3DQirXzNPEs8YR
 ```
-File created successfully at: /Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/claude-code-notification-hooks.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/claude-code-notification-hooks.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1860,7 +1860,7 @@ tool_use Write
 id: toolu_019yBT2scJWDRxKdMAaBpS8a
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/notification-sound-preference.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/notification-sound-preference.md",
   "content": "---\nname: notification-sound-preference\ndescription: sumeet dislikes notification sounds — use silent banner by default for any desktop notification setup\nmetadata:\n  type: feedback\n---\n\nDefault to silent desktop notifications (banner only, no sound). When setting up `terminal-notifier` or any other notifier, omit `-sound` entirely.\n\n**Why:** sumeet pushed back on the default sound being used by `terminal-notifier -sound default` when first wiring up Claude Code notification hooks — \"I really don't like the noise it is using.\" Preference is for visual-only notifications.\n\n**How to apply:** Across any project on this machine — Claude Code hooks, opencode plugins, custom scripts — default to silent. If a sound is genuinely needed (e.g., for an alarm-style alert), ask first which one rather than picking. See [[claude-code-notification-hooks]] for the current Claude Code setup.\n"
 }
 ```
@@ -1870,7 +1870,7 @@ id: toolu_019yBT2scJWDRxKdMAaBpS8a
 tool_result
 id: toolu_019yBT2scJWDRxKdMAaBpS8a
 ```
-File created successfully at: /Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/notification-sound-preference.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/notification-sound-preference.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1879,7 +1879,7 @@ tool_use Write
 id: toolu_0156Ujxy1si3kRxBiXwQPrM4
 ```json
 {
-  "file_path": "/Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/MEMORY.md",
   "content": "- [macOS desktop notifications](macos-desktop-notifications.md) — only `terminal-notifier.app` works on this machine; osascript/kitten/OSC 99 all silently fail\n- [Claude Code notification hooks](claude-code-notification-hooks.md) — `~/.claude/bin/notify.sh` fires Notification + Stop with project name as title\n- [Notification sound preference](notification-sound-preference.md) — sumeet prefers silent notifications, no sound flag\n"
 }
 ```
@@ -1889,7 +1889,7 @@ id: toolu_0156Ujxy1si3kRxBiXwQPrM4
 tool_result
 id: toolu_0156Ujxy1si3kRxBiXwQPrM4
 ```
-File created successfully at: /Users/sumeet/.claude/projects/-Users-sumeet--dotfiles/memory/MEMORY.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-sumeet--dotfiles/memory/MEMORY.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

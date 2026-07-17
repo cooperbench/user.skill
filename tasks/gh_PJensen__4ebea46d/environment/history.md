@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -82,7 +82,7 @@ id: call_V2dxKejYYko5BhSwazWCsyqR
 ```json
 {
   "cmd": "rg -n \"swing|weapon|enchant|enchantment|dip|tint|flame|poison|magic|damageType|element|elemental\" src tests docs --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -94,7 +94,7 @@ id: call_7eaJJsRAHruRFCTc7HDDfTip
 ```json
 {
   "cmd": "rg -n \"attack|melee|strike|slash|trail|projectile|animation|effect\" src/display src/bridge src/rules --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -106,7 +106,7 @@ id: call_HXQlNXc6IerprZyI6ZSe8TjU
 ```json
 {
   "cmd": "rg --files src/content src/rules/data src/rules/components src/display src/bridge tests | sort",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -378,7 +378,7 @@ id: call_QXofaBvgrSARy7jPD7DtKbTV
 ```json
 {
   "cmd": "sed -n '1,260p' src/bridge/schema/weaponVfxResolver.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -390,7 +390,7 @@ id: call_lODbOp3YN287lx1zaKGdL5dw
 ```json
 {
   "cmd": "sed -n '1,260p' src/bridge/schema/weaponVfxProfiles.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -402,7 +402,7 @@ id: call_GM5kbwlITwwfyefubk0Tunxj
 ```json
 {
   "cmd": "sed -n '1,280p' src/display/fx/meleeSlashFx.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -414,7 +414,7 @@ id: call_VXkfMi7s4TSQPsUzRnxJx45F
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/data/weaponCoatings.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -659,7 +659,7 @@ id: call_76acouKjSnZe94zHN8nTpIbw
 ```json
 {
   "cmd": "sed -n '260,620p' src/display/fx/meleeSlashFx.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 24000
 }
 ```
@@ -671,7 +671,7 @@ id: call_CqEGlix3yZXPbo2MFoZWbHci
 ```json
 {
   "cmd": "sed -n '1,260p' src/rules/data/affixes.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 24000
 }
 ```
@@ -683,7 +683,7 @@ id: call_r7AUDbUXoaFfGGsFHTjzN9sz
 ```json
 {
   "cmd": "sed -n '260,620p' src/rules/data/affixes.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 24000
 }
 ```
@@ -695,7 +695,7 @@ id: call_E3IM6nh9CHewxV1v2ju461kc
 ```json
 {
   "cmd": "sed -n '1,220p' src/rules/data/elementTints.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -892,7 +892,7 @@ id: call_f47udLDnUnfruL9Ay3JGmrDK
 ```json
 {
   "cmd": "rg -n \"AFFIX_DEFS|elementTint|visual|procState|weaponVfx|impactProfile|combat:melee:attack|meleeSlash\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -904,7 +904,7 @@ id: call_FlJ2Kbzvsz2GTiscY89Mu7Yw
 ```json
 {
   "cmd": "sed -n '1,260p' tests/worldViewWeaponVfxProfiles.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -916,7 +916,7 @@ id: call_lFC7uZAnKOxmJE98vXcIFW4K
 ```json
 {
   "cmd": "sed -n '1,260p' tests/projectileWeaponVfx.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -928,7 +928,7 @@ id: call_fybVJBi6UVQql8xEU0jaSEXF
 ```json
 {
   "cmd": "sed -n '1,240p' tests/statusEmitterWeaponVfx.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -1159,7 +1159,7 @@ id: call_CuaZ01xFavu2ZQzKkui1BIEx
 ```json
 {
   "cmd": "sed -n '1,190p' src/rules/systems/combatSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -1171,7 +1171,7 @@ id: call_HMX0MoBO3Ovsl3jo8rrFtWxI
 ```json
 {
   "cmd": "sed -n '700,820p' src/rules/data/affixes.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -1183,7 +1183,7 @@ id: call_hu7IQGIor7fUhvo9CMzEbrhB
 ```json
 {
   "cmd": "sed -n '700,790p' src/display/fx/meleeSlashFx.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1195,7 +1195,7 @@ id: call_ATibMHonRUhCHItUu6EsKKsQ
 ```json
 {
   "cmd": "sed -n '160,230p' src/content/define.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1400,7 +1400,7 @@ id: call_DlMHI4uuAoh5iRurDJd5hYPm
 ```json
 {
   "cmd": "sed -n '460,530p' src/rules/data/effectDefs.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1412,7 +1412,7 @@ id: call_hmaxFITjCSTwnJUPgQsfPEm9
 ```json
 {
   "cmd": "rg -n \"ignite_weapons|poison_blade|magic|elementTint|weapon.*effect|coating|dip\" src/rules/data src/content src/rules/content tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 26000
 }
 ```
@@ -1424,7 +1424,7 @@ id: call_RoON113O757YEYN1fc6wWJnO
 ```json
 {
   "cmd": "sed -n '320,570p' src/rules/systems/combatSystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -1436,7 +1436,7 @@ id: call_uZKnOi5WerpzUlpfMzXpBot8
 ```json
 {
   "cmd": "sed -n '1,220p' src/rules/components/ItemInfo.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1645,8 +1645,8 @@ tool_use exec_command
 id: call_iYE9VQ5ZCeykatQDa7A5KLJU
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/.codex/RTK.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/RTK.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1769,7 +1769,7 @@ id: call_y1mz0zzupkMU4MfyPFaTOiDJ
 ```json
 {
   "cmd": "rtk sed -n '1,240p' src/rules/data/gemSocketAffixes.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -1781,7 +1781,7 @@ id: call_MOLVQk65ko2Ev1uWVLxxRfLp
 ```json
 {
   "cmd": "rtk sed -n '1,260p' src/rules/data/procPackages.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -1793,7 +1793,7 @@ id: call_6rjsBonSchkG1RFkk2MaqxDZ
 ```json
 {
   "cmd": "rtk rg -n \"GemSocketNode|ProcNode|EnchantmentNode|StatusEffectNode|descendantsWith|childrenWith|attached|effectNode|procPackage|visual|elementTint\" src/rules src/bridge tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```

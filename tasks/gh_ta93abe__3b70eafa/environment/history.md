@@ -31,7 +31,7 @@ tool_use Bash
 id: toolu_01RFDBBH3q5HjPxZt25zeU6P
 ```json
 {
-  "command": "grep -n -A 2 -B 2 \"リバースプロキシ\\|dbt docs\\|R2\" /Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers.md | head -80",
+  "command": "grep -n -A 2 -B 2 \"リバースプロキシ\\|dbt docs\\|R2\" /home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers.md | head -80",
   "description": "Find the statement context in containers.md"
 }
 ```
@@ -303,7 +303,7 @@ return new Response(object.body, { headers });
 
 ### 修正候補 (5–10 行で選んでください)
 
-`/Users/ta93abe/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers.md:22` と `:61` の 2 箇所を統一的に書き換える必要があります。どの方向で直しますか?
+`/home/<USER>/Developer/github.com/ta93abe/slides/contents/cloudflare-data-platform/pages/containers.md:22` と `:61` の 2 箇所を統一的に書き換える必要があります。どの方向で直しますか?
 
 > TOOL
 

@@ -69,7 +69,7 @@ tool_use Read
 id: toolu_01PwoeDUmR8WMnYNdf67s85N
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
   "offset": 340,
   "limit": 15
 }
@@ -104,7 +104,7 @@ id: toolu_01Dz1LkeVoygpARr5Mv3okch
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
   "old_string": "\treturn nil, err\n\t}\n\titems = append(items, stratItems...)",
   "new_string": "\treturn nil, fmt.Errorf(\"listing orphaned items: %w\", err)\n\t}\n\titems = append(items, stratItems...)"
 }
@@ -115,7 +115,7 @@ id: toolu_01Dz1LkeVoygpARr5Mv3okch
 tool_result
 id: toolu_01Dz1LkeVoygpARr5Mv3okch
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go has been updated successfully.
 ```
 
 > AGENT
@@ -129,7 +129,7 @@ id: toolu_01CQjQpTX6H1uekubpoHva5J
 ```json
 {
   "pattern": "^import",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/strategy/cleanup.go",
   "output_mode": "content",
   "-A": 10
 }
@@ -310,7 +310,7 @@ id: toolu_019Hc7EwBewPD5WdT1E2inAB
 ```json
 {
   "pattern": "func (env \\*TestEnv) InitEntire\\(",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -330,7 +330,7 @@ id: toolu_018LXf9EHPi1qgCHEXFeQhRZ
 ```json
 {
   "pattern": "func NewFeatureBranchEnv\\(",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -350,7 +350,7 @@ id: toolu_01CL6kzkdmH1rWxBVrbnpNSN
 ```json
 {
   "pattern": "RunForAllStrategiesWithRepoEnv",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -371,7 +371,7 @@ id: toolu_01TguGFLxP3rxZco68mKyQWA
 ```json
 {
   "pattern": "func.*InitEntire\\(",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -392,7 +392,7 @@ id: toolu_01PdfUDZfzEdmGZd8ZC2uNr6
 ```json
 {
   "pattern": "RunForAllStrategies",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -416,7 +416,7 @@ tool_use Read
 id: toolu_01HLTCVzDRJhEEuW5uT81RGg
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "offset": 40,
   "limit": 10
 }
@@ -445,7 +445,7 @@ tool_use Read
 id: toolu_01NKbJtJAUzjWdvZeFchoH4o
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go"
 }
 ```
 
@@ -507,7 +507,7 @@ tool_use Read
 id: toolu_01PdCnMHLyxk9pcnD8oSj2VE
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
   "offset": 30,
   "limit": 15
 }
@@ -546,7 +546,7 @@ id: toolu_01XpycPX4r9vgdysxyXaa17N
 ```json
 {
   "pattern": "func RunForAllStrategies",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content",
   "-A": 15
 }
@@ -567,7 +567,7 @@ id: toolu_01F67V8ibZzMfY3P56LtU8iK
 ```json
 {
   "pattern": "func RunFor\"",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -587,7 +587,7 @@ id: toolu_01L98xuxDDdBB8jttzSeNwFa
 ```json
 {
   "pattern": "RunFor\"",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -610,7 +610,7 @@ tool_use Read
 id: toolu_01ERyUDjBS5sEKpB9msDGzDK
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hooks_test.go",
   "limit": 40
 }
 ```
@@ -668,7 +668,7 @@ tool_use Read
 id: toolu_013RsUzRaX1ZxhaKEhmURYrp
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/testenv.go",
   "offset": 180,
   "limit": 60
 }
@@ -709,7 +709,7 @@ id: toolu_013RsUzRaX1ZxhaKEhmURYrp
    207→		env.T.Fatalf("failed to get repo config: %v", err)
    208→	}
    209→	cfg.User.Name = "Test User"
-   210→	cfg.User.Email = "test@example.com"
+   210→	cfg.User.Email = "<REDACTED_EMAIL>"
    211→
    212→	// Disable GPG signing for test commits (prevents failures if user has commit.gpgsign=true globally)
    213→	if cfg.Raw == nil {
@@ -735,7 +735,7 @@ id: toolu_011wLiXW3K2RuTJ4N8QxC9g9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "old_string": "\tenv.InitEntire(strategy.StrategyNameManualCommit)",
   "new_string": "\tenv.InitEntire()"
 }
@@ -746,7 +746,7 @@ id: toolu_011wLiXW3K2RuTJ4N8QxC9g9
 tool_result
 id: toolu_011wLiXW3K2RuTJ4N8QxC9g9
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -756,7 +756,7 @@ id: toolu_01K7r8KZRM1fVRFhVDAoHvuN
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
   "old_string": "NewFeatureBranchEnv(t, strategy.StrategyNameManualCommit)",
   "new_string": "NewFeatureBranchEnv(t)"
 }
@@ -767,7 +767,7 @@ id: toolu_01K7r8KZRM1fVRFhVDAoHvuN
 tool_result
 id: toolu_01K7r8KZRM1fVRFhVDAoHvuN
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go has been updated. All occurrences of 'NewFeatureBranchEnv(t, strategy.StrategyNameManualCommit)' were successfully replaced with 'NewFeatureBranchEnv(t)'.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go has been updated. All occurrences of 'NewFeatureBranchEnv(t, strategy.StrategyNameManualCommit)' were successfully replaced with 'NewFeatureBranchEnv(t)'.
 ```
 
 > AGENT
@@ -781,7 +781,7 @@ id: toolu_01TKFFNEt3KQMxrTdihCvcnL
 ```json
 {
   "pattern": "strategy\\.",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/deferred_finalization_test.go",
   "output_mode": "content"
 }
 ```
@@ -812,7 +812,7 @@ id: toolu_01TFrhcxCozmqdff9usz28ov
 ```json
 {
   "pattern": "strategy\\.",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "output_mode": "content"
 }
 ```
@@ -835,7 +835,7 @@ tool_use Read
 id: toolu_01YDKp8rXNsm6ew6jSfPviym
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "limit": 15
 }
 ```
@@ -869,7 +869,7 @@ id: toolu_015bchZiyRhd35KUCywnxBgz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go",
   "old_string": "import (\n\t\"testing\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/session\"\n\t\"github.com/entireio/cli/cmd/entire/cli/strategy\"\n)",
   "new_string": "import (\n\t\"testing\"\n\n\t\"github.com/entireio/cli/cmd/entire/cli/session\"\n)"
 }
@@ -880,7 +880,7 @@ id: toolu_015bchZiyRhd35KUCywnxBgz
 tool_result
 id: toolu_015bchZiyRhd35KUCywnxBgz
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/carry_forward_overlap_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -893,7 +893,7 @@ tool_use Read
 id: toolu_01Sh38LDb1gu1SWmKaqsS4Bv
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go"
 }
 ```
 
@@ -959,7 +959,7 @@ tool_use Write
 id: toolu_01TGUsFQomkKAFgQTBKhkmmB
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go",
   "content": "//go:build integration\n\npackage integration\n\nimport (\n\t\"testing\"\n)\n\n// TestDefaultBranch_WorksOnMain tests that the strategy works on main branch.\nfunc TestDefaultBranch_WorksOnMain(t *testing.T) {\n\tt.Parallel()\n\tenv := NewRepoWithCommit(t)\n\n\tbranch := env.GetCurrentBranch()\n\tif branch != \"main\" && branch != \"master\" {\n\t\tt.Fatalf(\"expected to be on main or master branch, got %q\", branch)\n\t}\n\n\tsession := env.NewSession()\n\tif err := env.SimulateUserPromptSubmit(session.ID); err != nil {\n\t\tt.Fatalf(\"SimulateUserPromptSubmit failed: %v\", err)\n\t}\n\n\tenv.WriteFile(\"file.txt\", \"content on main\")\n\tsession.CreateTranscript(\n\t\t\"Add a file\",\n\t\t[]FileChange{{Path: \"file.txt\", Content: \"content on main\"}},\n\t)\n\n\tif err := env.SimulateStop(session.ID, session.TranscriptPath); err != nil {\n\t\tt.Fatalf(\"SimulateStop failed: %v\", err)\n\t}\n\n\tpoints := env.GetRewindPoints()\n\tif len(points) != 1 {\n\t\tt.Errorf(\"expected 1 rewind point on main branch, got %d\", len(points))\n\t}\n}\n\n// TestDefaultBranch_WorksOnFeatureBranch tests that Entire tracking works on feature branches.\nfunc TestDefaultBranch_WorksOnFeatureBranch(t *testing.T) {\n\tt.Parallel()\n\tenv := NewFeatureBranchEnv(t)\n\tbranch := env.GetCurrentBranch()\n\tif branch != \"feature/test-branch\" {\n\t\tt.Fatalf(\"expected to be on feature/test-branch, got %q\", branch)\n\t}\n\n\tsession := env.NewSession()\n\tif err := env.SimulateUserPromptSubmit(session.ID); err != nil {\n\t\tt.Fatalf(\"SimulateUserPromptSubmit failed: %v\", err)\n\t}\n\n\tenv.WriteFile(\"feature.txt\", \"content on feature branch\")\n\tsession.CreateTranscript(\n\t\t\"Add a feature file\",\n\t\t[]FileChange{{Path: \"feature.txt\", Content: \"content on feature branch\"}},\n\t)\n\n\tif err := env.SimulateStop(session.ID, session.TranscriptPath); err != nil {\n\t\tt.Fatalf(\"SimulateStop failed: %v\", err)\n\t}\n\n\tpoints := env.GetRewindPoints()\n\tif len(points) != 1 {\n\t\tt.Errorf(\"expected 1 rewind point on feature branch, got %d\", len(points))\n\t}\n}\n\n// TestDefaultBranch_PostTaskWorksOnMain tests that task checkpoints work on main.\nfunc TestDefaultBranch_PostTaskWorksOnMain(t *testing.T) {\n\tt.Parallel()\n\tenv := NewRepoWithCommit(t)\n\n\tbranch := env.GetCurrentBranch()\n\tif branch != \"main\" && branch != \"master\" {\n\t\tt.Fatalf(\"expected to be on main […]
 
 > TOOL
@@ -967,7 +967,7 @@ id: toolu_01TGUsFQomkKAFgQTBKhkmmB
 tool_result
 id: toolu_01TGUsFQomkKAFgQTBKhkmmB
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/default_branch_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -1024,7 +1024,7 @@ id: toolu_01YZLEfxyu3zHwUFANZC66D5
 ```json
 {
   "pattern": "InitEntire\\([^)]+\\)",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -1078,7 +1078,7 @@ id: toolu_012Pv2CuhxfbYQmQNUq4jqPm
 ```json
 {
   "pattern": "NewFeatureBranchEnv\\(t,",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test",
   "output_mode": "content"
 }
 ```
@@ -1362,7 +1362,7 @@ id: toolu_01VmYdsNTbFXcGhfqRwLG4pe
 ```json
 {
   "pattern": "InitEntire\\(\\)\"",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hook_logging_test.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hook_logging_test.go",
   "output_mode": "content"
 }
 ```
@@ -1382,7 +1382,7 @@ id: toolu_01J6xKGyJjWtAMq1kk4ecsJV
 ```json
 {
   "pattern": "InitEntire",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hook_logging_test.go",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/cmd/entire/cli/integration_test/hook_logging_test.go",
   "output_mode": "content"
 }
 ```
@@ -1533,7 +1533,7 @@ tool_use Read
 id: toolu_01XecDbxyaR4wmu1pHLf63ob
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md"
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md"
 }
 ```
 
@@ -1607,7 +1607,7 @@ id: toolu_01RzcgJnWijFrfERE7TUqZF4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "- `entire/cli/strategy`: strategy implementations - see section below",
   "new_string": "- `entire/cli/strategy`: session strategy implementation (manual-commit) - see section below"
 }
@@ -1618,7 +1618,7 @@ id: toolu_01RzcgJnWijFrfERE7TUqZF4
 tool_result
 id: toolu_01RzcgJnWijFrfERE7TUqZF4
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1628,7 +1628,7 @@ id: toolu_01XgfLWHtWyDxzpL8bTCjHCW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "// Integration tests: RunForAllStrategies handles t.Parallel() for subtests internally,\n// but the top-level test still needs it\nfunc TestFeature_Bar(t *testing.T) {\n    t.Parallel()\n    RunForAllStrategies(t, func(t *testing.T, env *TestEnv, strategyName string) {\n        // ...\n    })\n}",
   "new_string": "// Integration tests with TestEnv\nfunc TestFeature_Bar(t *testing.T) {\n    t.Parallel()\n    env := NewFeatureBranchEnv(t)\n    // ...\n}"
 }
@@ -1639,7 +1639,7 @@ id: toolu_01XgfLWHtWyDxzpL8bTCjHCW
 tool_result
 id: toolu_01XgfLWHtWyDxzpL8bTCjHCW
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1649,7 +1649,7 @@ id: toolu_011jkSyvBWdfqjpkopVpcdAz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "### Session Strategy (`cmd/entire/cli/strategy/`)\n\nThe CLI uses a strategy pattern for managing session data and checkpoints. Each strategy implements the `Strategy` interface defined in `strategy.go`.\n\n#### Core Interface\n\nAll strategies implement:\n\n- `SaveStep()` - Save session step checkpoint (code + metadata)\n- `SaveTaskStep()` - Save subagent task step checkpoint\n- `GetRewindPoints()` / `Rewind()` - List and restore to checkpoints\n- `GetSessionLog()` / `GetSessionInfo()` - Retrieve session data\n- `ListSessions()` / `GetSession()` - Session discovery\n\n#### Commit Strategy Details\n\n**Manual-Commit Strategy** (`manual_commit*.go`) - Default\n\n- **Does not modify** the active branch - no commits created on the working branch",
   "new_string": "### Session Strategy (`cmd/entire/cli/strategy/`)\n\nThe CLI uses a manual-commit strategy for managing session data and checkpoints. The strategy implements the `Strategy` interface defined in `strategy.go`.\n\n#### Strategy Interface\n\nThe `Strategy` interface provides:\n\n- `SaveStep()` - Save session step checkpoint (code + metadata)\n- `SaveTaskStep()` - Save subagent task step checkpoint\n- `GetRewindPoints()` / `Rewind()` - List and restore to checkpoints\n- `GetSessionLog()` / `GetSessionInfo()` - Retrieve session data\n- `ListSessions()` / `GetSession()` - Session discovery\n\n#### How It Works\n\nThe manual-commit strategy (`manual_commit*.go`) does not modify the active branch - no commits are created on the working branch. Instead it:"
 }
@@ -1660,7 +1660,7 @@ id: toolu_011jkSyvBWdfqjpkopVpcdAz
 tool_result
 id: toolu_011jkSyvBWdfqjpkopVpcdAz
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1670,7 +1670,7 @@ id: toolu_01CY2nChejhBGvxkh1a8R6C2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "- Creates shadow branch `entire/<HEAD-commit-hash[:7]>-<worktreeHash[:6]>` per base commit + worktree\n- **Worktree-specific branches** - each git worktree gets its own shadow branch namespace, preventing conflicts\n- **Supports multiple concurrent sessions** - checkpoints from different sessions in the same directory interleave on the same shadow branch\n- Session logs are condensed to permanent `entire/checkpoints/v1` branch on user commits\n- Builds git trees in-memory using go-git plumbing APIs\n- Rewind restores files from shadow branch commit tree (does not use `git reset`)\n- **Location-independent transcript resolution** - transcript paths are always computed dynamically from the current repo location (via `agent.GetSessionDir` + `agent.ResolveSessionFile`), never stored in checkpoint metadata. This ensures restore/rewind works after repo relocation or across machines.\n- Tracks session state in `.git/entire-sessions/` (shared across worktrees)\n- **Shadow branch migration** - if user does stash/pull/rebase (HEAD changes without commit), shadow branch is automatically moved to new base commit\n- **Orphaned branch cleanup** - if a shadow branch exists without a corresponding session state file, it is automatically reset when a new session starts\n- PrePush hook can push `entire/checkpoints/v1` branch alongside user pushes\n- `AllowsMainBranch() = true` - safe to use on main/master since it never modifies commit history",
   "new_string": "- Creates […]
 
@@ -1679,7 +1679,7 @@ id: toolu_01CY2nChejhBGvxkh1a8R6C2
 tool_result
 id: toolu_01CY2nChejhBGvxkh1a8R6C2
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1689,7 +1689,7 @@ id: toolu_01CwrRCQXZTEbgvJ9vY1Gxgz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "- `strategy.go` - Interface definition and context structs (`StepContext`, `TaskStepContext`, `RewindPoint`, etc.)\n- `registry.go` - Strategy registration/discovery (factory pattern with `Get()`, `List()`, `Default()`)\n- `common.go` - Shared helpers for metadata extraction, tree building, rewind validation, `ListCheckpoints()`\n- `session.go` - Session/checkpoint data structures\n- `push_common.go` - Shared PrePush logic for pushing `entire/checkpoints/v1` branch",
   "new_string": "- `strategy.go` - Interface definition and context structs (`StepContext`, `TaskStepContext`, `RewindPoint`, etc.)\n- `common.go` - Helpers for metadata extraction, tree building, rewind validation, `ListCheckpoints()`\n- `session.go` - Session/checkpoint data structures\n- `push_common.go` - PrePush logic for pushing `entire/checkpoints/v1` branch"
 }
@@ -1700,7 +1700,7 @@ id: toolu_01CwrRCQXZTEbgvJ9vY1Gxgz
 tool_result
 id: toolu_01CwrRCQXZTEbgvJ9vY1Gxgz
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1710,7 +1710,7 @@ id: toolu_01GR4WNeUNJm6g4b6fWkELL1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "**Shadow Strategy** - Shadow branches (`entire/<commit-hash[:7]>-<worktreeHash[:6]>`):",
   "new_string": "**Shadow branches** (`entire/<commit-hash[:7]>-<worktreeHash[:6]>`):"
 }
@@ -1721,7 +1721,7 @@ id: toolu_01GR4WNeUNJm6g4b6fWkELL1
 tool_result
 id: toolu_01GR4WNeUNJm6g4b6fWkELL1
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1731,7 +1731,7 @@ id: toolu_01EPFEqLdDoCCg3yAzs1rFCH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "**Both Strategies** - Metadata branch (`entire/checkpoints/v1`) - sharded checkpoint format:",
   "new_string": "**Metadata branch** (`entire/checkpoints/v1`) - sharded checkpoint format:"
 }
@@ -1742,7 +1742,7 @@ id: toolu_01EPFEqLdDoCCg3yAzs1rFCH
 tool_result
 id: toolu_01EPFEqLdDoCCg3yAzs1rFCH
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1752,7 +1752,7 @@ id: toolu_01Ryc6WKYDao4gamiUvKDtMv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "Both strategies use a **12-hex-char random checkpoint ID** (e.g., `a3b2c4d5e6f7`) as the stable identifier linking user commits to metadata.",
   "new_string": "The strategy uses a **12-hex-char random checkpoint ID** (e.g., `a3b2c4d5e6f7`) as the stable identifier linking user commits to metadata."
 }
@@ -1763,7 +1763,7 @@ id: toolu_01Ryc6WKYDao4gamiUvKDtMv
 tool_result
 id: toolu_01Ryc6WKYDao4gamiUvKDtMv
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1773,7 +1773,7 @@ id: toolu_018r7HfDpv6sxxLZd2oGFwKg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "**On user's active branch commits (both strategies):**\n\n- `Entire-Checkpoint: <checkpoint-id>` - 12-hex-char ID linking to metadata on `entire/checkpoints/v1`\n  - Auto-commit: Always added when creating commits\n  - Manual-commit: Added by hook; user can remove to skip linking\n\n**On shadow branch commits (`entire/<commit-hash[:7]>-<worktreeHash[:6]>`) - manual-commit only:**",
   "new_string": "**On user's active branch commits:**\n\n- `Entire-Checkpoint: <checkpoint-id>` - 12-hex-char ID linking to metadata on `entire/checkpoints/v1`\n  - Added via `prepare-commit-msg` hook; user can remove it before committing to skip linking\n\n**On shadow branch commits (`entire/<commit-hash[:7]>-<worktreeHash[:6]>`):**"
 }
@@ -1784,7 +1784,7 @@ id: toolu_018r7HfDpv6sxxLZd2oGFwKg
 tool_result
 id: toolu_018r7HfDpv6sxxLZd2oGFwKg
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1794,7 +1794,7 @@ id: toolu_01UyNpaqdBygmXLUUhVFT9Pq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "**On metadata branch commits (`entire/checkpoints/v1`) - both strategies:**",
   "new_string": "**On metadata branch commits (`entire/checkpoints/v1`):**"
 }
@@ -1805,7 +1805,7 @@ id: toolu_01UyNpaqdBygmXLUUhVFT9Pq
 tool_result
 id: toolu_01UyNpaqdBygmXLUUhVFT9Pq
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1815,7 +1815,7 @@ id: toolu_01QPioiRqZFJ2y8ZYty6ivGy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "**Note:** Manual-commit keeps active branch history clean - the only addition to user commits is the single `Entire-Checkpoint` trailer. Manual-commit never creates commits on the active branch (user creates them manually). All detailed session data (transcripts, prompts, context) is stored on the `entire/checkpoints/v1` orphan branch or shadow branches.",
   "new_string": "**Note:** The strategy keeps active branch history clean - the only addition to user commits is the single `Entire-Checkpoint` trailer. It never creates commits on the active branch (the user creates them manually). All detailed session data (transcripts, prompts, context) is stored on the `entire/checkpoints/v1` orphan branch or shadow branches."
 }
@@ -1826,7 +1826,7 @@ id: toolu_01QPioiRqZFJ2y8ZYty6ivGy
 tool_result
 id: toolu_01QPioiRqZFJ2y8ZYty6ivGy
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > TOOL
@@ -1836,7 +1836,7 @@ id: toolu_01CbXWjaAxbxFMapzQKtqf1k
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "old_string": "#### When Modifying Strategies\n\n- All strategies must implement the full `Strategy` interface\n- Register new strategies in `init()` using `Register()`\n- Test with `mise run test` - strategy tests are in `*_test.go` files\n- **Update both CLAUDE.md and AGENTS.md** when adding or modifying strategies to keep documentation current",
   "new_string": "#### When Modifying the Strategy\n\n- The strategy must implement the full `Strategy` interface\n- Test with `mise run test` - strategy tests are in `*_test.go` files\n- **Update both CLAUDE.md and AGENTS.md** when modifying the strategy to keep documentation current"
 }
@@ -1847,7 +1847,7 @@ id: toolu_01CbXWjaAxbxFMapzQKtqf1k
 tool_result
 id: toolu_01CbXWjaAxbxFMapzQKtqf1k
 ```
-The file /Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
+The file /home/<USER>/wks/cli/remove-auto-commit/AGENTS.md has been updated successfully.
 ```
 
 > AGENT
@@ -1861,7 +1861,7 @@ id: toolu_011fQS9r1Xh6JTJMK3JXkEp2
 ```json
 {
   "pattern": "(Both [Ss]trategies|All strategies|Each strategy|multiple strategies|RunForAllStrategies|registry\\.go)",
-  "path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "output_mode": "content"
 }
 ```
@@ -1884,7 +1884,7 @@ tool_use Read
 id: toolu_01RQRNfAxJsj7PdC9ftHQXMq
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "offset": 85,
   "limit": 10
 }
@@ -1913,7 +1913,7 @@ tool_use Read
 id: toolu_018dtU5ut49jNrxx8Rc1yReX
 ```json
 {
-  "file_path": "/Users/gtrrz-victor/wks/cli/remove-auto-commit/AGENTS.md",
+  "file_path": "/home/<USER>/wks/cli/remove-auto-commit/AGENTS.md",
   "offset": 290,
   "limit": 40
 }

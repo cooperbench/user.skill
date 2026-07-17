@@ -171,7 +171,7 @@ id: toolu_019mhDAJihxaTJy5w8QC51Um
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "## リードモデルとは何か\n\nCQRSにおける **リードモデル（Read Model）** は、「画面やAPIレスポンスの形にあわせて非正規化された、読み取り専用のデータ表現」です。書き込みモデル（集約）とは独立しており、JOIN・集計・キャッシュ・全文検索インデックスなど、読み取りに都合のよい形を自由に選べます。\n\nCQRSの読み取り側がドメインモデルを必ずしも経由する必要はない、という発想は[Greg Young の CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)で示されている考え方です。読み取り側はビジネスルールを通す必要がないため、書き込み側とは別の薄い層でよい、という立場です。本記事もこの立場を前提とします。\n\n私は最初、リードモデルを「集約をDTOに変換しただけのもの」と考えていました。しかしそれは**RepositoryからDTOへの詰め替え**にすぎず、CQRSのうまみはほぼ得られません。リードモデルは次の3つの条件を満たして初めて意味を持ちます（**表1**）。\n\n**表1: リードモデルの3条件**\n\n| 条件                              | 説明                                         |\n| --------------------------------- | -------------------------------------------- |\n| 書き込みモデルから独立している    | 集約の構造が変わってもリードモデルが壊れない |\n| 画面・API単位で非正規化されている | 1回のクエリで必要なデータが揃う              |\n| ドメインルールを持たない          | 検証・状態遷移・ビジネス計算は行わない       |\n\nつまり「リードモデルは別物として作る」ことに意味があり、書き込みモデルの構造をそのまま映したリードモデルは、ただの薄いDTOです。\n\nなお3つ目の「ドメインルールを持たない」が指すのは、状態遷移・不変条件・後続業務に影響する判断のことです。表示ラベルの生成やソート用キーの算出といった**純粋な表示ロジック**はリードモデル側に置いても問題ありません。詳しくはアンチパターン1で線引きします。",
   "new_string": "## リードモデルとは何か\n\nCQRSにおける **リードモデル（Read Model）** は、「読み取りユースケースに合わせて設計されたデータ表現」です。実装としては DTO、SQL の VIEW、専用テーブル、検索インデックスなどがあり、性能や UX 要件に応じて非正規化されることが多い、という関係です。書き込みモデル（集約）とは独立しており、JOIN・集計・キャッシュ・全文検索インデックスなど、読み取りに都合のよい形を自由に選べます。\n\nCQRSの読み取り側がドメインモデルを必ずしも経由する必要はない、という発想は[Greg Young の CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)で示されている考え方です。ここで「経由しなくてよい」のは、**状態遷移を成立させるための不変条件チェックや、副作用を伴う業務判断**です。一方で、認可・テナント分離・表示可否の判定・マスキング・公開状態によるフィルタリングなど、**読み取り固有のルール**は Query 側にも必要です（認可については[シリーズ第2作](https://zenn.dev/135yshr/articles/60d7d006c0f38f)で扱っています）。本記事もこの立場を前提とします。\n\n私は最初、リードモデルを「集約をDTOに変換しただけのもの」と考えていました。しかしそれは**RepositoryからDTOへの詰め替え**にすぎず、CQRSのうまみはほぼ得られません。リードモデルは次の3つの方針を意識して初めて意味を持ちます（**表1**）。これらは必須要件というよりは、「リードモデルを別物として設計する」ことが効くケースの典型像です。\n\n**表1: リードモデル設計の方針**\n\n| 方針                              | 説明                                         |\n| --------------------------------- | -------------------------------------------- |\n| 書き込みモデルから独立している    | 集約の構造が変わってもリードモデルが壊れない |\n| 画面・API単位で形を最適化する     | 1回のクエリで必要なデータが揃う（非正規化や集計の事前計算を含む） |\n| 状態遷移・不変条件は持たない      | 業務判断や副作用を伴うロジックは書き込み側に寄せる |\n\nつまり「リードモデルは別物として作る」ことに意味があり、書き込みモデルの構造をそのまま映したリードモデルは、ただの薄いDTOです。\n\nなお3つ目の「状態遷移・不変条件は持たない」が指すのは、後続業務に影響する判断のことです。表示ラベルの生成やソート用キーの算出といった**純粋な表示ロジック**はリードモデル側に置いても問題ありません。詳しくはアンチパターン1で線引きします。"
 }
@@ -182,7 +182,7 @@ id: toolu_019mhDAJihxaTJy5w8QC51Um
 tool_result
 id: toolu_019mhDAJihxaTJy5w8QC51Um
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -196,7 +196,7 @@ id: toolu_01XGDAGBybVoh9VFeU6zHYwj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "配置が書き込みモデルから離れるほど読み取り性能と柔軟性は上がりますが、整合性の維持コストも上がります。",
   "new_string": "配置が書き込みモデルから離れるほど、読み取り用途に最適化しやすくなります。一方で、実際の性能はクエリ特性・インデックス設計・同期方式に依存し、必ずしも別ストア化が速いとは限りません。整合性の維持コストと運用コストは上がります。"
 }
@@ -207,7 +207,7 @@ id: toolu_01XGDAGBybVoh9VFeU6zHYwj
 tool_result
 id: toolu_01XGDAGBybVoh9VFeU6zHYwj
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -217,7 +217,7 @@ id: toolu_0143ZVr9QZwgaKb6F7aBtZsD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "**図2: 戦略選択のフロー**\n\n「迷ったら戦略C → A → Bの順に検討する」のが私の経験則です。Bは強力ですが、Outboxやワーカー、再構築機構など運用の道具立てが多く、必要になるまで導入を遅らせるのが安全だと感じています。\n\nただしこれは一般則ではありません。次のような条件が最初から分かっている場合は、初期フェーズでも戦略Bから入る判断はあり得ます。",
   "new_string": "**図2: 戦略選択のフロー（簡略版）**\n\nこのフローは**初期判断のための簡略版**です。実際には、読み取り頻度や結果整合性の許容度だけでなく、集計の重さ・検索要件・再構築要件・障害時運用・書き込みレイテンシの許容値・読み取りSLO・監査要件なども合わせて判断します。本記事の経験談スコープ（注文・予約系、数十req/sec規模）ではこの2軸でかなり絞り込めますが、領域が変われば判断軸も増えます。\n\n「迷ったら戦略C → A → Bの順に検討する」のが私の経験則です。Bは強力ですが、Outboxやワーカー、再構築機構など運用の道具立てが多く、必要になるまで導入を遅らせるのが安全だと感じています。\n\nただしこれは一般則ではありません。次のような条件が最初から分かっている場合は、初期フェーズでも戦略Bから入る判断はあり得ます。"
 }
@@ -228,7 +228,7 @@ id: toolu_0143ZVr9QZwgaKb6F7aBtZsD
 tool_result
 id: toolu_0143ZVr9QZwgaKb6F7aBtZsD
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -242,7 +242,7 @@ id: toolu_017tUPWB7fma3AChjwtzM5m4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "### 戦略Aを採用する判断基準\n\n- 書き込みと読み取りが**同一データベース**で完結します\n- 「書いた直後に読んだら最新が見えてほしい」という要件が強いです（read-your-writes）\n- プロジェクションが軽く、書き込みのレイテンシに乗せても問題ありません",
   "new_string": "### 戦略Aを採用する判断基準\n\n- 書き込みと読み取りが**同一プライマリDB**で完結します（リードレプリカやキャッシュ越しに読むと read-your-writes は崩れ得るため、ここではプライマリDBを直接読む前提です）\n- 「書いた直後に読んだら最新が見えてほしい」という要件が強いです（read-your-writes）\n- プロジェクションが軽く、書き込みのレイテンシに乗せても問題ありません"
 }
@@ -253,7 +253,7 @@ id: toolu_017tUPWB7fma3AChjwtzM5m4
 tool_result
 id: toolu_017tUPWB7fma3AChjwtzM5m4
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -267,7 +267,7 @@ id: toolu_01KtUKoaaP4wm8R65jfLtHsr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "type Runner struct {\n    outbox     OutboxReader\n    projectors map[string]Projector\n}\n\nfunc (r *Runner) Tick(ctx context.Context) error {\n    events, err := r.outbox.FetchUnprocessed(ctx, 100)\n    if err != nil {\n        return err\n    }\n    for _, e := range events {\n        p, ok := r.projectors[e.EventType]\n        if !ok {\n            continue // 未登録のイベントは無視（あとから増やせる）\n        }\n        if err := p.Project(ctx, e.Payload); err != nil {\n            return err // リトライは次の tick で\n        }\n        if err := r.outbox.MarkProcessed(ctx, e.ID); err != nil {\n            return err\n        }\n    }\n    return nil\n}\n```\n\nイベント間の順序保証が必要なら、`aggregate_id` 単位でシリアライズします（同じ集約のイベントは順序通りに処理します）。グローバル順序が必要かどうかは業務によります。金融の取引履歴や監査ログのように「全体で時系列を保証したい」要件があれば別途設計が必要です。私が扱ってきた範囲（注文・予約系）では集約単位の順序で足りるケースがほとんどでした。",
   "new_string": "type Runner struct {\n    outbox     OutboxReader\n    projectors map[string]Projector\n}\n\nfunc (r *Runner) Tick(ctx context.Context) error {\n    events, err := r.outbox.FetchUnprocessed(ctx, 100)\n    if err != nil {\n        return err\n    }\n    for _, e := range events {\n        p, ok := r.projectors[e.EventType]\n        if !ok {\n            // 未登録イベントを continue で素通りさせると未処理のまま残り続け、\n            // 毎回の Tick で同じイベントを取得し続けてしまいます。\n            // ここではエラーにして開発時に気付けるようにします。\n            // 「あとからProjectorを足したい」運用に倒すなら、\n            // 別の状態（unsupported / dead-letter）にマークして\n            // 通常の未処理キューからは外す方針を採ります。\n            return fmt.Errorf(\"unsupported event type: %s (event id=%d)\", e.EventType, e.ID)\n        }\n        if err := p.Project(ctx, e.Payload); err != nil {\n            return err // リトライは次の tick で\n        }\n        if err := r.outbox.MarkProcessed(ctx, e.ID); err != nil {\n            return err\n        }\n    }\n    return nil\n}\n```\n\n未登録イベントの扱いは、運用方針によって2通りに分かれます。\n\n- **方針1: エラーで止める**（上記の例）。未対応イベントが流れたら即座に気付けるので、CI や開発初期に向きます\n- **方針2: `unsupported` 状態に切り替えて通常キューから外す**。たとえば outbox に `status` 列を持たせ、`MarkUnsupported(ctx, e.ID, […]
 
@@ -276,7 +276,7 @@ id: toolu_01KtUKoaaP4wm8R65jfLtHsr
 tool_result
 id: toolu_01KtUKoaaP4wm8R65jfLtHsr
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -290,7 +290,7 @@ id: toolu_01Hxu4T2hAdsxDU9t46ss7ET
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "### Materialized View の位置づけ\n\nMaterialized View は名前こそ「ビュー」ですが、実態は**結果を永続化したテーブル**です。`REFRESH MATERIALIZED VIEW` 実行時のスナップショットが保存され、それ以降は書き込みテーブルが更新されても自動では反映されません。\n\nこのため Materialized View は次の点で通常の VIEW とは性質が違います。\n\n- 定義変更だけで読み取り結果が反映されません（再作成や REFRESH が必要です）\n- REFRESH のタイミング・頻度・ロック挙動（`CONCURRENTLY` の有無）を運用設計する必要があります\n- インデックスを別途張る対象になります（VIEW にはインデックスを張れません）\n\n本記事の整理では、Materialized View は「戦略Cの素直な延長」というよりも、戦略A / 戦略B に移る前の**中間的な選択肢**として捉えます。小規模な集計や日次バッチでの REFRESH 程度なら Materialized View の方がシンプルに済むこともあります。一方で、REFRESH の頻度・粒度・ロック設計が複雑になってきたタイミングで、戦略Bの Outbox + Projector に移したほうが見通しよくなることもあります。「複雑化のシグナルが出てきたら戦略B」というのが私の判断基準です。",
   "new_string": "### Materialized View の位置づけ\n\n以下は主に **PostgreSQL の Materialized View** を念頭に置いた説明です。DB 製品によって更新方式・自動更新の扱い・インデックスの可否は異なるため、利用 DB のドキュメントで確認してください。\n\nMaterialized View は名前こそ「ビュー」ですが、実態は**結果を永続化したテーブル**です。PostgreSQL では `REFRESH MATERIALIZED VIEW` 実行時のスナップショットが保存され、それ以降は書き込みテーブルが更新されても自動では反映されません。\n\nこのため Materialized View は次の点で通常の VIEW とは性質が違います。\n\n- 定義変更だけで読み取り結果が反映されません（再作成や REFRESH が必要です）\n- REFRESH のタイミング・頻度・ロック挙動（`CONCURRENTLY` の有無、必要な UNIQUE インデックスの設計）を運用設計する必要があります\n- インデックスを別途張る対象になります（PostgreSQL では通常の VIEW にはインデックスを張れません）\n\n本記事の整理では、Materialized View は「戦略Cの素直な延長」というよりも、戦略A / 戦略B に移る前の**中間的な選択肢**として捉えます。小規模な集計や日次バッチでの REFRESH 程度なら Materialized View の方がシンプルに済むこともあります。一方で、REFRESH の頻度・粒度・ロック設計が複雑になってきたタイミングで、戦略Bの Outbox + Projector に移したほうが見通しよくなることもあります。「複雑化のシグナルが出てきたら戦略B」というのが私の判断基準です。"
 }
@@ -301,7 +301,7 @@ id: toolu_01Hxu4T2hAdsxDU9t46ss7ET
 tool_result
 id: toolu_01Hxu4T2hAdsxDU9t46ss7ET
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -315,7 +315,7 @@ id: toolu_01G2uaRR4NHPq741HsimWj6C
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "データの重複は許容します。リードモデルは**書き込みモデルの結果系**であって、いつでも再構築できるからです。",
   "new_string": "データの重複は許容します。リードモデルは**書き込みモデルから導出された結果系**だからです。ただし「いつでも再構築できる」のは自動的にそうなるわけではなく、元データ・イベントログ・再計算バッチ・保持期間を**再構築できるように設計しておく**ことが前提です（戦略Bの再構築可能性の節で触れた通り、Outbox 単独では完全な再構築はできない場合があります）。"
 }
@@ -326,7 +326,7 @@ id: toolu_01G2uaRR4NHPq741HsimWj6C
 tool_result
 id: toolu_01G2uaRR4NHPq741HsimWj6C
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -340,7 +340,7 @@ id: toolu_01UKibck66ZzXyH7xuicPcsT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「想定するリードモデルに必要な値か」「外部連携に流す前提でも安全か」を一度立ち止まって考えるくらいの粒度が、ちょうどよいバランスです。",
   "new_string": "「想定するリードモデルに必要な値か」「外部連携に流す前提でも安全か」を一度立ち止まって考えるくらいの粒度が、ちょうどよいバランスです。\n\nもう一つ意識したいのは、**ドメインイベントとプロジェクション専用イベント（または投影用メッセージ）を分けて考える**ことです。たとえば `OrderPlaced` に `CustomerName` を載せるのは、注文時点の顧客名スナップショットに業務上の意味（後から顧客名が変わっても注文履歴は当時の名前を保持する、等）があれば自然です。一方で、一覧画面のラベル表示だけのためにドメインイベントへ表示項目を増やすと、ドメインモデルが画面都合に引っ張られます。表示専用の項目は、ドメインイベントを購読する Projector 側で「投影用の中間表現」に詰め替えて保持するなどの分離が有効です。"
 }
@@ -351,7 +351,7 @@ id: toolu_01UKibck66ZzXyH7xuicPcsT
 tool_result
 id: toolu_01UKibck66ZzXyH7xuicPcsT
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -365,7 +365,7 @@ id: toolu_01WBz8jJMXfit9YY9G4FG4J5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "書き込みレスポンスと読み取りリクエストはこんなイメージです。\n\n```go\n// 書き込みレスポンス: outboxにINSERTした最新IDを返す\ntype PlaceOrderResponse struct {\n    OrderID         string `json:\"order_id\"`\n    ExpectedVersion int64  `json:\"expected_version\"` // ← この値以上が見えるはず\n}",
   "new_string": "書き込みレスポンスと読み取りリクエストはこんなイメージです。\n\nなお、戦略Bのサンプルでは `outbox.Append(ctx, events) error` というシグネチャでしたが、`ExpectedVersion` を返したい場合は **INSERT で採番された outbox.id のうち最大値を返すよう拡張する** 必要があります。たとえば `Append(ctx, events) (lastID int64, err error)` のように変えるか、別途 `outbox.LastInsertedID(ctx)` を呼ぶ、といった形で UseCase 側からバージョンを受け取れるようにします。本記事のサンプルでは簡潔さを優先して error 返しのみにしていますが、戦略Bでスタール検知まで採用するならここを揃えてください。\n\n```go\n// 書き込みレスポンス: outboxにINSERTした最新IDを返す\ntype PlaceOrderResponse struct {\n    OrderID         string `json:\"order_id\"`\n    ExpectedVersion int64  `json:\"expected_version\"` // ← この値以上が見えるはず\n}"
 }
@@ -376,7 +376,7 @@ id: toolu_01WBz8jJMXfit9YY9G4FG4J5
 tool_result
 id: toolu_01WBz8jJMXfit9YY9G4FG4J5
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -390,7 +390,7 @@ id: toolu_01SuCBzty1DtwTYgEC3gpLaa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- リードモデルは**書き込みモデルとは別物**として設計します。詰め替えだけでは意味がありません\n- プロジェクション戦略は**A: 同期 / B: 非同期（Outbox） / C: オンデマンド**の3つです。整合性モデル・運用要素・初期フェーズ向きの軸で選びます（表2）\n- 迷ったら**C → A → B**の順で検討します。Bは強力ですが運用要素が増えます\n- 結果整合性は技術で消すのではなく、**UXで吸収**します(オプティミスティック更新、バージョン番号、ハイブリッド)\n- リードモデルは**画面・API単位で非正規化**し、業務判断は持たせません",
   "new_string": "- リードモデルは**書き込みモデルとは別物**として設計します。詰め替えだけでは意味がありません\n- プロジェクション戦略は**A: 同期 / B: 非同期（Outbox） / C: オンデマンド**の3つです。整合性モデル・運用要素・初期フェーズ向きの軸で選びます（表2）\n- 迷ったら**C → A → B**の順で検討します。これは初期判断の簡略フローで、集計の重さ・検索要件・再構築要件などが絡む場合は別途検討します\n- 結果整合性は技術で消すのではなく、**UXで吸収**します（オプティミスティック更新、バージョン番号、ハイブリッド）\n- リードモデルは**画面・API単位で形を最適化**し、状態遷移や不変条件は持たせません（認可・テナント分離・表示可否などの読み取り固有ルールは Query 側でも必要です）"
 }
@@ -416,7 +416,7 @@ tool_use Read
 id: toolu_01DvCCgFBvB5JsLAsjUMQTwT
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 695,
   "limit": 15
 }
@@ -451,7 +451,7 @@ id: toolu_01EMfUqXQNkWrfkJuHeBpDPd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- 迷ったら**C → A → B**の順で検討します。Bは強力ですが運用要素が増えます\n- 結果整合性は技術で消すのではなく、**UXで吸収**します（オプティミスティック更新、バージョン番号、ハイブリッド）\n- リードモデルは**画面・API単位で非正規化**し、業務判断は持たせません",
   "new_string": "- 迷ったら**C → A → B**の順で検討します。これは初期判断の簡略フローで、集計の重さ・検索要件・再構築要件などが絡む場合は別途検討します\n- 結果整合性は技術で消すのではなく、**UXで吸収**します（オプティミスティック更新、バージョン番号、ハイブリッド）\n- リードモデルは**画面・API単位で形を最適化**し、状態遷移や不変条件は持たせません（認可・テナント分離・表示可否などの読み取り固有ルールは Query 側でも必要です）"
 }
@@ -462,7 +462,7 @@ id: toolu_01EMfUqXQNkWrfkJuHeBpDPd
 tool_result
 id: toolu_01EMfUqXQNkWrfkJuHeBpDPd
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -489,7 +489,7 @@ id: toolu_013vNYEUvcS8kiQDj8EKoruV
 > prettier -w "**/*.md" articles/60293061fe34dd.md
 
 [error] Unable to expand glob pattern: "**/*.md".
-[error] EPERM: operation not permitted, scandir '/Users/135yshr/projects/135yshr/documents/.entire/metadata'
+[error] EPERM: operation not permitted, scandir '/home/<USER>/projects/135yshr/documents/.entire/metadata'
 articles/60293061fe34dd.md 86ms
 ```
 
@@ -504,7 +504,7 @@ id: toolu_01NVXTiWS2p7jhh5ttArohGj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "- **リードモデル**: 画面・APIレスポンス向けに非正規化された、読み取り専用のデータ表現です",
   "new_string": "- **リードモデル**: 読み取りユースケースに合わせて設計された、読み取り専用のデータ表現です（非正規化されることが多いものの、必須ではありません）"
 }
@@ -515,7 +515,7 @@ id: toolu_01NVXTiWS2p7jhh5ttArohGj
 tool_result
 id: toolu_01NVXTiWS2p7jhh5ttArohGj
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -580,7 +580,7 @@ id: toolu_01P6bJTRLDZ87krt6yx5AftU
 tool_result
 id: toolu_01P6bJTRLDZ87krt6yx5AftU
 ```
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   531:17413  error    Line 531 sentence length(133) exceeds the maximum sentence length of 100.
 Over 33 characters                                       ja-technical-writing/sentence-length
   531:17554  error    Line 531 sentence length(130) exceeds the maximum sentence length of 100.
@@ -607,7 +607,7 @@ tool_use Read
 id: toolu_01ESEeygA27NCXsdJ35LzMdi
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 525,
   "limit": 15
 }
@@ -642,7 +642,7 @@ id: toolu_011wBsjvbVzcxYUgj7D4Jfqc
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "なお、戦略Bのサンプルでは `outbox.Append(ctx, events) error` というシグネチャでしたが、`ExpectedVersion` を返したい場合は **INSERT で採番された outbox.id のうち最大値を返すよう拡張する** 必要があります。たとえば `Append(ctx, events) (lastID int64, err error)` のように変えるか、別途 `outbox.LastInsertedID(ctx)` を呼ぶ、といった形で UseCase 側からバージョンを受け取れるようにします。本記事のサンプルでは簡潔さを優先して error 返しのみにしていますが、戦略Bでスタール検知まで採用するならここを揃えてください。",
   "new_string": "なお、戦略Bのサンプルでは `outbox.Append(ctx, events) error` というシグネチャでした。`ExpectedVersion` を返したい場合は、**INSERT で採番された outbox.id のうち最大値を返すよう拡張**する必要があります。実装方法は2通りです。\n\n- `Append(ctx, events) (lastID int64, err error)` のように戻り値を増やす\n- 別途 `outbox.LastInsertedID(ctx)` を呼んで UseCase 側からバージョンを受け取る\n\n本記事のサンプルは簡潔さを優先して error 返しのみにしていますが、戦略Bでスタール検知まで採用するならここを揃えてください。"
 }
@@ -653,7 +653,7 @@ id: toolu_011wBsjvbVzcxYUgj7D4Jfqc
 tool_result
 id: toolu_011wBsjvbVzcxYUgj7D4Jfqc
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -672,7 +672,7 @@ id: toolu_01MtXrNFNmvgAS59beBZiXag
 tool_result
 id: toolu_01MtXrNFNmvgAS59beBZiXag
 ```
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   622:20741  error    Line 622 sentence length(129) exceeds the maximum sentence length of 100.
 Over 29 characters                                       ja-technical-writing/sentence-length
   699:3      ✓ error  一つ => 1つ
@@ -691,7 +691,7 @@ tool_use Read
 id: toolu_01GtxaUy9RnuTXfwc4ryN1Uc
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 620,
   "limit": 8
 }
@@ -719,7 +719,7 @@ id: toolu_011wtpKkZW288KAMMC7TPhQs
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "データの重複は許容します。リードモデルは**書き込みモデルから導出された結果系**だからです。ただし「いつでも再構築できる」のは自動的にそうなるわけではなく、元データ・イベントログ・再計算バッチ・保持期間を**再構築できるように設計しておく**ことが前提です（戦略Bの再構築可能性の節で触れた通り、Outbox 単独では完全な再構築はできない場合があります）。",
   "new_string": "データの重複は許容します。リードモデルは**書き込みモデルから導出された結果系**だからです。\n\nただし「いつでも再構築できる」のは自動的にそうなるわけではありません。元データ・イベントログ・再計算バッチ・保持期間を**再構築できるように設計しておく**ことが前提です。戦略Bの再構築可能性の節で触れた通り、Outbox 単独では完全な再構築はできない場合があります。"
 }
@@ -730,7 +730,7 @@ id: toolu_011wtpKkZW288KAMMC7TPhQs
 tool_result
 id: toolu_011wtpKkZW288KAMMC7TPhQs
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -739,7 +739,7 @@ tool_use Read
 id: toolu_015JfKA9pSV7saCF8pRvBXje
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 697,
   "limit": 10
 }
@@ -769,7 +769,7 @@ id: toolu_017ZcPaSbj7tgTqd8QTFt4AQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "「想定するリードモデルに必要な値か」「外部連携に流す前提でも安全か」を一度立ち止まって考えるくらいの粒度が、ちょうどよいバランスです。\n\nもう一つ意識したいのは、**ドメインイベントとプロジェクション専用イベント（または投影用メッセージ）を分けて考える**ことです。たとえば `OrderPlaced` に `CustomerName` を載せるのは、注文時点の顧客名スナップショットに業務上の意味（後から顧客名が変わっても注文履歴は当時の名前を保持する、等）があれば自然です。一方で、一覧画面のラベル表示だけのためにドメインイベントへ表示項目を増やすと、ドメインモデルが画面都合に引っ張られます。表示専用の項目は、ドメインイベントを購読する Projector 側で「投影用の中間表現」に詰め替えて保持するなどの分離が有効です。",
   "new_string": "「想定するリードモデルに必要な値か」「外部連携に流す前提でも安全か」を1つひとつ立ち止まって考えるくらいの粒度が、ちょうどよいバランスです。\n\nもう1つ意識したいのは、**ドメインイベントとプロジェクション専用イベント（または投影用メッセージ）を分けて考える**ことです。たとえば `OrderPlaced` に `CustomerName` を載せるのは、注文時点の顧客名スナップショットに業務上の意味があれば自然です（後から顧客名が変わっても注文履歴は当時の名前を保持する、等）。\n\n一方で、一覧画面のラベル表示だけのためにドメインイベントへ表示項目を増やすと、ドメインモデルが画面都合に引っ張られます。表示専用の項目は、ドメインイベントを購読する Projector 側で「投影用の中間表現」に詰め替えて保持するなどの分離が有効です。"
 }
@@ -780,7 +780,7 @@ id: toolu_017ZcPaSbj7tgTqd8QTFt4AQ
 tool_result
 id: toolu_017ZcPaSbj7tgTqd8QTFt4AQ
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -799,7 +799,7 @@ id: toolu_01QG91VXff58LcoERqXEmzPA
 tool_result
 id: toolu_01QG91VXff58LcoERqXEmzPA
 ```
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   701:23581  error  Line 701 sentence length(102) exceeds the maximum sentence length of 100.
 Over 2 characters  ja-technical-writing/sentence-length
 
@@ -812,7 +812,7 @@ tool_use Read
 id: toolu_01Am7BbyEJ7EMZqRBr2GD6a2
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 699,
   "limit": 6
 }
@@ -838,7 +838,7 @@ id: toolu_01Rc5wutTEZzzsNn6rB13PA8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "もう1つ意識したいのは、**ドメインイベントとプロジェクション専用イベント（または投影用メッセージ）を分けて考える**ことです。たとえば `OrderPlaced` に `CustomerName` を載せるのは、注文時点の顧客名スナップショットに業務上の意味があれば自然です（後から顧客名が変わっても注文履歴は当時の名前を保持する、等）。",
   "new_string": "もう1つ意識したいのは、**ドメインイベントとプロジェクション専用イベント（または投影用メッセージ）を分けて考える**ことです。\n\nたとえば `OrderPlaced` に `CustomerName` を載せるのは、注文時点の顧客名スナップショットに業務上の意味があれば自然です（後から顧客名が変わっても注文履歴は当時の名前を保持する、等）。"
 }
@@ -849,7 +849,7 @@ id: toolu_01Rc5wutTEZzzsNn6rB13PA8
 tool_result
 id: toolu_01Rc5wutTEZzzsNn6rB13PA8
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -868,7 +868,7 @@ id: toolu_01TMdwh8SDKbXwWJUR29YDwo
 tool_result
 id: toolu_01TMdwh8SDKbXwWJUR29YDwo
 ```
-/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md
+/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md
   703:23581  error  Line 703 sentence length(102) exceeds the maximum sentence length of 100.
 Over 2 characters  ja-technical-writing/sentence-length
 
@@ -877,7 +877,7 @@ Over 2 characters  ja-technical-writing/sentence-length
 > prettier -w "**/*.md" articles/60293061fe34dd.md
 
 [error] Unable to expand glob pattern: "**/*.md".
-[error] EPERM: operation not permitted, scandir '/Users/135yshr/projects/135yshr/documents/.entire/metadata'
+[error] EPERM: operation not permitted, scandir '/home/<USER>/projects/135yshr/documents/.entire/metadata'
 articles/60293061fe34dd.md 81ms (unchanged)
 ```
 
@@ -902,7 +902,7 @@ tool_use Read
 id: toolu_011ei1P7akeTZy3ePb68fHif
 ```json
 {
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "offset": 700,
   "limit": 8
 }
@@ -915,7 +915,7 @@ id: toolu_01GrpuCKJFtJktGu8Q7ec5Ab
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md",
+  "file_path": "/home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md",
   "old_string": "たとえば `OrderPlaced` に `CustomerName` を載せるのは、注文時点の顧客名スナップショットに業務上の意味があれば自然です（後から顧客名が変わっても注文履歴は当時の名前を保持する、等）。",
   "new_string": "たとえば `OrderPlaced` に `CustomerName` を載せるのは、注文時点の顧客名スナップショットに業務上の意味があれば自然です。後から顧客名が変わっても、注文履歴は当時の名前を保持できます。"
 }
@@ -926,7 +926,7 @@ id: toolu_01GrpuCKJFtJktGu8Q7ec5Ab
 tool_result
 id: toolu_01GrpuCKJFtJktGu8Q7ec5Ab
 ```
-The file /Users/135yshr/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/projects/135yshr/documents/articles/60293061fe34dd.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

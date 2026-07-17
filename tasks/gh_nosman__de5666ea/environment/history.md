@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_019GcSiCVLKr4jP3u8pvMaoR
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/init.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/init.rs"
 }
 ```
 
@@ -79,7 +79,7 @@ id: toolu_01QWnYBVpxsLQNf81M1iBojt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/init.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/init.rs",
   "old_string": "    let skip_push     = !ask_yn(\"Auto-push sessions on git push\", false)?;",
   "new_string": "    let skip_push     = !ask_yn(\"Auto-push sessions on git push\", true)?;"
 }
@@ -90,7 +90,7 @@ id: toolu_01QWnYBVpxsLQNf81M1iBojt
 tool_result
 id: toolu_01QWnYBVpxsLQNf81M1iBojt
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/init.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/init.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -116,8 +116,8 @@ id: toolu_01D4HjRhrxgGW2ZSFcJMmgYr
 ```
 warning: `gossamer` (bin "gossamer") generated 9 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 1m 16s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -138,7 +138,7 @@ tool_use Read
 id: toolu_01C7aSJK2SGBo5VSq2j1SWUG
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs"
 }
 ```
 
@@ -212,7 +212,7 @@ id: toolu_01RXibFHDPSyqmx7Sg4FWNgF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "old_string": "    let outcome = tui_loop(&mut stdout, &repos, cd_file.is_some(), None);",
   "new_string": "    let start_repo = {\n        let cwd = env::current_dir().ok().map(|p| p.to_string_lossy().to_string());\n        cwd.as_deref()\n            .and_then(|cwd| repos.iter().position(|r| cwd.starts_with(r.directory.as_str())))\n    };\n\n    let outcome = tui_loop(&mut stdout, &repos, cd_file.is_some(), start_repo);"
 }
@@ -223,7 +223,7 @@ id: toolu_01RXibFHDPSyqmx7Sg4FWNgF
 tool_result
 id: toolu_01RXibFHDPSyqmx7Sg4FWNgF
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -245,8 +245,8 @@ id: toolu_01NS8BUJKctv7bQPstDXfhcG
 ```
 warning: `gossamer` (bin "gossamer") generated 9 warnings (run `cargo fix --bin "gossamer" -p gossamer` to apply 2 suggestions)
     Finished `release` profile [optimized] target(s) in 6.66s
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -259,7 +259,7 @@ Done. Now `gossamer repo` run from inside a tracked repo skips the repo list and
 
 > TOOL
 
-<bash-stdout>/Users/stephanostsoucas/p/gossamer-gossamer-cleanup</bash-stdout><bash-stderr></bash-stderr>
+<bash-stdout>/home/<USER>/p/gossamer-gossamer-cleanup</bash-stdout><bash-stderr></bash-stderr>
 
 > DEVELOPER
 
@@ -317,8 +317,8 @@ id: toolu_01BPGXNr3RgRdkvXwNAxXTmo
   remotes/origin/gossamer-handoff
   remotes/origin/main
   remotes/origin/master
-origin	git@github.com:nosman/gossamer-cli.git (fetch)
-origin	git@github.com:nosman/gossamer-cli.git (push)
+origin	<REDACTED_EMAIL>:nosman/gossamer-cli.git (fetch)
+origin	<REDACTED_EMAIL>:nosman/gossamer-cli.git (push)
 ```
 
 > AGENT
@@ -478,7 +478,8 @@ tool_result
 id: toolu_01BZLWEJdxqqzWhwq1tC5rUk
 ```
 Saved working directory and index state WIP on gossamer-cleanup: 751687b TUI should respect the terminal's colors, light and dark mode
-[KSuccessfully rebased and updated refs/heads/gossamer-cleanup.
+
+[KSuccessfully rebased and updated refs/heads/gossamer-cleanup.
 Auto-merging src/commands/status.rs
 On branch gossamer-cleanup
 Changes not staged for commit:
@@ -501,7 +502,7 @@ tool_use Bash
 id: toolu_01V8PvSZgZ8oE96N7uYZto1m
 ```json
 {
-  "command": "grep -n \"start_repo\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "command": "grep -n \"start_repo\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "description": "Check start_repo change is present"
 }
 ```
@@ -531,7 +532,7 @@ tool_use Bash
 id: toolu_01LNZVHZrDoVunawr2gpu3zA
 ```json
 {
-  "command": "grep -rn \"handoff\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ --include=\"*.rs\" -i",
+  "command": "grep -rn \"handoff\" /home/<USER>/p/gossamer-gossamer-cleanup/src/ --include=\"*.rs\" -i",
   "description": "Find all handoff references in source"
 }
 ```
@@ -541,10 +542,10 @@ id: toolu_01LNZVHZrDoVunawr2gpu3zA
 tool_result
 id: toolu_01LNZVHZrDoVunawr2gpu3zA
 ```
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs:105:    Handoff {
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs:149:        Commands::Handoff { session_id, force } => commands::handoff::run(&session_id, force, json)?,
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/handoff.rs:125:                 retry with `gossamer handoff --force {}` to force push",
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/mod.rs:3:pub mod handoff;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs:105:    Handoff {
+/home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs:149:        Commands::Handoff { session_id, force } => commands::handoff::run(&session_id, force, json)?,
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/handoff.rs:125:                 retry with `gossamer handoff --force {}` to force push",
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/mod.rs:3:pub mod handoff;
 ```
 
 > TOOL
@@ -553,7 +554,7 @@ tool_use Read
 id: toolu_01WAH89q4EBGdeE9qWwLa3AP
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs",
   "offset": 95,
   "limit": 60
 }
@@ -606,7 +607,7 @@ tool_use Bash
 id: toolu_01LBJHLbPqYvM43muqpborbp
 ```json
 {
-  "command": "ls /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/",
+  "command": "ls /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/",
   "description": "List command files"
 }
 ```
@@ -645,7 +646,7 @@ tool_use Read
 id: toolu_01PdwemAWnfFVc9y15jTdqwD
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs",
   "limit": 30
 }
 ```
@@ -693,7 +694,7 @@ tool_use Read
 id: toolu_01QsqXLZpHMYfr4xecqGhJtj
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/mod.rs"
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/mod.rs"
 }
 ```
 
@@ -749,7 +750,7 @@ id: toolu_01NbPkmuVjfqvAcEuQMTEMRt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/mod.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/mod.rs",
   "old_string": "pub mod handoff;\n",
   "new_string": ""
 }
@@ -760,7 +761,7 @@ id: toolu_01NbPkmuVjfqvAcEuQMTEMRt
 tool_result
 id: toolu_01NbPkmuVjfqvAcEuQMTEMRt
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/mod.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/mod.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -770,7 +771,7 @@ id: toolu_01396uFqoUpiMJLoaQtJcZzG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs",
   "old_string": "    /// Push a session's checkpoint to the remote so another agent can resume it\n    Handoff {\n        /// Session ID (full UUID or unambiguous prefix)\n        session_id: String,\n        /// Force push even if the remote has diverged\n        #[arg(short, long)]\n        force: bool,\n    },\n",
   "new_string": ""
 }
@@ -781,7 +782,7 @@ id: toolu_01396uFqoUpiMJLoaQtJcZzG
 tool_result
 id: toolu_01396uFqoUpiMJLoaQtJcZzG
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -791,7 +792,7 @@ id: toolu_016xeLh5tN8pDA2khBmQ6MjR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs",
   "old_string": "        Commands::Handoff { session_id, force } => commands::handoff::run(&session_id, force, json)?,\n",
   "new_string": ""
 }
@@ -802,7 +803,7 @@ id: toolu_016xeLh5tN8pDA2khBmQ6MjR
 tool_result
 id: toolu_016xeLh5tN8pDA2khBmQ6MjR
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/main.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -811,7 +812,7 @@ tool_use Bash
 id: toolu_012Jx5Qm9AEqhFEdCgaQZupY
 ```json
 {
-  "command": "rm /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/handoff.rs",
+  "command": "rm /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/handoff.rs",
   "description": "Delete handoff command file"
 }
 ```
@@ -858,7 +859,7 @@ tool_use Bash
 id: toolu_01VPWgnn4wwShQGRQmArqvq9
 ```json
 {
-  "command": "grep -n \"author\\|user_name\\|author_name\\|user\\b\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs | head -40",
+  "command": "grep -n \"author\\|user_name\\|author_name\\|user\\b\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs | head -40",
   "description": "Check for author/user display in show.rs"
 }
 ```
@@ -900,7 +901,7 @@ tool_use Bash
 id: toolu_01TsAcYbDvAx4JCZuxmSGmxA
 ```json
 {
-  "command": "grep -n \"author\\|user_name\\|gitEmail\\|gitUserName\\|user\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs | head -40",
+  "command": "grep -n \"author\\|user_name\\|gitEmail\\|gitUserName\\|user\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs | head -40",
   "description": "Check for user fields in show.rs"
 }
 ```
@@ -942,7 +943,7 @@ tool_use Read
 id: toolu_01AbyCxHwV4zoaLLRcDbB76f
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 169,
   "limit": 80
 }
@@ -1005,7 +1006,7 @@ tool_use Bash
 id: toolu_01RAxoSjTbZX4B2DxzmgHChC
 ```json
 {
-  "command": "grep -n \"checkpoints\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs",
+  "command": "grep -n \"checkpoints\" /home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs",
   "description": "Check checkpoints table in schema"
 }
 ```
@@ -1029,7 +1030,7 @@ tool_use Bash
 id: toolu_01XyBopRuFWFPLEHv8nLGpao
 ```json
 {
-  "command": "grep -rn \"checkpoints\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ --include=\"*.rs\" | grep -v \"entire/checkpoints\\|checkpoints/v1\\|show.rs\"",
+  "command": "grep -rn \"checkpoints\" /home/<USER>/p/gossamer-gossamer-cleanup/src/ --include=\"*.rs\" | grep -v \"entire/checkpoints\\|checkpoints/v1\\|show.rs\"",
   "description": "Find where checkpoints table is written to"
 }
 ```
@@ -1039,20 +1040,20 @@ id: toolu_01XyBopRuFWFPLEHv8nLGpao
 tool_result
 id: toolu_01XyBopRuFWFPLEHv8nLGpao
 ```
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs:28:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN jsonl_path TEXT", []);
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs:29:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN repo_dir TEXT", []);
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs:30:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN os_user TEXT", []);
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs:59:        CREATE TABLE IF NOT EXISTS checkpoints (
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs:70:        CREATE INDEX IF NOT EXISTS checkpoints_session_idx
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/db.rs:71:            ON checkpoints (session_id, last_turn_ts);
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/index.rs:689:        "INSERT INTO checkpoints
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs:106:    // without checkpoints (shadow-only) get NULLs which COALESCE turns into
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs:115:        LEFT JOIN checkpoints c
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs:118:               SELECT MIN(checkpoint_number) FROM checkpoints WHERE session_id = s.session_id
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/session_list.rs:195:                // from a checkpoint branch have no `checkpoints` row, so the
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/init.rs:10:# gossamer: re-index sessions after entireio checkpoints
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs:619:                     LEFT JOIN checkpoints c
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs:622:                            SELECT MIN(checkpoint_number) FROM checkpoints
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs:28:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN jsonl_path TEXT", []);
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs:29:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN repo_dir TEXT", []);
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs:30:    let _ = conn.execute("ALTER TABLE checkpoints ADD COLUMN os_user TEXT", []);
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs:59:        CREATE TABLE IF NOT EXISTS checkpoints (
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs:70:        CREATE INDEX IF NOT EXISTS checkpoints_session_idx
+/home/<USER>/p/gossamer-gossamer-cleanup/src/db.rs:71:            ON checkpoints (session_id, last_turn_ts);
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/index.rs:689:        "INSERT INTO checkpoints
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs:106:    // without checkpoints (shadow-only) get NULLs which COALESCE turns into
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs:115:        LEFT JOIN checkpoints c
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs:118:               SELECT MIN(checkpoint_number) FROM checkpoints WHERE session_id = s.session_id
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/session_list.rs:195:                // from a checkpoint branch have no `checkpoints` row, so the
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/init.rs:10:# gossamer: re-index sessions after entireio checkpoints
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs:619:                     LEFT JOIN checkpoints c
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs:622:                            SELECT MIN(checkpoint_number) FROM checkpoints
 ```
 
 > TOOL
@@ -1061,7 +1062,7 @@ tool_use Read
 id: toolu_01D1zw9VkRk56rqQoo2JEkUe
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/index.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/index.rs",
   "offset": 680,
   "limit": 50
 }
@@ -1130,7 +1131,7 @@ tool_use Bash
 id: toolu_01KEQVezXFns8DWj6TZQ2Lip
 ```json
 {
-  "command": "grep -n \"author\\|os_user\\|git log\\|commit\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/index.rs | head -50",
+  "command": "grep -n \"author\\|os_user\\|git log\\|commit\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/index.rs | head -50",
   "description": "Find where author info is sourced in index.rs"
 }
 ```
@@ -1173,7 +1174,7 @@ tool_use Read
 id: toolu_012bgJmUSadjcMuu3RXCPVGS
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 60,
   "limit": 60
 }
@@ -1240,7 +1241,7 @@ tool_use Read
 id: toolu_01WPAZSTuLX755MCNtDAXcJU
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 113,
   "limit": 30
 }
@@ -1286,7 +1287,7 @@ tool_use Read
 id: toolu_01CqfzbaE6huJ3RRPjUvWhrH
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 975,
   "limit": 30
 }
@@ -1339,7 +1340,7 @@ tool_use Read
 id: toolu_015Q6UMFcgHa7Qkb54XEcCFi
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 1020,
   "limit": 40
 }
@@ -1403,7 +1404,7 @@ id: toolu_014q2tp3Z7U2fwQRfne1R3Gq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "old_string": "    // Attribute each user message to the author of the checkpoint commit that\n    // first captured it. Falls back to a plain \"user\" label when the session\n    // has no checkpoint rows (shadow-branch-only sessions).\n    let authors = fetch_authors(uuid);\n    if !authors.is_empty() {\n        for card in cards.iter_mut() {\n            if let Card::UserMsg { ts, author, .. } = card {\n                *author = attribute(&authors, ts);\n            }\n        }\n    }\n\n    // Extract branch and cwd from the Header before cards are consumed by pager.\n    let session_branch = cards.iter().find_map(|c| {\n        if let Card::Header { branch, .. } = c { Some(branch.clone()) } else { None }\n    }).unwrap_or_default();\n    let session_cwd = cards.iter().find_map(|c| {\n        if let Card::Header { cwd, .. } = c { Some(cwd.clone()) } else { None }\n    }).unwrap_or_default();",
   "new_string": "    // Extract branch and cwd from the Header before cards are consumed by pager.\n    let session_branch = cards.iter().find_map(|c| {\n        if let Card::Header { branch, .. } = c { Some(branch.clone()) } else { None }\n    }).unwrap_or_default();\n    let session_cwd = cards.iter().find_map(|c| {\n        if let Card::Header { cwd, .. } = c { Some(cwd.clone()) } else { None }\n    }).unwrap_or_default();\n\n    // Attribute each user message to […]
 
@@ -1412,7 +1413,7 @@ id: toolu_014q2tp3Z7U2fwQRfne1R3Gq
 tool_result
 id: toolu_014q2tp3Z7U2fwQRfne1R3Gq
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1426,7 +1427,7 @@ id: toolu_012uK5b9VrpTMFWDHHEffVGw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "old_string": "fn find_session(id: &str) -> Option<PathBuf> {",
   "new_string": "fn git_config_user(cwd: &str) -> Option<String> {\n    for key in [\"user.name\", \"user.email\"] {\n        let mut cmd = std::process::Command::new(\"git\");\n        cmd.args([\"config\", key]);\n        if !cwd.is_empty() && std::path::Path::new(cwd).exists() {\n            cmd.current_dir(cwd);\n        }\n        if let Some(s) = cmd.output().ok()\n            .filter(|o| o.status.success())\n            .and_then(|o| String::from_utf8(o.stdout).ok())\n            .map(|s| s.trim().to_string())\n            .filter(|s| !s.is_empty())\n        {\n            return Some(s);\n        }\n    }\n    None\n}\n\nfn find_session(id: &str) -> Option<PathBuf> {"
 }
@@ -1437,7 +1438,7 @@ id: toolu_012uK5b9VrpTMFWDHHEffVGw
 tool_result
 id: toolu_012uK5b9VrpTMFWDHHEffVGw
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1457,8 +1458,8 @@ id: toolu_01AhBkNf1XKRxGeeKbgc3wyQ
 tool_result
 id: toolu_01AhBkNf1XKRxGeeKbgc3wyQ
 ```
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -1479,7 +1480,7 @@ tool_use Bash
 id: toolu_01Pzicbg38JM8E8akw9X7P5w
 ```json
 {
-  "command": "cat /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs",
+  "command": "cat /home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs",
   "description": "Read the theme module"
 }
 ```
@@ -1533,7 +1534,7 @@ tool_use Bash
 id: toolu_01D4EZzWLSeZVaT9n65Bah2C
 ```json
 {
-  "command": "grep -n \"sel_bg\\|text_dim\\|text_faint\\|with_bg\\|print_row\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs | head -40",
+  "command": "grep -n \"sel_bg\\|text_dim\\|text_faint\\|with_bg\\|print_row\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs | head -40",
   "description": "Find selection rendering in status.rs"
 }
 ```
@@ -1570,7 +1571,7 @@ tool_use Bash
 id: toolu_017EdarUkWhABFYSmMVtbjLk
 ```json
 {
-  "command": "grep -rn \"with_bg\\|print_row\\|sel_bg\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/ --include=\"*.rs\"",
+  "command": "grep -rn \"with_bg\\|print_row\\|sel_bg\" /home/<USER>/p/gossamer-gossamer-cleanup/src/ --include=\"*.rs\"",
   "description": "Find all places with selection background rendering"
 }
 ```
@@ -1580,30 +1581,30 @@ id: toolu_017EdarUkWhABFYSmMVtbjLk
 tool_result
 id: toolu_017EdarUkWhABFYSmMVtbjLk
 ```
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs:38:    pub sel_bg: &'static str,
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs:96:        sel_bg:         BG_BRIGHT_BLACK,  // dark gray bg — subtle selection on dark terminal
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs:128:        sel_bg:         BG_BRIGHT_BLACK,  // dark gray bg — clearly visible on light terminal
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs:807:fn with_bg(s: &str, bg: &str) -> String {
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs:1283:    let sel_bg = crate::theme::get().sel_bg;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs:1299:                let line_bg = with_bg(line, sel_bg);
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs:1302:                write!(buf, "\x1b[{sel_bg}m{line_bg}{}\x1b[0m", " ".repeat(pad))?;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs:310:    let sel_bg = t.sel_bg;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs:413:            let colored = with_bg(&line, sel_bg);
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs:416:            write!(stdout, "\x1b[{sel_bg}m{colored}{}\x1b[0m", " ".repeat(pad))?;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs:467:fn with_bg(s: &str, bg: &str) -> String {
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs:377:    let sel_bg = t.sel_bg;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs:401:        print_row(stdout, &line, is_sel, sel_bg, w, row as u16)?;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs:433:    let sel_bg = t.sel_bg;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs:552:            print_row(stdout, &line, i == sel, sel_bg, w, row as u16)?;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs:571:fn print_row(stdout: &mut impl Write, line: &str, selected: bool, bg: &str, w: usize, row: u16) -> io::Result<()> {
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs:574:        let colored = with_bg(line, bg);
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs:745:                            write!(stdout, "\x1b[{sb};38;5;{col}m {name} \x1b[0m", sb = t.sel_bg).ok();
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs:910:fn with_bg(s: &str, bg: &str) -> String {
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs:453:    let sel_bg = t.sel_bg;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs:531:            render_row(&mut buf, &line, selected, sel_bg, screen_row, w)?;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs:558:                    render_row(&mut buf, &exc_line, selected, sel_bg, screen_row, w)?;
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs:593:        let colored = with_bg(line, bg);
-/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs:755:fn with_bg(s: &str, bg: &str) -> String {
+/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs:38:    pub sel_bg: &'static str,
+/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs:96:        sel_bg:         BG_BRIGHT_BLACK,  // dark gray bg — subtle selection on dark terminal
+/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs:128:        sel_bg:         BG_BRIGHT_BLACK,  // dark gray bg — clearly visible on light terminal
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs:807:fn with_bg(s: &str, bg: &str) -> String {
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs:1283:    let sel_bg = crate::theme::get().sel_bg;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs:1299:                let line_bg = with_bg(line, sel_bg);
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs:1302:                write!(buf, "\x1b[{sel_bg}m{line_bg}{}\x1b[0m", " ".repeat(pad))?;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs:310:    let sel_bg = t.sel_bg;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs:413:            let colored = with_bg(&line, sel_bg);
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs:416:            write!(stdout, "\x1b[{sel_bg}m{colored}{}\x1b[0m", " ".repeat(pad))?;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs:467:fn with_bg(s: &str, bg: &str) -> String {
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs:377:    let sel_bg = t.sel_bg;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs:401:        print_row(stdout, &line, is_sel, sel_bg, w, row as u16)?;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs:433:    let sel_bg = t.sel_bg;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs:552:            print_row(stdout, &line, i == sel, sel_bg, w, row as u16)?;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs:571:fn print_row(stdout: &mut impl Write, line: &str, selected: bool, bg: &str, w: usize, row: u16) -> io::Result<()> {
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs:574:        let colored = with_bg(line, bg);
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs:745:                            write!(stdout, "\x1b[{sb};38;5;{col}m {name} \x1b[0m", sb = t.sel_bg).ok();
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs:910:fn with_bg(s: &str, bg: &str) -> String {
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs:453:    let sel_bg = t.sel_bg;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs:531:            render_row(&mut buf, &line, selected, sel_bg, screen_row, w)?;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs:558:                    render_row(&mut buf, &exc_line, selected, sel_bg, screen_row, w)?;
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs:593:        let colored = with_bg(line, bg);
+/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs:755:fn with_bg(s: &str, bg: &str) -> String {
 ```
 
 > AGENT
@@ -1616,7 +1617,7 @@ tool_use Read
 id: toolu_01XpeMtrikoEVcumChDPWDFa
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "offset": 907,
   "limit": 10
 }
@@ -1645,7 +1646,7 @@ tool_use Read
 id: toolu_014q3MEQuEi6YHvN72mcZFpx
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
   "offset": 463,
   "limit": 10
 }
@@ -1674,7 +1675,7 @@ tool_use Read
 id: toolu_01DUjQpjiFtgncxskFcoPKgN
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs",
   "offset": 751,
   "limit": 10
 }
@@ -1703,7 +1704,7 @@ tool_use Read
 id: toolu_01M7SQg7urkTpiZRBKx5RcPp
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 803,
   "limit": 10
 }
@@ -1732,7 +1733,7 @@ tool_use Read
 id: toolu_019kVapgcvW9cyjUiPS8VnLv
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 803,
   "limit": 60
 }
@@ -1787,7 +1788,7 @@ tool_use Read
 id: toolu_01UpaG8wJ6qavTAAEhEWudsP
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 863,
   "limit": 30
 }
@@ -1844,7 +1845,7 @@ id: toolu_01J9ADLh7irsxWzTsxNpN5ez
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs",
   "old_string": "    /// Row selection background (\"48;5;N\" or base-16 bg code)\n    pub sel_bg: &'static str,",
   "new_string": "    /// Row selection background (\"48;5;N\" or base-16 bg code)\n    pub sel_bg: &'static str,\n    /// Dim text color when rendered on top of sel_bg (replaces text_dim/text_faint so it stays readable)\n    pub sel_text_dim: &'static str,"
 }
@@ -1855,7 +1856,7 @@ id: toolu_01J9ADLh7irsxWzTsxNpN5ez
 tool_result
 id: toolu_01J9ADLh7irsxWzTsxNpN5ez
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1865,7 +1866,7 @@ id: toolu_01NrCpWEtxVLHQLzNFmK9Dey
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs",
   "old_string": "        sel_bg:         BG_BRIGHT_BLACK,  // dark gray bg — subtle selection on dark terminal\n        text_dim:       BRIGHT_BLACK,     // gray — metadata, separators",
   "new_string": "        sel_bg:         BG_BRIGHT_BLACK,  // dark gray bg — subtle selection on dark terminal\n        sel_text_dim:   WHITE,            // color-7 — dim-but-readable on dark gray sel bg\n        text_dim:       BRIGHT_BLACK,     // gray — metadata, separators"
 }
@@ -1876,7 +1877,7 @@ id: toolu_01NrCpWEtxVLHQLzNFmK9Dey
 tool_result
 id: toolu_01NrCpWEtxVLHQLzNFmK9Dey
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1886,7 +1887,7 @@ id: toolu_01Maa2gwuNSyRsW3RKwxNkPy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs",
   "old_string": "        sel_bg:         BG_BRIGHT_BLACK,  // dark gray bg — clearly visible on light terminal\n        text_dim:       BRIGHT_BLACK,     // dark gray — same, readable on light bg",
   "new_string": "        sel_bg:         BG_BRIGHT_BLACK,  // dark gray bg — clearly visible on light terminal\n        sel_text_dim:   WHITE,            // color-7 — dim-but-readable on dark gray sel bg\n        text_dim:       BRIGHT_BLACK,     // dark gray — same, readable on light bg"
 }
@@ -1897,7 +1898,7 @@ id: toolu_01Maa2gwuNSyRsW3RKwxNkPy
 tool_result
 id: toolu_01Maa2gwuNSyRsW3RKwxNkPy
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1911,7 +1912,7 @@ id: toolu_01P5kkbNF2ERWPdZZYbvNnoV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "old_string": "fn with_bg(s: &str, bg: &str) -> String {\n    let reinsert = format!(\"\\x1b[0m\\x1b[{bg}m\");\n    let body = s.replace(\"\\x1b[0m\", &reinsert);\n    format!(\"\\x1b[{bg}m{body}\")\n}",
   "new_string": "fn with_bg(s: &str, bg: &str) -> String {\n    let t = crate::theme::get();\n    let dim_esc   = format!(\"\\x1b[{}m\", t.text_dim);\n    let faint_esc = format!(\"\\x1b[{}m\", t.text_faint);\n    let sel_dim   = format!(\"\\x1b[{}m\", t.sel_text_dim);\n    let reinsert  = format!(\"\\x1b[0m\\x1b[{bg}m\");\n    let body = s.replace(\"\\x1b[0m\", &reinsert)\n                .replace(&dim_esc,   &sel_dim)\n                .replace(&faint_esc, &sel_dim);\n    format!(\"\\x1b[{bg}m{body}\")\n}"
 }
@@ -1922,7 +1923,7 @@ id: toolu_01P5kkbNF2ERWPdZZYbvNnoV
 tool_result
 id: toolu_01P5kkbNF2ERWPdZZYbvNnoV
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1932,7 +1933,7 @@ id: toolu_01WHp7AYMAipuJNDMuoaVvmj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
   "old_string": "fn with_bg(s: &str, bg: &str) -> String {\n    let reinsert = format!(\"\\x1b[0m\\x1b[{bg}m\");\n    let body = s.replace(\"\\x1b[0m\", &reinsert);\n    format!(\"\\x1b[{bg}m{body}\")\n}",
   "new_string": "fn with_bg(s: &str, bg: &str) -> String {\n    let t = crate::theme::get();\n    let dim_esc   = format!(\"\\x1b[{}m\", t.text_dim);\n    let faint_esc = format!(\"\\x1b[{}m\", t.text_faint);\n    let sel_dim   = format!(\"\\x1b[{}m\", t.sel_text_dim);\n    let reinsert  = format!(\"\\x1b[0m\\x1b[{bg}m\");\n    let body = s.replace(\"\\x1b[0m\", &reinsert)\n                .replace(&dim_esc,   &sel_dim)\n                .replace(&faint_esc, &sel_dim);\n    format!(\"\\x1b[{bg}m{body}\")\n}"
 }
@@ -1943,7 +1944,7 @@ id: toolu_01WHp7AYMAipuJNDMuoaVvmj
 tool_result
 id: toolu_01WHp7AYMAipuJNDMuoaVvmj
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1953,7 +1954,7 @@ id: toolu_011urdEVdJGT5gpBSVRLA1Hy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs",
   "old_string": "fn with_bg(s: &str, bg: &str) -> String {\n    let reinsert = format!(\"\\x1b[0m\\x1b[{bg}m\");\n    format!(\"\\x1b[{bg}m{}\", s.replace(\"\\x1b[0m\", &reinsert))\n}",
   "new_string": "fn with_bg(s: &str, bg: &str) -> String {\n    let t = crate::theme::get();\n    let dim_esc   = format!(\"\\x1b[{}m\", t.text_dim);\n    let faint_esc = format!(\"\\x1b[{}m\", t.text_faint);\n    let sel_dim   = format!(\"\\x1b[{}m\", t.sel_text_dim);\n    let reinsert  = format!(\"\\x1b[0m\\x1b[{bg}m\");\n    let body = s.replace(\"\\x1b[0m\", &reinsert)\n                .replace(&dim_esc,   &sel_dim)\n                .replace(&faint_esc, &sel_dim);\n    format!(\"\\x1b[{bg}m{body}\")\n}"
 }
@@ -1964,7 +1965,7 @@ id: toolu_011urdEVdJGT5gpBSVRLA1Hy
 tool_result
 id: toolu_011urdEVdJGT5gpBSVRLA1Hy
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/search.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1978,7 +1979,7 @@ id: toolu_01AiiLt49aWjN51YJK9mmoQ5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "old_string": "fn rewrite_sgr(params: &str, bg_seq: &str) -> String {\n    if params.is_empty() || params == \"0\" {\n        return format!(\"\\x1b[0m{bg_seq}\");\n    }\n\n    let mut non_bg: Vec<&str> = Vec::new();\n    let mut found_bg = false;\n    let mut segs = params.split(';').peekable();\n\n    while let Some(seg) = segs.next() {\n        match seg {",
   "new_string": "fn rewrite_sgr(params: &str, bg_seq: &str) -> String {\n    let t = crate::theme::get();\n\n    if params.is_empty() || params == \"0\" {\n        return format!(\"\\x1b[0m{bg_seq}\");\n    }\n\n    let mut non_bg: Vec<&str> = Vec::new();\n    let mut found_bg = false;\n    let mut segs = params.split(';').peekable();\n\n    while let Some(seg) = segs.next() {\n        // Upgrade dim/faint foreground so it stays readable on the selection bg.\n        if seg == t.text_dim || seg == t.text_faint {\n            non_bg.push(t.sel_text_dim);\n            continue;\n        }\n        match seg {"
 }
@@ -1989,7 +1990,7 @@ id: toolu_01AiiLt49aWjN51YJK9mmoQ5
 tool_result
 id: toolu_01AiiLt49aWjN51YJK9mmoQ5
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2009,8 +2010,8 @@ id: toolu_01YByV31eXAX7TrV62mdNZRU
 tool_result
 id: toolu_01YByV31eXAX7TrV62mdNZRU
 ```
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -2031,7 +2032,7 @@ tool_use Bash
 id: toolu_01D9XNUBeYjDwpZr4He8ubbY
 ```json
 {
-  "command": "grep -n \"with_bg\\|print_row\\|sel_text_dim\\|dim_esc\\|sel_dim\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "command": "grep -n \"with_bg\\|print_row\\|sel_text_dim\\|dim_esc\\|sel_dim\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "description": "Verify with_bg implementation in status.rs"
 }
 ```
@@ -2058,7 +2059,7 @@ tool_use Bash
 id: toolu_01TRK6yx6ocgVZtKDb8FU8yE
 ```json
 {
-  "command": "grep -n \"text_dim\\|text_faint\\|dm = t\\.\\|{dm}\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs | head -20",
+  "command": "grep -n \"text_dim\\|text_faint\\|dm = t\\.\\|{dm}\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs | head -20",
   "description": "Check how dim colors are emitted in draw functions"
 }
 ```
@@ -2096,7 +2097,7 @@ tool_use Read
 id: toolu_01BRc5m7eYc7saUVNQSHEXA5
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "offset": 495,
   "limit": 70
 }
@@ -2150,7 +2151,7 @@ tool_use Bash
 id: toolu_017Nrp9NPtJH2rrU8wcNjkkA
 ```json
 {
-  "command": "grep -n \"with_bg\\|sel_bg\\|print_row\\|\\x1b\\|\\\\\\\\x1b\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs | head -40",
+  "command": "grep -n \"with_bg\\|sel_bg\\|print_row\\|\\x1b\\|\\\\\\\\x1b\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs | head -40",
   "description": "Check sessions.rs selection rendering"
 }
 ```
@@ -2232,7 +2233,7 @@ tool_use Read
 id: toolu_016nKr3SUbDZLG7UWGcxjcJK
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/sessions.rs",
   "offset": 300,
   "limit": 130
 }
@@ -2248,7 +2249,7 @@ tool_use Read
 id: toolu_01CTao8NNDQs9KHQY7EDdGSS
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "offset": 371,
   "limit": 40
 }
@@ -2330,7 +2331,7 @@ tool_use Read
 id: toolu_01ApNMfd6kY7KMJgTwsYqQL7
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 635,
   "limit": 50
 }
@@ -2383,7 +2384,7 @@ tool_use Read
 id: toolu_01TB4J9A1JWSe9WjrGxsSfTH
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 1280,
   "limit": 35
 }
@@ -2441,7 +2442,7 @@ tool_use Read
 id: toolu_01CTar52ZXY2PQpYFsSVbHSd
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 842,
   "limit": 50
 }
@@ -2501,7 +2502,7 @@ id: toolu_01X6yDrERCQPFTjJX3G1jUrm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "old_string": "    let mut non_bg: Vec<&str> = Vec::new();\n    let mut found_bg = false;\n    let mut segs = params.split(';').peekable();\n\n    while let Some(seg) = segs.next() {\n        // Upgrade dim/faint foreground so it stays readable on the selection bg.\n        if seg == t.text_dim || seg == t.text_faint {\n            non_bg.push(t.sel_text_dim);\n            continue;\n        }\n        match seg {\n            // Standard background colours 40-47 and bright 100-107\n            \"40\"|\"41\"|\"42\"|\"43\"|\"44\"|\"45\"|\"46\"|\"47\"\n            |\"100\"|\"101\"|\"102\"|\"103\"|\"104\"|\"105\"|\"106\"|\"107\" => {\n                found_bg = true;\n            }\n            // 256-colour or true-colour background: 48;5;N or 48;2;R;G;B\n            \"48\" => {\n                found_bg = true;\n                match segs.next().as_deref() {\n                    Some(\"5\") => { segs.next(); }          // skip N\n                    Some(\"2\") => { segs.next(); segs.next(); segs.next(); } // skip R;G;B\n                    _ => {}\n                }\n            }\n            // \\x1b[49m — reset background to default (termimad uses this, not \\x1b[0m)\n            \"49\" => { found_bg = true; }\n            // Reset within a combined sequence — keep it\n            \"0\" => non_bg.push(\"0\"),\n            other => non_bg.push(other),\n        }\n    }\n\n    if !found_bg {\n        return format!(\"\\x1b[{params}m\");\n    }",
   "new_string": "    let mut non_bg: Vec<&str> = Vec::new();\n    let mut found_bg = false;\n    let mut found_dim = false;\n    let mut segs = params.split(';').peekable();\n\n    while let Some(seg) = segs.next() {\n        // Upgrade dim/faint foreground so it stays readable on the selection bg.\n […]
 
@@ -2510,7 +2511,7 @@ id: toolu_01X6yDrERCQPFTjJX3G1jUrm
 tool_result
 id: toolu_01X6yDrERCQPFTjJX3G1jUrm
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2530,8 +2531,8 @@ id: toolu_011rhyFi2nMiapjrDDotYhkp
 tool_result
 id: toolu_011rhyFi2nMiapjrDDotYhkp
 ```
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -2552,7 +2553,7 @@ tool_use Bash
 id: toolu_01A1akq2mMoFbHeQWDcPHc7X
 ```json
 {
-  "command": "grep -n \"ToolRound\\|tool_ok\\|render_tool\\|ToolCall\\|text_dim\\|text_faint\\|38;5\" /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs | head -60",
+  "command": "grep -n \"ToolRound\\|tool_ok\\|render_tool\\|ToolCall\\|text_dim\\|text_faint\\|38;5\" /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs | head -60",
   "description": "Find tool rendering and dim color usage in show.rs"
 }
 ```
@@ -2588,7 +2589,7 @@ tool_use Read
 id: toolu_01FXw9yyxLjgaNkLyBiPsVvB
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 719,
   "limit": 65
 }
@@ -2642,7 +2643,7 @@ tool_use Read
 id: toolu_01Wiv36w97RvCdyWbKm1wsFg
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "offset": 803,
   "limit": 100
 }
@@ -2702,7 +2703,7 @@ id: toolu_01LuEhNxYjJoMqJtFpBZNrVS
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "old_string": "// Apply a selection background to a pre-colored ANSI string.\n// Parses SGR sequences properly so that any explicit background color emitted\n// by termimad (e.g. `\\x1b[48;5;238m` for inline code) is replaced with the\n// selection background rather than overriding it.\nfn with_bg(s: &str, bg: &str) -> String {\n    let bg_seq  = format!(\"\\x1b[{bg}m\");\n    let mut out = bg_seq.clone();\n    let bytes   = s.as_bytes();\n    let mut i   = 0;",
   "new_string": "// Apply a selection background to a pre-colored ANSI string.\n// Parses SGR sequences properly so that any explicit background color emitted\n// by termimad (e.g. `\\x1b[48;5;238m` for inline code) is replaced with the\n// selection background rather than overriding it.\n// Dim/faint foreground colors are upgraded via simple pre-substitution so\n// they remain legible on the selection background.\nfn with_bg(s: &str, bg: &str) -> String {\n    let t = crate::theme::get();\n    let dim_esc   = format!(\"\\x1b[{}m\", t.text_dim);\n    let faint_esc = format!(\"\\x1b[{}m\", t.text_faint);\n    let sel_dim   = format!(\"\\x1b[{}m\", t.sel_text_dim);\n    let s_upd = s.replace(&dim_esc, &sel_dim).replace(&faint_esc, &sel_dim);\n    let s = s_upd.as_str();\n\n    let bg_seq  = format!(\"\\x1b[{bg}m\");\n    let mut out = bg_seq.clone();\n    let bytes   = s.as_bytes();\n    let mut i   = 0;"
 }
@@ -2713,7 +2714,7 @@ id: toolu_01LuEhNxYjJoMqJtFpBZNrVS
 tool_result
 id: toolu_01LuEhNxYjJoMqJtFpBZNrVS
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2727,7 +2728,7 @@ id: toolu_01FET2yyyb7eDCGjJmVP3dgo
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs",
   "old_string": "fn rewrite_sgr(params: &str, bg_seq: &str) -> String {\n    let t = crate::theme::get();\n\n    if params.is_empty() || params == \"0\" {\n        return format!(\"\\x1b[0m{bg_seq}\");\n    }\n\n    let mut non_bg: Vec<&str> = Vec::new();\n    let mut found_bg = false;\n    let mut found_dim = false;\n    let mut segs = params.split(';').peekable();\n\n    while let Some(seg) = segs.next() {\n        // Upgrade dim/faint foreground so it stays readable on the selection bg.\n        if seg == t.text_dim || seg == t.text_faint {\n            non_bg.push(t.sel_text_dim);\n            found_dim = true;\n            continue;\n        }\n        match seg {\n            // Standard background colours 40-47 and bright 100-107\n            \"40\"|\"41\"|\"42\"|\"43\"|\"44\"|\"45\"|\"46\"|\"47\"\n            |\"100\"|\"101\"|\"102\"|\"103\"|\"104\"|\"105\"|\"106\"|\"107\" => {\n                found_bg = true;\n            }\n            // 256-colour or true-colour background: 48;5;N or 48;2;R;G;B\n            \"48\" => {\n                found_bg = true;\n                match segs.next().as_deref() {\n                    Some(\"5\") => { segs.next(); }          // skip N\n                    Some(\"2\") => { segs.next(); segs.next(); segs.next(); } // skip R;G;B\n                    _ => {}\n                }\n            }\n            // \\x1b[49m — reset background to default (termimad uses this, not \\x1b[0m)\n            \"49\" => { found_bg = true; }\n            // Reset within a combined sequence — keep it\n            \"0\" => non_bg.push(\"0\"),\n            other => non_bg.push(other),\n        }\n    }\n\n    if !found_bg {\n        // If a dim colour was substituted, emit the modified sequence without\n        // reinserting a […]
 
 > TOOL
@@ -2735,7 +2736,7 @@ id: toolu_01FET2yyyb7eDCGjJmVP3dgo
 tool_result
 id: toolu_01FET2yyyb7eDCGjJmVP3dgo
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/commands/show.rs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2755,8 +2756,8 @@ id: toolu_01QvnCcWy2dtSSmg59UUcQLN
 tool_result
 id: toolu_01QvnCcWy2dtSSmg59UUcQLN
 ```
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -2789,7 +2790,7 @@ tool_use Read
 id: toolu_01PZi8Jktgt4WeZ7bhnKzTfK
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/commands/status.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/commands/status.rs",
   "offset": 907,
   "limit": 20
 }
@@ -2828,7 +2829,7 @@ tool_use Read
 id: toolu_015kFiCHvjbyBa4GEGXcpj9V
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs",
   "offset": 35,
   "limit": 10
 }
@@ -2861,7 +2862,7 @@ tool_use Read
 id: toolu_011ZGmg9zXhcCwAHveSJiR1v
 ```json
 {
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs",
   "offset": 90,
   "limit": 15
 }
@@ -2896,7 +2897,7 @@ id: toolu_01Qh9rKuK5W8G3eMjBoKHePX
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs",
+  "file_path": "/home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs",
   "old_string": "        sel_text_dim:   WHITE,            // color-7 — dim-but-readable on dark gray sel bg",
   "new_string": "        sel_text_dim:   BRIGHT_WHITE,     // bright white — maximally readable on dark gray sel bg"
 }
@@ -2907,7 +2908,7 @@ id: toolu_01Qh9rKuK5W8G3eMjBoKHePX
 tool_result
 id: toolu_01Qh9rKuK5W8G3eMjBoKHePX
 ```
-The file /Users/stephanostsoucas/p/gossamer-gossamer-cleanup/src/theme.rs has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/p/gossamer-gossamer-cleanup/src/theme.rs has been updated. All occurrences were successfully replaced. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2927,8 +2928,8 @@ id: toolu_017LnVz5J8iZbSU8gnYYL81t
 tool_result
 id: toolu_017LnVz5J8iZbSU8gnYYL81t
 ```
-   Replacing /Users/stephanostsoucas/.cargo/bin/gossamer
-    Replaced package `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer)` with `gossamer v0.1.0 (/Users/stephanostsoucas/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
+   Replacing /home/<USER>/.cargo/bin/gossamer
+    Replaced package `gossamer v0.1.0 (/home/<USER>/p/gossamer)` with `gossamer v0.1.0 (/home/<USER>/p/gossamer-gossamer-cleanup)` (executable `gossamer`)
 ```
 
 > AGENT
@@ -2951,9 +2952,9 @@ id: toolu_01B5Zzxz4PGWfWU7LELB9WdR
 tool_result
 id: toolu_01B5Zzxz4PGWfWU7LELB9WdR
 ```
-git-distiller|/Users/stephanostsoucas/git-activity-analyzer|git@github.com:nosman/git-distiller.git
-gossamer|/Users/stephanostsoucas/gossamer|git@github.com:nosman/gossamer.git
-gossamer-cli|/Users/stephanostsoucas/p/gossamer|git@github.com:nosman/gossamer-cli.git
+git-distiller|/home/<USER>/git-activity-analyzer|<REDACTED_EMAIL>:nosman/git-distiller.git
+gossamer|/home/<USER>/gossamer|<REDACTED_EMAIL>:nosman/gossamer.git
+gossamer-cli|/home/<USER>/p/gossamer|<REDACTED_EMAIL>:nosman/gossamer-cli.git
 ```
 
 > AGENT

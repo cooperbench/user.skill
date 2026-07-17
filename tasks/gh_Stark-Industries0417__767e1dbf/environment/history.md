@@ -152,7 +152,7 @@ tool_use Read
 id: toolu_01CXxkPfSby5NHcL6C3JEzSa
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go"
 }
 ```
 
@@ -319,7 +319,7 @@ id: toolu_01SUT35cDCTvd67iw3mA74Ud
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go",
   "old_string": "\t// LastInteractionTime is updated on every hook invocation.\n\t// Used for stale session detection in \"entire sessions fix\".\n\tLastInteractionTime *time.Time `json:\"last_interaction_time,omitempty\"`",
   "new_string": "\t// LastInteractionTime is updated on every hook invocation.\n\t// Used for stale session detection in \"entire sessions fix\".\n\tLastInteractionTime *time.Time `json:\"last_interaction_time,omitempty\"`\n\n\t// Deprecated: LastInteractionAt is the old name for LastInteractionTime.\n\t// Kept for backward compatibility with existing state files.\n\t// Use NormalizeAfterLoad() to migrate.\n\tLastInteractionAt *time.Time `json:\"last_interaction_at,omitempty\"`"
 }
@@ -435,7 +435,7 @@ tool_result ERROR
 id: toolu_01669AxK2iBm5UaQ5GA4Vxdy
 ```
 Exit code 128
-fatal: 'main' is already used by worktree at '/Users/alex/workspace/cli'
+fatal: 'main' is already used by worktree at '/home/<USER>/workspace/cli'
 
 No local changes to save
 ```
@@ -497,7 +497,7 @@ tool_use Read
 id: toolu_01W7UgvdpdFP4NciyDEz7Fho
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go",
   "limit": 60
 }
 ```
@@ -561,7 +561,7 @@ tool_use Read
 id: toolu_01XnGTRyFxr5shY5dVSm6xwP
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status.go"
 }
 ```
 
@@ -631,7 +631,7 @@ tool_use Read
 id: toolu_01CFg4euuM1a56NqHjwVozfW
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go"
 }
 ```
 
@@ -702,7 +702,7 @@ tool_use Read
 id: toolu_014bab4iLTmnMGAWcFuwAaRL
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go"
 }
 ```
 
@@ -764,7 +764,7 @@ tool_use Read
 id: toolu_01T6fSNtbbkE6evH4xHwaHVs
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go"
 }
 ```
 
@@ -825,7 +825,7 @@ tool_use Read
 id: toolu_01GPqs7EWSHFAoRkXrAoXBbS
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_hooks.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_hooks.go"
 }
 ```
 
@@ -889,7 +889,7 @@ tool_use Read
 id: toolu_01M1KiDML9NsMJYnf4o3y1nh
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go"
 }
 ```
 
@@ -955,7 +955,7 @@ tool_use Read
 id: toolu_01Rjxedhc4pykhwZZuLH8TtR
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go"
 }
 ```
 
@@ -1010,7 +1010,7 @@ tool_use Read
 id: toolu_01SnJKM5hxr1ior3WczMrDbP
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go"
 }
 ```
 
@@ -1078,7 +1078,7 @@ tool_use Read
 id: toolu_01Rp4s8ooQ7GGW1yiELqXmn5
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/last_interaction_test.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/last_interaction_test.go"
 }
 ```
 
@@ -1164,7 +1164,7 @@ id: toolu_017RaGsHGLWZ2wpkGK6x7frZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go",
   "old_string": "\t// LastInteractionAt is the last time a user prompt was submitted for this session.\n\tLastInteractionAt *time.Time `json:\"last_interaction_at,omitempty\"`",
   "new_string": "\t// LastInteractionTime is updated on every hook invocation.\n\t// Used for stale session detection in \"entire sessions fix\".\n\tLastInteractionTime *time.Time `json:\"last_interaction_time,omitempty\"`"
 }
@@ -1177,7 +1177,7 @@ id: toolu_016b339uYvTepd1xibDZyPD1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status.go",
   "old_string": "\t\t// Show \"active X ago\" when LastInteractionAt differs meaningfully from StartedAt\n\t\t\tactiveStr := \"\"\n\t\t\tif st.LastInteractionAt != nil && st.LastInteractionAt.Sub(st.StartedAt) > time.Minute {\n\t\t\t\tactiveStr = \", active \" + timeAgo(*st.LastInteractionAt)\n\t\t\t}",
   "new_string": "\t\t// Show \"active X ago\" when LastInteractionTime differs meaningfully from StartedAt\n\t\t\tactiveStr := \"\"\n\t\t\tif st.LastInteractionTime != nil && st.LastInteractionTime.Sub(st.StartedAt) > time.Minute {\n\t\t\t\tactiveStr = \", active \" + timeAgo(*st.LastInteractionTime)\n\t\t\t}"
 }
@@ -1190,7 +1190,7 @@ id: toolu_01G4Twz9c3LwNJoVpU2YWtys
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
   "old_string": "\t\tLastInteractionAt: &recentInteraction,",
   "new_string": "\t\tLastInteractionTime: &recentInteraction,"
 }
@@ -1201,7 +1201,7 @@ id: toolu_01G4Twz9c3LwNJoVpU2YWtys
 tool_result
 id: toolu_017RaGsHGLWZ2wpkGK6x7frZ
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go has been updated successfully.
 ```
 
 > TOOL
@@ -1209,7 +1209,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go 
 tool_result
 id: toolu_016b339uYvTepd1xibDZyPD1
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status.go has been updated successfully.
 ```
 
 > TOOL
@@ -1217,7 +1217,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status.go has bee
 tool_result
 id: toolu_01G4Twz9c3LwNJoVpU2YWtys
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -1227,7 +1227,7 @@ id: toolu_01D1knBPKj1mXAWvtPyWE5CV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
   "old_string": "\t// Should show \"active X ago\" for session with LastInteractionAt that differs from StartedAt\n\tif !strings.Contains(output, \"active 5m ago\") {\n\t\tt.Errorf(\"Expected 'active 5m ago' for session with LastInteractionAt, got: %s\", output)\n\t}\n\n\t// Session started 15m ago with no LastInteractionAt should NOT show \"active\" text\n\t// Find the Cursor session line and verify no \"active\" in it",
   "new_string": "\t// Should show \"active X ago\" for session with LastInteractionTime that differs from StartedAt\n\tif !strings.Contains(output, \"active 5m ago\") {\n\t\tt.Errorf(\"Expected 'active 5m ago' for session with LastInteractionTime, got: %s\", output)\n\t}\n\n\t// Session started 15m ago with no LastInteractionTime should NOT show \"active\" text\n\t// Find the Cursor session line and verify no \"active\" in it"
 }
@@ -1238,7 +1238,7 @@ id: toolu_01D1knBPKj1mXAWvtPyWE5CV
 tool_result
 id: toolu_01D1knBPKj1mXAWvtPyWE5CV
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -1248,7 +1248,7 @@ id: toolu_01GNrok2UWWo7nyq6xuou6v7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
   "old_string": "\t// LastInteractionAt is only 30 seconds after StartedAt — should be omitted",
   "new_string": "\t// LastInteractionTime is only 30 seconds after StartedAt — should be omitted"
 }
@@ -1259,7 +1259,7 @@ id: toolu_01GNrok2UWWo7nyq6xuou6v7
 tool_result
 id: toolu_01GNrok2UWWo7nyq6xuou6v7
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -1269,7 +1269,7 @@ id: toolu_012jDbxnVMByWnAPcQZP673W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
   "old_string": "\t\tLastInteractionAt: &lastInteraction,",
   "new_string": "\t\tLastInteractionTime: &lastInteraction,"
 }
@@ -1280,7 +1280,7 @@ id: toolu_012jDbxnVMByWnAPcQZP673W
 tool_result
 id: toolu_012jDbxnVMByWnAPcQZP673W
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -1290,7 +1290,7 @@ id: toolu_01HCXxhf4bGSEvX8TgT2fQWE
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
   "old_string": "\tif strings.Contains(output, \"active\") {\n\t\tt.Errorf(\"Expected no 'active' when LastInteractionAt is close to StartedAt, got: %s\", output)\n\t}",
   "new_string": "\tif strings.Contains(output, \"active\") {\n\t\tt.Errorf(\"Expected no 'active' when LastInteractionTime is close to StartedAt, got: %s\", output)\n\t}"
 }
@@ -1301,7 +1301,7 @@ id: toolu_01HCXxhf4bGSEvX8TgT2fQWE
 tool_result
 id: toolu_01HCXxhf4bGSEvX8TgT2fQWE
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -1315,7 +1315,7 @@ id: toolu_01VqppFZ5nCp39JXqwZ7emWs
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go",
   "old_string": "LastInteractionAt",
   "new_string": "LastInteractionTime"
 }
@@ -1326,7 +1326,7 @@ id: toolu_01VqppFZ5nCp39JXqwZ7emWs
 tool_result
 id: toolu_01VqppFZ5nCp39JXqwZ7emWs
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
 ```
 
 > TOOL
@@ -1336,7 +1336,7 @@ id: toolu_01ReaYUAGff5quu81ET599Pq
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go",
   "old_string": "last_interaction_at",
   "new_string": "last_interaction_time"
 }
@@ -1347,7 +1347,7 @@ id: toolu_01ReaYUAGff5quu81ET599Pq
 tool_result
 id: toolu_01ReaYUAGff5quu81ET599Pq
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go has been updated. All occurrences of 'last_interaction_at' were successfully replaced with 'last_interaction_time'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go has been updated. All occurrences of 'last_interaction_at' were successfully replaced with 'last_interaction_time'.
 ```
 
 > TOOL
@@ -1357,7 +1357,7 @@ id: toolu_01EL3z38513GoMoUAWS562DS
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go",
   "old_string": "Last user prompt submit time",
   "new_string": "Updated on every hook invocation"
 }
@@ -1368,7 +1368,7 @@ id: toolu_01EL3z38513GoMoUAWS562DS
 tool_result
 id: toolu_01EL3z38513GoMoUAWS562DS
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go has been updated. All occurrences of 'Last user prompt submit time' were successfully replaced with 'Updated on every hook invocation'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go has been updated. All occurrences of 'Last user prompt submit time' were successfully replaced with 'Updated on every hook invocation'.
 ```
 
 > AGENT
@@ -1382,7 +1382,7 @@ id: toolu_015Kk88UydvWosHCEzTUFn4S
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go",
   "old_string": "LastInteractionAt",
   "new_string": "LastInteractionTime"
 }
@@ -1393,7 +1393,7 @@ id: toolu_015Kk88UydvWosHCEzTUFn4S
 tool_result
 id: toolu_015Kk88UydvWosHCEzTUFn4S
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
 ```
 
 > TOOL
@@ -1403,7 +1403,7 @@ id: toolu_01YUKvhJWoj7jt7Eg1EscrpJ
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_hooks.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_hooks.go",
   "old_string": "LastInteractionAt",
   "new_string": "LastInteractionTime"
 }
@@ -1414,7 +1414,7 @@ id: toolu_01YUKvhJWoj7jt7Eg1EscrpJ
 tool_result
 id: toolu_01YUKvhJWoj7jt7Eg1EscrpJ
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_hooks.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_hooks.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
 ```
 
 > TOOL
@@ -1424,7 +1424,7 @@ id: toolu_01UQv4Fju133rWVVUYdkYEmC
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go",
   "old_string": "LastInteractionAt",
   "new_string": "LastInteractionTime"
 }
@@ -1435,7 +1435,7 @@ id: toolu_01UQv4Fju133rWVVUYdkYEmC
 tool_result
 id: toolu_01UQv4Fju133rWVVUYdkYEmC
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
 ```
 
 > TOOL
@@ -1445,7 +1445,7 @@ id: toolu_01R63NTnjj2ow9MqkqqruAuX
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go",
   "old_string": "LastInteractionAt",
   "new_string": "LastInteractionTime"
 }
@@ -1456,7 +1456,7 @@ id: toolu_01R63NTnjj2ow9MqkqqruAuX
 tool_result
 id: toolu_01R63NTnjj2ow9MqkqqruAuX
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
 ```
 
 > TOOL
@@ -1466,7 +1466,7 @@ id: toolu_01FxBPATwdnvnZdDtJu7LjUM
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go",
   "old_string": "LastInteractionAt",
   "new_string": "LastInteractionTime"
 }
@@ -1477,7 +1477,7 @@ id: toolu_01FxBPATwdnvnZdDtJu7LjUM
 tool_result
 id: toolu_01FxBPATwdnvnZdDtJu7LjUM
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
 ```
 
 > TOOL
@@ -1487,7 +1487,7 @@ id: toolu_01PN7FKKpQ8yNwffFwkDGCFr
 ```json
 {
   "replace_all": true,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/last_interaction_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/last_interaction_test.go",
   "old_string": "LastInteractionAt",
   "new_string": "LastInteractionTime"
 }
@@ -1498,7 +1498,7 @@ id: toolu_01PN7FKKpQ8yNwffFwkDGCFr
 tool_result
 id: toolu_01PN7FKKpQ8yNwffFwkDGCFr
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/last_interaction_test.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/last_interaction_test.go has been updated. All occurrences of 'LastInteractionAt' were successfully replaced with 'LastInteractionTime'.
 ```
 
 > AGENT
@@ -1512,7 +1512,7 @@ id: toolu_01TXnwJzP3SJHJFx5Pepw6Us
 ```json
 {
   "pattern": "LastInteractionAt",
-  "path": "/Users/alex/workspace/cli/.worktrees/2",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2",
   "output_mode": "content"
 }
 ```
@@ -1532,7 +1532,7 @@ id: toolu_01DxHy7aVPzQTipd7uzfqA52
 ```json
 {
   "pattern": "last_interaction_at",
-  "path": "/Users/alex/workspace/cli/.worktrees/2",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2",
   "output_mode": "content"
 }
 ```
@@ -1556,7 +1556,7 @@ id: toolu_01H5Qz2g9ZRBcM4FV1VnjtwY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go",
   "old_string": "Session without LastInteractionAt should not show 'active'",
   "new_string": "Session without LastInteractionTime should not show 'active'"
 }
@@ -1567,7 +1567,7 @@ id: toolu_01H5Qz2g9ZRBcM4FV1VnjtwY
 tool_result
 id: toolu_01H5Qz2g9ZRBcM4FV1VnjtwY
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/status_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -1581,7 +1581,7 @@ id: toolu_01JwP3ZnR5ZR1MU7bzDj7RY2
 ```json
 {
   "pattern": "InteractionAt",
-  "path": "/Users/alex/workspace/cli/.worktrees/2",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2",
   "output_mode": "content"
 }
 ```
@@ -1605,7 +1605,7 @@ id: toolu_0156Vc7PiBpU26Mj8ZFoDoWw
 ```json
 {
   "pattern": "GetSessionState",
-  "path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1632,7 +1632,7 @@ id: toolu_01PiKtz5FzBgVcjGbX61B2mK
 ```json
 {
   "pattern": "func.*GetSessionState\"",
-  "path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/hooks.go",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/hooks.go",
   "output_mode": "content"
 }
 ```
@@ -1652,7 +1652,7 @@ id: toolu_01TFW46qUxXhcK163enykQg9
 ```json
 {
   "pattern": "GetSessionState",
-  "path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/hooks.go",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/integration_test/hooks.go",
   "output_mode": "content",
   "context": 5
 }
@@ -1867,7 +1867,7 @@ tool_use Bash
 id: toolu_016WuB7i2j7ByLCowm16ntPU
 ```json
 {
-  "command": "git add cmd/entire/cli/integration_test/last_interaction_test.go cmd/entire/cli/session/state.go cmd/entire/cli/status.go cmd/entire/cli/status_test.go cmd/entire/cli/strategy/auto_commit.go cmd/entire/cli/strategy/manual_commit.go cmd/entire/cli/strategy/manual_commit_hooks.go cmd/entire/cli/strategy/manual_commit_session.go cmd/entire/cli/strategy/manual_commit_types.go cmd/entire/cli/strategy/session_state_test.go && git commit -m \"$(cat <<'EOF'\nRename LastInteractionAt to LastInteractionTime\n\nRename the session state field and JSON tag from last_interaction_at to\nlast_interaction_time for consistency with the type-consolidation branch.\nSince the original field was just merged, no backward compat migration\nis needed.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add cmd/entire/cli/integration_test/last_interaction_test.go cmd/entire/cli/session/state.go cmd/entire/cli/status.go cmd/entire/cli/status_test.go cmd/entire/cli/strategy/auto_commit.go cmd/entire/cli/strategy/manual_commit.go cmd/entire/cli/strategy/manual_commit_hooks.go cmd/entire/cli/strategy/manual_commit_session.go cmd/entire/cli/strategy/manual_commit_types.go cmd/entire/cli/strategy/session_state_test.go && git commit -m \"$(cat <<'EOF'\nRename LastInteractionAt to LastInteractionTime\n\nRename the session state field and JSON tag from last_interaction_at to\nlast_interaction_time for consistency with the type-consolidation branch.\nSince the original field was just merged, no backward compat migration\nis needed.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit changes"
 }
 ```
@@ -2096,7 +2096,7 @@ tool_use Read
 id: toolu_012h23fDhRCFmHovxxUWMGHc
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go"
 }
 ```
 
@@ -2160,7 +2160,7 @@ tool_use Read
 id: toolu_01MwEJeZCvzW6XrGVuGVev91
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go"
 }
 ```
 
@@ -2170,7 +2170,7 @@ tool_use Read
 id: toolu_01FatCeWA9GSNnGMYFVxoEJD
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go"
 }
 ```
 
@@ -2283,7 +2283,7 @@ tool_use Read
 id: toolu_01DZd1S2ZnKpbNQGkK4W6LxR
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go"
 }
 ```
 
@@ -2349,7 +2349,7 @@ tool_use Read
 id: toolu_015wC9L7shdS3jxYomYCYakM
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go"
 }
 ```
 
@@ -2406,7 +2406,7 @@ tool_use Read
 id: toolu_01YZKNgw1HLvfobVkDBuNXw3
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go"
 }
 ```
 
@@ -2479,7 +2479,7 @@ id: toolu_01LrW2vV8CiUXfkE5ydKhpD8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go",
   "old_string": "<<<<<<< HEAD\n\t// Phase is the lifecycle stage of this session (see phase.go).\n\t// Empty means idle (backward compat with pre-state-machine files).\n\tPhase Phase `json:\"phase,omitempty\"`\n=======\n\t// LastInteractionTime is updated on every hook invocation.\n\t// Used for stale session detection in \"entire sessions fix\".\n\tLastInteractionTime *time.Time `json:\"last_interaction_time,omitempty\"`\n>>>>>>> origin/alex/ent-221-better-state-tracking-for-sessions\n\n\t// PendingCheckpointID is the checkpoint ID for the current commit cycle.\n\t// Generated once when first needed, reused across all commits in the session.\n\tPendingCheckpointID string `json:\"pending_checkpoint_id,omitempty\"`\n\n\t// LastInteractionTime is updated on every hook invocation.\n\t// Used for stale session detection in \"entire sessions fix\".\n\tLastInteractionTime *time.Time `json:\"last_interaction_time,omitempty\"`",
   "new_string": "\t// Phase is the lifecycle stage of this session (see phase.go).\n\t// Empty means idle (backward compat with pre-state-machine files).\n\tPhase Phase `json:\"phase,omitempty\"`\n\n\t// PendingCheckpointID is the checkpoint ID for the current commit cycle.\n\t// Generated once when first needed, reused across all commits in the session.\n\tPendingCheckpointID string `json:\"pending_checkpoint_id,omitempty\"`\n\n\t// LastInteractionTime is updated on every hook invocation.\n\t// Used for stale session detection in \"entire sessions fix\".\n\tLastInteractionTime *time.Time `json:\"last_interaction_time,omitempty\"`"
 }
@@ -2490,7 +2490,7 @@ id: toolu_01LrW2vV8CiUXfkE5ydKhpD8
 tool_result
 id: toolu_01LrW2vV8CiUXfkE5ydKhpD8
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/session/state.go has been updated successfully.
 ```
 
 > AGENT
@@ -2503,7 +2503,7 @@ tool_use Read
 id: toolu_01RRX7B2grrmkkeY64WfSc8K
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go",
   "offset": 930,
   "limit": 50
 }
@@ -2570,7 +2570,7 @@ tool_use Read
 id: toolu_01TxG3qwVbNLyu8i2pyESKL5
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go",
   "offset": 40,
   "limit": 130
 }
@@ -2650,7 +2650,7 @@ id: toolu_017Qi7jKrernLvqedtDkN4EP
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go",
   "old_string": "<<<<<<< HEAD\n\t\tSessionID:           sessionID,\n\t\tBaseCommit:          baseCommit,\n\t\tStartedAt:           now,\n\t\tLastInteractionTime: &now,\n\t\tStepCount:           0,\n\t\t// CheckpointTranscriptStart defaults to 0 (start from beginning of transcript)\n\t\tFilesTouched:   []string{},\n\t\tAgentType:      agentType,\n\t\tTranscriptPath: transcriptPath,\n\t\tFirstPrompt:    truncatePromptForStorage(userPrompt),\n=======\n\t\tSessionID:                sessionID,\n\t\tBaseCommit:               baseCommit,\n\t\tStartedAt:                now,\n\t\tLastInteractionTime:      &now,\n\t\tCheckpointCount:          0,\n\t\tCondensedTranscriptLines: 0, // Start from beginning of transcript\n\t\tFilesTouched:             []string{},\n\t\tAgentType:                agentType,\n\t\tTranscriptPath:           transcriptPath,\n\t\tFirstPrompt:              truncatePromptForStorage(userPrompt),\n>>>>>>> origin/alex/ent-221-better-state-tracking-for-sessions",
   "new_string": "\t\tSessionID:           sessionID,\n\t\tBaseCommit:          baseCommit,\n\t\tStartedAt:           now,\n\t\tLastInteractionTime: &now,\n\t\tStepCount:           0,\n\t\t// CheckpointTranscriptStart defaults to 0 (start from beginning of transcript)\n\t\tFilesTouched:   []string{},\n\t\tAgentType:      agentType,\n\t\tTranscriptPath: transcriptPath,\n\t\tFirstPrompt:    truncatePromptForStorage(userPrompt),"
 }
@@ -2663,7 +2663,7 @@ id: toolu_01Pkjtuy2vjzpYBMat8wNyt2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go",
   "old_string": "<<<<<<< HEAD\n=======\n// sessionStateToStrategy converts session.State to strategy.SessionState.\nfunc sessionStateToStrategy(state *session.State) *SessionState {\n\tif state == nil {\n\t\treturn nil\n\t}\n\tresult := &SessionState{\n\t\tSessionID:                   state.SessionID,\n\t\tBaseCommit:                  state.BaseCommit,\n\t\tWorktreePath:                state.WorktreePath,\n\t\tWorktreeID:                  state.WorktreeID,\n\t\tStartedAt:                   state.StartedAt,\n\t\tEndedAt:                     state.EndedAt,\n\t\tLastInteractionTime:         state.LastInteractionTime,\n\t\tCheckpointCount:             state.CheckpointCount,\n\t\tCondensedTranscriptLines:    state.CondensedTranscriptLines,\n\t\tUntrackedFilesAtStart:       state.UntrackedFilesAtStart,\n\t\tFilesTouched:                state.FilesTouched,\n\t\tLastCheckpointID:            state.LastCheckpointID,\n\t\tAgentType:                   state.AgentType,\n\t\tTokenUsage:                  state.TokenUsage,\n\t\tTranscriptLinesAtStart:      state.TranscriptLinesAtStart,\n\t\tTranscriptIdentifierAtStart: state.TranscriptIdentifierAtStart,\n\t\tTranscriptPath:              state.TranscriptPath,\n\t\tFirstPrompt:                 state.FirstPrompt,\n\t}\n\t// Convert PromptAttributions\n\tfor _, pa := range state.PromptAttributions {\n\t\tresult.PromptAttributions = append(result.PromptAttributions, PromptAttribution{\n\t\t\tCheckpointNumber:  pa.CheckpointNumber,\n\t\t\tUserLinesAdded:    pa.UserLinesAdded,\n\t\t\tUserLinesRemoved:  pa.UserLinesRemoved,\n\t\t\tAgentLinesAdded:   pa.AgentLinesAdded,\n\t\t\tAgentLinesRemoved: pa.AgentLinesRemoved,\n\t\t\tUserAddedPerFile:  pa.UserAddedPerFile,\n\t\t})\n\t}\n\t// Convert PendingPromptAttribution\n\tif state.PendingPromptAttribution != nil {\n\t\tresult.PendingPromptAttribution = &PromptAttribution{\n\t\t\tCheckpointNumber:  state.PendingPromptAttribution.CheckpointNumber,\n\t\t\tUserLinesAdded:    state.PendingPromptAttribution.UserLinesAdded,\n\t\t\tUserLinesRemoved:  state.PendingPromptAttribution.UserLinesRemoved,\n\t\t\tAgentLinesAdded:   state.PendingPromptAttribution.AgentLinesAdded,\n\t\t\tAgentLinesRemoved: state.PendingPromptAttribution.AgentLinesRemoved,\n\t\t\tUserAddedPerFile:  state.PendingPromptAttribution.UserAddedPerFile,\n\t\t}\n\t}\n\treturn result\n}\n\n// sessionStateFromStrategy converts strategy.SessionState to session.State.\nfunc sessionStateFromStrategy(state *SessionState) *session.State {\n\tif state == nil {\n\t\treturn nil\n\t}\n\tresult := &session.State{\n\t\tSessionID:                   state.SessionID,\n\t\tBaseCommit:                  state.BaseCommit,\n\t\tWorktreePath:                state.WorktreePath,\n\t\tWorktreeID:                  state.WorktreeID,\n\t\tStartedAt:                   state.StartedAt,\n\t\tEndedAt:                     state.EndedAt,\n\t\tLastInteractionTime:         state.LastInteractionTime,\n\t\tCheckpointCount:             state.CheckpointCount,\n\t\tCondensedTranscriptLines:    state.CondensedTranscriptLines,\n\t\tUntrackedFilesAtStart:       state.UntrackedFilesAtStart,\n\t\tFilesTouched:                state.FilesTouched,\n\t\tLastCheckpointID:            state.LastCheckpointID,\n\t\tAgentType:                   state.AgentType,\n\t\tTokenUsage:                  state.TokenUsage,\n\t\tTranscriptLinesAtStart:      state.TranscriptLinesAtStart,\n\t\tTranscriptIdentifierAtStart: state.TranscriptIdentifierAtStart,\n\t\tTranscriptPath:              state.TranscriptPath,\n\t\tFirstPrompt:                 state.FirstPrompt,\n\t}\n\t// Convert PromptAttributions\n\tfor _, pa := range state.PromptAttributions {\n\t\tresult.PromptAttributions = append(result.PromptAttributions, session.PromptAttribution{\n\t\t\tCheckpointNumber:  pa.CheckpointNumber,\n\t\t\tUserLinesAdded:    pa.UserLinesAdded,\n\t\t\tUserLinesRemoved:  pa.UserLinesRemoved,\n\t\t\tAgentLinesAdded:   pa.AgentLinesAdded,\n\t\t\tAgentLinesRemoved: pa.AgentLinesRemoved,\n\t\t\tUserAddedPerFile:  pa.UserAddedPerFile,\n\t\t})\n\t}\n\t// Convert PendingPromptAttribution\n\tif state.PendingPromptAttribution != nil {\n\t\tresult.PendingPromptAttribution = &session.PromptAttribution{\n\t\t\tCheckpointNumber:  state.PendingPromptAttribution.CheckpointNumber,\n\t\t\tUserLinesAdded:    state.PendingPromptAttribution.UserLinesAdded,\n\t\t\tUserLinesRemoved:  state.PendingPromptAttribution.UserLinesRemoved,\n\t\t\tAgentLinesAdded:   state.PendingPromptAttribution.AgentLinesAdded,\n\t\t\tAgentLinesRemoved: state.PendingPromptAttribution.AgentLinesRemoved,\n\t\t\tUserAddedPerFile:  state.PendingPromptAttribution.UserAddedPerFile,\n\t\t}\n\t}\n\treturn result\n}\n\n>>>>>>> origin/alex/ent-221-better-state-tracking-for-sessions",
   "new_string": ""
 }
@@ -2676,7 +2676,7 @@ id: toolu_01UNFAppKYWS75N3kEVqPLWk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go",
   "old_string": "<<<<<<< HEAD\n\t\tStepCount:             0,\n=======\n\t\tCheckpointCount:       0,\n>>>>>>> origin/alex/ent-221-better-state-tracking-for-sessions",
   "new_string": "\t\tStepCount:             0,"
 }
@@ -2689,7 +2689,7 @@ id: toolu_01QMpuaHtrkE9dxpVyaWcxSq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go",
   "old_string": "<<<<<<< HEAD\n// SessionState is an alias for session.State.\n// Previously this was a separate struct with manual conversion functions.\ntype SessionState = session.State\n=======\n// SessionState represents the state of an active session.\ntype SessionState struct {\n\tSessionID                string          `json:\"session_id\"`\n\tBaseCommit               string          `json:\"base_commit\"`\n\tWorktreePath             string          `json:\"worktree_path,omitempty\"` // Absolute path to the worktree root\n\tWorktreeID               string          `json:\"worktree_id,omitempty\"`   // Internal git worktree identifier (empty for main worktree)\n\tStartedAt                time.Time       `json:\"started_at\"`\n\tEndedAt                  *time.Time      `json:\"ended_at,omitempty\"`              // When the session was explicitly closed (nil = active or unclean exit)\n\tLastInteractionTime      *time.Time      `json:\"last_interaction_time,omitempty\"` // Updated on every hook invocation\n\tCheckpointCount          int             `json:\"checkpoint_count\"`\n\tCondensedTranscriptLines int             `json:\"condensed_transcript_lines,omitempty\"` // Lines already included in previous condensation\n\tUntrackedFilesAtStart    []string        `json:\"untracked_files_at_start,omitempty\"`   // Files that existed at session start (to preserve during rewind)\n\tFilesTouched             []string        `json:\"files_touched,omitempty\"`              // Files modified/created/deleted during this session\n\tLastCheckpointID         id.CheckpointID `json:\"last_checkpoint_id,omitempty\"`         // Checkpoint ID from last condensation, reused for subsequent commits without new content\n\tAgentType                agent.AgentType `json:\"agent_type,omitempty\"`                 // Agent type identifier (e.g., \"Claude Code\", \"Cursor\")\n\tTranscriptPath           string          `json:\"transcript_path,omitempty\"`            // Path to the live transcript file (for mid-session commit detection)\n\tFirstPrompt              string          `json:\"first_prompt,omitempty\"`               // First user prompt that started this session (truncated for display)\n>>>>>>> origin/alex/ent-221-better-state-tracking-for-sessions",
   "new_string": "// SessionState is an alias for session.State.\n// Previously this was a separate struct with manual conversion functions.\ntype SessionState = session.State"
 }
@@ -2702,7 +2702,7 @@ id: toolu_01RWSvc4KAhNGg5e4TQ3qZZu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go",
   "old_string": "<<<<<<< HEAD\n\t\tStepCount:           3,\n=======\n\t\tCheckpointCount:     3,\n>>>>>>> origin/alex/ent-221-better-state-tracking-for-sessions",
   "new_string": "\t\tStepCount:           3,"
 }
@@ -2713,7 +2713,7 @@ id: toolu_01RWSvc4KAhNGg5e4TQ3qZZu
 tool_result
 id: toolu_017Qi7jKrernLvqedtDkN4EP
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_commit.go has been updated successfully.
 ```
 
 > TOOL
@@ -2721,7 +2721,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/auto_com
 tool_result
 id: toolu_01Pkjtuy2vjzpYBMat8wNyt2
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go has been updated successfully.
 ```
 
 > TOOL
@@ -2729,7 +2729,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_c
 tool_result
 id: toolu_01UNFAppKYWS75N3kEVqPLWk
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_session.go has been updated successfully.
 ```
 
 > TOOL
@@ -2737,7 +2737,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_c
 tool_result
 id: toolu_01QMpuaHtrkE9dxpVyaWcxSq
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go has been updated successfully.
 ```
 
 > TOOL
@@ -2745,7 +2745,7 @@ The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_c
 tool_result
 id: toolu_01RWSvc4KAhNGg5e4TQ3qZZu
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -2759,7 +2759,7 @@ id: toolu_013XYn3ZNsSxA9AEz7m5mcPb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go",
   "old_string": "<<<<<<< HEAD\n\t\tStepCount:           1,\n=======\n\t\tCheckpointCount:     1,\n>>>>>>> origin/alex/ent-221-better-state-tracking-for-sessions",
   "new_string": "\t\tStepCount:           1,"
 }
@@ -2770,7 +2770,7 @@ id: toolu_013XYn3ZNsSxA9AEz7m5mcPb
 tool_result
 id: toolu_013XYn3ZNsSxA9AEz7m5mcPb
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go has been updated successfully.
 ```
 
 > AGENT
@@ -2783,7 +2783,7 @@ tool_use Read
 id: toolu_01PhyikF69gj4eDP3byn6f1E
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/session_state_test.go",
   "offset": 170,
   "limit": 30
 }
@@ -2841,7 +2841,7 @@ tool_use Read
 id: toolu_017UDkepxnSZcThwh8mY5iiQ
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go"
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_types.go"
 }
 ```
 
@@ -2905,7 +2905,7 @@ tool_use Read
 id: toolu_01NkHYaD7wrVnrccJVJHjcKr
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit.go",
   "offset": 1,
   "limit": 60
 }
@@ -2973,7 +2973,7 @@ id: toolu_01XpjZPuPX9aizqGe3D9rZKA
 ```json
 {
   "pattern": "^<<<<<<<|^=======|^>>>>>>>",
-  "path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli",
   "output_mode": "content"
 }
 ```

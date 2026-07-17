@@ -578,7 +578,7 @@ tool_result
 id: toolu_01TN9SQdbFXgUKD52Rifzb7E
 ```
 commit 0fa38af186a74c6dce6db3b2110c0ebb6ca3036e
-Author: Georg Friedrich <georg@entire.io>
+Author: Georg Friedrich <<REDACTED_EMAIL>>
 Date:   Thu Apr 30 14:33:44 2026 +1000
 
     Add oh-my-pi (omp) external agent support
@@ -598,7 +598,7 @@ Date:   Thu Apr 30 14:33:44 2026 +1000
     across e2e/agents/{pi,kiro,omp}.go into shared runAgentCmd and
     isTransient helpers in agent.go.
     
-    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.7 (1M context) <<REDACTED_EMAIL>>
     Entire-Checkpoint: f0b22efca8b7
 
  agents/entire-agent-omp/.gitignore                 |   3 +
@@ -638,7 +638,7 @@ id: toolu_01MAdqT8wVwwBedQV8q4ybij
 tool_result
 id: toolu_01MAdqT8wVwwBedQV8q4ybij
 ```
-/Users/georgf/.local/share/mise/installs/github-can1357-oh-my-pi/14.5.3/omp
+/home/<USER>/.local/share/mise/installs/github-can1357-oh-my-pi/14.5.3/omp
 omp/14.5.11
 ```
 

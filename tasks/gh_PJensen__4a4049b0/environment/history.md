@@ -1,9 +1,9 @@
 > SYSTEM
 
-# AGENTS.md instructions for /home/pjensen/Repos/JSHack
+# AGENTS.md instructions for /home/<USER>/Repos/JSHack
 
 <INSTRUCTIONS>
-@/home/pjensen/.codex/RTK.md
+@/home/<USER>/.codex/RTK.md
 
 --- project-doc ---
 
@@ -67,7 +67,7 @@ id: call_Nrz6UBYawvKZjzrUttenIEqa
 ```json
 {
   "cmd": "pwd && rg -n \"mail|letter|inbox|tab|close\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -79,7 +79,7 @@ id: call_KKz3lOQLBQxQ1XtFU9sJB2Oh
 ```json
 {
   "cmd": "rg -n \"altar|offering|offer|shrine|dead pet|pet\" src tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 24000
 }
 ```
@@ -91,7 +91,7 @@ id: call_gdE8E7fnqWhCRulP08qMIr7D
 ```json
 {
   "cmd": "ls && find . -maxdepth 2 -name AGENTS.md -print",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -109,7 +109,7 @@ Output:
 Warning: truncated output (original token count: 45950)
 Total output lines: 1798
 
-/home/pjensen/Repos/JSHack
+/home/<USER>/Repos/JSHack
 src/shared/data/spiritGuidance.js:221:  // ── Interactables ─────────────────────────────────────────────────
 tests/scrollWandWiringInputLock.test.mjs:13:    writable: true,
 tests/scrollWandWiringInputLock.test.mjs:20:        writable: true,
@@ -239,8 +239,8 @@ tool_use exec_command
 id: call_YoPQ089ws1fAJnuWcTTAZR9J
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/Repos/JSHack/.agents/skills/using-entire/SKILL.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -251,8 +251,8 @@ tool_use exec_command
 id: call_y1NfR2aEPYPYbNDpczcbiLa6
 ```json
 {
-  "cmd": "sed -n '1,220p' /home/pjensen/.codex/RTK.md",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "cmd": "sed -n '1,220p' /home/<USER>/.codex/RTK.md",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -264,7 +264,7 @@ id: call_0CZXfYLWAbnMEpqmWEhdCa7S
 ```json
 {
   "cmd": "rg -n \"ui:mailboxData|mailboxData|mailbox\" src/display src/main src/cloud index.html tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 24000
 }
 ```
@@ -401,7 +401,7 @@ id: call_hTDD8CJ9FzD39hvFOt976rlb
 ```json
 {
   "cmd": "rtk entire status",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -458,7 +458,7 @@ id: call_jfJI7uuot5wYMK2NJNXJH1mg
 ```json
 {
   "cmd": "rtk sed -n '1,280p' src/display/ui/mailboxOverlay.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -470,7 +470,7 @@ id: call_CXdILBDeGd1fyn6PFZLv4gSQ
 ```json
 {
   "cmd": "rtk sed -n '330,410p' src/display/ui/overlay.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -482,7 +482,7 @@ id: call_S331JP9rQeLsHkOac1lfZG8n
 ```json
 {
   "cmd": "rtk sed -n '880,1045p' tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -494,7 +494,7 @@ id: call_boE1OlLh2TG5UllNGKPKah3z
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/systems/interactionSystem.js && rtk sed -n '1,260p' src/rules/interaction/interactableRegistry.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 26000
 }
 ```
@@ -752,7 +752,7 @@ id: call_RLsUVSR6bcP3zkFj0U2b3uWI
 ```json
 {
   "cmd": "rtk sed -n '1045,1135p' tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -764,7 +764,7 @@ id: call_p424hP40JY7XRif96NHp20fn
 ```json
 {
   "cmd": "rtk rg -n \"prayAltar|altar:offer|offerPrompt|resurrection|offered\" src/content src/rules src/main src/display tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -776,7 +776,7 @@ id: call_fMp35veCWUVIUGErUUKqZP97
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/interaction/interactRunner.js && rtk sed -n '1,260p' src/rules/content/interaction/interactPayloads.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 36000
 }
 ```
@@ -788,7 +788,7 @@ id: call_GpHGRj9cUwaeakR3D516AqMc
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -956,7 +956,7 @@ id: call_DBK3QCh3FZYxogT6G5ZXSrbJ
 ```json
 {
   "cmd": "rtk sed -n '990,1065p' src/rules/content/interaction/interactPayloads.js && rtk sed -n '1580,1665p' src/rules/content/interaction/interactPayloads.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -968,7 +968,7 @@ id: call_JpvAnKnYOQ2SH8YO21gYGdZB
 ```json
 {
   "cmd": "rtk sed -n '110,150p' src/display/ui/wiring/eventUiWiring.js && rtk sed -n '230,270p' src/display/ui/wiring/messages/environmentMessages.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 14000
 }
 ```
@@ -980,7 +980,7 @@ id: call_4s6XW3pyEvSw0Er8X1MS8znI
 ```json
 {
   "cmd": "rtk sed -n '720,790p' src/rules/systems/deitySystem.js && rtk sed -n '1160,1210p' src/rules/systems/deitySystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -992,7 +992,7 @@ id: call_MnSRXA4V4ePI9225M13CvyGH
 ```json
 {
   "cmd": "rtk sed -n '1,120p' src/display/ui/overlay.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 14000
 }
 ```
@@ -1259,7 +1259,7 @@ id: call_Af8HWziaY1aWKS4h36DqFgXx
 ```json
 {
   "cmd": "rtk sed -n '745,775p' src/rules/systems/deitySystem.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 8000
 }
 ```
@@ -1271,7 +1271,7 @@ id: call_y2Kr39f8jjjNJDCtk4jW1epL
 ```json
 {
   "cmd": "rtk rg -n \"export class .*State|class .*State|ObjectState|Mailbox|WorldView|itemScale|visualOff|palette|glyph\" src/rules/components src/bridge/schema/worldView.js src/display --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -1283,7 +1283,7 @@ id: call_yyELMXQOtf6cuk886pW71lSL
 ```json
 {
   "cmd": "rtk rg -n \"function draw|glyph|basePalette|entity.kind|entity.glyph|itemScale|visualOff|rotation|entities\" src/display --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -1295,7 +1295,7 @@ id: call_TqItBAskxX9IRvusdrM6w3MB
 ```json
 {
   "cmd": "rtk rg -n \"current day|day|turn|RunState|world.step|calendar|time\" src/rules src/bridge tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -1456,7 +1456,7 @@ id: call_VSv8HWlC9sY5jGphIxqsL1b8
 ```json
 {
   "cmd": "rtk sed -n '1,120p' src/rules/components/CalendarState.js && rtk sed -n '1,120p' src/rules/data/calendar.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1468,7 +1468,7 @@ id: call_5mjkuFgrV7eIXKKJcYs9dZ4G
 ```json
 {
   "cmd": "rtk sed -n '1080,1190p' src/bridge/schema/worldView.js && rtk sed -n '1230,1325p' src/bridge/schema/worldView.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 28000
 }
 ```
@@ -1480,7 +1480,7 @@ id: call_6kRnbgPY4DJamY0VRQlXPT9K
 ```json
 {
   "cmd": "rtk rg -n \"drawKindScaled|drawKindForeground|view.entities|entity\\.kind|itemScale|visualOff\" src/display --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -1492,7 +1492,7 @@ id: call_Ev37GMZk0ztXWAI6WJBGYm5i
 ```json
 {
   "cmd": "rtk sed -n '60,110p' src/rules/components/index.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 8000
 }
 ```
@@ -1661,7 +1661,7 @@ id: call_SQ7LiVCUgHpqM1ybUwH0oiN7
 ```json
 {
   "cmd": "rtk rg -n \"drawKindScaled\\(|drawKind\\(|glyphAtlas|visualOff|stackSeq|itemScale\" src/main src/display --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -1701,7 +1701,7 @@ id: call_Hbn4T6cGcYjBZAItNJ2G6XRK
 ```json
 {
   "cmd": "rtk rg -n \"entities\\.sort|for \\(const .*entities|for \\(let .*entities|draw.*entity|drawKind\" src/main src/display src --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -1713,7 +1713,7 @@ id: call_JkKee2V6urO6KtEEsVrXBYl1
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/display/composition/postLightingRedraw.js && rtk sed -n '1,260p' src/display/composition/effectOrchestrator.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -1725,7 +1725,7 @@ id: call_Tbz7ZKecsdWHG1lK22QdhLtP
 ```json
 {
   "cmd": "rtk rg -n \"postLighting|drawWorld|renderWorld|drawEntities|tileSize|view\\.entities\" src/main src/display --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 30000
 }
 ```
@@ -1866,7 +1866,7 @@ id: call_hs6JuZGbgiA3jM1FnJGSgEhw
 ```json
 {
   "cmd": "rtk sed -n '1,80p' src/rules/components/FountainState.js && rtk sed -n '1,80p' src/rules/components/Interactable.js && rtk sed -n '1540,1565p' src/bridge/schema/worldView.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -1929,7 +1929,7 @@ id: call_tLe7LPHMRSjzbJWgHqupdvry
 ```json
 {
   "cmd": "rtk rg -n \"function ensurePanel|function show|function hide|panel\" src/display/ui/overlayUtils.js | head -80 && rtk sed -n '1,130p' src/display/ui/overlayUtils.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -1983,7 +1983,7 @@ id: call_fPJeqjQDiT05DcuS81NJEo9Q
 ```json
 {
   "cmd": "rtk sed -n '1160,1225p' src/display/ui/overlayUtils.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -2060,7 +2060,7 @@ id: call_oJsgxS8DWwBG25OBsmqsYiIj
 ```json
 {
   "cmd": "rtk rg -n \"on_offered|onOffered|on_[a-z]|ScriptRef|runEntityScript|runScript\" src/content src/rules --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -2117,7 +2117,7 @@ id: call_oZ2wlECiZ04lpuL1PRSR9Re6
 ```json
 {
   "cmd": "rtk sed -n '1,130p' src/rules/scripting.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -2196,7 +2196,7 @@ id: call_AFs6QE8oitEgDAVZo0UVDL5x
 ```json
 {
   "cmd": "rtk sed -n '1,80p' src/bridge/schema/worldView.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -2208,7 +2208,7 @@ id: call_Ax0StJdt6nsKW1TtPA3jgFI8
 ```json
 {
   "cmd": "rtk sed -n '1,60p' tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -2220,7 +2220,7 @@ id: call_OsvD8L3Uy7PzGUbg3VeY9PNj
 ```json
 {
   "cmd": "rtk sed -n '3840,3938p' src/main.js && rtk sed -n '4860,4920p' src/main.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -2232,7 +2232,7 @@ id: call_nGV6kY7mLikv56pIDhEv3qSA
 ```json
 {
   "cmd": "rtk rg -n \"CalendarState\" src/main src/rules tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -2419,7 +2419,7 @@ id: call_QHxB8GeWhjFQ4n2o2vIzioyN
 ```json
 {
   "cmd": "rtk sed -n '1,70p' src/main/wiring/savegameSerializationRegistry.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -2476,7 +2476,7 @@ id: call_3Jf2jTQZr5SUYj7RSolelxOv
 ```json
 {
   "cmd": "rtk sed -n '4988,5020p' src/main.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 10000
 }
 ```
@@ -2538,7 +2538,7 @@ id: call_dW8bLVk5nAGSENxWOEIIIvhR
 ```json
 {
   "cmd": "rtk rg -n \"function projectProcStateTags|const _zeroOff|projectAltarOfferingOverlays|_view.entities.sort\" src/bridge/schema/worldView.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -2583,7 +2583,7 @@ id: call_K3velECjXFWcHQOXyVcEHTvN
 ```json
 {
   "cmd": "rtk rg -n \"defineExtension\\(|world\\.install\\(\" src tests --glob '!src/lib/**' | head -80",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -2654,7 +2654,7 @@ id: call_xHiarniSnUfJuorYjPJLKga3
 ```json
 {
   "cmd": "rtk rg -n \"buildWorldView|registerScript|ScriptRef\" tests/interaction.test.mjs tests/*.mjs | head -50",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -2724,7 +2724,7 @@ id: call_EKwaSz3eP1VzVeL32fTrqJMR
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -2769,7 +2769,7 @@ id: call_tSHX9wgdBGTw5NaXjLIHZfty
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs --filter \"altar:\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -2803,7 +2803,7 @@ error: AssertionError: WorldView should include an altar offering overlay
     throw new AssertionError(msg);
           ^
     at assert (https://jsr.io/@std/assert/1.0.18/assert.ts:22:11)
-    at file:///home/pjensen/Repos/JSHack/tests/interaction.test.mjs:1119:3
+    at file:///home/<USER>/Repos/JSHack/tests/interaction.test.mjs:1119:3
 
  FAILURES 
 
@@ -2822,7 +2822,7 @@ id: call_KCkaCK2P7yEMHkOJDM2mvJzO
 ```json
 {
   "cmd": "rtk deno eval --allow-read \"import './tests/helpers/installContentCatalog.mjs'; import { World } from './src/lib/ecs-js/index.js'; import { Interactable } from './src/rules/components/Interactable.js'; import { InteractIntent } from './src/rules/components/Intents/InteractIntent.js'; import { Inventory } from './src/rules/components/Inventory.js'; import { Position } from './src/rules/components/Position.js'; import { NamedIdentity } from './src/rules/components/NamedIdentity.js'; import { ItemInfo } from './src/rules/components/ItemInfo.js'; import { interactionSystem } from './src/rules/systems/interactionSystem.js'; import { addToInventory } from './src/rules/utils/inventoryFacade.js'; import { buildWorldView } from './src/bridge/schema/worldView.js'; import { AltarOfferingState } from './src/rules/components/AltarOfferingState.js'; const world=new World({seed:1}); const actor=world.create(); const altar=world.create(); world.add(altar, Interactable,{action:'prayAltar',params:null}); world.add(altar, Position,{x:5,y:5}); world.add(altar, NamedIdentity,{name:'Altar',identity:'altar'}); world.add(actor, Inventory,{items:[],capacity:10,weightLimit:null}); const item=world.create(); world.add(item, NamedIdentity,{name:'Ruby',identity:'gem_ruby'}); world.add(item, ItemInfo,{type:'gem',slot:'bag',weight:1,value:50,description:'Ruby',count:1,bonuses:{},rarity:1,rarityName:'common',affixes:[]}); addToInventory(world,actor,item); world.add(actor, InteractIntent,{targetId:altar,mode:'offer',itemId:item}); interactionSystem(world); console.log('state', world.get(altar, AltarOfferingState)); const view=buildWorldView(world); console.log(view.entities);\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2854,7 +2854,7 @@ id: call_eqtT3fhJJZyscFuQJJbn7IpR
 ```json
 {
   "cmd": "rtk deno eval \"import './tests/helpers/installContentCatalog.mjs'; import { World } from './src/lib/ecs-js/index.js'; import { Interactable } from './src/rules/components/Interactable.js'; import { InteractIntent } from './src/rules/components/Intents/InteractIntent.js'; import { Inventory } from './src/rules/components/Inventory.js'; import { Position } from './src/rules/components/Position.js'; import { NamedIdentity } from './src/rules/components/NamedIdentity.js'; import { ItemInfo } from './src/rules/components/ItemInfo.js'; import { interactionSystem } from './src/rules/systems/interactionSystem.js'; import { addToInventory } from './src/rules/utils/inventoryFacade.js'; import { buildWorldView } from './src/bridge/schema/worldView.js'; import { AltarOfferingState } from './src/rules/components/AltarOfferingState.js'; const world=new World({seed:1}); const actor=world.create(); const altar=world.create(); world.add(altar, Interactable,{action:'prayAltar',params:null}); world.add(altar, Position,{x:5,y:5}); world.add(altar, NamedIdentity,{name:'Altar',identity:'altar'}); world.add(actor, Inventory,{items:[],capacity:10,weightLimit:null}); const item=world.create(); world.add(item, NamedIdentity,{name:'Ruby',identity:'gem_ruby'}); world.add(item, ItemInfo,{type:'gem',slot:'bag',weight:1,value:50,description:'Ruby',count:1,bonuses:{},rarity:1,rarityName:'common',affixes:[]}); addToInventory(world,actor,item); world.add(actor, InteractIntent,{targetId:altar,mode:'offer',itemId:item}); interactionSystem(world); console.log('state', world.get(altar, AltarOfferingState)); const view=buildWorldView(world); console.log(JSON.stringify(view.entities));\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 20000
 }
@@ -2892,7 +2892,7 @@ id: call_h5B3K9iZe2qFL9evb8QSfD7D
 ```json
 {
   "cmd": "rtk sed -n '870,930p' src/bridge/schema/worldView.js && rtk sed -n '1,80p' tests/mailbox.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -2976,7 +2976,7 @@ id: call_yJVbgIwnQpSJaIP2qX5LFV0p
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs --filter \"altar:\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -3019,7 +3019,7 @@ id: call_oSfHuwzaeXwGqEMQLsRx6c17
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 26000
 }
@@ -3064,7 +3064,7 @@ id: call_avvnwPnObx2nrFiCDV30IKkV
 ```json
 {
   "cmd": "rtk deno task guard:architecture",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -3077,7 +3077,7 @@ id: call_bpwDdIgRNK3Rj4pglCOKwS7v
 ```json
 {
   "cmd": "rtk deno task guard:events",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -3090,7 +3090,7 @@ id: call_4mtxhqAIpMWfykCOrbeciSPf
 ```json
 {
   "cmd": "rtk deno check src/display/ui/mailboxOverlay.js src/display/ui/overlay.js src/rules/content/interaction/interactPayloads.js src/bridge/schema/worldView.js tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }
@@ -3199,7 +3199,7 @@ id: call_uWXqZO0pVH2mJFY8mwDOSlcF
 ```json
 {
   "cmd": "rtk deno task ratchet:world-state",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -3235,7 +3235,7 @@ id: call_yvOLrwGtX5VBxOG3xEAhZlka
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -3247,7 +3247,7 @@ id: call_R4ygMEygzqdopAFu9HfvAWPK
 ```json
 {
   "cmd": "rtk git diff -- src/display/ui/mailboxOverlay.js src/display/ui/overlay.js src/rules/components/AltarOfferingState.js src/rules/components/index.js src/rules/content/interaction/interactPayloads.js src/rules/systems/interactionSystem.js src/rules/scripting.js src/bridge/schema/worldView.js src/main.js src/main/wiring/savegameSerializationRegistry.js tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 50000
 }
 ```
@@ -3332,7 +3332,7 @@ id: call_sdIif3P8mOYQWR4tBWbc3NYv
 ```json
 {
   "cmd": "rtk rg -n \"mailbox-window|mailbox-close|closeMailbox|ui:closeMailbox\" src/display/ui/mailboxOverlay.js src/display/ui/overlay.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -3344,7 +3344,7 @@ id: call_Kgz7WocL0Ep6HLDFzF4pVzJR
 ```json
 {
   "cmd": "rtk git diff -- src/display/ui/mailboxOverlay.js src/display/ui/overlay.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -3356,7 +3356,7 @@ id: call_ZTZ9y02u4VtX5fiRTiNUnOUO
 ```json
 {
   "cmd": "rtk git status --short src/display/ui/mailboxOverlay.js src/display/ui/overlay.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 8000
 }
 ```
@@ -3423,7 +3423,7 @@ id: call_ew7OHDFIws5FpfMsusxYYAck
 ```json
 {
   "cmd": "rtk git ls-files -v src/display/ui/mailboxOverlay.js src/display/ui/overlay.js && rtk git show HEAD:src/display/ui/mailboxOverlay.js | rg -n \"mailbox-window|mailbox-close|closeMailbox\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -3468,7 +3468,7 @@ id: call_VDpt481j2QDUScsYBuAcW6sD
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 26000
 }
@@ -3481,7 +3481,7 @@ id: call_iVVzTW57NkzaPwHC1pZva34B
 ```json
 {
   "cmd": "rtk deno check src/display/ui/mailboxOverlay.js src/display/ui/overlay.js src/rules/content/interaction/interactPayloads.js src/bridge/schema/worldView.js tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 26000
 }
@@ -3539,7 +3539,7 @@ id: call_cfZdQFFckMRj8R7rlfuQ80Zy
 ```json
 {
   "cmd": "rtk git status --short",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -3551,7 +3551,7 @@ id: call_PvzP8SIJeLarnU19gYlyJg0i
 ```json
 {
   "cmd": "rtk git diff --stat",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -3563,7 +3563,7 @@ id: call_ncifYPihhZ5SUUnzjyH0dQj5
 ```json
 {
   "cmd": "rtk rg -n \"mailbox-window|mailbox-close|ui:closeMailbox\" src/display/ui/mailboxOverlay.js src/display/ui/overlay.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -3672,7 +3672,7 @@ id: call_izO0zfRFTeeBAEdMiPMTwhSy
 ```json
 {
   "cmd": "rtk sed -n '1,220p' src/rules/content/interaction/actionMenus.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -3684,7 +3684,7 @@ id: call_TEFkQl7vUqWQueiej49aTX1V
 ```json
 {
   "cmd": "rtk rg -n \"InteractionChoicePrompted|ui:actionChooser|renderActionChooser|actionChooser|mode:|options\" src/display src/rules tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 26000
 }
 ```
@@ -3696,7 +3696,7 @@ id: call_CNZMJFnX2mTbzNbIiVqigb2j
 ```json
 {
   "cmd": "rtk sed -n '1180,1255p' src/display/ui/overlay.js && rtk rg -n \"renderActionChooser|ui:actionChooser|InteractionChoicePrompted\" src/display/ui src/display/ui/wiring tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 20000
 }
 ```
@@ -3845,7 +3845,7 @@ id: call_Tpj8HPMf0LRxH4SVvEAxHh1s
 ```json
 {
   "cmd": "rtk sed -n '1,80p' src/display/ui/wiring/fountainUiExtension.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 12000
 }
 ```
@@ -3857,7 +3857,7 @@ id: call_3CuQMCqncPcFptcDcGEJCLfC
 ```json
 {
   "cmd": "rtk sed -n '680,720p' src/display/ui/overlay.js && rtk sed -n '1138,1205p' src/display/ui/overlayRenders.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -3869,7 +3869,7 @@ id: call_7Em0EAEPFFF669Ppxd5ZxDrv
 ```json
 {
   "cmd": "rtk sed -n '1835,1885p' tests/interaction.test.mjs && rtk sed -n '1,80p' tests/rulesDispatchAltarOffer.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -4054,7 +4054,7 @@ id: call_u2PlvsqY0phCijxqY0kA6ncx
 ```json
 {
   "cmd": "rtk rg -n \"ui:requestActionSelect|requestActionSelect|rules.interact\" src/main src/display tests --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 18000
 }
 ```
@@ -4107,7 +4107,7 @@ id: call_Afn9byjz6KeeF47QGIIc8hKv
 ```json
 {
   "cmd": "rtk rg -n \"requestActionSelect|rules.interact\" src/main src/display src --glob '!src/lib/**'",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 22000
 }
 ```
@@ -4149,7 +4149,7 @@ id: call_XxaE6IWUbuMTBMA7jHby4dGV
 ```json
 {
   "cmd": "rtk sed -n '2560,2635p' src/main.js && rtk sed -n '525,555p' src/main/input/rulesDispatch.js",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "max_output_tokens": 16000
 }
 ```
@@ -4218,7 +4218,7 @@ id: call_bbjX1qGGqKPhjUpPN6RVrLwl
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs --filter \"altar:\"",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -4263,7 +4263,7 @@ id: call_nBOvWcFaXhZRqxgd8Jm1BV5b
 ```json
 {
   "cmd": "rtk deno test --allow-read tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 26000
 }
@@ -4276,7 +4276,7 @@ id: call_8aXpzeZexbL0D2KyOZYcThQe
 ```json
 {
   "cmd": "rtk deno check src/rules/content/interaction/actionMenus.js src/rules/content/interaction/interactPayloads.js tests/interaction.test.mjs",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 22000
 }
@@ -4334,7 +4334,7 @@ id: call_dGZcg7l972Y8oYKGn4Ekmt2z
 ```json
 {
   "cmd": "rtk deno task guard:architecture",
-  "workdir": "/home/pjensen/Repos/JSHack",
+  "workdir": "/home/<USER>/Repos/JSHack",
   "yield_time_ms": 30000,
   "max_output_tokens": 30000
 }

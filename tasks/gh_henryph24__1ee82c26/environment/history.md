@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01TP419GcbMiR5CWCDpPyTEW
 ```json
 {
-  "command": "find /Users/hungpq2412/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" 2>/dev/null | head -5",
+  "command": "find /home/<USER>/neuralips26 -name \"main.tex\" -not -path \"*/node_modules/*\" 2>/dev/null | head -5",
   "description": "Find main.tex file"
 }
 ```
@@ -18,7 +18,7 @@ id: toolu_01TP419GcbMiR5CWCDpPyTEW
 tool_result
 id: toolu_01TP419GcbMiR5CWCDpPyTEW
 ```
-/Users/hungpq2412/neuralips26/main.tex
+/home/<USER>/neuralips26/main.tex
 ```
 
 > TOOL
@@ -27,7 +27,7 @@ tool_use Bash
 id: toolu_014ebuPZLZWzxEWKV3kHgjV1
 ```json
 {
-  "command": "grep -n \"section\\|Related Work\\|RelatedWork\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"section\\|Related Work\\|RelatedWork\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find section markers in main.tex"
 }
 ```
@@ -65,7 +65,7 @@ tool_use Read
 id: toolu_01QC1AzyexijCMjZDxNYLDVj
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 228,
   "limit": 15
 }
@@ -89,7 +89,7 @@ tool_use Bash
 id: toolu_014L6uHVXfhUP4CeXju8GVzJ
 ```json
 {
-  "command": "grep -n \"linenumber\\|lineno\\|nolinenumbers\" /Users/hungpq2412/neuralips26/main.tex | head -10",
+  "command": "grep -n \"linenumber\\|lineno\\|nolinenumbers\" /home/<USER>/neuralips26/main.tex | head -10",
   "description": "Check if line numbering is active"
 }
 ```
@@ -108,7 +108,7 @@ tool_use Bash
 id: toolu_01G8cT7Ra9aCmVeDC9Rrm9TX
 ```json
 {
-  "command": "grep -n \"lineno\\|linenum\\|\\\\\\\\linenumber\\|\\\\\\\\modulolinenumbers\" /Users/hungpq2412/neuralips26/*.sty 2>/dev/null | head -10; ls /Users/hungpq2412/neuralips26/*.sty 2>/dev/null",
+  "command": "grep -n \"lineno\\|linenum\\|\\\\\\\\linenumber\\|\\\\\\\\modulolinenumbers\" /home/<USER>/neuralips26/*.sty 2>/dev/null | head -10; ls /home/<USER>/neuralips26/*.sty 2>/dev/null",
   "description": "Check style files for line numbering"
 }
 ```
@@ -125,7 +125,7 @@ id: toolu_01G8cT7Ra9aCmVeDC9Rrm9TX
 409:    % transparently wrapping linenomath environments around amsmath
 417:                          {\linenomath\csname old#1\endcsname}%
 418:                          {\csname oldend#1\endcsname\endlinenomath}%
-/Users/hungpq2412/neuralips26/neurips_2026.sty
+/home/<USER>/neuralips26/neurips_2026.sty
 ```
 
 > TOOL
@@ -134,7 +134,7 @@ tool_use Bash
 id: toolu_0181SFZyGEdG8qZGW5JRv3fr
 ```json
 {
-  "command": "ls -la /Users/hungpq2412/neuralips26/main.pdf 2>/dev/null; find /Users/hungpq2412/neuralips26 -maxdepth 2 -name \"main.pdf\" 2>/dev/null",
+  "command": "ls -la /home/<USER>/neuralips26/main.pdf 2>/dev/null; find /home/<USER>/neuralips26 -maxdepth 2 -name \"main.pdf\" 2>/dev/null",
   "description": "Check for compiled PDF"
 }
 ```
@@ -144,8 +144,8 @@ id: toolu_0181SFZyGEdG8qZGW5JRv3fr
 tool_result
 id: toolu_0181SFZyGEdG8qZGW5JRv3fr
 ```
--rw-r--r--@ 1 hungpq2412  staff  910547 May  6 15:10 /Users/hungpq2412/neuralips26/main.pdf
-/Users/hungpq2412/neuralips26/main.pdf
+-rw-r--r--@ 1 hungpq2412  staff  910547 May  6 15:10 /home/<USER>/neuralips26/main.pdf
+/home/<USER>/neuralips26/main.pdf
 ```
 
 > TOOL
@@ -186,7 +186,7 @@ tool_use Bash
 id: toolu_01JnCU9SkqgSf1Jszn7DntpP
 ```json
 {
-  "command": "pdftotext -layout -f 3 -l 4 /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '1,200p'",
+  "command": "pdftotext -layout -f 3 -l 4 /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '1,200p'",
   "description": "Get pages 3-4 with line numbers"
 }
 ```
@@ -240,7 +240,7 @@ tool_use Bash
 id: toolu_01E9D5bx5kgZ4Y7MXukSV5mt
 ```json
 {
-  "command": "pdftotext -layout -f 2 -l 3 /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '80,200p'",
+  "command": "pdftotext -layout -f 2 -l 3 /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '80,200p'",
   "description": "Find Related Work section header in PDF"
 }
 ```
@@ -282,7 +282,7 @@ tool_use Read
 id: toolu_016tDJaAspGMJVYjDFW3HkCJ
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 241,
   "limit": 150
 }
@@ -312,7 +312,7 @@ tool_use Read
 id: toolu_01DMSLKujjH6S1XQVQpMM6nn
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 411,
   "limit": 160
 }
@@ -517,7 +517,7 @@ tool_use Bash
 id: toolu_01CEDDWeJcxohhVvnHt2qx8N
 ```json
 {
-  "command": "pdftotext -layout -f 1 -l 3 /Users/hungpq2412/neuralips26/main.pdf - 2>/dev/null | sed -n '1,150p'",
+  "command": "pdftotext -layout -f 1 -l 3 /home/<USER>/neuralips26/main.pdf - 2>/dev/null | sed -n '1,150p'",
   "description": "Read the intro section from PDF"
 }
 ```
@@ -562,7 +562,7 @@ tool_use Read
 id: toolu_01NRJjzrPe6qM7RQmFkZfpfV
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 61,
   "limit": 100
 }
@@ -697,7 +697,7 @@ id: toolu_01Qe5TNhhkBpchyenh5iujTv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "Time series foundation models (TSFMs) such as MOMENT~\\citep{goswami2024moment}, TimesFM~\\citep{das2024timesfm}, Chronos~\\citep{ansari2024chronos}, Timer-XL~\\citep{liu2025timerxl,liu2024timer}, and Moirai~\\citep{woo2024moirai} now provide pretrained representations for time series, alongside a growing ecosystem of pretrained variants and LLM-reprogrammed forecasters~\\citep{lee2024units, rasul2024lagllama, ekambaram2024ttm, cohen2025toto, liu2025sundial, jin2024timellm, zhou2023onefitsall, liu2024autotimes, pan2024s2ipllm, liu2024unitime, shi2024timemoe, liu2026timers1}. Using one of these backbones on a downstream task still requires attaching a lightweight adapter head that maps hidden states to predictions; this paper studies the adapter, holding the backbone fixed.",
   "new_string": "Time series foundation models (TSFMs)~\\citep{goswami2024moment, das2024timesfm, ansari2024chronos, liu2025timerxl, liu2024timer, woo2024moirai, lee2024units, rasul2024lagllama, ekambaram2024ttm, cohen2025toto, liu2025sundial, jin2024timellm, zhou2023onefitsall, liu2024autotimes, pan2024s2ipllm, liu2024unitime, shi2024timemoe, liu2026timers1} adapt to downstream tasks via a lightweight adapter head; this paper studies the adapter, holding the backbone fixed."
 }
@@ -708,7 +708,7 @@ id: toolu_01Qe5TNhhkBpchyenh5iujTv
 tool_result
 id: toolu_01Qe5TNhhkBpchyenh5iujTv
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -718,7 +718,7 @@ id: toolu_01CpBuSLYaiMty9nZ2UMhozn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "Standard TSFM adapters apply the \\emph{same} regression head to every window (Figure~\\ref{fig:problem_overview}a): flatten-then-project for MOMENT~\\citep{goswami2024moment} and PatchTST~\\citep{nie2023patchtst}, an autoregressive residual block for TimesFM~\\citep{das2024timesfm}. Real time series mix heterogeneous regimes whose \\emph{shape} variation (periodicity, trends, level shifts, change points) survives instance normalization and lives in the hidden states across layers~\\citep{wilinski2025tsfm_representations, pandey2025tsfm_semantics}, motivating a per-window mixture of topologically distinct expert heads with a learned router. Keeping the backbone frozen is also what makes deployment practical: a shared TSFM in GPU memory serves many tenants through lightweight per-task adapters hot-swapped from host RAM, an arrangement per-dataset models like DLinear~\\citep{zeng2023dlinear} cannot match (Appendices~\\ref{app:deployment},~\\ref{app:benchmark}).",
   "new_string": "Standard TSFM adapters apply one head to every window (Figure~\\ref{fig:problem_overview}a), yet real series mix regimes whose \\emph{shape} variation (periodicity, trends, level shifts) lives across hidden layers~\\citep{wilinski2025tsfm_representations, pandey2025tsfm_semantics}, motivating a per-window mixture of topologically distinct experts. Keeping the backbone frozen is also the practical deployment enabler: one TSFM serves many tenants through hot-swapped per-task adapters, unlike per-dataset models such as DLinear~\\citep{zeng2023dlinear} (App.~\\ref{app:deployment})."
 }
@@ -729,7 +729,7 @@ id: toolu_01CpBuSLYaiMty9nZ2UMhozn
 tool_result
 id: toolu_01CpBuSLYaiMty9nZ2UMhozn
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -739,7 +739,7 @@ id: toolu_01J7bSRiFoAGmTFdEY29iZP9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "This natural mixture-of-experts approach fails on instance-normalized TSFMs once any backbone layers are unfrozen (Figure~\\ref{fig:problem_overview}b). Combining an AdaMix-style adapter pool~\\citep{wang2022adamix} with a hidden-state softmax router and Switch-style load balancing~\\citep{fedus2022switch} on MOMENT$+$RevIN drops routing entropy to zero in most unfrozen configurations (Table~\\ref{tab:adamix}): every window is sent to one expert and the rest are never used. We call this \\emph{normalization-induced routing collapse}: RevIN~\\citep{kim2021revin} strips the per-window mean and variance the router needs to distinguish regimes (formalized in Observation~\\ref{thm:mi_decomp}; signal-ratio diagnostic in Figure~\\ref{fig:signal_ratio}). Even frozen, hidden-state routing underperforms; unfrozen, the dominant expert's larger gradients reshape the backbone to serve it more, closing a co-adaptation loop within tens of steps (Figure~\\ref{fig:trajectory}).\n\nThe failure is specific to learnable-affine instance normalization inside the encoder pipeline: Moirai, which uses only non-learnable per-instance I/O scaling with internal RMSNorm, does not collapse (\\S\\ref{sec:cross_backbone}), and standard MoE rescue mechanisms (load balancing, entropy regularization, z-loss, ReLU routing, expert-choice) recover at most $10.9\\%$ MSE, $2.7\\times$ worse than RR-MoA (Table~\\ref{tab:rescue}): the problem is in the router's \\emph{input}, not its optimization.\n\nBecause the diagnosis pinpoints normalization as the cause, the fix principle is direct. \\emph{Raw-Routed Mixture of Adapters} (RR-MoA) routes on the raw, pre-normalization input […]
 
 > TOOL
@@ -747,7 +747,7 @@ id: toolu_01J7bSRiFoAGmTFdEY29iZP9
 tool_result
 id: toolu_01J7bSRiFoAGmTFdEY29iZP9
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -779,7 +779,7 @@ id: toolu_01YRzLs4LY8p41FfDkUh8AEv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\section{Related Work}\n\\label{sec:related_work}\n\nWe position RR-MoA against four threads: TSFM adaptation, MoE in foundation models, MoE routing collapse and rescue, and time-series normalization.\n\n\\textbf{TSFM Adaptation.} Beyond the broad survey of~\\citet{wen2023tssurvey}, a complementary line shows that compact task-specific models match or beat heavyweight pretrained backbones on LTSF benchmarks~\\citep{wu2025srsnet, wang2025timemixerpp, xu2024fits, chen2023tsmixer, fu2025selective}: that lightweight raw-input models are competitive is itself evidence that the per-window raw signal carries most of the predictability our diagnostic $R(\\mathcal{D})$ exploits (\\S\\ref{sec:diagnosis}). LLM-reprogrammed forecasters~\\citep{jin2024timellm, zhou2023onefitsall, liu2024autotimes} inherit per-window normalization upstream of the backbone, so the routing-collapse mechanism we identify applies whenever a downstream MoE adapter is attached. We focus on the adapter literature most relevant to RR-MoA. The standard recipe attaches a lightweight module to a frozen TSFM~\\citep{hu2022lora, houlsby2019adapters, goswami2024moment}; recent variations explore multi-scale finetuning~\\citep{qiao2025msft}, importance-based LoRA selection~\\citep{li2025trace}, input-representation adaptation~\\citep{benechehab2025adapts}, structured pruning~\\citep{zhao2025prune}, in-context tuning~\\citep{faw2025icf}, retrieval-augmented adaptation~\\citep{ning2025tsrag}, and Chronos-specific PEFT~\\citep{gupta2024beyondlora}; complementary work computes transferability scores for backbone selection (TEMPLATE, \\citealp{zhang2025template}) or provides a unified evaluation suite (GIFT-Eval, \\citealp{woo2024gifteval}). These vary the finetuning \\textit{strategy} while leaving per-input adapter \\textit{topology} fixed; AdaPTS reports the best of several variants per dataset/horizon, treating adapter choice as a per-task hyperparameter rather than per-window routing. We […]
 
 > TOOL
@@ -787,7 +787,7 @@ id: toolu_01YRzLs4LY8p41FfDkUh8AEv
 tool_result
 id: toolu_01YRzLs4LY8p41FfDkUh8AEv
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -797,7 +797,7 @@ id: toolu_01JA64G4zrYuXp293YChadYZ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "or time-series-normalization~\\citep{liu2022nonstationary, fan2023dishts, liu2023san, ye2024fan, dai2024ddn, berthelier2026revin, zou2025ibnorm} work (positioned in detail in \\S\\ref{sec:related_work}).",
   "new_string": "or time-series-normalization~\\citep{liu2022nonstationary, fan2023dishts, liu2023san, ye2024fan, dai2024ddn, berthelier2026revin, zou2025ibnorm} work."
 }
@@ -808,7 +808,7 @@ id: toolu_01JA64G4zrYuXp293YChadYZ
 tool_result
 id: toolu_01JA64G4zrYuXp293YChadYZ
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -832,17 +832,17 @@ tool_result
 id: toolu_013DEvPWR5sUPE1PC81gmmQm
 ```
 exit=0
-/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/hungpq2412/Library/texmf
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/hungpq2412/Library/texmf/fonts
-/type1/public/amsfonts/cm/cmr9.pfb></Users/hungpq2412/Library/texmf/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></Users/hungpq2412/Library/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmsy5.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
-9.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></Users/h
+/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/<USER>/Library/texmf
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/<USER>/Library/texmf/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></home/<USER>/Library/texmf/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></home/<USER>/Library/texmf/fonts/type1/pub
+lic/amsfonts/cm/cmsy5.pfb></home/<USER>/Library/texmf/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></home/<USER>
 ungpq2412/Library/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr
 /local/texlive/2026basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/l
@@ -944,7 +944,7 @@ id: toolu_01MC9ecFxpgAU7twt7inocR2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "Standard TSFM adapters apply one head to every window (Figure~\\ref{fig:problem_overview}a), yet real series mix regimes whose \\emph{shape} variation (periodicity, trends, level shifts) lives across hidden layers~\\citep{wilinski2025tsfm_representations, pandey2025tsfm_semantics}, motivating a per-window mixture of topologically distinct experts. Keeping the backbone frozen is also the practical deployment enabler: one TSFM serves many tenants through hot-swapped per-task adapters, unlike per-dataset models such as DLinear~\\citep{zeng2023dlinear} (App.~\\ref{app:deployment}).",
   "new_string": "Standard TSFM adapters apply one head to every window (Figure~\\ref{fig:problem_overview}a), yet real series mix regimes whose \\emph{shape} variation lives across hidden layers~\\citep{wilinski2025tsfm_representations, pandey2025tsfm_semantics}, motivating a per-window mixture of topologically distinct experts. Frozen-backbone deployment serves many tenants through hot-swapped per-task adapters, unlike per-dataset models like DLinear~\\citep{zeng2023dlinear} (App.~\\ref{app:deployment})."
 }
@@ -955,7 +955,7 @@ id: toolu_01MC9ecFxpgAU7twt7inocR2
 tool_result
 id: toolu_01MC9ecFxpgAU7twt7inocR2
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -965,7 +965,7 @@ id: toolu_01159mz9bHhQV3aFY7CCGjHd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "This natural MoE approach fails on instance-normalized TSFMs once backbone layers are unfrozen (Figure~\\ref{fig:problem_overview}b): an AdaMix-style pool~\\citep{wang2022adamix} with a softmax router on MOMENT$+$RevIN drops routing entropy to zero in most configurations (Table~\\ref{tab:adamix}). We call this \\emph{normalization-induced routing collapse}: RevIN~\\citep{kim2021revin} strips the per-window mean and variance the router needs (formalized in Observation~\\ref{thm:mi_decomp}; diagnostic in Figure~\\ref{fig:signal_ratio}), and the dominant expert's gradients reshape the backbone to serve it more in tens of steps (Figure~\\ref{fig:trajectory}). A 720-run sweep across standard rescues (load balancing, entropy regularization, z-loss, ReLU routing, expert-choice) recovers only $10.9\\%$ MSE, $2.7\\times$ worse than RR-MoA (Table~\\ref{tab:rescue}); Moirai's non-learnable I/O scaling does not collapse (\\S\\ref{sec:cross_backbone}), narrowing the cause to learnable-affine encoder normalization, not the router's optimization.",
   "new_string": "This natural MoE approach fails on instance-normalized TSFMs once backbone layers are unfrozen (Figure~\\ref{fig:problem_overview}b): an AdaMix-style pool~\\citep{wang2022adamix} with a softmax router on MOMENT$+$RevIN drops routing entropy to zero in most configurations (Table~\\ref{tab:adamix}). We call this \\emph{normalization-induced routing collapse}: RevIN~\\citep{kim2021revin} strips the per-window mean and variance the router needs (Observation~\\ref{thm:mi_decomp}), and the dominant expert's gradients reshape the backbone to serve it more in tens of steps (Figure~\\ref{fig:trajectory}). A 720-run rescue sweep recovers only $10.9\\%$ MSE, $2.7\\times$ […]
 
@@ -974,7 +974,7 @@ id: toolu_01159mz9bHhQV3aFY7CCGjHd
 tool_result
 id: toolu_01159mz9bHhQV3aFY7CCGjHd
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL

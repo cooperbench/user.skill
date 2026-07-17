@@ -150,7 +150,7 @@ tool_use Read
 id: toolu_01Gtp7CDaeHnvPADCtemm3fX
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix"
 }
 ```
 
@@ -160,7 +160,7 @@ tool_use Read
 id: toolu_01LFox4tfWHieMzgtxSYQxJe
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/packages.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/home/<USER>"
 }
 ```
 
@@ -171,7 +171,7 @@ id: toolu_01N5ej3GR5PByfkJ5htTuCRH
 ```json
 {
   "pattern": "ldid|sshpass|keystone|gnu-tar|gnutar",
-  "path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix",
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix",
   "output_mode": "content"
 }
 ```
@@ -433,12 +433,12 @@ tool_result
 id: toolu_01Rhy5LvH2tKoi4NnhnVz8eF
 ```
 commit 1b4086ee970fd428f463a397ab9f145bfd36987a
-Author: yutakobayashidev <hi@yutakobayashi.com>
+Author: yutakobayashidev <<REDACTED_EMAIL>>
 Date:   Tue Mar 10 16:30:01 2026 +0900
 
     add build tools to darwin packages (gnutar, openssl, ldid, sshpass, keystone, autoconf, automake, pkg-config, libtool)
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
     Entire-Checkpoint: 4d1a0760f11f
 
  nix/modules/darwin/packages.nix | 11 +++++++++++
@@ -489,12 +489,12 @@ tool_result
 id: toolu_01FtjEXStjaG2nzVZDWXFfoN
 ```
 commit 4d6560d9b493e1d383de8af2796a700ce76e7588
-Author: yutakobayashidev <hi@yutakobayashi.com>
+Author: yutakobayashidev <<REDACTED_EMAIL>>
 Date:   Tue Mar 10 16:48:32 2026 +0900
 
     fix: skip libplist tests failing on macOS to unblock ldid build
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
     Entire-Checkpoint: b4d58db2d763
 
  nix/overlays/default.nix  | 1 +
@@ -536,7 +536,7 @@ tool_use Read
 id: toolu_01AoLbkCJSDfMhF3u632SEZz
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix"
 }
 ```
 
@@ -638,7 +638,7 @@ id: toolu_01SBhCoPeqP5J3wzjMLLHcMt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix",
   "old_string": "      # macOS CLI tools\n      terminal-notifier\n      coreutils\n      cocoapods\n      watchman\n\n      # Build tools\n      gnutar\n      openssl\n      ldid\n      sshpass\n      keystone\n      autoconf\n      automake\n      pkg-config\n      libtool",
   "new_string": "      # macOS CLI tools\n      terminal-notifier\n      coreutils\n      cocoapods\n      watchman"
 }
@@ -651,7 +651,7 @@ id: toolu_015vvozShm4Lx3xYHZjw9PqQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
   "old_string": "          devShells.default = pkgs.mkShell {\n            shellHook = ''\n              ${config.pre-commit.installationScript}\n            '';\n          };",
   "new_string": "          devShells.default = pkgs.mkShell {\n            shellHook = ''\n              ${config.pre-commit.installationScript}\n            '';\n          };\n\n          devShells.vphone = pkgs.lib.mkIf isDarwin (\n            allPkgs.mkShell {\n              packages = with allPkgs; [\n                gnutar\n                openssl\n                ldid\n                sshpass\n                keystone\n                autoconf\n                automake\n                pkg-config\n                libtool\n                git-lfs\n                python3\n                gnumake\n                libimobiledevice # iproxy\n              ];\n              shellHook = ''\n                echo \"vphone dev environment ready\"\n                echo \"Usage: git clone https://github.com/Lakr233/vphone-cli && cd vphone-cli\"\n                echo \"  make setup_tools && source .venv/bin/activate\"\n              '';\n            }\n          );"
 }
@@ -662,7 +662,7 @@ id: toolu_015vvozShm4Lx3xYHZjw9PqQ
 tool_result
 id: toolu_01SBhCoPeqP5J3wzjMLLHcMt
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/packages.nix has been updated successfully.
 ```
 
 > TOOL
@@ -670,7 +670,7 @@ The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/nix/modules/darwin/p
 tool_result
 id: toolu_015vvozShm4Lx3xYHZjw9PqQ
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
 ```
 
 > AGENT
@@ -693,7 +693,7 @@ id: toolu_01BoyNLFwyfZkzSGWwaeqi4a
 tool_result
 id: toolu_01BoyNLFwyfZkzSGWwaeqi4a
 ```
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 "ok"
 ```
 
@@ -718,7 +718,7 @@ tool_result ERROR
 id: toolu_012QGn3HCrvAPbTACQUdZUyr
 ```
 Exit code 1
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 error:
        … while evaluating the attribute 'optionalValue.value'
          at /nix/store/w2jcgb8c6yph72nsksa6zmc8qdna8ys4-source/lib/modules.nix:1297:5:
@@ -752,7 +752,7 @@ id: toolu_015An41uKfTtpsY9NDvm11Zx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix",
   "old_string": "          devShells.default = pkgs.mkShell {\n            shellHook = ''\n              ${config.pre-commit.installationScript}\n            '';\n          };\n\n          devShells.vphone = pkgs.lib.mkIf isDarwin (\n            allPkgs.mkShell {\n              packages = with allPkgs; [\n                gnutar\n                openssl\n                ldid\n                sshpass\n                keystone\n                autoconf\n                automake\n                pkg-config\n                libtool\n                git-lfs\n                python3\n                gnumake\n                libimobiledevice # iproxy\n              ];\n              shellHook = ''\n                echo \"vphone dev environment ready\"\n                echo \"Usage: git clone https://github.com/Lakr233/vphone-cli && cd vphone-cli\"\n                echo \"  make setup_tools && source .venv/bin/activate\"\n              '';\n            }\n          );",
   "new_string": "          devShells =\n            {\n              default = pkgs.mkShell {\n                shellHook = ''\n                  ${config.pre-commit.installationScript}\n                '';\n              };\n            }\n            // pkgs.lib.optionalAttrs isDarwin {\n              vphone = allPkgs.mkShell {\n                packages = with allPkgs; [\n                  gnutar\n                  openssl\n                  ldid\n                  sshpass\n                  keystone\n                  autoconf\n                  automake\n                  pkg-config\n                  libtool\n                  git-lfs\n                  python3\n                  gnumake\n                  libimobiledevice # iproxy\n                ];\n                shellHook = ''\n                  echo \"vphone dev environment ready\"\n                  echo \"Usage: git clone https://github.com/Lakr233/vphone-cli && cd vphone-cli\"\n                  echo \"  make setup_tools && source .venv/bin/activate\"\n                '';\n              };\n            };"
 }
@@ -763,7 +763,7 @@ id: toolu_015An41uKfTtpsY9NDvm11Zx
 tool_result
 id: toolu_015An41uKfTtpsY9NDvm11Zx
 ```
-The file /Users/yuta/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
+The file /home/<USER>/ghq/github.com/yutakobayashidev/dotnix/flake.nix has been updated successfully.
 ```
 
 > TOOL
@@ -782,9 +782,9 @@ id: toolu_01DTatXd7TVXiyB4bHd6ebc6
 tool_result
 id: toolu_01DTatXd7TVXiyB4bHd6ebc6
 ```
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 "ok"
-warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty
+warning: Git tree '/home/<USER>/ghq/github.com/yutakobayashidev/dotnix' is dirty
 [ "default" ]
 ```
 
@@ -928,7 +928,7 @@ tool_use Bash
 id: toolu_01N9iKqU3rryx7VhecDajABX
 ```json
 {
-  "command": "git add flake.nix nix/modules/darwin/packages.nix && git commit -m \"$(cat <<'EOF'\nrefactor: move vphone build tools from darwin packages to devShell\n\nvphone-cli用のビルドツールを常用パッケージから `nix develop .#vphone` で\n利用する devShell に移動。libimobiledevice (iproxy), python3, gnumake も追加。\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git add flake.nix nix/modules/darwin/packages.nix && git commit -m \"$(cat <<'EOF'\nrefactor: move vphone build tools from darwin packages to devShell\n\nvphone-cli用のビルドツールを常用パッケージから `nix develop .#vphone` で\n利用する devShell に移動。libimobiledevice (iproxy), python3, gnumake も追加。\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit vphone devShell changes"
 }
 ```
@@ -939,10 +939,10 @@ tool_result
 id: toolu_01N9iKqU3rryx7VhecDajABX
 ```
 [WARNING] Unstaged files detected.
-[INFO] Stashing unstaged files to /Users/yuta/.cache/pre-commit/patch1773129252-52419.
+[INFO] Stashing unstaged files to /home/<USER>/.cache/pre-commit/patch1773129252-52419.
 git-secrets..............................................................Passed
 treefmt..................................................................Passed
-[INFO] Restored changes from /Users/yuta/.cache/pre-commit/patch1773129252-52419.
+[INFO] Restored changes from /home/<USER>/.cache/pre-commit/patch1773129252-52419.
 [main 0cf57aa] refactor: move vphone build tools from darwin packages to devShell
  2 files changed, 30 insertions(+), 15 deletions(-)
 ```
@@ -1073,7 +1073,7 @@ id: toolu_01QYgShsGnECaf8nwiCMD9j4
 ```json
 {
   "pattern": "direnv",
-  "path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix",
+  "path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix",
   "output_mode": "files_with_matches"
 }
 ```
@@ -1087,8 +1087,8 @@ Found 6 files
 flake.nix
 nvim/lua/plugins/lspconfig.lua
 zsh/zshrc
-nix/modules/home/programs/zsh.nix
-nix/modules/home/programs/git.nix
+nix/modules/home/<USER>/zsh.nix
+nix/modules/home/<USER>/git.nix
 .gitignore
 ```
 
@@ -1114,8 +1114,8 @@ tool_use Write
 id: toolu_01FTKPna3wd4TgnUCR735x9A
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/Lakr233/vphone-cli/.envrc",
-  "content": "use flake /Users/yuta/ghq/github.com/yutakobayashidev/dotnix#vphone\n"
+  "file_path": "/home/<USER>/ghq/github.com/Lakr233/vphone-cli/.envrc",
+  "content": "use flake /home/<USER>/ghq/github.com/yutakobayashidev/dotnix#vphone\n"
 }
 ```
 
@@ -1124,7 +1124,7 @@ id: toolu_01FTKPna3wd4TgnUCR735x9A
 tool_result
 id: toolu_01FTKPna3wd4TgnUCR735x9A
 ```
-File created successfully at: /Users/yuta/ghq/github.com/Lakr233/vphone-cli/.envrc
+File created successfully at: /home/<USER>/ghq/github.com/Lakr233/vphone-cli/.envrc
 ```
 
 > TOOL
@@ -1133,7 +1133,7 @@ tool_use Bash
 id: toolu_01GExqM3HWaBsMc3XQg7DAUB
 ```json
 {
-  "command": "cd /Users/yuta/ghq/github.com/Lakr233/vphone-cli && direnv allow 2>&1",
+  "command": "cd /home/<USER>/ghq/github.com/Lakr233/vphone-cli && direnv allow 2>&1",
   "description": "Allow direnv in vphone-cli directory"
 }
 ```
@@ -1206,7 +1206,7 @@ tool_use Read
 id: toolu_01FJfoMEEoWpJeFr7Y3fMVBG
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/Lakr233/vphone-cli/scripts/setup_machine.sh"
+  "file_path": "/home/<USER>/ghq/github.com/Lakr233/vphone-cli/scripts/setup_machine.sh"
 }
 ```
 
@@ -1309,7 +1309,7 @@ tool_use Bash
 id: toolu_01DLYUinzpy9zt1VSBnk1ext
 ```json
 {
-  "command": "head -100 /Users/yuta/ghq/github.com/Lakr233/vphone-cli/Makefile",
+  "command": "head -100 /home/<USER>/ghq/github.com/Lakr233/vphone-cli/Makefile",
   "description": "Check Makefile targets"
 }
 ```
@@ -1371,7 +1371,7 @@ tool_use Bash
 id: toolu_01UCjbNyoo3EJtuYSzRpqNJY
 ```json
 {
-  "command": "grep -n 'setup_tools\\|setup_libimobiledevice\\|setup_venv' /Users/yuta/ghq/github.com/Lakr233/vphone-cli/Makefile",
+  "command": "grep -n 'setup_tools\\|setup_libimobiledevice\\|setup_venv' /home/<USER>/ghq/github.com/Lakr233/vphone-cli/Makefile",
   "description": "Find setup-related make targets"
 }
 ```
@@ -1401,7 +1401,7 @@ tool_use Read
 id: toolu_017QFs2d9zqFpzw3ArhxPUSo
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/Lakr233/vphone-cli/Makefile",
+  "file_path": "/home/<USER>/ghq/github.com/Lakr233/vphone-cli/Makefile",
   "offset": 100
 }
 ```
@@ -1463,7 +1463,7 @@ tool_use Read
 id: toolu_013b1J13Ws1xudxT1FEZACsk
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/Lakr233/vphone-cli/scripts/setup_tools.sh"
+  "file_path": "/home/<USER>/ghq/github.com/Lakr233/vphone-cli/scripts/setup_tools.sh"
 }
 ```
 

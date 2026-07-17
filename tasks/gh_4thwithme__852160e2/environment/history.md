@@ -30,7 +30,7 @@ tool_use Write
 id: toolu_01GLTXALZ9gfE821b3SaWpM6
 ```json
 {
-  "file_path": "/Users/4thwithme/.claude/projects/-Users-4thwithme-Documents-repo-no-name-proj/memory/project_github_ingestion.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-4thwithme-Documents-repo-no-name-proj/memory/project_github_ingestion.md",
   "content": "---\nname: GitHub data ingestion status\ndescription: Status of GitHub Phase 2 data ingestion pipeline\ntype: project\n---\n\nGitHub backfill pipeline (commits, PRs, reviews, contributors) working in dev as of 2026-04-16.\n\n**Why:** Validated via manual test against no-name-proj-dev-test org (api-service + frontend-app repos).\n\n**How to apply:** Dev environment is confirmed working — next step is likely staging/prod validation or moving to next roadmap phase.\n"
 }
 ```
@@ -40,7 +40,7 @@ id: toolu_01GLTXALZ9gfE821b3SaWpM6
 tool_result
 id: toolu_01GLTXALZ9gfE821b3SaWpM6
 ```
-File created successfully at: /Users/4thwithme/.claude/projects/-Users-4thwithme-Documents-repo-no-name-proj/memory/project_github_ingestion.md
+File created successfully at: /home/<USER>/.claude/projects/-Users-4thwithme-Documents-repo-no-name-proj/memory/project_github_ingestion.md
 ```
 
 > DEVELOPER
@@ -57,7 +57,7 @@ tool_use Read
 id: toolu_018ysmE9Fm9geFBUk77gTTki
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira.controller.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira.controller.ts"
 }
 ```
 
@@ -210,7 +210,7 @@ tool_use Read
 id: toolu_014rNDWbDQp3UkDSt8ZVxRBc
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/auth/auth.controller.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/auth/auth.controller.ts"
 }
 ```
 
@@ -303,7 +303,7 @@ tool_use Read
 id: toolu_01BmWSx1pCrRzejSnAUcnrhX
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/main.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/main.ts"
 }
 ```
 
@@ -643,7 +643,7 @@ tool_use Read
 id: toolu_016oSjQScHFJdSuFuhyDGAaf
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/backend/src/modules/jira/jira-install.service.ts"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/backend/src/modules/jira/jira-install.service.ts"
 }
 ```
 

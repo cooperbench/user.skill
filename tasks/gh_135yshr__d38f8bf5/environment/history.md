@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01YPZriFouYjDCf7Me3Q3Zxj
 ```json
 {
-  "command": "ls -la /Users/135yshr/go/src/github.com/135yshr/meow/website/content/",
+  "command": "ls -la /home/<USER>/go/src/github.com/135yshr/meow/website/content/",
   "description": "List website content directory"
 }
 ```
@@ -36,7 +36,7 @@ tool_use Read
 id: toolu_01UtD6ehnNcYCj8EWD7vmFRH
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/content/meow-programming-language-vs-meowlang.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/content/meow-programming-language-vs-meowlang.md"
 }
 ```
 
@@ -77,7 +77,7 @@ tool_use Read
 id: toolu_018PHTreyyduGfNPUuFe7W2d
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/website/layouts/partials/header.html"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/website/layouts/partials/header.html"
 }
 ```
 
@@ -119,7 +119,7 @@ tool_use Read
 id: toolu_0137XtrnuHkeCWEsmvL5TmFL
 ```json
 {
-  "file_path": "/Users/135yshr/go/src/github.com/135yshr/meow/README.md"
+  "file_path": "/home/<USER>/go/src/github.com/135yshr/meow/README.md"
 }
 ```
 
@@ -235,7 +235,7 @@ tool_use Bash
 id: toolu_01KBSG2UnEkfDjopmWpdtnko
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/meow/website/ && cat /Users/135yshr/go/src/github.com/135yshr/meow/website/hugo.toml 2>/dev/null || cat /Users/135yshr/go/src/github.com/135yshr/meow/website/config.toml 2>/dev/null || cat /Users/135yshr/go/src/github.com/135yshr/meow/website/config.yaml 2>/dev/null",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/meow/website/ && cat /home/<USER>/go/src/github.com/135yshr/meow/website/hugo.toml 2>/dev/null || cat /home/<USER>/go/src/github.com/135yshr/meow/website/config.toml 2>/dev/null || cat /home/<USER>/go/src/github.com/135yshr/meow/website/config.yaml 2>/dev/null",
   "description": "Look at Hugo config"
 }
 ```
@@ -353,7 +353,7 @@ tool_use Bash
 id: toolu_01X3r2jWWpPhsETBzCYsvze8
 ```json
 {
-  "command": "grep -rn \"meow-programming-language\" /Users/135yshr/go/src/github.com/135yshr/meow/ --include=\"*.md\" --include=\"*.html\" --include=\"*.toml\" --include=\"*.xml\" 2>/dev/null | head -30",
+  "command": "grep -rn \"meow-programming-language\" /home/<USER>/go/src/github.com/135yshr/meow/ --include=\"*.md\" --include=\"*.html\" --include=\"*.toml\" --include=\"*.xml\" 2>/dev/null | head -30",
   "description": "Find references in repo"
 }
 ```
@@ -439,7 +439,7 @@ tool_use Bash
 id: toolu_011Y12Fturqakw2xuD1t8dyJ
 ```json
 {
-  "command": "ls /Users/135yshr/go/src/github.com/135yshr/meow/.github/workflows/",
+  "command": "ls /home/<USER>/go/src/github.com/135yshr/meow/.github/workflows/",
   "description": "List GitHub workflows"
 }
 ```
@@ -461,7 +461,7 @@ tool_use Bash
 id: toolu_01GJRBCgRc9UshaaaQgmk4fS
 ```json
 {
-  "command": "grep -E \"^(on|branches|name):\" /Users/135yshr/go/src/github.com/135yshr/meow/.github/workflows/hugo.yml | head -15",
+  "command": "grep -E \"^(on|branches|name):\" /home/<USER>/go/src/github.com/135yshr/meow/.github/workflows/hugo.yml | head -15",
   "description": "Check Hugo workflow trigger"
 }
 ```
@@ -481,7 +481,7 @@ tool_use Bash
 id: toolu_01JWEJmNYunW2abD5toSXtH4
 ```json
 {
-  "command": "sed -n '1,30p' /Users/135yshr/go/src/github.com/135yshr/meow/.github/workflows/hugo.yml",
+  "command": "sed -n '1,30p' /home/<USER>/go/src/github.com/135yshr/meow/.github/workflows/hugo.yml",
   "description": "Show first 30 lines of hugo workflow"
 }
 ```
@@ -576,9 +576,9 @@ id: toolu_017PiicewTNDq8urPUSmHZJ3
 ```
 Exit code 1
 [WARNING] Unstaged files detected.
-[INFO] Stashing unstaged files to /Users/135yshr/.cache/pre-commit/patch1780364311-48631.
-An unexpected error has occurred: PermissionError: [Errno 1] Operation not permitted: '/Users/135yshr/.cache/pre-commit/patch1780364311-48631'
-Failed to write to log at /Users/135yshr/.cache/pre-commit/pre-commit.log
+[INFO] Stashing unstaged files to /home/<USER>/.cache/pre-commit/patch1780364311-48631.
+An unexpected error has occurred: PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/.cache/pre-commit/patch1780364311-48631'
+Failed to write to log at /home/<USER>/.cache/pre-commit/pre-commit.log
 ### version information
 
 ```
@@ -594,7 +594,7 @@ sys.platform: darwin
 ### error information
 
 ```
-An unexpected error has occurred: PermissionError: [Errno 1] Operation not permitted: '/Users/135yshr/.cache/pre-commit/patch1780364311-48631'
+An unexpected error has occurred: PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/.cache/pre-commit/patch1780364311-48631'
 ```
 
 ```
@@ -625,7 +625,7 @@ Traceback (most recent call last):
   File "/opt/homebrew/Cellar/pre-commit/4.5.1_1/libexec/lib/python3.14/site-packages/pre_commit/staged_files_only.py", line 74, in _unstaged_changes_cleared
     with open(patch_filename, 'wb') as patch_file:
          ~~~~^^^^^^^^^^^^^^^^^^^^^^
-PermissionError: [Errno 1] Operation not permitted: '/Users/135yshr/.cache/pre-commit/patch1780364311-48631'
+PermissionError: [Errno 1] Operation not permitted: '/home/<USER>/.cache/pre-commit/patch1780364311-48631'
 ```
 ```
 
@@ -651,12 +651,12 @@ tool_result
 id: toolu_01CgkFmQLSnhDaXghfPphyqD
 ```
 [WARNING] Unstaged files detected.
-[INFO] Stashing unstaged files to /Users/135yshr/.cache/pre-commit/patch1780364318-48921.
+[INFO] Stashing unstaged files to /home/<USER>/.cache/pre-commit/patch1780364318-48921.
 go fmt...............................................(no files to check)Skipped
 go vet...............................................(no files to check)Skipped
 golangci-lint........................................(no files to check)Skipped
 go test..............................................(no files to check)Skipped
-[INFO] Restored changes from /Users/135yshr/.cache/pre-commit/patch1780364318-48921.
+[INFO] Restored changes from /home/<USER>/.cache/pre-commit/patch1780364318-48921.
 [main 2f2009f] ✨ feat: Add Meow vs MeowLang comparison page
  1 file changed, 87 insertions(+)
  create mode 100644 website/content/meow-programming-language-vs-meowlang.md

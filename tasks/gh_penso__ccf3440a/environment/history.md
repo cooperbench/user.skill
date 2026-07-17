@@ -133,7 +133,7 @@ tool_result
 id: toolu_01CnnqF1FTWYDjW8f34fYs5v
 ```
 commit 04b7b9f15f3020879d0148ebf4d8eea3bef8b889
-Author: Fabien Penso <gpg@pen.so>
+Author: Fabien Penso <<REDACTED_EMAIL>>
 Date:   Mon Apr 20 22:53:25 2026 +0100
 
     fix(providers): disable strict tools for Fireworks Kimi router (#812)
@@ -218,7 +218,7 @@ tool_result
 id: toolu_01CZHkmPWH2YrfDcpGEJhSbL
 ```
 commit 04b7b9f15f3020879d0148ebf4d8eea3bef8b889
-Author: Fabien Penso <gpg@pen.so>
+Author: Fabien Penso <<REDACTED_EMAIL>>
 Date:   Mon Apr 20 22:53:25 2026 +0100
 
     fix(providers): disable strict tools for Fireworks Kimi router (#812)
@@ -437,7 +437,7 @@ tool_use Read
 id: toolu_01Dmxj6PSSTntUywqpWFhu58
 ```json
 {
-  "file_path": "/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
+  "file_path": "/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
   "limit": 30
 }
 ```
@@ -486,7 +486,7 @@ id: toolu_01WqkH1q5GHZdrmZxBj3RPWy
 ```json
 {
   "pattern": "fn make_provider",
-  "path": "/Users/penso/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
+  "path": "/home/<USER>/.superset/worktrees/moltis/pointy-bike/crates/providers/tests/fireworks_integration.rs",
   "output_mode": "content",
   "-A": 15
 }

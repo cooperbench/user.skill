@@ -8,7 +8,7 @@ tool_use Bash
 id: toolu_01MoyWYeevNeh2R78pWfuwFG
 ```json
 {
-  "command": "ls -la /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ 2>/dev/null && echo \"---\" && ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/",
+  "command": "ls -la /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ 2>/dev/null && echo \"---\" && ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/",
   "description": "List workflow files"
 }
 ```
@@ -42,7 +42,7 @@ tool_use Read
 id: toolu_01VJT4o4J5xcVdHj91YThWY2
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ci.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ci.yml"
 }
 ```
 
@@ -117,7 +117,7 @@ tool_use Read
 id: toolu_017nCezZvSdWm9Q5geWrJ5j2
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/protocol-compliance.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/protocol-compliance.yml"
 }
 ```
 
@@ -190,7 +190,7 @@ tool_use Read
 id: toolu_01P7q4Z2jsNFhVtVgi6vc7Ui
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/lint.yml"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/lint.yml"
 }
 ```
 
@@ -289,7 +289,7 @@ tool_use Bash
 id: toolu_01DLCoHrSapyKMhFod7sgnRi
 ```json
 {
-  "command": "ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/ && echo \"---\" && ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/tests/ 2>/dev/null",
+  "command": "ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/ && echo \"---\" && ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/tests/ 2>/dev/null",
   "description": "List e2e and tests directories"
 }
 ```
@@ -320,7 +320,7 @@ tool_use Bash
 id: toolu_01VEuB6F7FK75N5TEELbDLWq
 ```json
 {
-  "command": "cat /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise.toml; echo \"---\"; ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/",
+  "command": "cat /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise.toml; echo \"---\"; ls /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/",
   "description": "Inspect mise config and tasks"
 }
 ```
@@ -388,7 +388,7 @@ tool_use Bash
 id: toolu_01LpNK5q3k3fzbgx15RBa7zN
 ```json
 {
-  "command": "cat /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/test /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/build /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/lint",
+  "command": "cat /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/test /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/build /home/<USER>/Projects/wt/external-agents/kiro-windows-bug/mise-tasks/lint",
   "description": "Inspect mise task scripts"
 }
 ```
@@ -470,7 +470,7 @@ tool_use Read
 id: toolu_017ZFsq94j1f7Y3L3XXK1SnS
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go",
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go",
   "limit": 80
 }
 ```
@@ -480,7 +480,7 @@ id: toolu_017ZFsq94j1f7Y3L3XXK1SnS
 tool_result ERROR
 id: toolu_017ZFsq94j1f7Y3L3XXK1SnS
 ```
-<tool_use_error>Cancelled: parallel tool call Bash(cat /Users/alisha/Projects/wt/external-a…) errored</tool_use_error>
+<tool_use_error>Cancelled: parallel tool call Bash(cat /home/<USER>/Projects/wt/external-a…) errored</tool_use_error>
 ```
 
 > TOOL
@@ -489,7 +489,7 @@ tool_use Read
 id: toolu_01XuZeAux934YT1Hgu72v3Uk
 ```json
 {
-  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go"
+  "file_path": "/home/<USER>/Projects/wt/external-agents/kiro-windows-bug/e2e/lifecycle_test.go"
 }
 ```
 

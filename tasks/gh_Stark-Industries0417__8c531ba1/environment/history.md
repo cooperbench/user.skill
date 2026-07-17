@@ -36,7 +36,7 @@ id: toolu_015kEQQ9ad7tmd7TbkBmhaBx
 ```json
 {
   "description": "Explore hook registry codebase",
-  "prompt": "Explore the codebase at /Users/evisdrenova/code/entire/devenv/cli to understand the current agent hook system architecture. Specifically:\n\n1. Read the hook_registry.go file that was opened by the user\n2. Find all agent-related files in cmd/entire/cli/ - look for files related to hooks, agents, and the registry pattern\n3. Understand how existing agents (like Claude Code) are registered and what hooks they implement\n4. Look at the current branch (add_codex_support) for any existing work\n\nBe thorough - look at all relevant files to understand the full hook/agent registration system.",
+  "prompt": "Explore the codebase at /home/<USER>/code/entire/devenv/cli to understand the current agent hook system architecture. Specifically:\n\n1. Read the hook_registry.go file that was opened by the user\n2. Find all agent-related files in cmd/entire/cli/ - look for files related to hooks, agents, and the registry pattern\n3. Understand how existing agents (like Claude Code) are registered and what hooks they implement\n4. Look at the current branch (add_codex_support) for any existing work\n\nBe thorough - look at all relevant files to understand the full hook/agent registration system.",
   "subagent_type": "Explore"
 }
 ```

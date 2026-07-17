@@ -121,7 +121,7 @@ tool_use Bash
 id: toolu_01PPmRdZpuWugv34FKeRjE8b
 ```json
 {
-  "command": "grep -n \"^<<<<<<<\\|^=======\\|^>>>>>>>\" /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
+  "command": "grep -n \"^<<<<<<<\\|^=======\\|^>>>>>>>\" /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
   "description": "Find conflict markers and line numbers"
 }
 ```
@@ -149,7 +149,7 @@ tool_use Read
 id: toolu_01VMDwYqv5h3UaNMdWVMh184
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
   "offset": 30,
   "limit": 30
 }
@@ -200,7 +200,7 @@ tool_use Read
 id: toolu_01SY9RXZGfNKh6EQTTvURCum
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
   "offset": 175,
   "limit": 30
 }
@@ -256,7 +256,7 @@ id: toolu_0166wejgQGT6Qk1ag1mwnSoK
 ```json
 {
   "pattern": "func.*resolveAgentType",
-  "path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy",
   "output_mode": "content"
 }
 ```
@@ -276,7 +276,7 @@ id: toolu_016Szk4TB4dFb2RxgJSHD4CQ
 ```json
 {
   "pattern": "func.*initializeSession",
-  "path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy",
+  "path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy",
   "output_mode": "content"
 }
 ```
@@ -302,7 +302,7 @@ id: toolu_01TSQWhj4EntsHWmvazuxzij
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
   "old_string": "<<<<<<< HEAD\n\t\tagentType := resolveAgentType(ctx.AgentType, state)\n\t\tstate, err = s.initializeSession(repo, sessionID, agentType, \"\") // No transcript path in fallback\n=======\n\t\t// Preserve existing AgentType if we have a partial state, otherwise use default\n\t\tagentType := DefaultAgentType\n\t\tif state != nil && state.AgentType != \"\" {\n\t\t\tagentType = state.AgentType\n\t\t}\n\t\tstate, err = s.initializeSession(repo, sessionID, agentType, \"\", \"\") // No transcript/prompt in fallback\n>>>>>>> origin/main",
   "new_string": "\t\tagentType := resolveAgentType(ctx.AgentType, state)\n\t\tstate, err = s.initializeSession(repo, sessionID, agentType, \"\", \"\") // No transcript/prompt in fallback"
 }
@@ -313,7 +313,7 @@ id: toolu_01TSQWhj4EntsHWmvazuxzij
 tool_result
 id: toolu_01TSQWhj4EntsHWmvazuxzij
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go has been updated successfully.
 ```
 
 > TOOL
@@ -323,7 +323,7 @@ id: toolu_01Hm2xG6beAKNn7AFuBfLH8F
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
   "old_string": "<<<<<<< HEAD\n\t\tagentType := resolveAgentType(ctx.AgentType, state)\n\t\tstate, err = s.initializeSession(repo, ctx.SessionID, agentType, \"\") // No transcript path in fallback\n=======\n\t\t// Initialize if needed (including if BaseCommit is empty from partial warning state)\n\t\t// Preserve existing AgentType if we have a partial state, otherwise use default\n\t\tagentType := DefaultAgentType\n\t\tif state != nil && state.AgentType != \"\" {\n\t\t\tagentType = state.AgentType\n\t\t}\n\t\tstate, err = s.initializeSession(repo, ctx.SessionID, agentType, \"\", \"\") // No transcript/prompt in fallback\n>>>>>>> origin/main",
   "new_string": "\t\tagentType := resolveAgentType(ctx.AgentType, state)\n\t\tstate, err = s.initializeSession(repo, ctx.SessionID, agentType, \"\", \"\") // No transcript/prompt in fallback"
 }
@@ -334,7 +334,7 @@ id: toolu_01Hm2xG6beAKNn7AFuBfLH8F
 tool_result
 id: toolu_01Hm2xG6beAKNn7AFuBfLH8F
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go has been updated successfully.
 ```
 
 > AGENT
@@ -347,7 +347,7 @@ tool_use Bash
 id: toolu_01AMpN8MFX3oBZgdhXTXUNah
 ```json
 {
-  "command": "grep -n \"^<<<<<<<\\|^=======\\|^>>>>>>>\" /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
+  "command": "grep -n \"^<<<<<<<\\|^=======\\|^>>>>>>>\" /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_git.go",
   "description": "Check for remaining conflict markers"
 }
 ```
@@ -457,7 +457,7 @@ tool_use Read
 id: toolu_013Xtu4uuWPxTthgPwBgqYQj
 ```json
 {
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_test.go",
   "offset": 1660,
   "limit": 30
 }
@@ -509,7 +509,7 @@ id: toolu_01BCryWaDnAN2out9fAAbBE5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_test.go",
+  "file_path": "/home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_test.go",
   "old_string": "\tif err := s.InitializeSession(sessionID, agent.AgentTypeClaudeCode, \"\"); err != nil {\n\t\tt.Fatalf(\"InitializeSession() error = %v\", err)\n\t}\n\n\t// Simulate the bug: manually set AgentType to \"Agent\" (as if session was created with default)\n\tstate, err := s.loadSessionState(sessionID)\n\tif err != nil {\n\t\tt.Fatalf(\"failed to load session state: %v\", err)\n\t}\n\tstate.AgentType = agent.AgentTypeUnknown\n\tif err := s.saveSessionState(state); err != nil {\n\t\tt.Fatalf(\"failed to save state: %v\", err)\n\t}\n\n\t// Second call with correct agent type should fix the \"Agent\" value\n\tif err := s.InitializeSession(sessionID, agent.AgentTypeClaudeCode, \"\"); err != nil {",
   "new_string": "\tif err := s.InitializeSession(sessionID, agent.AgentTypeClaudeCode, \"\", \"\"); err != nil {\n\t\tt.Fatalf(\"InitializeSession() error = %v\", err)\n\t}\n\n\t// Simulate the bug: manually set AgentType to \"Agent\" (as if session was created with default)\n\tstate, err := s.loadSessionState(sessionID)\n\tif err != nil {\n\t\tt.Fatalf(\"failed to load session state: %v\", err)\n\t}\n\tstate.AgentType = agent.AgentTypeUnknown\n\tif err := s.saveSessionState(state); err != nil {\n\t\tt.Fatalf(\"failed to save state: %v\", err)\n\t}\n\n\t// Second call with correct agent type should fix the \"Agent\" value\n\tif err := s.InitializeSession(sessionID, agent.AgentTypeClaudeCode, \"\", \"\"); err != nil {"
 }
@@ -520,7 +520,7 @@ id: toolu_01BCryWaDnAN2out9fAAbBE5
 tool_result
 id: toolu_01BCryWaDnAN2out9fAAbBE5
 ```
-The file /Users/alex/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_test.go has been updated successfully.
+The file /home/<USER>/workspace/cli/.worktrees/2/cmd/entire/cli/strategy/manual_commit_test.go has been updated successfully.
 ```
 
 > TOOL
@@ -620,7 +620,7 @@ tool_use Bash
 id: toolu_01665dU2NUbczfNtHnym3vaT
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nMerge origin/main into alex/ent-207-fix-agent-name-misattribution\n\nResolve conflict in manual_commit_git.go: keep resolveAgentType helper\nfrom this branch while adopting the new userPrompt parameter from main.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nMerge origin/main into alex/ent-207-fix-agent-name-misattribution\n\nResolve conflict in manual_commit_git.go: keep resolveAgentType helper\nfrom this branch while adopting the new userPrompt parameter from main.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit the merge"
 }
 ```

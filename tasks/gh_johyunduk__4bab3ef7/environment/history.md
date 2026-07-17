@@ -126,7 +126,7 @@ id: toolu_01PmDL44tw9e2rmVwv6hdhKy
 
 ### 1. 캐릭터 정의 및 저장 구조
 
-**파일:** `/Users/johyunduk/Projects/ddong-avoid-game/src/utils/character.ts`
+**파일:** `/home/<USER>/Projects/ddong-avoid-game/src/utils/character.ts`
 
 **CharacterDef 인터페이스 (줄 8-25):**
 ```typescript
@@ -172,7 +172,7 @@ tool_use Read
 id: toolu_01EkR11XpiuojuHHvMYeZVRj
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts"
 }
 ```
 
@@ -237,7 +237,7 @@ tool_use Read
 id: toolu_01Y4MFkYbfEyRqPDx2xjqv2W
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts"
 }
 ```
 
@@ -344,7 +344,7 @@ tool_use Read
 id: toolu_01264voxS6cTzECpHmPnY9BX
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts"
 }
 ```
 
@@ -358,7 +358,7 @@ tool_use Write
 id: toolu_01CHMEUNmenC825G523mzsK1
 ```json
 {
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "content": "# EXTREME 캐릭터별 랭킹 필터 구현 계획\n\n## Context\n현재 LeaderboardScene은 난이도별(NORMAL/HARD/EXTREME/PHYSICAL) 탭만 지원한다. EXTREME은 가장 어려운 모드로, 캐릭터 능력이 생존에 직접 영향을 미쳐 \"어떤 캐릭터로 얼마나 버텼나\"가 의미 있는 지표다. EXTREME 탭 선택 시 캐릭터 필터 칩 행을 추가해 \"같은 캐릭터끼리의 경쟁\"을 가능하게 한다.\n\n**핵심 사실**:\n- `leaderboard` 테이블에 이미 `character_type` 컬럼 존재 — 제출 시 이미 저장됨\n- `leaderboard-top` 응답에서 이미 `characterType` 필드 반환\n- 데이터 인프라는 준비됨 — Edge Function 필터 추가 + UI 구현만 필요\n\n---\n\n## 변경 파일 목록\n\n### 1. `supabase/functions/leaderboard-top/index.ts`\n**변경 내용**: 선택적 `characterType` 파라미터 지원 추가\n\n```\nreq.json() → { difficulty, limit, characterType }   // characterType 파싱 추가\n```\n\n- 메인 리더보드 쿼리(줄 96-107): `characterType` truthy 시 `.eq('character_type', characterType)` 체이닝\n- `characterType` 제공 시 `currentUserRank`와 `prevSeasonReward` 계산 스킵 (캐릭터 필터뷰에서는 난이도 전체 순위/보상이 무의미)\n\n---\n\n### 2. `src/utils/leaderboard.ts`\n**변경 내용**: `getLeaderboard()` 시그니처에 선택적 파라미터 추가\n\n```typescript\n// 줄 150 변경\nexport async function getLeaderboard(\n  difficulty: Difficulty,\n  limit: number = 100,\n  characterType?: string   // 추가\n): Promise<LeaderboardResponse>\n```\n\n- body에 `characterType` truthy 시만 포함: `...(characterType ? { characterType } : {})`\n\n---\n\n### 3. `src/scenes/LeaderboardScene.ts`\n**변경 내용**: EXTREME 선택 시 캐릭터 필터 칩 행 표시\n\n#### 새 프로퍼티 (줄 13 클래스 상단)\n```typescript\nprivate selectedCharFilter: string | null = null;   // null = 전체\nprivate availableChars: string[] = [];               // 전체 로드 후 채워짐\nprivate charFilterObjects: […]
 
 > TOOL
@@ -366,7 +366,7 @@ id: toolu_01CHMEUNmenC825G523mzsK1
 tool_result
 id: toolu_01CHMEUNmenC825G523mzsK1
 ```
-File created successfully at: /Users/johyunduk/.claude/plans/unified-herding-owl.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/unified-herding-owl.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -441,7 +441,7 @@ tool_use Write
 id: toolu_01Smf9fvdpERTbGDy2V3YvY5
 ```json
 {
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "content": "# EXTREME 캐릭터별 랭킹 필터 구현 계획\n\n## Context\n현재 LeaderboardScene은 난이도별(NORMAL/HARD/EXTREME/PHYSICAL) 탭만 지원한다. EXTREME은 가장 어려운 모드로, 캐릭터 능력이 생존에 직접 영향을 미쳐 \"어떤 캐릭터로 얼마나 버텼나\"가 의미 있는 지표다.\n\n**핵심 버그 (이번에 함께 수정)**:\n현재 `leaderboard` 테이블 PK가 `(user_id, difficulty, year_month)`이라 사용자당 월 1개 기록만 존재한다. 레거시 2만점 기록 보유 시 무기로 5천점을 달성해도 \"5천 < 2만\" 조건에 의해 무기 점수가 저장되지 않는다. 캐릭터 필터를 의미 있게 만들려면 이 구조를 반드시 변경해야 한다.\n\n---\n\n## DB 스키마 변경 (Migration)\n\n### 변경 내용\n```sql\n-- 기존 PK 제거: (user_id, difficulty, year_month)\n-- 신규 PK 추가: (user_id, difficulty, year_month, character_type)\n\nALTER TABLE leaderboard DROP CONSTRAINT leaderboard_pkey;\nALTER TABLE leaderboard ADD PRIMARY KEY (user_id, difficulty, year_month, character_type);\n```\n\n### 전체 랭킹용 VIEW 생성\n전체 랭킹(캐릭터 필터 없음) 조회 시 유저당 최고 점수 1개만 노출하기 위한 뷰:\n\n```sql\nCREATE OR REPLACE VIEW leaderboard_best AS\nSELECT DISTINCT ON (user_id, difficulty, year_month)\n  user_id, difficulty, year_month, character_type, score, season, updated_at\nFROM leaderboard\nORDER BY user_id, difficulty, year_month, score DESC;\n```\n\n→ `leaderboard-top`에서 캐릭터 필터 없을 때 이 VIEW를 사용.\n\n---\n\n## 변경 파일 목록\n\n### 1. `supabase/migrations/YYYYMMDD_leaderboard_char_pk.sql` (신규)\n위 migration SQL 파일 생성.\n\n---\n\n### 2. `supabase/functions/leaderboard-submit/index.ts`\n**변경 내용**: UPSERT conflict target 변경\n\n```typescript\n// 기존: conflict target = (user_id, difficulty, year_month)\n// 변경: conflict target = (user_id, difficulty, year_month, character_type)\n\n.upsert({\n  user_id, difficulty, year_month, character_type,\n  score, season, updated_at\n}, […]
 
 > TOOL
@@ -449,7 +449,7 @@ id: toolu_01Smf9fvdpERTbGDy2V3YvY5
 tool_result
 id: toolu_01Smf9fvdpERTbGDy2V3YvY5
 ```
-The file /Users/johyunduk/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -524,7 +524,7 @@ tool_use Write
 id: toolu_01NEo7s7Ztb17Pi3nRDufBWM
 ```json
 {
-  "file_path": "/Users/johyunduk/.claude/plans/unified-herding-owl.md",
+  "file_path": "/home/<USER>/.claude/plans/unified-herding-owl.md",
   "content": "# EXTREME 캐릭터별 랭킹 구현 계획\n\n## Context\n현재 LeaderboardScene은 난이도별(NORMAL/HARD/EXTREME/PHYSICAL) 탭만 지원한다. EXTREME은 가장 어려운 모드로, 캐릭터 능력이 생존에 직접 영향을 미쳐 \"어떤 캐릭터로 얼마나 버텼나\"가 의미 있는 지표다. EXTREME 탭 선택 시 캐릭터 필터 칩 행을 추가해 \"같은 캐릭터끼리의 경쟁\"을 가능하게 한다.\n\n**핵심 버그 (함께 수정)**:\n현재 `leaderboard` PK는 `(user_id, difficulty, year_month)` — 사용자당 월 1개 기록만 존재. 레거시 2만점 보유 시 무기로 5천점을 달성해도 저장되지 않는다.\n\n**해결 전략: 별도 테이블 분리**\n- `leaderboard` 테이블은 완전 무변경 (기존 보상 시스템과 얽혀 있음)\n- EXTREME 전용 `leaderboard_extreme_char` 테이블을 신규 생성\n- PK: `(user_id, year_month, character_type)` — 캐릭터별 베스트 스코어 저장\n- EXTREME 플레이 시 기존 `leaderboard` + 새 테이블에 각각 write\n\n---\n\n## 변경 파일 목록\n\n### 1. `supabase/migrations/YYYYMMDD_leaderboard_extreme_char.sql` (신규)\n\n```sql\nCREATE TABLE leaderboard_extreme_char (\n  user_id       UUID        NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,\n  year_month    TEXT        NOT NULL,  -- 'YYYY-MM'\n  character_type TEXT       NOT NULL DEFAULT 'chibi',\n  score         INTEGER     NOT NULL DEFAULT 0,\n  season        INTEGER     NOT NULL DEFAULT 1,\n  updated_at    TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n  PRIMARY KEY (user_id, year_month, character_type)\n);\n\n-- 점수 내림차순 인덱스 (랭킹 조회 성능)\nCREATE INDEX idx_extreme_char_score\n  ON leaderboard_extreme_char (year_month, character_type, score DESC);\n\n-- RLS: 누구나 읽기 가능, 본인만 쓰기\nALTER TABLE leaderboard_extreme_char ENABLE ROW LEVEL SECURITY;\nCREATE POLICY \"read all\" ON leaderboard_extreme_char FOR SELECT USING (true);\nCREATE […]
 
 > TOOL
@@ -532,7 +532,7 @@ id: toolu_01NEo7s7Ztb17Pi3nRDufBWM
 tool_result
 id: toolu_01NEo7s7Ztb17Pi3nRDufBWM
 ```
-The file /Users/johyunduk/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/plans/unified-herding-owl.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -569,7 +569,7 @@ id: toolu_01VgJ2AZRmpdJankTjKW5BZU
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/johyunduk/.claude/plans/unified-herding-owl.md
+Your plan has been saved to: /home/<USER>/.claude/plans/unified-herding-owl.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan:
@@ -613,7 +613,7 @@ tool_use Read
 id: toolu_01J6NWp9RUvsYZsuMhh2gBpM
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts"
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts"
 }
 ```
 
@@ -669,7 +669,7 @@ tool_use Bash
 id: toolu_01Ah78Xnr41iBKo1sGeJmYWx
 ```json
 {
-  "command": "ls /Users/johyunduk/Projects/ddong-avoid-game/supabase/migrations/ 2>/dev/null || echo \"no migrations dir\"",
+  "command": "ls /home/<USER>/Projects/ddong-avoid-game/supabase/migrations/ 2>/dev/null || echo \"no migrations dir\"",
   "description": "List migrations directory"
 }
 ```
@@ -732,7 +732,7 @@ id: toolu_012oLndvYX6pRXKUKpkpcGq1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts",
   "old_string": "    const yearMonth = getCurrentYearMonth();\n    const season = calcSeason(yearMonth);\n\n    // 현재 시즌 기존 점수 조회\n    const { data: existing } = await supabaseAdmin\n      .from('leaderboard')\n      .select('score')\n      .eq('user_id', user.id)\n      .eq('difficulty', difficulty)\n      .eq('year_month', yearMonth)\n      .single();\n\n    const previousScore = existing?.score ?? null;\n    const isNewRecord = previousScore === null || score > previousScore;\n\n    // 최고 점수만 저장 (upsert)\n    if (isNewRecord) {\n      const validCharacterTypes = [\n        'chibi', 'mugi', 'gumi', 'knight',\n        'log', 'swap', 'sum', 'fork', 'seed', 'session', 'branch', 'hook', 'socket', 'index',\n        'hacker', 'miner', 'maehwa', 'archieve', 'glitch', 'noise',\n        'sentinel', 'legacy',\n      ];\n      const safeCharacterType = validCharacterTypes.includes(characterType) ? characterType : 'chibi';\n\n      const { error: upsertError } = await supabaseAdmin\n        .from('leaderboard')\n        .upsert(\n          {\n            user_id: user.id,\n            difficulty,\n            score,\n            character_type: safeCharacterType,\n            year_month: yearMonth,\n            season,\n            updated_at: new Date().toISOString(),\n          },\n          { onConflict: 'user_id,difficulty,year_month' }\n        );\n\n      if (upsertError) {\n        console.error('Upsert error:', upsertError);\n        return new Response(\n          JSON.stringify({ error: 'Failed to save score' }),\n          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }\n        );\n      }\n    }",
   "new_string": "    const yearMonth = getCurrentYearMonth();\n    const season = calcSeason(yearMonth);\n\n    const validCharacterTypes = [\n      'chibi', 'mugi', 'gumi', 'knight',\n      'log', 'swap', 'sum', 'fork', 'seed', 'session', 'branch', 'hook', 'socket', 'index',\n      'hacker', 'miner', 'maehwa', 'archieve', 'glitch', 'noise',\n      'sentinel', 'legacy',\n    ];\n    const safeCharacterType = […]
 
@@ -741,7 +741,7 @@ id: toolu_012oLndvYX6pRXKUKpkpcGq1
 tool_result
 id: toolu_012oLndvYX6pRXKUKpkpcGq1
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-submit/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -755,7 +755,7 @@ id: toolu_01S3kH8fChNfn5e86ubsPvSv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "old_string": "    const { difficulty, limit: limitParam } = await req.json().catch(() => ({}));\n    const limit = parseInt(limitParam ?? '100', 10);",
   "new_string": "    const { difficulty, limit: limitParam, characterType } = await req.json().catch(() => ({}));\n    const limit = parseInt(limitParam ?? '100', 10);"
 }
@@ -766,7 +766,7 @@ id: toolu_01S3kH8fChNfn5e86ubsPvSv
 tool_result
 id: toolu_01S3kH8fChNfn5e86ubsPvSv
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -780,7 +780,7 @@ id: toolu_019sSWCyqXXYcxcR9Qxu6GvT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts",
   "old_string": "    const yearMonth = getCurrentYearMonth();\n    const prevYearMonth = getPrevYearMonth(yearMonth);\n\n    // 현재 시즌 리더보드 조회 (profiles와 JOIN하여 이니셜 포함)",
   "new_string": "    const yearMonth = getCurrentYearMonth();\n    const prevYearMonth = getPrevYearMonth(yearMonth);\n\n    // EXTREME 캐릭터 필터: leaderboard_extreme_char 테이블 조회 후 조기 반환\n    if (characterType && difficulty === 'extreme') {\n      const { data: charData, error: charError } = await supabaseAdmin\n        .from('leaderboard_extreme_char')\n        .select('user_id, score, character_type, profiles!inner(initials)')\n        .eq('year_month', yearMonth)\n        .eq('character_type', characterType)\n        .order('score', { ascending: false })\n        .limit(safeLimit);\n\n      if (charError) {\n        console.error('Extreme char leaderboard error:', charError);\n        return new Response(\n          JSON.stringify({ error: 'Failed to fetch character leaderboard' }),\n          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }\n        );\n      }\n\n      const charEntries = (charData ?? []).map((entry, index) => ({\n        userId: entry.user_id,\n        userName: (entry.profiles as { initials: string | null }).initials ?? '???',\n        score: entry.score,\n        rank: index + 1,\n        characterType: (entry as Record<string, unknown>).character_type ?? 'chibi',\n      }));\n\n      return new Response(\n        JSON.stringify({\n          success: true,\n          difficulty,\n          yearMonth,\n          season: calcSeason(yearMonth),\n          leaderboard: charEntries,\n          currentUserRank: null,\n          totalEntries: charEntries.length,\n          prevSeasonReward: null,\n        }),\n        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }\n      );\n    }\n\n    // 현재 시즌 리더보드 조회 (profiles와 JOIN하여 이니셜 포함)"
 }
@@ -791,7 +791,7 @@ id: toolu_019sSWCyqXXYcxcR9Qxu6GvT
 tool_result
 id: toolu_019sSWCyqXXYcxcR9Qxu6GvT
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/supabase/functions/leaderboard-top/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -805,7 +805,7 @@ id: toolu_01VxHDyvhtKfHnvWATJY9Lgq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts",
   "old_string": "export async function getLeaderboard(\n  difficulty: Difficulty,\n  limit: number = 100\n): Promise<LeaderboardResponse> {\n  const { data, error } = await supabase.functions.invoke('leaderboard-top', {\n    body: { difficulty, limit },\n  });",
   "new_string": "export async function getLeaderboard(\n  difficulty: Difficulty,\n  limit: number = 100,\n  characterType?: string\n): Promise<LeaderboardResponse> {\n  const body: Record<string, unknown> = { difficulty, limit };\n  if (characterType) body.characterType = characterType;\n\n  const { data, error } = await supabase.functions.invoke('leaderboard-top', {\n    body,\n  });"
 }
@@ -816,7 +816,7 @@ id: toolu_01VxHDyvhtKfHnvWATJY9Lgq
 tool_result
 id: toolu_01VxHDyvhtKfHnvWATJY9Lgq
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/utils/leaderboard.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/utils/leaderboard.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -830,7 +830,7 @@ id: toolu_01E7sVt5We2rGN49DFVuBQjx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  private selectedDifficulty: Difficulty = DifficultyEnum.NORMAL;\n  private leaderboardData: LeaderboardEntry[] = [];\n  private leaderboardTexts: Phaser.GameObjects.GameObject[] = [];\n  private loadingText?: Phaser.GameObjects.Text;\n  private errorText?: Phaser.GameObjects.Text;\n  private currentRequestId: number = 0;\n  private difficultyButtons = new Map<Difficulty, Phaser.GameObjects.Rectangle>();",
   "new_string": "  private selectedDifficulty: Difficulty = DifficultyEnum.NORMAL;\n  private leaderboardData: LeaderboardEntry[] = [];\n  private leaderboardTexts: Phaser.GameObjects.GameObject[] = [];\n  private loadingText?: Phaser.GameObjects.Text;\n  private errorText?: Phaser.GameObjects.Text;\n  private currentRequestId: number = 0;\n  private difficultyButtons = new Map<Difficulty, Phaser.GameObjects.Rectangle>();\n\n  // EXTREME 캐릭터 필터\n  private selectedCharFilter: string | null = null;\n  private availableChars: string[] = [];\n  private charFilterObjects: Phaser.GameObjects.GameObject[] = [];"
 }
@@ -841,7 +841,7 @@ id: toolu_01E7sVt5We2rGN49DFVuBQjx
 tool_result
 id: toolu_01E7sVt5We2rGN49DFVuBQjx
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -851,7 +851,7 @@ id: toolu_01G1XysFMfmPLjwYgyv8NNNd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  private selectDifficulty(difficulty: Difficulty) {\n    // 같은 난이도면 무시\n    if (this.selectedDifficulty === difficulty) {\n      return;\n    }\n\n    this.selectedDifficulty = difficulty;\n\n    // 모든 버튼 스타일 재설정\n    this.difficultyButtons.forEach((btn, diff) => {\n      const isSelected = diff === difficulty;\n      btn.setFillStyle(isSelected ? 0xffff99 : 0xffffff);\n      btn.setStrokeStyle(3, isSelected ? 0xff0000 : 0x000000);\n    });\n\n    // 새로운 난이도 데이터 로드\n    this.loadLeaderboard();\n  }",
   "new_string": "  private selectDifficulty(difficulty: Difficulty) {\n    if (this.selectedDifficulty === difficulty) return;\n\n    this.selectedDifficulty = difficulty;\n\n    // 난이도 전환 시 캐릭터 필터 초기화\n    this.selectedCharFilter = null;\n    this.availableChars = [];\n    this.charFilterObjects.forEach(o => o.destroy());\n    this.charFilterObjects = [];\n\n    this.difficultyButtons.forEach((btn, diff) => {\n      const isSelected = diff === difficulty;\n      btn.setFillStyle(isSelected ? 0xffff99 : 0xffffff);\n      btn.setStrokeStyle(3, isSelected ? 0xff0000 : 0x000000);\n    });\n\n    this.loadLeaderboard();\n  }"
 }
@@ -862,7 +862,7 @@ id: toolu_01G1XysFMfmPLjwYgyv8NNNd
 tool_result
 id: toolu_01G1XysFMfmPLjwYgyv8NNNd
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -872,7 +872,7 @@ id: toolu_01Qtzdm3pqU3jgrNyqQgCVY5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "    try {\n      const response = await getLeaderboard(this.selectedDifficulty, 10);\n\n      // 응답이 도착했을 때 최신 요청인지 확인\n      if (requestId !== this.currentRequestId) {\n        // 이미 새로운 요청이 시작됨 - 이 응답은 무시\n        return;\n      }\n\n      this.leaderboardData = response.leaderboard;",
   "new_string": "    try {\n      const response = await getLeaderboard(\n        this.selectedDifficulty,\n        10,\n        this.selectedCharFilter ?? undefined\n      );\n\n      if (requestId !== this.currentRequestId) return;\n\n      this.leaderboardData = response.leaderboard;\n\n      // EXTREME 전체 로드 시 캐릭터 목록 갱신 (필터 없을 때만)\n      if (this.selectedDifficulty === DifficultyEnum.EXTREME && this.selectedCharFilter === null) {\n        this.availableChars = [\n          ...new Set(response.leaderboard.map(e => e.characterType ?? 'chibi').filter(Boolean)),\n        ];\n      }"
 }
@@ -883,7 +883,7 @@ id: toolu_01Qtzdm3pqU3jgrNyqQgCVY5
 tool_result
 id: toolu_01Qtzdm3pqU3jgrNyqQgCVY5
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -893,7 +893,7 @@ id: toolu_018kFA3zShpYF9Ta6ByNBeiH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "      if (this.loadingText) {\n        this.loadingText.setVisible(false);\n      }\n\n      this.displayLeaderboard();\n      this.updateRewardUI();",
   "new_string": "      if (this.loadingText) {\n        this.loadingText.setVisible(false);\n      }\n\n      this.displayLeaderboard();\n      this.updateCharFilterRow();\n      this.updateRewardUI();"
 }
@@ -904,7 +904,7 @@ id: toolu_018kFA3zShpYF9Ta6ByNBeiH
 tool_result
 id: toolu_018kFA3zShpYF9Ta6ByNBeiH
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -918,7 +918,7 @@ id: toolu_011FN2RrkjGkvDNshmLWSGrV
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  private displayLeaderboard() {\n    const W = this.scale.width;\n    const yOff = (this.scale.height - 600) / 2;\n    const startY = 130 + yOff;",
   "new_string": "  private displayLeaderboard() {\n    const W = this.scale.width;\n    const yOff = (this.scale.height - 600) / 2;\n    const startY = (this.selectedDifficulty === DifficultyEnum.EXTREME ? 170 : 130) + yOff;"
 }
@@ -929,7 +929,7 @@ id: toolu_011FN2RrkjGkvDNshmLWSGrV
 tool_result
 id: toolu_011FN2RrkjGkvDNshmLWSGrV
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -943,7 +943,7 @@ id: toolu_014sheHnvsqyoU8GdpFPWRLx
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** 보상수령 버튼 상태 갱신 */\n  private updateRewardUI() {\n    if (!this.rewardBtnBg || !this.rewardBtnLabel) return;\n\n    const btn = this.rewardBtnBg;\n    const label = this.rewardBtnLabel;\n    const reward = this.prevSeasonReward;",
   "new_string": "  /** 보상수령 버튼 상태 갱신 */\n  private updateRewardUI() {\n    if (!this.rewardBtnBg || !this.rewardBtnLabel) return;\n\n    const btn = this.rewardBtnBg;\n    const label = this.rewardBtnLabel;\n\n    // 캐릭터 필터 활성 시 보상 버튼 비활성 (캐릭터별 순위에서 보상은 무의미)\n    if (this.selectedCharFilter !== null) {\n      btn.setFillStyle(0x555555).setStrokeStyle(3, 0x333333);\n      btn.disableInteractive();\n      btn.removeAllListeners();\n      label.setText('보상수령').setColor('#999999');\n      return;\n    }\n\n    const reward = this.prevSeasonReward;"
 }
@@ -954,7 +954,7 @@ id: toolu_014sheHnvsqyoU8GdpFPWRLx
 tool_result
 id: toolu_014sheHnvsqyoU8GdpFPWRLx
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -968,7 +968,7 @@ id: toolu_01DdZedRhXHumkcYrPA7ZCEr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "old_string": "  /** 이번 달 말일까지 남은 일수 */\n  private calcDaysUntilMonthEnd(): number {",
   "new_string": "  /** EXTREME 선택 시 캐릭터 필터 칩 행 렌더 (그 외 난이도에서는 숨김) */\n  private updateCharFilterRow() {\n    this.charFilterObjects.forEach(o => o.destroy());\n    this.charFilterObjects = [];\n\n    if (this.selectedDifficulty !== DifficultyEnum.EXTREME) return;\n\n    const W = this.scale.width;\n    const yOff = (this.scale.height - 600) / 2;\n    const cy = 145 + yOff;\n\n    const CHIP_W = 32, CHIP_H = 26, GAP = 5;\n\n    type Chip = { id: string | null; label?: string; charId?: string };\n    const chips: Chip[] = [\n      { id: null, label: '전체' },\n      ...this.availableChars.slice(0, 9).map(id => ({ id, charId: id })),\n    ];\n\n    const totalW = chips.length * CHIP_W + (chips.length - 1) * GAP;\n    let x = W / 2 - totalW / 2 + CHIP_W / 2;\n\n    chips.forEach(chip => {\n      const isSel = this.selectedCharFilter === chip.id;\n\n      const bg = this.add.rectangle(x, cy, CHIP_W, CHIP_H, isSel ? 0x334477 : 0x1a1a2e, 1);\n      bg.setStrokeStyle(2, isSel ? 0xaaccff : 0x333355);\n      bg.setInteractive({ useHandCursor: true });\n      bg.on('pointerdown', () => {\n        if (this.selectedCharFilter !== chip.id) {\n          this.selectedCharFilter = chip.id;\n          this.loadLeaderboard();\n        }\n      });\n      this.charFilterObjects.push(bg);\n\n      if (chip.label) {\n        const txt = this.add.text(x, cy, chip.label, {\n          fontSize: '10px',\n […]
 
@@ -977,7 +977,7 @@ id: toolu_01DdZedRhXHumkcYrPA7ZCEr
 tool_result
 id: toolu_01DdZedRhXHumkcYrPA7ZCEr
 ```
-The file /Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1013,7 +1013,7 @@ tool_use Read
 id: toolu_01RUKPpDUBG24r83TgCM5fnz
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/src/scenes/LeaderboardScene.ts",
   "offset": 189,
   "limit": 60
 }
@@ -1109,7 +1109,7 @@ tool_use Bash
 id: toolu_01GBnBggD36rJVvKgLgSi8ax
 ```json
 {
-  "command": "cat /Users/johyunduk/Projects/ddong-avoid-game/supabase/config.toml 2>/dev/null | grep project_id | head -3",
+  "command": "cat /home/<USER>/Projects/ddong-avoid-game/supabase/config.toml 2>/dev/null | grep project_id | head -3",
   "description": "Get Supabase project ID from config"
 }
 ```
@@ -1181,7 +1181,7 @@ tool_use Write
 id: toolu_015Fw6J8ecJ8aAWnwT7JzogZ
 ```json
 {
-  "file_path": "/Users/johyunduk/Projects/ddong-avoid-game/docs/deploy-extreme-char-leaderboard.md",
+  "file_path": "/home/<USER>/Projects/ddong-avoid-game/docs/deploy-extreme-char-leaderboard.md",
   "content": "# EXTREME 캐릭터별 랭킹 배포 가이드\n\n## 배포 순서\n\n### 1단계 — DB Migration\n\nSupabase 대시보드 → **SQL Editor** → 아래 SQL 실행\n\n```sql\nCREATE TABLE IF NOT EXISTS leaderboard_extreme_char (\n  user_id        UUID        NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,\n  year_month     TEXT        NOT NULL,\n  character_type TEXT        NOT NULL DEFAULT 'chibi',\n  score          INTEGER     NOT NULL DEFAULT 0,\n  season         INTEGER     NOT NULL DEFAULT 1,\n  updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n  PRIMARY KEY (user_id, year_month, character_type)\n);\n\nCREATE INDEX IF NOT EXISTS idx_extreme_char_score\n  ON leaderboard_extreme_char (year_month, character_type, score DESC);\n\nALTER TABLE leaderboard_extreme_char ENABLE ROW LEVEL SECURITY;\n\nCREATE POLICY \"extreme_char_read_all\" ON leaderboard_extreme_char\n  FOR SELECT USING (true);\n\nCREATE POLICY \"extreme_char_insert_own\" ON leaderboard_extreme_char\n  FOR INSERT WITH CHECK (auth.uid() = user_id);\n\nCREATE POLICY \"extreme_char_update_own\" ON leaderboard_extreme_char\n  FOR UPDATE USING (auth.uid() = user_id);\n```\n\n### 2단계 — Edge Function 배포\n\n```bash\nsupabase functions deploy leaderboard-submit --no-verify-jwt\n```\n\n```bash\nsupabase functions deploy leaderboard-top --no-verify-jwt\n```\n\n---\n\n## 검증\n\n1. EXTREME 플레이 후 Supabase 대시보드 → Table Editor → `leaderboard_extreme_char` 에 행 생성 확인\n2. 동일 유저로 다른 캐릭터 플레이 → 캐릭터별 독립 행 존재 확인\n3. 랭킹보드 → EXTREME 탭 → 캐릭터 필터 칩 행 표시 확인\n4. 캐릭터 칩 클릭 → 해당 캐릭터 점수만 필터링 확인\n\n---\n\n## 참고\n\n- SQL Editor를 쓰는 이유: 기존 migration이 이미 원격 적용된 상태라 `supabase db push`는 이전 migration 재실행을 시도할 […]
 
 > TOOL
@@ -1189,7 +1189,7 @@ id: toolu_015Fw6J8ecJ8aAWnwT7JzogZ
 tool_result
 id: toolu_015Fw6J8ecJ8aAWnwT7JzogZ
 ```
-File created successfully at: /Users/johyunduk/Projects/ddong-avoid-game/docs/deploy-extreme-char-leaderboard.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Projects/ddong-avoid-game/docs/deploy-extreme-char-leaderboard.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

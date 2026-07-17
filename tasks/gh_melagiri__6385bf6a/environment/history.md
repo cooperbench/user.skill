@@ -1,6 +1,6 @@
 > DEVELOPER
 
-this is dispatch by entire.io /Users/melagiri/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png What do you think of this? Will such feature help code-insights?
+this is dispatch by entire.io /home/<USER>/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png What do you think of this? Will such feature help code-insights?
 
 > AGENT
 
@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_01GMNf9aJQEevfP5HthQQKir
 ```json
 {
-  "file_path": "/Users/melagiri/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png"
+  "file_path": "/home/<USER>/Downloads/screencapture-entire-io-dispatches-new-2026-05-09-07_36_24.png"
 }
 ```
 
@@ -300,7 +300,7 @@ tool_use Bash
 id: toolu_01Am59qZSw2Tsruph3RXE3Ug
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/ && git -C /Users/melagiri/Workspace/codeInsights/code-insights status",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/ && git -C /home/<USER>/Workspace/codeInsights/code-insights status",
   "description": "List plans directory and check git status"
 }
 ```
@@ -331,7 +331,7 @@ tool_use Read
 id: toolu_01Bsdy7e3tprRqmgmdcMeaaC
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md",
   "limit": 30
 }
 ```
@@ -383,7 +383,7 @@ tool_use Write
 id: toolu_01PBop7jP8DrymZTf1t4BCPj
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
   "content": "# Session Writeup / Dispatch — Feature Ideation\n\n> **Status:** Ideation — Thoughts maturing, not ready for implementation\n> **Date:** 2026-05-09\n> **Triggered by:** Entire.io \"Dispatch\" feature observation\n> **Depends on:** `.code-insights.md` Phase 1 (`code-insights attach`) — must ship first\n\n---\n\n## The Spark\n\nEntire.io shipped a \"Dispatch\" feature: scope a repo + time window, choose a voice (Neutral / Marvin / Custom), get a newsletter-style narrative of what shipped that week — sourced from git commits.\n\nThe observation: Code Insights can tell a *richer* story. Entire.io reads commits → produces a **what**. Code Insights reads AI sessions → can produce a **why** — the decisions made, the friction encountered, the collaboration patterns. That's structurally better and only Code Insights can tell it.\n\n---\n\n## Founder's Vision (2026-05-09)\n\nA **\"Dispatch\" button on the session detail page** in the dashboard that generates an engineering blog post from that session's conversation and analysis data — ready to post on dev.to, Hashnode, or a personal engineering blog.\n\nKey intent:\n- Session-scoped (one session → one story)\n- Entry point: button on session detail in dashboard UI\n- Output: blog post, not a data dump\n- Released in phases\n\n---\n\n## Strategic Critique (devtools-cofounder)\n\n### The Granularity Problem\n\nSingle-session → publishable blog post has a […]
 
 > TOOL
@@ -391,7 +391,7 @@ id: toolu_01PBop7jP8DrymZTf1t4BCPj
 tool_result
 id: toolu_01PBop7jP8DrymZTf1t4BCPj
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -404,7 +404,7 @@ tool_use Bash
 id: toolu_01PcJkP9yy2P4cSt4wqdtpAW
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log --oneline -3",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log --oneline -3",
   "description": "Check recent commits for message style"
 }
 ```
@@ -425,7 +425,7 @@ tool_use Bash
 id: toolu_01UDknq64YfR81aV9NWvbP97
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add docs/plans/2026-05-09-session-writeup-dispatch-ideation.md && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add session writeup / dispatch feature ideation doc\n\nCaptures the full design discussion: Entire.io inspiration, founder's\nsession-scoped blog post vision, devtools-cofounder critique (granularity\nmismatch, quality risk, phased reframe), and LLM expert architecture\nguidance (two-step pipeline, quality gating, context selection strategy).\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add docs/plans/2026-05-09-session-writeup-dispatch-ideation.md && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add session writeup / dispatch feature ideation doc\n\nCaptures the full design discussion: Entire.io inspiration, founder's\nsession-scoped blog post vision, devtools-cofounder critique (granularity\nmismatch, quality risk, phased reframe), and LLM expert architecture\nguidance (two-step pipeline, quality gating, context selection strategy).\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the ideation doc"
 }
 ```
@@ -452,7 +452,7 @@ tool_use Bash
 id: toolu_01696yw3Vr5xcQqsY3jeURVd
 ```json
 {
-  "command": "grep -n \"plans\\|docs\" /Users/melagiri/Workspace/codeInsights/code-insights/.gitignore && git -C /Users/melagiri/Workspace/codeInsights/code-insights ls-files docs/",
+  "command": "grep -n \"plans\\|docs\" /home/<USER>/Workspace/codeInsights/code-insights/.gitignore && git -C /home/<USER>/Workspace/codeInsights/code-insights ls-files docs/",
   "description": "Check gitignore rules for docs and list tracked doc files"
 }
 ```
@@ -506,7 +506,7 @@ tool_use Bash
 id: toolu_01Hm4xc8feeaRgoTnk3zj7x1
 ```json
 {
-  "command": "mv /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md",
+  "command": "mv /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md",
   "description": "Move ideation doc to tracked specs directory"
 }
 ```
@@ -525,7 +525,7 @@ tool_use Bash
 id: toolu_01HzCuqLHkPmAaa8aG6dcXtU
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add session writeup / dispatch feature ideation doc\n\nCaptures the full design discussion: Entire.io inspiration, founder's\nsession-scoped blog post vision, devtools-cofounder critique (granularity\nmismatch, quality risk, phased reframe), and LLM expert architecture\nguidance (two-step pipeline, quality gating, context selection strategy).\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add session writeup / dispatch feature ideation doc\n\nCaptures the full design discussion: Entire.io inspiration, founder's\nsession-scoped blog post vision, devtools-cofounder critique (granularity\nmismatch, quality risk, phased reframe), and LLM expert architecture\nguidance (two-step pipeline, quality gating, context selection strategy).\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Stage and commit the ideation doc"
 }
 ```
@@ -550,7 +550,7 @@ tool_use Bash
 id: toolu_018R6VDoEf5nH75a5Q9qDjcM
 ```json
 {
-  "command": "find /Users/melagiri/Workspace/codeInsights/code-insights/docs -type f | sort && echo \"---GITIGNORE DOCS RULES---\" && grep -n \"docs\\|plans\\|superpowers\" /Users/melagiri/Workspace/codeInsights/code-insights/.gitignore",
+  "command": "find /home/<USER>/Workspace/codeInsights/code-insights/docs -type f | sort && echo \"---GITIGNORE DOCS RULES---\" && grep -n \"docs\\|plans\\|superpowers\" /home/<USER>/Workspace/codeInsights/code-insights/.gitignore",
   "description": "List all docs files on disk and relevant gitignore rules"
 }
 ```
@@ -560,41 +560,41 @@ id: toolu_018R6VDoEf5nH75a5Q9qDjcM
 tool_result
 id: toolu_018R6VDoEf5nH75a5Q9qDjcM
 ```
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/.DS_Store
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/AGENTS.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/logo-240x240.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/logo.svg
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/analytics-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/code-insights-ai-fluency-score.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/dashboard-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/insights-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-dark.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-rules-dark.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-rules-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/session-insight-light.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/assets/screenshots/stats.png
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/DEVELOPMENT.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/implementation/CURRENT_SPRINT.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/implementation/handover-llamacpp-provider.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/LANDSCAPE.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/.DS_Store
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-03-08-gamification-shareable-badges.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-03-09-effective-pattern-normalization.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/postmortems/2026-03-21-search-escape-bug.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/PRODUCT.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/QA.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/ROADMAP.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/source-tool-format-analysis.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/plans/2026-03-12-test-coverage-75-percent.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/ux/llm-cost-transparency.md
-/Users/melagiri/Workspace/codeInsights/code-insights/docs/VISION.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/.DS_Store
+/home/<USER>/Workspace/codeInsights/code-insights/docs/AGENTS.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/logo-240x240.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/logo.svg
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/analytics-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/code-insights-ai-fluency-score.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/dashboard-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/insights-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-dark.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-rules-dark.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/patterns-rules-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/session-insight-light.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/assets/screenshots/stats.png
+/home/<USER>/Workspace/codeInsights/code-insights/docs/DEVELOPMENT.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/implementation/CURRENT_SPRINT.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/implementation/handover-llamacpp-provider.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/LANDSCAPE.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/.DS_Store
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-03-08-gamification-shareable-badges.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-03-09-effective-pattern-normalization.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/postmortems/2026-03-21-search-escape-bug.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/PRODUCT.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/QA.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/ROADMAP.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/source-tool-format-analysis.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/plans/2026-03-12-test-coverage-75-percent.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-05-codebase-knowledge-design.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/specs/2026-05-09-session-writeup-dispatch-ideation.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/ux/llm-cost-transparency.md
+/home/<USER>/Workspace/codeInsights/code-insights/docs/VISION.md
 ---GITIGNORE DOCS RULES---
 41:# Transient implementation plans
 42:docs/plans/
@@ -610,7 +610,7 @@ tool_use Bash
 id: toolu_01JWWZJmSXjS9kMryAHp8Tpr
 ```json
 {
-  "command": "head -10 /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md && echo \"===\" && head -10 /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md && echo \"===\" && head -10 /Users/melagiri/Workspace/codeInsights/code-insights/docs/superpowers/plans/2026-03-12-test-coverage-75-percent.md",
+  "command": "head -10 /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-16-doctor-command-design.md && echo \"===\" && head -10 /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-04-20-codebase-knowledge-research.md && echo \"===\" && head -10 /home/<USER>/Workspace/codeInsights/code-insights/docs/superpowers/plans/2026-03-12-test-coverage-75-percent.md",
   "description": "Check status headers of three untracked/superpowers plans"
 }
 ```
@@ -659,7 +659,7 @@ tool_use Bash
 id: toolu_01WhCK2jsEd4ut5Cyhv84JCZ
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/cli/src/commands/ | grep doctor && echo \"doctor exists\" || echo \"doctor not implemented\"",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/cli/src/commands/ | grep doctor && echo \"doctor exists\" || echo \"doctor not implemented\"",
   "description": "Check if doctor command is implemented"
 }
 ```
@@ -683,7 +683,7 @@ tool_use Bash
 id: toolu_01DiSDm7DYTem6GCmwH1qEfK
 ```json
 {
-  "command": "grep -rn \"superpowers\" /Users/melagiri/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md /Users/melagiri/Workspace/codeInsights/code-insights/docs/AGENTS.md /Users/melagiri/Workspace/codeInsights/code-insights/CLAUDE.md 2>/dev/null | grep -v \"Binary\"",
+  "command": "grep -rn \"superpowers\" /home/<USER>/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md /home/<USER>/Workspace/codeInsights/code-insights/docs/AGENTS.md /home/<USER>/Workspace/codeInsights/code-insights/CLAUDE.md 2>/dev/null | grep -v \"Binary\"",
   "description": "Check for superpowers references in key docs"
 }
 ```
@@ -724,7 +724,7 @@ tool_use Bash
 id: toolu_01V6hsLUznZ29QccaC3fwZjD
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout -b docs/reorganize-plans-folder",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout -b docs/reorganize-plans-folder",
   "description": "Create feature branch for docs reorganization"
 }
 ```
@@ -770,7 +770,7 @@ tool_use Read
 id: toolu_019pPRL5S9t4kQiQhDGAxoCD
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/.gitignore",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/.gitignore",
   "offset": 38,
   "limit": 8
 }
@@ -798,7 +798,7 @@ id: toolu_01GABKaDamRADbv7WTm8TA7a
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/.gitignore",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/.gitignore",
   "old_string": "# Transient implementation plans\ndocs/plans/\n\n",
   "new_string": "\n"
 }
@@ -809,7 +809,7 @@ id: toolu_01GABKaDamRADbv7WTm8TA7a
 tool_result
 id: toolu_01GABKaDamRADbv7WTm8TA7a
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/.gitignore has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -822,7 +822,7 @@ tool_use Bash
 id: toolu_01LPX9zf9fPCXpn2p7KVqnVB
 ```json
 {
-  "command": "ls /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/ && echo \"---\" && git -C /Users/melagiri/Workspace/codeInsights/code-insights status",
+  "command": "ls /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/ && echo \"---\" && git -C /home/<USER>/Workspace/codeInsights/code-insights status",
   "description": "Verify docs/plans contents and git status"
 }
 ```
@@ -900,7 +900,7 @@ tool_use Bash
 id: toolu_0161Kb1Hk1HQVugFwLnnN694
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: reorganize plans — consolidate into docs/plans/, remove superpowers dir\n\n- Remove docs/plans/ from .gitignore (plans should be tracked, not transient)\n- Move docs/superpowers/specs/ and docs/superpowers/plans/ into docs/plans/\n- Delete docs/superpowers/ directory (was an AI tooling artifact, not a product folder)\n- Delete doctor-command-design.md (doctor command is implemented, plan is stale)\n- Delete codebase-knowledge-research.md (superseded by the full 2026-05-05 design spec)\n\nAll active plans now in one place: docs/plans/\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: reorganize plans — consolidate into docs/plans/, remove superpowers dir\n\n- Remove docs/plans/ from .gitignore (plans should be tracked, not transient)\n- Move docs/superpowers/specs/ and docs/superpowers/plans/ into docs/plans/\n- Delete docs/superpowers/ directory (was an AI tooling artifact, not a product folder)\n- Delete doctor-command-design.md (doctor command is implemented, plan is stale)\n- Delete codebase-knowledge-research.md (superseded by the full 2026-05-05 design spec)\n\nAll active plans now in one place: docs/plans/\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit docs reorganization"
 }
 ```
@@ -923,7 +923,7 @@ tool_use Bash
 id: toolu_01RWjTA3655xdvwp1LotvPbN
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push -u origin docs/reorganize-plans-folder",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push -u origin docs/reorganize-plans-folder",
   "description": "Push branch to remote"
 }
 ```
@@ -989,7 +989,7 @@ tool_use Bash
 id: toolu_019wFZXBygTPzEZkP9BbSpCG
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout master && git -C /Users/melagiri/Workspace/codeInsights/code-insights pull",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout master && git -C /home/<USER>/Workspace/codeInsights/code-insights pull",
   "description": "Switch back to master and pull merged changes"
 }
 ```
@@ -1023,7 +1023,7 @@ tool_use Bash
 id: toolu_015erdART8hsJrWYiw6im7my
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights log --oneline origin/master..HEAD",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights log --oneline origin/master..HEAD",
   "description": "Check what local commits are ahead of origin"
 }
 ```
@@ -1060,7 +1060,7 @@ tool_use Bash
 id: toolu_012dNn68JenxzRkJTkyZFppm
 ```json
 {
-  "command": "grep -n \"insight\\|learning\\|decision\\|technique\" /Users/melagiri/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md | head -40",
+  "command": "grep -n \"insight\\|learning\\|decision\\|technique\" /home/<USER>/Workspace/codeInsights/code-insights/docs/ARCHITECTURE.md | head -40",
   "description": "Check insights table structure in architecture docs"
 }
 ```
@@ -1071,7 +1071,7 @@ tool_use Read
 id: toolu_01XAPrkE9ahNGNPECZF3dTjv
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
   "limit": 60
 }
 ```
@@ -1210,7 +1210,7 @@ tool_use Bash
 id: toolu_012JFrbmRZ3ou6F1S7pta8RQ
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout -b docs/dispatch-learnings-curated-design",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout -b docs/dispatch-learnings-curated-design",
   "description": "Create feature branch for dispatch design doc"
 }
 ```
@@ -1237,7 +1237,7 @@ tool_use Write
 id: toolu_015eC4dPFN9viysTbg8bKjfT
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md",
   "content": "# Dispatch — Learnings-Curated Blog Post Generator\n\n> **Status:** Design — Ready for implementation planning\n> **Date:** 2026-05-10\n> **Supersedes:** `2026-05-09-session-writeup-dispatch-ideation.md` (session-scoped approach abandoned)\n> **Dependencies:** None — uses existing `insights` table and `/insights` dashboard page\n\n---\n\n## Problem\n\nDevelopers accumulate structured learnings, decisions, and techniques across AI coding sessions. These live in the `insights` table — processed, categorized, and evidenced. But they never escape the tool. There is no way to turn them into something shareable: a blog post, a team write-up, a personal changelog entry.\n\nThe insight already exists. The developer just needs a way to tell the story around it.\n\n---\n\n## What Changed From the Original Vision\n\nThe original idea was session-scoped: one session → one blog post. That was critiqued and abandoned for three reasons:\n\n1. **Granularity mismatch** — compelling engineering stories span multiple sessions; a single session produces a Stack Overflow answer, not a blog post\n2. **Quality risk** — session transcripts contain half-formed AI reasoning and wrong mid-session conclusions\n3. **Over-generation** — 1-click blog post generation without user intent produces low-quality, unauthentic output\n\n**The revised approach:** The user *curates* 5–8 learnings from their insight library, provides a 2–3 sentence context paragraph explaining the story, and the LLM structures it […]
 
 > TOOL
@@ -1245,7 +1245,7 @@ id: toolu_015eC4dPFN9viysTbg8bKjfT
 tool_result
 id: toolu_015eC4dPFN9viysTbg8bKjfT
 ```
-File created successfully at: /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-10-dispatch-learnings-curated-design.md (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1259,7 +1259,7 @@ id: toolu_01LTZAZogsL5kFFbdxjCiAKg
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md",
   "old_string": "> **Status:** Ideation — Thoughts maturing, not ready for implementation\n> **Date:** 2026-05-09\n> **Triggered by:** Entire.io \"Dispatch\" feature observation\n> **Depends on:** `.code-insights.md` Phase 1 (`code-insights attach`) — must ship first",
   "new_string": "> **Status:** Superseded — session-scoped approach abandoned\n> **Date:** 2026-05-09\n> **Superseded by:** `2026-05-10-dispatch-learnings-curated-design.md`\n> **Triggered by:** Entire.io \"Dispatch\" feature observation"
 }
@@ -1270,7 +1270,7 @@ id: toolu_01LTZAZogsL5kFFbdxjCiAKg
 tool_result
 id: toolu_01LTZAZogsL5kFFbdxjCiAKg
 ```
-The file /Users/melagiri/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Workspace/codeInsights/code-insights/docs/plans/2026-05-09-session-writeup-dispatch-ideation.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1283,7 +1283,7 @@ tool_use Bash
 id: toolu_01Es5XcfLduatgSEacEWGgmz
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights add docs/plans/2026-05-10-dispatch-learnings-curated-design.md docs/plans/2026-05-09-session-writeup-dispatch-ideation.md && git -C /Users/melagiri/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add dispatch learnings-curated design spec\n\nCaptures the revised Dispatch direction: user selects 5-8 learnings from\nthe insights library, provides a context paragraph, and generates a\npublishable blog post. Supersedes the session-scoped approach from the\n2026-05-09 ideation doc.\n\nIncludes LLM expert guidance: drop evidence field, single-call Sonnet at\n0.7 temp, user context before insights in prompt, hard cap of 8 selections.\nNo schema changes needed — builds on existing insights table (Schema V9).\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights add docs/plans/2026-05-10-dispatch-learnings-curated-design.md docs/plans/2026-05-09-session-writeup-dispatch-ideation.md && git -C /home/<USER>/Workspace/codeInsights/code-insights commit -m \"$(cat <<'EOF'\ndocs: add dispatch learnings-curated design spec\n\nCaptures the revised Dispatch direction: user selects 5-8 learnings from\nthe insights library, provides a context paragraph, and generates a\npublishable blog post. Supersedes the session-scoped approach from the\n2026-05-09 ideation doc.\n\nIncludes LLM expert guidance: drop evidence field, single-call Sonnet at\n0.7 temp, user context before insights in prompt, hard cap of 8 selections.\nNo schema changes needed — builds on existing insights table (Schema V9).\n\nCo-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit dispatch design doc and supersede marker"
 }
 ```
@@ -1304,7 +1304,7 @@ tool_use Bash
 id: toolu_013tkMaCbEfwziPT2Q393rr1
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights push -u origin docs/dispatch-learnings-curated-design",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights push -u origin docs/dispatch-learnings-curated-design",
   "description": "Push branch to remote"
 }
 ```
@@ -1371,7 +1371,7 @@ tool_use Bash
 id: toolu_012MQcSsNHwT1HqhH1m7E5m3
 ```json
 {
-  "command": "git -C /Users/melagiri/Workspace/codeInsights/code-insights checkout master && git -C /Users/melagiri/Workspace/codeInsights/code-insights pull",
+  "command": "git -C /home/<USER>/Workspace/codeInsights/code-insights checkout master && git -C /home/<USER>/Workspace/codeInsights/code-insights pull",
   "description": "Switch to master and pull merged changes"
 }
 ```
@@ -1614,7 +1614,7 @@ tool_use Bash
 id: toolu_01DgJ8H96LVYa7faB4GhbYXE
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && pnpm install",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && pnpm install",
   "description": "Install dependencies in worktree"
 }
 ```
@@ -1641,15 +1641,15 @@ Packages: +514
 Progress: resolved 514, reused 514, downloaded 0, added 394
 Progress: resolved 514, reused 514, downloaded 0, added 508
 Progress: resolved 514, reused 514, downloaded 0, added 514, done
- WARN  Failed to create bin at /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js'
+ WARN  Failed to create bin at /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/dist/index.js'
 
 devDependencies:
 + @vitest/coverage-v8 4.0.18
 + vitest 4.0.18
 
- WARN  Failed to create bin at /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/@code-insights/cli/dist/index.js'
+ WARN  Failed to create bin at /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/.bin/code-insights. ENOENT: no such file or directory, open '/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/node_modules/@code-insights/cli/dist/index.js'
 Done in 2.9s
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -1710,7 +1710,7 @@ id: toolu_01CKi1YiPShtZQb3DtCADiBj
 tool_result
 id: toolu_01CKi1YiPShtZQb3DtCADiBj
 ```
-{"team_name":"feat-dispatch-learnings-curated","team_file_path":"/Users/melagiri/.claude/teams/feat-dispatch-learnings-curated/config.json","lead_agent_id":"team-lead@feat-dispatch-learnings-curated"}
+{"team_name":"feat-dispatch-learnings-curated","team_file_path":"/home/<USER>/.claude/teams/feat-dispatch-learnings-curated/config.json","lead_agent_id":"team-lead@feat-dispatch-learnings-curated"}
 ```
 
 > AGENT
@@ -1728,7 +1728,7 @@ id: toolu_01Hpoi4RA3G7Mu3cSMTwbEhA
   "name": "pm-agent",
   "mode": "bypassPermissions",
   "team_name": "feat-dispatch-learnings-curated",
-  "prompt": "You are the PM for feature team feat-dispatch-learnings-curated.\n\nFEATURE REQUEST: Dispatch — Learnings-Curated Blog Post Generator.\n\nFull design doc: docs/plans/2026-05-10-dispatch-learnings-curated-design.md\nWorktree: /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/\nBranch: feature/dispatch-learnings-curated-blog-post-generator\nTeam: feat-dispatch-learnings-curated\nRepo root (for reading docs): /Users/melagiri/Workspace/codeInsights/code-insights/\n\nKEY DECISIONS ALREADY MADE (do not re-litigate):\n- New endpoint: POST /api/dispatch/generate (JSON, not SSE, not reusing export pipeline)\n- New route file: server/src/routes/dispatch.ts\n- New LLM file: server/src/llm/dispatch-prompts.ts with buildDispatchContext(), buildDispatchSystemPrompt(), parseDispatchOutput()\n- Regex frontmatter parsing with single retry on parse failure\n- Sonnet at temp 0.7, single call, no prompt caching\n- No schema changes — Schema V9 insights table only\n- UI: FloatingActionBar + DispatchDrawer (shadcn Sheet) + PostPreview on InsightsPage\n- dnd-kit for reorder inside drawer\n- Drop InsightSelector.tsx (YAGNI — selection inline on InsightsPage)\n- Implementation sequence: types → prompts (TDD) → route → hooks → drawer UI → insights page integration\n\nHLD/LLD already produced — do NOT re-run TA or LLM Expert reviews. Both are done.\n\nYour responsibilities are scoping, GitHub Issues, task graph, and handoff preparation.\nIMPORTANT: You CANNOT spawn agents. Only the orchestrator can. When you need an agent spawned, message the orchestrator with the request.\n\nFollow this protocol:\n\n1. SCOPE: Read docs/plans/2026-05-10-dispatch-learnings-curated-design.md and CLAUDE.md in the repo […]
+  "prompt": "You are the PM for feature team feat-dispatch-learnings-curated.\n\nFEATURE REQUEST: Dispatch — Learnings-Curated Blog Post Generator.\n\nFull design doc: docs/plans/2026-05-10-dispatch-learnings-curated-design.md\nWorktree: /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/\nBranch: feature/dispatch-learnings-curated-blog-post-generator\nTeam: feat-dispatch-learnings-curated\nRepo root (for reading docs): /home/<USER>/Workspace/codeInsights/code-insights/\n\nKEY DECISIONS ALREADY MADE (do not re-litigate):\n- New endpoint: POST /api/dispatch/generate (JSON, not SSE, not reusing export pipeline)\n- New route file: server/src/routes/dispatch.ts\n- New LLM file: server/src/llm/dispatch-prompts.ts with buildDispatchContext(), buildDispatchSystemPrompt(), parseDispatchOutput()\n- Regex frontmatter parsing with single retry on parse failure\n- Sonnet at temp 0.7, single call, no prompt caching\n- No schema changes — Schema V9 insights table only\n- UI: FloatingActionBar + DispatchDrawer (shadcn Sheet) + PostPreview on InsightsPage\n- dnd-kit for reorder inside drawer\n- Drop InsightSelector.tsx (YAGNI — selection inline on InsightsPage)\n- Implementation sequence: types → prompts (TDD) → route → hooks → drawer UI → insights page integration\n\nHLD/LLD already produced — do NOT re-run TA or LLM Expert reviews. Both are done.\n\nYour responsibilities are scoping, GitHub Issues, task graph, and handoff preparation.\nIMPORTANT: You CANNOT spawn agents. Only the orchestrator can. When you need an agent spawned, message the orchestrator with the request.\n\nFollow this protocol:\n\n1. SCOPE: Read docs/plans/2026-05-10-dispatch-learnings-curated-design.md and CLAUDE.md in the repo […]
 
 > TOOL
 
@@ -1746,7 +1746,7 @@ The agent is now running and will receive instructions via mailbox.
 
 The ceremony is underway. Here's where things stand:
 
-**Worktree:** `/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/`
+**Worktree:** `/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/`
 **Branch:** `feature/dispatch-learnings-curated-blog-post-generator`
 **Team:** `feat-dispatch-learnings-curated`
 
@@ -1846,7 +1846,7 @@ id: toolu_01HwhQURehehs2EUrW8WK4EX
   "name": "dev-agent",
   "mode": "bypassPermissions",
   "team_name": "feat-dispatch-learnings-curated",
-  "prompt": "You are the Dev for feature team feat-dispatch-learnings-curated.\n\nFEATURE: Dispatch — Learnings-Curated Blog Post Generator\nGitHub Issue: #296 (https://github.com/melagiri/code-insights/issues/296)\nWorktree: /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/\nBranch: feature/dispatch-learnings-curated-blog-post-generator\nTeam: feat-dispatch-learnings-curated\n\nAll code work happens in the WORKTREE, not the main repo checkout.\n\n---\n\n## Full Design Spec\n\nRead the full design doc at:\n/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/docs/plans/2026-05-10-dispatch-learnings-curated-design.md\n\n---\n\n## Architecture Decisions (Final — do not re-litigate)\n\n**Endpoint:** New `POST /api/dispatch/generate` (JSON response, NOT SSE, NOT reusing export pipeline)\n- Request: `{ insightIds: string[], context: string, tone: 'technical'|'accessible'|'quick-tips' }`\n- Response: `{ markdown: string, frontmatter: { title, tags, tldr }, wordCount: number, model: string, tokensUsed: { input, output } }`\n- New route file: `server/src/routes/dispatch.ts`\n- Mount in `server/src/index.ts`\n\n**LLM Layer:** `server/src/llm/dispatch-prompts.ts`\n- `buildDispatchSystemPrompt(tone: DispatchTone): string` — tone injected via interpolation\n- `buildDispatchContext(input: DispatchInput): string` — user context BEFORE insights, plain structured text (not JSON)\n- `parseDispatchOutput(raw: string): DispatchParseResult` — regex frontmatter parsing, NOT js-yaml\n- Single retry on parse failure (not a full second LLM call — retry same messages)\n- Model: Sonnet (claude-sonnet-4-6), temperature 0.7\n- No prompt caching (system prompt ~320 tokens, below 1024 Anthropic minimum)\n\n**Insight serialization format** (exact format for buildDispatchContext):\n```\nContext from the author:\n{userContext}\n\n---\n\nINSIGHTS ({n} selected by author):\n\n[LEARNING 1]\nSummary: {summary}\n{content}\n\n[DECISION 2]\nSummary: {summary}\n{content}\n- {bullet1}\n- {bullet2}\n\n[TECHNIQUE 3]\nSummary: {summary}\n{content}\n```\n- […]
+  "prompt": "You are the Dev for feature team feat-dispatch-learnings-curated.\n\nFEATURE: Dispatch — Learnings-Curated Blog Post Generator\nGitHub Issue: #296 (https://github.com/melagiri/code-insights/issues/296)\nWorktree: /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/\nBranch: feature/dispatch-learnings-curated-blog-post-generator\nTeam: feat-dispatch-learnings-curated\n\nAll code work happens in the WORKTREE, not the main repo checkout.\n\n---\n\n## Full Design Spec\n\nRead the full design doc at:\n/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/docs/plans/2026-05-10-dispatch-learnings-curated-design.md\n\n---\n\n## Architecture Decisions (Final — do not re-litigate)\n\n**Endpoint:** New `POST /api/dispatch/generate` (JSON response, NOT SSE, NOT reusing export pipeline)\n- Request: `{ insightIds: string[], context: string, tone: 'technical'|'accessible'|'quick-tips' }`\n- Response: `{ markdown: string, frontmatter: { title, tags, tldr }, wordCount: number, model: string, tokensUsed: { input, output } }`\n- New route file: `server/src/routes/dispatch.ts`\n- Mount in `server/src/index.ts`\n\n**LLM Layer:** `server/src/llm/dispatch-prompts.ts`\n- `buildDispatchSystemPrompt(tone: DispatchTone): string` — tone injected via interpolation\n- `buildDispatchContext(input: DispatchInput): string` — user context BEFORE insights, plain structured text (not JSON)\n- `parseDispatchOutput(raw: string): DispatchParseResult` — regex frontmatter parsing, NOT js-yaml\n- Single retry on parse failure (not a full second LLM call — retry same messages)\n- Model: Sonnet (claude-sonnet-4-6), temperature 0.7\n- No prompt caching (system prompt ~320 tokens, below 1024 Anthropic minimum)\n\n**Insight serialization format** (exact format for buildDispatchContext):\n```\nContext from the author:\n{userContext}\n\n---\n\nINSIGHTS ({n} selected by author):\n\n[LEARNING 1]\nSummary: {summary}\n{content}\n\n[DECISION 2]\nSummary: {summary}\n{content}\n- {bullet1}\n- {bullet2}\n\n[TECHNIQUE 3]\nSummary: {summary}\n{content}\n```\n- […]
 
 > TOOL
 
@@ -2077,7 +2077,7 @@ tool_use Read
 id: toolu_01ELKfeZLhExW5onGtX7FVxg
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights/docs/REVIEW-SPECIALISTS.md"
 }
 ```
 
@@ -2707,7 +2707,7 @@ id: toolu_01TAPwTkkk8T4yvVEf2gE9jt
 tool_result
 id: toolu_01TAPwTkkk8T4yvVEf2gE9jt
 ```
-[{"authoredDate":"2026-05-13T01:59:00Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:00Z","messageBody":"…output parser with 24 tests\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"feat(server): add dispatch-prompts — system prompt, context builder, …","oid":"c1ec0faad601e0aeb033d0916ad607746d488472"},{"authoredDate":"2026-05-13T01:59:03Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:03Z","messageBody":"…nd retry logic\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"feat(server): add POST /api/dispatch/generate route with validation a…","oid":"1a5d7d2eb3b0cc6431642cb743ea1551a9599a74"},{"authoredDate":"2026-05-13T01:59:07Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:07Z","messageBody":"…nd-kit\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"feat(dashboard): add generateDispatch API client function + install d…","oid":"eeb9f9f2a4253c0a56a1b505f71390b680d1f3b4"},{"authoredDate":"2026-05-13T01:59:12Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:12Z","messageBody":"…ingActionBar, InsightsPage integration\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"feat(dashboard): add Dispatch UI — DispatchDrawer, PostPreview, Float…","oid":"1bd520bb52b130c3a77053b7d73a7588d8200fd2"},{"authoredDate":"2026-05-13T02:12:42Z","authors":[{"email":"mskr30@yahoo.com","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"noreply@anthropic.com","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T02:12:42Z","messageBody":"…route\n\nChatOptions lacked a temperature field — providers used hardcoded values\nand dispatch couldn't control generation temperature per the design spec.\n\n- Add `temperature?: number` to ChatOptions in llm/types.ts\n- Each provider falls back to its existing default when temperature is omitted\n  (openai/gemini/ollama: 0.7, llamacpp: 0.3 — backward compatible)\n- dispatch.ts: pass { temperature: 0.7 } on initial call and retry\n- Also fix: system prompt was built but not included in messages array\n\nCo-Authored-By: Claude Sonnet 4.6 \u003cnoreply@anthropic.com\u003e","messageHeadline":"fix(server): add temperature to ChatOptions and pass 0.7 in dispatch …","oid":"8a2cc79efb75a87aec34177018634f0427f97a25"}]
+[{"authoredDate":"2026-05-13T01:59:00Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:00Z","messageBody":"…output parser with 24 tests\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"feat(server): add dispatch-prompts — system prompt, context builder, …","oid":"c1ec0faad601e0aeb033d0916ad607746d488472"},{"authoredDate":"2026-05-13T01:59:03Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:03Z","messageBody":"…nd retry logic\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"feat(server): add POST /api/dispatch/generate route with validation a…","oid":"1a5d7d2eb3b0cc6431642cb743ea1551a9599a74"},{"authoredDate":"2026-05-13T01:59:07Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:07Z","messageBody":"…nd-kit\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"feat(dashboard): add generateDispatch API client function + install d…","oid":"eeb9f9f2a4253c0a56a1b505f71390b680d1f3b4"},{"authoredDate":"2026-05-13T01:59:12Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T01:59:12Z","messageBody":"…ingActionBar, InsightsPage integration\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"feat(dashboard): add Dispatch UI — DispatchDrawer, PostPreview, Float…","oid":"1bd520bb52b130c3a77053b7d73a7588d8200fd2"},{"authoredDate":"2026-05-13T02:12:42Z","authors":[{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjEwMjE2MDg=","login":"melagiri","name":"Srikanth Rao M"},{"email":"<REDACTED_EMAIL>","id":"MDQ6VXNlcjgxODQ3","login":"claude","name":"Claude Sonnet 4.6"}],"committedDate":"2026-05-13T02:12:42Z","messageBody":"…route\n\nChatOptions lacked a temperature field — providers used hardcoded values\nand dispatch couldn't control generation temperature per the design spec.\n\n- Add `temperature?: number` to ChatOptions in llm/types.ts\n- Each provider falls back to its existing default when temperature is omitted\n  (openai/gemini/ollama: 0.7, llamacpp: 0.3 — backward compatible)\n- dispatch.ts: pass { temperature: 0.7 } on initial call and retry\n- Also fix: system prompt was built but not included in messages array\n\nCo-Authored-By: Claude Sonnet 4.6 \<REDACTED_EMAIL>\u003e","messageHeadline":"fix(server): add temperature to ChatOptions and pass 0.7 in dispatch …","oid":"8a2cc79efb75a87aec34177018634f0427f97a25"}]
 ```
 
 > TOOL
@@ -2780,7 +2780,7 @@ tool_use Bash
 id: toolu_012UsKYyU1cCbw4umTh2nNXj
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/routes/dispatch.ts | head -80",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/routes/dispatch.ts | head -80",
   "description": "Check latest dispatch.ts changes in worktree"
 }
 ```
@@ -2791,7 +2791,7 @@ tool_result
 id: toolu_012UsKYyU1cCbw4umTh2nNXj
 ```
 commit 8a2cc79efb75a87aec34177018634f0427f97a25
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Wed May 13 07:42:42 2026 +0530
 
     fix(server): add temperature to ChatOptions and pass 0.7 in dispatch route
@@ -2805,7 +2805,7 @@ Date:   Wed May 13 07:42:42 2026 +0530
     - dispatch.ts: pass { temperature: 0.7 } on initial call and retry
     - Also fix: system prompt was built but not included in messages array
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/server/src/routes/dispatch.ts b/server/src/routes/dispatch.ts
 index 35c2c52..48a2399 100644
@@ -2831,7 +2831,7 @@ tool_use Bash
 id: toolu_017xKEfRfJMFuGBJbXNSdiSw
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/providers/gemini.ts | head -60",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/providers/gemini.ts | head -60",
   "description": "Check gemini.ts changes in the fix commit"
 }
 ```
@@ -2842,7 +2842,7 @@ tool_result
 id: toolu_017xKEfRfJMFuGBJbXNSdiSw
 ```
 commit 8a2cc79efb75a87aec34177018634f0427f97a25
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Wed May 13 07:42:42 2026 +0530
 
     fix(server): add temperature to ChatOptions and pass 0.7 in dispatch route
@@ -2856,7 +2856,7 @@ Date:   Wed May 13 07:42:42 2026 +0530
     - dispatch.ts: pass { temperature: 0.7 } on initial call and retry
     - Also fix: system prompt was built but not included in messages array
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/server/src/llm/providers/gemini.ts b/server/src/llm/providers/gemini.ts
 index f253ed1..e8c4d4b 100644
@@ -2871,7 +2871,7 @@ index f253ed1..e8c4d4b 100644
            maxOutputTokens: 8192,
            // Force valid JSON output at the decoding level.
            // Without this, Gemini Flash often wraps JSON in markdown fences,
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -2931,7 +2931,7 @@ tool_use Bash
 id: toolu_01BknrkeHGCWT9poPNNzN95i
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD --stat",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD --stat",
   "description": "Check latest commit stat in worktree"
 }
 ```
@@ -2942,7 +2942,7 @@ tool_result
 id: toolu_01BknrkeHGCWT9poPNNzN95i
 ```
 commit 9ae92aaf4ca30a58e1e83b5edc0386c614ed23ed
-Author: Srikanth Rao M <mskr30@yahoo.com>
+Author: Srikanth Rao M <<REDACTED_EMAIL>>
 Date:   Wed May 13 07:49:43 2026 +0530
 
     fix(dispatch): address Round 1 review FIX NOW + ADOPT items
@@ -2962,7 +2962,7 @@ Date:   Wed May 13 07:49:43 2026 +0530
     ADOPT: prompt_quality type normalized to 'Observation' in context builder
     TEST:  add server/src/routes/dispatch.test.ts (12 tests)
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 
  .../src/components/dispatch/DispatchDrawer.tsx     |  14 +-
  dashboard/src/components/dispatch/PostPreview.tsx  |   9 +-
@@ -2974,7 +2974,7 @@ Date:   Wed May 13 07:49:43 2026 +0530
  server/src/routes/dispatch.test.ts                 | 333 +++++++++++++++++++++
  server/src/routes/dispatch.ts                      |  28 +-
  9 files changed, 429 insertions(+), 32 deletions(-)
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights […]
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights […]
 
 > TOOL
 
@@ -2982,7 +2982,7 @@ tool_use Bash
 id: toolu_014zGRCZHSm2BfxP18RLAYUz
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/routes/dispatch.ts | grep -A 15 \"bullets\"",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/routes/dispatch.ts | grep -A 15 \"bullets\"",
   "description": "Verify FIX-B null bullets fix in dispatch.ts"
 }
 ```
@@ -3007,7 +3007,7 @@ id: toolu_014zGRCZHSm2BfxP18RLAYUz
     ADOPT: prompt_quality type normalized to 'Observation' in context builder
     TEST:  add server/src/routes/dispatch.test.ts (12 tests)
     
-    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Sonnet 4.6 <<REDACTED_EMAIL>>
 --
 -  bullets: string; // JSON-encoded string[]
 -}
@@ -3031,7 +3031,7 @@ tool_use Bash
 id: toolu_01YQng5a93VtsCnWgaAUS6Bj
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/dispatch-prompts.ts | grep -A 8 \"escTitle\\|escTldr\\|markdown\"",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/dispatch-prompts.ts | grep -A 8 \"escTitle\\|escTldr\\|markdown\"",
   "description": "Verify FIX-C YAML quoting fix in dispatch-prompts.ts"
 }
 ```
@@ -3082,7 +3082,7 @@ id: toolu_01YQng5a93VtsCnWgaAUS6Bj
      frontmatter: {
        title,
        tags: [],
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > TOOL
@@ -3091,7 +3091,7 @@ tool_use Bash
 id: toolu_01XVSh6ZW5JEeR6hnuLHN2Zx
 ```json
 {
-  "command": "cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/providers/gemini.ts | grep -A 5 \"responseFormat\\|responseMimeType\"",
+  "command": "cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated && git show HEAD -- server/src/llm/providers/gemini.ts | grep -A 5 \"responseFormat\\|responseMimeType\"",
   "description": "Verify FIX-D Gemini JSON mode guard"
 }
 ```
@@ -3124,7 +3124,7 @@ id: toolu_01XVSh6ZW5JEeR6hnuLHN2Zx
        };
  
        if (systemMessage) {
-Shell cwd was reset to /Users/melagiri/Workspace/codeInsights/code-insights
+Shell cwd was reset to /home/<USER>/Workspace/codeInsights/code-insights
 ```
 
 > AGENT
@@ -3187,7 +3187,7 @@ While they run — a note on where things stand with the VERIFY AT RUNTIME gate.
 
 ```bash
 # From the worktree:
-cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated
+cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated
 pnpm build && node cli/dist/index.js dashboard --no-sync &
 
 # Then in your configured browser, select 3-5 insights on /insights page
@@ -3570,7 +3570,7 @@ The review loop is now waiting on you for the 4 VERIFY AT RUNTIME items. Here's 
 
 ```bash
 # 1. Start the worktree server
-cd /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated
+cd /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated
 pnpm build && node cli/dist/index.js dashboard --no-sync &
 
 # 2. Get some insight IDs from your real DB
@@ -3611,7 +3611,7 @@ tool_use Read
 id: toolu_019X2vTe82LY4DsEb3csmXB4
 ```json
 {
-  "file_path": "/Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/dispatch-prompts.ts"
+  "file_path": "/home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/server/src/llm/dispatch-prompts.ts"
 }
 ```
 
@@ -3761,7 +3761,7 @@ tool_use Bash
 id: toolu_01Khnxjou6B1qtyo7fDknB6v
 ```json
 {
-  "command": "grep -A 20 \"DispatchTone\\|DispatchInsight\\|DispatchRequest\\|DispatchResponse\" /Users/melagiri/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/src/types.ts",
+  "command": "grep -A 20 \"DispatchTone\\|DispatchInsight\\|DispatchRequest\\|DispatchResponse\" /home/<USER>/Workspace/codeInsights/code-insights-dispatch-learnings-curated/cli/src/types.ts",
   "description": "Read current Dispatch types in worktree"
 }
 ```

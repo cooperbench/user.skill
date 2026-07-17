@@ -575,7 +575,7 @@ id: toolu_01Kcu1a5w68aGhK8CZ5Vixg6
 ```
 Exit code 13
 Target harness folder(s): .claude, .agents, .github
-Install impeccable skills into 3 folder(s)? (Y/n) Warning: Detected unsettled top-level await at file:///Users/sumeet/.cache/npm/_npx/1a4eb60c8f6b0f89/node_modules/impeccable/cli/bin/cli.js:50
+Install impeccable skills into 3 folder(s)? (Y/n) Warning: Detected unsettled top-level await at file:///home/<USER>/.cache/npm/_npx/1a4eb60c8f6b0f89/node_modules/impeccable/cli/bin/cli.js:50
   await run(args.slice(1));
   ^
 ```
@@ -616,7 +616,7 @@ All three installed:
 - **emil-design-eng** — `.agents/skills/emil-design-eng`
 - **Impeccable** — installed into `.claude`, `.agents`, `.github`
 
-Heads up: these went into the **project** (`/Users/sumeet/matrix/web/babbi.world/.agents/`, `.claude/`, `.github/`), not your global `~/.claude/`. So they're scoped to babbi.world only. If you wanted them globally available, let me know and I can move/reinstall.
+Heads up: these went into the **project** (`/home/<USER>/matrix/web/babbi.world/.agents/`, `.claude/`, `.github/`), not your global `~/.claude/`. So they're scoped to babbi.world only. If you wanted them globally available, let me know and I can move/reinstall.
 
 Next step for Impeccable: run `/impeccable init` in your harness to set up the design context. You'll also probably want to restart this session so the new skills get picked up in the available-skills list.
 
@@ -634,7 +634,7 @@ tool_use Bash
 id: toolu_01FzaBf1KSpjVmTZQokSb17K
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/babbi.world/.agents/skills/ && echo \"---\" && ls /Users/sumeet/matrix/web/babbi.world/.claude/ 2>/dev/null",
+  "command": "ls /home/<USER>/matrix/web/babbi.world/.agents/skills/ && echo \"---\" && ls /home/<USER>/matrix/web/babbi.world/.claude/ 2>/dev/null",
   "description": "List installed skills"
 }
 ```
@@ -670,7 +670,7 @@ tool_use Bash
 id: toolu_01FQ3aMJ7FRPL59PgqH7kwdg
 ```json
 {
-  "command": "for d in /Users/sumeet/matrix/web/babbi.world/.agents/skills/*/; do\n  name=$(basename \"$d\")\n  desc=$(grep -m1 -E \"^description:\" \"$d/SKILL.md\" 2>/dev/null | sed 's/^description: *//' | tr -d '\"' | cut -c1-200)\n  echo \"• $name — $desc\"\ndone",
+  "command": "for d in /home/<USER>/matrix/web/babbi.world/.agents/skills/*/; do\n  name=$(basename \"$d\")\n  desc=$(grep -m1 -E \"^description:\" \"$d/SKILL.md\" 2>/dev/null | sed 's/^description: *//' | tr -d '\"' | cut -c1-200)\n  echo \"• $name — $desc\"\ndone",
   "description": "Extract description from each SKILL.md"
 }
 ```
@@ -737,7 +737,7 @@ tool_use Bash
 id: toolu_01M9sqNRrFJWEkCVhZJ33DxA
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/babbi.world/.agents/skills/impeccable/ && echo \"---\" && ls /Users/sumeet/matrix/web/babbi.world/.agents/skills/brandkit/",
+  "command": "ls /home/<USER>/matrix/web/babbi.world/.agents/skills/impeccable/ && echo \"---\" && ls /home/<USER>/matrix/web/babbi.world/.agents/skills/brandkit/",
   "description": "List files in impeccable and brandkit"
 }
 ```
@@ -761,7 +761,7 @@ tool_use Read
 id: toolu_01AbuJ18SVHQw929dwURMSf5
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/babbi.world/.agents/skills/impeccable/SKILL.md",
+  "file_path": "/home/<USER>/matrix/web/babbi.world/.agents/skills/impeccable/SKILL.md",
   "limit": 100
 }
 ```
@@ -790,7 +790,7 @@ tool_use Read
 id: toolu_016C3qDhUa2PTuDkFpjYJs6y
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/babbi.world/.agents/skills/brandkit/SKILL.md",
+  "file_path": "/home/<USER>/matrix/web/babbi.world/.agents/skills/brandkit/SKILL.md",
   "limit": 100
 }
 ```
@@ -841,7 +841,7 @@ tool_use Bash
 id: toolu_018BmgiBBW76f6wAsnFttB4f
 ```json
 {
-  "command": "ls /Users/sumeet/matrix/web/babbi.world/.agents/skills/impeccable/reference/ /Users/sumeet/matrix/web/babbi.world/.agents/skills/impeccable/agents/ 2>/dev/null",
+  "command": "ls /home/<USER>/matrix/web/babbi.world/.agents/skills/impeccable/reference/ /home/<USER>/matrix/web/babbi.world/.agents/skills/impeccable/agents/ 2>/dev/null",
   "description": "List impeccable subfolders"
 }
 ```
@@ -851,12 +851,12 @@ id: toolu_018BmgiBBW76f6wAsnFttB4f
 tool_result
 id: toolu_018BmgiBBW76f6wAsnFttB4f
 ```
-/Users/sumeet/matrix/web/babbi.world/.agents/skills/impeccable/agents/:
+/home/<USER>/matrix/web/babbi.world/.agents/skills/impeccable/agents/:
 impeccable_asset_producer.toml
 impeccable_manual_edit_applier.toml
 openai.yaml
 
-/Users/sumeet/matrix/web/babbi.world/.agents/skills/impeccable/reference/:
+/home/<USER>/matrix/web/babbi.world/.agents/skills/impeccable/reference/:
 adapt.md
 animate.md
 audit.md
@@ -896,7 +896,7 @@ tool_use Read
 id: toolu_01DDUXq2TtpimBafH1SLeHgJ
 ```json
 {
-  "file_path": "/Users/sumeet/matrix/web/babbi.world/.agents/skills/impeccable/reference/init.md",
+  "file_path": "/home/<USER>/matrix/web/babbi.world/.agents/skills/impeccable/reference/init.md",
   "limit": 80
 }
 ```

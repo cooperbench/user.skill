@@ -12,7 +12,7 @@ tool_use Bash
 id: toolu_019CGgiRQbrNeRh3tt5morgE
 ```json
 {
-  "command": "grep -n \"App\\.\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"App\\.\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Find App. references in main.tex"
 }
 ```
@@ -32,7 +32,7 @@ tool_use Bash
 id: toolu_01QcT6LLDJeEUTvbRbxJJtEW
 ```json
 {
-  "command": "grep -n \"Full hyperparameters\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"Full hyperparameters\" /home/<USER>/neuralips26/main.tex",
   "description": "Find the specific paragraph"
 }
 ```
@@ -51,7 +51,7 @@ tool_use Bash
 id: toolu_014oKVChCuHfSye8C26K37E6
 ```json
 {
-  "command": "grep -n \"app:setup\" /Users/hungpq2412/neuralips26/main.tex | head -10",
+  "command": "grep -n \"app:setup\" /home/<USER>/neuralips26/main.tex | head -10",
   "description": "Find app:setup label"
 }
 ```
@@ -70,7 +70,7 @@ tool_use Bash
 id: toolu_017Y2m4BZFm2Pj6T7d3PCxjB
 ```json
 {
-  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\appendix\\|app:setup\\|app:deployment\\|app:lora_sweep\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"\\\\\\\\section\\|\\\\\\\\appendix\\|app:setup\\|app:deployment\\|app:lora_sweep\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Check appendix structure and labels"
 }
 ```
@@ -118,7 +118,7 @@ tool_use Bash
 id: toolu_01PxZpPRkwPhK5g6Y18BdZkv
 ```json
 {
-  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\appendix\" /Users/hungpq2412/neuralips26/main.tex | head -20",
+  "command": "grep -n \"^\\\\\\\\section\\|^\\\\\\\\appendix\" /home/<USER>/neuralips26/main.tex | head -20",
   "description": "Find section boundaries"
 }
 ```
@@ -156,7 +156,7 @@ tool_use Read
 id: toolu_01VGr2CJ1RSxm4WwdChmKK9s
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 61,
   "limit": 170
 }
@@ -182,7 +182,7 @@ tool_use Read
 id: toolu_01WvHSPSiqbHHv9pH9u7wYPG
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 565,
   "limit": 100
 }
@@ -224,7 +224,7 @@ tool_use Bash
 id: toolu_016Zaq9WB2RsSDKPYvVkXxQe
 ```json
 {
-  "command": "awk 'NR==568' /Users/hungpq2412/neuralips26/main.tex | wc -w",
+  "command": "awk 'NR==568' /home/<USER>/neuralips26/main.tex | wc -w",
   "description": "Count words in conclusion paragraph"
 }
 ```
@@ -243,7 +243,7 @@ tool_use Bash
 id: toolu_01AeYzZyYyH3YyMEJyihmqPB
 ```json
 {
-  "command": "awk 'NR>=64 && NR<=79' /Users/hungpq2412/neuralips26/main.tex | wc -w",
+  "command": "awk 'NR>=64 && NR<=79' /home/<USER>/neuralips26/main.tex | wc -w",
   "description": "Count words in intro"
 }
 ```
@@ -267,7 +267,7 @@ id: toolu_01Xp2jLRmTD58L5quHYCeGgw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "Time series foundation models (TSFMs) such as MOMENT~\\citep{goswami2024moment}, TimesFM~\\citep{das2024timesfm}, Chronos~\\citep{ansari2024chronos}, Timer-XL~\\citep{liu2025timerxl,liu2024timer}, and Moirai~\\citep{woo2024moirai} now provide pretrained representations for time series, alongside further pretrained variants~\\citep{lee2024units, rasul2024lagllama, ekambaram2024ttm}, observability-domain deployments~\\citep{cohen2025toto}, tokenization-free flow-matching forecasters~\\citep{liu2025sundial}, and a parallel route that reprograms pretrained LLMs as forecasters~\\citep{jin2024timellm, zhou2023onefitsall, liu2024autotimes, pan2024s2ipllm, liu2024unitime}, with recent designs pushing to billion-parameter scales~\\citep{shi2024timemoe, liu2026timers1}. Using one of these backbones on a downstream task still requires attaching a lightweight adapter head that maps hidden states to predictions; this paper studies the adapter, holding the backbone fixed.",
   "new_string": "Time series foundation models (TSFMs) such as MOMENT~\\citep{goswami2024moment}, TimesFM~\\citep{das2024timesfm}, Chronos~\\citep{ansari2024chronos}, Timer-XL~\\citep{liu2025timerxl,liu2024timer}, and Moirai~\\citep{woo2024moirai} now provide pretrained representations for time series, alongside a growing ecosystem of pretrained variants and LLM-reprogrammed forecasters~\\citep{lee2024units, rasul2024lagllama, ekambaram2024ttm, cohen2025toto, liu2025sundial, jin2024timellm, zhou2023onefitsall, liu2024autotimes, pan2024s2ipllm, liu2024unitime, shi2024timemoe, liu2026timers1}. Using one of these backbones on a downstream task still requires attaching a lightweight adapter head that maps hidden states to predictions; this paper studies the adapter, holding the backbone fixed."
 }
@@ -278,7 +278,7 @@ id: toolu_01Xp2jLRmTD58L5quHYCeGgw
 tool_result
 id: toolu_01Xp2jLRmTD58L5quHYCeGgw
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -288,7 +288,7 @@ id: toolu_01X1bN7jFA8mYSijegfJnVLT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). \\textbf{Limitations:} specific to $(\\mu,\\sigma)$-stripping normalizers; classification, anomaly detection, and learned expert pools remain open.\\label{page:end_main}}",
   "new_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). The diagnosis reframes a failure that prior MoE work treats as optimization (load balancing, z-loss, expert-choice) as one of \\emph{router input}: $11$ optimization-side rescues recover at most $10.9\\%$ MSE on the same grid where changing only the routing signal recovers $54$--$80\\%$, with the optimizer and frozen backbone untouched. Because $R(\\mathcal{D})$ is computable from raw windows alone, the fix comes with a pre-training go/no-go test, and the strictly frozen backbone preserves the multi-tenant deployment regime […]
 
@@ -297,7 +297,7 @@ id: toolu_01X1bN7jFA8mYSijegfJnVLT
 tool_result
 id: toolu_01X1bN7jFA8mYSijegfJnVLT
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -316,22 +316,22 @@ id: toolu_01VSu8Ztdi16fM9ZXHxFQvbM
 tool_result
 id: toolu_01VSu8Ztdi16fM9ZXHxFQvbM
 ```
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/h
-ungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/hungpq
-2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/hungpq2412/L
-ibrary/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/hungpq2412/Library
-/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/hungpq2412/Library/texmf
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/hungpq2412/Library/texmf/fonts
-/type1/public/amsfonts/cm/cmr9.pfb></Users/hungpq2412/Library/texmf/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></Users/hungpq2412/Library/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmsy5.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
-9.pfb></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
-></Users/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
-ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></Users/h
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/<USER>
+ungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/<USER>
+2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/<USER>/L
+ibrary/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/<USER>/Library
+/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/<USER>/Library/texmf
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/<USER>/Library/texmf/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></home/<USER>/Library/texmf/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></home/<USER>/Library/texmf/fonts/type1/pub
+lic/amsfonts/cm/cmsy5.pfb></home/<USER>/Library/texmf/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti7.pfb
+></home/<USER>/Library/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></Us
+ers/hungpq2412/Library/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></home/<USER>
 ungpq2412/Library/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr
 /local/texlive/2026basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/l
@@ -387,7 +387,7 @@ tool_use Bash
 id: toolu_0124QvEh7XEPynZYyz8sTtao
 ```json
 {
-  "command": "awk 'NR==568' /Users/hungpq2412/neuralips26/main.tex | wc -w; awk 'NR>=64 && NR<=79' /Users/hungpq2412/neuralips26/main.tex | wc -w",
+  "command": "awk 'NR==568' /home/<USER>/neuralips26/main.tex | wc -w; awk 'NR>=64 && NR<=79' /home/<USER>/neuralips26/main.tex | wc -w",
   "description": "Count words after edit"
 }
 ```
@@ -516,7 +516,7 @@ Should the contribution bullet be reframed around this *path* (failure → rule-
 
 > DEVELOPER
 
-take a look at this paper @/Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026\ \(35\).pdf
+take a look at this paper @/home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026\ \(35\).pdf
 
 > TOOL
 
@@ -524,7 +524,7 @@ tool_use Bash
 id: toolu_01VfUuypPTBTfUznhtVZcnqt
 ```json
 {
-  "command": "ls -la \"/Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf\"",
+  "command": "ls -la \"/home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf\"",
   "description": "Check file exists and size"
 }
 ```
@@ -534,7 +534,7 @@ id: toolu_01VfUuypPTBTfUznhtVZcnqt
 tool_result
 id: toolu_01VfUuypPTBTfUznhtVZcnqt
 ```
--rw-r--r--@ 1 hungpq2412  staff  10731625 May  5 13:19 /Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf
+-rw-r--r--@ 1 hungpq2412  staff  10731625 May  5 13:19 /home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf
 ```
 
 > TOOL
@@ -543,7 +543,7 @@ tool_use Read
 id: toolu_0164bhbx6DntTkbDXGh2S4Gc
 ```json
 {
-  "file_path": "/Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf",
+  "file_path": "/home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf",
   "pages": "1-9"
 }
 ```
@@ -553,7 +553,7 @@ id: toolu_0164bhbx6DntTkbDXGh2S4Gc
 tool_result
 id: toolu_0164bhbx6DntTkbDXGh2S4Gc
 ```
-PDF pages extracted: 9 page(s) from /Users/hungpq2412/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf (10.2MB)
+PDF pages extracted: 9 page(s) from /home/<USER>/Downloads/Vy_Nguyen_NeurIPS_2026 (35).pdf (10.2MB)
 ```
 
 > AGENT
@@ -582,7 +582,7 @@ tool_use Bash
 id: toolu_01FfsPq7PqrqNvM7nDuyFkjR
 ```json
 {
-  "command": "grep -n \"begin{abstract}\\|end{abstract}\" /Users/hungpq2412/neuralips26/main.tex",
+  "command": "grep -n \"begin{abstract}\\|end{abstract}\" /home/<USER>/neuralips26/main.tex",
   "description": "Find abstract bounds"
 }
 ```
@@ -602,7 +602,7 @@ tool_use Read
 id: toolu_01LoBCeivrwdUDtHnw3HbQCo
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 55,
   "limit": 5
 }
@@ -624,7 +624,7 @@ tool_use Read
 id: toolu_014VDEPUR7z1sHu1c5YkyzRW
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 74,
   "limit": 8
 }
@@ -652,7 +652,7 @@ id: toolu_01D6ktF9rHrq8Qs57Zhc9epk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "Many time series foundation models (TSFMs) adapt to a target dataset by attaching a single trainable head to a frozen backbone. A single head is one-size-fits-all, yet target series mix heterogeneous regimes that a single head may underfit. The natural upgrade is to replace the single head with a mixture-of-experts (MoE) head whose router dispatches each window to a specialist. This upgrade fails on instance-normalized backbones, a dominant TSFM design class that strips each window's mean and variance before encoding. We call this failure \\emph{normalization-induced routing collapse}. Once joint training makes even one backbone transformer block trainable, routing entropy falls to $0.000$. Every input is sent to a single expert; the rest are never activated. A $720$-run sweep across standard MoE rescue mechanisms recovers at most $10.9\\%$ MSE, $2.7\\times$ worse than our causal intervention. The failure is in the router's input, not its optimization. We formalize this via a mutual-information decomposition. The resulting signal-ratio statistic is computable before training and predicts dataset vulnerability (Spearman $\\rho{=}{-}0.88$, $p{<}0.002$). The diagnosis prescribes a minimal causal intervention: \\emph{Raw-Routed Mixture of Adapters} (RR-MoA) routes on the raw, pre-normalization input.",
   "new_string": "On instance-normalized time series […]
 
@@ -661,7 +661,7 @@ id: toolu_01D6ktF9rHrq8Qs57Zhc9epk
 tool_result
 id: toolu_01D6ktF9rHrq8Qs57Zhc9epk
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -671,7 +671,7 @@ id: toolu_01WyFzFrZWkM9x4iP2jge9J8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\item We identify \\emph{normalization-induced routing collapse}, an architectural failure mode of MoE adapters on instance-normalized TSFMs that is upstream of the optimization-induced collapses targeted by Switch~\\citep{fedus2022switch}, ST-MoE~\\citep{zoph2022stmoe}, ReMoE~\\citep{wang2025remoe}, and Expert-Choice~\\citep{zhou2022expertchoice}; eight causal controls (RevIN ablation, BatchNorm/GroupNorm swaps, router-input interpolation, vision cross-modality) converge on the normalizer as cause.\n\\item We formalize the mechanism via a mutual-information decomposition (Observation~\\ref{thm:mi_decomp}) and derive a tractable signal-ratio predictor $R(\\mathcal{D})$ that anticipates raw-routing benefit at Spearman $\\rho{=}{-}0.88$ ($p{<}0.002$), including boundary cases where it correctly does not (Traffic, $R{=}0.14$); the predictor generalizes across three normalization families, five backbones, and a vision modality.\n\\item We propose RR-MoA, the \\textbf{minimal causal intervention}: changing only the router's input from normalized hidden states to $\\mathbf{X}_\\text{raw}$, with experts, optimizer, and frozen backbone unchanged. RR-MoA wins $54/54$ cells against AdaMix, dominates $11$ optimization-side rescue mechanisms ($720$ runs; best rescue $\\leq 10.9\\%$, RR-MoA $2.7{\\times}$ better), and is not subsumed by naive $(\\mu,\\sigma)$ re-injection ($+42$--$239\\%$ MSE; $11/18$ cells re-collapse). Two architecturally distinct variants confirm the principle generalizes: \\textbf{SR-MoA} (self-routed, no external router; $+13$--$42\\%$ over RR-MoA on all 6 datasets) and \\textbf{Residual-IA\\textsuperscript{+}} (expert-level raw-input dual-stream; matches or beats DLinear on $6/6$ datasets, $107/123$ cells across six backbones).", […]
 
 > TOOL
@@ -679,7 +679,7 @@ id: toolu_01WyFzFrZWkM9x4iP2jge9J8
 tool_result
 id: toolu_01WyFzFrZWkM9x4iP2jge9J8
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -728,7 +728,7 @@ id: toolu_01T2zRqSLVGVDEmpBqvTjHFt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "On instance-normalized time series foundation models (TSFMs), the natural mixture-of-experts (MoE) upgrade for adapter heads collapses to a single expert: routing entropy falls to $0.000$ once joint training makes even one backbone block trainable, and the remaining experts are never activated. Prior MoE work attributes such collapses to optimization (load imbalance, gradient skew, expert saturation) and patches the optimizer; here a $720$-run sweep across $11$ such rescues recovers at most $10.9\\%$ MSE, $2.7\\times$ worse than our intervention. We frame this as \\emph{normalization-induced routing collapse}: a router-\\emph{input} failure rather than a router-\\emph{optimization} failure, in which the per-window $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream router needs. A mutual-information decomposition formalizes the loss, and the resulting signal-ratio statistic $R(\\mathcal{D})$ predicts dataset vulnerability before training (Spearman $\\rho{=}{-}0.88$, $p{<}0.002$). The diagnosis prescribes a minimal causal intervention: \\emph{Raw-Routed Mixture of Adapters} (RR-MoA) routes on the raw, pre-normalization input.",
   "new_string": "Many time series foundation models (TSFMs) adapt to a target dataset by attaching a single trainable head to a frozen backbone. A single head is one-size-fits-all, yet target series mix heterogeneous regimes that a single head may underfit. The […]
 
@@ -737,7 +737,7 @@ id: toolu_01T2zRqSLVGVDEmpBqvTjHFt
 tool_result
 id: toolu_01T2zRqSLVGVDEmpBqvTjHFt
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -808,7 +808,7 @@ tool_result
 id: toolu_01Cs6RQ9oUCxV3QaAL38rfPb
 ```
 <persisted-output>
-Output too large (33.1KB). Full output saved to: /Users/hungpq2412/.claude/projects/-Users-hungpq2412-neuralips26/2dee35c5-5a1f-49fa-8dd9-9ff88b81cad6/tool-results/brm441x3z.txt
+Output too large (33.1KB). Full output saved to: /home/<USER>/.claude/projects/-Users-hungpq2412-neuralips26/2dee35c5-5a1f-49fa-8dd9-9ff88b81cad6/tool-results/brm441x3z.txt
 
 Preview (first 2KB):
 diff --git a/main.tex b/main.tex
@@ -928,7 +928,7 @@ tool_use Bash
 id: toolu_01KkK1jPDeRLoA4W18kekmbJ
 ```json
 {
-  "command": "awk 'NR<1045' /Users/hungpq2412/neuralips26/main.tex | grep -nE \"\\\\\\\\begin\\{figure|\\\\\\\\begin\\{table|\\\\\\\\caption\\{|resizebox|scalebox|\\\\\\\\includegraphics|\\\\\\\\renewcommand\\{\\\\\\\\arraystretch\" | head -80",
+  "command": "awk 'NR<1045' /home/<USER>/neuralips26/main.tex | grep -nE \"\\\\\\\\begin\\{figure|\\\\\\\\begin\\{table|\\\\\\\\caption\\{|resizebox|scalebox|\\\\\\\\includegraphics|\\\\\\\\renewcommand\\{\\\\\\\\arraystretch\" | head -80",
   "description": "Survey main-body figures/tables"
 }
 ```
@@ -1025,7 +1025,7 @@ tool_use Bash
 id: toolu_01SN4A1VyLWFmSUxNV1xddom
 ```json
 {
-  "command": "awk 'NR>=487 && NR<=500' /Users/hungpq2412/neuralips26/main.tex",
+  "command": "awk 'NR>=487 && NR<=500' /home/<USER>/neuralips26/main.tex",
   "description": "View causal contrast figure"
 }
 ```
@@ -1194,7 +1194,7 @@ tool_use Bash
 id: toolu_013UkoLHEJehm9XnoEnJXrw3
 ```json
 {
-  "command": "grep -nE \"label\\{(fig|tab):(causal_contrast|problem_overview|framework|baselines|rrmoa|adamix|rescue|conclusion|paradox)\" /Users/hungpq2412/neuralips26/main.tex | head -20",
+  "command": "grep -nE \"label\\{(fig|tab):(causal_contrast|problem_overview|framework|baselines|rrmoa|adamix|rescue|conclusion|paradox)\" /home/<USER>/neuralips26/main.tex | head -20",
   "description": "Find labels in tex source"
 }
 ```
@@ -1256,7 +1256,7 @@ tool_use Read
 id: toolu_01DCVu37X7YxuFUsZJFrq6mK
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 432,
   "limit": 75
 }
@@ -1291,7 +1291,7 @@ tool_use Read
 id: toolu_01V2YqHoPDNNXB5S3RZB8Nmj
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 221,
   "limit": 10
 }
@@ -1320,7 +1320,7 @@ tool_use Read
 id: toolu_01FVwJBGLMPwHVDzA1uVMrjJ
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 381,
   "limit": 12
 }
@@ -1352,7 +1352,7 @@ id: toolu_015AhxFcnQTRhsXXoC381wwC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\begin{figure}[t]\n\\centering\n\\resizebox{0.55\\columnwidth}{!}{%",
   "new_string": "\\begin{figure}[t]\n\\centering\n\\resizebox{0.45\\columnwidth}{!}{%"
 }
@@ -1363,7 +1363,7 @@ id: toolu_015AhxFcnQTRhsXXoC381wwC
 tool_result
 id: toolu_015AhxFcnQTRhsXXoC381wwC
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -1373,7 +1373,7 @@ id: toolu_01BW8nysTbLwnKHeg9uQuyhC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\begin{figure}[t!]\n\\centering\n\\resizebox{0.55\\columnwidth}{!}{%",
   "new_string": "\\begin{figure}[t!]\n\\centering\n\\resizebox{0.48\\columnwidth}{!}{%"
 }
@@ -1384,7 +1384,7 @@ id: toolu_01BW8nysTbLwnKHeg9uQuyhC
 tool_result
 id: toolu_01BW8nysTbLwnKHeg9uQuyhC
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -1394,7 +1394,7 @@ id: toolu_01WwVYjWbDQKMMrhNgrMxEs9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\includegraphics[width=0.36\\columnwidth]{figures/causal_contrast.pdf}",
   "new_string": "\\includegraphics[width=0.30\\columnwidth]{figures/causal_contrast.pdf}"
 }
@@ -1405,7 +1405,7 @@ id: toolu_01WwVYjWbDQKMMrhNgrMxEs9
 tool_result
 id: toolu_01WwVYjWbDQKMMrhNgrMxEs9
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -1830,7 +1830,7 @@ tool_use Bash
 id: toolu_01YXSuRF2qhYHoC6BZBoXQMp
 ```json
 {
-  "command": "grep -n \"textfloatsep\\|intextsep\\|floatsep\\|abovecaptionskip\\|belowcaptionskip\\|setlength\" /Users/hungpq2412/neuralips26/main.tex | head -10",
+  "command": "grep -n \"textfloatsep\\|intextsep\\|floatsep\\|abovecaptionskip\\|belowcaptionskip\\|setlength\" /home/<USER>/neuralips26/main.tex | head -10",
   "description": "Check for spacing customizations"
 }
 ```
@@ -1851,7 +1851,7 @@ tool_use Bash
 id: toolu_01XJGoEQ8Mbe9M5PUFUfvv9G
 ```json
 {
-  "command": "awk 'NR>=1 && NR<=55' /Users/hungpq2412/neuralips26/main.tex | head -55",
+  "command": "awk 'NR>=1 && NR<=55' /home/<USER>/neuralips26/main.tex | head -55",
   "description": "View preamble"
 }
 ```
@@ -1902,15 +1902,15 @@ id: toolu_01XJGoEQ8Mbe9M5PUFUfvv9G
 \author{
   Anonymous Author 1 \\
   Anonymous Institution\\
-  \texttt{author1@example.com}
+  \texttt{<REDACTED_EMAIL>}
   \And
   Anonymous Author 2 \\
   Anonymous Institution\\
-  \texttt{author2@example.com}
+  \texttt{<REDACTED_EMAIL>}
   \And
   Anonymous Author 3 \\
   Anonymous Institution\\
-  \texttt{author3@example.com}
+  \texttt{<REDACTED_EMAIL>}
 }
 
 \begin{document}
@@ -1924,7 +1924,7 @@ tool_use Bash
 id: toolu_01PSnq1rDXfqndchBycyb58V
 ```json
 {
-  "command": "grep -n \"vspace\\|textfloatsep\\|intextsep\" /Users/hungpq2412/neuralips26/main.tex | head -30",
+  "command": "grep -n \"vspace\\|textfloatsep\\|intextsep\" /home/<USER>/neuralips26/main.tex | head -30",
   "description": "Check existing vspace usage"
 }
 ```
@@ -1950,7 +1950,7 @@ tool_use Read
 id: toolu_01GWtoPV6FegYvh1T4Trzpwe
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 555,
   "limit": 15
 }
@@ -1983,7 +1983,7 @@ id: toolu_013UTH6EJcxFZKnyV8pKGsi3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\begin{figure}[t]\n\\centering\n\\resizebox{0.45\\columnwidth}{!}{%",
   "new_string": "\\begin{figure}[t]\n\\centering\n\\resizebox{0.38\\columnwidth}{!}{%"
 }
@@ -1994,7 +1994,7 @@ id: toolu_013UTH6EJcxFZKnyV8pKGsi3
 tool_result
 id: toolu_013UTH6EJcxFZKnyV8pKGsi3
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -2004,7 +2004,7 @@ id: toolu_017AXHhiptyTQz21yRKV852Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\begin{figure}[t!]\n\\centering\n\\resizebox{0.48\\columnwidth}{!}{%",
   "new_string": "\\begin{figure}[t!]\n\\centering\n\\resizebox{0.40\\columnwidth}{!}{%"
 }
@@ -2015,7 +2015,7 @@ id: toolu_017AXHhiptyTQz21yRKV852Z
 tool_result
 id: toolu_017AXHhiptyTQz21yRKV852Z
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -2025,7 +2025,7 @@ id: toolu_012BZouXumCWU4ZAmJruhiod
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\includegraphics[width=0.30\\columnwidth]{figures/causal_contrast.pdf}",
   "new_string": "\\includegraphics[width=0.26\\columnwidth]{figures/causal_contrast.pdf}"
 }
@@ -2036,7 +2036,7 @@ id: toolu_012BZouXumCWU4ZAmJruhiod
 tool_result
 id: toolu_012BZouXumCWU4ZAmJruhiod
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -2195,7 +2195,7 @@ tool_use Read
 id: toolu_014zPGpaAngFqEGAkfy4Dtkg
 ```json
 {
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "offset": 531,
   "limit": 30
 }
@@ -2236,7 +2236,7 @@ id: toolu_01Dp3LvzTknVmVETUBJk9LAf
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{3\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{8\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -2247,7 +2247,7 @@ id: toolu_01Dp3LvzTknVmVETUBJk9LAf
 tool_result
 id: toolu_01Dp3LvzTknVmVETUBJk9LAf
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -2308,7 +2308,7 @@ id: toolu_01F3ftbtN3yCzqmQSjinkd6m
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\begin{table}[!htbp]\n\\centering\n\\setlength{\\tabcolsep}{4pt}\n\\renewcommand{\\arraystretch}{0.88}\n\\caption{\\textbf{Baseline comparison} (MOMENT-small, Top-2, 5 seeds, H=96). Above double rule: frozen; full FT unfreezes all 8 blocks. Wilcoxon, Bonferroni-corrected. Grey rows: from-scratch calibration anchors.}\n\\label{tab:baselines}\n\\footnotesize",
   "new_string": "\\begin{table}[!htbp]\n\\centering\n\\setlength{\\tabcolsep}{3pt}\n\\renewcommand{\\arraystretch}{0.80}\n\\caption{\\textbf{Baseline comparison} (MOMENT-small, Top-2, 5 seeds, H=96). Above double rule: frozen; full FT unfreezes all 8 blocks. Wilcoxon, Bonferroni-corrected. Grey rows: from-scratch calibration anchors.}\n\\label{tab:baselines}\n\\footnotesize"
 }
@@ -2319,7 +2319,7 @@ id: toolu_01F3ftbtN3yCzqmQSjinkd6m
 tool_result
 id: toolu_01F3ftbtN3yCzqmQSjinkd6m
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -2329,7 +2329,7 @@ id: toolu_01MYwGXwsMZoqVo6AkxKJW5Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{8\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{12\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -2340,7 +2340,7 @@ id: toolu_01MYwGXwsMZoqVo6AkxKJW5Q
 tool_result
 id: toolu_01MYwGXwsMZoqVo6AkxKJW5Q
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -2910,7 +2910,7 @@ id: toolu_01BoVRuGhb4WAEEJ366yyh6r
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{12\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{3\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -2921,7 +2921,7 @@ id: toolu_01BoVRuGhb4WAEEJ366yyh6r
 tool_result
 id: toolu_01BoVRuGhb4WAEEJ366yyh6r
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3095,7 +3095,7 @@ id: toolu_01HH6Tx12WJdDTwoaDZymj7N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{3\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{6\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -3106,7 +3106,7 @@ id: toolu_01HH6Tx12WJdDTwoaDZymj7N
 tool_result
 id: toolu_01HH6Tx12WJdDTwoaDZymj7N
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3300,7 +3300,7 @@ id: toolu_01N38gVYmrLa5dTnzhMCArvk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{6\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{10\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -3311,7 +3311,7 @@ id: toolu_01N38gVYmrLa5dTnzhMCArvk
 tool_result
 id: toolu_01N38gVYmrLa5dTnzhMCArvk
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3599,7 +3599,7 @@ id: toolu_01LpUQy7j427pYsK8uYWRX7U
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{10\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{8\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -3610,7 +3610,7 @@ id: toolu_01LpUQy7j427pYsK8uYWRX7U
 tool_result
 id: toolu_01LpUQy7j427pYsK8uYWRX7U
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3641,7 +3641,7 @@ id: toolu_01BHuykpzisfY9LiT1M4US2M
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{8\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{9\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -3652,7 +3652,7 @@ id: toolu_01BHuykpzisfY9LiT1M4US2M
 tool_result
 id: toolu_01BHuykpzisfY9LiT1M4US2M
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3681,7 +3681,7 @@ Pages:           52
 tool_result
 id: toolu_01MgfCn2MoW3U7gs6vTpLXVT
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > AGENT
@@ -3695,7 +3695,7 @@ id: toolu_01MgfCn2MoW3U7gs6vTpLXVT
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "Because $R(\\mathcal{D})$ is computable from raw windows alone, the fix comes with a pre-training go/no-go test, and the strictly frozen backbone preserves the multi-tenant deployment regime that motivates TSFMs in the first place. \\textbf{Limitations.} The diagnosis is specific to $(\\mu,\\sigma)$-stripping normalizers in the encoder pipeline; LayerNorm-only and non-instance-normalized backbones (Chronos, Timer-XL) are unaffected and need no fix. Classification, anomaly detection, longer-horizon regimes beyond $H{=}720$, and learned (rather than canonical) expert pools remain open.",
   "new_string": "Because $R(\\mathcal{D})$ is computable from raw windows alone, the fix comes with a pre-training go/no-go test, and the frozen backbone preserves the multi-tenant deployment regime motivating TSFMs. \\textbf{Limitations.} The diagnosis is specific to $(\\mu,\\sigma)$-stripping normalizers in the encoder pipeline; LayerNorm-only and non-instance-normalized backbones (Chronos, Timer-XL) need no fix. Classification, anomaly detection, longer horizons, and learned expert pools remain open."
 }
@@ -3796,7 +3796,7 @@ id: toolu_01SJtect8NMVrz1GUVTtJkY1
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{9\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{6\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -3807,7 +3807,7 @@ id: toolu_01SJtect8NMVrz1GUVTtJkY1
 tool_result
 id: toolu_01SJtect8NMVrz1GUVTtJkY1
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3817,7 +3817,7 @@ id: toolu_01VvyYyBh8YNfXWtTjipJiYG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). The diagnosis reframes a failure that prior MoE work treats as optimization (load balancing, z-loss, expert-choice) as one of \\emph{router input}: $11$ optimization-side rescues recover at most $10.9\\%$ MSE on the same grid where changing only the routing signal recovers $54$--$80\\%$, with the optimizer and frozen backbone untouched. Because $R(\\mathcal{D})$ is computable from raw windows alone, the fix comes with a pre-training go/no-go test, and the frozen backbone preserves the multi-tenant deployment regime motivating TSFMs. \\textbf{Limitations.} The diagnosis is specific to $(\\mu,\\sigma)$-stripping normalizers in the encoder pipeline; LayerNorm-only and non-instance-normalized backbones (Chronos, Timer-XL) need no fix. Classification, anomaly detection, longer horizons, and learned expert pools remain open.\\label{page:end_main}}",
   "new_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it […]
 
@@ -3826,7 +3826,7 @@ id: toolu_01VvyYyBh8YNfXWtTjipJiYG
 tool_result
 id: toolu_01VvyYyBh8YNfXWtTjipJiYG
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3857,7 +3857,7 @@ id: toolu_01KQdVQYiahEV43L44JibjQq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{6\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{7\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -3868,7 +3868,7 @@ id: toolu_01KQdVQYiahEV43L44JibjQq
 tool_result
 id: toolu_01KQdVQYiahEV43L44JibjQq
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3959,7 +3959,7 @@ id: toolu_01Qiu5aVMWaBqfqJyErX4Msy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{7\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{3\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -3970,7 +3970,7 @@ id: toolu_01Qiu5aVMWaBqfqJyErX4Msy
 tool_result
 id: toolu_01Qiu5aVMWaBqfqJyErX4Msy
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -3980,7 +3980,7 @@ id: toolu_01BsEY4aPj6hHa9mtx2nPexW
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). The diagnosis reframes a failure that prior MoE work treats as optimization (load balancing, z-loss, expert-choice) as one of \\emph{router input}: $11$ optimization-side rescues recover at most $10.9\\%$ MSE on the same grid where changing only the routing signal recovers $54$--$80\\%$. $R(\\mathcal{D})$ is computable from raw windows alone, giving a pre-training go/no-go test. \\textbf{Limitations.} The diagnosis is specific to $(\\mu,\\sigma)$-stripping normalizers in the encoder pipeline; LayerNorm-only and non-instance-normalized backbones (Chronos, Timer-XL) need no fix. Classification, anomaly detection, and learned expert pools remain open.\\label{page:end_main}}",
   "new_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). The diagnosis reframes a failure […]
 
@@ -3989,7 +3989,7 @@ id: toolu_01BsEY4aPj6hHa9mtx2nPexW
 tool_result
 id: toolu_01BsEY4aPj6hHa9mtx2nPexW
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4020,7 +4020,7 @@ id: toolu_019bXf8L5ihy39iRg8dxfbzG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{3\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{5\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -4031,7 +4031,7 @@ id: toolu_019bXf8L5ihy39iRg8dxfbzG
 tool_result
 id: toolu_019bXf8L5ihy39iRg8dxfbzG
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4231,7 +4231,7 @@ id: toolu_01WYvFoAVUyGDoCNdKaYxRwt
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). The diagnosis reframes a failure prior MoE work treats as optimization as one of \\emph{router input}: $11$ optimization-side rescues recover at most $10.9\\%$ MSE where changing only the routing signal recovers $54$--$80\\%$. \\textbf{Limitations:} specific to $(\\mu,\\sigma)$-stripping normalizers; classification, anomaly detection, and learned expert pools remain open.\\label{page:end_main}}",
   "new_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). The diagnosis reframes a failure that prior MoE work treats as optimization (load balancing, z-loss, expert-choice) as one of \\emph{router input}: $11$ optimization-side rescues recover at most $10.9\\%$ MSE on the same grid where changing only the routing signal recovers $54$--$80\\%$, with […]
 
@@ -4240,7 +4240,7 @@ id: toolu_01WYvFoAVUyGDoCNdKaYxRwt
 tool_result
 id: toolu_01WYvFoAVUyGDoCNdKaYxRwt
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4277,7 +4277,7 @@ id: toolu_01Kmo35DgKsVEaLLev2miHKC
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{5\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{8\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -4288,7 +4288,7 @@ id: toolu_01Kmo35DgKsVEaLLev2miHKC
 tool_result
 id: toolu_01Kmo35DgKsVEaLLev2miHKC
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4323,7 +4323,7 @@ id: toolu_012PRNuC9tNoga84Q48X93F3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{8\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{11\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -4334,7 +4334,7 @@ id: toolu_012PRNuC9tNoga84Q48X93F3
 tool_result
 id: toolu_012PRNuC9tNoga84Q48X93F3
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4367,7 +4367,7 @@ id: toolu_016Hj7YCHY62c2fNEm2Tw18W
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{11\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{10\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -4378,7 +4378,7 @@ id: toolu_016Hj7YCHY62c2fNEm2Tw18W
 tool_result
 id: toolu_016Hj7YCHY62c2fNEm2Tw18W
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4410,7 +4410,7 @@ Justification: LLMs are not used as a component of the core methodology.
 tool_result
 id: toolu_017XJZ6qKy7d323f4i8HMwo7
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4420,7 +4420,7 @@ id: toolu_01PXvFebWu4YnwKqGQcPckCh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{10\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{5\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -4431,7 +4431,7 @@ id: toolu_01PXvFebWu4YnwKqGQcPckCh
 tool_result
 id: toolu_01PXvFebWu4YnwKqGQcPckCh
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4441,7 +4441,7 @@ id: toolu_017XJZ6qKy7d323f4i8HMwo7
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it ($\\rho{=}{-}0.88$), eight causal controls rule out optimization/geometry/paradigm alternatives, and three interventions confirm it: RR-MoA ($54/54$), SR-MoA ($+13$--$42\\%$), Residual-IA\\textsuperscript{+} ($107/123$). The diagnosis reframes a failure that prior MoE work treats as optimization (load balancing, z-loss, expert-choice) as one of \\emph{router input}: $11$ optimization-side rescues recover at most $10.9\\%$ MSE on the same grid where changing only the routing signal recovers $54$--$80\\%$, with the optimizer and frozen backbone untouched. Because $R(\\mathcal{D})$ is computable from raw windows alone, the fix comes with a pre-training go/no-go test, and the frozen backbone preserves the multi-tenant deployment regime motivating TSFMs. \\textbf{Limitations.} The diagnosis is specific to $(\\mu,\\sigma)$-stripping normalizers in the encoder pipeline; LayerNorm-only and non-instance-normalized backbones (Chronos, Timer-XL) need no fix. Classification, anomaly detection, longer horizons, and learned expert pools remain open.\\label{page:end_main}}",
   "new_string": "{\\looseness=-1 We identified \\emph{normalization-induced routing collapse}: the same $(\\mu,\\sigma)$ stripping that lets TSFMs handle distribution shift removes the signal a downstream MoE router needs. Observation~\\ref{thm:mi_decomp} formalizes the loss, $R(\\mathcal{D})$ predicts it […]
 
@@ -4451,7 +4451,7 @@ tool_use Bash
 id: toolu_01CdjtZQRTdHmi8WxSehpEeU
 ```json
 {
-  "command": "pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/r1.log 2>&1; pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/r2.log 2>&1; grep \"page:end_main\" main.aux; pdfinfo main.pdf | grep Pages; pdftotext main.pdf /tmp/v.txt 2>/dev/null; sed -n '/We identified/,/remain open/p' /tmp/v.txt | tail -5; echo \"---\"; awk 'NR==568' /Users/hungpq2412/neuralips26/main.tex | wc -w",
+  "command": "pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/r1.log 2>&1; pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/r2.log 2>&1; grep \"page:end_main\" main.aux; pdfinfo main.pdf | grep Pages; pdftotext main.pdf /tmp/v.txt 2>/dev/null; sed -n '/We identified/,/remain open/p' /tmp/v.txt | tail -5; echo \"---\"; awk 'NR==568' /home/<USER>/neuralips26/main.tex | wc -w",
   "description": "Test compromise conclusion"
 }
 ```
@@ -4478,7 +4478,7 @@ id: toolu_015rhowMWJuNMNqHA2i8mBNU
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{5\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{7\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -4489,7 +4489,7 @@ id: toolu_015rhowMWJuNMNqHA2i8mBNU
 tool_result
 id: toolu_015rhowMWJuNMNqHA2i8mBNU
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4543,7 +4543,7 @@ id: toolu_01Wt5jhWjHYeN82g9hmpA9Yu
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\enlargethispage{7\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}",
   "new_string": "\\enlargethispage{6\\baselineskip}\n\\vspace{-1.5em}\n\\section{Conclusion and Limitations}"
 }
@@ -4554,7 +4554,7 @@ id: toolu_01Wt5jhWjHYeN82g9hmpA9Yu
 tool_result
 id: toolu_01Wt5jhWjHYeN82g9hmpA9Yu
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4869,7 +4869,7 @@ id: toolu_0131JmjM1xQK2VuW43e4qCm9
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\begin{figure}[t]\n\\centering\n\\resizebox{0.38\\columnwidth}{!}{%",
   "new_string": "\\begin{figure}[t]\n\\centering\n\\resizebox{0.55\\columnwidth}{!}{%"
 }
@@ -4880,7 +4880,7 @@ id: toolu_0131JmjM1xQK2VuW43e4qCm9
 tool_result
 id: toolu_0131JmjM1xQK2VuW43e4qCm9
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4890,7 +4890,7 @@ id: toolu_01Md8BxqwXCj4WV7GGLCKiVQ
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\begin{figure}[t!]\n\\centering\n\\resizebox{0.40\\columnwidth}{!}{%",
   "new_string": "\\begin{figure}[t!]\n\\centering\n\\resizebox{0.55\\columnwidth}{!}{%"
 }
@@ -4901,7 +4901,7 @@ id: toolu_01Md8BxqwXCj4WV7GGLCKiVQ
 tool_result
 id: toolu_01Md8BxqwXCj4WV7GGLCKiVQ
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL
@@ -4911,7 +4911,7 @@ id: toolu_0128oZb1UHacGTUvWJBmX1jb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hungpq2412/neuralips26/main.tex",
+  "file_path": "/home/<USER>/neuralips26/main.tex",
   "old_string": "\\includegraphics[width=0.26\\columnwidth]{figures/causal_contrast.pdf}",
   "new_string": "\\includegraphics[width=0.36\\columnwidth]{figures/causal_contrast.pdf}"
 }
@@ -4922,7 +4922,7 @@ id: toolu_0128oZb1UHacGTUvWJBmX1jb
 tool_result
 id: toolu_0128oZb1UHacGTUvWJBmX1jb
 ```
-The file /Users/hungpq2412/neuralips26/main.tex has been updated successfully.
+The file /home/<USER>/neuralips26/main.tex has been updated successfully.
 ```
 
 > TOOL

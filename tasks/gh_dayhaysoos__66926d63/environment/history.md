@@ -1,6 +1,6 @@
 > DEVELOPER
 
-Continue Nimbus in /Users/nickdejesus/Code/nimbus on a new branch:
+Continue Nimbus in /home/<USER>/Code/nimbus on a new branch:
 `codex/gpt53-review-reliability`
 
 You are not planning. You are executing.
@@ -54,7 +54,7 @@ id: call_fRRS1wo4qI5CHnlZWqcB2kRz
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -67,7 +67,7 @@ id: call_GmY6UqpBRkXgCggNkTxwVAkc
 ```json
 {
   "cmd": "git checkout -b codex/gpt53-review-reliability",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -112,7 +112,7 @@ id: call_FgC4frSjq0goJaCmBNcwVU9j
 ```json
 {
   "cmd": "nl -ba docs/architecture/architecture.md | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -125,7 +125,7 @@ id: call_RDxiQSzIY32YMbHgi0ChVpi1
 ```json
 {
   "cmd": "nl -ba docs/architecture/review-session-pivot.md | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -138,7 +138,7 @@ id: call_Ov4mMudJ914ch3qC0MSiEGut
 ```json
 {
   "cmd": "nl -ba docs/architecture/review-session-implementation-handoff.md | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -151,7 +151,7 @@ id: call_cHKZE4cdeAxHYV3nW1bj44qP
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-analysis.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -353,7 +353,7 @@ id: call_01N6kbcuAHdPg0zMgfEJU8pE
 ```json
 {
   "cmd": "rg -n \"recovery|retry|queue|claim|timeout|model|reasoning|max steps|validation\" packages/worker/src/lib/review-analysis.ts packages/worker/src/lib/review-analysis/provider.ts packages/worker/src/lib/review-runner.ts packages/worker/src/review-runner-do.ts packages/worker/src/api/reviews/queue.ts packages/worker/src/api/reviews/recovery.ts packages/cli/src/app/reviews/context.ts packages/cli/src/app/reviews/create-from-commit.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -366,7 +366,7 @@ id: call_ubmkMDlCr57qCLWUP59MVPp0
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-analysis/provider.ts | sed -n '1,320p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -379,7 +379,7 @@ id: call_iYyeuTKH2gclCo2gtHGeySvw
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-runner.ts | sed -n '1,360p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -392,7 +392,7 @@ id: call_nGvEzc5BKGPr3M8uEtsUL9gc
 ```json
 {
   "cmd": "nl -ba packages/worker/src/review-runner-do.ts | sed -n '1,360p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -606,7 +606,7 @@ id: call_gIP5joG2dd0q0cZmF7fCiQhN
 ```json
 {
   "cmd": "nl -ba packages/worker/src/api/reviews/queue.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -619,7 +619,7 @@ id: call_XJJ4R2ATsF8Al5l1bxpk7B5x
 ```json
 {
   "cmd": "nl -ba packages/worker/src/api/reviews/recovery.ts | sed -n '1,420p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -632,7 +632,7 @@ id: call_2jP7zPhNbuF6vNlDv7lydH2w
 ```json
 {
   "cmd": "nl -ba packages/worker/wrangler.toml | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -645,7 +645,7 @@ id: call_Pa2EWJb6wN6HW0ARgJWpAGOw
 ```json
 {
   "cmd": "nl -ba packages/cli/src/app/reviews/context.ts | sed -n '1,340p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -658,7 +658,7 @@ id: call_fr0AFOGV6R0tx7Lb0vPRlWbO
 ```json
 {
   "cmd": "nl -ba packages/cli/src/app/reviews/create-from-commit.ts | sed -n '1,320p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -946,7 +946,7 @@ id: call_I45E2iMqoGxX0QCy9VRRAENl
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-analysis.ts | sed -n '900,1260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -959,7 +959,7 @@ id: call_YeJKFBFCDF4OHi9UyS1HMXMw
 ```json
 {
   "cmd": "rg -n \"REVIEWS_QUEUE|ReviewRunner|review_retry_scheduled|review_execution_timeout|failStaleRetryScheduledReviewIfNeeded|recoverStaleRunningReviewIfNeeded|runReviewInlineWithRetries|processReviewRun\" packages/worker/src -g '!**/*.map'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -972,7 +972,7 @@ id: call_Z1bkFGoUfXFESSi8L99Rcnrf
 ```json
 {
   "cmd": "rg --files packages/worker/test | rg 'review|recovery|runner|queue'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -985,7 +985,7 @@ id: call_R2cA2zDyYLxt3m2RYp7LrtTA
 ```json
 {
   "cmd": "rg -n \"retry_scheduled|retry_not_claimed|review_execution_timeout|ReviewRunner|recover|stale\" packages/worker/test",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1187,7 +1187,7 @@ id: call_fxsnFpakUZ6aXA64YjorcQGB
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-dispatch.ts | sed -n '1,240p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1200,7 +1200,7 @@ id: call_MC8wWb7VOL17L9GBANmXCysq
 ```json
 {
   "cmd": "nl -ba packages/worker/src/index.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1213,7 +1213,7 @@ id: call_EOJuEsdBwX7m9m8PBSE59u8Q
 ```json
 {
   "cmd": "nl -ba packages/worker/test/review-queue-dispatch.test.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1226,7 +1226,7 @@ id: call_Bau30SJSKtMx3MbHG9v1SHv7
 ```json
 {
   "cmd": "nl -ba packages/worker/test/lib/review-runner.test.ts | sed -n '1100,1185p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1239,7 +1239,7 @@ id: call_VX1OoiipORI6TFM2G4ugJIYK
 ```json
 {
   "cmd": "nl -ba packages/worker/test/api/reviews.test.ts | sed -n '1480,1565p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -1625,7 +1625,7 @@ id: call_r01OvAxWOR2N7HsUrHVxZ8Ww
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-runner/retry.ts | sed -n '1,280p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1638,7 +1638,7 @@ id: call_oCUKULLMcGGOFu67PnFLoAaJ
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-runner/finalization.ts | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -1651,7 +1651,7 @@ id: call_QobK2sdwv3o0WemOlFQU1xzo
 ```json
 {
   "cmd": "nl -ba packages/worker/src/api/reviews/query.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1664,7 +1664,7 @@ id: call_zDzgD3Ao5Sq5APzkJyP3zkRg
 ```json
 {
   "cmd": "nl -ba packages/worker/src/api/reviews/events-stream.ts | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -1902,7 +1902,7 @@ id: call_jLU7OMHv8wTHg8yIPbXWwOGf
 ```json
 {
   "cmd": "rg -n \"function claimReviewRunForExecution|claimReviewRunForExecution\\(|attempt_count\" packages/worker/src/lib packages/worker/src -g '!**/*.map'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -1915,7 +1915,7 @@ id: call_vJY55aY10et2aRVFXM6hceSw
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/db.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -1928,7 +1928,7 @@ id: call_rb0lGaTNVqD8GKblJdsiZ6dx
 ```json
 {
   "cmd": "rg -n \"claimReviewRunForExecution\" packages/worker/src/lib/db -g '!**/*.map'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -1941,7 +1941,7 @@ id: call_oy6u4pX4nq1CR5woR0WH09g7
 ```json
 {
   "cmd": "rg -n \"createReviewQueueMessage\\(|review_retry_scheduled|QueueRetryError|runReviewInlineWithRetries\" packages/worker/test/lib/review-runner.test.ts packages/worker/test/review-runner-do.test.ts packages/worker/test/review-queue-dispatch.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -2189,7 +2189,7 @@ id: call_t18t3IvabQVKIAEZSwjGgL7G
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/db/reviews/status.ts | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2256,7 +2256,7 @@ id: call_jcpsCanYaWvdh67vM51oYPoZ
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-queue.ts | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2269,7 +2269,7 @@ id: call_wLWO6WMplbArX6fqAW8cqjLh
 ```json
 {
   "cmd": "nl -ba packages/worker/test/review-runner-do.test.ts | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2282,7 +2282,7 @@ id: call_7kGss1h5yCj5ZDu0azUrOtme
 ```json
 {
   "cmd": "nl -ba packages/worker/test/lib/review-runner.test.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -2523,7 +2523,7 @@ id: call_N5x0OuSgPDVsIxaAiTImtlXc
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-runner/shared.ts | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2555,7 +2555,7 @@ id: call_T2G02txMG8lyGtWefqZEl8lu
 ```json
 {
   "cmd": "rg -n \"errorCode: 'retry_scheduled'|status = 'queued'|UPDATE review_runs SET status = \\?|UPDATE review_runs SET status = 'queued'|review_retry_scheduled\" packages/worker/src/lib packages/worker/src/api -g '!**/*.map'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -2603,7 +2603,7 @@ id: call_GgbG3aSGTDyqEHOGMgKBPNAX
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-runner/finalization.ts | sed -n '220,430p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -2674,7 +2674,7 @@ id: call_qvBtmLR6t5GROXXRT6jRdnH9
 ```json
 {
   "cmd": "rg -n \"REVIEWS_QUEUE|queueSendCount|ReviewRunner\" packages/worker/test/lib/review-runner.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -2720,7 +2720,7 @@ id: call_eBhhdRiSJM5RaZ5NvN91MzpV
 ```json
 {
   "cmd": "nl -ba packages/worker/test/lib/review-runner.test.ts | sed -n '260,570p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -2803,7 +2803,7 @@ id: call_3Eg6MDEZtjQVsi38drZRmv8h
 ```json
 {
   "cmd": "ls -1a",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -2816,7 +2816,7 @@ id: call_3NEmRePaQXTneBHcpPfT4R3I
 ```json
 {
   "cmd": "rg -n \"NIMBUS_WORKER_URL|OPENROUTER_API_KEY|REVIEW_CONTEXT_GITHUB_TOKEN|CLOUDFLARE_API_TOKEN|wrangler\" -g '.env*' -g 'packages/**/.dev.vars*' -g 'packages/**/.env*'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -2829,7 +2829,7 @@ id: call_DPW8SOXkJZhfj2TVi8ES831R
 ```json
 {
   "cmd": "git rev-parse HEAD",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 1000
 }
@@ -2917,7 +2917,7 @@ id: call_89oVKUY6zg6A67XTvV4eQvDQ
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review show review_y7buxiar",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -2932,7 +2932,7 @@ id: call_eCmDpyCLEWPq650mYw1qjfZv
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review session show session_gz3vvk9o",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -2947,7 +2947,7 @@ id: call_MZXApS2AFYVfdIMBaQ4xmqxI
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review session latest",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -3142,7 +3142,7 @@ Output:
 │
 ■  No review sessions found for the current repo/branch.
 undefined
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts review session latest
 
 ```
@@ -3158,7 +3158,7 @@ id: call_XqWiBjeVbzWstBNez6JoG4o4
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review events review_y7buxiar",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -3256,7 +3256,7 @@ id: call_ddQH784FMCvE2TwoCHpYx4JX
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review events review_i5b50scf",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -3354,7 +3354,7 @@ id: call_YZz4xMrUCz9a1O7QBnpLUZgM
 ```json
 {
   "cmd": "nl -ba packages/worker/package.json | sed -n '1,240p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -3367,7 +3367,7 @@ id: call_hDxV03eq923FNu3BBC0OuHmH
 ```json
 {
   "cmd": "nl -ba package.json | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3464,7 +3464,7 @@ id: call_10MdBZNpv7UaneMtdFo9GJ8o
 ```json
 {
   "cmd": "nl -ba packages/worker/src/review-runner-do.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3477,7 +3477,7 @@ id: call_HHmNqwE2fSHjPE4toGa6OMCw
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-runner/retry.ts | sed -n '1,260p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3490,7 +3490,7 @@ id: call_y0SFTpeNG0CAhZaT4Vt39yqR
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-runner/finalization.ts | sed -n '1,180p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -3503,7 +3503,7 @@ id: call_oRoPCDRKuD8Os8zvH7tElx3d
 ```json
 {
   "cmd": "nl -ba packages/worker/test/review-runner-do.test.ts | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3516,7 +3516,7 @@ id: call_uFPrQgUlZbwYDbHlAvx10kvB
 ```json
 {
   "cmd": "nl -ba packages/worker/test/lib/review-runner.test.ts | sed -n '1,120p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -3785,7 +3785,7 @@ id: call_TaXQ0xZ3lJelXFrl0hoixQDU
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/review-runner.ts | sed -n '88,180p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -3854,7 +3854,7 @@ id: call_hFltl8lnNWIbWLnPS3T0Xhz9
 ```json
 {
   "cmd": "nl -ba packages/worker/test/lib/review-runner.test.ts | sed -n '1120,1165p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -3927,7 +3927,7 @@ id: call_6Na7LxKiLsCC1kvZko108Nw7
 ```json
 {
   "cmd": "pnpm --filter @dayhaysoos/nimbus-worker test",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -3969,12 +3969,12 @@ Process exited with code 2
 Original token count: 142
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 test /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 test /home/<USER>/Code/nimbus/packages/worker
 > rm -rf .test-dist && tsc -p tsconfig.test.json && node ../../scripts/run-discovered-tests.mjs .test-dist
 
 test/review-runner-do.test.ts(167,5): error TS2349: This expression is not callable.
   Type 'never' has no call signatures.
-/Users/nickdejesus/Code/nimbus/packages/worker:
+/home/<USER>/Code/nimbus/packages/worker:
  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @dayhaysoos/nimbus-worker@0.0.1 test: `rm -rf .test-dist && tsc -p tsconfig.test.json && node ../../scripts/run-discovered-tests.mjs .test-dist`
 Exit status 2
 
@@ -3987,7 +3987,7 @@ id: call_VgW1KFtZtA3dtXKkQnTrv0Cw
 ```json
 {
   "cmd": "nl -ba packages/worker/test/review-runner-do.test.ts | sed -n '150,180p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000
 }
@@ -4039,7 +4039,7 @@ id: call_oUKJLQebOUdtC0RqOO3I45gj
 ```json
 {
   "cmd": "pnpm --filter @dayhaysoos/nimbus-worker test",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -4056,7 +4056,7 @@ Process running with session ID 58241
 Original token count: 49
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 test /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 test /home/<USER>/Code/nimbus/packages/worker
 > rm -rf .test-dist && tsc -p tsconfig.test.json && node ../../scripts/run-discovered-tests.mjs .test-dist
 
 
@@ -4142,7 +4142,7 @@ id: call_vY91lxcWKdVEFXe6Enzc5K20
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus-worker run deploy",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -4161,7 +4161,7 @@ Process running with session ID 80365
 Original token count: 27
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 deploy /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 deploy /home/<USER>/Code/nimbus/packages/worker
 > wrangler deploy
 
 
@@ -4422,7 +4422,7 @@ id: call_GRB3iGVSASwV37GZy1l5NxGi
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review create --commit HEAD",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -4507,7 +4507,7 @@ Output:
 [999D[J◒  Deploying workspace[999D[J◐  Deploying workspace[999D[J◓  Deploying workspace[999D[J◑  Deploying workspace[999D[J◒  Deploying workspace[999D[J◐  Deploying workspace[999D[J◓  Deploying workspace[999D[J◇  Workspace deploy failed
 [?25h│
 ■  Review flow failed at workspace deploy: Workspace deploy preflight failed
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts review create --commit HEAD
 
 ```
@@ -4523,7 +4523,7 @@ id: call_5lJsUnoMW4cKlL0Yl9QBEqAN
 ```json
 {
   "cmd": "rg -n \"workspace deploy|workspace deployment|preflight\" packages/cli/src/cli packages/cli/src/commands -g '!**/*.map'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 7000
 }
@@ -4536,7 +4536,7 @@ id: call_1jEbe6v3NeVKiHbdOIjy6vE4
 ```json
 {
   "cmd": "rg -n \"Workspace deploy preflight failed|preflight failed\" -g '*.ts' packages/cli packages/worker",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -4549,7 +4549,7 @@ id: call_no6aLf4Q9ZFOzPgbJLkyw9oU
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace --help",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -4695,7 +4695,7 @@ id: call_WB6UJs45sf11nhlg7imNkh1q
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace show ws_vr3th9n6",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -4710,7 +4710,7 @@ id: call_W7jFI4Nanpd9iDUQlTpMWTzN
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace deploy ws_vr3th9n6 --preflight-only",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -4838,7 +4838,7 @@ id: call_ELOB65x5vaYb2OztkvDSbOux
 ```json
 {
   "cmd": "nl -ba packages/cli/src/app/reviews/context.ts | sed -n '340,620p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 9000
 }
@@ -4904,7 +4904,7 @@ id: call_HV1r2Ab6rwMSkP8TK9FdAwWb
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace deploy ws_vr3th9n6 --tests --build",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -4974,7 +4974,7 @@ Output:
 ▲  Next action: Disable build/test validation or install the detected package manager in the sandbox runtime image.
 │
 ■  Workspace deploy preflight failed
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts workspace deploy ws_vr3th9n6 --tests --build
 
 ```
@@ -4990,7 +4990,7 @@ id: call_iabD3eSpea9OOemmT7fAqLKB
 ```json
 {
   "cmd": "nl -ba packages/worker/Dockerfile | sed -n '1,220p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -5003,7 +5003,7 @@ id: call_rSfvWuklRhVAAHuVEXDsO1ax
 ```json
 {
   "cmd": "rg -n \"pnpm is not available in sandbox runtime|validation_tooling|packageManager|corepack|pnpm\" packages/worker/src packages/worker/test packages/cli/src -g '!**/*.map'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -5016,7 +5016,7 @@ id: call_JsHVLsvZsqsW3OZuRO6y4bLU
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review show review_y7buxiar",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -5174,7 +5174,7 @@ id: call_INRXKkkNu2czLfHlNZIKxyPz
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/workspace-deployment-runner.ts | sed -n '360,460p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -5187,7 +5187,7 @@ id: call_eWuDUyXuuvxgBJcC72VqVAAo
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/workspace-deployment-runner.ts | sed -n '1280,1325p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5200,7 +5200,7 @@ id: call_EnQ1q5PhrUkF5xFn9bNljNij
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/workspace-deployment-runner.ts | sed -n '2040,2095p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -5357,7 +5357,7 @@ id: call_lgfG05v24pezBKEI99Oa6BEa
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/workspace-deployment-runner.ts | sed -n '220,280p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -5427,7 +5427,7 @@ id: call_KfcnzsI2uMNIIXzRBrN6jK6l
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus-worker run deploy",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -5471,7 +5471,7 @@ Process running with session ID 44772
 Original token count: 1616
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 deploy /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 deploy /home/<USER>/Code/nimbus/packages/worker
 > wrangler deploy
 
 
@@ -5660,7 +5660,7 @@ id: call_tdTnVyLk5DnyLD0YjueCQQHT
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace deploy ws_vr3th9n6 --tests --build",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -5730,7 +5730,7 @@ Output:
 ▲  Next action: Disable build/test validation or install the detected package manager in the sandbox runtime image.
 │
 ■  Workspace deploy preflight failed
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts workspace deploy ws_vr3th9n6 --tests --build
 
 ```
@@ -5746,7 +5746,7 @@ id: call_ncMHGZxhTZkXgBeXNcGsChLX
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review create --commit HEAD",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -5831,7 +5831,7 @@ Output:
 [999D[J◒  Deploying workspace[999D[J◐  Deploying workspace[999D[J◓  Deploying workspace[999D[J◑  Deploying workspace[999D[J◒  Deploying workspace[999D[J◇  Workspace deploy failed
 [?25h│
 ■  Review flow failed at workspace deploy: Workspace deploy preflight failed
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts review create --commit HEAD
 
 ```
@@ -5847,7 +5847,7 @@ id: call_ucva3ju2DAz2i85HFjYDLIKk
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review create --commit HEAD --idempotency-key gpt53-reliability-rerun-1",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -5932,7 +5932,7 @@ Output:
 [999D[J◒  Deploying workspace[999D[J◐  Deploying workspace[999D[J◓  Deploying workspace[999D[J◑  Deploying workspace[999D[J◒  Deploying workspace[999D[J◐  Deploying workspace[999D[J◓  Deploying workspace[999D[J◑  Deploying workspace[999D[J◇  Workspace deploy failed
 [?25h│
 ■  Review flow failed at workspace deploy: Workspace deploy preflight failed
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts review create --commit HEAD --idempotency-key gpt53-reliability-rerun-1
 
 ```
@@ -5944,7 +5944,7 @@ id: call_HYQVHtQK6P300k9gMLHZ8ZGQ
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace deploy ws_oyyvq6tf --tests --build",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -6014,7 +6014,7 @@ Output:
 ▲  Next action: Disable build/test validation or install the detected package manager in the sandbox runtime image.
 │
 ■  Workspace deploy preflight failed
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts workspace deploy ws_oyyvq6tf --tests --build
 
 ```
@@ -6030,7 +6030,7 @@ id: call_YOXs2TnIv7D5M70TTi1uwd61
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus-worker run deploy",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -6074,7 +6074,7 @@ Process running with session ID 35375
 Original token count: 1511
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 deploy /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 deploy /home/<USER>/Code/nimbus/packages/worker
 > wrangler deploy
 
 
@@ -6177,7 +6177,7 @@ id: call_kGtWnMxKagIRV4lXmab31mlU
 ```json
 {
   "cmd": "nl -ba packages/worker/test/lib/workspace-deployment-runner.test.ts | sed -n '1510,1570p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -6190,7 +6190,7 @@ id: call_WgOrGkDls5LJ5CHhKX4dW1UM
 ```json
 {
   "cmd": "nl -ba packages/worker/test/lib/workspace-deployment-runner.test.ts | sed -n '1670,1710p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -6203,7 +6203,7 @@ id: call_Yj6CbyqvMdms4DkBAQtVQ3fJ
 ```json
 {
   "cmd": "nl -ba packages/worker/test/lib/workspace-deployment-runner.test.ts | sed -n '1315,1365p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -6359,7 +6359,7 @@ id: call_0iCpoMml931eX4gvQfSU97wS
 ```json
 {
   "cmd": "rg -n \"validation_tooling|command -v .*pnpm|managerCheck\" packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -6393,7 +6393,7 @@ id: call_qCBf0VzkEwF9DVcKX1awosx3
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/workspace-deployment-runner.ts | sed -n '180,235p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -6459,7 +6459,7 @@ id: call_JjzxxOwGmRRmDqye1nrI4xuv
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus-worker run deploy",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -6503,7 +6503,7 @@ Process running with session ID 24216
 Original token count: 1777
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 deploy /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 deploy /home/<USER>/Code/nimbus/packages/worker
 > wrangler deploy
 
 
@@ -6690,7 +6690,7 @@ id: call_eBQ26nFtFNAO1gzwoQjpMCK1
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review create --commit HEAD --idempotency-key gpt53-reliability-rerun-2",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -6885,7 +6885,7 @@ id: call_82YlWDTZs0xry6NrvK1lbE8f
 ```json
 {
   "cmd": "rg -n \"handleGetWorkspaceDeployment|/api/workspace-deployments|workspace-deployments\" packages/worker/src/index.ts packages/worker/src/api -g '!**/*.map'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -6922,7 +6922,7 @@ id: call_PBGXFFooCCxBr7q12sILbEOk
 ```json
 {
   "cmd": "nl -ba packages/worker/src/index.ts | sed -n '288,320p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 3000
 }
@@ -6985,7 +6985,7 @@ id: call_LACkedvDvO12sJ1BmXAeOdE7
 ```json
 {
   "cmd": "source .env && curl -sS \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7000,7 +7000,7 @@ id: call_BnkBNbFFgSn5LaIs633GOHge
 ```json
 {
   "cmd": "source .env && curl -sS \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7043,7 +7043,7 @@ id: call_qaX757bo0cVUhS99Ij0aSGT5
 ```json
 {
   "cmd": "source .env && curl -sS \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7060,7 +7060,7 @@ id: call_dvb8A5anth03TZBVSoohQQFQ
 ```json
 {
   "cmd": "source .env && curl -sS \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7107,7 +7107,7 @@ id: call_C5xQzylrsbdu09dNzAWpuOKD
 ```json
 {
   "cmd": "rg -n \"^NIMBUS_API_KEY=\" .env .env.example",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 1000
 }
@@ -7134,7 +7134,7 @@ id: call_f1ZFYorAWDzUICSCRctPOQD6
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7151,7 +7151,7 @@ id: call_at4ZgJQEeLmOmEs97MG9fCBA
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7224,7 +7224,7 @@ id: call_MTXWamRJWU78z5e5itTeGKwl
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7241,7 +7241,7 @@ id: call_cUw8f426CJ7vDBSk7SbEpSla
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7288,7 +7288,7 @@ id: call_bzht3O2VHQFMavN8hz0rehEW
 ```json
 {
   "cmd": "pnpm -r build",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "tty": true
@@ -7335,7 +7335,7 @@ packages/cli prebuild$ pnpm run build:ui
 └─ Running...
 packages/report-ui build$ tsc -b && vite build
 └─ Running...
-[3A│ > @dayhaysoos/nimbus@0.1.0 build:ui /Users/nickdejesus/Code/nimbus/packages…
+[3A│ > @dayhaysoos/nimbus@0.1.0 build:ui /home/<USER>/Code/nimbus/packages…
 └─ Running...[0K
 packages/report-ui build$ tsc -b && vite build
 └─ Running...
@@ -7343,7 +7343,7 @@ packages/report-ui build$ tsc -b && vite build
 └─ Running...[0K
 packages/report-ui build$ tsc -b && vite build
 └─ Running...
-[3A│ > @dayhaysoos/nimbus-report-ui@0.0.1 build /Users/nickdejesus/Code/nimbus/p…
+[3A│ > @dayhaysoos/nimbus-report-ui@0.0.1 build /home/<USER>/Code/nimbus/p…
 └─ Running...[0K
 packages/report-ui build$ tsc -b && vite build
 └─ Running...
@@ -7381,7 +7381,7 @@ id: call_OQO7rJa7YS6HGLrbV0e6zrU9
 ```json
 {
   "cmd": "date -u +%Y-%m-%dT%H:%M:%SZ",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 1000
 }
@@ -7412,7 +7412,7 @@ id: call_JimGLXD9mZcmaE3sfnTFubcJ
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7429,7 +7429,7 @@ id: call_xOOF7qLmkvGcNKtWD2V3ylFz
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7472,7 +7472,7 @@ id: call_pGZYWSeXoEQdWo4Gr7E7QsaP
 ```json
 {
   "cmd": "rg -n \"validation_started|build_succeeded|validation_succeeded|runBuildIfPresent|managerRunScriptCommand\\(.*build|deployment_build\" packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -7511,7 +7511,7 @@ id: call_u4qdiWdoSDbPzH3gRs5VgSvj
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/workspace-deployment-runner.ts | sed -n '1440,1525p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -7586,7 +7586,7 @@ id: call_dX3p2v7knlIt0QnK4JQH7L8g
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/workspace-deployment-runner.ts | sed -n '1525,1605p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -7670,7 +7670,7 @@ id: call_TwIqyGhHsLUYrhLgRIm9dsyS
 ```json
 {
   "cmd": "sleep 70 && date -u +%Y-%m-%dT%H:%M:%SZ",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 1000
 }
@@ -7772,7 +7772,7 @@ id: call_npuKSOkw6W3Rthfvvq2Pxduf
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7789,7 +7789,7 @@ id: call_V3OIUzlBGKYVgdqUvlyzJEwL
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7806,7 +7806,7 @@ id: call_1paVFxnWaIjq4aRViRQBx7Rn
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace show ws_mwm7yvy1",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "shell": "/bin/zsh",
   "login": true,
   "yield_time_ms": 1000,
@@ -7900,7 +7900,7 @@ id: call_8b68dfgn5AW4zj47Vx2uPiz5
 ```json
 {
   "cmd": "rg -n \"recoverStale|stale|deployment_execution_timeout|retry_scheduled|handleGetWorkspaceDeployment|reconcileWorkspaceSummaryForTerminalDeployment\" packages/worker/src/api/workspace-deployments packages/worker/src/lib/workspace-deployment-runner.ts packages/worker/src/lib/workspace-deployment-runner -g '!**/*.map'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -7956,7 +7956,7 @@ id: call_vcp1QYADBGpl2loEIJIaV4IS
 ```json
 {
   "cmd": "nl -ba packages/worker/src/api/workspace-deployments/query.ts | sed -n '1,180p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -8025,7 +8025,7 @@ id: call_9yGR5QrEP4bqbHwYe6ETijJP
 ```json
 {
   "cmd": "nl -ba packages/worker/src/lib/workspace-deployment-runner.ts | sed -n '2080,2165p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 5000
 }
@@ -8088,7 +8088,7 @@ id: call_X8P6lMAehy7oQ2nbC0t8e2LT
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -8101,7 +8101,7 @@ id: call_rDvE5Ir0w13YAPIOvLMr2XGZ
 ```json
 {
   "cmd": "rg -n \"validation_started|runValidationStep|stale|requeue|retry|deployment_started|deployment_dependencies_install_succeeded\" packages/worker/src/lib/workspace-deployment-runner.ts packages/worker/src/api/workspace-deployments -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8114,7 +8114,7 @@ id: call_Pu5YUu612rGW9Vr8VpujM4ur
 ```json
 {
   "cmd": "pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace deployment show ws_mwm7yvy1 dep_8s5cf4jr",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -8199,7 +8199,7 @@ id: call_qpfp65ZsXP59RX04GHK64mg5
 ```json
 {
   "cmd": "sed -n '360,540p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8212,7 +8212,7 @@ id: call_6mr0d1ev4HhfPpc7SlNwMi7u
 ```json
 {
   "cmd": "sed -n '1400,1525p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8371,7 +8371,7 @@ Output:
 │
 ■  Unknown workspace command. Use: create, show, destroy, files, cat, diff, deploy
 undefined
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts workspace deployment show ws_mwm7yvy1 dep_8s5cf4jr
 
 ```
@@ -8387,7 +8387,7 @@ id: call_dcr6jHgYbjsxl2QqWKxmuXVa
 ```json
 {
   "cmd": "sed -n '2060,2165p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8400,7 +8400,7 @@ id: call_YKBeHNN3ojKKnZLcEZpbGZsB
 ```json
 {
   "cmd": "sed -n '2580,3075p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8413,7 +8413,7 @@ id: call_Xd4havTQD3elUfkacl9F62qJ
 ```json
 {
   "cmd": "rg -n \"workspace deployment|deployment show|workspace deploy\" packages/cli/src -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -8578,7 +8578,7 @@ id: call_Dthvsw6lfVQnv81gmRq7F4VC
 ```json
 {
   "cmd": "sed -n '1,260p' packages/worker/src/api/workspace-deployments/query.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8591,7 +8591,7 @@ id: call_88sy1qT8Mhonpnj1cYJ2ZS3I
 ```json
 {
   "cmd": "sed -n '1,260p' packages/worker/src/api/workspace-deployments/create.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8604,7 +8604,7 @@ id: call_dxG4AsbGbxmqDNeDbJxNqBPF
 ```json
 {
   "cmd": "sed -n '320,560p' packages/cli/src/app/workspaces/deploy.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -8840,7 +8840,7 @@ id: call_Q6oLxokHSVzkhnbn2VGJ5xfG
 ```json
 {
   "cmd": "sed -n '260,520p' packages/worker/src/api/workspace-deployments/create.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -8853,7 +8853,7 @@ id: call_PvdvLwJEH2OtJ8S3V2PALLyi
 ```json
 {
   "cmd": "rg -n \"retry_scheduled_replay|deployment_enqueued|WORKSPACE_DEPLOYS_QUEUE|already running; defer redelivery|stale running timeout|claimWorkspaceDeploymentForExecution|createWorkspaceDeploymentQueueMessage\" packages/worker/src packages/worker/test -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -8975,7 +8975,7 @@ id: call_shsxkXrgnNRal5nT2YchVpSd
 ```json
 {
   "cmd": "sed -n '1,200p' packages/worker/src/lib/db/deployments/status.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -8988,7 +8988,7 @@ id: call_TeV5JurluXCuvxjohOTvlHI4
 ```json
 {
   "cmd": "sed -n '2360,2425p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -9001,7 +9001,7 @@ id: call_fYtsptrxz6lUj5AhSwLNQ16Z
 ```json
 {
   "cmd": "sed -n '1,220p' packages/worker/test/api/workspace-deployments.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9209,7 +9209,7 @@ id: call_4W9NCnPHH8HJCcQV0nyiALKl
 ```json
 {
   "cmd": "rg -n \"handleGetWorkspaceDeployment|deployment_retry_scheduled|deployment_reenqueue_recovered|recoveredInline|stale timeout|retry_scheduled\" packages/worker/test/api/workspace-deployments.test.ts packages/worker/test -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9222,7 +9222,7 @@ id: call_BY5LF7gw9yhw3lo1xK0pUWn4
 ```json
 {
   "cmd": "sed -n '220,920p' packages/worker/test/api/workspace-deployments.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -9359,7 +9359,7 @@ id: call_xGAdaglhw6lJiOB25SoSL4Y0
 ```json
 {
   "cmd": "rg -n \"WORKSPACE_DEPLOYS_QUEUE|processWorkspaceDeployment\\(|runWorkspaceDeploymentInlineWithRetries\\(|workspace deployment queue|deployment queue\" packages/worker/src -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9372,7 +9372,7 @@ id: call_lgr0GpMpOzR81RBpb0tkaY4I
 ```json
 {
   "cmd": "sed -n '1,240p' packages/worker/src/index.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9385,7 +9385,7 @@ id: call_RIJtOGMAHRFNjPxpSWIq6Xl9
 ```json
 {
   "cmd": "sed -n '1,220p' packages/worker/src/lib/workspace-deployment-queue.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -9563,7 +9563,7 @@ id: call_orUolxanyn84Lr9TF7BoJgSC
 ```json
 {
   "cmd": "sed -n '380,485p' packages/worker/src/index.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -9638,7 +9638,7 @@ id: call_Ebtn77QM19zqwR6jAK5z2BTs
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace show ws_mwm7yvy1",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000,
   "shell": "/bin/zsh"
@@ -9652,7 +9652,7 @@ id: call_CAfSESmB8mdlOmdPRtRG6MbF
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts workspace deploy ws_mwm7yvy1 --idempotency-key deploy-diagnose-rerun --tests --build",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh"
@@ -9768,7 +9768,7 @@ Output:
 │
 ■  Workspace deploy preflight failed
 undefined
-/Users/nickdejesus/Code/nimbus/packages/cli:
+/home/<USER>/Code/nimbus/packages/cli:
  ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx src/index.ts workspace deploy ws_mwm7yvy1 --idempotency-key deploy-diagnose-rerun --tests --build
 
 ```
@@ -9780,7 +9780,7 @@ id: call_YodtCY6bVwXML3qWEEbN2uxl
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "shell": "/bin/zsh",
@@ -9795,7 +9795,7 @@ id: call_ZJppnzXECjRJ7bh2joXf1OoA
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh",
@@ -9836,7 +9836,7 @@ id: call_JWHRDmm05IcKrJtZCpWmzVpJ
 ```json
 {
   "cmd": "rg -n \"isRunningDeploymentStale|DEPLOYMENT.*STALE|STALE_TIMEOUT|stale timeout\" packages/worker/src/lib/workspace-deployment-runner.ts packages/worker/src -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -9849,7 +9849,7 @@ id: call_jGwtcYizCfyoSKNQ0ySwMEID
 ```json
 {
   "cmd": "sed -n '1,120p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -9977,7 +9977,7 @@ id: call_gs3zQlZrAJlQmyO7QgdTqR84
 ```json
 {
   "cmd": "rg -n \"handleGetReview\\(|handleGetReviewEvents\\(|recover.*query|stale.*query|review_execution_timeout|no worker claimed\" packages/worker/src/api/reviews packages/worker/src/lib/review* -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -9990,7 +9990,7 @@ id: call_jryfjyDJsz9friUUYOfCtBMw
 ```json
 {
   "cmd": "sed -n '1,260p' packages/worker/src/api/reviews/query.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -10003,7 +10003,7 @@ id: call_hYuPBm6dWsbrMherBqcxciVD
 ```json
 {
   "cmd": "sed -n '1,260p' packages/worker/src/api/reviews/recovery.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -10173,7 +10173,7 @@ id: call_J4xmDojGAJFzegMwsUK58B5y
 ```json
 {
   "cmd": "cat package.json",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 6000
 }
@@ -10186,7 +10186,7 @@ id: call_y2IrZethHJSMDJwu436qdVV6
 ```json
 {
   "cmd": "rg -n '\"build\"\\s*:' package.json packages/*/package.json -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10199,7 +10199,7 @@ id: call_vEqi0RusoIROlH7sepnTJ59N
 ```json
 {
   "cmd": "sed -n '1,220p' packages/worker/test/lib/workspace-deployment-runner.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10335,7 +10335,7 @@ id: call_r8Q42WAVJ8XkNbMYnk3yv0ZU
 ```json
 {
   "cmd": "rg -n \"function shouldRetryWorkspaceDeploymentError|export function shouldRetryWorkspaceDeploymentError|QueueRetryError|retry_scheduled\" packages/worker/src/lib/workspace-deployment-runner.ts -n -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 10000
 }
@@ -10376,7 +10376,7 @@ id: call_XGsGXlciTyyq41OAzX5DjOYf
 ```json
 {
   "cmd": "sed -n '3098,3138p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -10421,7 +10421,7 @@ id: call_aLpHnMaOWApZCqb9rg0NnBWf
 ```json
 {
   "cmd": "sed -n '2488,2640p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10504,7 +10504,7 @@ id: call_6ji655aEk6we9Eg48r8aOYH0
 ```json
 {
   "cmd": "cat packages/worker/package.json",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -10517,7 +10517,7 @@ id: call_1smJhO2FhlPLzw32wEVfbgmJ
 ```json
 {
   "cmd": "cat packages/cli/package.json",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -10530,7 +10530,7 @@ id: call_HnBlgcCnxKj53hNMsCj4zzQV
 ```json
 {
   "cmd": "cat packages/report-ui/package.json",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -10701,7 +10701,7 @@ id: call_R1pxCM2lBnktZ1Cykx3kuMW7
 ```json
 {
   "cmd": "rg -n \"runSandboxCommand|sandbox.exec\\(|setWorkspaceDeploymentSandboxResolverForTests|resolveWorkspaceDeploymentSandbox|Sandbox\" packages/worker/src/lib/workspace-deployment-runner.ts -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10714,7 +10714,7 @@ id: call_ARJHlL2lQFwQQfP0F1arnFoV
 ```json
 {
   "cmd": "sed -n '120,360p' packages/worker/src/lib/workspace-deployment-runner.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10833,8 +10833,8 @@ tool_use exec_command
 id: call_FOfgafAGh6u5DD2lBgfApjCe
 ```json
 {
-  "cmd": "tmpdir=$(mktemp -d /tmp/nimbus-validate.XXXXXX) && rsync -a --exclude .git --exclude node_modules /Users/nickdejesus/Code/nimbus/ \"$tmpdir\"/ && echo \"$tmpdir\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "cmd": "tmpdir=$(mktemp -d /tmp/nimbus-validate.XXXXXX) && rsync -a --exclude .git --exclude node_modules /home/<USER>/Code/nimbus/ \"$tmpdir\"/ && echo \"$tmpdir\"",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 2000,
   "shell": "/bin/zsh"
@@ -10887,7 +10887,7 @@ id: call_ueQKlb8x5cd958Cm3qia47ph
 ```json
 {
   "cmd": "cd /tmp/nimbus-validate.rMmLWu && time pnpm install --frozen-lockfile --ignore-scripts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh"
@@ -10965,7 +10965,7 @@ id: call_duVKNzVlogIDMVPezMRLlDvA
 ```json
 {
   "cmd": "rg -n \"stale.*deployment|deployment_stale_timeout|retry_scheduled|runWorkspaceDeploymentInlineWithRetries\\(|handleGetWorkspaceDeployment\\(\" packages/worker/test/lib/workspace-deployment-runner.test.ts packages/worker/test/api/workspace-deployments.test.ts -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10978,7 +10978,7 @@ id: call_ht9XhOpvH1aSOJBTa485zqmI
 ```json
 {
   "cmd": "sed -n '1180,1260p' packages/worker/test/lib/workspace-deployment-runner.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -10991,7 +10991,7 @@ id: call_Q5QQusxAUeZoLbXaCO57xK9P
 ```json
 {
   "cmd": "sed -n '1960,2015p' packages/worker/test/lib/workspace-deployment-runner.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11228,7 +11228,7 @@ id: call_gxBntl3UD95StID7HSBz7t4J
 ```json
 {
   "cmd": "sed -n '1020,1095p' packages/worker/test/lib/workspace-deployment-runner.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11317,7 +11317,7 @@ id: call_uPD2SJn7L6aJnec0MfT803ZN
 ```json
 {
   "cmd": "rg -n \"UPDATE workspace_deployments\" packages/worker/test/lib/workspace-deployment-runner.test.ts -n -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11347,7 +11347,7 @@ id: call_Tw99ryLgjLf2hfcs5KK8fqmk
 ```json
 {
   "cmd": "sed -n '380,470p' packages/worker/test/lib/workspace-deployment-runner.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11437,7 +11437,7 @@ id: call_pnX9vllWIWj82cSx44ArbhAd
 ```json
 {
   "cmd": "sed -n '1,220p' packages/worker/src/api/workspace-deployments/query.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -11450,7 +11450,7 @@ id: call_5T7EvTKPMD3AGq3Q3qcVngUP
 ```json
 {
   "cmd": "rg -n \"deployments/:deploymentId|handleGetWorkspaceDeployment\\(|handleGetWorkspaceDeploymentEvents\\(\" packages/worker/src/index.ts -n -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -11463,7 +11463,7 @@ id: call_vwOGB3EnyxeEbYTADFrGPn9z
 ```json
 {
   "cmd": "sed -n '260,360p' packages/worker/src/index.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11626,7 +11626,7 @@ id: call_t0KNOtsAB3vv6IRrBKvkjOLl
 ```json
 {
   "cmd": "sed -n '1,170p' packages/worker/test/api/workspace-deployments.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -11639,7 +11639,7 @@ id: call_2dH2e2a5qTBhbdTjZZxhI5DY
 ```json
 {
   "cmd": "sed -n '170,330p' packages/worker/test/api/workspace-deployments.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -11652,7 +11652,7 @@ id: call_wuANp5NfcqtPLmNCaYsbKIjm
 ```json
 {
   "cmd": "sed -n '580,820p' packages/worker/test/api/workspace-deployments.test.ts",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 14000
 }
@@ -11874,7 +11874,7 @@ id: call_37qKLTzzhs0ymv7V4sSuoWf0
 ```json
 {
   "cmd": "rg -n \"handleGetWorkspaceDeployment\\(|handleGetWorkspaceDeploymentEvents\\(\" packages/worker/src packages/worker/test -S",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000
 }
@@ -11887,7 +11887,7 @@ id: call_cdgT99ahrhn3x9zIFJKoM1ML
 ```json
 {
   "cmd": "pnpm --filter @dayhaysoos/nimbus-worker test",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "shell": "/bin/zsh"
@@ -11953,7 +11953,7 @@ Process exited with code 1
 Original token count: 1519
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 test /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 test /home/<USER>/Code/nimbus/packages/worker
 > rm -rf .test-dist && tsc -p tsconfig.test.json && node ../../scripts/run-discovered-tests.mjs .test-dist
 
 PASS test/api/admin.test.js:runAdminApiTests
@@ -11966,8 +11966,8 @@ AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
 
 false !== true
 
-    at Object.runWorkspaceDeploymentApiTests [as run] (file:///Users/nickdejesus/Code/nimbus/packages/worker/.test-dist/test/api/workspace-deployments.test.js:593:16)
-    at async main (file:///Users/nickdejesus/Code/nimbus/scripts/run-discovered-tests.mjs:58:9)
+    at Object.runWorkspaceDeploymentApiTests [as run] (file:///home/<USER>/Code/nimbus/packages/worker/.test-dist/test/api/workspace-deployments.test.js:593:16)
+    at async main (file:///home/<USER>/Code/nimbus/scripts/run-discovered-tests.mjs:58:9)
 PASS test/api/workspace-tasks.test.js:runWorkspaceTaskApiTests
 PASS test/api/workspaces.test.js:runWorkspaceApiTests
 PASS test/auth.test.js:runAuthMiddlewareTests
@@ -12011,7 +12011,7 @@ id: call_0ptggEcWtEQyvk2qdNDvjuVY
 ```json
 {
   "cmd": "nl -ba packages/worker/test/api/workspace-deployments.test.ts | sed -n '650,690p'",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -12080,7 +12080,7 @@ id: call_BbMXooXnGvFWu8W91DsqlQhW
 ```json
 {
   "cmd": "pnpm --filter @dayhaysoos/nimbus-worker test",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "shell": "/bin/zsh"
@@ -12123,7 +12123,7 @@ Process exited with code 0
 Original token count: 1375
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 test /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 test /home/<USER>/Code/nimbus/packages/worker
 > rm -rf .test-dist && tsc -p tsconfig.test.json && node ../../scripts/run-discovered-tests.mjs .test-dist
 
 PASS test/api/admin.test.js:runAdminApiTests
@@ -12182,7 +12182,7 @@ id: call_GNCVmLvCI4oPHZWSfKTT6DsU
 ```json
 {
   "cmd": "pnpm --filter @dayhaysoos/nimbus-worker run deploy",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 20000,
   "shell": "/bin/zsh"
@@ -12200,7 +12200,7 @@ Process running with session ID 46942
 Original token count: 27
 Output:
 
-> @dayhaysoos/nimbus-worker@0.0.1 deploy /Users/nickdejesus/Code/nimbus/packages/worker
+> @dayhaysoos/nimbus-worker@0.0.1 deploy /home/<USER>/Code/nimbus/packages/worker
 > wrangler deploy
 
 
@@ -12384,7 +12384,7 @@ id: call_48rnCb8IAvAVuKGrAztP6kjz
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "shell": "/bin/zsh"
@@ -12398,7 +12398,7 @@ id: call_ENcVclRvW1WEhbB9X8SxI12k
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mwm7yvy1/deployments/dep_8s5cf4jr/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh"
@@ -12442,7 +12442,7 @@ id: call_tKP2plk2tBfCVimuzNxJW0px
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review create --commit HEAD --idempotency-key gpt53-reliability-rerun-3",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh",
@@ -12560,7 +12560,7 @@ id: call_MVIgysJinc3mPHL0AETevrxF
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mo5s7jqc/deployments/dep_k8zbvjbf\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "shell": "/bin/zsh",
@@ -12581,7 +12581,7 @@ id: call_YBhRkDpA7kTw9wJTbvKU7sIB
 ```json
 {
   "cmd": "source .env && curl -sS -H \"X-Nimbus-Api-Key: $NIMBUS_API_KEY\" \"$NIMBUS_WORKER_URL/api/workspaces/ws_mo5s7jqc/deployments/dep_k8zbvjbf/events\"",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh",
@@ -12709,7 +12709,7 @@ id: call_Pp2yGqmD7qNeEWrIO59w4lbe
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review show review_yl4pq6ce",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000,
   "shell": "/bin/zsh"
@@ -12723,7 +12723,7 @@ id: call_qXFcbkcDjyjelMXwPuZ7hBC5
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review events review_yl4pq6ce",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh"
@@ -12737,7 +12737,7 @@ id: call_OTuzkf9H5T1BlMJEff7BfYhi
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review session show session_bexis2mz",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh"
@@ -12751,7 +12751,7 @@ id: call_STusd1wTDMtJEKXYDwx30GWq
 ```json
 {
   "cmd": "source .env && pnpm --filter @dayhaysoos/nimbus exec tsx src/index.ts review session latest",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 12000,
   "shell": "/bin/zsh"
@@ -13073,7 +13073,7 @@ id: call_gWDPpvJEWOPoVrb0lDUOpO2I
 ```json
 {
   "cmd": "git status --short --branch",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 4000
 }
@@ -13086,7 +13086,7 @@ id: call_8xAYFlzmfP8O8GlPjIH205z8
 ```json
 {
   "cmd": "git diff --stat",
-  "workdir": "/Users/nickdejesus/Code/nimbus",
+  "workdir": "/home/<USER>/Code/nimbus",
   "yield_time_ms": 1000,
   "max_output_tokens": 8000
 }
@@ -13145,7 +13145,7 @@ Output:
 I did not get a successful GPT-5.3 review on the current `HEAD`, but I did get the worker and real CLI flow far enough to prove the remaining blocker with live evidence.
 
 **Outcome**
-I fixed the original retry/recovery reliability issues in [review-runner-do.ts](/Users/nickdejesus/Code/nimbus/packages/worker/src/review-runner-do.ts), [retry.ts](/Users/nickdejesus/Code/nimbus/packages/worker/src/lib/review-runner/retry.ts), [finalization.ts](/Users/nickdejesus/Code/nimbus/packages/worker/src/lib/review-runner/finalization.ts), [review-runner.ts](/Users/nickdejesus/Code/nimbus/packages/worker/src/lib/review-runner.ts), and added poll-triggered deployment recovery in [query.ts](/Users/nickdejesus/Code/nimbus/packages/worker/src/api/workspace-deployments/query.ts). I also updated the sandbox image in [Dockerfile](/Users/nickdejesus/Code/nimbus/packages/worker/Dockerfile) so `pnpm` exists in the worker runtime.
+I fixed the original retry/recovery reliability issues in [review-runner-do.ts](/home/<USER>/Code/nimbus/packages/worker/src/review-runner-do.ts), [retry.ts](/home/<USER>/Code/nimbus/packages/worker/src/lib/review-runner/retry.ts), [finalization.ts](/home/<USER>/Code/nimbus/packages/worker/src/lib/review-runner/finalization.ts), [review-runner.ts](/home/<USER>/Code/nimbus/packages/worker/src/lib/review-runner.ts), and added poll-triggered deployment recovery in [query.ts](/home/<USER>/Code/nimbus/packages/worker/src/api/workspace-deployments/query.ts). I also updated the sandbox image in [Dockerfile](/home/<USER>/Code/nimbus/packages/worker/Dockerfile) so `pnpm` exists in the worker runtime.
 
 `pnpm --filter @dayhaysoos/nimbus-worker test` passed: `40/40`. I deployed the worker successfully with version `3fc2918b-ae2d-4115-940f-7b084cb2318e`.
 

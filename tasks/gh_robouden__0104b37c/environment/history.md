@@ -13,7 +13,7 @@ tool_use Read
 id: toolu_01QRY7YKbakN3cWVZFxeQAK3
 ```json
 {
-  "file_path": "/home/rob/.claude/projects/-home-rob-Documents-openclaw-workspace/memory/hermes_setup.md"
+  "file_path": "/home/<USER>/.claude/projects/-home-rob-Documents-openclaw-workspace/memory/hermes_setup.md"
 }
 ```
 
@@ -28,7 +28,7 @@ id: toolu_01QRY7YKbakN3cWVZFxeQAK3
 4	type: project
 5	originSessionId: 73180418-e784-40bf-926b-0e7aea4ad050
 6	---
-7	User runs **Hermes Agent** (fork of OpenClaw) at `/home/rob/.hermes/` — binary at `/home/rob/.local/bin/hermes`, config at `~/.hermes/config.yaml`, credential pool at `~/.hermes/auth.json`.
+7	User runs **Hermes Agent** (fork of OpenClaw) at `/home/<USER>/.hermes/` — binary at `/home/<USER>/.local/bin/hermes`, config at `~/.hermes/config.yaml`, credential pool at `~/.hermes/auth.json`.
 8	
 9	Active provider: **alibaba** (DashScope international endpoint `https://dashscope-intl.aliyuncs.com/compatible-mode/v1`) using `DASHSCOPE_API_KEY` exported in `~/.bashrc`. Model: `qwen3-coder-plus`.
 10	
@@ -44,7 +44,7 @@ tool_use Bash
 id: toolu_01R1iMLT1Cso75pCT9BwGhJv
 ```json
 {
-  "command": "ls /home/rob/.hermes/",
+  "command": "ls /home/<USER>/.hermes/",
   "description": "List Hermes directory contents"
 }
 ```
@@ -91,7 +91,7 @@ tool_use Bash
 id: toolu_01KyrYduxWTKP7HBLAy5KUkU
 ```json
 {
-  "command": "cat /home/rob/.hermes/config.yaml",
+  "command": "cat /home/<USER>/.hermes/config.yaml",
   "description": "Read Hermes config"
 }
 ```
@@ -145,7 +145,7 @@ tool_use Bash
 id: toolu_01RQU5pafSfz2gKX4mDKag6v
 ```json
 {
-  "command": "ls -lt /home/rob/.hermes/logs/ | head -20",
+  "command": "ls -lt /home/<USER>/.hermes/logs/ | head -20",
   "description": "List recent Hermes log files"
 }
 ```
@@ -171,7 +171,7 @@ tool_use Bash
 id: toolu_01TkQW3kgYu2Ncx1o6fVXXod
 ```json
 {
-  "command": "tail -100 /home/rob/.hermes/logs/agent.log",
+  "command": "tail -100 /home/<USER>/.hermes/logs/agent.log",
   "description": "Read recent Hermes agent log"
 }
 ```
@@ -182,7 +182,7 @@ tool_result
 id: toolu_01TkQW3kgYu2Ncx1o6fVXXod
 ```
 2026-04-19 09:58:46,977 INFO anthropic._base_client: Retrying request to /v1/messages in 0.753417 seconds
-2026-04-19 09:58:55,382 INFO run_agent: Loaded environment variables from /home/rob/.hermes/.env
+2026-04-19 09:58:55,382 INFO run_agent: Loaded environment variables from /home/<USER>/.hermes/.env
 2026-04-19 09:59:00,150 INFO tools.mcp_tool: MCP server 'anytype' (stdio): registered 38 tool(s): mcp_anytype_API_search_global, mcp_anytype_API_list_spaces, mcp_anytype_API_create_space, mcp_anytype_API_get_space, mcp_anytype_API_update_space, mcp_anytype_API_add_list_objects, mcp_anytype_API_remove_list_object, mcp_anytype_API_get_list_views, mcp_anytype_API_get_list_objects, mcp_anytype_API_list_members, mcp_anytype_API_get_member, mcp_anytype_API_list_objects, mcp_anytype_API_create_object, mcp_anytype_API_delete_object, mcp_anytype_API_get_object, mcp_anytype_API_update_object, mcp_anytype_API_list_properties, mcp_anytype_API_create_property, mcp_anytype_API_delete_property, mcp_anytype_API_get_property, mcp_anytype_API_update_property, mcp_anytype_API_list_tags, mcp_anytype_API_create_tag, mcp_anytype_API_delete_tag, mcp_anytype_API_get_tag, mcp_anytype_API_update_tag, mcp_anytype_API_search_space, mcp_anytype_API_list_types, mcp_anytype_API_create_type, mcp_anytype_API_delete_type, mcp_anytype_API_get_type, mcp_anytype_API_update_type, mcp_anytype_API_list_templates, mcp_anytype_API_get_template, mcp_anytype_list_resources, mcp_anytype_read_resource, mcp_anytype_list_prompts, mcp_anytype_get_prompt
 2026-04-19 09:59:00,151 INFO tools.mcp_tool: MCP: registered 38 tool(s) from 1 server(s)
 2026-04-19 09:59:00,151 INFO tools.mcp_tool:   MCP: 38 tool(s) from 1 server(s)
@@ -194,7 +194,7 @@ id: toolu_01TkQW3kgYu2Ncx1o6fVXXod
 2026-04-19 09:59:06,687 INFO [20260419_095900_e5a110] agent.credential_pool: credential pool: marking OLLAMA_API_KEY exhausted (status=401), rotating
 2026-04-19 09:59:06,689 INFO [20260419_095900_e5a110] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
 2026-04-19 09:59:06,694 ERROR [20260419_095900_e5a110] root: Non-retryable client error: unauthorized
-2026-04-19 10:01:15,507 INFO run_agent: Loaded environment variables from /home/rob/.hermes/.env
+2026-04-19 10:01:15,507 INFO run_agent: Loaded environment variables from /home/<USER>/.hermes/.env
 2026-04-19 10:01:20,037 INFO tools.mcp_tool: MCP server 'anytype' […]
 
 > AGENT

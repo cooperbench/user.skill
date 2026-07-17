@@ -11,7 +11,7 @@ from typing import Iterable
 
 import tiktoken
 
-POLICY_VERSION = "swesimbench-v2-cohort-policy-2026-07-13.18"
+POLICY_VERSION = "swesimbench-v2-cohort-policy-2026-07-16.20"
 
 RECONSTRUCTION_THRESHOLDS = {
     "minimum_chars": 24,
@@ -182,6 +182,19 @@ SECRET_PATTERNS = (
         ),
         r"\1=[REDACTED]",
     ),
+    # SpecStory-style email + home-path username redaction (2026-07-16).
+    (
+        re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"),
+        "<REDACTED_EMAIL>",
+    ),
+    (
+        re.compile(r"/(?:home|Users)/(?!<USER>(?:/|$))([A-Za-z0-9._-]+)"),
+        "/home/<USER>",
+    ),
+    (
+        re.compile(r"[Cc]:\\Users\\(?!<USER>(?:\\|$))([A-Za-z0-9._ -]+)"),
+        lambda m: "C:\\Users\\<USER>",
+    ),
 )
 
 
@@ -288,10 +301,17 @@ def is_human_target(turn_or_text: dict | str) -> bool:
 
 def trace_role(turn: dict) -> str:
     role = turn.get("role")
-    if role != "user":
-        return role if role in {"assistant", "system", "tool"} else "metadata"
-    text = developer_text(turn.get("text") or "")
-    return injected_role(text) or ("metadata" if is_placeholder(text) else "user")
+    raw = turn.get("text") or ""
+    text = developer_text(raw) if role == "user" else raw
+    injected = injected_role(text)
+    if role == "user":
+        return injected or ("metadata" if is_placeholder(text) else "user")
+    # Sources sometimes label harness pings as tool/assistant; prefer prefix roles.
+    if injected in {"metadata", "system"}:
+        return injected
+    if role in {"assistant", "system", "tool"}:
+        return role
+    return "metadata"
 
 
 def scrub_text(text: str) -> str:

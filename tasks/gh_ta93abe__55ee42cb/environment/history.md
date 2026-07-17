@@ -41,7 +41,7 @@ tool_result
 id: toolu_017P5LUqpYknN98USCWQ1P2M
 ```
 <persisted-output>
-Output too large (62.1KB). Full output saved to: /Users/ta93abe/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/d38888d6-c3aa-466e-b1bf-4129f131a92f/tool-results/b0kuz7uj7.txt
+Output too large (62.1KB). Full output saved to: /home/<USER>/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/d38888d6-c3aa-466e-b1bf-4129f131a92f/tool-results/b0kuz7uj7.txt
 
 Preview (first 2KB):
 On branch main
@@ -139,7 +139,7 @@ tool_use Read
 id: toolu_016t6NyQLPJeVfq7vfACnfAc
 ```json
 {
-  "file_path": "/Users/ta93abe/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/d38888d6-c3aa-466e-b1bf-4129f131a92f/tool-results/b0kuz7uj7.txt"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/d38888d6-c3aa-466e-b1bf-4129f131a92f/tool-results/b0kuz7uj7.txt"
 }
 ```
 
@@ -190,7 +190,7 @@ tool_use Bash
 id: toolu_01JjbqcJeCKB83tMVy1Tg2DG
 ```json
 {
-  "command": "git add -A && gt create -m \"feat: SNSリンクをカテゴリ別に整理して表示\n\n- SnsLink に category フィールドを追加（開発/SNS/動画・音声/ブログ/コミュニティ/音楽・メディア）\n- X の URL を @ta93abe_ に更新\n- Dev.to を Substack に差し替え\n- 未使用リンクを整理\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_017DDb7ohc5YBg8eSGt4yBzY\" 2>&1 | tail -20",
+  "command": "git add -A && gt create -m \"feat: SNSリンクをカテゴリ別に整理して表示\n\n- SnsLink に category フィールドを追加（開発/SNS/動画・音声/ブログ/コミュニティ/音楽・メディア）\n- X の URL を @ta93abe_ に更新\n- Dev.to を Substack に差し替え\n- 未使用リンクを整理\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_017DDb7ohc5YBg8eSGt4yBzY\" 2>&1 | tail -20",
   "description": "gt create でブランチ作成とコミット"
 }
 ```
@@ -594,7 +594,7 @@ tool_use Bash
 id: toolu_014hWjSaZ5einYyGDEf4JWqN
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/me\nfor i in $(seq 1 8); do\n  echo \"===== 試行 $i =====\"\n  git fetch origin main 2>&1 | grep -E \"main\" | tail -1\n  # rebase（衝突したら中断して報告）\n  if ! git rebase origin/main > /tmp/rebase_out 2>&1; then\n    echo \"REBASE CONFLICT:\"\n    cat /tmp/rebase_out | tail -15\n    git rebase --abort\n    echo \"ABORTED_DUE_TO_CONFLICT\"\n    break\n  fi\n  echo \"rebase OK\"\n  # push（成功したら終了）\n  if git push origin main:main > /tmp/push_out 2>&1; then\n    echo \"PUSH SUCCESS on attempt $i\"\n    cat /tmp/push_out | tail -3\n    break\n  else\n    echo \"push rejected, retrying...\"\n    tail -2 /tmp/push_out\n  fi\ndone\necho \"===== 最終状態 =====\"\ngit rev-list --left-right --count origin/main...main",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/me\nfor i in $(seq 1 8); do\n  echo \"===== 試行 $i =====\"\n  git fetch origin main 2>&1 | grep -E \"main\" | tail -1\n  # rebase（衝突したら中断して報告）\n  if ! git rebase origin/main > /tmp/rebase_out 2>&1; then\n    echo \"REBASE CONFLICT:\"\n    cat /tmp/rebase_out | tail -15\n    git rebase --abort\n    echo \"ABORTED_DUE_TO_CONFLICT\"\n    break\n  fi\n  echo \"rebase OK\"\n  # push（成功したら終了）\n  if git push origin main:main > /tmp/push_out 2>&1; then\n    echo \"PUSH SUCCESS on attempt $i\"\n    cat /tmp/push_out | tail -3\n    break\n  else\n    echo \"push rejected, retrying...\"\n    tail -2 /tmp/push_out\n  fi\ndone\necho \"===== 最終状態 =====\"\ngit rev-list --left-right --count origin/main...main",
   "description": "fetch-rebase-pushを自動リトライ"
 }
 ```
@@ -625,7 +625,7 @@ tool_use Bash
 id: toolu_01PkZznppsqtFQZXkTa8Toqo
 ```json
 {
-  "command": "cd /Users/ta93abe/Developer/github.com/ta93abe/me\necho \"=== git status ===\" ; git status --short\necho \"=== 差分の概要 ===\" ; git diff --stat",
+  "command": "cd /home/<USER>/Developer/github.com/ta93abe/me\necho \"=== git status ===\" ; git status --short\necho \"=== 差分の概要 ===\" ; git diff --stat",
   "description": "作業ツリーの未ステージ変更を確認"
 }
 ```

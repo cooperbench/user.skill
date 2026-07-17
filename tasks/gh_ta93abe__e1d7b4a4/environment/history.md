@@ -41,7 +41,7 @@ tool_result
 id: toolu_017P5LUqpYknN98USCWQ1P2M
 ```
 <persisted-output>
-Output too large (62.1KB). Full output saved to: /Users/ta93abe/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/d38888d6-c3aa-466e-b1bf-4129f131a92f/tool-results/b0kuz7uj7.txt
+Output too large (62.1KB). Full output saved to: /home/<USER>/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/d38888d6-c3aa-466e-b1bf-4129f131a92f/tool-results/b0kuz7uj7.txt
 
 Preview (first 2KB):
 On branch main
@@ -139,7 +139,7 @@ tool_use Read
 id: toolu_016t6NyQLPJeVfq7vfACnfAc
 ```json
 {
-  "file_path": "/Users/ta93abe/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/d38888d6-c3aa-466e-b1bf-4129f131a92f/tool-results/b0kuz7uj7.txt"
+  "file_path": "/home/<USER>/.claude/projects/-Users-ta93abe-Developer-github-com-ta93abe-me/d38888d6-c3aa-466e-b1bf-4129f131a92f/tool-results/b0kuz7uj7.txt"
 }
 ```
 
@@ -190,7 +190,7 @@ tool_use Bash
 id: toolu_01JjbqcJeCKB83tMVy1Tg2DG
 ```json
 {
-  "command": "git add -A && gt create -m \"feat: SNSリンクをカテゴリ別に整理して表示\n\n- SnsLink に category フィールドを追加（開発/SNS/動画・音声/ブログ/コミュニティ/音楽・メディア）\n- X の URL を @ta93abe_ に更新\n- Dev.to を Substack に差し替え\n- 未使用リンクを整理\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_017DDb7ohc5YBg8eSGt4yBzY\" 2>&1 | tail -20",
+  "command": "git add -A && gt create -m \"feat: SNSリンクをカテゴリ別に整理して表示\n\n- SnsLink に category フィールドを追加（開発/SNS/動画・音声/ブログ/コミュニティ/音楽・メディア）\n- X の URL を @ta93abe_ に更新\n- Dev.to を Substack に差し替え\n- 未使用リンクを整理\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <<REDACTED_EMAIL>>\nClaude-Session: https://claude.ai/code/session_017DDb7ohc5YBg8eSGt4yBzY\" 2>&1 | tail -20",
   "description": "gt create でブランチ作成とコミット"
 }
 ```

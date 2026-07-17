@@ -21,7 +21,7 @@ id: toolu_01K95dZ7oUtPM43FRhKJawqr
 ```json
 {
   "description": "Explore sidecar container config",
-  "prompt": "Explore the codebase to understand the sidecar container configuration. Look at:\n1. Kubernetes deployment files (Helm templates, kustomize) for the sidecar container spec\n2. The sidecar Dockerfile\n3. Any environment variables or secrets the sidecar needs\n4. The entrypoint/command configuration\n\nFocus on finding potential issues that could cause a CreateContainerError. This error typically means: missing image, missing secrets/configmaps, invalid container spec, or missing volume mounts.\n\nThe working directory is /Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration",
+  "prompt": "Explore the codebase to understand the sidecar container configuration. Look at:\n1. Kubernetes deployment files (Helm templates, kustomize) for the sidecar container spec\n2. The sidecar Dockerfile\n3. Any environment variables or secrets the sidecar needs\n4. The entrypoint/command configuration\n\nFocus on finding potential issues that could cause a CreateContainerError. This error typically means: missing image, missing secrets/configmaps, invalid container spec, or missing volume mounts.\n\nThe working directory is /home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration",
   "subagent_type": "Explore"
 }
 ```
@@ -39,7 +39,7 @@ Based on my exploration of the codebase, I've identified the sidecar container c
 
 ### 1. **Sidecar Container Image Configuration**
 
-**File**: `/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/helm/duckdb-data-agent/values.yaml`
+**File**: `/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/deploy/helm/duckdb-data-agent/values.yaml`
 
 ```yaml
 sidecar:
@@ -59,7 +59,7 @@ backend:
 
 ### 2. **Sidecar Dockerfile**
 
-**File**: `/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/sidecar/Dockerfile`
+**File**: `/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/sidecar/Dockerfile`
 
 Key aspects:
 - Uses **two-stage build** (Python 3.12 + Node.js 20)
@@ -73,7 +73,7 @@ Key aspects:
 
 ### 3. **Container Creation Flow**
 
-**File**: `/Users/cyyeh/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/app/sandbox_manager.py` (lines 85-128)
+**File**: `/home/<USER>/Desktop/duckdb-data-agent/.claude/worktrees/opensandbox-integration/backend/app/sandbox_manager.py` (lines 85-128)
 
 ```python
 async def create(self, session_id: str, env: dict[str, str]) -> SandboxInfo:

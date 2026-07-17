@@ -8,7 +8,7 @@ tool_use Read
 id: toolu_019DhPdwdYgiJPnLZE6YP2G5
 ```json
 {
-  "file_path": "/Users/4thwithme/.claude/projects/-Users-4thwithme-Documents-repo-no-name-proj/memory/project_product.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-4thwithme-Documents-repo-no-name-proj/memory/project_product.md"
 }
 ```
 
@@ -41,7 +41,7 @@ id: toolu_018JmhUfqniExNrQaFZbxf6P
 ```json
 {
   "pattern": "docs/**/*.md",
-  "path": "/Users/4thwithme/Documents/repo/no-name-proj"
+  "path": "/home/<USER>/Documents/repo/no-name-proj"
 }
 ```
 
@@ -74,7 +74,7 @@ tool_use Read
 id: toolu_01YPiGgrZRvkDNPMNEAcxSN4
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/features/roadmap.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/features/roadmap.md"
 }
 ```
 
@@ -121,7 +121,7 @@ tool_use Read
 id: toolu_01XoUwYDPyJFFqzgTDcvZbGp
 ```json
 {
-  "file_path": "/Users/4thwithme/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-17-phase2-completion.md"
+  "file_path": "/home/<USER>/Documents/repo/no-name-proj/docs/superpowers/plans/2026-04-17-phase2-completion.md"
 }
 ```
 

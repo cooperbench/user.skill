@@ -13,7 +13,7 @@ tool_use Bash
 id: toolu_011qPaHYkSqQaiqgWhGjkC1J
 ```json
 {
-  "command": "cd /Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension && ls -la && cat manifest.json 2>/dev/null | head -50; echo \"---PKG---\"; cat package.json 2>/dev/null | head -40",
+  "command": "cd /home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension && ls -la && cat manifest.json 2>/dev/null | head -50; echo \"---PKG---\"; cat package.json 2>/dev/null | head -40",
   "description": "Inspect auxilio-extension structure"
 }
 ```
@@ -109,7 +109,7 @@ tool_use Read
 id: toolu_01VgWZg174vjpLEUqhQzPQvG
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts"
 }
 ```
 
@@ -148,7 +148,7 @@ tool_use Read
 id: toolu_01JaWWb6roxVRSRSCok4mnL8
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/calendar.content.ts",
   "offset": 1166,
   "limit": 500
 }
@@ -197,7 +197,7 @@ tool_use Read
 id: toolu_01QoAdctWXYEsz7cEhkuW3YM
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/entrypoints/background.ts"
 }
 ```
 
@@ -257,7 +257,7 @@ tool_use Read
 id: toolu_01UVvbHrUXCz8Gi7gvgF1UWw
 ```json
 {
-  "file_path": "/Users/appointy/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
+  "file_path": "/home/<USER>/work/OfficeOperationsUmbrella/auxilio-extension/lib/calendar-sync.ts"
 }
 ```
 

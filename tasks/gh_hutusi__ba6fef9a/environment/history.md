@@ -12,7 +12,7 @@ tool_use Read
 id: toolu_016Vuf6YcEiFK1ChLbfe8XUG
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md"
 }
 ```
 
@@ -30,7 +30,7 @@ id: toolu_016Vuf6YcEiFK1ChLbfe8XUG
 7	  originSessionId: 3e2935ae-8ba4-4cef-8c03-b322a01108ac
 8	---
 9	
-10	**PR #52 MERGED by the user (merge commit `55aa7d0`, 2026-07-05); branches deleted local+remote.** 9 commits incl. the CodeRabbit review-fix `b46f1c5` (real finding: multi-cell door prediction stranded its sibling half on a lost race — onJournal now surfaces unconfirmed siblings for revert). Second CodeRabbit round: 0 actionable. **STILL PENDING: Fly deploy carrying BOTH the 512 MB VM resize and the ord→sjc region move, then the exactly-one-machine check; also the two-player ping re-test (expect NA 60–100 ms, Asia 200–400 ms) and a manual two-browser gameplay pass with `setSimulatedLatency(450, 100)`.** Next feature decided: **PWA in a fresh session** — plan ready at `/Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md` (branch `feature/pwa`; manifest + ImageResponse pixel icons + hand-rolled sw.js; NOT mobile play).
+10	**PR #52 MERGED by the user (merge commit `55aa7d0`, 2026-07-05); branches deleted local+remote.** 9 commits incl. the CodeRabbit review-fix `b46f1c5` (real finding: multi-cell door prediction stranded its sibling half on a lost race — onJournal now surfaces unconfirmed siblings for revert). Second CodeRabbit round: 0 actionable. **STILL PENDING: Fly deploy carrying BOTH the 512 MB VM resize and the ord→sjc region move, then the exactly-one-machine check; also the two-player ping re-test (expect NA 60–100 ms, Asia 200–400 ms) and a manual two-browser gameplay pass with `setSimulatedLatency(450, 100)`.** Next feature decided: **PWA in a fresh session** — plan ready at `/home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md` (branch `feature/pwa`; manifest + ImageResponse pixel icons + hand-rolled sw.js; NOT mobile play).
 11	
 12	Root cause of the 700–1100 ms ping: pure route latency, Asia player → Fly `ord` (Chicago). NA players at 50–80 ms proved the server healthy.
 13	
@@ -42,7 +42,7 @@ tool_use Bash
 id: toolu_01V6RsrkPvMU7Vq5bh9zpm4D
 ```json
 {
-  "command": "ls /Users/hutusi/.claude/plans/ 2>/dev/null | head -30",
+  "command": "ls /home/<USER>/.claude/plans/ 2>/dev/null | head -30",
   "description": "List existing plan files"
 }
 ```
@@ -90,7 +90,7 @@ tool_use Read
 id: toolu_01QErkhVrHPUNjo342dRG2Xw
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md"
+  "file_path": "/home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md"
 }
 ```
 
@@ -118,7 +118,7 @@ id: toolu_01LphAxUutPKxKpfCwSJyZVb
   "description": "Verify PWA plan assumptions",
   "subagent_type": "Explore",
   "run_in_background": false,
-  "prompt": "In the repo /Users/hutusi/workspace/ai/david/monecraft (a Next.js 16 App Router + Bun + TypeScript voxel game), verify the following assumptions from an implementation plan. Search breadth: medium. For each numbered item, report TRUE/FALSE/CHANGED plus the relevant file:line evidence and a short excerpt where useful.\n\n1. There is NO `public/` directory, NO `app/manifest.ts`, NO service worker, NO `app/icon.tsx` / `app/apple-icon.tsx`, and no PWA-related meta anywhere.\n2. `app/layout.tsx` — current contents: what metadata does it export (title? viewport? themeColor?), what components does it render.\n3. `next.config.mjs` (or .ts/.js) — does it exist, what's in it, does it already have a `headers()` function?\n4. `eslint.config.mjs` — flat config structure; is there any existing per-directory override block I could pattern-match for adding a `public/**/*.js` override with service-worker globals?\n5. `lib/auth/client.ts` — the `minecraft_online_v1` localStorage gate / `onlineUsed()` function that suppresses auth network probes for logged-out users: still present and unchanged?\n6. `lib/world/blocks.ts` — is `BLOCK_COLORS` still there around lines 139-140 with Grass/Dirt entries; is the Block enum a `const enum`? Also check `lib/world/atlas.ts` for the `tone()` color helper.\n7. `app/menu.css` — around line 12, gradient colors of the menu gate background (looking for `#2a2d3a` / `#15171f` […]
+  "prompt": "In the repo /home/<USER>/workspace/ai/david/monecraft (a Next.js 16 App Router + Bun + TypeScript voxel game), verify the following assumptions from an implementation plan. Search breadth: medium. For each numbered item, report TRUE/FALSE/CHANGED plus the relevant file:line evidence and a short excerpt where useful.\n\n1. There is NO `public/` directory, NO `app/manifest.ts`, NO service worker, NO `app/icon.tsx` / `app/apple-icon.tsx`, and no PWA-related meta anywhere.\n2. `app/layout.tsx` — current contents: what metadata does it export (title? viewport? themeColor?), what components does it render.\n3. `next.config.mjs` (or .ts/.js) — does it exist, what's in it, does it already have a `headers()` function?\n4. `eslint.config.mjs` — flat config structure; is there any existing per-directory override block I could pattern-match for adding a `public/**/*.js` override with service-worker globals?\n5. `lib/auth/client.ts` — the `minecraft_online_v1` localStorage gate / `onlineUsed()` function that suppresses auth network probes for logged-out users: still present and unchanged?\n6. `lib/world/blocks.ts` — is `BLOCK_COLORS` still there around lines 139-140 with Grass/Dirt entries; is the Block enum a `const enum`? Also check `lib/world/atlas.ts` for the `tone()` color helper.\n7. `app/menu.css` — around line 12, gradient colors of the menu gate background (looking for `#2a2d3a` / `#15171f` […]
 
 > TOOL
 
@@ -136,17 +136,17 @@ All items verified. Here is the numbered report.
 
 ## 2. `app/layout.tsx` — CHANGED (relative to "no metadata")
 
-File `/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx`:
+File `/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx`:
 - Exports `metadata: Metadata` (line 9-12) with **`title: "Minecraft Clone"`** and `description` only. **No `viewport`, no `themeColor`.**
 - Renders `<html lang="en" className={pixelFont.variable}>` with `<body>{children}</body>` (lines 14-20). Imports 4 CSS files (`base.css`, `hud.css`, `ui.css`, `menu.css`) and `pixelFont` from `./fonts`. No client components rendered directly here.
 
 ## 3. `next.config.mjs` — TRUE (exists), no `headers()`
 
-`/Users/hutusi/workspace/ai/david/monecraft/next.config.mjs` (10 lines). Contents: `reactStrictMode: true` and `serverExternalPackages: ["@electric-sql/pglite"]`. **No `headers()` function.** No `.ts`/`.js` variant exists.
+`/home/<USER>/workspace/ai/david/monecraft/next.config.mjs` (10 lines). Contents: `reactStrictMode: true` and `serverExternalPackages: ["@electric-sql/pglite"]`. **No `headers()` function.** No `.ts`/`.js` variant exists.
 
 ## 4. `eslint.config.mjs` — flat config, YES existing per-directory override blocks to pattern-match
 
-`/Users/hutusi/workspace/ai/david/monecraft/eslint.config.mjs` uses `defineConfig([...])`. Two existing `files:`-scoped override blocks you can pattern-match:
+`/home/<USER>/workspace/ai/david/monecraft/eslint.config.mjs` uses `defineConfig([...])`. Two existing `files:`-scoped override blocks you can pattern-match:
 - lines 30-49: `files: ["server/**/*.ts"]` with `no-restricted-imports`.
 - lines 50-69: […]
 
@@ -156,7 +156,7 @@ tool_use Read
 id: toolu_017WSQ8GyJDkJ9QDt6DZzmXs
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "offset": 70,
   "limit": 50
 }
@@ -203,7 +203,7 @@ tool_use Bash
 id: toolu_01RURSAumurec8RSoTHHaQXq
 ```json
 {
-  "command": "grep -n \"createDefaultGraph\\|unlock\\|catch\" /Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -20",
+  "command": "grep -n \"createDefaultGraph\\|unlock\\|catch\" /home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts | head -20",
   "description": "Find unlock() and error handling around the zzfx import"
 }
 ```
@@ -232,7 +232,7 @@ tool_use Read
 id: toolu_01DKFXR2LgtixYeNPrZ97Ej7
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/game/audio/audioDirector.ts",
   "offset": 168,
   "limit": 30
 }
@@ -315,7 +315,7 @@ tool_use Write
 id: toolu_015RTRh7iFKdLXseFM9tf8hC
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md",
+  "file_path": "/home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md",
   "content": "# PWA: installable, offline-capable Monecraft (`feature/pwa`)\n\n## Context\n\nNext feature after the MP-latency work (PR #52, merged `55aa7d0`): make Monecraft installable from the browser as a desktop app, with single-player fully offline after the first visit. The codebase is already ~90% offline-ready — `/` prerenders statically, a logged-out cold load makes zero network requests (the `minecraft_online_v1` gate in `lib/auth/client.ts:36-44` suppresses all auth probes — verified unchanged), the font is self-hosted via `next/font/local`, and all art is runtime-generated. What's missing is exactly the PWA layer: no `public/` dir, no manifest, no icons, no service worker, no theme/viewport meta (all re-verified against current main, 2026-07-05).\n\nOnline features (accounts, cloud saves, multiplayer) are untouched and degrade gracefully offline. **Explicitly not mobile play** — pointer lock, no touch input; documented future work.\n\nZero-binary-assets rule holds: icons are generated from pixel code via `ImageResponse`; `public/` gains only `sw.js` (code, not an asset — AGENTS.md gets a clarifying line).\n\n**Plan provenance**: authored in a prior session (`problem-high-multiplayer-latency-parsed-hamming.md`), re-verified this session against post-#52 main. #52 touched none of the files this plan edits (`app/layout.tsx`, `next.config.mjs`, `eslint.config.mjs`, `e2e/helpers.ts`, `playwright.config.ts` all untouched). One correction found — see the zzfx note below. Slice 4 confirmed **in** […]
 
 > TOOL
@@ -323,7 +323,7 @@ id: toolu_015RTRh7iFKdLXseFM9tf8hC
 tool_result
 id: toolu_015RTRh7iFKdLXseFM9tf8hC
 ```
-File created successfully at: /Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -381,7 +381,7 @@ id: toolu_01PPwLGE5kBu2btUbMzQ57y3
 ```
 User has approved your plan. You can now start coding. Start with updating your todo list if applicable
 
-Your plan has been saved to: /Users/hutusi/.claude/plans/start-the-pwa-plan-goofy-kahn.md
+Your plan has been saved to: /home/<USER>/.claude/plans/start-the-pwa-plan-goofy-kahn.md
 You can refer back to it if needed during implementation.
 
 ## Approved Plan (edited by user):
@@ -568,7 +568,7 @@ tool_use Read
 id: toolu_01M16aQY6erFatGGhLhBFbRJ
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx"
 }
 ```
 
@@ -606,7 +606,7 @@ tool_use Read
 id: toolu_01C2bZN1AT1WRPjgSofUh1fw
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "offset": 140,
   "limit": 30
 }
@@ -655,7 +655,7 @@ tool_use Read
 id: toolu_012H4bUSxV7j2LzeXH9SEToD
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "offset": 1,
   "limit": 60
 }
@@ -700,7 +700,7 @@ tool_use Bash
 id: toolu_01JySpbi7bbw6yS9aYXqgYGk
 ```json
 {
-  "command": "grep -n \"Grass\" /Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts | head; grep -n \"\\[BlockId.Grass\\]\" /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts",
+  "command": "grep -n \"Grass\" /home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts | head; grep -n \"\\[BlockId.Grass\\]\" /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts",
   "description": "Find grass paint logic in atlas and Grass palette entry"
 }
 ```
@@ -723,7 +723,7 @@ tool_use Read
 id: toolu_01UZLbKqmTHBUn8EmYxL6Qfj
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/world/atlas.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/world/atlas.ts",
   "offset": 60,
   "limit": 70
 }
@@ -754,7 +754,7 @@ tool_use Bash
 id: toolu_01NQfPmGmHsR9asgctfo1yQ8
 ```json
 {
-  "command": "head -20 /Users/hutusi/workspace/ai/david/monecraft/lib/world/blocks.ts; grep -n '\"paths\"' -A3 /Users/hutusi/workspace/ai/david/monecraft/tsconfig.json; grep -rn 'from \"@/' /Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx | head -3; grep -n '\"next\"' /Users/hutusi/workspace/ai/david/monecraft/package.json",
+  "command": "head -20 /home/<USER>/workspace/ai/david/monecraft/lib/world/blocks.ts; grep -n '\"paths\"' -A3 /home/<USER>/workspace/ai/david/monecraft/tsconfig.json; grep -rn 'from \"@/' /home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx | head -3; grep -n '\"next\"' /home/<USER>/workspace/ai/david/monecraft/package.json",
   "description": "Check blocks.ts imports, tsconfig alias, Next version"
 }
 ```
@@ -788,9 +788,9 @@ export const enum BlockId {
 23-      "@/*": ["./*"]
 24-    }
 25-  },
-/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx:4:import MinecraftGame from "@/components/MinecraftGame";
-/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx:5:import AccountProfileSelect from "@/components/menu/AccountProfileSelect";
-/Users/hutusi/workspace/ai/david/monecraft/components/GameShell.tsx:6:import AuthScreen from "@/components/menu/AuthScreen";
+/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx:4:import MinecraftGame from "@/components/MinecraftGame";
+/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx:5:import AccountProfileSelect from "@/components/menu/AccountProfileSelect";
+/home/<USER>/workspace/ai/david/monecraft/components/GameShell.tsx:6:import AuthScreen from "@/components/menu/AuthScreen";
 22:    "next": "16.2.9",
 ```
 
@@ -800,7 +800,7 @@ tool_use Bash
 id: toolu_01Gn1wcko1mFJybombpMewZ5
 ```json
 {
-  "command": "ls /Users/hutusi/workspace/ai/david/monecraft/lib/ui/ 2>/dev/null; ls /Users/hutusi/workspace/ai/david/monecraft/lib/",
+  "command": "ls /home/<USER>/workspace/ai/david/monecraft/lib/ui/ 2>/dev/null; ls /home/<USER>/workspace/ai/david/monecraft/lib/",
   "description": "Check whether lib/ui exists"
 }
 ```
@@ -832,7 +832,7 @@ tool_use Bash
 id: toolu_018SLBu4wCBf9LJYpEY5eJr8
 ```json
 {
-  "command": "head -40 /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts; echo ---; head -30 /Users/hutusi/workspace/ai/david/monecraft/lib/ui/hudPixels.ts",
+  "command": "head -40 /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts; echo ---; head -30 /home/<USER>/workspace/ai/david/monecraft/lib/ui/hudPixels.ts",
   "description": "Look at existing pixel-art helper style in lib/ui"
 }
 ```
@@ -878,7 +878,7 @@ tool_use Bash
 id: toolu_01BhXNLFwPZAqByvNQea4U62
 ```json
 {
-  "command": "cat /Users/hutusi/workspace/ai/david/monecraft/lib/world/index.ts 2>/dev/null | head -20; grep -n \"pixelHash\" /Users/hutusi/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
+  "command": "cat /home/<USER>/workspace/ai/david/monecraft/lib/world/index.ts 2>/dev/null | head -20; grep -n \"pixelHash\" /home/<USER>/workspace/ai/david/monecraft/lib/ui/spritePixels.ts",
   "description": "Check lib/world barrel exports and pixelHash location"
 }
 ```
@@ -923,7 +923,7 @@ tool_use Write
 id: toolu_01PnZNSaZ3woXXXEGa9Yn3us
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/appIcon.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/appIcon.tsx",
   "content": "import { BLOCK_COLORS, BlockId } from \"@/lib/world\";\n\n/**\n * The app icon as pixel art: an 8x8 grass-block face (green cap over dirt)\n * painted from the same BLOCK_COLORS palette as the world atlas. Rendered as\n * nested flex rows of colored divs because Satori (next/og ImageResponse)\n * supports flexbox but not canvas or CSS grid.\n */\n\nconst ICON_GRID = 8;\n/** Rows fully covered by grass; one more row below is jagged. */\nconst GRASS_ROWS = 2;\n\ntype Rgb = [number, number, number];\n\nfunction clamp01(v: number): number {\n  return Math.max(0, Math.min(1, v));\n}\n\nfunction tone(c: Rgb, mul: number): Rgb {\n  return [clamp01(c[0] * mul), clamp01(c[1] * mul), clamp01(c[2] * mul)];\n}\n\nfunction css(c: Rgb): string {\n  return `rgb(${Math.floor(c[0] * 255)}, ${Math.floor(c[1] * 255)}, ${Math.floor(c[2] * 255)})`;\n}\n\n// Deterministic per-pixel hash for texture noise (same idea as the atlas).\nfunction pixelHash(x: number, y: number): number {\n  const v = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;\n  return v - Math.floor(v);\n}\n\nfunction cellColor(x: number, y: number): string {\n  const grass = y < GRASS_ROWS || (y === GRASS_ROWS && pixelHash(x, 97) > 0.45);\n  const base = grass ? BLOCK_COLORS[BlockId.Grass] : BLOCK_COLORS[BlockId.Dirt];\n  return css(tone(base, (grass ? 0.95 : 0.88) + pixelHash(x, y) * 0.22));\n}\n\nconst […]
 
 > TOOL
@@ -931,7 +931,7 @@ id: toolu_01PnZNSaZ3woXXXEGa9Yn3us
 tool_result
 id: toolu_01PnZNSaZ3woXXXEGa9Yn3us
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/ui/appIcon.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/ui/appIcon.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -940,7 +940,7 @@ tool_use Write
 id: toolu_01DwfZzBBYNpcy8BX4KnJhfD
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icon.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icon.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const size = { width: 32, height: 32 };\nexport const contentType = \"image/png\";\n\nexport default function Icon() {\n  return new ImageResponse(<AppIcon />, size);\n}\n"
 }
 ```
@@ -950,7 +950,7 @@ id: toolu_01DwfZzBBYNpcy8BX4KnJhfD
 tool_result
 id: toolu_01DwfZzBBYNpcy8BX4KnJhfD
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/icon.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/icon.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -959,7 +959,7 @@ tool_use Write
 id: toolu_016mLvfzmyjWdLiJ546jdsDg
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/apple-icon.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/apple-icon.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const size = { width: 180, height: 180 };\nexport const contentType = \"image/png\";\n\n// iOS rounds the corners itself and dislikes transparency, so the art sits on\n// the menu-gate background color.\nexport default function AppleIcon() {\n  return new ImageResponse(<AppIcon scale={0.78} background=\"#15171f\" />, size);\n}\n"
 }
 ```
@@ -969,7 +969,7 @@ id: toolu_016mLvfzmyjWdLiJ546jdsDg
 tool_result
 id: toolu_016mLvfzmyjWdLiJ546jdsDg
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/apple-icon.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/apple-icon.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -978,7 +978,7 @@ tool_use Write
 id: toolu_01YLqGzgrWkfrsu5SFs9DHBP
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icons/192/route.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icons/192/route.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const dynamic = \"force-static\";\n\nexport function GET() {\n  return new ImageResponse(<AppIcon />, { width: 192, height: 192 });\n}\n"
 }
 ```
@@ -988,7 +988,7 @@ id: toolu_01YLqGzgrWkfrsu5SFs9DHBP
 tool_result
 id: toolu_01YLqGzgrWkfrsu5SFs9DHBP
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/icons/192/route.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/icons/192/route.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -997,7 +997,7 @@ tool_use Write
 id: toolu_01GjBJVjvTfmEDV1q6UsLELe
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icons/512/route.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icons/512/route.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const dynamic = \"force-static\";\n\nexport function GET() {\n  return new ImageResponse(<AppIcon />, { width: 512, height: 512 });\n}\n"
 }
 ```
@@ -1007,7 +1007,7 @@ id: toolu_01GjBJVjvTfmEDV1q6UsLELe
 tool_result
 id: toolu_01GjBJVjvTfmEDV1q6UsLELe
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/icons/512/route.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/icons/512/route.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1016,7 +1016,7 @@ tool_use Write
 id: toolu_01JmNufQTQArknQ71dEH13eo
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icons/maskable/route.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icons/maskable/route.tsx",
   "content": "import { ImageResponse } from \"next/og\";\nimport { AppIcon } from \"@/lib/ui/appIcon\";\n\nexport const dynamic = \"force-static\";\n\n// Maskable icons get cropped to arbitrary shapes; keep the art inside the\n// safe zone on a full-bleed menu-gate background.\nexport function GET() {\n  return new ImageResponse(<AppIcon scale={0.6} background=\"#15171f\" />, { width: 512, height: 512 });\n}\n"
 }
 ```
@@ -1026,7 +1026,7 @@ id: toolu_01JmNufQTQArknQ71dEH13eo
 tool_result
 id: toolu_01JmNufQTQArknQ71dEH13eo
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/icons/maskable/route.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/icons/maskable/route.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1035,7 +1035,7 @@ tool_use Write
 id: toolu_018UL8JJZw8J9GS7QU1wSL5X
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/manifest.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/manifest.ts",
   "content": "import type { MetadataRoute } from \"next\";\n\n// theme/background match the menu gate's gradient (menu.css .menu-screen) —\n// the first frame every visitor sees, so the install splash blends into it.\nexport default function manifest(): MetadataRoute.Manifest {\n  return {\n    name: \"Monecraft\",\n    short_name: \"Monecraft\",\n    description: \"A Minecraft-inspired voxel game that runs entirely in your browser.\",\n    id: \"/\",\n    start_url: \"/\",\n    display: \"standalone\",\n    orientation: \"landscape\",\n    theme_color: \"#2a2d3a\",\n    background_color: \"#15171f\",\n    // File-convention icons (app/icon.tsx) don't auto-wire into the manifest,\n    // so the installable sizes are explicit route handlers under /icons.\n    icons: [\n      { src: \"/icons/192\", sizes: \"192x192\", type: \"image/png\", purpose: \"any\" },\n      { src: \"/icons/512\", sizes: \"512x512\", type: \"image/png\", purpose: \"any\" },\n      { src: \"/icons/maskable\", sizes: \"512x512\", type: \"image/png\", purpose: \"maskable\" }\n    ]\n  };\n}\n"
 }
 ```
@@ -1045,7 +1045,7 @@ id: toolu_018UL8JJZw8J9GS7QU1wSL5X
 tool_result
 id: toolu_018UL8JJZw8J9GS7QU1wSL5X
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/app/manifest.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/app/manifest.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1055,7 +1055,7 @@ id: toolu_012cwrEZkr49GSQLcZUaS51e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx",
   "old_string": "import type { Metadata } from \"next\";\nimport type { ReactNode } from \"react\";\nimport { pixelFont } from \"./fonts\";\n\nexport const metadata: Metadata = {\n  title: \"Minecraft Clone\",\n  description: \"Minecraft-like game built with Next.js + Three.js\"\n};",
   "new_string": "import type { Metadata, Viewport } from \"next\";\nimport type { ReactNode } from \"react\";\nimport { pixelFont } from \"./fonts\";\n\nexport const metadata: Metadata = {\n  title: \"Monecraft\",\n  description: \"Minecraft-like game built with Next.js + Three.js\"\n};\n\nexport const viewport: Viewport = {\n  themeColor: \"#2a2d3a\"\n};"
 }
@@ -1066,7 +1066,7 @@ id: toolu_012cwrEZkr49GSQLcZUaS51e
 tool_result
 id: toolu_012cwrEZkr49GSQLcZUaS51e
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1079,7 +1079,7 @@ tool_use Read
 id: toolu_01WokX9RqUFBLsHdwe2QxCsp
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "limit": 40
 }
 ```
@@ -1106,7 +1106,7 @@ tool_use Bash
 id: toolu_01H6PJCPMikeEZDUNbzZSm2N
 ```json
 {
-  "command": "grep -n \"shell\\|Shell\\|layout\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md | head -20",
+  "command": "grep -n \"shell\\|Shell\\|layout\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md | head -20",
   "description": "Find the shell-layer section in architecture.md"
 }
 ```
@@ -1126,7 +1126,7 @@ tool_use Read
 id: toolu_01BeRAtwFgu4YKEsbQunRHR5
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "offset": 1,
   "limit": 32
 }
@@ -1170,7 +1170,7 @@ id: toolu_01BJeXaKX1NFKyxRKvK688sk
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "## [Unreleased]\n\n### Added\n\n- **Zero-config local dev**:",
   "new_string": "## [Unreleased]\n\n### Added\n\n- **Installable app identity (PWA, part 1)**: the app now ships a web-app manifest (name **Monecraft**, standalone landscape window, theme colors matched to the menu gate) and browser/install icons — an 8×8 grass-block face generated at request time from the same `BLOCK_COLORS` palette as the world atlas, via `ImageResponse` pixel code (`lib/ui/appIcon.tsx`), keeping the zero-binary-assets rule. The document title changes from \"Minecraft Clone\" to **Monecraft**, matching the in-game logo. Offline support (the service worker) lands separately.\n- **Zero-config local dev**:"
 }
@@ -1181,7 +1181,7 @@ id: toolu_01BJeXaKX1NFKyxRKvK688sk
 tool_result
 id: toolu_01BJeXaKX1NFKyxRKvK688sk
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1191,7 +1191,7 @@ id: toolu_01CLSxPFoRY6TXwhkq56zBpw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "old_string": "- Item hovers use `useItemTooltip`",
   "new_string": "- The installable app identity is procedural too: `app/manifest.ts` (name \"Monecraft\", standalone/landscape, theme colors from the menu gate's gradient in `menu.css`) plus icons generated from pixel code — `lib/ui/appIcon.tsx` paints an 8×8 grass-block face from `BLOCK_COLORS` as nested flex divs (Satori supports flex, not canvas/grid), wired through the `app/icon.tsx`/`app/apple-icon.tsx` file conventions and the explicit `/icons/{192,512,maskable}` route handlers the manifest references (file-convention icons don't auto-wire into the manifest).\n- Item hovers use `useItemTooltip`"
 }
@@ -1202,7 +1202,7 @@ id: toolu_01CLSxPFoRY6TXwhkq56zBpw
 tool_result
 id: toolu_01CLSxPFoRY6TXwhkq56zBpw
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1425,7 +1425,7 @@ id: toolu_01GQyMpNp8KKPiKTMX3a57Sy
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/icons/maskable/route.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/icons/maskable/route.tsx",
   "old_string": "// Maskable icons get cropped to arbitrary shapes; keep the art inside the\n// safe zone on a full-bleed menu-gate background.\nexport function GET() {\n  return new ImageResponse(<AppIcon scale={0.6} background=\"#15171f\" />, { width: 512, height: 512 });\n}",
   "new_string": "// Maskable icons get cropped to arbitrary shapes; keep the art inside the\n// safe zone on a full-bleed menu-gate background. The scale must land the art\n// on a multiple of the 8-cell grid (512 * 0.625 = 320 → 40px cells) or the\n// fractional cell edges antialias into visible seams.\nexport function GET() {\n  return new ImageResponse(<AppIcon scale={0.625} background=\"#15171f\" />, { width: 512, height: 512 });\n}"
 }
@@ -1436,7 +1436,7 @@ id: toolu_01GQyMpNp8KKPiKTMX3a57Sy
 tool_result
 id: toolu_01GQyMpNp8KKPiKTMX3a57Sy
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/icons/maskable/route.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/icons/maskable/route.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1446,7 +1446,7 @@ id: toolu_01JmMTtuBezFV12vG77VR4ir
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/apple-icon.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/apple-icon.tsx",
   "old_string": "// iOS rounds the corners itself and dislikes transparency, so the art sits on\n// the menu-gate background color.\nexport default function AppleIcon() {\n  return new ImageResponse(<AppIcon scale={0.78} background=\"#15171f\" />, size);\n}",
   "new_string": "// iOS rounds the corners itself and dislikes transparency, so the art sits on\n// the menu-gate background color. 180 * 0.8 = 144 keeps the cells on whole\n// pixels (see the maskable route for the seam artifact this avoids).\nexport default function AppleIcon() {\n  return new ImageResponse(<AppIcon scale={0.8} background=\"#15171f\" />, size);\n}"
 }
@@ -1457,7 +1457,7 @@ id: toolu_01JmMTtuBezFV12vG77VR4ir
 tool_result
 id: toolu_01JmMTtuBezFV12vG77VR4ir
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/apple-icon.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/apple-icon.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1532,7 +1532,7 @@ MD5 (maskable.png) = d5be58b633d3b2e44b7f2f51e0077629
 MD5 (maskable2.png) = d5be58b633d3b2e44b7f2f51e0077629
 COMMAND   PID   USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 node    35372 hutusi   12u  IPv6 0x4d5d6ae7df7916fc      0t0  TCP *:hbci (LISTEN)
-Shell cwd was reset to /Users/hutusi/workspace/ai/david/monecraft
+Shell cwd was reset to /home/<USER>/workspace/ai/david/monecraft
 ```
 
 > TOOL
@@ -1699,7 +1699,7 @@ tool_use Read
 id: toolu_01DmSbgs1K58YFuQnERwESX8
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/eslint.config.mjs"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/eslint.config.mjs"
 }
 ```
 
@@ -1765,7 +1765,7 @@ tool_use Read
 id: toolu_017uVJtRXtDGRmJyggrKiiqu
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/next.config.mjs"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/next.config.mjs"
 }
 ```
 
@@ -1797,7 +1797,7 @@ tool_use Write
 id: toolu_017EiVGYncdpzvAt9KUuBpLK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/public/sw.js",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/public/sw.js",
   "content": "/**\n * Monecraft service worker: offline app shell for single-player.\n *\n * Strategy (docs/architecture.md \"Offline / PWA\"):\n * - Navigations to \"/\" are network-first with cache fallback — deploys land\n *   normally while online, the cached shell boots the game offline. When the\n *   HTML changes, its /_next/static references are re-precached.\n * - /_next/static/* is cache-first: content-hashed, immutable, trimmed to a\n *   bounded count in insertion order.\n * - The manifest and icon routes are stale-while-revalidate.\n * - Everything else — /api/*, cross-origin (the game server), non-GET, RSC\n *   payloads, /join/* navigations — is never touched: the classifier's\n *   default is bypass, so online features can't be broken by a stale cache.\n *\n * Bump SW_VERSION only when the cache shape changes (old caches are dropped\n * on activate). HTML freshness never depends on it, so skipWaiting is safe.\n */\n\nconst SW_VERSION = \"v1\";\nconst SHELL_CACHE = `monecraft-shell-${SW_VERSION}`;\nconst ASSET_CACHE = `monecraft-assets-${SW_VERSION}`;\nconst SHELL_URL = \"/\";\n/** Precached beside the shell so an offline install prompt has its icons. */\nconst SHELL_EXTRAS = [\"/manifest.webmanifest\", \"/icons/192\", \"/icons/512\", \"/icons/maskable\"];\n/** Paths served stale-while-revalidate (pathname match; queries vary). */\nconst SHELL_EXTRA_PATHS = new Set([...SHELL_EXTRAS, \"/icon\", \"/apple-icon\"]);\n/** Insertion-order cap on cached immutable assets […]
 
 > TOOL
@@ -1805,7 +1805,7 @@ id: toolu_017EiVGYncdpzvAt9KUuBpLK
 tool_result
 id: toolu_017EiVGYncdpzvAt9KUuBpLK
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/public/sw.js (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/public/sw.js (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1818,7 +1818,7 @@ tool_use Write
 id: toolu_01XJxcPfB6spfiXvPnKFZQVK
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/ServiceWorkerRegistration.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/ServiceWorkerRegistration.tsx",
   "content": "\"use client\";\n\nimport { useEffect } from \"react\";\n\n/**\n * Registers /sw.js after load in production builds. In development it does\n * the opposite — unregisters any service worker and deletes monecraft-*\n * caches. That cleanup is mandatory, not a nicety: e2e runs a prod build on\n * localhost:3000, and a service worker left registered there would serve\n * stale chunks to `bun run dev` on the same origin.\n */\nexport default function ServiceWorkerRegistration() {\n  useEffect(() => {\n    if (!(\"serviceWorker\" in navigator)) return;\n\n    if (process.env.NODE_ENV !== \"production\") {\n      void navigator.serviceWorker\n        .getRegistrations()\n        .then((registrations) => Promise.all(registrations.map((r) => r.unregister())))\n        .catch(() => {});\n      if (\"caches\" in window) {\n        void caches\n          .keys()\n          .then((keys) => Promise.all(keys.filter((k) => k.startsWith(\"monecraft-\")).map((k) => caches.delete(k))))\n          .catch(() => {});\n      }\n      return;\n    }\n\n    // Registering twice (StrictMode double-effect) is idempotent; waiting for\n    // load keeps SW installation off the game's startup path. updateViaCache\n    // \"none\" + the no-cache header on /sw.js make updates purely server-driven.\n    const register = () => {\n      navigator.serviceWorker.register(\"/sw.js\", { updateViaCache: \"none\" }).catch(() => {\n        // The app is fully functional without offline support.\n      });\n    };\n    if (document.readyState === \"complete\") {\n      register();\n      return;\n    }\n    window.addEventListener(\"load\", register, { once: true });\n    return () => window.removeEventListener(\"load\", […]
 
 > TOOL
@@ -1826,7 +1826,7 @@ id: toolu_01XJxcPfB6spfiXvPnKFZQVK
 tool_result
 id: toolu_01XJxcPfB6spfiXvPnKFZQVK
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/components/ServiceWorkerRegistration.tsx (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/components/ServiceWorkerRegistration.tsx (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1836,7 +1836,7 @@ id: toolu_01WpjGYY2LsryMKXmmqNp91e
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx",
   "old_string": "import type { Metadata, Viewport } from \"next\";\nimport type { ReactNode } from \"react\";\nimport { pixelFont } from \"./fonts\";",
   "new_string": "import type { Metadata, Viewport } from \"next\";\nimport type { ReactNode } from \"react\";\nimport ServiceWorkerRegistration from \"@/components/ServiceWorkerRegistration\";\nimport { pixelFont } from \"./fonts\";"
 }
@@ -1847,7 +1847,7 @@ id: toolu_01WpjGYY2LsryMKXmmqNp91e
 tool_result
 id: toolu_01WpjGYY2LsryMKXmmqNp91e
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1857,7 +1857,7 @@ id: toolu_01UW67LdQW9Tcxw2vvwoSt5r
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/app/layout.tsx",
   "old_string": "      <body>{children}</body>",
   "new_string": "      <body>\n        <ServiceWorkerRegistration />\n        {children}\n      </body>"
 }
@@ -1868,7 +1868,7 @@ id: toolu_01UW67LdQW9Tcxw2vvwoSt5r
 tool_result
 id: toolu_01UW67LdQW9Tcxw2vvwoSt5r
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/app/layout.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1878,7 +1878,7 @@ id: toolu_015aeMxHinskjD26aMi5AHYK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/next.config.mjs",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/next.config.mjs",
   "old_string": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  // PGlite (the pglite:// DATABASE_URL branch used by the Playwright online\n  // suite and daemon-free dev) resolves its WASM relative to the package —\n  // bundling breaks that; load it from node_modules at runtime instead.\n  serverExternalPackages: [\"@electric-sql/pglite\"]\n};",
   "new_string": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  // PGlite (the pglite:// DATABASE_URL branch used by the Playwright online\n  // suite and daemon-free dev) resolves its WASM relative to the package —\n  // bundling breaks that; load it from node_modules at runtime instead.\n  serverExternalPackages: [\"@electric-sql/pglite\"],\n  async headers() {\n    return [\n      {\n        // The service worker must never be served stale, or an old cache\n        // strategy outlives a deploy (registration also sets updateViaCache\n        // \"none\" — this covers the CDN/proxy layer).\n        source: \"/sw.js\",\n        headers: [{ key: \"Cache-Control\", value: \"no-cache, max-age=0, must-revalidate\" }]\n      }\n    ];\n  }\n};"
 }
@@ -1889,7 +1889,7 @@ id: toolu_015aeMxHinskjD26aMi5AHYK
 tool_result
 id: toolu_015aeMxHinskjD26aMi5AHYK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/next.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/next.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -1899,7 +1899,7 @@ id: toolu_01PfnJfQHP2cemdhjcryfqy3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/eslint.config.mjs",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/eslint.config.mjs",
   "old_string": "  {\n    // Engine systems must address players explicitly: the flat GameState",
   "new_string": "  {\n    // The service worker is plain JS in worker scope: no DOM lib, no module\n    // system, tsc ignores it (allowJs off) — lint is its only static check.\n    files: [\"public/**/*.js\"],\n    languageOptions: {\n      globals: {\n        self: \"readonly\",\n        caches: \"readonly\",\n        fetch: \"readonly\",\n        Response: \"readonly\",\n        URL: \"readonly\"\n      }\n    }\n  },\n  {\n    // Engine systems must address players explicitly: the flat GameState"
 }
@@ -1910,7 +1910,7 @@ id: toolu_01PfnJfQHP2cemdhjcryfqy3
 tool_result
 id: toolu_01PfnJfQHP2cemdhjcryfqy3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/eslint.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/eslint.config.mjs has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1923,7 +1923,7 @@ tool_use Bash
 id: toolu_01CrEEtfj5KNneNDTBicKyzw
 ```json
 {
-  "command": "grep -E '\"include\"|\"allowJs\"' /Users/hutusi/workspace/ai/david/monecraft/tsconfig.json; bun run format >/dev/null 2>&1; bun run lint 2>&1 | tail -4; bun run typecheck 2>&1 | tail -3",
+  "command": "grep -E '\"include\"|\"allowJs\"' /home/<USER>/workspace/ai/david/monecraft/tsconfig.json; bun run format >/dev/null 2>&1; bun run lint 2>&1 | tail -4; bun run typecheck 2>&1 | tail -3",
   "description": "Verify tsconfig excludes sw.js; run format, lint, typecheck",
   "timeout": 180000
 }
@@ -1951,7 +1951,7 @@ tool_use Bash
 id: toolu_017KX7c4zwQLKt9pmQo7dp5L
 ```json
 {
-  "command": "grep -n \"^#\" /Users/hutusi/workspace/ai/david/monecraft/README.md | head -20; echo ---; grep -n \"^#\" /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "command": "grep -n \"^#\" /home/<USER>/workspace/ai/david/monecraft/README.md | head -20; echo ---; grep -n \"^#\" /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "description": "List README and architecture.md section headings"
 }
 ```
@@ -1986,7 +1986,7 @@ tool_use Read
 id: toolu_01QRiWMwoJ2X5F9pzkGmpLEh
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/README.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/README.md",
   "offset": 1,
   "limit": 50
 }
@@ -2013,7 +2013,7 @@ id: toolu_013U2mp7RKWi6bkEm1X3ohQ5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/README.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/README.md",
   "old_string": "Then open `http://localhost:3000`.",
   "new_string": "Then open `http://localhost:3000`.\n\nMonecraft is also an installable **PWA**: in a Chromium browser, the address-bar install button turns it into a desktop app, and after the first visit **single-player works fully offline** (online features — accounts, cloud saves, co-op — still need a connection). Not a mobile game: it needs a mouse and pointer lock."
 }
@@ -2024,7 +2024,7 @@ id: toolu_013U2mp7RKWi6bkEm1X3ohQ5
 tool_result
 id: toolu_013U2mp7RKWi6bkEm1X3ohQ5
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2034,7 +2034,7 @@ id: toolu_01HsCCVYKaoL126bt1GpRG1Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/architecture.md",
   "old_string": "## Engine invariants & gotchas",
   "new_string": "## Offline / PWA (`app/manifest.ts`, `public/sw.js`)\n\nThe app installs as a desktop PWA and boots single-player offline after one online visit. `app/manifest.ts` plus the programmatic icons (shell section above) are the identity; `public/sw.js` — hand-rolled plain JS, no workbox/serwist dependency — owns offline caching:\n\n| Request                                                                        | Strategy                                                                                        |\n| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |\n| navigation to `/`                                                              | network-first, cached shell as offline fallback; changed HTML re-precaches its static refs       |\n| `/_next/static/*`                                                              | cache-first (content-hashed, immutable), insertion-order trim at 100 entries                     |\n| manifest + icon routes                                                         | stale-while-revalidate                                                                           |\n| everything else — `/api/*`, cross-origin, non-GET, RSC payloads, `/join/*` nav | **bypass, never touched** — the classifier's default, so online features can't be cache-poisoned |\n\n- Install fetches `/` fresh and precaches every `/_next/static` URL parsed out of the HTML. All play-critical JS is statically imported from `/`; the one dynamic import (zzfx, gesture-gated — see Audio) is picked up by cache-first on the first online audio unlock, and missing it degrades to a silent game, never a broken one.\n- `SW_VERSION` bumps only on cache-shape changes; HTML freshness never depends on it, which is what makes `skipWaiting`+`clients.claim` safe. […]
 
@@ -2043,7 +2043,7 @@ id: toolu_01HsCCVYKaoL126bt1GpRG1Q
 tool_result
 id: toolu_01HsCCVYKaoL126bt1GpRG1Q
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/architecture.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2053,7 +2053,7 @@ id: toolu_01XzegXio62tsSuwbid3v9fm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/AGENTS.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/AGENTS.md",
   "old_string": "The one sanctioned exception is the UI pixel font (Monocraft, a Minecraft-style face under the SIL OFL 1.1), self-hosted via `next/font/local` from the committed woff2 in `app/fonts/` — don't \"fix\" it back to a system font.",
   "new_string": "The one sanctioned exception is the UI pixel font (Monocraft, a Minecraft-style face under the SIL OFL 1.1), self-hosted via `next/font/local` from the committed woff2 in `app/fonts/` — don't \"fix\" it back to a system font. `public/` holds only code (the service worker `sw.js`) — no images or media belong there."
 }
@@ -2064,7 +2064,7 @@ id: toolu_01XzegXio62tsSuwbid3v9fm
 tool_result
 id: toolu_01XzegXio62tsSuwbid3v9fm
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/AGENTS.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2074,7 +2074,7 @@ id: toolu_017kmZbZNhSE3Tggt8TnEhA2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "- **Installable app identity (PWA, part 1)**:",
   "new_string": "- **Offline play (PWA, part 2)**: after one online visit, single-player boots with no connection — a hand-rolled service worker (`public/sw.js`, no workbox/serwist dependency) precaches the app shell and its static chunks, serves navigations network-first (deploys land normally and apply silently on the next online load), and **never touches** `/api/*`, the game-server connection, or invite links, so accounts, cloud saves, and multiplayer behave exactly as before. In development the registration component instead unregisters workers and clears caches, keeping `bun run dev` immune to a stale prod worker on the same origin.\n- **Installable app identity (PWA, part 1)**:"
 }
@@ -2085,7 +2085,7 @@ id: toolu_017kmZbZNhSE3Tggt8TnEhA2
 tool_result
 id: toolu_017kmZbZNhSE3Tggt8TnEhA2
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2261,7 +2261,7 @@ tool_use Read
 id: toolu_014eoY9p86tVazHmMz4M896g
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/helpers.ts"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/helpers.ts"
 }
 ```
 
@@ -2303,7 +2303,7 @@ tool_use Bash
 id: toolu_013kGif6JPzwC2AA83amCU1t
 ```json
 {
-  "command": "ls /Users/hutusi/workspace/ai/david/monecraft/tests/ 2>/dev/null; ls /Users/hutusi/workspace/ai/david/monecraft/e2e/; head -30 /Users/hutusi/workspace/ai/david/monecraft/e2e/smoke.e2e.ts 2>/dev/null",
+  "command": "ls /home/<USER>/workspace/ai/david/monecraft/tests/ 2>/dev/null; ls /home/<USER>/workspace/ai/david/monecraft/e2e/; head -30 /home/<USER>/workspace/ai/david/monecraft/e2e/smoke.e2e.ts 2>/dev/null",
   "description": "List tests and e2e directories, peek at a spec"
 }
 ```
@@ -2363,7 +2363,7 @@ tool_use Bash
 id: toolu_01KCY5UKv9VnCJzgHBb7to5G
 ```json
 {
-  "command": "cat /Users/hutusi/workspace/ai/david/monecraft/bunfig.toml 2>/dev/null; find /Users/hutusi/workspace/ai/david/monecraft -name \"*.test.ts*\" -not -path \"*/node_modules/*\" | sed 's|.*/monecraft/||' | sort | head -40",
+  "command": "cat /home/<USER>/workspace/ai/david/monecraft/bunfig.toml 2>/dev/null; find /home/<USER>/workspace/ai/david/monecraft -name \"*.test.ts*\" -not -path \"*/node_modules/*\" | sed 's|.*/monecraft/||' | sort | head -40",
   "description": "Check bunfig and test file locations"
 }
 ```
@@ -2424,7 +2424,7 @@ tool_use Write
 id: toolu_01STha1MzTFPKsUM7pMNgW6K
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/tests/sw.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/tests/sw.test.ts",
   "content": "import { describe, expect, test } from \"bun:test\";\nimport { readFileSync } from \"node:fs\";\nimport { join } from \"node:path\";\n\n/**\n * Unit coverage for the service worker's pure helpers (public/sw.js). The\n * worker is plain JS outside the TS program, so it's evaluated here with a\n * stub `self` and asserted through its `self.__sw` test hook. The classify\n * cases pin the contract that matters: /api, cross-origin, non-GET, RSC\n * payloads, and /join navigations are NEVER touched by the cache.\n */\n\nconst ORIGIN = \"http://localhost:3000\";\n\ntype StubRequest = {\n  method: string;\n  mode: string;\n  url: string;\n  headers: { get(name: string): string | null };\n};\n\ntype SwHooks = {\n  classify: (request: StubRequest, origin: string) => \"bypass\" | \"navigation\" | \"asset\" | \"shell-extra\";\n  extractShellAssets: (html: string) => string[];\n  SHELL_EXTRA_PATHS: Set<string>;\n  MAX_ASSETS: number;\n};\n\nfunction loadSw(): SwHooks {\n  const source = readFileSync(join(import.meta.dir, \"..\", \"public\", \"sw.js\"), \"utf8\");\n  const self: { __sw?: SwHooks; addEventListener: () => void; location: { origin: string } } = {\n    addEventListener: () => {},\n    location: { origin: ORIGIN }\n  };\n  // caches/fetch are only referenced inside handlers, never during evaluation.\n  new Function(\"self\", source)(self);\n  if (!self.__sw) throw new Error(\"sw.js did not expose self.__sw\");\n  return self.__sw;\n}\n\nconst sw = loadSw();\n\nfunction req(url: string, […]
 
 > TOOL
@@ -2432,7 +2432,7 @@ id: toolu_01STha1MzTFPKsUM7pMNgW6K
 tool_result
 id: toolu_01STha1MzTFPKsUM7pMNgW6K
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/tests/sw.test.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/tests/sw.test.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2465,7 +2465,7 @@ tool_use Write
 id: toolu_016uLzrnnUW1Bu1cF99AhdHz
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/pwa.e2e.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/pwa.e2e.ts",
   "content": "import { expect, test } from \"@playwright/test\";\nimport { WORLDGEN_VERSION } from \"@/lib/game/config\";\n\n/**\n * PWA coverage: installable identity (manifest/icons) and the offline app\n * shell. Raw Playwright tests rather than the gamePage fixture — the offline\n * flow needs its own navigation choreography (online warm-up → offline →\n * reload), and going offline makes the browser log fetch failures for\n * legitimately bypassed requests, so the fixture's console-error assertion\n * doesn't apply. Non-interference with online play is pinned by the sw.js\n * classifier unit tests (tests/sw.test.ts) plus the existing e2e suites,\n * which now run with the service worker registering by design.\n */\n\ntest(\"serves the manifest, icons, and an uncacheable service worker\", async ({ request }) => {\n  const manifest = await request.get(\"/manifest.webmanifest\");\n  expect(manifest.status()).toBe(200);\n  const body = await manifest.json();\n  expect(body.name).toBe(\"Monecraft\");\n  expect(body.display).toBe(\"standalone\");\n  expect(body.start_url).toBe(\"/\");\n  expect(body.icons.map((icon: { src: string }) => icon.src)).toEqual([\"/icons/192\", \"/icons/512\", \"/icons/maskable\"]);\n  expect(body.icons.some((icon: { purpose?: string }) => icon.purpose === \"maskable\")).toBe(true);\n\n  for (const path of [\"/icons/192\", \"/icons/512\", \"/icons/maskable\", \"/icon\", \"/apple-icon\"]) {\n    const response = await request.get(path);\n    expect(response.status(), path).toBe(200);\n    expect(response.headers()[\"content-type\"], path).toContain(\"image/png\");\n  }\n\n  const sw = await request.get(\"/sw.js\");\n  expect(sw.status()).toBe(200);\n  expect(sw.headers()[\"cache-control\"]).toContain(\"no-cache\");\n});\n\ntest(\"plays single-player fully offline after one online visit\", async ({ page, context }) => {\n  // Seed […]
 
 > TOOL
@@ -2473,7 +2473,7 @@ id: toolu_016uLzrnnUW1Bu1cF99AhdHz
 tool_result
 id: toolu_016uLzrnnUW1Bu1cF99AhdHz
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/e2e/pwa.e2e.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/e2e/pwa.e2e.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2483,7 +2483,7 @@ id: toolu_01MoUQpiKHuhPGPTok23FQ8H
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/e2e/helpers.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/e2e/helpers.ts",
   "old_string": "    page.on(\"console\", (message) => {\n      if (message.type() !== \"error\") return;\n      // The app ships no favicon; Chrome's automatic /favicon.ico 404 is noise.\n      if (message.text().includes(\"Failed to load resource\") && message.location().url.endsWith(\"/favicon.ico\")) return;\n      errors.push(`${message.text()} (${message.location().url})`);\n    });",
   "new_string": "    page.on(\"console\", (message) => {\n      if (message.type() !== \"error\") return;\n      errors.push(`${message.text()} (${message.location().url})`);\n    });"
 }
@@ -2494,7 +2494,7 @@ id: toolu_01MoUQpiKHuhPGPTok23FQ8H
 tool_result
 id: toolu_01MoUQpiKHuhPGPTok23FQ8H
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/e2e/helpers.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/e2e/helpers.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -2544,7 +2544,7 @@ tool_use Read
 id: toolu_018ZipkZhVgdEY1xLZJoqX1z
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md"
 }
 ```
 
@@ -2573,7 +2573,7 @@ id: toolu_016AKWQVS8tdXU1JFtFYcn2G
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "- **`bun test`** — unit, integration, and component tests, colocated as `*.test.ts[x]` next to the code they cover. The shared setup (`tests/setup.ts`, preloaded via `bunfig.toml`) registers happy-dom so React component tests run under the same runner; the game engine itself needs no DOM (see [architecture.md](architecture.md)).",
   "new_string": "- **`bun test`** — unit, integration, and component tests, colocated as `*.test.ts[x]` next to the code they cover (one exception: the service worker's tests live in `tests/sw.test.ts` — `public/` is deployed verbatim, so no test files belong there). The shared setup (`tests/setup.ts`, preloaded via `bunfig.toml`) registers happy-dom so React component tests run under the same runner; the game engine itself needs no DOM (see [architecture.md](architecture.md))."
 }
@@ -2584,7 +2584,7 @@ id: toolu_016AKWQVS8tdXU1JFtFYcn2G
 tool_result
 id: toolu_016AKWQVS8tdXU1JFtFYcn2G
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2594,7 +2594,7 @@ id: toolu_011oorG6dxadtZpbCHxiRP3x
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "| Game modes                    | `lib/game/gameModes.test.ts`, `lib/game/engine/gameMode{Creative,Spectator,Adventure,Switch}.test.ts`",
   "new_string": "| Service worker                | `tests/sw.test.ts`                                                                                                                                                                                                                                            | The offline-cache classifier (public/sw.js evaluated with a stub `self`, asserted through its `self.__sw` hook): navigations to `/` are the only cached navigations (`/join/*` bypasses), non-GET / `/api/*` / cross-origin / RSC-prefetch payloads are never touched whatever the path, hashed `/_next/static` assets are cache-first, manifest/icons are shell extras (queries included), and anything unrecognized falls through to the network; plus shell-HTML asset extraction (scripts/styles/preloads, deduped, `&amp;` unescaped, foreign hosts ignored)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |\n| Browser E2E (PWA)             | `e2e/pwa.e2e.ts`                                                                                                                                                                                                                                              | The installable identity (manifest shape — name/standalone/start_url/maskable icon set — and every icon route serving a real PNG; `/sw.js` with its no-cache header) and the offline story end to end: an online visit precaches the shell + assets, the network is cut (`context.setOffline`), a reload is served from the worker's cache (`transferSize === 0` proves it wasn't a network leak around the emulation), the welcome gate renders, a seeded local world boots and draws, and no `/api/` URL ever appears in any cache                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |\n| Game modes                    | `lib/game/gameModes.test.ts`, `lib/game/engine/gameMode{Creative,Spectator,Adventure,Switch}.test.ts`"
 }
@@ -2605,7 +2605,7 @@ id: toolu_011oorG6dxadtZpbCHxiRP3x
 tool_result
 id: toolu_011oorG6dxadtZpbCHxiRP3x
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2615,7 +2615,7 @@ id: toolu_01QkZPxDP15CeS3TJcY1n69B
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "Playwright boots **two** servers (`playwright.config.ts`): the Next production build with a full online stack on an in-process ephemeral Postgres (`DATABASE_URL=pglite://memory` — no Docker; `db/index.ts` applies `db/ddl.ts` at boot) and the Bun game server (`PERSISTENCE=memory`) on port 18080. The offline suites never touch either backend; `multiplayer.e2e.ts` exercises both.",
   "new_string": "Playwright boots **two** servers (`playwright.config.ts`): the Next production build with a full online stack on an in-process ephemeral Postgres (`DATABASE_URL=pglite://memory` — no Docker; `db/index.ts` applies `db/ddl.ts` at boot) and the Bun game server (`PERSISTENCE=memory`) on port 18080. The offline suites never touch either backend; `multiplayer.e2e.ts` exercises both.\n\nBecause e2e runs the production build, **every suite runs with the service worker registering** — the existing suites double as a non-interference regression (the fixture's console-error gate catches a worker that breaks a page), and each test's fresh browser context starts with empty caches, so nothing leaks between tests. Only `pwa.e2e.ts` goes offline."
 }
@@ -2626,7 +2626,7 @@ id: toolu_01QkZPxDP15CeS3TJcY1n69B
 tool_result
 id: toolu_01QkZPxDP15CeS3TJcY1n69B
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2636,7 +2636,7 @@ id: toolu_01GNC5TCUfT7vgBirD8f9XX3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "In development the registration component instead unregisters workers and clears caches, keeping `bun run dev` immune to a stale prod worker on the same origin.",
   "new_string": "In development the registration component instead unregisters workers and clears caches, keeping `bun run dev` immune to a stale prod worker on the same origin. Pinned by classifier unit tests (`tests/sw.test.ts`) and an offline e2e (`e2e/pwa.e2e.ts`) that cuts the network and boots a world from the worker's cache."
 }
@@ -2647,7 +2647,7 @@ id: toolu_01GNC5TCUfT7vgBirD8f9XX3
 tool_result
 id: toolu_01GNC5TCUfT7vgBirD8f9XX3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2721,7 +2721,7 @@ tool_use Read
 id: toolu_0123VkBe58RVdCHBHKdNt1hR
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx"
 }
 ```
 
@@ -2770,7 +2770,7 @@ tool_use Read
 id: toolu_01FrY8Q3enPDifsHLfF4LjZN
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx"
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx"
 }
 ```
 
@@ -2821,7 +2821,7 @@ tool_use Write
 id: toolu_01EsC8hEnqrDdSRDJszbcN41
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/ui/useOnlineStatus.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/ui/useOnlineStatus.ts",
   "content": "\"use client\";\n\nimport { useSyncExternalStore } from \"react\";\n\nfunction subscribe(onStoreChange: () => void): () => void {\n  window.addEventListener(\"online\", onStoreChange);\n  window.addEventListener(\"offline\", onStoreChange);\n  return () => {\n    window.removeEventListener(\"online\", onStoreChange);\n    window.removeEventListener(\"offline\", onStoreChange);\n  };\n}\n\n/**\n * Live navigator.onLine. SSR assumes online (the overwhelmingly common case);\n * useSyncExternalStore re-reads the real value right after hydration, so an\n * offline PWA boot corrects on the client without a hydration mismatch.\n */\nexport function useOnlineStatus(): boolean {\n  return useSyncExternalStore(\n    subscribe,\n    () => navigator.onLine,\n    () => true\n  );\n}\n"
 }
 ```
@@ -2831,7 +2831,7 @@ id: toolu_01EsC8hEnqrDdSRDJszbcN41
 tool_result
 id: toolu_01EsC8hEnqrDdSRDJszbcN41
 ```
-File created successfully at: /Users/hutusi/workspace/ai/david/monecraft/lib/ui/useOnlineStatus.ts (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/workspace/ai/david/monecraft/lib/ui/useOnlineStatus.ts (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2841,7 +2841,7 @@ id: toolu_01M35FFaaC2NSHoGG9vWhN1Z
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
   "old_string": "\"use client\";\n\nimport MenuScreen from \"@/components/menu/MenuScreen\";",
   "new_string": "\"use client\";\n\nimport MenuScreen from \"@/components/menu/MenuScreen\";\nimport { useOnlineStatus } from \"@/lib/ui/useOnlineStatus\";"
 }
@@ -2852,7 +2852,7 @@ id: toolu_01M35FFaaC2NSHoGG9vWhN1Z
 tool_result
 id: toolu_01M35FFaaC2NSHoGG9vWhN1Z
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2862,7 +2862,7 @@ id: toolu_01JAJVLaKz22Y9HXrwhVWp4J
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
   "old_string": "export default function WelcomeScreen({ onSignIn, onPlayLocally }: WelcomeScreenProps) {\n  return (\n    <MenuScreen title=\"Welcome\">\n      <button type=\"button\" className=\"mc-button menu-primary\" data-testid=\"welcome-sign-in\" onClick={onSignIn}>",
   "new_string": "export default function WelcomeScreen({ onSignIn, onPlayLocally }: WelcomeScreenProps) {\n  const online = useOnlineStatus();\n  return (\n    <MenuScreen title=\"Welcome\">\n      {/* Sign in stays enabled offline — AccountForm's failure copy is the\n          real guard; this just points at the door that works. */}\n      {!online && (\n        <p className=\"menu-note\" data-testid=\"welcome-offline-note\">\n          Offline — local play only.\n        </p>\n      )}\n      <button type=\"button\" className=\"mc-button menu-primary\" data-testid=\"welcome-sign-in\" onClick={onSignIn}>"
 }
@@ -2873,7 +2873,7 @@ id: toolu_01JAJVLaKz22Y9HXrwhVWp4J
 tool_result
 id: toolu_01JAJVLaKz22Y9HXrwhVWp4J
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2883,7 +2883,7 @@ id: toolu_01UvTZoWZCr8gPpUjCQqFvcY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx",
   "old_string": "import { describe, expect, mock, test } from \"bun:test\";\nimport { render, screen } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\nimport WelcomeScreen from \"@/components/menu/WelcomeScreen\";",
   "new_string": "import { describe, expect, mock, test } from \"bun:test\";\nimport { act, render, screen } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\nimport WelcomeScreen from \"@/components/menu/WelcomeScreen\";"
 }
@@ -2894,7 +2894,7 @@ id: toolu_01UvTZoWZCr8gPpUjCQqFvcY
 tool_result
 id: toolu_01UvTZoWZCr8gPpUjCQqFvcY
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2904,7 +2904,7 @@ id: toolu_011JuBHyznQphy2wiGsxNkBK
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx",
   "old_string": "    await user.click(screen.getByRole(\"button\", { name: \"Play locally\" }));\n    expect(onPlayLocally).toHaveBeenCalled();\n  });\n});",
   "new_string": "    await user.click(screen.getByRole(\"button\", { name: \"Play locally\" }));\n    expect(onPlayLocally).toHaveBeenCalled();\n  });\n\n  test(\"shows the offline hint only while offline, with Sign in still enabled\", () => {\n    const setOnLine = (value: boolean) => Object.defineProperty(window.navigator, \"onLine\", { value, configurable: true });\n    render(<WelcomeScreen onSignIn={mock()} onPlayLocally={mock()} />);\n    expect(screen.queryByTestId(\"welcome-offline-note\")).toBeNull();\n\n    setOnLine(false);\n    act(() => {\n      window.dispatchEvent(new Event(\"offline\"));\n    });\n    expect(screen.getByText(\"Offline — local play only.\")).toBeTruthy();\n    // Sign in stays a live door: AccountForm's failure copy is the real guard.\n    expect((screen.getByRole(\"button\", { name: \"Sign in\" }) as HTMLButtonElement).disabled).toBe(false);\n\n    setOnLine(true);\n    act(() => {\n      window.dispatchEvent(new Event(\"online\"));\n    });\n    expect(screen.queryByTestId(\"welcome-offline-note\")).toBeNull();\n  });\n});"
 }
@@ -2915,7 +2915,7 @@ id: toolu_011JuBHyznQphy2wiGsxNkBK
 tool_result
 id: toolu_011JuBHyznQphy2wiGsxNkBK
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.test.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2949,7 +2949,7 @@ id: toolu_01ABDrx5LCqf1igLW9WaEdb8
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/docs/testing.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/docs/testing.md",
   "old_string": "the welcome gate (`WelcomeScreen` — exactly two doors with the exact accessible names \"Sign in\" / \"Play locally\" the e2e keys on)",
   "new_string": "the welcome gate (`WelcomeScreen` — exactly two doors with the exact accessible names \"Sign in\" / \"Play locally\" the e2e keys on, plus the \"Offline — local play only\" hint shown only while offline with Sign in left enabled)"
 }
@@ -2960,7 +2960,7 @@ id: toolu_01ABDrx5LCqf1igLW9WaEdb8
 tool_result
 id: toolu_01ABDrx5LCqf1igLW9WaEdb8
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/docs/testing.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -2970,7 +2970,7 @@ id: toolu_01GpF54p3zEcu1pcqdh3FWia
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md",
   "old_string": "- **Installable app identity (PWA, part 1)**:",
   "new_string": "- **Welcome-gate offline hint**: opened without a connection (say, as an installed PWA on a plane), the welcome gate says \"Offline — local play only.\" so the working door is obvious. Sign in stays enabled — its own failure copy already covers a dead network — and the hint tracks connectivity live via a new `useOnlineStatus` hook.\n- **Installable app identity (PWA, part 1)**:"
 }
@@ -2981,7 +2981,7 @@ id: toolu_01GpF54p3zEcu1pcqdh3FWia
 tool_result
 id: toolu_01GpF54p3zEcu1pcqdh3FWia
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/CHANGELOG.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3189,7 +3189,7 @@ tool_use Write
 id: toolu_01EtuRgko2eF45w6NjuBTzSj
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "content": "---\nname: pwa-branch\ndescription: \"PWA feature — branch feature/pwa BUILT + full gate green (2026-07-05, 4 commits, tip d205ac8); PR not opened (user-authorized); manual Vercel-preview pass pending\"\nmetadata:\n  type: project\n---\n\n**Branch `feature/pwa` complete locally (2026-07-05), 4 commits: `7ea8ccf` manifest+ImageResponse icons+title \"Monecraft\", `7d8d9a7` hand-rolled `public/sw.js`+registration+headers, `5247ab6` tests (tests/sw.test.ts classifier + e2e/pwa.e2e.ts offline flow; dropped the favicon-404 e2e mute), `d205ac8` welcome-gate offline hint (`lib/ui/useOnlineStatus.ts`).** Full gate green: lint/typecheck/format/1203 unit tests/build/24 e2e (all suites now run SW-controlled). Plan executed from `~/.claude/plans/start-the-pwa-plan-goofy-kahn.md`.\n\n**Why:** installable desktop app + offline single-player; codebase was already offline-ready except the PWA layer ([[mp-latency-branch]] chose this as the next feature).\n\n**How to apply / what's left:**\n- **PR not opened, nothing pushed** — user authorizes that (see [[no-pr-attribution]]).\n- **Manual pass on a Vercel preview pending**: Lighthouse PWA, Chrome desktop install, real offline session, second deploy updates on next online load, no `/api` cache entries.\n- Gotchas discovered: Satori icon cells must land on whole pixels (scale × size divisible by 8) or grid seams appear; Playwright `context.setOffline` DOES cut SW fetches on current Chromium (the `transferSize === 0` assertion in pwa.e2e.ts would catch a regression); zzfx stays a gesture-gated dynamic import — offline-before-first-unlock = silent game by design (`audioDirector.ts` […]
 
 > TOOL
@@ -3197,7 +3197,7 @@ id: toolu_01EtuRgko2eF45w6NjuBTzSj
 tool_result
 id: toolu_01EtuRgko2eF45w6NjuBTzSj
 ```
-File created successfully at: /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3207,8 +3207,8 @@ id: toolu_01H1vKZBKkK816BKMtMUAMaw
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md",
-  "old_string": "Next feature decided: **PWA in a fresh session** — plan ready at `/Users/hutusi/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md` (branch `feature/pwa`; manifest + ImageResponse pixel icons + hand-rolled sw.js; NOT mobile play).",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md",
+  "old_string": "Next feature decided: **PWA in a fresh session** — plan ready at `/home/<USER>/.claude/plans/problem-high-multiplayer-latency-parsed-hamming.md` (branch `feature/pwa`; manifest + ImageResponse pixel icons + hand-rolled sw.js; NOT mobile play).",
   "new_string": "Next feature (PWA) is now built — see [[pwa-branch]]."
 }
 ```
@@ -3218,7 +3218,7 @@ id: toolu_01H1vKZBKkK816BKMtMUAMaw
 tool_result
 id: toolu_01H1vKZBKkK816BKMtMUAMaw
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/mp-latency-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3228,7 +3228,7 @@ id: toolu_01KPKMDantfjEuMDWr5Lp5pa
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [MP latency branch](mp-latency-branch.md) — **✅ PR #52 MERGED `55aa7d0`** (prediction/adaptive-interp/deflate + region ord→sjc); **Fly deploy + 1-machine check + ping re-test PENDING**; next: PWA in fresh session (plan file ready)",
   "new_string": "- [MP latency branch](mp-latency-branch.md) — **✅ PR #52 MERGED `55aa7d0`** (prediction/adaptive-interp/deflate + region ord→sjc); **Fly deploy + 1-machine check + ping re-test PENDING**\n- [PWA branch](pwa-branch.md) — **✅ `feature/pwa` BUILT, full gate green** (4 commits, tip `d205ac8`, 2026-07-05); PR/push awaits user; Vercel-preview manual pass pending"
 }
@@ -3248,7 +3248,7 @@ tool_use Read
 id: toolu_01GKsHaapf9G85xHCLWS1Gnb
 ```json
 {
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md"
 }
 ```
 
@@ -3272,7 +3272,7 @@ id: toolu_01V4fCn12Cg2F4yJNW2ycjsb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [MP latency branch](mp-latency-branch.md) — **✅ PR #52 MERGED `55aa7d0`** (prediction/adaptive-interp/deflate + region ord→sjc); **Fly deploy + 1-machine check + ping re-test PENDING**; next: PWA in fresh session (plan file ready)",
   "new_string": "- [MP latency branch](mp-latency-branch.md) — **✅ PR #52 MERGED `55aa7d0`** (prediction/adaptive-interp/deflate + region ord→sjc); **Fly deploy + 1-machine check + ping re-test PENDING**\n- [PWA branch](pwa-branch.md) — **✅ `feature/pwa` BUILT, full gate green** (4 commits, tip `d205ac8`, 2026-07-05); PR/push awaits user; Vercel-preview manual pass pending"
 }
@@ -3283,7 +3283,7 @@ id: toolu_01V4fCn12Cg2F4yJNW2ycjsb
 tool_result
 id: toolu_01V4fCn12Cg2F4yJNW2ycjsb
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3347,7 +3347,7 @@ id: toolu_01EdocNEZTF9rbXxPvWFVnUj
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "description: \"PWA feature — branch feature/pwa BUILT + full gate green (2026-07-05, 4 commits, tip d205ac8); PR not opened (user-authorized); manual Vercel-preview pass pending\"",
   "new_string": "description: \"PWA feature — PR #53 OPEN (feature/pwa, 4 commits, tip d205ac8, full gate green, 2026-07-05); manual Vercel-preview pass pending\""
 }
@@ -3358,7 +3358,7 @@ id: toolu_01EdocNEZTF9rbXxPvWFVnUj
 tool_result
 id: toolu_01EdocNEZTF9rbXxPvWFVnUj
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3368,7 +3368,7 @@ id: toolu_01FTTNh5bcyDmU4d1iPmPpv2
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "- **PR not opened, nothing pushed** — user authorizes that (see [[no-pr-attribution]]).",
   "new_string": "- **PR #53 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/53), branch pushed on user request."
 }
@@ -3379,7 +3379,7 @@ id: toolu_01FTTNh5bcyDmU4d1iPmPpv2
 tool_result
 id: toolu_01FTTNh5bcyDmU4d1iPmPpv2
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3389,7 +3389,7 @@ id: toolu_016BNHZCkdHiTyAkSk2x8nZR
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md",
   "old_string": "- [PWA branch](pwa-branch.md) — **✅ `feature/pwa` BUILT, full gate green** (4 commits, tip `d205ac8`, 2026-07-05); PR/push awaits user; Vercel-preview manual pass pending",
   "new_string": "- [PWA branch](pwa-branch.md) — **✅ PR #53 OPEN** (`feature/pwa`, 4 commits, full gate green, 2026-07-05); Vercel-preview manual pass pending"
 }
@@ -3400,7 +3400,7 @@ id: toolu_016BNHZCkdHiTyAkSk2x8nZR
 tool_result
 id: toolu_016BNHZCkdHiTyAkSk2x8nZR
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/MEMORY.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3622,7 +3622,7 @@ id: toolu_01VxXN9rum1tRj1yb4FJ1uhD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/public/sw.js",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/public/sw.js",
   "old_string": "  } catch {\n    // Installed while offline: the first online navigation fills the caches.\n  }\n  await precacheExtras();\n}",
   "new_string": "  } catch {\n    // Installed while offline: the first online navigation fills the caches.\n  }\n  try {\n    await precacheExtras();\n  } catch {\n    // Best-effort like every other cache write: a storage failure here must\n    // not reject waitUntil and abort the whole installation.\n  }\n}"
 }
@@ -3633,7 +3633,7 @@ id: toolu_01VxXN9rum1tRj1yb4FJ1uhD
 tool_result
 id: toolu_01VxXN9rum1tRj1yb4FJ1uhD
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/public/sw.js has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/public/sw.js has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3643,7 +3643,7 @@ id: toolu_01YKU3hAR8t1v8Nqa21CAQg6
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx",
   "old_string": "        <p className=\"menu-note\" data-testid=\"welcome-offline-note\">\n          Offline — local play only.\n        </p>",
   "new_string": "        <p className=\"menu-note\" data-testid=\"welcome-offline-note\" aria-live=\"polite\">\n          Offline — local play only.\n        </p>"
 }
@@ -3654,7 +3654,7 @@ id: toolu_01YKU3hAR8t1v8Nqa21CAQg6
 tool_result
 id: toolu_01YKU3hAR8t1v8Nqa21CAQg6
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/components/menu/WelcomeScreen.tsx has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -3781,7 +3781,7 @@ id: toolu_01QWQ12WNWuYsQS4DmX9JZiv
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "- **PR #53 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/53), branch pushed on user request.",
   "new_string": "- **PR #53 opened 2026-07-05** (https://github.com/hutusi/monecraft/pull/53). CodeRabbit round 1: 2 fixes applied + pushed (`0e8f1ed` — precacheExtras try/catch so a storage failure can't abort SW install; aria-live on the offline note), icon-route dedup nitpick skipped (routes differ, helper can't live in a route dir). PR `verify` green; e2e skips on PRs (runs on merge to main). **Vercel preview NOT built for this PR (\"Canceled by Ignored Build Step\") — the manual PWA pass must happen on prod after merge unless the Ignored Build Step is changed.**"
 }
@@ -3792,7 +3792,7 @@ id: toolu_01QWQ12WNWuYsQS4DmX9JZiv
 tool_result
 id: toolu_01QWQ12WNWuYsQS4DmX9JZiv
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -3884,7 +3884,7 @@ tool_use Bash
 id: toolu_01Cw7f5t2hhrLWBUrdf3baEr
 ```json
 {
-  "command": "grep -n \"never reorders sends\" -A 40 /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head -60",
+  "command": "grep -n \"never reorders sends\" -A 40 /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts | head -60",
   "description": "Read the flaky test's implementation"
 }
 ```
@@ -3944,7 +3944,7 @@ id: toolu_01Q3yR5rLMEmX1qo1jveGgV4
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "old_string": "    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    await new Promise((resolve) => setTimeout(resolve, 300));\n    const chats = instances[0].sent\n      .slice(before)\n      .map((s) => JSON.parse(s) as { t: string; text?: string })\n      .filter((m) => m.t === \"chat\")\n      .map((m) => m.text);\n    expect(chats).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));",
   "new_string": "    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    const chatsSoFar = () =>\n      instances[0].sent\n        .slice(before)\n        .map((s) => JSON.parse(s) as { t: string; text?: string })\n        .filter((m) => m.t === \"chat\")\n        .map((m) => m.text);\n    // Poll for completeness rather than sleeping a fixed 300 ms — a loaded CI\n    // runner can starve the delivery timers past any fixed deadline, and this\n    // test is about ORDER, not delivery speed.\n    const deadline = Date.now() + 5000;\n    while (chatsSoFar().length < 20 && Date.now() < deadline) {\n      await new Promise((resolve) => setTimeout(resolve, 25));\n    }\n    expect(chatsSoFar()).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));"
 }
@@ -3983,7 +3983,7 @@ tool_use Read
 id: toolu_013cVVQ9x1iPY2Xx4ZGwMKJD
 ```json
 {
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "offset": 295,
   "limit": 20
 }
@@ -4023,7 +4023,7 @@ id: toolu_011t9KevBBTGs9iBQQjXsiY3
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
+  "file_path": "/home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts",
   "old_string": "    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    await new Promise((resolve) => setTimeout(resolve, 300));\n    const chats = instances[0].sent\n      .slice(before)\n      .map((s) => JSON.parse(s) as { t: string; text?: string })\n      .filter((m) => m.t === \"chat\")\n      .map((m) => m.text);\n    expect(chats).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));",
   "new_string": "    const before = instances[0].sent.length;\n    for (let i = 0; i < 20; i += 1) session.sendChat(`m${i}`);\n    const chatsSoFar = () =>\n      instances[0].sent\n        .slice(before)\n        .map((s) => JSON.parse(s) as { t: string; text?: string })\n        .filter((m) => m.t === \"chat\")\n        .map((m) => m.text);\n    // Poll for completeness rather than sleeping a fixed 300 ms — a loaded CI\n    // runner can starve the delivery timers past any fixed deadline, and this\n    // test is about ORDER, not delivery speed.\n    const deadline = Date.now() + 5000;\n    while (chatsSoFar().length < 20 && Date.now() < deadline) {\n      await new Promise((resolve) => setTimeout(resolve, 25));\n    }\n    expect(chatsSoFar()).toEqual(Array.from({ length: 20 }, (_, i) => `m${i}`));"
 }
@@ -4034,7 +4034,7 @@ id: toolu_011t9KevBBTGs9iBQQjXsiY3
 tool_result
 id: toolu_011t9KevBBTGs9iBQQjXsiY3
 ```
-The file /Users/hutusi/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/workspace/ai/david/monecraft/lib/net/NetworkSession.test.ts has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -4101,7 +4101,7 @@ id: toolu_01FX2SbgmDJruDpN95wusWj5
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "- Gotchas discovered:",
   "new_string": "- **CI flake found + fixed**: `NetworkSession.test.ts` \"jittered FIFO\" test (from #52) failed verify on a loaded runner — fixed-300ms sleep truncates; deflake commit `176d647` (poll-for-completeness) sits LOCAL on feature/pwa, unpushed; rerun made the PR green meanwhile.\n- Gotchas discovered:"
 }
@@ -4112,7 +4112,7 @@ id: toolu_01FX2SbgmDJruDpN95wusWj5
 tool_result
 id: toolu_01FX2SbgmDJruDpN95wusWj5
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -4254,7 +4254,7 @@ id: toolu_019McjKZiFmBmSzaogkLst7Q
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
+  "file_path": "/home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md",
   "old_string": "- **CI flake found + fixed**: `NetworkSession.test.ts` \"jittered FIFO\" test (from #52) failed verify on a loaded runner — fixed-300ms sleep truncates; deflake commit `176d647` (poll-for-completeness) sits LOCAL on feature/pwa, unpushed; rerun made the PR green meanwhile.",
   "new_string": "- **CI flake found + fixed**: `NetworkSession.test.ts` \"jittered FIFO\" test (from #52) failed verify on a loaded runner — fixed-300ms sleep truncates under timer starvation; deflake `176d647` (poll-for-completeness) PUSHED, verify green on it. PR is 6 commits, all checks green, ready to merge."
 }
@@ -4265,7 +4265,7 @@ id: toolu_019McjKZiFmBmSzaogkLst7Q
 tool_result
 id: toolu_019McjKZiFmBmSzaogkLst7Q
 ```
-The file /Users/hutusi/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/.claude/projects/-Users-hutusi-workspace-ai-david-monecraft/memory/pwa-branch.md has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT

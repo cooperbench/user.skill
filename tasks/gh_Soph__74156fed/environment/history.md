@@ -181,7 +181,7 @@ tool_use Read
 id: toolu_014WkoMgLAZjo27VQY6CRFCs
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go"
 }
 ```
 
@@ -238,7 +238,7 @@ tool_use Read
 id: toolu_013dfnCT6X4YRvQXkt25riDz
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go"
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go"
 }
 ```
 
@@ -340,7 +340,7 @@ tool_use Read
 id: toolu_011Gr1RRgjSVmAnAi8ABssMh
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "offset": 700,
   "limit": 80
 }
@@ -432,7 +432,7 @@ tool_use Read
 id: toolu_01F1FQCFF57ER26ns96qjYdk
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/git_http_backend_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/git_http_backend_test.go",
   "offset": 770,
   "limit": 15
 }
@@ -471,7 +471,7 @@ id: toolu_01F5R2bgMZ1qxXdzDLs9pw87
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "import (\n\t\"context\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"net/url\"\n\t\"os/exec\"\n\t\"strings\"\n\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n)",
   "new_string": "import (\n\t\"context\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"net/url\"\n\t\"os\"\n\t\"os/exec\"\n\t\"strings\"\n\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n)"
 }
@@ -482,7 +482,7 @@ id: toolu_01F5R2bgMZ1qxXdzDLs9pw87
 tool_result
 id: toolu_01F5R2bgMZ1qxXdzDLs9pw87
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -492,7 +492,7 @@ id: toolu_01UGp32ZArzR7WmDjrVM31Rh
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "// GitCredentialFillCommand is replaceable for testing.\nvar GitCredentialFillCommand = func(ctx context.Context, input string) ([]byte, error) {\n\tcmd := exec.CommandContext(ctx, \"git\", \"credential\", \"fill\")\n\tcmd.Stdin = strings.NewReader(input)\n\treturn cmd.Output()\n}",
   "new_string": "// GitCredentialFillCommand is replaceable for testing.\nvar GitCredentialFillCommand = func(ctx context.Context, input string) ([]byte, error) {\n\tcmd := exec.CommandContext(ctx, \"git\", \"credential\", \"fill\")\n\tcmd.Stdin = strings.NewReader(input)\n\t// Disable git's interactive terminal prompt fallback. When no credential\n\t// helper has credentials for the host (e.g. a public repo on a server\n\t// the user has never authenticated against), git would otherwise drop\n\t// to an interactive username/password prompt on stderr. git-sync is a\n\t// non-interactive tool — failing here lets us cleanly fall back to\n\t// anonymous access. See issue #63.\n\tcmd.Env = append(os.Environ(), \"GIT_TERMINAL_PROMPT=0\")\n\treturn cmd.Output()\n}"
 }
@@ -503,7 +503,7 @@ id: toolu_01UGp32ZArzR7WmDjrVM31Rh
 tool_result
 id: toolu_01UGp32ZArzR7WmDjrVM31Rh
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -516,7 +516,7 @@ tool_use Read
 id: toolu_01XiNacqBXPELf8tYNgo9RP3
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/syncer/syncer.go",
   "offset": 722,
   "limit": 25
 }
@@ -606,7 +606,7 @@ tool_use Read
 id: toolu_01VPCRJZ8RVZhYDwZP99UzzT
 ```json
 {
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "offset": 1,
   "limit": 20
 }
@@ -646,7 +646,7 @@ id: toolu_013aKgrtjYmxAEGkiWsPsZNB
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "import (\n\t\"context\"\n\t\"errors\"\n\t\"fmt\"\n\t\"net/url\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"strconv\"\n\t\"strings\"\n\t\"testing\"\n\t\"time\"\n\n\t\"github.com/go-git/go-git/v6/plumbing/transport\"\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n\t\"github.com/zalando/go-keyring\"\n)",
   "new_string": "import (\n\t\"context\"\n\t\"errors\"\n\t\"fmt\"\n\t\"net/url\"\n\t\"os\"\n\t\"os/exec\"\n\t\"path/filepath\"\n\t\"strconv\"\n\t\"strings\"\n\t\"testing\"\n\t\"time\"\n\n\t\"github.com/go-git/go-git/v6/plumbing/transport\"\n\ttransporthttp \"github.com/go-git/go-git/v6/plumbing/transport/http\"\n\t\"github.com/zalando/go-keyring\"\n)"
 }
@@ -657,7 +657,7 @@ id: toolu_013aKgrtjYmxAEGkiWsPsZNB
 tool_result
 id: toolu_013aKgrtjYmxAEGkiWsPsZNB
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -667,7 +667,7 @@ id: toolu_01QwSzZPLTc5ju3CM5nndaFz
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "func TestCredentialService(t *testing.T) {",
   "new_string": "// TestGitCredentialFillNoTerminalPrompt verifies that the default\n// GitCredentialFillCommand does not fall back to an interactive terminal\n// prompt when no credential helper has credentials. Regression test for\n// issue #63 — git-sync would prompt for username/password on stderr when\n// syncing from a public repo on a host the user had not authenticated\n// against.\nfunc TestGitCredentialFillNoTerminalPrompt(t *testing.T) {\n\tif _, err := exec.LookPath(\"git\"); err != nil {\n\t\tt.Skip(\"git not installed\")\n\t}\n\n\t// Isolate from system and user git config so no credential.helper is\n\t// picked up from the test environment.\n\ttmpHome := t.TempDir()\n\tt.Setenv(\"HOME\", tmpHome)\n\tt.Setenv(\"XDG_CONFIG_HOME\", tmpHome)\n\tt.Setenv(\"GIT_CONFIG_NOSYSTEM\", \"1\")\n\tt.Setenv(\"GIT_CONFIG_GLOBAL\", filepath.Join(tmpHome, \"gitconfig-empty\"))\n\n\tctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)\n\tdefer cancel()\n\n\tinput := \"protocol=https\\nhost=test-git-sync.example.invalid\\n\\n\"\n\t_, err := GitCredentialFillCommand(ctx, input)\n\tif err == nil {\n\t\tt.Fatal(\"expected error when no credential helper is configured, got nil — git may have prompted or filled credentials unexpectedly\")\n\t}\n\tif ctx.Err() != nil {\n\t\tt.Fatal(\"git credential fill timed out — likely blocking on a terminal prompt instead of failing fast\")\n\t}\n}\n\nfunc TestCredentialService(t *testing.T) {"
 }
@@ -678,7 +678,7 @@ id: toolu_01QwSzZPLTc5ju3CM5nndaFz
 tool_result
 id: toolu_01QwSzZPLTc5ju3CM5nndaFz
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -726,7 +726,7 @@ id: toolu_012qKjYFkxgByez24HBC3TVp
 err: exit status 128
 out: 
 ctx.Err: <nil>
-Shell cwd was reset to /Users/soph/Work/entire/devenv/git-sync
+Shell cwd was reset to /home/<USER>/Work/entire/devenv/git-sync
 ```
 
 > AGENT
@@ -740,7 +740,7 @@ id: toolu_01UigmLBLPeNo3dhiVn3pM5y
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go",
   "old_string": "// GitCredentialFillCommand is replaceable for testing.\nvar GitCredentialFillCommand = func(ctx context.Context, input string) ([]byte, error) {\n\tcmd := exec.CommandContext(ctx, \"git\", \"credential\", \"fill\")\n\tcmd.Stdin = strings.NewReader(input)\n\t// Disable git's interactive terminal prompt fallback. When no credential\n\t// helper has credentials for the host (e.g. a public repo on a server\n\t// the user has never authenticated against), git would otherwise drop\n\t// to an interactive username/password prompt on stderr. git-sync is a\n\t// non-interactive tool — failing here lets us cleanly fall back to\n\t// anonymous access. See issue #63.\n\tcmd.Env = append(os.Environ(), \"GIT_TERMINAL_PROMPT=0\")\n\treturn cmd.Output()\n}",
   "new_string": "// newCredentialFillCmd builds the `git credential fill` invocation used by\n// GitCredentialFillCommand. Extracted so tests can inspect the command's\n// environment without exec'ing git.\nfunc newCredentialFillCmd(ctx context.Context, input string) *exec.Cmd {\n\tcmd := exec.CommandContext(ctx, \"git\", \"credential\", \"fill\")\n\tcmd.Stdin = strings.NewReader(input)\n\t// Disable git's interactive terminal prompt fallback. When no credential\n\t// helper has credentials for the host (e.g. a public repo on a server\n\t// the user has never authenticated against), git would otherwise drop\n\t// to an interactive username/password prompt on /dev/tty. git-sync is a\n\t// non-interactive tool — failing here lets us cleanly fall back to\n\t// anonymous access. See issue #63.\n\tcmd.Env = append(os.Environ(), \"GIT_TERMINAL_PROMPT=0\")\n\treturn cmd\n}\n\n// GitCredentialFillCommand is replaceable for testing.\nvar GitCredentialFillCommand = […]
 
@@ -749,7 +749,7 @@ id: toolu_01UigmLBLPeNo3dhiVn3pM5y
 tool_result
 id: toolu_01UigmLBLPeNo3dhiVn3pM5y
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL
@@ -759,7 +759,7 @@ id: toolu_01Ggvs6jMyYGQaYWCiWtGuwY
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "// TestGitCredentialFillNoTerminalPrompt verifies that the default\n// GitCredentialFillCommand does not fall back to an interactive terminal\n// prompt when no credential helper has credentials. Regression test for\n// issue #63 — git-sync would prompt for username/password on stderr when\n// syncing from a public repo on a host the user had not authenticated\n// against.\nfunc TestGitCredentialFillNoTerminalPrompt(t *testing.T) {\n\tif _, err := exec.LookPath(\"git\"); err != nil {\n\t\tt.Skip(\"git not installed\")\n\t}\n\n\t// Isolate from system and user git config so no credential.helper is\n\t// picked up from the test environment.\n\ttmpHome := t.TempDir()\n\tt.Setenv(\"HOME\", tmpHome)\n\tt.Setenv(\"XDG_CONFIG_HOME\", tmpHome)\n\tt.Setenv(\"GIT_CONFIG_NOSYSTEM\", \"1\")\n\tt.Setenv(\"GIT_CONFIG_GLOBAL\", filepath.Join(tmpHome, \"gitconfig-empty\"))\n\n\tctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)\n\tdefer cancel()\n\n\tinput := \"protocol=https\\nhost=test-git-sync.example.invalid\\n\\n\"\n\t_, err := GitCredentialFillCommand(ctx, input)\n\tif err == nil {\n\t\tt.Fatal(\"expected error when no credential helper is configured, got nil — git may have prompted or filled credentials unexpectedly\")\n\t}\n\tif ctx.Err() != nil {\n\t\tt.Fatal(\"git credential fill timed out — likely blocking on a terminal prompt instead of failing fast\")\n\t}\n}",
   "new_string": "// TestCredentialFillCmdDisablesTerminalPrompt verifies that the git\n// credential fill invocation sets GIT_TERMINAL_PROMPT=0. Without this,\n// git falls back to an interactive username/password prompt on /dev/tty\n// when no credential helper has credentials — turning git-sync into an\n// interactive command. Regression test for issue #63.\nfunc TestCredentialFillCmdDisablesTerminalPrompt(t *testing.T) {\n\tcmd := newCredentialFillCmd(context.Background(), \"protocol=https\\nhost=example.com\\n\\n\")\n\n\tvar found bool\n\tfor […]
 
@@ -768,7 +768,7 @@ id: toolu_01Ggvs6jMyYGQaYWCiWtGuwY
 tool_result
 id: toolu_01Ggvs6jMyYGQaYWCiWtGuwY
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -782,7 +782,7 @@ id: toolu_01BDXF7eQ4E36dquMecSpcAp
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
+  "file_path": "/home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go",
   "old_string": "\t\"os\"\n\t\"os/exec\"\n\t\"path/filepath\"",
   "new_string": "\t\"os\"\n\t\"path/filepath\""
 }
@@ -793,7 +793,7 @@ id: toolu_01BDXF7eQ4E36dquMecSpcAp
 tool_result
 id: toolu_01BDXF7eQ4E36dquMecSpcAp
 ```
-The file /Users/soph/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
+The file /home/<USER>/Work/entire/devenv/git-sync/internal/auth/auth_test.go has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 
 > TOOL

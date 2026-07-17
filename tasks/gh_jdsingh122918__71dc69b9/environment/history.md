@@ -140,9 +140,16 @@ tool_result ERROR
 id: toolu_01VEEpGVqJ4he6WJ5hDrnqHy
 ```
 Exit code 1
-Rebasing (1/21)dropping 00c0ad7cd0572a704b8f8b9e34484b11be51bd92 docs: add database improvements + Turso integration design -- patch contents already upstream
-Rebasing (2/21)dropping c0cc67c5226ecc982f87c182d91385f55ac54650 docs: add database improvements + Turso implementation plan -- patch contents already upstream
-Rebasing (3/21)Rebasing (4/21)Rebasing (5/21)Rebasing (6/21)Rebasing (7/21)Auto-merging src/cmd/run.rs
+Rebasing (1/21)
+dropping 00c0ad7cd0572a704b8f8b9e34484b11be51bd92 docs: add database improvements + Turso integration design -- patch contents already upstream
+Rebasing (2/21)
+dropping c0cc67c5226ecc982f87c182d91385f55ac54650 docs: add database improvements + Turso implementation plan -- patch contents already upstream
+Rebasing (3/21)
+Rebasing (4/21)
+Rebasing (5/21)
+Rebasing (6/21)
+Rebasing (7/21)
+Auto-merging src/cmd/run.rs
 CONFLICT (content): Merge conflict in src/cmd/run.rs
 Auto-merging src/dag/executor.rs
 CONFLICT (content): Merge conflict in src/dag/executor.rs
@@ -208,7 +215,7 @@ tool_use Read
 id: toolu_01FuhYjcdsAcabYj42s1tPQj
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/cmd/run.rs",
   "limit": 15
 }
 ```
@@ -241,7 +248,7 @@ tool_use Read
 id: toolu_015Q2EPTezmppGfkvV2MWgmB
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/dag/executor.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/dag/executor.rs",
   "limit": 55
 }
 ```
@@ -295,7 +302,7 @@ id: toolu_01Hs74ety4FhYihCdmRvkZ43
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/cmd/run.rs",
   "old_string": "<<<<<<< HEAD\nuse tracing::warn;\n=======\nuse tracing::{info, info_span, warn};\n>>>>>>> eb4df4a (feat(observability): add tracing spans to orchestrator and DAG executor)",
   "new_string": "use tracing::{info, info_span, warn};"
 }
@@ -308,7 +315,7 @@ id: toolu_01S2HTmda4R9PANJszpMinFb
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/dag/executor.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/dag/executor.rs",
   "old_string": "<<<<<<< HEAD\nuse tracing::{debug, warn};\n=======\nuse tracing::{info, info_span};\n>>>>>>> eb4df4a (feat(observability): add tracing spans to orchestrator and DAG executor)",
   "new_string": "use tracing::{debug, info, info_span, warn};"
 }
@@ -319,7 +326,7 @@ id: toolu_01S2HTmda4R9PANJszpMinFb
 tool_result
 id: toolu_01Hs74ety4FhYihCdmRvkZ43
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/cmd/run.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/cmd/run.rs has been updated successfully.
 ```
 
 > TOOL
@@ -327,7 +334,7 @@ The file /Users/jdsingh/Projects/AI/forge/src/cmd/run.rs has been updated succes
 tool_result
 id: toolu_01S2HTmda4R9PANJszpMinFb
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/dag/executor.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/dag/executor.rs has been updated successfully.
 ```
 
 > AGENT
@@ -353,7 +360,8 @@ id: toolu_01VVWoC6SVHCPip6fBS6KxU9
 Exit code 1
 [detached HEAD 6722dfd] feat(observability): add tracing spans to orchestrator and DAG executor
  3 files changed, 42 insertions(+), 2 deletions(-)
-Rebasing (8/21)CONFLICT (modify/delete): src/factory/pipeline.rs deleted in HEAD and modified in 8ab16f3 (feat(observability): add tracing to pipeline and review system).  Version 8ab16f3 (feat(observability): add tracing to pipeline and review system) of src/factory/pipeline.rs left in tree.
+Rebasing (8/21)
+CONFLICT (modify/delete): src/factory/pipeline.rs deleted in HEAD and modified in 8ab16f3 (feat(observability): add tracing to pipeline and review system).  Version 8ab16f3 (feat(observability): add tracing to pipeline and review system) of src/factory/pipeline.rs left in tree.
 Auto-merging src/review/dispatcher.rs
 error: could not apply 8ab16f3... feat(observability): add tracing to pipeline and review system
 hint: Resolve all conflicts manually, mark them as resolved with
@@ -430,12 +438,12 @@ tool_result
 id: toolu_0199C5dhvT72bWRmcfpWFHKX
 ```
 commit 8ab16f35f7bd1e574a74dd5d15ea34c895234dc1
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Mon Mar 9 21:54:00 2026 -0500
 
     feat(observability): add tracing to pipeline and review system
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/src/factory/pipeline.rs b/src/factory/pipeline.rs
 index d74ecb6..2ce5882 100644
@@ -490,7 +498,7 @@ id: toolu_01YbUc7riZG5J6Yto1qyfAMC
 ```json
 {
   "pattern": "tracing",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/",
   "output_mode": "content"
 }
 ```
@@ -512,7 +520,7 @@ id: toolu_01J9j2MhDDgPeYxzv3LiJ8Fd
 ```json
 {
   "pattern": "Pipeline started|Pipeline completed|Pipeline failed",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/",
   "output_mode": "content"
 }
 ```
@@ -537,7 +545,7 @@ tool_use Read
 id: toolu_018aUuVD5TmLcQeqcaTknihB
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "offset": 600,
   "limit": 50
 }
@@ -600,7 +608,7 @@ id: toolu_01Hp32CyDgcpRi8g1iiA9VXS
 ```json
 {
   "pattern": "PipelineStarted\"",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -624,7 +632,7 @@ tool_use Read
 id: toolu_01VdFu42gV8pAAs22r6Mc6fu
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "offset": 860,
   "limit": 70
 }
@@ -717,7 +725,8 @@ Exit code 1
 rm 'src/factory/pipeline.rs'
 [detached HEAD a97ecb1] feat(observability): add tracing to pipeline and review system
  1 file changed, 13 insertions(+)
-Rebasing (9/21)CONFLICT (modify/delete): src/factory/db.rs deleted in HEAD and modified in 397eaec (feat(observability): add metrics database schema migration).  Version 397eaec (feat(observability): add metrics database schema migration) of src/factory/db.rs left in tree.
+Rebasing (9/21)
+CONFLICT (modify/delete): src/factory/db.rs deleted in HEAD and modified in 397eaec (feat(observability): add metrics database schema migration).  Version 397eaec (feat(observability): add metrics database schema migration) of src/factory/db.rs left in tree.
 error: could not apply 397eaec... feat(observability): add metrics database schema migration
 hint: Resolve all conflicts manually, mark them as resolved with
 hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
@@ -748,12 +757,12 @@ tool_result
 id: toolu_01CJ85WUM1dMU9JSzKLwodSU
 ```
 commit 397eaec049b02272e886d650e3e70e95087f7bc8
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Mon Mar 9 22:09:16 2026 -0500
 
     feat(observability): add metrics database schema migration
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/src/factory/db.rs b/src/factory/db.rs
 index 409ace8..1e96236 100644
@@ -834,7 +843,7 @@ id: toolu_01MMFyHh2CgCoUoNsGvY7QSu
 ```json
 {
   "pattern": "metrics_runs|metrics_phases|metrics_iterations",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/db/",
   "output_mode": "content",
   "-n": true
 }
@@ -882,7 +891,7 @@ tool_use Read
 id: toolu_01VHdwtjYx7nDeARdJZGYJEn
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs",
   "limit": 50
 }
 ```
@@ -1019,7 +1028,7 @@ id: toolu_01Lf5JizNzQkTq5brYCo7GPT
 ```json
 {
   "pattern": "pub.*conn",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/mod.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/db/mod.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -1044,7 +1053,7 @@ tool_use Write
 id: toolu_012tseUYX5A8KXZf8tSdUTJK
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations/007_metrics.sql",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations/007_metrics.sql",
   "content": "-- Metrics tables for observability analytics\n\nCREATE TABLE IF NOT EXISTS metrics_runs (\n    id INTEGER PRIMARY KEY,\n    run_id TEXT NOT NULL UNIQUE,\n    issue_id INTEGER,\n    success INTEGER NOT NULL DEFAULT 0,\n    phases_total INTEGER,\n    phases_passed INTEGER,\n    duration_secs REAL,\n    started_at TEXT NOT NULL,\n    completed_at TEXT,\n    created_at TEXT NOT NULL DEFAULT (datetime('now'))\n);\n\nCREATE TABLE IF NOT EXISTS metrics_phases (\n    id INTEGER PRIMARY KEY,\n    run_id TEXT NOT NULL REFERENCES metrics_runs(run_id),\n    phase_number INTEGER NOT NULL,\n    phase_name TEXT NOT NULL,\n    budget INTEGER NOT NULL,\n    iterations_used INTEGER,\n    outcome TEXT,\n    duration_secs REAL,\n    files_added INTEGER DEFAULT 0,\n    files_modified INTEGER DEFAULT 0,\n    files_deleted INTEGER DEFAULT 0,\n    lines_added INTEGER DEFAULT 0,\n    lines_removed INTEGER DEFAULT 0,\n    started_at TEXT NOT NULL,\n    completed_at TEXT,\n    UNIQUE(run_id, phase_number)\n);\n\nCREATE TABLE IF NOT EXISTS metrics_iterations (\n    id INTEGER PRIMARY KEY,\n    run_id TEXT NOT NULL,\n    phase_number INTEGER NOT NULL,\n    iteration INTEGER NOT NULL,\n    duration_secs REAL,\n    prompt_chars INTEGER,\n    output_chars INTEGER,\n    input_tokens INTEGER,\n    output_tokens INTEGER,\n    progress_percent INTEGER,\n    blocker_count INTEGER DEFAULT 0,\n    pivot_count INTEGER DEFAULT 0,\n    promise_found INTEGER DEFAULT 0,\n    FOREIGN KEY (run_id, phase_number) REFERENCES metrics_phases(run_id, phase_number)\n);\n\nCREATE TABLE IF NOT EXISTS metrics_reviews (\n    id INTEGER PRIMARY KEY,\n    run_id TEXT NOT NULL,\n    phase_number INTEGER NOT NULL,\n    specialist_type TEXT NOT NULL,\n    verdict TEXT NOT NULL,\n    findings_count INTEGER DEFAULT […]
 
 > TOOL
@@ -1052,7 +1061,7 @@ id: toolu_012tseUYX5A8KXZf8tSdUTJK
 tool_result
 id: toolu_012tseUYX5A8KXZf8tSdUTJK
 ```
-File created successfully at: /Users/jdsingh/Projects/AI/forge/src/factory/db/migrations/007_metrics.sql
+File created successfully at: /home/<USER>/Projects/AI/forge/src/factory/db/migrations/007_metrics.sql
 ```
 
 > TOOL
@@ -1062,7 +1071,7 @@ id: toolu_01T8KjogoEQFgW3ZAyZSpXdH
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs",
   "old_string": "    (\n        6,\n        include_str!(\"migrations/006_soft_deletes_and_indexes.sql\"),\n    ),\n];",
   "new_string": "    (\n        6,\n        include_str!(\"migrations/006_soft_deletes_and_indexes.sql\"),\n    ),\n    (7, include_str!(\"migrations/007_metrics.sql\")),\n];"
 }
@@ -1073,7 +1082,7 @@ id: toolu_01T8KjogoEQFgW3ZAyZSpXdH
 tool_result
 id: toolu_01T8KjogoEQFgW3ZAyZSpXdH
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs has been updated successfully.
 ```
 
 > TOOL
@@ -1097,7 +1106,10 @@ rm 'src/factory/db.rs'
 [detached HEAD 239a0ef] feat(observability): add metrics database schema migration
  2 files changed, 80 insertions(+)
  create mode 100644 src/factory/db/migrations/007_metrics.sql
-Rebasing (10/21)Rebasing (11/21)Rebasing (12/21)Auto-merging src/factory/api.rs
+Rebasing (10/21)
+Rebasing (11/21)
+Rebasing (12/21)
+Auto-merging src/factory/api.rs
 CONFLICT (content): Merge conflict in src/factory/api.rs
 Auto-merging src/factory/server.rs
 CONFLICT (content): Merge conflict in src/factory/server.rs
@@ -1161,7 +1173,7 @@ tool_use Read
 id: toolu_01LQX6e1Nbv83145bYiVTk27
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/api.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/api.rs",
   "offset": 1343,
   "limit": 20
 }
@@ -1200,7 +1212,7 @@ tool_use Read
 id: toolu_01AaXSprMcHg1fPV5C7mVHro
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/api.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/api.rs",
   "offset": 1906,
   "limit": 15
 }
@@ -1234,7 +1246,7 @@ tool_use Read
 id: toolu_01YBK1CT5AzketYbzV62xbxV
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/server.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/server.rs",
   "offset": 221,
   "limit": 15
 }
@@ -1275,7 +1287,7 @@ id: toolu_01Qag36JjHygAq7s7FpZUifz
 ```json
 {
   "pattern": "struct AppState\"",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/",
   "output_mode": "content",
   "-n": true,
   "-A": 10
@@ -1297,7 +1309,7 @@ id: toolu_018QXExqB2EQku3qPLRc5ZUh
 ```json
 {
   "pattern": "struct AppState\"",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/",
   "output_mode": "content",
   "-n": true
 }
@@ -1318,7 +1330,7 @@ id: toolu_01LNqbBdmvMq7s7pLmFsEhRe
 ```json
 {
   "pattern": "struct AppState\"",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory",
   "output_mode": "content",
   "-n": true
 }
@@ -1339,7 +1351,7 @@ id: toolu_01Do6gqfpAcNpY4c1iERFZmG
 ```json
 {
   "pattern": "struct AppState",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory",
   "output_mode": "content",
   "-n": true,
   "-A": 8
@@ -1358,8 +1370,8 @@ src/factory/api.rs-28-    pub pipeline_runner: PipelineRunner,
 src/factory/api.rs-29-    pub github_client_id: Option<String>,
 src/factory/api.rs-30-    pub github_token: Mutex<Option<String>>,
 src/factory/api.rs-31-    pub metrics: MetricsCollector,
-/Users/jdsingh/Projects/AI/forge/src/factory/api.rs-32-}
-/Users/jdsingh/Projects/AI/forge/src/factory/api.rs-33-
+/home/<USER>/Projects/AI/forge/src/factory/api.rs-32-}
+/home/<USER>/Projects/AI/forge/src/factory/api.rs-33-
 ```
 
 > AGENT
@@ -1372,7 +1384,7 @@ tool_use Read
 id: toolu_01KvNgphWBkBqMxfieP5qqQB
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/api.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/api.rs",
   "offset": 1335,
   "limit": 8
 }
@@ -1405,7 +1417,7 @@ tool_use Read
 id: toolu_01SBU2v5k7Z5WyXeSjVvyDek
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/api.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/api.rs",
   "offset": 1341,
   "limit": 20
 }
@@ -1449,7 +1461,7 @@ id: toolu_01Auez8DW4R9aU5i96VRbkZG
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/api.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/api.rs",
   "old_string": "        let db_handle = DbHandle::new(db);\n        let state = Arc::new(AppState {\n<<<<<<< HEAD\n            db,\n=======\n            db: db_handle.clone(),\n>>>>>>> d433c30 (feat(observability): wire MetricsCollector into Factory AppState)\n            ws_tx,\n            pipeline_runner,\n            github_client_id: None,\n            github_token: Mutex::new(None),\n            metrics: MetricsCollector::new(db_handle),\n        });\n        api_router().with_state(state)\n    }\n\n    async fn body_json<T: serde::de::DeserializeOwned>(body: Body) -> T {",
   "new_string": "        let state = Arc::new(AppState {\n            db: db.clone(),\n            ws_tx,\n            pipeline_runner,\n            github_client_id: None,\n            github_token: Mutex::new(None),\n            metrics: MetricsCollector::new(db),\n        });\n        api_router().with_state(state)\n    }\n\n    async fn body_json<T: serde::de::DeserializeOwned>(body: Body) -> T {"
 }
@@ -1460,7 +1472,7 @@ id: toolu_01Auez8DW4R9aU5i96VRbkZG
 tool_result
 id: toolu_01Auez8DW4R9aU5i96VRbkZG
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/api.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/api.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1473,7 +1485,7 @@ tool_use Read
 id: toolu_01J9i9t9twqA7w7jhfft8SqK
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/api.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/api.rs",
   "offset": 1895,
   "limit": 20
 }
@@ -1513,7 +1525,7 @@ id: toolu_01VZPWy2skqV1Cu4LBNiTNuL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/api.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/api.rs",
   "old_string": "        let db_handle = DbHandle::new(db);\n        let state = Arc::new(AppState {\n<<<<<<< HEAD\n            db,\n=======\n            db: db_handle.clone(),\n>>>>>>> d433c30 (feat(observability): wire MetricsCollector into Factory AppState)\n            ws_tx: ws_tx.clone(),\n            pipeline_runner,\n            github_client_id: None,\n            github_token: Mutex::new(None),\n            metrics: MetricsCollector::new(db_handle),",
   "new_string": "        let state = Arc::new(AppState {\n            db: db.clone(),\n            ws_tx: ws_tx.clone(),\n            pipeline_runner,\n            github_client_id: None,\n            github_token: Mutex::new(None),\n            metrics: MetricsCollector::new(db),"
 }
@@ -1524,7 +1536,7 @@ id: toolu_01VZPWy2skqV1Cu4LBNiTNuL
 tool_result
 id: toolu_01VZPWy2skqV1Cu4LBNiTNuL
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/api.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/api.rs has been updated successfully.
 ```
 
 > AGENT
@@ -1537,7 +1549,7 @@ tool_use Read
 id: toolu_0113pFWcE4UW8S48MtvXD56h
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/server.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/server.rs",
   "offset": 215,
   "limit": 25
 }
@@ -1582,7 +1594,7 @@ id: toolu_01GGXZPcJ3ebfNeQZX82DiAL
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/server.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/server.rs",
   "old_string": "        let db_handle = DbHandle::new(db);\n        let state = Arc::new(AppState {\n<<<<<<< HEAD\n            db,\n=======\n            db: db_handle.clone(),\n>>>>>>> d433c30 (feat(observability): wire MetricsCollector into Factory AppState)\n            ws_tx,\n            pipeline_runner,\n            github_client_id: None,\n            github_token: std::sync::Mutex::new(None),\n            metrics: MetricsCollector::new(db_handle),",
   "new_string": "        let state = Arc::new(AppState {\n            db: db.clone(),\n            ws_tx,\n            pipeline_runner,\n            github_client_id: None,\n            github_token: std::sync::Mutex::new(None),\n            metrics: MetricsCollector::new(db),"
 }
@@ -1593,7 +1605,7 @@ id: toolu_01GGXZPcJ3ebfNeQZX82DiAL
 tool_result
 id: toolu_01GGXZPcJ3ebfNeQZX82DiAL
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/server.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/server.rs has been updated successfully.
 ```
 
 > TOOL
@@ -1615,7 +1627,9 @@ id: toolu_01DPKq2M6prmWwPwFourrGmY
 Exit code 1
 [detached HEAD 8d673c2] feat(observability): wire MetricsCollector into Factory AppState
  2 files changed, 11 insertions(+), 3 deletions(-)
-Rebasing (13/21)Rebasing (14/21)Auto-merging Cargo.lock
+Rebasing (13/21)
+Rebasing (14/21)
+Auto-merging Cargo.lock
 CONFLICT (content): Merge conflict in Cargo.lock
 error: could not apply 75b6094... chore: update Cargo.lock for tracing dependencies
 hint: Resolve all conflicts manually, mark them as resolved with
@@ -1727,7 +1741,7 @@ id: toolu_01X561TaoJuokg6TgvKPKJ2m
 ```json
 {
   "pattern": "^tracing",
-  "path": "/Users/jdsingh/Projects/AI/forge/Cargo.toml",
+  "path": "/home/<USER>/Projects/AI/forge/Cargo.toml",
   "output_mode": "content",
   "-n": true
 }
@@ -1752,7 +1766,7 @@ tool_use Read
 id: toolu_012SAuPRuDTzXdtLn5BzMDnX
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/Cargo.toml",
+  "file_path": "/home/<USER>/Projects/AI/forge/Cargo.toml",
   "offset": 40,
   "limit": 25
 }
@@ -1801,7 +1815,7 @@ id: toolu_01GoJL5AoxQZ4mNqU5bpzMnF
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/Cargo.toml",
+  "file_path": "/home/<USER>/Projects/AI/forge/Cargo.toml",
   "old_string": "tracing = \"0.1\"\ntracing-subscriber = { version = \"0.3\", features = [\"env-filter\"] }\nlibsql = \"0.9\"\ndotenvy = \"0.15\"\nrust-embed = { version = \"8\", features = [\"interpolate-folder-path\"] }\nmime_guess = \"2\"\nbollard = \"0.20\"\nasync-trait = \"0.1\"\n\n# Observability\ntracing = \"0.1\"\ntracing-subscriber = { version = \"0.3\", features = [\"env-filter\", \"json\", \"fmt\"] }\ntracing-appender = \"0.2\"\ntracing-opentelemetry = { version = \"0.28\", optional = true }\nopentelemetry = { version = \"0.27\", optional = true }\nopentelemetry-otlp = { version = \"0.27\", optional = true }\nopentelemetry_sdk = { version = \"0.27\", optional = true }",
   "new_string": "libsql = \"0.9\"\ndotenvy = \"0.15\"\nrust-embed = { version = \"8\", features = [\"interpolate-folder-path\"] }\nmime_guess = \"2\"\nbollard = \"0.20\"\nasync-trait = \"0.1\"\n\n# Observability\ntracing = \"0.1\"\ntracing-subscriber = { version = \"0.3\", features = [\"env-filter\", \"json\", \"fmt\"] }\ntracing-appender = \"0.2\"\ntracing-opentelemetry = { version = \"0.28\", optional = true }\nopentelemetry = { version = \"0.27\", optional = true }\nopentelemetry-otlp = { version = \"0.27\", optional = true }\nopentelemetry_sdk = { version = \"0.27\", optional = true }"
 }
@@ -1812,7 +1826,7 @@ id: toolu_01GoJL5AoxQZ4mNqU5bpzMnF
 tool_result
 id: toolu_01GoJL5AoxQZ4mNqU5bpzMnF
 ```
-The file /Users/jdsingh/Projects/AI/forge/Cargo.toml has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/Cargo.toml has been updated successfully.
 ```
 
 > TOOL
@@ -1858,7 +1872,10 @@ id: toolu_012DNhNHNSGC9ae8iDDUrGXm
 Exit code 1
 [detached HEAD d678488] chore: update Cargo.lock for tracing dependencies
  2 files changed, 668 insertions(+), 178 deletions(-)
-Rebasing (15/21)Rebasing (16/21)Rebasing (17/21)Auto-merging src/cmd/run.rs
+Rebasing (15/21)
+Rebasing (16/21)
+Rebasing (17/21)
+Auto-merging src/cmd/run.rs
 Auto-merging src/dag/executor.rs
 Auto-merging src/factory/api.rs
 CONFLICT (modify/delete): src/factory/db.rs deleted in HEAD and modified in 1ae3070 (fix(observability): address PR review findings across telemetry, metrics, and UI).  Version 1ae3070 (fix(observability): address PR review findings across telemetry, metrics, and UI) of src/factory/db.rs left in tree.
@@ -1894,7 +1911,7 @@ tool_result
 id: toolu_01NgkKozNh11NxvktwEr5b2u
 ```
 commit 1ae3070ec2e1790c0b8d370187cd4ea9c538f308
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Mon Mar 9 22:57:33 2026 -0500
 
     fix(observability): address PR review findings across telemetry, metrics, and UI
@@ -1914,7 +1931,7 @@ Date:   Mon Mar 9 22:57:33 2026 -0500
     - Add 8 new tests covering compaction, phase/review/token stats, edge cases
     - Fix latent SQL bug: disambiguate duration_secs in phase stats join
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 
  src/cmd/run.rs                  |  23 +++++---
  src/dag/executor.rs             |   8 +--
@@ -1940,7 +1957,7 @@ tool_result
 id: toolu_01FX58hXzTe7576Ly1S2Zcgt
 ```
 commit 1ae3070ec2e1790c0b8d370187cd4ea9c538f308
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Mon Mar 9 22:57:33 2026 -0500
 
     fix(observability): address PR review findings across telemetry, metrics, and UI
@@ -1960,7 +1977,7 @@ Date:   Mon Mar 9 22:57:33 2026 -0500
     - Add 8 new tests covering compaction, phase/review/token stats, edge cases
     - Fix latent SQL bug: disambiguate duration_secs in phase stats join
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/src/factory/db.rs b/src/factory/db.rs
 index 1e96236..a433e0b 100644
@@ -1988,7 +2005,7 @@ tool_result
 id: toolu_01RLqZufqA7ghXo8fxMVQSDH
 ```
 commit 1ae3070ec2e1790c0b8d370187cd4ea9c538f308
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Mon Mar 9 22:57:33 2026 -0500
 
     fix(observability): address PR review findings across telemetry, metrics, and UI
@@ -2008,7 +2025,7 @@ Date:   Mon Mar 9 22:57:33 2026 -0500
     - Add 8 new tests covering compaction, phase/review/token stats, edge cases
     - Fix latent SQL bug: disambiguate duration_secs in phase stats join
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/src/factory/pipeline.rs b/src/factory/pipeline.rs
 index 2ce5882..56398dc 100644
@@ -2041,7 +2058,7 @@ tool_result
 id: toolu_01YV4cU6ekygLKa1Fesi3njd
 ```
 commit 1ae3070ec2e1790c0b8d370187cd4ea9c538f308
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Mon Mar 9 22:57:33 2026 -0500
 
     fix(observability): address PR review findings across telemetry, metrics, and UI
@@ -2061,7 +2078,7 @@ Date:   Mon Mar 9 22:57:33 2026 -0500
     - Add 8 new tests covering compaction, phase/review/token stats, edge cases
     - Fix latent SQL bug: disambiguate duration_secs in phase stats join
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/src/factory/db.rs b/src/factory/db.rs
 index 1e96236..a433e0b 100644
@@ -2083,7 +2100,7 @@ tool_use Read
 id: toolu_01FLzgW62fHvo9ikfzzwSd6o
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations/007_metrics.sql",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations/007_metrics.sql",
   "limit": 5
 }
 ```
@@ -2111,7 +2128,7 @@ id: toolu_01JYbT72oefZbQ6rhB4bV2X5
 ```json
 {
   "pattern": "transaction|BEGIN|COMMIT",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -2146,7 +2163,7 @@ tool_result
 id: toolu_01W5Gunhb36Nnia2FamNasLv
 ```
 commit 1ae3070ec2e1790c0b8d370187cd4ea9c538f308
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Mon Mar 9 22:57:33 2026 -0500
 
     fix(observability): address PR review findings across telemetry, metrics, and UI
@@ -2166,7 +2183,7 @@ Date:   Mon Mar 9 22:57:33 2026 -0500
     - Add 8 new tests covering compaction, phase/review/token stats, edge cases
     - Fix latent SQL bug: disambiguate duration_secs in phase stats join
     
-    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+    Co-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>
 
 diff --git a/src/factory/pipeline.rs b/src/factory/pipeline.rs
 index 2ce5882..56398dc 100644
@@ -2189,7 +2206,7 @@ id: toolu_01BCBnaJBefKbtbXivD4F4Fs
 ```json
 {
   "pattern": "MetricsCollector|record_run_started|record_run_completed",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/",
   "output_mode": "content",
   "-n": true
 }
@@ -2214,7 +2231,7 @@ id: toolu_018k3tX5QVhGKpRsQ9gBmkU3
 ```json
 {
   "pattern": "tokio::spawn.*async move",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -2235,7 +2252,7 @@ tool_use Read
 id: toolu_014z29au6yZeTUM1TMxATrRz
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "offset": 628,
   "limit": 12
 }
@@ -2266,7 +2283,7 @@ tool_use Read
 id: toolu_018W8dRsDJ922ThtkD9Hhjit
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "offset": 1,
   "limit": 25
 }
@@ -2311,7 +2328,7 @@ id: toolu_0185KX3XRakZx5dHfrDaYqKd
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "old_string": "use std::collections::HashMap;\nuse std::sync::Arc;",
   "new_string": "use std::collections::HashMap;\nuse std::sync::Arc;\nuse std::time::Instant;"
 }
@@ -2322,7 +2339,7 @@ id: toolu_0185KX3XRakZx5dHfrDaYqKd
 tool_result
 id: toolu_0185KX3XRakZx5dHfrDaYqKd
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
 ```
 
 > TOOL
@@ -2332,7 +2349,7 @@ id: toolu_017atK6FwvNqJDmS3f1NA4Lm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "old_string": "use super::ws::{WsMessage, broadcast_message};\n\nuse tracing::{debug, error, info, warn};",
   "new_string": "use super::ws::{WsMessage, broadcast_message};\nuse crate::metrics::MetricsCollector;\n\nuse tracing::{debug, error, info, warn};"
 }
@@ -2343,7 +2360,7 @@ id: toolu_017atK6FwvNqJDmS3f1NA4Lm
 tool_result
 id: toolu_017atK6FwvNqJDmS3f1NA4Lm
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2357,7 +2374,7 @@ id: toolu_015mQyLqzBZTe1zeKDDoJbCN
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "old_string": "        // Spawn background task for execution\n        tokio::spawn(async move {\n            // Step 1: Create a git branch for isolation (under project lock)",
   "new_string": "        // Spawn background task for execution\n        tokio::spawn(async move {\n            let metrics = MetricsCollector::new(db.clone());\n            let run_id_str = run_id.to_string();\n            let run_start = Instant::now();\n            if let Err(e) = metrics.record_run_started(&run_id_str, Some(issue_id)).await {\n                warn!(error = %e, \"Failed to record metrics run start\");\n            }\n\n            // Step 1: Create a git branch for isolation (under project lock)"
 }
@@ -2368,7 +2385,7 @@ id: toolu_015mQyLqzBZTe1zeKDDoJbCN
 tool_result
 id: toolu_015mQyLqzBZTe1zeKDDoJbCN
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2382,7 +2399,7 @@ id: toolu_01NYq5ASBtkXnjofhf4kRfes
 ```json
 {
   "pattern": "PipelineCompleted",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -2402,7 +2419,7 @@ tool_use Read
 id: toolu_01RnRPsA53j6f3bv9y54uKyR
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "offset": 873,
   "limit": 15
 }
@@ -2437,7 +2454,7 @@ id: toolu_01QEJuXPvFA9yKUrgBeZhwCn
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "old_string": "                        Ok(run) => broadcast_message(&tx, &WsMessage::PipelineCompleted { run }),",
   "new_string": "                        Ok(run) => {\n                            let duration = run_start.elapsed().as_secs_f64();\n                            if let Err(e) = metrics.record_run_completed(&run_id_str, true, duration, 0, 0).await {\n                                warn!(error = %e, \"Failed to record metrics run completion\");\n                            }\n                            broadcast_message(&tx, &WsMessage::PipelineCompleted { run });\n                        }"
 }
@@ -2448,7 +2465,7 @@ id: toolu_01QEJuXPvFA9yKUrgBeZhwCn
 tool_result
 id: toolu_01QEJuXPvFA9yKUrgBeZhwCn
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2461,7 +2478,7 @@ tool_use Read
 id: toolu_01T4BaMFgBxEhcULQzMpgd39
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "offset": 900,
   "limit": 20
 }
@@ -2501,7 +2518,7 @@ id: toolu_01TmyYH36CE61EYdQQNqr74N
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "old_string": "                Err(e) => {\n                    let error_msg = format!(\"{:#}\", e);\n                    match db\n                        .update_pipeline_run(",
   "new_string": "                Err(e) => {\n                    let error_msg = format!(\"{:#}\", e);\n                    let duration = run_start.elapsed().as_secs_f64();\n                    if let Err(e) = metrics.record_run_completed(&run_id_str, false, duration, 0, 0).await {\n                        warn!(error = %e, \"Failed to record metrics run failure\");\n                    }\n                    match db\n                        .update_pipeline_run("
 }
@@ -2512,7 +2529,7 @@ id: toolu_01TmyYH36CE61EYdQQNqr74N
 tool_result
 id: toolu_01TmyYH36CE61EYdQQNqr74N
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
 ```
 
 > AGENT
@@ -2540,7 +2557,11 @@ rm 'src/factory/db.rs'
 rm 'src/factory/pipeline.rs'
 [detached HEAD 844599c] fix(observability): address PR review findings across telemetry, metrics, and UI
  13 files changed, 334 insertions(+), 107 deletions(-)
-Rebasing (18/21)Rebasing (19/21)Rebasing (20/21)Rebasing (21/21)Auto-merging Cargo.lock
+Rebasing (18/21)
+Rebasing (19/21)
+Rebasing (20/21)
+Rebasing (21/21)
+Auto-merging Cargo.lock
 Auto-merging src/cmd/run.rs
 Auto-merging src/factory/api.rs
 CONFLICT (modify/delete): src/factory/db.rs deleted in HEAD and modified in 62beeef (fix(ci): align agents metadata and restore checks).  Version 62beeef (fix(ci): align agents metadata and restore checks) of src/factory/db.rs left in tree.
@@ -2580,7 +2601,7 @@ tool_result
 id: toolu_0181guwCuevrGXiSDDyV5tt7
 ```
 commit 62beeefbe7e884211360d0e5dee45e3f58e88776
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Tue Mar 10 09:20:01 2026 -0500
 
     fix(ci): align agents metadata and restore checks
@@ -2628,7 +2649,7 @@ tool_result
 id: toolu_01QqnWBkQGQhUY1TgP3GD1kv
 ```
 commit 62beeefbe7e884211360d0e5dee45e3f58e88776
-Author: JD Singh <49287012+jdsingh122918@users.noreply.github.com>
+Author: JD Singh <<REDACTED_EMAIL>>
 Date:   Tue Mar 10 09:20:01 2026 -0500
 
     fix(ci): align agents metadata and restore checks
@@ -2727,7 +2748,7 @@ tool_use Read
 id: toolu_01Y9g7hZpHbVtjqCzrzVgevm
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs",
   "offset": 12,
   "limit": 15
 }
@@ -2761,7 +2782,7 @@ tool_use Read
 id: toolu_016HRn5MDAdauwW1fHWFgh3d
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/review/dispatcher.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/review/dispatcher.rs",
   "offset": 38,
   "limit": 15
 }
@@ -2800,7 +2821,7 @@ id: toolu_01PqnT6CGKHdQLDdbUU4h1tm
 ```json
 {
   "pattern": "warn!|info!|debug!",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs",
   "output_mode": "content",
   "-n": true,
   "head_limit": 10
@@ -2827,7 +2848,7 @@ id: toolu_01DwE7ahbeX993Q6yWHYn6Hr
 ```json
 {
   "pattern": "warn!|info!|debug!",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/review/dispatcher.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/review/dispatcher.rs",
   "output_mode": "content",
   "-n": true,
   "head_limit": 10
@@ -2860,7 +2881,7 @@ id: toolu_01RBYWfXjEdZ8NK9W9nMs3hr
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs",
   "old_string": "<<<<<<< HEAD\nuse tracing::warn;\n=======\nuse tracing::info;\n>>>>>>> 62beeef (fix(ci): align agents metadata and restore checks)",
   "new_string": "use tracing::{info, warn};"
 }
@@ -2871,7 +2892,7 @@ id: toolu_01RBYWfXjEdZ8NK9W9nMs3hr
 tool_result
 id: toolu_01RBYWfXjEdZ8NK9W9nMs3hr
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/orchestrator/runner.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/orchestrator/runner.rs has been updated successfully.
 ```
 
 > TOOL
@@ -2881,7 +2902,7 @@ id: toolu_0127H27LPhZB5bzBFSEvmHnq
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/review/dispatcher.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/review/dispatcher.rs",
   "old_string": "<<<<<<< HEAD\nuse tracing::{debug, warn};\n=======\nuse tracing::info;\n>>>>>>> 62beeef (fix(ci): align agents metadata and restore checks)",
   "new_string": "use tracing::{debug, info, warn};"
 }
@@ -2892,7 +2913,7 @@ id: toolu_0127H27LPhZB5bzBFSEvmHnq
 tool_result
 id: toolu_0127H27LPhZB5bzBFSEvmHnq
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/review/dispatcher.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/review/dispatcher.rs has been updated successfully.
 ```
 
 > AGENT
@@ -3078,7 +3099,7 @@ id: toolu_019TyfWZvCV2Ycn9B5STKjyw
  --> src/metrics/mod.rs:5:5
    --> src/factory/pipeline/mod.rs:638:74
    --> src/factory/pipeline/mod.rs:638:69
-   --> /Users/jdsingh/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/option.rs:608:5
+   --> /home/<USER>/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/option.rs:608:5
   --> src/metrics/mod.rs:21:17
   --> src/metrics/mod.rs:40:17
   --> src/metrics/mod.rs:62:17
@@ -3109,7 +3130,7 @@ tool_use Read
 id: toolu_01Nv6dRbagkDccGqEWD4Znew
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/metrics/mod.rs"
+  "file_path": "/home/<USER>/Projects/AI/forge/src/metrics/mod.rs"
 }
 ```
 
@@ -3171,7 +3192,7 @@ tool_use Read
 id: toolu_01UEAknZdQ5pdh5YzCYpEHXo
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/mod.rs",
   "offset": 100,
   "limit": 40
 }
@@ -3234,7 +3255,7 @@ tool_use Read
 id: toolu_01N5mdB926nxx9KvZPK438xh
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/issues.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/issues.rs",
   "limit": 80
 }
 ```
@@ -3310,7 +3331,7 @@ tool_use Read
 id: toolu_01JKfNvnEhGXG2bp3KxUwUA6
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/metrics/queries.rs"
+  "file_path": "/home/<USER>/Projects/AI/forge/src/metrics/queries.rs"
 }
 ```
 
@@ -3383,7 +3404,7 @@ id: toolu_017wsdrGBqEgZjpf8DRuEuHg
 ```json
 {
   "pattern": "struct DbHandle|impl.*Clone.*DbHandle|impl DbHandle\"",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/mod.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/db/mod.rs",
   "output_mode": "content",
   "-n": true
 }
@@ -3403,7 +3424,7 @@ tool_use Read
 id: toolu_012PQoRJhs8Sb27nUquACU5k
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/mod.rs",
   "offset": 28,
   "limit": 30
 }
@@ -3456,7 +3477,7 @@ tool_use Write
 id: toolu_016h42q9GNLjJoe7M3CojFwA
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/metrics/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/metrics/mod.rs",
   "content": "pub mod queries;\n\nuse crate::factory::db::DbHandle;\nuse anyhow::{Context, Result};\n\n/// Collects and queries pipeline execution metrics stored in SQLite.\npub struct MetricsCollector {\n    db: DbHandle,\n}\n\nimpl MetricsCollector {\n    /// Create a new collector backed by the given database handle.\n    pub fn new(db: DbHandle) -> Self {\n        Self { db }\n    }\n\n    /// Insert a new run record when a pipeline starts.\n    pub async fn record_run_started(&self, run_id: &str, issue_id: Option<i64>) -> Result<()> {\n        self.db\n            .conn()\n            .execute(\n                \"INSERT INTO metrics_runs (run_id, issue_id, started_at) VALUES (?1, ?2, datetime('now'))\",\n                libsql::params![run_id, issue_id],\n            )\n            .await\n            .context(\"Failed to insert metrics_run\")?;\n        Ok(())\n    }\n\n    /// Mark a run as completed; fails if the run was never started.\n    pub async fn record_run_completed(\n        &self,\n        run_id: &str,\n        success: bool,\n        duration_secs: f64,\n        phases_total: i32,\n        phases_passed: i32,\n    ) -> Result<()> {\n        let rows_affected = self\n            .db\n            .conn()\n            .execute(\n                \"UPDATE metrics_runs SET success = ?1, duration_secs = ?2, phases_total = ?3, phases_passed = ?4, completed_at = datetime('now') WHERE run_id = ?5\",\n                libsql::params![success as i32, duration_secs, phases_total, phases_passed, run_id],\n            )\n            .await\n            .context(\"Failed to update metrics_run\")?;\n        if rows_affected == 0 {\n            anyhow::bail!(\n                \"No metrics_run found with run_id '{}' -- was record_run_started called?\",\n                run_id\n            );\n        }\n        Ok(())\n    }\n\n    /// Insert a new phase record when […]
 
 > TOOL
@@ -3464,7 +3485,7 @@ id: toolu_016h42q9GNLjJoe7M3CojFwA
 tool_result
 id: toolu_016h42q9GNLjJoe7M3CojFwA
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/metrics/mod.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/metrics/mod.rs has been updated successfully.
 ```
 
 > AGENT
@@ -3534,7 +3555,7 @@ id: toolu_012xnHXDXjD3BqNfDY41cFKe
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs",
   "old_string": "if let Err(e) = metrics.record_run_started(&run_id_str, Some(issue_id)).await {",
   "new_string": "if let Err(e) = metrics.record_run_started(&run_id_str, Some(issue_id.0)).await {"
 }
@@ -3545,7 +3566,7 @@ id: toolu_012xnHXDXjD3BqNfDY41cFKe
 tool_result
 id: toolu_012xnHXDXjD3BqNfDY41cFKe
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/pipeline/mod.rs has been updated successfully.
 ```
 
 > TOOL
@@ -3565,7 +3586,7 @@ id: toolu_012FZJAKuCsdxDQNZNx4AUNU
 tool_result
 id: toolu_012FZJAKuCsdxDQNZNx4AUNU
 ```
-   Compiling forge v0.1.0 (/Users/jdsingh/Projects/AI/forge)
+   Compiling forge v0.1.0 (/home/<USER>/Projects/AI/forge)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.58s
 ```
 
@@ -3674,7 +3695,7 @@ tool_use Read
 id: toolu_0197QVwgzsTca1pBJNqSeU1A
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs",
   "offset": 200
 }
 ```
@@ -3746,7 +3767,7 @@ id: toolu_01Cu6NiDfb6cUMTUrnCXzGAZ
 ```json
 {
   "pattern": "test_fresh_database_runs_all_migrations|test_idempotent|test_partial_migration\"",
-  "path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs",
+  "path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs",
   "output_mode": "content",
   "-n": true,
   "-A": 15
@@ -3790,7 +3811,7 @@ tool_use Read
 id: toolu_011W58frXkz12jkFRwEe6uFn
 ```json
 {
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs",
   "offset": 184,
   "limit": 20
 }
@@ -3834,7 +3855,7 @@ id: toolu_0183YaV3NXHW5zxLZQQZ3fhm
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs",
   "old_string": "        assert_eq!(version, 6);\n    }\n\n    #[tokio::test]\n    async fn test_idempotent_migration() {\n        let (_db, conn) = test_db().await;\n        run_migrations(&conn).await.unwrap();\n        // Running again should be a no-op\n        run_migrations(&conn).await.unwrap();\n        let version = get_schema_version(&conn).await.unwrap();\n        assert_eq!(version, 6);\n    }\n\n    #[tokio::test]\n    async fn test_partial_migration_resumes() {\n        let (_db, conn) = test_db().await;\n        ensure_migrations_table(&conn).await.unwrap();\n        // Run only first 2 migrations manually\n        conn.execute_batch(MIGRATIONS[0].1).await.unwrap();\n        conn.execute_batch(MIGRATIONS[1].1).await.unwrap();\n        set_schema_version(&conn, 1).await.unwrap();\n        set_schema_version(&conn, 2).await.unwrap();\n\n        // Now run_migrations should pick up from 3\n        run_migrations(&conn).await.unwrap();\n        let version = get_schema_version(&conn).await.unwrap();\n        assert_eq!(version, 6);",
   "new_string": "        assert_eq!(version, 7);\n    }\n\n    #[tokio::test]\n    async fn test_idempotent_migration() {\n        let (_db, conn) = test_db().await;\n        run_migrations(&conn).await.unwrap();\n        // Running again should be a no-op\n        run_migrations(&conn).await.unwrap();\n        let version = get_schema_version(&conn).await.unwrap();\n        assert_eq!(version, 7);\n    }\n\n    #[tokio::test]\n    async fn test_partial_migration_resumes() {\n        let (_db, conn) = test_db().await;\n        ensure_migrations_table(&conn).await.unwrap();\n        // Run only first 2 migrations manually\n        conn.execute_batch(MIGRATIONS[0].1).await.unwrap();\n        conn.execute_batch(MIGRATIONS[1].1).await.unwrap();\n        set_schema_version(&conn, 1).await.unwrap();\n        set_schema_version(&conn, 2).await.unwrap();\n\n        // Now run_migrations should pick up from 3\n        run_migrations(&conn).await.unwrap();\n        let version = get_schema_version(&conn).await.unwrap();\n        assert_eq!(version, 7);"
 }
@@ -3845,7 +3866,7 @@ id: toolu_0183YaV3NXHW5zxLZQQZ3fhm
 tool_result
 id: toolu_0183YaV3NXHW5zxLZQQZ3fhm
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs has been updated successfully.
 ```
 
 > AGENT
@@ -3859,7 +3880,7 @@ id: toolu_011B2WjxPDrnfGDsCQSmmJyD
 ```json
 {
   "replace_all": false,
-  "file_path": "/Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs",
+  "file_path": "/home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs",
   "old_string": "        // Run the full migration system — should bootstrap at version 2,\n        // then apply migrations 3-6\n        run_migrations(&conn).await.unwrap();\n\n        // Verify final version\n        let version = get_schema_version(&conn).await.unwrap();\n        assert_eq!(version, 6);",
   "new_string": "        // Run the full migration system — should bootstrap at version 2,\n        // then apply migrations 3-7\n        run_migrations(&conn).await.unwrap();\n\n        // Verify final version\n        let version = get_schema_version(&conn).await.unwrap();\n        assert_eq!(version, 7);"
 }
@@ -3870,7 +3891,7 @@ id: toolu_011B2WjxPDrnfGDsCQSmmJyD
 tool_result
 id: toolu_011B2WjxPDrnfGDsCQSmmJyD
 ```
-The file /Users/jdsingh/Projects/AI/forge/src/factory/db/migrations.rs has been updated successfully.
+The file /home/<USER>/Projects/AI/forge/src/factory/db/migrations.rs has been updated successfully.
 ```
 
 > TOOL
@@ -3975,7 +3996,7 @@ tool_use Bash
 id: toolu_0121HznhTE4fXcQzdxfqGoAb
 ```json
 {
-  "command": "git commit -m \"$(cat <<'EOF'\nfix: port metrics module from rusqlite to libsql after rebase\n\nRewrite MetricsCollector to use the async libsql API instead of the\nremoved rusqlite-based DbHandle::call() pattern. Update migration\ntest assertions from version 6 to 7 to account for the new\n007_metrics.sql migration.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n)\"",
+  "command": "git commit -m \"$(cat <<'EOF'\nfix: port metrics module from rusqlite to libsql after rebase\n\nRewrite MetricsCollector to use the async libsql API instead of the\nremoved rusqlite-based DbHandle::call() pattern. Update migration\ntest assertions from version 6 to 7 to account for the new\n007_metrics.sql migration.\n\nCo-Authored-By: Claude Opus 4.6 <<REDACTED_EMAIL>>\nEOF\n)\"",
   "description": "Commit rebase fixup changes"
 }
 ```

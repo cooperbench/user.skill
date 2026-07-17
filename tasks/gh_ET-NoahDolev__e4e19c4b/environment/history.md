@@ -229,7 +229,7 @@ tool_use Read
 id: toolu_01Sz9uzuz76sFEveGALPZoQ4
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/README.md"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/README.md"
 }
 ```
 
@@ -279,7 +279,7 @@ tool_use Read
 id: toolu_01VPxqHJPH6v4i1sX88y5HzM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/Training_Review2.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/Training_Review2.md"
 }
 ```
 
@@ -318,7 +318,7 @@ tool_use Read
 id: toolu_01MPmDWV6ac9X1Co5BhNMu47
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/wherethingsstand.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/wherethingsstand.md"
 }
 ```
 
@@ -370,7 +370,7 @@ tool_use Read
 id: toolu_01APpWYeKiDYqDRpRu6m3g7k
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md"
 }
 ```
 
@@ -413,7 +413,7 @@ tool_use Read
 id: toolu_01842mG4ySdkAuJKQd4cWSFh
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/instructions/some_new_insights.md"
+  "file_path": "/home/<USER>/Code/rune/instructions/some_new_insights.md"
 }
 ```
 
@@ -559,7 +559,7 @@ tool_use Read
 id: toolu_01EujQ9ezFg4nsdnfXtzk2nT
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/diff_loss.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/diff_loss.py"
 }
 ```
 
@@ -619,7 +619,7 @@ tool_use Read
 id: toolu_01G1tdFDM7VPcHhH2EWteEdM
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/training_common.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/training_common.py"
 }
 ```
 
@@ -678,7 +678,7 @@ tool_use Read
 id: toolu_01GZzdxySajfHL2KV4Pe3x5e
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer.py"
 }
 ```
 
@@ -748,7 +748,7 @@ tool_use Read
 id: toolu_01B2PXVcMTufxrRcaXFSws3E
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/trainer_cli.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/trainer_cli.py"
 }
 ```
 
@@ -807,7 +807,7 @@ tool_use Read
 id: toolu_014uSiQ6uWhubgn7RzM7Ewat
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/optimization/run_training_hpo.py"
+  "file_path": "/home/<USER>/Code/rune/scripts/optimization/run_training_hpo.py"
 }
 ```
 
@@ -849,7 +849,7 @@ tool_use Read
 id: toolu_019epm2a17mbPJQ6xsyUcMHh
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_data.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_data.py"
 }
 ```
 
@@ -919,7 +919,7 @@ tool_use Bash
 id: toolu_01JSTWfqPtf9X3qbGA6sLwZR
 ```json
 {
-  "command": "ls /Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_diff.py && echo \"---\" && git log --oneline -1 HEAD -- libs/model-training/src/model_training/d2l_diff.py",
+  "command": "ls /home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_diff.py && echo \"---\" && git log --oneline -1 HEAD -- libs/model-training/src/model_training/d2l_diff.py",
   "description": "Check if d2l_diff.py exists"
 }
 ```
@@ -929,7 +929,7 @@ id: toolu_01JSTWfqPtf9X3qbGA6sLwZR
 tool_result
 id: toolu_01JSTWfqPtf9X3qbGA6sLwZR
 ```
-/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_diff.py  3.6K
+/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_diff.py  3.6K
 
 1 files, 0 dirs (1 .py)
 ---
@@ -942,7 +942,7 @@ tool_use Read
 id: toolu_01QDaZxRNPkt1w7Yuew8onW7
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_diff.py"
+  "file_path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/d2l_diff.py"
 }
 ```
 
@@ -1031,7 +1031,7 @@ tool_use Read
 id: toolu_01Lwd62Ek9fFmaWBzXq5a9aW
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/scripts/train.sh"
+  "file_path": "/home/<USER>/Code/rune/scripts/train.sh"
 }
 ```
 
@@ -1273,7 +1273,7 @@ id: toolu_01LRVYrGJK8atpNR1tJQ8zew
 ```json
 {
   "pattern": "scaling.*0\\.16|adapter\\.scaling|delta_w_scaling|SCALING_FACTOR",
-  "path": "/Users/noahdolevelixir/Code/rune",
+  "path": "/home/<USER>/Code/rune",
   "output_mode": "content",
   "-n": true,
   "head_limit": 30
@@ -1306,7 +1306,7 @@ id: toolu_01TH3ggjsDieDKapkSremfvj
 ```json
 {
   "pattern": "def generate_adapter_from_sakana|scaling_factor|combine_lora|peft_alpha",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/sakana_d2l.py",
+  "path": "/home/<USER>/Code/rune/libs/model-training/src/model_training/sakana_d2l.py",
   "output_mode": "content",
   "-n": true,
   "head_limit": 30
@@ -1338,7 +1338,7 @@ id: toolu_01V6hDuKCuaTVHXsCr89yKBr
 ```json
 {
   "pattern": "save_model|save_pretrained|merge_and_unload|merged_model",
-  "path": "/Users/noahdolevelixir/Code/rune/libs/model-training",
+  "path": "/home/<USER>/Code/rune/libs/model-training",
   "output_mode": "content",
   "-n": true,
   "head_limit": 20
@@ -1410,7 +1410,7 @@ tool_use Write
 id: toolu_01JEn8ws1QdFc574mw98kVZu
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/superpowers/specs/2026-04-22-pr-28-training-upgrade-fit-assessment.yaml",
+  "file_path": "/home/<USER>/Code/rune/docs/superpowers/specs/2026-04-22-pr-28-training-upgrade-fit-assessment.yaml",
   "content": "meta:\n  date: 2026-04-22\n  pr: 28\n  url: https://github.com/ElixirTrials/rune/pull/28\n  branch: feat/training-upgrade\n  base: main\n  title: \"Training infrastructure upgrade: diff-aware loss, HPO, MLflow + dataset pipeline\"\n  diff_stats: {files: 20, insertions: 3970, deletions: 54}\n\nobjective:\n  terminal_goal: >\n    Sakana-style Doc-to-LoRA hypernetwork that emits per-step LoRA adapters\n    encoding procedural episodic memory (\"where we are, what we tried, where\n    we are headed\") for iterative coding projects, so SLMs reach LLM-level\n    performance without context stuffing.\n  pr_role: prerequisite_infrastructure_for_hypernetwork_training\n  training_mode_chosen: hybrid_reconstruction_then_sft\n  rationale: >\n    Reconstruction (T2L primary) is the validated, stable path. SFT second\n    closes the weight-match-vs-behavior-match gap. QLoRA oracles in this PR\n    are the reconstruction targets.\n\nsakana_reference:\n  paper: arxiv:2506.06105\n  repo: github.com/SakanaAI/text-to-lora\n  modes:\n    reconstruction:\n      loss: \"L1 on LoRA A/B matrices against pre-built oracle adapters\"\n      requires_oracle_corpus: true\n    sft:\n      loss: \"CE on target tokens + lambda*L2(generated_weights)\"\n      requires_oracle_corpus: false\n      no_kl_teacher: true\n  conditioning: \"single task description per adapter (not multi-step)\"\n  weight_head:\n    architecture: \"per-module MLP heads, optional shared_AB_head, optional autoreg rank generation\"\n    delta_w_scaling: 10000  # raw pre-peft multiplier (NOT comparable to Rune's 0.16 peft-alpha attenuator)\n  perceiver: \"NOT in T2L codebase - Rune local invention\"\n  pretrained_aggregators: [llama_8b_t2l, mistral_7b_t2l, gemma_2b_t2l]\n  eval: \"pass@1 vs oracle LoRAs on ARC-C, GSM8K, HumanEval, MBPP, etc.\"\n\npr_scope:\n  training_infrastructure:\n    - name: diff_aware_loss\n      files: [libs/model-training/src/model_training/diff_loss.py]\n      components: [DiffWeightedDataCollator, build_diff_aware_sft_trainer, compute_hunk_loss_weights]\n      path: […]
 
 > TOOL
@@ -1418,7 +1418,7 @@ id: toolu_01JEn8ws1QdFc574mw98kVZu
 tool_result
 id: toolu_01JEn8ws1QdFc574mw98kVZu
 ```
-File created successfully at: /Users/noahdolevelixir/Code/rune/docs/superpowers/specs/2026-04-22-pr-28-training-upgrade-fit-assessment.yaml (file state is current in your context — no need to Read it back)
+File created successfully at: /home/<USER>/Code/rune/docs/superpowers/specs/2026-04-22-pr-28-training-upgrade-fit-assessment.yaml (file state is current in your context — no need to Read it back)
 ```
 
 > AGENT
@@ -1473,7 +1473,7 @@ id: toolu_011dXgm843Hr4goX6AG4wx9r
 ```json
 {
   "skill": "superpowers:executing-plans",
-  "args": "/Users/noahdolevelixir/Code/rune/docs/superpowers/specs/2026-04-22-pr-28-training-upgrade-fit-assessment.yaml with parallel subagents"
+  "args": "/home/<USER>/Code/rune/docs/superpowers/specs/2026-04-22-pr-28-training-upgrade-fit-assessment.yaml with parallel subagents"
 }
 ```
 
@@ -1489,7 +1489,7 @@ tool_use Read
 id: toolu_01D5ZKsP9vxCVb3fxjiQ6xrP
 ```json
 {
-  "file_path": "/Users/noahdolevelixir/Code/rune/docs/superpowers/specs/2026-04-22-pr-28-training-upgrade-fit-assessment.yaml"
+  "file_path": "/home/<USER>/Code/rune/docs/superpowers/specs/2026-04-22-pr-28-training-upgrade-fit-assessment.yaml"
 }
 ```
 

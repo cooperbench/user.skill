@@ -162,8 +162,8 @@ Current version: 2.1.105
 Checking for updates to latest version...
 
 Warning: Multiple installations found
-- npm-global at /home/linuxbrew/.linuxbrew/bin/claude (currently running)
-- native at /home/mike-anderson/.local/bin/claude
+- npm-global at /home/<USER>/.linuxbrew/bin/claude (currently running)
+- native at /home/<USER>/.local/bin/claude
 New version available: 2.1.112 (current: 2.1.105)
 Installing update...
 Using global installation update method...
@@ -178,8 +178,8 @@ One thing to note — the updater flagged **two installations**:
 
 | Installation | Path |
 |---|---|
-| **npm-global** (active) | `/home/linuxbrew/.linuxbrew/bin/claude` |
-| **native** | `/home/mike-anderson/.local/bin/claude` |
+| **npm-global** (active) | `/home/<USER>/.linuxbrew/bin/claude` |
+| **native** | `/home/<USER>/.local/bin/claude` |
 
 The npm-global one (Linuxbrew) is the one that was updated and is currently running. You may want to update or remove the native one at `~/.local/bin/claude` to avoid version confusion down the road.
 
@@ -202,7 +202,7 @@ tool_use Bash
 id: toolu_01B9MqruEFhXvHCspnhNyUtj
 ```json
 {
-  "command": "which -a claude 2>/dev/null; echo \"---\"; ls -la /home/linuxbrew/.linuxbrew/bin/claude 2>/dev/null; echo \"---\"; ls -la /home/mike-anderson/.local/bin/claude 2>/dev/null; echo \"---\"; echo \"PATH order:\"; echo \"$PATH\" | tr ':' '\\n' | grep -n -E 'linuxbrew|\\.local/bin'",
+  "command": "which -a claude 2>/dev/null; echo \"---\"; ls -la /home/<USER>/.linuxbrew/bin/claude 2>/dev/null; echo \"---\"; ls -la /home/<USER>/.local/bin/claude 2>/dev/null; echo \"---\"; echo \"PATH order:\"; echo \"$PATH\" | tr ':' '\\n' | grep -n -E 'linuxbrew|\\.local/bin'",
   "description": "Check both Claude installations and PATH priority"
 }
 ```
@@ -222,15 +222,15 @@ id: toolu_01GkGaAFmkcmyLRPosije1VZ
 tool_result
 id: toolu_01B9MqruEFhXvHCspnhNyUtj
 ```
-/home/linuxbrew/.linuxbrew/bin/claude
+/home/<USER>/.linuxbrew/bin/claude
 ---
-lrwxrwxrwx 1 mike-anderson mike-anderson 52 Apr 17 14:19 /home/linuxbrew/.linuxbrew/bin/claude -> ../lib/node_modules/@anthropic-ai/claude-code/cli.js
+lrwxrwxrwx 1 mike-anderson mike-anderson 52 Apr 17 14:19 /home/<USER>/.linuxbrew/bin/claude -> ../lib/node_modules/@anthropic-ai/claude-code/cli.js
 ---
 ---
 PATH order:
-1:/home/linuxbrew/.linuxbrew/bin
-2:/home/linuxbrew/.linuxbrew/sbin
-6:/home/mike-anderson/.local/bin
+1:/home/<USER>/.linuxbrew/bin
+2:/home/<USER>/.linuxbrew/sbin
+6:/home/<USER>/.local/bin
 ```
 
 > TOOL
@@ -254,7 +254,7 @@ The native installer replaced npm as the official method in early 2026. Tutorial
 
 Good news — the situation is clear. The **native installer** is Anthropic's recommended method (npm is deprecated), and you're currently running the npm/Linuxbrew version. Here's the current state:
 
-- **Active**: `/home/linuxbrew/.linuxbrew/bin/claude` (npm via Linuxbrew) — PATH position #1
+- **Active**: `/home/<USER>/.linuxbrew/bin/claude` (npm via Linuxbrew) — PATH position #1
 - **Native**: `~/.local/bin/claude` — doesn't seem to exist yet, despite the updater mentioning it
 
 Let me verify the native install status and then do the migration.
@@ -275,11 +275,11 @@ id: toolu_01TpeUCV7Us6TsotGwEBEEpQ
 tool_result
 id: toolu_01TpeUCV7Us6TsotGwEBEEpQ
 ```
-ls: cannot access '/home/mike-anderson/.local/bin/claude': No such file or directory
+ls: cannot access '/home/<USER>/.local/bin/claude': No such file or directory
 ---
-/home/mike-anderson/.local/bin/claude: cannot open `/home/mike-anderson/.local/bin/claude' (No such file or directory)
+/home/<USER>/.local/bin/claude: cannot open `/home/<USER>/.local/bin/claude' (No such file or directory)
 ---
-/home/linuxbrew/.linuxbrew/lib
+/home/<USER>/.linuxbrew/lib
 └── @anthropic-ai/claude-code@2.1.112
 ```
 
@@ -378,7 +378,7 @@ tool_use Bash
 id: toolu_01CaUxcvyUgYDFkob6vP6MX4
 ```json
 {
-  "command": "npm list -g @anthropic-ai/claude-code 2>&1; echo \"---\"; which -a claude 2>&1; echo \"---\"; ls -la /home/linuxbrew/.linuxbrew/bin/claude 2>&1",
+  "command": "npm list -g @anthropic-ai/claude-code 2>&1; echo \"---\"; which -a claude 2>&1; echo \"---\"; ls -la /home/<USER>/.linuxbrew/bin/claude 2>&1",
   "description": "Verify npm package still exists"
 }
 ```
@@ -389,13 +389,13 @@ tool_result ERROR
 id: toolu_01CaUxcvyUgYDFkob6vP6MX4
 ```
 Exit code 2
-/home/linuxbrew/.linuxbrew/lib
+/home/<USER>/.linuxbrew/lib
 └── (empty)
 
 ---
-/home/mike-anderson/.local/bin/claude
+/home/<USER>/.local/bin/claude
 ---
-ls: cannot access '/home/linuxbrew/.linuxbrew/bin/claude': No such file or directory
+ls: cannot access '/home/<USER>/.linuxbrew/bin/claude': No such file or directory
 ```
 
 > AGENT
@@ -419,13 +419,13 @@ tool_result
 id: toolu_012CGYh2qrXqMZdpPqvatGJe
 ```
 === which claude ===
-/home/mike-anderson/.local/bin/claude
+/home/<USER>/.local/bin/claude
 === version ===
 2.1.112 (Claude Code)
 === file type ===
-/home/mike-anderson/.local/bin/claude: symbolic link to /home/mike-anderson/.local/share/claude/versions/2.1.112
+/home/<USER>/.local/bin/claude: symbolic link to /home/<USER>/.local/share/claude/versions/2.1.112
 === PATH check ===
-6:/home/mike-anderson/.local/bin
+6:/home/<USER>/.local/bin
 ```
 
 > AGENT
@@ -434,7 +434,7 @@ All clean. Here's the final state:
 
 | Before | After |
 |--------|-------|
-| `/home/linuxbrew/.linuxbrew/bin/claude` (npm, deprecated) | **Removed** |
+| `/home/<USER>/.linuxbrew/bin/claude` (npm, deprecated) | **Removed** |
 | `~/.local/bin/claude` (native) — didn't exist | **v2.1.112** (active, symlink to versioned binary) |
 
 **Migration complete.** `which claude` now resolves to `~/.local/bin/claude`, the npm package is gone, and the native binary auto-updates in the background — no more manual `npm update` needed.
@@ -542,7 +542,7 @@ Perfect! Now let me compile the comprehensive audit report.
 ---
 
 ### **1. KEY_LEARNINGS.md**
-**Location**: `/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md`
+**Location**: `/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md`
 
 **Line Count**: **382 lines total**
 
@@ -612,7 +612,7 @@ tool_use Read
 id: toolu_01QY2a8Hi8LG5S2qi5ZDMupK
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/KEY_LEARNINGS.md",
   "offset": 340,
   "limit": 50
 }
@@ -624,7 +624,7 @@ tool_use Read
 id: toolu_01XUUwSuZwvvqCsZeWiNvCET
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
+  "file_path": "/home/<USER>/dev/cohezion/src/cohezion/knowledge_graph/MISSION_JOURNAL.md",
   "limit": 30
 }
 ```
@@ -635,7 +635,7 @@ tool_use Read
 id: toolu_01PPaJr6g1xnxn2BBPEhehRM
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/COHEZION_CHARTER.md",
+  "file_path": "/home/<USER>/dev/cohezion/.agent/COHEZION_CHARTER.md",
   "offset": 40,
   "limit": 25
 }
@@ -687,7 +687,7 @@ id: toolu_01QY2a8Hi8LG5S2qi5ZDMupK
 345	Claude Code validates `settings.json` at startup. If ANY field fails schema validation (e.g., `statusLine` missing required `type: "command"`), the ENTIRE file is skipped — all hooks, permissions, env vars, and plugins go dark. There is no warning in the CLI. Enforcement: SessionStart hook now validates the schema and warns explicitly.
 346	
 347	### Learning 334: Entire.io Carry-Forward Creates Illegal Git Trees
-348	Entire.io v0.5.3 "carry forward: uncommitted session files" uses absolute filesystem paths when tracking files outside the repo root (e.g., `~/.claude/plans/`). In git's tree format, `/home/user/` becomes an empty-name tree entry (`""` → `home` → `user`), which is an illegal object that breaks `git […]
+348	Entire.io v0.5.3 "carry forward: uncommitted session files" uses absolute filesystem paths when tracking files outside the repo root (e.g., `~/.claude/plans/`). In git's tree format, `/home/<USER>/` becomes an empty-name tree entry (`""` → `home` → `user`), which is an illegal object that breaks `git […]
 
 > TOOL
 
@@ -695,7 +695,7 @@ tool_use Bash
 id: toolu_01TRAbSzcmbfUqeVgizbEeF7
 ```json
 {
-  "command": "wc -l /home/mike-anderson/dev/cohezion/.agent/COHEZION_CHARTER.md",
+  "command": "wc -l /home/<USER>/dev/cohezion/.agent/COHEZION_CHARTER.md",
   "description": "Check total line count of charter"
 }
 ```
@@ -706,7 +706,7 @@ tool_use Read
 id: toolu_01UjiCgpVdF9Q6phm5ishdeD
 ```json
 {
-  "file_path": "/home/mike-anderson/dev/cohezion/.agent/COHEZION_CHARTER.md",
+  "file_path": "/home/<USER>/dev/cohezion/.agent/COHEZION_CHARTER.md",
   "offset": 55,
   "limit": 10
 }
@@ -731,7 +731,7 @@ id: toolu_01UjiCgpVdF9Q6phm5ishdeD
 tool_result
 id: toolu_01TRAbSzcmbfUqeVgizbEeF7
 ```
-60 /home/mike-anderson/dev/cohezion/.agent/COHEZION_CHARTER.md
+60 /home/<USER>/dev/cohezion/.agent/COHEZION_CHARTER.md
 ```
 
 > AGENT
@@ -786,7 +786,7 @@ tool_use Write
 id: toolu_01J6iXhn1SF9rGcJrGRbJjba
 ```json
 {
-  "file_path": "/home/mike-anderson/.claude/plans/cozy-sprouting-moore.md",
+  "file_path": "/home/<USER>/.claude/plans/cozy-sprouting-moore.md",
   "content": "# Retrospective: Development Knowledge Audit & Propagation\n\n## Context\n\nSessions 97-101 have accumulated without a retrospective pass. KEY_LEARNINGS.md has grown past its 300-line target (382 lines), MEMORY.md has stale metrics (test counts, Graph HIHO, SurrealDB status from Session 96), and CLAUDE.md has several metrics that have drifted from reality (skills count, MCP tools, JEPA tests). SurrealDB is not running, so persistence steps will be deferred. The vault is sparse (2 decisions, 2 patterns, 0 experiments) and needs population.\n\n**Branch**: `isolated/session-oom-modularity` | **Uncommitted**: 31 modified + 77 untracked\n\n---\n\n## Step 1: Establish Ground Truth — Run Test Suite\n\nRun `uv run pytest --collect-only -q 2>&1 | tail -5` to get the exact current test count.\nRun `uv run pytest tests/physics/ tests/world_model/ tests/environments/ -q` to get genesis-specific counts.\nCount skills: `find src/cohezion/skills/ -name '*.md' | wc -l` and `grep -c '\"prime\"' src/cohezion/registry/skill_registry.json`.\nCount API routes: investigate registration patterns beyond `@app.get/post` decorators.\nCount MCP tools: `grep -r '@mcp.tool()' cloud-vault-mcp/ src/ --include='*.py' | wc -l`.\n\n**Output**: Fresh numbers for all CLAUDE.md metrics.\n\n## Step 2: Compress KEY_LEARNINGS.md (382 → <300 lines)\n\n**File**: `src/cohezion/knowledge_graph/KEY_LEARNINGS.md`\n\nCompression targets (older sessions with verbose multi-line entries):\n- Sessions 1-40 (foundation): Merge into ~5 summarized learning blocks\n- Sessions 41-74: Compress verbose entries to 1-2 lines […]
 
 > TOOL
@@ -794,7 +794,7 @@ id: toolu_01J6iXhn1SF9rGcJrGRbJjba
 tool_result
 id: toolu_01J6iXhn1SF9rGcJrGRbJjba
 ```
-File created successfully at: /home/mike-anderson/.claude/plans/cozy-sprouting-moore.md
+File created successfully at: /home/<USER>/.claude/plans/cozy-sprouting-moore.md
 ```
 
 > AGENT

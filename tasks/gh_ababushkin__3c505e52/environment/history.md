@@ -207,7 +207,7 @@ tool_use Read
 id: toolu_01BJ6Hh1w9RmtAgZ9mTwz82o
 ```json
 {
-  "file_path": "/Users/anton/src/agent-skills-shaper/README.md"
+  "file_path": "/home/<USER>/src/agent-skills-shaper/README.md"
 }
 ```
 

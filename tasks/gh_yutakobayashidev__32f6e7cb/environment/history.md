@@ -61,8 +61,8 @@ id: toolu_01EFmeM9o2wNpLiihrwx5aZb
 tool_result
 id: toolu_01HZbtrMUh4kVAtADFCqsVpY
 ```
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.local.json
-/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.json
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.local.json
+/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.json
 ```
 
 > TOOL
@@ -79,7 +79,7 @@ tool_use Read
 id: toolu_01Ksa6nwxcn2KVd3fYAeC9hV
 ```json
 {
-  "file_path": "/Users/yuta/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.json"
+  "file_path": "/home/<USER>/ghq/github.com/yutakobayashidev/dotnix/.claude/settings.json"
 }
 ```
 

@@ -135,7 +135,7 @@ tool_use Read
 id: toolu_01GK27agQbvTQyh4tofsXbMa
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/cli.py"
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/cli.py"
 }
 ```
 
@@ -179,7 +179,7 @@ tool_use Read
 id: toolu_018u4b7KZvcM8NrQdihzbtQW
 ```json
 {
-  "file_path": "/Users/anton/src/drain-cycle/drain_cycle/linear.py",
+  "file_path": "/home/<USER>/src/drain-cycle/drain_cycle/linear.py",
   "offset": 200,
   "limit": 60
 }
